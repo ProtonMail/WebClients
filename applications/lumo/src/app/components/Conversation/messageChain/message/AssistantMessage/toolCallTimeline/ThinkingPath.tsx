@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { ASK_USER_QUESTIONS_TOOL_NAME } from '../../../../../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
 import {
     ANALYZE_FILE_TOOL_NAME,
     READ_KNOWLEDGE_TOOL_NAME,
@@ -64,6 +65,8 @@ function getToolCallIcon(toolCall: ToolCallData | ToolCallAnnouncement): IconNam
         case 'use_skill':
         case 'read_skill_file':
             return 'BookOpen';
+        case ASK_USER_QUESTIONS_TOOL_NAME:
+            return 'ListChecks';
         case SEARCH_KNOWLEDGE_TOOL_NAME:
         case READ_KNOWLEDGE_TOOL_NAME:
         case ANALYZE_FILE_TOOL_NAME:
@@ -243,6 +246,12 @@ function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [strin
             return [
                 c('collider_2025:Reasoning').t`Analysing a file...`,
                 c('collider_2025:Reasoning').t`Analysed a file`,
+            ];
+        case ASK_USER_QUESTIONS_TOOL_NAME:
+            // translator: Assistant activity status, while multiple-choice questions for the user are being prepared.
+            return [
+                c('collider_2025:Reasoning').t`Preparing questions...`,
+                c('collider_2025:Reasoning').t`Prepared questions`,
             ];
         default:
             // translator: Assistant activity status.
@@ -503,6 +512,12 @@ function getToolCallShortLabel(toolCall: ToolCallData | ToolCallAnnouncement): [
             return [
                 c('collider_2025:Reasoning').t`Analysing a file...`,
                 c('collider_2025:Reasoning').t`Analysed a file`,
+            ];
+        case ASK_USER_QUESTIONS_TOOL_NAME:
+            // translator: Assistant activity status, while multiple-choice questions for the user are being prepared.
+            return [
+                c('collider_2025:Reasoning').t`Preparing questions...`,
+                c('collider_2025:Reasoning').t`Prepared questions`,
             ];
         default:
             // translator: Assistant activity status.

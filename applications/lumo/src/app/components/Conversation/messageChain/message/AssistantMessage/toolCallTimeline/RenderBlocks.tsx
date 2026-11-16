@@ -1,5 +1,6 @@
 import { Suspense, lazy, useCallback, useState } from 'react';
 
+import { ASK_USER_QUESTIONS_TOOL_NAME } from '../../../../../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
 import {
     ANALYZE_FILE_TOOL_NAME,
     READ_KNOWLEDGE_TOOL_NAME,
@@ -206,6 +207,7 @@ function toToolCallStep(
         }
         if (
             toolCallName === CREATE_ARTIFACT_TOOL_NAME ||
+            toolCallName === ASK_USER_QUESTIONS_TOOL_NAME ||
             toolCallName === USE_SKILL_TOOL_NAME ||
             toolCallName === READ_SKILL_FILE_TOOL_NAME
         ) {

@@ -5,16 +5,15 @@ import {
     isAskUserQuestionsToolSuccessResult,
     validateAskUserQuestionsToolArguments,
 } from '../../../../../features/client-tools/askUserQuestionsTool/validation';
-import { findToolResultForCall } from '../../../../../messageHelpers';
 import { useConversationActions } from '../../../../../providers/ConversationActionsProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import type { ContentBlock } from '../../../../../types';
 import { ComposerPreInputPortal } from '../../../../Composer/ComposerPreInputPortal';
 import { QuestionCard } from '../../../../QuestionCard/QuestionCard';
 import type { QuestionCardAnswerData } from '../../../../QuestionCard/types';
-import { getToolCallNameFromBlock } from '../../../artifact/artifactGenerationState';
 import { getLastValidatedToolCall } from '../getLastValidatedToolCall';
 import { AskUserQuestionsToolMessageSkeleton } from './AskUserQuestionsToolMessageSkeleton';
+import { shouldShowAskUserQuestionsSkeleton } from './shouldShowAskUserQuestionsSkeleton';
 
 /**
  * Render a pending skeleton or validated question card above the composer.
@@ -30,11 +29,8 @@ export const AskUserQuestionsToolMessage = ({
     const { handleSendAskUserQuestionsToolResponse } = useConversationActions();
     const { isWebSearchButtonToggled } = useWebSearch();
     const [isClosed, setIsClosed] = useState(false);
-    const latestCall = blocks.findLast(
-        (block) => block.type === 'tool_call' && getToolCallNameFromBlock(block) === ASK_USER_QUESTIONS_TOOL_NAME
-    );
 
-    if (isGenerating && latestCall?.type === 'tool_call' && !findToolResultForCall(blocks, latestCall)) {
+    if (shouldShowAskUserQuestionsSkeleton(blocks, isGenerating)) {
         return (
             <ComposerPreInputPortal>
                 <AskUserQuestionsToolMessageSkeleton />

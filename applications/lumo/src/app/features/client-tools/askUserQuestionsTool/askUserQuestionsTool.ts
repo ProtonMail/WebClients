@@ -5,7 +5,7 @@ import type { QuestionCardQuestionData } from '../../../components/QuestionCard/
 import type { QuestionAnswer } from '../../../types';
 import type { ClientToolSuccessResult } from '../validationUtils';
 import { askUserQuestionsSchema } from './schema';
-import { validateAskUserQuestionsToolArguments } from './validation';
+import { ASK_USER_QUESTIONS_INVALID_ARGUMENTS_CODE, validateAskUserQuestionsToolArguments } from './validation';
 
 export const ASK_USER_QUESTIONS_TOOL_NAME = 'ask_user_questions';
 const ASK_USER_QUESTIONS_TOOL_RESPONSE_IDENTIFIER = 'ask_user_questions_response';
@@ -20,7 +20,11 @@ const askUserQuestionsTool = {
     function: {
         name: ASK_USER_QUESTIONS_TOOL_NAME,
         description:
-            'Ask for missing information or preferences that materially affect the response or next action and cannot be resolved from the conversation or available tools. ' +
+            'Show the user one or more multiple-choice questions in an interactive card and wait for their answers. ' +
+            'Use it whenever choosing from options is easier for the user than typing a reply: ' +
+            'to clarify missing details or preferences, to let them pick between alternatives, ' +
+            'or when they ask to be asked questions (quizzes, games, polls, interviews, checklists). ' +
+            'Do not use it for questions you can answer from the conversation or other tools. ' +
             "Group concise choice questions together in the user's language. " +
             'Prefer at most 5 options per question, including the custom-answer input when allowCustomAnswer is true (at most 4 listed options plus the custom input). ' +
             "Set allowMultiple to true when several options can apply, or false for a single selection; respect the user's requested selection mode. " +
@@ -35,10 +39,15 @@ const askUserQuestionsTool = {
     },
 } satisfies ChatCompletionsFunctionTool;
 
-const invalidCall = (error: string): ClientToolResult => ({
+/**
+ * Arguments that fail validation carry `code: invalid_arguments` in the result content, which is what the model and
+ * the persisted block both see. The UI reads it to expect a corrected retry and keep the question skeleton up.
+ */
+const invalidCall = (error: string, code?: typeof ASK_USER_QUESTIONS_INVALID_ARGUMENTS_CODE): ClientToolResult => ({
     is_error: true,
     content: JSON.stringify({
         ok: false,
+        ...(code ? { code } : {}),
         error,
         message: 'Correct the reported fields and call ask_user_questions again.',
     }),
@@ -61,11 +70,11 @@ export const askUserQuestionsToolExecutor: ClientToolExecutor = {
             try {
                 args = JSON.parse(call.arguments);
             } catch {
-                return invalidCall('arguments: must be valid JSON');
+                return invalidCall('arguments: must be valid JSON', ASK_USER_QUESTIONS_INVALID_ARGUMENTS_CODE);
             }
 
             const validation = validateAskUserQuestionsToolArguments(args);
-            if (!validation.ok) return invalidCall(validation.error);
+            if (!validation.ok) return invalidCall(validation.error, ASK_USER_QUESTIONS_INVALID_ARGUMENTS_CODE);
 
             return {
                 endTurn: true,

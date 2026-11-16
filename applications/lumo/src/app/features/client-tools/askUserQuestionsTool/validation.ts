@@ -4,6 +4,9 @@ import { getUnexpectedProperty, invalidArguments, isNonBlankString, isRecord } f
 import type { AskUserQuestionsToolArguments } from './askUserQuestionsTool';
 import { askUserQuestionsSchema } from './schema';
 
+/** Error code of an ask_user_questions result whose arguments failed validation; the model is told to retry. */
+export const ASK_USER_QUESTIONS_INVALID_ARGUMENTS_CODE = 'invalid_arguments';
+
 /**
  * Check decoded arguments before executing a call or rendering persisted questions.
  * Keep these checks aligned with the advertised schema, including unknown fields and unique ids.
@@ -77,4 +80,9 @@ export function validateAskUserQuestionsToolArguments(value: unknown): Validatio
 /** Recognize the successful acknowledgement paired with an ask_user_questions call. */
 export function isAskUserQuestionsToolSuccessResult(value: unknown): value is ClientToolSuccessResult {
     return isRecord(value) && value.ok === true && typeof value.message === 'string';
+}
+
+/** Recognize the failed result returned when the call's arguments did not pass validation. */
+export function isAskUserQuestionsInvalidArgumentsResult(value: unknown): boolean {
+    return isRecord(value) && value.ok === false && value.code === ASK_USER_QUESTIONS_INVALID_ARGUMENTS_CODE;
 }

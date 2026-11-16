@@ -47,6 +47,7 @@ import {
 import type { ParsedArtifact } from '../../../artifact/parseArtifacts';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { AskUserQuestionsToolMessage } from '../askUserQuestions/AskUserQuestionsToolMessage';
+import { isAskUserQuestionsInvalidArgumentsBlock } from '../askUserQuestions/shouldShowAskUserQuestionsSkeleton';
 import { CreateScheduleToolMessage } from '../createSchedule/CreateScheduleToolMessage';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
@@ -349,21 +350,25 @@ const AssistantMessage = ({
 
     // Hide tool calls and results rendered by dedicated UI outside the generic timeline:
     // - create_schedule: schedule draft.
-    // - ask_user_questions: question card.
     // - create_artifact: artifact chip.
+    // - ask_user_questions with invalid arguments: an internal retry, so only the corrected call shows its step.
     const cleanedBlocks = useMemo(() => {
         const hiddenBlocks = new Set<ContentBlock>();
         for (const block of blocks) {
             if (block.type !== 'tool_call') continue;
 
             const name = getToolCallNameFromBlock(block);
+            const result = findToolResultForCall(blocks, block);
             const isArtifactTool = isArtifactsViewFlagEnabled && hasArtifacts && name === CREATE_ARTIFACT_TOOL_NAME;
-            if (name !== ASK_USER_QUESTIONS_TOOL_NAME && name !== CREATE_SCHEDULE_TOOL_NAME && !isArtifactTool) {
+            const isInvalidAskUserQuestions =
+                name === ASK_USER_QUESTIONS_TOOL_NAME &&
+                result !== undefined &&
+                isAskUserQuestionsInvalidArgumentsBlock(result);
+            if (name !== CREATE_SCHEDULE_TOOL_NAME && !isArtifactTool && !isInvalidAskUserQuestions) {
                 continue;
             }
 
             hiddenBlocks.add(block);
-            const result = findToolResultForCall(blocks, block);
             if (result) hiddenBlocks.add(result);
         }
         return blocks.filter((block) => !hiddenBlocks.has(block));

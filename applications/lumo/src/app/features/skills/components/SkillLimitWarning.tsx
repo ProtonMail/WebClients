@@ -6,6 +6,8 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { SkillUpgradePath } from '../useSkillLimit';
 
+import './SkillLimitWarning.scss';
+
 interface SkillLimitWarningProps {
     isOverLimit: boolean;
     hasUnavailableSkillSets: boolean;
@@ -69,6 +71,7 @@ export const SkillLimitWarning = ({
                     </Button>
                 ) : undefined
             }
+            className="skill-limit-warning"
         >
             {parts.join(' ')}
         </Banner>
