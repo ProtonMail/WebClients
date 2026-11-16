@@ -53,7 +53,7 @@ import { getTrialInfoForSingleSubscription } from '../trials';
 import { isFreeSubscription } from '../type-guards';
 import { FREE_PLAN } from './freePlans';
 import { getSubscriptionsArray, hasLumoMobileSubscription, isManagedExternally } from './helpers/external-management';
-import { getPlanIDs } from './helpers/plan-ids';
+import { getPlanIDs, toPlanIDs } from './helpers/plan-ids';
 import type {
     MaybeFreeSubscription,
     Subscription,
@@ -62,6 +62,7 @@ import type {
 } from './interface';
 import { canModifySubscriptions, isForbiddenForStoreLumoSubscriber } from './lumo-purchase-rules';
 import type { MultiSubscriptionContext } from './multi-subscription-context';
+import { getPurchaseOutcome } from './purchase-outcome';
 
 // TODO: Remove these compatibility re-exports after migrating consumers to the focused helper modules.
 export type { MaybeFreeSubscription } from '../subscription/interface';
@@ -340,7 +341,10 @@ export function isForbiddenModification(
     selectedPlan: PLANS | ADDON_NAMES | PlanIDs | Plan
 ) {
     if (multiSubscriptionContext.lumoMultiSubscriptions) {
-        return isForbiddenForStoreLumoSubscriber(multiSubscriptionContext, selectedPlan);
+        return (
+            isForbiddenForStoreLumoSubscriber(multiSubscriptionContext, selectedPlan) ||
+            getPurchaseOutcome(multiSubscriptionContext, toPlanIDs(selectedPlan)).type === 'refused'
+        );
     }
 
     const hasExternallyManagedLumo = multiSubscriptionContext.subscriptions.some(

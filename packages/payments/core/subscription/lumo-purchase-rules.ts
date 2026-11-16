@@ -1,4 +1,4 @@
-import { getPlanNameFromIDs, isPlan } from '@proton/shared/lib/payments/plan/helpers';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { type ADDON_NAMES, ADDON_PREFIXES, type PLANS } from '../constants';
@@ -9,7 +9,7 @@ import type { PlanIDs } from '../interface';
 import { hasAddonFromPlanIDs } from '../plan/addons';
 import { isValidPlanName } from '../type-guards';
 import { isManagedExternally } from './helpers/external-management';
-import { getPlanIDs } from './helpers/plan-ids';
+import { getPlanIDs, toPlanIDs } from './helpers/plan-ids';
 import type { Subscription } from './interface';
 import type { MultiSubscriptionContext } from './multi-subscription-context';
 
@@ -123,18 +123,6 @@ export const canRunAlongside = (context: MultiSubscriptionContext, planIDs: Plan
         !isMultiUserOrB2BSelection(context.entitlementCatalog, planIDs) &&
         context.subscriptions.every((subscription) => isB2CLumoSubscription(context, subscription))
     );
-};
-
-const toPlanIDs = (selectedPlan: PLANS | ADDON_NAMES | PlanIDs | Plan): PlanIDs => {
-    if (isPlan(selectedPlan)) {
-        return { [selectedPlan.Name]: 1 };
-    }
-
-    if (typeof selectedPlan === 'string') {
-        return { [selectedPlan]: 1 };
-    }
-
-    return selectedPlan;
 };
 
 export const isForbiddenForStoreLumoSubscriber = (

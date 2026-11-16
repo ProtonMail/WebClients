@@ -1333,6 +1333,62 @@ describe('isForbiddenModification with the Lumo purchase rules', () => {
     });
 });
 
+describe('isForbiddenModification next to several subscriptions', () => {
+    const webMailPlus = buildSubscription(PLANS.MAIL);
+    const webLumoPlus = buildLumoSubscription(PLANS.LUMO);
+    const storeMailPlus = buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.Android });
+
+    it.each([
+        [PLANS.DUO, true],
+        [PLANS.FAMILY, true],
+        [PLANS.PASS_FAMILY, true],
+        [PLANS.BUNDLE_PRO_2024, true],
+        [PLANS.VPN_BUSINESS, true],
+        [PLANS.BUNDLE, false],
+        [PLANS.MAIL, false],
+        [PLANS.LUMO_ULTRA, false],
+    ])('with web Mail Plus and web Lumo Plus, %s is forbidden: %s', (planName, forbidden) => {
+        expect(
+            isForbiddenModification(buildMultiSubscriptionContext([webMailPlus, webLumoPlus]), { [planName]: 1 })
+        ).toBe(forbidden);
+    });
+
+    it('forbids a plan of another product, which the backend refuses next to two subscriptions', () => {
+        expect(isForbiddenModification(buildMultiSubscriptionContext([webMailPlus, webLumoPlus]), PLANS.VPN2024)).toBe(
+            true
+        );
+    });
+
+    it('lets the only web subscription move to a multi-user plan', () => {
+        expect(isForbiddenModification(buildMultiSubscriptionContext([webMailPlus]), { [PLANS.DUO]: 1 })).toBe(false);
+    });
+
+    it('counts a store subscription next to a web one', () => {
+        const duo = { [PLANS.DUO]: 1 };
+
+        expect(isForbiddenModification(buildMultiSubscriptionContext([webLumoPlus]), duo)).toBe(false);
+        expect(isForbiddenModification(buildMultiSubscriptionContext([storeMailPlus, webLumoPlus]), duo)).toBe(true);
+    });
+
+    it('forbids nothing new with the flag off', () => {
+        expect(
+            isForbiddenModification(buildMultiSubscriptionContext([webMailPlus, webLumoPlus], false), {
+                [PLANS.DUO]: 1,
+            })
+        ).toBe(false);
+    });
+
+    it('blocks a forced Duo selection in the check', () => {
+        expect(
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContext([webMailPlus, webLumoPlus]), {
+                editedSubscription: webMailPlus,
+                planIDs: { [PLANS.DUO]: 1 },
+                cycle: CYCLE.YEARLY,
+            })
+        ).toEqual({ forbidden: true, reason: 'offer-not-available' });
+    });
+});
+
 describe('getAvailableActions', () => {
     it('lets a web subscriber modify', () => {
         const subscription = buildSubscription(undefined, {
