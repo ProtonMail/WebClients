@@ -9,6 +9,7 @@ import {
     domainVpnBusinessGate,
     notExternallyManagedLumo,
     notInMailOrCalendarContext,
+    notOfferedOnDrivePlus,
     notSoldOnSingleUserB2CPlan,
     passesCouponGate,
     planSupportsAddon,
@@ -101,6 +102,40 @@ describe('notInMailOrCalendarContext', () => {
 
     it.each([APPS.PROTONDRIVE, APPS.PROTONACCOUNT, undefined])('passes in %s', (app) => {
         expect(notInMailOrCalendarContext(ADDON_PREFIXES.LUMO)(ctx({ planIDs: { [PLANS.MAIL]: 1 }, app }))).toBe(true);
+    });
+});
+
+describe('notOfferedOnDrivePlus', () => {
+    it.each([APPS.PROTONDRIVE, APPS.PROTONMAIL, APPS.PROTONACCOUNT, undefined])(
+        'fails on Drive Plus when the addon is not selected, opened from %s',
+        (app) => {
+            expect(notOfferedOnDrivePlus(ADDON_PREFIXES.MEET)(ctx({ planIDs: { [PLANS.DRIVE]: 1 }, app }))).toBe(false);
+        }
+    );
+
+    it('passes on Drive Plus when the addon is already selected', () => {
+        expect(
+            notOfferedOnDrivePlus(ADDON_PREFIXES.MEET)(
+                ctx({ planIDs: { [PLANS.DRIVE]: 1, [ADDON_NAMES.MEET_DRIVE]: 1 } })
+            )
+        ).toBe(true);
+    });
+
+    it('passes on Drive Plus when the current subscription has the addon', () => {
+        expect(
+            notOfferedOnDrivePlus(ADDON_PREFIXES.MEET)(
+                ctx({
+                    subscription: buildSubscription({ [PLANS.DRIVE]: 1, [ADDON_NAMES.MEET_DRIVE]: 1 }),
+                    planIDs: { [PLANS.DRIVE]: 1 },
+                })
+            )
+        ).toBe(true);
+    });
+
+    it.each([PLANS.DRIVE_1TB, PLANS.BUNDLE, PLANS.DRIVE_BUSINESS])('passes on %s in the Drive app', (plan) => {
+        expect(notOfferedOnDrivePlus(ADDON_PREFIXES.MEET)(ctx({ planIDs: { [plan]: 1 }, app: APPS.PROTONDRIVE }))).toBe(
+            true
+        );
     });
 });
 

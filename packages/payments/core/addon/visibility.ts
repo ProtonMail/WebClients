@@ -36,6 +36,13 @@ export const notInMailOrCalendarContext =
         hasAddonFromPlanIDs(addonType, planIDs) ||
         hasAddonFromPlanIDs(addonType, getPlanIDs(subscription));
 
+export const notOfferedOnDrivePlus =
+    (addonType: ADDON_PREFIXES): AddonVisibilityRule =>
+    ({ planIDs, subscription }) =>
+        !planIDs[PLANS.DRIVE] ||
+        hasAddonFromPlanIDs(addonType, planIDs) ||
+        hasAddonFromPlanIDs(addonType, getPlanIDs(subscription));
+
 /** Lumo-only: not an externally-managed subscription. */
 export const notExternallyManagedLumo: AddonVisibilityRule = ({ subscription }) =>
     hasNoExternallyManagedLumoSubscription(subscription);
