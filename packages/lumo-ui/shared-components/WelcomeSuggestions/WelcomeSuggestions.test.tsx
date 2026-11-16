@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
@@ -26,7 +27,7 @@ describe('WelcomeSuggestions', () => {
     // The list and the click handler are indexed independently, so a card sending its neighbour's prompt
     // is the failure this guards.
     it('picks the prompt belonging to the card that was clicked', () => {
-        const onPick = jest.fn();
+        const onPick = vi.fn();
         render(<WelcomeSuggestions cards={cards} onPick={onPick} />);
 
         fireEvent.click(screen.getByRole('button', { name: /What can you do\?/ }));

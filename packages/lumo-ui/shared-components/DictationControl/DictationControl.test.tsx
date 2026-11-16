@@ -1,11 +1,12 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import DictationControl from './DictationControl';
 
 describe('DictationControl', () => {
     it('shows the supplied trigger while idle', () => {
         render(
-            <DictationControl isDictating={false} getAudioLevel={() => 0} onCancel={jest.fn()} onAccept={jest.fn()}>
+            <DictationControl isDictating={false} getAudioLevel={() => 0} onCancel={vi.fn()} onAccept={vi.fn()}>
                 <button type="button">Start dictation</button>
             </DictationControl>
         );
@@ -14,8 +15,8 @@ describe('DictationControl', () => {
     });
 
     it('reports explicit cancel and accept actions', () => {
-        const onCancel = jest.fn();
-        const onAccept = jest.fn();
+        const onCancel = vi.fn();
+        const onAccept = vi.fn();
         render(
             <DictationControl isDictating hasError getAudioLevel={() => 0} onCancel={onCancel} onAccept={onAccept}>
                 <button type="button">Start dictation</button>
@@ -35,8 +36,8 @@ describe('DictationControl', () => {
                 isDictating
                 hasError
                 getAudioLevel={() => 0}
-                onCancel={jest.fn()}
-                onAccept={jest.fn()}
+                onCancel={vi.fn()}
+                onAccept={vi.fn()}
                 labels={{ connectionError: 'Voice unavailable' }}
             >
                 <button type="button">Start dictation</button>

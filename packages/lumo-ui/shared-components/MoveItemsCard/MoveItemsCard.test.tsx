@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import MoveItemsCard from './MoveItemsCard';
 
@@ -9,7 +10,7 @@ const items = [
 
 describe('MoveItemsCard', () => {
     it('reflects selection and reports toggles', () => {
-        const onToggle = jest.fn();
+        const onToggle = vi.fn();
         render(<MoveItemsCard items={items} selectedIds={['a']} onToggle={onToggle} />);
 
         const checkboxes = screen.getAllByRole('checkbox');

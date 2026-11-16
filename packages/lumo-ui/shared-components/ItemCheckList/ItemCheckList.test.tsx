@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import ItemCheckList from './ItemCheckList';
 
 const item = { id: 'a', label: 'Acme Travel', subtitle: 'Booking confirmation', meta: '11 Aug' };
 
 const renderList = (items: Parameters<typeof ItemCheckList>[0]['items'], selectedIds = ['a']) =>
-    render(<ItemCheckList items={items} selectedIds={selectedIds} onToggle={jest.fn()} />);
+    render(<ItemCheckList items={items} selectedIds={selectedIds} onToggle={vi.fn()} />);
 
 describe('ItemCheckList', () => {
     it('renders the subtitle and meta beside the label', () => {
@@ -20,7 +21,7 @@ describe('ItemCheckList', () => {
         renderList([{ id: 'a', label: 'Acme Travel' }]);
 
         expect(screen.getByText('Acme Travel')).toBeInTheDocument();
-        expect(screen.getByRole('checkbox').closest('label')).toHaveTextContent(/^Acme Travel$/);
+        expect(screen.getByRole('checkbox').closest('label')?.textContent).toBe('Acme Travel');
     });
 
     it('keeps both clipped lines recoverable through a title', () => {
