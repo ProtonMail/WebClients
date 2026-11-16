@@ -59,9 +59,7 @@ export const TimeInput = ({
             return '';
         }
         const [hours, minutes] = value.split(':');
-        // date is irrelevant and is picked randomly, we only need the time part
-        const date = new Date(2024, 0, 1, parseInt(hours), parseInt(minutes), 0, 0);
-        return formatTimeHHMM(date, timeFormat);
+        return formatTimeHHMM(parseInt(hours), parseInt(minutes), timeFormat);
     })();
 
     useEffect(() => {

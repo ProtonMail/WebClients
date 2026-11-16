@@ -9,17 +9,17 @@ export const shouldUse12HourClock = (timeFormat: SETTINGS_TIME_FORMAT) => {
     );
 };
 
-export const formatTimeHHMM = (date: Date, timeFormat: SETTINGS_TIME_FORMAT, timezone?: string): string => {
+export const formatTimeHHMM = (hours: number, minutes: number, timeFormat: SETTINGS_TIME_FORMAT): string => {
     const locale = dateLocale.code || 'en-US';
     const use12Hour = shouldUse12HourClock(timeFormat);
 
     const formatter = new Intl.DateTimeFormat(locale, {
-        ...(timezone && { timeZone: timezone }),
+        timeZone: 'UTC',
         hour: 'numeric',
         minute: '2-digit',
         hour12: use12Hour,
     });
 
-    const timeString = formatter.format(date);
+    const timeString = formatter.format(new Date(Date.UTC(1970, 0, 1, hours, minutes)));
     return use12Hour ? timeString.toUpperCase() : timeString;
 };

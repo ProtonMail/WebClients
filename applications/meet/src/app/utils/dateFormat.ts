@@ -1,16 +1,13 @@
-import { format } from 'date-fns';
-
-import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
-import { formatInTimeZone } from './zonedTime';
+import { formatInTimeZone, formatIntlInTimeZone } from './zonedTime';
 
 interface DateFormatOptions {
     month: 'short' | 'long';
     withYear: boolean;
     withWeekday?: boolean;
-    timeZone?: string;
+    timeZone: string;
 }
 
 const getExplicitPattern = (
@@ -36,17 +33,19 @@ export const formatDateForSetting = (date: Date, dateFormat: SETTINGS_DATE_FORMA
     const { month, withYear, withWeekday = false, timeZone } = options;
 
     if (dateFormat === SETTINGS_DATE_FORMAT.LOCALE_DEFAULT) {
-        return new Intl.DateTimeFormat(dateLocale.code, {
-            timeZone: timeZone ? 'UTC' : undefined,
-            month,
-            day: 'numeric',
-            ...(withWeekday ? { weekday: 'short' } : {}),
-            ...(withYear ? { year: 'numeric' } : {}),
-        }).format(timeZone ? fromUTCDateToTimezone(date, timeZone) : date);
+        return formatIntlInTimeZone(
+            date,
+            timeZone,
+            {
+                month,
+                day: 'numeric',
+                ...(withWeekday ? { weekday: 'short' } : {}),
+                ...(withYear ? { year: 'numeric' } : {}),
+            },
+            dateLocale.code
+        );
     }
 
     const pattern = `${withWeekday ? 'EEE, ' : ''}${getExplicitPattern(dateFormat, options)}`;
-    return timeZone
-        ? formatInTimeZone(date, timeZone, pattern, { locale: dateLocale })
-        : format(date, pattern, { locale: dateLocale });
+    return formatInTimeZone(date, timeZone, pattern, { locale: dateLocale });
 };

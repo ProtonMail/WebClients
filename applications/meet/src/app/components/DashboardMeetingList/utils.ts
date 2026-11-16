@@ -68,8 +68,8 @@ const getRelativeDate = (dayAsUTC: Date, absoluteDate: string): string | null =>
     return null;
 };
 
-const formatAbsoluteDate = (date: Date, isCurrentYear: boolean, dateFormat: SETTINGS_DATE_FORMAT): string =>
-    formatDateForSetting(date, dateFormat, { month: 'long', withYear: !isCurrentYear });
+const formatAbsoluteDate = (dayAsUTC: Date, isCurrentYear: boolean, dateFormat: SETTINGS_DATE_FORMAT): string =>
+    formatDateForSetting(dayAsUTC, dateFormat, { month: 'long', withYear: !isCurrentYear, timeZone: 'UTC' });
 
 export const formatMeetingDate = (
     dateString: string,
@@ -78,16 +78,16 @@ export const formatMeetingDate = (
 ): string => {
     // Parse the YYYY-MM-DD date string
     const [year, month, day] = dateString.split('-').map(Number);
-    const date = new Date(year, month - 1, day);
+    const dayAsUTC = new Date(Date.UTC(year, month - 1, day));
 
     const currentYear = fromUTCDateToTimezone(new Date(), timezone).getUTCFullYear();
     const isCurrentYear = year === currentYear;
 
-    const absoluteDate = formatAbsoluteDate(date, isCurrentYear, dateFormat);
+    const absoluteDate = formatAbsoluteDate(dayAsUTC, isCurrentYear, dateFormat);
 
     if (!showRelativeDate) {
         return absoluteDate;
     }
 
-    return getRelativeDate(new Date(Date.UTC(year, month - 1, day)), absoluteDate) ?? absoluteDate;
+    return getRelativeDate(dayAsUTC, absoluteDate) ?? absoluteDate;
 };

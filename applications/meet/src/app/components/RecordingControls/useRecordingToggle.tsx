@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { addSeconds, format, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -19,21 +18,17 @@ import { selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { PLANS } from '@proton/payments/core/constants';
 import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
+import { SECOND } from '@proton/shared/lib/constants';
 import { isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
-import { dateLocale } from '@proton/shared/lib/i18n';
 import IcCircleRadioFilled from '@proton/styles/assets/img/meet/ic-circle-radio-filled.svg';
 
 import { useMeetingRecorderContext } from '../../contexts/MeetingRecorderContext';
 import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
+import { formatDuration } from '../../utils/formatDuration';
 import { ScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/ScreenRecordingUpsell';
 import { SubUserScreenRecordingUpsell } from '../AnonymousModal/feature-upsell/SubUserScreenRecordingUpsell';
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
 import { RecordingDownloadModal } from './RecordingDownloadModal/RecordingDownloadModal';
-
-const formatDuration = (seconds: number) => {
-    const pattern = seconds >= 3600 ? 'HH:mm:ss' : 'mm:ss';
-    return format(addSeconds(startOfDay(new Date()), seconds), pattern, { locale: dateLocale });
-};
 
 const getUnsupportedRecordingTooltip = () => {
     if (isMobile()) {
@@ -179,7 +174,7 @@ export const useRecordingToggle = () => {
         checked: isLocalRecording,
         disabled: !isRecordingSupported,
         tooltip: unsupportedRecordingTooltip,
-        duration: formatDuration(duration),
+        duration: formatDuration(duration * SECOND),
         onChange,
         onStop: () => setShowStopRecordingConfirmation(true),
         modals,
