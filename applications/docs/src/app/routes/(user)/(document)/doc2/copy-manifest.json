@@ -14,7 +14,7 @@
     "sourceSymbol": "the creating_new_document phase",
     "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
     "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
-    "notes": "The loader and its string; no sheets string."
+    "notes": "The create string, now on doc2's Loading Screen; no sheets string."
   },
   {
     "doc2": "__components/DocumentDebugMenu.tsx",
@@ -93,6 +93,15 @@
     "sourceCommit": "f7ab3baa8b357a847de986f4af016fefbeb5ad98",
     "copiedIn": "6802af2d1ceaf734e4ef4b260ae210ed05d04e54",
     "notes": "The modal and its strings; prints only once the modal and the backdrop have finished exiting."
+  },
+  {
+    "doc2": "__components/LoadingScreen.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx",
+    "sourceSymbol": "Loader and LoadingBar",
+    "sourceCommit": "e485f5ff7a350db5dbdd68c1ebbffbef08ffe5ff",
+    "copiedIn": "e7e3b034813e0c5f5ec4ff98e63cee6379cb877b",
+    "notes": "The doc icon, the bar on app.scss's keyframes, the product name and the lock beside a status line, over the whole page. Adds doc2's load stages, Can't connect with Try again, the progressbar and live-region roles, and a pulse under reduced motion. Docs only, no sheets."
   },
   {
     "doc2": "__components/OpenActionError.tsx",
@@ -351,7 +360,7 @@
     "notes": "The copy's name, \"<name> (copy <date>)\", untranslated as /doc's is."
   },
   {
-    "doc2": "__utils/useDocumentSession.ts",
+    "doc2": "__utils/loadDocument.ts",
     "doc2Symbol": "commitDuLimit",
     "kind": "mirror",
     "source": "packages/docs-core/lib/Types/SquashingConstants.ts",
@@ -362,7 +371,7 @@
   },
   {
     "doc2": "__utils/useEditorBasics.ts",
-    "doc2Symbol": "useIsEditorDarkMode, useEditorBasics",
+    "doc2Symbol": "useIsEditorDarkMode, sendEditorBasics",
     "kind": "adaptation",
     "source": "applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx",
     "sourceCommit": "e485f5ff7a350db5dbdd68c1ebbffbef08ffe5ff",
@@ -371,7 +380,7 @@
   },
   {
     "doc2": "__utils/useEditorBasics.ts",
-    "doc2Symbol": "useEditorBasics",
+    "doc2Symbol": "useUserName",
     "kind": "adaptation",
     "source": "applications/docs/src/app/routes/(user)/(document)/doc/__components/PrivateHookChangesToEvents.tsx",
     "sourceCommit": "6fb4e7768e0daa3ca732bad6bfc6710aa6ca96a7",

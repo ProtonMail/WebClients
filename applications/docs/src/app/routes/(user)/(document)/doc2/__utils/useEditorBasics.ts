@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 
 import { useUser } from '@proton/account/user/hooks'
-import { useGetUserSettings } from '@proton/account/userSettings/hooks'
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 
 import { useApplication } from '~/utils/application-context'
 import { useIsDarkThemeEnabled } from '~/utils/flags'
@@ -16,37 +17,62 @@ export function useIsEditorDarkMode() {
 }
 
 /**
- * Gives the editor what /doc gives it once it is there: dark mode, the user's settings (not in a public-link session),
- * Suggesting turned off, and the user's name, which its presence carries. The editor is initialized only later, so the
- * name is there by then. Adapted from
+ * The name the editor's presence carries. Adapted from
+ * `applications/docs/src/app/routes/(user)/(document)/doc/__components/PrivateHookChangesToEvents.tsx`
+ */
+export function useUserName(): string {
+  const [user] = useUser()
+  return user.DisplayName || user.Name || user.Email
+}
+
+export type EditorBasics = {
+  isDarkMode: boolean
+  userName: string
+  /** Undefined in a public-link session, which has no user settings */
+  getUserSettings?: () => Promise<UserSettings>
+}
+
+type BasicsEditor = Pick<EditorInvoker, 'setDarkMode' | 'loadUserSettings' | 'syncProperty'>
+
+/**
+ * Gives the editor what /doc gives it before it is initialized: dark mode, the user's settings, Suggesting turned off,
+ * and the user's name, which its presence carries. Sent, not awaited: the bridge delivers them before a later
+ * `initializeEditor`. A failure is only logged. Adapted from
  * `applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx`.
  */
-export function useEditorBasics(editorInvoker: EditorInvoker | undefined, isDarkMode: boolean) {
-  const { isPublicMode, logger } = useApplication()
-  const getUserSettings = useGetUserSettings()
-  const [user] = useUser()
-  // Adapted from `applications/docs/src/app/routes/(user)/(document)/doc/__components/PrivateHookChangesToEvents.tsx`
-  const userName = user.DisplayName || user.Name || user.Email
+export function sendEditorBasics(
+  editorInvoker: BasicsEditor,
+  { isDarkMode, userName, getUserSettings }: EditorBasics,
+  logger: LoggerInterface,
+): void {
+  const warnOnFailure = (call: Promise<void>, failure: string) => {
+    call.catch((error) => logger.warn(failure, error))
+  }
+  warnOnFailure(editorInvoker.setDarkMode(isDarkMode), 'Failed to set the editor theme')
+  if (getUserSettings) {
+    warnOnFailure(
+      getUserSettings().then((settings) => editorInvoker.loadUserSettings(settings)),
+      'Failed to give the editor the user settings',
+    )
+  }
+  // Suggestions create comment threads, which doc2 can't store until comments come to it after SDK Phase 2
+  warnOnFailure(editorInvoker.syncProperty('suggestionsEnabled', false), 'Failed to turn off suggestions in the editor')
+  warnOnFailure(editorInvoker.syncProperty('userName', userName), 'Failed to give the editor the user name')
+}
+
+/**
+ * Keeps an open editor's theme and the user's name in sync with the app's, once the Loader has given it them. Its
+ * first run repeats them, which changes nothing.
+ */
+export function useEditorBasicsInSync(
+  editorInvoker: BasicsEditor | undefined,
+  { isDarkMode, userName }: Pick<EditorBasics, 'isDarkMode' | 'userName'>,
+) {
+  const { logger } = useApplication()
 
   useEffect(() => {
     editorInvoker?.setDarkMode(isDarkMode).catch((error) => logger.warn('Failed to set the editor theme', error))
   }, [editorInvoker, isDarkMode, logger])
-
-  useEffect(() => {
-    if (!editorInvoker || isPublicMode) {
-      return
-    }
-    getUserSettings()
-      .then((settings) => editorInvoker.loadUserSettings(settings))
-      .catch((error) => logger.warn('Failed to give the editor the user settings', error))
-  }, [editorInvoker, getUserSettings, isPublicMode, logger])
-
-  useEffect(() => {
-    // Suggestions create comment threads, which doc2 can't store until comments come to it after SDK Phase 2
-    editorInvoker
-      ?.syncProperty('suggestionsEnabled', false)
-      .catch((error) => logger.warn('Failed to turn off suggestions in the editor', error))
-  }, [editorInvoker, logger])
 
   useEffect(() => {
     editorInvoker

@@ -1,6 +1,9 @@
 import type { BaseState, Session, SessionEvents, SessionSnapshot } from '@proton-docs/realtime-sdk'
 
-/** A session for tests: its snapshot changes and its events fire by hand, and every method is a jest mock. */
+/**
+ * A session for tests, pending until bootstrapped: its snapshot changes and its events fire by hand, and every method is
+ * a jest mock.
+ */
 export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
   const listeners = new Map<string, Set<(payload: unknown) => void>>()
   const snapshotListeners = new Set<(snapshot: SessionSnapshot) => void>()
@@ -31,7 +34,11 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
     getSnapshot: () => current,
     getBaseState: jest.fn((): BaseState => ({ commitId: 'commit-1', updates: [] })),
     getNodeMeta: jest.fn(() => ({ volumeId: 'VOLUME', linkId: 'LINK', userOwnAddress: 'member@example.com' })),
+    config: { documentType: 'doc', nodeMeta: { volumeId: 'VOLUME', linkId: 'LINK' }, clientId: 1 },
+    // A pending session and the session it bootstraps into are one object, as in the SDK
+    bootstrap: jest.fn(async (): Promise<Session> => session as unknown as Session),
     connect: jest.fn(async () => {}),
+    disconnect: jest.fn(async () => {}),
     pause: jest.fn(async () => {}),
     resume: jest.fn(async () => {}),
     retry: jest.fn(async () => {}),
