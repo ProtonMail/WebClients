@@ -1,4 +1,5 @@
 @use 'sass:list';
+@use 'sass:map';
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/proton-meet' as *;
 
@@ -268,12 +269,13 @@ $profile-colors:
 	box-shadow: none !important;
 }
 
+// Rendered before ProtonApp, so the static .app-root-loader is never hidden and the Meet theme is not injected
 .unsupported-browser-container {
-	position: absolute;
-	inset-block-start: 0;
-	inset-inline-start: 0;
-	inline-size: 100%;
-	block-size: 100%;
+	position: fixed;
+	inset: 0;
+	z-index: map.get($z-indexes, 'up');
+	background: var(--background-norm, white);
+	color: var(--text-norm, black);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
