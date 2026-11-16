@@ -15,9 +15,9 @@ class FakeLogger implements Logger {
     log = jest.fn();
 }
 
-const getESEvent = (items: any[], eventID: string): ESEvent<ESBaseMessage> => {
+const getESEvent = (items: any[] | undefined, eventID: string, Refresh = 0): ESEvent<ESBaseMessage> => {
     return {
-        Refresh: 0,
+        Refresh,
         Items: items,
         attemptReDecryption: false,
         eventsToStore: {
@@ -96,7 +96,7 @@ describe('EventUpdateMapper', () => {
         const eventMapper = new EventUpdateMapper(logger);
 
         const result = eventMapper.map(getESEvent(items, 'event-id'));
-        expect(result).toBeUndefined();
+        expect(result?.items).toEqual([]);
         expect(logger.error).toHaveBeenCalledWith(
             'received metadata update from event loop but metadata not present for message message-0'
         );
@@ -108,7 +108,7 @@ describe('EventUpdateMapper', () => {
         const eventMapper = new EventUpdateMapper(logger);
 
         const result = eventMapper.map(getESEvent(items, 'event-id'));
-        expect(result).toBeUndefined();
+        expect(result?.items).toEqual([]);
         expect(logger.error).toHaveBeenCalledWith(
             'received created or updated message from event loop but metadata not present for message message-0'
         );
@@ -120,9 +120,37 @@ describe('EventUpdateMapper', () => {
         const eventMapper = new EventUpdateMapper(logger);
 
         const result = eventMapper.map(getESEvent(items, 'event-id'));
-        expect(result).toBeUndefined();
+        expect(result?.items).toEqual([]);
         expect(logger.error).toHaveBeenCalledWith(
             'received created or updated message from event loop but metadata not present for message message-0'
         );
+    });
+
+    it.each([undefined, []])('should return an update without items when the event has items %p', (items) => {
+        const eventMapper = new EventUpdateMapper(new FakeLogger());
+
+        const result = eventMapper.map(getESEvent(items, 'event-id'));
+        expect(result).toEqual({ eventID: 'event-id', items: [], refresh: false });
+    });
+
+    it('should return undefined when the event has no event id', () => {
+        const logger = new FakeLogger();
+        const eventMapper = new EventUpdateMapper(logger);
+
+        const result = eventMapper.map({ ...getESEvent([], 'event-id'), eventsToStore: {} });
+        expect(result).toBeUndefined();
+        expect(logger.warn).toHaveBeenCalled();
+    });
+
+    it.each([
+        [0, false],
+        [1, true],
+        [255, true],
+        [2, false],
+    ])('should map refresh %i to %s', (refresh, expected) => {
+        const eventMapper = new EventUpdateMapper(new FakeLogger());
+
+        const result = eventMapper.map(getESEvent([], 'event-id', refresh));
+        expect(result?.refresh).toBe(expected);
     });
 });

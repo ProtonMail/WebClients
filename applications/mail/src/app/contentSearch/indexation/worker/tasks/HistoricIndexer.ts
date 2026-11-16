@@ -13,7 +13,7 @@ import type { EngineWrapper } from '../wrapper';
 
 export class HistoricIndexer implements IndexTask {
     private stopAtNextIterationFlag = false;
-    public needsRun: boolean = false;
+    private runRequested = false;
 
     constructor(
         private readonly api: IndexApi,
@@ -36,19 +36,31 @@ export class HistoricIndexer implements IndexTask {
         this.stopAtNextIterationFlag = true;
     }
 
+    requestRun() {
+        this.runRequested = true;
+    }
+
+    async needsRun(db: IDBPDatabase<Database>) {
+        // already went through the whole mailbox (e.g. startup action after a reload)
+        if (this.runRequested && (await db.get('anchors', 'historic'))?.eof) {
+            this.runRequested = false;
+        }
+        return this.runRequested;
+    }
+
     async run(db: IDBPDatabase<Database>, startBlobTxn: StartBlobTxnFn, abort: AbortSignal): Promise<void> {
         let emittedInitialStatus = false;
         this.stopAtNextIterationFlag = false;
-        while (this.needsRun && !this.stopAtNextIterationFlag) {
+        while (this.runRequested && !this.stopAtNextIterationFlag) {
             const txn = db.transaction(['anchors', 'config', 'event_cursor'], 'readonly');
             // open the blob txn when we read the anchor, so we detect any changes in the db by the time we commit
             const blobTxn = await startBlobTxn(db, txn);
             abort.throwIfAborted();
             const anchor = await txn.objectStore('anchors').get('historic');
             const eventCursor = await txn.objectStore('event_cursor').get('event_cursor');
-            // already went through the whole mailbox (e.g. startup action after a reload), nothing to do
+            // the previous iteration wrote the last page
             if (anchor?.eof) {
-                this.needsRun = false;
+                this.runRequested = false;
                 return;
             }
 
@@ -63,7 +75,7 @@ export class HistoricIndexer implements IndexTask {
             if (nextAnchor.eof) {
                 await this.writeEOF(nextAnchor, startEventId, db);
                 this.listener.reportHistoricProgress(processed, totalMessages);
-                this.needsRun = false;
+                this.runRequested = false;
                 return;
             }
             // give an initial progress update once we know the total amount of items

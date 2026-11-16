@@ -1,10 +1,16 @@
+import { getEvents } from '@proton/shared/lib/api/events';
 import { getMessagesBatch } from '@proton/shared/lib/api/messages';
+import { getEventLoopParams } from '@proton/shared/lib/eventManager/eventLoopParams';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { BatchMessage, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { convertEventType } from '../../helpers/encryptedSearch/esSync';
+import type { Event } from '../../models/event';
 import { AsyncAbort } from '../utils/AsyncAbort';
 import type { Logger } from '../utils/logger';
+import { EventUpdateMapper } from './EventUpdateMapper';
 import type { MessageCacheContent } from './MessageCache';
+import type { EventUpdate } from './worker/EventUpdateWriter';
 
 /** the metadata needed to fetch and decrypt a body, kept minimal as it crosses the worker boundary */
 export type BodyRequest = Pick<MessageMetadata, 'ID' | 'AddressID' | 'Flags'>;
@@ -12,6 +18,11 @@ export type BatchMessageDecryptionFunction = (
     batchMessage: BatchMessage,
     messageMetadata: BodyRequest
 ) => Promise<MessageCacheContent>;
+
+export interface EventUpdateResponse extends EventUpdate {
+    /** more events follow `eventID` */
+    more: boolean;
+}
 
 /**
  * The index worker's route to the API: the main thread's api instance, proxied as-is, so the worker
@@ -28,12 +39,15 @@ export type BatchMessageDecryptionFunction = (
  */
 export class MailApiBridge {
     private readonly inflight = new Map<number, AbortController>();
+    private readonly eventUpdateMapper: EventUpdateMapper;
 
     constructor(
         private readonly api: Api,
         private readonly decryptBody: BatchMessageDecryptionFunction,
         private readonly logger: Logger
-    ) {}
+    ) {
+        this.eventUpdateMapper = new EventUpdateMapper(logger);
+    }
 
     /**
      * Runs any api route for the worker, silenced and at the lowest priority (see `silentRequest`).
@@ -79,6 +93,34 @@ export class MailApiBridge {
                     })
                     .filter((entry) => entry !== undefined)
             );
+        } finally {
+            this.releaseAbortId(abortId);
+        }
+    }
+
+    /**
+     * Fetches the events following `eventID`, as v1 does in `queryEvents`.
+     *
+     * The raw event carries conversations, counts, addresses and so on: it is mapped here, with the same
+     * `EventUpdateMapper` live events go through, so only the message changes cross to the worker.
+     * This also keeps `convertEventType`, which lives next to v1's IndexedDB code, out of the worker bundle.
+     */
+    async fetchEventUpdate(abortId: number, eventID: string): Promise<EventUpdateResponse> {
+        const signal = this.abortIdToSignal(abortId);
+        try {
+            const event = await this.silentRequest<Event>(
+                {
+                    ...getEvents(eventID),
+                    params: getEventLoopParams({ source: 'encrypted-search', trigger: 'Code' }),
+                },
+                signal
+            );
+            // numAddresses only serves `attemptReDecryption`, which isn't supported yet
+            const update = this.eventUpdateMapper.map(convertEventType(event, 0));
+            if (!update) {
+                throw new Error('search: event response without an event id');
+            }
+            return { ...update, more: event.More === 1 };
         } finally {
             this.releaseAbortId(abortId);
         }
