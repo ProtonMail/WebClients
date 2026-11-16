@@ -3073,8 +3073,8 @@ importers:
         specifier: workspace:^
         version: link:../../packages/polyfill
       '@proton/proton-foundation-search':
-        specifier: 2.0.0
-        version: 2.0.0
+        specifier: 3.0.1
+        version: 3.0.1
       '@proton/react-redux-store':
         specifier: workspace:^
         version: link:../../packages/react-redux-store
@@ -16551,6 +16551,9 @@ packages:
 
   '@proton/proton-foundation-search@2.0.0-rc1':
     resolution: {integrity: sha1-qgaLVUs/ig6g3i6qeuYJH64GZyM=}
+
+  '@proton/proton-foundation-search@3.0.1':
+    resolution: {integrity: sha1-XbFhpizcxJcGk9qRIDvVpeGwgMM=}
 
   '@protontech/authenticator-rust-core@0.28.8':
     resolution: {integrity: sha512-1pjTHiWq+ok5BOJdnckBC9kEyvIb7H5t7/XoqYVov0RhX1+b0PPatiMlXem3pZDLE3n8TKRP567vGnnKHStAjw==}
@@ -34334,6 +34337,8 @@ snapshots:
   '@proton/proton-foundation-search@2.0.0': {}
 
   '@proton/proton-foundation-search@2.0.0-rc1': {}
+
+  '@proton/proton-foundation-search@3.0.1': {}
 
   '@protontech/authenticator-rust-core@0.28.8': {}
 

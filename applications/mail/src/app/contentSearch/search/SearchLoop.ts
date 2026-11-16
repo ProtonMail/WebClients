@@ -2,17 +2,18 @@ import type {
     CollectionCardinality,
     Engine,
     Expression,
-    QueryEvent,
     QueryOptions,
-    Search,
+    ResultSet,
+    SearchEvent,
+    SearchRun,
 } from '@proton/proton-foundation-search';
-import { QueryEventKind } from '@proton/proton-foundation-search';
+import { SearchEventKind } from '@proton/proton-foundation-search';
 
 import type { OpenBlobTransaction } from '../crypto/EncryptedBlobTransaction';
 import { isLoadEvent } from '../utils/eventTypeGuards';
 
 export class SearchLoop {
-    private search?: Search;
+    private searchRun?: SearchRun;
     private cardinality?: CollectionCardinality;
 
     constructor(
@@ -36,7 +37,7 @@ export class SearchLoop {
     }
 
     public async runBucketedSearch(range: { low: bigint; high: bigint }, abortSignal: AbortSignal): Promise<string[]> {
-        if (this.search) {
+        if (this.searchRun) {
             throw new Error('Search already created');
         }
 
@@ -62,29 +63,29 @@ export class SearchLoop {
         hits?: string[] | undefined;
         cardinality?: CollectionCardinality | undefined;
     }> {
-        if (!this.search) {
-            this.search = this.engine
+        if (!this.searchRun) {
+            this.searchRun = this.engine
                 .query()
                 .withStructuredExpression(this.exp)
                 .withOptions(this.queryOptions)
-                .search();
+                .run();
         }
 
         const hits: string[] = [];
-        let event: QueryEvent | undefined;
+        let event: SearchEvent | undefined;
         try {
-            while ((event = this.search.next())) {
+            while ((event = this.searchRun.next())) {
                 abortSignal.throwIfAborted();
                 if (isLoadEvent(event)) {
                     performance.mark('search-foundation-read-blob');
                     await this.blobTxn.handleLoadEvent(event);
-                } else if (event.kind() === QueryEventKind.Found) {
-                    performance.mark('search-foundation-result-found');
-                    const id = event.found()?.identifier();
-                    if (id) {
-                        hits.push(id);
+                } else if (event.kind() === SearchEventKind.Results) {
+                    performance.mark('search-foundation-results');
+                    const resultSet = event.results();
+                    if (resultSet) {
+                        hits.push(...SearchLoop.takeIdentifiers(resultSet));
                     }
-                } else if (event.kind() === QueryEventKind.Cardinality) {
+                } else if (event.kind() === SearchEventKind.Cardinality) {
                     if (stopAtCardinality) {
                         const cardinality = event.cardinality();
                         this.cardinality = cardinality;
@@ -107,9 +108,23 @@ export class SearchLoop {
         return { hits };
     }
 
+    private static takeIdentifiers(resultSet: ResultSet): string[] {
+        try {
+            return resultSet.results().map((entry) => {
+                try {
+                    return entry.identifier();
+                } finally {
+                    entry.free();
+                }
+            });
+        } finally {
+            resultSet.free();
+        }
+    }
+
     public dispose() {
-        this.search?.free();
+        this.searchRun?.free();
         this.cardinality?.free();
-        this.search = undefined;
+        this.searchRun = undefined;
     }
 }
