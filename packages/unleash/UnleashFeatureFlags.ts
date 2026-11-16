@@ -293,7 +293,6 @@ enum LumoFeatureFlag {
 export enum MailFeatureFlag {
     ComposerAssistant = 'ComposerAssistant',
     MailMetrics = 'MailMetrics',
-    MailWebListTelemetry = 'MailWebListTelemetry',
     PasswordNudge = 'PasswordNudge',
     PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',
     PostSignupSurvey = 'PostSignupSurvey',

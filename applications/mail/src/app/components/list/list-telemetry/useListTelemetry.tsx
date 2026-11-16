@@ -3,7 +3,6 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { TelemetryMailListEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import type { ContentSearchResultAction } from '../../../contentSearch/metrics/interface';
@@ -147,7 +146,6 @@ const useListTelemetry = () => {
     const labelID = useMailSelector((store) => store.elements.params.labelID);
     const isSearching = useMailSelector(selectIsSearching);
 
-    const isListTelemetryEnabled = useFlag('MailWebListTelemetry');
     const { reportResultAction } = useEncryptedSearchContext();
 
     const sendSimpleActionReport = ({
@@ -163,29 +161,27 @@ const useListTelemetry = () => {
         destination?: string;
         percentUnread?: number;
     }) => {
-        if (isListTelemetryEnabled) {
-            const actionTime = actionTimeUser();
+        const actionTime = actionTimeUser();
 
-            const folderActionLocation = folderLocation(labelID, labels, folders);
+        const folderActionLocation = folderLocation(labelID, labels, folders);
 
-            void sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.mailActions,
-                event: TelemetryMailListEvents.clicksMailListActions,
-                values: {
-                    percentUnread: percentUnread,
-                },
-                dimensions: {
-                    actionType: actionType,
-                    actionLocation: actionLocation,
-                    folderLocation: folderActionLocation,
-                    destination: destination,
-                    actionTime: actionTime,
-                    numberMessage: numberMessage,
-                },
-                delay: false,
-            });
-        }
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.mailActions,
+            event: TelemetryMailListEvents.clicksMailListActions,
+            values: {
+                percentUnread: percentUnread,
+            },
+            dimensions: {
+                actionType: actionType,
+                actionLocation: actionLocation,
+                folderLocation: folderActionLocation,
+                destination: destination,
+                actionTime: actionTime,
+                numberMessage: numberMessage,
+            },
+            delay: false,
+        });
 
         if (isSearching) {
             reportResultAction({
