@@ -12,19 +12,42 @@
 
 	&__row {
 		min-block-size: rem(28);
-		padding-block: rem(4);
-		padding-inline: calc(#{rem(8)} + var(--skill-file-depth, 0) * #{rem(14)}) rem(8);
-		border: none;
+		padding-inline: calc(#{rem(8)} + var(--skill-file-depth, 0) * #{rem(14)}) rem(2);
 		border-radius: rem(6);
-		background: transparent;
-		font-size: rem(13);
-		cursor: pointer;
 
 		&:hover {
 			background-color: var(--interaction-default-hover);
 		}
 
+		&.is-selected {
+			background-color: var(--interaction-default-active);
+		}
+
+		&.is-active {
+			background-color: var(--background-norm);
+			box-shadow: 0 0 0 1px var(--border-weak);
+
+			.skill-file-tree__file {
+				font-weight: 600;
+			}
+
+			.skill-file-tree__icon {
+				color: var(--primary);
+			}
+		}
+	}
+
+	&__label {
+		min-block-size: rem(28);
+		padding-block: rem(4);
+		padding-inline-end: rem(6);
+		border: none;
+		background: transparent;
+		font-size: rem(13);
+		cursor: pointer;
+
 		&:focus-visible {
+			border-radius: rem(4);
 			outline: 2px solid var(--focus-outline);
 			outline-offset: -2px;
 		}
@@ -45,16 +68,6 @@
 
 	&__file {
 		color: var(--text-norm);
-
-		&.is-active {
-			background-color: var(--background-norm);
-			box-shadow: 0 0 0 1px var(--border-weak);
-			font-weight: 600;
-
-			.skill-file-tree__icon {
-				color: var(--primary);
-			}
-		}
 	}
 
 	&__icon {
@@ -66,5 +79,26 @@
 		block-size: rem(6);
 		border-radius: 50%;
 		background-color: var(--interaction-norm);
+	}
+
+	// On hover or keyboard focus, the row actions take the place of the unsaved-changes dot. A row keeps
+	// mouse focus after a click, so `:focus-visible` rather than `:focus-within` keeps the dot on the open file.
+	&__actions {
+		display: none;
+
+		.skill-file-tree__row:hover &,
+		.skill-file-tree__row:has(:focus-visible) & {
+			display: flex;
+		}
+	}
+
+	&__row:hover &__dot,
+	&__row:has(:focus-visible) &__dot {
+		display: none;
+	}
+
+	&__name-input {
+		padding-block: rem(2);
+		padding-inline: calc(#{rem(8)} + var(--skill-file-depth, 0) * #{rem(14)}) rem(2);
 	}
 }

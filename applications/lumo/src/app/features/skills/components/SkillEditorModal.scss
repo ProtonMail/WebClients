@@ -22,7 +22,7 @@
 		border-block-start: 1px solid var(--border-weak);
 
 		> :first-child {
-			inline-size: rem(200);
+			inline-size: rem(240);
 			flex-shrink: 0;
 		}
 	}
@@ -39,23 +39,6 @@
 
 		.is-active {
 			background-color: var(--interaction-default-active);
-		}
-	}
-
-	&__add-file {
-		padding: rem(12);
-		border-block-start: 1px solid var(--border-weak) !important;
-		color: var(--text-norm);
-		cursor: pointer;
-		font-size: rem(14);
-
-		&:hover {
-			background-color: var(--interaction-default-hover);
-		}
-
-		&:focus-visible {
-			outline: 2px solid var(--focus-outline);
-			outline-offset: -2px;
 		}
 	}
 }
