@@ -1,6 +1,7 @@
 import DrawerApp from '@proton/components/components/drawer/DrawerApp'
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer'
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea'
+import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner'
 import TopBanners from '@proton/components/containers/topBanners/TopBanners'
 import React from 'react'
 import type { ReactNode } from 'react'
@@ -27,7 +28,13 @@ export function DocumentLayout({ children, documentType, actionMode }: DocumentL
   return (
     <DebugModeProvider>
       <PrivateAppContainer
-        top={privateUser ? <TopBanners app={APPS.PROTONDOCS} /> : null}
+        top={
+          privateUser ? (
+            <TopBanners app={APPS.PROTONDOCS}>
+              <PasswordReminderTopBanner />
+            </TopBanners>
+          ) : null
+        }
         header={<DocumentHeader actionMode={actionMode} documentType={documentType} />}
         sidebar={null}
         drawerApp={privateUser ? <DrawerApp customAppSettings={<DocsQuickSettings />} /> : null}

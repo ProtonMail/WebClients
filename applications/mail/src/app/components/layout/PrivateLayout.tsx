@@ -2,6 +2,7 @@ import type { ReactNode, Ref } from 'react';
 import { Suspense, forwardRef, lazy, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner';
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
 import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
 import SmartBanner from '@proton/components/components/smartBanner/SmartBanner';
@@ -63,6 +64,7 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
                 </Suspense>
             )}
             <TopBanners app={APPS.PROTONMAIL}>
+                <PasswordReminderTopBanner />
                 <SmartBanner app={APPS.PROTONMAIL} />
             </TopBanners>
         </>

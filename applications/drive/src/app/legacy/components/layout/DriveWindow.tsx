@@ -1,6 +1,7 @@
 import { type ReactNode, lazy, useState } from 'react';
 import { useLocation } from 'react-router-dom-v5-compat';
 
+import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner';
 import { useUser } from '@proton/account/user/hooks';
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
 import DrawerSidebar from '@proton/components/components/drawer/DrawerSidebar';
@@ -55,7 +56,12 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
         />
     ) : null;
 
-    const top = <TopBanners app={APPS.PROTONDRIVE}>{fileRecoveryBanner}</TopBanners>;
+    const top = (
+        <TopBanners app={APPS.PROTONDRIVE}>
+            <PasswordReminderTopBanner />
+            {fileRecoveryBanner}
+        </TopBanners>
+    );
 
     const drawerSettingsButton = (
         <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />

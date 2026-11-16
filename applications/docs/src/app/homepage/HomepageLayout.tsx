@@ -14,6 +14,7 @@ import SidebarListItem from '@proton/components/components/sidebar/SidebarListIt
 import SidebarListItemDiv from '@proton/components/components/sidebar/SidebarListItemDiv'
 import SidebarListItemLink from '@proton/components/components/sidebar/SidebarListItemLink'
 import SidebarNav from '@proton/components/components/sidebar/SidebarNav'
+import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner'
 import TopBanners from '@proton/components/containers/topBanners/TopBanners'
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
 import useAppTitle from '@proton/components/hooks/useAppTitle'
@@ -68,7 +69,11 @@ export function HomepageLayout({ children, reportDescriptionContext, quickSettin
     <HomepageStyleScope>
       <PrivateAppContainer
         containerRef={(el) => el?.classList.add('is-homepage')}
-        top={<TopBanners app={APPS.PROTONDOCS} />}
+        top={
+          <TopBanners app={APPS.PROTONDOCS}>
+            <PasswordReminderTopBanner />
+          </TopBanners>
+        }
         header={
           <Header
             toggleHeaderExpanded={toggleExpanded}

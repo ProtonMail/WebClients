@@ -2,6 +2,14 @@ import { type ChangeEvent, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { selectAccountRecovery } from '@proton/account/recovery/accountRecovery';
+import {
+    toggleRecoveryEmailReset,
+    toggleRecoveryPhoneReset,
+    updateRecoveryEmailValue,
+    updateRecoveryPhoneValue,
+} from '@proton/account/recovery/accountRecoveryActions';
+import { useDispatch, useSelector } from '@proton/account/store/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
@@ -16,15 +24,7 @@ import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { SETTINGS_STATUS, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import noop from '@proton/utils/noop';
 
-import { RecoveryMethodWarningModal } from '../delegatedAccess/recoveryContact/RecoveryMethodWarningModal';
-import { useDispatch, useSelector } from '../store/hooks';
-import { selectAccountRecovery } from './accountRecovery';
-import {
-    toggleRecoveryEmailReset,
-    toggleRecoveryPhoneReset,
-    updateRecoveryEmailValue,
-    updateRecoveryPhoneValue,
-} from './accountRecoveryActions';
+import { RecoveryMethodWarningModal } from './RecoveryMethodWarningModal';
 
 interface UseUpdateAccountRecoveryOptions {
     sendSettingEnabledTelemetry?: boolean;

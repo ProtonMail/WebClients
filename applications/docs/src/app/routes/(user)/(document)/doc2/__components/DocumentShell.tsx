@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import DrawerApp from '@proton/components/components/drawer/DrawerApp'
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer'
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea'
+import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner'
 import TopBanners from '@proton/components/containers/topBanners/TopBanners'
 import { APPS } from '@proton/shared/lib/constants'
 
@@ -18,7 +19,11 @@ export type DocumentShellProps = { header: ReactNode; children: ReactNode }
 export function DocumentShell({ header, children }: DocumentShellProps) {
   return (
     <PrivateAppContainer
-      top={<TopBanners app={APPS.PROTONDOCS} />}
+      top={
+        <TopBanners app={APPS.PROTONDOCS}>
+          <PasswordReminderTopBanner />
+        </TopBanners>
+      }
       header={isRunningInNativeMobileWeb() ? null : header}
       sidebar={null}
       drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}

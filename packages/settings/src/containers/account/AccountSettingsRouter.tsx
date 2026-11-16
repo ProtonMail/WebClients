@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import VerifyPasswordButton from '@proton/account-recovery/passwordReminder/VerifyPasswordButton';
+import NonPrivateRecoverySection from '@proton/account-recovery/recovery/NonPrivateRecoveySection';
 import SignInRestrictionSection from '@proton/account-security/signInRestriction/SignInRestrictionSection';
 import AuthDevicesSettings from '@proton/account-security/sso/AuthDevicesSettings';
 import { EmergencyContactSection } from '@proton/account/delegatedAccess/emergencyContact/EmergencyContactSection';
@@ -14,7 +16,6 @@ import AccessibilitySection from '@proton/components/containers/account/Accessib
 import DeleteSection from '@proton/components/containers/account/DeleteSection';
 import EmailSubscriptionSection from '@proton/components/containers/account/EmailSubscriptionSection';
 import FamilyPlanSection from '@proton/components/containers/account/FamilyPlanSection';
-import NonPrivateRecoverySection from '@proton/components/containers/account/NonPrivateRecoveySection';
 import PasswordsSection from '@proton/components/containers/account/PasswordsSection';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
@@ -215,7 +216,7 @@ const AccountSettingsRouter = ({
                         maxWidth={SettingsCardMaxWidth.Narrow}
                     >
                         <UsernameSection app={app} />
-                        <PasswordsSection />
+                        <PasswordsSection verifyPasswordButton={<VerifyPasswordButton />} />
                         <TwoFactorSection />
                         {/* The following two sections are for non-private users */}
                         <NonPrivateRecoverySection />

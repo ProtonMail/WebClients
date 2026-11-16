@@ -28,7 +28,6 @@ import PrivateMainSettingsArea from '@proton/components/containers/layout/Privat
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import LayoutsSection from '@proton/components/containers/layouts/LayoutsSection';
 import MessagesOtherSection from '@proton/components/containers/layouts/MessagesOtherSection';
-import MessagesGeneralSection from '@proton/components/containers/messages/MessagesGeneralSection';
 import MessagesSection from '@proton/components/containers/messages/MessagesSection';
 import MobileAppSettingsSection from '@proton/components/containers/mobile/MobileAppSettingsSection';
 import { OtherMailPreferencesSection } from '@proton/components/containers/otherMailPreferences/OtherMailPreferencesSection';
@@ -41,6 +40,7 @@ import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
+import MessagesGeneralSection from './MessagesGeneralSection';
 import type { getMailAppRoutes } from './routes';
 import { getHasPmMeAddress } from './routes';
 import { CategoriesViewSections } from './sections/CategoriesViewSections';

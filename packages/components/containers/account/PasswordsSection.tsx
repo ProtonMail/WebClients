@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -31,12 +32,15 @@ import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';
 import { SettingsIconRow } from './SettingsIconRow';
 import { SettingsToggleRow } from './SettingsToggleRow';
 import { SettingsValueRow } from './SettingsValueRow';
-import VerifyPasswordButton from './VerifyPasswordButton';
 import PasswordRemindersSettings from './passwordReminders/PasswordRemindersSettings';
 import InitiateSessionRecoveryModal from './sessionRecovery/InitiateSessionRecoveryModal';
 import PasswordResetAvailableAccountModal from './sessionRecovery/PasswordResetAvailableAccountModal';
 
-const PasswordsSection = () => {
+interface Props {
+    verifyPasswordButton?: ReactNode;
+}
+
+const PasswordsSection = ({ verifyPasswordButton }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [organization, loadingOrganization] = useOrganization();
@@ -258,7 +262,7 @@ const PasswordsSection = () => {
                                         label={
                                             <>
                                                 <SettingsValueRow.Label>{passwordLabel}</SettingsValueRow.Label>
-                                                <VerifyPasswordButton />
+                                                {verifyPasswordButton}
                                             </>
                                         }
                                         action={

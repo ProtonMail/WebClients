@@ -4,6 +4,7 @@ import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } fro
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -424,6 +425,7 @@ const CalendarContainerView = ({
                 </Suspense>
             )}
             <TopBanners app={APPS.PROTONCALENDAR}>
+                <PasswordReminderTopBanner />
                 <SmartBanner app={APPS.PROTONCALENDAR} />
             </TopBanners>
         </>
