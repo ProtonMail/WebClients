@@ -16,7 +16,7 @@ import SidebarListItemLink from '@proton/components/components/sidebar/SidebarLi
 import SidebarNav from '@proton/components/components/sidebar/SidebarNav'
 import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner'
 import TopBanners from '@proton/components/containers/topBanners/TopBanners'
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
+import { useIsNarrow } from './utils/useIsNarrow'
 import useAppTitle from '@proton/components/hooks/useAppTitle'
 import UserDropdown from '@proton/components/containers/heading/UserDropdown'
 import { useToggle } from './utils/useToggle'
@@ -104,7 +104,7 @@ type HeaderProps = {
 }
 
 function Header({ isHeaderExpanded, toggleHeaderExpanded, reportDescriptionContext }: HeaderProps) {
-  const { viewportWidth } = useActiveBreakpoint()
+  const isNarrow = useIsNarrow()
   const { state, type, setSearch } = useHomepageView()
   const searchValue = state.view === 'search' || state.view === 'search-empty' ? state.query : undefined
 
@@ -117,7 +117,7 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded, reportDescriptionConte
         title={c('Title').t`Docs`}
         expanded={isHeaderExpanded}
         onToggleExpand={toggleHeaderExpanded}
-        isSmallViewport={viewportWidth['<=small']}
+        isSmallViewport={isNarrow}
         actionArea={
           <>
             <MobileSearch

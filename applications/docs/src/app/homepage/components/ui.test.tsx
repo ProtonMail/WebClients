@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
-import { act, render, screen } from '@testing-library/react'
+import { act, fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { Button, IconButton } from './ui'
+import { Button, Checkbox, IconButton } from './ui'
 
 describe('IconButton', () => {
   beforeEach(() => jest.useFakeTimers())
@@ -56,5 +56,42 @@ describe('Button', () => {
     const button = screen.getByRole('button', { name: /^Accept/ })
     expect(button).toBeDisabled()
     expect(button).toHaveAttribute('aria-busy', 'true')
+  })
+})
+
+describe('Checkbox', () => {
+  it('Shows "mixed" as a native indeterminate checkbox that is not checked', () => {
+    render(<Checkbox checked="mixed" aria-label="Select all" />)
+
+    const checkbox = screen.getByRole<HTMLInputElement>('checkbox', { name: 'Select all' })
+    expect(checkbox.indeterminate).toBe(true)
+    expect(checkbox).not.toBeChecked()
+  })
+
+  it('Calls onChange when clicked and keeps the checked state it is given', async () => {
+    const onChange = jest.fn()
+    render(<Checkbox checked={false} onChange={onChange} aria-label="Select Doc" data-testid="row-checkbox" />)
+
+    await userEvent.click(screen.getByTestId('row-checkbox'))
+
+    expect(onChange).toHaveBeenCalledTimes(1)
+    expect(screen.getByRole('checkbox', { name: 'Select Doc' })).not.toBeChecked()
+  })
+
+  it('Passes a shift-click on its label to labelOnClick', () => {
+    const labelOnClick = jest.fn()
+    const { container } = render(
+      <Checkbox checked={false} expandClickArea labelOnClick={labelOnClick} aria-label="Select Doc" />,
+    )
+
+    fireEvent.click(container.querySelector('label')!, { shiftKey: true })
+
+    expect(labelOnClick).toHaveBeenCalledWith(expect.objectContaining({ shiftKey: true }))
+  })
+
+  it('Disables the native checkbox', () => {
+    render(<Checkbox checked disabled aria-label="Select Doc" />)
+
+    expect(screen.getByRole('checkbox', { name: 'Select Doc' })).toBeDisabled()
   })
 })

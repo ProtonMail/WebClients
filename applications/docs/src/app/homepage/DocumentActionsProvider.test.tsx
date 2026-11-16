@@ -2,7 +2,7 @@ import { deleteDocument, reportTrashError, restoreDocument, trashDocument } from
 import { RecentDocumentsItem } from './recentDocumentsItem'
 import { ServerTime } from './utils/serverTime'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
-import { act, renderHook, screen, waitFor } from '@testing-library/react'
+import { act, renderHook, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { type ReactNode, useContext } from 'react'
 import { DocumentActionsProvider } from './DocumentActionsProvider'
@@ -223,7 +223,7 @@ describe('DocumentActionsProvider', () => {
     ).toBeInTheDocument()
     expect(deleteDocument).not.toHaveBeenCalled()
 
-    await userEvent.click(screen.getByRole('button', { name: 'Delete permanently', hidden: true }))
+    await userEvent.click(screen.getByRole('button', { name: 'Delete permanently' }))
 
     await waitFor(() => expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_permanently_deleted))
     expect(deleteDocument).toHaveBeenCalledWith(drive, nodeUid)
@@ -231,6 +231,52 @@ describe('DocumentActionsProvider', () => {
       type: 'success',
       text: expect.stringContaining('Document deleted permanently'),
     })
+    await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument())
+  })
+
+  test('deletePermanently asks in a dialog that says it cannot be undone, with focus on its close button', async () => {
+    const { result } = renderDocumentActions()
+
+    await act(() => result.current.deletePermanently(recentDocument))
+
+    const dialog = await screen.findByRole('dialog', { name: 'Delete permanently' })
+    expect(dialog).toHaveTextContent(
+      /Are you sure you want to permanently delete "Document1" from trash\?\s*You cannot undo this action\./,
+    )
+    await waitFor(() => expect(within(dialog).getByRole('button', { name: 'Close' })).toHaveFocus())
+  })
+
+  test.each(['Cancel', 'Close'])(
+    'deletePermanently deletes nothing when the dialog is dismissed with %s',
+    async (name) => {
+      const { result, createNotification } = renderDocumentActions()
+
+      await act(() => result.current.deletePermanently(recentDocument))
+      await userEvent.click(await screen.findByRole('button', { name }))
+
+      await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument())
+      expect(deleteDocument).not.toHaveBeenCalled()
+      expect(createNotification).not.toHaveBeenCalled()
+    },
+  )
+
+  test('deletePermanently keeps the dialog open and busy until the deletion finishes', async () => {
+    const deletion = deferred()
+    jest.mocked(deleteDocument).mockReturnValue(deletion.promise)
+    const { result } = renderDocumentActions()
+
+    await act(() => result.current.deletePermanently(recentDocument))
+    await userEvent.click(await screen.findByRole('button', { name: 'Delete permanently' }))
+
+    // Its spinner adds "Loading" to the name, as Proton's does. A browser puts a space before it,
+    // since `sr-only` positions it absolutely, but tests load no CSS.
+    expect(screen.getByRole('button', { name: /^Delete permanently\s?Loading$/ })).toBeDisabled()
+    expect(screen.getByRole('button', { name: 'Cancel' })).toBeDisabled()
+    await userEvent.keyboard('{Escape}')
+    expect(screen.getByRole('dialog')).toBeInTheDocument()
+
+    await act(async () => deletion.resolve())
+    await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument())
   })
 
   test('deletePermanently failure shows an error toast and sends no telemetry', async () => {
@@ -239,7 +285,7 @@ describe('DocumentActionsProvider', () => {
     const { result, createNotification, reportTelemetry } = renderDocumentActions()
 
     await act(() => result.current.deletePermanently(recentDocument))
-    await userEvent.click(await screen.findByRole('button', { name: 'Delete permanently', hidden: true }))
+    await userEvent.click(await screen.findByRole('button', { name: 'Delete permanently' }))
 
     await waitFor(() =>
       expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to delete document' }),

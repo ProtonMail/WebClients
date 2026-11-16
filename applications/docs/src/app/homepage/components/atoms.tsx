@@ -113,6 +113,12 @@ const buttonPaddingClassNames: Record<
   },
 }
 
+// Proton's ButtonLike.scss: a loading text button makes room at its end for the spinner.
+const loadingTextClassNames: Record<NonNullable<ButtonOptions['size']>, { padding: string; spinner: string }> = {
+  small: { padding: 'pe-[calc(32em/14)]', spinner: 'end-[calc(10em/14)]' },
+  medium: { padding: 'pe-[calc(40em/14)]', spinner: 'end-[calc(12em/14)]' },
+}
+
 /**
  * Whether `className` has a utility, without a variant such as `hover:`, starting with one of `prefixes`.
  * Tailwind orders two utilities for the same property by its own rules, not by class order,
@@ -162,15 +168,19 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         !classNameSetsUtility(className, ['p-', 'py-']) && padding.y,
         !classNameSetsUtility(className, ['rounded']) && 'rounded-[--border-radius-md]',
         icon && '[&>svg]:block',
-        // shortcut: the spinner covers the content, as Proton's does for icon buttons; give a text button
-        // Proton's end padding for the spinner when one needs `loading`.
-        loading && 'relative [&>svg]:opacity-0',
+        // As Proton's, the spinner covers an icon button's icon, and sits at the end of a text button.
+        loading && clsx('relative', icon ? '[&>svg]:opacity-0' : loadingTextClassNames[size].padding),
         className,
       )}
     >
       {children}
       {loading && (
-        <span className="absolute inset-0 flex items-center justify-center">
+        <span
+          className={clsx(
+            'absolute flex items-center justify-center',
+            icon ? 'inset-0' : clsx('inset-y-0', loadingTextClassNames[size].spinner),
+          )}
+        >
           <CircleLoader />
         </span>
       )}

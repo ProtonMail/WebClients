@@ -1,8 +1,7 @@
 import * as Ariakit from '@ariakit/react'
 import { Avatar, Input } from '../components/atoms'
-import { Button, IconButton, Tooltip, TooltipProvider } from '../components/ui'
-import Checkbox from '@proton/components/components/input/Checkbox'
-import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
+import { Button, Checkbox, IconButton, Tooltip, TooltipProvider } from '../components/ui'
+import { useIsNarrow } from '../utils/useIsNarrow'
 import type { RecentDocumentsItem } from '../recentDocumentsItem'
 import type { DateFormatter } from '../utils/dateFormatter'
 import { SDK_SWITCH_INITIATIVE } from '../utils/errorTracking'
@@ -91,7 +90,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
     currentDocument !== undefined &&
     selection.isSelected(currentDocument.uniqueId())
   // The title is hidden on mobile, so the selection controls move to the head, like in Drive.
-  const isNarrow = useActiveBreakpoint().viewportWidth['<=small']
+  const isNarrow = useIsNarrow()
   const hasSelectionControls = selectableIds.length > 0
 
   const label = isRecents || isSearch ? recentsLabelByType(type) : c('Info').t`Trash`
@@ -211,8 +210,7 @@ type SelectAllCheckboxProps = { selection: RowSelection; isTrashing: boolean }
 function SelectAllCheckbox({ selection, isTrashing }: SelectAllCheckboxProps) {
   return (
     <Checkbox
-      checked={selection.allState === 'all'}
-      indeterminate={selection.allState === 'some'}
+      checked={selection.allState === 'some' ? 'mixed' : selection.allState === 'all'}
       onChange={selection.toggleAll}
       disabled={isTrashing}
       aria-label={c('Label').t`Select all`}
@@ -540,9 +538,8 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
               {isSelectable && (
                 <Checkbox
                   // Like Drive, the whole cell is clickable.
-                  className="expand-click-area"
+                  expandClickArea
                   checked={isSelected}
-                  readOnly
                   onClick={(event) => {
                     if (!event.shiftKey) {
                       selection.toggle(document.uniqueId())

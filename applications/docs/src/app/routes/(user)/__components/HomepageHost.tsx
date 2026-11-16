@@ -23,6 +23,7 @@ import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
 import { getDocsReportContextLines } from '~/utils/report-context'
 import { DocsQuickSettings } from '~/components/DocsQuickSettings'
 import { useHomepageInvitations } from './HomepageInvitations'
+import { withNotificationAction } from './withNotificationAction'
 
 const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 
@@ -42,6 +43,7 @@ export function HomepageHost({ application }: HomepageHostProps) {
   const api = useApi()
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
   const { createNotification } = useNotifications()
+  const createHomepageNotification = useMemo(() => withNotificationAction(createNotification), [createNotification])
   const { getLocalID } = useAuthentication()
   const getAppHrefForUser = useCallback(
     (path: string, app: APP_NAMES) => getAppHref(path, app, getLocalID()),
@@ -89,7 +91,7 @@ export function HomepageHost({ application }: HomepageHostProps) {
             api={api}
             logger={application.logger}
             reportTelemetry={reportHomepageTelemetry}
-            createNotification={createNotification}
+            createNotification={createHomepageNotification}
             getAppHref={getAppHrefForUser}
             dateLocaleCode={dateLocale.code}
             errorTracking={homepageErrorTracking}
