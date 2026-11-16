@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { dismissPasswordReminder, submitPasswordReminder } from '@proton/account/passwordReminder';
-import PasswordReminderInput from '@proton/account/passwordReminder/PasswordReminderInput';
 import type { PasswordReminderSource } from '@proton/account/passwordReminder/passwordReminderTelemetry';
 import { usePasswordReminderTelemetry } from '@proton/account/passwordReminder/passwordReminderTelemetry';
 import { useDispatch } from '@proton/account/store/hooks';
@@ -30,6 +29,7 @@ import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/inter
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import PasswordReminderInput from './PasswordReminderInput';
 import lock from './lock.svg';
 
 interface PasswordReminderModalProps extends ModalProps<'form'> {
