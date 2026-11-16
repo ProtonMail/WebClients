@@ -19,7 +19,7 @@ const calendar = { ID: 'calendar-id', Members: [member] } as CalendarWithOwnMemb
 const otherCalendar = { ID: 'other-calendar-id', Members: [] as CalendarMember[] } as CalendarWithOwnMembers;
 
 const setup = ({ calendars = [calendar, otherCalendar] }: { calendars?: CalendarWithOwnMembers[] } = {}) => {
-    const api = jest.fn().mockImplementation(({ url }: { url: string }) => {
+    const api = vi.fn().mockImplementation(({ url }: { url: string }) => {
         if (url === 'calendar/v1/calendar-id') {
             return Promise.resolve({ Calendar: { ID: 'calendar-id' } });
         }
@@ -56,7 +56,7 @@ const setup = ({ calendars = [calendar, otherCalendar] }: { calendars?: Calendar
         store.dispatch(calendarEventLoopV6({ event: event as CalendarEventV6Response, promises }));
         await Promise.all(promises);
     };
-    const urlsCalled = () => api.mock.calls.map(([request]: [{ url: string }]) => request.url);
+    const urlsCalled = () => api.mock.calls.map(([request]: any[]) => request.url as string);
 
     return { store, fire, urlsCalled };
 };

@@ -9,17 +9,17 @@ import { MAX_BOOKING_PAGES } from '../eligibility';
 import { useInternalBooking } from './hooks';
 import { BookingCreateAction, useBookingUpsell } from './useBookingUpsell';
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = jest.mocked(useUser);
+vi.mock('@proton/account/user/hooks');
+const mockUseUser = vi.mocked(useUser);
 
-jest.mock('@proton/account/organization/hooks');
-const mockUseOrganization = jest.mocked(useOrganization);
+vi.mock('@proton/account/organization/hooks');
+const mockUseOrganization = vi.mocked(useOrganization);
 
-jest.mock('./hooks');
-const mockUseInternalBooking = jest.mocked(useInternalBooking);
+vi.mock('./hooks');
+const mockUseInternalBooking = vi.mocked(useInternalBooking);
 
-jest.mock('@proton/account/subscription/hooks');
-const mockUseSubscription = jest.mocked(useSubscription);
+vi.mock('@proton/account/subscription/hooks');
+const mockUseSubscription = vi.mocked(useSubscription);
 
 const mockBookingPage = (id: string) => ({
     id,
@@ -42,7 +42,7 @@ describe('useBookingUpsell', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('shouldShowLimitModal', () => {
