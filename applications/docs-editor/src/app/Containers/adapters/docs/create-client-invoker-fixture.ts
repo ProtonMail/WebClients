@@ -1,15 +1,24 @@
 import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
-import { createStandaloneDocClient } from '../../../../standalone-doc/client'
 
 /** The shell adapter still accepts the shared host bridge; the editor does not. */
 export function createClientInvokerFixture(): EditorRequiresClientMethods {
   return {
-    ...createStandaloneDocClient('local@example.test', () => () => {}),
-    // The standalone client answers in the editor's own comment contract, which the host's is wider than.
     getAllThreads: jest.fn(async () => []),
     createComment: jest.fn(async () => undefined),
     createCommentThread: jest.fn(async () => undefined),
     createSuggestionThread: jest.fn(async () => undefined),
+    getTypersExcludingSelf: jest.fn(async () => []),
+    beganTypingInThread: jest.fn(async () => {}),
+    stoppedTypingInThread: jest.fn(async () => {}),
+    editComment: jest.fn(async () => true),
+    deleteComment: jest.fn(async () => true),
+    resolveThread: jest.fn(async () => true),
+    unresolveThread: jest.fn(async () => true),
+    acceptSuggestion: jest.fn(async () => true),
+    rejectSuggestion: jest.fn(async () => true),
+    reopenSuggestion: jest.fn(async () => true),
+    deleteThread: jest.fn(async () => true),
+    markThreadAsRead: jest.fn(async () => {}),
     editorRequestsPropagationOfUpdate: jest.fn(async () => {}),
     editorReportingEvent: jest.fn(async () => {}),
     editorReportingTelemetry: jest.fn(async () => {}),

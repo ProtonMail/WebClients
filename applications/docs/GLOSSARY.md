@@ -47,7 +47,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 ## Editor architecture
 
 - **Host shell**: the editor code outside the standalone editors (`editor/Bridge/`, `editor/Lib/`, `editor/Containers/App.tsx`). It knows about the client and the bridge.
-- **Standalone editor**: `StandaloneDocsEditor` (`@proton-docs/docs-editor`) and `StandaloneSheetsEditor` (`@proton-docs/sheets-editor`), the host-independent editors. `src/standalone-doc` and `src/standalone-sheet` run them on localhost without the client, bridge or RTS.
+- **Standalone editor**: `StandaloneDocsEditor` (`@proton-docs/docs-editor`) and `StandaloneSheetsEditor` (`@proton-docs/sheets-editor`), the host-independent editors.
 - **Adapter** (`DocsAdapter` / `SheetsAdapter`, `editor/Containers/adapters/`): the boundary that turns the bridge, the editor `Application` and synced state into a standalone editor's dependencies.
 - **`DocsDependencies` / `SheetsDependencies`**: everything host-provided that a standalone editor uses (logger, `reportError`, comments, flags, messages...), read with `useDocsDependencies()` / `useSheetsDependencies()`.
 - **`public.ts` / `contract/`**: an editor package's export surface (in `docs-editor/` and `sheets-editor/`), and the host-facing types copied into it so it doesn't depend on docs-shared or docs-core.
