@@ -854,6 +854,15 @@
       ],
       "Ignore": [
         "Ignorar"
+      ],
+      "Add address": [
+        "Adicionar endereço"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Recolher alertas do Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Expandir alertas do Pass Monitor"
       ]
     },
     "Activity": {
@@ -1027,6 +1036,9 @@
       "${ count } more": [
         "${ count } mais",
         "${ count } mais"
+      ],
+      "This login uses the same password as another item.": [
+        "Este login usa a mesma senha que outro item."
       ]
     },
     "Email": {
@@ -1613,6 +1625,9 @@
       ],
       "Failed to move folder": [
         "Não foi possível mover a pasta"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Falha ao atualizar o status de monitoramento para este item"
       ]
     },
     "Error message": {
@@ -3403,6 +3418,12 @@
       ],
       "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
         "Sua organização não permite usar chaves de acesso armazenadas no ${ PASS_APP_NAME }"
+      ],
+      "Alert restored": [
+        "Alerta restaurado"
+      ],
+      "Check ignored": [
+        "Verificação ignorada"
       ]
     },
     "Keyboard key": {

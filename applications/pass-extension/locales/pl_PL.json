@@ -813,6 +813,27 @@
       ],
       "Ignore": [
         "Ignoruj"
+      ],
+      "Add address": [
+        "Dodaj adres"
+      ],
+      "Bulk select items": [
+        "Hurtowe wybieranie elementów"
+      ],
+      "Download for Linux": [
+        "Pobierz dla Linuksa"
+      ],
+      "Move folder": [
+        "Przenieś folder"
+      ],
+      "Multiple select": [
+        "Wybór wielokrotny"
+      ],
+      "Open platform selection dropdown": [
+        "Otwórz listę wyboru platformy"
+      ],
+      "Sign in in the app instead": [
+        "Zamiast tego, zaloguj się w aplikacji"
       ]
     },
     "Activity": {
@@ -966,6 +987,18 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Twoje dane osobowe zostały ujawnione w wycieku danych przez usługi stron trzecich."
+      ],
+      "Change these passwords immediately": [
+        "Niezwłocznie zmień te hasła"
+      ],
+      "Check if your passwords have been exposed": [
+        "Sprawdź, czy hasła zostały ujawnione"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Sprawdzanie ${ compromised.progress.completed } z ${ compromised.progress.total }"
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "To hasło logowania zostało znalezione pośród danych ujawnionych w wyniku naruszenia bezpieczeństwa. Należy zalogować się do usługi i zmienić hasło."
       ]
     },
     "Email": {
@@ -1528,6 +1561,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kod PIN został usunięty przez inną aplikację ${ PASS_APP_NAME }"
+      ],
+      "Failed to move folder": [
+        "Nie udało się przenieść folderu"
       ]
     },
     "Error message": {
@@ -3081,6 +3117,27 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizacja wymaga zabezpieczenia dostępu do ${ PASS_APP_NAME }"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Dodaj metodę płatności, aby subskrypcja była kontynuowana po zakończeniu okresu próbnego."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Sprawdzanie ${ compromised.progress.completed } z ${ compromised.progress.total } haseł"
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Folder „${ payload.folder.name }” został przeniesiony"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich bezpiecznych linków."
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Skanuj, aby pobrać ${ PASS_APP_NAME } dla iOS i Androida."
+      ],
+      "The folder is already here": [
+        "Folder już tu jest"
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Przy przenoszeniu elementów między sejfami, zachowanych zostanie 50 ostatnich edycji dla każdego z nich."
       ]
     },
     "Keyboard key": {
@@ -4327,6 +4384,18 @@
       ],
       "ZIP or Postal code": [
         "Kod pocztowy"
+      ],
+      "Add a payment method": [
+        "Dodaj metodę płatności"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5407,6 +5476,27 @@
         "Zamierzasz trwale usunąć ${ aliasCount } aliasy.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów."
+      ],
+      "Compromised password": [
+        "Ujawnione hasło"
+      ],
+      "Compromised passwords": [
+        "Ujawnione hasła"
+      ],
+      "Get mobile apps": [
+        "Pobierz aplikacje mobilne"
+      ],
+      "Keep your subscription active": [
+        "Zachowaj aktywną subskrypcję"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Przenieść folder „${ folderName }” do"
+      ],
+      "No compromised passwords": [
+        "Nie znaleziono ujawnionych haseł"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Ulepsz, aby sprawdzić, czy hasła zostały ujawnione."
       ]
     },
     "Title_cloned_item": {
@@ -5779,6 +5869,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Ulepsz plan, aby importować do wielu sejfów."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Przeniesienie folderu spowodowałoby przekroczenie maksymalnego poziomu zagnieżdżenia folderów"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Folderu nie można przenieść do siebie samego lub jego podfolderu."
       ]
     }
   }

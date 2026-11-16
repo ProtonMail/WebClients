@@ -858,6 +858,15 @@
       ],
       "Ignore": [
         "Ігнараваць"
+      ],
+      "Add address": [
+        "Дадаць адрас"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Згарнуць абвесткі Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Разгарнуць абвесткі Pass Monitor"
       ]
     },
     "Activity": {
@@ -1886,6 +1895,9 @@
       ],
       "CSV...": [
         "CSV..."
+      ],
+      "Click ${ exportLabel }.": [
+        "Націсніце ${ exportLabel }"
       ]
     },
     "Info": {
@@ -3442,6 +3454,9 @@
       ],
       "Check ignored": [
         "Праверка праігнаравана"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Сканіруйце, каб спампаваць ${ PASS_APP_NAME } для iOS і Android"
       ]
     },
     "Keyboard key": {
@@ -6389,6 +6404,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Нельга перамясціць папку ў саму сябе або яе падпапкі"
       ]
     }
   }

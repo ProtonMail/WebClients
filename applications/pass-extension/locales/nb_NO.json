@@ -854,6 +854,15 @@
       ],
       "Ignore": [
         "Ignorer"
+      ],
+      "Add address": [
+        "Legg til adresse"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Skjul Pass Monitor-varsler"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Vis Pass Monitor-varsler"
       ]
     },
     "Activity": {
@@ -1023,6 +1032,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Din personlige informasjon ble lekket i et datainnbrudd på en tredjepartstjeneste."
+      ],
+      "${ count } more": [
+        "${ count } til",
+        "${ count } til"
+      ],
+      "This login uses the same password as another item.": [
+        "Denne påloggingen bruker samme passord som et annet element."
       ]
     },
     "Email": {
@@ -1609,6 +1625,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Kunne ikke oppdatere overvåkingsstatus for dette elementet"
       ]
     },
     "Error message": {
@@ -1861,6 +1880,9 @@
       ],
       "CSV...": [
         "CSV..."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "Åpne ${ name } og velg ${ file } → ${ exportLabel } → ${ csv }."
       ]
     },
     "Info": {
@@ -3396,6 +3418,12 @@
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi det andre passordet ditt."
+      ],
+      "Alert restored": [
+        "Varselet er gjenopprettet"
+      ],
+      "Check ignored": [
+        "Sjekk ignorert"
       ]
     },
     "Keyboard key": {
@@ -5870,6 +5898,15 @@
       ],
       "Move all items to \"${ target }\"?": [
         "Flytt alle elementer til \"${ target }\"?"
+      ],
+      "Missing 2FA": [
+        "Mangler 2FA"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Gjenbrukt passord"
       ]
     },
     "Title_cloned_item": {

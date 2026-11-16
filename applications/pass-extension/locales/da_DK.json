@@ -854,6 +854,15 @@
       ],
       "Ignore": [
         "Ignorer"
+      ],
+      "Add address": [
+        "Tilføj adresse"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Skjul advarsler fra Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Vis advarsler fra Pass Monitor"
       ]
     },
     "Activity": {
@@ -1023,6 +1032,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Dine personlige oplysninger blev lækket i et databrud hos en tredjepartstjeneste."
+      ],
+      "${ count } more": [
+        "${ count } mere",
+        "${ count } mere"
+      ],
+      "This login uses the same password as another item.": [
+        "Dette login bruger den samme adgangskode, som et andet element."
       ]
     },
     "Email": {
@@ -1609,6 +1625,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Der skete en fejl med at opdatere status for overvågningen på dette element"
       ]
     },
     "Error message": {
@@ -1855,6 +1874,15 @@
       ],
       "your username": [
         "dit brugernavn"
+      ],
+      "Click ${ exportLabel }.": [
+        "Klik ${ exportLabel }."
+      ],
+      "CSV...": [
+        "CSV..."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "Åbn ${ name } og vælg ${ file } → ${ exportLabel } → ${ csv }."
       ]
     },
     "Info": {
@@ -3390,6 +3418,12 @@
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "Det kræver din anden adgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "Alert restored": [
+        "Advarsel gendannet"
+      ],
+      "Check ignored": [
+        "Tjek ignoreret"
       ]
     },
     "Keyboard key": {
@@ -5864,6 +5898,15 @@
       ],
       "Move all items to \"${ target }\"?": [
         "Flyt alle elementer til \"${ target }\"?"
+      ],
+      "Missing 2FA": [
+        "Mangler 2FA"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Genbrugt adgangskode"
       ]
     },
     "Title_cloned_item": {
