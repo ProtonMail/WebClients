@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/app-context/useNotifications';
 import Loader from '@proton/components/components/loader/Loader';
 import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { NodeType, ValidationError, getDrive, splitNodeUid } from '@proton/drive/sdk';
@@ -28,7 +27,6 @@ export function FolderContainer() {
     const { shareId, linkId } = useParams<DriveSectionRouteProps>();
     const { setFolder } = useActiveShare();
     const [nodeUid, setNodeUid] = useState<string | undefined>();
-    const { createNotification } = useNotifications();
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -72,11 +70,7 @@ export function FolderContainer() {
                     });
                     return;
                 }
-                console.error(Error.isError(err) ? err.message : 'Unknown issue while retrieving the folder');
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`We cannot retrieve this item`,
-                });
+                handleSdkError(err, { fallbackMessage: c('Error').t`We cannot retrieve this item` });
                 navigateToRoot();
             }
         });
@@ -84,7 +78,7 @@ export function FolderContainer() {
         return () => {
             abortController.abort();
         };
-    }, [shareId, linkId, withLoading, navigateToRoot, setFolder, handleContextShare, createNotification]);
+    }, [shareId, linkId, withLoading, navigateToRoot, setFolder, handleContextShare]);
 
     const treeEventScopeId = useFolderStore((state) => state.treeEventScopeId);
 
