@@ -1,7 +1,9 @@
 import type { FC } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 
-import { Button } from '@proton/atoms/Button/Button';
+import { c } from 'ttag';
+
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import ReadableDate from '@proton/components/containers/credentialLeak/ReadableDate';
@@ -34,11 +36,20 @@ export const BreachListRow: FC<Props> = ({ breach: { id, name, publishedAt, seve
             </TableCell>
             <TableCell>
                 <div className="flex justify-end">
-                    <Link to={breachHref} onClick={(evt) => evt.stopPropagation()}>
-                        <Button pill size="small" shape="ghost" type="button">
-                            <IcChevronRight />
-                        </Button>
-                    </Link>
+                    <ButtonLike
+                        as={Link}
+                        // ButtonLike adds role="button" when as={Link} has onClick; this renders an <a>, so restore its link role
+                        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+                        role="link"
+                        to={breachHref}
+                        onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
+                        aria-label={c('Action').t`View details`}
+                        pill
+                        size="small"
+                        shape="ghost"
+                    >
+                        <IcChevronRight />
+                    </ButtonLike>
                 </div>
             </TableCell>
         </TableRow>

@@ -1,6 +1,8 @@
 import type { ElementType, ForwardedRef } from 'react';
 import { forwardRef, useContext } from 'react';
 
+import { c } from 'ttag';
+
 import type { ButtonLikeOwnProps, ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
@@ -46,7 +48,7 @@ const NotificationButton: PolymorphicForwardRefExoticComponent<NotificationOwnPr
 
 export const NotificationCloseButton = ({ onClick }: { onClick?: () => void }) => {
     return (
-        <NotificationButton icon onClick={onClick} close>
+        <NotificationButton aria-label={c('Action').t`Dismiss notification`} icon onClick={onClick} close>
             <IcCrossBig data-testid="notification:close-button" />
         </NotificationButton>
     );

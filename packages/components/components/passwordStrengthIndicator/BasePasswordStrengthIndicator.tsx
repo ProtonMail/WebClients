@@ -169,13 +169,25 @@ const GeneratePassword = ({ onGeneratePassword, generatedPassword }: GeneratePas
                     value={generatedPassword}
                     suffix={
                         <>
-                            <Tooltip title={c('Action').t`Create new password`}>
-                                <Button icon size="small" shape="ghost" onClick={handleGeneratePassword}>
+                            <Tooltip title={c('Action').t`Create new password`} describeChild={false}>
+                                <Button
+                                    aria-label={c('Action').t`Create new password`}
+                                    icon
+                                    size="small"
+                                    shape="ghost"
+                                    onClick={handleGeneratePassword}
+                                >
                                     <IcArrowsRotate className="shrink-0" />
                                 </Button>
                             </Tooltip>
-                            <Tooltip title={c('Action').t`Copy password`}>
-                                <Button icon size="small" shape="ghost" onClick={handleCopy}>
+                            <Tooltip title={c('Action').t`Copy password`} describeChild={false}>
+                                <Button
+                                    aria-label={c('Action').t`Copy password`}
+                                    icon
+                                    size="small"
+                                    shape="ghost"
+                                    onClick={handleCopy}
+                                >
                                     <IcSquares className="shrink-0" />
                                 </Button>
                             </Tooltip>

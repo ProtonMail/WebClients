@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { c } from 'ttag';
+
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Radio from '@proton/components/components/input/Radio';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -106,6 +108,7 @@ function DirectoryTreeBranch({
     };
 
     const isSelected = selectedTreeId === item.treeItemId;
+    const itemName = item.name;
     const handleSelect = () => onSelect(item.treeItemId, item);
 
     const isCollapsed = item.children === null;
@@ -134,6 +137,7 @@ function DirectoryTreeBranch({
                             disabled={isLoading}
                             type="button"
                             aria-expanded={isCollapsed ? 'false' : 'true'}
+                            aria-label={c('Action').t`Toggle subfolders of ${itemName}`}
                         >
                             <IcChevronUp className="border border-norm rounded-50" />
                         </button>

@@ -277,6 +277,7 @@ const TwoFactorSection = () => {
                                     </div>
                                     {registeredKeys.map((registeredKey) => {
                                         const id = getId(registeredKey);
+                                        const keyName = registeredKey.Name;
                                         const isCompromised = hasBit(
                                             registeredKey.Flags,
                                             Fido2CredentialFlags.Compromised
@@ -300,6 +301,7 @@ const TwoFactorSection = () => {
                                                 </div>
                                                 <ButtonGroup size="small">
                                                     <Button
+                                                        aria-label={c('Action').t`Edit security key ${keyName}`}
                                                         icon
                                                         data-testid="fido2:edit-key"
                                                         onClick={() => {
@@ -313,6 +315,7 @@ const TwoFactorSection = () => {
                                                         <IcPen />
                                                     </Button>
                                                     <Button
+                                                        aria-label={c('Action').t`Delete security key ${keyName}`}
                                                         icon
                                                         data-testid="fido2:delete-key"
                                                         onClick={() => {

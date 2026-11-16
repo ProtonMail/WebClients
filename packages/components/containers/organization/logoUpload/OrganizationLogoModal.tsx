@@ -281,7 +281,14 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                             </span>
                         </div>
                     )}
-                    <Button onClick={removeLogo} shape="ghost" size="small" icon className="top-0 right-0 absolute">
+                    <Button
+                        aria-label={c('Action').t`Remove logo`}
+                        onClick={removeLogo}
+                        shape="ghost"
+                        size="small"
+                        icon
+                        className="top-0 right-0 absolute"
+                    >
                         <IcCross />
                     </Button>
                 </div>

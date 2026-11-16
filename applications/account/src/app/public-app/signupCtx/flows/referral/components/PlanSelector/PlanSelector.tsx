@@ -68,12 +68,14 @@ const getAdjacentPlan = (
 
 const CarouselButton = ({ direction, onClick }: { direction: 'left' | 'right'; onClick: () => void }) => {
     const ChevronIcon = direction === 'left' ? IcChevronLeft : IcChevronRight;
+    const label = direction === 'left' ? c('Action').t`Previous plan` : c('Action').t`Next plan`;
     return (
         <Button
             shape="outline"
             size="medium"
             icon
             pill
+            aria-label={label}
             className={clsx(
                 'PlanSelector-carouselButton absolute hidden lg:block rtl:mirror',
                 `PlanSelector-carouselButton--${direction}`

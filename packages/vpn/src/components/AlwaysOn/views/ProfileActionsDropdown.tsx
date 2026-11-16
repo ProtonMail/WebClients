@@ -18,7 +18,15 @@ export const ProfileActionsDropdown = ({ onReconfigure, onRemove }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     return (
         <>
-            <DropdownButton icon ref={anchorRef} isOpen={isOpen} onClick={toggle} shape="ghost" size="large">
+            <DropdownButton
+                aria-label={c('Action').t`More options`}
+                icon
+                ref={anchorRef}
+                isOpen={isOpen}
+                onClick={toggle}
+                shape="ghost"
+                size="large"
+            >
                 <IcThreeDotsVertical />
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-end">

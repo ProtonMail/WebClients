@@ -131,7 +131,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
         <Layout>
             <section className="max-w-custom" style={{ '--max-w-custom': '25rem' }}>
                 <div className="flex items-center justify-space-between mb-12">
-                    <Button shape="ghost" icon pill onClick={handleBack}>
+                    <Button aria-label={c('Action').t`Back`} shape="ghost" icon pill onClick={handleBack}>
                         <IcArrowLeft size={6} />
                     </Button>
                     <div className="text-center">

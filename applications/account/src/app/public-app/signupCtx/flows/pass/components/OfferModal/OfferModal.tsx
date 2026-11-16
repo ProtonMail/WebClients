@@ -37,7 +37,14 @@ export const OfferModal: FC<OfferModalProps> = ({ checkoutUi, loading, onClose, 
                         <IcHourglass />
                         <span className="ml-1 text-bold">{c('Label').t`Special Offer!`}</span>
                     </div>
-                    <Button className="absolute right-0" shape="ghost" icon pill onClick={onClose}>
+                    <Button
+                        aria-label={c('Action').t`Close`}
+                        className="absolute right-0"
+                        shape="ghost"
+                        icon
+                        pill
+                        onClick={onClose}
+                    >
                         <IcCross size={5} />
                     </Button>
                 </div>

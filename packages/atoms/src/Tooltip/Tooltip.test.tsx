@@ -35,6 +35,36 @@ describe('Tooltip', () => {
         expect(screen.getByTestId('tooltip')).toHaveTextContent('World');
     });
 
+    it('should describe the child with the tooltip by default', () => {
+        render(
+            <Tooltip title="World">
+                <button type="button" aria-describedby="existing">
+                    Hello
+                </button>
+            </Tooltip>
+        );
+        const ids = screen.getByRole('button').getAttribute('aria-describedby')?.split(' ');
+        expect(ids).toHaveLength(2);
+        expect(ids?.[0]).toBe('existing');
+    });
+
+    it('should not describe the child when describeChild is false', () => {
+        render(
+            <>
+                <Tooltip title="World" describeChild={false}>
+                    <button type="button">Hello</button>
+                </Tooltip>
+                <Tooltip title="World" describeChild={false}>
+                    <button type="button" aria-describedby="existing">
+                        Other
+                    </button>
+                </Tooltip>
+            </>
+        );
+        expect(screen.getByRole('button', { name: 'Hello' })).not.toHaveAttribute('aria-describedby');
+        expect(screen.getByRole('button', { name: 'Other' })).toHaveAttribute('aria-describedby', 'existing');
+    });
+
     it('should not show tooltip when not open', () => {
         render(
             <Tooltip title={<span data-testid="tooltip">World</span>} isOpen={false}>

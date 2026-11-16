@@ -179,6 +179,7 @@ const MiniCalendar = ({
                     <Tooltip title={todayTitle}>
                         <Button
                             icon
+                            aria-label={c('Action').t`Go to today`}
                             shape="ghost"
                             color={miniCalendarNextPrevButtonsColor}
                             size="small"

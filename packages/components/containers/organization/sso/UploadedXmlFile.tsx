@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
@@ -18,7 +20,13 @@ const UploadedXmlFile = ({ file, onRemoveClick }: Props) => {
                 <span className="text-ellipsis">{file.name}</span>
                 <span className="color-weak shrink-0">{shortHumanSize(file.size)}</span>
             </div>
-            <Button className="shrink-0" icon shape="ghost" onClick={onRemoveClick}>
+            <Button
+                aria-label={c('Action').t`Remove file`}
+                className="shrink-0"
+                icon
+                shape="ghost"
+                onClick={onRemoveClick}
+            >
                 <IcCrossBig />
             </Button>
         </div>

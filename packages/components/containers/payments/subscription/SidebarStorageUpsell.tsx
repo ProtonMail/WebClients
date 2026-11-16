@@ -180,6 +180,7 @@ const SidebarStorageUpsell = ({ app }: Props) => {
             <div className="mb-2 flex justify-space-between">
                 <img src={data.icon} alt="" />
                 <Button
+                    aria-label={c('Action').t`Dismiss`}
                     icon
                     shape="ghost"
                     size="small"

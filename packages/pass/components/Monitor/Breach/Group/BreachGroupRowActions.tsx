@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
@@ -86,14 +87,20 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
     }
 
     return (
-        <Link
+        <ButtonLike
+            as={Link}
+            // ButtonLike adds role="button" when as={Link} has onClick; this renders an <a>, so restore its link role
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+            role="link"
             className="shrink-0"
             to={getLocalPath(`monitor/dark-web/${row.type}/${getAddressId(row)}`)}
-            onClick={(evt) => evt.stopPropagation()}
+            onClick={(evt: React.MouseEvent) => evt.stopPropagation()}
+            aria-label={c('Action').t`View details`}
+            pill
+            size="small"
+            shape="ghost"
         >
-            <Button pill size="small" shape="ghost" type="button">
-                <IcChevronRight />
-            </Button>
-        </Link>
+            <IcChevronRight />
+        </ButtonLike>
     );
 };

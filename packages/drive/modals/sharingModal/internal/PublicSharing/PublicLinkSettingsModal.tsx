@@ -124,7 +124,7 @@ const PublicLinkSettingsModal = ({
                     data-testid="modal-two-header"
                 >
                     <div className="flex items-center flex-nowrap gap-2">
-                        <Button color="weak" shape="ghost" icon onClick={onClose}>
+                        <Button aria-label={c('Action').t`Back`} color="weak" shape="ghost" icon onClick={onClose}>
                             <IcArrowLeft />
                         </Button>
                         <span className="modal-two-header-title h4 text-bold">{c('Title')

@@ -48,6 +48,7 @@ export const ApplicationLogs: FC<Props> = ({ opened, style }) => {
                 <>
                     {!opened && (
                         <Button
+                            aria-label={c('Action').t`Close`}
                             className="absolute top-0 right-0 mt-3 mr-2 z-0"
                             color="weak"
                             icon

@@ -1,5 +1,7 @@
 import type { FC } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button/Button';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 
@@ -11,7 +13,16 @@ export const CustomAddressAddButton: FC = () => {
     const disabled = breaches.data.custom.length >= MAX_CUSTOM_ADDRESSES;
 
     return (
-        <Button icon pill size="small" shape="solid" color="weak" disabled={disabled} onClick={addAddress}>
+        <Button
+            aria-label={c('Action').t`Add address`}
+            icon
+            pill
+            size="small"
+            shape="solid"
+            color="weak"
+            disabled={disabled}
+            onClick={addAddress}
+        >
             <IcPlus />
         </Button>
     );
