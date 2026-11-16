@@ -64,11 +64,12 @@ export const SkillLumoBrief = ({ value, onValue, onSubmit }: SkillLumoBriefProps
         </div>
         <div className="skill-lumo-prompt p-3">
             <TextAreaTwo
+                dir="auto"
                 unstyled
                 autoGrow
                 minRows={5}
                 rows={10}
-                className="skill-lumo-prompt__input"
+                className="skill-lumo-prompt__input p-0"
                 value={value}
                 onValue={onValue}
                 placeholder={c('collider_2025:Placeholder')
@@ -156,6 +157,7 @@ export const SkillLumoPrompt = ({
             </div>
             <div className="flex flex-nowrap items-end gap-2">
                 <TextAreaTwo
+                    dir="auto"
                     unstyled
                     autoGrow
                     minRows={1}

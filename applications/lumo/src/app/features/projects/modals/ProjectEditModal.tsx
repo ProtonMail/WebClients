@@ -71,6 +71,7 @@ export const ProjectEditModal = ({
                     <IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />
 
                     <InputFieldTwo
+                        dir="auto"
                         {...name.bind}
                         id="project-name"
                         className="unstyled-field"
@@ -90,6 +91,7 @@ export const ProjectEditModal = ({
                     {c('collider_2025:Label').t`Instructions`}
                 </label>
                 <TextAreaTwo
+                    dir="auto"
                     {...instructions.bind}
                     id="project-instructions"
                     className="border border-weak rounded-lg"

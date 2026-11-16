@@ -125,6 +125,7 @@ export const AgentPickerModal = ({ conversationId }: AgentPickerModalProps) => {
                 <ModalTwoHeader title={c('collider_2025:Title').t`Custom ${LUMO_SHORT_APP_NAME}s`} />
                 <ModalTwoContent>
                     <InputFieldTwo
+                        dir="auto"
                         placeholder={c('collider_2025:Placeholder').t`Search custom ${LUMO_SHORT_APP_NAME}`}
                         value={search}
                         onValue={setSearch}

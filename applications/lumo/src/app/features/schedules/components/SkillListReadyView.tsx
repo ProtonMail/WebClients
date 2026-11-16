@@ -74,6 +74,7 @@ export const SkillListReadyView = ({ commands, value, onChange, buttonRef }: Ski
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                 <div className="shrink-0 w-full px-4 py-2" onClick={(event) => event.stopPropagation()}>
                     <Input
+                        dir="auto"
                         className="w-full"
                         value={query}
                         onValue={setQuery}

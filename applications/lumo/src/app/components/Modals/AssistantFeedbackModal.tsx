@@ -424,6 +424,7 @@ const AssistantFeedbackModal = ({ disabled, message, feedbackSubmitted, setFeedb
                         })}
                     </ul>
                     <InputFieldTwo
+                        dir="auto"
                         as={TextAreaTwo}
                         assistContainerClassName="h-0"
                         rows={3}

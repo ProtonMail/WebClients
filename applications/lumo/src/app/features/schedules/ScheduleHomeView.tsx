@@ -69,10 +69,12 @@ export const ScheduleHomeView = () => {
                 <div className="scheduled-task-home flex flex-column gap-6 w-full mx-auto py-6">
                     {/* Schedule name and cadence */}
                     <div>
-                        <div className="inline-flex items-center justify-center mb-3 p-3 border border-weak rounded-lg">
-                            <LumoIcon aria-hidden name="Clock" size={24} />
+                        <div dir="auto">
+                            <div className="inline-flex items-center justify-center mb-3 p-3 border border-weak rounded-lg">
+                                <LumoIcon aria-hidden name="Clock" size={24} />
+                            </div>
+                            <h1 className="m-0 mb-2 text-bold">{schedule.name}</h1>
                         </div>
-                        <h1 className="m-0 mb-2 text-bold">{schedule.name}</h1>
                         <div className="flex flex-wrap items-center gap-1.5 text-rg color-weak">
                             <ScheduleRunPrimaryLabel rule={schedule.recurrenceRule} scheduleId={scheduleId} />
                             <span aria-hidden>·</span>
@@ -86,7 +88,9 @@ export const ScheduleHomeView = () => {
                             // translator: Heading above the instructions executed by a scheduled task.
                             c('collider_2025:Title').t`What it does`
                         }</h2>
-                        <p className="m-0 text-ellipsis-four-lines">{schedule.instructions}</p>
+                        <p dir="auto" className="m-0 text-ellipsis-four-lines">
+                            {schedule.instructions}
+                        </p>
                     </section>
 
                     {/* Schedule skills */}

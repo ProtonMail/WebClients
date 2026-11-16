@@ -240,7 +240,10 @@ function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [strin
             return [c('collider_2025:Reasoning').t`Reading a file...`, c('collider_2025:Reasoning').t`Read a file`];
         case ANALYZE_FILE_TOOL_NAME:
             // translator: Assistant activity status, while a long file of the user's is being read through for notes.
-            return [c('collider_2025:Reasoning').t`Analysing a file...`, c('collider_2025:Reasoning').t`Analysed a file`];
+            return [
+                c('collider_2025:Reasoning').t`Analysing a file...`,
+                c('collider_2025:Reasoning').t`Analysed a file`,
+            ];
         default:
             // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];
@@ -348,11 +351,13 @@ const ThinkingPathTrace = ({ lines }: { lines: string[] }) => {
             {visibleLines.map((line, index) => (
                 <p
                     key={`${index}-${line.slice(-24)}`}
+                    dir="auto"
                     className="thinking-path-trace-line m-0 color-weak text-rg lh130"
                     style={{
                         opacity: getTraceLineOpacity(index, visibleLines.length),
                         display: '-webkit-box',
                         WebkitBoxOrient: 'vertical',
+                        textAlign: document.dir === 'rtl' ? 'right' : 'left',
                     }}
                 >
                     {line}
@@ -495,7 +500,10 @@ function getToolCallShortLabel(toolCall: ToolCallData | ToolCallAnnouncement): [
             return [c('collider_2025:Reasoning').t`Reading a file...`, c('collider_2025:Reasoning').t`Read a file`];
         case ANALYZE_FILE_TOOL_NAME:
             // translator: Assistant activity status, while a long file of the user's is being read through for notes.
-            return [c('collider_2025:Reasoning').t`Analysing a file...`, c('collider_2025:Reasoning').t`Analysed a file`];
+            return [
+                c('collider_2025:Reasoning').t`Analysing a file...`,
+                c('collider_2025:Reasoning').t`Analysed a file`,
+            ];
         default:
             // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];
@@ -551,7 +559,14 @@ const ThinkingStepBodyLines = ({ lines }: { lines: string[] }) => {
     return (
         <div className="thinking-step-body flex flex-column gap-0.5 min-w-0">
             {lines.map((line, index) => (
-                <p key={`${index}-${line.slice(-24)}`} className="thinking-step-body-line m-0 color-weak text-rg lh130">
+                <p
+                    key={`${index}-${line.slice(-24)}`}
+                    dir="auto"
+                    className="thinking-step-body-line m-0 color-weak text-rg lh130"
+                    style={{
+                        textAlign: document.dir === 'rtl' ? 'right' : 'left',
+                    }}
+                >
                     {line}
                 </p>
             ))}
@@ -912,7 +927,12 @@ const ToolCallStep = ({
                                     </span>
                                 )}
                                 {hasError ? (
-                                    <LumoIcon name="CircleExclamationPoint" width={12} height={12} className="color-danger" />
+                                    <LumoIcon
+                                        name="CircleExclamationPoint"
+                                        width={12}
+                                        height={12}
+                                        className="color-danger"
+                                    />
                                 ) : (
                                     <LumoIcon
                                         name="Check"
@@ -1045,6 +1065,7 @@ const ToolCallStep = ({
                                                 />
                                                 <div className="min-w-0">
                                                     <a
+                                                        dir="auto"
                                                         href={item.url}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
@@ -1090,6 +1111,7 @@ const ToolCallStep = ({
                                                 className="pb-2 border-bottom border-weak last:border-0 last:pb-0"
                                             >
                                                 <a
+                                                    dir="auto"
                                                     href={searchResult.url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
@@ -1098,7 +1120,10 @@ const ToolCallStep = ({
                                                 >
                                                     {searchResult.title}
                                                 </a>
-                                                <p className="text-sm color-weak m-0 text-ellipsis-two-lines">
+                                                <p
+                                                    dir="auto"
+                                                    className="text-sm color-weak m-0 text-ellipsis-two-lines"
+                                                >
                                                     {searchResult.description}
                                                 </p>
                                                 <p className="text-xs color-weak m-0 mt-1">

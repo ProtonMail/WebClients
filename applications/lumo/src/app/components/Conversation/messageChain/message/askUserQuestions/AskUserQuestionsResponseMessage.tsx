@@ -18,7 +18,7 @@ export const AskUserQuestionsResponseMessage = ({
 }) => (
     <div className="ask-user-questions-response-message flex flex-column gap-3 w-full p-4 border border-weak rounded-xl bg-norm">
         {askUserQuestionsToolResponse.map(({ questionId, title, answers, skipped }) => (
-            <div key={questionId}>
+            <div key={questionId} dir="auto">
                 <p className="m-0 mb-1 text-sm color-weak">{title}</p>
                 {skipped || !answers?.length ? (
                     <span className="color-hint">{

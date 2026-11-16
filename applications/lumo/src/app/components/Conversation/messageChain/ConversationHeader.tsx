@@ -263,6 +263,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
         if (isEditing) {
             return (
                 <InputFieldTwo
+                    dir="auto"
                     key={`title-edit-${id}`}
                     type="text"
                     dense
@@ -304,6 +305,7 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
                     <span className="sr-only">{c('collider_2025:Info').t`Current chat:`}</span>
                     <Button
                         shape="ghost"
+                        dir="auto"
                         onClick={startEditing}
                         className="py-1 px-2 text-ellipsis w-full hide-on-small-screens"
                     >

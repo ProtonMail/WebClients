@@ -181,6 +181,7 @@ const MemoryComposeForm = ({
 }: MemoryComposeFormProps) => (
     <>
         <InputFieldTwo
+            dir="auto"
             as={TextAreaWithCounter}
             rows={2}
             autoFocus={autoFocus}
@@ -321,7 +322,9 @@ const MemoryRow = ({ memory, isEditing, onStartEdit, onCancelEdit, onSaveEdit, o
         >
             <div className="flex flex-column flex-nowrap flex-1 min-w-0 gap-1">
                 {metaRow}
-                <p className="m-0 text-sm lh130 text-break w-full">{memory.content}</p>
+                <p dir="auto" className="m-0 text-sm lh130 text-break w-full">
+                    {memory.content}
+                </p>
             </div>
 
             <div

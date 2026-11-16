@@ -181,6 +181,7 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
                             // own row on small screens, a fixed width beside the title above that.
                             <div className="w-full md:w-custom" style={{ '--md-w-custom': '12rem' }}>
                                 <Input
+                                    dir="auto"
                                     value={searchQuery}
                                     onValue={setSearchQuery}
                                     placeholder={c('collider_2025:Placeholder').t`Search library`}

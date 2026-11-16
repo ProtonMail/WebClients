@@ -438,6 +438,7 @@ const SearchModalInner = ({ onClose, scope }: SearchModalInnerProps) => {
             <div className="search-modal-input-wrapper">
                 <IcMagnifier size={4.5} className="search-modal-input-icon" />
                 <input
+                    dir="auto"
                     ref={searchInputRef}
                     type="text"
                     value={query}

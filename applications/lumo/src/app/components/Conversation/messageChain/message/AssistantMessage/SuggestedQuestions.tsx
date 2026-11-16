@@ -29,6 +29,7 @@ export const SuggestedQuestions = ({ questions }: SuggestedQuestionsProps) => {
             {questions.map((question, index) => (
                 <Button
                     key={index}
+                    dir="auto"
                     shape="outline"
                     size="small"
                     className="text-left text-sm w-full justify-start p-3 bg-weak"

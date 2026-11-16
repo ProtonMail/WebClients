@@ -53,6 +53,7 @@ const EditableParagraph = ({ text, onBlur }: EditableParagraphProps) => {
     return (
         <div
             ref={ref}
+            dir="auto"
             contentEditable
             suppressContentEditableWarning
             onBlur={(e) => {

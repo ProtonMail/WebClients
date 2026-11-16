@@ -101,6 +101,7 @@ const EditableNotes = ({ notes, onBlur }: EditableNotesProps) => {
             <span className="text-semibold shrink-0 user-select-none">{c('collider_2025: Info').t`Notes:`}</span>
             <div
                 ref={ref}
+                dir="auto"
                 contentEditable
                 suppressContentEditableWarning
                 onBlur={(e) => {

@@ -105,6 +105,7 @@ export const SketchCanvas = ({
                         <>
                             <label className="sketch-canvas__edit-panel-text flex items-start gap-2 px-4 py-3 m-0 mb-3 border border-weak rounded-lg bg-weak">
                                 <textarea
+                                    dir="auto"
                                     value={description}
                                     onChange={(e) => setDescription(e.target.value)}
                                     placeholder={descriptionPlaceholder}
