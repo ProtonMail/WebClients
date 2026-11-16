@@ -8,11 +8,13 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 
 interface SkillActionsMenuProps {
-    onEdit: () => void;
-    onDelete: () => void;
+    onOpen: () => void;
+    /** Left out for skills the user can't change, e.g. Proton's. */
+    onEdit?: () => void;
+    onDelete?: () => void;
 }
 
-export const SkillActionsMenu = ({ onEdit, onDelete }: SkillActionsMenuProps) => {
+export const SkillActionsMenu = ({ onOpen, onEdit, onDelete }: SkillActionsMenuProps) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -30,14 +32,25 @@ export const SkillActionsMenu = ({ onEdit, onDelete }: SkillActionsMenuProps) =>
             </button>
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} originalPlacement="bottom-end">
                 <DropdownMenu>
-                    <DropdownMenuButton className="flex flex-nowrap items-center gap-2 text-left" onClick={onEdit}>
-                        <LumoIcon name="Pen" size={16} />
-                        {c('collider_2025:Action').t`Edit`}
+                    <DropdownMenuButton className="flex flex-nowrap items-center gap-2 text-left" onClick={onOpen}>
+                        <LumoIcon name="Info" size={16} />
+                        {c('collider_2025:Action').t`View details`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="flex flex-nowrap items-center gap-2 text-left" onClick={onDelete}>
-                        <LumoIcon name="Trash" size={16} />
-                        {c('collider_2025:Action').t`Delete`}
-                    </DropdownMenuButton>
+                    {onEdit && (
+                        <DropdownMenuButton className="flex flex-nowrap items-center gap-2 text-left" onClick={onEdit}>
+                            <LumoIcon name="Pen" size={16} />
+                            {c('collider_2025:Action').t`Edit`}
+                        </DropdownMenuButton>
+                    )}
+                    {onDelete && (
+                        <DropdownMenuButton
+                            className="flex flex-nowrap items-center gap-2 text-left"
+                            onClick={onDelete}
+                        >
+                            <LumoIcon name="Trash" size={16} />
+                            {c('collider_2025:Action').t`Delete`}
+                        </DropdownMenuButton>
+                    )}
                 </DropdownMenu>
             </Dropdown>
         </>

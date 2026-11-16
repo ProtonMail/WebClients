@@ -39,7 +39,7 @@
 
 	@media (prefers-reduced-motion: no-preference) {
 		&__sets > li {
-			animation: customize-fade-in 0.3s easing(ease-out-quad) both;
+			animation: customize-fade-in 0.3s easing(ease-out-quad) backwards;
 			animation-delay: calc(0.1s + var(--index, 0) * 0.04s);
 		}
 	}

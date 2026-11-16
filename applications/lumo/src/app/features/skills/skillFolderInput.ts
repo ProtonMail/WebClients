@@ -1,11 +1,14 @@
+import { README_PATH, isPluginManifestPath } from './skillBundle';
 import { MAX_SKILL_FILE_COUNT } from './skillFiles';
 import { type SkillFolderFile, isIgnoredBundlePath } from './skillImport';
+import { SKILL_MARKDOWN_PATH } from './types';
 
 /** Stops walking a dropped folder well past the file limit, so dropping a huge tree stays cheap. */
 const MAX_WALKED_FILES = MAX_SKILL_FILE_COUNT * 2;
 
 export type DroppedSkillItem =
-    { kind: 'file'; file: File } | { kind: 'folder'; name: string; files: SkillFolderFile[] };
+    | { kind: 'file'; file: File }
+    | { kind: 'folder'; name: string; files: SkillFolderFile[] };
 
 const readAllEntries = async (directory: FileSystemDirectoryEntry): Promise<FileSystemEntry[]> => {
     const reader = directory.createReader();
@@ -53,15 +56,36 @@ export const readDroppedItems = async (dataTransfer: DataTransfer): Promise<Drop
     return items;
 };
 
-/** Groups files from an `<input webkitdirectory>` by their top folder. */
-export const groupPickedFolderFiles = (files: File[]): DroppedSkillItem[] => {
+const groupByTopFolder = (files: SkillFolderFile[]): Map<string, SkillFolderFile[]> => {
     const byFolder = new Map<string, SkillFolderFile[]>();
     for (const file of files) {
-        const path = file.webkitRelativePath || file.name;
-        const folder = path.split('/')[0];
-        const group = byFolder.get(folder) ?? [];
-        group.push({ path, file });
-        byFolder.set(folder, group);
+        const folder = file.path.split('/')[0];
+        byFolder.set(folder, [...(byFolder.get(folder) ?? []), file]);
     }
-    return Array.from(byFolder, ([name, folderFiles]) => ({ kind: 'folder' as const, name, files: folderFiles }));
+    return byFolder;
+};
+
+const BUNDLE_ROOT_FILES = [SKILL_MARKDOWN_PATH, README_PATH];
+
+/**
+ * Picking a folder that only holds skill folders, like `~/.claude/skills`, adds each skill on its own:
+ * pickers take one folder, and a skill set named "skills" is not what the user meant. A folder with its
+ * own SKILL.md, README or plugin manifest is still added as one.
+ */
+const splitSkillsFolder = (name: string, files: SkillFolderFile[]): DroppedSkillItem[] => {
+    const inside = files.map(({ path, file }) => ({ path: path.slice(name.length + 1), file }));
+    const isBundle = inside.some(({ path }) => BUNDLE_ROOT_FILES.includes(path) || isPluginManifestPath(path));
+    const skills = Array.from(groupByTopFolder(inside.filter(({ path }) => path.includes('/')))).filter(
+        ([skillName, skillFiles]) => skillFiles.some(({ path }) => path === `${skillName}/${SKILL_MARKDOWN_PATH}`)
+    );
+    if (isBundle || !skills.length) {
+        return [{ kind: 'folder', name, files }];
+    }
+    return skills.map(([skillName, skillFiles]) => ({ kind: 'folder', name: skillName, files: skillFiles }));
+};
+
+/** Groups files from an `<input webkitdirectory>` by their top folder. */
+export const groupPickedFolderFiles = (files: File[]): DroppedSkillItem[] => {
+    const picked = files.map((file) => ({ path: file.webkitRelativePath || file.name, file }));
+    return Array.from(groupByTopFolder(picked)).flatMap(([name, folderFiles]) => splitSkillsFolder(name, folderFiles));
 };

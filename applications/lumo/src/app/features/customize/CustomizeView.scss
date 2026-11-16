@@ -24,7 +24,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
 	.customize-tab-panel {
-		animation: customize-fade-in 0.2s easing(ease-out-quad) both;
+		animation: customize-fade-in 0.2s easing(ease-out-quad);
 	}
 }
 

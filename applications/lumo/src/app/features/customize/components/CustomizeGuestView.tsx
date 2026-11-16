@@ -16,12 +16,12 @@ import { CustomizeTabs } from './CustomizePageHeader';
 import { DesktopConnectorsNotice, getConnectorsSellingPoints } from './DesktopConnectorsNotice';
 import { PluginIcon, getPluginMeta } from './ProtonPluginCard';
 import { ProtonPluginPreviewModal } from './ProtonPluginPreviewModal';
+
 import './CustomizeGuestView.scss';
 
 /** Skill sets previewed to guests, with a shorter summary than the catalog description. */
 const getPreviewedSkillSets = (): Record<string, () => string> => ({
-    'proton-plugin-writing': () =>
-        c('collider_2025:Plugin summary').t`Draft, edit and translate in your own voice.`,
+    'proton-plugin-writing': () => c('collider_2025:Plugin summary').t`Draft, edit and translate in your own voice.`,
     'proton-plugin-research': () => c('collider_2025:Plugin summary').t`Sourced reports and fact-checks.`,
     'proton-plugin-data': () => c('collider_2025:Plugin summary').t`Clean spreadsheets, charts and dashboards.`,
     'proton-plugin-productivity': () =>
@@ -60,7 +60,7 @@ const GuestSkills = () => {
                     {
                         icon: 'Blocks',
                         text: c('collider_2025:Info')
-                            .t`Start from ${BRAND_NAME}'s skills, or upload your own, including Claude plugins`,
+                            .t`Start from ${BRAND_NAME}'s skills, or upload your own, including Claude and ChatGPT plugins`,
                     },
                     { icon: 'Lock', text: c('collider_2025:Info').t`Your information is zero-access encrypted` },
                 ]}

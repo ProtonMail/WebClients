@@ -46,7 +46,7 @@ export type SkillConnectorCategory = {
     alternatives: string[];
 };
 
-/** From `.claude-plugin/plugin.json` of an uploaded plugin, or from the catalog for Proton plugins. */
+/** From the `plugin.json` manifest of an uploaded plugin, or from the catalog for Proton plugins. */
 export type SkillPluginInfo = {
     version?: string;
     author?: string;

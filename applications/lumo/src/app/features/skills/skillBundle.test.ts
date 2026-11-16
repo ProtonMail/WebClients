@@ -32,8 +32,59 @@ describe('parsePluginManifest', () => {
         ).toEqual({ name: 'design', version: '1.2.0', description: 'D', author: 'Anthropic' });
     });
 
+    it('prefers the OpenAI display fields of Codex and Agent Plugins manifests', () => {
+        const display = { displayName: 'Docs Helper', shortDescription: 'Find answers', developerName: 'OpenAI' };
+        const expected = { name: 'Docs Helper', version: '1.0.0', description: 'Find answers', author: 'OpenAI' };
+        expect(
+            parsePluginManifest(JSON.stringify({ name: 'docs-helper', version: '1.0.0', interface: display }))
+        ).toEqual(expected);
+        expect(
+            parsePluginManifest(
+                JSON.stringify({
+                    name: 'docs-helper',
+                    version: '1.0.0',
+                    extensions: { 'com.openai': { interface: display } },
+                })
+            )
+        ).toEqual(expected);
+    });
+
     it('returns undefined for invalid JSON', () => {
         expect(parsePluginManifest('{nope')).toBeUndefined();
+    });
+});
+
+describe('ChatGPT plugin layouts', () => {
+    const skill = file('skills/docs-search/SKILL.md', '---\nname: docs-search\ndescription: Search\n---\n');
+    const server = { docs: { type: 'streamable-http', url: 'https://example.com/mcp' } };
+
+    it('reads a Codex plugin', () => {
+        const info = deriveBundleInfo([
+            file('.codex-plugin/plugin.json', '{"name":"docs","version":"1.0.0","mcpServers":"./.mcp.json"}'),
+            file('.mcp.json', JSON.stringify({ mcpServers: server })),
+            skill,
+        ]);
+        expect(info.plugin).toEqual({ version: '1.0.0', author: undefined });
+        expect(info.connectors).toEqual([{ name: 'docs', url: 'https://example.com/mcp' }]);
+    });
+
+    it('reads a portable plugin with root mcp.json or inline servers', () => {
+        const manifest = '{"$schema":"https://agent-plugins.org/schemas/1.0.0/plugin.schema.json","version":"0.1.0"}';
+        const withFile = deriveBundleInfo([
+            file('plugin.json', manifest),
+            file('mcp.json', JSON.stringify({ mcpServers: server })),
+        ]);
+        const inline = deriveBundleInfo([
+            file('plugin.json', JSON.stringify({ version: '0.1.0', mcpServers: server })),
+            skill,
+        ]);
+        expect(withFile.plugin?.version).toBe('0.1.0');
+        expect(withFile.connectors).toHaveLength(1);
+        expect(inline.connectors).toEqual([{ name: 'docs', url: 'https://example.com/mcp' }]);
+    });
+
+    it('ignores an unrelated root plugin.json in a single skill', () => {
+        expect(deriveBundleInfo([file('plugin.json', '{"version":"9"}')]).plugin).toBeUndefined();
     });
 });
 

@@ -11,9 +11,21 @@ import './IconPicker.scss';
 interface IconPickerProps {
     selectedIcon: string;
     onSelectIcon: (icon: string) => void;
+    /** Accessible name of the trigger; defaults to choosing a project icon. */
+    label?: string;
+    disabled?: boolean;
+    /** `small` fits inside a text field, e.g. as its prefix. */
+    size?: 'small' | 'medium';
 }
 
-export const IconPicker = ({ selectedIcon, onSelectIcon }: IconPickerProps) => {
+export const IconPicker = ({
+    selectedIcon,
+    onSelectIcon,
+    label,
+    disabled = false,
+    size = 'medium',
+}: IconPickerProps) => {
+    const triggerSize = size === 'small' ? '1.75rem' : '2.5rem';
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const handleIconSelect = (icon: string) => {
@@ -32,12 +44,13 @@ export const IconPicker = ({ selectedIcon, onSelectIcon }: IconPickerProps) => {
                 ref={anchorRef}
                 type="button"
                 className="icon-picker-trigger flex items-center justify-center shrink-0 w-custom h-custom border-none rounded bg-transparent cursor-pointer color-norm"
-                style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' } as React.CSSProperties}
+                style={{ '--w-custom': triggerSize, '--h-custom': triggerSize } as React.CSSProperties}
                 onClick={handleToggle}
-                aria-label={c('collider_2025:Action').t`Choose project icon`}
+                disabled={disabled}
+                aria-label={label ?? c('collider_2025:Action').t`Choose project icon`}
                 title={c('collider_2025:Tooltip').t`Choose icon`}
             >
-                <ProjectIcon iconId={selectedIcon} size={20} />
+                <ProjectIcon iconId={selectedIcon} size={size === 'small' ? 16 : 20} />
             </button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <div className="p-3">

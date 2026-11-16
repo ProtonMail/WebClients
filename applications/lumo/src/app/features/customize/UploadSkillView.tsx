@@ -1,4 +1,4 @@
-import { type DragEvent, type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
+import { type DragEvent, type ReactNode, useMemo, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { clsx } from 'clsx';
@@ -7,7 +7,10 @@ import { c, msgid } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import chatgptLogo from '@proton/styles/assets/img/lumo/trail/chatgpt.svg';
+import claudeLogo from '@proton/styles/assets/img/lumo/trail/claude.svg';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { type IconName, LumoIcon } from '../../components/LumoIcon/LumoIcon';
@@ -22,6 +25,7 @@ import { saveSkill } from '../skills/skillsThunks';
 import { useSkillLimit } from '../skills/useSkillLimit';
 import { useSkills } from '../skills/useSkills';
 import { CustomizePage } from './components/CustomizePage';
+import { MoveSkillsModal } from './components/MoveSkillsModal';
 import { getSkillPath } from './skillRoutes';
 
 import './UploadSkillView.scss';
@@ -101,9 +105,9 @@ const getUploadKinds = (): { icon: IconName; title: string; detail: string }[] =
     },
     {
         icon: 'Puzzle',
-        title: c('collider_2025:Title').t`A Claude plugin`,
+        title: c('collider_2025:Title').t`A plugin`,
         detail: c('collider_2025:Info')
-            .t`A .plugin file or plugin folder made for Claude. Its skills come across as a skill set, along with the connectors it asks for.`,
+            .t`A Claude or ChatGPT plugin, as a folder, .zip or .plugin file. Its skills come across as a skill set, along with the connectors it asks for.`,
     },
 ];
 
@@ -190,7 +194,8 @@ export const UploadSkillView = () => {
     const { checkCanAddSkills, skillLimitModal, skillLimitModalState } = useSkillLimit();
     const { createNotification } = useNotifications();
     const inputRef = useRef<HTMLInputElement>(null);
-    const folderInputRef = useRef<HTMLInputElement>(null);
+    const folderInputRef = useRef<HTMLInputElement | null>(null);
+    const moveSkillsModal = useModalStateObject();
     const [imports, setImports] = useState<SkillImportResult[]>([]);
     const [isDragging, setIsDragging] = useState(false);
     const [parsing, setParsing] = useState(false);
@@ -212,10 +217,6 @@ export const UploadSkillView = () => {
     );
     const valid = results.filter((result) => result.draft);
     const findingCount = valid.reduce((total, result) => total + (result.report?.findings.length ?? 0), 0);
-
-    useEffect(() => {
-        folderInputRef.current?.setAttribute('webkitdirectory', '');
-    }, []);
 
     const checkCanUpload = (results: SkillImportResult[]) => {
         const drafts = results.flatMap(({ draft }) => (draft ? [draft] : []));
@@ -300,7 +301,7 @@ export const UploadSkillView = () => {
                     <h1 className="text-2xl text-semibold m-0">{c('collider_2025:Title').t`Upload a skill`}</h1>
                     <p className="m-0 color-weak">
                         {c('collider_2025:Info')
-                            .t`Bring skills you've written or downloaded, including Claude skills and plugins. ${LUMO_SHORT_APP_NAME} checks each one before you add it.`}
+                            .t`Bring skills you've written or downloaded. ${LUMO_SHORT_APP_NAME} checks each one before you add it.`}
                     </p>
                 </div>
 
@@ -323,7 +324,7 @@ export const UploadSkillView = () => {
                         </span>
                         <div className="flex flex-column items-center gap-1">
                             <span className="text-lg text-semibold color-norm">
-                                {c('collider_2025:Info').t`Drop skills, skill sets or Claude plugins here`}
+                                {c('collider_2025:Info').t`Drop skills, skill sets or plugins here`}
                             </span>
                             <span className="text-sm color-weak">
                                 {c('collider_2025:Info').t`You can add several at once.`}
@@ -361,7 +362,11 @@ export const UploadSkillView = () => {
                         }}
                     />
                     <input
-                        ref={folderInputRef}
+                        ref={(node) => {
+                            folderInputRef.current = node;
+                            // React's types don't know `webkitdirectory`; without it the picker only takes files.
+                            node?.setAttribute('webkitdirectory', '');
+                        }}
                         type="file"
                         className="hidden"
                         onChange={(event) => {
@@ -370,6 +375,38 @@ export const UploadSkillView = () => {
                         }}
                     />
                 </div>
+
+                {results.length === 0 && (
+                    <Card rounded background={false} className="bg-norm">
+                        <div className="flex flex-nowrap items-center gap-3">
+                            <span className="flex flex-nowrap gap-1 shrink-0" aria-hidden>
+                                <span className="upload-skill-source-logo flex items-center justify-center">
+                                    <img src={claudeLogo} alt="" width={16} height={16} />
+                                </span>
+                                <span className="upload-skill-source-logo flex items-center justify-center">
+                                    <img src={chatgptLogo} alt="" width={16} height={16} />
+                                </span>
+                            </span>
+                            <div className="flex flex-column flex-nowrap flex-1 min-w-0">
+                                <span className="text-semibold">
+                                    {c('collider_2025:Title').t`Moving from Claude or ChatGPT?`}
+                                </span>
+                                <span className="text-sm color-weak">
+                                    {c('collider_2025:Info')
+                                        .t`Bring the skills you made there to ${LUMO_SHORT_APP_NAME} in a few steps.`}
+                                </span>
+                            </div>
+                            <Button
+                                size="small"
+                                shape="outline"
+                                className="shrink-0"
+                                onClick={() => moveSkillsModal.openModal(true)}
+                            >
+                                {c('collider_2025:Action').t`See how`}
+                            </Button>
+                        </div>
+                    </Card>
+                )}
 
                 {results.length === 0 && (
                     <section className="flex flex-column gap-3">
@@ -462,6 +499,13 @@ export const UploadSkillView = () => {
                     {...skillLimitModal.modalProps}
                     {...skillLimitModalState}
                     isUploadingPlugin={isUploadingPlugin}
+                />
+            )}
+            {moveSkillsModal.render && (
+                <MoveSkillsModal
+                    {...moveSkillsModal.modalProps}
+                    onChooseFiles={() => inputRef.current?.click()}
+                    onChooseFolder={() => folderInputRef.current?.click()}
                 />
             )}
         </LumoLayoutWithDrawer>

@@ -1,6 +1,6 @@
 import { getDesktopCategory } from './connectorCategories';
 import { getProtonPlugins, protonPluginMatches, protonPluginToDraft } from './protonCatalog';
-import { PLUGIN_MANIFEST_PATH, deriveBundleInfo } from './skillBundle';
+import { deriveBundleInfo, isPluginManifestPath } from './skillBundle';
 import { decodeText } from './skillFiles';
 import { SKILL_DESCRIPTION_MAX_LENGTH, getSkillHandle, parseSkillMarkdown } from './skillMarkdown';
 
@@ -47,8 +47,8 @@ describe('protonPluginToDraft', () => {
         });
     });
 
-    it('has no Claude plugin manifest', () => {
-        expect(draft.files.map(({ path }) => path)).not.toContain(PLUGIN_MANIFEST_PATH);
+    it('has no plugin manifest', () => {
+        expect(draft.files.some(({ path }) => isPluginManifestPath(path))).toBe(false);
         expect(deriveBundleInfo(draft.files).plugin).toBeUndefined();
     });
 

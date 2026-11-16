@@ -72,20 +72,16 @@ export const CustomizeView = () => {
                     }}
                     onUploadSkill={() => history.push('/customize/upload')}
                 />
-                <div
-                    key={activeTab === 'skills' ? skillsView : activeTab}
-                    className="customize-tab-panel flex flex-column flex-nowrap flex-1"
-                >
-                    {activeTab === 'skills' ? (
-                        <CustomizeSkillsTab
-                            view={skillsView}
-                            searchQuery={searchQuery}
-                            onBrowse={() => navigate('skills', 'discover')}
-                        />
-                    ) : (
-                        <CustomizeConnectorsTab searchQuery={searchQuery} />
-                    )}
-                </div>
+                {activeTab === 'skills' ? (
+                    <CustomizeSkillsTab
+                        key={skillsView}
+                        view={skillsView}
+                        searchQuery={searchQuery}
+                        onBrowse={() => navigate('skills', 'discover')}
+                    />
+                ) : (
+                    <CustomizeConnectorsTab searchQuery={searchQuery} />
+                )}
             </CustomizePage>
             {skillLimitModal.render && <SkillLimitModal {...skillLimitModal.modalProps} {...skillLimitModalState} />}
             {createModal.render && (

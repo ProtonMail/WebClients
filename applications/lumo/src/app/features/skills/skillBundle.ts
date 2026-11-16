@@ -11,8 +11,10 @@ import {
     type SubSkill,
 } from './types';
 
-export const PLUGIN_MANIFEST_PATH = '.claude-plugin/plugin.json';
-const MCP_CONFIG_PATH = '.mcp.json';
+const PORTABLE_MANIFEST_PATH = 'plugin.json';
+/** Agent Plugins (ChatGPT), Codex and Claude manifests, in order of preference. */
+const PLUGIN_MANIFEST_PATHS = [PORTABLE_MANIFEST_PATH, '.codex-plugin/plugin.json', '.claude-plugin/plugin.json'];
+const MCP_CONFIG_PATHS = ['mcp.json', '.mcp.json'];
 export const CONNECTORS_MARKDOWN_PATH = 'CONNECTORS.md';
 export const README_PATH = 'README.md';
 
@@ -37,22 +39,64 @@ const parseJson = (text: string): unknown => {
 const isRecord = (value: unknown): value is Record<string, unknown> =>
     typeof value === 'object' && value !== null && !Array.isArray(value);
 
-/** Reads the fields Lumo shows from a Claude `plugin.json`; anything else stays in the file. */
+/** OpenAI's display fields: under `extensions["com.openai"]` in Agent Plugins, at the top level in Codex. */
+const getOpenAiInterface = (json: Record<string, unknown>): Record<string, unknown> => {
+    const openAi = isRecord(json.extensions) ? json.extensions['com.openai'] : undefined;
+    const fields = isRecord(openAi) ? openAi.interface : json.interface;
+    return isRecord(fields) ? fields : {};
+};
+
+/** Reads the fields Lumo shows from a Claude, Codex or Agent Plugins `plugin.json`; anything else stays in the file. */
 export const parsePluginManifest = (text: string): PluginManifest | undefined => {
     const json = parseJson(text);
     if (!isRecord(json)) {
         return undefined;
     }
+    const display = getOpenAiInterface(json);
     const author = isRecord(json.author) ? json.author.name : json.author;
     return {
-        name: asString(json.name, SKILL_NAME_MAX_LENGTH),
-        description: asString(json.description, SKILL_DESCRIPTION_MAX_LENGTH),
+        name: asString(display.displayName, SKILL_NAME_MAX_LENGTH) ?? asString(json.name, SKILL_NAME_MAX_LENGTH),
+        description:
+            asString(json.description, SKILL_DESCRIPTION_MAX_LENGTH) ??
+            asString(display.shortDescription, SKILL_DESCRIPTION_MAX_LENGTH),
         version: asString(json.version, 32),
-        author: asString(author, 128),
+        author: asString(author, 128) ?? asString(display.developerName, 128),
     };
 };
 
-/** Lists the MCP servers in a `.mcp.json`. Only https URLs are kept; credentials in the file are ignored. */
+export const isPluginManifestPath = (path: string) => PLUGIN_MANIFEST_PATHS.includes(path);
+
+const findFile = (files: SkillFileDraft[], path: string) => files.find((file) => file.path === path);
+
+const declaresAgentPluginsSchema = (file: SkillFileDraft) => {
+    const json = parseJson(decodeText(file.data));
+    return isRecord(json) && typeof json.$schema === 'string' && json.$schema.includes('agent-plugins.org');
+};
+
+/**
+ * A root `plugin.json` is only a manifest when it says so or sits next to sub-skills, so a single skill
+ * that ships an unrelated `plugin.json` stays a single skill.
+ */
+export const findPluginManifestFile = (files: SkillFileDraft[]): SkillFileDraft | undefined => {
+    const hasSubSkills = files.some((file) => isSubSkillMarkdownPath(file.path));
+    return PLUGIN_MANIFEST_PATHS.map((path) => findFile(files, path)).find(
+        (file) => !!file && (file.path !== PORTABLE_MANIFEST_PATH || hasSubSkills || declaresAgentPluginsSchema(file))
+    );
+};
+
+/** The file listing a plugin's MCP servers: the manifest itself, the file it points to, or `mcp.json`. */
+export const findMcpConfigFile = (files: SkillFileDraft[]): SkillFileDraft | undefined => {
+    const manifestFile = findPluginManifestFile(files);
+    const manifest = manifestFile ? parseJson(decodeText(manifestFile.data)) : undefined;
+    const declared = isRecord(manifest) ? manifest.mcpServers : undefined;
+    if (manifestFile && isRecord(declared)) {
+        return manifestFile;
+    }
+    const declaredFile = typeof declared === 'string' ? findFile(files, declared.replace(/^\.\//, '')) : undefined;
+    return declaredFile ?? MCP_CONFIG_PATHS.map((path) => findFile(files, path)).find(Boolean);
+};
+
+/** Lists the MCP servers in an MCP config or a manifest's `mcpServers`. Only https URLs are kept; credentials in the file are ignored. */
 export const parseMcpConnectors = (text: string): SkillConnector[] => {
     const json = parseJson(text);
     const servers = isRecord(json) && isRecord(json.mcpServers) ? json.mcpServers : {};
@@ -178,8 +222,6 @@ export const findSubSkills = (files: SkillFileDraft[], previous: SubSkill[] = []
         .sort((a, b) => a.name.localeCompare(b.name));
 };
 
-const findFile = (files: SkillFileDraft[], path: string) => files.find((file) => file.path === path);
-
 export const BUNDLE_INDEX_VERSION = 3;
 
 /** The fields of a skill that come from its files rather than from the editor. */
@@ -187,8 +229,8 @@ export const deriveBundleInfo = (
     files: SkillFileDraft[],
     previousSubSkills?: SubSkill[]
 ): Pick<Skill, 'subSkills' | 'plugin' | 'connectors' | 'connectorCategories' | 'bundleIndexVersion'> => {
-    const manifestFile = findFile(files, PLUGIN_MANIFEST_PATH);
-    const mcpFile = findFile(files, MCP_CONFIG_PATH);
+    const manifestFile = findPluginManifestFile(files);
+    const mcpFile = findMcpConfigFile(files);
     const connectorsFile = findFile(files, CONNECTORS_MARKDOWN_PATH);
     const manifest = manifestFile ? parsePluginManifest(decodeText(manifestFile.data)) : undefined;
     const subSkills = findSubSkills(files, previousSubSkills);
