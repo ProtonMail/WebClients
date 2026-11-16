@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { ASK_USER_QUESTIONS_TOOL_NAME } from '../../../../../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
 import {
     ANALYZE_FILE_TOOL_NAME,
     READ_KNOWLEDGE_TOOL_NAME,
@@ -36,6 +37,7 @@ type ThinkingPhase =
     | 'use_skill'
     | 'knowledge'
     | 'analyze'
+    | 'ask_user_questions'
     | 'other';
 
 function hashString(value: string): number {
@@ -80,6 +82,8 @@ function toolCallToPhase(toolCall: ToolCallData | ToolCallAnnouncement): Thinkin
             return 'knowledge';
         case ANALYZE_FILE_TOOL_NAME:
             return 'analyze';
+        case ASK_USER_QUESTIONS_TOOL_NAME:
+            return 'ask_user_questions';
         default:
             return 'other';
     }
@@ -166,6 +170,7 @@ const PHASE_ACTIVE: Record<ThinkingPhase, readonly (() => string)[]> = {
     use_skill: [() => c('collider_2025:Reasoning').t`Reading a skill`],
     knowledge: [() => c('collider_2025:Reasoning').t`Searching your files and chats`],
     analyze: [() => c('collider_2025:Reasoning').t`Analysing a file`],
+    ask_user_questions: [() => c('collider_2025:Reasoning').t`Preparing questions`],
     other: [() => c('collider_2025:Reasoning').t`Using a tool`],
 };
 
@@ -210,6 +215,7 @@ const PHASE_COMPLETE: Record<ThinkingPhase, readonly (() => string)[]> = {
     use_skill: [() => c('collider_2025:Reasoning').t`Read a skill`],
     knowledge: [() => c('collider_2025:Reasoning').t`Searched your files and chats`],
     analyze: [() => c('collider_2025:Reasoning').t`Analysed a file`],
+    ask_user_questions: [() => c('collider_2025:Reasoning').t`Prepared questions`],
     other: [() => c('collider_2025:Reasoning').t`Used a tool`],
 };
 
