@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 
 import { act, renderHook, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
@@ -31,14 +32,14 @@ const getSubscription = (CalendarID: string) => ({ CalendarID, URL: `https://${C
 const withParameters = (calendars: (VisualCalendar | SubscribedCalendar)[]) =>
     calendars.filter(getCalendarHasSubscriptionParameters).map(({ ID }) => ID);
 
-const createStore = (api: jest.Mock, calendars: VisualCalendar[]) =>
+const createStore = (api: Mock, calendars: VisualCalendar[]) =>
     getTestStore({
         reducer: { ...calendarsReducer, ...calendarSubscriptionsReducer },
         preloadedState: { calendars: getModelState(calendars as CalendarWithOwnMembers[]), calendarSubscriptions: {} },
         extraThunkArguments: { api } as unknown as ProtonThunkArguments,
     }).store;
 
-const setup = (api: jest.Mock, calendars: VisualCalendar[], store = createStore(api, calendars)) => {
+const setup = (api: Mock, calendars: VisualCalendar[], store = createStore(api, calendars)) => {
     const wrapper = ({ children }: { children: ReactNode }) => (
         <Provider context={ProtonStoreContext} store={store}>
             {children}
@@ -63,7 +64,7 @@ describe('useSubscribedCalendars', () => {
     it('follows the calendars it is given', async () => {
         const first = getSubscribedCalendar('first');
         const second = getSubscribedCalendar('second');
-        const api = jest.fn(({ url }: { url: string }) =>
+        const api = vi.fn(({ url }: { url: string }) =>
             Promise.resolve({ CalendarSubscription: getSubscription(url.split('/')[2]) })
         );
         const { result, setCalendars } = setup(api, [first]);
@@ -88,7 +89,7 @@ describe('useSubscribedCalendars', () => {
         const first = getSubscribedCalendar('first');
         const second = getSubscribedCalendar('second');
         let resolveSecond: (value: unknown) => void = () => {};
-        const api = jest.fn(({ url }: { url: string }) =>
+        const api = vi.fn(({ url }: { url: string }) =>
             url.includes('/second/')
                 ? new Promise((resolve) => {
                       resolveSecond = resolve;
@@ -113,7 +114,7 @@ describe('useSubscribedCalendars', () => {
         const first = getSubscribedCalendar('first');
         const second = getSubscribedCalendar('second');
         let resolveSecond: (value: unknown) => void = () => {};
-        const api = jest.fn(({ url }: { url: string }) =>
+        const api = vi.fn(({ url }: { url: string }) =>
             url.includes('/second/')
                 ? new Promise((resolve) => {
                       resolveSecond = resolve;
@@ -137,7 +138,7 @@ describe('useSubscribedCalendars', () => {
 
     it('ignores a failed subscription fetch', async () => {
         const first = getSubscribedCalendar('first');
-        const api = jest.fn(({ url }: { url: string }) =>
+        const api = vi.fn(({ url }: { url: string }) =>
             url.includes('/second/')
                 ? Promise.reject(new Error('not found'))
                 : Promise.resolve({ CalendarSubscription: getSubscription('first') })
@@ -155,7 +156,7 @@ describe('useSubscribedCalendars', () => {
     it('refreshes the subscriptions once when opened', async () => {
         const first = getSubscribedCalendar('first');
         let LastUpdateTime = 1;
-        const api = jest.fn(() =>
+        const api = vi.fn(() =>
             Promise.resolve({ CalendarSubscription: { ...getSubscription('first'), LastUpdateTime } })
         );
         const store = createStore(api, [first]);
@@ -175,7 +176,7 @@ describe('useSubscribedCalendars', () => {
 
     it('keeps the last subscription when the refresh fails', async () => {
         const first = getSubscribedCalendar('first');
-        const api = jest.fn(() => Promise.resolve({ CalendarSubscription: getSubscription('first') }));
+        const api = vi.fn(() => Promise.resolve({ CalendarSubscription: getSubscription('first') }));
         const store = createStore(api, [first]);
         await store.dispatch(calendarSubscriptionThunk({ calendarID: 'first' }));
         api.mockImplementation(() => Promise.reject(new Error('offline')));
@@ -192,7 +193,7 @@ describe('useSubscribedCalendars', () => {
 
     it('stops following the calendars once unmounted', async () => {
         const first = getSubscribedCalendar('first');
-        const api = jest.fn(({ url }: { url: string }) =>
+        const api = vi.fn(({ url }: { url: string }) =>
             Promise.resolve({ CalendarSubscription: getSubscription(url.split('/')[2]) })
         );
         const { result, store, unmount, callsFor } = setup(api, [first]);
@@ -209,7 +210,7 @@ describe('useSubscribedCalendars', () => {
 
     it('applies subscription updates from the calendar event loop', async () => {
         const first = getSubscribedCalendar('first');
-        const api = jest.fn(() => Promise.resolve({ CalendarSubscription: getSubscription('first') }));
+        const api = vi.fn(() => Promise.resolve({ CalendarSubscription: getSubscription('first') }));
         const { result, store } = setup(api, [first]);
         await waitFor(() => expect(result.current.loading).toBe(false));
 

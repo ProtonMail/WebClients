@@ -1,9 +1,10 @@
 import { Router } from 'react-router-dom';
 
-import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom/vitest';
 import userEvent from '@testing-library/user-event';
 import { createBrowserHistory } from 'history';
+import type { Mock } from 'vitest';
 
 import { calendarUrlQueryParams } from '@proton/calendar/constants';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
@@ -20,84 +21,83 @@ import {
 import { ProtonMeetRow } from './ProtonMeetRow';
 import { useProtonMeetIntegration } from './useProtonMeetIntegration';
 
-jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
-    __esModule: true,
-    default: jest.fn().mockReturnValue({
+vi.mock('@proton/components/hooks/drawer/useDrawer', () => ({
+    default: vi.fn().mockReturnValue({
         isDrawerApp: false,
     }),
 }));
 
-jest.mock('../videoConferencing/useVideoConfTelemetry', () => {
-    const original = jest.requireActual('../videoConferencing/useVideoConfTelemetry');
+vi.mock('../videoConferencing/useVideoConfTelemetry', async () => {
+    const original = await vi.importActual<Record<string, unknown>>('../videoConferencing/useVideoConfTelemetry');
 
     return {
         ...original,
-        useVideoConfTelemetry: jest.fn().mockReturnValue({
-            sentEventProtonMeet: jest.fn(),
+        useVideoConfTelemetry: vi.fn().mockReturnValue({
+            sentEventProtonMeet: vi.fn(),
         }),
     };
 });
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn().mockReturnValue([
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn().mockReturnValue([
         {
             Email: 'test@proton.me',
         },
     ]),
 }));
 
-jest.mock('@proton/account/addresses/hooks', () => ({
-    useAddresses: jest.fn().mockReturnValue([[{ ID: 'address-id', Email: 'test@proton.me' }], false]),
+vi.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: vi.fn().mockReturnValue([[{ ID: 'address-id', Email: 'test@proton.me' }], false]),
 }));
 
-jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: jest.fn().mockReturnValue(true),
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn().mockReturnValue(true),
 }));
 
-jest.mock('@proton/meet/hooks/useGetMeetingDependencies', () => ({
-    useGetMeetingDependencies: jest.fn().mockReturnValue(
-        jest.fn().mockResolvedValue({
+vi.mock('@proton/meet/hooks/useGetMeetingDependencies', () => ({
+    useGetMeetingDependencies: vi.fn().mockReturnValue(
+        vi.fn().mockResolvedValue({
             dependencies: [],
         })
     ),
 }));
 
-jest.mock('@proton/meet/hooks/useCreateMeeting', () => ({
-    useCreateMeeting: jest.fn().mockReturnValue({ createMeeting: jest.fn() }),
+vi.mock('@proton/meet/hooks/useCreateMeeting', () => ({
+    useCreateMeeting: vi.fn().mockReturnValue({ createMeeting: vi.fn() }),
 }));
 
-jest.mock('@proton/meet/hooks/useMeetingUpdates', () => ({
-    useMeetingUpdates: jest.fn().mockReturnValue({
-        saveMeetingName: jest.fn(),
-        saveMeetingSchedule: jest.fn(),
+vi.mock('@proton/meet/hooks/useMeetingUpdates', () => ({
+    useMeetingUpdates: vi.fn().mockReturnValue({
+        saveMeetingName: vi.fn(),
+        saveMeetingSchedule: vi.fn(),
     }),
 }));
 
-jest.mock('@proton/meet/hooks/useGetMeetingByLinkName', () => ({
-    useGetMeetingByLinkName: jest.fn().mockReturnValue({
-        getMeetingByLinkName: jest.fn(),
+vi.mock('@proton/meet/hooks/useGetMeetingByLinkName', () => ({
+    useGetMeetingByLinkName: vi.fn().mockReturnValue({
+        getMeetingByLinkName: vi.fn(),
     }),
 }));
 
-jest.mock('@proton/meet/utils/cryptoUtils', () => ({
-    decryptSessionKey: jest.fn().mockResolvedValue('session-key'),
-    encryptMeetingName: jest.fn().mockResolvedValue('encrypted-title'),
+vi.mock('@proton/meet/utils/cryptoUtils', () => ({
+    decryptSessionKey: vi.fn().mockResolvedValue('session-key'),
+    encryptMeetingName: vi.fn().mockResolvedValue('encrypted-title'),
 }));
 
-jest.mock('./useAutoAddMeetLinkNotification', () => ({
-    useAutoAddMeetLinkNotification: jest.fn().mockReturnValue({
-        showAutoAddNotification: jest.fn(),
-        handleDisableAutoAddMeetLink: jest.fn(),
+vi.mock('./useAutoAddMeetLinkNotification', () => ({
+    useAutoAddMeetLinkNotification: vi.fn().mockReturnValue({
+        showAutoAddNotification: vi.fn(),
+        handleDisableAutoAddMeetLink: vi.fn(),
         isDisabling: false,
         canAutoAddMeeting: true,
     }),
 }));
 
-jest.mock('./useMeetFunnelTelemetry', () => ({
-    useMeetFunnelTelemetry: jest.fn().mockReturnValue({
-        sendSpotlightDisplayed: jest.fn(),
-        sendExploreMeetClicked: jest.fn(),
-        sendMeetingCreated: jest.fn(),
+vi.mock('./useMeetFunnelTelemetry', () => ({
+    useMeetFunnelTelemetry: vi.fn().mockReturnValue({
+        sendSpotlightDisplayed: vi.fn(),
+        sendExploreMeetClicked: vi.fn(),
+        sendMeetingCreated: vi.fn(),
     }),
 }));
 
@@ -132,13 +132,13 @@ const mockMeeting = {
 
 describe('ProtonMeetRow', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     const WrappedProtonMeetRow = ({
         model,
         isActive,
-        setModel = jest.fn(),
+        setModel = vi.fn(),
     }: {
         model: EventModel;
         setModel: (model: EventModel) => void;
@@ -148,8 +148,8 @@ describe('ProtonMeetRow', () => {
             model,
             setModel,
             isActive,
-            setActiveProvider: jest.fn(),
-            setIsVideoConferenceLoading: jest.fn(),
+            setActiveProvider: vi.fn(),
+            setIsVideoConferenceLoading: vi.fn(),
         });
 
         return <ProtonMeetRow model={model} {...protonMeetIntegration} />;
@@ -172,7 +172,7 @@ describe('ProtonMeetRow', () => {
         const renderComponent = (renderComponentParams?: typeof params) => {
             const props = {
                 model: mockModel,
-                setModel: jest.fn(),
+                setModel: vi.fn(),
                 location: {},
                 isActive: false,
                 ...params,
@@ -209,8 +209,8 @@ describe('ProtonMeetRow', () => {
     });
 
     it('should allow for rendering the meeting details if it already exists', async () => {
-        (useGetMeetingByLinkName as jest.Mock).mockReturnValue({
-            getMeetingByLinkName: jest.fn().mockResolvedValue(mockMeeting),
+        (useGetMeetingByLinkName as Mock).mockReturnValue({
+            getMeetingByLinkName: vi.fn().mockResolvedValue(mockMeeting),
         });
 
         renderProtonMeetRow({ model: modelWithMeeting, isActive: true });
@@ -226,19 +226,19 @@ describe('ProtonMeetRow', () => {
     });
 
     it('should automatically create a meeting when having the Proton Meet video conference provider in the url', async () => {
-        const createMeeting = jest.fn().mockResolvedValue({
+        const createMeeting = vi.fn().mockResolvedValue({
             meetingLink: `https://meet.proton.me${meetingLink}`,
             id: 'abcdefghij',
             meeting: mockMeeting,
         });
 
-        (useCreateMeeting as jest.Mock).mockReturnValue({
+        (useCreateMeeting as Mock).mockReturnValue({
             createMeeting,
         });
 
-        const sentEventProtonMeet = jest.fn();
+        const sentEventProtonMeet = vi.fn();
 
-        (useVideoConfTelemetry as jest.Mock).mockReturnValue({
+        (useVideoConfTelemetry as Mock).mockReturnValue({
             sentEventProtonMeet,
         });
 
@@ -258,9 +258,9 @@ describe('ProtonMeetRow', () => {
     });
 
     it('should not automatically create a meeting when not having the Proton Meet video conference provider in the url', () => {
-        const createMeeting = jest.fn().mockResolvedValue(mockMeeting);
+        const createMeeting = vi.fn().mockResolvedValue(mockMeeting);
 
-        (useCreateMeeting as jest.Mock).mockReturnValue({
+        (useCreateMeeting as Mock).mockReturnValue({
             createMeeting,
         });
 
@@ -270,9 +270,9 @@ describe('ProtonMeetRow', () => {
     });
 
     it('should automatically create a meeting when having a newly added attendee', async () => {
-        const createMeeting = jest.fn().mockResolvedValue(mockMeeting);
+        const createMeeting = vi.fn().mockResolvedValue(mockMeeting);
 
-        (useCreateMeeting as jest.Mock).mockReturnValue({
+        (useCreateMeeting as Mock).mockReturnValue({
             createMeeting,
         });
 
@@ -294,9 +294,9 @@ describe('ProtonMeetRow', () => {
     });
 
     it('should not automatically create a meeting when having a newly added attendee and having a valid video conference in the description', async () => {
-        const createMeeting = jest.fn().mockResolvedValue(mockMeeting);
+        const createMeeting = vi.fn().mockResolvedValue(mockMeeting);
 
-        (useCreateMeeting as jest.Mock).mockReturnValue({
+        (useCreateMeeting as Mock).mockReturnValue({
             createMeeting,
         });
 
@@ -315,9 +315,9 @@ describe('ProtonMeetRow', () => {
     });
 
     it('should not automatically create a meeting when having a newly added attendee and having a valid video conference in the location', async () => {
-        const createMeeting = jest.fn().mockResolvedValue(mockMeeting);
+        const createMeeting = vi.fn().mockResolvedValue(mockMeeting);
 
-        (useCreateMeeting as jest.Mock).mockReturnValue({
+        (useCreateMeeting as Mock).mockReturnValue({
             createMeeting,
         });
 

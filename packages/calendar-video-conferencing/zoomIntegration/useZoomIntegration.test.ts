@@ -10,41 +10,41 @@ import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
 
 import { useZoomIntegration } from './useZoomIntegration';
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn(() => [{ hasPaidMail: true, Email: 'test@proton.me' }, false]),
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn(() => [{ hasPaidMail: true, Email: 'test@proton.me' }, false]),
 }));
 
-jest.mock('@proton/account/addresses/hooks', () => ({
-    useAddresses: jest.fn(() => [[{ ID: 'address-id', Email: 'test@proton.me' }], false]),
+vi.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: vi.fn(() => [[{ ID: 'address-id', Email: 'test@proton.me' }], false]),
 }));
 
-jest.mock('./useZoomOAuth', () => ({
-    useZoomOAuth: jest.fn(() => ({
+vi.mock('./useZoomOAuth', () => ({
+    useZoomOAuth: vi.fn(() => ({
         loadingConfig: false,
-        triggerZoomOAuth: jest.fn(),
+        triggerZoomOAuth: vi.fn(),
     })),
 }));
 
-jest.mock('@proton/activation/src/logic/oauthToken/hooks', () => ({
-    useOAuthToken: jest.fn(() => [[{ Provider: OAUTH_PROVIDER.ZOOM }], false]),
+vi.mock('@proton/activation/src/logic/oauthToken/hooks', () => ({
+    useOAuthToken: vi.fn(() => [[{ Provider: OAUTH_PROVIDER.ZOOM }], false]),
 }));
 
-jest.mock('@proton/components/components/modalTwo/useModalState', () => ({
-    useModalStateObject: jest.fn(() => ({})),
+vi.mock('@proton/components/components/modalTwo/useModalState', () => ({
+    useModalStateObject: vi.fn(() => ({})),
 }));
 
-jest.mock('@proton/app-context/useApi', () => ({
-    useApi: jest.fn(() => ({})),
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: vi.fn(() => ({})),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(() => ({})),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(() => ({})),
 }));
 
-jest.mock('../videoConferencing/useVideoConfTelemetry', () => ({
-    VideoConferenceZoomIntegration: jest.fn(),
-    useVideoConfTelemetry: jest.fn(() => ({
-        sentEventZoom: jest.fn(),
+vi.mock('../videoConferencing/useVideoConfTelemetry', async () => ({
+    VideoConferenceZoomIntegration: vi.fn(),
+    useVideoConfTelemetry: vi.fn(() => ({
+        sentEventZoom: vi.fn(),
     })),
 }));
 
@@ -55,9 +55,9 @@ const defaultProps = {
             addressID: 'address-id',
         },
     } as EventModel,
-    setModel: jest.fn(),
-    onRowClick: jest.fn(),
-    setActiveProvider: jest.fn(),
+    setModel: vi.fn(),
+    onRowClick: vi.fn(),
+    setActiveProvider: vi.fn(),
 };
 
 const mockZoomVideoConference = {
@@ -68,20 +68,20 @@ const mockZoomVideoConference = {
 
 describe('useZoomIntegration', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should allow for creating a Zoom video conference if the user has paid mail', async () => {
-        const mockApi = jest.fn().mockReturnValue(
+        const mockApi = vi.fn().mockReturnValue(
             Promise.resolve({
                 VideoConference: mockZoomVideoConference,
             })
         );
 
-        jest.mocked(useApi).mockReturnValue(mockApi);
+        vi.mocked(useApi).mockReturnValue(mockApi);
 
-        const setActiveProvider = jest.fn();
-        const setModel = jest.fn();
+        const setActiveProvider = vi.fn();
+        const setModel = vi.fn();
 
         const { result } = renderHook(() => useZoomIntegration({ ...defaultProps, setActiveProvider, setModel }));
 
@@ -105,18 +105,18 @@ describe('useZoomIntegration', () => {
     });
 
     it('should not allow for creating a Zoom video conference if the user does not have paid mail', async () => {
-        const mockApi = jest.fn();
+        const mockApi = vi.fn();
 
-        jest.mocked(useApi).mockReturnValue(mockApi);
+        vi.mocked(useApi).mockReturnValue(mockApi);
 
         const mockZoomUpsellModal = {
-            openModal: jest.fn(),
+            openModal: vi.fn(),
         };
         // @ts-expect-error - only mocking the relevant properties
-        jest.mocked(useModalStateObject).mockReturnValue(mockZoomUpsellModal);
+        vi.mocked(useModalStateObject).mockReturnValue(mockZoomUpsellModal);
 
         // @ts-expect-error - only mocking the relevant properties
-        jest.mocked(useUser).mockReturnValueOnce([{ hasPaidMail: false, Email: 'test@proton.me' }, false]);
+        vi.mocked(useUser).mockReturnValueOnce([{ hasPaidMail: false, Email: 'test@proton.me' }, false]);
 
         const { result } = renderHook(() => useZoomIntegration(defaultProps));
 
@@ -130,12 +130,12 @@ describe('useZoomIntegration', () => {
     });
 
     it('should read the temporary deleted Zoom video conference', async () => {
-        const mockApi = jest.fn();
+        const mockApi = vi.fn();
 
-        jest.mocked(useApi).mockReturnValue(mockApi);
+        vi.mocked(useApi).mockReturnValue(mockApi);
 
-        const setActiveProvider = jest.fn();
-        const setModel = jest.fn();
+        const setActiveProvider = vi.fn();
+        const setModel = vi.fn();
 
         const { result } = renderHook(() =>
             useZoomIntegration({

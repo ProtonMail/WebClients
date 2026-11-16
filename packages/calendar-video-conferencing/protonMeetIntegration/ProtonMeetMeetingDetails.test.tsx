@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -7,9 +7,8 @@ import NotificationsProvider from '@proton/components/containers/notifications/P
 import type { ProtonMeetMeetingDetailsProps } from './ProtonMeetMeetingDetails';
 import { ProtonMeetMeetingDetails } from './ProtonMeetMeetingDetails';
 
-jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
-    __esModule: true,
-    default: jest.fn().mockReturnValue({
+vi.mock('@proton/components/hooks/drawer/useDrawer', () => ({
+    default: vi.fn().mockReturnValue({
         isDrawerApp: false,
     }),
 }));
@@ -21,7 +20,7 @@ describe('ProtonMeetMeetingDetails', () => {
             conferenceUrl: 'https://meet.proton.me/meeting-123',
             conferenceHost: 'test@proton.me',
         },
-        deleteMeeting: jest.fn(),
+        deleteMeeting: vi.fn(),
     };
 
     const setup = (props: Partial<ProtonMeetMeetingDetailsProps> = {}) => {
@@ -34,7 +33,7 @@ describe('ProtonMeetMeetingDetails', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('renders video conferencing widget with correct meeting data', () => {
@@ -47,7 +46,7 @@ describe('ProtonMeetMeetingDetails', () => {
     });
 
     it('allows deleting the meeting', async () => {
-        const deleteMeeting = jest.fn();
+        const deleteMeeting = vi.fn();
         setup({ deleteMeeting });
 
         const user = userEvent.setup();

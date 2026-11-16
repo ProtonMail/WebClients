@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useHasMeetProductAccess } from '@proton/account/organization/useHasMeetProductAccess';
 import { useApi } from '@proton/app-context/useApi';
@@ -9,50 +10,49 @@ import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/
 
 import { useAutoAddMeetLinkNotification } from './useAutoAddMeetLinkNotification';
 
-jest.mock('@proton/components/hooks/useEventManager', () => ({
-    __esModule: true,
-    default: jest.fn(),
+vi.mock('@proton/components/hooks/useEventManager', () => ({
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useApi', () => ({
-    useApi: jest.fn(),
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(),
 }));
 
-jest.mock('@proton/account/organization/useHasMeetProductAccess', () => ({
-    useHasMeetProductAccess: jest.fn(),
+vi.mock('@proton/account/organization/useHasMeetProductAccess', () => ({
+    useHasMeetProductAccess: vi.fn(),
 }));
 
-jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
-    useCalendarUserSettings: jest.fn(),
+vi.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
+    useCalendarUserSettings: vi.fn(),
 }));
 
 describe('useAutoAddMeetLinkNotification', () => {
-    const mockApi = jest.fn();
-    const mockCall = jest.fn();
-    const mockCreateNotification = jest.fn();
-    const mockHideNotification = jest.fn();
+    const mockApi = vi.fn();
+    const mockCall = vi.fn();
+    const mockCreateNotification = vi.fn();
+    const mockHideNotification = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        (useApi as jest.Mock).mockReturnValue(mockApi);
-        (useEventManager as jest.Mock).mockReturnValue({ call: mockCall });
-        (useNotifications as jest.Mock).mockReturnValue({
+        (useApi as Mock).mockReturnValue(mockApi);
+        (useEventManager as Mock).mockReturnValue({ call: mockCall });
+        (useNotifications as Mock).mockReturnValue({
             createNotification: mockCreateNotification,
             hideNotification: mockHideNotification,
         });
-        (useHasMeetProductAccess as jest.Mock).mockReturnValue(true);
+        (useHasMeetProductAccess as Mock).mockReturnValue(true);
 
         mockApi.mockResolvedValue({});
     });
 
     describe('canAutoAddMeeting', () => {
         it('should return true when auto-add is enabled with Meet provider', () => {
-            (useCalendarUserSettings as jest.Mock).mockReturnValue([
+            (useCalendarUserSettings as Mock).mockReturnValue([
                 {
                     AutoAddConferenceLink: {
                         Provider: AutoAddVideoConferenceLinkProvider.Meet,
@@ -67,7 +67,7 @@ describe('useAutoAddMeetLinkNotification', () => {
         });
 
         it('should return false when auto-add is disabled (None)', () => {
-            (useCalendarUserSettings as jest.Mock).mockReturnValue([
+            (useCalendarUserSettings as Mock).mockReturnValue([
                 {
                     AutoAddConferenceLink: AutoAddVideoConferenceLinkProvider.None,
                 },
@@ -79,7 +79,7 @@ describe('useAutoAddMeetLinkNotification', () => {
         });
 
         it('should return false when auto-add provider is Zoom', () => {
-            (useCalendarUserSettings as jest.Mock).mockReturnValue([
+            (useCalendarUserSettings as Mock).mockReturnValue([
                 {
                     AutoAddConferenceLink: {
                         Provider: AutoAddVideoConferenceLinkProvider.Zoom,
@@ -94,7 +94,7 @@ describe('useAutoAddMeetLinkNotification', () => {
         });
 
         it('should return false when AutoAddConferenceLink is undefined', () => {
-            (useCalendarUserSettings as jest.Mock).mockReturnValue([
+            (useCalendarUserSettings as Mock).mockReturnValue([
                 {
                     AutoAddConferenceLink: undefined,
                 },
@@ -108,7 +108,7 @@ describe('useAutoAddMeetLinkNotification', () => {
 
     describe('showAutoAddNotification', () => {
         it('should show notification when DisplayNotification is enabled', async () => {
-            (useCalendarUserSettings as jest.Mock).mockReturnValue([
+            (useCalendarUserSettings as Mock).mockReturnValue([
                 {
                     AutoAddConferenceLink: {
                         Provider: AutoAddVideoConferenceLinkProvider.Meet,
@@ -133,7 +133,7 @@ describe('useAutoAddMeetLinkNotification', () => {
         });
 
         it('should not show notification when DisplayNotification is disabled', async () => {
-            (useCalendarUserSettings as jest.Mock).mockReturnValue([
+            (useCalendarUserSettings as Mock).mockReturnValue([
                 {
                     AutoAddConferenceLink: {
                         Provider: AutoAddVideoConferenceLinkProvider.Meet,
@@ -154,7 +154,7 @@ describe('useAutoAddMeetLinkNotification', () => {
         });
 
         it('should not show notification when auto-add is disabled', async () => {
-            (useCalendarUserSettings as jest.Mock).mockReturnValue([
+            (useCalendarUserSettings as Mock).mockReturnValue([
                 {
                     AutoAddConferenceLink: AutoAddVideoConferenceLinkProvider.None,
                 },
@@ -174,7 +174,7 @@ describe('useAutoAddMeetLinkNotification', () => {
 
     describe('handleDisableAutoAddMeetLink', () => {
         beforeEach(() => {
-            (useCalendarUserSettings as jest.Mock).mockReturnValue([
+            (useCalendarUserSettings as Mock).mockReturnValue([
                 {
                     AutoAddConferenceLink: {
                         Provider: AutoAddVideoConferenceLinkProvider.Meet,
@@ -272,11 +272,11 @@ describe('useAutoAddMeetLinkNotification', () => {
 
     describe('useHasMeetProductAccess false', () => {
         beforeEach(() => {
-            (useHasMeetProductAccess as jest.Mock).mockReturnValue(false);
+            (useHasMeetProductAccess as Mock).mockReturnValue(false);
         });
 
         it('should return false when auto-add is enabled with Meet provider', () => {
-            (useCalendarUserSettings as jest.Mock).mockReturnValue([
+            (useCalendarUserSettings as Mock).mockReturnValue([
                 {
                     AutoAddConferenceLink: {
                         Provider: AutoAddVideoConferenceLinkProvider.Meet,

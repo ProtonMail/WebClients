@@ -69,12 +69,12 @@ const getTestStore = <T, A extends Action, S = any, P = S>({
     };
 };
 
-jest.mock('@protontech/crypto', () => {
+vi.mock('@protontech/crypto', () => {
     return {
         CryptoProxy: {},
     };
 });
-jest.mock('@protontech/crypto/srp', () => {});
+vi.mock('@protontech/crypto/srp', () => ({}));
 
 const reducer = combineReducers({
     ...userReducer,
@@ -290,7 +290,7 @@ describe('calendar listener', () => {
                 '123': initialCalendar,
             },
         });
-        const reset = jest.spyOn(extraThunkArguments.calendarModelEventManager, 'reset');
+        const reset = vi.spyOn(extraThunkArguments.calendarModelEventManager, 'reset');
 
         store.dispatch(
             calendarEventLoopV6({

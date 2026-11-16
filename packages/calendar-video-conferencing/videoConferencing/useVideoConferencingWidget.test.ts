@@ -12,16 +12,16 @@ const videoConferenceTestData = [
     ['Teams', 'https://teams.live.com/meet/9346628868165?p=IuBKlitIxSGksLCMG8'],
 ] as const;
 
-jest.mock('../videoConferencing/useVideoConfTelemetry', () => ({
-    ...jest.requireActual('../videoConferencing/useVideoConfTelemetry'),
-    useVideoConfTelemetry: jest.fn().mockReturnValue({
-        sendEventVideoConfSource: jest.fn(),
+vi.mock('../videoConferencing/useVideoConfTelemetry', async () => ({
+    ...(await vi.importActual<Record<string, unknown>>('../videoConferencing/useVideoConfTelemetry')),
+    useVideoConfTelemetry: vi.fn().mockReturnValue({
+        sendEventVideoConfSource: vi.fn(),
     }),
 }));
 
-jest.mock('@proton/unleash/useFlag', () => {
+vi.mock('@proton/unleash/useFlag', () => {
     return {
-        useFlag: jest.fn().mockReturnValue(true),
+        useFlag: vi.fn().mockReturnValue(true),
     };
 });
 

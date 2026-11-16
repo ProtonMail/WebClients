@@ -46,9 +46,8 @@
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
         "pretty:fix": "oxfmt --write \"**/*.{ts,tsx,js}\"",
-        "test": "jest",
-        "test:ci": "jest --runInBand --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "TZ=UTC vitest",
+        "test:ci": "TZ=UTC vitest run"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
@@ -68,26 +67,25 @@
     },
     "devDependencies": {
         "@proton/app-context": "workspace:^",
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "catalog:",
-        "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
+        "jsdom": "catalog:",
         "msw": "catalog:",
         "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "react-dom": "catalog:",
         "react-redux": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }
