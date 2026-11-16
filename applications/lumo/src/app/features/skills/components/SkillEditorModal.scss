@@ -11,8 +11,17 @@
 		&:focus-within:not(&--split) {
 			border-color: var(--focus-outline);
 		}
+	}
 
-		&--split > :first-child {
+	&__panel-header {
+		padding-block: rem(8);
+		padding-inline: rem(12);
+	}
+
+	&__body--split {
+		border-block-start: 1px solid var(--border-weak);
+
+		> :first-child {
 			inline-size: rem(200);
 			flex-shrink: 0;
 		}
@@ -21,10 +30,6 @@
 	&__file-header {
 		padding-block: rem(8);
 		padding-inline: rem(12);
-
-		&--single {
-			padding-block-end: 0;
-		}
 	}
 
 	&__mode-toggle {

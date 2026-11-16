@@ -351,11 +351,10 @@ export const SkillDetailView = () => {
         );
 
     const renderSkills = () => (
-        <ul className="m-0 p-0 list-none">
+        <ul className="unstyled m-0">
             {subSkills.map((subSkill) => (
                 <SkillListRow
                     key={subSkill.path}
-                    icon={<LumoIcon name="ScrollText" size={16} />}
                     name={`/${getSkillHandle(subSkill.name) || subSkill.name}`}
                     description={subSkill.description}
                     enabled={subSkill.enabled}
@@ -380,7 +379,7 @@ export const SkillDetailView = () => {
 
                 <header className="flex flex-nowrap items-center gap-4">
                     <div className="skill-detail__icon flex shrink-0 items-center justify-center">
-                        {isPlugin ? (
+                        {isPlugin && !skill.icon ? (
                             <LumoIcon name="Package" size={20} />
                         ) : (
                             <ProjectIcon iconId={skill.icon ?? DEFAULT_AGENT_ICON} size={20} />

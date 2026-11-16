@@ -1,63 +1,55 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
-.skill-group {
-	&__header {
-		padding-block-end: rem(6);
-		border-block-end: 1px solid var(--border-weak);
-	}
-
-	&__title-link:hover,
-	&__title-link:focus-visible {
-		text-decoration: underline;
-	}
-
-	&__title {
-		font-size: rem(14);
-		font-weight: 600;
-	}
-
-	&__count {
-		padding-block: rem(1);
-		padding-inline: rem(6);
-		border-radius: rem(6);
-		background-color: var(--background-weak);
-		color: var(--text-weak);
-		font-size: rem(11);
-		font-weight: 500;
-	}
-
-	&__meta {
-		color: var(--text-hint);
-		font-size: rem(12);
-	}
-}
+// Nested rows start where the parent's text does (icon + gap), and the tree line runs under the
+// middle of the parent's icon. Branches meet the middle of the child's name line.
+$icon-size: rem(32);
+$row-gap: rem(12);
+$children-indent: $icon-size + $row-gap;
+$branch-offset: $children-indent - $icon-size * 0.5;
+$branch-gap: rem(6);
+$nested-padding: rem(6);
+$name-line-center: $nested-padding + rem(10);
 
 .skill-list-row {
-	padding-block: rem(8);
 	border-block-end: 1px solid var(--border-weak);
+	list-style: none;
 
-	&__main {
-		padding: 0;
-		border: none;
-		background: transparent;
-		color: inherit;
-		cursor: pointer;
-
-		&:hover .skill-list-row__name {
-			text-decoration: underline;
-		}
+	&__row {
+		padding-block: rem(8);
 	}
 
 	&__icon {
-		block-size: rem(32);
-		inline-size: rem(32);
+		block-size: $icon-size;
+		inline-size: $icon-size;
 		border: 1px solid var(--border-weak);
 		border-radius: rem(8);
+		background-color: var(--background-norm);
 		color: var(--text-weak);
 	}
 
 	&__name {
+		padding: 0;
+		border: none;
+		background: transparent;
+		color: inherit;
 		font-size: rem(14);
+		font-weight: 500;
+		line-height: rem(20);
+		cursor: pointer;
+
+		&:hover,
+		&:focus-visible {
+			text-decoration: underline;
+		}
+	}
+
+	&__badge {
+		padding-block: rem(1);
+		padding-inline: rem(6);
+		border-radius: rem(6);
+		background-color: color-mix(in srgb, var(--primary) 12%, transparent);
+		color: var(--primary);
+		font-size: rem(11);
 		font-weight: 500;
 	}
 
@@ -65,16 +57,61 @@
 		color: var(--text-weak);
 		font-size: rem(12);
 	}
+
+	&__children {
+		margin: 0;
+		padding-block: 0 rem(4);
+		padding-inline: $children-indent 0;
+		list-style: none;
+
+		> .skill-list-row {
+			position: relative;
+			border: none;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				inset-inline-start: -$branch-offset;
+			}
+
+			// Vertical line, stopping at the last child's branch.
+			&::before {
+				inset-block: 0;
+				border-inline-start: 1px solid var(--border-norm);
+			}
+
+			&:first-child::before {
+				inset-block-start: rem(-4);
+			}
+
+			&:last-child::before {
+				inset-block-end: auto;
+				block-size: $name-line-center;
+			}
+
+			&:first-child:last-child::before {
+				block-size: calc(#{$name-line-center} + #{rem(4)});
+			}
+
+			// Branch into the child's name.
+			&::after {
+				inset-block-start: $name-line-center;
+				inline-size: $branch-offset - $branch-gap;
+				border-block-start: 1px solid var(--border-norm);
+			}
+		}
+
+		.skill-list-row__row {
+			padding-block: $nested-padding;
+		}
+	}
 }
 
 .skill-actions-menu {
-	&__button,
-	&__placeholder {
+	&__button {
 		block-size: rem(32);
 		inline-size: rem(32);
-	}
-
-	&__button {
 		padding: 0;
 		border: none;
 		background: transparent;

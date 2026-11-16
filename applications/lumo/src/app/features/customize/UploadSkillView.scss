@@ -64,6 +64,14 @@
 	color: var(--text-norm);
 }
 
+.upload-skill-source-logo {
+	inline-size: rem(32);
+	block-size: rem(32);
+	border: 1px solid var(--border-weak);
+	border-radius: rem(8);
+	background-color: var(--background-norm);
+}
+
 // Lines the details up with the text next to the row's 18px icon.
 .upload-skill-result-details {
 	padding-inline-start: rem(30);

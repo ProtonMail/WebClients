@@ -81,6 +81,22 @@ describe('importSkillFiles', () => {
         ]);
     });
 
+    it('imports a Codex plugin', async () => {
+        const [result] = await importSkillFiles([
+            await zipFile('docs.zip', {
+                'docs-helper/.codex-plugin/plugin.json': JSON.stringify({
+                    name: 'docs-helper',
+                    version: '1.0.0',
+                    description: 'Find answers in the docs',
+                    skills: './skills/',
+                    interface: { displayName: 'Docs Helper' },
+                }),
+                'docs-helper/skills/docs-search/SKILL.md': '---\nname: docs-search\ndescription: Search\n---\n',
+            }),
+        ]);
+        expect(result.draft).toMatchObject({ name: 'Docs Helper', description: 'Find answers in the docs' });
+    });
+
     it('imports a picked plugin folder', async () => {
         const files = Object.entries(pluginEntries).map(([path, content]) => ({
             path,

@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -23,6 +23,7 @@ export const DeleteProjectModal = ({ project, onConfirmDelete, ...modalProps }: 
     };
 
     const taskName = project.name;
+    const fileCount = project.fileCount ?? 0;
 
     return (
         <ModalTwo {...modalProps} size="small">
@@ -47,11 +48,13 @@ export const DeleteProjectModal = ({ project, onConfirmDelete, ...modalProps }: 
                                         ? c('collider_2025:Info').t`${project.conversationCount} conversation`
                                         : c('collider_2025:Info').t`${project.conversationCount} conversations`}
                                 </li>
-                                {project.fileCount !== undefined && project.fileCount > 0 && (
+                                {fileCount > 0 && (
                                     <li>
-                                        {project.fileCount === 1
-                                            ? c('collider_2025:Info').t`${project.fileCount} file`
-                                            : c('collider_2025:Info').t`${project.fileCount} files`}
+                                        {c('collider_2025:Info').ngettext(
+                                            msgid`${fileCount} file`,
+                                            `${fileCount} files`,
+                                            fileCount
+                                        )}
                                     </li>
                                 )}
                                 <li>{c('collider_2025:Info').t`All messages and chat history`}</li>

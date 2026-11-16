@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { findMcpConfigFile } from './skillBundle';
 import { decodeText, isSkillScriptFile, isTextSkillFile } from './skillFiles';
 import { SKILL_MARKDOWN_PATH, type SkillDraft } from './types';
 
@@ -31,13 +32,12 @@ export type SkillCheckReport = {
     /** Text files read by the check, SKILL.md included. */
     checkedFileCount: number;
     scriptCount: number;
-    /** Names of the MCP servers the plugin's `.mcp.json` sets up. */
+    /** Names of the MCP servers the plugin's MCP config sets up. */
     connectors: string[];
     /** External domains the skill's text links to, sorted. Connector URLs are not included. */
     linkDomains: string[];
 };
 
-const MCP_CONFIG_PATH = '.mcp.json';
 const MAX_LINK_DOMAINS = 20;
 
 type TextPattern = {
@@ -113,7 +113,7 @@ const isRecord = (value: unknown): value is Record<string, unknown> =>
     typeof value === 'object' && value !== null && !Array.isArray(value);
 
 /** Reports local and plain-HTTP servers; an empty `url` is a placeholder the user fills in, not a risk. */
-const checkMcpConfig = (text: string, findings: SkillCheckFinding[]): string[] => {
+const checkMcpConfig = (path: string, text: string, findings: SkillCheckFinding[]): string[] => {
     let json: unknown;
     try {
         json = JSON.parse(text);
@@ -126,10 +126,10 @@ const checkMcpConfig = (text: string, findings: SkillCheckFinding[]): string[] =
         ([, server]) => isRecord(server) && typeof server.url === 'string' && /^http:\/\//i.test(server.url.trim())
     ).length;
     if (local) {
-        findings.push({ kind: 'local-mcp-server', path: MCP_CONFIG_PATH, count: local });
+        findings.push({ kind: 'local-mcp-server', path, count: local });
     }
     if (insecure) {
-        findings.push({ kind: 'insecure-mcp-server', path: MCP_CONFIG_PATH, count: insecure });
+        findings.push({ kind: 'insecure-mcp-server', path, count: insecure });
     }
     return servers.map(([name]) => name.slice(0, 64));
 };
@@ -138,14 +138,15 @@ export const checkSkill = (draft: Pick<SkillDraft, 'instructions' | 'files'>): S
     const findings: SkillCheckFinding[] = [];
     const domains = new Set<string>();
     let connectors: string[] = [];
+    const mcpFile = findMcpConfigFile(draft.files);
     checkText(SKILL_MARKDOWN_PATH, draft.instructions, findings);
     collectLinkDomains(draft.instructions, domains);
     const textFiles = draft.files.filter((file) => isTextSkillFile(file.mimeType));
     for (const file of textFiles) {
         const text = decodeText(file.data);
         checkText(file.path, text, findings);
-        if (file.path === MCP_CONFIG_PATH) {
-            connectors = checkMcpConfig(text, findings);
+        if (file === mcpFile) {
+            connectors = checkMcpConfig(file.path, text, findings);
         } else {
             collectLinkDomains(text, domains);
         }

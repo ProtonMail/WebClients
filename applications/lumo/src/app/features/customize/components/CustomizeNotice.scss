@@ -35,11 +35,11 @@
 	@media (prefers-reduced-motion: no-preference) {
 		&__app-icon,
 		&__icon {
-			animation: customize-notice-icon-pop 0.5s easing(ease-out-back) 0.05s both;
+			animation: customize-notice-icon-pop 0.5s easing(ease-out-back) 0.05s backwards;
 		}
 
 		> :not(img) {
-			animation: customize-rise-in 0.3s easing(ease-out-cubic) 0.08s both;
+			animation: customize-rise-in 0.3s easing(ease-out-cubic) 0.08s backwards;
 		}
 	}
 

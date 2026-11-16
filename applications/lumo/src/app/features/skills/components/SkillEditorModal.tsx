@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -15,12 +15,22 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
+import { DEFAULT_AGENT_ICON } from '../../agents/constants';
+import { IconPicker } from '../../projects/components/IconPicker';
 import { README_PATH, deriveBundleInfo, hasRootSkillMarkdown, isSkillPlugin, resolvePluginInfo } from '../skillBundle';
 import { getSkillWeight } from '../skillEntitlements';
-import { getSkillFileMimeType, isBlockedSkillFile, normalizeSkillFilePath } from '../skillFiles';
+import {
+    MAX_SKILL_FILE_BYTES,
+    MAX_SKILL_FILE_COUNT,
+    MAX_SKILL_TOTAL_BYTES,
+    getSkillFileMimeType,
+    isBlockedSkillFile,
+    normalizeSkillFilePath,
+} from '../skillFiles';
 import { type GeneratedSkill, generateSkill } from '../skillGeneration';
 import { isSkillHandleTaken } from '../skillInvocation';
 import { SKILL_DESCRIPTION_MAX_LENGTH, SKILL_NAME_MAX_LENGTH, getSkillHandle } from '../skillMarkdown';
@@ -49,6 +59,40 @@ interface SkillEditorModalProps extends ModalStateProps {
 
 const getTooLongError = (maxLength: number) => c('collider_2025:Error').t`Use ${maxLength} characters or fewer`;
 
+const getCharacterCount = (value: string, maxLength: number) =>
+    `${value.length.toLocaleString()} / ${maxLength.toLocaleString()}`;
+
+const getLimitsSummary = () => {
+    const fileCount = MAX_SKILL_FILE_COUNT;
+    const fileSize = humanSize({ bytes: MAX_SKILL_FILE_BYTES, unit: 'MB', fraction: 0 });
+    const totalSize = humanSize({ bytes: MAX_SKILL_TOTAL_BYTES, unit: 'MB', fraction: 0 });
+    return c('collider_2025:Info').t`Up to ${fileCount} files · ${fileSize} each · ${totalSize} total`;
+};
+
+const getFileBytes = (file: WorkspaceFile) =>
+    file.text !== undefined ? new TextEncoder().encode(file.text).byteLength : (file.data?.byteLength ?? 0);
+
+/** What this skill uses of its limits; SKILL.md doesn't count towards the file limit. */
+const getUsage = (files: WorkspaceFile[]) => {
+    const otherFiles = files.filter((file) => !isSkillMarkdown(file));
+    const sizes = files.map(getFileBytes);
+    const totalBytes = sizes.reduce((total, size) => total + size, 0);
+    const fileCount = otherFiles.length;
+    const used = humanSize({ bytes: totalBytes });
+    const max = humanSize({ bytes: MAX_SKILL_TOTAL_BYTES, unit: 'MB', fraction: 0 });
+    const fileLabel = fileCount
+        ? c('collider_2025:Info').ngettext(msgid`${fileCount} file`, `${fileCount} files`, fileCount)
+        : undefined;
+    const size = c('collider_2025:Info').t`${used} of ${max}`;
+    return {
+        text: fileLabel ? `${fileLabel} · ${size}` : size,
+        overLimit:
+            fileCount > MAX_SKILL_FILE_COUNT ||
+            totalBytes > MAX_SKILL_TOTAL_BYTES ||
+            sizes.some((bytes) => bytes > MAX_SKILL_FILE_BYTES),
+    };
+};
+
 const newSkillMarkdown = (): WorkspaceFile => ({ path: SKILL_MARKDOWN_PATH, mimeType: 'text/markdown', text: '' });
 
 const isInFolder = (folder: string, path: string) => path.startsWith(`${folder}/`);
@@ -68,8 +112,10 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
 
     const [name, setName] = useState(existing?.name ?? '');
     const [description, setDescription] = useState(existing?.description ?? '');
+    const [icon, setIcon] = useState(existing?.icon);
     const [files, setFiles] = useState<WorkspaceFile[]>(rootFiles);
     const [initialFiles, setInitialFiles] = useState<WorkspaceFile[]>(files);
+    const usage = useMemo(() => getUsage(files), [files]);
     const [loadingFiles, setLoadingFiles] = useState(!!skillId);
     const [activePath, setActivePath] = useState(SKILL_MARKDOWN_PATH);
     const [mode, setMode] = useState<SkillCodeViewMode>('code');
@@ -80,6 +126,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
     const [step, setStep] = useState<'describe' | 'edit'>(existing ? 'edit' : 'describe');
     const [brief, setBrief] = useState('');
     const [lumoRequest, setLumoRequest] = useState('');
+    const [lumoPromptOpen, setLumoPromptOpen] = useState(false);
     const [generating, setGenerating] = useState(false);
     const [undoDraft, setUndoDraft] = useState<GeneratedSkill>();
     const generationRef = useRef<AbortController>(undefined);
@@ -313,7 +360,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                         name: name.trim(),
                         description: description.trim(),
                         instructions: markdown?.text ?? '',
-                        icon: existing?.icon,
+                        icon,
                         source: existing?.source ?? 'created',
                         metadata: existing?.metadata,
                         conversationStarters: existing?.conversationStarters,
@@ -405,7 +452,12 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
         modalTitle = c('collider_2025:Title').t`Edit skill set`;
     } else if (existing) {
         modalTitle = c('collider_2025:Title').t`Edit skill`;
+    } else if (step === 'edit') {
+        modalTitle = c('collider_2025:Title').t`Write a skill`;
     }
+
+    const canUseLumo = withRootMarkdown && !isPlugin;
+    const showLumoPrompt = canUseLumo && (lumoPromptOpen || generating || !!undoDraft);
 
     const describeStep = (
         <>
@@ -429,21 +481,20 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
     const editStep = (
         <>
             <ModalTwoContent className="flex flex-column flex-nowrap gap-3">
-                {withRootMarkdown && !isPlugin && (
-                    <SkillLumoPrompt
-                        value={lumoRequest}
-                        onValue={setLumoRequest}
-                        onSubmit={() => handleGenerate(false)}
-                        onStop={() => generationRef.current?.abort()}
-                        generating={generating}
-                        hasDraft={hasDraft}
-                        onUndo={undoDraft ? handleUndo : undefined}
-                    />
-                )}
                 <InputFieldTwo
                     dir="auto"
                     label={
                         isPlugin ? c('collider_2025:Label').t`Skill set name` : c('collider_2025:Label').t`Skill name`
+                    }
+                    hint={getCharacterCount(name, SKILL_NAME_MAX_LENGTH)}
+                    prefix={
+                        <IconPicker
+                            size="small"
+                            selectedIcon={icon ?? DEFAULT_AGENT_ICON}
+                            onSelectIcon={setIcon}
+                            disabled={generating}
+                            label={c('collider_2025:Action').t`Choose skill icon`}
+                        />
                     }
                     placeholder={c('collider_2025:Placeholder').t`Weekly status report`}
                     value={name}
@@ -462,6 +513,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                     as={TextAreaTwo}
                     rows={2}
                     label={c('collider_2025:Label').t`Description`}
+                    hint={getCharacterCount(description, SKILL_DESCRIPTION_MAX_LENGTH)}
                     placeholder={c('collider_2025:Placeholder')
                         .t`Generate weekly status reports from recent work. Use when asked for updates or progress summaries.`}
                     value={description}
@@ -476,69 +528,26 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                 />
                 <div
                     className={clsx(
-                        'skill-editor__workspace flex flex-nowrap',
+                        'skill-editor__workspace flex flex-column flex-nowrap',
                         showTree && 'skill-editor__workspace--split'
                     )}
                 >
-                    {showTree ? (
-                        <>
-                            <SkillFileTree
-                                files={sortedFiles}
-                                activePath={activeFile?.path ?? ''}
-                                onSelect={setActivePath}
-                                modifiedPaths={modifiedPaths}
-                                footer={
-                                    <button
-                                        type="button"
-                                        className="skill-editor__add-file flex flex-nowrap items-center gap-2 border-none bg-transparent"
-                                        onClick={startNewFile}
-                                    >
-                                        <LumoIcon name="Plus" size={14} />
-                                        {c('collider_2025:Action').t`Add file`}
-                                    </button>
-                                }
-                            >
-                                {newPath !== undefined && (
-                                    <li className="px-1 pt-1">
-                                        <Input
-                                            autoFocus
-                                            value={newPath}
-                                            onValue={(value) => {
-                                                setNewPath(value);
-                                                setNewPathError(undefined);
-                                            }}
-                                            onKeyDown={(event) => {
-                                                if (event.key === 'Enter') commitNewPath();
-                                                if (event.key === 'Escape') cancelNewFile();
-                                            }}
-                                            onBlur={commitNewPath}
-                                            placeholder="path/to/file.md"
-                                            aria-label={c('collider_2025:Label').t`New file path`}
-                                            error={!!newPathError}
-                                        />
-                                        {newPathError ? (
-                                            <p className="m-0 mt-1 text-xs color-danger">{newPathError}</p>
-                                        ) : (
-                                            <p className="m-0 mt-1 text-xs color-hint">
-                                                {c('collider_2025:Info').t`Use / to put it in a folder.`}
-                                            </p>
-                                        )}
-                                    </li>
-                                )}
-                            </SkillFileTree>
-                            <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                                <div className="skill-editor__file-header flex flex-nowrap items-center gap-2">
-                                    <span className="flex-1 text-ellipsis text-monospace text-sm">
-                                        {activeFile ? `/${activeFile.path}` : ''}
-                                    </span>
-                                    {fileActions}
-                                </div>
-                                <div className="flex-1 min-h-0">{codeView}</div>
-                            </div>
-                        </>
-                    ) : (
-                        <div className="flex flex-column flex-nowrap flex-1 min-w-0">
-                            <div className="skill-editor__file-header skill-editor__file-header--single flex flex-nowrap items-center justify-end gap-2">
+                    <div className="skill-editor__panel-header flex flex-nowrap items-center gap-2">
+                        <span className="flex-1 text-sm color-weak text-ellipsis">
+                            {showTree
+                                ? c('collider_2025:Label').t`Files`
+                                : c('collider_2025:Label').t`Instructions · ${SKILL_MARKDOWN_PATH}`}
+                        </span>
+                        {canUseLumo && !showLumoPrompt && (
+                            <Button size="small" shape="outline" onClick={() => setLumoPromptOpen(true)}>
+                                <span className="flex flex-nowrap items-center gap-1">
+                                    <LumoIcon name="Sparkles" size={14} />
+                                    {c('collider_2025:Action').t`Improve with ${LUMO_SHORT_APP_NAME}`}
+                                </span>
+                            </Button>
+                        )}
+                        {!showTree && (
+                            <>
                                 <Button size="small" shape="ghost" onClick={startNewFile}>
                                     <span className="flex flex-nowrap items-center gap-1">
                                         <LumoIcon name="Plus" size={14} />
@@ -546,22 +555,105 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                                     </span>
                                 </Button>
                                 {fileActions}
-                            </div>
-                            <div className="flex-1 min-h-0">{codeView}</div>
+                            </>
+                        )}
+                    </div>
+                    {showLumoPrompt && (
+                        <div className="px-3">
+                            <SkillLumoPrompt
+                                value={lumoRequest}
+                                onValue={setLumoRequest}
+                                onSubmit={() => handleGenerate(false)}
+                                onStop={() => generationRef.current?.abort()}
+                                generating={generating}
+                                hasDraft={hasDraft}
+                                onUndo={undoDraft ? handleUndo : undefined}
+                            />
                         </div>
                     )}
+                    <div
+                        className={clsx(
+                            'skill-editor__body flex flex-nowrap flex-1 min-h-0',
+                            showTree && 'skill-editor__body--split'
+                        )}
+                    >
+                        {showTree ? (
+                            <>
+                                <SkillFileTree
+                                    files={sortedFiles}
+                                    activePath={activeFile?.path ?? ''}
+                                    onSelect={setActivePath}
+                                    modifiedPaths={modifiedPaths}
+                                    footer={
+                                        <button
+                                            type="button"
+                                            className="skill-editor__add-file flex flex-nowrap items-center gap-2 border-none bg-transparent"
+                                            onClick={startNewFile}
+                                        >
+                                            <LumoIcon name="Plus" size={14} />
+                                            {c('collider_2025:Action').t`Add file`}
+                                        </button>
+                                    }
+                                >
+                                    {newPath !== undefined && (
+                                        <li className="px-1 pt-1">
+                                            <Input
+                                                autoFocus
+                                                value={newPath}
+                                                onValue={(value) => {
+                                                    setNewPath(value);
+                                                    setNewPathError(undefined);
+                                                }}
+                                                onKeyDown={(event) => {
+                                                    if (event.key === 'Enter') commitNewPath();
+                                                    if (event.key === 'Escape') cancelNewFile();
+                                                }}
+                                                onBlur={commitNewPath}
+                                                placeholder="path/to/file.md"
+                                                aria-label={c('collider_2025:Label').t`New file path`}
+                                                error={!!newPathError}
+                                            />
+                                            {newPathError ? (
+                                                <p className="m-0 mt-1 text-xs color-danger">{newPathError}</p>
+                                            ) : (
+                                                <p className="m-0 mt-1 text-xs color-hint">
+                                                    {c('collider_2025:Info').t`Use / to put it in a folder.`}
+                                                </p>
+                                            )}
+                                        </li>
+                                    )}
+                                </SkillFileTree>
+                                <div className="flex flex-column flex-nowrap flex-1 min-w-0">
+                                    <div className="skill-editor__file-header flex flex-nowrap items-center gap-2">
+                                        <span className="flex-1 text-ellipsis text-monospace text-sm">
+                                            {activeFile ? `/${activeFile.path}` : ''}
+                                        </span>
+                                        {fileActions}
+                                    </div>
+                                    <div className="flex-1 min-h-0">{codeView}</div>
+                                </div>
+                            </>
+                        ) : (
+                            <div className="flex-1 min-w-0 min-h-0">{codeView}</div>
+                        )}
+                    </div>
                 </div>
             </ModalTwoContent>
-            <ModalTwoFooter className={existing ? 'justify-end' : 'items-center'}>
-                {!existing && (
-                    <Button shape="ghost" onClick={() => setStep('describe')} disabled={generating}>
-                        <span className="flex flex-nowrap items-center gap-1">
-                            <LumoIcon name="ArrowLeft" size={16} />
-                            {c('collider_2025:Action').t`Back`}
+            <ModalTwoFooter className="items-center">
+                <div className="flex flex-nowrap items-center gap-2 min-w-0">
+                    {!existing && (
+                        <span className="shrink-0 border rounded px-2 py-0.5 text-xs color-weak">
+                            {c('collider_2025:Info').t`Draft`}
                         </span>
-                    </Button>
-                )}
-                <div className="flex flex-nowrap gap-2">
+                    )}
+                    <span
+                        className={clsx('text-xs text-ellipsis', usage.overLimit ? 'color-danger' : 'color-weak')}
+                        title={getLimitsSummary()}
+                    >
+                        {usage.text}
+                    </span>
+                </div>
+                <div className="flex flex-nowrap gap-2 shrink-0">
                     <Button onClick={modalProps.onClose}>{c('collider_2025:Action').t`Cancel`}</Button>
                     <Button color="norm" onClick={handleSave} loading={saving} disabled={loadingFiles || generating}>
                         {existing ? c('collider_2025:Action').t`Save` : c('collider_2025:Action').t`Create`}

@@ -2,9 +2,10 @@ import JSZip from 'jszip';
 import { c } from 'ttag';
 
 import {
-    PLUGIN_MANIFEST_PATH,
     README_PATH,
+    findPluginManifestFile,
     findSubSkills,
+    isPluginManifestPath,
     isSubSkillMarkdownPath,
     parsePluginManifest,
 } from './skillBundle';
@@ -21,7 +22,8 @@ import { SKILL_DESCRIPTION_MAX_LENGTH, SKILL_NAME_MAX_LENGTH, parseSkillMarkdown
 import { SKILL_MARKDOWN_PATH, type SkillDraft, type SkillFileDraft } from './types';
 
 export type SkillImportResult = { fileName: string } & (
-    { draft: SkillDraft; error?: never } | { error: string; draft?: never }
+    | { draft: SkillDraft; error?: never }
+    | { error: string; draft?: never }
 );
 
 /** A file picked from a folder, with its path relative to the picked folder's parent. */
@@ -82,14 +84,14 @@ const readmeSummary = (files: SkillFileDraft[]) => {
         .slice(0, SKILL_DESCRIPTION_MAX_LENGTH);
 };
 
-/** A Claude plugin or a folder of skills: the sub-skills live in nested SKILL.md files. */
+/** A Claude or ChatGPT plugin, or a folder of skills: the sub-skills live in nested SKILL.md files. */
 const draftFromBundle = (rootName: string, markdown: string | undefined, files: SkillFileDraft[]): SkillDraft => {
     const subSkills = findSubSkills(files);
     for (const file of files.filter(({ path }) => isSubSkillMarkdownPath(path))) {
         const { frontmatter } = parseSkillMarkdown(decodeText(file.data));
         validateNameAndDescription(frontmatter.name ?? '', frontmatter.description ?? '', file.path);
     }
-    const manifestFile = files.find((file) => file.path === PLUGIN_MANIFEST_PATH);
+    const manifestFile = findPluginManifestFile(files);
     const manifest = manifestFile ? parsePluginManifest(decodeText(manifestFile.data)) : undefined;
     if (manifestFile && !manifest) {
         throw new SkillImportError(c('collider_2025:Error').t`The plugin.json file could not be read.`);
@@ -137,7 +139,7 @@ const importEntries = async (rawEntries: BundleEntry[], fallbackName: string): P
     const { prefix, rootName } = stripSharedFolder(entries.map(({ path }) => path));
     const bundle = entries.map((entry) => ({ ...entry, path: entry.path.slice(prefix.length) }));
     const paths = bundle.map(({ path }) => path);
-    const isPlugin = paths.includes(PLUGIN_MANIFEST_PATH);
+    const isPlugin = paths.some(isPluginManifestPath);
     const hasRootMarkdown = paths.includes(SKILL_MARKDOWN_PATH);
     if (!isPlugin && !hasRootMarkdown && !paths.some(isSubSkillMarkdownPath)) {
         throw new SkillImportError(c('collider_2025:Error').t`The upload must include a SKILL.md file.`);

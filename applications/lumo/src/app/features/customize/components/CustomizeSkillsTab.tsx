@@ -27,7 +27,7 @@ import { useSkills } from '../../skills/useSkills';
 import type { SkillsView } from '../customizeTabs';
 import { groupSkills } from '../skillGroups';
 import { getSkillPath, getSubSkillPath } from '../skillRoutes';
-import { SkillGroupSection } from './SkillGroupSection';
+import { SkillGroupRows } from './SkillGroupRows';
 import { SkillsDiscover } from './SkillsDiscover';
 import { SkillsMigrationNotice } from './SkillsMigrationNotice';
 
@@ -118,9 +118,9 @@ export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSki
             );
         }
         return (
-            <div className="flex flex-column flex-nowrap gap-6">
+            <ul className="unstyled m-0">
                 {groups.map((group) => (
-                    <SkillGroupSection
+                    <SkillGroupRows
                         key={group.key}
                         group={group}
                         onOpen={(skill) => history.push(getSkillPath(skill.id))}
@@ -143,7 +143,7 @@ export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSki
                         }}
                     />
                 ))}
-            </div>
+            </ul>
         );
     };
 
@@ -171,7 +171,7 @@ export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSki
     };
 
     return (
-        <div className="customize-skills-tab flex flex-column flex-nowrap gap-8 flex-1">
+        <div className="customize-skills-tab customize-tab-panel flex flex-column flex-nowrap gap-8 flex-1">
             {view === 'yours' && (
                 <SkillLimitWarning
                     isOverLimit={skillLimit.isOverLimit}

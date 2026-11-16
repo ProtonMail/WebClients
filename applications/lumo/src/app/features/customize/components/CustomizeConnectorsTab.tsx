@@ -74,7 +74,7 @@ export const CustomizeConnectorsTab = ({ searchQuery }: CustomizeConnectorsTabPr
     }
 
     return (
-        <div className="flex flex-column flex-nowrap gap-6">
+        <div className="customize-tab-panel flex flex-column flex-nowrap gap-6">
             <div className="flex flex-nowrap items-start justify-space-between gap-4">
                 <p className="m-0 text-sm color-weak max-w-custom" style={{ '--max-w-custom': '40rem' }}>
                     {c('collider_2025:Info')
