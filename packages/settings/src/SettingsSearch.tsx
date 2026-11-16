@@ -36,7 +36,7 @@ interface Props {
     app: APP_NAMES;
 }
 
-interface SearchOption {
+export interface SearchOption {
     value: string;
     icon?: IconComponent;
     to: string;
