@@ -14,7 +14,6 @@ import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
 import { getNewsExternal, patchNewsExternal } from '@proton/shared/lib/api/settings';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getBits } from '@proton/shared/lib/helpers/bitset';
 import type { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
@@ -29,6 +28,8 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import EmailSubscriptionManagement from '../components/EmailSubscriptionManagement';
 import { EmailUnsubscribedContainer } from '../components/EmailUnsubscribed';
+import { PublicAppContext } from '../state-machine/PublicAppContext';
+import { selectSignInPath } from '../state-machine/publicAppStateMachine';
 import ExpiredError from './ExpiredError';
 
 interface UserSettingsNewsResponse {
@@ -57,6 +58,7 @@ const getDiff = (subscriptionBits: NEWSLETTER_SUBSCRIPTIONS_BITS[], isEnabled = 
 
 const EmailUnsubscribeContainer = () => {
     const silentApi = useSilentApi();
+    const signInPath = PublicAppContext.useSelector(selectSignInPath);
     const authApiRef = useRef<Api | null>(null);
     const [news, setNews] = useState<number | null>(null);
     const [page, setPage] = useState(PAGE.UNSUBSCRIBE);
@@ -149,7 +151,7 @@ const EmailUnsubscribeContainer = () => {
                         );
                     }
                     const signIn = (
-                        <a key="1" href={SSO_PATHS.SWITCH} target="_self">
+                        <a key="1" href={signInPath} target="_self">
                             {c('Error message, unsubscribe').t`sign in`}
                         </a>
                     );

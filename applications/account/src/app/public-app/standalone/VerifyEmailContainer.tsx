@@ -13,12 +13,13 @@ import useLoading from '@proton/hooks/useLoading';
 import { UNAUTHENTICATED_ROUTES } from '@proton/settings/helpers/unauthenticatedRoutes';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { postVerifyValidate } from '@proton/shared/lib/api/verify';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import accountIllustration from '../assets/account-illustration.svg';
 import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
+import { PublicAppContext } from '../state-machine/PublicAppContext';
+import { selectSignInPath } from '../state-machine/publicAppStateMachine';
 import ExpiredError from './ExpiredError';
 import { stripQueryParams } from './jwt';
 
@@ -29,6 +30,7 @@ enum ErrorType {
 
 const VerifyEmailContainer = () => {
     const history = useHistory();
+    const signInPath = PublicAppContext.useSelector(selectSignInPath);
     const silentApi = useSilentApi();
     const handleError = useErrorHandler();
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
@@ -75,7 +77,7 @@ const VerifyEmailContainer = () => {
                         );
                     }
                     const signIn = (
-                        <a key="1" href={SSO_PATHS.SWITCH} target="_self">
+                        <a key="1" href={signInPath} target="_self">
                             {c('Error message, recovery').t`sign in`}
                         </a>
                     );
@@ -123,7 +125,7 @@ const VerifyEmailContainer = () => {
                                 <ButtonLike
                                     fullWidth
                                     as="a"
-                                    href={`${SSO_PATHS.SWITCH}?${searchParams.toString()}`}
+                                    href={`${signInPath}?${searchParams.toString()}`}
                                     target="_self"
                                     color="norm"
                                 >

@@ -139,6 +139,7 @@ const getSignupUrl = (
 export interface Paths {
     login: string;
     signup: string;
+    switch: string;
     reauth: string;
     appSwitcher: string;
     reset: string;
@@ -165,6 +166,7 @@ export const getPaths = ({
     const prefix = getLocalePathPrefix(localePrefix);
     return {
         login: getLoginUrl(prefix, app),
+        switch: `${prefix}${SSO_PATHS.SWITCH}`,
         reauth: getReauthUrl(prefix),
         appSwitcher: getAppSwitcherUrl(prefix),
         signup: getSignupUrl(prefix, forkState, app, productParam, searchParams),

@@ -1,5 +1,5 @@
 import { type ReactNode, useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { useMachine } from '@xstate/react';
 import isDeepEqual from 'lodash/isEqual';
@@ -21,7 +21,6 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryUnlock } from '@proton/shared/lib/api/user';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys/accountType';
@@ -94,12 +93,11 @@ const SrpForm = ({ onSubmit, submitting, below }: SrpFormProps) => {
 
 const ReAuthContainer = ({ state }: { state: ReAuthState }) => {
     const { onPreSubmit } = usePublicAppAuth();
-    const history = useHistory();
     const publicApp = PublicAppContext.useActorRef();
     const toApp = PublicAppContext.useSelector(selectPreAppIntent);
     const paths = PublicAppContext.useSelector(selectPaths, isDeepEqual);
     const onLogin: OnLoginCallback = (session) => runLogin(publicApp, session);
-    const onSwitch = () => history.push(SSO_PATHS.SWITCH);
+    const onSwitch = () => publicApp.send({ type: 'switch.requested' });
     const errorHandler = useErrorHandler();
     const normalApi = useApi();
 

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -24,6 +25,8 @@ import inboxPlaceholderDark from '@proton/styles/assets/img/inbox-desktop/inbox_
 
 import Layout from '../layout/Layout';
 import Main from '../layout/Main';
+import { PublicAppContext } from '../state-machine/PublicAppContext';
+import { selectPaths } from '../state-machine/publicAppStateMachine';
 
 import './InboxDesktopFreeTrialEnded.scss';
 
@@ -39,6 +42,7 @@ const WebAppLink = () => {
 const InboxDesktopFreeTrialEnded = () => {
     const history = useHistory();
     const theme = useTheme();
+    const paths = PublicAppContext.useSelector(selectPaths, isDeepEqual);
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.INBOX_DESKTOP_REF_PATH,
@@ -50,7 +54,7 @@ const InboxDesktopFreeTrialEnded = () => {
         // The free trial page is only displayed for the electron desktop application
         // This is put here as security to prevent users on the web to access this page
         if (!isElectronMail) {
-            history.replace('/login');
+            history.replace(paths.login);
         }
     }, []);
 
@@ -58,9 +62,9 @@ const InboxDesktopFreeTrialEnded = () => {
         resetEndOfTrialIPCCall();
 
         if (hasInboxDesktopFeature('MultiAccount')) {
-            history.replace('/switch');
+            history.replace(paths.switch);
         } else {
-            history.replace('/login');
+            history.replace(paths.login);
         }
     };
 

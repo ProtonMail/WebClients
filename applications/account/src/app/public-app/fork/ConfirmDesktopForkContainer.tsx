@@ -1,5 +1,3 @@
-import { useHistory } from 'react-router-dom';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -9,7 +7,6 @@ import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/c
 import { getApplicationNameWithPlatform } from '@proton/shared/lib/apps/getApplicationNameWithPlatform';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { ForkCodeLocation } from '@proton/shared/lib/authentication/interface';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import Content from '../layout/Content';
 import Header from '../layout/Header';
@@ -48,13 +45,11 @@ const LocationCard = ({ IP, CountryCode }: ForkCodeLocation) => {
 };
 
 const ConfirmDesktopForkContainer = ({ consent }: Props) => {
-    const history = useHistory();
     const publicApp = PublicAppContext.useActorRef();
     const loading = PublicAppContext.useSelector(selectLoggingIn);
     const { app, childClientId, location } = consent.payload;
     const onConfirm = () => publicApp.send({ type: 'consent.confirmed', consent });
-    // Soft navigation keeps the desktop fork state, so another account can be picked
-    const onCancel = () => history.push(SSO_PATHS.SWITCH);
+    const onCancel = () => publicApp.send({ type: 'consent.cancelled', consent });
     const applicationName = getApplicationNameWithPlatform(getAppName(app), childClientId);
     const hasLocation = Boolean(location?.IP || location?.CountryCode);
 

@@ -4,9 +4,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import BugModal from '@proton/components/containers/support/BugModal';
-import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import expired from '../assets/expired-link.svg';
+import { PublicAppContext } from '../state-machine/PublicAppContext';
+import { selectSignInPath } from '../state-machine/publicAppStateMachine';
 
 const ReportLink = () => {
     const [modalProps, setRenderModal, renderModal] = useModalState();
@@ -38,7 +40,7 @@ interface Props {
     adminEmail?: string;
 }
 
-const getTexts = (type: Props['type'], adminEmail = '') => {
+const getTexts = (type: Props['type'], signInPath: string, adminEmail = '') => {
     const admin = (
         <strong key="admin" className="text-break">
             {adminEmail}
@@ -58,7 +60,7 @@ const getTexts = (type: Props['type'], adminEmail = '') => {
             description: c('Info')
                 .t`The email verification link has expired. Please sign in to resend a verification link.`,
             cta: (
-                <ButtonLike as="a" href={SSO_PATHS.SWITCH} target="_self">
+                <ButtonLike as="a" href={signInPath} target="_self">
                     {c('Error message, recovery').t`Sign in to verify`}
                 </ButtonLike>
             ),
@@ -124,7 +126,8 @@ const getTexts = (type: Props['type'], adminEmail = '') => {
 };
 
 const ExpiredError = ({ type, adminEmail }: Props) => {
-    const { title, description, cta } = getTexts(type, adminEmail);
+    const signInPath = PublicAppContext.useSelector(selectSignInPath);
+    const { title, description, cta } = getTexts(type, signInPath, adminEmail);
     return (
         <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '20em' }}>
             <div className="mb-8">

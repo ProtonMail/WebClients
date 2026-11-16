@@ -55,6 +55,7 @@ const start = ({
 }) => {
     const followLoginResult = jest.fn();
     const replaceLocation = jest.fn();
+    const pushLocation = jest.fn();
     const actor = createActor(
         publicAppStateMachine.provide({
             actors: {
@@ -70,6 +71,7 @@ const start = ({
             actions: {
                 followLoginResult: (_, { result }) => followLoginResult(result),
                 replaceLocation: (_, { path }) => replaceLocation(path),
+                pushLocation: (_, { path }) => pushLocation(path),
             },
         }),
         {
@@ -80,7 +82,7 @@ const start = ({
             },
         }
     ).start();
-    return { actor, followLoginResult, replaceLocation };
+    return { actor, followLoginResult, replaceLocation, pushLocation };
 };
 
 describe('publicAppStateMachine', () => {
@@ -220,6 +222,39 @@ describe('publicAppStateMachine', () => {
             await waitFor(actor, (state) => state.matches({ page: 'ready' }));
             expect(replaceLocation).toHaveBeenCalledWith(expect.stringContaining(SSO_PATHS.LOGIN));
         });
+    });
+
+    describe('a page that sends the user to sign in', () => {
+        it('opens the account switcher when the browser has sessions', () => {
+            const { actor, replaceLocation } = start({ pathname: SSO_PATHS.JOIN_MAGIC_LINK });
+            actor.send({ type: 'signIn.requested' });
+            expect(replaceLocation).toHaveBeenCalledWith(expect.stringMatching(/\/switch$/));
+        });
+
+        it('opens the login page when the sessions it read are gone', () => {
+            const { actor, replaceLocation } = start({ pathname: SSO_PATHS.JOIN_MAGIC_LINK });
+            actor.send({ type: 'sessions.updated', sessions: [] });
+            actor.send({ type: 'signIn.requested' });
+            expect(replaceLocation).toHaveBeenCalledWith(expect.stringMatching(/\/login$/));
+        });
+
+        it('keeps the language prefix', () => {
+            const { actor, replaceLocation } = start({ pathname: SSO_PATHS.JOIN_MAGIC_LINK });
+            actor.send({ type: 'language.changed', localePrefix: 'fr' });
+            actor.send({ type: 'signIn.requested' });
+            expect(replaceLocation).toHaveBeenCalledWith(`/fr${SSO_PATHS.SWITCH}`);
+        });
+    });
+
+    it('opens the account switcher the user asks for, even when no session was there when the page opened', () => {
+        const { actor, pushLocation, replaceLocation } = start({
+            pathname: SSO_PATHS.APP_SWITCHER,
+            initialSessionsLength: 0,
+        });
+        actor.send({ type: 'language.changed', localePrefix: 'fr' });
+        actor.send({ type: 'switch.requested' });
+        expect(pushLocation).toHaveBeenCalledWith(`/fr${SSO_PATHS.SWITCH}`);
+        expect(replaceLocation).not.toHaveBeenCalled();
     });
 
     describe('what the user signs in to', () => {
@@ -377,6 +412,82 @@ describe('publicAppStateMachine', () => {
             actor.send({ type: 'consent.confirmed', consent });
             expect(actor.getSnapshot().matches({ page: 'ready' })).toBe(true);
             expect(login).not.toHaveBeenCalled();
+        });
+
+        const oauthFork = {
+            type: SSOType.OAuth,
+            payload: { oauthData: { clientInfo: { Name: 'Zapier' } } },
+        } as unknown as ProduceForkData;
+        const protonFork = { type: SSOType.Proton, payload: { forkParameters: {} } } as unknown as ProduceForkData;
+
+        it.each([
+            {
+                name: 'an OAuth consent',
+                forkState: oauthFork,
+                cancelled: {
+                    type: 'oauth-consent',
+                    location: SSO_PATHS.OAUTH_AUTHORIZE_CONSENT,
+                    payload: { session, data: oauthFork },
+                } as unknown as ConsentState,
+            },
+            { name: 'a redirect consent', forkState: protonFork, cancelled: consent },
+        ])(
+            'stops the fork on $name the user cancels, so an account picked next does not continue it',
+            async ({ forkState, cancelled }) => {
+                const resumed = { localID: 2 } as unknown as ResumedSessionResult;
+                const login = jest.fn(async () => inputResult);
+                const { actor, replaceLocation } = start({
+                    pathname: SSO_PATHS.SIGNUP,
+                    forkState,
+                    resumeSession: async () => resumed,
+                    login,
+                });
+                actor.send({ type: 'login.resulted', result: cancelled });
+                actor.send({ type: 'consent.cancelled', consent: cancelled });
+                expect(actor.getSnapshot().context).toMatchObject({ forkState: null, locationState: null });
+                expect(replaceLocation).toHaveBeenCalledWith(expect.stringMatching(/\/switch$/));
+
+                actor.send({ type: 'session.picked', localID: 2 });
+                await waitFor(actor, (state) => state.matches({ page: 'ready' }));
+                expect(login).toHaveBeenCalledWith({
+                    context: expect.objectContaining({ forkState: null }),
+                    session: { data: resumed, flow: 'switch' },
+                });
+            }
+        );
+
+        it('opens the account switcher on a cancelled consent after a first sign-up, before any session list loaded', () => {
+            const { actor, replaceLocation } = start({
+                pathname: SSO_PATHS.SIGNUP,
+                initialSessionsLength: 0,
+                forkState: protonFork,
+            });
+            actor.send({ type: 'login.resulted', result: consent });
+            actor.send({ type: 'consent.cancelled', consent });
+            expect(replaceLocation).toHaveBeenCalledWith(SSO_PATHS.SWITCH);
+        });
+
+        it('keeps the desktop fork on a cancelled desktop consent, so another account can be picked', () => {
+            const forkState = { type: SSOType.Proton, payload: { forkParameters: {} } } as unknown as ProduceForkData;
+            const desktopConsent = {
+                type: 'desktop-fork-consent',
+                location: '/auth-desktop/confirm',
+                payload: { session },
+            } as unknown as ConsentState;
+            const { actor, replaceLocation } = start({ pathname: SSO_PATHS.SIGNUP, forkState });
+            actor.send({ type: 'login.resulted', result: desktopConsent });
+            actor.send({ type: 'consent.cancelled', consent: desktopConsent });
+            expect(actor.getSnapshot().context).toMatchObject({ forkState, locationState: null });
+            expect(replaceLocation).toHaveBeenCalledWith(expect.stringMatching(/\/switch$/));
+        });
+
+        it('ignores a cancel for a consent the page does not show', () => {
+            const forkState = { type: SSOType.Proton, payload: { forkParameters: {} } } as unknown as ProduceForkData;
+            const { actor, replaceLocation } = start({ pathname: SSO_PATHS.SIGNUP, forkState });
+            expect(actor.getSnapshot().matches({ page: 'ready' })).toBe(true);
+            actor.send({ type: 'consent.cancelled', consent });
+            expect(actor.getSnapshot().context.forkState).toBe(forkState);
+            expect(replaceLocation).not.toHaveBeenCalled();
         });
     });
 

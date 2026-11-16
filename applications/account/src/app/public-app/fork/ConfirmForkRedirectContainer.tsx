@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import Content from '../layout/Content';
 import Header from '../layout/Header';
@@ -21,9 +21,7 @@ const ConfirmForkRedirectContainer = ({ consent }: Props) => {
     const loading = PublicAppContext.useSelector(selectLoggingIn);
     const { redirectUrl } = consent.payload;
     const onConfirm = () => publicApp.send({ type: 'consent.confirmed', consent });
-    const onCancel = () => {
-        window.location.pathname = SSO_PATHS.SWITCH;
-    };
+    const onCancel = () => publicApp.send({ type: 'consent.cancelled', consent });
     return (
         <Layout hasDecoration={false} toApp={toApp}>
             <Main>
