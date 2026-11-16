@@ -5,7 +5,7 @@ import ModalTwo, { type ModalProps } from '@proton/components/components/modalTw
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import type { UpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
+import type { Upsell } from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
 import UpsellPriceV1 from '@proton/components/containers/payments/subscription/panels/components/UpsellPriceV1';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
@@ -17,7 +17,7 @@ export interface EditOutgoingEmergencyContactModalProps extends Omit<
 > {
     loadingSubscriptionModal?: boolean;
     onUpgrade: (type: 'explore' | 'upgrade') => void;
-    upsell: UpsellWithPlan;
+    upsell: Upsell;
 }
 
 export const UpsellOutgoingEmergencyContactModal = ({

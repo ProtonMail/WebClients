@@ -76,20 +76,6 @@ export interface ShortPlan {
     features: PlanCardFeatureDefinition[];
 }
 
-/**
- * Can be used for UI-only plans. For example, the enterprise-talk-to-us plan doesn't exist on the backend,
- * but we still want to display it in the UI.
- */
-export type ShortPlanLike = {
-    plan: string;
-    cta?: string;
-    isPlanLike: true;
-} & Pick<ShortPlan, 'label' | 'description' | 'title' | 'features'>;
-
-export function isShortPlanLike(plan: any): plan is ShortPlanLike {
-    return !!plan && plan.isPlanLike;
-}
-
 export interface UpsellFeature extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
     status?: PlanCardFeatureDefinition['status'];
     included?: PlanCardFeatureDefinition['included'];

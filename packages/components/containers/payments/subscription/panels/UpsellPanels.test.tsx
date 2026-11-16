@@ -1,8 +1,9 @@
 import { within } from '@testing-library/react';
 
+import { PLANS } from '@proton/payments/core/constants';
+
 import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import { familyUpsell, subscriptionMail, unlimitedUpsell } from '../../../../testing/subscriptionData';
-import type { Upsell } from '../helpers/dashboard-upsells';
 import UpsellPanels from './UpsellPanels';
 
 describe('UpsellPanel', () => {
@@ -11,8 +12,8 @@ describe('UpsellPanel', () => {
             <UpsellPanels
                 subscription={subscriptionMail}
                 upsells={[
-                    { ...unlimitedUpsell, onUpgrade: jest.fn(), isRecommended: true } as Upsell,
-                    { ...familyUpsell, onUpgrade: jest.fn() } as Upsell,
+                    { ...unlimitedUpsell, planIDs: { [PLANS.BUNDLE]: 1 }, onUpgrade: jest.fn(), isRecommended: true },
+                    { ...familyUpsell, planIDs: { [PLANS.FAMILY]: 1 }, onUpgrade: jest.fn() },
                 ]}
             />
         );

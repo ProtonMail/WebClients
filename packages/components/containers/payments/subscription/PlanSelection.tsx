@@ -71,13 +71,10 @@ import CurrencySelector from '../CurrencySelector';
 import CycleSelector, { getRestrictedCycle } from '../CycleSelector';
 import { OfferPrice } from '../OfferPrice';
 import { getAllFeatures } from '../features';
-import type { ShortPlanLike } from '../features/interface';
-import { isShortPlanLike } from '../features/interface';
 import { getShortPlan } from '../features/plan';
 import { getForcedFeatureLimitations } from '../planCustomizer/forced-addon-limits';
-import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
+import PlanCardFeatures, { PlanCardFeaturesShort } from './PlanCardFeatures';
 import PlanSelectionPlanCard, { type HocPrice } from './PlanSelectionPlanCard';
-import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
 import { getAllowedCycles } from './helpers/getAllowedCycles';
 
 import './PlanSelection.scss';
@@ -92,7 +89,7 @@ interface Tab {
     title: string;
     content: ReactElement;
     audience: Audience;
-    plans: (Plan | ShortPlanLike)[];
+    plans: Plan[];
 }
 
 interface Props {
@@ -171,8 +168,8 @@ function excludingPlansWithAllChecksFordidden(
     plansMap: PlansMap,
     multiSubscriptionContext: MultiSubscriptionContext
 ) {
-    return (plan: Plan | ShortPlanLike | PLANS) => {
-        if (isShortPlanLike(plan) || !subscription || isFreeSubscription(subscription)) {
+    return (plan: Plan | PLANS) => {
+        if (!subscription || isFreeSubscription(subscription)) {
             return true;
         }
 
@@ -257,15 +254,13 @@ export function useAccessiblePlans({
 
     const currentPlan = getPlan(subscription);
 
-    function filterPlans(plans: (Plan | null | undefined)[]): Plan[];
-    function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[];
-    function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[] {
+    function filterPlans(plans: (Plan | null | undefined)[]): Plan[] {
         return plans
             .filter(isTruthy)
             .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap, multiSubscriptionContext));
     }
 
-    let IndividualPlans: (Plan | ShortPlanLike)[] = [];
+    let IndividualPlans: Plan[] = [];
 
     const walletIndividualPlans = filterPlans([plansMap[PLANS.VISIONARY]]);
     const isWalletIndividualPlans = isWalletSettingsApp && walletIndividualPlans.length !== 0;
@@ -372,7 +367,7 @@ export function useAccessiblePlans({
     const isMeetB2BPlans = isMeetSettingsApp && meetB2BPlans.length !== 0;
     const isGenericB2BPlans = isGenericSettingsApp && genericB2BPlans.length !== 0;
 
-    const B2BPlans: (Plan | ShortPlanLike)[] = (() => {
+    const B2BPlans: Plan[] = (() => {
         // In the realm of multi-subs, if user has any subscription managed exteranlly, we don't display the B2B plans
         // It can cause any sort of problems at the moment: with addons transfering, with subscriptions,
         // with organizations.
@@ -417,11 +412,8 @@ export function useAccessiblePlans({
         currentPlan?.Name !== PLANS.PASS_FAMILY &&
         !getIsB2BAudienceFromPlan(currentPlan?.Name);
 
-    const getTabCurrencies = (tabPlans: (Plan | ShortPlanLike | null | undefined)[]) => {
-        const tabPlanNames = tabPlans
-            .filter(isTruthy)
-            .filter((plan): plan is Plan => !isShortPlanLike(plan))
-            .map((plan) => plan.Name);
+    const getTabCurrencies = (tabPlans: (Plan | null | undefined)[]) => {
+        const tabPlanNames = tabPlans.filter(isTruthy).map((plan) => plan.Name);
         const tabPlansInEveryCurrency = plans.filter((plan) => tabPlanNames.includes(plan.Name));
 
         return getAvailableCurrencies({
@@ -440,7 +432,6 @@ export function useAccessiblePlans({
         currentPlan,
         isVpnSettingsApp,
         isPassSettingsApp,
-        isVpnB2bPlans,
         availableCurrenciesByAudience: {
             [Audience.B2C]: getTabCurrencies([
                 ...IndividualPlans,
@@ -511,7 +502,6 @@ const PlanSelection = (props: Props) => {
         currentPlan,
         isVpnSettingsApp,
         isPassSettingsApp,
-        isVpnB2bPlans,
         availableCurrenciesByAudience,
         isPassLifetimeEligible,
         showsLumoPlans2026,
@@ -523,7 +513,7 @@ const PlanSelection = (props: Props) => {
     const isMeetSettingsApp = app === APPS.PROTONMEET;
     const isLumoSettingsApp = app === APPS.PROTONLUMO;
 
-    const isTabShown = (tabAudience: Audience, tabPlans: (Plan | ShortPlanLike)[]) =>
+    const isTabShown = (tabAudience: Audience, tabPlans: Plan[]) =>
         tabPlans.length > 0 && availableCurrenciesByAudience[tabAudience].length > 0;
 
     const audience = (() => {
@@ -758,29 +748,6 @@ const PlanSelection = (props: Props) => {
         );
     };
 
-    const renderShortPlanCard = (plan: ShortPlanLike) => {
-        return (
-            // this render contains some assumptions that are valid only because we currently have the only UI plan.
-            // If we get more later, then this code must be generalized. Examples: "Let's talk" price might be
-            // different, so is the actionElement.
-            <PlanSelectionPlanCard
-                isCurrentPlan={false}
-                actionElement={<VpnEnterpriseAction />}
-                enableActionLabelSpacing={isVpnB2bPlans && audience === Audience.B2B}
-                info={plan.description}
-                planName={plan.plan as any}
-                planTitle={plan.title}
-                recommended={false}
-                key={plan.plan}
-                getPrice={
-                    // translator: displayed instead of price for VPN Enterprise plan. User should contact Sales first.
-                    () => c('Action').t`Let's talk`
-                }
-                features={<PlanCardFeatureList features={plan.features} icon />}
-            />
-        );
-    };
-
     const passLifetimePlan = plansMap[PLANS.PASS_LIFETIME];
 
     const tabs: Tab[] = [
@@ -794,12 +761,7 @@ const PlanSelection = (props: Props) => {
                             style={{ '--plan-selection-number': 3 }}
                             data-testid="lifetime-plan-cycle"
                         >
-                            {renderPlanCard(
-                                passLifetimePlan,
-                                Audience.B2C,
-                                [],
-                                IndividualPlans.filter((plan): plan is Plan => !isShortPlanLike(plan))
-                            )}
+                            {renderPlanCard(passLifetimePlan, Audience.B2C, [], IndividualPlans)}
                         </div>
                     ) : (
                         <div
@@ -811,12 +773,7 @@ const PlanSelection = (props: Props) => {
                             data-testid="b2c-plan"
                         >
                             {IndividualPlans.map((plan) =>
-                                renderPlanCard(
-                                    plan as Plan,
-                                    Audience.B2C,
-                                    b2cRecommendedPlans,
-                                    IndividualPlans.filter((plan): plan is Plan => !isShortPlanLike(plan))
-                                )
+                                renderPlanCard(plan, Audience.B2C, b2cRecommendedPlans, IndividualPlans)
                             )}
                         </div>
                     )}
@@ -854,18 +811,7 @@ const PlanSelection = (props: Props) => {
                     style={{ '--plan-selection-number': B2BPlans.length }}
                     data-testid="b2b-plan"
                 >
-                    {B2BPlans.map((plan) => {
-                        if (isShortPlanLike(plan)) {
-                            return renderShortPlanCard(plan);
-                        } else {
-                            return renderPlanCard(
-                                plan,
-                                Audience.B2B,
-                                b2bRecommendedPlans,
-                                B2BPlans.filter((it): it is Plan => !isShortPlanLike(it))
-                            );
-                        }
-                    })}
+                    {B2BPlans.map((plan) => renderPlanCard(plan, Audience.B2B, b2bRecommendedPlans, B2BPlans))}
                 </div>
             ),
             audience: Audience.B2B,

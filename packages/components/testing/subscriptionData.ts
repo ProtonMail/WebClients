@@ -31,7 +31,6 @@ import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 export const mailPlusUpsell = {
     plan: PLANS.MAIL,
-    planKey: PLANS.MAIL,
     title: 'Mail Plus',
     description: 'Secure email with advanced features for your everyday communications.',
     upsellRefLink: 'upsell_mail-button-mailplus-dashboard_settings',
@@ -83,13 +82,12 @@ export const mailPlusUpsell = {
     otherCtas: [],
     price: {
         value: 399,
-        currency: 'EUR',
+        currency: 'EUR' as const,
     },
 };
 
 export const unlimitedUpsell = {
     plan: PLANS.BUNDLE,
-    planKey: PLANS.BUNDLE,
     title: 'Proton Unlimited',
     description: 'All premium features from Proton Mail, Calendar, Drive, VPN, and Pass.',
     upsellRefLink: 'upsell_mail-button-unlimited-dashboard_settings',
@@ -154,13 +152,12 @@ export const unlimitedUpsell = {
     otherCtas: [],
     price: {
         value: 999,
-        currency: 'EUR',
+        currency: 'EUR' as const,
     },
 };
 
 export const familyUpsell = {
     plan: PLANS.FAMILY,
-    planKey: PLANS.FAMILY,
     title: 'Proton Family',
     description: 'Protect your family’s privacy with all Proton services combined.',
     upsellRefLink: 'upsell_mail-button-family-dashboard_settings',
@@ -230,12 +227,11 @@ export const familyUpsell = {
         },
     ],
     otherCtas: [],
-    price: { value: 2399, currency: 'EUR' },
+    price: { value: 2399, currency: 'EUR' as const },
 };
 
 export const duoUpsell = {
     plan: PLANS.DUO,
-    planKey: PLANS.DUO,
     title: 'Proton Duo',
     description: 'Unlimited privacy and more storage for up to 2 people.',
     upsellRefLink: 'upsell_mail-button-duo-dashboard_settings',
@@ -304,12 +300,11 @@ export const duoUpsell = {
         },
     ],
     otherCtas: [],
-    price: { value: 1499, currency: 'EUR' },
+    price: { value: 1499, currency: 'EUR' as const },
 };
 
 export const mailProfessionalUpsell = {
     plan: PLANS.MAIL_BUSINESS,
-    planKey: PLANS.MAIL_BUSINESS,
     title: 'Mail Professional',
     description: 'Enhanced security and premium features for teams.',
     upsellRefLink: 'upsell_mail-button-mailpro-dashboard_settings',
@@ -348,13 +343,12 @@ export const mailProfessionalUpsell = {
     otherCtas: [],
     price: {
         value: 999,
-        currency: 'EUR',
+        currency: 'EUR' as const,
     },
 };
 
 export const drivePlusUpsell = {
     plan: PLANS.DRIVE,
-    planKey: PLANS.DRIVE,
     title: 'Drive Plus 200 GB',
     description:
         '200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.',
@@ -391,13 +385,12 @@ export const drivePlusUpsell = {
     price: {
         value: 399, // the price 399 is price-per-month calculated fron 12-month cycle (not 24!).
         // That's because the plans test data don't have the 24 cycle for drive plan
-        currency: 'EUR',
+        currency: 'EUR' as const,
     },
 };
 
 export const passPlusUpsell = {
     plan: PLANS.PASS,
-    planKey: PLANS.PASS,
     title: 'Pass Plus',
     description: 'For next-level password management and identity protection.',
     upsellRefLink: 'upsell_pass-button-pass-dashboard_settings',
@@ -472,24 +465,23 @@ export const passPlusUpsell = {
     otherCtas: [],
     price: {
         value: 299,
-        currency: 'EUR',
+        currency: 'EUR' as const,
     },
 };
 
 export const vpnBusinessUpsell = {
     plan: PLANS.VPN_BUSINESS,
-    planKey: PLANS.VPN_BUSINESS,
     title: 'VPN Professional', // the plan got renamed during the Workspace Standard launch
     description: 'Advanced network security and access management with dedicated secure Gateways',
     otherCtas: [],
     price: {
         value: 5397,
-        currency: 'EUR',
+        currency: 'EUR' as const,
     },
 };
 
 export const bundle2024Upsell = {
-    planKey: 'bundlepro2024',
+    plan: PLANS.BUNDLE_PRO_2024,
     title: 'Workspace Standard',
     description: 'All Proton business apps and premium features to protect your entire business.',
 };

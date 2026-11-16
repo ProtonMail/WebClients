@@ -16,7 +16,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { useSubscriptionModalRaw } from '../subscriptionModalContext';
-import { isUpsellWithPlan, resolveUpsellsToDisplay } from './dashboard-upsells';
+import { resolveUpsellsToDisplay } from './dashboard-upsells';
 
 export const useGetUpsell = () => {
     const dispatch = useDispatch();
@@ -51,7 +51,7 @@ export const useGetUpsell = () => {
                 }),
                 ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
             });
-            if (isUpsellWithPlan(resolvedUpsell) && isPaymentsPreloaded(payments)) {
+            if (resolvedUpsell && isPaymentsPreloaded(payments)) {
                 resolvedUpsell.initializeOfferPrice?.(payments).catch(noop);
             }
             return resolvedUpsell;

@@ -20,7 +20,6 @@ import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { type ShortPlanLike, isShortPlanLike } from '../features/interface';
 import { type AccessiblePlansHookProps, getMaximumCycle, useAccessiblePlans } from './PlanSelection';
 
 jest.mock('@proton/app-context/useConfig', () => ({
@@ -85,7 +84,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             isVpnSettingsApp: false,
-            isVpnB2bPlans: false,
         });
     });
 
@@ -143,7 +141,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             isVpnSettingsApp: false,
-            isVpnB2bPlans: false,
         });
     });
 
@@ -201,7 +198,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_BIZ_2025, 'USD', undefined, false),
             ],
             isVpnSettingsApp: false,
-            isVpnB2bPlans: false,
         });
     });
 
@@ -254,7 +250,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD'),
             ],
             isVpnSettingsApp: false,
-            isVpnB2bPlans: false,
         });
     });
 
@@ -310,7 +305,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             isVpnSettingsApp: false,
-            isVpnB2bPlans: false,
         });
     });
 
@@ -366,7 +360,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             isVpnSettingsApp: false,
-            isVpnB2bPlans: false,
         });
     });
 
@@ -429,7 +422,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             isVpnSettingsApp: false,
-            isVpnB2bPlans: false,
         });
     });
 
@@ -486,7 +478,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             isVpnSettingsApp: false,
-            isVpnB2bPlans: false,
         });
     });
 
@@ -543,7 +534,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             isVpnSettingsApp: false,
-            isVpnB2bPlans: false,
         });
     });
 
@@ -596,7 +586,6 @@ describe('useAccessiblePlans', () => {
                 getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             isVpnSettingsApp: false,
-            isVpnB2bPlans: false,
         });
     });
 
@@ -1115,8 +1104,7 @@ describe('useAccessiblePlans next to several subscriptions', () => {
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
-        const getNames = (accessiblePlans: (Plan | ShortPlanLike)[]) =>
-            accessiblePlans.filter((plan): plan is Plan => !isShortPlanLike(plan)).map((plan) => plan.Name);
+        const getNames = (accessiblePlans: Plan[]) => accessiblePlans.map((plan) => plan.Name);
 
         return {
             individual: getNames(result.current.IndividualPlans),

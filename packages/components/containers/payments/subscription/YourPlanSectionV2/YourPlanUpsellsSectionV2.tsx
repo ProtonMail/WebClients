@@ -49,7 +49,7 @@ import noop from '@proton/utils/noop';
 
 import Loader from '../../../../components/loader/Loader';
 import useLoad from '../../../../hooks/useLoad';
-import { type Upsell, isUpsellWithPlan } from '../helpers/dashboard-upsells';
+import type { Upsell } from '../helpers/dashboard-upsells';
 import CurrentPlanInfoWithUpsellSection from './Upsells/CurrentPlanInfoSection';
 import DuoBanner from './Upsells/DuoBanner';
 import DuoBannerExtendSubscription, { useDuoBannerExtendSubscription } from './Upsells/DuoBannerExtendSubscription';
@@ -727,17 +727,14 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
     const payments = usePayments();
 
     const upsellSection = upsellSections.find((upsell) => upsell.enabled) ?? null;
-    const key = upsellSection?.upsells?.map((upsell) => upsell.planKey).join('-') ?? '';
+    const key = upsellSection?.upsells?.map((upsell) => upsell.plan).join('-') ?? '';
     useEffect(() => {
         if (!isPaymentsPreloaded(payments)) {
             return;
         }
 
         const promises =
-            upsellSection?.upsells
-                ?.filter(isUpsellWithPlan)
-                .map((upsell) => upsell.initializeOfferPrice?.(payments))
-                .filter(isTruthy) ?? [];
+            upsellSection?.upsells?.map((upsell) => upsell.initializeOfferPrice?.(payments)).filter(isTruthy) ?? [];
 
         withLoading(Promise.all(promises)).catch(noop);
     }, [key, payments.initialized]);

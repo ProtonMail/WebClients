@@ -131,22 +131,14 @@ export interface UpsellCta {
     color?: ButtonColor;
 }
 
-export function isUpsellCta(item: any): item is UpsellCta {
-    return item && typeof item === 'object' && 'label' in item && 'action' in item;
-}
-
 interface Price {
     value: number;
     currency: Currency;
 }
 
-export interface UpsellWithPlan {
+export interface Upsell {
     plan: PLANS;
     planIDs: PlanIDs;
-    /**
-     * Unique key for React rednering.
-     */
-    planKey: string;
     title: string;
     description: string;
     isRecommended?: boolean;
@@ -160,47 +152,13 @@ export interface UpsellWithPlan {
     price: Price;
     onUpgrade: (cycle?: Cycle) => void;
     defaultCtaOverrides?: Partial<UpsellCta>;
-    otherCtas: (UpsellCta | ReactNode)[];
+    otherCtas: UpsellCta[];
     upsellRefLink?: string;
     isTrialEnding?: boolean;
     customCycle?: CYCLE;
     cycle?: CYCLE;
     initializeOfferPrice?: (paymentsContext: PreloadedPaymentsContextType) => Promise<unknown>;
 }
-
-/**
- * If you ever need to display an upsell for non-existing plan then this type is for you. We used to have an upsell for
- * "VPN Enterprise" plan that doesn't actually exist. Essentially, it was just an upsell card with CTA - an invitation
- * to talk to out sales team. There is also a sister type ShortPlanLike for rendering fake plans in <PlanSelection />
- *
- *
- * Here is how it was done:
- *
- * const getVpnEnterpriseUpsell = (serversCount: VPNServersCountData): UpsellWithoutPlan => {
- *   const vpnEnteriprisePlan = getVPNEnterprisePlan(serversCount);
- *
- *   return {
- *       planKey: 'VPN_ENTERPRISE',
- *       title: vpnEnteriprisePlan.title,
- *       description: vpnEnteriprisePlan.description,
- *       features: [getDedicatedServersVPNFeature(serversCount), getDedicatedAccountManagerVPNFeature()],
- *       otherCtas: [<VpnEnterpriseAction shape="outline" size="large" />],
- *       // because we have a custom CTA (<VpnEnterpriseAction />), the onUpgrade callback will never be used
- *       onUpgrade: noop,
- *   };
- * };
- *
- */
-type UpsellWithoutPlan = Pick<
-    UpsellWithPlan,
-    'planKey' | 'title' | 'description' | 'features' | 'otherCtas' | 'onUpgrade' | 'isRecommended'
->;
-
-export function isUpsellWithPlan(upsell: Upsell): upsell is UpsellWithPlan {
-    return 'plan' in upsell;
-}
-
-export type Upsell = UpsellWithPlan | UpsellWithoutPlan;
 
 export type MaybeUpsell = Upsell | null;
 
@@ -214,7 +172,7 @@ type GetUpsellArgs = {
     customCycle?: CYCLE;
     telemetryFlow: TelemetryPaymentFlow;
     onMount?: () => void;
-} & Partial<UpsellWithPlan>;
+} & Partial<Upsell>;
 
 export type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'> & {
     hasPaidMail?: boolean;
@@ -224,7 +182,7 @@ export type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'oth
     addons?: PlanIDs;
 };
 
-const exploreAllPlansCTA = (openSubscriptionModal: OpenSubscriptionModalCallback): UpsellCta | ReactNode => {
+const exploreAllPlansCTA = (openSubscriptionModal: OpenSubscriptionModalCallback): UpsellCta => {
     return {
         label: c('new_plans: Action').t`Explore all ${BRAND_NAME} plans`,
         color: 'norm',
@@ -269,7 +227,7 @@ export const getUpsell = ({
     customCycle,
     addons,
     ...upsellFields
-}: GetUpsellArgs): UpsellWithPlan | null => {
+}: GetUpsellArgs): Upsell | null => {
     const fullPlan = plansMap[plan];
     const shortPlan = getShortPlan(plan, plansMap, { freePlan });
 
@@ -319,7 +277,6 @@ export const getUpsell = ({
     return {
         plan,
         planIDs,
-        planKey: plan,
         title,
         description: shortPlan.description,
         upsellRefLink,
@@ -795,11 +752,7 @@ type ResolveUpsellsToDisplayProps = {
 };
 
 const isUpsellAllowedByLumoRules = (upsell: Upsell, multiSubscriptionContext: MultiSubscriptionContext): boolean => {
-    if (
-        !multiSubscriptionContext.lumoMultiSubscriptions ||
-        !isUpsellWithPlan(upsell) ||
-        !isB2CLumoPlan(multiSubscriptionContext, upsell.plan)
-    ) {
+    if (!multiSubscriptionContext.lumoMultiSubscriptions || !isB2CLumoPlan(multiSubscriptionContext, upsell.plan)) {
         return true;
     }
 
@@ -980,11 +933,7 @@ export const resolveUpsellsToDisplay = ({
     const upsells = resolve()
         .filter((maybeUpsell): maybeUpsell is Upsell => isTruthy(maybeUpsell))
 
-        .filter(
-            (upsell) =>
-                // isUpsellWithPlan is here type-safety
-                !isUpsellWithPlan(upsell) || !isForbiddenModification(multiSubscriptionContext, upsell.plan)
-        )
+        .filter((upsell) => !isForbiddenModification(multiSubscriptionContext, upsell.plan))
         .filter((upsell) => isUpsellAllowedByLumoRules(upsell, multiSubscriptionContext));
 
     return upsells;
@@ -1000,16 +949,13 @@ export const useUpsellsToDisplay = (
     const [loading, withLoading] = useLoading(true);
 
     const upsells = resolveUpsellsToDisplay(props);
-    const key = upsells.map((upsell) => upsell.planKey).join('-');
+    const key = upsells.map((upsell) => upsell.plan).join('-');
     useEffect(() => {
         if (!isPaymentsPreloaded(payments)) {
             return;
         }
 
-        const promises = upsells
-            .filter(isUpsellWithPlan)
-            .map((upsell) => upsell.initializeOfferPrice?.(payments))
-            .filter(isTruthy);
+        const promises = upsells.map((upsell) => upsell.initializeOfferPrice?.(payments)).filter(isTruthy);
 
         withLoading(Promise.all(promises)).catch(noop);
     }, [key, payments.initialized]);

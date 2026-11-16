@@ -21,7 +21,6 @@ import { useHasInboxDesktopInAppPayments } from '../../../desktop/useHasInboxDes
 import type { UpsellFeature } from '../../features/interface';
 import { PlanCardFeaturesIntro } from '../PlanCardFeatures';
 import type { ButtonColor, ButtonShape, UpsellCta } from '../helpers/dashboard-upsells';
-import { isUpsellCta } from '../helpers/dashboard-upsells';
 import Panel from './Panel';
 
 import './UpsellPanel.scss';
@@ -33,7 +32,7 @@ export interface UpsellPanelProps {
     featuresIntro?: string;
     features: UpsellFeature[];
     isRecommended?: boolean;
-    ctas?: (UpsellCta | ReactNode)[];
+    ctas?: UpsellCta[];
 }
 
 type GetButtonColorAndShape = (opt: Pick<UpsellCta, 'color' | 'shape'> & Pick<UpsellPanelProps, 'isRecommended'>) => {
@@ -127,31 +126,27 @@ const UpsellPanel = ({
             )}
             <div className="flex column gap-4">
                 {ctas.map((cta) => {
-                    if (isUpsellCta(cta)) {
-                        const handleOnClick = () => {
-                            // Open the link in browser on Electron unless it is supported
-                            if (isElectronApp && !hasInboxDesktopInAppPayments) {
-                                upgradeButtonClick(CYCLE.YEARLY, plan);
-                            } else {
-                                cta.action();
-                            }
-                        };
+                    const handleOnClick = () => {
+                        // Open the link in browser on Electron unless it is supported
+                        if (isElectronApp && !hasInboxDesktopInAppPayments) {
+                            upgradeButtonClick(CYCLE.YEARLY, plan);
+                        } else {
+                            cta.action();
+                        }
+                    };
 
-                        return (
-                            <Button
-                                key={`upsell-action-${cta.label}`}
-                                data-testid="upsell-cta"
-                                size="large"
-                                {...getButtonColorAndShape({ shape: cta.shape, color: cta.color, isRecommended })}
-                                onClick={handleOnClick}
-                                fullWidth
-                            >
-                                {cta.label}
-                            </Button>
-                        );
-                    }
-
-                    return cta;
+                    return (
+                        <Button
+                            key={`upsell-action-${cta.label}`}
+                            data-testid="upsell-cta"
+                            size="large"
+                            {...getButtonColorAndShape({ shape: cta.shape, color: cta.color, isRecommended })}
+                            onClick={handleOnClick}
+                            fullWidth
+                        >
+                            {cta.label}
+                        </Button>
+                    );
                 })}
             </div>
         </Panel>
