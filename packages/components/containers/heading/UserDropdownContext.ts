@@ -31,7 +31,7 @@ export interface UserDropdownValue {
     loginHref: string;
     app: APP_NAMES;
     isOpen: boolean;
-    anchorRef: RefObject<HTMLButtonElement>;
+    anchorRef: RefObject<HTMLButtonElement | null>;
     sessionOptions?: Parameters<typeof AccountSessionsSwitcher>[0]['sessionOptions'];
     hasAppLinks?: boolean;
     onOpenHelpModal: () => void;

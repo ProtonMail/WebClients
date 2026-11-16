@@ -4,6 +4,7 @@ import type {
     HTMLAttributes,
     MouseEvent as ReactMouseEvent,
     ReactNode,
+    Ref,
     RefObject,
 } from 'react';
 import { useEffect, useRef, useState } from 'react';
@@ -28,7 +29,7 @@ import type { DropdownSize } from './utils';
 import { DropdownSizeUnit, getHeightValue, getMaxSizeValue, getProp, getWidthValue } from './utils';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
-    ref?: RefObject<HTMLDivElement>;
+    ref?: Ref<HTMLDivElement>;
 }
 
 export enum DropdownBorderRadius {
@@ -39,7 +40,7 @@ export enum DropdownBorderRadius {
 }
 
 export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     anchorPosition?: PopperPosition | null;
     children: ReactNode;
     className?: string;

@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import type { SelectedDrawerOption } from '../components/drawer/views/DrawerView';
 import { CONTACT_TAB } from '../components/drawer/views/interface';
 
-const useDrawerParent = (searchInputRef: RefObject<HTMLInputElement>, tab: SelectedDrawerOption) => {
+const useDrawerParent = (searchInputRef: RefObject<HTMLInputElement | null>, tab: SelectedDrawerOption) => {
     const animationEnded = useRef(false);
 
     const onFocusSearchInput = () => {

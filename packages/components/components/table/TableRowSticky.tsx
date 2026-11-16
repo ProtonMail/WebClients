@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import clsx from '@proton/utils/clsx';
 
 interface Props<T> extends DetailedHTMLProps<HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement> {
-    scrollAreaRef: RefObject<T>;
+    scrollAreaRef: RefObject<T | null>;
     children: ReactNode;
 }
 

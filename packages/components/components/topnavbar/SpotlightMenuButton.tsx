@@ -38,7 +38,7 @@ interface DisplayItemBase {
 }
 
 const DropdownItem = ({ item, onClick }: { item: DropdownDisplayItem; onClick: () => void }) => {
-    const { anchorRef, toggle, close, isOpen } = usePopperAnchor<HTMLElement>();
+    const { anchorRef, toggle, close, isOpen } = usePopperAnchor<HTMLDivElement>();
 
     return (
         <>
@@ -53,7 +53,7 @@ const DropdownItem = ({ item, onClick }: { item: DropdownDisplayItem; onClick: (
                         {item.description}
                     </div>
                     <IcThreeDotsVertical size={6} className="p-0.5 self-center shrink-0" />
-                    <div ref={anchorRef as React.RefObject<HTMLDivElement>} />
+                    <div ref={anchorRef} />
                 </div>
             </Button>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-end">

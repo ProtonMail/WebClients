@@ -39,7 +39,7 @@ export interface SpotlightProps {
     /**
      * Setting the anchor is optional, it will default on the root child
      */
-    anchorRef?: RefObject<HTMLElement>;
+    anchorRef?: RefObject<HTMLElement | null>;
     style?: CSSProperties;
     className?: string;
     innerClassName?: string;

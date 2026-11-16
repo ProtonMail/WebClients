@@ -24,7 +24,7 @@ const MAX_DURATION_MS = 10_000;
  * clicking the same anchor twice scrolls again — the hash is identical both times, but
  * each click pushes a new history entry with a fresh key.
  */
-const useScrollIntoView = (ref: RefObject<HTMLElement>, enabled: boolean, retriggerKey?: string) => {
+const useScrollIntoView = (ref: RefObject<HTMLElement | null>, enabled: boolean, retriggerKey?: string) => {
     useEffect(() => {
         const el = ref.current;
         if (!enabled || !el) {

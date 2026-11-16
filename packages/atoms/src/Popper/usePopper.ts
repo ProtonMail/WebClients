@@ -53,7 +53,7 @@ interface Props {
               value: PopperPosition | null;
               anchor?: HTMLElement | null;
           };
-    relativeReference?: RefObject<HTMLElement>;
+    relativeReference?: RefObject<HTMLElement | null>;
     offset?: number;
     updateAnimationFrame?: boolean;
 }

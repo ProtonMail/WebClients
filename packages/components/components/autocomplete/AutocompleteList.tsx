@@ -15,7 +15,7 @@ interface Props<V> {
     onClose: () => void;
     isOpen: boolean;
     highlightedIndex: number;
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     /**
      * In case we want to filter the number of items in the list for accessibility purposes
      */

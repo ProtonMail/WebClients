@@ -7,7 +7,7 @@ interface Props {
     colSpan?: number;
     loading?: boolean;
     style?: CSSProperties;
-    ref?: RefObject<HTMLTableSectionElement>;
+    ref?: RefObject<HTMLTableSectionElement | null>;
 }
 
 const TableBody = forwardRef<HTMLTableSectionElement, Props>(({ children, loading = false, colSpan, ...rest }, ref) => {

@@ -68,7 +68,7 @@ function HookWrapper({
     targetRef,
     options,
 }: {
-    targetRef: React.RefObject<HTMLDivElement>;
+    targetRef: ReturnType<typeof React.createRef<HTMLDivElement>>;
     options: VisibilityTrackerOptions;
 }) {
     useVisibilityTracker(targetRef, options);
@@ -586,7 +586,7 @@ describe('VisibilityTracker', () => {
     describe('useVisibilityTracker hook', () => {
         function renderHook(options: VisibilityTrackerOptions) {
             const ref = React.createRef<HTMLDivElement>();
-            render(<HookWrapper targetRef={ref as React.RefObject<HTMLDivElement>} options={options} />);
+            render(<HookWrapper targetRef={ref} options={options} />);
             return { obs: latestObserver() };
         }
 
@@ -623,7 +623,7 @@ describe('VisibilityTracker', () => {
 
         it('applies default options when none are provided', () => {
             const ref = React.createRef<HTMLDivElement>();
-            render(<HookWrapper targetRef={ref as React.RefObject<HTMLDivElement>} options={{}} />);
+            render(<HookWrapper targetRef={ref} options={{}} />);
             expect(latestObserver().options?.threshold).toBe(0.5);
         });
     });

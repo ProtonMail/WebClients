@@ -9,7 +9,7 @@ import type { DropdownBorderRadius, DropdownProps } from '../dropdown/Dropdown';
 import Dropdown from '../dropdown/Dropdown';
 
 export interface ContextMenuProps {
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     isOpen: boolean;
     children: ReactNode;
     position?: PopperPosition;

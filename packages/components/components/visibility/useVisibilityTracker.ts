@@ -26,7 +26,7 @@ const THRESHOLD_MAP: Record<VisibilityThreshold, number> = {
  * ```
  */
 export function useVisibilityTracker<T extends Element>(
-    targetRef: React.RefObject<T>,
+    targetRef: React.RefObject<T | null>,
     { onEnter, onExit, threshold = 'half', marginAroundTarget, once = true }: VisibilityTrackerOptions = {}
 ) {
     // Keep latest callbacks in refs so the observer closure never goes stale.

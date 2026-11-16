@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
  * @param ref
  * @param defaultCursor
  */
-export function useDragToScroll(ref: RefObject<HTMLElement>, { defaultCursor } = { defaultCursor: 'default' }) {
+export function useDragToScroll(ref: RefObject<HTMLElement | null>, { defaultCursor } = { defaultCursor: 'default' }) {
     let initialPosition = { scrollTop: 0, scrollLeft: 0, mouseX: 0, mouseY: 0 };
 
     // We check if element is scrollable or not. So we only show the grab if it can be grab

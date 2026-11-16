@@ -11,7 +11,7 @@ import type { DropdownButtonProps } from './DropdownButton';
 import DropdownButton from './DropdownButton';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
-    ref?: RefObject<HTMLDivElement>;
+    ref?: RefObject<HTMLDivElement | null>;
 }
 
 interface OwnProps<E extends ElementType> {

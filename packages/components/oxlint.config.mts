@@ -3,6 +3,7 @@ import {
     createExtraneousDependenciesRule,
     extraneousDependenciesDevDependencies,
 } from '@proton/oxlint-config/extraneousDependencies';
+import { refObjectNullOverride } from '@proton/oxlint-config/react19';
 
 export default createOxlintConfig({
     ignorePatterns: ['**/iwad/**'],
@@ -11,6 +12,7 @@ export default createOxlintConfig({
         patterns: [{ group: ['./index'], message: 'Import from the module directly instead of `./index`.' }],
     },
     overrides: [
+        refObjectNullOverride,
         {
             // Tests and `testing/**` only get the base restrictions, without the `./index` ban.
             files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx', 'jest.setup.js', 'testing/**'],

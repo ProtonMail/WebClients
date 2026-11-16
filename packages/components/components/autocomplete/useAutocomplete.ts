@@ -60,7 +60,7 @@ interface UseAutocompleteProps<V> {
     onSelect: (value: V) => void;
     options: DataWithMatches<V>[];
     input: string;
-    inputRef: RefObject<HTMLInputElement>;
+    inputRef: RefObject<HTMLInputElement | null>;
     /**
      * Finds the previous option index
      * @param index current highlighted item index
