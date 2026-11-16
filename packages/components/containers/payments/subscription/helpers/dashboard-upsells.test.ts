@@ -29,7 +29,6 @@ import { resolveUpsellsToDisplay } from './dashboard-upsells';
 
 const vpnPassProUpsell = {
     plan: PLANS.VPN_PASS_BUNDLE_BUSINESS,
-    planKey: PLANS.VPN_PASS_BUNDLE_BUSINESS,
     title: 'VPN and Pass Professional',
     description: 'Advanced account and network security in one plan',
     otherCtas: [],
@@ -107,7 +106,7 @@ describe('resolveUpsellsToDisplay', () => {
                         const ids = upsell.features.map(({ id }) => id);
                         const seen = new Set<string>();
                         ids.filter((id) => !seen.add(id)).forEach((id) => {
-                            duplicates.push(`${app} on ${planName ?? 'free'} -> ${upsell.planKey}: ${id}`);
+                            duplicates.push(`${app} on ${planName ?? 'free'} -> ${upsell.plan}: ${id}`);
                         });
                     }
                 }
@@ -599,7 +598,7 @@ describe('resolveUpsellsToDisplay', () => {
                 isFree: false,
                 subscription,
                 multiSubscriptionContext: buildMultiSubscriptionContext([subscription], lumoMultiSubscriptions),
-            }).map((upsell) => upsell.planKey);
+            }).map((upsell) => upsell.plan);
         };
 
         it('offers Lumo Plus to a Mail Plus subscriber only with the flag on', () => {
@@ -619,7 +618,7 @@ describe('resolveUpsellsToDisplay', () => {
                 isFree: false,
                 subscription: unlimited,
                 multiSubscriptionContext: buildMultiSubscriptionContext([unlimited, lumoPlus]),
-            }).map((upsell) => upsell.planKey);
+            }).map((upsell) => upsell.plan);
 
             expect(upsells).toEqual([]);
         });

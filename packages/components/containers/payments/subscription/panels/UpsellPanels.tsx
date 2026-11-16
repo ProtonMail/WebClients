@@ -9,10 +9,9 @@ import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/h
 import { hasBundle } from '@proton/payments/core/subscription/helpers';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/utils/isTruthy';
 
 import Time from '../../../../components/time/Time';
-import { type Upsell, type UpsellWithPlan, isUpsellWithPlan } from '../helpers/dashboard-upsells';
+import type { Upsell } from '../helpers/dashboard-upsells';
 import UpsellPanel from './UpsellPanel';
 import UpsellPriceV1 from './components/UpsellPriceV1';
 
@@ -41,7 +40,7 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
     return (
         <>
             {upsells.map((upsell) => {
-                const getDefaultCta = (upsell: UpsellWithPlan) => {
+                const getDefaultCta = (upsell: Upsell) => {
                     const price = <UpsellPriceV1 key="offer-price" upsell={upsell} />;
 
                     let label: string | string[];
@@ -59,21 +58,20 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
                     };
                 };
 
-                const defaultCta = isUpsellWithPlan(upsell) ? getDefaultCta(upsell) : null;
-                const ctas = [defaultCta, ...upsell.otherCtas].filter(isTruthy);
+                const ctas = [getDefaultCta(upsell), ...upsell.otherCtas];
 
                 return (
                     <UpsellPanel
-                        key={`upsell-${upsell.planKey}`}
+                        key={`upsell-${upsell.plan}`}
                         title={upsell.title}
-                        featuresIntro={isUpsellWithPlan(upsell) ? upsell.featuresIntro : undefined}
+                        featuresIntro={upsell.featuresIntro}
                         features={upsell.features}
                         isRecommended={upsell.isRecommended}
                         ctas={ctas}
-                        plan={isUpsellWithPlan(upsell) ? upsell.plan : undefined}
+                        plan={upsell.plan}
                     >
                         {/* Warning when user is in Trial period for a plan but only for legacy referral */}
-                        {isUpsellWithPlan(upsell) && upsell.isTrialEnding && !trialInfo.isReferralTrial ? (
+                        {upsell.isTrialEnding && !trialInfo.isReferralTrial ? (
                             <>
                                 <h4>{c('new_plans: Info').jt`Your trial ends ${formattedPeriodEndDate}`}</h4>
                                 <div className="color-weak">

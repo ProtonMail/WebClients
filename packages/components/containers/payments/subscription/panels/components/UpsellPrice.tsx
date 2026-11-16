@@ -4,13 +4,13 @@ import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpe
 
 import Price from '../../../../../components/price/Price';
 import { OfferPrice } from '../../../OfferPrice';
-import type { UpsellWithPlan } from '../../helpers/dashboard-upsells';
+import type { Upsell } from '../../helpers/dashboard-upsells';
 
 interface UpsellPriceProps {
-    upsell: UpsellWithPlan;
+    upsell: Upsell;
 }
 
-const getCycleSuffix = (upsell: UpsellWithPlan) => {
+const getCycleSuffix = (upsell: Upsell) => {
     if (getIsB2BAudienceFromPlan(upsell.plan)) {
         return c('Cycle').t`/user /month`;
     }

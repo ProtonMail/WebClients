@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import Price from '../../../../../components/price/Price';
 import { OfferPrice } from '../../../OfferPrice';
-import type { UpsellWithPlan } from '../../helpers/dashboard-upsells';
+import type { Upsell } from '../../helpers/dashboard-upsells';
 
-const UpsellPrice = ({ upsell }: { upsell: UpsellWithPlan }) => {
+const UpsellPrice = ({ upsell }: { upsell: Upsell }) => {
     if (!upsell.price) {
         return null;
     }

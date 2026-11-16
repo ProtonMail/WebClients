@@ -2,10 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useOutgoingController } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import {
-    type Upsell,
-    isUpsellWithPlan,
-} from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
+import type { Upsell } from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
 import { useGetUpsell } from '@proton/components/containers/payments/subscription/helpers/useGetUpsell';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
@@ -54,7 +51,7 @@ const OutgoingEmergencyContactUpsellContent = ({ app }: Props) => {
         feature: SHARED_UPSELL_PATHS.EMERGENCY_ACCESS,
     });
 
-    if (!upsell || !isUpsellWithPlan(upsell)) {
+    if (!upsell) {
         return null;
     }
 
