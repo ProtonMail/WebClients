@@ -1,5 +1,6 @@
 import { Editor } from 'roosterjs';
-import type { IEditor } from 'roosterjs-editor-types';
+import { EditorAdapter } from 'roosterjs-editor-adapter';
+import type { EditorOptions, IEditor } from 'roosterjs-editor-types';
 
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
@@ -7,7 +8,15 @@ import getRoosterEditorActions from './getRoosterEditorActions';
 
 const INITIAL_CONTENT = '<div>One <b>bold</b> word</div><div>Second line</div>';
 
-describe('getRoosterEditorActions', () => {
+const createEditors: Record<
+    string,
+    (element: HTMLDivElement, options: Pick<EditorOptions, 'initialContent'>) => IEditor
+> = {
+    'roosterjs 8': (element, options) => new Editor(element, options),
+    'roosterjs 9': (element, options) => new EditorAdapter(element, options),
+};
+
+describe.each(Object.keys(createEditors))('getRoosterEditorActions with %s', (version) => {
     let element: HTMLDivElement;
     let editor: IEditor;
     let iframe: HTMLIFrameElement;
@@ -43,7 +52,7 @@ describe('getRoosterEditorActions', () => {
         element.tabIndex = 0;
         iframe = document.createElement('iframe');
         document.body.append(element, iframe);
-        editor = new Editor(element, { initialContent: INITIAL_CONTENT });
+        editor = createEditors[version](element, { initialContent: INITIAL_CONTENT });
         editor.focus();
     });
 

@@ -8067,6 +8067,21 @@ importers:
       roosterjs:
         specifier: 8.47.0
         version: 8.47.0
+      roosterjs-content-model-api:
+        specifier: ^9.62.0
+        version: 9.62.0
+      roosterjs-content-model-dom:
+        specifier: ^9.62.0
+        version: 9.62.0
+      roosterjs-content-model-plugins:
+        specifier: ^9.62.0
+        version: 9.62.0
+      roosterjs-content-model-types:
+        specifier: ^9.62.0
+        version: 9.62.0
+      roosterjs-editor-adapter:
+        specifier: ^8.66.3
+        version: 8.66.3
       roosterjs-editor-dom:
         specifier: ^8.62.0
         version: 8.62.0
@@ -26479,6 +26494,24 @@ packages:
 
   roosterjs-color-utils@1.1.0:
     resolution: {integrity: sha512-AdfGX/LSM+wiX6FovBjJLSHDqurIzXfEPCx95aIpEQ/VAvyOAHG9bja4K9aeNX/RpreuQ3kcSaJS0QzxQeFcCw==}
+
+  roosterjs-content-model-api@9.62.0:
+    resolution: {integrity: sha512-qnH19wQUlVcAYyrDY0yrFxk3uvXnoVsTStM2AXwckq5ebgZilMUzv0D5/SJKv53qoFYR7nAvPnRzb3U7POurzw==}
+
+  roosterjs-content-model-core@9.62.0:
+    resolution: {integrity: sha512-+loJlIq2AfncQWdaFI8j1IpnuvVboykcW4wrYPyWH0EPVlJND4o98uSWj3y1SPqTyIUJABSDA+Cm9EwHYpAkyw==}
+
+  roosterjs-content-model-dom@9.62.0:
+    resolution: {integrity: sha512-+BL4SZI6f+OJvOWwkE/Qn5LPBPRuzvHFujswjc4g32oOIQfX43Y/TpLXx5ekmVHjYZa5BcitWJw9+p4rnzB8Yg==}
+
+  roosterjs-content-model-plugins@9.62.0:
+    resolution: {integrity: sha512-7DUrXdaC/DzuZvekciks6/3fUACBFkUx0oXal2lsLABF3XX1AsfiEProwZm5aCj29vv/EeJcsNbQII/VoG/CtQ==}
+
+  roosterjs-content-model-types@9.62.0:
+    resolution: {integrity: sha512-ImDnht8joL6q/tqYnsGMFSK+l9tgYZfZDMf2du0X4Z+Z4DmQP6AXWXbw2CKRihy1jdzEzagLTkqeQvLaPHeZ6g==}
+
+  roosterjs-editor-adapter@8.66.3:
+    resolution: {integrity: sha512-IF/ht8qYWGM2JBzJya3+uCDckJU0N3bf78zrHNlA3HmzXwKDrbyzeQrvaJL39LBb6pcu6uv1dZirDCr7Kz8JDQ==}
 
   roosterjs-editor-api@8.62.0:
     resolution: {integrity: sha512-q/uzfPkXQzaGOzSTjDqI/nwEfl59WBfyvyW9tF2dgmqjq+ZH9BAwkRbCb8Qgtz3wkRLuUUzzHIKzIhTvxvcFWQ==}
@@ -46335,6 +46368,42 @@ snapshots:
   roosterjs-color-utils@1.1.0:
     dependencies:
       color: 3.2.1
+
+  roosterjs-content-model-api@9.62.0:
+    dependencies:
+      roosterjs-content-model-dom: 9.62.0
+      roosterjs-content-model-types: 9.62.0
+      tslib: 2.8.1
+
+  roosterjs-content-model-core@9.62.0:
+    dependencies:
+      roosterjs-content-model-dom: 9.62.0
+      roosterjs-content-model-types: 9.62.0
+      tslib: 2.8.1
+
+  roosterjs-content-model-dom@9.62.0:
+    dependencies:
+      roosterjs-content-model-types: 9.62.0
+      tslib: 2.8.1
+
+  roosterjs-content-model-plugins@9.62.0:
+    dependencies:
+      roosterjs-content-model-api: 9.62.0
+      roosterjs-content-model-core: 9.62.0
+      roosterjs-content-model-dom: 9.62.0
+      roosterjs-content-model-types: 9.62.0
+      tslib: 2.8.1
+
+  roosterjs-content-model-types@9.62.0: {}
+
+  roosterjs-editor-adapter@8.66.3:
+    dependencies:
+      roosterjs-content-model-core: 9.62.0
+      roosterjs-content-model-dom: 9.62.0
+      roosterjs-content-model-types: 9.62.0
+      roosterjs-editor-dom: 8.62.0
+      roosterjs-editor-types: 8.62.0
+      tslib: 2.8.1
 
   roosterjs-editor-api@8.62.0:
     dependencies:

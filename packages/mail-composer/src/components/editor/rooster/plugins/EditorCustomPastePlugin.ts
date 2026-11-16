@@ -1,4 +1,5 @@
 /* eslint-disable class-methods-use-this */
+import type { BeforePasteAdapterEvent } from 'roosterjs-editor-adapter';
 import { getPasteSource, wrap } from 'roosterjs-editor-dom';
 import type {
     AttributeCallbackMap,
@@ -12,6 +13,7 @@ import { ChangeSource, KnownPasteSourceType, PluginEventType } from 'roosterjs-e
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 
 import { EMBEDDABLE_TYPES } from '../../constants';
+import { removeProtonClassNames } from '../helpers/protonClassNames';
 
 /**
  * Handles custom behavior when pasting content on top of the current rooster paste plugin
@@ -175,6 +177,11 @@ class EditorCustomPastePlugin implements EditorPlugin {
     }
 
     private updateSanitizingOptions(event: BeforePasteEvent) {
+        if ('domToModelOption' in event) {
+            this.updateDomToModelOption(event as BeforePasteAdapterEvent);
+            return;
+        }
+
         const callbackMap: AttributeCallbackMap = {
             href: (link: string, element: HTMLElement) => this.validateLink(link, element),
         };
@@ -185,6 +192,28 @@ class EditorCustomPastePlugin implements EditorPlugin {
             TEXTAREA: null,
             FORM: null,
         };
+    }
+
+    /**
+     * roosterjs 9 through its adapter ignores sanitizingOption and only applies domToModelOption.
+     * Links have their own processor, which attributeSanitizers never reach, so href is checked by a link parser.
+     * Input and textarea are in the built-in allowed tags, which win over additionalDisallowedTags.
+     */
+    private updateDomToModelOption({ domToModelOption, fragment }: BeforePasteAdapterEvent) {
+        domToModelOption.additionalFormatParsers.link = [
+            ...(domToModelOption.additionalFormatParsers.link ?? []),
+            (format) => {
+                if (format.href && !this.validateUrl(format.href)) {
+                    delete format.href;
+                }
+            },
+        ];
+        const ignore = () => {};
+        domToModelOption.processorOverride.input = ignore;
+        domToModelOption.processorOverride.textarea = ignore;
+        domToModelOption.processorOverride.form = ignore;
+        // roosterjs 8 drops every class on paste, roosterjs 9 keeps the ones protonClassNames preserves
+        removeProtonClassNames(fragment);
     }
 
     private handlePasteImage(event: BeforePasteEvent) {

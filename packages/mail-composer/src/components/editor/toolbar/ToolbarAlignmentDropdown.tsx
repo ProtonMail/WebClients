@@ -1,4 +1,3 @@
-import { Alignment } from 'roosterjs-editor-types';
 import { c } from 'ttag';
 
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -8,6 +7,7 @@ import { IcTextAlignLeft } from '@proton/icons/icons/IcTextAlignLeft';
 import { IcTextAlignRight } from '@proton/icons/icons/IcTextAlignRight';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 
+import type { Alignment } from '../rooster/helpers/roosterFormatApi';
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {
@@ -24,7 +24,7 @@ const ToolbarAlignmentDropdown = ({ setAlignment }: Props) => (
         <DropdownMenu>
             <DropdownMenuButton
                 className="text-left flex flex-nowrap items-center"
-                onClick={() => setAlignment(Alignment.Left)}
+                onClick={() => setAlignment('left')}
                 data-testid="editor-alignment-left"
             >
                 <IcTextAlignLeft />
@@ -32,7 +32,7 @@ const ToolbarAlignmentDropdown = ({ setAlignment }: Props) => (
             </DropdownMenuButton>
             <DropdownMenuButton
                 className="text-left flex flex-nowrap items-center"
-                onClick={() => setAlignment(Alignment.Center)}
+                onClick={() => setAlignment('center')}
                 data-testid="editor-alignment-center"
             >
                 <IcTextAlignCenter />
@@ -40,7 +40,7 @@ const ToolbarAlignmentDropdown = ({ setAlignment }: Props) => (
             </DropdownMenuButton>
             <DropdownMenuButton
                 className="text-left flex flex-nowrap items-center"
-                onClick={() => setAlignment(Alignment.Right)}
+                onClick={() => setAlignment('right')}
                 data-testid="editor-alignment-right"
             >
                 <IcTextAlignRight />

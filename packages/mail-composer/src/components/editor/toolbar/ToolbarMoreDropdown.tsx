@@ -1,4 +1,3 @@
-import { Alignment } from 'roosterjs-editor-types';
 import { c } from 'ttag';
 
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -72,7 +71,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 <DropdownMenuButton
                     key={8}
                     className="text-left flex flex-nowrap items-center"
-                    onClick={() => config.alignment.setValue(Alignment.Left)}
+                    onClick={() => config.alignment.setValue('left')}
                 >
                     <IcCheckmark className="visibility-hidden" />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Align left`}</span>
@@ -81,7 +80,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 <DropdownMenuButton
                     key={9}
                     className="text-left flex flex-nowrap items-center"
-                    onClick={() => config.alignment.setValue(Alignment.Center)}
+                    onClick={() => config.alignment.setValue('center')}
                 >
                     <IcCheckmark className="visibility-hidden" />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Align center`}</span>
@@ -90,7 +89,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 <DropdownMenuButton
                     key={10}
                     className="text-left flex flex-nowrap items-center"
-                    onClick={() => config.alignment.setValue(Alignment.Center)}
+                    onClick={() => config.alignment.setValue('right')}
                 >
                     <IcCheckmark className="visibility-hidden" />
                     <span className="ml-2 my-auto flex-1">{c('Action').t`Align right`}</span>

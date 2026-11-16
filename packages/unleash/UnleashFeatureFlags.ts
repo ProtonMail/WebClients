@@ -317,6 +317,8 @@ export enum MailFeatureFlag {
     ContentSearchIndexation = 'ContentSearchIndexation',
     // Gates the booking page entry point in the composer footer (moved into the More options menu on small screens)
     BookingsInComposerEnabled = 'BookingsInComposerEnabled',
+    // Runs the composer editor on roosterjs 9, through its roosterjs 8 compatible adapter
+    MailComposerRoosterV9 = 'MailComposerRoosterV9',
 }
 
 enum MailKillSwitchFlag {
