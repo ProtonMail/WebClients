@@ -10,9 +10,9 @@ import { useApplication } from '~/utils/application-context'
 import { DebugModeProvider } from '~/utils/debug-mode-context'
 import { parseOpenAction, useDocsUrlBar } from '~/utils/docs-url-bar'
 import { DocumentCreator } from './__components/DocumentCreator'
-import { DocumentLoader } from './__components/DocumentLoader'
 import { DocumentShell } from './__components/DocumentShell'
 import { DocumentViewerV2 } from './__components/DocumentViewerV2'
+import { LoadingScreen } from './__components/LoadingScreen'
 import { OpenActionError } from './__components/OpenActionError'
 import { DocsLoadMark, markDocsLoad } from './__utils/loadMarks'
 import { resolveOpenAction } from './__utils/resolveOpenAction'
@@ -81,11 +81,7 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
         )
       }
       case 'redirect':
-        return (
-          <DocumentShell header={null}>
-            <DocumentLoader />
-          </DocumentShell>
-        )
+        return <DocumentShell header={null} loadingScreen={<LoadingScreen status="redirecting" />} />
     }
   }
 }

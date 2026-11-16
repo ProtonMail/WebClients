@@ -68,7 +68,7 @@ describe('DocumentHeaderV2', () => {
     },
   )
 
-  // As /doc's ConnectionStatus: the pill shows for every role, while useLiveEditing locks only non-admins
+  // As /doc's ConnectionStatus: the pill shows for every role, while the Loader locks only non-admins
   test.each<DocumentRole>(['Viewer', 'Editor', 'Admin'])(
     'a %s sees the Limited availability pill from 20 users, and not below',
     (role) => {

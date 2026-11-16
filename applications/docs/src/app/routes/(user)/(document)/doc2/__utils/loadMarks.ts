@@ -10,13 +10,18 @@ export const DocsLoadMark = {
   DocumentLoaded: 'docs-load:document-loaded',
   BaseStateSent: 'docs-load:base-state-sent',
   CaughtUp: 'docs-load:caught-up',
-  /** When the editor answers doc2's `showEditor`, and the loader in front of it goes */
+  /** When the editor answers doc2's `showEditor` */
   EditorShown: 'docs-load:editor-shown',
   /**
    * The last of: the editor shown, its Lexical editor rendered (its first `updateFrameSize`), and its answer to doc2's
    * latest lock call, an unlock. The editor's own lock is out of doc2's sight.
    */
   EditorEditable: 'docs-load:editor-editable',
+  /**
+   * When the Loading Screen lifts, at its Reveal Point, the end of the Loader's `settle` step (`loadDocument.ts`): what
+   * the user sees, where the marks above are what the editor does
+   */
+  Revealed: 'docs-load:revealed',
 } as const
 
 export type DocsLoadMarkName = (typeof DocsLoadMark)[keyof typeof DocsLoadMark]

@@ -1,15 +1,16 @@
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { ConfigContext } from '@proton/app-context/configContext'
 import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
 import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
-import type { NodeEntity } from '@proton/drive/sdk'
+import { MemberRole, getDrive } from '@proton/drive/sdk'
+import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
-import { decodeAwarenessUpdate, encodeAwarenessUpdate } from '@proton-docs/realtime-sdk'
+import { DocsApiError, decodeAwarenessUpdate, encodeAwarenessUpdate } from '@proton-docs/realtime-sdk'
 import type { Participant, RecoveryCondition, SessionStatus } from '@proton-docs/realtime-sdk'
-import type { ReactNode } from 'react'
+import { type ReactNode, StrictMode } from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { CompatRouter } from 'react-router-dom-v5-compat'
 
@@ -22,14 +23,16 @@ import { createFakeSession } from '../__utils/createFakeSession'
 import type { DocumentRole } from '../__utils/getDocumentRole'
 import { DocsLoadMark } from '../__utils/loadMarks'
 import { docsLoadMarks, withNodePerformance } from '../__utils/loadMarksTesting'
-import type { DocumentSessionState } from '../__utils/useDocumentSession'
 import type { DocumentDebugMenuProps } from './DocumentDebugMenu'
 import { DocumentViewerV2 } from './DocumentViewerV2'
 
-let mockSessionState: DocumentSessionState = { status: 'loading' }
-jest.mock('../__utils/useDocumentSession', () => ({ useDocumentSession: () => mockSessionState }))
-const mockRealtimeClient = { seedInitialCommit: jest.fn() }
+const mockRealtimeClient = { seedInitialCommit: jest.fn(), createSession: jest.fn() }
 jest.mock('../__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockRealtimeClient }))
+jest.mock('@proton/drive/sdk', () => ({
+  ...jest.requireActual('@proton/drive/sdk'),
+  getDrive: jest.fn(),
+}))
+const mockGetNodeHierarchy = jest.fn()
 jest.mock('@proton/components/hooks/useAuthentication', () => () => ({ UID: 'session-uid' }))
 const mockIsFlagEnabled = () => false
 jest.mock('@proton/unleash/useGetFlag', () => ({ useGetFlag: () => mockIsFlagEnabled }))
@@ -47,10 +50,19 @@ jest.mock('@proton/account/user/hooks', () => ({
 }))
 // The app shell and the header need the whole app around them; the header has its own tests
 jest.mock('./DocumentShell', () => ({
-  DocumentShell: ({ header, children }: { header: ReactNode; children: ReactNode }) => (
+  DocumentShell: ({
+    header,
+    children,
+    loadingScreen,
+  }: {
+    header: ReactNode
+    children: ReactNode
+    loadingScreen?: ReactNode
+  }) => (
     <>
       <div data-testid="shell-header">{header}</div>
       {children}
+      {loadingScreen}
     </>
   ),
 }))
@@ -213,53 +225,73 @@ function users(count: number): Participant[] {
   }))
 }
 
+const ROLES = { Admin: MemberRole.Admin, Editor: MemberRole.Editor, Viewer: MemberRole.Viewer }
+
+/** The document's hierarchy as Drive reads it, the document last */
+function hierarchy(role: DocumentRole, node: object = {}) {
+  return [
+    { uid: 'ROOT', directRole: MemberRole.Inherited },
+    {
+      uid: 'VOLUME~LINK',
+      name: 'Plans',
+      mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE,
+      directRole: ROLES[role],
+      ...node,
+    },
+  ]
+}
+
 function renderViewer(
   fake: ReturnType<typeof createFakeSession>,
   {
     role = 'Viewer',
     onRetry = jest.fn(),
-    state,
+    readHierarchy = async () => hierarchy(role),
     downloadOnOpen,
     onDownloadedOnOpen,
+    strict = false,
   }: {
     role?: DocumentRole
     onRetry?: () => void
-    state?: DocumentSessionState
+    /** How Drive answers the node read */
+    readHierarchy?: () => Promise<unknown>
     downloadOnOpen?: boolean
     onDownloadedOnOpen?: () => void
+    strict?: boolean
   } = {},
 ) {
-  mockSessionState = state ?? {
-    status: 'ready',
-    session: fake.session,
-    role,
-    node: { uid: 'VOLUME~LINK', name: 'Plans' } as unknown as NodeEntity,
-    roleReads: 1,
-  }
+  jest
+    .mocked(getDrive)
+    .mockReturnValue({ getNodeHierarchy: mockGetNodeHierarchy } as unknown as ReturnType<typeof getDrive>)
+  mockGetNodeHierarchy.mockImplementation(readHierarchy)
+  mockRealtimeClient.createSession.mockReturnValue(fake.session)
   const application = {
     logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
   } as unknown as ApplicationProviderProps['application']
-  const viewer = () => (
-    <MemoryRouter>
-      <CompatRouter>
-        <ConfigContext.Provider
-          value={{ APP_VERSION: '0.0.0', API_URL: 'https://docs.proton.dev/api' } as ProtonConfig}
-        >
-          <ApplicationProvider application={application}>
-            <DebugModeProvider>
-              <DocumentViewerV2
-                nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }}
-                driveCompat={DRIVE_COMPAT}
-                onRetry={onRetry}
-                downloadOnOpen={downloadOnOpen}
-                onDownloadedOnOpen={onDownloadedOnOpen}
-              />
-            </DebugModeProvider>
-          </ApplicationProvider>
-        </ConfigContext.Provider>
-      </CompatRouter>
-    </MemoryRouter>
-  )
+  const viewer = () => {
+    const page = (
+      <MemoryRouter>
+        <CompatRouter>
+          <ConfigContext.Provider
+            value={{ APP_VERSION: '0.0.0', API_URL: 'https://docs.proton.dev/api' } as ProtonConfig}
+          >
+            <ApplicationProvider application={application}>
+              <DebugModeProvider>
+                <DocumentViewerV2
+                  nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }}
+                  driveCompat={DRIVE_COMPAT}
+                  onRetry={onRetry}
+                  downloadOnOpen={downloadOnOpen}
+                  onDownloadedOnOpen={onDownloadedOnOpen}
+                />
+              </DebugModeProvider>
+            </ApplicationProvider>
+          </ConfigContext.Provider>
+        </CompatRouter>
+      </MemoryRouter>
+    )
+    return strict ? <StrictMode>{page}</StrictMode> : page
+  }
 
   const rendered = render(viewer())
   return { ...rendered, rerender: () => rendered.rerender(viewer()), logger: application.logger }
@@ -271,7 +303,17 @@ async function renderShown(fake: ReturnType<typeof createFakeSession>, options?:
   await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
   act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
   await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
-  act(() => mockClientHandler.updateFrameSize(480))
+  await act(async () => mockClientHandler.updateFrameSize(480))
+  return rendered
+}
+
+/** Renders a viewer, and waits for the Reveal Point */
+async function renderRevealed(
+  fake: ReturnType<typeof createFakeSession>,
+  options?: Parameters<typeof renderViewer>[1],
+) {
+  const rendered = await renderShown(fake, options)
+  await waitFor(() => expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument())
   return rendered
 }
 
@@ -281,7 +323,7 @@ describe('DocumentViewerV2', () => {
     jest.clearAllMocks()
   })
 
-  test('connects once the editor holds the base state, and shows the editor only once the session catches up', async () => {
+  test('connects once the editor holds the base state, and initializes and shows the editor only once the session catches up', async () => {
     const fake = createSession()
     renderViewer(fake)
     await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
@@ -292,18 +334,20 @@ describe('DocumentViewerV2', () => {
     })
     await act(async () => {})
 
-    const beforeCatchUp = [
-      `receiveMessage:${BASE_UPDATE}`,
-      'syncProperty:suggestionsEnabled',
-      'syncProperty:userName',
-      `receiveMessage:${REPLAYED_UPDATE}`,
-    ]
+    const beforeCatchUp = [`receiveMessage:${BASE_UPDATE}`, `receiveMessage:${REPLAYED_UPDATE}`]
     expect(mockEditorCalls).toEqual(beforeCatchUp)
 
     act(() => fake.setSnapshot({ caughtUp: true }))
 
     await waitFor(() =>
-      expect(mockEditorCalls).toEqual([...beforeCatchUp, 'initializeEditor', 'showEditor', 'broadcastPresenceState']),
+      expect(mockEditorCalls).toEqual([
+        ...beforeCatchUp,
+        'syncProperty:suggestionsEnabled',
+        'syncProperty:userName',
+        'initializeEditor',
+        'showEditor',
+        'broadcastPresenceState',
+      ]),
     )
   })
 
@@ -315,7 +359,11 @@ describe('DocumentViewerV2', () => {
       renderViewer(fake)
       await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
 
-      expect(docsLoadMarks()).toEqual([DocsLoadMark.FrameReady, DocsLoadMark.BaseStateSent])
+      expect(docsLoadMarks()).toEqual([
+        DocsLoadMark.FrameReady,
+        DocsLoadMark.DocumentLoaded,
+        DocsLoadMark.BaseStateSent,
+      ])
 
       act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
       await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
@@ -323,6 +371,7 @@ describe('DocumentViewerV2', () => {
 
       expect(docsLoadMarks()).toEqual([
         DocsLoadMark.FrameReady,
+        DocsLoadMark.DocumentLoaded,
         DocsLoadMark.BaseStateSent,
         DocsLoadMark.CaughtUp,
         DocsLoadMark.EditorShown,
@@ -342,10 +391,12 @@ describe('DocumentViewerV2', () => {
       await waitFor(() =>
         expect(docsLoadMarks()).toEqual([
           DocsLoadMark.FrameReady,
+          DocsLoadMark.DocumentLoaded,
           DocsLoadMark.BaseStateSent,
           DocsLoadMark.CaughtUp,
           DocsLoadMark.EditorShown,
           DocsLoadMark.EditorEditable,
+          DocsLoadMark.Revealed,
         ]),
       )
       expect(mockChangeLockedState).toHaveBeenLastCalledWith(false)
@@ -381,31 +432,31 @@ describe('DocumentViewerV2', () => {
       expect(mockChangeLockedState).toHaveBeenLastCalledWith(false)
       expect(docsLoadMarks().at(-1)).toEqual(DocsLoadMark.EditorShown)
 
-      act(() => mockClientHandler.updateFrameSize(480))
+      await act(async () => mockClientHandler.updateFrameSize(480))
 
-      expect(docsLoadMarks().slice(-2)).toEqual([DocsLoadMark.EditorShown, DocsLoadMark.EditorEditable])
+      expect(docsLoadMarks().slice(-3)).toEqual([
+        DocsLoadMark.EditorShown,
+        DocsLoadMark.EditorEditable,
+        DocsLoadMark.Revealed,
+      ])
     })
 
-    test('marks the base state sent for the live run only, not for one a new session cut short', async () => {
-      const resolvers: (() => void)[] = []
-      // Each run's one base update waits for the test to answer it
-      const pending = () => new Promise<void>((resolve) => resolvers.push(resolve))
-      mockReceiveMessage.mockImplementationOnce(pending).mockImplementationOnce(pending)
-      const first = createSession()
-      const { rerender } = renderViewer(first)
-      await waitFor(() => expect(resolvers).toHaveLength(1))
+    test('in StrictMode, opens the document once: the first run is aborted before it marks anything', async () => {
+      // The previous test's viewer may unmount after its mocks were cleared
+      mockDestroyBridge.mockClear()
+      const fake = createSession()
+      renderViewer(fake, { strict: true })
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
 
-      const second = createSession()
-      mockSessionState = { ...mockSessionState, session: second.session } as DocumentSessionState
-      rerender()
-      await waitFor(() => expect(resolvers).toHaveLength(2))
-      await act(async () => resolvers[0]())
-
-      expect(docsLoadMarks()).toEqual([DocsLoadMark.FrameReady])
-
-      await act(async () => resolvers[1]())
-
-      expect(docsLoadMarks()).toEqual([DocsLoadMark.FrameReady, DocsLoadMark.BaseStateSent])
+      expect(docsLoadMarks()).toEqual([
+        DocsLoadMark.FrameReady,
+        DocsLoadMark.DocumentLoaded,
+        DocsLoadMark.BaseStateSent,
+      ])
+      expect(mockRealtimeClient.createSession).toHaveBeenCalledTimes(1)
+      expect(fake.mocks.connect).toHaveBeenCalledTimes(1)
+      expect(ClientEditorBridge).toHaveBeenCalledTimes(1)
+      expect(mockDestroyBridge).not.toHaveBeenCalled()
     })
 
     test('shows the document in a browser that places no marks', async () => {
@@ -473,43 +524,22 @@ describe('DocumentViewerV2', () => {
     await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
     act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'transient', retryable: true } }))
 
-    await userEvent.click(screen.getByRole('button', { name: 'Try again' }))
+    await userEvent.click(within(screen.getByTestId('shell-header')).getByRole('button', { name: 'Try again' }))
     act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
 
     expect(fake.mocks.retry).toHaveBeenCalled()
     await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
   })
 
-  test('shows no header while the session loads, then the header for its node and role, with the editor once there', async () => {
-    mockSessionState = { status: 'loading' }
-    const application = {
-      logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
-    } as unknown as ApplicationProviderProps['application']
-    const viewer = () => (
-      <ConfigContext.Provider value={{ APP_VERSION: '0.0.0' } as ProtonConfig}>
-        <ApplicationProvider application={application}>
-          <DebugModeProvider>
-            <DocumentViewerV2
-              nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }}
-              driveCompat={DRIVE_COMPAT}
-              onRetry={jest.fn()}
-            />
-          </DebugModeProvider>
-        </ApplicationProvider>
-      </ConfigContext.Provider>
-    )
-    const { rerender } = render(viewer())
+  test('shows no header while the node loads, then the header for its node and role, with the editor once there', async () => {
+    let readNode: () => void = () => {}
+    const fake = createSession()
+    renderViewer(fake, {
+      readHierarchy: () => new Promise((resolve) => (readNode = () => resolve(hierarchy('Editor')))),
+    })
     expect(screen.getByTestId('shell-header')).toBeEmptyDOMElement()
 
-    const fake = createSession()
-    mockSessionState = {
-      status: 'ready',
-      session: fake.session,
-      role: 'Editor',
-      node: { uid: 'VOLUME~LINK' } as NodeEntity,
-      roleReads: 1,
-    }
-    rerender(viewer())
+    await act(async () => readNode())
 
     await waitFor(() =>
       expect(screen.getByTestId('shell-header')).toHaveTextContent('Header for VOLUME~LINK as Editor, with the editor'),
@@ -521,8 +551,8 @@ describe('DocumentViewerV2', () => {
     ['Admin', false],
   ])('with 20 users, a %s is locked: %s, and below 20 nobody is', async (role, lockedAtLimit) => {
     const fake = createSession()
-    renderViewer(fake, { role })
-    await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(false))
+    await renderRevealed(fake, { role })
+    expect(mockChangeLockedState).toHaveBeenLastCalledWith(false)
 
     act(() => fake.setSnapshot({ participants: users(20) }))
     await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(lockedAtLimit))
@@ -532,9 +562,9 @@ describe('DocumentViewerV2', () => {
   })
 
   test("gives a private Viewer's editor their user settings, as /doc does", async () => {
-    renderViewer(createSession())
+    await renderShown(createSession())
 
-    await waitFor(() => expect(mockLoadUserSettings).toHaveBeenCalledWith({ Locale: 'fr_FR' }))
+    expect(mockLoadUserSettings).toHaveBeenCalledWith({ Locale: 'fr_FR' })
   })
 
   test("bridges presence: the editor's own entry to the session, and the other participants to the editor", async () => {
@@ -672,8 +702,11 @@ describe('DocumentViewerV2', () => {
     renderViewer(createSession(), { role: 'Admin' })
 
     expect(await screen.findByText('File action modals')).toBeInTheDocument()
+    await waitFor(() =>
+      expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith(expect.objectContaining({ role: 'Admin' })),
+    )
     expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith({
-      node: { uid: 'VOLUME~LINK', name: 'Plans' },
+      node: expect.objectContaining({ uid: 'VOLUME~LINK', name: 'Plans' }),
       role: 'Admin',
       driveCompat: DRIVE_COMPAT,
       client: mockRealtimeClient,
@@ -681,30 +714,211 @@ describe('DocumentViewerV2', () => {
     })
   })
 
+  describe('the loading screen', () => {
+    const performanceSpy = withNodePerformance()
+    afterEach(() => mockChangeLockedState.mockImplementation(async () => {}))
+    const loadingStatus = () => within(screen.getByTestId('loading-screen')).getByRole('status')
+
+    test('covers the page from the start, says the stage of each step, and lifts once the editor is ready', async () => {
+      const fake = createSession()
+      let readNode: () => void = () => {}
+      let bootstrap: () => void = () => {}
+      let answerUnlock = () => {}
+      fake.mocks.bootstrap.mockReturnValueOnce(new Promise((resolve) => (bootstrap = () => resolve(fake.session))))
+      mockChangeLockedState.mockImplementationOnce(() => new Promise<void>((resolve) => (answerUnlock = resolve)))
+      renderViewer(fake, {
+        role: 'Editor',
+        readHierarchy: () => new Promise((resolve) => (readNode = () => resolve(hierarchy('Editor')))),
+      })
+
+      expect(loadingStatus()).toHaveTextContent('Opening document…')
+      expect(screen.getByRole('progressbar', { name: 'Loading' })).not.toHaveAttribute('aria-valuenow')
+
+      await act(async () => readNode())
+      expect(loadingStatus()).toHaveTextContent('Decrypting document…')
+      // The header mounts under the screen
+      expect(screen.getByTestId('shell-header')).toHaveTextContent('Header for VOLUME~LINK as Editor')
+
+      await act(async () => bootstrap())
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+      expect(loadingStatus()).toHaveTextContent('Syncing latest changes…')
+
+      act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+      await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
+      expect(loadingStatus()).toHaveTextContent('Preparing editor…')
+
+      await act(async () => mockClientHandler.updateFrameSize(480))
+      expect(loadingStatus()).toHaveTextContent('Preparing editor…')
+      expect(docsLoadMarks()).not.toContain(DocsLoadMark.Revealed)
+
+      await act(async () => answerUnlock())
+
+      expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument()
+      expect(docsLoadMarks().slice(-2)).toEqual([DocsLoadMark.EditorEditable, DocsLoadMark.Revealed])
+    })
+
+    test.each<[string, DocumentRole, (fake: ReturnType<typeof createSession>) => void]>([
+      ['a viewer', 'Viewer', () => {}],
+      [
+        'an editor of a size-locked document',
+        'Editor',
+        (fake) => fake.setSnapshot({ editing: { allowed: false, reason: 'sizeLocked' } }),
+      ],
+      ['an editor at the participant limit', 'Editor', (fake) => fake.setSnapshot({ participants: users(20) })],
+    ])('lifts for %s once the editor answers its lock, and marks it revealed, not editable', async (_, role, lock) => {
+      const fake = createSession()
+      lock(fake)
+      await renderShown(fake, { role })
+      await act(async () => {})
+
+      expect(mockChangeLockedState).toHaveBeenLastCalledWith(true)
+      expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument()
+      expect(docsLoadMarks()).toContain(DocsLoadMark.Revealed)
+      expect(docsLoadMarks()).not.toContain(DocsLoadMark.EditorEditable)
+    })
+
+    test("says it can't connect when the session stops before the reveal, and Try again retries the session", async () => {
+      const fake = createSession()
+      renderViewer(fake)
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+
+      act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'transient', retryable: true } }))
+
+      expect(loadingStatus()).toHaveTextContent("Can't connect")
+      expect(screen.queryByRole('progressbar')).not.toBeInTheDocument()
+
+      await userEvent.click(within(screen.getByTestId('loading-screen')).getByRole('button', { name: 'Try again' }))
+      expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
+
+      act(() => fake.setSnapshot({ status: { name: 'opening' } }))
+
+      expect(loadingStatus()).toHaveTextContent('Syncing latest changes…')
+    })
+
+    test('after Try again, lifts only once the editor answers the unlock, not on the lock it answered while stopped', async () => {
+      const fake = createSession()
+      const answers: (() => void)[] = []
+      mockChangeLockedState.mockImplementation(() => new Promise<void>((resolve) => answers.push(resolve)))
+      await renderShown(fake, { role: 'Editor' })
+      act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'transient', retryable: true } }))
+      await act(async () => answers.forEach((answer) => answer()))
+      expect(loadingStatus()).toHaveTextContent("Can't connect")
+
+      act(() => fake.setSnapshot({ status: { name: 'connected' } }))
+
+      expect(mockChangeLockedState).toHaveBeenLastCalledWith(false)
+      expect(loadingStatus()).toHaveTextContent('Preparing editor…')
+
+      await act(async () => answers.at(-1)!())
+
+      expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument()
+    })
+
+    test('shows a stop alert over the screen', async () => {
+      const fake = createSession()
+      renderViewer(fake)
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+
+      act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'encryptionFailed', retryable: false } }))
+
+      expect(await screen.findByText('Something went wrong')).toBeInTheDocument()
+      expect(loadingStatus()).toHaveTextContent("Can't connect")
+    })
+
+    test("offers no Try again for a stop the session can't retry", async () => {
+      const fake = createSession()
+      renderViewer(fake)
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+
+      act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'permissionsChanged', retryable: false } }))
+
+      expect(loadingStatus()).toHaveTextContent("Can't connect")
+      expect(within(screen.getByTestId('loading-screen')).queryByRole('button')).not.toBeInTheDocument()
+    })
+
+    test('stays lifted, and marks nothing again, through a reconnect, a rebootstrap and a stop', async () => {
+      const fake = createSession()
+      await renderShown(fake, { role: 'Editor' })
+      await waitFor(() => expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument())
+      const marks = performance.getEntriesByType('mark')
+
+      act(() =>
+        fake.setSnapshot({
+          status: { name: 'reconnecting', condition: 'transient', nextAttemptAt: 0, budgetExpiresAt: 0 },
+          caughtUp: false,
+        }),
+      )
+      act(() => fake.setSnapshot({ status: { name: 'opening' } }))
+      act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'transient', retryable: true } }))
+      act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+      await act(async () => {})
+
+      expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument()
+      expect(performance.getEntriesByType('mark')).toEqual(marks)
+    })
+
+    test('lifting it moves no focus', async () => {
+      const fake = createSession()
+      const outside = document.body.appendChild(document.createElement('button'))
+      outside.focus()
+      await renderShown(fake, { role: 'Editor' })
+      await waitFor(() => expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument())
+
+      expect(outside).toHaveFocus()
+      outside.remove()
+    })
+
+    test('lifts in a browser that places no marks', async () => {
+      performanceSpy().mockRestore()
+
+      await renderShown(createSession(), { role: 'Editor' })
+
+      await waitFor(() => expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument())
+    })
+
+    test.each<[string, () => Promise<unknown>]>([
+      ['a bootstrap failure', () => Promise.reject(new DocsApiError('getDocumentMeta', 403))],
+      ['an unsupported document', async () => hierarchy('Editor', { mediaType: 'application/pdf' })],
+    ])('gives way to the error page for %s', async (_, readHierarchy) => {
+      renderViewer(createSession(), { readHierarchy })
+
+      await waitFor(() => expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument())
+    })
+
+    test('gives way to the error page for an editor that fails', async () => {
+      const fake = createSession()
+      mockReceiveMessage.mockRejectedValueOnce(new Error('editor gone'))
+      renderViewer(fake)
+
+      expect(await screen.findByText('Open failed: editorFailed')).toBeInTheDocument()
+      expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument()
+    })
+  })
+
   describe('a document opened in the trash', () => {
-    const trashedNode = { uid: 'VOLUME~LINK', trashTime: new Date(0) } as NodeEntity
+    const trashed = async () => hierarchy('Admin', { trashTime: new Date(0) })
 
     test('shows the header for its role and the file actions, with no session', async () => {
-      renderViewer(createSession(), { state: { status: 'trashed', role: 'Admin', node: trashedNode } })
+      renderViewer(createSession(), { readHierarchy: trashed })
 
       expect(await screen.findByText('Header for VOLUME~LINK as Admin, without the editor')).toBeInTheDocument()
       expect(screen.getByText('File action modals')).toBeInTheDocument()
+      // The trashed modal shows over the loading screen, which stays until a restore opens the document
+      expect(within(screen.getByTestId('loading-screen')).getByRole('status')).toHaveTextContent('Opening document…')
       await act(async () => {})
       // No session, so no editor bridge
+      expect(mockRealtimeClient.createSession).not.toHaveBeenCalled()
       expect(ClientEditorBridge).not.toHaveBeenCalled()
       expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith(
-        expect.objectContaining({ node: trashedNode, role: 'Admin' }),
+        expect.objectContaining({ node: expect.objectContaining({ uid: 'VOLUME~LINK' }), role: 'Admin' }),
       )
     })
 
     test('opens once out of the trash, restored here or elsewhere', async () => {
       const onRetry = jest.fn()
       mockUseDocumentFileActions.mockReturnValue({ ...mockFileActions, trashState: 'trashed' })
-      const { rerender } = renderViewer(createSession(), {
-        onRetry,
-        state: { status: 'trashed', role: 'Admin', node: trashedNode },
-      })
-      await screen.findByText('File action modals')
+      const { rerender } = renderViewer(createSession(), { onRetry, readHierarchy: trashed })
+      await screen.findByText('Header for VOLUME~LINK as Admin, without the editor')
       mockUseDocumentFileActions.mockReturnValue({ ...mockFileActions, trashState: 'restoring' })
       rerender()
       expect(onRetry).not.toHaveBeenCalled()
@@ -787,20 +1001,59 @@ describe('DocumentViewerV2', () => {
     await act(async () => {})
 
     expect(mockDestroyBridge).toHaveBeenCalled()
+    expect(fake.mocks.disconnect).toHaveBeenCalledTimes(1)
+    expect(fake.listenerCount()).toBe(0)
     expect(mockEditorCalls).not.toContain('initializeEditor')
   })
-  test.each<[DocumentSessionState & { status: 'failed' }, string, boolean]>([
-    [{ status: 'failed', reason: 'noAccess' }, 'Bootstrap failed: noAccess', true],
-    [{ status: 'failed', reason: 'notFound' }, 'Bootstrap failed: notFound', true],
-    [{ status: 'failed', reason: 'unreachable' }, 'Bootstrap failed: unreachable', true],
-    [{ status: 'failed', reason: 'bootstrapFailed' }, 'Bootstrap failed: bootstrapFailed', true],
-    [{ status: 'failed', reason: 'unreadableUpdate' }, 'Open failed: unreadableUpdate', true],
-    [{ status: 'failed', reason: 'unsupported' }, 'Open failed: unsupported', false],
-  ])('a session that failed with %j shows "%s", given a retry: %s', async (state, text, canRetry) => {
+  test.each<[string, string, boolean, (fake: ReturnType<typeof createSession>) => Parameters<typeof renderViewer>[1]]>([
+    [
+      'no access',
+      'Bootstrap failed: noAccess',
+      true,
+      () => ({ readHierarchy: () => Promise.reject(new DocsApiError('getDocumentMeta', 403)) }),
+    ],
+    [
+      'not found',
+      'Bootstrap failed: notFound',
+      true,
+      (fake) => (fake.mocks.bootstrap.mockRejectedValueOnce(new DocsApiError('getDocumentMeta', 404)), {}),
+    ],
+    [
+      'no Docs API',
+      'Bootstrap failed: unreachable',
+      true,
+      (fake) => (fake.mocks.bootstrap.mockRejectedValueOnce(new DocsApiError('getCommitData')), {}),
+    ],
+    [
+      'any other failure',
+      'Bootstrap failed: bootstrapFailed',
+      true,
+      (fake) => (fake.mocks.bootstrap.mockRejectedValueOnce(new Error('Boom')), {}),
+    ],
+    [
+      'an unreadable base state',
+      'Open failed: unreadableUpdate',
+      true,
+      (fake) => (
+        fake.mocks.bootstrap.mockImplementationOnce(async () => {
+          fake.emit('updateUnreadable', { uuid: 'update-1', origin: 'baseState' })
+          return fake.session
+        }),
+        {}
+      ),
+    ],
+    [
+      'an unsupported document',
+      'Open failed: unsupported',
+      false,
+      () => ({ readHierarchy: async () => hierarchy('Editor', { mediaType: 'application/pdf' }) }),
+    ],
+  ])('a load that failed for %s shows "%s", given a retry: %s', async (_, text, canRetry, failure) => {
     const onRetry = jest.fn()
-    renderViewer(createSession(), { onRetry, state })
+    const fake = createSession()
+    renderViewer(fake, { onRetry, ...failure(fake) })
 
-    expect(screen.getByText(text)).toBeInTheDocument()
+    expect(await screen.findByText(text)).toBeInTheDocument()
     const retryButtons = screen.queryAllByRole('button', { name: 'Try again' })
     expect(retryButtons).toHaveLength(canRetry ? 1 : 0)
     if (canRetry) {
@@ -889,31 +1142,26 @@ describe('DocumentViewerV2', () => {
     expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
   })
 
-  test('a role read again locks or unlocks the editor, and applies the lock again when unchanged, without initializing it again', async () => {
+  test('a role read again after a rebootstrap locks or unlocks the editor, and shows in the header, without initializing it again', async () => {
     const fake = createSession()
-    const { rerender } = await renderShown(fake, { role: 'Editor' })
-    await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(false))
-    mockChangeLockedState.mockClear()
-
-    mockSessionState = {
-      ...(mockSessionState as DocumentSessionState & { status: 'ready' }),
-      role: 'Viewer',
-      roleReads: 2,
+    await renderRevealed(fake, { role: 'Editor' })
+    expect(mockChangeLockedState).toHaveBeenLastCalledWith(false)
+    const rebootstrap = () => {
+      act(() => fake.setSnapshot({ status: { name: 'opening' } }))
+      act(() => fake.setSnapshot({ status: { name: 'connected' } }))
     }
-    rerender()
+
+    mockGetNodeHierarchy.mockResolvedValue(hierarchy('Viewer'))
+    rebootstrap()
     await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(true))
     expect(screen.getByTestId('shell-header')).toHaveTextContent('as Viewer')
 
-    mockChangeLockedState.mockClear()
-    mockSessionState = { ...mockSessionState, roleReads: 3 }
-    rerender()
-    await waitFor(() => expect(mockChangeLockedState).toHaveBeenCalledWith(true))
-
-    mockSessionState = { ...mockSessionState, role: 'Editor', roleReads: 4 }
-    rerender()
+    mockGetNodeHierarchy.mockResolvedValue(hierarchy('Editor'))
+    rebootstrap()
     await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(false))
 
     expect(mockEditorCalls.filter((call) => call === 'initializeEditor')).toHaveLength(1)
+    expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument()
   })
 
   describe('print, download and export', () => {
@@ -931,7 +1179,7 @@ describe('DocumentViewerV2', () => {
 
       expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith(expect.objectContaining({ exportInvoker: undefined }))
 
-      act(() => mockClientHandler.updateFrameSize(480))
+      await act(async () => mockClientHandler.updateFrameSize(480))
 
       expect(screen.getByTestId('header-exports')).toHaveTextContent('exports enabled')
       expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith(
@@ -1006,7 +1254,7 @@ describe('DocumentViewerV2', () => {
       await act(async () => {})
       expect(mockExportAndDownload).not.toHaveBeenCalled()
 
-      act(() => mockClientHandler.updateFrameSize(480))
+      await act(async () => mockClientHandler.updateFrameSize(480))
       await waitFor(() => expect(mockExportAndDownload).toHaveBeenCalledWith(expect.anything(), 'Plans', 'docx'))
       expect(onDownloadedOnOpen).toHaveBeenCalledTimes(1)
 

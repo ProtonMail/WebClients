@@ -10,27 +10,42 @@ import { APPS } from '@proton/shared/lib/constants'
 import { DocsQuickSettings } from '~/components/DocsQuickSettings'
 import { isRunningInNativeMobileWeb } from '../__utils/isRunningInNativeMobileWeb'
 
-export type DocumentShellProps = { header: ReactNode; children: ReactNode }
+export type DocumentShellProps = {
+  header: ReactNode
+  children?: ReactNode
+  /** Covers the whole page, banners and header included, while given */
+  loadingScreen?: ReactNode
+}
 
 /**
  * Adapted from `applications/docs/src/app/components/document/DocumentLayout/DocumentLayout.tsx`, /doc's app shell:
  * the banners, `header`, and the drawer with the quick settings. The native app's webview shows no header.
+ * Under `loadingScreen` the page stays mounted and laid out, never hidden, so it loads under the screen and nothing
+ * moves when the screen lifts; it is busy and inert, so nothing under the screen takes focus or clicks.
  */
-export function DocumentShell({ header, children }: DocumentShellProps) {
+export function DocumentShell({ header, children, loadingScreen }: DocumentShellProps) {
+  const loading = Boolean(loadingScreen)
+
   return (
-    <PrivateAppContainer
-      top={
-        <TopBanners app={APPS.PROTONDOCS}>
-          <PasswordReminderTopBanner />
-        </TopBanners>
-      }
-      header={isRunningInNativeMobileWeb() ? null : header}
-      sidebar={null}
-      drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
-    >
-      <PrivateMainArea hasToolbar className="[&>div]:h-full">
-        {children}
-      </PrivateMainArea>
-    </PrivateAppContainer>
+    <>
+      {/* One element whether loading or not, so the screen lifting remounts nothing, the editor frame least of all */}
+      <div className="h-full" aria-busy={loading || undefined} {...(loading && { inert: '' })}>
+        <PrivateAppContainer
+          top={
+            <TopBanners app={APPS.PROTONDOCS}>
+              <PasswordReminderTopBanner />
+            </TopBanners>
+          }
+          header={isRunningInNativeMobileWeb() ? null : header}
+          sidebar={null}
+          drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
+        >
+          <PrivateMainArea hasToolbar className="[&>div]:h-full">
+            {children}
+          </PrivateMainArea>
+        </PrivateAppContainer>
+      </div>
+      {loadingScreen}
+    </>
   )
 }

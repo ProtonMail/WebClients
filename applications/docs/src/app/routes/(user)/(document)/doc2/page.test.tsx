@@ -15,7 +15,8 @@ import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimety
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 import { DocsUrlContextProvider } from '~/utils/docs-url-bar'
-import { EDITOR_FRAME_READY_TIMEOUT_MS } from './__components/DocumentViewerV2'
+import { createFakeSession } from './__utils/createFakeSession'
+import { EDITOR_FRAME_READY_TIMEOUT_MS } from './__utils/loadDocument'
 import { DocsLoadMark } from './__utils/loadMarks'
 import { docsLoadMarks, withNodePerformance } from './__utils/loadMarksTesting'
 import DocumentPageV2 from './page'
@@ -31,14 +32,24 @@ jest.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () 
 jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ DisplayName: '', Name: 'member', Email: '' }] }))
 // The app shell and its headers need the whole app around them
 jest.mock('./__components/DocumentShell', () => ({
-  DocumentShell: ({ header, children }: { header: ReactNode; children: ReactNode }) => (
+  DocumentShell: ({
+    header,
+    children,
+    loadingScreen,
+  }: {
+    header: ReactNode
+    children?: ReactNode
+    loadingScreen?: ReactNode
+  }) => (
     <>
       {header}
       {children}
+      {loadingScreen}
     </>
   ),
 }))
 jest.mock('./__components/ErrorHeader', () => ({ ErrorHeader: () => <div>Error header</div> }))
+jest.mock('./__components/DocumentHeaderV2', () => ({ DocumentHeaderV2: () => <div>Document header</div> }))
 // A fixed version for the page's log line; the rest of the SDK, such as DocsApiError, stays real.
 jest.mock('@proton-docs/realtime-sdk', () => ({ ...jest.requireActual('@proton-docs/realtime-sdk'), version: '0.0.0' }))
 const mockCreateSession = jest.fn()
@@ -56,7 +67,7 @@ const ORIGIN = 'https://docs.proton.dev'
 
 const driveCompat = { getMyFilesNodeMeta: jest.fn(), createDocumentNode: jest.fn() }
 const getNode = jest.fn()
-const getNodeHierarchy = jest.fn(async () => [])
+const getNodeHierarchy = jest.fn()
 const getMyFilesRootFolder = jest.fn()
 
 describe('DocumentPageV2', () => {
@@ -67,7 +78,10 @@ describe('DocumentPageV2', () => {
       getNodeHierarchy,
       getMyFilesRootFolder,
     } as unknown as ReturnType<typeof getDrive>)
-    getNode.mockResolvedValue({ mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE })
+    // The document is the last item of its hierarchy
+    getNodeHierarchy.mockImplementation(async (uid: string) => [
+      { uid, name: 'Plans', mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE },
+    ])
     mockCreateSession.mockReturnValue(pendingSession(() => new Promise(() => {})))
     driveCompat.getMyFilesNodeMeta.mockResolvedValue({ volumeId: 'MY_VOLUME', linkId: 'MY_FILES' })
     driveCompat.createDocumentNode.mockResolvedValue({ volumeId: 'MY_VOLUME', linkId: 'NEW_DOC' })
@@ -81,7 +95,8 @@ describe('DocumentPageV2', () => {
   test('a bare /doc2 creates a document', async () => {
     renderAt('/doc2')
 
-    expect(screen.getByText('Creating new document...')).toBeInTheDocument()
+    expect(screen.getByRole('status')).toHaveTextContent('Creating new document…')
+    expect(screen.getByRole('progressbar', { name: 'Loading' })).toBeInTheDocument()
     await waitFor(() => expect(currentUrl()).toBe('/doc2?mode=open&volumeId=MY_VOLUME&linkId=NEW_DOC'))
   })
 
@@ -119,6 +134,7 @@ describe('DocumentPageV2', () => {
   test('open-url-reauth goes back to the public document', () => {
     renderAt('/u/1/doc2?mode=open-url-reauth&token=TOKEN&linkId=LINK', '#urlPassword')
 
+    expect(screen.getByRole('status')).toHaveTextContent('Redirecting…')
     const url = new URL(jest.mocked(assignUrl).mock.lastCall![0])
     expect(url.pathname).toBe('/doc')
     expect(url.searchParams.get('mode')).toBe('open-url')
@@ -259,10 +275,11 @@ describe('DocumentPageV2', () => {
 
     test('an editor that never gets ready shows the error page, and retry loads the document again', async () => {
       jest.useFakeTimers()
+      mockCreateSession.mockReturnValueOnce(createFakeSession().session)
       renderAt('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
       await waitFor(() => expect(mockCreateSession).toHaveBeenCalledTimes(1))
 
-      act(() => jest.advanceTimersByTime(EDITOR_FRAME_READY_TIMEOUT_MS))
+      await act(() => jest.advanceTimersByTimeAsync(EDITOR_FRAME_READY_TIMEOUT_MS))
 
       expect(screen.getByTestId('invalid-openaction-error')).toHaveTextContent('The editor could not be loaded.')
 
@@ -285,7 +302,7 @@ describe('DocumentPageV2', () => {
     })
 
     test('a node that is not a text document shows the unsupported error, with no retry', async () => {
-      getNode.mockResolvedValue({ mediaType: 'application/pdf' })
+      getNodeHierarchy.mockImplementation(async (uid: string) => [{ uid, mediaType: 'application/pdf' }])
       renderAt('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
 
       expect(await screen.findByTestId('invalid-openaction-error')).toHaveTextContent(
