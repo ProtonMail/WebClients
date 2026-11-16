@@ -3,6 +3,7 @@ import { useCallback, useRef, useState } from 'react';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import PaperTrailPanel from '../../features/aiPaperTrail/PaperTrailPanel';
+import { useIsDesktopOnboardingBlocking } from '../../features/desktopOnboarding/DesktopOnboardingProvider';
 import ApertusAnnouncementPanel from '../../features/notification/ApertusAnnouncementPanel';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
@@ -43,6 +44,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     const { isSmallScreen } = useIsLumoSmallScreen();
     const { aiPaperTrailPopup, aiPaperTrailRoute } = useLumoFlags();
     const { shouldShowApertusAnnouncement, dismissApertusAnnouncement } = useShouldShowApertusAnnouncement();
+    const isDesktopOnboardingBlocking = useIsDesktopOnboardingBlocking();
 
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const isGuest = useIsGuest();
@@ -107,11 +109,12 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                             <LumoCatAnimation isGhostMode={isGhostChatMode} />
                             <LumoMainText isSmallScreen={isSmallScreen} isGhostMode={isGhostChatMode} />
                         </div>
-                        {shouldShowApertusAnnouncement ? (
-                            <ApertusAnnouncementPanel onDismiss={dismissApertusAnnouncement} />
-                        ) : (
-                            aiPaperTrailRoute && aiPaperTrailPopup && <PaperTrailPanel />
-                        )}
+                        {!isDesktopOnboardingBlocking &&
+                            (shouldShowApertusAnnouncement ? (
+                                <ApertusAnnouncementPanel onDismiss={dismissApertusAnnouncement} />
+                            ) : (
+                                aiPaperTrailRoute && aiPaperTrailPopup && <PaperTrailPanel />
+                            ))}
 
                         <div className="composer-container md:px-4 w-full relative">
                             <ImageLimitNotice exceedsLimit={imageLimitExceeded} exceedsPageLimit={pageLimitExceeded} />

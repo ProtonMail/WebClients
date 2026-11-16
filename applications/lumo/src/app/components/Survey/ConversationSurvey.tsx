@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 
+import { useIsDesktopOnboardingBlocking } from '../../features/desktopOnboarding/DesktopOnboardingProvider';
 import SurveyPanel from '../../features/notification/SurveyPanel';
 import { useShouldShowSurvey } from '../../hooks/useShouldShowSurvey';
 
@@ -11,13 +12,14 @@ export const ConversationSurvey = ({ isGenerating }: ConversationSurveyProps) =>
     const [surveyDismissed, setSurveyDismissed] = useState(false);
 
     const { shouldShowSurvey, dismissSurvey } = useShouldShowSurvey();
+    const isDesktopOnboardingBlocking = useIsDesktopOnboardingBlocking();
 
     const handleSurveyDismiss = useCallback(() => {
         setSurveyDismissed(true);
         dismissSurvey();
     }, [dismissSurvey]);
 
-    if (!shouldShowSurvey || surveyDismissed || isGenerating) {
+    if (!shouldShowSurvey || surveyDismissed || isGenerating || isDesktopOnboardingBlocking) {
         return null;
     }
 

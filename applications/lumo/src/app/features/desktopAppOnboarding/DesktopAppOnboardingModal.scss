@@ -1,0 +1,675 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+// Figma "Desktop — Onboarding" (8KuLocdpyvZaokN1GEep1P, 741:27042). The illustrations are small
+// app mockups with overlapping, absolutely placed pieces, so their geometry lives here rather than
+// in utilities. Light uses the Figma lavenders and greys; dark falls back to theme tokens (same
+// pattern as DesktopOnboardingModal.scss).
+.desktop-app-onboarding {
+	--dao-fill: #f5f6fe;
+	--dao-dot: #e9eafc;
+	--dao-outline: #dddefb;
+	--dao-canvas: white;
+	--dao-card: white;
+	--dao-card-border: #e8eafc;
+	--dao-card-border-strong: #c5b7ff;
+	--dao-chip: #f7f5ff;
+	--dao-chip-border: #e2dbff;
+	--dao-panel: #f1f3fd;
+	--dao-bubble: #e9eafc;
+	--dao-bar: #e6e7ec;
+	--dao-bar-weak: #f1f2f5;
+	--dao-divider: #f1f3fd;
+	--dao-ink: #151515;
+	--dao-ink-weak: #707070;
+	--dao-notification: rgb(245 245 247 / 0.92);
+	--dao-notification-border: rgb(0 0 0 / 0.06);
+	--dao-brand: #6d4aff;
+	--dao-brand-soft: #c7bdff;
+	--dao-green: #21995c;
+	--dao-green-soft: #def4e5;
+	--dao-green-mid: #a6d9b8;
+	--dao-pink: #d43380;
+	--dao-pink-soft: #ffe0ee;
+	--dao-check: #1fa873;
+}
+
+body:has(#lumo-dark-theme) .desktop-app-onboarding {
+	--dao-fill: var(--background-weak);
+	--dao-dot: var(--border-norm);
+	--dao-outline: var(--border-norm);
+	--dao-canvas: var(--background-norm);
+	--dao-card: var(--background-norm);
+	--dao-card-border: var(--border-weak);
+	--dao-card-border-strong: var(--border-norm);
+	--dao-chip: var(--background-weak);
+	--dao-chip-border: var(--border-weak);
+	--dao-panel: var(--background-weak);
+	--dao-bubble: var(--background-strong);
+	--dao-bar: var(--background-strong);
+	--dao-bar-weak: var(--background-weak);
+	--dao-divider: var(--border-weak);
+	--dao-ink: var(--text-norm);
+	--dao-ink-weak: var(--text-weak);
+	--dao-notification: var(--background-weak);
+	--dao-notification-border: var(--border-weak);
+	--dao-green-soft: rgb(33 153 92 / 0.2);
+	--dao-pink-soft: rgb(212 51 128 / 0.2);
+}
+
+// 840 wide; every step is 480 tall once the two columns fit (@proton/styles "medium" breakpoint, 910px).
+// Narrower windows get the text column only and grow with it.
+.modal-two-dialog.desktop-app-onboarding {
+	--size: #{rem(840)};
+
+	@media (width > 910px) {
+		block-size: rem(480);
+	}
+}
+
+.dao-fill {
+	background-color: var(--dao-fill);
+}
+
+.dao-canvas {
+	background-color: var(--dao-canvas);
+}
+
+.dao-medium {
+	font-weight: var(--font-weight-medium, 500);
+}
+
+// Figma's 28px title uses "normal" line height; no utility matches.
+.dao-title {
+	line-height: normal;
+}
+
+// Footer buttons keep their labels on one line; the row wraps instead (long languages).
+.dao-footer .button {
+	white-space: nowrap;
+}
+
+// Outline buttons draw their border from this variable; two classes to win over .button-outline-weak.
+.desktop-app-onboarding .dao-back {
+	--button-default-border-color: var(--dao-outline);
+}
+
+.dao-close {
+	inset-block-start: rem(12);
+	inset-inline-end: rem(12);
+}
+
+// Step dots: 6px dots, the current one a 20px brand pill.
+.dao-dot {
+	inline-size: rem(6);
+	block-size: rem(6);
+	background-color: var(--dao-dot);
+	transition: inline-size 0.2s ease;
+
+	&--active {
+		inline-size: rem(20);
+		background-color: var(--interaction-norm);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+}
+
+// --- Shared pieces ---------------------------------------------------------------------------
+
+.dao-app-icon {
+	border: 1px solid rgb(0 0 0 / 0.06);
+	background: linear-gradient(180deg, white 0%, #e8e5fc 100%);
+
+	&--welcome {
+		inline-size: rem(96);
+		block-size: rem(96);
+		border-radius: rem(21.6);
+		box-shadow: 0 rem(9.6) rem(28.8) rgb(0 0 0 / 0.1);
+	}
+
+	&--all-set {
+		inline-size: rem(112);
+		block-size: rem(112);
+		border-radius: rem(25.2);
+		box-shadow: 0 rem(8.4) rem(22.4) rgb(51 26 128 / 0.18);
+	}
+
+	img {
+		inline-size: 70%;
+		block-size: 70%;
+	}
+}
+
+.dao-promise {
+	padding-block: rem(6);
+	padding-inline: rem(10) rem(12);
+	font-size: rem(13);
+	line-height: rem(18);
+}
+
+// The 400×400 stage shared by steps 2–4: a blurred brand glow under a fading dot grid.
+.dao-hero {
+	inset-block-start: rem(40);
+	inset-inline-start: 0;
+	inline-size: rem(400);
+	block-size: rem(400);
+	color: var(--dao-ink);
+}
+
+.dao-glow {
+	filter: blur(rem(40.741));
+	background-image:
+		linear-gradient(
+			180deg,
+			rgb(255 187 147 / 0.6) 0%,
+			rgb(234 119 124 / 0.6) 11%,
+			rgb(109 74 255 / 0.6) 38%,
+			rgb(30 159 255 / 0.6) 69%,
+			rgb(20 210 206 / 0.6) 93%
+		),
+		linear-gradient(90deg, rgb(132 217 243) 0%, rgb(100 57 237) 41%, rgb(232 79 205) 68%, rgb(240 144 76) 100%);
+
+	&--connectors {
+		inset-block-start: rem(36.67);
+		inset-inline-start: rem(21.48);
+		inline-size: rem(390.37);
+		block-size: rem(328.52);
+		border-radius: rem(68.52);
+		opacity: 0.43;
+	}
+
+	&--skills {
+		inset-block-start: rem(48.89);
+		inset-inline-start: rem(-101.11);
+		inline-size: rem(488.89);
+		block-size: rem(318.15);
+		border-radius: rem(37.41);
+		opacity: 0.6;
+	}
+
+	&--schedules {
+		inset-block-start: rem(59.07);
+		inset-inline-start: rem(8.15);
+		inline-size: rem(403.7);
+		block-size: rem(281.85);
+		border-radius: rem(42.96);
+		opacity: 0.6;
+		background-image:
+			linear-gradient(
+				180deg,
+				rgb(234 119 124 / 0.6) 6.11%,
+				rgb(109 74 255 / 0.6) 26.08%,
+				rgb(30 159 255 / 0.6) 63.04%,
+				rgb(20 210 206 / 0.6) 91.65%
+			),
+			linear-gradient(90deg, rgb(132 217 243) 0%, rgb(100 57 237) 41%, rgb(232 79 205) 68%, rgb(240 144 76) 100%);
+	}
+}
+
+// Figma exports this as a 1.6 MB SVG of single dots: a 6.67px grid of brand dots, faded out from the center.
+.dao-dots {
+	inset: 0;
+	background-image: radial-gradient(circle, #6d4aff 0.6px, transparent 0.75px);
+	background-size: rem(6.667) rem(6.667);
+	mask-image: radial-gradient(
+		circle rem(197.26) at 50% 50%,
+		rgb(0 0 0 / 0.42) 0%,
+		rgb(0 0 0 / 0.2) 45%,
+		rgb(0 0 0 / 0.04) 80%,
+		transparent 95%
+	);
+}
+
+.dao-bar {
+	block-size: rem(6);
+	border-radius: rem(3);
+	background-color: var(--dao-bar);
+
+	&--weak {
+		block-size: rem(5);
+		border-radius: rem(2.5);
+		background-color: var(--dao-bar-weak);
+	}
+}
+
+// --- Step 2 · Connectors: an itinerary assembled from three sources ---------------------------
+
+.dao-itinerary {
+	inset-block-start: rem(49.26);
+	inset-inline-start: rem(59.26);
+	inline-size: rem(345.19);
+	block-size: rem(301.48);
+	gap: rem(7.55);
+	padding: rem(12.39);
+	border: rem(0.37) solid var(--dao-card-border-strong);
+	border-radius: rem(10.37);
+	background-color: var(--dao-card);
+	box-shadow: 0 rem(11.41) rem(29.34) rgb(26 15 77 / 0.12);
+
+	&-sources {
+		gap: rem(3.72);
+		padding-block: rem(3.72);
+		padding-inline: rem(6.19);
+		border: rem(0.62) solid var(--dao-chip-border);
+		border-radius: rem(6.19);
+		background-color: var(--dao-chip);
+		font-size: rem(8.05);
+	}
+
+	&-city {
+		font-size: rem(21.06);
+		line-height: normal;
+	}
+
+	&-day {
+		gap: rem(5.04);
+	}
+
+	&-day-bar {
+		block-size: rem(5);
+		border-radius: rem(2.5);
+		background-color: rgb(109 74 255 / 0.35);
+	}
+
+	&-row {
+		gap: rem(6.71);
+		font-size: rem(8.67);
+		line-height: normal;
+	}
+
+	&-icon {
+		inline-size: rem(21.82);
+		block-size: rem(21.82);
+		border: rem(0.62) solid var(--dao-chip-border);
+		border-radius: rem(6.19);
+		background-color: var(--dao-chip);
+		color: var(--dao-brand);
+	}
+
+	&-divider {
+		block-size: rem(0.84);
+		background-color: var(--dao-divider);
+	}
+}
+
+// --- Step 3 · Skills: a chat that used the Budget skill ---------------------------------------
+
+.dao-chat {
+	&-panel {
+		inset-block: rem(48.9) rem(48.5);
+		inset-inline: rem(-17) rem(29.6);
+		border: rem(0.37) solid var(--dao-card-border);
+		border-radius: rem(5.56);
+		background-color: var(--dao-panel);
+	}
+
+	&-attachment {
+		inset-block-start: rem(56);
+		inset-inline-start: rem(240.4);
+		gap: rem(7);
+		padding-block: rem(6);
+		padding-inline: rem(7) rem(10);
+		border: rem(0.8) solid var(--dao-bar);
+		border-radius: rem(9);
+		background-color: var(--dao-card);
+	}
+
+	&-sheet {
+		inline-size: rem(20);
+		block-size: rem(20);
+		border-radius: rem(5);
+		background-color: var(--dao-green-soft);
+	}
+
+	// The spreadsheet glyph: two columns of three green cells.
+	&-sheet-cells {
+		display: grid;
+		grid-template-columns: rem(4) rem(4);
+		gap: rem(1.2) rem(1.4);
+
+		span {
+			block-size: rem(2.4);
+			border-radius: rem(0.6);
+			background-color: #218c54;
+		}
+	}
+
+	&-message {
+		inset-block-start: rem(95.6);
+		inset-inline-end: rem(58);
+		padding-block: rem(12);
+		padding-inline: rem(17.23);
+		border-radius: rem(15.66);
+		background-color: var(--dao-bubble);
+		font-size: rem(11.75);
+		line-height: normal;
+	}
+
+	&-skill {
+		inset-block-start: rem(143.6);
+		inset-inline-start: rem(33);
+		gap: rem(4.15);
+		padding-block: rem(4.15);
+		padding-inline: rem(6.92) rem(7.84);
+		border: rem(0.57) solid var(--dao-chip-border);
+		border-radius: rem(7.01);
+		background-color: var(--dao-panel);
+		font-size: rem(9.69);
+		line-height: normal;
+		color: var(--dao-ink);
+
+		svg {
+			color: var(--dao-brand);
+		}
+	}
+
+	&-chart {
+		inset-block-start: rem(172.05);
+		inset-inline-start: rem(33);
+		gap: rem(9);
+		padding-block: rem(10) rem(9);
+		padding-inline: rem(11);
+		border: rem(0.8) solid var(--dao-bar);
+		border-radius: rem(10);
+		background-color: var(--dao-card);
+	}
+
+	&-legend-dot {
+		inline-size: rem(5);
+		block-size: rem(5);
+		border-radius: 50%;
+	}
+
+	&-legend-bar {
+		inline-size: rem(18);
+		block-size: rem(4);
+		border-radius: rem(2);
+		background-color: var(--dao-bar-weak);
+	}
+
+	&-column {
+		inline-size: rem(8);
+		border-radius: rem(2);
+
+		&--spent {
+			background-color: var(--dao-brand);
+		}
+
+		&--budget {
+			background-color: var(--dao-brand-soft);
+		}
+	}
+
+	&-month-label {
+		inline-size: rem(12);
+		block-size: rem(4);
+		border-radius: rem(2);
+		background-color: var(--dao-bar-weak);
+	}
+
+	&-avatar {
+		inset-block-start: rem(252.8);
+		inset-inline-start: rem(34.8);
+		inline-size: rem(31);
+		block-size: rem(31);
+		background-color: rgb(226 219 255 / 0.9);
+
+		img {
+			inline-size: rem(22);
+			block-size: rem(22);
+			margin-block-start: rem(6);
+		}
+	}
+
+	&-typing {
+		inset-block-start: rem(252.6);
+		inset-inline-start: rem(27.6);
+		gap: rem(1.2);
+		inline-size: rem(17);
+		block-size: rem(9.7);
+		background-color: var(--dao-card);
+
+		span {
+			inline-size: rem(2.43);
+			block-size: rem(2.43);
+			border-radius: 50%;
+			background-color: var(--dao-brand);
+		}
+	}
+
+	&-composer {
+		inset-block-start: rem(287.4);
+		inset-inline-start: rem(27.4);
+		inline-size: rem(315);
+		gap: rem(2);
+		padding-block: rem(6.9) rem(5.9);
+		padding-inline: rem(11.8) rem(7.9);
+		border-radius: rem(13.78);
+		background-color: var(--dao-card);
+		box-shadow: 0 rem(2.95) rem(11.82) rgb(110 74 255 / 0.16);
+	}
+
+	&-send {
+		padding: rem(3.45);
+		background-color: var(--dao-brand);
+		color: white;
+	}
+}
+
+// --- Step 4 · Schedules: three recurring tasks -------------------------------------------------
+
+.dao-schedules {
+	inset-block-start: 50%;
+	inset-inline-start: rem(21.85);
+	inline-size: rem(383.33);
+	transform: translateY(-50%);
+	gap: rem(13);
+	padding-block: rem(14);
+	padding-inline: rem(11.56);
+	border: rem(0.37) solid var(--dao-card-border);
+	border-radius: rem(10.37);
+	background-color: var(--dao-card);
+	box-shadow: 0 rem(11.24) rem(28.91) rgb(26 15 77 / 0.12);
+
+	&-divider {
+		block-size: 1px;
+		background-color: var(--dao-divider);
+	}
+
+	&-task {
+		gap: rem(8);
+	}
+
+	&-icon {
+		inline-size: rem(22);
+		block-size: rem(22);
+		border-radius: rem(6);
+
+		&--green {
+			background-color: var(--dao-green-soft);
+			color: var(--dao-green);
+		}
+
+		&--brand {
+			background-color: var(--dao-chip);
+			color: var(--dao-brand);
+		}
+
+		&--pink {
+			background-color: var(--dao-pink-soft);
+			color: var(--dao-pink);
+		}
+	}
+
+	&-name {
+		font-size: rem(8.7);
+		line-height: normal;
+	}
+
+	&-time {
+		font-size: rem(7.5);
+		line-height: normal;
+		color: var(--dao-ink-weak);
+	}
+
+	&-status {
+		inline-size: rem(44);
+		block-size: rem(11);
+		gap: rem(4.5);
+		padding-inline: rem(5);
+		background-color: var(--dao-green-soft);
+
+		&-dot {
+			inline-size: rem(5);
+			block-size: rem(5);
+			border-radius: 50%;
+			background-color: var(--dao-green);
+		}
+
+		&-bar {
+			inline-size: rem(24);
+			block-size: rem(4);
+			border-radius: rem(2);
+			background-color: var(--dao-green-mid);
+		}
+	}
+
+	&-badge {
+		padding-block: rem(2);
+		padding-inline: rem(5);
+		border-radius: rem(8);
+		background-color: var(--dao-brand);
+		color: white;
+		font-size: rem(7.5);
+		line-height: normal;
+	}
+}
+
+// --- Step 5 · Notifications: two macOS banners --------------------------------------------------
+
+.dao-notification {
+	inline-size: rem(360);
+	max-inline-size: 100%;
+	gap: rem(12);
+	padding-block: rem(14);
+	padding-inline: rem(14) rem(16);
+	border: 1px solid var(--dao-notification-border);
+	border-radius: rem(20);
+	background-color: var(--dao-notification);
+	backdrop-filter: blur(rem(15));
+	box-shadow: 0 rem(8) rem(24) rgb(0 0 0 / 0.1);
+	font-size: rem(13);
+	line-height: normal;
+
+	&--older {
+		opacity: 0.7;
+	}
+
+	img {
+		inline-size: rem(48);
+		block-size: rem(48);
+	}
+
+	&-time {
+		font-size: rem(11);
+	}
+}
+
+// --- Step 6 · Free users: the Lumo Plus plan card ----------------------------------------------
+
+.dao-plan {
+	inline-size: rem(320);
+	max-inline-size: 100%;
+	gap: rem(12);
+	padding: rem(20);
+	border: 1px solid var(--dao-dot);
+	border-radius: rem(16);
+
+	&-name {
+		font-size: rem(20);
+		line-height: rem(28);
+	}
+
+	&-features {
+		gap: rem(10);
+	}
+
+	&-feature {
+		gap: rem(10);
+		font-size: rem(15);
+		line-height: rem(20);
+	}
+}
+
+// --- Step 6 · Everyone else: "all set" celebration ---------------------------------------------
+
+.dao-all-set {
+	inline-size: rem(380);
+	block-size: rem(440);
+
+	// Positions are each piece's center, from Figma; the piece is drawn around it.
+	&-piece {
+		inset-block-start: var(--y);
+		inset-inline-start: var(--x);
+		transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+	}
+
+	&-ring {
+		border-radius: 50%;
+		background-color: #6439ed;
+	}
+
+	&-confetti {
+		border-radius: rem(2);
+
+		&--dot {
+			border-radius: 50%;
+		}
+	}
+
+	&-chip {
+		inset-block-start: var(--y);
+		inset-inline-start: var(--x);
+
+		&--end {
+			inset-inline-start: auto;
+		}
+
+		gap: rem(6);
+		padding-block: rem(6);
+		padding-inline: rem(10) rem(8);
+		border: 1px solid var(--dao-dot);
+		box-shadow: 0 rem(6) rem(16) rgb(26 26 64 / 0.1);
+		font-size: rem(12);
+		line-height: normal;
+	}
+
+	&-check {
+		inline-size: rem(16);
+		block-size: rem(16);
+		background-color: var(--dao-check);
+		color: white;
+	}
+
+	// One gentle pop when the step opens.
+	@media (prefers-reduced-motion: no-preference) {
+		&-confetti,
+		&-sparkle {
+			animation: dao-confetti-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+			animation-delay: var(--delay, 0s);
+		}
+	}
+}
+
+@keyframes dao-confetti-in {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(0.2);
+	}
+
+	to {
+		opacity: 1;
+		transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(1);
+	}
+}

@@ -41,6 +41,8 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - schedules: Enable scheduled tasks (sidebar nav, /schedules page)
  * - moveToProject: Allow moving a chat into a project (chat menus and All chats list)
  * - createScheduleTool: Enable the create-schedule client tool when scheduled tasks are also enabled
+ * - desktopOnboardingModal: Show the one-time "Meet Lumo for desktop" introduction (web and mobile)
+ * - desktopAppOnboarding: Show the first-launch tour inside the desktop app
  */
 export const useLumoFlags = () => {
     const imageTools = useFlag('LumoImageTools');
@@ -82,6 +84,8 @@ export const useLumoFlags = () => {
     const moveToProject = useFlag('LumoMoveToProject');
     const skills = customAgents && customize;
     const resumableGeneration = useFlag('LumoResumableGeneration');
+    const desktopOnboardingModal = useFlag('LumoDesktopOnboardingModal');
+    const desktopAppOnboarding = useFlag('LumoDesktopAppOnboarding');
 
     return {
         memory,
@@ -123,5 +127,7 @@ export const useLumoFlags = () => {
         createScheduleTool,
         moveToProject,
         resumableGeneration,
+        desktopOnboardingModal,
+        desktopAppOnboarding,
     };
 };

@@ -1,0 +1,122 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+// Figma's Control/control-fill (#f5f6fe) and Border (#e9eafc) are Lumo lavenders with no theme token.
+// Light uses them as designed; dark falls back to the theme tokens (same pattern as lumo-modal-backdrop.scss).
+.desktop-onboarding-modal {
+	--desktop-onboarding-fill: #f5f6fe;
+	--desktop-onboarding-border: #e9eafc;
+}
+
+body:has(#lumo-dark-theme) .desktop-onboarding-modal {
+	--desktop-onboarding-fill: var(--background-weak);
+	--desktop-onboarding-border: var(--border-weak);
+}
+
+.desktop-onboarding-fill {
+	background-color: var(--desktop-onboarding-fill);
+}
+
+// Dialog sizing and the bottom-sheet placement have no utility class equivalent.
+.modal-two-dialog.desktop-onboarding-modal {
+	--size: #{rem(840)};
+
+	// Matches the lg: two-column layout (@proton/styles "medium" breakpoint, 910px).
+	@media (width > 910px) {
+		min-block-size: rem(480);
+	}
+}
+
+.modal-two.desktop-onboarding-modal-root--sheet {
+	justify-content: flex-end;
+	padding: 0;
+
+	// Full width on phones; tablets (which also get "Got it") keep a centered sheet instead of a 1000px one.
+	.modal-two-dialog.desktop-onboarding-modal--sheet {
+		--size: #{rem(640)};
+
+		margin: 0;
+		max-block-size: 90vh;
+		border-end-start-radius: 0;
+		border-end-end-radius: 0;
+		padding-block-end: env(safe-area-inset-bottom, 0);
+	}
+}
+
+// "Lumo/Desktop app illustration" (Figma 872:8059): a 340×240 drawing with overlapping
+// absolutely positioned pieces, so the geometry lives here rather than in utilities.
+.desktop-app-illustration {
+	inline-size: rem(340);
+	block-size: rem(240);
+	max-inline-size: 100%;
+
+	&-window {
+		inset-block-start: rem(30);
+		inset-inline-start: rem(40);
+		inline-size: rem(260);
+		block-size: rem(180);
+		border: 1px solid var(--desktop-onboarding-border);
+		border-radius: rem(14);
+		box-shadow: 0 rem(12) rem(32) rgb(26 26 64 / 0.12);
+	}
+
+	// 10px steps: the spacing utilities jump from 8px (2) to 12px (3).
+	&-titlebar {
+		padding-block: rem(10);
+		padding-inline-start: rem(12);
+	}
+
+	&-body {
+		gap: rem(10);
+	}
+
+	&-dot {
+		inline-size: rem(9);
+		block-size: rem(9);
+
+		// macOS window controls
+		&--close {
+			background-color: #ff5f57;
+		}
+
+		&--minimize {
+			background-color: #febc2e;
+		}
+
+		&--zoom {
+			background-color: #28c840;
+		}
+	}
+
+	&-app-icon {
+		inline-size: rem(64);
+		block-size: rem(64);
+		border-radius: rem(14.4);
+		border: rem(0.8) solid rgb(0 0 0 / 0.06);
+		background: linear-gradient(180deg, #fff 0%, #e8e5fc 100%);
+		box-shadow: 0 rem(4.8) rem(12.8) rgb(51 26 128 / 0.18);
+	}
+
+	&-chip {
+		border: 1px solid var(--desktop-onboarding-border);
+		font-weight: var(--font-weight-medium, 500);
+		line-height: normal;
+		padding-block: rem(7);
+		padding-inline: rem(10) rem(12);
+		box-shadow: 0 rem(6) rem(16) rgb(26 26 51 / 0.08);
+
+		&--connectors {
+			inset-block-start: rem(8);
+			inset-inline-start: 0;
+		}
+
+		&--schedules {
+			inset-block-start: rem(44);
+			inset-inline-start: rem(160);
+		}
+
+		&--secure {
+			inset-block-start: rem(196);
+			inset-inline-start: rem(12);
+		}
+	}
+}

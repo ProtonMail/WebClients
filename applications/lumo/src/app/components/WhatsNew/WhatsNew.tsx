@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
+import { useIsDesktopOnboardingBlocking } from '../../features/desktopOnboarding/DesktopOnboardingProvider';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useStaggeredWhatsNewFeatures } from '../../hooks/useStaggeredWhatsNewFeatures';
 import { useLumoSelector } from '../../redux/hooks';
@@ -17,7 +18,9 @@ const WhatsNew = () => {
     const { whatsNew } = useLumoFlags();
     const masterKeyState = useLumoSelector(selectMasterKeyState);
     const lumoUserSettingsBootstrapped = useLumoSelector((state) => state.initialization.lumoUserSettingsBootstrapped);
-    const isWhatsNewReady = masterKeyState.status === 'ready' && lumoUserSettingsBootstrapped;
+    const isDesktopOnboardingBlocking = useIsDesktopOnboardingBlocking();
+    const isWhatsNewReady =
+        masterKeyState.status === 'ready' && lumoUserSettingsBootstrapped && !isDesktopOnboardingBlocking;
 
     const features: WhatsNewFeature[] = useMemo(
         () => [
