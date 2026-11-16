@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { ADDON_PREFIXES, PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import { LUMO_TIER_PLANS, type LumoTierPlan } from '@proton/payments/core/subscription/lumo-purchase-rules';
 import {
     CALENDAR_SHORT_APP_NAME,
     DARK_WEB_MONITORING_NAME,
@@ -16,12 +17,19 @@ import type { Included } from '@proton/shared/lib/helpers/checkout';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
+import { getIsB2BAudienceFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 
 import { getNUsersText } from '../../../features/highlights';
-import { getAccessToAdvancedAIText, getFullChatHistoryText, getUnlimitedChatsText } from '../../../features/lumo';
+import {
+    getAccessToAdvancedAIText,
+    getFullChatHistoryText,
+    getLumoApiAccess,
+    getLumoTierAllFeatures,
+    getUnlimitedChatsText,
+} from '../../../features/lumo';
 import {
     PAID_MAX_ACTIVE_MEETINGS,
     PAID_MAX_PARTICIPANTS,
@@ -42,16 +50,45 @@ import {
 } from '../../../features/pass';
 import { getScribeWritingAssistantText } from '../../assistant/helpers';
 
+const toIncluded = ({ text }: { text: string }): Included => ({ type: 'text', text });
+
+const getLumoTierIncluded = (plan: LumoTierPlan): Included[] => {
+    return getLumoTierAllFeatures(plan).map(toIncluded);
+};
+
+const getLumoAddonIncluded = (planIDs: PlanIDs, lumoFeatures: Included[]): Included[] => {
+    if (getIsB2BAudienceFromPlanIDs(planIDs)) {
+        return [...lumoFeatures, toIncluded(getLumoApiAccess(PLANS.LUMO_BUSINESS))];
+    }
+
+    return getLumoTierIncluded(PLANS.LUMO);
+};
+
+const getLumo2026Included = (planIDs: PlanIDs, included: Included[], lumoFeatures: Included[]): Included[] => {
+    const lumoTierPlan = LUMO_TIER_PLANS.find((planName) => (planIDs[planName] ?? 0) > 0);
+    if (lumoTierPlan) {
+        return getLumoTierIncluded(lumoTierPlan);
+    }
+
+    if (hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, planIDs)) {
+        return [...included, ...getLumoAddonIncluded(planIDs, lumoFeatures)];
+    }
+
+    return included;
+};
+
 export const getWhatsIncluded = ({
     planIDs,
     plansMap,
     freePlan,
     scribeToLumo,
+    lumoPlans2026,
 }: {
     planIDs: PlanIDs;
     plansMap: PlansMap;
     freePlan: FreePlanDefault;
     scribeToLumo: boolean;
+    lumoPlans2026: boolean;
 }): Included[] => {
     const summary = Object.entries(planIDs).reduce(
         (acc, [planNameValue, quantity]) => {
@@ -377,6 +414,10 @@ export const getWhatsIncluded = ({
             text: c('collider_2025: feature').t`Large file upload support`,
         },
     ];
+
+    if (lumoPlans2026) {
+        return getLumo2026Included(planIDs, included, lumoFeatures);
+    }
 
     if (lumoPlan !== undefined && lumoPlan > 0) {
         included = lumoFeatures;

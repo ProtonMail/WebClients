@@ -336,6 +336,38 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
     );
 };
 
+interface PlanCardFeaturesIntroProps {
+    text: string;
+    className?: string;
+    rowClassName?: string;
+    withIcon?: boolean;
+    iconSize?: IconSize;
+    iconClassName?: string;
+}
+
+export const PlanCardFeaturesIntro = ({
+    text,
+    className,
+    rowClassName,
+    withIcon = true,
+    iconSize = 5,
+    iconClassName = 'mr-3',
+}: PlanCardFeaturesIntroProps) => {
+    return (
+        <div className={clsx('text-left', className)}>
+            <div className={clsx('flex flex-nowrap items-center', rowClassName)}>
+                {withIcon && (
+                    <span className={clsx('flex shrink-0 color-success', iconClassName)}>
+                        <IcCheckmark size={iconSize} />
+                    </span>
+                )}
+                <p className="m-0 text-semibold">{text}</p>
+            </div>
+            <hr className="mt-3 mb-2" />
+        </div>
+    );
+};
+
 interface PlanCardFeaturesShortProps {
     plan: ShortPlan;
     icon?: boolean;
@@ -344,6 +376,7 @@ interface PlanCardFeaturesShortProps {
 export const PlanCardFeaturesShort = ({ plan, icon }: PlanCardFeaturesShortProps) => {
     const highlightFeatures = (
         <div>
+            {plan.featuresIntro && <PlanCardFeaturesIntro text={plan.featuresIntro} rowClassName="px-3" />}
             <PlanCardFeatureList features={plan.features} icon={icon} />
         </div>
     );

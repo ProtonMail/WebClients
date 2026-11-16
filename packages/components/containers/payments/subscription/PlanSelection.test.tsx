@@ -4,11 +4,13 @@ import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/c
 import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { createMultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 import {
     buildLumoSubscription,
     buildMultiSubscriptionContext,
     buildMultiSubscriptionContextFromSubscription,
+    multiSubscriptionTestCatalog,
 } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlans } from '@proton/payments/testing/data-plans';
@@ -861,6 +863,137 @@ describe('useAccessiblePlans', () => {
                 [Audience.B2C]: ['USD'],
                 [Audience.FAMILY]: [],
                 [Audience.B2B]: [],
+            });
+        });
+    });
+});
+
+describe('useAccessiblePlans in the Lumo app', () => {
+    const withLumo2026Plans = (plans: Plan[]): Plan[] => {
+        const lumoPlusPlans = plans.filter(({ Name }) => Name === PLANS.LUMO);
+        return [
+            ...plans,
+            ...lumoPlusPlans.map((plan) => ({ ...plan, ID: `${plan.ID}-basic`, Name: PLANS.LUMO_BASIC })),
+            ...lumoPlusPlans.map((plan) => ({ ...plan, ID: `${plan.ID}-ultra`, Name: PLANS.LUMO_ULTRA })),
+        ];
+    };
+
+    const getProps = (overrides: Partial<AccessiblePlansHookProps> = {}): AccessiblePlansHookProps => {
+        return {
+            selectedProductPlans: {
+                b2c: PLANS.LUMO,
+                b2b: PLANS.LUMO_BUSINESS,
+                family: PLANS.FAMILY,
+            },
+            subscription: FREE_SUBSCRIPTION,
+            plans: withLumo2026Plans(getTestPlans('USD')),
+            currency: 'USD',
+            app: APPS.PROTONLUMO,
+            paymentStatus: {
+                CountryCode: 'CH',
+                VendorStates: {} as any,
+            },
+            user: buildUser(),
+            audience: Audience.B2C,
+            ...overrides,
+            multiSubscriptionContext: createMultiSubscriptionContext({
+                lumoMultiSubscriptions: false,
+                subscription: overrides.subscription ?? FREE_SUBSCRIPTION,
+                entitlementCatalog: multiSubscriptionTestCatalog,
+            }),
+        };
+    };
+
+    const getPaidProps = (subscription: Subscription) => {
+        return getProps({ subscription, user: buildUser({ Subscribed: 1 }) });
+    };
+
+    const getPlanNamesByTab = (props: AccessiblePlansHookProps) => {
+        const { result } = renderHook(() => useAccessiblePlans(props));
+        const toNames = (plans: { Name?: string; plan?: string }[]) => plans.map((plan) => plan.Name ?? plan.plan);
+
+        return {
+            individuals: toNames(result.current.IndividualPlans),
+            family: toNames(result.current.FamilyPlans),
+            business: toNames(result.current.B2BPlans),
+        };
+    };
+
+    const setLumoPlans2026 = (enabled: boolean) => {
+        mockUseFlag.mockImplementation((flag: string) => flag === 'LumoPlans2026' && enabled);
+    };
+
+    describe('LumoPlans2026 on', () => {
+        beforeEach(() => {
+            setLumoPlans2026(true);
+        });
+
+        const familyPlans = [PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY];
+        const businessPlans = [PLANS.LUMO_BUSINESS, PLANS.BUNDLE_BIZ_2025];
+
+        it('shows a free user Basic, Plus and Ultra, then Duo, Family and Visionary, then Lumo Professional and Workspace Premium', () => {
+            expect(getPlanNamesByTab(getProps())).toEqual({
+                individuals: [PLANS.LUMO_BASIC, PLANS.LUMO, PLANS.LUMO_ULTRA],
+                family: familyPlans,
+                business: businessPlans,
+            });
+        });
+
+        it('shows a Mail Plus subscriber the same tabs as a free user', () => {
+            expect(getPlanNamesByTab(getPaidProps(buildSubscription(PLANS.MAIL)))).toEqual({
+                individuals: [PLANS.LUMO_BASIC, PLANS.LUMO, PLANS.LUMO_ULTRA],
+                family: familyPlans,
+                business: businessPlans,
+            });
+        });
+
+        it('shows a Lumo Basic subscriber Plus and Ultra for individuals', () => {
+            expect(getPlanNamesByTab(getPaidProps(buildLumoSubscription(PLANS.LUMO_BASIC)))).toEqual({
+                individuals: [PLANS.LUMO, PLANS.LUMO_ULTRA],
+                family: familyPlans,
+                business: businessPlans,
+            });
+        });
+
+        it.each([
+            ['Lumo Plus', buildLumoSubscription(PLANS.LUMO)],
+            ['Mail Plus with the Lumo addon', buildSubscription({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 })],
+        ])('shows a %s subscriber only Ultra for individuals', (_, subscription) => {
+            expect(getPlanNamesByTab(getPaidProps(subscription)).individuals).toEqual([PLANS.LUMO_ULTRA]);
+        });
+
+        it.each([
+            ['Lumo Ultra', buildLumoSubscription(PLANS.LUMO_ULTRA)],
+            ['Family', buildSubscription(PLANS.FAMILY)],
+            ['Duo', buildSubscription(PLANS.DUO)],
+            ['Visionary', buildSubscription(PLANS.VISIONARY)],
+            ['Mail Professional', buildSubscription(PLANS.MAIL_PRO)],
+        ])('hides the individuals tab from a %s subscriber', (_, subscription) => {
+            expect(getPlanNamesByTab(getPaidProps(subscription)).individuals).toEqual([]);
+        });
+
+        it('does not change the plans of other apps', () => {
+            const props = getProps({
+                app: APPS.PROTONMAIL,
+                selectedProductPlans: { b2c: PLANS.MAIL, b2b: PLANS.MAIL_PRO, family: PLANS.FAMILY },
+            });
+            const plansWithFlag = getPlanNamesByTab(props);
+            setLumoPlans2026(false);
+
+            expect(plansWithFlag).toEqual(getPlanNamesByTab(props));
+        });
+    });
+
+    describe('LumoPlans2026 off', () => {
+        beforeEach(() => {
+            setLumoPlans2026(false);
+        });
+
+        it('keeps the current Lumo Plus card and lists', () => {
+            expect(getPlanNamesByTab(getProps())).toEqual({
+                individuals: [PLANS.LUMO, PLANS.BUNDLE, PLANS.DUO],
+                family: [PLANS.DUO, PLANS.FAMILY],
+                business: [PLANS.LUMO_BUSINESS],
             });
         });
     });

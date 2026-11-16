@@ -4,16 +4,28 @@ import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcBolt } from '@proton/icons/icons/IcBolt';
 import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcImage } from '@proton/icons/icons/IcImage';
 import { IcLock } from '@proton/icons/icons/IcLock';
+import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { IcStar } from '@proton/icons/icons/IcStar';
+import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
 import { PLANS } from '@proton/payments/core/constants';
-import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    LUMO_API_CREDIT_CURRENCY,
+    LUMO_MONTHLY_API_CREDIT,
+    type LumoApiPlan,
+    type LumoMonthlyApiCredit,
+} from '@proton/payments/core/plan/lumo-limits';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
+import type { LumoTierPlan } from '@proton/payments/core/subscription/lumo-purchase-rules';
+import { LUMO_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+import type { PlanCardFeature, PlanCardFeatureDefinition, StandardPlanCardFeatureDefinition } from './interface';
 import { getPrioritySupport } from './shared';
 
 export const getLumoAppFeature = (): PlanCardFeatureDefinition => {
@@ -142,6 +154,160 @@ export const getNoLogsPolicy = (): PlanCardFeatureDefinition => {
     };
 };
 
+const getLumo2026Feature = (
+    id: string,
+    text: string,
+    icon: StandardPlanCardFeatureDefinition['icon']
+): StandardPlanCardFeatureDefinition => {
+    return { id, text, included: true, icon };
+};
+
+const getLumoCode = (): StandardPlanCardFeatureDefinition => {
+    return getLumo2026Feature('lumo-code', c('lumo_2026: feature').t`${LUMO_SHORT_APP_NAME} Code`, IcCode);
+};
+
+const getApiAccessText = ({ amountInCents, perUser }: LumoMonthlyApiCredit) => {
+    const credit = getSimplePriceString(LUMO_API_CREDIT_CURRENCY, amountInCents);
+
+    if (perUser) {
+        // translator: the plan includes Lumo API access and money each user of the organization can spend on it every month. Full sentence: "API access, with US$5 a month credit per user"
+        return c('lumo_2026: feature').t`API access, with ${credit} a month credit per user`;
+    }
+
+    // translator: the plan includes Lumo API access and money the user can spend on it every month. Full sentence: "API access, with US$50 a month credit"
+    return c('lumo_2026: feature').t`API access, with ${credit} a month credit`;
+};
+
+export const getLumoApiAccess = (plan: LumoApiPlan): StandardPlanCardFeatureDefinition => {
+    return getLumo2026Feature('lumo-api-access', getApiAccessText(LUMO_MONTHLY_API_CREDIT[plan]), IcWindowTerminal);
+};
+
+export const getLumoFree2026Features = (): StandardPlanCardFeatureDefinition[] => {
+    return [
+        getLumo2026Feature(
+            'lumo-limited-messages-chat-history',
+            c('lumo_2026: feature').t`Limited messages and chat history`,
+            IcSpeechBubble
+        ),
+        getLumo2026Feature(
+            'lumo-limited-skills-projects-tasks',
+            c('lumo_2026: feature').t`Limited Skills, Projects, and scheduled tasks`,
+            IcMagicWand
+        ),
+        getLumo2026Feature(
+            'lumo-limited-image-generation',
+            c('lumo_2026: feature').t`Limited image generation`,
+            IcImage
+        ),
+    ];
+};
+
+export const getLumoFree2026FeaturesIntro = () => {
+    // translator: heading above the list of what the free Lumo plan includes
+    return c('lumo_2026: feature').t`Includes:`;
+};
+
+const getMoreUsage = () => {
+    return getLumo2026Feature('lumo-more-usage', c('lumo_2026: feature').t`More usage`, IcSpeechBubble);
+};
+
+const getTwiceBasicUsage = () => {
+    return getLumo2026Feature(
+        'lumo-twice-basic-usage',
+        // translator: "Basic" is the Lumo Basic plan. Lumo Plus allows twice as many messages as Lumo Basic
+        c('lumo_2026: feature').t`2x Basic usage`,
+        IcBolt
+    );
+};
+
+const getFiveTimesPlusUsage = () => {
+    return getLumo2026Feature(
+        'lumo-five-times-plus-usage',
+        // translator: "Plus" is the Lumo Plus plan. Lumo Ultra allows five times as many messages as Lumo Plus
+        c('lumo_2026: feature').t`5x Plus usage`,
+        IcBolt
+    );
+};
+
+const getMoreImageGeneration = () => {
+    return getLumo2026Feature('lumo-more-image-generation', c('lumo_2026: feature').t`More image generation`, IcImage);
+};
+
+const getExtendedImageGeneration = () => {
+    return getLumo2026Feature(
+        'lumo-extended-image-generation',
+        c('lumo_2026: feature').t`Extended image generation`,
+        IcImage
+    );
+};
+
+const getMaximumImageGeneration = () => {
+    return getLumo2026Feature(
+        'lumo-maximum-image-generation',
+        c('lumo_2026: feature').t`Maximum image generation`,
+        IcImage
+    );
+};
+
+const getMoreSkillsProjectsTasks = () => {
+    return getLumo2026Feature(
+        'lumo-more-skills-projects-tasks',
+        c('lumo_2026: feature').t`More Skills, Projects, and scheduled tasks`,
+        IcMagicWand
+    );
+};
+
+const getMaximumSkillsProjects = () => {
+    return getLumo2026Feature(
+        'lumo-maximum-skills-projects',
+        c('lumo_2026: feature').t`Maximum Skills and Projects`,
+        IcMagicWand
+    );
+};
+
+const LUMO_TIER_ADDED_FEATURES: Record<LumoTierPlan, () => StandardPlanCardFeatureDefinition[]> = {
+    [PLANS.LUMO_BASIC]: () => [getMoreUsage(), getMoreImageGeneration(), getMoreSkillsProjectsTasks(), getLumoCode()],
+    [PLANS.LUMO]: () => [getTwiceBasicUsage(), getExtendedImageGeneration(), getMaximumSkillsProjects()],
+    [PLANS.LUMO_ULTRA]: () => [
+        getFiveTimesPlusUsage(),
+        getMaximumImageGeneration(),
+        getLumoApiAccess(PLANS.LUMO_ULTRA),
+    ],
+};
+
+export const getLumoTierFeatures = (plan: LumoTierPlan): StandardPlanCardFeatureDefinition[] => {
+    return LUMO_TIER_ADDED_FEATURES[plan]();
+};
+
+const LUMO_TIER_ALL_FEATURES: Record<LumoTierPlan, () => StandardPlanCardFeatureDefinition[]> = {
+    [PLANS.LUMO_BASIC]: () => [getMoreUsage(), getMoreImageGeneration(), getMoreSkillsProjectsTasks(), getLumoCode()],
+    [PLANS.LUMO]: () => [getTwiceBasicUsage(), getExtendedImageGeneration(), getMaximumSkillsProjects(), getLumoCode()],
+    [PLANS.LUMO_ULTRA]: () => [
+        getFiveTimesPlusUsage(),
+        getMaximumImageGeneration(),
+        getMaximumSkillsProjects(),
+        getLumoCode(),
+        getLumoApiAccess(PLANS.LUMO_ULTRA),
+    ],
+};
+
+export const getLumoTierAllFeatures = (plan: LumoTierPlan): StandardPlanCardFeatureDefinition[] => {
+    return LUMO_TIER_ALL_FEATURES[plan]();
+};
+
+const LUMO_TIER_FEATURES_INTRO: Record<LumoTierPlan, () => string> = {
+    // translator: heading above the list of what Lumo Basic adds to the free plan
+    [PLANS.LUMO_BASIC]: () => c('lumo_2026: feature').t`Everything in Free, and:`,
+    // translator: heading above the list of what Lumo Plus adds to Lumo Basic
+    [PLANS.LUMO]: () => c('lumo_2026: feature').t`Everything in Basic, and:`,
+    // translator: heading above the list of what Lumo Ultra adds to Lumo Plus
+    [PLANS.LUMO_ULTRA]: () => c('lumo_2026: feature').t`Everything in Plus, and:`,
+};
+
+export const getLumoTierFeaturesIntro = (plan: LumoTierPlan): string => {
+    return LUMO_TIER_FEATURES_INTRO[plan]();
+};
+
 export const getLumoFreeFeatures = () => {
     const items: PlanCardFeatureDefinition[] = [
         getDailyChats('limited'),
@@ -179,6 +345,10 @@ export const getLumoProfessionalFeatures = () => {
         getNeverUsedForTraining(),
         getDataProtectionCompliance(),
     ];
+};
+
+export const getLumoProfessional2026Features = (): PlanCardFeatureDefinition[] => {
+    return [...getLumoProfessionalFeatures(), getLumoApiAccess(PLANS.LUMO_BUSINESS)];
 };
 
 export const getLumoFeatures = (): PlanCardFeature[] => {

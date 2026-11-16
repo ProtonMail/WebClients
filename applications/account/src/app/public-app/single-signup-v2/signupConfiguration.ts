@@ -25,6 +25,7 @@ export const getSignupConfiguration = ({
     viewportWidth,
     theme,
     isNewB2BPlanEnabled,
+    isLumoPlans2026Enabled,
 }: {
     toApp?: APP_NAMES;
     model: SignupModelV2;
@@ -33,6 +34,7 @@ export const getSignupConfiguration = ({
     viewportWidth: any; // todo lazy
     theme: SignupV2Theme;
     isNewB2BPlanEnabled: boolean;
+    isLumoPlans2026Enabled: boolean;
 }) => {
     const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
     const plan = getPlanFromPlanIDs(model.plansMap, planIDs) || FREE_PLAN;
@@ -113,6 +115,7 @@ export const getSignupConfiguration = ({
             audience,
             planParameters: model.planParameters,
             isNewB2BPlanEnabled,
+            isLumoPlans2026Enabled,
             signupParameters,
         });
     }
