@@ -49,7 +49,7 @@ const MessagePrintModal = ({ labelID, message, ...rest }: Props) => {
         onClose?.();
     };
 
-    const handleIframeReady = (iframe: RefObject<HTMLIFrameElement>) => {
+    const handleIframeReady = (iframe: RefObject<HTMLIFrameElement | null>) => {
         iframeRef.current = iframe.current;
     };
 

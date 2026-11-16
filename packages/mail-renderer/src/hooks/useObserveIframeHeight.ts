@@ -15,7 +15,7 @@ const ALLOWED_PX_INTERVAL = 10;
  * @param iframeRef
  * @param imagesLoaded
  */
-const useObserveIframeHeight = (startObserving: boolean, iframeRef: RefObject<HTMLIFrameElement>) => {
+const useObserveIframeHeight = (startObserving: boolean, iframeRef: RefObject<HTMLIFrameElement | null>) => {
     const isMountedCallback = useIsMounted();
     const prevHeightRef = useRef<number>(0);
 
@@ -50,7 +50,8 @@ const useObserveIframeHeight = (startObserving: boolean, iframeRef: RefObject<HT
         setIframeHeight();
 
         const iframeRootDiv = getIframeDocument(iframeRef.current)?.getElementById(MESSAGE_IFRAME_ROOT_ID) as
-            HTMLDivElement | undefined;
+            | HTMLDivElement
+            | undefined;
 
         if (!iframeRootDiv) {
             return;

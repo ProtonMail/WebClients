@@ -68,7 +68,7 @@ import { useSwitchToPlainText } from './useSwitchToPlainText';
 
 export type EditorArgs = {
     onClose: () => void;
-    composerFrameRef: RefObject<HTMLDivElement>;
+    composerFrameRef: RefObject<HTMLDivElement | null>;
     isFocused?: boolean;
     editorReady: boolean;
     editorRef: MutableRefObject<ExternalEditorActions | undefined>;
@@ -76,7 +76,7 @@ export type EditorArgs = {
     toggleMinimized?: () => void;
     toggleMaximized?: () => void;
     composerID: ComposerID;
-    minimizeButtonRef: RefObject<HTMLButtonElement>;
+    minimizeButtonRef: RefObject<HTMLButtonElement | null>;
     openedAssistants: OpenedAssistant[];
     openAssistant: (id: string) => void;
     closeAssistant: (id: string) => void;

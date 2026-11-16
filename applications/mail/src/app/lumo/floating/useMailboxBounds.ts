@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 export const MAILBOX_BOUNDS_CLASS = 'lumo-floating-panel-bounds';
 
 /** The mailbox between the folder sidebar and the drawer rail, found inside `PrivateMainArea` by its marker class. */
-export const useMailboxBounds = (mainAreaRef: RefObject<HTMLElement>) => {
+export const useMailboxBounds = (mainAreaRef: RefObject<HTMLElement | null>) => {
     const [bounds, setBounds] = useState<DOMRect | null>(null);
 
     useEffect(() => {

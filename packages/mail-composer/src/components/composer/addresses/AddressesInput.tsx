@@ -39,7 +39,7 @@ interface Props {
     addContactAction?: () => void;
     classname?: string;
     hasLighterFieldDesign?: boolean;
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
 }
 
 const AddressesInput = ({

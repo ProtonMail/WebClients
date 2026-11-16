@@ -13,7 +13,7 @@ import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface Props {
     labelID: string;
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     checkedIDs: string[];
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     onMarkAs: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => void;

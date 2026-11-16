@@ -38,7 +38,7 @@ interface Props {
     forceBlockquote?: boolean;
     onMessageReady?: () => void;
     isPrint?: boolean;
-    onIframeReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
+    onIframeReady?: (iframeRef: RefObject<HTMLIFrameElement | null>) => void;
     onFocusIframe?: () => void;
 }
 

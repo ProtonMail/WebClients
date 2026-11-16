@@ -11,7 +11,7 @@ const IFRAME_EVENTS_LIST: Event['type'][] = ['focus', 'keydown', 'click', 'copy'
 
 const useIframeDispatchEvents = (
     startListening: boolean,
-    iframeRef: RefObject<HTMLIFrameElement>,
+    iframeRef: RefObject<HTMLIFrameElement | null>,
     onFocus?: () => void,
     isPlainText?: boolean
 ) => {

@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect } from 'react';
 
 import { useHandler } from '@proton/hooks/useHandler';
 
-const MailContentRefContext = createContext<RefObject<HTMLDivElement>>(null as any);
+const MailContentRefContext = createContext<RefObject<HTMLDivElement | null>>(null as any);
 
 /**
  * Call the handler whenever the user click on the mail app content
@@ -31,7 +31,7 @@ export const useClickMailContent = (handler: (event: Event) => void) => {
 
 interface Props {
     children: ReactNode;
-    mailContentRef: RefObject<HTMLDivElement>;
+    mailContentRef: RefObject<HTMLDivElement | null>;
 }
 
 export const MailContentRefProvider = ({ children, mailContentRef }: Props) => {

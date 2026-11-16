@@ -53,7 +53,7 @@ export const useConversationFocus = (messages: Message[]) => {
     }, []);
 
     const handleBlur = useCallback(
-        (event: FocusEvent<HTMLElement>, messageRef: RefObject<HTMLElement>) => {
+        (event: FocusEvent<HTMLElement>, messageRef: RefObject<HTMLElement | null>) => {
             // Check if relatedTarget is inside message ref. If not remove focus
             // WARNING : relatedTarget returns null when clicking on iframe
             if (event.relatedTarget && !messageRef.current?.contains(event.relatedTarget)) {

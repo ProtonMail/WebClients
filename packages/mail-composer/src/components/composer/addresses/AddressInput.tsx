@@ -14,7 +14,7 @@ import Marks from '@proton/components/components/text/Marks';
 
 interface Props {
     id: string;
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: React.RefObject<HTMLElement | null>;
     value: string | undefined;
     onChange: (recipient: string | undefined) => void;
     dataTestId?: string;

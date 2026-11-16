@@ -1,9 +1,10 @@
-import { type ChangeEvent, Fragment, type RefObject, useEffect, useRef } from 'react';
+import { type ChangeEvent, Fragment, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { PLACEHOLDER_ID_PREFIX } from '@proton/mail-message/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
@@ -43,8 +44,8 @@ interface MailboxListItemsProps {
     onBack: () => void;
     labels: Label[];
     columnLayout?: boolean;
-    listRef?: RefObject<HTMLDivElement>;
-    scrollContainerRef?: RefObject<HTMLDivElement>;
+    listRef?: RefObjectReact18Compat<HTMLDivElement>;
+    scrollContainerRef?: RefObjectReact18Compat<HTMLDivElement>;
     noPlaceholder?: boolean;
 }
 

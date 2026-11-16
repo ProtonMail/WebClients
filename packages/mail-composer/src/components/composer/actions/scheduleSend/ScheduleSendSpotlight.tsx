@@ -9,7 +9,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import scheduledImg from '@proton/styles/assets/img/illustrations/spotlight-scheduled-send.svg';
 
 interface Props {
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     children: ReactElement;
     onDisplayed: () => void;
     showSpotlight: boolean;

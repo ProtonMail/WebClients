@@ -1,7 +1,7 @@
-import type { RefObject } from 'react';
 import { memo, useEffect, useRef } from 'react';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import useToggle from '@proton/hooks/useToggle';
 import { selectComposersCount } from '@proton/mail-composer/store/composers/composerSelectors';
 import { findMessageToExpand } from '@proton/mail-message/helpers/message/messageExpandable';
@@ -42,7 +42,7 @@ interface Props {
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
-    containerRef: RefObject<HTMLElement>;
+    containerRef: RefObjectReact18Compat<HTMLElement>;
 }
 
 const DEFAULT_FILTER_VALUE = true;

@@ -38,7 +38,7 @@ const getRunMs = (boundsWidth: number, hasFloatingDrawerButton: boolean) => {
 };
 
 interface Props {
-    mainAreaRef: RefObject<HTMLElement>;
+    mainAreaRef: RefObject<HTMLElement | null>;
     /** The rail is hidden, so its show button floats over the mailbox's bottom-right corner. */
     hasFloatingDrawerButton: boolean;
 }

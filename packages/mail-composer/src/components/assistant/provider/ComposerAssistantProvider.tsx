@@ -22,7 +22,7 @@ interface ComposerAssistantContextType {
     displayAssistantModalPromise: (modalType: 'incompatibleHardware' | 'incompatibleBrowser') => Promise<void>;
     /** Manage different kind of Assistant needed refs */
     assistantRefManager: {
-        container: ComposerKeyedManager<RefObject<HTMLDivElement>>;
+        container: ComposerKeyedManager<RefObject<HTMLDivElement | null>>;
     };
 }
 
@@ -69,7 +69,7 @@ export const ComposerAssistantProvider = ({ children }: { children: ReactNode })
 
     const assistantRefManager = useMemo(
         () => ({
-            container: createComposerKeyedManager<RefObject<HTMLDivElement>>(),
+            container: createComposerKeyedManager<RefObject<HTMLDivElement | null>>(),
         }),
         []
     );

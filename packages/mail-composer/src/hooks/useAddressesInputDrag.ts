@@ -50,7 +50,7 @@ interface UseAddressesInputDrag {
         itemDragHandlers: (recipient: RecipientOrGroup) => {
             onDragStart: (event: DragEvent) => void;
             onDragEnd: (event: DragEvent) => void;
-            onDragOver: (ref: RefObject<HTMLDivElement>) => (event: DragEvent) => void;
+            onDragOver: (ref: RefObject<HTMLDivElement | null>) => (event: DragEvent) => void;
         };
     };
 }
@@ -145,7 +145,7 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
     };
 
     const handleItemDragOverThrottled = useHandler(
-        (recipient: RecipientOrGroup, ref: RefObject<HTMLDivElement>, event: DragEvent) => {
+        (recipient: RecipientOrGroup, ref: RefObject<HTMLDivElement | null>, event: DragEvent) => {
             if (!ref.current) {
                 return;
             }
@@ -166,7 +166,7 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
     );
 
     const handleItemDragOver =
-        (recipient: RecipientOrGroup) => (ref: RefObject<HTMLDivElement>) => (event: DragEvent) =>
+        (recipient: RecipientOrGroup) => (ref: RefObject<HTMLDivElement | null>) => (event: DragEvent) =>
             handleItemDragOverThrottled(recipient, ref, event);
 
     const cacheListener = useHandler((changedKey) => {

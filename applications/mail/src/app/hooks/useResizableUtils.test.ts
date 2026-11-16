@@ -51,8 +51,8 @@ describe('useResizable', () => {
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
-                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement | null>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement | null>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
@@ -77,8 +77,8 @@ describe('useResizable', () => {
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
-                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement | null>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement | null>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
@@ -101,8 +101,8 @@ describe('useResizable', () => {
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
-                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement | null>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement | null>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
@@ -125,8 +125,8 @@ describe('useResizable', () => {
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
-                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement | null>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement | null>,
                 minWidth: 280,
                 maxRatio: 0.6, // Max allowed width is 600px (0.6 * 1000)
                 position: ResizeHandlePosition.RIGHT,
@@ -147,8 +147,8 @@ describe('useResizable', () => {
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
-                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement | null>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement | null>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
@@ -182,8 +182,8 @@ describe('useResizable', () => {
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
-                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement | null>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement | null>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,
@@ -216,8 +216,8 @@ describe('useResizable', () => {
 
         const { result } = renderHook(() =>
             useResizableUtils({
-                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
-                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement | null>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement | null>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.LEFT,
@@ -250,8 +250,8 @@ describe('useResizable', () => {
 
         const { result, rerender } = renderHook(() =>
             useResizableUtils({
-                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement>,
-                innerContentRef: contentRef as React.RefObject<HTMLDivElement>,
+                resizableWrapperRef: containerRef as React.RefObject<HTMLDivElement | null>,
+                innerContentRef: contentRef as React.RefObject<HTMLDivElement | null>,
                 minWidth: 280,
                 maxRatio: 0.6,
                 position: ResizeHandlePosition.RIGHT,

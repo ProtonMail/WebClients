@@ -10,7 +10,7 @@ import noop from '@proton/utils/noop';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 
 export type EditorHotkeysHandlers = {
-    composerRef: RefObject<HTMLDivElement>;
+    composerRef: RefObject<HTMLDivElement | null>;
     handleSend: () => Promise<void>;
     handleDelete: () => Promise<void>;
     handleManualSave: () => Promise<void>;
@@ -23,7 +23,7 @@ export type EditorHotkeysHandlers = {
     handlePassword: () => void;
     handleExpiration: () => void;
     editorRef: MutableRefObject<ExternalEditorActions | undefined>;
-    minimizeButtonRef: RefObject<HTMLButtonElement>;
+    minimizeButtonRef: RefObject<HTMLButtonElement | null>;
     isAssistantExpanded: boolean;
     closeAssistant: () => void;
     collapseAssistant: () => void;

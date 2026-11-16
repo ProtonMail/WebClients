@@ -59,19 +59,19 @@ export interface ResizableOptions {
      * </div>
      * ```
      */
-    containerRef: React.RefObject<HTMLElement>;
+    containerRef: React.RefObject<HTMLElement | null>;
 }
 
 interface UseResizableOptions extends ResizableOptions {
     /**
      * Reference to the resizable wrapper element
      */
-    resizableWrapperRef: RefObject<HTMLDivElement>;
+    resizableWrapperRef: RefObject<HTMLDivElement | null>;
 
     /**
      * Optional reference to inner content element for scrollbar width measurement
      */
-    innerContentRef?: RefObject<HTMLDivElement>;
+    innerContentRef?: RefObject<HTMLDivElement | null>;
 
     /**
      * Direction of resize

@@ -26,7 +26,7 @@ interface ProviderProps {
      * MessageView VerticalScroll offsetTop
      * Pass null value for tests
      */
-    containerRef: RefObject<HTMLElement> | null;
+    containerRef: RefObject<HTMLElement | null> | null;
 }
 
 const MailboxContainerContext = createContext<ContextProps | undefined>(undefined);

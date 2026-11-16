@@ -1,5 +1,6 @@
-import { type PropsWithChildren, type RefObject, createContext, useContext, useMemo, useRef } from 'react';
+import { type PropsWithChildren, createContext, useContext, useMemo, useRef } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -10,13 +11,13 @@ import { selectLabelID } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 
 export interface MailboxProviderProps {
-    labelDropdownToggleRef: RefObject<() => void>;
-    moveDropdownToggleRef: RefObject<() => void>;
-    mainAreaRef: RefObject<HTMLDivElement>;
-    resizeAreaRef: RefObject<HTMLButtonElement>;
-    listContainerRef: RefObject<HTMLDivElement>;
-    scrollContainerRef: RefObject<HTMLDivElement>;
-    messageContainerRef: RefObject<HTMLElement>;
+    labelDropdownToggleRef: RefObjectReact18Compat<() => void>;
+    moveDropdownToggleRef: RefObjectReact18Compat<() => void>;
+    mainAreaRef: RefObjectReact18Compat<HTMLDivElement>;
+    resizeAreaRef: RefObjectReact18Compat<HTMLButtonElement>;
+    listContainerRef: RefObjectReact18Compat<HTMLDivElement>;
+    scrollContainerRef: RefObjectReact18Compat<HTMLDivElement>;
+    messageContainerRef: RefObjectReact18Compat<HTMLElement>;
     isColumnModeActive: boolean;
     isColumnLayoutPreferred: boolean;
     isConversationGroupingEnabled: boolean;

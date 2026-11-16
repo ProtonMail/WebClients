@@ -13,7 +13,7 @@ import loadContentImg from '@proton/styles/assets/img/illustrations/spotlight-lo
 
 interface Props {
     children: ReactElement;
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
 }
 
 const LoadContentSpotlight = ({ children, anchorRef }: Props) => {

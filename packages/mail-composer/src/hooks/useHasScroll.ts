@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import debounce from 'lodash/debounce';
 
-export const useHasScroll = (ref: RefObject<HTMLElement>, dependencies: DependencyList = []) => {
+export const useHasScroll = (ref: RefObject<HTMLElement | null>, dependencies: DependencyList = []) => {
     const [hasVerticalScrollbar, setHasVerticalScrollbar] = useState(false);
     const [hasHorizontalScrollbar, setHasHorizontalScrollbar] = useState(false);
 

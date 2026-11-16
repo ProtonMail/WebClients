@@ -9,7 +9,7 @@ import MessagePrintFooter from './MessagePrintFooter';
 import MessagePrintHeader from './MessagePrintHeader';
 
 interface Props {
-    iframeRef: RefObject<HTMLIFrameElement>;
+    iframeRef: RefObject<HTMLIFrameElement | null>;
     isPrint: boolean;
     message: MessageState;
     labelID: string;

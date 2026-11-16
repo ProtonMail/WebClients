@@ -28,7 +28,7 @@ import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 interface Props {
     checkedIDs: string[];
     labelID: string;
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     isOpen: boolean;
     position?: {
         top: number;

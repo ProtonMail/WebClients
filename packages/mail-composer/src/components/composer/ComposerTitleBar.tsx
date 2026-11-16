@@ -1,10 +1,11 @@
-import type { MouseEventHandler, ReactNode, Ref, RefObject } from 'react';
+import type { MouseEventHandler, ReactNode, Ref } from 'react';
 import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
 import { IcArrowsToCenter } from '@proton/icons/icons/IcArrowsToCenter';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
@@ -59,7 +60,7 @@ interface Props {
     toggleMaximized: () => void;
     onClose: MouseEventHandler<HTMLButtonElement>;
     handleStartDragging: React.MouseEventHandler<HTMLElement>;
-    minimizeButtonRef: RefObject<HTMLButtonElement>;
+    minimizeButtonRef: RefObjectReact18Compat<HTMLButtonElement>;
     composerID: string;
 }
 

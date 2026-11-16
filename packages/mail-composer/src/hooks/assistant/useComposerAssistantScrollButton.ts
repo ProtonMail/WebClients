@@ -6,8 +6,8 @@ import throttle from 'lodash/throttle';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 
 interface Props {
-    assistantResultRef: RefObject<HTMLElement>;
-    assistantResultChildRef: RefObject<HTMLElement>;
+    assistantResultRef: RefObject<HTMLElement | null>;
+    assistantResultChildRef: RefObject<HTMLElement | null>;
 }
 
 const useComposerAssistantScrollButton = ({ assistantResultRef, assistantResultChildRef }: Props) => {

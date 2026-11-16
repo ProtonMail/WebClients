@@ -35,7 +35,7 @@ interface Props {
     dragged?: boolean;
     onDragStart: (event: DragEvent) => void;
     onDragEnd: (event: DragEvent) => void;
-    onDragOver: (ref: RefObject<HTMLDivElement>) => (event: DragEvent) => void;
+    onDragOver: (ref: RefObject<HTMLDivElement | null>) => (event: DragEvent) => void;
 }
 
 const AddressesGroupItem = ({

@@ -1,6 +1,7 @@
-import type { ReactNode, RefObject } from 'react';
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
@@ -22,7 +23,7 @@ interface Props {
     showDropdown?: boolean;
     actualLabel?: string;
     customDropdownActions?: ReactNode;
-    anchorRef: RefObject<HTMLButtonElement>;
+    anchorRef: RefObjectReact18Compat<HTMLButtonElement>;
     isOpen: boolean;
     toggle: () => void;
     close: () => void;
