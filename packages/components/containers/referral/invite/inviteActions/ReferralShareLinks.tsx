@@ -34,6 +34,7 @@ const ShareLink = ({ href, img, title, onClick }: ShareLinkProps) => {
 
 interface ReferralShareLinksProps {
     referralLink: string;
+    b2c2b?: boolean;
 }
 
 const getShareLinkTitle = (name: string) => {
@@ -41,16 +42,19 @@ const getShareLinkTitle = (name: string) => {
     return c('Referral').t`Share using ${name}`;
 };
 
-const ReferralShareLinks = ({ referralLink }: ReferralShareLinksProps) => {
+const ReferralShareLinks = ({ referralLink, b2c2b }: ReferralShareLinksProps) => {
     const { sendShare } = useReferralTelemetry();
     const [referralInfo] = useReferralInfo();
-    const { refereeRewardAmount } = referralInfo.uiData;
+    const { refereeRewardAmount } = (b2c2b ? referralInfo.b2c2b : referralInfo).uiData;
 
     const encodedLink = encodeURIComponent(referralLink);
     // TODO: Change this
     const text = encodeURIComponent(
-        c('Referral')
-            .t`I've been using ${BRAND_NAME} and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${refereeRewardAmount} off your next subscription: ${referralLink}`
+        b2c2b
+            ? c('Referral')
+                  .t`I've been using ${BRAND_NAME} and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${refereeRewardAmount} off your first year of ${BRAND_NAME} for Business: ${referralLink}`
+            : c('Referral')
+                  .t`I've been using ${BRAND_NAME} and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${refereeRewardAmount} off your next subscription: ${referralLink}`
     );
 
     const linkedInURL = `https://www.linkedin.com/feed/?shareUrl=${encodedLink}&shareActive&mini=true&text=${text}&source=${encodeURIComponent(BRAND_NAME)}`;

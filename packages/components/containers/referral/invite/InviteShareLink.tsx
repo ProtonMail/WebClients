@@ -14,12 +14,13 @@ import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
 import ReferralShareLinks from './inviteActions/ReferralShareLinks';
 import ReferralSignatureToggle from './inviteActions/ReferralSignatureToggle';
 
-const InviteShareLink = ({ className }: { className?: string }) => {
+const InviteShareLink = ({ className, b2c2b }: { className?: string; b2c2b?: boolean }) => {
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const { sendCopyLinkPage } = useReferralTelemetry();
 
-    const referrerLink = userSettings.Referral?.Link || '';
+    const { Link, Links } = userSettings.Referral ?? {};
+    const referrerLink = (b2c2b ? Links?.b2c2b : (Links?.b2c ?? Link)) || '';
 
     const onCopyButtonClick = useCallback(
         throttle(
@@ -57,7 +58,7 @@ const InviteShareLink = ({ className }: { className?: string }) => {
                 </div>
             </div>
 
-            <ReferralShareLinks referralLink={referrerLink} />
+            {referrerLink && <ReferralShareLinks referralLink={referrerLink} b2c2b={b2c2b} />}
 
             <ReferralSignatureToggle />
         </div>

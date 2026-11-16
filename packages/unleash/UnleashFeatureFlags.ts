@@ -150,6 +150,7 @@ export enum CommonFeatureFlag {
     PingOMaticWebSocket = 'PingOMaticWebSocket',
     ReferralExpansionDiscover = 'ReferralExpansionDiscover',
     ReferralFreeUsersDiscover = 'ReferralFreeUsersDiscover',
+    ReferralProgramB2C2B = 'ReferralProgramB2C2B',
     ScribeAdminSetting = 'ScribeAdminSetting',
     SelfTroubleshoot = 'SelfTroubleshoot',
     // Monthly subscriber nudge kill switches (default off; enable to hide the nudge)

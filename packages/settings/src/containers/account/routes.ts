@@ -6,6 +6,7 @@ import { SettingsLayoutVariant } from '@proton/components/containers/layout/inte
 import type { SectionConfig, SubrouteGroup } from '@proton/components/containers/layout/interface';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcArrowUpBigLine } from '@proton/icons/icons/IcArrowUpBigLine';
+import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 import { IcHouse } from '@proton/icons/icons/IcHouse';
 import { IcKey } from '@proton/icons/icons/IcKey';
@@ -1016,6 +1017,24 @@ export const getAccountAppRoutes = ({
                         keywords: [
                             c('account_search_index').t`Referral rewards`,
                             c('account_search_index').t`Referral credits`,
+                        ],
+                    },
+                ],
+            },
+            referralBusiness: {
+                id: 'referral-business',
+                text: c('Title').t`Refer businesses`,
+                title: c('Title').t`Bring ${BRAND_NAME} to Work. Earn credits.`,
+                to: '/referral/business',
+                icon: IcBuildings,
+                available: flags.isReferralBusinessEnabled,
+                subsections: [
+                    {
+                        id: 'referral-business-invite-section',
+                        keywords: [
+                            c('Label').t`Share your invite link`,
+                            c('Label').t`Invite via email`,
+                            c('account_search_index').t`Business referral link`,
                         ],
                     },
                 ],

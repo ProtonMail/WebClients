@@ -186,6 +186,7 @@ const MainContainer: FunctionComponent = () => {
         isRetentionPoliciesEnabled,
         isAlwaysOnVpnEnabled,
         isReferralProgramEnabled,
+        isReferralBusinessEnabled: false,
         isDriveEasySwitchNewUIEnabled: false,
         showSignInRestrictionToggle,
     };

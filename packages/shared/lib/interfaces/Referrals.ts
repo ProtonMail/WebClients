@@ -46,6 +46,12 @@ export interface Referral {
     ReferredUserSubscriptionCycle: number | null;
 }
 
+export interface BusinessReferral extends Referral {
+    /** In cents. Credit earned, or expected when pending. `null` while the referral has not paid for a plan */
+    RewardAmount: number | null;
+    RewardDueTime: number | null;
+}
+
 export interface ReferralStatus {
     /** Number of free monthes of mail plus */
     RewardMonths: number;

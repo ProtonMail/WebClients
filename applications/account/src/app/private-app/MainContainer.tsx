@@ -123,6 +123,7 @@ const MainContainer = () => {
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const showSignInRestrictionToggle = useFlag('ShowSignInRestrictionToggle');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
+    const isReferralB2C2BEnabled = useFlag('ReferralProgramB2C2B');
     const isLumoApiEnabled = useFlag('LumoAPIKeyManagement');
     const isDriveEasySwitchEnabled = useFlag('EasySwitchB2CForDriveWeb');
     const isDriveEasySwitchNewUIEnabled = useFlag('EasySwitchB2CForDriveWebNewUI') && isDriveEasySwitchEnabled;
@@ -214,6 +215,7 @@ const MainContainer = () => {
         isCategoryViewEnabled: canUseCategoryView,
         isLumoApiEnabled,
         isReferralProgramEnabled,
+        isReferralBusinessEnabled: isReferralProgramEnabled && isReferralB2C2BEnabled,
         isDriveEasySwitchNewUIEnabled,
         showSignInRestrictionToggle,
     };

@@ -13,7 +13,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 type RewardType = 'fixed' | 'percentage';
 
 interface ReferralInfoValues {
-    currency: string;
+    currency: Currency;
     refereeRewardAmount: number;
     refereeRewardType: RewardType;
     referrerRewardAmount: number;

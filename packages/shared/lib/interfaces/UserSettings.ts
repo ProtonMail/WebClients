@@ -259,6 +259,13 @@ export interface UserSettings {
          * will always be a string containing the link.
          */
         Link: string;
+        /**
+         * Complete referral links by program: b2c is the consumer link, b2c2b the business one
+         */
+        Links?: {
+            b2c?: string;
+            b2c2b?: string;
+        };
     };
     SessionAccountRecovery: 1 | 0;
     LoginIdentifierPolicy: number;
