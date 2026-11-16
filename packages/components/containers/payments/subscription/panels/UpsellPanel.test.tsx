@@ -72,6 +72,20 @@ describe('UpsellBox', () => {
         expect(button).toHaveClass('button-outline-weak');
     });
 
+    it('shows the features intro above the features', () => {
+        render(<UpsellPanel {...upsellBoxBaseProps} featuresIntro="Everything in Basic and:" />);
+
+        const intro = screen.getByText('Everything in Basic and:');
+        const firstFeature = screen.getByText('10GB total storage');
+        expect(intro.compareDocumentPosition(firstFeature) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    });
+
+    it('shows no features intro when there is none', () => {
+        render(<UpsellPanel {...upsellBoxBaseProps} />);
+
+        expect(screen.queryByText('Everything in Basic and:')).toBeNull();
+    });
+
     it('should correctly handle upsell click action', async () => {
         render(<UpsellPanel {...upsellBoxBaseProps} />);
 

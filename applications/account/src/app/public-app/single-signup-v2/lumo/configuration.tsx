@@ -7,13 +7,21 @@ import {
     getDailyChats,
     getDataProtectionCompliance,
     getFavourites,
+    getLumoApiAccess,
+    getLumoFree2026Features,
+    getLumoFree2026FeaturesIntro,
+    getLumoTierFeatures,
+    getLumoTierFeaturesIntro,
     getNeverUsedForTraining,
     getNoLogsPolicy,
     getUploadAndQuery,
     getWebSearchAccess,
     getZeroAccessEncryption,
 } from '@proton/components/containers/payments/features/lumo';
-import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import {
+    PlanCardFeatureList,
+    PlanCardFeaturesIntro,
+} from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
@@ -21,6 +29,7 @@ import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { LumoTierPlan } from '@proton/payments/core/subscription/lumo-purchase-rules';
 import { APPS, BRAND_NAME, LUMO_APP_NAME, LUMO_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/payments/plan/interface';
@@ -167,12 +176,67 @@ const getLumoBusinessBenefits = (): BenefitItem[] => {
     ];
 };
 
-const getLumoBusinessFeatures = () => {
-    return getLumoBusinessBenefits().map(({ id, text }) => ({
+const getLumoBusinessFeatures = (isLumoPlans2026Enabled: boolean) => {
+    const features = getLumoBusinessBenefits().map(({ id, text }) => ({
         id,
         text,
         included: true,
     }));
+
+    return isLumoPlans2026Enabled ? [...features, getLumoApiAccess(PLANS.LUMO_BUSINESS)] : features;
+};
+
+const LumoTierFeaturesIntro = ({ text }: { text: string }) => {
+    return <PlanCardFeaturesIntro text={text} className="text-sm color-weak" iconSize={4} iconClassName="mr-1" />;
+};
+
+const getLumoTierPlanCard = (plan: LumoTierPlan, type: 'standard' | 'best') => {
+    return {
+        plan,
+        subsection: (
+            <>
+                <LumoTierFeaturesIntro text={getLumoTierFeaturesIntro(plan)} />
+                <PlanCardFeatureList {...planCardFeatureProps} features={getLumoTierFeatures(plan)} />
+            </>
+        ),
+        type,
+        guarantee: true,
+    };
+};
+
+const getB2CPlanCards = (isLumoPlans2026Enabled: boolean) => {
+    const freePlanCard = {
+        plan: PLANS.FREE,
+        subsection: isLumoPlans2026Enabled ? (
+            <>
+                <LumoTierFeaturesIntro text={getLumoFree2026FeaturesIntro()} />
+                <PlanCardFeatureList {...planCardFeatureProps} features={getLumoFree2026Features()} />
+            </>
+        ) : (
+            <PlanCardFeatureList {...planCardFeatureProps} features={getFreeLumoFeatures()} />
+        ),
+        type: 'standard' as const,
+        guarantee: false,
+    };
+
+    if (isLumoPlans2026Enabled) {
+        return [
+            freePlanCard,
+            getLumoTierPlanCard(PLANS.LUMO_BASIC, 'standard'),
+            getLumoTierPlanCard(PLANS.LUMO, 'best'),
+            getLumoTierPlanCard(PLANS.LUMO_ULTRA, 'standard'),
+        ];
+    }
+
+    return [
+        freePlanCard,
+        {
+            plan: PLANS.LUMO,
+            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getLumoPlusFeatures()} />,
+            type: 'best' as const,
+            guarantee: true,
+        },
+    ];
 };
 
 export const getLumoConfiguration = ({
@@ -182,6 +246,7 @@ export const getLumoConfiguration = ({
     audience,
     planParameters,
     isNewB2BPlanEnabled,
+    isLumoPlans2026Enabled,
     signupParameters,
 }: {
     defaultPlan?: string;
@@ -190,6 +255,7 @@ export const getLumoConfiguration = ({
     audience: Audience.B2B | Audience.B2C;
     planParameters: PlanParameters | undefined;
     isNewB2BPlanEnabled: boolean;
+    isLumoPlans2026Enabled: boolean;
     signupParameters?: { trial?: boolean };
 }): SignupConfiguration => {
     const logo = <LumoLogo variant="wordmark-only" />;
@@ -210,7 +276,12 @@ export const getLumoConfiguration = ({
         [Audience.B2B]: [
             {
                 plan: PLANS.LUMO_BUSINESS,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getLumoBusinessFeatures()} />,
+                subsection: (
+                    <PlanCardFeatureList
+                        {...planCardFeatureProps}
+                        features={getLumoBusinessFeatures(isLumoPlans2026Enabled)}
+                    />
+                ),
                 type: 'standard' as const,
                 guarantee: true,
             },
@@ -257,20 +328,7 @@ export const getLumoConfiguration = ({
                 interactive: false,
             },
         ],
-        [Audience.B2C]: [
-            {
-                plan: PLANS.FREE,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeLumoFeatures()} />,
-                type: 'standard' as const,
-                guarantee: false,
-            },
-            {
-                plan: PLANS.LUMO,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getLumoPlusFeatures()} />,
-                type: 'best' as const,
-                guarantee: true,
-            },
-        ].filter(isTruthy),
+        [Audience.B2C]: getB2CPlanCards(isLumoPlans2026Enabled),
     };
 
     const benefits = (() => {

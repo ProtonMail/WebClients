@@ -66,7 +66,7 @@ import Time from '../../../../../components/time/Time';
 import LearnMoreModal from '../../../../topBanners/LearnMoreModal';
 import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
 import { getSentinel, getSupport } from '../../../features/highlights';
-import { getLumoFreeFeatures, getLumoPlusFeatures } from '../../../features/lumo';
+import { getLumoFree2026Features, getLumoFreeFeatures, getLumoPlusFeatures } from '../../../features/lumo';
 import { PAID_MAX_PARTICIPANTS, getMeetBusinessFeatures, getMeetFreeFeatures } from '../../../features/meet';
 import {
     FREE_PASS_ALIASES,
@@ -152,6 +152,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
     );
     const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
+    const lumoPlans2026 = useFlag('LumoPlans2026');
 
     const space = getSpace(user);
 
@@ -404,7 +405,10 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
         return (
             <StripedList alternate={alternate}>
                 {storageItem}
-                <SubscriptionItems user={user} items={getLumoFreeFeatures()} />
+                <SubscriptionItems
+                    user={user}
+                    items={lumoPlans2026 ? getLumoFree2026Features() : getLumoFreeFeatures()}
+                />
             </StripedList>
         );
     };

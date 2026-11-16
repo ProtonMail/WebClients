@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { LumoTierPlan } from '@proton/payments/core/subscription/lumo-purchase-rules';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
@@ -41,7 +42,14 @@ import {
     getUsersFeature,
 } from './highlights';
 import type { PlanCardFeatureDefinition, ShortPlan } from './interface';
-import { getLumoPlusFeatures, getLumoProfessionalFeatures } from './lumo';
+import {
+    getLumoApiAccess,
+    getLumoPlusFeatures,
+    getLumoProfessional2026Features,
+    getLumoProfessionalFeatures,
+    getLumoTierFeatures,
+    getLumoTierFeaturesIntro,
+} from './lumo';
 import {
     getContactGroupsManagement,
     getDarkWebMonitoringFeature,
@@ -568,12 +576,29 @@ export const getBundleProPlan = ({
     };
 };
 
+const isLumoPlans2026Enabled = () => {
+    return !!getStandaloneUnleashClient()?.isEnabled('LumoPlans2026');
+};
+
+const getPrioritizedLumoFeatures = (
+    plan: PLANS.BUNDLE_BIZ_2025 | PLANS.VISIONARY,
+    prioritizeLumoFeatures?: boolean
+) => {
+    if (!prioritizeLumoFeatures || !isLumoPlans2026Enabled()) {
+        return [];
+    }
+
+    return [getLumoApiAccess(plan)];
+};
+
 export const getBundlePremiumPlan = ({
     plan,
     prioritizeMeetFeatures,
+    prioritizeLumoFeatures,
 }: {
     plan: Plan;
     prioritizeMeetFeatures?: boolean;
+    prioritizeLumoFeatures?: boolean;
 }): ShortPlan => {
     return {
         plan: PLANS.BUNDLE_BIZ_2025,
@@ -586,6 +611,7 @@ export const getBundlePremiumPlan = ({
             ...(prioritizeMeetFeatures
                 ? getMeetBusinessFeatures({ maxParticipants: PAID_PREMIUM_MAX_PARTICIPANTS })
                 : []),
+            ...getPrioritizedLumoFeatures(PLANS.BUNDLE_BIZ_2025, prioritizeLumoFeatures),
             getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
             getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
             getNDomainsFeature({ n: plan.MaxDomains }),
@@ -605,7 +631,15 @@ export const getBundlePremiumPlan = ({
     };
 };
 
-export const getVisionaryPlan = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlanDefault }): ShortPlan => {
+export const getVisionaryPlan = ({
+    plan,
+    freePlan,
+    prioritizeLumoFeatures,
+}: {
+    plan: Plan;
+    freePlan: FreePlanDefault;
+    prioritizeLumoFeatures?: boolean;
+}): ShortPlan => {
     const planName = plan.Title;
     return {
         plan: PLANS.VISIONARY,
@@ -615,6 +649,7 @@ export const getVisionaryPlan = ({ plan, freePlan }: { plan: Plan; freePlan: Fre
             .t`${planName} gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.`,
         cta: getCTA(plan.Title),
         features: [
+            ...getPrioritizedLumoFeatures(PLANS.VISIONARY, prioritizeLumoFeatures),
             getStorageFeature(plan.MaxSpace, { freePlan }),
             getUsersFeature(plan.MaxMembers),
             getEarlyAccessFeature(),
@@ -744,7 +779,7 @@ export const getVPNBusinessPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getLumoPlan = (plan: Plan): ShortPlan => {
+const getLumoPlusPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.LUMO,
         title: plan.Title,
@@ -755,6 +790,32 @@ export const getLumoPlan = (plan: Plan): ShortPlan => {
     };
 };
 
+const LUMO_TIER_DESCRIPTIONS: Record<LumoTierPlan, () => string> = {
+    [PLANS.LUMO_BASIC]: () => c('lumo_2026: Info').t`For everyday chats`,
+    [PLANS.LUMO]: () => c('lumo_2026: Info').t`For getting more done`,
+    [PLANS.LUMO_ULTRA]: () => c('lumo_2026: Info').t`For coding and building`,
+};
+
+const getLumoTier2026Plan = (planName: LumoTierPlan, plan: Plan): ShortPlan => {
+    return {
+        plan: planName,
+        title: plan.Title,
+        label: '',
+        description: LUMO_TIER_DESCRIPTIONS[planName](),
+        cta: getCTA(plan.Title),
+        featuresIntro: getLumoTierFeaturesIntro(planName),
+        features: getLumoTierFeatures(planName),
+    };
+};
+
+export const getLumoTierShortPlan = (planName: LumoTierPlan, plan: Plan): ShortPlan => {
+    if (planName === PLANS.LUMO && !isLumoPlans2026Enabled()) {
+        return getLumoPlusPlan(plan);
+    }
+
+    return getLumoTier2026Plan(planName, plan);
+};
+
 export const getLumoBusinessPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.LUMO_BUSINESS,
@@ -762,7 +823,7 @@ export const getLumoBusinessPlan = (plan: Plan): ShortPlan => {
         label: '',
         description: c('collider_2025: Info').t`High-speed chats and advanced AI features.`,
         cta: getCTA(plan.Title),
-        features: getLumoProfessionalFeatures(),
+        features: isLumoPlans2026Enabled() ? getLumoProfessional2026Features() : getLumoProfessionalFeatures(),
     };
 };
 
@@ -816,6 +877,7 @@ export const getShortPlan = (
     options: {
         boldStorageSize?: boolean;
         prioritizeMeetFeatures?: boolean;
+        prioritizeLumoFeatures?: boolean;
         freePlan: FreePlanDefault;
     }
 ) => {
@@ -828,7 +890,7 @@ export const getShortPlan = (
         return null;
     }
 
-    const { boldStorageSize, freePlan, prioritizeMeetFeatures } = options;
+    const { boldStorageSize, freePlan, prioritizeMeetFeatures, prioritizeLumoFeatures } = options;
 
     switch (plan) {
         case PLANS.MAIL:
@@ -859,9 +921,9 @@ export const getShortPlan = (
         case PLANS.BUNDLE_PRO_2024:
             return getBundleProPlan({ plan: planData, prioritizeMeetFeatures });
         case PLANS.BUNDLE_BIZ_2025:
-            return getBundlePremiumPlan({ plan: planData, prioritizeMeetFeatures });
+            return getBundlePremiumPlan({ plan: planData, prioritizeMeetFeatures, prioritizeLumoFeatures });
         case PLANS.VISIONARY:
-            return getVisionaryPlan({ plan: planData, freePlan });
+            return getVisionaryPlan({ plan: planData, freePlan, prioritizeLumoFeatures });
         case PLANS.FAMILY:
             return getFamilyPlan({ plan: planData, freePlan });
         case PLANS.DUO:
@@ -876,8 +938,10 @@ export const getShortPlan = (
             return getPassFamilyPlan(planData);
         case PLANS.PASS_BUSINESS:
             return getPassBusinessPlan(planData);
+        case PLANS.LUMO_BASIC:
         case PLANS.LUMO:
-            return getLumoPlan(planData);
+        case PLANS.LUMO_ULTRA:
+            return getLumoTierShortPlan(plan, planData);
         case PLANS.LUMO_BUSINESS:
             return getLumoBusinessPlan(planData);
         case PLANS.VPN_PASS_BUNDLE_BUSINESS:

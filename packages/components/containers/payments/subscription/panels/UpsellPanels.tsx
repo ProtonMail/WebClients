@@ -66,6 +66,7 @@ const UpsellPanels = ({ upsells, subscription }: Props) => {
                     <UpsellPanel
                         key={`upsell-${upsell.planKey}`}
                         title={upsell.title}
+                        featuresIntro={isUpsellWithPlan(upsell) ? upsell.featuresIntro : undefined}
                         features={upsell.features}
                         isRecommended={upsell.isRecommended}
                         ctas={ctas}

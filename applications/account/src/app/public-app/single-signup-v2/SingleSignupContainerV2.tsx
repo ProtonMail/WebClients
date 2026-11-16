@@ -203,6 +203,7 @@ const SingleSignupContainerV2 = ({
     const lumoMultiSubscriptions = useFlag('LumoMultiSubscriptions');
     const getEntitlementCatalog = useGetEntitlementCatalog();
     const signInPath = PublicAppContext.useSelector(selectSignInPath);
+    const isLumoPlans2026Enabled = useFlag('LumoPlans2026');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -292,6 +293,7 @@ const SingleSignupContainerV2 = ({
             theme,
             model: defaultSignupModel,
             isNewB2BPlanEnabled,
+            isLumoPlans2026Enabled,
         });
 
         const planParameters = getPlanIDsFromParamsWithForcedAddons({
@@ -344,6 +346,7 @@ const SingleSignupContainerV2 = ({
         theme,
         model,
         isNewB2BPlanEnabled,
+        isLumoPlans2026Enabled,
     });
     const {
         planCards,

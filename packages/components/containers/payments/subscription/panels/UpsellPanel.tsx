@@ -19,6 +19,7 @@ import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
 import { upgradeButtonClick } from '../../../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../../../desktop/useHasInboxDesktopInAppPayments';
 import type { UpsellFeature } from '../../features/interface';
+import { PlanCardFeaturesIntro } from '../PlanCardFeatures';
 import type { ButtonColor, ButtonShape, UpsellCta } from '../helpers/dashboard-upsells';
 import { isUpsellCta } from '../helpers/dashboard-upsells';
 import Panel from './Panel';
@@ -29,6 +30,7 @@ export interface UpsellPanelProps {
     title: string;
     plan?: PLANS;
     children?: ReactNode;
+    featuresIntro?: string;
     features: UpsellFeature[];
     isRecommended?: boolean;
     ctas?: (UpsellCta | ReactNode)[];
@@ -47,7 +49,15 @@ const getButtonColorAndShape: GetButtonColorAndShape = ({ color, shape, isRecomm
     return { color: 'norm', shape: 'solid' };
 };
 
-const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended }: UpsellPanelProps) => {
+const UpsellPanel = ({
+    title,
+    plan,
+    featuresIntro,
+    features,
+    children,
+    ctas = [],
+    isRecommended,
+}: UpsellPanelProps) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const toggleExpand = () => setIsExpanded((prev) => !prev);
     const { viewportWidth } = useActiveBreakpoint();
@@ -82,6 +92,9 @@ const UpsellPanel = ({ title, plan, features, children, ctas = [], isRecommended
                         )}
                     </InlineLinkButton>
                 </div>
+            )}
+            {(!viewportWidth['<=small'] || isExpanded) && featuresIntro && (
+                <PlanCardFeaturesIntro text={featuresIntro} className="mt-4" rowClassName="px-3" iconClassName="mr-2" />
             )}
             {(!viewportWidth['<=small'] || isExpanded) && (
                 <StripedList alternate="odd">

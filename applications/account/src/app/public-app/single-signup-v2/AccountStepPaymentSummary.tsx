@@ -8,7 +8,10 @@ import Price from '@proton/components/components/price/Price';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Time from '@proton/components/components/time/Time';
 import { getDealDurationText } from '@proton/components/containers/offers/helpers/offerCopies';
-import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import {
+    PlanCardFeatureList,
+    PlanCardFeaturesIntro,
+} from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { ADDON_PREFIXES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
@@ -382,7 +385,7 @@ const AccountStepPaymentSummary = ({
         return null;
     }
 
-    const { logo, features } = summaryPlan;
+    const { logo, featuresIntro, features } = summaryPlan;
     const { isB2B, planIDs, isTaxReverseCharged } = checkoutView.checkoutData;
 
     const displayTitle = decorePlanTitle(selectedPlan, planIDs);
@@ -416,6 +419,9 @@ const AccountStepPaymentSummary = ({
                 </div>
                 {checkoutView.render('members')}
                 {checkoutView.render('addons')}
+                {featuresIntro && (
+                    <PlanCardFeaturesIntro text={featuresIntro} className="text-sm color-weak" withIcon={false} />
+                )}
                 <PlanCardFeatureList
                     odd={false}
                     margin={false}

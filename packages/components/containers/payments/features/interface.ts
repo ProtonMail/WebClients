@@ -72,6 +72,7 @@ export interface ShortPlan {
     title: string;
     plan: PLANS;
     cta: string;
+    featuresIntro?: string;
     features: PlanCardFeatureDefinition[];
 }
 

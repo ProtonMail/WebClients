@@ -155,6 +155,7 @@ export interface UpsellWithPlan {
     icon?: ReactNode;
     /** Top fade (e.g. `rgba(109, 74, 255, 0.15)`) — same pattern as VPN dashboard `PlanCard`. */
     gradientColor?: string;
+    featuresIntro?: string;
     features: UpsellFeature[];
     price: Price;
     onUpgrade: (cycle?: Cycle) => void;
@@ -323,6 +324,7 @@ export const getUpsell = ({
         description: shortPlan.description,
         upsellRefLink,
         price: { value: getPrice(planIDs, cycle, plansMap) / cycle, currency },
+        featuresIntro: shortPlan.featuresIntro,
         features: (upsellFields.features ?? shortPlan.features).filter((item) => isTruthy(item)),
         otherCtas: [],
         customCycle,

@@ -8,6 +8,7 @@ import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS } from '@proton/shared/lib/constants';
 import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { renderWithProviders } from '../../../../../testing/renderWithProviders';
 import SubscriptionPanel from './SubscriptionPanel';
@@ -18,6 +19,9 @@ jest.mock('@proton/shared/lib/vpn/vpnServers', () => ({
         paid: { servers: 1700, countries: 63 },
     },
 }));
+
+jest.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 
 let mockUsePaymentMethods: jest.Mock;
 
@@ -230,6 +234,35 @@ describe('SubscriptionPanel', () => {
             />
         );
         expect(screen.getByTestId('plan-name')).toHaveTextContent('Free');
+    });
+
+    describe('Lumo free plan', () => {
+        const renderLumoFree = (lumoPlans2026: boolean) => {
+            mockUseFlag.mockImplementation((flag) => flag === 'LumoPlans2026' && lumoPlans2026);
+            renderWithProviders(
+                <SubscriptionPanel {...defaultProps} app={APPS.PROTONLUMO} user={buildUser({ isFree: true })} />
+            );
+        };
+
+        afterEach(() => {
+            mockUseFlag.mockReset();
+        });
+
+        it('lists what the free plan has with LumoPlans2026 on', () => {
+            renderLumoFree(true);
+
+            expect(screen.getByText('Limited messages and chat history')).toBeInTheDocument();
+            expect(screen.getByText('Limited Skills, Projects, and scheduled tasks')).toBeInTheDocument();
+            expect(screen.getByText('Limited image generation')).toBeInTheDocument();
+            expect(screen.queryByText('Limited daily chats')).not.toBeInTheDocument();
+        });
+
+        it('keeps the current free features with LumoPlans2026 off', () => {
+            renderLumoFree(false);
+
+            expect(screen.getByText('Limited daily chats')).toBeInTheDocument();
+            expect(screen.queryByText('Limited messages and chat history')).not.toBeInTheDocument();
+        });
     });
 
     describe('VPN specific rendering', () => {

@@ -114,6 +114,7 @@ const SubscriptionCheckout = ({
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
+    const lumoPlans2026 = useFlag('LumoPlans2026');
 
     const plan = getPlanFromPlanIDs(plansMap, planIDs);
     const currencies = useAvailableCurrenciesForPlan(plan, multiSubscriptionContext);
@@ -123,7 +124,7 @@ const SubscriptionCheckout = ({
     }
 
     const isPassBasic = !!planIDs[PLANS.PASS_BASIC];
-    const list = getWhatsIncluded({ planIDs, plansMap, freePlan, scribeToLumo });
+    const list = getWhatsIncluded({ planIDs, plansMap, freePlan, scribeToLumo, lumoPlans2026 });
     const disableCurrencySelector =
         getDisableCurrencySelector(user, planIDs, couponConfig, loading) || currencies.length <= 1;
 

@@ -430,6 +430,7 @@ enum PaymentsFeatureFlag {
     EmailForInvoicesKillSwitch = 'EmailForInvoicesKillSwitch',
     EnableIdeal = 'EnableIdeal',
     LumoMultiSubscriptions = 'LumoMultiSubscriptions',
+    LumoPlans2026 = 'LumoPlans2026',
     NewProtonBusinessBundlePlans = 'NewProtonBusinessBundlePlans',
     PaymentProcessorsRefactor = 'PaymentProcessorsRefactor',
     PaypalKrw = 'PaypalKrw',

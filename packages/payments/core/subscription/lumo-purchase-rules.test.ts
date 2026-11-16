@@ -7,10 +7,12 @@ import {
 } from '../../testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '../../testing/buildSubscription';
 import { ADDON_NAMES, PLANS } from '../constants';
+import type { Subscription } from './interface';
 import {
     canModifySubscriptions,
     canRunAlongside,
     canSelectB2CLumoPlan,
+    getLumoTierUpgrades,
     isForbiddenForStoreLumoSubscriber,
     isLumoAddonExcluded,
     isSingleUserB2CPlan,
@@ -252,5 +254,67 @@ describe('isLumoAddonExcluded', () => {
 
     it('keeps the Lumo addon everywhere with the flag off', () => {
         expect(isLumoAddonExcluded(buildMultiSubscriptionContext([], false), { [PLANS.MAIL]: 1 }, {})).toBe(false);
+    });
+});
+
+describe('getLumoTierUpgrades', () => {
+    const webLumoUltra = buildLumoSubscription(PLANS.LUMO_ULTRA);
+    const webMailPro = buildSubscription(PLANS.MAIL_PRO);
+    const webDuo = buildSubscription(PLANS.DUO);
+    const webVisionary = buildSubscription(PLANS.VISIONARY);
+    const webLumoProfessional = buildSubscription(PLANS.LUMO_BUSINESS);
+    const webFamilyWithLumoAddon = buildSubscription({ [PLANS.FAMILY]: 1, [ADDON_NAMES.LUMO_FAMILY]: 1 });
+
+    const getUpgrades = (subscriptions: Subscription[]) =>
+        getLumoTierUpgrades({ subscriptions, entitlementCatalog: multiSubscriptionTestCatalog });
+
+    it.each([
+        ['no subscription', []],
+        ['a Mail Plus subscription', [webMailPlus]],
+        ['a Proton Unlimited subscription', [buildSubscription(PLANS.BUNDLE)]],
+    ])('offers Basic, Plus and Ultra with %s', (_, subscriptions) => {
+        expect(getUpgrades(subscriptions)).toEqual([PLANS.LUMO_BASIC, PLANS.LUMO, PLANS.LUMO_ULTRA]);
+    });
+
+    it('offers Plus and Ultra to a Lumo Basic subscriber', () => {
+        expect(getUpgrades([webLumoBasic])).toEqual([PLANS.LUMO, PLANS.LUMO_ULTRA]);
+    });
+
+    it.each([
+        ['a Lumo Plus subscription', [webLumoPlus]],
+        ['a Lumo Plus subscription next to Mail Plus', [webMailPlus, webLumoPlus]],
+        ['the Lumo addon on Mail Plus', [webMailPlusWithLumoAddon]],
+        ['the Lumo addon on Proton Unlimited', [webUnlimitedWithLumoAddon]],
+    ])('offers only Ultra with %s', (_, subscriptions) => {
+        expect(getUpgrades(subscriptions)).toEqual([PLANS.LUMO_ULTRA]);
+    });
+
+    it('offers nothing to a Lumo Ultra subscriber', () => {
+        expect(getUpgrades([webLumoUltra])).toEqual([]);
+    });
+
+    it.each([
+        ['Family', [webFamily]],
+        ['Duo', [webDuo]],
+        ['Visionary', [webVisionary]],
+        ['Family with the Lumo addon', [webFamilyWithLumoAddon]],
+        ['Mail Professional', [webMailPro]],
+        ['Workspace Standard', [webWorkspace]],
+        ['Lumo Professional', [webLumoProfessional]],
+        ['Lumo Basic next to Mail Professional', [webLumoBasic, webMailPro]],
+    ])('offers nothing with a multi-user or business plan: %s', (_, subscriptions) => {
+        expect(getUpgrades(subscriptions)).toEqual([]);
+    });
+
+    it('offers nothing to a paid user while the catalog is missing', () => {
+        expect(getLumoTierUpgrades({ subscriptions: [webMailPlus], entitlementCatalog: undefined })).toEqual([]);
+    });
+
+    it('offers every tier to a free user while the catalog is missing', () => {
+        expect(getLumoTierUpgrades({ subscriptions: [], entitlementCatalog: undefined })).toEqual([
+            PLANS.LUMO_BASIC,
+            PLANS.LUMO,
+            PLANS.LUMO_ULTRA,
+        ]);
     });
 });

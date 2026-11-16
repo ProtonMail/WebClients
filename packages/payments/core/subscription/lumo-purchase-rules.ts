@@ -1,7 +1,7 @@
 import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
-import { type ADDON_NAMES, ADDON_PREFIXES, type PLANS } from '../constants';
+import { type ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
 import { EntitlementName } from '../entitlements/entitlement-names';
 import type { EntitlementCatalog } from '../entitlements/interface';
 import { createEntitlementResolverForSelection } from '../entitlements/resolver';
@@ -33,7 +33,10 @@ const isMultiUserOrB2BSelection = (
     return createEntitlementResolverForSelection(entitlementCatalog, selection).isMultiUserOrB2B;
 };
 
-const hasMultiUserOrB2BSubscription = ({ subscriptions, entitlementCatalog }: MultiSubscriptionContext): boolean => {
+const hasMultiUserOrB2BSubscription = ({
+    subscriptions,
+    entitlementCatalog,
+}: Pick<MultiSubscriptionContext, 'subscriptions' | 'entitlementCatalog'>): boolean => {
     return subscriptions.some((subscription) => isMultiUserOrB2BSelection(entitlementCatalog, subscription));
 };
 
@@ -164,4 +167,39 @@ export const isLumoAddonExcluded = (
         isSingleUserB2CPlan(entitlementCatalog, planIDs) &&
         !holdsLumoAddonOnSamePlan(currentPlanIDs, planIDs)
     );
+};
+
+export const LUMO_TIER_PLANS = [PLANS.LUMO_BASIC, PLANS.LUMO, PLANS.LUMO_ULTRA] as const;
+
+export type LumoTierPlan = (typeof LUMO_TIER_PLANS)[number];
+
+export const isLumoTierPlan = (planName: string): planName is LumoTierPlan =>
+    LUMO_TIER_PLANS.some((tierPlan) => tierPlan === planName);
+
+const LUMO_ADDON_TIER = PLANS.LUMO;
+
+const getLumoTierRank = (subscription: Subscription): number => {
+    const planIDs = getPlanIDs(subscription);
+    const tierPlan = LUMO_TIER_PLANS.find((planName) => (planIDs[planName] ?? 0) > 0);
+    if (tierPlan) {
+        return LUMO_TIER_PLANS.indexOf(tierPlan);
+    }
+
+    return hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, planIDs) ? LUMO_TIER_PLANS.indexOf(LUMO_ADDON_TIER) : -1;
+};
+
+export const getLumoTierUpgrades = (
+    context: Pick<MultiSubscriptionContext, 'subscriptions' | 'entitlementCatalog'>
+): LumoTierPlan[] => {
+    const { subscriptions, entitlementCatalog } = context;
+    if (subscriptions.length > 0 && !entitlementCatalog) {
+        return [];
+    }
+
+    if (hasMultiUserOrB2BSubscription(context)) {
+        return [];
+    }
+
+    const highestRank = Math.max(-1, ...subscriptions.map(getLumoTierRank));
+    return LUMO_TIER_PLANS.slice(highestRank + 1);
 };

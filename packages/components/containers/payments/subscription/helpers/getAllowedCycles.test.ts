@@ -1156,6 +1156,42 @@ describe('cap and backend availability', () => {
     });
 });
 
+describe('Lumo Plus 12-month cap', () => {
+    const getPlansMapWithLumoPlus24m = () => {
+        const plansMap = getTestPlansMap();
+        const lumoPlus = plansMap[PLANS.LUMO] as Plan;
+        const twoYearsPrice = 2 * lumoPlus.Pricing[CYCLE.YEARLY]!;
+        plansMap[PLANS.LUMO] = {
+            ...lumoPlus,
+            Pricing: { ...lumoPlus.Pricing, [CYCLE.TWO_YEARS]: twoYearsPrice },
+            DefaultPricing: { ...lumoPlus.DefaultPricing, [CYCLE.TWO_YEARS]: twoYearsPrice },
+        };
+        return plansMap;
+    };
+
+    it('hides the 24-month Lumo Plus price from a new subscriber', () => {
+        const result = getAllowedCycles({
+            subscription: FREE_SUBSCRIPTION,
+            planIDs: { [PLANS.LUMO]: 1 },
+            plansMap: getPlansMapWithLumoPlus24m(),
+            currency: getDefaultMainCurrency(),
+        });
+
+        expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+    });
+
+    it('keeps the 24-month Lumo Plus price for a subscriber already on it', () => {
+        const result = getAllowedCycles({
+            subscription: buildSubscription(PLANS.LUMO, { Cycle: CYCLE.TWO_YEARS }),
+            planIDs: { [PLANS.LUMO]: 1 },
+            plansMap: getPlansMapWithLumoPlus24m(),
+            currency: getDefaultMainCurrency(),
+        });
+
+        expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
+    });
+});
+
 describe('planSupportsIrregularCycle', () => {
     it.each([
         { plan: PLANS.VPN2024, cycle: CYCLE.SIX },

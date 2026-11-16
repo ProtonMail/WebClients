@@ -38,7 +38,7 @@ import {
     notHigherThanAvailableOnBackend,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { canSelectB2CLumoPlan } from '@proton/payments/core/subscription/lumo-purchase-rules';
+import { canSelectB2CLumoPlan, getLumoTierUpgrades } from '@proton/payments/core/subscription/lumo-purchase-rules';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { isFreeSubscription as getIsFreeSubscription, isFreeSubscription } from '@proton/payments/core/type-guards';
@@ -238,6 +238,8 @@ export function useAccessiblePlans({
     const isGenericSettingsApp = app === APPS.PROTONACCOUNT;
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
     const isPassSimpleLoginLifetimeEnabled = useFlag('PassSimpleLoginLifetimeOffer');
+    const isLumoPlans2026Enabled = useFlag('LumoPlans2026');
+    const showsLumoPlans2026 = isLumoSettingsApp && isLumoPlans2026Enabled;
 
     const plansMap = getPlansMap(plans, currency, true);
 
@@ -278,6 +280,10 @@ export function useAccessiblePlans({
         IndividualPlans = walletIndividualPlans;
     } else if (isMeetSettingsApp) {
         IndividualPlans = filterPlans([hasMeetBusiness(subscription) ? null : plansMap[PLANS.MEET]]);
+    } else if (showsLumoPlans2026) {
+        IndividualPlans = filterPlans(
+            getLumoTierUpgrades(multiSubscriptionContext).map((planName) => plansMap[planName])
+        );
     } else {
         const plusPlan =
             enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
@@ -300,7 +306,13 @@ export function useAccessiblePlans({
         hasPassFamily(subscription);
 
     let FamilyPlans: Plan[] = [];
-    if (getCanAccessFamilyPlans(subscription) && !isMeetSettingsApp && !isGenericSettingsApp) {
+    if (getCanAccessFamilyPlans(subscription) && showsLumoPlans2026) {
+        FamilyPlans = filterPlans([
+            canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+            plansMap[PLANS.FAMILY],
+            plansMap[PLANS.VISIONARY],
+        ]);
+    } else if (getCanAccessFamilyPlans(subscription) && !isMeetSettingsApp && !isGenericSettingsApp) {
         FamilyPlans = filterPlans([
             canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
             canAccessPassFamilyPlan ? plansMap[PLANS.PASS_FAMILY] : null,
@@ -332,7 +344,10 @@ export function useAccessiblePlans({
 
     const walletB2BPlans = filterPlans([plansMap[PLANS.BUNDLE_PRO_2024]]);
 
-    const lumoB2BPlans = filterPlans([plansMap[PLANS.LUMO_BUSINESS]]);
+    const lumoB2BPlans = filterPlans([
+        plansMap[PLANS.LUMO_BUSINESS],
+        showsLumoPlans2026 ? plansMap[PLANS.BUNDLE_BIZ_2025] : null,
+    ]);
 
     const meetB2BPlans = filterPlans([
         hasMeet(subscription) ? null : plansMap[PLANS.MEET_BUSINESS],
@@ -435,6 +450,7 @@ export function useAccessiblePlans({
             [Audience.B2B]: getTabCurrencies(B2BPlans),
         },
         isPassLifetimeEligible,
+        showsLumoPlans2026,
     };
 
     return result;
@@ -498,12 +514,14 @@ const PlanSelection = (props: Props) => {
         isVpnB2bPlans,
         availableCurrenciesByAudience,
         isPassLifetimeEligible,
+        showsLumoPlans2026,
     } = useAccessiblePlans({
         ...props,
         user,
     });
 
     const isMeetSettingsApp = app === APPS.PROTONMEET;
+    const isLumoSettingsApp = app === APPS.PROTONLUMO;
 
     const isTabShown = (tabAudience: Audience, tabPlans: (Plan | ShortPlanLike)[]) =>
         tabPlans.length > 0 && availableCurrenciesByAudience[tabAudience].length > 0;
@@ -614,6 +632,7 @@ const PlanSelection = (props: Props) => {
         const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, {
             freePlan,
             prioritizeMeetFeatures: isMeetSettingsApp,
+            prioritizeLumoFeatures: isLumoSettingsApp,
         });
 
         if (!shortPlan) {
@@ -650,7 +669,9 @@ const PlanSelection = (props: Props) => {
                 : [];
         // Only show the selectable plans dropdown in case the user is free
         const isSelectable =
-            plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name) && user.isFree;
+            !showsLumoPlans2026 &&
+            plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name) &&
+            user.isFree;
         const selectedPlan = plansList.some(
             ({ planName: otherPlanName }) => otherPlanName === selectedProductPlans[audience]
         )
@@ -682,7 +703,8 @@ const PlanSelection = (props: Props) => {
             mode === 'settings' ||
             mode === 'upsell-modal' ||
             (audience === Audience.B2B && isVpnSettingsApp) ||
-            showShortPlan ? (
+            showShortPlan ||
+            showsLumoPlans2026 ? (
                 <PlanCardFeaturesShort plan={shortPlan} icon />
             ) : (
                 <PlanCardFeatures audience={audience} features={features} planName={shortPlan.plan} app={app} />

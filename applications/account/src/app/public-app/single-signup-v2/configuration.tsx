@@ -23,7 +23,7 @@ import {
     getEarlyAccessFeature,
     getFamilyPlan,
     getLumoBusinessPlan,
-    getLumoPlan,
+    getLumoTierShortPlan,
     getMailBusinessPlan,
     getMailPlan,
     getMailProPlan,
@@ -48,6 +48,7 @@ import {
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import type { IconSize } from '@proton/icons/types';
 import { PLANS } from '@proton/payments/core/constants';
+import { isLumoTierPlan } from '@proton/payments/core/subscription/lumo-purchase-rules';
 import { APPS, type APP_NAMES, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles/constants';
@@ -60,6 +61,7 @@ export type SummaryPlan =
     | {
           logo: ReactNode;
           title: string;
+          featuresIntro?: string;
           features: PlanCardFeatureDefinition[];
           isLifetime?: boolean;
           plan: Plan;
@@ -329,8 +331,8 @@ export const getSummaryPlan = ({
         };
     }
 
-    if (plan?.Name === PLANS.LUMO) {
-        const shortPlan = getLumoPlan(plan);
+    if (plan && isLumoTierPlan(plan.Name)) {
+        const shortPlan = getLumoTierShortPlan(plan.Name, plan);
         return {
             logo: <Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={iconSize} />,
             ...shortPlan,
