@@ -101,7 +101,9 @@ const PiPPreviewVideoInternal = ({
 
     const baseWidth = 300;
 
-    const height = (tracksLength * baseWidth) / (PIP_PREVIEW_ITEM_WIDTH / PIP_PREVIEW_ITEM_HEIGHT) + CONTROL_BAR_HEIGHT;
+    const height =
+        (Math.max(1, tracksLength) * baseWidth) / (PIP_PREVIEW_ITEM_WIDTH / PIP_PREVIEW_ITEM_HEIGHT) +
+        CONTROL_BAR_HEIGHT;
 
     return (
         <div

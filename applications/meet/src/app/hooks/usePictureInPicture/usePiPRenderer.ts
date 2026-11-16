@@ -4,12 +4,32 @@ import { logger } from '@protontech/logger';
 import type { Track as LiveKitTrack } from 'livekit-client';
 
 import { PIP_PREVIEW_ITEM_HEIGHT } from '../../constants';
-import { drawMessageOverlay, drawVideoWithAspectRatio } from './drawingUtils';
-import type { PiPOverlayMessage, TrackInfo } from './types';
+import { getParticipantInitials } from '../../utils/getParticipantInitials';
+import { drawMessageOverlay, drawParticipantPlaceholder, drawVideoWithAspectRatio } from './drawingUtils';
+import type { DrawablePiPTile, PiPOverlayMessage } from './types';
 
 export function usePiPRenderer() {
     const animationFrameRef = useRef<number>(undefined);
     const videoElementsRef = useRef<Map<string, HTMLVideoElement>>(new Map());
+    const classColorsRef = useRef<Map<string, string>>(new Map());
+
+    const getClassColor = useCallback((className: string, property: 'backgroundColor' | 'color') => {
+        const cacheKey = `${className}:${property}`;
+        const cachedColor = classColorsRef.current.get(cacheKey);
+        if (cachedColor) {
+            return cachedColor;
+        }
+
+        const probe = document.createElement('div');
+        probe.className = className;
+        probe.hidden = true;
+        document.body.appendChild(probe);
+        const color = getComputedStyle(probe)[property];
+        probe.remove();
+
+        classColorsRef.current.set(cacheKey, color);
+        return color;
+    }, []);
 
     const cleanupVideoElement = useCallback((videoElement: HTMLVideoElement) => {
         try {
@@ -110,7 +130,7 @@ export function usePiPRenderer() {
     const drawPiP = useCallback(
         (
             canvas: HTMLCanvasElement,
-            tracksToDisplay: TrackInfo[],
+            tilesToDisplay: DrawablePiPTile[],
             messages: PiPOverlayMessage[],
             participantDecryptedNameMap: Record<string, string>
         ) => {
@@ -123,13 +143,15 @@ export function usePiPRenderer() {
                 return;
             }
 
+            const getTrackId = (track: LiveKitTrack, index: number) => track.sid || `track-${index}`;
+
             const activeTrackIds = new Set(
-                tracksToDisplay.map((trackInfo, index) => trackInfo.track.sid || `track-${index}`)
+                tilesToDisplay.flatMap((tile, index) => (tile.kind === 'track' ? [getTrackId(tile.track, index)] : []))
             );
             cleanupStaleVideoElements(activeTrackIds);
 
             // Adjust canvas size when tracks count changes; ensure minimum height to avoid 0x0 streams
-            const desiredHeight = PIP_PREVIEW_ITEM_HEIGHT * Math.max(1, Math.min(tracksToDisplay.length, 3));
+            const desiredHeight = PIP_PREVIEW_ITEM_HEIGHT * Math.max(1, Math.min(tilesToDisplay.length, 3));
             if (canvas.height !== desiredHeight) {
                 canvas.height = desiredHeight;
             }
@@ -138,48 +160,64 @@ export function usePiPRenderer() {
             ctx.fillStyle = '#000';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            const sectionCount = Math.max(1, tracksToDisplay.length);
+            const sectionCount = Math.max(1, tilesToDisplay.length);
             const sectionHeight = canvas.height / sectionCount;
 
-            tracksToDisplay.forEach((trackInfo, index) => {
-                const trackId = trackInfo.track.sid || `track-${index}`;
-                const videoElement = createVideoElement(trackInfo.track, trackId);
-
-                // Ensure video is playing
-                ensureVideoPlaying(videoElement);
-
+            tilesToDisplay.forEach((tile, index) => {
                 const y = index * sectionHeight;
                 const videoHeight = sectionHeight;
+                const participantName = participantDecryptedNameMap[tile.participant?.identity || ''] || 'Unknown';
 
-                // Mirror the local participant's camera feed (but not screen share)
-                const isLocalParticipant = trackInfo.participant?.isLocal || false;
-                const shouldMirror = isLocalParticipant && !trackInfo.isScreenShare;
+                if (tile.kind === 'placeholder') {
+                    drawParticipantPlaceholder({
+                        ctx,
+                        x: 0,
+                        y,
+                        width: canvas.width,
+                        height: videoHeight,
+                        backgroundColor: getClassColor(tile.backgroundColorClassName, 'backgroundColor'),
+                        profileColor: getClassColor(tile.profileColorClassName, 'backgroundColor'),
+                        initialsColor: getClassColor('color-invert', 'color'),
+                        initials: getParticipantInitials(participantDecryptedNameMap[tile.participant.identity]),
+                    });
+                } else {
+                    const videoElement = createVideoElement(tile.track, getTrackId(tile.track, index));
 
-                // The subscription manager disables remote camera publications when incoming video is turned off,
-                // so no frames will ever arrive for them
-                const isIncomingVideoDisabled = !isLocalParticipant && trackInfo.publication?.isEnabled === false;
+                    // Ensure video is playing
+                    ensureVideoPlaying(videoElement);
 
-                // Draw each track in its own section
-                drawVideoWithAspectRatio({
-                    ctx,
-                    videoElement,
-                    x: 0,
-                    y,
-                    width: canvas.width,
-                    height: videoHeight,
-                    mirror: shouldMirror,
-                    isIncomingVideoDisabled,
-                    // Match ParticipantTile: crop landscape cameras, letterbox portrait cameras and screen shares
-                    fit:
-                        trackInfo.isScreenShare || videoElement.videoWidth < videoElement.videoHeight
-                            ? 'contain'
-                            : 'cover',
-                });
+                    // Mirror the local participant's camera feed (but not screen share)
+                    const isLocalParticipant = tile.participant?.isLocal || false;
+                    const shouldMirror = isLocalParticipant && !tile.isScreenShare;
+
+                    // The subscription manager disables remote camera publications when incoming video is turned off,
+                    // so no frames will ever arrive for them
+                    const isIncomingVideoDisabled = !isLocalParticipant && tile.publication?.isEnabled === false;
+
+                    // Draw each track in its own section
+                    drawVideoWithAspectRatio({
+                        ctx,
+                        videoElement,
+                        x: 0,
+                        y,
+                        width: canvas.width,
+                        height: videoHeight,
+                        mirror: shouldMirror,
+                        isIncomingVideoDisabled,
+                        // Match ParticipantTile: crop landscape cameras, letterbox portrait cameras and screen shares
+                        fit:
+                            tile.isScreenShare || videoElement.videoWidth < videoElement.videoHeight
+                                ? 'contain'
+                                : 'cover',
+                    });
+                }
 
                 // Draw participant name below the video
                 const nameY = y + videoHeight - 25;
-                const participantName = participantDecryptedNameMap[trackInfo.participant?.identity || ''] || 'Unknown';
-                const displayName = trackInfo.isScreenShare ? `${participantName} (Screen Sharing)` : participantName;
+                const displayName =
+                    tile.kind === 'track' && tile.isScreenShare
+                        ? `${participantName} (Screen Sharing)`
+                        : participantName;
 
                 // Draw participant name with white text
                 ctx.fillStyle = '#ffffff';
@@ -205,19 +243,19 @@ export function usePiPRenderer() {
             // Draw message overlay on top of everything (highest z-index)
             drawMessageOverlay({ ctx, canvasWidth: canvas.width, canvasHeight: canvas.height, messages });
         },
-        [createVideoElement, ensureVideoPlaying, cleanupStaleVideoElements]
+        [createVideoElement, ensureVideoPlaying, cleanupStaleVideoElements, getClassColor]
     );
 
     // Start rendering loop
     const startRendering = useCallback(
         (
             canvas: HTMLCanvasElement,
-            tracksToDisplay: TrackInfo[],
+            tilesToDisplay: DrawablePiPTile[],
             messages: PiPOverlayMessage[],
             participantDecryptedNameMap: Record<string, string>
         ) => {
             const render = () => {
-                drawPiP(canvas, tracksToDisplay, messages, participantDecryptedNameMap);
+                drawPiP(canvas, tilesToDisplay, messages, participantDecryptedNameMap);
 
                 animationFrameRef.current = requestAnimationFrame(render);
             };
