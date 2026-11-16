@@ -51,6 +51,7 @@
         "./ui/headless-checkout/get-headless-checkout": "./ui/headless-checkout/get-headless-checkout.ts",
         "./ui/headless-checkout/tax-helpers": "./ui/headless-checkout/tax-helpers.tsx",
         "./ui/subscriptions/AutomaticSubscriptionModal": "./ui/subscriptions/AutomaticSubscriptionModal.tsx",
+        "./ui/subscriptions/CheckoutLinkRedirect": "./ui/subscriptions/CheckoutLinkRedirect.tsx",
         "./ui/subscriptions/eligibility": "./ui/subscriptions/eligibility.ts"
     },
     "scripts": {

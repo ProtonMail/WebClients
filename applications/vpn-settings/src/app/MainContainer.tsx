@@ -90,6 +90,10 @@ import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions/AutomaticSubscriptionModal';
+import {
+    CheckoutLinkRedirect,
+    getCheckoutLinkRoutePath,
+} from '@proton/payments-ui/ui/subscriptions/CheckoutLinkRedirect';
 import { APPS, SECURITY_CHECKUP_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -288,6 +292,9 @@ const MainContainer: FunctionComponent = () => {
     return (
         <SubscriptionModalProvider app={app}>
             <Switch>
+                <Route path={getCheckoutLinkRoutePath()}>
+                    <CheckoutLinkRedirect dashboardPath={vpnRoutes.dashboard.to} />
+                </Route>
                 <Route path={VPN_TV_PATHS}>
                     <TVContainer />
                 </Route>
@@ -321,7 +328,9 @@ const MainContainer: FunctionComponent = () => {
                                                 config={vpnRoutes.dashboardV2}
                                                 mainAreaClass="bg-lowered settings-cards"
                                                 wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
-                                                style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
+                                                style={{
+                                                    '--max-w-custom': SettingsCardMaxWidth.Wide,
+                                                }}
                                             >
                                                 <YourPlanSectionV2 app={app} />
                                                 <PaymentsContextProvider>
@@ -342,7 +351,9 @@ const MainContainer: FunctionComponent = () => {
                                                 config={vpnRoutes.subscription}
                                                 mainAreaClass="bg-lowered settings-cards"
                                                 wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
-                                                style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
+                                                style={{
+                                                    '--max-w-custom': SettingsCardMaxWidth.Wide,
+                                                }}
                                             >
                                                 <YourPlanSectionV2
                                                     app={app}
