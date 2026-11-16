@@ -2359,6 +2359,48 @@
       ],
       "Manage subscriptions": [
         "管理订阅"
+      ],
+      "Delete security key ${ keyName }": [
+        "删除安全密钥 ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "删除服务器 ${ serverLocation }"
+      ],
+      "Download recovery kit": [
+        "下载恢复工具包"
+      ],
+      "Edit security key ${ keyName }": [
+        "编辑安全密钥 ${ keyName }"
+      ],
+      "Next contact": [
+        "下一个联系人"
+      ],
+      "Next plan": [
+        "之后的套餐"
+      ],
+      "Previous contact": [
+        "上一个联系人"
+      ],
+      "Previous plan": [
+        "之前的订阅"
+      ],
+      "Remove file": [
+        "移除文件"
+      ],
+      "Remove logo": [
+        "移除徽标"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "移除待处理服务器 ${ serverLocation }"
+      ],
+      "Toggle calendar list": [
+        "切换日历列表"
+      ],
+      "Toggle substeps": [
+        "切换子步骤"
+      ],
+      "Weak key: learn more": [
+        "密钥强度较弱：了解详情"
       ]
     },
     "action": {
@@ -9038,6 +9080,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "安全密钥注册失败，请重试。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "此浏览器不支持安全密钥，请换用其他浏览器。"
+      ],
+      "This security key is already registered to your account.": [
+        "此安全密钥已注册到您的账户。"
       ]
     },
     "fido2: Info": {
@@ -14424,6 +14472,15 @@
       ],
       "You still need to reply for the organizer to see your response.": [
         "您仍需回复，组织者才能看到您的答复。"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "查看并导出数据，用于报告或客户开票。"
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "与 ${ BRAND_NAME } 共享错误日志"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "与 ${ BRAND_NAME } 共享性能数据和使用统计信息"
       ]
     },
     "info": {
@@ -16833,6 +16890,9 @@
       ],
       "Collect anonymous usage diagnostics": [
         "收集匿名的使用诊断数据"
+      ],
+      "Billed average": [
+        "平均计费"
       ]
     },
     "label": {
@@ -28013,6 +28073,12 @@
       ],
       "Email address": [
         "邮箱地址"
+      ],
+      "Billing periods": [
+        "计费周期"
+      ],
+      "Monthly cost": [
+        "每月费用"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

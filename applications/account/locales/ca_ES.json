@@ -732,7 +732,7 @@
         "Continua amb ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Continue with Free": [
-        "Continuar amb el pla gratuït"
+        "Continua amb Free"
       ],
       "Continue with Google": [
         "Continua amb Google"
@@ -1305,7 +1305,7 @@
         "D'acord"
       ],
       "Got it, connect my Gmail": [
-        "Entesos, connecteu el meu Gmail"
+        "Entesos. Connecta el meu Gmail"
       ],
       "Grant access": [
         "Concedeix l'accés"
@@ -2359,6 +2359,54 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Delete security key ${ keyName }": [
+        "Elimina la clau de seguretat ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Elimina el servidor ${ serverLocation }"
+      ],
+      "Dismiss notification": [
+        "Descarta la notificació"
+      ],
+      "Download recovery kit": [
+        "Descarregueu el paquet de recuperació"
+      ],
+      "Edit security key ${ keyName }": [
+        "Edita la clau de seguretat ${ keyName }"
+      ],
+      "Go to today": [
+        "Vés a avui"
+      ],
+      "Next contact": [
+        "Següent contacte"
+      ],
+      "Next plan": [
+        "Pla següent"
+      ],
+      "Previous contact": [
+        "Contacte anterior"
+      ],
+      "Previous plan": [
+        "Pla anterior"
+      ],
+      "Remove file": [
+        "Esborra el fitxer"
+      ],
+      "Remove logo": [
+        "Elimina el logotip"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Esborra el servidor pendent ${ serverLocation }"
+      ],
+      "Toggle calendar list": [
+        "Commuta la llista de calendaris"
+      ],
+      "Toggle substeps": [
+        "Commuteu els subpassos"
+      ],
+      "Weak key: learn more": [
+        "Clau feble: saber-ne més"
       ]
     },
     "action": {
@@ -3983,7 +4031,7 @@
         "Suport per a la càrrega de fitxers grans"
       ],
       "Limited daily chats": [
-        "Nombre de xats diaris limitat"
+        "Nombre limitat de xats diaris"
       ],
       "Limited favorites": [
         "Nombre de preferits limitat"
@@ -7970,7 +8018,7 @@
         "La sol·licitud ha caducat"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+        "L'esquema d'inversió del subjecte passiu no és compatible amb aquest pla"
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
         "No s'ha pogut completar l'assignació de rols per a ${ errors.length } membre",
@@ -12473,7 +12521,7 @@
         "Pròxima data de facturació"
       ],
       "Next time you sign in to your other account": [
-        "La pròxima vegada que inicieu sessió al vostre altre compte"
+        "La pròxima vegada que inicieu la sessió al vostre altre compte"
       ],
       "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
         "A continuació, inicieu la sessió al compte de Google i permeteu que ${ BRAND_NAME } accedeixi a Google Drive. Importarem els vostres fitxers i carpetes a ${ DRIVE_APP_NAME }."
@@ -13179,7 +13227,7 @@
         "La vostra subscripció està a punt de finalitzar. Per a mantenir els avantatges de ${ planName }, reinicieu-la a Apple App Store abans del ${ byDate }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
-        "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
+        "La vostra subscripció està a punt de finalitzar: per a mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
       ],
       "Summary": [
         "Resum"
@@ -13366,7 +13414,7 @@
         "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
-        "Aquesta adreça de Gmail està registrada amb un altre compte de ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI i d'altres). Estem treballant per fer que aquesta connexió sigui fluida, però de moment heu de seguir uns quants passos."
+        "Aquesta adreça de Gmail està registrada amb un altre compte de ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI i d'altres). Estem treballant per a fer que aquesta connexió sigui fluida, però, de moment, heu de seguir uns quants passos."
       ],
       "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
         "Aquest compte de Gmail ja està connectat al vostre compte de ${ BRAND_NAME }. No cal que feu res més."
@@ -14266,7 +14314,7 @@
         "Teniu una factura pendent de pagament ${ payInvoiceLink }"
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
-        "Teniu una factura pendent de pagament el ${ dueDate } ${ payInvoiceLink }"
+        "Teniu una factura pendent el ${ dueDate } ${ payInvoiceLink }"
       ],
       "You have no calendars to export.": [
         "No teniu cap calendari per exportar."
@@ -15882,7 +15930,7 @@
         "Correus electrònics (els darrers 3 mesos)"
       ],
       "Emails (last 6 months)": [
-        "Correus electrònics (dels darrers sis mesos)"
+        "Correus electrònics (darrers 6 mesos)"
       ],
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
@@ -18022,7 +18070,7 @@
         "Regla de coincidència de patró de comodí"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
+        "La prova gratuïta ha finalitzat. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
@@ -21223,7 +21271,7 @@
         "Número d'IVA"
       ],
       "VAT reverse charge mechanism applies.": [
-        "S'aplica la inversió del subjecte passiu (IVA)."
+        "S'aplica la inversió del subjecte passiu de l'IVA."
       ],
       "You already have a subscription to this plan.": [
         "Ja teniu una subscripció a aquest pla."
