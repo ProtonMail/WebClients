@@ -29,7 +29,7 @@ import { getDefaultFolders, noFolderValue } from '../constants';
 import type { Actions, Condition, Errors, SimpleFilterModalModel } from '../interfaces';
 import { Step } from '../interfaces';
 import { useFilterDispatch } from '../useFilterDispatch';
-import { computeFromTree, convertModel } from '../utils';
+import { checkNameErrors, computeFromTree, convertModel } from '../utils';
 import CloseFilterModal from './CloseFilterModal';
 import FilterActionsForm from './FilterActionsForm';
 import FilterConditionsForm from './FilterConditionsForm';
@@ -44,17 +44,6 @@ interface Props extends ModalProps {
     filter?: CreateFilter;
     onCloseCustomAction?: () => void;
 }
-
-const checkNameErrors = (filters: Filter[], name: string): string => {
-    if (!name || name.trim() === '') {
-        return c('Error').t`This field is required`;
-    }
-    const trimmedName = name.trim();
-    if (filters.find(({ Name }: Filter) => Name.trim() === trimmedName)) {
-        return c('Error').t`Filter with this name already exists`;
-    }
-    return '';
-};
 
 const checkConditionsErrors = (conditions: Condition[]): string => {
     if (conditions.some((c) => !!c.error)) {
@@ -195,7 +184,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
 
     const errors = useMemo<Errors>(() => {
         return {
-            name: !model.name || filter?.Name !== name ? checkNameErrors(filters, name) : '',
+            name: checkNameErrors(filters, name, filter?.Name),
             conditions: checkConditionsErrors(conditions),
             actions: checkActionsErrors(actions),
         };

@@ -24,7 +24,7 @@ import useModalState from '../../../../components/modalTwo/useModalState';
 import { FILTER_VERSION } from '../../constants';
 import type { AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
 import { useFilterDispatch } from '../../useFilterDispatch';
-import { convertModel, sieveTemplates } from '../../utils';
+import { checkNameErrors, convertModel, sieveTemplates } from '../../utils';
 import CloseFilterModal from '../CloseFilterModal';
 import FilterNameForm from '../FilterNameForm';
 import FooterAdvancedFilterModal from './FooterAdvancedFilterModal';
@@ -35,17 +35,6 @@ import './AdvancedFilterModal.scss';
 interface Props extends ModalProps {
     filter?: Filter;
 }
-
-const checkNameErrors = (name: string, filters: Filter[]): string => {
-    if (!name || name.trim() === '') {
-        return c('Error').t`This field is required`;
-    }
-    const trimmedName = name.trim();
-    if (filters.find(({ Name }: Filter) => Name.trim() === trimmedName)) {
-        return c('Error').t`Filter with this name already exists`;
-    }
-    return '';
-};
 
 const checkSieveErrors = (sieve: string, issuesLength: number): string => {
     if (!sieve) {
@@ -86,7 +75,7 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
 
     const errors = useMemo<ErrorsSieve>(() => {
         return {
-            name: !model.name || model.name !== initialModel.name ? checkNameErrors(model.name, filters) : '',
+            name: checkNameErrors(filters, model.name, initialModel.name),
             sieve: checkSieveErrors(model.sieve, model.issues.length),
         };
     }, [model.name, model.sieve, model.issues]);

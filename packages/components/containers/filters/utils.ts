@@ -1,4 +1,5 @@
 import isDeepEqual from 'lodash/isEqual';
+import { c } from 'ttag';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { CreateFilter, Filter, FilterActions, FilterCondition, FilterOperator } from '@proton/sieve/filterModel';
@@ -213,4 +214,24 @@ export const createDefaultLabelsFilter = (
         filter.Tree = computeTree(filter);
         return filter;
     }, []);
+};
+
+const normalizeName = (name: string) => name.trim().toLowerCase();
+
+/**
+ * Validate a filter name: required, and unique (case-insensitive) among existing filters.
+ * `originalName` is the current name when editing, a name matching it is not a conflict.
+ */
+export const checkNameErrors = (filters: Filter[], name: string, originalName?: string): string => {
+    if (!name || name.trim() === '') {
+        return c('Error').t`This field is required`;
+    }
+    const normalizedName = normalizeName(name);
+    if (originalName !== undefined && normalizeName(originalName) === normalizedName) {
+        return '';
+    }
+    if (filters.some(({ Name }: Filter) => normalizeName(Name) === normalizedName)) {
+        return c('Error').t`Filter with this name already exists`;
+    }
+    return '';
 };
