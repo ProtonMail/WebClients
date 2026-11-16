@@ -15,10 +15,13 @@ const setup = (search: string, childClientId: string) => {
     return handleDesktopFork({ api: jest.fn() as unknown as Api, paths: {} as Paths });
 };
 
-const getPrompt = async (search: string, childClientId: string) => {
+const getForkParameters = async (search: string, childClientId: string) => {
     const result = await setup(search, childClientId);
-    return result.payload.fork.payload.forkParameters.prompt;
+    return result.payload.fork.payload.forkParameters;
 };
+
+const getPrompt = async (search: string, childClientId: string) =>
+    (await getForkParameters(search, childClientId)).prompt;
 
 describe('handleDesktopFork', () => {
     beforeEach(() => {
@@ -35,8 +38,14 @@ describe('handleDesktopFork', () => {
         }
     );
 
+    it.each(['cli-pass', 'macos-pass'])('asks %s for the offline key in reauth', async (childClientId) => {
+        expect((await getForkParameters('app=pass', childClientId)).promptType).toBe('offline');
+        expect((await getForkParameters('app=pass&promptType=default', childClientId)).promptType).toBe('offline');
+    });
+
     it('does not ask other apps to reauth', async () => {
         expect(await getPrompt('app=mail', 'macos-mail')).toBeUndefined();
+        expect((await getForkParameters('app=mail', 'macos-mail')).promptType).toBe('default');
     });
 
     it('keeps the prompt the url asks for in other apps', async () => {
