@@ -113,6 +113,49 @@ export const drawVideoWithAspectRatio = ({
     }
 };
 
+interface DrawParticipantPlaceholderParams {
+    ctx: CanvasRenderingContext2D;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    backgroundColor: string;
+    profileColor: string;
+    initialsColor: string;
+    initials: string;
+}
+
+const placeholderProfileRadius = 40;
+
+export const drawParticipantPlaceholder = ({
+    ctx,
+    x,
+    y,
+    width,
+    height,
+    backgroundColor,
+    profileColor,
+    initialsColor,
+    initials,
+}: DrawParticipantPlaceholderParams) => {
+    ctx.fillStyle = backgroundColor;
+    ctx.fillRect(x, y, width, height);
+
+    const centerX = x + width / 2;
+    const centerY = y + height / 2;
+
+    ctx.fillStyle = profileColor;
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, placeholderProfileRadius, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = initialsColor;
+    ctx.font = '600 30px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(initials, centerX, centerY);
+};
+
 // Draw message overlay on canvas
 export const drawMessageOverlay = ({ ctx, canvasWidth, canvasHeight, messages }: DrawMessageOverlayParams) => {
     if (!messages || messages.length === 0) {

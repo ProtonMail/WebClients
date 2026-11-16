@@ -21,8 +21,23 @@ export type MessageAction =
     | { type: 'REMOVE_MESSAGE'; payload: string };
 
 export interface TrackInfo {
-    track: Track;
+    kind: 'track';
+    track: Track | undefined;
     participant: Participant;
     publication: TrackPublication;
     isScreenShare: boolean;
 }
+
+interface ParticipantPlaceholderInfo {
+    kind: 'placeholder';
+    participant: Participant;
+    backgroundColorClassName: string;
+    profileColorClassName: string;
+}
+
+export type PiPTile = TrackInfo | ParticipantPlaceholderInfo;
+
+export type DrawablePiPTile = (TrackInfo & { track: Track }) | ParticipantPlaceholderInfo;
+
+export const isDrawablePiPTile = (tile: PiPTile): tile is DrawablePiPTile =>
+    tile.kind === 'placeholder' || tile.track !== undefined;

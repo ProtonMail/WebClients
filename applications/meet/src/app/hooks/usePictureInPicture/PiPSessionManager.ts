@@ -2,7 +2,7 @@ import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { PIP_PREVIEW_ITEM_HEIGHT, PIP_PREVIEW_ITEM_WIDTH } from '../../constants';
-import type { TrackInfo } from './types';
+import type { DrawablePiPTile } from './types';
 
 export class PiPSessionManager {
     private canvas?: HTMLCanvasElement;
@@ -61,7 +61,7 @@ export class PiPSessionManager {
         });
     }
 
-    init(tracks: TrackInfo[]): { canvas: HTMLCanvasElement; pipVideo: HTMLVideoElement } {
+    init(tracks: DrawablePiPTile[]): { canvas: HTMLCanvasElement; pipVideo: HTMLVideoElement } {
         const desiredHeight = PIP_PREVIEW_ITEM_HEIGHT * Math.max(1, Math.min(tracks.length, 3));
 
         if (!this.canvas) {
@@ -80,7 +80,7 @@ export class PiPSessionManager {
     /**
      * Create canvas element for rendering
      */
-    private createCanvas(tracks: TrackInfo[]): HTMLCanvasElement {
+    private createCanvas(tracks: DrawablePiPTile[]): HTMLCanvasElement {
         const canvas = document.createElement('canvas');
 
         canvas.width = PIP_PREVIEW_ITEM_WIDTH;

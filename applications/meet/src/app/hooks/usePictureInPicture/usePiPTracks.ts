@@ -1,9 +1,14 @@
-import { useTracks } from '@livekit/components-react';
+import { type TrackReference, useTracks } from '@livekit/components-react';
 import { type Participant, RoomEvent, Track } from 'livekit-client';
 
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectSelfView } from '@proton/meet/store/slices/settings';
 import isTruthy from '@proton/utils/isTruthy';
 
-const MAX_CAMERA_TRACKS = 3;
+import { useParticipantDisplayColors } from '../useParticipantDisplayColors';
+import { type PiPTile, type TrackInfo, isDrawablePiPTile } from './types';
+
+const MAX_TILES = 4;
 
 // Only update on events that actually affect track availability, not on quality/stream state changes
 const TRACK_UPDATE_EVENTS = [
@@ -16,54 +21,73 @@ const TRACK_UPDATE_EVENTS = [
     RoomEvent.TrackStreamStateChanged,
 ];
 
+const toTrackInfo = ({ participant, publication }: TrackReference): TrackInfo => ({
+    kind: 'track',
+    track: publication.track,
+    participant,
+    publication,
+    isScreenShare: publication.source === Track.Source.ScreenShare,
+});
+
+const getTileKey = (tile: PiPTile) => {
+    if (tile.kind === 'placeholder') {
+        return `placeholder:${tile.participant.identity}`;
+    }
+
+    const { trackSid, track, isSubscribed, isEnabled } = tile.publication;
+    return `${trackSid}:${!!track}:${!!isSubscribed}:${!!isEnabled}`;
+};
+
 export function usePiPTracks(sortedParticipants: Participant[]) {
-    const currentScreenShareTrack = useTracks([Track.Source.ScreenShare], {
+    const screenShareTracks = useTracks([Track.Source.ScreenShare], {
         updateOnlyOn: TRACK_UPDATE_EVENTS,
         onlySubscribed: false,
-    })[0];
+    });
+    const remoteScreenShareTrack = screenShareTracks.find((trackRef) => !trackRef.participant.isLocal);
+    const localParticipant = sortedParticipants.find((participant) => participant.isLocal);
+    const selfView = useMeetSelector(selectSelfView);
+
+    const {
+        participantColors: { backgroundColor, profileColor },
+    } = useParticipantDisplayColors(localParticipant?.identity);
 
     const cameraTracks = useTracks([Track.Source.Camera], {
         updateOnlyOn: TRACK_UPDATE_EVENTS,
         onlySubscribed: false,
     });
 
-    const currentCameraPublications = sortedParticipants
-        .map((participant) => {
-            return cameraTracks.find((track) => track.participant?.identity === participant.identity);
-        })
+    const findCameraTile = (participant: Participant) => {
+        const cameraTrack = cameraTracks.find((track) => track.participant?.identity === participant.identity);
+        return cameraTrack && !cameraTrack.publication.isMuted ? toTrackInfo(cameraTrack) : undefined;
+    };
+
+    const remoteCameraTiles = sortedParticipants
+        .filter((participant) => !participant.isLocal)
+        .map(findCameraTile)
         .filter(isTruthy);
 
-    const displayableCameraTracks = currentCameraPublications
-        .filter((item) => item.publication && !item.publication?.isMuted)
-        .slice(0, MAX_CAMERA_TRACKS);
+    const localTile: PiPTile | undefined =
+        localParticipant &&
+        (findCameraTile(localParticipant) ?? {
+            kind: 'placeholder',
+            participant: localParticipant,
+            backgroundColorClassName: backgroundColor,
+            profileColorClassName: profileColor,
+        });
 
-    const tracksForDisplay = [currentScreenShareTrack, ...displayableCameraTracks]
-        .map((trackRef) => {
-            if (!trackRef) {
-                return null;
-            }
+    const otherTiles = [remoteScreenShareTrack && toTrackInfo(remoteScreenShareTrack), ...remoteCameraTiles].filter(
+        isTruthy
+    );
 
-            return {
-                track: trackRef.publication.track,
-                participant: trackRef.participant!,
-                publication: trackRef.publication,
-                isScreenShare: trackRef.publication?.source === Track.Source.ScreenShare,
-            };
-        })
-        .filter(isTruthy);
-
-    const tracksKey = [currentScreenShareTrack, ...displayableCameraTracks]
-        .map((trackRef) => {
-            const sid = trackRef?.publication?.trackSid || '';
-            const hasTrack = !!trackRef?.publication?.track;
-            const isSubscribed = !!trackRef?.publication?.isSubscribed;
-            const isEnabled = !!trackRef?.publication?.isEnabled;
-            return `${sid}:${hasTrack}:${isSubscribed}:${isEnabled}`;
-        })
-        .join(',');
+    // Like the grid, keep your own tile when nothing else can be drawn, even with self view off
+    const showLocalTile = selfView || !otherTiles.some(isDrawablePiPTile);
+    const tilesForDisplay =
+        showLocalTile && localTile && otherTiles.length < MAX_TILES
+            ? [localTile, ...otherTiles]
+            : otherTiles.slice(0, MAX_TILES);
 
     return {
-        tracksForDisplay,
-        tracksKey,
+        tilesForDisplay,
+        tracksKey: tilesForDisplay.map(getTileKey).join(','),
     };
 }

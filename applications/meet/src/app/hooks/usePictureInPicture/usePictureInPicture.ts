@@ -27,7 +27,7 @@ import { useLatest } from '../useLatest';
 import { useMessagePlainText } from '../useMessagePlainText';
 import { useStableCallback } from '../useStableCallback';
 import { PiPSessionManager } from './PiPSessionManager';
-import type { TrackInfo } from './types';
+import { isDrawablePiPTile } from './types';
 import { usePiPMediaSession } from './usePiPMediaSession';
 import { usePiPMessages } from './usePiPMessages';
 import { usePiPRenderer } from './usePiPRenderer';
@@ -83,10 +83,11 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
 
     // Use the smaller hooks
     const { messages, addSystemMessage, addChatMessage } = usePiPMessages();
-    const { tracksForDisplay, tracksKey } = usePiPTracks(sortedParticipants);
+    const { tilesForDisplay, tracksKey } = usePiPTracks(sortedParticipants);
     const { startRendering, stopRendering } = usePiPRenderer();
 
-    const displayableWithAvailableTracks = tracksForDisplay.filter((track) => track.track !== undefined) as TrackInfo[];
+    const drawableTiles = tilesForDisplay.filter(isDrawablePiPTile);
+    const trackTilesForDisplay = tilesForDisplay.filter((tile) => tile.kind === 'track');
 
     const { register, removeForcePin } = useCameraTrackSubscriptionManager();
 
@@ -99,7 +100,7 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
 
     isPipActiveRef.current = isPipActive;
 
-    const prevTracksForDisplayRef = useRef(tracksForDisplay);
+    const prevTrackTilesForDisplayRef = useRef(trackTilesForDisplay);
 
     // Use specialized hooks
     const { setupMediaSession } = usePiPMediaSession({
@@ -148,9 +149,9 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
         }
 
         // Initialize session with canvas and video elements
-        const { canvas } = sessionManager.init(displayableWithAvailableTracks) || {};
+        const { canvas } = sessionManager.init(drawableTiles) || {};
 
-        startRendering(canvas, displayableWithAvailableTracks, messages, participantDecryptedNameMapRef.current);
+        startRendering(canvas, drawableTiles, messages, participantDecryptedNameMapRef.current);
         await sessionManager.setupVideoStream();
     };
 
@@ -241,9 +242,9 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
         }
         const canvas = sessionManager.getCanvas();
         if (canvas) {
-            const tracksToUnregister = prevTracksForDisplayRef.current.filter(
+            const tracksToUnregister = prevTrackTilesForDisplayRef.current.filter(
                 (track) =>
-                    !tracksForDisplay.find((t) => t.publication.trackSid === track.publication.trackSid) &&
+                    !trackTilesForDisplay.find((t) => t.publication.trackSid === track.publication.trackSid) &&
                     !track.isScreenShare
             );
 
@@ -251,17 +252,17 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
                 removeForcePin(track.publication);
             });
 
-            tracksForDisplay.forEach((track) => {
+            trackTilesForDisplay.forEach((track) => {
                 if (!track.isScreenShare) {
                     register(track.publication, track.participant.identity, true);
                 }
             });
 
-            prevTracksForDisplayRef.current = tracksForDisplay;
+            prevTrackTilesForDisplayRef.current = trackTilesForDisplay;
 
             // Restart rendering loop with the latest tracks to avoid stale closures
             stopRendering();
-            startRendering(canvas, displayableWithAvailableTracks, messages, participantDecryptedNameMapRef.current);
+            startRendering(canvas, drawableTiles, messages, participantDecryptedNameMapRef.current);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sessionManager, isPipActive, tracksKey, messages, startRendering, stopRendering]);
@@ -379,7 +380,7 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
         stopPiP,
         isPipActive,
         canvas: sessionManager.getCanvas(),
-        tracksLength: tracksForDisplay.length,
+        tracksLength: drawableTiles.length,
         pictureInPictureWarmup,
         pipCleanup,
         preparePictureInPicture,
