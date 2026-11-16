@@ -36,6 +36,8 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type Eligibility, type PlanCombination, getEligibility } from './eligibility';
@@ -208,6 +210,7 @@ export const AutomaticSubscriptionModal = () => {
     const [unavailableModalProps, setUnavailableModal, renderUnavailableModal] = useModalState();
     const [promotionAppliedProps, setPromotionAppliedModal, renderPromotionAppliedModal] = useModalState();
     const [paymentStatus, loadingPaymentStatus] = usePaymentStatus();
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const goToApp = useAppLink();
 
@@ -369,7 +372,7 @@ export const AutomaticSubscriptionModal = () => {
                     for (const addon of URL_CONFIGURABLE_ADDON_PREFIXES) {
                         const totalFromParams = totals[`total${ADDON_TOTAL_PARAM_NAMES[addon]}`];
 
-                        if (!totalFromParams) {
+                        if (!totalFromParams || (scribeToLumo && addon === ADDON_PREFIXES.SCRIBE)) {
                             continue;
                         }
                         selectedPlan = selectedPlan.setAddonCount(
@@ -400,6 +403,7 @@ export const AutomaticSubscriptionModal = () => {
         multiSubscriptionContext,
         user,
         search,
+        scribeToLumo,
     ]);
 
     const tmp = tmpProps.current;

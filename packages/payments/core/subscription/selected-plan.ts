@@ -379,7 +379,7 @@ export class SelectedPlan {
         return getPlanFeatureLimit(this.getPlan(), featureLimitKey);
     }
 
-    private getCountInAddons(featureLimitKey: FeatureLimitKey, prefix?: ADDON_PREFIXES): number {
+    getCountInAddons(featureLimitKey: FeatureLimitKey, prefix?: ADDON_PREFIXES): number {
         return this.getAddons(prefix)
             .filter(isTruthy)
             .reduce((acc, addon) => {

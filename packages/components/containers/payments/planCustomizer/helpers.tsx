@@ -71,4 +71,7 @@ export function forceAddonsMinMaxConstraints({
 
 export type DecreaseBlockedReason = 'forbidden-modification';
 
-export type IncreaseBlockedReason = 'trial-limit';
+export enum IncreaseBlockedReason {
+    TRIAL_LIMIT = 'trial-limit',
+    SCRIBE_RETIRED = 'scribe-retired',
+}
