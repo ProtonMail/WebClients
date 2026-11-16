@@ -56,6 +56,7 @@ import type {
 } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { reportVpn2024SignupAddPass } from '@proton/payments/telemetry/signup-experiment-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
+import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     APPS,
@@ -70,6 +71,7 @@ import type { Plan, StrictPlan } from '@proton/shared/lib/payments/plan/interfac
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { getVpnServers } from '@proton/shared/lib/vpn/features';
 import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -187,11 +189,18 @@ const Step1 = ({
     isB2bPlan: boolean;
     background?: Background;
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
-    onComplete: (data: {
-        accountData: SignupCacheResult['accountData'];
-        subscriptionData: SignupCacheResult['subscriptionData'];
-        type: 'signup';
-    }) => void;
+    onComplete: (
+        data:
+            | {
+                  accountData: SignupCacheResult['accountData'];
+                  subscriptionData: SignupCacheResult['subscriptionData'];
+                  type: 'signup' | 'signup-token';
+              }
+            | {
+                  subscriptionData: SignupCacheResult['subscriptionData'];
+                  type: 'existing';
+              }
+    ) => void;
     onCurrencyChange: (currency: Currency) => Promise<unknown>;
     model: VPNSignupModel;
     setModel: Dispatch<SetStateAction<VPNSignupModel>>;
@@ -208,7 +217,7 @@ const Step1 = ({
         trial: signupTrial,
         hideFreePlan,
         currency: currencyUrlParam,
-        email: defaultEmail,
+        email: emailUrlParam,
         vpn2024SignupExperimentVariant,
     } = signupParameters;
 
@@ -276,7 +285,18 @@ const Step1 = ({
         }
     };
 
-    const handleCompletion = async (subscriptionData: SubscriptionData) => {
+    // The Bitcoin flow created the account, its details can't change anymore
+    const hasReservedUser = !!model.signupTokenMode || (model.cache?.type === 'signup' && !!model.cache.userData);
+    // Keep showing the account's email when coming back from the password step
+    const defaultEmail =
+        (hasReservedUser && model.cache?.type === 'signup' && model.cache.accountData.email) || emailUrlParam;
+
+    const handleCompletion = async (subscriptionData: SubscriptionData, type?: 'signup-token') => {
+        // The account was already created to receive the Bitcoin payment, only the subscription is left
+        if (model.signupTokenMode) {
+            return onComplete({ subscriptionData, type: 'existing' });
+        }
+
         const accountDataWithoutPassword = await accountDetailsRef.current?.data();
         if (!accountDataWithoutPassword) {
             throw new Error('Invalid data');
@@ -287,10 +307,10 @@ const Step1 = ({
             password: generatePassword({ useSpecialChars: true, length: 16 }),
         };
 
-        return onComplete({ subscriptionData, accountData, type: 'signup' });
+        return onComplete({ subscriptionData, accountData, type: type || 'signup' });
     };
 
-    const onPay = async (payment: ExtendedTokenPayment, type: 'cc' | 'pp' | undefined) => {
+    const onPay = async (payment: ExtendedTokenPayment, type: 'cc' | 'pp' | 'btc' | undefined) => {
         const subscriptionData: SubscriptionData = {
             ...model.subscriptionData,
             payment,
@@ -339,15 +359,22 @@ const Step1 = ({
     };
 
     const sortNewMethods = usePaypalFirstSort();
+    const isBitcoinEnabled = useFlag('VpnBitcoinPaymentMethod');
+    const sessionUID = model.session?.resumedSessionResult.UID;
     const paymentFacade = usePaymentFacade({
         sortNewMethods,
         checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
         currency: options.currency,
-        api: silentApi,
+        api: sessionUID ? getUIDApi(sessionUID, silentApi) : silentApi,
         billingAddress: options.billingAddress,
         selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
-        paymentStatus: model.paymentStatus,
+        paymentStatus: isBitcoinEnabled
+            ? model.paymentStatus
+            : {
+                  ...model.paymentStatus,
+                  VendorStates: { ...model.paymentStatus.VendorStates, Bitcoin: false },
+              },
         onChargeable: (_, { chargeablePaymentParameters, sourceType, source, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0 && !checkTrial;
@@ -368,9 +395,11 @@ const Step1 = ({
                     flow: isB2bPlan ? 'b2b' : 'b2c',
                 });
 
-                let paymentType: 'cc' | 'pp';
+                let paymentType: 'cc' | 'pp' | 'btc';
                 if (sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
                     paymentType = 'pp';
+                } else if (sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
+                    paymentType = 'btc';
                 } else {
                     paymentType = 'cc';
                 }
@@ -875,6 +904,10 @@ const Step1 = ({
                     return 'pay_pp';
                 }
 
+                if (processor?.meta.type === 'bitcoin') {
+                    return 'pay_btc';
+                }
+
                 return 'pay_cc';
             })();
             measurePaySubmit(telemetryType);
@@ -1332,7 +1365,7 @@ const Step1 = ({
                                             model={model}
                                             measure={measure}
                                             accountStepDetailsRef={accountDetailsRef}
-                                            disableChange={loadingSignup}
+                                            disableChange={loadingSignup || hasReservedUser}
                                             hideEmailLabel={!isVpnPassBundleBusinessPlan}
                                             onSubmit={
                                                 hasSelectedFree
@@ -1503,6 +1536,12 @@ const Step1 = ({
                                         )}
                                         <PaymentWrapper
                                             {...paymentFacade}
+                                            // Remount once the account exists so the Bitcoin method is re-selected
+                                            // and the deposit address can be requested
+                                            key={sessionUID || 'unauthenticated'}
+                                            defaultMethod={model.session?.defaultPaymentMethod}
+                                            isAuthenticated={!!sessionUID}
+                                            loadingBitcoin={loadingPaymentDetails}
                                             hideFirstLabel
                                             noMaxWidth
                                             showCardIcons
@@ -1537,6 +1576,49 @@ const Step1 = ({
                                         {(() => {
                                             if (loadingPaymentsForm) {
                                                 return;
+                                            }
+
+                                            const isBitcoin =
+                                                paymentFacade.selectedMethodType ===
+                                                PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
+
+                                            // The subscription is created when the BTC transaction is confirmed,
+                                            // there is nothing to submit after the deposit address is displayed
+                                            if (isBitcoin && sessionUID) {
+                                                return;
+                                            }
+
+                                            if (isBitcoin) {
+                                                return (
+                                                    <Button
+                                                        size="large"
+                                                        color="norm"
+                                                        fullWidth
+                                                        loading={loadingSignup}
+                                                        disabled={disablePayButton || !isFormValid}
+                                                        onClick={() => {
+                                                            const run = async () => {
+                                                                const isFormValid =
+                                                                    validatePayment() &&
+                                                                    (await accountDetailsRef.current?.validate());
+                                                                if (!isFormValid) {
+                                                                    return;
+                                                                }
+                                                                measurePaySubmit('pay_btc');
+                                                                await handleCompletion(
+                                                                    model.subscriptionData,
+                                                                    'signup-token'
+                                                                ).catch(() => {
+                                                                    measurePayError('pay_btc');
+                                                                });
+                                                            };
+                                                            withLoadingSignup(run()).catch(noop);
+                                                        }}
+                                                        data-testid="continue-with-bitcoin"
+                                                    >
+                                                        {c('Action').t`Continue with Bitcoin`}
+                                                    </Button>
+                                                );
                                             }
 
                                             return (

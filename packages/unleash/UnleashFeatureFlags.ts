@@ -34,6 +34,7 @@ enum AccountFeatureFlag {
     ShowSignInRestrictionToggle = 'ShowSignInRestrictionToggle',
     SpacesAvailable = 'SpacesAvailable',
     VisionarySignup = 'VisionarySignup',
+    VpnBitcoinPaymentMethod = 'VpnBitcoinPaymentMethod',
     VPNDashboard = 'VPNDashboard',
     VPNReferralWithoutTrial = 'VPNReferralWithoutTrial',
 }

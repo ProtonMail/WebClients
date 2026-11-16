@@ -156,7 +156,7 @@ export const getPaymentMethod = (method: string) => {
     if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         return 'select_cc';
     }
-    if (PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+    if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
         return 'select_pp';
     }
     if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {

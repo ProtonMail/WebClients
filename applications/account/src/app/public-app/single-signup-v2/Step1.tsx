@@ -582,6 +582,9 @@ const Step1 = ({
 
     const disableInitialFormSubmit = model.loadingDependencies;
 
+    // The Bitcoin flow created the account before failing to set it up, its details can't change anymore
+    const hasReservedUser = model.cache?.type === 'signup' && !!model.cache.userData;
+
     const handleCompletion = async (subscriptionData: SubscriptionData, type?: 'signup-token') => {
         if (disableInitialFormSubmit) {
             return;
@@ -1294,7 +1297,7 @@ const Step1 = ({
                                                         model={model}
                                                         measure={measure}
                                                         accountStepDetailsRef={accountDetailsRef}
-                                                        disableChange={loadingSignup}
+                                                        disableChange={loadingSignup || hasReservedUser}
                                                         onSubmit={
                                                             !showPaymentStep
                                                                 ? async () => {
