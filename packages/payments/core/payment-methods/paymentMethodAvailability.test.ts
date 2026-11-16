@@ -631,6 +631,32 @@ describe('Cash', () => {
 });
 
 describe('Chargebee Bitcoin', () => {
+    it('should add bitcoin next to the other methods in the VPN signup', () => {
+        const methods = buildContext({
+            paymentStatus: {
+                ...status,
+                VendorStates: { ...status.VendorStates, Card: true, Paypal: true, Google: true, Bitcoin: true },
+            },
+            paymentMethods: [],
+            amount: 7999,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'signup-vpn',
+            selectedPlanName: PLANS.VPN2024,
+            billingAddress: undefined,
+            enableSepa: true,
+        });
+
+        expect(getNewMethods(methods).map((method) => method.type)).toEqual(
+            expect.arrayContaining([
+                PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+                PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+                PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+                PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+            ])
+        );
+    });
+
     it('should display bitcoin', () => {
         const flow: PaymentMethodFlow = 'subscription';
 
@@ -668,29 +694,24 @@ describe('Chargebee Bitcoin', () => {
         expect(getNewMethods(methods).some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
     });
 
-    it.each([
-        'invoice',
-        'signup',
-        'signup-v2',
-        'signup-v2-upgrade',
-        'signup-vpn',
-        'add-card',
-        'add-paypal',
-    ] as PaymentMethodFlow[])('should not display bitcoin in %s flow', (flow) => {
-        const methods = buildContext({
-            paymentStatus: status,
-            paymentMethods: [],
-            amount: 500,
-            currency: TEST_CURRENCY,
-            coupon: '',
-            flow: flow,
-            selectedPlanName: undefined,
-            billingAddress: undefined,
-            enableSepa: true,
-        });
+    it.each(['invoice', 'signup', 'signup-v2', 'signup-v2-upgrade', 'add-card', 'add-paypal'] as PaymentMethodFlow[])(
+        'should not display bitcoin in %s flow',
+        (flow) => {
+            const methods = buildContext({
+                paymentStatus: status,
+                paymentMethods: [],
+                amount: 500,
+                currency: TEST_CURRENCY,
+                coupon: '',
+                flow: flow,
+                selectedPlanName: undefined,
+                billingAddress: undefined,
+                enableSepa: true,
+            });
 
-        expect(getNewMethods(methods).some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
-    });
+            expect(getNewMethods(methods).some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
+        }
+    );
 
     it('should not display bitcoin if amount is less than minimum', () => {
         const flow: PaymentMethodFlow = 'subscription';
@@ -1864,6 +1885,7 @@ describe('availability per flow', () => {
             'signup-pass',
             'signup-pass-upgrade',
             'signup-wallet',
+            'signup-vpn',
             'credit',
             'subscription',
         ],

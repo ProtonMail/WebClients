@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
 import { useApi } from '@proton/app-context/useApi';
@@ -15,7 +17,7 @@ import { usePaymentsTelemetry } from '@proton/payments-hooks/client-extensions/u
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
-import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
@@ -26,6 +28,8 @@ import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
@@ -43,6 +47,7 @@ import {
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
@@ -62,6 +67,7 @@ import {
     handleSetPassword,
     handleSetupOrg,
     handleSetupUser,
+    handleSubscribeUser,
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import {
@@ -72,9 +78,11 @@ import {
 import { defaultSignupModel } from '../single-signup-v2/constants';
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
 import {
+    getFreeSubscriptionData,
     getOptimisticPlanCardSubscriptionData,
     getOptimisticPlanCardsSubscriptionData,
     getPlanCardSubscriptionData,
+    getSessionDataFromSignup,
     getSubscriptionData,
 } from '../single-signup-v2/helper';
 import type { SignupDefaults } from '../single-signup-v2/interface';
@@ -167,6 +175,7 @@ const SingleSignupContainer = ({
     const { paymentsApi } = usePaymentsApi(silentApi);
     const { APP_NAME } = useConfig();
     const [error, setError] = useState<any>();
+    const [setupError, setSetupError] = useState<string>();
     const handleError = useErrorHandler();
     const location = useLocationWithoutLocale();
     const getPaymentStatus = useGetPaymentStatus();
@@ -174,6 +183,7 @@ const SingleSignupContainer = ({
         flow: 'signup-vpn',
     });
     const activeBreakpoint = useActiveBreakpoint();
+    const isBitcoinEnabled = useFlag('VpnBitcoinPaymentMethod');
 
     const getPlans = useGetPlans();
 
@@ -252,6 +262,11 @@ const SingleSignupContainer = ({
             plansMap,
             plans,
             mode,
+            // When Bitcoin is offered in the VPN signup, guess it's active so it doesn't pop in once the status loads
+            paymentStatus: {
+                ...defaultSignupModel.paymentStatus,
+                VendorStates: { ...defaultSignupModel.paymentStatus.VendorStates, Bitcoin: isBitcoinEnabled },
+            },
         };
     });
 
@@ -557,7 +572,7 @@ const SingleSignupContainer = ({
             });
     }, []);
 
-    const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
+    const getPaymentTelemetry = (cache: SignupCacheResult) => {
         const getTelemetryParams = () => {
             const subscriptionData = cache.subscriptionData;
 
@@ -574,27 +589,20 @@ const SingleSignupContainer = ({
             };
         };
 
-        const [result] = await Promise.all([
-            handleSetupUser({
-                cache,
-                api: silentApi,
-                ignoreVPN: true,
-                setupKeys: false,
-                canGenerateMnemonic: false,
-                telemetryContext,
-                reportPaymentSuccess: () => {
-                    const { method, overrides } = getTelemetryParams();
-                    reportPaymentSuccess(method, overrides);
-                },
-                reportPaymentFailure: () => {
-                    const { method, overrides } = getTelemetryParams();
-                    reportPaymentFailure(method, overrides);
-                },
-            }),
-            wait(3500),
-        ]);
+        return {
+            reportPaymentSuccess: () => {
+                const { method, overrides } = getTelemetryParams();
+                reportPaymentSuccess(method, overrides);
+            },
+            reportPaymentFailure: () => {
+                const { method, overrides } = getTelemetryParams();
+                reportPaymentFailure(method, overrides);
+            },
+        };
+    };
 
-        const { subscription, userData } = result.cache;
+    const measureSignupFinish = (cache: SignupCacheResult) => {
+        const { subscription, userData } = cache;
         if (subscription && userData) {
             const planIDs = getPlanIDs(subscription);
 
@@ -612,8 +620,101 @@ const SingleSignupContainer = ({
 
         const signupFinishEvents = getSignupTelemetryData(model.plansMap, cache);
         void measure(signupFinishEvents);
+    };
+
+    const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
+        const [result] = await Promise.all([
+            handleSetupUser({
+                cache,
+                api: silentApi,
+                ignoreVPN: true,
+                setupKeys: false,
+                canGenerateMnemonic: false,
+                telemetryContext,
+                ...getPaymentTelemetry(cache),
+            }),
+            wait(3500),
+        ]);
+
+        measureSignupFinish(result.cache);
 
         return result.cache;
+    };
+
+    /**
+     * Bitcoin signups create the account on the free plan first: the deposit address can only be
+     * requested by an authenticated user, and it reserves the username while the transaction confirms.
+     */
+    const handleReserveUserForBitcoin = async (cache: SignupCacheResult) => {
+        const userCreationCache = await (async () => {
+            // A previous attempt created the user but failed to set it up, only the setup is retried
+            if (model.cache?.type === 'signup' && model.cache.userData) {
+                return model.cache;
+            }
+            const freeCache: SignupCacheResult = {
+                ...cache,
+                subscriptionData: getFreeSubscriptionData(cache.subscriptionData),
+            };
+            const userCreationResult = await handleCreateUser({
+                cache: freeCache,
+                api: silentApi,
+                hvMode: SignupHumanVerification.DEFERRED,
+                visitorId: signupParameters.visitorId,
+            });
+            // Keep the created user, with its password, so a failed setup can be retried
+            setModelDiff({ cache: userCreationResult.cache });
+            return userCreationResult.cache;
+        })();
+        // Same race as in the setup step: the auth cookie is set while metrics may be batching
+        metrics.stopBatchingProcess();
+        // No plan in the subscription data, so the free account is only set up, nothing is charged
+        const { cache: setupCache } = await handleSetupUser({
+            cache: userCreationCache,
+            api: silentApi,
+            ignoreVPN: true,
+            setupKeys: false,
+            canGenerateMnemonic: false,
+            telemetryContext,
+            reportPaymentSuccess: noop,
+            reportPaymentFailure: noop,
+        }).finally(() => metrics.startBatchingProcess());
+
+        setModelDiff({
+            session: {
+                ...getSessionDataFromSignup(setupCache),
+                defaultPaymentMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+            },
+            // Set back the original subscription data, it's paid once the transaction is confirmed
+            cache: { ...setupCache, subscriptionData: cache.subscriptionData },
+            subscriptionData: cache.subscriptionData,
+            signupTokenMode: true,
+            // The password is picked before the deposit address is shown: if the payment isn't confirmed while the
+            // page is open, the user can still sign in and upgrade with the credits it adds
+            step: Steps.Custom,
+        });
+    };
+
+    const handleSubscribeReservedUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
+        const UID = cache.setupData?.session.UID;
+        if (!UID) {
+            throw new Error('Missing session');
+        }
+
+        const [subscription] = await Promise.all([
+            handleSubscribeUser({
+                api: getUIDApi(UID, silentApi),
+                subscriptionData: cache.subscriptionData,
+                productParam,
+                telemetryContext,
+                ...getPaymentTelemetry(cache),
+            }),
+            wait(3500),
+        ]);
+
+        const result: SignupCacheResult = { ...cache, subscription };
+        measureSignupFinish(result);
+
+        return result;
     };
 
     if (error) {
@@ -645,6 +746,96 @@ const SingleSignupContainer = ({
         await onLogin(session);
     };
 
+    const handleSignupComplete = async (newCache: SignupCacheResult) => {
+        const gotoB2bSetup = isB2bPlan && signupParameters.orgName;
+        if (gotoB2bSetup) {
+            setModelDiff({ cache: newCache, step: Steps.SetupOrg });
+        } else {
+            setModelDiff({ cache: newCache });
+            await done(newCache);
+        }
+    };
+
+    const handleSetup = async () => {
+        if (!cache || cache.type !== 'signup') {
+            throw new Error('Missing cache');
+        }
+        const subscriptionMetricsData = getSubscriptionMetricsData(cache.subscriptionData);
+        // The password of a reserved Bitcoin account was already picked, the signup completes once subscribed
+        let reservedUserCache: SignupCacheResult | undefined;
+        try {
+            /**
+             * Stop the metrics batching process. This prevents a race condition where
+             * handleSetupUser sets an auth cookie before the metrics batch request
+             */
+            metrics.stopBatchingProcess();
+
+            if (cache.type === 'signup') {
+                if (model.signupTokenMode) {
+                    reservedUserCache = await handleSubscribeReservedUser(cache);
+                    setModelDiff({ cache: reservedUserCache });
+                } else {
+                    const result = await handleSetupNewUser(cache);
+                    setModelDiff({
+                        cache: result,
+                        step: Steps.Custom,
+                    });
+                }
+
+                metrics.core_vpn_single_signup_step2_setup_3_total.increment({
+                    status: 'success',
+                    ...subscriptionMetricsData,
+                    flow: isB2bPlan ? 'b2b' : 'b2c',
+                });
+            }
+
+            sendSignupAccountCreationTelemetry({
+                planIDs: cache.subscriptionData.planIDs,
+                flowId: 'single-page-signup-vpn',
+                productIntent: toApp,
+                currency: cache.subscriptionData.currency,
+                cycle: cache.subscriptionData.cycle,
+                signupType: cache.accountData.signupType,
+                amount: cache.subscriptionData.checkResult.AmountDue,
+            });
+        } catch (error: any) {
+            observeApiError(error, (status) =>
+                metrics.core_vpn_single_signup_step2_setup_3_total.increment({
+                    status,
+                    ...subscriptionMetricsData,
+                    flow: isB2bPlan ? 'b2b' : 'b2c',
+                })
+            );
+
+            if (error?.config?.url?.endsWith?.('keys/setup')) {
+                captureMessage(`Signup setup failure`);
+            }
+
+            // The Bitcoin transaction is already confirmed and its token kept in the cache, the form can't pay
+            // it again, so the subscription is retried from here
+            if (model.signupTokenMode && cache.subscriptionData.type === 'btc') {
+                setSetupError(getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`);
+                return;
+            }
+
+            handleError(error);
+            setModelDiff({
+                // A reserved Bitcoin account already exists, keep it so the payment can be retried
+                cache: model.signupTokenMode ? cache : undefined,
+                step: Steps.Account,
+            });
+        } finally {
+            /**
+             * Batch process can now resume since the auth cookie will have been set
+             */
+            metrics.startBatchingProcess();
+        }
+
+        if (reservedUserCache) {
+            await handleSignupComplete(reservedUserCache).catch(handleError);
+        }
+    };
+
     return (
         <>
             <link rel="prefetch" href={onboardingVPNWelcome} as="image" />
@@ -664,6 +855,18 @@ const SingleSignupContainer = ({
                     setModel={setModel}
                     measure={measure}
                     onComplete={async (data) => {
+                        if (data.type === 'existing') {
+                            if (model.cache?.type !== 'signup') {
+                                throw new Error('Missing cache');
+                            }
+                            setModelDiff({
+                                subscriptionData: data.subscriptionData,
+                                cache: { ...model.cache, subscriptionData: data.subscriptionData },
+                                step: Steps.Loading,
+                            });
+                            return;
+                        }
+
                         const { accountData, subscriptionData } = data;
                         const accountType =
                             accountData.signupType === SignupType.External ? 'external_account' : 'proton_account';
@@ -686,17 +889,27 @@ const SingleSignupContainer = ({
                             };
 
                             await onPreSubmit?.();
-                            const result = await handleCreateUser({
-                                cache,
-                                api: silentApi,
-                                hvMode: SignupHumanVerification.DEFERRED,
-                                visitorId: signupParameters.visitorId,
-                            });
-                            setModelDiff({
-                                subscriptionData: result.cache.subscriptionData,
-                                cache: result.cache,
-                                step: Steps.Loading,
-                            });
+                            if (data.type === 'signup-token') {
+                                await handleReserveUserForBitcoin(cache);
+                            } else {
+                                // A Bitcoin attempt created the user but failed to set it up, it's set up with this payment instead
+                                const createdCache =
+                                    model.cache?.type === 'signup' && model.cache.userData
+                                        ? { ...model.cache, subscriptionData }
+                                        : (
+                                              await handleCreateUser({
+                                                  cache,
+                                                  api: silentApi,
+                                                  hvMode: SignupHumanVerification.DEFERRED,
+                                                  visitorId: signupParameters.visitorId,
+                                              })
+                                          ).cache;
+                                setModelDiff({
+                                    subscriptionData: createdCache.subscriptionData,
+                                    cache: createdCache,
+                                    step: Steps.Loading,
+                                });
+                            }
 
                             metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
                                 status: 'success',
@@ -712,6 +925,10 @@ const SingleSignupContainer = ({
                                     flow: isB2bPlan ? 'b2b' : 'b2c',
                                 })
                             );
+                            // Let Step1 report the failed Bitcoin checkout, the error is already shown
+                            if (data.type === 'signup-token') {
+                                throw error;
+                            }
                         }
                     }}
                     onCurrencyChange={updatePlans}
@@ -730,65 +947,11 @@ const SingleSignupContainer = ({
                     isB2bPlan={isB2bPlan}
                     background={background}
                     img={<img src={onboardingVPNWelcome} alt={getWelcomeToText(VPN_APP_NAME)} />}
-                    onSetup={async () => {
-                        if (!cache || cache.type !== 'signup') {
-                            throw new Error('Missing cache');
-                        }
-                        const subscriptionMetricsData = getSubscriptionMetricsData(cache.subscriptionData);
-                        try {
-                            /**
-                             * Stop the metrics batching process. This prevents a race condition where
-                             * handleSetupUser sets an auth cookie before the metrics batch request
-                             */
-                            metrics.stopBatchingProcess();
-
-                            if (cache.type === 'signup') {
-                                const result = await handleSetupNewUser(cache);
-                                setModelDiff({
-                                    cache: result,
-                                    step: Steps.Custom,
-                                });
-
-                                metrics.core_vpn_single_signup_step2_setup_3_total.increment({
-                                    status: 'success',
-                                    ...subscriptionMetricsData,
-                                    flow: isB2bPlan ? 'b2b' : 'b2c',
-                                });
-                            }
-
-                            sendSignupAccountCreationTelemetry({
-                                planIDs: cache.subscriptionData.planIDs,
-                                flowId: 'single-page-signup-vpn',
-                                productIntent: toApp,
-                                currency: cache.subscriptionData.currency,
-                                cycle: cache.subscriptionData.cycle,
-                                signupType: cache.accountData.signupType,
-                                amount: cache.subscriptionData.checkResult.AmountDue,
-                            });
-                        } catch (error: any) {
-                            observeApiError(error, (status) =>
-                                metrics.core_vpn_single_signup_step2_setup_3_total.increment({
-                                    status,
-                                    ...subscriptionMetricsData,
-                                    flow: isB2bPlan ? 'b2b' : 'b2c',
-                                })
-                            );
-
-                            if (error?.config?.url?.endsWith?.('keys/setup')) {
-                                captureMessage(`Signup setup failure`);
-                            }
-
-                            handleError(error);
-                            setModelDiff({
-                                cache: undefined,
-                                step: Steps.Account,
-                            });
-                        } finally {
-                            /**
-                             * Batch process can now resume since the auth cookie will have been set
-                             */
-                            metrics.startBatchingProcess();
-                        }
+                    onSetup={handleSetup}
+                    error={setupError}
+                    onRetry={() => {
+                        setSetupError(undefined);
+                        handleSetup().catch(noop);
                     }}
                 />
             )}
@@ -831,13 +994,24 @@ const SingleSignupContainer = ({
                             flow: isB2bPlan ? 'b2b' : 'b2c',
                         });
 
-                        const gotoB2bSetup = isB2bPlan && signupParameters.orgName;
-                        if (gotoB2bSetup) {
-                            setModelDiff({ cache: newCache, step: Steps.SetupOrg });
-                        } else {
-                            setModelDiff({ cache: newCache, step: Steps.Custom });
-                            await done(newCache);
+                        if (newCache?.type !== 'signup') {
+                            throw new Error('Missing cache');
                         }
+
+                        // A reserved Bitcoin account goes back to the checkout to get the deposit address
+                        if (model.signupTokenMode) {
+                            setModelDiff({
+                                cache: newCache,
+                                session: {
+                                    ...getSessionDataFromSignup(newCache),
+                                    defaultPaymentMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+                                },
+                                step: Steps.Account,
+                            });
+                            return;
+                        }
+
+                        await handleSignupComplete(newCache);
                     }}
                     measure={measure}
                 />

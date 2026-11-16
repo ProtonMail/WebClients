@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button/Button';
 import metrics from '@proton/metrics/metricsInstance';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import isTruthy from '@proton/utils/isTruthy';
@@ -16,6 +17,8 @@ import Layout from './Layout';
 
 const Step2 = ({
     onSetup,
+    onRetry,
+    error,
     product,
     img,
     isB2bPlan,
@@ -23,6 +26,9 @@ const Step2 = ({
     hasPayment,
 }: {
     onSetup: () => Promise<void>;
+    onRetry?: () => void;
+    /** Message of a failure that can be retried. */
+    error?: string;
     product: string;
     img: ReactNode;
     isB2bPlan: boolean;
@@ -57,9 +63,20 @@ const Step2 = ({
                     </div>
                     <div className="pb-4 text-center m-auto w-full">{img}</div>
                     <div className="text-center pt-7 md:pt-0" role="alert">
-                        <div className="inline-block w-7/10">
-                            <FakeLoadingTextStepper steps={steps} />
-                        </div>
+                        {error ? (
+                            <div className="inline-block w-7/10">
+                                <p className="mt-0 mb-2">
+                                    {c('Info')
+                                        .t`Your account was created, but we couldn't finish setting up your plan.`}
+                                </p>
+                                <p className="mt-0 mb-4 color-weak">{error}</p>
+                                <Button color="norm" onClick={onRetry}>{c('Action').t`Try again`}</Button>
+                            </div>
+                        ) : (
+                            <div className="inline-block w-7/10">
+                                <FakeLoadingTextStepper steps={steps} />
+                            </div>
+                        )}
                     </div>
                 </Content>
             </Main>

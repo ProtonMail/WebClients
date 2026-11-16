@@ -1691,18 +1691,27 @@ const SingleSignupContainerV2 = ({
                             };
 
                             if (data.type === 'signup-token') {
-                                const tmpCache = {
-                                    ...cache,
-                                    subscriptionData: getFreeSubscriptionData(subscriptionData),
-                                };
-                                const userCreationResult = await handleCreateUser({
-                                    invite: signupParameters.invite,
-                                    visitorId: signupParameters.visitorId,
-                                    cache: tmpCache,
-                                    api: silentApi,
-                                    hvMode: SignupHumanVerification.DEFERRED,
-                                });
-                                const setupCache = await handleSetupNewUser(userCreationResult.cache);
+                                const userCreationCache = await (async () => {
+                                    // A previous attempt created the user but failed to set it up, only the setup is retried
+                                    if (model.cache?.type === 'signup' && model.cache.userData) {
+                                        return model.cache;
+                                    }
+                                    const tmpCache = {
+                                        ...cache,
+                                        subscriptionData: getFreeSubscriptionData(subscriptionData),
+                                    };
+                                    const userCreationResult = await handleCreateUser({
+                                        invite: signupParameters.invite,
+                                        visitorId: signupParameters.visitorId,
+                                        cache: tmpCache,
+                                        api: silentApi,
+                                        hvMode: SignupHumanVerification.DEFERRED,
+                                    });
+                                    // Keep the created user, with its password, so a failed setup can be retried
+                                    setModelDiff({ cache: userCreationResult.cache });
+                                    return userCreationResult.cache;
+                                })();
+                                const setupCache = await handleSetupNewUser(userCreationCache);
                                 const cacheWithOriginalSubscription = {
                                     ...setupCache,
                                     subscriptionData: cache.subscriptionData,
@@ -1718,23 +1727,29 @@ const SingleSignupContainerV2 = ({
                                     signupTokenMode: true,
                                 });
                             } else {
-                                const result = await handleCreateUser({
-                                    invite: signupParameters.invite,
-                                    visitorId: signupParameters.visitorId,
-                                    cache,
-                                    api: silentApi,
-                                    hvMode:
-                                        // Forcing email address ownership verification for org provisioning links, Pass, Drive, and Lumo
-                                        model.provisionedDeal ||
-                                        product === APPS.PROTONPASS ||
-                                        product === APPS.PROTONDRIVE ||
-                                        product === APPS.PROTONLUMO
-                                            ? SignupHumanVerification.IMMEDIATE
-                                            : SignupHumanVerification.DEFERRED,
-                                });
+                                // A Bitcoin attempt created the user but failed to set it up, it's set up with this payment instead
+                                const createdCache =
+                                    model.cache?.type === 'signup' && model.cache.userData
+                                        ? { ...model.cache, subscriptionData }
+                                        : (
+                                              await handleCreateUser({
+                                                  invite: signupParameters.invite,
+                                                  visitorId: signupParameters.visitorId,
+                                                  cache,
+                                                  api: silentApi,
+                                                  hvMode:
+                                                      // Forcing email address ownership verification for org provisioning links, Pass, Drive, and Lumo
+                                                      model.provisionedDeal ||
+                                                      product === APPS.PROTONPASS ||
+                                                      product === APPS.PROTONDRIVE ||
+                                                      product === APPS.PROTONLUMO
+                                                          ? SignupHumanVerification.IMMEDIATE
+                                                          : SignupHumanVerification.DEFERRED,
+                                              })
+                                          ).cache;
                                 setModelDiff({
-                                    subscriptionData: result.cache.subscriptionData,
-                                    cache: result.cache,
+                                    subscriptionData: createdCache.subscriptionData,
+                                    cache: createdCache,
                                     step: Steps.Loading,
                                 });
                             }

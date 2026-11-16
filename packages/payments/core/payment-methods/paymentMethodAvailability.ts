@@ -113,6 +113,7 @@ const bitcoinEnabledFlows: PaymentMethodFlow[] = [
     'signup-pass',
     'signup-pass-upgrade',
     'signup-wallet',
+    'signup-vpn',
     'credit',
     'subscription',
 ];
