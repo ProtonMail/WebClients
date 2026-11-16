@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { supportsScreenSharing } from '@livekit/components-core';
 import { useRoomContext } from '@livekit/components-react';
@@ -13,7 +13,7 @@ import { showPermissionsModal } from '@proton/meet/store/slices/deviceManagement
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { updateParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
-import { isChrome, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isChrome, isFirefox, isMac, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
@@ -32,6 +32,16 @@ const useSupportsRestrictOwnAudio = () => {
     const minimumElectronVersion = variant.name === 'version' ? variant.payload?.value?.trim() : undefined;
 
     return supportsRestrictOwnAudio(minimumElectronVersion);
+};
+
+export type ScreenShareError = 'screenRecordingOff' | 'nothingToShare' | 'failed';
+
+const getScreenShareError = (error: any): ScreenShareError => {
+    if (error?.name !== 'NotFoundError') {
+        return 'failed';
+    }
+    // Firefox on macOS rejects with a NotFoundError when Screen Recording is off for Firefox in System Settings.
+    return isFirefox() && isMac() ? 'screenRecordingOff' : 'nothingToShare';
 };
 
 export function useCurrentScreenShare({
@@ -56,6 +66,12 @@ export function useCurrentScreenShare({
 
     const screenShareTrack = useScreenShareTrack();
 
+    const [screenShareError, setScreenShareError] = useState<ScreenShareError | null>(null);
+
+    const dismissScreenShareError = useStableCallback(() => {
+        setScreenShareError(null);
+    });
+
     const sendScreenShareToggled = (state: 'on' | 'off', outcome: 'success' | 'failed' | 'cancelled') =>
         sendMeetActionsEvent(TelemetryMeetActionsEvents.screen_share_toggled, {
             state,
@@ -76,6 +92,7 @@ export function useCurrentScreenShare({
     });
 
     const startScreenShare = useStableCallback(async () => {
+        setScreenShareError(null);
         const start = performance.now();
         try {
             const isNotSupported = isMobile() || !supportsScreenSharing();
@@ -141,6 +158,8 @@ export function useCurrentScreenShare({
                 err.message === 'Permission denied by user' ||
                 err.message ===
                     'The request is not allowed by the user agent or the platform in the current context.' ||
+                err.message ===
+                    'The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.' ||
                 // The desktop app declines with an AbortError when the user closes or cancels its picker.
                 ((err.message === 'Could not start video source' || err.name === 'AbortError') && isElectronApp)
             ) {
@@ -157,22 +176,7 @@ export function useCurrentScreenShare({
                 return;
             }
 
-            if (
-                err.message === 'The object can not be found here.' ||
-                err.message ===
-                    'The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.'
-            ) {
-                notifications.createNotification({
-                    type: 'error',
-                    text: c('Error').t`Please allow screen sharing in your system permissions, then try again`,
-                });
-            } else {
-                notifications.createNotification({
-                    type: 'error',
-                    text: c('Error').t`Failed to start screen share`,
-                });
-            }
-
+            setScreenShareError(getScreenShareError(err));
             sendScreenShareToggled('on', 'failed');
             reportMeetError(`useCurrentScreenShare.startScreenShare: ${err.message}`, err);
         }
@@ -227,5 +231,7 @@ export function useCurrentScreenShare({
     return {
         stopScreenShare,
         startScreenShare,
+        screenShareError,
+        dismissScreenShareError,
     };
 }
