@@ -72,7 +72,7 @@ export function getIsEligible({
         offerSubscription.isTrial() ||
         offerSubscription.isManagedExternally() ||
         offerSubscription.hasVisionary() ||
-        !isSubscriptionCheckAllowed(multiSubscriptionContext, subscription, offerConfig)
+        !isSubscriptionCheckAllowed(multiSubscriptionContext, offerConfig)
     ) {
         return false;
     }

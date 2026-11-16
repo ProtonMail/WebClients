@@ -4,6 +4,7 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { FeatureCode } from '@proton/features/interface';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
@@ -20,12 +21,16 @@ const getCheckCalls = () => apiMock.mock.calls.map(([config]) => config).filter(
 
 const getMailSubscription = (cycle: CYCLE) => buildSubscription({ planName: PLANS.MAIL, cycle, currency: 'EUR' });
 
-const getWrapper = (cycle: CYCLE, delinquent = UNPAID_STATE.NOT_UNPAID) =>
+const getWrapper = (
+    cycle: CYCLE,
+    delinquent = UNPAID_STATE.NOT_UNPAID,
+    storeSubscription: Subscription = getMailSubscription(cycle)
+) =>
     getStoreWrapper({
         preloadedState: {
             user: getModelState(buildUser({ Currency: 'EUR', Delinquent: delinquent, isDelinquent: !!delinquent })),
             plans: getModelState({ plans: getTestPlans('EUR'), freePlan: FREE_PLAN }),
-            subscription: getSubscriptionState(getMailSubscription(cycle)),
+            subscription: getSubscriptionState(storeSubscription),
         },
     }).Wrapper;
 
@@ -84,7 +89,7 @@ describe('useCancellationOffer', () => {
         expect(result.current.checkout?.withDiscountPerCycle).toBe(4788);
     });
 
-    it('checks the plan, cycle and currency of the given subscription, not of the one in the store', async () => {
+    it('checks the plan, cycle and currency of the given subscription, not of the first one in the store', async () => {
         const bundleSubscription = buildSubscription({ planName: PLANS.BUNDLE, cycle: CYCLE.YEARLY, currency: 'EUR' });
         addApiMock(checkUrl, () => ({
             Amount: 100,
@@ -96,7 +101,10 @@ describe('useCancellationOffer', () => {
         }));
 
         const { result } = renderHook(() => useCancellationOffer(bundleSubscription), {
-            wrapper: getWrapper(CYCLE.MONTHLY),
+            wrapper: getWrapper(CYCLE.MONTHLY, UNPAID_STATE.NOT_UNPAID, {
+                ...getMailSubscription(CYCLE.MONTHLY),
+                SecondarySubscriptions: [bundleSubscription],
+            }),
         });
 
         await waitFor(() => expect(result.current.offerIsAvailable).toBe(true));

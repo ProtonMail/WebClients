@@ -772,7 +772,6 @@ const SubscriptionContainerInner = ({
             .filter(
                 (cycle) =>
                     !isSubscriptionCheckForbidden(multiSubscriptionContext, {
-                        editedSubscription: subscription,
                         planIDs: newModel.planIDs,
                         cycle,
                     })
@@ -796,7 +795,6 @@ const SubscriptionContainerInner = ({
 
         const hasForbiddenCheck = allAllowedCycles.some((cycle) =>
             isSubscriptionCheckForbidden(multiSubscriptionContext, {
-                editedSubscription: subscription,
                 planIDs: newModel.planIDs,
                 cycle,
             })

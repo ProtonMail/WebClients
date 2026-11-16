@@ -40,7 +40,6 @@ const SubscriptionCheckoutPlanMoreInformation = ({ checkoutView }: { checkoutVie
     }, [Coupon, cycle]);
 
     const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(multiSubscriptionContext, {
-        editedSubscription: subscription,
         planIDs,
         cycle,
     });

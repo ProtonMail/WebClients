@@ -103,7 +103,6 @@ const SubscriptionCheckoutPaymentSection = ({
     const isFreePlanSelected = !isPaidPlanSelected;
     const isFreeUserWithFreePlanSelected = user.isFree && isFreePlanSelected;
     const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(multiSubscriptionContext, {
-        editedSubscription: subscription,
         planIDs,
         cycle,
     });

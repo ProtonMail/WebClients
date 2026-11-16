@@ -28,7 +28,7 @@ const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => fea
 const useOfferConfig = () => {
     // Preload FF to avoid single API requests
     useFeatures([FeatureCode.Offers, ...OFFERS_FEATURE_FLAGS]);
-    const [subscription, loadingSubscription] = useSubscription();
+    const [, loadingSubscription] = useSubscription();
     const multiSubscriptionContext = useMultiSubscriptionContext();
 
     const blackFriday2026Operations = useBlackFriday2026();
@@ -62,7 +62,6 @@ const useOfferConfig = () => {
     const shouldPrefetch =
         config?.deals.some((deal) => {
             return isDangerouslyAllowedSubscriptionEstimation(multiSubscriptionContext, {
-                editedSubscription: subscription,
                 planIDs: deal.planIDs,
                 cycle: deal.cycle,
                 coupon: deal.couponCode,

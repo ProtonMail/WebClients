@@ -445,7 +445,6 @@ export const usePaymentsApiWithCheckFallback = () => {
         const { Cycle, Currency, Plans } = data;
 
         const checkForbidden = isSubscriptionCheckForbidden(multiSubscriptionContext, {
-            editedSubscription: subscription,
             planIDs: Plans,
             cycle: Cycle,
         });

@@ -56,7 +56,6 @@ const SubscriptionCheckoutPlanSection = ({
     const { currency, planIDs, cycle } = checkoutUi;
     const { APP_NAME } = useConfig();
     const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(multiSubscriptionContext, {
-        editedSubscription: subscription,
         planIDs,
         cycle,
     });

@@ -58,7 +58,6 @@ export const useCancellationOffer = (subscription: Subscription): OfferCheckResu
         const planIDs = { [planName]: 1 };
 
         const isAllowed = isDangerouslyAllowedSubscriptionEstimation(multiSubscriptionContext, {
-            editedSubscription: subscription,
             planIDs,
             cycle,
             coupon,
