@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { processToolFileResult } from './tool-files';
 
 const file = {
@@ -23,7 +25,7 @@ test('processes file attachments and preserves accompanying text and errors', as
         isError: true,
     });
     const screenshot = { ...file, mimeType: 'image/png', name: 'screenshot', binary: true };
-    const processor = jest.fn(async (source) => ({
+    const processor = vi.fn(async (source) => ({
         content: 'Image read',
         images: [
             {
@@ -64,7 +66,7 @@ test('leaves tool text untouched even when it resembles a native envelope', asyn
     const result = {
         content: JSON.stringify({ type: 'lumo_tool_result', text: 'processed', images: [], isError: false }),
     };
-    const processor = jest.fn();
+    const processor = vi.fn();
     expect((await processToolFileResult(result, processor)).content).toBe(result.content);
     expect(processor).not.toHaveBeenCalled();
 });

@@ -1,17 +1,19 @@
+import { vi } from 'vitest';
+
 import { GenerationInterruptedError } from './recovery';
 import { makeRecoverableStream } from './recovery-stream';
 
 afterEach(() => {
-    jest.useRealTimers();
+    vi.useRealTimers();
 });
 
 it('interrupts an idle body read and cancels its source', async () => {
-    jest.useFakeTimers();
-    const cancel = jest.fn();
+    vi.useFakeTimers();
+    const cancel = vi.fn();
     const reader = makeRecoverableStream(new ReadableStream({ cancel }), 1000).getReader();
     const result = reader.read();
     const assertion = expect(result).rejects.toBeInstanceOf(GenerationInterruptedError);
-    await jest.advanceTimersByTimeAsync(1000);
+    await vi.advanceTimersByTimeAsync(1000);
     await assertion;
     expect(cancel).toHaveBeenCalledTimes(1);
 });
@@ -31,7 +33,7 @@ it('preserves byte content and EOF', async () => {
 });
 
 it('does not apply the idle deadline while the consumer applies backpressure', async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     const bytes = new TextEncoder().encode('buffered bytes');
     const reader = makeRecoverableStream(
         new ReadableStream({
@@ -43,7 +45,7 @@ it('does not apply the idle deadline while the consumer applies backpressure', a
         1000
     ).getReader();
     await Promise.resolve();
-    await jest.advanceTimersByTimeAsync(2000);
+    await vi.advanceTimersByTimeAsync(2000);
     expect(await reader.read()).toEqual({ done: false, value: bytes });
     expect(await reader.read()).toEqual({ done: true, value: undefined });
 });

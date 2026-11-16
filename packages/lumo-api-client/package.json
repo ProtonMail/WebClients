@@ -51,8 +51,8 @@
         "build": "tsc",
         "check:types": "tsc --noEmit --checkers 1",
         "lint": "oxlint --quiet",
-        "test": "jest",
-        "test:ci": "jest --runInBand --ci --logHeapUsage"
+        "test": "vitest",
+        "test:ci": "pnpm run test --run"
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
@@ -60,18 +60,17 @@
         "uuid": "catalog:"
     },
     "devDependencies": {
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
-        "@types/jest": "catalog:",
+        "@proton/vitest-config": "workspace:^",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "react": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     },
     "peerDependencies": {
         "react": "^18.3.1"

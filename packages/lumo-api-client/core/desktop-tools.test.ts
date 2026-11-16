@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { createDesktopClientToolExecutor, supportsDesktopScheduleReadOnly } from './desktop-tools';
 import type { DesktopExternalTools, ScheduleExecutionInput } from './desktop-tools';
 
@@ -6,13 +8,13 @@ let bridge: DesktopExternalTools;
 
 beforeEach(() => {
     bridge = {
-        registerScheduleExecutionContext: jest.fn(async () => ({ connectionId: 'connection', runId: 'run' })),
+        registerScheduleExecutionContext: vi.fn(async () => ({ connectionId: 'connection', runId: 'run' })),
         getTools: () => [],
-        executeToolCalls: jest.fn(async () => []),
+        executeToolCalls: vi.fn(async () => []),
     };
     Object.defineProperty(globalThis, 'window', {
         configurable: true,
-        value: { __TAURI__: { external_tools: bridge }, addEventListener: jest.fn() },
+        value: { __TAURI__: { external_tools: bridge }, addEventListener: vi.fn() },
     });
 });
 afterAll(() => {
