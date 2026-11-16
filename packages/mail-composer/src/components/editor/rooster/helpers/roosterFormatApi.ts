@@ -88,8 +88,25 @@ export const loadRoosterV8FormatApi = async (): Promise<RoosterFormatApi> => {
     };
 };
 
+/**
+ * roosterjs 9 only formats the selection, while roosterjs 8 selects the start of the content when nothing is selected.
+ * The composer sets the default direction right after setting the content, before anything is selected.
+ */
+const selectStartWhenNothingSelected = (editor: EditorAdapter) => {
+    const [firstBlock] = editor.getDOMHelper().queryElements(':scope > *');
+    if (editor.getDOMSelection() || !firstBlock) {
+        return;
+    }
+    const range = editor.getDocument().createRange();
+    range.setStart(firstBlock, 0);
+    editor.setDOMSelection({ type: 'range', range, isReverted: false });
+};
+
 export const loadRoosterV9FormatApi = async (): Promise<RoosterFormatApi> => {
-    const rooster = await import(/* webpackChunkName: "roosterjs-v9" */ 'roosterjs-content-model-api');
+    const [rooster, { unquoteSelectedBlocks }] = await Promise.all([
+        import(/* webpackChunkName: "roosterjs-v9" */ 'roosterjs-content-model-api'),
+        import(/* webpackChunkName: "roosterjs-v9" */ './unquoteSelectedBlocks'),
+    ]);
     const format =
         (apply: (editor: EditorAdapter) => void): Format =>
         (editor) =>
@@ -107,7 +124,11 @@ export const loadRoosterV9FormatApi = async (): Promise<RoosterFormatApi> => {
         toggleStrikethrough: format(rooster.toggleStrikethrough),
         toggleBullet: format(rooster.toggleBullet),
         toggleNumbering: format(rooster.toggleNumbering),
-        toggleBlockQuote: format(rooster.toggleBlockQuote),
+        toggleBlockQuote: format((editor) => {
+            if (!unquoteSelectedBlocks(editor)) {
+                rooster.toggleBlockQuote(editor);
+            }
+        }),
         clearFormat: format(rooster.clearFormat),
         removeLink: format(rooster.removeLink),
         setFontName: formatWith(rooster.setFontName),
@@ -115,9 +136,10 @@ export const loadRoosterV9FormatApi = async (): Promise<RoosterFormatApi> => {
         setTextColor: formatWith(rooster.setTextColor),
         setBackgroundColor: formatWith(rooster.setBackgroundColor),
         setAlignment: formatWith(rooster.setAlignment),
-        setDirection: formatWith((editor, direction: DIRECTION) =>
-            rooster.setDirection(editor, direction === DIRECTION.RIGHT_TO_LEFT ? 'rtl' : 'ltr')
-        ),
+        setDirection: formatWith((editor, direction: DIRECTION) => {
+            selectStartWhenNothingSelected(editor);
+            rooster.setDirection(editor, direction === DIRECTION.RIGHT_TO_LEFT ? 'rtl' : 'ltr');
+        }),
         insertImage: formatWith(rooster.insertImage),
         createLink: (editor, link, altText, displayText) =>
             rooster.insertLink(editor as EditorAdapter, link, altText, displayText),
