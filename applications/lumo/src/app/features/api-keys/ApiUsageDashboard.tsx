@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -22,6 +22,7 @@ import type { Currency } from '@proton/payments/core/interface';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useDebugApiCreditBalance, useDebugApiEmptyUsage } from '../../services/apiUsageDebugStore';
+import { API_TOKEN_PRICING_MODEL_IDS, type ApiTokenPricingModelId } from '../api-docs/apiTokenPricingUsd';
 import { ApiBalanceSettingsModal, getAutoTopUpSummary } from './ApiBalanceSettingsModal';
 import { ApiPayAsYouGoCard } from './ApiPayAsYouGoCard';
 import { ApiTokenUsageChart } from './ApiTokenUsageChart';
@@ -35,16 +36,17 @@ import {
     toCurrencyBaseUnits,
 } from './apiKeysHelpers';
 import {
-    type ApiModelUsage,
     type ApiUsageDay,
-    type ApiUsageModel,
-    MOCK_API_CREDIT_RATES,
-    MOCK_API_USAGE_MEMBERS,
-    getMockApiUsageDays,
-} from './apiUsageMockData';
+    type UsagePeriod,
+    type UsageRow,
+    getApiModelUsage,
+    getApiUsageDays,
+    getPeriodDates,
+    sumUsage,
+} from './apiUsage';
+import { MOCK_API_USAGE_MEMBERS } from './apiUsageMockData';
+import { useApiUsageSummary } from './useApiUsageSummary';
 import { useLumoCredits } from './useLumoCredits';
-
-type UsagePeriod = 'last-7-days' | 'last-30-days' | 'previous-30-days' | 'last-90-days';
 
 const escapeCsvValue = (value: string | number) => `"${String(value).replaceAll('"', '""')}"`;
 
@@ -62,15 +64,6 @@ const exportUsageCsv = (days: ApiUsageDay[], currency: Currency) => {
     URL.revokeObjectURL(url);
 };
 
-const getModelUsageCost = (usage: ApiModelUsage) => {
-    const rates = MOCK_API_CREDIT_RATES[usage.model];
-    return (
-        (usage.inputTokens / 1_000_000) * rates.input +
-        (usage.outputTokens / 1_000_000) * rates.output +
-        (usage.cacheInputTokens / 1_000_000) * (rates.cacheInput ?? 0)
-    );
-};
-
 const ApiAccessToggle = ({
     id,
     enabled,
@@ -83,56 +76,27 @@ const ApiAccessToggle = ({
     onChange: () => void;
 }) => <Toggle id={id} checked={enabled} aria-label={label} onChange={onChange} className="shrink-0" />;
 
-const ApiUsageOverviewContent = ({ days, currency }: { days: ApiUsageDay[]; currency: Currency }) => {
-    const [selectedModel, setSelectedModel] = useState<'all' | ApiUsageModel>('all');
-    const totals = useMemo(
-        () =>
-            days.reduce(
-                (result, day) => ({
-                    inputTokens: result.inputTokens + day.inputTokens,
-                    outputTokens: result.outputTokens + day.outputTokens,
-                    cacheInputTokens: result.cacheInputTokens + day.cacheInputTokens,
-                }),
-                { inputTokens: 0, outputTokens: 0, cacheInputTokens: 0 }
-            ),
-        [days]
-    );
-    const modelUsage = (['lumo-lite', 'lumo-max'] as const).map((model) => {
-        const modelShare = model === 'lumo-lite' ? 0.65 : 0.35;
-        const usage: ApiModelUsage = {
-            model,
-            inputTokens: Math.round(totals.inputTokens * modelShare),
-            outputTokens: Math.round(totals.outputTokens * modelShare),
-            cacheInputTokens: Math.round(totals.cacheInputTokens * modelShare),
-        };
-
-        return { ...usage, cost: getModelUsageCost(usage) };
-    });
-    const estimatedCost = modelUsage.reduce((sum, usage) => sum + usage.cost, 0);
-    const chartDays = useMemo(() => {
-        if (selectedModel === 'all') {
-            return days;
-        }
-
-        const modelShare = selectedModel === 'lumo-lite' ? 0.65 : 0.35;
-        return days.map((day) => {
-            const usage: ApiModelUsage = {
-                model: selectedModel,
-                inputTokens: Math.round(day.inputTokens * modelShare),
-                outputTokens: Math.round(day.outputTokens * modelShare),
-                cacheInputTokens: Math.round(day.cacheInputTokens * modelShare),
-            };
-
-            return { ...day, ...usage, cost: getModelUsageCost(usage) };
-        });
-    }, [days, selectedModel]);
+const ApiUsageOverviewContent = ({
+    rows,
+    dates,
+    currency,
+}: {
+    rows: UsageRow[];
+    dates: string[];
+    currency: Currency;
+}) => {
+    const [selectedModel, setSelectedModel] = useState<'all' | ApiTokenPricingModelId>('all');
+    const totals = sumUsage(rows);
+    const modelUsage = API_TOKEN_PRICING_MODEL_IDS.map((model) => getApiModelUsage(rows, model));
+    const chartRows = selectedModel === 'all' ? rows : rows.filter((row) => row.Model === selectedModel);
+    const chartDays = getApiUsageDays(chartRows, dates);
     return (
         <div className="api-usage-overview-content flex flex-column gap-7">
             <div className="api-usage-metrics">
                 <ApiUsageMetricCard
                     icon="DollarSign"
                     label={c('collider_2025: Label').t`Balance used`}
-                    value={formatApiCurrency(estimatedCost, currency)}
+                    value={formatApiCurrency(totals.cost, currency)}
                     hint={c('collider_2025: Info').t`Estimated API spend`}
                 />
                 <ApiUsageMetricCard
@@ -214,8 +178,30 @@ const ApiUsageOverviewContent = ({ days, currency }: { days: ApiUsageDay[]; curr
     );
 };
 
-const ApiUsageOverview = ({ days, currency }: { days: ApiUsageDay[]; currency: Currency }) => {
-    if (days.length === 0) {
+const ApiUsageOverview = ({
+    rows,
+    dates,
+    hasAnyUsage,
+    isLoading,
+    error,
+    currency,
+}: {
+    rows: UsageRow[];
+    dates: string[];
+    hasAnyUsage: boolean;
+    isLoading: boolean;
+    error: boolean;
+    currency: Currency;
+}) => {
+    if (isLoading) {
+        return <p className="m-0 text-sm color-weak">{c('collider_2025: Info').t`Loading usage…`}</p>;
+    }
+
+    if (error) {
+        return <p className="m-0 text-sm color-weak">{c('collider_2025: Error').t`Could not load usage.`}</p>;
+    }
+
+    if (!hasAnyUsage) {
         return (
             <div className="api-usage-empty flex flex-column items-center justify-center text-center rounded-lg border border-weak bg-weak">
                 <span className="api-usage-empty__icon flex items-center justify-center rounded-full mb-3">
@@ -229,7 +215,7 @@ const ApiUsageOverview = ({ days, currency }: { days: ApiUsageDay[]; currency: C
         );
     }
 
-    return <ApiUsageOverviewContent days={days} currency={currency} />;
+    return <ApiUsageOverviewContent rows={rows} dates={dates} currency={currency} />;
 };
 
 const ApiUsageMembers = ({
@@ -661,20 +647,11 @@ export const ApiUsageDashboard = ({
     const displayedCreditBalance = creditBalanceOverride ?? lumoCredits.balance;
     const hasCredits = displayedCreditBalance !== undefined && displayedCreditBalance > 0;
     const [usagePeriod, setUsagePeriod] = useState<UsagePeriod>('last-30-days');
-    const mockUsageDays = useMemo(() => getMockApiUsageDays(90), []);
-    const allUsageDays = emptyUsageEnabled ? [] : mockUsageDays;
-    const usageDays = useMemo(() => {
-        if (usagePeriod === 'last-7-days') {
-            return allUsageDays.slice(-7);
-        }
-        if (usagePeriod === 'previous-30-days') {
-            return allUsageDays.slice(-60, -30);
-        }
-        if (usagePeriod === 'last-90-days') {
-            return allUsageDays;
-        }
-        return allUsageDays.slice(-30);
-    }, [allUsageDays, usagePeriod]);
+    const usageSummary = useApiUsageSummary(isOrgAdmin ? 'organization' : 'self');
+    const usageRows = emptyUsageEnabled ? [] : usageSummary.rows;
+    const periodDates = getPeriodDates(usageSummary.dates, usagePeriod);
+    const periodRows = usageRows.filter((row) => periodDates.includes(row.Date));
+    const usageDays = getApiUsageDays(periodRows, periodDates);
     const periodLabel = {
         'last-7-days': c('collider_2025: Date range').t`Last 7 days`,
         'last-30-days': c('collider_2025: Date range').t`Last 30 days`,
@@ -683,11 +660,11 @@ export const ApiUsageDashboard = ({
     }[usagePeriod];
     const sumTokens = (days: ApiUsageDay[]) =>
         days.reduce((total, day) => total + day.inputTokens + day.outputTokens, 0);
-    const baselineTokens = sumTokens(allUsageDays.slice(-30));
+    const recentUsageDays = getApiUsageDays(usageRows, getPeriodDates(usageSummary.dates, 'last-30-days'));
+    const baselineTokens = sumTokens(recentUsageDays);
     const usageScale = baselineTokens > 0 ? sumTokens(usageDays) / baselineTokens : 0;
-    const recentUsageDays = allUsageDays.slice(-30);
     const monthlySpend = recentUsageDays.reduce((total, day) => total + day.cost, 0);
-    const averageDailySpend = recentUsageDays.length > 0 ? monthlySpend / recentUsageDays.length : 0;
+    const averageDailySpend = isOrgMember || recentUsageDays.length === 0 ? 0 : monthlySpend / recentUsageDays.length;
 
     return (
         <section
@@ -725,7 +702,7 @@ export const ApiUsageDashboard = ({
                         <Button
                             color="weak"
                             className="flex flex-nowrap items-center gap-2 shrink-0"
-                            disabled={usageDays.length === 0}
+                            disabled={periodRows.length === 0}
                             onClick={() => exportUsageCsv(usageDays, Currency)}
                         >
                             <LumoIcon name="ArrowDownToLine" size={16} />
@@ -748,7 +725,14 @@ export const ApiUsageDashboard = ({
                         </SelectTwo>
                     </div>
                 </div>
-                <ApiUsageOverview days={usageDays} currency={Currency} />
+                <ApiUsageOverview
+                    rows={periodRows}
+                    hasAnyUsage={usageRows.length > 0}
+                    dates={periodDates}
+                    isLoading={usageSummary.isLoading}
+                    error={usageSummary.error}
+                    currency={Currency}
+                />
             </section>
 
             {isOrgAdmin && (

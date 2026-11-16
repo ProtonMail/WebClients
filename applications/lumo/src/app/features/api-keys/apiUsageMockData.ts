@@ -1,14 +1,4 @@
-import { API_TOKEN_PRICING_USD_PER_MILLION } from '../api-docs/apiTokenPricingUsd';
-
-export type ApiUsageDay = {
-    date: string;
-    inputTokens: number;
-    outputTokens: number;
-    cacheInputTokens: number;
-    cost: number;
-};
-
-export type ApiUsageModel = 'lumo-lite' | 'lumo-max';
+import type { ApiTokenPricingModelId } from '../api-docs/apiTokenPricingUsd';
 
 export type ApiUsageMember = {
     id: string;
@@ -19,89 +9,10 @@ export type ApiUsageMember = {
     cacheInputTokens: number;
     cost: number;
     modelUsage: Record<
-        ApiUsageModel,
+        ApiTokenPricingModelId,
         { inputTokens: number; outputTokens: number; cacheInputTokens: number; cost: number }
     >;
     apiAccess: boolean;
-};
-
-export type ApiModelUsage = {
-    model: ApiUsageModel;
-    inputTokens: number;
-    outputTokens: number;
-    cacheInputTokens: number;
-};
-
-const dailyUsage = [
-    [860_000, 390_000, 120_000],
-    [1_040_000, 470_000, 180_000],
-    [750_000, 330_000, 140_000],
-    [1_260_000, 570_000, 260_000],
-    [1_440_000, 650_000, 310_000],
-    [930_000, 420_000, 160_000],
-    [810_000, 360_000, 150_000],
-    [1_550_000, 710_000, 350_000],
-    [1_680_000, 770_000, 410_000],
-    [1_320_000, 590_000, 290_000],
-    [1_070_000, 480_000, 230_000],
-    [1_810_000, 840_000, 460_000],
-    [2_010_000, 920_000, 530_000],
-    [1_650_000, 750_000, 430_000],
-    [1_120_000, 510_000, 250_000],
-    [970_000, 440_000, 200_000],
-    [780_000, 350_000, 90_000],
-    [920_000, 410_000, 130_000],
-    [640_000, 290_000, 110_000],
-    [1_180_000, 520_000, 240_000],
-    [1_360_000, 620_000, 280_000],
-    [890_000, 430_000, 170_000],
-    [720_000, 310_000, 150_000],
-    [1_490_000, 680_000, 320_000],
-    [1_620_000, 740_000, 390_000],
-    [1_210_000, 550_000, 260_000],
-    [980_000, 450_000, 210_000],
-    [1_740_000, 810_000, 440_000],
-    [1_920_000, 890_000, 510_000],
-    [1_580_000, 720_000, 420_000],
-] as const;
-
-const toISODate = (date: Date) => date.toISOString().slice(0, 10);
-
-export const getMockApiUsageDays = (numberOfDays = 30): ApiUsageDay[] => {
-    const today = new Date();
-
-    return Array.from({ length: numberOfDays }, (_, index) => {
-        const patternIndex = (dailyUsage.length - numberOfDays + index) % dailyUsage.length;
-        const normalizedPatternIndex = patternIndex < 0 ? patternIndex + dailyUsage.length : patternIndex;
-        const [baseInputTokens, baseOutputTokens, baseCacheInputTokens] = dailyUsage[normalizedPatternIndex];
-        const cycle = Math.floor((numberOfDays - 1 - index) / dailyUsage.length);
-        const historicalScale = Math.max(0.72, 1 - cycle * 0.08);
-        const inputTokens = Math.round(baseInputTokens * historicalScale);
-        const outputTokens = Math.round(baseOutputTokens * historicalScale);
-        const cacheInputTokens = Math.round(baseCacheInputTokens * historicalScale);
-        const date = new Date(today);
-        date.setDate(today.getDate() - (numberOfDays - 1 - index));
-        const liteShare = 0.65;
-        const maxShare = 1 - liteShare;
-        const cost =
-            (inputTokens / 1_000_000) *
-                (MOCK_API_CREDIT_RATES['lumo-lite'].input * liteShare +
-                    MOCK_API_CREDIT_RATES['lumo-max'].input * maxShare) +
-            (outputTokens / 1_000_000) *
-                (MOCK_API_CREDIT_RATES['lumo-lite'].output * liteShare +
-                    MOCK_API_CREDIT_RATES['lumo-max'].output * maxShare) +
-            (cacheInputTokens / 1_000_000) *
-                ((MOCK_API_CREDIT_RATES['lumo-lite'].cacheInput ?? 0) * liteShare +
-                    (MOCK_API_CREDIT_RATES['lumo-max'].cacheInput ?? 0) * maxShare);
-
-        return {
-            date: toISODate(date),
-            inputTokens,
-            outputTokens,
-            cacheInputTokens,
-            cost,
-        };
-    });
 };
 
 export const MOCK_API_USAGE_MEMBERS: ApiUsageMember[] = [
@@ -202,9 +113,3 @@ export const MOCK_API_USAGE_MEMBERS: ApiUsageMember[] = [
         apiAccess: false,
     },
 ];
-
-/** Mock API credit deductions in USD per million tokens. */
-export const MOCK_API_CREDIT_RATES = API_TOKEN_PRICING_USD_PER_MILLION satisfies Record<
-    ApiUsageModel,
-    { input: number; output: number; cacheInput: number | null }
->;

@@ -13,6 +13,19 @@ jest.mock('@proton/account/paymentStatus/hooks');
 jest.mock('@proton/account/subscription/hooks');
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/app-context/useApi');
+jest.mock('./useApiUsageSummary', () => {
+    const dates = Array.from({ length: 90 }, (_, index) => `day-${index}`);
+    const fiveCreditsPerDay = dates.slice(-30).map((date) => ({
+        Date: date,
+        Model: 'lumo-lite',
+        ClientType: 'api',
+        InputTokens: 0,
+        OutputTokens: 0,
+        Calls: 0,
+        CostMicros: 5_000_000,
+    }));
+    return { useApiUsageSummary: () => ({ dates, rows: fiveCreditsPerDay, isLoading: false, error: false }) };
+});
 jest.mock('@proton/account/bootstrap', () => ({
     coreEventManagerV6: () => ({ subscribe: () => () => {}, start: () => {}, reset: () => {} }),
 }));

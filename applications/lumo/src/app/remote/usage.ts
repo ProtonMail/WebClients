@@ -1,17 +1,33 @@
-export interface UsageSummaryBreakdownRow {
+export interface UsageEntry {
+    ClientType: string;
+    Model: string;
+    InputTokens: number;
+    OutputTokens: number;
+    Calls: number;
+    CostMicros: number | null;
+}
+
+export interface UsageDay {
     Date: string;
-    TokensIn: number;
-    TokensInCached: number;
-    TokensGenerated: number;
-    ApiCalls: number;
+    Usage: UsageEntry[];
 }
 
 export interface UsageSummaryResponse {
     Code: number;
-    Breakdown: UsageSummaryBreakdownRow[];
+    Days: UsageDay[];
 }
 
-export const getUsageSummaryRequest = (params: { From: string; To: string; PersonalAccessTokenID?: string }) => ({
+export type UsageScope = 'self' | 'organization';
+
+export type UsageClientType = 'api' | 'frontend' | 'lumo_desktop' | 'lumo_mail' | 'scribe';
+
+export const getUsageSummaryRequest = (params: {
+    From: string;
+    To: string;
+    Scope?: UsageScope;
+    ClientType?: UsageClientType;
+    PersonalAccessTokenID?: string;
+}) => ({
     url: 'ai/v1/usage/summary',
     method: 'get' as const,
     params,
