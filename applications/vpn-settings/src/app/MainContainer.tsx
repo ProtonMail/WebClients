@@ -83,6 +83,10 @@ import UpgradeVpnSection from '@proton/payments-ui/containers/payments/subscript
 import YourPlanSection from '@proton/payments-ui/containers/payments/subscription/YourPlanSection';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions/AutomaticSubscriptionModal';
+import {
+    CheckoutLinkRedirect,
+    getCheckoutLinkRoutePath,
+} from '@proton/payments-ui/ui/subscriptions/CheckoutLinkRedirect';
 import { AutocompleteSettingsSearch } from '@proton/settings/SettingsSearch';
 import RecoverySettingsRouter from '@proton/settings/containers/account/recovery/RecoverySettingsRouter';
 import OrganizationSettingsRouter from '@proton/settings/containers/organization/OrganizationSettingsRouter';
@@ -292,6 +296,9 @@ const MainContainer: FunctionComponent = () => {
     return (
         <SubscriptionModalProvider app={app}>
             <Switch>
+                <Route path={getCheckoutLinkRoutePath()}>
+                    <CheckoutLinkRedirect dashboardPath={vpnRoutes.dashboard.to} />
+                </Route>
                 <Route path={VPN_TV_PATHS}>
                     <TVContainer />
                 </Route>

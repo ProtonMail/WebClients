@@ -9,6 +9,10 @@ import { getIsSectionAvailable, getRoutePaths } from '@proton/components/contain
 import { CancellationReminderSection } from '@proton/components/containers/payments/subscription/cancellationFlow/CancellationReminderSection';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import {
+    CheckoutLinkRedirect,
+    getCheckoutLinkRoutePath,
+} from '@proton/payments-ui/ui/subscriptions/CheckoutLinkRedirect';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -164,6 +168,9 @@ export const SettingsRoutes = ({
 
     return (
         <Switch>
+            <Route path={getCheckoutLinkRoutePath(pathPrefix)}>
+                <CheckoutLinkRedirect dashboardPath={`${pathPrefix}${routes.account.routes.dashboard.to}`} />
+            </Route>
             <Route path={anyAccountAppRoute}>
                 <AccountSettingsRouter
                     app={app}
