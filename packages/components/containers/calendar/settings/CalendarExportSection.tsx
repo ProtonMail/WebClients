@@ -74,10 +74,11 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
                         />
                     </span>
                 )}
-                <span className="shrink-0">
-                    <Button color="norm" onClick={handleExport} disabled={!selectedCalendar}>{c('Action')
-                        .t`Download ICS`}</Button>
-                </span>
+                {selectedCalendar && (
+                    <span className="shrink-0">
+                        <Button color="norm" onClick={handleExport}>{c('Action').t`Download ICS`}</Button>
+                    </span>
+                )}
             </div>
         </SettingsSection>
     );
