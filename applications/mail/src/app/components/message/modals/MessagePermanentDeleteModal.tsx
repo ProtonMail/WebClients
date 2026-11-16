@@ -8,6 +8,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
+import { trackPendingAction } from '@proton/shared/lib/eventNotifier/pendingActions';
 
 import {
     getDeleteTitle,
@@ -28,7 +29,7 @@ const MessagePermanentDeleteModal = ({ message, ...rest }: Props) => {
 
     const handleDelete = async () => {
         onClose?.();
-        await api(deleteMessages([message.ID]));
+        await trackPendingAction(api(deleteMessages([message.ID])));
         await call();
         createNotification({ text: getNotificationText(false, false, 1) });
     };

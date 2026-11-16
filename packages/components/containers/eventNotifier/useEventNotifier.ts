@@ -12,6 +12,7 @@ import {
     EventNotifierTransport,
     MAX_EXTENDED_EVENT_LOOP_INTERVAL,
 } from '@proton/shared/lib/eventNotifier/interface';
+import { waitForPendingActions } from '@proton/shared/lib/eventNotifier/pendingActions';
 import { SentryCommonInitiatives, captureInitiativeMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
@@ -58,6 +59,22 @@ export const useEventNotifier = ({
             return;
         }
 
+        let isWaitingForPendingActions = false;
+
+        const callAfterPendingActions = async () => {
+            if (isWaitingForPendingActions) {
+                return;
+            }
+            isWaitingForPendingActions = true;
+            try {
+                // Calling while an action is still running could fetch its intermediate state.
+                await waitForPendingActions();
+            } finally {
+                isWaitingForPendingActions = false;
+            }
+            await call('Ping');
+        };
+
         const eventNotifier = new EventNotifier({
             api: getSilentApi(api),
             url: getEventNotifierUrl({ apiUrl: API_URL, origin: window.location.origin }),
@@ -65,8 +82,9 @@ export const useEventNotifier = ({
             loops: types.map((Type) => ({ Type, Identifier: user.ID })),
             onPing: ({ type }) => {
                 debug(`Event notifier: ping received over ${transport} for the ${type} event loop`);
-                // Pings received while a call is in flight are coalesced by the event manager.
-                void call('Ping').catch(noop);
+                // Pings received while a call is in flight are coalesced by the event manager, and
+                // pings received while waiting for pending actions by `callAfterPendingActions`.
+                void callAfterPendingActions().catch(noop);
             },
             onPingChannelChange: (active) => {
                 debug(`Event notifier: ping channel ${active ? 'active' : 'inactive'} over ${transport}`);

@@ -5,6 +5,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { trackPendingAction } from '@proton/shared/lib/eventNotifier/pendingActions';
 
 import type { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
 import useListTelemetry, {
@@ -83,9 +84,9 @@ const useSnooze = () => {
                 const { duration, snoozeTime } = data;
                 const time = duration === 'custom' ? snoozeTime : undefined;
                 const snoozeUnixTime = getSnoozeUnixTime(duration, time);
-                await api(snoozeConversations(conversationIDs, snoozeUnixTime));
+                await trackPendingAction(api(snoozeConversations(conversationIDs, snoozeUnixTime)));
             } else {
-                await api(unsnoozeConversations(conversationIDs));
+                await trackPendingAction(api(unsnoozeConversations(conversationIDs)));
             }
 
             createNotification({ text: snoozeText });

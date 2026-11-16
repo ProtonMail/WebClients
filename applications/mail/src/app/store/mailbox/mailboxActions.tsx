@@ -18,6 +18,7 @@ import {
     unlabelMessages as unlabelMessagesApi,
 } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { trackPendingAction } from '@proton/shared/lib/eventNotifier/pendingActions';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
@@ -61,11 +62,13 @@ const runAction = async ({
         try {
             extra.eventManager.stop();
 
-            const promise = runParallelChunkedActions({
-                api: extra.api,
-                items: elements,
-                action,
-            });
+            const promise = trackPendingAction(
+                runParallelChunkedActions({
+                    api: extra.api,
+                    items: elements,
+                    action,
+                })
+            );
 
             if (notificationText) {
                 notificationID = extra.notificationManager.createNotification({
@@ -78,9 +81,11 @@ const runAction = async ({
                                     clearTimeout(timeout);
                                     const tokens = await promise;
                                     const filteredTokens = getFilteredUndoTokens(tokens);
-                                    await Promise.all(
-                                        filteredTokens.map((token) =>
-                                            extra.api({ ...undoActions(token), silence: true })
+                                    await trackPendingAction(
+                                        Promise.all(
+                                            filteredTokens.map((token) =>
+                                                extra.api({ ...undoActions(token), silence: true })
+                                            )
                                         )
                                     );
                                     await extra.eventManager.call();
