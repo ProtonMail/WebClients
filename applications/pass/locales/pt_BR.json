@@ -836,6 +836,15 @@
       ],
       "Ignore": [
         "Ignorar"
+      ],
+      "Add address": [
+        "Adicionar endereço"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Recolher alertas do Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Expandir alertas do Pass Monitor"
       ]
     },
     "Activity": {
@@ -997,6 +1006,9 @@
       "${ count } more": [
         "${ count } mais",
         "${ count } mais"
+      ],
+      "This login uses the same password as another item.": [
+        "Este login usa a mesma senha que outro item."
       ]
     },
     "Email": {
@@ -1556,6 +1568,9 @@
       ],
       "Failed to move folder": [
         "Não foi possível mover a pasta"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Falha ao atualizar o status de monitoramento para este item"
       ]
     },
     "Error message": {
@@ -3040,6 +3055,12 @@
       ],
       "Your session could not be authorized.": [
         "Sua sessão não pôde ser autorizada."
+      ],
+      "Alert restored": [
+        "Alerta restaurado"
+      ],
+      "Check ignored": [
+        "Verificação ignorada"
       ]
     },
     "Keyboard key": {

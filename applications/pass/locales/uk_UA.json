@@ -801,6 +801,30 @@
       ],
       "Ignore": [
         "Ігнорувати"
+      ],
+      "Add address": [
+        "Додати адресу"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Сховати сповіщення монітора пропусків"
+      ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Розгорнути сповіщення Pass Monitor"
+      ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
+      ],
+      "Open item": [
+        "Відкритий елемент"
+      ],
+      "Remove passkey": [
+        "Видалити ключ доступу"
+      ],
+      "Toggle section": [
+        "Розгорнути/згорнути розділ"
       ]
     },
     "Activity": {
@@ -940,6 +964,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Ваша особиста інформація була виточена в результаті витоку даних стороннього сервісу."
+      ],
+      "This login uses the same password as another item.": [
+        "Цей обліковий запис використовує той самий пароль, що й інший елемент."
       ]
     },
     "Email": {
@@ -1475,6 +1502,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код був видалений іншим клієнтом ${ PASS_APP_NAME }"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Не вдалося оновити статус моніторингу для цього елемента"
       ]
     },
     "Error message": {
@@ -2879,6 +2909,12 @@
       ],
       "Moving an item to another vault will erase its secure links.": [
         "Переміщення елемента до іншого сховища призведе до стирання його безпечних посилань."
+      ],
+      "Alert restored": [
+        "Оповіщення відновлено"
+      ],
+      "Check ignored": [
+        "Перевірка пропущена"
       ]
     },
     "Keyboard key": {
@@ -5219,6 +5255,15 @@
       ],
       "Something went wrong": [
         "Виникла проблема"
+      ],
+      "Missing 2FA": [
+        "Відсутня двофакторна аутентифікація (2FA)"
+      ],
+      "Pass Monitor": [
+        "Монітор пропусків"
+      ],
+      "Reused password": [
+        "Повторно використаний пароль"
       ]
     },
     "Title_cloned_item": {

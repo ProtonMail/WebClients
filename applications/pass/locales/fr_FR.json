@@ -839,6 +839,9 @@
       ],
       "Ignore": [
         "Ignorer"
+      ],
+      "Add address": [
+        "Ajouter une adresse"
       ]
     },
     "Activity": {
@@ -996,6 +999,10 @@
       ],
       "This login uses the same password as another item.": [
         "Cet identifiant utilise le même mot de passe qu'un autre élément."
+      ],
+      "${ count } more": [
+        "${ count } de plus",
+        "${ count } de plus"
       ]
     },
     "Email": {
@@ -1557,7 +1564,7 @@
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
       ],
       "Failed updating monitoring status for this item": [
-        "L'état de surveillance de cet élément n'a pas pu être mis à jour."
+        "Nous n'avons pas pu mettre à jour le statut de surveillance de cet élément."
       ]
     },
     "Error message": {
@@ -2018,7 +2025,7 @@
         "L'activation du verrouillage avec la biométrie n'a pas abouti."
       ],
       "Enabling desktop auto-lock": [
-        "Activation du verrouillage automatique de l'application de bureau"
+        "Activer le verrouillage automatique de l'application de bureau"
       ],
       "Enabling offline mode...": [
         "Activation du mode hors-ligne..."
@@ -3020,10 +3027,10 @@
         "Votre session n'a pas pu être autorisée."
       ],
       "Alert restored": [
-        "L'alerte a été restaurée."
+        "L'alerte a été réactivée."
       ],
       "Check ignored": [
-        "La vérification a été ignorée"
+        "La vérification a été ignorée."
       ]
     },
     "Keyboard key": {
@@ -5436,7 +5443,7 @@
         "Pass Monitor"
       ],
       "Reused password": [
-        "Mots de passe réutilisés"
+        "Mots de passe réutilisé"
       ]
     },
     "Title_cloned_item": {

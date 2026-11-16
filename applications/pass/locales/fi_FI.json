@@ -401,7 +401,7 @@
         "Miten vien tietoni palvelusta ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
       "How to use ${ PASS_APP_NAME }": [
-        "Miten ${ PASS_APP_NAME } toimii"
+        "Näin ${ PASS_APP_NAME } toimii"
       ],
       "Import": [
         "Tuo"
@@ -815,6 +815,9 @@
       ],
       "Ignore": [
         "Ohita"
+      ],
+      "Add address": [
+        "Lisää osoite"
       ]
     },
     "Activity": {
