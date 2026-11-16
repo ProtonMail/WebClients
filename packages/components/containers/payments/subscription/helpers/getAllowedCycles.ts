@@ -80,6 +80,7 @@ export type PlanCapRule = {
 
 const defaultRules: PlanCapRule[] = [
     { plan: PLANS.LUMO, cycle: CYCLE.YEARLY },
+    { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_FAMILY, cycle: CYCLE.YEARLY },
 
     { plan: PLANS.PASS_PRO, cycle: CYCLE.YEARLY },

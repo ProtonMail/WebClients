@@ -41,6 +41,24 @@ describe('getInitialCycle', () => {
         expect(result).toBe(CYCLE.YEARLY);
     });
 
+    it.each([
+        { cycleParam: undefined, expected: CYCLE.YEARLY },
+        { cycleParam: CYCLE.TWO_YEARS, expected: CYCLE.TWO_YEARS },
+    ])('selects $expected months for Drive Plus when the cycle param is $cycleParam', ({ cycleParam, expected }) => {
+        const result = getInitialCycle({
+            cycleParam,
+            subscription: FREE_SUBSCRIPTION,
+            planIDs: { [PLANS.DRIVE]: 1 },
+            plansMap: mockPlansMap,
+            isPlanSelection: false,
+            app: APPS.PROTONDRIVE,
+            minimumCycle: undefined,
+            maximumCycle: undefined,
+            currency: 'USD',
+        });
+        expect(result).toBe(expected);
+    });
+
     it('should return lower cycle if 2 years is not available', () => {
         mockPlansMap[PLANS.MAIL].Pricing = {
             1: mockPlansMap[PLANS.MAIL].Pricing[1],
