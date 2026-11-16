@@ -17,7 +17,7 @@ const ConditionalNewPill = ({ newPill, children }: { newPill: boolean; children:
 export const ExpandOptionsButton = forwardRef<
     HTMLButtonElement,
     ButtonProps & {
-        ref?: React.RefObject<HTMLButtonElement>;
+        ref?: React.RefObject<HTMLButtonElement | null>;
         className?: string;
         containerClassName?: string;
         children: React.ReactNode;

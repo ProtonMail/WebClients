@@ -38,7 +38,7 @@ export const MenuItem = ({ icon, getLabel, getDescription, badge, onClick, onClo
 
 export interface MenuDropdownProps {
     isOpen: boolean;
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: React.RefObject<HTMLElement | null>;
     onClose: () => void;
     className?: string;
     width?: string;

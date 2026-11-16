@@ -1,5 +1,6 @@
 import React from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
@@ -15,7 +16,7 @@ import './KnowledgeBasePanel.scss';
 
 interface FilesManagementViewProps {
     messageChain: Message[];
-    filesContainerRef: React.RefObject<HTMLDivElement>;
+    filesContainerRef: RefObjectReact18Compat<HTMLDivElement>;
     onClose: () => void;
     filterMessage?: Message;
     onClearFilter?: () => void;

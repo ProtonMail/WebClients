@@ -25,7 +25,7 @@ import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
 import { BackgroundBlurToggle } from '../Settings/BackgroundBlurToggle';
 
 interface VideoSettingsDropdownProps {
-    anchorRef: RefObject<HTMLButtonElement>;
+    anchorRef: RefObject<HTMLButtonElement | null>;
     handleCameraChange: (deviceId: string) => Promise<void>;
     videoDeviceId: string | null;
     cameras: SerializableDeviceInfo[];

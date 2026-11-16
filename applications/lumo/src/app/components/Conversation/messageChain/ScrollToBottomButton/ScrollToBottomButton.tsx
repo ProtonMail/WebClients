@@ -16,7 +16,7 @@ export const ScrollToBottomButton = ({
 }: {
     onClick: () => void;
     show: boolean;
-    composerContainerRef: React.RefObject<HTMLDivElement>;
+    composerContainerRef: React.RefObject<HTMLDivElement | null>;
     floatingContent?: React.ReactNode;
 }) => {
     const floatingContainerRef = useRef<HTMLDivElement>(null);

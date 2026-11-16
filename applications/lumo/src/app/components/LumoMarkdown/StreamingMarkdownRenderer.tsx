@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
+
 import type { SearchItem } from '../../lib/toolCall/types';
 import type { Message } from '../../types';
 import { LazyProgressiveMarkdownRenderer } from './LazyMarkdownComponents';
@@ -30,8 +32,8 @@ interface StreamingMarkdownProps {
     isStreaming?: boolean;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     toolCallResults?: SearchItem[] | null;
-    sourcesContainerRef?: React.RefObject<HTMLDivElement>;
-    messageContentContainerRef?: React.RefObject<HTMLDivElement>;
+    sourcesContainerRef?: RefObjectReact18Compat<HTMLDivElement>;
+    messageContentContainerRef?: RefObjectReact18Compat<HTMLDivElement>;
 }
 
 /**

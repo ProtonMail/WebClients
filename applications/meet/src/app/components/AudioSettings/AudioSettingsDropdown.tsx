@@ -23,7 +23,7 @@ import { SpeakerTestOption } from './SpeakerTestOption';
 import './AudioSettingsDropdown.scss';
 
 interface AudioSettingsDropdownProps {
-    anchorRef: RefObject<HTMLButtonElement>;
+    anchorRef: RefObject<HTMLButtonElement | null>;
     handleInputDeviceChange: (deviceId: string) => Promise<void>;
     handleOutputDeviceChange: (deviceId: string) => Promise<void>;
     audioDeviceId: string | null;

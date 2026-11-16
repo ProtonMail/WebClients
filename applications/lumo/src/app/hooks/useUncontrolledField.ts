@@ -1,10 +1,12 @@
-import type { ChangeEvent, RefObject } from 'react';
+import type { ChangeEvent } from 'react';
 import { useCallback, useRef, useState } from 'react';
+
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 
 type FieldElement = HTMLInputElement | HTMLTextAreaElement;
 
 interface UncontrolledFieldBind<T extends FieldElement> {
-    ref: RefObject<T>;
+    ref: RefObjectReact18Compat<T>;
     defaultValue: string;
     onChange: (event: ChangeEvent<T>) => void;
 }

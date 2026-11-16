@@ -24,7 +24,7 @@ interface ToggleButtonProps {
     isOpen: boolean;
     onPopupButtonClick: () => void;
     Content?: (props: {
-        anchorRef: RefObject<HTMLButtonElement>;
+        anchorRef: RefObject<HTMLButtonElement | null>;
         onClose: () => void;
         anchorPosition?: PopperPosition;
     }) => JSX.Element;

@@ -4,9 +4,11 @@ import {
     extraneousDependenciesDevDependencies,
 } from '@proton/oxlint-config/extraneousDependencies';
 import { allGlobs } from '@proton/oxlint-config/globs';
+import { refObjectNullOverride } from '@proton/oxlint-config/react19';
 
 export default createOxlintConfig({
     overrides: [
+        refObjectNullOverride,
         {
             files: allGlobs,
             rules: {

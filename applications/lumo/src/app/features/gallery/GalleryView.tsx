@@ -1,9 +1,9 @@
-import type { RefObject } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg';
 import lumojiCreateDark from '@proton/styles/assets/img/lumo/lumoji-create-dark.svg';
@@ -96,7 +96,7 @@ const GalleryComposerPanel = ({
 
 interface GalleryTabContentProps {
     hasImages: boolean;
-    createdScrollRef: RefObject<HTMLDivElement>;
+    createdScrollRef: RefObjectReact18Compat<HTMLDivElement>;
     galleryImages: ReturnType<typeof useGeneratedGalleryImages>;
     handleSketchEditExport: (imageData: string, mode: DrawingMode, description: string) => Promise<void>;
     isSmallScreen: boolean;

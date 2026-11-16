@@ -20,7 +20,7 @@ import { supportsSetSinkId } from '../../utils/browser';
 import { AudioSettingsDropdown } from './AudioSettingsDropdown';
 
 interface AudioSettingsProps {
-    anchorRef: RefObject<HTMLButtonElement>;
+    anchorRef: RefObject<HTMLButtonElement | null>;
     onClose: () => void;
     anchorPosition?: PopperPosition;
 }

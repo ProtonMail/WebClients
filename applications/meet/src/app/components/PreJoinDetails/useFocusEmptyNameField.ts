@@ -45,7 +45,10 @@ const isNothingFocused = (countMainAsNothing: boolean) => {
 const isInsideInteractiveElement = (target: EventTarget | null) =>
     target instanceof Element && target.closest(INTERACTIVE_ELEMENT_SELECTOR) !== null;
 
-export const useFocusEmptyNameField = (nameInputRef: RefObject<HTMLInputElement>, isFocusOnNameExpected: boolean) => {
+export const useFocusEmptyNameField = (
+    nameInputRef: RefObject<HTMLInputElement | null>,
+    isFocusOnNameExpected: boolean
+) => {
     const { permissionsModal } = useMeetSelector(selectPermissionsModals);
     const cameraPermission = useMeetSelector(selectCameraPermission);
     const microphonePermission = useMeetSelector(selectMicrophonePermission);

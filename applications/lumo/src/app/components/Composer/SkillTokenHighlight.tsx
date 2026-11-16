@@ -33,7 +33,7 @@ export const useSkillTokens = (value: string, handles: ReadonlySet<string>) =>
     }, [value, handles]);
 
 interface SkillTokenHighlightProps {
-    textareaRef: React.RefObject<HTMLTextAreaElement>;
+    textareaRef: React.RefObject<HTMLTextAreaElement | null>;
     parts: { text: string; isSkill: boolean }[];
 }
 

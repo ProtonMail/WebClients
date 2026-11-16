@@ -1,5 +1,7 @@
 import { clsx } from 'clsx';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
+
 import type { ArtifactActionMeta } from '../../../types';
 import { getArtifactActionLabel } from './artifactActionPrompts';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
@@ -7,7 +9,7 @@ import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
 interface ArtifactActionUserMessageProps {
     artifactAction: ArtifactActionMeta;
     isCollapsed: boolean;
-    contentRef: React.RefObject<HTMLDivElement>;
+    contentRef: RefObjectReact18Compat<HTMLDivElement>;
 }
 
 export const ArtifactActionUserMessage = ({

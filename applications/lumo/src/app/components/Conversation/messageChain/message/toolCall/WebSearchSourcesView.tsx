@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 
 import { getMessageBlocks } from '../../../../../messageHelpers';
@@ -18,7 +19,7 @@ import { extractSearchResults } from './toolCallUtils';
 
 interface WebSearchSourcesViewProps {
     message: Message;
-    sourcesContainerRef: React.RefObject<HTMLDivElement>;
+    sourcesContainerRef: RefObjectReact18Compat<HTMLDivElement>;
     onClose: () => void;
 }
 

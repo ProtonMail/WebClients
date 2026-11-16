@@ -13,7 +13,7 @@ import { useLayoutEffect, useState } from 'react';
  * const isSmallWidth = useElementSizeMatch(containerRef, ({ width }) => width <= 400);
  */
 export const useElementSizeMatch = (
-    elementRef: RefObject<HTMLElement>,
+    elementRef: RefObject<HTMLElement | null>,
     evaluate: (rect: DOMRectReadOnly) => boolean
 ) => {
     const [conditionMet, setConditionMet] = useState(false);

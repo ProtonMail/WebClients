@@ -17,7 +17,7 @@ import type { ArtifactType } from './parseArtifacts';
 import { useArtifactSelection } from './useArtifactSelection';
 
 interface ArtifactInlineEditProps {
-    containerRef: RefObject<HTMLDivElement>;
+    containerRef: RefObject<HTMLDivElement | null>;
     artifactId: string;
     title: string;
     artifactType: ArtifactType;

@@ -1,8 +1,9 @@
-import { type CSSProperties, type ReactNode, type RefObject, useId } from 'react';
+import { type CSSProperties, type ReactNode, useId } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { PopperPlacement } from '@proton/atoms/Popper/interface';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import type { IconComponentProps } from '@proton/icons/component';
 import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
@@ -32,7 +33,7 @@ interface CircleButtonProps {
     tooltipDisabled?: boolean;
     tooltipClassName?: string;
     tooltipPlacement?: PopperPlacement;
-    anchorRef?: RefObject<HTMLButtonElement>;
+    anchorRef?: RefObjectReact18Compat<HTMLButtonElement>;
     size?: IconSize;
     buttonStyle?: CSSProperties;
     disabled?: boolean;

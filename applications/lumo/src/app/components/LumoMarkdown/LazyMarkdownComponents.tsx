@@ -1,5 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
+
 import type { SearchItem } from '../../lib/toolCall/types';
 import type { Message } from '../../types';
 
@@ -11,8 +13,8 @@ interface ProgressiveMarkdownProps {
     isStreaming: boolean;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     toolCallResults?: SearchItem[] | null;
-    sourcesContainerRef?: React.RefObject<HTMLDivElement>;
-    messageContentContainerRef?: React.RefObject<HTMLDivElement>;
+    sourcesContainerRef?: RefObjectReact18Compat<HTMLDivElement>;
+    messageContentContainerRef?: RefObjectReact18Compat<HTMLDivElement>;
     message: Message;
     /** When false, Vega code fences render as static highlighted code (untrusted previews). */
     enableVegaCharts?: boolean;

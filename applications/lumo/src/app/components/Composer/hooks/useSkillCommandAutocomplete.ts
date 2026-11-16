@@ -36,7 +36,7 @@ const getMenuPosition = (textarea: HTMLTextAreaElement) => {
 
 /** `/` autocomplete for the user's enabled skills, like Claude's slash commands. */
 export const useSkillCommandAutocomplete = (
-    textareaRef: React.RefObject<HTMLTextAreaElement>,
+    textareaRef: React.RefObject<HTMLTextAreaElement | null>,
     value: string,
     setValue: (value: string) => void
 ) => {

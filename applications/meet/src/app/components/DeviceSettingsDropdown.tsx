@@ -7,7 +7,7 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 
 interface DeviceSettingsDropdownProps {
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     children: ReactNode;
     onClose: () => void;
     anchorPosition?: PopperPosition;
