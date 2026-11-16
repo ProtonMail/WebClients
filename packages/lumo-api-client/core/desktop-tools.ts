@@ -98,7 +98,17 @@ export type DesktopFeatureFlags = {
     experimentalConnectors: boolean;
 };
 
+export type DesktopExportPdfOptions = {
+    fileName: string;
+    title?: string;
+};
+
+/** `cancelled` means the user dismissed the native Save dialog. */
+export type DesktopExportPdfResult = { status: 'saved' | 'cancelled' | 'failed' };
+
 export type LumoConnectorsApi = DesktopExternalTools & {
+    /** Native PDF export (macOS desktop builds only): absent on older builds, Windows and Linux. */
+    exportPdf?: (html: string, options: DesktopExportPdfOptions) => Promise<DesktopExportPdfResult>;
     getOpenAITools?: () => ChatCompletionsFunctionTool[];
     ensureOpenAIToolShape?: (
         tool: ChatCompletionsFunctionTool | ChatCompletionsFlatFunctionTool

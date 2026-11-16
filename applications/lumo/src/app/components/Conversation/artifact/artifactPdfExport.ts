@@ -1,3 +1,5 @@
+import { getDesktopConnectorsApi } from '@proton/lumo-api-client/core/desktop-tools';
+
 import { yieldToMainThread } from '../../../util/export/exportUiHelpers';
 import { downloadHtmlAsPdf, downloadHtmlSlidesAsPdf, ensurePdfFileName } from '../../../util/pdf/downloadHtmlAsPdf';
 import type { PdfExportProgressCallback } from '../../../util/pdf/htmlDocumentToPdfBytes';
@@ -20,9 +22,18 @@ import type { ArtifactType, ParsedArtifact } from './parseArtifacts';
  * - `print_dialog`: the browser print dialog opened so the user can "Save as PDF" (documents).
  * - `print_fallback`: generating the file failed, so the print dialog was opened instead (presentations).
  * - `image_fallback`: the print dialog couldn't be opened, so an image-page PDF was downloaded instead (documents).
+ * - `native_saved`: the desktop app saved a PDF through its native export, and shows its own toast.
+ * - `cancelled`: the user dismissed the desktop app's native Save dialog.
  */
 export type ArtifactPdfExportResult =
-    'success' | 'print_dialog' | 'print_fallback' | 'image_fallback' | 'unavailable' | 'failed';
+    | 'success'
+    | 'print_dialog'
+    | 'print_fallback'
+    | 'image_fallback'
+    | 'native_saved'
+    | 'cancelled'
+    | 'unavailable'
+    | 'failed';
 
 /**
  * How the Download menu's PDF item works for each artifact type (see D7 in artifact-view-decisions.md):
@@ -61,11 +72,29 @@ async function exportDocumentPdf(
         return 'unavailable';
     }
 
+    const desktopApi = getDesktopConnectorsApi();
+    if (typeof desktopApi?.exportPdf === 'function') {
+        try {
+            const { status } = await desktopApi.exportPdf(html, {
+                fileName: buildArtifactFileName(artifact, 'pdf'),
+                title: artifact.title,
+            });
+            if (status === 'saved') {
+                return 'native_saved';
+            }
+            if (status === 'cancelled') {
+                return 'cancelled';
+            }
+        } catch {
+            // Fall through to the image download below.
+        }
+    }
+
     if (await printHtmlDocument(html, { title: artifact.title })) {
         return 'print_dialog';
     }
 
-    // Rare (the frame couldn't be created or print() threw): still give the user a file.
+    // The frame couldn't be created, print() threw, or the desktop shell has no print support: still give the user a file.
     try {
         await downloadHtmlAsPdf(html, buildArtifactFileName(artifact, 'pdf'), {
             ...DOCUMENT_PDF_EXPORT_OPTIONS,

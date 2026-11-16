@@ -42,9 +42,18 @@ const SAVE_FORMAT_ICONS: Record<ArtifactSaveFormat, IconName> = {
     pptx: 'Presentation',
 };
 
-const getPdfDownloadTelemetryResult = (result: ArtifactPdfExportResult): ArtifactDownloadResult => {
+/** `null` means nothing is reported: the user cancelled, which has no `ArtifactDownloadResult` value yet. */
+const getPdfDownloadTelemetryResult = (result: ArtifactPdfExportResult): ArtifactDownloadResult | null => {
     if (result === 'unavailable' || result === 'failed') {
         return 'error';
+    }
+
+    if (result === 'native_saved') {
+        return 'success';
+    }
+
+    if (result === 'cancelled') {
+        return null;
     }
 
     return result;
@@ -160,13 +169,18 @@ export function useArtifactFileActions({
             setExportingKind(null);
         }
 
-        reportDownload('pdf', getPdfDownloadTelemetryResult(result));
+        const telemetryResult = getPdfDownloadTelemetryResult(result);
+        if (telemetryResult) {
+            reportDownload('pdf', telemetryResult);
+        }
 
         if (result === 'success') {
             createNotification({
                 type: 'success',
                 text: c('collider_2025: Info').t`PDF downloaded.`,
             });
+        } else if (result === 'native_saved' || result === 'cancelled') {
+            // No toast: the desktop app shows its own on success, and a cancelled Save dialog needs none.
         } else if (result === 'print_dialog') {
             // No toast: the print dialog is the feedback, and in Chrome it blocks until closed, so a
             // toast would only appear after the user has already saved or cancelled.
