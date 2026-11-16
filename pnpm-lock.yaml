@@ -4670,6 +4670,9 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
+      '@proton/vitest-config':
+        specifier: workspace:^
+        version: link:../../packages/vitest-config
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
@@ -7317,6 +7320,9 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
+      '@proton/vitest-config':
+        specifier: workspace:^
+        version: link:../vitest-config
       '@types/mustache':
         specifier: ^4.2.6
         version: 4.2.6
@@ -8702,6 +8708,9 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
+      '@proton/vitest-config':
+        specifier: workspace:^
+        version: link:../vitest-config
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.2

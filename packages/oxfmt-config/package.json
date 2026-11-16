@@ -18,6 +18,7 @@
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@types/node": "catalog:",
         "@typescript/native": "catalog:",
         "oxlint": "catalog:",

@@ -1,7 +1,9 @@
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { transformWithOxc } from 'vite';
-import { defineConfig } from 'vitest/config';
+import { mergeConfig } from 'vitest/config';
+
+import { sharedVitestConfig } from '@proton/vitest-config/shared';
 
 const fileMock = path.resolve(__dirname, './src/__mocks__/fileMock.js');
 const styleMock = path.resolve(__dirname, './src/__mocks__/styleMock.js');
@@ -39,30 +41,16 @@ const jsAsJsx = {
     },
 };
 
-export default defineConfig({
+export default mergeConfig(sharedVitestConfig, {
     plugins: [requireContextStub, jsAsJsx, react()],
     test: {
-        globals: true,
         environment: 'jsdom',
         setupFiles: './vitest.setup.ts',
-        reporters: [['default', { summary: false }], 'junit'],
-        outputFile: { junit: './test-report.xml' },
         // Stub static assets and stylesheets so component imports don't break the test run.
         // The pattern matches the whole import specifier so the replacement swaps it entirely.
         alias: [
             { find: /^.+\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|md)$/, replacement: fileMock },
             { find: /^.+\.(css|scss|less)$/, replacement: styleMock },
         ],
-        coverage: {
-            enabled: process.env.COLLECT_COVERAGE === 'true',
-            provider: 'v8',
-            reporter: ['text-summary', 'json'],
-            include: ['src/**/*.{js,jsx,ts,tsx}'],
-            exclude: ['**/*.d.ts', '**/*.test.{ts,tsx}'],
-        },
-    },
-    resolve: {
-        // Resolve the browser build of workspace packages, matching the runtime environment.
-        conditions: ['browser'],
     },
 });

@@ -1,8 +1,9 @@
-import { defineConfig } from 'vitest/config';
+import { mergeConfig } from 'vitest/config';
 
-export default defineConfig({
+import { sharedVitestConfig } from '@proton/vitest-config/shared';
+
+export default mergeConfig(sharedVitestConfig, {
     test: {
         environment: 'node',
-        globals: true,
     },
 });
