@@ -69,9 +69,10 @@ export const ThemeInjector = () => {
         setThemeSetting(theme);
     }, [themeSetting]);
 
+    // The font face changes the root font size too: Atkinson Hyperlegible at the default size uses 15
     useEffect(() => {
         rootFontSize(true);
-    }, [settings.FontSize]);
+    }, [settings.FontSize, settings.FontFace]);
 
     useEffect(() => {
         const cb = debounce((settings: ThemeSetting) => {
