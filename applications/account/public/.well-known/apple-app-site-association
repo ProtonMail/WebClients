@@ -12,5 +12,18 @@
         "2SB5Z68H26.me.proton.mda.macos",
         "2SB5Z68H26.me.proton.lumo"
       ]
-   }
+   },
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["2SB5Z68H26.ch.protonmail.protonmail"],
+        "components": [
+          { "/": "/mail/easy-switch" },
+          { "/": "/mail/easy-switch/*" },
+          { "/": "/mail/identity-addresses" },
+          { "/": "/mail/identity-addresses/*" }
+        ]
+      }
+    ]
+  }
 }
