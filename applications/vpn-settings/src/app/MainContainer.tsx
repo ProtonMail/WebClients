@@ -18,7 +18,6 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
 import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
-import { SafetyReviewRoute } from '@proton/account/safetyReview/components/SafetyReviewRoute';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
@@ -87,6 +86,7 @@ import {
     CheckoutLinkRedirect,
     getCheckoutLinkRoutePath,
 } from '@proton/payments-ui/ui/subscriptions/CheckoutLinkRedirect';
+import { SafetyReviewRoute } from '@proton/safety-review/components/SafetyReviewRoute';
 import { AutocompleteSettingsSearch } from '@proton/settings/SettingsSearch';
 import RecoverySettingsRouter from '@proton/settings/containers/account/recovery/RecoverySettingsRouter';
 import OrganizationSettingsRouter from '@proton/settings/containers/organization/OrganizationSettingsRouter';

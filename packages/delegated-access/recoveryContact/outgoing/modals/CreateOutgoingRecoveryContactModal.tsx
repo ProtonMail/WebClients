@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import ValidationError from '@proton/account/delegatedAccess/ValidationError';
 import { addDelegatedAccessThunk } from '@proton/account/delegatedAccess/outgoingActions';
-import ContactEmailInput from '@proton/account/delegatedAccess/shared/outgoing/ContactEmailInput';
 import { useAddContactInputs } from '@proton/account/delegatedAccess/shared/outgoing/useAddContactInputs';
 import { useDispatch } from '@proton/account/store/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -22,6 +21,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import type { OutgoingDelegatedAccessOutput } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
+import ContactEmailInput from '../../../shared/outgoing/ContactEmailInput';
 import shieldSuccess from '../../../shared/shield-success.svg';
 import shield from '../../../shared/shield.svg';
 

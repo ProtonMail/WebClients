@@ -1,11 +1,11 @@
 import type { FunctionComponent } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { SafetyReviewRoute } from '@proton/account/safetyReview/components/SafetyReviewRoute';
 import { AccountSpotlightsProvider } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
+import { SafetyReviewRoute } from '@proton/safety-review/components/SafetyReviewRoute';
 import { getRoutesWithoutSlug } from '@proton/settings/routesWithoutSlug';
 import { APPS } from '@proton/shared/lib/constants';
 

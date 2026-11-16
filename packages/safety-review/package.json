@@ -1,0 +1,45 @@
+{
+    "name": "@proton/safety-review",
+    "description": "Safety review UI: the safety review route, its recovery action cards and the safety review call to action",
+    "license": "GPL-3.0",
+    "sideEffects": false,
+    "exports": {
+        "./components/SafetyReviewRoute": "./components/SafetyReviewRoute.tsx"
+    },
+    "scripts": {
+        "check:types": "tsc --checkers 1",
+        "lint": "oxlint --quiet"
+    },
+    "dependencies": {
+        "@proton/account": "workspace:^",
+        "@proton/account-recovery": "workspace:^",
+        "@proton/app-context": "workspace:^",
+        "@proton/atoms": "workspace:^",
+        "@proton/components": "workspace:^",
+        "@proton/delegated-access": "workspace:^",
+        "@proton/hooks": "workspace:^",
+        "@proton/icons": "workspace:^",
+        "@proton/payments": "workspace:^",
+        "@proton/shared": "workspace:^",
+        "@proton/styles": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "lodash": "catalog:",
+        "react": "catalog:",
+        "react-dom": "catalog:",
+        "react-router-dom": "catalog:",
+        "ttag": "catalog:"
+    },
+    "devDependencies": {
+        "@proton/oxlint-config": "workspace:^",
+        "@types/lodash": "catalog:",
+        "@types/node": "catalog:",
+        "@types/react": "catalog:",
+        "@types/react-dom": "catalog:",
+        "@types/react-router-dom": "catalog:",
+        "@types/webpack-env": "catalog:",
+        "@typescript/native": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
+        "typescript": "catalog:"
+    }
+}

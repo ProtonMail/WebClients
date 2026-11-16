@@ -1,0 +1,54 @@
+import { c } from 'ttag';
+
+import { updateDeviceRecoverySettingsThunk } from '@proton/account/recovery/deviceRecovery';
+import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
+import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { useDispatch } from '@proton/account/store/hooks';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useLoading from '@proton/hooks/useLoading';
+import noop from '@proton/utils/noop';
+
+import { SafetyReviewCta } from '../../SafetyReviewCta';
+import darkIllustration from '../../assets/device-based-recovery-dark.svg';
+import illustration from '../../assets/device-based-recovery.svg';
+import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
+
+type Props = SafetyReviewAllProps & {
+    recoveryItem: ExtractRecoveryActionItem<'deviceRecovery'>;
+};
+
+export const EnableDeviceRecovery = (props: Props) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
+    const [loading, withLoading] = useLoading();
+    const dispatch = useDispatch();
+
+    return (
+        <form
+            id={props.firstItemId}
+            onSubmit={(event) => {
+                event.preventDefault();
+                withLoading(
+                    (async function () {
+                        await dispatch(updateDeviceRecoverySettingsThunk({ deviceRecovery: true }));
+                        props.safetyReview.actions.next('completed', props.recoveryItem);
+                    })()
+                ).catch(noop);
+            }}
+        >
+            <SafetyReviewCardHeader>
+                <SafetyReviewCardHeader.Illustration>
+                    <img src={isDarkTheme ? darkIllustration : illustration} alt="" width={64} height={64} />
+                </SafetyReviewCardHeader.Illustration>
+                <SafetyReviewCardHeader.Title>{c('safety_review')
+                    .t`Allow data recovery from this device`}</SafetyReviewCardHeader.Title>
+                <SafetyReviewCardHeader.Description>
+                    {c('safety_review')
+                        .t`You can save a data backup on this device. This will restore access to emails, contacts, files, passwords, and any other encrypted data on your account after a password reset, simply by signing in on this device.`}
+                </SafetyReviewCardHeader.Description>
+            </SafetyReviewCardHeader>
+
+            <SafetyReviewCta {...props} loading={loading} cta={c('safety_review').t`Allow`} />
+        </form>
+    );
+};

@@ -4,10 +4,12 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "exports": {
+        "./passwordReminder/PasswordReminderInput": "./passwordReminder/PasswordReminderInput.tsx",
         "./passwordReminder/PasswordReminderModal": "./passwordReminder/PasswordReminderModal.tsx",
         "./passwordReminder/PasswordReminderTopBanner": "./passwordReminder/PasswordReminderTopBanner.tsx",
         "./passwordReminder/VerifyPasswordButton": "./passwordReminder/VerifyPasswordButton.tsx",
         "./recovery/NonPrivateRecoveySection": "./recovery/NonPrivateRecoveySection.tsx",
+        "./recovery/recoveryKit/RecoveryKitContent": "./recovery/recoveryKit/RecoveryKitContent.tsx",
         "./recovery/recoveryKit/useUpdateRecoveryKit": "./recovery/recoveryKit/useUpdateRecoveryKit.tsx",
         "./recovery/useUpdateAccountRecovery": "./recovery/useUpdateAccountRecovery.tsx",
         "./recovery/useUpdateRecoveryFile": "./recovery/useUpdateRecoveryFile.tsx"

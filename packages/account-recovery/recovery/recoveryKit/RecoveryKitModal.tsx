@@ -3,10 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
-import {
-    RecoveryKitContent,
-    type RecoveryKitContentProps,
-} from '@proton/account/recovery/recoveryKit/RecoveryKitContent';
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { generateRecoveryKitData, setRecoveryPhrase } from '@proton/account/recovery/recoveryKit/recoveryPhraseActions';
 import { useDispatch, useSelector } from '@proton/account/store/hooks';
@@ -21,6 +17,8 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
+
+import { RecoveryKitContent, type RecoveryKitContentProps } from './RecoveryKitContent';
 
 interface Props extends Omit<ModalProps<'div'>, 'children' | 'buttons'> {
     onSuccess?: () => void;

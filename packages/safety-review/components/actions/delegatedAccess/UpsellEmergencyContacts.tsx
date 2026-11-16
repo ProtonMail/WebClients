@@ -1,0 +1,88 @@
+import { c } from 'ttag';
+
+import type { SafetyReviewAllProps } from '@proton/account/safetyReview/components/interface';
+import type { ExtractRecoveryActionItem } from '@proton/account/safetyReview/recoveryState/recoveryState';
+import { Href } from '@proton/atoms/Href/Href';
+import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import noop from '@proton/utils/noop';
+
+import { SafetyReviewCta } from '../../SafetyReviewCta';
+import darkIllustration from '../../assets/recovery-emergency-contacts-dark.svg';
+import illustration from '../../assets/recovery-emergency-contacts.svg';
+import { SafetyReviewCardHeader } from '../../cards/SafetyReviewCardHeader';
+
+type Props = SafetyReviewAllProps & {
+    recoveryItem: ExtractRecoveryActionItem<'upsellEmergencyContacts'>;
+};
+
+export const UpsellEmergencyContacts = (props: Props) => {
+    const theme = useTheme();
+    const isDarkTheme = theme.information.dark;
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
+
+    const handleUpsell = () => {
+        const upsellRef = getUpsellRef({
+            app: APP_UPSELL_REF_PATH.ACCOUNT_UPSELL_REF_PATH,
+            component: UPSELL_COMPONENT.MODAL,
+            feature: SHARED_UPSELL_PATHS.EMERGENCY_ACCESS,
+        });
+
+        openSubscriptionModal({
+            app: props.safetyReview.state.backLink.appName,
+            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            upsellRef,
+            disableThanksStep: true,
+            onSubscribed: () => {
+                props.safetyReview.actions.next('completed', props.recoveryItem);
+            },
+        }).catch(noop);
+    };
+
+    return (
+        <form
+            id={props.firstItemId}
+            onSubmit={(event) => {
+                event.preventDefault();
+                props.safetyReview.actions.next('skipped', props.recoveryItem);
+            }}
+        >
+            <SafetyReviewCardHeader>
+                <SafetyReviewCardHeader.Illustration>
+                    <img src={isDarkTheme ? darkIllustration : illustration} alt="" width={64} height={64} />
+                </SafetyReviewCardHeader.Illustration>
+                <SafetyReviewCardHeader.Title>
+                    {c('safety_review').t`Protect your legacy with Emergency Access`}
+                </SafetyReviewCardHeader.Title>
+                <SafetyReviewCardHeader.Description>
+                    {c('safety_review')
+                        .t`Upgrade your plan to enable Emergency Access to your account. This will allow you to designate 1 to 5 people who will be able to reset your password for you.`}
+                </SafetyReviewCardHeader.Description>
+                <SafetyReviewCardHeader.Description>
+                    <Href href={getKnowledgeBaseUrl('/emergency-access')}>{c('Link').t`Learn more`}</Href>
+                </SafetyReviewCardHeader.Description>
+            </SafetyReviewCardHeader>
+
+            <PromotionButton
+                iconComponent={IcUpgrade}
+                loading={loadingSubscriptionModal}
+                onClick={() => {
+                    handleUpsell();
+                }}
+                size="large"
+                pill
+                className="mx-auto"
+            >
+                {c('emergency_access').t`Explore plans`}
+            </PromotionButton>
+
+            <SafetyReviewCta {...props} cta={c('safety_review').t`Got it`} />
+        </form>
+    );
+};
