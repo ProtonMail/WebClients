@@ -101,9 +101,9 @@ export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                             </Link>
                         )}
                     </div>
-                    {sessionExpired && (
+                    {(errorMessage || sessionExpired) && (
                         <div className="mt-4">
-                            <LoginErrorBlock message={getSessionExpiredMessage()} />
+                            <LoginErrorBlock message={errorMessage || getSessionExpiredMessage()} />
                         </div>
                     )}
                     {showRememberCheckbox && <StaySignedInCheckbox staySignedIn={staySignedIn} disabled={submitting} />}

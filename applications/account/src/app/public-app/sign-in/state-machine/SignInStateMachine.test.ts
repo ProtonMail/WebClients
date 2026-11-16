@@ -31,6 +31,7 @@ import type {
 } from '../steps/credentials/state-machine/credentialsActors';
 import {
     InvalidLoginError,
+    InvalidUsernameError,
     SSOSignInRejectedError,
     SwitchToSRPError,
     SwitchToSSOError,
@@ -913,6 +914,28 @@ describe('SignInStateMachine', () => {
             expect(snapshot.matches({ form: { signIn: { auto: 'idle' } } })).toBe(true);
             expect(snapshot.context.username).toBe(usernameForm.username);
             expect(snapshot.context.errorMessage).toBeUndefined();
+        });
+
+        it('takes a username the password sign-in cannot accept back to the username step, shown there', async () => {
+            const { actor, errors } = startWith(
+                { type: AuthType.Auto },
+                {
+                    authenticateWithPassword: () =>
+                        Promise.reject(new InvalidUsernameError(apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE))),
+                }
+            );
+            await submitUsername(actor);
+            await submitCredentials(actor);
+
+            const snapshot = credentialsFlow(actor).getSnapshot();
+            expect(snapshot.matches({ form: { signIn: { auto: 'idle' } } })).toBe(true);
+            expect(snapshot.context.username).toBe(usernameForm.username);
+            expect(snapshot.context.errorMessage).toBe(`error ${API_CUSTOM_ERROR_CODES.INVALID_VALUE}`);
+            expect(errors()).toEqual([]);
+
+            // Submitting it again starts over without the error
+            await submitUsername(actor);
+            expect(credentialsFlow(actor).getSnapshot().context.errorMessage).toBeUndefined();
         });
 
         it('switches to the SSO form when the account uses SSO', async () => {

@@ -32,7 +32,13 @@ import type {
     SSOProviderResult,
     UsernameFormValues,
 } from './credentialsActors';
-import { InvalidLoginError, SSOSignInRejectedError, SwitchToSRPError, SwitchToSSOError } from './credentialsErrors';
+import {
+    InvalidLoginError,
+    InvalidUsernameError,
+    SSOSignInRejectedError,
+    SwitchToSRPError,
+    SwitchToSSOError,
+} from './credentialsErrors';
 
 export interface CredentialsMachineInput {
     username: string;
@@ -188,10 +194,15 @@ const credentialsSetup = setup({
         storeChallengePayload: assign((_, params: { payload: ChallengeResult }) => ({
             challengePayload: params.payload,
         })),
-        /** After `errorOf(InvalidLoginError)` or `errorOf(SSOSignInRejectedError)`: the API's message, or a fallback. */
+        /**
+         * After `errorOf(InvalidLoginError)`, `errorOf(InvalidUsernameError)` or `errorOf(SSOSignInRejectedError)`: the
+         * API's message, or a fallback.
+         */
         setErrorMessage: assign((_, params: { error: unknown }) => ({
             errorMessage:
-                params.error instanceof InvalidLoginError || params.error instanceof SSOSignInRejectedError
+                params.error instanceof InvalidLoginError ||
+                params.error instanceof InvalidUsernameError ||
+                params.error instanceof SSOSignInRejectedError
                     ? params.error.message
                     : undefined,
         })),
@@ -304,6 +315,12 @@ const signingIn = credentialsSetup.createStateConfig({
                 guard: errorOf(SwitchToSSOError),
                 target: '#credentials.form.signIn.externalSSO',
                 actions: 'notifySSORequired',
+            },
+            {
+                // Shown on the username step, where it can be fixed; set after the password step's exit clears its own
+                guard: errorOf(InvalidUsernameError),
+                target: '#credentials.form.signIn.auto',
+                actions: { type: 'setErrorMessage', params: ({ event }) => ({ error: event.error }) },
             },
             {
                 guard: errorOf(InvalidLoginError),

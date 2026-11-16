@@ -27,9 +27,14 @@ export class SwitchToSRPError extends CredentialsApiError {
     name = 'SwitchToSRPError';
 }
 
-/** Wrong username or password. */
+/** Wrong username or password, or an account the password sign-in can't accept. */
 export class InvalidLoginError extends CredentialsApiError {
     name = 'InvalidLoginError';
+}
+
+/** A username the password sign-in can't accept, which `/auth/info` let through: it's the username to fix. */
+export class InvalidUsernameError extends CredentialsApiError {
+    name = 'InvalidUsernameError';
 }
 
 /**
@@ -51,6 +56,25 @@ export const rethrowCredentialsError = (error: unknown): never => {
             throw new InvalidLoginError(error);
     }
     throw error;
+};
+
+/**
+ * Like `rethrowCredentialsError`, for the password sign-in (`POST /auth`), which also refuses with a 422 the user should
+ * read on the form: `INVALID_VALUE` for a username it can't accept ("Invalid username", or "Invalid email address" for
+ * an `@` one), and `NOT_ALLOWED` for an account that can't sign in here ("Account setup incomplete…", "Use of this
+ * client requires permissions…"). Its other answers with these codes are 400s.
+ */
+export const rethrowPasswordLoginError = (error: unknown): never => {
+    const { status, code } = getApiError(error);
+    if (status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY) {
+        if (code === API_CUSTOM_ERROR_CODES.INVALID_VALUE) {
+            throw new InvalidUsernameError(error);
+        }
+        if (code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED) {
+            throw new InvalidLoginError(error);
+        }
+    }
+    return rethrowCredentialsError(error);
 };
 
 /** Rethrows the API's refusal of the SSO token exchange (422, `NOT_ALLOWED`) as `SSOSignInRejectedError`. */
