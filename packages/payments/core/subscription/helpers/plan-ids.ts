@@ -1,3 +1,7 @@
+import { isPlan } from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+
+import type { ADDON_NAMES, PLANS } from '../../constants';
 import type { FreeSubscription, PlanIDs } from '../../interface';
 import type { Subscription } from '../interface';
 
@@ -9,3 +13,15 @@ export function getPlanIDs(subscription: MaybeFreeSubscription): PlanIDs {
         return acc;
     }, {});
 }
+
+export const toPlanIDs = (selectedPlan: PLANS | ADDON_NAMES | PlanIDs | Plan): PlanIDs => {
+    if (isPlan(selectedPlan)) {
+        return { [selectedPlan.Name]: 1 };
+    }
+
+    if (typeof selectedPlan === 'string') {
+        return { [selectedPlan]: 1 };
+    }
+
+    return selectedPlan;
+};

@@ -609,7 +609,7 @@ describe('resolveUpsellsToDisplay', () => {
             expect(getUpsellPlans(subscription, true)).toEqual([PLANS.LUMO]);
         });
 
-        it('keeps the usual upsells for a Unlimited subscriber who already has Lumo Plus', () => {
+        it('drops the Family upsell for a Unlimited subscriber who also has Lumo Plus', () => {
             const unlimited = buildSubscription(PLANS.BUNDLE);
             const lumoPlus = buildSubscription(PLANS.LUMO);
 
@@ -621,7 +621,7 @@ describe('resolveUpsellsToDisplay', () => {
                 multiSubscriptionContext: buildMultiSubscriptionContext([unlimited, lumoPlus]),
             }).map((upsell) => upsell.planKey);
 
-            expect(upsells).toEqual([PLANS.FAMILY]);
+            expect(upsells).toEqual([]);
         });
 
         it('offers no Lumo plan to a Mail Plus subscriber who has the Lumo addon, with the flag on', () => {

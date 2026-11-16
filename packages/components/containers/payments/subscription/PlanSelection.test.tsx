@@ -6,6 +6,7 @@ import type { Currency } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
 import {
+    buildLumoSubscription,
     buildMultiSubscriptionContext,
     buildMultiSubscriptionContextFromSubscription,
 } from '@proton/payments/testing/buildMultiSubscriptionContext';
@@ -13,9 +14,11 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { type ShortPlanLike, isShortPlanLike } from '../features/interface';
 import { type AccessiblePlansHookProps, getMaximumCycle, useAccessiblePlans } from './PlanSelection';
 
 jest.mock('@proton/app-context/useConfig', () => ({
@@ -822,7 +825,7 @@ describe('useAccessiblePlans', () => {
             });
         });
 
-        it('offers no currency to a tab whose cards are not sold in the locked currency', () => {
+        it('offers no currency to a tab whose cards are not sold in the locked currency or not offered next to two subscriptions', () => {
             const mailPlus = buildSubscription(PLANS.MAIL, { Currency: 'BRL' });
             const lumoPlus = buildSubscription(PLANS.LUMO, { Currency: 'BRL' });
             const b2cPlansInBrl = getTestPlans('BRL').filter((plan) =>
@@ -840,12 +843,12 @@ describe('useAccessiblePlans', () => {
                 })
             ).toEqual({
                 [Audience.B2C]: ['BRL'],
-                [Audience.FAMILY]: ['BRL'],
+                [Audience.FAMILY]: [],
                 [Audience.B2B]: [],
             });
         });
 
-        it('offers only the currency of the web subscriptions when there are two of them', () => {
+        it('offers only the currency of the web subscriptions, and no multi-user tab, when there are two of them', () => {
             const mailPlus = buildSubscription(PLANS.MAIL, { Currency: 'USD' });
             const lumoPlus = buildSubscription(PLANS.LUMO, { Currency: 'USD' });
 
@@ -856,8 +859,8 @@ describe('useAccessiblePlans', () => {
                 })
             ).toEqual({
                 [Audience.B2C]: ['USD'],
-                [Audience.FAMILY]: ['USD'],
-                [Audience.B2B]: ['USD'],
+                [Audience.FAMILY]: [],
+                [Audience.B2B]: [],
             });
         });
     });
@@ -955,5 +958,50 @@ describe('getMaximumCycle', () => {
             expect(getIndividualPlans(subscription, false)).toContainEqual(lumoPlus);
             expect(getIndividualPlans(subscription, true)).not.toContainEqual(lumoPlus);
         });
+    });
+});
+
+describe('useAccessiblePlans next to several subscriptions', () => {
+    const plans = getLongTestPlans();
+    const webMailPlus = buildSubscription(PLANS.MAIL);
+    const webLumoPlus = buildLumoSubscription(PLANS.LUMO);
+
+    const getPlanNames = (lumoMultiSubscriptions: boolean) => {
+        mockUseFlag.mockImplementation((flag: string) => flag === 'DuoPlan');
+
+        const props: AccessiblePlansHookProps = {
+            selectedProductPlans: { b2c: PLANS.MAIL, b2b: PLANS.MAIL_PRO, family: PLANS.FAMILY },
+            subscription: webMailPlus,
+            plans,
+            currency: 'USD',
+            app: APPS.PROTONMAIL,
+            paymentStatus: { CountryCode: 'CH', VendorStates: {} as any },
+            user: buildUser({ Currency: 'USD' }),
+            audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContext([webMailPlus, webLumoPlus], lumoMultiSubscriptions),
+        };
+
+        const { result } = renderHook(() => useAccessiblePlans(props));
+        const getNames = (accessiblePlans: (Plan | ShortPlanLike)[]) =>
+            accessiblePlans.filter((plan): plan is Plan => !isShortPlanLike(plan)).map((plan) => plan.Name);
+
+        return {
+            individual: getNames(result.current.IndividualPlans),
+            family: getNames(result.current.FamilyPlans),
+        };
+    };
+
+    it('offers no multi-user plan next to web Mail Plus and web Lumo Plus with the flag on', () => {
+        const { individual, family } = getPlanNames(true);
+
+        expect(individual).toEqual([PLANS.MAIL, PLANS.BUNDLE]);
+        expect(family).toEqual([]);
+    });
+
+    it('keeps offering Duo and Family with the flag off', () => {
+        const { individual, family } = getPlanNames(false);
+
+        expect(individual).toEqual([PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO]);
+        expect(family).toEqual([PLANS.DUO, PLANS.FAMILY]);
     });
 });
