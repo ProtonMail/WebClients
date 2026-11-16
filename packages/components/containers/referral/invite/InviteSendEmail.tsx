@@ -29,7 +29,7 @@ interface SendEmailInvitationResult {
     Referrals: Referral[];
 }
 
-const InviteSendEmail = ({ className }: { className?: string }) => {
+const InviteSendEmail = ({ className, b2c2b }: { className?: string; b2c2b?: boolean }) => {
     // TODO: referral: we need to move this file into applications/account so we can use the dispatch from useAccountDispatch
     // const dispatch = useAccountDispatch();
     // dispatch(referralsSlice.actions.setInvitedReferrals({ invitedReferrals }));
@@ -79,7 +79,7 @@ const InviteSendEmail = ({ className }: { className?: string }) => {
             return;
         }
 
-        const request = api<SendEmailInvitationResult>(sendEmailInvitation({ emails }));
+        const request = api<SendEmailInvitationResult>(sendEmailInvitation({ emails, b2c2b }));
 
         void withLoading(
             request
@@ -155,6 +155,7 @@ const InviteSendEmail = ({ className }: { className?: string }) => {
                 <div className="flex gap-2 flex-nowrap items-center flex-column md:flex-row">
                     <div className="md:flex-1 w-full md:w-auto">
                         <div
+                            role="presentation"
                             className="addresses-wrapper h-auto flex gap-2 px-2"
                             onClick={() => {
                                 anchorRef.current?.focus();
@@ -186,6 +187,11 @@ const InviteSendEmail = ({ className }: { className?: string }) => {
                                     onAddRecipients={onAutocompleteAddRecipient}
                                     onKeyDown={onAutocompleteKeyDown}
                                     aria-labelledby="id_desc_invite_email"
+                                    placeholder={
+                                        b2c2b && !recipients.length
+                                            ? c('Placeholder').t`Enter email address, name, or contact group`
+                                            : undefined
+                                    }
                                 />
                             </div>
                         </div>

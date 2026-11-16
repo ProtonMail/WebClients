@@ -30,6 +30,7 @@ const SidebarListWrapper = ({ header, routes, prefix }: Props) => {
                             <SettingsListItem
                                 ref={referralRef}
                                 to={getSectionPath(prefix, section)}
+                                exact
                                 icon={section.icon}
                                 notification={section.notification}
                                 key={section.to}

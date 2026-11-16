@@ -16,6 +16,7 @@ import type { Flags, OrganizationRouterParams } from '../router-params';
 export const defaultFlags: Flags = {
     isAlwaysOnVpnEnabled: false,
     isReferralProgramEnabled: false,
+    isReferralBusinessEnabled: false,
     isDriveEasySwitchNewUIEnabled: false,
     showSignInRestrictionToggle: false,
     canDisplayNonPrivateEmailPhone: false,

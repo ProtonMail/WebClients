@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none"><defs>
+<filter id="filter0_ii_10441_79389" x="0" y="-1.875" width="48" height="51.125" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="-1.875" />
+<feGaussianBlur stdDeviation="1.25" />
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.893072 0 0 0 0 0.580392 0 0 0 0 0.988235 0 0 0 0.2 0" />
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_10441_79389" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="1.25" />
+<feGaussianBlur stdDeviation="1.25" />
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.3 0" />
+<feBlend mode="normal" in2="effect1_innerShadow_10441_79389" result="effect2_innerShadow_10441_79389" />
+</filter>
+<linearGradient id="paint0_linear_10441_79389" x1="140" y1="-72" x2="140" y2="272" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D1CFCD" />
+<stop offset="1" stop-color="#D1CFCD" />
+</linearGradient>
+<linearGradient id="paint1_linear_10441_79389" x1="35.9895" y1="-0.265436" x2="25.9975" y2="48.2489" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FAEBFF" />
+<stop offset="1" stop-color="#EBAAFF" />
+</linearGradient>
+<linearGradient id="paint2_linear_10441_79389" x1="32.4447" y1="20" x2="32.4447" y2="37.3333" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D783FF" />
+<stop offset="1" stop-color="#B370FF" />
+</linearGradient>
+<linearGradient id="paint3_linear_10441_79389" x1="27.1113" y1="26.6667" x2="31.1113" y2="26.6667" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3E01A6" />
+<stop offset="1" stop-color="#DB99FF" stop-opacity="0" />
+</linearGradient>
+<linearGradient id="paint4_linear_10441_79389" x1="18.4455" y1="10.666" x2="18.4455" y2="37.3327" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CC7DFF" />
+<stop offset="1" stop-color="#9B63FF" />
+</linearGradient>
+<linearGradient id="paint5_linear_10441_79389" x1="26.8876" y1="12.669" x2="14.2197" y2="31.8798" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D783FF" stop-opacity="0.65" />
+<stop offset="0.105165" stop-color="white" stop-opacity="0.5" />
+<stop offset="1" stop-color="#D783FF" stop-opacity="0.6" />
+</linearGradient>
+<linearGradient id="paint6_linear_10441_79389" x1="37.9985" y1="22.1616" x2="33.6921" y2="33.6304" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D783FF" stop-opacity="0.65" />
+<stop offset="0.152464" stop-color="white" stop-opacity="0.5" />
+<stop offset="1" stop-color="#D783FF" stop-opacity="0.6" />
+</linearGradient>
+</defs>
+<g id="Frame 3466020" filter="url(#filter0_ii_10441_79389)">
+<path d="M0 8C0 3.58172 3.58172 0 8 0H40C44.4183 0 48 3.58172 48 8V40C48 44.4183 44.4183 48 40 48H8C3.58172 48 0 44.4183 0 40V8Z" fill="white" />
+<path d="M0 8C0 3.58172 3.58172 0 8 0H40C44.4183 0 48 3.58172 48 8V40C48 44.4183 44.4183 48 40 48H8C3.58172 48 0 44.4183 0 40V8Z" fill="url(#paint1_linear_10441_79389)" fill-opacity="0.3" />
+<g id="org">
+<g id="Rectangle 30235">
+<path d="M27.1113 20H35.1113C36.5841 20 37.778 21.1939 37.778 22.6667V37.3333H27.1113V20Z" fill="url(#paint2_linear_10441_79389)" />
+<path d="M27.1113 20H35.1113C36.5841 20 37.778 21.1939 37.778 22.6667V37.3333H27.1113V20Z" fill="url(#paint3_linear_10441_79389)" fill-opacity="0.2" />
+</g>
+<path id="Rectangle 30234" d="M9.77881 13.3327C9.77881 11.8599 10.9727 10.666 12.4455 10.666H24.4455C25.9182 10.666 27.1121 11.8599 27.1121 13.3327V37.3327H9.77881V13.3327Z" fill="url(#paint4_linear_10441_79389)" />
+<path id="Union" d="M16.8887 24.8916C17.3796 24.8916 17.7783 25.2894 17.7783 25.7803V27.5576C17.7783 28.0485 17.3796 28.4473 16.8887 28.4473H15.1113C14.6204 28.4473 14.2227 28.0485 14.2227 27.5576V25.7803C14.2227 25.2894 14.6204 24.8916 15.1113 24.8916H16.8887ZM22.2217 24.8916C22.7126 24.8916 23.1104 25.2894 23.1104 25.7803V27.5576C23.1104 28.0485 22.7126 28.4473 22.2217 28.4473H20.4443C19.9534 28.4473 19.5547 28.0485 19.5547 27.5576V25.7803C19.5547 25.2894 19.9534 24.8916 20.4443 24.8916H22.2217ZM16.8887 19.5576C17.3796 19.5576 17.7783 19.9563 17.7783 20.4473V22.2246C17.7783 22.7155 17.3796 23.1133 16.8887 23.1133H15.1113C14.6204 23.1133 14.2227 22.7155 14.2227 22.2246V20.4473C14.2227 19.9563 14.6204 19.5576 15.1113 19.5576H16.8887ZM22.2217 19.5576C22.7126 19.5576 23.1104 19.9564 23.1104 20.4473V22.2246C23.1104 22.7155 22.7126 23.1133 22.2217 23.1133H20.4443C19.9534 23.1133 19.5547 22.7155 19.5547 22.2246V20.4473C19.5547 19.9563 19.9534 19.5576 20.4443 19.5576H22.2217ZM16.8887 14.2246C17.3795 14.2246 17.7781 14.6225 17.7783 15.1133V16.8916C17.7782 17.3824 17.3795 17.7803 16.8887 17.7803H15.1113C14.6205 17.7803 14.2228 17.3824 14.2227 16.8916V15.1133C14.2228 14.6225 14.6205 14.2246 15.1113 14.2246H16.8887ZM22.2217 14.2246C22.7125 14.2246 23.1102 14.6225 23.1104 15.1133V16.8916C23.1102 17.3824 22.7125 17.7803 22.2217 17.7803H20.4443C19.9535 17.7803 19.5548 17.3824 19.5547 16.8916V15.1133C19.5549 14.6225 19.9535 14.2246 20.4443 14.2246H22.2217Z" fill="url(#paint5_linear_10441_79389)" />
+<path id="Union_2" d="M30.4429 28.4443C30.8111 28.4443 31.1099 28.7431 31.1099 29.1113V30.4443C31.1099 30.8125 30.8111 31.1113 30.4429 31.1113H29.1099C28.7417 31.1113 28.4429 30.8125 28.4429 30.4443V29.1113C28.4429 28.7431 28.7417 28.4443 29.1099 28.4443H30.4429ZM34.8872 28.4443C35.2554 28.4443 35.5542 28.7431 35.5542 29.1113V30.4443C35.5542 30.8125 35.2554 31.1113 34.8872 31.1113H33.5542C33.186 31.1113 32.8872 30.8125 32.8872 30.4443V29.1113C32.8872 28.7431 33.186 28.4443 33.5542 28.4443H34.8872ZM30.4429 24C30.8111 24 31.1099 24.2988 31.1099 24.667V26C31.1099 26.3682 30.8111 26.667 30.4429 26.667H29.1099C28.7417 26.667 28.4429 26.3682 28.4429 26V24.667C28.4429 24.2988 28.7417 24 29.1099 24H30.4429ZM34.8872 24C35.2554 24 35.5542 24.2988 35.5542 24.667V26C35.5542 26.3682 35.2554 26.667 34.8872 26.667H33.5542C33.186 26.667 32.8872 26.3682 32.8872 26V24.667C32.8872 24.2988 33.186 24 33.5542 24H34.8872Z" fill="url(#paint6_linear_10441_79389)" />
+<path id="Rectangle 30228" d="M16 33.3333C16 32.597 16.597 32 17.3333 32H20C20.7364 32 21.3333 32.597 21.3333 33.3333V37.3333H16V33.3333Z" fill="#6C4DF0" />
+</g>
+</g>
+</svg>

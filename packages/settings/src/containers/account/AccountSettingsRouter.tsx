@@ -44,6 +44,7 @@ import CancelSubscriptionViaSupportSection from '@proton/components/containers/p
 import PrivacySection from '@proton/components/containers/privacy/PrivacySection';
 import SignInWithAnotherDeviceSettings from '@proton/components/containers/recovery/SignInWithAnotherDeviceSettings';
 import { ReferralInvitesContextProvider } from '@proton/components/containers/referral/ReferralInvitesContext';
+import { BusinessReferralSection } from '@proton/components/containers/referral/business/BusinessReferralSection';
 import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
 import { InviteSection } from '@proton/components/containers/referral/invite/InviteSection';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
@@ -85,6 +86,7 @@ const AccountSettingsRouter = ({
             upgrade,
             easySwitch,
             referral,
+            referralBusiness,
             recovery,
             security,
             password,
@@ -271,7 +273,7 @@ const AccountSettingsRouter = ({
                 </PrivateMainSettingsArea>
             </Route>
             {getIsSectionAvailable(referral) && (
-                <Route path={getSectionPath(path, referral)}>
+                <Route exact path={getSectionPath(path, referral)}>
                     <ReferralPageTelemetry />
                     <ReferralInvitesContextProvider>
                         <PrivateMainSettingsArea
@@ -281,6 +283,20 @@ const AccountSettingsRouter = ({
                         >
                             <InviteSection />
                             <RewardSection />
+                        </PrivateMainSettingsArea>
+                    </ReferralInvitesContextProvider>
+                </Route>
+            )}
+            {getIsSectionAvailable(referralBusiness) && (
+                <Route path={getSectionPath(path, referralBusiness)}>
+                    <ReferralPageTelemetry />
+                    <ReferralInvitesContextProvider>
+                        <PrivateMainSettingsArea
+                            config={referralBusiness}
+                            variant={SettingsLayoutVariant.Card}
+                            maxWidth={SettingsCardMaxWidth.Medium}
+                        >
+                            <BusinessReferralSection />
                         </PrivateMainSettingsArea>
                     </ReferralInvitesContextProvider>
                 </Route>

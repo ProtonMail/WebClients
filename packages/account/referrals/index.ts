@@ -8,13 +8,14 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { getReferralsStatus } from '@proton/shared/lib/api/core/referrals';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { Referral, ReferralStatus } from '@proton/shared/lib/interfaces/Referrals';
+import type { BusinessReferral, Referral, ReferralStatus } from '@proton/shared/lib/interfaces/Referrals';
 
 import fetchAllReferralsByOffset from './helpers/fetchAllReferralsByOffset';
 import { getDeduplicatedReferrals } from './helpers/getDeduplicatedReferrals';
 
 interface Referrals {
     all: Referral[];
+    business: BusinessReferral[];
     status: {
         // rewardMonths: number;
         // rewardMonthsLimit: number;
@@ -32,6 +33,7 @@ interface Referrals {
 
 export const referralsDefaultValue: Referrals = {
     all: [],
+    business: [],
     status: {
         // rewardMonths: 0,
         // rewardMonthsLimit: 0,
@@ -59,12 +61,14 @@ type Model = NonNullable<SliceState['value']>;
 export const selectReferrals = (state: ReferralsState) => state[name];
 const getReferrals = async (api: Api) => {
     try {
-        const [referralResult, statusResult] = await Promise.all([
+        const [referralResult, statusResult, businessResult] = await Promise.all([
             fetchAllReferralsByOffset(api),
             api<{ Code: number; Status: ReferralStatus }>(getReferralsStatus()),
+            fetchAllReferralsByOffset(api, { b2c2b: true }).catch(() => ({ Referrals: [] })),
         ]);
         return {
             all: referralResult.Referrals,
+            business: businessResult.Referrals as BusinessReferral[],
             status: {
                 // rewardMonths: statusResult.Status.RewardMonths,
                 // rewardMonthsLimit: statusResult.Status.RewardMonthsLimit,

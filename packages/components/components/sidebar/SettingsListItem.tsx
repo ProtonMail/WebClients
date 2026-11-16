@@ -14,11 +14,15 @@ import SidebarListItemContent from './SidebarListItemContent';
 import { navigationIconClassName } from './SidebarListItemContentIcon';
 import SidebarListItemLink from './SidebarListItemLink';
 
-function OptionalItemLink({ to, children }: { to?: string; children: ReactNode }) {
+function OptionalItemLink({ to, exact, children }: { to?: string; exact?: boolean; children: ReactNode }) {
     if (!to) {
         return children;
     }
-    return <SidebarListItemLink to={to}>{children}</SidebarListItemLink>;
+    return (
+        <SidebarListItemLink to={to} exact={exact}>
+            {children}
+        </SidebarListItemLink>
+    );
 }
 
 function getRightComponent(notification: ThemeColor | undefined, upgradeRequired: boolean | undefined) {
@@ -45,6 +49,7 @@ function getRightComponent(notification: ThemeColor | undefined, upgradeRequired
 
 interface Props {
     to?: string;
+    exact?: boolean; // if true, the item is only active on this exact path, not on its sub-paths
     icon?: IconComponent;
     notification?: ThemeColor;
     upgradeRequired?: boolean; // if true, will show an upgrade badge
@@ -52,10 +57,10 @@ interface Props {
 }
 
 const SettingsListItem = forwardRef<HTMLLIElement, Props>(
-    ({ to, icon: IconComponent, children, notification, upgradeRequired }, ref) => {
+    ({ to, exact, icon: IconComponent, children, notification, upgradeRequired }, ref) => {
         return (
             <SidebarListItem ref={ref}>
-                <OptionalItemLink to={to}>
+                <OptionalItemLink to={to} exact={exact}>
                     <SidebarListItemContent
                         left={IconComponent ? <IconComponent className={navigationIconClassName} /> : null}
                         right={getRightComponent(notification, upgradeRequired)}

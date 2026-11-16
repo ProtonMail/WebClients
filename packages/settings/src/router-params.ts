@@ -54,6 +54,7 @@ export type Flags = {
     isCategoryViewEnabled: boolean;
     isLumoApiEnabled: boolean;
     isReferralProgramEnabled: boolean;
+    isReferralBusinessEnabled: boolean;
     isDriveEasySwitchNewUIEnabled: boolean;
     showSignInRestrictionToggle: boolean;
 };
