@@ -23,7 +23,7 @@ export function getIsEligible({
         !user.canPay ||
         !subscription ||
         hasIntentionalScheduledModification(subscription) ||
-        !isSubscriptionCheckAllowed(multiSubscriptionContext, subscription, offerConfig)
+        !isSubscriptionCheckAllowed(multiSubscriptionContext, offerConfig)
     ) {
         return false;
     }

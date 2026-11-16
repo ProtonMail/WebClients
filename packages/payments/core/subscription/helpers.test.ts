@@ -264,14 +264,12 @@ describe('isSubscriptionCheckForbidden', () => {
         const planIDs = { [PLANS.MAIL]: 1 };
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(null), {
-                editedSubscription: null,
                 planIDs,
                 cycle: CYCLE.MONTHLY,
             })
         ).toBe(false);
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(undefined), {
-                editedSubscription: undefined,
                 planIDs,
                 cycle: CYCLE.MONTHLY,
             })
@@ -285,7 +283,6 @@ describe('isSubscriptionCheckForbidden', () => {
         // No upcoming subscription scenario
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs,
                 cycle: subscription.Cycle,
             })
@@ -307,11 +304,6 @@ describe('isSubscriptionCheckForbidden', () => {
                     })
                 ),
                 {
-                    editedSubscription: buildSubscription({
-                        planIDs,
-                        cycle,
-                        currency,
-                    }),
                     planIDs,
                     cycle,
                     coupon: 'TEST_COUPON',
@@ -335,11 +327,6 @@ describe('isSubscriptionCheckForbidden', () => {
                     })
                 ),
                 {
-                    editedSubscription: buildSubscription({
-                        planIDs,
-                        cycle,
-                        currency,
-                    }),
                     planIDs,
                     cycle,
                     Codes: ['TEST_COUPON'],
@@ -369,7 +356,6 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs,
                 cycle: CYCLE.YEARLY,
                 coupon: 'TEST_COUPON',
@@ -384,7 +370,6 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.LUMO]: 1 },
                 cycle: CYCLE.MONTHLY,
                 coupon: 'TEST_COUPON',
@@ -407,11 +392,6 @@ describe('isSubscriptionCheckForbidden', () => {
                     })
                 ),
                 {
-                    editedSubscription: buildSubscription({
-                        planIDs,
-                        cycle,
-                        currency,
-                    }),
                     planIDs,
                     cycle,
                     coupon: '',
@@ -426,7 +406,6 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(freeSubscription), {
-                editedSubscription: freeSubscription,
                 planIDs,
                 cycle: CYCLE.MONTHLY,
             })
@@ -461,14 +440,12 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: currentPlanIds,
                 cycle: CYCLE.TWO_YEARS,
             })
         ).toBe(true);
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: upcomingPlanIds,
                 cycle: CYCLE.YEARLY,
             })
@@ -514,7 +491,6 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: currentPlanIds,
                 cycle: Cycle,
             })
@@ -522,7 +498,6 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: upcomingPlanIds,
                 cycle: Cycle,
             })
@@ -551,14 +526,12 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: currentPlanIds,
                 cycle: CYCLE.MONTHLY,
             })
         ).toBe(true);
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: upcomingPlanIds,
                 cycle: CYCLE.YEARLY,
             })
@@ -586,14 +559,12 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: differentPlanIds,
                 cycle: CYCLE.MONTHLY,
             })
         ).toBe(false);
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: differentPlanIds,
                 cycle: CYCLE.YEARLY,
             })
@@ -607,21 +578,18 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
-                editedSubscription: subscribtion,
                 planIDs: { [PLANS.LUMO]: 1 },
                 cycle: CYCLE.MONTHLY,
             })
         ).toBe(true);
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
-                editedSubscription: subscribtion,
                 planIDs: { [PLANS.LUMO]: 1 },
                 cycle: CYCLE.YEARLY,
             })
         ).toBe(true);
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
-                editedSubscription: subscribtion,
                 planIDs: { [PLANS.LUMO]: 1 },
                 cycle: CYCLE.TWO_YEARS,
             })
@@ -635,21 +603,18 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.MAIL]: 1 },
                 cycle: CYCLE.MONTHLY,
             })
         ).toBe(false);
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.MAIL]: 1 },
                 cycle: CYCLE.YEARLY,
             })
         ).toBe(false);
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.MAIL]: 1 },
                 cycle: CYCLE.TWO_YEARS,
             })
@@ -670,21 +635,18 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
-                editedSubscription: subscribtion,
                 planIDs: { [PLANS.LUMO]: 1 },
                 cycle: CYCLE.MONTHLY,
             })
         ).toBe(true);
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
-                editedSubscription: subscribtion,
                 planIDs: { [PLANS.LUMO]: 1 },
                 cycle: CYCLE.YEARLY,
             })
         ).toBe(false);
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
-                editedSubscription: subscribtion,
                 planIDs: { [PLANS.LUMO]: 1 },
                 cycle: CYCLE.TWO_YEARS,
             })
@@ -728,28 +690,24 @@ describe('isSubscriptionCheckForbidden', () => {
         ({ subscription }) => {
             expect(
                 isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                    editedSubscription: subscription,
                     planIDs: { [PLANS.DUO]: 1 },
                     cycle: CYCLE.MONTHLY,
                 })
             ).toBe(true);
             expect(
                 isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                    editedSubscription: subscription,
                     planIDs: { [PLANS.FAMILY]: 1 },
                     cycle: CYCLE.MONTHLY,
                 })
             ).toBe(true);
             expect(
                 isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                    editedSubscription: subscription,
                     planIDs: { [PLANS.VISIONARY]: 1 },
                     cycle: CYCLE.MONTHLY,
                 })
             ).toBe(true);
             expect(
                 isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
-                    editedSubscription: subscription,
                     planIDs: { [PLANS.PASS_FAMILY]: 1 },
                     cycle: CYCLE.MONTHLY,
                 })
@@ -760,7 +718,6 @@ describe('isSubscriptionCheckForbidden', () => {
     it('returns true when planIDs are empty', () => {
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(null), {
-                editedSubscription: null,
                 planIDs: {},
                 cycle: CYCLE.MONTHLY,
             })
@@ -770,7 +727,6 @@ describe('isSubscriptionCheckForbidden', () => {
     it('returns true when FREE plan is selected', () => {
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(null), {
-                editedSubscription: null,
                 planIDs: { [PLANS.FREE]: 1 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -780,7 +736,6 @@ describe('isSubscriptionCheckForbidden', () => {
     it('returns true when all plan quantities are zero', () => {
         expect(
             isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(null), {
-                editedSubscription: null,
                 planIDs: { [PLANS.MAIL]: 0 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -797,7 +752,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs,
                 cycle,
                 coupon: 'TEST_COUPON',
@@ -813,7 +767,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: {},
                 cycle: CYCLE.MONTHLY,
             })
@@ -828,7 +781,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.MAIL]: 0 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -843,7 +795,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.FREE]: 1 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -856,7 +807,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
     it('should return paid-plan-required when planIDs are empty even without a subscription', () => {
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(null), {
-                editedSubscription: null,
                 planIDs: {},
                 cycle: CYCLE.MONTHLY,
             })
@@ -869,7 +819,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
     it('should return paid-plan-required when planIDs have negative quantities', () => {
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(null), {
-                editedSubscription: null,
                 planIDs: { [PLANS.MAIL]: -1 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -882,7 +831,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
     it('should not return paid-plan-required when a valid paid plan is selected', () => {
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(null), {
-                editedSubscription: null,
                 planIDs: { [PLANS.MAIL]: 1 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -897,7 +845,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs,
                 cycle: subscription.Cycle,
             })
@@ -927,7 +874,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs,
                 cycle: CYCLE.YEARLY,
             })
@@ -957,7 +903,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs,
                 cycle: CYCLE.YEARLY,
                 coupon: 'TEST_COUPON',
@@ -976,7 +921,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.MAIL]: 1 },
                 cycle: CYCLE.MONTHLY,
                 coupon: 'TEST_COUPON',
@@ -995,7 +939,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.MAIL]: 1 },
                 cycle: CYCLE.MONTHLY,
                 Codes: ['TEST_COUPON', 'TEST_COUPON_2'],
@@ -1025,7 +968,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
             expect(
                 isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                    editedSubscription: subscription,
                     planIDs: { [PLANS.LUMO]: 1 },
                     cycle,
                 })
@@ -1043,7 +985,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.LUMO]: 1 },
                 cycle: CYCLE.MONTHLY,
                 coupon: 'TEST_COUPON',
@@ -1068,7 +1009,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.DUO]: 1 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -1092,7 +1032,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: { [PLANS.DUO]: 1 },
                 cycle: CYCLE.MONTHLY,
                 coupon: 'TEST_COUPON',
@@ -1111,7 +1050,6 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs,
                 cycle,
                 Codes: ['TEST_COUPON'],
@@ -1132,7 +1070,6 @@ describe('isDangerouslyAllowedSubscriptionEstimation', () => {
 
         expect(
             isDangerouslyAllowedSubscriptionEstimation(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs,
                 cycle,
                 coupon: 'TEST_COUPON',
@@ -1148,7 +1085,6 @@ describe('isDangerouslyAllowedSubscriptionEstimation', () => {
 
         expect(
             isDangerouslyAllowedSubscriptionEstimation(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs,
                 cycle,
             })
@@ -1164,7 +1100,6 @@ describe('isDangerouslyAllowedSubscriptionEstimation', () => {
 
         expect(
             isDangerouslyAllowedSubscriptionEstimation(buildMultiSubscriptionContextFromSubscription(subscription), {
-                editedSubscription: subscription,
                 planIDs: newPlanIDs,
                 cycle,
                 coupon: 'TEST_COUPON',
@@ -1178,7 +1113,6 @@ describe('isDangerouslyAllowedSubscriptionEstimation', () => {
 
         expect(
             isDangerouslyAllowedSubscriptionEstimation(buildMultiSubscriptionContextFromSubscription(null), {
-                editedSubscription: null,
                 planIDs,
                 cycle,
                 coupon: 'TEST_COUPON',
@@ -1306,6 +1240,83 @@ describe('canModify with the Lumo purchase rules', () => {
     });
 });
 
+describe('isSubscriptionCheckForbiddenWithReason with several subscriptions', () => {
+    const webMailPlus = buildSubscription(
+        { planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.YEARLY, currency: 'EUR' },
+        { CouponCode: 'MAILCOUPON' }
+    );
+    const webLumoPlus = buildSubscription(
+        { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.MONTHLY, currency: 'EUR' },
+        { CouponCode: 'LUMOCOUPON' }
+    );
+    const context = buildMultiSubscriptionContext([webMailPlus, webLumoPlus]);
+
+    it('refuses the plan and cycle of the second subscription', () => {
+        expect(
+            isSubscriptionCheckForbiddenWithReason(context, { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.MONTHLY })
+        ).toEqual({ forbidden: true, reason: 'already-subscribed' });
+    });
+
+    it('allows another cycle of the second subscription', () => {
+        expect(
+            isSubscriptionCheckForbiddenWithReason(context, { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.YEARLY })
+        ).toEqual({ forbidden: false });
+    });
+
+    it('allows a plan that no subscription holds', () => {
+        expect(
+            isSubscriptionCheckForbiddenWithReason(context, { planIDs: { [PLANS.BUNDLE]: 1 }, cycle: CYCLE.YEARLY })
+        ).toEqual({ forbidden: false });
+    });
+
+    it('refuses the upcoming term of the second subscription', () => {
+        const webLumoPlusRenewingYearly: Subscription = {
+            ...webLumoPlus,
+            UpcomingSubscription: buildSubscription(
+                { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.YEARLY, currency: 'EUR' },
+                { IsPrepaid: true }
+            ),
+        };
+
+        expect(
+            isSubscriptionCheckForbiddenWithReason(
+                buildMultiSubscriptionContext([webMailPlus, webLumoPlusRenewingYearly]),
+                {
+                    planIDs: { [PLANS.LUMO]: 1 },
+                    cycle: CYCLE.YEARLY,
+                }
+            )
+        ).toEqual({ forbidden: true, reason: 'already-subscribed' });
+    });
+
+    it('compares the coupon with the subscription that holds the selected plan', () => {
+        const selection = { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.MONTHLY };
+
+        expect(isSubscriptionCheckForbiddenWithReason(context, { ...selection, coupon: 'LUMOCOUPON' })).toEqual({
+            forbidden: true,
+            reason: 'already-subscribed',
+        });
+        expect(isSubscriptionCheckForbiddenWithReason(context, { ...selection, coupon: 'MAILCOUPON' })).toEqual({
+            forbidden: false,
+            reason: 'possibly-invalid-coupon',
+        });
+    });
+
+    it('refuses the plan of a store subscription next to a web subscription', () => {
+        const storeLumoPlus = buildSubscription(
+            { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.MONTHLY, currency: 'EUR' },
+            { External: SubscriptionPlatform.iOS }
+        );
+
+        expect(
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContext([webMailPlus, storeLumoPlus], false), {
+                planIDs: { [PLANS.LUMO]: 1 },
+                cycle: CYCLE.YEARLY,
+            })
+        ).toEqual({ forbidden: true, reason: 'already-subscribed-externally' });
+    });
+});
+
 describe('isForbiddenModification with the Lumo purchase rules', () => {
     const storeLumoPlus = buildSubscription(PLANS.LUMO, { External: SubscriptionPlatform.iOS });
 
@@ -1325,7 +1336,6 @@ describe('isForbiddenModification with the Lumo purchase rules', () => {
     it('reports another Lumo tier as not available in the check', () => {
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContext([storeLumoPlus]), {
-                editedSubscription: storeLumoPlus,
                 planIDs: { [PLANS.LUMO_ULTRA]: 1 },
                 cycle: CYCLE.YEARLY,
             })
@@ -1381,7 +1391,6 @@ describe('isForbiddenModification next to several subscriptions', () => {
     it('blocks a forced Duo selection in the check', () => {
         expect(
             isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContext([webMailPlus, webLumoPlus]), {
-                editedSubscription: webMailPlus,
                 planIDs: { [PLANS.DUO]: 1 },
                 cycle: CYCLE.YEARLY,
             })

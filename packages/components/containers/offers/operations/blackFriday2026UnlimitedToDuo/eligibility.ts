@@ -36,7 +36,7 @@ export function getIsEligible({
         offerSubscription.isManagedExternally() ||
         offerSubscription.hasVisionary() ||
         offerSubscription.usedBlackFriday2026() ||
-        !isSubscriptionCheckAllowed(multiSubscriptionContext, subscription, offerConfig)
+        !isSubscriptionCheckAllowed(multiSubscriptionContext, offerConfig)
     ) {
         return false;
     }

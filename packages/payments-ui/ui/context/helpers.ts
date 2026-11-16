@@ -42,7 +42,6 @@ export const checkMultiplePlans = async ({
         )
         .map((datum) =>
             isSubscriptionCheckForbidden(multiSubscriptionContext, {
-                editedSubscription: subscription,
                 planIDs: datum.Plans,
                 cycle: datum.Cycle,
             })

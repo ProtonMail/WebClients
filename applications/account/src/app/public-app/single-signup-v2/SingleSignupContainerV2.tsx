@@ -1757,7 +1757,6 @@ const SingleSignupContainerV2 = ({
                     }}
                     mode={signupParameters.mode}
                     signupTrial={signupTrial}
-                    subscription={model.session?.subscription}
                     telemetryContext={getTelemetryContext(model.session)}
                 />
             )}

@@ -570,16 +570,15 @@ export function getIsVariableCycleOffer(subscription: Subscription | FreeSubscri
 }
 
 type SubscriptionCheckForbiddenEstimationParameters = {
-    editedSubscription: Subscription | FreeSubscription | null | undefined;
     planIDs: PlanIDs;
     cycle: CYCLE;
     coupon?: string;
     Codes?: string[];
 };
 
-export function isSubscriptionCheckForbiddenWithReason(
-    multiSubscriptionContext: MultiSubscriptionContext,
-    { editedSubscription: subscription, ...estimationParameters }: SubscriptionCheckForbiddenEstimationParameters
+function getCheckForbiddenReasonForSubscription(
+    subscription: Subscription,
+    estimationParameters: SubscriptionCheckForbiddenEstimationParameters
 ): SubscriptionCheckForbiddenReason {
     /**
      * Consider the table with possible cases:
@@ -649,24 +648,7 @@ export function isSubscriptionCheckForbiddenWithReason(
 
     const { planIDs, cycle } = estimationParameters;
 
-    if (hasFreePlanIDs(planIDs)) {
-        return {
-            forbidden: true,
-            reason: 'paid-plan-required',
-        };
-    }
-
-    if (!subscription) {
-        return { forbidden: false };
-    }
-
-    const forbiddenModificationAttempt = isForbiddenModification(multiSubscriptionContext, planIDs);
-    if (forbiddenModificationAttempt) {
-        return { forbidden: true, reason: 'offer-not-available' };
-    }
-
-    const selectedSameAsCurrentIgnorringCycle =
-        !!subscription && !isFreeSubscription(subscription) ? isSubscriptionUnchanged(subscription, planIDs) : false;
+    const selectedSameAsCurrentIgnorringCycle = isSubscriptionUnchanged(subscription, planIDs);
 
     const managedExternally = isManagedExternally(subscription);
 
@@ -690,10 +672,7 @@ export function isSubscriptionCheckForbiddenWithReason(
     const hasUpcomingSubscription = !!upcoming;
     const selectedSameAsUpcoming = hasUpcomingSubscription ? isSubscriptionUnchanged(upcoming, planIDs, cycle) : false;
 
-    const selectedSameAsCurrent =
-        !!subscription && !isFreeSubscription(subscription)
-            ? isSubscriptionUnchanged(subscription, planIDs, cycle)
-            : false;
+    const selectedSameAsCurrent = isSubscriptionUnchanged(subscription, planIDs, cycle);
 
     const variableCycleOffer = getIsVariableCycleOffer(subscription);
 
@@ -714,6 +693,33 @@ export function isSubscriptionCheckForbiddenWithReason(
     }
 
     return { forbidden: false };
+}
+
+export function isSubscriptionCheckForbiddenWithReason(
+    multiSubscriptionContext: MultiSubscriptionContext,
+    estimationParameters: SubscriptionCheckForbiddenEstimationParameters
+): SubscriptionCheckForbiddenReason {
+    const { planIDs } = estimationParameters;
+
+    if (hasFreePlanIDs(planIDs)) {
+        return {
+            forbidden: true,
+            reason: 'paid-plan-required',
+        };
+    }
+
+    if (isForbiddenModification(multiSubscriptionContext, planIDs)) {
+        return { forbidden: true, reason: 'offer-not-available' };
+    }
+
+    const reasons = multiSubscriptionContext.subscriptions.map((subscription) =>
+        getCheckForbiddenReasonForSubscription(subscription, estimationParameters)
+    );
+
+    return (
+        reasons.find(({ forbidden }) => forbidden) ??
+        reasons.find(({ reason }) => reason === 'possibly-invalid-coupon') ?? { forbidden: false }
+    );
 }
 
 /**

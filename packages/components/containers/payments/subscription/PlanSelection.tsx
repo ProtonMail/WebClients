@@ -187,7 +187,7 @@ function excludingPlansWithAllChecksFordidden(
         });
 
         const allChecksForbidden = allowedCycles.every((cycle) =>
-            isSubscriptionCheckForbidden(multiSubscriptionContext, { editedSubscription: subscription, planIDs, cycle })
+            isSubscriptionCheckForbidden(multiSubscriptionContext, { planIDs, cycle })
         );
         return !allChecksForbidden;
     };

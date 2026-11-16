@@ -42,7 +42,7 @@ export function isEligibleFreeUser({
             offerSubscription.isTrial() ||
             offerSubscription.hasVisionary() ||
             offerSubscription.usedBlackFriday2026() ||
-            !isSubscriptionCheckAllowed(multiSubscriptionContext, subscription, offerConfig)
+            !isSubscriptionCheckAllowed(multiSubscriptionContext, offerConfig)
         ) {
             return false;
         }

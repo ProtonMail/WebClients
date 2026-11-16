@@ -117,7 +117,6 @@ export const getSubscriptionData = async (
 
         if (
             isSubscriptionCheckForbidden(options.multiSubscriptionContext, {
-                editedSubscription: options.subscription,
                 planIDs,
                 cycle: options.cycle,
             })

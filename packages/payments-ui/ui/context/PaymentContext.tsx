@@ -331,7 +331,6 @@ export const PaymentsContextProvider = ({
         const newVatNumber = diff.vatNumber ?? stateRef.current.vatNumber;
 
         const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(getMultiSubscriptionContext(), {
-            editedSubscription: stateRef.current.subscription,
             planIDs: newPlanToCheck.planIDs,
             cycle: newPlanToCheck.cycle,
         });

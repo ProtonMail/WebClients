@@ -253,7 +253,6 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
         }
 
         const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(props.multiSubscriptionContext, {
-            editedSubscription: subscription,
             planIDs: copyNewModel.planIDs,
             cycle: copyNewModel.cycle,
             coupon: getCodes(copyNewModel).at(0),

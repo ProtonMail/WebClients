@@ -49,7 +49,6 @@ export async function runAdditionalCycleChecks(
         .filter(
             (cycle) =>
                 !isSubscriptionCheckForbidden(multiSubscriptionContext, {
-                    editedSubscription: subscription,
                     planIDs,
                     cycle,
                 })

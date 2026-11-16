@@ -29,17 +29,11 @@ import { getCheckoutUi, getOptimisticCheckResult, getOptimisticCheckout } from '
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getAvailableCurrencies, getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
-import type {
-    AvailablePaymentMethod,
-    Currency,
-    Cycle,
-    FreeSubscription,
-    PlanIDs,
-} from '@proton/payments/core/interface';
+import type { AvailablePaymentMethod, Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { switchPlan } from '@proton/payments/core/planIDs';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
-import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { FullPlansMap, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
@@ -158,7 +152,6 @@ const Step1 = ({
     mode,
     onChangeCurrency,
     signupTrial,
-    subscription,
     telemetryContext,
 }: {
     initialSessionsLength: boolean;
@@ -195,7 +188,6 @@ const Step1 = ({
     // true iff trial detected through signupParameters (thus the signup prefix)
     // We do not use signupParameters.trial because trials only applies to the B2B audience
     signupTrial: boolean;
-    subscription?: Subscription | FreeSubscription;
     telemetryContext: PaymentTelemetryContext;
 }) => {
     const { APP_NAME } = useConfig();
@@ -285,7 +277,6 @@ const Step1 = ({
     }): Promise<SubscriptionEstimation> => {
         if (
             isSubscriptionCheckForbidden(model.session?.multiSubscriptionContext ?? noSubscriptionContext, {
-                editedSubscription: subscription,
                 planIDs: values.planIDs,
                 cycle: values.cycle,
             })

@@ -521,6 +521,63 @@ describe('getSubscriptionData guards', () => {
     });
 });
 
+describe('getSubscriptionData for a subscriber with a prepaid upcoming term', () => {
+    const plansMap = getTestPlansMap('EUR');
+    const monthlyMailPlus = buildSubscription(
+        { planName: PLANS.MAIL, cycle: CYCLE.MONTHLY, currency: 'EUR' },
+        {
+            UpcomingSubscription: buildSubscription(
+                { planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'EUR' },
+                { IsPrepaid: true }
+            ),
+        }
+    );
+
+    const getMailPlusData = (cycle: CYCLE) => {
+        const checkSubscription = jest.fn(async (data: CheckSubscriptionData) => ({ requestData: data }) as any);
+        const subscriptionData = getSubscriptionData({ checkSubscription } as unknown as PaymentsApi, {
+            plansMap,
+            planIDs: { [PLANS.MAIL]: 1 },
+            cycle,
+            currency: 'EUR',
+            billingAddress: { CountryCode: 'CH', State: null },
+            VatId: undefined,
+            subscription: monthlyMailPlus.UpcomingSubscription ?? monthlyMailPlus,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(monthlyMailPlus),
+        });
+        return { subscriptionData, checkSubscription };
+    };
+
+    it.each([
+        ['the current term', CYCLE.MONTHLY],
+        ['the upcoming term', CYCLE.YEARLY],
+    ])('prices %s without calling subscription/check', async (_, cycle) => {
+        const { subscriptionData, checkSubscription } = getMailPlusData(cycle);
+
+        const { checkResult } = await subscriptionData;
+
+        expect(checkSubscription).not.toHaveBeenCalled();
+        expect(checkResult).toMatchObject({
+            optimistic: true,
+            Cycle: cycle,
+            Amount: plansMap[PLANS.MAIL]?.Pricing[cycle],
+        });
+    });
+
+    it('checks another cycle of the plan', async () => {
+        const { subscriptionData, checkSubscription } = getMailPlusData(CYCLE.TWO_YEARS);
+
+        await subscriptionData;
+
+        expect(checkSubscription).toHaveBeenCalledTimes(1);
+        expect(checkSubscription.mock.calls[0][0]).toMatchObject({
+            Plans: { [PLANS.MAIL]: 1 },
+            Cycle: CYCLE.TWO_YEARS,
+            Currency: 'EUR',
+        });
+    });
+});
+
 describe('getUserInfo with the Lumo purchase rules', () => {
     const plansMap = getTestPlansMap('EUR');
     const plansInEurAndUsd = [...(Object.values(plansMap) as Plan[]), ...getTestPlans('USD')];
