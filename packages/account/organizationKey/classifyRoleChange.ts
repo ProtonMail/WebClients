@@ -1,5 +1,5 @@
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
-import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Member';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 
 import { getMemberUnprivatizationMode } from '../members/memberUnprivatization';
@@ -20,7 +20,7 @@ export const classifyRoleChange = ({
     targetRole,
     isPasswordlessOrg,
 }: {
-    member: EnhancedMember;
+    member: Member;
     targetRole: MEMBER_ROLE;
     isPasswordlessOrg: boolean;
 }): RoleChangeClassification => {

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { getMemberAddresses } from '@proton/account/members';
-import { assignMemberRoles, confirmMemberRoleChange, editMember } from '@proton/account/members/actions';
+import { confirmMemberRoleChange, editMember } from '@proton/account/members/editMember';
 import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/account/members/memberUnprivatization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
@@ -235,8 +235,7 @@ const SubUserEditModal = ({
 
     const handleUpdateMember = async (
         memberDiff: Parameters<typeof editMember>[0]['memberDiff'],
-        memberKeyPacketPayload: PromoteGlobalSSOPayload | MemberKeyPayload | null = null,
-        notify: boolean = true
+        memberKeyPacketPayload: PromoteGlobalSSOPayload | MemberKeyPayload | null = null
     ) => {
         const result = await dispatch(
             editMember({
@@ -251,11 +250,8 @@ const SubUserEditModal = ({
             const memberDiff = getMemberDiff({ model, initialModel, hasVPN });
             // Keep the partially updated member diff values if any
             updateModel({ ...newValue, ...memberDiff });
-            if (notify) {
-                createNotification({ text: c('Success').t`User updated` });
-            }
+            createNotification({ text: c('Success').t`User updated` });
         }
-        return result.diff;
     };
 
     const handleToggleLegacyOrgAdminToggle = async (makeAdmin: boolean) => {
@@ -625,28 +621,23 @@ const SubUserEditModal = ({
                     }
 
                     const handleSubmit = async () => {
-                        const memberDiff = getMemberDiff({ model, initialModel, hasVPN });
-                        const hasMemberChanges = await handleUpdateMember(memberDiff, null, false);
-                        let hasRoleChanges = false;
-                        if (submitsEditedRoles && hasMemberRoles) {
-                            const result = await dispatch(
-                                assignMemberRoles({
-                                    member,
-                                    currentRoles: member.UserOrganizationRoles ?? [],
-                                    desiredRoleIds: editedRoles,
-                                    payload: null,
-                                    api: silentApi,
-                                })
-                            );
-                            hasRoleChanges = result.changed;
-                        } else if (submitsEditedRoles) {
+                        const { diff } = await dispatch(
+                            editMember({
+                                member,
+                                memberDiff: getMemberDiff({ model, initialModel, hasVPN }),
+                                memberKeyPacketPayload: null,
+                                roleIds: submitsEditedRoles && hasMemberRoles ? editedRoles : undefined,
+                                api: silentApi,
+                            })
+                        );
+                        if (submitsEditedRoles && !hasMemberRoles) {
                             createNotification({
                                 type: 'error',
                                 text: c('Error')
                                     .t`Role changes were not saved because the user's roles could not be loaded.`,
                             });
                         }
-                        if (hasMemberChanges || hasRoleChanges) {
+                        if (diff) {
                             createNotification({ text: c('Success').t`User updated` });
                         }
                         rest.onClose?.();

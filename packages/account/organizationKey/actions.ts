@@ -367,7 +367,7 @@ export const getMemberEditPayload = ({
     classification,
     api,
 }: {
-    member: EnhancedMember;
+    member: Member;
     classification: RoleChangeClassification;
     api: Api;
 }): ThunkAction<

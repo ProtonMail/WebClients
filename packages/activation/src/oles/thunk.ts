@@ -9,7 +9,7 @@ import type { KtState } from '@proton/account/kt';
 import { getKTActivation } from '@proton/account/kt/actions';
 import type { MemberState } from '@proton/account/member';
 import { type MembersState, getMemberAddresses, membersThunk } from '@proton/account/members';
-import { createMember } from '@proton/account/members/actions';
+import { createMember } from '@proton/account/members/createMember';
 import UnavailableAddressesError from '@proton/account/members/errors/UnavailableAddressesError';
 import { decryptTemporaryPassword, encryptTemporaryPassword } from '@proton/account/orgJoiningLink/helpers';
 import { organizationThunk } from '@proton/account/organization';
@@ -362,7 +362,7 @@ export const createMigrationBatch = createAsyncThunk<
             for (const user of usersToCreate) {
                 try {
                     const [Local, Domain] = getEmailParts(user.Email);
-                    const member = await dispatch(
+                    const { member } = await dispatch(
                         createMember({
                             api,
                             single: false,

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { assignMemberRoles, createMember } from '@proton/account/members/actions';
+import { createMember } from '@proton/account/members/createMember';
 import InvalidAddressesError from '@proton/account/members/errors/InvalidAddressesError';
 import MemberCreationValidationError from '@proton/account/members/errors/MemberCreationValidationError';
 import UnavailableAddressesError from '@proton/account/members/errors/UnavailableAddressesError';
@@ -218,6 +218,9 @@ const SubUserCreateModal = ({
     const emailAddressParts = getNormalizedAddress();
     const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
 
+    const canAssignRoles = model.mode === CreateMemberMode.Password;
+    const isAdminRolesUIEnabled = adminRolesUIState === AdminRolesUIState.Enabled;
+
     const save = async () => {
         try {
             return await dispatch(
@@ -238,6 +241,7 @@ const SubUserCreateModal = ({
                         disableDomainValidation,
                         disableAddressValidation,
                     },
+                    roleIds: isAdminRolesUIEnabled ? selectedRoles : undefined,
                 })
             );
         } catch (error) {
@@ -252,29 +256,15 @@ const SubUserCreateModal = ({
     };
 
     const handleSubmit = async () => {
-        let createdMember: Awaited<ReturnType<typeof save>>;
         try {
             stop();
-            createdMember = await save().finally(start);
+            const { rolesError } = await save().finally(start);
+            if (rolesError) {
+                errorHandler(rolesError);
+            }
         } catch (error) {
             errorHandler(error);
             return;
-        }
-
-        if (adminRolesUIState === AdminRolesUIState.Enabled && model.mode === CreateMemberMode.Password) {
-            try {
-                await dispatch(
-                    assignMemberRoles({
-                        member: createdMember as EnhancedMember,
-                        currentRoles: [],
-                        desiredRoleIds: selectedRoles,
-                        payload: null,
-                        api: silentApi,
-                    })
-                );
-            } catch (error) {
-                errorHandler(error);
-            }
         }
 
         onClose?.();
@@ -363,7 +353,7 @@ const SubUserCreateModal = ({
         </span>
     );
 
-    const pendingInvitation = model.mode !== CreateMemberMode.Password;
+    const pendingInvitation = !canAssignRoles;
     const showUpgradeForAdminRoles = adminRolesUIState === AdminRolesUIState.Disabled && !loadingAdminRolesUI;
     // When the roles tab displays its own pending invitation banner, we don't want to show a second one here
     const showsRolesTabInvitationBanner =
@@ -485,7 +475,7 @@ const SubUserCreateModal = ({
                     />
                 )}
 
-                {model.mode === CreateMemberMode.Password && adminRolesUIState !== AdminRolesUIState.Enabled && (
+                {canAssignRoles && !isAdminRolesUIEnabled && (
                     <>
                         <MemberToggleContainer
                             toggle={
@@ -634,11 +624,7 @@ const SubUserCreateModal = ({
                                       <RolesAndPermissionsTab
                                           selectedRoles={selectedRoles}
                                           onChange={setSelectedRoles}
-                                          disabled={
-                                              submitting ||
-                                              model.mode !== CreateMemberMode.Password ||
-                                              adminRolesUIState !== AdminRolesUIState.Enabled
-                                          }
+                                          disabled={submitting || !canAssignRoles || !isAdminRolesUIEnabled}
                                           banner={getRolesTabBanner({
                                               showUpgrade: showUpgradeForAdminRoles,
                                               pendingInvitation,

@@ -10,7 +10,8 @@ import noop from '@proton/utils/noop';
 
 import type { MemberState } from '../member';
 import { membersThunk } from '../members';
-import { editMember, resetSelfVpnConnectionsHelper } from '../members/actions';
+import { resetSelfVpnConnectionsHelper } from '../members/actions';
+import { editMember } from '../members/editMember';
 import { type OrganizationState, organizationActions, organizationThunk } from '../organization/index';
 import {
     type CreatePasswordlessOrganizationKeysState,

@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { createInvite, editInvite } from '@proton/account/members/actions';
+import { createInvite, editInvite } from '@proton/account/members/memberInvites';
 import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
