@@ -4,7 +4,6 @@ import { allowed, bool, duration, number, topValues } from '@proton/telemetry-tr
 import { defineTimer } from '@proton/telemetry-tracker/lib/timers';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
-import type { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../constants';
 import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType, type TIME_PERIOD } from '../interface';
 
 /**
@@ -255,18 +254,6 @@ const easySwitchCustomizeMailImportCompleted = defineEvent({
     ...baseEvent,
     event: TelemetryAccountImportFlowEvents.stepCompleted,
     dimensions: { flow: flowSpec, step: stepSpec, provider: providerSpec, hasChanges: bool() },
-});
-
-const byoeClaimProtonAddressInteracted = defineEvent({
-    ...baseEvent,
-    event: TelemetryAccountImportFlowEvents.stepInteracted,
-    dimensions: { flow: flowSpec, step: stepSpec, action: actionSpec, source: sourceSpec },
-});
-
-const byoeClaimProtonAddressCompleted = defineEvent({
-    ...baseEvent,
-    event: TelemetryAccountImportFlowEvents.stepCompleted,
-    dimensions: { flow: flowSpec, step: stepSpec, source: sourceSpec },
 });
 
 const byoeStepCompleted = defineEvent({
@@ -533,27 +520,6 @@ export const trackAccountImportLinkedAddressModalAction = (
         modalAction,
         { dimensions: { flow: BYOE, step: 'linked_address_modal', action }, ...withTimestamp() },
         { flushImmediately: true }
-    );
-};
-
-/**
- * A BYOE-only user chose to create a Proton address from `source`, before the creation. Standalone event, there is no
- * running flow, so no `activeMs`.
- */
-export const trackAccountImportClaimProtonAddressClicked = (source: BYOE_CLAIM_PROTON_ADDRESS_SOURCE) => {
-    tracker.emit(
-        byoeClaimProtonAddressInteracted,
-        { dimensions: { flow: BYOE, step: 'claim_proton_address', action: 'claim', source }, ...withTimestamp() },
-        { delay: false, flushImmediately: true }
-    );
-};
-
-/** The Proton address of a BYOE-only user was created from `source` */
-export const trackAccountImportClaimProtonAddressCompleted = (source: BYOE_CLAIM_PROTON_ADDRESS_SOURCE) => {
-    tracker.emit(
-        byoeClaimProtonAddressCompleted,
-        { dimensions: { flow: BYOE, step: 'claim_proton_address', source }, ...withTimestamp() },
-        { delay: false, flushImmediately: true }
     );
 };
 

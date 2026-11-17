@@ -97,7 +97,7 @@ jest.mock('@proton/activation/src/hooks/useReconnectSync', () => ({
     },
 }));
 
-jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus', () => ({
+jest.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
     default: () => {
         return [false, false] as const;

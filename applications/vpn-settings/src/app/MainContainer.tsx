@@ -91,6 +91,7 @@ import { AutocompleteSettingsSearch } from '@proton/settings/SettingsSearch';
 import RecoverySettingsRouter from '@proton/settings/containers/account/recovery/RecoverySettingsRouter';
 import OrganizationSettingsRouter from '@proton/settings/containers/organization/OrganizationSettingsRouter';
 import { getOrganizationAppRoutes } from '@proton/settings/containers/organization/routes';
+import PendingInvitationsPanel from '@proton/settings/containers/pendingInvitations/PendingInvitationsPanel';
 import type {
     AccountRecoveryRouterFlags,
     Flags,
@@ -377,7 +378,10 @@ const MainContainer: FunctionComponent = () => {
                                         <AutomaticSubscriptionModal />
                                         <PrivateMainSettingsArea config={vpnRoutes.dashboard}>
                                             <PlansSection app={app} />
-                                            <YourPlanSection app={app} />
+                                            <YourPlanSection
+                                                app={app}
+                                                PendingInvitationsPanel={PendingInvitationsPanel}
+                                            />
                                             <UpgradeVpnSection app={app} />
                                             <SubscriptionsSection />
                                             <PaymentMethodsSection app={app} />

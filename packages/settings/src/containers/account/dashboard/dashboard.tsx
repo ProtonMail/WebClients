@@ -2,30 +2,30 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
+import DriveBlogSection from '@proton/components/containers/account/dashboard/drive/DriveBlogSection/DriveBlogSection';
+import DriveDownloadAndInfoSection from '@proton/components/containers/account/dashboard/drive/DriveDownloadAndInfoSection/DriveDownloadAndInfoSection';
+import MailBlogSection from '@proton/components/containers/account/dashboard/mail/MailBlogSection/MailBlogSection';
+import { MailDownloadAndInfoSection } from '@proton/components/containers/account/dashboard/mail/MailDownloadAndInfoSection/MailDownloadAndInfoSection';
+import MeetDownloadAndInfoSection from '@proton/components/containers/account/dashboard/meet/MeetDownloadAndInfoSection/MeetDownloadAndInfoSection';
+import PassBlogSection from '@proton/components/containers/account/dashboard/pass/PassBlogSection/PassBlogSection';
+import PassDownloadAndInfoSection from '@proton/components/containers/account/dashboard/pass/PassDownloadAndInfoSection/PassDownloadAndInfoSection';
+import AlsoInYourPlanSection from '@proton/components/containers/account/dashboard/shared/AlsoInYourPlanSection/AlsoInYourPlanSection';
+import AlsoInYourPlanProtonDrive from '@proton/components/containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonDrive';
+import AlsoInYourPlanProtonMail from '@proton/components/containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonMail';
+import AlsoInYourPlanProtonPass from '@proton/components/containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonPass';
+import AlsoInYourPlanProtonVPN from '@proton/components/containers/account/dashboard/shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonVPN';
+import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
+import type { SettingsAreaConfig } from '@proton/components/containers/layout/interface';
+import { SettingsCardMaxWidth } from '@proton/components/containers/layout/interface';
+import { UpsellModalTelemetryProvider } from '@proton/components/containers/payments/subscription/UpsellModalTelemetryProvider';
+import BundleUpsellBanner from '@proton/components/containers/payments/subscription/YourPlanSectionV2/Upsells/BundleUpsellBanner';
+import WorkspaceFromFreeBanner2 from '@proton/components/containers/payments/subscription/YourPlanSectionV2/Upsells/meet/WorkspaceFromFreeBanner2';
+import YourPlanSectionV2 from '@proton/components/containers/payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
+import { YourPlanUpsellsSectionV2 } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
-import PrivateMainSettingsArea from '../../layout/PrivateMainSettingsArea';
-import type { SettingsAreaConfig } from '../../layout/interface';
-import { SettingsCardMaxWidth } from '../../layout/interface';
-import { UpsellModalTelemetryProvider } from '../../payments/subscription/UpsellModalTelemetryProvider';
-import PendingInvitations from '../../payments/subscription/YourPlanSectionV2/PendingInvitations';
-import BundleUpsellBanner from '../../payments/subscription/YourPlanSectionV2/Upsells/BundleUpsellBanner';
-import WorkspaceFromFreeBanner2 from '../../payments/subscription/YourPlanSectionV2/Upsells/meet/WorkspaceFromFreeBanner2';
-import YourPlanSectionV2 from '../../payments/subscription/YourPlanSectionV2/YourPlanSectionV2';
-import { YourPlanUpsellsSectionV2 } from '../../payments/subscription/YourPlanSectionV2/YourPlanUpsellsSectionV2';
-import DriveBlogSection from './drive/DriveBlogSection/DriveBlogSection';
-import DriveDownloadAndInfoSection from './drive/DriveDownloadAndInfoSection/DriveDownloadAndInfoSection';
-import MailBlogSection from './mail/MailBlogSection/MailBlogSection';
-import { MailDownloadAndInfoSection } from './mail/MailDownloadAndInfoSection/MailDownloadAndInfoSection';
-import MeetDownloadAndInfoSection from './meet/MeetDownloadAndInfoSection/MeetDownloadAndInfoSection';
-import PassBlogSection from './pass/PassBlogSection/PassBlogSection';
-import PassDownloadAndInfoSection from './pass/PassDownloadAndInfoSection/PassDownloadAndInfoSection';
-import AlsoInYourPlanSection from './shared/AlsoInYourPlanSection/AlsoInYourPlanSection';
-import AlsoInYourPlanProtonDrive from './shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonDrive';
-import AlsoInYourPlanProtonMail from './shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonMail';
-import AlsoInYourPlanProtonPass from './shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonPass';
-import AlsoInYourPlanProtonVPN from './shared/AlsoInYourPlanSection/products/AlsoInYourPlanProtonVPN';
+import PendingInvitations from '../../pendingInvitations/PendingInvitations';
 
 interface Props {
     app: APP_NAMES;

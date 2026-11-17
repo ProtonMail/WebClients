@@ -1,3 +1,4 @@
+import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/byoe/src/constants';
 import {
     ADDRESS_FLAGS,
     ADDRESS_RECEIVE,
@@ -9,7 +10,6 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { ApiSyncState } from '../api/api.interface';
-import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../constants';
 import { ImportType } from '../interface';
 import type { Sync } from '../logic/sync/sync.interface';
 import { getBYOEAddressLimit, getBYOEAddressesCounts } from './byoeAddresses';

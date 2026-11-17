@@ -1,29 +1,21 @@
 import { c, msgid } from 'ttag';
 
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
-import { useConfig } from '@proton/app-context/useConfig';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import TopBanner from '@proton/components/containers/topBanners/TopBanner';
+import useUid from '@proton/components/hooks/useUid';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import useSettingsLink from '../../components/link/useSettingsLink';
-import useModalState from '../../components/modalTwo/useModalState';
-import useUid from '../../hooks/useUid';
-import PendingInvitationModal from '../payments/subscription/PendingInvitationModal';
-import TopBanner from './TopBanner';
+import PendingInvitationModal from './PendingInvitationModal';
 
-const allowedApps: APP_NAMES[] = [APPS.PROTONACCOUNT, APPS.PROTONCALENDAR, APPS.PROTONMAIL, APPS.PROTONDRIVE];
 const PendingInvitationTopBanner = () => {
-    const protonConfig = useConfig();
     const [invites = []] = useUserInvitations();
     const goToSettings = useSettingsLink();
     const [modalProps, setModal, render] = useModalState();
     const uid = useUid('pending-invitation-top-banner');
 
     const inviteLengths = invites.length;
-
-    if (!allowedApps.includes(protonConfig.APP_NAME)) {
-        return null;
-    }
 
     if (inviteLengths === 0) {
         return null;

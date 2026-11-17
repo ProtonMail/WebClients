@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/byoe/src/constants';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Loader from '@proton/components/components/loader/Loader';
 import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -14,7 +15,6 @@ import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
-import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../../constants';
 import useBYOEAddressesCounts from '../../../hooks/useBYOEAddressesCounts';
 
 interface Props extends ModalProps {

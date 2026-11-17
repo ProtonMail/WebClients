@@ -1,5 +1,5 @@
 import { useOrganization } from '@proton/account/organization/hooks';
-import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 

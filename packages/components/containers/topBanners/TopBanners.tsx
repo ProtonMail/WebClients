@@ -8,7 +8,6 @@ import BadAppVersionBanner from './BadAppVersionBanner';
 import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
 import NGCAccessTopBanner from './NGCAccessTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
-import PendingInvitationTopBanner from './PendingInvitationTopBanner';
 import { PostedInvoiceTopBanner } from './PostedInvoiceTopBanner';
 import SessionRecoveryBanners from './SessionRecoveryBanners';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
@@ -33,7 +32,6 @@ const TopBanners = ({ children, app }: Props) => {
             <BadAppVersionBanner />
             <AccessTypeTopBanner />
             <DesktopNotificationTopBanner />
-            <PendingInvitationTopBanner />
             <SubscriptionEndsBanner app={app} />
             <SessionRecoveryBanners />
             <NGCAccessTopBanner />

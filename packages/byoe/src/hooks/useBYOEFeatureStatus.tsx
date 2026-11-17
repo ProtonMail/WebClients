@@ -2,7 +2,7 @@ import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCa
 import { useUser } from '@proton/account/user/hooks';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { getCanSeeBYOE } from '../helpers/byoeAccess.ts';
+import { getCanSeeBYOE } from '../helpers/byoeAccess';
 
 const useBYOEFeatureStatus = () => {
     const [user, loadingUser] = useUser();

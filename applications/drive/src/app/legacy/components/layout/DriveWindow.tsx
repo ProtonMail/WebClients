@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom-v5-compat';
 import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner';
 import { useUser } from '@proton/account/user/hooks';
 import ContactsTabImportDropdown from '@proton/activation/src/components/ContactsTabImportDropdown/ContactsTabImportDropdown';
+import CalendarDrawerClaimProtonAddressModal from '@proton/byoe/src/components/BYOEClaimProtonAddressModal/CalendarDrawerClaimProtonAddressModal';
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
 import DrawerSidebar from '@proton/components/components/drawer/DrawerSidebar';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
@@ -20,6 +21,7 @@ import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
 import { useFlagsDriveLumo } from '@proton/drive/modules/flags';
 import useToggle from '@proton/hooks/useToggle';
+import PendingInvitationTopBanner from '@proton/settings/containers/pendingInvitations/PendingInvitationTopBanner';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
@@ -59,6 +61,7 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
 
     const top = (
         <TopBanners app={APPS.PROTONDRIVE}>
+            <PendingInvitationTopBanner />
             <PasswordReminderTopBanner />
             {fileRecoveryBanner}
         </TopBanners>
@@ -84,6 +87,7 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
         permissions.calendar && allowedProducts.has(Product.Calendar) && (
             <CalendarDrawerAppButton
                 aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)}
+                ClaimProtonAddressModal={CalendarDrawerClaimProtonAddressModal}
                 disabled={loadingAllowedProducts}
             />
         ),

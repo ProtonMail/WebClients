@@ -1,10 +1,10 @@
 import { useUser } from '@proton/account/user/hooks';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { BYOEAddressLimit } from '../helpers/byoeAddresses';
 import { getBYOEAddressLimit } from '../helpers/byoeAddresses';
 import useBYOEAddressesCounts from '../hooks/useBYOEAddressesCounts';
-import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 
 /**
  * Outcome of the BYOE gating check:

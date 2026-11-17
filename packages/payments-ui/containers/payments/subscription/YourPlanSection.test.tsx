@@ -26,9 +26,14 @@ import { EntitlementType } from '@proton/payments/core/entitlements/interface';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import YourPlanSection from './YourPlanSection';
+
+const PendingInvitationsPanel = ({ invites }: { invites: PendingInvitation[] }) => (
+    <div data-testid="pending-invitations-panel">{invites.map((invite) => invite.OrganizationName)}</div>
+);
 
 jest.mock('@proton/app-context/useConfig');
 const mockUseConfig = useConfig as jest.MockedFunction<any>;
@@ -106,11 +111,14 @@ describe('YourPlanSection', () => {
 
     describe('when user has no pending invite', () => {
         it('should only render subscription panel and upsell panels', async () => {
-            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
-                preloadedState: buildPreloadedState({
-                    subscription: subscriptionBundle,
-                }),
-            });
+            const { getByTestId } = renderWithProviders(
+                <YourPlanSection app={APPS.PROTONMAIL} PendingInvitationsPanel={PendingInvitationsPanel} />,
+                {
+                    preloadedState: buildPreloadedState({
+                        subscription: subscriptionBundle,
+                    }),
+                }
+            );
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {
@@ -147,11 +155,14 @@ describe('YourPlanSection', () => {
         it('should render subscription panel and pending invites, without upsells', async () => {
             mockUsePendingUserInvitations.mockReturnValue([[pendingInvite], false]);
 
-            renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
-                preloadedState: buildPreloadedState({
-                    subscription: subscriptionBundle,
-                }),
-            });
+            renderWithProviders(
+                <YourPlanSection app={APPS.PROTONMAIL} PendingInvitationsPanel={PendingInvitationsPanel} />,
+                {
+                    preloadedState: buildPreloadedState({
+                        subscription: subscriptionBundle,
+                    }),
+                }
+            );
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {
@@ -172,9 +183,7 @@ describe('YourPlanSection', () => {
 
             // Invite Panel
             expect(invitePanel).toBeTruthy();
-            within(invitePanel as HTMLElement).getByText('Pending invitation');
-            within(invitePanel as HTMLElement).getByText('Invitation from Test Org');
-            within(invitePanel as HTMLElement).getByText('View invitation');
+            within(invitePanel as HTMLElement).getByText('Test Org');
         });
     });
 
@@ -183,9 +192,12 @@ describe('YourPlanSection', () => {
             mockUseUser.mockReturnValue([{ ...user, isFree: true }]);
             mockUseOrganization.mockReturnValue([{}]);
 
-            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
-                preloadedState: buildPreloadedState(),
-            });
+            const { getByTestId } = renderWithProviders(
+                <YourPlanSection app={APPS.PROTONMAIL} PendingInvitationsPanel={PendingInvitationsPanel} />,
+                {
+                    preloadedState: buildPreloadedState(),
+                }
+            );
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {
@@ -233,11 +245,14 @@ describe('YourPlanSection', () => {
                 false,
             ]);
 
-            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
-                preloadedState: buildPreloadedState({
-                    subscription: subscriptionBundle,
-                }),
-            });
+            const { getByTestId } = renderWithProviders(
+                <YourPlanSection app={APPS.PROTONMAIL} PendingInvitationsPanel={PendingInvitationsPanel} />,
+                {
+                    preloadedState: buildPreloadedState({
+                        subscription: subscriptionBundle,
+                    }),
+                }
+            );
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {
@@ -273,9 +288,12 @@ describe('YourPlanSection', () => {
         it.skip('should render subscription, usage and upsells', async () => {
             mockUseOrganization.mockReturnValue([organization]);
 
-            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
-                preloadedState: buildPreloadedState(),
-            });
+            const { getByTestId } = renderWithProviders(
+                <YourPlanSection app={APPS.PROTONMAIL} PendingInvitationsPanel={PendingInvitationsPanel} />,
+                {
+                    preloadedState: buildPreloadedState(),
+                }
+            );
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {
@@ -301,11 +319,14 @@ describe('YourPlanSection', () => {
         it('should render subscription, upsells but not usage when organisation is locked', async () => {
             mockUseOrganization.mockReturnValue([{ ...organization, State: ORGANIZATION_STATE.DELINQUENT }]);
 
-            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
-                preloadedState: buildPreloadedState({
-                    subscription: buildSubscription(PLANS.MAIL_PRO),
-                }),
-            });
+            const { getByTestId } = renderWithProviders(
+                <YourPlanSection app={APPS.PROTONMAIL} PendingInvitationsPanel={PendingInvitationsPanel} />,
+                {
+                    preloadedState: buildPreloadedState({
+                        subscription: buildSubscription(PLANS.MAIL_PRO),
+                    }),
+                }
+            );
 
             let dashboardPanelsContainer: HTMLElement;
             await waitFor(() => {

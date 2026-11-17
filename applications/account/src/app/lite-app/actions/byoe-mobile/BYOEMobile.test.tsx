@@ -19,7 +19,7 @@ jest.mock('@proton/activation/src/logic/StoreProvider', () => ({
     __esModule: true,
     default: ({ children }: { children: ReactNode }) => <>{children}</>,
 }));
-jest.mock('@proton/activation/src/components/Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal', () => ({
+jest.mock('@proton/byoe/src/components/ReachedLimitForwardingModal/ReachedLimitForwardingModal', () => ({
     __esModule: true,
     default: () => <div>paid limit prompt</div>,
 }));

@@ -2,8 +2,8 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
-import { trackAccountImportClaimProtonAddressClicked } from '@proton/activation/src/telemetry/accountImportFlow';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/byoe/src/constants';
+import { trackAccountImportClaimProtonAddressClicked } from '@proton/byoe/src/telemetry/claimProtonAddress';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';

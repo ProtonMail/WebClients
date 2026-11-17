@@ -1,3 +1,5 @@
+import type { ComponentType } from 'react';
+
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useEntitlementCatalog, useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -32,19 +34,20 @@ import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials'
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
+import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { PaymentsContextProvider } from '../../../ui/context/PaymentContext';
-import PendingInvitationsPanel from './panels/PendingInvitationsPanel';
 
 import './YourPlanSection.scss';
 
 interface Props {
     app: APP_NAMES;
+    PendingInvitationsPanel: ComponentType<{ invites: PendingInvitation[] }>;
 }
 
-const YourPlanSectionInner = ({ app }: Props) => {
+const YourPlanSectionInner = ({ app, PendingInvitationsPanel }: Props) => {
     const [user] = useUser();
     const [entitlementCatalog] = useEntitlementCatalog();
     const [plansResult, loadingPlans] = usePlans();

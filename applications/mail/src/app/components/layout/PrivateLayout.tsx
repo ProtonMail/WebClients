@@ -15,6 +15,7 @@ import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { selectHasFocusedComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import PassAliasesContainer from '@proton/pass/components/Drawer/PassAliases/PassAliasesContainer';
+import PendingInvitationTopBanner from '@proton/settings/containers/pendingInvitations/PendingInvitationTopBanner';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -65,6 +66,7 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
                 </Suspense>
             )}
             <TopBanners app={APPS.PROTONMAIL}>
+                <PendingInvitationTopBanner />
                 <PasswordReminderTopBanner />
                 <SmartBanner app={APPS.PROTONMAIL} />
             </TopBanners>

@@ -1,6 +1,5 @@
 import { vi } from 'vitest';
 
-import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../constants';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType, TIME_PERIOD } from '../interface';
 import {
     getAccountImportBYOEStartedAt,
@@ -12,8 +11,6 @@ import {
     trackAccountImportBYOESignInClicked,
     trackAccountImportBYOEStarted,
     trackAccountImportBYOEUpsellViewed,
-    trackAccountImportClaimProtonAddressClicked,
-    trackAccountImportClaimProtonAddressCompleted,
     trackAccountImportClaimableAddressModalAction,
     trackAccountImportClaimableAddressModalShown,
     trackAccountImportEasySwitchCustomizeMailImportCancelled,
@@ -34,27 +31,6 @@ import { mockAccountImportFlowTracker } from './mockTrackerOfGroup';
 
 describe('account import flow telemetry', () => {
     describe('BYOE', () => {
-        it('describes the claim of a Proton address with its source and no time', () => {
-            const { reports } = mockAccountImportFlowTracker();
-
-            trackAccountImportClaimProtonAddressClicked(BYOE_CLAIM_PROTON_ADDRESS_SOURCE.OPEN_CALENDAR_APP);
-            trackAccountImportClaimProtonAddressCompleted(BYOE_CLAIM_PROTON_ADDRESS_SOURCE.MAIL_COMPOSER);
-
-            expect(reports.map(({ event }) => event)).toEqual(['step_interacted', 'step_completed']);
-            expect(reports[0].dimensions).toEqual({
-                flow: 'byoe',
-                step: 'claim_proton_address',
-                action: 'claim',
-                source: 'open-calendar-app',
-            });
-            expect(reports[1].dimensions).toEqual({
-                flow: 'byoe',
-                step: 'claim_proton_address',
-                source: 'mail-composer',
-            });
-            expect(reports[1].values).not.toHaveProperty('activeMs');
-        });
-
         it('gives the variant of the start to the following steps, and forgets it when the flow is resumed', () => {
             const { reports } = mockAccountImportFlowTracker();
 

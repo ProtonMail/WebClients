@@ -2,18 +2,18 @@ import { renderHook } from '@testing-library/react';
 import { type Mock, vi } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
+import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/byoe/src/constants';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../constants';
 import useBYOEAddressesCounts from '../hooks/useBYOEAddressesCounts';
-import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import { useBYOEGating } from './useBYOEGating';
 
 vi.mock('@proton/account/user/hooks');
 vi.mock('@proton/unleash/useFlag');
 vi.mock('../hooks/useBYOEAddressesCounts');
-vi.mock('../hooks/useBYOEFeatureStatus');
+vi.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus');
 
 const mockUseUser = useUser as Mock;
 const mockUseFlag = useFlag as Mock;

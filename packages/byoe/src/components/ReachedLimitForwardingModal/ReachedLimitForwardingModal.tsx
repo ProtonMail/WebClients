@@ -4,8 +4,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 
-import { MAX_SYNC_PAID_USER } from '../../../constants';
-import useBYOEFeatureStatus from '../../../hooks/useBYOEFeatureStatus';
+import { MAX_SYNC_PAID_USER } from '../../constants';
+import useBYOEFeatureStatus from '../../hooks/useBYOEFeatureStatus';
 
 const getModalText = (hasAccessToBYOE: boolean) => {
     if (hasAccessToBYOE) {

@@ -6,6 +6,8 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import ReachedLimitForwardingModal from '@proton/byoe/src/components/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
+import UpsellForwardingModal from '@proton/byoe/src/components/UpsellForwardingModal/UpsellForwardingModal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
@@ -22,10 +24,8 @@ import AddressLinkedToAnotherAccountModal from '../Modals/AddressLinkedToAnother
 import BYOEConversionModal from '../Modals/BYOEConversionModal/BYOEConversionModal';
 import { ClaimableAddressModal } from '../Modals/ClaimableAddressModal/ClaimableAddressModal';
 import GmailSyncModal from '../Modals/GmailSyncModal/GmailSyncModal';
-import ReachedLimitForwardingModal from '../Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
 import RemoveForwardingModal from '../Modals/RemoveForwardingModal/RemoveForwardingModal';
 import UpsellConversionModal from '../Modals/UpsellConversionModal/UpsellConversionModal';
-import UpsellForwardingModal from '../Modals/UpsellForwardingModal/UpsellForwardingModal';
 
 interface Props {
     showIcon?: boolean;

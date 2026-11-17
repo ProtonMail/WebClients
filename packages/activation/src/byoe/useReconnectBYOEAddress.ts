@@ -1,10 +1,10 @@
 import { useApi } from '@proton/app-context/useApi';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { getTokensByFeature } from '../api/api';
-import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import { EASY_SWITCH_FEATURES, type EASY_SWITCH_SOURCES, type ImportToken, OAUTH_PROVIDER } from '../interface';
 import { useEasySwitchDispatch } from '../logic/store';
 import type { CreateSyncProps } from '../logic/sync/sync.actions';

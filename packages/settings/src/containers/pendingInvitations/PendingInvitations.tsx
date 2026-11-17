@@ -6,15 +6,15 @@ import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import useUid from '@proton/components/hooks/useUid';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 
-import useModalState from '../../../../components/modalTwo/useModalState';
-import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
-import useUid from '../../../../hooks/useUid';
-import PendingInvitationModal from '../PendingInvitationModal';
-import pendingInvitationIcon from './icons/pending-invitation.svg';
+import PendingInvitationModal from './PendingInvitationModal';
+import pendingInvitationIcon from './pending-invitation.svg';
 
 interface InvitationCardProps {
     invite: PendingInvitation;

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
-import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
+import BYOEClaimProtonAddressModal from '@proton/byoe/src/components/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/byoe/src/constants';
 import PromotionButtonLight from '@proton/components/components/button/PromotionButton/PromotionButtonLight';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';

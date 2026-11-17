@@ -4,11 +4,11 @@ import { type Mock, type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { buildAddress } from '@proton/account/testing/buildAddress';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { startEasySwitchSignupImportTask } from '../api/api';
-import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import type { ImportToken } from '../interface';
 import {
     BYOE_ADDRESS_ERROR,
@@ -57,7 +57,7 @@ vi.mock('@proton/unleash/useFlag', () => ({
 }));
 const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 
-vi.mock('../hooks/useBYOEFeatureStatus');
+vi.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus');
 const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as MockedFunction<typeof useBYOEFeatureStatus>;
 
 vi.mock('../logic/sync/sync.actions', () => ({
