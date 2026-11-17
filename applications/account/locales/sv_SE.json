@@ -2359,6 +2359,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Continue with Bitcoin": [
+        "Fortsätt med Bitcoin"
       ]
     },
     "action": {
@@ -10969,10 +10972,10 @@
         "Genom att dela all information om händelser i denna kalender, accepterar du att ge ${ BRAND_NAME } åtkomst till denna kalenders krypterade information."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
-        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn,  **${ username }**, eller med **${ firstEmail }** eller  **${ secondEmail }**."
+        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
-        "När du slår på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }**, eller **${ thirdEmail }**."
+        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
       ],
       "Can you access your active session?": [
         "Kan du komma åt din aktiva session?"
@@ -13511,10 +13514,10 @@
         "Vi kunde inte skicka fakturor till din e-postadress. Automatisk fakturering har pausats tills du uppdaterar adressen."
       ],
       "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
-        "Vi kunde inte verifiera den här inbjudan. Vänligen be din administratör,  ${ admin }, att ta bort dig från organisationen och lägga till dig igen."
+        "Vi kunde inte verifiera den här inbjudan. Vänligen be din administratör, ${ admin }, att ta bort dig från organisationen och lägga till dig igen."
       ],
       "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
-        "Vi kunde inte verifiera din organisations identitet. Vänligen be din administratör,  ${ admin }, att kontrollera organisationsidentiteten i organisationsinställningarna. Öppna sedan den här länken igen."
+        "Vi kunde inte verifiera din organisations identitet. Vänligen be din administratör, ${ admin }, att kontrollera organisationsidentiteten i organisationsinställningarna. Öppna sedan den här länken igen."
       ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
@@ -13613,7 +13616,7 @@
         "När aviseringar är aktiverade skickar vi en notis till din e-postadress för återställning om du har nya meddelanden i ditt ${ MAIL_APP_NAME }-konto."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
-        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn,**${ username }** eller med  **${ firstEmail }**, **${ secondEmail }**, eller **${ thirdEmail }**.  Dina andra e-postadresser kommer inte att fungera för inloggning."
+        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dina andra e-postadresser kommer inte att fungera för inloggning."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din prenumeration inte att förnyas, men du kan fortfarande dra nytta av paketförmåner fram till slutet av prenumerationsperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
@@ -14154,6 +14157,18 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } märke"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**. Dina andra e-postadresser kommer inte att fungera för inloggning."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**. Dina andra e-postadresser kommer inte att fungera för inloggning."
       ]
     },
     "info": {

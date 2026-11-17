@@ -357,6 +357,9 @@
       ],
       "Zoom meeting links": [
         "Legături web conferințe Zoom"
+      ],
+      "Business referral link": [
+        "Legătură web Business"
       ]
     },
     "Accounts": {
@@ -2350,6 +2353,48 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Continue with Bitcoin": [
+        "Continuare cu Bitcoin"
+      ],
+      "Delete security key ${ keyName }": [
+        "Ștergere cheie de securitate ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Ștergere server ${ serverLocation }"
+      ],
+      "Download recovery kit": [
+        "Descărcare pachet de recuperare"
+      ],
+      "Edit security key ${ keyName }": [
+        "Editare cheie de securitate ${ keyName }"
+      ],
+      "Go to today": [
+        "Salt la astăzi"
+      ],
+      "Next contact": [
+        "Contact următor"
+      ],
+      "Next plan": [
+        "Planul următor"
+      ],
+      "Previous contact": [
+        "Contact anterior"
+      ],
+      "Previous plan": [
+        "Planul anterior"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Eliminare server în așteptare din ${ serverLocation }"
+      ],
+      "Toggle calendar list": [
+        "Comutare listă calendare"
+      ],
+      "Toggle substeps": [
+        "Comutare subpași"
+      ],
+      "Weak key: learn more": [
+        "Cheie slabă: aflați mai multe"
       ]
     },
     "action": {
@@ -5834,6 +5879,9 @@
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
+      ],
+      "Refer ${ BRAND_NAME } for Business to your network. You earn credits, and they get ${ refereeRewardAmount } off a yearly subscription. Earn up to ${ maxRewardAmount } in total.": [
+        "Recomandați ${ BRAND_NAME } for Business în rețeaua proprie de cunoscuți. Primiți credite, iar cei recomandați beneficiază de o reducere de ${ refereeRewardAmount } la un abonament anual. Puteți câștiga în total până la ${ maxRewardAmount }."
       ]
     },
     "description": {
@@ -9934,6 +9982,9 @@
       ],
       "Your plan": [
         "Planul actual"
+      ],
+      "Invited businesses": [
+        "Afaceri invitate"
       ]
     },
     "Hint": {
@@ -14730,6 +14781,21 @@
       ],
       "Zoom meeting": [
         "o conferință pe Zoom"
+      ],
+      "Expected ${ date }": [
+        "Așteptat la ${ date }"
+      ],
+      "Help an organization protect sensitive data from breaches and surveillance": [
+        "Ajutați o organizație să protejeze datele sensibile împotriva breșelor și a supravegherii"
+      ],
+      "Support a mission to create a safer internet for everyone": [
+        "Susțineți o misiune de a crea un internet mai sigur pentru toată lumea"
+      ],
+      "They get end-to-end encrypted email, storage, and collaboration tools": [
+        "Aceștia beneficiază de e-mail, stocare și instrumente de colaborare criptate bilateral."
+      ],
+      "You earn credits when they sign up": [
+        "Câștigați credite când se înscriu"
       ]
     },
     "info": {
@@ -17151,6 +17217,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Invited via": [
+        "Invitat prin"
+      ],
+      "Share your invite link": [
+        "Partajați legătura web de invitare"
       ]
     },
     "label": {
@@ -21741,6 +21813,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Enter email address, name, or contact group": [
+        "Introduceți adresa de e-mail, numele sau grupul de contacte"
       ]
     },
     "placeholder": {
@@ -22363,6 +22438,18 @@
       ],
       "your subscription": [
         "abonament personal"
+      ],
+      "**Share your referral link** with the right person at the company": [
+        "**Partajați legătura web de recomandare** persoanei potrivite din cadrul companiei"
+      ],
+      "**They sign up for a yearly Pro plan** and get an additional ${ refereeRewardAmount } off their first year": [
+        "**Se abonează la un plan Pro anual** și beneficiază de o reducere suplimentară de ${ refereeRewardAmount } pentru primul an"
+      ],
+      "**You earn ${ referrerRewardAmount } for every seat** they add during sign-up.": [
+        "**Câștigați ${ referrerRewardAmount } pentru fiecare licență** pe care o adaugă în timpul înscrierii."
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Am folosit ${ BRAND_NAME } și m-am gândit că i-ar plăcea și echipei tale. Este un serviciu securizat de e-mail, stocare în cloud, administrare de parole și VPN care îți protejează confidențialitatea. Înscrie-te folosind această legătură web pentru a primi o reducere de ${ refereeRewardAmount } în primul an pentru ${ BRAND_NAME } for Business: ${ referralLink }"
       ]
     },
     "Remark about a key type option": {
@@ -28596,6 +28683,28 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Duceți ${ BRAND_NAME } la serviciu. Câștigați credite."
+      ],
+      "Business invited": [
+        "Firmă invitată",
+        "Firme invitate",
+        "Firme invitate"
+      ],
+      "Business signed up": [
+        "Firmă înscrisă",
+        "Firme înscrise",
+        "Firme înscrise"
+      ],
+      "How it works": [
+        "Cum funcționează"
+      ],
+      "Refer businesses": [
+        "Recomandați firme"
+      ],
+      "Why recommend ${ BRAND_NAME } for Business?": [
+        "De ce recomandați ${ BRAND_NAME } for Business?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30324,6 +30433,32 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "2x Basic usage": [
+        "2X Utilizare de bază"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acces la API, cu ${ credit } credit pe lună"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acces la API, cu ${ credit } credit pe lună per utilizator"
+      ],
+      "Everything in Basic, and:": [
+        "Torul din Basic și:"
+      ],
+      "Everything in Free, and:": [
+        "Totul din Free și:"
+      ],
+      "Limited messages and chat history": [
+        "Mesaje si istoric conversații limitate"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximum de proiecte și aptitudini"
+      ],
+      "More usage": [
+        "Mai multă utilizare"
       ]
     }
   }
