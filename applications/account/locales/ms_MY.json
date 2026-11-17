@@ -623,9 +623,6 @@
       "Collaborate on documents": [
         "Bekerjasama dalam dokumen"
       ],
-      "Collapse step": [
-        "Kuncupkan langkah"
-      ],
       "Color": [
         "Warna"
       ],
@@ -1085,9 +1082,6 @@
       "Enter code": [
         "Masukkan kod"
       ],
-      "Expand step": [
-        "Kembangkan langkah"
-      ],
       "Explore ${ target }": [
         "Terokai ${ target }"
       ],
@@ -1174,9 +1168,6 @@
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Dapatkan bantuan daripada ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Get in touch": [
-        "Hubungi kami"
       ],
       "Get limited-time offer": [
         "Dapatkan tawaran masa terhad"
@@ -1405,9 +1396,6 @@
       ],
       "Leave group": [
         "Keluar dari kumpulan"
-      ],
-      "Let's talk": [
-        "Jom berbual"
       ],
       "Load more": [
         "Muat lebih banyak"
@@ -1660,6 +1648,9 @@
       ],
       "Remove domain": [
         "Alih keluar domain"
+      ],
+      "Remove file": [
+        "Alih keluar fail"
       ],
       "Remove forward": [
         "Alih keluar pemajuan"
@@ -12421,9 +12412,6 @@
       "Restore": [
         "Kembalikan"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "Semak tempoh lepas dan eksport data untuk pelaporan atau penginvoisan pelanggan."
-      ],
       "Right to Left": [
         "Kanan ke kiri"
       ],
@@ -12987,9 +12975,6 @@
       ],
       "To continue to ${ product }": [
         "Untuk teruskan ke ${ product }"
-      ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Untuk memperbaiki perkhidmatan kami secara berterusan, kami kadangkala mengumpul data untuk memantau fungsi aplikasi kami dengan betul. Maklumat ini tidak dikongsi dengan sebarang perkhidmatan pihak ketiga."
       ],
       "To create your first user group, go to": [
         "Untuk mencipta kumpulan pengguna pertama anda, pergi ke"
@@ -14920,9 +14905,6 @@
       "Code is 6 digits without spaces": [
         "Kod terdiri daripada 6 digit tanpa ruang"
       ],
-      "Collect usage diagnostics": [
-        "Kumpulkan diagnostik penggunaan"
-      ],
       "Color": [
         "Warna"
       ],
@@ -15547,9 +15529,6 @@
       "Monthly": [
         "Bulanan"
       ],
-      "Monthly average": [
-        "Purata bulanan"
-      ],
       "More payment methods": [
         "Lagi kaedah pembayaran"
       ],
@@ -15714,9 +15693,6 @@
       ],
       "Payment method": [
         "Kaedah pembayaran"
-      ],
-      "Peak allocated licenses": [
-        "Puncak lesen diperuntukkan"
       ],
       "Pending": [
         "Menunggu"
@@ -20162,12 +20138,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (belum termasuk cukai)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } tidak boleh digabungkan dengan ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } hanya tersedia pada pelan perniagaan."
-      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20180,14 +20150,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Jumlah perlu dibayar selepas percubaan pada ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Organisasi diperlukan untuk pelan ini."
-      ],
       "Billing Country": [
         "Negara pengebilan"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Pembelian kredit memerlukan pembelian berasingan."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Dengan bertukar, anda bersetuju dengan ${ termsLink } kami."
@@ -20237,20 +20201,11 @@
       "Offer unavailable": [
         "Tawaran tidak tersedia"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Hanya satu ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } boleh dibeli."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Bayar dengan ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Kaedah pembayaran diperlukan supaya langganan dapat diaktifkan selepas percubaan tamat."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Sila tutup akaun dompet tambahan sebelum mengubah pelan anda."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Sila tutup dompet tambahan sebelum mengubah pelan anda."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Sila aktifkan semula langganan anda terlebih dahulu untuk mengurangkan bilangan addon."
@@ -20263,9 +20218,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbaharui pada ${ renewPriceStr }, batal pada bila-bila masa."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Lesen pengguna Scribe tidak boleh melebihi bilangan ahli."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Maaf, tawaran ini tidak tersedia dengan pelan semasa anda."
@@ -20281,18 +20233,6 @@
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Diskaun ini sah untuk ${ renewalsWithCoupon } pembaharuan."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Pelan yang dipilih tidak menawarkan alamat yang mencukupi untuk akaun anda."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Pelan yang dipilih tidak menawarkan domain yang mencukupi untuk akaun anda."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Pelan yang dipilih tidak menawarkan ahli yang mencukupi untuk akaun anda."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Pelan yang dipilih tidak menawarkan storan yang mencukupi untuk akaun anda."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Harga diskaun khas ini sah untuk ${ couponRedemptions } bulan. Selepas itu, ia akan diperbaharui secara automatik pada ${ renewPriceStr } untuk 1 bulan. Anda boleh membatalkan pada bila-bila masa."
@@ -20321,35 +20261,14 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Tindakan ini meluaskan langganan sedia ada. Anda hanya akan dicas untuk add-on baharu dan baki masa kitaran pengebilan semasa. Tarikh pembaharuan langganan anda tidak akan berubah."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Pelayan khusus ini ditetapkan kepada get laluan dan tidak boleh diubah."
-      ],
       "This offer is not available with your current plan.": [
         "Tawaran ini tidak tersedia dengan pelan semasa anda."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Kaedah pembayaran ini akan menjadi lalai baharu anda untuk semua pembaharuan masa hadapan."
       ],
-      "This plan doesn’t support the members on your account.": [
-        "Pelan ini tidak menyokong bilangan ahli pada akaun anda."
-      ],
       "Timeout exceeded": [
         "Tamat masa"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Pelan percubaan tidak menyokong lesen pengguna ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Pelan percubaan tidak menyokong domain tersuai."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Pelan percubaan tidak menyokong IP khusus."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Pelan percubaan tidak menyokong lesen pengguna Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Pelan percubaan tidak menyokong bilangan ahli sebanyak ini."
       ],
       "VAT number": [
         "Nombor VAT"
@@ -20362,9 +20281,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Anda sudah mempunyai langganan untuk pelan ini. Anda boleh menukar langganan anda di ${ subscriptionPlatform }."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Anda sudah memiliki ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Anda akan dicas ${ amountToCharge } daripada kaedah pembayaran pilihan anda."
@@ -26244,9 +26160,6 @@
       "Monthly": [
         "Bulanan"
       ],
-      "Monthly Costs": [
-        "Kos Bulanan"
-      ],
       "Multi-user support": [
         "Sokongan berbilang pengguna"
       ],
@@ -26424,17 +26337,11 @@
       "Previous": [
         "Sebelumnya"
       ],
-      "Previous billing periods": [
-        "Tempoh pengebilan terdahulu"
-      ],
       "Priority support:": [
         "Sokongan keutamaan:"
       ],
       "Privacy": [
         "Privasi"
-      ],
-      "Privacy and data collection": [
-        "Privasi dan pengumpulan data"
       ],
       "Problem processing your payment": [
         "Masalah semasa memproses pembayaran anda"

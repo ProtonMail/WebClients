@@ -54,6 +54,20 @@
         "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Account events": [
+        "События аккаунта"
+      ],
+      "Add address": [
+        "Добавить адрес"
+      ],
+      "Join organization": [
+        "Присоединиться к организации"
+      ],
+      "Leave group": [
+        "Покинуть группу"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Аккаунты"
@@ -236,6 +250,9 @@
       ],
       "Cancel": [
         "Отменить"
+      ],
+      "Cancel ${ planTitle }": [
+        "Отменить ${ planTitle }"
       ],
       "Cancel request": [
         "Отменить запрос"
@@ -825,9 +842,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Получить помощь от ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Get in touch": [
-        "Связаться с нами"
-      ],
       "Get limited-time offer": [
         "Получить ограниченное предложение"
       ],
@@ -981,6 +995,9 @@
       "Insert link": [
         "Вставить ссылку"
       ],
+      "Instructions": [
+        "Инструкции"
+      ],
       "Invite": [
         "Пригласить"
       ],
@@ -1031,9 +1048,6 @@
       ],
       "Leave group": [
         "Покинуть группу"
-      ],
-      "Let's talk": [
-        "Свяжитесь с нами"
       ],
       "Load more": [
         "Загрузить ещё"
@@ -1148,6 +1162,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "OneDrive": [
+        "OneDrive"
       ],
       "Open": [
         "Открыть"
@@ -1277,6 +1294,9 @@
       ],
       "Remove domain": [
         "Удалить домен"
+      ],
+      "Remove file": [
+        "Удалить файл"
       ],
       "Remove forward": [
         "Удалить пересылку"
@@ -1617,6 +1637,9 @@
       "Start subscription": [
         "Начать подписку"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Начните использовать ${ PASS_APP_NAME }"
+      ],
       "Start using ${ PASS_APP_NAME } now": [
         "Начать использовать ${ PASS_APP_NAME } сейчас"
       ],
@@ -1879,6 +1902,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
       "Reactivate": [
         "Возобновить"
       ]
@@ -3304,6 +3330,11 @@
       ],
       "Total": [
         "Итого"
+      ]
+    },
+    "claimed address": {
+      "Verify it's you": [
+        "Подтвердите, что это вы"
       ]
     },
     "Collapsible tooltip": {
@@ -10261,6 +10292,9 @@
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "Отключение резервного копирования данных на этом устройстве не позволит вам автоматически разблокировать зашифрованные данные после сброса пароля."
       ],
+      "Disconnected": [
+        "Отключено"
+      ],
       "Discount": [
         "Скидка"
       ],
@@ -11515,9 +11549,6 @@
       "Restore": [
         "Восстановить"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "Просматривайте прошлые периоды и экспортируйте данные для отчетности или выставления счетов клиентам."
-      ],
       "Right to Left": [
         "Справа налево"
       ],
@@ -12060,9 +12091,6 @@
       ],
       "To continue to ${ product }": [
         "Чтобы продолжить в ${ product }"
-      ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Для постоянного совершенствования наших услуг мы иногда собираем данные для контроля надлежащего функционирования наших приложений. Эта информация не передается никаким сторонним службам."
       ],
       "To create your first user group, go to": [
         "Чтобы создать свою первую группу пользователей, перейдите к"
@@ -13778,6 +13806,9 @@
       "Billing cycle": [
         "Платежный цикл"
       ],
+      "Billing period": [
+        "Период оплаты"
+      ],
       "Block": [
         "Заблокировать"
       ],
@@ -13858,9 +13889,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
-      ],
-      "Collect usage diagnostics": [
-        "Собирайте диагностику использования"
       ],
       "Color": [
         "Цвет"
@@ -14318,6 +14346,9 @@
       "Interval": [
         "Интервал"
       ],
+      "Invitation link": [
+        "Пригласительная ссылка"
+      ],
       "Invite people": [
         "Пригласить людей"
       ],
@@ -14614,6 +14645,9 @@
       ],
       "Payment method": [
         "Способ оплаты"
+      ],
+      "Payment terms": [
+        "Условия оплаты"
       ],
       "Pending": [
         "Ожидающий"
@@ -15620,6 +15654,9 @@
       ],
       "Gathering your data": [
         "Сбираются ваши данные"
+      ],
+      "Loading your organization data": [
+        "Загрузка данных вашей организации"
       ],
       "We're gathering your data from your provider": [
         "Мы собираем ваши данные у вашего провайдера"
@@ -19085,9 +19122,6 @@
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений."
       ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "У выбранного тарифного плана недостаточно места для данных вашего аккаунта."
-      ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
@@ -19557,6 +19591,9 @@
       ],
       "Perfect for getting started with secure cloud storage.": [
         "Идеально подходит для начала работы с безопасным облачным хранилищем."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Премиальный пакет по обеспечению конфиденциальности и безопасности для вашего бизнеса."
       ],
       "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
         "Пакет функций конфиденциальности с платными услугами и зашифрованным облачным хранением объемом ${ unlimitedPlanMaxSpace } в одном комплекте."
@@ -23252,6 +23289,11 @@
         "Бесплатный пробный период"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } предлагает 1 ТБ для хранения ваших файлов и фотографий. Вы также можете получать ежегодные бонусы на хранилище."
@@ -23387,6 +23429,9 @@
       "DMARC value copied to clipboard": [
         "Значение DMARC скопировано в буфер обмена"
       ],
+      "Domain added": [
+        "Домен добавлен"
+      ],
       "Domain verified": [
         "Домен подтверждён"
       ],
@@ -23431,6 +23476,12 @@
       ],
       "Locale updated": [
         "Локаль обновлена"
+      ],
+      "Migration started for ${ n } user": [
+        "Началась миграция для ${ n } пользователя",
+        "Началась миграция для ${ n } пользователей",
+        "Началась миграция для ${ n } пользователей",
+        "Началась миграция для ${ n } пользователей"
       ],
       "New policy created. It will take effect only after you publish the changes.": [
         "Новая политика создана. Изменения вступят в силу только после публикации."
@@ -24840,6 +24891,9 @@
       "Gift code": [
         "Подарочный код"
       ],
+      "Grant access": [
+        "Предоставить доступ"
+      ],
       "Group membership": [
         "Групповая подписка"
       ],
@@ -25008,9 +25062,6 @@
       "Monthly": [
         "Ежемесячно"
       ],
-      "Monthly Costs": [
-        "Ежемесячные расходы"
-      ],
       "Multi-user support": [
         "Многопользовательская поддержка"
       ],
@@ -25173,14 +25224,8 @@
       "Previous": [
         "Назад"
       ],
-      "Previous billing periods": [
-        "Предыдущие расчетные периоды"
-      ],
       "Priority support:": [
         "Приоритетная поддержка:"
-      ],
-      "Privacy and data collection": [
-        "Конфиденциальность и сбор данных"
       ],
       "Problem processing your payment": [
         "Проблема при обработке вашего платежа"
@@ -26001,6 +26046,9 @@
       "Excluding single sign-on users whose 2FA is handled by your identity provider": [
         "Исключение пользователей с единым входом, чья двухфакторная идентификация обрабатывается поставщиком личных данных."
       ],
+      "Expand invitation message": [
+        "Развернуть пригласительное сообщение"
+      ],
       "Feature in early access": [
         "Функция раннего доступа"
       ],
@@ -26030,6 +26078,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Включает профессиональную электронную почту на @yourdomain.com, облачное хранение с совместным редактированием документов, планирование и видеоконференции, управление паролями, защищенный ${ VPN_SHORT_APP_NAME } и многое другое."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Установите приложение для миграции свой аккаунт ${ providerName }, чтобы начать миграцию"
       ],
       "Instant AI assistance, human expert on hand!": [
         "Мгновенная помощь ИИ, специалист всегда на связи!"
@@ -26153,6 +26204,9 @@
       ],
       "This key is used for email forwarding": [
         "Этот ключ используется для пересылки электронной почты"
+      ],
+      "This setting is managed by your organization": [
+        "Этой настройкой управляет ваша организация."
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Зашифрованные пароли остаются в безопасности, пока их не расшифруют, даже если они находятся в открытом доступе."
@@ -26715,6 +26769,9 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Приглашение отправлено, ожидается ответ от приглашенного участника"
+      ],
+      "Pending": [
+        "Ожидание"
       ],
       "SSO user provided by your identity provider": [
         "Пользователь SSO, предоставленный поставщиком ваших личных данных"

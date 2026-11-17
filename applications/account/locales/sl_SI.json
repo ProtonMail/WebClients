@@ -967,9 +967,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } vam lahko pomaga pri prijavi."
       ],
-      "Get in touch": [
-        "Oglasite se nam!"
-      ],
       "Get more": [
         "Pridobite več"
       ],
@@ -1131,9 +1128,6 @@
       ],
       "Leave group": [
         "Zapusti skupino"
-      ],
-      "Let's talk": [
-        "Pogovorimo se!"
       ],
       "Load more": [
         "Naloži več"
@@ -1329,6 +1323,9 @@
       ],
       "Remove domain": [
         "Odstrani domeno"
+      ],
+      "Remove file": [
+        "Odstrani datoteko"
       ],
       "Remove forward": [
         "Odstrani posredovanje"
@@ -9559,6 +9556,12 @@
       "Settings updated": [
         "Nastavitve posodobljene"
       ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Delite dnevnike napak z ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Delite podatke o delovanju in statistiko uporabe z ${ BRAND_NAME }"
+      ],
       "Shared server country (${ countriesCount })": [
         "Država z deljenim strežnikom (${ countriesCount })",
         "Državi z deljenim strežnikom (${ countriesCount })",
@@ -9889,8 +9892,8 @@
       "To continue to ${ product }": [
         "za nadaljevanje v ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Z namenom nenehnega izboljševanja naših storitev včasih zbiramo podatke za spremljanje pravilnega delovanja naših aplikacij. Te informacije ne delimo s tretjimi osebami."
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Z namenom nenehnega izboljševanja naših storitev včasih zbiramo podatke za spremljanje pravilnega delovanja naših aplikacij. **Te informacije ne delimo s tretjimi osebami.**"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Za dešifriranje in ogled zaklenjenih podatkov po ponastavitvi gesla izberite način obnovitve."
@@ -11257,8 +11260,8 @@
       "Code is 6 digits without spaces": [
         "Koda vsebuje 6 števk brez presledkov"
       ],
-      "Collect usage diagnostics": [
-        "Zbirajte diagnostične podatke o uporabi."
+      "Collect anonymous usage diagnostics": [
+        "Zbirajte anonimne diagnostične podatke o uporabi"
       ],
       "Color": [
         "Barva"
@@ -19674,9 +19677,6 @@
       ],
       "Priority support:": [
         "Prednostna podpora:"
-      ],
-      "Privacy and data collection": [
-        "Zasebnost in zbiranje podatkov"
       ],
       "Problem processing your payment": [
         "Težava pri obdelavi plačila"

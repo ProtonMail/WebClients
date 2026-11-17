@@ -623,9 +623,6 @@
       "Collaborate on documents": [
         "دستاویزات پر مل کر کام کریں"
       ],
-      "Collapse step": [
-        "مرحلہ سکیڑیں"
-      ],
       "Color": [
         "رنگ"
       ],
@@ -1085,9 +1082,6 @@
       "Enter code": [
         "کوڈ درج کریں"
       ],
-      "Expand step": [
-        "مرحلہ کھولیں"
-      ],
       "Explore ${ target }": [
         "${ target } دریافت کریں"
       ],
@@ -1174,9 +1168,6 @@
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } سے مدد لیں"
-      ],
-      "Get in touch": [
-        "ہم سے رابطہ کریں"
       ],
       "Get limited-time offer": [
         "محدود وقت کی پیش کش حاصل کریں"
@@ -1405,9 +1396,6 @@
       ],
       "Leave group": [
         "گروپ چھوڑیں"
-      ],
-      "Let's talk": [
-        "آئیے بات کریں"
       ],
       "Load more": [
         "مزید لوڈ کریں"
@@ -1660,6 +1648,9 @@
       ],
       "Remove domain": [
         "ڈومین ہٹائیں"
+      ],
+      "Remove file": [
+        "فائل ہٹائیں"
       ],
       "Remove forward": [
         "فارورڈ ہٹائیں"
@@ -12527,9 +12518,6 @@
       "Restore": [
         "بحال کریں"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "پچھلے ادوار کا جائزہ لیں اور رپورٹنگ یا کلائنٹ بلنگ کے لیے ڈیٹا برآمد کریں۔"
-      ],
       "Right to Left": [
         "دائیں سے بائیں"
       ],
@@ -13100,9 +13088,6 @@
       ],
       "To continue to ${ product }": [
         "${ product } پر جاری رکھنے کے لیے"
-      ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "اپنی خدمات کو مسلسل بہتر بنانے کے لیے ہم بعض اوقات اپنی ایپلیکیشنز کے درست کام کرنے کی نگرانی کے لیے ڈیٹا جمع کرتے ہیں۔ یہ معلومات کسی بھی فریق ثالث کی خدمات کے ساتھ شیئر نہیں کی جاتیں۔"
       ],
       "To create your first user group, go to": [
         "اپنا پہلا صارف گروپ بنانے کے لیے یہاں جائیں"
@@ -15052,9 +15037,6 @@
       "Code is 6 digits without spaces": [
         "کوڈ خالی جگہوں کے بغیر 6 ہندسوں کا ہوتا ہے"
       ],
-      "Collect usage diagnostics": [
-        "استعمال سے متعلق تشخیصی معلومات جمع کریں"
-      ],
       "Color": [
         "رنگ"
       ],
@@ -15680,9 +15662,6 @@
       "Monthly": [
         "ماہانہ"
       ],
-      "Monthly average": [
-        "ماہانہ اوسط"
-      ],
       "More payment methods": [
         "مزید ادائیگی کے طریقے"
       ],
@@ -15847,9 +15826,6 @@
       ],
       "Payment method": [
         "ادائیگی کا طریقہ"
-      ],
-      "Peak allocated licenses": [
-        "زیادہ سے زیادہ مختص لائسنسز"
       ],
       "Pending": [
         "زیرِ التوا"
@@ -20343,12 +20319,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (ٹیکس شامل نہیں)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } کو ${ PLAN_NAMES[PLANS.PASS] } کے ساتھ یکجا نہیں کیا جا سکتا۔"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } صرف بزنس پلانز میں دستیاب ہے۔"
-      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20361,14 +20331,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "ٹرائل کے بعد ${ formattedDate } کو قابلِ ادائیگی رقم"
       ],
-      "An organization is required for this plan.": [
-        "اس پلان کے لیے تنظیم درکار ہے۔"
-      ],
       "Billing Country": [
         "بلنگ کا ملک"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "کریڈٹ خریدنے کے لیے الگ خریداری درکار ہے۔"
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "سوئچ کر کے آپ ہماری ${ termsLink } سے اتفاق کرتے ہیں۔"
@@ -20418,20 +20382,11 @@
       "Offer unavailable": [
         "آفر دستیاب نہیں"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } میں سے صرف ایک خریدا جا سکتا ہے۔"
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME } سے ادائیگی کریں"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "ٹرائل ختم ہونے کے بعد سبسکرپشن کے فعال ہونے کے لیے ادائیگی کا طریقہ درکار ہے۔"
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "براہِ کرم اپنا پلان تبدیل کرنے سے پہلے اضافی والٹ اکاؤنٹس بند کریں۔"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "براہِ کرم اپنا پلان تبدیل کرنے سے پہلے اضافی والٹس بند کریں۔"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "براہِ کرم ایڈ آنز کی تعداد کم کرنے کے لیے پہلے اپنی سبسکرپشن دوبارہ فعال کریں۔"
@@ -20444,9 +20399,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "تجدید ${ renewPriceStr } پر ہوگی، کسی بھی وقت منسوخ کریں۔"
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe سیٹس کی تعداد ممبران سے زیادہ نہیں ہو سکتی۔"
       ],
       "Sorry, this offer is not available with your current plan.": [
         "معذرت، یہ آفر آپ کے موجودہ پلان کے ساتھ دستیاب نہیں ہے۔"
@@ -20463,18 +20415,6 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "رعایت ${ renewalsWithCoupon } تجدید کے لیے قابلِ استعمال ہے۔",
         "رعایت ${ renewalsWithCoupon } تجدیدوں کے لیے قابلِ استعمال ہے۔"
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "منتخب کردہ پلان آپ کے اکاؤنٹ کے لیے کافی پتے فراہم نہیں کرتا۔"
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "منتخب کردہ پلان آپ کے اکاؤنٹ کے لیے کافی ڈومینز فراہم نہیں کرتا۔"
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "منتخب کردہ پلان آپ کے اکاؤنٹ کے لیے کافی ممبران فراہم نہیں کرتا۔"
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "منتخب کردہ پلان آپ کے اکاؤنٹ کے لیے کافی اسٹوریج فراہم نہیں کرتا۔"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "خصوصی رعایت والی قیمت ${ couponRedemptions } ماہ کے لیے جائز ہے۔ اس کے بعد یہ خود بخود 1 ماہ کے لیے ${ renewPriceStr } پر تجدید ہو جائے گی۔ آپ کسی بھی وقت منسوخ کر سکتے ہیں۔",
@@ -20508,35 +20448,14 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "یہ عمل موجودہ سبسکرپشن کو وسعت دیتا ہے۔ آپ سے صرف نئے ایڈ آنز اور موجودہ بلنگ سائیکل کے باقی وقت کی ادائیگی لی جائے گی۔ آپ کی سبسکرپشن کی تجدید کی تاریخ تبدیل نہیں ہوگی۔"
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "یہ ڈیڈیکیٹڈ سرور ایک گیٹ وے کو تفویض کیا گیا ہے اور اسے تبدیل نہیں کیا جا سکتا۔"
-      ],
       "This offer is not available with your current plan.": [
         "یہ آفر آپ کے موجودہ پلان کے ساتھ دستیاب نہیں ہے۔"
       ],
       "This payment method will become your new default for all future renewals.": [
         "یہ ادائیگی کا طریقہ آنے والی تمام تجدیدات کے لیے آپ کا نیا ڈیفالٹ بن جائے گا۔"
       ],
-      "This plan doesn’t support the members on your account.": [
-        "یہ پلان آپ کے اکاؤنٹ کے ممبران کو سپورٹ نہیں کرتا۔"
-      ],
       "Timeout exceeded": [
         "وقت کی حد ختم ہو گئی۔"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "ٹرائل پلان ${ LUMO_SHORT_APP_NAME } سیٹس کو سپورٹ نہیں کرتے۔"
-      ],
-      "Trial plans don’t support custom domains.": [
-        "ٹرائل پلان حسب ضرورت ڈومینز کو سپورٹ نہیں کرتے۔"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "ٹرائل پلان ڈیڈیکیٹڈ IPs کو سپورٹ نہیں کرتے۔"
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "ٹرائل پلان Scribe سیٹس کو سپورٹ نہیں کرتے۔"
-      ],
-      "Trial plans don’t support this many members.": [
-        "ٹرائل پلان اتنے ممبران کو سپورٹ نہیں کرتے۔"
       ],
       "VAT number": [
         "VAT نمبر"
@@ -20549,9 +20468,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "آپ کے پاس اس پلان کی سبسکرپشن پہلے سے موجود ہے۔ آپ ${ subscriptionPlatform } پر اپنی سبسکرپشن تبدیل کر سکتے ہیں۔"
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "آپ کے پاس پہلے ہی ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } موجود ہے۔"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "آپ کی منتخب کردہ ادائیگی کے طریقے سے ${ amountToCharge } کی رقم وصول کی جائے گی۔"
@@ -26522,9 +26438,6 @@
       "Monthly": [
         "ماہانہ"
       ],
-      "Monthly Costs": [
-        "ماہانہ اخراجات"
-      ],
       "Multi-user support": [
         "کثیر صارف تعاون"
       ],
@@ -26702,17 +26615,11 @@
       "Previous": [
         "پچھلا"
       ],
-      "Previous billing periods": [
-        "پچھلے بلنگ ادوار"
-      ],
       "Priority support:": [
         "ترجیحی سپورٹ:"
       ],
       "Privacy": [
         "رازداری"
-      ],
-      "Privacy and data collection": [
-        "رازداری اور ڈیٹا اکٹھا کرنا"
       ],
       "Problem processing your payment": [
         "آپ کی ادائیگی پراسیس کرنے میں خرابی"

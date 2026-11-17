@@ -623,9 +623,6 @@
       "Collaborate on documents": [
         "Jọ ṣiṣẹ́ lórí àwọn àkọsílẹ̀"
       ],
-      "Collapse step": [
-        "Ká ìgbésẹ̀ pọ̀"
-      ],
       "Color": [
         "Àwọ̀"
       ],
@@ -1085,9 +1082,6 @@
       "Enter code": [
         "Tẹ̀ kóòdù náà"
       ],
-      "Expand step": [
-        "Fé ìgbésẹ̀"
-      ],
       "Explore ${ target }": [
         "Ṣàyẹ̀wò ${ target }"
       ],
@@ -1174,9 +1168,6 @@
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Gba ìrànlọ́wọ́ láti ọ̀dọ̀ ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Get in touch": [
-        "Ẹ kàn sí wa"
       ],
       "Get limited-time offer": [
         "Ẹ gba àǹfààní àsìkò díẹ̀"
@@ -1405,9 +1396,6 @@
       ],
       "Leave group": [
         "Kúrò ní ẹgbẹ́"
-      ],
-      "Let's talk": [
-        "Ẹ jẹ́ ká sọ̀rọ̀"
       ],
       "Load more": [
         "Gbé àwọn mìíràn jáde"
@@ -1660,6 +1648,9 @@
       ],
       "Remove domain": [
         "Yọ ojú òpó kúrò"
+      ],
+      "Remove file": [
+        "Yọ fáìlì kúrò"
       ],
       "Remove forward": [
         "Yọ fífi ránṣẹ́ kúrò"
@@ -12433,9 +12424,6 @@
       "Restore": [
         "Mú u bọ̀ sípò"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "Ẹ yẹ̀wò àwọn àsìkò tó ti kọjá, ẹ sì kó dátà jáde fún ìjábọ̀ tàbí ìwádì owó fún àwọn oníbàárà."
-      ],
       "Right to Left": [
         "Láti ọ̀tún sí òsì"
       ],
@@ -13005,9 +12993,6 @@
       ],
       "To continue to ${ product }": [
         "Láti tẹ̀síwájú sí ${ product }"
-      ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Láti máa ga iṣẹ́ wa ga lọ, a máa ń kó dátà ní ìgbà díẹ̀ díẹ̀ láti ṣọ́ aplikéṣàn wa bọ́ láti rí i pé wọ́n ń ṣiṣẹ́ dáadáa. A kò ṣe alábàápín àlàyé yìí pẹ̀lú àwọn iṣẹ́ ẹnìkẹ́ta réèrè."
       ],
       "To create your first user group, go to": [
         "Láti ṣẹ̀dá ẹgbẹ́ olùmúlò àkọ́kọ́ yín, ẹ lọ sí"
@@ -14953,9 +14938,6 @@
       "Code is 6 digits without spaces": [
         "Kóòdù náà jẹ́ nọ́mbà 6 láìsí ààyè"
       ],
-      "Collect usage diagnostics": [
-        "Kó àwọn ìwádìí lílo"
-      ],
       "Color": [
         "Àwọ̀"
       ],
@@ -15580,9 +15562,6 @@
       "Monthly": [
         "Lóṣùṣù"
       ],
-      "Monthly average": [
-        "Àpapọ̀ oṣooṣù"
-      ],
       "More payment methods": [
         "Àwọn ọ̀nà ìsanwó míì"
       ],
@@ -15747,9 +15726,6 @@
       ],
       "Payment method": [
         "Ọ̀nà ìsanwó"
-      ],
-      "Peak allocated licenses": [
-        "Àwọn ìwé-àṣẹ tí a pín tí ó pọ̀ jù"
       ],
       "Pending": [
         "Ó ń dè"
@@ -20195,12 +20171,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (láì kí owó orí)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "A kò lè so ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } pọ̀ mọ́ ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } wà nínú àwọn ètò ìṣòwò nìkan."
-      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20213,14 +20183,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Owó tí a ó san lẹ́yìn ìdánwò ní ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "A nílò àjọ fún ètò yìí."
-      ],
       "Billing Country": [
         "Orílẹ̀èdè ìsanwó"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Ríra àwọn krẹ́díìtì nílò ìrà ọ̀tọ̀."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Nípa yíyí padà, ẹ ti faramọ́ ${ termsLink } wa."
@@ -20270,20 +20234,11 @@
       "Offer unavailable": [
         "Ọ̀fẹ́ kò wà"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Ẹnìkan ṣoṣo ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ni a lè rà."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Sanwó pẹ̀lú ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Ọ̀nà ìsanwó ni a nílò fún kí ìforúkọsílẹ̀ náà lè ṣàkànṣe lẹ́yìn tí ìdánwò náà bá parí."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Jọ̀wọ́ pa àwọn àkántì wọ́lẹ́ẹ̀tì àfikún dé kí ẹ tó yí ètò yín padà."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Jọ̀wọ́ pa àwọn wọ́lẹ́ẹ̀tì àfikún dé kí ẹ tó yí ètò yín padà."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Jọ̀wọ́, ẹ tún fi ìforúkọsílẹ̀ yín ṣiṣẹ́ kọ́kọ́ kí ẹ lè dín iye àwọn àfikún kù."
@@ -20296,9 +20251,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ìtúnbọ̀lẹ̀ yóò wáyé ní ${ renewPriceStr }, ẹ lè fagi lé e nígbàkúgbà."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Àwọn ibùjókòó Scribe kò lè tayọ iye àwọn ọmọ ẹgbẹ́."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Jọ̀wọ́, ọ̀fẹ́ yìí kò sí fún ètò tí ẹ ń lò lọwọ́ láyé yìí."
@@ -20314,18 +20266,6 @@
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Ẹ̀dínwó yóò wúlò fún ìtúntẹ̀ ìforúkọsílẹ̀ ${ renewalsWithCoupon }."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Ètò tí a yàn kò pèsè àwọn àdírẹ́sì tó tó fún àkántì yín."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Ètò tí a yàn kò pèsè àwọn ojú òpó tó tó fún àkántì yín."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Ètò tí a yàn kò pèsè àwọn ọmọ ẹgbẹ́ tó tó fún àkántì yín."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Ètò tí a yàn kò pèsè ìfipamọ́ tó tó fún àkántì yín."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Owó tí a dínkù pàtàkì yóò wúlò fún oṣù ${ couponRedemptions }. Lẹ́yìn náà, ó máa tún di ìforúkọsílẹ̀ fúnra rẹ̀ ní owó ${ renewPriceStr } fún oṣù 1. Ẹ lè fagi lé e nígbàkúgbà."
@@ -20354,35 +20294,14 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Ìgbésẹ̀ yìí yóò fẹ́ ìforúkọsílẹ̀ tí ó wà tẹ́lẹ̀ kí ẹ tó. A ó san owó fún àwọn àfikún tuntun nìkan àti àkókò tí ó ṣèkù nínú sáà ìdíyeléni tí ó wà báyìí. A kò yí déètì ìsọdọ̀tun ìforúkọsílẹ̀ yín padà."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "A yàn sáfà àkànṣe yìí fún ipa ọ̀nà kan, a kò sì lè yí i padà."
-      ],
       "This offer is not available with your current plan.": [
         "Ọ̀fẹ́ yìí kò sí fún ètò tí ẹ ń lò báyìí."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Ọ̀nà ìsanwó yìí yóò di ọ̀nà ìsanwó tuntun yín bí ó ti wà fún gbogbo ìsọdọ̀tun ọjọ́ iwájú."
       ],
-      "This plan doesn’t support the members on your account.": [
-        "Ètò yìí kò ṣe àtìlẹ́yìn àwọn ọmọ ẹgbẹ́ inú àkántì yín."
-      ],
       "Timeout exceeded": [
         "Àkókò ti tán."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Àwọn ètò ìdánwò kò ṣe àtìlẹ́yìn àwọn ibùjókòó ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Àwọn ètò ìdánwò kò ṣe àtìlẹ́yìn àwọn àgbègbè ìkápá àkànṣe."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Àwọn ètò ìdánwò kò ṣe àtìlẹ́yìn àwọn IP àkànṣe."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Àwọn ètò ìdánwò kò ṣe àtìlẹ́yìn àwọn ibùjókòó Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Àwọn ètò ìdánwò kò ṣe àtìlẹ́yìn iye ọmọ ẹgbẹ́ yìí."
       ],
       "VAT number": [
         "Nọ́mbà VAT"
@@ -20395,9 +20314,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Ẹ ní ìforúkọsílẹ̀ fún ètò yìí tẹ́lẹ̀. Ẹ lè yí ìforúkọsílẹ̀ yín padà ní ${ subscriptionPlatform }."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Ẹ ti ní ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } tẹ́lẹ̀."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Ẹ yóò san ${ amountToCharge } láti ọ̀nà ìsanwó tí ẹ ti yàn."
@@ -26280,9 +26196,6 @@
       "Monthly": [
         "Oṣùṣù"
       ],
-      "Monthly Costs": [
-        "Iye owó oṣùọ̀kan"
-      ],
       "Multi-user support": [
         "Àtìlẹ́yìn olùmúlò púpọ̀"
       ],
@@ -26460,17 +26373,11 @@
       "Previous": [
         "Tẹ́lẹ̀"
       ],
-      "Previous billing periods": [
-        "Àwọn àsìkò ìsanwó tó ti kọjá"
-      ],
       "Priority support:": [
         "Àtìlẹ́yìn ìṣáájú:"
       ],
       "Privacy": [
         "Àṣírí"
-      ],
-      "Privacy and data collection": [
-        "Àṣírí àti ìkójọ dátà"
       ],
       "Problem processing your payment": [
         "Iṣòro nígbà ìtọ́jú ìsanwó yín"
