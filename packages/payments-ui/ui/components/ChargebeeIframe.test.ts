@@ -1,12 +1,16 @@
-import { act, renderHook } from '@testing-library/react';
+import { StrictMode, createElement } from 'react';
+
+import { act, fireEvent, render, renderHook, screen } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { PaymentIntent } from '@proton/chargebee/lib/types';
+import { capturePaymentMessage } from '@proton/payments/sentry/capture';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { createApiError } from '@proton/shared/lib/fetch/ApiError';
 import { setLocation } from '@proton/vitest-config/setLocation';
 
 import {
+    ChargebeeIframe,
     getIframeUrl,
     getInitializationFailureReason,
     getUnhandledIframeErrorLevel,
@@ -26,6 +30,11 @@ vi.mock('@proton/app-context/useNotifications', () => ({
 
 vi.mock('@proton/components/containers/themes/ThemeProvider', () => ({
     useTheme: vi.fn().mockReturnValue({ information: {} }),
+}));
+
+vi.mock('@proton/payments/sentry/capture', async () => ({
+    ...(await vi.importActual<Record<string, unknown>>('@proton/payments/sentry/capture')),
+    capturePaymentMessage: vi.fn(),
 }));
 
 describe('getIframeUrl', () => {
@@ -432,5 +441,67 @@ describe('validateSavedCreditCard', () => {
         expect(getPostedMessageTypes()).toEqual(['set-configuration', 'chargebee-verify-saved-card']);
 
         unmount();
+    });
+});
+
+describe('card setup timeout report', () => {
+    const CARD_SETUP_TIMEOUT_REPORT = 'Payments: Chargebee iframe failed to initialize (card, timeout)';
+
+    beforeEach(() => {
+        vi.useFakeTimers();
+        vi.mocked(capturePaymentMessage).mockClear();
+    });
+
+    afterEach(() => {
+        vi.clearAllTimers();
+        vi.useRealTimers();
+    });
+
+    const PaymentForm = ({ showCardForm, strictMode }: { showCardForm: boolean; strictMode?: boolean }) => {
+        const iframeHandles = useCbIframe();
+        if (!showCardForm) {
+            return null;
+        }
+
+        const cardForm = createElement(ChargebeeIframe, { type: 'card', iframeHandles });
+        return strictMode ? createElement(StrictMode, null, cardForm) : cardForm;
+    };
+
+    const startCardSetup = async ({ strictMode }: { strictMode?: boolean } = {}) => {
+        const view = render(createElement(PaymentForm, { showCardForm: true, strictMode }));
+        const iframe = screen.getByTestId('chargebee-iframe') as HTMLIFrameElement;
+        vi.spyOn(iframe.contentWindow as Window, 'postMessage').mockImplementation(() => {});
+
+        fireEvent.load(iframe);
+        await flushPromises();
+
+        return view;
+    };
+
+    const getReportedMessages = () => vi.mocked(capturePaymentMessage).mock.calls.map(([message]) => message);
+
+    it('should report a card setup that never answers while the card form is shown', async () => {
+        await startCardSetup();
+
+        await act(() => vi.advanceTimersByTimeAsync(20000));
+
+        expect(getReportedMessages()).toEqual([CARD_SETUP_TIMEOUT_REPORT]);
+    });
+
+    it('should not report the card setup once the user switched to another payment method', async () => {
+        const { rerender } = await startCardSetup();
+
+        rerender(createElement(PaymentForm, { showCardForm: false }));
+        await act(() => vi.advanceTimersByTimeAsync(20000));
+
+        expect(getReportedMessages()).toEqual([]);
+    });
+
+    it('should still report the card setup after a StrictMode remount', async () => {
+        await startCardSetup({ strictMode: true });
+
+        await act(() => vi.advanceTimersByTimeAsync(20000));
+
+        expect(getReportedMessages()).toEqual([CARD_SETUP_TIMEOUT_REPORT]);
     });
 });
