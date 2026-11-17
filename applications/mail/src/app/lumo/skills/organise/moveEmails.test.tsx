@@ -13,7 +13,7 @@ import type { MailToolDeps } from '../../toolModule';
 import { buildMailToolDeps } from '../../toolModule.test.helpers';
 import { hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
 import { createMoveEmailsHandler, moveEmailsCardRenderer, moveEmailsDefinition } from './moveEmails';
-import { offListState } from './organise.test.helpers';
+import { mixedSelection, moveRulesAnswering, offListState } from './organise.test.helpers';
 
 describe('moveEmailsDefinition', () => {
     it('refuses a category outside the Inbox before the confirm card', () => {
@@ -118,7 +118,7 @@ describe('createMoveEmailsHandler', () => {
         const element = { ID: 'ELEMENT_ID_1', Subject: 'Booking' };
         const store = { getState: () => offListState([element]) };
         const applyLocation = jest.fn().mockResolvedValue([]);
-        const deps = { store, applyLocation } as unknown as MailToolDeps;
+        const deps = { store, applyLocation, validateMove: moveRulesAnswering('allowed') } as unknown as MailToolDeps;
 
         await createMoveEmailsHandler(deps)(
             { ids: [emailReference], folder: DefaultFolderReference.TRASH, category: null },
@@ -130,6 +130,84 @@ describe('createMoveEmailsHandler', () => {
             elements: [element],
             destinationLabelID: MAILBOX_LABEL_IDS.TRASH,
         });
+    });
+
+    // `applyLocation` picks the conversation or message rules from the first element and throws on the
+    // other kind, so one call over both fails before any request.
+    it('moves conversations and messages in separate calls', async () => {
+        const { references, conversation, message, emailReferences, state } = mixedSelection();
+        const applyLocation = jest.fn().mockResolvedValue([]);
+        const validateMove = moveRulesAnswering('allowed');
+        const deps = { store: { getState: () => state }, applyLocation, validateMove } as unknown as MailToolDeps;
+
+        await createMoveEmailsHandler(deps)(
+            { ids: emailReferences, folder: DefaultFolderReference.ARCHIVE, category: null },
+            { references }
+        );
+
+        expect(applyLocation.mock.calls.map(([params]) => params.elements)).toEqual([[conversation], [message]]);
+    });
+
+    // `applyLocation` resolves with nothing done both here and when it opens a confirmation modal, so
+    // only Mail's move rules can tell the model the move did not happen.
+    it.each([
+        ['Mail denies the move', 'denied', /does not allow moving these emails to Archive/],
+        ['the emails are already there', 'notApplicable', /already in Archive/],
+    ] as const)('fails without moving when %s', async (_case, answer, message) => {
+        const { references, emailReferences, state } = mixedSelection();
+        const applyLocation = jest.fn().mockResolvedValue([]);
+        const deps = {
+            store: { getState: () => state },
+            applyLocation,
+            validateMove: moveRulesAnswering(answer),
+        } as unknown as MailToolDeps;
+
+        await expect(
+            createMoveEmailsHandler(deps)(
+                { ids: emailReferences, folder: DefaultFolderReference.ARCHIVE, category: null },
+                { references }
+            )
+        ).rejects.toThrow(message);
+        expect(applyLocation).not.toHaveBeenCalled();
+    });
+
+    it('names a custom folder by its title when nothing can move there', async () => {
+        const { references, emailReferences, state } = mixedSelection();
+        const folderReference = references.referenceFor('folder', 'FOLDER_ID_1', { title: 'Travel' });
+        const deps = {
+            store: { getState: () => state },
+            applyLocation: jest.fn(),
+            validateMove: moveRulesAnswering('notApplicable'),
+        } as unknown as MailToolDeps;
+
+        await expect(
+            createMoveEmailsHandler(deps)(
+                { ids: emailReferences, folder: folderReference, category: null },
+                { references }
+            )
+        ).rejects.toThrow(/already in Travel/);
+    });
+
+    it('moves only the type group the rules allow', async () => {
+        const { references, message, emailReferences, state } = mixedSelection();
+        const applyLocation = jest.fn().mockResolvedValue([]);
+        const validateMove = jest.fn((elements: unknown[]) => {
+            const allowed = elements.includes(message);
+            return {
+                allowedElements: allowed ? elements : [],
+                deniedElements: [],
+                notApplicableElements: allowed ? [] : elements,
+                errors: [],
+            };
+        });
+        const deps = { store: { getState: () => state }, applyLocation, validateMove } as unknown as MailToolDeps;
+
+        await createMoveEmailsHandler(deps)(
+            { ids: emailReferences, folder: DefaultFolderReference.ARCHIVE, category: null },
+            { references }
+        );
+
+        expect(applyLocation.mock.calls.map(([params]) => params.elements)).toEqual([[message]]);
     });
 
     it('rejects a hallucinated reference before touching apply-location', async () => {
@@ -153,7 +231,7 @@ describe('createMoveEmailsHandler', () => {
         const element = { ID: 'ELEMENT_ID_1', Subject: 'Booking' };
         const store = { getState: () => offListState([element], MAILBOX_LABEL_IDS.ARCHIVE) };
         const applyLocation = jest.fn().mockResolvedValue([]);
-        const deps = { store, applyLocation } as unknown as MailToolDeps;
+        const deps = { store, applyLocation, validateMove: moveRulesAnswering('allowed') } as unknown as MailToolDeps;
 
         await createMoveEmailsHandler(deps)(
             { ids: [emailReference], folder: DefaultFolderReference.INBOX, category: null },
@@ -190,6 +268,7 @@ describe('createMoveEmailsHandler into a category tab', () => {
             store: { getState: () => offListState(elements) } as unknown as MailToolDeps['store'],
             applyLocation,
             reportRecategorize,
+            validateMove: moveRulesAnswering('allowed'),
             getActiveCategoryTabs: () => categoryTabs,
         });
 

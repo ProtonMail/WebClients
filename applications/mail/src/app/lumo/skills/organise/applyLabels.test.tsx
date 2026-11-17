@@ -10,7 +10,7 @@ import {
     resolveLabelChanges,
 } from './applyLabels';
 import { hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
-import { offListState } from './organise.test.helpers';
+import { mixedSelection, offListState } from './organise.test.helpers';
 
 describe('applyLabelsDefinition', () => {
     // Without this, "always tag mail from X" is answered by labelling the mail already on screen — the
@@ -117,6 +117,21 @@ describe('createApplyLabelsHandler', () => {
             createFilters: false,
             changes: { LABEL_ID_1: true },
         });
+    });
+
+    // Each label change runs through the move rules, which take their kind from the first element.
+    it('labels conversations and messages in separate calls', async () => {
+        const { references, conversation, message, emailReferences, state } = mixedSelection();
+        const labelReference = references.referenceFor('label', 'LABEL_ID_1', { title: 'Receipts' });
+        const applyMultipleLocations = jest.fn().mockResolvedValue(undefined);
+        const deps = { store: { getState: () => state }, applyMultipleLocations } as unknown as MailToolDeps;
+
+        await createApplyLabelsHandler(deps)({ ids: emailReferences, labels: [labelReference] }, { references });
+
+        expect(applyMultipleLocations.mock.calls.map(([params]) => params.elements)).toEqual([
+            [conversation],
+            [message],
+        ]);
     });
 
     // `applyMultipleLocations` throws a bare `'Elements are required'` here, which reaches the model only

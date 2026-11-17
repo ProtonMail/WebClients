@@ -6,7 +6,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
 import type { MailToolDeps } from '../../toolModule';
 import { emailCountDetail, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
-import { offListState } from './organise.test.helpers';
+import { mixedSelection, offListState } from './organise.test.helpers';
 import { createSetStarredHandler, setStarredCardRenderer, setStarredDefinition } from './setStarred';
 
 describe('setStarredDefinition', () => {
@@ -99,6 +99,17 @@ describe('createSetStarredHandler', () => {
             });
         }
     );
+
+    // Starring runs through the same first-element rules as a move, so a mixed call throws.
+    it('stars conversations and messages in separate calls', async () => {
+        const { references, conversation, message, emailReferences, state } = mixedSelection();
+        const applyLocation = jest.fn().mockResolvedValue([]);
+        const deps = { store: { getState: () => state }, applyLocation } as unknown as MailToolDeps;
+
+        await createSetStarredHandler(deps)({ ids: emailReferences, starred: true }, { references });
+
+        expect(applyLocation.mock.calls.map(([params]) => params.elements)).toEqual([[conversation], [message]]);
+    });
 
     it('rejects a hallucinated reference before touching apply-location', async () => {
         const references = createReferenceRegistry();

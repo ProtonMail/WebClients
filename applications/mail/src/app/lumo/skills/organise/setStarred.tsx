@@ -6,7 +6,7 @@ import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
-import { resolveFreshElements } from '../../helpers/references';
+import { forEachElementType, resolveFreshElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import {
     emailCountDetail,
@@ -60,11 +60,13 @@ export const createSetStarredHandler =
         const elements = await resolveFreshElements(mail, ids, references);
         // `removeLabel` un-stars, so this sets an absolute state: an email already in the target state is
         // left as it is rather than flipped.
-        await mail.applyLocation({
-            type: APPLY_LOCATION_TYPES.STAR,
-            elements,
-            destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
-            removeLabel: !starred,
+        await forEachElementType(elements, (group) => {
+            return mail.applyLocation({
+                type: APPLY_LOCATION_TYPES.STAR,
+                elements: group,
+                destinationLabelID: MAILBOX_LABEL_IDS.STARRED,
+                removeLabel: !starred,
+            });
         });
     };
 
