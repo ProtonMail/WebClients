@@ -1,83 +1,46 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { createKTVerifier } from '@proton/key-transparency/helpers/createKTVerifier';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     addSSOSamlMember,
-    checkMemberAddressAvailability,
-    createMemberAddress,
-    createMember as createMemberConfig,
     deleteMember as deleteMemberConfig,
     disableMember as disableMemberConfig,
-    editMemberInvitation,
     enableMember as enableMemberConfig,
-    inviteMember,
     privatizeMember as privatizeMemberConfig,
     removeSSOSamlMember,
-    updateAI,
-    updateLumo,
-    updateName,
-    updateQuota,
     updateRole as updateRoleConfig,
     updateVPN,
 } from '@proton/shared/lib/api/members';
-import {
-    DEFAULT_KEYGEN_TYPE,
-    HTTP_STATUS_CODE,
-    KEYGEN_CONFIGS,
-    MEMBER_PRIVATE,
-    MEMBER_ROLE,
-    VPN_CONNECTIONS,
-} from '@proton/shared/lib/constants';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { MEMBER_PRIVATE, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Member';
-import { CreateMemberMode } from '@proton/shared/lib/interfaces/Member';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
-import { setupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import { getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
-import { getHasIncompleteOrgKeyGrant, getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
-import { srpVerify } from '@proton/shared/lib/srp';
+import { getHasIncompleteOrgKeyGrant } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
-import { addressesThunk } from '../addresses';
 import type { KtState } from '../kt';
-import { getKTActivation, getKTUserContext } from '../kt/actions';
 import type { MemberState } from '../member';
 import { type OrganizationState, organizationThunk } from '../organization';
 import type { OrganizationKeyState } from '../organizationKey';
 import { organizationKeyThunk } from '../organizationKey';
 import {
-    type MemberEditPayload,
     type MemberKeyPayload,
     type PromoteGlobalSSOPayload,
     getMemberEditPayload,
-    getMemberKeyPayload,
-    getPrivateAdminError,
     setAdminRoles,
 } from '../organizationKey/actions';
 import { classifyRoleChange, getIsMemberAdminOrPendingAdmin } from '../organizationKey/classifyRoleChange';
 import { type OrganizationRolesState, organizationRolesThunk } from '../organizationRoles';
-import {
-    hasUserSourcedOwnerRole,
-    isOrgKeyRequired,
-    isOwnerRole,
-    isOwnerRoleSyncEnabled,
-} from '../organizationRoles/helpers';
+import { isOrgKeyRequired } from '../organizationRoles/helpers';
 import { userThunk } from '../user';
-import { userKeysThunk } from '../userKeys';
-import InvalidAddressesError from './errors/InvalidAddressesError';
 import MemberCreationValidationError from './errors/MemberCreationValidationError';
-import UnavailableAddressesError from './errors/UnavailableAddressesError';
 import { getMember } from './getMember';
 import {
     type MembersState,
@@ -89,10 +52,8 @@ import {
     upsertMember,
 } from './index';
 import { getMemberUnprivatizationMode } from './memberUnprivatization';
-import { getInvitationData, getSignedInvitationData } from './unprivatization';
 import { deleteRequestUnprivatization, requestUnprivatization, unprivatizeSelf } from './unprivatizeActions';
-import { getRequiredOwnerRoleId, updateOwnerRole } from './updateOwnerRole';
-import validateAddUser from './validateAddUser';
+import { updateOwnerRole } from './updateOwnerRole';
 
 export const deleteMembers = ({
     members,
@@ -164,7 +125,10 @@ export const setRole = ({
                 return;
             }
             const didSyncOwnerRole = syncOwner && (await dispatch(updateOwnerRole({ member, makeAdmin: false, api })));
-            if (!didSyncOwnerRole) {
+            // Removing the owner role doesn't always demote, e.g. when the member didn't hold it directly
+            const isDemoted =
+                didSyncOwnerRole && (await getMember(api, member.ID)).Role !== MEMBER_ROLE.ORGANIZATION_ADMIN;
+            if (!isDemoted) {
                 await api(updateRoleConfig(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
             }
             dispatch(invalidateMemberRoles({ member }));
@@ -214,7 +178,7 @@ export const assignMemberRoles = ({
     payload,
     api,
 }: {
-    member: EnhancedMember;
+    member: Member;
     currentRoles: RoleAssignment[];
     desiredRoleIds: Set<string>;
     payload: PromoteGlobalSSOPayload | MemberKeyPayload | null;
@@ -359,20 +323,6 @@ export const privatizeMember = ({
     };
 };
 
-interface CreateMemberPayload {
-    name: string;
-    addresses: { Local: string; Domain: string }[];
-    invitationEmail: string;
-    mode: CreateMemberMode;
-    private: MEMBER_PRIVATE | null;
-    storage: number;
-    vpn?: boolean;
-    password: string;
-    role: MEMBER_ROLE | null;
-    numAI: boolean;
-    lumo: boolean;
-}
-
 // This resets the VPN connections of the admin to the default value, since this gets reset by the API when changing subscriptions etc
 export const resetSelfVpnConnectionsHelper = async ({
     api,
@@ -387,512 +337,6 @@ export const resetSelfVpnConnectionsHelper = async ({
     if (organization.MaxVPN > 0 && self && self.MaxVPN !== VPN_CONNECTIONS && self.MaxVPN === organization.MaxVPN) {
         await api(updateVPN(self.ID, VPN_CONNECTIONS));
     }
-};
-
-export const editMember = ({
-    member,
-    memberDiff,
-    memberKeyPacketPayload,
-    api,
-}: {
-    member: Member;
-    memberDiff: Partial<CreateMemberPayload>;
-    memberKeyPacketPayload: PromoteGlobalSSOPayload | MemberKeyPayload | null;
-    api: Api;
-}): ThunkAction<
-    Promise<{ diff: true; member: Member } | { diff: false; member: null }>,
-    KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
-    return async (dispatch) => {
-        if (memberDiff.name !== undefined) {
-            await api(updateName(member.ID, memberDiff.name));
-        }
-        if (memberDiff.storage !== undefined) {
-            await api(updateQuota(member.ID, memberDiff.storage));
-        }
-        if (memberDiff.vpn !== undefined) {
-            if (memberDiff.vpn) {
-                const [members, organization] = await Promise.all([
-                    dispatch(membersThunk()),
-                    dispatch(organizationThunk()),
-                ]);
-                await resetSelfVpnConnectionsHelper({ api, members, organization }).catch(noop);
-            }
-            await api(updateVPN(member.ID, memberDiff.vpn ? VPN_CONNECTIONS : 0));
-        }
-        if (memberDiff.numAI !== undefined) {
-            await api(updateAI(member.ID, memberDiff.numAI ? 1 : 0));
-        }
-        if (memberDiff.lumo !== undefined) {
-            await api(updateLumo(member.ID, memberDiff.lumo ? 1 : 0));
-        }
-        if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN || memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
-            await dispatch(
-                setRole({
-                    member,
-                    payload: memberKeyPacketPayload,
-                    api,
-                    role: memberDiff.role,
-                    syncOwner: true,
-                })
-            );
-        }
-        if (memberDiff.private !== undefined) {
-            if (memberDiff.private === MEMBER_PRIVATE.UNREADABLE) {
-                if (member.Unprivatization) {
-                    await dispatch(deleteRequestUnprivatization({ member, api }));
-                } else {
-                    await dispatch(privatizeMember({ member, api }));
-                }
-            }
-            if (member.Private === MEMBER_PRIVATE.UNREADABLE && memberDiff.private === MEMBER_PRIVATE.READABLE) {
-                if (member.Self) {
-                    await dispatch(unprivatizeSelf({ member, api }));
-                } else {
-                    await dispatch(requestUnprivatization({ member, api }));
-                }
-            }
-        }
-        const diff = Object.values(memberDiff).some((value) => value !== undefined);
-        if (diff) {
-            const [updatedMember] = await Promise.all([
-                getMember(api, member.ID),
-                // Upserting the member also has an effect on the org values, so they need to be updated too.
-                dispatch(organizationThunk({ cache: CacheType.None })),
-            ]);
-            dispatch(upsertMember({ member: updatedMember }));
-            return {
-                diff: true,
-                member: updatedMember,
-            };
-        }
-        return {
-            diff: false,
-            member: null,
-        };
-    };
-};
-
-export const confirmMemberRoleChange = ({
-    member,
-    targetRole,
-    api,
-    confirm,
-}: {
-    member: EnhancedMember;
-    targetRole: MEMBER_ROLE;
-    api: Api;
-    confirm: (action: MemberEditPayload) => Promise<boolean>;
-}): ThunkAction<
-    Promise<{ confirmed: boolean; payload: PromoteGlobalSSOPayload | MemberKeyPayload | null }>,
-    KtState & OrganizationKeyState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
-    return async (dispatch) => {
-        const organizationKey = await dispatch(organizationKeyThunk());
-        const classification = classifyRoleChange({
-            member,
-            targetRole,
-            isPasswordlessOrg: getIsPasswordless(organizationKey?.Key),
-        });
-        const payload = await dispatch(getMemberEditPayload({ member, classification, api }));
-        if (!classification.requiresPrompt) {
-            return { confirmed: true, payload };
-        }
-        return { confirmed: await confirm({ classification, payload }), payload };
-    };
-};
-
-export const setMemberOwnerRole = ({
-    member,
-    makeAdmin,
-    api,
-    confirm,
-}: {
-    member: EnhancedMember;
-    makeAdmin: boolean;
-    api: Api;
-    confirm: (action: MemberEditPayload) => Promise<boolean>;
-}): ThunkAction<
-    Promise<{ confirmed: false } | { confirmed: true; changed: boolean; desiredRoleIds: Set<string> }>,
-    KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
-    return async (dispatch) => {
-        const organizationRoles = await dispatch(organizationRolesThunk());
-        const ownerRoleId = organizationRoles.find(isOwnerRole)?.OrganizationRoleID;
-        if (!ownerRoleId) {
-            throw new Error('Missing owner role');
-        }
-
-        const currentRoles = member.UserOrganizationRoles ?? [];
-        const hasOwnerRole = hasUserSourcedOwnerRole(currentRoles);
-        const hasOtherOrgKeyRole = currentRoles.some(({ Role }) => !isOwnerRole(Role) && isOrgKeyRequired(Role));
-        const unprivatization = getMemberUnprivatizationMode(member);
-
-        let payload: PromoteGlobalSSOPayload | MemberKeyPayload | null = null;
-
-        // need change in Member.Role in these cases:
-        //  1. Promotion: member doesn't have Member.Role = Admin
-        //  2. Demotion: member doesn't have other admin roles that require org key access
-        const changesLegacyRole = makeAdmin ? member.Role !== MEMBER_ROLE.ORGANIZATION_ADMIN : !hasOtherOrgKeyRole;
-        if (changesLegacyRole) {
-            const result = await dispatch(
-                confirmMemberRoleChange({
-                    member,
-                    targetRole: makeAdmin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER,
-                    api,
-                    confirm,
-                })
-            );
-            if (!result.confirmed) {
-                return { confirmed: false };
-            }
-            payload = result.payload;
-        }
-
-        const desiredRoleIds = new Set(currentRoles.map(({ Role }) => Role.OrganizationRoleID));
-        if (makeAdmin) {
-            desiredRoleIds.add(ownerRoleId);
-        } else {
-            desiredRoleIds.delete(ownerRoleId);
-        }
-
-        // A role change: assignMemberRoles also deletes the pending admin invitation when no org key role remains
-        if (makeAdmin || hasOwnerRole) {
-            const result = await dispatch(assignMemberRoles({ member, currentRoles, desiredRoleIds, payload, api }));
-            return { confirmed: true, changed: result.changed, desiredRoleIds };
-        }
-
-        // The member holds no Owner role and has no pending admin invitation, so nothing changes
-        if (!unprivatization.makeAdmin) {
-            return { confirmed: true, changed: false, desiredRoleIds };
-        }
-
-        // The user cancels a pending admin invitation
-        const { diff } = await dispatch(
-            editMember({
-                member,
-                memberDiff: { role: MEMBER_ROLE.ORGANIZATION_MEMBER },
-                memberKeyPacketPayload: payload,
-                api,
-            })
-        );
-        return { confirmed: true, changed: diff, desiredRoleIds };
-    };
-};
-
-const createAddressesForMember = async ({
-    api,
-    addresses,
-    member,
-}: {
-    member: Member;
-    api: Api;
-    addresses: { Local: string; Domain: string; DisableE2EE?: boolean }[];
-}) => {
-    const memberAddresses: Address[] = [];
-    for (const { Local, Domain, DisableE2EE } of addresses) {
-        const { Address } = await api<{ Address: Address }>(
-            createMemberAddress(member.ID, {
-                Local,
-                Domain,
-                DisableE2EE,
-            })
-        );
-        memberAddresses.push(Address);
-    }
-    return memberAddresses;
-};
-
-export const createMember = ({
-    member: originalModel,
-    single,
-    verifiedDomains,
-    api,
-    validationOptions,
-}: {
-    member: CreateMemberPayload;
-    single: boolean;
-    verifiedDomains: Domain[] /* Remove dependency, move to thunk */;
-    validationOptions: {
-        disableStorageValidation?: boolean;
-        disableDomainValidation?: boolean;
-        disableAddressValidation?: boolean;
-    };
-    api: Api;
-}): ThunkAction<
-    Promise<Member>,
-    KtState & OrganizationKeyState & MembersState & OrganizationRolesState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
-    return async (dispatch, _, extra) => {
-        let [user, userKeys, ownerAddresses, organizationKey, organization, members] = await Promise.all([
-            dispatch(userThunk()),
-            dispatch(userKeysThunk()),
-            dispatch(addressesThunk()),
-            dispatch(organizationKeyThunk()),
-            dispatch(organizationThunk()),
-            dispatch(membersThunk()),
-        ]);
-
-        const model = { ...originalModel };
-        // Force role to member in invitation creation since it can't be created as anything else
-        if (model.mode === CreateMemberMode.Invitation) {
-            model.role = MEMBER_ROLE.ORGANIZATION_MEMBER;
-        }
-
-        if (model.vpn) {
-            await resetSelfVpnConnectionsHelper({ api, members, organization }).catch(noop);
-        }
-        const error = validateAddUser({
-            privateUser: model.private === MEMBER_PRIVATE.UNREADABLE,
-            organization,
-            organizationKeyInfo: getOrganizationKeyInfo(organization, organizationKey, ownerAddresses),
-            verifiedDomains,
-            ...validationOptions,
-        });
-        if (error) {
-            throw new MemberCreationValidationError(error);
-        }
-
-        const invalidAddresses: string[] = [];
-        const invalidInvitationAddresses: string[] = [];
-        const validAddresses: string[] = [];
-
-        const addressParts = model.addresses.map((parts) => {
-            const emailAddress = `${parts.Local}@${parts.Domain}`;
-            const isValid = validateEmailAddress(emailAddress);
-            if (!isValid) {
-                invalidAddresses.push(emailAddress);
-            } else {
-                validAddresses.push(emailAddress);
-            }
-            return {
-                address: emailAddress,
-                ...parts,
-            };
-        });
-
-        if (model.mode === CreateMemberMode.Invitation) {
-            if (!validateEmailAddress(model.invitationEmail)) {
-                invalidInvitationAddresses.push(model.invitationEmail);
-            }
-        }
-
-        if (invalidAddresses.length || invalidInvitationAddresses.length) {
-            /**
-             * Throw if any of the addresses are not valid
-             */
-            throw new InvalidAddressesError(invalidAddresses, invalidInvitationAddresses, validAddresses);
-        }
-
-        if (model.mode === CreateMemberMode.Password) {
-            if (!model.private) {
-                if (!organizationKey?.privateKey) {
-                    throw new MemberCreationValidationError(
-                        c('Error').t`Organization key must be activated to create non-private users`
-                    );
-                }
-            }
-
-            if (model.private) {
-                if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-                    if (getIsPasswordless(organizationKey?.Key)) {
-                        throw new MemberCreationValidationError(getPrivateAdminError());
-                    }
-                }
-            }
-        }
-
-        if (model.mode === CreateMemberMode.Invitation) {
-            if (!organizationKey?.privateKey) {
-                throw new MemberCreationValidationError(
-                    c('Error').t`Organization key must be activated to create invited users`
-                );
-            }
-        }
-
-        const unavailableAddresses: { message: string; address: string }[] = [];
-        const availableAddresses: string[] = [];
-
-        const checkAddressAvailability = async ({ Local, Domain }: { Local: string; Domain: string }) => {
-            const address = `${Local}@${Domain}`;
-            try {
-                await api(
-                    checkMemberAddressAvailability({
-                        Local,
-                        Domain,
-                    })
-                );
-                availableAddresses.push(address);
-            } catch (error: any) {
-                const { status, message } = getApiError(error);
-                if (status === HTTP_STATUS_CODE.CONFLICT) {
-                    // Conflict error from address being not available
-                    unavailableAddresses.push({ message, address });
-                    return;
-                }
-
-                throw error;
-            }
-        };
-
-        const [firstAddressParts, ...restAddressParts] = addressParts;
-
-        /**
-         * Will prompt password prompt only once
-         */
-        await checkAddressAvailability(firstAddressParts);
-
-        /**
-         * No more password prompts will be needed
-         */
-        await Promise.all(restAddressParts.map(checkAddressAvailability));
-
-        if (unavailableAddresses.length) {
-            /**
-             * Throw if any of the addresses are not available
-             */
-            throw new UnavailableAddressesError(unavailableAddresses, availableAddresses);
-        }
-
-        if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN && isOwnerRoleSyncEnabled(extra.unleashClient)) {
-            await dispatch(getRequiredOwnerRoleId());
-        }
-
-        const payload = {
-            Name: model.name || firstAddressParts.Local,
-            MaxSpace: +model.storage,
-            MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
-            MaxAI: model.numAI ? 1 : 0,
-            MaxLumo: model.lumo ? 1 : 0,
-            TemporaryPassword: model.mode === CreateMemberMode.LoginLink,
-        };
-
-        if (model.mode === CreateMemberMode.Invitation) {
-            organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
-            if (!organizationKey?.privateKey) {
-                throw new MemberCreationValidationError(
-                    c('Error').t`Organization key must be activated to create invited users`
-                );
-            }
-            const address = `${firstAddressParts.Local}@${firstAddressParts.Domain}`;
-            const invitationData = await getInvitationData({
-                api,
-                address,
-                expectRevisionChange: true,
-            });
-            const invitationSignature = await getSignedInvitationData(organizationKey.privateKey, invitationData);
-            const Member = await api(
-                createMemberConfig({
-                    ...payload,
-                    Invitation: {
-                        Email: model.invitationEmail,
-                        Data: invitationData,
-                        Signature: invitationSignature,
-                        PrivateIntent: model.private === MEMBER_PRIVATE.UNREADABLE,
-                    },
-                })
-            ).then(({ Member }) => Member);
-
-            if (model.private) {
-                await createAddressesForMember({
-                    api,
-                    member: Member,
-                    addresses: model.addresses,
-                });
-            }
-
-            const [updatedMember] = await Promise.all([
-                getMember(api, Member.ID),
-                // Upserting the member also has an effect on the org values, so they need to be updated too.
-                single ? dispatch(organizationThunk({ cache: CacheType.None })) : undefined,
-            ]);
-            dispatch(upsertMember({ member: updatedMember }));
-            return updatedMember;
-        }
-
-        const memberConfig = createMemberConfig({
-            ...payload,
-            Private: +(model.private === MEMBER_PRIVATE.UNREADABLE),
-        });
-        const { Member } =
-            model.mode === CreateMemberMode.LoginLink
-                ? await api<{ Member: Member }>(memberConfig)
-                : await srpVerify<{ Member: Member }>({
-                      api,
-                      credentials: { password: model.password },
-                      config: memberConfig,
-                  });
-
-        const memberAddresses = await createAddressesForMember({
-            api,
-            member: Member,
-            addresses: model.addresses,
-        });
-
-        let memberWithKeys: Member | undefined;
-        organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
-        if (!model.private && organizationKey?.privateKey) {
-            const { keyTransparencyVerify, keyTransparencyCommit } = createKTVerifier({
-                config: extra.config,
-                api,
-                ktActivation: dispatch(getKTActivation()),
-            });
-            const result = await setupMemberKeys({
-                api,
-                ownerAddresses,
-                member: Member,
-                memberAddresses,
-                organizationKey: organizationKey.privateKey,
-                keyGenConfig: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
-                password: model.password,
-                keyTransparencyVerify,
-                skipSrp: model.mode === CreateMemberMode.LoginLink,
-            });
-            memberWithKeys = result.Member;
-            await keyTransparencyCommit(user, userKeys);
-        }
-
-        if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-            organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
-            if (getIsPasswordless(organizationKey?.Key)) {
-                if (!model.private && memberWithKeys) {
-                    const memberKeyPayload = await getMemberKeyPayload({
-                        organizationKey,
-                        member: memberWithKeys,
-                        memberAddresses,
-                        mode: {
-                            type: 'email',
-                            ktUserContext: await dispatch(getKTUserContext()),
-                        },
-                        api,
-                    });
-                    await dispatch(updateOwnerRole({ member: Member, makeAdmin: true, api }));
-                    await dispatch(setAdminRoles({ api, memberKeyPayloads: [memberKeyPayload] }));
-                } else {
-                    // Ignore, can't set private users admins on creation because they don't have keys setup
-                }
-            } else {
-                await dispatch(updateOwnerRole({ member: Member, makeAdmin: true, api }));
-                await api(updateRoleConfig(Member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
-            }
-        }
-
-        const [updatedMember] = await Promise.all([
-            getMember(api, Member.ID),
-            // Upserting the member also has an effect on the org values, so they need to be updated too.
-            single ? dispatch(organizationThunk({ cache: CacheType.None })) : undefined,
-        ]);
-        dispatch(upsertMember({ member: updatedMember }));
-        return updatedMember;
-    };
 };
 
 export const deleteMember = ({
@@ -986,104 +430,5 @@ export const attachMemberSSO = ({
         }
         await api(addSSOSamlMember(member.ID));
         dispatch(upsertMember({ member: await getMember(api, member.ID) }));
-    };
-};
-
-interface InviteMemberPayload {
-    email: string;
-    storage: number;
-    numAI: boolean | undefined;
-    lumo: boolean | undefined;
-    vpn: boolean | undefined;
-}
-export const createInvite = ({
-    email,
-    storage,
-    numAI,
-    lumo,
-    vpn,
-}: InviteMemberPayload): ThunkAction<
-    Promise<void>,
-    KtState & MemberState & MembersState & OrganizationKeyState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
-    return async (dispatch, getState, extra) => {
-        if (vpn) {
-            const [members, organization] = await Promise.all([
-                dispatch(membersThunk()),
-                dispatch(organizationThunk()),
-            ]);
-            await resetSelfVpnConnectionsHelper({ api: extra.api, members, organization }).catch(noop);
-        }
-        const { Member } = await extra.api<{ Member: Member }>(
-            inviteMember({
-                email,
-                maxSpace: storage,
-                // eslint-disable-next-line no-nested-ternary
-                maxAI: numAI === undefined ? undefined : numAI ? 1 : 0,
-                // eslint-disable-next-line no-nested-ternary
-                maxLumo: lumo === undefined ? undefined : lumo ? 1 : 0,
-                // eslint-disable-next-line no-nested-ternary
-                maxVPN: vpn === undefined ? undefined : vpn ? VPN_CONNECTIONS : 0,
-            })
-        );
-        dispatch(upsertMember({ member: Member }));
-        dispatch(organizationThunk({ cache: CacheType.None })).catch(noop);
-    };
-};
-
-export const editInvite = ({
-    member,
-    memberDiff,
-}: {
-    member: Member;
-    memberDiff: Partial<InviteMemberPayload>;
-}): ThunkAction<
-    Promise<{ member: Member; diff: boolean }>,
-    KtState & MemberState & MembersState & OrganizationKeyState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
-    return async (dispatch, getState, extra) => {
-        const api = extra.api;
-        let diff = false;
-        if (memberDiff.storage !== undefined || memberDiff.vpn !== undefined) {
-            if (memberDiff.vpn) {
-                const [members, organization] = await Promise.all([
-                    dispatch(membersThunk()),
-                    dispatch(organizationThunk()),
-                ]);
-                await resetSelfVpnConnectionsHelper({ api, members, organization }).catch(noop);
-            }
-            await api(
-                editMemberInvitation(
-                    member.ID,
-                    // MaxSpace is required by the API, so the current value is sent when only the VPN access changed
-                    memberDiff.storage ?? member.MaxSpace,
-                    // eslint-disable-next-line no-nested-ternary
-                    memberDiff.vpn === undefined ? undefined : memberDiff.vpn ? VPN_CONNECTIONS : 0
-                )
-            );
-            diff = true;
-        }
-        if (memberDiff.numAI !== undefined) {
-            await api(updateAI(member.ID, memberDiff.numAI ? 1 : 0));
-            diff = true;
-        }
-        if (memberDiff.lumo !== undefined) {
-            await api(updateLumo(member.ID, memberDiff.lumo ? 1 : 0));
-            diff = true;
-        }
-        if (diff) {
-            const [updatedMember] = await Promise.all([
-                getMember(api, member.ID),
-                // Upserting the member also has an effect on the org values, so they need to be updated too.
-                dispatch(organizationThunk({ cache: CacheType.None })),
-            ]);
-            dispatch(upsertMember({ member: updatedMember }));
-            return { member: updatedMember, diff: true };
-        }
-        return { member, diff: false };
     };
 };

@@ -1,6 +1,7 @@
 import type { Mock } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
+import { updateRole } from '@proton/shared/lib/api/members';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Member';
@@ -9,13 +10,9 @@ import type { OrganizationRole, RoleAssignment } from '@proton/shared/lib/interf
 import { PREDEFINED_ROLE_NAME, ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 
 import type { PromoteGlobalSSOPayload } from '../organizationKey/actions';
-import {
-    assignMemberRoles,
-    provideOrgKeyAccessToMember,
-    resumeMemberRoleAssignment,
-    setMemberOwnerRole,
-    setRole,
-} from './actions';
+import { assignMemberRoles, provideOrgKeyAccessToMember, resumeMemberRoleAssignment, setRole } from './actions';
+import { setMemberOwnerRole } from './editMember';
+import { getMember } from './getMember';
 import { deleteRequestUnprivatization, requestUnprivatization } from './unprivatizeActions';
 import { updateOwnerRole } from './updateOwnerRole';
 
@@ -305,5 +302,69 @@ describe('removing roles from a member with a pending admin request', () => {
         expect(result).toEqual({ confirmed: true, changed: true, desiredRoleIds: new Set() });
         expect(deleteRequestUnprivatization).toHaveBeenCalledTimes(1);
         expect(updateOwnerRole).not.toHaveBeenCalled();
+    });
+
+    it('removes the owner role of a member whose promotion did not finish, without a demotion prompt', async () => {
+        const member = {
+            ID: 'member-id',
+            Role: MEMBER_ROLE.ORGANIZATION_MEMBER,
+            UserOrganizationRoles: [getRoleAssignment(ownerRole)],
+        } as EnhancedMember;
+        const confirm = vi.fn(async () => true);
+
+        const result = await setMemberOwnerRole({ member, makeAdmin: false, api, confirm })(
+            roleDispatch as any,
+            getState,
+            extra
+        );
+
+        expect(result).toEqual({ confirmed: true, changed: true, desiredRoleIds: new Set() });
+        expect(confirm).not.toHaveBeenCalled();
+        expect(getDispatchedActions()).toEqual([
+            'organizationRolesThunk',
+            'organizationRolesThunk',
+            'updateMemberRoles',
+        ]);
+    });
+});
+
+describe('setRole demoting an admin while the owner role is synced', () => {
+    const admin = { ID: 'admin-id', Role: MEMBER_ROLE.ORGANIZATION_ADMIN } as Member;
+
+    const demoteDispatch: Mock = vi.fn(async (action: unknown) => {
+        if (typeof action === 'function') {
+            return action(demoteDispatch, getState, extra);
+        }
+        if (action === 'updateOwnerRole') {
+            return true;
+        }
+    });
+
+    const runDemotion = () =>
+        setRole({ member: admin, payload: null, api, role: MEMBER_ROLE.ORGANIZATION_MEMBER, syncOwner: true })(
+            demoteDispatch as any,
+            getState,
+            extra
+        );
+
+    beforeEach(() => {
+        vi.clearAllMocks();
+    });
+
+    it('skips the legacy demotion when removing the owner role demoted the member', async () => {
+        vi.mocked(getMember).mockResolvedValueOnce({ ...admin, Role: MEMBER_ROLE.ORGANIZATION_MEMBER });
+
+        await runDemotion();
+
+        expect(updateOwnerRole).toHaveBeenCalledWith({ member: admin, makeAdmin: false, api });
+        expect(api).not.toHaveBeenCalled();
+    });
+
+    it('demotes the member when removing the owner role did not, e.g. because they did not hold it directly', async () => {
+        vi.mocked(getMember).mockResolvedValueOnce(admin);
+
+        await runDemotion();
+
+        expect(api).toHaveBeenCalledWith(updateRole(admin.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
     });
 });

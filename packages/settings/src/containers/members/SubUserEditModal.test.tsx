@@ -2,7 +2,7 @@ import type { JSX } from 'react';
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
-import { assignMemberRoles } from '@proton/account/members/actions';
+import { editMember } from '@proton/account/members/editMember';
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { EnhancedMember, MemberUnprivatization } from '@proton/shared/lib/interfaces/Member';
 import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces/Member';
@@ -15,10 +15,9 @@ import SubUserEditModal from './SubUserEditModal';
 
 jest.mock('@proton/atoms/Portal/Portal');
 
-jest.mock('@proton/account/members/actions', () => ({
-    ...jest.requireActual('@proton/account/members/actions'),
+jest.mock('@proton/account/members/editMember', () => ({
+    ...jest.requireActual('@proton/account/members/editMember'),
     editMember: jest.fn(() => ({ type: 'editMember' })),
-    assignMemberRoles: jest.fn(() => ({ type: 'assignMemberRoles' })),
 }));
 
 jest.mock('@proton/account/members', () => ({
@@ -29,9 +28,6 @@ jest.mock('@proton/account/members', () => ({
 const mockDefaultDispatch = async ({ type }: { type: string }) => {
     if (type === 'editMember') {
         return { member: undefined, diff: false };
-    }
-    if (type === 'assignMemberRoles') {
-        return { roleAssignments: [], changed: true };
     }
 };
 const mockDispatch = jest.fn(mockDefaultDispatch);
@@ -175,7 +171,7 @@ describe('SubUserEditModal', () => {
 
         await save();
 
-        expect(assignMemberRoles).not.toHaveBeenCalled();
+        expect(editMember).toHaveBeenCalledWith(expect.objectContaining({ roleIds: undefined }));
     });
 
     it('submits an added role together with the existing ones', async () => {
@@ -185,17 +181,17 @@ describe('SubUserEditModal', () => {
         fireEvent.click(screen.getByLabelText('User Admin'));
         await save();
 
-        expect(assignMemberRoles).toHaveBeenCalledWith(
-            expect.objectContaining({ desiredRoleIds: new Set(['owner-role', 'user-admin-role']) })
+        expect(editMember).toHaveBeenCalledWith(
+            expect.objectContaining({ roleIds: new Set(['owner-role', 'user-admin-role']) })
         );
     });
 
     it('disables role selection while the form is being submitted', async () => {
-        let finishAssignRoles = () => {};
+        let finishEditMember = () => {};
         mockDispatch.mockImplementation(({ type }) => {
-            if (type === 'assignMemberRoles') {
+            if (type === 'editMember') {
                 return new Promise((resolve) => {
-                    finishAssignRoles = () => resolve({ roleAssignments: [], changed: true });
+                    finishEditMember = () => resolve({ member: undefined, diff: true });
                 });
             }
             return mockDefaultDispatch({ type });
@@ -206,10 +202,10 @@ describe('SubUserEditModal', () => {
         fireEvent.click(screen.getByLabelText('User Admin'));
         fireEvent.click(screen.getByRole('button', { name: 'Save' }));
 
-        await waitFor(() => expect(assignMemberRoles).toHaveBeenCalled());
+        await waitFor(() => expect(editMember).toHaveBeenCalled());
         expect(screen.getByLabelText('User Admin')).toBeDisabled();
 
-        finishAssignRoles();
+        finishEditMember();
         await waitFor(() => expect(onClose).toHaveBeenCalled());
     });
 
@@ -270,8 +266,11 @@ describe('SubUserEditModal', () => {
         rerender(getMember({ UserOrganizationRoles: roles }));
         await save();
 
-        expect(assignMemberRoles).toHaveBeenCalledWith(
-            expect.objectContaining({ currentRoles: roles, desiredRoleIds: new Set(['owner-role']) })
+        expect(editMember).toHaveBeenCalledWith(
+            expect.objectContaining({
+                member: expect.objectContaining({ UserOrganizationRoles: roles }),
+                roleIds: new Set(['owner-role']),
+            })
         );
     });
 
@@ -286,7 +285,7 @@ describe('SubUserEditModal', () => {
 
         await save();
 
-        expect(assignMemberRoles).not.toHaveBeenCalled();
+        expect(editMember).toHaveBeenCalledWith(expect.objectContaining({ roleIds: undefined }));
         expect(mockCreateNotification).toHaveBeenCalledWith({
             type: 'error',
             text: "Role changes were not saved because the user's roles could not be loaded.",

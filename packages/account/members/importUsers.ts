@@ -16,7 +16,7 @@ import type { KtState } from '../kt';
 import { type OrganizationState, organizationThunk } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import type { OrganizationRolesState } from '../organizationRoles';
-import { createMember } from './actions';
+import { createMember } from './createMember';
 import InvalidAddressesError from './errors/InvalidAddressesError';
 import UnavailableAddressesError from './errors/UnavailableAddressesError';
 import { type MembersState, membersThunk } from './index';

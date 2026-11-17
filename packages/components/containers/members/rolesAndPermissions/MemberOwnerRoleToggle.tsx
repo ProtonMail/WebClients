@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { setMemberOwnerRole } from '@proton/account/members/actions';
+import { setMemberOwnerRole } from '@proton/account/members/editMember';
 import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/account/members/memberUnprivatization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getPrivateAdminError } from '@proton/account/organizationKey/actions';
