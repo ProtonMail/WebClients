@@ -273,8 +273,14 @@ $profile-colors:
 	position: fixed;
 	inset: 0;
 	z-index: map.get($z-indexes, 'up');
-	background: var(--background-norm, white);
-	color: var(--text-norm, black);
+
+	// Shown before ProtonApp, which loads meet.theme.css, so its values are copied here
+	--background-norm: #16161f;
+	--text-norm: white;
+	--text-weak: #bfbfd0;
+
+	background: var(--background-norm);
+	color: var(--text-norm);
 	display: flex;
 	flex-direction: column;
 	align-items: center;

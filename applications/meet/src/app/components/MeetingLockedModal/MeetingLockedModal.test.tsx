@@ -3,6 +3,15 @@ import userEvent from '@testing-library/user-event';
 
 import { MeetingLockedModal } from './MeetingLockedModal';
 
+const mocks = vi.hoisted(() => ({
+    isMobile: vi.fn(() => false),
+}));
+
+vi.mock('@proton/shared/lib/helpers/browser', async (importOriginal) => ({
+    ...(await importOriginal<object>()),
+    isMobile: mocks.isMobile,
+}));
+
 beforeAll(() => {
     const style = document.createElement('style');
     style.textContent = 'dialog { display: block; }';
@@ -40,5 +49,15 @@ describe('MeetingLockedModal', () => {
         await userEvent.keyboard('{Escape}');
 
         expect(onClose).toHaveBeenCalledTimes(1);
+    });
+
+    it('shows the lock at 7.5rem on phones too', () => {
+        mocks.isMobile.mockReturnValue(true);
+        render(<MeetingLockedModal onClose={vi.fn()} />);
+
+        const lock = within(screen.getByRole('dialog', { name: 'Meeting locked' })).getByRole('presentation');
+
+        expect(lock.style.getPropertyValue('--w-custom')).toBe('7.5rem');
+        expect(lock.style.getPropertyValue('--h-custom')).toBe('7.5rem');
     });
 });
