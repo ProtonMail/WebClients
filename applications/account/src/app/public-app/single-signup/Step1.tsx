@@ -25,6 +25,7 @@ import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
+import { sortMethodsBasedOnDevice } from '@proton/payments-ui/client-extensions/useMethods';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import PaymentWrapper from '@proton/payments-ui/containers/payments/PaymentWrapper';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
@@ -39,6 +40,7 @@ import type {
     Cycle,
     CycleMapping,
     ExtendedTokenPayment,
+    PlainPaymentMethodType,
     PlanIDs,
     TokenPayment,
 } from '@proton/payments/core/interface';
@@ -99,6 +101,7 @@ import Guarantee from './Guarantee';
 import GuaranteeCard from './GuaranteeCard';
 import type { Background } from './Layout';
 import Layout from './Layout';
+import MobilePlanBar from './MobilePlanBar';
 import PayButtonSuffix from './PayButtonSuffix';
 import PaymentSummary from './PaymentSummary';
 import RightPlanSummary from './RightPlanSummary';
@@ -113,8 +116,10 @@ import type { Measure, VPNSignupModel } from './interface';
 import type { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
 import RatingsSection from './ratings/RatingsSection';
+import { useIsMobileCheckout } from './useIsMobileCheckout';
 
 const protonDomain = '@proton.me';
+const vpnPricingURL = 'https://protonvpn.com/pricing';
 
 const getBundleTitle = (a: string, b: string) => {
     return c('vpn_2step: info').t`Your ${a} and ${b} bundle`;
@@ -324,6 +329,14 @@ const Step1 = ({
     const hasGuarantee =
         ([PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan) && !checkTrial;
 
+    const isMobileCheckout = useIsMobileCheckout({
+        viewportWidth,
+        isB2bPlan,
+        signupTrial,
+        checkTrial,
+        planName: selectedPlan.Name,
+    });
+
     const measurePay = (
         type: TelemetryPayType,
         event: TelemetryAccountSignupEvents.userCheckout | TelemetryAccountSignupEvents.checkoutError
@@ -358,7 +371,10 @@ const Step1 = ({
         return true;
     };
 
-    const sortNewMethods = usePaypalFirstSort();
+    const paypalFirstSort = usePaypalFirstSort();
+    // The PayPal first experiment wins, otherwise the mobile checkout preselects the wallet of the device:
+    // Apple Pay on iOS, Google Pay on Android
+    const sortNewMethods = paypalFirstSort ?? (isMobileCheckout ? sortMethodsBasedOnDevice : undefined);
     const isBitcoinEnabled = useFlag('VpnBitcoinPaymentMethod');
     const sessionUID = model.session?.resumedSessionResult.UID;
     const paymentFacade = usePaymentFacade({
@@ -1114,20 +1130,21 @@ const Step1 = ({
             VatId: model.subscriptionData.vatNumber,
         });
 
+    const summaryPlanInformation =
+        model.mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
+            ? getPlanInformation({
+                  selectedPlan: plansMap[PLANS.VPN2024],
+                  loading: isLoadingModelDeps,
+              }) || planInformation
+            : planInformation;
+
     const paymentSummary = (
         <PaymentSummary
             model={model}
             options={options}
             loadingPaymentDetails={disablePayButton}
             upsellToggle={getUpsellToggle()}
-            planInformation={(() => {
-                return model.mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
-                    ? getPlanInformation({
-                          selectedPlan: plansMap[PLANS.VPN2024],
-                          loading: isLoadingModelDeps,
-                      }) || planInformation
-                    : planInformation;
-            })()}
+            planInformation={summaryPlanInformation}
             giftCode={
                 <GiftCodeSummary
                     coupon={coupon}
@@ -1203,7 +1220,7 @@ const Step1 = ({
     return (
         <Layout
             hasDecoration
-            className={className}
+            className={clsx(className, isMobileCheckout && 'signup-v1-mobile-checkout')}
             bottomRight={
                 <SignupSupportDropdown
                     isDarkBg={['dark', 'bf2025'].includes(background as any) && !viewportWidth.xsmall}
@@ -1482,13 +1499,18 @@ const Step1 = ({
                         />
                         {viewportWidth['<=medium'] ? (
                             <>
-                                <BoxContent>
-                                    <div className="flex-1 border rounded-xl border-weak px-3 py-4">
-                                        {paymentSummary}
-                                    </div>
-                                </BoxContent>
+                                {/* The mobile checkout shows the summary in its bottom bar */}
+                                {!isMobileCheckout && (
+                                    <BoxContent>
+                                        <div className="flex-1 border rounded-xl border-weak px-3 py-4">
+                                            {paymentSummary}
+                                        </div>
+                                    </BoxContent>
+                                )}
 
-                                <h2 className="text-bold text-4xl mt-8">{checkoutHeaderText}</h2>
+                                <h2 className={clsx('text-bold text-4xl', !isMobileCheckout && 'mt-8')}>
+                                    {checkoutHeaderText}
+                                </h2>
                             </>
                         ) : null}
                         <BoxContent className="mt-4">
@@ -1588,40 +1610,53 @@ const Step1 = ({
                                                 return;
                                             }
 
-                                            if (isBitcoin) {
-                                                return (
-                                                    <Button
-                                                        size="large"
-                                                        color="norm"
-                                                        fullWidth
-                                                        loading={loadingSignup}
-                                                        disabled={disablePayButton || !isFormValid}
-                                                        onClick={() => {
-                                                            const run = async () => {
-                                                                const isFormValid =
-                                                                    validatePayment() &&
-                                                                    (await accountDetailsRef.current?.validate());
-                                                                if (!isFormValid) {
-                                                                    return;
-                                                                }
-                                                                measurePaySubmit('pay_btc');
-                                                                await handleCompletion(
-                                                                    model.subscriptionData,
-                                                                    'signup-token'
-                                                                ).catch(() => {
-                                                                    measurePayError('pay_btc');
-                                                                });
-                                                            };
-                                                            withLoadingSignup(run()).catch(noop);
-                                                        }}
-                                                        data-testid="continue-with-bitcoin"
-                                                    >
-                                                        {c('Action').t`Continue with Bitcoin`}
-                                                    </Button>
-                                                );
-                                            }
+                                            const showMobilePlanBar = isMobileCheckout && !!summaryPlanInformation;
 
-                                            return (
+                                            const getPayButtonSuffix = (
+                                                type: PlainPaymentMethodType | undefined,
+                                                withGuarantee: boolean
+                                            ) => (
+                                                <PayButtonSuffix
+                                                    paymentMethodType={type}
+                                                    hasGuarantee={withGuarantee}
+                                                    hasSelectedFree={hasSelectedFree}
+                                                    checkTrial={checkTrial}
+                                                    checkResult={options.checkResult}
+                                                    plansMap={model.plansMap}
+                                                    planIDs={options.planIDs}
+                                                />
+                                            );
+
+                                            const payButton = isBitcoin ? (
+                                                <Button
+                                                    size="large"
+                                                    color="norm"
+                                                    fullWidth
+                                                    loading={loadingSignup}
+                                                    disabled={disablePayButton || !isFormValid}
+                                                    onClick={() => {
+                                                        const run = async () => {
+                                                            const isFormValid =
+                                                                validatePayment() &&
+                                                                (await accountDetailsRef.current?.validate());
+                                                            if (!isFormValid) {
+                                                                return;
+                                                            }
+                                                            measurePaySubmit('pay_btc');
+                                                            await handleCompletion(
+                                                                model.subscriptionData,
+                                                                'signup-token'
+                                                            ).catch(() => {
+                                                                measurePayError('pay_btc');
+                                                            });
+                                                        };
+                                                        withLoadingSignup(run()).catch(noop);
+                                                    }}
+                                                    data-testid="continue-with-bitcoin"
+                                                >
+                                                    {c('Action').t`Continue with Bitcoin`}
+                                                </Button>
+                                            ) : (
                                                 <PayButton
                                                     size="large"
                                                     color="norm"
@@ -1631,17 +1666,15 @@ const Step1 = ({
                                                     paymentFacade={paymentFacade}
                                                     loading={loadingSignup}
                                                     disabled={disablePayButton}
-                                                    suffix={(type) => (
-                                                        <PayButtonSuffix
-                                                            paymentMethodType={type}
-                                                            hasGuarantee={hasGuarantee}
-                                                            hasSelectedFree={hasSelectedFree}
-                                                            checkTrial={checkTrial}
-                                                            checkResult={options.checkResult}
-                                                            plansMap={model.plansMap}
-                                                            planIDs={options.planIDs}
-                                                        />
-                                                    )}
+                                                    suffix={
+                                                        showMobilePlanBar
+                                                            ? hasGuarantee && (
+                                                                  <div className="text-center text-sm color-success mt-2">
+                                                                      <Guarantee />
+                                                                  </div>
+                                                              )
+                                                            : (type) => getPayButtonSuffix(type, hasGuarantee)
+                                                    }
                                                     formInvalid={!isFormValid}
                                                     product={APPS.PROTONVPN_SETTINGS}
                                                     telemetryContext={telemetryContext}
@@ -1653,6 +1686,29 @@ const Step1 = ({
                                                         return c('Action').t`Get Deal`;
                                                     })()}
                                                 </PayButton>
+                                            );
+
+                                            if (!showMobilePlanBar) {
+                                                return payButton;
+                                            }
+
+                                            // The bar only keeps the button and the guarantee, the rest of the
+                                            // suffix (renewal notice, 3DS, terms) stays in the page
+                                            return (
+                                                <>
+                                                    {!isBitcoin &&
+                                                        getPayButtonSuffix(paymentFacade.selectedMethodType, false)}
+                                                    <MobilePlanBar
+                                                        planInformation={summaryPlanInformation}
+                                                        currency={options.currency}
+                                                        checkout={actualCheckout}
+                                                        loading={disablePayButton || isLoadingModelDeps}
+                                                        upsellToggle={getUpsellToggle()}
+                                                        changePlanHref={vpnPricingURL}
+                                                    >
+                                                        {payButton}
+                                                    </MobilePlanBar>
+                                                </>
                                             );
                                         })()}
                                     </form>
