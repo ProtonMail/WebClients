@@ -29,7 +29,7 @@ function resolveRequest(
 
 export function useDesktopToolApprovals(): {
     approvals: ResolvedToolApproval[];
-    approve: (requestId: string) => void;
+    approve: (requestId: string, always?: boolean) => void;
     reject: (requestId: string) => void;
 } {
     const pending = useSyncExternalStore(subscribeToolApprovals, getPendingToolApprovals);
@@ -52,7 +52,10 @@ export function useDesktopToolApprovals(): {
         };
     }, [hasUnknownConnector]);
 
-    const approve = useCallback((requestId: string) => resolveToolApproval(requestId, true), []);
+    const approve = useCallback(
+        (requestId: string, always = false) => resolveToolApproval(requestId, true, always),
+        []
+    );
     const reject = useCallback((requestId: string) => resolveToolApproval(requestId, false), []);
 
     const approvals = pending.map((request) => resolveRequest(request, connectorsById));
