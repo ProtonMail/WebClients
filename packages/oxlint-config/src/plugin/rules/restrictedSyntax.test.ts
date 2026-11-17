@@ -3,16 +3,20 @@ import { RuleTester } from 'oxlint/plugins-dev';
 import { defaultPropsSelectors } from '../../defaultProps.ts';
 import { jsxNamespaceSelectors } from '../../jsxNamespace.ts';
 import { propTypesSelectors } from '../../propTypes.ts';
+import { refBeforePropsSpreadSelectors } from '../../refBeforePropsSpread.ts';
 import { refObjectNullSelectors } from '../../refObjectNull.ts';
 import { useReducerTypeArgumentsSelectors } from '../../useReducerTypeArguments.ts';
 import { useRefInitialValueSelectors } from '../../useRefInitialValue.ts';
 import rule from './restrictedSyntax.ts';
+
+const tsx = { parserOptions: { lang: 'tsx' as const } };
 
 const ruleTester = new RuleTester({ languageOptions: { parserOptions: { lang: 'ts' } } });
 
 const [globalJsx, reactJsx] = jsxNamespaceSelectors;
 const [defaultProps] = defaultPropsSelectors;
 const [propTypes] = propTypesSelectors;
+const [refBeforePropsSpread] = refBeforePropsSpreadSelectors;
 const [useRefInitialValue] = useRefInitialValueSelectors;
 const [useReducerTypeArguments] = useReducerTypeArgumentsSelectors;
 const [refObjectNull] = refObjectNullSelectors;
@@ -42,6 +46,21 @@ const focusedTest = {
 
 ruleTester.run('restricted-syntax', rule, {
     valid: [
+        {
+            code: 'const a = <Input {...rest} ref={ref} />;',
+            options: refBeforePropsSpreadSelectors,
+            languageOptions: tsx,
+        },
+        {
+            code: 'const A = forwardRef((rest, ref) => <Input ref={ref} {...rest} />);',
+            options: refBeforePropsSpreadSelectors,
+            languageOptions: tsx,
+        },
+        {
+            code: 'const a = <Input ref={ref} {...getInputProps()} />;',
+            options: refBeforePropsSpreadSelectors,
+            languageOptions: tsx,
+        },
         { code: 'const defaultProps = { a: 1 };', options: defaultPropsSelectors },
         { code: 'class A { static defaultProps = { a: 1 }; }', options: defaultPropsSelectors },
         { code: 'const propTypes = { a: 1 }; Button.types = {};', options: propTypesSelectors },
@@ -73,6 +92,18 @@ ruleTester.run('restricted-syntax', rule, {
         },
     ],
     invalid: [
+        {
+            code: 'const a = <Input ref={ref} value={v} {...rest} />;',
+            options: refBeforePropsSpreadSelectors,
+            languageOptions: tsx,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: refBeforePropsSpread.message } }],
+        },
+        {
+            code: 'const a = <div ref={ref} {...restProps}></div>;',
+            options: refBeforePropsSpreadSelectors,
+            languageOptions: tsx,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: refBeforePropsSpread.message } }],
+        },
         {
             code: 'Button.propTypes = { color: PropTypes.string };',
             options: propTypesSelectors,

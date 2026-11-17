@@ -56,9 +56,9 @@ const ComposerInnerModal = ({
     return (
         <div
             className="composer-inner-modal absolute z-up w-full h-full flex justify-center items-center"
-            ref={rootRef}
             {...focusTrapProps}
             {...rest}
+            ref={rootRef}
         >
             <div className="inner-modal">
                 <InnerModalHeader modalTitleID="" noEllipsis hasClose={displayCloseButton} onClose={onCancel}>

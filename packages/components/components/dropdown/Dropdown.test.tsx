@@ -23,12 +23,12 @@ const Test = ({
     return (
         <>
             <DropdownButton
-                ref={anchorRef}
                 isOpen={open}
                 onClick={() => {
                     setOpen(true);
                 }}
                 {...rest}
+                ref={anchorRef}
             >
                 Open
             </DropdownButton>

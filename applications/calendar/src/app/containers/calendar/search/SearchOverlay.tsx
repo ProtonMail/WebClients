@@ -135,7 +135,6 @@ const SearchOverlay = ({
     return (
         <Portal>
             <div
-                ref={rootRef}
                 style={rootStyle}
                 role="dialog"
                 className={popperClassName}
@@ -144,6 +143,7 @@ const SearchOverlay = ({
                 data-testid="overlay-button"
                 {...rest}
                 {...focusTrapProps}
+                ref={rootRef}
             >
                 {/* Backdrop button, meant to override 'autoClose' option on mobile */}
                 <div

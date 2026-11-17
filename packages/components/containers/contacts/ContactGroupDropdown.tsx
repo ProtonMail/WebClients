@@ -216,13 +216,13 @@ const ContactGroupDropdown = ({
         <>
             <Tooltip title={tooltip}>
                 <DropdownButton
-                    ref={anchorRef}
                     isOpen={isOpen}
                     onClick={handleClick}
                     hasCaret={!forToolbar}
                     disabled={disabled}
                     className={clsx(['flex items-center', className])}
                     {...rest}
+                    ref={anchorRef}
                 >
                     {children}
                 </DropdownButton>

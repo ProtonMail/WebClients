@@ -201,7 +201,6 @@ const DateInput = ({
         <>
             <Input
                 type="text"
-                ref={anchorRef}
                 onFocus={handleFocusInput}
                 onBlur={handleBlurInput}
                 value={showTemporary ? temporaryInput : currentInput}
@@ -217,6 +216,7 @@ const DateInput = ({
                 autoFocus={autoFocus}
                 label={c('Date').t`Date`}
                 {...rest}
+                ref={anchorRef}
             />
             <Dropdown
                 disableFocusTrap

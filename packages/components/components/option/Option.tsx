@@ -62,7 +62,6 @@ const Option = <V,>({
     return (
         <li className={clsx(['dropdown-item', optionWrapperClassName])}>
             <DropdownMenuButton
-                ref={ref}
                 type={type}
                 isSelected={selected}
                 onClick={handleClick}
@@ -74,6 +73,7 @@ const Option = <V,>({
                     truncate ? 'text-ellipsis' : 'text-break',
                 ])}
                 {...rest}
+                ref={ref}
             >
                 {children}
             </DropdownMenuButton>

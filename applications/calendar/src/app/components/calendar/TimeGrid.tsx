@@ -466,8 +466,8 @@ const TimeGrid = ({
             <div
                 className={clsx(['flex-1 overflow-auto h-full calendar-time-grid', displayViewClass])}
                 tabIndex={-1}
-                ref={scrollRef}
                 {...rest}
+                ref={scrollRef}
             >
                 {children}
 

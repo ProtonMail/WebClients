@@ -212,9 +212,9 @@ const SelectTwo = <V extends any>({
                 caretIcon={caretIcon}
                 caretClassName={caretClassName}
                 valueLabel={valueLabel}
-                ref={anchorRef}
                 fullWidth={fullWidth}
                 {...rest}
+                ref={anchorRef}
             >
                 {renderSelected?.(value) ?? (
                     <SelectDisplayValue selectedChildren={selectedChildren} placeholder={placeholder} />

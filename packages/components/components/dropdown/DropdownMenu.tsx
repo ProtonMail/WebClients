@@ -9,7 +9,7 @@ interface DropdownMenuProps extends ComponentPropsWithoutRef<'ul'> {
 
 const DropdownMenu = ({ children, className = '', listRef, ...rest }: DropdownMenuProps) => {
     return (
-        <ul className={clsx(['unstyled my-0', className])} ref={listRef} {...rest}>
+        <ul className={clsx(['unstyled my-0', className])} {...rest} ref={listRef}>
             {Children.toArray(children).map((child, i) => {
                 return isValidElement<{ actionType?: string; liClassName?: string }>(child) ? (
                     <li

@@ -169,11 +169,11 @@ const SearchableSelect = <V extends any>({
                 isOpen={isOpen}
                 onClick={handleAnchorClick}
                 valueLabel={valueLabel}
-                ref={anchorRef}
                 caretIcon={caretIcon}
                 caretClassName={caretClassName}
                 prefixIcon={prefixIcon}
                 {...rest}
+                ref={anchorRef}
             >
                 {renderSelected?.(value) ?? (
                     <SelectDisplayValue selectedChildren={selectedChildren} placeholder={placeholder} />

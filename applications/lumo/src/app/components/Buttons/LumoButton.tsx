@@ -45,9 +45,9 @@ const LumoButton = ({
                 onClick={onClick}
                 size={size || 'small'}
                 disabled={disabled}
-                ref={buttonRef}
                 aria-pressed={isActive}
                 {...rest}
+                ref={buttonRef}
             >
                 <LumoIcon name={iconName} aria-label={alt} size={iconSize} />
             </Button>

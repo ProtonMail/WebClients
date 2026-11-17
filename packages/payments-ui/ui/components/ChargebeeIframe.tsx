@@ -1202,7 +1202,6 @@ export const ChargebeeIframe = ({
         <div style={divStyle}>
             <iframe
                 src={iframeHandles.iframeSrc}
-                ref={iframeRef}
                 title="Payments form"
                 frameBorder="0"
                 onLoad={() => {
@@ -1215,6 +1214,7 @@ export const ChargebeeIframe = ({
                     width,
                 }}
                 {...rest}
+                ref={iframeRef}
             ></iframe>
             {threeDs.showModal && <ThreeDsModal {...threeDs.modalProps} />}
         </div>

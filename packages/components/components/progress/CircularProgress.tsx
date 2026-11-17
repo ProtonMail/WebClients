@@ -13,13 +13,13 @@ interface Props {
 const CircularProgress = ({ children, className, progress, rootRef, size = 32, ...rest }: Props) => {
     return (
         <svg
-            ref={rootRef}
             viewBox="0 0 35.83098862 35.83098862"
             className={clsx(['circle-chart', className])}
             width={size}
             height={size}
             xmlns="http://www.w3.org/2000/svg"
             {...rest}
+            ref={rootRef}
         >
             <circle
                 className="circle-chart-background"
