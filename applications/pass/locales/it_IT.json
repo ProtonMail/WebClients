@@ -46,6 +46,9 @@
       "Add account": [
         "Aggiungi un account"
       ],
+      "Add address": [
+        "Aggiungi indirizzo"
+      ],
       "Add current URL": [
         "Aggiungi l'URL attuale"
       ],
@@ -159,6 +162,9 @@
       ],
       "Collapse": [
         "Comprimi"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Comprimi gli avvisi di Pass Monitor"
       ],
       "Confirm": [
         "Conferma"
@@ -313,6 +319,9 @@
       "Dismiss": [
         "Ignora"
       ],
+      "Dismiss notification": [
+        "Ignora notifica"
+      ],
       "Do not show again": [
         "Non mostrare di nuovo"
       ],
@@ -358,6 +367,9 @@
       "Expand": [
         "Espandi"
       ],
+      "Expand Pass Monitor alerts": [
+        "Espandi gli avvisi di Pass Monitor"
+      ],
       "Export": [
         "Esporta"
       ],
@@ -400,6 +412,9 @@
       "Go back": [
         "Torna indietro"
       ],
+      "Go to today": [
+        "Vai a oggi"
+      ],
       "Hide": [
         "Nascondi"
       ],
@@ -411,6 +426,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Come usare ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignora"
       ],
       "Import": [
         "Importa"
@@ -538,6 +556,9 @@
       "OK": [
         "OK"
       ],
+      "Open item": [
+        "Apri elemento"
+      ],
       "Open navigation": [
         "Apri navigazione"
       ],
@@ -606,6 +627,9 @@
       ],
       "Remove member": [
         "Rimuovi questo membro"
+      ],
+      "Remove passkey": [
+        "Rimuovi passkey"
       ],
       "Rename": [
         "Rinomina"
@@ -749,6 +773,9 @@
       "To mailbox": [
         "Alla casella email"
       ],
+      "Toggle section": [
+        "Attiva/disattiva sezione"
+      ],
       "Transfer aliases": [
         "Trasferisci alias"
       ],
@@ -879,6 +906,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } in più",
+        "${ count } in più"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } è disponibile con un piano a pagamento. Aggiorna per l'accesso immediato."
       ],
@@ -972,6 +1003,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Questa password di accesso appare in una violazione dei dati. Visita il servizio e modificala."
+      ],
+      "This login uses the same password as another item.": [
+        "Questo login utilizza la stessa password di un altro elemento."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Questo servizio offre 2FA. Abilitalo per una maggiore sicurezza dell'account."
@@ -1187,8 +1221,8 @@
         "Impossibile eliminare l'indirizzo email dal monitoraggio"
       ],
       "Failed to delete folder": [
-        "Impossibile creare la cartella",
-        "Impossibile creare le cartelle"
+        "Impossibile eliminare la cartella",
+        "Impossibile eliminare le cartelle"
       ],
       "Failed to delete selected items": [
         "Impossibile eliminare gli elementi selezionati"
@@ -1301,11 +1335,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Impossibile aggiornare l'impostazione ${ PROTON_SENTINEL_NAME }"
       ],
-      "Failed updating monitor flag of the item": [
-        "Impossibile aggiornare il flag di monitoraggio dell'elemento"
-      ],
       "Failed updating monitoring status for this email address": [
         "Impossibile aggiornare lo stato del monitoraggio per questo indirizzo email"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Aggiornamento dello stato di monitoraggio per questo elemento non riuscito"
       ],
       "File could not be parsed": [
         "Impossibile analizzare il file"
@@ -1771,6 +1805,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Dopo aver importato i tuoi dati, puoi eliminare questo file CSV contenente le tue password per questioni di sicurezza."
       ],
+      "Alert restored": [
+        "Avviso ripristinato"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "L'alias è ​​disattivato. Non riceverai più email inviate a ${ item.aliasEmail }"
       ],
@@ -1887,6 +1924,9 @@
       ],
       "Canceled by user": [
         "Annullato dall'utente"
+      ],
+      "Check ignored": [
+        "Controllo ignorato"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Verifica di ${ compromised.progress.completed } password su ${ compromised.progress.total } in corso."
@@ -5149,6 +5189,9 @@
       "Minicalendar": [
         "Mini calendario"
       ],
+      "Missing 2FA": [
+        "Autenticazione a due fattori mancante"
+      ],
       "Modified": [
         "Modificato"
       ],
@@ -5213,6 +5256,9 @@
       ],
       "Our welcome gift to you": [
         "Il nostro regalo di benvenuto per te"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Passkey"
@@ -5284,6 +5330,9 @@
       "Reused ${ count } time": [
         "Riutilizzata ${ count } volta",
         "Riutilizzata ${ count } volte"
+      ],
+      "Reused password": [
+        "Password riutilizzata"
       ],
       "Reused passwords": [
         "Password riutilizzate"

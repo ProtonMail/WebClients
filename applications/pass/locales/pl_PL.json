@@ -46,6 +46,9 @@
       "Add account": [
         "Dodaj konto"
       ],
+      "Add address": [
+        "Dodaj adres"
+      ],
       "Add current URL": [
         "Dodaj obecny adres URL"
       ],
@@ -108,6 +111,9 @@
       ],
       "Bulk restore items from trash": [
         "Przywróć elementy z kosza"
+      ],
+      "Bulk select items": [
+        "Hurtowe wybieranie elementów"
       ],
       "Cancel": [
         "Anuluj"
@@ -310,6 +316,9 @@
       "Don't show this again": [
         "Nie pokazuj tego ponownie"
       ],
+      "Download for Linux": [
+        "Pobierz dla Linuksa"
+      ],
       "Download for macOS": [
         "Pobierz dla systemu macOS"
       ],
@@ -393,6 +402,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Jak używać ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignoruj"
       ],
       "Import": [
         "Importuj"
@@ -487,6 +499,9 @@
       "Move all items": [
         "Przenieś wszystkie elementy"
       ],
+      "Move folder": [
+        "Przenieś folder"
+      ],
       "Move to": [
         "Przenieś do"
       ],
@@ -495,6 +510,9 @@
       ],
       "Move to Trash": [
         "Przenieś do kosza"
+      ],
+      "Multiple select": [
+        "Wybór wielokrotny"
       ],
       "New token": [
         "Nowy token"
@@ -516,6 +534,12 @@
       ],
       "Open navigation": [
         "Otwórz nawigację"
+      ],
+      "Open platform selection dropdown": [
+        "Otwórz listę wyboru platformy"
+      ],
+      "Open the browser again": [
+        "Ponownie otwórz przeglądarkę"
       ],
       "Organize vaults": [
         "Uporządkuj sejfy"
@@ -678,6 +702,9 @@
       ],
       "Show more": [
         "Pokaż więcej"
+      ],
+      "Sign in in the app instead": [
+        "Zamiast tego, zaloguj się w aplikacji"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Zaloguj się przez ${ BRAND_NAME }"
@@ -863,8 +890,17 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Alias działa jak adres e-mail, ale ogranicza spam i ukrywa prawdziwy adres e-mail oraz tożsamość użytkownika."
       ],
+      "Change these passwords immediately": [
+        "Niezwłocznie zmień te hasła"
+      ],
       "Change your passwords": [
         "Zmień hasła"
+      ],
+      "Check if your passwords have been exposed": [
+        "Sprawdź, czy hasła zostały ujawnione"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Sprawdzanie ${ compromised.progress.completed } z ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Utwórz unikalne hasła"
@@ -919,6 +955,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Konto jest zagrożone. Przejdź do usługi i zmień hasło."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "To hasło logowania zostało znalezione pośród danych ujawnionych w wyniku naruszenia bezpieczeństwa. Należy zalogować się do usługi i zmienić hasło."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Usługa oferuje uwierzytelnianie dwustopniowe. Włącz je, aby zwiększyć bezpieczeństwo konta."
@@ -1167,6 +1206,9 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\" nie powiodło się"
       ],
+      "Failed to move folder": [
+        "Nie udało się przenieść folderu"
+      ],
       "Failed to move items": [
         "Nie udało się przenieść elementów"
       ],
@@ -1238,9 +1280,6 @@
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Nie udało się zaktualizować ustawień ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Failed updating monitor flag of the item": [
-        "Nie udało się zaktualizować statusu monitoringu elementu"
       ],
       "Failed updating monitoring status for this email address": [
         "Nie udało się zaktualizować statusu monitoringu adresu e-mail"
@@ -1710,6 +1749,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Tokeny dostępu, używane razem z ${ passCliLink }, pozwalają na automatyzację CI/CD lub nadanie Twojemu agentowi AI ograniczonego dostępu do zasobów niezbędnych do wykonania zadania."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Dodaj metodę płatności, aby subskrypcja była kontynuowana po zakończeniu okresu próbnego."
+      ],
       "Add your custom email address to monitor:": [
         "Dodaj niestandardowy adres e-mail do monitoringu:"
       ],
@@ -1835,6 +1877,12 @@
       ],
       "Can view this item.": [
         "Odczyt"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Sprawdzanie ${ compromised.progress.completed } z ${ compromised.progress.total } haseł"
+      ],
+      "Choose how you want to sign in": [
+        "Wybierz, jak chcesz się logować"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Potwierdź dodatkowe hasło, aby je usunąć."
@@ -2012,6 +2060,9 @@
       ],
       "Fill in the CSV with your data": [
         "Wypełnij plik CSV danymi"
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Folder „${ payload.folder.name }” został przeniesiony"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Wykonaj te kroki, aby zaimportować dane za pomocą pliku CSV:"
@@ -2198,6 +2249,9 @@
       ],
       "Moving items": [
         "Przenoszenie elementów"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich bezpiecznych linków."
       ],
       "Moving items to trash": [
         "Przenoszenie elementów do kosza"
@@ -2460,6 +2514,9 @@
       "Restoring trashed items...": [
         "Przywracanie usuniętych elementów..."
       ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Skanuj, aby pobrać ${ PASS_APP_NAME } dla iOS i Androida."
+      ],
       "Secure links": [
         "Linki"
       ],
@@ -2510,6 +2567,9 @@
       ],
       "Shared item invitation": [
         "Zaproszenie do udostępnionego elementu"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Zaloguj się i potwierdź w nowootwartym oknie przeglądarki. ${ PASS_APP_NAME } kontynuuje automatycznie po ukończeniu tej operacji."
       ],
       "Sign in to your account": [
         "Zaloguj się"
@@ -2571,6 +2631,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Dodatkowe hasło ${ BRAND_NAME } będzie wymagane do korzystania z ${ PASS_APP_NAME }."
       ],
+      "The folder is already here": [
+        "Folder już tu jest"
+      ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Nie można zaimportować następującego ${ totalIgnored } elementu:",
         "Nie można zaimportować następujących ${ totalIgnored } elementów:",
@@ -2582,6 +2645,9 @@
       ],
       "The secure link has been removed": [
         "Link został usunięty"
+      ],
+      "The sign in was not confirmed in time.": [
+        "Logowanie nie zostało potwierdzone na czas"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Tekst, który próbujesz wkleić, jest dłuższy niż maksymalna dozwolona liczba ${ maxLength } znaków."
@@ -2763,6 +2829,9 @@
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Po włączeniu tej funkcji nadal możesz mieć dostęp do swoich danych w ${ PASS_SHORT_APP_NAME } w przypadku utraty połączenia z internetem lub gdy serwery ${ BRAND_NAME } będą nieosiągalne."
       ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Przy przenoszeniu elementów między sejfami, zachowanych zostanie 50 ostatnich edycji dla każdego z nich."
+      ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Po wysłaniu wiadomości z tego aliasu, odbiorca zobaczy adres ${ emailSender } jako nadawcę."
       ],
@@ -2879,6 +2948,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizacja wymaga zabezpieczenia dostępu do ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Nie udało się autoryzować sesji."
       ]
     },
     "Keyboard key": {
@@ -3054,6 +3126,9 @@
       ],
       "Account Type": [
         "Typ konta"
+      ],
+      "Add a payment method": [
+        "Dodaj metodę płatności"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Dodaj losowy przedrostek domeny podczas tworzenia nowego aliasu."
@@ -3556,11 +3631,17 @@
       "LinkedIn account": [
         "Profil LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Dane logowania"
       ],
       "Logins": [
         "Dane logowania"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Skrzynki pocztowe"
@@ -4119,6 +4200,9 @@
       ],
       "WiFi network": [
         "Sieć Wi-Fi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Szczegóły służbowe"
@@ -4710,6 +4794,9 @@
       "Activity for \"${ token.Name }\"": [
         "Aktywność dla „${ token.Name }”"
       ],
+      "Add an account": [
+        "Dodaj konto"
+      ],
       "Add custom domain": [
         "Dodaj niestandardową domenę"
       ],
@@ -4761,6 +4848,12 @@
       "Clear clipboard": [
         "Wyczyść schowek"
       ],
+      "Compromised password": [
+        "Ujawnione hasło"
+      ],
+      "Compromised passwords": [
+        "Ujawnione hasła"
+      ],
       "Confirm extra password": [
         "Potwierdź dodatkowe hasło"
       ],
@@ -4775,6 +4868,9 @@
       ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Continue in your browser": [
+        "Kontynuuj w przeglądarce"
       ],
       "Create a vault": [
         "Utwórz sejf"
@@ -4878,6 +4974,9 @@
       "Folder options": [
         "Opcje folderu"
       ],
+      "Get mobile apps": [
+        "Pobierz aplikacje mobilne"
+      ],
       "Get Started": [
         "Rozpocznij"
       ],
@@ -4913,6 +5012,9 @@
       ],
       "Item": [
         "Element"
+      ],
+      "Keep your subscription active": [
+        "Zachowaj aktywną subskrypcję"
       ],
       "Last autofill": [
         "Ostatnie autouzupełnianie"
@@ -4956,6 +5058,9 @@
       "Modified": [
         "Zmodyfikowano"
       ],
+      "Move \"${ folderName }\" to": [
+        "Przenieść folder „${ folderName }” do"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Przenieść ${ trashedItemsCount } element do kosza?",
         "Przenieść ${ trashedItemsCount } elementy do kosza?",
@@ -4970,6 +5075,9 @@
       ],
       "No access tokens yet": [
         "Brak tokenów dostępu"
+      ],
+      "No compromised passwords": [
+        "Nie znaleziono ujawnionych haseł"
       ],
       "No excluded items": [
         "Brak wykluczonych elementów"
@@ -5112,6 +5220,12 @@
       "Shared via": [
         "Udostępniono przez"
       ],
+      "Sign in timed out": [
+        "Logowanie przedawniło się"
+      ],
+      "Signing you in": [
+        "Trwa logowanie"
+      ],
       "Something went wrong": [
         "Coś poszło nie tak"
       ],
@@ -5156,6 +5270,9 @@
       ],
       "Update available": [
         "Dostępna jest aktualizacja"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Ulepsz, aby sprawdzić, czy hasła zostały ujawnione."
       ],
       "URL matching": [
         "Dopasowywanie adresów URL"
@@ -5429,6 +5546,9 @@
       "Move to trash": [
         "Przenieś do kosza"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Przeniesienie folderu spowodowałoby przekroczenie maksymalnego poziomu zagnieżdżenia folderów"
+      ],
       "No items": [
         "Brak elementów"
       ],
@@ -5533,6 +5653,9 @@
       ],
       "Verification code is required": [
         "Kod weryfikacyjny jest wymagany"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Folderu nie można przenieść do siebie samego lub jego podfolderu."
       ],
       "You have reached the limit of members who can access this item.": [
         "Osiągnięto maksymalną liczbę użytkowników elementu."

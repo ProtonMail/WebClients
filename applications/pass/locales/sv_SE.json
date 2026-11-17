@@ -46,6 +46,9 @@
       "Add account": [
         "Lägg till konto"
       ],
+      "Add address": [
+        "Lägg till adress"
+      ],
       "Add current URL": [
         "Lägg till nuvarande URL"
       ],
@@ -136,6 +139,9 @@
       "Clear": [
         "Rensa"
       ],
+      "Clear item type filter": [
+        "Rensa objekttypsfilter"
+      ],
       "Clear search": [
         "Rensa sök"
       ],
@@ -153,6 +159,9 @@
       ],
       "Collapse": [
         "Mimimera"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Komprimera varningar från Pass Monitor"
       ],
       "Confirm": [
         "Bekräfta"
@@ -307,6 +316,9 @@
       "Dismiss": [
         "Avfärda"
       ],
+      "Dismiss notification": [
+        "Avfärda avisering"
+      ],
       "Do not show again": [
         "Visa inte igen"
       ],
@@ -352,6 +364,9 @@
       "Expand": [
         "Expandera"
       ],
+      "Expand Pass Monitor alerts": [
+        "Expandera Pass Monitor varningar"
+      ],
       "Export": [
         "Exportera"
       ],
@@ -394,6 +409,9 @@
       "Go back": [
         "Gå tillbaka"
       ],
+      "Go to today": [
+        "Gå till idag"
+      ],
       "Hide": [
         "Dölj"
       ],
@@ -405,6 +423,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Hur man använder ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignorera"
       ],
       "Import": [
         "Importera"
@@ -532,6 +553,9 @@
       "OK": [
         "OK"
       ],
+      "Open item": [
+        "Öppna post"
+      ],
       "Open navigation": [
         "Öppna navigering"
       ],
@@ -597,6 +621,9 @@
       ],
       "Remove member": [
         "Ta bort medlem"
+      ],
+      "Remove passkey": [
+        "Ta bort lösenordsnyckel"
       ],
       "Rename": [
         "Ändra namn"
@@ -740,6 +767,9 @@
       "To mailbox": [
         "Till brevlåda"
       ],
+      "Toggle section": [
+        "Växla sektion"
+      ],
       "Transfer aliases": [
         "Överför alias"
       ],
@@ -870,6 +900,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } mer",
+        "${ count } mer"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } är tillgängligt med ett betalt paket. Uppgradera för omedelbar åtkomst."
       ],
@@ -897,6 +931,9 @@
       ],
       "Change your passwords": [
         "Ändra dina lösenord"
+      ],
+      "Check if you're reusing passwords": [
+        "Kolla om du återanvänder lösenord."
       ],
       "Check if your passwords have been exposed": [
         "Kontrollera om dina lösenord har blivit exponerade"
@@ -960,6 +997,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Detta inloggningslösenord förekommer i ett dataintrång. Besök tjänsten och ändra lösenordet."
+      ],
+      "This login uses the same password as another item.": [
+        "Den här inloggningen använder samma lösenord som ett annat objekt."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denna tjänst erbjuder 2FA. Aktivera det för extra kontosäkerhet."
@@ -1289,11 +1329,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Misslyckades uppdatera ${ PROTON_SENTINEL_NAME }-inställingar"
       ],
-      "Failed updating monitor flag of the item": [
-        "Misslyckades att uppdatera övervakningsflagga för objektet"
-      ],
       "Failed updating monitoring status for this email address": [
         "Misslyckades att uppdatera övervakningsstatus för denna e-postadress"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Misslyckades att uppdatera övervakningsstatus för det här objektet"
       ],
       "File could not be parsed": [
         "Fil kunde inte analyseras"
@@ -1639,6 +1679,9 @@
         "${ forwardedEmailsCount } vidarebefordrat",
         "${ forwardedEmailsCount } vidarebefordrade"
       ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Det här hindrar inte tittare från att komma över lösenord på andra sätt."
+      ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } vill dela ett objekt med en grupp du administrerar."
       ],
@@ -1752,6 +1795,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Efter att ha lyckats importera dina data kan du ta bort CSV-filen som innehåller dina lösenord för säkerhet."
+      ],
+      "Alert restored": [
+        "Varningen återställd"
       ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias ​​inaktiverat. Du kommer inte längre att få e-post skickat till ${ item.aliasEmail }"
@@ -1869,6 +1915,9 @@
       ],
       "Canceled by user": [
         "Avbruten av användare"
+      ],
+      "Check ignored": [
+        "Koll ignorerades"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Kontrollerar ${ compromised.progress.completed } av ${ compromised.progress.total } lösenord"
@@ -2052,6 +2101,9 @@
       ],
       "Failed updating your vault organization": [
         "Misslyckades att uppdatera din valvorganisation"
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Fält döljt. Du kan fortfarande autofylla det."
       ],
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
@@ -2324,6 +2376,9 @@
       ],
       "Pass Plus trial": [
         "Pass Plus provperiod"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Lösenord döljt. Du kan fortfarande autofylla det."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Lösenordslås har registrerats. Använd den för att låsa upp ${ PASS_APP_NAME }"
@@ -2823,6 +2878,12 @@
       "Viewer": [
         "Läsare"
       ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Tittare kan fortfarande autofylla lösenord, men kommer inte att se dem i ${ PASS_APP_NAME }. Det här avskräcker tillfälligt tittande och minskar risken för oavsiktlig avslöjning."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Tittare kan fortfarande autofylla. Redigerare och administratörer ser alltid lösenord."
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problem att synkronisera data till ditt lokala lagringsutrymme. Se till att du har tillräckligt med diskutrymme för att ${ PASS_SHORT_APP_NAME } ska fungera smidigt."
       ],
@@ -3146,6 +3207,9 @@
       ],
       "All items": [
         "Alla objekt"
+      ],
+      "Allow viewers to see passwords": [
+        "Tillåt tittare att se lösenord"
       ],
       "Alphabetical": [
         "Alfabetiskt"
@@ -4991,6 +5055,9 @@
       "Hidden vaults": [
         "Dolda valv"
       ],
+      "Hide passwords from viewers?": [
+        "Göm lösenord från tittare?"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
       ],
@@ -5063,6 +5130,9 @@
       "Minicalendar": [
         "Minikalender"
       ],
+      "Missing 2FA": [
+        "Saknar 2FA"
+      ],
       "Modified": [
         "Ändrad"
       ],
@@ -5127,6 +5197,9 @@
       ],
       "Our welcome gift to you": [
         "Vår välkomstgåva till dig"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Passkey"
@@ -5198,6 +5271,9 @@
       "Reused ${ count } time": [
         "Återanvänt ${ count } gång",
         "Återanvänt ${ count } gånger"
+      ],
+      "Reused password": [
+        "Återanvänt lösenord"
       ],
       "Reused passwords": [
         "Återanvända lösenord"
@@ -5291,6 +5367,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Uppgradera för att kontrollera efter komprometterade lösenord"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Uppgradera för att kontrollera efter återanvända lösenord"
       ],
       "URL matching": [
         "URL-matchning"

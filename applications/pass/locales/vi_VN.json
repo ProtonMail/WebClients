@@ -46,6 +46,9 @@
       "Add account": [
         "Thêm tài khoản"
       ],
+      "Add address": [
+        "Thêm địa chỉ"
+      ],
       "Add current URL": [
         "Thêm URL hiện tại"
       ],
@@ -393,6 +396,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Cách sử dụng ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Bỏ qua"
       ],
       "Import": [
         "Nhập"
@@ -1223,9 +1229,6 @@
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Lỗi cập nhật cài đặt ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Failed updating monitor flag of the item": [
-        "Lỗi cập nhật cờ giám sát của mục"
       ],
       "Failed updating monitoring status for this email address": [
         "Lỗi cập nhật trạng thái giám sát cho địa chỉ email này"
@@ -2111,6 +2114,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
