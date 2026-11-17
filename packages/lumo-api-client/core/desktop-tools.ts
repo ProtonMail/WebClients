@@ -124,7 +124,8 @@ export type LumoConnectorsApi = DesktopExternalTools & {
     getConnectors?: () => DesktopConnector[];
     getManifests?: () => DesktopConnector[];
     setConnectorEnabled?: (connectorId: string, enabled: boolean) => Promise<void>;
-    respondToolApproval?: (requestId: string, approved: boolean) => Promise<void>;
+    /** `always`: auto-approve this tool from now on; untrusted content still makes it ask. Older desktop builds ignore it. */
+    respondToolApproval?: (requestId: string, approved: boolean, always?: boolean) => Promise<void>;
     /** Older desktop builds ignore `connectorId` and open the tab. */
     openSettings?: (tab?: DesktopSettingsTab, connectorId?: string) => Promise<void>;
     getCatalog?: () => DesktopConnectorCatalog;
@@ -135,9 +136,16 @@ export type DesktopSettingsTab = 'general' | 'connectors';
 
 /** Why native is asking: the conversation read untrusted content and this call can send data out or change files. */
 export type DesktopToolApprovalReason = {
-    /** `untrusted_write`: the call changes files on the user's computer rather than sending data out. */
-    kind: 'untrusted_content' | 'untrusted_write';
-    sources: ('mail' | 'web' | 'shell')[];
+    /**
+     * `untrusted_write`: the call changes files on the user's computer rather than sending data out.
+     * `hidden_text`: the call would send invisible characters, shown in its input as `[U+XXXX]`.
+     */
+    kind: 'untrusted_content' | 'untrusted_write' | 'hidden_text';
+    /**
+     * `service`: what a connected service such as Slack or Jira returned.
+     * `connector`: tool descriptions from an MCP server the user added themselves.
+     */
+    sources: ('mail' | 'web' | 'shell' | 'service' | 'connector')[];
     /** Host the request goes to, when native can tell. */
     destination?: string;
 };
@@ -307,8 +315,8 @@ export async function setDesktopFeatureFlags(flags: DesktopFeatureFlags): Promis
     await getDesktopConnectorsApi()?.setFeatureFlags?.(flags);
 }
 
-export async function respondDesktopToolApproval(requestId: string, approved: boolean): Promise<void> {
-    await getDesktopConnectorsApi()?.respondToolApproval?.(requestId, approved);
+export async function respondDesktopToolApproval(requestId: string, approved: boolean, always = false): Promise<void> {
+    await getDesktopConnectorsApi()?.respondToolApproval?.(requestId, approved, always);
 }
 
 export async function openDesktopSettings(tab?: DesktopSettingsTab, connectorId?: string): Promise<void> {
@@ -588,14 +596,14 @@ export function enqueueToolApproval(request: DesktopToolApprovalRequest): void {
     emitApprovals();
 }
 
-export function resolveToolApproval(requestId: string, approved: boolean): void {
+export function resolveToolApproval(requestId: string, approved: boolean, always = false): void {
     clearApprovalTimer(requestId);
     const next = pendingApprovals.filter((entry) => entry.requestId !== requestId);
     if (next.length !== pendingApprovals.length) {
         pendingApprovals = next;
         emitApprovals();
     }
-    void respondDesktopToolApproval(requestId, approved).catch((error) => {
+    void respondDesktopToolApproval(requestId, approved, always).catch((error) => {
         console.warn('failed to record tool approval decision; the core will time out', error);
     });
 }

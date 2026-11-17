@@ -1,8 +1,13 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import ConfirmCard from '@proton/llm/lib/lumoAgent/ui/cardRenderers';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import { openDesktopSettings } from '@proton/lumo-api-client/core/desktop-tools';
 import type { DesktopToolApprovalReason } from '@proton/lumo-api-client/core/desktop-tools';
 import ToolCallCard from '@proton/lumo-ui/shared-components/ToolCallCard/ToolCallCard';
 import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
@@ -26,10 +31,25 @@ const sourceLabel = (source: DesktopToolApprovalReason['sources'][number]) => {
         case 'shell':
             // translator: one item in "This conversation has read emails, web pages…"
             return c('Info').t`command output`;
+        case 'service':
+            // translator: one item in "This conversation has read emails, web pages…"; content from apps like Slack or Jira that other people can write
+            return c('Info').t`messages and documents from connected apps`;
+        case 'connector':
+            // translator: one item in "This conversation has read emails, web pages…"; the descriptions an MCP server the user added themselves gives of its tools
+            return c('Info').t`tool descriptions from a connector you added`;
+        default:
+            // A newer desktop build may send a source this build doesn't know; it reads as generic wording.
+            source satisfies never;
+            return undefined;
     }
 };
 
-const reasonText = ({ kind, sources, destination }: DesktopToolApprovalReason) => {
+export const reasonText = ({ kind, sources, destination }: DesktopToolApprovalReason) => {
+    if (kind === 'hidden_text') {
+        // translator: shown before approving a tool call whose arguments contain invisible Unicode characters, displayed below as codes like [U+E0041]
+        return c('Info')
+            .t`This request contains invisible characters, shown below as codes like [U+200B]. They can hide data being sent out. Only approve if you expected them.`;
+    }
     const labels = (sources ?? []).map(sourceLabel).filter((label): label is string => !!label);
     const read = labels.length
         ? new Intl.ListFormat(getIntlLocale(localeCode), { type: 'conjunction' }).format(labels)
@@ -50,6 +70,17 @@ const reasonText = ({ kind, sources, destination }: DesktopToolApprovalReason) =
 
 const DesktopApprovalCards = () => {
     const { approvals, approve, reject } = useDesktopToolApprovals();
+    const [always, setAlways] = useState<ReadonlySet<string>>(new Set());
+    const toggleAlways = (requestId: string, checked: boolean) =>
+        setAlways((prev) => {
+            const next = new Set(prev);
+            if (checked) {
+                next.add(requestId);
+            } else {
+                next.delete(requestId);
+            }
+            return next;
+        });
 
     if (approvals.length === 0) {
         return null;
@@ -71,12 +102,37 @@ const DesktopApprovalCards = () => {
                         renderBody: () => (
                             <>
                                 {(approval.reason?.kind === 'untrusted_content' ||
-                                    approval.reason?.kind === 'untrusted_write') && (
+                                    approval.reason?.kind === 'untrusted_write' ||
+                                    approval.reason?.kind === 'hidden_text') && (
                                     <p className="m-0 mb-2 text-sm color-warning text-break">
                                         {reasonText(approval.reason)}
                                     </p>
                                 )}
                                 <ToolCallCard args={approval.input} />
+                                {!approval.reason && (
+                                    <Checkbox
+                                        className="mt-2 text-sm"
+                                        checked={always.has(approval.requestId)}
+                                        onChange={(event) => toggleAlways(approval.requestId, event.target.checked)}
+                                    >
+                                        {
+                                            // translator: checkbox on a tool approval card
+                                            c('Action').t`Don't ask again for this tool`
+                                        }
+                                    </Checkbox>
+                                )}
+                                {(approval.reason?.kind === 'untrusted_content' ||
+                                    approval.reason?.kind === 'untrusted_write') && (
+                                    <InlineLinkButton
+                                        className="mt-2 text-sm"
+                                        onClick={() => openDesktopSettings('connectors', approval.connectorId)}
+                                    >
+                                        {
+                                            // translator: link on a tool approval card shown after the conversation read emails, web pages or similar; opens settings where the tool can be allowed to run without asking even then
+                                            c('Action').t`Always allow this tool in Settings`
+                                        }
+                                    </InlineLinkButton>
+                                )}
                             </>
                         ),
                     };
@@ -86,7 +142,9 @@ const DesktopApprovalCards = () => {
                             renderer={renderer}
                             action={{ type: approval.toolName }}
                             labels={{}}
-                            onApply={() => approve(approval.requestId)}
+                            onApply={() =>
+                                approve(approval.requestId, !approval.reason && always.has(approval.requestId))
+                            }
                             onCancel={() => reject(approval.requestId)}
                         />
                     );
