@@ -4,9 +4,9 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
-import { IcCross } from '@proton/icons/icons/IcCross';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { CloseButton } from '../../../atoms/CloseButton/CloseButton';
 import { isImeComposing } from '../../../utils/isImeComposing';
 import type { LayoutOptionsState } from '../../ParticipantsLayout/LayoutSelector/useLayoutOptions';
 import { SlideClosable } from '../../SlideClosable/SlideClosable';
@@ -59,14 +59,11 @@ export const MoreMenuSheet = ({ onClose, toggles, actions, layout }: Props) => {
                     style={{ '--max-h-custom': 'calc(100dvh - 6rem)' }}
                 >
                     <div className="shrink-0 px-4 flex flex-column flex-nowrap gap-2">
-                        <button
-                            type="button"
-                            onClick={onClose}
-                            aria-label={c('Action').t`Close`}
-                            className="ml-auto cursor-pointer"
-                        >
-                            <IcCross className="color-hint" size={5} />
-                        </button>
+                        <CloseButton
+                            onClose={onClose}
+                            className="ml-auto my-custom"
+                            style={{ '--my-custom': '-0.5625rem' }}
+                        />
 
                         <div className="color-weak">{c('Title').t`Quick reactions`}</div>
                         <MoreMenuEmojiReactions />
