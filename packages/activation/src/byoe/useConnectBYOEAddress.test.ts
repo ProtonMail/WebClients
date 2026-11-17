@@ -228,7 +228,7 @@ describe('useConnectBYOEAddress', () => {
                     ...args
                 }: { flagEnabled?: boolean; importEmails?: boolean; importPeriod?: TIME_PERIOD } = {}
             ) => {
-                mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress' && flagEnabled);
+                mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddressDisabled' && !flagEnabled);
                 mockApi.mockImplementation((config: any) =>
                     config.url === 'claimable' ? checkResult() : Promise.reject(rejectWith2011())
                 );
@@ -605,7 +605,7 @@ describe('useConnectBYOEAddress', () => {
 
         it('does not send an error when the address can be claimed', async () => {
             const { reports } = mockAccountImportFlowTracker();
-            mockUseFlag.mockReturnValue(true);
+            mockUseFlag.mockReturnValue(false);
             mockApi
                 .mockRejectedValueOnce({
                     data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
@@ -653,7 +653,7 @@ describe('useConnectBYOEAddress', () => {
             mockGetIsBYOEAddress.mockReturnValue(false);
             mockDispatch.mockResolvedValue(createdAddress);
             mockApi.mockResolvedValue({});
-            mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
+            mockUseFlag.mockReturnValue(false);
         });
 
         it('should start the import task with ClaimAddress, create the address and succeed', async () => {
@@ -679,7 +679,7 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('should not call the API when claiming is disabled', async () => {
-            mockUseFlag.mockReturnValue(false);
+            mockUseFlag.mockReturnValue(true);
 
             const outcome = await claim();
 

@@ -51,11 +51,11 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
     const dispatch = useDispatch();
     const easySwitchDispatch = useEasySwitchDispatch();
 
-    const canClaimExternalAddress = useFlag('CanClaimExternalAddress');
+    const isClaimExternalAddressDisabled = useFlag('CanClaimExternalAddressDisabled');
 
     /** Whether an address that already exists on another account can be claimed by this user. */
     const canAddressBeClaimed = async (account: string): Promise<boolean> => {
-        if (!canClaimExternalAddress) {
+        if (isClaimExternalAddressDisabled) {
             return false;
         }
 
@@ -238,7 +238,7 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
             return fail({ type: 'no-access' });
         }
 
-        if (!canClaimExternalAddress) {
+        if (isClaimExternalAddressDisabled) {
             return fail({ type: 'linked-to-another-account' });
         }
 

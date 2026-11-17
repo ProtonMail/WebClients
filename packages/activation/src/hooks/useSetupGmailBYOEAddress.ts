@@ -55,7 +55,7 @@ const useSetupGmailBYOEAddress = ({
     const [addresses] = useAddresses();
     const [user] = useUser();
     const [hasAccessToBYOE] = useBYOEFeatureStatus();
-    const canClaimExternalAddress = useFlag('CanClaimExternalAddress');
+    const isClaimExternalAddressDisabled = useFlag('CanClaimExternalAddressDisabled');
     const markInboxCleanupDue = useMarkBYOEInboxCleanupDue();
 
     const easySwitchDispatch = useEasySwitchDispatch();
@@ -195,7 +195,7 @@ const useSetupGmailBYOEAddress = ({
                     let isClaimable = false;
                     try {
                         // We want to gate the API call to avoid making it if the feature is not enabled
-                        if (canClaimExternalAddress) {
+                        if (!isClaimExternalAddressDisabled) {
                             const response = await api<{ CanBeClaimed: boolean }>(
                                 checkExternalAddressClaimable(token.Account)
                             );
@@ -239,7 +239,7 @@ const useSetupGmailBYOEAddress = ({
         importEmails: boolean;
         importPeriod: TIME_PERIOD | undefined;
     }): Promise<boolean> => {
-        if (!canClaimExternalAddress) {
+        if (isClaimExternalAddressDisabled) {
             return false;
         }
 
