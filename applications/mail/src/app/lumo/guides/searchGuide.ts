@@ -24,18 +24,12 @@ const SUBSTRING_TERMS = `Casting a wide net here — ONE short stem:
 - Punctuation is matched literally: | ! - * ? ^ $ ( ) are not operators, just characters that must appear in the text. Never put them in \`keyword\`.
 - Quotes are the one exception: "a phrase in double quotes" is matched as one block rather than split into words.`;
 
-const OPERATOR_TERMS = `Casting a wide net here — operators work, so widen with them:
-- Encrypted Search is not handling this query on this device, so it goes to the server, which parses advanced syntax. The operators act on METADATA ONLY — Subject, To/CC/BCC and From. Bodies are not searched on this path, so a word appearing only inside a body cannot match however you phrase it.
-- So the widest net this engine gives you is an OR of the likely wordings — \`invoice | receipt | payment | statement\` — never a single exact guess. A guess that misses is worse than a broad OR you can then narrow.
-- Matching is by whole TOKEN, not by substring: "book" does NOT match "booking" — write \`book*\`. This is the opposite of how a stem behaves elsewhere. Combine the two to widen: \`invoic* | receipt | paym*\`.
-- AND is implicit between whitespace-separated words: \`hello world\` requires both. Each extra bare word narrows; the operators below are what widen.
-- \`hello | world\` — OR: either term matches.
-- \`hello !world\` — NOT: excludes the second term. \`-world\` does the same.
-- \`(cat -dog) | (cat mouse)\` — brackets group, so OR and NOT can be combined.
-- \`"hello world"\` — a phrase: adjacent, in that order. Inside quotes \`*\` stands in for one whole word, as in \`"hello * world"\`.
-- \`h?llo w*d\` — wildcards: \`?\` is exactly one character, \`*\` is zero or more.
-- \`^hello\` / \`world$\` — anchors: the field must start / end with the term.
-- Further operators exist (proximity, quorum, word order); see https://proton.me/support/search if you need them.`;
+const OPERATOR_TERMS = `Casting a wide net here: several plain searches, one short word each.
+- Encrypted Search is not handling this query on this device, so it goes to the server. It matches METADATA ONLY: Subject, To/CC/BCC and From. Bodies are not searched on this path, so a word appearing only inside a body cannot match however you phrase it.
+- A plain single word matches inside longer words: "confirm" finds "confirmation" and "confirmed", "ship" finds "shipped". Case and accents are ignored.
+- So the widest net is SEVERAL searches, each ONE short plain word, and you merge the rows yourself. Searches cost the user nothing. For receipts that means \`receipt\`, then \`order\`, then \`ticket\`, then \`invoice\`, not one combined query. Only your LAST search stays on the user's screen, so when the merged rows are the answer, list those emails (sender, subject, date) in your reply.
+- Every whitespace-separated word must match, so each extra word narrows: "order confirmation" finds only emails with both words.
+- Keep operators (| " - * and the like) out of \`keyword\`. Any operator switches the in-word matching off for the WHOLE query, so \`confirm | xyzzy\` finds nothing. And \`|\` binds tighter than the space between words: \`receipt | order confirmation\` means (receipt OR order) AND confirmation, which is why one combined query misses mail.`;
 
 const SEARCH_GUIDE_TAIL = `Params (set null what you don't need):
 - keyword: free text matched against emails, per the rules above. Null is valid, and often better: \`from\` or a date range alone matches reliably, where a guessed word may not.
@@ -87,18 +81,12 @@ Encrypted Search handles searches on this device and matches keywords as plain s
 - Punctuation is matched literally: | ! - * ? ^ $ ( ) are just characters that must appear in the text, so keep them out of keyword.
 - Double quotes are the one exception: "a phrase in quotes" matches as one block rather than as separate words.`;
 
-const STANDALONE_OPERATOR_TERMS = `Matching on this device: widen with operators.
-Encrypted Search isn't handling searches on this device, so they go to the server, which understands advanced syntax. The operators act on metadata only: subject, from, to, cc and bcc. Bodies aren't searched on this path, so a word that appears only in a body can't match however it's phrased.
-- The widest net is an OR of the likely wordings, such as \`invoice | receipt | payment | statement\`, never a single exact guess. A guess that misses is worse than a broad OR you can then narrow.
-- Matching is by whole word, not substring: "book" doesn't match "booking", so write \`book*\`. That is the opposite of how a stem behaves with Encrypted Search. Combine the two to widen: \`invoic* | receipt | paym*\`.
-- Whitespace between words means AND: \`hello world\` needs both. Each extra bare word narrows; the operators below widen.
-- \`hello | world\`: OR, either term matches.
-- \`hello !world\`: NOT, which excludes the second term; \`-world\` does the same.
-- \`(cat -dog) | (cat mouse)\`: brackets group terms, so OR and NOT combine.
-- \`"hello world"\`: a phrase, adjacent and in that order. Inside quotes, \`*\` stands for one whole word, as in \`"hello * world"\`.
-- \`h?llo w*d\`: wildcards, where \`?\` is exactly one character and \`*\` is zero or more.
-- \`^hello\` and \`world$\`: anchors, so the field must start or end with the term.
-- Further operators exist (proximity, quorum, word order); see https://proton.me/support/search.`;
+const STANDALONE_OPERATOR_TERMS = `Matching on this device: several plain searches.
+Encrypted Search isn't handling searches on this device, so they go to the server. It matches metadata only: subject, from, to, cc and bcc. Bodies aren't searched on this path, so a word that appears only in a body can't match however it's phrased.
+- A plain single word matches inside longer words: "confirm" finds "confirmation" and "confirmed", and "ship" finds "shipped". Case and accents are ignored.
+- So the widest net is several searches, each one short plain word, and you merge the rows yourself. Searches cost the user nothing. For receipts that means \`receipt\`, then \`order\`, then \`ticket\`, then \`invoice\`, not one combined query. Only your last search stays on the user's screen, so when the merged rows are the answer, list those emails (sender, subject, date) in your reply.
+- Every space-separated word must match, so each extra word narrows: "order confirmation" finds only emails with both words.
+- Keep operators (| " - * and the like) out of keyword. Any operator switches the in-word matching off for the whole query, so \`confirm | xyzzy\` finds nothing. And \`|\` binds tighter than the space between words: \`receipt | order confirmation\` means (receipt or order) and confirmation, which is why one combined query misses mail.`;
 
 const STANDALONE_SEARCH_GUIDE_TAIL = `Beyond the parameter descriptions:
 - keyword can be null, and often should be: from or a date range alone matches reliably, where a guessed word may not.
