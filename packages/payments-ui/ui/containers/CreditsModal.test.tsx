@@ -12,7 +12,6 @@ import { withDeprecatedModals } from '@proton/components/testing/with-deprecated
 import { withEventManager } from '@proton/components/testing/with-event-manager';
 import { withNotifications } from '@proton/components/testing/with-notifications';
 import { withReduxStore } from '@proton/components/testing/with-redux-store';
-import { getIdealAuthorizationText } from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { buyCredit, createToken } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/payments/testing/api-endpoints';
@@ -22,6 +21,7 @@ import { addApiMock } from '@proton/test-api/api';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import PaymentMethodSelector from '../../containers/payments/methods/PaymentMethodSelector';
+import { getIdealAuthorizationText } from '../../payment-methods/ideal/IdealAuthorizationText';
 import { CreditsModal } from './CreditsModal';
 
 jest.mock('@proton/atoms/Portal/Portal');

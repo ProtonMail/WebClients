@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import { screen } from '@testing-library/react';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
-import { getIdealAuthorizationText } from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -14,6 +13,7 @@ import { getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 
+import { getIdealAuthorizationText } from '../../../../payment-methods/ideal/IdealAuthorizationText';
 import { useTaxCountry } from '../../../../ui/billing-address/hooks/useTaxCountry';
 import SubscriptionCheckout, { type SubscriptionCheckoutProps } from './SubscriptionCheckout';
 

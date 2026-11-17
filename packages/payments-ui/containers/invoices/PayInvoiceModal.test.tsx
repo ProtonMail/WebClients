@@ -6,12 +6,17 @@ import userEvent from '@testing-library/user-event';
 import { useGetPaymentsInit } from '@proton/account/paymentsInit/hooks';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
-import { getIdealAuthorizationText } from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { InvoiceState, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Invoice } from '@proton/payments/core/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { APPS } from '@proton/shared/lib/constants';
 
+import { getIdealAuthorizationText } from '../../payment-methods/ideal/IdealAuthorizationText';
+import { ApplePayButton } from '../../ui/components/ApplePayButton';
+import { ChargebeeIdealButton } from '../../ui/components/ChargebeeIdealButton';
+import { WALLET_BUTTON_WIDTH } from '../../ui/components/ChargebeeIframe';
+import { ChargebeePaypalButton } from '../../ui/components/ChargebeePaypalButton';
+import { GooglePayButton } from '../../ui/components/GooglePayButton';
 import PayInvoiceModal, { type Props } from './PayInvoiceModal';
 
 const getPaymentsInit = jest.fn().mockResolvedValue({
@@ -61,27 +66,35 @@ jest.mock('../../client-extensions/usePaymentFacade', () => ({
 }));
 
 jest.mock('../../ui/components/ApplePayButton', () => ({
-    ApplePayButton: () => (
+    ApplePayButton: jest.fn(() => (
         <button type="button" data-testid="apple-pay-button">
             Apple Pay
         </button>
-    ),
+    )),
 }));
 
 jest.mock('../../ui/components/ChargebeeIdealButton', () => ({
-    ChargebeeIdealButton: () => (
+    ChargebeeIdealButton: jest.fn(() => (
         <button type="button" data-testid="chargebee-ideal-button">
             iDEAL
         </button>
-    ),
+    )),
+}));
+
+jest.mock('../../ui/components/ChargebeePaypalButton', () => ({
+    ChargebeePaypalButton: jest.fn(() => (
+        <button type="button" data-testid="chargebee-paypal-button">
+            PayPal
+        </button>
+    )),
 }));
 
 jest.mock('../../ui/components/GooglePayButton', () => ({
-    GooglePayButton: () => (
+    GooglePayButton: jest.fn(() => (
         <button type="button" data-testid="google-pay-button">
             Google Pay
         </button>
-    ),
+    )),
 }));
 
 jest.mock('../payments/PaymentWrapper', () => ({
@@ -186,9 +199,11 @@ describe('PayInvoiceModal', () => {
     });
 
     it.each([
-        [PAYMENT_METHOD_TYPES.APPLE_PAY, 'apple-pay-button'],
-        [PAYMENT_METHOD_TYPES.GOOGLE_PAY, 'google-pay-button'],
-    ])('should show the %s button instead of the pay button', (method, buttonTestId) => {
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL, ChargebeePaypalButton, 'chargebee-paypal-button', undefined, undefined],
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, ChargebeeIdealButton, 'chargebee-ideal-button', undefined, undefined],
+        [PAYMENT_METHOD_TYPES.APPLE_PAY, ApplePayButton, 'apple-pay-button', WALLET_BUTTON_WIDTH, false],
+        [PAYMENT_METHOD_TYPES.GOOGLE_PAY, GooglePayButton, 'google-pay-button', WALLET_BUTTON_WIDTH, false],
+    ])('should show the %s button instead of the pay button', (method, component, buttonTestId, width, loading) => {
         selectedMethodValue = method;
         amountDue = 1000;
 
@@ -196,6 +211,33 @@ describe('PayInvoiceModal', () => {
 
         expect(screen.getByTestId(buttonTestId)).toBeInTheDocument();
         expect(screen.queryByTestId('pay-invoice-button')).not.toBeInTheDocument();
+        const props = (component as jest.Mock).mock.lastCall[0];
+        expect(props.width).toBe(width);
+        expect(props.loading).toBe(loading);
+    });
+
+    it.each([
+        PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+        PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+        PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+        PAYMENT_METHOD_TYPES.CASH,
+        PAYMENT_METHOD_TYPES.TOKEN,
+        'saved-payment-method-id',
+        undefined,
+    ])('should show the pay button for a non-zero invoice when %s is selected', (method) => {
+        selectedMethodValue = method;
+        amountDue = 1000;
+
+        renderPayInvoiceModal();
+
+        const button = screen.getByTestId('pay-invoice-button');
+        expect(button).toHaveAttribute('type', 'submit');
+        expect(button).toHaveTextContent('Pay');
+        expect(button).toBeEnabled();
+        expect(screen.queryByTestId('chargebee-paypal-button')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('chargebee-ideal-button')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('apple-pay-button')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('google-pay-button')).not.toBeInTheDocument();
     });
 
     it.each([

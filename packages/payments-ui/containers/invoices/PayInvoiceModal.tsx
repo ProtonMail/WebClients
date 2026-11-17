@@ -20,20 +20,21 @@ import { getInvoicePaymentsVersion } from '@proton/components/containers/invoice
 import useApiResult from '@proton/components/hooks/useApiResult';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
-import {
-    IdealAuthorizationText,
-    isIdealAuthorizationNoteShown,
-} from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { checkInvoice } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, Invoice } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
+import { methodMatches } from '@proton/payments/core/type-guards';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { usePaymentFacade } from '../../client-extensions/usePaymentFacade';
+import {
+    IdealAuthorizationText,
+    isIdealAuthorizationNoteShown,
+} from '../../payment-methods/ideal/IdealAuthorizationText';
 import { ApplePayButton } from '../../ui/components/ApplePayButton';
 import { ChargebeeIdealButton } from '../../ui/components/ChargebeeIdealButton';
 import { WALLET_BUTTON_WIDTH } from '../../ui/components/ChargebeeIframe';
@@ -138,11 +139,16 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
             </Button>
         );
 
-        if (amountLoading || amountDue === 0) {
+        const selectedMethodValue = paymentFacade.selectedMethodValue;
+        if (
+            amountLoading ||
+            amountDue === 0 ||
+            !methodMatches(selectedMethodValue, Object.values(PAYMENT_METHOD_TYPES))
+        ) {
             return defaultButton;
         }
 
-        switch (paymentFacade.selectedMethodValue) {
+        switch (selectedMethodValue) {
             case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
                 return (
                     <ChargebeePaypalButton
@@ -175,7 +181,14 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, app, ...rest }: Props) => {
                         loading={loading}
                     />
                 );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN:
+            case PAYMENT_METHOD_TYPES.CASH:
+            case PAYMENT_METHOD_TYPES.TOKEN:
+                return defaultButton;
             default:
+                selectedMethodValue satisfies never;
                 return defaultButton;
         }
     })();

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -114,5 +114,40 @@ describe('SubscriptionSubmitButton', () => {
         });
 
         expect(screen.getByText('Switch to Pass Basic')).toBeInTheDocument();
+    });
+
+    it.each([
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, /^Awaiting transaction$/, true, 0],
+        [PAYMENT_METHOD_TYPES.CASH, /^Done$/, false, 1],
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD, /^Pay .* now$/, false, 0],
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL, /^Pay .* now$/, false, 0],
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, /^Pay .* now$/, false, 0],
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, /^Pay .* now$/, false, 0],
+        [PAYMENT_METHOD_TYPES.APPLE_PAY, /^Pay .* now$/, false, 0],
+        [PAYMENT_METHOD_TYPES.GOOGLE_PAY, /^Pay .* now$/, false, 0],
+        [PAYMENT_METHOD_TYPES.TOKEN, /^Pay .* now$/, false, 0],
+        ['saved-payment-method-id', /^Pay .* now$/, false, 0],
+        [undefined, /^Pay .* now$/, false, 0],
+    ])('should render the pay button for %s as %s', (method, text, disabled, onDoneCalls) => {
+        const onDone = jest.fn();
+
+        renderButton({
+            currency: 'EUR',
+            checkResult: { ...baseCheckResult, AmountDue: 4990, Currency: 'EUR' },
+            paymentFacade: { selectedMethodValue: method } as any,
+            onDone,
+        });
+
+        const button = screen.getByTestId('confirm');
+        expect(button).toHaveTextContent(text);
+        if (disabled) {
+            expect(button).toBeDisabled();
+        } else {
+            expect(button).toBeEnabled();
+        }
+
+        fireEvent.click(button);
+
+        expect(onDone).toHaveBeenCalledTimes(onDoneCalls);
     });
 });

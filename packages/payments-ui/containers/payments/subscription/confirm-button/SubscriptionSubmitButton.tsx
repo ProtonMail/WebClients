@@ -15,7 +15,7 @@ import type {
     SubscriptionCheckForbiddenReason,
     SubscriptionEstimation,
 } from '@proton/payments/core/subscription/interface';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
+import { isFreeSubscription, methodMatches } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SubscriptionMode, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
@@ -96,24 +96,7 @@ export const SubscriptionSubmitButton = ({
         );
     }
 
-    const isBitcoin = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
-    const isCash = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CASH;
-
-    const payButtonProps = (() => {
-        if (isBitcoin) {
-            return {
-                disabled: true,
-                children: c('Info').t`Awaiting transaction`,
-            };
-        }
-
-        if (isCash) {
-            return {
-                onClick: onDone,
-                children: c('Action').t`Done`,
-            };
-        }
-
+    const getDefaultPayButtonProps = () => {
         const amountDue = checkResult?.AmountDue || 0;
         if (amountDue > 0) {
             if (isTrial(subscription) && checkResult?.SubscriptionMode === SubscriptionMode.Regular) {
@@ -138,6 +121,37 @@ export const SubscriptionSubmitButton = ({
         return {
             children: c('Action').t`Confirm`,
         };
+    };
+
+    const payButtonProps = (() => {
+        const selectedMethodValue = paymentFacade.selectedMethodValue;
+        if (!methodMatches(selectedMethodValue, Object.values(PAYMENT_METHOD_TYPES))) {
+            return getDefaultPayButtonProps();
+        }
+
+        switch (selectedMethodValue) {
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN:
+                return {
+                    disabled: true,
+                    children: c('Info').t`Awaiting transaction`,
+                };
+            case PAYMENT_METHOD_TYPES.CASH:
+                return {
+                    onClick: onDone,
+                    children: c('Action').t`Done`,
+                };
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
+            case PAYMENT_METHOD_TYPES.APPLE_PAY:
+            case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
+            case PAYMENT_METHOD_TYPES.TOKEN:
+                return getDefaultPayButtonProps();
+            default:
+                selectedMethodValue satisfies never;
+                return getDefaultPayButtonProps();
+        }
     })();
 
     const discountLossWarning =
