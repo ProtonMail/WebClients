@@ -3,6 +3,8 @@
 import * as Ariakit from '@ariakit/react'
 import { type PropsWithChildren, useState } from 'react'
 
+import './HomepageStyleScope.css'
+
 export type HomepageStyleScopeProps = PropsWithChildren
 
 export function HomepageStyleScope({ children }: HomepageStyleScopeProps) {

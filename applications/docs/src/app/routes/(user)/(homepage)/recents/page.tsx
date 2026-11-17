@@ -3,15 +3,14 @@ import {
   DocumentActionsProvider,
   type DocumentActionsProviderProps,
   HomepageContent,
-  HomepageLayout,
-  type HomepageLayoutProps,
   HomepageViewProvider,
   type HomepageViewProviderProps,
 } from '~/homepage'
+import { HomepageShell, type HomepageShellProps } from '../__components/HomepageShell'
 
 export type HomepagePageProps = Omit<HomepageViewProviderProps, 'children'> &
   Omit<DocumentActionsProviderProps, 'children'> &
-  Omit<HomepageLayoutProps, 'children'>
+  Omit<HomepageShellProps, 'children'>
 
 export default function HomepagePage({
   drive,
@@ -35,7 +34,6 @@ export default function HomepagePage({
   openShareModal,
   openMoveItemsModal,
   reportDescriptionContext,
-  quickSettings,
   appVersion,
 }: HomepagePageProps) {
   return (
@@ -60,15 +58,10 @@ export default function HomepagePage({
       contactEmails={contactEmails}
     >
       <DocumentActionsProvider drive={drive} openShareModal={openShareModal} openMoveItemsModal={openMoveItemsModal}>
-        {/* The header's offers (useFetchOffer in @proton/components) read their renewal notice from it */}
         <OfferRenewNoticeProvider>
-          <HomepageLayout
-            reportDescriptionContext={reportDescriptionContext}
-            quickSettings={quickSettings}
-            appVersion={appVersion}
-          >
+          <HomepageShell reportDescriptionContext={reportDescriptionContext} appVersion={appVersion}>
             <HomepageContent />
-          </HomepageLayout>
+          </HomepageShell>
         </OfferRenewNoticeProvider>
       </DocumentActionsProvider>
     </HomepageViewProvider>

@@ -21,7 +21,6 @@ import { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
 import { getDocsReportContextLines } from '~/utils/report-context'
-import { DocsQuickSettings } from '~/components/DocsQuickSettings'
 import { useHomepageInvitations } from './HomepageInvitations'
 import { withNotificationAction } from './withNotificationAction'
 
@@ -101,7 +100,6 @@ export function HomepageHost({ application }: HomepageHostProps) {
             openShareModal={showSharingModal}
             openMoveItemsModal={showMoveItemsModal}
             reportDescriptionContext={reportDescriptionContext}
-            quickSettings={<DocsQuickSettings />}
             appVersion={APP_VERSION}
           />
         </Suspense>
