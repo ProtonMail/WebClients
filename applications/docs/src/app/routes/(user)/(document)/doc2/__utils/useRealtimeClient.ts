@@ -30,7 +30,7 @@ export function useRealtimeClient() {
 
     return createClient({
       mode: 'private',
-      api: { baseUrl: API_URL, appVersion, uid: UID, fetch: createDocsApiFetch(api, API_URL) },
+      api: { baseUrl: API_URL, appVersion, uid: UID, fetch: createDocsApiFetch(api, API_URL, application.logger) },
       rts: {
         serverUrl: getWebSocketServerURL(),
         appVersion,

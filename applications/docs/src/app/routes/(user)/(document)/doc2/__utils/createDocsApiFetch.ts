@@ -1,5 +1,6 @@
 import type { ApiError } from '@proton/shared/lib/fetch/ApiError'
 import type { Api } from '@proton/shared/lib/interfaces/Api'
+import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { DocsApiFetch } from '@proton-docs/realtime-sdk'
 
 /** Squash uploads can be large. */
@@ -10,14 +11,17 @@ const DOCS_API_TIMEOUT_MS = 120_000
  * modals. Every HTTP answer resolves as a `Response`, 4xx and 5xx included; a rejection means no answer came.
  * Adapted from `packages/drive/internal/useHttpClient.ts`, its `fetchJson`, which is not exported.
  */
-export function createDocsApiFetch(api: Api, apiUrl: string): DocsApiFetch {
+export function createDocsApiFetch(api: Api, apiUrl: string, logger: Pick<LoggerInterface, 'warn'>): DocsApiFetch {
   const prefix = `${apiUrl}/`
 
   return async (input, init) => {
     // The app's fetch only listens for a later abort, so it would still send a request aborted before the call.
     init.signal?.throwIfAborted()
     if (!input.startsWith(prefix)) {
-      throw new Error(`Docs API URL outside the API: ${input}`)
+      // The SDK drops this error, so this log is the only trace of the URL. Not `error`, which reports to Sentry.
+      const message = `Docs API URL outside the API: ${withoutIds(input)}`
+      logger.warn(message)
+      throw new Error(message)
     }
 
     try {
@@ -60,6 +64,15 @@ function rejectOnAbort(signal: AbortSignal) {
   return new Promise<never>((_, reject) => {
     signal.addEventListener('abort', () => reject(signal.reason), { once: true })
   })
+}
+
+/**
+ * The URL with no query or fragment and its path ids masked, to keep the user's document ids and any token out of the
+ * log they may share with support. shortcut: masks the id segments of the SDK's paths today; mask any new one an SDK
+ * version adds.
+ */
+function withoutIds(url: string) {
+  return url.split(/[?#]/)[0].replace(/\/(volumes|documents|commits)\/[^/]+/g, '/$1/…')
 }
 
 /** The app's fetch throws a `StatusCodeError` for every non-2xx answer, its JSON body parsed into `data`. */

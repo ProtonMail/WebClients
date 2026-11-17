@@ -25,25 +25,23 @@ function redirectToAccountSwitcherFromUserApp() {
   replaceUrl(urlWithReturnUrl)
 }
 
-function reload() {
-  window.location.reload()
-}
-
 // Copied from `applications/docs/src/app/components/document/DocumentViewer/DocumentErrorFallback.tsx`, which reports
-// the error to docs-core's user state. Two changes: no report, and an `actionButton` of `null` shows no action button.
+// the error to docs-core's user state. Two changes: no report, and the caller's `actionButton` in place of Reload.
 
 export type DocumentError = {
   title?: string
   message: string
   userUnderstandableMessage: boolean
   code?: DocsApiErrorCode
-  /** In place of Reload; `null` for none */
-  actionButton?: ReactNode | null
 }
 
-export type DocumentErrorFallbackProps = { error: DocumentError }
+export type DocumentErrorFallbackProps = {
+  error: DocumentError
+  /** In place of Reload; `null` for none */
+  actionButton: ReactNode
+}
 
-export function DocumentErrorFallback({ error }: DocumentErrorFallbackProps) {
+export function DocumentErrorFallback({ error, actionButton }: DocumentErrorFallbackProps) {
   const { getLocalID, UID } = useAuthentication()
 
   const isAccessError = error.code === DocsApiErrorCode.InsufficientPermissions
@@ -68,13 +66,6 @@ export function DocumentErrorFallback({ error }: DocumentErrorFallbackProps) {
   } else if (error.title) {
     title = error.title
   }
-
-  const reloadButton = (
-    <Button color="norm" shape="outline" onClick={reload}>
-      {c('Action').t`Reload`}
-    </Button>
-  )
-  const actionButton = error.actionButton !== undefined ? error.actionButton : reloadButton
 
   return (
     <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center bg-signalInfoMinorCustom">

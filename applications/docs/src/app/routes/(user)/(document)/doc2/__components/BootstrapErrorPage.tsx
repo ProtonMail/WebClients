@@ -32,7 +32,7 @@ export function BootstrapErrorPage({ failure, onRetry }: BootstrapErrorPageProps
 
   return (
     <DocumentShell header={<ErrorHeader />}>
-      <DocumentErrorFallback error={{ ...errors[failure], actionButton }} />
+      <DocumentErrorFallback error={errors[failure]} actionButton={actionButton} />
     </DocumentShell>
   )
 }
