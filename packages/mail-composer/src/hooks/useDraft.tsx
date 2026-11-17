@@ -24,6 +24,7 @@ import generateUID from '@proton/utils/generateUID';
 
 import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
 import { useComposerMessageHost } from '../host/composerMessageHost';
+import { useEditorVersion } from './useEditorVersion';
 
 const CACHE_KEY = 'Draft';
 
@@ -66,6 +67,7 @@ export const useDraft = () => {
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
     const getAttachment = useGetAttachment();
+    const editorVersion = useEditorVersion();
 
     useEffect(() => {
         const run = async () => {
@@ -101,6 +103,7 @@ export const useDraft = () => {
                         api: silentApi,
                         measurementGroup: TelemetryMeasurementGroups.mailExpandBlockquotes,
                         event: TelemetryMailBlockquotes.createReply,
+                        dimensions: { editorVersion },
                         delay: false,
                     });
                 }
@@ -120,7 +123,7 @@ export const useDraft = () => {
             return message.localID;
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-217C17
-        [cache, getMailSettings, getAddresses, draftVerifications]
+        [cache, getMailSettings, getAddresses, draftVerifications, editorVersion]
     );
 
     return { createDraft, sendingFromDefaultAddressModal };

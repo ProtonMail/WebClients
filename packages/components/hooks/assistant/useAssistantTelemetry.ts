@@ -9,58 +9,59 @@ import type {
     INCOMPATIBILITY_TYPE,
 } from '@proton/shared/lib/assistant/types';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { useFlag } from '@proton/unleash/useFlag';
+
+type AssistantReport = Pick<Parameters<typeof sendTelemetryReport>[0], 'event' | 'values' | 'dimensions'>;
 
 const useAssistantTelemetry = () => {
     const api = useApi();
+    // The roosterjs version of the composer the assistant writes into, with the values of useEditorVersion in @proton/mail-composer
+    const editorVersion = useFlag('MailComposerRoosterV9') ? 'roosterjs-9' : 'roosterjs-8';
 
-    const sendShowAssistantReport = () => {
+    const sendReport = ({ event, values, dimensions }: AssistantReport) => {
         void sendTelemetryReport({
             api,
             measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
-            event: TelemetryMailComposerAssistantEvents.show_assistant,
+            event,
+            values,
+            dimensions: { ...dimensions, editor_version: editorVersion },
             delay: false,
+        });
+    };
+
+    const sendShowAssistantReport = () => {
+        sendReport({
+            event: TelemetryMailComposerAssistantEvents.show_assistant,
         });
     };
 
     const sendFreeTrialStart = () => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.free_trial_start,
-            delay: false,
         });
     };
 
     const sendDownloadAssistantReport = (downloadTime: number) => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.download_model,
             values: {
                 download_time: downloadTime,
             },
-            delay: false,
         });
     };
 
     const sendUseAnswerAssistantReport = (insertionType: ASSISTANT_INSERT_TYPE) => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.use_answer,
             dimensions: {
                 insertion_type: insertionType,
             },
-            delay: false,
         });
     };
 
     const sendNotUseAnswerAssistantReport = () => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.not_use_answer,
-            delay: false,
         });
     };
 
@@ -79,9 +80,7 @@ const useAssistantTelemetry = () => {
         generationTime: number;
         tokensGenerated: number;
     }) => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.request_assistant,
             values: {
                 ingestion_time: ingestionTime,
@@ -93,7 +92,6 @@ const useAssistantTelemetry = () => {
                 generation_type: generationType,
                 selection_type: selectionType,
             },
-            delay: false,
         });
     };
 
@@ -104,54 +102,39 @@ const useAssistantTelemetry = () => {
         assistantType: ASSISTANT_TYPE;
         errorType: ERROR_TYPE;
     }) => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.assistant_error,
             dimensions: {
                 assistant_type: assistantType,
                 error_type: errorType,
             },
-            delay: false,
         });
     };
 
     const sendSendMessageAssistantReport = () => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.send_message,
-            delay: false,
         });
     };
 
     const sendPauseDownloadAssistantReport = () => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.pause_download,
-            delay: false,
         });
     };
 
     const sendLoadModelAssistantReport = (loadTime: number) => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.load_model,
             values: {
                 load_time: loadTime,
             },
-            delay: false,
         });
     };
 
     const sendUnloadModelAssistantReport = () => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.unload_model,
-            delay: false,
         });
     };
 
@@ -160,14 +143,11 @@ const useAssistantTelemetry = () => {
     }: {
         incompatibilityType: INCOMPATIBILITY_TYPE;
     }) => {
-        void sendTelemetryReport({
-            api,
-            measurementGroup: TelemetryMeasurementGroups.mailComposerAssistant,
+        sendReport({
             event: TelemetryMailComposerAssistantEvents.incompatible_assistant,
             dimensions: {
                 incompatibility_type: incompatibilityType,
             },
-            delay: false,
         });
     };
 
