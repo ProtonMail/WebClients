@@ -103,7 +103,7 @@
   },
   "dependencies": {
     "@ariakit/react": "0.4.29",
-    "@lexical/yjs": "catalog:",
+    "@lexical/yjs": "catalog:docs",
     "@proton/atoms": "workspace:^",
     "@proton/components": "workspace:^",
     "@proton/docs-proto": "workspace:^",
@@ -114,7 +114,7 @@
     "@protontech/crypto": "catalog:",
     "date-fns": "catalog:",
     "idb": "catalog:",
-    "lexical": "catalog:",
+    "lexical": "catalog:docs",
     "lib0": "^0.2.120",
     "react": "catalog:",
     "react-dom": "catalog:",
