@@ -43,6 +43,14 @@ const DEFAULT_FOLDER_LABEL_IDS: Record<DefaultFolderReference, MAILBOX_LABEL_IDS
     [DefaultFolderReference.SNOOZED]: MAILBOX_LABEL_IDS.SNOOZED,
 };
 
+/** The other default folders are views or states, not places mail is filed. */
+export const MOVE_DESTINATIONS: readonly DefaultFolderReference[] = [
+    DefaultFolderReference.INBOX,
+    DefaultFolderReference.ARCHIVE,
+    DefaultFolderReference.SPAM,
+    DefaultFolderReference.TRASH,
+];
+
 export const isDefaultFolderReference = (value: string): value is DefaultFolderReference => {
     return (DEFAULT_FOLDER_REFERENCES as string[]).includes(value);
 };

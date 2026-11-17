@@ -19,7 +19,7 @@ import { buildLumoMailConfig } from './registry';
 import { MAIL_RULES } from './rules';
 import { createFilterModule } from './skills/filters/createFilter';
 import { updateFilterModule } from './skills/filters/updateFilter';
-import { MOVE_LOCATIONS, moveEmailsModule } from './skills/organise/moveEmails';
+import { moveEmailsModule } from './skills/organise/moveEmails';
 import { setLocationReadModule } from './skills/organise/setLocationRead';
 import { MAILBOX_FILTERS, MAILBOX_SORTS } from './skills/reads/mailboxView';
 import { openFolderModule } from './skills/reads/openFolder';
@@ -128,6 +128,32 @@ describe('the default folders in the Mail config', () => {
             Object.values(DefaultFolderReference)
         );
     });
+
+    // A default folder now goes in the same parameter as the user's own, so no tool keeps a second one for it.
+    it.each([false, true])(
+        'leaves no location parameter on any tool with the standalone prompt %s',
+        (standalonePrompt) => {
+            const { config } = buildPromptConfig(standalonePrompt);
+
+            config.definitions.forEach(({ paramsSchema }) => {
+                expect(paramsSchema.properties ?? {}).not.toHaveProperty('location');
+            });
+        }
+    );
+});
+
+describe('the category tabs in the Mail config', () => {
+    // The tabs a user shows vary, so every tool that takes one points the model at the context line that lists them.
+    it.each([false, true])(
+        'points open_folder and move_emails at the Category tabs line with the standalone prompt %s',
+        (standalonePrompt) => {
+            const { definition } = buildPromptConfig(standalonePrompt);
+
+            ['open_folder', 'move_emails'].forEach((name) => {
+                expect(definition(name).toolDescription).toContain('Category tabs');
+            });
+        }
+    );
 });
 
 /** Every module whose definition the standalone config changes: a guide swap or an enum overlay. */
@@ -261,13 +287,13 @@ describe('the Mail config with the standalone prompt flag on', () => {
     });
 
     it.each([
-        ['move_emails', 'location', [...MOVE_LOCATIONS, null]],
         ['open_folder', 'category', [...INBOX_CATEGORIES, null]],
         ['open_folder', 'filter', [...MAILBOX_FILTERS, null]],
         ['open_folder', 'sort', [...MAILBOX_SORTS, null]],
         ['set_location_read', 'category', [...INBOX_CATEGORIES, null]],
         ['search', 'category', [...INBOX_CATEGORIES, null]],
         ['search', 'filter', [...MAILBOX_FILTERS, null]],
+        ['move_emails', 'category', [...INBOX_CATEGORIES, null]],
         ['change_settings', 'setting', Object.values(CosmeticSetting)],
     ])('closes %s.%s to the values its handler accepts', (name, property, values) => {
         const moduleProperty = CHANGED_MODULES.find((module) => module.definition.name === name)!.definition

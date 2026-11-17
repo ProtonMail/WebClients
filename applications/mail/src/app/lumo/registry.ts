@@ -27,7 +27,7 @@ import { updateFilterModule } from './skills/filters/updateFilter';
 import { addContactModule } from './skills/organise/addContact';
 import { applyLabelsModule } from './skills/organise/applyLabels';
 import { createFolderModule, createLabelModule } from './skills/organise/createEntity';
-import { MOVE_LOCATIONS, moveEmailsModule } from './skills/organise/moveEmails';
+import { moveEmailsModule } from './skills/organise/moveEmails';
 import { renameFolderModule } from './skills/organise/renameFolder';
 import { renameLabelModule } from './skills/organise/renameLabel';
 import { setLocationReadModule } from './skills/organise/setLocationRead';
@@ -133,7 +133,6 @@ const STANDALONE_GUIDES: Partial<Record<ToolName, (deps: MailToolDeps) => string
 
 /** Closed parameter vocabularies, sent as schema enums only with the standalone prompt, which lists them too. */
 const STANDALONE_ENUMS: Partial<Record<ToolName, Record<string, readonly unknown[]>>> = {
-    move_emails: { location: [...MOVE_LOCATIONS, null] },
     open_folder: {
         category: [...INBOX_CATEGORIES, null],
         filter: [...MAILBOX_FILTERS, null],
@@ -141,6 +140,7 @@ const STANDALONE_ENUMS: Partial<Record<ToolName, Record<string, readonly unknown
     },
     set_location_read: { category: [...INBOX_CATEGORIES, null] },
     search: { category: [...INBOX_CATEGORIES, null], filter: [...MAILBOX_FILTERS, null] },
+    move_emails: { category: [...INBOX_CATEGORIES, null] },
     change_settings: { setting: Object.values(CosmeticSetting) },
 };
 

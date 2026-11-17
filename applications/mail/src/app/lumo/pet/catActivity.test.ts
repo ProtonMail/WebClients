@@ -1,6 +1,7 @@
 import type { LumoAgentItem } from '@proton/llm/lib/lumoAgent/ui/types';
 import { ConfirmStatus } from '@proton/llm/lib/lumoAgent/ui/types';
 
+import { DefaultFolderReference } from '../helpers/defaultFolders';
 import { DraftKind } from '../helpers/draftKind';
 import { createDraftDefinition } from '../skills/compose/createDraft';
 import { reviseDraftDefinition } from '../skills/compose/reviseDraft';
@@ -25,15 +26,10 @@ const draftCard = (tool: string, status: ConfirmStatus): LumoAgentItem => ({
     status,
 });
 
-const moveCard = (id: number, location: string | null, status: ConfirmStatus): LumoAgentItem => ({
+const moveCard = (id: number, folder: string, status: ConfirmStatus): LumoAgentItem => ({
     id,
     kind: 'confirm',
-    action: {
-        type: moveEmailsDefinition.name,
-        ids: ['email-a1b2c3'],
-        folder: location ? null : 'folder-x7b2q1',
-        location,
-    },
+    action: { type: moveEmailsDefinition.name, ids: ['email-a1b2c3'], folder },
     labels: {},
     status,
 });
@@ -71,26 +67,26 @@ describe('selectCatActivity', () => {
     });
 
     it('does not write for a pending card that is not a draft', () => {
-        expect(selectCatActivity([moveCard(5, 'trash', ConfirmStatus.PENDING)], true)).toBeNull();
+        expect(selectCatActivity([moveCard(5, DefaultFolderReference.TRASH, ConfirmStatus.PENDING)], true)).toBeNull();
     });
 });
 
 describe('findLastAppliedTrashId', () => {
     it('finds the latest applied trash', () => {
         const items = [
-            moveCard(1, 'trash', ConfirmStatus.APPLIED),
+            moveCard(1, DefaultFolderReference.TRASH, ConfirmStatus.APPLIED),
             reply,
-            moveCard(12, 'trash', ConfirmStatus.APPLIED),
+            moveCard(12, DefaultFolderReference.TRASH, ConfirmStatus.APPLIED),
         ];
 
         expect(findLastAppliedTrashId(items)).toBe(12);
     });
 
     it.each([
-        ['a trash not yet applied', moveCard(1, 'trash', ConfirmStatus.APPLYING)],
-        ['a trash that failed', moveCard(1, 'trash', ConfirmStatus.FAILED)],
-        ['a move to archive', moveCard(1, 'archive', ConfirmStatus.APPLIED)],
-        ['a move to a folder', moveCard(1, null, ConfirmStatus.APPLIED)],
+        ['a trash not yet applied', moveCard(1, DefaultFolderReference.TRASH, ConfirmStatus.APPLYING)],
+        ['a trash that failed', moveCard(1, DefaultFolderReference.TRASH, ConfirmStatus.FAILED)],
+        ['a move to archive', moveCard(1, DefaultFolderReference.ARCHIVE, ConfirmStatus.APPLIED)],
+        ['a move to a folder', moveCard(1, 'folder-x7b2q1', ConfirmStatus.APPLIED)],
     ])('ignores %s', (_, item) => {
         expect(findLastAppliedTrashId([item])).toBeUndefined();
     });

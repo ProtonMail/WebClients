@@ -1,147 +1,114 @@
 import { c, msgid } from 'ttag';
 
 import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
-import type {
-    ActionRequest,
-    ReferenceLabels,
-    ToolDefinition,
-    ToolHandler,
-} from '@proton/llm/lib/lumoAgent/contracts/types';
+import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
+import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { hasLabel } from '../../../helpers/elements';
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
+import type { Element } from '../../../models/element';
+import { elementCategoryID, resolveCategoryLabelID, resolveInboxCategory } from '../../helpers/categories';
+import { DefaultFolderReference, MOVE_DESTINATIONS, isDefaultFolderReference } from '../../helpers/defaultFolders';
 import { resolveFreshElements, resolveId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import {
     emailIds,
     emailSelectionSentence,
     hasEmailSelection,
-    referenceName,
+    locationScopeName,
     renderEmailSelectionBody,
 } from './emailSelection';
 
-/** The three reversible system locations move_emails can send mail to. NOT deletion: mail in
- *  Trash/Archive/Spam can be moved back. Permanent delete is deliberately absent (no tool covers it). */
-export const MOVE_LOCATIONS = ['trash', 'archive', 'spam'] as const;
-
-export type MoveLocation = (typeof MOVE_LOCATIONS)[number];
-
-/** Trash/Archive/Spam are system labels (not in list_folders), so they map here rather than a folder reference. */
-const MOVE_LOCATION_LABEL_IDS: Record<MoveLocation, MAILBOX_LABEL_IDS> = {
-    trash: MAILBOX_LABEL_IDS.TRASH,
-    archive: MAILBOX_LABEL_IDS.ARCHIVE,
-    spam: MAILBOX_LABEL_IDS.SPAM,
-};
-
 export interface MoveEmailsParams {
     ids: string[];
-    /** A folder-… reference from list_folders, or null when moving to a system `location`. */
-    folder: string | null;
-    /** A reversible system location ("trash" | "archive" | "spam"), or null when moving to a `folder`. */
-    location: string | null;
+    /** A destination default folder (see {@link MOVE_DESTINATIONS}), or a folder-… reference from list_folders. */
+    folder: string;
+    /** One Inbox category tab to move into, valid only with `folder-inbox`. */
+    category: string | null;
 }
 
-/**
- * Validate move_emails' destination: EXACTLY ONE of `folder` (a custom folder reference) or `location`
- * (a reversible system location) must be set, and `location` (when used) must be one of
- * {@link MOVE_LOCATIONS}. Pure — mirrors {@link resolveOpenFolderTarget} — so the handler can enforce
- * the rule before touching the store; a violation throws a self-correcting Error the engine feeds back
- * to the model.
- */
-export const resolveMoveTarget = (
-    params: Pick<MoveEmailsParams, 'folder' | 'location'>
-): { location: MoveLocation } | { folder: string } => {
-    const { folder, location } = params;
-    // (folder == null) === (location == null) is true when BOTH are null or BOTH are set.
-    if ((folder == null) === (location == null)) {
-        throw new Error(
-            'move_emails needs EXACTLY ONE of `folder` (a custom folder reference) or `location` (a system location: trash, archive or spam): set one and leave the other null.'
+/** Store-free, so it refuses a destination that cannot work before the confirm card shows. */
+const assertMoveDestination = ({ folder, category }: Pick<MoveEmailsParams, 'folder' | 'category'>): void => {
+    if (isDefaultFolderReference(folder) && !MOVE_DESTINATIONS.includes(folder)) {
+        throw new ToolInputError(
+            `Emails cannot be moved to ${folder}. The default folders that take a move are ${MOVE_DESTINATIONS.join(
+                ', '
+            )}; any of the user's own folder-… references from list_folders also works.`
         );
     }
-    if (location != null) {
-        if (!(MOVE_LOCATIONS as readonly string[]).includes(location)) {
-            throw new Error(
-                `Unknown location "${location}". Valid locations are: ${MOVE_LOCATIONS.join(
-                    ', '
-                )}. To move into a custom folder, pass its folder-… reference as \`folder\` instead.`
-            );
-        }
-        return { location: location as MoveLocation };
+    resolveInboxCategory({ target: folder, category });
+};
+
+/** A tab is a place inside the Inbox, so only mail already there can change tab in one move, as in Mail. */
+const assertAllInInbox = (elements: Element[]): void => {
+    if (!elements.every((element) => hasLabel(element, MAILBOX_LABEL_IDS.INBOX))) {
+        throw new ToolInputError(
+            'Only emails already in the Inbox can move into a category tab, and some of these are elsewhere. Move them to the Inbox first (folder "folder-inbox", category null), then into the tab.'
+        );
     }
-    return { folder: folder as string };
 };
 
 export const moveEmailsDefinition: ToolDefinition<MoveEmailsParams, void> = {
     name: 'move_emails',
     kind: 'mutation',
-    toolDescription:
-        'Move one or more emails to a folder OR to a system location. `ids` are email-… references from any earlier result in this conversation. Pass EXACTLY ONE destination: set `folder` to a folder-… reference from list_folders (and leave `location` null) to file into a custom folder; OR set `location` to one of "trash" (use this for "delete"/"bin"/"remove these" — it is reversible, NOT a permanent delete), "archive", or "spam" (and leave `folder` null). Folders and these locations are exclusive, so this removes the emails from where they currently live. To add a tag WITHOUT moving, use apply_labels instead. Proposed to the user for confirmation before it runs. Examples: into Travel → { "ids": ["email-a1b2c3"], "folder": "folder-x7b2q1", "location": null }; to Trash → { "ids": ["email-a1b2c3"], "folder": null, "location": "trash" }.',
+    toolDescription: `Move one or more emails to a folder. \`ids\` are email-… references from any earlier result in this conversation. Set \`folder\` to the destination: one of the default folders ${MOVE_DESTINATIONS.join(
+        ', '
+    )} (folder-trash is what "delete"/"bin"/"remove these" means: it is reversible, NOT a permanent delete), or the user's own folder-… reference from list_folders. The other default folders (Sent, Drafts, Starred, All mail, Scheduled, Snoozed) are not destinations. A folder is exclusive, so this removes the emails from where they currently live. To move emails that are already in the Inbox into ONE category tab ("move this to Promotions"), set \`folder\` to "folder-inbox" AND \`category\` to one of the tabs the mail context lists under "Category tabs"; an email outside the Inbox must be moved to the Inbox first. Leave \`category\` null for every other move. To add a tag WITHOUT moving, use apply_labels instead. Proposed to the user for confirmation before it runs. Examples: into Travel → { "ids": ["email-a1b2c3"], "folder": "folder-x7b2q1", "category": null }; to Trash → { "ids": ["email-a1b2c3"], "folder": "folder-trash", "category": null }; back to the Inbox → { "ids": ["email-a1b2c3"], "folder": "folder-inbox", "category": null }.`,
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
-        required: ['ids', 'folder', 'location'],
+        required: ['ids', 'folder', 'category'],
         properties: {
             ids: { type: 'array', items: { type: 'string' } },
-            folder: { type: ['string', 'null'] },
-            location: { type: ['string', 'null'] },
+            folder: { type: 'string' },
+            category: { type: ['string', 'null'] },
         },
     },
     examples: [
         {
             context:
                 'Earlier in the conversation open_folder listed `email-a1b2c3 | Ada | Booking | 2026-10-02 | read | Inbox` and `email-d4e5f6 | Ada | Receipt | 2026-10-02 | read | Inbox`, and list_folders returned `folder-x7b2q1 | "Travel"`. The user now asks to move Ada\'s emails from today into Travel. Every reference is already in hand, so move them with no new search or list.',
-            call: { ids: ['email-a1b2c3', 'email-d4e5f6'], folder: 'folder-x7b2q1', location: null },
+            call: { ids: ['email-a1b2c3', 'email-d4e5f6'], folder: 'folder-x7b2q1', category: null },
         },
         {
             context:
                 'search returned email-a1b2c3 and the user asks to delete (bin) it. "Delete" means a reversible move to Trash — there is no permanent delete.',
-            call: { ids: ['email-a1b2c3'], folder: null, location: 'trash' },
+            call: { ids: ['email-a1b2c3'], folder: DefaultFolderReference.TRASH, category: null },
+        },
+        {
+            context:
+                'open_folder listed `email-a1b2c3 | Shop | Spring sale | 2026-10-02 | read | Inbox | tab: primary` and the user asks to move it to Promotions.',
+            call: { ids: ['email-a1b2c3'], folder: DefaultFolderReference.INBOX, category: 'promotions' },
         },
     ],
+    checkParams: assertMoveDestination,
     // Surfaced via the confirm card, not the working set, so these stay trivial (see the shared contract).
     serializeForLumo: () => '',
     summarizeChip: () => ({ label: c('Info').t`Move emails` }),
 };
 
+/** A default folder resolves like the user's own: the registry holds its fixed reference from the first turn. */
 export const createMoveEmailsHandler =
     (mail: MailToolDeps): ToolHandler<MoveEmailsParams, void> =>
-    async ({ ids, folder, location }, { references }) => {
-        // EXACTLY-ONE / known-location enforcement lives in the pure resolver (shared with the schema): a
-        // system location maps to its label id; a custom folder resolves its reference.
-        const resolved = resolveMoveTarget({ folder, location });
-        const destinationLabelID =
-            'location' in resolved
-                ? MOVE_LOCATION_LABEL_IDS[resolved.location]
-                : resolveId(resolved.folder, references);
+    async ({ ids, folder, category }, { references }) => {
+        const inboxCategory = resolveInboxCategory({ target: folder, category });
+        const categoryLabelID = inboxCategory && resolveCategoryLabelID(inboxCategory, mail.getActiveCategoryTabs());
+        const destinationLabelID = categoryLabelID || resolveId(folder, references);
         const elements = await resolveFreshElements(mail, ids, references);
+        if (!categoryLabelID) {
+            await mail.applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID });
+            return;
+        }
+
+        assertAllInInbox(elements);
+        // Read before the move: afterwards the first email already carries the destination tab.
+        const sourceCategoryID = elementCategoryID(elements[0]) ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
         await mail.applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID });
+        mail.reportRecategorize(sourceCategoryID, categoryLabelID, elements.length);
     };
-
-const moveLocationLabel = (location: string): string => {
-    switch (location) {
-        case 'trash':
-            return c('Label').t`Trash`;
-        case 'archive':
-            return c('Label').t`Archive`;
-        case 'spam':
-            return c('Label').t`Spam`;
-        default:
-            return location;
-    }
-};
-
-/** The destination's human name — a folder's name (from the reference's recorded label) or a system location. */
-const moveTargetName = (action: ActionRequest, labels: ReferenceLabels): string => {
-    if (action.folder) {
-        return referenceName(action.folder, labels);
-    }
-    if (action.location) {
-        return moveLocationLabel(String(action.location));
-    }
-    return '';
-};
 
 /**
  * The confirm card + result tile for move_emails: the shared selection body lets the user deselect
@@ -151,7 +118,7 @@ export const moveEmailsCardRenderer: CardRenderer = {
     icon: IcFolderArrowIn,
     sentence: (action, labels) =>
         emailSelectionSentence(action, (emails) => {
-            const target = moveTargetName(action, labels);
+            const target = locationScopeName(action.folder, action.category, labels);
             if (!target) {
                 // translator: a move whose destination the model left out, e.g. "Move 3 emails"
                 return c('Info').jt`Move ${emails}`;
@@ -165,7 +132,7 @@ export const moveEmailsCardRenderer: CardRenderer = {
     canApply: hasEmailSelection,
     detail: (action, labels) => {
         const count = emailIds(action).length;
-        const dest = moveTargetName(action, labels);
+        const dest = locationScopeName(action.folder, action.category, labels);
         return c('Info').ngettext(msgid`${count} email → ${dest}`, `${count} emails → ${dest}`, count);
     },
 };

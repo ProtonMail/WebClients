@@ -1,6 +1,6 @@
 import type { ToolName } from '@proton/llm/lib/lumoAgent/contracts/types';
 
-import { DEFAULT_FOLDER_LIST } from './helpers/defaultFolders';
+import { DEFAULT_FOLDER_LIST, MOVE_DESTINATIONS } from './helpers/defaultFolders';
 
 interface StandaloneDescription {
     description: string;
@@ -108,12 +108,12 @@ export const STANDALONE_DESCRIPTIONS: Record<ToolName, StandaloneDescription> = 
         parameters: {},
     },
     move_emails: {
-        description:
-            'Move one or more emails into a custom folder, or to Trash, Archive or Spam. An email lives in exactly one folder or location at a time, so a move takes it out of where it is now.\n\nDelete means Trash. When the user asks to delete, bin or remove emails, move them to Trash: it can be undone from there, and the request needs no further clarification. You can NEVER permanently delete mail. If the user asks for that, tell them plainly you can\'t, and that they can delete permanently from Trash themselves.\n\nPass exactly one destination: folder for a custom folder, or location for Trash, Archive or Spam, with the other left null. If the folder doesn\'t exist yet, create it first with create_folder, whose result carries the reference this tool takes.\n\nTo tag emails without moving them, use apply_labels. For mail that hasn\'t arrived yet, use create_filter instead.\n\nThe user reviews the move on a confirm card before it runs.\n\nExample: to Trash, {"ids": ["email-a1b2c3"], "folder": null, "location": "trash"}.',
+        description: `Move one or more emails into one of the user\'s own folders, or to the Inbox, Archive, Spam or Trash. An email lives in exactly one folder or location at a time, so a move takes it out of where it is now.\n\nDelete means Trash. When the user asks to delete, bin or remove emails, move them to Trash: it can be undone from there, and the request needs no further clarification. You can NEVER permanently delete mail. If the user asks for that, tell them plainly you can\'t, and that they can delete permanently from Trash themselves.\n\nSet folder to the destination: ${MOVE_DESTINATIONS.join(', ')}, or a folder-… reference. The other default folders (Sent, Drafts, Starred, All mail, Scheduled and Snoozed) are views, not destinations. If the folder doesn\'t exist yet, create it first with create_folder, whose result carries the reference this tool takes.\n\nTo move emails into one Inbox category tab ("move this to Promotions"), set folder to folder-inbox and category to the tab, one the mail context lists under Category tabs. Only emails already in the Inbox can change tab, so move any others to the Inbox first.\n\nTo tag emails without moving them, use apply_labels. For mail that hasn\'t arrived yet, use create_filter instead.\n\nThe user reviews the move on a confirm card before it runs.\n\nExample: to Trash, {"ids": ["email-a1b2c3"], "folder": "folder-trash", "category": null}.`,
         parameters: {
             ids: 'email-… references from any earlier result in this conversation.',
-            folder: 'A folder-… reference from list_folders or create_folder. Null when using location.',
-            location: 'Trash also covers delete, bin and remove. Null when using folder.',
+            folder: 'folder-inbox, folder-archive, folder-spam or folder-trash (which also covers delete, bin and remove), or a folder-… reference from list_folders or create_folder.',
+            category:
+                'One Inbox tab from the Category tabs context line to move Inbox emails into; needs folder folder-inbox. Null for every other move.',
         },
     },
     set_starred: {
