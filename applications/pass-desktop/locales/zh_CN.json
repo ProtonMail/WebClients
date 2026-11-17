@@ -46,6 +46,9 @@
       "Add account": [
         "添加账户"
       ],
+      "Add address": [
+        "添加地址"
+      ],
       "Add current URL": [
         "添加当前 URL"
       ],
@@ -426,6 +429,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "如何使用${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "忽略"
       ],
       "Import": [
         "导入"
@@ -1320,9 +1326,6 @@
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "更新 ${ PROTON_SENTINEL_NAME } 设置失败"
-      ],
-      "Failed updating monitor flag of the item": [
-        "更新项目的监测标志失败"
       ],
       "Failed updating monitoring status for this email address": [
         "更新此邮箱地址的监测状态失败"
@@ -2287,6 +2290,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"

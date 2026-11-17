@@ -46,6 +46,9 @@
       "Add account": [
         "Tambahkan akun"
       ],
+      "Add address": [
+        "Tambah alamat"
+      ],
       "Add current URL": [
         "Tambahkan URL saat ini"
       ],
@@ -414,6 +417,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Cara menggunakan ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Abaikan"
       ],
       "Import": [
         "Impor"
@@ -1276,9 +1282,6 @@
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Gagal memperbarui pengaturan ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Failed updating monitor flag of the item": [
-        "Status monitoring item ini gagal diperbarui"
       ],
       "Failed updating monitoring status for this email address": [
         "Gagal memperbarui status monitoring untuk alamat email ini"
@@ -2201,6 +2204,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"

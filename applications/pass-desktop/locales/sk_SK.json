@@ -46,6 +46,9 @@
       "Add account": [
         "Pridať účet"
       ],
+      "Add address": [
+        "Pridať adresu"
+      ],
       "Add current URL": [
         "Pridať aktuálnu URL"
       ],
@@ -168,6 +171,9 @@
       ],
       "Collapse": [
         "Zbaliť"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Zatvoriť upozornenia systému Pass Monitor"
       ],
       "Confirm": [
         "Potvrdiť"
@@ -325,6 +331,9 @@
       "Dismiss": [
         "Odmietnuť"
       ],
+      "Dismiss notification": [
+        "Zavrieť notifikáciu"
+      ],
       "Do not show again": [
         "Už nezobrazovať"
       ],
@@ -376,6 +385,9 @@
       "Expand": [
         "Rozbaliť"
       ],
+      "Expand Pass Monitor alerts": [
+        "Otovirť upozornenia systému Pass Monitor"
+      ],
       "Export": [
         "Exportovať"
       ],
@@ -418,6 +430,9 @@
       "Go back": [
         "Späť"
       ],
+      "Go to today": [
+        "Prejsť na dnešok"
+      ],
       "Hide": [
         "Skryť"
       ],
@@ -432,6 +447,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Ako používať ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignorovať"
       ],
       "Import": [
         "Importovať"
@@ -562,6 +580,9 @@
       "OK": [
         "OK"
       ],
+      "Open item": [
+        "Otvoriť položku"
+      ],
       "Open navigation": [
         "Otvoriť menu"
       ],
@@ -636,6 +657,9 @@
       ],
       "Remove member": [
         "Odstániť člena"
+      ],
+      "Remove passkey": [
+        "Odstrániť prístupový kľúč"
       ],
       "Rename": [
         "Premenovať"
@@ -780,6 +804,9 @@
       ],
       "To mailbox": [
         "Do poštovej schránky"
+      ],
+      "Toggle section": [
+        "Prepnúť sekciu"
       ],
       "Transfer aliases": [
         "Presunúť aliasy"
@@ -939,6 +966,12 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } ďalší",
+        "${ count } ďalšie",
+        "${ count } ďalších",
+        "${ count } ďalších"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } je k dispozícii s plateným plánom. Pre okamžitý prístup upgradujte."
       ],
@@ -1034,6 +1067,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Toto prihlasovacie heslo sa objavilo v súvislosti s únikom údajov. Navštívte danú službu a zmeňte si heslo, prosím."
+      ],
+      "This login uses the same password as another item.": [
+        "Toto prihlásenie používa rovnaké heslo ako iná položka."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Táto služba ponúka 2FA. Aktiváciou tejto funkcie zvýšite bezpečnosť účtu."
@@ -1375,11 +1411,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Zlyhala aktualizácia nastavení ${ PROTON_SENTINEL_NAME }"
       ],
-      "Failed updating monitor flag of the item": [
-        "Aktualizácia príznaku sledovania položky zlyhala"
-      ],
       "Failed updating monitoring status for this email address": [
         "Aktualizácia stavu monitorovania tejto emailovej adresy zlyhala"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Aktualizácia stavu monitorovania tejto položky zlyhala"
       ],
       "File could not be parsed": [
         "Súbor sa nepodarilo analyzovať"
@@ -1904,6 +1940,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
       ],
+      "Alert restored": [
+        "Varovanie bolo obnovené"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias bol úspešne deaktivovaný. Už nebudete dostávať emaily odoslané na adresu ${ item.aliasEmail }"
       ],
@@ -2020,6 +2059,9 @@
       ],
       "Canceled by user": [
         "Zrušené používateľom"
+      ],
+      "Check ignored": [
+        "Kontrola bola ignorovaná"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total } hesiel"
@@ -5461,6 +5503,9 @@
       "Minicalendar": [
         "Minikalendár"
       ],
+      "Missing 2FA": [
+        "Chýbajúca 2FA"
+      ],
       "Modified": [
         "Upravené"
       ],
@@ -5529,6 +5574,9 @@
       ],
       "Our welcome gift to you": [
         "Náš uvítací darček pre vás"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Prístupový kľúč"
@@ -5604,6 +5652,9 @@
         "Použité ${ count }-krát",
         "Použité ${ count }-krát",
         "Použité ${ count }-krát"
+      ],
+      "Reused password": [
+        "Viacnásobne použité heslo"
       ],
       "Reused passwords": [
         "Opakovane použité heslá"

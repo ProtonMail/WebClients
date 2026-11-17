@@ -46,6 +46,9 @@
       "Add account": [
         "Добавить аккаунт"
       ],
+      "Add address": [
+        "Добавить адрес"
+      ],
       "Add current URL": [
         "Добавить текущий URL"
       ],
@@ -117,6 +120,9 @@
       ],
       "Bulk restore items from trash": [
         "Множественное восстановление элементов из корзины"
+      ],
+      "Bulk select items": [
+        "Множественный выбор элементов"
       ],
       "Cancel": [
         "Отменить"
@@ -328,6 +334,9 @@
       "Done": [
         "Готово"
       ],
+      "Download for Linux": [
+        "Скачать для Linux"
+      ],
       "Download for macOS": [
         "Скачать для macOS"
       ],
@@ -406,6 +415,9 @@
       "Hide": [
         "Скрыть"
       ],
+      "Hide passwords": [
+        "Скрыть пароли"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Как экспортировать или данные из${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -414,6 +426,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Как использовать ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Игнорировать"
       ],
       "Import": [
         "Импортировать"
@@ -508,6 +523,9 @@
       "Move all items": [
         "Перенести все элементы"
       ],
+      "Move folder": [
+        "Переместить папку"
+      ],
       "Move to": [
         "Переместить в"
       ],
@@ -516,6 +534,9 @@
       ],
       "Move to Trash": [
         "Переместить в корзину"
+      ],
+      "Multiple select": [
+        "Множественный выбор"
       ],
       "New token": [
         "Новый токен"
@@ -540,6 +561,9 @@
       ],
       "Open navigation": [
         "Открыть панель навигации"
+      ],
+      "Open the browser again": [
+        "Откройте браузер снова"
       ],
       "Organize vaults": [
         "Управление хранилищами"
@@ -624,6 +648,9 @@
       ],
       "Reset": [
         "Сбросить"
+      ],
+      "Reset filters": [
+        "Сбросить фильтры"
       ],
       "Reset history": [
         "Сбросить историю"
@@ -729,6 +756,9 @@
       ],
       "Submitting report...": [
         "Отправка отчёта..."
+      ],
+      "Switch vault": [
+        "Переключить хранилище"
       ],
       "Sync alias": [
         "Синхронизировать псевдоним",
@@ -916,8 +946,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псевдоним электронной почты работает так же, как и адрес электронной почты, но при этом уменьшает количество спама и сохраняет в тайне ваш реальный адрес электронной почты и вашу личность."
       ],
+      "Change these passwords immediately": [
+        "Немедленно смените эти пароли"
+      ],
       "Change your passwords": [
         "Измените ваши пароли"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Проверка ${ compromised.progress.completed } из ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Создать уникальный пароль"
@@ -972,6 +1008,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Этот аккаунт уязвим, посетите службу и смените пароль."
+      ],
+      "This login uses the same password as another item.": [
+        "Этот логин использует тот же пароль, что и другой элемент."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Эта служба предлагает двухфакторную аутентификацию. Включите ее, чтобы обеспечить дополнительную безопасность аккаунта."
@@ -1220,6 +1259,9 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Сбой при перемещении всех элементов из \"${ payload.content.name }\""
       ],
+      "Failed to move folder": [
+        "Не удалось переместить папку"
+      ],
       "Failed to move items": [
         "Не удалось переместить элементы"
       ],
@@ -1291,9 +1333,6 @@
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Не удалось обновить настройки ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Failed updating monitor flag of the item": [
-        "Не удалось обновить флаг монитора элемента"
       ],
       "Failed updating monitoring status for this email address": [
         "Не удалось обновить состояние мониторинга для этого адреса электронной почты"
@@ -1368,7 +1407,7 @@
         "Время запроса истекло"
       ],
       "Requesting alias options failed": [
-        "Сбой при запросе вариантов псевдонимов"
+        "Сбой при запросе параметров псевдонимов"
       ],
       "Restoring item failed": [
         "Ошибка при восстановлении элемента"
@@ -1474,6 +1513,9 @@
       ],
       "Unsupported Bitwarden file format": [
         "Неподдерживаемый формат файла Bitwarden"
+      ],
+      "Unsupported file type": [
+        "Неподдерживаемый тип файла"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Сбой при обновлении хранилища \"${ payload.content.name }\""
@@ -1788,6 +1830,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Токены доступа, используемые совместно с ${ passCliLink }, позволяют автоматизировать CI/CD или предоставить вашему ИИ-агенту ограниченный доступ к тому, что ему необходимо для выполнения работы."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Добавьте способ оплаты, чтобы ваша подписка сохранялась после окончания пробного периода."
+      ],
       "Add your custom email address to monitor:": [
         "Добавьте свой пользовательский адрес электронной почты для мониторинга:"
       ],
@@ -1913,6 +1958,15 @@
       ],
       "Can view this item.": [
         "Можно просматривать этот элемент."
+      ],
+      "Canceled by user": [
+        "Отменено пользователем"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Проверка ${ compromised.progress.completed } из ${ compromised.progress.total } паролей"
+      ],
+      "Choose how you want to sign in": [
+        "Выбери способ входа"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Подтвердите дополнительный пароль, чтобы продолжить его удаление."
@@ -2085,11 +2139,17 @@
       "Failed updating your vault organization": [
         "Не удалось обновить организацию вашего хранилища"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Поле скрыто. Вы по-прежнему можете использовать автозаполнение."
+      ],
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Найдите службу «Агент проверки подлинности OpenSSH», щелкните правой кнопкой мыши и выберите «Свойства»."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Папка \"${ payload.folder.name }\" перемещена"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выполните эти шаги, чтобы импортировать данные с помощью стандартного CSV:"
@@ -2142,6 +2202,9 @@
       "Import the CSV file below.": [
         "Импортируйте файл CSV ниже."
       ],
+      "Important:": [
+        "Важно:"
+      ],
       "Imported on ${ date }": [
         "Импортировано ${ date }"
       ],
@@ -2176,7 +2239,7 @@
         "приглашает вас получить доступ к элементам в"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если ты пытаешься войти с другой учётной записью, пожалуйста, сначала выйдите из расширения."
+        "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если вы пытаетесь войти с другого аккаунта, пожалуйста, сначала выйдите из расширения."
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Элемент \"${ payload.item.data.metadata.name }\" создан"
@@ -2289,6 +2352,9 @@
       "Moving items": [
         "Перемещение элементов"
       ],
+      "Moving items to another vault will erase their secure links.": [
+        "Перемещение элементов в другое хранилище удалит их защищенные ссылки."
+      ],
       "Moving items to trash": [
         "Перемещение элементов в Корзину"
       ],
@@ -2357,6 +2423,9 @@
       ],
       "Pass Plus trial": [
         "Пробная версия Pass Plus"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Пароль скрыт. Вы по-прежнему можете использовать автозаполнение."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Блокировка паролем успешно выполнена. Используйте его для разблокировки ${ PASS_APP_NAME }"
@@ -2565,6 +2634,9 @@
       "Restoring trashed items...": [
         "Восстановление элементов из корзины..."
       ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Отсканируйте, чтобы загрузить приложение ${ PASS_APP_NAME } для iOS и Android"
+      ],
       "Secure links": [
         "Защищенные ссылки"
       ],
@@ -2681,6 +2753,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Дополнительный пароль потребуется для использования ${ PASS_APP_NAME }. Он действует как дополнительный пароль поверх вашего пароля ${ BRAND_NAME }."
+      ],
+      "The folder is already here": [
+        "Папка уже здесь"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Следующий ${ totalIgnored } элемент не может быть импортирован:",
@@ -2990,6 +3065,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Ваш сеанс не может быть авторизован."
       ]
     },
     "Keyboard key": {
@@ -3174,6 +3252,9 @@
       ],
       "Account Type": [
         "Тип аккаунта"
+      ],
+      "Add a payment method": [
+        "Добавить способ оплаты"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Добавьте случайный префикс для этого домена при создании нового псевдонима."
@@ -3697,11 +3778,17 @@
       "LinkedIn account": [
         "Аккаунт LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Имя пользователя"
       ],
       "Logins": [
         "Имена пользователей"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Почтовые ящики"
@@ -4290,6 +4377,9 @@
       ],
       "WiFi network": [
         "Сеть WiFi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Информация о работе"
@@ -4895,6 +4985,9 @@
       "Activity for \"${ token.Name }\"": [
         "Активность для «${ token.Name }»"
       ],
+      "Add an account": [
+        "Добавить аккаунт"
+      ],
       "Add custom domain": [
         "Добавить пользовательский домен"
       ],
@@ -4946,6 +5039,12 @@
       "Clear clipboard": [
         "Очистить буфер обмена"
       ],
+      "Compromised password": [
+        "Пароль под угрозой"
+      ],
+      "Compromised passwords": [
+        "Пароли под угрозой"
+      ],
       "Confirm extra password": [
         "Подтвердить дополнительный пароль"
       ],
@@ -4960,6 +5059,9 @@
       ],
       "Contacts": [
         "Контакты"
+      ],
+      "Continue in your browser": [
+        "Продолжите в браузере"
       ],
       "Create a vault": [
         "Создать хранилище"
@@ -5063,6 +5165,9 @@
       "Folder options": [
         "Параметры папки"
       ],
+      "Get mobile apps": [
+        "Получить мобильные приложения"
+      ],
       "Get Started": [
         "Начать"
       ],
@@ -5098,6 +5203,9 @@
       ],
       "Item": [
         "Элемент"
+      ],
+      "Keep your subscription active": [
+        "Сохраните свою подписку"
       ],
       "Last autofill": [
         "Последнее автозаполнение"
@@ -5141,11 +5249,17 @@
       "Modified": [
         "Изменено"
       ],
+      "Move \"${ folderName }\" to": [
+        "Переместить \"${ folderName }\" в"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Переместить ${ trashedItemsCount } элемент в Корзину?",
         "Переместить ${ trashedItemsCount } элемента в Корзину?",
         "Переместить ${ trashedItemsCount } элементов в Корзину?",
         "Переместить ${ trashedItemsCount } элементов в Корзину?"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Переместить все элементы в \"${ target }\"?"
       ],
       "MX record": [
         "Запись MX"
@@ -5155,6 +5269,9 @@
       ],
       "No access tokens yet": [
         "Токенов доступа пока нет"
+      ],
+      "No compromised passwords": [
+        "Нет паролей под угрозой"
       ],
       "No excluded items": [
         "Нет исключенных элементов"
@@ -5302,6 +5419,12 @@
       ],
       "Shared via": [
         "Совместное использование через"
+      ],
+      "Sign in timed out": [
+        "Время ожидания на вход истекло"
+      ],
+      "Signing you in": [
+        "Выполняется вход"
       ],
       "Something went wrong": [
         "Что-то пошло не так"
@@ -5623,6 +5746,9 @@
       "Move to trash": [
         "Переместить в корзину"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Перемещение папки сюда превысит максимальный уровень вложенности папок"
+      ],
       "No items": [
         "Нет элементов"
       ],
@@ -5727,6 +5853,9 @@
       ],
       "Verification code is required": [
         "Требуется код подтверждения"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Вы не можете переместить папку саму в себя или в ее подпапки"
       ],
       "You have reached the limit of members who can access this item.": [
         "Вы достигли предела количества пользователей, которые могут получить доступ к этому элементу."
