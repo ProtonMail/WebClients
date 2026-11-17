@@ -178,9 +178,6 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } holen"
       ],
-      "Get in touch": [
-        "Kontakt aufnehmen"
-      ],
       "Get the apps": [
         "Apps herunterladen"
       ],
@@ -229,8 +226,8 @@
       "Keep my subscription": [
         "Behalte mein Abonnement"
       ],
-      "Let's talk": [
-        "Lass uns reden"
+      "Keep paused": [
+        "Pausiert lassen"
       ],
       "Manage advanced account protections": [
         "Erweiterte Konto-Sicherheitsmaßnahmen verwalten"
@@ -339,6 +336,12 @@
       ],
       "Reset all": [
         "Alle zurücksetzen"
+      ],
+      "Retry action": [
+        "Aktion wiederholen"
+      ],
+      "Review interrupted action": [
+        "Unterbrochenen Aktion überprüfen"
       ],
       "Save": [
         "Speichern"
@@ -1823,6 +1826,24 @@
       "Please try asking a different question or making a different request.": [
         "Versuche bitte, eine andere Frage zu stellen oder eine andere Anfrage zu formulieren."
       ],
+      "Reading all of this file takes more processing than your plan has left, so ${ LUMO_SHORT_APP_NAME } answered without reading all of it.": [
+        "Das Einlesen der Datei erfordert mehr Rechenleistung, als in deinem Abonnement noch verfügbar ist, daher antwortete ${ LUMO_SHORT_APP_NAME }, ohne die Datei einzulesen.",
+        "Das Einlesen all dieser Dateien erfordert mehr Rechenleistung, als in deinem Abonnement noch verfügbar ist, daher antwortete ${ LUMO_SHORT_APP_NAME } ohne, alle Dateien einzulesen."
+      ],
+      "Reading this file takes more processing than your plan has left, so ${ LUMO_SHORT_APP_NAME } didn't start.": [
+        "Das Lesen dieser Datei erfordert mehr Rechenleistung, als in deinem Abonnement noch verfügbar ist, daher wurde ${ LUMO_SHORT_APP_NAME } nicht gestartet.",
+        "Das Lesen dieser Dateien erfordert mehr Rechenleistung, als in deinem Abonnement noch verfügbar ist, daher wurde ${ LUMO_SHORT_APP_NAME } nicht gestartet."
+      ],
+      "Reading this file takes more processing than your plan has left. Remove it to send your message.": [
+        "Das Einlesen dieser Datei beansprucht mehr Rechenleistung, als in deinem Abonnement noch verfügbar ist. Entferne sie, um deine Nachricht senden zu können.",
+        "Das Einlesen dieser Dateien beansprucht mehr Rechenleistung, als in deinem Abonnement noch verfügbar ist. Entferne sie, um deine Nachricht senden zu können."
+      ],
+      "Sign up for free to work with larger files.": [
+        "Registriere dich kostenlos, um mit größeren Dateien arbeiten zu können."
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to work with large files.": [
+        "Wechsle zu ${ LUMO_SHORT_APP_NAME }-Plus, um mit großen Dateien arbeiten zu können."
+      ],
       "We're experiencing unusually high demand. If retrying doesn't work, check back in a few minutes or upgrade for priority access to ${ LUMO_SHORT_APP_NAME }.": [
         "Die Nachfrage ist ungewöhnlich hoch. Wenn ein erneuter Versuch nicht funktioniert, schau in ein paar Minuten wieder vorbei oder upgrade für priorisierten Zugang zu ${ LUMO_SHORT_APP_NAME }."
       ],
@@ -1852,6 +1873,9 @@
       "Looks like there's a lot of traffic": [
         "Es sieht so aus, als gäbe es viel Verkehr"
       ],
+      "Sign up to work with larger files": [
+        "Registrieren, um größere Dateien bearbeiten zu können"
+      ],
       "Something went wrong": [
         "Etwas ist schiefgelaufen"
       ],
@@ -1860,6 +1884,9 @@
       ],
       "Too many requests": [
         "Zu viele Anfragen"
+      ],
+      "Upgrade to work with larger files": [
+        "Umsteigen, um größere Dateien bearbeiten zu können"
       ],
       "You've reached a model limit": [
         "Du hast einen Grenzwert des Modells erreicht"
@@ -3822,9 +3849,6 @@
       "Add more information to improve the response": [
         "Füge weitere Informationen hinzu, um die Antwort zu verbessern"
       ],
-      "Add plugin": [
-        "Plugin hinzufügen"
-      ],
       "Add row below": [
         "Zeile unterhalb einfügen"
       ],
@@ -3887,6 +3911,9 @@
       ],
       "Choose project icon": [
         "Projektsymbol auswählen"
+      ],
+      "Choose skill icon": [
+        "Symbol für den Skill auswählen"
       ],
       "Clear search": [
         "Suche entfernen"
@@ -4022,6 +4049,9 @@
       ],
       "Expand": [
         "Vergrößern"
+      ],
+      "Expand ${ skill.name }": [
+        "${ skill.name } erweitern"
       ],
       "Explain": [
         "Erklären"
@@ -4256,6 +4286,9 @@
       ],
       "Schedule task: ${ taskName }": [
         "Aufgabe planen: ${ taskName }"
+      ],
+      "See how": [
+        "Vorgehensweise"
       ],
       "Select": [
         "Auswählen"
@@ -4845,9 +4878,6 @@
       ],
       "We could not read this file. Select it again, or move it out of cloud storage before uploading.": [
         "Diese Datei konnte nicht eingelesen werden. Wähle sie erneut aus oder verschiebe sie vor dem Hochladen aus dem Cloud-Speicher."
-      ],
-      "You've reached your plan's scheduled task limit (${ scheduleLimit }). Delete a task to create another.": [
-        "Du hast das für dein Abonnement festgelegte Limit für geplante Aufgaben (${ scheduleLimit }) erreicht. Lösche eine Aufgabe, um eine neue erstellen zu können."
       ]
     },
     "collider_2025:Error (validation)": {
@@ -4868,8 +4898,8 @@
       "Unlimited projects": [
         "Unbegrenzte Projekte"
       ],
-      "Up to 3 scheduled tasks": [
-        "Bis zu drei geplante Aufgaben"
+      "Up to ${ plusLimit } scheduled tasks": [
+        "Bis zu ${ plusLimit } planbare Aufgaben"
       ]
     },
     "collider_2025:Filter": {
@@ -4917,9 +4947,9 @@
         "${ count } Fähigkeit · nach ${ author }",
         "${ count } Fähigkeiten · nach ${ author }"
       ],
-      "${ findingCount } thing to review": [
-        "${ findingCount } Punkt, der noch geprüft werden muss",
-        "${ findingCount } Punkte, die noch geprüft werden müssen"
+      "${ fileCount } file": [
+        "${ fileCount } Datei",
+        "${ fileCount } Dateien"
       ],
       "${ lineCount } line": [
         "${ lineCount } Zeile",
@@ -4952,21 +4982,11 @@
       "${ name } completed.": [
         "${ name } abgeschlossen."
       ],
-      "${ pluginCount } plugin": [
-        "${ pluginCount } Erweiterung",
-        "${ pluginCount } Erweiterungen"
-      ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } Unterhaltung"
       ],
       "${ project.conversationCount } conversations": [
         "${ project.conversationCount } Unterhaltungen"
-      ],
-      "${ project.fileCount } file": [
-        "${ project.fileCount } Datei"
-      ],
-      "${ project.fileCount } files": [
-        "${ project.fileCount } Dateien"
       ],
       "${ report.sensitiveCategories.length } sensitive categories": [
         "${ report.sensitiveCategories.length } sensible Kategorien"
@@ -4990,13 +5010,6 @@
       "(latest)": [
         "(Neuste)"
       ],
-      ".md, .zip, .skill or .plugin files, or folders. You can add several at once.": [
-        ".md, .zip. skill oder .plugin Dateien. Es können mehrere gleichzeitig hinzugefügt werden."
-      ],
-      "1 plugin with ${ skillCount } skill ready to add.": [
-        "1 Plugin mit ${ skillCount } Skill kann hinzugefügt werden.",
-        "1 Plugin mit ${ skillCount } Skills kann hinzugefügt werden."
-      ],
       "A long block of encoded data that can't be read as it is.": [
         "Ein langer Block encodierter Daten, welcher nicht ohne Weiteres gelesen werden kann."
       ],
@@ -5005,9 +5018,6 @@
       ],
       "Add a file to continue.": [
         "Füge eine Datei hinzu, um fortzufahren."
-      ],
-      "Add skills you've written or downloaded. ${ LUMO_SHORT_APP_NAME } checks each one before you add it.": [
-        "Füge Fähigkeiten hinzu, die du verfasst oder heruntergeladen hast. ${ LUMO_SHORT_APP_NAME } überprüft jede einzelne, bevor du sie hinzufügst."
       ],
       "Added": [
         "Hinzugefügt"
@@ -5069,6 +5079,9 @@
       "Ask a question to get started. Your conversation is private.": [
         "Stelle eine Frage, um loszulegen. Dein Gespräch ist vertraulich."
       ],
+      "Ask your organization's administrator for a ${ LUMO_SHORT_APP_NAME } seat to create more scheduled tasks.": [
+        "Bitte den Administrator deiner Organisation um eine ${ LUMO_SHORT_APP_NAME }-Lizenz, um weitere planbare Aufgaben erstellen zu können."
+      ],
       "Auto-retrieved": [
         "Automatisch abgerufen"
       ],
@@ -5077,6 +5090,12 @@
       ],
       "Avoid including names, addresses, financial details, or other identifying information when they are not essential.": [
         "Vermeide es, Namen, Adressen, finanzielle Angaben oder andere identifizierende Informationen anzugeben, wenn diese nicht unbedingt erforderlich sind."
+      ],
+      "Bring skills you've written or downloaded. ${ LUMO_SHORT_APP_NAME } checks each one before you add it.": [
+        "Füge Skills hinzu, die du selbst erstellt oder heruntergeladen hast. ${ LUMO_SHORT_APP_NAME } überprüft jeden einzelnen, bevor du ihn hinzufügst."
+      ],
+      "Bring the skills you made there to ${ LUMO_SHORT_APP_NAME } in a few steps.": [
+        "Füge die dort erworben Skills in wenigen Schritten bei ${ LUMO_SHORT_APP_NAME } ein."
       ],
       "Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to link to this project, then click \"Link this folder\".": [
         "Navigiere zu dem ${ DRIVE_SHORT_APP_NAME }-Ordner, den du mit diesem Projekt verknüpfen möchtest, und klicke dann auf \"Diesen Ordner verknüpfen\"."
@@ -5105,9 +5124,6 @@
       "Checking your plan, try again in a moment.": [
         "Dein Abonnement wird derzeit überprüft. Bitte versuche es in einem Moment erneut."
       ],
-      "Checking…": [
-        "Wird überprüft…"
-      ],
       "Choose a format to export \"${ conversation.title }\":": [
         "Wähle ein Format für den Export von „${ conversation.title }“ aus:"
       ],
@@ -5132,6 +5148,9 @@
       "Code · ${ langLabel }": [
         "Code · ${ langLabel }"
       ],
+      "Connect ${ MAIL_APP_NAME }, your files, Jira, Linear and more, so ${ LUMO_SHORT_APP_NAME } can work with the things you already use.": [
+        "Verbinde ${ MAIL_APP_NAME }, deine Dateien, Jira, Linear und mehr, damit ${ LUMO_SHORT_APP_NAME } mit den Diensten zusammenarbeiten kann, die du bereits nutzt."
+      ],
       "Connect and enable the selected connectors before allowing access, or uncheck them.": [
         "Verbinde die ausgewählten Anschlüsse und aktiviere sie, bevor du den Zugriff erlaubst, oder deaktiviere sie."
       ],
@@ -5143,9 +5162,6 @@
       ],
       "Connectors can send your data to other services.": [
         "Konnektoren können Deine Daten an andere Dienste schicken."
-      ],
-      "Connectors let ${ LUMO_SHORT_APP_NAME } answer using your files, ${ MAIL_APP_NAME }, Slack and more.": [
-        "Mithilfe von Konnektoren kann ${ LUMO_SHORT_APP_NAME } auf deine Dateien, ${ MAIL_APP_NAME }, Slack und vieles mehr zugreifen."
       ],
       "Conversation encrypted": [
         "Unterhaltung verschlüsselt"
@@ -5192,6 +5208,9 @@
       "data points": [
         "Datenpunkte"
       ],
+      "Describe a task and ${ LUMO_SHORT_APP_NAME } drafts the skill for you": [
+        "Beschreibe eine Aufgabe, und ${ LUMO_SHORT_APP_NAME } entwirft den Skill für dich"
+      ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Finde heraus, was die KI von Big Tech aus deinem Chatverlauf über dich zusammensetzen könnte – und erhalte einen Privatsphäre-Score, den du teilen kannst."
       ],
@@ -5201,6 +5220,9 @@
       "Documents, code and webpages created in your chats will appear here.": [
         "In deinen Chats erstellte Dokumente, Code und Webseiten werden hier angezeigt."
       ],
+      "Draft": [
+        "Entwurf"
+      ],
       "Drafting content…": [
         "Inhalt wird entworfen…"
       ],
@@ -5209,9 +5231,6 @@
       ],
       "Drive files are not available for guest users": [
         "Drive-Dateien sind für Gastbenutzer nicht verfügbar"
-      ],
-      "Drop skill files or folders here": [
-        "Lege Dateien oder Ordner für Fähigkeiten hier ab"
       ],
       "Edited by hand": [
         "Manuell bearbeitet"
@@ -5246,17 +5265,14 @@
       "File attached": [
         "Datei angehängt"
       ],
-      "Files and apps are read on your computer, not the cloud": [
-        "Dateien und Apps werden auf deinem Computer verarbeitet, nicht in der Cloud"
-      ],
       "Files from all your projects.": [
         "Dateien aus all deinen Projekten."
       ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Dateien, die in dieses Projekt hochgeladen werden, werden im verknüpften Drive-Ordner gespeichert."
       ],
-      "Folders and plugins can hold several skills, each in its own folder with a SKILL.md.": [
-        "Ordner und Plugins können mehrere Skills enthalten, wobei jeder Skill in einem eigenen Ordner mit einer SKILL.md-Datei abgelegt ist."
+      "Find documents, bookings and messages without switching apps": [
+        "Dokumente, Buchungen und Nachrichten finden, ohne die App zu wechseln"
       ],
       "Follow the prompts to confirm the export": [
         "Folge den Anweisungen, um den Export zu bestätigen"
@@ -5281,6 +5297,12 @@
       ],
       "Image": [
         "Bild"
+      ],
+      "In ChatGPT, open ${ skills } in the sidebar.": [
+        "Öffne in ChatGPT ${ skills } in der Seitenleiste."
+      ],
+      "In Claude, go to ${ customizeSkills }.": [
+        "Öffne in Claude ${ customizeSkills }."
       ],
       "In the pop-up window, click Confirm export": [
         "Klicke im Pop-up-Fenster auf „Export bestätigen“"
@@ -5449,12 +5471,11 @@
       "PASTED": [
         "Eingefügt"
       ],
+      "Paused tasks count toward this limit. Delete a task to create another.": [
+        "Auch angehaltene Aufgaben werden auf dieses Limit angerechnet. Löschen Sie eine Aufgabe, um eine neue erstellen zu können."
+      ],
       "Please upload your AI export before continuing.": [
         "Bitte lade deinen KI-Export hoch, bevor du fortfährst."
-      ],
-      "Plugin with ${ subSkillCount } skill": [
-        "Plugin mit ${ subSkillCount } Skill",
-        "Plugin mit ${ subSkillCount } Skills"
       ],
       "Preparing questions": [
         "Fragen werden vorbereitet"
@@ -5479,6 +5500,13 @@
       ],
       "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
         "Projekten helfen dir, Unterhaltungen mit benutzerdefinierten Anweisungen und Dateien zu organisieren. Melde dich an oder erstelle ein kostenloses Konto, um loszulegen."
+      ],
+      "Ready-made skills for common tasks.": [
+        "Vorgefertigte Skills für gängige Aufgaben."
+      ],
+      "Ready-made skills for common tasks. ${ moreCount } more once you sign in.": [
+        "Vorgefertigte Skills für gängige Aufgaben. ${ moreCount } weitere, sobald du dich angemeldet hast.",
+        "Vorgefertigte Skills für gängige Aufgaben. ${ moreCount } weitere, sobald du dich angemeldet hast."
       ],
       "red flags": [
         "Warnsignale"
@@ -5527,11 +5555,17 @@
       "Sign in to your Claude account at claude.ai": [
         "Melde dich unter claude.ai bei deinem Claude-Konto an"
       ],
-      "Sign-ins and keys stay in your computer's keychain": [
-        "Anmeldedaten und Schlüssel bleiben im Schlüsselbund Ihres Computers gespeichert"
+      "Skill set · ${ skills } · by ${ author }": [
+        "Skill festlegen · ${ skills } · von ${ author }"
       ],
       "Skill unavailable": [
         "Skill nicht verfügbar"
+      ],
+      "Skills": [
+        "Skills"
+      ],
+      "Skills are saved instructions for tasks you do often. Type / in any chat to use one.": [
+        "Skills sind gespeicherte Anweisungen für Aufgaben, die du häufig ausführst. Gib in einem beliebigen Chat „/“ ein, um einen Skill zu verwenden."
       ],
       "Skipped": [
         "Übersprunen"
@@ -5587,14 +5621,14 @@
       "Text formatted with markdown, easy to read or share": [
         "Mit Markdown formatierter Text, der sich leicht lesen und teilen lässt"
       ],
+      "The app closed while an action was running. It may already have completed. Retrying could run it twice.": [
+        "Die App wurde während einer laufenden Aktion geschlossen. Möglicherweise ist diese bereits abgeschlossen. Bei einem erneuten Versuch könnte sie daher zum zweiten Mal ausgeführt werden."
+      ],
       "The fuller the bar, the more of that area Big Tech could reconstruct. Lower is better.": [
         "Je voller der Balken ist, desto mehr von diesem Bereich könnte die großen Tech-Konzerne rekonstruieren. Je niedriger, desto besser."
       ],
       "The more an attacker knows about you, the more believable the phishing message. Personalized scams are far harder to spot.": [
         "Je mehr ein Angreifer über dich weiß, desto glaubwürdiger wirkt die Phishing-Nachricht. Personalisierte Betrugsversuche sind weitaus schwerer zu erkennen."
-      ],
-      "The plugin sets up a connector that doesn't use HTTPS.": [
-        "Das Plugin richtet einen Konnektor ein, welcher kein HTTPS benutzt."
       ],
       "There wasn't enough information in the data you uploaded to build a meaningful profile. Either you haven't used this AI much, or your exported data doesn't contain enough detail for us to make reliable inferences.": [
         "Die von dir hochgeladenen Daten enthielten nicht genügend Informationen, um ein aussagekräftiges Profil zu erstellen. Entweder hast du diese KI noch nicht oft genutzt, oder deine exportierten Daten enthalten nicht genügend Details, um zuverlässige Rückschlüsse ziehen zu können."
@@ -5610,9 +5644,6 @@
       ],
       "This message is empty. Sorry about that.": [
         "Diese Nachricht ist leider leer."
-      ],
-      "This plugin works best with these kinds of tools. ${ LUMO_SHORT_APP_NAME } only uses the connectors you add yourself.": [
-        "Dieses Plugin arbeitet am besten mit diesen Werkzeugen zusammen. ${ LUMO_SHORT_APP_NAME } benutzt nur Konnektoren, die du selbst hinzufügst."
       ],
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Dieses Projekt hat bereits Dateien. Bitte entferne alle Dateien, bevor du einen Drive-Ordner verknüpfst."
@@ -5659,14 +5690,14 @@
       "Updating content…": [
         "Inhalt wird aktualisiert…"
       ],
+      "Upgrade to ${ plan } to create up to ${ plusLimit } scheduled tasks, unlock advanced AI models, and more.": [
+        "Wechseln Sie zum ${ plan }-Abonnement, um bis zu ${ plusLimit } planbare Aufgaben erstellen zu können, erweiterte KI-Modelle freizuschalten und vieles mehr."
+      ],
       "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Wechsle zu ${ PLAN_NAMES[PLANS.LUMO] }, um unbegrenzt viele benutzerdefinierte ${ LUMO_SHORT_APP_NAME } zu erstellen, erweiterte KI-Modelle freizuschalten und vieles mehr."
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited projects, unlock advanced AI models, and more.": [
         "Auf ${ PLAN_NAMES[PLANS.LUMO] } upgraden, um unbegrenzt Projekte zu erstellen, erweiterte KI-Modelle freizuschalten und vieles mehr."
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create up to 3 scheduled tasks, unlock advanced AI models, and more.": [
-        "Wechsle auf ${ PLAN_NAMES[PLANS.LUMO] }, um bis zu drei geplante Aufgaben zu erstellen, erweiterte KI-Modelle freizuschalten und vieles mehr."
       ],
       "Use / to put it in a folder.": [
         "Nutze /, um es in einen Ordner zu schieben."
@@ -5680,6 +5711,10 @@
       "v${ versionNumber }": [
         "V${ versionNumber }"
       ],
+      "We moved your ${ customLumoCount } Custom ${ LUMO_SHORT_APP_NAME } here. It works the same way, and you can now use it in any chat or scheduled task.": [
+        "Dein ${ customLumoCount } benutzerdefiniertes ${ LUMO_SHORT_APP_NAME } wurde hierhin verschoben. Es funktioniert genauso wie zuvor, und du kannst es nun in jedem Chat oder in jeder geplanten Aufgabe verwenden.",
+        "Deine ${ customLumoCount } benutzerdefinierten ${ LUMO_SHORT_APP_NAME } wurden hierhin verschoben. Sie funktionieren genauso wie zuvor, und du kannst sie nun in jedem Chat oder in jeder geplanten Aufgabe verwenden."
+      ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Wir speichern deine Karte, damit du sie an den Post anhängen kannst – soziale Netzwerke können das Bild nicht für dich hinzufügen."
       ],
@@ -5692,14 +5727,17 @@
       "When this task ran.": [
         "Als diese Aufgabe ausgeführt wurde."
       ],
+      "With the ${ LUMO_SHORT_APP_NAME } desktop app, connect ${ MAIL_APP_NAME }, your files, Jira, Linear and more, so ${ LUMO_SHORT_APP_NAME } can work with the things you already use.": [
+        "Mit der Desktop-App ${ LUMO_SHORT_APP_NAME } kannst du ${ MAIL_APP_NAME }, deine Dateien, Jira, Linear und vieles mehr miteinander verbinden, sodass ${ LUMO_SHORT_APP_NAME } nahtlos mit den Diensten zusammenarbeitet, die du bereits nutzt."
+      ],
       "Works for this category": [
         "Funktioniert für diese Kategorie"
       ],
       "You": [
         "Du"
       ],
-      "You choose exactly what each connector can access": [
-        "Du legst selbst fest, auf welche Daten jeder Konnektor zugreifen darf"
+      "You decide what ${ LUMO_SHORT_APP_NAME } does on its own and what needs your OK": [
+        "Du entscheidest, was ${ LUMO_SHORT_APP_NAME } eigenständig erledigt und wofür deine Zustimmung erforderlich ist"
       ],
       "You don't have any other projects yet.": [
         "Es wurden noch keine anderen Projekte angelegt."
@@ -5715,6 +5753,13 @@
       ],
       "You're viewing version ${ versionNumber } of ${ versionCount }, from ${ time }.": [
         "Du siehst gerade Version ${ versionNumber } von ${ versionCount }, vom ${ time }."
+      ],
+      "Your current plan includes up to ${ scheduleLimit } scheduled task.": [
+        "Dein aktuelles Abo umfasst bis zu ${ scheduleLimit } planbaren Aufgabe.",
+        "Dein aktuelles Abo umfasst bis zu ${ scheduleLimit } planbare Aufgaben."
+      ],
+      "Your data is never used to train AI": [
+        "Deine Daten werden niemals zum Trainieren der KI verwendet"
       ],
       "Your default email app will open a draft with these details. Review them before continuing.": [
         "Deine Standard-E-Mail-App öffnet einen Entwurf mit diesen Angaben. Überprüfe diese, bevor du fortfährst."
@@ -5736,6 +5781,9 @@
       ],
       "Your report is stored unencrypted in this browser only. It never leaves your device and is not sent to ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Dein Bericht wird ausschließlich in diesem Browser unverschlüsselt gespeichert. Er verlässt dein Gerät zu keinem Zeitpunkt und wird nicht an die Server von ${ LUMO_SHORT_APP_NAME } gesendet."
+      ],
+      "Your skills are folders in ${ path } (older setups use ${ legacyPath }).": [
+        "Deine Skills befinden sich in Ordnern unter ${ path } (bei älteren Installationen unter ${ legacyPath })."
       ],
       "You’ll receive your data export as a download link to your email. This may take some time depending on the size of your export, and is not available for Business or Enterprise accounts.": [
         "Du erhältst deinen Datenexport als Download-Link per E-Mail. Je nach Umfang deines Exports kann dies einige Zeit dauern; für Business- oder Enterprise-Konten ist diese Funktion nicht verfügbar."
@@ -5873,9 +5921,6 @@
       ],
       "Auto-approve on": [
         "Automatisches Genehmigen aktivieren"
-      ],
-      "Basic content check": [
-        "Einfache Inhalts-Prüfung"
       ],
       "Batch File": [
         "Stapelverarbeitungsdatei"
@@ -6261,9 +6306,6 @@
       "NE": [
         "NO"
       ],
-      "New file path": [
-        "Neuer Dateipfad"
-      ],
       "NNE": [
         "NNO"
       ],
@@ -6332,9 +6374,6 @@
       ],
       "Plotting purr-fect data…": [
         "Daten perfekt darstellen …"
-      ],
-      "Plugin name": [
-        "Plugin-Name"
       ],
       "PNG Image": [
         "PNG-Bild"
@@ -6561,9 +6600,6 @@
       "What AI Knows About Me": [
         "Was die KI über mich weiß"
       ],
-      "What can I upload?": [
-        "Was kann ich hochladen?"
-      ],
       "What should ${ LUMO_SHORT_APP_NAME } do each time?": [
         "Was soll ${ LUMO_SHORT_APP_NAME } jedes Mal ausführen?"
       ],
@@ -6722,9 +6758,6 @@
       "Search library": [
         "Bibliothek durchsuchen"
       ],
-      "Search plugins": [
-        "Plugins durchsuchen"
-      ],
       "Search skills": [
         "Skills durchsuchen"
       ],
@@ -6820,6 +6853,26 @@
       ],
       "Writing": [
         "Schreiben"
+      ]
+    },
+    "collider_2025:Plugin summary": {
+      "Clean spreadsheets, charts and dashboards.": [
+        "Übersichtliche Tabellen, Diagramme und Übersichten."
+      ],
+      "Draft, edit and translate in your own voice.": [
+        "Entwerfe, bearbeite und übersetze in deinem eigenen Stil."
+      ],
+      "Meetings and inboxes into plans and replies.": [
+        "Meetings und Posteingänge werden zu Plänen und Antworten."
+      ],
+      "Slide decks, one-pagers and explainers.": [
+        "Präsentationen, Ein-Seiten-Übersichten und Erläuterungen."
+      ],
+      "Sourced reports and fact-checks.": [
+        "Quellenangaben und Faktenprüfungen."
+      ],
+      "Spot phishing, redact data, read policies.": [
+        "Phishing erkennen, Daten schwärzen, Richtlinien lesen."
       ]
     },
     "collider_2025:Prefill": {
@@ -7547,9 +7600,6 @@
       "Creations": [
         "Kreationen"
       ],
-      "Discover plugins": [
-        "Plugins entdecken"
-      ],
       "Gallery": [
         "Galerie"
       ],
@@ -7617,6 +7667,9 @@
       "Better web search": [
         "Bessere Web-Suche"
       ],
+      "Bring your apps and files into ${ LUMO_SHORT_APP_NAME }": [
+        "Übertrage deine Apps und Dateien in ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Building your AI Paper Trail": [
         "Deine KI-Dokumentationskette wird erstellt"
       ],
@@ -7640,9 +7693,6 @@
       ],
       "Connectors & tools": [
         "Konnektoren & Werkzeuge"
-      ],
-      "Connectors run in the ${ LUMO_SHORT_APP_NAME } desktop app": [
-        "Konnektoren laufen in der Desktop-App ${ LUMO_SHORT_APP_NAME }"
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Benutzerdefinierte ${ LUMO_SHORT_APP_NAME } erstellen"
@@ -7691,9 +7741,6 @@
       ],
       "Edit Instructions": [
         "Anweisungen bearbeiten"
-      ],
-      "Edit plugin": [
-        "Erweiterung bearbeiten"
       ],
       "Edit Project": [
         "Projekt bearbeiten"
@@ -7791,14 +7838,17 @@
       "More Projects with ${ PLAN_NAMES[PLANS.LUMO] }": [
         "Mehr Projekte mit ${ PLAN_NAMES[PLANS.LUMO] }"
       ],
-      "More scheduled tasks with ${ PLAN_NAMES[PLANS.LUMO] }": [
-        "Weitere geplante Aufgaben mit ${ PLAN_NAMES[PLANS.LUMO] }"
+      "More scheduled tasks with ${ plan }": [
+        "Weitere planbare Aufgaben mit ${ plan }"
       ],
       "Most revealing": [
         "Am aufschlussreichsten"
       ],
       "Move to project": [
         "In Projekt verschieben"
+      ],
+      "Moving from Claude or ChatGPT?": [
+        "Möchtest du von Claude oder ChatGPT wechseln?"
       ],
       "My AI paper trail": [
         "Mein KI-Aktivitätsverlauf"
@@ -7842,9 +7892,6 @@
       "Oversharing blind spots": [
         "Blinde Flecken beim Oversharing"
       ],
-      "Plugins from ${ BRAND_NAME }": [
-        "Erweiterungen von ${ BRAND_NAME }"
-      ],
       "Prepare ahead": [
         "Im Voraus vorbereiten."
       ],
@@ -7862,6 +7909,9 @@
       ],
       "Report at a glance": [
         "Bericht auf einen Blick"
+      ],
+      "Retry interrupted action?": [
+        "Unterbrochene Aktion erneut ausführen?"
       ],
       "Review privacy settings": [
         "Datenschutzeinstellungen überprüfen"
@@ -7917,6 +7967,9 @@
       "Skills & tools": [
         "Skills und Tools"
       ],
+      "Skills from ${ BRAND_NAME }": [
+        "Skills von ${ BRAND_NAME }"
+      ],
       "Sort by": [
         "Sortieren nach"
       ],
@@ -7931,6 +7984,9 @@
       ],
       "Start from a template": [
         "Mit einer Vorlage beginnen"
+      ],
+      "Teach ${ LUMO_SHORT_APP_NAME } how you work": [
+        "Bringe ${ LUMO_SHORT_APP_NAME } bei, wie du arbeitest"
       ],
       "Templates hidden": [
         "Vorlagen ausgeblendet"
@@ -7994,6 +8050,9 @@
       ],
       "You saw the profile? Now protect the person behind it.": [
         "Hast du das Profil gesehen? Dann schütze jetzt die Person dahinter."
+      ],
+      "You've reached your scheduled task limit": [
+        "Das festgelegte Limit für planbare Aufgaben wurde erreicht"
       ],
       "Your image gallery is empty": [
         "Deine Bildergalerie ist leer"
@@ -9620,6 +9679,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
       ]
     },
     "fido2: Info": {
@@ -10786,6 +10848,9 @@
       "Calls NativeComposerApi.onLimitReachedError directly (skips the toast flow).": [
         "Ruft NativeComposerApi.onLimitReachedError direkt auf (überspringt den Toast-Flow)."
       ],
+      "Clear": [
+        "Leeren"
+      ],
       "Clear History": [
         "Verlauf löschen"
       ],
@@ -10797,6 +10862,9 @@
       ],
       "Compaction": [
         "Verdichtung"
+      ],
+      "Composer card": [
+        "Eingabefeld"
       ],
       "Composer limit banner preview": [
         "Limit-Banner-Vorschau für das Verfassen-Fenster"
@@ -10860,6 +10928,9 @@
       ],
       "Lag": [
         "Verzögerung"
+      ],
+      "Large file upsell": [
+        "Upgrade für große Dateien"
       ],
       "Last token": [
         "Letzter Token"
@@ -10948,6 +11019,9 @@
       "Preview empty usage": [
         "Anzeigen nicht genutzter Daten"
       ],
+      "Previews the \"Upgrade to work with larger files\" card with a sample file. Composer card: shown above the composer as when a large file is attached, and Send is held back while it is on. In chat: the card under the conversation, for a send stopped before reading or a reply given without reading the whole file (open a conversation first). Hidden for Plus accounts. Not persisted.": [
+        "Zeigt eine Vorschau der Karte „Umsteigen, um größere Dateien bearbeiten zu können“ anhand einer Beispieldatei an. Verfassen-Karte: Wird über dem Fenster „Verfassen“ angezeigt, wenn eine große Datei angehängt ist, und das Senden wird zurückgehalten, solange die Karte angezeigt wird. Im Chat: Die Karte unterhalb der Unterhaltung, wenn das Senden vor dem Lesen gestoppt wurde oder eine Antwort gegeben wurde, ohne die gesamte Datei gelesen zu haben (zuerst eine Unterhaltung öffnen). Bei Plus-Konten ausgeblendet. Wird nicht gespeichert."
+      ],
       "Rate": [
         "Rate"
       ],
@@ -10998,6 +11072,12 @@
       ],
       "Server message limit (current chat)": [
         "Nachrichtenlimit des Servers (aktueller Chat)"
+      ],
+      "Show in chat: answered without reading": [
+        "Im Chat anzeigen: ungelesen beantwortet"
+      ],
+      "Show in chat: send stopped": [
+        "Im Chat anzeigen: Senden angehalten"
       ],
       "Show sample usage": [
         "Anwendungsbeispiel anzeigen"
@@ -12241,12 +12321,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (zzgl. MwSt.)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kann nicht mit ${ PLAN_NAMES[PLANS.PASS] } kombiniert werden."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ist nur in Unternehmensabonnements verfügbar."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate } % Steuern: ${ taxAmountElement }"
       ],
@@ -12256,17 +12330,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Betrag fällig nach der Testversion am ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Für dieses Abonnement ist eine Organisation erforderlich."
-      ],
       "Billing Country": [
         "Rechnungsland"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "„Born Private“-Konten können während eines aktiven Abonnements nicht erworben werden."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Der Erwerb von Guthaben erfordert einen separaten Kauf."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Mit dem Wechsel erklärst du dich mit unseren ${ termsLink } einverstanden."
@@ -12310,9 +12375,6 @@
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Es kann nur ein ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } erworben werden."
-      ],
       "Paid from your account credit.": [
         "Die Zahlung erfolgt über dein Kontoguthaben."
       ],
@@ -12325,29 +12387,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "Der Tarifwechsel ist aus folgenden Gründen nicht möglich:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Bitte schließe alle zusätzlichen Wallet-Konten, bevor du dein Abonnement wechselst."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Bitte schließe alle zusätzlichen Wallets, bevor du dein Abonnement wechselst."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
       ],
       "Processing payment": [
         "Zahlungsabwicklung"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Die Anzahl der Plätze bei Proton Meet muss mit der Anzahl der Teilnehmer übereinstimmen."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Die Preise für Verlängerungen können sich gemäß ${ termsAndConditionsLink } ändern."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Die Anzahl der Scribe-Lizenzen darf die Anzahl der Mitglieder nicht übersteigen."
       ],
       "Tax ${ rate }%": [
         "Steuer ${ rate } %"
@@ -12358,24 +12408,9 @@
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Für die Initiative „Born Private“ ist eine Spende erforderlich."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerung gültig.",
         "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerungen gültig."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Das ausgewählte Abonnement bietet eine zu geringe Anzahl an Adressen für dein Konto."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Das ausgewählte Abonnement bietet nicht genügend Domains für dein Konto."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Der ausgewählte Tarif bietet dir eine zu geringe Anzahl an Mitgliedern für dein Konto."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Das ausgewählte Abonnement bietet nicht genügend Speicherplatz für dein Konto."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monat gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
@@ -12406,41 +12441,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Diese Aktion erweitert dein bestehendes Abonnement. Dir werden nur die neuen Ergänzungen für die verbleibende Zeit des aktuellen Abrechnungszeitraums in Rechnung gestellt. Das Verlängerungsdatum deines Abonnements wird nicht geändert."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Dieser dedizierte Server ist einem Gateway zugewiesen und kann nicht geändert werden."
-      ],
       "This offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement nicht verfügbar."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Diese Zahlungsmethode wird dein neuer Standard für alle zukünftigen Verlängerungen."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Dieser Tarif unterstützt für dein Konto keine Verwaltungsfunktionen."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Dieses Abonnement bietet keine Unterstützung für die Mitglieder deines Kontos."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Dieses Abonnement kann derzeit nicht abgeschlossen werden. Bitte versuche es erneut."
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Testversionen unterstützen keine ${ LUMO_SHORT_APP_NAME }-Lizenzen."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Testversionen unterstützen keine eigenen Domains."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Testversionen unterstützen keine dedizierten IP-Adressen."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Testversionen unterstützen keine Scribe-Lizenzen."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Testversionen unterstützen nicht so viele Mitglieder."
       ],
       "VAT number": [
         "Umsatzsteuernummer"
@@ -12454,12 +12465,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du hast dieses Abonnement bereits. Du kannst dein Abonnement auf ${ subscriptionPlatform } ändern."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du besitzt bereits ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Du besitzt bereits ein „Born Private“-Konto."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du wirst mit ${ amountToCharge } von der von dir gewählten Zahlungsmethode belastet."
       ],
@@ -12468,9 +12473,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Dein Konto ist zu alt für die „Born Private“-Initiative."
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
