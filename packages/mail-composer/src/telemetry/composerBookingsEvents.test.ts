@@ -2,6 +2,7 @@ import { renderHook } from '@testing-library/react';
 
 import { TelemetryComposerBookingsEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { mockTracker } from '@proton/telemetry-tracker/testing';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import {
     BookingLimitReason,
@@ -31,6 +32,7 @@ const baseDimensions = {
     subscription: 'mail2022',
     audience: 'b2c',
     cycle: '12',
+    editorVersion: 'roosterjs-8',
 };
 
 describe('getBookingPageCountDimension', () => {
@@ -55,6 +57,7 @@ describe('useComposerBookingsTracking', () => {
 
     afterEach(() => {
         tracker.restore();
+        jest.mocked(useFlag).mockReset();
     });
 
     const getTracking = () => {
@@ -72,6 +75,16 @@ describe('useComposerBookingsTracking', () => {
                 delay: false,
             }),
         ]);
+    });
+
+    it('should send the editor version the composer runs on', () => {
+        jest.mocked(useFlag).mockImplementation((name) => name === 'MailComposerRoosterV9');
+
+        getTracking().trackBookingActionClick();
+
+        expect(tracker.reports[0]).toEqual(
+            expect.objectContaining({ dimensions: { ...baseDimensions, editorVersion: 'roosterjs-9' } })
+        );
     });
 
     it('should send the page count with a booking page insertion', () => {

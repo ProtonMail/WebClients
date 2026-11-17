@@ -35,6 +35,7 @@ import { DRAG_ADDRESS_KEY } from '../../constants';
 import { useComposerContent } from '../../hooks/composer/useComposerContent';
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
+import { useEditorVersion } from '../../hooks/useEditorVersion';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { useComposerMessageHost } from '../../host/composerMessageHost';
 import { useComposerStore } from '../../store/hooks';
@@ -96,6 +97,7 @@ const Composer = (
     const [userSettings] = useUserSettings();
     const [selectedText, setSelectedText] = useState('');
     const silentApi = useSilentApi();
+    const editorVersion = useEditorVersion();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
@@ -397,6 +399,7 @@ const Composer = (
             api: silentApi,
             measurementGroup: TelemetryMeasurementGroups.mailExpandBlockquotes,
             event: TelemetryMailBlockquotes.expandComposerBlockquotes,
+            dimensions: { editorVersion },
             delay: false,
         });
     };
