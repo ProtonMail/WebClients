@@ -1138,9 +1138,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      prop-types:
-        specifier: ^15.8.1
-        version: 15.8.1
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -1199,9 +1196,6 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.2
-      '@types/prop-types':
-        specifier: ^15.7.15
-        version: 15.7.15
       '@types/react-router':
         specifier: 'catalog:'
         version: 5.1.20

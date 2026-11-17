@@ -1,5 +1,6 @@
 import { RuleTester } from 'oxlint/plugins-dev';
 
+import { defaultPropsSelectors } from '../../defaultProps.ts';
 import { jsxNamespaceSelectors } from '../../jsxNamespace.ts';
 import { refObjectNullSelectors } from '../../refObjectNull.ts';
 import { useReducerTypeArgumentsSelectors } from '../../useReducerTypeArguments.ts';
@@ -9,6 +10,7 @@ import rule from './restrictedSyntax.ts';
 const ruleTester = new RuleTester({ languageOptions: { parserOptions: { lang: 'ts' } } });
 
 const [globalJsx, reactJsx] = jsxNamespaceSelectors;
+const [defaultProps] = defaultPropsSelectors;
 const [useRefInitialValue] = useRefInitialValueSelectors;
 const [useReducerTypeArguments] = useReducerTypeArgumentsSelectors;
 const [refObjectNull] = refObjectNullSelectors;
@@ -38,6 +40,8 @@ const focusedTest = {
 
 ruleTester.run('restricted-syntax', rule, {
     valid: [
+        { code: 'const defaultProps = { a: 1 };', options: defaultPropsSelectors },
+        { code: 'class A { static defaultProps = { a: 1 }; }', options: defaultPropsSelectors },
         { code: 'c("Info").t`Welcome to ${BRAND_NAME}`;', options: [brand, mail] },
         { code: 'c("Info").t`Open ${MAIL_APP_NAME}`;', options: [brand, mail] },
         { code: 'const text = `Proton Mail`;', options: [brand, mail] },
@@ -66,6 +70,11 @@ ruleTester.run('restricted-syntax', rule, {
         },
     ],
     invalid: [
+        {
+            code: 'Button.defaultProps = { color: "norm" };',
+            options: defaultPropsSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: defaultProps.message } }],
+        },
         {
             code: 'let a: RefObject<HTMLElement>;',
             options: refObjectNullSelectors,

@@ -1,6 +1,7 @@
 import type { OxlintOverride } from 'oxlint';
 
 import { brandNameSelectors } from './brandNames.ts';
+import { defaultPropsSelectors } from './defaultProps.ts';
 import { typescriptGlobs } from './globs.ts';
 import { jsxNamespaceSelectors } from './jsxNamespace.ts';
 import { refObjectNullSelectors } from './refObjectNull.ts';
@@ -15,6 +16,7 @@ export const react19Selectors = [
     ...jsxNamespaceSelectors,
     ...useRefInitialValueSelectors,
     ...useReducerTypeArgumentsSelectors,
+    ...defaultPropsSelectors,
 ];
 
 /**
