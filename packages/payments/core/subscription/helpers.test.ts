@@ -12,6 +12,7 @@ import type { PlanIDs } from '../interface';
 import { FREE_PLAN } from './freePlans';
 import {
     canModify,
+    canStartPurchase,
     getAutoCoupon,
     getAvailableSubscriptionActions,
     getCodes,
@@ -1237,6 +1238,48 @@ describe('canModify with the Lumo purchase rules', () => {
 
     it('lets a free user modify with the flag on', () => {
         expect(canModify(withFlagOn())).toBe(true);
+    });
+});
+
+describe('canStartPurchase', () => {
+    const storeMailPlus = buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.iOS });
+    const withFlagOn = buildMultiSubscriptionContext(toSubscriptionList(storeMailPlus));
+
+    it('lets a store Mail Plus subscriber start buying a Lumo tier with the flag on', () => {
+        expect(canStartPurchase(withFlagOn, PLANS.LUMO_BASIC)).toBe(true);
+        expect(canStartPurchase(withFlagOn, PLANS.LUMO)).toBe(true);
+        expect(canStartPurchase(withFlagOn, PLANS.LUMO_ULTRA)).toBe(true);
+    });
+
+    it('keeps a store Mail Plus subscriber away from every other plan', () => {
+        expect(canStartPurchase(withFlagOn, PLANS.MAIL)).toBe(false);
+        expect(canStartPurchase(withFlagOn, PLANS.BUNDLE)).toBe(false);
+        expect(canStartPurchase(withFlagOn, PLANS.DUO)).toBe(false);
+        expect(canStartPurchase(withFlagOn, undefined)).toBe(false);
+    });
+
+    it('keeps a store Mail Plus subscriber away from Lumo tiers with the flag off', () => {
+        expect(canStartPurchase(buildMultiSubscriptionContextFromSubscription(storeMailPlus), PLANS.LUMO_BASIC)).toBe(
+            false
+        );
+    });
+
+    it('keeps a user with a store Lumo subscription next to a store Mail Plus away from other Lumo tiers', () => {
+        const subscription = buildLumoSubscription(PLANS.LUMO_BASIC, {
+            External: SubscriptionPlatform.iOS,
+            SecondarySubscriptions: [storeMailPlus],
+        });
+
+        expect(
+            canStartPurchase(buildMultiSubscriptionContext(toSubscriptionList(subscription)), PLANS.LUMO_ULTRA)
+        ).toBe(false);
+    });
+
+    it('lets a web subscriber start any purchase', () => {
+        const context = buildMultiSubscriptionContext(toSubscriptionList(buildSubscription(PLANS.MAIL)));
+
+        expect(canStartPurchase(context, PLANS.BUNDLE)).toBe(true);
+        expect(canStartPurchase(context, undefined)).toBe(true);
     });
 });
 

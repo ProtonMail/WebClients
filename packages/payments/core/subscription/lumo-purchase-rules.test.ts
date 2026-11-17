@@ -31,6 +31,7 @@ const webLumoBasic = buildLumoSubscription(PLANS.LUMO_BASIC);
 const iosLumoPlus = buildLumoSubscription(PLANS.LUMO, ios);
 const iosLumoUltra = buildLumoSubscription(PLANS.LUMO_ULTRA, ios);
 const androidMailPlus = buildSubscription(PLANS.MAIL, android);
+const iosMailPlus = buildSubscription(PLANS.MAIL, ios);
 const webMailPlusWithLumoAddon = buildSubscription({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 });
 const webUnlimitedWithLumoAddon = buildSubscription({ [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 });
 
@@ -111,6 +112,8 @@ describe('canSelectB2CLumoPlan', () => {
         ['a web Mail Plus subscriber', [webMailPlus]],
         ['a web Lumo Plus subscriber', [webLumoPlus]],
         ['a web Mail Plus and web Lumo Basic subscriber', [webMailPlus, webLumoBasic]],
+        ['an iOS Mail Plus subscriber', [iosMailPlus]],
+        ['an Android Mail Plus subscriber', [androidMailPlus]],
     ])('allows %s', (_, subscriptions) => {
         expect(canSelectB2CLumoPlan(buildMultiSubscriptionContext(subscriptions))).toBe(true);
     });
@@ -120,7 +123,6 @@ describe('canSelectB2CLumoPlan', () => {
         ['a Workspace Standard subscriber', [webWorkspace]],
         ['a store Lumo Plus subscriber', [iosLumoPlus]],
         ['a store Lumo Plus subscriber with a web subscription', [iosLumoPlus, webMailPlus]],
-        ['a store Mail Plus subscriber', [androidMailPlus]],
         ['a Mail Plus subscriber with the Lumo addon', [webMailPlusWithLumoAddon]],
         [
             'an Unlimited subscriber with the Lumo addon next to VPN Plus',

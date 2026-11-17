@@ -29,7 +29,7 @@ import { CURRENCIES, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
-    getAvailableSubscriptionActions,
+    canStartPurchase,
     getHas2025OfferCoupon,
     getPlan,
     getUpgradedPlan,
@@ -325,8 +325,7 @@ const SubscribeAccount = ({
         return <PromotionAlreadyApplied />;
     }
 
-    const subscriptionActions = getAvailableSubscriptionActions(multiSubscriptionContext);
-    if (!subscriptionActions.canModify) {
+    if (!canStartPurchase(multiSubscriptionContext, plan)) {
         return (
             <div className="h-full flex flex-column justify-center items-center bg-norm text-center">
                 <div className="max-w-custom p-11" style={{ '--max-w-custom': '33.3rem' }}>
