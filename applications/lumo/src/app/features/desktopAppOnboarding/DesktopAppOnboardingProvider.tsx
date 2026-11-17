@@ -3,7 +3,11 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+import {
+    getDesktopConnectorsApi,
+    isDesktopEnvironment,
+    openDesktopSettings,
+} from '@proton/lumo-api-client/core/desktop-tools';
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { isTauriOnMac } from '@proton/shared/lib/helpers/desktop';
 
@@ -191,8 +195,18 @@ export const DesktopAppOnboardingProvider = ({ children }: Props) => {
         }
     }, [finish, upsellConfig]);
 
-    const handleSetUpConnector = useCallback(() => {
+    const handleSetUpConnector = useCallback(async () => {
         finish('set-up-connector');
+        // Connectors are set up in the desktop app's own settings, on its Connectors tab.
+        if (getDesktopConnectorsApi()?.openSettings) {
+            try {
+                await openDesktopSettings('connectors');
+                return;
+            } catch (error) {
+                console.warn('Could not open the desktop connector settings', error);
+            }
+        }
+        // Desktop builds without the settings bridge, or if it failed: the in-app Connectors tab.
         if (hasCustomize) {
             history.push({ pathname: '/customize', search: getCustomizeSearch('connectors') });
         }
@@ -229,7 +243,9 @@ export const DesktopAppOnboardingProvider = ({ children }: Props) => {
                         finish('start-chatting');
                     }}
                     onGetLumoPlus={handleGetLumoPlus}
-                    onSetUpConnector={handleSetUpConnector}
+                    onSetUpConnector={() => {
+                        void handleSetUpConnector();
+                    }}
                 />
             )}
         </OnboardingBlockingProvider>
