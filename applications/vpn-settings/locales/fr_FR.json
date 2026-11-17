@@ -152,6 +152,9 @@
       ],
       "VPN session details": [
         "Informations de la session VPN"
+      ],
+      "Import history": [
+        "Importer l'historique"
       ]
     },
     "Accounts": {
@@ -1521,6 +1524,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Manage subscriptions": [
+        "Gérer les abonnements"
+      ],
+      "Remove file": [
+        "Retirer le fichier"
       ]
     },
     "action": {
@@ -2141,6 +2150,10 @@
       "Then ${ price }, for ${ cycle } month": [
         "Puis ${ price } pour ${ cycle } mois",
         "Puis ${ price } pour ${ cycle } mois"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Bascule à ${ nextCycle } mois sur ${ when } (${ paidPrice } déjà réglés)",
+        "Bascule à ${ nextCycle } mois sur ${ when } (${ paidPrice } déjà réglés)"
       ]
     },
     "Billing cycle option": {
@@ -5106,7 +5119,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -5254,7 +5267,7 @@
         "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
-        "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membre",
+        "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membre.",
         "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membres"
       ],
       "Role assignment could not be completed for ${ failedCount } group": [
@@ -5404,7 +5417,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -5477,6 +5490,9 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "La somme totale n'a pas pu être calculée. Changez le montant pour essayer de nouveau."
       ]
     },
     "error": {
@@ -6123,6 +6139,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Une erreur s'est produite lors de l'enregistrement de votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
+      ],
+      "This security key is already registered to your account.": [
+        "Cette clé de sécurité est déjà enregistrée sur votre compte."
       ]
     },
     "fido2: Info": {
@@ -6180,6 +6202,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Votre clé d'authentification à deux facteurs est prête à être utilisée."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Utiliser l'empreinte digitale, le visage, le code PIN ou l'écran de verrouillage de cet appareil."
       ]
     },
     "fido2: Label": {
@@ -6320,6 +6345,9 @@
       ],
       "User - ${ userPrice }": [
         "Utilisateur - ${ userPrice }"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Déverrouillez la connexion unique (SSO), les politiques d'administration, la surveillance, la connexion renforcée par authentification à deux facteurs et plus encore."
       ]
     },
     "Get help": {
@@ -8948,7 +8976,7 @@
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
       ],
       "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
-        "Le processus a été interrompu pour le groupe ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur Continuer pour reprendre l'attribution des rôles.",
+        "Le processus a été interrompu pour le groupe ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur continuer pour reprendre l'attribution des rôles.",
         "Le processus a été interrompu pour les groupes ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur Continuer pour reprendre l'attribution des rôles."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
@@ -9820,6 +9848,39 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "En activant cette fonctionnalité, vous pourrez uniquement vous connecter grâce à votre nom d'utilisateur, **${ username }**, ou avec l'une des adresses email suivantes : **${ firstEmail }** ou **${ secondEmail }**."
+      ],
+      "Enable groups to streamline access control": [
+        "Activez les groupes pour optimiser les contrôles d'accès."
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Cette adresse Gmail est associée à un autre compte ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } et autres). Nous travaillons à rendre cette connexion plus fluide, mais pour l'instant, vous devrez suivre quelques étapes."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Ceci vous permettra d'accéder rapidement et en toute sécurité à votre compte ${ BRAND_NAME } afin de changer votre mot de passe."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Afin d'améliorer continuellement nos services, nous collectons parfois des données pour surveiller le bon fonctionnement de nos applications. **Ces informations ne sont pas partagées avec des services tiers.**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Afin d'assurer le niveau de sécurité le plus élevé pour votre compte, désactivez la **Récupération par e-mail**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Afin d'assurer le niveau de sécurité le plus élevé pour votre compte, désactivez la **Récupération par numéro de téléphone**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Afin d'assurer le niveau de sécurité le plus élevé pour votre compte, conservez la **Récupération par e-mail** désactivée."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Afin d'assurer le niveau de sécurité le plus élevé pour votre compte, conservez la **Récupération par numéro de téléphone** désactivée."
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Lorsque cette fonctionnalité est activée, les membres ne peuvent pas renoncer à l'enregistrement par mot de passe dans leurs propres paramètres."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Vous détenez plusieurs abonnements. Sélectionnez celui qui doit être annulé : vos autres abonnements ne seront pas affectés. Un abonnement annulé ne sera pas renouvelé et vous préserverez ses fonctionnalités jusqu'au terme de votre période de souscription."
       ]
     },
     "info": {
@@ -11021,6 +11082,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Recueillir les diagnostics d'utilisation anonymes"
       ]
     },
     "label": {
@@ -11713,6 +11777,9 @@
       ],
       "Yesterday, ${ time }": [
         "Hier, ${ time }"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Configurez vos propres passerelles privées pour surveiller l'activité de connexion au VPN au sein de votre organisation."
       ]
     },
     "Message": {
@@ -12966,7 +13033,7 @@
     },
     "ngc_access_banner: action": {
       "Try it now": [
-        "Essayez-la maintenant"
+        "Essayez-le maintenant"
       ]
     },
     "ngc_access_banner: info": {
@@ -13447,6 +13514,18 @@
       "User (${ n })": [
         "Utilisateur (${ n })",
         "Utilisateurs (${ n })"
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Prenez contact avec vos administrateurs afin de savoir s'ils peuvent vous aider. Ils pourront restaurer vos accès après avoir utilisé une méthode de récupération des données."
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "Réinitialiser la clé de l'organisation génère une nouvelle clé de chiffrement afin que les données de votre organisation demeurent en sécurité. **Aucune donnée ne sera perdue ou détruite pendant ce processus, mais les groupes d'utilisateurs seront supprimés.**"
+      ],
+      "This process is automated:": [
+        "Ce processus est automatisé :"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Vous pouvez réinitialiser la clef de votre organisation afin de restaurer vos droits administrateur. Par la suite, vous pourrez créer des utilisateurs publics et accéder à leurs comptes."
       ]
     },
     "Organization logo upload": {
@@ -15417,6 +15496,15 @@
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Pour réactiver la synchronisation avec votre fournisseur d'identité, vous devez finaliser à nouveau l'intégration SCIM."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Utilisateurs** : Tous les utilisateurs SCIM automatiquement fournis par votre fournisseur d'identité seront convertis en utilisateurs SSO et vous pourrez directement les gérer dans les paramètres de ${ BRAND_NAME }."
+      ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Permettre à nouveau la synchronisation des données dupliquera les groupes existants. Ils ne pourront plus être fusionnés dans le SCIM."
+      ],
+      "This will delete your SCIM base URL and token.": [
+        "Ceci supprimera votre URL de base SCIM et le jeton d'accès."
       ]
     },
     "scim: Label": {
@@ -17403,7 +17491,7 @@
         "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (A2F) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+        "L'abonnement inclut 2 950 serveurs basés dans plus de 65 pays, la possibilité de connecter votre compte à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
@@ -17577,7 +17665,7 @@
         "API ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ PROTON_SENTINEL_NAME } for organizations": [
         "${ PROTON_SENTINEL_NAME } pour les organisations"
@@ -18689,7 +18777,7 @@
         "Connecté au compte membre"
       ],
       "Signed-in reset": [
-        "Réinitialisation lorsque connecté"
+        "Réinitialiser la connexion"
       ],
       "Simplify email distribution": [
         "Simplifiez la distribution des messages"
@@ -18828,7 +18916,7 @@
         "Mise à niveau vers ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Passez à la version supérieure pour conserver vos avantages premium."
+        "Changer d'abonnement pour conserver vos avantages premium."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Améliorez la protection de votre réseau avec des serveurs dédiés"
@@ -18976,6 +19064,9 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Data collection": [
+        "Collecte de données"
       ]
     },
     "Title for payment methods table": {
@@ -19297,6 +19388,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "En attente de l’acceptation de l’invitation par l’utilisateur"
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Adresse externe - Pas de chiffrement de bout-en-bout ou de partage de ressources, pas de possibilité d'attribution des rôles et permissions."
       ]
     },
     "Tor out of date": {

@@ -398,7 +398,7 @@
         "Скасаваць"
       ],
       "Cancel ${ planTitle }": [
-        "Скасваць ${ planTitle }"
+        "Скасаваць ${ planTitle }"
       ],
       "Cancel request": [
         "Скасаваць запыт"
@@ -1638,6 +1638,15 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Скасаваць пробны перыяд ${ planTitle }"
+      ],
+      "Manage subscriptions": [
+        "Кіраваць падпіскай"
+      ],
+      "Remove file": [
+        "Выдаліць файл"
       ]
     },
     "action": {
@@ -1891,6 +1900,9 @@
       ],
       "Permission revoked": [
         "Дазвол адкліканы"
+      ],
+      "Sign-in": [
+        "Уваход"
       ]
     },
     "Admin": {
@@ -1934,6 +1946,9 @@
       ],
       "User admin:": [
         "Адміністратар карыстальніка:"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Прызначайце ролі адміністратара групам. Кіруйце доступам для некалькіх карыстальнікаў адначасова і абнаўляйце іх аўтаматычна, калі людзі далучаюцца або выходзяць з групы."
       ]
     },
     "Alert": {
@@ -4157,6 +4172,9 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "Bring over your files and folders from another provider.": [
+        "Перанясіце свае файлы і папкі ад іншага пастаўшчыка."
       ]
     },
     "description": {
@@ -5673,6 +5691,9 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "The session has expired. Please try again.": [
+        "Час сеанса пратэрмінаваны. Паўтарыце спробу."
       ]
     },
     "error": {
@@ -6334,6 +6355,9 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Нешта пайшло не так з рэгістрацыяй вашага ключа бяспекі. Паўтарыце спробу."
+      ],
+      "This security key is already registered to your account.": [
+        "Гэты ключ бяспекі ўжо зарэгістраваны ў вашым уліковым запісе."
       ]
     },
     "fido2: Info": {
@@ -6396,6 +6420,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш двухфактарны ключ аўтэнтыфікацыі гатовы да выкарыстання."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Выкарыстоўваць адбітак пальца, распазнаванне твару, PIN-код або блакіроўку экрана гэтай прылады"
       ]
     },
     "fido2: Label": {
@@ -10171,6 +10198,18 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Дазволіць выкарыстоўваць API для ${ LUMO_APP_NAME } у вашай арганізацыі"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Вы зможаце ўвайсці ў сістэму толькі з дапамогай свайго імя карыстальніка **${ username }**, адраса электроннай пошты **${ firstEmail }** або **${ secondEmail }**, калі ўключыце гэту функцыю."
+      ],
+      "This address now signs in through your organization's identity provider.": [
+        "Цяпер уваход у гэты адрас выконваецца праз пастаўшчыка пасведчанняў вашай арганізацыі."
+      ],
+      "You cancel it in the store.": [
+        "Вы скасавалі яго ў краме."
       ]
     },
     "info": {
@@ -11394,6 +11433,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Збіраць ананімную дыягностыку выкарыстання"
       ]
     },
     "label": {
@@ -13289,7 +13331,7 @@
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Мы не пакідаем журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
+        "У нашым сэрвісе адсутнічаюць журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Мы лічым сваім абавязкова дапамагаць кліентам у адпаведнасці з прававымі нормамі HIPAA/HITECH у дачыненні абароненай інфармацыі аб здароўі (PHI). Падпісаныя пагадненні аб дзелавым партнёрстве даступны для ўсіх кліентаў ${ BRAND_NAME } у сферы бізнесу."
@@ -15952,6 +15994,9 @@
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Карыстальнікі зададзеныя ў якасці прыватных, павінны прыняць запрашэнне для завяршэння наладжвання. Ім будзе адпраўлена запрашэнне пасля таго, як вы ўхваліце іх."
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "Для таго, каб адклікаць іх ключы арганізацыі патрабуецца канчатковае ўхваленне."
       ]
     },
     "scim: Action": {
@@ -17800,6 +17845,9 @@
     "Subscription term": {
       "${ startTime } – ${ endTime }": [
         "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Ад ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -19710,6 +19758,15 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Data collection": [
+        "Збор даных"
+      ],
+      "Help shape ${ BRAND_NAME }'s admin experience": [
+        "Дапамажыце нам палепшыць досвед адміністратара для ${ BRAND_NAME }"
+      ],
+      "What changes if you cancel ${ planDisplayName }": [
+        "Што здарыцца, калі вы скасуеце тарыфны план ${ planDisplayName }"
       ]
     },
     "Title for payment methods table": {
@@ -19785,6 +19842,9 @@
       ],
       "Subscription term": [
         "Тэрмін дзеяння падпіскі"
+      ],
+      "Renewal": [
+        "Падаўжэнне"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -20765,6 +20825,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Пасля паспяховага спраўджання не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Пакінуць поле пустым"
       ]
     }
   }

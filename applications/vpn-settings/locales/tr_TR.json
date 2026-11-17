@@ -269,6 +269,9 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
+      ],
+      "Business referral link": [
+        "Kuruluş önerisi bağlantısı"
       ]
     },
     "Accounts": {
@@ -1641,6 +1644,45 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Continue with Bitcoin": [
+        "Bitcoin ile ilerle"
+      ],
+      "Delete security key ${ keyName }": [
+        "${ keyName } güvenlik anahtarını sil"
+      ],
+      "Delete server ${ serverLocation }": [
+        "${ serverLocation } sunucusunu sil"
+      ],
+      "Dismiss notification": [
+        "Bildirimi yok say"
+      ],
+      "Download recovery kit": [
+        "Kurtarma paketini indir"
+      ],
+      "Edit security key ${ keyName }": [
+        "${ keyName } güvenlik anahtarını düzenle"
+      ],
+      "Go to today": [
+        "Bugüne git"
+      ],
+      "Manage subscriptions": [
+        "Abonelik yönetimi"
+      ],
+      "Next contact": [
+        "Sonraki kişi"
+      ],
+      "Previous contact": [
+        "Önceki kişi"
+      ],
+      "Remove file": [
+        "Dosyayı kaldır"
+      ],
+      "Remove logo": [
+        "Logoyu kaldır"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "${ serverLocation } sunucusunun kaldırılması bekleniyor"
       ]
     },
     "action": {
@@ -1874,7 +1916,7 @@
         "İzin geri alındı"
       ],
       "Sign-in": [
-        "Giriş yap"
+        "Oturum aç"
       ]
     },
     "Admin": {
@@ -5513,7 +5555,7 @@
         "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
       ],
       "The session has expired. Please try again.": [
-        "Oturum süresi doldu. Lütfen tekrar deneyin."
+        "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden deneyin."
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "Toplam tutar hesaplanamadı. Yeniden denemek için tutarı değiştirin."
@@ -6286,6 +6328,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Güvenlik anahtarınız kaydedilirken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
+      ],
+      "This security key is already registered to your account.": [
+        "Bu güvenlik anahtarı hesabınıza zaten kaydedilmiş."
       ]
     },
     "fido2: Info": {
@@ -6349,6 +6397,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "İki adımlı doğrulama anahtarınız kullanılmaya hazır."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Bu aygıttaki parmak izi, yüz tanıma, PIN veya ekran kilidini kullanın"
       ]
     },
     "fido2: Label": {
@@ -10052,6 +10103,45 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ile oturum açabileceksiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ya da **${ thirdEmail }** ile oturum açabileceksiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ile oturum açabileceksiniz."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Hizmetlerimizi sürekli olarak iyileştirmek amacıyla zaman zaman uygulamalarımızın düzgün çalışıp çalışmadığını izlemek için veri topluyoruz. **Bu bilgiler hiçbir üçüncü taraf hizmetle paylaşılmaz.**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Hesabınızda olabilecek en yüksek güvenlik düzeyini sağlamak için **E-posta ile kurtarma** özelliğini kapatın."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Hesabınızda olabilecek en yüksek güvenlik düzeyini sağlamak için **Telefon ile kurtarma** özelliğini kapatın."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Hesabınızda en yüksek güvenlik düzeyini sağlamak için **E-posta ile kurtarma** özelliğini kapatın."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Hesabınızda olabilecek en yüksek güvenlik düzeyini sağlamak için, **Telefon ile kurtarma** özelliğini kapatın."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ile oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ya da **${ thirdEmail }** ile oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ile oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Yazma yardımcısı koltukları artık satılmıyor"
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Hesabınız oluşturuldu ancak tarifenizin kurulumu tamamlanamadı."
       ]
     },
     "info": {
@@ -11259,6 +11349,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Anonim kullanım tanılama verileri toplansın"
+      ],
+      "Share your invite link": [
+        "Davet bağlantınızı paylaşın"
       ]
     },
     "label": {
@@ -14618,6 +14714,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Enter email address, name, or contact group": [
+        "E-posta adresini, adı veya e-posta grubunu yazın"
       ]
     },
     "placeholder": {
@@ -15015,7 +15114,7 @@
         "Ücretsiz deneme süreniz nasıl işler:"
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
-        "Ben ${ BRAND_NAME } kullanıyorum ve senin de beğeneceğinizi düşündüm. Gizliliği koruyan güvenli bir e-posta, bulut depolama alanı, parola yöneticisi ve VPN hizmeti sunuyor. Bir sonraki aboneliğinde ${ refereeRewardAmount } indirimden yararlanmak için şuradan hesap açabilirsin: ${ referralLink }"
+        "Ben ${ BRAND_NAME } kullanıyorum ve senin de beğeneceğini düşündüm. Gizliliği koruyan güvenli bir e-posta, bulut depolama alanı, parola yöneticisi ve VPN hizmeti sunuyor. Bir sonraki aboneliğinde ${ refereeRewardAmount } indirimden yararlanmak için şuradan hesap açabilirsin: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Bu tarihten önce iptal ederseniz deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz. İptal etmezseniz tam tarifeniz başlar ve **${ referrerRewardAmount }** tutarında kredi kazanırsınız."
@@ -15053,6 +15152,9 @@
       ],
       "your subscription": [
         "aboneliğiniz"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "${ BRAND_NAME } kullanıyorum ve ekibinizin de beğeneceğini düşündüm. Gizliliğinizi koruyan güvenli bir e-posta, bulut depolama alanı, parola yöneticisi ve VPN hizmeti sunuyor. Bu bağlantıdan hesap açarak ${ BRAND_NAME } for Business hizmetinin ilk yılı için ${ refereeRewardAmount } indirimden yararlanabilirsin: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -19350,6 +19452,15 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "İiş yerinize ${ BRAND_NAME } getirin. Kredi kazanın."
+      ],
+      "Data collection": [
+        "Veri toplama"
+      ],
+      "Refer businesses": [
+        "Kuruluşlara önerin"
       ]
     },
     "Title for payment methods table": {
@@ -20388,6 +20499,78 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Alanı boş bırakın"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2 kat Basic kullanım"
+      ],
+      "5x Plus usage": [
+        "5 kat Plus kullanım"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Aylık ${ credit } krediyle API erişimi"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
+      ],
+      "Everything in Basic, and:": [
+        "Basic tarifesindeki her şey ve:"
+      ],
+      "Everything in Free, and:": [
+        "Free tarifesindeki herşey ve:"
+      ],
+      "Everything in Plus, and:": [
+        "Plus tarifesindeki her şey ve:"
+      ],
+      "Extended image generation": [
+        "Genişletilmiş görsel oluşturma"
+      ],
+      "Includes:": [
+        "İçindekiler:"
+      ],
+      "Limited image generation": [
+        "Sınırlı görsel oluşturma"
+      ],
+      "Limited messages and chat history": [
+        "Sınırlı sayıda ileti ve sohbet geçmişi"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Sınırlı sayıda yetenek, proje ve zamanlanmış görev"
+      ],
+      "Maximum image generation": [
+        "En fazla görsel oluşturma"
+      ],
+      "Maximum Skills and Projects": [
+        "En fazla yetenek ve projeler"
+      ],
+      "More image generation": [
+        "Daha fazla görsel oluşturma"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Daha fazla yetenek, proje ve zamanlanmış görev"
+      ],
+      "More usage": [
+        "Daha fazla kullanım"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Kodlama ve geliştirme için"
+      ],
+      "For everyday chats": [
+        "Günlük sohbetler için"
+      ],
+      "For getting more done": [
+        "Daha fazlasını yapmak için"
       ]
     }
   }

@@ -1626,6 +1626,51 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Add payment method": [
+        "添加付款方式"
+      ],
+      "Cancel ${ planTitle }": [
+        "取消 ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "取消 ${ planTitle } 试用"
+      ],
+      "Cancel trial": [
+        "取消试用"
+      ],
+      "Delete security key ${ keyName }": [
+        "删除安全密钥 ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "删除服务器 ${ serverLocation }"
+      ],
+      "Download recovery kit": [
+        "下载恢复工具包"
+      ],
+      "Edit security key ${ keyName }": [
+        "编辑安全密钥 ${ keyName }"
+      ],
+      "Manage subscriptions": [
+        "管理订阅"
+      ],
+      "Next contact": [
+        "下一个联系人"
+      ],
+      "Previous contact": [
+        "上一个联系人"
+      ],
+      "Remove file": [
+        "移除文件"
+      ],
+      "Remove logo": [
+        "移除徽标"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "移除待处理服务器 ${ serverLocation }"
+      ],
+      "Restrict sign-in": [
+        "限制登录"
       ]
     },
     "action": {
@@ -1649,6 +1694,9 @@
       ],
       "View breakdown": [
         "查看明细"
+      ],
+      "Cancel subscription": [
+        "取消订阅"
       ]
     },
     "Action: Sheets": {
@@ -1843,6 +1891,9 @@
       ],
       "Permission revoked": [
         "权限已撤销"
+      ],
+      "Sign-in": [
+        "登录"
       ]
     },
     "Admin": {
@@ -2011,6 +2062,9 @@
       ],
       "You have reached the trial limit.": [
         "您已达到试用限制！"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "取消后，您的免费试用不会转为付费订阅。"
       ]
     },
     "b2b_trials_Action": {
@@ -2777,6 +2831,15 @@
       ],
       "Upload any new files": [
         "上传任意文件"
+      ],
+      "If you exceed your plan limits, you won't be able to:": [
+        "如果您超出套餐限额，将无法："
+      ],
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "您的 ${ planDisplayName } 订阅将于 ${ endDate } 结束，届时您将失去其功能。如果届时您的用量超出套餐限额，部分功能可能会暂时不可用。"
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "您的订阅将于 ${ endDate } 结束，届时您将失去其功能。如果届时您的用量超出套餐限额，部分功能可能会暂时不可用。"
       ]
     },
     "Confirm modal title": {
@@ -4078,6 +4141,9 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址。"
+      ],
+      "Bring over your files and folders from another provider.": [
+        "从其他服务商迁移您的文件和文件夹。"
       ]
     },
     "description": {
@@ -4954,6 +5020,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "您的恢复联系人应是您认识并能轻松联系到的人！"
+      ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "他们将在**今天**、于 **${ formattedAccessibleAt }** 自动获得访问权限。您可以随时拒绝其请求或立即授予访问权限。"
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "他们将在 **${ days } 天后**、于 **${ formattedAccessibleAt }** 自动获得访问权限。您可以随时拒绝其请求或立即授予访问权限。"
       ]
     },
     "Empty group name": {
@@ -5549,6 +5621,12 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "The session has expired. Please try again.": [
+        "会话已过期，请重试。"
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "无法计算总额，请更改金额后重试。"
       ]
     },
     "error": {
@@ -6183,6 +6261,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "安全密钥注册失败，请重试。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "此浏览器不支持安全密钥，请换用其他浏览器。"
+      ],
+      "This security key is already registered to your account.": [
+        "此安全密钥已注册到您的账户。"
       ]
     },
     "fido2: Info": {
@@ -6245,6 +6329,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "您的双因素身份验证密钥已就绪，可以使用了。"
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "使用此设备的指纹、面容、PIN 或屏幕锁定"
       ]
     },
     "fido2: Label": {
@@ -9822,6 +9909,69 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "允许您的组织使用 ${ LUMO_APP_NAME } API"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "开启此功能后，您将只能使用 **${ primaryEmail }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "开启此功能后，您将只能使用用户名 **${ username }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "开启此功能后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }** 或 **${ secondEmail }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "开启此功能后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }**、**${ secondEmail }** 或 **${ thirdEmail }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "开启此功能后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }** 登录。"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "为持续改进我们的服务，我们有时会收集数据用于侦测系统运行是否正常。**这些数据不会传输至任何第三方平台。**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "为确保您账户的最高安全性，请停用**密保邮箱**。"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "为确保您账户的最高安全性，请停用**密保手机**。"
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "为确保您账户的最高安全性，请停用**密保邮箱**。"
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "为确保您账户的最高安全性，请停用**密保手机**。"
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "限制登录后，只能使用您的邮箱 **${ primaryEmail }** 登录。即使他人知道您的其他地址，这些地址也无法关联回您的账户。"
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "限制登录后，只能使用您的用户名 **${ username }** 登录。即使他人知道您的其他地址，这些地址也无法关联回您的账户。"
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "限制登录后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }** 或 **${ secondEmail }** 登录。您的其他邮箱地址将无法用于登录。"
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "限制登录后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }**、**${ secondEmail }** 或 **${ thirdEmail }** 登录。您的其他邮箱地址将无法用于登录。"
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "限制登录后，您只能使用用户名 **${ username }** 或 **${ firstEmail }** 登录。您的其他邮箱地址将无法用于登录。"
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "取消后，试用期结束时您的订阅将不会开始。"
+      ],
+      "You cancel it in the store.": [
+        "您在商店中取消。"
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "您有多个订阅。请选择要取消的订阅：其他订阅不受影响。已取消的订阅不会续订，您仍可享有其权益直至订阅期结束。"
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "您的账户已创建，但我们未能完成套餐设置。"
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "在关闭此功能之前，您的其他邮箱地址将无法用于登录。"
       ]
     },
     "info": {
@@ -11009,6 +11159,21 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Account credit": [
+        "账户余额"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "收集匿名的使用诊断数据"
+      ],
+      "Restrict sign-in to email address": [
+        "限制只能使用邮箱地址登录"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "限制只能使用用户名和匹配的 ${ BRAND_NAME } 地址登录"
+      ],
+      "Total": [
+        "总计"
       ]
     },
     "label": {
@@ -13226,6 +13391,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**试用后改变主意了？** 在首次付款后 30 天内取消，我们将退还未使用时间的费用。"
       ]
     },
     "Option": {
@@ -13997,6 +14165,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有折扣优惠，转用新的促销意味着现有折扣将不再适用。"
+      ],
+      "Paid from your account credit.": [
+        "已使用账户余额支付。"
       ]
     },
     "Payments.Error": {
@@ -15356,6 +15527,24 @@
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "设为私有的用户需要接受邀请以完成设置。您批准后，我们会向他们发送邀请。"
+      ],
+      "${ cleanUpCount } clean up action required.": [
+        "需要 ${ cleanUpCount } 项清理操作。"
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "${ cleanUpCount } 位用户的权限已变更。"
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "需要 ${ numberOfCleanUps } 项清理操作"
+      ],
+      "Approve permission changes for your organization": [
+        "批准您组织的权限变更"
+      ],
+      "Final approval needed to remove organization key access.": [
+        "移除组织密钥访问权限需要最终批准。"
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "撤销其组织密钥需要最终批准。"
       ]
     },
     "scim: Action": {
@@ -16463,6 +16652,15 @@
       ],
       "Verify ${ value }": [
         "验证 ${ value }"
+      ],
+      "failed": [
+        "失败"
+      ],
+      "key removal scheduled": [
+        "已安排移除密钥"
+      ],
+      "remove organization key": [
+        "移除组织密钥"
       ]
     },
     "Storage": {
@@ -18911,6 +19109,18 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME } API"
+      ],
+      "Data collection": [
+        "数据收集"
+      ],
+      "Restrict sign-in?": [
+        "限制登录？"
+      ],
+      "What changes if you cancel ${ planDisplayName }": [
+        "取消 ${ planDisplayName } 后会有哪些变化"
       ]
     },
     "Title for payment methods table": {
@@ -18983,6 +19193,12 @@
       ],
       "Status": [
         "状态"
+      ],
+      "Renewal": [
+        "续订"
+      ],
+      "Subscription term": [
+        "订阅期限"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -19927,6 +20143,19 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "验证成功后请勿删除该 TXT 记录，我们需要根据它确认您是否仍持有该域名。"
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "将字段留空"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "从 ${ startTime } 起"
       ]
     }
   }

@@ -1641,6 +1641,15 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Continue with Bitcoin": [
+        "Fortsæt med Bitcoin"
+      ],
+      "Manage subscriptions": [
+        "Administrer abonnementer"
+      ],
+      "Remove file": [
+        "Fjern fil"
       ]
     },
     "action": {
@@ -1874,7 +1883,7 @@
         "Tilladelse tilbagekaldt"
       ],
       "Sign-in": [
-        "Log ind"
+        "Login"
       ]
     },
     "Admin": {
@@ -6289,6 +6298,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Noget gik galt med registreringen af din sikkerhedsnøgle. Prøv venligst igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Din browser understøtter ikke sikkerhedsnøgler. Prøv en anden browser."
+      ],
+      "This security key is already registered to your account.": [
+        "Denne sikkerhedsnøgle er allerede registreret på din konto."
       ]
     },
     "fido2: Info": {
@@ -6352,6 +6367,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Din to-faktor-godkendelsesnøgle er klar til brug."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Brug denne enheds fingeraftryk, ansigt, PIN eller skærmlås"
       ]
     },
     "fido2: Label": {
@@ -9850,7 +9868,7 @@
         "Du har ingen transaktioner"
       ],
       "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
-        "Du har flere abonnementer. Vælg det, du vil opsige: Dine øvrige abonnementer påvirkes ikke. Et opsagt abonnement fornyes ikke, og du beholder fordelene, indtil abonnementsperioden udløber."
+        "Du har flere abonnementer. Vælg det du vil opsige: Dine øvrige abonnementer påvirkes ikke. Et opsagt abonnement fornyes ikke, og du beholder fordelene indtil abonnementsperioden udløber."
       ],
       "You have unpublished changes": [
         "De har ikke-udgivne ændringer"
@@ -10055,6 +10073,42 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }** eller **@${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }**."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "For løbende at forbedre vores tjenester indsamler vi nogle gange data for at kontrollere, at vores applikationer fungerer korrekt. **Disse oplysninger deles ikke med nogen tredjepartstjenester.**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via e-mail** fra."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via telefon** fra."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Opnå størst mulig sikkerhed på din konto ved at forsætte med at have slået **Gendannelse via e-mail** fra."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Opnå størst mulig sikkerhed på din konto ved at forsætte med at have slået **Gendannelse via telefon** fra."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }** eller **@${ secondEmail }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }** Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Din konto blev oprettet, men vi kunne ikke færdiggøre opsætningen af dit abonnement."
       ]
     },
     "info": {
@@ -11262,6 +11316,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Indsaml anonymt brugsdiagnostik"
       ]
     },
     "label": {
@@ -14216,7 +14273,7 @@
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
+        "Den særligt nedsatte pris gælder den første ${ subscriptionLength } måned.",
         "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
@@ -19289,7 +19346,7 @@
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
       "What changes if you cancel ${ planDisplayName }": [
-        "Hvad ændrer sig, hvis du opsiger ${ planDisplayName }"
+        "Dette ændrer sig, hvis du opsiger ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Hvad er et alias?"
@@ -19353,6 +19410,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Data collection": [
+        "Dataindsamling"
       ]
     },
     "Title for payment methods table": {
@@ -20391,6 +20451,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter vellykket verifikation skal du ikke fjerne denne TXT-post, da den er nødvendig for at bekræfte, at du fortsætter med at eje domænet."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Lad feltet være tomt"
       ]
     }
   }

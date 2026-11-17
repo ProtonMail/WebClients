@@ -1318,6 +1318,48 @@
       ],
       "Zoom out": [
         "Зменшити"
+      ],
+      "About ${ name }": [
+        "Про ${ name }"
+      ],
+      "Add ${ name }": [
+        "Додати ${ name }"
+      ],
+      "Delete security key ${ keyName }": [
+        "Видалити ключ безпеки ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Видалити сервер ${ serverLocation }"
+      ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
+      "Download recovery kit": [
+        "Завантажити комплект для відновлення"
+      ],
+      "Edit security key ${ keyName }": [
+        "Редагувати ключ безпеки ${ keyName }"
+      ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
+      ],
+      "Manage subscriptions": [
+        "Керування підписками"
+      ],
+      "Next contact": [
+        "Наступний контакт"
+      ],
+      "Previous contact": [
+        "Попередній контакт"
+      ],
+      "Remove file": [
+        "Вилучити файл"
+      ],
+      "Remove logo": [
+        "Видалити логотип"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Видалити сервер, що очікує на обробку, ${ serverLocation }"
       ]
     },
     "action": {
@@ -1553,6 +1595,9 @@
       ],
       "Permission revoked": [
         "Дозвіл відкликано"
+      ],
+      "Sign-in": [
+        "Вхід"
       ]
     },
     "Admin": {
@@ -5815,6 +5860,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Під час реєстрації вашого ключа безпеки щось пішло не так. Будь ласка, спробуйте знову."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
+      ],
+      "This security key is already registered to your account.": [
+        "Цей ключ безпеки вже зареєстрований у вашому обліковому записі."
       ]
     },
     "fido2: Info": {
@@ -5862,6 +5913,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш ключ двоетапної перевірки готовий до використання."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Використовуйте функцію розпізнавання відбитків пальців, розпізнавання обличчя, PIN-код або блокування екрана цього пристрою"
       ]
     },
     "fido2: Label": {
@@ -9368,6 +9422,27 @@
       ],
       "Zoom meeting": [
         "зустріч у Zoom"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "З метою постійного вдосконалення наших послуг ми іноді збираємо дані для моніторингу належного функціонування наших додатків. **Ця інформація не передається жодним стороннім сервісам.**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, вимкніть функцію **Відновлення за допомогою електронної пошти**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, вимкніть функцію **Відновлення за допомогою телефону**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, залиште функцію **Відновлення за допомогою електронної пошти** вимкненою."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, залиште функцію **Відновлення за допомогою телефону** вимкненою."
+      ],
+      "UnionPay logo": [
+        "Логотип UnionPay"
       ]
     },
     "info": {
@@ -10545,6 +10620,9 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Збирати анонімні дані діагностики використання"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10843,6 +10921,9 @@
       ],
       "What’s this?": [
         "Що це?"
+      ],
+      "Customer Support": [
+        "Клієнтська підтримка"
       ]
     },
     "Link (Scribe)": {
@@ -19006,6 +19087,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Ви зможете призначати ролі після того, як користувач прийме запрошення."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Цей користувач отримає права адміністратора при наступному вході."
       ]
     },
     "Users table: badge": {
@@ -19348,6 +19432,16 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Після успішної перевірки не вилучайте цей TXT запис, оскільки він потрібен для підтвердження вашої власності домену."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Залишити поле порожнім"
       ]
     }
   }

@@ -269,6 +269,9 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "Business referral link": [
+        "Anbefalingskobling for bedrifter"
       ]
     },
     "Accounts": {
@@ -1635,6 +1638,33 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Legg til ${ name }"
+      ],
+      "Delete security key ${ keyName }": [
+        "Slett sikkerhetsnøkkel ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Slett server ${ serverLocation }"
+      ],
+      "Download recovery kit": [
+        "Last ned gjenopprettingssett"
+      ],
+      "Edit security key ${ keyName }": [
+        "Rediger sikkerhetsnøkkel ${ keyName }"
+      ],
+      "Manage subscriptions": [
+        "Administrer abonnementer"
+      ],
+      "Remove file": [
+        "Fjern fil"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Fjern ventende server ${ serverLocation }"
       ]
     },
     "action": {
@@ -1866,6 +1896,9 @@
       ],
       "Permission revoked": [
         "Tillatelse tilbakekalt"
+      ],
+      "Sign-in": [
+        "Logg på"
       ]
     },
     "Admin": {
@@ -6272,6 +6305,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Noe gikk galt da du registrerte sikkerhetsnøkkelen din. Forsøk igjen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Denne nettleseren støtter ikke sikkerhetsnøkler. Prøv en annen nettleser."
+      ],
+      "This security key is already registered to your account.": [
+        "Denne sikkerhetsnøkkelen er allerede registrert på kontoen din."
       ]
     },
     "fido2: Info": {
@@ -6335,6 +6374,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Tofaktorautentiseringsnøkkelen er klar til bruk."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Bruk enhetens fingeravtrykk, ansiktsgjenkjenning, PIN-kode eller skjermlås"
       ]
     },
     "fido2: Label": {
@@ -10032,6 +10074,42 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "For å forbedre tjenestene våre kontinuerlig samler vi noen ganger inn data for å følge med på at appene våre fungerer som de skal. **Denne informasjonen deles ikke med noen tredjepartstjenester.**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du deaktivere **Gjenoppretting via e-post**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du deaktivere **Gjenoppretting via telefon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du la **Gjenoppretting via e-post** være deaktivert."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du la funksjonen **Gjenoppretting via telefon** være deaktivert."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**. Dine andre e-postadresser fungerer ikke ved pålogging."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dine andre e-postadresser fungerer ikke ved pålogging."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**. Dine andre e-postadresser kan ikke brukes til å logge på."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Kontoen din er opprettet, men vi klarte ikke å fullføre oppsettet av planen din."
       ]
     },
     "info": {
@@ -11239,6 +11317,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Samle inn anonym bruksdiagnostikk"
+      ],
+      "Share your invite link": [
+        "Del invitasjonskoblingen din"
       ]
     },
     "label": {
@@ -14583,6 +14667,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter email address, name, or contact group": [
+        "Skriv inn e-postadresse, navn eller kontaktgruppe"
       ]
     },
     "placeholder": {
@@ -15018,6 +15105,9 @@
       ],
       "your subscription": [
         "abonnementet ditt"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Jeg har brukt ${ BRAND_NAME } og tenkte at teamet ditt kanskje vil like det. Det er sikker e-post, skylagring, passordbehandler og VPN som beskytter personvernet ditt. Registrer deg med denne koblingen for å få ${ refereeRewardAmount } i rabatt på det første året med ${ BRAND_NAME } for Business: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -19315,6 +19405,12 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Data collection": [
+        "Datasamling"
+      ],
+      "Refer businesses": [
+        "Anbefal bedrifter"
       ]
     },
     "Title for payment methods table": {
@@ -20025,6 +20121,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne brukeren får administratorrettigheter neste gang brukeren logger på."
       ]
     },
     "Users table: badge": {

@@ -269,6 +269,9 @@
       ],
       "Writing assistant": [
         "Asistent de scriere"
+      ],
+      "Business referral link": [
+        "Legătură web Business"
       ]
     },
     "Accounts": {
@@ -1641,6 +1644,39 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Continue with Bitcoin": [
+        "Continuare cu Bitcoin"
+      ],
+      "Delete security key ${ keyName }": [
+        "Ștergere cheie de securitate ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Ștergere server ${ serverLocation }"
+      ],
+      "Download recovery kit": [
+        "Descărcare pachet de recuperare"
+      ],
+      "Edit security key ${ keyName }": [
+        "Editare cheie de securitate ${ keyName }"
+      ],
+      "Go to today": [
+        "Salt la astăzi"
+      ],
+      "Manage subscriptions": [
+        "Gestionare abonamente"
+      ],
+      "Next contact": [
+        "Contact următor"
+      ],
+      "Previous contact": [
+        "Contact anterior"
+      ],
+      "Remove file": [
+        "Eliminare fișier"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Eliminare server în așteptare din ${ serverLocation }"
       ]
     },
     "action": {
@@ -6341,6 +6377,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Ceva a funcționat greșit la înregistrarea cheii de securitate. Reîncercați."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
+      ],
+      "This security key is already registered to your account.": [
+        "Această cheie de securitate este deja înregistrată în cont."
       ]
     },
     "fido2: Info": {
@@ -6405,6 +6447,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Cheia de autentificare cu doi factori este pregătită de utilizare."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Folosiți amprenta, fața, PIN-ul sau blocarea ecranului dispozitivului"
       ]
     },
     "fido2: Label": {
@@ -10184,6 +10229,42 @@
       ],
       "Zoom meeting": [
         "o conferință pe Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator, **${ username }**, sau **${ firstEmail }** ori **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator **${ username }** sau cu **${ firstEmail }**, **${ secondEmail }** ori **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator, **${ username }** sau **${ firstEmail }**."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Pentru a îmbunătăți continuu serviciile noastre, uneori colectăm date pentru a monitoriza buna funcționare a aplicațiilor noastre. **Aceste informații nu sunt partajate cu niciun serviciu terț**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin e-mail**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin număr de telefon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Pentru a vă asigura cel mai înalt nivel posibil de securitate a contului, mențineți dezactivată opțiunea **Recuperare prin e-mail**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Pentru a vă asigura cel mai înalt nivel posibil de securitate a contului, mențineți dezactivată opțiunea **Recuperare prin număr de telefon**."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau **${ firstEmail }** ori **${ secondEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau **${ firstEmail }**, **${ secondEmail }** ori **${ thirdEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau cu **${ firstEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Contul v-a fost creat, dar nu s-a putut finaliza configurarea planului."
       ]
     },
     "info": {
@@ -10494,7 +10575,7 @@
         "Aplicare regulă la"
       ],
       "Ask members to set up 2FA": [
-        "Solicitați membrilor să-și activeze A2F"
+        "Solicitați membrilor activarea A2F"
       ],
       "Assertion Consumer Service URL": [
         "URL ACS (Assertion Consumer Service)"
@@ -11399,6 +11480,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Colectare diagnostice anonime privind utilizarea"
+      ],
+      "Share your invite link": [
+        "Partajați legătura web de invitare"
       ]
     },
     "label": {
@@ -13710,7 +13797,7 @@
         "Adăugare la grup existent"
       ],
       "Allowed ${ defaultLabel }": [
-        "${ defaultLabel } permis"
+        "Permis ${ defaultLabel }"
       ],
       "Android": [
         "Android"
@@ -13764,7 +13851,7 @@
         "Nepermis"
       ],
       "Optional ${ defaultLabel }": [
-        "${ defaultLabel } opțional"
+        "Opțional ${ defaultLabel }"
       ],
       "Organization only": [
         "Doar de la organizație"
@@ -14816,6 +14903,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Enter email address, name, or contact group": [
+        "Introduceți adresa de e-mail, numele sau grupul de contacte"
       ]
     },
     "placeholder": {
@@ -15254,6 +15344,9 @@
       ],
       "your subscription": [
         "abonament personal"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Am folosit ${ BRAND_NAME } și m-am gândit că i-ar plăcea și echipei tale. Este un serviciu securizat de e-mail, stocare în cloud, administrare de parole și VPN care îți protejează confidențialitatea. Înscrie-te folosind această legătură web pentru a primi o reducere de ${ refereeRewardAmount } în primul an pentru ${ BRAND_NAME } for Business: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -19629,6 +19722,15 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Duceți ${ BRAND_NAME } la serviciu. Câștigați credite."
+      ],
+      "Data collection": [
+        "Colectare de date"
+      ],
+      "Refer businesses": [
+        "Recomandați firme"
       ]
     },
     "Title for payment methods table": {
@@ -20683,6 +20785,37 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "După reușirea verificării, nu eliminați această înregistrare TXT deoarece este necesară pentru a confirma că dețineți domeniul în continuare."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Lăsați câmpul gol"
+      ]
+    },
+    "lumo_2026: feature": {
+      "2x Basic usage": [
+        "2X Utilizare de bază"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acces la API, cu ${ credit } credit pe lună"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acces la API, cu ${ credit } credit pe lună per utilizator"
+      ],
+      "Everything in Basic, and:": [
+        "Torul din Basic și:"
+      ],
+      "Everything in Free, and:": [
+        "Totul din Free și:"
+      ],
+      "Limited messages and chat history": [
+        "Mesaje si istoric conversații limitate"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximum de proiecte și aptitudini"
+      ],
+      "More usage": [
+        "Mai multă utilizare"
       ]
     }
   }

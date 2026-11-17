@@ -269,6 +269,9 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
+      ],
+      "Business referral link": [
+        "Empfehlungslink für Unternehmen"
       ]
     },
     "Accounts": {
@@ -1641,6 +1644,30 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Continue with Bitcoin": [
+        "Mit Bitcoin fortfahren"
+      ],
+      "Delete security key ${ keyName }": [
+        "Sicherheitsschlüssel ${ keyName } löschen"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Server ${ serverLocation } löschen"
+      ],
+      "Download recovery kit": [
+        "Wiederherstellungs-Kit herunterladen"
+      ],
+      "Edit security key ${ keyName }": [
+        "Sicherheitsschlüssel ${ keyName } bearbeiten"
+      ],
+      "Manage subscriptions": [
+        "Abonnements verwalten"
+      ],
+      "Remove file": [
+        "Datei entfernen"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Vorläufigen Server ${ serverLocation } entfernen"
       ]
     },
     "action": {
@@ -6286,6 +6313,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Etwas ist beim Registrieren deines Sicherheitsschlüssels schief gelaufen. Bitte versuche es erneut."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
+      ],
+      "This security key is already registered to your account.": [
+        "Dieser Sicherheitsschlüssel ist bereits in deinem Konto registriert."
       ]
     },
     "fido2: Info": {
@@ -6349,6 +6382,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Dein Zwei-Faktor-Authentifizierungsschlüssel ist jetzt einsatzbereit."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Fingerabdruck-, Gesichts-, PIN- oder Bildschirmsperre dieses Geräts verwenden"
       ]
     },
     "fido2: Label": {
@@ -10052,6 +10088,42 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** beziehungsweise **${ secondEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }**, **${ secondEmail }** beziehungsweise **${ thirdEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** anmelden."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Um unsere Dienste kontinuierlich zu verbessern, werden gelegentlich Daten erfasst, um das ordnungsgemäße Funktionieren der Anwendungen zu überwachen. **Diese Informationen werden nicht an Drittanbieter weitergegeben.**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere bitte die Option **Wiederherstellung per E-Mail**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere bitte die Option **Wiederherstellung per Telefon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, solltest du die Option **Wiederherstellung per E-Mail** deaktiviert lassen."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, solltest du die Option **Wiederherstellung per Telefon** deaktiviert lassen."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** beziehungsweise mit **${ secondEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }**, **${ secondEmail }** beziehungsweise mit **${ thirdEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Dein Konto wurde erstellt, aber die Einrichtung deines Abonnements konnte nicht abgeschlossen werden."
       ]
     },
     "info": {
@@ -11259,6 +11331,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Anonyme Nutzungsdaten erfassen"
+      ],
+      "Share your invite link": [
+        "Teile deinen Einladungslink"
       ]
     },
     "label": {
@@ -13224,7 +13302,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "Du hast nun Zugriff auf die neue ${ CALENDAR_APP_NAME }. ${ link }"
+        "Du hast nun Zugriff auf den neuen ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {
@@ -14618,6 +14696,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Enter email address, name, or contact group": [
+        "Gib eine E-Mail-Adresse, einen Namen oder eine Kontaktgruppe ein"
       ]
     },
     "placeholder": {
@@ -15053,6 +15134,9 @@
       ],
       "your subscription": [
         "Dein Abonnement"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Ich nutze ${ BRAND_NAME } bereits und dachte, das könnte auch dein Team interessieren. Es handelt sich um eine Kombination aus sicherer E-Mail, Cloud-Speicher, Passwort-Manager und VPN, die deine Privatsphäre schützt. Melde dich über diesen Link an, um ${ refereeRewardAmount } Rabatt auf dein erstes Jahr bei ${ BRAND_NAME } for Business zu erhalten: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -19350,6 +19434,15 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Nimm ${ BRAND_NAME } mit zur Arbeit. Verdiene dir Guthaben."
+      ],
+      "Data collection": [
+        "Datensammlung"
+      ],
+      "Refer businesses": [
+        "Unternehmen weiterempfehlen"
       ]
     },
     "Title for payment methods table": {
@@ -20388,6 +20481,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Feld leer lassen"
       ]
     }
   }

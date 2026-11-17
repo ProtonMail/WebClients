@@ -269,6 +269,9 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
+      ],
+      "Business referral link": [
+        "Σύνδεσμος παραπομπής επιχείρησης"
       ]
     },
     "Accounts": {
@@ -1641,6 +1644,45 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Continue with Bitcoin": [
+        "Συνεχίστε με Bitcoin"
+      ],
+      "Delete security key ${ keyName }": [
+        "Διαγραφή κλειδιού ασφαλείας ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Διαγραφή διακομιστή ${ serverLocation }"
+      ],
+      "Dismiss notification": [
+        "Απόρριψη ειδοποίησης"
+      ],
+      "Download recovery kit": [
+        "Λήψη κιτ αποκατάστασης"
+      ],
+      "Edit security key ${ keyName }": [
+        "Επεξεργασία κλειδιού ασφαλείας ${ keyName }"
+      ],
+      "Go to today": [
+        "Πηγαίνετε στο σήμερα"
+      ],
+      "Manage subscriptions": [
+        "Διαχείριση συνδρομών"
+      ],
+      "Next contact": [
+        "Επόμενη επαφή"
+      ],
+      "Previous contact": [
+        "Προηγούμενη επαφή"
+      ],
+      "Remove file": [
+        "Κατάργηση αρχείου"
+      ],
+      "Remove logo": [
+        "Κατάργηση λογότυπου"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Αφαίρεσή διακομιστή σε εκκρεμότητα ${ serverLocation }"
       ]
     },
     "action": {
@@ -6286,6 +6328,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά την καταχώρηση του κλειδιού ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
+      ],
+      "This security key is already registered to your account.": [
+        "Αυτό το κλειδί ασφαλείας είναι ήδη καταχωρημένο στον λογαριασμό σας."
       ]
     },
     "fido2: Info": {
@@ -6349,6 +6397,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Το κλειδί ελέγχου ταυτότητας δύο παραγόντων είναι έτοιμο για χρήση."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Χρησιμοποιήστε το δακτυλικό αποτύπωμα, την αναγνώριση προσώπου, το PIN ή το κλείδωμα οθόνης αυτής της συσκευής"
       ]
     },
     "fido2: Label": {
@@ -10052,6 +10103,45 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με το **${ firstEmail }** ή το **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τα **${ firstEmail }**, **${ secondEmail }** ή **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με το **${ firstEmail }**."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Για τη συνεχή βελτίωση των υπηρεσιών μας, μερικές φορές συλλέγουμε δεδομένα για την παρακολούθηση της ορθής λειτουργίας των εφαρμογών μας. **Αυτές οι πληροφορίες δε μοιράζονται με οποιεσδήποτε υπηρεσίες τρίτων.**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω ηλεκτρονικής διεύθυνσης**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω τηλεφώνου**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Για να διασφαλίσετε την υψηλότερη δυνατή ασφάλεια του λογαριασμού σας, διατηρήστε την **Ανάκτηση μέσω ηλεκτρονικής διεύθυνσης** απενεργοποιημένη."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Για να διασφαλίσετε την υψηλότερη δυνατή ασφάλεια του λογαριασμού σας, διατηρήστε την **Ανάκτηση μέσω τηλεφώνου** απενεργοποιημένη."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τη διεύθυνση **${ firstEmail }** ή **${ secondEmail }**. Οι υπόλοιπες διευθύνσεις email σας δε θα λειτουργούν για τη σύνδεση."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τις διευθύνσεις **${ firstEmail }**, **${ secondEmail }** ή **${ thirdEmail }**. Οι υπόλοιπες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τη διεύθυνση **${ firstEmail }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Οι θέσεις για βοηθούς συγγραφής δεν πωλούνται πλέον."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Ο λογαριασμός σας δημιουργήθηκε, αλλά δεν μπορέσαμε να ολοκληρώσουμε τη ρύθμιση του πλάνου σας."
       ]
     },
     "info": {
@@ -11259,6 +11349,12 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Συλλογή ανώνυμων διαγνωστικών στοιχείων χρήσης"
+      ],
+      "Share your invite link": [
+        "Μοιραστείτε τον σύνδεσμο πρόσκλησής σας"
       ]
     },
     "label": {
@@ -14618,6 +14714,9 @@
       ],
       "ZIP code": [
         "Ταχυδρομικός κώδικας"
+      ],
+      "Enter email address, name, or contact group": [
+        "Εισάγετε διεύθυνση email, όνομα, ή ομάδα επαφών"
       ]
     },
     "placeholder": {
@@ -15053,6 +15152,9 @@
       ],
       "your subscription": [
         "η συνδρομή σας"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Χρησιμοποιώ το ${ BRAND_NAME } και σκέφτηκα ότι μπορεί να αρέσει στην ομάδα σας. Πρόκειτε για ένα ασφαλές email, χώρο αποθήκευσης cloud, εφαρμογή διαχείρισης κωδικών πρόσβασης και VPN το οποίο προστατεύει την ιδιωτικότητά σας. Εγγραφείτε με αυτόν τον σύνδεσμο για να κερδίσετε ${ refereeRewardAmount } έκπτωση τον πρώτο χρόνο στο ${ BRAND_NAME } για Business: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -19350,6 +19452,15 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Φέρτε το ${ BRAND_NAME } στη δουλειά σας. Κερδίστε πόντους."
+      ],
+      "Data collection": [
+        "Συλλογή Δεδομένων"
+      ],
+      "Refer businesses": [
+        "Προτείνετε επιχειρήσεις"
       ]
     },
     "Title for payment methods table": {
@@ -20388,6 +20499,78 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Μετά την επιτυχή επαλήθευση, μην καταργήσετε αυτήν την εγγραφή TXT, διότι απαιτείται για να επιβεβαιώσετε ότι συνεχίζετε να είστε ο ιδιοκτήτης του τομέα."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Αφήστε το πεδίο κενό"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x Βασική χρήση"
+      ],
+      "5x Plus usage": [
+        "5 φορές περισσότερη χρήση"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Πρόσβαση σε API, με πίστωση ${ credit } ανά μήνα"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Πρόσβαση σε API, με πίστωση ${ credit } ανά μήνα για κάθε χρήστη"
+      ],
+      "Everything in Basic, and:": [
+        "Τα πάντα στο Basic, και:"
+      ],
+      "Everything in Free, and:": [
+        "Τα πάντα στο Free, και:"
+      ],
+      "Everything in Plus, and:": [
+        "Τα πάντα στο Plus, και:"
+      ],
+      "Extended image generation": [
+        "Εκτεταμένη δημιουργία εικόνων"
+      ],
+      "Includes:": [
+        "Περιλαμβάνει:"
+      ],
+      "Limited image generation": [
+        "Περιορισμένη δημιουργία εικόνων"
+      ],
+      "Limited messages and chat history": [
+        "Περιορισμένα μηνύματα και ιστορικό συνομιλιών"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Περιορισμένες Δεξιότητες, Έργα και προγραμματισμένες εργασίες"
+      ],
+      "Maximum image generation": [
+        "Μέγιστη παραγωγή εικόνων"
+      ],
+      "Maximum Skills and Projects": [
+        "Μέγιστες Δεξιότητες και Έργα"
+      ],
+      "More image generation": [
+        "Περισσότερη δημιουργία εικόνων"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Περισσότερες Δεξιότητες, Έργα και προγραμματισμένες εργασίες"
+      ],
+      "More usage": [
+        "Περισσότερη χρήση"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Για προγραμματισμό και κατασκευή"
+      ],
+      "For everyday chats": [
+        "Για καθημερινές συζητήσεις"
+      ],
+      "For getting more done": [
+        "Για να πετυχαίνετε περισσότερα"
       ]
     }
   }

@@ -1315,6 +1315,15 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ],
+      "Cancel ${ planTitle }": [
+        "Отменить ${ planTitle }"
+      ],
+      "Instructions": [
+        "Инструкции"
+      ],
+      "Remove file": [
+        "Удалить файл"
       ]
     },
     "action": {
@@ -1335,6 +1344,9 @@
     "Action subscription": {
       "Reactivate": [
         "Возобновить"
+      ],
+      "Cancel subscription": [
+        "Отменить подписку"
       ]
     },
     "Action: Sheets": {
@@ -9353,6 +9365,12 @@
       ],
       "Zoom meeting": [
         "Конференция в Zoom "
+      ],
+      "1 vault per user": [
+        "1 хранилище на пользователя"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "С этого момента для входа вы будете использовать его. Это единственное изменение."
       ]
     },
     "info": {
@@ -18572,6 +18590,9 @@
       ],
       "Your DKIM signing is working.": [
         "Ваше подписание DKIM работает."
+      ],
+      "This setting is managed by your organization": [
+        "Этой настройкой управляет ваша организация."
       ]
     },
     "tooltip": {
@@ -18979,6 +19000,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы сможете назначать должности, как только пользователь примет приглашение."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Нельзя изменить собственную роль. Попросите другого администратора изменить её за вас."
       ]
     },
     "Users table: badge": {
@@ -19005,6 +19029,9 @@
       ],
       "Writing assistant": [
         "Помощник по написанию"
+      ],
+      "Pending": [
+        "Ожидание"
       ]
     },
     "Validation": {
@@ -19321,6 +19348,27 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "После успешной проверки не удаляйте эту TXT-запись, так как она необходима для подтверждения того, что вы остаётесь владельцем домена."
+      ]
+    },
+    "account_search_index": {
+      "Account events": [
+        "События аккаунта"
+      ],
+      "Join organization": [
+        "Присоединиться к организации"
+      ],
+      "Leave group": [
+        "Покинуть группу"
+      ]
+    },
+    "claimed address": {
+      "Verify it's you": [
+        "Подтвердите, что это вы"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
       ]
     }
   }

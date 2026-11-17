@@ -1133,6 +1133,9 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Remove file": [
+        "Fájl eltávolítása"
       ]
     },
     "action": {
@@ -1193,6 +1196,13 @@
       ],
       "Writing assistant seats": [
         "Írási segéd licencek"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikált VPN szerver",
+        "${ ips } dedikált VPN szerver"
+      ],
+      "Add-on": [
+        "Bővítmény"
       ]
     },
     "Address action": {
@@ -3627,6 +3637,21 @@
       ],
       "You are signed in to the account ${ account }.": [
         "Jelenleg a következőként van belépve a fiókba: ${ account }."
+      ],
+      "${ days } day left": [
+        "${ days } nap van hátra",
+        "${ days } nap van hátra"
+      ],
+      "${ hours } hour left": [
+        "${ hours } óra van hátra",
+        "${ hours } óra van hátra"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } perc van hátra",
+        "${ minutes } perc van hátra"
+      ],
+      "Enable": [
+        "Engedélyez"
       ]
     },
     "Empty group name": {
@@ -4106,6 +4131,9 @@
       ],
       "Zero keys reactivated": [
         "Nulla kulcs újraaktiválva"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Érvénytelen helyreállító kód. Próbálja meg újra."
       ]
     },
     "error": {
@@ -4614,6 +4642,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Korlátlan számú hide-my-email álnév"
+      ],
+      "500 GB storage": [
+        "500 GB tárhely"
       ]
     },
     "Features": {
@@ -7363,6 +7394,25 @@
       ],
       "Zoom meeting": [
         "Zoom találkozót"
+      ],
+      "${ total } user found": [
+        "${ total } talált felhasználó",
+        "${ total } talált felhasználó"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Csak fájlok (nem képek, ${ DOCS_APP_NAME } vagy ${ SHEETS_APP_NAME })) - max. 100GB, 100.000 fájl, 50GB fájlonként"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, kapcsolja ki a **Helyreállítás e-mail címmel** lehetőséget."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, kapcsolja ki a **Helyreállítás telefonszámmal** lehetőséget."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, tartsa kikapcsolva a **Helyreállítás e-mail címmel** lehetőséget."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, tartsa kikapcsolva a **Helyreállítás telefonszámmal** lehetőséget."
       ]
     },
     "info": {
@@ -8295,6 +8345,9 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Your recovery email": [
+        "Helyreállítási e-mail címe"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8564,6 +8617,9 @@
       ],
       "What’s this?": [
         "Mi ez?"
+      ],
+      "activity monitor": [
+        "tevékenység figyelő"
       ]
     },
     "Loading info": {
@@ -8808,6 +8864,9 @@
       ],
       "Sign in": [
         "Bejelentkezés"
+      ],
+      "Enable user": [
+        "Felhasználó engedélyezése"
       ]
     },
     "Message": {
@@ -10236,6 +10295,9 @@
       ],
       "The whole organization": [
         "A teljes szervezet"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ]
     },
     "option": {
@@ -11161,6 +11223,12 @@
     "safety_review": {
       "Your recovery checklist": [
         "Az ön helyreállítási ellenőrzőlistája"
+      ],
+      "Done": [
+        "Kész"
+      ],
+      "Verify your recovery phone": [
+        "Helyreállító telefonszám megerősítése"
       ]
     },
     "saml: Action": {
@@ -14146,6 +14214,14 @@
       ],
       "Your subscriptions": [
         "Előfizetések"
+      ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } Meghívott barát",
+        "${ friendsInvited } Meghívott barát"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } Felíratkozott barát",
+        "${ friendsSubscribed } Felíratkozott barát"
       ]
     },
     "Title for payment methods table": {
@@ -14895,6 +14971,34 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "A sikeres ellenőrzés után se távolítsa el a TXT rekordot, annak megerősítésére, hogy továbbra is öné a domain név."
+      ]
+    },
+    "organization key reset": {
+      "User (${ n })": [
+        "Felhasználó (${ n })",
+        "Felhasználó (${ n })"
+      ]
+    },
+    "scim": {
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } csoport szinkronizálva",
+        "${ numberOfPendingGroups } csoport szinkronizálva"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } csoport szinkronizálva.",
+        "${ pendingGroupsCount } csoport szinkronizálva."
+      ]
+    },
+    "Status": {
+      "${ count } person": [
+        "${ count } személy",
+        "${ count } személy"
+      ],
+      "... waiting": [
+        "... várakozás"
+      ],
+      "remove organization key": [
+        "szervezeti kulcs eltávolítása"
       ]
     }
   }

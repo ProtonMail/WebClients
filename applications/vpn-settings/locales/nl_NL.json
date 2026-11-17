@@ -1345,6 +1345,12 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Continue with Bitcoin": [
+        "Ga verder met Bitcoin"
+      ],
+      "Remove file": [
+        "Verwijder bestand"
       ]
     },
     "action": {
@@ -9418,6 +9424,9 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Uw account is aangemaakt, maar we kunnen het instellen van uw plan niet voltooien."
       ]
     },
     "info": {
@@ -10598,6 +10607,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Share your invite link": [
+        "Deel uw uitnodigingslink"
       ]
     },
     "label": {
@@ -13677,6 +13689,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Enter email address, name, or contact group": [
+        "Voer het e-mailadres, de naam of de contactgroep in"
       ]
     },
     "placeholder": {
@@ -14112,6 +14127,9 @@
       ],
       "your subscription": [
         "uw abonnement"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Ik gebruik ${ BRAND_NAME } en dacht dat uw team dit misschien wel leuk zou vinden. Het is een veilige e-mail, cloudopslag, wachtwoordbeheerder en VPN die uw privacy beschermt. Meld u aan via deze link en ontvang ${ refereeRewardAmount } korting op uw eerste jaar van ${ BRAND_NAME } for Business: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -18308,6 +18326,12 @@
       ],
       "Your subscriptions": [
         "Uw abonnementen"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Neem ${ BRAND_NAME } mee naar het werk. Verdien tegoed."
+      ],
+      "Refer businesses": [
+        "Verwijs naar bedrijven"
       ]
     },
     "Title for payment methods table": {
@@ -19314,6 +19338,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Na een succesvolle verificatie mag u dit TXT-record niet verwijderen, omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
+      ]
+    },
+    "account_search_index": {
+      "Business referral link": [
+        "Zakelijke verwijzingslink"
       ]
     }
   }

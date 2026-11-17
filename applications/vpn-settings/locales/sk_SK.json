@@ -269,6 +269,9 @@
       ],
       "Writing assistant": [
         "Asistent písania"
+      ],
+      "Business referral link": [
+        "Odkaz na odporúčanie pre firmy"
       ]
     },
     "Accounts": {
@@ -1641,6 +1644,45 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Continue with Bitcoin": [
+        "Pokračovať s Bitcoinom"
+      ],
+      "Delete security key ${ keyName }": [
+        "Vymazať bezpečnostný kľúč ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Vymazať server ${ serverLocation }"
+      ],
+      "Dismiss notification": [
+        "Zavrieť notifikáciu"
+      ],
+      "Download recovery kit": [
+        "Stiahnuť súpravu na obnovenie"
+      ],
+      "Edit security key ${ keyName }": [
+        "Upraviť bezpečnostný kľúč ${ keyName }"
+      ],
+      "Go to today": [
+        "Prejsť na dnešok"
+      ],
+      "Manage subscriptions": [
+        "Spravovať predplatné"
+      ],
+      "Next contact": [
+        "Nasledujúci kontakt"
+      ],
+      "Previous contact": [
+        "Predchádzajúci kontakt"
+      ],
+      "Remove file": [
+        "Odstrániť súbor"
+      ],
+      "Remove logo": [
+        "Odstrániť logo"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Odstrániť čakajúci server ${ serverLocation }"
       ]
     },
     "action": {
@@ -6396,6 +6438,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Pri registrácii vášho bezpečnostného kľúča sa vyskytla chyba. Prosím, skúste to znova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
+      ],
+      "This security key is already registered to your account.": [
+        "Tento bezpečnostný kľúč je už priradený k vášmu účtu."
       ]
     },
     "fido2: Info": {
@@ -6461,6 +6509,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Váš dvojstupňový overovací kľúč je pripravený na použitie."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Použite odtlačok prsta, rozpoznanie tváre, PIN alebo uzamknutie obrazovky tohto zariadenia"
       ]
     },
     "fido2: Label": {
@@ -10326,6 +10377,45 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }** alebo **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**, **${ secondEmail }** alebo **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Aby sme neustále zlepšovali naše služby, niekedy zhromažďujeme údaje na monitorovanie správneho fungovania našich aplikácií. **Tieto informácie nie sú zdieľané so žiadnymi službami tretích strán.**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom emailu**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom telefónu**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Aby ste zaistili čo najvyššiu možnú bezpečnosť svojho účtu, nechajte funkciu **Obnovenie prostredníctvom emailu** vypnutú."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Aby ste zaistili čo najvyššiu možnú bezpečnosť svojho účtu, nechajte funkciu **Obnovenie prostredníctvom telefónu** vypnutú."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }** či **${ secondEmail }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**, **${ secondEmail }** alebo **${ thirdEmail }**. Ostatné emailové adresy nebudú pri prihlásení fungovať."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Licencie pre asistentov písania už nie sú v predaji."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Váš účet bol vytvorený, ale nepodarilo sa nám dokončiť nastavenie vášho balíka."
       ]
     },
     "info": {
@@ -11549,6 +11639,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Zbierať anonymnú diagnostiku používania"
+      ],
+      "Share your invite link": [
+        "Zdieľajte svoj pozývací odkaz"
       ]
     },
     "label": {
@@ -15024,6 +15120,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Enter email address, name, or contact group": [
+        "Zadajte emailovú adresu, meno alebo kontaktnú skupinu"
       ]
     },
     "placeholder": {
@@ -15465,6 +15564,9 @@
       ],
       "your subscription": [
         "vaše predplatné"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Používam službu ${ BRAND_NAME } a napadlo mi, že by sa mohla páčiť aj vášmu tímu. Ide o bezpečnú emailovú službu, cloudové úložisko, správcu hesiel a VPN, ktoré chránia vaše súkromie. Zaregistrujte sa cez tento odkaz a získajte zľavu ${ refereeRewardAmount } na prvý rok používania služby ${ BRAND_NAME } pre firmy: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -19918,6 +20020,15 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Prineste si ${ BRAND_NAME } do práce. Získajte body."
+      ],
+      "Data collection": [
+        "Zber údajov"
+      ],
+      "Refer businesses": [
+        "Odporučte firmám"
       ]
     },
     "Title for payment methods table": {
@@ -20988,6 +21099,78 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po úspešnom overení prosím neodstraňujte tento TXT záznam, je potrebný pre potvrdenie, že stále používate svoju doménu."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Nechajte pole prázdne"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } kód"
+      ],
+      "2x Basic usage": [
+        "2-násobné využitie Basic"
+      ],
+      "5x Plus usage": [
+        "5-násobné využitie Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Prístup k API s kreditom ${ credit } na mesiac"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Prístup k API s kreditom ${ credit } na mesiac na používateľa"
+      ],
+      "Everything in Basic, and:": [
+        "Všetko z plánu Basic a navyše:"
+      ],
+      "Everything in Free, and:": [
+        "Všetko z plánu Free a:"
+      ],
+      "Everything in Plus, and:": [
+        "Všetko z Plus a navyše:"
+      ],
+      "Extended image generation": [
+        "Rozšírené vytváranie obrázkov"
+      ],
+      "Includes:": [
+        "Obsahuje:"
+      ],
+      "Limited image generation": [
+        "Obmedzené vytváranie obrázkov"
+      ],
+      "Limited messages and chat history": [
+        "Obmedzený počet správ a história chatu"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Obmedzené schopnosti, projekty a naplánované úlohy"
+      ],
+      "Maximum image generation": [
+        "Maximálne vytváranie obrázkov"
+      ],
+      "Maximum Skills and Projects": [
+        "Najlepšie schopnosti a projekty"
+      ],
+      "More image generation": [
+        "Viac vytváraní obrázkov"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Viac schopností, projektov a naplánovaných úloh"
+      ],
+      "More usage": [
+        "Ďalšie možnosti použitia"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Pre programovanie a tvorbu"
+      ],
+      "For everyday chats": [
+        "Na každodenné chatovanie"
+      ],
+      "For getting more done": [
+        "Aby ste stihli viac práce"
       ]
     }
   }

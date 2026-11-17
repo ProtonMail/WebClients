@@ -239,6 +239,18 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Audit log": [
+        "Revisionslogg"
+      ],
+      "Business referral link": [
+        "Business hänvisningslänk"
+      ],
+      "Cancel plan": [
+        "Avbryt planen"
+      ],
+      "Recovery score": [
+        "Återställningspoäng"
       ]
     },
     "Accounts": {
@@ -1602,6 +1614,51 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Cancel trial": [
+        "Avbryt provperioden"
+      ],
+      "Continue with Bitcoin": [
+        "Fortsätt med Bitcoin"
+      ],
+      "Delete security key ${ keyName }": [
+        "Ta bort säkerhetsnyckel ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Ta bort server ${ serverLocation }"
+      ],
+      "Dismiss notification": [
+        "Avfärda avisering"
+      ],
+      "Download recovery kit": [
+        "Ladda ned återställningskit"
+      ],
+      "Edit security key ${ keyName }": [
+        "Redigera säkerhetsnyckel ${ keyName }"
+      ],
+      "Go to today": [
+        "Gå till idag"
+      ],
+      "Manage subscriptions": [
+        "Hantera prenumerationer"
+      ],
+      "Next contact": [
+        "Nästa kontakt"
+      ],
+      "Previous contact": [
+        "Tidigare kontakt"
+      ],
+      "Remove file": [
+        "Ta bort fil"
+      ],
+      "Remove logo": [
+        "Ta bort logotyp"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Ta bort väntande server ${ serverLocation }"
+      ],
+      "Restrict sign-in": [
+        "Begränsa inloggning"
       ]
     },
     "action": {
@@ -1718,6 +1775,12 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
+      ],
+      "Managed Service Provider": [
+        "Hanterad tjänsteleverantör"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Visar sätt att få hjälp med verifiering"
       ]
     },
     "Address action": {
@@ -1981,6 +2044,9 @@
       ],
       "You have reached the trial limit.": [
         "Du har nått provperiodsgränsen."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "När du avbryter kommer din gratis provperiod inte att omvandlas till en betald prenumeration, men du kan fortfarande dra nytta av paketförmåner fram till slutet av provperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -2185,6 +2251,13 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Förnyas automatiskt med ${ subscriptionManagerName }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Förnyas automatiskt med ${ price }, för ${ cycle } månad",
+        "Förnyas automatiskt med ${ price }, för ${ cycle } månader"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Kommer att ersättas av din kommande prenumeration på ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -2536,6 +2609,18 @@
       ],
       "Your new address": [
         "Din nya adress"
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data is safe and hasn't been shared with anyone. To migrate it to a new account, create a new ${ BRAND_NAME } email address.": [
+        "Adressen har gjorts anspråk på ${ boldClaimedEmail } och kan inte längre användas för det här kontot. Din data är säker och har inte delats med någon. För att migrera den till ett nytt konto, skapa en ny ${ BRAND_NAME } e-postadress."
+      ],
+      "You're all set": [
+        "Du är klar"
+      ],
+      "Your address has been claimed": [
+        "Din adress har aktiverats"
+      ],
+      "Your password remains the same.": [
+        "Ditt lösenord förblir detsamma."
       ]
     },
     "Collapsible tooltip": {
@@ -4016,6 +4101,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Bring over your files and folders from another provider.": [
+        "För över dina filer och mappar från en annan leverantör."
       ]
     },
     "description": {
@@ -5365,7 +5453,7 @@
         "Policynamnet måste vara mellan 3 och 40 tecken."
       ],
       "The session has expired. Please try again.": [
-        "Sessionen har löpt ut. Vänligen försök igen."
+        "Sessionen har löpt ut. Försök igen."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
@@ -6132,6 +6220,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Något gick fel när din säkerhetsnyckel registrerades. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
+      ],
+      "This security key is already registered to your account.": [
+        "Den här säkerhetsnyckeln är redan registrerad på ditt konto."
       ]
     },
     "fido2: Info": {
@@ -6189,6 +6283,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Din tvåfaktorsautentiseringsnyckel är redo att användas."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Använd den här enhetens fingeravtryck, ansikte, PIN-kod eller skärmlås"
       ]
     },
     "fido2: Label": {
@@ -9716,6 +9813,78 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } märke"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** används också för att logga in på ett separat ${ BRAND_NAME } konto, utanför ${ MAIL_APP_NAME }."
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Tillåt din organisation att använda ${ LUMO_APP_NAME } API"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**."
+      ],
+      "Configure Always-on VPN": [
+        "Konfigurera Alltid-på VPN"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+      ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "För att kontinuerligt förbättra våra tjänster samlar vi ibland in data för att övervaka att våra applikationer fungerar korrekt.  **Denna information delas inte med några tredjepartstjänster.**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Återställning via e-postl**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Återställning via telefon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Återställning via e-postl**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Återställning via telefon**."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**. Dina andra e-postadresser kommer inte att fungera för inloggning."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dina andra e-postadresser kommer inte att fungera för inloggning."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**. Dina andra e-postadresser kommer inte att fungera för inloggning."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Platser för skrivassistenten säljs inte längre"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en öppen faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en öppen faktura på ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "You'll choose a new username": [
+        "Du får välja ett nytt användarnamn"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Du använder den för att logga in från och med nu. Det är den enda förändringen."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Ditt konto skapades, men vi kunde inte fullfölja att installera din plan."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Dina andra e-postadresser kommer inte att fungera för inloggning förrän du stänger av den här."
       ]
     },
     "info": {
@@ -10922,6 +11091,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Samla in anonym användningsdiagnostik"
+      ],
+      "Share your invite link": [
+        "Dela din inbjudningslänk"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11221,6 +11396,9 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "Pay it": [
+        "Betala den"
       ]
     },
     "Link (Scribe)": {
@@ -13088,6 +13266,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Obegränsat antal alias för att skydda din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
       ]
     },
     "Onboarding": {
@@ -13140,6 +13321,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Har du ångrat dig efter försöksperioden** Avbryt inom 30 dagar från din första betalning och vi kommer att betala tillbaka för den oanvända tiden."
       ]
     },
     "Option": {
@@ -13343,6 +13527,12 @@
       ],
       "Your administrator privileges have been restored. You can now manage non-private users.": [
         "Dina administratörsbehörigheter har återställts. Du kan nu hantera icke-privata användare."
+      ],
+      "Send unprivatization requests": [
+        "Skicka begäranden om avprivatisering"
+      ],
+      "To restore your privileges, use a data recovery method.": [
+        "För att återställa dina förmåner, använd en dataåterställningsmetod."
       ]
     },
     "Organization logo upload": {
@@ -13794,6 +13984,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Genom att byta godkänner du våra ${ termsLink }."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Denna prenumeration kan inte slutföras just nu. Försök igen."
       ]
     },
     "Payments.Error": {
@@ -14091,6 +14287,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter email address, name, or contact group": [
+        "Skriv e-postadress, namn, eller kontaktgrupp"
       ]
     },
     "placeholder": {
@@ -14526,6 +14725,9 @@
       ],
       "your subscription": [
         "din prenumeration"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Jag har använt ${ BRAND_NAME } och trodde att ditt team skulle tycka om det. Det är en säker e-post, molnlagring, lösenordshanterare, och VPN som skyddar ditt företag. Registrera via den här länken för att få ${ refereeRewardAmount } på ditt första år med ${ BRAND_NAME } för Business: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -16177,6 +16379,9 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "För att vara säker på att det verkligen är du som försöker logga in, ange ditt lösenord."
       ]
     },
     "sso: auth device state": {
@@ -16280,6 +16485,9 @@
       ],
       "Verify ${ value }": [
         "Verifiera ${ value }"
+      ],
+      "key removal scheduled": [
+        "nyckelborttagning schemalagd"
       ]
     },
     "Storage": {
@@ -16888,7 +17096,7 @@
         "${ startTime } – ${ endTime }"
       ],
       "From ${ startTime }": [
-        "Från  ${ startTime }"
+        "Från ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -18751,6 +18959,30 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Always-on VPN device profile": [
+        "Alltid-på VPN enhetsprofil"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Ta med ${ BRAND_NAME } till Work. Tjäna krediter."
+      ],
+      "Configure Always-on VPN device profile": [
+        "Konfigurera Alltid-på VPN enhetsprofil"
+      ],
+      "Data collection": [
+        "Datainsamling"
+      ],
+      "Refer businesses": [
+        "Hänvisa företag"
+      ],
+      "Restrict sign-in?": [
+        "Begränsa inloggning?"
+      ],
+      "Single sign-on (SSO)": [
+        "Enkel inloggning (SSO)"
+      ],
+      "Upgrade to enable Always-on": [
+        "Uppgradera för att aktivera Alltid-på"
       ]
     },
     "Title for payment methods table": {
@@ -19066,6 +19298,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
+      ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Extern adress – kan inte beviljas de roller och behörigheter som tilldelats den här gruppen."
       ]
     },
     "Tooltip for members table": {
@@ -19437,6 +19672,12 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Uppgradera till en stödd version för att använda administratörroller."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan inte ändra dina egna roller. Be en annan administratör att ändra dem."
       ]
     },
     "Users table: badge": {
@@ -19762,6 +20003,83 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter lyckad verifiering, ta inte bort denna TXT-post eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Lämna fält tomt"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Kod"
+      ],
+      "2x Basic usage": [
+        "2X Basic användning"
+      ],
+      "5x Plus usage": [
+        "5x Plus användning"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API tillgång, med ${ credit } en månads kredit"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API tillgång, med ${ credit } en månads kredit per användare"
+      ],
+      "Everything in Basic, and:": [
+        "Allt i Gratis, och:"
+      ],
+      "Everything in Free, and:": [
+        "Allt i Gratis-paketet, och:"
+      ],
+      "Everything in Plus, and:": [
+        "Allt i Plus, och:"
+      ],
+      "Extended image generation": [
+        "Utökad bildgenerering"
+      ],
+      "Includes:": [
+        "Inkluderar:"
+      ],
+      "Limited image generation": [
+        "Begränsade bildgenereringar"
+      ],
+      "Limited messages and chat history": [
+        "Begränsade meddelanden och chatthistorik"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Begränsade Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "Maximum image generation": [
+        "Maximal bildgenerering"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximala Färdigheter och Projekt"
+      ],
+      "More image generation": [
+        "Mer bildgenereringar"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mera Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "More usage": [
+        "Mer användning"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "För kodning och byggande"
+      ],
+      "For everyday chats": [
+        "För chattar varje dag"
+      ],
+      "For getting more done": [
+        "För att få mer gjort"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Genom att bekräfta, ger du ${ BRAND_NAME } och Stripe, vår betalningstjänsteleverantör, tillstånd att dra framtida betalningar för din prenumeration från detta bankkontot via SEPA-autogiro, och din bank tillstånd att genomföra dessa dragningar. Din första betalning sker nu via ${ IDEAL_WERO_BRAND_NAME }. Din prenumeration förnyas automatiskt, tills du säger upp den; vi meddelar dig inför varje dragning. Vid betalningar via autogiro kan du i enlighet med villkoren i ditt avtal med banken begära återbetalning från din bank inom 8 veckor från dragningsdatumet. Detta gäller inte den betalning via ${ IDEAL_WERO_BRAND_NAME } som du genomför nu."
       ]
     }
   }

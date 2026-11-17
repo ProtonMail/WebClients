@@ -1342,6 +1342,18 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Cancel ${ planTitle }": [
+        "${ planTitle } をキャンセル"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "${ planTitle } の無料トライアルをキャンセル"
+      ],
+      "Continue with Bitcoin": [
+        "ビットコインで続ける"
+      ],
+      "Remove file": [
+        "ファイルを削除"
       ]
     },
     "action": {
@@ -1362,6 +1374,9 @@
     "Action subscription": {
       "Reactivate": [
         "再アクティブ化"
+      ],
+      "Cancel subscription": [
+        "サブスクリプションをキャンセル"
       ]
     },
     "Action: Sheets": {
@@ -1703,6 +1718,9 @@
       ],
       "You have reached the trial limit.": [
         "トライアルの制限に達しました。"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "キャンセルすると、無料トライアルは有料サブスクリプションに移行されません。"
       ]
     },
     "b2b_trials_Action": {
@@ -2395,6 +2413,15 @@
       ],
       "Upload any new files": [
         "新しいファイルをアップロードする"
+      ],
+      "If you exceed your plan limits, you won't be able to:": [
+        "プランの上限を超えると、次の操作ができなくなります："
+      ],
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "${ planDisplayName } のサブスクリプションは${ endDate } に終了し、そのプランの機能を利用できなくなります。その時点で利用量がプランの上限を超えている場合、一部の機能が一時的に利用できなくなることがあります。"
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "サブスクリプションが  ${ endDate }  に終了し、その機能を利用できなくなります。その後、利用量がプランの上限を超えた場合、一部の機能が一時的に利用できなくなることがあります。"
       ]
     },
     "Confirm modal title": {
@@ -5760,6 +5787,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "セキュリティキーの登録に失敗しました。もう一度お試しください。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
+      ],
+      "This security key is already registered to your account.": [
+        "このセキュリティキーは、すでにアカウントに登録されています。"
       ]
     },
     "fido2: Info": {
@@ -9148,6 +9181,30 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "サービスの継続的な改善のためアプリケーションが正常に動作しているかを確認する目的でデータを収集することがあります。**この情報が第三者のサービスと共有されることはありません。**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "アカウントのセキュリティを最大限に高めるため、**メールによる復旧 **を無効にしてください。"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "アカウントのセキュリティを最大限に高めるため、**電話番号による復旧**を無効にしてください。"
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "アカウントのセキュリティを最大限に高めるため、**電話番号による復旧**を無効のままにしてください。"
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "キャンセルすると、トライアル期間終了後にサブスクリプションは開始されません。"
+      ],
+      "You cancel it in the store.": [
+        "ストアからキャンセルしてください。"
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "複数のサブスクリプションがあります。キャンセルするものを選択してください。他のサブスクリプションには影響しません。キャンセル後も契約期間の終了まで特典を利用できます。"
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "アカウントは作成されましたが、プランの設定を完了できませんでした。"
       ]
     },
     "info": {
@@ -10313,6 +10370,9 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "匿名の使用状況診断データを収集する"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17908,6 +17968,9 @@
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
+      ],
+      "What changes if you cancel ${ planDisplayName }": [
+        "${ planDisplayName } をキャンセルするとどうなりますか？ "
       ]
     },
     "Title for payment methods table": {
@@ -17968,6 +18031,12 @@
       ],
       "Status": [
         "ステータス"
+      ],
+      "Renewal": [
+        "更新"
+      ],
+      "Subscription term": [
+        "サブスクリプション期間"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -18868,6 +18937,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "検証に成功しても、この TXT レコードを削除しないでください。ドメインを引き続き所有していることを確認するためにこの TXT レコードが必要です。"
+      ]
+    },
+    "Subscription term": {
+      "From ${ startTime }": [
+        "${ startTime }から"
       ]
     }
   }

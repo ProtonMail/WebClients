@@ -1383,6 +1383,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Remove file": [
+        "Poista tiedosto"
       ]
     },
     "action": {
@@ -2249,6 +2252,15 @@
       ],
       "Total": [
         "Summa"
+      ],
+      "Amount due": [
+        "Maksettavaa"
+      ],
+      "Amount due after trial": [
+        "Maksettavaa kokeilujakson jälkeen"
+      ],
+      "Amount due now": [
+        "Maksettavaa nyt"
       ]
     },
     "Collapsible tooltip": {
@@ -6796,7 +6808,7 @@
         "**Tuo olemassa olevat koodisi** muista 2FA-sovelluksista, kuten Google Authenticatorista"
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+        "**Kutsu kaverisi** ${ BRAND_NAME }iin henkilökohtaisella suosittelulinkillä."
       ],
       "**Sync codes** to all your devices": [
         "**Synkronoi koodit** kaikkiin laitteisiisi"
@@ -8362,7 +8374,7 @@
         "Lähetä"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
+        "Tee talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletus kirjataan tilillesi vahvistuksen jälkeen."
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein.",
@@ -8855,10 +8867,10 @@
         "Suosittelemme vahvasti, että kaikki ottavat käyttöön palautuksen palautuslauseen avulla."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Käytämme 3-D Securea maksujesi suojaukseen"
+        "Maksut suojataan 3-D Securella"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
+        "Sinut ohjataan uuteen selaimen välilehteen PayPaliin maksutapahtuman viimeistelemiseksi. Jos käytät ponnahdusikkunoiden estoa, poista se käytöstä jatkaaksesi."
       ],
       "We'll email you once import is complete.": [
         "Ilmoitamme tuonnin valmistumisesta sähköpostitse."
@@ -9552,7 +9564,7 @@
         "Summa"
       ],
       "Amount due": [
-        "Erääntyvä summa"
+        "Maksettavaa nyt"
       ],
       "Anderson": [
         "Virtanen"
@@ -10660,7 +10672,7 @@
         "Miten jaat sähköpostitse"
       ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
-        "Miten ${ DARK_WEB_MONITORING_NAME } toimii"
+        "Näin ${ DARK_WEB_MONITORING_NAME } toimii"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
         "Miten käytät ${ PASS_APP_NAME } for Businessia"
@@ -11931,6 +11943,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } päättyen ${ Last4 }"
       ]
     },
     "new_plans: Info": {
@@ -13150,7 +13165,7 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",
-        "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
+        "Erikoisalennettu hinta ${ priceWithDiscount } on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua sen milloin tahansa."
@@ -17704,7 +17719,7 @@
         "Lähetetäänkö muistutuksia sähköpostitse?"
       ],
       "Send new invite?": [
-        "Lähetä uusi kutsu?"
+        "Lähetetäänkö uusi kutsu?"
       ],
       "Service": [
         "Palvelu"
@@ -18048,6 +18063,9 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Data collection": [
+        "Tiedonkeruu"
       ]
     },
     "Title for payment methods table": {
@@ -19042,6 +19060,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Älä poista tätä TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sen avulla varmistetaan verkkotunnuksen kuuluvan sinulle myös jatkossa."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay – kortti päättyen ${ Last4 }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay – kortti päättyen ${ Last4 }"
       ]
     }
   }

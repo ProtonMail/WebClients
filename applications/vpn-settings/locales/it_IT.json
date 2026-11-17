@@ -269,6 +269,9 @@
       ],
       "Writing assistant": [
         "Assistente per la scrittura"
+      ],
+      "Business referral link": [
+        "Link di riferimento aziendale"
       ]
     },
     "Accounts": {
@@ -1641,6 +1644,45 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Continue with Bitcoin": [
+        "Continua con Bitcoin"
+      ],
+      "Delete security key ${ keyName }": [
+        "Elimina la chiave di sicurezza ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Elimina il server ${ serverLocation }"
+      ],
+      "Dismiss notification": [
+        "Ignora notifica"
+      ],
+      "Download recovery kit": [
+        "Scarica il kit di ripristino"
+      ],
+      "Edit security key ${ keyName }": [
+        "Modifica la chiave di sicurezza ${ keyName }"
+      ],
+      "Go to today": [
+        "Vai a oggi"
+      ],
+      "Manage subscriptions": [
+        "Gestisci gli abbonamenti"
+      ],
+      "Next contact": [
+        "Contatto successivo"
+      ],
+      "Previous contact": [
+        "Contatto precedente"
+      ],
+      "Remove file": [
+        "Rimuovi file"
+      ],
+      "Remove logo": [
+        "Rimuovi logo"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Rimuovi il server in attesa ${ serverLocation }"
       ]
     },
     "action": {
@@ -6286,6 +6328,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Qualcosa è andato storto durante la registrazione della tua chiave di sicurezza. Per favore riprova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
+      ],
+      "This security key is already registered to your account.": [
+        "Questa chiave di sicurezza è già registrata al tuo account."
       ]
     },
     "fido2: Info": {
@@ -6349,6 +6397,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "La tua chiave di autenticazione a due fattori è pronta all'uso."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Utilizza l'impronta digitale, il riconoscimento facciale, il PIN o il blocco dello schermo di questo dispositivo"
       ]
     },
     "fido2: Label": {
@@ -9658,7 +9709,7 @@
         "Quando annulli, il tuo abbonamento non verrà rinnovato, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di abbonamento. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
       ],
       "When you cancel, your subscription won't start after the trial period.": [
-        "Quando si annulla, non sarà possibile avviare l'abbonamento dopo il periodo di prova."
+        "Quando si annulla, non sarà possibile sottoscrivere l'abbonamento dopo il periodo di prova."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando annulli, il tuo abbonamento non verrà rinnovato, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di abbonamento. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
@@ -10052,6 +10103,45 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Attivando questa opzione, potrai effettuare l'accesso solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }** o **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Attivando questa opzione, potrai effettuare l'accesso solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Attivando questa opzione, potrai accedere solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }**."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Per migliorare costantemente i nostri servizi, raccogliamo occasionalmente dati per monitorare il corretto funzionamento delle nostre applicazioni. **Queste informazioni non vengono condivise con servizi di terze parti.**"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Per garantire la massima sicurezza possibile del tuo account, disattiva l'opzione **Recupero tramite e-mail**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Per garantire la massima sicurezza possibile del tuo account, disattiva la funzione **Recupero tramite telefono**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Per garantire la massima sicurezza possibile del tuo account, mantieni disattivata l'opzione **Recupero tramite e-mail**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Per garantire la massima sicurezza possibile del tuo account, mantieni disattivata l'opzione **Recupero tramite telefono**."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi effettuare l'accesso solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }** o **${ secondEmail }**. Gli altri tuoi indirizzi e-mail non funzioneranno per l'accesso."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi effettuare l'accesso solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**. Gli altri tuoi indirizzi e-mail non funzioneranno per l'accesso."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi effettuare l'accesso solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }**. Gli altri tuoi indirizzi e-mail non funzioneranno per l'accesso."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Le licenze per assistenti alla scrittura non sono più in vendita."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "L'account è stato creato, ma non è stato possibile configurare il piano."
       ]
     },
     "info": {
@@ -11259,6 +11349,12 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Raccogliere dati diagnostici anonimi sull'utilizzo."
+      ],
+      "Share your invite link": [
+        "Condividi il link d'invito"
       ]
     },
     "label": {
@@ -14618,6 +14714,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Enter email address, name, or contact group": [
+        "Inserisci l'indirizzo email, il nome o il gruppo di contatto"
       ]
     },
     "placeholder": {
@@ -15053,6 +15152,9 @@
       ],
       "your subscription": [
         "il tuo abbonamento"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Sto utilizzando ${ BRAND_NAME } e ho pensato che potesse interessare anche al vostro team. Si tratta di un servizio di posta elettronica sicura, archiviazione cloud, gestione password e VPN che protegge la vostra privacy. Iscrivetevi tramite questo link per ottenere uno sconto del ${ refereeRewardAmount } sul primo anno di ${ BRAND_NAME } per le aziende: ${ referralLink }"
       ]
     },
     "Remove organization logo": {
@@ -19350,6 +19452,15 @@
       ],
       "Your subscriptions": [
         "I tuoi abbonamenti"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Porta ${ BRAND_NAME } al lavoro e guadagna crediti."
+      ],
+      "Data collection": [
+        "Raccolta dati"
+      ],
+      "Refer businesses": [
+        "Promuovi aziende"
       ]
     },
     "Title for payment methods table": {
@@ -20388,6 +20499,78 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Dopo la verifica, non rimuovere questo record TXT in quanto è necessario per confermare che tu continui a possedere il dominio."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Lascia il campo vuoto"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "Codice ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "2x Basic usage": [
+        "2x Utilizzo di base"
+      ],
+      "5x Plus usage": [
+        "Utilizzo 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Accesso all'API, con un credito di ${ credit } al mese"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Accesso all'API, con un credito di ${ credit } al mese per utente"
+      ],
+      "Everything in Basic, and:": [
+        "Tutte le funzionalità del piano base, più:"
+      ],
+      "Everything in Free, and:": [
+        "Tutte le funzionalità del Piano Gratuito, più:"
+      ],
+      "Everything in Plus, and:": [
+        "Tutte le funzionalità del Piano Plus, più:"
+      ],
+      "Extended image generation": [
+        "Generazione di immagini estesa"
+      ],
+      "Includes:": [
+        "Include:"
+      ],
+      "Limited image generation": [
+        "Generazione di immagini limitata"
+      ],
+      "Limited messages and chat history": [
+        "Messaggi e cronologia chat limitati"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Competenze, progetti e attività pianificate limitati"
+      ],
+      "Maximum image generation": [
+        "Generazione massima di immagini"
+      ],
+      "Maximum Skills and Projects": [
+        "Competenze e progetti al massimo livello"
+      ],
+      "More image generation": [
+        "Generazione di ulteriori immagini"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Ulteriori competenze, progetti e attività pianificate"
+      ],
+      "More usage": [
+        "Ulteriori utilizzi"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Per programmare e costruire"
+      ],
+      "For everyday chats": [
+        "Per le chat di tutti i giorni"
+      ],
+      "For getting more done": [
+        "Per fare di più"
       ]
     }
   }

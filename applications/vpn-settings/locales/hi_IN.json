@@ -1617,6 +1617,12 @@
       ],
       "Zoom out": [
         "ज़ूम कम करें"
+      ],
+      "Manage subscriptions": [
+        "सदस्यता मैनेज करें"
+      ],
+      "Remove file": [
+        "फाइल हटाएं"
       ]
     },
     "action": {
@@ -6139,6 +6145,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "आपकी सुरक्षा चाबी रजिस्टर करते वक्त कुछ गलती हो गई। कृपया पुनः प्रयास करें।"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "यह ब्राउज़र सिक्योरिटी कीज़ को सपोर्ट नहीं करता है। कृपया कोई दूसरा ब्राउज़र आज़माएं।"
+      ],
+      "This security key is already registered to your account.": [
+        "यह सिक्योरिटी की आपके खाते में पहले से रजिस्टर्ड है।"
       ]
     },
     "fido2: Info": {
@@ -9802,6 +9814,18 @@
       ],
       "Zoom meeting": [
         "ज़ूम मीटिंग"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "अपने खाते की अधिकतम सुरक्षा सुनिश्चित करने के लिए,**ईमेल द्वारा रिकवरी** को अक्षम करें।"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "अपने खाते की अधिकतम सुरक्षा सुनिश्चित करने के लिए,**फोन द्वारा रिकवरी** को अक्षम रखें।"
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "अपने खाते की अधिकतम सुरक्षा सुनिश्चित करने के लिए,**ईमेल द्वारा रिकवरी** को अक्षम रखें।"
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "अपने खाते की अधिकतम सुरक्षा सुनिश्चित करने के लिए,**फोन द्वारा रिकवरी** को अक्षम रखें।"
       ]
     },
     "info": {
@@ -18901,6 +18925,9 @@
       ],
       "Your subscriptions": [
         "आपकी सदस्यता"
+      ],
+      "Data collection": [
+        "डेटा कलेक्शन"
       ]
     },
     "Title for payment methods table": {
@@ -19927,6 +19954,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "सफल सत्यापन के बाद, इस TXT रिकॉर्ड को न हटाएं क्योंकि यह पुष्टि करने के लिए आवश्यक है कि आप डोमेन के मालिक हैं।"
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "फ़ील्ड खाली छोड़े"
       ]
     }
   }
