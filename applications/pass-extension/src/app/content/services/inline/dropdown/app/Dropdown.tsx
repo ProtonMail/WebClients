@@ -51,7 +51,7 @@ type Props = {
 export const Dropdown: FC<Props> = ({ initial = null }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
-    const { status, authorized, lockSetup } = useAppState();
+    const { status, authorized, lockSetup, unlockDeclined = false } = useAppState();
     const accountFork = useRequestFork();
 
     const [state, setState] = useState<MaybeNull<DropdownActions>>(initial);
@@ -64,13 +64,14 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
 
     useEffect(() => setState((prev) => (visible ? prev : null)), [visible]);
 
-    const desktopLocked = clientDesktopLocked(status);
+    /** When desktop locked, allow height 0 because we rely on the auto unlock trigger,
+     * unless the user declined the prompt: then a manual unlock action is rendered */
+    const hidden = clientDesktopLocked(status) && !unlockDeclined;
 
     return (
-        // When desktop lock, allow height 0 because we only rely on auto unlock trigger
         <IFrameAppAutoSizer
-            className={desktopLocked ? undefined : 'min-h-custom bg-norm relative'}
-            style={desktopLocked ? undefined : { '--min-h-custom': `${DROPDOWN_MIN_HEIGHT}px` }}
+            className={hidden ? undefined : 'min-h-custom bg-norm relative'}
+            style={hidden ? undefined : { '--min-h-custom': `${DROPDOWN_MIN_HEIGHT}px` }}
         >
             <DropdownFocusController>
                 <Localized>
