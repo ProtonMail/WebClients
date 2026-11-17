@@ -17,6 +17,8 @@ export default createOxlintConfig({
                     '@proton/account-recovery/*',
                     '@proton/account-security',
                     '@proton/account-security/*',
+                    '@proton/byoe',
+                    '@proton/byoe/*',
                     '@proton/delegated-access',
                     '@proton/delegated-access/*',
                     '@proton/safety-review',
