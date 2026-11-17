@@ -4,7 +4,7 @@ import type { Currency } from '@proton/payments/core/interface';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 
-import type { UsageDay, UsageEntry, UsageMemberRow } from '../../remote/usage';
+import type { BilledClientType, UsageDay, UsageEntry, UsageMemberRow } from '../../remote/usage';
 import type { ApiTokenPricingModelId } from '../api-docs/apiTokenPricingUsd';
 import { formatApiCurrency } from './apiKeysHelpers';
 
@@ -13,8 +13,15 @@ export type UsageRow = UsageEntry & { Date: string };
 type ApiUsageTotals = {
     inputTokens: number;
     outputTokens: number;
-    cost: number;
+    cost: number | null;
 };
+
+export type UsageSource = 'api' | 'chat';
+
+const getUsageSource = (clientType: string): UsageSource => (clientType === 'api' ? 'api' : 'chat');
+
+export const filterRowsBySource = (rows: UsageRow[], source: 'all' | UsageSource) =>
+    source === 'all' ? rows : rows.filter((row) => getUsageSource(row.ClientType) === source);
 
 export type ApiUsageDay = ApiUsageTotals & { date: string };
 
@@ -29,19 +36,54 @@ const PERIOD_DATE_SLICES: Record<UsagePeriod, [number, number?]> = {
 
 export const getPeriodDates = (dates: string[], period: UsagePeriod) => dates.slice(...PERIOD_DATE_SLICES[period]);
 
-export const getUsageRows = (days: UsageDay[]): UsageRow[] =>
-    days.flatMap((day) => day.Usage.map((entry) => ({ ...entry, Date: day.Date })));
+export const getUsageRows = (days: UsageDay[], clientTypes: BilledClientType[]): UsageRow[] => {
+    const billedClientTypes = clientTypes.filter(({ Billed }) => Billed).map(({ ClientType }) => ClientType);
+    return days.flatMap((day) =>
+        day.Usage.map((entry) => ({
+            ...entry,
+            Date: day.Date,
+            CostMicros: billedClientTypes.includes(entry.ClientType) ? entry.CostMicros : 0,
+        }))
+    );
+};
 
 const CREDIT_MICROS = 1_000_000;
 
-export const sumUsage = (rows: UsageRow[]): ApiUsageTotals => ({
-    inputTokens: rows.reduce((sum, row) => sum + row.InputTokens, 0),
-    outputTokens: rows.reduce((sum, row) => sum + row.OutputTokens, 0),
-    cost: rows.reduce((sum, row) => sum + (row.CostMicros ?? 0), 0) / CREDIT_MICROS,
-});
+const sumCostMicros = (rows: UsageRow[]) =>
+    rows.reduce<number | null>(
+        (sum, row) => (sum === null || row.CostMicros === null ? null : sum + row.CostMicros),
+        0
+    );
 
-export const getApiUsageDays = (rows: UsageRow[], dates: string[]): ApiUsageDay[] =>
+export const sumUsage = (rows: UsageRow[]): ApiUsageTotals => {
+    const costMicros = sumCostMicros(rows);
+    return {
+        inputTokens: rows.reduce((sum, row) => sum + row.InputTokens, 0),
+        outputTokens: rows.reduce((sum, row) => sum + row.OutputTokens, 0),
+        cost: costMicros === null ? null : costMicros / CREDIT_MICROS,
+    };
+};
+
+export const getAverageDailySpend = (rows: UsageRow[], dayCount: number) =>
+    dayCount === 0 ? 0 : rows.reduce((sum, row) => sum + (row.CostMicros ?? 0), 0) / CREDIT_MICROS / dayCount;
+
+export const getUsageDays = (rows: UsageRow[], dates: string[]): ApiUsageDay[] =>
     dates.map((date) => ({ date, ...sumUsage(rows.filter((row) => row.Date === date)) }));
+
+export const getSourceUsageDays = (rows: UsageRow[], dates: string[]) =>
+    dates.map((date) => {
+        const dayRows = rows.filter((row) => row.Date === date);
+        const api = sumUsage(filterRowsBySource(dayRows, 'api'));
+        const chat = sumUsage(filterRowsBySource(dayRows, 'chat'));
+        return {
+            date,
+            apiInputTokens: api.inputTokens,
+            apiOutputTokens: api.outputTokens,
+            chatInputTokens: chat.inputTokens,
+            chatOutputTokens: chat.outputTokens,
+            cost: sumUsage(dayRows).cost,
+        };
+    });
 
 export const getApiModelUsage = (rows: UsageRow[], model: ApiTokenPricingModelId) => ({
     model,
@@ -92,5 +134,5 @@ export const getApiMemberUsage = (rows: UsageMemberRow[], members: Member[]): Ap
 export const filterMembersByName = (members: ApiMemberUsage[], search: string) =>
     members.filter((member) => member.name.toLowerCase().includes(search.toLowerCase()));
 
-export const getMemberCostLabel = (cost: number | null, currency: Currency) =>
+export const getCostLabel = (cost: number | null, currency: Currency) =>
     cost === null ? c('collider_2025: Info').t`Not priced yet` : formatApiCurrency(cost, currency);

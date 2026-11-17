@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { TokenUsageState } from '../../hooks/usePersonalAccessTokenUsage';
 import { ApiTokenUsageChart } from './ApiTokenUsageChart';
+import { ApiTokenUsageLegend } from './ApiTokenUsageLegend';
 import { ApiUsageMetricCard } from './ApiUsageMetricCard';
 import { GHOST_DATA, formatTokenCount } from './apiKeysHelpers';
 
@@ -181,21 +182,14 @@ export const ApiKeyUsageExpanded = ({ usage }: { usage: TokenUsageState }) => {
             <div className="flex flex-column gap-2">
                 <div className="flex items-center justify-space-between gap-3">
                     <h4 className="text-sm text-bold color-norm m-0">{c('collider_2025: Title').t`Tokens per day`}</h4>
-                    <div className="api-usage-chart-legend flex gap-3">
-                        <span className="api-usage-chart-legend__input inline-flex items-center gap-1.5">
-                            {c('collider_2025: Label').t`Input`}
-                        </span>
-                        <span className="api-usage-chart-legend__output inline-flex items-center gap-1.5">
-                            {c('collider_2025: Label').t`Output`}
-                        </span>
-                    </div>
+                    <ApiTokenUsageLegend source="api" />
                 </div>
                 <div className="api-usage-main-chart">
                     <ApiTokenUsageChart
                         days={days.map((day) => ({
                             date: day.Date,
-                            inputTokens: day.InputTokenCount,
-                            outputTokens: day.OutputTokenCount,
+                            apiInputTokens: day.InputTokenCount,
+                            apiOutputTokens: day.OutputTokenCount,
                         }))}
                         height={228}
                     />
