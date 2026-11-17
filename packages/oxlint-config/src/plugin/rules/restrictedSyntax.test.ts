@@ -2,6 +2,7 @@ import { RuleTester } from 'oxlint/plugins-dev';
 
 import { defaultPropsSelectors } from '../../defaultProps.ts';
 import { jsxNamespaceSelectors } from '../../jsxNamespace.ts';
+import { propTypesSelectors } from '../../propTypes.ts';
 import { refObjectNullSelectors } from '../../refObjectNull.ts';
 import { useReducerTypeArgumentsSelectors } from '../../useReducerTypeArguments.ts';
 import { useRefInitialValueSelectors } from '../../useRefInitialValue.ts';
@@ -11,6 +12,7 @@ const ruleTester = new RuleTester({ languageOptions: { parserOptions: { lang: 't
 
 const [globalJsx, reactJsx] = jsxNamespaceSelectors;
 const [defaultProps] = defaultPropsSelectors;
+const [propTypes] = propTypesSelectors;
 const [useRefInitialValue] = useRefInitialValueSelectors;
 const [useReducerTypeArguments] = useReducerTypeArgumentsSelectors;
 const [refObjectNull] = refObjectNullSelectors;
@@ -42,6 +44,7 @@ ruleTester.run('restricted-syntax', rule, {
     valid: [
         { code: 'const defaultProps = { a: 1 };', options: defaultPropsSelectors },
         { code: 'class A { static defaultProps = { a: 1 }; }', options: defaultPropsSelectors },
+        { code: 'const propTypes = { a: 1 }; Button.types = {};', options: propTypesSelectors },
         { code: 'c("Info").t`Welcome to ${BRAND_NAME}`;', options: [brand, mail] },
         { code: 'c("Info").t`Open ${MAIL_APP_NAME}`;', options: [brand, mail] },
         { code: 'const text = `Proton Mail`;', options: [brand, mail] },
@@ -70,6 +73,16 @@ ruleTester.run('restricted-syntax', rule, {
         },
     ],
     invalid: [
+        {
+            code: 'Button.propTypes = { color: PropTypes.string };',
+            options: propTypesSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: propTypes.message } }],
+        },
+        {
+            code: 'class A { static propTypes = { a: 1 }; }',
+            options: propTypesSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: propTypes.message } }],
+        },
         {
             code: 'Button.defaultProps = { color: "norm" };',
             options: defaultPropsSelectors,

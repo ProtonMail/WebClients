@@ -29,10 +29,6 @@ const UNSUPPORTED_JS_LOADER = [
 
 const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = true } = {}) => {
     const babelReactRefresh = hasReactRefresh ? [require.resolve('react-refresh/babel')] : [];
-    const babelPluginsDev = [...babelReactRefresh];
-    const babelPluginsProd = [
-        [require('babel-plugin-transform-react-remove-prop-types').default, { removeImport: true }],
-    ];
 
     return {
         loader: require.resolve('babel-loader'),
@@ -76,7 +72,7 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
                         absoluteRuntime: path.dirname(require.resolve('@babel/runtime/package.json')),
                     },
                 ],
-                ...(isProduction ? babelPluginsProd : babelPluginsDev),
+                ...(isProduction ? [] : babelReactRefresh),
             ],
         },
     };
