@@ -304,7 +304,6 @@ export enum MailFeatureFlag {
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     // Category view flags, used to control the whole category view
     CategoryOnboardingDisableCategorize = 'CategoryOnboardingDisableCategorize',
-    CategoryReportUnreadCountDisabled = 'CategoryReportUnreadCountDisabled',
     UseUserEmbedding = 'UseUserEmbedding',
     MailStoreDebugMode = 'MailStoreDebugMode',
     // Attempt to fix the unability to save/send drafts on huge accounts
@@ -333,6 +332,7 @@ enum MailKillSwitchFlag {
     MailPostSignupOneDollarPromoDisabled = 'MailPostSignupOneDollarPromoDisabled',
     RawLinkParsingDisabled = 'RawLinkParsingDisabled',
     RetryElementsOnReconnectDisabled = 'RetryElementsOnReconnectDisabled',
+    CategoryReportUnreadCountDisabled = 'CategoryReportUnreadCountDisabled',
 }
 
 enum MeetFeatureFlag {
