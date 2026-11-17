@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import { Fragment, type PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
@@ -33,7 +33,8 @@ import { IdealAccountHolderInput } from '@proton/payments-ui/ui/components/Ideal
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/payments-ui/ui/components/SepaDirectDebit';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { savedMethodRequires3DS } from '@proton/payments/core/createPaymentToken';
-import type { Currency } from '@proton/payments/core/interface';
+import type { Currency, PlainPaymentMethodType } from '@proton/payments/core/interface';
+import { methodMatches } from '@proton/payments/core/type-guards';
 import { isBilledUser } from '@proton/shared/lib/interfaces/User';
 
 interface AmountProps {
@@ -136,10 +137,11 @@ const PaymentMethodForm = ({
     const savedMethod = methods.savedSelectedMethod;
 
     const discountAmount = discountPerCycle || couponDiscount;
-    if (paymentMethodRequired && selectedMethodValue) {
-        return (
-            <div className="mt-4">
-                {selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
+
+    const renderNewMethodForm = (newMethod: PlainPaymentMethodType) => {
+        switch (newMethod) {
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
+                return (
                     <>
                         <ChargebeeCreditCardWrapper
                             {...sharedCbProps}
@@ -159,8 +161,10 @@ const PaymentMethodForm = ({
                         {children}
                         <Alert3DS />
                     </>
-                )}
-                {selectedMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY && (
+                );
+            case PAYMENT_METHOD_TYPES.APPLE_PAY:
+            case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
+                return (
                     <>
                         <div className="mt-2">{taxFields}</div>
                         <TotalAmountWithDiscount
@@ -170,19 +174,9 @@ const PaymentMethodForm = ({
                         />
                         {children}
                     </>
-                )}
-                {selectedMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY && (
-                    <>
-                        <div className="mt-2">{taxFields}</div>
-                        <TotalAmountWithDiscount
-                            amountDue={checkResult.AmountDue}
-                            currency={currency}
-                            discount={discountAmount}
-                        />
-                        {children}
-                    </>
-                )}
-                {selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
+                return (
                     <>
                         <TotalAmountWithDiscount
                             amountDue={checkResult.AmountDue}
@@ -194,8 +188,20 @@ const PaymentMethodForm = ({
                         <div className="my-4">{taxFields}</div>
                         {children}
                     </>
-                )}
-                {!isBilledUser(user) && UID && selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN && (
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN:
+                if (!UID) {
+                    return null;
+                }
+                if (isBilledUser(user)) {
+                    return (
+                        <>
+                            <BilledUserInlineMessage />
+                            {children}
+                        </>
+                    );
+                }
+                return (
                     <>
                         <BitcoinInfoMessage />
                         <BitcoinView
@@ -212,14 +218,9 @@ const PaymentMethodForm = ({
                         </div>
                         {children}
                     </>
-                )}
-                {isBilledUser(user) && UID && selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN && (
-                    <>
-                        <BilledUserInlineMessage />
-                        {children}
-                    </>
-                )}
-                {selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL && (
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
+                return (
                     <>
                         {taxFields}
                         <PayPalView amount={amount} currency={currency}>
@@ -235,8 +236,9 @@ const PaymentMethodForm = ({
                         />
                         {children}
                     </>
-                )}
-                {selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL && (
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
+                return (
                     <>
                         <IdealAccountHolderInput chargebeeIdeal={chargebeeIdeal} />
                         <div className="mt-2">{taxFields}</div>
@@ -247,6 +249,21 @@ const PaymentMethodForm = ({
                         />
                         {children}
                     </>
+                );
+            case PAYMENT_METHOD_TYPES.CASH:
+            case PAYMENT_METHOD_TYPES.TOKEN:
+                return null;
+            default:
+                newMethod satisfies never;
+                return null;
+        }
+    };
+
+    if (paymentMethodRequired && selectedMethodValue) {
+        return (
+            <div className="mt-4">
+                {methodMatches(selectedMethodValue, Object.values(PAYMENT_METHOD_TYPES)) && (
+                    <Fragment key={selectedMethodValue}>{renderNewMethodForm(selectedMethodValue)}</Fragment>
                 )}
                 {savedMethod && (
                     <>
