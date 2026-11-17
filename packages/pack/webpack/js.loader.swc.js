@@ -1,7 +1,7 @@
 const path = require('path');
 
 const { excludeNodeModulesExcept, excludeFiles, createRegex } = require('./helpers/regex');
-const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('./constants');
+const { TRANSPILE_EXCLUDE_FILES, TRANSPILE_NODE_MODULES } = require('./constants');
 
 /** SWC injects core-js imports into the files it transpiles, which may belong to packages that don't
  * declare core-js. Resolve them to the copy whose version `env.coreJs` targets. */
@@ -48,8 +48,8 @@ const getJsLoader = (options) => {
     return {
         test: /\.m?js$|\.tsx?$/,
         exclude: createRegex(
-            excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
-            excludeFiles([...BABEL_EXCLUDE_FILES, 'pre.ts', 'unsupported.ts'])
+            excludeNodeModulesExcept(TRANSPILE_NODE_MODULES),
+            excludeFiles([...TRANSPILE_EXCLUDE_FILES, 'pre.ts', 'unsupported.ts'])
         ),
         use: getSwcLoader(options),
         resolve: coreJsResolve,
