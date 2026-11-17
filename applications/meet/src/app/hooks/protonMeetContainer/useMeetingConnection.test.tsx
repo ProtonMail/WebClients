@@ -296,6 +296,17 @@ describe('useMeetingConnection', () => {
             expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', true, true);
         });
 
+        it('asks the token request not to notify the given API errors', async () => {
+            const params = createParams();
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            await act(async () => {
+                await result.current.connectWithMls({ ...baseConnectParams, silencedAccessTokenErrors: [2502] });
+            });
+
+            expect(mockGetAccessDetails).toHaveBeenCalledWith(expect.objectContaining({ silence: [2502] }));
+        });
+
         it('throws when MLS setup returns no key', async () => {
             const params = createParams({ handleMlsSetup: vi.fn().mockResolvedValue(undefined) });
             const { result } = renderHook(() => useMeetingConnection(params));
@@ -371,6 +382,18 @@ describe('useMeetingConnection', () => {
             expect(mockDispatch).toHaveBeenCalledWith(setIsReconnecting(false));
             expect(params.allowHealthCheck).toHaveBeenCalledTimes(1);
             expect(result.current.isReconnectingRef.current).toBe(false);
+        });
+
+        it('leaves every token request error to the API layer notification, as a rejoin has no Meeting locked modal', async () => {
+            const params = createParams();
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            await act(async () => {
+                await result.current.performFullReconnection(RejoinReasonInfo.Other);
+            });
+
+            expect(mockGetAccessDetails).toHaveBeenCalledTimes(1);
+            expect(mockGetAccessDetails.mock.calls[0][0].silence).toBeUndefined();
         });
 
         it('restores the joined state only once the participant list has landed', async () => {

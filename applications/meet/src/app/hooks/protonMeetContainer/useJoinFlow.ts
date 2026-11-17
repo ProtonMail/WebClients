@@ -33,6 +33,7 @@ import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported'
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { MEETING_LOCKED_ERROR_CODE } from '../../constants';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { type JoinTimer, createJoinTimer, trackJoinSucceeded } from '../../telemetry/joinPerformance';
 import type { JoinTelemetryDimensions } from '../../telemetry/useJoinTelemetryDimensions';
@@ -245,6 +246,7 @@ export const useJoinFlow = ({
                 queryParticipantsCount: true,
                 isWaitingRoom,
                 accessDetails,
+                silencedAccessTokenErrors: [MEETING_LOCKED_ERROR_CODE],
             });
 
             meetingLinkRef.current = getMeetingLink(meetingLinkName, meetingPassword);

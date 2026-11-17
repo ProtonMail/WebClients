@@ -34,9 +34,10 @@ vi.mock('../srp/useMeetingAuthentication', () => ({ useMeetingAuthentication: vi
 vi.mock('../useNotifyError', () => ({ useNotifyError: () => vi.fn() }));
 vi.mock('./useInvalidMeetingLink', () => ({ useInvalidMeetingLink: () => ({ handleInvalidMeetingLink: vi.fn() }) }));
 vi.mock('./useSessionKey', () => ({ useSessionKey: () => ({ getSessionKey: vi.fn(), getSessionKeyBase64: vi.fn() }) }));
+const mocks = vi.hoisted(() => ({ beginWaitingRoomJoin: vi.fn() }));
+
 vi.mock('./waitingRoom/useWaitingRoom', () => ({
-    // Ends the join right after the meeting info, as a guest sent to the waiting room
-    useWaitingRoom: () => ({ beginJoin: vi.fn().mockResolvedValue({ handled: true }), providerProps: {} }),
+    useWaitingRoom: () => ({ beginJoin: mocks.beginWaitingRoomJoin, providerProps: {} }),
 }));
 
 const useMeetDispatchMock = useMeetDispatch as unknown as Mock;
@@ -80,29 +81,32 @@ const renderJoinFlow = (prejoinMeetingLinkName?: string) => {
         }
         return {};
     });
-    return renderHook(() => useJoinFlow(createParams()));
+    const params = createParams();
+    return { ...renderHook(() => useJoinFlow(params)), params };
 };
 
 const apiError = (status: number, code: number) =>
     Object.assign(new Error('api error'), { status, data: { Code: code, Error: 'error' } });
 
-describe('useJoinFlow joinMeeting meeting session', () => {
-    beforeEach(() => {
-        vi.clearAllMocks();
-        mockInitHandshake.mockResolvedValue(handshakeInfo);
-        mockRefresh.mockResolvedValue({ meetingInfo });
-        useMeetingAuthenticationMock.mockReturnValue({ initHandshake: mockInitHandshake, getAccessDetails: vi.fn() });
-        useMeetDispatchMock.mockReturnValue((action: { type: string }) => {
-            if (action.type === 'refreshMeetingInfoThunk') {
-                return mockRefresh();
-            }
-            if (action.type === 'meetingInfoThunk') {
-                return Promise.resolve({ meetingInfo });
-            }
-            return action;
-        });
+beforeEach(() => {
+    vi.clearAllMocks();
+    // Ends the join right after the meeting info, as a guest sent to the waiting room
+    mocks.beginWaitingRoomJoin.mockResolvedValue({ handled: true });
+    mockInitHandshake.mockResolvedValue(handshakeInfo);
+    mockRefresh.mockResolvedValue({ meetingInfo });
+    useMeetingAuthenticationMock.mockReturnValue({ initHandshake: mockInitHandshake, getAccessDetails: vi.fn() });
+    useMeetDispatchMock.mockReturnValue((action: { type: string }) => {
+        if (action.type === 'refreshMeetingInfoThunk') {
+            return mockRefresh();
+        }
+        if (action.type === 'meetingInfoThunk') {
+            return Promise.resolve({ meetingInfo });
+        }
+        return action;
     });
+});
 
+describe('useJoinFlow joinMeeting meeting session', () => {
     it('reuses the session the prejoin opened for the same meeting, without a new handshake', async () => {
         const { result } = renderJoinFlow('meeting-abc');
 
@@ -160,5 +164,22 @@ describe('useJoinFlow joinMeeting meeting session', () => {
         expect(meetingInfoThunk).toHaveBeenCalledWith(
             expect.objectContaining({ handshakeInfo, cache: CacheType.None })
         );
+    });
+});
+
+describe('useJoinFlow joining a locked meeting', () => {
+    it('shows the Meeting locked modal and asks the token request not to notify the lock as well', async () => {
+        mocks.beginWaitingRoomJoin.mockResolvedValue({ handled: false, isWaitingRoomHostJoin: false });
+        const { result, params } = renderJoinFlow('meeting-abc');
+        params.connectWithMls.mockRejectedValue(apiError(422, 2502));
+
+        await act(async () => {
+            await result.current.joinMeeting('Alice');
+        });
+
+        expect(params.connectWithMls).toHaveBeenCalledWith(
+            expect.objectContaining({ meetingLinkName: 'meeting-abc', silencedAccessTokenErrors: [2502] })
+        );
+        expect(params.setIsMeetingLockedModalOpen).toHaveBeenCalledWith(true);
     });
 });

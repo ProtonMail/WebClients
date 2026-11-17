@@ -31,14 +31,17 @@ export const useMeetingAuthentication = () => {
         async ({
             meetingLinkName,
             encryptedDisplayName,
+            silence,
         }: {
             meetingLinkName: string;
             encryptedDisplayName: string;
+            silence?: number[];
         }) => {
             try {
                 const { AccessToken, WebsocketUrl } = await requestAccessToken(api, {
                     meetingLinkName,
                     encryptedDisplayName,
+                    silence,
                 });
 
                 return {
