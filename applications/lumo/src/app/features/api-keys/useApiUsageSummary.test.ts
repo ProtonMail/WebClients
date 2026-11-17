@@ -12,7 +12,7 @@ describe('useApiUsageSummary', () => {
         jest.useRealTimers();
     });
 
-    it('reads the API usage of the last 90 UTC days in the given scope without notifying on failure', async () => {
+    it('reads the usage of every client of the last 90 UTC days in the given scope without notifying on failure', async () => {
         jest.useFakeTimers({ now: new Date('2026-11-09T23:30:00Z') });
         const entry = {
             ClientType: 'api',
@@ -22,7 +22,15 @@ describe('useApiUsageSummary', () => {
             Calls: 1,
             CostMicros: 10,
         };
-        const api = jest.fn().mockResolvedValue({ Code: 1000, Days: [{ Date: '2026-11-09', Usage: [entry] }] });
+        const chatEntry = { ...entry, ClientType: 'frontend' };
+        const api = jest.fn().mockResolvedValue({
+            Code: 1000,
+            ClientTypes: [
+                { ClientType: 'api', Billed: true },
+                { ClientType: 'frontend', Billed: false },
+            ],
+            Days: [{ Date: '2026-11-09', Usage: [entry, chatEntry] }],
+        });
         (useApi as jest.Mock).mockReturnValue(api);
 
         const { result } = renderHook(() => useApiUsageSummary('organization'));
@@ -31,10 +39,16 @@ describe('useApiUsageSummary', () => {
         expect(api).toHaveBeenCalledWith({
             url: 'ai/v1/usage/summary',
             method: 'get',
-            params: { From: '2026-08-12', To: '2026-11-09', Scope: 'organization', ClientType: 'api' },
+            params: { From: '2026-08-12', To: '2026-11-09', Scope: 'organization' },
             silence: true,
         });
-        expect(result.current).toMatchObject({ rows: [{ ...entry, Date: '2026-11-09' }], error: false });
+        expect(result.current).toMatchObject({
+            rows: [
+                { ...entry, Date: '2026-11-09' },
+                { ...chatEntry, Date: '2026-11-09', CostMicros: 0 },
+            ],
+            error: false,
+        });
         expect(result.current.dates).toHaveLength(90);
     });
 
@@ -51,7 +65,7 @@ describe('useApiUsageSummary', () => {
         const selfDays = [{ Date: '2026-11-09', Usage: [{ ClientType: 'api', Model: 'lumo-lite' }] }];
         const api = jest
             .fn()
-            .mockResolvedValueOnce({ Code: 1000, Days: selfDays })
+            .mockResolvedValueOnce({ Code: 1000, ClientTypes: [{ ClientType: 'api', Billed: true }], Days: selfDays })
             .mockReturnValueOnce(new Promise(() => {}));
         (useApi as jest.Mock).mockReturnValue(api);
         const { result, rerender } = renderHook(({ scope }) => useApiUsageSummary(scope), {

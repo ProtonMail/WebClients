@@ -12,8 +12,14 @@ export interface UsageDay {
     Usage: UsageEntry[];
 }
 
+export interface BilledClientType {
+    ClientType: string;
+    Billed: boolean;
+}
+
 export interface UsageSummaryResponse {
     Code: number;
+    ClientTypes: BilledClientType[];
     Days: UsageDay[];
 }
 

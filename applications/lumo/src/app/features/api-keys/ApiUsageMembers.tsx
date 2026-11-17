@@ -12,7 +12,7 @@ import type { Currency } from '@proton/payments/core/interface';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { formatTokenCount } from './apiKeysHelpers';
-import { type ApiMemberUsage, filterMembersByName, getApiMemberUsage, getMemberCostLabel } from './apiUsage';
+import { type ApiMemberUsage, filterMembersByName, getApiMemberUsage, getCostLabel } from './apiUsage';
 import { useApiUsageMembers } from './useApiUsageMembers';
 
 const MemberUsageCard = ({ member, currency }: { member: ApiMemberUsage; currency: Currency }) => {
@@ -35,7 +35,7 @@ const MemberUsageCard = ({ member, currency }: { member: ApiMemberUsage; currenc
                     </div>
                     <div className="api-usage-member-card__total flex flex-column items-start gap-0.5 md:items-end">
                         <small>{c('collider_2025: Label').t`Balance used`}</small>
-                        <strong>{getMemberCostLabel(member.cost, currency)}</strong>
+                        <strong>{getCostLabel(member.cost, currency)}</strong>
                     </div>
                     {member.isCurrentMember && (
                         <div

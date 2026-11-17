@@ -22,23 +22,23 @@ import { API_TOKEN_PRICING_MODEL_IDS, type ApiTokenPricingModelId } from '../api
 import { ApiBalanceSettingsModal, getAutoTopUpSummary } from './ApiBalanceSettingsModal';
 import { ApiPayAsYouGoCard } from './ApiPayAsYouGoCard';
 import { ApiTokenUsageChart } from './ApiTokenUsageChart';
+import { ApiTokenUsageLegend, getSwatchStyle } from './ApiTokenUsageLegend';
 import { ApiUsageMembers } from './ApiUsageMembers';
 import { ApiUsageMetricCard } from './ApiUsageMetricCard';
 import { ApiUsageModelStats } from './ApiUsageModelStats';
-import {
-    formatApiCurrency,
-    formatTokenCount,
-    getBalanceEstimate,
-    getSpendingLimitSummary,
-    toCurrencyBaseUnits,
-} from './apiKeysHelpers';
+import { formatTokenCount, getBalanceEstimate, getSpendingLimitSummary, toCurrencyBaseUnits } from './apiKeysHelpers';
 import {
     type ApiUsageDay,
     type UsagePeriod,
     type UsageRow,
+    type UsageSource,
+    filterRowsBySource,
     getApiModelUsage,
-    getApiUsageDays,
+    getAverageDailySpend,
+    getUsageDays,
+    getCostLabel,
     getPeriodDates,
+    getSourceUsageDays,
     sumUsage,
 } from './apiUsage';
 import { useApiUsageSummary } from './useApiUsageSummary';
@@ -49,7 +49,7 @@ const escapeCsvValue = (value: string | number) => `"${String(value).replaceAll(
 const exportUsageCsv = (days: ApiUsageDay[], currency: Currency) => {
     const rows = [
         ['date', 'input_tokens', 'output_tokens', `balance_used_${currency.toLowerCase()}`],
-        ...days.map((day) => [day.date, day.inputTokens, day.outputTokens, day.cost.toFixed(6)]),
+        ...days.map((day) => [day.date, day.inputTokens, day.outputTokens, day.cost?.toFixed(6) ?? '']),
     ];
     const csv = rows.map((row) => row.map(escapeCsvValue).join(',')).join('\n');
     const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
@@ -59,6 +59,32 @@ const exportUsageCsv = (days: ApiUsageDay[], currency: Currency) => {
     anchor.click();
     URL.revokeObjectURL(url);
 };
+
+const getSourceFilterLabel = (source: 'all' | UsageSource) =>
+    ({
+        all: c('collider_2025: Label').t`All sources`,
+        api: c('collider_2025: Label').t`API`,
+        chat: c('collider_2025: Label').t`Chat`,
+    })[source];
+
+const SourceTokenSplit = ({
+    apiTokens,
+    chatTokens,
+    tokenType,
+}: {
+    apiTokens: number;
+    chatTokens: number;
+    tokenType: 'Input' | 'Output';
+}) => (
+    <span className="api-usage-chart-legend flex flex-wrap gap-2">
+        <span className="inline-flex items-center gap-1" style={getSwatchStyle(`api${tokenType}Tokens`)}>
+            {getSourceFilterLabel('api')} {formatTokenCount(apiTokens)}
+        </span>
+        <span className="inline-flex items-center gap-1" style={getSwatchStyle(`chat${tokenType}Tokens`)}>
+            {getSourceFilterLabel('chat')} {formatTokenCount(chatTokens)}
+        </span>
+    </span>
+);
 
 const ApiUsageOverviewContent = ({
     rows,
@@ -70,30 +96,47 @@ const ApiUsageOverviewContent = ({
     currency: Currency;
 }) => {
     const [selectedModel, setSelectedModel] = useState<'all' | ApiTokenPricingModelId>('all');
+    const [selectedSource, setSelectedSource] = useState<'all' | UsageSource>('all');
     const totals = sumUsage(rows);
+    const apiTotals = sumUsage(filterRowsBySource(rows, 'api'));
+    const chatTotals = sumUsage(filterRowsBySource(rows, 'chat'));
     const modelUsage = API_TOKEN_PRICING_MODEL_IDS.map((model) => getApiModelUsage(rows, model));
-    const chartRows = selectedModel === 'all' ? rows : rows.filter((row) => row.Model === selectedModel);
-    const chartDays = getApiUsageDays(chartRows, dates);
+    const modelRows = selectedModel === 'all' ? rows : rows.filter((row) => row.Model === selectedModel);
+    const chartDays = getSourceUsageDays(filterRowsBySource(modelRows, selectedSource), dates);
     return (
         <div className="api-usage-overview-content flex flex-column gap-7">
             <div className="api-usage-metrics">
                 <ApiUsageMetricCard
                     icon="DollarSign"
                     label={c('collider_2025: Label').t`Balance used`}
-                    value={formatApiCurrency(totals.cost, currency)}
-                    hint={c('collider_2025: Info').t`Estimated API spend`}
+                    value={getCostLabel(totals.cost, currency)}
+                    hint={c('collider_2025: Info').t`Estimated spend`}
                 />
                 <ApiUsageMetricCard
                     icon="ArrowDownToLine"
                     label={c('collider_2025: Label').t`Input tokens`}
                     value={formatTokenCount(totals.inputTokens)}
                     hint={c('collider_2025: Info').t`Prompts and context`}
+                    breakdown={
+                        <SourceTokenSplit
+                            apiTokens={apiTotals.inputTokens}
+                            chatTokens={chatTotals.inputTokens}
+                            tokenType="Input"
+                        />
+                    }
                 />
                 <ApiUsageMetricCard
                     icon="ArrowUpFromLine"
                     label={c('collider_2025: Label').t`Output tokens`}
                     value={formatTokenCount(totals.outputTokens)}
                     hint={c('collider_2025: Info').t`Model responses`}
+                    breakdown={
+                        <SourceTokenSplit
+                            apiTokens={apiTotals.outputTokens}
+                            chatTokens={chatTotals.outputTokens}
+                            tokenType="Output"
+                        />
+                    }
                 />
             </div>
 
@@ -106,40 +149,41 @@ const ApiUsageOverviewContent = ({
                         </p>
                     </div>
                     <div className="flex flex-column items-start gap-3 md:items-end">
-                        <fieldset className="api-usage-model-filter flex items-center gap-0.5">
-                            <legend className="sr-only">{c('collider_2025: Label')
-                                .t`Filter token usage by model`}</legend>
-                            {(['all', 'lumo-lite', 'lumo-max'] as const).map((model) => (
-                                <button
-                                    key={model}
-                                    type="button"
-                                    aria-pressed={selectedModel === model}
-                                    onClick={() => setSelectedModel(model)}
-                                >
-                                    {model === 'all' ? c('collider_2025: Label').t`All models` : model}
-                                </button>
-                            ))}
-                        </fieldset>
-                        <div className="api-usage-chart-legend flex flex-wrap justify-end gap-3">
-                            <span className="api-usage-chart-legend__input inline-flex items-center gap-1.5">
-                                {c('collider_2025: Label').t`Input`}
-                            </span>
-                            <span className="api-usage-chart-legend__output inline-flex items-center gap-1.5">
-                                {c('collider_2025: Label').t`Output`}
-                            </span>
+                        <div className="flex flex-wrap gap-2">
+                            <fieldset className="api-usage-model-filter api-usage-model-filter--sources flex items-center gap-0.5">
+                                <legend className="sr-only">{c('collider_2025: Label')
+                                    .t`Filter token usage by source`}</legend>
+                                {(['all', 'api', 'chat'] as const).map((source) => (
+                                    <button
+                                        key={source}
+                                        type="button"
+                                        aria-pressed={selectedSource === source}
+                                        onClick={() => setSelectedSource(source)}
+                                    >
+                                        {getSourceFilterLabel(source)}
+                                    </button>
+                                ))}
+                            </fieldset>
+                            <fieldset className="api-usage-model-filter flex items-center gap-0.5">
+                                <legend className="sr-only">{c('collider_2025: Label')
+                                    .t`Filter token usage by model`}</legend>
+                                {(['all', 'lumo-lite', 'lumo-max'] as const).map((model) => (
+                                    <button
+                                        key={model}
+                                        type="button"
+                                        aria-pressed={selectedModel === model}
+                                        onClick={() => setSelectedModel(model)}
+                                    >
+                                        {model === 'all' ? c('collider_2025: Label').t`All models` : model}
+                                    </button>
+                                ))}
+                            </fieldset>
                         </div>
+                        <ApiTokenUsageLegend source={selectedSource} />
                     </div>
                 </div>
                 <div className="api-usage-main-chart">
-                    <ApiTokenUsageChart
-                        days={chartDays.map((day) => ({
-                            date: day.date,
-                            inputTokens: day.inputTokens,
-                            outputTokens: day.outputTokens,
-                            balanceUsed: day.cost,
-                        }))}
-                        formatBalance={(value) => formatApiCurrency(value, currency)}
-                    />
+                    <ApiTokenUsageChart days={chartDays} formatBalance={(value) => getCostLabel(value, currency)} />
                 </div>
             </section>
 
@@ -153,7 +197,7 @@ const ApiUsageOverviewContent = ({
                             model={usage.model}
                             inputTokens={usage.inputTokens}
                             outputTokens={usage.outputTokens}
-                            formattedCost={formatApiCurrency(usage.cost, currency)}
+                            formattedCost={getCostLabel(usage.cost, currency)}
                         />
                     </div>
                 ))}
@@ -452,16 +496,20 @@ export const ApiUsageDashboard = ({
     const usageRows = emptyUsageEnabled ? [] : usageSummary.rows;
     const periodDates = getPeriodDates(usageSummary.dates, usagePeriod);
     const periodRows = usageRows.filter((row) => periodDates.includes(row.Date));
-    const usageDays = getApiUsageDays(periodRows, periodDates);
+    const usageDays = getUsageDays(periodRows, periodDates);
     const periodLabel = {
         'last-7-days': c('collider_2025: Date range').t`Last 7 days`,
         'last-30-days': c('collider_2025: Date range').t`Last 30 days`,
         'previous-30-days': c('collider_2025: Date range').t`Previous 30 days`,
         'last-90-days': c('collider_2025: Date range').t`Last 90 days`,
     }[usagePeriod];
-    const recentUsageDays = getApiUsageDays(usageRows, getPeriodDates(usageSummary.dates, 'last-30-days'));
-    const monthlySpend = recentUsageDays.reduce((total, day) => total + day.cost, 0);
-    const averageDailySpend = isOrgMember || recentUsageDays.length === 0 ? 0 : monthlySpend / recentUsageDays.length;
+    const recentDates = getPeriodDates(usageSummary.dates, 'last-30-days');
+    const averageDailySpend = isOrgMember
+        ? 0
+        : getAverageDailySpend(
+              usageRows.filter((row) => recentDates.includes(row.Date)),
+              recentDates.length
+          );
 
     return (
         <section

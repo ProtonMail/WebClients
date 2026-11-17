@@ -20,9 +20,9 @@ jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/app-context/useApi');
 jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
 jest.mock('./ApiTokenUsageChart', () => ({
-    ApiTokenUsageChart: ({ days }: { days: { inputTokens: number }[] }) => (
+    ApiTokenUsageChart: ({ days }: { days: { apiInputTokens: number; chatInputTokens?: number }[] }) => (
         <div data-testid="token-usage-chart" data-days={days.length}>
-            {days.reduce((sum, day) => sum + day.inputTokens, 0)}
+            {days.reduce((sum, day) => sum + day.apiInputTokens + (day.chatInputTokens ?? 0), 0)}
         </div>
     ),
 }));
@@ -56,10 +56,17 @@ const memberUsageRows = [
 ];
 
 const usageDates = Array.from({ length: 90 }, (_, index) => `day-${index}`);
-const usageRow = (date: string, model: string, inputTokens: number, outputTokens: number, costMicros: number) => ({
+const usageRow = (
+    date: string,
+    model: string,
+    inputTokens: number,
+    outputTokens: number,
+    costMicros: number | null,
+    clientType = 'api'
+) => ({
     Date: date,
     Model: model,
-    ClientType: 'api',
+    ClientType: clientType,
     InputTokens: inputTokens,
     OutputTokens: outputTokens,
     Calls: 1,
@@ -149,6 +156,59 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         fireEvent.click(screen.getByRole('button', { name: 'lumo-max' }));
 
         expect(screen.getByTestId('token-usage-chart')).toHaveTextContent('2000000');
+    });
+
+    it('charts only the selected source, chat being every client but the API', () => {
+        setup({
+            usage: {
+                rows: [
+                    ...usageRows,
+                    usageRow('day-89', 'lumo-lite', 600_000, 100_000, 0, 'frontend'),
+                    usageRow('day-88', 'lumo-lite', 100_000, 100_000, 0, 'lumo_mail'),
+                ],
+            },
+        });
+
+        expect(screen.getByTestId('token-usage-chart')).toHaveTextContent('4200000');
+
+        fireEvent.click(screen.getByRole('button', { name: 'Chat' }));
+        expect(screen.getByTestId('token-usage-chart')).toHaveTextContent('700000');
+
+        fireEvent.click(screen.getByRole('button', { name: 'API' }));
+        expect(screen.getByTestId('token-usage-chart')).toHaveTextContent('3500000');
+    });
+
+    it('charts the chat usage of the selected model only', () => {
+        setup({
+            usage: {
+                rows: [
+                    ...usageRows,
+                    usageRow('day-89', 'lumo-lite', 600_000, 0, 0, 'frontend'),
+                    usageRow('day-87', 'lumo-max', 50_000, 0, 0, 'scribe'),
+                ],
+            },
+        });
+
+        fireEvent.click(screen.getByRole('button', { name: 'lumo-max' }));
+        fireEvent.click(screen.getByRole('button', { name: 'Chat' }));
+
+        expect(screen.getByTestId('token-usage-chart')).toHaveTextContent(/^50000$/);
+    });
+
+    it('splits the input and output tokens between API and chat', () => {
+        setup({ usage: { rows: [...usageRows, usageRow('day-89', 'lumo-lite', 700_000, 200_000, 0, 'frontend')] } });
+
+        expect(getMetric('Input tokens')).toContain('4.2M');
+        expect(getMetric('Input tokens')).toContain('API 3.5M');
+        expect(getMetric('Input tokens')).toContain('Chat 700.0k');
+        expect(getMetric('Output tokens')).toContain('Chat 200.0k');
+    });
+
+    it('does not price the balance used when a model has no known price', () => {
+        setup({ usage: { rows: [...usageRows, usageRow('day-89', 'lumo-next', 1, 1, null)] } });
+
+        expect(getMetric('Balance used')).toContain('Not priced yet');
+        expect(getMetric('Balance used')).toContain('Estimated spend');
     });
 
     it('shows zero usage, not the first-request hint, for a period without usage', () => {

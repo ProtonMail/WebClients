@@ -787,15 +787,8 @@ im.$media-expressions: $media-expressions;
 			inline-size: rem(7);
 			block-size: rem(7);
 			border-radius: rem(2);
+			background: var(--swatch);
 		}
-	}
-
-	&__input::before {
-		background: var(--interaction-norm);
-	}
-
-	&__output::before {
-		background: var(--signal-success);
 	}
 }
 
@@ -830,6 +823,11 @@ im.$media-expressions: $media-expressions;
 			outline: 2px solid var(--focus-ring, var(--interaction-norm));
 			outline-offset: 1px;
 		}
+	}
+
+	&--sources button {
+		font-family: inherit;
+		font-size: rem(11);
 	}
 }
 

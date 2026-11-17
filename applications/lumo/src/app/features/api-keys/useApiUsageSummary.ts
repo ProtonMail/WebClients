@@ -30,13 +30,17 @@ export const useApiUsageSummary = (scope: UsageScope): ApiUsageSummaryState => {
                 From: dates[0],
                 To: dates[dates.length - 1],
                 Scope: scope,
-                ClientType: 'api',
             }),
             silence: true,
         })
             .then((response) => {
                 if (!ignore) {
-                    setState({ dates, rows: getUsageRows(response.Days), isLoading: false, error: false });
+                    setState({
+                        dates,
+                        rows: getUsageRows(response.Days, response.ClientTypes),
+                        isLoading: false,
+                        error: false,
+                    });
                 }
             })
             .catch(() => {

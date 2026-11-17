@@ -1,17 +1,22 @@
 import { Bar, BarChart, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import { c } from 'ttag';
 
+import { TOKEN_SERIES, TOKEN_SERIES_FILL } from './ApiTokenUsageLegend';
 import { formatTokenCount, shortDayLabel } from './apiKeysHelpers';
 
 export interface ApiTokenUsageChartDay {
     date: string;
-    inputTokens: number;
-    outputTokens: number;
-    balanceUsed?: number;
+    apiInputTokens: number;
+    apiOutputTokens: number;
+    chatInputTokens?: number;
+    chatOutputTokens?: number;
+    cost?: number | null;
 }
 
+const getDayTokens = (day: ApiTokenUsageChartDay) => TOKEN_SERIES.reduce((sum, { key }) => sum + (day[key] ?? 0), 0);
+
 const getYAxisMaximum = (days: ApiTokenUsageChartDay[]) => {
-    const peak = Math.max(0, ...days.map((day) => day.inputTokens + day.outputTokens));
+    const peak = Math.max(0, ...days.map(getDayTokens));
     if (peak === 0) {
         return 1;
     }
@@ -28,7 +33,7 @@ export const ApiTokenUsageChart = ({
 }: {
     days: ApiTokenUsageChartDay[];
     height?: number;
-    formatBalance?: (value: number) => string;
+    formatBalance?: (value: number | null) => string;
 }) => (
     <ResponsiveContainer width="100%" height={height}>
         <BarChart data={days} margin={{ top: 8, right: 8, left: 0, bottom: 0 }} barCategoryGap="22%">
@@ -60,23 +65,23 @@ export const ApiTokenUsageChart = ({
                     return (
                         <div className="api-usage-chart-tooltip flex flex-column gap-1">
                             <strong>{shortDayLabel(day.date)}</strong>
-                            <span>
-                                {c('collider_2025: Label').t`Input`}: {formatTokenCount(day.inputTokens)}
-                            </span>
-                            <span>
-                                {c('collider_2025: Label').t`Output`}: {formatTokenCount(day.outputTokens)}
-                            </span>
-                            {day.balanceUsed !== undefined && formatBalance && (
+                            {TOKEN_SERIES.filter(({ key }) => day[key]).map(({ key, getLabel }) => (
+                                <span key={key}>
+                                    {getLabel()}: {formatTokenCount(day[key] ?? 0)}
+                                </span>
+                            ))}
+                            {day.cost !== undefined && formatBalance && (
                                 <span>
-                                    {c('collider_2025: Label').t`Balance used`}: {formatBalance(day.balanceUsed)}
+                                    {c('collider_2025: Label').t`Balance used`}: {formatBalance(day.cost)}
                                 </span>
                             )}
                         </div>
                     );
                 }}
             />
-            <Bar dataKey="inputTokens" stackId="tokens" fill="var(--interaction-norm)" />
-            <Bar dataKey="outputTokens" stackId="tokens" fill="var(--signal-success)" radius={[5, 5, 0, 0]} />
+            {TOKEN_SERIES.map(({ key }) => (
+                <Bar key={key} dataKey={key} stackId="tokens" fill={TOKEN_SERIES_FILL[key]} />
+            ))}
         </BarChart>
     </ResponsiveContainer>
 );

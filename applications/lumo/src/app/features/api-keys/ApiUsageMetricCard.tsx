@@ -1,4 +1,4 @@
-import type { ComponentProps } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 
@@ -7,11 +7,13 @@ export const ApiUsageMetricCard = ({
     label,
     value,
     hint,
+    breakdown,
 }: {
     icon: ComponentProps<typeof LumoIcon>['name'];
     label: string;
     value: string;
     hint: string;
+    breakdown?: ReactNode;
 }) => (
     <div className="api-usage-metric flex flex-nowrap items-start gap-3 p-4 rounded-xl border border-weak">
         <div className="api-usage-metric__icon flex flex-none items-center justify-center rounded-lg">
@@ -21,6 +23,7 @@ export const ApiUsageMetricCard = ({
             <span className="text-xs color-weak">{label}</span>
             <strong className="api-usage-metric__value color-norm">{value}</strong>
             <span className="text-xs color-weak">{hint}</span>
+            {breakdown}
         </div>
     </div>
 );
