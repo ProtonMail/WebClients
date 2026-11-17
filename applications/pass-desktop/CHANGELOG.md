@@ -1,3 +1,16 @@
+### Version 1.44.0
+
+- Improve sign-in in the browser with a detached session
+- Support signing in to the app from another device
+- Strengthen the security of the Windows biometric lock
+- Support importing from mSecure
+- Improve moving content into folders
+- Remember the item type filter and expanded vaults and folders across restarts
+- Support organization policies for TOTP and passkey storage
+- Allow excluding a single check of an item from Pass Monitor
+- Fix aliases not loading in the security center when inside a folder
+- Fix connectivity bar flickering
+
 ### Version 1.43.0
 
 - Support unlocking the extension with biometrics on Windows and Firefox
