@@ -1,10 +1,11 @@
 import { setDateLocales } from '@proton/shared/lib/i18n'
+import { enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales'
 import { NativeVersionHistory } from './NativeVersionHistory'
 
 describe('NativeVersionHistory', () => {
   describe('getFormattedBatchGroups', () => {
     jest.useFakeTimers().setSystemTime(new Date('2023-07-08'))
-    setDateLocales({ dateLocale: { code: 'en-US' } })
+    setDateLocales({ dateLocale: enUSLocale })
     const versionHistory = new NativeVersionHistory(
       [
         {

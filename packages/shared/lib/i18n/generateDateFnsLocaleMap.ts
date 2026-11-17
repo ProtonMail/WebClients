@@ -8,10 +8,13 @@ const locales = readdirSync(localeDir, { withFileTypes: true })
     .filter((d) => d.isDirectory() && !d.name.startsWith('_'))
     .map((d) => d.name);
 
+// Each locale module has a single named export, e.g. `zhTW` for zh-TW.
+const toExportName = (locale: string) => locale.replace(/-(\w)/g, (_, char: string) => char.toUpperCase());
+
 const entries = locales
     .map(
         (l) =>
-            `  '${l.replace('-', '_')}': () => import(/* webpackChunkName: "date-fns/${l}" */ 'date-fns/locale/${l}').then((m) => m.default),`
+            `  '${l.replace('-', '_')}': () => import(/* webpackChunkName: "date-fns/${l}" */ 'date-fns/locale/${l}').then((m) => m.${toExportName(l)}),`
     )
     .join('\n');
 

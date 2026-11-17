@@ -20,6 +20,6 @@ const is12HourDateFnsFormat = (formatString: string | undefined) => !!formatStri
 export const formatItemDateLabel = (date: Date): string =>
     readableTimeIntl(getUnixTime(date), {
         localeCode: dateLocale?.code,
-        hour12: is12HourDateFnsFormat(dateLocale?.formatLong?.time()),
+        hour12: is12HourDateFnsFormat(dateLocale?.formatLong?.time({})),
         intlOptions,
     });

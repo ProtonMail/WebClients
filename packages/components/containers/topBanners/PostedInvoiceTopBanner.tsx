@@ -1,4 +1,4 @@
-import format from 'date-fns/format';
+import { format } from 'date-fns/format';
 import { c } from 'ttag';
 
 import { POSTED_INVOICE_BANNER_MAX_AGE, POSTED_INVOICE_BANNER_STORAGE_KEY } from '@proton/account/paymentsInit';

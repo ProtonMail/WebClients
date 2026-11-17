@@ -1,4 +1,4 @@
-import frCHLocale from 'date-fns/locale/fr-CH';
+import { frCH as frCHLocale } from 'date-fns/locale/fr-CH';
 
 import { enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales';
 

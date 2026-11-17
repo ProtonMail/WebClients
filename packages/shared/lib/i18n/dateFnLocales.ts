@@ -1,6 +1,6 @@
-import { default as enGBLocale } from 'date-fns/locale/en-GB';
-import { default as enUSLocale } from 'date-fns/locale/en-US';
-import { default as faIRLocale } from 'date-fns/locale/fa-IR';
+import { enGB as enGBLocale } from 'date-fns/locale/en-GB';
+import { enUS as enUSLocale } from 'date-fns/locale/en-US';
+import { faIR as faIRLocale } from 'date-fns/locale/fa-IR';
 
 import { dateFnsLocaleMap } from './dateFnsLocaleMap';
 

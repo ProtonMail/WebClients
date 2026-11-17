@@ -7,6 +7,6 @@ const DayPeriodPattern = /a|b/
 export function toDocsDateFormat(locale: typeof dateLocale): DocsDateFormat {
   return {
     localeCode: locale.code ?? 'en-US',
-    hourCycle: DayPeriodPattern.test(locale.formatLong?.time() ?? '') ? 'h12' : 'h23',
+    hourCycle: DayPeriodPattern.test(locale.formatLong?.time({}) ?? '') ? 'h12' : 'h23',
   }
 }

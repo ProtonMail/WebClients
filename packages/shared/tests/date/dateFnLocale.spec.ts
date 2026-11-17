@@ -1,7 +1,7 @@
-import { default as enGBLocale } from 'date-fns/locale/en-GB';
-import { default as enUSLocale } from 'date-fns/locale/en-US';
-import { default as frFRLocale } from 'date-fns/locale/fr';
-import { default as frCALocale } from 'date-fns/locale/fr-CA';
+import { enGB as enGBLocale } from 'date-fns/locale/en-GB';
+import { enUS as enUSLocale } from 'date-fns/locale/en-US';
+import { fr as frFRLocale } from 'date-fns/locale/fr';
+import { frCA as frCALocale } from 'date-fns/locale/fr-CA';
 
 import formatUTC from '../../lib/date-fns-utc/format';
 import { getDateFnLocaleWithLongFormat } from '../../lib/i18n/dateFnLocale';

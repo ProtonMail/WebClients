@@ -47,7 +47,7 @@ const TimeIntl = ({ children, sameDayOptions, options, ...rest }: Props) => {
         <time dateTime={ISOTime} {...rest}>
             {readableTimeIntl(time, {
                 localeCode: dateLocale.code,
-                hour12: is12HourDateFnsFormat(dateLocale.formatLong?.time()),
+                hour12: is12HourDateFnsFormat(dateLocale.formatLong?.time({})),
                 sameDayIntlOptions: sameDayOptions,
                 intlOptions: options,
             })}

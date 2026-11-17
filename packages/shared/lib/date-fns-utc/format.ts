@@ -1,25 +1,15 @@
-import formatters from 'date-fns/_lib/format/formatters';
-import longFormatters from 'date-fns/_lib/format/longFormatters';
-import defaultLocale from 'date-fns/locale/en-US';
+import { UTCDate } from '@date-fns/utc';
+import type { Day, FirstWeekContainsDate, Locale } from 'date-fns';
+import { formatters, longFormatters } from 'date-fns/format';
+import { enUS as defaultLocale } from 'date-fns/locale/en-US';
 
 import type { WeekStartsOn } from './interface';
 
 /**
- * We copy here (with some refactor) the code for the format function from the 'date-fns' library.
- * What the format function from 'date-fns' does for extracting from a date (think of it as a UNIX timestamp)
- * the hours, day, month, etc that will be displayed, is to create a fake UTC time that mimics local time.
- * The days, hours, etc are then extracted with the JS functions Date.getUTCDate, Date.getUTCHours, and some
- * other UTC functions that date-fns has. This is achieved with the following lines of code in src/format/index.js:
- *
- *   // Convert the date in system timezone to the same date in UTC+00:00 timezone.
- *   // This ensures that when UTC functions will be implemented, locales will be compatible with them.
- *   // See an issue about UTC functions: https://github.com/date-fns/date-fns/issues/376
- *   const timezoneOffset = getTimezoneOffsetInMilliseconds(originalDate)
- *   const utcDate = subMilliseconds(originalDate, timezoneOffset)
- *
- * We want a format function that treats a UTC date as it is, without artificially transforming it to a fake UTC time
- * that mimics local time. Because of DST issues, we cannot undo the timezone offset with a wrapper of the format function,
- * so for our formatUTC function we simply remove the problematic lines above.
+ * A copy (with some refactor) of the format loop from 'date-fns', which formats a date as it is in UTC.
+ * The date-fns formatters read the date with its local getters (getHours, getDate, ...), so they are given
+ * a UTCDate, whose local getters return the UTC values. Unlike date-fns format, this does not throw on
+ * invalid dates or on the protected week-year and day-of-year tokens (YYYY, DD).
  */
 
 const escapedStringRegExp = /^'([^]*?)'?$/;
@@ -53,7 +43,7 @@ const toInteger = (dirtyNumber: any) => {
 export interface Options {
     locale?: Locale;
     weekStartsOn?: WeekStartsOn;
-    firstWeekContainsDate?: number;
+    firstWeekContainsDate?: FirstWeekContainsDate;
     useAdditionalWeekYearTokens?: boolean;
     useAdditionalDayOfYearTokens?: boolean;
 }
@@ -72,7 +62,12 @@ const formatUTC = (utcDate: Date, formatString: string, options: Options = {}) =
     const localeWeekStartsOn = locale?.options?.weekStartsOn;
     const defaultWeekStartsOn = localeWeekStartsOn === undefined ? 0 : toInteger(localeWeekStartsOn);
     const weekStartsOn = options.weekStartsOn === undefined ? defaultWeekStartsOn : toInteger(options.weekStartsOn);
-    const formatterOptions = { firstWeekContainsDate, weekStartsOn, locale, _originalDate: utcDate };
+    const date = new UTCDate(utcDate);
+    const formatterOptions = {
+        firstWeekContainsDate: firstWeekContainsDate as FirstWeekContainsDate,
+        weekStartsOn: weekStartsOn as Day,
+        locale,
+    };
 
     const longFormatMatchResult = formatString.match(longFormattingTokensRegExp);
     if (!longFormatMatchResult) {
@@ -84,7 +79,7 @@ const formatUTC = (utcDate: Date, formatString: string, options: Options = {}) =
             const firstCharacter = substring[0];
             if (firstCharacter === 'p' || firstCharacter === 'P') {
                 const longFormatter = longFormatters[firstCharacter];
-                return longFormatter(substring, locale.formatLong, formatterOptions);
+                return longFormatter(substring, locale.formatLong);
             }
             return substring;
         })
@@ -109,7 +104,7 @@ const formatUTC = (utcDate: Date, formatString: string, options: Options = {}) =
 
             const formatter = formatters[firstCharacter];
             if (formatter) {
-                return formatter(utcDate, substring, locale.localize, formatterOptions);
+                return formatter(date, substring, locale.localize, formatterOptions);
             }
 
             if (firstCharacter.match(unescapedLatinCharacterRegExp)) {

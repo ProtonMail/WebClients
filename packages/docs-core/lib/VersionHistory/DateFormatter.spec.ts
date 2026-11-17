@@ -1,9 +1,10 @@
 import { setDateLocales } from '@proton/shared/lib/i18n'
+import { enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales'
 import { DateFormatter } from './DateFormatter'
 
 describe('DateFormatter', () => {
   beforeAll(() => {
-    setDateLocales({ dateLocale: { code: 'en-US' } })
+    setDateLocales({ dateLocale: enUSLocale })
     jest.useFakeTimers().setSystemTime(new Date('2023-07-08'))
   })
   describe('formatDate', () => {

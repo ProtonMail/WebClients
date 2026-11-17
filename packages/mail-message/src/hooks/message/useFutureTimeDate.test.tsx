@@ -83,11 +83,11 @@ describe('useFutureTimeDate', () => {
         const { result } = renderHook(() => useFutureTimeDate({ defaultDate: new Date() }));
 
         const today = new Date();
-        let res = result.current.formatDateInput(today, { code: 'en-US' });
+        let res = result.current.formatDateInput(today, dateLocale);
         expect(res).toEqual('Today');
 
         const tomorrow = startOfTomorrow();
-        res = result.current.formatDateInput(tomorrow, { code: 'en-US' });
+        res = result.current.formatDateInput(tomorrow, dateLocale);
         expect(res).toEqual('Tomorrow');
 
         const inTwoDays = addDays(new Date(), 2);

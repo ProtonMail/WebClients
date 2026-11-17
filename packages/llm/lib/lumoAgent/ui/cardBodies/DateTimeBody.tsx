@@ -33,9 +33,12 @@ interface Props extends Pick<CardBodyProps, 'params' | 'onChange'> {
 const withTimeOfDay = (day: Date, time: Date) =>
     set(day, { hours: getHours(time), minutes: getMinutes(time), seconds: 0, milliseconds: 0 });
 
-/** `parseISO` returns an Invalid Date for anything that isn't an ISO string, hence the cast over a type guard. */
+/** `parseISO` throws on non-strings and returns an Invalid Date for strings that aren't ISO dates. */
 const parseIso = (raw: unknown) => {
-    const parsed = parseISO(raw as string);
+    if (typeof raw !== 'string') {
+        return undefined;
+    }
+    const parsed = parseISO(raw);
     return isValid(parsed) ? parsed : undefined;
 };
 

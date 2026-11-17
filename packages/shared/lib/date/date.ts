@@ -1,3 +1,4 @@
+import type { Locale } from 'date-fns';
 import {
     addMonths,
     differenceInMilliseconds,
