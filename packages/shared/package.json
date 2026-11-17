@@ -5,6 +5,7 @@
     "author": "ProtonMail",
     "sideEffects": false,
     "exports": {
+        "./lib/activation/constants": "./lib/activation/constants.ts",
         "./lib/api": "./lib/api.ts",
         "./lib/api/activation": "./lib/api/activation.ts",
         "./lib/api/addresses": "./lib/api/addresses.ts",

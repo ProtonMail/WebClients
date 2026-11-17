@@ -229,10 +229,6 @@ export enum EASY_SWITCH_SOURCES {
     UNKNOWN = 'unknown',
 }
 
-export enum EASY_SWITCH_SEARCH_SOURCES {
-    CONTACT_IMPORT = 'contact-import',
-}
-
 export enum EASY_SWITCH_FEATURES {
     IMPORT_MAIL = 'import_mail',
     IMPORT_CALENDAR = 'import_calendar',

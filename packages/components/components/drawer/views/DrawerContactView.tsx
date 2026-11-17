@@ -1,9 +1,9 @@
-import { useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { Fragment, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import EasySwitchProvider from '@proton/activation/src/logic/StoreProvider';
 import { Button } from '@proton/atoms/Button/Button';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import noop from '@proton/utils/noop';
@@ -12,7 +12,6 @@ import { useContactMergeModals } from '../../../containers/contacts/hooks/useCon
 import { useContactModals } from '../../../containers/contacts/hooks/useContactModals';
 import useContactsDrawerFromURL from '../../../containers/contacts/hooks/useContactsDrawerFromURL';
 import ContactImportModal from '../../../containers/contacts/import/ContactImportModal';
-import ContactsTabImportDropdown from '../../../containers/contacts/widget/ContactsTabImportDropdown';
 import ContactsWidgetContainer from '../../../containers/contacts/widget/ContactsWidgetContainer';
 import ContactsWidgetGroupsContainer from '../../../containers/contacts/widget/ContactsWidgetGroupsContainer';
 import type { CustomAction } from '../../../containers/contacts/widget/types';
@@ -27,9 +26,10 @@ interface Props {
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
     onMailTo?: (src: string) => void;
     customActions?: CustomAction[];
+    importDropdown?: ReactNode;
 }
 
-const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: Props) => {
+const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [], importDropdown }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -136,7 +136,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                         key="contact-footer-button-1"
                         onClick={() => onEdit({})}
                     >{c('Action').t`Add contact`}</Button>,
-                    <ContactsTabImportDropdown onImport={onOpenImportModal} />,
+                    <Fragment key="contact-footer-button-2">{importDropdown}</Fragment>,
                 ];
             case CONTACT_TAB.CONTACT_GROUP:
                 return [
@@ -151,7 +151,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
     };
 
     return (
-        <EasySwitchProvider>
+        <>
             <DrawerView
                 tab={tab}
                 onSelectDrawerOption={setTab}
@@ -166,7 +166,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
             {modals}
             {importModal}
             {mergeModals}
-        </EasySwitchProvider>
+        </>
     );
 };
 

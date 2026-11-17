@@ -11,11 +11,12 @@ import useSettingsLink from '@proton/components/components/link/useSettingsLink'
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import B2BOnboardingFeatureItem from '@proton/components/components/onboarding/b2b/B2BOnboardingFeatureItem';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
+import { EASY_SWITCH_SEARCH_SOURCES } from '@proton/shared/lib/activation/constants';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { type ProviderDisplay, providerMap } from '../../../constants';
-import { EASY_SWITCH_SEARCH_SOURCES, EASY_SWITCH_SOURCES, ImportProvider } from '../../../interface';
+import { EASY_SWITCH_SOURCES, ImportProvider } from '../../../interface';
 import { getOrganizationMigrationFeatures } from '../../../oles/migrationFeatures';
 import { OLES_PROVIDERS, getProviderRouteSlug } from '../../../oles/providers';
 import useOLESFeatureStatus from '../../../oles/useOLESFeatureStatus';

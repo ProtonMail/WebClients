@@ -3,6 +3,7 @@ import { Suspense, forwardRef, lazy, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner';
+import ContactsTabImportDropdown from '@proton/activation/src/components/ContactsTabImportDropdown/ContactsTabImportDropdown';
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
 import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
 import SmartBanner from '@proton/components/components/smartBanner/SmartBanner';
@@ -82,6 +83,7 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
                     customAppSettings={<MailQuickSettings />}
                     lumoDrawerView={<DrawerLumoView />}
                     passAliasesView={<PassAliasesContainer />}
+                    contactsImportDropdown={<ContactsTabImportDropdown />}
                     // when catching click action from drawer close overlay
                     onContainerClick={() => {
                         document.dispatchEvent(new CustomEvent(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT));

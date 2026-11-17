@@ -5,6 +5,7 @@ import { differenceInCalendarDays, format, isToday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner';
+import ContactsTabImportDropdown from '@proton/activation/src/components/ContactsTabImportDropdown/ContactsTabImportDropdown';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -669,6 +670,7 @@ const CalendarContainerView = ({
                     <DrawerApp
                         contactCustomActions={contactCustomActions}
                         customAppSettings={<CalendarQuickSettings onBackFromSearch={onBackFromSearch} />}
+                        contactsImportDropdown={<ContactsTabImportDropdown />}
                     />
                 )
             }

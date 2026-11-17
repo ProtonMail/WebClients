@@ -40,6 +40,8 @@ interface Props {
     lumoDrawerView?: ReactNode;
     /** Pass aliases section of the security center; supplied by the product so components stays free of @proton/pass. */
     passAliasesView?: ReactNode;
+    /** Import dropdown of the contacts tab; supplied by the product so components stays free of @proton/activation. */
+    contactsImportDropdown?: ReactNode;
     /**
      * Mail specific
      */
@@ -59,6 +61,7 @@ const DrawerApp = ({
     customAppSettings,
     lumoDrawerView,
     passAliasesView,
+    contactsImportDropdown,
     onCompose,
     onMailTo,
     contactCustomActions,
@@ -142,6 +145,7 @@ const DrawerApp = ({
                                 onCompose={onCompose}
                                 onMailTo={onMailTo}
                                 customActions={contactCustomActions}
+                                importDropdown={contactsImportDropdown}
                             />
                         )}
 
