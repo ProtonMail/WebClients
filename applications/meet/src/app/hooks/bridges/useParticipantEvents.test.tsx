@@ -129,7 +129,10 @@ const ticks = {
             emitLeave('alice'),
             mocks.room.emit('reconnecting'),
         ]),
-    setTimeoutTick: () => new Promise((resolve) => setTimeout(resolve)),
+    // The hook unmutes sounds in a deferred timer after 'reconnected'; only this tick may run it.
+    setTimeoutTick: async () => {
+        vi.runOnlyPendingTimers();
+    },
     resubscribe: async (rerender: () => void) => {
         mocks.enabledFlags = [...mocks.enabledFlags, 'MeetSoundNotificationsEnabled'];
         rerender();
@@ -141,7 +144,9 @@ type TickName = keyof typeof ticks;
 const runTicks = async (tickNames: TickName[], rerender: () => void) => {
     for (const tickName of tickNames) {
         mocks.now += TICK_DURATION_MS;
-        await act(() => ticks[tickName](rerender));
+        await act(async () => {
+            await ticks[tickName](rerender);
+        });
     }
 };
 
@@ -179,9 +184,12 @@ describe('useParticipantEvents', () => {
         mocks.enabledFlags = ['MeetJoinLeaveSoundsNotifications'];
         mocks.now = 0;
         vi.spyOn(Date, 'now').mockImplementation(() => mocks.now);
+        // A real timer could fire whenever `act` yields to the event loop, before the next tick on a slow runner
+        vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] });
     });
 
     afterEach(() => {
+        vi.useRealTimers();
         vi.restoreAllMocks();
     });
 
@@ -309,7 +317,9 @@ describe('useParticipantEvents', () => {
             expect(mocks.players[JOIN_SOUND]).toHaveBeenCalledTimes(1);
             expect(mocks.players[LEAVE_SOUND]).not.toHaveBeenCalled();
 
-            await act(() => new Promise((resolve) => setTimeout(resolve)));
+            await act(() => {
+                vi.runOnlyPendingTimers();
+            });
             await leave('alice');
 
             expect(mocks.players[LEAVE_SOUND]).toHaveBeenCalledTimes(1);
