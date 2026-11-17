@@ -185,7 +185,6 @@ const Sidebar = ({
     return (
         <>
             <div
-                ref={rootRef}
                 className={clsx(
                     'sidebar flex flex-nowrap flex-column no-print outline-none',
                     collapsed && 'sidebar--collapsed',
@@ -195,6 +194,7 @@ const Sidebar = ({
                 data-expanded={expanded}
                 {...rest}
                 {...focusTrapProps}
+                ref={rootRef}
             >
                 <Hamburger
                     expanded={expanded}

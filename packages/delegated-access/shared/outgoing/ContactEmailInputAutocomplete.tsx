@@ -45,11 +45,11 @@ const ContactEmailInputAutocomplete = ({ options, value, onValue, ...rest }: Con
         <>
             <Input
                 containerRef={containerRef}
-                ref={inputRef}
                 value={value}
                 onValue={onValue}
                 {...rest}
                 {...inputProps}
+                ref={inputRef}
             />
             <AutocompleteList anchorRef={containerRef} {...suggestionProps}>
                 {filteredOptions.map(({ chunks, text, option }, index) => {

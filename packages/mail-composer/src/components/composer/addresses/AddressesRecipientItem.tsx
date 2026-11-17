@@ -198,9 +198,9 @@ const AddressesRecipientItem = ({
                 draggable={!editableMode}
                 onDragStart={onDragStart}
                 onDragEnd={onDragEnd}
-                ref={itemRef}
                 {...dragHandlers}
                 {...rest}
+                ref={itemRef}
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
                     {(icon || loading) && (

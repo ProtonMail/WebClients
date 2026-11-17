@@ -48,7 +48,7 @@ export function VisibilityTracker<T extends ElementType = typeof defaultElement>
     const Element: ElementType = as ?? defaultElement;
 
     return (
-        <Element ref={elementRef} {...rest}>
+        <Element {...rest} ref={elementRef}>
             {children}
         </Element>
     );

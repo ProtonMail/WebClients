@@ -82,7 +82,6 @@ const ToolbarDropdown = ({
                 <DropdownButton
                     as="button"
                     type="button"
-                    ref={anchorRef}
                     isOpen={isOpen}
                     onClick={() => {
                         toggle();
@@ -97,6 +96,7 @@ const ToolbarDropdown = ({
                         className,
                     ])}
                     {...rest}
+                    ref={anchorRef}
                 >
                     {content}
                 </DropdownButton>

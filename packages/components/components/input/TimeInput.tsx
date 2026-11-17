@@ -312,13 +312,13 @@ const TimeInput = ({
         <>
             <Input
                 type="text"
-                ref={anchorRef}
                 onFocus={open}
                 onBlur={handleBlur}
                 onClick={open}
                 value={temporaryInput}
                 onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setTemporaryInput(value)}
                 {...rest}
+                ref={anchorRef}
             />
             <Dropdown
                 id={uid}

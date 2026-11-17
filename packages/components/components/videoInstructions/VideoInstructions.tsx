@@ -25,12 +25,12 @@ const VideoInstructions = ({ children, className, ...rest }: React.ComponentProp
             <video
                 preload="auto"
                 playsInline
-                ref={videoRef}
                 className="max-w-full rounded"
                 autoPlay
                 muted
                 onEnded={onEnd}
                 {...rest}
+                ref={videoRef}
             >
                 {children}
             </video>

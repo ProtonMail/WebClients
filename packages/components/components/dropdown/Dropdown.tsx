@@ -266,7 +266,6 @@ const Dropdown = ({
     return (
         <Portal>
             <div
-                ref={combinedDropdownRef}
                 style={rootStyle}
                 role="dialog"
                 className={popperClassName}
@@ -286,6 +285,7 @@ const Dropdown = ({
                 data-testid="dropdown-button"
                 {...rest}
                 {...focusTrapProps}
+                ref={combinedDropdownRef}
             >
                 {/* Backdrop button, meant to override 'autoClose' option on mobile */}
                 <div

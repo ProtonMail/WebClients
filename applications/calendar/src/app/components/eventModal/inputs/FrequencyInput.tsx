@@ -210,7 +210,6 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
             <DropdownButton
                 as="button"
                 type="button"
-                ref={anchorRef}
                 isOpen={isOpen}
                 onClick={handleClick}
                 className={clsx('rounded-md border py-1 px-2 text-sm gap-2', className)}
@@ -219,6 +218,7 @@ const FrequencyInput = ({ start, weekStartsOn, frequencyModel, onChange, classNa
                     backgroundColor: isOpen ? 'var(--interaction-weak-minor-1)' : undefined,
                 }}
                 {...rest}
+                ref={anchorRef}
             >
                 <IcArrowsRotate className="shrink-0" />
                 <span className="p-0 text-ellipsis" title={selectedOptionTitle}>

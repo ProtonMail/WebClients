@@ -58,13 +58,13 @@ const TextArea = ({
     return (
         <>
             <textarea
-                ref={textAreaRef}
                 rows={rows}
                 className={clsx(['field w-full', className, statusClasses])}
                 aria-invalid={hasError}
                 aria-describedby={uid}
                 {...rest}
                 {...handlers}
+                ref={textAreaRef}
             />
             {hasError && <ErrorZone id={uid}>{error}</ErrorZone>}
         </>

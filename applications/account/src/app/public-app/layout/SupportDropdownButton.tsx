@@ -34,8 +34,8 @@ const SupportDropdownButton = ({
             type="button"
             className={clsx('support-dropdown-button', className)}
             aria-expanded={isOpen}
-            ref={buttonRef}
             {...rest}
+            ref={buttonRef}
         >
             {children}
             {noCaret ? null : <DropdownCaret isOpen={isOpen} className="ml-2 expand-caret my-auto" />}

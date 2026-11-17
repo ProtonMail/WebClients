@@ -54,7 +54,6 @@ const ComposerMoreOptionsDropdown = ({
                 <DropdownButton
                     as="button"
                     type="button"
-                    ref={anchorRef}
                     isOpen={isOpen}
                     onClick={handleClick}
                     caretClassName="editor-toolbar-icon"
@@ -67,6 +66,7 @@ const ComposerMoreOptionsDropdown = ({
                     title={title}
                     data-testid="composer:more-options-button"
                     {...rest}
+                    ref={anchorRef}
                 >
                     {content}
                 </DropdownButton>

@@ -340,7 +340,6 @@ export const Slider = ({
                             setTooltipOpen(false);
                         }}
                         type="range"
-                        ref={thumbInputRef}
                         value={value}
                         min={min}
                         max={max}
@@ -352,6 +351,7 @@ export const Slider = ({
                         onChange={handleInputChange}
                         onInput={handleInputInput}
                         {...rest}
+                        ref={thumbInputRef}
                     />
                     <IcArrowsLeftRight />
                 </ButtonLike>

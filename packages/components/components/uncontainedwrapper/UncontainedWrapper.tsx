@@ -75,10 +75,10 @@ const UncontainedWrapper = ({ children, className, innerClassName, ...rest }: Un
                 </div>
             )}
             <div
-                ref={uncontainedWrapperRef}
                 className={clsx('uncontained-wrapper overflow-auto outline-none--at-all', innerClassName)}
                 data-testid="uncontained-wrapper"
                 {...rest}
+                ref={uncontainedWrapperRef}
             >
                 {children}
             </div>

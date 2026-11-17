@@ -95,7 +95,6 @@ export const TimeInput = ({
     return (
         <div className={clsx('relative', className)}>
             <InputFieldTwo
-                ref={anchorRef}
                 value={isFocused ? inputBuffer : displayValue}
                 onClick={() => setIsOpen(true)}
                 onFocus={handleFocus}
@@ -105,6 +104,7 @@ export const TimeInput = ({
                 autoComplete="off"
                 error={error || (value && !normaliseInput(value))}
                 {...rest}
+                ref={anchorRef}
             />
             <Dropdown
                 isOpen={isOpen}

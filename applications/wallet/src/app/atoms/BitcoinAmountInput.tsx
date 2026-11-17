@@ -54,7 +54,6 @@ export const BitcoinAmountInput = ({
 
     return (
         <CoreInput
-            ref={inputRef}
             dense={dense}
             type="number"
             value={`${formatNumberForDisplay(value, getPrecision(unit), digitsAfterDecimalPoint)}`}
@@ -66,6 +65,7 @@ export const BitcoinAmountInput = ({
             inputClassName={inputClassName}
             readOnly={!onValueChange}
             {...inputProps}
+            ref={inputRef}
         />
     );
 };

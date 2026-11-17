@@ -75,12 +75,12 @@ const HeaderDropdown = ({
                 <DropdownButton
                     as={Button}
                     className={className}
-                    ref={anchorRef}
                     isOpen={isOpen}
                     onClick={toggle}
                     disabled={loading}
                     aria-expanded={isOpen}
                     {...rest}
+                    ref={anchorRef}
                 >
                     {content}
                 </DropdownButton>

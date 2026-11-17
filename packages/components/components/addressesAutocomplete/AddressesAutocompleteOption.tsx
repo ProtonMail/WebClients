@@ -58,7 +58,6 @@ const AddressesAutocompleteOption = <V,>({
         <li className="dropdown-item" {...inertProps(selected)} aria-hidden={selected}>
             <button
                 type="button"
-                ref={ref}
                 disabled={disabled}
                 onClick={selected ? undefined : handleClick}
                 title={title}
@@ -71,6 +70,7 @@ const AddressesAutocompleteOption = <V,>({
                     truncate ? 'text-ellipsis' : 'text-break',
                 ])}
                 {...rest}
+                ref={ref}
             >
                 <div className="flex items-center flex-nowrap">
                     <span className="flex-1 text-ellipsis">{children}</span>
