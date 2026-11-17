@@ -1416,6 +1416,21 @@
       ],
       "Special Offer": [
         "Oferta especial"
+      ],
+      "Dismiss notification": [
+        "Descartar notificación"
+      ],
+      "Go to today": [
+        "Ir al día de hoy"
+      ],
+      "Next contact": [
+        "Siguiente contacto"
+      ],
+      "Previous contact": [
+        "Contacto anterior"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Expandir o contraer las subcarpetas de ${ itemName }"
       ]
     },
     "Action: Docs": {
@@ -8198,6 +8213,9 @@
       ],
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
         "Esta carpeta podrá abrirse cuando la importación haya terminado. De momento, se ha importado ${ importedSize }. Un correo será enviado al finalizar."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Ya no se venden licencias del asistente de escritura."
       ]
     },
     "info": {
@@ -16126,6 +16144,73 @@
     "Payment Method": {
       "Bank Account": [
         "Cuenta bancaria"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Código"
+      ],
+      "2x Basic usage": [
+        "El doble de uso que el plan Básico"
+      ],
+      "5x Plus usage": [
+        "Uso 5 veces superior al plan Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acceso con API, con ${ credit } de crédito mensual"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acceso API, con un crédito mensual de ${ credit } por usuario."
+      ],
+      "Everything in Basic, and:": [
+        "Todo en Básico, y:"
+      ],
+      "Everything in Free, and:": [
+        "Todo en Gratis, y:"
+      ],
+      "Everything in Plus, and:": [
+        "Todo en Plus, y:"
+      ],
+      "Extended image generation": [
+        "Generación extendida de imágenes"
+      ],
+      "Includes:": [
+        "Incluye:"
+      ],
+      "Limited image generation": [
+        "Generación limitada de imágenes"
+      ],
+      "Limited messages and chat history": [
+        "Mensajes limitados e historial de conversaciones"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilidades, proyectos y tareas programadas con límites"
+      ],
+      "Maximum image generation": [
+        "Generación máxima de imágenes"
+      ],
+      "Maximum Skills and Projects": [
+        "Cantidad máxima de Habilidades y Proyectos"
+      ],
+      "More image generation": [
+        "Más generación de imágenes"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Más Habilidades, Proyectos y tareas programadas"
+      ],
+      "More usage": [
+        "Mayor uso"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Para programar y crear aplicaciones"
+      ],
+      "For everyday chats": [
+        "Para conversaciones cotidianas"
+      ],
+      "For getting more done": [
+        "Para lograr más"
       ]
     }
   }

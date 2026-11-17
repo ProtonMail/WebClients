@@ -540,7 +540,7 @@
         "Torna a l'àlbum «${ albumName }»"
       ],
       "Go to ${ planOrAppName }": [
-        "Aneu a ${ planOrAppName }"
+        "Ves a ${ planOrAppName }"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -1286,7 +1286,7 @@
         "Torna a l'àlbum «${ ellipsedAlbumName }»"
       ],
       "Continue with Free": [
-        "Continuar amb el pla gratuït"
+        "Continua amb Free"
       ],
       "Manage addresses": [
         "Gestionar adreces"
@@ -1403,7 +1403,7 @@
         "Afegeix ${ name }"
       ],
       "Add payment method": [
-        "Afegir un mètode de pagament"
+        "Afegeix un mètode de pagament"
       ],
       "Cancel trial": [
         "Cancel·lar la prova"
@@ -1416,6 +1416,21 @@
       ],
       "Special Offer": [
         "Oferta especial"
+      ],
+      "Dismiss notification": [
+        "Descarta la notificació"
+      ],
+      "Go to today": [
+        "Vés a avui"
+      ],
+      "Next contact": [
+        "Següent contacte"
+      ],
+      "Previous contact": [
+        "Contacte anterior"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Commuta les subcarpetes de ${ itemName }"
       ]
     },
     "Action: Docs": {
@@ -2087,7 +2102,7 @@
         "Suport per a la càrrega de fitxers grans"
       ],
       "Limited daily chats": [
-        "Nombre de xats diaris limitat"
+        "Nombre limitat de xats diaris"
       ],
       "Limited favorites": [
         "Nombre de preferits limitat"
@@ -4005,7 +4020,7 @@
         "La sol·licitud ha caducat"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+        "L'esquema d'inversió del subjecte passiu no és compatible amb aquest pla"
       ],
       "Search failed": [
         "La cerca ha fallat"
@@ -6983,7 +6998,7 @@
         "La vostra subscripció està a punt de finalitzar. Per a mantenir els avantatges de ${ planName }, reinicieu-la a Apple App Store abans del ${ byDate }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
-        "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
+        "La vostra subscripció està a punt de finalitzar: per a mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Vigilància"
@@ -7881,7 +7896,7 @@
         "Per la present, confirmo de bona fe que la informació i les declaracions contingudes en l'informe són correctes i completes."
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
-        "Actualment heu iniciat sessió com a ${ username } per a ${ organizationName }."
+        "Actualment heu iniciat la sessió com a ${ username } per a ${ organizationName }."
       ],
       "Data integrity check failed": [
         "Ha fallat la comprovació de la integritat de les dades"
@@ -8031,7 +8046,7 @@
         "L’enllaç ha caducat."
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
-        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a no perdre l'accés. ${ learnMoreLink }"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
@@ -8143,7 +8158,7 @@
         "Teniu una factura pendent de pagament ${ payInvoiceLink }"
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
-        "Teniu una factura pendent de pagament el ${ dueDate } ${ payInvoiceLink }"
+        "Teniu una factura pendent el ${ dueDate } ${ payInvoiceLink }"
       ],
       "1 device per user": [
         "1 dispositiu per usuari"
@@ -8170,7 +8185,7 @@
         "Ens posarem en contacte aviat."
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
-        "La prova gratuïta ha finalitzat. Subscriviu-vos ara per mantenir l'accés del vostre equip sense interrupcions i els comptes segurs."
+        "La prova gratuïta ha finalitzat. Subscriviu-vos ara per a mantenir l'accés del vostre equip sense interrupcions i els comptes segurs."
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
@@ -8210,6 +8225,9 @@
       ],
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
         "Podreu obrir aquesta carpeta quan s'acabi la importació. Fins ara, s'han importat ${ importedSize }. Us enviarem un correu electrònic quan s'hagi completat."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Les llicències d'assistent d'escriptura ja no es venen."
       ]
     },
     "info": {
@@ -8567,7 +8585,7 @@
         "Correus electrònics (els darrers 3 mesos)"
       ],
       "Emails (last 6 months)": [
-        "Correus electrònics (dels darrers sis mesos)"
+        "Correus electrònics (darrers 6 mesos)"
       ],
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
@@ -9478,7 +9496,7 @@
     },
     "Message": {
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
+        "La prova gratuïta ha finalitzat. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
@@ -11823,7 +11841,7 @@
         "Número d'IVA"
       ],
       "VAT reverse charge mechanism applies.": [
-        "S'aplica la inversió del subjecte passiu (IVA)."
+        "S'aplica la inversió del subjecte passiu de l'IVA."
       ],
       "You already have a subscription to this plan.": [
         "Ja teniu una subscripció a aquest pla."
@@ -12124,7 +12142,7 @@
         "Aquesta clau s'utilitza per a la verificació de missatges"
       ],
       "This key is used to encrypt messages to this contact on older apps": [
-        "Aquesta clau s'utilitza per xifrar missatges per aquest contacte en aplicacions antigues"
+        "Aquesta clau s'utilitza per a xifrar missatges per a aquest contacte en aplicacions antigues"
       ]
     },
     "PGP key warning": {
@@ -16065,6 +16083,73 @@
     "Payment Method": {
       "Bank Account": [
         "Compte bancari"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "Codi de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "2x Basic usage": [
+        "2x ús bàsic"
+      ],
+      "5x Plus usage": [
+        "5x d'ús Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Accés a l'API, amb ${ credit } de crèdit al mes"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Accés a l'API, amb ${ credit } de crèdit al mes per usuari"
+      ],
+      "Everything in Basic, and:": [
+        "Tot el de pla Basic, i a més:"
+      ],
+      "Everything in Free, and:": [
+        "Tot el del Free, i:"
+      ],
+      "Everything in Plus, and:": [
+        "Tot el de Plus, i a més:"
+      ],
+      "Extended image generation": [
+        "Generació d'imatges ampliada"
+      ],
+      "Includes:": [
+        "Inclou"
+      ],
+      "Limited image generation": [
+        "Generació d'imatges limitada"
+      ],
+      "Limited messages and chat history": [
+        "Missatges i historial de xat limitats"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilitats, projectes i tasques programades limitats"
+      ],
+      "Maximum image generation": [
+        "Generació màxima d'imatges"
+      ],
+      "Maximum Skills and Projects": [
+        "Màxim d'Habilitats i Projectes"
+      ],
+      "More image generation": [
+        "Més generació d'imatges"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Més Habilitats, Projectes i tasques programades"
+      ],
+      "More usage": [
+        "Més ús"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Per a programar i desenvolupar"
+      ],
+      "For everyday chats": [
+        "Per a converses quotidianes"
+      ],
+      "For getting more done": [
+        "Per a fer més coses"
       ]
     }
   }

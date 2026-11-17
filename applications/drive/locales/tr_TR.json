@@ -1416,6 +1416,21 @@
       ],
       "Special Offer": [
         "Özel teklif"
+      ],
+      "Dismiss notification": [
+        "Bildirimi yok say"
+      ],
+      "Go to today": [
+        "Bugüne git"
+      ],
+      "Next contact": [
+        "Sonraki kişi"
+      ],
+      "Previous contact": [
+        "Önceki kişi"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "${ itemName } alt klasörlerini aç/kapat"
       ]
     },
     "Action: Docs": {
@@ -8210,6 +8225,9 @@
       ],
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
         "İçe aktarma tamamlandığında bu klasörü açabilirsiniz. Şimdiye kadar ${ importedSize } içe aktarıldı. Tamamlandığında size e-posta göndereceğiz."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Yazma yardımcısı koltukları artık satılmıyor"
       ]
     },
     "info": {
@@ -16101,6 +16119,73 @@
     "Payment Method": {
       "Bank Account": [
         "Banka hesabı"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2 kat Basic kullanım"
+      ],
+      "5x Plus usage": [
+        "5 kat Plus kullanım"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Aylık ${ credit } krediyle API erişimi"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
+      ],
+      "Everything in Basic, and:": [
+        "Basic tarifesindeki her şey ve:"
+      ],
+      "Everything in Free, and:": [
+        "Free tarifesindeki herşey ve:"
+      ],
+      "Everything in Plus, and:": [
+        "Plus tarifesindeki her şey ve:"
+      ],
+      "Extended image generation": [
+        "Genişletilmiş görsel oluşturma"
+      ],
+      "Includes:": [
+        "İçindekiler:"
+      ],
+      "Limited image generation": [
+        "Sınırlı görsel oluşturma"
+      ],
+      "Limited messages and chat history": [
+        "Sınırlı sayıda ileti ve sohbet geçmişi"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Sınırlı sayıda yetenek, proje ve zamanlanmış görev"
+      ],
+      "Maximum image generation": [
+        "En fazla görsel oluşturma"
+      ],
+      "Maximum Skills and Projects": [
+        "En fazla yetenek ve projeler"
+      ],
+      "More image generation": [
+        "Daha fazla görsel oluşturma"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Daha fazla yetenek, proje ve zamanlanmış görev"
+      ],
+      "More usage": [
+        "Daha fazla kullanım"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Kodlama ve geliştirme için"
+      ],
+      "For everyday chats": [
+        "Günlük sohbetler için"
+      ],
+      "For getting more done": [
+        "Daha fazlasını yapmak için"
       ]
     }
   }
