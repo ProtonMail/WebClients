@@ -2,13 +2,16 @@ import type { ReactNode } from 'react';
 
 import { fireEvent, render, screen, within } from '@testing-library/react';
 
+import { useMembers } from '@proton/account/members/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit';
+import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 
 import { ApiUsageDashboard } from './ApiUsageDashboard';
+import { useApiUsageMembers } from './useApiUsageMembers';
 import { useApiUsageSummary } from './useApiUsageSummary';
 
 jest.mock('@proton/account/paymentStatus/hooks');
@@ -32,6 +35,25 @@ jest.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
 }));
 
 jest.mock('./useApiUsageSummary');
+jest.mock('./useApiUsageMembers');
+jest.mock('@proton/account/members/hooks');
+
+const memberTotals = (tokensIn: number, costMicros: number) => ({
+    TokensIn: tokensIn,
+    TokensInCached: 0,
+    TokensGenerated: 0,
+    ApiCalls: 1,
+    CostMicros: costMicros,
+});
+const organizationMembers = [
+    { ID: 'member-alice', Name: 'Alice', Role: MEMBER_ROLE.ORGANIZATION_ADMIN },
+    { ID: 'member-bob', Name: 'Bob', Role: MEMBER_ROLE.ORGANIZATION_MEMBER },
+];
+const memberUsageRows = [
+    { MemberID: 'member-alice', Totals: memberTotals(1_000_000, 2_500_000) },
+    { MemberID: 'member-bob', Totals: memberTotals(500_000, 1_250_000) },
+    { MemberID: null, Totals: memberTotals(100_000, 250_000) },
+];
 
 const usageDates = Array.from({ length: 90 }, (_, index) => `day-${index}`);
 const usageRow = (date: string, model: string, inputTokens: number, outputTokens: number, costMicros: number) => ({
@@ -55,12 +77,16 @@ const setup = ({
     creditResponse = new Promise(() => {}),
     showAutoTopUp = false,
     usage = {},
+    memberUsage = {},
+    isLoadingMembers = false,
 }: {
     isOrgAdmin?: boolean;
     isOrgMember?: boolean;
     creditResponse?: Promise<unknown>;
     showAutoTopUp?: boolean;
     usage?: { isLoading?: boolean; error?: boolean; rows?: ReturnType<typeof usageRow>[] };
+    memberUsage?: { isLoading?: boolean; error?: boolean; rows?: typeof memberUsageRows };
+    isLoadingMembers?: boolean;
 } = {}) => {
     (useApi as jest.Mock).mockReturnValue(jest.fn(() => creditResponse));
     (useApiUsageSummary as jest.Mock).mockReturnValue({
@@ -70,6 +96,13 @@ const setup = ({
         error: false,
         ...usage,
     });
+    (useApiUsageMembers as jest.Mock).mockReturnValue({
+        rows: memberUsageRows,
+        isLoading: false,
+        error: false,
+        ...memberUsage,
+    });
+    (useMembers as jest.Mock).mockReturnValue([organizationMembers, isLoadingMembers]);
     (useUser as jest.Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
     (useSubscription as jest.Mock).mockReturnValue([{ Currency: 'USD' }]);
     (usePaymentStatus as jest.Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
@@ -77,6 +110,7 @@ const setup = ({
 };
 
 const getMetric = (label: string) => screen.getAllByText(label)[0].parentElement?.textContent;
+const getMembersSection = () => screen.getByText('Member usage').closest('section') as HTMLElement;
 const selectPeriod = (label: string) => {
     fireEvent.click(screen.getByLabelText('Usage period'));
     fireEvent.click(within(screen.getByTestId('select-list')).getByText(label));
@@ -191,16 +225,65 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         expect(screen.getByText('Balance settings')).toBeInTheDocument();
     });
 
-    it('shows the member usage to an organization admin', () => {
+    it('shows each member’s usage over the selected period to an organization admin', () => {
         setup({ isOrgAdmin: true });
 
         expect(screen.getByText('Member usage')).toBeInTheDocument();
-        expect(screen.getByText('Team member 1')).toBeInTheDocument();
+        expect(useApiUsageMembers).toHaveBeenLastCalledWith('day-60', 'day-89');
+        expect(screen.getByText('Alice').closest('article')).toHaveTextContent('Admin');
+        expect(screen.getByText('Alice').closest('article')).toHaveTextContent('1.0M');
+        expect(screen.getByText('Alice').closest('article')).toHaveTextContent('$2.50');
+        expect(screen.getByText('Bob').closest('article')).toHaveTextContent('Member');
+        expect(screen.getByText('Former members')).toBeInTheDocument();
 
-        fireEvent.change(screen.getByLabelText('Search members'), { target: { value: 'Team member 2' } });
+        selectPeriod('Last 7 days');
 
-        expect(screen.queryByText('Team member 1')).not.toBeInTheDocument();
-        expect(screen.getByText('Team member 2')).toBeInTheDocument();
+        expect(useApiUsageMembers).toHaveBeenLastCalledWith('day-83', 'day-89');
+    });
+
+    it('shows API access and per-model usage as not available yet', () => {
+        setup({ isOrgAdmin: true });
+
+        const accessToggle = screen.getByLabelText('Toggle API access for Alice');
+        expect(accessToggle).toBeDisabled();
+        expect(accessToggle).not.toBeChecked();
+        expect(screen.getByText('Alice').closest('article')).toHaveTextContent('Not available yet');
+        expect(screen.getByRole('button', { name: 'Show usage details for Alice' })).toBeDisabled();
+        expect(screen.getByText('Former members').closest('article')).not.toHaveTextContent('Not available yet');
+    });
+
+    it('filters the members by name', () => {
+        setup({ isOrgAdmin: true });
+
+        fireEvent.change(screen.getByLabelText('Search members'), { target: { value: 'bo' } });
+
+        expect(screen.queryByText('Alice')).not.toBeInTheDocument();
+        expect(screen.getByText('Bob')).toBeInTheDocument();
+
+        fireEvent.change(screen.getByLabelText('Search members'), { target: { value: 'nobody' } });
+
+        expect(screen.getByText('No members match your search.')).toBeInTheDocument();
+        expect(screen.queryByText('No member API usage yet')).not.toBeInTheDocument();
+    });
+
+    it('shows that member usage is loading, until the organization members are loaded too', () => {
+        setup({ isOrgAdmin: true, isLoadingMembers: true });
+
+        expect(within(getMembersSection()).getByText('Loading usage…')).toBeInTheDocument();
+        expect(screen.queryByText('Unknown member')).not.toBeInTheDocument();
+    });
+
+    it('says when the member usage could not be loaded', () => {
+        setup({ isOrgAdmin: true, memberUsage: { error: true, rows: [] } });
+
+        expect(within(getMembersSection()).getByText('Could not load usage.')).toBeInTheDocument();
+    });
+
+    it('says when no member has used the API in the period', () => {
+        setup({ isOrgAdmin: true, memberUsage: { rows: [] } });
+
+        expect(screen.getByText('No member API usage yet')).toBeInTheDocument();
+        expect(screen.queryByText('No members match your search.')).not.toBeInTheDocument();
     });
 
     it('hides the member usage from a non-admin', () => {

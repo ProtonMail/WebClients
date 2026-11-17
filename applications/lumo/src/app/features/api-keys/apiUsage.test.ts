@@ -1,5 +1,18 @@
+import { MEMBER_ROLE } from '@proton/shared/lib/constants';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+
+import type { UsageMemberRow } from '../../remote/usage';
 import type { UsageRow } from './apiUsage';
-import { getApiModelUsage, getApiUsageDays, getPeriodDates, getUsageRows, sumUsage } from './apiUsage';
+import {
+    getApiMemberUsage,
+    getApiModelUsage,
+    getApiUsageDays,
+    getMemberCostLabel,
+    filterMembersByName,
+    getPeriodDates,
+    getUsageRows,
+    sumUsage,
+} from './apiUsage';
 
 const row = (overrides: Partial<UsageRow>): UsageRow => ({
     Date: '2026-11-01',
@@ -78,5 +91,80 @@ describe('getPeriodDates', () => {
         expect(periodDates).toHaveLength(length);
         expect(periodDates[0]).toBe(first);
         expect(periodDates.at(-1)).toBe(last);
+    });
+});
+
+describe('getApiMemberUsage', () => {
+    const totals = (overrides: Partial<UsageMemberRow['Totals']>): UsageMemberRow['Totals'] => ({
+        TokensIn: 0,
+        TokensInCached: 0,
+        TokensGenerated: 0,
+        ApiCalls: 0,
+        CostMicros: 0,
+        ...overrides,
+    });
+    const members = [
+        { ID: 'member-alice', Name: 'Alice', Role: MEMBER_ROLE.ORGANIZATION_ADMIN },
+        { ID: 'member-bob', Name: 'Bob', Role: MEMBER_ROLE.ORGANIZATION_MEMBER },
+        { ID: 'member-nameless', Name: '', Role: MEMBER_ROLE.ORGANIZATION_MEMBER },
+    ] as Member[];
+
+    it('joins each usage row to its member, with cached and output tokens in the total', () => {
+        const [alice] = getApiMemberUsage(
+            [
+                {
+                    MemberID: 'member-alice',
+                    Totals: totals({ TokensIn: 10, TokensInCached: 5, TokensGenerated: 2, CostMicros: 1_500_000 }),
+                },
+            ],
+            members
+        );
+
+        expect(alice).toEqual({
+            id: 'member-alice',
+            name: 'Alice',
+            role: 'Admin',
+            isCurrentMember: true,
+            totalTokens: 17,
+            cost: 1.5,
+        });
+    });
+
+    it('names former, unknown and nameless members', () => {
+        const [bob, former, unknown, nameless] = getApiMemberUsage(
+            [
+                { MemberID: 'member-bob', Totals: totals({}) },
+                { MemberID: null, Totals: totals({}) },
+                { MemberID: 'member-gone', Totals: totals({}) },
+                { MemberID: 'member-nameless', Totals: totals({}) },
+            ],
+            members
+        );
+
+        expect([bob.name, bob.role]).toEqual(['Bob', 'Member']);
+        expect([former.name, former.role]).toEqual(['Former members', 'No longer in the organization']);
+        expect([unknown.name, unknown.role]).toEqual(['Unknown member', '']);
+        expect(nameless.name).toBe('Unknown member');
+        expect([bob.isCurrentMember, former.isCurrentMember, unknown.isCurrentMember]).toEqual([true, false, false]);
+    });
+
+    it('keeps an unpriced total as unpriced, not zero', () => {
+        const [member] = getApiMemberUsage([{ MemberID: 'member-bob', Totals: totals({ CostMicros: null }) }], members);
+
+        expect(member.cost).toBeNull();
+        expect(getMemberCostLabel(member.cost, 'USD')).toBe('Not priced yet');
+        expect(getMemberCostLabel(2.5, 'USD')).toContain('2.50');
+    });
+
+    it('filters members by name, ignoring case', () => {
+        const usage = getApiMemberUsage(
+            [
+                { MemberID: 'member-alice', Totals: totals({}) },
+                { MemberID: 'member-bob', Totals: totals({}) },
+            ],
+            members
+        );
+
+        expect(filterMembersByName(usage, 'BO').map(({ name }) => name)).toEqual(['Bob']);
     });
 });

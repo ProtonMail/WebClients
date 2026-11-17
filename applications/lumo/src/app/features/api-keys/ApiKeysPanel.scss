@@ -853,31 +853,6 @@ im.$media-expressions: $media-expressions;
 	min-inline-size: rem(190);
 }
 
-.api-usage-members-summary {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: rem(10);
-
-	> div {
-		padding-block: rem(12);
-		padding-inline: rem(14);
-		border: 1px solid var(--border-weak);
-		border-radius: rem(10);
-		background: var(--background-norm);
-	}
-
-	span {
-		color: var(--text-weak);
-		font-size: rem(11);
-	}
-
-	strong {
-		color: var(--text-norm);
-		font-size: rem(16);
-		font-variant-numeric: tabular-nums;
-	}
-}
-
 .api-usage-member-list {
 	display: grid;
 	gap: rem(10);
@@ -915,26 +890,6 @@ im.$media-expressions: $media-expressions;
 		strong {
 			font-size: rem(14);
 			font-variant-numeric: tabular-nums;
-		}
-	}
-
-	&__expand {
-		svg {
-			transition: transform 0.18s ease;
-		}
-
-		&[aria-expanded='true'] svg {
-			transform: rotate(180deg);
-		}
-	}
-
-	&__models {
-		padding: rem(12);
-		border-block-start: 1px solid var(--border-weak);
-		background: var(--background-weak);
-
-		.api-usage-model {
-			background: var(--background-norm);
 		}
 	}
 }
@@ -986,10 +941,6 @@ im.$media-expressions: $media-expressions;
 	.api-usage-search {
 		inline-size: 100%;
 		min-inline-size: 0;
-	}
-
-	.api-usage-members-summary {
-		grid-template-columns: 1fr;
 	}
 }
 

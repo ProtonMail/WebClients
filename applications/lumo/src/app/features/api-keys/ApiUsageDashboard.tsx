@@ -8,14 +8,10 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Input } from '@proton/atoms/Input/Input';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import Toggle from '@proton/components/components/toggle/Toggle';
 import { LumoCreditsModal } from '@proton/payments-ui/ui/containers/LumoCreditsModal';
 import type { LumoCreditAutoTopUpStatus } from '@proton/payments/core/api/lumoCredit';
 import type { Currency } from '@proton/payments/core/interface';
@@ -26,6 +22,7 @@ import { API_TOKEN_PRICING_MODEL_IDS, type ApiTokenPricingModelId } from '../api
 import { ApiBalanceSettingsModal, getAutoTopUpSummary } from './ApiBalanceSettingsModal';
 import { ApiPayAsYouGoCard } from './ApiPayAsYouGoCard';
 import { ApiTokenUsageChart } from './ApiTokenUsageChart';
+import { ApiUsageMembers } from './ApiUsageMembers';
 import { ApiUsageMetricCard } from './ApiUsageMetricCard';
 import { ApiUsageModelStats } from './ApiUsageModelStats';
 import {
@@ -44,7 +41,6 @@ import {
     getPeriodDates,
     sumUsage,
 } from './apiUsage';
-import { MOCK_API_USAGE_MEMBERS } from './apiUsageMockData';
 import { useApiUsageSummary } from './useApiUsageSummary';
 import { useLumoCredits } from './useLumoCredits';
 
@@ -63,18 +59,6 @@ const exportUsageCsv = (days: ApiUsageDay[], currency: Currency) => {
     anchor.click();
     URL.revokeObjectURL(url);
 };
-
-const ApiAccessToggle = ({
-    id,
-    enabled,
-    label,
-    onChange,
-}: {
-    id: string;
-    enabled: boolean;
-    label: string;
-    onChange: () => void;
-}) => <Toggle id={id} checked={enabled} aria-label={label} onChange={onChange} className="shrink-0" />;
 
 const ApiUsageOverviewContent = ({
     rows,
@@ -216,188 +200,6 @@ const ApiUsageOverview = ({
     }
 
     return <ApiUsageOverviewContent rows={rows} dates={dates} currency={currency} />;
-};
-
-const ApiUsageMembers = ({
-    hasCredits,
-    periodLabel,
-    usageScale,
-    currency,
-}: {
-    hasCredits: boolean;
-    periodLabel: string;
-    usageScale: number;
-    currency: Currency;
-}) => {
-    const [members, setMembers] = useState(MOCK_API_USAGE_MEMBERS);
-    const [search, setSearch] = useState('');
-    const [expandedMemberIds, setExpandedMemberIds] = useState<Set<string>>(() => new Set());
-    const filteredMembers = members.filter((member) => member.name.toLowerCase().includes(search.toLowerCase()));
-    const enabledMemberCount = members.filter((member) => member.apiAccess).length;
-
-    const toggleAccess = (memberId: string) => {
-        setMembers((current) =>
-            current.map((member) => (member.id === memberId ? { ...member, apiAccess: !member.apiAccess } : member))
-        );
-    };
-
-    const toggleMemberDetails = (memberId: string) => {
-        setExpandedMemberIds((current) => {
-            const next = new Set(current);
-            if (next.has(memberId)) {
-                next.delete(memberId);
-            } else {
-                next.add(memberId);
-            }
-            return next;
-        });
-    };
-
-    return (
-        <div className="api-usage-members flex flex-column gap-4 w-full max-w-full min-w-0">
-            <div className="api-usage-members-toolbar flex flex-column items-stretch justify-space-between gap-3 md:flex-row md:items-center">
-                <div>
-                    <h3 className="text-lg text-semibold color-norm m-0">{c('collider_2025: Title')
-                        .t`Member usage`}</h3>
-                    <p className="text-sm color-weak m-0 mt-1">
-                        {hasCredits
-                            ? c('collider_2025: Info')
-                                  .t`Review spending and control API access by member for ${periodLabel}.`
-                            : c('collider_2025: Info')
-                                  .t`Configure member access for when a balance is available. Usage shown for ${periodLabel}.`}
-                    </p>
-                </div>
-                <div className="api-usage-members-actions flex items-center gap-2 w-full md:w-auto">
-                    <ButtonLike as={SettingsLink} path="/users-addresses" color="weak" size="small">
-                        {c('collider_2025: Action').t`Add user`}
-                    </ButtonLike>
-                    <Input
-                        type="search"
-                        value={search}
-                        onValue={setSearch}
-                        placeholder={c('collider_2025: Placeholder').t`Search members`}
-                        aria-label={c('collider_2025: Label').t`Search members`}
-                        prefix={<LumoIcon name="Search" size={15} className="color-weak" />}
-                        className="api-usage-search flex-1 shrink-0 md:flex-none"
-                    />
-                </div>
-            </div>
-
-            {usageScale === 0 ? (
-                <div className="api-usage-empty flex flex-column items-center justify-center text-center rounded-lg border border-weak bg-weak">
-                    <span className="api-usage-empty__icon flex items-center justify-center rounded-full mb-3">
-                        <LumoIcon name="Users" size={20} />
-                    </span>
-                    <h4 className="text-sm text-bold color-norm m-0">
-                        {c('collider_2025: Title').t`No member API usage yet`}
-                    </h4>
-                    <p className="text-xs color-weak m-0 mt-1">
-                        {c('collider_2025: Info')
-                            .t`Usage will appear here after organization members make API requests.`}
-                    </p>
-                </div>
-            ) : (
-                <>
-                    <div className="api-usage-members-summary">
-                        <div className="flex flex-column gap-1">
-                            <span>{c('collider_2025: Label').t`Members`}</span>
-                            <strong>{members.length}</strong>
-                        </div>
-                        <div className="flex flex-column gap-1">
-                            <span>{c('collider_2025: Label').t`Allowed API access`}</span>
-                            <strong>{c('collider_2025: Info').t`${enabledMemberCount} of ${members.length}`}</strong>
-                        </div>
-                    </div>
-
-                    <div className="api-usage-member-list">
-                        {filteredMembers.map((member) => (
-                            <article key={member.id} className="api-usage-member-card rounded-xl border border-weak">
-                                <header className="api-usage-member-card__header flex flex-wrap items-start justify-space-between gap-4 md:flex-nowrap md:items-center">
-                                    <div className="flex items-center gap-3">
-                                        <span className="api-usage-member-avatar flex items-center justify-center rounded-lg">
-                                            {member.name.slice(0, 1)}
-                                        </span>
-                                        <span className="flex flex-column">
-                                            <strong>{member.name}</strong>
-                                            <small>{member.role}</small>
-                                        </span>
-                                    </div>
-                                    <div className="api-usage-member-card__controls flex flex-none items-start justify-space-between gap-5 w-full md:w-auto md:items-center md:justify-start">
-                                        <div className="api-usage-member-card__total flex flex-column items-start gap-0.5 md:items-end">
-                                            <small>{c('collider_2025: Label').t`Balance used`}</small>
-                                            <strong>{formatApiCurrency(member.cost * usageScale, currency)}</strong>
-                                        </div>
-                                        <div className="api-usage-member-card__access flex items-center gap-2">
-                                            <ApiAccessToggle
-                                                id={`api-access-${member.id}`}
-                                                enabled={member.apiAccess}
-                                                label={c('collider_2025: Action')
-                                                    .t`Toggle API access for ${member.name}`}
-                                                onChange={() => toggleAccess(member.id)}
-                                            />
-                                            <span className="api-usage-access-label">
-                                                {member.apiAccess
-                                                    ? c('collider_2025: Status').t`Allowed`
-                                                    : c('collider_2025: Status').t`Blocked`}
-                                            </span>
-                                        </div>
-                                        <Button
-                                            icon
-                                            shape="ghost"
-                                            size="small"
-                                            className="api-usage-member-card__expand shrink-0"
-                                            aria-expanded={expandedMemberIds.has(member.id)}
-                                            aria-label={
-                                                expandedMemberIds.has(member.id)
-                                                    ? c('collider_2025: Action')
-                                                          .t`Hide usage details for ${member.name}`
-                                                    : c('collider_2025: Action')
-                                                          .t`Show usage details for ${member.name}`
-                                            }
-                                            onClick={() => toggleMemberDetails(member.id)}
-                                        >
-                                            <LumoIcon name="ChevronDown" size={16} />
-                                        </Button>
-                                    </div>
-                                </header>
-                                {expandedMemberIds.has(member.id) && (
-                                    <div className="api-usage-member-card__models api-usage-models-grid">
-                                        {(['lumo-lite', 'lumo-max'] as const).map((model) => (
-                                            <div key={model} className="api-usage-model rounded-lg border border-weak">
-                                                <span
-                                                    className={`api-usage-model__name api-usage-model__name--${model} inline-flex`}
-                                                >
-                                                    {model}
-                                                </span>
-                                                <ApiUsageModelStats
-                                                    model={model}
-                                                    inputTokens={Math.round(
-                                                        member.modelUsage[model].inputTokens * usageScale
-                                                    )}
-                                                    outputTokens={Math.round(
-                                                        member.modelUsage[model].outputTokens * usageScale
-                                                    )}
-                                                    formattedCost={formatApiCurrency(
-                                                        member.modelUsage[model].cost * usageScale,
-                                                        currency
-                                                    )}
-                                                />
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-                            </article>
-                        ))}
-                        {filteredMembers.length === 0 && (
-                            <div className="api-usage-member-list__empty rounded-xl border border-weak text-center">
-                                {c('collider_2025: Info').t`No members match your search.`}
-                            </div>
-                        )}
-                    </div>
-                </>
-            )}
-        </div>
-    );
 };
 
 const ApiUsageHeader = ({ isOrgMember }: { isOrgMember: boolean }) => (
@@ -645,7 +447,6 @@ export const ApiUsageDashboard = ({
     const creditBalanceOverride = useDebugApiCreditBalance();
     const emptyUsageEnabled = useDebugApiEmptyUsage();
     const displayedCreditBalance = creditBalanceOverride ?? lumoCredits.balance;
-    const hasCredits = displayedCreditBalance !== undefined && displayedCreditBalance > 0;
     const [usagePeriod, setUsagePeriod] = useState<UsagePeriod>('last-30-days');
     const usageSummary = useApiUsageSummary(isOrgAdmin ? 'organization' : 'self');
     const usageRows = emptyUsageEnabled ? [] : usageSummary.rows;
@@ -658,11 +459,7 @@ export const ApiUsageDashboard = ({
         'previous-30-days': c('collider_2025: Date range').t`Previous 30 days`,
         'last-90-days': c('collider_2025: Date range').t`Last 90 days`,
     }[usagePeriod];
-    const sumTokens = (days: ApiUsageDay[]) =>
-        days.reduce((total, day) => total + day.inputTokens + day.outputTokens, 0);
     const recentUsageDays = getApiUsageDays(usageRows, getPeriodDates(usageSummary.dates, 'last-30-days'));
-    const baselineTokens = sumTokens(recentUsageDays);
-    const usageScale = baselineTokens > 0 ? sumTokens(usageDays) / baselineTokens : 0;
     const monthlySpend = recentUsageDays.reduce((total, day) => total + day.cost, 0);
     const averageDailySpend = isOrgMember || recentUsageDays.length === 0 ? 0 : monthlySpend / recentUsageDays.length;
 
@@ -738,9 +535,9 @@ export const ApiUsageDashboard = ({
             {isOrgAdmin && (
                 <section className="api-usage-members-section w-full min-w-0 bg-norm rounded-xl border border-weak">
                     <ApiUsageMembers
-                        hasCredits={hasCredits}
+                        from={periodDates[0]}
+                        to={periodDates.at(-1)}
                         periodLabel={periodLabel}
-                        usageScale={usageScale}
                         currency={Currency}
                     />
                 </section>

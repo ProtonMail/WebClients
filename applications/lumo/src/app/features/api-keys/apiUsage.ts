@@ -1,5 +1,12 @@
-import type { UsageDay, UsageEntry } from '../../remote/usage';
+import { c } from 'ttag';
+
+import type { Currency } from '@proton/payments/core/interface';
+import { MEMBER_ROLE } from '@proton/shared/lib/constants';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+
+import type { UsageDay, UsageEntry, UsageMemberRow } from '../../remote/usage';
 import type { ApiTokenPricingModelId } from '../api-docs/apiTokenPricingUsd';
+import { formatApiCurrency } from './apiKeysHelpers';
 
 export type UsageRow = UsageEntry & { Date: string };
 
@@ -40,3 +47,50 @@ export const getApiModelUsage = (rows: UsageRow[], model: ApiTokenPricingModelId
     model,
     ...sumUsage(rows.filter((row) => row.Model === model)),
 });
+
+export type ApiMemberUsage = {
+    id: string;
+    name: string;
+    role: string;
+    isCurrentMember: boolean;
+    totalTokens: number;
+    cost: number | null;
+};
+
+const getMemberName = (memberId: string | null, member: Member | undefined) => {
+    if (memberId === null) {
+        return c('collider_2025: Label').t`Former members`;
+    }
+    return member?.Name || c('collider_2025: Label').t`Unknown member`;
+};
+
+const getMemberRole = (memberId: string | null, member: Member | undefined) => {
+    if (memberId === null) {
+        return c('collider_2025: Info').t`No longer in the organization`;
+    }
+    if (!member) {
+        return '';
+    }
+    return member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN
+        ? c('collider_2025: Label').t`Admin`
+        : c('collider_2025: Label').t`Member`;
+};
+
+export const getApiMemberUsage = (rows: UsageMemberRow[], members: Member[]): ApiMemberUsage[] =>
+    rows.map(({ MemberID, Totals }) => {
+        const member = members.find(({ ID }) => ID === MemberID);
+        return {
+            id: MemberID ?? 'former-members',
+            name: getMemberName(MemberID, member),
+            role: getMemberRole(MemberID, member),
+            isCurrentMember: member !== undefined,
+            totalTokens: Totals.TokensIn + Totals.TokensInCached + Totals.TokensGenerated,
+            cost: Totals.CostMicros === null ? null : Totals.CostMicros / CREDIT_MICROS,
+        };
+    });
+
+export const filterMembersByName = (members: ApiMemberUsage[], search: string) =>
+    members.filter((member) => member.name.toLowerCase().includes(search.toLowerCase()));
+
+export const getMemberCostLabel = (cost: number | null, currency: Currency) =>
+    cost === null ? c('collider_2025: Info').t`Not priced yet` : formatApiCurrency(cost, currency);
