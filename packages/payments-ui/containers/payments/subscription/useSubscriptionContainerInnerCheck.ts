@@ -9,7 +9,7 @@ import useLoading from '@proton/hooks/useLoading';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type {
     Currency,
@@ -18,6 +18,7 @@ import type {
     PlainPaymentMethodType,
     PlanIDs,
 } from '@proton/payments/core/interface';
+import { isDirectDebitPaymentMethod } from '@proton/payments/core/payment-methods/helpers';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
@@ -314,8 +315,8 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
 
                 // selectedMethod variable prevails over paymentFacadeSelectedMethodType because it's passed in the
                 // onMethod change handler. So this variable changes before paymentFacadeSelectedMethodType is
-                // updated. We must take into account the case when user unselects SEPA, making selectedMethod not SEPA,
-                // while paymentFacadeSelectedMethodType is still SEPA. In this case we want to call /check without
+                // updated. We must take into account the case when user unselects a direct debit method, making
+                // selectedMethod not direct debit while paymentFacadeSelectedMethodType still is. In this case we want to call /check without
                 // ProrationMode == Exact.
                 const currentlySelectedMethod = selectedMethod ?? paymentFacadeSelectedMethodType;
 
@@ -330,8 +331,8 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                         ZipCode: copyNewModel.taxBillingAddress.ZipCode,
                     },
                     ProrationMode:
-                        currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT ||
-                        currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL
+                        currentlySelectedMethod &&
+                        isDirectDebitPaymentMethod(currentlySelectedMethod as PAYMENT_METHOD_TYPES)
                             ? ProrationMode.Exact
                             : undefined,
                     IsTrial: shouldPassIsTrial(newModel, false),
