@@ -1,13 +1,14 @@
 import type { ReactNode } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { IcBolt } from '@proton/icons/icons/IcBolt';
+import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { PLANS } from '@proton/payments/core/constants';
 import clsx from '@proton/utils/clsx';
 
 import Info from '../../../../../../components/link/Info';
 import CustomLogo from '../../CustomLogo';
+import visionaryLogo from '../../logo/plan-visionary-gold.svg';
 
 import './ExclusivePlanBorder.scss';
 import './PlanOfferCard.scss';
@@ -22,11 +23,7 @@ export type PlanOfferPlanName = PLANS.VISIONARY | PLANS.BUNDLE | PLANS.DUO | PLA
 
 export const PlanOfferLogo = ({ planName }: { planName: PlanOfferPlanName }) => {
     if (planName === PLANS.VISIONARY) {
-        return (
-            <div className="PlanOfferCard-logo shrink-0 rounded-lg overflow-hidden" aria-hidden="true">
-                <CustomLogo planName={PLANS.VISIONARY} size={44} />
-            </div>
-        );
+        return <img src={visionaryLogo} width={44} height={44} alt="" className="PlanOfferCard-logo shrink-0" />;
     }
     return (
         <div className="PlanOfferCard-logo PlanOfferCard-logo-tile shrink-0 flex" aria-hidden="true">
@@ -38,7 +35,7 @@ export const PlanOfferLogo = ({ planName }: { planName: PlanOfferPlanName }) => 
 const headerLayoutClassName = {
     full: 'flex-column',
     compact: 'flex-row items-start',
-    solo: 'flex-row items-center md:flex-1',
+    solo: 'flex-row items-start md:flex-1',
 };
 
 interface Props {
@@ -110,7 +107,7 @@ const PlanOfferCard = ({
                         <span className="color-weak">{description}</span>
                         {highlightLine && (
                             <span className="mt-2 flex flex-nowrap items-center gap-2 text-semibold color-primary">
-                                <IcBolt className="shrink-0" />
+                                <IcBoltFilled className="shrink-0" />
                                 {highlightLine}
                             </span>
                         )}
