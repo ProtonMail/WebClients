@@ -875,6 +875,15 @@
       "Enter your username without the domain (@example.com)": [
         "ป้อนชื่อผู้ใช้โดยไม่มีโดเมน (@example.com)"
       ],
+      "Incorrect backup password. Please try again.": [
+        "รหัสผ่านสำรองไม่ถูกต้อง โปรดลองอีกครั้ง"
+      ],
+      "Incorrect password. Please try again.": [
+        "รหัสผ่านไม่ถูกต้อง โปรดลองใหม่อีกครั้ง"
+      ],
+      "Incorrect second password. Please try again.": [
+        "รหัสผ่านที่สองไม่ถูกต้อง โปรดลองใหม่อีกครั้ง"
+      ],
       "Invalid verification code": [
         "รหัสการตรวจสอบสิทธิ์ไม่ถูกต้อง"
       ],
@@ -913,6 +922,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "ไม่สามารถส่งรหัสยืนยันด้วยวิธีนี้ได้"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "วลีกู้คืนไม่ถูกต้อง โปรดลองใหม่อีกครั้งภายหลัง หรือใช้วิธีการกู้คืนบัญชีอื่น"
       ]
     },
     "Error message": {

@@ -878,6 +878,15 @@
       "Enter your username without the domain (@example.com)": [
         "Saisissez votre nom d'utilisateur sans le domaine (@example.com)"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Le mot de passe de secours n'est pas correct. Veuillez réessayer."
+      ],
+      "Incorrect password. Please try again.": [
+        "Le mot de passe n'est pas correct. Réessayez."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Le second mot de passe n'est pas correct. Veuillez réessayer."
+      ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
       ],
@@ -916,6 +925,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "La phrase de récupération n'est pas correcte. Réessayez ou utilisez une autre méthode de récupération."
       ]
     },
     "Error message": {
@@ -935,6 +947,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
       ]
     },
     "fido2: Info": {

@@ -878,6 +878,15 @@
       "Enter your username without the domain (@example.com)": [
         "ドメイン（@example.com）を含めずにユーザー名を入力してください。"
       ],
+      "Incorrect backup password. Please try again.": [
+        "間違ったバックアップパスワードです。再度お試しください。"
+      ],
+      "Incorrect password. Please try again.": [
+        "パスワードが正しくありません。もう一度お試しください。"
+      ],
+      "Incorrect second password. Please try again.": [
+        "セカンドパスワードが正しくありません。もう一度お試しください。"
+      ],
       "Invalid verification code": [
         "無効な検証コード"
       ],
@@ -916,6 +925,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "この方法を使用して認証コードを送信することはできません。"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "間違った回復用フレーズです。再度試すか他の回復手段を使用してください。"
       ]
     },
     "Error message": {
@@ -935,6 +947,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
       ]
     },
     "fido2: Info": {

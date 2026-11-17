@@ -875,6 +875,15 @@
       "Enter your username without the domain (@example.com)": [
         "შეიყვანეთ თქვენი მომხმარებლის სახელი დომენის (@example.com) გარეშე"
       ],
+      "Incorrect backup password. Please try again.": [
+        "არასწორი მარქაფი პაროლი. თავიდან სცადეთ."
+      ],
+      "Incorrect password. Please try again.": [
+        "არასწორი პაროლი. თავიდან სცადეთ."
+      ],
+      "Incorrect second password. Please try again.": [
+        "არასწორი მეორე პაროლი. თავიდან სცადეთ."
+      ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
@@ -913,6 +922,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "ამ მეთოდით დამოწმების კოდი ვერ გავაგზავნეთ."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "სცადეთ ხელახლა ან გამოიყენეთ აღდგენის სხვა მეთოდი."
       ]
     },
     "Error message": {

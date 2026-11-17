@@ -23,6 +23,9 @@
       "Dismiss": [
         "Παράβλεψη"
       ],
+      "Dismiss notification": [
+        "Απόρριψη ειδοποίησης"
+      ],
       "Edit email address": [
         "Επεξεργασία διεύθυνσης ηλ. ταχυδρομείου"
       ],
@@ -878,6 +881,15 @@
       "Enter your username without the domain (@example.com)": [
         "Εισάγετε το όνομα χρήστη σας χωρίς τον τομέα (@example.com)"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Εσφαλμένος εφεδρικός κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "Incorrect password. Please try again.": [
+        "Λανθασμένος κωδικός. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Λανθασμένος δεύτερος κωδικός πρόσβασης. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
@@ -916,6 +928,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Δεν μπορέσαμε να αποστείλουμε κωδικό επιβεβαίωσης με αυτήν τη μέθοδο."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Λανθασμένη φράση ανάκτησης. Δοκιμάστε ξανά ή χρησιμοποιήστε άλλη μέθοδο ανάκτησης."
       ]
     },
     "Error message": {
@@ -935,6 +950,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
       ]
     },
     "fido2: Info": {

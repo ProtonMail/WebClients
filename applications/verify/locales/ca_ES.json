@@ -23,6 +23,9 @@
       "Dismiss": [
         "Descarta"
       ],
+      "Dismiss notification": [
+        "Descarta la notificació"
+      ],
       "Edit email address": [
         "Edita l'adreça de correu"
       ],
@@ -878,6 +881,15 @@
       "Enter your username without the domain (@example.com)": [
         "Introduïu el vostre nom d'usuari sense el domini (@exemple.cat)"
       ],
+      "Incorrect backup password. Please try again.": [
+        "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
+      ],
+      "Incorrect password. Please try again.": [
+        "Contrasenya incorrecta, torneu-ho a intentar."
+      ],
+      "Incorrect second password. Please try again.": [
+        "La segona contrasenya no és correcta. Torneu-ho a intentar."
+      ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
       ],
@@ -916,6 +928,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "No hem pogut enviar cap codi de verificació mitjançant aquest mètode."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
       ]
     },
     "Error message": {
@@ -935,6 +950,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-vos amb la clau de seguretat. Torneu-ho a provar."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
       ]
     },
     "fido2: Info": {

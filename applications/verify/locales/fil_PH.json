@@ -875,6 +875,15 @@
       "Enter your username without the domain (@example.com)": [
         "Ilagay ang username nang walang domain (@example.com)"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Maling backup na password. Pakisubukang muli."
+      ],
+      "Incorrect password. Please try again.": [
+        "Maling password. Pakisubukang muli."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Mali ang pangalawang password. Pakisubukang muli."
+      ],
       "Invalid verification code": [
         "Hindi valid na verification code"
       ],
@@ -913,6 +922,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Hindi maipadala ang verification code gamit ang paraang ito."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Mali ang parirala ng pag-recover. Subukang muli o gumamit ng ibang paraan ng pag-recover."
       ]
     },
     "Error message": {

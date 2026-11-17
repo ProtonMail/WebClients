@@ -878,6 +878,15 @@
       "Enter your username without the domain (@example.com)": [
         "도메인 없이 (@example.co.kr) 사용자 이름을 입력해 주세요."
       ],
+      "Incorrect backup password. Please try again.": [
+        "백업 비밀번호가 틀렸습니다. 다시 시도해 주세요."
+      ],
+      "Incorrect password. Please try again.": [
+        "잘못된 비밀번호입니다. 다시 시도해 주세요."
+      ],
+      "Incorrect second password. Please try again.": [
+        "2차 비밀번호가 틀렸습니다. 다시 시도해 주세요."
+      ],
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
@@ -916,6 +925,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "해당 방법으로 인증 코드를 전송할 수 없습니다."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "잘못된 복구 키입니다. 다시 시도하거나 다른 복구 방법을 사용하세요."
       ]
     },
     "Error message": {
