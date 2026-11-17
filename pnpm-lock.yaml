@@ -717,6 +717,9 @@ importers:
       '@proton/activation':
         specifier: workspace:^
         version: link:packages/activation
+      '@proton/byoe':
+        specifier: workspace:^
+        version: link:packages/byoe
       '@proton/calendar':
         specifier: workspace:^
         version: link:packages/calendar
@@ -816,6 +819,9 @@ importers:
       '@proton/atoms':
         specifier: workspace:^
         version: link:../../packages/atoms
+      '@proton/byoe':
+        specifier: workspace:^
+        version: link:../../packages/byoe
       '@proton/calendar':
         specifier: workspace:^
         version: link:../../packages/calendar
@@ -1506,6 +1512,9 @@ importers:
       '@proton/redux-utilities':
         specifier: workspace:^
         version: link:../../packages/redux-utilities
+      '@proton/settings':
+        specifier: workspace:^
+        version: link:../../packages/settings
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
@@ -2248,6 +2257,9 @@ importers:
       '@proton/atoms':
         specifier: workspace:^
         version: link:../../packages/atoms
+      '@proton/byoe':
+        specifier: workspace:^
+        version: link:../../packages/byoe
       '@proton/colors':
         specifier: workspace:^
         version: link:../../packages/colors
@@ -2308,6 +2320,9 @@ importers:
       '@proton/redux-utilities':
         specifier: workspace:^
         version: link:../../packages/redux-utilities
+      '@proton/settings':
+        specifier: workspace:^
+        version: link:../../packages/settings
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
@@ -3046,6 +3061,9 @@ importers:
       '@proton/atoms':
         specifier: workspace:^
         version: link:../../packages/atoms
+      '@proton/byoe':
+        specifier: workspace:^
+        version: link:../../packages/byoe
       '@proton/calendar':
         specifier: workspace:^
         version: link:../../packages/calendar
@@ -3133,6 +3151,9 @@ importers:
       '@proton/sanitize':
         specifier: workspace:^
         version: link:../../packages/sanitize
+      '@proton/settings':
+        specifier: workspace:^
+        version: link:../../packages/settings
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
@@ -5287,6 +5308,9 @@ importers:
       '@proton/atoms':
         specifier: workspace:^
         version: link:../atoms
+      '@proton/byoe':
+        specifier: workspace:^
+        version: link:../byoe
       '@proton/calendar':
         specifier: workspace:^
         version: link:../calendar
@@ -5378,9 +5402,6 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
-      '@proton/test-api':
-        specifier: workspace:^
-        version: link:../test-api
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
@@ -5675,6 +5696,112 @@ importers:
       ts-node:
         specifier: 'catalog:'
         version: 10.9.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
+      typescript:
+        specifier: 'catalog:'
+        version: '@typescript/typescript6@6.0.2'
+      vitest:
+        specifier: 'catalog:'
+        version: 5.1.0(@opentelemetry/api@1.9.1)(@types/node@24.19.2)(@vitest/browser-playwright@5.1.0)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(happy-dom@21.0.4)(jsdom@31.0.0(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/byoe:
+    dependencies:
+      '@proton/account':
+        specifier: workspace:^
+        version: link:../account
+      '@proton/app-context':
+        specifier: workspace:^
+        version: link:../app-context
+      '@proton/atoms':
+        specifier: workspace:^
+        version: link:../atoms
+      '@proton/components':
+        specifier: workspace:^
+        version: link:../components
+      '@proton/hooks':
+        specifier: workspace:^
+        version: link:../hooks
+      '@proton/payments':
+        specifier: workspace:^
+        version: link:../payments
+      '@proton/redux-shared-store':
+        specifier: workspace:^
+        version: link:../redux-shared-store
+      '@proton/shared':
+        specifier: workspace:^
+        version: link:../shared
+      '@proton/styles':
+        specifier: workspace:^
+        version: link:../styles
+      '@proton/telemetry-tracker':
+        specifier: workspace:^
+        version: link:../telemetry-tracker
+      '@proton/unleash':
+        specifier: workspace:^
+        version: link:../unleash
+      '@proton/utils':
+        specifier: workspace:^
+        version: link:../utils
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      ttag:
+        specifier: 'catalog:'
+        version: 1.8.12
+    devDependencies:
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
+      '@proton/polyfill':
+        specifier: workspace:^
+        version: link:../polyfill
+      '@proton/test-api':
+        specifier: workspace:^
+        version: link:../test-api
+      '@proton/vitest-config':
+        specifier: workspace:^
+        version: link:../vitest-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
+      '@testing-library/jest-dom':
+        specifier: 'catalog:'
+        version: 6.9.1
+      '@testing-library/react':
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@testing-library/react-hooks':
+        specifier: 'catalog:'
+        version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
+      '@types/node':
+        specifier: 'catalog:'
+        version: 24.19.2
+      '@types/react':
+        specifier: 'catalog:'
+        version: 18.3.31
+      '@types/react-dom':
+        specifier: 'catalog:'
+        version: 18.3.7(@types/react@18.3.31)
+      '@types/webpack-env':
+        specifier: 'catalog:'
+        version: 1.18.8
+      '@typescript/native':
+        specifier: 'catalog:'
+        version: typescript@7.0.2
+      '@vitejs/plugin-react':
+        specifier: 'catalog:'
+        version: 6.3.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      happy-dom:
+        specifier: 'catalog:'
+        version: 21.0.4
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.93.0(oxlint-tsgolint@7.0.2006)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2006
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -8093,6 +8220,9 @@ importers:
       '@proton/atoms':
         specifier: workspace:^
         version: link:../atoms
+      '@proton/byoe':
+        specifier: workspace:^
+        version: link:../byoe
       '@proton/calendar':
         specifier: workspace:^
         version: link:../calendar
@@ -10104,6 +10234,9 @@ importers:
       '@proton/atoms':
         specifier: workspace:^
         version: link:../atoms
+      '@proton/byoe':
+        specifier: workspace:^
+        version: link:../byoe
       '@proton/calendar':
         specifier: workspace:^
         version: link:../calendar
@@ -10158,6 +10291,9 @@ importers:
       '@proton/redux-shared-store':
         specifier: workspace:^
         version: link:../redux-shared-store
+      '@proton/redux-utilities':
+        specifier: workspace:^
+        version: link:../redux-utilities
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared

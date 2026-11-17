@@ -5,11 +5,11 @@ import { disableAllowAddressDeletion } from '@proton/account/allowAddressDeletio
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import DisconnectBYOEModal from '@proton/activation/src/components/Modals/DisconnectBYOEModal/DisconnectBYOEModal';
-import ReachedLimitForwardingModal from '@proton/activation/src/components/Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
-import UpsellForwardingModal from '@proton/activation/src/components/Modals/UpsellForwardingModal/UpsellForwardingModal';
-import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import useReconnectSync from '@proton/activation/src/hooks/useReconnectSync';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import ReachedLimitForwardingModal from '@proton/byoe/src/components/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
+import UpsellForwardingModal from '@proton/byoe/src/components/UpsellForwardingModal/UpsellForwardingModal';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

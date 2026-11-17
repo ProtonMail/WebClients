@@ -5,11 +5,12 @@ import { c, msgid } from 'ttag';
 import { useGetUserInvitations } from '@proton/account/userInvitations/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import PendingInvitationModal from '@proton/components/containers/payments/subscription/PendingInvitationModal';
 import useUid from '@proton/components/hooks/useUid';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 import noop from '@proton/utils/noop';
+
+import PendingInvitationModal from './PendingInvitationModal';
 
 interface Props {
     invites: PendingInvitation[];

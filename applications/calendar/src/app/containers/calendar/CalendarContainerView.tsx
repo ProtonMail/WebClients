@@ -51,6 +51,7 @@ import { OfferDealModal } from '@proton/offers-delivery/components/OfferDealModa
 import { OfferNavbarButton } from '@proton/offers-delivery/components/OfferNavbarButton';
 import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
 import { CampaignVariant } from '@proton/offers-delivery/interface';
+import PendingInvitationTopBanner from '@proton/settings/containers/pendingInvitations/PendingInvitationTopBanner';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';
@@ -427,6 +428,7 @@ const CalendarContainerView = ({
                 </Suspense>
             )}
             <TopBanners app={APPS.PROTONCALENDAR}>
+                <PendingInvitationTopBanner />
                 <PasswordReminderTopBanner />
                 <SmartBanner app={APPS.PROTONCALENDAR} />
             </TopBanners>

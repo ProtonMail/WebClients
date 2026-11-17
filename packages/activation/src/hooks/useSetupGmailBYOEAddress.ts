@@ -4,6 +4,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -33,7 +34,6 @@ import {
 } from '../telemetry/accountImportFlow';
 import { convertBYOEAddress, createBYOEAddress } from '../thunks/byoeAddresses';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
-import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 import useMarkBYOEInboxCleanupDue from './useMarkBYOEInboxCleanupDue';
 
 interface Props {

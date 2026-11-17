@@ -2,12 +2,12 @@ import { useEffect, useRef } from 'react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { ApiSyncState } from '../api/api.interface';
 import BYOESyncLostModal from '../components/Modals/BYOESyncLostModal/BYOESyncLostModal';
-import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import type { EasySwitchState } from './store';
 import { listenerMiddleware } from './store';
 import { selectSync } from './sync/sync.selectors';

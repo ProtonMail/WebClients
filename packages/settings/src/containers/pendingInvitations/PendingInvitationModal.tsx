@@ -3,18 +3,18 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 
-import ModalTwo from '../../../components/modalTwo/Modal';
-import ModalTwoContent from '../../../components/modalTwo/ModalContent';
-import ModalTwoFooter from '../../../components/modalTwo/ModalFooter';
-import ModalTwoHeader from '../../../components/modalTwo/ModalHeader';
-import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
-import useEventManager from '../../../hooks/useEventManager';
 import PendingInvitationModalErrors from './PendingInvitationModalErrors';
 
 interface Props extends ModalStateProps {

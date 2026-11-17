@@ -6,6 +6,8 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import BYOEClaimProtonAddressModal from '@proton/byoe/src/components/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/byoe/src/constants';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import {
     BorderedContainer,
@@ -25,12 +27,11 @@ import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE, providerMap } from '../../../constants';
+import { providerMap } from '../../../constants';
 import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
 import { useDriveSdk } from '../../../logic/driveContext';
 import { trackAccountImportEasySwitchStarted } from '../../../telemetry/accountImportFlow';
 import { EasySwitchProviderName } from '../../ProviderName/EasySwitchProviderName';
-import BYOEClaimProtonAddressModal from '../BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import { ProductCheckbox } from './ProductCheckbox';
 import { ProductItem } from './ProductItem';
 import { useProductSelectionSubmit } from './useProductSelectionSubmit';

@@ -32,9 +32,9 @@ import {
 import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import claimProtonAddressImg from '@proton/styles/assets/img/illustrations/claim-proton-address.svg';
 
-import type { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../constants';
-import useBYOEAddressData from '../../../hooks/useBYOEAddressData';
-import { trackAccountImportClaimProtonAddressCompleted } from '../../../telemetry/accountImportFlow';
+import type { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../constants';
+import useBYOEAddressData from '../../hooks/useBYOEAddressData';
+import { trackAccountImportClaimProtonAddressCompleted } from '../../telemetry/claimProtonAddress';
 
 interface Props extends ModalProps {
     toApp: APP_NAMES;

@@ -38,7 +38,7 @@ vi.mock('@proton/calendar/calendars/hooks', async () => ({
 
 // Stub the claim-address modal - it pulls auth/telemetry/silent-api deps we don't need here;
 // we only assert that the product modal opens it.
-vi.mock('../BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal', () => ({
+vi.mock('@proton/byoe/src/components/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal', () => ({
     __esModule: true,
     default: () => <div data-testid="byoeClaimProtonAddressModal" />,
 }));

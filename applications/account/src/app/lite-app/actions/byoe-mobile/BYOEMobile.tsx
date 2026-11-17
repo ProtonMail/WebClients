@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import ReachedLimitForwardingModal from '@proton/activation/src/components/Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import ReachedLimitForwardingModal from '@proton/byoe/src/components/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useToggle from '@proton/hooks/useToggle';

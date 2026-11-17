@@ -9,7 +9,7 @@ import { MAIL_APP_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/sh
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/easy-switch-forward.svg';
 
-import { MAX_SYNC_PAID_USER } from '../../../constants';
+import { MAX_SYNC_PAID_USER } from '../../constants';
 
 interface Props {
     hasAccessToBYOE: boolean;

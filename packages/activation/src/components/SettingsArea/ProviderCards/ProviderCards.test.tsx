@@ -5,12 +5,12 @@ import { type Mock, type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import type useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { ADDRESS_FLAGS, APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { headers } from '../../../../msw.header';
 import useBYOEAddressesCounts from '../../../hooks/useBYOEAddressesCounts';
-import type useBYOEFeatureStatus from '../../../hooks/useBYOEFeatureStatus';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
 import { easySwitchRender } from '../../../tests/render';
 import ProviderCard from './ProviderCard';
@@ -128,7 +128,7 @@ const mockUseAddresses = useAddresses as MockedFunction<any>;
 let mockUseBYOEFeatureStatus: MockedFunction<typeof useBYOEFeatureStatus>;
 
 beforeEach(async () => {
-    mockUseBYOEFeatureStatus = vi.mocked((await import('../../../hooks/useBYOEFeatureStatus')).default);
+    mockUseBYOEFeatureStatus = vi.mocked((await import('@proton/byoe/src/hooks/useBYOEFeatureStatus')).default);
     mockUseBYOEFeatureStatus.mockReturnValue([false, false] as const);
     mockUseAddresses.mockReturnValue([[], false]);
 });

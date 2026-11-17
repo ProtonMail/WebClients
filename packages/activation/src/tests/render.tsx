@@ -46,7 +46,7 @@ vi.mock('@proton/components/hooks/useEventManager', () => {
     return { default: result };
 });
 
-vi.mock('../hooks/useBYOEFeatureStatus', () => {
+vi.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => {
     return { default: vi.fn(() => [false, false] as const) };
 });
 

@@ -81,7 +81,7 @@ jest.mock('@proton/features/useFeature', () => ({
     __esModule: true,
     default: () => ({ feature: undefined, loading: false }),
 }));
-jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus', () => ({
+jest.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
     default: () => [false],
 }));

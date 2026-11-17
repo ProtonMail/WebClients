@@ -2,9 +2,9 @@ import { act, renderHook } from '@testing-library/react';
 import { type MockedFunction, vi } from 'vitest';
 
 import { buildAddress } from '@proton/account/testing/buildAddress';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
-import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import type { ImportToken } from '../interface';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '../interface';
 import { createSyncItem, deleteSyncItem } from '../logic/sync/sync.actions';
@@ -29,7 +29,7 @@ vi.mock('@proton/app-context/useApi', () => ({
     useApi: () => mockApi,
 }));
 
-vi.mock('../hooks/useBYOEFeatureStatus');
+vi.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus');
 const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as MockedFunction<typeof useBYOEFeatureStatus>;
 
 vi.mock('../logic/sync/sync.actions', () => ({

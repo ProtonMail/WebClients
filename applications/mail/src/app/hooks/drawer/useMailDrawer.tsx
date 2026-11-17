@@ -1,3 +1,4 @@
+import CalendarDrawerClaimProtonAddressModal from '@proton/byoe/src/components/BYOEClaimProtonAddressModal/CalendarDrawerClaimProtonAddressModal';
 import CalendarDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/CalendarDrawerAppButton';
 import ContactDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/ContactDrawerAppButton';
 import ReferralAppButton from '@proton/components/components/drawer/drawerAppButtons/ReferralAppButton';
@@ -29,6 +30,7 @@ const useMailDrawer = () => {
         allowedProducts.has(Product.Calendar) && (
             <CalendarDrawerAppButton
                 aria-expanded={isAppInView(APPS.PROTONCALENDAR, appInView)}
+                ClaimProtonAddressModal={CalendarDrawerClaimProtonAddressModal}
                 disabled={loadingAllowedProducts}
             />
         ),

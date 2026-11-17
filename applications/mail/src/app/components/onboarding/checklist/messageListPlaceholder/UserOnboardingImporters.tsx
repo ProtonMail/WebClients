@@ -3,10 +3,10 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import ProviderCard from '@proton/activation/src/components/SettingsArea/ProviderCards/ProviderCard';
-import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms/Button/Button';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { ChecklistKey } from '@proton/shared/lib/interfaces/Checklist';
 import checklistImportersImg from '@proton/styles/assets/img/illustrations/checklist-importers.svg';

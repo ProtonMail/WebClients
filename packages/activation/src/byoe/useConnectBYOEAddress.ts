@@ -1,5 +1,6 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useApi } from '@proton/app-context/useApi';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
@@ -10,7 +11,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { checkExternalAddressClaimable, startEasySwitchSignupImportTask } from '../api/api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '../constants';
 import { getStartTimeFromTimePeriod } from '../helpers/getStartTimeFromTimePeriod';
-import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import {
     BYOE_ADDRESS_ERROR,
     EASY_SWITCH_FEATURES,

@@ -3,9 +3,9 @@ import type { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
-import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import BYOEClaimProtonAddressModal from '@proton/byoe/src/components/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/byoe/src/constants';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';

@@ -3,12 +3,12 @@ import { type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/byoe/src/constants';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../constants';
 import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
 import useSetupGmailBYOEAddress from '../../hooks/useSetupGmailBYOEAddress';
 import { EASY_SWITCH_SOURCES } from '../../interface';
@@ -48,7 +48,7 @@ vi.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => ({
     default: (props: any) => <div data-testid="UpsellModal" {...props} />,
 }));
 
-vi.mock('../../hooks/useBYOEFeatureStatus', () => ({
+vi.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
     default: () => {
         return [true, false] as const;

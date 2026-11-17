@@ -67,6 +67,7 @@ import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/s
 import AccountSidebar from '@proton/settings/AccountSidebar';
 import { SettingsRoutes, SettingsSearchArea } from '@proton/settings/SettingsRoutes';
 import UnprivatizationRequestTopBanner from '@proton/settings/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
+import PendingInvitationTopBanner from '@proton/settings/containers/pendingInvitations/PendingInvitationTopBanner';
 import type {
     AccountRecoveryRouterFlags,
     AccountSettingsRouterParams,
@@ -281,6 +282,7 @@ const MainContainer = () => {
 
     const top = (
         <TopBanners app={app}>
+            <PendingInvitationTopBanner />
             <PasswordReminderTopBanner />
             <IncomingRecoveryContactTopBanner />
             <OutgoingRecoveryContactTopBanner />
