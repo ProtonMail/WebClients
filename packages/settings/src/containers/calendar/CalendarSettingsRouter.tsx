@@ -9,7 +9,6 @@ import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/h
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
 import CalendarExportSection from '@proton/components/containers/calendar/settings/CalendarExportSection';
-import CalendarImportSection from '@proton/components/containers/calendar/settings/CalendarImportSection';
 import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
 import CalendarLayoutSection from '@proton/components/containers/calendar/settings/CalendarLayoutSection';
 import CalendarOtherPreferencesSection from '@proton/components/containers/calendar/settings/CalendarOtherPreferencesSection';
@@ -37,6 +36,7 @@ import { locales } from '@proton/shared/lib/i18n/locales';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import noop from '@proton/utils/noop';
 
+import CalendarImportSection from './CalendarImportSection';
 import type { getCalendarAppRoutes } from './routes';
 
 interface Props {

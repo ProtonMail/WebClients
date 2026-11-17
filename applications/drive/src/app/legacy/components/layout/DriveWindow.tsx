@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom-v5-compat';
 
 import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner';
 import { useUser } from '@proton/account/user/hooks';
+import ContactsTabImportDropdown from '@proton/activation/src/components/ContactsTabImportDropdown/ContactsTabImportDropdown';
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
 import DrawerSidebar from '@proton/components/components/drawer/DrawerSidebar';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
@@ -113,6 +114,7 @@ const DriveWindow = ({ children }: { children: ReactNode }) => {
                 <DrawerApp
                     customAppSettings={<DriveQuickSettings />}
                     lumoDrawerView={isDriveLumoEnabled ? <DrawerLumoView /> : undefined}
+                    contactsImportDropdown={<ContactsTabImportDropdown />}
                 />
             }
         >
