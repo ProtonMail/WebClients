@@ -256,7 +256,10 @@ export const waitForListSettled = async (store: ToolStore, expected: ExpectedLis
 };
 
 /** The slice of {@link MailToolDeps} a list navigation needs: the router to push, the store to read back. */
-type NavigationDeps = Pick<MailToolDeps, 'store' | 'history' | 'getFolders' | 'getLabels' | 'getMailSettings'>;
+type NavigationDeps = Pick<
+    MailToolDeps,
+    'store' | 'history' | 'getFolders' | 'getLabels' | 'getMailSettings' | 'getActiveCategoryTabs'
+>;
 
 /**
  * The whole shape of a navigation read (`open_folder`, `search`): push the requested view, wait for the

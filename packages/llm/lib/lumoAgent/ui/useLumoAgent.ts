@@ -208,7 +208,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
     );
 
     // Per session, shared by the executor and the turn context, so a reference the context names resolves in a tool call.
-    const references = useMemo(() => createReferenceRegistry(), [sessionKey]);
+    const references = useMemo(() => createReferenceRegistry(config.fixedReferences), [sessionKey]);
 
     /**
      * Matching on `from` keeps the two hops a card makes distinct, so a late outcome cannot revive one

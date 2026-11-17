@@ -340,6 +340,23 @@ describe('useLumoAgent', () => {
         });
     });
 
+    it('seeds the session with the product’s fixed references, so a card names one with no earlier read', async () => {
+        const withInbox: LumoAgentConfig = {
+            ...config,
+            fixedReferences: [{ reference: 'folder-inbox', id: '0', label: { title: 'Inbox' } }],
+        };
+        script = async ({ executor }) => {
+            await executor.execute([
+                { id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'folder-inbox' }) },
+            ]);
+        };
+
+        const { result } = renderHook(() => useLumoAgent(withInbox));
+        await sendAndPinConfirm(result);
+
+        expect(confirmTile(result)).toMatchObject({ labels: { 'folder-inbox': { title: 'Inbox' } } });
+    });
+
     it('holds the tile at applying until the handler answers, so the click alone never reads as done', async () => {
         script = runOneMutation;
         const move = blockingMove();

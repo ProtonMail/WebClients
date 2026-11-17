@@ -2,8 +2,10 @@ import { format } from 'date-fns';
 
 import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
+import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
+import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { selectCategories } from '@proton/mail/store/labels';
-import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { recipientToInput } from '@proton/shared/lib/mail/recipient';
@@ -11,7 +13,7 @@ import { recipientToInput } from '@proton/shared/lib/mail/recipient';
 import { isSearch } from '../helpers/elementSearch';
 import { isElementConversation, isElementMessage } from '../helpers/elementTypeGuards';
 import { getStandardFolders } from '../helpers/labels';
-import { selectParams } from '../store/elements/elementsSelectors';
+import { selectActiveCategoryID, selectParams } from '../store/elements/elementsSelectors';
 import type { MailState } from '../store/store';
 import { formatLocalDateTime } from './helpers/formatting';
 import { conversationReferenceFor, loadedConversation, messageReferenceFor } from './helpers/references';
@@ -30,12 +32,28 @@ const describeList = (state: MailState): string => {
         return 'search results';
     }
 
-    return neutralise(
+    const name = neutralise(
         getStandardFolders()[labelID]?.name ||
             selectCategories(state).value?.find(({ ID }) => ID === labelID)?.Name ||
             LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] ||
             'unknown'
     );
+    // Only the Inbox carries a tab, and only while the category view is on: otherwise this is unset.
+    const activeCategoryID = selectActiveCategoryID(state);
+    if (labelID !== MAILBOX_LABEL_IDS.INBOX || !activeCategoryID) {
+        return name;
+    }
+
+    return `${name}, ${getLabelFromCategoryId(activeCategoryID)} tab`;
+};
+
+/** In the words the `category` parameter takes, so the model can pass one straight back. */
+const describeCategoryTabs = (categoryTabs: CategoryTab[]): string => {
+    if (!categoryTabs.length) {
+        return 'off';
+    }
+
+    return categoryTabs.map(({ id }) => LABEL_IDS_TO_HUMAN[id]).join(', ');
 };
 
 // Names the open element by a reference the model can act on ("snooze this") without reading it first.
@@ -82,13 +100,15 @@ export const buildMailContext = (
     state: MailState,
     references: ReferenceRegistry,
     now: Date,
-    timezone: string
+    timezone: string,
+    categoryTabs: CategoryTab[]
 ): string =>
     [
         '<mail_context>',
         `Current date and time: ${format(now, 'EEEE', { locale: enUSLocale })}, ${formatLocalDateTime(now)}`,
         `Timezone: ${timezone}`,
         `Open in the list: ${describeList(state)}`,
+        `Category tabs: ${describeCategoryTabs(categoryTabs)}`,
         `Open in the reading pane: ${describeReadingPane(state, references)}`,
         `Open composers: ${describeOpenComposers(state)}`,
         '</mail_context>',

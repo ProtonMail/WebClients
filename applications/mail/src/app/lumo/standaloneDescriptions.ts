@@ -13,7 +13,7 @@ interface StandaloneDescription {
 export const STANDALONE_DESCRIPTIONS: Record<ToolName, StandaloneDescription> = {
     view_emails: {
         description:
-            'List the emails on the user\'s screen right now, as rows of metadata: reference, sender, subject, date, read or unread, starred, folder, labels and an attachment flag. Never bodies. Use it when the user points at what they can see ("these emails", "the ones on screen"), or to triage the current view before acting on it. Returns the visible rows and the total for the view, which can be larger.\n\nTo learn what an email says, read it with read_email. To look somewhere else, use open_folder or search.',
+            'List the emails on the user\'s screen right now, as rows of metadata: reference, sender, subject, date, read or unread, folder, the Inbox tab while category tabs are on, starred, labels and an attachment flag. Never bodies. Use it when the user points at what they can see ("these emails", "the ones on screen"), or to triage the current view before acting on it. Returns the visible rows and the total for the view, which can be larger.\n\nTo learn what an email says, read it with read_email. To look somewhere else, use open_folder or search.',
         parameters: {},
     },
     open_folder: {

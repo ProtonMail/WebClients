@@ -37,4 +37,22 @@ describe('createReferenceRegistry', () => {
 
         expect(shownOnCard?.title).toBe('Travel');
     });
+
+    describe('with fixed references', () => {
+        const INBOX = { reference: 'folder-inbox', id: '0', label: { title: 'Inbox' } };
+
+        it('issues them before any read', () => {
+            const references = createReferenceRegistry([INBOX]);
+
+            expect(references.has('folder-inbox')).toBe(true);
+            expect(references.idFor('folder-inbox')).toBe('0');
+            expect(references.labelFor('folder-inbox')).toEqual({ title: 'Inbox' });
+        });
+
+        it('returns the fixed reference when a read meets the same id', () => {
+            const references = createReferenceRegistry([INBOX]);
+
+            expect(references.referenceFor('folder', '0')).toBe('folder-inbox');
+        });
+    });
 });

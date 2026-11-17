@@ -5,10 +5,14 @@
 import { formatISO } from 'date-fns';
 
 import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import { getDate, hasAttachments, isStarred, isUnread } from '../../../helpers/elements';
+import { getDate, hasAttachments, hasLabel, isStarred, isUnread } from '../../../helpers/elements';
 import { getCurrentFolders, getElementLabels } from '../../../helpers/labels';
 import { getDisplayRecipients, getUniqueElementSenders } from '../../../helpers/recipients';
+import type { Element } from '../../../models/element';
 import {
     contextTotal as contextTotalSelector,
     elements as elementsSelector,
@@ -16,6 +20,7 @@ import {
     selectLabelID,
     taskRunningInLabel,
 } from '../../../store/elements/elementsSelectors';
+import { elementCategoryID } from '../../helpers/categories';
 import { formatLocalDate, formatSender } from '../../helpers/formatting';
 import { emailReferenceFor } from '../../helpers/references';
 import type { MailToolDeps } from '../../toolModule';
@@ -36,6 +41,8 @@ export interface AgentEmailRow {
     /** Custom label display names on the row. */
     labels: string[];
     hasAttachment: boolean;
+    /** The Inbox category tab, in the `category` parameter's words; only while the category view is on. */
+    tab?: string;
 }
 
 /** A page of on-screen rows plus the total in the view (which may exceed `rows.length`). */
@@ -56,6 +63,9 @@ export const BULK_ACTION_NOTE =
 
 const formatRow = (row: AgentEmailRow): string => {
     const parts = [row.reference, row.from, row.subject, row.date, row.unread ? 'unread' : 'read', row.folder];
+    if (row.tab) {
+        parts.push(`tab: ${row.tab}`);
+    }
     if (row.starred) {
         parts.push('starred');
     }
@@ -85,7 +95,21 @@ export const formatAgentEmailRows = (rows: AgentEmailRow[], total: number): stri
 };
 
 /** The read-only slice of {@link MailToolDeps} a row projection needs — no `applyLocation`, no `history`. */
-type RowDeps = Pick<MailToolDeps, 'store' | 'getFolders' | 'getLabels' | 'getMailSettings'>;
+type RowDeps = Pick<MailToolDeps, 'store' | 'getFolders' | 'getLabels' | 'getMailSettings' | 'getActiveCategoryTabs'>;
+
+/**
+ * The tab the Inbox shows this email under. A tab the user hid folds its mail into Primary, and so does
+ * mail the server has not categorised, so both read `primary`, as on screen.
+ */
+const inboxTab = (element: Element, shownTabs: CategoryTab[]): string | undefined => {
+    if (!shownTabs.length || !hasLabel(element, MAILBOX_LABEL_IDS.INBOX)) {
+        return undefined;
+    }
+    const categoryID = elementCategoryID(element);
+    const shown = shownTabs.some(({ id }) => id === categoryID);
+
+    return LABEL_IDS_TO_HUMAN[shown && categoryID ? categoryID : MAILBOX_LABEL_IDS.CATEGORY_DEFAULT];
+};
 
 /**
  * Project the current on-screen page into {@link AgentEmailRow}s, minting a stable `email-…` reference
@@ -103,6 +127,7 @@ export const buildAgentEmailRows = (deps: RowDeps, references: ReferenceRegistry
     const folders = deps.getFolders();
     const labels = deps.getLabels();
     const mailSettings = deps.getMailSettings();
+    const shownTabs = deps.getActiveCategoryTabs();
 
     // Already the current page: the selector ends on a pageSize-wide slice.
     const pageElements = elementsSelector(state);
@@ -130,6 +155,7 @@ export const buildAgentEmailRows = (deps: RowDeps, references: ReferenceRegistry
                 .join(', '),
             labels: getElementLabels(element, labelID, labels).map((label) => label.Name),
             hasAttachment: hasAttachments(element),
+            tab: inboxTab(element, shownTabs),
         };
     });
 
