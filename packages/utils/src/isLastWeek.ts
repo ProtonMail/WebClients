@@ -1,4 +1,5 @@
 /* This helper is inspired from https://github.com/date-fns/date-fns/blob/main/src/isSameWeek/index.ts helper */
+import type { Locale } from 'date-fns';
 import { startOfWeek, subDays } from 'date-fns';
 
 /**

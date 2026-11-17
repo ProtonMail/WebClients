@@ -678,6 +678,7 @@
         "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
+        "@date-fns/utc": "^2.1.1",
         "@proton/colors": "workspace:^",
         "@proton/redux-utilities": "workspace:^",
         "@proton/sanitize": "workspace:^",

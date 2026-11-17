@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import type { Locale } from 'date-fns';
 import {
     addDays,
     addSeconds,

@@ -17,6 +17,7 @@ describe('toDocsDateFormat', () => {
   })
 
   it('falls back to US English for a locale without a code', () => {
+    // @ts-expect-error date-fns types require `code`, but locales built at runtime can lack it
     expect(toDocsDateFormat({ ...enGBLocale, code: undefined })).toEqual({ localeCode: 'en-US', hourCycle: 'h23' })
   })
 })

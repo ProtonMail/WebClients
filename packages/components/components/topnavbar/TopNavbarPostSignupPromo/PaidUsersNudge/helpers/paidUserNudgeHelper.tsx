@@ -1,5 +1,5 @@
 import { addDays, differenceInDays, differenceInHours, fromUnixTime } from 'date-fns';
-import startOfDay from 'date-fns/startOfDay';
+import { startOfDay } from 'date-fns/startOfDay';
 
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';

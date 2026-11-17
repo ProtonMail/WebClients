@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { addMinutes } from 'date-fns';
-import format from 'date-fns/format';
+import { format } from 'date-fns/format';
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';

@@ -32,16 +32,20 @@ export const getDateFnLocaleWithLongFormat = (a: Locale, b: Locale): Locale => {
     };
 };
 
-export const getIsLocaleAMPM = (locale: Locale) => locale.formatLong?.time().includes('a');
+export const getIsLocaleAMPM = (locale: Locale) => locale.formatLong?.time({}).includes('a');
+
+const getDateFormatLocale = (dateFormat: SETTINGS_DATE_FORMAT) => {
+    if (dateFormat === SETTINGS_DATE_FORMAT.DDMMYYYY) {
+        return enGBLocale;
+    }
+    if (dateFormat === SETTINGS_DATE_FORMAT.MMDDYYYY) {
+        return enUSLocale;
+    }
+    return faIRLocale;
+};
 
 const getDateFnLocaleWithDateFormat = (locale: Locale, dateFormat: SETTINGS_DATE_FORMAT): Locale => {
-    const date = (
-        dateFormat === SETTINGS_DATE_FORMAT.DDMMYYYY
-            ? enGBLocale
-            : dateFormat === SETTINGS_DATE_FORMAT.MMDDYYYY
-              ? enUSLocale
-              : faIRLocale
-    ).formatLong?.date;
+    const date = getDateFormatLocale(dateFormat).formatLong?.date;
 
     return {
         ...locale,

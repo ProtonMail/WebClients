@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import cnLocale from 'date-fns/locale/zh-CN';
+import { zhCN as cnLocale } from 'date-fns/locale/zh-CN';
 import { c } from 'ttag';
 
 import { DEFAULT_LOCALE } from '../../lib/constants';

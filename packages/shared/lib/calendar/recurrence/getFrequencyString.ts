@@ -1,3 +1,4 @@
+import type { Locale } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import mod from '@proton/utils/mod';

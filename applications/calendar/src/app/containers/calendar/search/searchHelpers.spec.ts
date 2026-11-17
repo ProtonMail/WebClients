@@ -1,5 +1,5 @@
 import { getUnixTime } from 'date-fns';
-import { default as frLocale } from 'date-fns/locale/fr';
+import { fr as frLocale } from 'date-fns/locale/fr';
 
 import type { ESItem } from '@proton/encrypted-search/models/interfaces';
 import { MAXIMUM_DATE_UTC } from '@proton/shared/lib/calendar/constants';
