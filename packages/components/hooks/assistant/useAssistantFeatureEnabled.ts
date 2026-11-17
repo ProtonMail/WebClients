@@ -3,10 +3,9 @@ import { selectUser } from '@proton/account/user';
 import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { isScribeSupported } from '../../helpers/assistant';
+import { canPurchaseScribe, isScribeSupported } from '../../helpers/assistant';
 
 const useAssistantFeatureEnabled = () => {
-    const accessToAssistant = useFlag('ComposerAssistant');
     const scribeToLumo = useFlag('ScribeToLumo');
 
     const user = baseUseSelector(selectUser)?.value;
@@ -16,10 +15,9 @@ const useAssistantFeatureEnabled = () => {
         !!organization?.Settings.ShowScribeWritingAssistant || !!user?.isAdmin || !!user?.isFree;
     const planSupportsScribe = isScribeSupported(organization, user, scribeToLumo);
 
-    const paymentsEnabled = accessToAssistant;
+    const paymentsEnabled = canPurchaseScribe(organization);
 
     const enabled =
-        accessToAssistant &&
         // user can't enter scribe trial if the organization plan doesn't support it
         planSupportsScribe &&
         // If org admin disabled scribe to sub users, do not show the feature
