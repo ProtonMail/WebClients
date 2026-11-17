@@ -1,7 +1,7 @@
 /**
- * The milestones of loading a document on /doc2, as Performance API marks on the page's time line, measured from
- * navigation start, so that one `performance.getEntriesByType('mark')` reads the load. The names are the ones the
- * doc2 performance spec gives the milestones, without `socket-open`: doc2's socket is inside the realtime SDK.
+ * The Load Milestones of /doc2 (`packages/realtime-sdk/GLOSSARY.md` in the realtime repo), as Performance API marks on
+ * the page's time line, measured from navigation start, so that one `performance.getEntriesByType('mark')` reads the
+ * load. None marks the socket opening: doc2's socket is inside the realtime SDK, out of its sight.
  * Marks rather than OpenTracer events, since the doc2 gate's load benchmark reads them from the browser.
  */
 export const DocsLoadMark = {
