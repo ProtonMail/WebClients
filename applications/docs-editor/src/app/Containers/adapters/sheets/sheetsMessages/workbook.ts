@@ -55,6 +55,14 @@ export function createWorkbookMessages(): Pick<
       'Hide sheet': c('sheets_2025:Sheet tab options').t`Hide sheet`,
       'A sheet with this name already exists': c('sheets_2025:Sheet tab rename')
         .t`A sheet with this name already exists`,
+      "Sheet names can't be longer than 31 characters": c('sheets_2025:Sheet tab rename')
+        .t`Sheet names can't be longer than 31 characters`,
+      "Sheet names can't contain \\ / ? * [ ] or :": c('sheets_2025:Sheet tab rename')
+        .t`Sheet names can't contain \\ / ? * [ ] or :`,
+      "Sheet names can't start or end with an apostrophe": c('sheets_2025:Sheet tab rename')
+        .t`Sheet names can't start or end with an apostrophe`,
+      "History is a reserved name and can't be used for a sheet": c('sheets_2025:Sheet tab rename')
+        .t`History is a reserved name and can't be used for a sheet`,
       'No title': c('Info').t`No title`,
     },
     sheetStatus: {
