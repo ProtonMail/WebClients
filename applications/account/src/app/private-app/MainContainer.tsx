@@ -37,7 +37,6 @@ import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
-import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import { useOrganizationTheme } from '@proton/components/containers/organization/logoUpload/useOrganizationTheme';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
 import TopBanners from '@proton/components/containers/topBanners/TopBanners';
@@ -67,6 +66,7 @@ import { CampaignVariant } from '@proton/offers-delivery/interface';
 import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
 import AccountSidebar from '@proton/settings/AccountSidebar';
 import { SettingsRoutes, SettingsSearchArea } from '@proton/settings/SettingsRoutes';
+import UnprivatizationRequestTopBanner from '@proton/settings/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import type {
     AccountRecoveryRouterFlags,
     AccountSettingsRouterParams,

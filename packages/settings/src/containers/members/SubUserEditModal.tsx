@@ -33,14 +33,9 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import MemberRoleChangePrompt from '@proton/components/containers/members/MemberRoleChangePrompt';
 import MemberStorageSelector from '@proton/components/containers/members/MemberStorageSelector';
-import MemberToggleContainer from '@proton/components/containers/members/MemberToggleContainer';
-import SubUserCreateHint from '@proton/components/containers/members/SubUserCreateHint';
-import { adminTooltipText } from '@proton/components/containers/members/constants';
 import { disableStorageSelection, getPrivateLabel } from '@proton/components/containers/members/helper';
 import AdminRolesSpotlight from '@proton/components/containers/members/rolesAndPermissions/AdminRolesSpotlight';
-import MemberOwnerRoleToggle from '@proton/components/containers/members/rolesAndPermissions/MemberOwnerRoleToggle';
 import ModalHeaderWithTabs from '@proton/components/containers/members/rolesAndPermissions/ModalHeaderWithTabs';
 import RolesAndPermissionsTab from '@proton/components/containers/members/rolesAndPermissions/RolesAndPermissionsTab';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
@@ -64,6 +59,11 @@ import { getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
 import noop from '@proton/utils/noop';
 
 import Addresses from '../addresses/Addresses';
+import MemberRoleChangePrompt from './MemberRoleChangePrompt';
+import MemberToggleContainer from './MemberToggleContainer';
+import SubUserCreateHint from './SubUserCreateHint';
+import { adminTooltipText } from './constants';
+import MemberOwnerRoleToggle from './rolesAndPermissions/MemberOwnerRoleToggle';
 
 interface Props extends ModalProps<'form'> {
     member: EnhancedMember;

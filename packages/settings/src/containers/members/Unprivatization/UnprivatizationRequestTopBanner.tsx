@@ -1,0 +1,82 @@
+import { useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { memberThunk } from '@proton/account/member';
+import { getPendingUnprivatizationRequest } from '@proton/account/member/actions';
+import type { ParsedUnprivatizationData } from '@proton/account/members/unprivatization';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import TopBanner from '@proton/components/containers/topBanners/TopBanner';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import noop from '@proton/utils/noop';
+
+import MemberUnprivatizationModal from './MemberUnprivatizationModal';
+
+const UnprivatizationRequestTopBanner = () => {
+    const dispatch = useDispatch();
+    const [data, setData] = useState<{
+        member: Member;
+        orgName: string;
+        parsedUnprivatizationData: ParsedUnprivatizationData;
+    } | null>(null);
+
+    const [modalProps, setModal, renderModal] = useModalState();
+
+    useEffect(() => {
+        const initialSearchParams = new URLSearchParams(window.location.search);
+        const run = async () => {
+            const member = await dispatch(memberThunk());
+            const result = await dispatch(getPendingUnprivatizationRequest({ member }));
+            if (result) {
+                const { organization, parsedUnprivatizationData } = result;
+                setData({ member, orgName: organization.Name || '', parsedUnprivatizationData });
+
+                if (initialSearchParams.get('action') === 'enable-admin-access') {
+                    setModal(true);
+                }
+            }
+        };
+        run().catch(noop);
+    }, []);
+
+    if (!data) {
+        return null;
+    }
+
+    const { orgName, member, parsedUnprivatizationData } = data;
+
+    return (
+        <>
+            {orgName !== undefined && (
+                <TopBanner className="bg-info">
+                    {c('unprivatization')
+                        .t`An administrator of ${orgName} wants to enable admin access for your account.`}{' '}
+                    <InlineLinkButton
+                        data-testid="unprivatization:request-button"
+                        key="button"
+                        onClick={() => {
+                            setModal(true);
+                        }}
+                    >
+                        {c('unprivatization').t`View request`}
+                    </InlineLinkButton>
+                </TopBanner>
+            )}
+            {renderModal && (
+                <MemberUnprivatizationModal
+                    member={member}
+                    orgName={orgName}
+                    parsedUnprivatizationData={parsedUnprivatizationData}
+                    onChange={() => {
+                        setData(null);
+                    }}
+                    {...modalProps}
+                />
+            )}
+        </>
+    );
+};
+
+export default UnprivatizationRequestTopBanner;
