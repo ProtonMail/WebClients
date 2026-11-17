@@ -17,6 +17,27 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Alert from '@proton/components/components/alert/Alert';
+import { SortableList } from '@proton/components/components/dnd/SortableList';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { Handle } from '@proton/components/components/table/Handle';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
+import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import AddressStatus from '@proton/components/containers/addresses/AddressStatus';
+import ExternalAddressInfo from '@proton/components/containers/addresses/ExternalAddressInfo';
+import {
+    type AddressPermissions,
+    type AddressStatuses,
+    getPermissions,
+    getStatus,
+} from '@proton/components/containers/addresses/helper';
+import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
@@ -42,23 +63,7 @@ import addressesImg from '@proton/styles/assets/img/illustrations/new-upsells-im
 import { useFlag } from '@proton/unleash/useFlag';
 import move from '@proton/utils/move';
 
-import Alert from '../../components/alert/Alert';
-import { SortableList } from '../../components/dnd/SortableList';
-import useModalState from '../../components/modalTwo/useModalState';
-import { Handle } from '../../components/table/Handle';
-import Table from '../../components/table/Table';
-import TableBody from '../../components/table/TableBody';
-import TableCell from '../../components/table/TableCell';
-import TableHeader from '../../components/table/TableHeader';
-import TableRow from '../../components/table/TableRow';
-import MailUpsellButton from '../../components/upsell/MailUpsellButton';
-import UpsellModal from '../../components/upsell/UpsellModal/UpsellModal';
-import { usePostSubscriptionTourTelemetry } from '../../hooks/mail/usePostSubscriptionTourTelemetry';
-import SettingsParagraph from '../account/SettingsParagraph';
 import AddressActions from './AddressActions';
-import AddressStatus from './AddressStatus';
-import ExternalAddressInfo from './ExternalAddressInfo';
-import { type AddressPermissions, type AddressStatuses, getPermissions, getStatus } from './helper';
 
 interface Props {
     user: UserModel;

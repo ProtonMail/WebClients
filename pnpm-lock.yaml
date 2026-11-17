@@ -10116,6 +10116,9 @@ importers:
 
   packages/settings:
     dependencies:
+      '@dnd-kit/react':
+        specifier: 'catalog:'
+        version: 0.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@proton/account':
         specifier: workspace:^
         version: link:../account
@@ -10152,6 +10155,9 @@ importers:
       '@proton/delegated-access':
         specifier: workspace:^
         version: link:../delegated-access
+      '@proton/features':
+        specifier: workspace:^
+        version: link:../features
       '@proton/hooks':
         specifier: workspace:^
         version: link:../hooks
@@ -10176,6 +10182,9 @@ importers:
       '@proton/payments-ui':
         specifier: workspace:^
         version: link:../payments-ui
+      '@proton/react-redux-store':
+        specifier: workspace:^
+        version: link:../react-redux-store
       '@proton/redux-shared-store':
         specifier: workspace:^
         version: link:../redux-shared-store
@@ -10209,6 +10218,9 @@ importers:
       history:
         specifier: 'catalog:'
         version: 4.10.1
+      lodash:
+        specifier: 'catalog:'
+        version: 4.18.1
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -10234,9 +10246,6 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
-      '@proton/react-redux-store':
-        specifier: workspace:^
-        version: link:../react-redux-store
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
@@ -10249,6 +10258,9 @@ importers:
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
+      '@types/lodash':
+        specifier: 'catalog:'
+        version: 4.17.27
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8

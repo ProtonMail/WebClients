@@ -10,6 +10,17 @@ import UpsellForwardingModal from '@proton/activation/src/components/Modals/Upse
 import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import useReconnectSync from '@proton/activation/src/hooks/useReconnectSync';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import EditExternalAddressModal from '@proton/components/containers/account/EditExternalAddressModal';
+import DeleteAddressPrompt from '@proton/components/containers/addresses/DeleteAddressPrompt';
+import DisableAddressModal from '@proton/components/containers/addresses/DisableAddressModal';
+import EditInternalAddressModal from '@proton/components/containers/addresses/EditInternalAddressModal';
+import type { AddressPermissions } from '@proton/components/containers/addresses/helper';
+import CreateMissingKeysAddressModal from '@proton/components/containers/addresses/missingKeys/CreateMissingKeysAddressModal';
+import useAddressFlags from '@proton/components/hooks/useAddressFlags';
+import { useErrorWrapper } from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -19,18 +30,6 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';
-
-import type { DropdownActionProps } from '../../components/dropdown/DropdownActions';
-import DropdownActions from '../../components/dropdown/DropdownActions';
-import useModalState from '../../components/modalTwo/useModalState';
-import EditExternalAddressModal from '../../containers/account/EditExternalAddressModal';
-import EditInternalAddressModal from '../../containers/addresses/EditInternalAddressModal';
-import useAddressFlags from '../../hooks/useAddressFlags';
-import { useErrorWrapper } from '../../hooks/useErrorHandler';
-import DeleteAddressPrompt from './DeleteAddressPrompt';
-import DisableAddressModal from './DisableAddressModal';
-import type { AddressPermissions } from './helper';
-import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 
 interface Props {
     address: Address;

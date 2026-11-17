@@ -4,13 +4,13 @@ import { c, msgid } from 'ttag';
 
 import { useMembersRemote } from '@proton/account/members/useMembersRemote';
 import { useMembersUsage } from '@proton/account/members/useMembersUsage';
+import SearchInput from '@proton/components/components/input/SearchInput';
+import Pagination from '@proton/components/components/pagination/Pagination';
+import RoleAssignmentPausedBanner from '@proton/components/containers/members/rolesAndPermissions/RoleAssignmentPausedBanner';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 
-import SearchInput from '../../../components/input/SearchInput';
-import Pagination from '../../../components/pagination/Pagination';
-import RoleAssignmentPausedBanner from '../rolesAndPermissions/RoleAssignmentPausedBanner';
 import { MembersTable } from './MembersTable';
 import { MembersTableHeader } from './MembersTableHeader';
 import { useMemberActions } from './useMemberActions';
