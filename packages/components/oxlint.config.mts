@@ -25,6 +25,11 @@ export default createOxlintConfig({
                 ],
                 message: '@proton/components must not import the account domain packages.',
             },
+            {
+                // Both depend on this package; apps pass their pieces in as children or props.
+                group: ['@proton/activation', '@proton/activation/*', '@proton/byoe', '@proton/byoe/*'],
+                message: '@proton/components must not import @proton/activation or @proton/byoe.',
+            },
         ],
     },
     overrides: [
