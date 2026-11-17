@@ -110,7 +110,7 @@
         "Toplu kullanıcı içe aktarma"
       ],
       "Business referral link": [
-        "İşletme tavsiye bağlantısı"
+        "Kuruluş önerisi bağlantısı"
       ],
       "Cancel plan": [
         "Tarifeyi iptal et"
@@ -2398,6 +2398,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Continue with Bitcoin": [
+        "Bitcoin ile ilerle"
       ]
     },
     "action": {
@@ -5700,7 +5703,7 @@
         "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
       ],
       "Refer ${ BRAND_NAME } for Business to your network. You earn credits, and they get ${ refereeRewardAmount } off a yearly subscription. Earn up to ${ maxRewardAmount } in total.": [
-        "${ BRAND_NAME } for Business hizmetini çevrenize tavsiye edin. Siz kredi kazanırsınız onlar ise yıllık abonelik ücretinden ${ refereeRewardAmount } indirim alırlar. Toplamda ${ maxRewardAmount } kadar kazanabilirsiniz."
+        "${ BRAND_NAME } for Business hizmetini çevrenize önerin. Siz kredi kazanırsınız onlar ise yıllık abonelik ücretinden ${ refereeRewardAmount } indirim alırlar. Toplamda ${ maxRewardAmount } kadar kazanabilirsiniz."
       ],
       "Select which categories you want to add and if you want to receive push notifications for each category.": [
         "Eklemek istediğiniz kategorileri ve her bir kategori için anlık bildirim almak isteyip istemediğinizi seçin."
@@ -9899,7 +9902,7 @@
         "${ planName } hoşunuza gitti mi?"
       ],
       "Invited businesses": [
-        "Davet edilen işletmeler"
+        "Davet edilen kuruluşlar"
       ],
       "Invited friends": [
         "Davet edilmiş arkadaşlar"
@@ -11846,7 +11849,7 @@
         "Var olan uçtan uca şifrelenmiş e-posta ileticilerinizi, ayarlar altındaki **${ autoReplySettingsTitle }** bölümünden el ile yeniden kullanıma almalısınız."
       ],
       "Expected ${ date }": [
-        "Tahmini tarih ${ date }"
+        "Beklenen ${ date }"
       ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
@@ -12023,7 +12026,7 @@
         "Gruplar"
       ],
       "Help an organization protect sensitive data from breaches and surveillance": [
-        "Kuruluşun hassas verilerini veri ihlallerinden ve gözetimden korunmasına yardımcı olun"
+        "Kuruluşun önemli verilerini ele geçirilmekten ve izlenmekten korumaya yardımcı olun"
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Diğer ailelerin çocuklarının güvenli bir internet başlangıcı yapmalarına yardımcı olun. Bu önemli gelişmeyi paylaşın ve herkese duyurun."
@@ -13242,7 +13245,7 @@
         "Özet"
       ],
       "Support a mission to create a safer internet for everyone": [
-        "Herkes için daha güvenli bir internet yaratma misyonuna destek olun"
+        "Herkes için daha güvenli bir internet yaratma amacımıza destek olun"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Özel etki alanlarının ve ${ BRAND_NAME } olmayan e-posta adreslerinin izlenmesi desteği yakında sunulacak."
@@ -13399,7 +13402,7 @@
         "Bu kimlik doğrulama bilgileri resmi ${ VPN_APP_NAME } uygulamalarımızda oturum açmak için kullanılamaz. ${ learnMore }"
       ],
       "They get end-to-end encrypted email, storage, and collaboration tools": [
-        "Uçtan uca şifrelenmiş e-posta, depolama ve işbirliği araçlarından yararlanıyorlar"
+        "Uçtan uca şifrelenmiş e-posta, depolama alanı ve iş birliği araçlarından yararlanıyorlar"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
@@ -14158,7 +14161,7 @@
         "Yazma yardımcısı"
       ],
       "Writing assistant seats are no longer sold.": [
-        "Yazma yardımcısı koltukları artık satılmamaktadır."
+        "Yazma yardımcısı koltukları artık satılmıyor"
       ],
       "X": [
         "X"
@@ -16170,7 +16173,7 @@
         "E-posta ile davet edin"
       ],
       "Invited via": [
-        "aracılığıyla davet edildi"
+        "İle davet edildi"
       ],
       "Invoice email": [
         "Fatura e-postası"
@@ -17694,40 +17697,40 @@
         "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
       ],
       "Everything in Basic, and:": [
-        "Basic'teki her şey ve:"
+        "Basic tarifesindeki her şey ve:"
       ],
       "Everything in Free, and:": [
-        "Her şey Free ve:"
+        "Free tarifesindeki herşey ve:"
       ],
       "Everything in Plus, and:": [
-        "Plus'taki her şey ve:"
+        "Plus tarifesindeki her şey ve:"
       ],
       "Extended image generation": [
-        "Genişletilmiş görüntü oluşturma"
+        "Genişletilmiş görsel oluşturma"
       ],
       "Includes:": [
-        "Şunları içerir:"
+        "İçindekiler:"
       ],
       "Limited image generation": [
-        "Sınırlı görüntü oluşturma"
+        "Sınırlı görsel oluşturma"
       ],
       "Limited messages and chat history": [
-        "Sınırlı mesajlar ve sohbet geçmişi"
+        "Sınırlı sayıda ileti ve sohbet geçmişi"
       ],
       "Limited Skills, Projects, and scheduled tasks": [
-        "Sınırlı Beceriler, Projeler ve planlanmış görevler"
+        "Sınırlı sayıda yetenek, proje ve zamanlanmış görev"
       ],
       "Maximum image generation": [
-        "Maksimum resim oluşturma"
+        "En fazla görsel oluşturma"
       ],
       "Maximum Skills and Projects": [
-        "Maksimum Beceri ve Projeler"
+        "En fazla yetenek ve projeler"
       ],
       "More image generation": [
-        "Daha fazla görüntü oluşturma"
+        "Daha fazla görsel oluşturma"
       ],
       "More Skills, Projects, and scheduled tasks": [
-        "Daha fazla beceri, proje ve planlanmış görevler"
+        "Daha fazla yetenek, proje ve zamanlanmış görev"
       ],
       "More usage": [
         "Daha fazla kullanım"
@@ -21541,7 +21544,7 @@
         "Kuruluş adını yazın"
       ],
       "Enter email address, name, or contact group": [
-        "E-posta adresini, adı veya iletişim grubunu girin"
+        "E-posta adresini, adı veya e-posta grubunu yazın"
       ],
       "Enter name or email address": [
         "Adı ya da e-posta adresini yazın"
@@ -22231,10 +22234,10 @@
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
       ],
       "**Share your referral link** with the right person at the company": [
-        "**Tavsiye bağlantınızı** şirket içindeki doğru kişiyle paylaşın"
+        "**Öneri bağlantınızı** kuruluş içindeki doğru kişiyle paylaşın"
       ],
       "**They sign up for a yearly Pro plan** and get an additional ${ refereeRewardAmount } off their first year": [
-        "**Yıllık Pro planına kaydolurlar** ve ilk yıl için ek olarak ${ refereeRewardAmount } indirim alırlar"
+        "**Yıllık Pro tarifesi ile hesap açarlar** ve ilk yıl için ek olarak ${ refereeRewardAmount } indirim alırlar"
       ],
       "**You earn ${ referrerRewardAmount } for every seat** they add during sign-up.": [
         "**Kayıt sırasında ekledikleri her koltuk için** ${ referrerRewardAmount } kazanırsınız."
@@ -22252,10 +22255,10 @@
         "Ücretsiz deneme süreniz nasıl işler:"
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
-        "Ben ${ BRAND_NAME } kullanıyorum ve senin de beğeneceğinizi düşündüm. Gizliliği koruyan güvenli bir e-posta, bulut depolama alanı, parola yöneticisi ve VPN hizmeti sunuyor. Bir sonraki aboneliğinde ${ refereeRewardAmount } indirimden yararlanmak için şuradan hesap açabilirsin: ${ referralLink }"
+        "Ben ${ BRAND_NAME } kullanıyorum ve senin de beğeneceğini düşündüm. Gizliliği koruyan güvenli bir e-posta, bulut depolama alanı, parola yöneticisi ve VPN hizmeti sunuyor. Bir sonraki aboneliğinde ${ refereeRewardAmount } indirimden yararlanmak için şuradan hesap açabilirsin: ${ referralLink }"
       ],
       "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
-        "${ BRAND_NAME } kullanıyorum ve ekibinizin de hoşuna gidebileceğini düşündüm. Gizliliğinizi koruyan güvenli e-posta, bulut depolama, parola yöneticisi ve VPN hizmetidir. Bu bağlantıdan kaydolarak ${ BRAND_NAME } for Business hizmetinin ilk yılı için ${ refereeRewardAmount } indirimden yararlanın: ${ referralLink }"
+        "${ BRAND_NAME } kullanıyorum ve ekibinizin de beğeneceğini düşündüm. Gizliliğinizi koruyan güvenli bir e-posta, bulut depolama alanı, parola yöneticisi ve VPN hizmeti sunuyor. Bu bağlantıdan hesap açarak ${ BRAND_NAME } for Business hizmetinin ilk yılı için ${ refereeRewardAmount } indirimden yararlanabilirsin: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Bu tarihten önce iptal ederseniz deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz. İptal etmezseniz tam tarifeniz başlar ve **${ referrerRewardAmount }** tutarında kredi kazanırsınız."
@@ -26572,7 +26575,7 @@
         "${ platform } için Bridge"
       ],
       "Bring ${ BRAND_NAME } to Work. Earn credits.": [
-        "${ BRAND_NAME }’u iş yerine getirin. Kredi kazanın."
+        "İiş yerinize ${ BRAND_NAME } getirin. Kredi kazanın."
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Gmail e-postalarınızı ${ MAIL_APP_NAME } üzerine taşıyın"
@@ -26581,12 +26584,12 @@
         "Tarayıcı eklentileri"
       ],
       "Business invited": [
-        "İşletme davet edildi",
-        "İşletmeler davet edildi"
+        "Kuruluş davet edildi",
+        "Kuruluşlar davet edildi"
       ],
       "Business signed up": [
-        "İşletme hesap açtı",
-        "İşletmeler hesap açtı"
+        "Kuruluş hesap açtı",
+        "Kuruluşlar hesap açtı"
       ],
       "Can you access your session in the browser?": [
         "Tarayıcıdan oturumunuza erişebiliyor musunuz?"
@@ -27766,7 +27769,7 @@
         "Arkadaşınıza önerin"
       ],
       "Refer businesses": [
-        "İşletmeleri yönlendirin"
+        "Kuruluşlara önerin"
       ],
       "Reject device?": [
         "Aygıt reddedilsin mi?"
@@ -28352,7 +28355,7 @@
         "Karanlık ağ nedir?"
       ],
       "Why recommend ${ BRAND_NAME } for Business?": [
-        "Neden ${ BRAND_NAME } for Business'ı öneriyoruz?"
+        "Neden ${ BRAND_NAME } for Business öneriyoruz?"
       ],
       "Windows": [
         "Windows"
