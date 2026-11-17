@@ -4,6 +4,7 @@ import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 // B2C plans having Scribe by default
 const B2C_PLANS_INCLUDING_SCRIBE = [PLANS.VISIONARY, PLANS.DUO, PLANS.FAMILY];
@@ -55,6 +56,18 @@ export const getWritingAssistantTitle = (scribeToLumo: boolean): string =>
 export const isB2bPlanSupportingScribe = (organization?: Organization, user?: UserModel): boolean => {
     if (!organization || user?.isFree) {
         return false;
+    }
+
+    return B2B_PLANS_SUPPORTING_SCRIBE.includes(organization.PlanName);
+};
+
+/**
+ * Scribe can be purchased by everyone, except by B2B organizations whose plan doesn't support it
+ * (i.e. B2B plans that are neither Mail nor Bundle).
+ */
+export const canPurchaseScribe = (organization?: Organization): boolean => {
+    if (!organization || !getIsB2BAudienceFromPlan(organization.PlanName)) {
+        return true;
     }
 
     return B2B_PLANS_SUPPORTING_SCRIBE.includes(organization.PlanName);

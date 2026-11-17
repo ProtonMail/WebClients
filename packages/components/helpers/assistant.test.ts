@@ -5,6 +5,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import {
     B2B_PLANS_SUPPORTING_SCRIBE,
     PLANS_SUPPORTING_SCRIBE,
+    canPurchaseScribe,
     isB2bPlanSupportingScribe,
     isScribeSupported,
 } from './assistant';
@@ -86,6 +87,37 @@ describe('assistant helpers', () => {
             plansNotSupportingScribe.forEach((plan) => {
                 const organization = { PlanName: plan } as Organization;
                 expect(isB2bPlanSupportingScribe(organization, user)).toBeFalsy();
+            });
+        });
+    });
+
+    describe('canPurchaseScribe', () => {
+        it('should be true without organization', () => {
+            expect(canPurchaseScribe(undefined)).toBe(true);
+        });
+
+        it('should be true for B2C plans', () => {
+            [PLANS.FREE, PLANS.MAIL, PLANS.BUNDLE, PLANS.VPN2024, PLANS.DUO].forEach((plan) => {
+                expect(canPurchaseScribe({ PlanName: plan } as Organization)).toBe(true);
+            });
+        });
+
+        it('should be true for Mail and Bundle B2B plans', () => {
+            B2B_PLANS_SUPPORTING_SCRIBE.forEach((plan) => {
+                expect(canPurchaseScribe({ PlanName: plan } as Organization)).toBe(true);
+            });
+        });
+
+        it('should be false for other B2B plans', () => {
+            [
+                PLANS.VPN_PRO,
+                PLANS.VPN_BUSINESS,
+                PLANS.PASS_PRO,
+                PLANS.PASS_BUSINESS,
+                PLANS.DRIVE_PRO,
+                PLANS.DRIVE_BUSINESS,
+            ].forEach((plan) => {
+                expect(canPurchaseScribe({ PlanName: plan } as Organization)).toBe(false);
             });
         });
     });
