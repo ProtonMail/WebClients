@@ -1,5 +1,5 @@
 import type { ChangeEvent } from 'react';
-import { forwardRef, useEffect, useState } from 'react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import useDebounceInput from '@proton/hooks/useDebounceInput';
 import noop from '@proton/utils/noop';
@@ -26,11 +26,18 @@ const SearchInput = forwardRef<HTMLInputElement, Props>(
 
         const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => setKeywords(target.value);
 
+        const lastEmitted = useRef<string | undefined>(undefined);
+
         useEffect(() => {
+            lastEmitted.current = words;
             onChange(words);
         }, [words]);
 
         useEffect(() => {
+            // The parent echoing back what we just emitted must not overwrite what is being typed meanwhile
+            if (value === lastEmitted.current) {
+                return;
+            }
             setKeywords(value);
         }, [value]);
 
