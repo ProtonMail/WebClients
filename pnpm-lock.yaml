@@ -1672,6 +1672,9 @@ importers:
       '@proton/account-recovery':
         specifier: workspace:^
         version: link:../../packages/account-recovery
+      '@proton/atoms':
+        specifier: workspace:^
+        version: link:../../packages/atoms
       '@proton/charts':
         specifier: workspace:^
         version: link:../../packages/charts
@@ -1769,12 +1772,18 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
+      '@proton/vitest-config':
+        specifier: workspace:^
+        version: link:../../packages/vitest-config
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
       '@typescript/native':
         specifier: 'catalog:'
         version: typescript@7.0.2
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 5.1.0(@vitest/browser@5.1.0)(vitest@5.1.0)
       oxlint:
         specifier: 'catalog:'
         version: 1.93.0(oxlint-tsgolint@7.0.2006)
@@ -1784,6 +1793,9 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
+      vitest:
+        specifier: 'catalog:'
+        version: 5.1.0(@opentelemetry/api@1.9.1)(@types/node@24.19.2)(@vitest/browser-playwright@5.1.0)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(happy-dom@21.0.4)(jsdom@31.0.0(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       webpack:
         specifier: 'catalog:'
         version: 5.112.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(webpack-cli@7.3.1)
