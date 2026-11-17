@@ -609,19 +609,22 @@ describe('useSubscriptionCheck', () => {
     });
 
     describe('ProrationMode', () => {
-        it('sets ProrationMode.Exact when selectedMethod is SEPA', async () => {
-            const deps = buildDeps({
-                paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
-                } as any,
-            });
-            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+        it.each([PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL])(
+            'sets ProrationMode.Exact when selectedMethod is %s',
+            async (selectedMethod) => {
+                const deps = buildDeps({
+                    paymentsApi: {
+                        checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    } as any,
+                });
+                const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
-            await result.current.check(buildModel(), false, PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT);
+                await result.current.check(buildModel(), false, selectedMethod);
 
-            const payload = (deps.paymentsApi.checkSubscription as jest.Mock).mock.calls[0][0];
-            expect(payload.ProrationMode).toBe(ProrationMode.Exact);
-        });
+                const payload = (deps.paymentsApi.checkSubscription as jest.Mock).mock.calls[0][0];
+                expect(payload.ProrationMode).toBe(ProrationMode.Exact);
+            }
+        );
 
         it('sets ProrationMode.Exact when only paymentFacadeSelectedMethodType is SEPA', async () => {
             const deps = buildDeps({
@@ -638,7 +641,7 @@ describe('useSubscriptionCheck', () => {
             expect(payload.ProrationMode).toBe(ProrationMode.Exact);
         });
 
-        it('does not set ProrationMode for non-SEPA method', async () => {
+        it('does not set ProrationMode for a non-direct-debit method', async () => {
             const deps = buildDeps({
                 paymentsApi: {
                     checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),

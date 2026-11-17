@@ -8,3 +8,7 @@ import { getPaymentMethodConfig } from './registry';
 export function isSavablePaymentMethod(type: PAYMENT_METHOD_TYPES): boolean {
     return getPaymentMethodConfig(type)?.savable ?? false;
 }
+
+export function isDirectDebitPaymentMethod(type: PAYMENT_METHOD_TYPES): boolean {
+    return getPaymentMethodConfig(type)?.directDebit ?? false;
+}

@@ -1,5 +1,5 @@
-import type { PAYMENT_METHOD_TYPES } from '../constants';
-import { isSavablePaymentMethod } from './helpers';
+import { PAYMENT_METHOD_TYPES } from '../constants';
+import { isDirectDebitPaymentMethod, isSavablePaymentMethod } from './helpers';
 import { type PaymentMethodConfig, paymentMethodRegistry } from './registry';
 
 const rows = Object.entries(paymentMethodRegistry) as [PAYMENT_METHOD_TYPES, PaymentMethodConfig][];
@@ -21,5 +21,12 @@ describe('payment method registry', () => {
 
     it('is what isSavablePaymentMethod reads', () => {
         rows.forEach(([type, config]) => expect(isSavablePaymentMethod(type)).toBe(config.savable));
+    });
+
+    it('marks exactly SEPA and iDEAL as direct debit', () => {
+        const directDebitTypes = rows.map(([type]) => type).filter(isDirectDebitPaymentMethod);
+        expect(new Set(directDebitTypes)).toEqual(
+            new Set([PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL])
+        );
     });
 });

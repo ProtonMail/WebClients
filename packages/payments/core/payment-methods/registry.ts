@@ -12,6 +12,8 @@ export type TelemetryMethodName =
 export type PaymentMethodConfig = {
     /** Whether the system can keep this method on file for subsequent payments. */
     savable: boolean;
+    /** Mirrors backend `PaymentMethodType::isDirectDebit()`. Drives `ProrationMode.Exact` on /check. Not the same as "charged asynchronously". */
+    directDebit: boolean;
     /** Which payment system processes it. Drives the `system` dimension in telemetry. */
     system: PaymentSystem;
     telemetryName: TelemetryMethodName;
@@ -28,36 +30,42 @@ export type PaymentMethodConfig = {
 export const paymentMethodRegistry = {
     [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: {
         savable: true,
+        directDebit: false,
         system: 'chargebee',
         telemetryName: 'card',
         vendorStateKey: 'Card',
     },
     [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: {
         savable: true,
+        directDebit: false,
         system: 'chargebee',
         telemetryName: 'paypal',
         vendorStateKey: 'Paypal',
     },
     [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: {
         savable: true,
+        directDebit: true,
         system: 'chargebee',
         telemetryName: 'sepa',
         vendorStateKey: 'Card',
     },
     [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: {
         savable: true,
+        directDebit: true,
         system: 'chargebee',
         telemetryName: 'ideal',
         vendorStateKey: 'Ideal',
     },
     [PAYMENT_METHOD_TYPES.APPLE_PAY]: {
         savable: true,
+        directDebit: false,
         system: 'chargebee',
         telemetryName: 'apple_pay',
         vendorStateKey: 'Apple',
     },
     [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: {
         savable: true,
+        directDebit: false,
         system: 'chargebee',
         telemetryName: 'google_pay',
         vendorStateKey: 'Google',
@@ -65,18 +73,21 @@ export const paymentMethodRegistry = {
     // in-house QR code and polling, it never goes through the Chargebee iframe
     [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: {
         savable: false,
+        directDebit: false,
         system: 'inhouse',
         telemetryName: 'bitcoin',
         vendorStateKey: 'Bitcoin',
     },
     [PAYMENT_METHOD_TYPES.CASH]: {
         savable: false,
+        directDebit: false,
         system: 'inhouse',
         telemetryName: 'cash',
         vendorStateKey: 'Cash',
     },
     [PAYMENT_METHOD_TYPES.TOKEN]: {
         savable: false,
+        directDebit: false,
         system: 'inhouse',
         telemetryName: 'token',
     },
