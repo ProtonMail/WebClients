@@ -1,6 +1,8 @@
 import { fireEvent } from '@testing-library/dom';
+import type { Mock } from 'vitest';
+import { vi } from 'vitest';
 
-import { setLocation } from '@proton/jest-env/setLocation';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import type {
     BinData,
@@ -27,7 +29,7 @@ import type {
 } from './message-bus';
 import { MessageBus, createMessageBus, getMessageBus, verifySavedCardMessageType } from './message-bus';
 
-window.parent.postMessage = jest.fn();
+window.parent.postMessage = vi.fn();
 
 setLocation('https://account-api.proton.me');
 
@@ -35,16 +37,16 @@ const expectedParentOrigin = 'https://account.proton.me';
 
 let messageBus: MessageBus | null = null;
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     const config: ParentMessagesProps = {
-        onSetConfiguration: jest.fn(),
-        onSubmit: jest.fn(),
-        onSetPaypalPaymentIntent: jest.fn(),
-        onGetHeight: jest.fn(),
-        onGetBin: jest.fn(),
-        onValidateForm: jest.fn(),
-        onVerifySavedCard: jest.fn(),
+        onSetConfiguration: vi.fn(),
+        onSubmit: vi.fn(),
+        onSetPaypalPaymentIntent: vi.fn(),
+        onGetHeight: vi.fn(),
+        onGetBin: vi.fn(),
+        onValidateForm: vi.fn(),
+        onVerifySavedCard: vi.fn(),
     };
 
     createMessageBus(config);
@@ -156,10 +158,10 @@ it('should listen to set configuration event', () => {
         })
     );
     expect(messageBus?.onSetConfiguration).toHaveBeenCalled();
-    const firstArg = (messageBus?.onSetConfiguration as jest.Mock).mock.calls[0][0];
+    const firstArg = (messageBus?.onSetConfiguration as Mock).mock.calls[0][0];
     expect(firstArg).toEqual(event);
 
-    const secondArg = (messageBus?.onSetConfiguration as jest.Mock).mock.calls[0][1];
+    const secondArg = (messageBus?.onSetConfiguration as Mock).mock.calls[0][1];
     expect(secondArg).toBeInstanceOf(Function);
 
     const response: MessageBusResponse<{}> = {
@@ -199,10 +201,10 @@ it('should listen to submit event', () => {
     );
 
     expect(messageBus?.onSubmit).toHaveBeenCalled();
-    const firstArg = (messageBus?.onSubmit as jest.Mock).mock.calls[0][0];
+    const firstArg = (messageBus?.onSubmit as Mock).mock.calls[0][0];
     expect(firstArg).toEqual(event);
 
-    const secondArg = (messageBus?.onSubmit as jest.Mock).mock.calls[0][1];
+    const secondArg = (messageBus?.onSubmit as Mock).mock.calls[0][1];
     expect(secondArg).toBeInstanceOf(Function);
 
     const response: MessageBusResponse<{}> = {
@@ -244,10 +246,10 @@ it('should listen to set paypal payment intent event', () => {
     );
 
     expect(messageBus?.onSetPaypalPaymentIntent).toHaveBeenCalled();
-    const firstArg = (messageBus?.onSetPaypalPaymentIntent as jest.Mock).mock.calls[0][0];
+    const firstArg = (messageBus?.onSetPaypalPaymentIntent as Mock).mock.calls[0][0];
     expect(firstArg).toEqual(event);
 
-    const secondArg = (messageBus?.onSetPaypalPaymentIntent as jest.Mock).mock.calls[0][1];
+    const secondArg = (messageBus?.onSetPaypalPaymentIntent as Mock).mock.calls[0][1];
     expect(secondArg).toBeInstanceOf(Function);
 
     const response: MessageBusResponse<ChargebeeSubmitEventResponse> = {
@@ -289,10 +291,10 @@ it('should listen to get height event', () => {
     );
 
     expect(messageBus?.onGetHeight).toHaveBeenCalled();
-    const firstArg = (messageBus?.onGetHeight as jest.Mock).mock.calls[0][0];
+    const firstArg = (messageBus?.onGetHeight as Mock).mock.calls[0][0];
     expect(firstArg).toEqual(event);
 
-    const secondArg = (messageBus?.onGetHeight as jest.Mock).mock.calls[0][1];
+    const secondArg = (messageBus?.onGetHeight as Mock).mock.calls[0][1];
     expect(secondArg).toBeInstanceOf(Function);
 
     const response: MessageBusResponse<GetHeightResponsePayload> = {
@@ -333,10 +335,10 @@ it('should listen to get bin event', () => {
     );
 
     expect(messageBus?.onGetBin).toHaveBeenCalled();
-    const firstArg = (messageBus?.onGetBin as jest.Mock).mock.calls[0][0];
+    const firstArg = (messageBus?.onGetBin as Mock).mock.calls[0][0];
     expect(firstArg).toEqual(event);
 
-    const secondArg = (messageBus?.onGetBin as jest.Mock).mock.calls[0][1];
+    const secondArg = (messageBus?.onGetBin as Mock).mock.calls[0][1];
     expect(secondArg).toBeInstanceOf(Function);
 
     const response: MessageBusResponse<BinData> = {
@@ -374,10 +376,10 @@ it('should listen to validate form event', () => {
     );
 
     expect(messageBus?.onValidateForm).toHaveBeenCalled();
-    const firstArg = (messageBus?.onValidateForm as jest.Mock).mock.calls[0][0];
+    const firstArg = (messageBus?.onValidateForm as Mock).mock.calls[0][0];
     expect(firstArg).toEqual(event);
 
-    const secondArg = (messageBus?.onValidateForm as jest.Mock).mock.calls[0][1];
+    const secondArg = (messageBus?.onValidateForm as Mock).mock.calls[0][1];
     expect(secondArg).toBeInstanceOf(Function);
 
     const response: MessageBusResponse<FormValidationErrors> = {
@@ -418,10 +420,10 @@ it('should listen to verify saved card event', () => {
 
     expect(messageBus?.onVerifySavedCard).toHaveBeenCalled();
 
-    const firstArg = (messageBus?.onVerifySavedCard as jest.Mock).mock.calls[0][0];
+    const firstArg = (messageBus?.onVerifySavedCard as Mock).mock.calls[0][0];
     expect(firstArg).toEqual(event);
 
-    const secondArg = (messageBus?.onVerifySavedCard as jest.Mock).mock.calls[0][1];
+    const secondArg = (messageBus?.onVerifySavedCard as Mock).mock.calls[0][1];
     expect(secondArg).toBeInstanceOf(Function);
 
     const response: MessageBusResponse<ChargebeeSubmitEventResponse> = {
@@ -575,7 +577,7 @@ it('should send unhandled error message', () => {
 
     expect(window.parent.postMessage).toHaveBeenCalled();
 
-    const postMessageArg = (window.parent.postMessage as jest.Mock).mock.calls[0][0];
+    const postMessageArg = (window.parent.postMessage as Mock).mock.calls[0][0];
     const parsedArg = JSON.parse(postMessageArg);
 
     expect(parsedArg).toEqual({
@@ -597,7 +599,7 @@ it('should report a script that failed long after load on an unrelated error', (
 
     messageBus?.sendUnhandledErrorMessage(new Error('Payment button never became clickable'));
 
-    const parsedArg = JSON.parse((window.parent.postMessage as jest.Mock).mock.calls[0][0]);
+    const parsedArg = JSON.parse((window.parent.postMessage as Mock).mock.calls[0][0]);
 
     expect(parsedArg.error.message).toBe('Payment button never became clickable');
     expect(parsedArg.error.scriptLoadErrors).toBe('https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js');
@@ -609,7 +611,7 @@ it('should report no script failures when every script loaded', () => {
 
     messageBus?.sendUnhandledErrorMessage(new Error('Unrelated failure'));
 
-    const parsedArg = JSON.parse((window.parent.postMessage as jest.Mock).mock.calls[0][0]);
+    const parsedArg = JSON.parse((window.parent.postMessage as Mock).mock.calls[0][0]);
 
     expect(parsedArg.error.scriptLoadErrors).toBeNull();
     expect(parsedArg.error.scriptLoadErrorCount).toBe(0);
@@ -618,7 +620,7 @@ it('should report no script failures when every script loaded', () => {
 const flushListener = () => new Promise((resolve) => setTimeout(resolve, 0));
 
 const getFailureCheckpoint = () => {
-    const calls = (window.parent.postMessage as jest.Mock).mock.calls;
+    const calls = (window.parent.postMessage as Mock).mock.calls;
     const unhandledError = calls
         .map(([message]) => JSON.parse(message))
         .find(({ type }) => type === 'chargebee-unhandled-error');
@@ -639,7 +641,7 @@ const postToIframe = (data: any) =>
     );
 
 it('should report the redacted event when a handler throws', async () => {
-    messageBus!.onGetHeight = jest.fn(() => {
+    messageBus!.onGetHeight = vi.fn(() => {
         throw new Error('Chargebee is not defined');
     });
 
@@ -649,7 +651,10 @@ it('should report the redacted event when a handler throws', async () => {
     const checkpoint = getFailureCheckpoint();
     expect(checkpoint.data.errorMessage).toBe('Chargebee is not defined');
     expect(checkpoint.data.errorName).toBe('Error');
-    expect(JSON.parse(checkpoint.data.eventRawData)).toEqual({ type: 'get-height', correlationId: 'id-7' });
+    expect(JSON.parse(checkpoint.data.eventRawData)).toEqual({
+        type: 'get-height',
+        correlationId: 'id-7',
+    });
 });
 
 it('should ignore a payload that is not valid JSON instead of reporting it', async () => {
@@ -695,7 +700,7 @@ it('should listen to direct debit submit event', () => {
     };
 
     // Mock the onDirectDebitSubmit handler
-    const mockOnDirectDebitSubmit = jest.fn();
+    const mockOnDirectDebitSubmit = vi.fn();
     messageBus!.onDirectDebitSubmit = mockOnDirectDebitSubmit;
 
     fireEvent(
@@ -742,8 +747,17 @@ it('should send ideal authorized message on both the legacy and the generic apm 
 
     messageBus?.sendIdealAuthorizedMessage(data);
 
-    expectPostedMessage(1, { type: 'ideal-authorized', status: 'success', data });
-    expectPostedMessage(2, { type: 'apm-authorized', method: 'ideal', status: 'success', data });
+    expectPostedMessage(1, {
+        type: 'ideal-authorized',
+        status: 'success',
+        data,
+    });
+    expectPostedMessage(2, {
+        type: 'apm-authorized',
+        method: 'ideal',
+        status: 'success',
+        data,
+    });
 });
 
 it('should send ideal failed message on both the legacy and the generic apm event', () => {
@@ -752,19 +766,42 @@ it('should send ideal failed message on both the legacy and the generic apm even
     messageBus?.sendIdealFailedMessage(error);
 
     expectPostedMessage(1, { type: 'ideal-failed', status: 'failure', error });
-    expectPostedMessage(2, { type: 'apm-failed', method: 'ideal', status: 'failure', error });
+    expectPostedMessage(2, {
+        type: 'apm-failed',
+        method: 'ideal',
+        status: 'failure',
+        error,
+    });
 });
 
 it('should send ideal clicked message on both the legacy and the generic apm event', () => {
     messageBus?.sendIdealClickedMessage();
 
-    expectPostedMessage(1, { type: 'ideal-clicked', status: 'success', data: {} });
-    expectPostedMessage(2, { type: 'apm-clicked', method: 'ideal', status: 'success', data: {} });
+    expectPostedMessage(1, {
+        type: 'ideal-clicked',
+        status: 'success',
+        data: {},
+    });
+    expectPostedMessage(2, {
+        type: 'apm-clicked',
+        method: 'ideal',
+        status: 'success',
+        data: {},
+    });
 });
 
 it('should send ideal cancelled message on both the legacy and the generic apm event', () => {
     messageBus?.sendIdealCancelledMessage();
 
-    expectPostedMessage(1, { type: 'ideal-cancelled', status: 'success', data: {} });
-    expectPostedMessage(2, { type: 'apm-cancelled', method: 'ideal', status: 'success', data: {} });
+    expectPostedMessage(1, {
+        type: 'ideal-cancelled',
+        status: 'success',
+        data: {},
+    });
+    expectPostedMessage(2, {
+        type: 'apm-cancelled',
+        method: 'ideal',
+        status: 'success',
+        data: {},
+    });
 });

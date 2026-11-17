@@ -1,8 +1,9 @@
+import { vi } from 'vitest';
 const getInjectedScripts = () =>
     Array.from(document.head.querySelectorAll('script')).filter((script) => script.src.includes('applepay.cdn-apple'));
 
 const importFresh = async () => {
-    jest.resetModules();
+    vi.resetModules();
     return (await import('./loadApplePaySdk')).loadApplePaySdk;
 };
 
@@ -66,13 +67,23 @@ describe('loadApplePaySdk', () => {
     });
 
     it('resolves when the script neither loads nor errors', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
+        // happy-dom errors the script tag right away, so keep it out of the DOM to get one that never settles.
+        const appendChild = vi.spyOn(document.head, 'appendChild').mockImplementation((node) => node);
         const loadApplePaySdk = await importFresh();
 
         const load = loadApplePaySdk();
-        jest.runAllTimers();
+        let settled = false;
+        void load.then(() => {
+            settled = true;
+        });
 
+        await vi.advanceTimersByTimeAsync(9999);
+        expect(settled).toBe(false);
+
+        await vi.advanceTimersByTimeAsync(1);
         await expect(load).resolves.toBeUndefined();
-        jest.useRealTimers();
+        appendChild.mockRestore();
+        vi.useRealTimers();
     });
 });

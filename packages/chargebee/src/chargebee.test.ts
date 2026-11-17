@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import type { ChargebeeInstanceConfiguration } from '../lib/types';
 import {
     CHARGEBEE_LOAD_TIMEOUT,
@@ -11,7 +13,7 @@ import { getCheckpoints, resetCheckpoints } from './checkpoints';
 
 beforeEach(() => {
     (global as any).Chargebee = {
-        init: jest.fn().mockReturnValue({
+        init: vi.fn().mockReturnValue({
             chargebeeMock: true,
         }),
     };
@@ -62,8 +64,8 @@ describe('isChargebeeLoaded', () => {
 
 describe('pollUntilLoaded', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.useFakeTimers();
+        vi.clearAllMocks();
+        vi.useFakeTimers();
         window.__chargebeeScriptErrors = [];
         window.__chargebeeScriptFailed = false;
 
@@ -75,8 +77,8 @@ describe('pollUntilLoaded', () => {
     });
 
     afterEach(() => {
-        jest.useRealTimers();
-        jest.restoreAllMocks();
+        vi.useRealTimers();
+        vi.restoreAllMocks();
         delete (performance as any).getEntriesByType;
         document.head.querySelectorAll('script').forEach((script) => script.remove());
     });
@@ -85,7 +87,7 @@ describe('pollUntilLoaded', () => {
         (global as any).Chargebee = {};
 
         const promise = pollUntilLoaded();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBeUndefined();
     });
@@ -97,13 +99,13 @@ describe('pollUntilLoaded', () => {
             resolved = true;
         }); // Set flag when resolved
 
-        await jest.advanceTimersByTimeAsync(20000);
+        await vi.advanceTimersByTimeAsync(20000);
 
         // Check that the promise has not resolved yet
         expect(resolved).toBe(false); // This line checks that the promise is still pending
 
         (global as any).Chargebee = {};
-        await jest.advanceTimersByTimeAsync(1000);
+        await vi.advanceTimersByTimeAsync(1000);
 
         await expect(promise).resolves.toBeUndefined();
     });
@@ -116,7 +118,7 @@ describe('pollUntilLoaded', () => {
             reason = error;
         });
 
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         return reason;
     };
@@ -124,7 +126,12 @@ describe('pollUntilLoaded', () => {
     // jsdom has no resource timing, so it is provided rather than spied on.
     const withResourceTimings = (names: string[]) => {
         (performance as any).getEntriesByType = () =>
-            names.map((name) => ({ name, startTime: 1, duration: 2, responseEnd: 3 }));
+            names.map((name) => ({
+                name,
+                startTime: 1,
+                duration: 2,
+                responseEnd: 3,
+            }));
     };
 
     it('should report that the request never completed when it is missing from resource timing', async () => {
@@ -194,10 +201,10 @@ describe('pollUntilLoaded', () => {
         });
 
         // A slow request that only fails after waiting has started.
-        await jest.advanceTimersByTimeAsync(5000);
+        await vi.advanceTimersByTimeAsync(5000);
         window.__chargebeeScriptFailed = true;
         window.__chargebeeScriptErrors = ['https://js.chargebee.com/v2/chargebee.js'];
-        await jest.advanceTimersByTimeAsync(1000);
+        await vi.advanceTimersByTimeAsync(1000);
 
         expect(reason).toEqual(new Error('Chargebee script failed to load'));
 
@@ -246,7 +253,7 @@ describe('pollUntilLoaded', () => {
         // Timers firing far later than asked, as they do in a hidden or offscreen frame.
         const clampedStep = 5000;
         for (let elapsed = 0; elapsed < CHARGEBEE_LOAD_TIMEOUT; elapsed += clampedStep) {
-            await jest.advanceTimersByTimeAsync(clampedStep);
+            await vi.advanceTimersByTimeAsync(clampedStep);
         }
 
         await expect(promise).rejects.toThrow();

@@ -1,7 +1,11 @@
+import { vi } from 'vitest';
+
 import { getApplePayCapabilities } from './getApplePayCapabilities';
 import { loadApplePaySdk } from './loadApplePaySdk';
 
-jest.mock('./loadApplePaySdk', () => ({ loadApplePaySdk: jest.fn(async () => {}) }));
+vi.mock('./loadApplePaySdk', () => ({
+    loadApplePaySdk: vi.fn(async () => {}),
+}));
 
 const setApplePaySession = ({
     canMakePayments = true,
@@ -31,8 +35,10 @@ describe('getApplePayCapabilities', () => {
     });
 
     it("loads Apple's SDK first, as it is what defines ApplePaySession outside Safari", async () => {
-        jest.mocked(loadApplePaySdk).mockImplementationOnce(async () =>
-            setApplePaySession({ paymentCredentialStatus: 'paymentCredentialsAvailable' })
+        vi.mocked(loadApplePaySdk).mockImplementationOnce(async () =>
+            setApplePaySession({
+                paymentCredentialStatus: 'paymentCredentialsAvailable',
+            })
         );
 
         await expect(getApplePayCapabilities()).resolves.toBe(true);
@@ -40,7 +46,10 @@ describe('getApplePayCapabilities', () => {
 
     describe('with ApplePaySession', () => {
         it('reports unavailable when the device cannot pay', async () => {
-            setApplePaySession({ canMakePayments: false, paymentCredentialStatus: 'paymentCredentialsAvailable' });
+            setApplePaySession({
+                canMakePayments: false,
+                paymentCredentialStatus: 'paymentCredentialsAvailable',
+            });
             await expect(getApplePayCapabilities()).resolves.toBe(false);
         });
 

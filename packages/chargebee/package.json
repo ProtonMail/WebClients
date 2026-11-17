@@ -15,9 +15,8 @@
         "lint": "oxlint --quiet",
         "serve": "serve dist -p 5173",
         "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
-        "test": "jest",
-        "test:ci": "jest --runInBand --ci --logHeapUsage",
-        "test:dev": "jest --watch"
+        "test": "vitest",
+        "test:ci": "vitest run"
     },
     "dependencies": {
         "@proton/styles": "workspace:^",
@@ -25,18 +24,14 @@
     },
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^8.0.0",
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/dom": "catalog:",
-        "@testing-library/jest-dom": "catalog:",
-        "@types/jest": "catalog:",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
         "concurrently": "^10.0.7",
-        "jest": "catalog:",
-        "jest-junit": "catalog:",
+        "happy-dom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "postcss": "catalog:",
@@ -44,6 +39,7 @@
         "typescript": "catalog:",
         "vite": "catalog:",
         "vite-plugin-mkcert": "^1.17.12",
-        "vite-plugin-singlefile": "^2.3.4"
+        "vite-plugin-singlefile": "^2.3.4",
+        "vitest": "catalog:"
     }
 }
