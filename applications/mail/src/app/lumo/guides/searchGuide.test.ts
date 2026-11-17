@@ -2,7 +2,7 @@ import { indexedESStatus } from '../helpers/navigation.test.helpers';
 import { buildMailSearchGuide, buildStandaloneMailSearchGuide } from './searchGuide';
 
 const SUBSTRING_CLAIM = 'There is no OR, and no operators of any kind.';
-const OPERATOR_CLAIM = '`hello | world` — OR';
+const OPERATOR_CLAIM = 'Casting a wide net here: several plain searches, one short word each.';
 
 describe('buildMailSearchGuide', () => {
     it('teaches substring matching when Encrypted Search will run the query', () => {
@@ -15,7 +15,7 @@ describe('buildMailSearchGuide', () => {
     it.each([
         ['no index on this device', { dbExists: false }],
         ['the user switched it off', { esEnabled: false }],
-    ])('teaches the server operator syntax when %s', (_case, esStatus) => {
+    ])('teaches several plain searches when %s', (_case, esStatus) => {
         const guide = buildMailSearchGuide(indexedESStatus(esStatus));
 
         expect(guide).toContain(OPERATOR_CLAIM);
@@ -30,12 +30,21 @@ describe('buildMailSearchGuide', () => {
         );
     });
 
-    // book -> booking holds under ES and is false against the server, which matches whole tokens.
-    it('reverses the short-stem advice on the operator path', () => {
-        expect(buildMailSearchGuide(indexedESStatus())).toContain('a short stem catches more');
-        expect(buildMailSearchGuide(indexedESStatus({ esEnabled: false }))).toContain(
-            'Matching is by whole TOKEN, not by substring'
-        );
+    // On the server a plain word matches inside longer words and any operator turns that off, so
+    // `receipt`, `order` and `ticket` as three searches find mail one OR of them misses.
+    it('widens with several plain searches instead of an OR', () => {
+        const guide = buildMailSearchGuide(indexedESStatus({ esEnabled: false }));
+
+        expect(guide).toContain('not one combined query');
+        expect(guide).not.toContain('`invoice | receipt | payment | statement`');
+    });
+
+    it('drops the operators that were never checked against the server', () => {
+        const guide = buildMailSearchGuide(indexedESStatus({ esEnabled: false }));
+
+        expect(guide).not.toContain('brackets group');
+        expect(guide).not.toContain('anchors');
+        expect(guide).not.toContain('proximity');
     });
 
     it('scopes each operator claim to the engine, so neither variant contradicts the other', () => {
@@ -66,7 +75,7 @@ describe('buildMailSearchGuide', () => {
             'the widest net this engine gives you is a SINGLE short stem'
         );
         expect(buildMailSearchGuide(indexedESStatus({ esEnabled: false }))).toContain(
-            'the widest net this engine gives you is an OR'
+            'the widest net is SEVERAL searches'
         );
     });
 
@@ -89,7 +98,7 @@ describe('buildMailSearchGuide', () => {
 });
 
 const STANDALONE_SUBSTRING_VARIANT = 'Matching on this device: one short stem.';
-const STANDALONE_OPERATOR_VARIANT = 'Matching on this device: widen with operators.';
+const STANDALONE_OPERATOR_VARIANT = 'Matching on this device: several plain searches.';
 
 describe('buildStandaloneMailSearchGuide', () => {
     it('teaches substring matching when Encrypted Search will run the query', () => {
@@ -102,7 +111,7 @@ describe('buildStandaloneMailSearchGuide', () => {
     it.each([
         ['no index on this device', { dbExists: false }],
         ['the user switched it off', { esEnabled: false }],
-    ])('teaches the server operator syntax when %s', (_case, esStatus) => {
+    ])('teaches several plain searches when %s', (_case, esStatus) => {
         const guide = buildStandaloneMailSearchGuide(indexedESStatus(esStatus));
 
         expect(guide).toContain(STANDALONE_OPERATOR_VARIANT);
@@ -114,5 +123,13 @@ describe('buildStandaloneMailSearchGuide', () => {
         expect(
             buildStandaloneMailSearchGuide(indexedESStatus({ contentIndexingDone: false, isDBLimited: true }))
         ).toContain(STANDALONE_SUBSTRING_VARIANT);
+    });
+
+    it('widens with several plain searches and drops the unchecked operators', () => {
+        const guide = buildStandaloneMailSearchGuide(indexedESStatus({ esEnabled: false }));
+
+        expect(guide).toContain('not one combined query');
+        expect(guide).not.toContain('brackets group');
+        expect(guide).not.toContain('anchors');
     });
 });
