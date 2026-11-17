@@ -7966,8 +7966,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9372,7 +9371,7 @@
         "No hemos podido procesar tu pago."
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "Hemos encontrado algunas listas de correo que no lees. Puedes darte de baja de ellas con un solo clic."
+        "Hemos detectado algunas listas de correo que no lees. Puedes darte de baja de ellas con un solo clic."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Tenemos planes diseñados específicamente para usuarios como tú que necesitan varias direcciones de correo electrónico."
@@ -9800,6 +9799,13 @@
       ],
       "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
         "Chatea con ${ LUMO_SHORT_APP_NAME } para buscar, leer, organizar y redactar tus correos."
+      ],
+      "${ n } unread message": [
+        "${ n } mensaje sin leer",
+        "${ n } mensajes sin leer"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Ya no se ofrecen lugares como asistentes de redacción"
       ]
     },
     "info": {
@@ -10943,7 +10949,7 @@
         "Buscar en"
       ],
       "Select all ${ count } unused sender": [
-        "Seleccionar ${ count } remitente(s) sin usar",
+        "Seleccionar ${ count } remitente sin usar",
         "Seleccionar los ${ count } remitentes sin usar"
       ],
       "Select which Gmail address to connect": [
@@ -17146,7 +17152,7 @@
         "Iniciar el proceso de importación"
       ],
       "Start with a cleaner Inbox": [
-        "Empieza con una bandeja de entrada más limpia"
+        "Empieza por ordenar tu bandeja de entrada"
       ],
       "Storage capacity warning": [
         "Advertencia de capacidad de almacenamiento"
@@ -17993,6 +17999,73 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Código"
+      ],
+      "2x Basic usage": [
+        "2x uso Básico"
+      ],
+      "5x Plus usage": [
+        "Uso de 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acceso con API, con ${ credit } de crédito mensual"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acceso API, con un crédito mensual de ${ credit } por usuario."
+      ],
+      "Everything in Basic, and:": [
+        "Todo en Básico, y:"
+      ],
+      "Everything in Free, and:": [
+        "Todo en Gratis, y:"
+      ],
+      "Everything in Plus, and:": [
+        "Todo sobre Plus, y:"
+      ],
+      "Extended image generation": [
+        "Generación extendida de imágenes"
+      ],
+      "Includes:": [
+        "Incluye:"
+      ],
+      "Limited image generation": [
+        "Generación limitada de imágenes"
+      ],
+      "Limited messages and chat history": [
+        "Mensajes limitados e historial de conversaciones"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilidades limitadas, Proyectos y tareas programadas"
+      ],
+      "Maximum image generation": [
+        "Generación máxima de imágenes"
+      ],
+      "Maximum Skills and Projects": [
+        "Mayores habilidades y Proyectos"
+      ],
+      "More image generation": [
+        "Más generación de imágenes"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Más habilidades, Proyectos y tareas programadas"
+      ],
+      "More usage": [
+        "Uso mayor"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Por codificación y construcción"
+      ],
+      "For everyday chats": [
+        "Por conversaciones diarias"
+      ],
+      "For getting more done": [
+        "Por hacer más"
       ]
     }
   }

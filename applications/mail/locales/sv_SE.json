@@ -1792,6 +1792,9 @@
       ],
       "Previous contact": [
         "Tidigare kontakt"
+      ],
+      "Write ${ count } logs": [
+        "Skriv ${ count } loggar"
       ]
     },
     "action": {
@@ -1940,6 +1943,9 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Visar sätt att få hjälp med verifiering"
+      ],
+      "Managed Service Provider": [
+        "Hanterad tjänsteleverantör"
       ]
     },
     "Alert": {
@@ -6285,6 +6291,9 @@
       ],
       "Before ${ MAIL_APP_NAME }, which email did you use most?": [
         "Innan ${ MAIL_APP_NAME }, vilken e-post använde du mest?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Vilket är huvudskälet till att du gick med i ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -7847,8 +7856,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9660,6 +9668,34 @@
       ],
       "You'll use it to sign in from then on. That's the only change.": [
         "Du använder den för att logga in från och med nu. Det är den enda förändringen."
+      ],
+      "${ n } unread message": [
+        "${ n } oläst meddelande",
+        "${ n } olästa meddelanden"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Efter uppdatering, din Mac kan komma att fråga efter ett lösenord. Skriv lösenordet du använder för att låsa upp din Mac, klicka sedan på Tillåt Alltid för att fortsätta vara inloggad. ${ learnMore }"
+      ],
+      "Change your list density": [
+        "Ändra din listtäthet"
+      ],
+      "Change your mailbox layout": [
+        "Ändra din mejlboxs layout"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Gör ett ${ kind } till ${ recipient }"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Markera hela ${ place } som oläst"
+      ],
+      "Revise the ${ draft }": [
+        "Revidera ${ draft }"
+      ],
+      "Searched your mail": [
+        "Sökte din e-post"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Berätta för mig när du är borta och vad du vill att det ska stå, och du får se allting innan det sparas."
       ]
     },
     "info": {
@@ -9917,6 +9953,9 @@
       ],
       "Star": [
         "Stjärnmärk"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Öppna ${ LUMO_SHORT_APP_NAME } / fokusinmatning"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -9953,6 +9992,9 @@
       ],
       "Message shortcuts": [
         "Meddelandegenvägar"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } genvägar"
       ]
     },
     "Label": {
@@ -11027,6 +11069,12 @@
       ],
       "Until time": [
         "Tills tiden är inne"
+      ],
+      "Log performance": [
+        "Logprestanda"
+      ],
+      "Sum of write() calls": [
+        "Summan av write()-anrop"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13120,6 +13168,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Har du ångrat dig efter försöksperioden** Avbryt inom 30 dagar från din första betalning och vi kommer att betala tillbaka för den oanvända tiden."
       ]
     },
     "Option": {
@@ -13555,6 +13606,9 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Denna prenumeration kan inte slutföras just nu. Försök igen."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Genom att byta godkänner du våra ${ termsLink }."
       ]
     },
     "Payments.Error": {
@@ -17263,6 +17317,9 @@
       ],
       "You can't change your own roles. Ask another admin to change them.": [
         "Du kan inte ändra dina egna roller. Be en annan administratör att ändra dem."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Uppgradera till en stödd version för att använda administratörroller."
       ]
     },
     "Validation": {
@@ -17772,6 +17829,18 @@
       ],
       "More Skills, Projects, and scheduled tasks": [
         "Mera Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "2x Basic usage": [
+        "2X Basic användning"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API tillgång, med ${ credit } en månads kredit"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API tillgång, med ${ credit } en månads kredit per användare"
+      ],
+      "More usage": [
+        "Mer användning"
       ]
     },
     "lumo_2026: Info": {
@@ -17788,6 +17857,11 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Genom att bekräfta, ger du ${ BRAND_NAME } och Stripe, vår betalningstjänsteleverantör, tillstånd att dra framtida betalningar för din prenumeration från detta bankkontot via SEPA-autogiro, och din bank tillstånd att genomföra dessa dragningar. Din första betalning sker nu via ${ IDEAL_WERO_BRAND_NAME }. Din prenumeration förnyas automatiskt, tills du säger upp den; vi meddelar dig inför varje dragning. Vid betalningar via autogiro kan du i enlighet med villkoren i ditt avtal med banken begära återbetalning från din bank inom 8 veckor från dragningsdatumet. Detta gäller inte den betalning via ${ IDEAL_WERO_BRAND_NAME } som du genomför nu."
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Ändra namn ${ label } till …"
       ]
     }
   }

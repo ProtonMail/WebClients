@@ -1786,6 +1786,18 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Dismiss notification": [
+        "Descartar notificación"
+      ],
+      "Go to today": [
+        "Ir al día de hoy"
+      ],
+      "Next contact": [
+        "Siguiente contacto"
+      ],
+      "Previous contact": [
+        "Contacto anterior"
       ]
     },
     "action": {
@@ -7954,8 +7966,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9788,6 +9799,13 @@
       ],
       "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
         "Converse con ${ LUMO_SHORT_APP_NAME } para buscar, leer, organizar y redactar sus correos."
+      ],
+      "${ n } unread message": [
+        "${ n } mensaje sin leer",
+        "${ n } mensajes sin leer"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Ya no se venden licencias del asistente de escritura."
       ]
     },
     "info": {
@@ -17981,6 +17999,73 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Código"
+      ],
+      "2x Basic usage": [
+        "El doble de uso que el plan Básico"
+      ],
+      "5x Plus usage": [
+        "Uso 5 veces superior al plan Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acceso con API, con ${ credit } de crédito mensual"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acceso API, con un crédito mensual de ${ credit } por usuario."
+      ],
+      "Everything in Basic, and:": [
+        "Todo en Básico, y:"
+      ],
+      "Everything in Free, and:": [
+        "Todo en Gratis, y:"
+      ],
+      "Everything in Plus, and:": [
+        "Todo en Plus, y:"
+      ],
+      "Extended image generation": [
+        "Generación extendida de imágenes"
+      ],
+      "Includes:": [
+        "Incluye:"
+      ],
+      "Limited image generation": [
+        "Generación limitada de imágenes"
+      ],
+      "Limited messages and chat history": [
+        "Mensajes limitados e historial de conversaciones"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilidades, proyectos y tareas programadas con límites"
+      ],
+      "Maximum image generation": [
+        "Generación máxima de imágenes"
+      ],
+      "Maximum Skills and Projects": [
+        "Cantidad máxima de Habilidades y Proyectos"
+      ],
+      "More image generation": [
+        "Más generación de imágenes"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Más Habilidades, Proyectos y tareas programadas"
+      ],
+      "More usage": [
+        "Mayor uso"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Para programar y crear aplicaciones"
+      ],
+      "For everyday chats": [
+        "Para conversaciones cotidianas"
+      ],
+      "For getting more done": [
+        "Para lograr más"
       ]
     }
   }
