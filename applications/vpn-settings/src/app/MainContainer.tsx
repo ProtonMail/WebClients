@@ -78,8 +78,6 @@ import CreditsSection from '@proton/payments-ui/containers/payments/CreditsSecti
 import PlansSection from '@proton/payments-ui/containers/payments/PlansSection';
 import PaymentMethodsSection from '@proton/payments-ui/containers/payments/methods/PaymentMethodsSection';
 import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
-import UpgradeVpnSection from '@proton/payments-ui/containers/payments/subscription/UpgradeVpnSection';
-import YourPlanSection from '@proton/payments-ui/containers/payments/subscription/YourPlanSection';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions/AutomaticSubscriptionModal';
 import {
@@ -89,9 +87,10 @@ import {
 import { SafetyReviewRoute } from '@proton/safety-review/components/SafetyReviewRoute';
 import { AutocompleteSettingsSearch } from '@proton/settings/SettingsSearch';
 import RecoverySettingsRouter from '@proton/settings/containers/account/recovery/RecoverySettingsRouter';
+import UpgradeVpnSection from '@proton/settings/containers/account/yourPlan/UpgradeVpnSection';
+import YourPlanSection from '@proton/settings/containers/account/yourPlan/YourPlanSection';
 import OrganizationSettingsRouter from '@proton/settings/containers/organization/OrganizationSettingsRouter';
 import { getOrganizationAppRoutes } from '@proton/settings/containers/organization/routes';
-import PendingInvitationsPanel from '@proton/settings/containers/pendingInvitations/PendingInvitationsPanel';
 import type {
     AccountRecoveryRouterFlags,
     Flags,
@@ -378,10 +377,7 @@ const MainContainer: FunctionComponent = () => {
                                         <AutomaticSubscriptionModal />
                                         <PrivateMainSettingsArea config={vpnRoutes.dashboard}>
                                             <PlansSection app={app} />
-                                            <YourPlanSection
-                                                app={app}
-                                                PendingInvitationsPanel={PendingInvitationsPanel}
-                                            />
+                                            <YourPlanSection app={app} />
                                             <UpgradeVpnSection app={app} />
                                             <SubscriptionsSection />
                                             <PaymentMethodsSection app={app} />

@@ -10,11 +10,10 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import useLoad from '@proton/components/hooks/useLoad';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
+import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
-
-import { PaymentsContextProvider } from '../../../ui/context/PaymentContext';
 
 import './YourPlanSection.scss';
 

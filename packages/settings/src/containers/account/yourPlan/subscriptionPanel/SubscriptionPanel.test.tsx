@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
@@ -10,7 +11,6 @@ import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payme
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { renderWithProviders } from '../../../../../testing/renderWithProviders';
 import SubscriptionPanel from './SubscriptionPanel';
 
 jest.mock('@proton/shared/lib/vpn/vpnServers', () => ({

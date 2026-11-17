@@ -56,17 +56,16 @@ import InvoicesSection from '@proton/payments-ui/containers/invoices/InvoicesSec
 import CreditsSection from '@proton/payments-ui/containers/payments/CreditsSection';
 import PlansSection from '@proton/payments-ui/containers/payments/PlansSection';
 import PaymentMethodsSection from '@proton/payments-ui/containers/payments/methods/PaymentMethodsSection';
-import YourPlanSection from '@proton/payments-ui/containers/payments/subscription/YourPlanSection';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions/AutomaticSubscriptionModal';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 
-import PendingInvitationsPanel from '../pendingInvitations/PendingInvitationsPanel';
 import { DashboardLinkRedirect } from './dashboard/DashboardLinkRedirect';
 import AccountDashboard from './dashboard/dashboard';
 import RecoverySettingsRouter from './recovery/RecoverySettingsRouter';
 import type { getAccountAppRoutes } from './routes';
+import YourPlanSection from './yourPlan/YourPlanSection';
 
 const AccountSettingsRouter = ({
     redirect,
@@ -177,7 +176,7 @@ const AccountSettingsRouter = ({
                     <AutomaticSubscriptionModal />
                     <PrivateMainSettingsArea config={dashboard}>
                         <YourStorageSection app={app} />
-                        <YourPlanSection app={app} PendingInvitationsPanel={PendingInvitationsPanel} />
+                        <YourPlanSection app={app} />
                         <AssistantToggle />
                         <SubscriptionsSection />
                         <PaymentMethodsSection app={app} />
