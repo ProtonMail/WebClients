@@ -281,7 +281,7 @@ describe('createClientToolExecutor', () => {
         });
 
         it('feeds a handler failure back as a recoverable error, keeping the call name and cause out of it', async () => {
-            const onTrace = jest.fn();
+            const onTrace = vi.fn();
             const { executor } = setup({
                 onTrace,
                 handlers: {

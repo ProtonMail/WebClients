@@ -7,7 +7,7 @@ describe('focusLumoPrompt', () => {
         const draft = 'archive the';
         const { container } = render(
             <div id="drawer-app-lumo">
-                <textarea data-lumo-prompt value={draft} onChange={jest.fn()} />
+                <textarea data-lumo-prompt value={draft} onChange={vi.fn()} />
             </div>
         );
         const textarea = container.querySelector('textarea')!;

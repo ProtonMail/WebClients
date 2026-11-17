@@ -5,7 +5,7 @@ import LumoAgentPanel from './LumoAgentPanel';
 import type { LumoAgentDrawerValue } from './lumoAgentDrawerContext';
 import LumoAgentDrawerContext from './lumoAgentDrawerContext';
 
-jest.mock('./LumoAgentPanel', () => ({ __esModule: true, default: jest.fn(() => null) }));
+vi.mock('./LumoAgentPanel', () => ({ default: vi.fn(() => null) }));
 
 describe('ConnectedLumoAgentPanel', () => {
     it('hands the conversation and the host callbacks to the panel', () => {
@@ -15,18 +15,18 @@ describe('ConnectedLumoAgentPanel', () => {
             lastChainEnd: null,
             hasConversation: false,
             draft: 'archive the',
-            setDraft: jest.fn(),
-            send: jest.fn(),
-            confirm: jest.fn(),
-            cancel: jest.fn(),
-            stop: jest.fn(),
-            clear: jest.fn(),
-            onSuggestionPicked: jest.fn(),
+            setDraft: vi.fn(),
+            send: vi.fn(),
+            confirm: vi.fn(),
+            cancel: vi.fn(),
+            stop: vi.fn(),
+            clear: vi.fn(),
+            onSuggestionPicked: vi.fn(),
             cardRenderers: {},
             serverToolMeta: {},
             suggestions: [],
         };
-        const onClose = jest.fn();
+        const onClose = vi.fn();
 
         render(
             <LumoAgentDrawerContext.Provider value={drawer}>
@@ -39,7 +39,7 @@ describe('ConnectedLumoAgentPanel', () => {
             </LumoAgentDrawerContext.Provider>
         );
 
-        expect(jest.mocked(LumoAgentPanel).mock.lastCall![0]).toEqual({
+        expect(vi.mocked(LumoAgentPanel).mock.lastCall![0]).toEqual({
             draft: 'archive the',
             onDraftChange: drawer.setDraft,
             items: drawer.items,
