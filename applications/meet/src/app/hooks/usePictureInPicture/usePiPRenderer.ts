@@ -8,9 +8,15 @@ import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { drawMessageOverlay, drawParticipantPlaceholder, drawVideoWithAspectRatio } from './drawingUtils';
 import type { DrawablePiPTile, PiPOverlayMessage } from './types';
 
+interface RenderedVideo {
+    element: HTMLVideoElement;
+    track: LiveKitTrack;
+}
+
 export function usePiPRenderer() {
     const animationFrameRef = useRef<number>(undefined);
-    const videoElementsRef = useRef<Map<string, HTMLVideoElement>>(new Map());
+    const renderGenerationRef = useRef(0);
+    const renderedVideosRef = useRef<Map<string, RenderedVideo>>(new Map());
     const classColorsRef = useRef<Map<string, string>>(new Map());
 
     const getClassColor = useCallback((className: string, property: 'backgroundColor' | 'color') => {
@@ -31,76 +37,67 @@ export function usePiPRenderer() {
         return color;
     }, []);
 
-    const cleanupVideoElement = useCallback((videoElement: HTMLVideoElement) => {
+    const cleanupRenderedVideo = useCallback(({ element, track }: RenderedVideo) => {
         try {
-            videoElement.pause();
-            videoElement.srcObject = null;
-            videoElement.load();
-
-            if (videoElement.parentNode) {
-                videoElement.parentNode.removeChild(videoElement);
-            }
+            track.detach(element);
+            element.pause();
+            element.srcObject = null;
+            element.load();
+            element.remove();
         } catch (error) {
             logger.error('Error cleaning up video element:', error);
         }
     }, []);
 
     const cleanupAllVideoElements = useCallback(() => {
-        for (const videoElement of videoElementsRef.current.values()) {
-            cleanupVideoElement(videoElement);
+        for (const renderedVideo of renderedVideosRef.current.values()) {
+            cleanupRenderedVideo(renderedVideo);
         }
-        videoElementsRef.current.clear();
-    }, [cleanupVideoElement]);
+        renderedVideosRef.current.clear();
+    }, [cleanupRenderedVideo]);
 
     const cleanupStaleVideoElements = useCallback(
         (activeTrackIds: Set<string>) => {
-            const elementsToRemove: string[] = [];
-
-            for (const [trackId, videoElement] of videoElementsRef.current.entries()) {
+            for (const [trackId, renderedVideo] of renderedVideosRef.current.entries()) {
                 if (!activeTrackIds.has(trackId)) {
-                    cleanupVideoElement(videoElement);
-                    elementsToRemove.push(trackId);
+                    cleanupRenderedVideo(renderedVideo);
+                    renderedVideosRef.current.delete(trackId);
                 }
             }
-
-            elementsToRemove.forEach((trackId) => {
-                videoElementsRef.current.delete(trackId);
-            });
         },
-        [cleanupVideoElement]
+        [cleanupRenderedVideo]
     );
 
-    // Create and manage video elements
     const createVideoElement = useCallback((track: LiveKitTrack, trackId: string) => {
-        let videoElement = videoElementsRef.current.get(trackId);
+        let renderedVideo = renderedVideosRef.current.get(trackId);
 
-        if (!videoElement) {
-            videoElement = document.createElement('video');
-            videoElement.muted = true;
-            videoElement.autoplay = true;
-            videoElement.playsInline = true;
-            videoElement.crossOrigin = 'anonymous';
+        if (!renderedVideo) {
+            const element = document.createElement('video');
+            element.muted = true;
+            element.autoplay = true;
+            element.playsInline = true;
+            element.crossOrigin = 'anonymous';
 
-            videoElementsRef.current.set(trackId, videoElement);
+            renderedVideo = { element, track };
+            renderedVideosRef.current.set(trackId, renderedVideo);
         }
 
+        const videoElement = renderedVideo.element;
         const hasMediaTrack = !!track.mediaStreamTrack;
         const currentStream = videoElement.srcObject as MediaStream | null;
         const isAttached = currentStream?.getTracks().includes(track.mediaStreamTrack!);
 
         if (hasMediaTrack && !isAttached) {
             if (currentStream) {
-                track.detach(videoElement);
+                renderedVideo.track.detach(videoElement);
             }
 
-            // Attach the track
             track.attach(videoElement);
+            renderedVideo.track = track;
 
             const playVideo = async () => {
                 try {
-                    if (videoElement) {
-                        await videoElement.play();
-                    }
+                    await videoElement.play();
                 } catch (error) {
                     logger.error('Failed to play video:', error);
                 }
@@ -246,7 +243,15 @@ export function usePiPRenderer() {
         [createVideoElement, ensureVideoPlaying, cleanupStaleVideoElements, getClassColor]
     );
 
-    // Start rendering loop
+    const cancelRenderLoop = useCallback(() => {
+        renderGenerationRef.current += 1;
+
+        if (animationFrameRef.current !== undefined) {
+            cancelAnimationFrame(animationFrameRef.current);
+            animationFrameRef.current = undefined;
+        }
+    }, []);
+
     const startRendering = useCallback(
         (
             canvas: HTMLCanvasElement,
@@ -254,25 +259,27 @@ export function usePiPRenderer() {
             messages: PiPOverlayMessage[],
             participantDecryptedNameMap: Record<string, string>
         ) => {
+            cancelRenderLoop();
+            const generation = renderGenerationRef.current;
+
             const render = () => {
+                if (generation !== renderGenerationRef.current) {
+                    return;
+                }
+
                 drawPiP(canvas, tilesToDisplay, messages, participantDecryptedNameMap);
 
                 animationFrameRef.current = requestAnimationFrame(render);
             };
             render();
         },
-        [drawPiP]
+        [drawPiP, cancelRenderLoop]
     );
 
-    // Stop rendering loop and clean up all resources
     const stopRendering = useCallback(() => {
-        if (animationFrameRef.current) {
-            cancelAnimationFrame(animationFrameRef.current);
-            animationFrameRef.current = undefined;
-        }
-
+        cancelRenderLoop();
         cleanupAllVideoElements();
-    }, [cleanupAllVideoElements]);
+    }, [cancelRenderLoop, cleanupAllVideoElements]);
 
     return {
         startRendering,
