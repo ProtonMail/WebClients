@@ -62,7 +62,7 @@ describe('serialize', () => {
                 bday: {
                     field: 'bday',
                     value: {
-                        date: new Date(Date.UTC(1999, 5, 9)),
+                        date: new Date(1999, 5, 9),
                     },
                     uid: createContactPropertyUid(),
                 },

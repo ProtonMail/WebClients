@@ -675,7 +675,8 @@
         "lint": "oxlint --quiet",
         "pretty": "oxfmt --write \"lib/**/*.{js,ts,tsx}\"",
         "test": "TZ=UTC vitest run",
-        "test:ci": "pnpm run test --run --silent=passed-only",
+        "test:ci": "pnpm run test --run --silent=passed-only && pnpm run test:tz",
+        "test:tz": "for tz in America/Los_Angeles Pacific/Kiritimati; do TZ=$tz vitest run --silent=passed-only || exit 1; done",
         "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
