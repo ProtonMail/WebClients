@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { RoomContext } from '@livekit/components-react';
-import { LogLevel, Room, setLogLevel } from 'livekit-client';
+import { LogLevel, Room, isE2EESupported, setLogLevel } from 'livekit-client';
 
 import { LiveAnnouncerProvider } from '@proton/components/components/liveAnnouncer/LiveAnnouncerProvider';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
@@ -10,6 +10,7 @@ import { resetActiveDevices } from '@proton/meet/store/slices/deviceManagementSl
 import { isDevOrBlack } from '@proton/shared/lib/env';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { E2eeUnsupportedPage } from '../../components/E2eeUnsupportedPage/E2eeUnsupportedPage';
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
 import { SortedParticipantsProvider } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
@@ -20,7 +21,7 @@ import { createMeetAudioContext } from '../../utils/meet-audio-context';
 import { MeetingAnalyticsProvider } from './MeetingAnalyticsProvider';
 import { ProtonMeetContainer } from './ProtonMeetContainer';
 
-export const WrappedProtonMeetContainer = () => {
+const MeetCallProviders = () => {
     const isMeetVp9Allowed = useFlag('MeetVp9');
     const isMeetHigherBitrate = useFlag('MeetHigherBitrate');
     const isMeetH264 = useFlag('MeetH264');
@@ -133,4 +134,13 @@ export const WrappedProtonMeetContainer = () => {
             </RoomContext.Provider>
         </MeetingAnalyticsProvider>
     );
+};
+
+export const WrappedProtonMeetContainer = () => {
+    // The Room constructor throws on these browsers when given the e2ee options
+    if (!isE2EESupported()) {
+        return <E2eeUnsupportedPage />;
+    }
+
+    return <MeetCallProviders />;
 };
