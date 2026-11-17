@@ -149,7 +149,8 @@ export function resolveClientToolExecutor(
     sendOptions: ForwardedSendOptions,
     dispatch: LumoDispatch,
     getSkillLookupPool: () => string[],
-    getVisibleMessageIds?: () => ReadonlySet<MessageId>
+    getVisibleMessageIds?: () => ReadonlySet<MessageId>,
+    conversationId?: ConversationId
 ): { executor?: ClientToolExecutor; retrieval?: RetrievalToolExecutor } {
     const executors: ClientToolExecutor[] = [];
     let retrieval: RetrievalToolExecutor | undefined;
@@ -210,7 +211,7 @@ export function resolveClientToolExecutor(
     if (sendOptions.clientToolExecutor) {
         executors.push(sendOptions.clientToolExecutor);
     } else if (sendOptions.enableDesktopTools !== false && isDesktopEnvironment()) {
-        executors.push(createDesktopClientToolExecutor());
+        executors.push(createDesktopClientToolExecutor(undefined, { conversationId }));
     }
 
     if (executors.length === 0) {
@@ -322,7 +323,8 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             sendOptions,
             dispatch,
             getCurrentSkillLookupPool,
-            getVisibleMessageIds
+            getVisibleMessageIds,
+            conversationId
         );
         const clientToolExecutor = resolvedExecutor && {
             ...resolvedExecutor,

@@ -147,13 +147,19 @@ async function resumeCheckpoint(
                 }),
             retrievalExecutionState: record.retrieval?.execution,
         };
-        const { executor, retrieval } = resolveClientToolExecutor(sendOptions, store.dispatch, () => {
-            const state = store.getState();
-            const space = state.spaces[record.space.id];
-            const scheduleRefs =
-                space?.spaceType === SpaceType.Schedule ? (space.schedule.skillIdsOrSubSkillRefs ?? []) : [];
-            return getSkillLookupPool(Object.values(state.skills.skills), scheduleRefs);
-        });
+        const { executor, retrieval } = resolveClientToolExecutor(
+            sendOptions,
+            store.dispatch,
+            () => {
+                const state = store.getState();
+                const space = state.spaces[record.space.id];
+                const scheduleRefs =
+                    space?.spaceType === SpaceType.Schedule ? (space.schedule.skillIdsOrSubSkillRefs ?? []) : [];
+                return getSkillLookupPool(Object.values(state.skills.skills), scheduleRefs);
+            },
+            undefined,
+            id
+        );
         await store.dispatch(
             sendMessageWithRedux(api, record.checkpoint.turns, {
                 ...sendOptions,
