@@ -16,6 +16,29 @@ import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Info from '@proton/components/components/link/Info';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
+import MemberActions, {
+    MagicLinkMemberActions,
+    getMemberPermissions,
+} from '@proton/components/containers/members/MemberActions';
+import MemberAddresses from '@proton/components/containers/members/MemberAddresses';
+import MemberFeatures from '@proton/components/containers/members/MemberFeatures';
+import MemberRole from '@proton/components/containers/members/MemberRole';
+import MemberUsageColumnPrompt from '@proton/components/containers/members/UsersAndAddressesSection/MemberUsageColumnPrompt';
+import {
+    LastActivityValue,
+    LastConnectionValue,
+} from '@proton/components/containers/members/UsersAndAddressesSection/MemberUsageValues';
+import UserRowSkeleton from '@proton/components/containers/members/UsersAndAddressesSection/UserRowSkeleton';
+import UsersAndAddressesSectionHeader from '@proton/components/containers/members/UsersAndAddressesSection/UsersAndAddressesSectionHeader';
+import UserTableBadge from '@proton/components/containers/members/UsersAndAddressesSection/UsersTableBadge';
+import UserTableIcon from '@proton/components/containers/members/UsersAndAddressesSection/UsersTableIcon';
+import { getUser2FATagProps } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
+import RoleAssignmentStatusIcon from '@proton/components/containers/members/rolesAndPermissions/RoleAssignmentStatusIcon';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcMinusCircle } from '@proton/icons/icons/IcMinusCircle';
@@ -31,23 +54,6 @@ import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import { getIsMemberDisabled, getIsMemberInvited } from '@proton/shared/lib/keys/memberHelper';
 import clsx from '@proton/utils/clsx';
 
-import Info from '../../../components/link/Info';
-import Table from '../../../components/table/Table';
-import TableBody from '../../../components/table/TableBody';
-import TableCell from '../../../components/table/TableCell';
-import TableRow from '../../../components/table/TableRow';
-import MemberActions, { MagicLinkMemberActions, getMemberPermissions } from '../MemberActions';
-import MemberAddresses from '../MemberAddresses';
-import MemberFeatures from '../MemberFeatures';
-import MemberRole from '../MemberRole';
-import RoleAssignmentStatusIcon from '../rolesAndPermissions/RoleAssignmentStatusIcon';
-import MemberUsageColumnPrompt from './MemberUsageColumnPrompt';
-import { LastActivityValue, LastConnectionValue } from './MemberUsageValues';
-import UserRowSkeleton from './UserRowSkeleton';
-import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
-import UserTableBadge from './UsersTableBadge';
-import UserTableIcon from './UsersTableIcon';
-import { getUser2FATagProps } from './helper';
 import type { UseUserMemberActions } from './useMemberActions';
 
 import './MembersTable.scss';

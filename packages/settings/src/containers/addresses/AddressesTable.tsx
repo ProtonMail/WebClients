@@ -1,18 +1,18 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import AddressStatus from '@proton/components/containers/addresses/AddressStatus';
+import { getPermissions, getStatus } from '@proton/components/containers/addresses/helper';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Member, PartialMemberAddress } from '@proton/shared/lib/interfaces/Member';
 import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-import Table from '../../components/table/Table';
-import TableBody from '../../components/table/TableBody';
-import TableHeader from '../../components/table/TableHeader';
-import TableRow from '../../components/table/TableRow';
 import AddressActions from './AddressActions';
-import AddressStatus from './AddressStatus';
-import { getPermissions, getStatus } from './helper';
 
 interface AddressesTableProps {
     loading: boolean;

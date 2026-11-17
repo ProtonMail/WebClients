@@ -3,26 +3,26 @@ import type { MutableRefObject } from 'react';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import DomainModal from '@proton/components/containers/domains/DomainModal';
+import AdminConsoleSurveyCard from '@proton/components/containers/members/UsersAndAddressesSection/AdminConsoleSurveyCard';
+import UserAndAddressesSectionIntro from '@proton/components/containers/members/UsersAndAddressesSection/UserAndAddressesSectionIntro';
+import { getIsAdminConsoleSurveyEligible } from '@proton/components/containers/members/UsersAndAddressesSection/adminConsoleSurveyEligibility';
+import { planHasUsageColumns } from '@proton/components/containers/members/UsersAndAddressesSection/planHasUsageColumns';
+import AdminRolesOnboardingModal from '@proton/components/containers/members/rolesAndPermissions/AdminRolesOnboardingModal';
+import ScimSetupBannerAndModal from '@proton/components/containers/organization/ScimSetupBannerAndModal';
+import useOrganizationModals from '@proton/components/containers/organization/useOrganizationModals';
+import useOrganizationUnprivatizationModals from '@proton/components/containers/organization/useOrganizationUnprivatizationModals';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import useModalState from '../../../components/modalTwo/useModalState';
-import SettingsParagraph from '../../account/SettingsParagraph';
-import SettingsSectionWide from '../../account/SettingsSectionWide';
-import DomainModal from '../../domains/DomainModal';
-import ScimSetupBannerAndModal from '../../organization/ScimSetupBannerAndModal';
-import useOrganizationModals from '../../organization/useOrganizationModals';
-import useOrganizationUnprivatizationModals from '../../organization/useOrganizationUnprivatizationModals';
-import AdminRolesOnboardingModal from '../rolesAndPermissions/AdminRolesOnboardingModal';
-import AdminConsoleSurveyCard from './AdminConsoleSurveyCard';
 import { MembersLocal } from './MembersLocal';
 import { MembersRemote } from './MembersRemote';
-import UserAndAddressesSectionIntro from './UserAndAddressesSectionIntro';
-import { getIsAdminConsoleSurveyEligible } from './adminConsoleSurveyEligibility';
-import { planHasUsageColumns } from './planHasUsageColumns';
 
 const paginatedMemberThreshold = 250;
 

@@ -9,6 +9,9 @@ import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { SortableList } from '@proton/components/components/dnd/SortableList';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
+import useAddressFlags from '@proton/components/hooks/useAddressFlags';
 import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_FLAGS, ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
@@ -21,19 +24,16 @@ import {
 } from '@proton/shared/lib/interfaces/UserSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { SortableList } from '../../components/dnd/SortableList';
-import useAddressFlags from '../../hooks/useAddressFlags';
-import useKTVerifier from '../keyTransparency/useKTVerifier';
 import AddressesWithUser from './AddressesWithUser';
 
-jest.mock('../../hooks/useEventManager', () => () => ({}));
+jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 
-jest.mock('../../components/upsell/config/useUpsellConfig', () => ({
+jest.mock('@proton/components/components/upsell/config/useUpsellConfig', () => ({
     __esModule: true,
     default: () => ({}),
 }));
 
-jest.mock('../../hooks/mail/usePostSubscriptionTourTelemetry', () => ({
+jest.mock('@proton/components/hooks/mail/usePostSubscriptionTourTelemetry', () => ({
     __esModule: true,
     usePostSubscriptionTourTelemetry: () => {
         return () => undefined;
@@ -48,14 +48,14 @@ const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>
 
 jest.mock('@proton/shared/lib/helpers/ref', () => ({ __esModule: true, getUpsellRef: () => '' }));
 
-jest.mock('../../components/dnd/SortableList');
-const ActualSortableList = jest.requireActual('../../components/dnd/SortableList').SortableList;
+jest.mock('@proton/components/components/dnd/SortableList');
+const ActualSortableList = jest.requireActual('@proton/components/components/dnd/SortableList').SortableList;
 const mockedSortableList = SortableList as jest.MockedFunction<typeof SortableList>;
 
 jest.mock('@proton/account/addresses/hooks');
 const mockedUseAddresses = useAddresses as jest.MockedFunction<typeof useAddresses>;
 
-jest.mock('../../hooks/useAddressFlags');
+jest.mock('@proton/components/hooks/useAddressFlags');
 const mockedUseAddressFlags = useAddressFlags as jest.MockedFunction<typeof useAddressFlags>;
 
 jest.mock('@proton/app-context/useNotifications');
@@ -73,7 +73,7 @@ const mockLoginIdentifierPolicy = (LoginIdentifierPolicy: number) => {
 jest.mock('@proton/account/addressKeys/hooks');
 const mockedUseAddressesKeys = useAddressesKeys as jest.MockedFunction<typeof useAddressesKeys>;
 
-jest.mock('../keyTransparency/useKTVerifier');
+jest.mock('@proton/components/containers/keyTransparency/useKTVerifier');
 const mockedUseKTVerifier = useKTVerifier as jest.MockedFunction<typeof useKTVerifier>;
 
 jest.mock('@proton/unleash/useFlag');
@@ -82,7 +82,7 @@ const mockedUseFlag = useFlag as jest.MockedFunction<any>;
 jest.mock('@proton/account/organizationKey/hooks');
 const mockedUseOrganizationKey = useOrganizationKey as jest.MockedFunction<typeof useOrganizationKey>;
 
-jest.mock('../../components/link/SettingsLink', () => 'string');
+jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
 
 jest.mock('@proton/redux-shared-store/sharedProvider');
 

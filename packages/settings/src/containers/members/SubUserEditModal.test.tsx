@@ -96,11 +96,11 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 jest.mock('@proton/app-context/useSilentApi', () => ({
     useSilentApi: () => jest.fn(),
 }));
-jest.mock('../../hooks/useSpotlightOnFeature', () => ({
+jest.mock('@proton/components/hooks/useSpotlightOnFeature', () => ({
     __esModule: true,
     default: () => ({ show: false, onDisplayed: jest.fn(), onClose: jest.fn() }),
 }));
-jest.mock('./rolesAndPermissions/AdminRolesSpotlight', () => ({
+jest.mock('@proton/components/containers/members/rolesAndPermissions/AdminRolesSpotlight', () => ({
     __esModule: true,
     default: ({ children }: { children: JSX.Element }) => children,
 }));

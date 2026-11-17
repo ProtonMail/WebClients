@@ -8,7 +8,6 @@ import PrivateMainSettingsArea, {
     PrivateMainSettingsAreaBase,
 } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import UsersAndAddressesSection from '@proton/components/containers/members/UsersAndAddressesSection/UsersAndAddressesSection';
 import MultiUserCreationSection from '@proton/components/containers/members/multipleUserCreation/MultiUserCreationSection';
 import OrganizationPasswordPoliciesSection from '@proton/components/containers/organization/OrganizationPasswordPoliciesSection';
 import OrganizationPasswordRemindersSection from '@proton/components/containers/organization/OrganizationPasswordRemindersSection';
@@ -32,6 +31,7 @@ import { GatewayMonitorRoute } from '@proton/vpn/routes/organization/GatewayMoni
 import { GatewaysRoute } from '@proton/vpn/routes/organization/GatewaysRoute';
 import { SharedServersRoute } from '@proton/vpn/routes/organization/SharedServersRoute';
 
+import UsersAndAddressesSection from '../members/UsersAndAddressesSection/UsersAndAddressesSection';
 import { FeatureAccessSection } from './components/FeatureAccessSection';
 import type { getOrganizationAppRoutes } from './routes';
 
