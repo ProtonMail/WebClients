@@ -10,8 +10,8 @@ import { selectUser } from '../user';
 import { selectUserSettings } from '../userSettings';
 import { selectLegacySentinel } from './sentinelSelectors';
 
-const parseUpdateTime = (updateTime: string | null | undefined) => {
-    if (!updateTime) {
+const parseUpdateTime = (updateTime: unknown) => {
+    if (typeof updateTime !== 'string' || !updateTime) {
         return null;
     }
     const date = parseISO(updateTime);
