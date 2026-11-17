@@ -1,5 +1,5 @@
-import type { CSSProperties, HTMLProps, ReactElement, ReactNode, Ref } from 'react';
-import { Children, cloneElement, forwardRef, useCallback, useId, useState } from 'react';
+import type { CSSProperties, HTMLAttributes, HTMLProps, ReactElement, ReactNode, Ref } from 'react';
+import { Children, cloneElement, forwardRef, isValidElement, useCallback, useId, useState } from 'react';
 
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import useIsMounted from '@proton/hooks/useIsMounted';
@@ -166,7 +166,8 @@ const TooltipBase = (
         });
     }
 
-    if (!child) {
+    // The child gets the tooltip handlers and `aria-describedby`
+    if (!isValidElement<HTMLAttributes<HTMLElement>>(child)) {
         return null;
     }
 

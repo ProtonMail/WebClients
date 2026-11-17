@@ -1,4 +1,4 @@
-import type { Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
+import type { ComponentProps, Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 
 import isDeepEqual from 'lodash/isEqual';
@@ -204,7 +204,7 @@ const Step1 = ({
     onCurrencyChange: (currency: Currency) => Promise<unknown>;
     model: VPNSignupModel;
     setModel: Dispatch<SetStateAction<VPNSignupModel>>;
-    upsellImg: ReactElement;
+    upsellImg: ComponentProps<typeof DollarOfferModal>['img'];
     measure: Measure;
     className?: string;
     toAppName: string;

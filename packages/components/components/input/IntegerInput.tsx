@@ -1,4 +1,4 @@
-import type { ChangeEvent } from 'react';
+import type { FormEvent } from 'react';
 
 import type { Props as InputProps } from './Input';
 import Input from './Input';
@@ -30,7 +30,8 @@ const IntegerInput = ({ value, onChange, max, min, step, ...rest }: Props) => {
             min={minStr}
             max={maxStr}
             value={value === null || Number.isNaN(intValue) ? '' : intValue}
-            onInput={({ target, target: { value: newValue, validity } }: ChangeEvent<HTMLInputElement>) => {
+            onInput={({ currentTarget: target }: FormEvent<HTMLInputElement>) => {
+                const { value: newValue, validity } = target;
                 const isClear = validity.valid;
                 // Prevent broken input on certain browsers since it allows to enter other characters than integer numbers
                 if (newValue === '') {

@@ -4,6 +4,7 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
+import { inertProps } from '@proton/atoms/helpers/inertProps';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
@@ -90,8 +91,7 @@ const ComposerContent = (
                 attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
             ref={ref}
-            // @ts-ignore
-            inert={isInert ? '' : undefined}
+            {...inertProps(isInert)}
         >
             {disabled && (
                 <>
@@ -135,13 +135,7 @@ const ComposerContent = (
             </div>
 
             {/* Used to display the toolbar below the composer*/}
-            {!editorMetadata.isPlainText && (
-                <div
-                    ref={toolbarWrapperRef}
-                    // @ts-ignore
-                    inert={isAssistantExpanded ? '' : undefined}
-                />
-            )}
+            {!editorMetadata.isPlainText && <div ref={toolbarWrapperRef} {...inertProps(isAssistantExpanded)} />}
 
             {showAttachments && (
                 // Add a wrapping div so that Dropzone does not break the UI

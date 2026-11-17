@@ -32,7 +32,13 @@ const getUpsellLink = (optionID: MAIL_UPSELL_BANNER_LINK_ID_REF_PATH) => {
     return { upsellRef, upsellRefOptions };
 };
 
-const MailUpsellModal = ({ optionID, children }: { children: ReactElement; optionID: OptionProps['optionID'] }) => {
+const MailUpsellModal = ({
+    optionID,
+    children,
+}: {
+    children: ReactElement<{ onClick?: () => void }>;
+    optionID: OptionProps['optionID'];
+}) => {
     const modal = useModalStateObject();
 
     if (optionID === MAIL_UPSELL_BANNER_LINK_ID_REF_PATH.SEND_FROM_PM_ADDRESS) {

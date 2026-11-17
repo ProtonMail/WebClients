@@ -1,5 +1,6 @@
 import type {
     ChangeEvent,
+    FormEvent,
     ComponentPropsWithoutRef,
     MouseEvent as ReactMouseEvent,
     TouchEvent as ReactTouchEvent,
@@ -250,8 +251,8 @@ export const Slider = ({
     };
 
     /* as in handle the onInput event of the <input /> element */
-    const handleInputInput = (e: ChangeEvent<HTMLInputElement>) => {
-        handleInput(Number(e.target.value));
+    const handleInputInput = (e: FormEvent<HTMLInputElement>) => {
+        handleInput(Number(e.currentTarget.value));
     };
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {

@@ -11,7 +11,7 @@ const DropdownMenu = ({ children, className = '', listRef, ...rest }: DropdownMe
     return (
         <ul className={clsx(['unstyled my-0', className])} ref={listRef} {...rest}>
             {Children.toArray(children).map((child, i) => {
-                return isValidElement(child) ? (
+                return isValidElement<{ actionType?: string; liClassName?: string }>(child) ? (
                     <li
                         className={clsx([
                             'dropdown-item',

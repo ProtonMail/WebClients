@@ -1,6 +1,6 @@
 import type {
-    ChangeEvent,
     CompositionEvent,
+    FormEvent,
     ForwardRefRenderFunction,
     KeyboardEvent,
     MutableRefObject,
@@ -250,12 +250,12 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
                                         break;
                                 }
                             }}
-                            onInput={(event: ChangeEvent<HTMLInputElement>) => {
+                            onInput={(event: FormEvent<HTMLInputElement>) => {
                                 if (disableChange || getIsComposing(event)) {
                                     return;
                                 }
                                 // onChange won't trigger if the values are the same
-                                if (value && event.target.value === value) {
+                                if (value && event.currentTarget.value === value) {
                                     focus(i + 1);
                                 }
                             }}

@@ -7,7 +7,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'title'> {
-    icon?: ReactElement;
+    icon?: ReactElement<{ className?: string }>;
     children?: ReactNode;
     title?: ReactNode;
     loading?: boolean;

@@ -15,7 +15,7 @@ type ButtonButtonLikeProps = ButtonLikeProps<'button'>;
 interface OwnProps {
     color?: ButtonButtonLikeProps['color'];
     shape?: ButtonButtonLikeProps['shape'];
-    icon?: ReactElement;
+    icon?: ReactElement<{ className?: string }>;
     text?: string;
     notificationDotColor?: ThemeColor;
 }

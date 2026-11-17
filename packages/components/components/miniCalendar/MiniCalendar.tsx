@@ -105,7 +105,7 @@ const MiniCalendar = ({
     const cb = useCallback((node: HTMLElement | null) => {
         unsubscribeRef.current?.();
         if (!node) {
-            return null;
+            return;
         }
         const sizeCache: number[] = [];
         unsubscribeRef.current = createObserver(node, (rect) => {

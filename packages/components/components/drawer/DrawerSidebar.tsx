@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import type { CSSProperties, ReactElement } from 'react';
 import { cloneElement, useEffect } from 'react';
 
 import { c } from 'ttag';
@@ -11,7 +11,7 @@ import useDrawer from '../../hooks/drawer/useDrawer';
 import './DrawerSidebar.scss';
 
 interface Props {
-    buttons: ReactElement[];
+    buttons: ReactElement<{ style?: CSSProperties }>[];
 }
 
 const DrawerSidebar = ({ buttons }: Props) => {

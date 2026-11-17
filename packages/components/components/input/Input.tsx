@@ -13,7 +13,7 @@ import useInput from './useInput';
 export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     ref?: Ref<HTMLInputElement>; // override ref so that LegacyRef isn't used
     containerRef?: Ref<HTMLDivElement>;
-    icon?: ReactElement;
+    icon?: ReactElement<{ className?: string }>;
     iconSearchDisplayed?: boolean;
     error?: string;
     errorZoneClassName?: string;

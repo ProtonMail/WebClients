@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import type { CSSProperties, ReactElement } from 'react';
 import { cloneElement, useEffect } from 'react';
 
 import { c } from 'ttag';
@@ -23,7 +23,7 @@ interface DollarOfferModalProps extends ModalProps {
     priceWithoutDiscountPerMonth: number | undefined;
     onGetDeal: () => void;
     onContinueFree: () => void;
-    img: ReactElement;
+    img: ReactElement<{ className?: string; style?: CSSProperties }>;
     measure: Measure;
 }
 

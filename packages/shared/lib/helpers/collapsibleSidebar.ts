@@ -46,7 +46,7 @@ export const sendRequestCollapsibleSidebarReport = ({
 };
 
 interface Props {
-    navigationRef: RefObject<HTMLElement>;
+    navigationRef: RefObject<HTMLElement | null>;
 }
 
 const checkIsScrollPresent = ({ navigationRef }: Props) => {

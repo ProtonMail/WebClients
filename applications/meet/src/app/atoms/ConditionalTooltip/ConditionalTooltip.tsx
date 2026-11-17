@@ -2,7 +2,7 @@ import type { PopperPlacement } from '@proton/atoms/Popper/interface';
 import { Tooltip, type Props as TooltipProps } from '@proton/atoms/Tooltip/Tooltip';
 
 type Props = {
-    children: React.ReactElement;
+    children: React.ReactElement<{ disabled?: boolean }>;
     title?: string;
     placement?: PopperPlacement;
     tooltipClassName?: string;

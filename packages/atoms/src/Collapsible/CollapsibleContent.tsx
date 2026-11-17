@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
+import { inertProps } from '../helpers/inertProps';
 import { CollapsibleContext } from './CollapsibleContext';
 
 import './CollapsibleContent.scss';
@@ -38,7 +39,7 @@ export const CollapsibleContent = <E extends ElementType = typeof defaultElement
             ? {
                   className: clsx('collapsible-content-animated', className),
                   'data-state': isExpanded ? 'open' : 'closed',
-                  ...(isExpanded ? {} : { inert: '' }),
+                  ...inertProps(!isExpanded),
               }
             : { className, hidden: !isExpanded }),
     };
