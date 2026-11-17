@@ -75,7 +75,8 @@ export type LockCall = { locked: boolean; answered: boolean }
  * The Reveal Point, when the Loading Screen lifts: the editor shows the document, has rendered it (its first
  * `updateFrameSize`), and answered the latest lock call, a lock or an unlock, with the session not stopped. For an
  * editor that is `docs-load:editor-editable`; a viewer, a size-locked document or one at the participant limit gets
- * a lock. The one line to change to lift the screen earlier, such as at the editor shown and rendered (PRO-423).
+ * a lock. The one line to change to lift the screen earlier, such as at the editor shown and rendered, an option
+ * the realtime SDK's doc2 Loader spec weighs under "Reveal earlier" and that is not built.
  */
 export function isRevealPoint({
   editorShown,
