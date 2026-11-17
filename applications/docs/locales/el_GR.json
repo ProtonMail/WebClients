@@ -309,6 +309,9 @@
       "Dismiss": [
         "Παράβλεψη"
       ],
+      "Dismiss notification": [
+        "Απόρριψη ειδοποίησης"
+      ],
       "Done": [
         "Ολοκληρώθηκε"
       ],
@@ -419,6 +422,9 @@
       ],
       "Go to label": [
         "Μετάβαση στην ετικέτα"
+      ],
+      "Go to today": [
+        "Πηγαίνετε στο σήμερα"
       ],
       "Google Drive": [
         "Google Drive"
@@ -564,6 +570,9 @@
       "Next": [
         "Επόμενο"
       ],
+      "Next contact": [
+        "Επόμενη επαφή"
+      ],
       "Next month": [
         "Επόμενος μήνας"
       ],
@@ -602,6 +611,9 @@
       ],
       "Preview logs": [
         "Προεπισκόπηση αρχείων καταγραφής"
+      ],
+      "Previous contact": [
+        "Προηγούμενη επαφή"
       ],
       "Previous month": [
         "Προηγούμενος μήνας"
@@ -821,6 +833,9 @@
       ],
       "Toggle debug mode": [
         "Εναλλαγή λειτουργίας εντοπισμού σφαλμάτων"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Εναλλαγή υποφακέλων του ${ itemName }"
       ],
       "Trashing...": [
         "Μετακίνηση στον κάδο απορριμμάτων..."
@@ -3930,6 +3945,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
       ]
     },
     "fido2: Info": {
@@ -4605,6 +4623,9 @@
       "Can view only": [
         "Δυνατότητα προβολής μόνο"
       ],
+      "Can't connect": [
+        "Αδυναμία σύνδεσης"
+      ],
       "Can't move a folder into itself": [
         "Δεν είναι δυνατή η μετακίνηση ενός φακέλου μέσα στον ίδιο τον φάκελο"
       ],
@@ -4682,9 +4703,6 @@
         "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλος",
         "Δημιουργήστε ένα ασφαλές cloud για ${ memberCount } μέλη"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Δημιουργήστε ένα διατερματικά κρυπτογραφημένο έγγραφό."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Δημιουργήστε έγγραφα και υπολογιστικά φύλλα με κρυπτογράφηση από άκρο σε άκρο."
       ],
@@ -4697,6 +4715,9 @@
       "Creating new document...": [
         "Δημιουργία νέου εγγράφου..."
       ],
+      "Creating new document…": [
+        "Δημιουργία νέου εγγράφου…"
+      ],
       "Current plan": [
         "Τρέχον πλάνο"
       ],
@@ -4705,6 +4726,9 @@
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
+      ],
+      "Decrypting document…": [
+        "Η επικόλληση αποκρυπτογραφείται…"
       ],
       "Decrypting your document": [
         "Γίνεται αποκρυπτογράφηση του εγγράφου σας"
@@ -5065,6 +5089,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Ανοίξτε τον οδηγό για προτεινόμενες ενέργειες και χρήσιμους συνδέσμους."
       ],
+      "Opening document…": [
+        "Άνοιγμα εγγράφου…"
+      ],
       "Opening...": [
         "Άνοιγμα..."
       ],
@@ -5141,14 +5168,14 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που περιέχουν δεδομένα κρυπτογραφημένα με το ανενεργό κλειδί."
       ],
+      "Preparing editor…": [
+        "Προετοιμασία επεξεργαστή…"
+      ],
       "Primary": [
         "Κύριο"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Η ιδιωτική περιήγηση (ή η κατάσταση ανώνυμης περιήγησης) είναι χρήσιμη μόνο για να διατηρείτε τη δραστηριότητά σας κρυφή στη συσκευή σας. Εμποδίζει το πρόγραμμα περιήγησής σας να αποθηκεύει ιστορικό και cookies, αλλά δεν σας κάνει αόρατους. Η υπηρεσία παροχής Internet, ο διαχειριστής δικτύου και οι τοποθεσίες Web που επισκέπτεστε εξακολουθούν να μπορούν να δουν τι κάνετε στο Internet."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Τα δημόσια έγγραφα δεν έχουν ενεργοποιηθεί ακόμα για τον οργανισμό σας."
       ],
       "Read-only": [
         "Μόνο για ανάγνωση"
@@ -5167,6 +5194,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
+      ],
+      "Redirecting…": [
+        "Ανακατεύθυνση..."
       ],
       "Referral link copied to your clipboard": [
         "Ο σύνδεσμος παραπομπής αντιγράφηκε στο πρόχειρό σας"
@@ -5276,6 +5306,9 @@
       ],
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
+      ],
+      "Syncing latest changes…": [
+        "Συγχρονισμός πρόσφατων αλλαγών…"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Προσωρινά μη διαθέσιμο λόγω υψηλής ζήτησης. Παρακαλούμε δοκιμάστε ξανά αργότερα."
@@ -5486,6 +5519,9 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Οι θέσεις για βοηθούς συγγραφής δεν πωλούνται πλέον."
       ],
       "you": [
         "εσείς"
@@ -5963,6 +5999,9 @@
       "Last month only": [
         "Τελευταίος μήνας μόνο"
       ],
+      "Loading": [
+        "Φόρτωση"
+      ],
       "Location ${ locationLabel }": [
         "Τοποθεσία ${ locationLabel }"
       ],
@@ -6354,6 +6393,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ενεργοποίηση ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x Βασική χρήση"
+      ],
+      "5x Plus usage": [
+        "5 φορές περισσότερη χρήση"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Πρόσβαση σε API, με πίστωση ${ credit } ανά μήνα"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Πρόσβαση σε API, με πίστωση ${ credit } ανά μήνα για κάθε χρήστη"
+      ],
+      "Everything in Basic, and:": [
+        "Τα πάντα στο Basic, και:"
+      ],
+      "Everything in Free, and:": [
+        "Τα πάντα στο Free, και:"
+      ],
+      "Everything in Plus, and:": [
+        "Τα πάντα στο Plus, και:"
+      ],
+      "Extended image generation": [
+        "Εκτεταμένη δημιουργία εικόνων"
+      ],
+      "Includes:": [
+        "Περιλαμβάνει:"
+      ],
+      "Limited image generation": [
+        "Περιορισμένη δημιουργία εικόνων"
+      ],
+      "Limited messages and chat history": [
+        "Περιορισμένα μηνύματα και ιστορικό συνομιλιών"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Περιορισμένες Δεξιότητες, Έργα και προγραμματισμένες εργασίες"
+      ],
+      "Maximum image generation": [
+        "Μέγιστη παραγωγή εικόνων"
+      ],
+      "Maximum Skills and Projects": [
+        "Μέγιστες Δεξιότητες και Έργα"
+      ],
+      "More image generation": [
+        "Περισσότερη δημιουργία εικόνων"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Περισσότερες Δεξιότητες, Έργα και προγραμματισμένες εργασίες"
+      ],
+      "More usage": [
+        "Περισσότερη χρήση"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Για προγραμματισμό και κατασκευή"
+      ],
+      "For everyday chats": [
+        "Για καθημερινές συζητήσεις"
+      ],
+      "For getting more done": [
+        "Για να πετυχαίνετε περισσότερα"
       ]
     },
     "Mail import summary": {
@@ -7926,38 +8032,11 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (χωρίς φόρους)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } δεν μπορεί να συνδυαστεί με το ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } διατίθεται μόνο σε πλάνα για επιχειρήσεις."
-      ],
       "Amount due after trial on ${ formattedDate }": [
         "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Απαιτείται ένας οργανισμός για αυτό το πλάνο."
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Οι λογαριασμοί Born Private δεν μπορούν να αγοραστούν όσο υπάρχει ενεργή συνδρομή."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Η αγορά μονάδων απαιτεί ξεχωριστή αγορά."
-      ],
       "By switching, you agree to our ${ termsLink }.": [
         "Με την αλλαγή, αποδέχεστε τους ${ termsLink } μας."
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Μπορεί να αγοραστεί μόνο ένα ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Παρακαλούμε κλείστε τους επιπλέον λογαριασμούς πορτοφολιού πριν αλλάξετε το πλάνο σας."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Παρακαλούμε κλείστε τα επιπλέον πορτοφόλια πριν αλλάξετε το πρόγραμμά σας."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Οι θέσεις στο Proton Meet πρέπει να αντιστοιχούν στον αριθμό των μελών."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Η τιμολόγηση ανανέωσης υπόκειται σε αλλαγές σύμφωνα με τους ${ termsAndConditionsLink }."
@@ -7965,30 +8044,12 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
       ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Οι θέσεις των γραμματέων δεν μπορούν να υπερβαίνουν τον αριθμό των μελών."
-      ],
       "terms and conditions": [
         "όροι και προϋποθέσεις"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "Η πρωτοβουλία Born Private απαιτεί δωρεά."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανέωση.",
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανεώσεις."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό διευθύνσεων για τον λογαριασμό σας."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό τομέων για τον λογαριασμό σας."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό μελών για τον λογαριασμό σας."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αποθηκευτικό χώρο για τον λογαριασμό σας."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ισχύει για ${ couponRedemptions } μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
@@ -8015,39 +8076,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
-      ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Αυτός ο αποκλειστικός διακομιστής έχει αντιστοιχιστεί σε μια πύλη και η ρύθμιση αυτή δεν μπορεί να αλλάξει."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Αυτό το πρόγραμμα δεν υποστηρίζει τις διαχειριζόμενες λειτουργίες στον λογαριασμό σας."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Αυτό το πλάνο δεν υποστηρίζει τα μέλη στον λογαριασμό σας."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις για το ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν προσαρμοσμένους τομείς."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν αποκλειστικές διευθύνσεις IP."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν τόσο μεγάλο αριθμό μελών."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Έχετε ήδη ένα Born Private λογαριασμό."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Ο λογαριασμός σας είναι πολύ παλιός για την πρωτοβουλία Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9347,9 +9375,6 @@
       "Cannot add more addresses": [
         "Αδυναμία προσθήκης περισσότερων διευθύνσεων"
       ],
-      "Cannot load link": [
-        "Αποτυχία φόρτωσης συνδέσμου"
-      ],
       "Change access to viewer?": [
         "Αλλαγή πρόσβασης σε προβολέα;"
       ],
@@ -9778,12 +9803,6 @@
       ],
       "Subscription canceled": [
         "Η συνδρομή ακυρώθηκε"
-      ],
-      "The link either does not exist or has expired": [
-        "Ο σύνδεσμος είτε δεν υπάρχει είτε έχει λήξει"
-      ],
-      "The link expired": [
-        "Ο σύνδεσμος έληξε"
       ],
       "This document is password protected": [
         "Αυτό το έγγραφο προστατεύεται με κωδικό πρόσβασης"

@@ -878,6 +878,15 @@
       "Enter your username without the domain (@example.com)": [
         "Skriv inn brukernavnet ditt uten domenet (@eksempel.com)"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Feil reservepassord. Forsøk igjen."
+      ],
+      "Incorrect password. Please try again.": [
+        "Feil passord. Prøv igjen."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Feil andre passord. Prøv på nytt."
+      ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
       ],
@@ -916,6 +925,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunne ikke sende en bekreftelseskode med denne metoden."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Feil gjenopprettingsfrase. Prøv igjen eller bruk en annen gjenopprettingsmetode."
       ]
     },
     "Error message": {
@@ -935,6 +947,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Denne nettleseren støtter ikke sikkerhetsnøkler. Prøv en annen nettleser."
       ]
     },
     "fido2: Info": {

@@ -822,6 +822,9 @@
       "Toggle debug mode": [
         "Slå på/av feilsøkingsmodus"
       ],
+      "Toggle subfolders of ${ itemName }": [
+        "Vis/skjul undermapper i ${ itemName }"
+      ],
       "Trashing...": [
         "Legger i papirkurven …"
       ],
@@ -3925,6 +3928,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Denne nettleseren støtter ikke sikkerhetsnøkler. Prøv en annen nettleser."
       ]
     },
     "fido2: Info": {
@@ -4677,9 +4683,6 @@
         "Opprett en sikker sky for ${ memberCount } medlem",
         "Opprett en sikker sky for ${ memberCount } medlemmer"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Opprett et ende-til-ende-kryptert dokument."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Opprett ende-til-ende-krypterte dokumenter og regneark."
       ],
@@ -5141,9 +5144,6 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Offentlige dokumenter er ikke aktivert for organisasjonen enda."
       ],
       "Read-only": [
         "Skrivebeskyttet"
@@ -7918,35 +7918,11 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (ekskl. MVA)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan ikke kombineres med ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er kun tilgjengelig med forretningsplaner."
-      ],
       "Amount due after trial on ${ formattedDate }": [
         "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Det kreves en organisasjon for denne planen."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Å kjøpe kreditter krever et separat kjøp."
-      ],
       "By switching, you agree to our ${ termsLink }.": [
         "Ved å bytte sier du deg enig med våre ${ termsLink }."
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Kun én ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan kjøpes."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Lukk ekstra lommebokkontoer før du endrer planen din."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Lukk ekstra lommebøker før du endrer planen din."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet-seter må samsvare med antall medlemmer."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Fornyelsespriser kan endres i henhold til ${ termsAndConditionsLink }."
@@ -7954,27 +7930,12 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
       ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe-seter kan ikke overstige antallet medlemmer."
-      ],
       "terms and conditions": [
         "vilkår og betingelser"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Den valgte planen tilbyr ikke nok adresser for kontoen din."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Den valgte planen tilbyr ikke nok domener for kontoen din."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Den valgte planen tilbyr ikke nok medlemmer for kontoen din."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Den valgte planen tilbyr ikke nok lagringsplass for kontoen din."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måned. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
@@ -8001,33 +7962,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
         "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
-      ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Denne dedikerte serveren er tilordnet en gateway og kan ikke endres."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Denne planen støtter ikke de administrerte funksjonene på kontoen din."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Dette abonnementet støtter ikke medlemmene på kontoen din."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Prøveplaner støtter ikke egendefinerte domener."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Prøveplaner støtter ikke dedikerte IP-er."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Prøveplaner støtter ikke Scribe-seter."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Prøveplaner støtter ikke så mange medlemmer."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du eier allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ]
     },
     "PGP key encryption warning": {
@@ -9327,9 +9261,6 @@
       "Cannot add more addresses": [
         "Kan ikke legge til flere adresser"
       ],
-      "Cannot load link": [
-        "Kan ikke laste kobling"
-      ],
       "Change access to viewer?": [
         "Endre tilgang til kun visning?"
       ],
@@ -9758,12 +9689,6 @@
       ],
       "Subscription canceled": [
         "Abonnement kansellert"
-      ],
-      "The link either does not exist or has expired": [
-        "Koblingen finnes enten ikke eller er utløpt"
-      ],
-      "The link expired": [
-        "Koblingen er utløpt"
       ],
       "This document is password protected": [
         "Dette dokumentet er passordbeskyttet"

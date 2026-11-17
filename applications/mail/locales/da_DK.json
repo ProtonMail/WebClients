@@ -645,9 +645,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Få en gratis ${ BRAND_NAME }-adresse"
       ],
-      "Get in touch": [
-        "Kontakt os"
-      ],
       "Get index size on disk": [
         "Hent indeksstørrelsen på disk"
       ],
@@ -846,9 +843,6 @@
       ],
       "Least read": [
         "Mindst læst"
-      ],
-      "Let's talk": [
-        "Lad os snakke"
       ],
       "Load": [
         "Indlæs"
@@ -4268,6 +4262,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjælp dit team med sikkert at lagre adgangskoder til følsomme forretnings- og klientoplysninger."
       ],
+      "High-performance model for complex tasks": [
+        "Kraftig model til komplekse opgaver"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
@@ -4276,6 +4273,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Giver dig mulighed for øjeblikkeligt at tilføje mødelinks til dine begivenhedsinvitationer."
+      ],
+      "Lightweight model for everyday tasks": [
+        "Let model til hverdagsopgaver"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
@@ -4362,6 +4362,12 @@
       ],
       "To start, give your organization a name.": [
         "Start med at give deres organisation et navn."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Tilføj det til dit abonnement for at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Anmod om adgang fra din administrator for at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå e-mail-trackerbeskyttelse til for at forhindre annoncører og andre i at spore din placering og onlineaktivitet."
@@ -5854,6 +5860,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Din browser understøtter ikke sikkerhedsnøgler. Prøv en anden browser."
       ]
     },
     "fido2: Info": {
@@ -6844,6 +6853,10 @@
         "${ n } ulæst samtale",
         "${ n } ulæste samtaler"
       ],
+      "${ n } unread message": [
+        "${ n } ulæst besked",
+        "${ n } ulæste beskeder"
+      ],
       "${ name } in ${ parentName }": [
         "${ name } i ${ parentName }"
       ],
@@ -7323,6 +7336,9 @@
       "Change your theme": [
         "Skift dit tema"
       ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Chat med ${ LUMO_SHORT_APP_NAME } for at søge, læse, organisere og skrive udkast fra dine e-mails."
+      ],
       "Checked Proton support": [
         "Ledte i Proton support"
       ],
@@ -7388,6 +7404,9 @@
       ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Kopiér engangskoder fra de seneste e-mails med ét klik"
       ],
       "Copy the link to clipboard": [
         "Kopiér linket til udklipsholder"
@@ -7937,8 +7956,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8158,6 +8176,9 @@
       ],
       "Move here": [
         "Flyt hertil"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Flyt e-mails med engangskoder til Papirkurven når der bliver kopieret"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
@@ -10093,8 +10114,8 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } tegn"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant": [
-        "${ LUMO_SHORT_APP_NAME }-assistent"
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
@@ -10691,6 +10712,9 @@
       "Message:": [
         "Besked:"
       ],
+      "Model": [
+        "Model"
+      ],
       "Move ${ sidebarElementName }": [
         "Flyt ${ sidebarElementName }"
       ],
@@ -10705,6 +10729,9 @@
       ],
       "Move to Inbox": [
         "Flyt til Indbakke"
+      ],
+      "Move to Trash": [
+        "Flyt til Papirkurv"
       ],
       "Moved to ${ labelName }": [
         "Flyttet til ${ labelName }"
@@ -10765,6 +10792,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Noter er deaktiverede, for at aktivere dem skal browserens indstillinger ændres."
+      ],
+      "One-time codes": [
+        "Engangskoder"
       ],
       "Operating system": [
         "Operativsystem"
@@ -13529,12 +13559,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (ekskl. moms)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan ikke kombineres md ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er kun tilgængeligt på erhvervsabonnementer."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% moms: ${ taxAmountElement }"
       ],
@@ -13544,17 +13568,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Beløb, der skal betales efter prøveperioden den ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "En organisation kræves for dette abonnement."
-      ],
       "Billing Country": [
         "Faktura land"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Born Private-konti kan ikke købes uden et aktivt abonnement."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Køb af kredit kræver et separat køb."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Ved at skifte, accepterer du vores ${ termsLink }."
@@ -13598,9 +13613,6 @@
       "More plans are available in other currencies": [
         "Flere abonnementer er tilgængelige i andre valutaer"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Der kan kun købes ét ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betal med ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -13610,26 +13622,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "Abonnementskiftet er ikke kompatibelt af følgende årsager:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Luk ekstra wallet-konti før du ændrer dit abonnement."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Luk ekstra wallets før du ændrer dit abonnement."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Antallet af pladser i Proton Meet skal matche antallet af medlemmer."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Fornyelsespriser kan ændres i henhold til ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, annuller når som helst."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Der kan ikke være flere Scribe-pladser end medlemmer."
       ],
       "Tax ${ rate }%": [
         "Moms ${ rate }%"
@@ -13640,31 +13640,16 @@
       "terms and conditions": [
         "vilkår og betingelser"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private kræver en donation."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Det valgte abonnement understøtter ikke nok adresser til din konto."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Det valgte abonnement understøtter ikke nok domæner til din konto."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Det valgte abonnement understøtter ikke nok medlemmer til din konto."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Det valgte abonnement understøtter ikke nok lagerplads til din konto."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
+        "Den særligt nedsatte pris gælder den første ${ subscriptionLength } måned.",
         "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
@@ -13688,41 +13673,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denne handling udvider det eksisterende abonnement. Du vil kun blive opkrævet for de nye tilføjelser og den resterende tid af den nuværende faktureringsperiode. Fornyelsesdatoen for dit abonnement vil ikke blive ændret."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Den dedikerede server er tilknyttet en gateway, og kan ikke ændres."
-      ],
       "This offer is not available with your current plan.": [
         "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmetode bliver din nye standard for alle fremtidige fornyelser."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Dette abonnement understøtter ikke dine administrerede funktioner på din konto."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Dette abonnement understøtter ikke medlemmer på din konto."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Abonnementet kan ikke færdiggøres lige nu. Prøv igen."
       ],
       "Timeout exceeded": [
         "Tidsgrænse overskredet"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Prøveversioner understøtter ikke ${ LUMO_SHORT_APP_NAME }-pladser."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Prøveversioner understøtter ikke brugerdomæner."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Prøveversioner understøtter ikke dedikerede IP-adresser."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Prøveversioner understøtter ikke Scribe-pladser."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Prøveversioner understøtter ikke så stort et antal medlemmer."
       ],
       "VAT number": [
         "Momsnummer"
@@ -13736,20 +13697,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har allerede et abonnement på denne plan. Du kan ændre dit abonnement på ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du ejer allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Du ejer allerede en Born Private-konto."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
       "You will soon be redirected to verify your payment.": [
         "Du omdirigeres snart for at bekræfte din betaling."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Din konto er for gammel til Born Private."
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
@@ -15722,11 +15674,11 @@
         "${ elementsCount } besked fjernet fra Stjernemarkeret.",
         "${ elementsCount } beskeder fjernet fra Stjernemarkeret."
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
-        "${ LUMO_SHORT_APP_NAME }-assistent deaktiveret"
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent deaktiveret"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
-        "${ LUMO_SHORT_APP_NAME }-assistent aktiveret"
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent aktiveret"
       ],
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
@@ -15893,6 +15845,12 @@
       ],
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "Flyttet til ${ label }. Lignende beskeder vil blive kategoriseret her fremover."
+      ],
+      "One-time codes disabled": [
+        "Engangskoder deaktiveret"
+      ],
+      "One-time codes enabled": [
+        "Engangskoder aktiveret"
       ],
       "Password copied to clipboard": [
         "Adgangskode kopieret til udklipsholder"

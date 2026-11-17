@@ -130,6 +130,9 @@
       "Dismiss": [
         "Avfärda"
       ],
+      "Dismiss notification": [
+        "Avfärda avisering"
+      ],
       "Done": [
         "Klar"
       ],
@@ -166,9 +169,6 @@
       "Get ${ planOrAppName }": [
         "Skaffa ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Kontakta oss"
-      ],
       "Get the apps": [
         "Skaffa apparna"
       ],
@@ -183,6 +183,9 @@
       ],
       "Go to settings": [
         "Gå till inställningar"
+      ],
+      "Go to today": [
+        "Gå till idag"
       ],
       "Got it": [
         "Förstått"
@@ -216,9 +219,6 @@
       ],
       "Learn more about Bitcoin via Email": [
         "Lär dig mer om Bitcoin via e-post"
-      ],
-      "Let's talk": [
-        "Låt oss prata!"
       ],
       "Manage advanced account protections": [
         "Hantera avancerade kontoskydd"
@@ -514,6 +514,12 @@
       ],
       "Domains": [
         "Domäner"
+      ],
+      "Managed Service Provider": [
+        "Hanterad tjänsteleverantör"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Visar sätt att få hjälp med verifiering"
       ],
       "Servers": [
         "Servrar"
@@ -2591,6 +2597,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
       ]
     },
     "fido2: Info": {
@@ -2952,6 +2961,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I nästa steg kommer du kunna skicka in en insättning med en Bitcoin-adress."
       ],
@@ -3156,6 +3168,9 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Platser för skrivassistenten säljs inte längre"
       ],
       "You already have a free account": [
         "Du har redan ett gratis konto"
@@ -3628,6 +3643,73 @@
       ],
       "Secondary amount": [
         "Sekundärt belopp"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Kod"
+      ],
+      "2x Basic usage": [
+        "2X Basic användning"
+      ],
+      "5x Plus usage": [
+        "5x Plus användning"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API tillgång, med ${ credit } en månads kredit"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API tillgång, med ${ credit } en månads kredit per användare"
+      ],
+      "Everything in Basic, and:": [
+        "Allt i Gratis, och:"
+      ],
+      "Everything in Free, and:": [
+        "Allt i Gratis-paketet, och:"
+      ],
+      "Everything in Plus, and:": [
+        "Allt i Plus, och:"
+      ],
+      "Extended image generation": [
+        "Utökad bildgenerering"
+      ],
+      "Includes:": [
+        "Inkluderar:"
+      ],
+      "Limited image generation": [
+        "Begränsade bildgenereringar"
+      ],
+      "Limited messages and chat history": [
+        "Begränsade meddelanden och chatthistorik"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Begränsade Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "Maximum image generation": [
+        "Maximal bildgenerering"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximala Färdigheter och Projekt"
+      ],
+      "More image generation": [
+        "Mer bildgenereringar"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mera Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "More usage": [
+        "Mer användning"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "För kodning och byggande"
+      ],
+      "For everyday chats": [
+        "För chattar varje dag"
+      ],
+      "For getting more done": [
+        "För att få mer gjort"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4693,9 +4775,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (exkl. moms)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan inte kombineras med ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate } % moms: ${ taxAmountElement }"
       ],
@@ -4707,6 +4786,9 @@
       ],
       "Billing Country": [
         "Faktureringsland"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Genom att byta godkänner du våra ${ termsLink }."
       ],
       "Card number": [
         "Kortnummer"
@@ -4746,9 +4828,6 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betala med ${ IDEAL_WERO_BRAND_NAME }"
@@ -4813,6 +4892,9 @@
       "This payment method will become your new default for all future renewals.": [
         "Denna betalningsmetod kommer bli din nya standard för alla framtida förnyelser."
       ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Denna prenumeration kan inte slutföras just nu. Försök igen."
+      ],
       "Timeout exceeded": [
         "Timeout överskriden"
       ],
@@ -4827,9 +4909,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
@@ -4873,6 +4952,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Något gick fel. Google Pay-verifiering misslyckades."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Genom att bekräfta, ger du ${ BRAND_NAME } och Stripe, vår betalningstjänsteleverantör, tillstånd att dra framtida betalningar för din prenumeration från detta bankkontot via SEPA-autogiro, och din bank tillstånd att genomföra dessa dragningar. Din första betalning sker nu via ${ IDEAL_WERO_BRAND_NAME }. Din prenumeration förnyas automatiskt, tills du säger upp den; vi meddelar dig inför varje dragning. Vid betalningar via autogiro kan du i enlighet med villkoren i ditt avtal med banken begära återbetalning från din bank inom 8 veckor från dragningsdatumet. Detta gäller inte den betalning via ${ IDEAL_WERO_BRAND_NAME } som du genomför nu."
       ]
     },
     "Payments.info": {
@@ -5861,6 +5945,12 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Uppgradera till en stödd version för att använda administratörroller."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan inte ändra dina egna roller. Be en annan administratör att ändra dem."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]

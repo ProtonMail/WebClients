@@ -2925,6 +2925,9 @@
       "Contact signature not verified": [
         "Podpis kontaktu nie został zweryfikowany"
       ],
+      "Could not unlock this item": [
+        "Nie można odblokować elementu"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Odznacz co najmniej ${ calendarsToFixCount } kalendarz",
         "Odznacz co najmniej ${ calendarsToFixCount } kalendarze",
@@ -3008,6 +3011,9 @@
       ],
       "Folder name cannot be empty.": [
         "Nazwa folderu nie może być pusta."
+      ],
+      "Image preview not found": [
+        "Nie znaleziono podglądu zdjęcia"
       ],
       "Image upload failed": [
         "Przesłanie zdjęcia nie powiodło się"
@@ -3152,6 +3158,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Mechanizm odwrotnego obciążenia nie jest obsługiwany w przypadku tego planu"
+      ],
+      "Signature is missing": [
+        "Brak podpisu"
       ],
       "Signature not verified": [
         "Podpis nie został zweryfikowany"
@@ -4463,9 +4472,6 @@
         "Utwórz bezpieczną chmurę dla ${ memberCount } użytkowników",
         "Utwórz bezpieczną chmurę dla ${ memberCount } użytkowników"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Utwórz dokument szyfrowany end-to-end."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Twórz zaszyfrowane end-to-end dokumenty i arkusze kalkulacyjne."
       ],
@@ -4533,7 +4539,7 @@
         "Zaszyfrowane end-to-end"
       ],
       "End-to-end encrypted.": [
-        "Szyfrowany end-to-end."
+        "Zaszyfrowane end-to-end."
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zapewnij sobie prywatną i szyfrowaną komunikację. Uzyskaj darmowy adres ${ BRAND_NAME }."
@@ -4888,9 +4894,6 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Przeglądanie prywatne (lub tryb incognito) jest przydatny tylko do ukrywania aktywności na urządzeniu. Uniemożliwia on przeglądarce zapisywanie historii i plików cookie, ale nie czyni użytkownika niewidzialnym. Dostawca Internetu, administrator sieci i odwiedzane strony internetowe nadal mogą zobaczyć, co robisz online."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Publiczne dokumenty nie są włączone w organizacji."
       ],
       "Read-only": [
         "Tylko do odczytu"
@@ -8992,9 +8995,6 @@
       "Cannot add more addresses": [
         "Nie można dodać więcej adresów"
       ],
-      "Cannot load link": [
-        "Nie można załadować linku"
-      ],
       "Change access to viewer?": [
         "Zmienić dostęp na wyświetlającego?"
       ],
@@ -9421,12 +9421,6 @@
       "Subscription canceled": [
         "Subskrypcja została anulowana"
       ],
-      "The link either does not exist or has expired": [
-        "Link wygasł lub nie istnieje"
-      ],
-      "The link expired": [
-        "Link wygasł"
-      ],
       "This document is password protected": [
         "Dokument jest chroniony hasłem"
       ],
@@ -9593,7 +9587,7 @@
         "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Obraz nie mógł zostać załadowany"
+        "Zdjęcie nie mogło zostać załadowane"
       ],
       "The image could not be loaded using proxy": [
         "Obraz nie mógł zostać załadowany przy użyciu proxy"

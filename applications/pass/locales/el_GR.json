@@ -46,6 +46,9 @@
       "Add account": [
         "Προσθήκη λογαριασμού"
       ],
+      "Add address": [
+        "Προσθήκη διεύθυνσης"
+      ],
       "Add current URL": [
         "Προσθήκη τρέχουσας διεύθυνσης URL"
       ],
@@ -159,6 +162,9 @@
       ],
       "Collapse": [
         "Σύμπτυξη"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Σύμπτυξη ειδοποιήσεων του Pass Monitor"
       ],
       "Confirm": [
         "Επιβεβαίωση"
@@ -313,6 +319,9 @@
       "Dismiss": [
         "Παράβλεψη"
       ],
+      "Dismiss notification": [
+        "Απόρριψη ειδοποίησης"
+      ],
       "Do not show again": [
         "Να μην εμφανιστεί ξανά"
       ],
@@ -358,6 +367,9 @@
       "Expand": [
         "Ανάπτυξη"
       ],
+      "Expand Pass Monitor alerts": [
+        "Ανάπτυξη ειδοποιήσεων του Pass Monitor"
+      ],
       "Export": [
         "Εξαγωγή"
       ],
@@ -400,6 +412,9 @@
       "Go back": [
         "Επιστροφή"
       ],
+      "Go to today": [
+        "Πηγαίνετε στο σήμερα"
+      ],
       "Hide": [
         "Απόκρυψη"
       ],
@@ -411,6 +426,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Πώς να χρησιμοποιήσετε το ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Αγνόηση"
       ],
       "Import": [
         "Εισαγωγή"
@@ -538,6 +556,9 @@
       "OK": [
         "ΟΚ"
       ],
+      "Open item": [
+        "Άνοιγμα στοιχείου"
+      ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
@@ -606,6 +627,9 @@
       ],
       "Remove member": [
         "Αφαίρεση μέλους"
+      ],
+      "Remove passkey": [
+        "Κατάργηση κλειδιού πρόσβασης"
       ],
       "Rename": [
         "Μετονομασία"
@@ -749,6 +773,9 @@
       "To mailbox": [
         "Στο γραμματοκιβώτιο"
       ],
+      "Toggle section": [
+        "Εναλλαγή ενότητας"
+      ],
       "Transfer aliases": [
         "Μεταφορά ψευδωνύμων"
       ],
@@ -879,6 +906,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } άλλο",
+        "${ count } άλλα"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "Το ${ DARK_WEB_MONITORING_NAME } είναι διαθέσιμο με πλάνο επί πληρωμή. Αναβαθμίστε για άμεση πρόσβαση."
       ],
@@ -972,6 +1003,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Αυτός ο κωδικός πρόσβασης σύνδεσης εμφανίζεται σε μια παραβίαση δεδομένων. Επισκεφθείτε την υπηρεσία και αλλάξτε τον κωδικό πρόσβασης."
+      ],
+      "This login uses the same password as another item.": [
+        "Αυτά τα στοιχεία σύνδεσης χρησιμοποιούν τον ίδιο κωδικό πρόσβασης με ένα άλλο στοιχείο."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Αυτή η υπηρεσία προσφέρει 2FA. Ενεργοποιήστε το για πρόσθετη ασφάλεια λογαριασμού."
@@ -1301,11 +1335,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Αποτυχία ενημέρωσης της ρύθμισης ${ PROTON_SENTINEL_NAME }"
       ],
-      "Failed updating monitor flag of the item": [
-        "Αποτυχία ενημέρωσης της σημαίας παρακολούθησης του στοιχείου"
-      ],
       "Failed updating monitoring status for this email address": [
         "Απέτυχε η ενημέρωση της κατάστασης παρακολούθησης για αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Απέτυχε η ενημέρωση της κατάστασης παρακολούθησης για αυτό το στοιχείο"
       ],
       "File could not be parsed": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου"
@@ -1771,6 +1805,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
       ],
+      "Alert restored": [
+        "Η ειδοποίηση αποκαταστάθηκε"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Το ψευδώνυμο απενεργοποιήθηκε με επιτυχία. Δε θα λαμβάνετε πλέον μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ item.aliasEmail }"
       ],
@@ -1887,6 +1924,9 @@
       ],
       "Canceled by user": [
         "Ακυρώθηκε από τον χρήστη"
+      ],
+      "Check ignored": [
+        "Ο έλεγχος αγνοήθηκε"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total } κωδικούς πρόσβασης"
@@ -5149,6 +5189,9 @@
       "Minicalendar": [
         "Μίνι ημερολόγιο"
       ],
+      "Missing 2FA": [
+        "Λείπει το 2FA"
+      ],
       "Modified": [
         "Τροποποιήθηκε"
       ],
@@ -5213,6 +5256,9 @@
       ],
       "Our welcome gift to you": [
         "Το δώρο καλωσορίσματος σας"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Κλειδί πρόσβασης"
@@ -5284,6 +5330,9 @@
       "Reused ${ count } time": [
         "Επαναχρησιμοποιημένη ${ count } φορά",
         "Επαναχρησιμοποιημένες ${ count } φορές"
+      ],
+      "Reused password": [
+        "Επαναχρησιμοποιημένος κωδικός πρόσβασης"
       ],
       "Reused passwords": [
         "Επαναχρησιμοποιημένοι κωδικοί πρόσβασης"

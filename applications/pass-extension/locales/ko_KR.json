@@ -43,6 +43,9 @@
       "Add": [
         "추가"
       ],
+      "Add address": [
+        "주소 추가"
+      ],
       "Add current URL": [
         "현재 URL 추가"
       ],
@@ -411,6 +414,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 사용법 안내"
+      ],
+      "Ignore": [
+        "무시"
       ],
       "Import": [
         "불러오기"
@@ -1279,9 +1285,6 @@
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "${ PROTON_SENTINEL_NAME } 설정 업데이트에 실패했습니다."
-      ],
-      "Failed updating monitor flag of the item": [
-        "항목의 모니터링 플래그를 업데이트하지 못했습니다"
       ],
       "Failed updating monitoring status for this email address": [
         "이 이메일 주소에 대한 모니터링 상태를 업데이트하지 못했습니다"

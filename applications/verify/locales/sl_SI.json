@@ -878,6 +878,15 @@
       "Enter your username without the domain (@example.com)": [
         "Vnesite svoje uporabniško ime brez domene (@primer.com)"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Nepravilno varnostno geslo. Poskusite znova."
+      ],
+      "Incorrect password. Please try again.": [
+        "Napačno geslo. Prosimo, poskusite ponovno."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Nepravilno drugo geslo. Poskusite znova."
+      ],
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
       ],
@@ -916,6 +925,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "S to metodo nam ni uspelo poslati potrditvenega kode."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Napačna obnovitvena fraza. Poskusite znova ali uporabite drug način obnovitve."
       ]
     },
     "Error message": {

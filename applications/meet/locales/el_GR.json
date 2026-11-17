@@ -113,6 +113,18 @@
       "Light ${ BRAND_NAME } background applied": [
         "Εφαρμόστηκε ανοιχτό φόντο ${ BRAND_NAME }"
       ],
+      "Live captions allowed for this meeting": [
+        "Οι ζωντανοί υπότιτλοι επιτρέπονται για αυτήν τη σύσκεψη"
+      ],
+      "Live captions turned off": [
+        "Οι ζωντανοί υπότιτλοι είναι απενεργοποιημένοι"
+      ],
+      "Live captions turned off for this meeting": [
+        "Οι ζωντανοί υπότιτλοι είναι απενεργοποιημένοι για αυτήν τη σύσκεψη"
+      ],
+      "Live captions turned on": [
+        "Οι ζωντανοί υπότιτλοι είναι ενεργοποιημένοι"
+      ],
       "Mountain landscape background applied": [
         "Εφαρμόστηκε φόντο ορεινού τοπίου"
       ],
@@ -354,6 +366,9 @@
       "Dismiss new messages": [
         "Απόρριψη νέων μηνυμάτων"
       ],
+      "Dismiss notification": [
+        "Απόρριψη ειδοποίησης"
+      ],
       "Done": [
         "Ολοκληρώθηκε"
       ],
@@ -428,6 +443,9 @@
       ],
       "Getting ready...": [
         "Ετοιμαζόμαστε..."
+      ],
+      "Go to today": [
+        "Πηγαίνετε στο σήμερα"
       ],
       "Help and feedback": [
         "Βοήθεια και σχόλια"
@@ -515,6 +533,9 @@
       ],
       "More options for accounts": [
         "Περισσότερες επιλογές για λογαριασμούς"
+      ],
+      "More reactions": [
+        "Περισσότερες αντιδράσεις"
       ],
       "Mute ${ participantName }": [
         "Σίγαση ${ participantName }"
@@ -2175,9 +2196,6 @@
       "Failed to start recording": [
         "Αποτυχία έναρξης της καταγραφής"
       ],
-      "Failed to start screen share": [
-        "Αποτυχία εκκίνησης κοινής χρήσης οθόνης"
-      ],
       "Failed to unlock meeting": [
         "Αποτυχία ξεκλειδώματος σύσκεψης"
       ],
@@ -2308,9 +2326,6 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Επιλέξτε μια εικόνα JPEG, PNG ή WebP."
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Παρακαλούμε επιτρέψτε την κοινή χρήση οθόνης στις άδειες του συστήματός σας και, δοκιμάστε ξανά."
-      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Η ηχογράφηση σταμάτησε επειδή δεν ήταν δυνατή η αποθήκευσή της. Τη διατηρήσαμε μέχρι αυτό το σημείο."
       ],
@@ -2394,6 +2409,9 @@
       ],
       "This background could not be saved in this browser.": [
         "Αυτό το φόντο δεν ήταν δυνατό να αποθηκευτεί σε αυτό το πρόγραμμα περιήγησης."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Αυτό το emoji δεν μπορεί να χρησιμοποιηθεί ως αντίδραση"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
@@ -2541,6 +2559,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
       ]
     },
     "fido2: Info": {
@@ -2855,9 +2876,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
-      ],
-      "Coming soon": [
-        "Έρχεται σύντομα"
       ],
       "Connection failed": [
         "Αποτυχία σύνδεσης"
@@ -3246,6 +3264,9 @@
       "Open external link": [
         "Άνοιγμα εξωτερικού συνδέσμου"
       ],
+      "Open the window you want to share, then try again.": [
+        "Ανοίξτε το παράθυρο που θέλετε να κοινοποιήσετε και, στη συνέχεια, δοκιμάστε ξανά."
+      ],
       "Other accounts": [
         "Άλλοι λογαριασμοί"
       ],
@@ -3414,6 +3435,9 @@
       "Sign in": [
         "Σύνδεση"
       ],
+      "Something went wrong. Please try again.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά."
+      ],
       "Sort by": [
         "Ταξινόμηση κατά"
       ],
@@ -3431,6 +3455,9 @@
       ],
       "support team": [
         "ομάδα υποστήριξης"
+      ],
+      "System Settings → Privacy & Security → Screen Recording": [
+        "Ρυθμίσεις συστήματος → Απόρρητο και ασφάλεια → Εγγραφή οθόνης"
       ],
       "Thank you for hosting a premium meeting.": [
         "Σας ευχαριστούμε που διοργανώσατε μια premium σύσκεψη."
@@ -3509,6 +3536,9 @@
       ],
       "Turn on camera": [
         "Ενεργοποίηση κάμερας"
+      ],
+      "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
+        "Ενεργοποιήστε το Firefox στο ${ settingsPath }. Στη συνέχεια, επανεκκινήστε το Firefox και συνδεθείτε ξανά στην κλήση."
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Δεν είναι δυνατή η επανασύνδεση στη σύσκεψη. Παρακαλούμε συμμετάσχετε ξανά ή αποχωρήστε."
@@ -3890,6 +3920,9 @@
       ],
       "Raw": [
         "Ακατέργαστη"
+      ],
+      "Reaction picker": [
+        "Επιλογέας αντίδρασης"
       ],
       "Reactions": [
         "Αντιδράσεις"
@@ -4586,6 +4619,9 @@
       "Error at epoch ${ log.epoch }": [
         "Σφάλμα στην epoch ${ log.epoch }"
       ],
+      "Firefox can’t record your screen": [
+        "Το Firefox δεν μπορεί να καταγράψει την οθόνη σας"
+      ],
       "Help and feedback": [
         "Βοήθεια και σχόλια"
       ],
@@ -4665,6 +4701,9 @@
       "No results found": [
         "Κανένα αποτέλεσμα"
       ],
+      "No screen or window found": [
+        "Δεν βρέθηκε οθόνη ή παράθυρο"
+      ],
       "Participant counts don’t match": [
         "Οι αριθμοί των συμμετεχόντων δεν συμπίπτουν."
       ],
@@ -4712,6 +4751,9 @@
       ],
       "Schedule a meeting": [
         "Προγραμματίστε μια σύσκεψη"
+      ],
+      "Screen share failed": [
+        "Η κοινή χρήση οθόνης απέτυχε"
       ],
       "Screen share is blocked": [
         "Η κοινή χρήση οθόνης έχει αποκλειστεί"

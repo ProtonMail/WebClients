@@ -43,6 +43,9 @@
       "Add": [
         "Adicionar"
       ],
+      "Add address": [
+        "Adicionar endereço"
+      ],
       "Add current URL": [
         "Adicionar URL atual"
       ],
@@ -162,6 +165,9 @@
       ],
       "Collapse": [
         "Recolher"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Recolher alertas do Pass Monitor"
       ],
       "Configure": [
         "Configurar"
@@ -325,6 +331,9 @@
       "Dismiss": [
         "Descartar"
       ],
+      "Dismiss notification": [
+        "Descartar notificação"
+      ],
       "Do not show again": [
         "Não mostrar novamente"
       ],
@@ -373,6 +382,9 @@
       "Expand": [
         "Expandir"
       ],
+      "Expand Pass Monitor alerts": [
+        "Expandir alertas do Pass Monitor"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -412,6 +424,9 @@
       "Get Started": [
         "Começar"
       ],
+      "Go to today": [
+        "Ir para hoje"
+      ],
       "Hide": [
         "Ocultar"
       ],
@@ -423,6 +438,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Como usar o ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignorar"
       ],
       "Import": [
         "Importar"
@@ -553,6 +571,9 @@
       "OK": [
         "OK"
       ],
+      "Open item": [
+        "Abrir item"
+      ],
       "Open navigation": [
         "Abrir navegação"
       ],
@@ -615,6 +636,9 @@
       ],
       "Remove member": [
         "Remover membro"
+      ],
+      "Remove passkey": [
+        "Remover chave de acesso"
       ],
       "Rename": [
         "Renomear"
@@ -761,6 +785,9 @@
       "To mailbox": [
         "Para a caixa de correio"
       ],
+      "Toggle section": [
+        "Alternar seção"
+      ],
       "Transfer aliases": [
         "Transferir aliases"
       ],
@@ -903,6 +930,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } mais",
+        "${ count } mais"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "O ${ DARK_WEB_MONITORING_NAME } está disponível com um plano pago. Faça upgrade para acesso imediato."
       ],
@@ -1002,6 +1033,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "A senha deste login foi encontrada em um vazamento de dados. Acesse o serviço e altere a senha."
+      ],
+      "This login uses the same password as another item.": [
+        "Este login usa a mesma senha que outro item."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este serviço oferece autenticação de dois fatores (2FA). Ative-a para maior segurança da sua conta."
@@ -1328,11 +1362,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Falha ao atualizar a configuração de ${ PROTON_SENTINEL_NAME }"
       ],
-      "Failed updating monitor flag of the item": [
-        "Falha ao atualizar a bandeira de monitoramento do item"
-      ],
       "Failed updating monitoring status for this email address": [
         "Falha ao atualizar o status de monitoramento para este endereço de e-mail"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Falha ao atualizar o status de monitoramento para este item"
       ],
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
@@ -1715,8 +1749,14 @@
       "Choose the file format → Select ${ exportLabel }.": [
         "Escolha o formato de arquivo → Selecione ${ exportLabel }."
       ],
+      "Click ${ exportLabel }.": [
+        "Clique em ${ exportLabel }."
+      ],
       "Continue export": [
         "Continuar exportação"
+      ],
+      "CSV...": [
+        "CSV..."
       ],
       "Download file": [
         "Baixar arquivo"
@@ -1798,6 +1838,9 @@
       ],
       "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
         "Abra ${ name } e vá para ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "Abra ${ name } e selecione ${ file } → ${ exportLabel } → ${ csv }."
       ],
       "Open ${ name } and select ${ menu } → ${ option }.": [
         "Abra ${ name } e selecione ${ menu } → ${ option }."
@@ -2041,6 +2084,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Após importar seus dados, você pode excluir o arquivo CSV que contém suas senhas por segurança."
       ],
+      "Alert restored": [
+        "Alerta restaurado"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "O alias foi desativado. Você não mais receberá e-mails enviados para ${ item.aliasEmail }."
       ],
@@ -2166,6 +2212,9 @@
       ],
       "Canceled by user": [
         "Cancelado pelo usuário"
+      ],
+      "Check ignored": [
+        "Verificação ignorada"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Verificando ${ compromised.progress.completed } de ${ compromised.progress.total } senhas"
@@ -5536,6 +5585,9 @@
       "Minicalendar": [
         "Mini calendário"
       ],
+      "Missing 2FA": [
+        "Falta de A2F"
+      ],
       "Modified": [
         "Modificado"
       ],
@@ -5606,6 +5658,9 @@
       ],
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Chave de acesso"
@@ -5680,6 +5735,9 @@
       "Reused ${ count } time": [
         "Reutilizada ${ count } vez",
         "Reutilizada ${ count } vezes"
+      ],
+      "Reused password": [
+        "Senha reutilizada"
       ],
       "Reused passwords": [
         "Senhas reutilizadas"

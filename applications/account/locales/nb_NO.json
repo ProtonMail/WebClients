@@ -109,6 +109,9 @@
       "Bulk user import": [
         "Importer flere brukere"
       ],
+      "Business referral link": [
+        "Anbefalingskobling for bedrifter"
+      ],
       "Cancel plan": [
         "Avslutt plan"
       ],
@@ -644,9 +647,6 @@
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
       ],
-      "Collapse step": [
-        "Skjul trinn"
-      ],
       "Color": [
         "Farge"
       ],
@@ -890,6 +890,12 @@
       "Delete record": [
         "Slett post"
       ],
+      "Delete security key ${ keyName }": [
+        "Slett sikkerhetsnøkkel ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Slett server ${ serverLocation }"
+      ],
       "Delete token “${ token.Name }”": [
         "Slett token “${ token.Name }”"
       ],
@@ -1010,6 +1016,9 @@
       "Download recovery file": [
         "Last ned gjenopprettningsfil"
       ],
+      "Download recovery kit": [
+        "Last ned gjenopprettingssett"
+      ],
       "Download the ${ MAIL_APP_NAME } Export Tool": [
         "Last ned ${ MAIL_APP_NAME } Export Tool"
       ],
@@ -1070,6 +1079,9 @@
       "Edit phone number": [
         "Rediger telefonnummer"
       ],
+      "Edit security key ${ keyName }": [
+        "Rediger sikkerhetsnøkkel ${ keyName }"
+      ],
       "Edit servers": [
         "Rediger servere"
       ],
@@ -1120,9 +1132,6 @@
       ],
       "Enter code": [
         "Skriv inn koden"
-      ],
-      "Expand step": [
-        "Vis trinn"
       ],
       "Explore ${ target }": [
         "Utforsk ${ target }"
@@ -1210,9 +1219,6 @@
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Få hjelp fra ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Get in touch": [
-        "Ta kontakt"
       ],
       "Get limited-time offer": [
         "Skaff deg tidsbegrenset tilbud"
@@ -1448,9 +1454,6 @@
       "Leave group": [
         "Forlat gruppen"
       ],
-      "Let's talk": [
-        "La oss snakke"
-      ],
       "Load more": [
         "Last inn mer"
       ],
@@ -1559,6 +1562,9 @@
       "Next page": [
         "Neste side"
       ],
+      "Next plan": [
+        "Neste plan"
+      ],
       "No": [
         "Nei"
       ],
@@ -1649,6 +1655,9 @@
       "Previous page": [
         "Forrige side"
       ],
+      "Previous plan": [
+        "Forrige plan"
+      ],
       "Publish changes": [
         "Publiser endringer"
       ],
@@ -1715,6 +1724,9 @@
       "Remove domain": [
         "Fjern domene"
       ],
+      "Remove file": [
+        "Fjern fil"
+      ],
       "Remove forward": [
         "Fjern videresending"
       ],
@@ -1729,6 +1741,9 @@
       ],
       "Remove manager": [
         "Fjern administrator"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Fjern ventende server ${ serverLocation }"
       ],
       "Remove this label": [
         "Fjern denne etiketten"
@@ -2141,6 +2156,12 @@
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Åpne/lukk ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Toggle calendar list": [
+        "Åpne/lukke kalenderliste"
+      ],
+      "Toggle substeps": [
+        "Vis/skjul deltrinn"
+      ],
       "Top up": [
         "Rund opp"
       ],
@@ -2335,6 +2356,9 @@
       ],
       "Watch the interview": [
         "Se intervjuet"
+      ],
+      "Weak key: learn more": [
+        "Svak nøkkel: lær mer"
       ],
       "Welcome": [
         "Velkommen"
@@ -2605,6 +2629,9 @@
       ],
       "Permission revoked": [
         "Tillatelse tilbakekalt"
+      ],
+      "Sign-in": [
+        "Logg på"
       ]
     },
     "Admin": {
@@ -3542,6 +3569,11 @@
       ],
       "Website access problem": [
         "Problem med tilgang til nettsted"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Begynn å bruke ${ planTitle } nå"
       ]
     },
     "Button": {
@@ -5646,6 +5678,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Les, svar og hold deg oppdatert på Gmail fra ${ MAIL_APP_NAME }"
+      ],
+      "Refer ${ BRAND_NAME } for Business to your network. You earn credits, and they get ${ refereeRewardAmount } off a yearly subscription. Earn up to ${ maxRewardAmount } in total.": [
+        "Anbefal ${ BRAND_NAME } for Business til nettverket ditt. Du opptjener kreditt, og de får ${ refereeRewardAmount } i rabatt på et årsabonnement. Du kan tjene opptil ${ maxRewardAmount } totalt."
       ],
       "Select which categories you want to add and if you want to receive push notifications for each category.": [
         "Velg hvilke kategorier du vil legge til, og om du vil motta push-varsler for hver kategori."
@@ -9095,6 +9130,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Noe gikk galt da du registrerte sikkerhetsnøkkelen din. Forsøk igjen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Denne nettleseren støtter ikke sikkerhetsnøkler. Prøv en annen nettleser."
+      ],
+      "This security key is already registered to your account.": [
+        "Denne sikkerhetsnøkkelen er allerede registrert på kontoen din."
       ]
     },
     "fido2: Info": {
@@ -9145,6 +9186,9 @@
       ],
       "Touch your security key to continue.": [
         "Berør sikkerhetsnøkkelen for å fortsette."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Bruk enhetens fingeravtrykk, ansiktsgjenkjenning, PIN-kode eller skjermlås"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekreft din identitet med en fysisk U2F eller FIDO2-sikkerhetsnøkkel"
@@ -9833,6 +9877,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Liker du ${ planName }?"
+      ],
+      "Invited businesses": [
+        "Inviterte bedrifter"
       ],
       "Invited friends": [
         "Inviterte venner"
@@ -11775,6 +11822,9 @@
       "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
         "Eksisterende ende-til-ende-krypterte e-postvideresendinger må aktiveres manuelt på nytt under **${ autoReplySettingsTitle }** i innstillingene."
       ],
+      "Expected ${ date }": [
+        "Forventet ${ date }"
+      ],
       "Expired": [
         "Utløpt"
       ],
@@ -12898,8 +12948,8 @@
       "Restore": [
         "Gjenopprett"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "Gjennomgå tidligere perioder og eksporter dataene for rapportering eller klientfakturering."
+      "Review and export the data for reporting or client invoicing.": [
+        "Gjennomgå og eksporter dataene for rapportering eller klientfakturering."
       ],
       "Right to Left": [
         "Høyre til venstre"
@@ -13023,6 +13073,12 @@
       ],
       "Settings updated": [
         "Innstillinger oppdatert"
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Del feillogger med ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Del ytelsesdata og bruksstatistikk med ${ BRAND_NAME }"
       ],
       "Shared server country (${ countriesCount })": [
         "Land for delt server (${ countriesCount })",
@@ -13152,6 +13208,9 @@
       ],
       "Summary": [
         "Sammendrag"
+      ],
+      "Support a mission to create a safer internet for everyone": [
+        "Støtt et oppdrag for å skape et tryggere internett for alle"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Støtte for overvåking av egendefinerte domener og ikke-${ BRAND_NAME }-e-postadresser kommer snart."
@@ -13502,8 +13561,8 @@
       "To continue to ${ product }": [
         "For å fortsette til ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "For å kontinuerlig forbedre våre tjenester, samler vi inn noen ganger data for å overvåke at applikasjonene våre fungerer som de skal. Denne informasjonen er ikke delt med tredjepart-tjenester."
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "For å forbedre tjenestene våre kontinuerlig samler vi noen ganger inn data for å følge med på at appene våre fungerer som de skal. **Denne informasjonen deles ikke med noen tredjepartstjenester.**"
       ],
       "To create your first user group, go to": [
         "For å opprette din første brukergruppe, gå til"
@@ -14210,6 +14269,9 @@
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Du trenger ikke å åpne eller lese filen – bare last den ned og oppbevar den et trygt sted."
+      ],
+      "You earn credits when they sign up": [
+        "Du tjener kreditter når de registrerer seg"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Du blir varslet hvis passordet ditt eller andre data ble lekket fra en tredjepartstjeneste."
@@ -15471,6 +15533,9 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "Faktureres til ${ priceYearly } hver 12. måned."
       ],
+      "Billed average": [
+        "Fakturert gjennomsnitt"
+      ],
       "Billed monthly.": [
         "Faktureres månedlig."
       ],
@@ -15570,8 +15635,8 @@
       "Code is 6 digits without spaces": [
         "Koden består av 6 sifre uten mellomrom"
       ],
-      "Collect usage diagnostics": [
-        "Samle inn diagnostikk for bruk"
+      "Collect anonymous usage diagnostics": [
+        "Samle inn anonym bruksdiagnostikk"
       ],
       "Color": [
         "Farge"
@@ -16210,9 +16275,6 @@
       "Monthly": [
         "Månedlig"
       ],
-      "Monthly average": [
-        "Månedlig gjennomsnitt"
-      ],
       "More payment methods": [
         "Flere betalingsmåter"
       ],
@@ -16383,9 +16445,6 @@
       ],
       "Payment terms": [
         "Betalingsvilkår"
-      ],
-      "Peak allocated licenses": [
-        "Maksimalt antall tildelte lisenser"
       ],
       "Pending": [
         "Ventende"
@@ -16581,6 +16640,9 @@
       ],
       "Settings": [
         "Innstillinger"
+      ],
+      "Share your invite link": [
+        "Del invitasjonskoblingen din"
       ],
       "Share your referral link": [
         "Del vervekoblingen din"
@@ -20942,12 +21004,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (ekskl. MVA)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan ikke kombineres med ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er kun tilgjengelig med forretningsplaner."
-      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20960,14 +21016,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Det kreves en organisasjon for denne planen."
-      ],
       "Billing Country": [
         "Faktureringsland"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Å kjøpe kreditter krever et separat kjøp."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Ved å bytte sier du deg enig med våre ${ termsLink }."
@@ -21017,9 +21067,6 @@
       "Offer unavailable": [
         "Tilbudet er utilgjengelig"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Kun én ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan kjøpes."
-      ],
       "Paid from your account credit.": [
         "Betalt fra kontokreditten din."
       ],
@@ -21032,29 +21079,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "Planbytte er ikke kompatibel av følgende årsaker:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Lukk ekstra lommebokkontoer før du endrer planen din."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Lukk ekstra lommebøker før du endrer planen din."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
       "Processing payment": [
         "Behandler betaling"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet-seter må samsvare med antall medlemmer."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Fornyelsespriser kan endres i henhold til ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe-seter kan ikke overstige antallet medlemmer."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
@@ -21071,18 +21106,6 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Den valgte planen tilbyr ikke nok adresser for kontoen din."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Den valgte planen tilbyr ikke nok domener for kontoen din."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Den valgte planen tilbyr ikke nok medlemmer for kontoen din."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Den valgte planen tilbyr ikke nok lagringsplass for kontoen din."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måned. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
@@ -21116,41 +21139,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denne handlingen utvider det eksisterende abonnementet. Du vil kun bli belastet for de nye tilleggene og den gjenværende tiden av den nåværende faktureringssyklusen. Fornyelsesdatoen for abonnementet ditt vil ikke bli endret."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Denne dedikerte serveren er tilordnet en gateway og kan ikke endres."
-      ],
       "This offer is not available with your current plan.": [
         "Dette tilbudet er ikke tilgjengelig med din nåværende plan."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Denne planen støtter ikke de administrerte funksjonene på kontoen din."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Dette abonnementet støtter ikke medlemmene på kontoen din."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Dette abonnementet kan ikke fullføres akkurat nå. Prøv igjen."
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Prøveplaner støtter ikke egendefinerte domener."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Prøveplaner støtter ikke dedikerte IP-er."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Prøveplaner støtter ikke Scribe-seter."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Prøveplaner støtter ikke så mange medlemmer."
       ],
       "VAT number": [
         "MVA-nummer"
@@ -21163,9 +21162,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har allerede et abonnement på denne planen. Du kan endre abonnementet ditt på ${ subscriptionPlatform }."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du eier allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du vil bli belastet ${ amountToCharge } fra den valgte betalingsmåten."
@@ -21424,6 +21420,9 @@
       "Enter company name": [
         "Skriv inn bedriftsnavn"
       ],
+      "Enter email address, name, or contact group": [
+        "Skriv inn e-postadresse, navn eller kontaktgruppe"
+      ],
       "Enter name or email address": [
         "Skriv inn navn eller e-postadresse"
       ],
@@ -21595,8 +21594,14 @@
       "Comprehensive privacy and security suite.": [
         "Omfattende pakke med personvern og sikkerhet."
       ],
+      "Confidential video conferencing for your business.": [
+        "Konfidensielle videokonferanser for din bedrift."
+      ],
       "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
         "Bekjemp søppelpost, sporing og annonser med kryptert e-post og en sikker kalender."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Viktig personvern- og sikkerhetspakke for bedriften din."
       ],
       "For next-level password management and identity protection.": [
         "For passordadministrasjon og identitetsbeskyttelse på neste nivå."
@@ -21604,14 +21609,29 @@
       "Great for everyday use and photo backups.": [
         "Flott til hverdagsbruk og bildesikkerhetskopier."
       ],
+      "Next-level password management for your business.": [
+        "Neste nivå innen passordhåndtering for bedriften din."
+      ],
       "Perfect for getting started with secure cloud storage.": [
         "Perfekt for å komme i gang med sikker skylagring."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Premium pakke med personvern- og sikkerhetsløsninger for bedriften din."
       ],
       "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
         "Personvernpakke med premiumtjenester og ${ unlimitedPlanMaxSpace } med kryptert skylagring, alt i én pakke."
       ],
+      "Privacy-first AI writing assistant for your business.": [
+        "AI-skriveassistent med personvern i fokus for din bedrift."
+      ],
       "Secure cloud storage and collaboration for teams.": [
         "Sikker skylagring og samarbeid for team."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Sikker skylagring og fildeling for bedriften din."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Sikker, høyhastighets VPN-tilgang for bedriften din."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Den ideelle planen for avanserte brukere som prioriterer personvern."
@@ -22090,6 +22110,15 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Hvis du abonnerer før denne datoen,** får du **${ referrerRewardAmount }** i kreditter."
       ],
+      "**Share your referral link** with the right person at the company": [
+        "**Del vervekoblingen din** med rett person i selskapet"
+      ],
+      "**They sign up for a yearly Pro plan** and get an additional ${ refereeRewardAmount } off their first year": [
+        "**De registrerer seg for et årlig Pro-abonnement** og får ytterligere ${ refereeRewardAmount } i rabatt på det første året"
+      ],
+      "**You earn ${ referrerRewardAmount } for every seat** they add during sign-up.": [
+        "**Du tjener ${ referrerRewardAmount } for hvert sete** de legger til under registreringen."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Etter den datoen vil kontoen din bli nedgradert til **${ BRAND_NAME } Free**. Hvis du ombestemmer deg, kan du **reaktivere abonnementet ditt** for å beholde tilgang til premiumfunksjoner."
       ],
@@ -22104,6 +22133,9 @@
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
         "Jeg har brukt ${ BRAND_NAME } og tenkte du kanskje ville like det. Det er en sikker e-post-, skylagrings-, passordbehandlings- og VPN-tjeneste som beskytter personvernet ditt. Registrer deg med denne lenken for å få ${ refereeRewardAmount } i rabatt på ditt neste abonnement: ${ referralLink }"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Jeg har brukt ${ BRAND_NAME } og tenkte at teamet ditt kanskje vil like det. Det er sikker e-post, skylagring, passordbehandler og VPN som beskytter personvernet ditt. Registrer deg med denne koblingen for å få ${ refereeRewardAmount } i rabatt på det første året med ${ BRAND_NAME } for Business: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Hvis du kansellerer før den tid, vil du bli nedgradert til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveperioden er over. Hvis du ikke kansellerer, starter hele abonnementet ditt, og du får **${ referrerRewardAmount }** i kreditter."
@@ -23605,8 +23637,17 @@
       "Bundle": [
         "Pakke"
       ],
+      "Business information": [
+        "Bedriftsinformasjon"
+      ],
+      "Checkout": [
+        "Til kassen"
+      ],
       "Choose a secure ${ MAIL_APP_NAME } address to get started": [
         "Velg en sikker ${ MAIL_APP_NAME }-adresse for å komme i gang"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Gjør krav på din ekstra rabatt på ${ referralDiscountPercent } %"
       ],
       "Collaborative document editing": [
         "Samarbeidende dokumentredigering"
@@ -23623,6 +23664,9 @@
       "Confirm payment, access your Drive": [
         "Bekreft betaling, få tilgang til din Drive"
       ],
+      "Confirmation": [
+        "Bekreftelse"
+      ],
       "Connect all your devices": [
         "Koble til alle enhetene dine"
       ],
@@ -23637,6 +23681,9 @@
       ],
       "Create account": [
         "Opprett konto"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Opprett din ${ BRAND_NAME }-konto"
       ],
       "Creating your account": [
         "Oppretter kontoen din"
@@ -23653,6 +23700,9 @@
       "Encrypted password manager": [
         "Kryptert passordbehandler"
       ],
+      "Encrypted solutions to protect": [
+        "Krypterte løsninger for å beskytte"
+      ],
       "End-to-end encryption": [
         "Ende-til-ende-kryptering"
       ],
@@ -23661,6 +23711,9 @@
       ],
       "Every free account comes with:": [
         "Hver gratis konto inkluderer:"
+      ],
+      "For ${ countryElement }": [
+        "For ${ countryElement }"
       ],
       "Free": [
         "Free"
@@ -23682,6 +23735,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "skaff deg en sikker ${ MAIL_APP_NAME }-adresse"
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Få ytterligere ${ referralDiscountPercent } % rabatt på ditt første år med ${ BRAND_NAME } for Business"
       ],
       "Gifted by **${ referrerName }**": [
         "Gave fra **${ referrerName }**"
@@ -23801,6 +23857,9 @@
       "Sync files across devices and users": [
         "Synkroniser filer på tvers av enheter og brukere"
       ],
+      "Taxes may apply.": [
+        "Det kan påløpe avgifter."
+      ],
       "The organization name will be visible to your users while they are signed in.": [
         "Organisasjonsnavnet vil være synlig for brukerne mens de er logget på."
       ],
@@ -23837,6 +23896,9 @@
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
       ],
+      "Unlimited vaults for your passwords": [
+        "Ubegrenset antall passordhvelv"
+      ],
       "Up to 2 users": [
         "Opptil 2 brukere"
       ],
@@ -23868,8 +23930,17 @@
         "VPN med servere i ${ VPN_SERVERS.free.countries } land",
         "VPN med servere i ${ VPN_SERVERS.free.countries } land"
       ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "Vi kunne ikke fullføre oppsettet av kontoen din. Ta kontakt med kundestøtte."
+      ],
       "We’ll email you before your trial ends.": [
         "Vi sender deg en e-post før prøveperioden din avsluttes."
+      ],
+      "WS Premium": [
+        "WS premium"
+      ],
+      "WS Standard": [
+        "WS Standard"
       ],
       "Yearly": [
         "Årlig"
@@ -23877,11 +23948,17 @@
       "You are all set": [
         "Du er klar"
       ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Du er invitert til å bli en av mer enn 100 000 organisasjoner som beskytter dataene sine med ${ BRAND_NAME }s krypterte økosystem."
+      ],
       "Your account has been created, but we couldn't sign you in.": [
         "Vi har opprettet kontoen din, men vi kunne ikke logge deg på."
       ],
       "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
         "Kontoen din inkluderer tilgang til gratis funksjoner i ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "your entire business": [
+        "Hele bedriften din"
       ],
       "Your plan": [
         "Planen din"
@@ -25803,6 +25880,9 @@
       "/user per month": [
         "/bruker per måned"
       ],
+      "/user/month": [
+        "/bruker/måned"
+      ],
       "/year": [
         "/år"
       ]
@@ -26359,6 +26439,9 @@
       "Billing cycle": [
         "Faktureringssyklus"
       ],
+      "Billing periods": [
+        "Faktureringsperioder"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -26373,6 +26456,14 @@
       ],
       "Browser extensions": [
         "Nettleserutvidelser"
+      ],
+      "Business invited": [
+        "Bedrift invitert",
+        "Bedrifter invitert"
+      ],
+      "Business signed up": [
+        "Bedrift registrert",
+        "Bedrifter registrert"
       ],
       "Can you access your session in the browser?": [
         "Har du tilgang til økten din i nettleseren?"
@@ -27127,6 +27218,9 @@
       "How did you find out about us?": [
         "Hvordan fant du ut om oss?"
       ],
+      "How it works": [
+        "Hvordan det fungerer"
+      ],
       "How to choose a good logo": [
         "Hvordan velge en god logo"
       ],
@@ -27305,8 +27399,8 @@
       "Monthly": [
         "Månedlig"
       ],
-      "Monthly Costs": [
-        "Månedlige kostnader"
+      "Monthly cost": [
+        "Månedlig kostnad"
       ],
       "Multi-user support": [
         "Flerbrukerstøtte"
@@ -27491,17 +27585,11 @@
       "Previous": [
         "Forrige"
       ],
-      "Previous billing periods": [
-        "Tidligere faktureringsperioder"
-      ],
       "Priority support:": [
         "Prioritert brukerstøtte:"
       ],
       "Privacy": [
         "Personvern"
-      ],
-      "Privacy and data collection": [
-        "Personvern og datainnsamling"
       ],
       "Problem processing your payment": [
         "Problem ved behandling av betaling"
@@ -27553,6 +27641,9 @@
       ],
       "Refer a friend": [
         "Verv en venn"
+      ],
+      "Refer businesses": [
+        "Anbefal bedrifter"
       ],
       "Reject device?": [
         "Avvise enhet?"

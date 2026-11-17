@@ -623,9 +623,6 @@
       "Collaborate on documents": [
         "Shirikiana kwenye nyaraka"
       ],
-      "Collapse step": [
-        "Kunja hatua"
-      ],
       "Color": [
         "Rangi"
       ],
@@ -1085,9 +1082,6 @@
       "Enter code": [
         "Weka msimbo"
       ],
-      "Expand step": [
-        "Panua hatua"
-      ],
       "Explore ${ target }": [
         "Chunguza ${ target }"
       ],
@@ -1174,9 +1168,6 @@
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Pata msaada kutoka ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Get in touch": [
-        "Wasiliana nasi"
       ],
       "Get limited-time offer": [
         "Pata ofa ya muda mfupi"
@@ -1405,9 +1396,6 @@
       ],
       "Leave group": [
         "Ondoka kwenye kikundi"
-      ],
-      "Let's talk": [
-        "Tuongee"
       ],
       "Load more": [
         "Pakia zaidi"
@@ -1660,6 +1648,9 @@
       ],
       "Remove domain": [
         "Ondoa kikoa"
+      ],
+      "Remove file": [
+        "Ondoa faili"
       ],
       "Remove forward": [
         "Ondoa usambazaji"
@@ -12540,9 +12531,6 @@
       "Restore": [
         "Rudisha"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "Kagua vipindi vilivyopita na uhamishe data kwa ajili ya kuripoti au kutuma ankara kwa wateja."
-      ],
       "Right to Left": [
         "Kulia kwenda kushoto"
       ],
@@ -13116,9 +13104,6 @@
       ],
       "To continue to ${ product }": [
         "Ili kuendelea kwenda ${ product }"
-      ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Ili kuendelea kuboresha huduma zetu, wakati mwingine tunakusanya data ili kufuatilia uendeshaji sahihi wa programu zetu. Taarifa hizi hazishirikishwi na huduma yoyote ya upande wa tatu."
       ],
       "To create your first user group, go to": [
         "Ili kutengeneza kikundi chako cha kwanza cha watumiaji, nenda kwenye"
@@ -15068,9 +15053,6 @@
       "Code is 6 digits without spaces": [
         "Msimbo una tarakimu 6 bila nafasi"
       ],
-      "Collect usage diagnostics": [
-        "Kusanya uchunguzi wa matumizi"
-      ],
       "Color": [
         "Rangi"
       ],
@@ -15696,9 +15678,6 @@
       "Monthly": [
         "Kila mwezi"
       ],
-      "Monthly average": [
-        "Wastani wa kila mwezi"
-      ],
       "More payment methods": [
         "Njia zaidi za malipo"
       ],
@@ -15863,9 +15842,6 @@
       ],
       "Payment method": [
         "Njia ya kulipa"
-      ],
-      "Peak allocated licenses": [
-        "Kilele cha leseni zilizotengwa"
       ],
       "Pending": [
         "Inasubiri"
@@ -20353,12 +20329,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (bila kodi)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } haiwezi kuunganishwa na ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } inapatikana tu kwenye mipango ya biashara."
-      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20371,14 +20341,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Kiasi cha kulipwa baada ya jaribio mnamo ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Shirika linahitajika kwa mpango huu."
-      ],
       "Billing Country": [
         "Nchi ya malipo"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Kununua salio kunahitaji manunuzi tofauti."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Kwa kubadilisha, unakubali ${ termsLink } yetu."
@@ -20428,20 +20392,11 @@
       "Offer unavailable": [
         "Ofa haipatikani"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } moja tu inaweza kununuliwa."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Lipa kwa ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Njia ya kulipa inahitajika ili usajili uanzishwe baada ya jaribio kuisha."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Tafadhali funga akaunti za pochi za ziada kabla ya kubadilisha mpango wako."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Tafadhali funga pochi za ziada kabla ya kubadilisha mpango wako."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Tafadhali wezesha upya usajili wako kwanza ili kupunguza idadi ya viongezo."
@@ -20454,9 +20409,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Inahuishwa kwa ${ renewPriceStr }, ghairi wakati wowote."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Leseni za Scribe haziwezi kuzidi idadi ya wanachama."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Samahani, ofa hii haipatikani kwenye mpango wako wa sasa."
@@ -20473,18 +20425,6 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Punguzo linatumika kwa upyaji ${ renewalsWithCoupon }.",
         "Punguzo linatumika kwa upyaji ${ renewalsWithCoupon }."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Mpango ulioteuliwa hautoi anwani za kutosha kwa akaunti yako."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Mpango ulioteuliwa hautoi vikoa vya kutosha kwa akaunti yako."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Mpango ulioteuliwa hautoi wanachama wa kutosha kwa akaunti yako."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Mpango ulioteuliwa hautoi hifadhi ya kutosha kwa akaunti yako."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Bei ya punguzo maalum ni halali kwa mwezi ${ couponRedemptions }. Kisha itajiandikisha upya kiotomatiki kwa ${ renewPriceStr } kwa mwezi 1. Unaweza kughairi wakati wowote.",
@@ -20518,35 +20458,14 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Kitendo hiki kinapanua usajili uliopo. Utalipishwa kwa nyongeza mpya tu na kwa muda uliobaki wa mzunguko wa malipo wa sasa. Tarehe ya kusasisha usajili wako haitabadilishwa."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Seva hii maalum imepangwa kwa lango na haiwezi kubadilishwa."
-      ],
       "This offer is not available with your current plan.": [
         "Ofa hii haipatikani na mpango wako wa sasa."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Njia hii ya malipo itakuwa chaguo-msingi chako kipya kwa kila kuhuishwa baadaye."
       ],
-      "This plan doesn’t support the members on your account.": [
-        "Mpango huu hauruhusu wanachama walio katika akaunti yako."
-      ],
       "Timeout exceeded": [
         "Muda wa kukamilisha umeisha."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Mipango ya majaribio hairuhusu leseni za ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Mipango ya majaribio hairuhusu vikoa maalum."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Mipango ya majaribio hairuhusu IP maalum."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Mipango ya majaribio hairuhusu leseni za Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Mipango ya majaribio hairuhusu wanachama wengi hivi."
       ],
       "VAT number": [
         "Nambari ya VAT"
@@ -20559,9 +20478,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Tayari una usajili wa mpango huu. Unaweza kubadilisha usajili wako kwenye ${ subscriptionPlatform }."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Tayari unamiliki ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Kiasi cha ${ amountToCharge } kitakatwa kutoka kwenye njia yako ya malipo uliyoteua."
@@ -26536,9 +26452,6 @@
       "Monthly": [
         "Kila mwezi"
       ],
-      "Monthly Costs": [
-        "Gharama za kila mwezi"
-      ],
       "Multi-user support": [
         "Uwezo wa watumiaji wengi"
       ],
@@ -26716,17 +26629,11 @@
       "Previous": [
         "Iliyotangulia"
       ],
-      "Previous billing periods": [
-        "Vipindi vya bili vilivyopita"
-      ],
       "Priority support:": [
         "Usaidizi wa kipaumbele:"
       ],
       "Privacy": [
         "Faragha"
-      ],
-      "Privacy and data collection": [
-        "Faragha na ukusanyaji wa data"
       ],
       "Problem processing your payment": [
         "Hitilafu imetokea wakati wa kuchakata malipo yako."

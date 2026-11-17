@@ -161,9 +161,6 @@
       "Get ${ planOrAppName }": [
         "Uzyskaj ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Skontaktuj się z nami"
-      ],
       "Get the apps": [
         "Pobierz aplikacje"
       ],
@@ -208,9 +205,6 @@
       ],
       "Keep my subscription": [
         "Zachowaj subskrypcję"
-      ],
-      "Let's talk": [
-        "Porozmawiajmy"
       ],
       "Manage advanced account protections": [
         "Zarządzaj zaawansowanymi zabezpieczeniami konta"
@@ -3215,12 +3209,6 @@
       "${ project.conversationCount } conversations": [
         "Wątki: ${ project.conversationCount }"
       ],
-      "${ project.fileCount } file": [
-        "${ project.fileCount } plik"
-      ],
-      "${ project.fileCount } files": [
-        "${ project.fileCount } plików"
-      ],
       "ad value": [
         "wartość reklamowa"
       ],
@@ -3248,6 +3236,9 @@
       "Built-in ${ BRAND_NAME } agent": [
         "Wbudowany agent ${ BRAND_NAME }"
       ],
+      "Connect ${ MAIL_APP_NAME }, your files, Jira, Linear and more, so ${ LUMO_SHORT_APP_NAME } can work with the things you already use.": [
+        "Połącz aplikację ${ MAIL_APP_NAME }, swoje pliki, Jira, Linear i inne narzędzia, aby ${ LUMO_SHORT_APP_NAME } mógł pracować z tym, z czego już korzystasz."
+      ],
       "Conversation encrypted": [
         "Wątek zaszyfrowany"
       ],
@@ -3266,6 +3257,9 @@
       "data points": [
         "punkty danych"
       ],
+      "Describe a task and ${ LUMO_SHORT_APP_NAME } drafts the skill for you": [
+        "Opisz zadanie i pozwól ${ LUMO_SHORT_APP_NAME } przygotować szkic umiejętności dla ciebie."
+      ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Dowiedz się, co sztuczna inteligencja gigantów technologicznych mogłaby wywnioskować o Tobie z historii Twoich czatów — i uzyskaj wskaźnik prywatności, który możesz udostępnić."
       ],
@@ -3283,6 +3277,9 @@
       ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Pliki przesłane do tego projektu zostaną zapisane w połączonym folderze na Dysku."
+      ],
+      "Find documents, bookings and messages without switching apps": [
+        "Znajduj dokumenty, potwierdzenia rezerwacji i wiadomość, bez potrzeby przełączania aplikacji."
       ],
       "From ${ DRIVE_APP_NAME }": [
         "Z ${ DRIVE_APP_NAME }"
@@ -3326,6 +3323,9 @@
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Zobacz, co sztuczna inteligencja gigantów technologicznych wie o Tobie. Stworzone przy użyciu ${ LUMO_SHORT_APP_NAME }."
       ],
+      "Skills are saved instructions for tasks you do often. Type / in any chat to use one.": [
+        "Umiejętności to zapisane instrukcje dotyczące czynności, które często wykonujesz. Aby skorzystać z jednej z nich, wpisz / w dowolnym oknie czatu."
+      ],
       "Something went wrong analysing this export. Please try again.": [
         "Coś poszło nie tak podczas analizowania tego eksportu. Spróbuj ponownie."
       ],
@@ -3356,8 +3356,17 @@
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Zapiszemy Twoją kartę, aby można było dołączyć ją do posta — serwisy społecznościowe nie mogą dodać tego obrazu za Ciebie."
       ],
+      "With the ${ LUMO_SHORT_APP_NAME } desktop app, connect ${ MAIL_APP_NAME }, your files, Jira, Linear and more, so ${ LUMO_SHORT_APP_NAME } can work with the things you already use.": [
+        "Dzięki aplikacji komputerowej ${ LUMO_SHORT_APP_NAME } możesz połączyć ${ MAIL_APP_NAME }, swoje pliki, Jira, Linear i inne usługi, dzięki czemu ${ LUMO_SHORT_APP_NAME } będzie współpracować z narzędziami, z których już korzystasz."
+      ],
+      "You decide what ${ LUMO_SHORT_APP_NAME } does on its own and what needs your OK": [
+        "Ty decydujesz co ${ LUMO_SHORT_APP_NAME } może zrobić samodzielnie, a na co potrzebuje pozwolenia."
+      ],
       "You're using private browsing": [
         "Korzystasz z trybu prywatnego"
+      ],
+      "Your data is never used to train AI": [
+        "Twoje dane nigdy nie są używane do szkolenia AI"
       ],
       "Your information is zero-access encrypted": [
         "Twoje informacje są zaszyfrowane metodą zero-access"
@@ -3504,6 +3513,26 @@
       ],
       "Sign in required": [
         "Wymaga zalogowania"
+      ]
+    },
+    "collider_2025:Plugin summary": {
+      "Clean spreadsheets, charts and dashboards.": [
+        "Jasne arkusze kalkulacyjne, wykresy i pulpity."
+      ],
+      "Draft, edit and translate in your own voice.": [
+        "Twórz szkice, edytuj i tłumacz, zachowując swój własny styl."
+      ],
+      "Meetings and inboxes into plans and replies.": [
+        "Spotkania i skrzynki odbiorcze w plany i odpowiedzi."
+      ],
+      "Slide decks, one-pagers and explainers.": [
+        "Prezentacje, krótkie streszczenia i artykuły wyjaśniające."
+      ],
+      "Sourced reports and fact-checks.": [
+        "Źródła informacji i weryfikacja faktów."
+      ],
+      "Spot phishing, redact data, read policies.": [
+        "Wykrywaj próby phishingu, maskuj dane, czytaj zasady."
       ]
     },
     "collider_2025:Prefill": {
@@ -3846,6 +3875,9 @@
       "Better web search": [
         "Lepsze wyszukiwanie w sieci"
       ],
+      "Bring your apps and files into ${ LUMO_SHORT_APP_NAME }": [
+        "Przenieś swoje aplikacje i pliki do ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Built by the team that knows privacy": [
         "Stworzone przez zespół, który zna się na prywatności"
       ],
@@ -3945,6 +3977,9 @@
       "See your AI paper trail": [
         "Zobacz swój ślad AI"
       ],
+      "Skills from ${ BRAND_NAME }": [
+        "Umiejętności od ${ BRAND_NAME }"
+      ],
       "Sort by": [
         "Sortuj według"
       ],
@@ -3953,6 +3988,9 @@
       ],
       "Start a new conversation": [
         "Rozpocznij nowy wątek"
+      ],
+      "Teach ${ LUMO_SHORT_APP_NAME } how you work": [
+        "Naucz ${ LUMO_SHORT_APP_NAME } jak pracujesz"
       ],
       "That's why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Właśnie dlatego stworzyliśmy ${ LUMO_SHORT_APP_NAME }: Aby zapewnić Ci wszystkie korzyści płynące ze sztucznej inteligencji, bez narażania na szwank Twojej prywatności i bezpieczeństwa danych."
@@ -5105,6 +5143,9 @@
       "Company name or personal name is required": [
         "Wymagana jest nazwa firmy lub imię i nazwisko"
       ],
+      "Could not unlock this item": [
+        "Nie można odblokować elementu"
+      ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
@@ -5125,6 +5166,9 @@
       ],
       "Failed to load subscription data. Please try again later.": [
         "Nie udało się załadować danych subskrypcji. Spróbuj ponownie później."
+      ],
+      "Image preview not found": [
+        "Nie znaleziono podglądu zdjęcia"
       ],
       "Incorrect backup password. Please try again.": [
         "Hasło zapasowe jest nieprawidłowe. Spróbuj ponownie."
@@ -5224,6 +5268,9 @@
       ],
       "Reverse charge scheme is not supported for this plan": [
         "Mechanizm odwrotnego obciążenia nie jest obsługiwany w przypadku tego planu"
+      ],
+      "Signature is missing": [
+        "Brak podpisu"
       ],
       "Signature verification failed": [
         "Weryfikacja podpisu nie powiodła się"

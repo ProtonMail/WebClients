@@ -1095,6 +1095,11 @@
         "Versão premium do gestor de palavras-passe"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicação para desktop ${ MAIL_APP_NAME }"
@@ -4490,9 +4495,6 @@
         "Criar uma nuvem segura para ${ memberCount } membro",
         "Criar uma nuvem segura para ${ memberCount } membros"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Crie um documento encriptado de ponta a ponta."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Crie documentos e folhas de cálculo encriptados de ponta a ponta."
       ],
@@ -4584,7 +4586,7 @@
         "Introduza o código de verificação que foi enviado para ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduza o código de verificação. Dígito ${ digit }."
+        "Insira o código de verificação. Dígito ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduza a sua palavra-passe (como administrador da organização)."
@@ -4915,9 +4917,6 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "A navegação privada (ou modo «incógnito») só é útil para manter a sua atividade oculta no seu dispositivo. Impede que o seu navegador guarde histórico e cookies, mas não o torna invisível. O seu ISP, o administrador de rede e os sítios web que visita ainda podem ver o que faz online."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Os documentos públicos ainda não estão ativados para a sua organização."
       ],
       "Read-only": [
         "Apenas de leitura"
@@ -7509,7 +7508,7 @@
         "É necessário privatizar todos os utilizadores antes de gerar uma nova chave de organização."
       ],
       "You need access to the organization key to perform this operation.": [
-        "Precisa de acesso à chave da organização para executar esta operação."
+        "Precisa de acesso ao código da organização para executar esta operação."
       ]
     },
     "Payments": {
@@ -7560,9 +7559,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } mês. Pode cancelar a qualquer momento.",
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } meses. Pode cancelar a qualquer momento."
-      ],
-      "You already own a Born Private account.": [
-        "Já possui uma conta Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -8850,9 +8846,6 @@
       "Cannot add more addresses": [
         "Não é possível adicionar mais endereços"
       ],
-      "Cannot load link": [
-        "Não é possível carregar a ligação."
-      ],
       "Change access to viewer?": [
         "Alterar acesso para visualizador?"
       ],
@@ -9273,12 +9266,6 @@
       "Subscription canceled": [
         "A subscrição foi cancelada."
       ],
-      "The link either does not exist or has expired": [
-        "A ligação não existe ou expirou"
-      ],
-      "The link expired": [
-        "A ligação expirou."
-      ],
       "This document is password protected": [
         "Este documento é protegido por palavra-passe.."
       ],
@@ -9520,13 +9507,16 @@
         "A ativação do membro é incompleta."
       ],
       "Organization key must be activated to request data access": [
-        "A chave da organização deve ser ativada para solicitar acesso aos dados."
+        "O código da organização deve ser ativado para solicitar acesso aos dados"
       ],
       "The user must have an address to request data access": [
         "O utilizador deve ter um endereço para solicitar acesso aos dados."
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Este utilizador obtém direitos de administrador na próxima vez que se autenticar."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Poderá atribuir cargos assim que o utilizador aceitar o convite."
       ]

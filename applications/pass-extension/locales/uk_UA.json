@@ -43,6 +43,9 @@
       "Add": [
         "Додати"
       ],
+      "Add address": [
+        "Додати адресу"
+      ],
       "Add current URL": [
         "Додати поточний URL"
       ],
@@ -150,6 +153,9 @@
       ],
       "Collapse": [
         "Згорнути"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Сховати сповіщення монітора пропусків"
       ],
       "Configure": [
         "Налаштувати"
@@ -310,6 +316,9 @@
       "Dismiss": [
         "Відхилити"
       ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
       "Do not show again": [
         "Не показувати знову"
       ],
@@ -355,6 +364,9 @@
       "Expand": [
         "Розгорнути"
       ],
+      "Expand Pass Monitor alerts": [
+        "Розгорнути сповіщення Pass Monitor"
+      ],
       "Export": [
         "Експортувати"
       ],
@@ -394,6 +406,9 @@
       "Get Started": [
         "Розпочнімо"
       ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
+      ],
       "Hide": [
         "Сховати"
       ],
@@ -402,6 +417,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Як використовувати ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ігнорувати"
       ],
       "Import": [
         "Імпортувати"
@@ -523,6 +541,9 @@
       "OK": [
         "Застосувати"
       ],
+      "Open item": [
+        "Відкритий елемент"
+      ],
       "Open navigation": [
         "Відкрити панель навігації"
       ],
@@ -582,6 +603,9 @@
       ],
       "Remove member": [
         "Вилучити учасника"
+      ],
+      "Remove passkey": [
+        "Видалити ключ доступу"
       ],
       "Rename": [
         "Перейменувати"
@@ -717,6 +741,9 @@
       ],
       "To mailbox": [
         "До поштової скриньки"
+      ],
+      "Toggle section": [
+        "Розгорнути/згорнути розділ"
       ],
       "Transfer aliases": [
         "Перенести псевдоніми"
@@ -945,6 +972,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Цей обліковий запис вразливий, відвідайте сервіс і змініть пароль."
+      ],
+      "This login uses the same password as another item.": [
+        "Цей обліковий запис використовує той самий пароль, що й інший елемент."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Цей сервіс пропонує 2ЕП. Увімкніть її для додаткової безпеки облікового запису."
@@ -1262,11 +1292,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Помилка оновлення налаштувань ${ PROTON_SENTINEL_NAME }"
       ],
-      "Failed updating monitor flag of the item": [
-        "Не вдалося оновити позначку відстеження елемента"
-      ],
       "Failed updating monitoring status for this email address": [
         "Помилка під час оновлення стану відстеження для цієї адреси пошти"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Не вдалося оновити статус моніторингу для цього елемента"
       ],
       "File could not be parsed": [
         "Не вдалося проаналізувати файл"
@@ -1620,6 +1650,17 @@
         "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
       ]
     },
+    "Import Tutorial": {
+      "Click ${ exportLabel }.": [
+        "Натисніть ${ exportLabel }."
+      ],
+      "CSV...": [
+        "CSV..."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "Відкрийте ${ name } і виберіть ${ file } → ${ exportLabel } → ${ csv }."
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" елемент було відхилено"
@@ -1822,6 +1863,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Після успішного імпорту даних ви можете видалити файл CSV, що містить ваші паролі, з міркувань безпеки."
       ],
+      "Alert restored": [
+        "Оповіщення відновлено"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Псевдонім успішно вимкнено. Ви більше не отримуватимете електронні листи, надіслані на ${ item.aliasEmail }"
       ],
@@ -1944,6 +1988,9 @@
       ],
       "Can view this item.": [
         "Можна переглянути цей елемент."
+      ],
+      "Check ignored": [
+        "Перевірка пропущена"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Оберіть збережений ключ доступу для входу до ${ domain }"
@@ -5138,6 +5185,9 @@
       "Minicalendar": [
         "Мінікалендар"
       ],
+      "Missing 2FA": [
+        "Відсутня двофакторна аутентифікація (2FA)"
+      ],
       "Modified": [
         "Змінено"
       ],
@@ -5185,6 +5235,9 @@
       ],
       "Our welcome gift to you": [
         "Наш вітальний подарунок для вас"
+      ],
+      "Pass Monitor": [
+        "Монітор пропусків"
       ],
       "Passkey": [
         "Ключ доступу"
@@ -5257,6 +5310,9 @@
         "Повторювався ${ count } рази",
         "Повторювався ${ count } разів",
         "Повторювався ${ count } разів"
+      ],
+      "Reused password": [
+        "Повторно використаний пароль"
       ],
       "Reused passwords": [
         "Повторювальні паролі"

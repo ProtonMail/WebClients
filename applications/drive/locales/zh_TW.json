@@ -324,6 +324,9 @@
       "Display navigation bar": [
         "顯示側邊導覽欄"
       ],
+      "Don't show this offer again": [
+        "不再顯示此優惠"
+      ],
       "Done": [
         "完成"
       ],
@@ -413,9 +416,6 @@
       ],
       "Get ${ planOrAppName }": [
         "選用 ${ planOrAppName }"
-      ],
-      "Get in touch": [
-        "保持聯絡"
       ],
       "Get mobile and desktop apps": [
         "取得行動裝置與電腦版應用程式"
@@ -519,9 +519,6 @@
       "Leave": [
         "離開"
       ],
-      "Let's talk": [
-        "我們一起聊聊！"
-      ],
       "List layout": [
         "清單版面配置"
       ],
@@ -605,6 +602,9 @@
       ],
       "Move to trash": [
         "移至垃圾桶"
+      ],
+      "New": [
+        "新增"
       ],
       "New chat": [
         "新增聊天"
@@ -891,6 +891,9 @@
       "Skip verification": [
         "略過驗證"
       ],
+      "Special Offer": [
+        "特別優惠"
+      ],
       "Start import": [
         "開始匯入"
       ],
@@ -920,6 +923,9 @@
       ],
       "Switch or add account": [
         "切換或是添加帳號"
+      ],
+      "Switch to ${ planName }": [
+        "切換至 ${ planName }"
       ],
       "Take a tour": [
         "瀏覽"
@@ -1586,6 +1592,9 @@
       ],
       "Amount due": [
         "應付金額"
+      ],
+      "Amount due after trial": [
+        "試用後的欠款"
       ],
       "Amount due now": [
         "當前欠款"
@@ -6760,6 +6769,9 @@
       "Pay it": [
         "繳款"
       ],
+      "Photos": [
+        "相片"
+      ],
       "Reactivate now": [
         "現在重新啟用"
       ],
@@ -6774,6 +6786,12 @@
       ],
       "settings": [
         "設定"
+      ],
+      "Shared": [
+        "已分享"
+      ],
+      "Shared with me": [
+        "與我共享"
       ],
       "Terms and conditions": [
         "合約條款"
@@ -8645,12 +8663,6 @@
       "Timeout exceeded": [
         "已經逾時"
       ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "試用方案不支援 ${ LUMO_SHORT_APP_NAME } 座席。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "試用方案不支援獨立 IPs。"
-      ],
       "VAT number": [
         "增值稅編號（VAT）"
       ],
@@ -10177,6 +10189,9 @@
       "Problem reported": [
         "以回報問題"
       ],
+      "Resuming import": [
+        "正在恢復匯入"
+      ],
       "Secure link copied": [
         "安全加密鏈結已複製"
       ],
@@ -10987,6 +11002,9 @@
       ],
       "Stop transfers?": [
         "停止傳輸？"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "訂閱至 ${ planTitle }"
       ],
       "Subscription canceled": [
         "訂購授權已取消"

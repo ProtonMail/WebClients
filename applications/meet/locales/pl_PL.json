@@ -390,6 +390,9 @@
       "More options for accounts": [
         "Więcej opcji dla kont"
       ],
+      "More reactions": [
+        "Więcej reakcji"
+      ],
       "Mute ${ participantName }": [
         "Wycisz ${ participantName }"
       ],
@@ -1733,6 +1736,9 @@
       "An error occurred": [
         "Wystąpił błąd"
       ],
+      "Could not unlock this item": [
+        "Nie można odblokować elementu"
+      ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
@@ -1802,11 +1808,11 @@
       "Failed to start recording": [
         "Nie udało się rozpocząć nagrywania"
       ],
-      "Failed to start screen share": [
-        "Nie udało się rozpocząć udostępniania ekranu"
-      ],
       "Failed to unlock meeting": [
         "Nie udało się odblokować spotkania"
+      ],
+      "Image preview not found": [
+        "Nie znaleziono podglądu zdjęcia"
       ],
       "Incorrect backup password. Please try again.": [
         "Hasło zapasowe jest nieprawidłowe. Spróbuj ponownie."
@@ -1838,9 +1844,6 @@
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Zezwól na udostępnianie ekranu w uprawnieniach systemowych, a następnie spróbuj ponownie"
-      ],
       "Request timed out": [
         "Upłynął limit czasu żądania"
       ],
@@ -1849,6 +1852,9 @@
       ],
       "Screen share is not supported on mobile browsers": [
         "Udostępnianie ekranu nie jest wspierane w przeglądarkach mobilnych"
+      ],
+      "Signature is missing": [
+        "Brak podpisu"
       ],
       "Signature verification failed": [
         "Weryfikacja podpisu nie powiodła się"
@@ -1870,6 +1876,9 @@
       ],
       "The meeting password is invalid": [
         "Hasło spotkania jest niepoprawne"
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Tego emoji nie można użyć jako reakcji."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Pole przekracza maksymalną liczbą ${ maximumLength } znaków."
@@ -2194,9 +2203,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
-      ],
-      "Coming soon": [
-        "Wkrótce"
       ],
       "Connection failed": [
         "Połączenie się nie powiodło"
@@ -2967,6 +2973,9 @@
       ],
       "Raw": [
         "Surowy"
+      ],
+      "Reaction picker": [
+        "Wybieracz reakcji"
       ],
       "Remember my name on this device": [
         "Zapamiętaj moje imię na tym urządzeniu"

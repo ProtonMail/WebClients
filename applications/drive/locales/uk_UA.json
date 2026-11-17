@@ -345,6 +345,9 @@
       "Dismiss": [
         "Відхилити"
       ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
       "Display navigation bar": [
         "Показувати панель навігації"
       ],
@@ -444,9 +447,6 @@
       "Get ${ planOrAppName }": [
         "Отримати ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Зв'яжіться з нами"
-      ],
       "Get mobile and desktop apps": [
         "Отримати мобільну та настільну програми"
       ],
@@ -479,6 +479,9 @@
       ],
       "Go to settings": [
         "Перейти до налаштувань"
+      ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
       ],
       "Got it": [
         "Зрозуміло"
@@ -551,9 +554,6 @@
       ],
       "Leave": [
         "Залишити"
-      ],
-      "Let's talk": [
-        "Поговорімо"
       ],
       "List layout": [
         "Макет списку"
@@ -642,6 +642,9 @@
       "Name your album": [
         "Назвіть свій альбом"
       ],
+      "New": [
+        "Створити"
+      ],
       "New document": [
         "Новий документ"
       ],
@@ -656,6 +659,9 @@
       ],
       "Next": [
         "Далі"
+      ],
+      "Next contact": [
+        "Наступний контакт"
       ],
       "Next month": [
         "Наступний місяць"
@@ -695,6 +701,9 @@
       ],
       "Previous": [
         "Попередній"
+      ],
+      "Previous contact": [
+        "Попередній контакт"
       ],
       "Previous month": [
         "Минулий місяць"
@@ -983,6 +992,9 @@
       ],
       "Toggle settings": [
         "Перемкнути налаштування"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Розгорнути/згорнути підпапки ${ itemName }"
       ],
       "Trust": [
         "Довіряти"
@@ -4280,6 +4292,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
       ]
     },
     "fido2: Info": {
@@ -4841,6 +4856,9 @@
         "Знайдено ${ groupCounts } групи",
         "Знайдено ${ groupCounts } груп",
         "Знайдено ${ groupCounts } груп"
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } імпортовано"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } містить асистента для письма ${ BRAND_NAME } Scribe"
@@ -5433,11 +5451,20 @@
       "Import in progress": [
         "Виконується імпортування"
       ],
+      "Import interrupted": [
+        "Імпорт перервано"
+      ],
       "Import mailbox": [
         "Імпортувати поштову скриньку"
       ],
+      "Import paused": [
+        "Імпорт призупинено"
+      ],
       "Important note": [
         "Важлива інформація"
+      ],
+      "Importing from Google Drive…": [
+        "Імпорт з Google Drive…"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
@@ -5567,6 +5594,9 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Повідомлення на всі ваші адреси електронної пошти потраплятимуть у вашу поштову скриньку."
+      ],
+      "More storage needed": [
+        "Потрібно більше місця для зберігання"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Більшість публічних мереж WiFi є безпечними, але деяким бракує безпеки, що наражає вас на кіберзагрози. VPN шифрує ваш трафік, забезпечуючи ваш захист."
@@ -5777,6 +5807,9 @@
       ],
       "RECOMMENDED": [
         "РЕКОМЕНДОВАНО"
+      ],
+      "Reconnect Google Drive": [
+        "Повторно підключити Google Drive"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
@@ -6234,6 +6267,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Ви використовуєте більший обсяг сховища, ніж передбачено планом ${ downgradedPlanName }. Щоб перейти на нижчий тарифний план, звільніть місце в сховищі."
       ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Ви також можете скасувати імпорт у ${ easySwitchSettingsLink }."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Ви також можете об'єднати імпортовані календарі з наявними календарями ${ BRAND_NAME }."
       ],
@@ -6260,6 +6296,9 @@
       ],
       "You can now return to the application to continue": [
         "Тепер ви можете повернутися до програми для продовження роботи"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Ви зможете відкрити цю папку після завершення імпорту. Наразі ми імпортували ${ importedSize }. Ми надішлемо вам електронного листа, коли процес завершиться."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Ви можете увімкнути сповіщення про надходження нових повідомлень до цієї теки."
@@ -6347,6 +6386,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ваш безплатний пробний період успішно переведено на місячну передплату. Дата наступного поновлення — ${ nextBillingDate }."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Імпорт призупинено, оскільки ми втратили доступ до вашого облікового запису Google. Підключіться знову, щоб завантажити решту файлів."
       ],
       "Your information was found on ${ displayedDate }": [
         "Вашу інформацію було знайдено на ${ displayedDate }"
@@ -7265,6 +7307,9 @@
       "Pay invoice": [
         "Сплатити рахунок"
       ],
+      "Photos": [
+        "Фото"
+      ],
       "Reactivate now": [
         "Повторно активувати"
       ],
@@ -7279,6 +7324,12 @@
       ],
       "settings": [
         "налаштування"
+      ],
+      "Shared": [
+        "Спільний доступ"
+      ],
+      "Shared with me": [
+        "Поширено для мене"
       ],
       "Terms and conditions": [
         "Умови та положення"
@@ -9215,9 +9266,6 @@
       "Billing Country": [
         "Країна платника"
       ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
-      ],
       "Card number": [
         "Номер картки"
       ],
@@ -9277,9 +9325,6 @@
       ],
       "terms and conditions": [
         "умови та положення"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "Для участі в програмі Born Private необхідна пожертва."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
@@ -9347,17 +9392,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас уже є передплата на цей тарифний план. Ви можете змінити передплату на ${ subscriptionPlatform }."
       ],
-      "You already own a Born Private account.": [
-        "Ви вже маєте обліковий запис Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
       "You will soon be redirected to verify your payment.": [
         "Вас невдовзі буде перенаправлено для підтвердження платежу."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ],
       "Your payment is still being processed": [
         "Ваш платіж усе ще обробляється"
@@ -10982,6 +11021,9 @@
       "Problem reported": [
         "Про проблему повідомлено"
       ],
+      "Resuming import": [
+        "Відновлення імпорту"
+      ],
       "Secure link copied": [
         "Захищене посилання скопійовано"
       ],
@@ -11726,6 +11768,9 @@
       "Recommended actions": [
         "Рекомендовані дії"
       ],
+      "Reconnect to finish your import": [
+        "Підключіться знову, щоб завершити імпорт"
+      ],
       "Reconnect your account": [
         "Повторно під'єднайте свій обліковий запис"
       ],
@@ -12031,6 +12076,9 @@
       ],
       "Your exposed information": [
         "Ваша викрита інформація"
+      ],
+      "Your import is in progress": [
+        "Імпорт триває"
       ],
       "Your plan": [
         "Ваш тарифний план"

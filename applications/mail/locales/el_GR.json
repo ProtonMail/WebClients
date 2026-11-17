@@ -477,6 +477,9 @@
       "Dismiss": [
         "Παράβλεψη"
       ],
+      "Dismiss notification": [
+        "Απόρριψη ειδοποίησης"
+      ],
       "Display navigation bar": [
         "Εμφάνιση γραμμής περιήγησης"
       ],
@@ -645,9 +648,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Αποκτήστε μια δωρεάν ${ BRAND_NAME } διεύθυνση"
       ],
-      "Get in touch": [
-        "Επικοινωνήστε"
-      ],
       "Get index size on disk": [
         "Λήψη μεγέθους ευρετηρίου στον δίσκο"
       ],
@@ -695,6 +695,9 @@
       ],
       "Go to settings": [
         "Μετάβαση στις ρυθμίσεις"
+      ],
+      "Go to today": [
+        "Πηγαίνετε στο σήμερα"
       ],
       "Google": [
         "Google"
@@ -846,9 +849,6 @@
       ],
       "Least read": [
         "Λιγότερο αναγνωσμένα"
-      ],
-      "Let's talk": [
-        "Ας μιλήσουμε"
       ],
       "Load": [
         "Φόρτωση"
@@ -1051,6 +1051,9 @@
       "Next": [
         "Επόμενο"
       ],
+      "Next contact": [
+        "Επόμενη επαφή"
+      ],
       "Next conversation": [
         "Επόμενη συνομιλία"
       ],
@@ -1131,6 +1134,9 @@
       ],
       "Previous": [
         "Προηγούμενο"
+      ],
+      "Previous contact": [
+        "Προηγούμενη επαφή"
       ],
       "Previous conversation": [
         "Προηγούμενη συνομιλία"
@@ -4268,6 +4274,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Βοηθήστε την ομάδα σας να αποθηκεύει με ασφάλεια κωδικούς πρόσβασης σε ευαίσθητες επιχειρηματικές και πελατειακές πληροφορίες."
       ],
+      "High-performance model for complex tasks": [
+        "Μοντέλο υψηλών επιδόσεων για σύνθετες εργασίες"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
       ],
@@ -4276,6 +4285,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Σας επιτρέπει να προσθέτετε άμεσα συνδέσμους συσκέψεων στις προσκλήσεις εκδηλώσεων."
+      ],
+      "Lightweight model for everyday tasks": [
+        "Ελαφρύ μοντέλο για καθημερινές εργασίες"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται συγχώνευση επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
@@ -5860,6 +5872,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
       ]
     },
     "fido2: Info": {
@@ -6850,6 +6865,10 @@
         "${ n } μη διαβασμένη συνομιλία",
         "${ n } μη διαβασμένες συνομιλίες"
       ],
+      "${ n } unread message": [
+        "${ n } μη διαβασμένο μήνυμα",
+        "${ n } μη διαβασμένα μηνύματα"
+      ],
       "${ name } in ${ parentName }": [
         "${ name } στο ${ parentName }"
       ],
@@ -7328,6 +7347,9 @@
       ],
       "Change your theme": [
         "Αλλάξτε το θέμα σας"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Συνομιλήστε με το ${ LUMO_SHORT_APP_NAME } για να αναζητήσετε, να διαβάσετε, να οργανώσετε και να συντάξετε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας."
       ],
       "Checked Proton support": [
         "Έλεγξα την υποστήριξη Proton"
@@ -7946,8 +7968,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9456,6 +9477,9 @@
       "writing assistant iframe": [
         "iframe βοηθού γραφής"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Οι θέσεις για βοηθούς συγγραφής δεν πωλούνται πλέον."
+      ],
       "Yearly": [
         "Ετησίως"
       ],
@@ -10105,8 +10129,8 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } χαρακτήρες"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant": [
-        "Βοηθός ${ LUMO_SHORT_APP_NAME }"
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός ΤΝ"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
@@ -10702,6 +10726,9 @@
       ],
       "Message:": [
         "Μήνυμα:"
+      ],
+      "Model": [
+        "Μοντέλο"
       ],
       "Move ${ sidebarElementName }": [
         "Μετακίνηση ${ sidebarElementName }"
@@ -11586,6 +11613,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ενεργοποίηση ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x Βασική χρήση"
+      ],
+      "5x Plus usage": [
+        "5 φορές περισσότερη χρήση"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Πρόσβαση σε API, με πίστωση ${ credit } ανά μήνα"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Πρόσβαση σε API, με πίστωση ${ credit } ανά μήνα για κάθε χρήστη"
+      ],
+      "Everything in Basic, and:": [
+        "Τα πάντα στο Basic, και:"
+      ],
+      "Everything in Free, and:": [
+        "Τα πάντα στο Free, και:"
+      ],
+      "Everything in Plus, and:": [
+        "Τα πάντα στο Plus, και:"
+      ],
+      "Extended image generation": [
+        "Εκτεταμένη δημιουργία εικόνων"
+      ],
+      "Includes:": [
+        "Περιλαμβάνει:"
+      ],
+      "Limited image generation": [
+        "Περιορισμένη δημιουργία εικόνων"
+      ],
+      "Limited messages and chat history": [
+        "Περιορισμένα μηνύματα και ιστορικό συνομιλιών"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Περιορισμένες Δεξιότητες, Έργα και προγραμματισμένες εργασίες"
+      ],
+      "Maximum image generation": [
+        "Μέγιστη παραγωγή εικόνων"
+      ],
+      "Maximum Skills and Projects": [
+        "Μέγιστες Δεξιότητες και Έργα"
+      ],
+      "More image generation": [
+        "Περισσότερη δημιουργία εικόνων"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Περισσότερες Δεξιότητες, Έργα και προγραμματισμένες εργασίες"
+      ],
+      "More usage": [
+        "Περισσότερη χρήση"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Για προγραμματισμό και κατασκευή"
+      ],
+      "For everyday chats": [
+        "Για καθημερινές συζητήσεις"
+      ],
+      "For getting more done": [
+        "Για να πετυχαίνετε περισσότερα"
       ]
     },
     "Mail import summary": {
@@ -13547,12 +13641,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (χωρίς φόρους)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } δεν μπορεί να συνδυαστεί με το ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } διατίθεται μόνο σε πλάνα για επιχειρήσεις."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% φόρος: ${ taxAmountElement }"
       ],
@@ -13562,17 +13650,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Απαιτείται ένας οργανισμός για αυτό το πλάνο."
-      ],
       "Billing Country": [
         "Χώρα χρέωσης"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Οι λογαριασμοί Born Private δεν μπορούν να αγοραστούν όσο υπάρχει ενεργή συνδρομή."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Η αγορά μονάδων απαιτεί ξεχωριστή αγορά."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Με την αλλαγή, αποδέχεστε τους ${ termsLink } μας."
@@ -13616,9 +13695,6 @@
       "More plans are available in other currencies": [
         "Περισσότερα πλάνα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Μπορεί να αγοραστεί μόνο ένα ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Πληρωμή με ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -13628,26 +13704,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "Η αλλαγή προγράμματος δεν είναι δυνατή για τους εξής λόγους:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Παρακαλούμε κλείστε τους επιπλέον λογαριασμούς πορτοφολιού πριν αλλάξετε το πλάνο σας."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Παρακαλούμε κλείστε τα επιπλέον πορτοφόλια πριν αλλάξετε το πρόγραμμά σας."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Οι θέσεις στο Proton Meet πρέπει να αντιστοιχούν στον αριθμό των μελών."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Η τιμολόγηση ανανέωσης υπόκειται σε αλλαγές σύμφωνα με τους ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Οι θέσεις των γραμματέων δεν μπορούν να υπερβαίνουν τον αριθμό των μελών."
       ],
       "Tax ${ rate }%": [
         "Φόρος ${ rate }%"
@@ -13658,24 +13722,9 @@
       "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Η πρωτοβουλία Born Private απαιτεί δωρεά."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανέωση.",
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανεώσεις."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό διευθύνσεων για τον λογαριασμό σας."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό τομέων για τον λογαριασμό σας."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό μελών για τον λογαριασμό σας."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αποθηκευτικό χώρο για τον λογαριασμό σας."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ισχύει για ${ couponRedemptions } μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
@@ -13706,41 +13755,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Αυτή η ενέργεια επεκτείνει την υπάρχουσα συνδρομή. Θα χρεωθείτε μόνο για τα νέα πρόσθετα και τον υπόλοιπο χρόνο του τρέχοντος κύκλου χρέωσης. Η ημερομηνία ανανέωσης της συνδρομής σας δε θα αλλάξει."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Αυτός ο αποκλειστικός διακομιστής έχει αντιστοιχιστεί σε μια πύλη και η ρύθμιση αυτή δεν μπορεί να αλλάξει."
-      ],
       "This offer is not available with your current plan.": [
         "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Αυτό το πρόγραμμα δεν υποστηρίζει τις διαχειριζόμενες λειτουργίες στον λογαριασμό σας."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Αυτό το πλάνο δεν υποστηρίζει τα μέλη στον λογαριασμό σας."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Αυτή η συνδρομή δεν μπορεί να ολοκληρωθεί αυτή τη στιγμή. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις για το ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν προσαρμοσμένους τομείς."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν αποκλειστικές διευθύνσεις IP."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν τόσο μεγάλο αριθμό μελών."
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
@@ -13754,20 +13779,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Έχετε ήδη συνδρομή σε αυτό το πλάνο. Μπορείτε να αλλάξετε τη συνδρομή σας στο ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Έχετε ήδη ένα Born Private λογαριασμό."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
       ],
       "You will soon be redirected to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Ο λογαριασμός σας είναι πολύ παλιός για την πρωτοβουλία Born Private."
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
@@ -15740,11 +15756,11 @@
         "${ elementsCount } μήνυμα αφαιρέθηκε από τα Σημασμένα.",
         "${ elementsCount } μηνύματα αφαιρέθηκαν από τα Σημασμένα."
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
-        "Ο βοηθός ${ LUMO_SHORT_APP_NAME } απενεργοποιήθηκε"
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Ο βοηθός ΤΝ ${ LUMO_SHORT_APP_NAME } είναι απενεργοποιημένος"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
-        "Ο βοηθός ${ LUMO_SHORT_APP_NAME } ενεργοποιήθηκε"
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "Ο βοηθός ΤΝ ${ LUMO_SHORT_APP_NAME } είναι ενεργοποιημένος"
       ],
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"

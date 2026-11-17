@@ -362,6 +362,12 @@
       "Delete policy": [
         "Видалити політику"
       ],
+      "Delete security key ${ keyName }": [
+        "Видалити ключ безпеки ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Видалити сервер ${ serverLocation }"
+      ],
       "Delete user": [
         "Видалити користувача"
       ],
@@ -407,6 +413,9 @@
       "Dismiss": [
         "Відхилити"
       ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
       "Don't show again": [
         "Не показувати знову"
       ],
@@ -430,6 +439,9 @@
       ],
       "Download recovery file": [
         "Завантажити файл відновлення"
+      ],
+      "Download recovery kit": [
+        "Завантажити комплект для відновлення"
       ],
       "Download updated file": [
         "Завантажити оновлений файл"
@@ -478,6 +490,9 @@
       ],
       "Edit phone number": [
         "Змінити номер телефону"
+      ],
+      "Edit security key ${ keyName }": [
+        "Редагувати ключ безпеки ${ keyName }"
       ],
       "Edit servers": [
         "Змінити сервери"
@@ -554,9 +569,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Отримати допомогу від ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Get in touch": [
-        "Зв'яжіться з нами"
-      ],
       "Get limited-time offer": [
         "Отримати обмежену пропозицію"
       ],
@@ -598,6 +610,9 @@
       ],
       "Go to panel ${ index }": [
         "Перейти до панелі ${ index }"
+      ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
       ],
       "Google": [
         "Google"
@@ -683,9 +698,6 @@
       "Learn more": [
         "Докладніше"
       ],
-      "Let's talk": [
-        "Поговорімо"
-      ],
       "Load more": [
         "Завантажити ще"
       ],
@@ -755,6 +767,9 @@
       "Next": [
         "Далі"
       ],
+      "Next contact": [
+        "Наступний контакт"
+      ],
       "Next month": [
         "Наступний місяць"
       ],
@@ -808,6 +823,9 @@
       ],
       "Previous": [
         "Попередній"
+      ],
+      "Previous contact": [
+        "Попередній контакт"
       ],
       "Previous month": [
         "Минулий місяць"
@@ -869,11 +887,20 @@
       "Remove domain": [
         "Вилучити домен"
       ],
+      "Remove file": [
+        "Вилучити файл"
+      ],
       "Remove from favorites": [
         "Вилучити з улюблених"
       ],
       "Remove gift code": [
         "Вилучити подарунковий код"
+      ],
+      "Remove logo": [
+        "Видалити логотип"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Видалити сервер, що очікує на обробку, ${ serverLocation }"
       ],
       "Removed ${ memberName } as group owner": [
         "Вилучено ${ memberName } як власника групи"
@@ -5832,6 +5859,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Під час реєстрації вашого ключа безпеки щось пішло не так. Будь ласка, спробуйте знову."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
+      ],
+      "This security key is already registered to your account.": [
+        "Цей ключ безпеки вже зареєстрований у вашому обліковому записі."
       ]
     },
     "fido2: Info": {
@@ -8720,8 +8753,8 @@
       "To continue to ${ product }": [
         "Щоб продовжити в ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Щоб постійно вдосконалювати наші служби, ми іноді збираємо дані для моніторингу належного функціонування наших програм. Ці дані не передаються жодним стороннім службам."
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "З метою постійного вдосконалення наших послуг ми іноді збираємо дані для моніторингу належного функціонування наших додатків. **Ця інформація не передається жодним стороннім сервісам.**"
       ],
       "To create your first user group, go to": [
         "Щоб створити свою першу групу користувачів, перейдіть до"
@@ -9780,8 +9813,8 @@
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
-      "Collect usage diagnostics": [
-        "Збирати діагностику користування"
+      "Collect anonymous usage diagnostics": [
+        "Збирати анонімні дані діагностики використання"
       ],
       "Colors": [
         "Кольори"
@@ -13262,9 +13295,6 @@
       "Billing Country": [
         "Країна платника"
       ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
-      ],
       "Card number": [
         "Номер картки"
       ],
@@ -13330,9 +13360,6 @@
       ],
       "terms and conditions": [
         "умови та положення"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "Для участі в програмі Born Private необхідна пожертва."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
@@ -13403,9 +13430,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас уже є передплата на цей тарифний план. Ви можете змінити передплату на ${ subscriptionPlatform }."
       ],
-      "You already own a Born Private account.": [
-        "Ви вже маєте обліковий запис Born Private."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас буде списано ${ amountToCharge } з обраного вами способу оплати."
       ],
@@ -13414,9 +13438,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Вас невдовзі буде перенаправлено для підтвердження платежу."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ],
       "Your payment is still being processed": [
         "Ваш платіж усе ще обробляється"
@@ -17921,9 +17942,6 @@
       ],
       "Previous": [
         "Назад"
-      ],
-      "Privacy and data collection": [
-        "Приватність і збір даних"
       ],
       "Processing...": [
         "Триває обробка..."

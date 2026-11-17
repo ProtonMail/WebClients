@@ -642,9 +642,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "获取免费 ${ BRAND_NAME } 地址"
       ],
-      "Get in touch": [
-        "保持联系"
-      ],
       "Get index size on disk": [
         "获取磁盘上的索引大小"
       ],
@@ -842,9 +839,6 @@
       ],
       "Least read": [
         "最少已读"
-      ],
-      "Let's talk": [
-        "让我们聊聊"
       ],
       "Load": [
         "载入"
@@ -1047,6 +1041,9 @@
       "Next": [
         "继续"
       ],
+      "Next contact": [
+        "下一个联系人"
+      ],
       "Next conversation": [
         "下一项会话"
       ],
@@ -1127,6 +1124,9 @@
       ],
       "Previous": [
         "上一页"
+      ],
+      "Previous contact": [
+        "上一个联系人"
       ],
       "Previous conversation": [
         "上一项会话"
@@ -4240,6 +4240,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "帮助您的团队安全存储敏感业务和客户信息的密码。"
       ],
+      "High-performance model for complex tasks": [
+        "适合复杂任务的高性能模型"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
       ],
@@ -4248,6 +4251,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "让您即时在活动邀请中添加会议链接。"
+      ],
+      "Lightweight model for everyday tasks": [
+        "适合日常任务的轻量模型"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
@@ -4332,6 +4338,12 @@
       ],
       "To start, give your organization a name.": [
         "首先，请为您的组织命名。"
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "要在 ${ MAIL_APP_NAME } 中使用 ${ LUMO_SHORT_APP_NAME }，请将其添加到您的订阅中。"
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "要在 ${ MAIL_APP_NAME } 中使用 ${ LUMO_SHORT_APP_NAME }，请向您的管理员申请访问权限。"
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "开启邮件跟踪保护，避免广告商等第三方监视您的地理位置和网络轨迹。"
@@ -5803,6 +5815,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥认证时出现问题，请重试。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "此浏览器不支持安全密钥，请换用其他浏览器。"
       ]
     },
     "fido2: Info": {
@@ -7199,6 +7214,9 @@
       "Change your theme": [
         "更改您的主题"
       ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "与 ${ LUMO_SHORT_APP_NAME } 对话，搜索、阅读、整理和起草您的邮件。"
+      ],
       "Checked Proton support": [
         "已检查 Proton 支持"
       ],
@@ -7264,6 +7282,9 @@
       ],
       "Copied to clipboard": [
         "已复制到剪贴板"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "一键从最近的邮件中复制一次性验证码"
       ],
       "Copy the link to clipboard": [
         "复制链接到剪贴板"
@@ -8020,6 +8041,9 @@
       ],
       "Move here": [
         "移至此处"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "复制后请将一次性验证码邮件移至回收站"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
@@ -9913,8 +9937,8 @@
       "${ length }/${ maxLength } characters": [
         "${ length } / ${ maxLength } 个字符"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant": [
-        "${ LUMO_SHORT_APP_NAME } 助手"
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI 助手"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 写作助手"
@@ -10510,6 +10534,9 @@
       "Message:": [
         "消息："
       ],
+      "Model": [
+        "模型"
+      ],
       "Move ${ sidebarElementName }": [
         "移动 ${ sidebarElementName }"
       ],
@@ -10524,6 +10551,9 @@
       ],
       "Move to Inbox": [
         "移至收件箱"
+      ],
+      "Move to Trash": [
+        "移至回收站"
       ],
       "Moved to ${ labelName }": [
         "已移至 ${ labelName }"
@@ -10584,6 +10614,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "通知功能已被禁用，如需启用请调整浏览器设置。"
+      ],
+      "One-time codes": [
+        "一次性验证码"
       ],
       "Operating system": [
         "操作系统"
@@ -13303,12 +13336,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (不含税)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 不能与 ${ PLAN_NAMES[PLANS.PASS] } 组合使用。"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 仅适用于商业套餐。"
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% 税费：${ taxAmountElement }"
       ],
@@ -13318,17 +13345,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "试用期结束后于 ${ formattedDate } 应付金额"
       ],
-      "An organization is required for this plan.": [
-        "此套餐需要组织！"
-      ],
       "Billing Country": [
         "计费国家/地区"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "在订阅生效期间无法购买 Born Private 账户。"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "购买额度需要单独进行！"
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "切换即表示您同意我们的${ termsLink }。"
@@ -13372,9 +13390,6 @@
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "仅可购买一个 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "使用 ${ IDEAL_WERO_BRAND_NAME } 付款"
       ],
@@ -13384,26 +13399,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "套餐切换不兼容，原因如下："
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "请在更改套餐前关闭多余的钱包账户。"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "请在更改套餐前关闭多余的钱包。"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "请先重新激活您的订阅以减少附加功能。"
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet 席位数量必须与成员数量匹配。"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "续费价格会根据${ termsAndConditionsLink }进行调整。"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe 席位数量不能超过成员数量。"
       ],
       "Tax ${ rate }%": [
         "税费 ${ rate }%"
@@ -13414,23 +13417,8 @@
       "terms and conditions": [
         "服务条款"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private 套餐需要捐款。"
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "该折扣适用于 ${ renewalsWithCoupon } 次续订"
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "所选套餐未为您的账户提供足够的地址。"
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "所选套餐未为您的账户提供足够的域名。"
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "所选套餐未为您的账户提供足够的成员名额。"
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "所选套餐未为您的账户提供足够的存储空间。"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "特惠价格在 ${ couponRedemptions } 个月内有效，之后将以每月 ${ renewPriceStr } 续订，您可以随时取消。"
@@ -13456,41 +13444,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "此操作将扩展您现有的订阅。您只需支付新增附加项的费用以及当前计费周期剩余时间的费用。您的订阅续订日期将不会改变。"
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "此专用服务器已分配给网关，无法更改。"
-      ],
       "This offer is not available with your current plan.": [
         "此优惠不适用于您当前的套餐"
       ],
       "This payment method will become your new default for all future renewals.": [
         "此付款方式将成为您未来所有续订的新默认方式。"
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "此套餐不支持您账户上的托管功能。"
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "此套餐不支持您账户中的成员。"
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "当前无法完成此订阅，请重试。"
       ],
       "Timeout exceeded": [
         "超时"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "试用套餐不支持 ${ LUMO_SHORT_APP_NAME } 席位。"
-      ],
-      "Trial plans don’t support custom domains.": [
-        "试用套餐不支持自定义域名。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "试用套餐不支持专用 IP。"
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "试用套餐不支持 Scribe 席位。"
-      ],
-      "Trial plans don’t support this many members.": [
-        "试用套餐不支持如此多的成员。"
       ],
       "VAT number": [
         "增值税号"
@@ -13504,20 +13468,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "您已订阅此套餐，您可以在 ${ subscriptionPlatform } 上更改您的订阅。"
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "您已经拥有 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
-      ],
-      "You already own a Born Private account.": [
-        "您已经拥有一个 Born Private 账户。"
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "您即将被重定向至 PayPal 以验证付款。"
       ],
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
@@ -15423,11 +15378,11 @@
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount } 封邮件已移出星标邮件"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
-        "已禁用 ${ LUMO_SHORT_APP_NAME } 助手"
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI 助手已停用"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
-        "已启用 ${ LUMO_SHORT_APP_NAME } 助手"
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } AI 助手已启用"
       ],
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
@@ -15590,6 +15545,12 @@
       ],
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "已移至 ${ label }，未来类似邮件将自动归类。"
+      ],
+      "One-time codes disabled": [
+        "一次性验证码已停用"
+      ],
+      "One-time codes enabled": [
+        "一次性验证码已启用"
       ],
       "Password copied to clipboard": [
         "密码已复制到剪贴板"

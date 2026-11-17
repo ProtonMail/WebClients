@@ -46,6 +46,9 @@
       "Add account": [
         "Adăugare cont"
       ],
+      "Add address": [
+        "Adăugare adresă"
+      ],
       "Add current URL": [
         "Adăugare URL curent"
       ],
@@ -168,6 +171,9 @@
       ],
       "Collapse": [
         "Restrângere"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Restrângere alerte Pass Monitor"
       ],
       "Confirm": [
         "Confirmare"
@@ -376,6 +382,9 @@
       "Expand": [
         "Extindere"
       ],
+      "Expand Pass Monitor alerts": [
+        "Extendere alerte Pass Monitor"
+      ],
       "Export": [
         "Exportare"
       ],
@@ -432,6 +441,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Cum se folosește ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignorare"
       ],
       "Import": [
         "Importare"
@@ -937,6 +949,11 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "Încă ${ count }",
+        "Încă ${ count }",
+        "Încă ${ count }"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } este disponibilă cu un plan plătit. Îmbunătățiți-vă planul pentru a avea acces imediat."
       ],
@@ -1031,6 +1048,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Această parolă de conectare apare într-o breșă de date. Vizitați serviciul utilizat și modificați parola."
+      ],
+      "This login uses the same password as another item.": [
+        "Această autentificare folosește aceeași parolă ca un alt articol."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Acest serviciu oferă A2A. Activați-l pentru o securitate suplimentară a contului."
@@ -1369,11 +1389,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Actualizarea setărilor ${ PROTON_SENTINEL_NAME } au eșuat."
       ],
-      "Failed updating monitor flag of the item": [
-        "Actualizarea stării de monitorizare pentru a acest articol a eșuat."
-      ],
       "Failed updating monitoring status for this email address": [
         "Actualizarea stării de monitorizare pentru a această adresă a eșuat."
+      ],
+      "Failed updating monitoring status for this item": [
+        "Actualizarea stării de monitorizare pentru acest articol a eșuat."
       ],
       "File could not be parsed": [
         "Fișierul nu a putut fi analizat."
@@ -1881,6 +1901,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
       ],
+      "Alert restored": [
+        "Alertă restaurată"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Aliasul a fost dezactivat. Nu veți mai primi mesaje trimise către ${ item.aliasEmail }."
       ],
@@ -1997,6 +2020,9 @@
       ],
       "Canceled by user": [
         "Anulat de utilizator"
+      ],
+      "Check ignored": [
+        "Verificare ignorată"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Se verifică parolele ${ compromised.progress.completed } din ${ compromised.progress.total }"
@@ -5405,6 +5431,9 @@
       "Minicalendar": [
         "Minicalendar"
       ],
+      "Missing 2FA": [
+        "Lipsește A2F"
+      ],
       "Modified": [
         "Modificat"
       ],
@@ -5471,6 +5500,9 @@
       ],
       "Our welcome gift to you": [
         "Cadoul nostru de bun venit"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Cheie de acces"
@@ -5544,6 +5576,9 @@
         "Refolosită ${ count } dată",
         "Refolosită de ${ count } ori",
         "Refolosită de ${ count } de ori"
+      ],
+      "Reused password": [
+        "Parolă refolosită"
       ],
       "Reused passwords": [
         "Parole refolosite"

@@ -315,6 +315,9 @@
       "Dismiss": [
         "Odmietnuť"
       ],
+      "Dismiss notification": [
+        "Zavrieť notifikáciu"
+      ],
       "Done": [
         "Hotovo"
       ],
@@ -425,6 +428,9 @@
       ],
       "Go to label": [
         "Prejsť na štítok"
+      ],
+      "Go to today": [
+        "Prejsť na dnešok"
       ],
       "Google Drive": [
         "Google Drive"
@@ -570,6 +576,9 @@
       "Next": [
         "Ďalej"
       ],
+      "Next contact": [
+        "Nasledujúci kontakt"
+      ],
       "Next month": [
         "Budúci mesiac"
       ],
@@ -608,6 +617,9 @@
       ],
       "Preview logs": [
         "Náhľad záznamov"
+      ],
+      "Previous contact": [
+        "Predchádzajúci kontakt"
       ],
       "Previous month": [
         "Predchádzajúci mesiac"
@@ -827,6 +839,9 @@
       ],
       "Toggle debug mode": [
         "Prepnúť režim ladenia"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Zobraziť/skryť podadresáre položky ${ itemName }"
       ],
       "Trashing...": [
         "Presúva sa do koša..."
@@ -3499,6 +3514,9 @@
       "There was an error when exporting the contacts vCards": [
         "Pri exporte kontaktov do vCard došlo k chybe"
       ],
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Tento dokument je príliš veľký na to, aby sa dal skopírovať. Stiahnite si ho, aby ste si uchovali kópiu svojej práce."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
@@ -3989,6 +4007,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
       ]
     },
     "fido2: Info": {
@@ -4734,6 +4755,9 @@
       "Can view only": [
         "Môže len zobraziť"
       ],
+      "Can't connect": [
+        "Nie je možné pripojiť sa"
+      ],
       "Can't move a folder into itself": [
         "Priečinok nie je možné presunúť sám do seba"
       ],
@@ -4815,9 +4839,6 @@
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov",
         "Vytvoriť bezpečný cloud pre ${ memberCount } členov"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Vytvorte end-to-end šifrovaný dokument."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Vytvárajte end-to-end šifrované dokumenty a tabuľky."
       ],
@@ -4830,6 +4851,9 @@
       "Creating new document...": [
         "Vytváranie nového dokumentu..."
       ],
+      "Creating new document…": [
+        "Vytváranie nového dokumentu…"
+      ],
       "Current plan": [
         "Aktuálny plán"
       ],
@@ -4838,6 +4862,9 @@
       ],
       "Custom email domains": [
         "Vlastné emailové domény"
+      ],
+      "Decrypting document…": [
+        "Dešifrovanie dokumentu…"
       ],
       "Decrypting your document": [
         "Dešifrujeme váš dokument"
@@ -5202,6 +5229,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Otvorte príručku s odporúčanými akciami a užitočnými odkazmi."
       ],
+      "Opening document…": [
+        "Otváranie dokumentu…"
+      ],
       "Opening...": [
         "Otváranie..."
       ],
@@ -5280,14 +5310,14 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Prosím, počkajte kým zistíme kontakty, ktoré zahŕňajú šifrované dáta s neaktívnym kľúčom."
       ],
+      "Preparing editor…": [
+        "Príprava editora…"
+      ],
       "Primary": [
         "Hlavný"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Súkromné surfovanie (alebo režim „inkognito“) je užitočné len na to, aby vaša aktivita v zariadení zostala skrytá. Zabráni prehliadaču ukladať históriu a súbory cookie, ale neurobí vás neviditeľnými. Váš poskytovateľ internetových služieb, správca siete a webové stránky, ktoré navštevujete, môžu stále vidieť, čo robíte online."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Verejné dokumenty zatiaľ nie sú pre vašu organizáciu povolené."
       ],
       "Read-only": [
         "Iba na čítanie"
@@ -5306,6 +5336,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."
+      ],
+      "Redirecting…": [
+        "Presmerovanie..."
       ],
       "Referral link copied to your clipboard": [
         "Odkaz skopírovaný do schránky"
@@ -5417,6 +5450,9 @@
       ],
       "Symbols (#$&)": [
         "Znaky (#$&)"
+      ],
+      "Syncing latest changes…": [
+        "Synchronizácia najnovších zmien…"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
@@ -6111,6 +6147,9 @@
       ],
       "Last month only": [
         "Iba minulý mesiac"
+      ],
+      "Loading": [
+        "Načítavanie"
       ],
       "Location ${ locationLabel }": [
         "Umiestnenie (${ locationLabel }"
@@ -8181,38 +8220,11 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (bez DPH)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nie je možné kombinovať s ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } je k dispozícii iba v rámci firemných plánov."
-      ],
       "Amount due after trial on ${ formattedDate }": [
         "Suma splatná po skončení skúšobnej prevádzky dňa ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Tento plán si vyžaduje organizáciu."
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Účet Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Nákup kreditov si vyžaduje samostatnú platbu."
-      ],
       "By switching, you agree to our ${ termsLink }.": [
         "Prechodom súhlasíte s našimi ${ termsLink }."
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Je možné zakúpiť iba jeden ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Pred zmenou tarifného plánu prosím zrušte všetky nadbytočné účty v peňaženke."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Pred zmenou tarifného plánu uzavrite všetky ďalšie peňaženky, prosím."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Počet miest Proton Meet sa musí zhodovať s počtom členov."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Ceny za obnovenie sa môžu zmeniť podľa ${ termsAndConditionsLink }."
@@ -8220,32 +8232,14 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
       ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Počet licencií Scribe nesmie presiahnuť počet členov."
-      ],
       "terms and conditions": [
         "zmluvnými podmienkami používania"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "Iniciatíva Born Private si vyžaduje finančný príspevok."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
         "Zľava je platná na ${ renewalsWithCoupon } obnovenia.",
         "Zľava je platná na ${ renewalsWithCoupon } obnovení.",
         "Zľava je platná na ${ renewalsWithCoupon } obnovení."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Vybraný plán neposkytuje pre váš účet dostatočný počet adries."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Vybraný plán neposkytuje pre váš účet dostatočný počet domén."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Vybraný plán neposkytuje pre váš účet dostatočný počet členov."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Vybraný plán neposkytuje pre váš účet dostatočné úložisko."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
@@ -8282,39 +8276,6 @@
         "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiace. Obnovenie môžete kedykoľvek zrušiť.",
         "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť.",
         "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť."
-      ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Tento vyhradený server je priradený k bráne a nie je možné ho zmeniť."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Tento plán nepodporuje spravované funkcie vo vašom účte."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Tento plán nepodporuje členov vo vašom účte."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Skúšobné plány nepodporujú ${ LUMO_SHORT_APP_NAME } licencie."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Skúšobné plány nepodporujú vlastné domény."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Skúšobné plány nepodporujú dedikované IP."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Skúšobné plány nepodporujú Scribe licencie."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Skúšobné plány nepodporujú takýto počet členov."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Už vlastníte ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Už vlastníte účet Born Private."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Váš účet je príliš starý na iniciatívu Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9692,9 +9653,6 @@
       "Cannot add more addresses": [
         "Nie je možné pridať viac adries"
       ],
-      "Cannot load link": [
-        "Odkaz sa nepodarilo načítať"
-      ],
       "Change access to viewer?": [
         "Zmeniť prístup čitateľovi?"
       ],
@@ -10129,12 +10087,6 @@
       ],
       "Subscription canceled": [
         "Predplatné bolo zrušené"
-      ],
-      "The link either does not exist or has expired": [
-        "Odkaz neexistuje alebo vypršala jeho platnosť"
-      ],
-      "The link expired": [
-        "Platnosť odkazu vypršala"
       ],
       "This document is password protected": [
         "Tento dokument je chránený heslom"

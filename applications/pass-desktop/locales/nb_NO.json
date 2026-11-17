@@ -46,6 +46,9 @@
       "Add account": [
         "Legg til konto"
       ],
+      "Add address": [
+        "Legg til adresse"
+      ],
       "Add current URL": [
         "Legg til gjeldende nettadresse"
       ],
@@ -168,6 +171,9 @@
       ],
       "Collapse": [
         "Skjul"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Skjul Pass Monitor-varsler"
       ],
       "Confirm": [
         "Bekreft"
@@ -376,6 +382,9 @@
       "Expand": [
         "Utvid"
       ],
+      "Expand Pass Monitor alerts": [
+        "Vis Pass Monitor-varsler"
+      ],
       "Export": [
         "Eksport"
       ],
@@ -432,6 +441,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Hvordan bruke ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignorer"
       ],
       "Import": [
         "Importer"
@@ -562,6 +574,9 @@
       "OK": [
         "OK"
       ],
+      "Open item": [
+        "Åpne element"
+      ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
@@ -636,6 +651,9 @@
       ],
       "Remove member": [
         "Fjern medlem"
+      ],
+      "Remove passkey": [
+        "Fjern tilgangsnøkkel"
       ],
       "Rename": [
         "Gi nytt navn"
@@ -778,6 +796,9 @@
       ],
       "To mailbox": [
         "Til postboks"
+      ],
+      "Toggle section": [
+        "Vis/skjul seksjon"
       ],
       "Transfer aliases": [
         "Overfør aliaser"
@@ -935,6 +956,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } til",
+        "${ count } til"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
       ],
@@ -1028,6 +1053,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Dette innloggingspassordet har blitt eksponert i et datainnbrudd. Gå til tjenesten og bytt passord."
+      ],
+      "This login uses the same password as another item.": [
+        "Denne påloggingen bruker samme passord som et annet element."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjenesten tilbyr 2FA. Aktiver den for ekstra kontosikkerhet."
@@ -1363,11 +1391,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Kunne ikke oppdatere ${ PROTON_SENTINEL_NAME }-innstillingen"
       ],
-      "Failed updating monitor flag of the item": [
-        "Kunne ikke oppdatere overvåkningsflagget for elementet"
-      ],
       "Failed updating monitoring status for this email address": [
         "Kunne ikke oppdatere overvåkingsstatus for denne e-postadressen"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Kunne ikke oppdatere overvåkingsstatus for dette elementet"
       ],
       "File could not be parsed": [
         "Fil kunne ikke tolkes"
@@ -1858,6 +1886,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
       ],
+      "Alert restored": [
+        "Varselet er gjenopprettet"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias er deaktivert. Du vil ikke lenger motta e-poster sendt til ${ item.aliasEmail }"
       ],
@@ -1974,6 +2005,9 @@
       ],
       "Canceled by user": [
         "Avbrutt av bruker"
+      ],
+      "Check ignored": [
+        "Sjekk ignorert"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Sjekker ${ compromised.progress.completed } av ${ compromised.progress.total } passord"
@@ -5349,6 +5383,9 @@
       "Minicalendar": [
         "Minikalender"
       ],
+      "Missing 2FA": [
+        "Mangler 2FA"
+      ],
       "Modified": [
         "Endret"
       ],
@@ -5413,6 +5450,9 @@
       ],
       "Our welcome gift to you": [
         "Vår velkomstgave til deg"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Tilgangsnøkkel"
@@ -5484,6 +5524,9 @@
       "Reused ${ count } time": [
         "Gjenbrukt ${ count } gang",
         "Gjenbrukt ${ count } ganger"
+      ],
+      "Reused password": [
+        "Gjenbrukt passord"
       ],
       "Reused passwords": [
         "Gjenbrukte passord"

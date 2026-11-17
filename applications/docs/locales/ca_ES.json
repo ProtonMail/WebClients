@@ -52,7 +52,7 @@
         "Afegeix"
       ],
       "Add a payment method": [
-        "Afegiu un mètode de pagament"
+        "Afegeix un mètode de pagament"
       ],
       "Add account": [
         "Afegeix un compte"
@@ -82,7 +82,7 @@
         "Afegeix una nota"
       ],
       "Add payment method": [
-        "Afegir un mètode de pagament"
+        "Afegeix un mètode de pagament"
       ],
       "Add people or groups to share": [
         "Afegeix persones o grups per compartir"
@@ -215,7 +215,7 @@
         "Continua amb ${ planOrAppName }"
       ],
       "Continue with Free": [
-        "Continuar amb el pla gratuït"
+        "Continua amb Free"
       ],
       "Continue with Google": [
         "Continua amb Google"
@@ -308,6 +308,9 @@
       ],
       "Dismiss": [
         "Descarta"
+      ],
+      "Dismiss notification": [
+        "Descarta la notificació"
       ],
       "Done": [
         "Fet"
@@ -415,10 +418,13 @@
         "Vés a l'inici de ${ DOCS_SHORT_APP_NAME }"
       ],
       "Go to ${ planOrAppName }": [
-        "Aneu a ${ planOrAppName }"
+        "Ves a ${ planOrAppName }"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
+      ],
+      "Go to today": [
+        "Vés a avui"
       ],
       "Google Drive": [
         "Google Drive"
@@ -567,6 +573,9 @@
       "Next": [
         "Següent"
       ],
+      "Next contact": [
+        "Següent contacte"
+      ],
       "Next month": [
         "Mes següent"
       ],
@@ -605,6 +614,9 @@
       ],
       "Preview logs": [
         "Previsualitza els registres"
+      ],
+      "Previous contact": [
+        "Contacte anterior"
       ],
       "Previous month": [
         "Mes anterior"
@@ -824,6 +836,9 @@
       ],
       "Toggle debug mode": [
         "Commuta el mode de depuració"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Commuta les subcarpetes de ${ itemName }"
       ],
       "Trashing...": [
         "S'està enviant a la paperera..."
@@ -1454,7 +1469,7 @@
         "Historial de xat complet amb cerca"
       ],
       "Limited daily chats": [
-        "Nombre de xats diaris limitat"
+        "Nombre limitat de xats diaris"
       ],
       "Limited favorites": [
         "Nombre de preferits limitat"
@@ -2622,7 +2637,7 @@
         "Ja no podem accedir a ${ boldEmails }."
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
-        "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
+        "Posarem en pausa les importacions al 80% de l'emmagatzematge a fi de reservar espai per a missatges nous."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
@@ -2652,7 +2667,7 @@
         "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem ${ newUserStorageText } dels vostres missatges més recents de Gmail"
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
+        "El compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
       ]
     },
     "description": {
@@ -3330,7 +3345,7 @@
         "La sol·licitud ha caducat"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+        "L'esquema d'inversió del subjecte passiu no és compatible amb aquest pla"
       ],
       "Signature is missing": [
         "Falta la signatura"
@@ -3447,7 +3462,7 @@
         "Hi ha hagut un error exportant les vcards dels contactes"
       ],
       "This document is too large to copy. Download it to keep a copy of your work.": [
-        "Aquest document és massa gran per copiar-lo. Descarregueu-lo per mantenir una còpia del vostre treball."
+        "Aquest document és massa gran per a copiar-lo. Descarregueu-lo per a mantenir una còpia del vostre treball."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
@@ -3933,6 +3948,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-vos amb la clau de seguretat. Torneu-ho a provar."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
       ]
     },
     "fido2: Info": {
@@ -4487,7 +4505,7 @@
         "Se n'han seleccionat ${ selection.selectedIds.length }"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
-        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
+        "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a no perdre l'accés. ${ learnMoreLink }"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Us queden ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per a mantenir la vostra subscripció. ${ learnMoreLink }"
@@ -4608,6 +4626,9 @@
       "Can view only": [
         "Només es pot visualitzar"
       ],
+      "Can't connect": [
+        "No s'ha pogut connectar"
+      ],
       "Can't move a folder into itself": [
         "No es pot moure una carpeta dins de si mateixa"
       ],
@@ -4685,9 +4706,6 @@
         "Crea un núvol segur per a ${ memberCount } membre",
         "Crea un núvol segur per a ${ memberCount } membres"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Creeu un document xifrat d'extrem a extrem."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Creeu documents i fulls de càlcul xifrats d'extrem a extrem."
       ],
@@ -4700,6 +4718,9 @@
       "Creating new document...": [
         "S'està creant un document..."
       ],
+      "Creating new document…": [
+        "S'està creant un document nou…"
+      ],
       "Current plan": [
         "Pla actual"
       ],
@@ -4708,6 +4729,9 @@
       ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
+      ],
+      "Decrypting document…": [
+        "S'està desxifrant el document…"
       ],
       "Decrypting your document": [
         "S'està desxifrant el document"
@@ -4797,7 +4821,7 @@
         "Hi ha hagut un error en carregar el document: ${ errorDetail }"
       ],
       "Error syncing": [
-        "S'ha produït un error de sincronització"
+        "S'ha produït un error en sincronitzar"
       ],
       "Error Syncing": [
         "Error de sincronització"
@@ -4809,7 +4833,7 @@
         "Tot a ${ planOrAppName }"
       ],
       "Everything in ${ planOrAppName }, plus:": [
-        "Tot el que inclou ${ planOrAppName }, i a més:"
+        "Tot el que inclou ${ planOrAppName } i, a més:"
       ],
       "Failing signatures will be re-signed by you": [
         "Tornareu a signar les signatures amb errors."
@@ -4984,7 +5008,7 @@
         "Sembla que esteu fora de línia. No es pot editar el document sense connexió. Comproveu la connectivitat del dispositiu."
       ],
       "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
-        "Sembla que esteu fora de línia. Podeu continuar editant: els vostres canvis es desaran un cop torneu a estar en línia."
+        "Sembla que esteu fora de línia. Podeu continuar editant: els canvis es desaran un cop torneu a estar en línia."
       ],
       "Low Priority": [
         "Prioritat baixa"
@@ -5068,6 +5092,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Obriu la guia per a obtenir accions recomanades i enllaços útils."
       ],
+      "Opening document…": [
+        "S'està obrint el document…"
+      ],
       "Opening...": [
         "Obrint..."
       ],
@@ -5144,14 +5171,14 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espereu mentre busquem contactes que continguin dades xifrades amb la clau inactiva."
       ],
+      "Preparing editor…": [
+        "S'està preparant l'editor…"
+      ],
       "Primary": [
         "Principal"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navegació privada (o mode «incògnit») només és útil per a mantenir l'activitat amagada al dispositiu. Impedeix que el navegador desi l'historial i les galetes, però no us fa invisible. El vostre ISP, l'administrador de xarxa i els llocs web que visiteu encara poden veure el que feu en línia."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Els documents públics encara no estan activats per a la vostra organització."
       ],
       "Read-only": [
         "Només lectura"
@@ -5170,6 +5197,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
+      ],
+      "Redirecting…": [
+        "S'està redirigint…"
       ],
       "Referral link copied to your clipboard": [
         "S'ha copiat l'enllaç de recomanació al porta-retalls"
@@ -5241,7 +5271,7 @@
         "Alguns governs bloquegen o restringeixen l'accés a determinats llocs web. Una VPN ajuda a evitar la censura mentre manté la vostra activitat i identitat privades."
       ],
       "Some of the document could not be read, so it can't be edited.": [
-        "No s'ha pogut llegir una part del document, per tant no es pot editar."
+        "No s'ha pogut llegir una part del document i, per tant, no es pot editar."
       ],
       "Some of the document's content could not be read.": [
         "No s'ha pogut llegir part del contingut del document."
@@ -5269,16 +5299,19 @@
         "Fi de la subscripció: reactiveu-la abans del ${ byDate } per a mantenir els vostres beneficis de ${ planName }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
-        "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Apple App Store abans del ${ byDate }. ${ reactivateLink }"
+        "La vostra subscripció està a punt de finalitzar. Per a mantenir els avantatges de ${ planName }, reinicieu-la a Apple App Store abans del ${ byDate }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
-        "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
+        "La vostra subscripció està a punt de finalitzar: per a mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
       ],
       "Surveillance": [
         "Vigilància"
       ],
       "Symbols (#$&)": [
         "Símbols (#$&)"
+      ],
+      "Syncing latest changes…": [
+        "S'estan sincronitzant els darrers canvis…"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporalment no disponible a causa de l'alta demanda. Torneu-ho a provar més tard."
@@ -5338,7 +5371,7 @@
         "Aquest document té molts col·laboradors actius. L'edició en temps real no està disponible temporalment. Actualitzeu-lo per veure les últimes novetats."
       ],
       "This document has reached its maximum size, so it can't be edited.": [
-        "Aquest document ha arribat a la seva mida màxima, de manera que no es pot editar"
+        "Aquest document ha arribat a la seva mida màxima, de manera que no es pot editar."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "És possible que aquest document no existeixi, o bé estem tenint problemes per a carregar-lo. Torneu a carregar la pàgina i proveu de nou."
@@ -5413,10 +5446,10 @@
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
+        "Milloreu el pla o allibereu espai en qualsevol moment per a portar la resta"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
+        "Actualitzeu el pla per a conservar els vostres avantatges de ${ planTitle }."
       ],
       "Uppercase and lowercase letters": [
         "Lletres majúscules i minúscules"
@@ -5490,6 +5523,9 @@
       "Writing assistant": [
         "Assistent d'escriptura"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Les llicències d'assistent d'escriptura ja no es venen."
+      ],
       "you": [
         "vós"
       ],
@@ -5503,7 +5539,7 @@
         "Esteu a punt d'obrir el navegador per defecte i visitar:"
       ],
       "You are currently signed in as ${ username } for ${ organizationName }.": [
-        "Actualment heu iniciat sessió com a ${ username } per a ${ organizationName }."
+        "Actualment heu iniciat la sessió com a ${ username } per a ${ organizationName }."
       ],
       "You are currently signed in as ${ username }.": [
         "Heu iniciat sessió com a ${ username }."
@@ -5539,7 +5575,7 @@
         "Teniu una factura pendent de pagament ${ payInvoiceLink }"
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
-        "Teniu una factura pendent de pagament el ${ dueDate } ${ payInvoiceLink }"
+        "Teniu una factura pendent el ${ dueDate } ${ payInvoiceLink }"
       ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "És possible que no tingueu els permisos necessaris per a veure'l amb el compte seleccionat. Proveu amb un altre compte o contacteu amb el propietari per a demanar-hi accés."
@@ -5701,7 +5737,7 @@
         "Caducada"
       ],
       "Fallback": [
-        "Recursos alternatius"
+        "Alternativa"
       ],
       "KOO": [
         "KOO"
@@ -5736,7 +5772,7 @@
         "Accés"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
-        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
+        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal. És ideal per a scripts, automatització i fluxos de treball de desenvolupament."
       ],
       "Active": [
         "Actiu"
@@ -5886,7 +5922,7 @@
         "Correus electrònics (els darrers 3 mesos)"
       ],
       "Emails (last 6 months)": [
-        "Correus electrònics (dels darrers sis mesos)"
+        "Correus electrònics (darrers 6 mesos)"
       ],
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
@@ -5965,6 +6001,9 @@
       ],
       "Last month only": [
         "Només el darrer mes"
+      ],
+      "Loading": [
+        "S'està carregant"
       ],
       "Location ${ locationLabel }": [
         "Ubicació ${ locationLabel }"
@@ -6359,6 +6398,73 @@
         "Activa ${ reason }"
       ]
     },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "Codi de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "2x Basic usage": [
+        "2x ús bàsic"
+      ],
+      "5x Plus usage": [
+        "5x d'ús Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Accés a l'API, amb ${ credit } de crèdit al mes"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Accés a l'API, amb ${ credit } de crèdit al mes per usuari"
+      ],
+      "Everything in Basic, and:": [
+        "Tot el de pla Basic, i a més:"
+      ],
+      "Everything in Free, and:": [
+        "Tot el del Free, i:"
+      ],
+      "Everything in Plus, and:": [
+        "Tot el de Plus, i a més:"
+      ],
+      "Extended image generation": [
+        "Generació d'imatges ampliada"
+      ],
+      "Includes:": [
+        "Inclou"
+      ],
+      "Limited image generation": [
+        "Generació d'imatges limitada"
+      ],
+      "Limited messages and chat history": [
+        "Missatges i historial de xat limitats"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilitats, projectes i tasques programades limitats"
+      ],
+      "Maximum image generation": [
+        "Generació màxima d'imatges"
+      ],
+      "Maximum Skills and Projects": [
+        "Màxim d'Habilitats i Projectes"
+      ],
+      "More image generation": [
+        "Més generació d'imatges"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Més Habilitats, Projectes i tasques programades"
+      ],
+      "More usage": [
+        "Més ús"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Per a programar i desenvolupar"
+      ],
+      "For everyday chats": [
+        "Per a converses quotidianes"
+      ],
+      "For getting more done": [
+        "Per a fer més coses"
+      ]
+    },
     "Mail import summary": {
       "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Importa tots els missatges d'${ itemsToImportCount } carpeta i etiqueta'ls com a",
@@ -6472,7 +6578,7 @@
     },
     "Message": {
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "La prova gratuïta us ha finalitzat. ${ nonAutoRenewalAction }"
+        "La prova gratuïta ha finalitzat. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
@@ -6850,7 +6956,7 @@
         "Correus protegits amb contrasenya"
       ],
       "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
-        "Suport telefònic (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ usuaris)"
+        "Suport telefònic (almenys ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -7929,38 +8035,11 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (IVA no inclòs)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } no es pot combinar amb ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } només està disponible als plans d'empresa."
-      ],
       "Amount due after trial on ${ formattedDate }": [
         "Import a pagar després del període de prova el ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Es requereix una organització per a aquest pla."
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Els comptes de Born Private no es poden comprar amb una subscripció activa."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "L'adquisició de crèdits requereix una compra independent."
-      ],
       "By switching, you agree to our ${ termsLink }.": [
         "En canviar, accepteu els nostres ${ termsLink }."
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Només es pot comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Tanqueu els comptes de cartera addicionals abans de canviar de pla."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Tanqueu les carteres addicionals abans de canviar de pla."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Les llicències de Proton Meet han de coincidir amb el nombre de membres."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "El preu de la renovació està subjecte a canvis segons ${ termsAndConditionsLink }."
@@ -7968,30 +8047,12 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
       ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Les llicències de Scribe no poden superar el nombre de membres."
-      ],
       "terms and conditions": [
         "termes i condicions"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "La iniciativa Born Private requereix una donació."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descompte és vàlid per a ${ renewalsWithCoupon } renovació.",
         "El descompte és vàlid per a ${ renewalsWithCoupon } renovacions."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "El pla seleccionat no ofereix prou adreces per al vostre compte."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "El pla seleccionat no ofereix prou dominis per al vostre compte."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "El pla seleccionat no ofereix prou membres per al vostre compte."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "El pla seleccionat no ofereix prou emmagatzematge per al vostre compte."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
@@ -8018,39 +8079,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mes. Podeu cancel·lar-ho en qualsevol moment.",
         "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
-      ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Aquest servidor dedicat està assignat a una passarel·la i no es pot canviar."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Aquest pla no admet les funcions gestionades del vostre compte."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Aquest pla no suporta els membres del vostre compte."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Els plans de prova no admeten llicències de ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Els plans de prova no admeten dominis personalitzats."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Els plans de prova no admeten IP dedicades."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Els plans de prova no admeten llicències de Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Els plans de prova no admeten tants membres."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Ja teniu ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Ja teniu un compte de Born Private."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "El vostre compte és massa antic per a la iniciativa Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -8081,7 +8109,7 @@
         "Aquesta clau s'utilitza per xifrar missatges per a aquest contacte"
       ],
       "This key is used to encrypt messages to this contact on older apps": [
-        "Aquesta clau s'utilitza per xifrar missatges per aquest contacte en aplicacions antigues"
+        "Aquesta clau s'utilitza per a xifrar missatges per a aquest contacte en aplicacions antigues"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Us recomanem que marqueu la clau com a \"no confiable\"."
@@ -8346,7 +8374,7 @@
         "**Si us subscriviu abans d'aquesta data,** rebreu **${ referrerRewardAmount }** en crèdits."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
-        "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Gratuït**. Si canvieu d'opinió, podreu **reactivar la vostra subscripció** per mantenir l'accés a les funcions prèmium."
+        "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Free**. Si canvieu d'opinió, podreu **reactivar la subscripció** per a mantenir l'accés a les característiques prèmium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
@@ -9350,9 +9378,6 @@
       "Cannot add more addresses": [
         "No es poden afegir més adreces."
       ],
-      "Cannot load link": [
-        "No s'ha pogut carregar l'enllaç"
-      ],
       "Change access to viewer?": [
         "Voleu canviar l'accés a visualitzador?"
       ],
@@ -9521,7 +9546,7 @@
         "Introduïu la vostra contrasenya"
       ],
       "Error syncing": [
-        "S'ha produït un error de sincronització"
+        "S'ha produït un error en sincronitzar"
       ],
       "Error Syncing": [
         "Error de sincronització"
@@ -9781,12 +9806,6 @@
       ],
       "Subscription canceled": [
         "S'ha cancel·lat la subscripció"
-      ],
-      "The link either does not exist or has expired": [
-        "L’enllaç no existeix o bé ha caducat"
-      ],
-      "The link expired": [
-        "L'enllaç ha caducat"
       ],
       "This document is password protected": [
         "El document està protegit per contrasenya."

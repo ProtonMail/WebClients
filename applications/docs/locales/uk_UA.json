@@ -300,6 +300,9 @@
       "Dismiss": [
         "Відхилити"
       ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
       "Done": [
         "Готово"
       ],
@@ -404,6 +407,9 @@
       ],
       "Go to label": [
         "Перейти до мітки"
+      ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
       ],
       "Got it": [
         "Зрозуміло"
@@ -546,6 +552,9 @@
       "Next": [
         "Далі"
       ],
+      "Next contact": [
+        "Наступний контакт"
+      ],
       "Next month": [
         "Наступний місяць"
       ],
@@ -578,6 +587,9 @@
       ],
       "Preview contact": [
         "Перегляд контакту"
+      ],
+      "Previous contact": [
+        "Попередній контакт"
       ],
       "Previous month": [
         "Минулий місяць"
@@ -794,6 +806,9 @@
       ],
       "Toggle debug mode": [
         "Перемкнути режим налагодження"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Розгорнути/згорнути підпапки ${ itemName }"
       ],
       "Trashing...": [
         "Переміщення до Смітника..."
@@ -3401,6 +3416,9 @@
       "There was an error when exporting the contacts vCards": [
         "При експортуванні vCards для контактів виникла помилка"
       ],
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Цей документ занадто великий для копіювання. Завантажте його, щоб зберегти копію вашої роботи."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "У цьому полі перевищено обмеження ${ maximumLength } символів."
       ],
@@ -3882,6 +3900,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
       ]
     },
     "fido2: Info": {
@@ -4681,9 +4702,6 @@
         "Створіть захищену хмару для ${ memberCount } учасників",
         "Створіть захищену хмару для ${ memberCount } учасників"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Створити документ із наскрізним зашифруванням."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Створюйте наскрізно зашифровані документи та електронні таблиці."
       ],
@@ -5112,9 +5130,6 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Приватний перегляд (або режим «інкогніто») корисний лише для приховування ваших дій на вашому пристрої. Він не дозволяє вашому браузеру зберігати історію та файли cookie, але не робить вас невидимими. Ваш ISP, адміністратор мережі та вебсайти, які ви відвідуєте, усе одно можуть бачити, що ви робите онлайн."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Публічні документи ще не ввімкнені для вашої організації."
       ],
       "Read-only": [
         "Лише для читання"
@@ -7830,9 +7845,6 @@
       "Amount due after trial on ${ formattedDate }": [
         "Сума до сплати після закінчення пробного періоду ${ formattedDate }"
       ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Вартість подовження може змінюватися відповідно до ${ termsAndConditionsLink }."
       ],
@@ -7841,9 +7853,6 @@
       ],
       "terms and conditions": [
         "умови та положення"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "Для участі в програмі Born Private необхідна пожертва."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
@@ -7886,12 +7895,6 @@
         "Після цього її буде автоматично продовжено за ${ renewPriceStr } на ${ renewalLength } місяці. Ви можете скасувати передплату в будь-який момент.",
         "Після цього її буде автоматично продовжено за ${ renewPriceStr } на ${ renewalLength } місяців. Ви можете скасувати передплату в будь-який момент.",
         "Після цього її буде автоматично продовжено за ${ renewPriceStr } на ${ renewalLength } місяця. Ви можете скасувати передплату в будь-який момент."
-      ],
-      "You already own a Born Private account.": [
-        "Ви вже маєте обліковий запис Born Private."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9263,9 +9266,6 @@
       "Cannot add more addresses": [
         "Неможливо додати більше адрес"
       ],
-      "Cannot load link": [
-        "Не вдалося завантажити посилання"
-      ],
       "Change access to viewer?": [
         "Змінити доступ на роль глядача?"
       ],
@@ -9694,12 +9694,6 @@
       ],
       "Subscription canceled": [
         "Передплату скасовано"
-      ],
-      "The link either does not exist or has expired": [
-        "Посилання або не існує або не чинне"
-      ],
-      "The link expired": [
-        "Термін дії посилання завершився"
       ],
       "This document is password protected": [
         "Цей документ захищено паролем"

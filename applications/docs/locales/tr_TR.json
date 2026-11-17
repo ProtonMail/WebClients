@@ -309,6 +309,9 @@
       "Dismiss": [
         "Yok say"
       ],
+      "Dismiss notification": [
+        "Bildirimi yok say"
+      ],
       "Done": [
         "Tamam"
       ],
@@ -419,6 +422,9 @@
       ],
       "Go to label": [
         "Etikete git"
+      ],
+      "Go to today": [
+        "Bugüne git"
       ],
       "Google Drive": [
         "Google Drive"
@@ -564,6 +570,9 @@
       "Next": [
         "İleri"
       ],
+      "Next contact": [
+        "Sonraki kişi"
+      ],
       "Next month": [
         "Sonraki ay"
       ],
@@ -602,6 +611,9 @@
       ],
       "Preview logs": [
         "Günlük ön izlemesi"
+      ],
+      "Previous contact": [
+        "Önceki kişi"
       ],
       "Previous month": [
         "Önceki ay"
@@ -821,6 +833,9 @@
       ],
       "Toggle debug mode": [
         "Hata ayıklama kipini aç/kapat"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "${ itemName } alt klasörlerini aç/kapat"
       ],
       "Trashing...": [
         "Çöpe atılıyor..."
@@ -3930,6 +3945,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
       ]
     },
     "fido2: Info": {
@@ -4605,6 +4623,9 @@
       "Can view only": [
         "Yalnızca görüntüleyebilir"
       ],
+      "Can't connect": [
+        "Bağlanamıyor"
+      ],
       "Can't move a folder into itself": [
         "Klasör kendi içine taşınamaz"
       ],
@@ -4682,9 +4703,6 @@
         "${ memberCount } üye için güvenli bir bulut oluşturun",
         "${ memberCount } üye için güvenli bir bulut oluşturun"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Uçtan uca şifrelenmiş bir belge oluşturun."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Uçtan uca şifrelenmiş belgeler ve elektronik tablolar oluşturun."
       ],
@@ -4697,6 +4715,9 @@
       "Creating new document...": [
         "Yeni belge oluşturuluyor..."
       ],
+      "Creating new document…": [
+        "Yeni belge oluşturuluyor…"
+      ],
       "Current plan": [
         "Geçerli tarife"
       ],
@@ -4705,6 +4726,9 @@
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
+      ],
+      "Decrypting document…": [
+        "Belgenin şifresi çözülüyor…"
       ],
       "Decrypting your document": [
         "Belgenizin şifresi çözülüyor"
@@ -5065,6 +5089,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Önerilen işlemler ve yararlı bağlantılar için rehberi açın."
       ],
+      "Opening document…": [
+        "Belge açılıyor…"
+      ],
       "Opening...": [
         "Açılıyor..."
       ],
@@ -5141,14 +5168,14 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Lütfen kullanıma alınmamış anahtarla şifrelenmiş verileri olan kişiler aranırken bekleyin."
       ],
+      "Preparing editor…": [
+        "Editör hazırlanıyor…"
+      ],
       "Primary": [
         "Birincil"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Gizli gezinme (veya “gizli” kip) yalnızca aygıtınızda etkinliğinizin gizliliğini korumak için kullanışlıdır. Tarayıcınızın gezinme geçmişinizi ve tanımlama bilgilerini kaydetmesini engeller, ancak sizi görünmez yapmaz. İnternet hizmeti sağlayıcınız, ağ yöneticiniz ve ziyaret ettiğiniz siteler çevrim içi ortamda ne yaptığınızı görmeyi sürdürebilir."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Kuruluşunuzda herkese açık belgeler henüz kullanıma alınmamış."
       ],
       "Read-only": [
         "Salt okunur"
@@ -5167,6 +5194,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
+      ],
+      "Redirecting…": [
+        "Yönlendiriliyor…"
       ],
       "Referral link copied to your clipboard": [
         "Öneri bağlantısı panonuza kopyalandı"
@@ -5276,6 +5306,9 @@
       ],
       "Symbols (#$&)": [
         "Simgeler (#$&)"
+      ],
+      "Syncing latest changes…": [
+        "Son değişiklikler eşitleniyor…"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
@@ -5486,6 +5519,9 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Yazma yardımcısı koltukları artık satılmamaktadır."
       ],
       "you": [
         "siz"
@@ -5963,6 +5999,9 @@
       "Last month only": [
         "Yalnızca son ay"
       ],
+      "Loading": [
+        "Yükleniyor"
+      ],
       "Location ${ locationLabel }": [
         "${ locationLabel } konumu"
       ],
@@ -6354,6 +6393,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } özelliğini aç"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2 kat Basic kullanım"
+      ],
+      "5x Plus usage": [
+        "5 kat Plus kullanım"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Aylık ${ credit } krediyle API erişimi"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
+      ],
+      "Everything in Basic, and:": [
+        "Basic'teki her şey ve:"
+      ],
+      "Everything in Free, and:": [
+        "Her şey Free ve:"
+      ],
+      "Everything in Plus, and:": [
+        "Plus'taki her şey ve:"
+      ],
+      "Extended image generation": [
+        "Genişletilmiş görüntü oluşturma"
+      ],
+      "Includes:": [
+        "Şunları içerir:"
+      ],
+      "Limited image generation": [
+        "Sınırlı görüntü oluşturma"
+      ],
+      "Limited messages and chat history": [
+        "Sınırlı mesajlar ve sohbet geçmişi"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Sınırlı Beceriler, Projeler ve planlanmış görevler"
+      ],
+      "Maximum image generation": [
+        "Maksimum resim oluşturma"
+      ],
+      "Maximum Skills and Projects": [
+        "Maksimum Beceri ve Projeler"
+      ],
+      "More image generation": [
+        "Daha fazla görüntü oluşturma"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Daha fazla beceri, proje ve planlanmış görevler"
+      ],
+      "More usage": [
+        "Daha fazla kullanım"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Kodlama ve geliştirme için"
+      ],
+      "For everyday chats": [
+        "Günlük sohbetler için"
+      ],
+      "For getting more done": [
+        "Daha fazlasını yapmak için"
       ]
     },
     "Mail import summary": {
@@ -7926,38 +8032,11 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (vergi hariç)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }, ${ PLAN_NAMES[PLANS.PASS] } ile birleştirilemez."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } yalnızca kurumsal tarifelerde kullanılabilir."
-      ],
       "Amount due after trial on ${ formattedDate }": [
         "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
       ],
-      "An organization is required for this plan.": [
-        "Bu tarife için bir kuruluş gereklidir."
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Etkin bir abonelik varken Born Private hesapları satın alınamaz."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Kredi satın almak için ayrı bir satın alma gerekir."
-      ],
       "By switching, you agree to our ${ termsLink }.": [
         "Geçiş yaparak ${ termsLink } içeriğini kabul etmiş olursunuz."
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Yalnızca bir ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } satın alınabilir."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Lütfen tarifenizi değiştirmeden önce ek cüzdan hesaplarını kapatın."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Lütfen tarifenizi değiştirmeden önce ek cüzdanları kapatın."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet koltuk sayısı üye sayısı ile aynı olmalıdır."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Yenileme fiyatları ${ termsAndConditionsLink } içeriğine göre değişebilir."
@@ -7965,30 +8044,12 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe koltuk sayısı üye sayısını aşamaz."
-      ],
       "terms and conditions": [
         "hükümler ve koşullar"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private girişimine bağış yapılması gerekir."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli adres sunmuyor."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli etki alanı sunmuyor."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli üye sunmuyor."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli depolama alanı sunmuyor."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
@@ -8015,39 +8076,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Bu sie ayrılmış sunucu bir ağ geçidine atanmış ve değiştirilemez."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Bu tarife hesabınızdaki yönetilen özellikleri desteklemez."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Bu tarife hesabınızdaki üyeleri desteklemez."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Deneme tarifelerinde ${ LUMO_SHORT_APP_NAME } koltukları desteklenmez."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Deneme tarifeleri özel etki alanlarını desteklemez."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Deneme tarifeleri size ayrılmış IP adreslerini desteklemez."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Deneme tarifelerinde Scribe koltukları desteklenmez."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Deneme tarifeleri bu kadar çok üyeyi desteklemez."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Zaten ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } sahibisiniz."
-      ],
-      "You already own a Born Private account.": [
-        "Zaten bir Born Private hesabınız var."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ]
     },
     "PGP key encryption warning": {
@@ -9347,9 +9375,6 @@
       "Cannot add more addresses": [
         "Daha fazla adres eklenemez"
       ],
-      "Cannot load link": [
-        "Bağlantı yüklenemedi"
-      ],
       "Change access to viewer?": [
         "Görüntüleme erişme izni değiştirilsin mi?"
       ],
@@ -9778,12 +9803,6 @@
       ],
       "Subscription canceled": [
         "Abonelik iptal edildi"
-      ],
-      "The link either does not exist or has expired": [
-        "Bağlantı bulunamadı ya da geçerlilik süresi dolmuş"
-      ],
-      "The link expired": [
-        "Bağlantının geçerlilik süresi dolmuş"
       ],
       "This document is password protected": [
         "Bu belge parola ile korunuyor"

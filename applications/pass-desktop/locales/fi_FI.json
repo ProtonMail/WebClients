@@ -46,6 +46,9 @@
       "Add account": [
         "Lisää tili"
       ],
+      "Add address": [
+        "Lisää osoite"
+      ],
       "Add current URL": [
         "Lisää nykyinen URL"
       ],
@@ -422,7 +425,10 @@
         "Miten ${ PASS_APP_NAME } päivitetään Linuxissa"
       ],
       "How to use ${ PASS_APP_NAME }": [
-        "Miten ${ PASS_APP_NAME } toimii"
+        "Näin ${ PASS_APP_NAME } toimii"
+      ],
+      "Ignore": [
+        "Ohita"
       ],
       "Import": [
         "Tuo"
@@ -1300,9 +1306,6 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "${ PROTON_SENTINEL_NAME } -asetuksen muutos epäonnistui"
       ],
-      "Failed updating monitor flag of the item": [
-        "Kohteen valvontatilan muutos epäonnistui"
-      ],
       "Failed updating monitoring status for this email address": [
         "Shköpostiosoitteen valvontatilan päivitys epäonnistui"
       ],
@@ -2160,6 +2163,9 @@
       "invites you to access items in": [
         "kutsui sinut käyttämään sisältöä holvista"
       ],
+      "iOS and Android Apps": [
+        "iOS- ja Android-sovellukset"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Näyttää siltä, että olet jo kirjautunut ${ PASS_APP_NAME }iin. Jos yrität kirjautua eri tilillä, kirjaa laajennus ensin ulos."
       ],
@@ -2541,6 +2547,12 @@
       ],
       "Restoring trashed items...": [
         "Palautetaan kohteita roskakorista..."
+      ],
+      "Scan to download": [
+        "Lataa lukemalla koodi"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Lataa sovellus ${ PASS_APP_NAME } Androidille ja iOS:lle lukemalla koodi"
       ],
       "Secure links": [
         "Suojatut linkit"
@@ -3733,7 +3745,7 @@
         "Älä koskaan täytä juuri tätä URL-osoitetta"
       ],
       "New": [
-        "Uusi"
+        "Uutta"
       ],
       "New email": [
         "Uusi sähköpostiosoite"
@@ -5001,6 +5013,12 @@
       ],
       "Folder options": [
         "Kansion valinnat"
+      ],
+      "Get mobile and desktop apps": [
+        "Hanki mobiili- ja työpöytäsovellukset"
+      ],
+      "Get mobile apps": [
+        "Hanki mobiilisovellukset"
       ],
       "Get Started": [
         "Aloita"

@@ -532,6 +532,9 @@
       "Continue to sign in": [
         "Fortsæt til log ind"
       ],
+      "Continue with Bitcoin": [
+        "Fortsæt med Bitcoin"
+      ],
       "Continue with Free": [
         "Fortsæt med Free"
       ],
@@ -823,9 +826,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Få hjælp fra ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Get in touch": [
-        "Kontakt os"
-      ],
       "Get limited-time offer": [
         "Få et tidsbegrænset tilbud"
       ],
@@ -964,9 +964,6 @@
       "Learn more": [
         "Få mere at vide"
       ],
-      "Let's talk": [
-        "Lad os snakke"
-      ],
       "Load more": [
         "Indlæs flere"
       ],
@@ -993,6 +990,9 @@
       ],
       "Manage subscription": [
         "Administrer abonnement"
+      ],
+      "Manage subscriptions": [
+        "Administrer abonnementer"
       ],
       "Manage users/addresses": [
         "Administrer brugere/adresser"
@@ -1152,6 +1152,9 @@
       ],
       "Remove domain": [
         "Fjern domæne"
+      ],
+      "Remove file": [
+        "Fjern fil"
       ],
       "Remove from favorites": [
         "Fjern fra favoritter"
@@ -6289,6 +6292,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Noget gik galt med registreringen af din sikkerhedsnøgle. Prøv venligst igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Din browser understøtter ikke sikkerhedsnøgler. Prøv en anden browser."
+      ],
+      "This security key is already registered to your account.": [
+        "Denne sikkerhedsnøgle er allerede registreret på din konto."
       ]
     },
     "fido2: Info": {
@@ -6339,6 +6348,9 @@
       ],
       "Touch your security key to continue.": [
         "Tryk på din sikkerhedsnøgle for at fortsætte."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Brug denne enheds fingeraftryk, ansigt, PIN eller skærmlås"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekræft din identitet med en fysisk U2F- eller FIDO2-sikkerhedsnøgle"
@@ -9309,8 +9321,8 @@
       "To continue to ${ product }": [
         "For at fortsætte til ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "For løbende at forbedre vores tjenester indsamler vi nogle gange data for at kontrollere, at vores applikationer fungerer korrekt. Disse oplysninger deles ikke med nogen tredjepartstjenester."
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "For løbende at forbedre vores tjenester indsamler vi nogle gange data for at kontrollere, at vores applikationer fungerer korrekt. **Disse oplysninger deles ikke med nogen tredjepartstjenester.**"
       ],
       "To create your first user group, go to": [
         "For at oprette din første brugergruppe, gå til"
@@ -9947,6 +9959,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Din konto er i øjeblikket konfigureret til at anvende omvendt betalingspligt, som ikke er understøttet i det valgte abonnement. For at fortsætte skal du enten fjerne momsnummeret fra faktureringsadressen eller vælge et andet abonnement."
       ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Din konto blev oprettet, men vi kunne ikke færdiggøre opsætningen af dit abonnement."
+      ],
       "Your account was successfully updated with this promotion": [
         "Din konto er blevet opdateret med denne kampagne"
       ],
@@ -10442,8 +10457,8 @@
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
       ],
-      "Collect usage diagnostics": [
-        "Indsaml brugsdiagnostik"
+      "Collect anonymous usage diagnostics": [
+        "Indsaml anonymt brugsdiagnostik"
       ],
       "Colors": [
         "Farver"
@@ -14074,12 +14089,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (ekskl. moms)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan ikke kombineres md ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er kun tilgængeligt på erhvervsabonnementer."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% moms: ${ taxAmountElement }"
       ],
@@ -14089,17 +14098,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Beløb, der skal betales efter prøveperioden den ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "En organisation kræves for dette abonnement."
-      ],
       "Billing Country": [
         "Faktura land"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Born Private-konti kan ikke købes uden et aktivt abonnement."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Køb af kredit kræver et separat køb."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Ved at skifte, accepterer du vores ${ termsLink }."
@@ -14143,9 +14143,6 @@
       "More plans are available in other currencies": [
         "Flere abonnementer er tilgængelige i andre valutaer"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Der kan kun købes ét ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
       "Paid from your account credit.": [
         "Betalt med kredit fra din konto."
       ],
@@ -14158,29 +14155,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "Abonnementskiftet er ikke kompatibelt af følgende årsager:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Luk ekstra wallet-konti før du ændrer dit abonnement."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Luk ekstra wallets før du ændrer dit abonnement."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Genaktiver dit abonnement først for at reducere antallet af tilføjelser."
       ],
       "Processing payment": [
         "Behandler betaling"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Antallet af pladser i Proton Meet skal matche antallet af medlemmer."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Fornyelsespriser kan ændres i henhold til ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, annuller når som helst."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Der kan ikke være flere Scribe-pladser end medlemmer."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
@@ -14194,31 +14179,16 @@
       "terms and conditions": [
         "vilkår og betingelser"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private kræver en donation."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Det valgte abonnement understøtter ikke nok adresser til din konto."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Det valgte abonnement understøtter ikke nok domæner til din konto."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Det valgte abonnement understøtter ikke nok medlemmer til din konto."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Det valgte abonnement understøtter ikke nok lagerplads til din konto."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
+        "Den særligt nedsatte pris gælder den første ${ subscriptionLength } måned.",
         "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
@@ -14245,41 +14215,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denne handling udvider det eksisterende abonnement. Du vil kun blive opkrævet for de nye tilføjelser og den resterende tid af den nuværende faktureringsperiode. Fornyelsesdatoen for dit abonnement vil ikke blive ændret."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Den dedikerede server er tilknyttet en gateway, og kan ikke ændres."
-      ],
       "This offer is not available with your current plan.": [
         "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmetode bliver din nye standard for alle fremtidige fornyelser."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Dette abonnement understøtter ikke dine administrerede funktioner på din konto."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Dette abonnement understøtter ikke medlemmer på din konto."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Abonnementet kan ikke færdiggøres lige nu. Prøv igen."
       ],
       "Timeout exceeded": [
         "Tidsgrænse overskredet"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Prøveversioner understøtter ikke ${ LUMO_SHORT_APP_NAME }-pladser."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Prøveversioner understøtter ikke brugerdomæner."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Prøveversioner understøtter ikke dedikerede IP-adresser."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Prøveversioner understøtter ikke Scribe-pladser."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Prøveversioner understøtter ikke så stort et antal medlemmer."
       ],
       "VAT number": [
         "Momsnummer"
@@ -14293,12 +14239,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har allerede et abonnement på denne plan. Du kan ændre dit abonnement på ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du ejer allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Du ejer allerede en Born Private-konto."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du vil blive opkrævet ${ amountToCharge } fra din valgte betalingsmetode."
       ],
@@ -14307,9 +14247,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du omdirigeres snart for at bekræfte din betaling."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Din konto er for gammel til Born Private."
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
@@ -18353,6 +18290,9 @@
       "Dashboard": [
         "Kontrolpanel"
       ],
+      "Data collection": [
+        "Dataindsamling"
+      ],
       "Data recovery": [
         "Datagendannelse"
       ],
@@ -18850,9 +18790,6 @@
       ],
       "Previous": [
         "Forrige"
-      ],
-      "Privacy and data collection": [
-        "Privatliv og dataindsamling"
       ],
       "Processing...": [
         "Behandler..."

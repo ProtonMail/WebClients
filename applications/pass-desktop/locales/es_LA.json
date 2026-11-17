@@ -46,6 +46,9 @@
       "Add account": [
         "Agregar una cuenta"
       ],
+      "Add address": [
+        "Agregar dirección"
+      ],
       "Add current URL": [
         "Agregar la URL actual"
       ],
@@ -168,6 +171,9 @@
       ],
       "Collapse": [
         "Minimizar"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Contraer alertas de Pass Monitor"
       ],
       "Confirm": [
         "Confirmar"
@@ -325,6 +331,9 @@
       "Dismiss": [
         "Descartar"
       ],
+      "Dismiss notification": [
+        "Descartar notificación"
+      ],
       "Do not show again": [
         "No volver a mostrar"
       ],
@@ -376,6 +385,9 @@
       "Expand": [
         "Expandir"
       ],
+      "Expand Pass Monitor alerts": [
+        "Expandir alertas de Pass Monitor"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -418,6 +430,9 @@
       "Go back": [
         "Regresar"
       ],
+      "Go to today": [
+        "Ir al día de hoy"
+      ],
       "Hide": [
         "Ocultar"
       ],
@@ -432,6 +447,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Cómo usar ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignorar"
       ],
       "Import": [
         "Importar"
@@ -562,6 +580,9 @@
       "OK": [
         "OK"
       ],
+      "Open item": [
+        "Abrir elemento"
+      ],
       "Open navigation": [
         "Abrir navegación"
       ],
@@ -636,6 +657,9 @@
       ],
       "Remove member": [
         "Eliminar el miembro"
+      ],
+      "Remove passkey": [
+        "Eliminar passkey"
       ],
       "Rename": [
         "Renombrar"
@@ -778,6 +802,9 @@
       ],
       "To mailbox": [
         "Al buzón"
+      ],
+      "Toggle section": [
+        "Expandir o contraer sección"
       ],
       "Transfer aliases": [
         "Transferir los alias"
@@ -935,6 +962,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } más",
+        "${ count } más"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } está disponible con un plan de pago. Mejore para obtener acceso inmediato."
       ],
@@ -1028,6 +1059,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Esta contraseña de inicio de sesión aparece en una filtración de datos. Visite el servicio y cambie la contraseña."
+      ],
+      "This login uses the same password as another item.": [
+        "Este inicio de sesión usa la misma contraseña que otro elemento."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este servicio ofrece 2FA. Actívelo para agregar seguridad a la cuenta."
@@ -1363,11 +1397,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Error al actualizar los ajustes de ${ PROTON_SENTINEL_NAME }"
       ],
-      "Failed updating monitor flag of the item": [
-        "Error al actualizar el indicador de monitoreo de este elemento"
-      ],
       "Failed updating monitoring status for this email address": [
         "Error al actualizar el estado de monitoreo para esta dirección de correo electrónico"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Error al actualizar el estado de monitoreo para este elemento"
       ],
       "File could not be parsed": [
         "No se pudo analizar el archivo"
@@ -1858,6 +1892,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar los datos, puede eliminar el archivo CSV que contiene sus contraseñas por seguridad."
       ],
+      "Alert restored": [
+        "Alerta restaurada"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Se desactivó el alias. Ya no recibirá correos electrónicos enviados a ${ item.aliasEmail }"
       ],
@@ -1974,6 +2011,9 @@
       ],
       "Canceled by user": [
         "Cancelado por el usuario"
+      ],
+      "Check ignored": [
+        "Comprobación ignorada"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total } contraseñas"
@@ -5349,6 +5389,9 @@
       "Minicalendar": [
         "Minicalendario"
       ],
+      "Missing 2FA": [
+        "Falta el 2FA"
+      ],
       "Modified": [
         "Modificado"
       ],
@@ -5413,6 +5456,9 @@
       ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para usted"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Clave de acceso"
@@ -5484,6 +5530,9 @@
       "Reused ${ count } time": [
         "Reusada ${ count } vez",
         "Reusada ${ count } veces"
+      ],
+      "Reused password": [
+        "Contraseña reusada"
       ],
       "Reused passwords": [
         "Contraseñas reusadas"

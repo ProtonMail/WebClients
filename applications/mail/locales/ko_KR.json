@@ -621,9 +621,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "무료 ${ BRAND_NAME } 주소 받기"
       ],
-      "Get in touch": [
-        "연락하기"
-      ],
       "Get index size on disk": [
         "디스크에서 색인 크기 받기"
       ],
@@ -815,9 +812,6 @@
       ],
       "Least read": [
         "가장 적게 읽음"
-      ],
-      "Let's talk": [
-        "상담 및 계약 필요"
       ],
       "Load": [
         "불러오기"
@@ -13021,9 +13015,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (세금 제외)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }은(는) ${ PLAN_NAMES[PLANS.PASS] }와(과) 겸용할 수 없습니다."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "세금 ${ rate }%: ${ taxAmountElement }"
       ],
@@ -13035,9 +13026,6 @@
       ],
       "Billing Country": [
         "청구 국가 "
-      ],
-      "Buying credits requires a separate purchase.": [
-        "크레딧 구매는 별도 결제건으로 분리됩니다."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "계속하면, ${ termsLink }에 동의하는 것으로 간주합니다."
@@ -13081,9 +13069,6 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "하나의 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }만 결제할 수 있습니다."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME }(으)로 결제하기"
       ],
@@ -13092,9 +13077,6 @@
       ],
       "Plan switch is incompatible for the following reasons:": [
         "다음 사유로 플랜 변경이 불가합니다:"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "플랜 변경 전 추가적인 지갑 계좌를 폐지해야 합니다."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -13116,18 +13098,6 @@
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "해당 할인은 ${ renewalsWithCoupon }회 갱신까지 유효합니다."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "선택된 플랜은 설정된 주소의 수만큼 지원하지 않습니다."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "선택된 플랜은 계정에 설정된 도메인만큼을 지원하지 않습니다."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "선택된 플랜은 조직의 구성원 수만큼 지원하지 않습니다."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "선택된 플랜은 현재 계정이 사용하는 저장공간만큼 지원하지 않습니다."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "특별 할인가는 ${ couponRedemptions }개월 동안 유효합니다. 이후 매월 ${ renewPriceStr }에 자동으로 갱신됩니다. 언제든지 취소할 수 있습니다."
@@ -13159,26 +13129,8 @@
       "This payment method will become your new default for all future renewals.": [
         "이 결제 수단이 향후 모든 갱신에 대한 새로운 결제 기본값으로 설정됩니다."
       ],
-      "This plan doesn’t support the members on your account.": [
-        "이 플랜은 사용자의 조직에 속한 구성원들을 지원하지 않습니다."
-      ],
       "Timeout exceeded": [
         "응답 시간 초과"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "무료 체험에서는 ${ LUMO_SHORT_APP_NAME } 이용 권한을 지원하지 않습니다."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "무료 체험에서는 사용자 지정 도메인 이용 권한을 지원하지 않습니다."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "무료 체험에서는 지정 IP 이용 권한을 지원하지 않습니다."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "무료 체험에서는 Scribe 이용 권한을 지원하지 않습니다."
-      ],
-      "Trial plans don’t support this many members.": [
-        "무료 체험 상태에서는 해당 구성원 수만큼을 지원하지 않습니다."
       ],
       "VAT number": [
         "부가가치세 번호"

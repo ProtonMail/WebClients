@@ -625,6 +625,12 @@
       "Delete policy": [
         "删除策略"
       ],
+      "Delete security key ${ keyName }": [
+        "删除安全密钥 ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "删除服务器 ${ serverLocation }"
+      ],
       "Delete user": [
         "删除用户"
       ],
@@ -697,6 +703,9 @@
       "Download recovery file": [
         "下载恢复文件"
       ],
+      "Download recovery kit": [
+        "下载恢复工具包"
+      ],
       "Download updated file": [
         "下载更新后的文件"
       ],
@@ -744,6 +753,9 @@
       ],
       "Edit phone number": [
         "编辑手机号码"
+      ],
+      "Edit security key ${ keyName }": [
+        "编辑安全密钥 ${ keyName }"
       ],
       "Edit servers": [
         "编辑服务器"
@@ -822,9 +834,6 @@
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "获取 ${ LUMO_SHORT_APP_NAME } 的帮助"
-      ],
-      "Get in touch": [
-        "保持联系"
       ],
       "Get limited-time offer": [
         "获取限时优惠"
@@ -964,9 +973,6 @@
       "Learn more": [
         "了解详情"
       ],
-      "Let's talk": [
-        "让我们聊聊"
-      ],
       "Load more": [
         "加载更多"
       ],
@@ -992,6 +998,9 @@
         "管理标签"
       ],
       "Manage subscription": [
+        "管理订阅"
+      ],
+      "Manage subscriptions": [
         "管理订阅"
       ],
       "Manage users/addresses": [
@@ -1032,6 +1041,9 @@
       ],
       "Next": [
         "继续"
+      ],
+      "Next contact": [
+        "下一个联系人"
       ],
       "Next month": [
         "下个月"
@@ -1089,6 +1101,9 @@
       ],
       "Previous": [
         "上一页"
+      ],
+      "Previous contact": [
+        "上一个联系人"
       ],
       "Previous month": [
         "上个月"
@@ -1153,11 +1168,20 @@
       "Remove domain": [
         "移除域名"
       ],
+      "Remove file": [
+        "移除文件"
+      ],
       "Remove from favorites": [
         "从收藏夹中删除"
       ],
       "Remove gift code": [
         "移除礼品码"
+      ],
+      "Remove logo": [
+        "移除徽标"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "移除待处理服务器 ${ serverLocation }"
       ],
       "Removed ${ memberName } as group owner": [
         "已移除 ${ memberName } 的群组管理员身份"
@@ -6231,6 +6255,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "安全密钥注册失败，请重试。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "此浏览器不支持安全密钥，请换用其他浏览器。"
+      ],
+      "This security key is already registered to your account.": [
+        "此安全密钥已注册到您的账户。"
       ]
     },
     "fido2: Info": {
@@ -6281,6 +6311,9 @@
       ],
       "Touch your security key to continue.": [
         "触摸您的安全密钥以继续。"
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "使用此设备的指纹、面容、PIN 或屏幕锁定"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "使用 U2F 或 FIDO2 物理安全密钥验证身份"
@@ -9181,8 +9214,8 @@
       "To continue to ${ product }": [
         "以继续使用 ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "为持续改进我们的服务，我们有时会收集数据用于侦测系统运行是否正常。这些数据不会传输至任何第三方平台。"
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "为持续改进我们的服务，我们有时会收集数据用于侦测系统运行是否正常。**这些数据不会传输至任何第三方平台。**"
       ],
       "To create your first user group, go to": [
         "要创建第一个用户组，请访问"
@@ -9195,6 +9228,18 @@
       ],
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "要启用始终开启 VPN，设备配置文件需要到达每台设备上的 ${ policiesPath } — ${ VPN_APP_NAME } 客户端会在该位置检测到它并自动强制执行该配置文件。${ learnMore }。"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "为确保您账户的最高安全性，请停用**密保邮箱**。"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "为确保您账户的最高安全性，请停用**密保手机**。"
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "为确保您账户的最高安全性，请停用**密保邮箱**。"
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "为确保您账户的最高安全性，请停用**密保手机**。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
@@ -9796,6 +9841,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "您的账户当前已配置为应用反向收费机制，但所选套餐不支持此机制。若要继续，请从账单地址中移除增值税号，或选择其他套餐。"
       ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "您的账户已创建，但我们未能完成套餐设置。"
+      ],
       "Your account was successfully updated with this promotion": [
         "您的账户已成功应用此促销优惠"
       ],
@@ -10284,8 +10332,8 @@
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
-      "Collect usage diagnostics": [
-        "收集使用方式信息"
+      "Collect anonymous usage diagnostics": [
+        "收集匿名的使用诊断数据"
       ],
       "Colors": [
         "颜色"
@@ -13862,12 +13910,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (不含税)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 不能与 ${ PLAN_NAMES[PLANS.PASS] } 组合使用。"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 仅适用于商业套餐。"
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% 税费：${ taxAmountElement }"
       ],
@@ -13877,17 +13919,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "试用期结束后于 ${ formattedDate } 应付金额"
       ],
-      "An organization is required for this plan.": [
-        "此套餐需要组织！"
-      ],
       "Billing Country": [
         "计费国家/地区"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "在订阅生效期间无法购买 Born Private 账户。"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "购买额度需要单独进行！"
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "切换即表示您同意我们的${ termsLink }。"
@@ -13931,9 +13964,6 @@
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "仅可购买一个 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
-      ],
       "Paid from your account credit.": [
         "已使用账户余额支付。"
       ],
@@ -13946,29 +13976,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "套餐切换不兼容，原因如下："
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "请在更改套餐前关闭多余的钱包账户。"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "请在更改套餐前关闭多余的钱包。"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "请先重新激活您的订阅以减少附加功能。"
       ],
       "Processing payment": [
         "处理支付中"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet 席位数量必须与成员数量匹配。"
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "续费价格会根据${ termsAndConditionsLink }进行调整。"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe 席位数量不能超过成员数量。"
       ],
       "Sorry, this offer is not available with your current plan.": [
         "抱歉，此优惠不适用于您当前的套餐。"
@@ -13982,23 +14000,8 @@
       "terms and conditions": [
         "服务条款"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private 套餐需要捐款。"
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "该折扣适用于 ${ renewalsWithCoupon } 次续订"
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "所选套餐未为您的账户提供足够的地址。"
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "所选套餐未为您的账户提供足够的域名。"
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "所选套餐未为您的账户提供足够的成员名额。"
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "所选套餐未为您的账户提供足够的存储空间。"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "特惠价格在 ${ couponRedemptions } 个月内有效，之后将以每月 ${ renewPriceStr } 续订，您可以随时取消。"
@@ -14027,41 +14030,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "此操作将扩展您现有的订阅。您只需支付新增附加项的费用以及当前计费周期剩余时间的费用。您的订阅续订日期将不会改变。"
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "此专用服务器已分配给网关，无法更改。"
-      ],
       "This offer is not available with your current plan.": [
         "此优惠不适用于您当前的套餐"
       ],
       "This payment method will become your new default for all future renewals.": [
         "此付款方式将成为您未来所有续订的新默认方式。"
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "此套餐不支持您账户上的托管功能。"
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "此套餐不支持您账户中的成员。"
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "当前无法完成此订阅，请重试。"
       ],
       "Timeout exceeded": [
         "超时"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "试用套餐不支持 ${ LUMO_SHORT_APP_NAME } 席位。"
-      ],
-      "Trial plans don’t support custom domains.": [
-        "试用套餐不支持自定义域名。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "试用套餐不支持专用 IP。"
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "试用套餐不支持 Scribe 席位。"
-      ],
-      "Trial plans don’t support this many members.": [
-        "试用套餐不支持如此多的成员。"
       ],
       "VAT number": [
         "增值税号"
@@ -14075,12 +14054,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "您已订阅此套餐，您可以在 ${ subscriptionPlatform } 上更改您的订阅。"
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "您已经拥有 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
-      ],
-      "You already own a Born Private account.": [
-        "您已经拥有一个 Born Private 账户。"
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "您将从您选定的付款方式收取 ${ amountToCharge } 费用。"
       ],
@@ -14089,9 +14062,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
@@ -18058,6 +18028,9 @@
       "Dashboard": [
         "控制面板"
       ],
+      "Data collection": [
+        "数据收集"
+      ],
       "Data recovery": [
         "数据恢复"
       ],
@@ -18552,9 +18525,6 @@
       ],
       "Previous": [
         "上一页"
-      ],
-      "Privacy and data collection": [
-        "隐私与数据收集"
       ],
       "Processing...": [
         "正在处理..."

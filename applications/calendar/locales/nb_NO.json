@@ -437,9 +437,6 @@
       "Get ${ planOrAppName }": [
         "Skaff deg ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Ta kontakt"
-      ],
       "Get started": [
         "Kom i gang"
       ],
@@ -559,9 +556,6 @@
       ],
       "Learn more": [
         "Lær mer"
-      ],
-      "Let's talk": [
-        "La oss snakke"
       ],
       "Load": [
         "Last"
@@ -4391,11 +4385,6 @@
         "Svaret ditt ble sendt, men hendelsen kunne ikke oppdateres i kalenderen din."
       ]
     },
-    "Event popover close button": {
-      "Close popover": [
-        "Lukk popover-vinduet"
-      ]
-    },
     "Event reply": {
       "maybe": [
         "kanskje"
@@ -4537,6 +4526,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Denne nettleseren støtter ikke sikkerhetsnøkler. Prøv en annen nettleser."
       ]
     },
     "fido2: Info": {
@@ -9463,12 +9455,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (ekskl. MVA)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan ikke kombineres med ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er kun tilgjengelig med forretningsplaner."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% MVA: ${ taxAmountElement }"
       ],
@@ -9478,14 +9464,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Det kreves en organisasjon for denne planen."
-      ],
       "Billing Country": [
         "Faktureringsland"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Å kjøpe kreditter krever et separat kjøp."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Ved å bytte sier du deg enig med våre ${ termsLink }."
@@ -9529,9 +9509,6 @@
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Kun én ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan kjøpes."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betal med ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -9541,26 +9518,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "Planbytte er ikke kompatibel av følgende årsaker:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Lukk ekstra lommebokkontoer før du endrer planen din."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Lukk ekstra lommebøker før du endrer planen din."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet-seter må samsvare med antall medlemmer."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Fornyelsespriser kan endres i henhold til ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe-seter kan ikke overstige antallet medlemmer."
       ],
       "Tax ${ rate }%": [
         "MVA ${ rate }%"
@@ -9574,18 +9539,6 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Den valgte planen tilbyr ikke nok adresser for kontoen din."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Den valgte planen tilbyr ikke nok domener for kontoen din."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Den valgte planen tilbyr ikke nok medlemmer for kontoen din."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Den valgte planen tilbyr ikke nok lagringsplass for kontoen din."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måned. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
@@ -9616,41 +9569,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denne handlingen utvider det eksisterende abonnementet. Du vil kun bli belastet for de nye tilleggene og den gjenværende tiden av den nåværende faktureringssyklusen. Fornyelsesdatoen for abonnementet ditt vil ikke bli endret."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Denne dedikerte serveren er tilordnet en gateway og kan ikke endres."
-      ],
       "This offer is not available with your current plan.": [
         "Dette tilbudet er ikke tilgjengelig med din nåværende plan."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Denne planen støtter ikke de administrerte funksjonene på kontoen din."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Dette abonnementet støtter ikke medlemmene på kontoen din."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Dette abonnementet kan ikke fullføres akkurat nå. Prøv igjen."
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Prøveplaner støtter ikke egendefinerte domener."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Prøveplaner støtter ikke dedikerte IP-er."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Prøveplaner støtter ikke Scribe-seter."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Prøveplaner støtter ikke så mange medlemmer."
       ],
       "VAT number": [
         "MVA-nummer"
@@ -9663,9 +9592,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har allerede et abonnement på denne planen. Du kan endre abonnementet ditt på ${ subscriptionPlatform }."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du eier allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."

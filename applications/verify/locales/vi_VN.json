@@ -875,6 +875,15 @@
       "Enter your username without the domain (@example.com)": [
         "Nhập tên người dùng không bao gồm tên miền (@example.com)"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Mật khẩu sao lưu không chính xác. Vui lòng thử lại."
+      ],
+      "Incorrect password. Please try again.": [
+        "Mật khẩu không đúng. Xin hãy thử lại."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Mật khẩu thứ hai không chính xác. Hãy thử lại."
+      ],
       "Invalid verification code": [
         "Mã xác thực không hợp lệ"
       ],
@@ -913,6 +922,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Không thể gửi mã xác minh bằng phương thức này."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Sai cụm từ khôi phục. Thử lại hoặc dùng phương thức khôi phục khác."
       ]
     },
     "Error message": {

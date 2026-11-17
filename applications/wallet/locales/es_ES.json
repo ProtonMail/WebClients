@@ -130,6 +130,9 @@
       "Dismiss": [
         "Descartar"
       ],
+      "Dismiss notification": [
+        "Descartar notificación"
+      ],
       "Done": [
         "Hecho"
       ],
@@ -166,9 +169,6 @@
       "Get ${ planOrAppName }": [
         "Obtén ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Ponte en contacto"
-      ],
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
@@ -183,6 +183,9 @@
       ],
       "Go to settings": [
         "Ir a los ajustes"
+      ],
+      "Go to today": [
+        "Ir al día de hoy"
       ],
       "Got it": [
         "Entendido"
@@ -216,9 +219,6 @@
       ],
       "Learn more about Bitcoin via Email": [
         "Más información sobre Bitcoin vía correo electrónico"
-      ],
-      "Let's talk": [
-        "Habla con nosotros"
       ],
       "Manage advanced account protections": [
         "Administrar protecciones avanzadas de la cuenta"
@@ -2600,6 +2600,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
       ]
     },
     "fido2: Info": {
@@ -3184,6 +3187,9 @@
       "Writing assistant": [
         "Asistente de escritura"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Ya no se ofrecen lugares como asistentes de redacción"
+      ],
       "You already have a free account": [
         "Ya tienes una cuenta gratuita."
       ],
@@ -3655,6 +3661,73 @@
       ],
       "Secondary amount": [
         "Importe secundario"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Código"
+      ],
+      "2x Basic usage": [
+        "2x uso Básico"
+      ],
+      "5x Plus usage": [
+        "Uso de 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acceso con API, con ${ credit } de crédito mensual"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acceso API, con un crédito mensual de ${ credit } por usuario."
+      ],
+      "Everything in Basic, and:": [
+        "Todo en Básico, y:"
+      ],
+      "Everything in Free, and:": [
+        "Todo en Gratis, y:"
+      ],
+      "Everything in Plus, and:": [
+        "Todo sobre Plus, y:"
+      ],
+      "Extended image generation": [
+        "Generación extendida de imágenes"
+      ],
+      "Includes:": [
+        "Incluye:"
+      ],
+      "Limited image generation": [
+        "Generación limitada de imágenes"
+      ],
+      "Limited messages and chat history": [
+        "Mensajes limitados e historial de conversaciones"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilidades limitadas, Proyectos y tareas programadas"
+      ],
+      "Maximum image generation": [
+        "Generación máxima de imágenes"
+      ],
+      "Maximum Skills and Projects": [
+        "Mayores habilidades y Proyectos"
+      ],
+      "More image generation": [
+        "Más generación de imágenes"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Más habilidades, Proyectos y tareas programadas"
+      ],
+      "More usage": [
+        "Uso mayor"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Por codificación y construcción"
+      ],
+      "For everyday chats": [
+        "Por conversaciones diarias"
+      ],
+      "For getting more done": [
+        "Por hacer más"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4720,12 +4793,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (impuestos no incluidos)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "No se puede combinar ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } con ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } solo está disponible en los planes para empresas."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% de impuesto: ${ taxAmountElement }"
       ],
@@ -4735,17 +4802,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad a pagar después de la prueba el ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Este plan requiere una organización."
-      ],
       "Billing Country": [
         "País de facturación"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "No se pueden comprar cuentas Born Private con una suscripción activa."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Para comprar créditos se requiere una compra aparte."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Al cambiar, aceptas nuestros ${ termsLink }."
@@ -4789,9 +4847,6 @@
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Solo se puede comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Paga con ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -4801,26 +4856,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "El cambio de plan no es compatible por los siguientes motivos:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Cierra las cuentas de cartera adicionales antes de cambiar de plan."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Cierra las carteras adicionales antes de cambiar de plan."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Las plazas de Proton Meet deben coincidir con el número de miembros."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Precio de renovación sujeta a cambios de acuerdo a ${ termsAndConditionsLink }"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Las licencias de Scribe no pueden superar el número de miembros."
       ],
       "Tax ${ rate }%": [
         "Impuesto ${ rate }%"
@@ -4831,24 +4874,9 @@
       "terms and conditions": [
         "términos y condiciones"
       ],
-      "The Born Private initiative requires a donation.": [
-        "La iniciativa Born Private requiere una donación."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descuento es válido para ${ renewalsWithCoupon } renovación.",
         "El descuento es válido para ${ renewalsWithCoupon } renovaciones."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "El plan seleccionado no ofrece suficientes direcciones para tu cuenta."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "El plan seleccionado no ofrece suficientes dominios para tu cuenta."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "El plan seleccionado no ofrece suficientes miembros para tu cuenta."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "El plan seleccionado no ofrece suficiente almacenamiento para tu cuenta."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
@@ -4879,41 +4907,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta acción amplía la suscripción existente. Se te cobrará solo por los nuevos complementos y el tiempo restante del ciclo de facturación actual. La fecha de renovación de tu suscripción no cambiará."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Este servidor dedicado está asignado a una pasarela y no se puede cambiar."
-      ],
       "This offer is not available with your current plan.": [
         "Esta oferta no está disponible con tu plan actual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en tu nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Este plan no admite las funciones gestionadas de tu cuenta."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Este plan no admite los miembros de tu cuenta."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "No se puede completar esta suscripción en este momento. Vuelve a intentarlo."
       ],
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Los planes de prueba no admiten licencias de ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Los planes de prueba no admiten dominios personalizados."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Los planes de prueba no admiten IP dedicadas."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Los planes de prueba no admiten licencias de Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Los planes de prueba no admiten tantos miembros."
       ],
       "VAT number": [
         "Número de IVA"
@@ -4927,20 +4931,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Ya tienes una suscripción a este plan. Puedes cambiar tu suscripción en ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Ya tienes ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Ya tienes una cuenta Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pronto serás redirigido para verificar tu pago."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Tu cuenta es demasiado antigua para la iniciativa Born Private."
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."

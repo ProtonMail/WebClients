@@ -35,7 +35,7 @@
         "Afegeix"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
-        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+        "Afegeix ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ name }": [
         "Afegeix ${ name }"
@@ -130,6 +130,9 @@
       "Dismiss": [
         "Descarta"
       ],
+      "Dismiss notification": [
+        "Descarta la notificació"
+      ],
       "Done": [
         "Fet"
       ],
@@ -166,9 +169,6 @@
       "Get ${ planOrAppName }": [
         "Obtén ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Contacte"
-      ],
       "Get the apps": [
         "Obtén les aplicacions"
       ],
@@ -179,10 +179,13 @@
         "Obtenir codi de verificació"
       ],
       "Go to ${ planOrAppName }": [
-        "Aneu a ${ planOrAppName }"
+        "Ves a ${ planOrAppName }"
       ],
       "Go to settings": [
         "Ves a les preferències"
+      ],
+      "Go to today": [
+        "Vés a avui"
       ],
       "Got it": [
         "D'acord"
@@ -216,9 +219,6 @@
       ],
       "Learn more about Bitcoin via Email": [
         "Més informació sobre Bitcoin via correu electrònic"
-      ],
-      "Let's talk": [
-        "Parlem-ne"
       ],
       "Manage advanced account protections": [
         "Gestiona les proteccions avançades del compte"
@@ -1170,7 +1170,7 @@
         "Suport per a la càrrega de fitxers grans"
       ],
       "Limited daily chats": [
-        "Nombre de xats diaris limitat"
+        "Nombre limitat de xats diaris"
       ],
       "Limited favorites": [
         "Nombre de preferits limitat"
@@ -2470,7 +2470,7 @@
         "La sol·licitud ha caducat"
       ],
       "Reverse charge scheme is not supported for this plan": [
-        "El règim d'inversió del subjecte passiu no és compatible amb aquest pla"
+        "L'esquema d'inversió del subjecte passiu no és compatible amb aquest pla"
       ],
       "Signature verification failed": [
         "No s'ha pogut verificar la signatura."
@@ -2600,6 +2600,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-vos amb la clau de seguretat. Torneu-ho a provar."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
       ]
     },
     "fido2: Info": {
@@ -2771,7 +2774,7 @@
         "Assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
-        "${ MEET_APP_NAME } és una aplicació de videoconferència amb xifratge d'extrem a extrem. Afegiu-la al vostre pla per allotjar reunions segures."
+        "${ MEET_APP_NAME } és una aplicació de videoconferència amb xifratge d'extrem a extrem. Afegiu-la al vostre pla per a allotjar reunions segures."
       ],
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
@@ -2792,7 +2795,7 @@
         "${ storage } d'emmagatzematge"
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } amaga el vostre trànsit. ${ PASS_SHORT_APP_NAME } amaga la vostra identitat— àlies de **hide-my-email** il·limitats i **alertes de la web fosca** si les vostres dades es filtren."
+        "${ VPN_SHORT_APP_NAME } amaga el trànsit. ${ PASS_SHORT_APP_NAME } amaga la identitat — àlies de **hide-my-email** il·limitats i **alertes del web fosc** si les vostres dades es filtren."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
@@ -2947,7 +2950,7 @@
         "Tot a ${ planOrAppName }"
       ],
       "Everything in ${ planOrAppName }, plus:": [
-        "Tot el que inclou ${ planOrAppName }, i a més:"
+        "Tot el que inclou ${ planOrAppName } i, a més:"
       ],
       "Expired": [
         "Caducat"
@@ -3184,6 +3187,9 @@
       "Writing assistant": [
         "Assistent d'escriptura"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Les llicències d'assistent d'escriptura ja no es venen."
+      ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
       ],
@@ -3233,7 +3239,7 @@
         "La subscripció ${ plan } se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant s'afegirà al vostre compte. L'oferta de ${ PASS_SHORT_APP_NAME } no té cost de renovació; és un pagament únic per a accedir a ${ PASS_SHORT_APP_NAME } de per vida."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
+        "El vostre compte està configurat actualment per a aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per a continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
       ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "El procés de pagament s'ha obert en una pestanya nova. Completeu el pagament allà i torneu a aquesta pàgina quan hàgiu acabat."
@@ -3297,7 +3303,7 @@
         "${ n } mesos"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
-        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
+        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal. És ideal per a scripts, automatització i fluxos de treball de desenvolupament."
       ],
       "Account holder": [
         "Titular del compte"
@@ -3655,6 +3661,73 @@
       ],
       "Secondary amount": [
         "Import secundari"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "Codi de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "2x Basic usage": [
+        "2x ús bàsic"
+      ],
+      "5x Plus usage": [
+        "5x d'ús Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Accés a l'API, amb ${ credit } de crèdit al mes"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Accés a l'API, amb ${ credit } de crèdit al mes per usuari"
+      ],
+      "Everything in Basic, and:": [
+        "Tot el de pla Basic, i a més:"
+      ],
+      "Everything in Free, and:": [
+        "Tot el del Free, i:"
+      ],
+      "Everything in Plus, and:": [
+        "Tot el de Plus, i a més:"
+      ],
+      "Extended image generation": [
+        "Generació d'imatges ampliada"
+      ],
+      "Includes:": [
+        "Inclou"
+      ],
+      "Limited image generation": [
+        "Generació d'imatges limitada"
+      ],
+      "Limited messages and chat history": [
+        "Missatges i historial de xat limitats"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilitats, projectes i tasques programades limitats"
+      ],
+      "Maximum image generation": [
+        "Generació màxima d'imatges"
+      ],
+      "Maximum Skills and Projects": [
+        "Màxim d'Habilitats i Projectes"
+      ],
+      "More image generation": [
+        "Més generació d'imatges"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Més Habilitats, Projectes i tasques programades"
+      ],
+      "More usage": [
+        "Més ús"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Per a programar i desenvolupar"
+      ],
+      "For everyday chats": [
+        "Per a converses quotidianes"
+      ],
+      "For getting more done": [
+        "Per a fer més coses"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4070,7 +4143,7 @@
         "Correus protegits amb contrasenya"
       ],
       "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
-        "Suport telefònic (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ usuaris)"
+        "Suport telefònic (almenys ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -4720,12 +4793,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (IVA no inclòs)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } no es pot combinar amb ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } només està disponible als plans d'empresa."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "Impost del ${ rate }%: ${ taxAmountElement }"
       ],
@@ -4735,17 +4802,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Import a pagar després del període de prova el ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Es requereix una organització per a aquest pla."
-      ],
       "Billing Country": [
         "País de facturació"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Els comptes de Born Private no es poden comprar amb una subscripció activa."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "L'adquisició de crèdits requereix una compra independent."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "En canviar, accepteu els nostres ${ termsLink }."
@@ -4763,7 +4821,7 @@
         "Durant aquest temps, no podreu modificar ni cancel·lar la subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
       "Edit billing address": [
-        "Editar l'adreça de facturació"
+        "Edita l'adreça de facturació"
       ],
       "Got it": [
         "Entesos"
@@ -4789,9 +4847,6 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Només es pot comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Pagueu amb ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -4801,26 +4856,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "El canvi de pla no és compatible pels motius següents:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Tanqueu els comptes de cartera addicionals abans de canviar de pla."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Tanqueu les carteres addicionals abans de canviar de pla."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per a disminuir el nombre de complements."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Les llicències de Proton Meet han de coincidir amb el nombre de membres."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "El preu de la renovació està subjecte a canvis segons ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Les llicències de Scribe no poden superar el nombre de membres."
       ],
       "Tax ${ rate }%": [
         "Impost ${ rate }%"
@@ -4831,24 +4874,9 @@
       "terms and conditions": [
         "termes i condicions"
       ],
-      "The Born Private initiative requires a donation.": [
-        "La iniciativa Born Private requereix una donació."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descompte és vàlid per a ${ renewalsWithCoupon } renovació.",
         "El descompte és vàlid per a ${ renewalsWithCoupon } renovacions."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "El pla seleccionat no ofereix prou adreces per al vostre compte."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "El pla seleccionat no ofereix prou dominis per al vostre compte."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "El pla seleccionat no ofereix prou membres per al vostre compte."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "El pla seleccionat no ofereix prou emmagatzematge per al vostre compte."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El preu amb descompte especial és vàlid durant ${ couponRedemptions } mes. Després, es renovarà automàticament a ${ renewPriceStr } per un període d'1 mes. Podeu cancel·lar la subscripció en qualsevol moment.",
@@ -4879,20 +4907,11 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Aquesta acció amplia la subscripció existent. Se us cobraran només els nous complements i el temps restant del cicle de facturació actual. La data de renovació de la subscripció no es modificarà."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Aquest servidor dedicat està assignat a una passarel·la i no es pot canviar."
-      ],
       "This offer is not available with your current plan.": [
         "Aquesta oferta no està disponible amb el pla actual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Aquest mètode de pagament esdevindrà el nou mètode per defecte per a totes les renovacions futures."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Aquest pla no admet les funcions gestionades del vostre compte."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Aquest pla no suporta els membres del vostre compte."
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Aquesta subscripció no es pot completar ara mateix. Torneu-ho a provar."
@@ -4900,26 +4919,11 @@
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
       ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Els plans de prova no admeten llicències de ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Els plans de prova no admeten dominis personalitzats."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Els plans de prova no admeten IP dedicades."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Els plans de prova no admeten llicències de Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Els plans de prova no admeten tants membres."
-      ],
       "VAT number": [
         "Número d'IVA"
       ],
       "VAT reverse charge mechanism applies.": [
-        "S'aplica la inversió del subjecte passiu (IVA)."
+        "S'aplica la inversió del subjecte passiu de l'IVA."
       ],
       "You already have a subscription to this plan.": [
         "Ja teniu una subscripció a aquest pla."
@@ -4927,20 +4931,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Ja teniu una subscripció a aquest pla. Podeu canviar-la a ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Ja teniu ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Ja teniu un compte de Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Aviat se us redirigirà a PayPal per verificar el vostre pagament."
       ],
       "You will soon be redirected to verify your payment.": [
         "Aviat se us redirigirà per verificar el vostre pagament."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "El vostre compte és massa antic per a la iniciativa Born Private."
       ],
       "Your payment is still being processed": [
         "Encara s'està processant el pagament."

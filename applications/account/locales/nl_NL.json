@@ -54,6 +54,11 @@
         "Uw informatie is in tenminste één gegevenslek gevonden. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te zien en actie te ondernemen. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Business referral link": [
+        "Zakelijke verwijzingslink"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Accounts"
@@ -401,6 +406,9 @@
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Doorgaan met ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Bitcoin": [
+        "Ga verder met Bitcoin"
       ],
       "Continue with Free": [
         "Doorgaan met gratis"
@@ -855,9 +863,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Krijg hulp van ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Get in touch": [
-        "Neem contact op"
-      ],
       "Get limited-time offer": [
         "Ontvang het tijdelijk aanbod"
       ],
@@ -1070,9 +1075,6 @@
       ],
       "Leave group": [
         "Groep verlaten"
-      ],
-      "Let's talk": [
-        "Laten we praten!"
       ],
       "Load more": [
         "Laad meer"
@@ -1315,6 +1317,9 @@
         "Agenda verwijderen"
       ],
       "Remove domain": [
+        "Verwijder bestand"
+      ],
+      "Remove file": [
         "Verwijder bestand"
       ],
       "Remove forward": [
@@ -5065,6 +5070,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Lees, beantwoord en houd uw Gmail bij vanuit ${ MAIL_APP_NAME }"
       ],
+      "Refer ${ BRAND_NAME } for Business to your network. You earn credits, and they get ${ refereeRewardAmount } off a yearly subscription. Earn up to ${ maxRewardAmount } in total.": [
+        "Verwijs ${ BRAND_NAME } for Business naar uw netwerk. U verdient credits en zij krijgen ${ refereeRewardAmount } korting op een jaarabonnement. Verdien in totaal tot ${ maxRewardAmount }."
+      ],
       "Select which categories you want to add and if you want to receive push notifications for each category.": [
         "Selecteer welke categorieën u wilt toevoegen en of u per categorie pushmeldingen wilt ontvangen."
       ],
@@ -6805,7 +6813,7 @@
         "Kon transacties niet laden. Probeer het later nog eens."
       ],
       "Couldn't load your connections": [
-        "Kan je verbindingen niet laden"
+        "Kan uw verbindingen niet laden"
       ],
       "Creating documents in non-folders is not allowed": [
         "Het aanmaken van documenten in niet-mappen is niet toegestaan"
@@ -9070,6 +9078,9 @@
       "Enjoying ${ planName }?": [
         "Tevreden met ${ planName }?"
       ],
+      "Invited businesses": [
+        "Uitgenodigde bedrijven"
+      ],
       "Unlock 4 premium privacy services for just **${ priceString }** more each month": [
         "Ontgrendel nog 4 premium privacydiensten voor slechts **${ priceString }** meer per maand"
       ],
@@ -10835,6 +10846,9 @@
       "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
         "Bestaande end-to-end versleutelde e-mail doorschakelingen zullen handmatig opnieuw moeten worden ingeschakeld onder **${ autoReplySettingsTitle }** in de instellingen."
       ],
+      "Expected ${ date }": [
+        "Verwachte ${ date }"
+      ],
       "Expired": [
         "Verlopen"
       ],
@@ -10996,6 +11010,9 @@
       ],
       "Groups": [
         "Groepen"
+      ],
+      "Help an organization protect sensitive data from breaches and surveillance": [
+        "Help een organisatie gevoelige gegevens te beschermen tegen inbreuken en toezicht"
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Help andere gezinnen om hun kinderen een veilige start online te geven. Deel deze mijlpaal en zeg het voort."
@@ -11865,9 +11882,6 @@
       "Restore": [
         "Herstel"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "Beoordeel eerdere perioden en exporteer de gegevens voor rapportage of facturatie aan klanten."
-      ],
       "Right to Left": [
         "Rechts naar links"
       ],
@@ -12096,6 +12110,9 @@
       "Summary": [
         "Overzicht"
       ],
+      "Support a mission to create a safer internet for everyone": [
+        "Ondersteun een missie om een ​​veiliger internet voor iedereen te creëren"
+      ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Ondersteuning voor het monitoren van eigen domeinen en niet-${ BRAND_NAME } e-mailadressen komt binnenkort."
       ],
@@ -12245,6 +12262,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Deze inloggegevens kunnen niet gebruikt worden om in te loggen op onze officiële ${ VPN_APP_NAME } apps. ${ learnMore }"
+      ],
+      "They get end-to-end encrypted email, storage, and collaboration tools": [
+        "Ze krijgen end-to-end gecodeerde e-mail-, opslag- en samenwerkingstools"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -12419,9 +12439,6 @@
       ],
       "To continue to ${ product }": [
         "Om door te gaan naar ${ product }"
-      ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Om onze diensten voortdurend te verbeteren, verzamelen wij soms gegevens om de goede werking van onze toepassingen te controleren. Deze informatie wordt niet gedeeld met diensten van derden."
       ],
       "To create your first user group, go to": [
         "Om uw eerste gebruikersgroep aan te maken, ga naar"
@@ -13026,6 +13043,9 @@
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "U hoeft het bestand niet te openen of te lezen; download het gewoon en bewaar het op een veilige plek."
+      ],
+      "You earn credits when they sign up": [
+        "U verdient tegoed als ze zich inschrijven"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
@@ -14279,9 +14299,6 @@
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
-      "Collect usage diagnostics": [
-        "Gebruiksdiagnoses verzamelen"
-      ],
       "Color": [
         "Kleur"
       ],
@@ -14753,6 +14770,9 @@
       ],
       "Invite via email": [
         "Uitnodigen via e-mail"
+      ],
+      "Invited via": [
+        "Uitgenodigd via"
       ],
       "Issuer ID": [
         "ID uitgevende instelling"
@@ -15230,6 +15250,9 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Share your invite link": [
+        "Deel uw uitnodigingslink"
       ],
       "Share your referral link": [
         "Deel uw verwijzingslink:"
@@ -19431,9 +19454,6 @@
       "Processing payment": [
         "Betaling wordt verwerkt"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet licenties moeten overeenkomen met het aantal leden."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
       ],
@@ -19493,9 +19513,6 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Dit abonnement ondersteunt de beheerde functies van uw account niet."
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Dit abonnement kan momenteel niet worden voltooid. Probeer het opnieuw."
@@ -19757,6 +19774,9 @@
       ],
       "Enter company name": [
         "Voer bedrijfsnaam in"
+      ],
+      "Enter email address, name, or contact group": [
+        "Voer het e-mailadres, de naam of de contactgroep in"
       ],
       "Enter name or email address": [
         "Voer een naam of e-mailadres in"
@@ -20424,6 +20444,15 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Als u zich vóór deze datum abonneert,** ontvangt u **${ referrerRewardAmount }** aan tegoed."
       ],
+      "**Share your referral link** with the right person at the company": [
+        "**Deel uw verwijzingslink** met de juiste persoon bij het bedrijf"
+      ],
+      "**They sign up for a yearly Pro plan** and get an additional ${ refereeRewardAmount } off their first year": [
+        "**Ze melden zich aan voor een jaarlijks Pro-abonnement** en krijgen een extra ${ refereeRewardAmount } korting op hun eerste jaar"
+      ],
+      "**You earn ${ referrerRewardAmount } for every seat** they add during sign-up.": [
+        "**U verdient ${ referrerRewardAmount } voor elke licentie** die ze toevoegen tijdens de aanmelding."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Na die datum zal uw account worden gedowngraded naar **${ BRAND_NAME } Free**. Als u van gedachten verandert, kunt u **uw abonnement reactiveren** om toegang te behouden tot premium functies."
       ],
@@ -20438,6 +20467,9 @@
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
         "Ik gebruik ${ BRAND_NAME } en dacht dat u het misschien wel leuk zou vinden. Het is een veilige e-mail, cloudopslag, wachtwoordbeheerder en VPN die uw privacy beschermt. Meld u aan via deze link en ontvang ${ refereeRewardAmount } korting op uw volgende abonnement: ${ referralLink }"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Ik gebruik ${ BRAND_NAME } en dacht dat uw team dit misschien wel leuk zou vinden. Het is een veilige e-mail, cloudopslag, wachtwoordbeheerder en VPN die uw privacy beschermt. Meld u aan via deze link en ontvang ${ refereeRewardAmount } korting op uw eerste jaar van ${ BRAND_NAME } for Business: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Als u daarvoor annuleert, wordt u gedowngraded naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt. Als u niet annuleert, start uw volledige abonnement en krijgt u **${ referrerRewardAmount }** aan tegoed."
@@ -24479,11 +24511,22 @@
       "Bridge for ${ platform }": [
         "Bridge voor ${ platform }"
       ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Neem ${ BRAND_NAME } mee naar het werk. Verdien tegoed."
+      ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Voeg uw Gmail toe aan ${ MAIL_APP_NAME }"
       ],
       "Browser extensions": [
         "Browserextensies"
+      ],
+      "Business invited": [
+        "Bedrijf uitgenodigd",
+        "Bedrijven uitgenodigd"
+      ],
+      "Business signed up": [
+        "Bedrijf heeft zich aangemeld",
+        "Bedrijven hebben zich aangemeld"
       ],
       "Can you access your session in the browser?": [
         "Kun u uw sessie openen in de browser?"
@@ -25187,6 +25230,9 @@
       "How did you find out about us?": [
         "Hoe hebt u ons gevonden?"
       ],
+      "How it works": [
+        "Hoe het werkt"
+      ],
       "How to choose a good logo": [
         "Hoe kiest u een goed logo"
       ],
@@ -25334,9 +25380,6 @@
       ],
       "Monthly": [
         "Maandelijks"
-      ],
-      "Monthly Costs": [
-        "Maandelijkse Kosten"
       ],
       "Multi-user support": [
         "Ondersteuning voor meerdere gebruikers"
@@ -25500,14 +25543,8 @@
       "Previous": [
         "Vorige"
       ],
-      "Previous billing periods": [
-        "Vorige factureringsperioden"
-      ],
       "Priority support:": [
         "Prioriteitsondersteuning:"
-      ],
-      "Privacy and data collection": [
-        "Privacy en gegevensverzameling"
       ],
       "Problem processing your payment": [
         "Probleem tijdens de verwerking van uw betaling"
@@ -25559,6 +25596,9 @@
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
+      ],
+      "Refer businesses": [
+        "Verwijs naar bedrijven"
       ],
       "Reject device?": [
         "Apparaat weigeren?"
@@ -26073,6 +26113,9 @@
       ],
       "What is the dark web?": [
         "Wat is het dark web?"
+      ],
+      "Why recommend ${ BRAND_NAME } for Business?": [
+        "Waarom ${ BRAND_NAME } aanbevelen voor bedrijven?"
       ],
       "Windows": [
         "Windows"

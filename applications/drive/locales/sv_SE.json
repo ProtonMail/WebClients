@@ -165,6 +165,9 @@
       "Cancel transfers": [
         "Avbryt överföringar"
       ],
+      "Cancel trial": [
+        "Avbryt provperioden"
+      ],
       "Cancel trial and pay": [
         "Avbryt provperiod och betala"
       ],
@@ -365,6 +368,9 @@
       "Deselect all": [
         "Avmarkera alla"
       ],
+      "Detach": [
+        "Koppla från"
+      ],
       "Details": [
         "Detaljer"
       ],
@@ -377,6 +383,9 @@
       "Dismiss": [
         "Avfärda"
       ],
+      "Dismiss notification": [
+        "Avfärda avisering"
+      ],
       "Display navigation bar": [
         "Visa navigeringsfält"
       ],
@@ -385,6 +394,9 @@
       ],
       "Display previous": [
         "Visa föregående"
+      ],
+      "Don't show this offer again": [
+        "Visa inte detta erbjudande igen"
       ],
       "Done": [
         "Klar"
@@ -452,6 +464,9 @@
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
       ],
+      "Enable drive search": [
+        "Aktivera sökning i Drive"
+      ],
       "Encrypted": [
         "Krypterad"
       ],
@@ -497,9 +512,6 @@
       "Get ${ planOrAppName }": [
         "Skaffa ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Kontakta oss"
-      ],
       "Get mobile and desktop apps": [
         "Skaffa appar för mobil och stationär dator"
       ],
@@ -541,6 +553,9 @@
       ],
       "Go to settings": [
         "Gå till inställningar"
+      ],
+      "Go to today": [
+        "Gå till idag"
       ],
       "Google Drive": [
         "Google Drive"
@@ -628,9 +643,6 @@
       ],
       "Leave album": [
         "Lämna album"
-      ],
-      "Let's talk": [
-        "Låt oss prata!"
       ],
       "List layout": [
         "Listlayout"
@@ -749,6 +761,9 @@
       "Next": [
         "Nästa"
       ],
+      "Next contact": [
+        "Nästa kontakt"
+      ],
       "Next month": [
         "Nästa månad"
       ],
@@ -790,6 +805,9 @@
       ],
       "Previous": [
         "Föregående"
+      ],
+      "Previous contact": [
+        "Tidigare kontakt"
       ],
       "Previous month": [
         "Föregående månad"
@@ -1082,6 +1100,9 @@
       "Skip verification": [
         "Hoppa över verifiering"
       ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ],
       "Start": [
         "Starta"
       ],
@@ -1141,6 +1162,9 @@
       ],
       "Toggle settings": [
         "Öppna/stäng inställningar"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Växla undermappar till ${ itemName }"
       ],
       "Trust": [
         "Lita på"
@@ -1379,6 +1403,12 @@
       ],
       "Domains": [
         "Domäner"
+      ],
+      "Managed Service Provider": [
+        "Hanterad tjänsteleverantör"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Visar sätt att få hjälp med verifiering"
       ],
       "Servers": [
         "Servrar"
@@ -3553,6 +3583,9 @@
       "Failed to decrypt bookmark key: ${ message }": [
         "Misslyckades avkryptera innehållsnyckel: ${ message }"
       ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Misslyckades avkryptera bokmärksnamn: ${ message }"
+      ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Kunde inte avkryptera lösenord för bokmärke: ${ message }"
       ],
@@ -3701,6 +3734,9 @@
       "Missing signature for ${ signatureType }": [
         "Saknar signatur för ${ signatureType }"
       ],
+      "Move operation aborted": [
+        "Flyttningsåtgärd avbröts"
+      ],
       "Moving item to a non-folder is not allowed": [
         "Flytt av objekt till utanför en mapp är inte tillåtet"
       ],
@@ -3737,6 +3773,9 @@
       ],
       "Not a valid number": [
         "Inte ett giltigt nummer"
+      ],
+      "Not enough browser storage": [
+        "Inte nog med webbläsarutrymme"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En av kontakterna har ingen e-postadress: ${ noEmailsContactNamesList }",
@@ -3913,6 +3952,9 @@
       "Something went wrong": [
         "Något gick fel"
       ],
+      "Something went wrong during folder listing": [
+        "Någonting gick fel vid listning av mappar"
+      ],
       "Something went wrong while fetching available domains": [
         "Något gick fel vid hämtning av tillgängliga domäner"
       ],
@@ -3987,6 +4029,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
+      ],
+      "This file has missing crypto material": [
+        "Den här filen har saknat kryptomaterial"
       ],
       "This file has no version available to download": [
         "Denna fil har ingen version tillgänglig att ladda ner"
@@ -4502,6 +4547,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
       ]
     },
     "fido2: Info": {
@@ -5003,6 +5051,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace bemyndigar ditt team att samarbeta effektivt utan att någonsin riskera ditt företags data."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
@@ -5071,6 +5122,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importerades"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } väntande inbjudan",
@@ -5498,8 +5552,15 @@
       "default email address": [
         "standard e-postadress"
       ],
+      "Delete locked drive": [
+        "Ta bort låst lagringsenhet",
+        "Ta bort låsta lagringsenheter"
+      ],
       "Details": [
         "Detaljer"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna beräknas utifrån ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Upptäck nya funktioner upplåsta och börja använda dem direkt!"
@@ -5546,6 +5607,9 @@
       ],
       "Downloading": [
         "Laddar ner"
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Dra och släpp dina filer och mappar här eller klicka på den \"Nya\" knappen för att ladda upp"
       ],
       "Drop file here to upload": [
         "Släpp fil här för att ladda upp"
@@ -5712,6 +5776,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Om du har en av dessa, fortsätt till ${ BRAND_NAME }-kontoinställning för att starta avblockeringsprocessen."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+      ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Om du tar bort dig själv förlorar du åtkomst till “${ fileName }“ och kommer inte kunna öppna det igen om inte ägaren delar det med dig."
       ],
@@ -5725,14 +5792,23 @@
       "Import in progress": [
         "Import pågår"
       ],
+      "Import interrupted": [
+        "Import avbröts"
+      ],
       "Import mailbox": [
         "Importera brevlåda"
+      ],
+      "Import paused": [
+        "Import pausad"
       ],
       "Import your files and folders": [
         "Importera dina filer och mappar"
       ],
       "Important note": [
         "Viktigt meddelande"
+      ],
+      "Importing from Google Drive…": [
+        "Importerar från Google Drive"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerar din data från ${ fromEmail } till ${ toEmail }."
@@ -5833,6 +5909,9 @@
       "Key fingerprint": [
         "Nyckelfingeravtryck"
       ],
+      "Know when it's done": [
+        "Vet när det är klart"
+      ],
       "Label all imported messages as": [
         "Märk alla importerade meddelanden som"
       ],
@@ -5927,6 +6006,9 @@
       "More": [
         "Mer"
       ],
+      "More storage needed": [
+        "Mer lagringsutrymme behövs"
+      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De flesta offentliga WiFi-nätverk är säkra, men vissa saknar säkerhet, vilket gör att du utsätts för cyberhot. Ett VPN krypterar din trafik och håller dig skyddad."
       ],
@@ -5975,6 +6057,9 @@
       "No payment is required.": [
         "Ingen betalning krävs."
       ],
+      "No populator states found.": [
+        "Inga befolkningstillstånd hittade."
+      ],
       "No results found": [
         "Inga resultat hittades"
       ],
@@ -6020,6 +6105,9 @@
       "On public WiFi networks": [
         "På offentliga WiFi-nätverk"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "En av dina krypterade diskar är låst. Det mest sannolika är att det beror på att lösenordet nyligen återställts."
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
       ],
@@ -6061,6 +6149,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Betalningar är skyddad med TLS-kryptering och schweiziska integritetslagar."
+      ],
+      "Permanently delete all files in your locked drive": [
+        "Ta permanent bort alla filer på din låsta lagringsenhet"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline är endast kompatibelt med oformaterat textformat."
@@ -6198,6 +6289,9 @@
       ],
       "RECOMMENDED": [
         "REKOMMENDERAT"
+      ],
+      "Reconnect Google Drive": [
+        "Återkoppla Google Drive"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
@@ -6354,6 +6448,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Vissa av dina filer är inte längre åtkomliga. Återställ åtkomsten till dina filer. ${ StartRecoveryButton }"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Några gamla filer indexeras inte eftersom din Drive är för full för att indexera helt."
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Några foton i detta album sparas inte på din tidslinje. Att ta bort detta album kommer ta bort dessa foton permanent."
@@ -6699,6 +6796,9 @@
       "We'll email you once import is complete.": [
         "Vi skickar e-post till dig när importen är klar."
       ],
+      "We'll email you when your import is complete.": [
+        "Vi skickar e-post till dig när importen är klar."
+      ],
       "We'll get back to you shortly.": [
         "Vi återkommer snart till dig."
       ],
@@ -6754,6 +6854,9 @@
       "Writing assistant": [
         "Skrivassistent"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Platser för skrivassistenten säljs inte längre"
+      ],
       "Yes": [
         "Ja"
       ],
@@ -6784,6 +6887,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du använder mer lagringsutrymme än vad som är inkluderat i ett ${ downgradedPlanName }-paket. Ta bort data för att nedgradera."
       ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Du kan också avbryta din import om ${ easySwitchSettingsLink }."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kan också slå samman importerade kalendrar med befintliga ${ BRAND_NAME }-kalendrar."
       ],
@@ -6807,6 +6913,9 @@
       "You can now return to the application to continue": [
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
       ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Du kan öppna den här mappen är importen är klar. Hittills har vi importerat ${ importedSize }.  Vi skickar e-post till dig när det är klart."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan slå på aviseringar för att bli uppmärksammad när nya e-postmeddelanden kommer till denna mapp."
       ],
@@ -6829,6 +6938,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du har en provperiod på ${ planTitle }-prenumeration. Ingen betalning krävs för närvarande. Din prenumeration kommer att förnyas automatiskt i slutet av provperioden."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en öppen faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en öppen faktura på ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigerad till webbplatsen för din bank."
       ],
@@ -6847,6 +6962,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Du kommer inte att kunna dela \"${ fileName }\" efter att din åtkomst har ändrats till visningsbehörighet. Ägaren eller en redigerare med behörighet kan återställa ditt redigeringsbehörighet. Du kan inte ångra den här ändringen på egen hand."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du får kreditbelöningen 1 månad efter att din vän har börjat prenumerera på ett årspaket, och 2 månader efter att de har börjat prenumerera på ett månadspaket."
@@ -6897,6 +7015,9 @@
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Dina filer är inte längre åtkomliga på grund av en lösenordsåterställning. Ladda upp den gamla krypteringsnyckeln igen för att återfå åtkomsten. ${ KeyReactivationButton }"
       ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Dina filer har framgångsrikt blivit importerade och krypterade från Google Drive till ${ DRIVE_APP_NAME }."
+      ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
@@ -6908,6 +7029,12 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis provperiod har konverterats till en månadsprenumeration. Ditt förnyelsedatum är ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Din Google Drive kan vara tom eller innehålla bara filer som inte stöds."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Din import är pausad eftersom vi förlorade åtkomst till ditt Google-konto. Anslut igen för att överföra resten av dina filer."
       ],
       "Your information was found on ${ displayedDate }": [
         "Din information hittades den ${ displayedDate }"
@@ -7914,6 +8041,9 @@
       "Pay invoice": [
         "Betala faktura"
       ],
+      "Pay it": [
+        "Betala den"
+      ],
       "Photos": [
         "Foton"
       ],
@@ -8012,6 +8142,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktivera ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Kod"
+      ],
+      "2x Basic usage": [
+        "2X Basic användning"
+      ],
+      "5x Plus usage": [
+        "5x Plus användning"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API tillgång, med ${ credit } en månads kredit"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API tillgång, med ${ credit } en månads kredit per användare"
+      ],
+      "Everything in Basic, and:": [
+        "Allt i Gratis, och:"
+      ],
+      "Everything in Free, and:": [
+        "Allt i Gratis-paketet, och:"
+      ],
+      "Everything in Plus, and:": [
+        "Allt i Plus, och:"
+      ],
+      "Extended image generation": [
+        "Utökad bildgenerering"
+      ],
+      "Includes:": [
+        "Inkluderar:"
+      ],
+      "Limited image generation": [
+        "Begränsade bildgenereringar"
+      ],
+      "Limited messages and chat history": [
+        "Begränsade meddelanden och chatthistorik"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Begränsade Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "Maximum image generation": [
+        "Maximal bildgenerering"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximala Färdigheter och Projekt"
+      ],
+      "More image generation": [
+        "Mer bildgenereringar"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mera Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "More usage": [
+        "Mer användning"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "För kodning och byggande"
+      ],
+      "For everyday chats": [
+        "För chattar varje dag"
+      ],
+      "For getting more done": [
+        "För att få mer gjort"
       ]
     },
     "Mail import summary": {
@@ -9358,6 +9555,10 @@
         "${ errors.length } objekt misslyckades att tas bort",
         "${ errors.length } objekt misslyckades att tas bort"
       ],
+      "${ errors.length } item failed to be trashed": [
+        "${ errors.length } objekt misslyckades att flyttas till papperskorg",
+        "${ errors.length } objekt misslyckades att flyttas till papperskorg"
+      ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopierat objekt flyttades till papperskorg",
         "${ numberOfItems } kopierade objekt flyttades till papperskorg"
@@ -9497,6 +9698,9 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Misslyckades att stoppa delning av detta objekt"
+      ],
+      "The item was not added to your drive": [
+        "Objektet lades inte till på din Drive"
       ],
       "The link to your item was deleted": [
         "Länken till ditt objekt togs bort"
@@ -9660,6 +9864,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
       ],
       "Storage": [
         "Lagringsutrymme"
@@ -9836,6 +10043,9 @@
       ],
       "**Add a payment method** to keep using all of the features after your trial ends.": [
         "**Lägg till en betalningsmetod** för kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Har du ångrat dig efter försöksperioden** Avbryt inom 30 dagar från din första betalning och vi kommer att betala tillbaka för den oanvända tiden."
       ],
       "Add a payment method": [
         "Lägg till en betalningsmetod"
@@ -10048,9 +10258,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (exkl. moms)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan inte kombineras med ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate } % moms: ${ taxAmountElement }"
       ],
@@ -10062,6 +10269,9 @@
       ],
       "Billing Country": [
         "Faktureringsland"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Genom att byta godkänner du våra ${ termsLink }."
       ],
       "Card number": [
         "Kortnummer"
@@ -10101,9 +10311,6 @@
       ],
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betala med ${ IDEAL_WERO_BRAND_NAME }"
@@ -10168,6 +10375,9 @@
       "This payment method will become your new default for all future renewals.": [
         "Denna betalningsmetod kommer bli din nya standard för alla framtida förnyelser."
       ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Denna prenumeration kan inte slutföras just nu. Försök igen."
+      ],
       "Timeout exceeded": [
         "Timeout överskriden"
       ],
@@ -10182,9 +10392,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
@@ -10228,6 +10435,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Något gick fel. Google Pay-verifiering misslyckades."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Genom att bekräfta, ger du ${ BRAND_NAME } och Stripe, vår betalningstjänsteleverantör, tillstånd att dra framtida betalningar för din prenumeration från detta bankkontot via SEPA-autogiro, och din bank tillstånd att genomföra dessa dragningar. Din första betalning sker nu via ${ IDEAL_WERO_BRAND_NAME }. Din prenumeration förnyas automatiskt, tills du säger upp den; vi meddelar dig inför varje dragning. Vid betalningar via autogiro kan du i enlighet med villkoren i ditt avtal med banken begära återbetalning från din bank inom 8 veckor från dragningsdatumet. Detta gäller inte den betalning via ${ IDEAL_WERO_BRAND_NAME } som du genomför nu."
       ]
     },
     "Payments.info": {
@@ -10554,6 +10766,9 @@
     "Property": {
       "attributes": [
         "attribut"
+      ],
+      "content key": [
+        "innehållsnyckel"
       ],
       "hash key": [
         "hash-nyckel"
@@ -11794,6 +12009,9 @@
       "Recovery has started": [
         "Återställning har startat"
       ],
+      "Resuming import": [
+        "Återupptar import"
+      ],
       "Secure link copied": [
         "Säker länk kopierad"
       ],
@@ -12053,6 +12271,9 @@
       "Black Friday": [
         "Black Friday"
       ],
+      "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
+        "För dina Google Drive filer till ${ DRIVE_APP_NAME }"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avsluta ${ MAIL_SHORT_APP_NAME }-prenumeration"
       ],
@@ -12302,6 +12523,9 @@
       "Enable advanced account protection": [
         "Aktivera avancerat kontoskydd"
       ],
+      "Enable drive search": [
+        "Aktivera enhets-sökning"
+      ],
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
@@ -12409,6 +12633,9 @@
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importerad av ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
+      "Index populators": [
+        "Befolkningsindex"
+      ],
       "Information exposed in breach": [
         "Information exponerad vid intrång"
       ],
@@ -12429,6 +12656,9 @@
       ],
       "Location": [
         "Plats"
+      ],
+      "Logger": [
+        "Loggare"
       ],
       "Logs": [
         "Loggar"
@@ -12615,6 +12845,9 @@
       ],
       "Recommended actions": [
         "Rekommenderade åtgärder"
+      ],
+      "Reconnect to finish your import": [
+        "Anslut igen för att slutföra din import"
       ],
       "Reconnect your account": [
         "Återanslut ditt konto"
@@ -12962,6 +13195,9 @@
       "Your import is finished!": [
         "Din import är klar!"
       ],
+      "Your import is in progress": [
+        "Din import pågår"
+      ],
       "Your plan": [
         "Ditt paket"
       ],
@@ -12970,6 +13206,9 @@
       ],
       "Your welcome actions": [
         "Din välkomståtgärd"
+      ],
+      "You’re off to a great start!": [
+        "Du har fått en bra start!"
       ],
       "You’ve got 5 GB of storage": [
         "Du har fått 5 GB lagringsutrymme"
@@ -13172,6 +13411,12 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Uppgradera till en stödd version för att använda administratörroller."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan inte ändra dina egna roller. Be en annan administratör att ändra dem."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]

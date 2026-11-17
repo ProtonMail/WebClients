@@ -23,6 +23,9 @@
       "Dismiss": [
         "Відхилити"
       ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
       "Edit email address": [
         "Змінити адресу е-пошти"
       ],
@@ -878,6 +881,15 @@
       "Enter your username without the domain (@example.com)": [
         "Введіть ім'я користувача без домену (@example.com)"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Неправильний резервний пароль. Будь ласка, спробуйте ще раз."
+      ],
+      "Incorrect password. Please try again.": [
+        "Хибний пароль. Повторіть спробу."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Неправильний другий пароль. Спробуйте ще раз."
+      ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
       ],
@@ -916,6 +928,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Не вдалося надіслати код підтвердження за допомогою цього способу."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Неправильна фраза відновлення. Спробуйте знову, або використайте інший спосіб відновлення."
       ]
     },
     "Error message": {
@@ -935,6 +950,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
       ]
     },
     "fido2: Info": {

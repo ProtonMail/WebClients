@@ -595,9 +595,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Hanki apua ${ LUMO_SHORT_APP_NAME }:sta"
       ],
-      "Get in touch": [
-        "Ota yhteyttä"
-      ],
       "Get limited-time offer": [
         "Hyödynnä rajoitetun ajan tarjous"
       ],
@@ -729,9 +726,6 @@
       ],
       "Learn more": [
         "Lue lisää"
-      ],
-      "Let's talk": [
-        "Keskustellaan"
       ],
       "Load more": [
         "Lataa lisää"
@@ -912,6 +906,9 @@
       ],
       "Remove domain": [
         "Poista verkkotunnus"
+      ],
+      "Remove file": [
+        "Poista tiedosto"
       ],
       "Remove from favorites": [
         "Poista suosikeista"
@@ -2236,6 +2233,15 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Amount due": [
+        "Maksettavaa"
+      ],
+      "Amount due after trial": [
+        "Maksettavaa kokeilujakson jälkeen"
+      ],
+      "Amount due now": [
+        "Maksettavaa nyt"
       ],
       "month": [
         "kuukausi"
@@ -6793,7 +6799,7 @@
         "**Tuo olemassa olevat koodisi** muista 2FA-sovelluksista, kuten Google Authenticatorista"
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+        "**Kutsu kaverisi** ${ BRAND_NAME }iin henkilökohtaisella suosittelulinkillä."
       ],
       "**Sync codes** to all your devices": [
         "**Synkronoi koodit** kaikkiin laitteisiisi"
@@ -8353,7 +8359,7 @@
         "Lähetä"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
+        "Tee talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletus kirjataan tilillesi vahvistuksen jälkeen."
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein.",
@@ -8596,9 +8602,6 @@
       "To continue to ${ product }": [
         "Jatkaaksesi palveluun ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Kehittääksemme palveluitamme edelleen keräämme ajoittain tietoja seurataksemme niiden normaalia toimintaa. Näitä tietoja ei jaeta ulkopuolisten tahojen kanssa."
-      ],
       "To create your first user group, go to": [
         "Luo ensimmäinen käyttäjäryhmäsi menemällä"
       ],
@@ -8840,10 +8843,10 @@
         "Suosittelemme vahvasti, että kaikki ottavat käyttöön palautuksen palautuslauseen avulla."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Käytämme 3-D Securea maksujesi suojaukseen"
+        "Maksut suojataan 3-D Securella"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
+        "Sinut ohjataan uuteen selaimen välilehteen PayPaliin maksutapahtuman viimeistelemiseksi. Jos käytät ponnahdusikkunoiden estoa, poista se käytöstä jatkaaksesi."
       ],
       "We'll email you once import is complete.": [
         "Ilmoitamme tuonnin valmistumisesta sähköpostitse."
@@ -9537,7 +9540,7 @@
         "Summa"
       ],
       "Amount due": [
-        "Erääntyvä summa"
+        "Maksettavaa nyt"
       ],
       "Anderson": [
         "Virtanen"
@@ -9634,9 +9637,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Koodi sisältää 6 numeroa ilman välilyöntejä"
-      ],
-      "Collect usage diagnostics": [
-        "Kerää käyttödiagnostiikkaa"
       ],
       "Colors": [
         "Värit"
@@ -10645,7 +10645,7 @@
         "Miten jaat sähköpostitse"
       ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
-        "Miten ${ DARK_WEB_MONITORING_NAME } toimii"
+        "Näin ${ DARK_WEB_MONITORING_NAME } toimii"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
         "Miten käytät ${ PASS_APP_NAME } for Businessia"
@@ -11833,6 +11833,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } päättyen ${ Last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } mahdollistaa sähköpostiosoitteiden luonnin ja alikäyttäjien tilien hallinan. Ihanteellinen perheille ja organisaatioille."
       ],
@@ -13135,7 +13138,7 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",
-        "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
+        "Erikoisalennettu hinta ${ priceWithDiscount } on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua sen milloin tahansa."
@@ -13265,6 +13268,14 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Uusimishinta riippuu laskutusalueesta ja ALV-numerosta."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay – kortti päättyen ${ Last4 }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay – kortti päättyen ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -17073,6 +17084,9 @@
       "Dashboard": [
         "Hallintapaneeli"
       ],
+      "Data collection": [
+        "Tiedonkeruu"
+      ],
       "Data recovery": [
         "Tietojen palautus"
       ],
@@ -17553,9 +17567,6 @@
       "Previous": [
         "Edellinen"
       ],
-      "Privacy and data collection": [
-        "Yksityisyys ja tiedonkeruu"
-      ],
       "Processing...": [
         "Käsitellään..."
       ],
@@ -17689,7 +17700,7 @@
         "Lähetetäänkö muistutuksia sähköpostitse?"
       ],
       "Send new invite?": [
-        "Lähetä uusi kutsu?"
+        "Lähetetäänkö uusi kutsu?"
       ],
       "Service": [
         "Palvelu"

@@ -828,9 +828,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "從 ${ LUMO_SHORT_APP_NAME } 取得協助"
       ],
-      "Get in touch": [
-        "保持聯絡"
-      ],
       "Get limited-time offer": [
         "取得限時優惠"
       ],
@@ -1032,6 +1029,9 @@
       "Learn about recovery options": [
         "了解復原選項"
       ],
+      "Learn how this works": [
+        "了解運作方式"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -1040,9 +1040,6 @@
       ],
       "Leave group": [
         "退出群組"
-      ],
-      "Let's talk": [
-        "我們一起聊聊！"
       ],
       "Load more": [
         "載入更多"
@@ -1286,6 +1283,9 @@
       ],
       "Remove domain": [
         "刪除網域"
+      ],
+      "Remove file": [
+        "移除檔案"
       ],
       "Remove forward": [
         "移除轉寄"
@@ -1658,6 +1658,9 @@
       ],
       "Switch or add account": [
         "切換或是添加帳號"
+      ],
+      "Switch to ${ planName }": [
+        "切換至 ${ planName }"
       ],
       "Switch to free plan": [
         "切換至 Free plan"
@@ -3250,6 +3253,9 @@
       ],
       "Amount due": [
         "應付金額"
+      ],
+      "Amount due after trial": [
+        "試用後的欠款"
       ],
       "Amount due now": [
         "當前欠款"
@@ -11356,9 +11362,6 @@
       "Restore": [
         "還原"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "審查過去的期間並匯出資料，以用於報表或向客戶開立發票。"
-      ],
       "Right to Left": [
         "由右至左"
       ],
@@ -11887,9 +11890,6 @@
       "To continue to ${ product }": [
         "若要繼續使用 ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "為持續精進我們的服務品質，我們有時會蒐集一些資料用以監控應用程式的功能是否正常。此類資訊不會與第三方服務共享。"
-      ],
       "To create your first user group, go to": [
         "若要創建您地一個使用者群組，請至"
       ],
@@ -12248,7 +12248,7 @@
         "準備好啟用該位址時，請掃描 QR Code 或使用兌換券中的連結。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "當您的訂購授權要續約前，我們會先從可用的餘額扣除，若仍須補齊款項，最後才會以上面的腳款方式扣款。"
+        "當您的訂購授權要續約前，我們會先從可用的餘額扣除，若仍須補齊款項，最後才會以上面的付款方式扣款。"
       ],
       "Whole organization": [
         "整個組織"
@@ -12516,6 +12516,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您將再也不能使用您先前下載的帳號救援檔案恢復被鎖定的資料。此操作將一併停用基於裝置的復原方法。"
+      ],
+      "You'll choose a new username": [
+        "您將選擇個新的使用者名稱"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "若您的朋友訂閱年費方案，您將在 1 個月後獲得點數獎勵；若他們訂閱月費方案，則會在 2 個月後獲得。"
@@ -13085,6 +13088,9 @@
       "Next period": [
         "下一個時期"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "開啟 ${ LUMO_SHORT_APP_NAME } / 專注輸入"
+      ],
       "Open command panel": [
         "開啟指令面板"
       ],
@@ -13633,9 +13639,6 @@
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
-      ],
-      "Collect usage diagnostics": [
-        "收集使用狀況與診斷"
       ],
       "Color": [
         "色彩"
@@ -18765,12 +18768,6 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "試用方案不支援 ${ LUMO_SHORT_APP_NAME } 座席。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "試用方案不支援獨立 IPs。"
       ],
       "VAT number": [
         "增值稅編號（VAT）"
@@ -24390,9 +24387,6 @@
       "Monthly": [
         "按月"
       ],
-      "Monthly Costs": [
-        "每月費用"
-      ],
       "Multi-user support": [
         "多使用者支援"
       ],
@@ -24555,14 +24549,8 @@
       "Previous": [
         "上一頁"
       ],
-      "Previous billing periods": [
-        "先前的計費週期"
-      ],
       "Priority support:": [
         "優先支援:"
-      ],
-      "Privacy and data collection": [
-        "隱私與資料蒐集"
       ],
       "Problem processing your payment": [
         "處理您的付款時發生問題"
@@ -24881,6 +24869,9 @@
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "使用 ${ passPlusPlanName } 增強您所有裝置上的安全性。${ upgradeButton }"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "訂閱至 ${ planTitle }"
       ],
       "Subscription": [
         "訂購授權"

@@ -45,7 +45,7 @@
         "Toteuta"
       ],
       "Bold": [
-        "Lihavointi"
+        "Lihavoi"
       ],
       "Bulleted List": [
         "Luettelo"
@@ -122,6 +122,12 @@
       "Fit table to page width": [
         "Sovita taulukko sivun leveyteen"
       ],
+      "Header column": [
+        "Otsikkosarake"
+      ],
+      "Header row": [
+        "Otsikkorivi"
+      ],
       "Indent": [
         "Sisennä"
       ],
@@ -153,7 +159,7 @@
         "Lisää taulukko"
       ],
       "Italic": [
-        "Kursivointi"
+        "Kursivoi"
       ],
       "Justify align": [
         "Tasaa molemmat reunat"
@@ -171,7 +177,7 @@
         "OK"
       ],
       "Open outline": [
-        "Avaa ääriviiva"
+        "Avoin ääriviiva"
       ],
       "Options": [
         "Valinnat"
@@ -234,7 +240,7 @@
         "Taulukon valinnat"
       ],
       "Underline": [
-        "Alleviivaus"
+        "Alleviivaa"
       ],
       "Undo": [
         "Kumoa"
@@ -289,8 +295,23 @@
       ]
     },
     "Emoji category": {
+      "Animals and nature": [
+        "Eläimet ja luonto"
+      ],
       "Flags": [
         "Liput"
+      ],
+      "Food and drink": [
+        "Ruoka ja juoma"
+      ],
+      "Smileys and people": [
+        "Hymiöt ja ihmiset"
+      ],
+      "Symbols": [
+        "Symbolit"
+      ],
+      "Travel and places": [
+        "Matkailu ja paikat"
       ]
     },
     "Error": {
@@ -306,6 +327,9 @@
       "Failed to import Markdown due to unknown error.": [
         "Markdownin tuonti epäonnistui tuntemattoman virheen takia."
       ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "OpenDocument-tiedoston tuonti epäonnistui tuntemattomasta syystä."
+      ],
       "Failed to import Word document due to unknown error.": [
         "Word-dokumentin tuonti epäonnistui tuntemattoman virheen takia."
       ],
@@ -316,7 +340,7 @@
         "Dokumentin päivityksen käsittelyssä tapahtui virhe. Päivitä sivu ja yritä uudelleen."
       ],
       "This spreadsheet detected a local syncing inconsistency. Editing has been disabled to prevent data loss. Please file a report and if you are okay with sharing the contents, download and include the debug information from below.": [
-        "Tämä laskentataulukko havaitsi paikallisen synkronointivirheen. Muokkaus on poistettu käytöstä tietojen menetyksen estämiseksi. Lähetä virheraportti ja jos suostut jakamaan sisällön, lataa ja liitä mukaan alla olevat vianselvitystiedot."
+        "Laskentataulukon paikallinen synkronointi epäonnistui. Muokkaus on poistettu käytöstä tietojen menetyksen estämiseksi. Lähetä virheraportti ja jos suostut jakamaan sisällön, lataa ja liitä mukaan alla olevat vianselvitystiedot."
       ],
       "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
         "Tämä laskentataulukko ei ole yhteensopiva nykyisen asiakasversion kanssa. Kokeile päivittää asiakasohjelma. Jos virhe toistuu, ota yhteyttä tukeen."
@@ -408,6 +432,9 @@
       "No comments": [
         "Kommentteja ei ole"
       ],
+      "No emoji found": [
+        "Emojia ei löydy"
+      ],
       "No title": [
         "Ei otsikkoa"
       ],
@@ -494,6 +521,9 @@
       "Emoji": [
         "Emoji"
       ],
+      "Emoji suggestions": [
+        "Emojiehdotukset"
+      ],
       "Format": [
         "Muoto"
       ],
@@ -579,7 +609,7 @@
     },
     "sheets_2025:Color picker": {
       "Recent colors": [
-        "Kaavion muokkaus"
+        "Viimeksi käytetyt"
       ],
       "Reset": [
         "Nollaa"
@@ -623,7 +653,7 @@
         "Poista"
       ],
       "Duplicate": [
-        "Muuta rivin kokoa"
+        "Monista"
       ],
       "Hide sheet": [
         "Piilota taulukko"
@@ -635,54 +665,59 @@
         "Siirrä oikealle"
       ],
       "Rename": [
-        "Uudelleennimeä"
+        "Nimeä uudelleen"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Tämän niminen laskentataulukko on jo olemassa"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
       "All borders": [
-        "Rivitä"
+        "Kaikki reunat"
       ],
       "Bottom border": [
-        "Lisää nimetty alue"
+        "Alareuna"
       ],
       "Dashed": [
-        "Lajittele taulukko järjestyksessä A–Z"
+        "Katkoviiva"
       ],
       "Dotted": [
         "Pisteviiva"
       ],
       "Double": [
-        "Alue"
+        "Kaksinkertainen"
       ],
       "Horizontal borders": [
         "Vaakaviivat"
       ],
       "Inner borders": [
-        "Lisää muistiinpano"
+        "Sisäreunat"
       ],
       "Left border": [
-        "Maksimiarvo"
+        "Vasen reuna"
       ],
       "No borders": [
-        "Ehdollinen muotoilu"
+        "Ei reunoja"
       ],
       "Outer borders": [
-        "Poista alue"
+        "Ulkoreunat"
       ],
       "Right border": [
-        "Suurenna"
+        "Oikea reuna"
       ],
       "Solid": [
         "Yhtenäinen"
       ],
       "Solid medium": [
-        "Nimi ei saa sisältää välilyöntejä"
+        "Yhtenäinen keskipaksu"
       ],
       "Solid thick": [
-        "Reunatyyli"
+        "Yhtenevä tasainen"
       ],
       "Top border": [
-        "Maksimipiste"
+        "Yläreuna"
       ],
       "Vertical borders": [
         "Pystyviivat"
@@ -696,36 +731,237 @@
         "Virheellinen"
       ],
       "Note": [
-        "Yhdistä solut"
+        "Muistiinpano"
       ]
     },
     "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Kirjanpito"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Valuuttamuotoiluja käytetään yleisissä rahasummissa."
+      ],
+      "Custom": [
+        "Mukautettu"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Päivämäärä-muotoilut näyttävät päivämäärän ja ajan numerot päivämääräarvoina."
+      ],
+      "Fraction": [
+        "Murtoluku"
+      ],
+      "General": [
+        "Yleiset"
+      ],
+      "General format cells have no specific number format.": [
+        "Yleismuotoisilla soluilla ei ole määriteltyä lukumuotoilua."
+      ],
       "Left": [
         "Vasen"
       ],
       "Number": [
         "Numero"
       ],
+      "Number is used for general display of numbers.": [
+        "Numero-tyyppiä käytetään lukujen yleiseen esittämiseen."
+      ],
+      "Overflow": [
+        "Vuodata yli"
+      ],
+      "Percentage": [
+        "Prosentti"
+      ],
       "Right": [
         "Oikea"
+      ],
+      "Scientific": [
+        "Tieteellinen"
+      ],
+      "Time": [
+        "Aika"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Aika-muotoilut näyttävät päivämäärän ja ajan numerot päivämääräarvoina."
+      ],
+      "Wrap": [
+        "Rivitys"
       ]
     },
     "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Keskiarvo"
+      ],
+      "Count": [
+        "Lukumäärä"
+      ],
+      "Max": [
+        "Enintään"
+      ],
+      "Median": [
+        "Mediaani"
+      ],
       "Sum": [
         "Summa"
       ]
     },
     "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "2D-piirakka"
+      ],
       "Column": [
         "Sarake"
+      ],
+      "Treemap": [
+        "Puukarttakaavio"
       ]
     },
     "sheets_2025:Spreadsheet conditions": {
+      "April": [
+        "Huhtikuu"
+      ],
       "August": [
         "Elokuu"
       ],
+      "Below average": [
+        "Alle keskiarvon"
+      ],
+      "Between": [
+        "Välissä"
+      ],
+      "Checkbox": [
+        "Valintaruutu"
+      ],
+      "Custom formula": [
+        "Mukautettu kaava"
+      ],
+      "Date is after": [
+        "Päivämäärä on jälkeen"
+      ],
+      "Date is between": [
+        "Päivämäärä on välillä"
+      ],
+      "Date is equal to": [
+        "Päivämäärä on"
+      ],
+      "Date is not between": [
+        "Päivämäärä ei ole välillä"
+      ],
+      "Date is not equal to": [
+        "Päivämäärä ei ole"
+      ],
+      "Date is valid": [
+        "Päivämäärä on kelvollinen"
+      ],
+      "December": [
+        "Joulukuu"
+      ],
+      "Equal to": [
+        "Yhtä suuri kuin"
+      ],
+      "Errors": [
+        "Virheet"
+      ],
+      "February": [
+        "Helmikuu"
+      ],
+      "Greater than": [
+        "Suurempi kuin"
+      ],
+      "Greater than or equal to": [
+        "Suurempi tai yhtä suuri kuin"
+      ],
+      "Greater than or equal to previous": [
+        "Suurempi kuin tai yhtä suuri kuin edellinen"
+      ],
+      "Greater than previous": [
+        "Suurempi kuin edellinen"
+      ],
+      "Is not empty": [
+        "Ei tyhjä"
+      ],
+      "January": [
+        "Tammikuu"
+      ],
+      "July": [
+        "Heinäkuu"
+      ],
+      "June": [
+        "Kesäkuu"
+      ],
+      "Last week": [
+        "Edellinen viikko"
+      ],
+      "Last year": [
+        "Edellinen vuosi"
+      ],
+      "Less than or equal to previous": [
+        "Pienempi tai yhtä suuri kuin edellinen"
+      ],
+      "Less than previous": [
+        "Pienempi kuin edellinen"
+      ],
+      "March": [
+        "Maaliskuu"
+      ],
+      "Next month": [
+        "Seuraava kuukausi"
+      ],
+      "Next quarter": [
+        "Seuraava neljännes"
+      ],
+      "Next week": [
+        "Seuraava viikko"
+      ],
+      "Next year": [
+        "Seuraava vuosi"
+      ],
+      "No errors": [
+        "Ei virheitä"
+      ],
+      "Not between": [
+        "Ei välissä"
+      ],
+      "Not equal to": [
+        "Ei yhtä suuri kuin"
+      ],
+      "October": [
+        "Lokakuu"
+      ],
+      "September": [
+        "Syyskuu"
+      ],
+      "Text contains": [
+        "Teksti sisältää"
+      ],
+      "Text does not contain": [
+        "Teksti ei sisällä"
+      ],
+      "Text is email": [
+        "Teksti on sähköpostiosoite"
+      ],
+      "Text is exactly": [
+        "Teksti on täsmälleen"
+      ],
+      "This month": [
+        "Tämä kuukausi"
+      ],
+      "This quarter": [
+        "Tämä neljännes"
+      ],
+      "This week": [
+        "Tämä viikko"
+      ],
+      "This year": [
+        "Tämä vuosi"
+      ],
       "Today": [
         "Tänään"
+      ],
+      "Tomorrow": [
+        "Huomenna"
+      ],
+      "Yesterday": [
+        "Eilen"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -808,10 +1044,10 @@
         "Vain kaava"
       ],
       "Freeze up to column": [
-        "Määritä nimetty alue"
+        "Kiinnitä sarakkeeseen asti"
       ],
       "Freeze up to row": [
-        "Kaksinkertainen"
+        "Kiinnitä riviin asti"
       ],
       "Hide column": [
         "Piilota sarake"
@@ -832,7 +1068,7 @@
         "Tee uudelleen"
       ],
       "Insert table column to the left": [
-        "Nimetyt alueet"
+        "Lisää taulukkoon sarake vasemmalle"
       ],
       "Insert table column to the right": [
         "Datan vahvistus"
@@ -850,7 +1086,7 @@
         "Liitä"
       ],
       "Paste special": [
-        "Valitse alue"
+        "Liitä määräten"
       ],
       "Period": [
         "Piste"
@@ -871,7 +1107,7 @@
         "Puolipiste"
       ],
       "Sort": [
-        "Alareunaviiva"
+        "Lajittele"
       ],
       "Sort range A → Z": [
         "Lajittele väli A → Ö"
@@ -880,10 +1116,10 @@
         "Lajittele väli Ö → A"
       ],
       "Sort sheet A to Z": [
-        "Ehdollinen muotoilu"
+        "Lajittele taulukko aakkosjärjestykseen"
       ],
       "Sort sheet Z to A": [
-        "Lisää toinen nimetty alue"
+        "Lajittele taulukko käänteisessä aakkosjärjestykseen"
       ],
       "Space": [
         "Päivämäärä ja aika"
@@ -895,10 +1131,10 @@
         "Muistiinpano"
       ],
       "Unfreeze columns": [
-        "Yhtenäinen keskipaksu"
+        "Pura sarakkeiden kiinnitys"
       ],
       "Unfreeze rows": [
-        "Ei mitään"
+        "Pura rivien kiinnitys"
       ],
       "Values only": [
         "Vain arvot"
@@ -1077,6 +1313,9 @@
     "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
       "Format": [
         "Muoto"
+      ],
+      "Symbol": [
+        "Symboli"
       ]
     },
     "sheets_2025:Spreadsheet delete sheet dialog": {
@@ -1095,24 +1334,24 @@
     },
     "sheets_2025:Spreadsheet editing disabled dialog": {
       "Mobile Editing Coming Soon": [
-        "Tekstin rivitys"
+        "Mobiiliversion muokkaus tulossa pian"
       ],
       "Screen too small for editing": [
-        "Poista solut ja siirrä soluja vasemmalle"
+        "Muokkaus ei käytettävissä pienellä näytöllä"
       ],
       "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
-        "Poista taulukon sarake"
+        "Ominaisuus on tulossa pian. Toistaiseksi laskentataulukkoja voi muokata vain työpöytäversiossa."
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
-        "Näyttönne on liian pieni tämän laskentataulukon muokkaamiseen. Olette vain katselutilassa. Tehdäksenne muutoksia avatkaa tämä laskentataulukko suuremmalla näytöllä tai laajentakaa selainikkunaanne."
+        "Laitteen näyttö on liian pieni laskentataulukon muokkaamiseen. Tiedostoa voi vain tarkastella. Muokkaa tiedostoa isommalla näytöllä tai suurentamalla selainikkunaa."
       ]
     },
     "sheets_2025:Spreadsheet editor": {
       "Cannot delete all columns": [
-        "Liitä määräten"
+        "Kaikkia sarakkeita ei voi poistaa"
       ],
       "Cannot delete all rows": [
-        "Oikea reunaviiva"
+        "Kaikkia rivejä ei voi poistaa"
       ],
       "Find in sheet": [
         "Pyöristetty valuutta"
@@ -1126,7 +1365,7 @@
         "Yhdistä solut"
       ],
       "Merge horizontally": [
-        "Lisää nimetty alue"
+        "Yhdistä vaakasuunnassa"
       ],
       "Merge vertically": [
         "Yhdistä pystysuunnassa"
@@ -1140,7 +1379,7 @@
         "Luo suodatin"
       ],
       "Data validation": [
-        "Rivitys"
+        "Tietojen kelpoisuuden tarkistaminen"
       ],
       "Protect range": [
         "Vaakasuora tasaus"
@@ -1157,16 +1396,16 @@
     },
     "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
       "(A to Z)": [
-        "(A - Ö)"
+        "(A → Ö)"
       ],
       "(Z to A)": [
         "(Ö - A)"
       ],
       "column ${ columnLetter }": [
-        "sarake ${ columnLetter } mukaan"
+        "sarakkeen ${ columnLetter } mukaan"
       ],
       "Sort sheet by": [
-        "Lajittele taulukko sarakkeen"
+        "Lajittele taulukko"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar edit menu": {
@@ -1195,7 +1434,7 @@
         "Sovita automaattisesti tietoihin"
       ],
       "Redo": [
-        "Pystysuora tasaus"
+        "Tee uudelleen"
       ],
       "Transposed": [
         "Transponoitu"
@@ -1241,6 +1480,9 @@
       "New spreadsheet": [
         "Uusi laskentataulukko"
       ],
+      "Open Proton Drive": [
+        "Avaa Proton Drive"
+      ],
       "OpenDocument Spreadsheet (.ods) (Beta)": [
         "OpenDocument-laskentataulukko (.ods) (beeta)"
       ],
@@ -1268,7 +1510,7 @@
         "Tasaus"
       ],
       "Bold": [
-        "Poista taulukon sarake"
+        "Lihavoi"
       ],
       "Cell styles": [
         "Solutyylit"
@@ -1283,19 +1525,19 @@
         "Poista muotoilu"
       ],
       "Conditional formatting": [
-        "Kaavion otsikko"
+        "Ehdollinen muotoilu"
       ],
       "Font size": [
         "Fonttikoko"
       ],
       "Italic": [
-        "Kursivointi"
+        "Kursivoi"
       ],
       "Number": [
         "Numero"
       ],
       "Strikethrough": [
-        "Yliviivaus"
+        "Yliviivaa"
       ],
       "Table formatting": [
         "Taulukon muotoilu"
@@ -1307,41 +1549,41 @@
         "Teema"
       ],
       "Underline": [
-        "Alleviivaus"
+        "Alleviivaa"
       ],
       "Wrapping": [
-        "Sisäreunaviivat"
+        "Rivitys"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
       "Bottom": [
-        "Reunaviiva"
+        "Alas"
       ],
       "Center": [
-        "Keskitä"
+        "Keskelle"
       ],
       "Left": [
-        "Vasen"
+        "Vasemmalle"
       ],
       "Middle": [
         "Keskelle"
       ],
       "Right": [
-        "Oikea"
+        "Oikealle"
       ],
       "Top": [
-        "Lisää muistiinpano"
+        "Ylös"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
       "Clip": [
-        "Ruudukko"
+        "Leikkaa"
       ],
       "Overflow": [
-        "Ylivuoto"
+        "Vuodata yli"
       ],
       "Wrap": [
-        "Muotoilusäännöt"
+        "Rivitä"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
@@ -1370,13 +1612,13 @@
         "Lisää soluja ja siirrä alas"
       ],
       "Insert cells and shift right": [
-        "Tieteellinen"
+        "Lisää soluja ja siirrä oikealle"
       ],
       "Link": [
         "Linkki"
       ],
       "Note": [
-        "Järjestä"
+        "Muistiinpano"
       ],
       "Rows": [
         "Rivit"
@@ -1398,16 +1640,16 @@
         "yläpuolelle"
       ],
       "below": [
-        "alla"
+        "alapuolelle"
       ],
       "Insert": [
         "Lisää"
       ],
       "left": [
-        "vasen"
+        "vasemmalle"
       ],
       "right": [
-        "oikea"
+        "oikealle"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
@@ -1435,16 +1677,16 @@
         "Kiinnitä riviin asti"
       ],
       "Freeze": [
-        "Transponoitu"
+        "Kiinnitä"
       ],
       "Gridlines": [
-        "Lisää taulukon sarake oikealle"
+        "Ruudukkoviivat"
       ],
       "Show": [
         "Näytä"
       ],
       "Zoom": [
-        "Tämä vaikuttaa muotoiluun, kuten funktioihin, päivämääriin ja valuuttaan"
+        "Suurennos"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
@@ -1455,7 +1697,7 @@
         "rivi ${ rowNumber }"
       ],
       "Up to": [
-        "Aina"
+        "Asti:"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
@@ -1468,7 +1710,7 @@
         "$ Yhdysvaltain dollari"
       ],
       "Accounting": [
-        "Vähennä desimaaleja"
+        "Kirjanpito"
       ],
       "CN¥ Chinese Yuan": [
         "Kopioi muotoilu"
@@ -1477,7 +1719,7 @@
         "Valuutta"
       ],
       "Currency rounded": [
-        "Valitse alue"
+        "Pyöristetty valuutta"
       ],
       "Custom currency": [
         "Mukautettu valuutta"
@@ -1492,13 +1734,13 @@
         "Päivämäärä"
       ],
       "Date time": [
-        "Muotoilutyyli"
+        "Päivämäärä ja aika"
       ],
       "Duration": [
         "Kesto"
       ],
       "Financial": [
-        "Kaikkia rivejä ei voi poistaa"
+        "Rahoitus"
       ],
       "General": [
         "Yleiset"
@@ -1562,15 +1804,36 @@
         "Tallenna ja lataa uudelleen"
       ],
       "Settings for this spreadsheet": [
-        "Vasen reunaviiva"
+        "Laskentataulukon asetukset"
       ],
       "This affects formatting details such as functions, dates and currency": [
         "Valuuttasymboli"
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
+      "Apply border": [
+        "Käytä reunaa"
+      ],
+      "Apply fill color": [
+        "Käytä täyteväriä"
+      ],
+      "Apply text color": [
+        "Käytä tekstin väriä"
+      ],
       "Bold": [
-        "Lihavointi"
+        "Lihavoi"
+      ],
+      "Border": [
+        "Reuna"
+      ],
+      "Choose border": [
+        "Valitse reuna"
+      ],
+      "Choose fill color": [
+        "Valitse täyteväri"
+      ],
+      "Choose text color": [
+        "Valitse tekstin väri"
       ],
       "Clear formatting": [
         "Poista muotoilu"
@@ -1579,13 +1842,16 @@
         "Luo suodatin"
       ],
       "Decrease decimal places": [
-        "Yhdistä vaakasuunnassa"
+        "Vähennä desimaaleja"
       ],
       "Decrease font size": [
         "Pienennä kirjasinkokoa"
       ],
       "Default (${ defaultFont })": [
         "Oletus (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Täyttöväri"
       ],
       "Find": [
         "Etsi"
@@ -1597,16 +1863,16 @@
         "Fonttikoko"
       ],
       "Format as currency": [
-        "Tuhansien erotin"
+        "Muotoile valuuttana"
       ],
       "Format as percent": [
-        "Valitse yhdistämistyyppi"
+        "Muotoile prosenttilukuna"
       ],
       "Horizontal align": [
-        "Lisää taulukon sarake vasemmalle"
+        "Tasaa vaakasuunnassa"
       ],
       "Increase decimal places": [
-        "Lisää soluja ja siirrä soluja alaspäin"
+        "Lisää desimaaleja"
       ],
       "Increase font size": [
         "Suurenna kirjasinkokoa"
@@ -1621,7 +1887,7 @@
         "Lisää linkki"
       ],
       "Insert note": [
-        "Keskipiste"
+        "Lisää muistiinpano"
       ],
       "Italic": [
         "Kursivointi"
@@ -1636,19 +1902,19 @@
         "Lisää muotoja"
       ],
       "Paint format": [
-        "Suodata ehdon mukaan"
+        "Maalaa muotoilu"
       ],
       "Redo": [
-        "Ulkoreunaviivat"
+        "Tee uudelleen"
       ],
       "Remove filter": [
         "Poista suodatin"
       ],
       "Select merge type": [
-        "Suodata arvon mukaan"
+        "Valitse yhdistämistapa"
       ],
       "Strikethrough": [
-        "Yliviivaus"
+        "Yliviivaa"
       ],
       "Text wrapping": [
         "Tekstin rivitys"
@@ -1663,7 +1929,7 @@
         "Erota solut"
       ],
       "Vertical align": [
-        "Yhtenäinen paksu"
+        "Tasaa pystysuunnassa"
       ],
       "Zoom": [
         "Näytä suodatinpainike"
@@ -1683,16 +1949,16 @@
         "Kopioi"
       ],
       "Delete table column": [
-        "Käytä alueella"
+        "Poista taulukon sarake"
       ],
       "Enter value": [
         "Syötä arvo"
       ],
       "Filter by condition": [
-        "Yliviivaus"
+        "Suodata ehdolla"
       ],
       "Filter by value": [
-        "Reunaviiva"
+        "Suodata arvolla"
       ],
       "Insert 1 table column left": [
         "Lisää 1 taulukon sarake vasemmalle"
@@ -1713,12 +1979,20 @@
         "Järjestä Ö → A"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Ei mikään"
+      ]
+    },
     "sheets_2025:Spreadsheet formulaBar": {
       "Edit": [
         "Muokkaa"
       ],
       "Remove": [
         "Poista"
+      ],
+      "View": [
+        "Näytä"
       ]
     },
     "sheets_2025:Spreadsheet gridFooter": {
@@ -1761,8 +2035,23 @@
       "Cancel": [
         "Peruuta"
       ],
+      "Default ${ size }": [
+        "Oletus ${ size }"
+      ],
       "OK": [
         "OK"
+      ],
+      "Resize column ${ title }": [
+        "Muokkaa sarakkeen ${ title } kokoa"
+      ],
+      "Resize row ${ title }": [
+        "Muuta rivin ${ title } kokoa"
+      ],
+      "Specify column width (px)": [
+        "Määritä sarakkeen leveys (pikseleinä)"
+      ],
+      "Specify row height (px)": [
+        "Määritä rivin korkeus (pikseleinä)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1793,13 +2082,13 @@
         "Alareunaan"
       ],
       "Bold": [
-        "Lihavointi"
+        "Lihavoi"
       ],
       "Border": [
-        "Etsi taulukosta"
+        "Reuna"
       ],
       "Border style": [
-        "Lisää desimaaleja"
+        "Reunan tyyli"
       ],
       "Cancel": [
         "Peruuta"
@@ -1841,7 +2130,7 @@
         "Sisennä"
       ],
       "Italic": [
-        "Kursivointi"
+        "Kursivoi"
       ],
       "Merge": [
         "Yhdistä"
@@ -1859,7 +2148,7 @@
         "Numero"
       ],
       "Overflow": [
-        "Ylivuoto"
+        "Vuodata yli"
       ],
       "Preview": [
         "Esikatselu"
@@ -1868,7 +2157,7 @@
         "Tallenna"
       ],
       "Strikethrough": [
-        "Yliviivaus"
+        "Yliviivaa"
       ],
       "Text control": [
         "Suojaa alue"
@@ -1880,13 +2169,13 @@
         "Tyyppi"
       ],
       "Underline": [
-        "Alleviivaus"
+        "Alleviivaa"
       ],
       "Unmerge": [
         "Erota"
       ],
       "Use 1000 Separator (,)": [
-        "Käytä tuhansien erotinta (,)"
+        "Käytä tuhaterotinta (,)"
       ],
       "Vertical Alignment": [
         "Rahoitus"
@@ -1906,7 +2195,7 @@
         "Kaavion tietoalue"
       ],
       "Chart editor": [
-        "Lisää toinen nimetty alue"
+        "Kaaviomuokkain"
       ],
       "Chart title": [
         "Kirjanpito"
@@ -1992,7 +2281,7 @@
         "Tekstin hallinta"
       ],
       "Max point": [
-        "Valitse alue"
+        "Enimmäisarvo"
       ],
       "Max value": [
         "Muistiinpano"
@@ -2082,7 +2371,7 @@
         "Katkaise"
       ],
       "Add another range": [
-        "Lihavointi"
+        "Lisää toinen väli"
       ],
       "Add named range": [
         "Katkoviiva"
@@ -2172,7 +2461,7 @@
     },
     "sheets_2025:Spreadsheet sidebar table editor dialog": {
       "Banded columns": [
-        "Tee uudelleen"
+        "Raidoitetut sarakkeet"
       ],
       "Banded rows": [
         "Raidalliset rivit"
@@ -2203,8 +2492,23 @@
       ]
     },
     "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 sarake"
+      ],
+      "1 row": [
+        "1 rivi"
+      ],
+      "2 columns": [
+        "2 saraketta"
+      ],
       "2 rows": [
         "2 riviä"
+      ],
+      "No columns": [
+        "Ei sarakkeita"
+      ],
+      "No rows": [
+        "Ei rivejä"
       ]
     },
     "Title": {

@@ -46,6 +46,9 @@
       "Add account": [
         "Tilføj konto"
       ],
+      "Add address": [
+        "Tilføj adresse"
+      ],
       "Add current URL": [
         "Tilføj nuværende URL"
       ],
@@ -159,6 +162,9 @@
       ],
       "Collapse": [
         "Fold sammen"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Skjul advarsler fra Pass Monitor"
       ],
       "Confirm": [
         "Bekræft"
@@ -358,6 +364,9 @@
       "Expand": [
         "Udvid"
       ],
+      "Expand Pass Monitor alerts": [
+        "Vis advarsler fra Pass Monitor"
+      ],
       "Export": [
         "Eksportér"
       ],
@@ -411,6 +420,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Sådan bruges ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignorer"
       ],
       "Import": [
         "Importér"
@@ -879,6 +891,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } mere",
+        "${ count } mere"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } er tilgængeligt med et betalt abonnement. Opgradér for øjeblikkelig adgang."
       ],
@@ -972,6 +988,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Denne adgangskode optræder i et databrud. Besøg tjenesten og skift adgangskoden."
+      ],
+      "This login uses the same password as another item.": [
+        "Dette login bruger den samme adgangskode, som et andet element."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Denne tjeneste tilbyder 2FA. Aktivér det for at få ekstra kontosikkerhed."
@@ -1301,11 +1320,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Opdatering af ${ PROTON_SENTINEL_NAME }-indstilling mislykkedes"
       ],
-      "Failed updating monitor flag of the item": [
-        "Opdatering af elementets monitoreringsmærkning mislykkedes"
-      ],
       "Failed updating monitoring status for this email address": [
         "Opdatering af monitoreringsstatus for denne e-mailadresse mislykkedes"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Der skete en fejl med at opdatere status for overvågningen på dette element"
       ],
       "File could not be parsed": [
         "Fil kunne ikke fortolkes"
@@ -1771,6 +1790,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
       ],
+      "Alert restored": [
+        "Advarsel gendannet"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias er blevet deaktiveret. Du vil ikke længere modtage mails sendt til ${ item.aliasEmail }"
       ],
@@ -1887,6 +1909,9 @@
       ],
       "Canceled by user": [
         "Annulleret af brugeren"
+      ],
+      "Check ignored": [
+        "Tjek ignoreret"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total } adgangskoder"
@@ -5149,6 +5174,9 @@
       "Minicalendar": [
         "Minikalender"
       ],
+      "Missing 2FA": [
+        "Mangler 2FA"
+      ],
       "Modified": [
         "Ændret"
       ],
@@ -5213,6 +5241,9 @@
       ],
       "Our welcome gift to you": [
         "Vores velkomstgave til dig"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Adgangsnøgle"
@@ -5284,6 +5315,9 @@
       "Reused ${ count } time": [
         "Genbrugt ${ count } gang",
         "Genbrugt ${ count } gange"
+      ],
+      "Reused password": [
+        "Genbrugt adgangskode"
       ],
       "Reused passwords": [
         "Genbrugte adgangskoder"

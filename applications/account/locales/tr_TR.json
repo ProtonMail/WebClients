@@ -109,6 +109,9 @@
       "Bulk user import": [
         "Toplu kullanıcı içe aktarma"
       ],
+      "Business referral link": [
+        "İşletme tavsiye bağlantısı"
+      ],
       "Cancel plan": [
         "Tarifeyi iptal et"
       ],
@@ -644,9 +647,6 @@
       "Collaborate on documents": [
         "Belgeler üzerinde iş birliği yapın"
       ],
-      "Collapse step": [
-        "Adımı daralt"
-      ],
       "Color": [
         "Renk"
       ],
@@ -890,6 +890,12 @@
       "Delete record": [
         "Kaydı sil"
       ],
+      "Delete security key ${ keyName }": [
+        "${ keyName } güvenlik anahtarını sil"
+      ],
+      "Delete server ${ serverLocation }": [
+        "${ serverLocation } sunucusunu sil"
+      ],
       "Delete token “${ token.Name }”": [
         "“${ token.Name }” kodunu sil"
       ],
@@ -959,6 +965,9 @@
       "Dismiss": [
         "Yok say"
       ],
+      "Dismiss notification": [
+        "Bildirimi yok say"
+      ],
       "Don't show again": [
         "Bir daha görüntülenmesin"
       ],
@@ -1009,6 +1018,9 @@
       ],
       "Download recovery file": [
         "Kurtarma dosyasını indir"
+      ],
+      "Download recovery kit": [
+        "Kurtarma paketini indir"
       ],
       "Download the ${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool uygulamasını indirin"
@@ -1070,6 +1082,9 @@
       "Edit phone number": [
         "Telefon numarasını düzenle"
       ],
+      "Edit security key ${ keyName }": [
+        "${ keyName } güvenlik anahtarını düzenle"
+      ],
       "Edit servers": [
         "Sunucuları düzenle"
       ],
@@ -1120,9 +1135,6 @@
       ],
       "Enter code": [
         "Kodu yazın"
-      ],
-      "Expand step": [
-        "Adımı genişlet"
       ],
       "Explore ${ target }": [
         "${ target } tarifesini keşfedin"
@@ -1211,9 +1223,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } ile yardım alın"
       ],
-      "Get in touch": [
-        "Bizimle görüşün"
-      ],
       "Get limited-time offer": [
         "Sınırlı süreli teklifi değerlendir"
       ],
@@ -1294,6 +1303,9 @@
       ],
       "Go to settings": [
         "Ayarlara git"
+      ],
+      "Go to today": [
+        "Bugüne git"
       ],
       "Google": [
         "Google"
@@ -1448,9 +1460,6 @@
       "Leave group": [
         "Gruptan ayrıl"
       ],
-      "Let's talk": [
-        "Hadi konuşalım!"
-      ],
       "Load more": [
         "Diğerlerini yükle"
       ],
@@ -1553,11 +1562,17 @@
       "Next": [
         "İleri"
       ],
+      "Next contact": [
+        "Sonraki kişi"
+      ],
       "Next month": [
         "Sonraki ay"
       ],
       "Next page": [
         "Sonraki sayfa"
+      ],
+      "Next plan": [
+        "Sonraki tarife"
       ],
       "No": [
         "Hayır"
@@ -1643,11 +1658,17 @@
       "Previous": [
         "Önceki"
       ],
+      "Previous contact": [
+        "Önceki kişi"
+      ],
       "Previous month": [
         "Önceki ay"
       ],
       "Previous page": [
         "Önceki sayfa"
+      ],
+      "Previous plan": [
+        "Önceki tarife"
       ],
       "Publish changes": [
         "Değişiklikleri yayınla"
@@ -1715,6 +1736,9 @@
       "Remove domain": [
         "Etki alanını kaldır"
       ],
+      "Remove file": [
+        "Dosyayı kaldır"
+      ],
       "Remove forward": [
         "İletmeyi kaldır"
       ],
@@ -1727,8 +1751,14 @@
       "Remove gift code": [
         "Hediye kodunu kaldır"
       ],
+      "Remove logo": [
+        "Logoyu kaldır"
+      ],
       "Remove manager": [
         "Yöneticiyi kaldır"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "${ serverLocation } sunucusunun kaldırılması bekleniyor"
       ],
       "Remove this label": [
         "Bu etiketi kaldır"
@@ -2141,6 +2171,12 @@
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } uygulamasına geç"
       ],
+      "Toggle calendar list": [
+        "Takvim listesini aç/kapat"
+      ],
+      "Toggle substeps": [
+        "Alt adımları aç/kapat"
+      ],
       "Top up": [
         "Doldur"
       ],
@@ -2335,6 +2371,9 @@
       ],
       "Watch the interview": [
         "Röportajı izleyin"
+      ],
+      "Weak key: learn more": [
+        "Anahtar zayıf: Ayrıntılı bilgi alın"
       ],
       "Welcome": [
         "Hoş geldiniz"
@@ -5659,6 +5698,9 @@
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
+      ],
+      "Refer ${ BRAND_NAME } for Business to your network. You earn credits, and they get ${ refereeRewardAmount } off a yearly subscription. Earn up to ${ maxRewardAmount } in total.": [
+        "${ BRAND_NAME } for Business hizmetini çevrenize tavsiye edin. Siz kredi kazanırsınız onlar ise yıllık abonelik ücretinden ${ refereeRewardAmount } indirim alırlar. Toplamda ${ maxRewardAmount } kadar kazanabilirsiniz."
       ],
       "Select which categories you want to add and if you want to receive push notifications for each category.": [
         "Eklemek istediğiniz kategorileri ve her bir kategori için anlık bildirim almak isteyip istemediğinizi seçin."
@@ -9108,6 +9150,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Güvenlik anahtarınız kaydedilirken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
+      ],
+      "This security key is already registered to your account.": [
+        "Bu güvenlik anahtarı hesabınıza zaten kaydedilmiş."
       ]
     },
     "fido2: Info": {
@@ -9849,6 +9897,9 @@
       ],
       "Enjoying ${ planName }?": [
         "${ planName } hoşunuza gitti mi?"
+      ],
+      "Invited businesses": [
+        "Davet edilen işletmeler"
       ],
       "Invited friends": [
         "Davet edilmiş arkadaşlar"
@@ -11794,6 +11845,9 @@
       "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
         "Var olan uçtan uca şifrelenmiş e-posta ileticilerinizi, ayarlar altındaki **${ autoReplySettingsTitle }** bölümünden el ile yeniden kullanıma almalısınız."
       ],
+      "Expected ${ date }": [
+        "Tahmini tarih ${ date }"
+      ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
@@ -11967,6 +12021,9 @@
       ],
       "Groups": [
         "Gruplar"
+      ],
+      "Help an organization protect sensitive data from breaches and surveillance": [
+        "Kuruluşun hassas verilerini veri ihlallerinden ve gözetimden korunmasına yardımcı olun"
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Diğer ailelerin çocuklarının güvenli bir internet başlangıcı yapmalarına yardımcı olun. Bu önemli gelişmeyi paylaşın ve herkese duyurun."
@@ -12923,8 +12980,8 @@
       "Restore": [
         "Geri yükle"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "Geçmiş dönemleri gözden geçirin ve raporlama veya müşteri faturalaması için verileri dışa aktarın."
+      "Review and export the data for reporting or client invoicing.": [
+        "Verileri gözden geçirin ve raporlama veya müşteri faturaları için dışa aktarın."
       ],
       "Right to Left": [
         "Sağdan sola"
@@ -13048,6 +13105,12 @@
       ],
       "Settings updated": [
         "Ayarlar güncellendi"
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Hata günlüklerini ${ BRAND_NAME } ile paylaşın"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Başarım verilerini ve kullanım istatistiklerini ${ BRAND_NAME } ile paylaşın"
       ],
       "Shared server country (${ countriesCount })": [
         "Paylaşılan sunucu ülkesi (${ countriesCount })",
@@ -13177,6 +13240,9 @@
       ],
       "Summary": [
         "Özet"
+      ],
+      "Support a mission to create a safer internet for everyone": [
+        "Herkes için daha güvenli bir internet yaratma misyonuna destek olun"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Özel etki alanlarının ve ${ BRAND_NAME } olmayan e-posta adreslerinin izlenmesi desteği yakında sunulacak."
@@ -13331,6 +13397,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Bu kimlik doğrulama bilgileri resmi ${ VPN_APP_NAME } uygulamalarımızda oturum açmak için kullanılamaz. ${ learnMore }"
+      ],
+      "They get end-to-end encrypted email, storage, and collaboration tools": [
+        "Uçtan uca şifrelenmiş e-posta, depolama ve işbirliği araçlarından yararlanıyorlar"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
@@ -13527,8 +13596,8 @@
       "To continue to ${ product }": [
         "${ product } ile ilerlemek için"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir üçüncü taraf ile paylaşılmıyor."
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Hizmetlerimizi sürekli olarak iyileştirmek amacıyla zaman zaman uygulamalarımızın düzgün çalışıp çalışmadığını izlemek için veri topluyoruz. **Bu bilgiler hiçbir üçüncü taraf hizmetle paylaşılmaz.**"
       ],
       "To create your first user group, go to": [
         "İlk kullanıcı grubunuzu oluşturmak için şuraya gidin"
@@ -14088,6 +14157,9 @@
       "Writing assistant": [
         "Yazma yardımcısı"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Yazma yardımcısı koltukları artık satılmamaktadır."
+      ],
       "X": [
         "X"
       ],
@@ -14238,6 +14310,9 @@
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Dosyayı açmanız veya okumanız gerekmez. Yalnızca indirin ve güvenli bir yere kaydedin."
+      ],
+      "You earn credits when they sign up": [
+        "Hesap açtıklarında kredi kazanırsınız"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alırsınız."
@@ -15502,6 +15577,9 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "Her 12 ayda bir ${ priceYearly } olarak faturalanır."
       ],
+      "Billed average": [
+        "Faturalanan ortalama"
+      ],
       "Billed monthly.": [
         "Ayda bir faturalanır."
       ],
@@ -15601,8 +15679,8 @@
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
-      "Collect usage diagnostics": [
-        "Kullanım verileri toplansın"
+      "Collect anonymous usage diagnostics": [
+        "Anonim kullanım tanılama verileri toplansın"
       ],
       "Color": [
         "Renk"
@@ -16091,6 +16169,9 @@
       "Invite via email": [
         "E-posta ile davet edin"
       ],
+      "Invited via": [
+        "aracılığıyla davet edildi"
+      ],
       "Invoice email": [
         "Fatura e-postası"
       ],
@@ -16240,9 +16321,6 @@
       ],
       "Monthly": [
         "Aylık"
-      ],
-      "Monthly average": [
-        "Aylık ortalama"
       ],
       "More payment methods": [
         "Diğer ödeme yöntemleri"
@@ -16414,9 +16492,6 @@
       ],
       "Payment terms": [
         "Ödeme koşulları"
-      ],
-      "Peak allocated licenses": [
-        "Atanmış en yüksek lisans sayısı"
       ],
       "Pending": [
         "Bekliyor"
@@ -16612,6 +16687,9 @@
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Share your invite link": [
+        "Davet bağlantınızı paylaşın"
       ],
       "Share your referral link": [
         "Öneri bağlantınızı paylaşın"
@@ -17597,6 +17675,73 @@
       ],
       "Enable detailed events": [
         "Ayrıntılı etkinlikler özelliğini aç"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2 kat Basic kullanım"
+      ],
+      "5x Plus usage": [
+        "5 kat Plus kullanım"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Aylık ${ credit } krediyle API erişimi"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
+      ],
+      "Everything in Basic, and:": [
+        "Basic'teki her şey ve:"
+      ],
+      "Everything in Free, and:": [
+        "Her şey Free ve:"
+      ],
+      "Everything in Plus, and:": [
+        "Plus'taki her şey ve:"
+      ],
+      "Extended image generation": [
+        "Genişletilmiş görüntü oluşturma"
+      ],
+      "Includes:": [
+        "Şunları içerir:"
+      ],
+      "Limited image generation": [
+        "Sınırlı görüntü oluşturma"
+      ],
+      "Limited messages and chat history": [
+        "Sınırlı mesajlar ve sohbet geçmişi"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Sınırlı Beceriler, Projeler ve planlanmış görevler"
+      ],
+      "Maximum image generation": [
+        "Maksimum resim oluşturma"
+      ],
+      "Maximum Skills and Projects": [
+        "Maksimum Beceri ve Projeler"
+      ],
+      "More image generation": [
+        "Daha fazla görüntü oluşturma"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Daha fazla beceri, proje ve planlanmış görevler"
+      ],
+      "More usage": [
+        "Daha fazla kullanım"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Kodlama ve geliştirme için"
+      ],
+      "For everyday chats": [
+        "Günlük sohbetler için"
+      ],
+      "For getting more done": [
+        "Daha fazlasını yapmak için"
       ]
     },
     "lumo_signup_2025: Info": {
@@ -20979,12 +21124,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (vergi hariç)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }, ${ PLAN_NAMES[PLANS.PASS] } ile birleştirilemez."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } yalnızca kurumsal tarifelerde kullanılabilir."
-      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20997,17 +21136,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
       ],
-      "An organization is required for this plan.": [
-        "Bu tarife için bir kuruluş gereklidir."
-      ],
       "Billing Country": [
         "Faturalanacak ülke"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Etkin bir abonelik varken Born Private hesapları satın alınamaz."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Kredi satın almak için ayrı bir satın alma gerekir."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Geçiş yaparak ${ termsLink } içeriğini kabul etmiş olursunuz."
@@ -21057,9 +21187,6 @@
       "Offer unavailable": [
         "Teklif kullanılamıyor"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Yalnızca bir ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } satın alınabilir."
-      ],
       "Paid from your account credit.": [
         "Hesabınızdaki krediden ödendi."
       ],
@@ -21072,29 +21199,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "Tarife geçişi şu nedenlerden dolayı yapılamıyor:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Lütfen tarifenizi değiştirmeden önce ek cüzdan hesaplarını kapatın."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Lütfen tarifenizi değiştirmeden önce ek cüzdanları kapatın."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden kullanıma alın."
       ],
       "Processing payment": [
         "Ödeme işleniyor"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet koltuk sayısı üye sayısı ile aynı olmalıdır."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Yenileme fiyatları ${ termsAndConditionsLink } içeriğine göre değişebilir."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe koltuk sayısı üye sayısını aşamaz."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
@@ -21108,24 +21223,9 @@
       "terms and conditions": [
         "hükümler ve koşullar"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private girişimine bağış yapılması gerekir."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli adres sunmuyor."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli etki alanı sunmuyor."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli üye sunmuyor."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli depolama alanı sunmuyor."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
@@ -21159,41 +21259,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Bu işlem geçerli aboneliğin kapsamını genişletir. Yalnızca yeni eklentiler ve geçerli fatura döneminin kalan süresi için ücret alınır. Aboneliğinizin yenilenme tarihi değişmeyecek."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Bu sie ayrılmış sunucu bir ağ geçidine atanmış ve değiştirilemez."
-      ],
       "This offer is not available with your current plan.": [
         "Bu teklif, geçerli tarifeniz ile kullanılamıyor."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Bu tarife hesabınızdaki yönetilen özellikleri desteklemez."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Bu tarife hesabınızdaki üyeleri desteklemez."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Bu abonelik şu anda tamamlanamıyor. Lütfen yeniden deneyin."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Deneme tarifelerinde ${ LUMO_SHORT_APP_NAME } koltukları desteklenmez."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Deneme tarifeleri özel etki alanlarını desteklemez."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Deneme tarifeleri size ayrılmış IP adreslerini desteklemez."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Deneme tarifelerinde Scribe koltukları desteklenmez."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Deneme tarifeleri bu kadar çok üyeyi desteklemez."
       ],
       "VAT number": [
         "KDV numarası"
@@ -21207,12 +21283,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Bu tarifeye zaten bir aboneliğiniz var. Aboneliğinizi ${ subscriptionPlatform } üzerinden değiştirebilirsiniz."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Zaten ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } sahibisiniz."
-      ],
-      "You already own a Born Private account.": [
-        "Zaten bir Born Private hesabınız var."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Seçilmiş ödeme yönteminizden ${ amountToCharge } ödeme alınacak."
       ],
@@ -21221,9 +21291,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
@@ -21472,6 +21539,9 @@
       ],
       "Enter company name": [
         "Kuruluş adını yazın"
+      ],
+      "Enter email address, name, or contact group": [
+        "E-posta adresini, adı veya iletişim grubunu girin"
       ],
       "Enter name or email address": [
         "Adı ya da e-posta adresini yazın"
@@ -22160,6 +22230,15 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
       ],
+      "**Share your referral link** with the right person at the company": [
+        "**Tavsiye bağlantınızı** şirket içindeki doğru kişiyle paylaşın"
+      ],
+      "**They sign up for a yearly Pro plan** and get an additional ${ refereeRewardAmount } off their first year": [
+        "**Yıllık Pro planına kaydolurlar** ve ilk yıl için ek olarak ${ refereeRewardAmount } indirim alırlar"
+      ],
+      "**You earn ${ referrerRewardAmount } for every seat** they add during sign-up.": [
+        "**Kayıt sırasında ekledikleri her koltuk için** ${ referrerRewardAmount } kazanırsınız."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Bu tarihten sonra, hesabınız **${ BRAND_NAME } Free** tarifesine düşürülecek. Fikrinizi değiştirirseniz, ücretli özelliklere erişmeyi sürdürmek için **aboneliğinizi yeniden kullanıma alabilirsiniz**."
       ],
@@ -22174,6 +22253,9 @@
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
         "Ben ${ BRAND_NAME } kullanıyorum ve senin de beğeneceğinizi düşündüm. Gizliliği koruyan güvenli bir e-posta, bulut depolama alanı, parola yöneticisi ve VPN hizmeti sunuyor. Bir sonraki aboneliğinde ${ refereeRewardAmount } indirimden yararlanmak için şuradan hesap açabilirsin: ${ referralLink }"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "${ BRAND_NAME } kullanıyorum ve ekibinizin de hoşuna gidebileceğini düşündüm. Gizliliğinizi koruyan güvenli e-posta, bulut depolama, parola yöneticisi ve VPN hizmetidir. Bu bağlantıdan kaydolarak ${ BRAND_NAME } for Business hizmetinin ilk yılı için ${ refereeRewardAmount } indirimden yararlanın: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Bu tarihten önce iptal ederseniz deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine düşürülürsünüz. İptal etmezseniz tam tarifeniz başlar ve **${ referrerRewardAmount }** tutarında kredi kazanırsınız."
@@ -26477,6 +26559,9 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
+      "Billing periods": [
+        "Fatura dönemleri"
+      ],
       "Black Friday": [
         "Efsane Cuma"
       ],
@@ -26486,11 +26571,22 @@
       "Bridge for ${ platform }": [
         "${ platform } için Bridge"
       ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "${ BRAND_NAME }’u iş yerine getirin. Kredi kazanın."
+      ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Gmail e-postalarınızı ${ MAIL_APP_NAME } üzerine taşıyın"
       ],
       "Browser extensions": [
         "Tarayıcı eklentileri"
+      ],
+      "Business invited": [
+        "İşletme davet edildi",
+        "İşletmeler davet edildi"
+      ],
+      "Business signed up": [
+        "İşletme hesap açtı",
+        "İşletmeler hesap açtı"
       ],
       "Can you access your session in the browser?": [
         "Tarayıcıdan oturumunuza erişebiliyor musunuz?"
@@ -27245,6 +27341,9 @@
       "How did you find out about us?": [
         "Bizi nereden duydunuz?"
       ],
+      "How it works": [
+        "Nasıl çalışır"
+      ],
       "How to choose a good logo": [
         "İyi bir logo nasıl seçilir"
       ],
@@ -27423,7 +27522,7 @@
       "Monthly": [
         "Aylık"
       ],
-      "Monthly Costs": [
+      "Monthly cost": [
         "Aylık maliyet"
       ],
       "Multi-user support": [
@@ -27609,17 +27708,11 @@
       "Previous": [
         "Önceki"
       ],
-      "Previous billing periods": [
-        "Önceki fatura dönemleri"
-      ],
       "Priority support:": [
         "Öncelikli destek:"
       ],
       "Privacy": [
         "Gizlilik"
-      ],
-      "Privacy and data collection": [
-        "Gizlilik ve veri toplama"
       ],
       "Problem processing your payment": [
         "Ödemeniz işlenirken sorun çıktı"
@@ -27671,6 +27764,9 @@
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
+      ],
+      "Refer businesses": [
+        "İşletmeleri yönlendirin"
       ],
       "Reject device?": [
         "Aygıt reddedilsin mi?"
@@ -28254,6 +28350,9 @@
       ],
       "What is the dark web?": [
         "Karanlık ağ nedir?"
+      ],
+      "Why recommend ${ BRAND_NAME } for Business?": [
+        "Neden ${ BRAND_NAME } for Business'ı öneriyoruz?"
       ],
       "Windows": [
         "Windows"

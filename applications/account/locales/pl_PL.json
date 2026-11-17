@@ -825,9 +825,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Uzyskaj pomoc od ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Get in touch": [
-        "Skontaktuj się z nami"
-      ],
       "Get limited-time offer": [
         "Skorzystaj z oferty ograniczonej czasowo"
       ],
@@ -1031,9 +1028,6 @@
       ],
       "Leave group": [
         "Opuść grupę"
-      ],
-      "Let's talk": [
-        "Porozmawiajmy"
       ],
       "Load more": [
         "Załaduj więcej"
@@ -1277,6 +1271,9 @@
       ],
       "Remove domain": [
         "Usuń domenę"
+      ],
+      "Remove file": [
+        "Usuń plik"
       ],
       "Remove forward": [
         "Usuń przekierowanie"
@@ -6661,6 +6658,9 @@
       "Could not save preference": [
         "Nie można zapisać preferencji"
       ],
+      "Could not unlock this item": [
+        "Nie można odblokować elementu"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "Nie można załadować faktur. Spróbuj ponownie później."
       ],
@@ -6765,6 +6765,9 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Jeśli czas został przekroczony, kliknij przycisk Odśwież na swoim telewizorze i wpisz kod ponownie."
+      ],
+      "Image preview not found": [
+        "Nie znaleziono podglądu zdjęcia"
       ],
       "IMAP server is required": [
         "Serwer IMAP jest wymagany"
@@ -7065,6 +7068,9 @@
       ],
       "Session expired. Please refresh the page.": [
         "Sesja wygasła. Odśwież stronę."
+      ],
+      "Signature is missing": [
+        "Brak podpisu"
       ],
       "Signature not verified": [
         "Podpis nie został zweryfikowany"
@@ -11521,9 +11527,6 @@
       "Restore": [
         "Przywróć"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "Przeglądaj poprzednie okresy i eksportuj dane do celów raportowania lub fakturowania klientów."
-      ],
       "Right to Left": [
         "Od prawej do lewej"
       ],
@@ -12070,9 +12073,6 @@
       "To continue to ${ product }": [
         "Aby przejść do ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Aby stale ulepszać nasze usługi, czasami zbieramy dane, które monitorują poprawne działanie naszych aplikacji. Te informacje nie są udostępniane innym stronom trzecim."
-      ],
       "To create your first user group, go to": [
         "Aby utworzyć pierwszą grupę użytkowników, przejdź do"
       ],
@@ -12120,6 +12120,9 @@
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Aby działać poprawnie, każdy filtr musi zawierać co najmniej nazwę i prawidłowy skrypt Sieve. Możesz ${ link }."
+      ],
+      "Today": [
+        "Dzisiaj"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden kredyt."
@@ -13868,9 +13871,6 @@
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
       ],
-      "Collect usage diagnostics": [
-        "Zbieraj dane diagnostyczne"
-      ],
       "Color": [
         "Kolor"
       ],
@@ -14256,16 +14256,16 @@
         "Przejdź do Newsletterów"
       ],
       "Go to Primary": [
-        "Przejdź do Głównej"
+        "Przejdź do Główne"
       ],
       "Go to Promotions": [
-        "Przejdź do Promocji"
+        "Przejdź do Oferty"
       ],
       "Go to Social": [
         "Przejdź do Społeczności"
       ],
       "Go to Transactions": [
-        "Przejdź do Transakcji"
+        "Przejdź do Płatności"
       ],
       "Go to Updates": [
         "Przejdź do Aktualizacji"
@@ -14682,7 +14682,7 @@
         "Promocje"
       ],
       "Promotions - Deals, offers, and marketing emails": [
-        "Oferty – promocje, oferty i wiadomości marketingowe"
+        "Oferty – promocje i wiadomości marketingowe"
       ],
       "Prompt to trust keys": [
         "Podpowiadaj dodawanie kluczy do zaufanych"
@@ -14985,7 +14985,7 @@
         "Transakcje"
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
-        "Transakcje – rachunki, rezerwacje, faktury i zamówienia"
+        "Płatności – rachunki, rezerwacje, faktury i zamówienia"
       ],
       "Two-password mode": [
         "Tryb podwójnego hasła"
@@ -25020,9 +25020,6 @@
       "Monthly": [
         "Co miesiąc"
       ],
-      "Monthly Costs": [
-        "Koszty miesięczne"
-      ],
       "Multi-user support": [
         "Obsługa wielu użytkowników"
       ],
@@ -25185,14 +25182,8 @@
       "Previous": [
         "Wstecz"
       ],
-      "Previous billing periods": [
-        "Poprzednie okresy rozliczeniowe"
-      ],
       "Priority support:": [
         "Priorytetowe wsparcie:"
-      ],
-      "Privacy and data collection": [
-        "Prywatność i zbieranie danych"
       ],
       "Problem processing your payment": [
         "Problem z przetwarzaniem Twojej płatności"

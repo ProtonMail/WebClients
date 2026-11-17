@@ -113,6 +113,18 @@
       "Light ${ BRAND_NAME } background applied": [
         "Plano de fundo claro da ${ BRAND_NAME } aplicado"
       ],
+      "Live captions allowed for this meeting": [
+        "As legendas ao vivo estão permitidas para esta reunião"
+      ],
+      "Live captions turned off": [
+        "As legendas ao vivo estão desativadas"
+      ],
+      "Live captions turned off for this meeting": [
+        "As legendas ao vivo estão desativadas para esta reunião"
+      ],
+      "Live captions turned on": [
+        "As legendas ao vivo estão ativadas"
+      ],
       "Mountain landscape background applied": [
         "Plano de fundo com paisagem montanhosa aplicado"
       ],
@@ -354,6 +366,9 @@
       "Dismiss new messages": [
         "Descartar nova mensagem"
       ],
+      "Dismiss notification": [
+        "Descartar notificação"
+      ],
       "Done": [
         "Concluído"
       ],
@@ -428,6 +443,9 @@
       ],
       "Getting ready...": [
         "Preparando..."
+      ],
+      "Go to today": [
+        "Ir para hoje"
       ],
       "Help and feedback": [
         "Ajuda e comentários"
@@ -515,6 +533,9 @@
       ],
       "More options for accounts": [
         "Mais opções para contas"
+      ],
+      "More reactions": [
+        "Mais reações"
       ],
       "Mute ${ participantName }": [
         "Silenciar ${ participantName }"
@@ -2175,9 +2196,6 @@
       "Failed to start recording": [
         "Erro ao iniciar a gravação"
       ],
-      "Failed to start screen share": [
-        "Erro ao iniciar o compartilhamento de tela"
-      ],
       "Failed to unlock meeting": [
         "Falha ao desbloquear reunião"
       ],
@@ -2308,9 +2326,6 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Escolha uma imagem no formato JPEG, PNG ou WebP."
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Habilite o compartilhamento de tela nas permissões do sistema e tente novamente"
-      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "A gravação foi interrompida porque não pôde ser salva. Mantivemos o que foi gravado até este ponto."
       ],
@@ -2394,6 +2409,9 @@
       ],
       "This background could not be saved in this browser.": [
         "Este plano de fundo não pode ser salvo nesse navegador."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Este emoji não pode ser usado como uma reação"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -2541,6 +2559,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador não suporta chaves de segurança. Tente um navegador diferente."
       ]
     },
     "fido2: Info": {
@@ -2855,9 +2876,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
-      ],
-      "Coming soon": [
-        "Em breve"
       ],
       "Connection failed": [
         "Falha na conexão"
@@ -3414,6 +3432,9 @@
       "Sign in": [
         "Iniciar sessão"
       ],
+      "Something went wrong. Please try again.": [
+        "Ocorreu um erro. Tente novamente."
+      ],
       "Sort by": [
         "Ordenar por"
       ],
@@ -3890,6 +3911,9 @@
       ],
       "Raw": [
         "Em bruto"
+      ],
+      "Reaction picker": [
+        "Seletor de reações"
       ],
       "Reactions": [
         "Reações"
@@ -4712,6 +4736,9 @@
       ],
       "Schedule a meeting": [
         "Agendar uma reunião"
+      ],
+      "Screen share failed": [
+        "O compartilhamento de tela falhou"
       ],
       "Screen share is blocked": [
         "O compartilhamento de tela está bloqueada"

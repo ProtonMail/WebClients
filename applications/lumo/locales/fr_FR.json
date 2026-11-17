@@ -29,6 +29,9 @@
       "Add credit / debit card": [
         "Ajouter une carte de paiement"
       ],
+      "Answer now": [
+        "Répondez maintenant"
+      ],
       "Apply": [
         "Appliquer"
       ],
@@ -172,9 +175,6 @@
       "Get ${ planOrAppName }": [
         "Essayez ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Nous contacter"
-      ],
       "Get the apps": [
         "Obtenir les applications"
       ],
@@ -223,8 +223,8 @@
       "Keep my subscription": [
         "Conserver mon abonnement"
       ],
-      "Let's talk": [
-        "Parlons-nous"
+      "Keep paused": [
+        "Laisser en suspens"
       ],
       "Manage advanced account protections": [
         "Gérer les protections avancées du compte"
@@ -330,6 +330,12 @@
       ],
       "Reset all": [
         "Tout réinitialiser"
+      ],
+      "Retry action": [
+        "Réessayer l'action"
+      ],
+      "Review interrupted action": [
+        "Examiner l'action interrompue"
       ],
       "Save": [
         "Enregistrer"
@@ -1656,6 +1662,24 @@
       "Please try asking a different question or making a different request.": [
         "Veuillez poser une autre question ou formuler une autre demande."
       ],
+      "Reading all of this file takes more processing than your plan has left, so ${ LUMO_SHORT_APP_NAME } answered without reading all of it.": [
+        "La lecture de ce fichier dans son intégralité nécessitant des ressources supplémentaires, dont votre abonnement ne dispose plus, ${ LUMO_SHORT_APP_NAME } a répondu sans le lire entièrement.",
+        "La lecture de ces fichiers dans leur intégralité nécessitant des ressources supplémentaires, dont votre abonnement ne dispose plus, ${ LUMO_SHORT_APP_NAME } a répondu sans les lire entièrement."
+      ],
+      "Reading this file takes more processing than your plan has left, so ${ LUMO_SHORT_APP_NAME } didn't start.": [
+        "La lecture de ce fichier nécessitant des ressources supplémentaires, dont votre abonnement ne dispose plus, ${ LUMO_SHORT_APP_NAME } n'a pas débuté le processus.",
+        "La lecture de ces fichiers nécessitant des ressources supplémentaires, dont votre abonnement ne dispose plus, ${ LUMO_SHORT_APP_NAME } n'a pas débuté le processus."
+      ],
+      "Reading this file takes more processing than your plan has left. Remove it to send your message.": [
+        "La lecture de ce fichier nécessite des ressources supplémentaires dont votre abonnement ne dispose plus. Retirez ce fichier afin d'envoyer votre message.",
+        "La lecture de ces fichiers nécessite des ressources supplémentaires dont votre abonnement ne dispose plus. Retirez ce fichier afin d'envoyer votre message."
+      ],
+      "Sign up for free to work with larger files.": [
+        "Inscrivez-vous afin de travailler avec des fichiers plus volumineux en toute liberté."
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to work with large files.": [
+        "Mettez à jour votre abonnement vers ${ LUMO_SHORT_APP_NAME } Plus afin de travailler avec des fichiers plus volumineux."
+      ],
       "We're experiencing unusually high demand. If retrying doesn't work, check back in a few minutes or upgrade for priority access to ${ LUMO_SHORT_APP_NAME }.": [
         "Nous rencontrons une demande exceptionnellement élevée. Si réessayer ne fonctionne pas, revenez dans quelques minutes ou passez à la version premium pour un accès prioritaire à ${ LUMO_SHORT_APP_NAME }."
       ],
@@ -1679,8 +1703,14 @@
       "Looks like there's a lot of traffic": [
         "Il semble qu’il y ait beaucoup de monde en ligne."
       ],
+      "Sign up to work with larger files": [
+        "Inscrivez-vous afin de travailler avec des fichiers plus volumineux."
+      ],
       "Something went wrong": [
         "Une erreur s'est produite."
+      ],
+      "Upgrade to work with larger files": [
+        "Mettez à jour votre abonnement pour travailler avec des fichiers plus volumineux."
       ],
       "You've reached a model limit": [
         "Vous avez atteint la limite du modèle"
@@ -1891,7 +1921,7 @@
         "Soyez prudent face aux domaines inconnus ou aux sous-domaines excessifs"
       ],
       "Build privacy-first assistants with streaming and persistent context.": [
-        "Créez des assistants axés sur la confidentialité avec un contexte de streaming et persistant."
+        "Créez des assistants axés sur la confidentialité avec un flux contextuel et un contexte permanent."
       ],
       "Chain tool calls to orchestrate multi-step pipelines end-to-end.": [
         "Enchaîne les appels d'outil pour orchestrer des pipelines multi-étapes de bout en bout."
@@ -2030,6 +2060,9 @@
       ],
       "Loading": [
         "Chargement"
+      ],
+      "Loading balance…": [
+        "Chargement du bilan en cours..."
       ],
       "Loading usage…": [
         "Chargement en cours de l'utilisation…"
@@ -3288,14 +3321,8 @@
       "Add details": [
         "Ajouter des informations"
       ],
-      "Add file": [
-        "Ajouter le fichier"
-      ],
       "Add more information to improve the response": [
         "Ajoutez plus d'informations pour améliorer la réponse"
-      ],
-      "Add plugin": [
-        "Ajouter une extension"
       ],
       "Add row below": [
         "Ajouter une ligne en dessous"
@@ -3552,6 +3579,12 @@
       "New chat": [
         "Débuter une nouvelle conversation"
       ],
+      "New file": [
+        "Nouveau fichier"
+      ],
+      "New folder": [
+        "Nouveau dossier"
+      ],
       "New project": [
         "Nouveau projet"
       ],
@@ -3638,6 +3671,9 @@
       ],
       "Remove from this task": [
         "Retirer de cette tâche"
+      ],
+      "Rename": [
+        "Modifier le nom"
       ],
       "Rename chat": [
         "Modifier le nom du chat"
@@ -4042,7 +4078,7 @@
         "Projet non trouvé"
       ],
       "This email link contains invalid or unsupported details and cannot be opened safely.": [
-        "Le lien figurant dans cet e-mail contient des informations non valides ou non supportées et ne peut être ouvert en toute sécurité."
+        "Le lien vers cet e-mail contient des informations non valides ou non supportées et ne peut être ouvert en toute sécurité."
       ],
       "This scheduled task no longer exists. Reload the page and try again.": [
         "Cette tâche planifiée n'existe plus. Actualisez la page et réessayez."
@@ -4060,6 +4096,9 @@
       ],
       "Unlimited projects": [
         "Projets illimités"
+      ],
+      "Up to ${ plusLimit } scheduled tasks": [
+        "Jusqu'à ${ plusLimit } tâches programmées"
       ]
     },
     "collider_2025:Filter": {
@@ -4112,21 +4151,11 @@
       "${ name } completed.": [
         "${ name } a été complété."
       ],
-      "${ pluginCount } plugin": [
-        "${ pluginCount } extension",
-        "${ pluginCount } extensions"
-      ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } conversations"
       ],
       "${ project.conversationCount } conversations": [
         "${ project.conversationCount } conversations"
-      ],
-      "${ project.fileCount } file": [
-        "${ project.fileCount } fichiers"
-      ],
-      "${ project.fileCount } files": [
-        "${ project.fileCount } fichiers"
       ],
       "ad value": [
         "valeur publicitaire"
@@ -4164,6 +4193,9 @@
       "Ask a question to get started. Your conversation is private.": [
         "Posez une question pour commencer. Votre conversation est privée."
       ],
+      "Ask your organization's administrator for a ${ LUMO_SHORT_APP_NAME } seat to create more scheduled tasks.": [
+        "Demandez à l'administrateur de votre organisation un accès ${ LUMO_SHORT_APP_NAME } afin de créer plus de tâches programmées."
+      ],
       "Auto-retrieved": [
         "Récupéré automatiquement"
       ],
@@ -4179,9 +4211,6 @@
       "by ${ author }": [
         "par ${ author }"
       ],
-      "Checking…": [
-        "Vérification en cours…"
-      ],
       "Choose a format to export \"${ conversation.title }\":": [
         "Sélectionner un format pour exporter « ${ conversation.title } » :"
       ],
@@ -4190,6 +4219,9 @@
       ],
       "Code": [
         "Code"
+      ],
+      "Connect ${ MAIL_APP_NAME }, your files, Jira, Linear and more, so ${ LUMO_SHORT_APP_NAME } can work with the things you already use.": [
+        "Connectez ${ MAIL_APP_NAME }, vos documents, vos Jiras, vos Linear et plus, afin que ${ LUMO_SHORT_APP_NAME } puisse travailler avec les outils et documents que vous utilisez déjà."
       ],
       "Connect and enable the selected connectors before allowing access, or uncheck them.": [
         "Connecter et activer les connecteurs sélectionnés avant d'autoriser l'accès, ou décochez-les."
@@ -4251,6 +4283,9 @@
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Les fichiers importés dans ce projet seront enregistrés dans le dossier Drive associé."
       ],
+      "Find documents, bookings and messages without switching apps": [
+        "Trouvez des documents, des livres et des messages sans changer d'application."
+      ],
       "From ${ DRIVE_APP_NAME }": [
         "À partir de ${ DRIVE_APP_NAME }"
       ],
@@ -4306,6 +4341,9 @@
       "PASTED": [
         "COLLÉ"
       ],
+      "Paused tasks count toward this limit. Delete a task to create another.": [
+        "Le nombre de tâches mises en pause est atteint. Supprimez une tâche pour en créer une nouvelle."
+      ],
       "Preparing questions": [
         "Préparation des questions en cours"
       ],
@@ -4324,6 +4362,13 @@
       "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
         "Les projets vous permettent d'organiser des conversations avec des instructions et des fichiers personnalisés. Connectez-vous ou créez un compte gratuit pour commencer."
       ],
+      "Ready-made skills for common tasks.": [
+        "Compétences natives pour les tâches courantes."
+      ],
+      "Ready-made skills for common tasks. ${ moreCount } more once you sign in.": [
+        "Utilisez les compétences natives de Lumo pour les tâches courantes. ${ moreCount } compétence supplémentaire une fois que vous serez connecté.",
+        "Utilisez les compétences natives de Lumo pour les tâches courantes. ${ moreCount } compétences supplémentaires une fois que vous serez connecté."
+      ],
       "red flags": [
         "drapeaux rouges"
       ],
@@ -4341,6 +4386,9 @@
       ],
       "Select one answer.": [
         "Sélectionnez une réponse."
+      ],
+      "Skills are saved instructions for tasks you do often. Type / in any chat to use one.": [
+        "Les compétences sont des instructions pour les tâches que vous réalisez souvent. Ajoutez / dans n'importe quel tchat pour utiliser une de ces compétences."
       ],
       "Skipped": [
         "Ignoré"
@@ -4372,6 +4420,9 @@
       "Text formatted with markdown, easy to read or share": [
         "Texte formaté avec Markdown, facile à lire ou à partager"
       ],
+      "The app closed while an action was running. It may already have completed. Retrying could run it twice.": [
+        "L'application s'est fermée alors qu'une action était en cours d'exécution. Il se peut qu'elle soit déjà terminée. Si vous réessayez, elle risque de s'exécuter une deuxième fois."
+      ],
       "This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.": [
         "Voici pourquoi c'est important : une fois dévoilées, ces informations peuvent servir à cibler, établir un profil et prendre des décisions sur vous - le plus souvent sans transparence ni consentement."
       ],
@@ -4399,6 +4450,9 @@
       "Updating content…": [
         "Mise à jour du contenu…"
       ],
+      "Upgrade to ${ plan } to create up to ${ plusLimit } scheduled tasks, unlock advanced AI models, and more.": [
+        "Mettez votre abonnement à niveau vers ${ plan } afin de créer jusqu'à ${ plusLimit } tâches programmées, de débloquer des modèles IA avancés et plus encore."
+      ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Utilisez le modèle Max pour les travaux complexes ou le modèle Lite pour les tâches quotidiennes. Choisissez le mode Rapide pour des réponses rapides ou le mode Réflexion pour des questions plus ardues."
       ],
@@ -4408,11 +4462,24 @@
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Nous enregistrerons votre carte afin que vous puissiez la joindre à la publication, les réseaux sociaux ne peuvent pas ajouter l'image pour vous."
       ],
+      "With the ${ LUMO_SHORT_APP_NAME } desktop app, connect ${ MAIL_APP_NAME }, your files, Jira, Linear and more, so ${ LUMO_SHORT_APP_NAME } can work with the things you already use.": [
+        "Avec l'application de bureau ${ LUMO_SHORT_APP_NAME }, vous pouvez connecter ${ MAIL_APP_NAME }, vos fichiers, vos Jiras, vos Linear et plus, afin que ${ LUMO_SHORT_APP_NAME } puisse travailler avec les outils et documents que vous utilisez déjà."
+      ],
       "You": [
         "Vous"
       ],
+      "You decide what ${ LUMO_SHORT_APP_NAME } does on its own and what needs your OK": [
+        "Seul vous décidez ce que ${ LUMO_SHORT_APP_NAME } fait de lui-même ou ce qui nécessite votre validation."
+      ],
       "You're using private browsing": [
         "Vous êtes en navigation privée."
+      ],
+      "Your current plan includes up to ${ scheduleLimit } scheduled task.": [
+        "Votre abonnement actuel prend en charge jusqu'à ${ scheduleLimit } tâche programmée.",
+        "Votre abonnement actuel prend en charge jusqu'à ${ scheduleLimit } tâches programmées."
+      ],
+      "Your data is never used to train AI": [
+        "Vos données ne sont jamais utilisées afin d'entraîner les modèles d'IA."
       ],
       "Your default email app will open a draft with these details. Review them before continuing.": [
         "Votre application de messagerie par défaut ouvrira un brouillon comprenant ces informations. Relisez-les avant de continuer."
@@ -4526,6 +4593,9 @@
       "9:16": [
         "9:16"
       ],
+      "All traits have been selected": [
+        "Tous les traits ont été sélectionnés"
+      ],
       "AsciiDoc Document": [
         "Document AsciiDoc"
       ],
@@ -4627,6 +4697,9 @@
       ],
       "File": [
         "Fichier"
+      ],
+      "File name": [
+        "Nom du fichier"
       ],
       "Files": [
         "Fichiers"
@@ -4760,9 +4833,6 @@
       "Platform": [
         "Plateforme"
       ],
-      "Plugin name": [
-        "Nom de l’extension"
-      ],
       "Politics": [
         "Politiques"
       ],
@@ -4879,9 +4949,6 @@
       ],
       "Weekly": [
         "Toutes les semaines"
-      ],
-      "What can I upload?": [
-        "Que puis-je importer ?"
       ],
       "Wind": [
         "Vent"
@@ -5007,6 +5074,20 @@
       ],
       "Privacy and security": [
         "Vie privée et sécurité"
+      ]
+    },
+    "collider_2025:Plugin summary": {
+      "Clean spreadsheets, charts and dashboards.": [
+        "Profitez de feuilles de calcul, de graphiques et de tableaux de bord propres."
+      ],
+      "Draft, edit and translate in your own voice.": [
+        "Réalisez des brouillons, modifiez et traduisez avec votre propre voix."
+      ],
+      "Sourced reports and fact-checks.": [
+        "Des rapports sourcés et fact-checkés."
+      ],
+      "Spot phishing, redact data, read policies.": [
+        "Détectez les tentatives d'hameçonnage, écrivez des documents, lisez des politiques de confidentialité."
       ]
     },
     "collider_2025:Prefill": {
@@ -5512,6 +5593,9 @@
       "Better web search": [
         "Meilleure recherche web"
       ],
+      "Bring your apps and files into ${ LUMO_SHORT_APP_NAME }": [
+        "Intégrez vos applications et vos fichiers dans ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Built by the team that knows privacy": [
         "Créé par l'équipe experte en confidentialité"
       ],
@@ -5535,6 +5619,9 @@
       ],
       "Customize": [
         "Personnaliser"
+      ],
+      "Delete folder?": [
+        "Supprimer le dossier ?"
       ],
       "Delete project?": [
         "Supprimer le projet ?"
@@ -5623,6 +5710,9 @@
       "More options": [
         "Plus d'options"
       ],
+      "More scheduled tasks with ${ plan }": [
+        "Plus de tâches programmées avec l'abonnement ${ plan }"
+      ],
       "Most revealing": [
         "Le plus révélateur"
       ],
@@ -5659,6 +5749,9 @@
       "Remove all files?": [
         "Retirer tous les fichiers ?"
       ],
+      "Retry interrupted action?": [
+        "Voulez-vous réessayer l'action interrompue ?"
+      ],
       "Review privacy settings": [
         "Vérifier les paramètres de confidentialité"
       ],
@@ -5677,6 +5770,9 @@
       "Sign in to create projects": [
         "Connectez-vous pour créer des projets"
       ],
+      "Skills from ${ BRAND_NAME }": [
+        "Compétences de ${ BRAND_NAME }"
+      ],
       "Sort by": [
         "Trier par"
       ],
@@ -5685,6 +5781,9 @@
       ],
       "Start a new conversation": [
         "Démarrer une nouvelle conversation"
+      ],
+      "Teach ${ LUMO_SHORT_APP_NAME } how you work": [
+        "Apprenez à ${ LUMO_SHORT_APP_NAME } votre façon de travailler."
       ],
       "That's why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "C'est pourquoi nous avons créé ${ LUMO_SHORT_APP_NAME } : pour vous apporter tous les avantages de l'IA, sans compromettre votre vie privée et la sécurité de vos données."
@@ -5721,6 +5820,9 @@
       ],
       "You might be shown a higher price": [
         "Il se peut qu'on vous propose un prix plus élevé."
+      ],
+      "You've reached your scheduled task limit": [
+        "Vous avez atteint votre nombre limite de tâches programmées."
       ],
       "Your image gallery is empty": [
         "Votre galerie d'images est vide."
@@ -7251,6 +7353,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
       ]
     },
     "fido2: Info": {
@@ -8381,6 +8486,9 @@
       "Calls NativeComposerApi.onLimitReachedError directly (skips the toast flow).": [
         "Ceci appelle directement NativeComposerApi.onLimitReachedError sans déclencher le flux de notification."
       ],
+      "Clear": [
+        "Effacer"
+      ],
       "Clear History": [
         "Effacer l'historique"
       ],
@@ -8392,6 +8500,9 @@
       ],
       "Compaction": [
         "Compression"
+      ],
+      "Composer card": [
+        "Carte d'éditeur"
       ],
       "Composer limit banner preview": [
         "Aperçu de la bannière de limitation de l'éditeur"
@@ -8447,6 +8558,9 @@
       "Lag": [
         "Délai"
       ],
+      "Large file upsell": [
+        "Réalisez un paiement complémentaire pour l'utilisation de fichiers volumineux."
+      ],
       "Last token": [
         "Dernier jeton"
       ],
@@ -8475,7 +8589,7 @@
         "Limites d'utilisation du modèle"
       ],
       "Native bridge: onLimitReachedError": [
-        "Native bridge: onLimitReachedError"
+        "Pont natif : onLimitReachedError"
       ],
       "Native composer bridge not detected — calls will be logged but no-op. Open the app inside the iOS/Android wrapper to exercise the bridge.": [
         "Le pont de composition natif n'a pas été détecté. Les appels seront enregistrés mais n'auront aucun effet. Ouvrez l'application dans l'environnement iOS/Android pour tester le pont."
@@ -8509,6 +8623,12 @@
       ],
       "Preview \"IndexedDB unavailable\" screen": [
         "Prévisualiser l'écran « IndexedDB indisponible »"
+      ],
+      "Preview empty usage": [
+        "Créer un aperçu d'utilisation sans données"
+      ],
+      "Previews the \"Upgrade to work with larger files\" card with a sample file. Composer card: shown above the composer as when a large file is attached, and Send is held back while it is on. In chat: the card under the conversation, for a send stopped before reading or a reply given without reading the whole file (open a conversation first). Hidden for Plus accounts. Not persisted.": [
+        "Affiche la carte \"mise à jour du travail avec des fichiers plus volumineux\" avec un fichier d'exemple. Carte d'éditeur : Apparaît au-dessus de l'éditeur, par exemple lorsqu'un fichier volumineux est joint. L'envoi est suspendu tant que cette fonctionnalité est activée. Dans le tchat : Carte au-dessous de la conversation, pour un envoi interrompu avant lecture ou une réponse donnée sans lire l'intégralité du fichier (ouvrir la conversation d'abord). Fonctionnalité cachée pour les comptes Plus et non conservée."
       ],
       "Rate": [
         "Taux"
@@ -8551,6 +8671,12 @@
       ],
       "Send spaces limit to native": [
         "Envoyer la limite d'espaces au natif"
+      ],
+      "Show in chat: answered without reading": [
+        "Afficher dans le tchat : La réponse a été réalisée sans lecture du ou des fichiers déposés."
+      ],
+      "Show in chat: send stopped": [
+        "Dans le tchat : Envoi interrompu."
       ],
       "Smoothing (Spring-Mass)": [
         "Lissage (masse-ressort)"
@@ -9773,12 +9899,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (hors taxe)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ne peut pas être combiné avec ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } est uniquement disponible pour les abonnements professionnels."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate } % de taxes : ${ taxAmountElement }"
       ],
@@ -9788,17 +9908,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Montant dû après la version d'essai le ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Une organisation est nécessaire pour cet abonnement."
-      ],
       "Billing Country": [
         "Pays de facturation"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Les comptes Born Private ne peuvent pas être achetés avec un abonnement actif."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Acheter des crédits nécessite un achat séparé."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "En effectuant ce changement, vous acceptez nos ${ termsLink }."
@@ -9842,9 +9953,6 @@
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Seulement un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } peut être acheté."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Payer avec ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -9854,29 +9962,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "Le changement de plan est incompatible pour les raisons suivantes :"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Veuillez clôturer les comptes de portefeuille supplémentaires avant de changer d'abonnement."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Veuillez clôturer les portefeuilles supplémentaires avant de changer votre abonnement."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
       "Processing payment": [
         "Traitement du paiement"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Le tarif du renouvellement est susceptible de changer en accord avec ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renouvellement au prix de ${ renewPriceStr } avec possibilité de résiliation à tout moment."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Les accès à Scribe ne peuvent dépasser le nombre de membres."
       ],
       "Tax ${ rate }%": [
         "Taxe ${ rate } %"
@@ -9887,24 +9983,9 @@
       "terms and conditions": [
         "conditions générales d'utilisation"
       ],
-      "The Born Private initiative requires a donation.": [
-        "L'initiative Born Private nécessite un don."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "La réduction est valable pour ${ renewalsWithCoupon } renouvellement.",
         "La réduction est valable pour ${ renewalsWithCoupon } renouvellements."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "L'abonnement sélectionné n'offre pas assez d'adresses pour votre compte."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "L'abonnement sélectionné n'offre pas assez de domaines pour votre compte."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "L'abonnement sélectionné n'offre pas assez de membres pour votre compte."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "L'abonnement sélectionné n'offre pas assez d'espace de stockage pour votre compte."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Le tarif exceptionnellement réduit est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment.",
@@ -9935,38 +10016,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Cette action étend l'abonnement existant. Vous ne serez facturé que pour les nouveaux add-ons complémentaires et le temps restant du cycle de facturation actuel. La date de renouvellement de votre abonnement ne sera pas modifiée."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Ce serveur dédié est assigné à une passerelle et ne peut pas être modifié."
-      ],
       "This offer is not available with your current plan.": [
         "Cette offre n'est pas disponible avec votre abonnement actuel."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
       ],
-      "This plan doesn’t support the members on your account.": [
-        "Cet abonnement ne prend pas en charge les membres sur votre compte."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Les abonnements en version d'essai ne prennent pas en charge l'accès à ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Les abonnements en version d'essai ne prennent pas en charge les noms de domaine personnalisés."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Les abonnements en version d'essai ne prennent pas en charge les IP dédiées."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Les abonnements en version d'essai ne prennent pas en charge l'accès à Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Les versions d'essai ne prennent pas en charge ce nombre de membres."
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -9980,12 +10040,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Vous avez déjà un abonnement. Vous pouvez modifier votre abonnement sur ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Vous possédez déjà ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Vous possédez déjà un compte Born Private."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Un montant de ${ amountToCharge } sera débité selon votre méthode de paiement sélectionnée."
       ],
@@ -9994,9 +10048,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
@@ -10763,7 +10814,7 @@
         "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (A2F) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+        "L'abonnement inclut 2 950 serveurs basés dans plus de 65 pays, la possibilité de connecter votre compte à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."

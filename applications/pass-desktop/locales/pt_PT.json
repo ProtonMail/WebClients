@@ -46,6 +46,9 @@
       "Add account": [
         "Adicionar uma conta"
       ],
+      "Add address": [
+        "Adicionar um endereço"
+      ],
       "Add current URL": [
         "Adicionar o URL atual"
       ],
@@ -331,6 +334,9 @@
       "Done": [
         "Feito"
       ],
+      "Download for Linux": [
+        "Transferir para Linux"
+      ],
       "Download for macOS": [
         "Transferir para macOS"
       ],
@@ -420,6 +426,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Como utilizar o ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignorar"
       ],
       "Import": [
         "Importar"
@@ -513,6 +522,9 @@
       ],
       "Move all items": [
         "Mover todos os itens"
+      ],
+      "Move folder": [
+        "Mover pasta"
       ],
       "Move to": [
         "Mover para"
@@ -928,8 +940,17 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Um aliás de e-mail funciona como um endereço de e-mail, mas reduz o spam e mantém o seu endereço de e-mail real e a sua identidade ocultos."
       ],
+      "Change these passwords immediately": [
+        "Altere estas palavras-passe imediatamente"
+      ],
       "Change your passwords": [
         "Alterar as suas palavras-passe"
+      ],
+      "Check if your passwords have been exposed": [
+        "Verifique se as suas palavras-passe foram comprometidas"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "A verificar ${ compromised.progress.completed } de ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Criar palavras-passe únicas"
@@ -1306,9 +1327,6 @@
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Erro ao atualizar a configuração do ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Failed updating monitor flag of the item": [
-        "Erro ao atualizar o indicador de monitorização do item"
       ],
       "Failed updating monitoring status for this email address": [
         "Erro ao atualizar o estado da monitorização para este endereço de e-mail"
@@ -1772,6 +1790,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Os tokens de acesso, utilizados em conjunto com o ${ passCliLink }, permitem-lhe automatizar CI/CD ou conceder ao seu agente de IA um acesso delimitado ao que necessita para executar o seu trabalho."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Adicione um método de pagamento, e assim, a sua subscrição continua quando o teste terminar."
+      ],
       "Add your custom email address to monitor:": [
         "Adicione o seu endereço de e-mail personalizado para o monitorizar:"
       ],
@@ -2037,7 +2058,7 @@
         "Introduza o endereço para o qual deseja enviar um e-mail."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduza o código de verificação. Dígito ${ digit }."
+        "Insira o código de verificação. Dígito ${ digit }."
       ],
       "Enter your extra password": [
         "Introduza a sua palavra-passe adicional"
@@ -2277,6 +2298,9 @@
       ],
       "Moving items": [
         "A mover itens"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Mover itens para outro cofre apagará as suas hiperligações seguras."
       ],
       "Moving items to trash": [
         "A mover os itens para o lixo"
@@ -2567,6 +2591,9 @@
       "Scan to download": [
         "Digitalize para transferir"
       ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Digitalise para transferir o ${ PASS_APP_NAME } para Android e iOS"
+      ],
       "Secure links": [
         "Ligações seguras"
       ],
@@ -2686,6 +2713,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "A palavra-passe adicional será requerida para utilizar o ${ PASS_APP_NAME }. Ela funciona como uma palavra-passe adicional acima da palavra-passe da ${ BRAND_NAME }."
+      ],
+      "The folder is already here": [
+        "A pasta já está aqui"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "${ totalIgnored } item não pôde ser importado:",
@@ -2995,7 +3025,7 @@
     },
     "Keyboard key": {
       "ENTER": [
-        "INTRODUZIR"
+        "INSERIR"
       ],
       "SHIFT": [
         "SHIFT"
@@ -3197,7 +3227,7 @@
         "Credencial de API"
       ],
       "API Key": [
-        "Chave API"
+        "Chave da API"
       ],
       "Application logs": [
         "Registos da aplicação"
@@ -3824,10 +3854,10 @@
         "Domínio principal e subdomínios (predefinição)"
       ],
       "Passkey": [
-        "Chave de acesso"
+        "Código de acesso"
       ],
       "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
-        "As chaves de acesso são uma alternativa fácil e segura às palavras-passe tradicionais, que previnem ataques de phishing e tornam a sua experiência online mais fluída. O ${ PASS_APP_NAME } suporta chaves de acesso em todas as plataformas."
+        "Os códigos de acesso são uma alternativa fácil e segura às palavras-passe tradicionais, que previnem ataques de ''phishing'' e tornam a sua experiência ''on-line'' mais fluída. O ${ PASS_APP_NAME } suporta códigos de acesso em todas as plataformas."
       ],
       "Passphrase": [
         "Frase-passe"
@@ -3971,7 +4001,7 @@
         "Partilha de palavra-passe segura"
       ],
       "Securely log in with passkeys": [
-        "Inicie sessão de forma segura com as chaves de acesso"
+        "Inicie a sessão em segurança com os códigos de acesso"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
         "Armazene, partilhe e inicie sessão automaticamente nas suas contas com o ${ PASS_APP_NAME }, utilizando encriptação de ponta a ponta, confiada por milhões de pessoas."
@@ -4541,7 +4571,7 @@
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "Adicionar uma chave secreta A2F"
+        "Adicionar uma chave secreta de 2FA"
       ],
       "Add hidden text": [
         "Adicionar texto oculto"
@@ -4556,7 +4586,7 @@
         "Adicionar uma chave privada"
       ],
       "Add public key": [
-        "Adicionar uma chave pública"
+        "Adicionar chave pública"
       ],
       "Add SSID": [
         "Adicionar SSID"
@@ -4939,6 +4969,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue in your browser": [
+        "Continuar no seu navegador"
+      ],
       "Create a vault": [
         "Criar um cofre"
       ],
@@ -5173,7 +5206,7 @@
         "Aproveite o seu período de teste gratuito"
       ],
       "Passkey": [
-        "Chave de acesso"
+        "Código de acesso"
       ],
       "Password Health": [
         "Estado das palavras-passe"
@@ -5338,6 +5371,9 @@
       ],
       "Update available": [
         "Actualização disponível"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Atualize para procurar por palavras-passe comprometidas "
       ],
       "URL matching": [
         "Correspondência de URL"
@@ -5704,6 +5740,9 @@
       ],
       "Verification code is required": [
         "O código de verificação é necessário."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Não é possível mover uma pasta para dentro da mesma ou para dentro das suas subpastas."
       ],
       "You have reached the limit of members who can access this item.": [
         "Atingiu o limite de membros que podem aceder a este item."

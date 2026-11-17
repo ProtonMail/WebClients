@@ -1034,9 +1034,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Obtenez de l'aide de ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Get in touch": [
-        "Nous contacter"
-      ],
       "Get limited-time offer": [
         "Profitez d'une offre à durée limitée"
       ],
@@ -1267,9 +1264,6 @@
       ],
       "Leave group": [
         "Quitter le groupe"
-      ],
-      "Let's talk": [
-        "Parlons-nous"
       ],
       "Load more": [
         "Charger plus"
@@ -1525,6 +1519,9 @@
       ],
       "Remove domain": [
         "Retirer le domaine"
+      ],
+      "Remove file": [
+        "Retirer le fichier"
       ],
       "Remove forward": [
         "Retirer le transfert"
@@ -7620,7 +7617,7 @@
         "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
-        "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membre",
+        "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membre.",
         "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membres"
       ],
       "Role assignment could not be completed for ${ failedCount } group": [
@@ -8731,6 +8728,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Une erreur s'est produite lors de l'enregistrement de votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
+      ],
+      "This security key is already registered to your account.": [
+        "Cette clé de sécurité est déjà enregistrée sur votre compte."
       ]
     },
     "fido2: Info": {
@@ -9942,7 +9945,7 @@
         "${ emailAddress } n'est pas valide."
       ],
       "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
-        "L'adresse ${ emailAddress } est utilisée pour se connecter à un autre compte ${ BRAND_NAME }. Nous sommes en train de simplifier la connexion, mais vous devez tout d'abord suivre quelques étapes."
+        "L'adresse ${ emailAddress } est utilisée pour se connecter à un autre compte ${ BRAND_NAME }. Nous allons simplifier la connexion, mais vous devez tout d'abord suivre quelques étapes."
       ],
       "${ emails.length } member added to the group": [
         "${ emails.length } membre ajouté au groupe",
@@ -12389,8 +12392,8 @@
       "Restore": [
         "Restauration"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "Consultez les périodes précédentes et exportez les données à des fins de reporting ou de facturation des clients."
+      "Review and export the data for reporting or client invoicing.": [
+        "Consultez et exportez les données à des fins de reporting ou de facturation des clients."
       ],
       "Right to Left": [
         "De droite à gauche"
@@ -12511,6 +12514,12 @@
       ],
       "Settings updated": [
         "Les paramètres ont été mis à jour."
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Partager les journaux d'erreurs avec ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Partager des données de performance des services et des statistiques d'utilisation avec ${ BRAND_NAME }"
       ],
       "Shared server country (${ countriesCount })": [
         "Pays avec serveur partagé (${ countriesCount })",
@@ -12768,7 +12777,7 @@
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
       ],
       "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
-        "Le processus a été interrompu pour le groupe ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur Continuer pour reprendre l'attribution des rôles.",
+        "Le processus a été interrompu pour le groupe ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur continuer pour reprendre l'attribution des rôles.",
         "Le processus a été interrompu pour les groupes ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur Continuer pour reprendre l'attribution des rôles."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
@@ -12818,6 +12827,9 @@
       ],
       "This file is too large to preview": [
         "Ce fichier est trop volumineux pour afficher un aperçu."
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Cette adresse Gmail est associée à un autre compte ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } et autres). Nous travaillons à rendre cette connexion plus fluide, mais pour l'instant, vous devrez suivre quelques étapes."
       ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Ce lien d'invitation est arrivé à expiration. Contactez l'administrateur pour en demander l'accès."
@@ -12969,8 +12981,8 @@
       "To continue to ${ product }": [
         "Pour continuer vers ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Afin d'améliorer continuellement nos services, nous collectons parfois des données pour contrôler le bon fonctionnement de nos applications. Ces informations ne sont pas partagées avec des services tiers."
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Afin d'améliorer continuellement nos services, nous collectons parfois des données pour surveiller le bon fonctionnement de nos applications. **Ces informations ne sont pas partagées avec des services tiers.**"
       ],
       "To create your first user group, go to": [
         "Pour créer votre premier groupe d'utilisateurs, dirigez-vous vers"
@@ -14876,6 +14888,9 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "Facturé ${ priceYearly } tous les 12 mois."
       ],
+      "Billed average": [
+        "Moyenne de facturation"
+      ],
       "Billed monthly.": [
         "Facturé mensuellement."
       ],
@@ -14975,8 +14990,8 @@
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
       ],
-      "Collect usage diagnostics": [
-        "Recueillir les diagnostics d'utilisation"
+      "Collect anonymous usage diagnostics": [
+        "Recueillir les diagnostics d'utilisation anonymes"
       ],
       "Color": [
         "Couleur"
@@ -15609,9 +15624,6 @@
       "Monthly": [
         "Mensuel"
       ],
-      "Monthly average": [
-        "Moyenne mensuelle"
-      ],
       "More payment methods": [
         "Plus de moyens de paiement"
       ],
@@ -15782,9 +15794,6 @@
       ],
       "Payment terms": [
         "Conditions de paiement"
-      ],
-      "Peak allocated licenses": [
-        "Nombre maximal de licences attribuées"
       ],
       "Pending": [
         "En attente"
@@ -18820,7 +18829,7 @@
     },
     "ngc_access_banner: action": {
       "Try it now": [
-        "Essayez-la maintenant"
+        "Essayez-le maintenant"
       ]
     },
     "ngc_access_banner: info": {
@@ -20241,12 +20250,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (hors taxe)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ne peut pas être combiné avec ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } est uniquement disponible pour les abonnements professionnels."
-      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20259,17 +20262,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Montant dû après la version d'essai le ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Une organisation est nécessaire pour cet abonnement."
-      ],
       "Billing Country": [
         "Pays de facturation"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Les comptes Born Private ne peuvent pas être achetés avec un abonnement actif."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Acheter des crédits nécessite un achat séparé."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "En effectuant ce changement, vous acceptez nos ${ termsLink }."
@@ -20319,9 +20313,6 @@
       "Offer unavailable": [
         "Offre non disponible"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Seulement un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } peut être acheté."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Payer avec ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -20331,29 +20322,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "Le changement de plan est incompatible pour les raisons suivantes :"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Veuillez clôturer les comptes de portefeuille supplémentaires avant de changer d'abonnement."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Veuillez clôturer les portefeuilles supplémentaires avant de changer votre abonnement."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
       "Processing payment": [
         "Traitement du paiement"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Le tarif du renouvellement est susceptible de changer en accord avec ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renouvellement au prix de ${ renewPriceStr } avec possibilité de résiliation à tout moment."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Les accès à Scribe ne peuvent dépasser le nombre de membres."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Cette offre n'est pas disponible avec votre abonnement actuel."
@@ -20367,24 +20346,9 @@
       "terms and conditions": [
         "conditions générales d'utilisation"
       ],
-      "The Born Private initiative requires a donation.": [
-        "L'initiative Born Private nécessite un don."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "La réduction est valable pour ${ renewalsWithCoupon } renouvellement.",
         "La réduction est valable pour ${ renewalsWithCoupon } renouvellements."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "L'abonnement sélectionné n'offre pas assez d'adresses pour votre compte."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "L'abonnement sélectionné n'offre pas assez de domaines pour votre compte."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "L'abonnement sélectionné n'offre pas assez de membres pour votre compte."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "L'abonnement sélectionné n'offre pas assez d'espace de stockage pour votre compte."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Le tarif exceptionnellement réduit est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment.",
@@ -20418,38 +20382,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Cette action étend l'abonnement existant. Vous ne serez facturé que pour les nouveaux add-ons complémentaires et le temps restant du cycle de facturation actuel. La date de renouvellement de votre abonnement ne sera pas modifiée."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Ce serveur dédié est assigné à une passerelle et ne peut pas être modifié."
-      ],
       "This offer is not available with your current plan.": [
         "Cette offre n'est pas disponible avec votre abonnement actuel."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
       ],
-      "This plan doesn’t support the members on your account.": [
-        "Cet abonnement ne prend pas en charge les membres sur votre compte."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Les abonnements en version d'essai ne prennent pas en charge l'accès à ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Les abonnements en version d'essai ne prennent pas en charge les noms de domaine personnalisés."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Les abonnements en version d'essai ne prennent pas en charge les IP dédiées."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Les abonnements en version d'essai ne prennent pas en charge l'accès à Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Les versions d'essai ne prennent pas en charge ce nombre de membres."
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -20463,12 +20406,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Vous avez déjà un abonnement. Vous pouvez modifier votre abonnement sur ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Vous possédez déjà ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Vous possédez déjà un compte Born Private."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Un montant de ${ amountToCharge } sera débité selon votre méthode de paiement sélectionnée."
       ],
@@ -20477,9 +20414,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
@@ -22927,7 +22861,7 @@
         "Créer un compte"
       ],
       "Creating your account": [
-        "Création de votre compte"
+        "Création de votre compte en cours"
       ],
       "Custom email domain": [
         "Domaine de messagerie personnalisé"
@@ -25068,7 +25002,7 @@
         "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (A2F) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+        "L'abonnement inclut 2 950 serveurs basés dans plus de 65 pays, la possibilité de connecter votre compte à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
@@ -25580,6 +25514,9 @@
       ],
       "Billing cycle": [
         "Cycle de facturation"
+      ],
+      "Billing periods": [
+        "Périodes de facturation"
       ],
       "Black Friday": [
         "Black Friday"
@@ -26340,6 +26277,9 @@
       "How did you find out about us?": [
         "Comment avez-vous entendu parler de nous ?"
       ],
+      "How it works": [
+        "Comment ça marche"
+      ],
       "How to choose a good logo": [
         "Comment choisir un bon logo ?"
       ],
@@ -26503,7 +26443,7 @@
       "Monthly": [
         "Mensuel"
       ],
-      "Monthly Costs": [
+      "Monthly cost": [
         "Coût mensuel"
       ],
       "Multi-user support": [
@@ -26677,17 +26617,11 @@
       "Previous": [
         "Précédent"
       ],
-      "Previous billing periods": [
-        "Périodes de facturation précédentes"
-      ],
       "Priority support:": [
         "Assistance prioritaire :"
       ],
       "Privacy": [
         "Confidentialité"
-      ],
-      "Privacy and data collection": [
-        "Vie privée et collecte de données"
       ],
       "Problem processing your payment": [
         "Un problème est survenu pendant le traitement de votre paiement"
@@ -26972,7 +26906,7 @@
         "Connecté au compte membre"
       ],
       "Signed-in reset": [
-        "Réinitialisation lorsque connecté"
+        "Réinitialiser la connexion"
       ],
       "Simplify email distribution": [
         "Simplifiez la distribution des messages"
@@ -27168,7 +27102,7 @@
         "Mise à niveau vers ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Passez à la version supérieure pour conserver vos avantages premium."
+        "Changer d'abonnement pour conserver vos avantages premium."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Améliorez la protection de votre réseau avec des serveurs dédiés"

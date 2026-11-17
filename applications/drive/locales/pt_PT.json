@@ -487,9 +487,6 @@
       "Get ${ planOrAppName }": [
         "Obtenha o ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Entrar em contacto"
-      ],
       "Get mobile and desktop apps": [
         "Obter aplicações móveis e de computador"
       ],
@@ -606,9 +603,6 @@
       ],
       "Leave": [
         "Deixar"
-      ],
-      "Let's talk": [
-        "Vamos conversar"
       ],
       "List layout": [
         "Esquema em lista"
@@ -1042,6 +1036,9 @@
       "Skip verification": [
         "Saltar verificação"
       ],
+      "Special Offer": [
+        "Oferta Especial"
+      ],
       "Start": [
         "Iniciar"
       ],
@@ -1429,6 +1426,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Versão premium do gestor de palavras-passe"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
       ]
     },
     "BF2024: Deal details": {
@@ -4838,6 +4840,9 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
+      "${ importedSize } imported": [
+        "${ importedSize } importado"
+      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } convite pendente",
         "${ invitationsCount } convites pendentes"
@@ -4960,7 +4965,7 @@
         "1 cofre por utilizador"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de reembolso em 30 dias: cancele até 30 dias depois da compra e contacte o nosso ${ customerSupportLink } para solicitar um reembolso."
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
         "Está disponível uma nova versão do ${ DRIVE_APP_NAME }. Por favor, recarregue para continuar a utilizar a procura."
@@ -5338,7 +5343,7 @@
         "Introduza o código de verificação que foi enviado para ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduza o código de verificação. Dígito ${ digit }."
+        "Insira o código de verificação. Dígito ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduza a sua palavra-passe (como administrador da organização)."
@@ -5434,14 +5439,23 @@
       "Import in progress": [
         "Importação em curso"
       ],
+      "Import interrupted": [
+        "Importação interrompida"
+      ],
       "Import mailbox": [
         "Importar caixa de correio"
+      ],
+      "Import paused": [
+        "Importação pausada"
       ],
       "Import your files and folders": [
         "Importe os seu ficheiros e pastas"
       ],
       "Important note": [
         "Nota importante:"
+      ],
+      "Importing from Google Drive…": [
+        "A importar de Google Drive…"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando os seus dados de ${ fromEmail } para ${ toEmail }."
@@ -5608,6 +5622,9 @@
       ],
       "More": [
         "Mais"
+      ],
+      "More storage needed": [
+        "É necessário mais armazenamento"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "A maioria das redes WiFi públicas são seguras, mas algumas não têm segurança, expondo-o a ciberameaças. Uma VPN encripta o seu tráfego, mantendo-o protegido."
@@ -5867,6 +5884,9 @@
       ],
       "RECOMMENDED": [
         "RECOMENDADO"
+      ],
+      "Reconnect Google Drive": [
+        "Religar Google Drive"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informação de recuperação ficará neste aparelho a não ser que escolha apagá-lo."
@@ -6390,6 +6410,9 @@
       ],
       "You can now return to the application to continue": [
         "Pode agora voltar à aplicação e continuar."
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Pode abrir esta pasta quando a importação tiver terminada. Até agora, nós importamos ${ importedSize }. Nós iremos envia-lhe uma mensagem quando esta tiver terminado."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Pode ativar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
@@ -9352,7 +9375,12 @@
         "É necessário privatizar todos os utilizadores antes de gerar uma nova chave de organização."
       ],
       "You need access to the organization key to perform this operation.": [
-        "Precisa de acesso à chave da organização para executar esta operação."
+        "Precisa de acesso ao código da organização para executar esta operação."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Conta Bancária"
       ]
     },
     "Payment method option": {
@@ -9515,9 +9543,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Já possui uma subscrição deste plano. Pode alterar a sua subscrição em ${ subscriptionPlatform }."
-      ],
-      "You already own a Born Private account.": [
-        "Já possui uma conta Born Private."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redirecionado para o PayPal para verificar o pagamento."
@@ -11073,6 +11098,9 @@
       "Recovery has started": [
         "A recuperação foi iniciada"
       ],
+      "Resuming import": [
+        "Retomar a importação"
+      ],
       "Secure link copied": [
         "Ligação segura copiada"
       ],
@@ -12185,6 +12213,9 @@
       "Your import is finished!": [
         "A sua importação está concluída!"
       ],
+      "Your import is in progress": [
+        "A sua importação está em progresso"
+      ],
       "Your plan": [
         "O seu plano"
       ],
@@ -12377,7 +12408,7 @@
         "A ativação do membro é incompleta."
       ],
       "Organization key must be activated to request data access": [
-        "A chave da organização deve ser ativada para solicitar acesso aos dados."
+        "O código da organização deve ser ativado para solicitar acesso aos dados"
       ],
       "The user must have an address to request data access": [
         "O utilizador deve ter um endereço para solicitar acesso aos dados."
@@ -12389,6 +12420,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Este utilizador obtém direitos de administrador na próxima vez que se autenticar."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Poderá atribuir cargos assim que o utilizador aceitar o convite."
       ]

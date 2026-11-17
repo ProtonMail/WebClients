@@ -72,6 +72,9 @@
       "Bulk user import": [
         "Massenimport von Benutzern"
       ],
+      "Business referral link": [
+        "Empfehlungslink für Unternehmen"
+      ],
       "Cancel plan": [
         "Abonnement kündigen"
       ],
@@ -532,6 +535,9 @@
       "Continue to sign in": [
         "Weiter zur Anmeldung"
       ],
+      "Continue with Bitcoin": [
+        "Mit Bitcoin fortfahren"
+      ],
       "Continue with Free": [
         "Weiter mit Free"
       ],
@@ -625,6 +631,12 @@
       "Delete policy": [
         "Richtlinie löschen"
       ],
+      "Delete security key ${ keyName }": [
+        "Sicherheitsschlüssel ${ keyName } löschen"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Server ${ serverLocation } löschen"
+      ],
       "Delete user": [
         "Benutzer löschen"
       ],
@@ -697,6 +709,9 @@
       "Download recovery file": [
         "Wiederherstellungsdatei herunterladen"
       ],
+      "Download recovery kit": [
+        "Wiederherstellungs-Kit herunterladen"
+      ],
       "Download updated file": [
         "Aktualisierte Datei herunterladen"
       ],
@@ -744,6 +759,9 @@
       ],
       "Edit phone number": [
         "Telefonnummer bearbeiten"
+      ],
+      "Edit security key ${ keyName }": [
+        "Sicherheitsschlüssel ${ keyName } bearbeiten"
       ],
       "Edit servers": [
         "Server bearbeiten"
@@ -822,9 +840,6 @@
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Hol dir Hilfe von ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Get in touch": [
-        "Kontakt aufnehmen"
       ],
       "Get limited-time offer": [
         "Zeitlich begrenztes Angebot nutzen"
@@ -963,9 +978,6 @@
       ],
       "Learn more": [
         "Mehr erfahren"
-      ],
-      "Let's talk": [
-        "Lass uns reden"
       ],
       "Load more": [
         "Weitere laden"
@@ -1156,11 +1168,17 @@
       "Remove domain": [
         "Domain entfernen"
       ],
+      "Remove file": [
+        "Datei entfernen"
+      ],
       "Remove from favorites": [
         "Von Favoriten entfernen"
       ],
       "Remove gift code": [
         "Geschenkgutschein entfernen"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Vorläufigen Server ${ serverLocation } entfernen"
       ],
       "Removed ${ memberName } as group owner": [
         "${ memberName } als Gruppeneigentümer entfernt"
@@ -6289,6 +6307,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Etwas ist beim Registrieren deines Sicherheitsschlüssels schief gelaufen. Bitte versuche es erneut."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
+      ],
+      "This security key is already registered to your account.": [
+        "Dieser Sicherheitsschlüssel ist bereits in deinem Konto registriert."
       ]
     },
     "fido2: Info": {
@@ -9312,8 +9336,8 @@
       "To continue to ${ product }": [
         "Weiter zu ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Um unsere Dienste kontinuierlich zu verbessern, sammeln wir manchmal Daten, um das ordnungsgemäße Funktionieren unserer Anwendungen zu überwachen. Diese Informationen werden nicht an Dienste von Drittanbietern weitergegeben."
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Um unsere Dienste kontinuierlich zu verbessern, werden gelegentlich Daten erfasst, um das ordnungsgemäße Funktionieren der Anwendungen zu überwachen. **Diese Informationen werden nicht an Drittanbieter weitergegeben.**"
       ],
       "To create your first user group, go to": [
         "Um deine erste Benutzergruppe zu erstellen, gehe zu"
@@ -9950,6 +9974,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
       ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Dein Konto wurde erstellt, aber die Einrichtung deines Abonnements konnte nicht abgeschlossen werden."
+      ],
       "Your account was successfully updated with this promotion": [
         "Dein Konto wurde erfolgreich durch diese Werbeaktion aktualisiert"
       ],
@@ -10445,8 +10472,8 @@
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
       ],
-      "Collect usage diagnostics": [
-        "Nutzungsdiagnosedaten sammeln"
+      "Collect anonymous usage diagnostics": [
+        "Anonyme Nutzungsdaten erfassen"
       ],
       "Colors": [
         "Farben"
@@ -11066,6 +11093,9 @@
       ],
       "Server name": [
         "Servername"
+      ],
+      "Share your invite link": [
+        "Teile deinen Einladungslink"
       ],
       "Share your referral link": [
         "Teile deinen Empfehlungslink"
@@ -14077,12 +14107,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (zzgl. MwSt.)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kann nicht mit ${ PLAN_NAMES[PLANS.PASS] } kombiniert werden."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ist nur in Unternehmensabonnements verfügbar."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate } % Steuern: ${ taxAmountElement }"
       ],
@@ -14092,17 +14116,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Betrag fällig nach der Testversion am ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Für dieses Abonnement ist eine Organisation erforderlich."
-      ],
       "Billing Country": [
         "Rechnungsland"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "„Born Private“-Konten können während eines aktiven Abonnements nicht erworben werden."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Der Erwerb von Guthaben erfordert einen separaten Kauf."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Mit dem Wechsel erklärst du dich mit unseren ${ termsLink } einverstanden."
@@ -14146,9 +14161,6 @@
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Es kann nur ein ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } erworben werden."
-      ],
       "Paid from your account credit.": [
         "Die Zahlung erfolgt über dein Kontoguthaben."
       ],
@@ -14161,29 +14173,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "Der Tarifwechsel ist aus folgenden Gründen nicht möglich:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Bitte schließe alle zusätzlichen Wallet-Konten, bevor du dein Abonnement wechselst."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Bitte schließe alle zusätzlichen Wallets, bevor du dein Abonnement wechselst."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
       ],
       "Processing payment": [
         "Zahlungsabwicklung"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Die Anzahl der Plätze bei Proton Meet muss mit der Anzahl der Teilnehmer übereinstimmen."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Die Preise für Verlängerungen können sich gemäß ${ termsAndConditionsLink } ändern."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Die Anzahl der Scribe-Lizenzen darf die Anzahl der Mitglieder nicht übersteigen."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
@@ -14197,24 +14197,9 @@
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Für die Initiative „Born Private“ ist eine Spende erforderlich."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerung gültig.",
         "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerungen gültig."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Das ausgewählte Abonnement bietet eine zu geringe Anzahl an Adressen für dein Konto."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Das ausgewählte Abonnement bietet nicht genügend Domains für dein Konto."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Der ausgewählte Tarif bietet dir eine zu geringe Anzahl an Mitgliedern für dein Konto."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Das ausgewählte Abonnement bietet nicht genügend Speicherplatz für dein Konto."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis ist für ${ couponRedemptions } Monat gültig. Danach wird er automatisch zum Preis von ${ renewPriceStr } pro Monat verlängert. Du kannst jederzeit kündigen.",
@@ -14248,41 +14233,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Diese Aktion erweitert dein bestehendes Abonnement. Dir werden nur die neuen Ergänzungen für die verbleibende Zeit des aktuellen Abrechnungszeitraums in Rechnung gestellt. Das Verlängerungsdatum deines Abonnements wird nicht geändert."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Dieser dedizierte Server ist einem Gateway zugewiesen und kann nicht geändert werden."
-      ],
       "This offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement nicht verfügbar."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Diese Zahlungsmethode wird dein neuer Standard für alle zukünftigen Verlängerungen."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Dieser Tarif unterstützt für dein Konto keine Verwaltungsfunktionen."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Dieses Abonnement bietet keine Unterstützung für die Mitglieder deines Kontos."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Dieses Abonnement kann derzeit nicht abgeschlossen werden. Bitte versuche es erneut."
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Testversionen unterstützen keine ${ LUMO_SHORT_APP_NAME }-Lizenzen."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Testversionen unterstützen keine eigenen Domains."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Testversionen unterstützen keine dedizierten IP-Adressen."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Testversionen unterstützen keine Scribe-Lizenzen."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Testversionen unterstützen nicht so viele Mitglieder."
       ],
       "VAT number": [
         "Umsatzsteuernummer"
@@ -14296,12 +14257,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du hast dieses Abonnement bereits. Du kannst dein Abonnement auf ${ subscriptionPlatform } ändern."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du besitzt bereits ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Du besitzt bereits ein „Born Private“-Konto."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du wirst mit ${ amountToCharge } von der von dir gewählten Zahlungsmethode belastet."
       ],
@@ -14310,9 +14265,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Dein Konto ist zu alt für die „Born Private“-Initiative."
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
@@ -14536,6 +14488,9 @@
       ],
       "Enter a name": [
         "Name eingeben"
+      ],
+      "Enter email address, name, or contact group": [
+        "Gib eine E-Mail-Adresse, einen Namen oder eine Kontaktgruppe ein"
       ],
       "example@domain.com": [
         "name@beispiel.de"
@@ -15024,6 +14979,9 @@
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
         "Ich nutze ${ BRAND_NAME } schon seit einiger Zeit und dachte, es könnte dir gefallen. Es ist eine Kombination aus sicherer E-Mail, Cloud-Speicher, Passwort-Manager und VPN, die deine Privatsphäre schützt. Melde dich über diesen Link an, um ${ refereeRewardAmount } Rabatt auf dein nächstes Abonnement zu erhalten: ${ referralLink }"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Ich nutze ${ BRAND_NAME } bereits und dachte, das könnte auch dein Team interessieren. Es handelt sich um eine Kombination aus sicherer E-Mail, Cloud-Speicher, Passwort-Manager und VPN, die deine Privatsphäre schützt. Melde dich über diesen Link an, um ${ refereeRewardAmount } Rabatt auf dein erstes Jahr bei ${ BRAND_NAME } for Business zu erhalten: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Wenn du vorher kündigst, wirst du auf ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } zurückgestuft, wenn die Testversion endet. Wenn du nicht kündigst, beginnt dein vollständiges Abonnement und du erhältst **${ referrerRewardAmount }** Guthaben."
@@ -18163,6 +18121,9 @@
       "Block trackers and malware": [
         "Tracker und Schadsoftware blockieren"
       ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Nimm ${ BRAND_NAME } mit zur Arbeit. Verdiene dir Guthaben."
+      ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Bringe dein Gmail nach ${ MAIL_APP_NAME }"
       ],
@@ -18355,6 +18316,9 @@
       ],
       "Dashboard": [
         "Dashboard"
+      ],
+      "Data collection": [
+        "Datensammlung"
       ],
       "Data recovery": [
         "Datenwiederherstellung"
@@ -18854,9 +18818,6 @@
       "Previous": [
         "Zurück"
       ],
-      "Privacy and data collection": [
-        "Privatsphäre und Datenerfassung"
-      ],
       "Processing...": [
         "Wird verarbeitet..."
       ],
@@ -18892,6 +18853,9 @@
       ],
       "Refer a friend": [
         "Wirb einen Freund"
+      ],
+      "Refer businesses": [
+        "Unternehmen weiterempfehlen"
       ],
       "Reject device?": [
         "Gerät verweigern?"

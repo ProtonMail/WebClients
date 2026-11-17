@@ -397,6 +397,9 @@
       "Display previous": [
         "Afișare anterioara"
       ],
+      "Don't show this offer again": [
+        "Nu mai afișa această ofertă"
+      ],
       "Done": [
         "Gata"
       ],
@@ -510,9 +513,6 @@
       ],
       "Get ${ planOrAppName }": [
         "Luați ${ planOrAppName }"
-      ],
-      "Get in touch": [
-        "Contactați-ne"
       ],
       "Get mobile and desktop apps": [
         "Aplicații mobile și desktop"
@@ -642,9 +642,6 @@
       ],
       "Leave album": [
         "Părăsire album"
-      ],
-      "Let's talk": [
-        "Să discutăm"
       ],
       "List layout": [
         "Aranjare în listă"
@@ -1098,6 +1095,9 @@
       ],
       "Skip verification": [
         "Ignorare verificare"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
       ],
       "Start": [
         "Pornire"
@@ -4601,6 +4601,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
       ]
     },
     "fido2: Info": {
@@ -5145,6 +5148,9 @@
         "Calendare îmbinate: ${ calendarsToBeMergedCount }",
         "Calendare îmbinate: ${ calendarsToBeMergedCount }"
       ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (expeditor neverificat)"
+      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } din ${ items.length } transferuri finalizate"
       ],
@@ -5212,6 +5218,9 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "Marca ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "${ importedSize } imported": [
+        "Importate: ${ importedSize }"
       ],
       "${ invitationsCount } pending invitation": [
         "Invitații în așteptare: ${ invitationsCount }",
@@ -5680,6 +5689,9 @@
       "Details": [
         "Detalii"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Descoperiți funcțiile noi deblocate și începeți să le folosiți chiar acum!"
       ],
@@ -5918,8 +5930,14 @@
       "Import in progress": [
         "Importare în derulare"
       ],
+      "Import interrupted": [
+        "Importare întreruptă."
+      ],
       "Import mailbox": [
         "Importare mesaje"
+      ],
+      "Import paused": [
+        "Importare suspendată."
       ],
       "Import your files and folders": [
         "Importați-vă folderele și fișierele"
@@ -5929,6 +5947,9 @@
       ],
       "Important note": [
         "Notă importantă"
+      ],
+      "Importing from Google Drive…": [
+        "Se importă din Google Drive…"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
@@ -6129,6 +6150,9 @@
       ],
       "More": [
         "Mai mult"
+      ],
+      "More storage needed": [
+        "Este necesar mai mult spațiu de stocare."
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Majoritatea rețelelor Wi-Fi publice sunt sigure, dar unele nu au securitate, expunându-vă la amenințări cibernetice. Un VPN vă criptează traficul, păstrându-vă protecția."
@@ -6427,6 +6451,9 @@
       ],
       "RECOMMENDED": [
         "RECOMANDAT"
+      ],
+      "Reconnect Google Drive": [
+        "Reconectare Google Drive."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
@@ -7052,6 +7079,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Utilizați mai mult spațiu de stocare decât este inclus într-un plan ${ downgradedPlanName }. Ștergeți din date pentru a putea retrograda contul."
       ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Puteți anula importarea și în ${ easySwitchSettingsLink }."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Puteți și să îmbinați calendarele importate cu calendarele ${ BRAND_NAME } existente."
       ],
@@ -7076,6 +7106,9 @@
       ],
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Puteți deschide acest folder după finalizarea importării. Până acum, s-a importat ${ importedSize }. Veți primi un e-mail când procesul va fi încheiat."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
@@ -7214,6 +7247,9 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Importarea este blocată. Treceți la un plan superior acum pentru a transfera și restul fișierelor."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Importarea este întreruptă deoarece s-a pierdut accesul la contul Google. Reconectași-vă pentru a transfera și restul fișierelor."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
@@ -10410,12 +10446,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (fără TVA)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nu poate fi combinat cu ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } este disponibil doar pentru planurile de afaceri."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% TVA: ${ taxAmountElement }"
       ],
@@ -10425,17 +10455,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Suma datorată după evaluare la ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Pentru acest plan este necesară o organizație."
-      ],
       "Billing Country": [
         "Țara de facturare"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Conturile „Born Private” nu pot fi achiziționate dacă există un abonament activ."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Achiziționarea de credite necesită o tranzacție separată."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Dacă vă comutați, sunteți de acord cu acești ${ termsLink }."
@@ -10479,9 +10500,6 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Poate fi achiziționat doar un singur plan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Plata cu ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -10491,26 +10509,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "Schimbarea planului este incompatibilă din următoarele motive:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Închideți conturile suplimentare de portofele înainte de a vă schimba planul."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Închideți portofelele suplimentare înainte de a vă schimba planul."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Numărul de licențe Proton Meet trebuie să corespundă numărului de membri."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Prețul de reînnoire poate fi modificat în conformitate cu informațiile din ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Numărul licențelor pentru Scribe nu îl poate depăși pe cel al numărului de membri."
       ],
       "Tax ${ rate }%": [
         "TVA ${ rate }%"
@@ -10521,25 +10527,10 @@
       "terms and conditions": [
         "termeni și condiții"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Inițiativa „Born Private” necesită o donație."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Planul selectat nu oferă suficiente adrese pentru contul pe care îl dețineți."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Planul selectat nu oferă suficiente domenii pentru contul deținut."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Planul selectat nu oferă suficiente licențe pentru membri din contul pe care îl dețineți."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Planul selectat nu oferă suficient spațiu de stocare pentru contul deținut."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
@@ -10575,41 +10566,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Acest server dedicat este alocat unei porți de acces și nu poate fi modificat."
-      ],
       "This offer is not available with your current plan.": [
         "Această ofertă nu este disponibilă cu planul actual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Acest plan nu acceptă funcțiile gestionate din contul deținut."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Acest plan nu oferă suport pentru membrii din contul deținut."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Această abonare nu poate fi finalizată momentan. Reîncercați."
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Abonamentele de probare nu acceptă licențe pentru ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Planurile de probare nu suportă domenii personale."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Abonamentele de probare nu oferă suport pentru adrese IP dedicate."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Acest plan nu suportă licențe pentru Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Abonamentele de probare nu suportă un număr atât de mare de membri."
       ],
       "VAT number": [
         "Valoare TVA"
@@ -10623,20 +10590,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Aveți deja un abonament la acest plan. Vă puteți schimba abonamentul pe ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Deja dețineți planul ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
-      ],
-      "You already own a Born Private account.": [
-        "Deja dețineți un cont „Born Private”."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă nouă."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Contul este prea vechi pentru inițiativa „Born Private”."
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
@@ -12296,6 +12254,9 @@
       "Recovery has started": [
         "A început recuperarea"
       ],
+      "Resuming import": [
+        "Reluare importare"
+      ],
       "Secure link copied": [
         "Legătura web securizată a fost copiată."
       ],
@@ -13151,6 +13112,9 @@
       "Recommended actions": [
         "Acțiuni recomandate"
       ],
+      "Reconnect to finish your import": [
+        "Reconectați-vă pentru a finaliza importarea"
+      ],
       "Reconnect your account": [
         "Reconectați-vă contul"
       ],
@@ -13497,6 +13461,9 @@
       ],
       "Your import is finished!": [
         "Importarea s-a finalizat!"
+      ],
+      "Your import is in progress": [
+        "Importarea este în desfășurare."
       ],
       "Your plan": [
         "Plan actual"

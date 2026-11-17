@@ -29,6 +29,12 @@
       "Are you sure you want to delete all conversations?": [
         "Вы уверены, что хотите удалить все беседы?"
       ],
+      "Are you sure you want to delete this ${ count } conversation?": [
+        "Вы уверены, что хотите удалить ${ count } беседу?",
+        "Вы уверены, что хотите удалить эти ${ count } беседы?",
+        "Вы уверены, что хотите удалить эти ${ count } бесед?",
+        "Вы уверены, что хотите удалить эти ${ count } беседы?"
+      ],
       "Are you sure you want to delete this conversation?": [
         "Вы действительно хотите удалить эту цепочку писем?"
       ],
@@ -161,9 +167,6 @@
       "Get ${ planOrAppName }": [
         "Получить ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Связаться с нами"
-      ],
       "Get the apps": [
         "Получить приложения"
       ],
@@ -208,9 +211,6 @@
       ],
       "Keep my subscription": [
         "Сохранить подписку"
-      ],
-      "Let's talk": [
-        "Свяжитесь с нами"
       ],
       "Manage advanced account protections": [
         "Управление расширенной защитой аккаунта"
@@ -1027,6 +1027,9 @@
       "Edit memory": [
         "Изменить воспоминание"
       ],
+      "Export CSV": [
+        "Экспорт в CSV"
+      ],
       "Generate from chats": [
         "Создать на основе чатов"
       ],
@@ -1201,7 +1204,7 @@
         "Благодаря шифрованию с нулевым доступом, ваши сохраненные беседы могут быть расшифрованы и прочитаны только на вашем устройстве. Ни ${ BRAND_NAME }, ни кто-либо другой не может их видеть."
       ],
       "Unlimited Custom Lumos": [
-        "Неограниченное количество пользовательских Lumos"
+        "Неограниченное количество пользовательских Lumo"
       ],
       "Unlimited Projects": [
         "Неограниченное количество проектов"
@@ -1299,6 +1302,17 @@
         "Вчера"
       ]
     },
+    "collider_2025: Date range": {
+      "Last 30 days": [
+        "Последние 30 дней"
+      ],
+      "Last 7 days": [
+        "Последние 7 дней"
+      ],
+      "Last 90 days": [
+        "Последние 90 дней"
+      ]
+    },
     "collider_2025: Description": {
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } обращается к вашим сохраненным воспоминаниям для персонализации ответов: стиля общения, уровня компетенции, регулярно используемых инструментов и долгосрочных проектов."
@@ -1306,11 +1320,23 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Добавляйте собственные воспоминания, изменяйте автоматически созданные записи или очищайте всю историю в любое время. Измененные вами автоматически созданные воспоминания переносятся в категорию ваших собственных."
       ],
+      "Adjust the size of text across the app": [
+        "Настройте размер текста во всем приложении"
+      ],
+      "Choose the language you speak when using dictation.": [
+        "Выберите язык, на котором вы будете диктовать."
+      ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Создайте ключ для интеграции ${ LUMO_SHORT_APP_NAME } со своими скриптами и инструментами."
       ],
+      "Fully open, Swiss-made model for lighter tasks": [
+        "Полностью открытая швейцарская модель для лёгких задач"
+      ],
       "High-performance model for complex tasks": [
         "Высокопроизводительная модель для сложных задач"
+      ],
+      "Internal preview of an upcoming model": [
+        "Внутренний предпросмотр будущей модели"
       ],
       "Keep it safe — it won't be shown again": [
         "Сохраните его в надежном месте — он больше не будет показан"
@@ -1345,11 +1371,14 @@
       "Show animated background on the home screen": [
         "Показывать анимированный фон на главном экране"
       ],
+      "Show chats from your projects alongside other chats in the Recent section of the sidebar.": [
+        "Показывать чаты из проектов вместе с другими чатами в разделе Недавние на боковой панели."
+      ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Войдите, чтобы получить доступ к аккаунту и разблокировать больше функций. Ещё нет аккаунта? ${ createLink }"
       ],
       "Switch between light and dark mode": [
-        "Переключение между светлым и тёмным режимами"
+        "Переключение между светлым и тёмным режимом"
       ],
       "Temporarily unavailable due to high load": [
         "Временно недоступно из-за высокой нагрузки"
@@ -1837,6 +1866,9 @@
       "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
         "Принять сообщение клиента, классифицировать срочность и тему с помощью ${ LUMO_SHORT_APP_NAME }, определить необходимость передачи вопроса на следующий уровень, а затем составить черновик ответа или передать задачу специалисту."
       ],
+      "Last 30 days": [
+        "Последние 30 дней"
+      ],
       "Load two versions of a policy, ask ${ LUMO_SHORT_APP_NAME } to list differences and risks, then produce a short recommendation for which version to adopt.": [
         "Загрузите две версии политики, попросите ${ LUMO_SHORT_APP_NAME } перечислить различия и риски, а затем составьте краткую рекомендацию о том, какую версию принять."
       ],
@@ -1878,6 +1910,9 @@
       ],
       "No usage yet": [
         "Пока не использовался"
+      ],
+      "Notes:": [
+        "Заметки:"
       ],
       "Over capacity": [
         "Превышен лимит"
@@ -1951,6 +1986,9 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Войдите или создайте аккаунт, чтобы просматривать и добавлять файлы из вашего ${ DRIVE_APP_NAME } (зашифрованного сквозным методом облачного хранилища) в базу знаний чата."
       ],
+      "Sign in to change this later in Settings → General → Dictation language.": [
+        "Войдите, чтобы изменить это позже: Настройки → Общее → Язык диктовки."
+      ],
       "Sign in to create and manage API keys for ${ LUMO_SHORT_APP_NAME }.": [
         "Войдите, чтобы создавать API-ключи для ${ LUMO_SHORT_APP_NAME } и управлять ими."
       ],
@@ -1968,6 +2006,9 @@
       ],
       "Table view": [
         "Табличный вид"
+      ],
+      "Telling us which language you speak helps dictation transcribe your voice accurately.": [
+        "Укажите язык, на котором вы говорите, чтобы диктовка точнее распознавала вашу речь."
       ],
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "API ${ LUMO_SHORT_APP_NAME } предоставляет вам программный доступ к языковым моделям со встроенной архитектурой конфиденциальности от ${ BRAND_NAME }. Никакого обучения моделей на ваших запросах. Никакого отслеживания."
@@ -2034,6 +2075,9 @@
       ],
       "You are about to visit an external website:": [
         "Вы собираетесь посетить внешний веб-сайт:"
+      ],
+      "You can change this at any time in Settings → General → Dictation language.": [
+        "Вы можете изменить это в любое время в разделе Настройки → Общее → Язык диктовки."
       ],
       "You've reached your image limit for this period.": [
         "Вы достигли лимита изображений на этот период."
@@ -2190,6 +2234,9 @@
       "Thinking mode": [
         "Режим размышления"
       ],
+      "Token type": [
+        "Тип токена"
+      ],
       "Tool calls": [
         "Вызовы инструментов"
       ],
@@ -2285,6 +2332,12 @@
       ],
       "90 days": [
         "90 дней"
+      ],
+      "All chats": [
+        "Все чаты"
+      ],
+      "Auto-detect": [
+        "Автоопределение"
       ]
     },
     "collider_2025: Personality": {
@@ -2484,6 +2537,12 @@
       "Chat": [
         "Чат"
       ],
+      "Chats": [
+        "Чаты"
+      ],
+      "Choose your dictation language": [
+        "Выберите ваш язык диктовки"
+      ],
       "Clear all memories?": [
         "Очистить все воспоминания?"
       ],
@@ -2495,6 +2554,9 @@
       ],
       "Create new API key": [
         "Создать новый API-ключ"
+      ],
+      "Dictation language": [
+        "Язык диктовки"
       ],
       "Document intelligence": [
         "Анализ документов"
@@ -2526,6 +2588,9 @@
       "No memories yet": [
         "Пока нет воспоминаний"
       ],
+      "No usage in the last 30 days": [
+        "Не использовалось за последние 30 дней"
+      ],
       "Opening External Link": [
         "Открытие внешней ссылки"
       ],
@@ -2537,6 +2602,9 @@
       ],
       "Privacy included by default.": [
         "Конфиденциальность включена по умолчанию."
+      ],
+      "Project chats in Recent": [
+        "Чаты проектов в Недавние"
       ],
       "Raw response": [
         "Необработанный ответ"
@@ -2562,6 +2630,9 @@
       "Tokens per day": [
         "Токены в день"
       ],
+      "Tools": [
+        "Инструменты"
+      ],
       "Turn off memory?": [
         "Выключить воспоминания?"
       ],
@@ -2570,6 +2641,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "Voice": [
+        "Голос"
       ],
       "What you can build": [
         "Что вы можете создать"
@@ -2741,6 +2815,9 @@
       ],
       "Upgrade": [
         "Перейти на новый тариф"
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Улучшить до ${ LUMO_SHORT_APP_NAME } Plus"
       ]
     },
     "collider_2025: Warning": {
@@ -2774,6 +2851,9 @@
       "This chat expires tomorrow": [
         "Срок хранения этого чата истекает завтра"
       ],
+      "This chat will be deleted today": [
+        "Этот чат будет удален сегодня"
+      ],
       "This conversation is getting long": [
         "Эта цепочка писем становится слишком длинной"
       ],
@@ -2781,7 +2861,7 @@
         "Эта цепочка писем слишком длинная для продолжения. Начните новый чат, чтобы ${ LUMO_SHORT_APP_NAME } работал быстро и без перебоев."
       ],
       "This is the only time you'll see this key. Copy it now.": [
-        "Вы видите этот ключ в первый и последний раз. Скопируйте его прямо сейчас."
+        "Вы видите этот ключ в первый и последний раз. Скопируйте его сейчас."
       ],
       "This project is filling up": [
         "Этот проект заполняется"
@@ -2817,6 +2897,9 @@
       ]
     },
     "collider_2025:Action": {
+      "Add all": [
+        "Добавить все"
+      ],
       "Add details": [
         "Добавить информацию"
       ],
@@ -2868,6 +2951,9 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete analysis": [
+        "Удалить анализ"
+      ],
       "Delete project": [
         "Удалить проект"
       ],
@@ -2888,6 +2974,9 @@
       ],
       "Expand": [
         "Развернуть"
+      ],
+      "Export": [
+        "Экспорт"
       ],
       "Go to all projects": [
         "Перейти ко всем проектам"
@@ -2919,8 +3008,23 @@
       "More options": [
         "Дополнительные параметры"
       ],
+      "Move": [
+        "Переместить"
+      ],
+      "Move to project": [
+        "Переместить в проект"
+      ],
+      "New project": [
+        "Новый проект"
+      ],
       "Next message": [
         "Cледующее сообщение"
+      ],
+      "Next question": [
+        "Следующий вопрос"
+      ],
+      "Not now": [
+        "Не сейчас"
       ],
       "Previous message": [
         "Предыдущее сообщение"
@@ -2942,6 +3046,9 @@
       ],
       "Remove file": [
         "Удалить файл"
+      ],
+      "Rename chat": [
+        "Переименовать чат"
       ],
       "Request a shorter, more focused response": [
         "Запросить более короткий и конкретный ответ"
@@ -2969,6 +3076,9 @@
       ],
       "Show sidebar": [
         "Показать боковую панель"
+      ],
+      "Start a chat": [
+        "Начать чат"
       ],
       "Think longer": [
         "Думать дольше"
@@ -2999,6 +3109,9 @@
       ],
       "Upload your AI export": [
         "Загрузите экспортированные данные ИИ"
+      ],
+      "View": [
+        "Смотреть"
       ],
       "What needs changed?": [
         "Что нужно изменить?"
@@ -3048,6 +3161,9 @@
     "collider_2025:Button": {
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Добавить инструкции для настройки ответов ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "All chats": [
+        "Все чаты"
       ],
       "API": [
         "API"
@@ -3114,6 +3230,12 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Невозможно привязать корневую папку. Пожалуйста, выберите подпапку."
       ],
+      "Could not read this file.": [
+        "Не удалось прочитать этот файл."
+      ],
+      "Couldn't move the chat. Please try again.": [
+        "Не удалось переместить чат. Пожалуйста, попробуйте снова."
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "Соединение с базой данных потеряно. Пожалуйста, обновите страницу, чтобы продолжить."
       ],
@@ -3143,6 +3265,9 @@
       ],
       "File type not supported: ${ file.name }": [
         "Тип файла не поддерживается: ${ file.name }"
+      ],
+      "PDF export is only supported for documents and presentations.": [
+        "Экспорт в PDF поддерживается только для документов и презентаций."
       ],
       "Project not found": [
         "Проект не найден"
@@ -3194,6 +3319,12 @@
       ]
     },
     "collider_2025:Info": {
+      "${ lineCount } line": [
+        "${ lineCount } строка",
+        "${ lineCount } строки",
+        "${ lineCount } строк",
+        "${ lineCount } строки"
+      ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } требуется локальное хранилище баз данных (IndexedDB), чтобы сохранять ваши цепочки писем на этом устройстве, но здесь оно недоступно."
       ],
@@ -3205,12 +3336,6 @@
       ],
       "${ project.conversationCount } conversations": [
         "${ project.conversationCount } цепочек писем"
-      ],
-      "${ project.fileCount } file": [
-        "файлов: ${ project.fileCount }"
-      ],
-      "${ project.fileCount } files": [
-        "Файлов: ${ project.fileCount }"
       ],
       "ad value": [
         "рекламная ценность"
@@ -3278,6 +3403,9 @@
       "From ${ DRIVE_APP_NAME }": [
         "Из ${ DRIVE_APP_NAME }"
       ],
+      "Generating a reply": [
+        "Генерация ответа"
+      ],
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Получайте более быстрые и точные ответы из Сети с указанием источников, чтобы вы могли их проверить."
       ],
@@ -3296,8 +3424,23 @@
       "Lockdown Mode is enabled on your device": [
         "На вашем устройстве включен режим блокировки (Lockdown Mode)"
       ],
+      "Moving ${ current } of ${ total } chat to ${ projectName }…": [
+        "Перемещение ${ current } из ${ total } чата в ${ projectName }…",
+        "Перемещение ${ current } из ${ total } чатов в ${ projectName }…",
+        "Перемещение ${ current } из ${ total } чатов в ${ projectName }…",
+        "Перемещение ${ current } из ${ total } чатов в ${ projectName }…"
+      ],
+      "Moving chat to ${ projectName }: saving ${ total } item…": [
+        "Перемещение чата в ${ projectName }: сохранение ${ total } элемента…",
+        "Перемещение чата в ${ projectName }: сохранение ${ total } элементов…",
+        "Перемещение чата в ${ projectName }: сохранение ${ total } элементов…",
+        "Перемещение чата в ${ projectName }: сохранение ${ total } элементов…"
+      ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "На этой карточке нет личных данных — только ваш показатель уязвимости по областям. Чем он ниже, тем меньше информации вы раскрыли."
+      ],
+      "No projects yet": [
+        "Проектов пока нет"
       ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "На iPhone или iPad перейдите в Настройки → Приложения → Safari и убедитесь, что параметр \"Блокировка всех файлов cookie\" отключен, а затем обновите страницу."
@@ -3318,7 +3461,7 @@
         "Узнайте, что ИИ технологических гигантов знает о вас. Создано с помощью ${ LUMO_SHORT_APP_NAME }."
       ],
       "Something went wrong analysing this export. Please try again.": [
-        "При анализе этого экспорта произошла ошибка. Пожалуйста, попробуйте еще раз."
+        "При анализе этого экспорта произошла ошибка. Пожалуйста, попробуйте снова."
       ],
       "This message is empty. Sorry about that.": [
         "Это сообщение пусто. Извините."
@@ -3347,6 +3490,9 @@
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Мы сохраним вашу карточку, чтобы вы могли прикрепить ее к посту, — соцсети не могут добавить изображение за вас."
       ],
+      "You don't have any other projects yet.": [
+        "У вас пока нет других проектов."
+      ],
       "You're using private browsing": [
         "Вы используете режим инкогнито"
       ],
@@ -3355,6 +3501,12 @@
       ]
     },
     "collider_2025:Label": {
+      "${ file.tokenCount } token": [
+        "${ file.tokenCount } токен",
+        "${ file.tokenCount } токена",
+        "${ file.tokenCount } токенов",
+        "${ file.tokenCount } токена"
+      ],
       "16:9": [
         "16:9"
       ],
@@ -3370,11 +3522,17 @@
       "9:16": [
         "9:16"
       ],
+      "Auto-approve on": [
+        "Автоподтверждение включено"
+      ],
       "Card theme": [
         "Тема карточки"
       ],
       "Conversation starters (optional)": [
         "Фразы для начала цепочки писем (необязательно)"
+      ],
+      "Created by you": [
+        "Создано вами"
       ],
       "Created on": [
         "Создано"
@@ -3400,6 +3558,9 @@
       "Folder name": [
         "Название папки"
       ],
+      "Get ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "Перейти на ${ PLAN_NAMES[PLANS.LUMO] }"
+      ],
       "High": [
         "Высокий"
       ],
@@ -3418,11 +3579,23 @@
       "It doesn't expire": [
         "Срок действия не истекает"
       ],
+      "Last 30 days": [
+        "Последние 30 дней"
+      ],
+      "Last 7 Days": [
+        "Последние 7 дней"
+      ],
+      "Last 7 days": [
+        "Последние 7 дней"
+      ],
       "Lending & hiring": [
         "Кредитование и найм"
       ],
       "Low": [
         "Низкий"
+      ],
+      "Markdown": [
+        "Markdown"
       ],
       "Medium": [
         "Средний"
@@ -3444,6 +3617,12 @@
       ],
       "Thick": [
         "Толстый"
+      ],
+      "Today": [
+        "Cегодня"
+      ],
+      "Today, ${ time }": [
+        "Сегодня, ${ time }"
       ]
     },
     "collider_2025:Notification": {
@@ -3458,8 +3637,11 @@
       "Date created": [
         "Дата создания"
       ],
+      "Favorites": [
+        "Избранное"
+      ],
       "Last updated": [
-        "Последний раз обновлен"
+        "Последнее обновление"
       ]
     },
     "collider_2025:Placeholder": {
@@ -3607,6 +3789,18 @@
       ]
     },
     "collider_2025:Reasoning": {
+      "${ resultCount } result": [
+        "${ resultCount } результат",
+        "${ resultCount } результата",
+        "${ resultCount } результатов",
+        "${ resultCount } результата"
+      ],
+      "${ urlCount } URL": [
+        "${ urlCount } URL",
+        "${ urlCount } URL-адреса",
+        "${ urlCount } URL-адресов",
+        "${ urlCount } URL-адреса"
+      ],
       "Checked ${ BRAND_NAME } knowledge": [
         "Проверена база знаний ${ BRAND_NAME }"
       ],
@@ -3727,6 +3921,9 @@
       "Read a web page": [
         "Прочитана веб-страница"
       ],
+      "Reading a chat...": [
+        "Чтение чата..."
+      ],
       "Reading a web page": [
         "Чтение веб-страницы"
       ],
@@ -3798,12 +3995,18 @@
     },
     "collider_2025:Subline": {
       "Custom ${ LUMO_SHORT_APP_NAME }s turn a chat into a focused assistant with its own instructions. Pick one from the composer to start a conversation with it.": [
-        "Пользовательские версии ${ LUMO_SHORT_APP_NAME } превращают чат в специализированного помощника с собственными инструкциями. Выберите одну из них в редакторе писем, чтобы начать цепочку писем."
+        "Пользовательские ${ LUMO_SHORT_APP_NAME } превращают чат в специализированного помощника с собственными инструкциями. Выберите одного из них в поле ввода, чтобы начать с ним беседу."
       ]
     },
     "collider_2025:Success": {
       "All files removed from project": [
         "Все файлы удалены из проекта"
+      ],
+      "Chat moved to ${ projectName }": [
+        "Чат перемещен в ${ projectName }"
+      ],
+      "Conversation exported": [
+        "Беседа экспортирована"
       ],
       "Database connection restored.": [
         "Соединение с базой данных восстановлено."
@@ -3827,12 +4030,20 @@
         "Папка успешно создана"
       ]
     },
+    "collider_2025:Time": {
+      "Today at ${ time }": [
+        "Сегодня в ${ time }"
+      ]
+    },
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "Не удалось запустить ${ LUMO_SHORT_APP_NAME }"
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Помощник на базе ИИ должен расширять ваши возможности, а не использовать ваши данные в своих целях."
+      ],
+      "Auto-approve": [
+        "Автоподтверждение"
       ],
       "Better web search": [
         "Более качественный поиск в Сети"
@@ -3842,6 +4053,15 @@
       ],
       "Chat knowledge": [
         "Знания чата"
+      ],
+      "ChatGPT import": [
+        "Импорт из ChatGPT"
+      ],
+      "Chats": [
+        "Чаты"
+      ],
+      "Claude import": [
+        "Импорт из Claude"
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Создать пользовательское ${ LUMO_SHORT_APP_NAME }"
@@ -3855,6 +4075,9 @@
       "Delete project?": [
         "Удалить проект?"
       ],
+      "Delete skill?": [
+        "Удалить навык?"
+      ],
       "Detail makes fraud convincing": [
         "Детали делают мошенничество убедительным"
       ],
@@ -3866,6 +4089,9 @@
       ],
       "Every clarification is a new data point": [
         "Каждое уточнение — это новая точка данных"
+      ],
+      "Export conversation": [
+        "Экспорт беседы"
       ],
       "Favorites": [
         "Избранное"
@@ -3909,6 +4135,9 @@
       "Most revealing": [
         "Наиболее показательные"
       ],
+      "Move to project": [
+        "Переместить в проект"
+      ],
       "My AI paper trail": [
         "Мой цифровой след в ИИ"
       ],
@@ -3929,6 +4158,9 @@
       ],
       "Project knowledge": [
         "База знаний проекта"
+      ],
+      "Recent": [
+        "Недавние"
       ],
       "Remove all files?": [
         "Удалить все файлы?"
@@ -3959,6 +4191,9 @@
       ],
       "We couldn't read your paper trail": [
         "Нам не удалось прочитать ваш цифровой след"
+      ],
+      "What do you want to create today?": [
+        "Что вы хотите создать сегодня?"
       ],
       "What this profile exposes": [
         "Что раскрывает этот профиль"
@@ -6442,7 +6677,7 @@
         "Экспортировать все чаты (JSON)"
       ],
       "Export current conversation (JSON)": [
-        "Экспортировать текущую цепочку писем (JSON)"
+        "Экспорт текущей беседы (JSON)"
       ],
       "Export unsynced only (JSON)": [
         "Экспортировать только несинхронизированные (JSON)"
@@ -7647,17 +7882,26 @@
       "Delete": [
         "Удалить"
       ],
+      "Export": [
+        "Экспорт"
+      ],
       "Go to all projects": [
         "Перейти ко всем проектам"
       ],
       "Go to project": [
         "Перейти к проекту"
       ],
+      "Move to project": [
+        "Переместить в проект"
+      ],
       "No parent folder": [
         "Без родительской папки"
       ],
       "Remove from favorites": [
         "Убрать из избранных"
+      ],
+      "Rename": [
+        "Переименовать"
       ]
     },
     "pass_signup_2023: Info": {
@@ -7854,9 +8098,6 @@
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "У выбранного тарифного плана недостаточно места для данных вашего аккаунта."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
@@ -8684,6 +8925,24 @@
       ]
     },
     "Time": {
+      "${ days } day ago": [
+        "${ days } день назад",
+        "${ days } дня назад",
+        "${ days } дней назад",
+        "${ days } дня назад"
+      ],
+      "${ hours } hour ago": [
+        "${ hours } час назад",
+        "${ hours } часа назад",
+        "${ hours } часов назад",
+        "${ hours } часа назад"
+      ],
+      "${ minutes } minute ago": [
+        "${ minutes } минуту назад",
+        "${ minutes } минуты назад",
+        "${ minutes } минут назад",
+        "${ minutes } минуты назад"
+      ],
       "Just now": [
         "Только что"
       ],

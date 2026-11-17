@@ -32,6 +32,17 @@
         "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Account events": [
+        "События аккаунта"
+      ],
+      "Join organization": [
+        "Присоединиться к организации"
+      ],
+      "Leave group": [
+        "Покинуть группу"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Аккаунты"
@@ -145,6 +156,9 @@
       ],
       "Cancel": [
         "Отменить"
+      ],
+      "Cancel ${ planTitle }": [
+        "Отменить ${ planTitle }"
       ],
       "Cancel request": [
         "Отменить запрос"
@@ -548,9 +562,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Получить помощь от ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Get in touch": [
-        "Связаться с нами"
-      ],
       "Get limited-time offer": [
         "Получить ограниченное предложение"
       ],
@@ -644,6 +655,9 @@
       "Increase": [
         "Увеличить"
       ],
+      "Instructions": [
+        "Инструкции"
+      ],
       "Invite": [
         "Пригласить"
       ],
@@ -676,9 +690,6 @@
       ],
       "Learn more": [
         "Подробнее"
-      ],
-      "Let's talk": [
-        "Свяжитесь с нами"
       ],
       "Load more": [
         "Загрузить ещё"
@@ -859,6 +870,9 @@
       ],
       "Remove domain": [
         "Удалить домен"
+      ],
+      "Remove file": [
+        "Удалить файл"
       ],
       "Remove from favorites": [
         "Убрать из избранных"
@@ -1333,6 +1347,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Отменить подписку"
+      ],
       "Reactivate": [
         "Возобновить"
       ]
@@ -2209,6 +2226,11 @@
       ],
       "Total": [
         "Итого"
+      ]
+    },
+    "claimed address": {
+      "Verify it's you": [
+        "Подтвердите, что это вы"
       ]
     },
     "Collapsible tooltip": {
@@ -8688,9 +8710,6 @@
       "To continue to ${ product }": [
         "Чтобы продолжить в ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Для постоянного совершенствования наших услуг мы иногда собираем данные для контроля надлежащего функционирования наших приложений. Эта информация не передается никаким сторонним службам."
-      ],
       "To create your first user group, go to": [
         "Чтобы создать свою первую группу пользователей, перейдите к"
       ],
@@ -9732,9 +9751,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
-      ],
-      "Collect usage diagnostics": [
-        "Собирайте диагностику использования"
       ],
       "Colors": [
         "Цвета"
@@ -13273,9 +13289,6 @@
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений."
       ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "У выбранного тарифного плана недостаточно места для данных вашего аккаунта."
-      ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
@@ -16501,6 +16514,11 @@
         "Бесплатный пробный период"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } предлагает 1 ТБ для хранения ваших файлов и фотографий. Вы также можете получать ежегодные бонусы на хранилище."
@@ -17849,9 +17867,6 @@
       "Previous": [
         "Назад"
       ],
-      "Privacy and data collection": [
-        "Конфиденциальность и сбор данных"
-      ],
       "Processing...": [
         "Обработка…"
       ],
@@ -18543,6 +18558,9 @@
       "This email address will be shown to all organization members when performing account management operations.": [
         "Этот адрес электронной почты будет показан всем членам организации при выполнении операций управления аккаунтом."
       ],
+      "This setting is managed by your organization": [
+        "Этой настройкой управляет ваша организация."
+      ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Зашифрованные пароли остаются в безопасности, пока их не расшифруют, даже если они находятся в открытом доступе."
       ],
@@ -18987,6 +19005,9 @@
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Приглашение отправлено, ожидается ответ от приглашенного участника"
+      ],
+      "Pending": [
+        "Ожидание"
       ],
       "SSO user provided by your identity provider": [
         "Пользователь SSO, предоставленный поставщиком ваших личных данных"

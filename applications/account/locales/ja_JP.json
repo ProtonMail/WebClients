@@ -843,9 +843,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME }からヘルプを取得"
       ],
-      "Get in touch": [
-        "連絡する"
-      ],
       "Get limited-time offer": [
         "期間限定オファーを受ける"
       ],
@@ -1058,9 +1055,6 @@
       ],
       "Leave group": [
         "グループを抜ける"
-      ],
-      "Let's talk": [
-        "話をしよう"
       ],
       "Load more": [
         "さらに読み込む"
@@ -1307,6 +1301,9 @@
       ],
       "Remove domain": [
         "ドメインを削除"
+      ],
+      "Remove file": [
+        "ファイルを削除"
       ],
       "Remove forward": [
         "転送を削除"
@@ -8275,6 +8272,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "セキュリティキーの登録に失敗しました。もう一度お試しください。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
+      ],
+      "This security key is already registered to your account.": [
+        "このセキュリティキーは、すでにアカウントに登録されています。"
       ]
     },
     "fido2: Info": {
@@ -11577,9 +11580,6 @@
       "Restore": [
         "復元"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "過去の期間を確認し、レポート作成やクライアントへの請求のためにデータをエクスポートします。"
-      ],
       "Right to Left": [
         "右から左に"
       ],
@@ -11687,6 +11687,12 @@
       ],
       "Settings updated": [
         "設定が更新されました"
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } とエラーログを共有する"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } とパフォーマンスデータおよび使用統計を共有する"
       ],
       "Shared server country (${ countriesCount })": [
         "共有サーバーの国 (${ countriesCount })"
@@ -12111,8 +12117,8 @@
       "To continue to ${ product }": [
         "${ product }を続ける"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "サービスを継続的に改善するため、アプリケーションの正常な動作を監視するためのデータを収集することがあります。この情報は、いかなる第三者サービスにも共有されません。"
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "サービスの継続的な改善のためアプリケーションが正常に動作しているかを確認する目的でデータを収集することがあります。**この情報が第三者のサービスと共有されることはありません。**"
       ],
       "To create your first user group, go to": [
         "最初のユーザーグループを作成するには、"
@@ -13825,6 +13831,9 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "12 ヶ月ごとに ${ priceYearly } で請求されます。"
       ],
+      "Billed average": [
+        "平均請求額"
+      ],
       "Billed monthly.": [
         "毎月請求"
       ],
@@ -13918,8 +13927,8 @@
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
       ],
-      "Collect usage diagnostics": [
-        "使用状況診断を収集"
+      "Collect anonymous usage diagnostics": [
+        "匿名の使用状況診断データを収集する"
       ],
       "Color": [
         "色"
@@ -18944,12 +18953,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice }（税別）"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } は ${ PLAN_NAMES[PLANS.PASS] } と組み合わせることはできません。"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } はビジネスプランでのみご利用いただけます。"
-      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } と ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -18962,17 +18965,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } のトライアル後のお支払い額"
       ],
-      "An organization is required for this plan.": [
-        "このプランをご利用いただくには組織の作成が必要です。"
-      ],
       "Billing Country": [
         "請求先の国"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "サブスクリプションの利用中は Born Private アカウントを購入することはできません。"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "クレジットの購入には、別途個別のお手続きが必要です。"
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "切り替えることにより、お客様は当社の ${ termsLink } に同意したものとみなされます。"
@@ -19022,9 +19016,6 @@
       "Offer unavailable": [
         "オファーは利用できません"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } の購入は1つまでに制限されています。"
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME } で支払う"
       ],
@@ -19034,29 +19025,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "以下の理由により、プランの切り替えを行うことができません:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "プランを変更する前に、余分なウォレットアカウントを閉じてください。"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "プランを変更する前に、余分なウォレットを閉じてください。"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
       "Processing payment": [
         "支払いの処理中"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet のシート数はメンバー数と一致している必要があります。"
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "更新価格は ${ termsAndConditionsLink }に応じて変更される可能性があります。"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe のシート数はメンバー数を超えることはできません。"
       ],
       "Sorry, this offer is not available with your current plan.": [
         "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
@@ -19070,23 +19049,8 @@
       "terms and conditions": [
         "利用規約"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private プログラムに参加するには寄付が必要です。"
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "この割引は ${ renewalsWithCoupon } の更新で有効です。"
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なメールアドレス数が不足しています。"
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なドメイン数が不足しています。"
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なメンバー数が不足しています。"
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なストレージ容量が不足しています。"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
@@ -19115,41 +19079,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "この操作により、既存のサブスクリプションが拡張されます。新しいアドオンと、現在の支払間隔の残りの期間に対してのみ課金されます。お客様のサブスクリプションの更新日は変更されません。"
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "この専用サーバーはゲートウェイに割り当てられているため、変更できません。"
-      ],
       "This offer is not available with your current plan.": [
         "この特典は現在のプランではご利用いただけません。"
       ],
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "このプランでは、お使いのアカウントで利用中の管理機能がサポートされていません。"
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "このプランは、お客様のアカウントに登録されているメンバーをサポートしていません。"
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "現在、このサブスクリプションを完了できません。もう一度お試しください。"
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "トライアルプランでは ${ LUMO_SHORT_APP_NAME } のシートを追加できません。"
-      ],
-      "Trial plans don’t support custom domains.": [
-        "トライアルプランではカスタムドメインをご利用いただけません。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "トライアルプランでは専用 IP をご利用いただけません。"
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "トライアルプランは Scrieシート をサポートしていません。"
-      ],
-      "Trial plans don’t support this many members.": [
-        "トライアルプランでは、この人数のメンバーをサポートしていません。"
       ],
       "VAT number": [
         "VAT番号"
@@ -19163,12 +19103,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "お客様はすでに ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } を所有しています。"
-      ],
-      "You already own a Born Private account.": [
-        "お客様はすでに Born Private アカウントを所有しています。"
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "選択した支払い方法により${ amountToCharge }がチャージされます。"
       ],
@@ -19177,9 +19111,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "お使いのアカウントは、Born Private プログラムの対象期間より前に作成されています。"
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
@@ -23971,6 +23902,9 @@
       "Billing cycle": [
         "支払い間隔"
       ],
+      "Billing periods": [
+        "請求期間"
+      ],
       "Black Friday": [
         "ブラックフライデー"
       ],
@@ -24796,8 +24730,8 @@
       "Monthly": [
         "毎月"
       ],
-      "Monthly Costs": [
-        "月間コスト"
+      "Monthly cost": [
+        "月額費用"
       ],
       "Multi-user support": [
         "複数ユーザー対応"
@@ -24961,14 +24895,8 @@
       "Previous": [
         "前へ"
       ],
-      "Previous billing periods": [
-        "以前の請求期間"
-      ],
       "Priority support:": [
         "優先サポート:"
-      ],
-      "Privacy and data collection": [
-        "プライバシーとデータ収集"
       ],
       "Problem processing your payment": [
         "支払いの処理に問題があります。"

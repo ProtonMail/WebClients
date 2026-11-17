@@ -344,6 +344,9 @@
       "Expand video conferencing widget": [
         "Videokonferencia-widget kibontása"
       ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Fedezze fel a ${ MEET_SHORT_APP_NAME } szolgáltatást"
+      ],
       "Explore other plans": [
         "További csomagok megismerése"
       ],
@@ -370,9 +373,6 @@
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } beszerzése"
-      ],
-      "Get in touch": [
-        "Lépjen velünk kapcsolatba"
       ],
       "Get started": [
         "Kezdés"
@@ -487,9 +487,6 @@
       ],
       "Learn more": [
         "További információk"
-      ],
-      "Let's talk": [
-        "Beszélgessünk!"
       ],
       "Load": [
         "Betöltés"
@@ -3421,6 +3418,9 @@
       "Event not found": [
         "Az esemény nem található"
       ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Nem sikerült hozzáadni a ${ MEET_APP_NAME } meetinget"
+      ],
       "Failed to create meeting": [
         "Találkozó létrehozása sikertelen"
       ],
@@ -4066,11 +4066,6 @@
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "A válasz elküldésre került, de az eseményt nem sikerült a naptárában frissíteni"
-      ]
-    },
-    "Event popover close button": {
-      "Close popover": [
-        "Ablak bezárása"
       ]
     },
     "Event reply": {
@@ -5138,6 +5133,9 @@
       "Expired": [
         "Lejárt"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Csak fájlok (nem képek, ${ DOCS_APP_NAME } vagy ${ SHEETS_APP_NAME })) - max. 100GB, 100.000 fájl, 50GB fájlonként"
+      ],
       "Forgot password?": [
         "Elfelejtette a jelszavát?"
       ],
@@ -5699,6 +5697,9 @@
       "Warning": [
         "Figyelmeztetés"
       ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Automatikusan hozzáadtunk egy ${ MEET_APP_NAME } hivatkozást"
+      ],
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
       ],
@@ -6161,6 +6162,9 @@
       "Add image URL": [
         "Kép URL megadása"
       ],
+      "Add notice period": [
+        "Emlékeztető hozzáadása"
+      ],
       "Add to group": [
         "Hozzáadás csoporthoz"
       ],
@@ -6226,6 +6230,9 @@
       ],
       "Category": [
         "Kategória"
+      ],
+      "Check additional calendars for availability": [
+        "További elérhető naptár keresése"
       ],
       "City": [
         "Település"
@@ -8604,9 +8611,6 @@
       "More plans are available in other currencies": [
         "További csomagok érhetők el más pénznemekben"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Csak egy ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } vásárolható."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Fizetés ${ IDEAL_WERO_BRAND_NAME }val"
       ],
@@ -8615,9 +8619,6 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Kérjük, először aktiválja újra az előfizetését, hogy csökkenthesse a bővítmények számát."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "A Proton Meet licencek száma meg kell egyezzen a tagok számával."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "A megújítási árak a ${ termsAndConditionsLink } szerint változhatnak."
@@ -8634,9 +8635,6 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes.",
         "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "A kiválasztott csomag nem biztosít elegendő tárhelyet a fiókjához."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
@@ -8678,9 +8676,6 @@
       ],
       "Timeout exceeded": [
         "Időtúllépés"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "A próbaidős csomagokban nem érhető el ${ LUMO_SHORT_APP_NAME } licenc."
       ],
       "VAT number": [
         "Áfa-szám"

@@ -46,6 +46,9 @@
       "Add account": [
         "Afegeix un compte"
       ],
+      "Add address": [
+        "Afegeix una adreça"
+      ],
       "Add current URL": [
         "Afegeix l'URL actual"
       ],
@@ -159,6 +162,9 @@
       ],
       "Collapse": [
         "Replega"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Plegar les alertes de Pass Monitor"
       ],
       "Confirm": [
         "Confirma"
@@ -313,6 +319,9 @@
       "Dismiss": [
         "Descarta"
       ],
+      "Dismiss notification": [
+        "Descarta la notificació"
+      ],
       "Do not show again": [
         "No ho torneu a mostrar"
       ],
@@ -358,6 +367,9 @@
       "Expand": [
         "Amplia"
       ],
+      "Expand Pass Monitor alerts": [
+        "Desplegar les alertes de Pass Monitor"
+      ],
       "Export": [
         "Exporta"
       ],
@@ -400,6 +412,9 @@
       "Go back": [
         "Torna enrere"
       ],
+      "Go to today": [
+        "Vés a avui"
+      ],
       "Hide": [
         "Amaga"
       ],
@@ -411,6 +426,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Com utilitzar ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignora"
       ],
       "Import": [
         "Importa"
@@ -538,6 +556,9 @@
       "OK": [
         "D'acord"
       ],
+      "Open item": [
+        "Obre l'element"
+      ],
       "Open navigation": [
         "Obre la navegació"
       ],
@@ -606,6 +627,9 @@
       ],
       "Remove member": [
         "Esborra el membre"
+      ],
+      "Remove passkey": [
+        "Suprimeix la clau d'accés"
       ],
       "Rename": [
         "Canvia el nom"
@@ -749,6 +773,9 @@
       "To mailbox": [
         "A la bústia de correu"
       ],
+      "Toggle section": [
+        "Commuta la secció"
+      ],
       "Transfer aliases": [
         "Transfereix els àlies"
       ],
@@ -879,6 +906,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } més",
+        "${ count } més"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } està disponible amb un pla de pagament. Milloreu el pla per a accedir-hi immediatament."
       ],
@@ -972,6 +1003,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "S'ha trobat aquesta contrasenya d'inici de sessió en una infracció de dades. Aneu al servei i canvieu-la."
+      ],
+      "This login uses the same password as another item.": [
+        "Aquest inici de sessió utilitza la mateixa contrasenya que un altre element."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Aquest servei ofereix A2F. Habiliteu-lo per a augmentar la seguretat del compte."
@@ -1301,11 +1335,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "No s'ha pogut actualitzar la preferència ${ PROTON_SENTINEL_NAME }"
       ],
-      "Failed updating monitor flag of the item": [
-        "No s'ha pogut actualitzar l'indicador del monitor de l'element"
-      ],
       "Failed updating monitoring status for this email address": [
         "No s'ha pogut actualitzar l'estat de monitoratge d'aquesta adreça de correu electrònic"
+      ],
+      "Failed updating monitoring status for this item": [
+        "No s'ha pogut actualitzar l'estat de monitoratge d'aquest element"
       ],
       "File could not be parsed": [
         "No s'ha pogut analitzar el fitxer."
@@ -1771,6 +1805,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
       ],
+      "Alert restored": [
+        "S'ha restaurat l'alerta"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "L'àlies s'ha desactivat. Ja no rebreu correus electrònics enviats a ${ item.aliasEmail }"
       ],
@@ -1887,6 +1924,9 @@
       ],
       "Canceled by user": [
         "S'ha cancel·lat per l'usuari"
+      ],
+      "Check ignored": [
+        "Comprovar els ignorats"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total } contrasenyes"
@@ -5149,6 +5189,9 @@
       "Minicalendar": [
         "Minicalendari"
       ],
+      "Missing 2FA": [
+        "Falta el 2FA"
+      ],
       "Modified": [
         "Modificació"
       ],
@@ -5213,6 +5256,9 @@
       ],
       "Our welcome gift to you": [
         "El nostre regal de benvinguda per a vós"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Clau d'accés"
@@ -5284,6 +5330,9 @@
       "Reused ${ count } time": [
         "Reutilitzat ${ count } vegada",
         "Reutilitzat ${ count } vegades"
+      ],
+      "Reused password": [
+        "Contrasenya reutilitzada"
       ],
       "Reused passwords": [
         "Contrasenyes reutilitzades"

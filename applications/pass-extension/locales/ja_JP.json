@@ -43,6 +43,9 @@
       "Add": [
         "追加"
       ],
+      "Add address": [
+        "アドレスを追加"
+      ],
       "Add current URL": [
         "現在の URL を追加"
       ],
@@ -408,6 +411,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } の使用方法"
+      ],
+      "Ignore": [
+        "無視"
       ],
       "Import": [
         "インポート"
@@ -1273,9 +1279,6 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "${ PROTON_SENTINEL_NAME } 設定の更新に失敗しました"
       ],
-      "Failed updating monitor flag of the item": [
-        "アイテムの監視フラグの更新に失敗しました"
-      ],
       "Failed updating monitoring status for this email address": [
         "このメールアドレスの監視ステータスの更新に失敗しました"
       ],
@@ -1778,6 +1781,9 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
+      ],
+      "Alert restored": [
+        "アラートを復元しました"
       ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "エイリアスを無効にしました。 ${ item.aliasEmail }に送信されたメールは受信できなくなります"

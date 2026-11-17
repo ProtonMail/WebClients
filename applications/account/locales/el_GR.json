@@ -109,6 +109,9 @@
       "Bulk user import": [
         "Μαζική εισαγωγή χρηστών"
       ],
+      "Business referral link": [
+        "Σύνδεσμος παραπομπής επιχείρησης"
+      ],
       "Cancel plan": [
         "Ακύρωση πλάνου"
       ],
@@ -644,9 +647,6 @@
       "Collaborate on documents": [
         "Συνεργαστείτε σε έγγραφα"
       ],
-      "Collapse step": [
-        "Σύμπτυξη βήματος"
-      ],
       "Color": [
         "Χρώμα"
       ],
@@ -730,6 +730,9 @@
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Συνεχίστε με ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Bitcoin": [
+        "Συνεχίστε με Bitcoin"
       ],
       "Continue with Free": [
         "Συνέχεια με Free"
@@ -890,6 +893,12 @@
       "Delete record": [
         "Διαγραφή εγγραφής"
       ],
+      "Delete security key ${ keyName }": [
+        "Διαγραφή κλειδιού ασφαλείας ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Διαγραφή διακομιστή ${ serverLocation }"
+      ],
       "Delete token “${ token.Name }”": [
         "Διαγραφή διακριτικού “${ token.Name }”"
       ],
@@ -959,6 +968,9 @@
       "Dismiss": [
         "Παράβλεψη"
       ],
+      "Dismiss notification": [
+        "Απόρριψη ειδοποίησης"
+      ],
       "Don't show again": [
         "Να μην εμφανιστεί ξανά"
       ],
@@ -1009,6 +1021,9 @@
       ],
       "Download recovery file": [
         "Κατέβασμα αρχείου ανάκτησης"
+      ],
+      "Download recovery kit": [
+        "Λήψη κιτ αποκατάστασης"
       ],
       "Download the ${ MAIL_APP_NAME } Export Tool": [
         "Λήψη του ${ MAIL_APP_NAME } Export Tool"
@@ -1070,6 +1085,9 @@
       "Edit phone number": [
         "Επεξεργασία αριθμού τηλεφώνου"
       ],
+      "Edit security key ${ keyName }": [
+        "Επεξεργασία κλειδιού ασφαλείας ${ keyName }"
+      ],
       "Edit servers": [
         "Επεξεργασία διακομιστών"
       ],
@@ -1120,9 +1138,6 @@
       ],
       "Enter code": [
         "Εισαγωγή κωδικού"
-      ],
-      "Expand step": [
-        "Ανάπτυξη βήματος"
       ],
       "Explore ${ target }": [
         "Ανακαλύψτε το ${ target }"
@@ -1211,9 +1226,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Λάβετε βοήθεια από την ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Get in touch": [
-        "Επικοινωνήστε"
-      ],
       "Get limited-time offer": [
         "Λάβετε προσφορά περιορισμένου χρόνου"
       ],
@@ -1294,6 +1306,9 @@
       ],
       "Go to settings": [
         "Μετάβαση στις ρυθμίσεις"
+      ],
+      "Go to today": [
+        "Πηγαίνετε στο σήμερα"
       ],
       "Google": [
         "Google"
@@ -1448,9 +1463,6 @@
       "Leave group": [
         "Αποχώρηση από την ομάδα"
       ],
-      "Let's talk": [
-        "Ας μιλήσουμε"
-      ],
       "Load more": [
         "Φόρτωση περισσοτέρων"
       ],
@@ -1553,11 +1565,17 @@
       "Next": [
         "Επόμενο"
       ],
+      "Next contact": [
+        "Επόμενη επαφή"
+      ],
       "Next month": [
         "Επόμενος μήνας"
       ],
       "Next page": [
         "Επόμενη σελίδα"
+      ],
+      "Next plan": [
+        "Επόμενο πλάνο"
       ],
       "No": [
         "Όχι"
@@ -1643,11 +1661,17 @@
       "Previous": [
         "Προηγούμενο"
       ],
+      "Previous contact": [
+        "Προηγούμενη επαφή"
+      ],
       "Previous month": [
         "Προηγούμενος μήνας"
       ],
       "Previous page": [
         "Προηγούμενη σελίδα"
+      ],
+      "Previous plan": [
+        "Προηγούμενο πλάνο"
       ],
       "Publish changes": [
         "Δημοσιεύστε τις αλλαγές"
@@ -1715,6 +1739,9 @@
       "Remove domain": [
         "Αφαίρεση τομέα"
       ],
+      "Remove file": [
+        "Κατάργηση αρχείου"
+      ],
       "Remove forward": [
         "Αφαίρεση προώθησης"
       ],
@@ -1727,8 +1754,14 @@
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
       ],
+      "Remove logo": [
+        "Κατάργηση λογότυπου"
+      ],
       "Remove manager": [
         "Αφαίρεση διαχειριστή"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Αφαίρεσή διακομιστή σε εκκρεμότητα ${ serverLocation }"
       ],
       "Remove this label": [
         "Αφαίρεση αυτής της ετικέτας"
@@ -2141,6 +2174,12 @@
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Εναλλαγή ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Toggle calendar list": [
+        "Εναλλαγή λίστας ημερολογίου"
+      ],
+      "Toggle substeps": [
+        "Εναλλαγή υποβημάτων"
+      ],
       "Top up": [
         "Προσθήκη ποσού"
       ],
@@ -2335,6 +2374,9 @@
       ],
       "Watch the interview": [
         "Δείτε τη συνέντευξη"
+      ],
+      "Weak key: learn more": [
+        "Αδύναμο κλειδί: μάθετε περισσότερα"
       ],
       "Welcome": [
         "Καλώς ήρθατε"
@@ -5660,6 +5702,9 @@
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Διαβάστε, απαντήστε και μείνετε ενημερωμένοι στο Gmail μέσα από το ${ MAIL_APP_NAME }"
       ],
+      "Refer ${ BRAND_NAME } for Business to your network. You earn credits, and they get ${ refereeRewardAmount } off a yearly subscription. Earn up to ${ maxRewardAmount } in total.": [
+        "Προτείνετε το ${ BRAND_NAME } για Business στο δίκτυό σας. Εσείς κερδίζετε πόντους και εκείνοι κερδίζουν ${ refereeRewardAmount } έκπτωση για τον πρώτο χρόνο συνδρομής. Κερδίστε έως και ${ maxRewardAmount } συνολικά."
+      ],
       "Select which categories you want to add and if you want to receive push notifications for each category.": [
         "Επιλέξτε ποιες κατηγορίες θέλετε να προσθέσετε και αν θέλετε να λαμβάνετε ειδοποιήσεις push για κάθε κατηγορία."
       ],
@@ -8072,7 +8117,7 @@
         "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
       ],
       "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
-        "Η συσκευή με την οποία σαρώσατε τον κωδικό QR δεν απέστειλε τα στοιχεία σύνδεσής σας. Ενημερώστε την εφαρμογή σε αυτήν τη συσκευή και δοκιμάστε ξανά."
+        "Η συσκευή με την οποία σαρώσατε τον κωδικό QR δεν έστειλε τα στοιχεία σύνδεσής σας. Ενημερώστε την εφαρμογή σε εκείνη τη συσκευή και δοκιμάστε ξανά."
       ],
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
@@ -9108,6 +9153,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά την καταχώρηση του κλειδιού ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
+      ],
+      "This security key is already registered to your account.": [
+        "Αυτό το κλειδί ασφαλείας είναι ήδη καταχωρημένο στον λογαριασμό σας."
       ]
     },
     "fido2: Info": {
@@ -9849,6 +9900,9 @@
       ],
       "Enjoying ${ planName }?": [
         "Απολαμβάνετε το ${ planName };"
+      ],
+      "Invited businesses": [
+        "Προσκεκλημένες επιχειρήσεις"
       ],
       "Invited friends": [
         "Προσκεκλημένοι φίλοι"
@@ -11794,6 +11848,9 @@
       "Existing end-to-end encrypted email forwardings will need to be manually re-enabled under **${ autoReplySettingsTitle }** in settings.": [
         "Οι υπάρχουσες προωθήσεις ηλεκτρονικού ταχυδρομείου που είναι κρυπτογραφημένες από άκρο σε άκρο θα πρέπει να ενεργοποιηθούν ξανά χειροκίνητα κάτω από **${ autoReplySettingsTitle }** στις ρυθμίσεις."
       ],
+      "Expected ${ date }": [
+        "Αναμένεται στις ${ date }"
+      ],
       "Expired": [
         "Ληγμένο"
       ],
@@ -11967,6 +12024,9 @@
       ],
       "Groups": [
         "Ομάδες"
+      ],
+      "Help an organization protect sensitive data from breaches and surveillance": [
+        "Βοηθήστε έναν οργανισμό να προστατέψει ευαίσθητα δεδομένα από παραβιάσεις και παρακολούθηση."
       ],
       "Help other families give their kids a safe start online. Share this milestone and spread the word.": [
         "Βοηθήστε άλλες οικογένειες να προσφέρουν στα παιδιά τους μια ασφαλή αρχή στο διαδίκτυο. Μοιραστείτε αυτό το ορόσημο και διαδώστε το μήνυμα."
@@ -12923,8 +12983,8 @@
       "Restore": [
         "Επαναφορά"
       ],
-      "Review past periods and export the data for reporting or client invoicing.": [
-        "Εξετάστε προηγούμενες περιόδους και εξαγάγετε τα δεδομένα για αναφορά ή τιμολόγηση πελατών."
+      "Review and export the data for reporting or client invoicing.": [
+        "Εξετάστε και εξαγάγετε τα δεδομένα για αναφορά ή τιμολόγηση πελατών."
       ],
       "Right to Left": [
         "Δεξιά προς Αριστερά"
@@ -13048,6 +13108,12 @@
       ],
       "Settings updated": [
         "Οι ρυθμίσεις ενημερώθηκαν"
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Κοινοποίηση αρχείων καταγραφής σφαλμάτων με την ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Κοινοποιήστε δεδομένα απόδοσης και στατιστικά στοιχεία χρήσης με την ${ BRAND_NAME }"
       ],
       "Shared server country (${ countriesCount })": [
         "Χώρα κοινόχρηστου διακομιστή (${ countriesCount })",
@@ -13177,6 +13243,9 @@
       ],
       "Summary": [
         "Περίληψη"
+      ],
+      "Support a mission to create a safer internet for everyone": [
+        "Υποστηρίξτε μια αποστολή για να δημιουργήσετε ένα ασφαλέστερο διαδίκτυο για όλους"
       ],
       "Support for monitoring of custom domains and non-${ BRAND_NAME } email addresses is coming soon.": [
         "Η υποστήριξη για την παρακολούθηση προσαρμοσμένων τομέων και μη ${ BRAND_NAME } διευθύνσεων ηλεκτρονικού ταχυδρομείου θα είναι σύντομα διαθέσιμη."
@@ -13331,6 +13400,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Αυτά τα διαπιστευτήρια δεν μπορούν να χρησιμοποιηθούν για σύνδεση στις επίσημες ${ VPN_APP_NAME } εφαρμογές μας. ${ learnMore }"
+      ],
+      "They get end-to-end encrypted email, storage, and collaboration tools": [
+        "Αποκτούν κρυπτογραφημένο από άκρο σε άκρο email, αποθηκευτικό χώρο, και εργαλεία συνεργασίας"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
@@ -13527,8 +13599,8 @@
       "To continue to ${ product }": [
         "Για συνέχιση στο ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Για τη συνεχή βελτίωση των υπηρεσιών μας, μερικές φορές συλλέγουμε δεδομένα για την παρακολούθηση της ορθής λειτουργίας των εφαρμογών μας. Αυτές οι πληροφορίες δε μοιράζονται με οποιεσδήποτε υπηρεσίες τρίτων."
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Για τη συνεχή βελτίωση των υπηρεσιών μας, μερικές φορές συλλέγουμε δεδομένα για την παρακολούθηση της ορθής λειτουργίας των εφαρμογών μας. **Αυτές οι πληροφορίες δε μοιράζονται με οποιεσδήποτε υπηρεσίες τρίτων.**"
       ],
       "To create your first user group, go to": [
         "Για να δημιουργήσετε την πρώτη ομάδα χρηστών σας, μεταβείτε στην επιλογή"
@@ -14088,6 +14160,9 @@
       "Writing assistant": [
         "Βοηθός γραφής"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Οι θέσεις για βοηθούς συγγραφής δεν πωλούνται πλέον."
+      ],
       "X": [
         "X"
       ],
@@ -14238,6 +14313,9 @@
       ],
       "You don’t need to open or read the file—just download it and store it somewhere safe.": [
         "Δεν χρειάζεται να ανοίξετε ή να διαβάσετε το αρχείο—απλώς κατεβάστε το και αποθηκεύστε το σε ένα ασφαλές μέρος."
+      ],
+      "You earn credits when they sign up": [
+        "Κερδίζετε πόντους όταν κάνουν εγγραφή"
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Λαμβάνετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα δεδομένα διέρρευσαν από υπηρεσία τρίτων."
@@ -15502,6 +15580,9 @@
       "Billed at ${ priceYearly } every 12 months.": [
         "Χρεώνεται σε ${ priceYearly } κάθε 12 μήνες."
       ],
+      "Billed average": [
+        "Χρεωμένος μέσος όρος"
+      ],
       "Billed monthly.": [
         "Μηνιαία χρέωση."
       ],
@@ -15601,8 +15682,8 @@
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
       ],
-      "Collect usage diagnostics": [
-        "Συλλογή διαγνωστικών χρήσης"
+      "Collect anonymous usage diagnostics": [
+        "Συλλογή ανώνυμων διαγνωστικών στοιχείων χρήσης"
       ],
       "Color": [
         "Χρώμα"
@@ -16091,6 +16172,9 @@
       "Invite via email": [
         "Πρόσκληση μέσω email"
       ],
+      "Invited via": [
+        "Πρόσκληση μέσω"
+      ],
       "Invoice email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου τιμολογίου"
       ],
@@ -16240,9 +16324,6 @@
       ],
       "Monthly": [
         "Μηνιαία"
-      ],
-      "Monthly average": [
-        "Μηνιαίος μέσος όρος"
       ],
       "More payment methods": [
         "Περισσότεροι τρόποι πληρωμής"
@@ -16414,9 +16495,6 @@
       ],
       "Payment terms": [
         "Όροι πληρωμής"
-      ],
-      "Peak allocated licenses": [
-        "Εκχωρημένες άδειες χρήσης σε αιχμή"
       ],
       "Pending": [
         "Σε εκκρεμότητα"
@@ -16612,6 +16690,9 @@
       ],
       "Settings": [
         "Ρυθμίσεις"
+      ],
+      "Share your invite link": [
+        "Μοιραστείτε τον σύνδεσμο πρόσκλησής σας"
       ],
       "Share your referral link": [
         "Κοινοποιήστε τον σύνδεσμο παραπομπής σας"
@@ -17597,6 +17678,73 @@
       ],
       "Enable detailed events": [
         "Ενεργοποίηση λεπτομερών συμβάντων"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x Βασική χρήση"
+      ],
+      "5x Plus usage": [
+        "5 φορές περισσότερη χρήση"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Πρόσβαση σε API, με πίστωση ${ credit } ανά μήνα"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Πρόσβαση σε API, με πίστωση ${ credit } ανά μήνα για κάθε χρήστη"
+      ],
+      "Everything in Basic, and:": [
+        "Τα πάντα στο Basic, και:"
+      ],
+      "Everything in Free, and:": [
+        "Τα πάντα στο Free, και:"
+      ],
+      "Everything in Plus, and:": [
+        "Τα πάντα στο Plus, και:"
+      ],
+      "Extended image generation": [
+        "Εκτεταμένη δημιουργία εικόνων"
+      ],
+      "Includes:": [
+        "Περιλαμβάνει:"
+      ],
+      "Limited image generation": [
+        "Περιορισμένη δημιουργία εικόνων"
+      ],
+      "Limited messages and chat history": [
+        "Περιορισμένα μηνύματα και ιστορικό συνομιλιών"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Περιορισμένες Δεξιότητες, Έργα και προγραμματισμένες εργασίες"
+      ],
+      "Maximum image generation": [
+        "Μέγιστη παραγωγή εικόνων"
+      ],
+      "Maximum Skills and Projects": [
+        "Μέγιστες Δεξιότητες και Έργα"
+      ],
+      "More image generation": [
+        "Περισσότερη δημιουργία εικόνων"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Περισσότερες Δεξιότητες, Έργα και προγραμματισμένες εργασίες"
+      ],
+      "More usage": [
+        "Περισσότερη χρήση"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Για προγραμματισμό και κατασκευή"
+      ],
+      "For everyday chats": [
+        "Για καθημερινές συζητήσεις"
+      ],
+      "For getting more done": [
+        "Για να πετυχαίνετε περισσότερα"
       ]
     },
     "lumo_signup_2025: Info": {
@@ -20979,12 +21127,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (χωρίς φόρους)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } δεν μπορεί να συνδυαστεί με το ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "Το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } διατίθεται μόνο σε πλάνα για επιχειρήσεις."
-      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20997,17 +21139,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Απαιτείται ένας οργανισμός για αυτό το πλάνο."
-      ],
       "Billing Country": [
         "Χώρα χρέωσης"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Οι λογαριασμοί Born Private δεν μπορούν να αγοραστούν όσο υπάρχει ενεργή συνδρομή."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Η αγορά μονάδων απαιτεί ξεχωριστή αγορά."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Με την αλλαγή, αποδέχεστε τους ${ termsLink } μας."
@@ -21057,9 +21190,6 @@
       "Offer unavailable": [
         "Η προσφορά δεν είναι διαθέσιμη"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Μπορεί να αγοραστεί μόνο ένα ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
       "Paid from your account credit.": [
         "Πληρώθηκε από το υπόλοιπο του λογαριασμού σας."
       ],
@@ -21072,29 +21202,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "Η αλλαγή προγράμματος δεν είναι δυνατή για τους εξής λόγους:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Παρακαλούμε κλείστε τους επιπλέον λογαριασμούς πορτοφολιού πριν αλλάξετε το πλάνο σας."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Παρακαλούμε κλείστε τα επιπλέον πορτοφόλια πριν αλλάξετε το πρόγραμμά σας."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
       ],
       "Processing payment": [
         "Επεξεργασία πληρωμής"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Οι θέσεις στο Proton Meet πρέπει να αντιστοιχούν στον αριθμό των μελών."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Η τιμολόγηση ανανέωσης υπόκειται σε αλλαγές σύμφωνα με τους ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Οι θέσεις των γραμματέων δεν μπορούν να υπερβαίνουν τον αριθμό των μελών."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
@@ -21108,24 +21226,9 @@
       "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Η πρωτοβουλία Born Private απαιτεί δωρεά."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανέωση.",
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανεώσεις."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό διευθύνσεων για τον λογαριασμό σας."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό τομέων για τον λογαριασμό σας."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αριθμό μελών για τον λογαριασμό σας."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Το επιλεγμένο πλάνο δεν παρέχει επαρκή αποθηκευτικό χώρο για τον λογαριασμό σας."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Η ειδικά μειωμένη τιμή ισχύει για ${ couponRedemptions } μήνα. Στη συνέχεια, θα ανανεωθεί αυτόματα σε ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
@@ -21159,41 +21262,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Αυτή η ενέργεια επεκτείνει την υπάρχουσα συνδρομή. Θα χρεωθείτε μόνο για τα νέα πρόσθετα και τον υπόλοιπο χρόνο του τρέχοντος κύκλου χρέωσης. Η ημερομηνία ανανέωσης της συνδρομής σας δε θα αλλάξει."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Αυτός ο αποκλειστικός διακομιστής έχει αντιστοιχιστεί σε μια πύλη και η ρύθμιση αυτή δεν μπορεί να αλλάξει."
-      ],
       "This offer is not available with your current plan.": [
         "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Αυτό το πρόγραμμα δεν υποστηρίζει τις διαχειριζόμενες λειτουργίες στον λογαριασμό σας."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Αυτό το πλάνο δεν υποστηρίζει τα μέλη στον λογαριασμό σας."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Αυτή η συνδρομή δεν μπορεί να ολοκληρωθεί αυτή τη στιγμή. Παρακαλούμε δοκιμάστε ξανά."
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις για το ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν προσαρμοσμένους τομείς."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν αποκλειστικές διευθύνσεις IP."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν θέσεις Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Τα δοκιμαστικά πλάνα δεν υποστηρίζουν τόσο μεγάλο αριθμό μελών."
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
@@ -21207,12 +21286,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Έχετε ήδη συνδρομή σε αυτό το πλάνο. Μπορείτε να αλλάξετε τη συνδρομή σας στο ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Έχετε ήδη ένα Born Private λογαριασμό."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Θα χρεωθείτε ${ amountToCharge } από τον επιλεγμένο τρόπο πληρωμής."
       ],
@@ -21221,9 +21294,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Ο λογαριασμός σας είναι πολύ παλιός για την πρωτοβουλία Born Private."
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
@@ -21472,6 +21542,9 @@
       ],
       "Enter company name": [
         "Εισάγετε όνομα εταιρείας"
+      ],
+      "Enter email address, name, or contact group": [
+        "Εισάγετε διεύθυνση email, όνομα, ή ομάδα επαφών"
       ],
       "Enter name or email address": [
         "Εισαγάγετε όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -22160,6 +22233,15 @@
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Εάν εγγραφείτε πριν από αυτή την ημερομηνία,** θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
       ],
+      "**Share your referral link** with the right person at the company": [
+        "**Μοιραστείτε τον σύνδεσμο παραπομπής σας** με το κατάλληλο άτομο στην εταιρία."
+      ],
+      "**They sign up for a yearly Pro plan** and get an additional ${ refereeRewardAmount } off their first year": [
+        "**Κάνουν εγγραφή στο ετήσιο πρόγραμμα Pro** και κερδίζουν επιπλέον ${ refereeRewardAmount } έκπτωση για τον πρώτο τους χρόνο."
+      ],
+      "**You earn ${ referrerRewardAmount } for every seat** they add during sign-up.": [
+        "**Κερδίζετε ${ referrerRewardAmount } για κάθε θέση** που προσθέτουν κατά την εγγραφή."
+      ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Μετά από αυτή την ημερομηνία, ο λογαριασμός σας θα υποβαθμιστεί στο **${ BRAND_NAME } Free**. Αν αλλάξετε γνώμη, μπορείτε να **επανενεργοποιήσετε τη συνδρομή σας** για να διατηρήσετε την πρόσβασή σας στις premium λειτουργίες."
       ],
@@ -22174,6 +22256,9 @@
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
         "Χρησιμοποιούσα το ${ BRAND_NAME } και σκέφτηκα ότι μπορεί να σας αρέσει. Είναι ένα ασφαλές ηλεκτρονικό ταχυδρομείο, χώρος αποθήκευσης cloud, διαχείριση κωδικών πρόσβασης και VPN που προστατεύει το απόρρητό σας. Εγγραφείτε με αυτόν τον σύνδεσμο για να κερδίσετε ${ refereeRewardAmount } από την επόμενη συνδρομή σας: ${ referralLink }"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Χρησιμοποιώ το ${ BRAND_NAME } και σκέφτηκα ότι μπορεί να αρέσει στην ομάδα σας. Πρόκειτε για ένα ασφαλές email, χώρο αποθήκευσης cloud, εφαρμογή διαχείρισης κωδικών πρόσβασης και VPN το οποίο προστατεύει την ιδιωτικότητά σας. Εγγραφείτε με αυτόν τον σύνδεσμο για να κερδίσετε ${ refereeRewardAmount } έκπτωση τον πρώτο χρόνο στο ${ BRAND_NAME } για Business: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Εάν ακυρώσετε πριν από τότε, θα γίνει υποβάθμιση σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } όταν τελειώσει η δοκιμαστική περίοδος. Εάν δεν ακυρώσετε, το πλήρες πλάνο σας θα ξεκινήσει και θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
@@ -26477,6 +26562,9 @@
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
+      "Billing periods": [
+        "Περίοδοι χρέωσης"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -26486,11 +26574,22 @@
       "Bridge for ${ platform }": [
         "Γέφυρα για ${ platform }"
       ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Φέρτε το ${ BRAND_NAME } στη δουλειά σας. Κερδίστε πόντους."
+      ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Φέρτε το Gmail σας στο ${ MAIL_APP_NAME }"
       ],
       "Browser extensions": [
         "Προεκτάσεις προγράμματος περιήγησης"
+      ],
+      "Business invited": [
+        "Η επιχείρηση προσκλήθηκε",
+        "Οι επιχειρήσεις προσκλήθηκαν"
+      ],
+      "Business signed up": [
+        "Η επιχείρηση εγγράφηκε",
+        "Οι επιχειρήσεις εγγράφηκαν"
       ],
       "Can you access your session in the browser?": [
         "Έχετε πρόσβαση στη συνεδρία σας μέσω του προγράμματος περιήγησης;"
@@ -27245,6 +27344,9 @@
       "How did you find out about us?": [
         "Πώς μάθατε για εμάς;"
       ],
+      "How it works": [
+        "Πώς λειτουργεί"
+      ],
       "How to choose a good logo": [
         "Πώς να επιλέξετε ένα καλό λογότυπο"
       ],
@@ -27423,8 +27525,8 @@
       "Monthly": [
         "Μηνιαία"
       ],
-      "Monthly Costs": [
-        "Μηνιαίο Κόστος"
+      "Monthly cost": [
+        "Μηνιαίο κόστος"
       ],
       "Multi-user support": [
         "Υποστήριξη Πολλαπλών Χρηστών"
@@ -27609,17 +27711,11 @@
       "Previous": [
         "Προηγούμενο"
       ],
-      "Previous billing periods": [
-        "Προηγούμενες περίοδοι χρέωσης"
-      ],
       "Priority support:": [
         "Υποστήριξη με προτεραιότητα:"
       ],
       "Privacy": [
         "Ιδιωτικότητα"
-      ],
-      "Privacy and data collection": [
-        "Απόρρητο και συλλογή δεδομένων"
       ],
       "Problem processing your payment": [
         "Πρόβλημα κατά την επεξεργασία της πληρωμής σας"
@@ -27671,6 +27767,9 @@
       ],
       "Refer a friend": [
         "Παραπέμψτε έναν φίλο"
+      ],
+      "Refer businesses": [
+        "Προτείνετε επιχειρήσεις"
       ],
       "Reject device?": [
         "Απόρριψη συσκευής;"
@@ -28254,6 +28353,9 @@
       ],
       "What is the dark web?": [
         "Τι είναι ο σκοτεινός ιστός;"
+      ],
+      "Why recommend ${ BRAND_NAME } for Business?": [
+        "Γιατί να προτείνετε το ${ BRAND_NAME } για Business;"
       ],
       "Windows": [
         "Windows"

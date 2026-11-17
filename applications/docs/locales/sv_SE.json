@@ -121,6 +121,9 @@
       "Cancel subscription": [
         "Avsluta prenumeration"
       ],
+      "Cancel trial": [
+        "Avbryt provperioden"
+      ],
       "Change my access": [
         "Ändra min åtkomst"
       ],
@@ -306,6 +309,9 @@
       "Dismiss": [
         "Avfärda"
       ],
+      "Dismiss notification": [
+        "Avfärda avisering"
+      ],
       "Done": [
         "Klar"
       ],
@@ -410,6 +416,9 @@
       ],
       "Go to label": [
         "Gå till etikett"
+      ],
+      "Go to today": [
+        "Gå till idag"
       ],
       "Google Drive": [
         "Google Drive"
@@ -555,6 +564,9 @@
       "Next": [
         "Nästa"
       ],
+      "Next contact": [
+        "Nästa kontakt"
+      ],
       "Next month": [
         "Nästa månad"
       ],
@@ -590,6 +602,9 @@
       ],
       "Preview logs": [
         "Förhandsgranska loggar"
+      ],
+      "Previous contact": [
+        "Tidigare kontakt"
       ],
       "Previous month": [
         "Föregående månad"
@@ -810,6 +825,9 @@
       "Toggle debug mode": [
         "Slå på/av felsökningsläge"
       ],
+      "Toggle subfolders of ${ itemName }": [
+        "Växla undermappar till ${ itemName }"
+      ],
       "Trashing...": [
         "Kastar …"
       ],
@@ -1009,6 +1027,12 @@
       ],
       "Domains": [
         "Domäner"
+      ],
+      "Managed Service Provider": [
+        "Hanterad tjänsteleverantör"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Visar sätt att få hjälp med verifiering"
       ],
       "Servers": [
         "Servrar"
@@ -3021,6 +3045,9 @@
       "Failed to decrypt bookmark key: ${ message }": [
         "Misslyckades avkryptera innehållsnyckel: ${ message }"
       ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Misslyckades avkryptera bokmärksnamn: ${ message }"
+      ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Kunde inte avkryptera lösenord för bokmärke: ${ message }"
       ],
@@ -3153,6 +3180,9 @@
       ],
       "Missing signature for ${ signatureType }": [
         "Saknar signatur för ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Flyttningsåtgärd avbröts"
       ],
       "Moving item to a non-folder is not allowed": [
         "Flytt av objekt till utanför en mapp är inte tillåtet"
@@ -3401,6 +3431,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
+      ],
+      "This file has missing crypto material": [
+        "Den här filen har saknat kryptomaterial"
       ],
       "This file has no version available to download": [
         "Denna fil har ingen version tillgänglig att ladda ner"
@@ -3865,6 +3898,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
       ]
     },
     "fido2: Info": {
@@ -4533,6 +4569,9 @@
       "Can view only": [
         "Kan endast visa"
       ],
+      "Can't connect": [
+        "Kan inte ansluta"
+      ],
       "Can't move a folder into itself": [
         "Kan inte flytta en mapp in i sig själv"
       ],
@@ -4610,9 +4649,6 @@
         "Skapa ett säkert moln för ${ memberCount } medlem",
         "Skapa ett säkert moln för ${ memberCount } medlemmar"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Skapa ett end-to-end-krypterat dokument."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Skapa end-to-end krypterade dokument och kalkylblad."
       ],
@@ -4625,6 +4661,9 @@
       "Creating new document...": [
         "Skapar nytt dokument …"
       ],
+      "Creating new document…": [
+        "Skapar nytt dokument"
+      ],
       "Current plan": [
         "Nuvarande paket"
       ],
@@ -4633,6 +4672,9 @@
       ],
       "Custom email domains": [
         "Anpassade e-domäner"
+      ],
+      "Decrypting document…": [
+        "Dekrypterar dokument…"
       ],
       "Decrypting your document": [
         "Dekrypterar ditt dokument"
@@ -4795,6 +4837,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Om du tar bort dig själv förlorar du åtkomst till “${ fileName }“ och kommer inte kunna öppna det igen om inte ägaren delar det med dig."
@@ -4990,6 +5035,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Öppna guiden för rekommenderade åtgärder och användbara länkar."
       ],
+      "Opening document…": [
+        "Öppnar dokument"
+      ],
       "Opening...": [
         "Öppnar …"
       ],
@@ -5066,14 +5114,14 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Vänta medan vi letar efter kontakter som innehåller data krypterad med den inaktiva nyckeln."
       ],
+      "Preparing editor…": [
+        "Förbereder redigerare..."
+      ],
       "Primary": [
         "Primär"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfning (eller ”inkognitoläge”) är endast användbart för att hålla din aktivitet dold på din enhet. Det hindrar din webbläsare från att spara historik och cookies, men det gör dig inte osynlig. Din internetleverantör, nätverksadministratör och de webbplatser du besöker kan fortfarande se vad du gör på nätet."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Offentliga dokument är inte aktiverade för din organisation än."
       ],
       "Read-only": [
         "Skrivskyddad"
@@ -5092,6 +5140,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
+      ],
+      "Redirecting…": [
+        "Omdirigerar..."
       ],
       "Referral link copied to your clipboard": [
         "Hänvisningslänk kopierats till ditt urklipp"
@@ -5199,6 +5250,9 @@
       "Symbols (#$&)": [
         "Symboler (#$&)"
       ],
+      "Syncing latest changes…": [
+        "Synkroniserar senaste förändringar..."
+      ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Tillfälligt otillgänglig på grund av hög efterfrågan. Försök igen senare."
       ],
@@ -5230,13 +5284,13 @@
         "Det här dokumentet kan inte redigeras just nu."
       ],
       "This document does not exist, or it was deleted.": [
-        "Det här dokumentet existerar inte, eller det tots bort."
+        "Det här dokumentet existerar inte eller så det togs bort."
       ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Detta dokument har blivit för stort för att redigera. Du kan ta bort äldre versioner för att fortsätta redigera."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
-        "Det här dokumentet har blivit för stort och dina senaste ändringar kund inte sparas. Kopiera det arbete du behöver för att behålla det."
+        "Det här dokumentet har blivit för stort och dina senaste ändringar kunde inte sparas. Kopiera det arbete du behöver för att behålla det."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Detta dokument har blivit för stort och dina senaste ändringar kunde inte sparas. Ladda ner en kopia för att behålla ditt arbete."
@@ -5394,6 +5448,9 @@
       "Writing assistant": [
         "Skrivassistent"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Platser för skrivassistenten säljs inte längre"
+      ],
       "you": [
         "du"
       ],
@@ -5439,6 +5496,12 @@
       "You don't have access": [
         "Du har inte åtkomst"
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en öppen faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en öppen faktura på ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Du kanske inte har de nödvändiga behörigheterna för att visa det med ditt valda konto. Prova ett annat konto eller kontakta ägaren för åtkomst."
       ],
@@ -5450,6 +5513,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du kommer inte att debiteras om du avbryter före ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Du kommer inte att kunna dela \"${ fileName }\" efter att din åtkomst har ändrats till visningsbehörighet. Ägaren eller en redigerare med behörighet kan återställa ditt redigeringsbehörighet. Du kan inte ångra den här ändringen på egen hand."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du får kreditbelöningen 1 månad efter att din vän har börjat prenumerera på ett årspaket, och 2 månader efter att de har börjat prenumerera på ett månadspaket."
@@ -5861,6 +5927,9 @@
       "Last month only": [
         "Endast den senaste månaden"
       ],
+      "Loading": [
+        "Laddar"
+      ],
       "Location ${ locationLabel }": [
         "Plats ${ locationLabel }"
       ],
@@ -6160,6 +6229,9 @@
       "Pay invoice": [
         "Betala faktura"
       ],
+      "Pay it": [
+        "Betala den"
+      ],
       "Reactivate now": [
         "Återaktivera nu"
       ],
@@ -6243,6 +6315,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktivera ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Kod"
+      ],
+      "2x Basic usage": [
+        "2X Basic användning"
+      ],
+      "5x Plus usage": [
+        "5x Plus användning"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API tillgång, med ${ credit } en månads kredit"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API tillgång, med ${ credit } en månads kredit per användare"
+      ],
+      "Everything in Basic, and:": [
+        "Allt i Gratis, och:"
+      ],
+      "Everything in Free, and:": [
+        "Allt i Gratis-paketet, och:"
+      ],
+      "Everything in Plus, and:": [
+        "Allt i Plus, och:"
+      ],
+      "Extended image generation": [
+        "Utökad bildgenerering"
+      ],
+      "Includes:": [
+        "Inkluderar:"
+      ],
+      "Limited image generation": [
+        "Begränsade bildgenereringar"
+      ],
+      "Limited messages and chat history": [
+        "Begränsade meddelanden och chatthistorik"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Begränsade Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "Maximum image generation": [
+        "Maximal bildgenerering"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximala Färdigheter och Projekt"
+      ],
+      "More image generation": [
+        "Mer bildgenereringar"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mera Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "More usage": [
+        "Mer användning"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "För kodning och byggande"
+      ],
+      "For everyday chats": [
+        "För chattar varje dag"
+      ],
+      "For getting more done": [
+        "För att få mer gjort"
       ]
     },
     "Mail import summary": {
@@ -7610,6 +7749,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
+      ],
       "Storage": [
         "Lagringsutrymme"
       ],
@@ -7626,6 +7768,9 @@
       ],
       "**Add a payment method** to keep using all of the features after your trial ends.": [
         "**Lägg till en betalningsmetod** för kunna fortsätta använda alla funktioner efter din provperiod slutar."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Har du ångrat dig efter försöksperioden** Avbryt inom 30 dagar från din första betalning och vi kommer att betala tillbaka för den oanvända tiden."
       ],
       "Add a payment method": [
         "Lägg till en betalningsmetod"
@@ -7790,14 +7935,11 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (exkl. moms)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan inte kombineras med ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
       "Amount due after trial on ${ formattedDate }": [
         "Belopp att betala efter provperioden den ${ formattedDate }"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
+      "By switching, you agree to our ${ termsLink }.": [
+        "Genom att byta godkänner du våra ${ termsLink }."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Priserna för förnyelse kan ändras enligt ${ termsAndConditionsLink }."
@@ -7837,9 +7979,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ]
     },
     "PGP key encryption warning": {
@@ -8003,6 +8142,9 @@
     "Property": {
       "attributes": [
         "attribut"
+      ],
+      "content key": [
+        "innehållsnyckel"
       ],
       "hash key": [
         "hash-nyckel"
@@ -9136,9 +9278,6 @@
       "Cannot add more addresses": [
         "Kan inte lägga till fler adresser"
       ],
-      "Cannot load link": [
-        "Kan inte ladda länk"
-      ],
       "Change access to viewer?": [
         "Ändra behörighet till visare?"
       ],
@@ -9568,12 +9707,6 @@
       "Subscription canceled": [
         "Prenumeration avslutad"
       ],
-      "The link either does not exist or has expired": [
-        "Länken finns inte eller har löpt ut"
-      ],
-      "The link expired": [
-        "Länken har löpt ut"
-      ],
       "This document is password protected": [
         "Detta dokument är lösenordsskyddat"
       ],
@@ -9825,6 +9958,12 @@
       ]
     },
     "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Uppgradera till en stödd version för att använda administratörroller."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan inte ändra dina egna roller. Be en annan administratör att ändra dem."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
       ]

@@ -46,6 +46,9 @@
       "Add account": [
         "Añadir una cuenta"
       ],
+      "Add address": [
+        "Añadir dirección"
+      ],
       "Add current URL": [
         "Añadir la URL actual"
       ],
@@ -159,6 +162,9 @@
       ],
       "Collapse": [
         "Minimizar"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Contraer las alertas de Pass Monitor"
       ],
       "Confirm": [
         "Confirmar"
@@ -313,6 +319,9 @@
       "Dismiss": [
         "Descartar"
       ],
+      "Dismiss notification": [
+        "Descartar notificación"
+      ],
       "Do not show again": [
         "No mostrar de nuevo"
       ],
@@ -358,6 +367,9 @@
       "Expand": [
         "Expandir"
       ],
+      "Expand Pass Monitor alerts": [
+        "Expandir las alertas de Pass Monitor"
+      ],
       "Export": [
         "Exportar"
       ],
@@ -400,6 +412,9 @@
       "Go back": [
         "Regresar"
       ],
+      "Go to today": [
+        "Ir al día de hoy"
+      ],
       "Hide": [
         "Ocultar"
       ],
@@ -411,6 +426,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Cómo usar ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignorar"
       ],
       "Import": [
         "Importar"
@@ -538,6 +556,9 @@
       "OK": [
         "Aceptar"
       ],
+      "Open item": [
+        "Abrir elemento"
+      ],
       "Open navigation": [
         "Abrir la navegación"
       ],
@@ -606,6 +627,9 @@
       ],
       "Remove member": [
         "Eliminar el miembro"
+      ],
+      "Remove passkey": [
+        "Eliminar passkey"
       ],
       "Rename": [
         "Renombrar"
@@ -749,6 +773,9 @@
       "To mailbox": [
         "Al buzón"
       ],
+      "Toggle section": [
+        "Expandir o contraer sección"
+      ],
       "Transfer aliases": [
         "Transferir los alias"
       ],
@@ -879,6 +906,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } más\n\nEn las dos formas iguales, Uno y Otro, porque en español “más” no cambia con el número.",
+        "${ count } más"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } está disponible con un plan de pago. Mejora para obtener acceso inmediato."
       ],
@@ -972,6 +1003,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Esta contraseña de inicio de sesión aparece en una filtración de datos. Visita el servicio y cambia la contraseña."
+      ],
+      "This login uses the same password as another item.": [
+        "Este inicio de sesión usa la misma contraseña que otro elemento."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este servicio ofrece la 2FA. Actívala para aumentar la seguridad de la cuenta."
@@ -1301,11 +1335,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Error al actualizar los ajustes de ${ PROTON_SENTINEL_NAME }"
       ],
-      "Failed updating monitor flag of the item": [
-        "Error al actualizar el indicador de monitoreo de este elemento"
-      ],
       "Failed updating monitoring status for this email address": [
         "Error al actualizar el estado de monitoreo para esta dirección de correo electrónico"
+      ],
+      "Failed updating monitoring status for this item": [
+        "No se pudo actualizar el estado de monitoreo de este elemento"
       ],
       "File could not be parsed": [
         "No se ha podido analizar el archivo."
@@ -1771,6 +1805,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar tus datos, puedes eliminar el archivo CSV que contiene tus contraseñas por seguridad."
       ],
+      "Alert restored": [
+        "Alerta restaurada"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Se ha desactivado el alias. Ya no recibirás correos electrónicos enviados a ${ item.aliasEmail }"
       ],
@@ -1887,6 +1924,9 @@
       ],
       "Canceled by user": [
         "Cancelado por el usuario"
+      ],
+      "Check ignored": [
+        "Comprobación ignorada"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total } contraseñas"
@@ -5149,6 +5189,9 @@
       "Minicalendar": [
         "Minicalendario"
       ],
+      "Missing 2FA": [
+        "Falta la autenticación en dos pasos"
+      ],
       "Modified": [
         "Modificado"
       ],
@@ -5213,6 +5256,9 @@
       ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para ti"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Clave de acceso"
@@ -5284,6 +5330,9 @@
       "Reused ${ count } time": [
         "Reusada ${ count } vez",
         "Reusada ${ count } veces"
+      ],
+      "Reused password": [
+        "Contraseña reutilizada"
       ],
       "Reused passwords": [
         "Contraseñas reusadas"

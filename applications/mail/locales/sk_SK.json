@@ -483,6 +483,9 @@
       "Dismiss": [
         "Odmietnuť"
       ],
+      "Dismiss notification": [
+        "Zavrieť notifikáciu"
+      ],
       "Display navigation bar": [
         "Zobraziť navigačný panel"
       ],
@@ -651,9 +654,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Získajte bezplatnú ${ BRAND_NAME } adresu"
       ],
-      "Get in touch": [
-        "Skontaktovať sa"
-      ],
       "Get index size on disk": [
         "Zistiť veľkosť indexu na disku"
       ],
@@ -701,6 +701,9 @@
       ],
       "Go to settings": [
         "Prejsť do nastavení"
+      ],
+      "Go to today": [
+        "Prejsť na dnešok"
       ],
       "Google": [
         "Google"
@@ -854,9 +857,6 @@
       ],
       "Least read": [
         "Najmenej čítané"
-      ],
-      "Let's talk": [
-        "Porozprávajme sa"
       ],
       "Load": [
         "Načítať"
@@ -1059,6 +1059,9 @@
       "Next": [
         "Ďalej"
       ],
+      "Next contact": [
+        "Nasledujúci kontakt"
+      ],
       "Next conversation": [
         "Nasledujúca konverzácia"
       ],
@@ -1139,6 +1142,9 @@
       ],
       "Previous": [
         "Predchádzajúci"
+      ],
+      "Previous contact": [
+        "Predchádzajúci kontakt"
       ],
       "Previous conversation": [
         "Predchádzajúca konverzácia"
@@ -4324,6 +4330,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Pomôžte svojmu tímu bezpečne ukladať heslá k citlivým obchodným a klientskym informáciám."
       ],
+      "High-performance model for complex tasks": [
+        "Vysoko výkonný model pre zložité úlohy"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
       ],
@@ -4332,6 +4341,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Umožňuje okamžite pridávať odkazy na schôdze do vašich pozvánok na udalosti."
+      ],
+      "Lightweight model for everyday tasks": [
+        "Ľahký model na každodenné úlohy"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Zlučovanie kontaktov... Tento proces môže trvať niekoľko minút. Po dokončení môžete okno zavrieť."
@@ -4422,6 +4434,12 @@
       ],
       "To start, give your organization a name.": [
         "Začnite tým, že zadáte názov svojej organizácie."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Ak chcete používať ${ LUMO_SHORT_APP_NAME } v aplikácii ${ MAIL_APP_NAME }, pridajte ju do svojho predplatného."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Ak chcete používať ${ LUMO_SHORT_APP_NAME } v aplikácii ${ MAIL_APP_NAME }, požiadajte svojho správcu o prístup."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnite ochranu sledovania emailov, aby ste zabránili inzerentom a ostatným v sledovaní vašej polohy a online aktivity."
@@ -5956,6 +5974,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
       ]
     },
     "fido2: Info": {
@@ -7571,6 +7592,9 @@
       "Change your theme": [
         "Zmeniť motív"
       ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Komunikujte s aplikáciou ${ LUMO_SHORT_APP_NAME } a vyhľadávajte, čítajte, usporiadajte a pripravte si svoje emaily."
+      ],
       "Checked Proton support": [
         "Overená podpora pre Proton"
       ],
@@ -7636,6 +7660,9 @@
       ],
       "Copied to clipboard": [
         "Skopírované do schránky"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Jedným kliknutím skopírujte jednorazové kódy z nedávnych emailov"
       ],
       "Copy the link to clipboard": [
         "Skopírovať odkaz do schránky"
@@ -8211,10 +8238,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8434,6 +8458,9 @@
       ],
       "Move here": [
         "Presunúť sem"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Po skopírovaní presunúť emaily s jednorazovým kódom do koša"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pomenujte svoj nový priečinok a vyberte nadradený priečinok, do ktorého ho chcete vložiť. Pokiaľ nadradený priečinok nevyberiete, bude nový priečinok vytvorený v hlavnom priečinku."
@@ -10453,8 +10480,8 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } znakov"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant": [
-        "${ LUMO_SHORT_APP_NAME } asistent"
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI asistent"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent písania ${ LUMO_SHORT_APP_NAME }"
@@ -11053,6 +11080,9 @@
       "Message:": [
         "Správa:"
       ],
+      "Model": [
+        "Model"
+      ],
       "Move ${ sidebarElementName }": [
         "Presunúť ${ sidebarElementName }"
       ],
@@ -11067,6 +11097,9 @@
       ],
       "Move to Inbox": [
         "Presunúť do Doručených"
+      ],
+      "Move to Trash": [
+        "Presunúť do koša"
       ],
       "Moved to ${ labelName }": [
         "Presunuté do ${ labelName }"
@@ -11127,6 +11160,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Notifikácie sú deaktivované. Ak ich chcete povoliť, zmeňte nastavenia prehliadača."
+      ],
+      "One-time codes": [
+        "Jednorazové kódy"
       ],
       "Operating system": [
         "Operačný systém"
@@ -13981,12 +14017,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (bez DPH)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nie je možné kombinovať s ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } je k dispozícii iba v rámci firemných plánov."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% daň: ${ taxAmountElement }"
       ],
@@ -13996,17 +14026,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Suma splatná po skončení skúšobnej prevádzky dňa ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Tento plán si vyžaduje organizáciu."
-      ],
       "Billing Country": [
         "Krajina fakturácie"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Účet Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Nákup kreditov si vyžaduje samostatnú platbu."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Prechodom súhlasíte s našimi ${ termsLink }."
@@ -14050,9 +14071,6 @@
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Je možné zakúpiť iba jeden ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Platba cez ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -14062,26 +14080,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "Zmena tarifného plánu nie je možná z nasledujúcich dôvodov:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Pred zmenou tarifného plánu prosím zrušte všetky nadbytočné účty v peňaženke."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Pred zmenou tarifného plánu uzavrite všetky ďalšie peňaženky, prosím."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Počet miest Proton Meet sa musí zhodovať s počtom členov."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Ceny za obnovenie sa môžu zmeniť podľa ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Počet licencií Scribe nesmie presiahnuť počet členov."
       ],
       "Tax ${ rate }%": [
         "Daň ${ rate }%"
@@ -14092,26 +14098,11 @@
       "terms and conditions": [
         "zmluvnými podmienkami používania"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Iniciatíva Born Private si vyžaduje finančný príspevok."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
         "Zľava je platná na ${ renewalsWithCoupon } obnovenia.",
         "Zľava je platná na ${ renewalsWithCoupon } obnovení.",
         "Zľava je platná na ${ renewalsWithCoupon } obnovení."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Vybraný plán neposkytuje pre váš účet dostatočný počet adries."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Vybraný plán neposkytuje pre váš účet dostatočný počet domén."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Vybraný plán neposkytuje pre váš účet dostatočný počet členov."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Vybraný plán neposkytuje pre váš účet dostatočné úložisko."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Špeciálne zľavnená cena platí ${ couponRedemptions } mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
@@ -14152,41 +14143,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Táto akcia rozširuje existujúce predplatné. Bude vám účtovaný poplatok len za nové doplnky a zostávajúci čas aktuálneho fakturačného obdobia. Dátum obnovenia vášho predplatného sa nezmení."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Tento vyhradený server je priradený k bráne a nie je možné ho zmeniť."
-      ],
       "This offer is not available with your current plan.": [
         "Táto ponuka nie je s vaším aktuálnym programom dostupná."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Tento spôsob platby sa stane vašim novým predvoleným spôsobom platby pre všetky budúce obnovenia."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Tento plán nepodporuje spravované funkcie vo vašom účte."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Tento plán nepodporuje členov vo vašom účte."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Toto predplatné momentálne nie je možné dokončiť. Skúste to neskôr, prosím."
       ],
       "Timeout exceeded": [
         "Prekročený časový limit"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Skúšobné plány nepodporujú ${ LUMO_SHORT_APP_NAME } licencie."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Skúšobné plány nepodporujú vlastné domény."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Skúšobné plány nepodporujú dedikované IP."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Skúšobné plány nepodporujú Scribe licencie."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Skúšobné plány nepodporujú takýto počet členov."
       ],
       "VAT number": [
         "DIČ"
@@ -14200,20 +14167,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Tento plán už máte predplatený. Predplatné môžete zmeniť na ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Už vlastníte ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Už vlastníte účet Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu na PayPal."
       ],
       "You will soon be redirected to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Váš účet je príliš starý na iniciatívu Born Private."
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
@@ -16320,11 +16278,11 @@
         "${ elementsCount } správ bolo odstránených z obľúbených.",
         "${ elementsCount } správ bolo odstránených z obľúbených."
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
-        "${ LUMO_SHORT_APP_NAME } asistent deaktivovaný"
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI asistent deaktivovaný"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
-        "${ LUMO_SHORT_APP_NAME } asistent povolený"
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } AI asistent povolený"
       ],
       "Address copied to clipboard": [
         "Adresa bola skopírovaná do schránky"
@@ -16499,6 +16457,12 @@
       ],
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "Presunuté do ${ label }. Podobné správy tam budú v zaradené aj v budúcnosti."
+      ],
+      "One-time codes disabled": [
+        "Jednorazové kódy sú deaktivované"
+      ],
+      "One-time codes enabled": [
+        "Jednorazové kódy sú povolené"
       ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"

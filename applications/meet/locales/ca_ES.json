@@ -113,6 +113,18 @@
       "Light ${ BRAND_NAME } background applied": [
         "S'ha aplicat el fons clar de ${ BRAND_NAME }"
       ],
+      "Live captions allowed for this meeting": [
+        "S'han permès els subtítols en directe per a aquesta reunió"
+      ],
+      "Live captions turned off": [
+        "S'han desactivat els subtítols en directe"
+      ],
+      "Live captions turned off for this meeting": [
+        "Els subtítols en directe s'han desactivat per a aquesta reunió"
+      ],
+      "Live captions turned on": [
+        "S'han activat els subtítols en directe"
+      ],
       "Mountain landscape background applied": [
         "S'ha aplicat el fons de paisatge de muntanya"
       ],
@@ -354,6 +366,9 @@
       "Dismiss new messages": [
         "Descarta els missatges nous"
       ],
+      "Dismiss notification": [
+        "Descarta la notificació"
+      ],
       "Done": [
         "Fet"
       ],
@@ -428,6 +443,9 @@
       ],
       "Getting ready...": [
         "S'està preparant..."
+      ],
+      "Go to today": [
+        "Vés a avui"
       ],
       "Help and feedback": [
         "Ajuda i comentaris"
@@ -515,6 +533,9 @@
       ],
       "More options for accounts": [
         "Més opcions per als comptes"
+      ],
+      "More reactions": [
+        "Més reaccions"
       ],
       "Mute ${ participantName }": [
         "Silencia ${ participantName }"
@@ -2175,9 +2196,6 @@
       "Failed to start recording": [
         "No s'ha pogut iniciar l'enregistrament"
       ],
-      "Failed to start screen share": [
-        "No s'ha pogut iniciar la compartició de pantalla."
-      ],
       "Failed to unlock meeting": [
         "No s'ha pogut desbloquejar la reunió"
       ],
@@ -2308,9 +2326,6 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Seleccioneu una imatge JPEG, PNG o WebP."
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Permeteu la compartició de pantalla als permisos del sistema i torneu-ho a provar"
-      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "La gravació s'ha aturat perquè no es podia desar. L'hem mantinguda fins a aquest punt."
       ],
@@ -2394,6 +2409,9 @@
       ],
       "This background could not be saved in this browser.": [
         "No s'ha pogut desar el fons en aquest navegador."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Aquest emoji no es pot utilitzar com a reacció"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
@@ -2541,6 +2559,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-vos amb la clau de seguretat. Torneu-ho a provar."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
       ]
     },
     "fido2: Info": {
@@ -2779,7 +2800,7 @@
         "Mode avançat: ajusteu cada constant de difuminació i, tot seguit, apliqueu per tornar a generar la previsualització. Les superposicions tenen prioritat sobre els valors del fitxer i d'Unleash."
       ],
       "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
-        "Després de l'actualització, pot ser que el vostre Mac us demani una contrasenya. Escriviu la que feu servir per desbloquejar-lo i, a continuació, feu clic a Permet sempre per mantenir la sessió iniciada. ${ learnMore }"
+        "Després de l'actualització, pot ser que el vostre Mac us demani una contrasenya. Escriviu la que feu servir per desbloquejar-lo i, a continuació, feu clic a «Permet sempre» per a mantenir la sessió iniciada. ${ learnMore }"
       ],
       "Allow camera access to preview your background": [
         "Permeteu l'accés a la càmera per a previsualitzar el fons"
@@ -2855,9 +2876,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
-      ],
-      "Coming soon": [
-        "Pròximament"
       ],
       "Connection failed": [
         "La connexió ha fallat"
@@ -3246,6 +3264,9 @@
       "Open external link": [
         "Obre un enllaç extern"
       ],
+      "Open the window you want to share, then try again.": [
+        "Obriu la finestra que voleu compartir i torneu-ho a provar."
+      ],
       "Other accounts": [
         "Altres comptes"
       ],
@@ -3414,6 +3435,9 @@
       "Sign in": [
         "Inicieu la sessió"
       ],
+      "Something went wrong. Please try again.": [
+        "Alguna cosa ha anat malament. Torneu-ho a provar."
+      ],
       "Sort by": [
         "Ordena per"
       ],
@@ -3431,6 +3455,9 @@
       ],
       "support team": [
         "equip de suport"
+      ],
+      "System Settings → Privacy & Security → Screen Recording": [
+        "Preferències del sistema → Privacitat i seguretat → Gravació de pantalla"
       ],
       "Thank you for hosting a premium meeting.": [
         "Gràcies per organitzar una reunió prèmium."
@@ -3509,6 +3536,9 @@
       ],
       "Turn on camera": [
         "Activa la càmera"
+      ],
+      "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
+        "Activeu Firefox a ${ settingsPath }. A continuació, reinicieu Firefox i torneu a unir-vos a la trucada."
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "No s'ha pogut tornar a connectar a la reunió. Torneu-vos-hi a unir o sortiu-ne."
@@ -3890,6 +3920,9 @@
       ],
       "Raw": [
         "En brut"
+      ],
+      "Reaction picker": [
+        "Selector de reaccions"
       ],
       "Reactions": [
         "Reaccions"
@@ -4586,6 +4619,9 @@
       "Error at epoch ${ log.epoch }": [
         "S'ha produït un error a l'època ${ log.epoch }"
       ],
+      "Firefox can’t record your screen": [
+        "Firefox no pot enregistrar la vostra pantalla"
+      ],
       "Help and feedback": [
         "Ajuda i comentaris"
       ],
@@ -4665,6 +4701,9 @@
       "No results found": [
         "No s'ha trobat cap resultat."
       ],
+      "No screen or window found": [
+        "No s'ha trobat cap pantalla ni finestra"
+      ],
       "Participant counts don’t match": [
         "El nombre de participants no coincideix"
       ],
@@ -4712,6 +4751,9 @@
       ],
       "Schedule a meeting": [
         "Programa una reunió"
+      ],
+      "Screen share failed": [
+        "Ha fallat la compartició de pantalla"
       ],
       "Screen share is blocked": [
         "La compartició de pantalla està bloquejada"

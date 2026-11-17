@@ -319,6 +319,9 @@
       "Dismiss new messages": [
         "Avfärda nya meddelanden"
       ],
+      "Dismiss notification": [
+        "Avfärda avisering"
+      ],
       "Done": [
         "Klar"
       ],
@@ -391,6 +394,9 @@
       "Getting ready...": [
         "Förbereder …"
       ],
+      "Go to today": [
+        "Gå till idag"
+      ],
       "Help and feedback": [
         "Hjälp och feedback"
       ],
@@ -462,6 +468,9 @@
       ],
       "More options for accounts": [
         "Fler alternativ för konton"
+      ],
+      "More reactions": [
+        "Fler reaktioner"
       ],
       "Mute ${ participantName }": [
         "Tysta ${ participantName }"
@@ -1987,6 +1996,9 @@
       "Failed to decrypt bookmark key: ${ message }": [
         "Misslyckades avkryptera innehållsnyckel: ${ message }"
       ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Misslyckades avkryptera bokmärksnamn: ${ message }"
+      ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Kunde inte avkryptera lösenord för bokmärke: ${ message }"
       ],
@@ -2050,9 +2062,6 @@
       "Failed to start recording": [
         "Misslyckades att starta inspelning"
       ],
-      "Failed to start screen share": [
-        "Misslyckades att starta skärmdelning"
-      ],
       "Failed to unlock meeting": [
         "Misslyckades att låsa upp möte"
       ],
@@ -2113,6 +2122,9 @@
       "Missing signature for ${ signatureType }": [
         "Saknar signatur för ${ signatureType }"
       ],
+      "Move operation aborted": [
+        "Flyttningsåtgärd avbröts"
+      ],
       "Moving item to a non-folder is not allowed": [
         "Flytt av objekt till utanför en mapp är inte tillåtet"
       ],
@@ -2158,9 +2170,6 @@
       ],
       "Pick a JPEG, PNG or WebP image.": [
         "Välj en JPEG, PNG eller WebP-bild."
-      ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Tillåt skärmdelning i dina systembehörigheter, försök sedan igen."
       ],
       "Renaming root item is not allowed": [
         "Byta namn på root objekt är inte tillåtet"
@@ -2231,6 +2240,9 @@
       "This background could not be saved in this browser.": [
         "Denna bakgrund kunde inte sparas i denna webbläsare."
       ],
+      "This emoji can’t be used as a reaction": [
+        "Den här emojin kan inte användas som en reaktion"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
       ],
@@ -2239,6 +2251,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
+      ],
+      "This file has missing crypto material": [
+        "Den här filen har saknat kryptomaterial"
       ],
       "This file has no version available to download": [
         "Denna fil har ingen version tillgänglig att ladda ner"
@@ -2359,6 +2374,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
       ]
     },
     "fido2: Info": {
@@ -2577,6 +2595,9 @@
       "Adding ${ name }": [
         "Lägger till ${ name }"
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Efter uppdatering, din Mac kan komma att fråga efter ett lösenord. Skriv lösenordet du använder för att låsa upp din Mac, klicka sedan på Tillåt Alltid för att fortsätta vara inloggad. ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Tillåt kameraåtkomst för att förhandsgranska din bakgrund"
       ],
@@ -2642,9 +2663,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
-      ],
-      "Coming soon": [
-        "Kommer snart"
       ],
       "Connection failed": [
         "Anslutning misslyckades"
@@ -2792,6 +2810,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Om du använder Firefox, se till att PeerConnection är aktiverat."
@@ -2988,6 +3009,9 @@
       "Open external link": [
         "Öppna extern länk"
       ],
+      "Open the window you want to share, then try again.": [
+        "Öppna förnstret du vill dela, försök sedan igen."
+      ],
       "Other accounts": [
         "Andra konton"
       ],
@@ -3126,6 +3150,9 @@
       "Sign in": [
         "Logga in"
       ],
+      "Something went wrong. Please try again.": [
+        "Någonting gick fel. Försök igen."
+      ],
       "Sort by": [
         "Sortera efter"
       ],
@@ -3143,6 +3170,9 @@
       ],
       "support team": [
         "supportteam"
+      ],
+      "System Settings → Privacy & Security → Screen Recording": [
+        "Systeminställningar → Integritet och säkerhet → Skärm- och systemljudinspelning"
       ],
       "Thank you for hosting a premium meeting.": [
         "Tack för att du var värd för ett premiummöte."
@@ -3212,6 +3242,9 @@
       ],
       "Turn on camera": [
         "Slå på kamera"
+      ],
+      "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
+        "Slå på Firefox i ${ settingsPath }. Starta sedan om Firefox och återanslut till samtalet."
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Kunde inte återansluta till mötet. Gå med igen eller lämna."
@@ -3561,6 +3594,9 @@
       "Raw": [
         "Rå"
       ],
+      "Reaction picker": [
+        "Reaktionsväljare"
+      ],
       "Reactions": [
         "Reaktioner"
       ],
@@ -3907,6 +3943,9 @@
       "attributes": [
         "attribut"
       ],
+      "content key": [
+        "innehållsnyckel"
+      ],
       "hash key": [
         "hash-nyckel"
       ],
@@ -4148,6 +4187,9 @@
       "Error at epoch ${ log.epoch }": [
         "Fel på epoch ${ log.epoch }"
       ],
+      "Firefox can’t record your screen": [
+        "Firefox kan inte spela in din skärm"
+      ],
       "Help and feedback": [
         "Hjälp och feedback"
       ],
@@ -4224,6 +4266,9 @@
       "No results found": [
         "Inga resultat hittades"
       ],
+      "No screen or window found": [
+        "Ingen skärm eller fönster hittades"
+      ],
       "Participant counts don’t match": [
         "Deltagarantal matchar inte"
       ],
@@ -4268,6 +4313,9 @@
       ],
       "Schedule a meeting": [
         "Schemalägg ett möte"
+      ],
+      "Screen share failed": [
+        "Skärmdelning misslyckades"
       ],
       "Screen share is blocked": [
         "Skärmdelning är blockerad"

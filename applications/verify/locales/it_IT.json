@@ -23,6 +23,9 @@
       "Dismiss": [
         "Ignora"
       ],
+      "Dismiss notification": [
+        "Ignora notifica"
+      ],
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
@@ -878,6 +881,15 @@
       "Enter your username without the domain (@example.com)": [
         "Inserisci il tuo nome utente senza il dominio (@esempio.it)"
       ],
+      "Incorrect backup password. Please try again.": [
+        "Password di backup errata. Riprova."
+      ],
+      "Incorrect password. Please try again.": [
+        "Password errata. Per favore riprova."
+      ],
+      "Incorrect second password. Please try again.": [
+        "Password secondaria errata. Riprova."
+      ],
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
@@ -916,6 +928,9 @@
       ],
       "We couldn’t send a verification code using this method.": [
         "Non è stato possibile inviare un codice di verifica con questo metodo."
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "Frase di recupero errata. Riprova o usa un altro metodo di recupero."
       ]
     },
     "Error message": {
@@ -935,6 +950,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
       ]
     },
     "fido2: Info": {
