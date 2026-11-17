@@ -44,6 +44,8 @@ import { sendVisionaryUpsellCtaClick } from './telemetry';
 
 type OfferedPlanName = PLANS.VISIONARY | PLANS.BUNDLE;
 
+const getDiscoverText = (planName: string) => c('Action').t`Discover ${planName}`;
+
 const getIncludedAppsText = () => {
     const meet = PLAN_NAMES[PLANS.MEET];
     const lumo = PLAN_NAMES[PLANS.LUMO];
@@ -159,7 +161,7 @@ const VisionaryUpsellCards = ({
         { id: 'pass', text: c('Plan card').t`Password manager with identity protection` },
     ];
 
-    const pricePerMonthPerUser = cheapestMonthlyPrice
+    const priceString = cheapestMonthlyPrice
         ? getSimplePriceString(subscription.Currency, cheapestMonthlyPrice / FAMILY_MAX_USERS)
         : undefined;
 
@@ -175,9 +177,9 @@ const VisionaryUpsellCards = ({
                     title={c('Visionary upsell').t`Group plans`}
                     description={
                         // translator: typical sentence is: You can protect up to 2 people with Proton Duo, and up to 6 with Proton Family. From only $4.00/month per account.
-                        pricePerMonthPerUser &&
+                        priceString &&
                         c('Upsell')
-                            .t`You can protect up to ${DUO_MAX_USERS} people with ${PLAN_NAMES[PLANS.DUO]}, and up to ${FAMILY_MAX_USERS} with ${familyName}. From only ${pricePerMonthPerUser}/month per account.`
+                            .t`You can protect up to ${DUO_MAX_USERS} people with ${PLAN_NAMES[PLANS.DUO]}, and up to ${FAMILY_MAX_USERS} with ${PLAN_NAMES[PLANS.FAMILY]}. From only ${priceString}/month per account.`
                     }
                     ctaLabel={c('Action').t`Explore group plans`}
                     onCta={handleExploreGroupPlans}
@@ -188,17 +190,18 @@ const VisionaryUpsellCards = ({
             );
         }
         if (companion === 'family') {
+            const plan = PLANS.FAMILY;
             return (
                 <PlanOfferCard
                     planName={PLANS.FAMILY}
                     variant="compact"
                     title={familyName}
                     description={
-                        pricePerMonthPerUser &&
+                        priceString &&
                         c('Upsell')
-                            .t`You can protect up to ${FAMILY_MAX_USERS} people with ${familyName}. Starting from just ${pricePerMonthPerUser}/month per account.`
+                            .t`You can protect up to ${FAMILY_MAX_USERS} people with ${PLAN_NAMES[plan]}. Starting from just ${priceString}/month per account.`
                     }
-                    ctaLabel={c('Action').t`Discover ${familyName}`}
+                    ctaLabel={getDiscoverText(familyName)}
                     onCta={handleExploreGroupPlans}
                     loading={loadingSubscriptionModal}
                     reserveBandSpace
@@ -214,7 +217,7 @@ const VisionaryUpsellCards = ({
                 description={c('Plan description')
                     .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${PASS_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, and ${CALENDAR_SHORT_APP_NAME}`}
                 features={unlimitedFeatures}
-                ctaLabel={c('Action').t`Discover ${unlimitedName}`}
+                ctaLabel={getDiscoverText(unlimitedName)}
                 onCta={() => handleDiscover(PLANS.BUNDLE)}
                 reserveBandSpace
                 data-testid="unlimited-card"
@@ -248,7 +251,7 @@ const VisionaryUpsellCards = ({
                     highlightLine={
                         isFull ? undefined : c('Visionary upsell').t`Includes Ultra servers, reserved for you`
                     }
-                    ctaLabel={c('Action').t`Discover ${visionaryName}`}
+                    ctaLabel={getDiscoverText(visionaryName)}
                     onCta={() => handleDiscover(PLANS.VISIONARY)}
                     data-testid="visionary-card"
                 />

@@ -212,6 +212,9 @@ export const getUltraServersTooltip = () =>
 
 type ComparedPlan = VisionaryUpsellSubscriberPlan | 'visionary';
 
+// translator: ${limit} is a storage size ("6 GB") or a number of users ("6")
+const getUpToText = (limit: string) => c('Visionary upsell').t`Up to ${limit}`;
+
 const hasPremiumApps = (plan: ComparedPlan) => plan !== 'vpnPlus' && plan !== 'vpnPassBundle';
 const hasPremiumPass = (plan: ComparedPlan) => plan !== 'vpnPlus';
 
@@ -221,7 +224,7 @@ const getStorageValue = (comparedPlan: ComparedPlan, plan: Plan | undefined, fre
             bytes: freePlan.MaxDriveRewardSpace + freePlan.MaxBaseRewardSpace,
             fraction: 0,
         });
-        return c('Visionary upsell').t`Up to ${freeStorage}`;
+        return getUpToText(freeStorage);
     }
 
     // The storage of Duo is slightly less than 2 TB, it's displayed as 2 TB everywhere
@@ -243,7 +246,7 @@ const getVpnDevicesValue = (plan: Plan | undefined) => {
 
 const getUsersValue = (plan: Plan | undefined) => {
     const users = Math.max(plan?.MaxMembers ?? 1, 1);
-    return users > 1 ? c('Visionary upsell').t`Up to ${users}` : String(users);
+    return users > 1 ? getUpToText(String(users)) : String(users);
 };
 
 const getCountValue = (n: number | undefined) => (n ? String(n) : false);
