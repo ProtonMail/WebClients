@@ -6,9 +6,10 @@ import type { IEditor } from 'roosterjs-editor-types';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { setSentryTags } from '@proton/shared/lib/helpers/sentry';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
-import { useFlag } from '@proton/unleash/useFlag';
 
+import { useEditorVersion } from '../../../../hooks/useEditorVersion';
 import {
     EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID,
     EDITOR_DROPZONE,
@@ -57,7 +58,7 @@ const useInitRooster = ({
     const theme = useTheme();
     const themeCSSVariables = theme.information.style;
     // Read once, as initRooster runs on mount only: a flag change applies to the next editor
-    const isRoosterV9 = useFlag('MailComposerRoosterV9');
+    const editorVersion = useEditorVersion();
 
     useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
 
@@ -115,6 +116,9 @@ const useInitRooster = ({
 
         const editorDiv = iframeDocument.getElementById(ROOSTER_EDITOR_ID) as HTMLDivElement;
 
+        // On the global scope, so errors thrown outside the editor, like a failed send or autosave, carry it too
+        setSentryTags({ editorVersion });
+
         const { editor, actions } = await initRoosterEditor(editorDiv, {
             onEditorEvent: onEditorChange,
             initialContent,
@@ -124,7 +128,7 @@ const useInitRooster = ({
             onPasteFiles,
             isPastedImageAllowed,
             openEmojiPicker,
-            isRoosterV9,
+            isRoosterV9: editorVersion === 'roosterjs-9',
         });
 
         // Prevent setState execution in case component is unmounted

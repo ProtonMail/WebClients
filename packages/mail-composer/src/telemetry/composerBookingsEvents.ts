@@ -7,6 +7,8 @@ import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
 import { allowed, topValues } from '@proton/telemetry-tracker/lib/dimensions';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
+import { EDITOR_VERSIONS, type EditorVersion, useEditorVersion } from '../hooks/useEditorVersion';
+
 /** Which click surfaced the booking upsell: the composer booking action directly, or "Create a booking page" in the booking dropdown */
 export enum BookingUpsellSource {
     booking_action = 'booking_action',
@@ -40,7 +42,7 @@ export const getBookingPageCountDimension = (count: number): BookingPageCount =>
     return count === 1 ? '1' : '0';
 };
 
-type BaseDimensions = Omit<ReturnType<typeof getBaseTelemetryDimensions>, 'isFree'>;
+type BaseDimensions = Omit<ReturnType<typeof getBaseTelemetryDimensions>, 'isFree'> & { editorVersion: EditorVersion };
 
 // Filled by getBaseTelemetryDimensions, as sendTelemetryReportWithBaseDimensions does for other measurement groups,
 // without isFree: it's always subscription === 'free', so it adds nothing here
@@ -50,6 +52,7 @@ const baseDimensions = {
     subscription: topValues(),
     audience: topValues(),
     cycle: topValues(),
+    editorVersion: allowed(EDITOR_VERSIONS),
 };
 
 // The direct upsell path doesn't load the user's booking pages, so there is no count to send
@@ -120,10 +123,11 @@ export const useComposerBookingsTracking = () => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [userSettings] = useUserSettings();
+    const editorVersion = useEditorVersion();
 
     const getBaseDimensions = (): BaseDimensions => {
         const { isFree, ...dimensions } = getBaseTelemetryDimensions({ user, subscription, userSettings });
-        return dimensions;
+        return { ...dimensions, editorVersion };
     };
 
     const getUpsellDimensions = (context: BookingUpsellContext) => {
