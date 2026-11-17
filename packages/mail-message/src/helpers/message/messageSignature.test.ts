@@ -1,13 +1,17 @@
 import { sanitizeMessage } from '@proton/sanitize/purify';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { PM_SIGNATURE as PM_SIGNATURE_ENUM } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
+import type { MessageState } from '../../store/messages/messagesTypes';
 import {
     CLASSNAME_SIGNATURE_CONTAINER,
     CLASSNAME_SIGNATURE_EMPTY,
     CLASSNAME_SIGNATURE_USER,
+    changeSignature,
     insertSignature,
 } from './messageSignature';
 
@@ -152,6 +156,97 @@ describe('signature', () => {
                     });
                 });
             });
+        });
+    });
+
+    describe('changeSignature', () => {
+        const fontStyle = 'font-family: Arial, sans-serif; font-size: 14px;';
+
+        const getMessage = (body: string) => {
+            return {
+                localID: 'localID',
+                data: { MIMEType: MIME_TYPES.DEFAULT } as MessageState['data'],
+                messageDocument: { document: parseStringToDOM(body).body },
+            } as MessageState;
+        };
+
+        const getSignatureContainer = (result: string) => {
+            return parseStringToDOM(result).querySelector<HTMLElement>(`.${CLASSNAME_SIGNATURE_CONTAINER}`);
+        };
+
+        const roosterV9Signature = `<div class="${CLASSNAME_SIGNATURE_CONTAINER}"><div class="${CLASSNAME_SIGNATURE_USER}"><span style="${fontStyle}">Sent from my laptop</span></div></div>`;
+
+        it('should give the new signature the default font when roosterjs 9 moved it off the container', () => {
+            const message = getMessage(roosterV9Signature);
+
+            const result = changeSignature(
+                message,
+                mailSettings,
+                userSettings,
+                fontStyle,
+                'Sent from my laptop',
+                'Sent from my phone'
+            );
+
+            const container = getSignatureContainer(result);
+            expect(container?.textContent).toBe('Sent from my phone');
+            expect(container?.style.fontFamily).toBe('Arial, sans-serif');
+            expect(container?.style.fontSize).toBe('14px');
+        });
+
+        it('should keep the font already on the container', () => {
+            const message = getMessage(
+                `<div style="font-family: Times New Roman, serif;" class="${CLASSNAME_SIGNATURE_CONTAINER}"><div class="${CLASSNAME_SIGNATURE_USER}">Sent from my laptop</div></div>`
+            );
+
+            const result = changeSignature(
+                message,
+                mailSettings,
+                userSettings,
+                fontStyle,
+                'Sent from my laptop',
+                'Sent from my phone'
+            );
+
+            expect(getSignatureContainer(result)?.style.fontFamily).toBe('Times New Roman, serif');
+        });
+
+        it('should keep the container styles other than the font', () => {
+            const message = getMessage(
+                `<div style="direction: rtl; text-align: right;" class="${CLASSNAME_SIGNATURE_CONTAINER}"><div class="${CLASSNAME_SIGNATURE_USER}">Sent from my laptop</div></div>`
+            );
+
+            const result = changeSignature(
+                message,
+                mailSettings,
+                userSettings,
+                fontStyle,
+                'Sent from my laptop',
+                'Sent from my phone'
+            );
+
+            const container = getSignatureContainer(result);
+            expect(container?.style.fontFamily).toBe('Arial, sans-serif');
+            expect(container?.style.direction).toBe('rtl');
+            expect(container?.style.textAlign).toBe('right');
+        });
+
+        it('should sanitize the new signature', () => {
+            const message = getMessage(roosterV9Signature);
+
+            const result = changeSignature(
+                message,
+                mailSettings,
+                userSettings,
+                fontStyle,
+                'Sent from my laptop',
+                '<b>Sent from my phone</b><img src="x" onerror="alert(1)"><script>alert(2)</script>'
+            );
+
+            const container = getSignatureContainer(result);
+            expect(container?.querySelector('b')?.textContent).toBe('Sent from my phone');
+            expect(container?.querySelector('script')).toBeNull();
+            expect(container?.querySelector('img')?.hasAttribute('onerror')).toBe(false);
         });
     });
 });
