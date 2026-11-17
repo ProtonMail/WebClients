@@ -23,7 +23,9 @@ interface Props {
     type: PlainPaymentMethodType;
 }
 
-const iconByMethodType: Partial<Record<PlainPaymentMethodType, () => ReactNode>> = {
+const iconByMethodType: Record<PlainPaymentMethodType, () => ReactNode> = {
+    [PAYMENT_METHOD_TYPES.CASH]: () => null,
+    [PAYMENT_METHOD_TYPES.TOKEN]: () => null,
     [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: () => <img src={googlePaySvg} alt="Google Pay" />,
     [PAYMENT_METHOD_TYPES.APPLE_PAY]: () => <img src={applePayIcon} alt="Apple Pay" />,
     [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: () => <img src={bankTransferIcon} alt="SEPA" />,
