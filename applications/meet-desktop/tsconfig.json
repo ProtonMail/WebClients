@@ -2,7 +2,7 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "lib": ["WebWorker", "DOM", "DOM.Iterable", "ESNext"],
-        "types": ["global-types-monorepo", "webpack-env", "jest"]
+        "types": ["global-types-monorepo", "webpack-env", "vitest/globals"]
     },
     "ts-node": {
         "compilerOptions": {
@@ -13,6 +13,6 @@
         },
         "ignore": ["node_modules/(?!@proton)"]
     },
-    "include": ["src/**/*", "jest.config.ts"],
+    "include": ["src/**/*", "vitest.config.mts"],
     "exclude": ["src/**/*.test.ts", "src/**/*.spec.ts"]
 }

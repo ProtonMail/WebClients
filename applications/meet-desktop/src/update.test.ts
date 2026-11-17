@@ -1,9 +1,8 @@
 import { getNewUpdateTestOnly, LocalDesktopVersion, releaseListSchemaTestOnly } from "./update";
-import { describe } from "@jest/globals";
 import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import { VersionFile } from "@proton/shared/lib/desktop/DesktopVersion";
 
-jest.mock("electron", () => ({
+vi.mock("electron", () => ({
     app: { isPackaged: true },
     autoUpdater: {
         on: () => {},

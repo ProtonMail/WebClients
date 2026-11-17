@@ -24,7 +24,8 @@
         "make:beta": "cross-env RELEASE=beta electron-forge make",
         "package": "electron-forge package",
         "start": "electron-forge start",
-        "test": "jest --runInBand"
+        "test": "vitest run",
+        "test:ci": "vitest run"
     },
     "config": {
         "appBundleId": "ch.protonmeet.desktop",
@@ -59,11 +60,10 @@
         "@electron-forge/shared-types": "catalog:",
         "@electron/fuses": "catalog:",
         "@proton/i18n": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/types": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@sentry/electron": "^7.20.2",
-        "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
@@ -74,7 +74,6 @@
         "dotenv": "^17.4.2",
         "electron": "43.8.8",
         "fork-ts-checker-webpack-plugin": "catalog:",
-        "jest": "catalog:",
         "node-loader": "^2.1.0",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
@@ -82,6 +81,7 @@
         "ts-loader": "catalog:",
         "ts-node": "catalog:",
         "typescript": "catalog:",
+        "vitest": "catalog:",
         "webpack": "catalog:"
     },
     "icon": "assets/icons/icon.png",

@@ -1,11 +1,9 @@
 import { destroyFeatureFlagManagerTest, getFeatureFlagManager, initializeFeatureFlagManagerTest } from "./manager";
 
-jest.mock("electron-store");
+const mockExecuteJavaScript = vi.fn();
+const mockGetMeetView = vi.fn();
 
-const mockExecuteJavaScript = jest.fn();
-const mockGetMeetView = jest.fn();
-
-jest.mock("../view/viewManagement", () => ({
+vi.mock("../view/viewManagement", () => ({
     getMeetView: () => mockGetMeetView(),
 }));
 
@@ -17,15 +15,15 @@ describe("FeatureFlagManager", () => {
 
     beforeEach(() => {
         destroyFeatureFlagManagerTest();
-        jest.clearAllMocks();
-        jest.useFakeTimers();
+        vi.clearAllMocks();
+        vi.useFakeTimers();
 
         mockStore = {
-            get: jest.fn().mockReturnValue({
+            get: vi.fn().mockReturnValue({
                 flags: {},
                 lastUpdated: 0,
             }),
-            set: jest.fn(),
+            set: vi.fn(),
         };
 
         mockGetMeetView.mockReturnValue({
@@ -74,7 +72,7 @@ describe("FeatureFlagManager", () => {
             mockExecuteJavaScript.mockClear();
 
             // Fast retry interval (5s)
-            jest.advanceTimersByTime(fastRetryMargin);
+            vi.advanceTimersByTime(fastRetryMargin);
 
             expect(mockExecuteJavaScript).toHaveBeenCalledTimes(1);
             expect(mockExecuteJavaScript).toHaveBeenCalledWith(
@@ -88,7 +86,7 @@ describe("FeatureFlagManager", () => {
             mockExecuteJavaScript.mockClear();
 
             const count = 10;
-            jest.advanceTimersByTime(fastRetryMargin * count);
+            vi.advanceTimersByTime(fastRetryMargin * count);
 
             expect(mockExecuteJavaScript).toHaveBeenCalledTimes(count);
             expect(mockExecuteJavaScript).toHaveBeenCalledWith(
@@ -102,7 +100,7 @@ describe("FeatureFlagManager", () => {
             initializeFeatureFlagManagerTest({ store: mockStore });
             mockExecuteJavaScript.mockClear();
 
-            jest.advanceTimersByTime(fastRetryMargin);
+            vi.advanceTimersByTime(fastRetryMargin);
 
             expect(mockExecuteJavaScript).not.toHaveBeenCalled();
         });
@@ -112,7 +110,7 @@ describe("FeatureFlagManager", () => {
             initializeFeatureFlagManagerTest({ store: mockStore });
             mockExecuteJavaScript.mockClear();
 
-            jest.advanceTimersByTime(fastRetryMargin);
+            vi.advanceTimersByTime(fastRetryMargin);
 
             expect(mockExecuteJavaScript).not.toHaveBeenCalled();
         });
@@ -254,8 +252,8 @@ describe("FeatureFlagManager", () => {
             };
 
             mockStore = {
-                get: jest.fn().mockImplementation(() => storedData),
-                set: jest.fn().mockImplementation((key, value) => {
+                get: vi.fn().mockImplementation(() => storedData),
+                set: vi.fn().mockImplementation((key, value) => {
                     storedData = value;
                 }),
             };

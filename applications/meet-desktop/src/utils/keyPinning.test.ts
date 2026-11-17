@@ -1,7 +1,7 @@
 import { Request } from "electron";
 import { verifyDownloadCertificate, VerificationResult } from "./keyPinning";
 
-jest.mock("electron", () => ({
+vi.mock("electron", () => ({
     app: { isPackaged: true },
 }));
 
@@ -77,7 +77,7 @@ xUysZKNxowc6dl5p9hAqU/Oo9ZM=
 -----END CERTIFICATE-----`;
 
 function test_verifyDownloadCertificate(hostname: string, certificateData: string, wantResult: VerificationResult) {
-    const mockCallback = jest.fn();
+    const mockCallback = vi.fn();
     const r = {
         hostname,
         validatedCertificate: {

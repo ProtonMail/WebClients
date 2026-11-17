@@ -1,9 +1,9 @@
 import { trimLocalID, isGoogleOAuthAuthorizationURL } from "./urlTests";
 import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 
-jest.mock("../config", () => {});
+vi.mock("../config", () => ({}));
 
-jest.mock("../../store/urlStore", () => ({
+vi.mock("../../store/urlStore", () => ({
     getAppURL: () => ({
         account: "https://account.proton.me",
         meet: "https://meet.proton.me",
