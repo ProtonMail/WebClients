@@ -284,7 +284,6 @@ const SetupAddressContainer = () => {
                                     handleToApp();
                                 } catch (e: any) {
                                     errorHandler(e);
-                                    handleBack();
                                 }
                             }}
                         />
