@@ -21,6 +21,7 @@ const BABEL_INCLUDE_NODE_MODULES = [
     'reselect',
     'immer',
     '@scure/base',
+    'pdfjs-dist',
 ];
 const BABEL_EXCLUDE_FILES = ['mailparser.js'];
 

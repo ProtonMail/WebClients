@@ -3,10 +3,9 @@
  *
  * This file was adapted from https://gitlab.com/autokent/pdf-parse, MIT license
  */
-// Use the "legacy" build: it transpiles modern syntax (e.g. `static {}` class
-// initialization blocks) that older browsers can't parse. The default build
-// ships untranspiled and webpack/babel don't transpile node_modules, so it
-// throws "Unexpected token '{'" on those browsers.
+// Use the "legacy" build: it bundles core-js polyfills for newer APIs pdf.js relies on
+// (e.g. Promise.withResolvers, Uint8Array.fromBase64). It still ships modern syntax such as
+// class static blocks, which the shared JS loader transpiles to our browser targets.
 import * as PDFJS from 'pdfjs-dist/legacy/build/pdf.mjs';
 import type { TextContent, TextItem } from 'pdfjs-dist/types/src/display/api';
 
@@ -22,11 +21,13 @@ import {
 import { estimateImageCoverage } from './pdfImageCoverage';
 import { MAX_PDF_PAGE_IMAGES_PER_REQUEST } from './pdfPageLimits';
 
-const workerSrc = new URL(
-    '../../../../node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs',
-    import.meta.url
-).toString();
-PDFJS.GlobalWorkerOptions.workerSrc = workerSrc;
+// Hand pdf.js a worker we start ourselves, so webpack bundles it (see pdfWorker.ts). Created on
+// first use and shared by every document, like the worker pdf.js would start from a workerSrc.
+const ensurePdfWorker = () => {
+    PDFJS.GlobalWorkerOptions.workerPort ??= new Worker(new URL('./pdfWorker.ts', import.meta.url), {
+        type: 'module',
+    });
+};
 
 // Define the interface for render options
 interface RenderOptions {
@@ -258,6 +259,7 @@ async function pdfParse(dataBuffer: any, options?: Partial<PDFOptions>): Promise
     };
 
     try {
+        ensurePdfWorker();
         const doc = await PDFJS.getDocument(
             options_.renderPageImages ? { data: dataBuffer, CanvasFactory: OffscreenCanvasFactory } : dataBuffer
         ).promise;

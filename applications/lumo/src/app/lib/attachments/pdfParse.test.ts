@@ -21,7 +21,7 @@ let pages: FakePage[] = [];
 const render = jest.fn();
 
 jest.mock('pdfjs-dist/legacy/build/pdf.mjs', () => ({
-    GlobalWorkerOptions: {},
+    GlobalWorkerOptions: { workerPort: {} },
     OPS: {
         save: 1,
         restore: 2,

@@ -1,3 +1,5 @@
+// The app polyfills (@proton/polyfill) don't run in workers; pdf.js needs e.g. structuredClone.
+import 'core-js/stable';
 import type { PandocConverter } from '../../lib/attachments/pandoc-wasm';
 import { getProcessingCategory, mimeTypeToPandocFormat } from '../../util/filetypes';
 import { importWithRetry } from '../../util/importWithRetry';

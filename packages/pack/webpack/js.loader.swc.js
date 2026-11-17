@@ -46,7 +46,7 @@ const getSwcLoader = ({ browserslist, isProduction = false, hasReactRefresh = tr
 
 const getJsLoader = (options) => {
     return {
-        test: /\.js$|\.tsx?$/,
+        test: /\.m?js$|\.tsx?$/,
         exclude: createRegex(
             excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
             excludeFiles([...BABEL_EXCLUDE_FILES, 'pre.ts', 'unsupported.ts'])
