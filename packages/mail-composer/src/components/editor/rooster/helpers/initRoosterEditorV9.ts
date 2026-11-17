@@ -4,7 +4,6 @@ import type { EditorPlugin as LegacyEditorPlugin } from 'roosterjs-editor-types'
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE, getFontFaceValueFromId } from '@proton/shared/lib/mail/fontFace';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
-import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR } from '../../constants';
 import EditorCustomPastePlugin from '../plugins/EditorCustomPastePlugin';
 import EditorEventListener from '../plugins/EditorEventListener';
 import { clearUndoSnapshots, createUndoSnapshots } from '../plugins/UndoSnapshotsV9';
@@ -47,8 +46,6 @@ export const initRoosterEditorV9 = async (
         fontWeight: 'normal',
         fontFamily,
         fontSize,
-        textColor: DEFAULT_FONT_COLOR,
-        backgroundColor: DEFAULT_BACKGROUND,
     };
 
     if (element === null) {

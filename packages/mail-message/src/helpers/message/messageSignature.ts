@@ -211,12 +211,21 @@ export const changeSignature = (
         const protonSignature = getProtonSignature(mailSettings, userSettings);
         const { userClass, containerClass } = getClassNamesSignature(newSignature, protonSignature);
 
-        userSignature.innerHTML = replaceLineBreaks(newSignature);
+        // Sanitized like the signature templateBuilder inserts in a new draft
+        const newSignatureBody = parseStringToDOM(sanitizeMessage(replaceLineBreaks(newSignature))).body;
+        userSignature.replaceChildren(...newSignatureBody.childNodes);
         userSignature.className = `${CLASSNAME_SIGNATURE_USER} ${userClass}`;
 
         const signatureContainer = userSignature?.closest(`.${CLASSNAME_SIGNATURE_CONTAINER}`);
         if (signatureContainer && signatureContainer !== null) {
             signatureContainer.className = `${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}`;
+
+            // roosterjs 9 moves the container's font onto a span inside the user signature, which the new signature replaces
+            if (fontStyle && !(signatureContainer as HTMLElement).style.fontFamily) {
+                // In front, so the container's own declarations, like its direction or alignment, still win
+                const existingStyle = signatureContainer.getAttribute('style');
+                signatureContainer.setAttribute('style', existingStyle ? `${fontStyle} ${existingStyle}` : fontStyle);
+            }
         }
     }
 
