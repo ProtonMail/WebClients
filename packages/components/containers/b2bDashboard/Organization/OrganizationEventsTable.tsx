@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-import { getUnixTime, parseISO } from 'date-fns';
+import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { UserIdentity } from '@proton/atoms/UserIdentity/UserIdentity';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { parseISOSafely } from '@proton/shared/lib/helpers/time';
 
 import { SortingTableHeader } from '../../../components/table/SortingTableHeader';
 import Table from '../../../components/table/Table';
@@ -70,7 +71,8 @@ const OrganizationEventsTable = ({
             <TableBody colSpan={5} loading={loading}>
                 {events.map(({ time, user, userName, eventType, eventTypeName, eventDetail }, index) => {
                     const key = index;
-                    const formattedTime = getUnixTime(parseISO(time));
+                    const eventDate = parseISOSafely(time);
+                    const formattedTime = eventDate ? getUnixTime(eventDate) : undefined;
 
                     return (
                         <TableRow
@@ -89,13 +91,15 @@ const OrganizationEventsTable = ({
                                             <span className="text-semibold" onClick={() => onEventClick(eventType)}>
                                                 {eventTypeName}
                                             </span>
-                                            <TimeComponent
-                                                format="PPp"
-                                                className="color-weak mt-1"
-                                                onClick={() => onTimeClick(time)}
-                                            >
-                                                {formattedTime}
-                                            </TimeComponent>
+                                            {formattedTime !== undefined && (
+                                                <TimeComponent
+                                                    format="PPp"
+                                                    className="color-weak mt-1"
+                                                    onClick={() => onTimeClick(time)}
+                                                >
+                                                    {formattedTime}
+                                                </TimeComponent>
+                                            )}
                                         </div>
                                     </div>
                                 </div>,
