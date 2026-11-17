@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -10,7 +9,7 @@ import CircularProgress from '../../../components/progress/CircularProgress';
  * 76-90% load is YELLOW color #eac819
  * 91-100% load is RED color #ec5858
  */
-const getLoadColorClass = (load) => {
+const getLoadColorClass = (load: number) => {
     if (load > 90) {
         return 'circle-bar--full';
     }
@@ -22,7 +21,11 @@ const getLoadColorClass = (load) => {
     return '';
 };
 
-const LoadIndicator = ({ server: { Load = 0 } }) => {
+interface Props {
+    server: { Load?: number };
+}
+
+const LoadIndicator = ({ server: { Load = 0 } }: Props) => {
     return (
         <span className="min-w-custom hidden md:inline" style={{ '--min-w-custom': '5em' }}>
             <Tooltip title={c('Info').t`Server load`}>
@@ -38,12 +41,6 @@ const LoadIndicator = ({ server: { Load = 0 } }) => {
             </Tooltip>
         </span>
     );
-};
-
-LoadIndicator.propTypes = {
-    server: PropTypes.shape({
-        Load: PropTypes.number,
-    }),
 };
 
 export default LoadIndicator;
