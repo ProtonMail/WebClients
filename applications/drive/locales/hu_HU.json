@@ -387,9 +387,6 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } beszerzése"
       ],
-      "Get in touch": [
-        "Lépjen velünk kapcsolatba"
-      ],
       "Get secure storage for ${ simplePriceString }": [
         "Szerezzen biztonságos tárhelyet ${ simplePriceString }ért"
       ],
@@ -483,9 +480,6 @@
       "Leave": [
         "Kilépés"
       ],
-      "Let's talk": [
-        "Beszélgessünk!"
-      ],
       "Load": [
         "Betöltés"
       ],
@@ -566,6 +560,9 @@
       ],
       "Move to trash": [
         "Áthelyezés a lomtárba"
+      ],
+      "New": [
+        "Új"
       ],
       "New document": [
         "Új dokumentum"
@@ -827,6 +824,9 @@
       ],
       "Skip verification": [
         "Ellenőrzés átugrása"
+      ],
+      "Special Offer": [
+        "Akciós ajánlat"
       ],
       "Start import": [
         "Importálás indítása"
@@ -4557,6 +4557,9 @@
       "File will not be updated": [
         "A fájl nem kerül frissítésre"
       ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Csak fájlok (nem képek, ${ DOCS_APP_NAME } vagy ${ SHEETS_APP_NAME })) - max. 100GB, 100.000 fájl, 50GB fájlonként"
+      ],
       "Folder will not be uploaded": [
         "Mappa nem lesz feltöltve"
       ],
@@ -6087,6 +6090,9 @@
       "Pay invoice": [
         "Számla kifizetése"
       ],
+      "Photos": [
+        "Fényképek"
+      ],
       "Reactivate now": [
         "Újraaktiválás most"
       ],
@@ -6101,6 +6107,12 @@
       ],
       "settings": [
         "beállítások"
+      ],
+      "Shared": [
+        "Megosztott"
+      ],
+      "Shared with me": [
+        "Velem megosztva"
       ],
       "Terms and conditions": [
         "Felhasználási feltételek"
@@ -7762,9 +7774,6 @@
       "More plans are available in other currencies": [
         "További csomagok érhetők el más pénznemekben"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Csak egy ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } vásárolható."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Fizetés ${ IDEAL_WERO_BRAND_NAME }val"
       ],
@@ -7773,9 +7782,6 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Kérjük, először aktiválja újra az előfizetését, hogy csökkenthesse a bővítmények számát."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "A Proton Meet licencek száma meg kell egyezzen a tagok számával."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "A megújítási árak a ${ termsAndConditionsLink } szerint változhatnak."
@@ -7792,9 +7798,6 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes.",
         "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "A kiválasztott csomag nem biztosít elegendő tárhelyet a fiókjához."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
@@ -7836,9 +7839,6 @@
       ],
       "Timeout exceeded": [
         "Időtúllépés"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "A próbaidős csomagokban nem érhető el ${ LUMO_SHORT_APP_NAME } licenc."
       ],
       "VAT number": [
         "Áfa-szám"
@@ -9218,6 +9218,9 @@
       ],
       "Problem reported": [
         "Hiba bejelentve"
+      ],
+      "Resuming import": [
+        "Importálás folytatása"
       ],
       "Secure link copied": [
         "Biztonságos hivatkozás másolva"

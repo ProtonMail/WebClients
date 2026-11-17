@@ -333,6 +333,9 @@
       "Display navigation bar": [
         "ナビゲーションバーを表示する"
       ],
+      "Don't show this offer again": [
+        "このオファーを今後表示しない"
+      ],
       "Done": [
         "完了"
       ],
@@ -422,9 +425,6 @@
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } を入手"
-      ],
-      "Get in touch": [
-        "連絡する"
       ],
       "Get mobile and desktop apps": [
         "モバイルアプリとデスクトップアプリを入手する"
@@ -528,9 +528,6 @@
       "Leave": [
         "退出"
       ],
-      "Let's talk": [
-        "話をしよう"
-      ],
       "List layout": [
         "リストレイアウト"
       ],
@@ -614,6 +611,9 @@
       ],
       "Move to trash": [
         "ごみ箱に移動"
+      ],
+      "New": [
+        "新規"
       ],
       "New chat": [
         "新しいチャット"
@@ -902,6 +902,9 @@
       ],
       "Skip verification": [
         "検証をスキップする"
+      ],
+      "Special Offer": [
+        "特別オファー"
       ],
       "Start import": [
         "インポート開始"
@@ -4195,6 +4198,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
       ]
     },
     "fido2: Info": {
@@ -4694,6 +4700,9 @@
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME } のロゴ"
       ],
+      "${ importedSize } imported": [
+        "${ importedSize } をインポート済み"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
       ],
@@ -5039,6 +5048,9 @@
       "Details": [
         "詳細"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は通常の月払い料金を基準としています。請求サイクルが終了すると、サブスクリプションは通常の年額料金で更新されます。"
+      ],
       "Discover new features unlocked and start using them right away!": [
         "アンロックされた新機能を見つけて、すぐに使い始めましょう！"
       ],
@@ -5222,11 +5234,20 @@
       "Import in progress": [
         "インポートは進行しています"
       ],
+      "Import interrupted": [
+        "インポートが中断されました"
+      ],
       "Import mailbox": [
         "メールボックスのインポート"
       ],
+      "Import paused": [
+        "インポートが一時停止されました"
+      ],
       "Important note": [
         "重要な注意事項"
+      ],
+      "Importing from Google Drive…": [
+        "Google Drive からインポート中…"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
@@ -5347,6 +5368,9 @@
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "すべてのメールアドレスへのメッセージは受信トレイに移動します。"
+      ],
+      "More storage needed": [
+        "追加のストレージが必要です"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "ほとんどの公共のWiFiネットワークは安全ですが、一部はセキュリティ対策が不十分であり、あなたをサイバー攻撃の危険に晒してしまいます。VPNはトラフィックを暗号化することにより、あなたを保護します。"
@@ -5536,6 +5560,9 @@
       ],
       "RECOMMENDED": [
         "推奨"
+      ],
+      "Reconnect Google Drive": [
+        "Google Drive に再接続"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
@@ -5954,6 +5981,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } プランに含まれるストレージを超えるストレージを使用しています。 ダウングレードするには、データを削除してください。"
       ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "${ easySwitchSettingsLink } からインポートをキャンセルすることもできます。"
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "存在する ${ BRAND_NAME } カレンダーにインポートしたカレンダーを結合することもできます。"
       ],
@@ -5974,6 +6004,9 @@
       ],
       "You can now return to the application to continue": [
         "アプリケーションに戻って続けましょう"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "インポートが完了すると、このフォルダーを開くことができます。現在までに${ importedSize } をインポートしました。完了したらメールでお知らせします。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
@@ -6067,6 +6100,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Googleアカウントへのアクセスが失われたためインポートを一時停止しました。残りのファイルを取り込むには再接続してください。"
       ],
       "Your information was found on ${ displayedDate }": [
         "あなたの情報は ${ displayedDate }で見つかりました。"
@@ -6937,6 +6973,9 @@
       "Pay it": [
         "支払う"
       ],
+      "Photos": [
+        "写真"
+      ],
       "Reactivate now": [
         "今すぐ再アクティブ"
       ],
@@ -6951,6 +6990,12 @@
       ],
       "settings": [
         "設定"
+      ],
+      "Shared": [
+        "共有中"
+      ],
+      "Shared with me": [
+        "私と共有中"
       ],
       "Terms and conditions": [
         "利用規約"
@@ -8719,12 +8764,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice }（税別）"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } は ${ PLAN_NAMES[PLANS.PASS] } と組み合わせることはできません。"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } はビジネスプランでのみご利用いただけます。"
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% の税金: ${ taxAmountElement }"
       ],
@@ -8734,17 +8773,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } のトライアル後のお支払い額"
       ],
-      "An organization is required for this plan.": [
-        "このプランをご利用いただくには組織の作成が必要です。"
-      ],
       "Billing Country": [
         "請求先の国"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "サブスクリプションの利用中は Born Private アカウントを購入することはできません。"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "クレジットの購入には、別途個別のお手続きが必要です。"
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "切り替えることにより、お客様は当社の ${ termsLink } に同意したものとみなされます。"
@@ -8788,9 +8818,6 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } の購入は1つまでに制限されています。"
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME } で支払う"
       ],
@@ -8800,26 +8827,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "以下の理由により、プランの切り替えを行うことができません:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "プランを変更する前に、余分なウォレットアカウントを閉じてください。"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "プランを変更する前に、余分なウォレットを閉じてください。"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet のシート数はメンバー数と一致している必要があります。"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "更新価格は ${ termsAndConditionsLink }に応じて変更される可能性があります。"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe のシート数はメンバー数を超えることはできません。"
       ],
       "Tax ${ rate }%": [
         "税金 ${ rate }%"
@@ -8830,23 +8845,8 @@
       "terms and conditions": [
         "利用規約"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private プログラムに参加するには寄付が必要です。"
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "この割引は ${ renewalsWithCoupon } の更新で有効です。"
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なメールアドレス数が不足しています。"
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なドメイン数が不足しています。"
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なメンバー数が不足しています。"
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なストレージ容量が不足しています。"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
@@ -8872,41 +8872,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "この操作により、既存のサブスクリプションが拡張されます。新しいアドオンと、現在の支払間隔の残りの期間に対してのみ課金されます。お客様のサブスクリプションの更新日は変更されません。"
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "この専用サーバーはゲートウェイに割り当てられているため、変更できません。"
-      ],
       "This offer is not available with your current plan.": [
         "この特典は現在のプランではご利用いただけません。"
       ],
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "このプランでは、お使いのアカウントで利用中の管理機能がサポートされていません。"
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "このプランは、お客様のアカウントに登録されているメンバーをサポートしていません。"
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "現在、このサブスクリプションを完了できません。もう一度お試しください。"
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "トライアルプランでは ${ LUMO_SHORT_APP_NAME } のシートを追加できません。"
-      ],
-      "Trial plans don’t support custom domains.": [
-        "トライアルプランではカスタムドメインをご利用いただけません。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "トライアルプランでは専用 IP をご利用いただけません。"
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "トライアルプランは Scrieシート をサポートしていません。"
-      ],
-      "Trial plans don’t support this many members.": [
-        "トライアルプランでは、この人数のメンバーをサポートしていません。"
       ],
       "VAT number": [
         "VAT番号"
@@ -8920,20 +8896,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "お客様はすでに ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } を所有しています。"
-      ],
-      "You already own a Born Private account.": [
-        "お客様はすでに Born Private アカウントを所有しています。"
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "お使いのアカウントは、Born Private プログラムの対象期間より前に作成されています。"
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"
@@ -10462,6 +10429,9 @@
       "Problem reported": [
         "問題が報告されました"
       ],
+      "Resuming import": [
+        "インポートを再開"
+      ],
       "Secure link copied": [
         "セキュアリンクがコピーされました"
       ],
@@ -11138,6 +11108,9 @@
       "Recommended actions": [
         "推奨されるアクション"
       ],
+      "Reconnect to finish your import": [
+        "再接続してインポートを完了してください"
+      ],
       "Reconnect your account": [
         "アカウントに再接続"
       ],
@@ -11434,6 +11407,9 @@
       ],
       "Your exposed information": [
         "あなたの公開情報"
+      ],
+      "Your import is in progress": [
+        "インポートを実行中です"
       ],
       "Your plan": [
         "現在のプラン"

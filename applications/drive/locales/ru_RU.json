@@ -420,9 +420,6 @@
       "Get ${ planOrAppName }": [
         "Получить ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Связаться с нами"
-      ],
       "Get mobile and desktop apps": [
         "Скачать мобильные и десктопные приложения"
       ],
@@ -522,9 +519,6 @@
       "Leave": [
         "Оставить"
       ],
-      "Let's talk": [
-        "Свяжитесь с нами"
-      ],
       "List layout": [
         "Вид списком"
       ],
@@ -608,6 +602,9 @@
       ],
       "Move to trash": [
         "Переместить в Корзину"
+      ],
+      "New": [
+        "Создать"
       ],
       "New document": [
         "Новый документ"
@@ -6798,6 +6795,9 @@
       "Pay invoice": [
         "Оплатить счёт"
       ],
+      "Photos": [
+        "Фото"
+      ],
       "Reactivate now": [
         "Восстановить подписку"
       ],
@@ -6812,6 +6812,12 @@
       ],
       "settings": [
         "настройки"
+      ],
+      "Shared": [
+        "В общем доступе"
+      ],
+      "Shared with me": [
+        "Доступные мне"
       ],
       "Terms and conditions": [
         "Условия"
@@ -8753,9 +8759,6 @@
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений."
       ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "У выбранного тарифного плана недостаточно места для данных вашего аккаунта."
-      ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
@@ -10412,6 +10415,9 @@
       ],
       "Problem reported": [
         "О проблеме сообщено"
+      ],
+      "Resuming import": [
+        "Импорт заканчивается"
       ],
       "Secure link copied": [
         "Защищенная ссылка скопирована"

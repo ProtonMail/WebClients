@@ -386,6 +386,9 @@
       "Display previous": [
         "पिछला दिखाएं"
       ],
+      "Don't show this offer again": [
+        "ये ऑफर दोबारा न दिखाएं"
+      ],
       "Done": [
         "हो गया"
       ],
@@ -499,9 +502,6 @@
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName } लें"
-      ],
-      "Get in touch": [
-        "हमसे संपर्क करें"
       ],
       "Get mobile and desktop apps": [
         "मोबाइल और डेस्कटॉप ऐप प्राप्त करें"
@@ -631,9 +631,6 @@
       ],
       "Leave album": [
         "एल्बम छोड़ें"
-      ],
-      "Let's talk": [
-        "चलिए बात करते हैं"
       ],
       "List layout": [
         "सूची‎ खाका"
@@ -1087,6 +1084,9 @@
       ],
       "Skip verification": [
         "सत्यापन स्किप करें"
+      ],
+      "Special Offer": [
+        "विशेष ऑफ़र"
       ],
       "Start": [
         "शुरू करें"
@@ -4517,6 +4517,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "आपकी सुरक्षा चाबी के साथ प्रमाणीकरण करते समय कुछ गड़बड़ हो गई। कृपया पुनः प्रयास करें।"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "यह ब्राउज़र सिक्योरिटी कीज़ को सपोर्ट नहीं करता है। कृपया कोई दूसरा ब्राउज़र आज़माएं।"
       ]
     },
     "fido2: Info": {
@@ -5029,6 +5032,9 @@
         "${ calendarsToBeMergedCount } मर्ज किया गया कैलेंडर",
         "${ calendarsToBeMergedCount } मर्ज किए गए कैलेंडर"
       ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor }, प्रेषक असत्यापित"
+      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ items.length } में से ${ completedItems.length } स्थानांतरण पूरे हुए"
       ],
@@ -5089,6 +5095,9 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME } मार्क"
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } आयातित"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } निमंत्रण लंबित है",
@@ -5535,6 +5544,9 @@
       "Details": [
         "जानकारी"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "छूट मानक मासिक प्राइसिंग पर आधारित हैं। बिल साइकिल खत्म होने पर आपकी सदस्यता मानक वार्षिक दर पर रिन्यू हो जाएगी।"
+      ],
       "Discover new features unlocked and start using them right away!": [
         "अनलॉक की गई नई सुविधाओं के बारे में जानें और तुरंत उनका उपयोग शुरू करें!"
       ],
@@ -5771,8 +5783,14 @@
       "Import in progress": [
         "आयात चल रहा है"
       ],
+      "Import interrupted": [
+        "आयात बाधित हुआ"
+      ],
       "Import mailbox": [
         "मेलबॉक्स आयात करें"
+      ],
+      "Import paused": [
+        "आयात रुक गया"
       ],
       "Import your files and folders": [
         "अपनी फाइलें और फोल्डर आयात करें"
@@ -5782,6 +5800,9 @@
       ],
       "Important note": [
         "महत्वपूर्ण नोट"
+      ],
+      "Importing from Google Drive…": [
+        "Google Drive से आयात हो रहा है…"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } से ${ toEmail } पे डेटा आयात किया जा रहा है।"
@@ -5981,6 +6002,9 @@
       ],
       "More": [
         "ज़्यादा"
+      ],
+      "More storage needed": [
+        "अधिक स्टोरेज की ज़रूरत है"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "अधिकांश सार्वजनिक वाई-फाई नेटवर्क सुरक्षित होते हैं, लेकिन कुछ में सुरक्षा की कमी होती है, जिससे साइबर खतरों का जोखिम बढ़ जाता है। एक VPN आपके ट्रैफिक को एन्क्रिप्ट करता है, जिससे आपकी सुरक्षा बनी रहती है।"
@@ -6274,6 +6298,9 @@
       ],
       "RECOMMENDED": [
         "सुझाव"
+      ],
+      "Reconnect Google Drive": [
+        "Google Drive फिर से कनेक्ट करें"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "पुनर्प्राप्ति जानकारी इस उपकरण पर तब तक बनी रहेगी जब तक कि आप इसे हटाना नहीं चुनते."
@@ -6904,6 +6931,9 @@
       ],
       "You can now return to the application to continue": [
         "जारी रखने के लिए एप्लीकेशन पे लौटे"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "आयात पूरा होने पर आप इस फोल्डर को खोल सकते हैं। अब तक ${ importedSize } आयातित हो चुका है। आयात पूरा होने पर हम आपको ईमेल करे देंगे।"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "इस फोल्डर में नए ईमेल संदेश आने पर अलर्ट पाने के लिए नोटिफिकेशन चालू करें।"
@@ -10117,12 +10147,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (कर के बिना)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } को ${ PLAN_NAMES[PLANS.PASS] } के साथ नहीं जोड़ा जा सकता।"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } सिर्फ़ बिज़नेस प्लान पर उपलब्ध है।"
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% कर: ${ taxAmountElement }"
       ],
@@ -10132,14 +10156,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } को ट्रायल समाप्त होने के बाद देय राशि"
       ],
-      "An organization is required for this plan.": [
-        "इस प्लान के लिए संगठन ज़रूरी है।"
-      ],
       "Billing Country": [
         "बिलिंग देश"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "क्रेडिट खरीदने के लिए अलग खरीदारी ज़रूरी है।"
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "स्विच करके, आप हमारे ${ termsLink } से सहमत होते हैं।"
@@ -10183,9 +10201,6 @@
       "More plans are available in other currencies": [
         "अन्य मुद्राओं में और अधिक प्लान उपलब्ध हैं।"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } सिर्फ़ एक ही खरीदा जा सकता है।"
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME } से पेमेंट करें"
       ],
@@ -10195,26 +10210,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "निम्नलिखित कारणों से प्लान बदलना संभव नहीं है:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "प्लान बदलने से पहले कृपया अतिरिक्त वॉलेट खाते बंद करें।"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "प्लान बदलने से पहले कृपया अतिरिक्त वॉलेट बंद करें।"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ऐड-ऑन की संख्या कम करने के लिए कृपया पहले अपनी सदस्यता को फिर से सक्रिय करें।"
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet की सीटें सदस्यों की संख्या के बराबर होनी चाहिए।"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "नवीनीकरण मूल्य ${ termsAndConditionsLink } के अनुसार परिवर्तन के अधीन है।"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } पर नवीनीकृत होता है, कभी भी रद्द करें।"
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe सीट की संख्या मेंबर्स से ज़्यादा नहीं हो सकती।"
       ],
       "Tax ${ rate }%": [
         "कर ${ rate }%"
@@ -10228,18 +10231,6 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "यह छूट ${ renewalsWithCoupon } नवीनीकरण के लिए वैध है।",
         "यह छूट ${ renewalsWithCoupon } नवीनीकरणों के लिए वैध है।"
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "चुना गया प्लान आपके खाते के लिए पर्याप्त पते नहीं देता।"
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "चुना गया प्लान आपके खाते के लिए पर्याप्त डोमेन नहीं देता।"
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "चुना गया प्लान आपके खाते के लिए पर्याप्त मेंबर नहीं देता।"
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "चुना गया प्लान आपके खाते के लिए पर्याप्त स्टोरेज नहीं देता।"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "विशेष रियायती कीमत पहले ${ subscriptionLength } महीने के लिए वैध है।",
@@ -10258,41 +10249,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "यह कार्रवाई मौजूदा सदस्यता का विस्तार करती है। आपसे केवल नए ऐड-ऑन्स और वर्तमान बिल साइकिल के शेष समय के लिए शुल्क लिया जाएगा। आपकी सदस्यता की रिन्यूअल तिथि नहीं बदली जाएगी।"
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "यह डेडिकेटेड सर्वर एक गेटवे को असाइन किया गया है और इसे बदला नहीं जा सकता।"
-      ],
       "This offer is not available with your current plan.": [
         "यह ऑफर आपके वर्तमान प्लान के साथ उपलब्ध नहीं है।"
       ],
       "This payment method will become your new default for all future renewals.": [
         "यह भुगतान तरीका भविष्य के सभी नवीनीकरणों के लिए आपका नया डिफॉल्ट बन जाएगा।"
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "यह प्लान आपके खाते पर प्रबंधित सुविधाओं का समर्थन नहीं करता है।"
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "यह प्लान आपके खाते के मेंबर्स का सपोर्ट नहीं करता।"
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "यह सदस्यता अभी पूरी नहीं हो सकती। कृपया पुनः प्रयास करें।"
       ],
       "Timeout exceeded": [
         "समय सीमा समाप्त हो गई।"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "ट्रायल प्लान ${ LUMO_SHORT_APP_NAME } सीट का सपोर्ट नहीं करते।"
-      ],
-      "Trial plans don’t support custom domains.": [
-        "ट्रायल प्लान कस्टम डोमेन का सपोर्ट नहीं करते।"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "ट्रायल प्लान डेडिकेटेड IP का सपोर्ट नहीं करते।"
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "ट्रायल प्लान Scribe सीट का सपोर्ट नहीं करते।"
-      ],
-      "Trial plans don’t support this many members.": [
-        "ट्रायल प्लान इतने मेंबर का सपोर्ट नहीं करते।"
       ],
       "VAT number": [
         "वैट नंबर"
@@ -10305,9 +10272,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "आपके पास पहले से ही इस प्लान की सदस्यता है। ${ subscriptionPlatform } पर अपनी सदस्यता बदली जा सकती है।"
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } आपके पास पहले से है।"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "आपके भुगतान को सत्यापित करने के लिए आपको जल्द ही PayPal पर रीडायरेक्ट कर दिया जाएगा।"
@@ -11905,6 +11869,9 @@
       "Recovery has started": [
         "रिकवरी शुरू हो गई"
       ],
+      "Resuming import": [
+        "आयात फिर से शुरू"
+      ],
       "Secure link copied": [
         "सुरक्षा लिंक कॉपी हो गया"
       ],
@@ -13093,6 +13060,9 @@
       ],
       "Your import is finished!": [
         "आपका आयात पूरा हो गया!"
+      ],
+      "Your import is in progress": [
+        "आपका आयात प्रक्रिया में है"
       ],
       "Your plan": [
         "आपका प्लान"

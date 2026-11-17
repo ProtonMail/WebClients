@@ -383,6 +383,9 @@
       "Dismiss": [
         "Descartar"
       ],
+      "Dismiss notification": [
+        "Descartar notificación"
+      ],
       "Display navigation bar": [
         "Mostrar la barra de navegación"
       ],
@@ -391,6 +394,9 @@
       ],
       "Display previous": [
         "Mostrar anterior"
+      ],
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
       ],
       "Done": [
         "Hecho"
@@ -506,9 +512,6 @@
       "Get ${ planOrAppName }": [
         "Obtén ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Ponte en contacto"
-      ],
       "Get mobile and desktop apps": [
         "Obtén aplicaciones móviles y de escritorio"
       ],
@@ -550,6 +553,9 @@
       ],
       "Go to settings": [
         "Ir a los ajustes"
+      ],
+      "Go to today": [
+        "Ir al día de hoy"
       ],
       "Google Drive": [
         "Google Drive"
@@ -637,9 +643,6 @@
       ],
       "Leave album": [
         "Salir del álbum"
-      ],
-      "Let's talk": [
-        "Habla con nosotros"
       ],
       "List layout": [
         "Vista de lista"
@@ -758,6 +761,9 @@
       "Next": [
         "Siguiente"
       ],
+      "Next contact": [
+        "Siguiente contacto"
+      ],
       "Next month": [
         "Mes siguiente"
       ],
@@ -799,6 +805,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Previous contact": [
+        "Contacto anterior"
       ],
       "Previous month": [
         "Mes anterior"
@@ -1094,6 +1103,9 @@
       "Skip verification": [
         "Omitir verificación"
       ],
+      "Special Offer": [
+        "Oferta especial"
+      ],
       "Start": [
         "Empezar"
       ],
@@ -1153,6 +1165,9 @@
       ],
       "Toggle settings": [
         "Alternar los ajustes"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Expandir o contraer las subcarpetas de ${ itemName }"
       ],
       "Trust": [
         "Confiar"
@@ -4564,6 +4579,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
       ]
     },
     "fido2: Info": {
@@ -5152,6 +5170,9 @@
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "Marca de ${ IDEAL_WERO_BRAND_NAME }"
       ],
+      "${ importedSize } imported": [
+        "${ importedSize } importado"
+      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } invitación pendiente",
         "${ invitationsCount } invitaciones pendientes"
@@ -5600,6 +5621,9 @@
       "Details": [
         "Detalles"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se calculan sobre el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Descubre las nuevas funciones desbloqueadas y empieza a usarlas de inmediato."
       ],
@@ -5836,8 +5860,14 @@
       "Import in progress": [
         "Importación en curso"
       ],
+      "Import interrupted": [
+        "Importación interrumpida"
+      ],
       "Import mailbox": [
         "Importar buzón"
+      ],
+      "Import paused": [
+        "Importación en pausa"
       ],
       "Import your files and folders": [
         "Importa tus archivos y carpetas"
@@ -5847,6 +5877,9 @@
       ],
       "Important note": [
         "Aviso importante"
+      ],
+      "Importing from Google Drive…": [
+        "Importando desde Google Drive"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando tus datos desde ${ fromEmail } a ${ toEmail }."
@@ -6046,6 +6079,9 @@
       ],
       "More": [
         "Más"
+      ],
+      "More storage needed": [
+        "Se necesita más espacio de almacenamiento"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La mayoría de las redes WiFi públicas son seguras, pero algunas carecen de seguridad, exponiéndote a amenazas cibernéticas. Una VPN cifra tu tráfico, manteniéndote protegido."
@@ -6339,6 +6375,9 @@
       ],
       "RECOMMENDED": [
         "RECOMENDADO"
+      ],
+      "Reconnect Google Drive": [
+        "Volver a conectar Google Drive"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
@@ -6928,6 +6967,9 @@
       "Writing assistant": [
         "Asistente de escritura"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Ya no se ofrecen lugares como asistentes de redacción"
+      ],
       "Yes": [
         "Sí"
       ],
@@ -6958,6 +7000,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Estás usando más almacenamiento del que se incluye en un plan ${ downgradedPlanName }. Elimina o borra datos para poder cambiar de plan."
       ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "También puedes cancelar la importación en ${ easySwitchSettingsLink }."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "También puedes combinar calendarios importados con calendarios ${ BRAND_NAME } existentes."
       ],
@@ -6980,6 +7025,9 @@
       ],
       "You can now return to the application to continue": [
         "Ahora puedes regresar a la aplicación para continuar."
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Podrás abrir esta carpeta cuando finalice la importación. Hasta ahora, hemos importado ${ importedSize }. Te enviaremos un correo electrónico cuando termine."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
@@ -7115,6 +7163,9 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "La importación está bloqueada. Mejora tu plan ahora para traer el resto de tus archivos."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Su importación se ha pausado porque se perdió el acceso a la cuenta de Google. Vuelva a conectarla para importar el resto de archivos."
       ],
       "Your information was found on ${ displayedDate }": [
         "Se han encontrado tus datos el ${ displayedDate }."
@@ -8234,6 +8285,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activar ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Código"
+      ],
+      "2x Basic usage": [
+        "2x uso Básico"
+      ],
+      "5x Plus usage": [
+        "Uso de 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acceso con API, con ${ credit } de crédito mensual"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acceso API, con un crédito mensual de ${ credit } por usuario."
+      ],
+      "Everything in Basic, and:": [
+        "Todo en Básico, y:"
+      ],
+      "Everything in Free, and:": [
+        "Todo en Gratis, y:"
+      ],
+      "Everything in Plus, and:": [
+        "Todo sobre Plus, y:"
+      ],
+      "Extended image generation": [
+        "Generación extendida de imágenes"
+      ],
+      "Includes:": [
+        "Incluye:"
+      ],
+      "Limited image generation": [
+        "Generación limitada de imágenes"
+      ],
+      "Limited messages and chat history": [
+        "Mensajes limitados e historial de conversaciones"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilidades limitadas, Proyectos y tareas programadas"
+      ],
+      "Maximum image generation": [
+        "Generación máxima de imágenes"
+      ],
+      "Maximum Skills and Projects": [
+        "Mayores habilidades y Proyectos"
+      ],
+      "More image generation": [
+        "Más generación de imágenes"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Más habilidades, Proyectos y tareas programadas"
+      ],
+      "More usage": [
+        "Uso mayor"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Por codificación y construcción"
+      ],
+      "For everyday chats": [
+        "Por conversaciones diarias"
+      ],
+      "For getting more done": [
+        "Por hacer más"
       ]
     },
     "Mail import summary": {
@@ -10304,12 +10422,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (impuestos no incluidos)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "No se puede combinar ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } con ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } solo está disponible en los planes para empresas."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% de impuesto: ${ taxAmountElement }"
       ],
@@ -10319,17 +10431,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad a pagar después de la prueba el ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Este plan requiere una organización."
-      ],
       "Billing Country": [
         "País de facturación"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "No se pueden comprar cuentas Born Private con una suscripción activa."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Para comprar créditos se requiere una compra aparte."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Al cambiar, aceptas nuestros ${ termsLink }."
@@ -10373,9 +10476,6 @@
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Solo se puede comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Paga con ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -10385,26 +10485,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "El cambio de plan no es compatible por los siguientes motivos:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Cierra las cuentas de cartera adicionales antes de cambiar de plan."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Cierra las carteras adicionales antes de cambiar de plan."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Las plazas de Proton Meet deben coincidir con el número de miembros."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Precio de renovación sujeta a cambios de acuerdo a ${ termsAndConditionsLink }"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Las licencias de Scribe no pueden superar el número de miembros."
       ],
       "Tax ${ rate }%": [
         "Impuesto ${ rate }%"
@@ -10415,24 +10503,9 @@
       "terms and conditions": [
         "términos y condiciones"
       ],
-      "The Born Private initiative requires a donation.": [
-        "La iniciativa Born Private requiere una donación."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descuento es válido para ${ renewalsWithCoupon } renovación.",
         "El descuento es válido para ${ renewalsWithCoupon } renovaciones."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "El plan seleccionado no ofrece suficientes direcciones para tu cuenta."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "El plan seleccionado no ofrece suficientes dominios para tu cuenta."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "El plan seleccionado no ofrece suficientes miembros para tu cuenta."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "El plan seleccionado no ofrece suficiente almacenamiento para tu cuenta."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
@@ -10463,41 +10536,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta acción amplía la suscripción existente. Se te cobrará solo por los nuevos complementos y el tiempo restante del ciclo de facturación actual. La fecha de renovación de tu suscripción no cambiará."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Este servidor dedicado está asignado a una pasarela y no se puede cambiar."
-      ],
       "This offer is not available with your current plan.": [
         "Esta oferta no está disponible con tu plan actual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en tu nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Este plan no admite las funciones gestionadas de tu cuenta."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Este plan no admite los miembros de tu cuenta."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "No se puede completar esta suscripción en este momento. Vuelve a intentarlo."
       ],
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Los planes de prueba no admiten licencias de ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Los planes de prueba no admiten dominios personalizados."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Los planes de prueba no admiten IP dedicadas."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Los planes de prueba no admiten licencias de Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Los planes de prueba no admiten tantos miembros."
       ],
       "VAT number": [
         "Número de IVA"
@@ -10511,20 +10560,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Ya tienes una suscripción a este plan. Puedes cambiar tu suscripción en ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Ya tienes ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Ya tienes una cuenta Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pronto serás redirigido para verificar tu pago."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Tu cuenta es demasiado antigua para la iniciativa Born Private."
       ],
       "Your payment is still being processed": [
         "Tu pago aún está siendo procesado."
@@ -12144,6 +12184,9 @@
       "Recovery has started": [
         "La recuperación ha comenzado"
       ],
+      "Resuming import": [
+        "Reanudando la importación"
+      ],
       "Secure link copied": [
         "Se ha copiado el enlace seguro."
       ],
@@ -12987,6 +13030,9 @@
       "Recommended actions": [
         "Acciones recomendadas"
       ],
+      "Reconnect to finish your import": [
+        "Vuelva a conectarse para finalizar la importación."
+      ],
       "Reconnect your account": [
         "Reconectar tu cuenta"
       ],
@@ -13332,6 +13378,9 @@
       ],
       "Your import is finished!": [
         "¡Tu importación ha finalizado!"
+      ],
+      "Your import is in progress": [
+        "Tu importación está en curso"
       ],
       "Your plan": [
         "Tu plan"

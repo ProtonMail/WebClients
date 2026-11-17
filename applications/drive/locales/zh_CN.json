@@ -387,6 +387,9 @@
       "Display previous": [
         "显示上一个"
       ],
+      "Don't show this offer again": [
+        "不再显示此优惠"
+      ],
       "Done": [
         "完成"
       ],
@@ -500,9 +503,6 @@
       ],
       "Get ${ planOrAppName }": [
         "开通 ${ planOrAppName }"
-      ],
-      "Get in touch": [
-        "保持联系"
       ],
       "Get mobile and desktop apps": [
         "获取移动端和桌面端应用"
@@ -633,9 +633,6 @@
       "Leave album": [
         "离开相册"
       ],
-      "Let's talk": [
-        "让我们聊聊"
-      ],
       "List layout": [
         "列表布局"
       ],
@@ -753,6 +750,9 @@
       "Next": [
         "继续"
       ],
+      "Next contact": [
+        "下一个联系人"
+      ],
       "Next month": [
         "下个月"
       ],
@@ -794,6 +794,9 @@
       ],
       "Previous": [
         "上一页"
+      ],
+      "Previous contact": [
+        "上一个联系人"
       ],
       "Previous month": [
         "上个月"
@@ -1088,6 +1091,9 @@
       ],
       "Skip verification": [
         "跳过验证"
+      ],
+      "Special Offer": [
+        "超值特惠"
       ],
       "Start": [
         "开始"
@@ -4527,6 +4533,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥认证时出现问题，请重试。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "此浏览器不支持安全密钥，请换用其他浏览器。"
       ]
     },
     "fido2: Info": {
@@ -5513,6 +5522,9 @@
       ],
       "Details": [
         "详细信息"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
       ],
       "Discover new features unlocked and start using them right away!": [
         "发现解锁的新功能，并立即开始使用！"
@@ -10072,12 +10084,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (不含税)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 不能与 ${ PLAN_NAMES[PLANS.PASS] } 组合使用。"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 仅适用于商业套餐。"
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% 税费：${ taxAmountElement }"
       ],
@@ -10087,17 +10093,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "试用期结束后于 ${ formattedDate } 应付金额"
       ],
-      "An organization is required for this plan.": [
-        "此套餐需要组织！"
-      ],
       "Billing Country": [
         "计费国家/地区"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "在订阅生效期间无法购买 Born Private 账户。"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "购买额度需要单独进行！"
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "切换即表示您同意我们的${ termsLink }。"
@@ -10141,9 +10138,6 @@
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "仅可购买一个 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "使用 ${ IDEAL_WERO_BRAND_NAME } 付款"
       ],
@@ -10153,26 +10147,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "套餐切换不兼容，原因如下："
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "请在更改套餐前关闭多余的钱包账户。"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "请在更改套餐前关闭多余的钱包。"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "请先重新激活您的订阅以减少附加功能。"
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet 席位数量必须与成员数量匹配。"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "续费价格会根据${ termsAndConditionsLink }进行调整。"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe 席位数量不能超过成员数量。"
       ],
       "Tax ${ rate }%": [
         "税费 ${ rate }%"
@@ -10183,23 +10165,8 @@
       "terms and conditions": [
         "服务条款"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private 套餐需要捐款。"
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "该折扣适用于 ${ renewalsWithCoupon } 次续订"
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "所选套餐未为您的账户提供足够的地址。"
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "所选套餐未为您的账户提供足够的域名。"
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "所选套餐未为您的账户提供足够的成员名额。"
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "所选套餐未为您的账户提供足够的存储空间。"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "特惠价格在 ${ couponRedemptions } 个月内有效，之后将以每月 ${ renewPriceStr } 续订，您可以随时取消。"
@@ -10225,41 +10192,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "此操作将扩展您现有的订阅。您只需支付新增附加项的费用以及当前计费周期剩余时间的费用。您的订阅续订日期将不会改变。"
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "此专用服务器已分配给网关，无法更改。"
-      ],
       "This offer is not available with your current plan.": [
         "此优惠不适用于您当前的套餐"
       ],
       "This payment method will become your new default for all future renewals.": [
         "此付款方式将成为您未来所有续订的新默认方式。"
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "此套餐不支持您账户上的托管功能。"
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "此套餐不支持您账户中的成员。"
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "当前无法完成此订阅，请重试。"
       ],
       "Timeout exceeded": [
         "超时"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "试用套餐不支持 ${ LUMO_SHORT_APP_NAME } 席位。"
-      ],
-      "Trial plans don’t support custom domains.": [
-        "试用套餐不支持自定义域名。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "试用套餐不支持专用 IP。"
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "试用套餐不支持 Scribe 席位。"
-      ],
-      "Trial plans don’t support this many members.": [
-        "试用套餐不支持如此多的成员。"
       ],
       "VAT number": [
         "增值税号"
@@ -10273,20 +10216,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "您已订阅此套餐，您可以在 ${ subscriptionPlatform } 上更改您的订阅。"
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "您已经拥有 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
-      ],
-      "You already own a Born Private account.": [
-        "您已经拥有一个 Born Private 账户。"
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "您即将被重定向至 PayPal 以验证付款。"
       ],
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"
@@ -11865,6 +11799,9 @@
       ],
       "Recovery has started": [
         "恢复已开始"
+      ],
+      "Resuming import": [
+        "正在恢复导入"
       ],
       "Secure link copied": [
         "已复制安全链接"

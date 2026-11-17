@@ -293,6 +293,9 @@
       "Create new password": [
         "Luo uusi salasana"
       ],
+      "Create new text file": [
+        "Luo uusi tekstitiedosto"
+      ],
       "Customize": [
         "Mukauta"
       ],
@@ -364,11 +367,17 @@
       "Download anyway": [
         "Lataa silti"
       ],
+      "Download for Mac": [
+        "Lataa Macille"
+      ],
       "Download for macOS": [
         "Lataa macOS:lle"
       ],
       "Download for Windows": [
         "Lataa Windowsille"
+      ],
+      "Download info": [
+        "Lataa tiedot"
       ],
       "Download logs": [
         "Lataa lokitiedot"
@@ -418,6 +427,9 @@
       "Export selection as .vcf": [
         "Vie valinta .vcf-tiedostona"
       ],
+      "Export system log": [
+        "Vie järjestelmäloki"
+      ],
       "Fit to window": [
         "Sovita ikkunaan"
       ],
@@ -439,9 +451,6 @@
       "Get ${ planOrAppName }": [
         "Hanki ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Ota yhteyttä"
-      ],
       "Get mobile and desktop apps": [
         "Hanki mobiili- ja työpöytäsovellukset"
       ],
@@ -462,6 +471,9 @@
       ],
       "Go back": [
         "Takaisin"
+      ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Palaa albumiin \"${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Avaa ${ planOrAppName }"
@@ -550,8 +562,8 @@
       "Leave": [
         "Poistu"
       ],
-      "Let's talk": [
-        "Keskustellaan"
+      "Leave album": [
+        "Poistu albumista"
       ],
       "List layout": [
         "Listanäkymä"
@@ -638,7 +650,7 @@
         "Siirrä roskakoriin"
       ],
       "Name your album": [
-        "Nimeä albumisi"
+        "Nimeä albumi"
       ],
       "New": [
         "Uusi"
@@ -904,6 +916,9 @@
       "Share": [
         "Jaa"
       ],
+      "Share album": [
+        "Jaa albumi"
+      ],
       "Share file": [
         "Jaa tiedosto"
       ],
@@ -994,6 +1009,9 @@
       "Take a tour": [
         "Katso esittely"
       ],
+      "This album is empty": [
+        "Albumi on tyhjä"
+      ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
         "Vaihda ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -1066,6 +1084,12 @@
       "Upload folder": [
         "Tallenna kansio"
       ],
+      "Upload from computer": [
+        "Lähetä tietokoneelta"
+      ],
+      "Upload photos": [
+        "Lähetä kuvia"
+      ],
       "Upload picture": [
         "Lataa kuva"
       ],
@@ -1136,6 +1160,11 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Avaa ${ SHEETS_APP_NAME } -sovelluksessa"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Lähetä"
       ]
     },
     "Actions message": {
@@ -1672,6 +1701,15 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Amount due": [
+        "Maksettavaa"
+      ],
+      "Amount due after trial": [
+        "Maksettavaa kokeilujakson jälkeen"
+      ],
+      "Amount due now": [
+        "Maksettavaa nyt"
       ],
       "Subtotal": [
         "Välisumma"
@@ -3374,6 +3412,9 @@
       "Last name is too long": [
         "Sukunimi on liian pitkä"
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Vanhanmallista julkista linkkiä ei voida päivittää. Luo uusi julkinen linkki."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Yhdistä ainakin ${ calendarsToFixCount } kalenteri olemassa olevaan ${ BRAND_NAME }-kalenteriin",
         "Yhdistä ainakin ${ calendarsToFixCount } kalenteria olemassa oleviin ${ BRAND_NAME }-kalentereihin"
@@ -4131,6 +4172,12 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Create new album": [
+        "Luo uusi albumi"
+      ],
+      "Create new shared album": [
+        "Luo uusi jaettu albumi"
+      ],
       "Domain": [
         "Verkkotunnus"
       ],
@@ -4659,7 +4706,7 @@
         "**Automaattinen yhdistäminen**: Avaa ja muodostaa VPN-yhteyden heti, kun käynnistät laitteen."
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+        "**Kutsu kaverisi** ${ BRAND_NAME }iin henkilökohtaisella suosittelulinkillä."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Tappokytkin**: Estää tietovuodot katkaisemalla Internet-yhteytesi, jos VPN-yhteys katkeaa yllättäen."
@@ -4686,13 +4733,13 @@
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPN salaa yhteytesi ja piilottaa IP-osoitteesi, mikä vaikeuttaa huomattavasti selaamisesi seuraamista tai valvomista."
+        "VPN salaa yhteyden ja piilottaa IP-osoitteen, mikä vaikeuttaa huomattavasti selaamisen seuraamista tai valvomista."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "VPN piilottaa IP-osoitteesi ja salaa selaustoimintasi, jolloin verkkosivustojen, mainostajien ja Internet-palveluntarjoajien on vaikeampi seurata sinua ajan mittaan."
+        "VPN piilottaa IP-osoitteen ja salaa selaustoiminnan, jolloin verkkosivustojen, mainostajien ja Internet-palveluntarjoajien on vaikeampi seurata selaustoimintaa ajan mittaan."
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPN on suojattu tunneli laitteesi ja Internetin välillä. Se piilottaa sijaintisi ja toimintasi Internet-palveluntarjoajaltasi (ISP) ja verkkosivustoilta, joilla vierailet."
+        "VPN on suojattu tunneli laitteen ja Internetin välillä. Se piilottaa sijainnin ja toiminnan verkkoyhteyden tarjoajalta ja verkkosivustoilta."
       ],
       "Account successfully updated": [
         "Tili on päivitetty"
@@ -4713,7 +4760,7 @@
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Mainostajat seuraavat selauskäyttäytymistäsi näyttääkseen kohdennettuja mainoksia. ${ VPN_APP_NAME } estää seurannan ja mainokset, nopeuttaen yhteyttäsi ja parantaen käyttökokemustasi."
+        "Mainostajat seuraavat verkkoselailua voidakseen näyttää kohdennettuja mainoksia. ${ VPN_APP_NAME } estää seurannan ja mainokset, nopeuttaa verkkoyhteyttä ja tekee internetin käytöstä sujuvampaa."
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia viestejä nopeasti ja vaivattomasti."
@@ -4845,7 +4892,7 @@
         "Poistu sulkemalla tämä ruutu."
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Yhdistä ${ VPN_APP_NAME }:ään selataksesi yksityisesti"
+        "Aloita yksityinen verkkoselaus yhdistämällä ${ VPN_APP_NAME }:ään"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Yhteystieto lisättiin ryhmään ${ contactGroupName }"
@@ -4942,6 +4989,9 @@
       ],
       "Downgrade": [
         "Alenna"
+      ],
+      "Download ${ name } app": [
+        "Lataa käyttöjärjestelmälle ${ name }"
       ],
       "Download current logs": [
         "Lataa nykyiset lokitiedot"
@@ -5069,6 +5119,9 @@
       "Geoblocking": [
         "Geoblokkaus"
       ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Varmuuskopioi laitteesi kuvat tai lähetä niitä tänne hankkimalla sovellus."
+      ],
       "Google Pay mark": [
         "Google Payn merkki"
       ],
@@ -5148,11 +5201,17 @@
       "Invite link copied": [
         "Kutsulinkki kopioitiin"
       ],
+      "iOS and Android Apps": [
+        "iOS- ja Android-sovellukset"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Näyttää siltä, että yritit hiljattain tallentaa kohteen ${ uploadName }. Jos siirto epäonnistui, ${ replaceFile }. Jos siirto on edelleen käynnissä, sen korvaaminen peruu käynnissä olevan siirron."
       ],
       "It's better to have:": [
         "On parempi olla:"
+      ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Roskakorissa olevat kohteet säilytetään siellä kunnes poistat ne pysyvästi"
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "VPN:ää kannattaa käyttää aina. Mutta näissä tilanteissa kyberturvauhat voivat olla suurimmat:"
@@ -5369,6 +5428,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME lähettää viestin automaattisesti käyttäen nykyistä kirjoitustilaa."
       ],
+      "Photo is not saved to your library": [
+        "Kuvaa ei ole tallennettu kirjastoon"
+      ],
       "Please ask the owner to directly invite you to the document.": [
         "Pyydä omistajaa kutsumaan sinut suoraan dokumenttiin."
       ],
@@ -5460,6 +5522,9 @@
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
       ],
+      "Ready to add some photos?": [
+        "Valmiina lisäämään kuvia?"
+      ],
       "RECOMMENDED": [
         "SUOSITELTU"
       ],
@@ -5493,11 +5558,17 @@
       "Scan the QR code with your mobile device": [
         "Skannaa QR-koodi mobiililaitteellasi"
       ],
+      "Scan to download": [
+        "Lataa lukemalla koodi"
+      ],
       "Select a destination folder": [
         "Valitse kohdekansio"
       ],
       "Select a folder to move to.": [
         "Valitse kohdekansio."
+      ],
+      "Select item": [
+        "Valitse kohde"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Valitse tähän osoitteeseen lähetettäville viesteille oletusarvoisesti käytettävä muoto."
@@ -5529,8 +5600,20 @@
       "Setting up your new address…": [
         "Määritetään uutta osoitettasi…"
       ],
+      "Shared": [
+        "Jaettu"
+      ],
+      "Shared by ": [
+        "Jakanut "
+      ],
       "Shared link not found": [
         "Jakolinkkiä ei löytynyt"
+      ],
+      "Shared with me": [
+        "Jaettu minulle"
+      ],
+      "Shared with you": [
+        "Jaettu sinulle"
       ],
       "Signature check will be ignored": [
         "Allekirjoitustarkistus ohitetaan"
@@ -5542,7 +5625,7 @@
         "Jotkin kohteet epäonnistuivat"
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Jotkin verkkosivustot ja suoratoistopalvelut estävät sisältöä aluekohtaisesti. VPN:n avulla voit kiertää nämä rajoitukset ja käyttää Internetiä vapaasti."
+        "Jotkut verkkosivustot ja suoratoistopalvelut estävät sisältöä aluekohtaisesti. VPN:llä voi kiertää nämä rajoitukset ja käyttää Internetiä vapaasti."
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Aloita sen jakaminen yhteystietojen kanssa ja käytä sitä verkkopalveluissa."
@@ -5551,7 +5634,7 @@
         "Pysy vaivattomasti yhdistettynä ottamalla käyttöön seuraavat VPN-asetukset:"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
+        "Tee talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletus kirjataan tilillesi vahvistuksen jälkeen."
       ],
       "Subscription auto-renews every ${ cycle } month.": [
         "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein.",
@@ -5586,6 +5669,9 @@
       ],
       "that": [
         "että"
+      ],
+      "The albums you create are shown here.": [
+        "Luomasi albumit näytetään täällä."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Latausmäärään sisältyy varsinaisten latausten lisäksi myös tiedostojen esikatselukerrat."
@@ -5643,13 +5729,13 @@
         "Linkki saattaa olla homografiahyökkäys. Vahvista linkin olevan sivusto, jolla haluat vierailla, tai älä avaa sitä."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Tämä tarkoittaa, että Internet-palveluntarjoajasi ja vierailemasi verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
+        "Internet-palveluntarjoaja ja verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
       ],
       "This month": [
         "Tässä kuussa"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Verkkosivustot ja Internet-palveluntarjoajat (ISP) voivat käyttää tätä yksilöllistä koodia yhdistääkseen sijaintisi ja selaushistoriasi laitteeseesi"
+        "Verkkosivustot ja Internet-palveluntarjoajat voivat käyttää tällä yksilöllisellä koodilla yhdistää maantieteellisen sijainnin ja selaushistorian tähän laitteeseen"
       ],
       "This will cancel any remaining downloads.": [
         "Tämä peruuttaa kaikki jäljellä olevat lataukset."
@@ -5807,6 +5893,9 @@
       "Waiting": [
         "Odotetaan"
       ],
+      "Want to sync files faster?": [
+        "Haluatko synkronoida tiedostoja nopeammin?"
+      ],
       "Warning": [
         "Varoitus"
       ],
@@ -5823,10 +5912,10 @@
         "Meidän on vahvistettava maksusi pankissasi."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Käytämme 3-D Securea maksujesi suojaukseen"
+        "Maksut suojataan 3-D Securella"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Ohjaamme sinut uudessa välilehdessä PayPaliin suorittamaan maksun. Jos käytät ponnahdusikkunoiden estäjiä, poista ne käytöstä jatkaaksesi."
+        "Sinut ohjataan uuteen selaimen välilehteen PayPaliin maksutapahtuman viimeistelemiseksi. Jos käytät ponnahdusikkunoiden estoa, poista se käytöstä jatkaaksesi."
       ],
       "We'll email you once import is complete.": [
         "Ilmoitamme tuonnin valmistumisesta sähköpostitse."
@@ -5853,7 +5942,7 @@
         "Etätyöskennellessä"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Kun yhdistät VPN:ään, se käyttää salaustekniikkaa IP-osoitteesi (laitteellesi annettu yksilöllinen koodi) salaamiseen."
+        "VPN käyttää salaustekniikkaa IP-osoitteen eli laitteelle annettu yksilöllisen koodin salaamiseen."
       ],
       "who": [
         "kuka"
@@ -6200,7 +6289,7 @@
         "Summa"
       ],
       "Amount due": [
-        "Erääntyvä summa"
+        "Maksettavaa nyt"
       ],
       "Anderson": [
         "Virtanen"
@@ -6348,6 +6437,9 @@
       ],
       "Delete recovery-related information.": [
         "Poista palautukseen liittyvät tiedot."
+      ],
+      "Deleted": [
+        "Poistettu"
       ],
       "Device": [
         "Laite"
@@ -6875,7 +6967,7 @@
         "Miten jaat sähköpostitse"
       ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
-        "Miten ${ DARK_WEB_MONITORING_NAME } toimii"
+        "Näin ${ DARK_WEB_MONITORING_NAME } toimii"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
         "Miten käytät ${ PASS_APP_NAME } for Businessia"
@@ -6895,6 +6987,9 @@
       "Pay invoice": [
         "Maksa lasku"
       ],
+      "Photos": [
+        "Kuvat"
+      ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
       ],
@@ -6909,6 +7004,12 @@
       ],
       "settings": [
         "asetuksissa"
+      ],
+      "Shared": [
+        "Jaettu"
+      ],
+      "Shared with me": [
+        "Jaettu minulle"
       ],
       "Terms and conditions": [
         "Käyttöehdot"
@@ -7860,6 +7961,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } päättyen ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 Tt pilvitallennustilaa, jolla voit tallentaa, synkronoida ja jakaa tiedostoja helposti. Suojattu päästä päähän -salauksella."
       ],
@@ -8366,6 +8470,11 @@
         "Joitain kuvia ei lähetetty, koska nykyinen valinta sisältää päällekkäisiä tiedostonimiä."
       ]
     },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Albumi nimettiin uudelleen"
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant ${ BRAND_NAME } access to your data.": [
         "Seuraavaksi sinun on kirjauduttava Google-tilillesi ja myönnettävä ${ BRAND_NAME }ille tietojesi käyttöoikeus."
@@ -8533,8 +8642,14 @@
       "10 minutes": [
         "10 minuutin kuluttua"
       ],
+      "Get the mobile app": [
+        "Hanki mobiilisovellus"
+      ],
       "Hang tight": [
         "Malta hetki"
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Asenna mobiilisovellus lukemalla QR-koodi"
       ]
     },
     "Onboarding Trial": {
@@ -8815,7 +8930,7 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",
-        "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
+        "Erikoisalennettu hinta ${ priceWithDiscount } on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua sen milloin tahansa."
@@ -8933,6 +9048,14 @@
         "Uusimishinta riippuu laskutusalueesta ja ALV-numerosta."
       ]
     },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay – kortti päättyen ${ Last4 }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay – kortti päättyen ${ Last4 }"
+      ]
+    },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
         "Vahvistamalla tämän maksun valtuutat yritykset ${ BRAND_NAME } ja Stripe, maksupalveluiden tarjoajamme, pyytämään pankkiasi laskuttamaan tiliäsi sopimuksen mukaisesti. Voit saada rahasi takaisin 8 viikon kuluessa laskusta pankin kanssa tekemäsi sopimuksen mukaisesti."
@@ -9039,6 +9162,9 @@
       ],
       "Enter a name": [
         "Syötä nimi"
+      ],
+      "Enter a new file name": [
+        "Syötä tiedoston uusi nimi"
       ],
       "Enter a new folder name": [
         "Syötä kansion uusi nimi"
@@ -9281,18 +9407,18 @@
         "Tämän päivän jälkeen tilisi alennetaan **${ BRAND_NAME } Free -tilaukseen**. Jos muutat mieltäsi, voit **uudelleenaktivoida tilauksesi** säilyttääksesi pääsyn premium-ominaisuuksiin."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
-        "Ansaitse jopa ${ maxRewardAmount } krediitteinä. Saat ${ referrerRewardAmount }, kun kutsumasi henkilö hankkii ${ BRAND_NAME } -tilauksen."
+        "Ansaitse jopa ${ maxRewardAmount } krediitteinä. Saat ${ referrerRewardAmount }, kun kutsumasi henkilö hankkii ${ BRAND_NAME }-tilauksen."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Nauti tilauksesta **${ planTitle }** maksutta päivään **${ textDate }** asti."
       ],
       "Friend joined": [
         "Kaveri liittyi",
-        "Kaveria liittyi"
+        "kaveria on liittynyt"
       ],
       "Friend subscribed": [
         "Kaveri on tilannut",
-        "Kaverit tilasivat"
+        "kaveria on tilannut"
       ],
       "Invite friends. Get credits.": [
         "Kutsu kavereita. Hanki krediittejä."
@@ -10312,6 +10438,24 @@
     "Subtitle": {
       "Shared by ${ sharedBy }": [
         "Jakanut ${ sharedBy }"
+      ],
+      "Your favorited photos will appear here": [
+        "Suosikiksi merkityt kuvat näytetään täällä"
+      ],
+      "Your Live Photos will appear here": [
+        "Live-kuvat näytetään tässä"
+      ],
+      "Your panorama photos will appear here": [
+        "Panoraamakuvat näytetään täällä"
+      ],
+      "Your RAW photos will appear here": [
+        "RAW-kuvat näytetään täällä"
+      ],
+      "Your screenshots will appear here": [
+        "Kuvankaappaukset näytetään täällä"
+      ],
+      "Your selfies photos will appear here": [
+        "Omakuvat näytetään tässä"
       ]
     },
     "Success": {
@@ -10380,6 +10524,9 @@
       ],
       "Problem reported": [
         "Ongelma raportoitu"
+      ],
+      "Resuming import": [
+        "Jatketaan tuontia"
       ],
       "Secure link copied": [
         "Suojattu linkki kopioitiin"
@@ -10494,6 +10641,9 @@
       "Favorites": [
         "Suosikit"
       ],
+      "Live Photos": [
+        "Live-kuvat"
+      ],
       "Panoramas": [
         "Panoraamat"
       ],
@@ -10505,6 +10655,9 @@
       ],
       "Screenshots": [
         "Kuvakaappaukset"
+      ],
+      "Selfies": [
+        "Omakuvat"
       ]
     },
     "Time unit": {
@@ -10696,6 +10849,9 @@
       ],
       "Coupon": [
         "Etukoodi"
+      ],
+      "Create a new file": [
+        "Luo uusi tiedosto"
       ],
       "Create a new folder": [
         "Luo uusi kansio"
@@ -10896,6 +11052,9 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Hanki kaikki ${ CALENDAR_APP_NAME } ominaisuudet käyttöösi"
       ],
+      "Get mobile and desktop apps": [
+        "Hanki mobiili- ja työpöytäsovellukset"
+      ],
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
       ],
@@ -11029,17 +11188,29 @@
       "No favorites": [
         "Ei suosikkeja"
       ],
+      "No Live Photos": [
+        "Ei live-kuvia"
+      ],
+      "No panorama": [
+        "Ei panoraamakuvia"
+      ],
       "No photos": [
         "Ei kuvia"
       ],
       "No portraits": [
         "Ei muotokuvia"
       ],
+      "No RAW": [
+        "Ei RAW-kuvia"
+      ],
       "No results found": [
         "Tuloksia ei löytynyt"
       ],
       "No selfies": [
-        "Ei selfieitä"
+        "Ei omakuvia"
+      ],
+      "No shared albums": [
+        "Ei jaettuja albumeja"
       ],
       "No videos": [
         "Ei videoita"
@@ -11358,7 +11529,7 @@
         "Versiohistoria"
       ],
       "VPN explained": [
-        "VPNnän selitys"
+        "VPN-pikaopas"
       ],
       "Warning": [
         "Varoitus"
@@ -11403,7 +11574,7 @@
         "Tervetuloa ${ BRAND_NAME } for Businessiin"
       ],
       "What can a VPN protect you from?": [
-        "Miltä VPN voi suojata sinua?"
+        "Miltä VPN voi suojata?"
       ],
       "What is a VPN?": [
         "Mikä on VPN?"

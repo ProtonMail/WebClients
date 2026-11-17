@@ -103,6 +103,10 @@
       "Add storage": [
         "Ajouter de l'espace de stockage"
       ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Ajouter à « ${ name } » (${ photoCount } photo)",
+        "Ajouter à « ${ name } » (${ photoCount } photos)"
+      ],
       "Add to album": [
         "Ajouter à l'album"
       ],
@@ -337,8 +341,14 @@
       "Delete permanently": [
         "Supprimer définitivement"
       ],
+      "Delete this version": [
+        "Supprimer cette version"
+      ],
       "Delete version": [
         "Supprimer la version"
+      ],
+      "Delete without saving": [
+        "Supprimer sans enregistrer"
       ],
       "Deselect all": [
         "Tout désélectionner"
@@ -357,6 +367,9 @@
       ],
       "Display navigation bar": [
         "Afficher la barre de navigation"
+      ],
+      "Don't show this offer again": [
+        "Ne plus afficher cette offre"
       ],
       "Done": [
         "Terminé"
@@ -450,9 +463,6 @@
       ],
       "Get ${ planOrAppName }": [
         "Essayez ${ planOrAppName }"
-      ],
-      "Get in touch": [
-        "Nous contacter"
       ],
       "Get mobile and desktop apps": [
         "Obtenir les applications mobile et de bureau"
@@ -571,9 +581,6 @@
       "Leave": [
         "Quitter"
       ],
-      "Let's talk": [
-        "Parlons-nous"
-      ],
       "List layout": [
         "Disposition en liste"
       ],
@@ -658,6 +665,12 @@
       "Move to trash": [
         "Déplacer dans la corbeille"
       ],
+      "Name your album": [
+        "Attribuez un nom à votre album"
+      ],
+      "New": [
+        "Nouveau"
+      ],
       "New chat": [
         "Nouvelle conversation"
       ],
@@ -723,6 +736,9 @@
       ],
       "Quit": [
         "Quitter"
+      ],
+      "Re-indexing in progress": [
+        "Ré-indexation en cours"
       ],
       "Re-sign": [
         "Signer à nouveau"
@@ -822,6 +838,9 @@
       ],
       "Retry failed items": [
         "Réessayer les éléments qui n'ont pas abouti."
+      ],
+      "Run diagnostics": [
+        "Lancer les diagnostics"
       ],
       "Save": [
         "Enregistrer"
@@ -957,6 +976,9 @@
       ],
       "Skip verification": [
         "Ignorer la vérification"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
       ],
       "Start": [
         "Démarrer"
@@ -2979,6 +3001,11 @@
         "Nous avons détecté les champs suivants dans le fichier CSV que vous avez chargé. Vérifiez ceux que vous voulez importer."
       ]
     },
+    "Docs Info": {
+      "Suggestion mode is here": [
+        "Le mode de suggestion est disponible."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bugs ou problème de qualité"
@@ -3636,6 +3663,9 @@
       "Reverse charge scheme is not supported for this plan": [
         "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
       ],
+      "Search failed": [
+        "La recherche a échoué"
+      ],
       "Signature is missing": [
         "La signature est manquante"
       ],
@@ -3686,6 +3716,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Quelque chose s'est mal passé lors de la récupération des domaines disponibles"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Un problème est survenu lors de la recherche. Veuillez réessayer plus tard."
       ],
       "Something went wrong, please try again later": [
         "Un problème est survenu, veuillez réessayer plus tard"
@@ -3839,6 +3872,12 @@
       ],
       "We were not able to load some items": [
         "Nous n'avons pas pu charger certains éléments"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "Nous n'avons pas pu charger certains de vos liens partagés enregistrés."
+      ],
+      "We were not able to load some of your shared items": [
+        "Nous n'avons pas pu charger certains de vos éléments partagés."
       ],
       "We were not able to load some search results": [
         "Nous n'avons pas pu charger certains résultats de recherche"
@@ -4024,6 +4063,9 @@
     "Error message": {
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
+      ],
+      "Brace yourself till we get the error fixed.": [
+        "Merci de patienter jusqu'à ce que nous corrigions l'erreur."
       ],
       "Error: ${ errorMessage }": [
         "Erreur : ${ errorMessage }"
@@ -4228,6 +4270,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
       ]
     },
     "fido2: Info": {
@@ -4777,6 +4822,9 @@
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "marque ${ IDEAL_WERO_BRAND_NAME }"
       ],
+      "${ importedSize } imported": [
+        "${ importedSize } importé"
+      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } invitation en attente",
         "${ invitationsCount } invitations en attente"
@@ -5177,6 +5225,9 @@
       "Details": [
         "Informations"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Découvrez les nouvelles fonctionnalités disponibles et utilisez-les dès maintenant !"
       ],
@@ -5325,6 +5376,12 @@
       "Geoblocking": [
         "Géoblocage"
       ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Téléchargez l'application pour sauvegarder vos photos depuis votre téléphone ou importez-les ici."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Téléchargez l'application de bureau pour synchroniser les fichiers de votre ordinateur."
+      ],
       "Google Pay mark": [
         "Marquer Google Pay"
       ],
@@ -5371,8 +5428,14 @@
       "Import in progress": [
         "L'importation est en cours."
       ],
+      "Import interrupted": [
+        "L'import a été interrompu."
+      ],
       "Import mailbox": [
         "Importer une messagerie"
+      ],
+      "Import paused": [
+        "L'import a été mis en pause."
       ],
       "Import your files and folders": [
         "Importer vos fichiers et dossiers"
@@ -5382,6 +5445,9 @@
       ],
       "Important note": [
         "Remarque importante"
+      ],
+      "Importing from Google Drive…": [
+        "Importation en cours depuis Google Drive…"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
@@ -5397,6 +5463,9 @@
       ],
       "Included": [
         "Inclus"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "${ first }, ${ second }, ${ third } et ${ fourth } indexés"
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
         "L'indexation a atteint un état inattendu et ne peut pas continuer. Régénérez l'index pour la rétablir."
@@ -5448,6 +5517,9 @@
       ],
       "Large imports can take several days.": [
         "Les importations volumineuses peuvent prendre plusieurs jours."
+      ],
+      "Last week": [
+        "La semaine dernière"
       ],
       "Learn more": [
         "En savoir plus"
@@ -5516,6 +5588,9 @@
       "More": [
         "Plus"
       ],
+      "More storage needed": [
+        "Plus d'espace de stockage nécessaire"
+      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La plupart des réseaux wifi publics sont sûrs, mais certains manquent de sécurité, vous exposant ainsi aux cybermenaces. Un VPN chiffre votre trafic pour vous protéger."
       ],
@@ -5574,6 +5649,9 @@
       ],
       "Not in My files": [
         "Pas dans Mes fichiers"
+      ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Remarque : les données peuvent encore être disponibles localement sur les appareils sur lesquels vous avez installé ${ DRIVE_APP_NAME }."
       ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
@@ -5637,6 +5715,13 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envoie automatiquement le message en utilisant le mode actuel de l'éditeur."
+      ],
+      "Photo is not saved to your library": [
+        "La photo n'est pas enregistrée dans votre bibliothèque."
+      ],
+      "Photo saved to your Drive": [
+        "La photo a été enregistrée dans votre Drive.",
+        "Les photos ont été enregistrées dans votre Drive."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Veuillez demander au propriétaire de vous inviter directement au document."
@@ -5747,6 +5832,9 @@
       "RECOMMENDED": [
         "RECOMMANDÉ"
       ],
+      "Reconnect Google Drive": [
+        "Reconnecter Google Drive"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
@@ -5777,6 +5865,9 @@
       "Restored files ${ formattedDate }": [
         "Fichiers restaurés ${ formattedDate }"
       ],
+      "Running diagnostics...": [
+        "Exécution des diagnostics..."
+      ],
       "Saving...": [
         "Enregistrement..."
       ],
@@ -5798,6 +5889,9 @@
       "Search encountered an internal error. Rebuild the index to recover.": [
         "Une erreur interne s'est produite pendant la recherche. Régénérez l'index pour la rétablir."
       ],
+      "Search error": [
+        "Erreur de recherche"
+      ],
       "Search is ready. Your files have been indexed.": [
         "La recherche est prête. Vos fichiers ont été indexés."
       ],
@@ -5806,6 +5900,9 @@
       ],
       "Select a folder to move to.": [
         "Sélectionnez un dossier de destination."
+      ],
+      "Select an uploaded file or folder and create a link to it.": [
+        "Sélectionnez un fichier ou un dossier importé et créez un lien permettant d'y accéder."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous voulez utiliser par défaut pour l'envoi d'un message à cette adresse e-mail."
@@ -6002,6 +6099,9 @@
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Pour télécharger ces fichiers, ouvrez-les dans ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME } et exportez-les."
       ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Pour activer la recherche, nous devons indexer vos fichiers localement. Vous pouvez continuer à utiliser ${ DRIVE_APP_NAME } normalement, nous vous informerons lorsque l’indexation sera terminée. Si vous quittez cette page, l’indexation sera mise en pause et reprendra lorsque vous y reviendrez."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
@@ -6040,6 +6140,9 @@
       ],
       "Trash": [
         "Corbeille"
+      ],
+      "Trash is empty": [
+        "La corbeille est vide"
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Faire confiance à la clé « ${ activeSignerText } » pour vérifier les nouveaux messages provenant de ce contact."
@@ -6193,11 +6296,18 @@
       "Who has access": [
         "Qui a accès"
       ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "sera restauré dans sa version du ${ formattedRevisionDate }. Toutes les autres versions seront conservées."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
       ],
       "Would you like to receive a new verification code?": [
         "Voulez-vous recevoir un nouveau code de vérification ?"
+      ],
+      "Would you like to save it before removing?": [
+        "Souhaitez-vous l'enregistrer avant de le retirer ?",
+        "Souhaitez-vous les enregistrer avant de les retirer ?"
       ],
       "Writing assistant": [
         "Assistant d'écriture"
@@ -6229,6 +6339,9 @@
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Vous utilisez plus d'espace de stockage que ce qui est prévu dans l'abonnement ${ downgradedPlanName }. Nous vous invitons à supprimer ou à retirer des données pour pouvoir passer à un abonnement inférieur."
       ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Vous pouvez également annuler votre import dans ${ easySwitchSettingsLink }."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Vous pouvez aussi fusionner des calendriers importés avec des calendriers ${ BRAND_NAME } existants."
       ],
@@ -6251,6 +6364,9 @@
       ],
       "You can now return to the application to continue": [
         "Vous pouvez maintenant revenir à l'application pour continuer."
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Vous pourrez ouvrir ce dossier une fois l'import terminé. Pour le moment, ${ importedSize } fichiers ont été importés. Vous recevrez un e-mail une fois l'opération finalisée."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
@@ -6285,6 +6401,10 @@
       ],
       "You will lose all unsaved changes.": [
         "Vous perdrez toutes les modifications non enregistrées."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Vous devrez l'enregistrer à nouveau depuis la page du lien public.",
+        "Vous devrez les enregistrer à nouveau depuis la page du lien public."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Vous ne serez pas facturé si vous annulez avant le ${ trialEndsOnFormatted }."
@@ -6322,6 +6442,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Votre compte est actuellement configuré pour appliquer le régime de TVA intracommunautaire. Ceci n’est pas pris en charge pour l'abonnement sélectionné. Pour continuer, retirez le numéro de TVA de l'adresse de facturation ou sélectionnez un autre abonnement."
+      ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Votre navigateur est arrivé à court d'espace pendant l'indexation des fichiers pour la recherche. Libérez de l'espace de stockage puis régénérez l'index."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
@@ -6364,6 +6487,9 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Votre importation est bloquée. Changer d'abonnement maintenant pour transférer le reste de vos fichiers."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Votre import est suspendu car nous n'avons plus accès à votre compte Google. Reconnectez-vous pour importer le reste de vos fichiers."
       ],
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
@@ -6580,6 +6706,9 @@
       "App password": [
         "Mot de passe de l'application"
       ],
+      "Applications in a business setting": [
+        "Applications dans un cadre d'entreprise"
+      ],
       "Apply to all duplicated files": [
         "Appliquer à tous les fichiers dupliqués"
       ],
@@ -6697,6 +6826,9 @@
       "Country": [
         "Pays"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "Créer un compte ${ BRAND_NAME }"
+      ],
       "Created": [
         "Créé"
       ],
@@ -6711,6 +6843,10 @@
       ],
       "Delete": [
         "Supprimer"
+      ],
+      "Delete drive?": [
+        "Supprimer le disque ?",
+        "Supprimer les disques ?"
       ],
       "Delete link and remove access for everyone": [
         "Supprimer le lien et retirer l'accès pour tous"
@@ -6847,6 +6983,9 @@
       "Include message and file name in invite email": [
         "Inclure le message et le nom du fichier dans l'e-mail d'invitation"
       ],
+      "Indexing": [
+        "Indexation"
+      ],
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"
       ],
@@ -6966,6 +7105,9 @@
       ],
       "Payment method": [
         "Moyen de paiement"
+      ],
+      "Pending invitation": [
+        "Invitation en attente"
       ],
       "PGP scheme": [
         "Schéma PGP"
@@ -7101,6 +7243,9 @@
       ],
       "Uploaded by": [
         "Importé par"
+      ],
+      "User opted in": [
+        "L'utilisateur a donné son accord"
       ],
       "Username": [
         "Nom d'utilisateur"
@@ -7285,6 +7430,9 @@
       "Pay it": [
         "Payer avec"
       ],
+      "Photos": [
+        "Photos"
+      ],
       "Reactivate now": [
         "Réactiver maintenant"
       ],
@@ -7299,6 +7447,12 @@
       ],
       "settings": [
         "paramètres"
+      ],
+      "Shared": [
+        "Partagé"
+      ],
+      "Shared with me": [
+        "Partagé avec moi"
       ],
       "Terms and conditions": [
         "Conditions générales"
@@ -8668,7 +8822,7 @@
     },
     "ngc_access_banner: action": {
       "Try it now": [
-        "Essayez-la maintenant"
+        "Essayez-le maintenant"
       ]
     },
     "ngc_access_banner: info": {
@@ -8755,6 +8909,10 @@
       ],
       "${ reason } has been enabled": [
         "${ reason } a été activé."
+      ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "${ removed } photo a été supprimée de \"${ albumName }\"",
+        "${ removed } photos ont été supprimées de \"${ albumName }\""
       ],
       "Access for the member removed": [
         "L'accès pour le membre a été retiré."
@@ -8844,6 +9002,9 @@
       ],
       "The link to your item was deleted": [
         "Le lien vers votre élément a été supprimé."
+      ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "Ce lien sécurisé a expiré. Veuillez modifier la date d'expiration dans les paramètres de partage."
       ],
       "Trash failed to be emptied": [
         "Le dossier Corbeille n'a pas pu être vidé."
@@ -9013,25 +9174,52 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Continuer"
+      ],
+      "Install and continue": [
+        "Installer et continuer"
+      ],
       "Install later": [
         "Installer plus tard"
+      ],
+      "Maybe Later": [
+        "Peut-être plus tard"
       ],
       "Upload file": [
         "Téléverser un fichier"
       ]
     },
     "Onboarding Info": {
+      "Collaborate on documents": [
+        "Collaborer sur des documents"
+      ],
       "Edit documents online": [
         "Éditer des documents en ligne"
       ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Les fichiers importés maintenant ne seront pas comptabilisés dans votre limite d\"espace de stockage."
+      ],
+      "Final approval pending": [
+        "L'approbation finale est en attente."
+      ],
+      "Invitation accepted": [
+        "Invitation acceptée"
+      ],
       "Invite team members": [
         "Inviter des membres de l'équipe"
+      ],
+      "Manage access": [
+        "Gérer l'accès"
       ],
       "Scan the QR code to install the mobile app": [
         "Scannez le QR code pour installer l'application mobile"
       ],
       "Secure your files": [
         "Sécurisez vos fichiers"
+      ],
+      "Work faster, smarter": [
+        "Travaillez plus rapidement et plus efficacement"
       ]
     },
     "Onboarding Trial": {
@@ -9106,11 +9294,20 @@
       "Create new group": [
         "Créer un nouveau groupe"
       ],
+      "Expected structure": [
+        "Structure attendue"
+      ],
       "Ignore group": [
         "Ignorer le groupe"
       ],
       "No parent folder": [
         "Aucun dossier parent"
+      ],
+      "Select JSON file": [
+        "Sélectionnez un fichier JSON"
+      ],
+      "Verify thumbnails": [
+        "Vérifier les vignettes"
       ]
     },
     "Option group label": {
@@ -9243,12 +9440,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (hors taxe)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } ne peut pas être combiné avec ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } est uniquement disponible pour les abonnements professionnels."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate } % de taxes : ${ taxAmountElement }"
       ],
@@ -9258,17 +9449,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Montant dû après la version d'essai le ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Une organisation est nécessaire pour cet abonnement."
-      ],
       "Billing Country": [
         "Pays de facturation"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Les comptes Born Private ne peuvent pas être achetés avec un abonnement actif."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Acheter des crédits nécessite un achat séparé."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "En effectuant ce changement, vous acceptez nos ${ termsLink }."
@@ -9312,9 +9494,6 @@
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Seulement un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } peut être acheté."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Payer avec ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -9324,26 +9503,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "Le changement de plan est incompatible pour les raisons suivantes :"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Veuillez clôturer les comptes de portefeuille supplémentaires avant de changer d'abonnement."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Veuillez clôturer les portefeuilles supplémentaires avant de changer votre abonnement."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Le tarif du renouvellement est susceptible de changer en accord avec ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renouvellement au prix de ${ renewPriceStr } avec possibilité de résiliation à tout moment."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Les accès à Scribe ne peuvent dépasser le nombre de membres."
       ],
       "Tax ${ rate }%": [
         "Taxe ${ rate } %"
@@ -9354,24 +9521,9 @@
       "terms and conditions": [
         "conditions générales d'utilisation"
       ],
-      "The Born Private initiative requires a donation.": [
-        "L'initiative Born Private nécessite un don."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "La réduction est valable pour ${ renewalsWithCoupon } renouvellement.",
         "La réduction est valable pour ${ renewalsWithCoupon } renouvellements."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "L'abonnement sélectionné n'offre pas assez d'adresses pour votre compte."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "L'abonnement sélectionné n'offre pas assez de domaines pour votre compte."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "L'abonnement sélectionné n'offre pas assez de membres pour votre compte."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "L'abonnement sélectionné n'offre pas assez d'espace de stockage pour votre compte."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Le tarif exceptionnellement réduit est valable pendant ${ couponRedemptions } mois. Il sera ensuite automatiquement renouvelé au prix de ${ renewPriceStr } pour une durée d'un mois. Vous pouvez annuler à tout moment.",
@@ -9402,38 +9554,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Cette action étend l'abonnement existant. Vous ne serez facturé que pour les nouveaux add-ons complémentaires et le temps restant du cycle de facturation actuel. La date de renouvellement de votre abonnement ne sera pas modifiée."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Ce serveur dédié est assigné à une passerelle et ne peut pas être modifié."
-      ],
       "This offer is not available with your current plan.": [
         "Cette offre n'est pas disponible avec votre abonnement actuel."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
       ],
-      "This plan doesn’t support the members on your account.": [
-        "Cet abonnement ne prend pas en charge les membres sur votre compte."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Les abonnements en version d'essai ne prennent pas en charge l'accès à ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Les abonnements en version d'essai ne prennent pas en charge les noms de domaine personnalisés."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Les abonnements en version d'essai ne prennent pas en charge les IP dédiées."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Les abonnements en version d'essai ne prennent pas en charge l'accès à Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Les versions d'essai ne prennent pas en charge ce nombre de membres."
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -9447,20 +9578,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Vous avez déjà un abonnement. Vous pouvez modifier votre abonnement sur ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Vous possédez déjà ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Vous possédez déjà un compte Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
       "You will soon be redirected to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
@@ -10972,6 +11094,9 @@
       "Your favorited photos will appear here": [
         "Les photos que vous ajoutez à vos favoris s'afficheront ici."
       ],
+      "Your panorama photos will appear here": [
+        "Vos photos panoramiques apparaîtront ici."
+      ],
       "Your RAW photos will appear here": [
         "Vos photos RAW apparaîtront ici."
       ]
@@ -11047,6 +11172,9 @@
       "Problem reported": [
         "Le problème a été signalé."
       ],
+      "Resuming import": [
+        "Reprendre l'importation"
+      ],
       "Secure link copied": [
         "Le lien sécurisé a été copié."
       ],
@@ -11081,7 +11209,7 @@
         "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (A2F) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+        "L'abonnement inclut 2 950 serveurs basés dans plus de 65 pays, la possibilité de connecter votre compte à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
@@ -11157,6 +11285,9 @@
       ]
     },
     "Tag": {
+      "Panoramas": [
+        "Panoramas"
+      ],
       "Portraits": [
         "Portraits"
       ],
@@ -11307,7 +11438,7 @@
         "Vérification de la carte"
       ],
       "Change access to viewer?": [
-        "Modifier les droits d'accès en lecture seule ?"
+        "Passer les droits d'accès en lecture seule ?"
       ],
       "Change layout": [
         "Modifier la mise en page"
@@ -11438,6 +11569,9 @@
       "Devices": [
         "Appareils"
       ],
+      "Diagnostics": [
+        "Diagnostics"
+      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "La signature numérique a été partiellement vérifiée. Ce fichier a été créé à l'aide d'un lien de partage mis à disposition publiquement par un utilisateur ne disposant pas d'un compte ${ BRAND_NAME }. Son identité ne peut pas être vérifiée."
       ],
@@ -11555,6 +11689,9 @@
       "Found ${ resultCount } result": [
         "${ resultCount } résultat trouvé",
         "${ resultCount } résultats trouvés"
+      ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "Obtenez ${ DRIVE_SHORT_APP_NAME } sur votre téléphone"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Obtenez **${ referralInfo.uiData.refereeRewardAmount }** en crédits avec ${ planTitle }"
@@ -11695,6 +11832,9 @@
       "No breaches detected": [
         "Aucune fuite de données n'a été détectée."
       ],
+      "No portraits": [
+        "Aucun portrait"
+      ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
@@ -11785,6 +11925,9 @@
       "Recommended actions": [
         "Actions recommandées"
       ],
+      "Reconnect to finish your import": [
+        "Reconnectez-vous pour terminer l'import"
+      ],
       "Reconnect your account": [
         "Reconnecter votre compte"
       ],
@@ -11818,6 +11961,9 @@
       ],
       "Request sent": [
         "La demande a été envoyée."
+      ],
+      "Restore your files": [
+        "Restaurer vos fichiers"
       ],
       "Reverse charge not supported": [
         "Le régime de TVA intracommunautaire n'est pas pris en charge."
@@ -11948,6 +12094,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Pour prévisualiser cette feuille de calcul, ouvrez-la dans ${ SHEETS_APP_NAME } ou téléchargez-la."
       ],
+      "Total size": [
+        "Taille totale"
+      ],
       "Trash": [
         "Corbeille"
       ],
@@ -11979,7 +12128,7 @@
         "Mise à niveau vers ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Passez à la version supérieure pour conserver vos avantages premium."
+        "Changer d'abonnement pour conserver vos avantages premium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Améliorez votre productivité pour ${ formattedPrice } avec ${ planName }"
@@ -12103,6 +12252,9 @@
       ],
       "Your import is finished!": [
         "L'importation est terminée !"
+      ],
+      "Your import is in progress": [
+        "Votre import est en cours."
       ],
       "Your plan": [
         "Votre abonnement"

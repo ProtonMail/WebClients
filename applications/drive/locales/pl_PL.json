@@ -84,6 +84,9 @@
       "Add phone number": [
         "Dodaj numer telefonu"
       ],
+      "Add photos": [
+        "Dodaj zdjęcia"
+      ],
       "Add storage": [
         "Dodaj przestrzeń dyskową"
       ],
@@ -201,6 +204,9 @@
       "Collaborate on documents": [
         "Współpracuj nad dokumentami"
       ],
+      "Collapse folder": [
+        "Zwiń folder"
+      ],
       "Collapse navigation bar": [
         "Zwiń pasek nawigacji"
       ],
@@ -306,6 +312,9 @@
         "Usuń ${ selectedCount } grup kontaktów",
         "Usuń ${ selectedCount } grupy kontaktów"
       ],
+      "Delete album": [
+        "Usuń album"
+      ],
       "Delete contact": [
         "Usuń kontakt"
       ],
@@ -314,6 +323,9 @@
       ],
       "Delete permanently": [
         "Usuń trwale"
+      ],
+      "Delete without saving": [
+        "Usuń bez zapisywania"
       ],
       "Deselect all": [
         "Odznacz wszystkie"
@@ -351,6 +363,9 @@
       "Download for Windows": [
         "Pobierz dla systemu Windows"
       ],
+      "Download info": [
+        "Pobierz informacje"
+      ],
       "Download logs": [
         "Pobierz logi"
       ],
@@ -387,6 +402,9 @@
       "Encrypted": [
         "Zaszyfrowane"
       ],
+      "Expand folder": [
+        "Rozwiń folder"
+      ],
       "Explore other plans": [
         "Pokaż inne plany"
       ],
@@ -419,9 +437,6 @@
       ],
       "Get ${ planOrAppName }": [
         "Uzyskaj ${ planOrAppName }"
-      ],
-      "Get in touch": [
-        "Skontaktuj się z nami"
       ],
       "Get mobile and desktop apps": [
         "Pobierz aplikacje mobilne i stacjonarne"
@@ -504,8 +519,14 @@
       "Import from Outlook": [
         "Importuj z konta Outlook"
       ],
+      "Import now": [
+        "Importuj teraz"
+      ],
       "Increase": [
         "Zwiększ"
+      ],
+      "Join album": [
+        "Dołącz do albumu"
       ],
       "Keep my subscription": [
         "Zachowaj subskrypcję"
@@ -521,9 +542,6 @@
       ],
       "Leave": [
         "Opuść"
-      ],
-      "Let's talk": [
-        "Porozmawiajmy"
       ],
       "List layout": [
         "Widok listy"
@@ -608,6 +626,12 @@
       ],
       "Move to trash": [
         "Przenieś do kosza"
+      ],
+      "Name your album": [
+        "Nazwij album"
+      ],
+      "New": [
+        "Nowy"
       ],
       "New document": [
         "Nowy dokument"
@@ -714,6 +738,9 @@
       "Remove my access": [
         "Odbierz mi dostęp"
       ],
+      "Remove without saving": [
+        "Usuń bez zapisywania"
+      ],
       "Rename": [
         "Zmień nazwę"
       ],
@@ -761,6 +788,9 @@
       ],
       "Retry failed items": [
         "Spróbuj ponownie przesłać elementy, przy których wystąpił błąd"
+      ],
+      "Run diagnostics": [
+        "Uruchom diagnostykę"
       ],
       "Save": [
         "Zapisz"
@@ -815,6 +845,9 @@
       ],
       "Set as album cover": [
         "Ustaw jako okładkę albumu"
+      ],
+      "Set as cover": [
+        "Ustaw jako okładkę"
       ],
       "Set password or expiration date": [
         "Ustaw hasło lub datę wygaśnięcia"
@@ -890,6 +923,9 @@
       ],
       "Skip verification": [
         "Pomiń weryfikację"
+      ],
+      "Start": [
+        "Rozpocznij"
       ],
       "Start import": [
         "Rozpocznij importowanie"
@@ -3185,6 +3221,9 @@
       "Contact signature not verified": [
         "Podpis kontaktu nie został zweryfikowany"
       ],
+      "Could not unlock this item": [
+        "Nie można odblokować elementu"
+      ],
       "Data integrity check failed": [
         "Sprawdzanie integralności danych nie powiodło się"
       ],
@@ -3277,6 +3316,9 @@
       ],
       "Folder name cannot be empty.": [
         "Nazwa folderu nie może być pusta."
+      ],
+      "Image preview not found": [
+        "Nie znaleziono podglądu zdjęcia"
       ],
       "Image upload failed": [
         "Przesłanie zdjęcia nie powiodło się"
@@ -3467,6 +3509,9 @@
       "Reverse charge scheme is not supported for this plan": [
         "Mechanizm odwrotnego obciążenia nie jest obsługiwany w przypadku tego planu"
       ],
+      "Signature is missing": [
+        "Brak podpisu"
+      ],
       "Signature not verified": [
         "Podpis nie został zweryfikowany"
       ],
@@ -3499,6 +3544,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Coś poszło nie tak podczas pobierania dostępnych domen"
+      ],
+      "Something went wrong, please try again later": [
+        "Coś poszło nie tak. Spróbuj ponownie później"
       ],
       "Something went wrong. Please try again.": [
         "Coś poszło nie tak. Spróbuj ponownie."
@@ -4118,6 +4166,11 @@
         "Nazwa użytkownika"
       ]
     },
+    "Heading": {
+      "All albums": [
+        "Wszystkie albumy"
+      ]
+    },
     "Hint": {
       "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
         "Została znaleziona ${ itemsCount } sugestia. Użyj klawiszy do nawigacji.",
@@ -4540,6 +4593,9 @@
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
       ],
+      "${ importedSize } imported": [
+        "Zaimportowano: ${ importedSize }"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } zawiera asystenta pisania ${ BRAND_NAME } Scribe"
       ],
@@ -4843,6 +4899,9 @@
       "Continue": [
         "Kontynuuj"
       ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Kontynuuj używanie ${ DRIVE_APP_NAME } i odblokuj dysk później"
+      ],
       "Copy the link to clipboard": [
         "Kopiuj link do schowka"
       ],
@@ -5089,11 +5148,20 @@
       "Import in progress": [
         "Importowanie jest w toku"
       ],
+      "Import interrupted": [
+        "Importowanie zostało przerwane"
+      ],
       "Import mailbox": [
         "Importuj skrzynkę pocztową"
       ],
+      "Import paused": [
+        "Wstrzymano importowanie"
+      ],
       "Important note": [
         "Uwaga"
+      ],
+      "Importing from Google Drive…": [
+        "Trwa importowanie z Dysku Google…"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
@@ -5215,8 +5283,17 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Wiadomości wysyłane na wszystkie adresy e-mail będą kierowane do skrzynki odbiorczej."
       ],
+      "More": [
+        "Więcej"
+      ],
+      "More storage needed": [
+        "Potrzeba więcej przestrzeni dyskowej"
+      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Większość publicznych sieci Wi-Fi jest bezpieczna, ale niektóre z nich nie posiadają zabezpieczeń, narażając Cię na cyfrowe zagrożenia. VPN zapewnia ochronę, szyfrując ruch."
+      ],
+      "My Links": [
+        "Moje linki"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nazwij nowy folder i wybierz folder nadrzędny, do którego chcesz go dodać. Jeśli nie wybierzesz folderu nadrzędnego, nowy folder zostanie utworzony jako folder najwyższego poziomu."
@@ -5226,6 +5303,9 @@
       ],
       "No": [
         "Nie"
+      ],
+      "No Albums": [
+        "Brak albumów"
       ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
@@ -5403,6 +5483,9 @@
       ],
       "RECOMMENDED": [
         "ZALECANY"
+      ],
+      "Reconnect Google Drive": [
+        "Ponownie połącz Dysk Google"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
@@ -5584,6 +5667,9 @@
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Oznacza to, że dostawca Internetu i odwiedzane strony internetowe nie mogą łączyć Twoich danych z aktywnością online."
       ],
+      "This month": [
+        "Ten miesiąc"
+      ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Ten unikalny kod może być wykorzystywany przez strony internetowe i dostawcę Internetu (ISP) do powiązania lokalizacji i historii przeglądania z urządzeniem użytkownika"
       ],
@@ -5638,6 +5724,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Aby używać weryfikacji adresu, musisz dodać do zaufanych co najmniej jeden z dostępnych kluczy publicznych, w tym klucz, którego chcesz używać do wysyłania wiadomości. Zapobiega to podrabianiu kluczy szyfrowania."
       ],
+      "Today": [
+        "Dzisiaj"
+      ],
       "Total email addresses": [
         "Adresy e-mail"
       ],
@@ -5655,6 +5744,9 @@
       ],
       "Trash": [
         "Kosz"
+      ],
+      "Trash is empty": [
+        "Kosz jest pusty"
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Zaufaj kluczowi \"${ activeSignerText }\", aby zweryfikować nowe wiadomości od tego kontaktu."
@@ -5797,6 +5889,9 @@
       "Yes": [
         "Tak"
       ],
+      "Yesterday": [
+        "Wczoraj"
+      ],
       "you": [
         "Ty"
       ],
@@ -5844,6 +5939,9 @@
       ],
       "You can now return to the application to continue": [
         "Możesz wrócić do aplikacji, aby kontynuować"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Ten folder będzie można otworzyć po ukończeniu importowania. Na ten moment zaimportowano ${ importedSize }. Wyślemy ci email, gdy proces dobiegnie końca."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
@@ -6255,6 +6353,9 @@
       "Created": [
         "Utworzono"
       ],
+      "Created ${ created }": [
+        "Utworzono ${ created }"
+      ],
       "Credits": [
         "Środki"
       ],
@@ -6272,6 +6373,9 @@
       ],
       "Device": [
         "Urządzenie"
+      ],
+      "Device: ${ name }": [
+        "Urządzenie: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Wyłącz ten link w określonym dniu"
@@ -6321,8 +6425,14 @@
       "Encrypt emails": [
         "Zaszyfruj wiadomości"
       ],
+      "Enter device name": [
+        "Wpisz nazwę urządzenia"
+      ],
       "Expires": [
         "Wygasa"
+      ],
+      "Expires ${ formatted }": [
+        "Wygasa ${ formatted }"
       ],
       "Expiry": [
         "Wygaśnięcie"
@@ -6387,6 +6497,9 @@
       "Include message and file name in invite email": [
         "Dołącz wiadomość i nazwę pliku w zaproszeniu"
       ],
+      "Indexing": [
+        "Indeksowanie"
+      ],
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
       ],
@@ -6417,6 +6530,9 @@
       "Location": [
         "Lokalizacja"
       ],
+      "Location: ${ item.location }": [
+        "Lokalizacja: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Zaloguj się lub zarejestruj "
       ],
@@ -6438,6 +6554,9 @@
       "Modified": [
         "Zmodyfikowano"
       ],
+      "Modified ${ modified }": [
+        "Zmodyfikowano ${ modified }"
+      ],
       "Move to Archive": [
         "Przenieś do archiwum"
       ],
@@ -6446,6 +6565,9 @@
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Minimum ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
+      "My Albums": [
+        "Moje albumy"
       ],
       "Name": [
         "Nazwa"
@@ -6738,6 +6860,9 @@
       "Add a gift code": [
         "Dodaj kod podarunkowy"
       ],
+      "Albums": [
+        "Albumy"
+      ],
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
       ],
@@ -6798,6 +6923,9 @@
       "Pay invoice": [
         "Zapłać fakturę"
       ],
+      "Photos": [
+        "Zdjęcia"
+      ],
       "Reactivate now": [
         "Reaktywuj"
       ],
@@ -6812,6 +6940,12 @@
       ],
       "settings": [
         "ustawieniach"
+      ],
+      "Shared": [
+        "Udostępnione"
+      ],
+      "Shared with me": [
+        "Udostępnione dla mnie"
       ],
       "Terms and conditions": [
         "Regulamin"
@@ -8347,6 +8481,9 @@
       "Failed to reject share invitation": [
         "Nie udało się odrzucić zaproszenia"
       ],
+      "Failed to remove device": [
+        "Nie udało się usunąć urządzenia"
+      ],
       "Invitation's email was sent again": [
         "Zaproszenie zostało ponownie wysłane"
       ],
@@ -8553,6 +8690,19 @@
         "Witaj w ${ appName }"
       ]
     },
+    "Onboarding Action": {
+      "Install and continue": [
+        "Zainstaluj i kontynuuj"
+      ],
+      "Upload file": [
+        "Prześlij plik"
+      ]
+    },
+    "Onboarding Info": {
+      "Secure your files": [
+        "Zabezpiecz pliki"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " odwiedź nasze ${ helpCenterLink } lub ${ contactSupportLink }."
@@ -8606,6 +8756,9 @@
       ],
       "No parent folder": [
         "Brak folderu nadrzędnego"
+      ],
+      "Select JSON file": [
+        "Wybierz plik JSON"
       ]
     },
     "Option group label": {
@@ -9058,6 +9211,9 @@
       ],
       "Enter a name": [
         "Wpisz nazwę"
+      ],
+      "Enter a new file name": [
+        "Wpisz nową nazwę pliku"
       ],
       "Enter a new folder name": [
         "Wpisz nową nazwę folderu"
@@ -10470,6 +10626,9 @@
       "Problem reported": [
         "Problem został zgłoszony"
       ],
+      "Resuming import": [
+        "Wznawianie procesu importowania"
+      ],
       "Secure link copied": [
         "Link został skopiowany"
       ],
@@ -10579,6 +10738,11 @@
         "Pole vCard"
       ]
     },
+    "Tag": {
+      "Live Photos": [
+        "Live Photos"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } dzień",
@@ -10668,6 +10832,9 @@
       ],
       "Album details": [
         "Szczegóły albumu"
+      ],
+      "Albums": [
+        "Albumy"
       ],
       "All settings": [
         "Wszystkie ustawienia"
@@ -10858,6 +11025,9 @@
       "Devices": [
         "Urządzenia"
       ],
+      "Diagnostics": [
+        "Diagnostyka"
+      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Podpis cyfrowy został częściowo zweryfikowany. Plik został utworzony z linku publicznego przez użytkownika bez konta ${ BRAND_NAME }, który nie określa tożsamości właściciela."
       ],
@@ -11047,6 +11217,9 @@
       "Location": [
         "Lokalizacja"
       ],
+      "Logs": [
+        "Logi"
+      ],
       "Make a secure connection your default": [
         "Ustaw bezpieczne połączenie jako domyślne"
       ],
@@ -11092,14 +11265,23 @@
       "No breaches detected": [
         "Brak wykrytych wycieków"
       ],
+      "No portraits": [
+        "Brak zdjęć portretowych"
+      ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
+      ],
+      "No videos": [
+        "Brak filmów"
       ],
       "Notes": [
         "Notatki"
       ],
       "Number of downloads": [
         "Liczba pobrań"
+      ],
+      "Number of items": [
+        "Liczba elementów"
       ],
       "One email, many recipients": [
         "Jeden adres, wiele odbiorców"
@@ -11437,6 +11619,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Witaj w planie ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Witaj w ${ DRIVE_APP_NAME }"
+      ],
       "What can a VPN protect you from?": [
         "Przed czym VPN może chronić?"
       ],
@@ -11469,6 +11654,9 @@
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
+      ],
+      "Your import is in progress": [
+        "Trwa importowanie"
       ],
       "Your plan": [
         "Twój plan"
@@ -11576,7 +11764,7 @@
         "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Obraz nie mógł zostać załadowany"
+        "Zdjęcie nie mogło zostać załadowane"
       ],
       "The image could not be loaded using proxy": [
         "Obraz nie mógł zostać załadowany przy użyciu proxy"

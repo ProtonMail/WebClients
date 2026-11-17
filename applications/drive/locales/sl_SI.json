@@ -456,9 +456,6 @@
       "Get ${ planOrAppName }": [
         "Pridobi ${ planOrAppName }."
       ],
-      "Get in touch": [
-        "Oglasite se nam!"
-      ],
       "Get secure storage for ${ simplePriceString }": [
         "Pridobite varno shrambo za ${ simplePriceString }"
       ],
@@ -564,9 +561,6 @@
       "Leave album": [
         "Zapusti album"
       ],
-      "Let's talk": [
-        "Pogovorimo se!"
-      ],
       "Load": [
         "Naloži"
       ],
@@ -650,6 +644,9 @@
       ],
       "Name your album": [
         "Poimenujte vaš album"
+      ],
+      "New": [
+        "Novo"
       ],
       "New document": [
         "Nov dokument"
@@ -4802,6 +4799,9 @@
         "${ groupCounts } najdene skupine",
         "${ groupCounts } najdenih skupin"
       ],
+      "${ importedSize } imported": [
+        "${ importedSize } uvoženo"
+      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } čakajoče vabilo",
         "${ invitationsCount } čakajoči vabili",
@@ -5390,11 +5390,20 @@
       "Import in progress": [
         "Uvoz v teku"
       ],
+      "Import interrupted": [
+        "Uvoz je bil prekinjen"
+      ],
       "Import mailbox": [
         "Uvoz nabiralnika"
       ],
+      "Import paused": [
+        "Uvoz je začasno zaustavljen"
+      ],
       "Important note": [
         "Pomembna opomba"
+      ],
+      "Importing from Google Drive…": [
+        "Uvažanje iz Google Drive …"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Uvažanje podatkov iz ${ fromEmail } v ${ toEmail }."
@@ -5560,6 +5569,9 @@
       ],
       "More": [
         "Več"
+      ],
+      "More storage needed": [
+        "Potrebujete več prostora za shranjevanje"
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Večina javnih omrežij WiFi je varnih, vendar nekatera nimajo ustrezne varnosti, zato ste izpostavljeni kibernetskim grožnjam. VPN šifrira vaš promet in vas ohranja zaščitene."
@@ -5815,6 +5827,9 @@
       ],
       "RECOMMENDED": [
         "PRIPOROČENO"
+      ],
+      "Reconnect Google Drive": [
+        "Znova poveži Google Drive"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Podatki za obnovitev bodo ostali v tej napravi, razen če jih izbrišete."
@@ -6385,6 +6400,9 @@
       ],
       "You can now return to the application to continue": [
         "Zdaj se lahko vrnete v aplikacijo in nadaljujete"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "To mapo lahko odprete, ko bo uvoz končan. Do zdaj smo uvozili ${ importedSize }. Ko bo uvoz zaključen, vam bomo poslali e-poštno sporočilo."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vklopite lahko obvestila o prispetju novih e-poštnih sporočil v to mapo."
@@ -7470,6 +7488,9 @@
       ],
       "Shared": [
         "V skupni rabi"
+      ],
+      "Shared with me": [
+        "Deljeno z mano"
       ],
       "Terms and conditions": [
         "Pogoji uporabe"
@@ -11100,6 +11121,9 @@
       "Recovery has started": [
         "Obnovitev se je začela."
       ],
+      "Resuming import": [
+        "Nadaljevanje uvoza."
+      ],
       "Secure link copied": [
         "Varna povezava je bila kopirana"
       ],
@@ -12167,6 +12191,9 @@
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"
+      ],
+      "Your import is in progress": [
+        "Vaš uvoz je v teku"
       ],
       "Your plan": [
         "Vaš paket"
