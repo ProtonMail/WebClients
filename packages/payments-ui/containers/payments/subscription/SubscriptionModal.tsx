@@ -18,7 +18,7 @@ import type { BillingAddressExtended } from '@proton/payments/core/billing-addre
 import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
-import { getAvailableSubscriptionActions, getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
+import { canStartPurchase, getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import {
     SUBSCRIPTION_STEPS,
@@ -30,6 +30,7 @@ import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { isBilledUser } from '@proton/shared/lib/interfaces/User';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 import clsx from '@proton/utils/clsx';
 
@@ -50,6 +51,9 @@ interface Props {
     subscriptionProps: OpenCallbackProps;
     entitlementCatalog: EntitlementCatalog;
 }
+
+const getRequestedPlanName = ({ plan, planIDs }: OpenCallbackProps): PLANS | undefined =>
+    plan ?? (planIDs ? getPlanNameFromIDs(planIDs) : undefined);
 
 const isOverridablableStep = (step: SUBSCRIPTION_STEPS): step is SubscriptionOverridableStep =>
     [SUBSCRIPTION_STEPS.UPGRADE, SUBSCRIPTION_STEPS.THANKS].includes(step);
@@ -76,8 +80,7 @@ const SubscriptionModal = ({
     const { sendReportDrivePostSignup } = useDrivePostSignupOneDollarTelemetry();
     const { sendDrivePurchaseReport } = usePaidUsersNudgeTelemetry({ plan: PLANS.DRIVE });
 
-    const subscriptionActions = getAvailableSubscriptionActions(multiSubscriptionContext);
-    if (!subscriptionActions.canModify) {
+    if (!canStartPurchase(multiSubscriptionContext, getRequestedPlanName(subscriptionProps))) {
         return <InAppPurchaseModal subscription={subscription} {...modalState} />;
     } else if (isBilledUser(user)) {
         return <BilledUserModal user={user} {...modalState} />;

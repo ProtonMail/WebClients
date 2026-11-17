@@ -554,6 +554,15 @@ describe('forbidden plan transitions with the Lumo purchase rules', () => {
     });
 
     it.each([PLANS.LUMO_BASIC, PLANS.LUMO, PLANS.LUMO_ULTRA])(
+        'lets an iOS Mail Plus subscriber buy %s on the web with the flag on',
+        (planName) => {
+            const subscription = buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.iOS });
+
+            expect(getTransition(subscription, { [planName]: 1 }, true)).toEqual(null);
+        }
+    );
+
+    it.each([PLANS.LUMO_BASIC, PLANS.LUMO, PLANS.LUMO_ULTRA])(
         'gives a Family subscriber the Lumo addon instead of %s with the flag on',
         (planName) => {
             const subscription = buildSubscription(PLANS.FAMILY);

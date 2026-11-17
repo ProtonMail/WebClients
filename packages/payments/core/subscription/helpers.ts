@@ -60,7 +60,12 @@ import type {
     SubscriptionCheckForbiddenReason,
     SubscriptionEstimation,
 } from './interface';
-import { canModifySubscriptions, isForbiddenForStoreLumoSubscriber } from './lumo-purchase-rules';
+import {
+    canModifySubscriptions,
+    canSelectB2CLumoPlan,
+    isB2CLumoPlan,
+    isForbiddenForStoreLumoSubscriber,
+} from './lumo-purchase-rules';
 import type { MultiSubscriptionContext } from './multi-subscription-context';
 import { getPurchaseOutcome } from './purchase-outcome';
 
@@ -752,6 +757,16 @@ export function canModify(multiSubscriptionContext: MultiSubscriptionContext) {
         subscriptions.length === 0 ||
         subscriptions.some((subscription) => !isManagedExternally(subscription)) ||
         (subscriptions.length === 1 && hasLumo(subscriptions[0]))
+    );
+}
+
+export function canStartPurchase(
+    multiSubscriptionContext: MultiSubscriptionContext,
+    requestedPlanName: PLANS | ADDON_NAMES | undefined
+): boolean {
+    return (
+        canModify(multiSubscriptionContext) ||
+        (canSelectB2CLumoPlan(multiSubscriptionContext) && isB2CLumoPlan(multiSubscriptionContext, requestedPlanName))
     );
 }
 

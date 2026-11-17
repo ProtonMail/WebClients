@@ -97,7 +97,6 @@ export const canSelectB2CLumoPlan = (context: MultiSubscriptionContext): boolean
     return (
         context.lumoMultiSubscriptions &&
         !!context.entitlementCatalog &&
-        canModifySubscriptions(context) &&
         !getStoreB2CLumoSubscription(context) &&
         !hasMultiUserOrB2BSubscription(context) &&
         !hasLumoSeatsOutsideB2CLumoPlan(context)
