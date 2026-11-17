@@ -1,6 +1,7 @@
 import { fireEvent } from '@testing-library/dom';
+import { vi } from 'vitest';
 
-import { setLocation } from '@proton/jest-env/setLocation';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import type { AuthorizedPaymentIntent, BinData, DirectDebitCustomer, PaymentIntent } from '../lib/types';
 import { resetChargebee } from './chargebee';
@@ -9,7 +10,7 @@ import { resetCheckpoints } from './checkpoints';
 import type { DirectDebitSubmitEvent, GetHeightEvent, SetConfigurationEvent } from './message-bus';
 import { getMessageBus } from './message-bus';
 
-jest.mock('./ui-utils');
+vi.mock('./ui-utils');
 
 setLocation('https://account-api.proton.me');
 
@@ -18,12 +19,18 @@ setLocation('https://account-api.proton.me');
 // dispatch is queued on the microtask queue so the response listener can register first.
 window.parent.postMessage = ((data: any, targetOrigin?: string) => {
     queueMicrotask(() => {
-        window.dispatchEvent(new MessageEvent('message', { data, origin: targetOrigin, source: window.parent }));
+        window.dispatchEvent(
+            new MessageEvent('message', {
+                data,
+                origin: targetOrigin,
+                source: window.parent,
+            })
+        );
     });
 }) as typeof window.parent.postMessage;
 
-const createFieldMock = jest.fn().mockReturnValue({
-    at: jest.fn().mockReturnValue({
+const createFieldMock = vi.fn().mockReturnValue({
+    at: vi.fn().mockReturnValue({
         status: {
             isValid: true,
         },
@@ -33,19 +40,19 @@ const createFieldMock = jest.fn().mockReturnValue({
     },
 });
 
-const mountMock = jest.fn();
-const onMock = jest.fn();
-const getBinDataMock = jest.fn();
+const mountMock = vi.fn();
+const onMock = vi.fn();
+const getBinDataMock = vi.fn();
 
-const authorizeWith3dsCatchMock = jest.fn();
-const authorizeWith3dsThenMock = jest.fn().mockReturnValue({
+const authorizeWith3dsCatchMock = vi.fn();
+const authorizeWith3dsThenMock = vi.fn().mockReturnValue({
     catch: authorizeWith3dsCatchMock,
 });
-const authorizeWith3dsMock = jest.fn().mockReturnValue({
+const authorizeWith3dsMock = vi.fn().mockReturnValue({
     then: authorizeWith3dsThenMock,
 });
 
-const createComponentMock = jest.fn().mockReturnValue({
+const createComponentMock = vi.fn().mockReturnValue({
     createField: createFieldMock,
     mount: mountMock,
     on: onMock,
@@ -54,14 +61,14 @@ const createComponentMock = jest.fn().mockReturnValue({
 });
 
 const directDebitHandlerMock = {
-    setPaymentIntent: jest.fn(),
-    handlePayment: jest.fn(),
+    setPaymentIntent: vi.fn(),
+    handlePayment: vi.fn(),
 };
 
-const loadMock = jest.fn().mockResolvedValue(directDebitHandlerMock);
-const handlePaymentMock = jest.fn().mockResolvedValue(undefined);
+const loadMock = vi.fn().mockResolvedValue(directDebitHandlerMock);
+const handlePaymentMock = vi.fn().mockResolvedValue(undefined);
 
-const chargebeeInitMock = jest.fn().mockReturnValue({
+const chargebeeInitMock = vi.fn().mockReturnValue({
     chargebeeMock: true,
     load: loadMock,
     createComponent: createComponentMock,
@@ -69,8 +76,8 @@ const chargebeeInitMock = jest.fn().mockReturnValue({
 });
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    jest.resetModules();
+    vi.clearAllMocks();
+    vi.resetModules();
 
     createFieldMock.mockClear();
     mountMock.mockClear();
@@ -211,7 +218,10 @@ describe('reported data', () => {
 
     it('should not report customer data when handling a direct debit submission throws', async () => {
         const raw = collectRawMessages('chargebee-unhandled-error');
-        await initChargebee({ ...defaultSetConfigurationEvent, paymentMethodType: 'direct-debit' });
+        await initChargebee({
+            ...defaultSetConfigurationEvent,
+            paymentMethodType: 'direct-debit',
+        });
 
         directDebitHandlerMock.setPaymentIntent.mockImplementationOnce(() => {
             throw new Error('Chargebee rejected the mandate');
@@ -356,7 +366,10 @@ describe('failure reporting', () => {
 
         // The parent re-sends set-configuration on render mode, currency and payment method changes.
         mountMock.mockRejectedValueOnce(false);
-        sendEventToChargebee({ ...defaultSetConfigurationEvent, correlationId: 'id-2' });
+        sendEventToChargebee({
+            ...defaultSetConfigurationEvent,
+            correlationId: 'id-2',
+        });
         await new Promise<void>((resolve) => setTimeout(resolve, 0));
 
         expect(unhandledErrors).toHaveLength(1);
@@ -367,15 +380,15 @@ describe('failure reporting', () => {
     });
 
     it('should keep the form submittable when the mount budget expires', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         const unhandledErrors = collectMessages('chargebee-unhandled-error');
         const responses = collectMessages('set-configuration-response');
 
         // Mounting is not cancelled, so the fields can still appear afterwards.
         mountMock.mockReturnValueOnce(new Promise(() => {}));
         void initChargebee();
-        await jest.advanceTimersByTimeAsync(25000);
-        jest.useRealTimers();
+        await vi.advanceTimersByTimeAsync(25000);
+        vi.useRealTimers();
 
         expect(unhandledErrors).toHaveLength(1);
         expect(unhandledErrors[0].error.message).toBe('Chargebee "card_mount" did not complete within 20000ms');
@@ -408,7 +421,7 @@ describe('failure reporting', () => {
     });
 
     it('should report the failed scripts alongside the Chargebee load failure, on one event', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         const unhandledErrors = collectMessages('chargebee-unhandled-error');
 
         delete (global as any).Chargebee;
@@ -419,8 +432,8 @@ describe('failure reporting', () => {
         window.__chargebeeScriptFailed = true;
 
         void initChargebee();
-        await jest.advanceTimersByTimeAsync(50000);
-        jest.useRealTimers();
+        await vi.advanceTimersByTimeAsync(50000);
+        vi.useRealTimers();
 
         expect(unhandledErrors).toHaveLength(1);
         const report = unhandledErrors[0].error;
@@ -439,14 +452,14 @@ describe('failure reporting', () => {
     });
 
     it('should name the stalled stage rather than the watchdog itself', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         const unhandledErrors = collectMessages('chargebee-unhandled-error');
 
         // A mount that never finishes is what production sessions actually hit.
         mountMock.mockReturnValueOnce(new Promise(() => {}));
         void initChargebee();
-        await jest.advanceTimersByTimeAsync(200000);
-        jest.useRealTimers();
+        await vi.advanceTimersByTimeAsync(200000);
+        vi.useRealTimers();
 
         expect(unhandledErrors).toHaveLength(1);
         expect(unhandledErrors[0].error.message).toBe('Chargebee "card_mount" did not complete within 20000ms');

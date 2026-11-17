@@ -1,13 +1,15 @@
+import { vi } from 'vitest';
+
 import type { Checkpoint } from './checkpoints';
 
-const sendUnhandledErrorMessage = jest.fn();
+const { sendUnhandledErrorMessage } = vi.hoisted(() => ({ sendUnhandledErrorMessage: vi.fn() }));
 
-jest.mock('./chargebee-entry', () => ({
-    initialize: jest.fn(),
+vi.mock('./chargebee-entry', () => ({
+    initialize: vi.fn(),
     toReportableError: (error: any) => error,
 }));
 
-jest.mock('./message-bus', () => ({
+vi.mock('./message-bus', () => ({
     getMessageBus: () => ({ sendUnhandledErrorMessage }),
 }));
 
@@ -15,28 +17,40 @@ jest.mock('./message-bus', () => ({
  * The limit counts per page, so each test needs a fresh copy of the module. The listener is taken
  * as it registers rather than triggered through `window`, which would pile up one listener per copy.
  */
-function loadIframeDocument() {
-    jest.resetModules();
+async function loadIframeDocument() {
+    vi.resetModules();
     sendUnhandledErrorMessage.mockClear();
 
-    const addEventListener = jest.spyOn(window, 'addEventListener');
-    require('./main');
+    const addEventListener = vi.spyOn(window, 'addEventListener');
+    await import('./main');
     const registration = addEventListener.mock.calls.find(([type]) => type === 'error');
     addEventListener.mockRestore();
 
     const onError = registration![1] as (event: ErrorEvent) => void;
-    const { getCheckpoints } = require('./checkpoints');
+    const { getCheckpoints } = await import('./checkpoints');
 
     return {
         throwInsideTheIframe: (message: string, filename = 'https://js.chargebee.com/v2/chargebee.js') =>
-            onError(new ErrorEvent('error', { message, filename, error: new Error(message) })),
-        throwOpaqueCrossOriginError: () => onError(new ErrorEvent('error', { message: 'Script error.', filename: '' })),
+            onError(
+                new ErrorEvent('error', {
+                    message,
+                    filename,
+                    error: new Error(message),
+                })
+            ),
+        throwOpaqueCrossOriginError: () =>
+            onError(
+                new ErrorEvent('error', {
+                    message: 'Script error.',
+                    filename: '',
+                })
+            ),
         windowErrors: (): Checkpoint[] => getCheckpoints().filter(({ name }: Checkpoint) => name === 'window_error'),
     };
 }
 
-it('should report an uncaught error with the stage it happened at', () => {
-    const { throwInsideTheIframe } = loadIframeDocument();
+it('should report an uncaught error with the stage it happened at', async () => {
+    const { throwInsideTheIframe } = await loadIframeDocument();
 
     throwInsideTheIframe('Cannot read properties of undefined');
 
@@ -47,8 +61,8 @@ it('should report an uncaught error with the stage it happened at', () => {
 
 it.each(['chrome-extension://abc/inject.js', 'moz-extension://abc/content.js', 'blob:https://account-api.proton.me/1'])(
     'should not report a throw from a browser extension script (%s)',
-    (filename) => {
-        const { throwInsideTheIframe, windowErrors } = loadIframeDocument();
+    async (filename) => {
+        const { throwInsideTheIframe, windowErrors } = await loadIframeDocument();
 
         throwInsideTheIframe('Cannot redefine property: ethereum', filename);
 
@@ -57,16 +71,16 @@ it.each(['chrome-extension://abc/inject.js', 'moz-extension://abc/content.js', '
     }
 );
 
-it('should still report an opaque cross-origin "Script error.", since chargebee.js throws those too', () => {
-    const { throwOpaqueCrossOriginError } = loadIframeDocument();
+it('should still report an opaque cross-origin "Script error.", since chargebee.js throws those too', async () => {
+    const { throwOpaqueCrossOriginError } = await loadIframeDocument();
 
     throwOpaqueCrossOriginError();
 
     expect(sendUnhandledErrorMessage).toHaveBeenCalledTimes(1);
 });
 
-it('should not let browser extension throws use up the report limit', () => {
-    const { throwInsideTheIframe } = loadIframeDocument();
+it('should not let browser extension throws use up the report limit', async () => {
+    const { throwInsideTheIframe } = await loadIframeDocument();
 
     for (let index = 0; index < 20; index++) {
         throwInsideTheIframe('Cannot redefine property: ethereum', 'chrome-extension://abc/inject.js');
@@ -76,8 +90,8 @@ it('should not let browser extension throws use up the report limit', () => {
     expect(sendUnhandledErrorMessage).toHaveBeenCalledTimes(1);
 });
 
-it('should report every throw of a session that stays under the limit', () => {
-    const { throwInsideTheIframe } = loadIframeDocument();
+it('should report every throw of a session that stays under the limit', async () => {
+    const { throwInsideTheIframe } = await loadIframeDocument();
 
     for (let index = 0; index < 10; index++) {
         throwInsideTheIframe('Chargebee threw once');
@@ -86,8 +100,8 @@ it('should report every throw of a session that stays under the limit', () => {
     expect(sendUnhandledErrorMessage).toHaveBeenCalledTimes(10);
 });
 
-it('should stop reporting a repeating throw, so one loop cannot outgrow a Sentry event', () => {
-    const { throwInsideTheIframe } = loadIframeDocument();
+it('should stop reporting a repeating throw, so one loop cannot outgrow a Sentry event', async () => {
+    const { throwInsideTheIframe } = await loadIframeDocument();
 
     for (let index = 0; index < 250; index++) {
         throwInsideTheIframe('Chargebee retry loop threw');
@@ -97,8 +111,8 @@ it('should stop reporting a repeating throw, so one loop cannot outgrow a Sentry
     expect(sendUnhandledErrorMessage).toHaveBeenCalledTimes(10);
 });
 
-it('should keep counting the throws it no longer reports', () => {
-    const { throwInsideTheIframe, windowErrors } = loadIframeDocument();
+it('should keep counting the throws it no longer reports', async () => {
+    const { throwInsideTheIframe, windowErrors } = await loadIframeDocument();
 
     for (let index = 0; index < 30; index++) {
         throwInsideTheIframe('Chargebee retry loop threw');

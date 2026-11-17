@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { getCanMakePaymentsWithActiveCard } from './getCanMakePaymentsWithActiveCard';
 
 const setApplePaySession = (session: any) => {
@@ -53,8 +55,11 @@ describe('getCanMakePaymentsWithActiveCard', () => {
     });
 
     it('passes the current hostname in the merchant identifier', async () => {
-        const canMakePaymentsWithActiveCard = jest.fn().mockResolvedValue(true);
-        setApplePaySession({ canMakePayments: () => true, canMakePaymentsWithActiveCard });
+        const canMakePaymentsWithActiveCard = vi.fn().mockResolvedValue(true);
+        setApplePaySession({
+            canMakePayments: () => true,
+            canMakePaymentsWithActiveCard,
+        });
 
         await getCanMakePaymentsWithActiveCard();
 
