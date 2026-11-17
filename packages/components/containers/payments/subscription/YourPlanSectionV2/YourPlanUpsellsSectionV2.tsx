@@ -84,6 +84,9 @@ import PassFamilyBannerExtendSubscription, {
 } from './Upsells/pass/PassFamilyBannerExtendSubscription';
 import PassPlusExtendSubscription, { usePassPlusExtendSubscription } from './Upsells/pass/PassPlusExtendSubscription';
 import PassPlusFromFree, { usePassPlusFromFreeUpsells } from './Upsells/pass/PassPlusFromFree';
+import VisionaryUpsellCards from './Upsells/visionary/VisionaryUpsellCards';
+import { getVisionaryUpsellLayout, getVisionaryUpsellSubscriberPlan } from './Upsells/visionary/helpers';
+import useIsVisionaryUpsellEnabled from './Upsells/visionary/useIsVisionaryUpsellEnabled';
 
 export interface UpsellSectionBaseProps {
     app: APP_NAMES;
@@ -179,7 +182,134 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
     const { showSavings } = useSubscriptionPriceComparison(app, subscription);
     const canSaveByExtendingPlan = subscription?.Cycle === CYCLE.MONTHLY && showSavings;
 
+    const showVisionaryUpsell = useIsVisionaryUpsellEnabled({
+        app,
+        user,
+        subscription,
+        visionaryPlan: plansMap[PLANS.VISIONARY],
+    });
+    const visionarySubscriberPlan = getVisionaryUpsellSubscriberPlan(subscription);
+    const visionaryLayout =
+        showVisionaryUpsell && visionarySubscriberPlan
+            ? getVisionaryUpsellLayout(visionarySubscriberPlan, subscription?.Cycle)
+            : undefined;
+    const visionaryCardsProps = {
+        app,
+        user,
+        subscription: subscription as Subscription,
+        plansMap,
+        freePlan,
+    };
+    const showVisionaryAfterOwnOffer = visionaryLayout === 'ownOfferThenVisionary';
+    const visionarySolo = <VisionaryUpsellCards {...visionaryCardsProps} variant="solo" />;
+
     const upsellSections = [
+        // Visionary upsell of the VPN dashboard. When it's off, the sections below are shown as before.
+        {
+            enabled: visionaryLayout === 'fullPair',
+            element: (
+                <>
+                    <VisionaryUpsellCards
+                        {...visionaryCardsProps}
+                        variant="full"
+                        companion="unlimited"
+                        showSectionHeader
+                    />
+                    <VPNB2BBanner app={app} />
+                </>
+            ),
+        },
+        {
+            enabled: visionaryLayout === 'cycleDealsThenCompactPair',
+            upsells: vpnPlusExtendSubscriptionUpsells.upsells,
+            element: (
+                <>
+                    <VpnPlusExtendSubscription
+                        app={app}
+                        subscription={subscription as Subscription}
+                        {...vpnPlusExtendSubscriptionUpsells}
+                    />
+                    <VisionaryUpsellCards {...visionaryCardsProps} variant="compact" companion="unlimited" />
+                </>
+            ),
+        },
+        {
+            enabled: visionaryLayout === 'groupOfferPair',
+            element: (
+                <VisionaryUpsellCards
+                    {...visionaryCardsProps}
+                    variant="compact"
+                    companion={hasDuo(subscription) ? 'family' : 'groupPlans'}
+                />
+            ),
+        },
+        {
+            enabled: showVisionaryAfterOwnOffer && hasBundle(subscription) && canSaveByExtendingPlan,
+            upsells: unlimitedBannerExtendSubscriptionUpsells.upsells,
+            element: (
+                <>
+                    <UnlimitedBannerExtendSubscription
+                        app={app}
+                        subscription={subscription as Subscription}
+                        showUpsellPanels={true}
+                        {...unlimitedBannerExtendSubscriptionUpsells}
+                    />
+                    {visionarySolo}
+                </>
+            ),
+        },
+        {
+            enabled: showVisionaryAfterOwnOffer && hasBundle(subscription),
+            element: (
+                <>
+                    <ExploreGroupPlansBanner app={app} subscription={subscription as Subscription} />
+                    {visionarySolo}
+                </>
+            ),
+        },
+        {
+            enabled: showVisionaryAfterOwnOffer && hasDuo(subscription) && canSaveByExtendingPlan,
+            upsells: duoBannerExtendSubscriptionUpsells.upsells,
+            element: (
+                <>
+                    <DuoBannerExtendSubscription
+                        app={app}
+                        subscription={subscription as Subscription}
+                        showUpsellPanels={true}
+                        {...duoBannerExtendSubscriptionUpsells}
+                    />
+                    {visionarySolo}
+                </>
+            ),
+        },
+        {
+            enabled: showVisionaryAfterOwnOffer && hasDuo(subscription),
+            element: (
+                <>
+                    <FamilyBanner app={app} subscription={subscription as Subscription} />
+                    {visionarySolo}
+                </>
+            ),
+        },
+        {
+            enabled: showVisionaryAfterOwnOffer && hasFamily(subscription) && canSaveByExtendingPlan,
+            upsells: familyBannerExtendSubscriptionUpsells.upsells,
+            element: (
+                <>
+                    <FamilyBannerExtendSubscription
+                        app={app}
+                        subscription={subscription as Subscription}
+                        showUpsellPanels={true}
+                        {...familyBannerExtendSubscriptionUpsells}
+                    />
+                    {visionarySolo}
+                </>
+            ),
+        },
+        {
+            enabled: showVisionaryAfterOwnOffer,
+            element: visionarySolo,
+        },
         {
             enabled: isFreeUser && app === APPS.PROTONVPN_SETTINGS && showVPNAVariant,
             upsells: [...vpnPlusFromFreeUpsells.upsells, ...unlimitedBannerGradientUpsells.upsells],

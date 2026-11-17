@@ -255,6 +255,19 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
             telemetryFlow,
+            onMount: () => {
+                void sendTelemetryReport({
+                    api,
+                    delay: false,
+                    event: TelemetryAccountDashboardEvents.upsellCtaClick,
+                    measurementGroup: TelemetryMeasurementGroups.accountDashboard,
+                    dimensions: {
+                        app,
+                        cta: 'discover_unlimited_bottom_banner',
+                        user_tier: getTelemetryUserTier(user),
+                    },
+                });
+            },
         });
     };
 

@@ -10,6 +10,8 @@ import clsx from '@proton/utils/clsx';
 
 import type { StyleProps as PriceStyleProps } from '../../../components/price/Price';
 
+import './YourPlanSectionV2/Upsells/visionary/ExclusivePlanBorder.scss';
+
 export type HocPrice = (props: PriceStyleProps) => ReactElement | string | string[];
 
 interface Base {
@@ -20,6 +22,10 @@ interface Base {
     features: ReactNode;
     isCurrentPlan?: boolean;
     recommended?: boolean;
+    /** Pill and gradient border of a plan offered to subscribers only, never labelled as recommended */
+    exclusiveLabel?: ReactNode;
+    /** Shown above the price */
+    priceHeader?: ReactNode;
     actionLabel?: ReactNode;
     enableActionLabelSpacing?: boolean;
 }
@@ -61,6 +67,8 @@ const PlanSelectionPlanCard = ({
     disabled,
     isCurrentPlan,
     recommended,
+    exclusiveLabel,
+    priceHeader,
     actionElement,
 }: Props) => {
     const actionButton = (() => {
@@ -88,13 +96,22 @@ const PlanSelectionPlanCard = ({
         <>
             <div
                 className={clsx([
-                    'border relative h-full plan-selection-plan p-6 pb-0 flex flex-column flex-nowrap',
+                    'relative h-full plan-selection-plan p-6 pb-0 flex flex-column flex-nowrap',
+                    !exclusiveLabel && 'border',
                     isCurrentPlan && 'plan-selection-plan-current-card',
                     recommended && 'plan-selection-plan-recommended border-primary',
+                    exclusiveLabel && 'plan-selection-plan-recommended exclusive-plan-border',
                 ])}
                 data-testid={planName}
             >
-                {recommended ? (
+                {exclusiveLabel ? (
+                    <div className="plan-selection-plan-recommended-pill-container text-aligncenter flex">
+                        <div className="plan-selection-plan-recommended-pill inline-flex mx-auto bg-primary py-1 px-3">
+                            {exclusiveLabel}
+                        </div>
+                    </div>
+                ) : null}
+                {recommended && !exclusiveLabel ? (
                     <div className="plan-selection-plan-recommended-pill-container text-aligncenter flex">
                         <div className="plan-selection-plan-recommended-pill inline-flex mx-auto bg-primary py-1 px-3">
                             <IcStarFilled className="my-auto" />
@@ -108,6 +125,7 @@ const PlanSelectionPlanCard = ({
                     </h2>
                 </div>
                 <p className="text-lg plan-selection-info text-left color-weak mb-4">{info}</p>
+                {priceHeader}
                 <div className="mb-4 flex flex-wrap items-baseline plan-selection-price">
                     {(() => {
                         return getPrice({
