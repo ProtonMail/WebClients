@@ -21,7 +21,7 @@ export enum InviteEmailsError {
 }
 
 type ValidateShareInviteOptions = {
-    emailField: RefObject<HTMLInputElement>;
+    emailField: RefObject<HTMLInputElement | null>;
     emailValidationResults: Maybe<MutableRefObject<Map<string, boolean>>>;
     store: Store<State>;
 };

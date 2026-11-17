@@ -1,4 +1,4 @@
-import type { FC, RefObject } from 'react';
+import type { FC, Ref } from 'react';
 
 import type { FactoryOpts } from 'imask/esm/masked/factory';
 
@@ -31,7 +31,7 @@ export const MaskedTextField: FC<MaskedTextFieldProps> = (props) => {
                     onChange: noop,
                     value: maskedValue,
                 }}
-                ref={inputRef as RefObject<HTMLInputElement>}
+                ref={inputRef as Ref<HTMLInputElement>}
             />
         </FieldBox>
     );

@@ -234,7 +234,7 @@ interface RenderProps {
 }
 
 export interface SubscriptionContainerProps {
-    topRef?: RefObject<HTMLDivElement>;
+    topRef?: RefObject<HTMLDivElement | null>;
     app: ProductParam;
     step?: SUBSCRIPTION_STEPS;
     cycle?: Cycle;

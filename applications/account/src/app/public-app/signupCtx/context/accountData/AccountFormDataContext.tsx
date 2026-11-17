@@ -1,10 +1,11 @@
-import type { MutableRefObject, ReactNode, RefObject } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
 import isDeepEqual from 'lodash/isEqual';
 import merge from 'lodash/merge';
 
 import { useSilentApi } from '@proton/app-context/useSilentApi';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import type { ChallengeResult } from '@proton/challenge/interface';
 import type { ChallengeRef as ChallengeV4Ref } from '@proton/challenge/v4/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -163,11 +164,11 @@ interface AccountFormDataContextType {
     errors: ErrorDetails & { emailAlreadyUsed: boolean };
     refs: {
         challenge: MutableRefObject<ChallengeV4Ref | undefined>;
-        form: RefObject<HTMLFormElement>;
-        email: RefObject<HTMLInputElement>;
-        username: RefObject<HTMLInputElement>;
-        password: RefObject<HTMLInputElement>;
-        passwordConfirm: RefObject<HTMLInputElement>;
+        form: RefObjectReact18Compat<HTMLFormElement>;
+        email: RefObjectReact18Compat<HTMLInputElement>;
+        username: RefObjectReact18Compat<HTMLInputElement>;
+        password: RefObjectReact18Compat<HTMLInputElement>;
+        passwordConfirm: RefObjectReact18Compat<HTMLInputElement>;
     };
     onValue: {
         onUsernameValue: (username: string, domain: string) => void;

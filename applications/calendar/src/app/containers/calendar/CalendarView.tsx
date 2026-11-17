@@ -23,7 +23,7 @@ interface Props extends SharedViewProps {
     targetMoreData?: TargetMoreData;
     targetMoreRef: Ref<HTMLDivElement>;
     isScrollDisabled: boolean;
-    timeGridViewRef: RefObject<TimeGridRef>;
+    timeGridViewRef: RefObject<TimeGridRef | null>;
     weekdays: string[];
     weekdaysSingle: string[];
     formatTime: (date: Date) => string;

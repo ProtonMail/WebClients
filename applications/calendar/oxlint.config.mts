@@ -1,6 +1,7 @@
 import { createOxlintConfig } from '@proton/oxlint-config/createOxlintConfig';
 import { allGlobs } from '@proton/oxlint-config/globs';
 import { react19Selectors } from '@proton/oxlint-config/react19';
+import { refObjectNullSelectors } from '@proton/oxlint-config/refObjectNull';
 
 export default createOxlintConfig({
     overrides: [
@@ -11,6 +12,7 @@ export default createOxlintConfig({
                 'proton/restricted-syntax': [
                     'error',
                     ...react19Selectors,
+                    ...refObjectNullSelectors,
                     {
                         selector: "VariableDeclarator[id.type='ObjectPattern'][init.name=/^[A-Z_]+$/]",
                         message:

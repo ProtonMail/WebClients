@@ -3,9 +3,11 @@ import {
     createExtraneousDependenciesRule,
     extraneousDependenciesDevDependencies,
 } from '@proton/oxlint-config/extraneousDependencies';
+import { refObjectNullOverride } from '@proton/oxlint-config/react19';
 
 export default createOxlintConfig({
     overrides: [
+        refObjectNullOverride,
         {
             files: ['testing/**'],
             rules: {

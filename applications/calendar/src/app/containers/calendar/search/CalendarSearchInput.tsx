@@ -1,10 +1,11 @@
-import type { FormEvent, KeyboardEvent, MouseEvent, Ref, RefObject } from 'react';
+import type { FormEvent, KeyboardEvent, MouseEvent, Ref } from 'react';
 import { forwardRef, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
@@ -22,7 +23,7 @@ interface Props {
     onSearch: () => void;
     onBack: () => void;
     isSearchActive: boolean;
-    searchRef?: RefObject<HTMLDivElement>;
+    searchRef?: RefObjectReact18Compat<HTMLDivElement>;
 }
 
 const CalendarSearchInput = (

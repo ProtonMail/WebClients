@@ -1,4 +1,4 @@
-import type { ReactNode, RefObject } from 'react';
+import type { ReactNode } from 'react';
 import { Suspense, lazy, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
@@ -10,6 +10,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import FloatingButton from '@proton/components/components/button/FloatingButton';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
@@ -117,7 +118,7 @@ interface Props {
     onChangeDate: (date: Date) => void;
     onChangeDateRange: (date: Date, range: number, resetRange?: boolean) => void;
     prefetchCalendarEvents: (range: [Date, Date]) => void;
-    containerRef: RefObject<HTMLDivElement>;
+    containerRef: RefObjectReact18Compat<HTMLDivElement>;
     onSearch: () => void;
     addresses: Address[];
     calendarUserSettings: CalendarUserSettings;

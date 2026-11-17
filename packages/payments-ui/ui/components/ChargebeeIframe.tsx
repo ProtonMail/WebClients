@@ -278,7 +278,7 @@ function useChargebeeHandles(
 ): ChargebeeIframeHandles & {
     notifyIframeLoaded: () => void;
     notifyIframeUnloaded: () => void;
-    iframeLoadedRef: RefObject<boolean>;
+    iframeLoadedRef: RefObject<boolean | null>;
 } {
     const chargebeeConfigurationRef = useRef<ChargebeeConfiguration | null>(null);
     const api = useApi();
@@ -689,7 +689,7 @@ export type CbIframeHandles = {
     events: ChargebeeIframeEvents;
     iframeRef: MutableRefObject<HTMLIFrameElement | null>;
     iframeSrc: string;
-    iframeLoadedRef: RefObject<boolean>;
+    iframeLoadedRef: RefObject<boolean | null>;
     notifyIframeLoaded: () => void;
     notifyIframeUnloaded: () => void;
 };

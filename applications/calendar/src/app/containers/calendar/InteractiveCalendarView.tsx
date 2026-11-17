@@ -302,9 +302,9 @@ interface Props extends SharedViewProps {
     activeAddresses: Address[];
     createEventCalendar?: VisualCalendar;
     createEventCalendarBootstrap?: CalendarBootstrap;
-    containerRef: RefObject<HTMLDivElement>;
-    timeGridViewRef: RefObject<TimeGridRef>;
-    interactiveRef: RefObject<InteractiveRef>;
+    containerRef: RefObject<HTMLDivElement | null>;
+    timeGridViewRef: RefObject<TimeGridRef | null>;
+    interactiveRef: RefObject<InteractiveRef | null>;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
     eventTargetAction: EventTargetAction | undefined;
     setEventTargetAction: Dispatch<SetStateAction<EventTargetAction | undefined>>;

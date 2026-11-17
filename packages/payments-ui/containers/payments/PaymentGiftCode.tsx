@@ -1,10 +1,10 @@
-import type { RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import Info from '@proton/components/components/link/Info';
 import useToggle from '@proton/hooks/useToggle';
 import { IcGift } from '@proton/icons/icons/IcGift';
@@ -14,7 +14,7 @@ interface Props {
     loading?: boolean;
     giftCode?: string;
     onApply: (value: string) => void;
-    giftCodeRef: RefObject<HTMLInputElement>;
+    giftCodeRef: RefObjectReact18Compat<HTMLInputElement>;
 }
 
 const getFormattedGiftCode = (giftCode: string) => {

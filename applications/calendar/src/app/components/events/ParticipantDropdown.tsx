@@ -15,7 +15,7 @@ interface Props {
     email?: string;
     isOpen: boolean;
     close: () => void;
-    anchorRef: RefObject<HTMLButtonElement>;
+    anchorRef: RefObject<HTMLButtonElement | null>;
     isContact: boolean;
     onCreateOrEditContact: () => void;
 }
