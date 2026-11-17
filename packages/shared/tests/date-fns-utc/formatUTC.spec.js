@@ -36,4 +36,13 @@ describe('date-fn utc', () => {
         const utcDate = new Date(Date.UTC(2019, 2, 31, 2, 0));
         expect(format(utcDate, 'Pp')).toBe('03/31/2019, 2:00 AM');
     });
+
+    it('it should return an empty string for an invalid date', () => {
+        expect(format(new Date(NaN), 'Pp')).toBe('');
+    });
+
+    it('it should allow the week-year and day-of-year tokens', () => {
+        const utcDate = new Date(Date.UTC(2020, 11, 31, 23, 0));
+        expect(format(utcDate, 'YYYY DD')).toBe('2021 366');
+    });
 });
