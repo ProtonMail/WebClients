@@ -1,11 +1,12 @@
-import { format, parseISO } from 'date-fns';
+import { format } from 'date-fns';
 import { c } from 'ttag';
 
+import { parseISOSafely } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
-    value: string;
+    value: string | null | undefined;
     format?: string;
     displayInfoText?: boolean;
     dateInBold?: boolean;
@@ -19,7 +20,10 @@ const ReadableDate = ({
     dateInBold = false,
     className,
 }: Props) => {
-    const parsedDate = parseISO(value);
+    const parsedDate = parseISOSafely(value);
+    if (!parsedDate) {
+        return null;
+    }
     const formattedDate = format(parsedDate, dateFormat, { locale: dateLocale });
     const timeDate = format(parsedDate, 'yyyy-MM-dd');
 

@@ -1,12 +1,13 @@
 import { type ReactNode, useEffect, useRef, useState } from 'react';
 
-import { getUnixTime, parseISO } from 'date-fns';
+import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { UserIdentity } from '@proton/atoms/UserIdentity/UserIdentity';
 import { getShareID } from '@proton/shared/lib/api/b2bevents';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { parseISOSafely } from '@proton/shared/lib/helpers/time';
 import isTruthy from '@proton/utils/isTruthy';
 
 import AppLink from '../../../components/link/AppLink';
@@ -205,7 +206,8 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                     const key = index;
 
                     const shareId = vaultId ? shareIds[vaultId] : undefined;
-                    const formattedTime = getUnixTime(parseISO(time));
+                    const eventDate = parseISOSafely(time);
+                    const formattedTime = eventDate ? getUnixTime(eventDate) : undefined;
 
                     return (
                         <TableRow
@@ -225,9 +227,11 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                                     >
                                         {eventTypeName}
                                     </div>
-                                    <Time format="PPp" className="color-weak" onClick={() => onTimeClick(time)}>
-                                        {formattedTime}
-                                    </Time>
+                                    {formattedTime !== undefined && (
+                                        <Time format="PPp" className="color-weak" onClick={() => onTimeClick(time)}>
+                                            {formattedTime}
+                                        </Time>
+                                    )}
                                 </div>,
                                 <Details
                                     eventType={eventType}

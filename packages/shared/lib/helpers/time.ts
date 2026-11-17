@@ -1,5 +1,5 @@
 import { serverTime } from '@protontech/crypto';
-import { format as formatDate, fromUnixTime, getUnixTime, isSameDay } from 'date-fns';
+import { format as formatDate, fromUnixTime, getUnixTime, isSameDay, isValid, parseISO } from 'date-fns';
 
 type DateFnsOptions = Parameters<typeof formatDate>[2];
 
@@ -12,6 +12,15 @@ export type Options = DateFnsOptions & {
      * Date format in general case. 'PP' by default.
      */
     format?: string;
+};
+
+/** date-fns v3+ `parseISO` throws on non-strings, so API values are checked before parsing. */
+export const parseISOSafely = (value: unknown): Date | undefined => {
+    if (typeof value !== 'string') {
+        return undefined;
+    }
+    const date = parseISO(value);
+    return isValid(date) ? date : undefined;
 };
 
 /**

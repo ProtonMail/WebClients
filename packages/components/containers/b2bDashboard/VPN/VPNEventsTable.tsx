@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
-import { getUnixTime, parseISO } from 'date-fns';
+import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { UserIdentity } from '@proton/atoms/UserIdentity/UserIdentity';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { parseISOSafely } from '@proton/shared/lib/helpers/time';
 import clsx from '@proton/utils/clsx';
 
 import { SortingTableHeader } from '../../../components/table/SortingTableHeader';
@@ -82,7 +83,8 @@ const VPNEventsTable = ({
                     const { name: gatewayName, countryCode } = gateway;
                     const { location, ip, countryCode: originCountryCode } = origin;
                     const key = index;
-                    const formattedTime = getUnixTime(parseISO(time));
+                    const eventDate = parseISOSafely(time);
+                    const formattedTime = eventDate ? getUnixTime(eventDate) : undefined;
                     const EventIcon = getVPNEventIcon(eventType);
 
                     return (
@@ -109,13 +111,15 @@ const VPNEventsTable = ({
                                             >
                                                 {eventTypeName}
                                             </span>
-                                            <Time
-                                                format="PPp"
-                                                className="color-weak mt-1"
-                                                onClick={() => onTimeClick(time)}
-                                            >
-                                                {formattedTime}
-                                            </Time>
+                                            {formattedTime !== undefined && (
+                                                <Time
+                                                    format="PPp"
+                                                    className="color-weak mt-1"
+                                                    onClick={() => onTimeClick(time)}
+                                                >
+                                                    {formattedTime}
+                                                </Time>
+                                            )}
                                         </div>
                                     </div>
                                 </div>,
