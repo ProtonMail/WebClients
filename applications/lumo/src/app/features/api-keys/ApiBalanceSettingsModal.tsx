@@ -17,6 +17,7 @@ import { formatApiCurrency, parseApiAmount } from './apiKeysHelpers';
 
 const MIN_AUTO_TOP_UP_AMOUNT = 25;
 const MAX_AUTO_TOP_UP_AMOUNT = 100;
+const MIN_AUTO_TOP_UP_THRESHOLD = 1;
 const NOT_PRIMARY_ADMIN_CODE = 2011;
 const MISSING_SCOPE_CODE = 9100;
 
@@ -27,11 +28,18 @@ const getAmountRangeMessage = (currency: Currency) => {
         .t`Top-up amount must be a whole amount between ${formattedMinAmount} and ${formattedMaxAmount}`;
 };
 
+const getThresholdRangeMessage = (amount: number, currency: Currency) => {
+    const formattedMinThreshold = formatApiCurrency(MIN_AUTO_TOP_UP_THRESHOLD, currency);
+    const formattedMaxThreshold = formatApiCurrency(amount - 1, currency);
+    return c('collider_2025: Error')
+        .t`Threshold must be a whole amount between ${formattedMinThreshold} and ${formattedMaxThreshold}`;
+};
+
 const isSectionChanged = <Section extends { enabled: boolean }>(
     opened: Section,
     edited: Section,
-    valueKey: keyof Section
-) => opened.enabled !== edited.enabled || (edited.enabled && opened[valueKey] !== edited[valueKey]);
+    valueKeys: (keyof Section)[]
+) => opened.enabled !== edited.enabled || (edited.enabled && valueKeys.some((key) => opened[key] !== edited[key]));
 
 interface ApiAutoTopUpSettings {
     enabled: boolean;
@@ -97,7 +105,6 @@ const AmountField = ({
     onValue,
     currency,
     invalid = false,
-    disabled = false,
 }: {
     id: string;
     label: string;
@@ -105,7 +112,6 @@ const AmountField = ({
     onValue?: (value: string) => void;
     currency: Currency;
     invalid?: boolean;
-    disabled?: boolean;
 }) => (
     <div className="api-usage-settings-field">
         <label htmlFor={id}>{label}</label>
@@ -116,7 +122,6 @@ const AmountField = ({
             step="1"
             value={value}
             onValue={onValue}
-            disabled={disabled}
             prefix={<span className="color-weak text-sm">{currency}</span>}
             error={invalid}
         />
@@ -150,13 +155,14 @@ export const ApiBalanceSettingsModal = ({
     const [openedSettings] = useState(settings);
     const [autoTopUpEnabled, setAutoTopUpEnabled] = useState(openedSettings.autoTopUp.enabled);
     const [amount, setAmount] = useState(String(openedSettings.autoTopUp.amount));
+    const [threshold, setThreshold] = useState(String(openedSettings.autoTopUp.threshold));
     const [limitEnabled, setLimitEnabled] = useState(openedSettings.spendingLimit.enabled);
     const [limit, setLimit] = useState(String(openedSettings.spendingLimit.limit));
     const [saving, setSaving] = useState(false);
     const [saveError, setSaveError] = useState<unknown>();
 
-    const { threshold } = openedSettings.autoTopUp;
     const parsedAmount = parseApiAmount(amount);
+    const parsedThreshold = parseApiAmount(threshold);
     const parsedLimit = parseApiAmount(limit);
     const isAmountValid =
         parsedAmount !== null &&
@@ -164,28 +170,36 @@ export const ApiBalanceSettingsModal = ({
         parsedAmount >= MIN_AUTO_TOP_UP_AMOUNT &&
         parsedAmount <= MAX_AUTO_TOP_UP_AMOUNT;
     const savedAmount = isAmountValid ? parsedAmount : openedSettings.autoTopUp.amount;
+    const isThresholdValid =
+        parsedThreshold !== null &&
+        Number.isInteger(parsedThreshold) &&
+        parsedThreshold >= MIN_AUTO_TOP_UP_THRESHOLD &&
+        parsedThreshold < savedAmount;
+    const savedThreshold = isThresholdValid ? parsedThreshold : openedSettings.autoTopUp.threshold;
     const isLimitValid = parsedLimit !== null && Number.isInteger(parsedLimit) && parsedLimit >= savedAmount;
-    const isAutoTopUpValid = !autoTopUpEnabled || (isAmountValid && (!limitEnabled || isLimitValid));
+    const isAutoTopUpValid =
+        !autoTopUpEnabled || (isAmountValid && isThresholdValid && (!limitEnabled || isLimitValid));
 
     const formattedSpent = formatApiCurrency(spent, currency);
     const formattedLimit = isLimitValid ? formatApiCurrency(parsedLimit, currency) : '';
     const formattedSavedAmount = formatApiCurrency(savedAmount, currency);
-    const formattedThreshold = formatApiCurrency(threshold, currency);
 
     const handleSave = async () => {
         if (!isAutoTopUpValid) {
             return;
         }
-        const edited = {
-            autoTopUp: { enabled: autoTopUpEnabled, amount: savedAmount, threshold },
-            spendingLimit: {
-                enabled: limitEnabled,
-                limit: isLimitValid ? parsedLimit : openedSettings.spendingLimit.limit,
-            },
-        };
+        const edited = autoTopUpEnabled
+            ? {
+                  autoTopUp: { enabled: true, amount: savedAmount, threshold: savedThreshold },
+                  spendingLimit: {
+                      enabled: limitEnabled,
+                      limit: isLimitValid ? parsedLimit : openedSettings.spendingLimit.limit,
+                  },
+              }
+            : { ...openedSettings, autoTopUp: { ...openedSettings.autoTopUp, enabled: false } };
         const hasChanges =
-            isSectionChanged(openedSettings.autoTopUp, edited.autoTopUp, 'amount') ||
-            isSectionChanged(openedSettings.spendingLimit, edited.spendingLimit, 'limit');
+            isSectionChanged(openedSettings.autoTopUp, edited.autoTopUp, ['amount', 'threshold']) ||
+            isSectionChanged(openedSettings.spendingLimit, edited.spendingLimit, ['limit']);
         if (!hasChanges) {
             modalProps.onClose?.();
             return;
@@ -217,13 +231,14 @@ export const ApiBalanceSettingsModal = ({
                     <AmountField
                         id="api-auto-top-up-threshold"
                         label={c('collider_2025: Label').t`When balance falls below`}
-                        value={String(threshold)}
+                        value={threshold}
+                        onValue={setThreshold}
                         currency={currency}
-                        disabled
+                        invalid={!isThresholdValid}
                     />
-                    <p className="m-0 text-sm color-weak">
-                        {c('collider_2025: Info').t`For now, the threshold is fixed at ${formattedThreshold}.`}
-                    </p>
+                    {!isThresholdValid && (
+                        <p className="m-0 text-sm color-danger">{getThresholdRangeMessage(savedAmount, currency)}</p>
+                    )}
                     <AmountField
                         id="api-auto-top-up-amount"
                         label={c('collider_2025: Label').t`Top up by`}
@@ -232,13 +247,12 @@ export const ApiBalanceSettingsModal = ({
                         currency={currency}
                         invalid={!isAmountValid}
                     />
-                    {isAmountValid ? (
+                    {isAmountValid && isThresholdValid && (
                         <p className="api-usage-settings-summary m-0 text-sm">
-                            {getAutoTopUpSummary({ amount: parsedAmount, threshold }, currency)}
+                            {getAutoTopUpSummary({ amount: parsedAmount, threshold: parsedThreshold }, currency)}
                         </p>
-                    ) : (
-                        <p className="m-0 text-sm color-danger">{getAmountRangeMessage(currency)}</p>
                     )}
+                    {!isAmountValid && <p className="m-0 text-sm color-danger">{getAmountRangeMessage(currency)}</p>}
                     {!canChargeAutoTopUp && (
                         <p className="m-0 text-sm color-warning">
                             {c('collider_2025: Warning')

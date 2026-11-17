@@ -31,7 +31,7 @@ const setup = (response: LumoCreditResponse, failingUrls: string[] = []) => {
 const callsTo = (api: jest.Mock, url: string) => api.mock.calls.filter(([config]) => config.url === url);
 
 const savedSettings = {
-    autoTopUp: { enabled: true, amount: 40, threshold: 20 },
+    autoTopUp: { enabled: true, amount: 40, threshold: 15 },
     spendingLimit: { enabled: true, limit: 300 },
 };
 
@@ -85,7 +85,7 @@ describe('useLumoCredits balance settings', () => {
                 {
                     url: autoTopUpUrl,
                     method: 'put',
-                    data: { Enabled: true, Quantity: 40, SpendingLimitEnabled: true, SpendingLimit: 300 },
+                    data: { Enabled: true, Quantity: 40, Threshold: 15, SpendingLimitEnabled: true, SpendingLimit: 300 },
                     silence: true,
                 },
             ],
