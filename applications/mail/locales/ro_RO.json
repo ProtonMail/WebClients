@@ -73,13 +73,13 @@
         "Adăugare alt cont"
       ],
       "Add Bcc recipients": [
-        "Adăugare destinatari la copia ascunsă"
+        "Adăugare destinatari ascunși"
       ],
       "Add birthday": [
         "Adăugare dată naștere"
       ],
       "Add Cc recipients": [
-        "Adăugare destinatari la copie"
+        "Adăugare destinatari vizibili"
       ],
       "Add condition": [
         "Adăugare condiție"
@@ -213,7 +213,7 @@
         "Anulare perioadă de evaluare și plătire"
       ],
       "Carbon Copy": [
-        "Copie"
+        "Destinatari vizibili"
       ],
       "Change password": [
         "Modificare parolă"
@@ -648,9 +648,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Obțineți o adresă gratuită ${ BRAND_NAME }"
       ],
-      "Get in touch": [
-        "Contactați-ne"
-      ],
       "Get index size on disk": [
         "Obținere dimensiune index pe disc"
       ],
@@ -850,9 +847,6 @@
       ],
       "Least read": [
         "Cel mai puțin citit"
-      ],
-      "Let's talk": [
-        "Să discutăm"
       ],
       "Load": [
         "Încărcare"
@@ -4296,6 +4290,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajutați-vă echipa să stocheze în siguranță parolele pentru informațiile private despre afaceri și clienți."
       ],
+      "High-performance model for complex tasks": [
+        "Model de înaltă performanță pentru sarcini complexe."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
@@ -4304,6 +4301,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Vă permite să adăugați imediat legături web de conferință în invitațiile la evenimente."
+      ],
+      "Lightweight model for everyday tasks": [
+        "Model simplu pentru sarcinile de zi cu zi."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
@@ -4392,6 +4392,12 @@
       ],
       "To start, give your organization a name.": [
         "Pentru a începe, dați un nume organizației."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Pentru a utiliza ${ LUMO_SHORT_APP_NAME } în ${ MAIL_APP_NAME }, adăugați-l la abonamentul actual."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Pentru a utiliza ${ LUMO_SHORT_APP_NAME } în ${ MAIL_APP_NAME }, solicitați acces de la administratorul organizației."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activați protecția împotriva monitorizării prin e-mail pentru a împiedica agenții de publicitate și alții să vă urmărească unde vă aflați și activitatea online."
@@ -5905,6 +5911,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
       ]
     },
     "fido2: Info": {
@@ -7447,6 +7456,9 @@
       "Change your theme": [
         "Modificare temă"
       ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Conversați cu ${ LUMO_SHORT_APP_NAME } pentru a căuta, citi, organiza și schița e-mailuri."
+      ],
       "Checked Proton support": [
         "Am verificat asistența de la Proton"
       ],
@@ -7512,6 +7524,9 @@
       ],
       "Copied to clipboard": [
         "Copiat în memorie."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copiază cu un singur clic codurile de unică folosință din mesaje."
       ],
       "Copy the link to clipboard": [
         "Copiere legătură web în memorie"
@@ -8074,9 +8089,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -8296,6 +8309,9 @@
       ],
       "Move here": [
         "Mutare aici"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Mutare mesaje cu coduri de unică folosință în gunoi după copiere."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
@@ -10273,8 +10289,8 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } de caractere"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant": [
-        "Asistentul ${ LUMO_SHORT_APP_NAME }"
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "Asistent ${ LUMO_SHORT_APP_NAME } AI"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME }"
@@ -10393,7 +10409,7 @@
         "Mesaj de indisponibilitate"
       ],
       "BCC": [
-        "Ca"
+        "BCC"
       ],
       "Beta Access": [
         "Acces la Beta"
@@ -10432,7 +10448,7 @@
         "Calendare"
       ],
       "Carbon Copy": [
-        "Copie"
+        "Destinatari vizibili"
       ],
       "Card details": [
         "Detalii card"
@@ -10872,6 +10888,9 @@
       "Message:": [
         "Mesaj:"
       ],
+      "Model": [
+        "Model"
+      ],
       "Move ${ sidebarElementName }": [
         "Mutare ${ sidebarElementName }"
       ],
@@ -10886,6 +10905,9 @@
       ],
       "Move to Inbox": [
         "Mutare în «Primite»"
+      ],
+      "Move to Trash": [
+        "Mutare în gunoi"
       ],
       "Moved to ${ labelName }": [
         "S-a mutat în ${ labelName }"
@@ -10946,6 +10968,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Notificările sunt dezactivate. Pentru a le activa modificați setările navigatorului web."
+      ],
+      "One-time codes": [
+        "Cod de unică folosință"
       ],
       "Operating system": [
         "Sistem de operare"
@@ -13755,12 +13780,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (fără TVA)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nu poate fi combinat cu ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } este disponibil doar pentru planurile de afaceri."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% TVA: ${ taxAmountElement }"
       ],
@@ -13770,17 +13789,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Suma datorată după evaluare la ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Pentru acest plan este necesară o organizație."
-      ],
       "Billing Country": [
         "Țara de facturare"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Conturile „Born Private” nu pot fi achiziționate dacă există un abonament activ."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Achiziționarea de credite necesită o tranzacție separată."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Dacă vă comutați, sunteți de acord cu acești ${ termsLink }."
@@ -13824,9 +13834,6 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Poate fi achiziționat doar un singur plan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Plata cu ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -13836,26 +13843,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "Schimbarea planului este incompatibilă din următoarele motive:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Închideți conturile suplimentare de portofele înainte de a vă schimba planul."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Închideți portofelele suplimentare înainte de a vă schimba planul."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Numărul de licențe Proton Meet trebuie să corespundă numărului de membri."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Prețul de reînnoire poate fi modificat în conformitate cu informațiile din ${ termsAndConditionsLink }."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Numărul licențelor pentru Scribe nu îl poate depăși pe cel al numărului de membri."
       ],
       "Tax ${ rate }%": [
         "TVA ${ rate }%"
@@ -13866,25 +13861,10 @@
       "terms and conditions": [
         "termeni și condiții"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Inițiativa „Born Private” necesită o donație."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Planul selectat nu oferă suficiente adrese pentru contul pe care îl dețineți."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Planul selectat nu oferă suficiente domenii pentru contul deținut."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Planul selectat nu oferă suficiente licențe pentru membri din contul pe care îl dețineți."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Planul selectat nu oferă suficient spațiu de stocare pentru contul deținut."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
@@ -13920,41 +13900,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Acest server dedicat este alocat unei porți de acces și nu poate fi modificat."
-      ],
       "This offer is not available with your current plan.": [
         "Această ofertă nu este disponibilă cu planul actual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Acest plan nu acceptă funcțiile gestionate din contul deținut."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Acest plan nu oferă suport pentru membrii din contul deținut."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Această abonare nu poate fi finalizată momentan. Reîncercați."
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Abonamentele de probare nu acceptă licențe pentru ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Planurile de probare nu suportă domenii personale."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Abonamentele de probare nu oferă suport pentru adrese IP dedicate."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Acest plan nu suportă licențe pentru Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Abonamentele de probare nu suportă un număr atât de mare de membri."
       ],
       "VAT number": [
         "Valoare TVA"
@@ -13968,20 +13924,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Aveți deja un abonament la acest plan. Vă puteți schimba abonamentul pe ${ subscriptionPlatform }."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Deja dețineți planul ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
-      ],
-      "You already own a Born Private account.": [
-        "Deja dețineți un cont „Born Private”."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă nouă."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Contul este prea vechi pentru inițiativa „Born Private”."
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
@@ -16021,11 +15968,11 @@
         "Mesaje eliminate din favorite: ${ elementsCount }",
         "Mesaje eliminate din favorite: ${ elementsCount }"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
-        "Asistentul ${ LUMO_SHORT_APP_NAME } este dezactivat"
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Asistentul ${ LUMO_SHORT_APP_NAME } AI este dezactivat"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
-        "Asistentul ${ LUMO_SHORT_APP_NAME } este activat"
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "Asistentul ${ LUMO_SHORT_APP_NAME } AI este activat"
       ],
       "Address copied to clipboard": [
         "Adresa a fost copiată în memorie"
@@ -16196,6 +16143,12 @@
       ],
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "S-au mutat în ${ label }. Mesajele asemănătoare vor fi trimise acolo în viitor."
+      ],
+      "One-time codes disabled": [
+        "Codurile de unică folosință s-au dezactivat."
+      ],
+      "One-time codes enabled": [
+        "Codurile de unică folosință s-au activat."
       ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
@@ -16584,7 +16537,7 @@
         "Moment nepotrivit pentru acest mesaj?"
       ],
       "BCC": [
-        "CA"
+        "BCC"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -16596,7 +16549,7 @@
         "Black Friday"
       ],
       "Blind Carbon Copy": [
-        "Copie ascunsă"
+        "Destinatari ascunși"
       ],
       "Block sender": [
         "Blocare expeditor"
@@ -16617,7 +16570,7 @@
         "Nu se mai pot crea pagini de rezervare"
       ],
       "Carbon Copy": [
-        "Copie"
+        "Destinatari vizibili"
       ],
       "Card verification": [
         "Verificare card"

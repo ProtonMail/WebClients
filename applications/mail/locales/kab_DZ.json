@@ -456,9 +456,6 @@
       "Get ${ planOrAppName }": [
         "Awi ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Nermes-aɣ-d"
-      ],
       "Get started": [
         "Bdu"
       ],
@@ -579,9 +576,6 @@
       ],
       "Learn more": [
         "Issin ugar"
-      ],
-      "Let's talk": [
-        "Aha ad nemmeslay"
       ],
       "Load": [
         "Sali"
@@ -855,6 +849,9 @@
       ],
       "Remove expiration time": [
         "Kkes azemz n keffu"
+      ],
+      "Remove from list": [
+        "Kkes seg tebdart"
       ],
       "Remove gift code": [
         "Kkes tangalt n usefk"
@@ -3230,6 +3227,9 @@
       "A problem occurred, please try again.": [
         "Yella-d wugur, ttxil-k·m εreḍ tikkelt-nniḍen."
       ],
+      "Add at least one action": [
+        "Arnu xarṣum yiwet n tigawt"
+      ],
       "Address primary private key not found": [
         "Tasarut tamaẓlayt tagejdant n tansa ulac-itt"
       ],
@@ -3880,6 +3880,26 @@
       "Byte": [
         "Ibit",
         "Ibiten"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "Tastayt"
+      ],
+      "Filter and sort emails": [
+        "Tastayt d usmizzwer n yimaylen"
+      ],
+      "Has attachments": [
+        "Yesɛa imeddayen"
+      ],
+      "Read": [
+        "Yettwaɣra"
+      ],
+      "Reset": [
+        "Ales awennez"
+      ],
+      "Unread": [
+        "Ur yettwaɣri ara"
       ]
     },
     "Filter Actions": {
@@ -4544,6 +4564,10 @@
         "${ trackersCount } n uneḍfar iweḥlen",
         "${ trackersCount } n yimeḍfaren iweḥlen"
       ],
+      "${ unreadCount } newsletter": [
+        "Aɣmis ${ unreadCount }",
+        "${ unreadCount } n tebratin n yisallen"
+      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } n yizen i yettusɣawsen",
         "${ unreadCount } n yizenan i yettusɣawsen"
@@ -4739,6 +4763,9 @@
         "Rnu ${ calendarsToBeCreatedCount } n uwitay amaynut",
         "Rnu ${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
       ],
+      "Create a filter": [
+        "Snulfu-d tastayt"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked yikaramen i tebɣiḍ ad tketreḍ."
       ],
@@ -4747,6 +4774,9 @@
       ],
       "Create a new contact group": [
         "Snulfu-d agraw n unermes amaynut"
+      ],
+      "Create filter": [
+        "Snulfu-d tastayt"
       ],
       "Create in": [
         "Snulfu-d di"
@@ -4954,8 +4984,7 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
+        "Ger tugna"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -5017,6 +5046,9 @@
       "Manage your labels": [
         "Sefrek tibzimin-inek/m"
       ],
+      "Mark all as unread": [
+        "Creḍ meṛṛa amzun ur ttwaɣran ara"
+      ],
       "Mastercard SecureCode logo": [
         "Alugu n Mastercard SecureCode"
       ],
@@ -5070,6 +5102,9 @@
       ],
       "New": [
         "Amaynut"
+      ],
+      "newsletter": [
+        "Tabrat n yisallen"
       ],
       "No action selected": [
         "Ulac tigawt yettwafernen"
@@ -5426,6 +5461,12 @@
       "Unlock message": [
         "Kkes asekkeṛ i yizen"
       ],
+      "Unread conversations": [
+        "Idiwenniyen ur nettwaɣra ara"
+      ],
+      "Unread messages": [
+        "Iznan ur nettwaɣra ara"
+      ],
       "Unsaved changes": [
         "Isenfal ur ttwaskelsen ara"
       ],
@@ -5434,6 +5475,9 @@
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
+      ],
+      "Update the filter ${ filter }": [
+        "mucceḍ tastayt ${ filter }"
       ],
       "Updating message content search...": [
         "Aleqqem n unadi n ugbur n yizen..."
@@ -6157,6 +6201,9 @@
       "Enable desktop notifications": [
         "Rmed talɣutin n tnarit"
       ],
+      "Enable filter": [
+        "Sermed tastayt"
+      ],
       "Encrypt emails": [
         "Wgelhen imaylen"
       ],
@@ -6166,8 +6213,17 @@
       "Extended address": [
         "Asiɣzef n tansa"
       ],
+      "Filter": [
+        "Tastayt"
+      ],
+      "Filter name": [
+        "Isem n testayt"
+      ],
       "Filter Name": [
         "Isem n imsizdeg"
+      ],
+      "Filters": [
+        "Tistayin"
       ],
       "First name": [
         "Isem"
@@ -6198,6 +6254,9 @@
       ],
       "From: ${ fromEmail }": [
         "Sɣur: ${ fromEmail }"
+      ],
+      "Go to Social": [
+        "Ddu ɣer Unmetti"
       ],
       "Hide password": [
         "Ffer awal uffir"
@@ -6300,6 +6359,9 @@
       ],
       "New password": [
         "Awal uffir amaynut"
+      ],
+      "Newsletters": [
+        "Tibratin n yisallen"
       ],
       "No label found": [
         "Ulac tabzimt yettwafen"
@@ -6406,6 +6468,9 @@
       "Sender": [
         "Amazan"
       ],
+      "Sieve script": [
+        "Sekles askript"
+      ],
       "Sign emails": [
         "Eg azmul i yimaylen"
       ],
@@ -6414,6 +6479,9 @@
       ],
       "Size:": [
         "Teɣzi:"
+      ],
+      "Social": [
+        "Anmetti"
       ],
       "Spam": [
         "Aspam"
@@ -8047,6 +8115,9 @@
       ],
       "Smallest first": [
         "Ameẓẓyan maḍi qbel"
+      ],
+      "Sort by": [
+        "Smizzwer s"
       ]
     },
     "specialoffer: Action": {
@@ -8562,6 +8633,9 @@
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } yettwakkes"
+      ],
+      "The filter is active again": [
+        "Tastayt tettwarmed tikkelt nniḍen"
       ]
     },
     "Suffix": {
@@ -8723,6 +8797,9 @@
       ],
       "(active)": [
         "(urmid)"
+      ],
+      "A filter name is required": [
+        "Isem n testayt yettwasra"
       ],
       "Account recovery": [
         "Tiririt n umiḍan"
@@ -8967,6 +9044,9 @@
       "External encryption": [
         "Awgelhen azɣaray"
       ],
+      "Filter on": [
+        "Tastayt termed"
+      ],
       "Filter on...": [
         "Imsizdeg deg..."
       ],
@@ -9031,11 +9111,20 @@
       "Load remote content": [
         "Sali-d agbur anmeggag"
       ],
+      "Loading...": [
+        "Asali..."
+      ],
+      "Mark all messages as read": [
+        "Creḍ meṛṛa iznan amzun ttwaɣren"
+      ],
       "Mark as read": [
         "Creḍ-it yettwaɣra"
       ],
       "Mark as unread": [
         "Creḍ ur yettwaɣra ara"
+      ],
+      "Mark conversations as unread": [
+        "Creḍ idiwenniyen amzun ur tatwaɣran ara"
       ],
       "Mark email as legitimate": [
         "Creḍ imayl iseḥḥa"
@@ -9096,6 +9185,12 @@
       ],
       "New message": [
         "Izen amaynut"
+      ],
+      "Newsletters": [
+        "Tibratin n yisallen"
+      ],
+      "Newsletters view": [
+        "Taskant n tebratin n yisallen"
       ],
       "Next": [
         "Ɣer sdat"
@@ -9189,6 +9284,9 @@
       ],
       "Refine your Categories": [
         "Seɣti tiggayin-ik"
+      ],
+      "Remove from list?": [
+        "Kkes seg tebdart?"
       ],
       "Reply": [
         "Err"
@@ -9294,6 +9392,9 @@
       ],
       "To": [
         "I"
+      ],
+      "Trash all messages?": [
+        "Smutti meṛṛa iznan ɣer tqecwalt n yiḍumman?"
       ],
       "Trust new key?": [
         "Tesεiḍ taflest deg tsarut tamaynut?",

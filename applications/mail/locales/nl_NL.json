@@ -624,9 +624,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Krijg een gratis ${ BRAND_NAME }-adres"
       ],
-      "Get in touch": [
-        "Neem contact op"
-      ],
       "Get index size on disk": [
         "Haal de indexgrootte op schijf op"
       ],
@@ -819,9 +816,6 @@
       ],
       "Least read": [
         "Minst gelezen"
-      ],
-      "Let's talk": [
-        "Laten we praten!"
       ],
       "Load": [
         "Laden"
@@ -6739,6 +6733,10 @@
         "${ n } ongelezen gesprek",
         "${ n } ongelezen gesprekken"
       ],
+      "${ n } unread message": [
+        "${ n } ongelezen bericht",
+        "${ n } ongelezen berichten"
+      ],
       "${ name } in ${ parentName }": [
         "${ name } in ${ parentName }"
       ],
@@ -7715,8 +7713,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -13071,9 +13068,6 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet licenties moeten overeenkomen met het aantal leden."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
       ],
@@ -13127,9 +13121,6 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Dit abonnement ondersteunt de beheerde functies van uw account niet."
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Dit abonnement kan momenteel niet worden voltooid. Probeer het opnieuw."

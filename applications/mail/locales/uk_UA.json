@@ -468,6 +468,9 @@
       "Dismiss": [
         "Відхилити"
       ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
       "Display navigation bar": [
         "Показувати панель навігації"
       ],
@@ -630,9 +633,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Отримати безплатну адресу ${ BRAND_NAME }"
       ],
-      "Get in touch": [
-        "Зв'яжіться з нами"
-      ],
       "Get started": [
         "Розпочнімо"
       ],
@@ -677,6 +677,9 @@
       ],
       "Go to settings": [
         "Перейти до налаштувань"
+      ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
       ],
       "Google": [
         "Google"
@@ -821,9 +824,6 @@
       ],
       "Least read": [
         "Найменш читані"
-      ],
-      "Let's talk": [
-        "Поговорімо"
       ],
       "Load": [
         "Завантажити"
@@ -1017,6 +1017,9 @@
       "Next": [
         "Далі"
       ],
+      "Next contact": [
+        "Наступний контакт"
+      ],
       "Next conversation": [
         "Наступна розмова"
       ],
@@ -1094,6 +1097,9 @@
       ],
       "Previous": [
         "Попередній"
+      ],
+      "Previous contact": [
+        "Попередній контакт"
       ],
       "Previous conversation": [
         "Попередня розмова"
@@ -4214,11 +4220,17 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Допоможіть вашій команді надійно зберігати паролі до конфіденційної ділової та клієнтської інформації."
       ],
+      "High-performance model for complex tasks": [
+        "Високопродуктивна модель для виконання складних завдань"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Дає змогу миттєво додавати посилання на зустрічі до ваших запрошень на події."
+      ],
+      "Lightweight model for everyday tasks": [
+        "Легка модель для щоденних завдань"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
@@ -4303,6 +4315,12 @@
       ],
       "To start, give your organization a name.": [
         "Для початку вкажіть назву вашої організації."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Для користування ${ LUMO_SHORT_APP_NAME } в ${ MAIL_APP_NAME } додайте цей застосунок до вашої підписки."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Для користування ${ LUMO_SHORT_APP_NAME } в ${ MAIL_APP_NAME } запитайте доступ у вашого адміністратора."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Увімкніть захист від стеження для електронної пошти, щоб рекламодавці та сторонні служби не відстежували ваше розташування й активність в інтернеті."
@@ -5808,6 +5826,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
       ]
     },
     "fido2: Info": {
@@ -7294,6 +7315,9 @@
       "Center": [
         "По центру"
       ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Спілкуйтеся з ${ LUMO_SHORT_APP_NAME }, щоб шукати, читати, упорядковувати та створювати чернетки своїх електронних листів."
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Перевірка контактів ${ progress } з ${ max }..."
       ],
@@ -7817,9 +7841,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -9708,6 +9729,9 @@
         "${ count } непрочитаних повідомлень",
         "${ count } непрочитаних повідомлень"
       ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } — ШІ помічник"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Помічник з написання ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -10226,6 +10250,9 @@
       ],
       "Message:": [
         "Повідомлення:"
+      ],
+      "Model": [
+        "Модель"
       ],
       "Move ${ sidebarElementName }": [
         "Перемістити ${ sidebarElementName }"
@@ -13041,9 +13068,6 @@
       "Billing Country": [
         "Країна платника"
       ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
-      ],
       "Card number": [
         "Номер картки"
       ],
@@ -13103,9 +13127,6 @@
       ],
       "terms and conditions": [
         "умови та положення"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "Для участі в програмі Born Private необхідна пожертва."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
@@ -13173,17 +13194,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас уже є передплата на цей тарифний план. Ви можете змінити передплату на ${ subscriptionPlatform }."
       ],
-      "You already own a Born Private account.": [
-        "Ви вже маєте обліковий запис Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
       "You will soon be redirected to verify your payment.": [
         "Вас невдовзі буде перенаправлено для підтвердження платежу."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ],
       "Your payment is still being processed": [
         "Ваш платіж усе ще обробляється"
@@ -15245,6 +15260,12 @@
         "${ elementsCount } повідомлень вилучені з Вибраних.",
         "${ elementsCount } повідомлень вилучені з Вибраного.",
         "${ elementsCount } повідомлення видалено з Вибраних."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } ШІ помічника вимкнено"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } ШІ помічника увімкнено"
       ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"

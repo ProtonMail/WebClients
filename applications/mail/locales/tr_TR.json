@@ -477,6 +477,9 @@
       "Dismiss": [
         "Yok say"
       ],
+      "Dismiss notification": [
+        "Bildirimi yok say"
+      ],
       "Display navigation bar": [
         "Gezinme çubuğunu görüntüle"
       ],
@@ -645,9 +648,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "Ücretsiz bir ${ BRAND_NAME } adresi alın"
       ],
-      "Get in touch": [
-        "Bizimle görüşün"
-      ],
       "Get index size on disk": [
         "Diskteki dizin boyutunu al"
       ],
@@ -695,6 +695,9 @@
       ],
       "Go to settings": [
         "Ayarlara git"
+      ],
+      "Go to today": [
+        "Bugüne git"
       ],
       "Google": [
         "Google"
@@ -846,9 +849,6 @@
       ],
       "Least read": [
         "En az okunan"
-      ],
-      "Let's talk": [
-        "Hadi konuşalım!"
       ],
       "Load": [
         "Yükle"
@@ -1051,6 +1051,9 @@
       "Next": [
         "İleri"
       ],
+      "Next contact": [
+        "Sonraki kişi"
+      ],
       "Next conversation": [
         "Sonraki yazışma"
       ],
@@ -1131,6 +1134,9 @@
       ],
       "Previous": [
         "Önceki"
+      ],
+      "Previous contact": [
+        "Önceki kişi"
       ],
       "Previous conversation": [
         "Önceki yazışma"
@@ -4268,6 +4274,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ekibinizin önemli kuruluş ve müşteri bilgilerine ait parolaları güvenli bir şekilde kaydetmesini sağlayın."
       ],
+      "High-performance model for complex tasks": [
+        "Karmaşık görevler için yüksek başarımlı model"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
@@ -4276,6 +4285,9 @@
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Etkinlik davetlerinize anında görüşme bağlantıları ekleyin."
+      ],
+      "Lightweight model for everyday tasks": [
+        "Günlük işler için hafif model"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
@@ -5860,6 +5872,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
       ]
     },
     "fido2: Info": {
@@ -6850,6 +6865,10 @@
         "${ n } okunmamış yazışma",
         "${ n } okunmamış yazışma"
       ],
+      "${ n } unread message": [
+        "${ n } okunmamış ileti",
+        "${ n } okunmamış ileti"
+      ],
       "${ name } in ${ parentName }": [
         "${ parentName } içinde ${ name }"
       ],
@@ -7328,6 +7347,9 @@
       ],
       "Change your theme": [
         "Temanızı değiştirin"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "${ LUMO_SHORT_APP_NAME } ile sohbet ederek e-postalarınızı arayın, okuyun, düzenleyin ve taslaklarını hazırlayın."
       ],
       "Checked Proton support": [
         "Proton desteği denetlendi"
@@ -7946,8 +7968,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9456,6 +9477,9 @@
       "writing assistant iframe": [
         "yazma yardımcısı iFrame"
       ],
+      "Writing assistant seats are no longer sold.": [
+        "Yazma yardımcısı koltukları artık satılmamaktadır."
+      ],
       "Yearly": [
         "Yıllık"
       ],
@@ -10105,8 +10129,8 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } karakter"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant": [
-        "${ LUMO_SHORT_APP_NAME } yardımcı"
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısı"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
@@ -10702,6 +10726,9 @@
       ],
       "Message:": [
         "İleti:"
+      ],
+      "Model": [
+        "Model"
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } ögesini taşı"
@@ -11586,6 +11613,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } özelliğini aç"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2 kat Basic kullanım"
+      ],
+      "5x Plus usage": [
+        "5 kat Plus kullanım"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Aylık ${ credit } krediyle API erişimi"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
+      ],
+      "Everything in Basic, and:": [
+        "Basic'teki her şey ve:"
+      ],
+      "Everything in Free, and:": [
+        "Her şey Free ve:"
+      ],
+      "Everything in Plus, and:": [
+        "Plus'taki her şey ve:"
+      ],
+      "Extended image generation": [
+        "Genişletilmiş görüntü oluşturma"
+      ],
+      "Includes:": [
+        "Şunları içerir:"
+      ],
+      "Limited image generation": [
+        "Sınırlı görüntü oluşturma"
+      ],
+      "Limited messages and chat history": [
+        "Sınırlı mesajlar ve sohbet geçmişi"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Sınırlı Beceriler, Projeler ve planlanmış görevler"
+      ],
+      "Maximum image generation": [
+        "Maksimum resim oluşturma"
+      ],
+      "Maximum Skills and Projects": [
+        "Maksimum Beceri ve Projeler"
+      ],
+      "More image generation": [
+        "Daha fazla görüntü oluşturma"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Daha fazla beceri, proje ve planlanmış görevler"
+      ],
+      "More usage": [
+        "Daha fazla kullanım"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Kodlama ve geliştirme için"
+      ],
+      "For everyday chats": [
+        "Günlük sohbetler için"
+      ],
+      "For getting more done": [
+        "Daha fazlasını yapmak için"
       ]
     },
     "Mail import summary": {
@@ -13547,12 +13641,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (vergi hariç)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] }, ${ PLAN_NAMES[PLANS.PASS] } ile birleştirilemez."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } yalnızca kurumsal tarifelerde kullanılabilir."
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "%${ rate } vergi: ${ taxAmountElement }"
       ],
@@ -13562,17 +13650,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
       ],
-      "An organization is required for this plan.": [
-        "Bu tarife için bir kuruluş gereklidir."
-      ],
       "Billing Country": [
         "Faturalanacak ülke"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Etkin bir abonelik varken Born Private hesapları satın alınamaz."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Kredi satın almak için ayrı bir satın alma gerekir."
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "Geçiş yaparak ${ termsLink } içeriğini kabul etmiş olursunuz."
@@ -13616,9 +13695,6 @@
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Yalnızca bir ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } satın alınabilir."
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME } ile öde"
       ],
@@ -13628,26 +13704,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "Tarife geçişi şu nedenlerden dolayı yapılamıyor:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Lütfen tarifenizi değiştirmeden önce ek cüzdan hesaplarını kapatın."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Lütfen tarifenizi değiştirmeden önce ek cüzdanları kapatın."
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden kullanıma alın."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet koltuk sayısı üye sayısı ile aynı olmalıdır."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Yenileme fiyatları ${ termsAndConditionsLink } içeriğine göre değişebilir."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe koltuk sayısı üye sayısını aşamaz."
       ],
       "Tax ${ rate }%": [
         "%${ rate } vergi"
@@ -13658,24 +13722,9 @@
       "terms and conditions": [
         "hükümler ve koşullar"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private girişimine bağış yapılması gerekir."
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli adres sunmuyor."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli etki alanı sunmuyor."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli üye sunmuyor."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Seçilmiş tarife hesabınız için yeterli depolama alanı sunmuyor."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Özel indirimli fiyat ${ couponRedemptions } ay boyunca geçerlidir. Ardından otomatik olarak 1 ay için ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
@@ -13706,41 +13755,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Bu işlem geçerli aboneliğin kapsamını genişletir. Yalnızca yeni eklentiler ve geçerli fatura döneminin kalan süresi için ücret alınır. Aboneliğinizin yenilenme tarihi değişmeyecek."
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Bu sie ayrılmış sunucu bir ağ geçidine atanmış ve değiştirilemez."
-      ],
       "This offer is not available with your current plan.": [
         "Bu teklif, geçerli tarifeniz ile kullanılamıyor."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Bu tarife hesabınızdaki yönetilen özellikleri desteklemez."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Bu tarife hesabınızdaki üyeleri desteklemez."
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "Bu abonelik şu anda tamamlanamıyor. Lütfen yeniden deneyin."
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Deneme tarifelerinde ${ LUMO_SHORT_APP_NAME } koltukları desteklenmez."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Deneme tarifeleri özel etki alanlarını desteklemez."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Deneme tarifeleri size ayrılmış IP adreslerini desteklemez."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Deneme tarifelerinde Scribe koltukları desteklenmez."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Deneme tarifeleri bu kadar çok üyeyi desteklemez."
       ],
       "VAT number": [
         "KDV numarası"
@@ -13754,20 +13779,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Bu tarifeye zaten bir aboneliğiniz var. Aboneliğinizi ${ subscriptionPlatform } üzerinden değiştirebilirsiniz."
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Zaten ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } sahibisiniz."
-      ],
-      "You already own a Born Private account.": [
-        "Zaten bir Born Private hesabınız var."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
       "You will soon be redirected to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
@@ -15740,11 +15756,11 @@
         "${ elementsCount } iletinin yıldızı kaldırıldı.",
         "${ elementsCount } iletinin yıldızı kaldırıldı."
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
-        "${ LUMO_SHORT_APP_NAME } yardımcı kapalı"
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısı kapalı"
       ],
-      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
-        "${ LUMO_SHORT_APP_NAME } yardımcı açık"
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısı açık"
       ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"

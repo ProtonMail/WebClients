@@ -621,9 +621,6 @@
       "Get a free ${ BRAND_NAME } address": [
         "獲取免費 ${ BRAND_NAME } 電郵位址"
       ],
-      "Get in touch": [
-        "保持聯絡"
-      ],
       "Get started": [
         "開始使用"
       ],
@@ -807,14 +804,14 @@
       "Later this week": [
         "本週稍後"
       ],
+      "Learn how this works": [
+        "了解運作方式"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
       "Least read": [
         "閱讀量最少"
-      ],
-      "Let's talk": [
-        "我們一起聊聊！"
       ],
       "Load": [
         "載入"
@@ -1487,6 +1484,9 @@
       ],
       "Switch or add account": [
         "切換或是添加帳號"
+      ],
+      "Switch to ${ planName }": [
+        "切換至 ${ planName }"
       ],
       "Take a tour": [
         "瀏覽"
@@ -2680,6 +2680,9 @@
       ],
       "Amount due": [
         "應付金額"
+      ],
+      "Amount due after trial": [
+        "試用後的欠款"
       ],
       "Amount due now": [
         "當前欠款"
@@ -6539,6 +6542,9 @@
       "${ currentProgress } out of ${ totalProgress }": [
         "${ totalProgress } 總數其中的 ${ currentProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "目前使用 ${ currentStep }，共 ${ steps }"
+      ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } 則對話內容將標記為："
       ],
@@ -6757,6 +6763,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "遠端工作時，安全連線至關重要。VPN 可保護公司資料免受網路威脅，並保持您的工作私密。"
+      ],
+      "A specific feature (tell us)": [
+        "一個特定功能(告訴我們)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
@@ -7190,6 +7199,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 商標"
       ],
+      "Dismiss": [
+        "忽略"
+      ],
       "Do you remember your password?": [
         "您記得您的密碼嗎?"
       ],
@@ -7548,7 +7560,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7756,6 +7768,9 @@
       ],
       "newsletter": [
         "新聞信件"
+      ],
+      "Next": [
+        "下一個"
       ],
       "No action selected": [
         "未選取任何動作"
@@ -8855,6 +8870,9 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "當您旅遊或使用公共無線網路，連接至${ VPN_APP_NAME }以避免其他人追蹤您連線活動或竊取資料。它是免費的。"
       ],
+      "Which provider?": [
+        "哪個供應商?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "透過新的電子郵件分類，只有重要郵件會進入您的主要收件匣。其它訊息將被整理到不同的分類中。"
       ],
@@ -9022,6 +9040,9 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您編寫了「${ attachmentsFoundKeyword }」，但沒有加入對應的附件。無論如何寄出此封郵件？"
+      ],
+      "You'll choose a new username": [
+        "您將選擇個新的使用者名稱"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "若您的朋友訂閱年費方案，您將在 1 個月後獲得點數獎勵；若他們訂閱月費方案，則會在 2 個月後獲得。"
@@ -9355,6 +9376,9 @@
       ],
       "New message": [
         "撰寫"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "開啟 ${ LUMO_SHORT_APP_NAME } / 專注輸入"
       ],
       "Open command panel": [
         "開啟指令面板"
@@ -10027,6 +10051,9 @@
       "Move to Inbox": [
         "移動到收件匣"
       ],
+      "Move to Trash": [
+        "移到垃圾桶"
+      ],
       "Moved to ${ labelName }": [
         "移至 ${ labelName }"
       ],
@@ -10213,6 +10240,9 @@
       "Search in": [
         "搜尋於"
       ],
+      "Select all ${ count } unused sender": [
+        "選取全部 ${ count } 未使用的寄件者"
+      ],
       "Select which Gmail address to connect": [
         "選取 Gmail 位址以連線"
       ],
@@ -10350,6 +10380,9 @@
       ],
       "Until date": [
         "直到日期"
+      ],
+      "Until time": [
+        "直到時間"
       ],
       "Updates": [
         "更新"
@@ -12852,12 +12885,6 @@
       "Timeout exceeded": [
         "已經逾時"
       ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "試用方案不支援 ${ LUMO_SHORT_APP_NAME } 座席。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "試用方案不支援獨立 IPs。"
-      ],
       "VAT number": [
         "增值稅編號（VAT）"
       ],
@@ -14920,6 +14947,9 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "已移動至 ${ label }。未來類似的訊息將會被歸入該處。"
       ],
+      "One-time codes enabled": [
+        "單次代碼已啟用"
+      ],
       "Password copied to clipboard": [
         "密碼已複製至剪貼簿"
       ],
@@ -16084,6 +16114,9 @@
       ],
       "Subject missing": [
         "缺少主旨"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "訂閱至 ${ planTitle }"
       ],
       "Subscription canceled": [
         "訂購授權已取消"
