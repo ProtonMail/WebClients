@@ -344,6 +344,9 @@
       "Dismiss": [
         "Відхилити"
       ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
       "Display navigation bar": [
         "Показувати панель навігації"
       ],
@@ -431,9 +434,6 @@
       "Get ${ planOrAppName }": [
         "Отримати ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "Зв'яжіться з нами"
-      ],
       "Get started": [
         "Розпочнімо"
       ],
@@ -469,6 +469,9 @@
       ],
       "Go to the next available appointment": [
         "Перейти до наступної доступної зустрічі"
+      ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
       ],
       "Got it": [
         "Зрозуміло"
@@ -551,9 +554,6 @@
       "Learn more": [
         "Докладніше"
       ],
-      "Let's talk": [
-        "Поговорімо"
-      ],
       "Load": [
         "Завантажити"
       ],
@@ -632,6 +632,9 @@
       "Next": [
         "Далі"
       ],
+      "Next contact": [
+        "Наступний контакт"
+      ],
       "Next day": [
         "Наступного дня"
       ],
@@ -682,6 +685,9 @@
       ],
       "Previous": [
         "Попередній"
+      ],
+      "Previous contact": [
+        "Попередній контакт"
       ],
       "Previous day": [
         "Попередній день"
@@ -4419,8 +4425,8 @@
       ]
     },
     "Event popover close button": {
-      "Close popover": [
-        "Закрити спливне вікно"
+      "Close": [
+        "Закрити"
       ]
     },
     "Event reply": {
@@ -4563,6 +4569,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
       ]
     },
     "fido2: Info": {
@@ -9611,9 +9620,6 @@
       "Billing Country": [
         "Країна платника"
       ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
-      ],
       "Card number": [
         "Номер картки"
       ],
@@ -9673,9 +9679,6 @@
       ],
       "terms and conditions": [
         "умови та положення"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "Для участі в програмі Born Private необхідна пожертва."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
@@ -9743,17 +9746,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас уже є передплата на цей тарифний план. Ви можете змінити передплату на ${ subscriptionPlatform }."
       ],
-      "You already own a Born Private account.": [
-        "Ви вже маєте обліковий запис Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
       "You will soon be redirected to verify your payment.": [
         "Вас невдовзі буде перенаправлено для підтвердження платежу."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ],
       "Your payment is still being processed": [
         "Ваш платіж усе ще обробляється"

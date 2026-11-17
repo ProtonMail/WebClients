@@ -428,9 +428,6 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } を入手"
       ],
-      "Get in touch": [
-        "連絡する"
-      ],
       "Get started": [
         "利用開始"
       ],
@@ -550,9 +547,6 @@
       ],
       "Learn more": [
         "詳細"
-      ],
-      "Let's talk": [
-        "話をしよう"
       ],
       "Load": [
         "読み込み"
@@ -4343,8 +4337,8 @@
       ]
     },
     "Event popover close button": {
-      "Close popover": [
-        "ポップオーバーを閉じる"
+      "Close": [
+        "閉じる"
       ]
     },
     "Event reply": {
@@ -4487,6 +4481,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
       ]
     },
     "fido2: Info": {
@@ -9293,12 +9290,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice }（税別）"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } は ${ PLAN_NAMES[PLANS.PASS] } と組み合わせることはできません。"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } はビジネスプランでのみご利用いただけます。"
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% の税金: ${ taxAmountElement }"
       ],
@@ -9308,17 +9299,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } のトライアル後のお支払い額"
       ],
-      "An organization is required for this plan.": [
-        "このプランをご利用いただくには組織の作成が必要です。"
-      ],
       "Billing Country": [
         "請求先の国"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "サブスクリプションの利用中は Born Private アカウントを購入することはできません。"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "クレジットの購入には、別途個別のお手続きが必要です。"
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "切り替えることにより、お客様は当社の ${ termsLink } に同意したものとみなされます。"
@@ -9362,9 +9344,6 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } の購入は1つまでに制限されています。"
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME } で支払う"
       ],
@@ -9374,26 +9353,14 @@
       "Plan switch is incompatible for the following reasons:": [
         "以下の理由により、プランの切り替えを行うことができません:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "プランを変更する前に、余分なウォレットアカウントを閉じてください。"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "プランを変更する前に、余分なウォレットを閉じてください。"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet のシート数はメンバー数と一致している必要があります。"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "更新価格は ${ termsAndConditionsLink }に応じて変更される可能性があります。"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe のシート数はメンバー数を超えることはできません。"
       ],
       "Tax ${ rate }%": [
         "税金 ${ rate }%"
@@ -9404,23 +9371,8 @@
       "terms and conditions": [
         "利用規約"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private プログラムに参加するには寄付が必要です。"
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "この割引は ${ renewalsWithCoupon } の更新で有効です。"
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なメールアドレス数が不足しています。"
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なドメイン数が不足しています。"
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なメンバー数が不足しています。"
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "選択したプランでは、お使いのアカウントに必要なストレージ容量が不足しています。"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
@@ -9446,41 +9398,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "この操作により、既存のサブスクリプションが拡張されます。新しいアドオンと、現在の支払間隔の残りの期間に対してのみ課金されます。お客様のサブスクリプションの更新日は変更されません。"
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "この専用サーバーはゲートウェイに割り当てられているため、変更できません。"
-      ],
       "This offer is not available with your current plan.": [
         "この特典は現在のプランではご利用いただけません。"
       ],
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "このプランでは、お使いのアカウントで利用中の管理機能がサポートされていません。"
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "このプランは、お客様のアカウントに登録されているメンバーをサポートしていません。"
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "現在、このサブスクリプションを完了できません。もう一度お試しください。"
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "トライアルプランでは ${ LUMO_SHORT_APP_NAME } のシートを追加できません。"
-      ],
-      "Trial plans don’t support custom domains.": [
-        "トライアルプランではカスタムドメインをご利用いただけません。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "トライアルプランでは専用 IP をご利用いただけません。"
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "トライアルプランは Scrieシート をサポートしていません。"
-      ],
-      "Trial plans don’t support this many members.": [
-        "トライアルプランでは、この人数のメンバーをサポートしていません。"
       ],
       "VAT number": [
         "VAT番号"
@@ -9494,20 +9422,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "お客様はすでに ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } を所有しています。"
-      ],
-      "You already own a Born Private account.": [
-        "お客様はすでに Born Private アカウントを所有しています。"
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "お使いのアカウントは、Born Private プログラムの対象期間より前に作成されています。"
       ],
       "Your payment is still being processed": [
         "お支払いが現在処理中です"

@@ -419,9 +419,6 @@
       "Get ${ planOrAppName }": [
         "選用 ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "保持聯絡"
-      ],
       "Get started": [
         "開始使用"
       ],
@@ -541,9 +538,6 @@
       ],
       "Learn more": [
         "瞭解詳情"
-      ],
-      "Let's talk": [
-        "我們一起聊聊！"
       ],
       "Load": [
         "載入"
@@ -895,6 +889,9 @@
       ],
       "Switch or add account": [
         "切換或是添加帳號"
+      ],
+      "Switch to ${ planName }": [
+        "切換至 ${ planName }"
       ],
       "Take a tour": [
         "瀏覽"
@@ -1804,6 +1801,9 @@
       ],
       "Amount due": [
         "應付金額"
+      ],
+      "Amount due after trial": [
+        "試用後的欠款"
       ],
       "Amount due now": [
         "當前欠款"
@@ -4291,11 +4291,6 @@
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "您的回答已傳送，惟此事件無法在您的行事曆中更新"
-      ]
-    },
-    "Event popover close button": {
-      "Close popover": [
-        "關閉彈出視窗"
       ]
     },
     "Event reply": {
@@ -9260,12 +9255,6 @@
       "Timeout exceeded": [
         "已經逾時"
       ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "試用方案不支援 ${ LUMO_SHORT_APP_NAME } 座席。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "試用方案不支援獨立 IPs。"
-      ],
       "VAT number": [
         "增值稅編號（VAT）"
       ],
@@ -11754,6 +11743,9 @@
       ],
       "Start import process": [
         "開始匯入流程"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "訂閱至 ${ planTitle }"
       ],
       "Subscription canceled": [
         "訂購授權已取消"
