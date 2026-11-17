@@ -160,9 +160,6 @@
       "Get ${ planOrAppName }": [
         "選用 ${ planOrAppName }"
       ],
-      "Get in touch": [
-        "保持聯絡"
-      ],
       "Get the apps": [
         "取得應用程式"
       ],
@@ -210,9 +207,6 @@
       ],
       "Learn more about Bitcoin via Email": [
         "透過電子郵件了解有關 Bitcoin 的更多資訊"
-      ],
-      "Let's talk": [
-        "我們一起聊聊！"
       ],
       "Manage advanced account protections": [
         "管理進階帳戶保護"
@@ -363,6 +357,9 @@
       ],
       "Switch or add account": [
         "切換或是添加帳號"
+      ],
+      "Switch to ${ planName }": [
+        "切換至 ${ planName }"
       ],
       "Take a tour": [
         "瀏覽"
@@ -1076,6 +1073,9 @@
       ],
       "Amount due": [
         "應付金額"
+      ],
+      "Amount due after trial": [
+        "試用後的欠款"
       ],
       "Amount due now": [
         "當前欠款"
@@ -4675,12 +4675,6 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "試用方案不支援 ${ LUMO_SHORT_APP_NAME } 座席。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "試用方案不支援獨立 IPs。"
       ],
       "VAT number": [
         "增值稅編號（VAT）"
