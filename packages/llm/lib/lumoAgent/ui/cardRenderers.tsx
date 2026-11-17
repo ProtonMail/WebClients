@@ -6,7 +6,7 @@ import { IcPencil } from '@proton/icons/icons/IcPencil';
 import ConfirmCardShell from '@proton/lumo-ui/shared-components/ConfirmCardShell/ConfirmCardShell';
 
 import type { ActionRequest, ReferenceLabels } from '../contracts/types';
-import type { CardRenderer } from './types';
+import type { CardReferences, CardRenderer } from './types';
 
 /**
  * Fallback used for a mutation whose product registered no bespoke renderer: a plain confirm showing
@@ -33,6 +33,7 @@ interface Props {
     renderer: CardRenderer;
     action: ActionRequest;
     labels: ReferenceLabels;
+    references?: CardReferences;
     onApply: (params: Record<string, any>) => void;
     onCancel: () => void;
 }
@@ -42,7 +43,7 @@ interface Props {
  * and wires apply/cancel. Apply/cancel resolve the executor's `ConfirmController` promise (confirm
  * happens inside the transport's `execute()`), not an engine resume.
  */
-const ConfirmCard = ({ renderer, action, labels, onApply, onCancel }: Props) => {
+const ConfirmCard = ({ renderer, action, labels, references, onApply, onCancel }: Props) => {
     const [params, setParams] = useState<Record<string, any>>(() => paramsOf(action));
 
     return (
@@ -55,7 +56,7 @@ const ConfirmCard = ({ renderer, action, labels, onApply, onCancel }: Props) => 
             onApply={() => onApply(params)}
             onCancel={onCancel}
         >
-            {renderer.renderBody?.({ action, labels, params, onChange: setParams })}
+            {renderer.renderBody?.({ action, labels, params, onChange: setParams, references })}
         </ConfirmCardShell>
     );
 };

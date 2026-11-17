@@ -7,6 +7,7 @@ import { IcPencil } from '@proton/icons/icons/IcPencil';
 import ItemCheckList from '@proton/lumo-ui/shared-components/ItemCheckList/ItemCheckList';
 
 import type { ActionRequest } from '../contracts/types';
+import { createReferenceRegistry } from '../engine/referenceRegistry';
 import LumoAgentPanel from './LumoAgentPanel';
 import type { CardBodyProps, LumoAgentItem } from './types';
 import { ConfirmStatus } from './types';
@@ -219,6 +220,29 @@ describe('LumoAgentPanel', () => {
         renderPanel({ items: [userTurn, emptySelection], cardRenderers, isBusy: true });
 
         expect(screen.getByRole('button', { name: 'Confirm' })).toBeDisabled();
+    });
+
+    it("hands the card body the session's references, so it can resolve the proposed one", () => {
+        const references = createReferenceRegistry();
+        const travel = references.referenceFor('folder', 'travel-id', { title: 'Travel' });
+        const cardRenderers = {
+            move_items: {
+                icon: IcPencil,
+                sentence: () => 'Move emails',
+                renderBody: ({ params, references }: CardBodyProps) => (
+                    <span>{`Resolved to ${references?.idFor(params.target)}`}</span>
+                ),
+            },
+        };
+        const proposal: LumoAgentItem = {
+            ...pendingConfirm,
+            action: { type: 'move_items', target: travel },
+            references,
+        };
+
+        renderPanel({ items: [userTurn, proposal], cardRenderers });
+
+        expect(screen.getByText('Resolved to travel-id')).toBeInTheDocument();
     });
 
     it('asks before opening an external link in a reply, with no option to stop asking', () => {

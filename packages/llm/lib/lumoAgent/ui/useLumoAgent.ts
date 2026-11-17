@@ -21,7 +21,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { ToolImage, ToolName } from '../contracts/types';
 import type { ConfirmDecision, ToolChip } from '../engine/engine';
-import { ConfirmOutcome, createClientToolExecutor } from '../engine/engine';
+import { ConfirmOutcome, collectLabels, createClientToolExecutor } from '../engine/engine';
 import { LOAD_GUIDE_TOOL_NAME } from '../engine/loadGuide';
 import { createReferenceRegistry } from '../engine/referenceRegistry';
 import { buildSystemPrompt } from '../prompt/buildSystemPrompt';
@@ -207,10 +207,14 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         [nextId, pushItem]
     );
 
+    // Per session, shared by the executor and the turn context, so a reference the context names resolves in a tool call.
+    const references = useMemo(() => createReferenceRegistry(), [sessionKey]);
+
     /**
      * Matching on `from` keeps the two hops a card makes distinct, so a late outcome cannot revive one
      * the user has already cancelled. `approvedParams` replace the proposed ones, so the tile reports
-     * what ran, not what was offered.
+     * what ran, not what was offered. Their labels are added under the ones the card was shown, so a
+     * reference the card introduced gets a name and one it showed keeps the name it showed.
      */
     const advanceLastConfirm = useCallback(
         (from: ConfirmStatus, to: ConfirmStatus, approvedParams?: Record<string, any>) => {
@@ -226,12 +230,15 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                               ...item,
                               status: to,
                               action: approvedParams ? { ...approvedParams, type: item.action.type } : item.action,
+                              labels: approvedParams
+                                  ? { ...collectLabels(approvedParams, references), ...item.labels }
+                                  : item.labels,
                           }
                         : item
                 );
             });
         },
-        []
+        [references]
     );
 
     /** Take the pending card, leaving none behind, and report how the user answered it. */
@@ -305,9 +312,6 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
     const stop = useCallback(() => abandonChain(LumoChainEnd.STOPPED), [abandonChain]);
 
-    // Per session, shared by the executor and the turn context, so a reference the context names resolves in a tool call.
-    const references = useMemo(() => createReferenceRegistry(), [sessionKey]);
-
     // Built once per session (per `sessionKey`); holds the loaded-guide set so it persists across
     // messages. Confirmations resolve the executor's `ConfirmController` promise.
     const executor = useMemo(() => {
@@ -321,7 +325,14 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 requestConfirmation: (action, labels) =>
                     new Promise<ConfirmDecision>((resolve) => {
                         finalizeReply();
-                        pushItem({ id: nextId(), kind: 'confirm', action, labels, status: ConfirmStatus.PENDING });
+                        pushItem({
+                            id: nextId(),
+                            kind: 'confirm',
+                            action,
+                            labels,
+                            status: ConfirmStatus.PENDING,
+                            references,
+                        });
                         confirmResolveRef.current = { tool: action.type, resolve };
                     }),
                 reportOutcome: (outcome) => advanceLastConfirm(ConfirmStatus.APPLYING, OUTCOME_STATUS[outcome]),

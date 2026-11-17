@@ -98,7 +98,7 @@ describe('createApplyLabelsHandler', () => {
         const references = createReferenceRegistry();
         const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const labelReference = references.referenceFor('label', 'LABEL_ID_1', { title: 'Receipts' });
-        const element = { ID: 'ELEMENT_ID_1' };
+        const element = { ID: 'ELEMENT_ID_1', Subject: 'Booking' };
         const store = { getState: () => offListState([element]) };
         const applyMultipleLocations = jest.fn().mockResolvedValue(undefined);
         const deps = { store, applyMultipleLocations } as unknown as MailToolDeps;

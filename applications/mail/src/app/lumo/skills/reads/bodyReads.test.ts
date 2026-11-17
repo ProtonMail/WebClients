@@ -86,7 +86,7 @@ const threadMessage = (
 /** Newest first, as the conversation endpoint returns them. */
 const conversationOf = (...messages: Message[]) => ({
     CONVERSATION_1: {
-        Conversation: { ID: 'CONVERSATION_1', NumMessages: messages.length },
+        Conversation: { ID: 'CONVERSATION_1', Subject: 'Project kickoff', NumMessages: messages.length },
         Messages: messages,
     },
 });
@@ -358,7 +358,11 @@ describe('read_email', () => {
             viewMode: VIEW_MODE.GROUP,
             conversations: {
                 CONVERSATION_1: {
-                    Conversation: { ID: 'CONVERSATION_1', Labels: [{ ID: MAILBOX_LABEL_IDS.ARCHIVE }] },
+                    Conversation: {
+                        ID: 'CONVERSATION_1',
+                        Subject: 'Project kickoff',
+                        Labels: [{ ID: MAILBOX_LABEL_IDS.ARCHIVE }],
+                    },
                     Messages: [threadMessage('MESSAGE_1', july(1))],
                 },
             },

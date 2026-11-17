@@ -189,6 +189,20 @@ describe('buildMailContext', () => {
         );
     });
 
+    // Mail stores `{ ID }` for a conversation before it loads; naming that would replace the subject a read stored.
+    it('keeps the name an earlier read gave a conversation while it is still loading', () => {
+        conversationReferenceFor(references, 'c1', { title: 'Trip plans' });
+        const state = stateWith({
+            elementID: 'c1',
+            conversationMode: true,
+            conversations: { c1: { Conversation: { ID: 'c1' } } as ConversationState },
+        });
+
+        lines(state);
+
+        expect(references.labelFor(conversationReferenceFor(references, 'c1'))?.title).toBe('Trip plans');
+    });
+
     it('lists every open composer by subject, standing in for a blank one', () => {
         const state = stateWith({
             messages: { d1: message('d1', 'Re: Trip plans'), d2: message('d2', '') },

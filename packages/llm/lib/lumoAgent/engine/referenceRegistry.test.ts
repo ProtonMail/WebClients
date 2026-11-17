@@ -26,4 +26,15 @@ describe('createReferenceRegistry', () => {
 
         expect(references.labelFor(reference)?.title).toBe('Holidays');
     });
+
+    // A confirm card holds the label it was shown, so a rename's tile still reads "old → new".
+    it('leaves a label read before a re-mint unchanged', () => {
+        const references = createReferenceRegistry();
+        const reference = references.referenceFor('folder', 'FOLDER_1', { title: 'Travel' });
+        const shownOnCard = references.labelFor(reference);
+
+        references.referenceFor('folder', 'FOLDER_1', { title: 'Holidays' });
+
+        expect(shownOnCard?.title).toBe('Travel');
+    });
 });

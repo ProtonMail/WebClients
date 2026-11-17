@@ -198,6 +198,7 @@ const LumoAgentPanel = ({
                     renderer={cardRenderers?.[pending.action.type] ?? defaultCardRenderer}
                     action={pending.action}
                     labels={pending.labels}
+                    references={pending.references}
                     onApply={onConfirm}
                     onCancel={onCancel}
                 />

@@ -62,6 +62,8 @@ export const createRenameFolderHandler =
         }
 
         await mail.updateLabel({ labelID: existing.ID, label: { ...existing, Name: name.trim() } });
+        // The registry keeps the name a read recorded, so later cards would otherwise name the old one.
+        references.referenceFor('folder', id, { title: name.trim() });
     };
 
 const newName = (source: ActionRequest | Record<string, any>): string => String(source.name ?? '');

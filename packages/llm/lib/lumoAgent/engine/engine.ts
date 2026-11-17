@@ -161,7 +161,7 @@ const assertReferencesResolve = (
 };
 
 /** Map each reference-shaped param value to its display description, for the confirm card. */
-const collectLabels = (params: Record<string, any>, references: ReferenceRegistry): ReferenceLabels => {
+export const collectLabels = (params: Record<string, any>, references: ReferenceRegistry): ReferenceLabels => {
     const labels: ReferenceLabels = {};
     const collect = (value: any) => {
         if (typeof value === 'string' && REFERENCE_PATTERN.test(value)) {
