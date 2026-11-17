@@ -1,4 +1,4 @@
-const BABEL_INCLUDE_NODE_MODULES = [
+const TRANSPILE_NODE_MODULES = [
     '@protontech/crypto',
     '@protontech/logger',
     'proton-mail',
@@ -23,9 +23,9 @@ const BABEL_INCLUDE_NODE_MODULES = [
     '@scure/base',
     'pdfjs-dist',
 ];
-const BABEL_EXCLUDE_FILES = ['mailparser.js'];
+const TRANSPILE_EXCLUDE_FILES = ['mailparser.js'];
 
 module.exports = {
-    BABEL_EXCLUDE_FILES,
-    BABEL_INCLUDE_NODE_MODULES,
+    TRANSPILE_EXCLUDE_FILES,
+    TRANSPILE_NODE_MODULES,
 };
