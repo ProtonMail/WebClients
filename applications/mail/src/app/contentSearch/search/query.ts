@@ -2,9 +2,9 @@ import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mai
 import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 function createBasicQuery(query: string): Expression {
-    return Expression.attr('body', Func.Matches, TermValue.text(query)).or(
-        Expression.attr('subject', Func.Matches, TermValue.text(query))
-    );
+    return Expression.attr('body', Func.Matches, TermValue.text(query))
+        .or(Expression.attr('subject', Func.Matches, TermValue.text(query)))
+        .or(Expression.attr('attachment', Func.Matches, TermValue.text(query)));
 }
 
 function createExtentedQuery(params: {
