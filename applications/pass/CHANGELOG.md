@@ -1,3 +1,13 @@
+### Version 1.44.0
+
+- Support importing from mSecure
+- Improve moving content into folders
+- Remember the item type filter and expanded vaults and folders across restarts
+- Support organization policies for TOTP and passkey storage
+- Allow excluding a single check of an item from Pass Monitor
+- Fix aliases not loading in the security center when inside a folder
+- Fix connectivity bar flickering
+
 ### Version 1.43.0
 
 - New download modal with a QR code for mobile apps
