@@ -19,8 +19,8 @@ const getInitializingText = (effect: InitializingBackgroundEffect) =>
 
 const getFailureText = (effect: InitializingBackgroundEffect) =>
     effect === 'blur'
-        ? c('Error').t`Background blur initialization failed. Please toggle your camera or background blur again`
-        : c('Error').t`Virtual background initialization failed. Please toggle your camera or pick a background again`;
+        ? c('Error').t`Background blur failed. Turn it off and on again.`
+        : c('Error').t`Background failed. Pick it again.`;
 
 export const BackgroundEffectInitializingOverlay = ({
     viewSize = 'large',

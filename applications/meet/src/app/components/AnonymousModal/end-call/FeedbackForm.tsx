@@ -77,7 +77,7 @@ export const FeedbackForm = ({ onClose }: Props) => {
         if (previousMeetingLink === null) {
             notifications.createNotification({
                 type: 'error',
-                text: c('Notification').t`You can't send a feedback for a meeting you haven't been to`,
+                text: c('Error').t`You can send feedback only for meetings you joined.`,
             });
             return;
         }
@@ -86,7 +86,7 @@ export const FeedbackForm = ({ onClose }: Props) => {
             onClose();
             notifications.createNotification({
                 type: 'error',
-                text: c('Notification').t`Could not send feedback`,
+                text: c('Error').t`Feedback not sent. Try again.`,
             });
             return;
         }
@@ -109,7 +109,7 @@ export const FeedbackForm = ({ onClose }: Props) => {
             .catch(() => {
                 notifications.createNotification({
                     type: 'error',
-                    text: c('Notification').t`Could not send feedback`,
+                    text: c('Error').t`Feedback not sent. Try again.`,
                 });
             });
 

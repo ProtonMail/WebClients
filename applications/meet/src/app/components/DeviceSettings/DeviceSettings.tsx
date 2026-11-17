@@ -170,9 +170,9 @@ export const DeviceSettings = ({
 
     let microphoneLabel;
     if (noMicrophonePermission) {
-        microphoneLabel = c('Info').t`Permissions not given.`;
+        microphoneLabel = c('Error').t`Microphone blocked`;
     } else if (noMicrophoneDetected) {
-        microphoneLabel = c('Info').t`No microphone detected.`;
+        microphoneLabel = c('Error').t`No microphone detected`;
     } else {
         const audioDevice = microphones.find((mic) => mic.deviceId === selectedMicrophoneId);
         const activeOutputDevice = speakers.find((speaker) => speaker.deviceId === selectedAudioOutputDeviceId);
@@ -193,9 +193,9 @@ export const DeviceSettings = ({
 
     let cameraLabel;
     if (noCameraPermission) {
-        cameraLabel = c('Info').t`Permissions not given.`;
+        cameraLabel = c('Error').t`Camera blocked`;
     } else if (noCameraDetected) {
-        cameraLabel = c('Info').t`No camera detected.`;
+        cameraLabel = c('Error').t`No camera detected`;
     } else {
         const selectedCamera = cameras.find((camera) => camera.deviceId === selectedCameraId);
         cameraLabel = selectedCamera?.label ?? c('Info').t`Loading…`;
@@ -242,7 +242,7 @@ export const DeviceSettings = ({
             tooltipTitle={
                 isBackgroundBlurSupported
                     ? backgroundsButtonLabel
-                    : c('Tooltip').t`Background effects are not supported on your browser`
+                    : c('Error').t`Background effects aren’t supported in this browser`
             }
             tooltipClassName={isBackgroundBlurSupported ? 'meet-tooltip--nowrap' : undefined}
             tooltipPlacement="top"

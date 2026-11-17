@@ -18,7 +18,7 @@ export const ChatMessageFailedActions = ({ onRetry, onDiscard }: ChatMessageFail
                 className="retry-button text-sm border"
                 onClick={onRetry}
             >
-                {c('Action').t`Retry`}
+                {c('Action').t`Try again`}
             </Button>
             <Button className="color-hint text-sm" onClick={onDiscard} shape="ghost" size="small" pill>
                 {c('Action').t`Discard`}

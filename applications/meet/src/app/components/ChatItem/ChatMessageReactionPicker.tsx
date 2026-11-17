@@ -142,7 +142,7 @@ export const ChatMessageReactionPicker = ({
             createNotification({
                 key: 'chat-reaction-emoji-unsupported',
                 type: 'error',
-                text: c('Error').t`This emoji can’t be used as a reaction`,
+                text: c('Error').t`This emoji can’t be used as a reaction. Pick another one.`,
             });
             return;
         }

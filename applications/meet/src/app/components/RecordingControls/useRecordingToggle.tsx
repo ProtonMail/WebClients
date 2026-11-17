@@ -77,7 +77,7 @@ export const useRecordingToggle = () => {
         } catch (error) {
             sendMeetActionsEvent(TelemetryMeetActionsEvents.recording_toggled, { state: 'on', outcome: 'failed' });
             createNotification({
-                text: c('Error').t`Failed to start recording`,
+                text: c('Error').t`Recording didn’t start. Try again.`,
                 type: 'error',
             });
         }

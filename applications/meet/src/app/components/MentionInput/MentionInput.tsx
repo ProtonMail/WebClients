@@ -39,9 +39,7 @@ const reportComposerError = (error: Error) => {
 };
 
 const ComposerErrorFallback = () => (
-    <div className="color-danger text-sm py-1">
-        {c('Error').t`The message field is unavailable. Please reload the page.`}
-    </div>
+    <div className="color-danger text-sm py-1">{c('Error').t`Chat unavailable. Refresh the page to use it again.`}</div>
 );
 
 const ComposerErrorBoundary = ({ children, onError }: { children: ReactNode; onError: (error: Error) => void }) => (

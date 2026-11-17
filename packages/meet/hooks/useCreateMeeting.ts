@@ -49,7 +49,7 @@ export const useCreateMeeting = () => {
                 meeting: response.Meeting,
             };
         } catch (error) {
-            throw new Error(c('Error').t`Failed to create meeting`);
+            throw new Error(c('Error').t`Meeting not created. Try again.`);
         }
     };
 

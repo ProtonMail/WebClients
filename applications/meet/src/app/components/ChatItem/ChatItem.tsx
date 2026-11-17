@@ -237,7 +237,7 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
                             <div className="flex flex-column items-start gap-2 mt-2">
                                 <div className="flex items-center gap-1 error-message text-sm">
                                     <IcExclamationCircle size={4} className="shrink-0" />
-                                    <span>{c('Info').t`Not sent, check your connection.`}</span>
+                                    <span>{c('Error').t`Not sent. Check your connection.`}</span>
                                 </div>
                                 <ChatMessageFailedActions
                                     onRetry={() => {

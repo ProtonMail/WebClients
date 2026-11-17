@@ -564,7 +564,7 @@ describe('Settings', () => {
 
             await user.hover(screen.getByRole('button', { name: 'Virtual backgrounds' }));
 
-            expect(await screen.findByText('Background effects are not supported on your browser')).toBeInTheDocument();
+            expect(await screen.findByText('Background effects aren’t supported in this browser')).toBeInTheDocument();
         });
     });
 });

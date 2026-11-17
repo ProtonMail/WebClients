@@ -255,8 +255,8 @@ export const ScheduleMeetingForm = ({
             });
         } catch (error) {
             const defaultErrorMessage = !!meeting
-                ? c('Error').t`Failed to edit meeting`
-                : c('Error').t`Failed to create meeting`;
+                ? c('Error').t`Meeting not updated. Try again.`
+                : c('Error').t`Meeting not created. Try again.`;
 
             notifyError(getApiErrorMessage(error) ?? defaultErrorMessage);
         }

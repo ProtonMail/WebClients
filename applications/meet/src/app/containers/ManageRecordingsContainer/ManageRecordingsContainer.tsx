@@ -80,7 +80,7 @@ export const ManageRecordingsContainer = () => {
                     name: error instanceof Error ? error.name : 'UnknownError',
                 },
             });
-            createNotification({ type: 'error', text: c('Error').t`Failed to download recording` });
+            createNotification({ type: 'error', text: c('Error').t`Download failed. Try again.` });
         }
     };
 
@@ -98,7 +98,7 @@ export const ManageRecordingsContainer = () => {
             setRecordingToDelete(null);
             await refresh();
         } catch {
-            createNotification({ type: 'error', text: c('Error').t`Failed to delete recording` });
+            createNotification({ type: 'error', text: c('Error').t`Recording not deleted. Try again.` });
         } finally {
             setDeleting(false);
         }

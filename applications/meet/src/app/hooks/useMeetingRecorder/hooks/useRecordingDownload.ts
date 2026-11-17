@@ -28,7 +28,7 @@ export const useRecordingDownload = () => {
             if (!isFullRecording) {
                 createNotification({
                     type: 'info',
-                    text: c('Info').t`Only a partial meeting recording was available.`,
+                    text: c('Error').t`Only part of the meeting was recorded.`,
                 });
             }
         },

@@ -35,8 +35,7 @@ export const PermissionsBlockedScreenShareModal = () => {
                 />
             }
             title={c('Title').t`Screen share is blocked`}
-            message={c('Info')
-                .t`Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.`}
+            message={c('Error').t`To share your screen, allow it in your browser settings, then rejoin the call.`}
             primaryText={c('Action').t`Close`}
             onPrimaryAction={handleContinueWithout}
             onClose={handleContinueWithout}

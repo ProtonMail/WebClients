@@ -66,7 +66,9 @@ export const toggleMeetingLockThunk = createAsyncThunk<
     } catch (error) {
         notificationsManager?.createNotification({
             type: 'error',
-            text: shouldLock ? c('Error').t`Failed to lock meeting` : c('Error').t`Failed to unlock meeting`,
+            text: shouldLock
+                ? c('Error').t`Meeting not locked. Try again.`
+                : c('Error').t`Meeting not unlocked. Try again.`,
         });
 
         return rejectWithValue(error);

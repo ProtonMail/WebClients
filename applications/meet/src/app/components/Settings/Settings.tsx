@@ -180,7 +180,7 @@ export const Settings = () => {
                                 title={
                                     isBackgroundBlurSupported
                                         ? undefined
-                                        : c('Tooltip').t`Background effects are not supported on your browser`
+                                        : c('Error').t`Background effects aren’t supported in this browser`
                                 }
                             >
                                 <span className="inline-block w-full">

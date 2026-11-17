@@ -43,9 +43,8 @@ export const InvalidMeetingLinkModal = () => {
                     }
                 />
             }
-            title={c('Title').t`Invalid meeting link`}
-            message={c('Info')
-                .t`The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.`}
+            title={c('Error').t`Meeting link not found`}
+            message={c('Error').t`The link may be incomplete or expired. Check it, or start a new meeting.`}
             primaryText={c('Action').t`Start new meeting`}
             onPrimaryAction={() => {
                 close();

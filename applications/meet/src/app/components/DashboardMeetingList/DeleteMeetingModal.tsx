@@ -30,15 +30,15 @@ export const DeleteMeetingModal = ({ meetingId, onClose, onDelete, isRoom }: Del
             onClose();
             onDelete?.();
 
-            const notificationText = isRoom ? c('Error').t`Room deleted` : c('Error').t`Event deleted`;
+            const notificationText = isRoom ? c('Info').t`Room deleted` : c('Info').t`Event deleted`;
 
             notifications.createNotification({ type: 'info', text: notificationText });
 
             void getMeetings({ cache: CacheType.None });
         } catch {
             const notificationText = isRoom
-                ? c('Error').t`Failed to delete room`
-                : c('Error').t`Failed to delete event`;
+                ? c('Error').t`Room not deleted. Try again.`
+                : c('Error').t`Event not deleted. Try again.`;
             notifications.createNotification({ text: notificationText, type: 'error' });
         }
     };

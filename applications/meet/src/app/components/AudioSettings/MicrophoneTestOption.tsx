@@ -50,7 +50,7 @@ export const MicrophoneTestOption = ({
     const getFailureMessage = () => {
         switch (failure) {
             case MicrophoneTestFailure.Permission:
-                return c('Error').t`Microphone access is blocked. Allow it in your browser settings.`;
+                return c('Error').t`Microphone blocked. Allow it in your browser settings.`;
             case MicrophoneTestFailure.NotFound:
                 return c('Error').t`The selected microphone is no longer available.`;
             case MicrophoneTestFailure.Busy:

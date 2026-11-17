@@ -192,7 +192,7 @@ export const ChatMessage = ({
         createNotification({
             key: 'chat-mention-too-long',
             type: 'error',
-            text: c('Error').t`The mention could not be added because the message is at its character limit`,
+            text: c('Error').t`Character limit reached. Remove some text to add a mention.`,
         });
     });
 
@@ -243,7 +243,7 @@ export const ChatMessage = ({
             createNotification({
                 key: 'chat-emoji-too-long',
                 type: 'error',
-                text: c('Error').t`The emoji could not be added because the message is at its character limit`,
+                text: c('Error').t`Character limit reached. Remove some text to add an emoji.`,
             });
             setEmojiPickerOpen(false);
             return;

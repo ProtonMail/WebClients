@@ -50,7 +50,7 @@ const LinkifiedText = ({ text, onLinkClick }: LinkifiedTextProps) => {
                     return (
                         <span key={`part-${i}`}>
                             {part}
-                            {c('Info').t`-Removed dangerous URL-`}
+                            {c('Error').t`Link removed`}
                         </span>
                     );
                 }

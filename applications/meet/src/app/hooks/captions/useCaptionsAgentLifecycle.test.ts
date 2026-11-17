@@ -347,7 +347,7 @@ describe('useCaptionsAgentLifecycle', () => {
         expect(reportMeetError).not.toHaveBeenCalled();
     });
 
-    it('shows the API error message in a toast when the failure is not a server error', async () => {
+    it('shows the fixed copy, not the API error message, in a toast when the failure is not a server error', async () => {
         meetCoreClient.requestClosedCaptions.mockRejectedValue(
             errorWithCode('Live captions have been disabled by the host', 2026)
         );
@@ -359,7 +359,7 @@ describe('useCaptionsAgentLifecycle', () => {
         expect(createNotification).toHaveBeenCalledWith(
             expect.objectContaining({
                 type: 'error',
-                text: 'Live captions have been disabled by the host',
+                text: 'Live captions failed. Turn them on to try again.',
             })
         );
     });
@@ -374,7 +374,7 @@ describe('useCaptionsAgentLifecycle', () => {
         expect(createNotification).toHaveBeenCalledWith(
             expect.objectContaining({
                 type: 'error',
-                text: 'Failed to request live captions',
+                text: 'Live captions failed. Turn them on to try again.',
             })
         );
     });

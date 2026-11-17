@@ -478,7 +478,7 @@ export const useCustomBackgrounds = ({
         if (selectHasReachedCustomBackgroundLimit(store.getState())) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`You have reached the maximum number of custom backgrounds.`,
+                text: c('Error').t`Background limit reached. Remove one to add another.`,
             });
             return;
         }
@@ -540,7 +540,7 @@ export const useCustomBackgrounds = ({
                 sendUploadTelemetry('failed');
                 createNotification({
                     type: 'error',
-                    text: c('Error').t`This background could not be saved in this browser.`,
+                    text: c('Error').t`Background not saved in this browser.`,
                 });
 
                 return;
@@ -559,13 +559,13 @@ export const useCustomBackgrounds = ({
             } else if (isTransientDriveError(error)) {
                 createNotification({
                     type: 'error',
-                    text: c('Error').t`Could not add this background. Check your connection and try again.`,
+                    text: c('Error').t`Background not added. Check your connection and try again.`,
                 });
             } else {
                 reportMeetError('Failed to add a custom background', error);
                 createNotification({
                     type: 'error',
-                    text: c('Error').t`Could not add this background. Please try again.`,
+                    text: c('Error').t`Background not added. Try again.`,
                 });
             }
         } finally {
@@ -591,13 +591,13 @@ export const useCustomBackgrounds = ({
             if (isTransientDriveError(error)) {
                 createNotification({
                     type: 'error',
-                    text: c('Error').t`Could not remove this background. Check your connection and try again.`,
+                    text: c('Error').t`Background not removed. Check your connection and try again.`,
                 });
             } else {
                 reportMeetError('Failed to delete a custom background', error);
                 createNotification({
                     type: 'error',
-                    text: c('Error').t`Could not remove this background. Please try again.`,
+                    text: c('Error').t`Background not removed. Try again.`,
                 });
             }
 

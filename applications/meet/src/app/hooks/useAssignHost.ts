@@ -37,7 +37,7 @@ export const useAssignHost = (accessToken: string, meetingLinkName: string) => {
         } catch (err) {
             notifications.createNotification({
                 type: 'error',
-                text: c('Error').t`Failed to assign host`,
+                text: c('Error').t`Host not changed. Try again.`,
             });
         }
     });

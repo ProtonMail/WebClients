@@ -50,7 +50,8 @@ export const RecordingDownloadModal = () => {
                         }
                     />
                 }
-                title={c('Title').t`Couldn't prepare the recording`}
+                title={c('Error').t`Couldn’t prepare the recording`}
+                message={c('Error').t`Something went wrong while saving it.`}
                 primaryText={c('Action').t`Close`}
                 onPrimaryAction={close}
                 onClose={close}

@@ -126,10 +126,7 @@ export const useCaptionsAgentLifecycle = () => {
                     });
                     createNotification({
                         type: 'error',
-                        text:
-                            isServerError || !(error instanceof Error) || !error.message
-                                ? c('Error').t`Failed to request live captions`
-                                : error.message,
+                        text: c('Error').t`Live captions failed. Turn them on to try again.`,
                     });
                     void setWantsCaptions(false);
                 }

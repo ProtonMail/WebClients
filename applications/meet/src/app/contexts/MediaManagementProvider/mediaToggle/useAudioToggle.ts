@@ -300,8 +300,8 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
         createNotification({
             key: 'noise-cancellation-disabled-for-performance',
             type: 'warning',
-            text: c('Info')
-                .t`Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.`,
+            text: c('Error')
+                .t`Noise cancellation turned off because your device is running slowly. Turn it back on in audio settings.`,
         });
     });
 
@@ -381,7 +381,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
                 debugLog('noiseFilter:audio-context-resume', { state: ctx.state });
             }
 
-            currentAudioTrack.setAudioContext(ctx);
+            void currentAudioTrack.setAudioContext(ctx);
             await withTimeout(
                 currentAudioTrack.setProcessor(processor),
                 'setProcessor',
@@ -404,7 +404,7 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
             debugLog('noiseFilter:attach-failed', { reason: getErrorReason(error) });
 
             try {
-                currentAudioTrack.setAudioContext(undefined as unknown as AudioContext);
+                void currentAudioTrack.setAudioContext(undefined as unknown as AudioContext);
                 debugLog('noiseFilter:audio-context-detached');
             } catch {
                 debugLog('noiseFilter:audio-context-detach-failed');

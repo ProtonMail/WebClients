@@ -46,7 +46,7 @@ describe('BackgroundEffectInitializingOverlay', () => {
     it('should name the effect that failed to initialize', () => {
         renderOverlay({ initializingBackgroundEffect: null, failedBackgroundEffect: 'virtualBackground' });
 
-        expect(screen.getByRole('alert')).toHaveTextContent('Virtual background initialization failed');
+        expect(screen.getByRole('alert')).toHaveTextContent('Background failed. Pick it again.');
     });
 
     it('should hide the published loading frames behind an opaque backdrop while initializing', () => {
