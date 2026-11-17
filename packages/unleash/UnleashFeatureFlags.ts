@@ -79,7 +79,6 @@ export enum CalendarFeatureFlag {
     CalendarMetrics = 'CalendarMetrics',
     EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
     NGCWebAccess = 'NGCWebAccess',
-    RsvpCommentWeb = 'RsvpCommentWeb',
 }
 
 export enum CalendarKillSwitchFlag {
