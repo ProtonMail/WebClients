@@ -189,9 +189,12 @@ export const DesktopAppOnboardingModal = ({
                     <span className="mr-auto">{backButton}</span>
                     {/* Kept together: in long languages they move to their own row instead of wrapping their labels. */}
                     <span className="flex flex-nowrap gap-2 ml-auto">
-                        <Button shape="ghost" onClick={onNotificationsNotNow} disabled={isRequestingNotifications}>
-                            {c('collider_2025: Action').t`Not now`}
-                        </Button>
+                        {/* Hidden while the OS prompt is up: the spinner widens the primary button, and the row would wrap. */}
+                        {!isRequestingNotifications && (
+                            <Button shape="ghost" onClick={onNotificationsNotNow}>
+                                {c('collider_2025: Action').t`Not now`}
+                            </Button>
+                        )}
                         <Button color="norm" onClick={onTurnOnNotifications} loading={isRequestingNotifications}>
                             {c('collider_2025: Action').t`Turn on notifications`}
                         </Button>

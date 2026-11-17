@@ -2,7 +2,11 @@ import { MemoryRouter, Route } from 'react-router-dom';
 
 import { act, fireEvent, render, screen } from '@testing-library/react';
 
-import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+import {
+    getDesktopConnectorsApi,
+    isDesktopEnvironment,
+    openDesktopSettings,
+} from '@proton/lumo-api-client/core/desktop-tools';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
@@ -25,6 +29,8 @@ jest.mock('@proton/shared/lib/helpers/desktop', () => ({
 }));
 jest.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
     isDesktopEnvironment: jest.fn(),
+    getDesktopConnectorsApi: jest.fn(),
+    openDesktopSettings: jest.fn(),
 }));
 jest.mock('../../hooks/useLumoFlags', () => ({
     useLumoFlags: jest.fn(),
@@ -330,17 +336,49 @@ describe('DesktopAppOnboardingProvider', () => {
         expect(getDesktopAppOnboardingRecord()?.outcome).toBe('get-lumo-plus');
     });
 
-    it('paid users: the last step sends them to Customize › Connectors', () => {
+    const goToConnectorStep = () => {
         setup({ permission: 'granted', isFree: false });
         advancePastDelay();
         click('Get started');
         click('Next');
         click('Next');
         click('Next');
+    };
+
+    it('paid users: the last step opens the desktop settings on Connectors', async () => {
+        (getDesktopConnectorsApi as jest.Mock).mockReturnValue({ openSettings: jest.fn() });
+        (openDesktopSettings as jest.Mock).mockResolvedValue(undefined);
+        goToConnectorStep();
         expect(heading()).toHaveTextContent('Connect your first app');
         expect(screen.queryByRole('button', { name: 'Get Lumo Plus' })).toBeNull();
-        click('Set up a connector');
+        await act(async () => {
+            fireEvent.click(screen.getByRole('button', { name: 'Set up a connector' }));
+        });
+        expect(openDesktopSettings).toHaveBeenCalledWith('connectors');
+        expect(screen.getByTestId('location')).not.toHaveTextContent('/customize');
+        expect(getDesktopAppOnboardingRecord()?.outcome).toBe('set-up-connector');
+    });
+
+    it('paid users: desktop builds without the settings bridge go to Customize › Connectors', async () => {
+        (getDesktopConnectorsApi as jest.Mock).mockReturnValue({});
+        goToConnectorStep();
+        await act(async () => {
+            fireEvent.click(screen.getByRole('button', { name: 'Set up a connector' }));
+        });
+        expect(openDesktopSettings).not.toHaveBeenCalled();
         expect(screen.getByTestId('location')).toHaveTextContent('/customize?tab=connectors');
+    });
+
+    it('paid users: falls back to Customize › Connectors if the desktop settings fail to open', async () => {
+        (getDesktopConnectorsApi as jest.Mock).mockReturnValue({ openSettings: jest.fn() });
+        (openDesktopSettings as jest.Mock).mockRejectedValue(new Error('no window'));
+        const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+        goToConnectorStep();
+        await act(async () => {
+            fireEvent.click(screen.getByRole('button', { name: 'Set up a connector' }));
+        });
+        expect(screen.getByTestId('location')).toHaveTextContent('/customize?tab=connectors');
+        warn.mockRestore();
     });
 
     it('× closes from a middle step and records where', () => {
