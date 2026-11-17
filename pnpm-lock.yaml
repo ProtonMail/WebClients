@@ -6344,9 +6344,6 @@ importers:
       lottie-react:
         specifier: ^2.4.2
         version: 2.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      papaparse:
-        specifier: ^5.7.1
-        version: 5.7.1
       punycode.js:
         specifier: ^2.3.1
         version: 2.3.1
@@ -6429,9 +6426,6 @@ importers:
       '@types/lodash':
         specifier: 'catalog:'
         version: 4.17.27
-      '@types/papaparse':
-        specifier: ^5.5.2
-        version: 5.5.2
       '@types/three':
         specifier: ^0.187.0
         version: 0.187.0
@@ -10155,6 +10149,9 @@ importers:
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
+      '@proton/payments-hooks':
+        specifier: workspace:^
+        version: link:../payments-hooks
       '@proton/payments-ui':
         specifier: workspace:^
         version: link:../payments-ui
@@ -10191,12 +10188,18 @@ importers:
       '@types/react-router-dom':
         specifier: 'catalog:'
         version: 5.3.3
+      date-fns:
+        specifier: 'catalog:'
+        version: 4.4.0
       history:
         specifier: 'catalog:'
         version: 4.10.1
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
+      papaparse:
+        specifier: ^5.7.1
+        version: 5.7.1
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -10237,6 +10240,9 @@ importers:
       '@types/lodash':
         specifier: 'catalog:'
         version: 4.17.27
+      '@types/papaparse':
+        specifier: ^5.5.2
+        version: 5.5.2
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8

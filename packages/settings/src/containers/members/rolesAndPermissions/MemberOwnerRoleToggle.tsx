@@ -1,0 +1,117 @@
+import { c } from 'ttag';
+
+import { setMemberOwnerRole } from '@proton/account/members/editMember';
+import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/account/members/memberUnprivatization';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { getPrivateAdminError } from '@proton/account/organizationKey/actions';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { canManageOwnerRole, hasUserSourcedOwnerRole } from '@proton/account/organizationRoles/helpers';
+import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useLoading from '@proton/hooks/useLoading';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
+import { getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
+
+import MemberRoleChangePrompt from '../MemberRoleChangePrompt';
+import MemberToggleContainer from '../MemberToggleContainer';
+import { adminTooltipText } from '../constants';
+
+interface Props {
+    member: EnhancedMember;
+    onChangeSelectedRoles: (selectedRoles: Set<string>) => void;
+    hasToggledPrivate: boolean;
+}
+
+const MemberOwnerRoleToggle = ({ member, onChangeSelectedRoles, hasToggledPrivate }: Props) => {
+    const dispatch = useDispatch();
+    const silentApi = useSilentApi();
+    const [organization] = useOrganization();
+    const [organizationKey] = useOrganizationKey();
+    const [userPermissions] = useUserPermissions();
+    const { createNotification } = useNotifications();
+    const errorHandler = useErrorHandler();
+    const [loadingRole, withLoadingRole] = useLoading();
+    const [roleChangePrompt, showRoleChangePrompt] = useModalTwo(MemberRoleChangePrompt);
+
+    const passwordlessMode = getIsPasswordless(organizationKey?.Key);
+    const unprivatization = getMemberUnprivatizationMode(member);
+    const hasOwnerRole = hasUserSourcedOwnerRole(member.UserOrganizationRoles ?? []);
+    const isSelf = Boolean(member.Self);
+    const canManageOwner = canManageOwnerRole({
+        currentUserRoles: userPermissions?.Roles,
+        isEditingSelf: isSelf,
+        hasOrgKeyAccess: Boolean(organizationKey?.privateKey),
+    });
+    const canPromoteOwner = canManageOwner && unprivatization.mode !== MemberUnprivatizationMode.MagicLinkInvite;
+    const canRevokeOwner = canManageOwner && hasOwnerRole;
+    const isChecked = hasOwnerRole || unprivatization.makeAdmin;
+
+    if (!canPromoteOwner && !canRevokeOwner) {
+        return null;
+    }
+
+    const handleToggle = async (makeAdmin: boolean) => {
+        const result = await dispatch(
+            setMemberOwnerRole({
+                member,
+                makeAdmin,
+                api: silentApi,
+                confirm: (action) => showRoleChangePrompt({ action, subscriber: member.Subscriber }),
+            })
+        );
+        if (!result.confirmed) {
+            return;
+        }
+        onChangeSelectedRoles(result.desiredRoleIds);
+        if (result.changed) {
+            createNotification({ text: c('Success').t`User updated` });
+        }
+    };
+
+    return (
+        <>
+            {roleChangePrompt}
+            <MemberToggleContainer
+                toggle={
+                    <Toggle
+                        id="admin-toggle"
+                        loading={loadingRole || member.roleState === 'initial' || member.roleState === 'pending'}
+                        disabled={member.roleState === 'rejected'}
+                        checked={isChecked}
+                        onChange={({ target }) => {
+                            withLoadingRole(handleToggle(target.checked)).catch(errorHandler);
+                        }}
+                    />
+                }
+                label={
+                    <label className="text-semibold" htmlFor="admin-toggle">
+                        {c('Label for new member').t`Admin`}
+                    </label>
+                }
+                assistiveText={
+                    <div>
+                        {adminTooltipText(organization?.IsSubsidiary)}{' '}
+                        {passwordlessMode &&
+                            hasToggledPrivate &&
+                            isChecked &&
+                            member.addressState === 'full' &&
+                            !member.Addresses?.[0]?.HasKeys && (
+                                <Tooltip title={getPrivateAdminError()} openDelay={0}>
+                                    <IcInfoCircleFilled className="color-danger ml-2" />
+                                </Tooltip>
+                            )}
+                    </div>
+                }
+            />
+        </>
+    );
+};
+
+export default MemberOwnerRoleToggle;
