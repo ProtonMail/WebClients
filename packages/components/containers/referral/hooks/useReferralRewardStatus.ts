@@ -1,4 +1,3 @@
-import type { Reducer } from 'react';
 import { useEffect, useReducer } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
@@ -16,8 +15,8 @@ export interface UseReferralStatusReducerState {
 
 const useReferralRewardStatus = () => {
     const api = useApi();
-    const [referralState, dispatch] = useReducer<Reducer<UseReferralStatusReducerState, Action>>(
-        (prevState, action) => {
+    const [referralState, dispatch] = useReducer(
+        (prevState: UseReferralStatusReducerState, action: Action): UseReferralStatusReducerState => {
             if (action.type === 'error') {
                 return { ...prevState, loading: false };
             }

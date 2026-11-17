@@ -1,4 +1,3 @@
-import type { Reducer } from 'react';
 import { useCallback, useReducer } from 'react';
 
 import type { SpamItem, SpamLocation, SpamNavItem } from '../Spams.interfaces';
@@ -112,7 +111,7 @@ const useSpamState = (fetchSpams: (args: State) => void) => {
     // In order to avoid double calls we need to memoize this callback
     const reducerMemoized = useCallback(reducer(fetchSpams), []);
 
-    return useReducer<Reducer<State, Action>>(reducerMemoized, {
+    return useReducer(reducerMemoized, {
         display: 'ALL',
         globalTotal: 0,
         list: [],

@@ -1,4 +1,3 @@
-import type { Reducer } from 'react';
 import { useEffect, useReducer } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
@@ -29,23 +28,26 @@ const getDefaultState = () => ({
 const useReferrals = () => {
     const api = useApi();
     const isMounted = useIsMounted();
-    const [referralState, dispatch] = useReducer<Reducer<UseReferralsReducerState, Action>>((prevState, action) => {
-        if (action.type === 'error') {
-            return { ...prevState, loading: false };
-        }
+    const [referralState, dispatch] = useReducer(
+        (prevState: UseReferralsReducerState, action: Action): UseReferralsReducerState => {
+            if (action.type === 'error') {
+                return { ...prevState, loading: false };
+            }
 
-        if (action.type === 'success') {
-            const apiResult = action.payload;
+            if (action.type === 'success') {
+                const apiResult = action.payload;
 
-            return {
-                loading: false,
-                referrals: apiResult.Referrals || [],
-                total: apiResult.Total || 0,
-            };
-        }
+                return {
+                    loading: false,
+                    referrals: apiResult.Referrals || [],
+                    total: apiResult.Total || 0,
+                };
+            }
 
-        return getDefaultState();
-    }, getDefaultState());
+            return getDefaultState();
+        },
+        getDefaultState()
+    );
 
     useEffect(() => {
         const fetchReferrals = async () => {
