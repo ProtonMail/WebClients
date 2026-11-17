@@ -301,7 +301,6 @@ export enum MailFeatureFlag {
     PostSignupSurvey = 'PostSignupSurvey',
     PostSignupSurveyExperiment = 'PostSignupSurveyExperiment',
     RemoveReplyStyles = 'RemoveReplyStyles',
-    ReplayOnboardingModal = 'ReplayOnboardingModal',
     // Category view flags, used to control the whole category view
     CategoryOnboardingDisableCategorize = 'CategoryOnboardingDisableCategorize',
     UseUserEmbedding = 'UseUserEmbedding',
