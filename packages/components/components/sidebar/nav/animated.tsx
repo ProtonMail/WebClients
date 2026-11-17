@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import './animated.scss';
+import { inertProps } from '@proton/atoms/helpers/inertProps';
 
 /**
  * Animated container that expands and collapses its children.
@@ -27,7 +28,7 @@ import './animated.scss';
 function AnimatedChildren({ isOpen, children }: { isOpen: boolean; children: ReactNode }) {
     return (
         <div
-            {...(isOpen ? {} : { inert: '' })}
+            {...inertProps(!isOpen)}
             data-component="animated-children"
             data-state={isOpen ? 'open' : 'closed'}
             aria-hidden={!isOpen}

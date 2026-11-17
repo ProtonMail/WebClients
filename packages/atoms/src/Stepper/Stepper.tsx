@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, ReactElement } from 'react';
+import type { ComponentProps, ComponentPropsWithoutRef, ReactElement } from 'react';
 import { Children, cloneElement, isValidElement, useMemo } from 'react';
 
 import clsx from '@proton/utils/clsx';
@@ -33,16 +33,18 @@ export const Stepper = ({
     children,
     ...rest
 }: StepperProps) => {
-    const childrenArray = Children.toArray(children).filter((child) => isValidElement(child) && child.type === Step);
+    const childrenArray = Children.toArray(children).filter(
+        (child): child is ReactElement<ComponentProps<typeof Step>> => isValidElement(child) && child.type === Step
+    );
 
     const stepIndicators = childrenArray.map((step, index) => {
-        return <StepIndicator index={index} key={(step as ReactElement).key} />;
+        return <StepIndicator index={index} key={step.key} />;
     });
 
     const steps = childrenArray.map((step, index) => {
-        return cloneElement(step as ReactElement, {
+        return cloneElement(step, {
             index,
-            ...(step as ReactElement).props,
+            ...step.props,
         });
     });
 

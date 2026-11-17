@@ -1,10 +1,12 @@
 import type {
     AnimationEvent,
     CSSProperties,
+    HTMLAttributes,
     MouseEventHandler,
     PropsWithChildren,
     ReactElement,
     ReactNode,
+    RefAttributes,
     RefObject,
 } from 'react';
 import { Children, cloneElement, useEffect, useRef, useState } from 'react';
@@ -99,7 +101,7 @@ const Spotlight = ({
 
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
 
-    const child = Children.only(children) as ReactElement;
+    const child = Children.only(children) as ReactElement<HTMLAttributes<HTMLElement> & RefAttributes<HTMLElement>>;
     // Types are wrong? Not sure why ref doesn't exist on a ReactElement
     // @ts-ignore
     const mergedRef = useCombinedRefs(popperAnchorRef, child?.ref);

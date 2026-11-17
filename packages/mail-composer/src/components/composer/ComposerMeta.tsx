@@ -4,6 +4,7 @@ import { forwardRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
+import { inertProps } from '@proton/atoms/helpers/inertProps';
 import Label from '@proton/components/components/label/Label';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
@@ -53,12 +54,7 @@ const ComposerMeta = forwardRef<HTMLDivElement, Props>(
         };
 
         return (
-            <div
-                className="composer-meta shrink-0 ml-2 mr-5 pl-5 pr-1"
-                ref={ref}
-                // @ts-ignore
-                inert={isInert ? '' : undefined}
-            >
+            <div className="composer-meta shrink-0 ml-2 mr-5 pl-5 pr-1" ref={ref} {...inertProps(isInert)}>
                 <ComposerShortDomainSpotlight>
                     <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center w-full relative composer-light-field-container">
                         <Label

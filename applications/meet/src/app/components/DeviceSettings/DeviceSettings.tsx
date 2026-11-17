@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { inertProps } from '@proton/atoms/helpers/inertProps';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcImage } from '@proton/icons/icons/IcImage';
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
@@ -360,10 +361,7 @@ export const DeviceSettings = ({
                         </div>
                     ))}
                 {!isMobile() && (
-                    <div
-                        className="device-selectors flex flex-nowrap gap-2 mt-2"
-                        {...(isBackgroundsOpen ? { inert: '' } : {})}
-                    >
+                    <div className="device-selectors flex flex-nowrap gap-2 mt-2" {...inertProps(isBackgroundsOpen)}>
                         <DeviceSelect
                             label={microphoneLabel}
                             icon={IcMeetMicrophone}

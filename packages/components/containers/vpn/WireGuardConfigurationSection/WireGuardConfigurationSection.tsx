@@ -1,4 +1,4 @@
-import type { ChangeEvent, FormEvent } from 'react';
+import type { FormEvent, SyntheticEvent } from 'react';
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
@@ -270,8 +270,8 @@ const WireGuardConfigurationSection = () => {
         }
     };
 
-    const getToggleCallback = (certificate: Certificate) => (event: ChangeEvent<HTMLDetailsElement>) => {
-        if (!event?.target?.hasAttribute('open')) {
+    const getToggleCallback = (certificate: Certificate) => (event: SyntheticEvent<HTMLDetailsElement>) => {
+        if (!event.currentTarget.hasAttribute('open')) {
             return;
         }
 

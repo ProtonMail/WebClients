@@ -48,10 +48,10 @@ const Prompt = ({
 
     const [firstButton, secondButton, thirdButton] = buttonArray.map((child) => {
         // Only add fullWidth to non-div elements (e.g., Button components)
-        if ((child as ReactElement).type === 'div') {
-            return child as ReactElement;
+        if (child.type === 'div') {
+            return child;
         }
-        return cloneElement(child as ReactElement, { fullWidth: true });
+        return cloneElement(child, { fullWidth: true });
     });
 
     const actionsContent = (() => {

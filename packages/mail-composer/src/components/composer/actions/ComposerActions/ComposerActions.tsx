@@ -7,6 +7,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Vr } from '@proton/atoms/Vr/Vr';
+import { inertProps } from '@proton/atoms/helpers/inertProps';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
 import { getWritingAssistantTitle } from '@proton/components/helpers/assistant';
@@ -199,8 +200,7 @@ const ComposerActions = ({
             data-testid="composer:footer"
             className={clsx(['composer-actions shrink-0 flex max-w-full', className])}
             onClick={addressesBlurRef.current}
-            // @ts-ignore
-            inert={isInert ? '' : undefined}
+            {...inertProps(isInert)}
         >
             <div className="flex flex-row-reverse self-center w-full ml-2 mr-6 pl-5 pr-1 mb-4">
                 <ComposerScheduleSendSpotlight

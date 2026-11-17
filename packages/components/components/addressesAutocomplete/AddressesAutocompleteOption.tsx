@@ -1,6 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { useEffect, useRef } from 'react';
 
+import { inertProps } from '@proton/atoms/helpers/inertProps';
 import usePrevious from '@proton/hooks/usePrevious';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
@@ -54,12 +55,7 @@ const AddressesAutocompleteOption = <V,>({
     };
 
     return (
-        <li
-            className="dropdown-item"
-            // @ts-expect-error - https://github.com/facebook/react/issues/17157
-            inert={selected ? '' : undefined}
-            aria-hidden={selected}
-        >
+        <li className="dropdown-item" {...inertProps(selected)} aria-hidden={selected}>
             <button
                 type="button"
                 ref={ref}
