@@ -372,7 +372,7 @@ describe('Settings', () => {
         });
 
         it('should point free hosts at a paid plan for the waiting room', () => {
-            enabledFlags.current = [...enabledFlags.current, 'MeetWaitingRoom', 'MeetWaitingRoomJoin'];
+            enabledFlags.current = [...enabledFlags.current, 'MeetWaitingRoom'];
 
             render(
                 <Wrapper participantsState={hostParticipantsState}>

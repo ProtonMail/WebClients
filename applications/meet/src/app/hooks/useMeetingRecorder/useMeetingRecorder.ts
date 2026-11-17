@@ -46,15 +46,11 @@ interface FinishRecordingOptions {
 }
 
 export const useMeetingRecorder = () => {
-    const isWebCodecsRecordingEnabled = useFlag('MeetRecordingWebCodecs');
     const isRecordingEncryptionEnabled = useFlag('MeetRecordingEncryption');
 
     const hasRecordingPermissions = useMeetSelector(selectHasRecordingPermissions);
     const isRecordingSupported = useIsRecordingSupported();
-    const recordingCodec = useRecordingCodec({
-        enabled: hasRecordingPermissions && isRecordingSupported,
-        isWebCodecs: isWebCodecsRecordingEnabled,
-    });
+    const recordingCodec = useRecordingCodec({ enabled: hasRecordingPermissions && isRecordingSupported });
 
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
@@ -304,7 +300,7 @@ export const useMeetingRecorder = () => {
 
             const session = new RecordingSession({
                 codec: recordingCodec,
-                isWebCodecs: isWebCodecsRecordingEnabled && isWebCodecsRecordingSupported(),
+                isWebCodecs: isWebCodecsRecordingSupported(),
                 userId,
                 reportMeetError,
                 onRuntimeError: () => {

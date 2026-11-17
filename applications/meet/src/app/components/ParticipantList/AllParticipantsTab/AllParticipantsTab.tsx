@@ -3,7 +3,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
-import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import { selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
@@ -28,15 +27,13 @@ type Props = {
 };
 
 export const AllParticipantsTab = ({ participants, setIsScrolled, searchExpression }: Props) => {
-    const isWaitingRoomJoinEnabled = useIsWaitingRoomJoinEnabled();
-
     const activeSpeakers = useDebouncedActiveSpeakers();
     const { toggleVideo, isVideoEnabled } = useMediaManagementContext();
     const copyTextToClipboard = useCopyTextToClipboard();
 
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const meetingLink = useMeetSelector(selectMeetingLink);
-    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost) && isWaitingRoomJoinEnabled;
+    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost);
 
     const hasAgents = useHasMatchingAgents(searchExpression);
 

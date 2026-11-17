@@ -35,7 +35,6 @@ const ESCALATION_THRESHOLDS_MS = [10 * MINUTE, 2 * MINUTE, 30 * SECOND];
 
 const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     const meetCountdownUpsellEnabled = useFlag('MeetCountdownUpsell');
-    const showRemainingTimeEnabled = useFlag('MeetRemainingTime');
 
     const anchorRef = useRef<HTMLDivElement>(null);
     const { isPaidUser, isSubUser, hasSubscriptionWithoutMeet } = useMeetSelector(selectSubscriptionStatus);
@@ -59,7 +58,7 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
     const triggeredEscalationsRef = useRef<Set<number>>(new Set());
 
     useEffect(() => {
-        if (!showRemainingTimeEnabled || timeLeftMs <= 0) {
+        if (timeLeftMs <= 0) {
             return;
         }
         for (const threshold of ESCALATION_THRESHOLDS_MS) {
@@ -68,7 +67,7 @@ const CTAContainer = ({ children }: { children: React.ReactNode }) => {
                 setShowRemainingTime(true);
             }
         }
-    }, [timeLeftMs, showRemainingTimeEnabled]);
+    }, [timeLeftMs]);
 
     const handleMouseEnter = () => {
         if (isFreeAdminOrHost) {
