@@ -5,6 +5,7 @@ import { useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { Track } from 'livekit-client';
 
+import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { resetMeetingState } from '@proton/meet/store/resetMeetingState';
@@ -403,19 +404,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         }
     });
 
-    useEffect(() => {
-        const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-            if (joinedRoom) {
-                e.preventDefault();
-                return '';
-            }
-        };
-
-        window.addEventListener('beforeunload', handleBeforeUnload);
-        return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload);
-        };
-    }, [joinedRoom]);
+    useBeforeUnload(joinedRoom || isReconnecting);
 
     useEffect(() => {
         const handleUnload = () => {
