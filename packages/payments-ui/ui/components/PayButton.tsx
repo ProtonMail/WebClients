@@ -8,12 +8,9 @@ import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
-import {
-    IdealAuthorizationText,
-    isIdealAuthorizationNoteShown,
-} from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PlainPaymentMethodType } from '@proton/payments/core/interface';
+import { methodMatches } from '@proton/payments/core/type-guards';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
@@ -23,6 +20,10 @@ import isFunction from '@proton/utils/isFunction';
 import noop from '@proton/utils/noop';
 
 import type { PaymentFacade } from '../../client-extensions/usePaymentFacade';
+import {
+    IdealAuthorizationText,
+    isIdealAuthorizationNoteShown,
+} from '../../payment-methods/ideal/IdealAuthorizationText';
 import { useEditBillingAddressModal } from '../billing-address/containers/useEditBillingAddressModal';
 import type { TaxCountryHook } from '../billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '../billing-address/hooks/useVatNumber';
@@ -143,87 +144,97 @@ export const PayButton = ({
         );
     }
 
-    const isChargebeeIdeal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
-
     const submitButton = (() => {
-        const isChargebeePaypal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
-        const isApplePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY;
-        const isGooglePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY;
+        const selectedMethodValue = paymentFacade.selectedMethodValue;
         const submitButtonDisabled =
             !taxCountry.billingAddressValid || (mustCheckVatNumberErrors && !vatNumber?.vatFormValid) || disabled;
 
         const className = clsx(submitButtonDisabled && 'cursor-not-allowed', classNameProp);
 
-        if (isChargebeePaypal) {
-            const chargebeeWrapperClassName = paypalClassName === undefined ? className : paypalClassName;
+        const defaultButton = (
+            <Button
+                type="submit"
+                disabled={submitButtonDisabled}
+                className={className}
+                onClick={() => {
+                    handleOnClick({ type: 'card', source: 'real-button' });
+                }}
+                {...rest}
+            >
+                {children}
+            </Button>
+        );
 
-            return (
-                <ChargebeePaypalButton
-                    chargebeePaypal={paymentFacade.chargebeePaypal}
-                    iframeHandles={paymentFacade.iframeHandles}
-                    disabled={submitButtonDisabled}
-                    className={chargebeeWrapperClassName}
-                    formInvalid={formInvalid}
-                    loading={rest.loading}
-                    width="100%"
-                    onClick={handleOnClick}
-                />
-            );
-        } else if (isChargebeeIdeal) {
-            return (
-                <ChargebeeIdealButton
-                    chargebeeIdeal={paymentFacade.chargebeeIdeal}
-                    iframeHandles={paymentFacade.iframeHandles}
-                    disabled={submitButtonDisabled}
-                    formInvalid={formInvalid}
-                    loading={rest.loading}
-                    width="100%"
-                    onClick={handleOnClick}
-                    {...rest}
-                >
-                    {children}
-                </ChargebeeIdealButton>
-            );
-        } else if (isApplePay) {
-            return (
-                <ApplePayButton
-                    applePay={paymentFacade.applePay}
-                    iframeHandles={paymentFacade.iframeHandles}
-                    disabled={submitButtonDisabled}
-                    formInvalid={formInvalid}
-                    loading={rest.loading}
-                    onClick={handleOnClick}
-                />
-            );
-        } else if (isGooglePay) {
-            return (
-                <GooglePayButton
-                    googlePay={paymentFacade.googlePay}
-                    iframeHandles={paymentFacade.iframeHandles}
-                    disabled={submitButtonDisabled}
-                    formInvalid={formInvalid}
-                    loading={rest.loading}
-                    onClick={handleOnClick}
-                />
-            );
-        } else {
-            return (
-                <Button
-                    type="submit"
-                    disabled={submitButtonDisabled}
-                    className={className}
-                    onClick={() => {
-                        handleOnClick({ type: 'card', source: 'real-button' });
-                    }}
-                    {...rest}
-                >
-                    {children}
-                </Button>
-            );
+        if (!methodMatches(selectedMethodValue, Object.values(PAYMENT_METHOD_TYPES))) {
+            return defaultButton;
+        }
+
+        switch (selectedMethodValue) {
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
+                return (
+                    <ChargebeePaypalButton
+                        chargebeePaypal={paymentFacade.chargebeePaypal}
+                        iframeHandles={paymentFacade.iframeHandles}
+                        disabled={submitButtonDisabled}
+                        className={paypalClassName === undefined ? className : paypalClassName}
+                        formInvalid={formInvalid}
+                        loading={rest.loading}
+                        width="100%"
+                        onClick={handleOnClick}
+                    />
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
+                return (
+                    <ChargebeeIdealButton
+                        chargebeeIdeal={paymentFacade.chargebeeIdeal}
+                        iframeHandles={paymentFacade.iframeHandles}
+                        disabled={submitButtonDisabled}
+                        formInvalid={formInvalid}
+                        loading={rest.loading}
+                        width="100%"
+                        onClick={handleOnClick}
+                        {...rest}
+                    >
+                        {children}
+                    </ChargebeeIdealButton>
+                );
+            case PAYMENT_METHOD_TYPES.APPLE_PAY:
+                return (
+                    <ApplePayButton
+                        applePay={paymentFacade.applePay}
+                        iframeHandles={paymentFacade.iframeHandles}
+                        disabled={submitButtonDisabled}
+                        formInvalid={formInvalid}
+                        loading={rest.loading}
+                        onClick={handleOnClick}
+                    />
+                );
+            case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
+                return (
+                    <GooglePayButton
+                        googlePay={paymentFacade.googlePay}
+                        iframeHandles={paymentFacade.iframeHandles}
+                        disabled={submitButtonDisabled}
+                        formInvalid={formInvalid}
+                        loading={rest.loading}
+                        onClick={handleOnClick}
+                    />
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN:
+            case PAYMENT_METHOD_TYPES.CASH:
+            case PAYMENT_METHOD_TYPES.TOKEN:
+                return defaultButton;
+            default:
+                selectedMethodValue satisfies never;
+                return defaultButton;
         }
     })();
 
-    const idealAccountHolderNameMissing = isChargebeeIdeal && paymentFacade.chargebeeIdeal.accountHolderNameMissing;
+    const idealAccountHolderNameMissing =
+        paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL &&
+        paymentFacade.chargebeeIdeal.accountHolderNameMissing;
 
     const errorMessage =
         taxCountry?.billingAddressErrorMessage ||

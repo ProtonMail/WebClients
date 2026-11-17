@@ -23,10 +23,6 @@ import useDebounceInput from '@proton/hooks/useDebounceInput';
 import useLoading from '@proton/hooks/useLoading';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
 import type { OnChargeable } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
-import {
-    IdealAuthorizationText,
-    isIdealAuthorizationNoteShown,
-} from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import type { ProductCheckResponse } from '@proton/payments/core/api/createPaymentSubscription';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
@@ -37,7 +33,7 @@ import type {
     PlainPaymentMethodType,
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
+import { isFreeSubscription, methodMatches } from '@proton/payments/core/type-guards';
 import type { PaymentsComponent } from '@proton/payments/sentry/capture';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -45,6 +41,10 @@ import { TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { usePaymentFacade } from '../../client-extensions/usePaymentFacade';
 import PaymentWrapper from '../../containers/payments/PaymentWrapper';
+import {
+    IdealAuthorizationText,
+    isIdealAuthorizationNoteShown,
+} from '../../payment-methods/ideal/IdealAuthorizationText';
 import { ChargebeeIdealButton } from '../components/ChargebeeIdealButton';
 import { ChargebeePaypalButton } from '../components/ChargebeePaypalButton';
 import { formatTax } from '../headless-checkout/tax-helpers';
@@ -217,75 +217,8 @@ export const TopUpModal = ({
             );
         }
 
-        const bitcoinAmountInRange =
-            debouncedAmount >= getMinBitcoinAmount(currency) && debouncedAmount <= getMaxBitcoinAmount(currency);
-        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN && !bitcoinAmountInRange) {
-            return null;
-        }
-
         const topUpText = c('Action').t`Top up`;
-        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-            if (loading) {
-                return (
-                    <ButtonLike disabled loading={true}>
-                        {c('Payments').t`Processing payment`}
-                    </ButtonLike>
-                );
-            }
-
-            if (amountDueUnknown || (checkTopUp && lowAmount)) {
-                return (
-                    <ButtonLike disabled loading={checkLoading} data-testid="top-up-button">
-                        {topUpText}
-                    </ButtonLike>
-                );
-            }
-
-            return (
-                <div>
-                    <ChargebeePaypalButton
-                        chargebeePaypal={paymentFacade.chargebeePaypal}
-                        iframeHandles={paymentFacade.iframeHandles}
-                    />
-                </div>
-            );
-        }
-
-        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
-            if (loading) {
-                return (
-                    <ButtonLike disabled loading={true}>
-                        {c('Payments').t`Processing payment`}
-                    </ButtonLike>
-                );
-            }
-
-            return (
-                <div>
-                    <ChargebeeIdealButton
-                        chargebeeIdeal={paymentFacade.chargebeeIdeal}
-                        iframeHandles={paymentFacade.iframeHandles}
-                    />
-                </div>
-            );
-        }
-
-        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
-            return (
-                <Button
-                    color="norm"
-                    loading={paymentFacade.bitcoinChargebee.bitcoinLoading}
-                    disabled={true}
-                    data-testid="top-up-button"
-                >
-                    {paymentFacade.bitcoinChargebee.awaitingBitcoinPayment
-                        ? c('Info').t`Awaiting transaction`
-                        : topUpText}
-                </Button>
-            );
-        }
-
-        return (
+        const defaultButton = (
             <Button
                 color="norm"
                 loading={loading}
@@ -296,6 +229,86 @@ export const TopUpModal = ({
                 {topUpText}
             </Button>
         );
+
+        if (!methodMatches(methodValue, Object.values(PAYMENT_METHOD_TYPES))) {
+            return defaultButton;
+        }
+
+        switch (methodValue) {
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
+                if (loading) {
+                    return (
+                        <ButtonLike disabled loading={true}>
+                            {c('Payments').t`Processing payment`}
+                        </ButtonLike>
+                    );
+                }
+
+                if (amountDueUnknown || (checkTopUp && lowAmount)) {
+                    return (
+                        <ButtonLike disabled loading={checkLoading} data-testid="top-up-button">
+                            {topUpText}
+                        </ButtonLike>
+                    );
+                }
+
+                return (
+                    <div>
+                        <ChargebeePaypalButton
+                            chargebeePaypal={paymentFacade.chargebeePaypal}
+                            iframeHandles={paymentFacade.iframeHandles}
+                        />
+                    </div>
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
+                if (loading) {
+                    return (
+                        <ButtonLike disabled loading={true}>
+                            {c('Payments').t`Processing payment`}
+                        </ButtonLike>
+                    );
+                }
+
+                return (
+                    <div>
+                        <ChargebeeIdealButton
+                            chargebeeIdeal={paymentFacade.chargebeeIdeal}
+                            iframeHandles={paymentFacade.iframeHandles}
+                        />
+                    </div>
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN: {
+                const bitcoinAmountInRange =
+                    debouncedAmount >= getMinBitcoinAmount(currency) &&
+                    debouncedAmount <= getMaxBitcoinAmount(currency);
+                if (!bitcoinAmountInRange) {
+                    return null;
+                }
+
+                return (
+                    <Button
+                        color="norm"
+                        loading={paymentFacade.bitcoinChargebee.bitcoinLoading}
+                        disabled={true}
+                        data-testid="top-up-button"
+                    >
+                        {paymentFacade.bitcoinChargebee.awaitingBitcoinPayment
+                            ? c('Info').t`Awaiting transaction`
+                            : topUpText}
+                    </Button>
+                );
+            }
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
+            case PAYMENT_METHOD_TYPES.APPLE_PAY:
+            case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
+            case PAYMENT_METHOD_TYPES.CASH:
+            case PAYMENT_METHOD_TYPES.TOKEN:
+                return defaultButton;
+            default:
+                methodValue satisfies never;
+                return defaultButton;
+        }
     })();
 
     const process = async (processor?: PaymentProcessorHook) =>

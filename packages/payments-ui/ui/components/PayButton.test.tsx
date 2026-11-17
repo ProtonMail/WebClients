@@ -4,7 +4,6 @@ import { fireEvent, screen } from '@testing-library/react';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
-import { getIdealAuthorizationText } from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { BILLING_ADDRESS_VALID } from '@proton/payments/core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
@@ -12,9 +11,14 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
 
+import { getIdealAuthorizationText } from '../../payment-methods/ideal/IdealAuthorizationText';
 import { useEditBillingAddressModal } from '../billing-address/containers/useEditBillingAddressModal';
 import type { TaxCountryHook } from '../billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '../billing-address/hooks/useVatNumber';
+import { ApplePayButton } from './ApplePayButton';
+import { ChargebeeIdealButton } from './ChargebeeIdealButton';
+import { ChargebeePaypalButton } from './ChargebeePaypalButton';
+import { GooglePayButton } from './GooglePayButton';
 import { PayButton } from './PayButton';
 
 jest.mock('@proton/app-context/useConfig');
@@ -25,16 +29,16 @@ jest.mock('@proton/payments/telemetry/telemetry', () => ({
     },
 }));
 jest.mock('./ChargebeePaypalButton', () => ({
-    ChargebeePaypalButton: () => <div data-testid="chargebee-paypal-button" />,
+    ChargebeePaypalButton: jest.fn(() => <div data-testid="chargebee-paypal-button" />),
 }));
 jest.mock('./ApplePayButton', () => ({
-    ApplePayButton: () => <div data-testid="apple-pay-button" />,
+    ApplePayButton: jest.fn(() => <div data-testid="apple-pay-button" />),
 }));
 jest.mock('./GooglePayButton', () => ({
-    GooglePayButton: () => <div data-testid="google-pay-button" />,
+    GooglePayButton: jest.fn(() => <div data-testid="google-pay-button" />),
 }));
 jest.mock('./ChargebeeIdealButton', () => ({
-    ChargebeeIdealButton: () => <div data-testid="chargebee-ideal-button" />,
+    ChargebeeIdealButton: jest.fn(() => <div data-testid="chargebee-ideal-button" />),
 }));
 
 const mockUseConfig = jest.mocked(useConfig);
@@ -43,7 +47,7 @@ const mockReportPayment = jest.mocked(checkoutTelemetry.reportPayment);
 
 function createTaxCountry(overrides: Partial<TaxCountryHook> = {}): TaxCountryHook {
     return {
-        selectedCountryCode: 'CH',
+        selectedCountryCode: 'DE',
         setSelectedCountry: jest.fn(),
         federalStateCode: null,
         setFederalStateCode: jest.fn(),
@@ -117,6 +121,7 @@ describe('PayButton', () => {
     let openBillingAddressModal: jest.Mock;
 
     beforeEach(() => {
+        jest.clearAllMocks();
         mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONMAIL } as ReturnType<typeof useConfig>);
         openBillingAddressModal = jest.fn().mockResolvedValue(undefined);
         mockUseEditBillingAddressModal.mockReturnValue({
@@ -124,7 +129,6 @@ describe('PayButton', () => {
             openBillingAddressModal,
             loadingByKey: {},
         } as unknown as ReturnType<typeof useEditBillingAddressModal>);
-        mockReportPayment.mockClear();
     });
 
     describe('invalid billing address status', () => {
@@ -305,6 +309,73 @@ describe('PayButton', () => {
             renderPayButton();
 
             expect(screen.queryByText(getIdealAuthorizationText())).not.toBeInTheDocument();
+        });
+    });
+
+    describe('button per payment method', () => {
+        it.each([
+            [
+                PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+                ChargebeePaypalButton,
+                'chargebee-paypal-button',
+                '100%',
+                undefined,
+            ],
+            [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, ChargebeeIdealButton, 'chargebee-ideal-button', '100%', 'pay-cta'],
+            [PAYMENT_METHOD_TYPES.APPLE_PAY, ApplePayButton, 'apple-pay-button', undefined, undefined],
+            [PAYMENT_METHOD_TYPES.GOOGLE_PAY, GooglePayButton, 'google-pay-button', undefined, undefined],
+        ])('renders the dedicated button for %s', (method, component, testId, width, forwardedTestId) => {
+            const onClick = jest.fn();
+            const paymentFacade = createPaymentFacade({ selectedMethodValue: method, chargebeeIdeal: {} });
+
+            renderPayButton({
+                paymentFacade,
+                taxCountry: createTaxCountry({ billingAddressValid: false }),
+                disabled: false,
+                onClick,
+            });
+
+            expect(screen.getByTestId(testId)).toBeInTheDocument();
+            expect(screen.queryByTestId('pay-cta')).not.toBeInTheDocument();
+            const props = (component as jest.Mock).mock.lastCall[0];
+            expect(props.disabled).toBe(true);
+            expect(props.width).toBe(width);
+            expect(props['data-testid']).toBe(forwardedTestId);
+
+            props.onClick({ type: 'paypal', source: 'real-button' });
+
+            expect(mockReportPayment).toHaveBeenCalledWith(
+                expect.objectContaining({ paymentMethodValue: method, amount: 1000 })
+            );
+            expect(onClick).toHaveBeenCalledWith({ type: 'paypal', source: 'real-button' });
+        });
+
+        it.each([
+            PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+            PAYMENT_METHOD_TYPES.CASH,
+            PAYMENT_METHOD_TYPES.TOKEN,
+            'saved-payment-method-id',
+            undefined,
+        ])('renders the submit button for %s', (method) => {
+            const onClick = jest.fn();
+            const paymentFacade = createPaymentFacade({ selectedMethodValue: method });
+
+            renderPayButton({ paymentFacade, onClick });
+
+            const button = screen.getByTestId('pay-cta');
+            expect(button).toHaveAttribute('type', 'submit');
+            expect(button).toHaveTextContent('Pay now');
+            expect(screen.queryByTestId('chargebee-paypal-button')).not.toBeInTheDocument();
+            expect(screen.queryByTestId('chargebee-ideal-button')).not.toBeInTheDocument();
+            expect(screen.queryByTestId('apple-pay-button')).not.toBeInTheDocument();
+            expect(screen.queryByTestId('google-pay-button')).not.toBeInTheDocument();
+
+            fireEvent.click(button);
+
+            expect(mockReportPayment).toHaveBeenCalledWith(expect.objectContaining({ paymentMethodValue: method }));
+            expect(onClick).toHaveBeenCalledWith({ type: 'card', source: 'real-button' });
         });
     });
 });

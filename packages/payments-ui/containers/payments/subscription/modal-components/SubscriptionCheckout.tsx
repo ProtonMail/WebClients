@@ -17,10 +17,6 @@ import { getDisableCurrencySelector } from '@proton/components/containers/paymen
 import { getWhatsIncluded } from '@proton/components/containers/payments/subscription/modal-components/helpers/included';
 import { show30DaysMoneyBackGuarantee } from '@proton/components/containers/payments/subscription/modal-components/helpers/show30DaysMoneyBackGuarantee';
 import { GuardBanner } from '@proton/payments-hooks/ui/components/GuardBanner';
-import {
-    IdealAuthorizationText,
-    isIdealAuthorizationNoteShown,
-} from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import type { CouponConfigRendered } from '@proton/payments-hooks/ui/coupon-config/interface';
 import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import { PLANS } from '@proton/payments/core/constants';
@@ -43,6 +39,10 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { PaymentFacade } from '../../../../client-extensions/usePaymentFacade';
+import {
+    IdealAuthorizationText,
+    isIdealAuthorizationNoteShown,
+} from '../../../../payment-methods/ideal/IdealAuthorizationText';
 import type { TaxCountryHook } from '../../../../ui/billing-address/hooks/useTaxCountry';
 import { createCheckoutView } from '../../../../ui/headless-checkout/checkout-view';
 import { PlanDescription } from './helpers/PlanDescription';
