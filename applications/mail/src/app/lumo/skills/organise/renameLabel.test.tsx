@@ -70,6 +70,25 @@ describe('createRenameLabelHandler', () => {
         );
     });
 
+    // Later cards read the label's name from the registry, so it must carry the new one.
+    it('records the trimmed new name for later cards', async () => {
+        const { references, labelReference, deps } = setUp([label()]);
+
+        await createRenameLabelHandler(deps)({ label: labelReference, name: '  Projects  ' }, { references });
+
+        expect(references.labelFor(labelReference)?.title).toBe('Projects');
+    });
+
+    it('keeps the recorded name when the rename fails', async () => {
+        const { references, labelReference, updateLabel, deps } = setUp([label()]);
+        updateLabel.mockRejectedValue(new Error('network'));
+
+        await expect(
+            createRenameLabelHandler(deps)({ label: labelReference, name: 'Projects' }, { references })
+        ).rejects.toThrow('network');
+        expect(references.labelFor(labelReference)?.title).toBe('Work');
+    });
+
     it('reports a label that no longer exists, rather than renaming nothing', async () => {
         const { references, labelReference, updateLabel, deps } = setUp([]);
 

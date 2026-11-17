@@ -95,6 +95,23 @@ describe('resolveFreshElements', () => {
         expect(mail.fetchConversation).not.toHaveBeenCalled();
     });
 
+    it('fetches a conversation the store holds only as the placeholder Mail keeps before it loads', async () => {
+        const { references, reference } = mintConversation();
+        const mail = mailWith({ conversations: { CONVERSATION_1: { Conversation: { ID: 'CONVERSATION_1' } } } });
+
+        await expect(resolveFreshElements(mail, [reference], references)).resolves.toEqual([conversation]);
+        expect(mail.fetchConversation).toHaveBeenCalledWith('CONVERSATION_1');
+    });
+
+    it('resolves a held conversation with an empty subject without fetching, as a loaded one', async () => {
+        const { references, reference } = mintConversation();
+        const untitled = { ...conversation, Subject: '' };
+        const mail = mailWith({ conversations: { CONVERSATION_1: { Conversation: untitled } } });
+
+        await expect(resolveFreshElements(mail, [reference], references)).resolves.toEqual([untitled]);
+        expect(mail.fetchConversation).not.toHaveBeenCalled();
+    });
+
     it('resolves a message reference that left the list from the messages it is still held in', async () => {
         const { references, reference } = mintMessage();
         const mail = mailWith({ messages: { MESSAGE_1: { localID: 'MESSAGE_1', data: message } } });

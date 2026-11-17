@@ -72,7 +72,7 @@ describe('createSetStarredHandler', () => {
     const setUp = () => {
         const references = createReferenceRegistry();
         const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
-        const element = { ID: 'ELEMENT_ID_1' };
+        const element = { ID: 'ELEMENT_ID_1', Subject: 'Booking' };
         const store = { getState: () => offListState([element]) };
         const applyLocation = jest.fn().mockResolvedValue([]);
         const deps = { store, applyLocation } as unknown as MailToolDeps;

@@ -37,8 +37,12 @@ export type LumoAgentItem =
           action: ActionRequest;
           labels: ReferenceLabels;
           status: ConfirmStatus;
+          references?: CardReferences;
       }
     | { id: number; kind: 'error'; message: string };
+
+/** The part of the session's reference registry a confirm-card body may use. */
+export type CardReferences = Pick<ReferenceRegistry, 'idFor' | 'referenceFor'>;
 
 /** Props a bespoke confirm-card body receives; it edits `params` and reports changes via `onChange`. */
 export interface CardBodyProps {
@@ -46,6 +50,11 @@ export interface CardBodyProps {
     labels: ReferenceLabels;
     params: Record<string, any>;
     onChange: (params: Record<string, any>) => void;
+    /**
+     * Lets a body offer choices the model did not propose, by resolving a proposed reference to its
+     * real ID and minting one for the user's pick.
+     */
+    references?: CardReferences;
 }
 
 /**

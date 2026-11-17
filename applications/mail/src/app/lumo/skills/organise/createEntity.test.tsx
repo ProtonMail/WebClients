@@ -1,12 +1,17 @@
+import { fireEvent, screen } from '@testing-library/react';
+
+import { getModelState } from '@proton/account/testing/getModelState';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest, ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import { buildFolder } from '@proton/mail/testing/buildFolder';
 import { buildLabel } from '@proton/mail/testing/buildLabel';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 
+import { mailTestRender } from '../../../helpers/tests/render';
 import type { MailToolDeps } from '../../toolModule';
 import type { CreatedEntityResult } from './createEntity';
 import {
@@ -84,6 +89,25 @@ describe('createFolderModule', () => {
         expect(createLabel).not.toHaveBeenCalled();
     });
 
+    // The card can swap in a parent the model never named, so without its name the model's reply shows a handle.
+    it('names the parent in the result the model sees', async () => {
+        const { references, deps } = setUp(
+            buildLabel({ ID: 'FOLDER_ID_5', Name: 'Hotels', Type: LABEL_TYPE.MESSAGE_FOLDER }),
+            NESTED_FOLDERS
+        );
+        const europe = references.referenceFor('folder', 'EUROPE');
+
+        const result = await createFolderModule.createHandler(deps)(
+            { name: 'Hotels', parentId: europe },
+            { references }
+        );
+
+        expect(result.parent).toEqual({ reference: europe, name: 'Europe' });
+        expect(createFolderDefinition.serializeForLumo(result, references)).toBe(
+            `Created folder ${result.reference} | "Hotels" inside folder ${europe} | "Europe".`
+        );
+    });
+
     it('still nests under a parent one level short of the limit', async () => {
         const { references, createLabel, deps } = setUp(
             buildLabel({ ID: 'FOLDER_ID_4', Name: 'Hotels', Type: LABEL_TYPE.MESSAGE_FOLDER }),
@@ -109,6 +133,119 @@ describe('createFolderCardRenderer', () => {
             'Hotels in Travel'
         );
         expect(createFolderCardRenderer.detail?.(action, {})).toBe('Hotels');
+    });
+});
+
+describe('the create-folder card body', () => {
+    const FOLDERS = [...NESTED_FOLDERS, buildFolder({ ID: 'WORK', Name: 'Work', Path: 'Work' })];
+
+    // `parentId` is minted in the registry the card is handed, as the model's references are.
+    const renderBody = async (parentFolderID?: string, renderer: CardRenderer = createFolderCardRenderer) => {
+        const references = createReferenceRegistry();
+        const parentId = parentFolderID ? references.referenceFor('folder', parentFolderID) : null;
+        const onChange = jest.fn();
+        const params = { name: 'Hotels', parentId };
+        const action: ActionRequest = { type: 'create_folder', ...params };
+
+        await mailTestRender(<>{renderer.renderBody?.({ action, labels: {}, params, onChange, references })}</>, {
+            preloadedState: { categories: getModelState(FOLDERS) },
+        });
+
+        return { references, onChange, parentId };
+    };
+
+    const location = () => {
+        return screen.getByRole('button', { name: 'Folder location' });
+    };
+
+    const pick = async (option: string) => {
+        fireEvent.click(location());
+        fireEvent.click(await screen.findByRole('button', { name: option }));
+    };
+
+    it("preselects the model's proposed parent", async () => {
+        await renderBody('TRAVEL');
+
+        expect(location()).toHaveTextContent('Travel');
+    });
+
+    it('shows "No parent folder" when the model proposed none', async () => {
+        await renderBody();
+
+        expect(location()).toHaveTextContent('No parent folder');
+    });
+
+    // The handler resolves `parentId` through the registry, and the settled tile names the parent from
+    // the reference's label, so a pick must be a named reference to the real folder.
+    it('turns a picked folder into a named reference to it', async () => {
+        const { references, onChange } = await renderBody('TRAVEL');
+
+        await pick('Work');
+
+        const { parentId } = onChange.mock.lastCall[0];
+        expect(onChange).toHaveBeenLastCalledWith({ name: 'Hotels', parentId });
+        expect(references.idFor(parentId)).toBe('WORK');
+        expect(references.labelFor(parentId)?.title).toBe('Work');
+    });
+
+    it('clears the parent when "No parent folder" is picked', async () => {
+        const { onChange } = await renderBody('TRAVEL');
+
+        await pick('No parent folder');
+
+        expect(onChange).toHaveBeenLastCalledWith({ name: 'Hotels', parentId: null });
+    });
+
+    // The handler refuses a parent at the nesting limit, so the picker must not offer one.
+    it('offers no parent already at the nesting limit', async () => {
+        await renderBody();
+
+        fireEvent.click(location());
+
+        expect(await screen.findByRole('button', { name: /Europe/ })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: /France/ })).not.toBeInTheDocument();
+    });
+
+    // A parent the picker cannot show would read as blank on the card yet still be sent on Confirm.
+    it.each([
+        ['already at the nesting limit', 'FRANCE'],
+        ['no longer in the folder list', 'DELETED'],
+    ])('drops a proposed parent %s, so Confirm applies the "No parent folder" the card shows', async (_, folderID) => {
+        const { onChange } = await renderBody(folderID);
+
+        expect(location()).toHaveTextContent('No parent folder');
+        expect(onChange).toHaveBeenLastCalledWith({ name: 'Hotels', parentId: null });
+    });
+
+    it('keeps the proposed parent when the name is edited', async () => {
+        const { onChange, parentId } = await renderBody('TRAVEL');
+
+        fireEvent.change(screen.getByRole('textbox', { name: 'Folder name' }), { target: { value: 'Inns' } });
+
+        expect(onChange).toHaveBeenLastCalledWith({ name: 'Inns', parentId });
+    });
+
+    // A host that hands the card no registry cannot resolve or mint a parent, so it gets the name field alone.
+    it('shows only the name field when the card is handed no references', async () => {
+        const params = { name: 'Hotels', parentId: null };
+        const body = createFolderCardRenderer.renderBody?.({
+            action: { type: 'create_folder', ...params },
+            labels: {},
+            params,
+            onChange: jest.fn(),
+        });
+
+        await mailTestRender(<>{body}</>, { preloadedState: { categories: getModelState(FOLDERS) } });
+
+        expect(screen.getByRole('textbox', { name: 'Folder name' })).toBeInTheDocument();
+        expect(screen.queryByText('Folder location')).not.toBeInTheDocument();
+    });
+
+    it('offers no folder location on the create-label card', async () => {
+        await renderBody(undefined, createLabelModule.cardRenderer!);
+
+        expect(screen.getByRole('textbox', { name: 'Label name' })).toBeInTheDocument();
+        expect(screen.queryByText('Folder location')).not.toBeInTheDocument();
     });
 });
 

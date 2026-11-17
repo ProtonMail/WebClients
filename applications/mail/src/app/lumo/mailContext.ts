@@ -14,7 +14,7 @@ import { getStandardFolders } from '../helpers/labels';
 import { selectParams } from '../store/elements/elementsSelectors';
 import type { MailState } from '../store/store';
 import { formatLocalDateTime } from './helpers/formatting';
-import { conversationReferenceFor, messageReferenceFor } from './helpers/references';
+import { conversationReferenceFor, loadedConversation, messageReferenceFor } from './helpers/references';
 
 const NO_SUBJECT = '(no subject)';
 
@@ -48,7 +48,7 @@ const describeReadingPane = (state: MailState, references: ReferenceRegistry): s
     const element = state.elements.elements[elementID];
     if (conversationMode) {
         const conversation =
-            state.conversations[elementID]?.Conversation ?? (isElementConversation(element) ? element : undefined);
+            loadedConversation(state, elementID) ?? (isElementConversation(element) ? element : undefined);
         const count = conversation?.NumMessages ?? 1;
         // No label until it has loaded: a placeholder title would overwrite the one an earlier read stored.
         const reference = conversationReferenceFor(

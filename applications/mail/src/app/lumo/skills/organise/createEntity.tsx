@@ -1,5 +1,8 @@
+import { useEffect, useId } from 'react';
+
 import { c } from 'ttag';
 
+import ParentFolderSelector from '@proton/components/containers/labels/ParentFolderSelector';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import { IcTagPlus } from '@proton/icons/icons/IcTagPlus';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
@@ -10,9 +13,10 @@ import type {
     ToolHandler,
 } from '@proton/llm/lib/lumoAgent/contracts/types';
 import TextFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/TextFieldBody';
-import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import type { CardBodyProps, CardReferences, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
+import { useFolders } from '@proton/mail/store/labels/hooks';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
-import { LABEL_TYPE, MAX_FOLDER_NESTING_LEVEL } from '@proton/shared/lib/constants';
+import { LABEL_TYPE, MAX_FOLDER_NESTING_LEVEL, ROOT_FOLDER } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { resolveTypedId } from '../../helpers/references';
@@ -32,6 +36,11 @@ export interface CreateEntityParams {
 export interface CreatedEntityResult {
     reference: string;
     name: string;
+    /**
+     * The card can swap the model's parent for one the model never named, so the result names it; otherwise
+     * the model sees only a bare reference and its reply leaks the handle or names the wrong folder.
+     */
+    parent?: { reference: string; name: string };
 }
 
 type EntityKind = 'folder' | 'label';
@@ -48,21 +57,32 @@ const ENTITY_DEFAULTS: Record<EntityKind, { Type: LABEL_TYPE; Notify: number }> 
  */
 const FREE_TEXT_PARAMS = ['name'] as const;
 
+const ancestorCount = (folderID: string, folders: Folder[]): number => {
+    const parentIdOf = new Map(folders.map((folder) => [folder.ID, folder.ParentID]));
+    let ancestors = 0;
+    let ancestorId = parentIdOf.get(folderID);
+    // Bounded by the folder count rather than trusting the chain to terminate.
+    while (ancestorId && ancestors < folders.length) {
+        ancestors += 1;
+        ancestorId = parentIdOf.get(String(ancestorId));
+    }
+    return ancestors;
+};
+
+/** Whether ParentFolderSelector offers the folder: it exists and sits above the nesting limit. */
+const isOfferedParent = (folderID: string, folders: Folder[]): boolean => {
+    return (
+        folders.some((folder) => folder.ID === folderID) && ancestorCount(folderID, folders) < MAX_FOLDER_NESTING_LEVEL
+    );
+};
+
 /**
  * The app's own parent picker never offers a folder this deep — ParentFolderSelector drops options at
  * `level >= MAX_FOLDER_NESTING_LEVEL` — so the API rejects the nesting the model proposed. Without this the
  * user confirms a folder that is then never created, and the model is told only "the tool failed".
  */
 const assertParentCanNest = (parentFolderID: string, folders: Folder[]) => {
-    const parentIdOf = new Map(folders.map((folder) => [folder.ID, folder.ParentID]));
-    let ancestors = 0;
-    let ancestorId = parentIdOf.get(parentFolderID);
-    // Bounded by the folder count rather than trusting the chain to terminate.
-    while (ancestorId && ancestors < folders.length) {
-        ancestors += 1;
-        ancestorId = parentIdOf.get(String(ancestorId));
-    }
-    if (ancestors < MAX_FOLDER_NESTING_LEVEL) {
+    if (ancestorCount(parentFolderID, folders) < MAX_FOLDER_NESTING_LEVEL) {
         return;
     }
     const parentName = folders.find((folder) => folder.ID === parentFolderID)?.Name ?? parentFolderID;
@@ -77,9 +97,11 @@ const createEntityHandler =
     (mail: MailToolDeps): ToolHandler<CreateEntityParams, CreatedEntityResult> =>
     async ({ name, parentId }, { references }) => {
         const parentFolderID = parentId ? resolveTypedId(parentId, ['folder'], references) : undefined;
+        const folders = mail.getFolders();
         if (parentFolderID) {
-            assertParentCanNest(parentFolderID, mail.getFolders());
+            assertParentCanNest(parentFolderID, folders);
         }
+        const parentName = folders.find((folder) => folder.ID === parentFolderID)?.Name;
         const created = await mail.createLabel({
             label: {
                 Name: name,
@@ -89,13 +111,19 @@ const createEntityHandler =
             },
         });
 
-        return { reference: references.referenceFor(kind, created.ID, { title: created.Name }), name: created.Name };
+        return {
+            reference: references.referenceFor(kind, created.ID, { title: created.Name }),
+            name: created.Name,
+            ...(parentId && parentName ? { parent: { reference: parentId, name: parentName } } : {}),
+        };
     };
 
 const serializeCreated =
     (kind: EntityKind) =>
-    ({ reference, name }: CreatedEntityResult): string =>
-        `Created ${kind} ${reference} | "${name}".`;
+    ({ reference, name, parent }: CreatedEntityResult): string =>
+        parent
+            ? `Created ${kind} ${reference} | "${name}" inside folder ${parent.reference} | "${parent.name}".`
+            : `Created ${kind} ${reference} | "${name}".`;
 
 export const createFolderDefinition: ToolDefinition<CreateEntityParams, CreatedEntityResult> = {
     name: 'create_folder',
@@ -169,21 +197,69 @@ const describeEntity = (action: ActionRequest, labels: ReferenceLabels): string 
     return c('Info').t`${name} in ${parentName}`;
 };
 
-/** `sentence` and `fieldLabel` are thunks because their `ttag` strings must resolve at render time, not here. */
+const renderNameField = (label: string, { params, onChange }: CardBodyProps) => {
+    return (
+        <TextFieldBody label={label} value={entityName(params)} onChange={(name) => onChange({ ...params, name })} />
+    );
+};
+
+interface FolderLocationFieldProps extends Pick<CardBodyProps, 'params' | 'onChange'> {
+    references: CardReferences;
+}
+
+/**
+ * The same picker Settings shows, preselected on the model's proposed parent. A pick is minted as a
+ * reference with its name, so the handler stays the only path to the API and the settled tile names it.
+ */
+const FolderLocationField = ({ params, onChange, references }: FolderLocationFieldProps) => {
+    const [folders = [], loadingFolders] = useFolders();
+    const id = useId();
+    const proposedID = params.parentId ? references.idFor(params.parentId) : undefined;
+    const offered = proposedID !== undefined && isOfferedParent(proposedID, folders);
+
+    // A parent the picker cannot show (too deep, deleted, not a folder) would display as blank yet still be
+    // sent, so the card drops it and Confirm applies the "No parent folder" it shows.
+    useEffect(() => {
+        if (!loadingFolders && params.parentId && !offered) {
+            onChange({ ...params, parentId: null });
+        }
+    }, [loadingFolders, offered, params, onChange]);
+
+    const value = offered ? proposedID : ROOT_FOLDER;
+
+    const handleChange = (parentID: string | number) => {
+        if (parentID === ROOT_FOLDER) {
+            onChange({ ...params, parentId: null });
+            return;
+        }
+        const folder = folders.find(({ ID }) => ID === parentID);
+        onChange({
+            ...params,
+            parentId: references.referenceFor('folder', String(parentID), folder && { title: folder.Name }),
+        });
+    };
+
+    return (
+        <ParentFolderSelector
+            id={id}
+            label={c('Label').t`Folder location`}
+            value={value}
+            onChange={handleChange}
+            disableOptions={[]}
+            maxLevel={MAX_FOLDER_NESTING_LEVEL}
+        />
+    );
+};
+
+/** `sentence` is a thunk because its `ttag` string must resolve at render time, not here. */
 const entityCardRenderer = (
     icon: CardRenderer['icon'],
     sentence: () => string,
-    fieldLabel: () => string
+    renderBody: CardRenderer['renderBody']
 ): CardRenderer => ({
     icon,
     sentence,
-    renderBody: ({ params, onChange }: CardBodyProps) => (
-        <TextFieldBody
-            label={fieldLabel()}
-            value={entityName(params)}
-            onChange={(name) => onChange({ ...params, name })}
-        />
-    ),
+    renderBody,
     canApply: hasName,
     detail: describeEntity,
 });
@@ -192,14 +268,27 @@ export const createFolderCardRenderer = entityCardRenderer(
     IcFolderPlus,
     // translator: the name is the field below, so the sentence names only the kind of thing being made
     () => c('Info').t`Create a folder`,
-    () => c('Label').t`Folder name`
+    (props) => {
+        const nameField = renderNameField(c('Label').t`Folder name`, props);
+        if (!props.references) {
+            return nameField;
+        }
+        return (
+            <div className="flex flex-column gap-2">
+                {nameField}
+                <FolderLocationField params={props.params} onChange={props.onChange} references={props.references} />
+            </div>
+        );
+    }
 );
 
 const createLabelCardRenderer = entityCardRenderer(
     IcTagPlus,
     // translator: the name is the field below, so the sentence names only the kind of thing being made
     () => c('Info').t`Create a label`,
-    () => c('Label').t`Label name`
+    (props) => {
+        return renderNameField(c('Label').t`Label name`, props);
+    }
 );
 
 export const createFolderModule: MailToolModule = {

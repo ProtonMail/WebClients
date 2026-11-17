@@ -79,6 +79,25 @@ describe('createRenameFolderHandler', () => {
         );
     });
 
+    // Later cards read the folder's name from the registry, so it must carry the new one.
+    it('records the trimmed new name for later cards', async () => {
+        const { references, folderReference, deps } = setUp([folder()]);
+
+        await createRenameFolderHandler(deps)({ folder: folderReference, name: '  Trips  ' }, { references });
+
+        expect(references.labelFor(folderReference)?.title).toBe('Trips');
+    });
+
+    it('keeps the recorded name when the rename fails', async () => {
+        const { references, folderReference, updateLabel, deps } = setUp([folder()]);
+        updateLabel.mockRejectedValue(new Error('network'));
+
+        await expect(
+            createRenameFolderHandler(deps)({ folder: folderReference, name: 'Trips' }, { references })
+        ).rejects.toThrow('network');
+        expect(references.labelFor(folderReference)?.title).toBe('Travel');
+    });
+
     it('reports a folder that no longer exists, rather than renaming nothing', async () => {
         const { references, folderReference, updateLabel, deps } = setUp([]);
 

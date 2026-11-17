@@ -1577,4 +1577,77 @@ describe('useLumoAgent', () => {
             expect(telemetry.chainEnded).toHaveBeenLastCalledWith(LumoChainEnd.STOPPED, expect.anything());
         });
     });
+
+    describe('confirm cards and the reference registry', () => {
+        let travel = '';
+
+        // A read mints the folder the model then proposes, the way a folder listing does in a product.
+        const withFolderRead: LumoAgentConfig = {
+            ...config,
+            handlers: {
+                ...config.handlers,
+                view_items: async (_params, { references }) => {
+                    travel = references.referenceFor('folder', 'travel-id', { title: 'Travel' });
+                    return {};
+                },
+            },
+        };
+
+        beforeEach(() => {
+            script = async ({ executor }) => {
+                await executor.execute([{ id: '1', name: 'view_items', arguments: '{}' }]);
+                await executor.execute([
+                    { id: '2', name: 'move_items', arguments: JSON.stringify({ target: travel }) },
+                ]);
+            };
+        });
+
+        const cardReferences = (result: AgentResult) => {
+            const card = confirmTile(result);
+            if (card?.kind !== 'confirm' || !card.references) {
+                throw new Error('No pending card with references');
+            }
+            return card.references;
+        };
+
+        it('lets the card resolve a reference a read in the same chain minted', async () => {
+            const { result } = renderHook(() => useLumoAgent(withFolderRead));
+            await sendAndPinConfirm(result);
+
+            expect(cardReferences(result).idFor(travel)).toBe('travel-id');
+        });
+
+        it('names a reference the card introduced on the settled tile', async () => {
+            const { result } = renderHook(() => useLumoAgent(withFolderRead));
+            const { chain } = await sendAndPinConfirm(result);
+            const work = cardReferences(result).referenceFor('folder', 'work-id', { title: 'Work' });
+
+            await act(async () => {
+                result.current.confirm({ target: work });
+                await chain;
+            });
+
+            expect(handlerCalls).toEqual([{ name: 'move_items', params: { target: work } }]);
+            expect(confirmTile(result)).toMatchObject({
+                status: ConfirmStatus.APPLIED,
+                labels: { [work]: { title: 'Work' } },
+            });
+        });
+
+        it('keeps the name the card showed for a reference renamed while it was open', async () => {
+            const { result } = renderHook(() => useLumoAgent(withFolderRead));
+            const { chain } = await sendAndPinConfirm(result);
+            cardReferences(result).referenceFor('folder', 'travel-id', { title: 'Trips' });
+
+            await act(async () => {
+                result.current.confirm({ target: travel });
+                await chain;
+            });
+
+            expect(confirmTile(result)).toMatchObject({
+                status: ConfirmStatus.APPLIED,
+                labels: { [travel]: { title: 'Travel' } },
+            });
+        });
+    });
 });

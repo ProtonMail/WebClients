@@ -1,5 +1,6 @@
 import { ToolInputError, UnknownReferenceError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ReferenceKind, ReferenceLabel, ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import { messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
@@ -81,13 +82,18 @@ export const isConversationReferenceID = (references: ReferenceRegistry, id: str
 
 export type ElementFetchDeps = Pick<MailToolDeps, 'store' | 'fetchConversation' | 'fetchMessage'>;
 
+/*
+ * `useConversation`'s `initDispatch` stores `{ ID }` for a conversation before it loads, and its
+ * `loadingConversation` treats a missing `Subject` as not loaded yet; a placeholder is no conversation.
+ */
+export const loadedConversation = (state: ReturnType<ToolStore['getState']>, id: string): Conversation | undefined => {
+    const conversation = conversationByID(state, { ID: id })?.Conversation;
+    return conversation?.Subject === undefined ? undefined : conversation;
+};
+
 /** Every slice here is kept current by the event loop, so a hit is as fresh as a fetch. */
 const storedElement = (state: ReturnType<ToolStore['getState']>, id: string): Element | undefined => {
-    return (
-        state.elements.elements[id] ??
-        conversationByID(state, { ID: id })?.Conversation ??
-        messageByID(state, { ID: id })?.data
-    );
+    return state.elements.elements[id] ?? loadedConversation(state, id) ?? messageByID(state, { ID: id })?.data;
 };
 
 const CONVERSATION_NOT_FOUND_CODE = 20052;
