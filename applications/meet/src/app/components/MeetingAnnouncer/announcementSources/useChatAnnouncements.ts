@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { MENTION_SNACKBAR_TIMEOUT, SNACKBAR_TIMEOUT } from '@proton/meet/store/slices/meetingSnackbarsSlice';
 import {
     selectLocalParticipantIdentity,
     selectParticipantDecryptedNameMap,
@@ -58,6 +59,8 @@ export const useChatAnnouncements = () => {
                     : announcementMessages.newChatMessage(plainTextMessage, senderName),
                 {
                     dedupeKey: `chat-${message.id}`,
+                    politeness: 'polite',
+                    maxWaitMs: isMentioned ? MENTION_SNACKBAR_TIMEOUT : SNACKBAR_TIMEOUT,
                 }
             );
         }

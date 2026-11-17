@@ -188,7 +188,7 @@ export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Pr
                 variant={getVariant()}
                 ariaLabel={c('Alt').t`More options`}
                 ariaExpanded={isOpen}
-                ariaHasPopup="true"
+                ariaHasPopup={variant === 'popup' ? 'dialog' : 'true'}
                 tooltipTitle={c('Info').t`More options`}
                 tooltipDisabled={isOpen}
             />

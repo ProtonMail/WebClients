@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectEvents } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { SNACKBAR_TIMEOUT } from '@proton/meet/store/slices/meetingSnackbarsSlice';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { ParticipantEvent } from '@proton/meet/types/types';
 
@@ -46,7 +47,7 @@ export const useParticipantAnnouncements = () => {
                     ? announcementMessages.participantJoined(name)
                     : announcementMessages.participantLeft(name);
 
-            announce(message, { dedupeKey: key });
+            announce(message, { dedupeKey: key, politeness: 'polite', maxWaitMs: SNACKBAR_TIMEOUT });
             announcedRef.current.add(key);
         }
     }, [events, nameMap, announce]);
