@@ -32,6 +32,11 @@
         "Uw informatie is in tenminste één gegevenslek gevonden. Schakel ${ DARK_WEB_MONITORING_NAME } in om de details te zien en actie te ondernemen. ${ link }"
       ]
     },
+    "account_search_index": {
+      "Business referral link": [
+        "Zakelijke verwijzingslink"
+      ]
+    },
     "Accounts": {
       "Accounts": [
         "Accounts"
@@ -277,6 +282,9 @@
       ],
       "Continue to sign in": [
         "Ga verder met inloggen"
+      ],
+      "Continue with Bitcoin": [
+        "Ga verder met Bitcoin"
       ],
       "Continue with Free": [
         "Doorgaan met gratis"
@@ -563,9 +571,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "Krijg hulp van ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Get in touch": [
-        "Neem contact op"
-      ],
       "Get limited-time offer": [
         "Ontvang het tijdelijk aanbod"
       ],
@@ -694,9 +699,6 @@
       ],
       "Learn more": [
         "Meer informatie"
-      ],
-      "Let's talk": [
-        "Laten we praten!"
       ],
       "Load more": [
         "Laad meer"
@@ -876,6 +878,9 @@
         "Knop verwijderen"
       ],
       "Remove domain": [
+        "Verwijder bestand"
+      ],
+      "Remove file": [
         "Verwijder bestand"
       ],
       "Remove from favorites": [
@@ -8729,9 +8734,6 @@
       "To continue to ${ product }": [
         "Om door te gaan naar ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Om onze diensten voortdurend te verbeteren, verzamelen wij soms gegevens om de goede werking van onze toepassingen te controleren. Deze informatie wordt niet gedeeld met diensten van derden."
-      ],
       "To create your first user group, go to": [
         "Om uw eerste gebruikersgroep aan te maken, ga naar"
       ],
@@ -9310,6 +9312,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
       ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Uw account is aangemaakt, maar we kunnen het instellen van uw plan niet voltooien."
+      ],
       "Your account was successfully updated with this promotion": [
         "Uw account werd succesvol bijgewerkt met deze promotie."
       ],
@@ -9783,9 +9788,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
-      ],
-      "Collect usage diagnostics": [
-        "Gebruiksdiagnoses verzamelen"
       ],
       "Colors": [
         "Kleuren"
@@ -10390,6 +10392,9 @@
       ],
       "Server name": [
         "Servernaam"
+      ],
+      "Share your invite link": [
+        "Deel uw uitnodigingslink"
       ],
       "Share your referral link": [
         "Deel uw verwijzingslink:"
@@ -13271,9 +13276,6 @@
       "Processing payment": [
         "Betaling wordt verwerkt"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet licenties moeten overeenkomen met het aantal leden."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
       ],
@@ -13333,9 +13335,6 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Deze betaalmethode wordt uw nieuwe standaard voor alle toekomstige verlengingen."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Dit abonnement ondersteunt de beheerde functies van uw account niet."
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Dit abonnement kan momenteel niet worden voltooid. Probeer het opnieuw."
@@ -13572,6 +13571,9 @@
       ],
       "Enter a name": [
         "Voer een naam in"
+      ],
+      "Enter email address, name, or contact group": [
+        "Voer het e-mailadres, de naam of de contactgroep in"
       ],
       "example@domain.com": [
         "voorbeeld@domein.com"
@@ -14060,6 +14062,9 @@
       ],
       "I've been using ${ BRAND_NAME } and thought you might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your next subscription: ${ referralLink }": [
         "Ik gebruik ${ BRAND_NAME } en dacht dat u het misschien wel leuk zou vinden. Het is een veilige e-mail, cloudopslag, wachtwoordbeheerder en VPN die uw privacy beschermt. Meld u aan via deze link en ontvang ${ refereeRewardAmount } korting op uw volgende abonnement: ${ referralLink }"
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Ik gebruik ${ BRAND_NAME } en dacht dat uw team dit misschien wel leuk zou vinden. Het is een veilige e-mail, cloudopslag, wachtwoordbeheerder en VPN die uw privacy beschermt. Meld u aan via deze link en ontvang ${ refereeRewardAmount } korting op uw eerste jaar van ${ BRAND_NAME } for Business: ${ referralLink }"
       ],
       "If you cancel before then, you will be downgraded to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends. If you don’t cancel, your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "Als u daarvoor annuleert, wordt u gedowngraded naar ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } wanneer de proefversie eindigt. Als u niet annuleert, start uw volledige abonnement en krijgt u **${ referrerRewardAmount }** aan tegoed."
@@ -17122,6 +17127,9 @@
       "Block trackers and malware": [
         "Blokkeer trackers en malware"
       ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Neem ${ BRAND_NAME } mee naar het werk. Verdien tegoed."
+      ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Voeg uw Gmail toe aan ${ MAIL_APP_NAME }"
       ],
@@ -17807,9 +17815,6 @@
       "Previous": [
         "Vorige"
       ],
-      "Privacy and data collection": [
-        "Privacy en gegevensverzameling"
-      ],
       "Processing...": [
         "Wordt verwerkt..."
       ],
@@ -17845,6 +17850,9 @@
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
+      ],
+      "Refer businesses": [
+        "Verwijs naar bedrijven"
       ],
       "Reject device?": [
         "Apparaat weigeren?"

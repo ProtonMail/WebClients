@@ -808,9 +808,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } से मदद लें"
       ],
-      "Get in touch": [
-        "हमसे संपर्क करें"
-      ],
       "Get limited-time offer": [
         "सीमित समय का ऑफर प्राप्त करें"
       ],
@@ -948,9 +945,6 @@
       ],
       "Learn more": [
         "और जानें"
-      ],
-      "Let's talk": [
-        "चलिए बात करते हैं"
       ],
       "Load more": [
         "और लोड करें"
@@ -1137,6 +1131,9 @@
       ],
       "Remove domain": [
         "डोमेन हटाएं"
+      ],
+      "Remove file": [
+        "फाइल हटाएं"
       ],
       "Remove from favorites": [
         "फेवरेट्स से हटाएं"
@@ -6142,6 +6139,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "आपकी सुरक्षा चाबी रजिस्टर करते वक्त कुछ गलती हो गई। कृपया पुनः प्रयास करें।"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "यह ब्राउज़र सिक्योरिटी कीज़ को सपोर्ट नहीं करता है। कृपया कोई दूसरा ब्राउज़र आज़माएं।"
+      ],
+      "This security key is already registered to your account.": [
+        "यह सिक्योरिटी की आपके खाते में पहले से रजिस्टर्ड है।"
       ]
     },
     "fido2: Info": {
@@ -9116,9 +9119,6 @@
       "To continue to ${ product }": [
         "${ product } पर जारी रखने के लिए"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "हमारी सेवाओं को लगातार बेहतर करने के लिए, हम कभी-कभी डेटा लेते हैं ये देखने के लिए कि हमारे ऐप सही चल रहे हैं या नहीं। यह जानकारी किसी भी तीसरें-पार्टी सेवा के साथ शेयर नहीं की जाती।"
-      ],
       "To create your first user group, go to": [
         "अपना पहला यूज़र ग्रुप बनाने के लिए, जाएं"
       ],
@@ -10184,9 +10184,6 @@
       ],
       "Code is 6 digits without spaces": [
         "कोड बिना रिक्त स्थान के 6 अंक हैं"
-      ],
-      "Collect usage diagnostics": [
-        "इस्तेमाल आंकड़े इकट्ठा करें"
       ],
       "Colors": [
         "रंग"
@@ -13747,12 +13744,6 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (कर के बिना)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } को ${ PLAN_NAMES[PLANS.PASS] } के साथ नहीं जोड़ा जा सकता।"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } सिर्फ़ बिज़नेस प्लान पर उपलब्ध है।"
-      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% कर: ${ taxAmountElement }"
       ],
@@ -13762,14 +13753,8 @@
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } को ट्रायल समाप्त होने के बाद देय राशि"
       ],
-      "An organization is required for this plan.": [
-        "इस प्लान के लिए संगठन ज़रूरी है।"
-      ],
       "Billing Country": [
         "बिलिंग देश"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "क्रेडिट खरीदने के लिए अलग खरीदारी ज़रूरी है।"
       ],
       "By switching, you agree to our ${ termsLink }.": [
         "स्विच करके, आप हमारे ${ termsLink } से सहमत होते हैं।"
@@ -13813,9 +13798,6 @@
       "More plans are available in other currencies": [
         "अन्य मुद्राओं में और अधिक प्लान उपलब्ध हैं।"
       ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } सिर्फ़ एक ही खरीदा जा सकता है।"
-      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME } से पेमेंट करें"
       ],
@@ -13825,29 +13807,17 @@
       "Plan switch is incompatible for the following reasons:": [
         "निम्नलिखित कारणों से प्लान बदलना संभव नहीं है:"
       ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "प्लान बदलने से पहले कृपया अतिरिक्त वॉलेट खाते बंद करें।"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "प्लान बदलने से पहले कृपया अतिरिक्त वॉलेट बंद करें।"
-      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ऐड-ऑन की संख्या कम करने के लिए कृपया पहले अपनी सदस्यता को फिर से सक्रिय करें।"
       ],
       "Processing payment": [
         "भुगतान की प्रक्रिया जारी है"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet की सीटें सदस्यों की संख्या के बराबर होनी चाहिए।"
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "नवीनीकरण मूल्य ${ termsAndConditionsLink } के अनुसार परिवर्तन के अधीन है।"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } पर नवीनीकृत होता है, कभी भी रद्द करें।"
-      ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe सीट की संख्या मेंबर्स से ज़्यादा नहीं हो सकती।"
       ],
       "Sorry, this offer is not available with your current plan.": [
         "क्षमा करें, यह ऑफर आपके वर्तमान प्लान के साथ उपलब्ध नहीं है।"
@@ -13864,18 +13834,6 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "यह छूट ${ renewalsWithCoupon } नवीनीकरण के लिए वैध है।",
         "यह छूट ${ renewalsWithCoupon } नवीनीकरणों के लिए वैध है।"
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "चुना गया प्लान आपके खाते के लिए पर्याप्त पते नहीं देता।"
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "चुना गया प्लान आपके खाते के लिए पर्याप्त डोमेन नहीं देता।"
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "चुना गया प्लान आपके खाते के लिए पर्याप्त मेंबर नहीं देता।"
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "चुना गया प्लान आपके खाते के लिए पर्याप्त स्टोरेज नहीं देता।"
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
         "विशेष रियायती कीमत पहले ${ subscriptionLength } महीने के लिए वैध है।",
@@ -13897,41 +13855,17 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "यह कार्रवाई मौजूदा सदस्यता का विस्तार करती है। आपसे केवल नए ऐड-ऑन्स और वर्तमान बिल साइकिल के शेष समय के लिए शुल्क लिया जाएगा। आपकी सदस्यता की रिन्यूअल तिथि नहीं बदली जाएगी।"
       ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "यह डेडिकेटेड सर्वर एक गेटवे को असाइन किया गया है और इसे बदला नहीं जा सकता।"
-      ],
       "This offer is not available with your current plan.": [
         "यह ऑफर आपके वर्तमान प्लान के साथ उपलब्ध नहीं है।"
       ],
       "This payment method will become your new default for all future renewals.": [
         "यह भुगतान तरीका भविष्य के सभी नवीनीकरणों के लिए आपका नया डिफॉल्ट बन जाएगा।"
       ],
-      "This plan doesn’t support the managed features on your account.": [
-        "यह प्लान आपके खाते पर प्रबंधित सुविधाओं का समर्थन नहीं करता है।"
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "यह प्लान आपके खाते के मेंबर्स का सपोर्ट नहीं करता।"
-      ],
       "This subscription can’t be completed right now. Please try again.": [
         "यह सदस्यता अभी पूरी नहीं हो सकती। कृपया पुनः प्रयास करें।"
       ],
       "Timeout exceeded": [
         "समय सीमा समाप्त हो गई।"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "ट्रायल प्लान ${ LUMO_SHORT_APP_NAME } सीट का सपोर्ट नहीं करते।"
-      ],
-      "Trial plans don’t support custom domains.": [
-        "ट्रायल प्लान कस्टम डोमेन का सपोर्ट नहीं करते।"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "ट्रायल प्लान डेडिकेटेड IP का सपोर्ट नहीं करते।"
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "ट्रायल प्लान Scribe सीट का सपोर्ट नहीं करते।"
-      ],
-      "Trial plans don’t support this many members.": [
-        "ट्रायल प्लान इतने मेंबर का सपोर्ट नहीं करते।"
       ],
       "VAT number": [
         "वैट नंबर"
@@ -13944,9 +13878,6 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "आपके पास पहले से ही इस प्लान की सदस्यता है। ${ subscriptionPlatform } पर अपनी सदस्यता बदली जा सकती है।"
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } आपके पास पहले से है।"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "आपके चयनित भुगतान तरीके से ${ amountToCharge } चार्ज किया जाएगा।"
@@ -17924,6 +17855,9 @@
       "Dashboard": [
         "डैशबोर्ड"
       ],
+      "Data collection": [
+        "डेटा कलेक्शन"
+      ],
       "Data recovery": [
         "डेटा पुनर्प्राप्ति"
       ],
@@ -18410,9 +18344,6 @@
       ],
       "Previous": [
         "पिछला"
-      ],
-      "Privacy and data collection": [
-        "प्राइवेसी और डेटा संग्रह"
       ],
       "Processing...": [
         "प्रोसेस हो रहा है..."

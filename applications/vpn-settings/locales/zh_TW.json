@@ -548,9 +548,6 @@
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
         "從 ${ LUMO_SHORT_APP_NAME } 取得協助"
       ],
-      "Get in touch": [
-        "保持聯絡"
-      ],
       "Get limited-time offer": [
         "取得限時優惠"
       ],
@@ -677,11 +674,11 @@
       "Learn about recovery options": [
         "了解復原選項"
       ],
+      "Learn how this works": [
+        "了解運作方式"
+      ],
       "Learn more": [
         "瞭解詳情"
-      ],
-      "Let's talk": [
-        "我們一起聊聊！"
       ],
       "Load more": [
         "載入更多"
@@ -862,6 +859,9 @@
       ],
       "Remove domain": [
         "刪除網域"
+      ],
+      "Remove file": [
+        "移除檔案"
       ],
       "Remove from favorites": [
         "從我的最愛移除"
@@ -1138,6 +1138,9 @@
       ],
       "Switch or add account": [
         "切換或是添加帳號"
+      ],
+      "Switch to ${ planName }": [
+        "切換至 ${ planName }"
       ],
       "Switch to free plan": [
         "切換至 Free plan"
@@ -2164,6 +2167,9 @@
       ],
       "Amount due": [
         "應付金額"
+      ],
+      "Amount due after trial": [
+        "試用後的欠款"
       ],
       "Amount due now": [
         "當前欠款"
@@ -8400,9 +8406,6 @@
       "To continue to ${ product }": [
         "若要繼續使用 ${ product }"
       ],
-      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "為持續精進我們的服務品質，我們有時會蒐集一些資料用以監控應用程式的功能是否正常。此類資訊不會與第三方服務共享。"
-      ],
       "To create your first user group, go to": [
         "若要創建您地一個使用者群組，請至"
       ],
@@ -8680,7 +8683,7 @@
         "當您從閘道器移除伺服器，將進入10天整的停用期。此伺服器可被新增至其他閘道器，但無法變更國家。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "當您的訂購授權要續約前，我們會先從可用的餘額扣除，若仍須補齊款項，最後才會以上面的腳款方式扣款。"
+        "當您的訂購授權要續約前，我們會先從可用的餘額扣除，若仍須補齊款項，最後才會以上面的付款方式扣款。"
       ],
       "Whole organization": [
         "整個組織"
@@ -8882,6 +8885,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您將再也不能使用您先前下載的帳號救援檔案恢復被鎖定的資料。此操作將一併停用基於裝置的復原方法。"
+      ],
+      "You'll choose a new username": [
+        "您將選擇個新的使用者名稱"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "若您的朋友訂閱年費方案，您將在 1 個月後獲得點數獎勵；若他們訂閱月費方案，則會在 2 個月後獲得。"
@@ -9379,9 +9385,6 @@
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
-      ],
-      "Collect usage diagnostics": [
-        "收集使用狀況與診斷"
       ],
       "Colors": [
         "色彩"
@@ -12866,12 +12869,6 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "試用方案不支援 ${ LUMO_SHORT_APP_NAME } 座席。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "試用方案不支援獨立 IPs。"
       ],
       "VAT number": [
         "增值稅編號（VAT）"
@@ -17186,9 +17183,6 @@
       ],
       "Previous": [
         "上一頁"
-      ],
-      "Privacy and data collection": [
-        "隱私與資料蒐集"
       ],
       "Processing...": [
         "處理中..."
