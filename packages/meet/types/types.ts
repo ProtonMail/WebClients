@@ -72,6 +72,7 @@ export interface ParticipantEventRecord {
     timestamp: number;
     type?: 'event';
     isAgent?: boolean;
+    localReconnectId?: number;
 }
 
 export type MeetingRoomUpdate = ParticipantEventRecord | MeetChatMessage;

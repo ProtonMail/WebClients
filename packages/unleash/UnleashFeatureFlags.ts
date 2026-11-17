@@ -335,6 +335,7 @@ enum MailKillSwitchFlag {
 }
 
 enum MeetFeatureFlag {
+    MeetActivityEventsJoinLeave = 'MeetActivityEventsJoinLeave',
     MeetAdaptiveStream = 'MeetAdaptiveStream',
     MeetAdminLowerHand = 'MeetAdminLowerHand',
     MeetAllowMLSLogExport = 'MeetAllowMLSLogExport',

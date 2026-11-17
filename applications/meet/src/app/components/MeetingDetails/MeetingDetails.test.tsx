@@ -1,25 +1,37 @@
 import { Provider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
-import { render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen, within } from '@testing-library/react';
 
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import { addEvent, chatAndReactionsReducer } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import {
     currentMeetingReducer,
     initialState as initialCurrentMeetingState,
 } from '@proton/meet/store/slices/currentMeeting';
 import { meetingInfoModelReducer } from '@proton/meet/store/slices/meetingInfoModel';
 import {
+    mergeParticipantDecryptedNameMap,
+    participantsReducer,
+} from '@proton/meet/store/slices/participants/participantsSlice';
+import {
     initialState as initialSortedParticipantsState,
     sortedParticipantsReducer,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { initialState as initialMeetUserState, meetUserReducer } from '@proton/meet/store/slices/userSlice';
+import type { KeyRotationLog } from '@proton/meet/types/types';
+import { ParticipantEvent } from '@proton/meet/types/types';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { MeetContext } from '../../contexts/MeetContext';
 import { WrappedMeetingDetails } from './MeetingDetails';
+
+const flagMocks = vi.hoisted(() => ({ enabledFlags: new Set<string>() }));
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: (flag: string) => flagMocks.enabledFlags.has(flag),
+}));
 
 const mockMeetingName = 'Mock Meeting Name';
 
@@ -50,6 +62,8 @@ const createMockStore = ({ sideBarOpen = false, keyRotationLogs = initialCurrent
             ...meetingInfoModelReducer,
             ...sortedParticipantsReducer,
             ...meetUserReducer,
+            ...chatAndReactionsReducer,
+            ...participantsReducer,
         },
         preloadedState: {
             uiState: {
@@ -101,6 +115,7 @@ const createMockStore = ({ sideBarOpen = false, keyRotationLogs = initialCurrent
 describe('MeetingDetails', () => {
     afterEach(() => {
         meetingSchedule = defaultMeetingSchedule;
+        flagMocks.enabledFlags.clear();
         vi.unstubAllEnvs();
     });
 
@@ -280,6 +295,138 @@ describe('MeetingDetails', () => {
             });
 
             expect(screen.getByText('10:00:00')).toBeInTheDocument();
+        });
+    });
+
+    describe('activity events', () => {
+        const keyRotationLogs: KeyRotationLog[] = [
+            { timestamp: Date.parse('2026-11-12T10:00:00Z'), epoch: 3, type: 'log', message: 'Joined' },
+            { timestamp: Date.parse('2026-11-12T10:00:05Z'), epoch: 4, type: 'log', message: 'Rotated' },
+        ];
+
+        const renderActivityEvents = () => {
+            const store = createMockStore({ sideBarOpen: true, keyRotationLogs });
+            store.dispatch(
+                addEvent([
+                    {
+                        identity: 'alice',
+                        eventType: ParticipantEvent.Join,
+                        timestamp: Date.parse('2026-11-12T10:00:04Z'),
+                        type: 'event',
+                    },
+                    {
+                        identity: 'bob',
+                        eventType: ParticipantEvent.Join,
+                        timestamp: Date.parse('2026-11-12T10:00:06Z'),
+                        type: 'event',
+                    },
+                    {
+                        identity: 'alice',
+                        eventType: ParticipantEvent.Leave,
+                        timestamp: Date.parse('2026-11-12T10:00:07Z'),
+                        type: 'event',
+                    },
+                ])
+            );
+            store.dispatch(mergeParticipantDecryptedNameMap({ alice: 'Alice' }));
+
+            render(<WrappedMeetingDetails />, {
+                wrapper: ({ children }) => (
+                    <Provider context={ProtonStoreContext} store={store}>
+                        <NotificationsProvider>
+                            <MeetContext.Provider
+                                // @ts-expect-error - mock data
+                                value={{ getKeychainIndexInformation: () => [] }}
+                            >
+                                {children}
+                            </MeetContext.Provider>
+                        </NotificationsProvider>
+                    </Provider>
+                ),
+            });
+
+            const activityEventsTable = within(
+                screen.getByRole('heading', { name: 'Activity events' }).parentElement!.parentElement!
+            ).getByRole('table');
+
+            return {
+                store,
+                rows: within(activityEventsTable)
+                    .getAllByRole('row')
+                    .map((row) => ({
+                        time: within(row).getByRole('rowheader').textContent,
+                        event: within(row).getByRole('cell'),
+                    })),
+            };
+        };
+
+        beforeEach(() => {
+            vi.stubEnv('TZ', 'UTC');
+        });
+
+        it('should list joins, leaves and epochs newest first, with your own join last', () => {
+            flagMocks.enabledFlags.add('MeetActivityEventsJoinLeave');
+
+            const { rows } = renderActivityEvents();
+
+            expect(rows.map(({ time, event }) => [time, event.textContent])).toEqual([
+                ['10:00:07', 'Alice left'],
+                ['10:00:06', 'A participant joined'],
+                ['10:00:05', 'Epoch 3 → 4'],
+                ['10:00:04', 'Alice joined'],
+                ['10:00:00', 'Epoch 3'],
+                ['10:00:00', 'You joined'],
+            ]);
+            expect(screen.queryByText(/Joined at epoch/)).not.toBeInTheDocument();
+        });
+
+        it('should show join and leave rows in the normal text color and epoch rows in the hint color', () => {
+            flagMocks.enabledFlags.add('MeetActivityEventsJoinLeave');
+
+            const { rows } = renderActivityEvents();
+
+            expect(rows.map(({ event }) => event.className.includes('color-norm'))).toEqual([
+                true,
+                true,
+                false,
+                true,
+                false,
+                true,
+            ]);
+            expect(rows.map(({ event }) => event.className.includes('color-hint'))).toEqual([
+                false,
+                false,
+                true,
+                false,
+                true,
+                false,
+            ]);
+        });
+
+        it('should keep the current rows while the feature flag is off', () => {
+            const { rows } = renderActivityEvents();
+
+            expect(rows.map(({ time, event }) => [time, event.textContent])).toEqual([
+                ['10:00:00', 'Joined at epoch 3'],
+                ['10:00:05', 'Epoch 3 → 4'],
+            ]);
+            expect(screen.queryByText(/joined$/)).not.toBeInTheDocument();
+        });
+
+        it('should copy the same activity events as before, without names', async () => {
+            flagMocks.enabledFlags.add('MeetActivityEventsJoinLeave');
+            flagMocks.enabledFlags.add('MeetAllowMLSLogExport');
+            const writeText = vi.fn().mockResolvedValue(undefined);
+            Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+
+            renderActivityEvents();
+            await act(async () => {
+                fireEvent.click(screen.getByRole('button', { name: 'Copy all activity events' }));
+            });
+
+            expect(writeText).toHaveBeenCalledWith(
+                JSON.stringify({ keyRotationLogs, keychainIndexInformation: [] }, null, 2)
+            );
         });
     });
 });

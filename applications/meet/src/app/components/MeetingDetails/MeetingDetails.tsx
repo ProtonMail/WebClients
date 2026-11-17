@@ -13,6 +13,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { IcMeetCopy } from '@proton/icons/icons/IcMeetCopy';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { useMeetings } from '@proton/meet/store/hooks/useMeetings';
+import { selectEvents } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import {
     selectInstantMeeting,
     selectKeyRotationLogs,
@@ -20,6 +21,7 @@ import {
     selectMeetingName,
     selectMlsGroupState,
 } from '@proton/meet/store/slices/currentMeeting';
+import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
@@ -36,6 +38,8 @@ import { useMeetContext } from '../../contexts/MeetContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
 import { MismatchStage, useMismatchStage } from '../../hooks/useMismatchStage';
 import { formatInTimeZone, formatIntlInTimeZone, getDeviceTimeZone, isTimeZoneKnown } from '../../utils/zonedTime';
+import type { ActivityEventRow } from './getActivityEventRows';
+import { getActivityEventRows } from './getActivityEventRows';
 
 import './MeetingDetails.scss';
 
@@ -46,13 +50,78 @@ const ValueWithInfo = ({ value, info }: { value: ReactNode; info: string }) => (
     </span>
 );
 
+const getParticipantNameElement = (name: string) => (
+    <span key="name" className="text-ellipsis-two-lines text-break min-w-0" title={name}>
+        {name}
+    </span>
+);
+
+const participantEventClassName = 'flex flex-nowrap items-end gap-1';
+
+type ActivityEventRowOfKind<Kind extends ActivityEventRow['kind']> = Extract<ActivityEventRow, { kind: Kind }>;
+
+const activityEventCells: {
+    [Kind in ActivityEventRow['kind']]: {
+        className?: string;
+        render: (row: ActivityEventRowOfKind<Kind>) => ReactNode;
+    };
+} = {
+    ownJoin: {
+        className: 'color-norm',
+        render: () => c('Info').t`You joined`,
+    },
+    participantJoined: {
+        className: 'color-norm',
+        render: ({ name }) => {
+            if (!name) {
+                return c('Info').t`A participant joined`;
+            }
+            const participantName = getParticipantNameElement(name);
+            // translator: ${participantName} is the display name of the participant who joined the meeting, e.g. "Alice joined"
+            return <span className={participantEventClassName}>{c('Info').jt`${participantName} joined`}</span>;
+        },
+    },
+    participantLeft: {
+        className: 'color-norm',
+        render: ({ name }) => {
+            if (!name) {
+                return c('Info').t`A participant left`;
+            }
+            const participantName = getParticipantNameElement(name);
+            // translator: ${participantName} is the display name of the participant who left the meeting, e.g. "Alice left"
+            return <span className={participantEventClassName}>{c('Info').jt`${participantName} left`}</span>;
+        },
+    },
+    firstEpoch: {
+        className: 'color-hint',
+        // translator: the encryption epoch of the meeting when you joined, e.g. "Epoch 3"
+        render: ({ epoch }) => c('Info').t`Epoch ${epoch}`,
+    },
+    epochChange: {
+        className: 'color-hint',
+        // translator: the encryption epoch changed from one number to the next, e.g. "Epoch 3 → 4"
+        render: ({ previousEpoch, epoch }) => c('Info').t`Epoch ${previousEpoch} → ${epoch}`,
+    },
+    epochError: {
+        render: ({ epoch }) => c('Info').t`Error at epoch ${epoch}`,
+    },
+};
+
+const getActivityEventCell = <Kind extends ActivityEventRow['kind']>(row: ActivityEventRowOfKind<Kind>) => {
+    const cell = activityEventCells[row.kind];
+    return { className: cell.className, content: cell.render(row) };
+};
+
 export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting }) => {
     const dispatch = useMeetDispatch();
     const isMeetAllowMLSLogExportEnabled = useFlag('MeetAllowMLSLogExport');
+    const isActivityEventsJoinLeaveEnabled = useFlag('MeetActivityEventsJoinLeave');
     const copyTextToClipboard = useCopyTextToClipboard();
 
     const { getKeychainIndexInformation } = useMeetContext();
     const keyRotationLogs = useMeetSelector(selectKeyRotationLogs);
+    const participantEvents = useMeetSelector(selectEvents);
+    const participantNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const mlsGroupState = useMeetSelector(selectMlsGroupState);
     const meetingLink = useMeetSelector(selectMeetingLink);
     const instantMeeting = useMeetSelector(selectInstantMeeting);
@@ -287,29 +356,63 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                     </div>
                     <Table className="mb-0">
                         <TableBody>
-                            {keyRotationLogs.map((log: KeyRotationLog, index: number) => {
-                                const errorMessage =
-                                    log.type === 'error' ? c('Title').t`Error at epoch ${log.epoch}` : '';
-                                const prevLog = keyRotationLogs[index - 1] ?? null;
-                                const logMessage =
-                                    index === 0
-                                        ? c('Title').t`Joined at epoch ${log.epoch}`
-                                        : c('Title').t`Epoch ${prevLog.epoch} → ${log.epoch}`;
+                            {isActivityEventsJoinLeaveEnabled
+                                ? getActivityEventRows({
+                                      keyRotationLogs,
+                                      participantEvents,
+                                      nameMap: participantNameMap,
+                                  }).map((row) => {
+                                      const { className, content } = getActivityEventCell(row);
+                                      return (
+                                          <TableRow key={row.id}>
+                                              <TableCell
+                                                  type="header"
+                                                  scope="row"
+                                                  className="align-top color-weak w-1/3 pl-0"
+                                              >
+                                                  <time dateTime={row.timestamp.toString()}>
+                                                      {formatInTimeZone(
+                                                          row.timestamp,
+                                                          getDeviceTimeZone(),
+                                                          'HH:mm:ss',
+                                                          {
+                                                              locale: dateLocale,
+                                                          }
+                                                      )}
+                                                  </time>
+                                              </TableCell>
+                                              <TableCell className={className}>{content}</TableCell>
+                                          </TableRow>
+                                      );
+                                  })
+                                : keyRotationLogs.map((log: KeyRotationLog, index: number) => {
+                                      const errorMessage =
+                                          log.type === 'error' ? c('Title').t`Error at epoch ${log.epoch}` : '';
+                                      const prevLog = keyRotationLogs[index - 1] ?? null;
+                                      const logMessage =
+                                          index === 0
+                                              ? c('Title').t`Joined at epoch ${log.epoch}`
+                                              : c('Title').t`Epoch ${prevLog.epoch} → ${log.epoch}`;
 
-                                const content = log.type === 'error' ? errorMessage : logMessage;
-                                return (
-                                    <TableRow key={log.timestamp}>
-                                        <TableCell type="header" scope="row" className="color-weak w-1/3 pl-0">
-                                            <time dateTime={log.timestamp.toString()}>
-                                                {formatInTimeZone(log.timestamp, getDeviceTimeZone(), 'HH:mm:ss', {
-                                                    locale: dateLocale,
-                                                })}
-                                            </time>
-                                        </TableCell>
-                                        <TableCell>{content}</TableCell>
-                                    </TableRow>
-                                );
-                            })}
+                                      const content = log.type === 'error' ? errorMessage : logMessage;
+                                      return (
+                                          <TableRow key={log.timestamp}>
+                                              <TableCell type="header" scope="row" className="color-weak w-1/3 pl-0">
+                                                  <time dateTime={log.timestamp.toString()}>
+                                                      {formatInTimeZone(
+                                                          log.timestamp,
+                                                          getDeviceTimeZone(),
+                                                          'HH:mm:ss',
+                                                          {
+                                                              locale: dateLocale,
+                                                          }
+                                                      )}
+                                                  </time>
+                                              </TableCell>
+                                              <TableCell>{content}</TableCell>
+                                          </TableRow>
+                                      );
+                                  })}
                         </TableBody>
                     </Table>
                 </div>
