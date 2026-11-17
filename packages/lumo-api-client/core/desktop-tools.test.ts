@@ -58,3 +58,12 @@ test.each([undefined, []])(
         expect(bridge.registerScheduleExecutionContext).toHaveBeenCalledTimes(1);
     }
 );
+
+test('conversation executors tell native which conversation each call belongs to', async () => {
+    await createDesktopClientToolExecutor(undefined, { conversationId: 'conversation' }).execute([
+        { id: 'call', name: 'mail__read', arguments: '{}' },
+    ]);
+    expect(bridge.executeToolCalls).toHaveBeenCalledWith(expect.any(Array), undefined, {
+        conversationId: 'conversation',
+    });
+});

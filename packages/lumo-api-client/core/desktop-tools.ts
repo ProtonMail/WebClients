@@ -38,7 +38,8 @@ export type DesktopExternalTools = {
             name?: string;
             arguments?: string;
         },
-        scheduleContext?: ScheduleToolContext
+        scheduleContext?: ScheduleToolContext,
+        options?: DesktopToolCallOptions
     ) => Promise<NativeToolResultMessage>;
     executeToolCalls?: (
         toolCalls: {
@@ -47,8 +48,14 @@ export type DesktopExternalTools = {
             name?: string;
             arguments?: string;
         }[],
-        scheduleContext?: ScheduleToolContext
+        scheduleContext?: ScheduleToolContext,
+        options?: DesktopToolCallOptions
     ) => Promise<NativeToolResultMessage[]>;
+};
+
+/** Older desktop builds ignore these and track untrusted content per session instead. */
+export type DesktopToolCallOptions = {
+    conversationId?: string;
 };
 
 /** Connector manifest as returned by the desktop bridge (get_tool_registry). */
@@ -126,11 +133,22 @@ export type LumoConnectorsApi = DesktopExternalTools & {
 
 export type DesktopSettingsTab = 'general' | 'connectors';
 
+/** Why native is asking: the conversation read untrusted content and this call can send data out or change files. */
+export type DesktopToolApprovalReason = {
+    /** `untrusted_write`: the call changes files on the user's computer rather than sending data out. */
+    kind: 'untrusted_content' | 'untrusted_write';
+    sources: ('mail' | 'web' | 'shell')[];
+    /** Host the request goes to, when native can tell. */
+    destination?: string;
+};
+
 export type DesktopToolApprovalRequest = {
     requestId: string;
     connectorId: string;
     toolName: string;
     input: unknown;
+    /** Absent when the tool asks by policy, and on older desktop builds. */
+    reason?: DesktopToolApprovalReason;
 };
 
 /** Native's resolution of a request the webview may still be showing (timeout, policy change, …). */
@@ -484,7 +502,8 @@ function normalizeDesktopToolCalls(calls: PendingClientToolCall[]): PendingClien
 
 async function executeBridgeToolCalls(
     toolCalls: PendingClientToolCall[],
-    scheduleContext?: ScheduleToolContext
+    scheduleContext?: ScheduleToolContext,
+    options?: DesktopToolCallOptions
 ): Promise<NativeToolResultMessage[]> {
     const bridge = getDesktopBridge();
     if (!bridge) {
@@ -501,11 +520,11 @@ async function executeBridgeToolCalls(
     }));
 
     if (bridge.executeToolCalls) {
-        return bridge.executeToolCalls(openAiCalls, scheduleContext);
+        return bridge.executeToolCalls(openAiCalls, scheduleContext, options);
     }
 
     if (bridge.executeToolCall) {
-        return Promise.all(openAiCalls.map((call) => bridge.executeToolCall!(call, scheduleContext)));
+        return Promise.all(openAiCalls.map((call) => bridge.executeToolCall!(call, scheduleContext, options)));
     }
 
     throw new Error('Desktop tool bridge does not support execution');
@@ -606,9 +625,13 @@ export function initDesktopToolApprovals(): void {
     window.addEventListener(TOOL_APPROVAL_RESOLVED_EVENT, handleApprovalResolved);
 }
 
-export function createDesktopClientToolExecutor(schedule?: ScheduleExecutionInput): ClientToolExecutor {
+export function createDesktopClientToolExecutor(
+    schedule?: ScheduleExecutionInput,
+    options?: DesktopToolCallOptions
+): ClientToolExecutor {
     initDesktopToolApprovals();
     // Capture permissions once for this executor; never mutate shared bridge or global policies.
+    const callOptions = options?.conversationId ? { conversationId: options.conversationId } : undefined;
     const permissions = schedule
         ? {
               ...schedule,
@@ -644,7 +667,7 @@ export function createDesktopClientToolExecutor(schedule?: ScheduleExecutionInpu
         normalizeCalls: normalizeDesktopToolCalls,
         prepareCalls: (calls, { processFiles }) => (processFiles ? prepareDesktopToolFileReads(calls) : calls),
         execute: async (calls) => {
-            const results = await executeBridgeToolCalls(calls, await registerContext());
+            const results = await executeBridgeToolCalls(calls, await registerContext(), callOptions);
             return results.map(normalizeDesktopToolResult);
         },
     };
