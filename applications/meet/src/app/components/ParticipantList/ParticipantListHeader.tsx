@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
-import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMaxParticipants } from '@proton/meet/store/slices/currentMeeting';
 import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice';
@@ -25,10 +24,8 @@ export const ParticipantListHeader = ({
     setIsSearchOn,
     participantsCount,
 }: Props) => {
-    const isWaitingRoomJoinEnabled = useIsWaitingRoomJoinEnabled();
-
     const maxParticipants = useMeetSelector(selectMaxParticipants);
-    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost) && isWaitingRoomJoinEnabled;
+    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost);
 
     return (
         <div className="flex items-center w-full">

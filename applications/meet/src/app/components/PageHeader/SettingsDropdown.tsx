@@ -8,13 +8,10 @@ import DropdownButton from '@proton/components/components/dropdown/DropdownButto
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { useIsRecordingSupported } from '../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 
 export const SettingsDropdown = () => {
-    const isRecordingRecoveryUIEnabled = useFlag('MeetRecordingRecoveryUI');
-
     const isRecordingSupported = useIsRecordingSupported();
 
     const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +19,7 @@ export const SettingsDropdown = () => {
 
     const history = useHistory();
 
-    if (!isRecordingSupported || !isRecordingRecoveryUIEnabled) {
+    if (!isRecordingSupported) {
         return null;
     }
 

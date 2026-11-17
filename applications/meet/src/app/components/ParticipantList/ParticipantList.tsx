@@ -5,7 +5,6 @@ import { clsx } from 'clsx';
 import { RoomEvent } from 'livekit-client';
 import { c } from 'ttag';
 
-import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectSortedParticipantIdentities } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
@@ -41,7 +40,6 @@ const updateOnlyOn = [
 ];
 
 export const ParticipantList = () => {
-    const isWaitingRoomJoinEnabled = useIsWaitingRoomJoinEnabled();
     const dispatch = useMeetDispatch();
 
     const [isSearchOn, setIsSearchOn] = useState(false);
@@ -51,7 +49,7 @@ export const ParticipantList = () => {
     const sortedParticipantIdentities = useMeetSelector(selectSortedParticipantIdentities);
     const sideBarState = useMeetSelector(selectSideBarState);
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
-    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost) && isWaitingRoomJoinEnabled;
+    const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost);
 
     const participants = useParticipants({
         updateOnlyOn,

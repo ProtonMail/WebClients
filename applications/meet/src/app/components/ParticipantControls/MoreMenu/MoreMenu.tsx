@@ -56,7 +56,6 @@ export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Pr
     const { viewportWidth } = useActiveBreakpoint();
 
     const isTranscriptionFeatureEnabled = useFlag('MeetTranscription');
-    const isParticipantsLayoutsEnabled = useFlag('MeetParticipantsLayouts');
     const isLiveCaptionsFeatureEnabled = useLiveCaptionsFeatureEnabled();
     const { isEnabled: isDebugEnabled, open: openDebugOverlay } = useDebugOverlayContext();
 
@@ -69,7 +68,7 @@ export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Pr
     const liveCaptions = useLiveCaptionsToggle();
     const helpAndFeedback = useHelpAndFeedback();
     const layoutOptions = useLayoutOptions();
-    const layout = isParticipantsLayoutsEnabled && layoutOptions.options.length > 1 ? layoutOptions : undefined;
+    const layout = layoutOptions.options.length > 1 ? layoutOptions : undefined;
 
     // MeetingBody renders the slide-up variant on xsmall screens.
     const showMeetingReadyPopup = meetingReadyPopupOpen && !viewportWidth.xsmall;

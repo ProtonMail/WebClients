@@ -23,10 +23,6 @@ import { usePreJoinWaitingRoom } from './usePreJoinWaitingRoom';
 
 const notifyError = vi.fn();
 
-vi.mock('@proton/unleash/useFlag', () => ({
-    useFlag: () => true,
-}));
-
 vi.mock('../../useNotifyError', () => ({
     useNotifyError: () => notifyError,
 }));

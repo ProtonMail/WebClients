@@ -8,7 +8,6 @@ import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/me
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { MacSigningMigrationTopBanner } from './components/MacSigningMigrationTopBanner/MacSigningMigrationTopBanner';
@@ -38,14 +37,9 @@ const MeetAppTelemetry = () => {
 };
 
 const useMeetRoutes = () => {
-    const isRecordingRecoveryUIEnabled = useFlag('MeetRecordingRecoveryUI');
     const isRecordingSupported = useIsRecordingSupported();
 
-    return [
-        'join',
-        'dashboard',
-        ...(isRecordingSupported && isRecordingRecoveryUIEnabled ? ['manage-recordings'] : []),
-    ];
+    return ['join', 'dashboard', ...(isRecordingSupported ? ['manage-recordings'] : [])];
 };
 
 const landingPageRoute = '/start-free-meeting';

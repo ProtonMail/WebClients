@@ -4,7 +4,6 @@ import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useIsWaitingRoomJoinEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     WaitingRoomAdmissionStatus,
@@ -33,8 +32,6 @@ type AdmissionRequest = {
 
 /** Guest-only pre-join admission state machine. Hosts must not call startAdmission. */
 export const usePreJoinWaitingRoom = () => {
-    const isWaitingRoomJoinEnabled = useIsWaitingRoomJoinEnabled();
-
     const dispatch = useMeetDispatch();
     const meetCoreClient = useMeetCoreClient();
     const notifyError = useNotifyError();
@@ -45,10 +42,6 @@ export const usePreJoinWaitingRoom = () => {
     const admissionRequestRef = useRef<AdmissionRequest | null>(null);
 
     useEffect(() => {
-        if (!isWaitingRoomJoinEnabled) {
-            return;
-        }
-
         setWaitingRoomJoinDecisionCallback((_requestId, admitted) => {
             if (!admitted) {
                 dispatch(settleAdmission(WaitingRoomAdmissionStatus.REJECTED));
@@ -69,7 +62,7 @@ export const usePreJoinWaitingRoom = () => {
             void meetCoreClient.cancelWaitingRoomJoinRequest(meetLinkName).catch(noop);
             void meetCoreClient.clearJoinDecisionHandler().catch(noop);
         };
-    }, [dispatch, isWaitingRoomJoinEnabled, meetCoreClient]);
+    }, [dispatch, meetCoreClient]);
 
     const awaitWelcome = useCallback(
         async (meetLinkName: string) => {
@@ -239,17 +232,5 @@ export const usePreJoinWaitingRoom = () => {
         dispatch(cancelAdmission());
     }, [dispatch]);
 
-    return isWaitingRoomJoinEnabled
-        ? {
-              startAdmission,
-              leave,
-              clearRejection,
-              reset,
-          }
-        : {
-              startAdmission: () => Promise.resolve(),
-              leave: () => Promise.resolve(),
-              clearRejection: () => Promise.resolve(),
-              reset: () => {},
-          };
+    return { startAdmission, leave, clearRejection, reset };
 };
