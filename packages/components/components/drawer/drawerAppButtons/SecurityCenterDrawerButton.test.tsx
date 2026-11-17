@@ -104,12 +104,11 @@ describe('SecurityCenterDrawerAppButton', () => {
 
         renderComponent();
 
-        expect(DrawerAppButton).toHaveBeenCalledWith(
+        expect(jest.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({
                 notificationDotColor: ThemeColor.Danger,
                 notificationDotCounter: 4, // unreadBreachesCount + 1 (for recoveryPhraseSet false)
-            }),
-            {}
+            })
         );
     });
 
@@ -118,12 +117,11 @@ describe('SecurityCenterDrawerAppButton', () => {
 
         renderComponent();
 
-        expect(DrawerAppButton).toHaveBeenCalledWith(
+        expect(jest.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({
                 notificationDotColor: ThemeColor.Warning,
                 notificationDotCounter: 5, // unreadBreachesCount + accountSecurityCardsCount (for recoveryPhraseSet false)
-            }),
-            {}
+            })
         );
     });
 
@@ -132,12 +130,11 @@ describe('SecurityCenterDrawerAppButton', () => {
 
         renderComponent();
 
-        expect(DrawerAppButton).toHaveBeenCalledWith(
+        expect(jest.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({
                 notificationDotColor: ThemeColor.Warning,
                 notificationDotCounter: 3, // unreadBreachesCount + 0
-            }),
-            {}
+            })
         );
     });
 
@@ -146,11 +143,10 @@ describe('SecurityCenterDrawerAppButton', () => {
 
         renderComponent();
 
-        expect(DrawerAppButton).toHaveBeenCalledWith(
+        expect(jest.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({
                 notificationDotCounter: undefined, // because canDisplayBreachNotifications is false
-            }),
-            {}
+            })
         );
     });
 

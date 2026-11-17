@@ -21,9 +21,8 @@ describe('LoginModal', () => {
             />
         );
 
-        expect(jest.mocked(SignInContainer)).toHaveBeenCalledWith(
-            expect.objectContaining({ onSessionExpired }),
-            expect.anything()
+        expect(jest.mocked(SignInContainer).mock.calls.map(([props]) => props)).toContainEqual(
+            expect.objectContaining({ onSessionExpired })
         );
     });
 });
