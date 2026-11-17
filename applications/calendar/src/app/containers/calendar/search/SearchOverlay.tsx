@@ -4,6 +4,7 @@ import type {
     HTMLAttributes,
     MouseEvent as ReactMouseEvent,
     ReactNode,
+    Ref,
     RefObject,
 } from 'react';
 import { useLayoutEffect, useRef } from 'react';
@@ -23,11 +24,11 @@ import noop from '@proton/utils/noop';
 import { ADVANCED_SEARCH_OVERLAY_OPEN_EVENT } from '../../../components/calendar/interactions/constants';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
-    ref?: RefObject<HTMLDivElement>;
+    ref?: Ref<HTMLDivElement>;
 }
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     children: ReactNode;
     className?: string;
     style?: CSSProperties;

@@ -12,7 +12,7 @@ import { useContextMenu } from '../../ContextMenu/ContextMenuProvider';
 import { BulkItemsContextMenu } from './BulkItemsContextMenu';
 import { ItemContextMenu } from './ItemContextMenu';
 
-type Props = UniqueItem & { anchorRef: RefObject<HTMLElement> };
+type Props = UniqueItem & { anchorRef: RefObject<HTMLElement | null> };
 
 /** NOTE: A context menu can remain open after its item is removed or updated.
  * This component handles graceful failures while keeping fresh data available. */

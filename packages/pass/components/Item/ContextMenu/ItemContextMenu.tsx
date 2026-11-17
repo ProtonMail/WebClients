@@ -237,7 +237,7 @@ const getItemActionButtons = (
           ];
 };
 
-type Props = { item: ItemRevisionWithOptimistic; share: Share; anchorRef: RefObject<HTMLElement> };
+type Props = { item: ItemRevisionWithOptimistic; share: Share; anchorRef: RefObject<HTMLElement | null> };
 
 export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
     const id = getItemKey(item);

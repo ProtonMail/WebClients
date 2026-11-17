@@ -4,6 +4,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -35,7 +36,7 @@ interface Props {
     myCalendars: VisualCalendar[];
     calendars: VisualCalendar[];
     holidaysCalendars: VisualCalendar[];
-    dropdownRef: React.RefObject<HTMLDivElement>;
+    dropdownRef: RefObjectReact18Compat<HTMLDivElement>;
     onCreateCalendar?: (id: string) => void;
 }
 

@@ -1,6 +1,7 @@
-import type { FC, PropsWithChildren, RefObject } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { createContext, useEffect, useMemo, useRef } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 import { onNextTick } from '@proton/pass/utils/time/next-tick';
@@ -9,7 +10,7 @@ import { useIFrameAppController, useIFrameAppState } from '../../../../../../../
 import { InlinePortMessageType } from '../../../inline.messages';
 import { DROPDOWN_FOCUS_TIMEOUT } from '../../dropdown.focus';
 
-export type IFrameFocusControllerValue = { focusRef: RefObject<HTMLInputElement> };
+export type IFrameFocusControllerValue = { focusRef: RefObjectReact18Compat<HTMLInputElement> };
 
 const IFrameFocusControllerContext = createContext<MaybeNull<IFrameFocusControllerValue>>(null);
 export const useFocusController = createUseContext(IFrameFocusControllerContext);

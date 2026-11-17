@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import type { VatFormErrors, VatFormFields } from '@proton/payments/core/billing-address/vat-helpers';
 import { getVatFormErrors } from '@proton/payments/core/billing-address/vat-helpers';
 
@@ -21,7 +22,7 @@ function emptyErrors(): VatFormErrors {
 
 interface VatFormValidationResult {
     errors: VatFormErrors;
-    containerRef: React.RefObject<HTMLDivElement>;
+    containerRef: RefObjectReact18Compat<HTMLDivElement>;
     handleFormBlur: (e: React.FocusEvent) => void;
     isValid: boolean;
 }
@@ -30,7 +31,7 @@ export function useVatFormValidation(
     fields: VatFormFields,
     options?: { collapsed?: boolean }
 ): VatFormValidationResult {
-    const containerRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>;
+    const containerRef = useRef<HTMLDivElement>(null);
     const [showErrors, setShowErrors] = useState(false);
 
     useEffect(() => {

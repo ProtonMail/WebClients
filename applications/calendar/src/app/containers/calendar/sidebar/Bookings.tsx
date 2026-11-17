@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { useInternalBooking } from '@proton/calendar/bookings/store/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
@@ -20,7 +21,7 @@ import {
 import { BookingItem } from './BookingsItem';
 
 interface Props {
-    headerRef: React.RefObject<HTMLDivElement>;
+    headerRef: RefObjectReact18Compat<HTMLDivElement>;
     utcDate: Date;
     disabled: boolean;
 }

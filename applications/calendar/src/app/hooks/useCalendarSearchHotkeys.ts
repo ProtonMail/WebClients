@@ -7,7 +7,7 @@ import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import { isBusy } from '@proton/shared/lib/shortcuts/calendar';
 
 interface Props {
-    elementRef: RefObject<HTMLDivElement | Document>;
+    elementRef: RefObject<HTMLDivElement | Document | null>;
     onNext: () => void;
     onPrevious: () => void;
     onBackFromSearch: () => void;

@@ -12,7 +12,7 @@ import SearchOverlay from './SearchOverlay';
 import './SearchOverlay.scss';
 
 interface Props {
-    containerRef: RefObject<HTMLDivElement>;
+    containerRef: RefObject<HTMLDivElement | null>;
     onSearch: () => void;
     onBackFromSearch: () => void;
 }

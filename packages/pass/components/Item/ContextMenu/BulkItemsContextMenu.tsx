@@ -54,7 +54,7 @@ const getBulkActionButtons = (
           ];
 };
 
-type Props = { item: ItemRevision; bulk: BulkSelection; anchorRef: RefObject<HTMLElement> };
+type Props = { item: ItemRevision; bulk: BulkSelection; anchorRef: RefObject<HTMLElement | null> };
 
 export const BulkItemsContextMenu: FC<Props> = ({ item, bulk, anchorRef }) => {
     const id = getItemKey(item);

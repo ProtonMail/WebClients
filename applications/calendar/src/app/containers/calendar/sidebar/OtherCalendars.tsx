@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
@@ -16,7 +17,7 @@ import CalendarSidebarListItems from '../CalendarSidebarListItems';
 interface Props {
     calendars: VisualCalendar[];
     otherCalendars: VisualCalendar[];
-    headerRef: React.RefObject<HTMLDivElement>;
+    headerRef: RefObjectReact18Compat<HTMLDivElement>;
     loadingSubscribedCalendars: boolean;
 }
 

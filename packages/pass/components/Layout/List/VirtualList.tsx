@@ -9,6 +9,7 @@ import {
 import type { ListRowRenderer, ScrollParams } from 'react-virtualized';
 import { AutoSizer, List } from 'react-virtualized';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import clsx from '@proton/utils/clsx';
 
 import './VirtualList.scss';
@@ -20,7 +21,7 @@ type Props = {
     onScrollEnd?: () => void;
     rowHeight: (index: number) => number;
     rowRenderer: ListRowRenderer;
-    containerRef?: RefObject<HTMLDivElement>;
+    containerRef?: RefObjectReact18Compat<HTMLDivElement>;
 };
 
 const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
@@ -49,7 +50,7 @@ const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
 
     useLayoutEffect(() => {
         if (rowCount > 0) {
-            const ref = virtualListRef as RefObject<List>;
+            const ref = virtualListRef as RefObject<List | null>;
             ref.current?.recomputeRowHeights();
             ref.current?.measureAllRows();
         }

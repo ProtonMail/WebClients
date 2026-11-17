@@ -12,7 +12,7 @@ interface Props {
     showCommander: (state: boolean) => void;
     createEvent: () => void;
     goToToday: () => void;
-    elementRef: RefObject<HTMLDivElement | Document>;
+    elementRef: RefObject<HTMLDivElement | Document | null>;
     goToNextView: () => void;
     goToPreviousView: () => void;
     showDayView: () => void;

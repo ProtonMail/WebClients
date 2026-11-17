@@ -79,7 +79,7 @@ interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'onMouseDown'> {
     onClickToday?: () => void;
     weekdays?: string[];
     weekdaysSingle?: string[];
-    actionRef: RefObject<TimeGridActionRef>;
+    actionRef: RefObject<TimeGridActionRef | null>;
     isDrawerApp?: boolean;
     children?: ReactNode; // Needed for the dropzone
 }

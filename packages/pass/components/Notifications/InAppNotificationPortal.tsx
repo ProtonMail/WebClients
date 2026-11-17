@@ -9,15 +9,15 @@ import type { MaybeNull } from '../../types/utils';
 import './InAppNotificationPortal.scss';
 
 type InAppNotificationPortalContextValue = {
-    container: MaybeNull<RefObject<HTMLDivElement>>;
-    setContainer: (next: MaybeNull<RefObject<HTMLDivElement>>) => void;
+    container: MaybeNull<RefObject<HTMLDivElement | null>>;
+    setContainer: (next: MaybeNull<RefObject<HTMLDivElement | null>>) => void;
 };
 
 const InAppNotificationPortalContext = createContext<MaybeNull<InAppNotificationPortalContextValue>>(null);
 export const useInAppNotificationContainer = createUseContext(InAppNotificationPortalContext);
 
 export const InAppNotificationProvider: FC<PropsWithChildren> = ({ children }) => {
-    const [container, setContainer] = useState<MaybeNull<RefObject<HTMLDivElement>>>(null);
+    const [container, setContainer] = useState<MaybeNull<RefObject<HTMLDivElement | null>>>(null);
 
     return (
         <InAppNotificationPortalContext.Provider value={useMemo(() => ({ container, setContainer }), [container])}>
