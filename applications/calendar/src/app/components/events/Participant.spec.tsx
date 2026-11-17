@@ -1,11 +1,12 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 
 import { render } from '../../helpers/tests/render';
 import Participant from './Participant';
 
 describe('Participant', () => {
-    const onCreateOrEditContactCallback = jest.fn();
+    const onCreateOrEditContactCallback = vi.fn();
     const props = {
         icon: <span>{'Icon'}</span>,
         name: 'text',

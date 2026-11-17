@@ -1,14 +1,16 @@
+import { vi } from 'vitest';
+
 import * as attendeeInfosModule from '@proton/shared/lib/calendar/attendeeInfos';
 
 import getAllEventsByUID from './getAllEventsByUID';
 
-jest.mock('@proton/shared/lib/calendar/attendeeInfos');
+vi.mock('@proton/shared/lib/calendar/attendeeInfos');
 
-const api = jest.fn();
+const api = vi.fn();
 
 describe('getAllEventsByUID', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should return all events by UID', async () => {
@@ -42,7 +44,7 @@ describe('getAllEventsByUID', () => {
                 },
             ],
         });
-        jest.spyOn(attendeeInfosModule, 'fetchPaginatedAttendeesInfo');
+        vi.spyOn(attendeeInfosModule, 'fetchPaginatedAttendeesInfo');
 
         const events = await getAllEventsByUID(api, 'calendarID', 'UID');
         expect(events.length).toBe(1);

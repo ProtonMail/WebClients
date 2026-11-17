@@ -2,25 +2,26 @@ import type { ComponentProps } from 'react';
 
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 
 import SpotlightProvider from '@proton/components/components/spotlight/Provider';
-import { mockUseSpotlightOnFeature } from '@proton/components/testing/mockUseSpotlightOnFeature';
+import { mockUseSpotlightOnFeature } from '@proton/components/testing/vitest/mockUseSpotlightOnFeature';
 
 import CalendarSearchInput from './CalendarSearchInput';
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    useConfig: jest.fn().mockReturnValue({
+    useConfig: vi.fn().mockReturnValue({
         APP_NAME: 'proton-calendar',
     }),
 }));
 
 const baseProps: ComponentProps<typeof CalendarSearchInput> = {
     value: '',
-    setValue: jest.fn(),
+    setValue: vi.fn(),
     loading: false,
-    onBack: jest.fn(),
-    onSearch: jest.fn(),
+    onBack: vi.fn(),
+    onSearch: vi.fn(),
     isSearchActive: true,
 };
 
@@ -34,7 +35,7 @@ const renderComponent = (props: ComponentProps<typeof CalendarSearchInput>) => {
 
 describe('CalendarSearchInput', () => {
     describe('when input is focused', () => {
-        const onSpotlightClose = jest.fn();
+        const onSpotlightClose = vi.fn();
 
         beforeEach(() => {
             mockUseSpotlightOnFeature({ show: true, onClose: onSpotlightClose });
@@ -57,7 +58,7 @@ describe('CalendarSearchInput', () => {
 
     describe('when Search button is hit', () => {
         it('should open', async () => {
-            const onSearch = jest.fn();
+            const onSearch = vi.fn();
 
             renderComponent({ ...baseProps, value: 'test', onSearch });
 

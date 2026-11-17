@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import {
@@ -45,7 +46,7 @@ describe('SendWithErrorsConfirmationModal', () => {
 
     it.each([true, false])('shows a "Got it" button that closes the modal when isProtonProtonInvite is %s', (isPP) => {
         const vevent = veventBuilder({});
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         render(
             <SendWithErrorsConfirmationModal
                 sendPreferencesMap={{
@@ -65,8 +66,8 @@ describe('SendWithErrorsConfirmationModal', () => {
                 isOpen={true}
             />
         );
-        expect(screen.queryByRole('button', { name: 'OK' })).toBeNull();
-        fireEvent.click(screen.getByRole('button', { name: 'Got it' }));
+        expect(screen.queryByRole('button', { name: 'OK', hidden: true })).toBeNull();
+        fireEvent.click(screen.getByRole('button', { name: 'Got it', hidden: true }));
         expect(onClose).toHaveBeenCalled();
     });
 });

@@ -1,16 +1,18 @@
+import { vi } from 'vitest';
+
 import type { DateTuple } from '@proton/components/components/miniCalendar/interface';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 
 import { getNextDateRange } from './getNextDateRange';
 import { getTimezoneAdjustedDateRange } from './getTimezoneAdjustedDateRange';
 
-jest.mock('@proton/shared/lib/i18n', () => ({
+vi.mock('@proton/shared/lib/i18n', () => ({
     dateLocale: { code: 'en-GB' },
 }));
 
 describe('getNextDateRange()', () => {
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     test.each([

@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE } from '@proton/shared/lib/calendar/constants';
 
 import modelToFrequencyProperties from './modelToFrequencyProperties';
@@ -6,9 +8,9 @@ import { getInitialFrequencyModel } from './state';
 const dummyStart = { date: new Date(2020, 0, 20), tzid: 'Europe/Athens' };
 const dummyFrequencyModel = getInitialFrequencyModel(dummyStart.date);
 
-jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
+vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
-    loadCryptoWorker: jest.fn(),
+    loadCryptoWorker: vi.fn(),
 }));
 
 describe('frequency model to frequency properties, daily recurring rule', () => {

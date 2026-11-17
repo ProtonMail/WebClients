@@ -1,6 +1,7 @@
 import type { JSX, PropsWithChildren } from 'react';
 
 import type { createMemoryHistory } from 'history';
+import { vi } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getOrganizationState } from '@proton/account/testing/redux-state';
@@ -13,7 +14,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
 import { extendStore, setupStore } from '../store/store';
 
@@ -55,7 +56,7 @@ export const getStoreWrapper = ({
             getPassword: () => '',
         } as any,
         api: apiMock as any,
-        eventManager: jest.fn() as any,
+        eventManager: vi.fn() as any,
         history,
     });
 

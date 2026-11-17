@@ -1,5 +1,6 @@
 import { getUnixTime } from 'date-fns';
 import { fr as frLocale } from 'date-fns/locale/fr';
+import { vi } from 'vitest';
 
 import type { ESItem } from '@proton/encrypted-search/models/interfaces';
 import { MAXIMUM_DATE_UTC } from '@proton/shared/lib/calendar/constants';
@@ -153,11 +154,11 @@ describe('getEventsDayDateString', () => {
         beforeEach(async () => {
             const mockLocale = frLocale;
 
-            jest.mock('@proton/shared/lib/i18n', () => ({
-                ...jest.requireActual('@proton/shared/lib/i18n'),
+            vi.doMock('@proton/shared/lib/i18n', async () => ({
+                ...(await vi.importActual('@proton/shared/lib/i18n')),
                 dateLocale: mockLocale,
             }));
-            jest.resetModules();
+            vi.resetModules();
             getEventsDayDateString = (await import('./searchHelpers')).getEventsDayDateString;
         });
 

@@ -11,6 +11,7 @@ import {
     isTuesday,
     set,
 } from 'date-fns';
+import { vi } from 'vitest';
 
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces/UserSettings';
@@ -164,12 +165,12 @@ describe('Booking range helpers', () => {
         // This is a Thursday
         const today = new Date('2026-01-15T10:30:00Z');
         beforeEach(() => {
-            jest.useFakeTimers();
-            jest.setSystemTime(today);
+            vi.useFakeTimers();
+            vi.setSystemTime(today);
         });
 
         afterEach(() => {
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         it('should create a full week range when recurring', () => {
@@ -195,8 +196,8 @@ describe('Booking range helpers', () => {
 
         it('should create a range starting from the default start hour when non-recurring', () => {
             const overridenToday = new Date('2026-01-15T07:30:00Z');
-            jest.useFakeTimers();
-            jest.setSystemTime(overridenToday);
+            vi.useFakeTimers();
+            vi.setSystemTime(overridenToday);
 
             const result = generateDefaultBookingRange(defaultUserSettings, overridenToday, 'Europe/Zurich', 30, false);
 
@@ -210,12 +211,12 @@ describe('Booking range helpers', () => {
         const today = new Date('2026-01-15T10:30:00Z');
 
         beforeEach(() => {
-            jest.useFakeTimers();
-            jest.setSystemTime(today);
+            vi.useFakeTimers();
+            vi.setSystemTime(today);
         });
 
         afterEach(() => {
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         const tomorrow = addDays(today, 1);
@@ -313,12 +314,12 @@ describe('Booking range helpers', () => {
         const today = new Date('2025-11-27T10:00:00Z');
 
         beforeEach(() => {
-            jest.useFakeTimers();
-            jest.setSystemTime(today);
+            vi.useFakeTimers();
+            vi.setSystemTime(today);
         });
 
         afterEach(() => {
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         it('should reset seconds and milliseconds when normalizing across weeks', () => {

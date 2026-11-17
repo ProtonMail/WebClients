@@ -1,4 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { vi } from 'vitest';
+import type { Mock } from 'vitest';
 
 import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
@@ -20,13 +22,13 @@ const setupTest = ({
     };
 };
 
-jest.mock('@proton/shared/lib/helpers/metrics', () => ({
-    sendTelemetryReport: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/metrics', () => ({
+    sendTelemetryReport: vi.fn(),
 }));
 
 describe('useSendCalendarInviteTelemetry', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it.each([
@@ -37,7 +39,7 @@ describe('useSendCalendarInviteTelemetry', () => {
         const { result } = setupTest();
         const sendReport = result.current;
 
-        const mockSendReport = sendTelemetryReport as jest.Mock;
+        const mockSendReport = sendTelemetryReport as Mock;
 
         await sendReport({
             event: TelemetryCalendarEvents.answer_invite,
@@ -56,7 +58,7 @@ describe('useSendCalendarInviteTelemetry', () => {
             const { result } = setupTest();
             const sendReport = result.current;
 
-            const mockSendReport = sendTelemetryReport as jest.Mock;
+            const mockSendReport = sendTelemetryReport as Mock;
 
             await sendReport({
                 event: TelemetryCalendarEvents.answer_invite,
@@ -75,7 +77,7 @@ describe('useSendCalendarInviteTelemetry', () => {
         const { result } = setupTest();
         const sendReport = result.current;
 
-        const mockSendReport = sendTelemetryReport as jest.Mock;
+        const mockSendReport = sendTelemetryReport as Mock;
 
         await sendReport({
             event: TelemetryCalendarEvents.answer_invite,
