@@ -35,9 +35,8 @@ export const PermissionsBlockedModal = () => {
                 />
             }
             title={c('Title').t`Camera and microphone are blocked`}
-            message={c('Info')
-                .t`Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.`}
-            primaryText={c('Action').t`Continue without mic and camera`}
+            message={c('Error').t`To use them, allow them in your browser settings, then rejoin the call.`}
+            primaryText={c('Action').t`Continue without camera and microphone`}
             onPrimaryAction={handleContinueWithout}
             onClose={handleContinueWithout}
         />

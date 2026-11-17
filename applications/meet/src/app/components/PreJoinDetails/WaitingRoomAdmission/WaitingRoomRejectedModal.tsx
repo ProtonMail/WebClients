@@ -27,11 +27,10 @@ export const WaitingRoomRejectedModal = () => {
                     }}
                 />
             }
-            title={c('Title').t`The host didn't admit you`}
+            title={c('Error').t`The host didn’t admit you`}
             headerClassName="pt-10"
             titleClassName="text-semibold"
-            subtitle={c('Info')
-                .t`You weren't admitted to this meeting. You can try joining again if you think this was a mistake.`}
+            subtitle={c('Error').t`If you think this was a mistake, try joining again.`}
             actions={
                 <Button size="large" className="secondary w-full rounded-full" onClick={retryWaitingRoom}>
                     {c('Action').t`Try again`}

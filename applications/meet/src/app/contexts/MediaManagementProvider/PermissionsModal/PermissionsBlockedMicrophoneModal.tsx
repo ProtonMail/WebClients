@@ -35,8 +35,7 @@ export const PermissionsBlockedMicrophoneModal = () => {
                 />
             }
             title={c('Title').t`Microphone is blocked`}
-            message={c('Info')
-                .t`Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.`}
+            message={c('Error').t`To use your microphone, allow it in your browser settings, then rejoin the call.`}
             primaryText={c('Action').t`Continue without microphone`}
             onPrimaryAction={handleContinueWithout}
             onClose={handleContinueWithout}

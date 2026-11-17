@@ -34,8 +34,8 @@ export const useCaptionsAgentWaitTimeout = () => {
         createNotification({
             type: 'error',
             text: agentEverPresent.current
-                ? c('Error').t`Live captions have stopped.`
-                : c('Error').t`Live captions couldn't be started.`,
+                ? c('Error').t`Live captions stopped. Turn them on to try again.`
+                : c('Error').t`Live captions didn’t start. Turn them on to try again.`,
         });
 
         // A failed write leaves the waiting state as it was, so the effect below would never arm a

@@ -207,7 +207,7 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
 
                 notifications.createNotification({
                     type: 'error',
-                    text: c('meet_2025 Error').t`Failed to start Picture-in-Picture`,
+                    text: c('Error').t`Picture-in-picture failed. Try again.`,
                 });
             }
 

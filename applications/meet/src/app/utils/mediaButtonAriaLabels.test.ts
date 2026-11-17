@@ -12,4 +12,9 @@ describe('mediaButtonAriaLabels', () => {
         expect(getMicrophoneButtonAriaLabel(ready)).toBe('Mute microphone');
         expect(getCameraButtonAriaLabel({ ...ready, isEnabled: false })).toBe('Turn on camera');
     });
+
+    it('names a toggle whose permission is blocked', () => {
+        expect(getMicrophoneButtonAriaLabel({ ...ready, hasPermission: false })).toBe('Microphone blocked');
+        expect(getCameraButtonAriaLabel({ ...ready, hasPermission: false })).toBe('Camera blocked');
+    });
 });

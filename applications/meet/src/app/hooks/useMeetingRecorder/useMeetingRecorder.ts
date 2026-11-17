@@ -273,7 +273,7 @@ export const useMeetingRecorder = () => {
     const handleEncoderError = useStableCallback(() => {
         createNotification({
             type: 'error',
-            text: c('Error').t`Recording stopped because of an error.`,
+            text: c('Error').t`Recording stopped unexpectedly. Start a new recording to continue.`,
         });
         void finishRecording();
     });

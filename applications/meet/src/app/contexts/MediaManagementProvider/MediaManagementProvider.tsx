@@ -299,7 +299,7 @@ export const MediaManagementProvider = ({
         if (room.state === ConnectionState.Connected) {
             if (isMicrophoneInitializing) {
                 if (mediaToggleTriggerRef.current === 'keyboard_shortcut') {
-                    createNotification({ text: c('Info').t`Your microphone is still starting` });
+                    createNotification({ type: 'info', text: c('Info').t`Your microphone is still starting` });
                 }
                 return;
             }
@@ -356,7 +356,7 @@ export const MediaManagementProvider = ({
         if (room.state === ConnectionState.Connected) {
             if (isCameraInitializing) {
                 if (mediaToggleTriggerRef.current === 'keyboard_shortcut') {
-                    createNotification({ text: c('Info').t`Your camera is still starting` });
+                    createNotification({ type: 'info', text: c('Info').t`Your camera is still starting` });
                 }
                 return;
             }
@@ -629,14 +629,11 @@ export const MediaManagementProvider = ({
 
                 let errorMessage: string;
                 if (cameraError && microphoneError) {
-                    errorMessage = c('Warning')
-                        .t`Could not access camera or microphone. You can try enabling them again from the meeting controls.`;
+                    errorMessage = c('Error').t`Camera and microphone didn’t start. Try turning them on again.`;
                 } else if (cameraError) {
-                    errorMessage = c('Warning')
-                        .t`Could not access camera. You can try enabling it again from the meeting controls.`;
+                    errorMessage = c('Error').t`Camera didn’t start. Try turning it on again.`;
                 } else {
-                    errorMessage = c('Warning')
-                        .t`Could not access microphone. You can try enabling it again from the meeting controls.`;
+                    errorMessage = c('Error').t`Microphone didn’t start. Try turning it on again.`;
                 }
 
                 createNotification({

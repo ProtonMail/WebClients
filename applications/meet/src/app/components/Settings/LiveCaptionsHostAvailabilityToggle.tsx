@@ -48,12 +48,10 @@ export const LiveCaptionsHostAvailabilityToggle = () => {
                         captionsScope: 'host_availability',
                     })
                 )
-                .catch((error: unknown) => {
+                .catch(() => {
                     createNotification({
                         type: 'error',
-                        text:
-                            (error instanceof Error && error.message) ||
-                            c('Error').t`Failed to update live captions availability`,
+                        text: c('Error').t`Setting not saved. Try again.`,
                     });
                 })
         );

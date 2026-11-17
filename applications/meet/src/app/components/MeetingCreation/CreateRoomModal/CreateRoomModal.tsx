@@ -76,7 +76,7 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
 
             onClose();
         } catch (error) {
-            notifyError(getApiErrorMessage(error) ?? c('Error').t`Failed to edit room name`);
+            notifyError(getApiErrorMessage(error) ?? c('Error').t`Room name not updated. Try again.`);
         }
     };
 
@@ -102,7 +102,7 @@ export const CreateRoomModal = ({ open, onClose, editedRoom }: CreateRoomModalPr
                 showCloseButton: false,
             });
         } catch (error) {
-            notifyError(getApiErrorMessage(error) ?? c('Error').t`Failed to create meeting`);
+            notifyError(getApiErrorMessage(error) ?? c('Error').t`Meeting not created. Try again.`);
         }
 
         onClose();

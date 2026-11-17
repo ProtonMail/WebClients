@@ -172,7 +172,7 @@ describe('floating emoji reactions use the meet-core allowlist', () => {
 
         expect(sent).toBe(false);
         expect(useNotifications().createNotification).toHaveBeenCalledWith(
-            expect.objectContaining({ type: 'error', text: 'Failed to send emoji reaction. Please try again.' })
+            expect.objectContaining({ type: 'error', text: 'Reaction not sent. Try again.' })
         );
         expect(client.encryptMessage).not.toHaveBeenCalled();
         expect(room.localParticipant.publishData).not.toHaveBeenCalled();

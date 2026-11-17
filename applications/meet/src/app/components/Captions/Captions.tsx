@@ -8,9 +8,9 @@ import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/par
 import clsx from '@proton/utils/clsx';
 
 import { useCaptionsSimMicrophoneUnavailable, useCaptionsSimStatus } from '../../dev/captionsSimStore';
+import { useRestoreCaptionLanguage } from '../../hooks/captions/useCaptionLanguage';
 import { useCaptionsAgentLifecycle } from '../../hooks/captions/useCaptionsAgentLifecycle';
 import { useCaptionsAgentWaitTimeout } from '../../hooks/captions/useCaptionsAgentWaitTimeout';
-import { useRestoreCaptionLanguage } from '../../hooks/captions/useCaptionLanguage';
 import { useCaptionsPreference } from '../../hooks/captions/useCaptionsPreference';
 import { useCleanupCaptions } from '../../hooks/captions/useCleanupCaptions';
 import { useLiveCaptionsFeatureEnabled } from '../../hooks/captions/useLiveCaptionsFeatureEnabled';
@@ -90,22 +90,22 @@ const CaptionsStatusMessage = ({ status }: { status: CaptionsMessage }) => {
         case 'failing':
             return (
                 <CaptionsError
-                    title={c('Error').t`Unable to generate captions`}
-                    detail={c('Error').t`Try turning live captions off and on again.`}
+                    title={c('Error').t`Live captions failed`}
+                    detail={c('Error').t`Turn live captions off and on again.`}
                 />
             );
         case 'disconnected':
             return (
                 <CaptionsError
-                    title={c('Error').t`Unable to generate captions`}
-                    detail={c('Error').t`Connection lost — captions will resume when reconnected`}
+                    title={c('Error').t`Live captions paused`}
+                    detail={c('Error').t`Connection lost. Captions will start again when you’re reconnected.`}
                 />
             );
         case 'microphoneUnavailable':
             return (
                 <CaptionsError
                     title={c('Error').t`Microphone not detected`}
-                    detail={c('Error').t`Check your audio settings and try again`}
+                    detail={c('Error').t`Check your audio settings and try again.`}
                 />
             );
     }

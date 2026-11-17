@@ -42,10 +42,10 @@ describe('PermissionsNeededModal', () => {
             within(dialog)
                 .getAllByRole('button')
                 .map((button) => button.textContent)
-        ).toEqual(['Allow access', 'Continue without mic and camera']);
+        ).toEqual(['Allow access', 'Continue without camera and microphone']);
     });
 
-    it('dismisses the modal on Escape like "Continue without mic and camera"', async () => {
+    it('dismisses the modal on Escape like "Continue without camera and microphone"', async () => {
         const { getPermissionsModal } = renderWithCameraAndMicrophoneNotGranted();
 
         await userEvent.keyboard('{Escape}');
@@ -53,10 +53,10 @@ describe('PermissionsNeededModal', () => {
         expect(getPermissionsModal()).toBe(PermissionsModalType.NONE);
     });
 
-    it('dismisses the modal on "Continue without mic and camera"', async () => {
+    it('dismisses the modal on "Continue without camera and microphone"', async () => {
         const { getPermissionsModal } = renderWithCameraAndMicrophoneNotGranted();
 
-        await userEvent.click(screen.getByRole('button', { name: 'Continue without mic and camera' }));
+        await userEvent.click(screen.getByRole('button', { name: 'Continue without camera and microphone' }));
 
         expect(getPermissionsModal()).toBe(PermissionsModalType.NONE);
     });

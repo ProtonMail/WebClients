@@ -45,7 +45,7 @@ export const CaptionLanguageSelect = () => {
             logger.error('Failed to update caption language', error);
             createNotification({
                 type: 'error',
-                text: c('Error').t`Failed to update caption language. Please try again.`,
+                text: c('Error').t`Caption language not changed. Try again.`,
             });
         }
     };

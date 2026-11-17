@@ -25,7 +25,7 @@ const getSubtitle = (status: WaitingRoomAdmissionStatus) => {
         case WaitingRoomAdmissionStatus.AWAITING:
             return c('Info').t`Waiting for the host to admit you. The host has been notified that you're waiting.`;
         case WaitingRoomAdmissionStatus.EXPIRED:
-            return c('Info').t`Join request expired. The host didn't admit you in time. Send a new request to join.`;
+            return c('Error').t`The host didn’t admit you in time. Send a new request to join.`;
         default:
             return undefined;
     }

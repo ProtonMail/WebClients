@@ -49,7 +49,7 @@ export const WaitingRoomItem = ({ request }: Props) => {
 
     const getAdmittingTooltip = () => {
         if (isMeetingFull) {
-            return c('Info').t`Meeting is full`;
+            return c('Error').t`Meeting full`;
         }
 
         if (!isAdmitting) {

@@ -33,7 +33,7 @@ export const getAddBackgroundNotice = ({
     isDriveUnavailable: boolean;
 }) => {
     if (isDriveUnavailable) {
-        return c('Info').t`Your backgrounds could not be loaded, so a new one cannot be added right now.`;
+        return c('Error').t`Backgrounds didn’t load. You can’t add new ones right now.`;
     }
 
     if (!hasReachedLimit) {
@@ -46,7 +46,7 @@ export const getAddBackgroundNotice = ({
 };
 
 export const getUnsupportedBackgroundEffectsNotice = () =>
-    c('Info').t`Background effects are not supported on your browser`;
+    c('Error').t`Background effects aren’t supported in this browser`;
 
 export const getCustomBackgroundOptions = (
     backgrounds: CustomBackground[],

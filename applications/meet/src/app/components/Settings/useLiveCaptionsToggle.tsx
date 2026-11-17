@@ -42,7 +42,7 @@ export const useLiveCaptionsToggle = () => {
             logger.error('Failed to update live captions', error);
             createNotification({
                 type: 'error',
-                text: c('Error').t`Failed to update live captions. Please try again.`,
+                text: c('Error').t`Live captions not updated. Try again.`,
             });
         });
 

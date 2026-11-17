@@ -119,7 +119,7 @@ export const useHostWaitingRoom = ({
                 sendAdmissionTelemetry([requestId]);
                 dispatch(removeWaitingParticipant(requestId));
             } catch (error) {
-                notifyError(c('Error').t`Failed to admit the participant. Please try again.`);
+                notifyError(c('Error').t`Couldn’t admit participant. Try again.`);
                 reportMeetError('Failed to admit waiting room join request', {
                     context: { error, requestId },
                 });
@@ -136,7 +136,7 @@ export const useHostWaitingRoom = ({
                 sendAdmissionTelemetry([requestId]);
                 dispatch(removeWaitingParticipant(requestId));
             } catch (error) {
-                notifyError(c('Error').t`Failed to deny the participant. Please try again.`);
+                notifyError(c('Error').t`Couldn’t deny participant. Try again.`);
                 reportMeetError('Failed to reject waiting room join request', {
                     context: { error, requestId },
                 });
@@ -161,7 +161,7 @@ export const useHostWaitingRoom = ({
             sendAdmissionTelemetry(admittedRequestIds);
             dispatch(removeWaitingParticipants(admittedRequestIds));
         } catch (error) {
-            notifyError(c('Error').t`Failed to admit the participants. Please try again.`);
+            notifyError(c('Error').t`Couldn’t admit participants. Try again.`);
             reportMeetError('Failed to admit all waiting room join requests', {
                 context: { error },
             });
@@ -184,7 +184,7 @@ export const useHostWaitingRoom = ({
                 }
                 dispatch(setWaitingRoomSetting(newValue));
             } catch (error) {
-                notifyError(c('Error').t`Failed to update waiting room setting. Please try again.`);
+                notifyError(c('Error').t`Waiting room setting not saved. Try again.`);
                 reportMeetError('Failed to update waiting room setting in-call', {
                     context: { error, value: newValue },
                 });
@@ -211,9 +211,7 @@ export const useHostWaitingRoom = ({
                 dispatch(setWaitingRoomSetting(newValue));
                 dispatch(updateMeeting(meeting));
             } catch (error) {
-                notifyError(
-                    getApiErrorMessage(error) ?? c('Error').t`Failed to update waiting room setting. Please try again.`
-                );
+                notifyError(getApiErrorMessage(error) ?? c('Error').t`Waiting room setting not saved. Try again.`);
             }
         },
         [dispatch, meetingLinkName, notifyError, updateMeetingWaitingRoom, waitingRoomSetting]

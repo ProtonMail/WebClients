@@ -75,7 +75,7 @@ export const useEmojiReaction = () => {
 
         notifications.createNotification({
             type: 'error',
-            text: c('Error').t`Failed to send emoji reaction. Please try again.`,
+            text: c('Error').t`Reaction not sent. Try again.`,
         });
     };
 

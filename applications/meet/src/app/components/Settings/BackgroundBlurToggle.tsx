@@ -26,7 +26,7 @@ export const BackgroundBlurToggle = ({
             disabled={!isBackgroundBlurSupported || loadingBackgroundBlur}
             tooltip={
                 withTooltip && !isBackgroundBlurSupported
-                    ? c('Tooltip').t`Background blur is not supported on your browser`
+                    ? c('Error').t`Background blur isn’t supported in this browser`
                     : undefined
             }
         />

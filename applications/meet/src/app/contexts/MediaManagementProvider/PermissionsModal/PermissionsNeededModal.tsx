@@ -56,7 +56,7 @@ export const PermissionsNeededModal = () => {
 
     const secondaryText = () => {
         if (cameraNeeded && micNeeded) {
-            return c('Action').t`Continue without mic and camera`;
+            return c('Action').t`Continue without camera and microphone`;
         }
         if (cameraNeeded) {
             return c('Action').t`Continue without camera`;

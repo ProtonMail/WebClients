@@ -257,7 +257,7 @@ describe('Backgrounds', () => {
         // aria-disabled rather than the disabled attribute, so the tiles stay reachable and the
         // explanation below them can be announced.
         expect(blurOption).toHaveAttribute('aria-disabled', 'true');
-        expect(screen.getByText('Background effects are not supported on your browser')).toBeInTheDocument();
+        expect(screen.getByText('Background effects aren’t supported in this browser')).toBeInTheDocument();
 
         await user.click(blurOption);
 
@@ -269,7 +269,7 @@ describe('Backgrounds', () => {
 
         renderPicker();
 
-        const notice = screen.getByText('Background effects are not supported on your browser');
+        const notice = screen.getByText('Background effects aren’t supported in this browser');
 
         expect(screen.getByRole('radiogroup', { name: 'Blur and personal' })).toHaveAttribute(
             'aria-describedby',
@@ -544,9 +544,7 @@ describe('Backgrounds', () => {
             // Uploading against a folder we could not read would put a background where neither the
             // limit nor the reconciliation can see it.
             expect(addButton).toHaveAttribute('aria-disabled', 'true');
-            expect(addButton).toHaveAccessibleDescription(
-                'Your backgrounds could not be loaded, so a new one cannot be added right now.'
-            );
+            expect(addButton).toHaveAccessibleDescription('Backgrounds didn’t load. You can’t add new ones right now.');
         });
 
         it('should show the name of a background that has no thumbnail', () => {

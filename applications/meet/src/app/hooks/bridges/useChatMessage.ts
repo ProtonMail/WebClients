@@ -69,7 +69,7 @@ export const useChatMessage = () => {
 
         notifications.createNotification({
             type: 'error',
-            text: c('Error').t`Failed to send chat message. Please try again.`,
+            text: c('Error').t`Message not sent. Check your connection and try again.`,
         });
     };
 
@@ -205,7 +205,7 @@ export const useChatMessage = () => {
             notifications.createNotification({
                 key: 'chat-message-too-long',
                 type: 'error',
-                text: c('Error').t`Message is too long to send`,
+                text: c('Error').t`Message too long. Remove some text and try again.`,
             });
 
             return false;

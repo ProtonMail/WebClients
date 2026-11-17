@@ -248,7 +248,7 @@ describe('ChatItem', () => {
         );
 
         expect(screen.getByText(mockChatMessage.message)).toHaveClass('color-disabled');
-        expect(screen.queryByText('Not sent, check your connection.')).not.toBeInTheDocument();
+        expect(screen.queryByText('Not sent. Check your connection.')).not.toBeInTheDocument();
     });
 
     it('should render a sent message with the default text color', () => {
@@ -271,9 +271,9 @@ describe('ChatItem', () => {
         );
 
         expect(screen.getByText(mockChatMessage.message)).toHaveClass('color-disabled');
-        expect(screen.getByText('Not sent, check your connection.')).toBeInTheDocument();
+        expect(screen.getByText('Not sent. Check your connection.')).toBeInTheDocument();
 
-        await user.click(screen.getByRole('button', { name: 'Retry' }));
+        await user.click(screen.getByRole('button', { name: 'Try again' }));
         expect(mockRetryMessage).toHaveBeenCalledWith({ ...mockChatMessage, status: 'failed' });
 
         await user.click(screen.getByRole('button', { name: 'Discard' }));
@@ -526,7 +526,10 @@ describe('ChatItem', () => {
 
             expect(mockSendReaction).not.toHaveBeenCalled();
             expect(createNotification).toHaveBeenCalledWith(
-                expect.objectContaining({ type: 'error', text: 'This emoji can’t be used as a reaction' })
+                expect.objectContaining({
+                    type: 'error',
+                    text: 'This emoji can’t be used as a reaction. Pick another one.',
+                })
             );
             expect(getPicker()).toBeInTheDocument();
         });

@@ -15,7 +15,7 @@ export const getMicrophoneButtonAriaLabel = ({
         return c('Info').t`Microphone is starting`;
     }
     if (!hasPermission) {
-        return c('Info').t`Microphone permission denied`;
+        return c('Error').t`Microphone blocked`;
     }
     if (noDeviceDetected) {
         return c('Info').t`No microphone detected`;
@@ -38,7 +38,7 @@ export const getCameraButtonAriaLabel = ({
         return c('Info').t`Camera is starting`;
     }
     if (!hasPermission) {
-        return c('Info').t`Camera permission denied`;
+        return c('Error').t`Camera blocked`;
     }
     if (noDeviceDetected) {
         return c('Info').t`No camera detected`;

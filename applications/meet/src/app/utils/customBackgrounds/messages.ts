@@ -9,7 +9,7 @@ export const getRejectionMessage = (reason: BackgroundRejectionReason): string =
 
     switch (reason) {
         case 'fileTooLarge':
-            return c('Error').t`This image is too large. Pick one under ${maxMegabytes} MB.`;
+            return c('Error').t`This file is too large. Pick one under ${maxMegabytes} MB.`;
         case 'nameTooLong':
             return c('Error').t`This file name is too long. Rename the image and try again.`;
         case 'unsupportedType':
@@ -18,6 +18,6 @@ export const getRejectionMessage = (reason: BackgroundRejectionReason): string =
             return c('Error').t`This image is too big. Pick one up to ${maxEdge} pixels wide and tall.`;
         case 'empty':
         case 'undecodable':
-            return c('Error').t`This image could not be read. Pick another one.`;
+            return c('Error').t`This image can’t be opened. Pick another one.`;
     }
 };

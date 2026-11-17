@@ -35,8 +35,7 @@ export const PermissionsBlockedCameraModal = () => {
                 />
             }
             title={c('Title').t`Camera is blocked`}
-            message={c('Info')
-                .t`Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.`}
+            message={c('Error').t`To use your camera, allow it in your browser settings, then rejoin the call.`}
             primaryText={c('Action').t`Continue without camera`}
             onPrimaryAction={handleContinueWithout}
             onClose={handleContinueWithout}
