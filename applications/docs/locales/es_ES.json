@@ -309,6 +309,9 @@
       "Dismiss": [
         "Descartar"
       ],
+      "Dismiss notification": [
+        "Descartar notificación"
+      ],
       "Done": [
         "Hecho"
       ],
@@ -419,6 +422,9 @@
       ],
       "Go to label": [
         "Ir a la etiqueta"
+      ],
+      "Go to today": [
+        "Ir al día de hoy"
       ],
       "Google Drive": [
         "Google Drive"
@@ -567,6 +573,9 @@
       "Next": [
         "Siguiente"
       ],
+      "Next contact": [
+        "Siguiente contacto"
+      ],
       "Next month": [
         "Mes siguiente"
       ],
@@ -605,6 +614,9 @@
       ],
       "Preview logs": [
         "Vista previa de los registros"
+      ],
+      "Previous contact": [
+        "Contacto anterior"
       ],
       "Previous month": [
         "Mes anterior"
@@ -824,6 +836,9 @@
       ],
       "Toggle debug mode": [
         "Alternar modo de depuración"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Expandir o contraer las subcarpetas de ${ itemName }"
       ],
       "Trashing...": [
         "Eliminando..."
@@ -3446,6 +3461,9 @@
       "There was an error when exporting the contacts vCards": [
         "Se ha producido un error al exportar los archivos vCards de los contactos."
       ],
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Este documento es demasiado grande para ser copiado. Descárgalo para guardar una copia de tu trabajo."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
@@ -3930,6 +3948,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
       ]
     },
     "fido2: Info": {
@@ -4605,6 +4626,9 @@
       "Can view only": [
         "Solo lectura"
       ],
+      "Can't connect": [
+        "No es posible conectar"
+      ],
       "Can't move a folder into itself": [
         "No se puede mover una carpeta dentro de sí misma"
       ],
@@ -4682,9 +4706,6 @@
         "Crear una nube segura para ${ memberCount } miembro",
         "Crear una nube segura para ${ memberCount } miembros"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Crea un documento cifrado de extremo a extremo."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Crea documentos y hojas de cálculo cifrados de extremo a extremo."
       ],
@@ -4697,6 +4718,9 @@
       "Creating new document...": [
         "Creando un nuevo documento..."
       ],
+      "Creating new document…": [
+        "Creando nuevo documento…"
+      ],
       "Current plan": [
         "Plan actual"
       ],
@@ -4705,6 +4729,9 @@
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
+      ],
+      "Decrypting document…": [
+        "Descifrando documento…"
       ],
       "Decrypting your document": [
         "Descifrando tu documento"
@@ -5065,6 +5092,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Abre la guía para ver las acciones recomendadas y los enlaces útiles."
       ],
+      "Opening document…": [
+        "Abriendo documento…"
+      ],
       "Opening...": [
         "Abriendo..."
       ],
@@ -5141,14 +5171,14 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espera mientras buscamos contactos que contengan datos cifrados con la clave inactiva."
       ],
+      "Preparing editor…": [
+        "Preparando editor…"
+      ],
       "Primary": [
         "Principal"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navegación privada (o modo «incógnito») solo es útil para mantener oculta tu actividad en tu dispositivo. Evita que tu navegador guarde el historial y las cookies, pero no te hace invisible. Tu ISP, administrador de red y los sitios web que visitas aún pueden ver lo que haces en línea."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Los documentos públicos aún no están activados para tu organización."
       ],
       "Read-only": [
         "Solo lectura"
@@ -5167,6 +5197,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
+      ],
+      "Redirecting…": [
+        "Redireccionando…"
       ],
       "Referral link copied to your clipboard": [
         "El enlace de referido se ha copiado en el portapapeles"
@@ -5276,6 +5309,9 @@
       ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
+      ],
+      "Syncing latest changes…": [
+        "Sincronizando últimos cambios…"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "No disponible temporalmente debido a la alta demanda. Vuelve a intentarlo más tarde."
@@ -5486,6 +5522,9 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Ya no se ofrecen lugares como asistentes de redacción"
       ],
       "you": [
         "tú"
@@ -5963,6 +6002,9 @@
       "Last month only": [
         "Solo el último mes"
       ],
+      "Loading": [
+        "Cargando"
+      ],
       "Location ${ locationLabel }": [
         "Ubicación ${ locationLabel }"
       ],
@@ -6354,6 +6396,73 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activar ${ reason }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Código"
+      ],
+      "2x Basic usage": [
+        "2x uso Básico"
+      ],
+      "5x Plus usage": [
+        "Uso de 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acceso con API, con ${ credit } de crédito mensual"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acceso API, con un crédito mensual de ${ credit } por usuario."
+      ],
+      "Everything in Basic, and:": [
+        "Todo en Básico, y:"
+      ],
+      "Everything in Free, and:": [
+        "Todo en Gratis, y:"
+      ],
+      "Everything in Plus, and:": [
+        "Todo sobre Plus, y:"
+      ],
+      "Extended image generation": [
+        "Generación extendida de imágenes"
+      ],
+      "Includes:": [
+        "Incluye:"
+      ],
+      "Limited image generation": [
+        "Generación limitada de imágenes"
+      ],
+      "Limited messages and chat history": [
+        "Mensajes limitados e historial de conversaciones"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilidades limitadas, Proyectos y tareas programadas"
+      ],
+      "Maximum image generation": [
+        "Generación máxima de imágenes"
+      ],
+      "Maximum Skills and Projects": [
+        "Mayores habilidades y Proyectos"
+      ],
+      "More image generation": [
+        "Más generación de imágenes"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Más habilidades, Proyectos y tareas programadas"
+      ],
+      "More usage": [
+        "Uso mayor"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Por codificación y construcción"
+      ],
+      "For everyday chats": [
+        "Por conversaciones diarias"
+      ],
+      "For getting more done": [
+        "Por hacer más"
       ]
     },
     "Mail import summary": {
@@ -7926,38 +8035,11 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (impuestos no incluidos)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "No se puede combinar ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } con ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } solo está disponible en los planes para empresas."
-      ],
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad a pagar después de la prueba el ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Este plan requiere una organización."
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "No se pueden comprar cuentas Born Private con una suscripción activa."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Para comprar créditos se requiere una compra aparte."
-      ],
       "By switching, you agree to our ${ termsLink }.": [
         "Al cambiar, aceptas nuestros ${ termsLink }."
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Solo se puede comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Cierra las cuentas de cartera adicionales antes de cambiar de plan."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Cierra las carteras adicionales antes de cambiar de plan."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Las plazas de Proton Meet deben coincidir con el número de miembros."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Precio de renovación sujeta a cambios de acuerdo a ${ termsAndConditionsLink }"
@@ -7965,30 +8047,12 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
       ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Las licencias de Scribe no pueden superar el número de miembros."
-      ],
       "terms and conditions": [
         "términos y condiciones"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "La iniciativa Born Private requiere una donación."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descuento es válido para ${ renewalsWithCoupon } renovación.",
         "El descuento es válido para ${ renewalsWithCoupon } renovaciones."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "El plan seleccionado no ofrece suficientes direcciones para tu cuenta."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "El plan seleccionado no ofrece suficientes dominios para tu cuenta."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "El plan seleccionado no ofrece suficientes miembros para tu cuenta."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "El plan seleccionado no ofrece suficiente almacenamiento para tu cuenta."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
@@ -8015,39 +8079,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puedes cancelar en cualquier momento.",
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puedes cancelar en cualquier momento."
-      ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Este servidor dedicado está asignado a una pasarela y no se puede cambiar."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Este plan no admite las funciones gestionadas de tu cuenta."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Este plan no admite los miembros de tu cuenta."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Los planes de prueba no admiten licencias de ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Los planes de prueba no admiten dominios personalizados."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Los planes de prueba no admiten IP dedicadas."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Los planes de prueba no admiten licencias de Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Los planes de prueba no admiten tantos miembros."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Ya tienes ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Ya tienes una cuenta Born Private."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Tu cuenta es demasiado antigua para la iniciativa Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9347,9 +9378,6 @@
       "Cannot add more addresses": [
         "No se pueden añadir más direcciones"
       ],
-      "Cannot load link": [
-        "Error al cargar el enlace"
-      ],
       "Change access to viewer?": [
         "¿Cambiar el acceso a lector?"
       ],
@@ -9778,12 +9806,6 @@
       ],
       "Subscription canceled": [
         "Se ha cancelado la suscripción."
-      ],
-      "The link either does not exist or has expired": [
-        "El enlace no existe o ha expirado."
-      ],
-      "The link expired": [
-        "El enlace ha expirado."
       ],
       "This document is password protected": [
         "El documento está protegido por contraseña."

@@ -3471,6 +3471,9 @@
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
       ],
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Acest document este prea mare pentru a fi copiat. Descărcați-l pentru a păstra o copie."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
@@ -3958,6 +3961,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
       ]
     },
     "fido2: Info": {
@@ -4747,9 +4753,6 @@
         "Creați un cont cloud securizat pentru ${ memberCount } membri",
         "Creați un cont cloud securizat pentru ${ memberCount } de membri"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Creați un document cu criptare bilaterală."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Creați documente și registre de lucru criptate bilateral."
       ],
@@ -5214,9 +5217,6 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Navigarea privată (sau modul „incognito”) este utilă doar pentru a vă păstra activitatea ascunsă pe dispozitiv. Îți oprește browserul să salveze istoricul și cookie-urile, dar nu te face invizibil. ISP-ul dvs., administratorul de rețea și site-urile web pe care le vizitați pot vedea în continuare ceea ce faceți online."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Documentele publice nu sunt încă activate pentru această organizație."
       ],
       "Read-only": [
         "Doar în citire"
@@ -8052,38 +8052,11 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (fără TVA)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } nu poate fi combinat cu ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } este disponibil doar pentru planurile de afaceri."
-      ],
       "Amount due after trial on ${ formattedDate }": [
         "Suma datorată după evaluare la ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "Pentru acest plan este necesară o organizație."
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Conturile „Born Private” nu pot fi achiziționate dacă există un abonament activ."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Achiziționarea de credite necesită o tranzacție separată."
-      ],
       "By switching, you agree to our ${ termsLink }.": [
         "Dacă vă comutați, sunteți de acord cu acești ${ termsLink }."
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Poate fi achiziționat doar un singur plan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Închideți conturile suplimentare de portofele înainte de a vă schimba planul."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Închideți portofelele suplimentare înainte de a vă schimba planul."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Numărul de licențe Proton Meet trebuie să corespundă numărului de membri."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Prețul de reînnoire poate fi modificat în conformitate cu informațiile din ${ termsAndConditionsLink }."
@@ -8091,31 +8064,13 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
       ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Numărul licențelor pentru Scribe nu îl poate depăși pe cel al numărului de membri."
-      ],
       "terms and conditions": [
         "termeni și condiții"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "Inițiativa „Born Private” necesită o donație."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoiri.",
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } de reînnoiri."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Planul selectat nu oferă suficiente adrese pentru contul pe care îl dețineți."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Planul selectat nu oferă suficiente domenii pentru contul deținut."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Planul selectat nu oferă suficiente licențe pentru membri din contul pe care îl dețineți."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Planul selectat nu oferă suficient spațiu de stocare pentru contul deținut."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Prețul cu reducerea specială este valabil pentru ${ couponRedemptions } lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
@@ -8147,39 +8102,6 @@
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } lună. Puteți anula oricând.",
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
-      ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Acest server dedicat este alocat unei porți de acces și nu poate fi modificat."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Acest plan nu acceptă funcțiile gestionate din contul deținut."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Acest plan nu oferă suport pentru membrii din contul deținut."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Abonamentele de probare nu acceptă licențe pentru ${ LUMO_SHORT_APP_NAME }."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Planurile de probare nu suportă domenii personale."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Abonamentele de probare nu oferă suport pentru adrese IP dedicate."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Acest plan nu suportă licențe pentru Scribe."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Abonamentele de probare nu suportă un număr atât de mare de membri."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Deja dețineți planul ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
-      ],
-      "You already own a Born Private account.": [
-        "Deja dețineți un cont „Born Private”."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Contul este prea vechi pentru inițiativa „Born Private”."
       ]
     },
     "PGP key encryption warning": {
@@ -9518,9 +9440,6 @@
       "Cannot add more addresses": [
         "Nu se mai pot adăuga adrese"
       ],
-      "Cannot load link": [
-        "Legătura nu s-a putut încărca."
-      ],
       "Change access to viewer?": [
         "Schimbați accesul cu „utilizator”?"
       ],
@@ -9952,12 +9871,6 @@
       ],
       "Subscription canceled": [
         "Abonament anulat"
-      ],
-      "The link either does not exist or has expired": [
-        "Legătura nu există sau a expirat"
-      ],
-      "The link expired": [
-        "Legătura a expirat"
       ],
       "This document is password protected": [
         "Acest document este protejat cu parolă"

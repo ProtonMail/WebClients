@@ -3446,6 +3446,9 @@
       "There was an error when exporting the contacts vCards": [
         "Der opstod en fejl under eksport af kontakternes vCards"
       ],
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Dokumentet er for stort til at kopiere. Download det for at beholde en kopi af dit arbejde."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
       ],
@@ -3930,6 +3933,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Din browser understøtter ikke sikkerhedsnøgler. Prøv en anden browser."
       ]
     },
     "fido2: Info": {
@@ -4682,9 +4688,6 @@
         "Opret en sikker sky til ${ memberCount } medlem",
         "Opret en sikker sky til ${ memberCount } medlemmer"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Opret et end-to-end-krypteret dokument."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Opret end-to-end-krypterede dokumenter og regneark."
       ],
@@ -5146,9 +5149,6 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat browsing (eller \"inkognito\"-tilstand) er kun nyttig til at holde din aktivitet skjult på din enhed. Den forhindrer din browser i at gemme historik og cookies, men den gør dig ikke usynlig. Din internetudbyder, netværksadministrator og de websteder, du besøger, kan stadig se, hvad du foretager dig online."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Offentlige dokumenter er endnu ikke aktiveret for din organisation."
       ],
       "Read-only": [
         "Skrivebeskyttet"
@@ -7926,38 +7926,11 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (ekskl. moms)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan ikke kombineres md ${ PLAN_NAMES[PLANS.PASS] }."
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er kun tilgængeligt på erhvervsabonnementer."
-      ],
       "Amount due after trial on ${ formattedDate }": [
         "Beløb, der skal betales efter prøveperioden den ${ formattedDate }"
       ],
-      "An organization is required for this plan.": [
-        "En organisation kræves for dette abonnement."
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "Born Private-konti kan ikke købes uden et aktivt abonnement."
-      ],
-      "Buying credits requires a separate purchase.": [
-        "Køb af kredit kræver et separat køb."
-      ],
       "By switching, you agree to our ${ termsLink }.": [
         "Ved at skifte, accepterer du vores ${ termsLink }."
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "Der kan kun købes ét ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "Luk ekstra wallet-konti før du ændrer dit abonnement."
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "Luk ekstra wallets før du ændrer dit abonnement."
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Antallet af pladser i Proton Meet skal matche antallet af medlemmer."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Fornyelsespriser kan ændres i henhold til ${ termsAndConditionsLink }."
@@ -7965,37 +7938,19 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, annuller når som helst."
       ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Der kan ikke være flere Scribe-pladser end medlemmer."
-      ],
       "terms and conditions": [
         "vilkår og betingelser"
-      ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private kræver en donation."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "Det valgte abonnement understøtter ikke nok adresser til din konto."
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "Det valgte abonnement understøtter ikke nok domæner til din konto."
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "Det valgte abonnement understøtter ikke nok medlemmer til din konto."
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "Det valgte abonnement understøtter ikke nok lagerplads til din konto."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måned. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst.",
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
+        "Den særligt nedsatte pris gælder den første ${ subscriptionLength } måned.",
         "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
@@ -8015,39 +7970,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måned. Du kan annullere det når som helst.",
         "Så vil det automatisk blive fornyet for ${ renewPriceStr } for ${ renewalLength } måneder. Du kan annullere det når som helst."
-      ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "Den dedikerede server er tilknyttet en gateway, og kan ikke ændres."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Dette abonnement understøtter ikke dine administrerede funktioner på din konto."
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "Dette abonnement understøtter ikke medlemmer på din konto."
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "Prøveversioner understøtter ikke ${ LUMO_SHORT_APP_NAME }-pladser."
-      ],
-      "Trial plans don’t support custom domains.": [
-        "Prøveversioner understøtter ikke brugerdomæner."
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "Prøveversioner understøtter ikke dedikerede IP-adresser."
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "Prøveversioner understøtter ikke Scribe-pladser."
-      ],
-      "Trial plans don’t support this many members.": [
-        "Prøveversioner understøtter ikke så stort et antal medlemmer."
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "Du ejer allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own a Born Private account.": [
-        "Du ejer allerede en Born Private-konto."
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "Din konto er for gammel til Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9347,9 +9269,6 @@
       "Cannot add more addresses": [
         "Kan ikke tilføje flere adresser"
       ],
-      "Cannot load link": [
-        "Link kunne ikke indlæses"
-      ],
       "Change access to viewer?": [
         "Skift adgang til seer?"
       ],
@@ -9778,12 +9697,6 @@
       ],
       "Subscription canceled": [
         "Abonnement annulleret"
-      ],
-      "The link either does not exist or has expired": [
-        "Linket findes enten ikke eller er udløbet"
-      ],
-      "The link expired": [
-        "Linket er udløbet"
       ],
       "This document is password protected": [
         "Dette dokument er låst med et kodeord"

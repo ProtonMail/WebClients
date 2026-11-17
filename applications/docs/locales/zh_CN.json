@@ -555,6 +555,9 @@
       "Next": [
         "继续"
       ],
+      "Next contact": [
+        "下一个联系人"
+      ],
       "Next month": [
         "下个月"
       ],
@@ -593,6 +596,9 @@
       ],
       "Preview logs": [
         "预览日志"
+      ],
+      "Previous contact": [
+        "上一个联系人"
       ],
       "Previous month": [
         "上个月"
@@ -3878,6 +3884,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥认证时出现问题，请重试。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "此浏览器不支持安全密钥，请换用其他浏览器。"
       ]
     },
     "fido2: Info": {
@@ -4587,9 +4596,6 @@
       "Create a secure cloud for ${ memberCount } member": [
         "为 ${ memberCount } 位成员创建安全云端"
       ],
-      "Create an end-to-end encrypted document.": [
-        "创建端到端加密文档"
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "创建端到端加密的文档和电子表格。"
       ],
@@ -5036,9 +5042,6 @@
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "隐私浏览模式（或称「无痕模式」）仅能隐藏您在设备上的活动痕迹。它能阻止浏览器保存历史记录和 Cookie，但无法让您真正隐身。您的互联网服务提供商、网络管理员以及访问的网站仍可追踪您的在线行为。"
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "您的组织尚未启用公开文档。"
       ],
       "Read-only": [
         "只读"
@@ -7695,38 +7698,11 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (不含税)"
       ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 不能与 ${ PLAN_NAMES[PLANS.PASS] } 组合使用。"
-      ],
-      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
-        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 仅适用于商业套餐。"
-      ],
       "Amount due after trial on ${ formattedDate }": [
         "试用期结束后于 ${ formattedDate } 应付金额"
       ],
-      "An organization is required for this plan.": [
-        "此套餐需要组织！"
-      ],
-      "Born Private accounts can’t be purchased with an active subscription.": [
-        "在订阅生效期间无法购买 Born Private 账户。"
-      ],
-      "Buying credits requires a separate purchase.": [
-        "购买额度需要单独进行！"
-      ],
       "By switching, you agree to our ${ termsLink }.": [
         "切换即表示您同意我们的${ termsLink }。"
-      ],
-      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
-        "仅可购买一个 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
-      ],
-      "Please close extra wallet accounts before changing your plan.": [
-        "请在更改套餐前关闭多余的钱包账户。"
-      ],
-      "Please close extra wallets before changing your plan.": [
-        "请在更改套餐前关闭多余的钱包。"
-      ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet 席位数量必须与成员数量匹配。"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "续费价格会根据${ termsAndConditionsLink }进行调整。"
@@ -7734,29 +7710,11 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
       ],
-      "Scribe seats can’t exceed the number of members.": [
-        "Scribe 席位数量不能超过成员数量。"
-      ],
       "terms and conditions": [
         "服务条款"
       ],
-      "The Born Private initiative requires a donation.": [
-        "Born Private 套餐需要捐款。"
-      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "该折扣适用于 ${ renewalsWithCoupon } 次续订"
-      ],
-      "The selected plan doesn’t offer enough addresses for your account.": [
-        "所选套餐未为您的账户提供足够的地址。"
-      ],
-      "The selected plan doesn’t offer enough domains for your account.": [
-        "所选套餐未为您的账户提供足够的域名。"
-      ],
-      "The selected plan doesn’t offer enough members for your account.": [
-        "所选套餐未为您的账户提供足够的成员名额。"
-      ],
-      "The selected plan doesn’t offer enough storage for your account.": [
-        "所选套餐未为您的账户提供足够的存储空间。"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "特惠价格在 ${ couponRedemptions } 个月内有效，之后将以每月 ${ renewPriceStr } 续订，您可以随时取消。"
@@ -7778,39 +7736,6 @@
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
-      ],
-      "This dedicated server is assigned to a gateway and can’t be changed.": [
-        "此专用服务器已分配给网关，无法更改。"
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "此套餐不支持您账户上的托管功能。"
-      ],
-      "This plan doesn’t support the members on your account.": [
-        "此套餐不支持您账户中的成员。"
-      ],
-      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
-        "试用套餐不支持 ${ LUMO_SHORT_APP_NAME } 席位。"
-      ],
-      "Trial plans don’t support custom domains.": [
-        "试用套餐不支持自定义域名。"
-      ],
-      "Trial plans don’t support dedicated IPs.": [
-        "试用套餐不支持专用 IP。"
-      ],
-      "Trial plans don’t support Scribe seats.": [
-        "试用套餐不支持 Scribe 席位。"
-      ],
-      "Trial plans don’t support this many members.": [
-        "试用套餐不支持如此多的成员。"
-      ],
-      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
-        "您已经拥有 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
-      ],
-      "You already own a Born Private account.": [
-        "您已经拥有一个 Born Private 账户。"
-      ],
-      "Your account is too old for the Born Private initiative.": [
-        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ]
     },
     "PGP key encryption warning": {
@@ -9071,9 +8996,6 @@
       "Cannot add more addresses": [
         "无法添加更多地址"
       ],
-      "Cannot load link": [
-        "无法加载链接"
-      ],
       "Change access to viewer?": [
         "将访问权限更改为查看者？"
       ],
@@ -9496,12 +9418,6 @@
       ],
       "Subscription canceled": [
         "订阅已取消"
-      ],
-      "The link either does not exist or has expired": [
-        "该链接不存在或已失效"
-      ],
-      "The link expired": [
-        "该链接已过期"
       ],
       "This document is password protected": [
         "此文档受密码保护"

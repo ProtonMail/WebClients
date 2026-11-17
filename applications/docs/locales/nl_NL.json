@@ -4530,6 +4530,9 @@
       "Can view only": [
         "Kan alleen bekijken"
       ],
+      "Can't connect": [
+        "Kan niet verbinden"
+      ],
       "Can't move a folder into itself": [
         "Een map kan niet naar zichzelf worden verplaatst"
       ],
@@ -4601,9 +4604,6 @@
         "Maak een beveiligde cloud voor ${ memberCount } lid",
         "Maak een beveiligde cloud voor ${ memberCount } leden"
       ],
-      "Create an end-to-end encrypted document.": [
-        "Maak een end-to-end versleuteld document."
-      ],
       "Create end-to-end encrypted documents and spreadsheets.": [
         "Maak end-to-end versleutelde documenten en spreadsheets."
       ],
@@ -4613,6 +4613,9 @@
       "Create your first folder and start moving your files.": [
         "Maak uw eerste map aan en begin uw bestanden te verplaatsen."
       ],
+      "Creating new document…": [
+        "Nieuw document maken…"
+      ],
       "Current plan": [
         "Huidig abonnement"
       ],
@@ -4621,6 +4624,9 @@
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
+      ],
+      "Decrypting document…": [
+        "Document ontsleutelen…"
       ],
       "Decrypting your document": [
         "Uw document ontsleutelen"
@@ -4951,6 +4957,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Open de handleiding voor aanbevolen acties en nuttige koppelingen."
       ],
+      "Opening document…": [
+        "Document openen…"
+      ],
       "Opening...": [
         "Openen..."
       ],
@@ -5024,14 +5033,14 @@
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Een ogenblik geduld, we zoeken naar contactpersonen die gegevens bevatten die versleuteld zijn met de inactieve sleutel."
       ],
+      "Preparing editor…": [
+        "Editor voorbereiden…"
+      ],
       "Primary": [
         "Primair"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privé browsen (of \"incognito\" modus) is alleen handig om uw activiteit verborgen te houden op uw apparaat. Het stopt uw browser om geschiedenis en cookies op te slaan, maar het maakt u niet onzichtbaar. Uw ISP, netwerkbeheerder en de websites die u bezoekt kunnen nog steeds zien wat u online doet."
-      ],
-      "Public documents are not yet enabled for your organization.": [
-        "Openbare documenten zijn nog niet ingeschakeld voor uw organisatie."
       ],
       "Read-only": [
         "Alleen lezen"
@@ -5050,6 +5059,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
+      ],
+      "Redirecting…": [
+        "Omleiden…"
       ],
       "Referral link copied to your clipboard": [
         "Doorverwijslink gekopieerd naar het klembord"
@@ -5150,6 +5162,9 @@
       ],
       "Symbols (#$&)": [
         "Symbolen (#$&)"
+      ],
+      "Syncing latest changes…": [
+        "Laatste wijzigingen synchroniseren…"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Tijdelijk niet leverbaar wegens grote vraag. Probeer het later opnieuw."
@@ -5779,6 +5794,9 @@
       ],
       "Last month only": [
         "Alleen vorige maand"
+      ],
+      "Loading": [
+        "Laden"
       ],
       "Log in or sign up ": [
         "Inloggen of registreren "
@@ -7680,9 +7698,6 @@
       "Amount due after trial on ${ formattedDate }": [
         "Verschuldigd bedrag na de proefversie op ${ formattedDate }"
       ],
-      "Proton Meet seats must match the number of members.": [
-        "Proton Meet licenties moeten overeenkomen met het aantal leden."
-      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Bij vernieuwing zijn prijswijziging volgen volgende ${ termsAndConditionsLink }."
       ],
@@ -7721,9 +7736,6 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
         "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
-      ],
-      "This plan doesn’t support the managed features on your account.": [
-        "Dit abonnement ondersteunt de beheerde functies van uw account niet."
       ]
     },
     "PGP key encryption warning": {
@@ -9017,9 +9029,6 @@
       "Cannot add more addresses": [
         "Kan geen extra adressen toevoegen"
       ],
-      "Cannot load link": [
-        "Kan koppeling niet laden"
-      ],
       "Change access to viewer?": [
         "Toegang wijzigen naar kijker?"
       ],
@@ -9442,12 +9451,6 @@
       ],
       "Subscription canceled": [
         "Abonnement opgezegd"
-      ],
-      "The link either does not exist or has expired": [
-        "De link bestaat niet of is verlopen"
-      ],
-      "The link expired": [
-        "De koppeling is verlopen"
       ],
       "This document is password protected": [
         "Dit document is beveiligd met een wachtwoord"
