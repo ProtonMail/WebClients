@@ -105,11 +105,10 @@ it('should render <SubscriptionContainer> with B2B default audience if it was se
         await openSubscriptionModal({ defaultAudience: Audience.B2B } as any);
     });
 
-    expect(SubscriptionContainer).toHaveBeenCalledWith(
+    expect(jest.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
         expect.objectContaining({
             defaultAudience: Audience.B2B,
-        }),
-        {}
+        })
     );
 
     expect(container).toHaveTextContent('SubscriptionContainer');
@@ -139,11 +138,10 @@ it('should render <SubscriptionContainer> with B2B default audience if plan is a
         await openSubscriptionModal({ plan: PLANS.BUNDLE_PRO } as any);
     });
 
-    expect(SubscriptionContainer).toHaveBeenCalledWith(
+    expect(jest.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
         expect.objectContaining({
             defaultAudience: Audience.B2B,
-        }),
-        {}
+        })
     );
 
     expect(container).toHaveTextContent('SubscriptionContainer');
@@ -181,11 +179,10 @@ it('should render <SubscriptionContainer> with B2B default audience if subscript
         await openSubscriptionModal({} as any);
     });
 
-    expect(SubscriptionContainer).toHaveBeenCalledWith(
+    expect(jest.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
         expect.objectContaining({
             defaultAudience: Audience.B2B,
-        }),
-        {}
+        })
     );
 
     expect(container).toHaveTextContent('SubscriptionContainer');
@@ -215,11 +212,10 @@ it('should render <SubscriptionContainer> with FAMILY default audience if it is 
         await openSubscriptionModal({ defaultAudience: Audience.FAMILY } as any);
     });
 
-    expect(SubscriptionContainer).toHaveBeenCalledWith(
+    expect(jest.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
         expect.objectContaining({
             defaultAudience: Audience.FAMILY,
-        }),
-        {}
+        })
     );
 
     expect(container).toHaveTextContent('SubscriptionContainer');

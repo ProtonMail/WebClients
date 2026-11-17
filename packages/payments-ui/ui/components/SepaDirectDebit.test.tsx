@@ -137,11 +137,10 @@ describe('SepaDirectDebit', () => {
 
     it('renders ChargebeeIframe component', () => {
         render(<TestComponent />);
-        expect(ChargebeeIframe).toHaveBeenCalledWith(
+        expect(jest.mocked(ChargebeeIframe).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({
                 type: 'direct-debit',
-            }),
-            expect.anything()
+            })
         );
     });
 
