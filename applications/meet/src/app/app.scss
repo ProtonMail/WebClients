@@ -274,7 +274,6 @@ $profile-colors:
 	inset: 0;
 	z-index: map.get($z-indexes, 'up');
 
-	// Shown before ProtonApp, which loads meet.theme.css, so its values are copied here
 	--background-norm: #16161f;
 	--text-norm: white;
 	--text-weak: #bfbfd0;

@@ -85,13 +85,14 @@ const renderJoinFlow = (prejoinMeetingLinkName?: string) => {
     return { ...renderHook(() => useJoinFlow(params)), params };
 };
 
+const guestSentToWaitingRoom = { handled: true };
+
 const apiError = (status: number, code: number) =>
     Object.assign(new Error('api error'), { status, data: { Code: code, Error: 'error' } });
 
 beforeEach(() => {
     vi.clearAllMocks();
-    // Ends the join right after the meeting info, as a guest sent to the waiting room
-    mocks.beginWaitingRoomJoin.mockResolvedValue({ handled: true });
+    mocks.beginWaitingRoomJoin.mockResolvedValue(guestSentToWaitingRoom);
     mockInitHandshake.mockResolvedValue(handshakeInfo);
     mockRefresh.mockResolvedValue({ meetingInfo });
     useMeetingAuthenticationMock.mockReturnValue({ initHandshake: mockInitHandshake, getAccessDetails: vi.fn() });
