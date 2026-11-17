@@ -1,14 +1,15 @@
+import type { Mock } from "vitest";
 import { Display, Rectangle, screen } from "electron";
 import { ensureWindowIsVisible } from "./windowBounds";
 
-jest.mock("electron", () => ({
+vi.mock("electron", () => ({
     screen: {
-        getDisplayMatching: jest.fn(),
+        getDisplayMatching: vi.fn(),
     },
 }));
 
 const mockDisplay = (workArea: Rectangle) => {
-    (screen.getDisplayMatching as jest.MockedFn<typeof screen.getDisplayMatching>).mockReturnValue({
+    (screen.getDisplayMatching as Mock<typeof screen.getDisplayMatching>).mockReturnValue({
         workArea,
     } as Display);
 };

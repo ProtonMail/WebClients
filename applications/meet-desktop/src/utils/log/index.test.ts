@@ -1,15 +1,15 @@
-import { describe } from "@jest/globals";
+import type { Mock } from "vitest";
 import { LogMessage } from "electron-log";
 import { describeError, filterSensitiveLogMessageTestOnly, getFilteredHomePath, sanitizeUrlForLogging } from "./index";
 import { app } from "electron";
 
-jest.mock("electron", () => ({
+vi.mock("electron", () => ({
     app: {
-        getPath: jest.fn(() => "/home/potato"),
+        getPath: vi.fn(() => "/home/potato"),
     },
 }));
 
-const getPathMock = app.getPath as unknown as jest.Mock;
+const getPathMock = app.getPath as unknown as Mock;
 
 const expectFilterSensitiveString = (given: string, want: string) => {
     const givenLogMessage: LogMessage = {
