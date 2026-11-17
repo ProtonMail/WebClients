@@ -193,4 +193,20 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
             expect(results.sort()).toEqual(ids.sort());
         });
     });
+
+    it('finds a message by the name of a listable attachment', async () => {
+        const withAttachments = makeMessage('msg-invoice', 'Hello', 'see attached');
+        withAttachments.metadata.AttachmentsMetadata = [
+            { ID: 'a1', Name: 'Q3_invoice-final.pdf', MIMEType: 'application/pdf', Disposition: 'attachment', Size: 1 },
+            { ID: 'a2', Name: 'publickey.asc', MIMEType: 'application/pgp-keys', Disposition: 'attachment', Size: 1 },
+        ] as MessageMetadata['AttachmentsMetadata'];
+        await writeMessages([withAttachments, makeMessage('msg-other', 'Hello', 'nothing here')]);
+
+        const reader = new IndexReader(db, key);
+
+        expect(await search(reader, { keyword: 'invoice' })).toEqual(['msg-invoice']);
+        expect(await search(reader, { keyword: 'attachment~invoice' })).toEqual(['msg-invoice']);
+        // non-listable attachments are not indexed
+        expect(await search(reader, { keyword: 'publickey' })).toEqual([]);
+    });
 });
