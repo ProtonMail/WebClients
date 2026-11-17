@@ -48,6 +48,7 @@ export const getStorageRange = (
 ) => {
     return {
         min: memberUsedSpace,
-        max: organizationMaxSpace - organizationAssignedSpace + memberMaxSpace,
+        // If more space is assigned than the organization has (e.g. after a downgrade), only allow reducing
+        max: Math.max(organizationMaxSpace - organizationAssignedSpace, 0) + memberMaxSpace,
     };
 };
