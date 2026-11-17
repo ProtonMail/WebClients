@@ -8924,9 +8924,6 @@ importers:
       babel-loader:
         specifier: ^10.1.1
         version: 10.1.1(@babel/core@7.29.7(supports-color@11.0.0))(webpack@5.112.2)
-      babel-plugin-transform-react-remove-prop-types:
-        specifier: ^0.4.24
-        version: 0.4.24
       browserslist:
         specifier: 'catalog:'
         version: 4.29.5
@@ -19912,9 +19909,6 @@ packages:
     resolution: {integrity: sha512-M762rNHfSF1EV3SLtnCJXFoQbbIIz0OyRwnCmV0KPC7qosSfCO0QLTSuJX3ayAebubhE6oYBAYPrBA5ljowaZg==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
-
-  babel-plugin-transform-react-remove-prop-types@0.4.24:
-    resolution: {integrity: sha512-eqj0hVcJUR57/Ug2zE1Yswsw4LhuqqHhD+8v120T1cl3kjg76QwtyBrdIk4WVwK+lAhBJVYCd/v+4nc4y+8JsA==}
 
   babel-plugin-transform-require-context@0.1.1:
     resolution: {integrity: sha512-4ceqYOtzgmq4/QsB8dP7pUrUOCjY/jrRYdt7YkIOWHxtGDQbcf6YZDyLCiPQf6KsEIcIbSQiTRXOsbLiuJfgNQ==}
@@ -38321,8 +38315,6 @@ snapshots:
       '@babel/helper-define-polyfill-provider': 0.6.8(@babel/core@7.29.7(supports-color@11.0.0))(supports-color@11.0.0)
     transitivePeerDependencies:
       - supports-color
-
-  babel-plugin-transform-react-remove-prop-types@0.4.24: {}
 
   babel-plugin-transform-require-context@0.1.1:
     dependencies:

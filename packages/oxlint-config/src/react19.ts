@@ -4,6 +4,7 @@ import { brandNameSelectors } from './brandNames.ts';
 import { defaultPropsSelectors } from './defaultProps.ts';
 import { typescriptGlobs } from './globs.ts';
 import { jsxNamespaceSelectors } from './jsxNamespace.ts';
+import { propTypesSelectors } from './propTypes.ts';
 import { refObjectNullSelectors } from './refObjectNull.ts';
 import { useReducerTypeArgumentsSelectors } from './useReducerTypeArguments.ts';
 import { useRefInitialValueSelectors } from './useRefInitialValue.ts';
@@ -17,6 +18,7 @@ export const react19Selectors = [
     ...useRefInitialValueSelectors,
     ...useReducerTypeArgumentsSelectors,
     ...defaultPropsSelectors,
+    ...propTypesSelectors,
 ];
 
 /**
