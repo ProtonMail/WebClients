@@ -1,8 +1,10 @@
+import { getUnixTime } from 'date-fns';
+
 import { readableTime, readableTimeIntl } from '../../lib/helpers/time';
 import { enUSLocale } from '../../lib/i18n/dateFnLocales';
 
 describe('readableTime()', () => {
-    const unixTime = 1666438769; // Sat Oct 22 2022 13:39:29 GMT+0200 (Central European Summer Time)
+    const unixTime = getUnixTime(new Date(2022, 9, 22, 13, 39, 29));
 
     let originalDateNow: any;
     let mockedTime: number;
@@ -67,7 +69,7 @@ describe('readableTime()', () => {
 });
 
 describe('readableTimeIntl()', () => {
-    const unixTime = 1666438769; // Sat Oct 22 2022 13:39:29 GMT+0200 (Central European Summer Time)
+    const unixTime = getUnixTime(new Date(2022, 9, 22, 13, 39, 29));
 
     let originalDateNow: any;
     let mockedTime: number;
@@ -109,7 +111,7 @@ describe('readableTimeIntl()', () => {
     });
 
     it('should apply custom time format for the same day', () => {
-        setMockedTime(unixTime);
+        setMockedTime(unixTime * 1000);
 
         expect(
             readableTimeIntl(unixTime, {
