@@ -3,10 +3,12 @@ import { c } from 'ttag';
 import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { getAccessControlPageAvailability } from '@proton/console/organization/getAccessControlPageAvailability';
-import { getOrganizationKeysPageAvailability } from '@proton/console/organization/getOrganizationKeysPageAvailability';
+import { getActivityMonitorPageAvailability } from '@proton/console/organization/getActivityMonitorPageAvailability';
 import { getGroupsPageAvailability } from '@proton/console/organization/getGroupsPageAvailability';
+import { getOrganizationKeysPageAvailability } from '@proton/console/organization/getOrganizationKeysPageAvailability';
 import { getSecurityPageAvailability } from '@proton/console/organization/getSecurityPageAvailability';
 import { getSingleSignOnPageAvailability } from '@proton/console/organization/getSingleSignOnPageAvailability';
+import { getUsersPageAvailability } from '@proton/console/organization/getUsersPageAvailability';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
@@ -85,8 +87,11 @@ export const getOrganizationAppRoutes = ({
     // already an external-member-capable plan, so treat subsidiaries as such directly.
     const hasExternalMemberCapableB2BPlan = entitlements.hasExternalManagedMembers || !!organization?.IsSubsidiary;
 
-    const canShowB2BActivityMonitorEvents =
-        (isOrgConfigured || entitlements.isB2B) && !!permissions['account.activity_log.read'];
+    const canShowB2BActivityMonitorEvents = getActivityMonitorPageAvailability({
+        organization,
+        entitlements,
+        permissions,
+    }).activityMonitor;
 
     const canShowB2BConnectionEvents =
         entitlements.hasVpnActivityMonitor &&
@@ -106,15 +111,7 @@ export const getOrganizationAppRoutes = ({
         isGroupOwner: !!isGroupOwner,
     });
 
-    const hasUsedMembers = (organization?.UsedMembers ?? 0) > 1;
-    const canShowUsersAndAddressesSection =
-        permissions['account.user.read'] &&
-        // The org must be setup to allow users to access this page
-        isOrgConfigured &&
-        // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete sub users
-        ((isOrgDelinquent && hasUsedMembers) ||
-            // The user must have an active (non-delinquent) plan that supports multi-user
-            (isOrgActive && hasMemberCapablePlan));
+    const canShowUsersAndAddressesSection = getUsersPageAvailability({ organization, entitlements, permissions }).users;
 
     const hasUsedDomains = (organization?.UsedDomains ?? 0) > 0;
     const canShowDomainNamesSection =
