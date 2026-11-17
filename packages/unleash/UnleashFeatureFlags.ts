@@ -105,7 +105,6 @@ export enum CommonFeatureFlag {
     CentralisedOffersDelivery = 'CentralisedOffersDelivery',
     CollectLogs = 'CollectLogs',
     ColorPerEventWeb = 'ColorPerEventWeb',
-    CreateInboxBringYourOwnEmailDisabled = 'CreateInboxBringYourOwnEmailDisabled',
     CryptoDisableUndecryptableKeys = 'CryptoDisableUndecryptableKeys',
     DarkWebEmailNotifications = 'DarkWebEmailNotifications',
     DesktopDownloadApiEnabled = 'DesktopDownloadApiEnabled',
@@ -114,7 +113,6 @@ export enum CommonFeatureFlag {
     EasySwitchB2CForDriveWeb = 'EasySwitchB2CForDriveWeb',
     EasySwitchB2CForDriveWebNewUI = 'EasySwitchB2CForDriveWebNewUI',
     EasySwitchB2CForDriveWebSidebarRollout = 'EasySwitchB2CForDriveWebSidebarRollout',
-    EasySwitchOutlookSelectAccountDisabled = 'EasySwitchOutlookSelectAccountDisabled',
     EventLoopInterval = 'EventLoopInterval',
     ForceReload = 'ForceReload',
     GoUnlimitedOffer2025 = 'GoUnlimitedOffer2025',
@@ -122,15 +120,12 @@ export enum CommonFeatureFlag {
     InboxBringYourOwnEmailCleanup = 'InboxBringYourOwnEmailCleanup',
     InboxBringYourOwnEmailImportPeriod = 'InboxBringYourOwnEmailImportPeriod',
     InboxBringYourOwnEmailImportPeriodExperiment = 'InboxBringYourOwnEmailImportPeriodExperiment',
-    InboxDesktopDefaultEmailSetupHelperDisabled = 'InboxDesktopDefaultEmailSetupHelperDisabled',
     InboxDesktopDefaultEmailSetupHelperDisabledV2 = 'InboxDesktopDefaultEmailSetupHelperDisabledV2',
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
     InboxDesktopMacSigningMigrationBanner = 'InboxDesktopMacSigningMigrationBanner',
-    InboxDesktopManualUpdateBannerDisabled = 'InboxDesktopManualUpdateBannerDisabled',
     InboxWebPostSubscriptionFlow = 'InboxWebPostSubscriptionFlow',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
-    LogWasmLoadingDisabled = 'LogWasmLoadingDisabled',
     LumoDeactivateGuestModeFrontend = 'LumoDeactivateGuestModeFrontend',
     LumoEarlyAccess = 'LumoEarlyAccess',
     LumoHighLoad = 'LumoHighLoad',
@@ -154,17 +149,24 @@ export enum CommonFeatureFlag {
     ReferralProgramB2C2B = 'ReferralProgramB2C2B',
     ScribeAdminSetting = 'ScribeAdminSetting',
     SelfTroubleshoot = 'SelfTroubleshoot',
-    // Monthly subscriber nudge kill switches (default off; enable to hide the nudge)
-    SubscriberNudgeBundleMonthlyDisabled = 'SubscriberNudgeBundleMonthlyDisabled',
-    SubscriberNudgeDriveMonthlyDisabled = 'SubscriberNudgeDriveMonthlyDisabled',
-    SubscriberNudgeMailMonthlyDisabled = 'SubscriberNudgeMailMonthlyDisabled',
     UnlimitedToDuoPermanentOffer = 'UnlimitedToDuoPermanentOffer',
     UnlimitedToDuoDiscountedOffer = 'UnlimitedToDuoDiscountedOffer',
     VPNDrawer = 'VPNDrawer',
     WalletAztecoWeb = 'WalletAztecoWeb',
     WalletFullSync = 'WalletFullSync',
     WebApiRateLimiter = 'WebApiRateLimiter',
-    WebNPSModal = 'WebNPSModal',
+}
+
+enum CommonKillSwitchFlag {
+    CreateInboxBringYourOwnEmailDisabled = 'CreateInboxBringYourOwnEmailDisabled',
+    EasySwitchOutlookSelectAccountDisabled = 'EasySwitchOutlookSelectAccountDisabled',
+    InboxDesktopDefaultEmailSetupHelperDisabled = 'InboxDesktopDefaultEmailSetupHelperDisabled',
+    InboxDesktopManualUpdateBannerDisabled = 'InboxDesktopManualUpdateBannerDisabled',
+    LogWasmLoadingDisabled = 'LogWasmLoadingDisabled',
+    SubscriberNudgeBundleMonthlyDisabled = 'SubscriberNudgeBundleMonthlyDisabled',
+    SubscriberNudgeDriveMonthlyDisabled = 'SubscriberNudgeDriveMonthlyDisabled',
+    SubscriberNudgeMailMonthlyDisabled = 'SubscriberNudgeMailMonthlyDisabled',
+    WebNPSModalDisabled = 'WebNPSModalDisabled',
 }
 
 enum DocsFeatureFlag {
@@ -444,6 +446,7 @@ export type FeatureFlag =
     | `${CalendarFeatureFlag}`
     | `${CalendarKillSwitchFlag}`
     | `${CommonFeatureFlag}`
+    | `${CommonKillSwitchFlag}`
     | `${DocsFeatureFlag}`
     | `${DriveFeatureFlag}`
     | `${LumoFeatureFlag}`
