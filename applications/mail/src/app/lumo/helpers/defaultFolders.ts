@@ -26,6 +26,9 @@ export enum DefaultFolderReference {
 
 const DEFAULT_FOLDER_REFERENCES = Object.values(DefaultFolderReference);
 
+/** For tool descriptions, so every one names the same ten. */
+export const DEFAULT_FOLDER_LIST = DEFAULT_FOLDER_REFERENCES.join(', ');
+
 /** The canonical label of each default folder. Three of them are one of a pair: see {@link defaultFolderLabelID}. */
 const DEFAULT_FOLDER_LABEL_IDS: Record<DefaultFolderReference, MAILBOX_LABEL_IDS> = {
     [DefaultFolderReference.INBOX]: MAILBOX_LABEL_IDS.INBOX,

@@ -1,3 +1,4 @@
+import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
@@ -7,8 +8,13 @@ import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
+import { DefaultFolderReference } from '../../helpers/defaultFolders';
 import type { MailToolDeps } from '../../toolModule';
-import { createSetLocationReadHandler, resolveInboxCategory, setLocationReadCardRenderer } from './setLocationRead';
+import {
+    createSetLocationReadHandler,
+    setLocationReadCardRenderer,
+    setLocationReadDefinition,
+} from './setLocationRead';
 
 const categoryTab = (id: CategoryLabelID): CategoryTab => ({
     id,
@@ -17,44 +23,37 @@ const categoryTab = (id: CategoryLabelID): CategoryTab => ({
     colorShade: CATEGORIES_COLOR_SHADES.IRIS,
 });
 
-describe('resolveInboxCategory', () => {
-    it('is absent when the model named no category', () => {
-        expect(resolveInboxCategory({ location: 'inbox', category: null })).toBeUndefined();
-    });
+describe('setLocationReadDefinition', () => {
+    // Refused before the confirm card, so the user is never asked to approve a scope that cannot run.
+    it('refuses a category outside the Inbox in its argument check', () => {
+        const check = () =>
+            setLocationReadDefinition.checkParams?.({
+                target: DefaultFolderReference.ARCHIVE,
+                category: 'promotions',
+                read: true,
+            });
 
-    it('accepts a known category tab in the Inbox', () => {
-        expect(resolveInboxCategory({ location: 'inbox', category: 'promotions' })).toBe('promotions');
-    });
-
-    it.each([
-        ['another standard location', 'archive'],
-        ['a custom folder or label target', null],
-    ])('rejects a category paired with %s', (_name, location) => {
-        expect(() => resolveInboxCategory({ location, category: 'promotions' })).toThrow(/only applies with/);
-    });
-
-    it('rejects a category tab that does not exist', () => {
-        expect(() => resolveInboxCategory({ location: 'inbox', category: 'receipts' })).toThrow(/Unknown category/);
+        expect(check).toThrow(ToolInputError);
+        expect(check).toThrow(/only applies with/);
     });
 });
 
 describe('setLocationReadCardRenderer', () => {
     const standardAction: ActionRequest = {
         type: 'set_location_read',
-        location: 'inbox',
-        target: null,
+        target: DefaultFolderReference.INBOX,
         category: null,
         read: true,
     };
-    const labels = { 'label-m3n4p5': { title: 'Newsletters' } };
+    const labels = { [DefaultFolderReference.INBOX]: { title: 'Inbox' }, 'label-m3n4p5': { title: 'Newsletters' } };
 
     // A proposed action is unvalidated, so the neither-set case is reachable here.
     it.each([
-        ['a standard location by its display name', {}, 'Inbox'],
-        ['a custom target by its recorded name', { location: null, target: 'label-m3n4p5' }, 'Newsletters'],
+        ['a default folder by its recorded name', {}, 'Inbox'],
+        ['a custom target by its recorded name', { target: 'label-m3n4p5' }, 'Newsletters'],
         // The user must see what they are approving narrowed, not as the whole Inbox.
         ['the category tab alongside the location', { category: 'promotions' }, 'Inbox · Promotions'],
-        ['nothing when neither is set', { location: null }, undefined],
+        ['nothing when no target is set', { target: null }, undefined],
     ])('names %s', (_case, overrides, expected) => {
         const action = { ...standardAction, ...overrides } as ActionRequest;
 
@@ -74,11 +73,11 @@ describe('setLocationReadCardRenderer', () => {
     // A scope the handler would reject must not reach the user as "the whole of  " with a hole in it,
     // and Confirm must not be live over a card that names nothing.
     it('says no scope is set rather than naming an empty one', () => {
-        const unscoped = { ...standardAction, location: null } as ActionRequest;
+        const unscoped = { ...standardAction, target: null } as ActionRequest;
 
         expect(sentenceText(setLocationReadCardRenderer.sentence(unscoped, labels))).toBe('No location selected');
-        expect(setLocationReadCardRenderer.canApply?.({ location: null, target: null })).toBe(false);
-        expect(setLocationReadCardRenderer.canApply?.({ location: 'inbox', target: null })).toBe(true);
+        expect(setLocationReadCardRenderer.canApply?.({ target: null })).toBe(false);
+        expect(setLocationReadCardRenderer.canApply?.({ target: DefaultFolderReference.INBOX })).toBe(true);
     });
 });
 
@@ -98,11 +97,11 @@ describe('createSetLocationReadHandler', () => {
     it.each([
         ['read', true, MARK_AS_STATUS.READ],
         ['unread', false, MARK_AS_STATUS.UNREAD],
-    ])('marks a whole standard location %s, never inheriting the on-screen category tab', async (_n, read, status) => {
+    ])('marks a whole default folder %s, never inheriting the on-screen category tab', async (_n, read, status) => {
         const { references, markAll, deps } = setUp();
 
         await createSetLocationReadHandler(deps)(
-            { location: 'inbox', target: null, category: null, read },
+            { target: DefaultFolderReference.INBOX, category: null, read },
             { references }
         );
 
@@ -113,11 +112,35 @@ describe('createSetLocationReadHandler', () => {
         });
     });
 
+    // The registry here holds no fixed references, so each one must resolve through the default-folder table.
+    it.each([
+        [DefaultFolderReference.INBOX, MAILBOX_LABEL_IDS.INBOX],
+        [DefaultFolderReference.DRAFTS, MAILBOX_LABEL_IDS.DRAFTS],
+        [DefaultFolderReference.SENT, MAILBOX_LABEL_IDS.SENT],
+        [DefaultFolderReference.STARRED, MAILBOX_LABEL_IDS.STARRED],
+        [DefaultFolderReference.ARCHIVE, MAILBOX_LABEL_IDS.ARCHIVE],
+        [DefaultFolderReference.SPAM, MAILBOX_LABEL_IDS.SPAM],
+        [DefaultFolderReference.TRASH, MAILBOX_LABEL_IDS.TRASH],
+        [DefaultFolderReference.ALL_MAIL, MAILBOX_LABEL_IDS.ALL_MAIL],
+        [DefaultFolderReference.SCHEDULED, MAILBOX_LABEL_IDS.SCHEDULED],
+        [DefaultFolderReference.SNOOZED, MAILBOX_LABEL_IDS.SNOOZED],
+    ])('marks the whole of %s', async (target, labelID) => {
+        const { references, markAll, deps } = setUp();
+
+        await createSetLocationReadHandler(deps)({ target, category: null, read: true }, { references });
+
+        expect(markAll).toHaveBeenCalledWith({
+            SourceLabelID: labelID,
+            status: MARK_AS_STATUS.READ,
+            categoryIDs: [],
+        });
+    });
+
     it('scopes the mark to one category tab when the user named one', async () => {
         const { references, markAll, deps } = setUp();
 
         await createSetLocationReadHandler(deps)(
-            { location: 'inbox', target: null, category: 'promotions', read: true },
+            { target: DefaultFolderReference.INBOX, category: 'promotions', read: true },
             { references }
         );
 
@@ -133,7 +156,7 @@ describe('createSetLocationReadHandler', () => {
 
         await expect(
             createSetLocationReadHandler(deps)(
-                { location: 'inbox', target: null, category: 'promotions', read: true },
+                { target: DefaultFolderReference.INBOX, category: 'promotions', read: true },
                 { references }
             )
         ).rejects.toThrow(/no "promotions" category tab/);
@@ -144,7 +167,7 @@ describe('createSetLocationReadHandler', () => {
         const { references, labelReference, markAll, deps } = setUp();
 
         await createSetLocationReadHandler(deps)(
-            { location: null, target: labelReference, category: null, read: true },
+            { target: labelReference, category: null, read: true },
             { references }
         );
 

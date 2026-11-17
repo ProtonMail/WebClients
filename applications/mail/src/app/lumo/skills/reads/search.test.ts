@@ -2,6 +2,8 @@ import { getUnixTime } from 'date-fns';
 
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 
+import { PRIMARY_ONLY_NOTE } from '../../helpers/categories';
+import { DefaultFolderReference } from '../../helpers/defaultFolders';
 import { BULK_ACTION_NOTE } from './rows';
 import type { SearchParams, SearchResult } from './search';
 import {
@@ -20,6 +22,7 @@ const params = (overrides: Partial<SearchParams> = {}): SearchParams => ({
     from: null,
     to: null,
     target: null,
+    category: null,
     begin: null,
     end: null,
     filter: null,
@@ -127,14 +130,14 @@ describe('searchDefinition', () => {
         expect(searchDefinition.paramsSchema.required).toEqual(Object.keys(searchDefinition.paramsSchema.properties));
     });
 
-    // Every param but `target` is free text, and the engine's hallucination guard rejects any value shaped
-    // like a reference — so an ordinary keyword ("e-ticket") would never reach the handler.
-    it('exempts its free-text params from the reference guard, leaving only the target guarded', () => {
+    // Every param but `target` and the closed `category` is free text, and the engine's hallucination guard
+    // rejects any value shaped like a reference, so an ordinary keyword ("e-ticket") would never reach the handler.
+    it('exempts its free-text params from the reference guard, leaving only the target and category guarded', () => {
         const guarded = Object.keys(searchDefinition.paramsSchema.properties).filter(
             (param) => !searchDefinition.freeTextParams?.includes(param)
         );
 
-        expect(guarded).toEqual(['target']);
+        expect(guarded).toEqual(['target', 'category']);
     });
 
     it.each([
@@ -150,7 +153,7 @@ describe('searchDefinition', () => {
     });
 
     it('names the axes the search left unused, and the Spam/Trash blind spot', () => {
-        const scope = describeSearchScope(params({ keyword: 'ticket*' }), true);
+        const scope = describeSearchScope(params({ keyword: 'ticket*' }), true, false);
 
         expect(scope).toBe(
             'Axes not used in this search: from, to, date range, folder or label. Spam and Trash were outside its scope.'
@@ -159,9 +162,17 @@ describe('searchDefinition', () => {
     });
 
     it('keeps quiet about Spam and Trash when the search actually covered them', () => {
-        expect(describeSearchScope(params({ target: 'folder-x7b2q1' }), false)).toBe(
+        expect(describeSearchScope(params({ target: 'folder-x7b2q1' }), false, false)).toBe(
             'Axes not used in this search: keyword, from, to, date range.'
         );
+    });
+
+    // Mail's own Inbox search stays on the Primary tab, so without this an empty result reads as "not in
+    // the Inbox" when the email sits in Promotions.
+    it('says an Inbox search with category tabs on covered only the Primary tab', () => {
+        expect(
+            describeSearchScope(params({ keyword: 'welcome', target: DefaultFolderReference.INBOX }), false, true)
+        ).toBe(`Axes not used in this search: from, to, date range. ${PRIMARY_ONLY_NOTE}`);
     });
 
     it('vouches for an empty result only when the whole mailbox was body-searched', () => {

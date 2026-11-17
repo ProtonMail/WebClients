@@ -11,6 +11,8 @@ import { getTimezone } from '@proton/shared/lib/date/timezone';
 
 import { buildMailSearchGuide, buildStandaloneMailSearchGuide } from './guides/searchGuide';
 import { PROTON_SIEVE_DIALECT_REFERENCE, STANDALONE_PROTON_SIEVE_DIALECT_REFERENCE } from './guides/sieveGuide';
+import { INBOX_CATEGORIES } from './helpers/categories';
+import { DefaultFolderReference } from './helpers/defaultFolders';
 import { indexedESStatus } from './helpers/navigation.test.helpers';
 import { buildMailContext } from './mailContext';
 import { buildLumoMailConfig } from './registry';
@@ -18,9 +20,9 @@ import { MAIL_RULES } from './rules';
 import { createFilterModule } from './skills/filters/createFilter';
 import { updateFilterModule } from './skills/filters/updateFilter';
 import { MOVE_LOCATIONS, moveEmailsModule } from './skills/organise/moveEmails';
-import { INBOX_CATEGORIES, setLocationReadModule } from './skills/organise/setLocationRead';
+import { setLocationReadModule } from './skills/organise/setLocationRead';
 import { MAILBOX_FILTERS, MAILBOX_SORTS } from './skills/reads/mailboxView';
-import { OPEN_FOLDER_LOCATIONS, openFolderModule } from './skills/reads/openFolder';
+import { openFolderModule } from './skills/reads/openFolder';
 import { searchModule } from './skills/reads/search';
 import { CosmeticSetting, changeSettingsModule } from './skills/settings/cosmetic';
 import { STANDALONE_DESCRIPTIONS } from './standaloneDescriptions';
@@ -118,6 +120,16 @@ const buildPromptConfig = (standalonePrompt: boolean) => {
     return { config, definition };
 };
 
+describe('the default folders in the Mail config', () => {
+    it.each([false, true])('reserves all ten fixed references with the standalone prompt %s', (standalonePrompt) => {
+        const { config } = buildPromptConfig(standalonePrompt);
+
+        expect(config.fixedReferences?.map(({ reference }) => reference)).toEqual(
+            Object.values(DefaultFolderReference)
+        );
+    });
+});
+
 /** Every module whose definition the standalone config changes: a guide swap or an enum overlay. */
 const CHANGED_MODULES: MailToolModule[] = [
     searchModule,
@@ -145,6 +157,8 @@ describe('the Mail config with the standalone prompt flag off', () => {
             expect(definition(name)).toEqual({
                 ...moduleDefinition,
                 ...(createGuide && { needsGuide: true, guide: expect.any(Function) }),
+                // Wrapped for telemetry, so it is a new function.
+                ...(moduleDefinition.checkParams && { checkParams: expect.any(Function) }),
             });
         }
     );
@@ -248,11 +262,11 @@ describe('the Mail config with the standalone prompt flag on', () => {
 
     it.each([
         ['move_emails', 'location', [...MOVE_LOCATIONS, null]],
-        ['open_folder', 'location', [...OPEN_FOLDER_LOCATIONS, null]],
+        ['open_folder', 'category', [...INBOX_CATEGORIES, null]],
         ['open_folder', 'filter', [...MAILBOX_FILTERS, null]],
         ['open_folder', 'sort', [...MAILBOX_SORTS, null]],
-        ['set_location_read', 'location', [...OPEN_FOLDER_LOCATIONS, null]],
         ['set_location_read', 'category', [...INBOX_CATEGORIES, null]],
+        ['search', 'category', [...INBOX_CATEGORIES, null]],
         ['search', 'filter', [...MAILBOX_FILTERS, null]],
         ['change_settings', 'setting', Object.values(CosmeticSetting)],
     ])('closes %s.%s to the values its handler accepts', (name, property, values) => {

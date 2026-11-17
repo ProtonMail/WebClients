@@ -12,6 +12,7 @@ import TextFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/TextFieldBody
 import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 
+import { assertNotDefaultFolder } from '../../helpers/defaultFolders';
 import { resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { recordedName, referenceName } from './emailSelection';
@@ -42,6 +43,9 @@ export const renameFolderDefinition: ToolDefinition<RenameFolderParams, void> = 
             call: { folder: 'folder-x7b2q1', name: 'Trips' },
         },
     ],
+    checkParams: ({ folder }) => {
+        assertNotDefaultFolder(folder, 'be renamed');
+    },
     // Surfaced via the confirm card, not the working set, so these stay trivial (see the shared contract).
     serializeForLumo: () => '',
     summarizeChip: () => ({ label: c('Info').t`Rename folder` }),

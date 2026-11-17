@@ -1,5 +1,7 @@
 import type { ToolName } from '@proton/llm/lib/lumoAgent/contracts/types';
 
+import { DEFAULT_FOLDER_LIST } from './helpers/defaultFolders';
+
 interface StandaloneDescription {
     description: string;
     parameters: Record<string, string>;
@@ -17,11 +19,11 @@ export const STANDALONE_DESCRIPTIONS: Record<ToolName, StandaloneDescription> = 
         parameters: {},
     },
     open_folder: {
-        description:
-            'Open a location in the user\'s mailbox and return the emails now on screen there, as metadata rows with no bodies. This changes what the user is looking at.\n\nUse it when the user names a place they can see in the left panel: a standard location, or one of their own folders or labels. For a keyword, sender, recipient or date, use search instead. It is also the way to order a whole location by date or size, since search always returns newest first.\n\nThe standard locations are Inbox, All Mail, Spam, Drafts, Starred, Trash and Archive: use location for these, and target only for the user\'s own folders and labels. Pass exactly one of the two, with the other null.\n\nExample: unread mail in Archive, newest first, {"location": "archive", "target": null, "filter": "unread", "sort": "newest"}.',
+        description: `Open a location in the user\'s mailbox and return the emails now on screen there, as metadata rows with no bodies. This changes what the user is looking at.\n\nUse it when the user names a place they can see in the left panel: a default folder, or one of their own folders or labels. For a keyword, sender, recipient or date, use search instead. It is also the way to order a whole location by date or size, since search always returns newest first.\n\nThe default folders have fixed references that are always valid, with no earlier read: ${DEFAULT_FOLDER_LIST}. The user\'s own folders and labels take their folder-… or label-… reference from list_folders or list_labels. Both go in target.\n\nTo open one Inbox category tab ("show my Promotions"), set target to folder-inbox and category to the tab. Only the tabs the mail context lists under Category tabs exist; when it says off, leave category null.\n\nExample: unread mail in Archive, newest first, {"target": "folder-archive", "category": null, "filter": "unread", "sort": "newest"}.`,
         parameters: {
-            location: 'A standard location. Null when using target.',
-            target: 'A folder-… or label-… reference from list_folders or list_labels. Null when using location.',
+            target: 'A default folder such as folder-inbox, or a folder-… or label-… reference from list_folders or list_labels.',
+            category:
+                'One Inbox tab from the Category tabs context line; needs target folder-inbox. Null for the whole location.',
             filter: 'Show only read, unread, or with attachments. One at a time; they cannot combine. Null for no filter.',
             sort: 'Order by date (newest, oldest) or by size (largest, smallest). Null keeps the default order.',
         },
@@ -34,7 +36,9 @@ export const STANDALONE_DESCRIPTIONS: Record<ToolName, StandaloneDescription> = 
                 "Words to match, following the search guide's rules for this device. Null is valid, and often better when a sender or date range already identifies the mail.",
             from: "The sender's exact email address, never a name, from find_contacts, an email you have read, or the user.",
             to: "The recipient's exact email address, never a name, from find_contacts, an email you have read, or the user.",
-            target: 'A folder-… or label-… reference, to search inside one folder or label. Null searches all mail, which may leave out Spam and Trash.',
+            target: 'A default folder such as folder-sent, or a folder-… or label-… reference, to search inside one folder or label. Null searches all mail, which may leave out Spam and Trash.',
+            category:
+                'One Inbox tab from the Category tabs context line, to search inside it; needs target folder-inbox. With tabs on, null in the Inbox covers Primary only. Null everywhere else.',
             begin: 'First day of the range, YYYY-MM-DD, inclusive.',
             end: 'Last day of the range, YYYY-MM-DD, inclusive.',
             filter: 'Show only read, unread, or with attachments. One at a time; they cannot combine. Null for no filter.',
@@ -68,7 +72,7 @@ export const STANDALONE_DESCRIPTIONS: Record<ToolName, StandaloneDescription> = 
     },
     list_folders: {
         description:
-            "List the user's own folders, each with its folder-… reference, name and parent (or top level). Use it to turn a folder the user names into a reference before moving mail into it, opening it or nesting a new folder under it, and to check that a folder exists before a filter files into it. Skip it when an earlier list_folders result in this conversation already has that folder. The standard locations (Inbox, Archive and the rest) aren't listed; open_folder and move_emails take those by name.\n\nFolders are exclusive: an email lives in one. For additive tags, use list_labels.",
+            "List the user's own folders, each with its folder-… reference, name and parent (or top level). Use it to turn a folder the user names into a reference before moving mail into it, opening it or nesting a new folder under it, and to check that a folder exists before a filter files into it. Skip it when an earlier list_folders result in this conversation already has that folder. The default folders (Inbox, Archive and the rest) aren't listed: they have fixed references, such as folder-inbox, that every tool taking a folder accepts.\n\nFolders are exclusive: an email lives in one. For additive tags, use list_labels.",
         parameters: {},
     },
     list_labels: {
@@ -137,12 +141,11 @@ export const STANDALONE_DESCRIPTIONS: Record<ToolName, StandaloneDescription> = 
         },
     },
     set_location_read: {
-        description:
-            'Mark every email in a whole location read or unread: an entire folder, label or Inbox tab, including mail not on screen. Use it when the user means the whole place ("mark my inbox as read", "everything in Newsletters unread"); for specific emails, use set_read.\n\nPass exactly one of location (a standard location) or target (the user\'s own folder or label). To cover one Inbox tab rather than the whole Inbox, set location to inbox and category to the tab; tabs exist only in the Inbox, and only when the mailbox shows them. Because this covers mail you haven\'t seen, you can\'t tell in advance whether anything needs changing, so propose it whenever the user names a whole location.\n\nWhile the server works through the location, listing it returns nothing until it finishes, so make this the last step of a chain rather than something you build on.\n\nThe user reviews the change on a confirm card before it runs.',
+        description: `Mark every email in a whole location read or unread: an entire folder, label or Inbox tab, including mail not on screen. Use it when the user means the whole place ("mark my inbox as read", "everything in Newsletters unread"); for specific emails, use set_read.\n\nSet target to a default folder (${DEFAULT_FOLDER_LIST}) or to the user\'s own folder or label. To cover one Inbox tab rather than the whole Inbox, set target to folder-inbox and category to the tab; tabs exist only in the Inbox, and only when the mailbox shows them. Because this covers mail you haven\'t seen, you can\'t tell in advance whether anything needs changing, so propose it whenever the user names a whole location.\n\nWhile the server works through the location, listing it returns nothing until it finishes, so make this the last step of a chain rather than something you build on.\n\nThe user reviews the change on a confirm card before it runs.`,
         parameters: {
-            location: 'A standard location. Null when using target.',
-            target: 'A folder-… or label-… reference from list_folders or list_labels. Null when using location.',
-            category: 'One Inbox tab; needs location inbox. Null for the whole location.',
+            target: 'A default folder such as folder-inbox, or a folder-… or label-… reference from list_folders or list_labels.',
+            category:
+                'One Inbox tab from the Category tabs context line; needs target folder-inbox. Null for the whole location.',
             read: 'True to mark all read, false to mark all unread.',
         },
     },

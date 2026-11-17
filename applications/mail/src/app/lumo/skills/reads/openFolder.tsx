@@ -1,25 +1,23 @@
 import { c } from 'ttag';
 
-import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 
+import { PRIMARY_ONLY_NOTE, categoryScopeName, coversPrimaryOnly, resolveInboxTab } from '../../helpers/categories';
+import { DEFAULT_FOLDER_LIST, DefaultFolderReference } from '../../helpers/defaultFolders';
 import { filterHashFor, navigateAndReadRows, resolveMailboxLocation, sortHashFor } from '../../helpers/navigation';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import { resolveMailboxFilter, resolveMailboxSort } from './mailboxView';
 import type { AgentEmailRow } from './rows';
 import { BULK_ACTION_NOTE, formatAgentEmailRows } from './rows';
 
-/** The seven standard left-panel locations open_folder understands. A custom folder/label is opened
- *  via `target` (its folder-… / label-… reference) instead. */
-export const OPEN_FOLDER_LOCATIONS = ['inbox', 'all_mail', 'spam', 'drafts', 'starred', 'trash', 'archive'] as const;
-
-export type OpenFolderLocation = (typeof OPEN_FOLDER_LOCATIONS)[number];
-
 export interface OpenFolderParams {
-    /** A standard location (see {@link OPEN_FOLDER_LOCATIONS}), or null when opening a custom target. */
-    location: string | null;
-    /** A folder-… / label-… reference from list_folders / list_labels, or null for a standard location. */
-    target: string | null;
+    /** A default folder's fixed reference, or a folder-… / label-… reference from list_folders / list_labels. */
+    target: string;
+    /**
+     * One Inbox category tab, valid only with `folder-inbox`. Null opens the location as a whole, except the
+     * Inbox with tabs on, where Mail lands on Primary.
+     */
+    category: string | null;
     /** Single-value view filter — "read" | "unread" | "has_attachment", or null for no filter. */
     filter: string | null;
     /** View sort — "newest" | "oldest" | "largest" | "smallest", or null for the default order. */
@@ -35,49 +33,21 @@ export interface OpenFolderResult {
     total: number;
     /** Whether a bulk action is still emptying this location — why it can open with nothing in it. */
     bulkActionRunning: boolean;
+    /** Whether this opened the Inbox with tabs on and no tab named, so it shows Primary only. */
+    primaryOnly: boolean;
 }
-
-/**
- * Validate an open_folder-style location target: EXACTLY ONE of `location`/`target` must be set, and
- * `location` (when used) must be a known standard location. Pure, so the handler can enforce the rule
- * before touching the store — a violation throws a self-correcting Error the engine feeds back to the
- * model. Returns which target was chosen. Shared with set_location_read, so the errors name no tool.
- */
-export const resolveOpenFolderTarget = (
-    params: Pick<OpenFolderParams, 'location' | 'target'>
-): { location: OpenFolderLocation } | { target: string } => {
-    const { location, target } = params;
-    // (location == null) === (target == null) is true when BOTH are null or BOTH are set.
-    if ((location == null) === (target == null)) {
-        throw new ToolInputError(
-            'Pass EXACTLY ONE of `location` (a standard location) or `target` (a custom folder/label reference): set one and leave the other null.'
-        );
-    }
-    if (location != null) {
-        if (!(OPEN_FOLDER_LOCATIONS as readonly string[]).includes(location)) {
-            throw new ToolInputError(
-                `Unknown location "${location}". Valid locations are: ${OPEN_FOLDER_LOCATIONS.join(
-                    ', '
-                )}. For a custom folder or label, pass its reference as \`target\` instead.`
-            );
-        }
-        return { location: location as OpenFolderLocation };
-    }
-    return { target: target as string };
-};
 
 export const openFolderDefinition: ToolDefinition<OpenFolderParams, OpenFolderResult> = {
     name: 'open_folder',
     kind: 'read',
-    toolDescription:
-        'Open a mailbox location and return the emails now on screen there (metadata only — no bodies), like a fresh view of that location. Use this INSTEAD of search when the user names a location they can see in the left panel: set `location` to one of "inbox", "all_mail", "spam", "drafts", "starred", "trash", "archive"; OR, for a custom folder or label, set `target` to its folder-… / label-… reference from list_folders / list_labels. Pass EXACTLY ONE of the two — set `location` and leave `target` null for a standard location, or set `target` and leave `location` null for a custom one. Optionally narrow the view with `filter` (exactly one of "read" | "unread" | "has_attachment" — single-value, they cannot combine) and order it with `sort` ("newest" | "oldest" by date, or "largest" | "smallest" by size); leave either null to skip it. For a keyword, sender, recipient or date query, use search instead. Example: unread mail in Archive, newest first → { "location": "archive", "target": null, "filter": "unread", "sort": "newest" }.',
+    toolDescription: `Open a mailbox location and return the emails now on screen there (metadata only, no bodies), like a fresh view of that location. Use this INSTEAD of search when the user names a location they can see in the left panel. Set \`target\` to the location's reference: one of the default folders ${DEFAULT_FOLDER_LIST}, which are always valid with no earlier read; or, for one of the user's own folders or labels, its folder-… / label-… reference from list_folders / list_labels. To open ONE Inbox category tab ("show my Promotions"), set \`target\` to "folder-inbox" AND \`category\` to one of the tabs the mail context lists under "Category tabs"; leave \`category\` null for every other location, and when the mail context says category tabs are off. Optionally narrow the view with \`filter\` (exactly one of "read" | "unread" | "has_attachment": single-value, they cannot combine) and order it with \`sort\` ("newest" | "oldest" by date, or "largest" | "smallest" by size); leave either null to skip it. For a keyword, sender, recipient or date query, use search instead. Example: unread mail in Archive, newest first → { "target": "folder-archive", "category": null, "filter": "unread", "sort": "newest" }.`,
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
-        required: ['location', 'target', 'filter', 'sort'],
+        required: ['target', 'category', 'filter', 'sort'],
         properties: {
-            location: { type: ['string', 'null'] },
-            target: { type: ['string', 'null'] },
+            target: { type: 'string' },
+            category: { type: ['string', 'null'] },
             filter: { type: ['string', 'null'] },
             sort: { type: ['string', 'null'] },
         },
@@ -85,22 +55,28 @@ export const openFolderDefinition: ToolDefinition<OpenFolderParams, OpenFolderRe
     examples: [
         {
             context:
-                'The user asks to see their Spam. Spam is a standard location, so open it directly rather than searching.',
-            call: { location: 'spam', target: null, filter: null, sort: null },
+                'The user asks to see their Sent mail. Sent is a default folder, so open it by its fixed reference rather than searching.',
+            call: { target: DefaultFolderReference.SENT, category: null, filter: null, sort: null },
         },
         {
             context: 'list_folders returned `folder-x7b2q1 | "Travel"` and the user asks to open their Travel folder.',
-            call: { location: null, target: 'folder-x7b2q1', filter: null, sort: null },
+            call: { target: 'folder-x7b2q1', category: null, filter: null, sort: null },
         },
         {
             context: 'The user asks to show only their unread mail in Archive, newest first.',
-            call: { location: 'archive', target: null, filter: 'unread', sort: 'newest' },
+            call: { target: DefaultFolderReference.ARCHIVE, category: null, filter: 'unread', sort: 'newest' },
+        },
+        {
+            context:
+                'The mail context reads "Category tabs: primary, social, promotions" and the user asks to show their Promotions.',
+            call: { target: DefaultFolderReference.INBOX, category: 'promotions', filter: null, sort: null },
         },
     ],
     serializeForLumo: (result) => {
         const empty = result.bulkActionRunning ? BULK_ACTION_NOTE : `No emails in ${result.location}.`;
         const rows = formatAgentEmailRows(result.rows, result.total) || empty;
-        return `Opened ${result.location}:\n${rows}`;
+        const note = result.primaryOnly ? `\n${PRIMARY_ONLY_NOTE}` : '';
+        return `Opened ${result.location}:\n${rows}${note}`;
     },
     summarizeChip: (_params, result) => {
         const location = result.location;
@@ -110,28 +86,33 @@ export const openFolderDefinition: ToolDefinition<OpenFolderParams, OpenFolderRe
 
 /**
  * open_folder behaves as a read (auto-run, no confirmation): it navigates the mailbox to a named
- * location (standard, or a custom folder/label) — updating the user's screen — and returns the emails
- * now on screen, so the model sees them without a follow-up view_emails.
+ * location (a default folder, or the user's own folder or label), updating the user's screen. It returns
+ * the emails now on screen, so the model sees them without a follow-up view_emails.
  */
 export const createOpenFolderHandler =
     (mail: MailToolDeps): ToolHandler<OpenFolderParams, OpenFolderResult> =>
-    async ({ location, target, filter, sort }, { references }) => {
-        // EXACTLY-ONE / known-location enforcement lives in the pure resolvers so they stay testable; a
-        // violation throws a self-correcting error the engine feeds back to the model.
-        const resolved = resolveOpenFolderTarget({ location, target });
+    async ({ target, category, filter, sort }, { references }) => {
         const filterHash = filterHashFor(resolveMailboxFilter(filter));
         const sortHash = sortHashFor(resolveMailboxSort(sort));
+        const categoryTabs = mail.getActiveCategoryTabs();
+        const tab = resolveInboxTab({ target, category }, categoryTabs);
 
-        const { labelID, name, pathname } = resolveMailboxLocation(resolved, references, mail.getMailSettings());
+        const { labelID, name, pathname } = resolveMailboxLocation(target, references, mail.getMailSettings());
 
-        // A plain open, optionally filtered/sorted: naming only these two keys clears any existing search.
+        // A plain open, optionally filtered/sorted/on a tab: naming only these keys clears any existing search.
         const { rows, total, bulkActionRunning } = await navigateAndReadRows(mail, references, {
             pathname,
             labelID,
-            query: { filter: filterHash, sort: sortHash },
+            query: { filter: filterHash, sort: sortHash, category: tab },
         });
 
-        return { location: name, rows, total, bulkActionRunning };
+        return {
+            location: categoryScopeName(name, tab),
+            rows,
+            total,
+            bulkActionRunning,
+            primaryOnly: coversPrimaryOnly({ target, category }, categoryTabs.length > 0),
+        };
     };
 
 export const openFolderModule: MailToolModule = {

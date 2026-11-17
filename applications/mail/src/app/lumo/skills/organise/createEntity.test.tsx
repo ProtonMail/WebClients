@@ -12,6 +12,7 @@ import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { mailTestRender } from '../../../helpers/tests/render';
+import { DefaultFolderReference } from '../../helpers/defaultFolders';
 import type { MailToolDeps } from '../../toolModule';
 import type { CreatedEntityResult } from './createEntity';
 import {
@@ -106,6 +107,15 @@ describe('createFolderModule', () => {
         expect(createFolderDefinition.serializeForLumo(result, references)).toBe(
             `Created folder ${result.reference} | "Hotels" inside folder ${europe} | "Europe".`
         );
+    });
+
+    // Checked on the arguments, so the engine refuses it before the confirm card and before any API call.
+    it('refuses a default folder as the parent', () => {
+        const check = () =>
+            createFolderDefinition.checkParams?.({ name: 'Hotels', parentId: DefaultFolderReference.INBOX });
+
+        expect(check).toThrow(ToolInputError);
+        expect(check).toThrow(/default folder/);
     });
 
     it('still nests under a parent one level short of the limit', async () => {

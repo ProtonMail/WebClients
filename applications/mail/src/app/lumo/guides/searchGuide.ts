@@ -1,5 +1,7 @@
 import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 
+import { DEFAULT_FOLDER_LIST } from '../helpers/defaultFolders';
+
 const SEARCH_GUIDE_HEAD = `The search tool LOCATES emails. It returns a LIST of matching emails as metadata rows only — reference, sender, subject, date, folder — NEVER their body or contents. You do NOT need to call view_emails afterwards; the rows are already in the result.
 
 How to use it — orient, narrow, read:
@@ -39,7 +41,8 @@ const SEARCH_GUIDE_TAIL = `Params (set null what you don't need):
 - keyword: free text matched against emails, per the rules above. Null is valid, and often better: \`from\` or a date range alone matches reliably, where a guessed word may not.
 - from: sender name or email address.
 - to: recipient name or email address.
-- target: a folder-… reference from list_folders, or a label-… reference from list_labels, to search inside that one folder or label. Null searches all mail — which, if the user has chosen to exclude Spam and Trash from All mail, does NOT cover those two. If they ask about a deleted or spam email and an unscoped search finds nothing, open_folder into trash or spam and look there.
+- target: a default folder (${DEFAULT_FOLDER_LIST}), a folder-… reference from list_folders, or a label-… reference from list_labels, to search inside that one folder or label. Null searches all mail. If the user has chosen to exclude Spam and Trash from All mail, that does NOT cover those two. If they ask about a deleted or spam email and an unscoped search finds nothing, search again with target folder-trash or folder-spam.
+- category: one Inbox category tab, from the mail context's "Category tabs" line, to search inside that tab; it needs target "folder-inbox". With category tabs on, an Inbox search that leaves category null covers the Primary tab ONLY, as Mail's own search does, so search each other tab the email could be in by setting category. Null everywhere else, and whenever category tabs are off.
 - begin, end: ISO dates (YYYY-MM-DD) bounding the date range. BOTH ends are inclusive — begin "2026-07-01", end "2026-07-29" covers the whole of both days.
 - filter: narrows the on-screen view to exactly one of "read" | "unread" | "has_attachment". They cannot combine (the mailbox shows one at a time), so for "unread ones with attachments" pick the more useful filter and read the rows for the rest.
 
@@ -100,7 +103,8 @@ Encrypted Search isn't handling searches on this device, so they go to the serve
 const STANDALONE_SEARCH_GUIDE_TAIL = `Beyond the parameter descriptions:
 - keyword can be null, and often should be: from or a date range alone matches reliably, where a guessed word may not.
 - from and to take exact email addresses. Always get a person's address from find_contacts, from an email you've read with read_email or read_thread, or from the user directly. Rows show names, not addresses, so never build an address from a row or guess one from a name. When you have only a name, fall back to the name as the keyword, with nothing else in keyword: it matches senders and recipients as well as subjects, and reading a matching email gives you the address for a narrower search. A name search also catches mail sent to that person or mentioning them in the subject, so check the sender in the rows. Ask the user for the address only when that turns up nothing.
-- target null searches all mail, which leaves out Spam and Trash when the user has chosen to exclude them from All mail. When an unscoped search finds nothing for a deleted or spam email, open Trash or Spam with open_folder and look there.
+- target takes a default folder (${DEFAULT_FOLDER_LIST}) or the user's own folder-… or label-… reference. Null searches all mail, which leaves out Spam and Trash when the user has chosen to exclude them from All mail. When an unscoped search finds nothing for a deleted or spam email, search again with target folder-trash or folder-spam.
+- With category tabs on, an Inbox search that leaves category null covers the Primary tab only, as Mail's own search does. To look in another tab, search again with target folder-inbox and category set to that tab.
 - begin and end are both inclusive, so the same date in both covers that whole day.
 - filter narrows to exactly one of read, unread or has_attachment. For "unread ones with attachments", pick the more useful filter and read the rows for the rest.
 

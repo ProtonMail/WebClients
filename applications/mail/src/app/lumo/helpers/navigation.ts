@@ -4,10 +4,8 @@ import isDeepEqual from 'lodash/isEqual';
 
 import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
-import { ALMOST_ALL_MAIL, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
 import { getStandardFolders } from '../../helpers/labels';
@@ -31,10 +29,10 @@ import {
 } from '../../store/elements/elementsSelectors';
 import type { ElementsStateParams } from '../../store/elements/elementsTypes';
 import type { MailboxFilter, MailboxSort } from '../skills/reads/mailboxView';
-import type { OpenFolderLocation } from '../skills/reads/openFolder';
 import type { AgentEmailPage } from '../skills/reads/rows';
 import { buildAgentEmailRows } from '../skills/reads/rows';
 import type { MailToolDeps, ToolStore } from '../toolModule';
+import { defaultFolderLabelID, isDefaultFolderReference } from './defaultFolders';
 import { resolveTypedId } from './references';
 import { waitForStoreState } from './storeWait';
 
@@ -79,59 +77,23 @@ export const sortHashFor = (sort: MailboxSort | undefined): SortHash | undefined
     return SORT_HASHES[sort];
 };
 
-/** The fixed standard-location table; two entries are overridden by a mail setting at resolve time — see
- *  {@link labelIDForLocation}. */
-const LOCATION_LABEL_IDS: Record<OpenFolderLocation, MAILBOX_LABEL_IDS> = {
-    inbox: MAILBOX_LABEL_IDS.INBOX,
-    all_mail: MAILBOX_LABEL_IDS.ALL_MAIL,
-    spam: MAILBOX_LABEL_IDS.SPAM,
-    drafts: MAILBOX_LABEL_IDS.DRAFTS,
-    starred: MAILBOX_LABEL_IDS.STARRED,
-    trash: MAILBOX_LABEL_IDS.TRASH,
-    archive: MAILBOX_LABEL_IDS.ARCHIVE,
-};
-
 /**
- * Two standard locations are a PAIR of labels, and a mail setting picks which one the user actually has:
- * Drafts follows Show-moved, and All mail follows "Exclude Spam/Trash from All mail" (`ALMOST_ALL_MAIL`
- * drops Spam and Trash). Reading the setting is what keeps a read on the same label the sidebar links to —
- * take `ALL_MAIL` unconditionally and the agent searches mail the user's own search would never show them,
- * and lands them in a view their sidebar does not offer.
- */
-const labelIDForLocation = (location: OpenFolderLocation, mailSettings: MailSettings): MAILBOX_LABEL_IDS => {
-    if (location === 'drafts' && hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS)) {
-        return MAILBOX_LABEL_IDS.ALL_DRAFTS;
-    }
-    if (location === 'all_mail' && mailSettings.AlmostAllMail === ALMOST_ALL_MAIL.ENABLED) {
-        return MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL;
-    }
-    return LOCATION_LABEL_IDS[location];
-};
-
-/**
- * Resolve an open_folder-style location/target to its mailbox label id (+ human name and nav path). A
- * standard location maps through the fixed table, honouring the settings-dependent pairs
- * ({@link labelIDForLocation}); a custom folder/label resolves its reference.
+ * Resolve a location reference to its mailbox label id, name and route. A default folder goes through
+ * {@link defaultFolderLabelID}, which follows the settings-dependent pairs; the user's own folder or label
+ * resolves through the registry.
  */
 export const resolveMailboxLocation = (
-    resolved: { location: OpenFolderLocation } | { target: string },
+    target: string,
     references: ReferenceRegistry,
     mailSettings: MailSettings
 ): { labelID: string; name: string; pathname: string } => {
-    if ('location' in resolved) {
-        const labelID = labelIDForLocation(resolved.location, mailSettings);
+    if (isDefaultFolderReference(target)) {
+        const labelID = defaultFolderLabelID(target, mailSettings);
         const standard = getStandardFolders()[labelID];
-        return { labelID, name: standard?.name || resolved.location, pathname: standard?.to || `/${labelID}` };
+        return { labelID, name: standard.name, pathname: standard.to };
     }
-    const labelID = resolveTypedId(resolved.target, ['folder', 'label'], references);
-    return { labelID, name: references.labelFor(resolved.target)?.title || labelID, pathname: `/${labelID}` };
-};
-
-/** Display name for copy that cannot reach the store. Takes a raw string because a confirm card renders a
- *  *proposed* location, before any handler has validated it; each settings-dependent pair shares one name. */
-export const locationDisplayName = (location: string): string => {
-    const labelID = LOCATION_LABEL_IDS[location as OpenFolderLocation];
-    return (labelID && getStandardFolders()[labelID]?.name) || location;
+    const labelID = resolveTypedId(target, ['folder', 'label'], references);
+    return { labelID, name: references.labelFor(target)?.title || labelID, pathname: `/${labelID}` };
 };
 
 /**
