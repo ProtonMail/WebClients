@@ -10,7 +10,7 @@ import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTe
 import type { Element } from '../../../models/element';
 import { selectParams } from '../../../store/elements/elementsSelectors';
 import { listingLabelID } from '../../helpers/messages';
-import { resolveFreshElements } from '../../helpers/references';
+import { groupByElementType, resolveFreshElements } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import {
     emailCountDetail,
@@ -75,10 +75,13 @@ export const createSetReadHandler =
     (mail: MailToolDeps): ToolHandler<SetReadParams, void> =>
     async ({ ids, read }, { references }) => {
         const elements = await resolveFreshElements(mail, ids, references);
-        const groups = groupByMarkLabel(elements, selectParams(mail.store.getState()).labelID, mail.getFolders());
+        const viewLabelID = selectParams(mail.store.getState()).labelID;
+        const groups = groupByElementType(elements).flatMap((typeGroup) => {
+            return [...groupByMarkLabel(typeGroup, viewLabelID, mail.getFolders())];
+        });
         // `silent`: Lumo's result tile already reports the outcome, so the hook's notification would double up.
         await Promise.all(
-            [...groups].map(([labelID, group]) =>
+            groups.map(([labelID, group]) =>
                 mail.markAs({
                     elements: group,
                     status: read ? MARK_AS_STATUS.READ : MARK_AS_STATUS.UNREAD,

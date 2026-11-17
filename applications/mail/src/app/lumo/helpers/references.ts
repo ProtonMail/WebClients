@@ -5,7 +5,7 @@ import { messageByID } from '@proton/mail-message/store/messages/messagesSelecto
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
 
-import { isElementConversation } from '../../helpers/elements';
+import { isElementConversation, isElementMessage } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 import { conversationByID } from '../../store/conversations/conversationsSelectors';
 import type { MailToolDeps, ToolStore } from '../toolModule';
@@ -155,4 +155,25 @@ export const resolveFreshElements = async (
         );
     }
     return Promise.all(emailReferences.map((reference) => resolveFreshElement(mail, reference, references)));
+};
+
+/**
+ * Mail's bulk actions take the conversation or the message path from the first element alone. One
+ * selection can hold both, since a conversation-view read and a search mint the same `email-` references,
+ * so callers run the action once per non-empty group.
+ */
+export const groupByElementType = (elements: Element[]): Element[][] => {
+    return [elements.filter(isElementConversation), elements.filter(isElementMessage)].filter((group) => {
+        return group.length > 0;
+    });
+};
+
+/** Runs a bulk action once per element type, one after the other, for actions that need no per-type check. */
+export const forEachElementType = async (
+    elements: Element[],
+    action: (group: Element[]) => Promise<unknown>
+): Promise<void> => {
+    for (const group of groupByElementType(elements)) {
+        await action(group);
+    }
 };

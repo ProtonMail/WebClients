@@ -54,6 +54,8 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { isElementConversation } from '../../helpers/elements';
+import { useMoveEngine } from '../../helpers/location/MoveEngine/useMoveEngine';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import useSnooze from '../../hooks/actions/useSnooze';
@@ -98,6 +100,7 @@ const LumoMailBody = memo(function LumoMailBody({ onValue }: PublisherProps<Lumo
     const api = useApi();
     const history = useHistory();
     const { applyLocation, applyMultipleLocations } = useApplyLocation();
+    const { conversationMoveEngine, messageMoveEngine } = useMoveEngine();
     const { markAs } = useMarkAs();
     const { snooze } = useSnooze();
     const initializeMessage = useInitializeMessage();
@@ -135,6 +138,8 @@ const LumoMailBody = memo(function LumoMailBody({ onValue }: PublisherProps<Lumo
         history,
         applyLocation,
         applyMultipleLocations,
+        conversationMoveEngine,
+        messageMoveEngine,
         markAs,
         snooze,
         initializeMessage,
@@ -221,6 +226,12 @@ const LumoMailBody = memo(function LumoMailBody({ onValue }: PublisherProps<Lumo
             applyMultipleLocations: async (params) => discardResult(latest.current.applyMultipleLocations(params)),
             reportRecategorize: (source, destination, count) => {
                 latest.current.sendReportRecategorizeEmail('move_to_folder', source, destination, count);
+            },
+            validateMove: (elements, destinationLabelID) => {
+                const engine = isElementConversation(elements[0])
+                    ? latest.current.conversationMoveEngine
+                    : latest.current.messageMoveEngine;
+                return engine.validateMove(destinationLabelID, elements, false);
             },
             markAs: (params) => discardResult(latest.current.markAs(params)),
             // Mirrors useMarkAllAs: the thunk always finishes the pending action, so the paired start has

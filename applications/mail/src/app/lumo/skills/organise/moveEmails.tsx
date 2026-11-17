@@ -10,9 +10,14 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasLabel } from '../../../helpers/elements';
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
 import type { Element } from '../../../models/element';
-import { elementCategoryID, resolveCategoryLabelID, resolveInboxCategory } from '../../helpers/categories';
+import {
+    categoryScopeName,
+    elementCategoryID,
+    resolveCategoryLabelID,
+    resolveInboxCategory,
+} from '../../helpers/categories';
 import { DefaultFolderReference, MOVE_DESTINATIONS, isDefaultFolderReference } from '../../helpers/defaultFolders';
-import { resolveFreshElements, resolveId } from '../../helpers/references';
+import { groupByElementType, resolveFreshElements, resolveId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import {
     emailIds,
@@ -90,6 +95,14 @@ export const moveEmailsDefinition: ToolDefinition<MoveEmailsParams, void> = {
     summarizeChip: () => ({ label: c('Info').t`Move emails` }),
 };
 
+/** Without this the result tile reads as applied and the model reports a move that never happened. */
+const nothingMovedMessage = (destination: string, denied: boolean): string => {
+    if (denied) {
+        return `Nothing moved: Mail does not allow moving these emails to ${destination}. Tell the user; do not propose the same move again.`;
+    }
+    return `Nothing moved: these emails are already in ${destination}. Tell the user; do not propose the same move again.`;
+};
+
 /** A default folder resolves like the user's own: the registry holds its fixed reference from the first turn. */
 export const createMoveEmailsHandler =
     (mail: MailToolDeps): ToolHandler<MoveEmailsParams, void> =>
@@ -98,16 +111,35 @@ export const createMoveEmailsHandler =
         const categoryLabelID = inboxCategory && resolveCategoryLabelID(inboxCategory, mail.getActiveCategoryTabs());
         const destinationLabelID = categoryLabelID || resolveId(folder, references);
         const elements = await resolveFreshElements(mail, ids, references);
-        if (!categoryLabelID) {
-            await mail.applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID });
-            return;
+        if (categoryLabelID) {
+            assertAllInInbox(elements);
         }
 
-        assertAllInInbox(elements);
+        const checked = groupByElementType(elements).map((group) => {
+            return { group, check: mail.validateMove(group, destinationLabelID) };
+        });
+        const movable = checked.filter(({ check }) => {
+            return check.allowedElements.length > 0;
+        });
+        if (!movable.length) {
+            const destination = categoryScopeName(references.labelFor(folder)?.title ?? folder, inboxCategory);
+            const denied = checked.some(({ check }) => {
+                return check.deniedElements.length > 0;
+            });
+            throw new ToolInputError(nothingMovedMessage(destination, denied));
+        }
+
         // Read before the move: afterwards the first email already carries the destination tab.
         const sourceCategoryID = elementCategoryID(elements[0]) ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
-        await mail.applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements, destinationLabelID });
-        mail.reportRecategorize(sourceCategoryID, categoryLabelID, elements.length);
+        for (const { group } of movable) {
+            await mail.applyLocation({ type: APPLY_LOCATION_TYPES.MOVE, elements: group, destinationLabelID });
+        }
+        if (categoryLabelID) {
+            const movedCount = movable.reduce((count, { group }) => {
+                return count + group.length;
+            }, 0);
+            mail.reportRecategorize(sourceCategoryID, categoryLabelID, movedCount);
+        }
     };
 
 /**

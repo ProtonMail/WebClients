@@ -12,7 +12,7 @@ import type {
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 
-import { resolveFreshElements, resolveTypedId } from '../../helpers/references';
+import { forEachElementType, resolveFreshElements, resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import {
     emailIds,
@@ -78,7 +78,9 @@ export const createApplyLabelsHandler =
         const elements = await resolveFreshElements(mail, ids, references);
         // `createFilters: false` — tagging these emails must not also propose a rule for future mail; that
         // is `create_filter`'s job, and the tool description draws the same line for the model.
-        await mail.applyMultipleLocations({ elements, createFilters: false, changes });
+        await forEachElementType(elements, (group) => {
+            return mail.applyMultipleLocations({ elements: group, createFilters: false, changes });
+        });
     };
 
 const labelNames = (action: ActionRequest, labels: ReferenceLabels): string =>

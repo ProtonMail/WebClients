@@ -7,10 +7,42 @@ import type { ElementFetchDeps } from './references';
 import {
     conversationReferenceFor,
     emailReferenceFor,
+    forEachElementType,
+    groupByElementType,
     isConversationReferenceID,
     messageReferenceFor,
     resolveFreshElements,
 } from './references';
+
+describe('groupByElementType', () => {
+    const conversation = { ID: 'CONVERSATION_1' } as Element;
+    const message = { ID: 'MESSAGE_1', ConversationID: 'CONVERSATION_2' } as Element;
+
+    it('splits a mixed selection into conversations, then messages', () => {
+        expect(groupByElementType([message, conversation])).toEqual([[conversation], [message]]);
+    });
+
+    it('leaves out a kind the selection does not hold', () => {
+        expect(groupByElementType([message])).toEqual([[message]]);
+    });
+});
+
+describe('forEachElementType', () => {
+    it('runs the action once per kind, waiting for each before the next', async () => {
+        const conversation = { ID: 'CONVERSATION_1' } as Element;
+        const message = { ID: 'MESSAGE_1', ConversationID: 'CONVERSATION_2' } as Element;
+        const calls: string[] = [];
+        const action = jest.fn(async (group: Element[]) => {
+            calls.push(`start ${group[0].ID}`);
+            await Promise.resolve();
+            calls.push(`end ${group[0].ID}`);
+        });
+
+        await forEachElementType([conversation, message], action);
+
+        expect(calls).toEqual(['start CONVERSATION_1', 'end CONVERSATION_1', 'start MESSAGE_1', 'end MESSAGE_1']);
+    });
+});
 
 describe('emailReferenceFor', () => {
     const conversationRow = { ID: 'CONVERSATION_1' } as Element;

@@ -5,7 +5,7 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
 import type { MailToolDeps } from '../../toolModule';
 import { emailCountDetail, hasEmailSelection, renderEmailSelectionBody } from './emailSelection';
-import { conversationIn, offListState } from './organise.test.helpers';
+import { conversationIn, mixedSelection, offListState } from './organise.test.helpers';
 import { createSetReadHandler, setReadCardRenderer, setReadDefinition } from './setRead';
 
 describe('setReadDefinition', () => {
@@ -77,6 +77,18 @@ describe('createSetReadHandler', () => {
         expect(markAs).toHaveBeenCalledTimes(2);
         expect(markAs).toHaveBeenCalledWith(markCall([inbox], MARK_AS_STATUS.UNREAD, MAILBOX_LABEL_IDS.INBOX));
         expect(markAs).toHaveBeenCalledWith(markCall([archived], MARK_AS_STATUS.UNREAD, MAILBOX_LABEL_IDS.ARCHIVE));
+    });
+
+    // `useMarkAs` takes its kind from the first element and filters the batch by it, so a mixed call
+    // silently skips the other kind.
+    it('marks conversations and messages in separate calls', async () => {
+        const { references, conversation, message, emailReferences, state } = mixedSelection();
+        const markAs = jest.fn().mockResolvedValue(undefined);
+        const deps = { store: { getState: () => state }, markAs, getFolders: () => [] } as unknown as MailToolDeps;
+
+        await createSetReadHandler(deps)({ ids: emailReferences, read: true }, { references });
+
+        expect(markAs.mock.calls.map(([params]) => params.elements)).toEqual([[conversation], [message]]);
     });
 
     // `useMarkAs` resolves cleanly on an empty selection, so the engine would feed back a success the model
