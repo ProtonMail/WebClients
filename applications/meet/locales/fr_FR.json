@@ -406,6 +406,9 @@
       "Join from ${ MEET_APP_NAME } app": [
         "Rejoindre depuis l'application ${ MEET_APP_NAME }"
       ],
+      "Join in browser": [
+        "Rejoindre dans le navigateur"
+      ],
       "Join meeting": [
         "Se connecter à la réunion"
       ],
@@ -456,6 +459,9 @@
       ],
       "More options for accounts": [
         "Plus d'options pour les comptes"
+      ],
+      "More reactions": [
+        "Plus de réactions"
       ],
       "Mute ${ participantName }": [
         "Couper le son de ${ participantName }"
@@ -2011,9 +2017,6 @@
       "Failed to start recording": [
         "Le démarrage de l'enregistrement a échoué."
       ],
-      "Failed to start screen share": [
-        "Le partage d'écran n'a pas réussi"
-      ],
       "Failed to unlock meeting": [
         "Échec du déverrouillage de la réunion"
       ],
@@ -2105,9 +2108,6 @@
       "Photo not found": [
         "La photo est introuvable"
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Veuillez autoriser le partage d'écran dans les autorisations de votre système, puis réessayez"
-      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "L'enregistrement s'est arrêté car il ne pouvait pas être enregistré. Nous l'avons conservé jusqu'à ce point."
       ],
@@ -2176,6 +2176,9 @@
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Le fichier importé ne correspond pas à l'original. Veuillez réessayer."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Cette émoticône ne peut pas être utilisée en tant que réaction."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
@@ -2293,6 +2296,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
       ]
     },
     "fido2: Info": {
@@ -2582,9 +2588,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
-      ],
-      "Coming soon": [
-        "Bientôt disponible"
       ],
       "Connection failed": [
         "Échec de la connexion"
@@ -3539,6 +3542,9 @@
       ],
       "Raw": [
         "Brut"
+      ],
+      "Reaction picker": [
+        "Sélecteur de réactions"
       ],
       "Reactions": [
         "Réactions"

@@ -115,6 +115,18 @@
       "Light ${ BRAND_NAME } background applied": [
         "Светлы фон ${ BRAND_NAME } прыменены"
       ],
+      "Live captions allowed for this meeting": [
+        "Інтэрактыўныя цітры дазволены для гэтай сустрэчы"
+      ],
+      "Live captions turned off": [
+        "Інтэрактыўныя цітры выключаны"
+      ],
+      "Live captions turned off for this meeting": [
+        "Інтэрактыўныя цітры выключаны для гэтай сустрэчы"
+      ],
+      "Live captions turned on": [
+        "Інтэрактыўныя цітры ўключаны"
+      ],
       "Mountain landscape background applied": [
         "Фон горнага пейзажу прыменены"
       ],
@@ -521,6 +533,9 @@
       ],
       "More options for accounts": [
         "Больш параметраў для ўліковых запісаў"
+      ],
+      "More reactions": [
+        "Больш рэакцый"
       ],
       "Mute ${ participantName }": [
         "Адключыць гук ${ participantName }"
@@ -2011,6 +2026,9 @@
       "Check your audio settings and try again": [
         "Праверце свае налады аўдыя і паўтарыце спробу"
       ],
+      "Connection lost — captions will resume when reconnected": [
+        "Падключэнне страчана: цітры будуць узноўлены пасля перападключэння"
+      ],
       "Copy operation aborted": [
         "Аперацыя капіявання перарвана"
       ],
@@ -2173,9 +2191,6 @@
       "Failed to start recording": [
         "Не ўдалося пачаць запіс."
       ],
-      "Failed to start screen share": [
-        "Не ўдалося пачаць абагульванне экрана"
-      ],
       "Failed to unlock meeting": [
         "Не ўдалося разблакіраваць сустрэчу"
       ],
@@ -2308,9 +2323,6 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Выберыце відарыс JPEG, PNG або WebP"
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Дазвольце абагульванне экрана ў сістэмных дазволах, а потым паўтарыце спробу"
-      ],
       "Recording stopped because of an error.": [
         "Запіс спынены, бо адбылася памылка."
       ],
@@ -2385,6 +2397,9 @@
       ],
       "This background could not be saved in this browser.": [
         "Гэты фон немагчыма захаваць у гэтым браўзеры."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Гэты эмодзі нельга выкарыстоўваць як рэакцыю"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (дазволена: ${ maximumLength })."
@@ -2844,9 +2859,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
-      ],
-      "Coming soon": [
-        "Неўзабаве з'явіцца"
       ],
       "Connection failed": [
         "Збой падключэння"
@@ -3586,6 +3598,9 @@
       "Your meeting is ready": [
         "Ваша сустрэча гатова"
       ],
+      "Your microphone is still starting": [
+        "Ваш мікрафон усё яшчэ запускаецца"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
       ],
@@ -3827,6 +3842,9 @@
       ],
       "Raw": [
         "Raw"
+      ],
+      "Reaction picker": [
+        "Выбар рэакцыі"
       ],
       "Reactions": [
         "Рэакцыі"
@@ -4072,6 +4090,9 @@
       ]
     },
     "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } і ${ lastWeekday }"
+      ],
       "Repeats daily": [
         "Паўтараць штодзень"
       ],
@@ -4080,6 +4101,12 @@
         "Паўтараецца кожныя ${ interval } дні",
         "Паўтараецца кожныя ${ interval } дзён",
         "Паўтараецца кожныя ${ interval } дзён"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Паўтараецца кожны ${ interval } месяц у ${ ordinalDay }",
+        "Паўтараецца кожныя ${ interval } месяцы ў ${ ordinalDay }",
+        "Паўтараецца кожныя ${ interval } месяцаў у ${ ordinalDay }",
+        "Паўтараецца кожныя ${ interval } месяцаў у ${ ordinalDay }"
       ],
       "Repeats every ${ interval } year on ${ monthDay }": [
         "Паўтараецца кожны ${ interval } год у ${ monthDay }",

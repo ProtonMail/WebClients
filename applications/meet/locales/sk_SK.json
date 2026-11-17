@@ -115,6 +115,18 @@
       "Light ${ BRAND_NAME } background applied": [
         "Bolo použité svetlé pozadie ${ BRAND_NAME }"
       ],
+      "Live captions allowed for this meeting": [
+        "Pre túto schôdzu boli živé titulky povolené"
+      ],
+      "Live captions turned off": [
+        "Živé titulky sú vypnuté"
+      ],
+      "Live captions turned off for this meeting": [
+        "Pre túto schôdzu boli živé titulky vypnuté"
+      ],
+      "Live captions turned on": [
+        "Živé titulky sú zapnuté"
+      ],
       "Mountain landscape background applied": [
         "Bolo použité pozadie s horskou scenériou"
       ],
@@ -360,6 +372,9 @@
       "Dismiss new messages": [
         "Zavrieť nové správy"
       ],
+      "Dismiss notification": [
+        "Zavrieť notifikáciu"
+      ],
       "Done": [
         "Hotovo"
       ],
@@ -434,6 +449,9 @@
       ],
       "Getting ready...": [
         "Pripravuje sa..."
+      ],
+      "Go to today": [
+        "Prejsť na dnešok"
       ],
       "Help and feedback": [
         "Pomoc a spätná väzba"
@@ -521,6 +539,9 @@
       ],
       "More options for accounts": [
         "Ďalšie možnosti pre účty"
+      ],
+      "More reactions": [
+        "Ďalšie reakcie"
       ],
       "Mute ${ participantName }": [
         "Stlmiť účastníka ${ participantName }"
@@ -2185,9 +2206,6 @@
       "Failed to start recording": [
         "Nepodarilo sa spustiť nahrávanie"
       ],
-      "Failed to start screen share": [
-        "Nepodarilo sa spustiť zdieľanie obrazovky"
-      ],
       "Failed to unlock meeting": [
         "Stretnutie sa nepodarilo odomknúť"
       ],
@@ -2320,9 +2338,6 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Vyberte obrázok vo formáte JPEG, PNG alebo WebP."
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Povoľte, prosím, zdieľanie obrazovky v systémových povoleniach a potom to skúste znova"
-      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Nahrávanie sa zastavilo, pretože sa nedalo uložiť. Do tohto bodu sme v ňom pokračovali."
       ],
@@ -2406,6 +2421,9 @@
       ],
       "This background could not be saved in this browser.": [
         "Toto pozadie sa v tomto prehliadači nedalo uložiť."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Toto emoji nemožno použiť ako reakciu"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
@@ -2553,6 +2571,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
       ]
     },
     "fido2: Info": {
@@ -2889,9 +2910,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
-      ],
-      "Coming soon": [
-        "Už čoskoro"
       ],
       "Connection failed": [
         "Pripojenie zlyhalo"
@@ -3926,6 +3944,9 @@
       ],
       "Raw": [
         "Raw"
+      ],
+      "Reaction picker": [
+        "Výber reakcie"
       ],
       "Reactions": [
         "Reakcie"

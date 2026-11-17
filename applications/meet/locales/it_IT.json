@@ -113,6 +113,18 @@
       "Light ${ BRAND_NAME } background applied": [
         "Applicato sfondo chiaro ${ BRAND_NAME }"
       ],
+      "Live captions allowed for this meeting": [
+        "Sottotitoli automatici disponibili per questa riunione"
+      ],
+      "Live captions turned off": [
+        "Sottotitoli automatici disattivati"
+      ],
+      "Live captions turned off for this meeting": [
+        "Sottotitoli automatici non disponibili per questa riunione"
+      ],
+      "Live captions turned on": [
+        "Sottotitoli automatici attivati"
+      ],
       "Mountain landscape background applied": [
         "Sfondo con paesaggio montano applicato"
       ],
@@ -354,6 +366,9 @@
       "Dismiss new messages": [
         "Ignora nuovi messaggi"
       ],
+      "Dismiss notification": [
+        "Ignora notifica"
+      ],
       "Done": [
         "Fatto"
       ],
@@ -428,6 +443,9 @@
       ],
       "Getting ready...": [
         "Inizializzazione..."
+      ],
+      "Go to today": [
+        "Vai a oggi"
       ],
       "Help and feedback": [
         "Aiuto e feedback"
@@ -515,6 +533,9 @@
       ],
       "More options for accounts": [
         "Altre opzioni per gli account"
+      ],
+      "More reactions": [
+        "Più reazioni"
       ],
       "Mute ${ participantName }": [
         "Silenzia ${ participantName }"
@@ -2175,9 +2196,6 @@
       "Failed to start recording": [
         "Impossibile avviare la registrazione"
       ],
-      "Failed to start screen share": [
-        "Impossibile avviare la condivisione dello schermo"
-      ],
       "Failed to unlock meeting": [
         "Impossibile sbloccare la riunione"
       ],
@@ -2308,9 +2326,6 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Scegli un'immagine in formato JPEG, PNG o WebP."
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Per favore, consenti la condivisione dello schermo nelle autorizzazioni di sistema, quindi riprova"
-      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "La registrazione si è interrotta perché non è stato possibile salvarla. Abbiamo continuato fino a questo punto."
       ],
@@ -2348,7 +2363,7 @@
         "Verifica della firma per ${ signatureType } fallita"
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+        "Verifica della firma per ${ signatureType } non riuscita: ${ errorMessage }"
       ],
       "Some file data failed to upload. Please try again.": [
         "L'upload di alcuni file è fallito. Prova di nuovo."
@@ -2394,6 +2409,9 @@
       ],
       "This background could not be saved in this browser.": [
         "Non è stato possibile salvare questo sfondo in questo browser."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Impossibile usare quest'emoji come reazione"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
@@ -2541,6 +2559,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
       ]
     },
     "fido2: Info": {
@@ -2855,9 +2876,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
-      ],
-      "Coming soon": [
-        "In arrivo"
       ],
       "Connection failed": [
         "Errore durante la connessione"
@@ -3246,6 +3264,9 @@
       "Open external link": [
         "Apri link esterno"
       ],
+      "Open the window you want to share, then try again.": [
+        "Apri la finestra che desideri condividere, quindi riprova."
+      ],
       "Other accounts": [
         "Altri account"
       ],
@@ -3414,6 +3435,9 @@
       "Sign in": [
         "Accedi"
       ],
+      "Something went wrong. Please try again.": [
+        "Si è verificato un errore. Riprova."
+      ],
       "Sort by": [
         "Ordina per"
       ],
@@ -3431,6 +3455,9 @@
       ],
       "support team": [
         "team di supporto"
+      ],
+      "System Settings → Privacy & Security → Screen Recording": [
+        "Impostazioni di sistema → Privacy e Sicurezza → Registrazione dello schermo"
       ],
       "Thank you for hosting a premium meeting.": [
         "Grazie per aver organizzato una riunione premium."
@@ -3509,6 +3536,9 @@
       ],
       "Turn on camera": [
         "Attiva la webcam"
+      ],
+      "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
+        "Apri Firefox in ${ settingsPath }, quindi riavvialo e ricollegati alla chiamata."
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Impossibile riconnettersi alla riunione. Unisciti di nuovo o esci."
@@ -3890,6 +3920,9 @@
       ],
       "Raw": [
         "Grezzo"
+      ],
+      "Reaction picker": [
+        "Selettore di reazione"
       ],
       "Reactions": [
         "Reazioni"
@@ -4586,6 +4619,9 @@
       "Error at epoch ${ log.epoch }": [
         "Errore all'epoca ${ log.epoch }"
       ],
+      "Firefox can’t record your screen": [
+        "Impossibile registrare lo schermo"
+      ],
       "Help and feedback": [
         "Aiuto e feedback"
       ],
@@ -4665,6 +4701,9 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
+      "No screen or window found": [
+        "Nessuno schermo o finestra rilevati"
+      ],
       "Participant counts don’t match": [
         "Il numero dei partecipanti non corrisponde"
       ],
@@ -4712,6 +4751,9 @@
       ],
       "Schedule a meeting": [
         "Programma una riunione"
+      ],
+      "Screen share failed": [
+        "Condivisione dello schermo non riuscita"
       ],
       "Screen share is blocked": [
         "La condivisione dello schermo è bloccata"

@@ -113,6 +113,18 @@
       "Light ${ BRAND_NAME } background applied": [
         "Açık ${ BRAND_NAME } arka planı uygulandı"
       ],
+      "Live captions allowed for this meeting": [
+        "Bu görüşmede canlı alt yazılara izin verildi"
+      ],
+      "Live captions turned off": [
+        "Canlı alt yazılar kapatıldı"
+      ],
+      "Live captions turned off for this meeting": [
+        "Bu görüşmede canlı alt yazılar kapatılmış"
+      ],
+      "Live captions turned on": [
+        "Canlı alt yazılar açıldı"
+      ],
       "Mountain landscape background applied": [
         "Dağ manzarası arka planı uygulandı"
       ],
@@ -354,6 +366,9 @@
       "Dismiss new messages": [
         "Yeni iletiler yok sayılsın"
       ],
+      "Dismiss notification": [
+        "Bildirimi yok say"
+      ],
       "Done": [
         "Tamam"
       ],
@@ -428,6 +443,9 @@
       ],
       "Getting ready...": [
         "Hazırlanıyor..."
+      ],
+      "Go to today": [
+        "Bugüne git"
       ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
@@ -515,6 +533,9 @@
       ],
       "More options for accounts": [
         "Hesaplar için diğer seçenekler"
+      ],
+      "More reactions": [
+        "Diğer tepkiler"
       ],
       "Mute ${ participantName }": [
         "${ participantName } katılımcısının sesini kapat"
@@ -2175,9 +2196,6 @@
       "Failed to start recording": [
         "Görüşme kaydı başlatılamadı"
       ],
-      "Failed to start screen share": [
-        "Ekran paylaşımı başlatılamadı"
-      ],
       "Failed to unlock meeting": [
         "Görüşmenin kilidi açılamadı"
       ],
@@ -2308,9 +2326,6 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Bir JPEG, PNG veya WebP görseli seçin."
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Lütfen sistem izinlerinizden ekran paylaşımı iznini verip yeniden deneyin"
-      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Dosya kaydedilemediğinden görüşme kaydı durduruldu. Bu ana kadar kayıt yapıldı."
       ],
@@ -2394,6 +2409,9 @@
       ],
       "This background could not be saved in this browser.": [
         "Bu arka plan bu tarayıcıda kaydedilemedi."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Bu emoji tepki olarak kullanılamaz"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -2541,6 +2559,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
       ]
     },
     "fido2: Info": {
@@ -2855,9 +2876,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
-      ],
-      "Coming soon": [
-        "Çok yakında"
       ],
       "Connection failed": [
         "Bağlantı kurulamadı"
@@ -3246,6 +3264,9 @@
       "Open external link": [
         "Dış bağlantıyı aç"
       ],
+      "Open the window you want to share, then try again.": [
+        "Paylaşmak istediğiniz pencereyi açın ardından tekrar deneyin."
+      ],
       "Other accounts": [
         "Diğer hesaplar"
       ],
@@ -3414,6 +3435,9 @@
       "Sign in": [
         "Oturum aç"
       ],
+      "Something went wrong. Please try again.": [
+        "Bir hata oluştu. Lütfen tekrar deneyin."
+      ],
       "Sort by": [
         "Sıralama"
       ],
@@ -3431,6 +3455,9 @@
       ],
       "support team": [
         "destek ekibi"
+      ],
+      "System Settings → Privacy & Security → Screen Recording": [
+        "Sistem Ayarları → Gizlilik ve Güvenlik → Ekran Kaydetme"
       ],
       "Thank you for hosting a premium meeting.": [
         "Ücretli bir görüşmeye ev sahipliği yaptığınız için teşekkür ederiz."
@@ -3509,6 +3536,9 @@
       ],
       "Turn on camera": [
         "Kamerayı aç"
+      ],
+      "Turn on Firefox in ${ settingsPath }. Then restart Firefox and rejoin the call.": [
+        "${ settingsPath } konumundan Firefox’u açın. Ardından Firefox’u yeniden başlatın ve görüşmeye tekrar katılın."
       ],
       "Unable to reconnect to the meeting. Please rejoin or leave.": [
         "Görüşme ile yeniden bağlantı kurulamadı. Lütfen yeniden katılın ya da görüşmeden ayrılın."
@@ -3890,6 +3920,9 @@
       ],
       "Raw": [
         "Ham"
+      ],
+      "Reaction picker": [
+        "Tepki seçici"
       ],
       "Reactions": [
         "Tepkiler"
@@ -4586,6 +4619,9 @@
       "Error at epoch ${ log.epoch }": [
         "Epoch ${ log.epoch } zamanında sorun"
       ],
+      "Firefox can’t record your screen": [
+        "Firefox ekranınızı kaydedemiyor"
+      ],
       "Help and feedback": [
         "Yardım ve geri bildirim"
       ],
@@ -4665,6 +4701,9 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
+      "No screen or window found": [
+        "Ekran veya pencere bulunamadı"
+      ],
       "Participant counts don’t match": [
         "Katılımcı sayıları uyuşmuyor"
       ],
@@ -4712,6 +4751,9 @@
       ],
       "Schedule a meeting": [
         "Görüşme planlayın"
+      ],
+      "Screen share failed": [
+        "Ekran paylaşımı başarısız oldu"
       ],
       "Screen share is blocked": [
         "Ekran paylaşımı engellendi"

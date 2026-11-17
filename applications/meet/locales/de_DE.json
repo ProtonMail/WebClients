@@ -113,6 +113,18 @@
       "Light ${ BRAND_NAME } background applied": [
         "Heller ${ BRAND_NAME }-Hintergrund angewendet"
       ],
+      "Live captions allowed for this meeting": [
+        "Automatische Übersetzung wurde für diese Sitzung erlaubt"
+      ],
+      "Live captions turned off": [
+        "Automatische Übersetzung wurde deaktiviert"
+      ],
+      "Live captions turned off for this meeting": [
+        "Automatische Übersetzung wurde für diese Sitzung deaktiviert"
+      ],
+      "Live captions turned on": [
+        "Automatische Übersetzung wurde aktiviert"
+      ],
       "Mountain landscape background applied": [
         "Hintergrund mit Berglandschaft angewendet"
       ],
@@ -515,6 +527,9 @@
       ],
       "More options for accounts": [
         "Mehr Optionen für Konten"
+      ],
+      "More reactions": [
+        "Weitere Reaktionen"
       ],
       "Mute ${ participantName }": [
         "${ participantName } stummschalten"
@@ -2175,9 +2190,6 @@
       "Failed to start recording": [
         "Fehler beim Starten der Aufzeichnung"
       ],
-      "Failed to start screen share": [
-        "Die Bildschirmfreigabe konnte nicht gestartet werden."
-      ],
       "Failed to unlock meeting": [
         "Fehler beim Entsperren des Meetings"
       ],
@@ -2308,9 +2320,6 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Ein JPEG-, PNG- oder WebP-Bild auswählen."
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Bitte erlaube die Bildschirmfreigabe in deinen Systemeinstellungen und versuche es dann noch einmal."
-      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Die Aufzeichnung wurde beendet, da sie nicht gespeichert werden konnte. Bis zu diesem Zeitpunkt wurden sie behalten."
       ],
@@ -2394,6 +2403,9 @@
       ],
       "This background could not be saved in this browser.": [
         "Dieser Hintergrund konnte in diesem Browser nicht gespeichert werden."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Dieses Emoji kann nicht als Reaktion verwendet werden"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
@@ -2541,6 +2553,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
       ]
     },
     "fido2: Info": {
@@ -2855,9 +2870,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
-      ],
-      "Coming soon": [
-        "Demnächst verfügbar"
       ],
       "Connection failed": [
         "Verbindung fehlgeschlagen"
@@ -3890,6 +3902,9 @@
       ],
       "Raw": [
         "Roh"
+      ],
+      "Reaction picker": [
+        "Emoji auswählen"
       ],
       "Reactions": [
         "Reaktionen"

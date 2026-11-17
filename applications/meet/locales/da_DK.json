@@ -113,6 +113,18 @@
       "Light ${ BRAND_NAME } background applied": [
         "Lys ${ BRAND_NAME }-baggrund anvendt"
       ],
+      "Live captions allowed for this meeting": [
+        "Live undertekster er tilladt for dette møde"
+      ],
+      "Live captions turned off": [
+        "Live undertekster er slået fra"
+      ],
+      "Live captions turned off for this meeting": [
+        "Live undertekster er slået fra for dette møde"
+      ],
+      "Live captions turned on": [
+        "Live undertekster er slået til"
+      ],
       "Mountain landscape background applied": [
         "Bjerg-baggrund anvendt"
       ],
@@ -515,6 +527,9 @@
       ],
       "More options for accounts": [
         "Flere muligheder for konti"
+      ],
+      "More reactions": [
+        "Flere reaktioner"
       ],
       "Mute ${ participantName }": [
         "Slå lyd fra for ${ participantName }"
@@ -2175,9 +2190,6 @@
       "Failed to start recording": [
         "Kunne ikke begynde optagelsen"
       ],
-      "Failed to start screen share": [
-        "Kunne ikke starte skærmdeling"
-      ],
       "Failed to unlock meeting": [
         "Kunne ikke låse møde op"
       ],
@@ -2244,6 +2256,9 @@
       "Microphone access is blocked. Allow it in your browser settings.": [
         "Adgang til mikrofonen er blokeret. Tillad den i dine browserindstillinger."
       ],
+      "Microphone not detected": [
+        "Ingen mikrofon fundet"
+      ],
       "Missing inviter email": [
         "Mangler invitations-e-mail"
       ],
@@ -2304,9 +2319,6 @@
       ],
       "Pick a JPEG, PNG or WebP image.": [
         "Vælg et billede i JPEG-, PNG-, eller WebP-format."
-      ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Tillad skærmdeling i dine systemtilladelser og prøv så igen"
       ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Optagelsen blev stoppet, fordi den ikke kunne gemmes. Vi har gemt den hidtidige optagelse."
@@ -2391,6 +2403,9 @@
       ],
       "This background could not be saved in this browser.": [
         "Denne baggrund kunne ikke gemmes i denne browser."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Denne emoji kan ikke bruges som reaktion."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
@@ -2538,6 +2553,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Din browser understøtter ikke sikkerhedsnøgler. Prøv en anden browser."
       ]
     },
     "fido2: Info": {
@@ -2852,9 +2870,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
-      ],
-      "Coming soon": [
-        "Kommer snart"
       ],
       "Connection failed": [
         "Forbindelse mislykkedes"
@@ -3887,6 +3902,9 @@
       ],
       "Raw": [
         "Raw"
+      ],
+      "Reaction picker": [
+        "Reaktionsvælger"
       ],
       "Reactions": [
         "Reaktioner"

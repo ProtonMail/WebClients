@@ -114,6 +114,18 @@
       "Light ${ BRAND_NAME } background applied": [
         "Fundal ${ BRAND_NAME } luminos aplicat."
       ],
+      "Live captions allowed for this meeting": [
+        "Subtitrările live sunt permise în această conferință."
+      ],
+      "Live captions turned off": [
+        "Subtitrări live dezactivate"
+      ],
+      "Live captions turned off for this meeting": [
+        "Subtitrările live sunt dezactivate în această conferință."
+      ],
+      "Live captions turned on": [
+        "Subtitrări live activate"
+      ],
       "Mountain landscape background applied": [
         "Fundal cu peisaj montan aplicat."
       ],
@@ -518,6 +530,9 @@
       ],
       "More options for accounts": [
         "Mai multe opțiuni pentru conturi"
+      ],
+      "More reactions": [
+        "Mai multe reacții"
       ],
       "Mute ${ participantName }": [
         "Amuțire ${ participantName }"
@@ -2180,9 +2195,6 @@
       "Failed to start recording": [
         "Pornirea înregistrării a eșuat"
       ],
-      "Failed to start screen share": [
-        "Eșuare pornire partajare ecran"
-      ],
       "Failed to unlock meeting": [
         "Deblocarea conferinței a eșuat."
       ],
@@ -2314,9 +2326,6 @@
       "Pick a JPEG, PNG or WebP image.": [
         "Alegeți o imagine JPEG, PNG sau WebP."
       ],
-      "Please allow screen sharing in your system permissions, then try again": [
-        "Permiteți partajarea ecranului în permisiunile de sistem, apoi reîncercați."
-      ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Înregistrarea s-a oprit deoarece nu a putut fi salvată. S-a păstrat până în acest punct."
       ],
@@ -2400,6 +2409,9 @@
       ],
       "This background could not be saved in this browser.": [
         "Acest fundal nu a putut fi salvat în acest navigator web."
+      ],
+      "This emoji can’t be used as a reaction": [
+        "Acest emoticon nu poate fi utilizată ca reacție."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
@@ -2547,6 +2559,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
       ]
     },
     "fido2: Info": {
@@ -2872,9 +2887,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
-      ],
-      "Coming soon": [
-        "În curând"
       ],
       "Connection failed": [
         "Conexiunea a eșuat"
@@ -3908,6 +3920,9 @@
       ],
       "Raw": [
         "Brut"
+      ],
+      "Reaction picker": [
+        "Selector de reacție"
       ],
       "Reactions": [
         "Reacții"
