@@ -1,6 +1,7 @@
 import type { LumoAgentItem } from '@proton/llm/lib/lumoAgent/ui/types';
 import { ConfirmStatus } from '@proton/llm/lib/lumoAgent/ui/types';
 
+import { DefaultFolderReference } from '../helpers/defaultFolders';
 import { CatActivity } from './catPose';
 
 // Tool names rather than the skill definitions, which would pull the skills into the mailbox chunk
@@ -13,7 +14,6 @@ const READ_ACTIVITIES = new Map<string, CatActivity>([
 ]);
 const DRAFT_TOOLS = new Set(['create_draft', 'revise_draft']);
 const MOVE_TOOL = 'move_emails';
-const TRASH_LOCATION = 'trash';
 
 /** A read's chip lands once the read is done, so its activity lasts until Lumo's next step or reply. */
 export const selectCatActivity = (items: LumoAgentItem[], isBusy: boolean): CatActivity | null => {
@@ -39,7 +39,7 @@ const isAppliedTrash = (item: LumoAgentItem) => {
         item.kind === 'confirm' &&
         item.status === ConfirmStatus.APPLIED &&
         item.action.type === MOVE_TOOL &&
-        item.action.location === TRASH_LOCATION
+        item.action.folder === DefaultFolderReference.TRASH
     );
 };
 

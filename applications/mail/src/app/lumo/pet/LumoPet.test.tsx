@@ -5,6 +5,7 @@ import type { LumoAgentItem } from '@proton/llm/lib/lumoAgent/ui/types';
 import { ConfirmStatus, LumoChainEnd } from '@proton/llm/lib/lumoAgent/ui/types';
 
 import { PanelSide } from '../floating/panelSide';
+import { DefaultFolderReference } from '../helpers/defaultFolders';
 import CatSprite from './CatSprite';
 import LumoPet from './LumoPet';
 import { CatJump, CatPose, CatRun, CatTrick } from './catPose';
@@ -77,7 +78,7 @@ const searchChip: LumoAgentItem = { id: 1, kind: 'chip', tool: 'search', label: 
 const appliedTrash: LumoAgentItem = {
     id: 2,
     kind: 'confirm',
-    action: { type: 'move_emails', ids: ['email-a1b2c3'], folder: null, location: 'trash' },
+    action: { type: 'move_emails', ids: ['email-a1b2c3'], folder: DefaultFolderReference.TRASH },
     labels: {},
     status: ConfirmStatus.APPLIED,
 };

@@ -15,7 +15,7 @@ import type {
     updateLabel as updateLabelAction,
 } from '@proton/mail/store/labels/actions';
 import type { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
-import type { DENSITY } from '@proton/shared/lib/constants';
+import type { CategoryLabelID, DENSITY } from '@proton/shared/lib/constants';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -88,6 +88,12 @@ export interface MailToolDeps {
     updateAddress: (params: Parameters<typeof updateAddressThunk>[0]) => Promise<void>;
     applyLocation: ApplyLocation;
     applyMultipleLocations: (params: ApplyMultipleLocationsParams) => Promise<void>;
+    /** Mail's own report for a move between Inbox tabs, sent as a move from the folder dropdown. */
+    reportRecategorize: (
+        sourceCategoryID: CategoryLabelID,
+        destinationCategoryID: CategoryLabelID,
+        count: number
+    ) => void;
     /**
      * Resolves once the optimistic update is dispatched, so it cannot report a backend failure.
      * `selectAll` is omitted: that path awaits a confirmation modal no Lumo surface renders.

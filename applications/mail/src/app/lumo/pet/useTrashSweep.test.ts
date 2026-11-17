@@ -3,13 +3,14 @@ import { act, renderHook } from '@testing-library/react';
 import type { LumoAgentItem } from '@proton/llm/lib/lumoAgent/ui/types';
 import { ConfirmStatus } from '@proton/llm/lib/lumoAgent/ui/types';
 
+import { DefaultFolderReference } from '../helpers/defaultFolders';
 import { SWEEP_MS } from './catSpriteManifest';
 import { useTrashSweep } from './useTrashSweep';
 
 const trashCard = (id: number, status: ConfirmStatus): LumoAgentItem => ({
     id,
     kind: 'confirm',
-    action: { type: 'move_emails', ids: ['email-a1b2c3'], folder: null, location: 'trash' },
+    action: { type: 'move_emails', ids: ['email-a1b2c3'], folder: DefaultFolderReference.TRASH },
     labels: {},
     status,
 });
