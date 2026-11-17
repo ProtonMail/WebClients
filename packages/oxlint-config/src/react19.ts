@@ -4,13 +4,18 @@ import { brandNameSelectors } from './brandNames.ts';
 import { typescriptGlobs } from './globs.ts';
 import { jsxNamespaceSelectors } from './jsxNamespace.ts';
 import { refObjectNullSelectors } from './refObjectNull.ts';
+import { useReducerTypeArgumentsSelectors } from './useReducerTypeArguments.ts';
 import { useRefInitialValueSelectors } from './useRefInitialValue.ts';
 
 /**
  * `proton/restricted-syntax` selectors for code the React 19 types reject. A config that sets its own
  * `proton/restricted-syntax` list replaces the shared one, so it has to spread these in again.
  */
-export const react19Selectors = [...jsxNamespaceSelectors, ...useRefInitialValueSelectors];
+export const react19Selectors = [
+    ...jsxNamespaceSelectors,
+    ...useRefInitialValueSelectors,
+    ...useReducerTypeArgumentsSelectors,
+];
 
 /**
  * Override for a package whose `RefObject` annotations already work with the React 19 types. Once every

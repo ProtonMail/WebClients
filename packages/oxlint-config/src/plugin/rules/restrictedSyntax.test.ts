@@ -2,6 +2,7 @@ import { RuleTester } from 'oxlint/plugins-dev';
 
 import { jsxNamespaceSelectors } from '../../jsxNamespace.ts';
 import { refObjectNullSelectors } from '../../refObjectNull.ts';
+import { useReducerTypeArgumentsSelectors } from '../../useReducerTypeArguments.ts';
 import { useRefInitialValueSelectors } from '../../useRefInitialValue.ts';
 import rule from './restrictedSyntax.ts';
 
@@ -9,6 +10,7 @@ const ruleTester = new RuleTester({ languageOptions: { parserOptions: { lang: 't
 
 const [globalJsx, reactJsx] = jsxNamespaceSelectors;
 const [useRefInitialValue] = useRefInitialValueSelectors;
+const [useReducerTypeArguments] = useReducerTypeArgumentsSelectors;
 const [refObjectNull] = refObjectNullSelectors;
 
 const brand = {
@@ -50,6 +52,8 @@ ruleTester.run('restricted-syntax', rule, {
         { code: 'const a = useRef<number>(undefined);', options: useRefInitialValueSelectors },
         { code: 'const a = React.useRef(null);', options: useRefInitialValueSelectors },
         { code: 'const a = useRefresh();', options: useRefInitialValueSelectors },
+        { code: 'const [a, b] = useReducer(reducer, 0);', options: useReducerTypeArgumentsSelectors },
+        { code: 'const [a, b] = React.useReducer(reducer, 0);', options: useReducerTypeArgumentsSelectors },
         { code: "import type { JSX } from 'react'; let a: JSX.Element;", options: jsxNamespaceSelectors },
         {
             code: "import type { JSX, ReactNode } from 'react'; let a: keyof JSX.IntrinsicElements;",
@@ -86,6 +90,16 @@ ruleTester.run('restricted-syntax', rule, {
             code: 'const a = React.useRef();',
             options: useRefInitialValueSelectors,
             errors: [{ messageId: 'restrictedSyntax', data: { message: useRefInitialValue.message } }],
+        },
+        {
+            code: 'const [a, b] = useReducer<Reducer<number, Action>>(reducer, 0);',
+            options: useReducerTypeArgumentsSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: useReducerTypeArguments.message } }],
+        },
+        {
+            code: 'const [a, b] = React.useReducer<number, [Action]>(reducer, 0);',
+            options: useReducerTypeArgumentsSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: useReducerTypeArguments.message } }],
         },
         {
             code: 'interface A extends JSX.IntrinsicAttributes {}',

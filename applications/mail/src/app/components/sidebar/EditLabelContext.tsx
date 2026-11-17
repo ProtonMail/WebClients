@@ -1,4 +1,3 @@
-import type { Reducer } from 'react';
 import { createContext, useCallback, useContext, useMemo, useReducer } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
@@ -64,7 +63,7 @@ const reducer = (state: State, action: Action) => {
 export const LabelActionsContextProvider = ({ children }: { children: React.ReactNode }) => {
     const location = useLocation();
     const history = useHistory();
-    const [{ type, label, action, parentFolderId }, dispatch] = useReducer<Reducer<State, Action>>(reducer, {
+    const [{ type, label, action, parentFolderId }, dispatch] = useReducer(reducer, {
         type: undefined,
         label: undefined,
         action: undefined,

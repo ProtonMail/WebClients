@@ -1,4 +1,4 @@
-import type { ReactNode, Reducer } from 'react';
+import type { ReactNode } from 'react';
 import { useEffect, useReducer, useState } from 'react';
 
 import isDeepEqual from 'lodash/isEqual';
@@ -23,9 +23,7 @@ const offsetReducer = (oldState: NotificationOffset | undefined, newState: Notif
 
 const NotificationsProvider = ({ children }: Props) => {
     const [notifications, setNotifications] = useState<Notification[]>([]);
-    const [offset, setNotificationOffset] = useReducer<
-        Reducer<NotificationOffset | undefined, NotificationOffset | undefined>
-    >(offsetReducer, undefined);
+    const [offset, setNotificationOffset] = useReducer(offsetReducer, undefined);
 
     const manager = useInstance(() => {
         return createManager(setNotifications, setNotificationOffset);

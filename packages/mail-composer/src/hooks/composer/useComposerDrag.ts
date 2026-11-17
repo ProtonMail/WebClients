@@ -1,4 +1,4 @@
-import type { MouseEventHandler, Reducer } from 'react';
+import type { MouseEventHandler } from 'react';
 import { useCallback, useEffect, useReducer, useRef } from 'react';
 
 import debounce from 'lodash/debounce';
@@ -63,15 +63,12 @@ const useComposerDrag = ({
     const prevMaximized = useRef(isMaximized);
     const composerLeftStyle = computeLeftPosition(composerDimension, composerIndex, totalComposers, windowWidth);
 
-    const [{ isDragging, initialCursorPosition, offset, lastOffset }, dispatch] = useReducer<Reducer<State, Action>>(
-        moveReducer,
-        {
-            isDragging: false,
-            initialCursorPosition: null,
-            offset: 0,
-            lastOffset: 0,
-        }
-    );
+    const [{ isDragging, initialCursorPosition, offset, lastOffset }, dispatch] = useReducer(moveReducer, {
+        isDragging: false,
+        initialCursorPosition: null,
+        offset: 0,
+        lastOffset: 0,
+    });
 
     const handleStartDragging: MouseEventHandler<HTMLElement> = (e) => {
         dispatch({ type: 'start', payload: { isDragging: true, initialCursorPosition: e.clientX } });
