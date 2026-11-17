@@ -36,11 +36,11 @@ const baseProps: ComponentProps<typeof LumoAgentPanel> = {
     isBusy: false,
     cardRenderers: { move_items: { icon: IcPencil, sentence: () => 'Move 1 email to Archive' } },
     draft: '',
-    onDraftChange: jest.fn(),
-    onSend: jest.fn(),
-    onStop: jest.fn(),
-    onConfirm: jest.fn(),
-    onCancel: jest.fn(),
+    onDraftChange: vi.fn(),
+    onSend: vi.fn(),
+    onStop: vi.fn(),
+    onConfirm: vi.fn(),
+    onCancel: vi.fn(),
 };
 
 const panelWith = (props: Partial<ComponentProps<typeof LumoAgentPanel>>) => (
@@ -53,7 +53,7 @@ const thinkingIndicator = () => screen.queryByText('Thinking about this');
 const idleMark = (container: HTMLElement) => container.querySelector('.lumo-agent-avatar');
 
 beforeAll(() => {
-    Element.prototype.scrollTo = jest.fn();
+    Element.prototype.scrollTo = vi.fn();
 });
 
 const TRANSCRIPT_HEIGHT = 400;
@@ -87,11 +87,11 @@ const userScrollsUpFromBottom = (container: HTMLElement) => {
 
 const streamingReply = (text: string): LumoAgentItem => ({ ...reply, text });
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => jest.fn() }));
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => jest.fn() }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => vi.fn() }));
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => vi.fn() }));
 
 describe('LumoAgentPanel', () => {
     it('shows the idle mark and no activity indicator once a turn has finished', () => {
@@ -231,7 +231,7 @@ describe('LumoAgentPanel', () => {
     });
 
     describe('following the stream', () => {
-        const scrollToMock = () => jest.mocked(Element.prototype.scrollTo);
+        const scrollToMock = () => vi.mocked(Element.prototype.scrollTo);
 
         const midStream = () => panelWith({ items: [userTurn, streamingReply('Look')], isBusy: true });
         const nextToken = () => panelWith({ items: [userTurn, streamingReply('Looking')], isBusy: true });

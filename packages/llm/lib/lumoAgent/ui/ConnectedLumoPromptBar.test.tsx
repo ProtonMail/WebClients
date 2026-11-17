@@ -8,9 +8,9 @@ import LumoAgentDrawerContext from './lumoAgentDrawerContext';
 import { isAgentGenerating } from './pendingConfirm';
 import type { LumoAgentItem } from './types';
 
-jest.mock('./LumoAgentPromptBar', () => ({ __esModule: true, default: jest.fn(() => null) }));
-jest.mock('./focusLumoPrompt', () => ({ focusLumoPrompt: jest.fn() }));
-jest.mock('./pendingConfirm', () => ({ isAgentGenerating: jest.fn() }));
+vi.mock('./LumoAgentPromptBar', () => ({ default: vi.fn(() => null) }));
+vi.mock('./focusLumoPrompt', () => ({ focusLumoPrompt: vi.fn() }));
+vi.mock('./pendingConfirm', () => ({ isAgentGenerating: vi.fn() }));
 
 const items: LumoAgentItem[] = [{ id: 1, kind: 'user', text: 'archive the invoices' }];
 
@@ -20,19 +20,19 @@ const makeDrawer = (): LumoAgentDrawerValue => ({
     lastChainEnd: null,
     hasConversation: true,
     draft: 'archive the',
-    setDraft: jest.fn(),
-    send: jest.fn(),
-    confirm: jest.fn(),
-    cancel: jest.fn(),
-    stop: jest.fn(),
-    clear: jest.fn(),
+    setDraft: vi.fn(),
+    send: vi.fn(),
+    confirm: vi.fn(),
+    cancel: vi.fn(),
+    stop: vi.fn(),
+    clear: vi.fn(),
 });
 
 describe('ConnectedLumoPromptBar', () => {
     it('focuses itself on mount and drives the bar from the conversation', () => {
-        jest.mocked(isAgentGenerating).mockReturnValue(true);
+        vi.mocked(isAgentGenerating).mockReturnValue(true);
         const drawer = makeDrawer();
-        const onClose = jest.fn();
+        const onClose = vi.fn();
 
         render(
             <LumoAgentDrawerContext.Provider value={drawer}>
@@ -42,7 +42,7 @@ describe('ConnectedLumoPromptBar', () => {
 
         expect(focusLumoPrompt).toHaveBeenCalledTimes(1);
         expect(isAgentGenerating).toHaveBeenCalledWith(items, false);
-        expect(jest.mocked(LumoAgentPromptBar).mock.lastCall![0]).toEqual({
+        expect(vi.mocked(LumoAgentPromptBar).mock.lastCall![0]).toEqual({
             draft: 'archive the',
             onDraftChange: drawer.setDraft,
             isGenerating: true,
@@ -55,29 +55,29 @@ describe('ConnectedLumoPromptBar', () => {
     it('stores each draft change in the conversation before telling the host', () => {
         const drawer = makeDrawer();
         const calls: string[] = [];
-        jest.mocked(drawer.setDraft).mockImplementation((draft) => calls.push(`setDraft:${draft}`));
-        const onDraftChange = jest.fn((draft: string) => calls.push(`host:${draft}`));
+        vi.mocked(drawer.setDraft).mockImplementation((draft) => calls.push(`setDraft:${draft}`));
+        const onDraftChange = vi.fn((draft: string) => calls.push(`host:${draft}`));
 
         render(
             <LumoAgentDrawerContext.Provider value={drawer}>
-                <ConnectedLumoPromptBar onClose={jest.fn()} onDraftChange={onDraftChange} />
+                <ConnectedLumoPromptBar onClose={vi.fn()} onDraftChange={onDraftChange} />
             </LumoAgentDrawerContext.Provider>
         );
-        jest.mocked(LumoAgentPromptBar).mock.lastCall![0].onDraftChange('archive the invoices');
+        vi.mocked(LumoAgentPromptBar).mock.lastCall![0].onDraftChange('archive the invoices');
 
         expect(calls).toEqual(['setDraft:archive the invoices', 'host:archive the invoices']);
     });
 
     it('keeps a message the host intercepts away from Lumo', () => {
         const drawer = makeDrawer();
-        const interceptSend = jest.fn(() => true);
+        const interceptSend = vi.fn(() => true);
 
         render(
             <LumoAgentDrawerContext.Provider value={drawer}>
-                <ConnectedLumoPromptBar onClose={jest.fn()} interceptSend={interceptSend} />
+                <ConnectedLumoPromptBar onClose={vi.fn()} interceptSend={interceptSend} />
             </LumoAgentDrawerContext.Provider>
         );
-        jest.mocked(LumoAgentPromptBar).mock.lastCall![0].onSend('nine lives');
+        vi.mocked(LumoAgentPromptBar).mock.lastCall![0].onSend('nine lives');
 
         expect(interceptSend).toHaveBeenCalledWith('nine lives');
         expect(drawer.send).not.toHaveBeenCalled();
@@ -85,14 +85,14 @@ describe('ConnectedLumoPromptBar', () => {
 
     it('sends a message the host does not intercept', () => {
         const drawer = makeDrawer();
-        const interceptSend = jest.fn(() => false);
+        const interceptSend = vi.fn(() => false);
 
         render(
             <LumoAgentDrawerContext.Provider value={drawer}>
-                <ConnectedLumoPromptBar onClose={jest.fn()} interceptSend={interceptSend} />
+                <ConnectedLumoPromptBar onClose={vi.fn()} interceptSend={interceptSend} />
             </LumoAgentDrawerContext.Provider>
         );
-        jest.mocked(LumoAgentPromptBar).mock.lastCall![0].onSend('archive the invoices');
+        vi.mocked(LumoAgentPromptBar).mock.lastCall![0].onSend('archive the invoices');
 
         expect(interceptSend).toHaveBeenCalledWith('archive the invoices');
         expect(drawer.send).toHaveBeenCalledWith('archive the invoices');

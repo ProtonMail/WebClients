@@ -4,7 +4,7 @@ import TextFieldBody from './TextFieldBody';
 
 describe('TextFieldBody', () => {
     it('reports the edited value', () => {
-        const onChange = jest.fn();
+        const onChange = vi.fn();
         render(<TextFieldBody label="Name" value="Receipts" onChange={onChange} />);
 
         fireEvent.change(screen.getByRole('textbox'), { target: { value: 'Invoices' } });
@@ -12,11 +12,11 @@ describe('TextFieldBody', () => {
     });
 
     it('renders a textarea of the requested height only when rows exceeds one', () => {
-        const { unmount } = render(<TextFieldBody label="Signature" value="Sent from Proton" onChange={jest.fn()} />);
+        const { unmount } = render(<TextFieldBody label="Signature" value="Sent from Proton" onChange={vi.fn()} />);
         expect(screen.getByRole('textbox').tagName).toBe('INPUT');
         unmount();
 
-        render(<TextFieldBody label="Signature" value="Sent from Proton" onChange={jest.fn()} rows={4} />);
+        render(<TextFieldBody label="Signature" value="Sent from Proton" onChange={vi.fn()} rows={4} />);
         const multiline = screen.getByRole('textbox');
         expect(multiline.tagName).toBe('TEXTAREA');
         expect(multiline).toHaveAttribute('rows', '4');

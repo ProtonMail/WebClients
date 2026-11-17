@@ -6,16 +6,14 @@ import DrawerLumoView from './DrawerLumoView';
 import type { LumoAgentDrawerValue } from './lumoAgentDrawerContext';
 import LumoAgentDrawerContext from './lumoAgentDrawerContext';
 
-jest.mock('@proton/components/components/drawer/views/DrawerView', () => ({
-    __esModule: true,
+vi.mock('@proton/components/components/drawer/views/DrawerView', () => ({
     default: ({ headerActions }: { headerActions: ReactNode }) => <>{headerActions}</>,
 }));
-jest.mock('@proton/components/containers/themes/ThemeProvider', () => ({
+vi.mock('@proton/components/containers/themes/ThemeProvider', () => ({
     useTheme: () => ({ information: { dark: false } }),
 }));
-jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
-    __esModule: true,
-    default: () => ({ toggleDrawerApp: () => jest.fn() }),
+vi.mock('@proton/components/hooks/drawer/useDrawer', () => ({
+    default: () => ({ toggleDrawerApp: () => vi.fn() }),
 }));
 
 const renderView = (onDetach?: () => void) => {
@@ -25,12 +23,12 @@ const renderView = (onDetach?: () => void) => {
         lastChainEnd: null,
         hasConversation: false,
         draft: '',
-        setDraft: jest.fn(),
-        send: jest.fn(),
-        confirm: jest.fn(),
-        cancel: jest.fn(),
-        stop: jest.fn(),
-        clear: jest.fn(),
+        setDraft: vi.fn(),
+        send: vi.fn(),
+        confirm: vi.fn(),
+        cancel: vi.fn(),
+        stop: vi.fn(),
+        clear: vi.fn(),
         onDetach,
     };
     render(
@@ -44,7 +42,7 @@ const detachButton = () => screen.queryByRole('button', { name: 'Detach' });
 
 describe('DrawerLumoView', () => {
     it('detaches through the host before any conversation exists', () => {
-        const onDetach = jest.fn();
+        const onDetach = vi.fn();
         renderView(onDetach);
 
         fireEvent.click(detachButton()!);

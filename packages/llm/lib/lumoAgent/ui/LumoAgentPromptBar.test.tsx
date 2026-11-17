@@ -4,15 +4,15 @@ import LumoAgentPromptBar from './LumoAgentPromptBar';
 
 describe('LumoAgentPromptBar', () => {
     it('sends the trimmed draft and empties it', () => {
-        const onSend = jest.fn();
-        const onDraftChange = jest.fn();
+        const onSend = vi.fn();
+        const onDraftChange = vi.fn();
         render(
             <LumoAgentPromptBar
                 draft="  find my invoices  "
                 onDraftChange={onDraftChange}
                 isGenerating={false}
                 onSend={onSend}
-                onStop={jest.fn()}
+                onStop={vi.fn()}
             />
         );
 
@@ -23,14 +23,14 @@ describe('LumoAgentPromptBar', () => {
     });
 
     it('reports typing to the host that holds the draft', () => {
-        const onDraftChange = jest.fn();
+        const onDraftChange = vi.fn();
         render(
             <LumoAgentPromptBar
                 draft=""
                 onDraftChange={onDraftChange}
                 isGenerating={false}
-                onSend={jest.fn()}
-                onStop={jest.fn()}
+                onSend={vi.fn()}
+                onStop={vi.fn()}
             />
         );
 

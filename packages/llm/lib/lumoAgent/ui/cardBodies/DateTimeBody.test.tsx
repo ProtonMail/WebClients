@@ -10,7 +10,7 @@ import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces/UserSettings'
 import type { DateTimeFieldSpec } from './DateTimeBody';
 import DateTimeBody from './DateTimeBody';
 
-jest.mock('@proton/account/userSettings/hooks', () => ({
+vi.mock('@proton/account/userSettings/hooks', () => ({
     useUserSettings: () => [{ WeekStart: SETTINGS_WEEK_START.MONDAY }, false],
 }));
 
@@ -23,14 +23,14 @@ const field = (param: string): DateTimeFieldSpec => ({
     fallback: () => wakeAt,
 });
 
-const renderBody = (fields: DateTimeFieldSpec[], params: Record<string, any>, onChange = jest.fn()) => {
+const renderBody = (fields: DateTimeFieldSpec[], params: Record<string, any>, onChange = vi.fn()) => {
     render(<DateTimeBody fields={fields} params={params} onChange={onChange} />);
     return onChange;
 };
 
 /** The body is controlled, so a second edit only sees the first one through a parent that feeds params back. */
 const renderControlledBody = (fields: DateTimeFieldSpec[], initial: Record<string, any>) => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     const Harness = () => {
         const [params, setParams] = useState(initial);
 
@@ -113,7 +113,7 @@ describe('DateTimeBody', () => {
     });
 
     it('renders one pair per field, so a window gets a start and an end', () => {
-        const { unmount } = render(<DateTimeBody fields={[field('wake_at')]} params={{}} onChange={jest.fn()} />);
+        const { unmount } = render(<DateTimeBody fields={[field('wake_at')]} params={{}} onChange={vi.fn()} />);
 
         expect(screen.getAllByRole('textbox')).toHaveLength(2);
         unmount();

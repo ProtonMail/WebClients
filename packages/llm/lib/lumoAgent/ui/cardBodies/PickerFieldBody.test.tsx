@@ -12,7 +12,7 @@ const baseProps = {
 
 describe('PickerFieldBody', () => {
     it('reports the picked option alongside the untouched params', () => {
-        const onChange = jest.fn();
+        const onChange = vi.fn();
         render(
             <PickerFieldBody
                 {...baseProps}
@@ -31,7 +31,7 @@ describe('PickerFieldBody', () => {
     });
 
     it('renders nothing when no options were resolved', () => {
-        const { container } = render(<PickerFieldBody {...baseProps} options={[]} onChange={jest.fn()} />);
+        const { container } = render(<PickerFieldBody {...baseProps} options={[]} onChange={vi.fn()} />);
 
         expect(container).toBeEmptyDOMElement();
     });

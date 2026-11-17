@@ -26,20 +26,17 @@ let script: Script = async () => {};
 const sentTurns: Turn[][] = [];
 const sentOptions: Record<string, unknown>[] = [];
 
-jest.mock('@proton/app-context/useApi', () => ({
-    __esModule: true,
-    useApi: () => jest.fn(),
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: () => vi.fn(),
 }));
 
-const createNotification = jest.fn();
+const { createNotification } = vi.hoisted(() => ({ createNotification: vi.fn() }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    __esModule: true,
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification }),
 }));
 
-jest.mock('@proton/lumo-api-client/core/client', () => ({
-    __esModule: true,
+vi.mock('@proton/lumo-api-client/core/client', () => ({
     LumoApiClient: class {
         async callAssistant(_api: unknown, turns: Turn[], options: any) {
             sentTurns.push(turns);
@@ -102,9 +99,9 @@ const definitions: ToolDefinition[] = [
 ];
 
 const telemetry = {
-    promptSent: jest.fn(),
-    chainEnded: jest.fn(),
-    confirmAnswered: jest.fn(),
+    promptSent: vi.fn(),
+    chainEnded: vi.fn(),
+    confirmAnswered: vi.fn(),
 };
 
 const config: LumoAgentConfig = {
@@ -129,7 +126,7 @@ beforeEach(() => {
     sentTurns.length = 0;
     sentOptions.length = 0;
     script = async () => {};
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 type AgentResult = { current: ReturnType<typeof useLumoAgent> };
