@@ -9,7 +9,6 @@ import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { Badge } from '@proton/components/components/badge/Badge';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import Loader from '@proton/components/components/loader/Loader';
-import CalendarInviteButtons from '@proton/components/containers/calendar/CalendarInviteButtons';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useLoading from '@proton/hooks/useLoading';
@@ -26,12 +25,10 @@ import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constan
 import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { CalendarEventSharedData, PartstatData } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import type {
@@ -47,7 +44,6 @@ import { INVITE_ACTION_TYPES } from '../../interfaces/Invite';
 import { getEventReadResult } from '../../store/events/eventsCache';
 import PopoverContainer from './PopoverContainer';
 import PopoverEventContent from './PopoverEventContent';
-import PopoverFooter from './PopoverFooter';
 import PopoverHeader from './PopoverHeader';
 import RsvpSection from './RsvpSection';
 import { getEventErrorMessage } from './error';
@@ -132,7 +128,6 @@ const EventPopover = ({
     const isCalendarWritable = getIsCalendarWritable(calendarData);
 
     const { viewportWidth } = useActiveBreakpoint();
-    const rsvpCommentEnabled = useFlag('RsvpCommentWeb');
 
     const [mailSettings] = useMailSettings();
     const { modal: linkModal } = useLinkHandler(popoverContentRef, mailSettings);
@@ -404,39 +399,7 @@ const EventPopover = ({
                         displayNameEmailMap={displayNameEmailMap}
                     />
                 </div>
-                {canReplyToEvent && !rsvpCommentEnabled && (
-                    <PopoverFooter
-                        className="shrink-0 items-start md:items-center justify-space-between gap-4 flex-column md:flex-row"
-                        key={targetEvent.uniqueId}
-                    >
-                        <div>
-                            <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
-                        </div>
-                        <div className="ml-0 md:ml-auto">
-                            <CalendarInviteButtons
-                                actions={{
-                                    accept: () =>
-                                        handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
-                                            Status: ICAL_ATTENDEE_STATUS.ACCEPTED,
-                                        }),
-                                    acceptTentatively: () =>
-                                        handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
-                                            Status: ICAL_ATTENDEE_STATUS.TENTATIVE,
-                                        }),
-                                    decline: () =>
-                                        handleChangePartStat(INVITE_ACTION_TYPES.CHANGE_PARTSTAT, {
-                                            Status: ICAL_ATTENDEE_STATUS.DECLINED,
-                                        }),
-                                    retryCreateEvent: () => wait(0),
-                                    retryUpdateEvent: () => wait(0),
-                                }}
-                                partstat={userPartstat}
-                                disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
-                            />
-                        </div>
-                    </PopoverFooter>
-                )}
-                {canReplyToEvent && rsvpCommentEnabled && (
+                {canReplyToEvent && (
                     <div className="shrink-0 relative" key={targetEvent.uniqueId}>
                         <RsvpSection
                             handleChangePartstat={handleChangePartStat}

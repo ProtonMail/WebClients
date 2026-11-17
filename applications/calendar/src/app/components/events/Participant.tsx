@@ -5,7 +5,6 @@ import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useUrlifyString } from '../../hooks/useUrlifyString';
@@ -44,7 +43,6 @@ const Participant = ({
     const hasEmail = !!email;
     const displayDropdown = hasEmail;
     const showEmailAddress = !isCurrentUser && hasEmail && normalize(email) !== normalize(name);
-    const isRsvpNoteEnabled = useFlag('RsvpCommentWeb');
 
     const parsedComment = useUrlifyString({ text: comment, urlifyOptions: { target: '_blank' } });
 
@@ -73,7 +71,7 @@ const Participant = ({
                         {extraText}
                     </div>
                 )}
-                {isRsvpNoteEnabled && parsedComment ? (
+                {parsedComment ? (
                     <div className="max-w-full participant-extra-text color-weak text-break text-sm m-0">
                         <span dangerouslySetInnerHTML={{ __html: parsedComment }} />
                     </div>
