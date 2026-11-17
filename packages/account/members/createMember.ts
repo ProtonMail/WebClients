@@ -51,7 +51,7 @@ import UnavailableAddressesError from './errors/UnavailableAddressesError';
 import { getMember } from './getMember';
 import { type MembersState, membersThunk, upsertMember } from './index';
 import { getInvitationData, getSignedInvitationData } from './unprivatization';
-import { getRequiredOwnerRoleId } from './updateOwnerRole';
+import { getRequiredOwnerRoleId, updateOwnerRole } from './updateOwnerRole';
 import validateAddUser from './validateAddUser';
 
 export interface CreateMemberPayload {
@@ -104,14 +104,29 @@ interface CreateMemberValidationOptions {
     disableAddressValidation?: boolean;
 }
 
-/** An invited member can't be created as anything else than a member */
-const getNewMemberRole = ({ model }: { model: CreateMemberPayload }): MemberCreationThunk<MEMBER_ROLE | null> => {
-    return async () => {
-        if (model.mode !== CreateMemberMode.Invitation) {
-            return model.role;
-        }
+/** In an invitation, the selected roles decide the role, and it can only be admin in a passwordless organization */
+const getNewMemberRole = ({
+    model,
+    hasRoles,
+    getsOrgKeyRole,
+    organizationKey,
+}: {
+    model: CreateMemberPayload;
+    hasRoles: boolean;
+    getsOrgKeyRole: boolean;
+    organizationKey: CachedOrganizationKey;
+}): MEMBER_ROLE | null => {
+    if (model.mode !== CreateMemberMode.Invitation) {
+        return model.role;
+    }
+    // The API finishes an admin invitation with an org key activation, which only passwordless organizations have
+    if (!getIsPasswordless(organizationKey?.Key)) {
         return MEMBER_ROLE.ORGANIZATION_MEMBER;
-    };
+    }
+    if (!hasRoles) {
+        return model.role;
+    }
+    return getsOrgKeyRole ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER;
 };
 
 const assertCanCreateMember = ({
@@ -341,10 +356,12 @@ const promoteNewMemberToAdmin = ({
 const assignNewMemberRoles = ({
     member,
     roleIds,
+    isAdminInvitation,
     api,
 }: {
     member: Member;
     roleIds: Set<string> | undefined;
+    isAdminInvitation: boolean;
     api: Api;
 }): MemberCreationThunk<void> => {
     return async (dispatch) => {
@@ -352,6 +369,9 @@ const assignNewMemberRoles = ({
             await dispatch(
                 assignMemberRoles({ member, currentRoles: [], desiredRoleIds: roleIds, payload: null, api })
             );
+        } else if (isAdminInvitation) {
+            // The API only finishes an admin invitation if the member holds a role giving org key access
+            await dispatch(updateOwnerRole({ member, makeAdmin: true, api }));
         }
     };
 };
@@ -369,7 +389,7 @@ export const createMember = ({
     verifiedDomains: Domain[] /* Remove dependency, move to thunk */;
     validationOptions: CreateMemberValidationOptions;
     api: Api;
-    /** Roles assigned once the member exists */
+    /** Roles assigned once the member exists. In an invitation, a role needing the org key makes it an admin one */
     roleIds?: Set<string>;
 }): MemberCreationThunk<{ member: Member; rolesError?: unknown }> => {
     return async (dispatch, _, extra) => {
@@ -381,15 +401,20 @@ export const createMember = ({
             dispatch(organizationThunk()),
             dispatch(membersThunk()),
         ]);
+        const organizationRoles = roleIds?.size ? await dispatch(organizationRolesThunk()) : [];
+        const getsOrgKeyRole = organizationRoles.some(
+            (role) => roleIds?.has(role.OrganizationRoleID) && isOrgKeyRequired(role)
+        );
         const model = {
             ...originalModel,
-            role: await dispatch(getNewMemberRole({ model: originalModel })),
+            role: getNewMemberRole({
+                model: originalModel,
+                hasRoles: Boolean(roleIds?.size),
+                getsOrgKeyRole,
+                organizationKey,
+            }),
         };
         const isAdmin = model.role === MEMBER_ROLE.ORGANIZATION_ADMIN;
-        const organizationRoles = roleIds?.size ? await dispatch(organizationRolesThunk()) : [];
-        const getsOrgKeyRole =
-            model.mode !== CreateMemberMode.Invitation &&
-            organizationRoles.some((role) => roleIds?.has(role.OrganizationRoleID) && isOrgKeyRequired(role));
 
         if (model.vpn) {
             await resetSelfVpnConnectionsHelper({ api, members, organization }).catch(noop);
@@ -433,10 +458,9 @@ export const createMember = ({
         ]);
         dispatch(upsertMember({ member }));
 
-        // Roles can only be assigned to an invited member once it has accepted the invitation
-        if (model.mode !== CreateMemberMode.Invitation) {
-            await dispatch(assignNewMemberRoles({ member, roleIds, api })).catch(keepRolesError);
-        }
+        // After the fetch: an invited member's roles rely on its pending invitation, which the fetched member has
+        const isAdminInvitation = isAdmin && model.mode === CreateMemberMode.Invitation;
+        await dispatch(assignNewMemberRoles({ member, roleIds, isAdminInvitation, api })).catch(keepRolesError);
 
         return { member, rolesError };
     };

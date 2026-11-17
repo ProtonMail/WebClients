@@ -218,7 +218,8 @@ const SubUserCreateModal = ({
     const emailAddressParts = getNormalizedAddress();
     const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
 
-    const canAssignRoles = model.mode === CreateMemberMode.Password;
+    // Admin invitations are only possible in passwordless organizations
+    const canAssignRoles = model.mode === CreateMemberMode.Password || passwordlessMode;
     const isAdminRolesUIEnabled = adminRolesUIState === AdminRolesUIState.Enabled;
 
     const save = async () => {
