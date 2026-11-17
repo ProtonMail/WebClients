@@ -255,7 +255,13 @@ export const buildLumoMailConfig = (
               serverPrompt: true,
               clientType: LumoClientType.LumoMail,
               turnContext: (references) =>
-                  buildMailContext(deps.store.getState(), references, new Date(), getTimezone()),
+                  buildMailContext(
+                      deps.store.getState(),
+                      references,
+                      new Date(),
+                      getTimezone(),
+                      deps.getActiveCategoryTabs()
+                  ),
           }
         : { definitions: allDefinitions, productRules: () => MAIL_RULES };
 

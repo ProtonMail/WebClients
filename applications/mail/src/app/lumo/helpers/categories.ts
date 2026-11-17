@@ -3,7 +3,11 @@ import type { CategoryTab } from '@proton/mail/features/categoriesView/categorie
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
+import { CATEGORY_LABEL_IDS } from '@proton/shared/lib/constants';
 import { HUMAN_TO_LABEL_IDS } from '@proton/shared/lib/mail/constants';
+
+import { hasLabel } from '../../helpers/elements';
+import type { Element } from '../../models/element';
 
 /** The model's category names ARE Mail's URL vocabulary, so they resolve through the same map the URL does. */
 const categoryLabelID = (category: string): CategoryLabelID | undefined => {
@@ -29,4 +33,9 @@ export const resolveCategoryLabelID = (category: string, tabs: CategoryTab[]): C
 export const categoryDisplayName = (category: string): string => {
     const labelID = categoryLabelID(category);
     return (labelID && getLabelFromCategoryId(labelID)) || category;
+};
+
+/** The tab label an email carries, or undefined for one the server has not categorised. */
+export const elementCategoryID = (element: Element): CategoryLabelID | undefined => {
+    return CATEGORY_LABEL_IDS.find((labelID) => hasLabel(element, labelID));
 };

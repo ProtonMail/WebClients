@@ -8,6 +8,7 @@ import { formatISO } from 'date-fns';
 
 import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -49,7 +50,10 @@ const harness = ({
     usedEncryptedSearch = true,
     settles = true,
     blockedLabelIDs = [],
+    categoryTabs = [],
 }: {
+    /** The tabs the mailbox shows; empty means the category view is off. */
+    categoryTabs?: CategoryTab[];
     landing?: Element[];
     folders?: Folder[];
     labels?: Label[];
@@ -91,6 +95,7 @@ const harness = ({
         history: { location: { pathname: '/inbox', hash: '', search: '' }, push },
         getFolders: () => folders,
         getLabels: () => labels,
+        getActiveCategoryTabs: () => categoryTabs,
         getMailSettings: () => ({ ShowMoved: showMoved, AlmostAllMail: almostAllMail, PageSize: 50 }),
         getESStatus: () => indexedESStatus(esStatus),
     } as unknown as MailToolDeps;

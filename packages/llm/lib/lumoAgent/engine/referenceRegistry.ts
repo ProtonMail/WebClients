@@ -1,6 +1,6 @@
 import getRandomString, { DEFAULT_LOWERCASE_CHARSET } from '@proton/utils/getRandomString';
 
-import type { ReferenceKind, ReferenceLabel, ReferenceRegistry } from '../contracts/types';
+import type { FixedReference, ReferenceKind, ReferenceLabel, ReferenceRegistry } from '../contracts/types';
 
 /**
  * An append-only {@link ReferenceRegistry}. References (`email-a3f9k2`, `folder-x7b2q1`, …) stand in
@@ -11,8 +11,11 @@ import type { ReferenceKind, ReferenceLabel, ReferenceRegistry } from '../contra
  * from the working set, so an item cited in a later action still resolves. Ids are random rather than
  * sequential so the model cannot invent "the next number": an unissued reference can only be a
  * hallucination.
+ *
+ * `fixed` references are issued from the start, so the model can name them with no earlier read. Their
+ * kind is the part before the first dash, so a read that later meets the same id returns the fixed name.
  */
-export const createReferenceRegistry = (): ReferenceRegistry => {
+export const createReferenceRegistry = (fixed: FixedReference[] = []): ReferenceRegistry => {
     const idByReference = new Map<string, string>();
     const referenceById = new Map<string, string>();
     // Merged, not replaced: the same element is minted by several reads, and the leanest of them must
@@ -20,6 +23,13 @@ export const createReferenceRegistry = (): ReferenceRegistry => {
     const labelByReference = new Map<string, ReferenceLabel>();
 
     const keyFor = (kind: ReferenceKind, id: string) => `${kind}:${id}`;
+
+    fixed.forEach(({ reference, id, label }) => {
+        const kind = reference.slice(0, reference.indexOf('-'));
+        idByReference.set(reference, id);
+        referenceById.set(keyFor(kind, id), reference);
+        labelByReference.set(reference, label);
+    });
 
     // Mint a reference not already issued this session. 6 base36 chars is ~2.1B combinations, so the
     // collision loop effectively never spins for a per-session registry — it is a correctness guard,

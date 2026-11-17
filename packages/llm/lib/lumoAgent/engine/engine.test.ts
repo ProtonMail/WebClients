@@ -341,6 +341,44 @@ describe('createClientToolExecutor', () => {
             expect(confirm.calls[0].labels).toEqual({ [ref]: { title: 'Hotels' } });
         });
 
+        it('accepts a fixed reference with no earlier read and labels it on the confirm card', async () => {
+            const references = createReferenceRegistry([
+                { reference: 'folder-inbox', id: '0', label: { title: 'Inbox' } },
+            ]);
+            const confirm = scriptedConfirm({ action: 'apply', params: { target: 'folder-inbox' } });
+            const executor = createClientToolExecutor({
+                definitions: DEFINITIONS,
+                references,
+                handlers: { move_items: async () => ({}) },
+                confirm,
+            });
+
+            const [result] = await executor.execute([call('move_items', { target: 'folder-inbox' })]);
+
+            expect(result.is_error).toBeUndefined();
+            expect(confirm.calls[0].labels).toEqual({ 'folder-inbox': { title: 'Inbox' } });
+        });
+
+        it('still rejects an unissued folder reference when fixed references are seeded', async () => {
+            const references = createReferenceRegistry([
+                { reference: 'folder-inbox', id: '0', label: { title: 'Inbox' } },
+            ]);
+            const confirm = scriptedConfirm({ action: 'apply', params: { target: 'folder-zz9zz9' } });
+            const executor = createClientToolExecutor({
+                definitions: DEFINITIONS,
+                references,
+                handlers: { move_items: async () => ({}) },
+                confirm,
+            });
+
+            const [result] = await executor.execute([call('move_items', { target: 'folder-zz9zz9' })]);
+
+            expect(result.is_error).toBe(true);
+            expect(result.content).toContain('Unknown reference');
+            expect(result.content).toContain('folder-zz9zz9');
+            expect(confirm.calls).toEqual([]);
+        });
+
         it('does NOT run the handler when the user cancels, and tells the model so', async () => {
             const handlerCalls: string[] = [];
             const executor = createClientToolExecutor({

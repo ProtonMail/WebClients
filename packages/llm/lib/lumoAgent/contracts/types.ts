@@ -50,6 +50,16 @@ export interface ReferenceLabel {
     meta?: string;
 }
 
+/**
+ * A reference the product reserves up front for a place every user has (`folder-inbox`), so the model
+ * can name it in a fresh conversation with no earlier read. Seeded into the registry at session start.
+ */
+export interface FixedReference {
+    reference: string;
+    id: string;
+    label: ReferenceLabel;
+}
+
 /** Display descriptions keyed by the reference they describe, as handed to a confirm card. */
 export type ReferenceLabels = Record<string, ReferenceLabel>;
 

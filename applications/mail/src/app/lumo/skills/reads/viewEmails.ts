@@ -10,7 +10,7 @@ export const viewEmailsDefinition: ToolDefinition<Record<string, never>, AgentEm
     name: 'view_emails',
     kind: 'read',
     toolDescription:
-        'List the emails currently visible on the user\'s screen — metadata only (email-… reference, sender, subject, date, read/unread, folder, labels, attachment flag), never message bodies. Use when the user refers to what they can see ("these emails", "the ones on screen") or to triage the current view. To read an email\'s contents, call read_email with a reference instead. Returns the on-screen rows and a total count.',
+        'List the emails currently visible on the user\'s screen: metadata only (email-… reference, sender, subject, date, read/unread, folder, Inbox category tab while tabs are on, labels, attachment flag), never message bodies. Use when the user refers to what they can see ("these emails", "the ones on screen") or to triage the current view. To read an email\'s contents, call read_email with a reference instead. Returns the on-screen rows and a total count.',
     paramsSchema: { type: 'object', additionalProperties: false, required: [], properties: {} },
     serializeForLumo: (result) =>
         formatAgentEmailRows(result.rows, result.total) ||

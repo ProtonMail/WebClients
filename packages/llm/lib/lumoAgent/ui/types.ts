@@ -9,6 +9,7 @@ import type { IconComponent } from '@proton/lumo-ui/types/IconComponent';
 
 import type {
     ActionRequest,
+    FixedReference,
     ReferenceLabels,
     ReferenceRegistry,
     ToolDefinition,
@@ -132,6 +133,8 @@ export interface LumoAgentConfig {
      * Gets the session's registry, so a reference it names is one the model may pass straight to a tool.
      */
     turnContext?: (references: ReferenceRegistry) => string;
+    /** Seeded into each session's registry, so the model can name these places before any read issues them. */
+    fixedReferences?: FixedReference[];
     /** Forwarded to the transport as `clientType`. */
     clientType?: LumoClientType;
     /** Read once per send and forwarded to the transport as `modelTier`; the transport's default model when absent. */

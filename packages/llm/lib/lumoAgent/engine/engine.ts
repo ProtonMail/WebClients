@@ -160,11 +160,15 @@ const assertReferencesResolve = (
         .forEach(([, value]) => check(value));
 };
 
-/** Map each reference-shaped param value to its display description, for the confirm card. */
+/**
+ * Map each param value the registry has a label for to that label, for the confirm card. Any string is
+ * looked up, not only reference-shaped ones, because a fixed reference such as `folder-inbox` does not fit
+ * {@link REFERENCE_PATTERN}.
+ */
 export const collectLabels = (params: Record<string, any>, references: ReferenceRegistry): ReferenceLabels => {
     const labels: ReferenceLabels = {};
     const collect = (value: any) => {
-        if (typeof value === 'string' && REFERENCE_PATTERN.test(value)) {
+        if (typeof value === 'string') {
             const label = references.labelFor(value);
             if (label) {
                 labels[value] = label;

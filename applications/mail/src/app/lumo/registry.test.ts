@@ -3,6 +3,10 @@ import type { JSONSchema, ToolDefinition } from '@proton/llm/lib/lumoAgent/contr
 import { LOAD_GUIDE_TOOL_NAME, resolveGuide } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { LumoClientType } from '@proton/lumo-api-client/types-api';
+import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
+import { CATEGORIES_COLOR_SHADES } from '@proton/mail/features/categoriesView/categoriesConstants';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 
 import { buildMailSearchGuide, buildStandaloneMailSearchGuide } from './guides/searchGuide';
@@ -177,8 +181,24 @@ describe('the Mail config with the standalone prompt flag on', () => {
         const references = createReferenceRegistry();
 
         expect(config.turnContext?.(references)).toBe(
-            buildMailContext(promptDeps.store.getState(), references, new Date(2026, 8, 30, 9, 5), getTimezone())
+            buildMailContext(promptDeps.store.getState(), references, new Date(2026, 8, 30, 9, 5), getTimezone(), [])
         );
+    });
+
+    it('tells every user turn which category tabs the mailbox shows right now', () => {
+        let tabs: CategoryTab[] = [];
+        const deps = buildMailToolDeps({ getActiveCategoryTabs: () => tabs });
+        const { turnContext } = buildLumoMailConfig(deps, buildTelemetry(), true, getMaxModel);
+        const references = createReferenceRegistry();
+
+        expect(turnContext?.(references)).toContain('Category tabs: off');
+        const ids: CategoryLabelID[] = [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL];
+        tabs = ids.map((id) => ({
+            id,
+            display: true,
+            colorShade: CATEGORIES_COLOR_SHADES.IRIS,
+        }));
+        expect(turnContext?.(references)).toContain('Category tabs: primary, social');
     });
 
     it('describes every tool and every parameter with the standalone wording, and drops the examples', () => {
