@@ -9,10 +9,12 @@
         "./dashboard/widgetContract": "./src/dashboard/widgetContract.ts",
         "./dashboard/widgetStubs": "./src/dashboard/widgetStubs.ts",
         "./organization/getAccessControlPageAvailability": "./src/organization/getAccessControlPageAvailability.ts",
+        "./organization/getActivityMonitorPageAvailability": "./src/organization/getActivityMonitorPageAvailability.ts",
         "./organization/getOrganizationKeysPageAvailability": "./src/organization/getOrganizationKeysPageAvailability.ts",
         "./organization/getGroupsPageAvailability": "./src/organization/getGroupsPageAvailability.ts",
         "./organization/getSecurityPageAvailability": "./src/organization/getSecurityPageAvailability.ts",
         "./organization/getSingleSignOnPageAvailability": "./src/organization/getSingleSignOnPageAvailability.ts",
+        "./organization/getUsersPageAvailability": "./src/organization/getUsersPageAvailability.ts",
         "./pass/getPassOrganizationAccess": "./src/pass/getPassOrganizationAccess.ts"
     },
     "scripts": {
