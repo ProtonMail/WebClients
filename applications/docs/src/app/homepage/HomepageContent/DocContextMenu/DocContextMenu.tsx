@@ -228,7 +228,7 @@ function isAdmin(role: `${MemberRole}` | undefined) {
  * right-click and any click outside the menu close it, and the dropdown's focus trap tells whether a pointer or a key
  * came last. Ariakit's own outside check skips the element focused when the menu opened, such as the row.
  */
-function useCloseLikeProtonContextMenu(isOpen: boolean, close: () => void, menuRef: RefObject<HTMLElement>) {
+function useCloseLikeProtonContextMenu(isOpen: boolean, close: () => void, menuRef: RefObject<HTMLElement | null>) {
   const closedByPointer = useRef(false)
   useEffect(() => {
     if (!isOpen) {

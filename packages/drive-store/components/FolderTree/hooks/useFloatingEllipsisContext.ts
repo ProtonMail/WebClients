@@ -17,8 +17,8 @@ export const useFloatingEllipsisContext = ({
     containerRef,
     resizableRef,
 }: {
-    containerRef: RefObject<HTMLDivElement>;
-    resizableRef?: RefObject<HTMLElement>;
+    containerRef: RefObject<HTMLDivElement | null>;
+    resizableRef?: RefObject<HTMLElement | null>;
 }): FloatingEllipsisContextValue => {
     const [events] = useState<EventTarget>(new EventTarget());
     const getDimensions = (): FloatingEllipsisContainerDimensions => ({

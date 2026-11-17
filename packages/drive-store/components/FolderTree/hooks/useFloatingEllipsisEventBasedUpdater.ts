@@ -10,8 +10,8 @@ export const useFloatingEllipsisEventBasedUpdater = ({
     visibilityControlRef,
     elem,
 }: {
-    visibilityControlRef: React.RefObject<HTMLDivElement>;
-    elem: React.RefObject<HTMLDivElement>;
+    visibilityControlRef: React.RefObject<HTMLDivElement | null>;
+    elem: React.RefObject<HTMLDivElement | null>;
 }): (() => void) => {
     const { events, getDimensions } = useContext<FloatingEllipsisContextValue>(FloatingEllipsisContext);
 
