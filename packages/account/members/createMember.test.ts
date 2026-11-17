@@ -3,13 +3,18 @@ import type { Mock } from 'vitest';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { Member } from '@proton/shared/lib/interfaces/Member';
-import { CreateMemberMode } from '@proton/shared/lib/interfaces/Member';
+import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Member';
+import {
+    CreateMemberMode,
+    MEMBER_ORG_KEY_STATE,
+    MemberUnprivatizationState,
+} from '@proton/shared/lib/interfaces/Member';
 import type { OrganizationRole } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { PREDEFINED_ROLE_NAME } from '@proton/shared/lib/interfaces/OrganizationRole';
 
 import { createMember } from './createMember';
 import MemberCreationValidationError from './errors/MemberCreationValidationError';
+import { getMember } from './getMember';
 import { updateMemberRoles } from './index';
 import { getInvitationData } from './unprivatization';
 import { updateOwnerRole } from './updateOwnerRole';
@@ -65,6 +70,17 @@ const securityAdminRole = {
     OrganizationRoleID: 'security-admin-role-id',
     Name: PREDEFINED_ROLE_NAME.SECURITY_ADMIN,
 } as OrganizationRole;
+
+const pendingAdminMember = {
+    ID: 'member-id',
+    Role: MEMBER_ROLE.ORGANIZATION_MEMBER,
+    AccessToOrgKey: MEMBER_ORG_KEY_STATE.NoKey,
+    requiresOrgKeyPromotion: true,
+    Unprivatization: {
+        State: MemberUnprivatizationState.Pending,
+        InvitationData: JSON.stringify({ Address: 'user@example.com', Revision: 1, Admin: true }),
+    },
+} as EnhancedMember;
 
 const getState = vi.fn();
 const extra = {} as ProtonThunkArguments;
@@ -221,16 +237,62 @@ describe('createMember', () => {
         expect(createApi).not.toHaveBeenCalled();
     });
 
-    it('invites a member without the admin flag or roles, even when an admin with roles is requested', async () => {
-        const result = await runCreateMember({
-            passwordless: true,
-            role: MEMBER_ROLE.ORGANIZATION_ADMIN,
-            roleIds: new Set([ownerRole.OrganizationRoleID]),
+    it('invites an admin and assigns the owner role in a passwordless organization', async () => {
+        await runCreateMember({ passwordless: true, role: MEMBER_ROLE.ORGANIZATION_ADMIN });
+
+        expect(getInvitationData).toHaveBeenCalledWith(expect.objectContaining({ admin: true }));
+        expect(updateOwnerRole).toHaveBeenCalledWith({ member: createdMember, makeAdmin: true, api: createApi });
+    });
+
+    it('invites an admin and assigns the selected roles when they require the org key', async () => {
+        // The API returns the invited member with its pending admin invitation
+        vi.mocked(getMember).mockResolvedValueOnce(pendingAdminMember);
+        const roleIds = new Set([ownerRole.OrganizationRoleID]);
+        const result = await runCreateMember({ passwordless: true, role: MEMBER_ROLE.ORGANIZATION_MEMBER, roleIds });
+
+        expect(getInvitationData).toHaveBeenCalledWith(expect.objectContaining({ admin: true }));
+        expect(updateOwnerRole).not.toHaveBeenCalled();
+        expect(updateMemberRoles).toHaveBeenCalledWith({
+            member: pendingAdminMember,
+            currentRoles: [],
+            desiredRoleIds: roleIds,
+            api: createApi,
+        });
+        expect(result).toEqual({ member: pendingAdminMember });
+    });
+
+    it('returns the owner role error of an admin invitation without failing the creation', async () => {
+        const ownerRoleError = new Error('owner role');
+        vi.mocked(updateOwnerRole).mockImplementationOnce(() => {
+            throw ownerRoleError;
         });
 
-        expect(getInvitationData).toHaveBeenCalledWith(expect.objectContaining({ admin: undefined }));
-        expect(updateOwnerRole).not.toHaveBeenCalled();
-        expect(updateMemberRoles).not.toHaveBeenCalled();
-        expect(result.rolesError).toBeUndefined();
+        const result = await runCreateMember({ passwordless: true, role: MEMBER_ROLE.ORGANIZATION_ADMIN });
+
+        expect(getInvitationData).toHaveBeenCalledWith(expect.objectContaining({ admin: true }));
+        expect(result).toEqual({ member: createdMember, rolesError: ownerRoleError });
+    });
+
+    it('rejects a private admin invitation in a passwordless organization', async () => {
+        await expect(
+            runCreateMember({
+                passwordless: true,
+                role: MEMBER_ROLE.ORGANIZATION_ADMIN,
+                private: MEMBER_PRIVATE.UNREADABLE,
+            })
+        ).rejects.toThrow(MemberCreationValidationError);
+        expect(createApi).not.toHaveBeenCalled();
+    });
+
+    it('rejects a private invitation with a role requiring the org key in a passwordless organization', async () => {
+        await expect(
+            runCreateMember({
+                passwordless: true,
+                role: MEMBER_ROLE.ORGANIZATION_MEMBER,
+                private: MEMBER_PRIVATE.UNREADABLE,
+                roleIds: new Set([ownerRole.OrganizationRoleID]),
+            })
+        ).rejects.toThrow(MemberCreationValidationError);
+        expect(createApi).not.toHaveBeenCalled();
     });
 });
