@@ -43,6 +43,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add address": [
+        "Ajouter une adresse"
+      ],
       "Add current URL": [
         "Ajouter l'URL actuelle"
       ],
@@ -162,6 +165,9 @@
       ],
       "Collapse": [
         "Réduire"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Réduire les alertes de Pass Monitor"
       ],
       "Configure": [
         "Configurer"
@@ -373,6 +379,9 @@
       "Expand": [
         "Développer"
       ],
+      "Expand Pass Monitor alerts": [
+        "Développer les alertes de Pass Monitor"
+      ],
       "Export": [
         "Exporter"
       ],
@@ -423,6 +432,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Comment utiliser ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ignorer"
       ],
       "Import": [
         "Importer"
@@ -897,6 +909,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } de plus",
+        "${ count } de plus"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } est disponible avec un abonnement payant. Changez d'abonnement pour y accéder immédiatement."
       ],
@@ -993,6 +1009,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Ce mot de passe de connexion a été compromis lors d'une fuite de données. Veuillez vous rendre sur le site du service et modifier votre mot de passe."
+      ],
+      "This login uses the same password as another item.": [
+        "Cet identifiant utilise le même mot de passe qu'un autre élément."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Ce service propose l'A2F. Activez-la pour améliorer votre sécurité."
@@ -1319,11 +1338,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Les paramètres de ${ PROTON_SENTINEL_NAME } n'ont pas pu être mis à jour."
       ],
-      "Failed updating monitor flag of the item": [
-        "L'indicateur de surveillance de l'élément n'a pas pu être mis à jour."
-      ],
       "Failed updating monitoring status for this email address": [
         "L'état de surveillance de cette adresse e-mail n'a pas pu être mis à jour."
+      ],
+      "Failed updating monitoring status for this item": [
+        "Nous n'avons pas pu mettre à jour le statut de surveillance de cet élément."
       ],
       "File could not be parsed": [
         "Le fichier n'a pas pu être analysé."
@@ -1682,6 +1701,12 @@
       "Advanced Options": [
         "Options avancées"
       ],
+      "Click ${ exportLabel }.": [
+        "Cliquez sur ${ exportLabel }."
+      ],
+      "CSV...": [
+        "CSV..."
+      ],
       "Export": [
         "Exporter"
       ],
@@ -1720,6 +1745,9 @@
       ],
       "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
         "Ouvrez ${ name } et accédez à ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "Ouvrez ${ name } et sélectionnez ${ file } → ${ exportLabel } → ${ csv }."
       ],
       "Open ${ name } and select ${ menu } → ${ option }.": [
         "Ouvrez ${ name } et sélectionnez ${ menu } → ${ option }."
@@ -1936,6 +1964,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Après avoir importé vos données, vous pouvez supprimer le fichier CSV contenant vos mots de passe pour des raisons de sécurité."
       ],
+      "Alert restored": [
+        "L'alerte a été réactivée."
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "L'alias est désactivé. Vous ne recevrez plus les messages envoyés à ${ item.aliasEmail }"
       ],
@@ -2061,6 +2092,9 @@
       ],
       "Canceled by user": [
         "Annulé par l'utilisateur"
+      ],
+      "Check ignored": [
+        "La vérification a été ignorée."
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Vérification de ${ compromised.progress.completed } mots de passe sur ${ compromised.progress.total }"
@@ -2207,7 +2241,7 @@
         "L'activation du verrouillage avec la biométrie n'a pas abouti."
       ],
       "Enabling desktop auto-lock": [
-        "Activation du verrouillage automatique de l'application de bureau"
+        "Activer le verrouillage automatique de l'application de bureau"
       ],
       "Enabling offline mode...": [
         "Activation du mode hors-ligne..."
@@ -5365,6 +5399,9 @@
       "Minicalendar": [
         "Mini calendrier"
       ],
+      "Missing 2FA": [
+        "A2F manquante"
+      ],
       "Modified": [
         "Modifié"
       ],
@@ -5429,6 +5466,9 @@
       ],
       "Our welcome gift to you": [
         "Notre cadeau de bienvenue"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Clé d'accès"
@@ -5503,6 +5543,9 @@
       "Reused ${ count } time": [
         "Réutilisé ${ count } fois",
         "Réutilisé ${ count } fois"
+      ],
+      "Reused password": [
+        "Mots de passe réutilisé"
       ],
       "Reused passwords": [
         "Mots de passe réutilisés"

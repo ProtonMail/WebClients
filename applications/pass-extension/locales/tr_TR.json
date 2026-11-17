@@ -43,6 +43,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add address": [
+        "Adres ekle"
+      ],
       "Add current URL": [
         "Geçerli adresi ekle"
       ],
@@ -162,6 +165,9 @@
       ],
       "Collapse": [
         "Daralt"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Pass Monitor uyarılarını daralt"
       ],
       "Configure": [
         "Yapılandır"
@@ -325,6 +331,9 @@
       "Dismiss": [
         "Yok say"
       ],
+      "Dismiss notification": [
+        "Bildirimi yok say"
+      ],
       "Do not show again": [
         "Bir daha görüntülenmesin"
       ],
@@ -373,6 +382,9 @@
       "Expand": [
         "Genişlet"
       ],
+      "Expand Pass Monitor alerts": [
+        "Pass Monitor uyarılarını genişlet"
+      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -412,6 +424,9 @@
       "Get Started": [
         "Başlayalım"
       ],
+      "Go to today": [
+        "Bugüne git"
+      ],
       "Hide": [
         "Gizle"
       ],
@@ -423,6 +438,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } nasıl kullanılır"
+      ],
+      "Ignore": [
+        "Yok say"
       ],
       "Import": [
         "İçe aktar"
@@ -553,6 +571,9 @@
       "OK": [
         "Tamam"
       ],
+      "Open item": [
+        "Ögeyi aç"
+      ],
       "Open navigation": [
         "Gezinmeyi aç"
       ],
@@ -615,6 +636,9 @@
       ],
       "Remove member": [
         "Üyeyi kaldır"
+      ],
+      "Remove passkey": [
+        "Geçiş anahtarını kaldır"
       ],
       "Rename": [
         "Yeniden adlandır"
@@ -761,6 +785,9 @@
       "To mailbox": [
         "E-posta kutusuna"
       ],
+      "Toggle section": [
+        "Bölümü aç/kapat"
+      ],
       "Transfer aliases": [
         "Takma adları aktar"
       ],
@@ -903,6 +930,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } diğer",
+        "${ count } diğer"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } ücretli bir tarife kullanılabilir. Hemen erişmek için tarifenizi yükseltin."
       ],
@@ -1002,6 +1033,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Bu oturum açma parolası bir veri ihlalinde görüldü. Lütfen hizmete giderek parolanızı değiştirin."
+      ],
+      "This login uses the same password as another item.": [
+        "Bu oturum açma kaydı başka bir öge ile aynı parolayı kullanıyor."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Bu hizmet iki adımlı doğrulama sağlıyor. Hesap güvenliğini artırmak için bunu kullanın."
@@ -1328,11 +1362,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "${ PROTON_SENTINEL_NAME } ayarı güncellenemedi"
       ],
-      "Failed updating monitor flag of the item": [
-        "Ögenin izleme işareti güncellenemedi"
-      ],
       "Failed updating monitoring status for this email address": [
         "Bu e-posta adresi için izleme durumu güncellenemedi"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Bu ögenin izlenme durumu güncellenemedi"
       ],
       "File could not be parsed": [
         "Dosya işlenemedi"
@@ -1715,8 +1749,14 @@
       "Choose the file format → Select ${ exportLabel }.": [
         "Dosya biçimini seçin → ${ exportLabel } seçin."
       ],
+      "Click ${ exportLabel }.": [
+        "${ exportLabel } üzerine tıklayın."
+      ],
       "Continue export": [
         "Dışa aktarmayı sürdür"
+      ],
+      "CSV...": [
+        "CSV..."
       ],
       "Download file": [
         "Dosyayı indir"
@@ -1798,6 +1838,9 @@
       ],
       "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
         "${ name } açın ☰ → ${ settings } → ${ autoFill } bölümüne gidin."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "${ name } açın ${ file } → ${ exportLabel } → ${ csv } seçin."
       ],
       "Open ${ name } and select ${ menu } → ${ option }.": [
         "${ name } açın ${ menu } → ${ option } seçin."
@@ -2041,6 +2084,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
       ],
+      "Alert restored": [
+        "Uyarı geri yüklendi"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Takma ad kullanımdan kaldırıldı. Artık ${ item.aliasEmail } adresine gönderilen e-postaları almayacaksınız"
       ],
@@ -2166,6 +2212,9 @@
       ],
       "Canceled by user": [
         "Kullanıcı tarafından iptal edildi"
+      ],
+      "Check ignored": [
+        "Denetim yok sayıldı"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "${ compromised.progress.completed } / ${ compromised.progress.total } parola denetleniyor"
@@ -5536,6 +5585,9 @@
       "Minicalendar": [
         "Mini takvim"
       ],
+      "Missing 2FA": [
+        "İki adımlı kimlik doğrulama eksik"
+      ],
       "Modified": [
         "Değiştirilme"
       ],
@@ -5606,6 +5658,9 @@
       ],
       "Our welcome gift to you": [
         "Karşılama hediyemiz"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Geçiş anahtarı"
@@ -5680,6 +5735,9 @@
       "Reused ${ count } time": [
         "${ count } kez yeniden kullanılmış",
         "${ count } kez yeniden kullanılmış"
+      ],
+      "Reused password": [
+        "Parola yeniden kullanılmış"
       ],
       "Reused passwords": [
         "Yeniden kullanılmış parolalar"

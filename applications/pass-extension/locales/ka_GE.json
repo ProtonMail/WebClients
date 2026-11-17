@@ -43,6 +43,9 @@
       "Add": [
         "დამატება"
       ],
+      "Add address": [
+        "მისამართის დამატება"
+      ],
       "Add current URL": [
         "მიმდინარე URL-ის დამატება"
       ],
@@ -402,6 +405,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "როგორ გამოვიყენოთ ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "გამოტოვება"
       ],
       "Import": [
         "შემოტანა"
@@ -1249,9 +1255,6 @@
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "${ PROTON_SENTINEL_NAME }-ის პარამეტრის განახლება ჩავარდა"
-      ],
-      "Failed updating monitor flag of the item": [
-        "ელემენტის მონიტორინგის ალმის განახლება ჩავარდა"
       ],
       "Failed updating monitoring status for this email address": [
         "ამ ელფოსტის მისამართის მონიტორინგის სტატუსის განახლება ჩავარდა"

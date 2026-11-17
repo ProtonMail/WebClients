@@ -43,6 +43,9 @@
       "Add": [
         "加入"
       ],
+      "Add address": [
+        "加入電郵位址"
+      ],
       "Add current URL": [
         "添加目前的網址"
       ],
@@ -402,6 +405,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "如何使用${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "忽略"
       ],
       "Import": [
         "匯入"
@@ -1243,9 +1249,6 @@
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "更新 ${ PROTON_SENTINEL_NAME } 設定失敗"
-      ],
-      "Failed updating monitor flag of the item": [
-        "更新項目的監控標記失敗"
       ],
       "Failed updating monitoring status for this email address": [
         "更新此電子郵件地址的監控狀態失敗"

@@ -43,6 +43,9 @@
       "Add": [
         "Добавить"
       ],
+      "Add address": [
+        "Добавить адрес"
+      ],
       "Add current URL": [
         "Добавить текущий URL"
       ],
@@ -111,6 +114,9 @@
       ],
       "Bulk restore items from trash": [
         "Множественное восстановление элементов из корзины"
+      ],
+      "Bulk select items": [
+        "Множественный выбор элементов"
       ],
       "Cancel": [
         "Отменить"
@@ -220,6 +226,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Создать аккаунт ${ BRAND_NAME }"
       ],
+      "Create a login": [
+        "Создать логин"
+      ],
       "Create a new vault": [
         "Создать новое хранилище"
       ],
@@ -322,6 +331,9 @@
       "Do not suggest on this website": [
         "Не предлагать на этом веб-сайте"
       ],
+      "Download for Linux": [
+        "Скачать для Linux"
+      ],
       "Download for macOS": [
         "Скачать для macOS"
       ],
@@ -397,11 +409,17 @@
       "Hide": [
         "Скрыть"
       ],
+      "Hide passwords": [
+        "Скрыть пароли"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Как экспортировать или данные из${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Как использовать ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Игнорировать"
       ],
       "Import": [
         "Импортировать"
@@ -496,6 +514,9 @@
       "Move all items": [
         "Перенести все элементы"
       ],
+      "Move folder": [
+        "Переместить папку"
+      ],
       "Move to": [
         "Переместить в"
       ],
@@ -504,6 +525,9 @@
       ],
       "Move to Trash": [
         "Переместить в корзину"
+      ],
+      "Multiple select": [
+        "Множественный выбор"
       ],
       "New token": [
         "Новый токен"
@@ -601,6 +625,9 @@
       "Reset": [
         "Сбросить"
       ],
+      "Reset filters": [
+        "Сбросить фильтры"
+      ],
       "Reset history": [
         "Сбросить историю"
       ],
@@ -697,6 +724,9 @@
       "Sign out": [
         "Выйти"
       ],
+      "Skip for now": [
+        "Пока пропустить"
+      ],
       "Start from scratch": [
         "Начать заново"
       ],
@@ -705,6 +735,9 @@
       ],
       "Submitting report...": [
         "Отправка отчёта..."
+      ],
+      "Switch vault": [
+        "Переключить хранилище"
       ],
       "Sync alias": [
         "Синхронизировать псевдоним",
@@ -886,8 +919,14 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псевдоним электронной почты работает так же, как и адрес электронной почты, но при этом уменьшает количество спама и сохраняет в тайне ваш реальный адрес электронной почты и вашу личность."
       ],
+      "Change these passwords immediately": [
+        "Немедленно смените эти пароли"
+      ],
       "Change your passwords": [
         "Измените ваши пароли"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Проверка ${ compromised.progress.completed } из ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Создать уникальный пароль"
@@ -945,6 +984,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Этот аккаунт уязвим, посетите службу и смените пароль."
+      ],
+      "This login uses the same password as another item.": [
+        "Этот логин использует тот же пароль, что и другой элемент."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Эта служба предлагает двухфакторную аутентификацию. Включите ее, чтобы обеспечить дополнительную безопасность аккаунта."
@@ -1196,6 +1238,9 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Сбой при перемещении всех элементов из \"${ payload.content.name }\""
       ],
+      "Failed to move folder": [
+        "Не удалось переместить папку"
+      ],
       "Failed to move items": [
         "Не удалось переместить элементы"
       ],
@@ -1261,9 +1306,6 @@
       ],
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Не удалось обновить настройки ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Failed updating monitor flag of the item": [
-        "Не удалось обновить флаг монитора элемента"
       ],
       "Failed updating monitoring status for this email address": [
         "Не удалось обновить состояние мониторинга для этого адреса электронной почты"
@@ -1359,7 +1401,7 @@
         "Время запроса истекло"
       ],
       "Requesting alias options failed": [
-        "Сбой при запросе вариантов псевдонимов"
+        "Сбой при запросе параметров псевдонимов"
       ],
       "Restoring item failed": [
         "Ошибка при восстановлении элемента"
@@ -1471,6 +1513,9 @@
       ],
       "Unsupported Bitwarden file format": [
         "Неподдерживаемый формат файла Bitwarden"
+      ],
+      "Unsupported file type": [
+        "Неподдерживаемый тип файла"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Сбой при обновлении хранилища \"${ payload.content.name }\""
@@ -1618,6 +1663,92 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Используйте клавиши Вверх и Вниз, чтобы получить доступ и просмотреть предложения после ввода. Нажмите Enter для подтверждения выбора, или Escape для закрытия окна предложений."
+      ]
+    },
+    "Import Tutorial": {
+      "Advanced Options": [
+        "Дополнительные параметры"
+      ],
+      "At the confirmation screen, log back into your ${ name } Vault and to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } again.": [
+        "На экране подтверждения войдите в свое хранилище ${ name } и снова перейдите в ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Autofill and passwords": [
+        "Автозаполнение и пароли"
+      ],
+      "Export": [
+        "Экспорт"
+      ],
+      "Export All Passwords to File": [
+        "Экспорт всех паролей в файл"
+      ],
+      "Export Data": [
+        "Экспорт данных"
+      ],
+      "Export data": [
+        "Экспорт данных"
+      ],
+      "Export items": [
+        "Экспорт элементов"
+      ],
+      "Export passwords": [
+        "Экспорт паролей"
+      ],
+      "Export to CSV": [
+        "Экспорт в CSV"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "Go to ${ exportPasswords } and select ${ downloadFile }.": [
+        "Перейдите в ${ exportPasswords } и выберите ${ downloadFile }."
+      ],
+      "Microsoft password manager": [
+        "Менеджер паролей Microsoft"
+      ],
+      "More actions": [
+        "Больше действий"
+      ],
+      "Navigate to ${ settings } tab.": [
+        "Перейдите на вкладку ${ settings }."
+      ],
+      "Open ${ name } and go to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }.": [
+        "Откройте ${ name } и перейдите в ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "Откройте ${ name } и перейдите ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Откройте ${ name } и выберите ${ menu } → ${ option }."
+      ],
+      "Passwords": [
+        "Пароли"
+      ],
+      "Passwords and autofill": [
+        "Пароли и автозаполнение"
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Выберите ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Выберите ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Выберите формат экспорта CSV."
+      ],
+      "Settings": [
+        "Настройки"
+      ],
+      "Submit": [
+        "Отправить"
+      ],
+      "Vault": [
+        "Хранилище"
+      ],
+      "Vault options": [
+        "Параметры хранилища"
+      ],
+      "your username": [
+        "имя пользователя"
       ]
     },
     "Info": {
@@ -1807,6 +1938,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Получайте доступ к своим паролям на ходу с нашими мобильными приложениями."
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Добавьте способ оплаты, чтобы ваша подписка сохранялась после окончания пробного периода."
+      ],
       "Add your custom email address to monitor:": [
         "Добавьте свой пользовательский адрес электронной почты для мониторинга:"
       ],
@@ -1945,6 +2079,12 @@
       "Can view this item.": [
         "Можно просматривать этот элемент."
       ],
+      "Canceled by user": [
+        "Отменено пользователем"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Проверка ${ compromised.progress.completed } из ${ compromised.progress.total } паролей"
+      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выберите сохраненный passkey для входа в ${ domain }"
       ],
@@ -2028,6 +2168,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Домен: ${ domainPath } или @"
+      ],
+      "Don’t close this tab": [
+        "Не закрывайте эту вкладку"
       ],
       "Download pass-cli from ${ passCliLink }.": [
         "Скачайте pass-cli по ссылке ${ passCliLink }."
@@ -2137,8 +2280,14 @@
       "Failed updating your vault organization": [
         "Не удалось обновить организацию вашего хранилища"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Поле скрыто. Вы по-прежнему можете использовать автозаполнение."
+      ],
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Папка \"${ payload.folder.name }\" перемещена"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Выполните эти шаги, чтобы импортировать данные с помощью стандартного CSV:"
@@ -2191,6 +2340,9 @@
       "Import the CSV file below.": [
         "Импортируйте файл CSV ниже."
       ],
+      "Important:": [
+        "Важно:"
+      ],
       "Imported on ${ date }": [
         "Импортировано ${ date }"
       ],
@@ -2219,7 +2371,7 @@
         "приглашает вас получить доступ к элементам в"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если ты пытаешься войти с другой учётной записью, пожалуйста, сначала выйдите из расширения."
+        "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если вы пытаетесь войти с другого аккаунта, пожалуйста, сначала выйдите из расширения."
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Элемент \"${ payload.item.data.metadata.name }\" создан"
@@ -2326,6 +2478,9 @@
       "Moving items": [
         "Перемещение элементов"
       ],
+      "Moving items to another vault will erase their secure links.": [
+        "Перемещение элементов в другое хранилище удалит их защищенные ссылки."
+      ],
       "Moving items to trash": [
         "Перемещение элементов в Корзину"
       ],
@@ -2392,6 +2547,12 @@
       "Open the ${ PASS_APP_NAME } popup": [
         "Открыть всплывающее окно ${ PASS_APP_NAME }"
       ],
+      "Open the extension here.": [
+        "Откройте расширение здесь."
+      ],
+      "Open the extension to unlock it": [
+        "Откройте расширение, чтобы разблокировать его"
+      ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Откройте настройки Safari, найдите ${ PASS_APP_NAME }, перейдите в раздел «Разрешения» и включите разрешения для сайтов."
       ],
@@ -2409,6 +2570,9 @@
       ],
       "Passkey sign-in": [
         "Вход с passkey"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Пароль скрыт. Вы по-прежнему можете использовать автозаполнение."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Блокировка паролем успешно выполнена. Используйте его для разблокировки ${ PASS_APP_NAME }"
@@ -2641,6 +2805,9 @@
       "Save passkey": [
         "Сохранить passkey"
       ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Отсканируйте, чтобы загрузить приложение ${ PASS_APP_NAME } для iOS и Android"
+      ],
       "Secure links": [
         "Защищенные ссылки"
       ],
@@ -2748,6 +2915,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Дополнительный пароль потребуется для использования ${ PASS_APP_NAME }. Он действует как дополнительный пароль поверх вашего пароля ${ BRAND_NAME }."
+      ],
+      "The folder is already here": [
+        "Папка уже здесь"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Следующий ${ totalIgnored } элемент не может быть импортирован:",
@@ -3257,6 +3427,9 @@
       "Account Type": [
         "Тип аккаунта"
       ],
+      "Add a payment method": [
+        "Добавить способ оплаты"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Добавьте случайный префикс для этого домена при создании нового псевдонима."
       ],
@@ -3752,14 +3925,20 @@
       "LinkedIn account": [
         "Аккаунт LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Имя пользователя"
       ],
       "Login autofill": [
-        "Автоматическое заполнение имени пользователя"
+        "Автоматическое заполнение логина"
       ],
       "Logins": [
         "Имена пользователей"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Почтовые ящики"
@@ -4295,6 +4474,9 @@
       "WiFi network": [
         "Сеть WiFi"
       ],
+      "Windows": [
+        "Windows"
+      ],
       "Work details": [
         "Информация о работе"
       ],
@@ -4464,6 +4646,9 @@
       "Download": [
         "Скачать"
       ],
+      "Download \"${ filename }\"": [
+        "Скачать \"${ filename }\""
+      ],
       "Download file": [
         "Скачать файл"
       ],
@@ -4541,6 +4726,9 @@
       ],
       "You can attach files to items for a better organization": [
         "Вы можете прикреплять файлы к элементам для лучшей организации"
+      ],
+      "You may close this window after saving the file.": [
+        "Вы можете закрыть это окно после сохранения файла."
       ]
     },
     "Permission": {
@@ -4925,6 +5113,12 @@
       "Clear clipboard": [
         "Очистить буфер обмена"
       ],
+      "Compromised password": [
+        "Пароль под угрозой"
+      ],
+      "Compromised passwords": [
+        "Пароли под угрозой"
+      ],
       "Confirm extra password": [
         "Подтвердить дополнительный пароль"
       ],
@@ -4948,6 +5142,9 @@
       ],
       "Create PIN code": [
         "Создать PIN-код"
+      ],
+      "Create your first login": [
+        "Создайте свой первый логин"
       ],
       "Created": [
         "Создан"
@@ -5042,14 +5239,23 @@
       "Export": [
         "Экспорт"
       ],
+      "Export from ${ provider.title }": [
+        "Экспорт из ${ provider.title }"
+      ],
       "Fill & copy password": [
         "Заполнить и скопировать пароль"
       ],
       "Fill password": [
         "Заполнить пароль"
       ],
+      "First login created": [
+        "Первый логин создан"
+      ],
       "Folder options": [
         "Параметры папки"
+      ],
+      "Get mobile apps": [
+        "Получить мобильные приложения"
       ],
       "Get Started": [
         "Начать"
@@ -5078,11 +5284,23 @@
       "Import - ${ date }": [
         "Импорт - ${ date }"
       ],
+      "Import completed with warnings": [
+        "Импорт завершен с предупреждениями"
+      ],
       "Import failed": [
         "Импорт не удался"
       ],
+      "Import successful": [
+        "Успешный импорт"
+      ],
       "Import to vault(s)": [
         "Импорт в хранилище"
+      ],
+      "Imported from:": [
+        "Импортировано из:"
+      ],
+      "Imported items:": [
+        "Импортированные элементы:"
       ],
       "Importing your data": [
         "Импорт ваших данных"
@@ -5095,6 +5313,9 @@
       ],
       "Item": [
         "Элемент"
+      ],
+      "Keep your subscription active": [
+        "Сохраните свою подписку"
       ],
       "Last autofill": [
         "Последнее автозаполнение"
@@ -5141,11 +5362,17 @@
       "Modified": [
         "Изменено"
       ],
+      "Move \"${ folderName }\" to": [
+        "Переместить \"${ folderName }\" в"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Переместить ${ trashedItemsCount } элемент в Корзину?",
         "Переместить ${ trashedItemsCount } элемента в Корзину?",
         "Переместить ${ trashedItemsCount } элементов в Корзину?",
         "Переместить ${ trashedItemsCount } элементов в Корзину?"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Переместить все элементы в \"${ target }\"?"
       ],
       "MX record": [
         "Запись MX"
@@ -5155,6 +5382,9 @@
       ],
       "No access tokens yet": [
         "Токенов доступа пока нет"
+      ],
+      "No compromised passwords": [
+        "Нет паролей под угрозой"
       ],
       "No excluded items": [
         "Нет исключенных элементов"
@@ -5294,8 +5524,14 @@
       "Shared via": [
         "Совместное использование через"
       ],
+      "Some of your items could not be imported. See the details below.": [
+        "Некоторые из ваших элементов не удалось импортировать. Подробности смотрите ниже."
+      ],
       "SPF (Optional)": [
         "SPF (необязательно)"
+      ],
+      "Starting the extension": [
+        "Запуск расширения"
       ],
       "Status": [
         "Состояние"
@@ -5377,6 +5613,9 @@
       ],
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "В чем разница между заметкой ${ PASS_SHORT_APP_NAME } и заметкой SimpleLogin?"
+      ],
+      "Which service do you want to create the login for?": [
+        "Для какого сервиса вы хотите создать логин?"
       ],
       "You don't have any vaults": [
         "У вас нет хранилищ"
@@ -5615,6 +5854,9 @@
       "Move to trash": [
         "Переместить в корзину"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Перемещение папки сюда превысит максимальный уровень вложенности папок"
+      ],
       "No items": [
         "Нет элементов"
       ],
@@ -5713,6 +5955,9 @@
       ],
       "Verification code is required": [
         "Требуется код подтверждения"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Вы не можете переместить папку саму в себя или в ее подпапки"
       ],
       "You have reached the limit of members who can access this item.": [
         "Вы достигли предела количества пользователей, которые могут получить доступ к этому элементу."

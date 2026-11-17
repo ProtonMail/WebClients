@@ -43,6 +43,9 @@
       "Add": [
         "Hinzufügen"
       ],
+      "Add address": [
+        "Adresse hinzufügen"
+      ],
       "Add current URL": [
         "Aktuelle URL hinzufügen"
       ],
@@ -162,6 +165,9 @@
       ],
       "Collapse": [
         "Einklappen"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Warnmeldungen von „Pass Monitor“ einklappen"
       ],
       "Configure": [
         "Konfigurieren"
@@ -373,6 +379,9 @@
       "Expand": [
         "Erweitern"
       ],
+      "Expand Pass Monitor alerts": [
+        "Warnmeldungen von „Pass Monitor“ erweitern"
+      ],
       "Export": [
         "Exportieren"
       ],
@@ -423,6 +432,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Wie man ${ PASS_APP_NAME } verwendet"
+      ],
+      "Ignore": [
+        "Ignorieren"
       ],
       "Import": [
         "Importieren"
@@ -553,6 +565,9 @@
       "OK": [
         "OK"
       ],
+      "Open item": [
+        "Eintrag öffnen"
+      ],
       "Open navigation": [
         "Navigation öffnen"
       ],
@@ -615,6 +630,9 @@
       ],
       "Remove member": [
         "Mitglied entfernen"
+      ],
+      "Remove passkey": [
+        "Passkey entfernen"
       ],
       "Rename": [
         "Umbenennen"
@@ -761,6 +779,9 @@
       "To mailbox": [
         "Zum Postfach"
       ],
+      "Toggle section": [
+        "Abschnitt ein-/ausblenden"
+      ],
       "Transfer aliases": [
         "Aliasse übertragen"
       ],
@@ -903,6 +924,10 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "${ count } weitere",
+        "${ count } weitere"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } ist mit einem kostenpflichtigen Abonnement verfügbar. Upgrade für sofortigen Zugriff."
       ],
@@ -1002,6 +1027,9 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "Dieses Anmeldepasswort ist von einem Datenleck betroffen. Bitte rufe den Dienst auf und ändere das Passwort."
+      ],
+      "This login uses the same password as another item.": [
+        "Für diese Anmeldung wird dasselbe Passwort wie für einen anderen Eintrag verwendet."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Dieser Dienst unterstützt 2FA. Aktiviere sie für zusätzliche Kontosicherheit."
@@ -1328,11 +1356,11 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Fehler beim Aktualisieren der ${ PROTON_SENTINEL_NAME }-Einstellung."
       ],
-      "Failed updating monitor flag of the item": [
-        "Aktualisierung des Monitor Indikators für das Element fehlgeschlagen"
-      ],
       "Failed updating monitoring status for this email address": [
         "Aktualisierung des Überwachungsstatus für diese E-Mail-Adresse fehlgeschlagen"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Fehler beim Aktualisieren des Überwachungsstatus für diesen Eintrag"
       ],
       "File could not be parsed": [
         "Datei konnte nicht geparst werden."
@@ -1715,8 +1743,14 @@
       "Choose the file format → Select ${ exportLabel }.": [
         "Wähle das Dateiformat → Wähle ${ exportLabel }."
       ],
+      "Click ${ exportLabel }.": [
+        "Klicke auf ${ exportLabel }."
+      ],
       "Continue export": [
         "Export fortsetzen"
+      ],
+      "CSV...": [
+        "CSV ..."
       ],
       "Download file": [
         "Datei herunterladen"
@@ -1798,6 +1832,9 @@
       ],
       "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
         "Öffne ${ name } und navigiere zu ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "Öffne ${ name } und wähle ${ file } → ${ exportLabel } → ${ csv }."
       ],
       "Open ${ name } and select ${ menu } → ${ option }.": [
         "Öffne ${ name } und wähle ${ menu } → ${ option }."
@@ -2041,6 +2078,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
       ],
+      "Alert restored": [
+        "Warnmeldung wiederhergestellt"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias erfolgreich deaktiviert. Du wirst keine E-Mails mehr erhalten, die an ${ item.aliasEmail } gesendet werden."
       ],
@@ -2166,6 +2206,9 @@
       ],
       "Canceled by user": [
         "Vom Benutzer abgebrochen"
+      ],
+      "Check ignored": [
+        "Überprüfung ignoriert"
       ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "${ compromised.progress.completed } von ${ compromised.progress.total } Passwörter werden überprüft"
@@ -5536,6 +5579,9 @@
       "Minicalendar": [
         "Minikalender"
       ],
+      "Missing 2FA": [
+        "2FA fehlt"
+      ],
       "Modified": [
         "Geändert"
       ],
@@ -5606,6 +5652,9 @@
       ],
       "Our welcome gift to you": [
         "Unser Willkommensgeschenk an dich"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Passkey"
@@ -5680,6 +5729,9 @@
       "Reused ${ count } time": [
         "${ count } Mal wiederverwendet",
         "${ count } Mal wiederverwendet"
+      ],
+      "Reused password": [
+        "Wiederverwendetes Passwort"
       ],
       "Reused passwords": [
         "Wiederverwendete Passwörter"

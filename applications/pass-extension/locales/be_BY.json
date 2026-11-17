@@ -43,6 +43,9 @@
       "Add": [
         "Дадаць"
       ],
+      "Add address": [
+        "Дадаць адрас"
+      ],
       "Add current URL": [
         "Дадаць бягучы URL-адрас"
       ],
@@ -162,6 +165,9 @@
       ],
       "Collapse": [
         "Згарнуць"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Згарнуць абвесткі Pass Monitor"
       ],
       "Configure": [
         "Сканфігурыраваць"
@@ -373,6 +379,9 @@
       "Expand": [
         "Разгарнуць"
       ],
+      "Expand Pass Monitor alerts": [
+        "Разгарнуць абвесткі Pass Monitor"
+      ],
       "Export": [
         "Экспартаваць"
       ],
@@ -423,6 +432,9 @@
       ],
       "How to use ${ PASS_APP_NAME }": [
         "Як выкарыстоўваць ${ PASS_APP_NAME }"
+      ],
+      "Ignore": [
+        "Ігнараваць"
       ],
       "Import": [
         "Імпартаваць"
@@ -909,6 +921,12 @@
       ]
     },
     "Description": {
+      "${ count } more": [
+        "яшчэ ${ count }",
+        "яшчэ ${ count }",
+        "яшчэ ${ count }",
+        "яшчэ ${ count }"
+      ],
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } даступны з платным тарыфным планам. Палепшыце для неадкладнага доступу."
       ],
@@ -1336,9 +1354,6 @@
       "Failed updating ${ PROTON_SENTINEL_NAME } setting": [
         "Збой абнаўлення налад ${ PROTON_SENTINEL_NAME }"
       ],
-      "Failed updating monitor flag of the item": [
-        "Збой абнаўлення сцяга назірання элемента"
-      ],
       "Failed updating monitoring status for this email address": [
         "Збой абнаўлення статусу назірання для гэтага адраса электроннай пошты"
       ],
@@ -1737,8 +1752,14 @@
       "Choose the file format → Select ${ exportLabel }.": [
         "Выберыце фармат файла → Выберыце ${ exportLabel }"
       ],
+      "Click ${ exportLabel }.": [
+        "Націсніце ${ exportLabel }"
+      ],
       "Continue export": [
         "Працягнуць экспарт"
+      ],
+      "CSV...": [
+        "CSV..."
       ],
       "Download file": [
         "Спампаваць файл"
@@ -2084,6 +2105,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "У мэтах бяспекі вы можаце выдаліць файл CSV, які змяшчае вашы паролі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
       ],
+      "Alert restored": [
+        "Абвестка адноўлена"
+      ],
       "Alias successfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Псеўданім паспяхова адключаны. Вы больш не будзеце атрымліваць лісты адпраўленыя на ${ item.aliasEmail }"
       ],
@@ -2209,6 +2233,9 @@
       ],
       "Canceled by user": [
         "Скасавана карыстальнікам"
+      ],
+      "Check ignored": [
+        "Праверка праігнаравана"
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выбраць захаваны ключ доступу для ўваходу ў ${ domain }"
@@ -2968,6 +2995,9 @@
       ],
       "Scan to download": [
         "Сканіраваць і спампаваць"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Сканіруйце, каб спампаваць ${ PASS_APP_NAME } для iOS і Android"
       ],
       "Secure links": [
         "Бяспечныя спасылкі"
@@ -5613,6 +5643,9 @@
       "Minicalendar": [
         "Мінікаляндар"
       ],
+      "Missing 2FA": [
+        "Адсутнічае 2ФА"
+      ],
       "Modified": [
         "Зменена"
       ],
@@ -5687,6 +5720,9 @@
       ],
       "Our welcome gift to you": [
         "Наш прывітальны падарунак для вас"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
       ],
       "Passkey": [
         "Ключ доступу"
@@ -5765,6 +5801,9 @@
         "Паўторна выкарыстаны ${ count } разы",
         "Паўторна выкарыстаны ${ count } разоў",
         "Паўторна выкарыстаны ${ count } разоў"
+      ],
+      "Reused password": [
+        "Пароль выкарыстаны паўторна"
       ],
       "Reused passwords": [
         "Паўторна выкарыстаныя паролі"
@@ -6290,6 +6329,9 @@
       ],
       "Verification code is required": [
         "Патрабуецца код спраўджання"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Нельга перамясціць папку ў саму сябе або яе падпапкі"
       ],
       "You have reached the limit of members who can access this item.": [
         "Вы дасягнулі абмежавання па колькасці ўдзельнікаў, якія могуць атрымаць доступ да гэтага элемента."
