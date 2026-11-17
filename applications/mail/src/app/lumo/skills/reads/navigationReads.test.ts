@@ -9,6 +9,8 @@ import { formatISO } from 'date-fns';
 import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
+import { CATEGORIES_COLOR_SHADES } from '@proton/mail/features/categoriesView/categoriesConstants';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -17,6 +19,8 @@ import { ALMOST_ALL_MAIL, SHOW_MOVED } from '@proton/shared/lib/mail/mailSetting
 
 import { getParamsFromPathname } from '../../../helpers/mailboxUrl';
 import type { Element } from '../../../models/element';
+import { PRIMARY_ONLY_NOTE } from '../../helpers/categories';
+import { DefaultFolderReference, buildFixedReferences } from '../../helpers/defaultFolders';
 import { fakeStore, indexedESStatus, settledView } from '../../helpers/navigation.test.helpers';
 import type { MailToolDeps } from '../../toolModule';
 import { createOpenFolderHandler } from './openFolder';
@@ -73,7 +77,7 @@ const harness = ({
 
     // The URL segment is the HUMAN label ("all-mail"), which the app maps back to the id before it reaches
     // the params — see `getLabelIDFromRawID` in useElements. A custom folder id passes straight through.
-    // The landing rows are stamped into the view's label, since the list drops anything not filed there.
+    // The landing rows are stamped into the view's label and tab, since the list drops anything not filed there.
     const push = (url: string) => {
         pushed.push(url);
         if (!settles) {
@@ -82,9 +86,14 @@ const harness = ({
         const [pathname, hash = ''] = url.split('#');
         const rawID = getParamsFromPathname(pathname).params.labelID;
         const labelID = HUMAN_TO_LABEL_IDS[rawID] || rawID;
-        const filed = landing.map((element) => ({ ...element, Labels: [{ ID: labelID, ContextNumMessages: 1 }] }));
+        const view = { labelID, hash, categoryViewEnabled: categoryTabs.length > 0 };
+        const filedInto = [labelID, ...(settledView(view).params?.categoryIDs ?? [])];
+        const filed = landing.map((element) => ({
+            ...element,
+            Labels: filedInto.map((ID) => ({ ID, ContextNumMessages: 1 })),
+        }));
         change({
-            ...settledView({ labelID, hash, elements: filed as Element[] }),
+            ...settledView({ ...view, elements: filed as Element[] }),
             usedEncryptedSearch,
             taskRunning: { labelIDs: blockedLabelIDs, timeoutID: undefined },
         });
@@ -102,7 +111,8 @@ const harness = ({
 
     return {
         deps,
-        references: createReferenceRegistry(),
+        references: createReferenceRegistry(buildFixedReferences()),
+        pushed,
         pathOf: () => pushed[0].split('#')[0],
         hashOf: () => pushed[0].split('#')[1] ?? '',
     };
@@ -110,11 +120,31 @@ const harness = ({
 
 const hashParams = (hash: string) => Object.fromEntries(new URLSearchParams(hash));
 
+const shownTabs = (...ids: CategoryLabelID[]): CategoryTab[] =>
+    ids.map((id) => ({ id, display: true, colorShade: CATEGORIES_COLOR_SHADES.IRIS }));
+
+const PRIMARY_AND_PROMOTIONS = shownTabs(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
+
+/** Every fixed reference with the sidebar's route and name for it, under the default mail settings. */
+const DEFAULT_FOLDER_ROUTES: [DefaultFolderReference, string, string][] = [
+    [DefaultFolderReference.INBOX, '/inbox', 'Inbox'],
+    [DefaultFolderReference.DRAFTS, '/drafts', 'Drafts'],
+    [DefaultFolderReference.SENT, '/sent', 'Sent'],
+    [DefaultFolderReference.STARRED, '/starred', 'Starred'],
+    [DefaultFolderReference.ARCHIVE, '/archive', 'Archive'],
+    [DefaultFolderReference.SPAM, '/spam', 'Spam'],
+    [DefaultFolderReference.TRASH, '/trash', 'Trash'],
+    [DefaultFolderReference.ALL_MAIL, '/all-mail', 'All mail'],
+    [DefaultFolderReference.SCHEDULED, '/scheduled', 'Scheduled'],
+    [DefaultFolderReference.SNOOZED, '/snoozed', 'Snooze'],
+];
+
 const searchParams = (overrides = {}) => ({
     keyword: null,
     from: null,
     to: null,
     target: null,
+    category: null,
     begin: null,
     end: null,
     filter: null,
@@ -196,6 +226,57 @@ describe('search handler', () => {
         expect(result.query).not.toContain(reference);
     });
 
+    it.each(DEFAULT_FOLDER_ROUTES)('scopes to %s on %s and reports it as %s', async (target, path, name) => {
+        const { deps, references, pathOf } = harness();
+
+        const result = await createSearchHandler(deps)(searchParams({ keyword: 'hotel', target }), { references });
+
+        expect(pathOf()).toBe(path);
+        expect(result.targetName).toBe(name);
+        expect(result.query).toBe(`"hotel", in ${name}`);
+    });
+
+    // Mail's own advanced search in a tab stays on /inbox and keeps the tab in the hash.
+    it('scopes an Inbox search to one category tab and names the tab', async () => {
+        const { deps, references, pathOf, hashOf } = harness({
+            landing: [email('ELEMENT_1', 'Spring sale')],
+            categoryTabs: PRIMARY_AND_PROMOTIONS,
+        });
+
+        const result = await createSearchHandler(deps)(
+            searchParams({ keyword: 'sale', target: DefaultFolderReference.INBOX, category: 'promotions' }),
+            { references }
+        );
+
+        expect(pathOf()).toBe('/inbox');
+        expect(hashParams(hashOf())).toEqual({ keyword: 'sale', category: 'promotions' });
+        expect(result.rows.map((row) => row.subject)).toEqual(['Spring sale']);
+        expect(result.query).toBe('"sale", in Inbox · Promotions');
+        expect(result.scope).not.toContain('Primary tab only');
+    });
+
+    it('says an Inbox search with category tabs on covered only the Primary tab', async () => {
+        const { deps, references } = harness({ categoryTabs: PRIMARY_AND_PROMOTIONS });
+
+        const result = await createSearchHandler(deps)(
+            searchParams({ keyword: 'welcome', target: DefaultFolderReference.INBOX }),
+            {
+                references,
+            }
+        );
+
+        expect(result.scope).toContain(PRIMARY_ONLY_NOTE);
+    });
+
+    it('refuses a category without the Inbox as its target, before navigating', async () => {
+        const { deps, references, pushed } = harness({ categoryTabs: PRIMARY_AND_PROMOTIONS });
+
+        await expect(
+            createSearchHandler(deps)(searchParams({ keyword: 'sale', category: 'promotions' }), { references })
+        ).rejects.toThrow(/only applies with/);
+        expect(pushed).toEqual([]);
+    });
+
     it('rejects a non-folder reference rather than navigating to a message id', async () => {
         const { deps, references } = harness();
         const reference = references.referenceFor('email', 'ELEMENT_1', { title: 'Hotel booking' });
@@ -275,12 +356,84 @@ describe('search handler', () => {
 });
 
 describe('open_folder handler', () => {
-    const openParams = (overrides = {}) => ({ location: null, target: null, filter: null, sort: null, ...overrides });
+    const openParams = (overrides = {}) => ({
+        target: DefaultFolderReference.INBOX,
+        category: null,
+        filter: null,
+        sort: null,
+        ...overrides,
+    });
 
-    it('opens a standard location and returns what is now on screen', async () => {
+    it('opens an Inbox category tab and returns what landed on it', async () => {
+        const { deps, references, pathOf, hashOf } = harness({
+            landing: [email('ELEMENT_1', 'Spring sale')],
+            categoryTabs: PRIMARY_AND_PROMOTIONS,
+        });
+
+        const result = await createOpenFolderHandler(deps)(openParams({ category: 'promotions' }), { references });
+
+        expect(pathOf()).toBe('/inbox');
+        expect(hashParams(hashOf())).toEqual({ category: 'promotions' });
+        expect(result.rows.map((row) => row.subject)).toEqual(['Spring sale']);
+        expect(result.location).toBe('Inbox · Promotions');
+        expect(result.primaryOnly).toBe(false);
+    });
+
+    it('flags an Inbox opened with category tabs on and no tab as covering Primary only', async () => {
+        const { deps, references } = harness({ categoryTabs: PRIMARY_AND_PROMOTIONS });
+
+        const result = await createOpenFolderHandler(deps)(openParams(), { references });
+
+        expect(result.primaryOnly).toBe(true);
+    });
+
+    it('does not flag Primary only when category tabs are off', async () => {
+        const { deps, references } = harness({ categoryTabs: [] });
+
+        const result = await createOpenFolderHandler(deps)(openParams(), { references });
+
+        expect(result.primaryOnly).toBe(false);
+    });
+
+    it('does not flag Primary only for a location other than the Inbox', async () => {
+        const { deps, references } = harness({ categoryTabs: PRIMARY_AND_PROMOTIONS });
+
+        const result = await createOpenFolderHandler(deps)(openParams({ target: DefaultFolderReference.ARCHIVE }), {
+            references,
+        });
+
+        expect(result.primaryOnly).toBe(false);
+    });
+
+    it('refuses a category on any location but the Inbox, before navigating', async () => {
+        const { deps, references, pushed } = harness({ categoryTabs: PRIMARY_AND_PROMOTIONS });
+
+        await expect(
+            createOpenFolderHandler(deps)(
+                openParams({ target: DefaultFolderReference.ARCHIVE, category: 'promotions' }),
+                {
+                    references,
+                }
+            )
+        ).rejects.toThrow(/only applies with/);
+        expect(pushed).toEqual([]);
+    });
+
+    it('refuses a tab the user hid, before navigating', async () => {
+        const { deps, references, pushed } = harness({ categoryTabs: PRIMARY_AND_PROMOTIONS });
+
+        await expect(createOpenFolderHandler(deps)(openParams({ category: 'social' }), { references })).rejects.toThrow(
+            /category tab/
+        );
+        expect(pushed).toEqual([]);
+    });
+
+    it('opens a default folder by its fixed reference and returns what is now on screen', async () => {
         const { deps, references, hashOf } = harness({ landing: [email('ELEMENT_1', 'Junk offer')] });
 
-        const result = await createOpenFolderHandler(deps)(openParams({ location: 'spam' }), { references });
+        const result = await createOpenFolderHandler(deps)(openParams({ target: DefaultFolderReference.SPAM }), {
+            references,
+        });
 
         expect(result.location).toBe('Spam');
         expect(result.rows.map((row) => row.subject)).toEqual(['Junk offer']);
@@ -294,7 +447,7 @@ describe('open_folder handler', () => {
         jest.useFakeTimers();
         const { deps, references } = harness({ blockedLabelIDs: [MAILBOX_LABEL_IDS.INBOX] });
 
-        const result = await createOpenFolderHandler(deps)(openParams({ location: 'inbox' }), { references });
+        const result = await createOpenFolderHandler(deps)(openParams(), { references });
 
         expect(result.rows).toEqual([]);
         expect(result.bulkActionRunning).toBe(true);
@@ -323,11 +476,11 @@ describe('open_folder handler', () => {
     // the wrong one and they land in a view their own sidebar does not link to.
     it('opens plain Drafts, or All drafts when Show-moved says so', async () => {
         const { deps, references, pathOf } = harness();
-        await createOpenFolderHandler(deps)(openParams({ location: 'drafts' }), { references });
+        await createOpenFolderHandler(deps)(openParams({ target: DefaultFolderReference.DRAFTS }), { references });
         expect(pathOf()).toBe('/drafts');
 
         const moved = harness({ showMoved: SHOW_MOVED.DRAFTS });
-        await createOpenFolderHandler(moved.deps)(openParams({ location: 'drafts' }), {
+        await createOpenFolderHandler(moved.deps)(openParams({ target: DefaultFolderReference.DRAFTS }), {
             references: moved.references,
         });
         expect(moved.pathOf()).toBe('/all-drafts');
@@ -335,24 +488,56 @@ describe('open_folder handler', () => {
 
     it('opens All mail, or Almost-all-mail when Spam and Trash are excluded', async () => {
         const { deps, references, pathOf } = harness();
-        const result = await createOpenFolderHandler(deps)(openParams({ location: 'all_mail' }), { references });
+        const result = await createOpenFolderHandler(deps)(openParams({ target: DefaultFolderReference.ALL_MAIL }), {
+            references,
+        });
         expect(pathOf()).toBe('/all-mail');
 
         const excluded = harness({ almostAllMail: ALMOST_ALL_MAIL.ENABLED });
-        const excludedResult = await createOpenFolderHandler(excluded.deps)(openParams({ location: 'all_mail' }), {
-            references: excluded.references,
-        });
+        const excludedResult = await createOpenFolderHandler(excluded.deps)(
+            openParams({ target: DefaultFolderReference.ALL_MAIL }),
+            {
+                references: excluded.references,
+            }
+        );
         expect(excluded.pathOf()).toBe('/almost-all-mail');
         // Both are "All mail" to the user, so the chip must not give the distinction away.
         expect(excludedResult.location).toBe(result.location);
     });
 
+    it('opens plain Sent, or All sent when Show-moved says so', async () => {
+        const { deps, references, pathOf } = harness();
+        const result = await createOpenFolderHandler(deps)(openParams({ target: DefaultFolderReference.SENT }), {
+            references,
+        });
+        expect(pathOf()).toBe('/sent');
+        expect(result.location).toBe('Sent');
+
+        const moved = harness({ showMoved: SHOW_MOVED.SENT });
+        await createOpenFolderHandler(moved.deps)(openParams({ target: DefaultFolderReference.SENT }), {
+            references: moved.references,
+        });
+        expect(moved.pathOf()).toBe('/all-sent');
+    });
+
+    it.each(DEFAULT_FOLDER_ROUTES)('opens %s on %s under the name %s', async (target, path, name) => {
+        const { deps, references, pathOf } = harness();
+
+        const result = await createOpenFolderHandler(deps)(openParams({ target }), { references });
+
+        expect(pathOf()).toBe(path);
+        expect(result.location).toBe(name);
+    });
+
     it('narrows the opened view by filter and sort', async () => {
         const { deps, references, hashOf } = harness();
 
-        await createOpenFolderHandler(deps)(openParams({ location: 'archive', filter: 'unread', sort: 'oldest' }), {
-            references,
-        });
+        await createOpenFolderHandler(deps)(
+            openParams({ target: DefaultFolderReference.ARCHIVE, filter: 'unread', sort: 'oldest' }),
+            {
+                references,
+            }
+        );
 
         expect(hashParams(hashOf())).toEqual({ filter: 'unread', sort: 'date' });
     });
@@ -362,7 +547,7 @@ describe('open_folder handler', () => {
         const { deps, references, hashOf } = harness();
         deps.history.location.hash = '#keyword=hotel&from=alice@example.com&page=2&wildcard=1';
 
-        await createOpenFolderHandler(deps)(openParams({ location: 'inbox' }), { references });
+        await createOpenFolderHandler(deps)(openParams(), { references });
 
         expect(hashOf()).toBe('');
     });

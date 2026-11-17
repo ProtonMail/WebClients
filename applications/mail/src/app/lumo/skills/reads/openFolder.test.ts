@@ -1,45 +1,11 @@
+import { PRIMARY_ONLY_NOTE } from '../../helpers/categories';
+import { DefaultFolderReference } from '../../helpers/defaultFolders';
 import type { OpenFolderResult } from './openFolder';
-import { openFolderDefinition, resolveOpenFolderTarget } from './openFolder';
+import { openFolderDefinition } from './openFolder';
 
 const anyReferences = {} as any;
 
-describe('resolveOpenFolderTarget', () => {
-    it('accepts a standard location', () => {
-        expect(resolveOpenFolderTarget({ location: 'archive', target: null })).toEqual({ location: 'archive' });
-    });
-
-    it('accepts a custom target', () => {
-        expect(resolveOpenFolderTarget({ location: null, target: 'folder-x7b2q1' })).toEqual({
-            target: 'folder-x7b2q1',
-        });
-    });
-
-    it('rejects when both location and target are set', () => {
-        expect(() => resolveOpenFolderTarget({ location: 'inbox', target: 'folder-x7b2q1' })).toThrow(/EXACTLY ONE/);
-    });
-
-    it('rejects when neither is set', () => {
-        expect(() => resolveOpenFolderTarget({ location: null, target: null })).toThrow(/EXACTLY ONE/);
-    });
-
-    it('rejects an unknown standard location', () => {
-        expect(() => resolveOpenFolderTarget({ location: 'outbox', target: null })).toThrow(/Unknown location/);
-    });
-});
-
 describe('openFolderDefinition', () => {
-    it('is a read with a closed, $ref-free schema over the documented params', () => {
-        expect(openFolderDefinition.kind).toBe('read');
-        expect(openFolderDefinition.paramsSchema.additionalProperties).toBe(false);
-        expect(openFolderDefinition.paramsSchema.required).toEqual(['location', 'target', 'filter', 'sort']);
-        expect(Object.keys(openFolderDefinition.paramsSchema.properties)).toEqual([
-            'location',
-            'target',
-            'filter',
-            'sort',
-        ]);
-    });
-
     it('ships few-shot examples for its documented shapes', () => {
         expect(openFolderDefinition.examples?.length).toBeGreaterThanOrEqual(3);
     });
@@ -62,6 +28,7 @@ describe('openFolderDefinition', () => {
             ],
             total: 1,
             bulkActionRunning: false,
+            primaryOnly: false,
         };
         const out = openFolderDefinition.serializeForLumo(result, anyReferences);
         expect(out).toContain('Opened Archive:');
@@ -70,27 +37,43 @@ describe('openFolderDefinition', () => {
 
     it('serializes an empty location with a "no emails" note', () => {
         const out = openFolderDefinition.serializeForLumo(
-            { location: 'Spam', rows: [], total: 0, bulkActionRunning: false },
+            { location: 'Spam', rows: [], total: 0, bulkActionRunning: false, primaryOnly: false },
             anyReferences
         );
         expect(out).toContain('No emails in Spam.');
+        expect(out).not.toContain(PRIMARY_ONLY_NOTE);
     });
 
     // Reading that as "your Spam is empty" is the failure mode: a mark-all leaves its location unable to
     // load a list at all, so the emptiness is the bulk action, not the mailbox.
     it('says a bulk action was still running rather than calling the location empty', () => {
         const out = openFolderDefinition.serializeForLumo(
-            { location: 'Inbox', rows: [], total: 0, bulkActionRunning: true },
+            { location: 'Inbox', rows: [], total: 0, bulkActionRunning: true, primaryOnly: false },
             anyReferences
         );
         expect(out).not.toContain('No emails in Inbox.');
         expect(out).toContain('bulk action was still running');
     });
 
+    // Mail lands a bare Inbox open on Primary, so without this an email missing there reads as "not in the Inbox".
+    it('says an Inbox opened with no tab covered only the Primary tab', () => {
+        const out = openFolderDefinition.serializeForLumo(
+            { location: 'Inbox', rows: [], total: 0, bulkActionRunning: false, primaryOnly: true },
+            anyReferences
+        );
+        expect(out).toContain(PRIMARY_ONLY_NOTE);
+    });
+
+    it('names every default folder in its description', () => {
+        Object.values(DefaultFolderReference).forEach((reference) => {
+            expect(openFolderDefinition.toolDescription).toContain(reference);
+        });
+    });
+
     it('summarizes the chip with the opened location name', () => {
         const chip = openFolderDefinition.summarizeChip(
-            { location: 'archive', target: null, filter: null, sort: null },
-            { location: 'Archive', rows: [], total: 0, bulkActionRunning: false }
+            { target: DefaultFolderReference.ARCHIVE, category: null, filter: null, sort: null },
+            { location: 'Archive', rows: [], total: 0, bulkActionRunning: false, primaryOnly: false }
         );
         expect(chip.label).toContain('Archive');
     });

@@ -19,6 +19,7 @@ import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAX_FOLDER_NESTING_LEVEL, ROOT_FOLDER } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
+import { assertNotDefaultFolder } from '../../helpers/defaultFolders';
 import { resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 
@@ -147,6 +148,11 @@ export const createFolderDefinition: ToolDefinition<CreateEntityParams, CreatedE
             call: { name: 'Hotels', parentId: 'folder-x7b2q1' },
         },
     ],
+    checkParams: ({ parentId }) => {
+        if (parentId) {
+            assertNotDefaultFolder(parentId, 'hold folders of their own');
+        }
+    },
     serializeForLumo: serializeCreated('folder'),
     summarizeChip: () => ({ label: c('Info').t`Create folder` }),
 };

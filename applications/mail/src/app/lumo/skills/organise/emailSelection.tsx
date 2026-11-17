@@ -10,9 +10,20 @@ import MoveItemsCard from '@proton/lumo-ui/shared-components/MoveItemsCard/MoveI
 import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 import { formatSimpleDate } from '@proton/mail-message/helpers/date';
 
+import { categoryScopeName } from '../../helpers/categories';
+
 export const referenceName = (reference: unknown, labels: ReferenceLabels): string => {
     const key = String(reference);
     return labels[key]?.title ?? key;
+};
+
+/** A proposed location's name, narrowed to the Inbox tab when the action names one; empty for no location. */
+export const locationScopeName = (location: unknown, category: unknown, labels: ReferenceLabels): string => {
+    if (!location) {
+        return '';
+    }
+
+    return categoryScopeName(referenceName(location, labels), category ? String(category) : null);
 };
 
 /**

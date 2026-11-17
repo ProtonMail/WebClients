@@ -16,6 +16,8 @@ import { getTimezone } from '@proton/shared/lib/date/timezone';
 
 import { buildStandaloneMailSearchGuide } from './guides/searchGuide';
 import { STANDALONE_PROTON_SIEVE_DIALECT_REFERENCE } from './guides/sieveGuide';
+import { INBOX_CATEGORIES } from './helpers/categories';
+import { buildFixedReferences } from './helpers/defaultFolders';
 import { buildMailContext } from './mailContext';
 import { MAIL_RULES } from './rules';
 import { createDraftModule } from './skills/compose/createDraft';
@@ -28,7 +30,7 @@ import { createFolderModule, createLabelModule } from './skills/organise/createE
 import { MOVE_LOCATIONS, moveEmailsModule } from './skills/organise/moveEmails';
 import { renameFolderModule } from './skills/organise/renameFolder';
 import { renameLabelModule } from './skills/organise/renameLabel';
-import { INBOX_CATEGORIES, setLocationReadModule } from './skills/organise/setLocationRead';
+import { setLocationReadModule } from './skills/organise/setLocationRead';
 import { setReadModule } from './skills/organise/setRead';
 import { setStarredModule } from './skills/organise/setStarred';
 import { snoozeEmailsModule } from './skills/organise/snoozeEmails';
@@ -38,7 +40,7 @@ import { listFiltersModule } from './skills/reads/listFilters';
 import { listFoldersModule } from './skills/reads/listFolders';
 import { listLabelsModule } from './skills/reads/listLabels';
 import { MAILBOX_FILTERS, MAILBOX_SORTS } from './skills/reads/mailboxView';
-import { OPEN_FOLDER_LOCATIONS, openFolderModule } from './skills/reads/openFolder';
+import { openFolderModule } from './skills/reads/openFolder';
 import { readComposerModule } from './skills/reads/readComposer';
 import { readEmailModule } from './skills/reads/readEmail';
 import { readOpenEmailModule } from './skills/reads/readOpenEmail';
@@ -133,12 +135,12 @@ const STANDALONE_GUIDES: Partial<Record<ToolName, (deps: MailToolDeps) => string
 const STANDALONE_ENUMS: Partial<Record<ToolName, Record<string, readonly unknown[]>>> = {
     move_emails: { location: [...MOVE_LOCATIONS, null] },
     open_folder: {
-        location: [...OPEN_FOLDER_LOCATIONS, null],
+        category: [...INBOX_CATEGORIES, null],
         filter: [...MAILBOX_FILTERS, null],
         sort: [...MAILBOX_SORTS, null],
     },
-    set_location_read: { location: [...OPEN_FOLDER_LOCATIONS, null], category: [...INBOX_CATEGORIES, null] },
-    search: { filter: [...MAILBOX_FILTERS, null] },
+    set_location_read: { category: [...INBOX_CATEGORIES, null] },
+    search: { category: [...INBOX_CATEGORIES, null], filter: [...MAILBOX_FILTERS, null] },
     change_settings: { setting: Object.values(CosmeticSetting) },
 };
 
@@ -269,6 +271,7 @@ export const buildLumoMailConfig = (
         ...prompt,
         handlers,
         cardRenderers,
+        fixedReferences: buildFixedReferences(),
         suggestions: WELCOME_SUGGESTIONS,
         telemetry,
         showContextLimitToast: true,

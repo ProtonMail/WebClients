@@ -6,6 +6,8 @@ import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/cont
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { buildMailSearchGuide } from '../../guides/searchGuide';
+import { PRIMARY_ONLY_NOTE, categoryScopeName, coversPrimaryOnly, resolveInboxTab } from '../../helpers/categories';
+import { DefaultFolderReference } from '../../helpers/defaultFolders';
 import { filterHashFor, navigateAndReadRows, resolveMailboxLocation } from '../../helpers/navigation';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';
 import type { ContentSearchCoverage } from './contentSearch';
@@ -26,6 +28,8 @@ export interface SearchParams {
     from: string | null;
     to: string | null;
     target: string | null;
+    /** One Inbox category tab, valid only with `folder-inbox`. */
+    category: string | null;
     begin: string | null;
     end: string | null;
     filter: string | null;
@@ -97,7 +101,11 @@ const SEARCH_AXES: { label: string; isUnused: (params: SearchParams) => boolean 
     { label: 'folder or label', isUnused: ({ target }) => !target },
 ];
 
-export const describeSearchScope = (params: SearchParams, spamTrashExcluded: boolean): string => {
+export const describeSearchScope = (
+    params: SearchParams,
+    spamTrashExcluded: boolean,
+    categoryTabsShown: boolean
+): string => {
     const unused = SEARCH_AXES.filter(({ isUnused }) => isUnused(params)).map(({ label }) => label);
     const notes: string[] = [];
     if (unused.length) {
@@ -105,6 +113,9 @@ export const describeSearchScope = (params: SearchParams, spamTrashExcluded: boo
     }
     if (spamTrashExcluded) {
         notes.push('Spam and Trash were outside its scope.');
+    }
+    if (coversPrimaryOnly(params, categoryTabsShown)) {
+        notes.push(PRIMARY_ONLY_NOTE);
     }
     return notes.join(' ');
 };
@@ -145,12 +156,13 @@ export const searchDefinition: ToolDefinition<SearchParams, SearchResult> = {
     paramsSchema: {
         type: 'object',
         additionalProperties: false,
-        required: ['keyword', 'from', 'to', 'target', 'begin', 'end', 'filter'],
+        required: ['keyword', 'from', 'to', 'target', 'category', 'begin', 'end', 'filter'],
         properties: {
             keyword: nullableString,
             from: nullableString,
             to: nullableString,
             target: nullableString,
+            category: nullableString,
             begin: nullableString,
             end: nullableString,
             filter: nullableString,
@@ -165,6 +177,7 @@ export const searchDefinition: ToolDefinition<SearchParams, SearchResult> = {
                 from: null,
                 to: null,
                 target: null,
+                category: null,
                 begin: null,
                 end: null,
                 filter: null,
@@ -178,6 +191,7 @@ export const searchDefinition: ToolDefinition<SearchParams, SearchResult> = {
                 from: 'Sam',
                 to: null,
                 target: null,
+                category: null,
                 begin: '2026-07-01',
                 end: '2026-07-31',
                 filter: null,
@@ -201,16 +215,16 @@ export const createSearchHandler =
         const { target } = params;
 
         const filter = resolveMailboxFilter(params.filter);
-
         // Shared with open_folder so an unscoped search lands on the SAME "all mail" the user's own search
         // does — which is Almost-all-mail (no Spam/Trash) when they have that setting on.
-        const { labelID, pathname } = resolveMailboxLocation(
-            target ? { target } : { location: 'all_mail' },
-            references,
-            mail.getMailSettings()
-        );
+        const location = target || DefaultFolderReference.ALL_MAIL;
+        const categoryTabs = mail.getActiveCategoryTabs();
+        const tab = resolveInboxTab({ target: location, category: params.category }, categoryTabs);
+
+        const { labelID, pathname } = resolveMailboxLocation(location, references, mail.getMailSettings());
         // Not the resolver's `name`, which falls back to a raw id — this reaches the user's chip.
-        const targetName = target ? references.labelFor(target)?.title : undefined;
+        const locationName = target ? references.labelFor(target)?.title : undefined;
+        const targetName = locationName && categoryScopeName(locationName, tab);
 
         const { rows, total, settled, usedEncryptedSearch, bulkActionRunning } = await navigateAndReadRows(
             mail,
@@ -225,6 +239,7 @@ export const createSearchHandler =
                     begin: params.begin ? toSearchBound(params.begin) : undefined,
                     end: params.end ? toSearchBound(params.end, true) : undefined,
                     filter: filterHashFor(filter),
+                    category: tab,
                 },
             }
         );
@@ -234,7 +249,7 @@ export const createSearchHandler =
             targetName,
             // ES's React state, so it must be read here and not inside the settle subscription.
             coverage: resolveContentSearchCoverage({ esStatus: mail.getESStatus(), usedEncryptedSearch, settled }),
-            scope: describeSearchScope(params, labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL),
+            scope: describeSearchScope(params, labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, categoryTabs.length > 0),
             rows,
             total,
             bulkActionRunning,

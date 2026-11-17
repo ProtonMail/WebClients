@@ -6,6 +6,7 @@ import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import { formatSimpleDate } from '@proton/mail-message/helpers/date';
 
+import { DefaultFolderReference } from '../../helpers/defaultFolders';
 import {
     emailCountDetail,
     emailSelectionSentence,
@@ -17,8 +18,7 @@ import {
 const action: ActionRequest = {
     type: 'move_emails',
     ids: ['email-a1b2c3', 'email-d4e5f6'],
-    folder: null,
-    location: 'trash',
+    folder: DefaultFolderReference.TRASH,
 };
 const labels = { 'email-a1b2c3': { title: 'Booking confirmation' }, 'email-d4e5f6': { title: 'Receipt' } };
 
@@ -29,7 +29,7 @@ const renderBody = (selectedIds: string[]) => {
             {renderEmailSelectionBody({
                 action,
                 labels,
-                params: { ids: selectedIds, folder: null, location: 'trash' },
+                params: { ids: selectedIds, folder: DefaultFolderReference.TRASH },
                 onChange,
             })}
         </>
@@ -95,7 +95,7 @@ describe('renderEmailSelectionBody', () => {
                         },
                         'email-d4e5f6': { title: 'Receipt' },
                     },
-                    params: { ids: [...action.ids], folder: null, location: 'trash' },
+                    params: { ids: [...action.ids], folder: DefaultFolderReference.TRASH },
                     onChange,
                 })}
             </>
@@ -112,7 +112,7 @@ describe('renderEmailSelectionBody', () => {
 
         fireEvent.click(checkboxes[0]);
 
-        expect(onChange).toHaveBeenCalledWith({ ids: ['email-d4e5f6'], folder: null, location: 'trash' });
+        expect(onChange).toHaveBeenCalledWith({ ids: ['email-d4e5f6'], folder: DefaultFolderReference.TRASH });
         expect(action.ids).toEqual(['email-a1b2c3', 'email-d4e5f6']);
     });
 
@@ -127,8 +127,7 @@ describe('renderEmailSelectionBody', () => {
 
         expect(onChange).toHaveBeenCalledWith({
             ids: ['email-d4e5f6', 'email-a1b2c3'],
-            folder: null,
-            location: 'trash',
+            folder: DefaultFolderReference.TRASH,
         });
     });
 });

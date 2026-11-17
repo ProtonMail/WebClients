@@ -1,9 +1,11 @@
+import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 
+import { DefaultFolderReference } from '../../helpers/defaultFolders';
 import type { MailToolDeps } from '../../toolModule';
 import { createRenameFolderHandler, renameFolderDefinition, renameFolderModule } from './renameFolder';
 
@@ -38,6 +40,15 @@ describe('renameFolderDefinition', () => {
         );
 
         expect(guarded).toEqual(['folder']);
+    });
+
+    // Checked on the arguments, so the engine refuses it before the confirm card and before any API call.
+    it('refuses a default folder', () => {
+        const check = () =>
+            renameFolderDefinition.checkParams?.({ folder: DefaultFolderReference.INBOX, name: 'Mail' });
+
+        expect(check).toThrow(ToolInputError);
+        expect(check).toThrow(/cannot be renamed/);
     });
 });
 

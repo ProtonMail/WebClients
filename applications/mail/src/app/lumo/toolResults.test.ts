@@ -80,9 +80,10 @@ const TOOL_PAYLOADS = [
         { rows: [row()], total: 12, bulkActionRunning: false },
     ]),
     payloads(openFolderDefinition, [
-        { location: 'Spam', rows: [], total: 0, bulkActionRunning: false },
-        { location: 'Inbox', rows: [], total: 0, bulkActionRunning: true },
-        { location: 'Inbox', rows: [row()], total: 12, bulkActionRunning: false },
+        { location: 'Spam', rows: [], total: 0, bulkActionRunning: false, primaryOnly: false },
+        { location: 'Inbox', rows: [], total: 0, bulkActionRunning: true, primaryOnly: false },
+        { location: 'Inbox', rows: [row()], total: 12, bulkActionRunning: false, primaryOnly: false },
+        { location: 'Inbox', rows: [], total: 0, bulkActionRunning: false, primaryOnly: true },
     ]),
     payloads(searchDefinition, [
         { query: 'all mail', coverage: 'full' as const, scope: '', rows: [], total: 0, bulkActionRunning: false },
