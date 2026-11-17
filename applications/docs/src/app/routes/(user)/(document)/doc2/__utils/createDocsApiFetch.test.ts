@@ -4,7 +4,8 @@ import { createApiError, createOfflineError, createTimeoutError } from '@proton/
 import { createDocsApiFetch } from './createDocsApiFetch'
 
 const api = jest.fn()
-const docsApiFetch = createDocsApiFetch(api, '/api')
+const logger = { warn: jest.fn() }
+const docsApiFetch = createDocsApiFetch(api, '/api', logger)
 const commitUrl = '/api/docs/volumes/volume-1/documents/link-1/commits/commit-1'
 
 function statusCodeError(status: number, data: unknown) {
@@ -114,10 +115,21 @@ describe('createDocsApiFetch', () => {
     await expect(request).rejects.toMatchObject({ name: 'TimeoutError' })
   })
 
-  test('rejects a URL outside the API without sending it', async () => {
-    await expect(docsApiFetch('https://example.com/api/docs/meta', { method: 'GET' })).rejects.toThrow(
-      'Docs API URL outside the API: https://example.com/api/docs/meta',
-    )
+  test('rejects a URL outside the API without sending it, and logs it without its ids, since the SDK drops the cause', async () => {
+    const outside = 'https://example.com/api/docs/volumes/volume-1/documents/link-1/commits/commit-1'
+    const message = 'Docs API URL outside the API: https://example.com/api/docs/volumes/…/documents/…/commits/…'
+
+    await expect(docsApiFetch(outside, { method: 'GET' })).rejects.toThrow(message)
     expect(api).not.toHaveBeenCalled()
+    expect(logger.warn).toHaveBeenCalledWith(message)
+  })
+
+  test('logs a URL outside the API without its query or fragment, which can carry ids or tokens', async () => {
+    const outside = 'https://example.com/docs/meta?linkId=link-1&token=secret\n#volume-1'
+
+    await expect(docsApiFetch(outside, { method: 'GET' })).rejects.toThrow(
+      'Docs API URL outside the API: https://example.com/docs/meta',
+    )
+    expect(logger.warn).toHaveBeenCalledWith('Docs API URL outside the API: https://example.com/docs/meta')
   })
 })

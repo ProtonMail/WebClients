@@ -30,7 +30,7 @@
     "source": "applications/docs/src/app/components/document/DocumentViewer/DocumentErrorFallback.tsx",
     "sourceCommit": "53874fc893123e2dc194fdaac0c9e15e82484619",
     "copiedIn": "6df02b0f3f5cd088f66796bec0934c9f96003100",
-    "notes": "No report to docs-core's user state, and an actionButton of null shows no action button."
+    "notes": "No report to docs-core's user state, and the caller's actionButton in place of Reload: null shows no action button."
   },
   {
     "doc2": "__components/DocumentHeaderV2.tsx",
