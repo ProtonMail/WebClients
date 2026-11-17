@@ -95,6 +95,7 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
     const [sessionManager] = useState(() => new PiPSessionManager(reportMeetError));
 
     const preventBlur = useRef(false);
+    const isPipStartingRef = useRef(false);
 
     const isPipActiveRef = useRef(isPipActive);
 
@@ -161,6 +162,12 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
             return;
         }
 
+        if (isPipStartingRef.current) {
+            return;
+        }
+
+        isPipStartingRef.current = true;
+
         try {
             if (isMobile() || isPipActive) {
                 return;
@@ -204,8 +211,9 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
                 });
             }
 
-            void stopPiP();
+            await stopPiP();
         } finally {
+            isPipStartingRef.current = false;
             preventBlur.current = false;
         }
     });
