@@ -46,10 +46,8 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import { useErrorWrapper } from '@proton/components/hooks/useErrorHandler';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import {
-    getHasDriveB2BPlan,
     getHasPassB2BPlan,
     hasDuo,
-    hasLumoBusiness,
     hasVPNPassProfessional,
     hasVisionary,
 } from '@proton/payments/core/subscription/helpers';
@@ -118,8 +116,6 @@ export const useMemberActions = ({
     };
     const isSubsidiaryOrg = !!organization?.IsSubsidiary;
     const isMSPStorageOptionEnabled = useFlag('MSPStorageOptionEnabled');
-    const hasDriveB2BPlan = getHasDriveB2BPlan(subscription);
-    const hasLumoB2BPlan = hasLumoBusiness(subscription);
     const hasVPNPassProfessionalPlan = hasVPNPassProfessional(subscription);
     const hasExternalMemberCapableB2BPlan = entitlements.hasEntitlement(EntitlementName.ExternalManagedMembers);
 
@@ -129,14 +125,15 @@ export const useMemberActions = ({
     const hasCustomDomains = verifiedMailDomains.length > 0;
     const canUseVerifiedCustomDomain = entitlements.hasCustomDomainAddresses && hasCustomDomains;
     const useEmail = hasExternalMemberCapableB2BPlan && !canUseVerifiedCustomDomain;
-    const planSupportsMemberFeatures =
-        !hasExternalMemberCapableB2BPlan ||
-        hasDriveB2BPlan ||
-        hasLumoB2BPlan ||
-        entitlements.hasEntitlement(EntitlementName.PassBusiness) ||
-        hasVPNPassProfessionalPlan;
-    const allowStorageConfiguration = planSupportsMemberFeatures && (!isSubsidiaryOrg || isMSPStorageOptionEnabled);
-    const showFeaturesColumn = planSupportsMemberFeatures;
+    // Storage can be distributed to members whenever the plan comes with storage (max-space entitlement).
+    // Escape hatch: if more space is assigned to members than the organization has (e.g. after a downgrade
+    // from a plan with storage to one without), admins must still be able to see and reduce it.
+    const planHasStorage = entitlements.hasEntitlement(EntitlementName.MaxSpace);
+    const hasOverAssignedSpace = (organization?.AssignedSpace ?? 0) > (organization?.MaxSpace ?? 0);
+    const planSupportsMemberStorage = planHasStorage || hasOverAssignedSpace;
+    const allowStorageConfiguration = planSupportsMemberStorage && (!isSubsidiaryOrg || isMSPStorageOptionEnabled);
+    // The features column shows per-member storage (and VPN connections), so it follows the same rule.
+    const showFeaturesColumn = planSupportsMemberStorage;
     // VPN + Pass B2B bundle needs to disable VPN to be able to downgrade to Pass Professional
     const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan || hasVPNPassProfessionalPlan;
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
