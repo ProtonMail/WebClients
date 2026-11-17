@@ -21,7 +21,7 @@ const useIsVisionaryUpsellEnabled = ({
     subscription: MaybeFreeSubscription;
     visionaryPlan: Plan | undefined;
 }) => {
-    const isFlagEnabled = useFlag('VpnVisionaryDashboard');
+    const isFlagEnabled = useFlag('VpnDashboardVisionaryUpsell');
     const vpnDashboardVariant = useVariant('VPNDashboard');
 
     return (
