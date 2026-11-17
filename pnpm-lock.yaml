@@ -6031,8 +6031,8 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       concurrently:
-        specifier: ^8.2.2
-        version: 8.2.2
+        specifier: ^10.0.7
+        version: 10.0.7
       jest:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.2)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
@@ -20671,9 +20671,9 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  concurrently@8.2.2:
-    resolution: {integrity: sha512-1dP4gpXFhei8IOtlXRE/T/4H88ElHgTiUzh71YUmtjTEHMSRS2Z/fgOxHSxxusGHogsRfxNq1vyAwxSC+EVyDg==}
-    engines: {node: ^14.13.0 || >=16.0.0}
+  concurrently@10.0.7:
+    resolution: {integrity: sha512-zMCeLhawVIj3SLbpg0/BWCdJl1wcBSpcHKbNrhaM01P3xAlEWcH30Lea2q+F4uGZ7YM0scDK0dgpWyn1uCJj6w==}
+    engines: {node: '>=22'}
     hasBin: true
 
   conf@10.2.0:
@@ -21130,10 +21130,6 @@ packages:
   data-urls@8.0.0:
     resolution: {integrity: sha512-JQUCCK+/CAGbGGx618PlFZMXH81Jtj7t73CHv9dd/zVWvxgGT2zLFRjnKb+Ng46GIwcy+f7f88qd4duqllK+WQ==}
     engines: {node: ^22.14.0 || >=24.0.0}
-
-  date-fns@2.30.0:
-    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
-    engines: {node: '>=0.11'}
 
   date-fns@4.1.0:
     resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
@@ -27229,9 +27225,6 @@ packages:
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
 
-  spawn-command@0.0.2:
-    resolution: {integrity: sha512-zC8zGoGkmc8J9ndvml8Xksr1Amk9qBujgbF0JAIWO7kXr43w0h/0GJNM/Vustixu+YE8N/MTrQ7N31FvHUACxQ==}
-
   spawn-wrap@2.0.0:
     resolution: {integrity: sha512-EeajNjfN9zMnULLwhZZQU3GWBoFNkbngTUPfaawT4RkMiviTxcX0qfhVbGey39mfctfDHkWtuecgQ8NJcyQWHg==}
     engines: {node: '>=8'}
@@ -29171,6 +29164,10 @@ packages:
   yargs@17.7.3:
     resolution: {integrity: sha512-GZtjxm/J/4TSxuL3FNYjCmLktBTnIw/rVmKSIyKeYAZpmJB2ig9VauCC5xsa82GNKVKDAqpOn3KVzNt0zmrU0g==}
     engines: {node: '>=12'}
+
+  yargs@18.0.0:
+    resolution: {integrity: sha512-4UEqdc2RYGHZc7Doyqkrqiln3p9X2DZVxaGbwhn2pi7MrRagKaOcIKe8L3OxYcbhXLgLFUS3zAYuQjKBQgmuNg==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
   yargs@18.2.0:
     resolution: {integrity: sha512-9OpKOLeaoNFecEp7P6iYbzze/5CqWoH7N3SMs/6y1XF4nMvFMspEGZzJ6uFi9MmQwXhyzqYoSEKO3tvA3Z/o2w==}
@@ -39167,17 +39164,14 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  concurrently@8.2.2:
+  concurrently@10.0.7:
     dependencies:
-      chalk: 4.1.2
-      date-fns: 2.30.0
-      lodash: 4.18.1
+      chalk: 5.6.2
       rxjs: 7.8.2
       shell-quote: 1.12.0
-      spawn-command: 0.0.2
-      supports-color: 8.1.1
+      supports-color: 10.2.2
       tree-kill: 1.2.2
-      yargs: 17.7.3
+      yargs: 18.0.0
 
   conf@10.2.0:
     dependencies:
@@ -39677,10 +39671,6 @@ snapshots:
     dependencies:
       whatwg-mimetype: 5.0.0
       whatwg-url: 14.2.0
-
-  date-fns@2.30.0:
-    dependencies:
-      '@babel/runtime': 7.29.7
 
   date-fns@4.1.0: {}
 
@@ -47463,8 +47453,6 @@ snapshots:
 
   space-separated-tokens@2.0.2: {}
 
-  spawn-command@0.0.2: {}
-
   spawn-wrap@2.0.0:
     dependencies:
       foreground-child: 2.0.0
@@ -49634,6 +49622,15 @@ snapshots:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 21.1.1
+
+  yargs@18.0.0:
+    dependencies:
+      cliui: 9.0.1
+      escalade: 3.2.0
+      get-caller-file: 2.0.5
+      string-width: 7.2.0
+      y18n: 5.0.8
+      yargs-parser: 22.0.0
 
   yargs@18.2.0:
     dependencies:
