@@ -1,0 +1,71 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+$easing: cubic-bezier(0.22, 1, 0.36, 1);
+
+// Keep the end of the page reachable above the fixed bar
+.signup-v1-mobile-checkout {
+	padding-block-end: var(--signup-v1-mobile-bar-block-size, 0);
+}
+
+.signup-v1-mobile-bar {
+	position: fixed;
+	inset-inline: 0;
+	inset-block-end: 0;
+	z-index: 2;
+	max-block-size: 80vh;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	padding-block-end: calc(var(--space-2) + env(safe-area-inset-bottom));
+	box-shadow: 0 calc(-1 * var(--1px)) calc(var(--1px) * 4)
+		rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-norm-opacity));
+}
+
+.signup-v1-mobile-bar-details {
+	display: grid;
+	grid-template-rows: 0fr;
+	opacity: 0;
+	visibility: hidden;
+	transition:
+		grid-template-rows 0.3s $easing,
+		opacity 0.2s $easing,
+		visibility 0s 0.3s;
+
+	&--open {
+		grid-template-rows: 1fr;
+		opacity: 1;
+		visibility: visible;
+		transition:
+			grid-template-rows 0.3s $easing,
+			opacity 0.2s $easing 80ms,
+			visibility 0s;
+	}
+}
+
+.signup-v1-mobile-bar-details-inner {
+	min-block-size: 0;
+	overflow: hidden;
+}
+
+.signup-v1-mobile-bar-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-block-size: rem(44);
+	min-inline-size: rem(44);
+	margin-inline-end: calc(-1 * var(--space-3));
+}
+
+.signup-v1-mobile-bar-chevron {
+	transition: transform 0.3s $easing;
+
+	&--open {
+		transform: rotate(180deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.signup-v1-mobile-bar-details,
+	.signup-v1-mobile-bar-chevron {
+		transition: none;
+	}
+}
