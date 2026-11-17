@@ -2074,8 +2074,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0(@lexical/clipboard@0.32.0)(@lexical/code@0.32.0)(@lexical/hashtag@0.32.0)(@lexical/headless@0.32.0)(@lexical/html@0.32.0)(@lexical/link@0.32.0)(@lexical/list@0.32.0)(@lexical/markdown@0.32.0)(@lexical/overflow@0.32.0)(@lexical/react@0.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.32.0)(@lexical/selection@0.32.0)(@lexical/table@0.32.0(patch_hash=21652bf350fea212da7d186363ad2cb487a81bc17c8dacc13290d86909fd8a29))(@lexical/text@0.32.0)(@lexical/utils@0.32.0)(@lexical/yjs@0.32.0(yjs@13.6.27))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(lexical@0.32.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
       '@proton-docs/sheets-editor':
-        specifier: 0.1.56
-        version: 0.1.56(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
+        specifier: 0.1.75
+        version: 0.1.75(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
       '@proton/account':
         specifier: workspace:^
         version: link:../../packages/account
@@ -17079,8 +17079,8 @@ packages:
     peerDependencies:
       yjs: ^13.5.0
 
-  '@proton-docs/sheets-editor@0.1.56':
-    resolution: {integrity: sha512-6s0j1ys6BRA3vz2mq6Um2w7uuhln0/Pr4kliWH7ZhntZEsdg8TSBIr3lnmgImsUKEuLE5+rd/QG4tOhbG4++gg==}
+  '@proton-docs/sheets-editor@0.1.75':
+    resolution: {integrity: sha512-nms2YK3nvaUxzWWU7zTlgqWLiLq422lViluygpj/JXs/IiWfyPmjJhc5h9JrbNufYywbx8dXRMNIFopo4z8qFA==}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -35023,7 +35023,7 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@proton-docs/sheets-editor@0.1.56(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)':
+  '@proton-docs/sheets-editor@0.1.75(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)':
     dependencies:
       '@ariakit/react': 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ariakit/react-components': 0.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
