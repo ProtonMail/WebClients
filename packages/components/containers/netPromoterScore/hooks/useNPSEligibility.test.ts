@@ -13,7 +13,7 @@ import { useNPSEligiblity } from './useNPSEligibility';
 interface EligibilityMockConfig {
     featureValue?: boolean;
     notificationsEnabled?: boolean;
-    flagEnabled?: boolean;
+    killSwitchOn?: boolean;
     accountAgeDays?: number;
 }
 
@@ -37,7 +37,7 @@ const daysAgo = (days: number) => getUnixTime(subDays(new Date(), days));
 const createMockConfig = (overrides: EligibilityMockConfig = {}) => ({
     featureValue: true,
     notificationsEnabled: true,
-    flagEnabled: true,
+    killSwitchOn: false,
     accountAgeDays: 31,
     ...overrides,
 });
@@ -51,7 +51,7 @@ const setupMocks = (overrides: EligibilityMockConfig = {}) => {
     mockUseUserSettings.mockReturnValue([
         { News: config.notificationsEnabled ? NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS : 0 },
     ]);
-    mockUseFlag.mockReturnValue(config.flagEnabled);
+    mockUseFlag.mockReturnValue(config.killSwitchOn);
     mockUseUser.mockReturnValue([{ CreateTime: daysAgo(config.accountAgeDays) }]);
 };
 
@@ -67,7 +67,7 @@ describe('Net promoters score eligibility', () => {
 
         expect(mockUseFeature).toHaveBeenCalledWith('NPSFeedbackWebMail');
         expect(mockUseUserSettings).toHaveBeenCalled();
-        expect(mockUseFlag).toHaveBeenCalledWith('WebNPSModal');
+        expect(mockUseFlag).toHaveBeenCalledWith('WebNPSModalDisabled');
         expect(mockUseUser).toHaveBeenCalled();
     });
 
@@ -95,8 +95,8 @@ describe('Net promoters score eligibility', () => {
         expect(result.current).toBe(false);
     });
 
-    it('should not be eligible if WebNPSModal feature flag is off', () => {
-        setupMocks({ flagEnabled: false });
+    it('should not be eligible if WebNPSModalDisabled kill switch is on', () => {
+        setupMocks({ killSwitchOn: true });
 
         const { result } = renderHook(() => useNPSEligiblity(NPSApplication.WebMail));
 

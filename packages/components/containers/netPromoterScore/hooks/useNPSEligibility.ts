@@ -13,7 +13,7 @@ const MINIMUM_ACCOUNT_AGE_DAYS = 30;
 export const useNPSEligiblity = (application: NPSApplication) => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
-    const enabledWebNPSModal = useFlag('WebNPSModal');
+    const isWebNPSModalDisabled = useFlag('WebNPSModalDisabled');
 
     const featureCode = getFeatureCode(application);
     const { feature } = useFeature(featureCode);
@@ -23,7 +23,7 @@ export const useNPSEligiblity = (application: NPSApplication) => {
     return (
         hasBit(userSettings.News, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS) &&
         accountOlderThan30Days &&
-        enabledWebNPSModal &&
+        !isWebNPSModalDisabled &&
         feature?.Value
     );
 };
