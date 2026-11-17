@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 
+import { inertProps } from '@proton/atoms/helpers/inertProps'
 import DrawerApp from '@proton/components/components/drawer/DrawerApp'
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer'
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea'
@@ -29,7 +30,7 @@ export function DocumentShell({ header, children, loadingScreen }: DocumentShell
   return (
     <>
       {/* One element whether loading or not, so the screen lifting remounts nothing, the editor frame least of all */}
-      <div className="h-full" aria-busy={loading || undefined} {...(loading && { inert: '' })}>
+      <div className="h-full" aria-busy={loading || undefined} {...inertProps(loading)}>
         <PrivateAppContainer
           top={
             <TopBanners app={APPS.PROTONDOCS}>
