@@ -24,8 +24,8 @@ export const MeetingLockedModal = ({ onClose }: MeetingLockedModalProps) => {
                                   '--h-custom': '3rem',
                               }
                             : {
-                                  '--w-custom': '5rem',
-                                  '--h-custom': '5rem',
+                                  '--w-custom': '7.5rem',
+                                  '--h-custom': '7.5rem',
                               }
                     }
                 />
@@ -33,8 +33,10 @@ export const MeetingLockedModal = ({ onClose }: MeetingLockedModalProps) => {
             title={c('Title').t`Meeting locked`}
             message={c('Info').t`Ask the host to unlock it so you can join.`}
             primaryText={c('Action').t`Close`}
+            primaryButtonClass="secondary"
             onPrimaryAction={onClose}
             onClose={onClose}
+            showCloseButton={false}
         />
     );
 };

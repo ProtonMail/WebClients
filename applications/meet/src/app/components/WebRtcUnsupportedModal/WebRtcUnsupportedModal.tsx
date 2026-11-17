@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import warningIcon from '@proton/styles/assets/img/meet/warning-icon.svg';
 
@@ -44,14 +45,16 @@ export const WebRtcUnsupportedModal = ({ onClose }: WebRtcUnsupportedModalProps)
                 <>
                     <p className="m-0">
                         {c('Info')
-                            .t`Update your browser or use another one. If you use extensions that block calls, turn them off.`}
+                            .t`${MEET_APP_NAME} needs WebRTC, which is off or blocked in this browser. Turn it on, turn off extensions that block it, or use another browser.`}
                     </p>
                     {isFirefox() && <p className="mt-2 mb-0">{getFirefoxPeerConnectionMessage()}</p>}
                 </>
             }
             primaryText={c('Action').t`Close`}
+            primaryButtonClass="secondary"
             onPrimaryAction={onClose}
             onClose={onClose}
+            showCloseButton={false}
         />
     );
 };

@@ -18,7 +18,8 @@ beforeAll(() => {
     document.head.appendChild(style);
 });
 
-const generalAdvice = 'Update your browser or use another one. If you use extensions that block calls, turn them off.';
+const generalAdvice =
+    'Proton Meet needs WebRTC, which is off or blocked in this browser. Turn it on, turn off extensions that block it, or use another browser.';
 const firefoxAdvice = 'In Firefox, open about:config and set media.peerconnection.enabled to true.';
 
 describe('WebRtcUnsupportedModal', () => {
@@ -52,15 +53,28 @@ describe('WebRtcUnsupportedModal', () => {
         expect(strongElements[0].parentElement).toHaveTextContent(firefoxAdvice);
     });
 
-    it('calls onClose once when the Close action is clicked', async () => {
+    it('offers a single Close action in the secondary style that calls onClose once', async () => {
         mocks.isFirefox.mockReturnValue(false);
         const onClose = vi.fn();
         render(<WebRtcUnsupportedModal onClose={onClose} />);
 
-        const closeAction = screen
-            .getAllByRole('button', { name: 'Close' })
-            .find((button) => button.textContent === 'Close');
-        await userEvent.click(closeAction!);
+        const dialog = screen.getByRole('dialog', { name: 'Browser not supported' });
+        const closeAction = within(dialog).getByRole('button', { name: 'Close' });
+
+        expect(within(dialog).getAllByRole('button')).toEqual([closeAction]);
+        expect(closeAction).toHaveClass('secondary');
+
+        await userEvent.click(closeAction);
+
+        expect(onClose).toHaveBeenCalledTimes(1);
+    });
+
+    it('calls onClose once on Escape', async () => {
+        mocks.isFirefox.mockReturnValue(false);
+        const onClose = vi.fn();
+        render(<WebRtcUnsupportedModal onClose={onClose} />);
+
+        await userEvent.keyboard('{Escape}');
 
         expect(onClose).toHaveBeenCalledTimes(1);
     });

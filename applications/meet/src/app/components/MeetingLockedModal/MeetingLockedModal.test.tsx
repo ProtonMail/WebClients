@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { MeetingLockedModal } from './MeetingLockedModal';
@@ -18,14 +18,26 @@ describe('MeetingLockedModal', () => {
         );
     });
 
-    it('calls onClose once when the Close action is clicked', async () => {
+    it('offers a single Close action in the secondary style that calls onClose once', async () => {
         const onClose = vi.fn();
         render(<MeetingLockedModal onClose={onClose} />);
 
-        const closeAction = screen
-            .getAllByRole('button', { name: 'Close' })
-            .find((button) => button.textContent === 'Close');
-        await userEvent.click(closeAction!);
+        const dialog = screen.getByRole('dialog', { name: 'Meeting locked' });
+        const closeAction = within(dialog).getByRole('button', { name: 'Close' });
+
+        expect(within(dialog).getAllByRole('button')).toEqual([closeAction]);
+        expect(closeAction).toHaveClass('secondary');
+
+        await userEvent.click(closeAction);
+
+        expect(onClose).toHaveBeenCalledTimes(1);
+    });
+
+    it('calls onClose once on Escape', async () => {
+        const onClose = vi.fn();
+        render(<MeetingLockedModal onClose={onClose} />);
+
+        await userEvent.keyboard('{Escape}');
 
         expect(onClose).toHaveBeenCalledTimes(1);
     });
