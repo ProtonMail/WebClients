@@ -391,7 +391,7 @@ describe('useSetupGmailBYOEAddress', () => {
             const isClaimableCall = (call: any[]) => call[0]?.url === 'claimable';
 
             const setup = async (checkResult: () => Promise<any>, { flagEnabled = true } = {}) => {
-                mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress' && flagEnabled);
+                mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddressDisabled' && !flagEnabled);
                 mockApi.mockImplementation((config: any) =>
                     config.url === 'claimable' ? checkResult() : Promise.reject(rejectWith2011())
                 );
@@ -590,7 +590,7 @@ describe('useSetupGmailBYOEAddress', () => {
             mockFindUserAddress.mockReturnValue(undefined);
             mockDispatch.mockResolvedValue({ Email: 'test@gmail.com', ID: 'addr-id' });
             mockApi.mockResolvedValue({});
-            mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
+            mockUseFlag.mockReturnValue(false);
         });
 
         it('should start the import with ClaimAddress and show success modal', async () => {
@@ -618,7 +618,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('should do nothing when the claim flag is disabled', async () => {
-            mockUseFlag.mockReturnValue(false);
+            mockUseFlag.mockReturnValue(true);
             const { result, mockShowSuccessModal } = setup();
 
             let claimed: boolean | undefined;
@@ -768,7 +768,7 @@ describe('useSetupGmailBYOEAddress', () => {
 
         it('does not send an error when the address is claimable: the user goes on with the claim modal', async () => {
             const { reports } = mockAccountImportFlowTracker();
-            mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
+            mockUseFlag.mockReturnValue(false);
             mockApi
                 .mockRejectedValueOnce({
                     data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
@@ -783,7 +783,7 @@ describe('useSetupGmailBYOEAddress', () => {
 
         it('sends flow_finished flagged as claimed when the address was claimed', async () => {
             const { reports } = mockAccountImportFlowTracker();
-            mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
+            mockUseFlag.mockReturnValue(false);
             const result = setup();
 
             await act(async () => {
@@ -881,7 +881,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('marks the cleanup as due after claiming an address', async () => {
-            mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
+            mockUseFlag.mockReturnValue(false);
             const { result } = setup();
 
             await act(async () => {

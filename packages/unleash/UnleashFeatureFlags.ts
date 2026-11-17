@@ -62,7 +62,10 @@ type AccountProjectFeatureFlag =
 
 enum ActivationFeatureFlag {
     MaintenanceImporter = 'MaintenanceImporter',
-    CanClaimExternalAddress = 'CanClaimExternalAddress',
+}
+
+enum ActivationKillSwitchFlag {
+    CanClaimExternalAddressDisabled = 'CanClaimExternalAddressDisabled',
 }
 
 enum AdminFeatureFlag {
@@ -442,6 +445,7 @@ enum WalletFeatureFlag {
 export type FeatureFlag =
     | AccountProjectFeatureFlag
     | `${ActivationFeatureFlag}`
+    | `${ActivationKillSwitchFlag}`
     | `${AdminFeatureFlag}`
     | `${CalendarFeatureFlag}`
     | `${CalendarKillSwitchFlag}`
