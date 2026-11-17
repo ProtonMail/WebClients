@@ -5,6 +5,7 @@ import { Router } from 'react-router';
 import { render as originalRender } from '@testing-library/react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
+import { vi } from 'vitest';
 
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
@@ -16,9 +17,9 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import NotificationsTestProvider from './NotificationsTestProvider';
 
-jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
+vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
-    loadCryptoWorker: jest.fn(),
+    loadCryptoWorker: vi.fn(),
 }));
 
 const history = createMemoryHistory({ initialEntries: ['/'] });

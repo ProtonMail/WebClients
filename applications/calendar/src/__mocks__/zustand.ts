@@ -1,11 +1,12 @@
-// Taken from zustand doc: https://zustand.docs.pmnd.rs/guides/testing#jest
+// Taken from zustand doc: https://zustand.docs.pmnd.rs/guides/testing#vitest
 import { act } from '@testing-library/react';
+import { afterEach, vi } from 'vitest';
 import type * as ZustandExportedTypes from 'zustand';
 
 export * from 'zustand';
 
 const { create: actualCreate, createStore: actualCreateStore } =
-    jest.requireActual<typeof ZustandExportedTypes>('zustand');
+    await vi.importActual<typeof ZustandExportedTypes>('zustand');
 
 // a variable to hold reset functions for all stores declared in the app
 export const storeResetFns = new Set<() => void>();

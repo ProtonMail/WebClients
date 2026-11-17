@@ -2,6 +2,8 @@ import { Router } from 'react-router-dom';
 
 import { renderHook } from '@testing-library/react-hooks';
 import { createMemoryHistory } from 'history';
+import { vi } from 'vitest';
+import type { Mock } from 'vitest';
 
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
@@ -10,17 +12,17 @@ import { useCalendarDispatch } from '../../store/hooks';
 import type { UseCalendarActionsOnLoadParameters } from './useCalendarActionsOnLoad';
 import { useCalendarActionsOnLoad } from './useCalendarActionsOnLoad';
 
-jest.mock('../../store/hooks', () => ({
-    useCalendarDispatch: jest.fn(),
+vi.mock('../../store/hooks', () => ({
+    useCalendarDispatch: vi.fn(),
 }));
 
-jest.mock('@proton/calendar/calendars/actions', () => ({
-    changeCalendarVisiblity: jest.fn(),
+vi.mock('@proton/calendar/calendars/actions', () => ({
+    changeCalendarVisiblity: vi.fn(),
 }));
 
 describe('useCalendarActionsOnLoad', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     const defaultDependencies = {
@@ -36,7 +38,7 @@ describe('useCalendarActionsOnLoad', () => {
     const setupTest = ({
         create,
         update,
-        openBookingCreationSidebar = jest.fn(),
+        openBookingCreationSidebar = vi.fn(),
         dependencies,
         searchParams,
     }: Omit<UseCalendarActionsOnLoadParameters, 'dependencies' | 'openBookingCreationSidebar'> & {
@@ -68,11 +70,11 @@ describe('useCalendarActionsOnLoad', () => {
     };
 
     it('should not run any actions if there is no search params', () => {
-        const create = jest.fn();
-        const update = jest.fn();
+        const create = vi.fn();
+        const update = vi.fn();
 
-        const mockDispatch = jest.fn();
-        (useCalendarDispatch as jest.Mock).mockReturnValue(mockDispatch);
+        const mockDispatch = vi.fn();
+        (useCalendarDispatch as Mock).mockReturnValue(mockDispatch);
 
         setupTest({
             create,
@@ -86,11 +88,11 @@ describe('useCalendarActionsOnLoad', () => {
     });
 
     it('should run the create action when having the proper search params', () => {
-        const create = jest.fn();
-        const update = jest.fn();
+        const create = vi.fn();
+        const update = vi.fn();
 
-        const mockDispatch = jest.fn();
-        (useCalendarDispatch as jest.Mock).mockReturnValue(mockDispatch);
+        const mockDispatch = vi.fn();
+        (useCalendarDispatch as Mock).mockReturnValue(mockDispatch);
 
         const { history } = setupTest({
             create,
@@ -105,11 +107,11 @@ describe('useCalendarActionsOnLoad', () => {
     });
 
     it('should not run the create action if one of the dependencies is not met', () => {
-        const create = jest.fn();
-        const update = jest.fn();
+        const create = vi.fn();
+        const update = vi.fn();
 
-        const mockDispatch = jest.fn();
-        (useCalendarDispatch as jest.Mock).mockReturnValue(mockDispatch);
+        const mockDispatch = vi.fn();
+        (useCalendarDispatch as Mock).mockReturnValue(mockDispatch);
 
         setupTest({
             create,
@@ -125,11 +127,11 @@ describe('useCalendarActionsOnLoad', () => {
     });
 
     it('should run the update action when having the proper seacrch params', () => {
-        const create = jest.fn();
-        const update = jest.fn();
+        const create = vi.fn();
+        const update = vi.fn();
 
-        const mockDispatch = jest.fn();
-        (useCalendarDispatch as jest.Mock).mockReturnValue(mockDispatch);
+        const mockDispatch = vi.fn();
+        (useCalendarDispatch as Mock).mockReturnValue(mockDispatch);
 
         const eventId = 'event-id';
         const calendarId = 'calendar-id';
@@ -153,11 +155,11 @@ describe('useCalendarActionsOnLoad', () => {
     });
 
     it('should not run the update action if one of the dependencies is not met', () => {
-        const create = jest.fn();
-        const update = jest.fn();
+        const create = vi.fn();
+        const update = vi.fn();
 
-        const mockDispatch = jest.fn();
-        (useCalendarDispatch as jest.Mock).mockReturnValue(mockDispatch);
+        const mockDispatch = vi.fn();
+        (useCalendarDispatch as Mock).mockReturnValue(mockDispatch);
 
         const eventId = 'event-id';
         const calendarId = 'calendar-id';
@@ -176,12 +178,12 @@ describe('useCalendarActionsOnLoad', () => {
     });
 
     it('should update the calendar visibility if the calendar is not visible', () => {
-        const create = jest.fn();
-        const update = jest.fn();
+        const create = vi.fn();
+        const update = vi.fn();
 
-        const mockDispatch = jest.fn();
-        (useCalendarDispatch as jest.Mock).mockReturnValue(mockDispatch);
-        (changeCalendarVisiblity as jest.Mock).mockReturnValue(Promise.resolve());
+        const mockDispatch = vi.fn();
+        (useCalendarDispatch as Mock).mockReturnValue(mockDispatch);
+        (changeCalendarVisiblity as Mock).mockReturnValue(Promise.resolve());
 
         const eventId = 'event-id';
         const calendarId = 'calendar-id';
@@ -200,10 +202,10 @@ describe('useCalendarActionsOnLoad', () => {
 
     describe('create-booking action', () => {
         it('should open the booking creation sidebar and clean up the search params', () => {
-            const create = jest.fn();
-            const update = jest.fn();
-            const openBookingCreationSidebar = jest.fn();
-            (useCalendarDispatch as jest.Mock).mockReturnValue(jest.fn());
+            const create = vi.fn();
+            const update = vi.fn();
+            const openBookingCreationSidebar = vi.fn();
+            (useCalendarDispatch as Mock).mockReturnValue(vi.fn());
 
             const { history } = setupTest({
                 create,
@@ -219,12 +221,12 @@ describe('useCalendarActionsOnLoad', () => {
         });
 
         it('should wait until a booking page can be created', () => {
-            const openBookingCreationSidebar = jest.fn();
-            (useCalendarDispatch as jest.Mock).mockReturnValue(jest.fn());
+            const openBookingCreationSidebar = vi.fn();
+            (useCalendarDispatch as Mock).mockReturnValue(vi.fn());
 
             const { history } = setupTest({
-                create: jest.fn(),
-                update: jest.fn(),
+                create: vi.fn(),
+                update: vi.fn(),
                 openBookingCreationSidebar,
                 searchParams: '?action=create-booking',
                 dependencies: { canCreateBooking: false },
@@ -235,12 +237,12 @@ describe('useCalendarActionsOnLoad', () => {
         });
 
         it('should wait until the welcome flow is done', () => {
-            const openBookingCreationSidebar = jest.fn();
-            (useCalendarDispatch as jest.Mock).mockReturnValue(jest.fn());
+            const openBookingCreationSidebar = vi.fn();
+            (useCalendarDispatch as Mock).mockReturnValue(vi.fn());
 
             setupTest({
-                create: jest.fn(),
-                update: jest.fn(),
+                create: vi.fn(),
+                update: vi.fn(),
                 openBookingCreationSidebar,
                 searchParams: '?action=create-booking',
                 dependencies: { isWelcomeFlowDone: false },
@@ -250,12 +252,12 @@ describe('useCalendarActionsOnLoad', () => {
         });
 
         it('should keep other search params when cleaning up', () => {
-            const openBookingCreationSidebar = jest.fn();
-            (useCalendarDispatch as jest.Mock).mockReturnValue(jest.fn());
+            const openBookingCreationSidebar = vi.fn();
+            (useCalendarDispatch as Mock).mockReturnValue(vi.fn());
 
             const { history } = setupTest({
-                create: jest.fn(),
-                update: jest.fn(),
+                create: vi.fn(),
+                update: vi.fn(),
                 openBookingCreationSidebar,
                 searchParams: '?action=create-booking&foo=bar',
             });

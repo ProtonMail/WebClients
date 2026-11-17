@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'history';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { GetBusySlotsResponse } from '@proton/shared/lib/interfaces/calendar/Api';
-import { addApiResolver } from '@proton/test-api/api';
+import { addApiResolver } from '@proton/test-api/vitest/api';
 
 import { getStoreWrapper } from '../../tests/Store';
 import { busySlotsActions, busySlotsSliceName } from './busySlotsSlice';

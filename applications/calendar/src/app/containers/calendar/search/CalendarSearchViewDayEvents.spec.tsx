@@ -1,12 +1,14 @@
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 
-import { mockUseAddresses } from '@proton/account/testing/mockUseAddresses';
+import { buildAddress } from '@proton/account/testing/buildAddress';
+import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresses';
 
 import CalendarSearchViewDayEvents from './CalendarSearchViewDayEvents';
 import type { VisualSearchItem } from './interface';
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     useUser: () => [
         {
             hasPaidMail: true,
@@ -15,9 +17,9 @@ jest.mock('@proton/account/user/hooks', () => ({
     ],
 }));
 
-jest.mock('@proton/account/userSettings/hooks', () => ({
+vi.mock('@proton/account/userSettings/hooks', () => ({
     __esModule: true,
-    useUserSettings: jest.fn(() => [
+    useUserSettings: vi.fn(() => [
         {
             TimeFormat: 2,
         },
@@ -56,7 +58,7 @@ const dailyEvents = [
 
 describe('CalendarSearchViewDayEvents', () => {
     beforeEach(() => {
-        mockUseAddresses();
+        mockUseAddresses([[buildAddress()]]);
     });
 
     const dummyRef = () => {};
@@ -65,7 +67,7 @@ describe('CalendarSearchViewDayEvents', () => {
         render(
             <CalendarSearchViewDayEvents
                 dailyEvents={dailyEvents}
-                onClickSearchItem={jest.fn()}
+                onClickSearchItem={vi.fn()}
                 closestToDateRef={dummyRef}
             />
         );
@@ -90,21 +92,17 @@ describe('CalendarSearchViewDayEvents', () => {
     describe('when the is no event', () => {
         const today = new Date('2023-07-17T13:30:00.000Z');
         beforeEach(() => {
-            jest.useFakeTimers();
-            jest.setSystemTime(today);
+            vi.useFakeTimers();
+            vi.setSystemTime(today);
         });
 
         afterEach(() => {
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         it('should correctly render empty today line', () => {
             render(
-                <CalendarSearchViewDayEvents
-                    dailyEvents={[]}
-                    onClickSearchItem={jest.fn()}
-                    closestToDateRef={dummyRef}
-                />
+                <CalendarSearchViewDayEvents dailyEvents={[]} onClickSearchItem={vi.fn()} closestToDateRef={dummyRef} />
             );
 
             expect(screen.getByText('17'));
@@ -113,11 +111,7 @@ describe('CalendarSearchViewDayEvents', () => {
 
         it('should set `aria-current` attribute', () => {
             render(
-                <CalendarSearchViewDayEvents
-                    dailyEvents={[]}
-                    onClickSearchItem={jest.fn()}
-                    closestToDateRef={dummyRef}
-                />
+                <CalendarSearchViewDayEvents dailyEvents={[]} onClickSearchItem={vi.fn()} closestToDateRef={dummyRef} />
             );
             expect(screen.getByTestId('month-day-block')).toHaveAttribute('aria-current', 'date');
         });
@@ -125,7 +119,7 @@ describe('CalendarSearchViewDayEvents', () => {
 
     describe('when user click on an event', () => {
         it('should call `onClickSearchItem`', async () => {
-            const onClickSearchItem = jest.fn();
+            const onClickSearchItem = vi.fn();
             render(
                 <CalendarSearchViewDayEvents
                     dailyEvents={dailyEvents}
@@ -167,7 +161,7 @@ describe('CalendarSearchViewDayEvents', () => {
             render(
                 <CalendarSearchViewDayEvents
                     dailyEvents={[cancelledEvent]}
-                    onClickSearchItem={jest.fn()}
+                    onClickSearchItem={vi.fn()}
                     closestToDateRef={dummyRef}
                 />
             );
@@ -208,7 +202,7 @@ describe('CalendarSearchViewDayEvents', () => {
             render(
                 <CalendarSearchViewDayEvents
                     dailyEvents={[inviteEvent]}
-                    onClickSearchItem={jest.fn()}
+                    onClickSearchItem={vi.fn()}
                     closestToDateRef={dummyRef}
                 />
             );

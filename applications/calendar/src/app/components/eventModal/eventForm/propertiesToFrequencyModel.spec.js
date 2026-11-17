@@ -1,11 +1,13 @@
+import { vi } from 'vitest';
+
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE } from '@proton/shared/lib/calendar/constants';
 
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 import { getInitialFrequencyModel } from './state';
 
-jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
+vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
-    loadCryptoWorker: jest.fn(),
+    loadCryptoWorker: vi.fn(),
 }));
 
 const startModel = {

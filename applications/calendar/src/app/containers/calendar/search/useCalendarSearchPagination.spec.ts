@@ -1,8 +1,10 @@
 import type { useHistory } from 'react-router-dom';
 
 import { act, renderHook } from '@testing-library/react-hooks';
+import { vi } from 'vitest';
+import type { MockedFunction } from 'vitest';
 
-import { mockUseHistory } from '@proton/components/testing/mockUseHistory';
+import { mockUseHistory } from '@proton/components/testing/vitest/mockUseHistory';
 
 import { DEFAULT_MAX_ITEMS_PER_PAGE } from './constants';
 import type { VisualSearchItem } from './interface';
@@ -13,7 +15,7 @@ const generateTestVisualItem = (index: number, isClosestToDate = false) => {
 };
 
 describe('useCalendarSearchPagination', () => {
-    let mockHistoryPush: jest.MockedFn<ReturnType<typeof useHistory>['push']>;
+    let mockHistoryPush: MockedFunction<ReturnType<typeof useHistory>['push']>;
 
     const array = new Array(2 * DEFAULT_MAX_ITEMS_PER_PAGE + 2)
         .fill(null)
@@ -24,7 +26,7 @@ describe('useCalendarSearchPagination', () => {
     const dummyDate = new Date();
 
     beforeEach(() => {
-        mockHistoryPush = jest.fn();
+        mockHistoryPush = vi.fn();
         mockUseHistory({ push: mockHistoryPush });
     });
 

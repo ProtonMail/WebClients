@@ -1,3 +1,6 @@
+import { vi } from 'vitest';
+import type { MockInstance } from 'vitest';
+
 import type { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
@@ -82,12 +85,12 @@ const getVevent = (pseudoAttendees: { email: string; rsvp?: ICAL_ATTENDEE_RSVP; 
 };
 
 describe('getSendIcsAction', () => {
-    let getVTimezonesMapSpy: jest.SpyInstance<GetVTimezonesMap>;
-    let relocalizeTextSpy: jest.SpyInstance<RelocalizeText>;
-    let sendIcsSpy: jest.SpyInstance<(params: SendIcsParams) => Promise<void>>;
-    let onRequestErrorSpy: jest.SpyInstance<(e: Error) => void>;
-    let onReplyErrorSpy: jest.SpyInstance<(e: Error) => void>;
-    let onCancelErrorSpy: jest.SpyInstance<(e: Error) => void>;
+    let getVTimezonesMapSpy: MockInstance<GetVTimezonesMap>;
+    let relocalizeTextSpy: MockInstance<RelocalizeText>;
+    let sendIcsSpy: MockInstance<(params: SendIcsParams) => Promise<void>>;
+    let onRequestErrorSpy: MockInstance<(e: Error) => void>;
+    let onReplyErrorSpy: MockInstance<(e: Error) => void>;
+    let onCancelErrorSpy: MockInstance<(e: Error) => void>;
     let basedInviteParams = {};
 
     const generateInviteParams = ({
@@ -132,7 +135,7 @@ describe('getSendIcsAction', () => {
         }) as any;
 
     beforeEach(() => {
-        getVTimezonesMapSpy = jest.fn().mockImplementation((tzs: string[]) => {
+        getVTimezonesMapSpy = vi.fn().mockImplementation((tzs: string[]) => {
             return tzs.reduce(
                 (acc, tz) => ({
                     ...acc,
@@ -141,11 +144,11 @@ describe('getSendIcsAction', () => {
                 {}
             );
         });
-        relocalizeTextSpy = jest.fn().mockImplementation(({ getLocalizedText }) => getLocalizedText());
-        sendIcsSpy = jest.fn();
-        onRequestErrorSpy = jest.fn();
-        onReplyErrorSpy = jest.fn();
-        onCancelErrorSpy = jest.fn();
+        relocalizeTextSpy = vi.fn().mockImplementation(({ getLocalizedText }) => getLocalizedText());
+        sendIcsSpy = vi.fn();
+        onRequestErrorSpy = vi.fn();
+        onReplyErrorSpy = vi.fn();
+        onCancelErrorSpy = vi.fn();
 
         basedInviteParams = {
             prodId: 'ProtonCal',
@@ -759,7 +762,7 @@ describe('getAddedAttendeesPublicKeysMap (auto-add)', () => {
         const sendPreferencesMap = {
             [email]: { isInternal: true, encryptionDisabled: false, publicKeys: [fakePublicKey] },
         } as unknown as SimpleMap<SendPreferences>;
-        const getEncryptionPreferences = jest.fn();
+        const getEncryptionPreferences = vi.fn();
 
         const result = await getAddedAttendeesPublicKeysMap({
             ...getInviteParams(email),
@@ -778,7 +781,7 @@ describe('getAddedAttendeesPublicKeysMap (auto-add)', () => {
             [email]: { isInternal: false, encryptionDisabled: true, publicKeys: undefined },
         } as unknown as SimpleMap<SendPreferences>;
         // The intendedForEmail: false fetch resolves the same address as internal, with its address key.
-        const getEncryptionPreferences = jest.fn().mockResolvedValue({ isInternal: true, sendKey: fakePublicKey });
+        const getEncryptionPreferences = vi.fn().mockResolvedValue({ isInternal: true, sendKey: fakePublicKey });
 
         const result = await getAddedAttendeesPublicKeysMap({
             ...getInviteParams(email),
@@ -795,7 +798,7 @@ describe('getAddedAttendeesPublicKeysMap (auto-add)', () => {
         const sendPreferencesMap = {
             [email]: { isInternal: false, encryptionDisabled: false, publicKeys: undefined },
         } as unknown as SimpleMap<SendPreferences>;
-        const getEncryptionPreferences = jest.fn();
+        const getEncryptionPreferences = vi.fn();
 
         const result = await getAddedAttendeesPublicKeysMap({
             ...getInviteParams(email),

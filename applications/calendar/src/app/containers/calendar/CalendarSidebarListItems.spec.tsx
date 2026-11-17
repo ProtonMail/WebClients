@@ -3,8 +3,10 @@ import { Router } from 'react-router-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
+import { vi } from 'vitest';
+import type { Mock } from 'vitest';
 
-import { mockUseAuthentication } from '@proton/components/testing/mockUseAuthentication';
+import { mockUseAuthentication } from '@proton/components/testing/vitest/mockUseAuthentication';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
@@ -19,35 +21,35 @@ import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Cale
 import type { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 
-jest.mock('@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
+vi.mock('@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal', () => ({
     __esModule: true,
-    PersonalCalendarModal: jest.fn(({ open }) => <span>{open ? 'PersonalCalendarModal' : null}</span>),
+    PersonalCalendarModal: vi.fn(({ open }) => <span>{open ? 'PersonalCalendarModal' : null}</span>),
 }));
 
-jest.mock('@proton/components/containers/calendar/importModal/ImportModal', () => ({
+vi.mock('@proton/components/containers/calendar/importModal/ImportModal', () => ({
     __esModule: true,
-    default: jest.fn(() => <span>ImportModal</span>),
+    default: vi.fn(() => <span>ImportModal</span>),
 }));
 
-jest.mock('@proton/components/hooks/useModals', () => ({
+vi.mock('@proton/components/hooks/useModals', () => ({
     __esModule: true,
-    default: jest.fn(() => ({ createModal: jest.fn() })),
+    default: vi.fn(() => ({ createModal: vi.fn() })),
 }));
 
-jest.mock('@proton/app-context/useApi', () => ({
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    useApi: () => jest.fn(() => Promise.resolve([])),
+    useApi: () => vi.fn(() => Promise.resolve([])),
 }));
 
-jest.mock('@proton/features/useFeature', () => () => ({ feature: { Value: true } }));
+vi.mock('@proton/features/useFeature', () => ({ default: () => ({ feature: { Value: true } }) }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
 
-jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
+vi.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
     __esModule: true,
-    useContactEmailsCache: jest.fn(() => ({
+    useContactEmailsCache: vi.fn(() => ({
         contactEmails: [],
         contactGroups: [],
         contactEmailsMap: {},
@@ -56,65 +58,65 @@ jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => 
     default: ({ children }: any) => <>{children}</>,
 }));
 
-jest.mock('@proton/shared/lib/calendar/subscribe/helpers', () => ({
-    ...jest.requireActual('@proton/shared/lib/calendar/subscribe/helpers'),
-    getCalendarHasSubscriptionParameters: jest.fn(),
-    getCalendarIsNotSyncedInfo: jest.fn(),
+vi.mock('@proton/shared/lib/calendar/subscribe/helpers', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/calendar/subscribe/helpers')),
+    getCalendarHasSubscriptionParameters: vi.fn(),
+    getCalendarIsNotSyncedInfo: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/calendar/calendar', () => ({
-    ...jest.requireActual('@proton/shared/lib/calendar/calendar'),
-    getIsCalendarDisabled: jest.fn(),
+vi.mock('@proton/shared/lib/calendar/calendar', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/calendar/calendar')),
+    getIsCalendarDisabled: vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
-    useUser: jest.fn(() => [{ hasPaidMail: true }, false]),
-    useGetUser: jest.fn(() => [{ hasPaidMail: true }, false]),
+    useUser: vi.fn(() => [{ hasPaidMail: true }, false]),
+    useGetUser: vi.fn(() => [{ hasPaidMail: true }, false]),
 }));
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    useConfig: jest.fn(() => ({ APP_NAME: 'proton-calendar' })),
+    useConfig: vi.fn(() => ({ APP_NAME: 'proton-calendar' })),
 }));
 
-jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
+vi.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/calendar/calendarBootstrap/keys', () => ({
+vi.mock('@proton/calendar/calendarBootstrap/keys', () => ({
     __esModule: true,
-    useGetDecryptedPassphraseAndCalendarKeys: jest.fn(),
+    useGetDecryptedPassphraseAndCalendarKeys: vi.fn(),
 }));
 
-jest.mock('@proton/account/addressKeys/hooks', () => ({
+vi.mock('@proton/account/addressKeys/hooks', () => ({
     __esModule: true,
-    useGetAddressKeys: jest.fn(),
+    useGetAddressKeys: vi.fn(),
 }));
 
-jest.mock('@proton/account/kt/hooks', () => ({
+vi.mock('@proton/account/kt/hooks', () => ({
     __esModule: true,
-    useKTActivation: jest.fn(() => KeyTransparencyActivation.DISABLED),
+    useKTActivation: vi.fn(() => KeyTransparencyActivation.DISABLED),
 }));
 
-jest.mock('@proton/account/addresses/hooks', () => ({
+vi.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
-    useGetAddresses: jest.fn(),
+    useGetAddresses: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
+vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
-    loadCryptoWorker: jest.fn(),
+    loadCryptoWorker: vi.fn(),
 }));
 
-const mockedGetCalendarHasSubscriptionParameters = getCalendarHasSubscriptionParameters as unknown as jest.Mock<
-    ReturnType<typeof getCalendarHasSubscriptionParameters>
+const mockedGetCalendarHasSubscriptionParameters = getCalendarHasSubscriptionParameters as unknown as Mock<
+    typeof getCalendarHasSubscriptionParameters
 >;
-const mockedGetCalendarIsNotSyncedInfo = getCalendarIsNotSyncedInfo as jest.Mock<
-    ReturnType<typeof getCalendarIsNotSyncedInfo>
+const mockedGetCalendarIsNotSyncedInfo = getCalendarIsNotSyncedInfo as unknown as Mock<
+    typeof getCalendarIsNotSyncedInfo
 >;
-const mockedGetIsCalendarDisabled = getIsCalendarDisabled as jest.Mock<ReturnType<typeof getIsCalendarDisabled>>;
+const mockedGetIsCalendarDisabled = getIsCalendarDisabled as Mock<typeof getIsCalendarDisabled>;
 
 const mockCalendar: VisualCalendar = {
     ID: 'id1',
@@ -239,7 +241,7 @@ const memoryHistory = createMemoryHistory();
 
 function renderComponent(props?: Partial<CalendarSidebarListItemsProps>) {
     const defaultProps: CalendarSidebarListItemsProps = {
-        onChangeVisibility: jest.fn(),
+        onChangeVisibility: vi.fn(),
         calendars: [mockCalendar, mockCalendar2],
         allCalendars: [mockCalendar, mockCalendar2],
         addresses: [
@@ -271,7 +273,7 @@ describe('CalendarSidebarListItems', () => {
     });
 
     it('calls display change when hitting the checkbox', () => {
-        const mockedOnChangeVisibility = jest.fn();
+        const mockedOnChangeVisibility = vi.fn();
 
         render(renderComponent({ onChangeVisibility: mockedOnChangeVisibility }));
 

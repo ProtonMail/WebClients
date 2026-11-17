@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
@@ -5,16 +7,16 @@ import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar
 import type { SyncMultipleEventsArguments } from './getSyncMultipleEventsPayload';
 import getSyncMultipleEventsPayload, { SyncOperationTypes } from './getSyncMultipleEventsPayload';
 
-jest.mock('@proton/shared/lib/calendar/serialize', () => ({
-    createCalendarEvent: jest.fn(() => ({})),
+vi.mock('@proton/shared/lib/calendar/serialize', () => ({
+    createCalendarEvent: vi.fn(() => ({})),
 }));
 
-jest.mock('@proton/shared/lib/calendar/apiModels', () => ({
-    getHasSharedKeyPacket: jest.fn(() => true),
+vi.mock('@proton/shared/lib/calendar/apiModels', () => ({
+    getHasSharedKeyPacket: vi.fn(() => true),
 }));
 
-jest.mock('@proton/shared/lib/calendar/crypto/keys/helpers', () => ({
-    getCreationKeys: jest.fn(() => ({})),
+vi.mock('@proton/shared/lib/calendar/crypto/keys/helpers', () => ({
+    getCreationKeys: vi.fn(() => ({})),
 }));
 
 describe('getSyncMultipleEventsPayload', () => {
@@ -50,8 +52,8 @@ END:VEVENT`;
                     },
                 ],
             },
-            getCalendarKeys: jest.fn(),
-            getAddressKeys: jest.fn(),
+            getCalendarKeys: vi.fn(),
+            getAddressKeys: vi.fn(),
         };
 
         expect(await getSyncMultipleEventsPayload(payload)).toEqual(

@@ -3,6 +3,8 @@ import { Router } from 'react-router-dom';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
+import { vi } from 'vitest';
+import type { Mock } from 'vitest';
 
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
@@ -21,10 +23,10 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contac
 import MainContainer from './MainContainer';
 import getSaveEventActions from './eventActions/getSaveEventActions';
 
-jest.mock('./eventActions/getSaveEventActions', () => jest.fn());
-jest.mock('@proton/account/addresses/hooks', () => ({
+vi.mock('./eventActions/getSaveEventActions', () => ({ default: vi.fn() }));
+vi.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
-    default: jest.fn(() => [
+    default: vi.fn(() => [
         [
             {
                 Email: 'test@pm.gg',
@@ -34,13 +36,13 @@ jest.mock('@proton/account/addresses/hooks', () => ({
             },
         ],
     ]),
-    useGetAddresses: jest.fn(),
+    useGetAddresses: vi.fn(),
 }));
-jest.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
+vi.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
     __esModule: true,
-    default: jest.fn(),
-    useGetCalendarBootstrap: jest.fn(),
-    useReadCalendarBootstrap: jest.fn(() => [
+    default: vi.fn(),
+    useGetCalendarBootstrap: vi.fn(),
+    useReadCalendarBootstrap: vi.fn(() => [
         {
             Keys: [
                 {
@@ -102,7 +104,7 @@ jest.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
             },
         },
     ]),
-    useCalendarBootstrap: jest.fn(() => [
+    useCalendarBootstrap: vi.fn(() => [
         {
             Keys: [
                 {
@@ -166,9 +168,9 @@ jest.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
     ]),
 }));
 
-jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
-    useGetCalendarUserSettings: jest.fn(),
-    useCalendarUserSettings: jest.fn(() => [
+vi.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
+    useGetCalendarUserSettings: vi.fn(),
+    useCalendarUserSettings: vi.fn(() => [
         {
             DefaultCalendarID: 'id3',
             WeekLength: 7,
@@ -180,38 +182,39 @@ jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
         },
     ]),
 }));
-jest.mock('@proton/components/containers/calendar/hooks/useGetCalendarActions', () => () => ({}));
-jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/components/containers/calendar/hooks/useGetCalendarActions', () => ({ default: () => ({}) }));
+vi.mock('@proton/components/hooks/useAuthentication', () => ({ default: () => ({}) }));
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }),
 }));
-jest.mock('@proton/calendar/calendarSubscriptions/hooks', () => ({ useSubscribedCalendars: () => ({}) }));
-jest.mock('@proton/account/contactEmails/hooks', () => ({
+vi.mock('@proton/calendar/calendarSubscriptions/hooks', () => ({ useSubscribedCalendars: () => ({}) }));
+vi.mock('@proton/account/contactEmails/hooks', () => ({
     useContactEmails: () => () => {
-        call: jest.fn();
+        call: vi.fn();
     },
 }));
-jest.mock('@proton/features/useFeature', () => () => ({}));
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/features/useFeature', () => ({ default: () => ({}) }));
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({}),
 }));
-jest.mock('@proton/account/welcomeFlags', () => ({
+vi.mock('@proton/account/welcomeFlags', async () => ({
+    ...(await vi.importActual('@proton/account/welcomeFlags')),
     __esModule: true,
-    useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),
+    useWelcomeFlags: vi.fn(() => [{ isWelcomeFlow: false }]),
 }));
-jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
-jest.mock('@proton/components/containers/eventManager/calendar/useCalendarsInfoListener', () => ({
+vi.mock('@proton/components/hooks/useEventManager', () => ({ default: () => ({}) }));
+vi.mock('@proton/components/containers/eventManager/calendar/useCalendarsInfoListener', () => ({
     useCalendarsInfoListener: () => ({}),
 }));
-jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+vi.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: () => () => {
-        call: jest.fn();
+        call: vi.fn();
     },
 }));
-jest.mock('./eventStore/useCalendarsEventsEventListener', () => () => ({}));
-jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
+vi.mock('./eventStore/useCalendarsEventsEventListener', () => ({ default: () => ({}) }));
+vi.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
     __esModule: true,
-    useContactEmailsCache: jest.fn(() => ({
+    useContactEmailsCache: vi.fn(() => ({
         contactEmails: [],
         contactGroups: [],
         contactEmailsMap: {},
@@ -219,9 +222,9 @@ jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => 
     })),
     default: ({ children }: any) => <>{children}</>,
 }));
-jest.mock('../../containers/alarms/useCalendarAlarmsEventListener', () => () => ({}));
-jest.mock('@proton/calendar/calendars/hooks', () =>
-    jest.fn(() => [
+vi.mock('../../containers/alarms/useCalendarAlarmsEventListener', () => ({ default: () => ({}) }));
+vi.mock('@proton/calendar/calendars/hooks', () => {
+    const useCalendars = vi.fn(() => [
         [
             {
                 ID: 'id1',
@@ -244,11 +247,12 @@ jest.mock('@proton/calendar/calendars/hooks', () =>
                 ],
             },
         ],
-    ])
-);
-jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
+    ]);
+    return { useCalendars, default: useCalendars };
+});
+vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
-    loadCryptoWorker: jest.fn(),
+    loadCryptoWorker: vi.fn(),
 }));
 
 function renderComponent() {
@@ -263,8 +267,8 @@ function renderComponent() {
     );
 }
 
-const mockedUseCalendars = useCalendars as jest.Mock<ReturnType<typeof useCalendars>>;
-const mockedUseContactEmailsCache = useContactEmailsCache as jest.Mock<ReturnType<typeof useContactEmailsCache>>;
+const mockedUseCalendars = useCalendars as Mock<typeof useCalendars>;
+const mockedUseContactEmailsCache = useContactEmailsCache as Mock<typeof useContactEmailsCache>;
 
 const mockedCreatableCalendar = {
     ID: 'id3',
@@ -295,7 +299,7 @@ describe.skip('MainContainer', () => {
     const fakeNow = new Date(Date.UTC(2021, 0, 1, 0, 0, 0));
 
     beforeAll(() => {
-        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
+        vi.useFakeTimers().setSystemTime(fakeNow.getTime());
     });
 
     it(`should disable the new event button when there are no calendars, or they're all disabled or subscribed calendars`, async () => {

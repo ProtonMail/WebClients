@@ -1,4 +1,6 @@
 import { render } from '@testing-library/react';
+import { vi } from 'vitest';
+import type { Mock } from 'vitest';
 
 import { SEPARATOR_PROTON_EVENTS } from '@proton/calendar-video-conferencing/videoConferencing/constants';
 import { useVideoConferencingWidget } from '@proton/calendar-video-conferencing/videoConferencing/widget';
@@ -8,19 +10,19 @@ import { calendarBuilder } from '@proton/shared/testing/calendarBuilders';
 
 import PopoverEventContent from './PopoverEventContent';
 
-jest.mock('@proton/calendar-video-conferencing/videoConferencing/widget', () => ({
-    useVideoConferencingWidget: jest.fn(),
+vi.mock('@proton/calendar-video-conferencing/videoConferencing/widget', () => ({
+    useVideoConferencingWidget: vi.fn(),
 }));
 
-jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
+vi.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
     useContactEmailsCache: () => ({ contactEmailsMap: {} }),
 }));
 
-jest.mock('@proton/components/containers/contacts/hooks/useContactModals', () => ({
-    useContactModals: () => ({ modals: null, onDetails: jest.fn(), onEdit: jest.fn() }),
+vi.mock('@proton/components/containers/contacts/hooks/useContactModals', () => ({
+    useContactModals: () => ({ modals: null, onDetails: vi.fn(), onEdit: vi.fn() }),
 }));
 
-const mockedUseVideoConferencingWidget = useVideoConferencingWidget as jest.Mock;
+const mockedUseVideoConferencingWidget = useVideoConferencingWidget as Mock;
 
 const ZOOM_URL = 'https://us05web.zoom.us/j/88128811438?pwd=tXBwNj7tnajHLftxrqTkU4DtS2M7Au.1';
 // A description with the embedded video conference block, as produced by addVideoConfInfoToDescription
@@ -55,7 +57,7 @@ const buildModel = (description: string): EventModelReadView =>
 
 describe('PopoverEventContent video conference description', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('keeps the embedded block in the description when the widget is not displayed', () => {
