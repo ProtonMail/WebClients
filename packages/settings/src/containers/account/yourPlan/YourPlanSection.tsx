@@ -1,5 +1,3 @@
-import type { ComponentType } from 'react';
-
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useEntitlementCatalog, useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -14,7 +12,6 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import { useUpsellsToDisplay } from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
 import UpsellPanels from '@proton/components/containers/payments/subscription/panels/UpsellPanels';
 import UsagePanel from '@proton/components/containers/payments/subscription/panels/UsagePanel';
-import SubscriptionPanel from '@proton/components/containers/payments/subscription/panels/subscription-panel/SubscriptionPanel';
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import ReferralTrialInfo from '@proton/components/containers/referral/components/ReferralTrialInfo/ReferralTrialInfo';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
@@ -22,6 +19,7 @@ import useLoad from '@proton/components/hooks/useLoad';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
+import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getCanSubscriptionAccessDuoPlan,
@@ -34,20 +32,19 @@ import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials'
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
-import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { PaymentsContextProvider } from '../../../ui/context/PaymentContext';
+import PendingInvitationsPanel from '../../pendingInvitations/PendingInvitationsPanel';
+import SubscriptionPanel from './subscriptionPanel/SubscriptionPanel';
 
 import './YourPlanSection.scss';
 
 interface Props {
     app: APP_NAMES;
-    PendingInvitationsPanel: ComponentType<{ invites: PendingInvitation[] }>;
 }
 
-const YourPlanSectionInner = ({ app, PendingInvitationsPanel }: Props) => {
+const YourPlanSectionInner = ({ app }: Props) => {
     const [user] = useUser();
     const [entitlementCatalog] = useEntitlementCatalog();
     const [plansResult, loadingPlans] = usePlans();

@@ -5,6 +5,51 @@ import { c } from 'ttag';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { Badge } from '@proton/components/components/badge/Badge';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Meter from '@proton/components/components/progress/Meter';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
+import Time from '@proton/components/components/time/Time';
+import { getBasicFeatures, getVersionHistory } from '@proton/components/containers/payments/features/drive';
+import { getSentinel, getSupport } from '@proton/components/containers/payments/features/highlights';
+import {
+    getLumoFree2026Features,
+    getLumoFreeFeatures,
+    getLumoPlusFeatures,
+} from '@proton/components/containers/payments/features/lumo';
+import {
+    PAID_MAX_PARTICIPANTS,
+    getMeetBusinessFeatures,
+    getMeetFreeFeatures,
+} from '@proton/components/containers/payments/features/meet';
+import {
+    FREE_PASS_ALIASES,
+    FREE_VAULTS,
+    FREE_VAULT_SHARING,
+    PASS_PLUS_VAULTS,
+    PASS_PLUS_VAULT_SHARING,
+    get2FAAuthenticator,
+    getDarkWebMonitoring,
+    getDevices,
+    getHideMyEmailAliases,
+    getLinkSharing,
+    getLoginsAndNotes,
+    getPassAdminPanel,
+    getPasswordManager,
+    getProtonPassFeature,
+    getSecureVaultSharing,
+    getVaultSharing,
+    getVaults,
+} from '@proton/components/containers/payments/features/pass';
+import { getNetShield, getVPNConnectionsFeature } from '@proton/components/containers/payments/features/vpn';
+import type { Upsell } from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
+import {
+    getSubscriptionPanelText,
+    upsellsShowB2BUsersRow,
+} from '@proton/components/containers/payments/subscription/helpers/subscriptionPanelHelpers';
+import Panel from '@proton/components/containers/payments/subscription/panels/Panel';
+import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
 import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
 import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
 import { IcEarth } from '@proton/icons/icons/IcEarth';
@@ -57,45 +102,11 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import { Badge } from '../../../../../components/badge/Badge';
-import useModalState from '../../../../../components/modalTwo/useModalState';
-import Meter from '../../../../../components/progress/Meter';
-import StripedItem from '../../../../../components/stripedList/StripedItem';
-import { StripedList } from '../../../../../components/stripedList/StripedList';
-import Time from '../../../../../components/time/Time';
-import LearnMoreModal from '../../../../topBanners/LearnMoreModal';
-import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
-import { getSentinel, getSupport } from '../../../features/highlights';
-import { getLumoFree2026Features, getLumoFreeFeatures, getLumoPlusFeatures } from '../../../features/lumo';
-import { PAID_MAX_PARTICIPANTS, getMeetBusinessFeatures, getMeetFreeFeatures } from '../../../features/meet';
-import {
-    FREE_PASS_ALIASES,
-    FREE_VAULTS,
-    FREE_VAULT_SHARING,
-    PASS_PLUS_VAULTS,
-    PASS_PLUS_VAULT_SHARING,
-    get2FAAuthenticator,
-    getDarkWebMonitoring,
-    getDevices,
-    getHideMyEmailAliases,
-    getLinkSharing,
-    getLoginsAndNotes,
-    getPassAdminPanel,
-    getPasswordManager,
-    getProtonPassFeature,
-    getSecureVaultSharing,
-    getVaultSharing,
-    getVaults,
-} from '../../../features/pass';
-import { getNetShield, getVPNConnectionsFeature } from '../../../features/vpn';
-import SubscriptionPanelManageUserButton from '../../SubscriptionPanelManageUserButton';
-import type { Upsell } from '../../helpers/dashboard-upsells';
-import { getSubscriptionPanelText, upsellsShowB2BUsersRow } from '../../helpers/subscriptionPanelHelpers';
-import Panel from '../Panel';
 import { ActionButtons } from './ActionButtons';
 import { GetMoreButton } from './GetMoreButton';
 import type { Item } from './Item';
 import { SubscriptionItems } from './SubscriptionItems';
+import SubscriptionPanelManageUserButton from './SubscriptionPanelManageUserButton';
 
 const TrialCopy = ({ subscription, onLearnMore }: { subscription: Subscription; onLearnMore: () => void }) => {
     const [paymentMethods, loadingPaymentMethods] = usePaymentMethods();

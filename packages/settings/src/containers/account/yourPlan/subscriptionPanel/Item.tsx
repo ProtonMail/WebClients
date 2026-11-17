@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import type { PlanCardFeatureDefinition } from '../../../features/interface';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 
 export interface Item extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
     status?: PlanCardFeatureDefinition['status'];

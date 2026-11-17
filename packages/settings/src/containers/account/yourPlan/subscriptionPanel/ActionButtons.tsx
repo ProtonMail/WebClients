@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
+import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import {
     type MaybeFreeSubscription,
     getHasPassB2BPlan,
@@ -16,9 +18,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../subscriptionModalContext';
-
 export const ActionButtons = ({
     user,
     subscription,
@@ -28,7 +27,7 @@ export const ActionButtons = ({
     subscription: MaybeFreeSubscription;
     app: APP_NAMES;
 }) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleCustomizeSubscription = () => {
