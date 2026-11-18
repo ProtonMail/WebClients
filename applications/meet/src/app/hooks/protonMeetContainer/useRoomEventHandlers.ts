@@ -1,4 +1,4 @@
-import { type Dispatch, type MutableRefObject, type SetStateAction, useEffect, useRef, useState } from 'react';
+import { type MutableRefObject, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useRoomContext } from '@livekit/components-react';
@@ -78,9 +78,6 @@ interface UseRoomEventHandlersParams {
 
 export interface UseRoomEventHandlersResult {
     liveKitConnectionState: ConnectionState | null;
-    setLiveKitConnectionState: Dispatch<SetStateAction<ConnectionState | null>>;
-    showReconnectedMessage: boolean;
-    setShowReconnectedMessage: Dispatch<SetStateAction<boolean>>;
 }
 
 export const useRoomEventHandlers = ({
@@ -107,9 +104,7 @@ export const useRoomEventHandlers = ({
     const isHandleStalledLiveKitReconnectEnabled = useFlag('MeetHandleStalledLiveKitReconnect');
 
     const [liveKitConnectionState, setLiveKitConnectionState] = useState<ConnectionState | null>(null);
-    const [showReconnectedMessage, setShowReconnectedMessage] = useState(false);
 
-    const liveKitConnectionStateRef = useRef<ConnectionState | null>(null);
     const meetingEndedReasonRef = useRef<string | null>(null);
     const reconnectStallTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -123,8 +118,7 @@ export const useRoomEventHandlers = ({
     const handleReconnectStalled = useStableCallback(() => {
         reconnectStallTimeoutRef.current = null;
 
-        // The timer is cleared whenever LiveKit leaves the reconnecting states, so don't re-check
-        // liveKitConnectionStateRef here: the reconnected-message timer may have nulled it mid-reconnect.
+        // The timer is cleared whenever LiveKit leaves the reconnecting states, so LiveKit is still reconnecting here.
         if (isReconnectingRef.current) {
             return;
         }
@@ -137,8 +131,6 @@ export const useRoomEventHandlers = ({
     });
 
     const handleConnectionStateChanged = useStableCallback((state: ConnectionState) => {
-        const previousState = liveKitConnectionStateRef.current;
-        liveKitConnectionStateRef.current = state;
         setLiveKitConnectionState(state);
 
         // LiveKit flips between Reconnecting and SignalReconnecting within one recovery, so only
@@ -152,24 +144,6 @@ export const useRoomEventHandlers = ({
             }
         } else {
             clearReconnectStallTimeout();
-        }
-
-        if (
-            state === ConnectionState.Connected &&
-            previousState !== null &&
-            previousState !== ConnectionState.Connected
-        ) {
-            setShowReconnectedMessage(true);
-            setTimeout(() => {
-                setShowReconnectedMessage(false);
-                // Don't clear state immediately - let MLS health check run first
-                setTimeout(() => {
-                    setLiveKitConnectionState(null);
-                    liveKitConnectionStateRef.current = null;
-                }, SECOND);
-            }, 3 * SECOND);
-        } else if (state === ConnectionState.Connected) {
-            setShowReconnectedMessage(false);
         }
     });
 
@@ -201,8 +175,6 @@ export const useRoomEventHandlers = ({
             dispatch(setIsReconnecting(true));
             dispatch(setJoinedRoom(false));
             setLiveKitConnectionState(null);
-            setShowReconnectedMessage(false);
-            liveKitConnectionStateRef.current = null;
             joinedRoomLoggedRef.current = false;
             if (!isHandleStalledLiveKitReconnectEnabled) {
                 cleanupMlsState();
@@ -229,8 +201,6 @@ export const useRoomEventHandlers = ({
 
         dispatch(setJoinedRoom(false));
         setLiveKitConnectionState(null);
-        setShowReconnectedMessage(false);
-        liveKitConnectionStateRef.current = null;
 
         joinedRoomLoggedRef.current = false;
         // Skip leaveMeeting when performFullReconnection is active, it will await it properly.
@@ -285,10 +255,5 @@ export const useRoomEventHandlers = ({
         };
     }, [joinedRoom, room, dispatch, handleConnectionStateChanged, handleDataReceived, handleDisconnected]);
 
-    return {
-        liveKitConnectionState,
-        setLiveKitConnectionState,
-        showReconnectedMessage,
-        setShowReconnectedMessage,
-    };
+    return { liveKitConnectionState };
 };

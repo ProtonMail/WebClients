@@ -1,4 +1,4 @@
-import type { ConnectionAnnouncementState } from '../types';
+import type { ConnectionStatus } from '../../../hooks/useConnectionStatus/useConnectionStatus';
 import { useBackgroundEffectAnnouncements } from './useBackgroundEffectAnnouncements';
 import { useCaptionsAvailabilityAnnouncements } from './useCaptionsAvailabilityAnnouncements';
 import { useChatAnnouncements } from './useChatAnnouncements';
@@ -12,18 +12,18 @@ import { useRecordingAnnouncements } from './useRecordingAnnouncements';
 import { useScreenShareAnnouncements } from './useScreenShareAnnouncements';
 
 interface AnnouncementSourcesOptions {
-    connectionState: ConnectionAnnouncementState;
+    connectionPhase: ConnectionStatus['phase'];
 }
 
 // Registration point: to announce a new event, add its source hook here.
-export const useAnnouncementSources = ({ connectionState }: AnnouncementSourcesOptions) => {
+export const useAnnouncementSources = ({ connectionPhase }: AnnouncementSourcesOptions) => {
     useParticipantAnnouncements();
     useHandRaiseAnnouncements();
     useReactionAnnouncements();
     useRecordingAnnouncements();
     useChatAnnouncements();
     useHostMuteAnnouncements();
-    useConnectionAnnouncements(connectionState);
+    useConnectionAnnouncements(connectionPhase);
     useScreenShareAnnouncements();
     useMeetingTimeoutAnnouncements();
     useBackgroundEffectAnnouncements();

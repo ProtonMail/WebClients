@@ -1,13 +1,12 @@
 import { useEffect, useRef } from 'react';
 
-import { ConnectionState } from 'livekit-client';
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsWebsocketReconnecting } from '@proton/meet/store/slices/connectionSlice';
 import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import { selectParticipantSideBarOpen } from '@proton/meet/store/slices/layoutSlice';
 import { selectIsSideBarOpen } from '@proton/meet/store/slices/uiStateSlice';
@@ -19,6 +18,8 @@ import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
+import type { ReconnectingCause } from '../../hooks/useConnectionStatus/getReconnectingCause';
+import type { ConnectionStatus } from '../../hooks/useConnectionStatus/useConnectionStatus';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { useMeetingInitialisation } from '../../hooks/useMeetingInitialisation';
@@ -41,29 +42,21 @@ import { ReactionStream } from '../ReactionStream/ReactionStream';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
 import { Settings } from '../Settings/Settings';
 import { AudioRenderer } from './AudioRenderer';
-import { getConnectionBanner } from './getConnectionBanner';
 
 import './MeetingBody.scss';
 
+const RECONNECTING_BANNER_TEST_IDS: Record<ReconnectingCause, string> = {
+    fullRejoin: 'connection-banner-full-rejoin',
+    encryptionRetry: 'connection-banner-encryption-retry',
+    liveKitReconnect: 'connection-banner-livekit-reconnect',
+    meetingServer: 'connection-banner-meeting-server',
+};
+
 interface MeetingBodyProps {
-    liveKitConnectionState: ConnectionState | null;
-    showReconnectedMessage: boolean;
-    setShowReconnectedMessage: React.Dispatch<React.SetStateAction<boolean>>;
-    setLiveKitConnectionState: React.Dispatch<React.SetStateAction<ConnectionState | null>>;
-    isDisconnected: boolean;
-    isReconnecting: boolean;
-    mlsRetrying: boolean;
+    connectionStatus: ConnectionStatus;
 }
 
-export const MeetingBody = ({
-    liveKitConnectionState,
-    showReconnectedMessage,
-    setShowReconnectedMessage,
-    setLiveKitConnectionState,
-    isDisconnected,
-    isReconnecting,
-    mlsRetrying,
-}: MeetingBodyProps) => {
+export const MeetingBody = ({ connectionStatus }: MeetingBodyProps) => {
     useMeetingInitialisation();
 
     const isGuest = useMeetSelector(selectIsGuest);
@@ -84,16 +77,6 @@ export const MeetingBody = ({
 
     const isSideBarOpen = useMeetSelector(selectIsSideBarOpen);
 
-    const isWebsocketReconnecting = useMeetSelector(selectIsWebsocketReconnecting);
-    const connectionBanner = getConnectionBanner({
-        isReconnecting,
-        mlsRetrying,
-        isDisconnected,
-        liveKitConnectionState,
-        showReconnectedMessage,
-        isWebsocketReconnecting,
-    });
-
     // Firefox/macOS leaves focus on browser chrome after joining; move it into the page so the
     // live region is observed immediately without the user having to click first.
     const mainContainerRef = useRef<HTMLElement>(null);
@@ -105,21 +88,35 @@ export const MeetingBody = ({
     const isMeetEnableSpatialAudio = useFlag('MeetEnableSpatialAudio');
     const isSpatialAudioEnabled = isMeetEnableAudioMixing && isMeetEnableSpatialAudio;
 
-    const getConnectionStatusMessage = (
-        showReconnectedMessage: boolean,
-        liveKitConnectionState: ConnectionState | null
-    ) => {
-        if (showReconnectedMessage) {
-            return c('Info').t`Reconnected successfully`;
-        }
-        if (liveKitConnectionState === ConnectionState.SignalReconnecting) {
-            return c('Info').t`Connection interrupted. Reconnecting...`;
-        }
-        return c('Info').t`Reconnecting to meeting...`;
-    };
-
     return (
         <main ref={mainContainerRef} tabIndex={-1} className="w-full h-full flex flex-column flex-nowrap outline-none">
+            {/* Visual-only: announced centrally by useConnectionAnnouncements. */}
+            {connectionStatus.phase === 'reconnecting' && (
+                <TopBanner
+                    className="bg-warning"
+                    innerClassName="flex flex-nowrap items-center justify-center gap-2 text-semibold color-invert"
+                    announce={false}
+                    data-testid={RECONNECTING_BANNER_TEST_IDS[connectionStatus.cause]}
+                >
+                    <CircleLoader
+                        srLabelHidden
+                        aria-hidden="true"
+                        className="shrink-0 w-custom h-custom"
+                        style={{ '--w-custom': '1rem', '--h-custom': '1rem' }}
+                    />
+                    <span>{c('Info').t`Connection lost. Reconnecting…`}</span>
+                </TopBanner>
+            )}
+            {connectionStatus.phase === 'reconnected' && (
+                <TopBanner
+                    className="bg-success"
+                    innerClassName="text-semibold color-invert"
+                    announce={false}
+                    data-testid="connection-banner-reconnected"
+                >
+                    {c('Info').t`Reconnected`}
+                </TopBanner>
+            )}
             <MeetingTopBanner />
             <div
                 className={clsx(
@@ -127,34 +124,6 @@ export const MeetingBody = ({
                     isElectronApp && 'pt-6'
                 )}
             >
-                {/* Visual-only: announced centrally by useConnectionAnnouncements. */}
-                {connectionBanner === 'fullReconnect' && (
-                    <TopBanner className="bg-warning meet-radius" announce={false}>
-                        {c('Info').t`Connection lost. Reconnecting…`}
-                    </TopBanner>
-                )}
-                {connectionBanner === 'mlsRetrying' && (
-                    <TopBanner className="bg-warning meet-radius" announce={false}>
-                        {c('Info').t`Connection issue detected. Attempting to recover…`}
-                    </TopBanner>
-                )}
-                {connectionBanner === 'liveKit' && (
-                    <TopBanner
-                        className={showReconnectedMessage ? 'bg-success meet-radius' : 'bg-warning meet-radius'}
-                        announce={false}
-                        onClose={() => {
-                            setShowReconnectedMessage(false);
-                            setLiveKitConnectionState(null);
-                        }}
-                    >
-                        {getConnectionStatusMessage(showReconnectedMessage, liveKitConnectionState)}
-                    </TopBanner>
-                )}
-                {connectionBanner === 'meetingServerReconnecting' && (
-                    <TopBanner className="bg-info meet-radius" announce={false}>
-                        {c('Info').t`Lost connection to the meeting server. Reconnecting…`}
-                    </TopBanner>
-                )}
                 {!isNarrowHeight && !isLargeDesktop && (
                     <div className="flex flex-nowrap gap-2 justify-between items-center">
                         <MeetingName classNames={{ name: 'flex-1 text-lg text-semibold' }} />

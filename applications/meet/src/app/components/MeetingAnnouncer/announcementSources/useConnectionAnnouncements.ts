@@ -1,14 +1,12 @@
 import { useEffect, useRef } from 'react';
 
-import { ConnectionState } from 'livekit-client';
-
 import { AnnouncementPriority } from '@proton/components/components/liveAnnouncer/types';
 import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 
+import type { ConnectionStatus } from '../../../hooks/useConnectionStatus/useConnectionStatus';
 import { announcementMessages } from '../messages';
-import type { ConnectionAnnouncementState } from '../types';
 
-export type ConnectionPhase = 'connected' | 'reconnecting' | 'reconnected' | 'disconnected';
+type ConnectionPhase = ConnectionStatus['phase'];
 
 const PHASE_MESSAGES: Partial<Record<ConnectionPhase, () => string>> = {
     reconnecting: announcementMessages.connectionLost,
@@ -16,56 +14,32 @@ const PHASE_MESSAGES: Partial<Record<ConnectionPhase, () => string>> = {
     disconnected: announcementMessages.disconnected,
 };
 
-export const getConnectionPhase = (state: ConnectionAnnouncementState): ConnectionPhase => {
-    if (state.showReconnectedMessage) {
-        return 'reconnected';
-    }
-    if (
-        state.isReconnecting ||
-        state.mlsRetrying ||
-        state.liveKitConnectionState === ConnectionState.Reconnecting ||
-        state.liveKitConnectionState === ConnectionState.SignalReconnecting
-    ) {
-        return 'reconnecting';
-    }
-    if (state.isDisconnected) {
-        return 'disconnected';
-    }
-    if (state.isWebsocketReconnecting) {
-        return 'reconnecting';
-    }
-    return 'connected';
-};
-
-export const useConnectionAnnouncements = (state: ConnectionAnnouncementState) => {
+export const useConnectionAnnouncements = (phase: ConnectionPhase) => {
     const announce = useAnnounce();
 
-    const phase = getConnectionPhase(state);
-    const isServerReconnecting = phase === 'reconnecting' && state.isWebsocketReconnecting;
     // null until first run so the initial steady state is not announced.
     const previousPhaseRef = useRef<ConnectionPhase | null>(null);
-    const wasServerReconnectingRef = useRef(false);
+    const transitionCountRef = useRef(0);
 
     useEffect(() => {
         const previousPhase = previousPhaseRef.current;
-        const wasServerReconnecting = wasServerReconnectingRef.current;
         previousPhaseRef.current = phase;
-        wasServerReconnectingRef.current = isServerReconnecting;
 
         if (previousPhase === null || phase === previousPhase) {
             return;
         }
-        // LiveKit announces its own recovery through showReconnectedMessage, and its state can be
-        // cleared (banner closed) while it is still down, so only the meeting server's recovery is inferred.
-        const announcedPhase = wasServerReconnecting && phase === 'connected' ? 'reconnected' : phase;
 
-        const buildMessage = PHASE_MESSAGES[announcedPhase];
+        const buildMessage = PHASE_MESSAGES[phase];
         if (!buildMessage) {
             return;
         }
 
-        // Key by phase, not a shared 'connection-state', so a fast lost → reconnected
-        // transition within the de-dup window does not drop the recovery announcement.
-        announce(buildMessage(), { dedupeKey: `connection-${announcedPhase}`, priority: AnnouncementPriority.High });
-    }, [phase, isServerReconnecting, announce]);
+        // A key per transition: the announcer drops a key reused within 3 s, and a connection can
+        // drop and recover more than once in that window.
+        transitionCountRef.current += 1;
+        announce(buildMessage(), {
+            dedupeKey: `connection-transition-${transitionCountRef.current}`,
+            priority: AnnouncementPriority.High,
+        });
+    }, [phase, announce]);
 };

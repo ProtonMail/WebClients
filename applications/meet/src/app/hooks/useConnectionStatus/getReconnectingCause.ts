@@ -1,42 +1,39 @@
 import { ConnectionState } from 'livekit-client';
 
-type ConnectionBanner = 'fullReconnect' | 'mlsRetrying' | 'liveKit' | 'meetingServerReconnecting';
+export type ReconnectingCause = 'fullRejoin' | 'encryptionRetry' | 'liveKitReconnect' | 'meetingServer';
 
-interface ConnectionBannerState {
+interface ReconnectingCauseState {
     isReconnecting: boolean;
     mlsRetrying: boolean;
     isDisconnected: boolean;
     liveKitConnectionState: ConnectionState | null;
-    showReconnectedMessage: boolean;
     isWebsocketReconnecting: boolean;
 }
 
-export const getConnectionBanner = ({
+export const getReconnectingCause = ({
     isReconnecting,
     mlsRetrying,
     isDisconnected,
     liveKitConnectionState,
-    showReconnectedMessage,
     isWebsocketReconnecting,
-}: ConnectionBannerState): ConnectionBanner | null => {
+}: ReconnectingCauseState): ReconnectingCause | null => {
     if (isReconnecting) {
-        return 'fullReconnect';
+        return 'fullRejoin';
     }
     if (mlsRetrying) {
-        return 'mlsRetrying';
+        return 'encryptionRetry';
     }
     if (isDisconnected) {
         return null;
     }
     if (
         liveKitConnectionState === ConnectionState.SignalReconnecting ||
-        liveKitConnectionState === ConnectionState.Reconnecting ||
-        showReconnectedMessage
+        liveKitConnectionState === ConnectionState.Reconnecting
     ) {
-        return 'liveKit';
+        return 'liveKitReconnect';
     }
     if (isWebsocketReconnecting) {
-        return 'meetingServerReconnecting';
+        return 'meetingServer';
     }
     return null;
 };
