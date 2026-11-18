@@ -36,7 +36,7 @@ export function validateCreateScheduleToolArguments(
         typeof value.instructions !== 'string' ||
         value.instructions.length > schema.properties.instructions.maxLength
     ) {
-        return invalidArguments('instructions: must contain at most 1024 characters');
+        return invalidArguments('instructions: must contain at most 20000 characters');
     }
 
     const rule = value.recurrenceRule;
