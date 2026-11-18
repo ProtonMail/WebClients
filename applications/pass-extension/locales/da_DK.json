@@ -863,6 +863,21 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Dismiss notification": [
+        "Luk notifikation"
+      ],
+      "Go to today": [
+        "Gå til i dag"
+      ],
+      "Open item": [
+        "Åbn element"
+      ],
+      "Remove passkey": [
+        "Fjern adgangsnøgle"
+      ],
+      "Toggle section": [
+        "Vis/skjul sektion"
       ]
     },
     "Activity": {
@@ -2605,7 +2620,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"

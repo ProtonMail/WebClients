@@ -86,7 +86,7 @@
         "Opcions avançades"
       ],
       "Allow access": [
-        "Permeteu l'accés"
+        "Permet l'accés"
       ],
       "and": [
         "i"
@@ -170,7 +170,7 @@
         "Plegar les alertes de Pass Monitor"
       ],
       "Configure": [
-        "Configurar"
+        "Configura"
       ],
       "Confirm": [
         "Confirma"
@@ -338,7 +338,7 @@
         "No ho torneu a mostrar"
       ],
       "Do not show again when I press": [
-        "No m'ho tornis a mostrar quan ho premi"
+        "No ho tornis a mostrar quan premi"
       ],
       "Do not show on this website": [
         "No ho mostris en aquest lloc web"
@@ -425,7 +425,7 @@
         "Comença"
       ],
       "Go to today": [
-        "Vés a avui"
+        "Va a avui"
       ],
       "Hide": [
         "Amaga"
@@ -638,7 +638,7 @@
         "Esborra el membre"
       ],
       "Remove passkey": [
-        "Suprimeix la clau d'accés"
+        "Esborra la clau d'accés"
       ],
       "Rename": [
         "Canvia el nom"
@@ -659,7 +659,7 @@
         "Restableix"
       ],
       "Reset filters": [
-        "Restablir els filtres"
+        "Restableix els filtres"
       ],
       "Reset history": [
         "Restableix l'historial"
@@ -1384,7 +1384,7 @@
         "No s'ha pogut importar els elements."
       ],
       "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
-        "Per poder continuar, ${ PASS_APP_NAME } requereix aquests permisos de l'extensió: ${ permissionsJSX }"
+        "Per a continuar, ${ PASS_APP_NAME } requereix aquests permisos de l'extensió: ${ permissionsJSX }"
       ],
       "Inactive secure links could not be removed.": [
         "Els enllaços segurs inactius no es van poder esborrar."
@@ -1450,7 +1450,7 @@
         "S'ha denegat el permís per accedir al lloc web ${ domainsJSX }."
       ],
       "Permission denied for website access.": [
-        "S'ha denegat el permís per accedir al lloc web."
+        "S'ha denegat el permís per a accedir al lloc web."
       ],
       "PIN codes do not match": [
         "Els codis PIN no coincideixen"
@@ -1765,7 +1765,7 @@
         "Introduïu la vostra contrasenya mestra de 1Password, assegureu-vos que ${ format1pux } estigui seleccionat i cliqueu ${ exportData }."
       ],
       "Export": [
-        "Exportar-ho"
+        "Exporta"
       ],
       "Export All Passwords to File": [
         "Exportar totes les contrasenyes a un fitxer"
@@ -1783,13 +1783,13 @@
         "Exporta els elements"
       ],
       "Export passwords": [
-        "Exportar les contrasenyes"
+        "Exporta les contrasenyes"
       ],
       "Export to CSV": [
         "Exportar-ho a CSV"
       ],
       "Export to TXT": [
-        "Exportar-ho a TXT"
+        "Exporta a TXT"
       ],
       "File": [
         "Fitxer"
@@ -1882,7 +1882,7 @@
         "Preferències"
       ],
       "Submit": [
-        "Enviar-ho"
+        "Envia"
       ],
       "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
         "En aquesta ocasió, se us demanarà que torneu a confirmar el vostre nom d'usuari i contrasenya de ${ name }. Cliqueu ${ submit }."
@@ -2019,7 +2019,7 @@
         "(Buit)"
       ],
       "2FA code copied to clipboard": [
-        "El codi 2FA s'ha copiat al porta-retalls."
+        "S'ha copiat el codi 2FA al porta-retalls"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dies per a provar característiques prèmium de forma gratuïta. Només durant la primera setmana de ${ BRAND_NAME }."
@@ -2154,7 +2154,7 @@
         "Copia automàticament la contrasenya generada al porta-retalls"
       ],
       "Automatically fill in your saved payment information.": [
-        "Empleneu-ho automàticament amb la vostra informació de pagament desada."
+        "Empleneu automàticament la informació de pagament desada."
       ],
       "Autosaved on ${ url }": [
         "S'ha desat automàticament en ${ url }"
@@ -2620,7 +2620,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2715,7 +2716,7 @@
         "Obriu l'extensió per desbloquejar-la"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
-        "Obriu la configuració de Safari, busqueu ${ PASS_APP_NAME }, aneu a \"Permisos\" i activeu-hi els corresponents al lloc."
+        "Obriu la configuració de Safari, busqueu $${ PASS_APP_NAME }, aneu a «Permisos» i activeu-hi els permisos de llocs web."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest informe amb seguretat."
@@ -3037,7 +3038,7 @@
         "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de còpia de seguretat."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
-        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya addicional."
+        "Per a iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya addicional."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la segona contrasenya."
@@ -3436,6 +3437,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "Use biometrics to unlock": [
+        "Utilitzeu les dades biomètriques per desbloquejar"
       ]
     },
     "Keyboard key": {
@@ -3630,7 +3634,7 @@
         "Tots els elements"
       ],
       "Allow viewers to see passwords": [
-        "Permeteu que els espectadors vegin les contrasenyes"
+        "Permet que els lectors vegin les contrasenyes"
       ],
       "Alphabetical": [
         "Alfabètic"
@@ -3651,7 +3655,7 @@
         "Autenticació amb claus d'accés"
       ],
       "Auto-copy 2FA code": [
-        "Copiar automàticament el codi 2FA"
+        "Copia automàticament el codi 2FA"
       ],
       "Auto-lock after": [
         "Bloqueig automàtic després de"
@@ -3681,7 +3685,7 @@
         "Bàsic"
       ],
       "Basic Auth autofill": [
-        "Emplenament automàtic bàsic d'identificadors"
+        "Emplenament automàtic de l'autenticació bàsica"
       ],
       "Biometrics": [
         "Dades biomètriques"
@@ -3897,7 +3901,7 @@
         "Caduca en"
       ],
       "Expiry Date": [
-        "Data d'expiració"
+        "Data de caducitat"
       ],
       "Export": [
         "Exporta"
@@ -4125,7 +4129,7 @@
         "Estableix tots com a editors"
       ],
       "Make all managers": [
-        "Defineix tots com a gestor"
+        "Defineix tots com a gestors"
       ],
       "Make all viewers": [
         "Estableix tots com a visualitzadors"
@@ -5448,7 +5452,7 @@
         "Exporta"
       ],
       "Export from ${ provider.title }": [
-        "Exportar de ${ provider.title }"
+        "Exporta de ${ provider.title }"
       ],
       "Fill & copy password": [
         "Emplena i copia la contrasenya"
@@ -5490,7 +5494,7 @@
         "Amaga el correu electrònic"
       ],
       "Hide passwords from viewers?": [
-        "Voleu amagar les contrasenyes als espectadors?"
+        "Voleu amagar les contrasenyes per als lectors?"
       ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"

@@ -2253,7 +2253,7 @@
         "${ PASS_APP_NAME } uygulamasını betikleriniz ve araçlarınızla bütünleştirmek için bir kod oluşturun."
       ],
       "Create contact illustration": [
-        "Kişi oluşturma görseli"
+        "Kişi oluşturmayı gösteren görsel"
       ],
       "Created ${ createdDate }": [
         "Oluşturulma: ${ createdDate }"
@@ -2337,7 +2337,7 @@
         "E-posta adresi izlemeye eklendi"
       ],
       "Email headers illustration": [
-        "E-posta üst bilgileri görseli"
+        "E-posta üst bilgilerini gösteren görsel"
       ],
       "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
         "Bu adrese e-posta gönderdiğinizde örneğin ${ exampleEmail } adresinden gönderilmiş gibi görünecek."
@@ -2620,7 +2620,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3436,6 +3437,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "Use biometrics to unlock": [
+        "Kilidi açmak için biyometrik kullanılsın"
       ]
     },
     "Keyboard key": {
