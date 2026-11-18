@@ -5,13 +5,13 @@ import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payment
 import { selectPaymentProcessor } from './paymentProcessorSelection';
 
 const processor = (type: PaymentProcessorType): PaymentProcessorHook => ({
-    fetchPaymentToken: jest.fn(),
+    fetchPaymentToken: vi.fn(),
     fetchingToken: false,
-    verifyPaymentToken: jest.fn(),
+    verifyPaymentToken: vi.fn(),
     verifyingToken: false,
-    processPaymentToken: jest.fn(),
+    processPaymentToken: vi.fn(),
     processingToken: false,
-    reset: jest.fn(),
+    reset: vi.fn(),
     userInitiatedProcessing: false,
     meta: { type },
 });
