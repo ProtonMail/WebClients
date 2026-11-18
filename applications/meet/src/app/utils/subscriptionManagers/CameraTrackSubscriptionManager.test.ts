@@ -345,6 +345,33 @@ describe('CameraTrackSubscriptionCache', () => {
         });
     });
 
+    it('should evict over capacity after a participant left while their tile was on screen', async () => {
+        const manager = new CameraTrackSubscriptionManager(1, mockRoom);
+
+        const leftPub = createCameraPublication('track-left');
+        manager.register(leftPub, 'p-left');
+        await waitFor(() => {
+            expect(leftPub.isSubscribed).toBe(true);
+        });
+        manager.handleTrackUnpublished(leftPub);
+        manager.unregister(leftPub);
+
+        const pub1 = createCameraPublication('track-1');
+        manager.register(pub1, 'p1');
+        const pub2 = createCameraPublication('track-2');
+        manager.register(pub2, 'p2');
+        await waitFor(() => {
+            expect(pub1.isSubscribed).toBe(true);
+            expect(pub2.isSubscribed).toBe(true);
+        });
+
+        manager.unregister(pub1);
+        await waitFor(() => {
+            expect(pub1.isSubscribed).toBe(false);
+            expect(pub2.isSubscribed).toBe(true);
+        });
+    });
+
     it('resetQueueManagedVideoTrack() should toggle off then restore subscription based on current policy', async () => {
         const manager = new CameraTrackSubscriptionManager(10, mockRoom);
         manager.setPolicy({
