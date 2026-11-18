@@ -142,6 +142,7 @@ export const useMeetingConnection = ({
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
     const isHandleStalledLiveKitReconnectEnabled = useFlag('MeetHandleStalledLiveKitReconnect');
+    const isPrepareLiveKitConnectionEnabled = useFlag('MeetPrepareLiveKitConnection');
 
     const dispatch = useMeetDispatch();
     const { getAccessDetails } = useMeetingAuthentication();
@@ -209,6 +210,9 @@ export const useMeetingConnection = ({
             const tokenFetchMs = Math.round(performance.now() - t0);
             signal?.throwIfAborted();
 
+            if (isPrepareLiveKitConnectionEnabled) {
+                void room.prepareConnection(websocketUrl, accessToken);
+            }
             websocketUrlRef.current = websocketUrl;
             accessTokenRef.current = accessToken;
 

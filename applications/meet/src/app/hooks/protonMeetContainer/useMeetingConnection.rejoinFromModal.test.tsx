@@ -46,6 +46,7 @@ const createRoomThatEmitsOnDisconnect = () => {
     return {
         localParticipant: { isCameraEnabled: false, isMicrophoneEnabled: false },
         setE2EEEnabled: vi.fn().mockResolvedValue(undefined),
+        prepareConnection: vi.fn().mockResolvedValue(undefined),
         on: vi.fn((event: RoomEvent, listener: (reason?: DisconnectReason) => void) => {
             if (event === RoomEvent.Disconnected) {
                 disconnectedListeners.add(listener);

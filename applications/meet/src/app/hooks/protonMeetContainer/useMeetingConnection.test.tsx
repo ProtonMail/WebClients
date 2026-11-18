@@ -47,6 +47,7 @@ const mockDispatch = vi.fn();
 const mockRoom = {
     state: ConnectionState.Disconnected,
     setE2EEEnabled: vi.fn().mockResolvedValue(undefined),
+    prepareConnection: vi.fn().mockResolvedValue(undefined),
     disconnect: vi.fn().mockResolvedValue(undefined),
 };
 
@@ -124,6 +125,7 @@ describe('useMeetingConnection', () => {
         setLocalDevices(true, false);
         setDevicesInitializing(false);
         mockRoom.setE2EEEnabled.mockResolvedValue(undefined);
+        mockRoom.prepareConnection.mockResolvedValue(undefined);
         mockRoom.disconnect.mockResolvedValue(undefined);
         mockMeetCoreClient.restart.mockResolvedValue(true);
     });
@@ -192,6 +194,41 @@ describe('useMeetingConnection', () => {
             });
 
             expect(deviceInitMs).toEqual(expect.any(Number));
+        });
+
+        it('prepares the LiveKit connection while MLS setup is still running when the flag is on', async () => {
+            useFlagMock.mockImplementation((name: string) => name === 'MeetPrepareLiveKitConnection');
+            const mlsSetup = createDeferred<{ key: string; epoch: bigint }>();
+            const params = createParams({ handleMlsSetup: vi.fn(() => mlsSetup.promise) });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            let connecting: Promise<unknown> | undefined;
+            await act(async () => {
+                connecting = result.current.connectWithMls(baseConnectParams);
+            });
+
+            expect(params.handleMlsSetup).toHaveBeenCalled();
+            expect(mockRoom.prepareConnection).toHaveBeenCalledWith('wss://x', 'tok');
+            expect(params.connectWithStunFallbackToTurnRelay).not.toHaveBeenCalled();
+
+            await act(async () => {
+                mlsSetup.resolve({ key: 'group-key', epoch: 1n });
+                await connecting;
+            });
+
+            expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalledWith('wss://x', 'tok', 20_000);
+        });
+
+        it('does not prepare the LiveKit connection when the flag is off', async () => {
+            const params = createParams();
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            await act(async () => {
+                await result.current.connectWithMls(baseConnectParams);
+            });
+
+            expect(mockRoom.prepareConnection).not.toHaveBeenCalled();
+            expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalledWith('wss://x', 'tok', 20_000);
         });
 
         it('requests the participant list only once LiveKit is connected', async () => {
