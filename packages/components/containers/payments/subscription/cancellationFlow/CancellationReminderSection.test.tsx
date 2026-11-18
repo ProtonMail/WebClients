@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { MockedFunction } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { changeRenewState } from '@proton/payments/core/api/api';
@@ -11,25 +12,25 @@ import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';
-import { renderWithProviders } from '../../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
 import { CancellationReminderSection } from './CancellationReminderSection';
 
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.MockedFunction<any>;
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as MockedFunction<any>;
 
-jest.mock('@proton/shared/lib/vpn/vpnServers', () => ({
+vi.mock('@proton/shared/lib/vpn/vpnServers', () => ({
     VPN_SERVERS: { paid: { countries: 10 } },
 }));
 
-jest.mock('../../../../components/link/useSettingsLink');
-const mockGoToSettings = jest.fn();
-jest.mocked(useSettingsLink).mockReturnValue(mockGoToSettings);
+vi.mock('../../../../components/link/useSettingsLink');
+const mockGoToSettings = vi.fn();
+vi.mocked(useSettingsLink).mockReturnValue(mockGoToSettings);
 
 const mailSubscription = { ...buildSubscription(PLANS.MAIL), ID: 'sub-mail' };
 const driveSubscription = { ...buildSubscription(PLANS.DRIVE), ID: 'sub-drive' };
@@ -50,7 +51,7 @@ const getHeading = (plan: PLANS) => {
 
 describe('Cancellation flow section', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockUseFlag.mockReturnValue(true);
     });
 

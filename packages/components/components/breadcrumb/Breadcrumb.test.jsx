@@ -23,7 +23,7 @@ describe('Breadcrumb component', () => {
     });
 
     it('should select the first step', () => {
-        const mockOnClick = jest.fn();
+        const mockOnClick = vi.fn();
         const { container } = render(<Breadcrumb list={steps} current={currentStep} onClick={mockOnClick} />);
         const buttons = getButtons(container);
 

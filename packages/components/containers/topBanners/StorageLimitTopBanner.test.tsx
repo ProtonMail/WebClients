@@ -1,6 +1,7 @@
 import type { ReactNode, Ref } from 'react';
 
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -12,12 +13,12 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 
-jest.mock('react-router-dom', () => ({
-    useLocation: jest.fn().mockReturnValue({ pathname: '' }),
+vi.mock('react-router-dom', () => ({
+    useLocation: vi.fn().mockReturnValue({ pathname: '' }),
 }));
 
-jest.mock('../../components/link/AppLink', () => {
-    const { forwardRef } = jest.requireActual('react');
+vi.mock('../../components/link/AppLink', async () => {
+    const { forwardRef } = await vi.importActual<any>('react');
     return {
         __esModule: true,
         default: forwardRef(({ to, children }: { to: string; children: ReactNode }, ref: Ref<HTMLAnchorElement>) => (
@@ -28,29 +29,29 @@ jest.mock('../../components/link/AppLink', () => {
     };
 });
 
-jest.mock('@proton/account/user/hooks');
-const mockedUser = useUser as jest.Mock;
+vi.mock('@proton/account/user/hooks');
+const mockedUser = useUser as Mock;
 
-jest.mock('@proton/payments-hooks/ui/hooks/useSubscriptionForApp');
-const mockedSub = useSubscriptionForApp as jest.Mock;
+vi.mock('@proton/payments-hooks/ui/hooks/useSubscriptionForApp');
+const mockedSub = useSubscriptionForApp as Mock;
 
-jest.mock('@proton/app-context/useConfig');
-const mockConfig = useConfig as jest.Mock;
+vi.mock('@proton/app-context/useConfig');
+const mockConfig = useConfig as Mock;
 
-jest.mock('@proton/account/userPermissions/hooks', () => ({
-    ...jest.requireActual('@proton/account/userPermissions/hooks'),
-    useCanUpdateBilling: jest.fn().mockReturnValue([false, false]),
+vi.mock('@proton/account/userPermissions/hooks', async () => ({
+    ...(await vi.importActual('@proton/account/userPermissions/hooks')),
+    useCanUpdateBilling: vi.fn().mockReturnValue([false, false]),
 }));
 
 // LockedStateTopBanner (rendered for lock-state banners) resolves its upgrade path through
 // useUpgradePath, which reads previousSubscription via useGetPreviousSubscription + useStore. This
 // test renders without a Redux Provider, so stub both rather than wire up a store.
-jest.mock('@proton/account/previousSubscription/hooks', () => ({
-    useGetPreviousSubscription: jest.fn().mockReturnValue(jest.fn().mockResolvedValue(undefined)),
+vi.mock('@proton/account/previousSubscription/hooks', () => ({
+    useGetPreviousSubscription: vi.fn().mockReturnValue(vi.fn().mockResolvedValue(undefined)),
 }));
 
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
-    ...jest.requireActual('@proton/redux-shared-store/sharedProvider'),
+vi.mock('@proton/redux-shared-store/sharedProvider', async () => ({
+    ...(await vi.importActual('@proton/redux-shared-store/sharedProvider')),
     useStore: () => ({ getState: () => ({ previousSubscription: { value: undefined } }) }),
 }));
 

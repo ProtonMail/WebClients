@@ -33,7 +33,7 @@ const MockedModal = (props: Pick<ModalOwnProps, 'onExit' | 'open'> & { children:
     return <div>{props.children}</div>;
 };
 
-jest.mock('./humanVerification/HumanVerificationModal', () => {
+vi.mock('./humanVerification/HumanVerificationModal', () => {
     return {
         __esModule: true,
         default: (props: HumanVerificationModalProps<any>) => {
@@ -71,7 +71,7 @@ jest.mock('./humanVerification/HumanVerificationModal', () => {
     };
 });
 
-jest.mock('../password/AuthModal', () => {
+vi.mock('../password/AuthModal', () => {
     return {
         __esModule: true,
         default: (props: AuthModalProps) => {
@@ -104,7 +104,7 @@ jest.mock('../password/AuthModal', () => {
 const createApi = () => {
     const listeners: ApiListenerCallback[] = [];
 
-    const api = Object.assign(jest.fn(), {
+    const api = Object.assign(vi.fn(), {
         addEventListener: (cb: ApiListenerCallback) => {
             listeners.push(cb);
         },
@@ -285,7 +285,7 @@ describe('ApiModals', () => {
 describe('ApiModalsHV', () => {
     test('should answer a challenge on the session that emitted it', async () => {
         const { api, notify } = createApi();
-        const sessionApi = jest.fn();
+        const sessionApi = vi.fn();
 
         render(
             <Wrap>
@@ -316,11 +316,11 @@ describe('ApiModalsHV', () => {
     test('should reject an open challenge when unmounted', async () => {
         const { api, notify } = createApi();
         const error: any = new Error('test');
-        const reject = jest.fn();
+        const reject = vi.fn();
 
         const { unmount } = render(
             <Wrap>
-                <ApiModalsHV api={jest.fn()} events={api} />
+                <ApiModalsHV api={vi.fn()} events={api} />
             </Wrap>
         );
 
@@ -350,7 +350,7 @@ describe('ApiModalsHV', () => {
 
         render(
             <Wrap>
-                <ApiModalsHV api={jest.fn()} events={api} />
+                <ApiModalsHV api={vi.fn()} events={api} />
             </Wrap>
         );
 

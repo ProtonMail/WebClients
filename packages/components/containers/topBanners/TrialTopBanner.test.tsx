@@ -1,5 +1,6 @@
 import { act, screen } from '@testing-library/react';
 import { addDays, getUnixTime } from 'date-fns';
+import type { Mock } from 'vitest';
 
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
@@ -14,21 +15,21 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS, USER_ROLES } from '@proton/shared/lib/constants';
 import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';
 
-import { renderWithProviders } from '../../testing/renderWithProviders';
+import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import TrialTopBanner from './TrialTopBanner';
 import { OPEN_TRIAL_CANCELED_MODAL } from './constants';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    ...jest.requireActual('@proton/account/entitlementCatalog/hooks'),
-    useEntitlementCatalog: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', async () => ({
+    ...(await vi.importActual('@proton/account/entitlementCatalog/hooks')),
+    useEntitlementCatalog: vi.fn(),
 }));
 
-jest.mock('@proton/account/paymentMethods/hooks', () => ({
-    ...jest.requireActual('@proton/account/paymentMethods/hooks'),
-    usePaymentMethods: jest.fn(),
+vi.mock('@proton/account/paymentMethods/hooks', async () => ({
+    ...(await vi.importActual('@proton/account/paymentMethods/hooks')),
+    usePaymentMethods: vi.fn(),
 }));
 
-jest.mock('./TrialCanceledModal', () => ({
+vi.mock('./TrialCanceledModal', () => ({
     __esModule: true,
     default: () => <div data-testid="trial-canceled-modal" />,
 }));
@@ -73,9 +74,9 @@ describe('TrialTopBanner', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        (usePaymentMethods as jest.Mock).mockReturnValue([[], false]);
-        (useEntitlementCatalog as jest.Mock).mockReturnValue([
+        vi.clearAllMocks();
+        (usePaymentMethods as Mock).mockReturnValue([[], false]);
+        (useEntitlementCatalog as Mock).mockReturnValue([
             buildEntitlementCatalog({
                 [PLANS.BUNDLE_PRO_2024]: [EntitlementName.Business],
                 [PLANS.MAIL_PRO]: [EntitlementName.Business],
@@ -101,7 +102,7 @@ describe('TrialTopBanner', () => {
     });
 
     it('renders no banner while the entitlement catalog is loading', () => {
-        (useEntitlementCatalog as jest.Mock).mockReturnValue([undefined, true]);
+        (useEntitlementCatalog as Mock).mockReturnValue([undefined, true]);
 
         const { container } = renderBanner(buildB2BTrial(PLANS.BUNDLE_PRO_2024, 'b2b-trial'));
 

@@ -4,8 +4,8 @@ import ModalsProvider from '../../modals/Provider';
 import TogglingMonitoringModal from './TogglingMonitoringModal';
 
 // Mocked so that the modal renders in the same container
-jest.mock('react-dom', () => ({
-    ...jest.requireActual('react-dom'),
+vi.mock('react-dom', async () => ({
+    ...(await vi.importActual('react-dom')),
     createPortal: (node: any) => node,
 }));
 

@@ -7,22 +7,22 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
-import { renderWithProviders } from '../../testing/renderWithProviders';
+import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import SubscriptionEndsBanner from './SubscriptionEndsBanner';
 
-jest.mock('../../hooks/useShowVPNDashboard', () => ({
+vi.mock('../../hooks/useShowVPNDashboard', () => ({
     __esModule: true,
     default: () => ({ showVPNDashboard: false }),
 }));
 
-jest.mock('../../hooks/accounts/useShowDashboard', () => ({
+vi.mock('../../hooks/accounts/useShowDashboard', () => ({
     __esModule: true,
     default: () => ({ showDashboard: false }),
     useShowDriveDashboard: () => ({ showDashboard: false }),
 }));
 
-jest.mock('@proton/account/userPermissions/hooks', () => ({
-    ...jest.requireActual('@proton/account/userPermissions/hooks'),
+vi.mock('@proton/account/userPermissions/hooks', async () => ({
+    ...(await vi.importActual('@proton/account/userPermissions/hooks')),
     useCanUpdateBilling: () => [true, false],
 }));
 
@@ -47,8 +47,8 @@ const renderBanner = (subscriptions: Subscription[]) => {
 const reactivateHref = '/dashboard?source=banners#your-subscriptions';
 
 describe('SubscriptionEndsBanner', () => {
-    beforeAll(() => jest.useFakeTimers().setSystemTime(new Date('2026-01-01T12:00:00Z')));
-    afterAll(() => jest.useRealTimers());
+    beforeAll(() => vi.useFakeTimers().setSystemTime(new Date('2026-01-01T12:00:00Z')));
+    afterAll(() => vi.useRealTimers());
 
     it('names the subscription that ends soonest when two subscriptions end', () => {
         renderBanner([ending(PLANS.MAIL, JAN_21), ending(PLANS.DRIVE, JAN_16)]);

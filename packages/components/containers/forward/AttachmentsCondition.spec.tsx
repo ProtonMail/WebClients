@@ -8,7 +8,7 @@ import AttachmentsCondition from './AttachmentsCondition';
 describe('AttachmentsCondition', () => {
     const condition1 = { comparator: ConditionComparator.DOES_NOT_CONTAIN } as Condition;
     const condition2 = { comparator: ConditionComparator.CONTAINS } as Condition;
-    const onUpdate = jest.fn();
+    const onUpdate = vi.fn();
 
     describe('when we click on the "With attachment" radio', () => {
         it('should call the onUpdate function with the right condition', () => {

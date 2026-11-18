@@ -13,17 +13,17 @@ import { useFlag } from '@proton/unleash/useFlag';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 import useBusySlotsAvailable from './useBusySlotsAvailable';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
 
-jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: jest.fn(),
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn(),
 }));
 
-jest.mock('../../../hooks/useActiveBreakpoint', () => ({
+vi.mock('../../../hooks/useActiveBreakpoint', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
 const renderBusySlotsAvailable = ({
@@ -41,11 +41,11 @@ const renderBusySlotsAvailable = ({
     isSmallViewport?: boolean;
     view?: VIEWS;
 }) => {
-    jest.mocked(useFlag).mockReturnValue(isFlagEnabled);
-    jest.mocked(useActiveBreakpoint).mockReturnValue({
+    vi.mocked(useFlag).mockReturnValue(isFlagEnabled);
+    vi.mocked(useActiveBreakpoint).mockReturnValue({
         viewportWidth: { '<=small': isSmallViewport },
     } as ReturnType<typeof useActiveBreakpoint>);
-    jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
+    vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
         buildOrgAndUserEntitlementChecks({ subscriptionPlans, ...viewer }),
         loadingEntitlements,
     ]);

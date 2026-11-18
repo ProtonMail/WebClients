@@ -7,7 +7,7 @@ beforeEach(() => {
     props = {
         currencies: [],
         currency: 'EUR',
-        onChangeCurrency: jest.fn(),
+        onChangeCurrency: vi.fn(),
         children: <div>children</div>,
         renewNotice: <div>renewNotice</div>,
         disableCurrencySelector: false,

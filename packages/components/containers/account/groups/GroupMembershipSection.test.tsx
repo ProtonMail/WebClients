@@ -12,22 +12,24 @@ import type { GroupMembershipReturn } from '@proton/shared/lib/interfaces/GroupM
 
 import GroupMembershipSection from './GroupMembershipSection';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
 
-jest.mock('@proton/account/groupMemberships/hooks', () => ({
-    useGroupMemberships: jest.fn(),
+vi.mock('@proton/account/groupMemberships/hooks', () => ({
+    useGroupMemberships: vi.fn(),
 }));
 
 // A button per row; keyed by status so that accepting replaces it, like the real actions do
-jest.mock(
-    './GroupActions',
-    () =>
-        ({ membership }: { membership: { Name: string; Status: string } }) =>
-            require('react').createElement('button', { key: membership.Status }, `Act on ${membership.Name}`)
-);
-jest.mock('./GroupState', () => () => null);
+vi.mock('./GroupActions', async () => {
+    const { createElement } = await vi.importActual<any>('react');
+    return {
+        __esModule: true,
+        default: ({ membership }: { membership: { Name: string; Status: string } }) =>
+            createElement('button', { key: membership.Status, type: 'button' }, `Act on ${membership.Name}`),
+    };
+});
+vi.mock('./GroupState', () => ({ __esModule: true, default: () => null }));
 
 const membership: GroupMembershipReturn = {
     GroupID: 'group-id',
@@ -48,11 +50,11 @@ const renderSection = ({
     loadingEntitlements?: boolean;
     memberships?: GroupMembershipReturn[];
 }) => {
-    jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
+    vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
         buildOrgAndUserEntitlementChecks({ subscriptionPlans, ...organizationMember }),
         loadingEntitlements,
     ]);
-    jest.mocked(useGroupMemberships).mockReturnValue([memberships, false]);
+    vi.mocked(useGroupMemberships).mockReturnValue([memberships, false]);
     render(<GroupMembershipSection />);
 };
 
@@ -123,11 +125,11 @@ describe('GroupMembershipSection', () => {
         const support = getMembership('2', 'Support', 1);
 
         const renderWith = (memberships: GroupMembershipReturn[]) => {
-            jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
+            vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
                 buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.VISIONARY], ...organizationMember }),
                 false,
             ]);
-            jest.mocked(useGroupMemberships).mockReturnValue([memberships, false]);
+            vi.mocked(useGroupMemberships).mockReturnValue([memberships, false]);
             return render(<GroupMembershipSection />);
         };
 
@@ -135,7 +137,7 @@ describe('GroupMembershipSection', () => {
             const { rerender } = renderWith([sales, support]);
             screen.getByRole('button', { name: 'Act on Sales' }).focus();
 
-            jest.mocked(useGroupMemberships).mockReturnValue([[support], false]);
+            vi.mocked(useGroupMemberships).mockReturnValue([[support], false]);
             rerender(<GroupMembershipSection />);
 
             expect(screen.getByRole('button', { name: 'Act on Support' })).toHaveFocus();
@@ -145,7 +147,7 @@ describe('GroupMembershipSection', () => {
             const { rerender } = renderWith([sales, support]);
             screen.getByRole('button', { name: 'Act on Sales' }).focus();
 
-            jest.mocked(useGroupMemberships).mockReturnValue([[{ ...sales, State: 1 }, support], false]);
+            vi.mocked(useGroupMemberships).mockReturnValue([[{ ...sales, State: 1 }, support], false]);
             rerender(<GroupMembershipSection />);
 
             expect(screen.getByRole('button', { name: 'Act on Sales' })).toHaveFocus();
@@ -160,7 +162,7 @@ describe('GroupMembershipSection', () => {
             await act(() => new Promise((resolve) => setTimeout(resolve)));
 
             // An unrelated update to the list, e.g. from the event loop
-            jest.mocked(useGroupMemberships).mockReturnValue([[sales, { ...support, State: 0 }], false]);
+            vi.mocked(useGroupMemberships).mockReturnValue([[sales, { ...support, State: 0 }], false]);
             rerender(<GroupMembershipSection />);
 
             expect(document.body).toHaveFocus();
@@ -170,7 +172,7 @@ describe('GroupMembershipSection', () => {
             const { rerender } = renderWith([sales, support]);
             screen.getByRole('button', { name: 'Act on Sales' }).focus();
 
-            jest.mocked(useGroupMemberships).mockReturnValue([[support], false]);
+            vi.mocked(useGroupMemberships).mockReturnValue([[support], false]);
             rerender(<GroupMembershipSection />);
             const supportButton = screen.getByRole('button', { name: 'Act on Support' });
             expect(supportButton).toHaveFocus();
@@ -187,7 +189,7 @@ describe('GroupMembershipSection', () => {
             screen.getByRole('button', { name: 'Act on Sales' }).focus();
             outside.focus();
 
-            jest.mocked(useGroupMemberships).mockReturnValue([[support], false]);
+            vi.mocked(useGroupMemberships).mockReturnValue([[support], false]);
             rerender(<GroupMembershipSection />);
 
             expect(outside).toHaveFocus();

@@ -7,10 +7,10 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
 
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
-const onResolve = jest.fn();
-const onReject = jest.fn();
+const onResolve = vi.fn();
+const onReject = vi.fn();
 
 let mockSubscription: Subscription;
 
@@ -70,8 +70,8 @@ it('should display end date of the current subscription', () => {
 });
 
 it('should display the end date of the upcoming subscription if it exists', () => {
-    jest.useFakeTimers();
-    jest.setSystemTime(new Date('2024-01-01T00:00:00.000Z'));
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2024-01-01T00:00:00.000Z'));
 
     const upcomingPeriodEnd = new Date('2026-01-01T00:00:00.000Z');
     const withUpcoming = mockSubscription;
@@ -95,5 +95,5 @@ it('should display the end date of the upcoming subscription if it exists', () =
     // eslint-disable-next-line custom-rules/date-formatting-locale
     expect(container).toHaveTextContent(`expires on ${format(upcomingPeriodEnd, 'PPP')}`);
 
-    jest.useRealTimers();
+    vi.useRealTimers();
 });

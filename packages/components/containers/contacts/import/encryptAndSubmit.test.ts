@@ -1,3 +1,5 @@
+import type { MockedFunction } from 'vitest';
+
 import { API_CODES } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { prepareForSaving } from '@proton/shared/lib/contacts/surgery';
@@ -5,24 +7,24 @@ import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard'
 
 import { processContactsInBatches } from './encryptAndSubmit';
 
-jest.mock('@proton/shared/lib/contacts/encrypt');
-jest.mock('@proton/shared/lib/contacts/surgery');
+vi.mock('@proton/shared/lib/contacts/encrypt');
+vi.mock('@proton/shared/lib/contacts/surgery');
 
-const mockPrepareVCardContact = prepareVCardContact as jest.MockedFunction<typeof prepareVCardContact>;
-const mockPrepareForSaving = prepareForSaving as jest.MockedFunction<typeof prepareForSaving>;
+const mockPrepareVCardContact = prepareVCardContact as MockedFunction<typeof prepareVCardContact>;
+const mockPrepareForSaving = prepareForSaving as MockedFunction<typeof prepareForSaving>;
 
-const mockApi = jest.fn();
+const mockApi = vi.fn();
 const keyPair = {
     privateKey: 'private-key' as any,
     publicKey: 'public-key' as any,
 };
 const mockLabels = 0;
 const mockOverwrite = 0;
-const mockOnProgress = jest.fn();
+const mockOnProgress = vi.fn();
 
 describe('encryptAndSubmit', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         // Fake contact encryption
         mockPrepareForSaving.mockImplementation((contact) => contact);

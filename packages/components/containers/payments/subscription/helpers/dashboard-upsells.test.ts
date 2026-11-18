@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -39,11 +41,11 @@ const vpnPassProUpsell = {
 };
 
 describe('resolveUpsellsToDisplay', () => {
-    let mockedOpenSubscriptionModal: jest.Mock;
+    let mockedOpenSubscriptionModal: Mock;
     let base: Parameters<typeof resolveUpsellsToDisplay>[0];
 
     beforeEach(() => {
-        mockedOpenSubscriptionModal = jest.fn();
+        mockedOpenSubscriptionModal = vi.fn();
         base = {
             app: APPS.PROTONMAIL,
             subscription: subscriptionMail,

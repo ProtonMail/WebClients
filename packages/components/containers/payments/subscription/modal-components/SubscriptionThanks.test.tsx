@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { PLANS } from '@proton/payments/core/constants';
@@ -9,14 +10,14 @@ import { VPN_MOBILE_APP_LINKS } from '@proton/shared/lib/vpn/constants';
 import SubscriptionThanks from './SubscriptionThanks';
 
 // Mock the useConfig hook
-jest.mock('@proton/app-context/useConfig');
+vi.mock('@proton/app-context/useConfig');
 
 describe('SubscriptionThanks', () => {
-    const mockOnClose = jest.fn();
+    const mockOnClose = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        (useConfig as jest.Mock).mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
+        vi.clearAllMocks();
+        (useConfig as Mock).mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
     });
 
     it('renders mail version correctly with download links', () => {
@@ -35,7 +36,7 @@ describe('SubscriptionThanks', () => {
     });
 
     it('renders VPN version correctly with download links', () => {
-        (useConfig as jest.Mock).mockReturnValue({ APP_NAME: APPS.PROTONVPN_SETTINGS });
+        (useConfig as Mock).mockReturnValue({ APP_NAME: APPS.PROTONVPN_SETTINGS });
 
         render(<SubscriptionThanks onClose={mockOnClose} planIDs={{}} />);
 

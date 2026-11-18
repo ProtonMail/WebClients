@@ -5,8 +5,8 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import MembersStep from './MembersStep';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn().mockReturnValue([{ hasGroups: true }, false]),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn().mockReturnValue([{ hasGroups: true }, false]),
 }));
 
 describe('MembersStep', () => {
@@ -17,12 +17,12 @@ describe('MembersStep', () => {
         selectedUsers: [],
         groups: [],
         selectedGroups: [],
-        onSelectUser: jest.fn(),
-        onSelectGroup: jest.fn(),
-        onSelectAllUsers: jest.fn(),
-        onSelectAllGroups: jest.fn(),
+        onSelectUser: vi.fn(),
+        onSelectGroup: vi.fn(),
+        onSelectAllUsers: vi.fn(),
+        onSelectAllGroups: vi.fn(),
         applyPolicyTo: 'users' as const,
-        onChangeApplyPolicyTo: jest.fn(),
+        onChangeApplyPolicyTo: vi.fn(),
     };
 
     it('should not show policy-related divs when canCreateGroupsPolicy is false because VPN Professional', () => {

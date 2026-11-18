@@ -19,10 +19,10 @@ import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { computeAddonCustomizerItems, getAddonCustomizerProperties } from './addonCustomizerHelpers';
 import { IncreaseBlockedReason } from './helpers';
 
-const onChangeMock = jest.fn();
+const onChangeMock = vi.fn();
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 // ─── computeAddonCustomizerItems ─────────────────────────────────────────────

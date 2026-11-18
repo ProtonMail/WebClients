@@ -16,16 +16,16 @@ const regionTexts = (politeness: 'assertive' | 'polite' = 'assertive') =>
 
 const advance = (ms: number) =>
     act(() => {
-        jest.advanceTimersByTime(ms);
+        vi.advanceTimersByTime(ms);
     });
 
 describe('LiveAnnouncerProvider', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('writes the message to a live region after a short delay, then clears it', () => {
@@ -251,7 +251,7 @@ describe('LiveAnnouncerProvider', () => {
                 announcer.announce('Dave joined', { politeness: 'polite' });
             },
             'cooldown end': () => {
-                jest.advanceTimersByTime(800);
+                vi.advanceTimersByTime(800);
             },
             'suspend on': (announcer) => {
                 announcer.setSuspendNonCritical(true);

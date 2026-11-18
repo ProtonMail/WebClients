@@ -1,24 +1,25 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { Mock } from 'vitest';
 
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
-import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
-import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
+import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { FeatureCode } from '@proton/features/interface';
-import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
-import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
+import { mockUseFeature } from '@proton/features/testing/vitest/mockUseFeature';
 import { ALMOST_ALL_MAIL, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { renderWithProviders } from '../../testing/renderWithProviders';
+import { mockUseMailSettings } from '../../testing/vitest/mockUseMailSettings';
+import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import MessagesSection from './MessagesSection';
 
 describe('MessagesSection', () => {
-    let mockedApi: jest.Mock;
+    let mockedApi: Mock;
 
     const renderComponent = (props = {}) => renderWithProviders(<MessagesSection {...props} />);
 
     beforeEach(() => {
-        mockedApi = jest.fn();
+        mockedApi = vi.fn();
 
         mockUseApi(mockedApi);
 

@@ -10,28 +10,28 @@ import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import { type Props, ProtonPlanCustomizer } from './ProtonPlanCustomizer';
 
-const onChangePlanIDsMock = jest.fn();
+const onChangePlanIDsMock = vi.fn();
 
-const mockUseFlag = jest.fn().mockReturnValue(false);
-jest.mock('@proton/unleash/useFlag', () => ({
+const mockUseFlag = vi.fn().mockReturnValue(false);
+vi.mock('@proton/unleash/useFlag', () => ({
     useFlag: (...args: any[]) => mockUseFlag(...args),
 }));
 
 // Domain gating reads its feature flag through the standalone client (in showAddonCustomizer), not the hook.
-const mockIsEnabled = jest.fn().mockReturnValue(false);
-jest.mock('@proton/unleash/standaloneClient', () => ({
+const mockIsEnabled = vi.fn().mockReturnValue(false);
+vi.mock('@proton/unleash/standaloneClient', () => ({
     getStandaloneUnleashClient: () => ({ isEnabled: (...args: any[]) => mockIsEnabled(...args) }),
 }));
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    useConfig: jest.fn().mockReturnValue({
+    useConfig: vi.fn().mockReturnValue({
         APP_NAME: 'proton-account',
     }),
 }));
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     mockUseFlag.mockReturnValue(false);
     mockIsEnabled.mockReturnValue(false);
 });

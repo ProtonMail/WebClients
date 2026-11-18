@@ -1,30 +1,33 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
+
 import { useDocsNotificationsSettings } from './useDocsNotificationsSettings';
 
-jest.mock('@proton/app-context/useApi', () => ({
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    useApi: jest.fn(),
+    useApi: vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    useNotifications: jest.fn(() => ({
-        createNotification: jest.fn(),
+    useNotifications: vi.fn(() => ({
+        createNotification: vi.fn(),
     })),
 }));
 
 describe('useDocsNotificationsSettings', () => {
-    const mockApi = jest.fn();
-    const mockCreateNotification = jest.fn();
+    const mockApi = vi.fn();
+    const mockCreateNotification = vi.fn();
 
     beforeEach(() => {
-        jest.resetAllMocks();
-        require('@proton/app-context/useApi').useApi.mockReturnValue(mockApi);
-        require('@proton/app-context/useNotifications').useNotifications.mockReturnValue({
+        vi.resetAllMocks();
+        vi.mocked(useApi).mockReturnValue(mockApi);
+        vi.mocked(useNotifications).mockReturnValue({
             createNotification: mockCreateNotification,
-        });
+        } as any);
         mockApi.mockImplementation(() =>
             Promise.resolve({
                 UserSettings: {

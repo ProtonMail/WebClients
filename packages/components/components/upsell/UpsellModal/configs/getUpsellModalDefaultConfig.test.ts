@@ -6,14 +6,14 @@ import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import type { UpsellModalConfigParams } from '../interface';
 import { getUpsellModalDefaultConfig } from './getUpsellModalDefaultConfig';
 
-jest.mock('@proton/payments/core/checkout');
-jest.mock('@proton/payments/core/subscription/selected-plan', () => ({
-    SelectedPlan: { createFromSubscription: jest.fn() },
+vi.mock('@proton/payments/core/checkout');
+vi.mock('@proton/payments/core/subscription/selected-plan', () => ({
+    SelectedPlan: { createFromSubscription: vi.fn() },
 }));
 
 // @ts-expect-error - mock of paymentApi call
 const paymentsApiMock: PaymentsApi = {
-    checkSubscription: jest.fn(),
+    checkSubscription: vi.fn(),
 };
 
 const MOCK_YEARLY_PRICE_BRL = 120;
@@ -26,7 +26,7 @@ async function setupTest(currency: Currency) {
         AmountDue: MOCK_YEARLY_PRICE_BRL,
     });
     // @ts-expect-error - mock of checkout call
-    jest.spyOn(checkoutModule, 'getCheckoutUi').mockReturnValue({
+    vi.spyOn(checkoutModule, 'getCheckoutUi').mockReturnValue({
         withDiscountPerCycle: MOCK_YEARLY_PRICE_BRL,
         withoutDiscountPerCycle: MOCK_YEARLY_PRICE_BRL_WITHOUT_DISCOUNT,
     });
@@ -57,7 +57,7 @@ async function setupTest(currency: Currency) {
 
 describe('getUpsellModalDefaultConfig', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('When main currency it should return correct config', async () => {

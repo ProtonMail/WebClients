@@ -12,12 +12,12 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
-import { renderWithProviders } from '../../../../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../../../../testing/vitest/renderWithProviders';
 import { useFeedbackFirstCancellationFlow } from '../useFeedbackFirstCancellationFlow';
 
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
 const mailSubscription = { ...buildSubscription(PLANS.MAIL), ID: 'sub-mail' };
 const driveSubscription = { ...buildSubscription(PLANS.DRIVE), ID: 'sub-drive' };

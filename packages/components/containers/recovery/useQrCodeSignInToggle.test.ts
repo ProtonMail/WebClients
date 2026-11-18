@@ -7,30 +7,30 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 
 import { useQrCodeSignInToggle } from './useQrCodeSignInToggle';
 
-const mockDispatch = jest.fn();
-const mockCreateNotification = jest.fn();
-const mockSendRecoverySettingEnabled = jest.fn();
+const mockDispatch = vi.fn();
+const mockCreateNotification = vi.fn();
+const mockSendRecoverySettingEnabled = vi.fn();
 
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => mockDispatch }));
-jest.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: jest.fn() }));
-jest.mock('@proton/account/recovery/userSettingsActions', () => ({
-    toggleQrCodeSignIn: jest.fn((payload) => payload),
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => mockDispatch }));
+vi.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: vi.fn() }));
+vi.mock('@proton/account/recovery/userSettingsActions', () => ({
+    toggleQrCodeSignIn: vi.fn((payload) => payload),
 }));
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
-jest.mock('./recoverySettingsTelemetry', () => ({
+vi.mock('./recoverySettingsTelemetry', () => ({
     useRecoverySettingsTelemetry: () => ({ sendRecoverySettingEnabled: mockSendRecoverySettingEnabled }),
 }));
 
 const mockUserSettings = (EdmOptOut: number) =>
-    jest.mocked(useUserSettings).mockReturnValue([{ Flags: { EdmOptOut } } as any, false, undefined]);
+    vi.mocked(useUserSettings).mockReturnValue([{ Flags: { EdmOptOut } } as any, false, undefined]);
 
 const change = (checked: boolean) => ({ target: { checked } }) as ChangeEvent<HTMLInputElement>;
 
 describe('useQrCodeSignInToggle', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockDispatch.mockResolvedValue(undefined);
     });
 

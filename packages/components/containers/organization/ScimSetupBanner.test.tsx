@@ -1,14 +1,15 @@
 import { render, screen } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useFlag } from '@proton/unleash/useFlag';
 
 import ScimSetupBanner from './ScimSetupBanner';
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.MockedFunction<any>;
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as MockedFunction<any>;
 
 let mockIsScimEnabled = true;
-jest.mock('@proton/account/organization/hooks', () => ({
+vi.mock('@proton/account/organization/hooks', () => ({
     useOrganization: () => [{ IsScimEnabled: mockIsScimEnabled }],
 }));
 
@@ -18,7 +19,7 @@ const renderBanner = (counts: { pendingUsersCount?: number; pendingGroupsCount?:
             pendingUsersCount={counts.pendingUsersCount ?? 0}
             pendingGroupsCount={counts.pendingGroupsCount ?? 0}
             cleanUpCount={counts.cleanUpCount ?? 0}
-            onReviewChanges={jest.fn()}
+            onReviewChanges={vi.fn()}
         />
     );
 

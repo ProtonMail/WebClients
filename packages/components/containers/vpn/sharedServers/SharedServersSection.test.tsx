@@ -1,5 +1,6 @@
 import { act, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { Mock } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getOrganizationState } from '@proton/account/testing/redux-state';
@@ -9,18 +10,18 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { organization } from '../../../testing/subscriptionData';
-import { renderWithProviders } from '../../contacts/tests/render';
+import { renderWithProviders } from '../../contacts/tests/vitest/render';
 import SharedServersSection from './SharedServersSection';
 import { SharedServersBuilder } from './SharedServersSection.test.builder';
 import { useSharedServers as useSharedServersHook } from './useSharedServers';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn().mockReturnValue({ createNotification: vi.fn() }),
 }));
 
-jest.mock('./useSharedServers');
+vi.mock('./useSharedServers');
 
-const useSharedServersMock = useSharedServersHook as jest.Mock;
+const useSharedServersMock = useSharedServersHook as Mock;
 const vpnSubscription = buildSubscription();
 
 describe('SharedServersSection', () => {
@@ -43,7 +44,7 @@ describe('SharedServersSection', () => {
         }),
     };
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('defaults to Off mode when org has no policies', async () => {

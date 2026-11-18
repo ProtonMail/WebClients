@@ -10,15 +10,15 @@ import vpnAppBackground from '@proton/styles/assets/img/onboarding/feature_tour-
 
 import { shouldDisplayProtonVPNTourStep } from './ProtonVPNTourStep';
 
-jest.mock('@proton/account/entitlementCatalog/actions', () => ({
-    entitlementChecksForOrgAndUserThunk: jest.fn(() => 'entitlements'),
+vi.mock('@proton/account/entitlementCatalog/actions', () => ({
+    entitlementChecksForOrgAndUserThunk: vi.fn(() => 'entitlements'),
 }));
 
 const preloadUrls = [logoVpn, vpnAppBackground];
 
 const buildDispatch = (entitlements: ReturnType<typeof buildOrgAndUserEntitlementChecks>) => {
     const values: Record<string, unknown> = { entitlements };
-    return jest.fn((action: string) => Promise.resolve(values[action])) as unknown as SharedStore['dispatch'];
+    return vi.fn((action: string) => Promise.resolve(values[action])) as unknown as SharedStore['dispatch'];
 };
 
 const shouldDisplayFor = (subscriptionPlans: CataloguedPlan[]) =>

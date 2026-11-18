@@ -9,7 +9,7 @@ import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { Tree } from './Tree';
 import type { SidebarTree } from './interface';
 
-jest.mock('./animated', () => ({
+vi.mock('./animated', () => ({
     AnimatedChildren: ({ isOpen, children }: { isOpen: boolean; children: React.ReactNode }) => (
         <div data-component="animated-children" data-state={isOpen ? 'open' : 'closed'} aria-hidden={!isOpen}>
             {children}

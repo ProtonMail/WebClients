@@ -4,16 +4,16 @@ import * as browserHelper from '@proton/shared/lib/helpers/browser';
 
 import GetVPNApp from './GetVPNApp';
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    isMac: jest.fn(() => false),
-    isWindows: jest.fn(() => false),
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    isMac: vi.fn(() => false),
+    isWindows: vi.fn(() => false),
 }));
 
 describe('GetVPNApp', () => {
-    const mockOnDownload = jest.fn();
+    const mockOnDownload = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should show desktop tab by default when not connected to VPN', () => {
@@ -58,8 +58,8 @@ describe('GetVPNApp', () => {
     });
 
     it('should show macOS download button when on Mac', () => {
-        jest.spyOn(browserHelper, 'isMac').mockReturnValue(true);
-        jest.spyOn(browserHelper, 'isWindows').mockReturnValue(false);
+        vi.spyOn(browserHelper, 'isMac').mockReturnValue(true);
+        vi.spyOn(browserHelper, 'isWindows').mockReturnValue(false);
 
         render(<GetVPNApp onDownload={mockOnDownload} isVpnConnection={false} />);
 
@@ -67,8 +67,8 @@ describe('GetVPNApp', () => {
     });
 
     it('should show Windows download button when on Windows', () => {
-        jest.spyOn(browserHelper, 'isMac').mockReturnValue(false);
-        jest.spyOn(browserHelper, 'isWindows').mockReturnValue(true);
+        vi.spyOn(browserHelper, 'isMac').mockReturnValue(false);
+        vi.spyOn(browserHelper, 'isWindows').mockReturnValue(true);
 
         render(<GetVPNApp onDownload={mockOnDownload} isVpnConnection={false} />);
 

@@ -10,16 +10,16 @@ import GroupActions from './GroupActions';
 import useGroupActions from './useGroupActions';
 
 // Mocked so that the confirmation prompt renders in the same container
-jest.mock('react-dom', () => ({
-    ...jest.requireActual('react-dom'),
+vi.mock('react-dom', async () => ({
+    ...(await vi.importActual('react-dom')),
     createPortal: (node: any) => node,
 }));
 
-jest.mock('./useGroupActions', () => jest.fn());
+vi.mock('./useGroupActions', () => ({ __esModule: true, default: vi.fn() }));
 
-const acceptInvitation = jest.fn(() => Promise.resolve());
-const declineInvitation = jest.fn(() => Promise.resolve());
-const leaveMembership = jest.fn(() => Promise.resolve());
+const acceptInvitation = vi.fn(() => Promise.resolve());
+const declineInvitation = vi.fn(() => Promise.resolve());
+const leaveMembership = vi.fn(() => Promise.resolve());
 
 const getMembership = (overrides: Partial<GroupMembership> = {}): GroupMembership => ({
     Name: 'Sales',
@@ -34,8 +34,8 @@ const getMembership = (overrides: Partial<GroupMembership> = {}): GroupMembershi
 
 describe('GroupActions', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(useGroupActions).mockReturnValue({ acceptInvitation, declineInvitation, leaveMembership });
+        vi.clearAllMocks();
+        vi.mocked(useGroupActions).mockReturnValue({ acceptInvitation, declineInvitation, leaveMembership });
     });
 
     it('offers accept and decline for an invitation', () => {

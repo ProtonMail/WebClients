@@ -8,7 +8,7 @@ describe('TokensCondition', () => {
         const condition = {
             values: ['token1', 'token2'],
         } as Condition;
-        const onRemove = jest.fn();
+        const onRemove = vi.fn();
         const utils = render(<TokensCondition condition={condition} onRemove={onRemove} />);
         return { ...utils, condition, onRemove };
     };

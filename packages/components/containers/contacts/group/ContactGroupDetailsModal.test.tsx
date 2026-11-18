@@ -2,17 +2,17 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
-import { clearAll, minimalCache, renderWithProviders } from '../tests/render';
+import { clearAll, minimalCache, renderWithProviders } from '../tests/vitest/render';
 import type { ContactGroupDetailsProps } from './ContactGroupDetailsModal';
 import ContactGroupDetailsModal from './ContactGroupDetailsModal';
 
 describe('ContactGroupDetailsModal', () => {
     const props: ContactGroupDetailsProps = {
         contactGroupID: 'ContactGroupID',
-        onEdit: jest.fn(),
-        onDelete: jest.fn(),
-        onExport: jest.fn(),
-        onUpgrade: jest.fn(),
+        onEdit: vi.fn(),
+        onDelete: vi.fn(),
+        onExport: vi.fn(),
+        onUpgrade: vi.fn(),
     };
 
     const group: ContactGroup = {

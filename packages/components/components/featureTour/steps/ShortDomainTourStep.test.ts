@@ -5,13 +5,13 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { shouldDisplayShortDomainTourStep } from './ShortDomainTourStep';
 
-jest.mock('@proton/account/addresses', () => ({
-    ...jest.requireActual('@proton/account/addresses'),
-    addressesThunk: jest.fn(() => 'addresses'),
+vi.mock('@proton/account/addresses', async () => ({
+    ...(await vi.importActual('@proton/account/addresses')),
+    addressesThunk: vi.fn(() => 'addresses'),
 }));
-jest.mock('@proton/account/user', () => ({
-    ...jest.requireActual('@proton/account/user'),
-    userThunk: jest.fn(() => 'user'),
+vi.mock('@proton/account/user', async () => ({
+    ...(await vi.importActual('@proton/account/user')),
+    userThunk: vi.fn(() => 'user'),
 }));
 
 const buildDispatch = ({ hasPaidMail, addresses }: { hasPaidMail: boolean; addresses: Address[] }) => {
@@ -19,7 +19,7 @@ const buildDispatch = ({ hasPaidMail, addresses }: { hasPaidMail: boolean; addre
         user: buildUser({ hasPaidMail }),
         addresses,
     };
-    return jest.fn((action: string) => Promise.resolve(values[action])) as unknown as SharedStore['dispatch'];
+    return vi.fn((action: string) => Promise.resolve(values[action])) as unknown as SharedStore['dispatch'];
 };
 
 describe('shouldDisplayShortDomainTourStep', () => {

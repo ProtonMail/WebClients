@@ -1,43 +1,45 @@
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 
 import BreachAlertsSecurityCenter from './BreachAlertsSecurityCenter';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    useNotifications: jest.fn().mockReturnValue({
-        createNotification: jest.fn(),
+    useNotifications: vi.fn().mockReturnValue({
+        createNotification: vi.fn(),
     }),
 }));
 
-jest.mock('../../../../../containers/credentialLeak/useBreaches', () => ({
+vi.mock('../../../../../containers/credentialLeak/useBreaches', () => ({
     __esModule: true,
-    useBreaches: jest.fn().mockReturnValue({ breaches: [], actions: jest.fn() }),
+    useBreaches: vi.fn().mockReturnValue({ breaches: [], actions: vi.fn() }),
 }));
 
-jest.mock('@proton/react-redux-store/ProtonStoreContext', () => ({
+vi.mock('@proton/react-redux-store/ProtonStoreContext', () => ({
     __esModule: true,
-    baseUseDispatch: jest.fn(),
-    baseUseSelector: jest.fn(),
+    baseUseDispatch: vi.fn(),
+    baseUseSelector: vi.fn(),
+    baseUseStore: vi.fn(),
 }));
 
-jest.mock('../../../../../hooks/useEventManager', () => ({
+vi.mock('../../../../../hooks/useEventManager', () => ({
     __esModule: true,
-    default: jest.fn().mockReturnValue({ call: jest.fn() }),
+    default: vi.fn().mockReturnValue({ call: vi.fn() }),
 }));
 
-jest.mock('@proton/hooks/useLoading', () => ({
+vi.mock('@proton/hooks/useLoading', () => ({
     __esModule: true,
-    default: jest.fn().mockReturnValue([false, jest.fn().mockResolvedValue(() => {})]),
+    default: vi.fn().mockReturnValue([false, vi.fn().mockResolvedValue(() => {})]),
 }));
 
-jest.mock('@proton/account/user/hooks');
-const mockedUser = useUser as jest.Mock;
+vi.mock('@proton/account/user/hooks');
+const mockedUser = useUser as Mock;
 
-jest.mock('@proton/account/userSettings/hooks');
-const mocedUserSettings = useUserSettings as jest.Mock;
+vi.mock('@proton/account/userSettings/hooks');
+const mocedUserSettings = useUserSettings as Mock;
 
 describe('BreachAlertsSecurityCenter', () => {
     it('Should display the upsell if the user is free', () => {

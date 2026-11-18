@@ -6,7 +6,7 @@ import useFilterConditions from './useFilterConditions';
 describe('useFilterConditions', () => {
     const condition = { id: 'test' } as Condition;
     const initialConditions = [condition];
-    const onChangeConditions = jest.fn();
+    const onChangeConditions = vi.fn();
 
     it('should generate an initial condition', () => {
         const { result } = renderHook(() => useFilterConditions());

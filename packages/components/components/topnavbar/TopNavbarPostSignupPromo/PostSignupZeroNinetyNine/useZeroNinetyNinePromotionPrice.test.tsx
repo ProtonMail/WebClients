@@ -5,9 +5,9 @@ import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
-import { getStoreWrapper } from '../../../../testing/renderWithProviders';
+import { getStoreWrapper } from '../../../../testing/vitest/renderWithProviders';
 import { useZeroNinetyNinePromotionPrice } from './useZeroNinetyNinePromotionPrice';
 
 const checkUrl = 'payments/v5/subscription/check';
@@ -15,7 +15,7 @@ const checkUrl = 'payments/v5/subscription/check';
 const getCheckCalls = () => apiMock.mock.calls.map(([config]) => config).filter((config) => config.url === checkUrl);
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     clearApiMocks();
 });
 

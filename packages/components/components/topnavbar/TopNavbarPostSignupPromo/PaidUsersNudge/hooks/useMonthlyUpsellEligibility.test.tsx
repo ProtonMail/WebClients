@@ -1,4 +1,5 @@
 import { subDays } from 'date-fns';
+import type { Mock } from 'vitest';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -13,25 +14,27 @@ import { HIDE_OFFER } from '../helpers/interface';
 import { paidConfig } from '../monthlyPaidUserNudgeConfig';
 import { useMonthlyUpsellEligibility } from './useMonthlyUpsellEligibility';
 
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/payments-hooks/react-extensions/useMultiSubscriptionContext', () => ({
-    useMultiSubscriptionContext: () =>
-        jest
-            .requireActual('@proton/payments/testing/buildMultiSubscriptionContext')
-            .buildMultiSubscriptionContextFromSubscription(
-                jest.requireMock('@proton/account/subscription/hooks').useSubscription()[0]
-            ),
-}));
-const mockUseSubscription = useSubscription as jest.Mock;
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/payments-hooks/react-extensions/useMultiSubscriptionContext', async () => {
+    const { buildMultiSubscriptionContextFromSubscription } = await vi.importActual<any>(
+        '@proton/payments/testing/buildMultiSubscriptionContext'
+    );
+    const subscriptionHooks = await import('@proton/account/subscription/hooks');
+    return {
+        useMultiSubscriptionContext: () =>
+            buildMultiSubscriptionContextFromSubscription((subscriptionHooks.useSubscription as Mock)()[0]),
+    };
+});
+const mockUseSubscription = useSubscription as Mock;
 
-jest.mock('@proton/features/useFeature');
-const mockUseFeature = useFeature as jest.Mock;
+vi.mock('@proton/features/useFeature');
+const mockUseFeature = useFeature as Mock;
 
-jest.mock('@proton/app-context/useConfig');
-const mockUseConfig = useConfig as jest.Mock;
+vi.mock('@proton/app-context/useConfig');
+const mockUseConfig = useConfig as Mock;
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.Mock;
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as Mock;
 
 const today = new Date();
 const defaultSubscription = {

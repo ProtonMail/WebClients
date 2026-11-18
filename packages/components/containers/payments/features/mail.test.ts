@@ -7,8 +7,8 @@ import { getMailFeatures } from './mail';
 
 type ScribeColumn = keyof PlanCardFeature['plans'];
 
-const mockIsEnabled = jest.fn();
-jest.mock('@proton/unleash/standaloneClient', () => ({
+const mockIsEnabled = vi.fn();
+vi.mock('@proton/unleash/standaloneClient', () => ({
     getStandaloneUnleashClient: () => ({ isEnabled: mockIsEnabled }),
 }));
 

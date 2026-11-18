@@ -1,18 +1,20 @@
+import type { MockedFunction } from 'vitest';
+
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { applyHOCs } from '../../testing/hocs/helpers';
-import { withApi } from '../../testing/hocs/with-api';
+import { withApi } from '../../testing/vitest/with-api';
+import { withEventManager } from '../../testing/vitest/with-event-manager';
 import { withAuthentication } from '../../testing/with-authentication';
 import { withCache } from '../../testing/with-cache';
 import { withConfig } from '../../testing/with-config';
-import { withEventManager } from '../../testing/with-event-manager';
 import { withNotifications } from '../../testing/with-notifications';
-import { renderWithProviders } from '../contacts/tests/render';
+import { renderWithProviders } from '../contacts/tests/vitest/render';
 import OutgoingForwardTable from './OutgoingForwardTable';
 
 const OutgoingForwardTableContext = applyHOCs(
@@ -24,11 +26,11 @@ const OutgoingForwardTableContext = applyHOCs(
     withAuthentication()
 )(OutgoingForwardTable);
 
-jest.mock('@proton/account/addresses/hooks');
-const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
+vi.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as MockedFunction<any>;
 
-jest.mock('@proton/account/addressKeys/hooks');
-const mockUserAddressesKeys = useAddressesKeys as jest.MockedFunction<any>;
+vi.mock('@proton/account/addressKeys/hooks');
+const mockUserAddressesKeys = useAddressesKeys as MockedFunction<any>;
 
 describe('OutgoingForwardTable', () => {
     beforeEach(() => {

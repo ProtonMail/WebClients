@@ -7,7 +7,7 @@ import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import ScribeAddon from './ScribeAddon';
 
-jest.mock('./subscription/assistant/helpers', () => ({
+vi.mock('./subscription/assistant/helpers', () => ({
     getScribeUpsellText: () => 'AI-powered writing assistant',
     getScribeUpsellLearnMore: () => 'https://proton.me/support',
     getScribeWritingAssistantText: () => 'Proton Scribe writing assistant',
@@ -24,12 +24,12 @@ const baseProps = {
     min: 0,
     decreaseBlockedReasons: [],
     increaseBlockedReasons: [],
-    onAddScribe: jest.fn(),
+    onAddScribe: vi.fn(),
     mode: undefined as 'signup' | undefined,
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 describe('ScribeAddon', () => {
@@ -55,7 +55,7 @@ describe('ScribeAddon', () => {
     });
 
     it('clicking the banner calls onAddScribe and replaces the banner with the NumberCustomiser', () => {
-        const onAddScribe = jest.fn();
+        const onAddScribe = vi.fn();
         render(<ScribeAddon {...baseProps} mode="signup" audience={Audience.B2B} onAddScribe={onAddScribe} />);
 
         fireEvent.click(screen.getByRole('button', { name: /^add$/i }));

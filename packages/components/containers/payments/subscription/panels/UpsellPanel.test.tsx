@@ -1,4 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
@@ -10,15 +11,15 @@ import { mockDefaultBreakpoints } from '../../../../testing/mockUseActiveBreakpo
 import type { UpsellPanelProps } from './UpsellPanel';
 import UpsellPanel from './UpsellPanel';
 
-jest.mock('../../../../hooks/useActiveBreakpoint');
-const mockUseActiveBreakpoint = useActiveBreakpoint as jest.MockedFn<typeof useActiveBreakpoint>;
+vi.mock('../../../../hooks/useActiveBreakpoint');
+const mockUseActiveBreakpoint = useActiveBreakpoint as MockedFunction<typeof useActiveBreakpoint>;
 
 describe('UpsellBox', () => {
     beforeEach(() => {
         mockUseActiveBreakpoint.mockReturnValue(mockDefaultBreakpoints);
     });
 
-    const handleUpgrade = jest.fn();
+    const handleUpgrade = vi.fn();
     const upsellBoxBaseProps: UpsellPanelProps = {
         title: 'Upgrade to Plus',
         features: [

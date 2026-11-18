@@ -1,18 +1,17 @@
 import { render, screen } from '@testing-library/react';
-import { mocked } from 'jest-mock';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { CalendarMember, CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 
-import { mockNotifications } from '../../../testing/mockNotifications';
+import { mockNotifications } from '../../../testing/vitest/mockNotifications';
 import CalendarMemberAndInvitationList from './CalendarMemberAndInvitationList';
 
-jest.mock('../../../hooks/useGetEncryptionPreferences');
-jest.mock('@proton/app-context/useNotifications');
-jest.mock('@proton/account/addresses/hooks');
+vi.mock('../../../hooks/useGetEncryptionPreferences');
+vi.mock('@proton/app-context/useNotifications');
+vi.mock('@proton/account/addresses/hooks');
 
-jest.mock('../../contacts/ContactEmailsProvider', () => ({
+vi.mock('../../contacts/ContactEmailsProvider', () => ({
     useContactEmailsCache: () => ({
         contactEmails: [],
         contactGroups: [],
@@ -30,7 +29,7 @@ jest.mock('../../contacts/ContactEmailsProvider', () => ({
     }),
 }));
 
-const mockedUseNotifications = mocked(useNotifications);
+const mockedUseNotifications = vi.mocked(useNotifications);
 
 describe('CalendarMemberAndInvitationList', () => {
     beforeEach(() => {

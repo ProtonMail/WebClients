@@ -1,21 +1,22 @@
 import { render } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { ConditionComparator, ConditionType, FilterStatement } from '@proton/sieve/filterModel';
 
 import ForwardConditions from './ForwardConditions';
 
-jest.mock('@proton/app-context/useNotifications');
-const mockUseNotifications = useNotifications as jest.MockedFunction<any>;
+vi.mock('@proton/app-context/useNotifications');
+const mockUseNotifications = useNotifications as MockedFunction<any>;
 mockUseNotifications.mockReturnValue({
-    createNotification: jest.fn(),
+    createNotification: vi.fn(),
 });
 
 describe('ForwardConditions', () => {
     const setup = ({ statement = FilterStatement.ALL } = {}) => {
-        const onChangeStatement = jest.fn();
-        const onChangeConditions = jest.fn();
-        const validator = jest.fn();
+        const onChangeStatement = vi.fn();
+        const onChangeConditions = vi.fn();
+        const validator = vi.fn();
         const conditions = [
             {
                 id: 'id1',

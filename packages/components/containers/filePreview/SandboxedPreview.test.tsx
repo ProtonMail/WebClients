@@ -1,12 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { SandboxedPreview } from './SandboxedPreview';
 
-jest.mock('@proton/shared/lib/helpers/sentry');
+vi.mock('@proton/shared/lib/helpers/sentry');
 
-const mockTraceError = traceError as jest.Mock;
+const mockTraceError = traceError as Mock;
 
 const MIME_TYPE = 'text/plain';
 const CONTENTS = [new Uint8Array([1, 2, 3])];
@@ -27,13 +28,13 @@ const readBlobAsText = (blob: Blob) =>
     });
 
 describe('SandboxedPreview', () => {
-    let createObjectURLSpy: jest.Mock;
+    let createObjectURLSpy: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        createObjectURLSpy = jest.fn().mockReturnValue('blob:mock-url');
+        vi.clearAllMocks();
+        createObjectURLSpy = vi.fn().mockReturnValue('blob:mock-url');
         URL.createObjectURL = createObjectURLSpy;
-        URL.revokeObjectURL = jest.fn();
+        URL.revokeObjectURL = vi.fn();
     });
 
     it('renders an iframe locked down with allow-scripts-only sandboxing and a restrictive CSP', () => {
@@ -94,7 +95,7 @@ describe('SandboxedPreview', () => {
         // Scenario A: the sandboxed document navigated away before firing its load event.
         const { unmount } = render(<SandboxedPreview mimeType={MIME_TYPE} contents={CONTENTS} />);
         const staleIframe = getIframe();
-        const stalePostMessageSpy = jest.spyOn(staleIframe.contentWindow as Window, 'postMessage');
+        const stalePostMessageSpy = vi.spyOn(staleIframe.contentWindow as Window, 'postMessage');
         staleIframe.setAttribute('src', 'about:blank');
         fireEvent(staleIframe, new Event('load'));
         expect(stalePostMessageSpy).not.toHaveBeenCalled();
@@ -103,7 +104,7 @@ describe('SandboxedPreview', () => {
         // Scenario B: a normal load, fired twice, only sends the contents once.
         render(<SandboxedPreview mimeType={MIME_TYPE} contents={CONTENTS} />);
         const iframe = getIframe();
-        const postMessageSpy = jest.spyOn(iframe.contentWindow as Window, 'postMessage');
+        const postMessageSpy = vi.spyOn(iframe.contentWindow as Window, 'postMessage');
         fireEvent(iframe, new Event('load'));
         fireEvent(iframe, new Event('load'));
         expect(postMessageSpy).toHaveBeenCalledTimes(1);
@@ -132,8 +133,8 @@ describe('SandboxedPreview', () => {
         const { unmount } = render(<SandboxedPreview mimeType={MIME_TYPE} contents={CONTENTS} />);
 
         const iframe = getIframe();
-        const removeIframeListenerSpy = jest.spyOn(iframe, 'removeEventListener');
-        const removeWindowListenerSpy = jest.spyOn(window, 'removeEventListener');
+        const removeIframeListenerSpy = vi.spyOn(iframe, 'removeEventListener');
+        const removeWindowListenerSpy = vi.spyOn(window, 'removeEventListener');
 
         unmount();
 

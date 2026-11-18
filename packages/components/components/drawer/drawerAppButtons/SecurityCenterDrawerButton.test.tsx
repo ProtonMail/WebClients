@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import {
     selectAccountSecurityElements,
@@ -15,41 +16,46 @@ import SecurityCenterDrawerAppButton from '../drawerAppButtons/SecurityCenterDra
 import useSecurityCenter from '../views/SecurityCenter/useSecurityCenter';
 import DrawerAppButton from './DrawerAppButton';
 
-jest.mock('@proton/account/breaches/breachNotificationsSlice', () => ({
-    selectUnreadBreachesCount: jest.fn(),
+vi.mock('@proton/account/breaches/breachNotificationsSlice', () => ({
+    selectUnreadBreachesCount: vi.fn(),
 }));
 
-jest.mock('@proton/account/accountSecurity/accountSecuritySlice', () => ({
-    selectHasAccountSecurityIssue: jest.fn(),
-    selectAccountSecurityElements: jest.fn(),
-    selectAccountSecurityIssuesCount: jest.fn(),
-    selectCanDisplayAccountSecuritySection: jest.fn(),
+vi.mock('@proton/account/accountSecurity/accountSecuritySlice', () => ({
+    selectHasAccountSecurityIssue: vi.fn(),
+    selectAccountSecurityElements: vi.fn(),
+    selectAccountSecurityIssuesCount: vi.fn(),
+    selectCanDisplayAccountSecuritySection: vi.fn(),
 }));
 
-jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: jest.fn(),
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn(),
 }));
 
-jest.mock('@proton/react-redux-store/ProtonStoreContext', () => ({
-    baseUseSelector: jest.fn(),
+vi.mock('@proton/react-redux-store/ProtonStoreContext', () => ({
+    baseUseSelector: vi.fn(),
 }));
 
-jest.mock('../../../hooks/drawer/useDrawer', () => ({
+vi.mock('../../../hooks/drawer/useDrawer', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('../views/SecurityCenter/useSecurityCenter', () => jest.fn());
-jest.mock('./DrawerAppButton', () => jest.fn(() => null));
-jest.mock('../views/SecurityCenter/BreachAlertsSpotlight', () => jest.fn(({ children }) => <div>{children}</div>));
-jest.mock('../drawerIcons/SecurityCenterDrawerLogo', () => ({
-    SecurityCenterDrawerLogo: jest.fn(() => <div>SecurityCenterDrawerLogo</div>),
-}));
-
-jest.mock('../../../hooks/drawer/useDrawer', () => ({
+vi.mock('../views/SecurityCenter/useSecurityCenter', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('./DrawerAppButton', () => ({ __esModule: true, default: vi.fn(() => null) }));
+vi.mock('../views/SecurityCenter/BreachAlertsSpotlight', () => ({
     __esModule: true,
-    default: jest.fn(() => ({
-        toggleDrawerApp: jest.fn(),
+    default: vi.fn(({ children }) => <div>{children}</div>),
+}));
+vi.mock('../drawerIcons/SecurityCenterDrawerLogo', () => ({
+    __esModule: true,
+    default: vi.fn(() => <div>SecurityCenterDrawerLogo</div>),
+    SecurityCenterDrawerLogo: vi.fn(() => <div>SecurityCenterDrawerLogo</div>),
+}));
+
+vi.mock('../../../hooks/drawer/useDrawer', () => ({
+    __esModule: true,
+    default: vi.fn(() => ({
+        toggleDrawerApp: vi.fn(),
     })),
 }));
 
@@ -63,13 +69,13 @@ const setupMocks = ({
     canDisplayAccountSecurity = true,
     isSecurityCenterEnabled = true,
 } = {}) => {
-    (useFlag as jest.Mock).mockImplementation((flag: string) => {
+    (useFlag as Mock).mockImplementation((flag: string) => {
         if (flag === 'BreachAlertsNotificationsCommon') {
             return canDisplayBreachNotifications;
         }
     });
 
-    (baseUseSelector as unknown as jest.Mock).mockImplementation((selector: any) => {
+    (baseUseSelector as unknown as Mock).mockImplementation((selector: any) => {
         switch (selector) {
             case selectHasAccountSecurityIssue:
                 return hasAccountSecurityWarning;
@@ -89,12 +95,12 @@ const setupMocks = ({
         }
     });
 
-    (useSecurityCenter as jest.Mock).mockReturnValue(isSecurityCenterEnabled);
+    (useSecurityCenter as Mock).mockReturnValue(isSecurityCenterEnabled);
 };
 
 describe('SecurityCenterDrawerAppButton', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     const renderComponent = (props = {}) => render(<SecurityCenterDrawerAppButton {...props} />);
@@ -104,7 +110,7 @@ describe('SecurityCenterDrawerAppButton', () => {
 
         renderComponent();
 
-        expect(jest.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
+        expect(vi.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({
                 notificationDotColor: ThemeColor.Danger,
                 notificationDotCounter: 4, // unreadBreachesCount + 1 (for recoveryPhraseSet false)
@@ -117,7 +123,7 @@ describe('SecurityCenterDrawerAppButton', () => {
 
         renderComponent();
 
-        expect(jest.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
+        expect(vi.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({
                 notificationDotColor: ThemeColor.Warning,
                 notificationDotCounter: 5, // unreadBreachesCount + accountSecurityCardsCount (for recoveryPhraseSet false)
@@ -130,7 +136,7 @@ describe('SecurityCenterDrawerAppButton', () => {
 
         renderComponent();
 
-        expect(jest.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
+        expect(vi.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({
                 notificationDotColor: ThemeColor.Warning,
                 notificationDotCounter: 3, // unreadBreachesCount + 0
@@ -143,7 +149,7 @@ describe('SecurityCenterDrawerAppButton', () => {
 
         renderComponent();
 
-        expect(jest.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
+        expect(vi.mocked(DrawerAppButton).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({
                 notificationDotCounter: undefined, // because canDisplayBreachNotifications is false
             })

@@ -7,16 +7,16 @@ import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import type { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 
-import { clearAll, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
+import { clearAll, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/vitest/render';
 import type { ContactEmailSettingsProps } from './ContactEmailSettingsModal';
 import ContactEmailSettingsModal from './ContactEmailSettingsModal';
 
-jest.mock('@proton/account/userSettings/hooks');
+vi.mock('@proton/account/userSettings/hooks');
 
 const mockUserSettings = ({ SupportPgpV6Keys }: { SupportPgpV6Keys: 1 | 0 }) => {
-    jest.mocked(useUserSettings).mockReturnValue([{ Flags: { SupportPgpV6Keys } } as UserSettings, false, jest.fn()]);
+    vi.mocked(useUserSettings).mockReturnValue([{ Flags: { SupportPgpV6Keys } } as UserSettings, false, vi.fn()]);
 };
 
 describe('ContactEmailSettingsModal', () => {
@@ -24,7 +24,7 @@ describe('ContactEmailSettingsModal', () => {
         contactID: 'ContactID',
         vCardContact: { fn: [] },
         emailProperty: {} as VCardProperty<string>,
-        onClose: jest.fn(),
+        onClose: vi.fn(),
     };
 
     beforeEach(clearAll);
@@ -46,7 +46,7 @@ END:VCARD`;
 
         const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
-        const saveRequestSpy = jest.fn();
+        const saveRequestSpy = vi.fn();
 
         addApiMock('core/v4/keys/all', () => {
             return { Address: { Keys: [] } };
@@ -125,7 +125,7 @@ END:VCARD`;
 
         const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
-        const saveRequestSpy = jest.fn();
+        const saveRequestSpy = vi.fn();
 
         addApiMock('core/v4/keys/all', () => {
             return { Address: { Keys: [] } };
@@ -182,19 +182,19 @@ END:VCARD`.replaceAll('\n', '\r\n');
     it('should update the stored pinned key order when a different uploaded key is selected for sending', async () => {
         CryptoProxy.setEndpoint({
             ...mockedCryptoApi,
-            importPublicKey: jest.fn().mockImplementation(async ({ binaryKey }) => ({
+            importPublicKey: vi.fn().mockImplementation(async ({ binaryKey }) => ({
                 getFingerprint: () => new TextDecoder().decode(binaryKey),
                 getCreationTime: () => new Date(0),
                 getExpirationTime: () => new Date(0),
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
-                getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                getUserIDs: vi.fn().mockImplementation(() => ['<userid@userid.com>']),
                 getVersion: () => 4,
             })),
-            canKeyEncrypt: jest.fn().mockImplementation(() => true),
-            exportPublicKey: jest.fn().mockImplementation(({ key }) => new TextEncoder().encode(key.getFingerprint())),
-            isExpiredKey: jest.fn().mockImplementation(() => false),
-            isRevokedKey: jest.fn().mockImplementation(() => false),
+            canKeyEncrypt: vi.fn().mockImplementation(() => true),
+            exportPublicKey: vi.fn().mockImplementation(({ key }) => new TextEncoder().encode(key.getFingerprint())),
+            isExpiredKey: vi.fn().mockImplementation(() => false),
+            isRevokedKey: vi.fn().mockImplementation(() => false),
         });
         mockUserSettings({ SupportPgpV6Keys: 0 });
 
@@ -213,7 +213,7 @@ END:VCARD`;
 
         const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
-        const saveRequestSpy = jest.fn();
+        const saveRequestSpy = vi.fn();
 
         addApiMock('core/v4/keys/all', () => {
             return { Address: { Keys: [] } };
@@ -283,19 +283,19 @@ END:VCARD`;
     it('should warn if encryption is enabled and uploaded keys are not valid for sending', async () => {
         CryptoProxy.setEndpoint({
             ...mockedCryptoApi,
-            importPublicKey: jest.fn().mockImplementation(async () => ({
+            importPublicKey: vi.fn().mockImplementation(async () => ({
                 getFingerprint: () => `abcdef`,
                 getCreationTime: () => new Date(0),
                 getExpirationTime: () => new Date(0),
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
-                getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                getUserIDs: vi.fn().mockImplementation(() => ['<userid@userid.com>']),
                 getVersion: () => 4,
             })),
-            canKeyEncrypt: jest.fn().mockImplementation(() => false),
-            exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
-            isExpiredKey: jest.fn().mockImplementation(() => true),
-            isRevokedKey: jest.fn().mockImplementation(() => false),
+            canKeyEncrypt: vi.fn().mockImplementation(() => false),
+            exportPublicKey: vi.fn().mockImplementation(() => new Uint8Array()),
+            isExpiredKey: vi.fn().mockImplementation(() => true),
+            isRevokedKey: vi.fn().mockImplementation(() => false),
         });
         mockUserSettings({ SupportPgpV6Keys: 0 });
 
@@ -319,7 +319,7 @@ END:VCARD`;
 
         const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
-        const saveRequestSpy = jest.fn();
+        const saveRequestSpy = vi.fn();
 
         addApiMock('core/v4/keys/all', () => {
             return { Address: { Keys: [] } };
@@ -378,19 +378,19 @@ END:VCARD`;
     it('should enable encryption by default if WKD keys are found', async () => {
         CryptoProxy.setEndpoint({
             ...mockedCryptoApi,
-            importPublicKey: jest.fn().mockImplementation(async () => ({
+            importPublicKey: vi.fn().mockImplementation(async () => ({
                 getFingerprint: () => `abcdef`,
                 getCreationTime: () => new Date(0),
                 getExpirationTime: () => new Date(0),
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
-                getUserIDs: jest.fn().mockImplementation(() => ['<jdoe@example.com>']),
+                getUserIDs: vi.fn().mockImplementation(() => ['<jdoe@example.com>']),
                 getVersion: () => 4,
             })),
-            canKeyEncrypt: jest.fn().mockImplementation(() => true),
-            exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
-            isExpiredKey: jest.fn().mockImplementation(() => false),
-            isRevokedKey: jest.fn().mockImplementation(() => false),
+            canKeyEncrypt: vi.fn().mockImplementation(() => true),
+            exportPublicKey: vi.fn().mockImplementation(() => new Uint8Array()),
+            isExpiredKey: vi.fn().mockImplementation(() => false),
+            isRevokedKey: vi.fn().mockImplementation(() => false),
         });
         mockUserSettings({ SupportPgpV6Keys: 0 });
 
@@ -418,7 +418,7 @@ END:VCARD`;
 
         const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
-        const saveRequestSpy = jest.fn();
+        const saveRequestSpy = vi.fn();
 
         addApiMock('core/v4/keys/all', () => {
             return {
@@ -485,19 +485,19 @@ END:VCARD`.replaceAll('\n', '\r\n');
     it('should warn if encryption is enabled and WKD keys are not valid for sending', async () => {
         CryptoProxy.setEndpoint({
             ...mockedCryptoApi,
-            importPublicKey: jest.fn().mockImplementation(async () => ({
+            importPublicKey: vi.fn().mockImplementation(async () => ({
                 getFingerprint: () => `abcdef`,
                 getCreationTime: () => new Date(0),
                 getExpirationTime: () => new Date(0),
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
-                getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                getUserIDs: vi.fn().mockImplementation(() => ['<userid@userid.com>']),
                 getVersion: () => 4,
             })),
-            canKeyEncrypt: jest.fn().mockImplementation(() => false),
-            exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
-            isExpiredKey: jest.fn().mockImplementation(() => true),
-            isRevokedKey: jest.fn().mockImplementation(() => false),
+            canKeyEncrypt: vi.fn().mockImplementation(() => false),
+            exportPublicKey: vi.fn().mockImplementation(() => new Uint8Array()),
+            isExpiredKey: vi.fn().mockImplementation(() => true),
+            isRevokedKey: vi.fn().mockImplementation(() => false),
         });
         mockUserSettings({ SupportPgpV6Keys: 0 });
 
@@ -525,7 +525,7 @@ END:VCARD`;
 
         const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
-        const saveRequestSpy = jest.fn();
+        const saveRequestSpy = vi.fn();
 
         addApiMock('core/v4/keys/all', () => {
             return {
@@ -587,19 +587,19 @@ END:VCARD`;
     it('should indicate that end-to-end encryption is disabled for internal addresses whose keys have e2ee-disabled flags', async () => {
         CryptoProxy.setEndpoint({
             ...mockedCryptoApi,
-            importPublicKey: jest.fn().mockImplementation(async () => ({
+            importPublicKey: vi.fn().mockImplementation(async () => ({
                 getFingerprint: () => `abcdef`,
                 getCreationTime: () => new Date(0),
                 getExpirationTime: () => new Date(0),
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
-                getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                getUserIDs: vi.fn().mockImplementation(() => ['<userid@userid.com>']),
                 getVersion: () => 4,
             })),
-            canKeyEncrypt: jest.fn().mockImplementation(() => true),
-            exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
-            isExpiredKey: jest.fn().mockImplementation(() => false),
-            isRevokedKey: jest.fn().mockImplementation(() => false),
+            canKeyEncrypt: vi.fn().mockImplementation(() => true),
+            exportPublicKey: vi.fn().mockImplementation(() => new Uint8Array()),
+            isExpiredKey: vi.fn().mockImplementation(() => false),
+            isRevokedKey: vi.fn().mockImplementation(() => false),
         });
         mockUserSettings({ SupportPgpV6Keys: 0 });
 
@@ -612,7 +612,7 @@ END:VCARD`;
 
         const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
-        const saveRequestSpy = jest.fn();
+        const saveRequestSpy = vi.fn();
 
         addApiMock('core/v4/keys/all', () => {
             return {
@@ -700,19 +700,19 @@ END:VCARD`;
     it('should display WKD keys but not internal address keys for external account with internal address keys', async () => {
         CryptoProxy.setEndpoint({
             ...mockedCryptoApi,
-            importPublicKey: jest.fn().mockImplementation(async ({ armoredKey }) => ({
+            importPublicKey: vi.fn().mockImplementation(async ({ armoredKey }) => ({
                 getFingerprint: () => armoredKey,
                 getCreationTime: () => new Date(0),
                 getExpirationTime: () => new Date(0),
                 getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                 subkeys: [],
-                getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                getUserIDs: vi.fn().mockImplementation(() => ['<userid@userid.com>']),
                 getVersion: () => 4,
             })),
-            canKeyEncrypt: jest.fn().mockImplementation(() => true),
-            exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
-            isExpiredKey: jest.fn().mockImplementation(() => false),
-            isRevokedKey: jest.fn().mockImplementation(() => false),
+            canKeyEncrypt: vi.fn().mockImplementation(() => true),
+            exportPublicKey: vi.fn().mockImplementation(() => new Uint8Array()),
+            isExpiredKey: vi.fn().mockImplementation(() => false),
+            isRevokedKey: vi.fn().mockImplementation(() => false),
         });
         mockUserSettings({ SupportPgpV6Keys: 0 });
 
@@ -725,7 +725,7 @@ END:VCARD`;
 
         const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
 
-        const saveRequestSpy = jest.fn();
+        const saveRequestSpy = vi.fn();
 
         addApiMock('core/v4/keys/all', () => {
             return {
@@ -828,19 +828,19 @@ END:VCARD`;
         beforeEach(() =>
             CryptoProxy.setEndpoint({
                 ...mockedCryptoApi,
-                importPublicKey: jest.fn().mockImplementation(async ({ armoredKey }) => ({
+                importPublicKey: vi.fn().mockImplementation(async ({ armoredKey }) => ({
                     getFingerprint: () => armoredKey,
                     getCreationTime: () => new Date(0),
                     getExpirationTime: () => new Date(0),
                     getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
                     subkeys: [],
-                    getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                    getUserIDs: vi.fn().mockImplementation(() => ['<userid@userid.com>']),
                     getVersion: () => (armoredKey.includes('v6') ? 6 : 4),
                 })),
-                canKeyEncrypt: jest.fn().mockImplementation(() => true),
-                exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
-                isExpiredKey: jest.fn().mockImplementation(() => false),
-                isRevokedKey: jest.fn().mockImplementation(() => false),
+                canKeyEncrypt: vi.fn().mockImplementation(() => true),
+                exportPublicKey: vi.fn().mockImplementation(() => new Uint8Array()),
+                isExpiredKey: vi.fn().mockImplementation(() => false),
+                isRevokedKey: vi.fn().mockImplementation(() => false),
             })
         );
 

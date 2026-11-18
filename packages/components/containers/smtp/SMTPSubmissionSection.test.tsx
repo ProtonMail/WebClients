@@ -14,16 +14,22 @@ import { organizationMember } from '@proton/payments/testing/usersWhoCannotReadS
 
 import SMTPSubmissionSection from './SMTPSubmissionSection';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
-jest.mock('@proton/account/addresses/hooks', () => ({ useAddresses: jest.fn() }));
-jest.mock('@proton/app-context/useApi', () => ({ useApi: jest.fn() }));
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/account/addresses/hooks', () => ({ useAddresses: vi.fn() }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: vi.fn() }));
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('../../hooks/useActiveBreakpoint', () => () => ({ viewportWidth: { '>=large': true } }));
-jest.mock('../account/UpgradeBanner', () => ({ children }: { children: ReactNode }) => <div>{children}</div>);
+vi.mock('../../hooks/useActiveBreakpoint', () => ({
+    __esModule: true,
+    default: () => ({ viewportWidth: { '>=large': true } }),
+}));
+vi.mock('../account/UpgradeBanner', () => ({
+    __esModule: true,
+    default: ({ children }: { children: ReactNode }) => <div>{children}</div>,
+}));
 
 const upsellText = 'Included with Mail Plus, Proton Unlimited, and Proton for Business.';
 
@@ -36,10 +42,10 @@ const renderSection = ({
     loadingEntitlements?: boolean;
     viewer?: Partial<typeof organizationMember>;
 }) => {
-    const api = jest.fn().mockResolvedValue({ SmtpTokens: [] });
-    jest.mocked(useApi).mockReturnValue(api);
-    jest.mocked(useAddresses).mockReturnValue([[], false]);
-    jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
+    const api = vi.fn().mockResolvedValue({ SmtpTokens: [] });
+    vi.mocked(useApi).mockReturnValue(api);
+    vi.mocked(useAddresses).mockReturnValue([[], false]);
+    vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
         buildOrgAndUserEntitlementChecks({ subscriptionPlans, ...viewer }),
         loadingEntitlements,
     ]);

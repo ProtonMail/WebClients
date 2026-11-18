@@ -1,4 +1,5 @@
 import { render, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useLoading from '@proton/hooks/useLoading';
@@ -10,12 +11,12 @@ import VPNDrawerContainer from './VPNDrawerContainer';
 import useVPNDrawerTelemetry from './useVPNDrawerTelemetry';
 
 // Mock dependencies
-jest.mock('@proton/shared/lib/api/core/connection-information');
-jest.mock('@proton/shared/lib/api/helpers/customConfig');
-jest.mock('@proton/account/userSettings/hooks');
-jest.mock('@proton/app-context/useApi');
-jest.mock('@proton/hooks/useLoading');
-jest.mock('./useVPNDrawerTelemetry');
+vi.mock('@proton/shared/lib/api/core/connection-information');
+vi.mock('@proton/shared/lib/api/helpers/customConfig');
+vi.mock('@proton/account/userSettings/hooks');
+vi.mock('@proton/app-context/useApi');
+vi.mock('@proton/hooks/useLoading');
+vi.mock('./useVPNDrawerTelemetry');
 
 describe('VPNDrawerContainer', () => {
     // Mock response data
@@ -27,33 +28,33 @@ describe('VPNDrawerContainer', () => {
     };
 
     // Mock implementations
-    const mockGetConnectionInformation = jest.fn(() => ({ url: 'connection-info' }));
-    const mockSilentApi = jest.fn().mockResolvedValue(mockConnectionInfo);
-    const mockStatusChanged = jest.fn();
-    const mockUserSettings = jest.fn();
-    const mockUseLoading = jest.fn();
+    const mockGetConnectionInformation = vi.fn(() => ({ url: 'connection-info' }));
+    const mockSilentApi = vi.fn().mockResolvedValue(mockConnectionInfo);
+    const mockStatusChanged = vi.fn();
+    const mockUserSettings = vi.fn();
+    const mockUseLoading = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.useFakeTimers();
+        vi.clearAllMocks();
+        vi.useFakeTimers({ shouldAdvanceTime: true });
 
         // Setup mocks
-        (getConnectionInformation as jest.Mock).mockImplementation(mockGetConnectionInformation);
-        (getSilentApi as jest.Mock).mockReturnValue(mockSilentApi);
-        (useVPNDrawerTelemetry as jest.Mock).mockReturnValue({
-            downloadIsClicked: jest.fn(),
+        (getConnectionInformation as Mock).mockImplementation(mockGetConnectionInformation);
+        (getSilentApi as Mock).mockReturnValue(mockSilentApi);
+        (useVPNDrawerTelemetry as Mock).mockReturnValue({
+            downloadIsClicked: vi.fn(),
             statusChanged: mockStatusChanged,
         });
-        (useUserSettings as jest.Mock).mockReturnValue([mockUserSettings, false]);
-        (useLoading as jest.Mock).mockReturnValue([false, mockUseLoading]);
+        (useUserSettings as Mock).mockReturnValue([mockUserSettings, false]);
+        (useLoading as Mock).mockReturnValue([false, mockUseLoading]);
         // Mock window events
-        window.addEventListener = jest.fn();
-        window.removeEventListener = jest.fn();
+        window.addEventListener = vi.fn();
+        window.removeEventListener = vi.fn();
     });
 
     afterEach(() => {
-        jest.clearAllTimers();
-        jest.useRealTimers();
+        vi.clearAllTimers();
+        vi.useRealTimers();
     });
 
     it('should fetch connection information when component mounts', async () => {
@@ -75,7 +76,7 @@ describe('VPNDrawerContainer', () => {
         expect(mockSilentApi).toHaveBeenCalledTimes(1);
 
         // Advance timer by one minute
-        jest.advanceTimersByTime(60 * 1000);
+        vi.advanceTimersByTime(60 * 1000);
 
         await waitFor(() => {
             expect(mockGetConnectionInformation).toHaveBeenCalledTimes(2);
@@ -83,7 +84,7 @@ describe('VPNDrawerContainer', () => {
         expect(mockSilentApi).toHaveBeenCalledTimes(2);
 
         // Advance timer by another minute
-        jest.advanceTimersByTime(60 * 1000);
+        vi.advanceTimersByTime(60 * 1000);
 
         await waitFor(() => {
             expect(mockGetConnectionInformation).toHaveBeenCalledTimes(3);
@@ -107,7 +108,7 @@ describe('VPNDrawerContainer', () => {
         });
 
         // Extract the event handler function that was registered
-        const onlineHandler = (window.addEventListener as jest.Mock).mock.calls.find((call) => call[0] === 'online')[1];
+        const onlineHandler = (window.addEventListener as Mock).mock.calls.find((call) => call[0] === 'online')![1];
 
         // Manually trigger the online event
         onlineHandler();
@@ -126,7 +127,7 @@ describe('VPNDrawerContainer', () => {
         });
 
         // Extract the focus handler function
-        const focusHandler = (window.addEventListener as jest.Mock).mock.calls.find((call) => call[0] === 'focus')[1];
+        const focusHandler = (window.addEventListener as Mock).mock.calls.find((call) => call[0] === 'focus')![1];
 
         // Manually trigger the focus event
         focusHandler();
@@ -164,7 +165,7 @@ describe('VPNDrawerContainer', () => {
         mockSilentApi.mockResolvedValueOnce(updatedConnectionInfo);
 
         // Trigger another fetch (e.g., by focus event)
-        const focusHandler = (window.addEventListener as jest.Mock).mock.calls.find((call) => call[0] === 'focus')[1];
+        const focusHandler = (window.addEventListener as Mock).mock.calls.find((call) => call[0] === 'focus')![1];
         focusHandler();
 
         await waitFor(() => {

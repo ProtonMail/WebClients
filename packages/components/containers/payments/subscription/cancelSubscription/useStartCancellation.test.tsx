@@ -10,26 +10,26 @@ import { TelemetryAccountCancellationFlowFeedbackEvents } from '@proton/shared/l
 import { APPS } from '@proton/shared/lib/constants';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
-import { renderWithProviders } from '../../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
 import { useFeedbackFirstCancellationFlow } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstCancellationFlow';
 import { getFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility';
 import { useSendFeedbackFirstReport } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstTelemetry';
 import { useStartCancellation } from './useStartCancellation';
 
-const mockRedirectToCancellationFlow = jest.fn();
-jest.mock('../cancellationFlow/useCancellationFlow', () => ({
+const mockRedirectToCancellationFlow = vi.fn();
+vi.mock('../cancellationFlow/useCancellationFlow', async () => ({
     __esModule: true,
-    ...jest.requireActual('../cancellationFlow/useCancellationFlow'),
+    ...(await vi.importActual('../cancellationFlow/useCancellationFlow')),
     default: () => ({ redirectToCancellationFlow: mockRedirectToCancellationFlow }),
 }));
 
-jest.mock('../cancellationFlow/useCancellationTelemetry', () => ({
+vi.mock('../cancellationFlow/useCancellationTelemetry', () => ({
     __esModule: true,
-    default: () => ({ sendStartCancellationSectionReport: jest.fn() }),
+    default: () => ({ sendStartCancellationSectionReport: vi.fn() }),
 }));
 
-const mockCancelSubscription = jest.fn();
-jest.mock('./useCancelSubscriptionFlow', () => ({
+const mockCancelSubscription = vi.fn();
+vi.mock('./useCancelSubscriptionFlow', () => ({
     useCancelSubscriptionFlow: () => ({
         loadingCancelSubscription: false,
         cancelSubscriptionModals: null,
@@ -37,28 +37,28 @@ jest.mock('./useCancelSubscriptionFlow', () => ({
     }),
 }));
 
-const mockStartFeedbackFirstFlow = jest.fn();
-const mockSendFeedbackFirstReport = jest.fn();
-jest.mock('../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstCancellationFlow');
-jest.mock('../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility');
-jest.mock('../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstTelemetry');
-jest.mock('@proton/account/entitlementCatalog/hooks');
+const mockStartFeedbackFirstFlow = vi.fn();
+const mockSendFeedbackFirstReport = vi.fn();
+vi.mock('../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstCancellationFlow');
+vi.mock('../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility');
+vi.mock('../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstTelemetry');
+vi.mock('@proton/account/entitlementCatalog/hooks');
 
 const withId = (subscription: Subscription, ID: string): Subscription => ({ ...subscription, ID });
 
 describe('useStartCancellation', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(useEntitlementCatalog).mockReturnValue([
+        vi.clearAllMocks();
+        vi.mocked(useEntitlementCatalog).mockReturnValue([
             buildEntitlementCatalog({ [PLANS.BUNDLE_PRO_2024]: [EntitlementName.Business] }),
             false,
         ] as any);
-        jest.mocked(getFeedbackFirstEligibility).mockReturnValue({ hasB2BAccess: false, hasB2CAccess: false });
-        jest.mocked(useFeedbackFirstCancellationFlow).mockReturnValue({
+        vi.mocked(getFeedbackFirstEligibility).mockReturnValue({ hasB2BAccess: false, hasB2CAccess: false });
+        vi.mocked(useFeedbackFirstCancellationFlow).mockReturnValue({
             startFlow: mockStartFeedbackFirstFlow,
             modals: null,
         } as any);
-        jest.mocked(useSendFeedbackFirstReport).mockReturnValue(mockSendFeedbackFirstReport);
+        vi.mocked(useSendFeedbackFirstReport).mockReturnValue(mockSendFeedbackFirstReport);
     });
 
     const start = (subscription: Subscription) => {
@@ -68,7 +68,7 @@ describe('useStartCancellation', () => {
     };
 
     it('runs the feedback-first flow on the given subscription', () => {
-        jest.mocked(getFeedbackFirstEligibility).mockReturnValue({ hasB2BAccess: false, hasB2CAccess: true });
+        vi.mocked(getFeedbackFirstEligibility).mockReturnValue({ hasB2BAccess: false, hasB2CAccess: true });
         const mail = withId(buildSubscription(PLANS.MAIL), 'sub-mail');
 
         start(mail);
@@ -115,7 +115,7 @@ describe('useStartCancellation', () => {
     });
 
     it('tells the user to cancel a store subscription in the store, without starting a flow', () => {
-        jest.mocked(getFeedbackFirstEligibility).mockReturnValue({ hasB2BAccess: false, hasB2CAccess: true });
+        vi.mocked(getFeedbackFirstEligibility).mockReturnValue({ hasB2BAccess: false, hasB2CAccess: true });
         const drive = {
             ...withId(buildSubscription(PLANS.DRIVE), 'sub-drive'),
             External: SubscriptionPlatform.Android,

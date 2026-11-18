@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
@@ -22,18 +23,18 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { type AccessiblePlansHookProps, getMaximumCycle, useAccessiblePlans } from './PlanSelection';
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    useConfig: jest.fn().mockReturnValue({
+    useConfig: vi.fn().mockReturnValue({
         APP_NAME: 'proton-account',
     }),
 }));
 
-const mockUseFlag = useFlag as unknown as jest.MockedFunction<any>;
+const mockUseFlag = useFlag as unknown as MockedFunction<any>;
 
 describe('useAccessiblePlans', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockUseFlag.mockReturnValue(false);
     });
 

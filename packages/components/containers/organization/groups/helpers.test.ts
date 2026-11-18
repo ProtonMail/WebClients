@@ -4,9 +4,9 @@ import type { Group } from '@proton/shared/lib/interfaces/Group';
 import { ADDRESS_LOCAL_PART_MAX_LENGTH, getAddressSuggestedLocalPart, getGroupActionAvailability } from './helpers';
 import { GROUPS_RESTRICTION_REASON } from './types';
 
-jest.mock('@proton/utils/getRandomString', () => ({
+vi.mock('@proton/utils/getRandomString', () => ({
     __esModule: true,
-    default: jest.fn(() => 'abcd'),
+    default: vi.fn(() => 'abcd'),
     DEFAULT_LOWERCASE_CHARSET: 'abcdefghijklmnopqrstuvwxyz',
 }));
 

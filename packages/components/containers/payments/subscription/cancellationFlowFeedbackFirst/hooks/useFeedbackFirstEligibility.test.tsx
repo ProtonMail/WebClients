@@ -2,10 +2,10 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
-import { componentsHookRenderer } from '../../../../contacts/tests/render';
+import { componentsHookRenderer } from '../../../../contacts/tests/vitest/render';
 import { useFeedbackFirstEligibility } from './useFeedbackFirstEligibility';
 
-jest.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/account/subscription/hooks');
 
 describe('useFeedbackFirstEligibility', () => {
     describe('B2C plans', () => {
@@ -31,7 +31,7 @@ describe('useFeedbackFirstEligibility', () => {
     });
 
     it('should check the given subscription, not the one from useSubscription', () => {
-        jest.mocked(useSubscription).mockReturnValue([buildSubscription(PLANS.MAIL), false]);
+        vi.mocked(useSubscription).mockReturnValue([buildSubscription(PLANS.MAIL), false]);
 
         const { result } = componentsHookRenderer(() => useFeedbackFirstEligibility(buildSubscription(PLANS.LUMO)));
 

@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -15,11 +16,11 @@ const config: SettingsAreaConfig = {
     ],
 };
 
-const mockUseFlag = useFlag as unknown as jest.MockedFunction<any>;
-jest.mock('../../hooks/useAppTitle');
-jest.mock('react-router', () => ({
+const mockUseFlag = useFlag as unknown as MockedFunction<any>;
+vi.mock('../../hooks/useAppTitle');
+vi.mock('react-router', () => ({
     __esModule: true,
-    useLocation: jest.fn().mockReturnValue({ location: { pathname: '/' } }),
+    useLocation: vi.fn().mockReturnValue({ location: { pathname: '/' } }),
 }));
 
 describe('SettingsMaintenanceLayoutWrapper', () => {

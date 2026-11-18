@@ -4,7 +4,10 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import ProtonBadgeType from './ProtonBadgeType';
 
-jest.mock('@proton/features/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
+vi.mock('@proton/features/useFeature', () => ({
+    __esModule: true,
+    default: vi.fn(() => ({ feature: { Value: true } })),
+}));
 
 describe('ProtonBadgeType', () => {
     it('should show a verified badge', async () => {

@@ -1,33 +1,37 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
+import { useConfig } from '@proton/app-context/useConfig';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
+import useShowDashboard, { useShowDriveDashboard } from '../../hooks/accounts/useShowDashboard';
+import useShowVPNDashboard from '../../hooks/useShowVPNDashboard';
 import { useSubscriptionWithEndsBanner } from './useSubscriptionWithEndsBanner';
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    useConfig: jest.fn(),
+    useConfig: vi.fn(),
 }));
 
-jest.mock('../../hooks/useShowVPNDashboard', () => ({
+vi.mock('../../hooks/useShowVPNDashboard', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('../../hooks/accounts/useShowDashboard', () => ({
+vi.mock('../../hooks/accounts/useShowDashboard', () => ({
     __esModule: true,
-    default: jest.fn(),
-    useShowDriveDashboard: jest.fn(),
+    default: vi.fn(),
+    useShowDriveDashboard: vi.fn(),
 }));
 
-const mockUseConfig = require('@proton/app-context/useConfig').useConfig as jest.Mock;
-const mockUseShowVPNDashboard = require('../../hooks/useShowVPNDashboard').default as jest.Mock;
-const mockUseShowDashboard = require('../../hooks/accounts/useShowDashboard').default as jest.Mock;
-const mockUseShowDriveDashboard = require('../../hooks/accounts/useShowDashboard').useShowDriveDashboard as jest.Mock;
+const mockUseConfig = useConfig as Mock;
+const mockUseShowVPNDashboard = useShowVPNDashboard as Mock;
+const mockUseShowDashboard = useShowDashboard as Mock;
+const mockUseShowDriveDashboard = useShowDriveDashboard as Mock;
 
 const NOW = new Date('2026-01-01');
 const IN_15_DAYS = new Date('2026-01-16').getTime() / 1000;
@@ -46,8 +50,8 @@ const getBannerSubscriptionID = (
 ) => renderHook(() => useSubscriptionWithEndsBanner(app, subscriptions)).result.current?.ID;
 
 describe('useSubscriptionWithEndsBanner', () => {
-    beforeAll(() => jest.useFakeTimers().setSystemTime(NOW));
-    afterAll(() => jest.useRealTimers());
+    beforeAll(() => vi.useFakeTimers().setSystemTime(NOW));
+    afterAll(() => vi.useRealTimers());
 
     beforeEach(() => {
         mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONACCOUNT });

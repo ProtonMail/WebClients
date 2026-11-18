@@ -32,7 +32,3 @@ export const setupStore = ({ preloadedState }: { preloadedState: Partial<RootSta
             }).prepend(listenerMiddleware.middleware),
     });
 };
-
-export const extendStore = (newThunkArguments: Partial<ProtonThunkArguments>) => {
-    Object.assign(extraThunkArguments, newThunkArguments);
-};

@@ -3,10 +3,10 @@ import { fireEvent, screen } from '@testing-library/react';
 import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import { DKIM_STATE, VERIFY_STATE } from '@proton/shared/lib/interfaces/Domain';
 
-import { renderWithProviders } from '../contacts/tests/render';
+import { renderWithProviders } from '../contacts/tests/vitest/render';
 import DomainModal from './DomainModal';
 
-jest.mock('@proton/account/domains/hooks', () => ({
+vi.mock('@proton/account/domains/hooks', () => ({
     useCustomDomains: () => [undefined, true],
 }));
 

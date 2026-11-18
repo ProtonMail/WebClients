@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
@@ -8,9 +9,9 @@ import { isCalendarMobileAppUser, isMailMobileAppUser } from '@proton/shared/lib
 
 import SmartBanner from './SmartBanner';
 
-jest.mock('@proton/account/userSettings/hooks', () => ({
+vi.mock('@proton/account/userSettings/hooks', () => ({
     __esModule: true,
-    useUserSettings: jest.fn(),
+    useUserSettings: vi.fn(),
 }));
 
 // These values are from USED_CLIENT_FLAGS in '@proton/shared/lib/interfaces'
@@ -20,16 +21,14 @@ const userSettings = {
 };
 
 const setMockUserSettings = (app: APP_NAMES = APPS.PROTONMAIL) => {
-    (useUserSettings as jest.Mock).mockReturnValue([
-        { UsedClientFlags: userSettings[app as keyof typeof userSettings] },
-    ]);
+    (useUserSettings as Mock).mockReturnValue([{ UsedClientFlags: userSettings[app as keyof typeof userSettings] }]);
 };
 
-jest.mock('@proton/shared/lib/helpers/browser', () => {
+vi.mock('@proton/shared/lib/helpers/browser', () => {
     return {
-        isAndroid: jest.fn(),
-        isIos: jest.fn(),
-        isMobile: jest.fn(),
+        isAndroid: vi.fn(),
+        isIos: vi.fn(),
+        isMobile: vi.fn(),
     };
 });
 
@@ -39,14 +38,14 @@ interface SetMockHelpersProps {
 }
 
 const setMockHelpers = (helperResponses: SetMockHelpersProps) => {
-    (isAndroid as jest.Mock).mockReturnValue(helperResponses.isAndroid);
-    (isIos as jest.Mock).mockReturnValue(helperResponses.isIos);
+    (isAndroid as Mock).mockReturnValue(helperResponses.isAndroid);
+    (isIos as Mock).mockReturnValue(helperResponses.isIos);
 };
 
-jest.mock('@proton/shared/lib/helpers/usedClientsFlags', () => {
+vi.mock('@proton/shared/lib/helpers/usedClientsFlags', () => {
     return {
-        isCalendarMobileAppUser: jest.fn(),
-        isMailMobileAppUser: jest.fn(),
+        isCalendarMobileAppUser: vi.fn(),
+        isMailMobileAppUser: vi.fn(),
     };
 });
 
@@ -56,8 +55,8 @@ interface SetMockUsedClientsFlag {
 }
 
 const setMockUsedClientsFlags = (usedClientsFlagsResponses: SetMockUsedClientsFlag) => {
-    (isCalendarMobileAppUser as jest.Mock).mockReturnValue(usedClientsFlagsResponses.isCalendarMobileAppUser);
-    (isMailMobileAppUser as jest.Mock).mockReturnValue(usedClientsFlagsResponses.isMailMobileAppUser);
+    (isCalendarMobileAppUser as Mock).mockReturnValue(usedClientsFlagsResponses.isCalendarMobileAppUser);
+    (isMailMobileAppUser as Mock).mockReturnValue(usedClientsFlagsResponses.isMailMobileAppUser);
 };
 
 const defaultHelperResponses = {
@@ -87,7 +86,7 @@ const storeLinks = {
 
 describe('../SmartBanner', () => {
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
         mockUseUser();
     });
 

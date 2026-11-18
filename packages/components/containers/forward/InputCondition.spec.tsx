@@ -1,13 +1,14 @@
 import { fireEvent, render } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 
 import type { Condition } from '../filters/interfaces';
 import InputCondition from './InputCondition';
 
-jest.mock('@proton/app-context/useNotifications');
-const mockCreateNotification = jest.fn();
-const mockUseNotifications = useNotifications as jest.MockedFunction<any>;
+vi.mock('@proton/app-context/useNotifications');
+const mockCreateNotification = vi.fn();
+const mockUseNotifications = useNotifications as MockedFunction<any>;
 mockUseNotifications.mockReturnValue({
     createNotification: mockCreateNotification,
 });
@@ -17,7 +18,7 @@ describe('InputCondition', () => {
         const condition = {
             values: ['token1'],
         } as Condition;
-        const onUpdate = jest.fn();
+        const onUpdate = vi.fn();
         const utils = render(<InputCondition index={0} condition={condition} onUpdate={onUpdate} />);
         const input = utils.getByRole('textbox');
         const removeButton = utils.getByTitle('Remove “token1”');

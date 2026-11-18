@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -22,33 +23,33 @@ import useDrawer from './useDrawer';
 import useOpenDrawerOnLoad from './useOpenDrawerOnLoad';
 
 // Mock dependencies
-jest.mock('@proton/account/user/hooks');
-const mockUseUseUser = useUser as jest.Mock;
-jest.mock('./useDrawer');
-const mockUseDrawer = useDrawer as jest.Mock;
-jest.mock('../useApiStatus');
-const mockUseApiStatus = useApiStatus as jest.Mock;
-jest.mock('../useAuthentication');
-const mockUseAuthentication = useAuthentication as jest.Mock;
-jest.mock('@proton/app-context/useConfig');
-const mockUseConfig = useConfig as jest.Mock;
-jest.mock('../useOnline');
-const mockUseOnline = useOnline as jest.Mock;
-jest.mock('@proton/shared/lib/helpers/storage');
-const mockGetItem = getItem as jest.Mock;
-jest.mock('@proton/shared/lib/drawer/helpers');
-const mockGetLocalStorageUserDrawerKey = getLocalStorageUserDrawerKey as jest.Mock;
-const mockGetIsDrawerApp = getIsDrawerApp as unknown as jest.Mock;
-const mockGetDisplayDrawerApp = getDisplayDrawerApp as jest.Mock;
-const mockGetLocalIDFromPathname = getLocalIDFromPathname as jest.Mock;
-const mockGetIsIframedDrawerApp = getIsIframedDrawerApp as unknown as jest.Mock;
-jest.mock('@proton/shared/lib/apps/helper');
-const mockGetAppHref = getAppHref as jest.Mock;
-jest.mock('@proton/shared/lib/authentication/pathnameHelper');
+vi.mock('@proton/account/user/hooks');
+const mockUseUseUser = useUser as Mock;
+vi.mock('./useDrawer');
+const mockUseDrawer = useDrawer as Mock;
+vi.mock('../useApiStatus');
+const mockUseApiStatus = useApiStatus as Mock;
+vi.mock('../useAuthentication');
+const mockUseAuthentication = useAuthentication as Mock;
+vi.mock('@proton/app-context/useConfig');
+const mockUseConfig = useConfig as Mock;
+vi.mock('../useOnline');
+const mockUseOnline = useOnline as Mock;
+vi.mock('@proton/shared/lib/helpers/storage');
+const mockGetItem = getItem as Mock;
+vi.mock('@proton/shared/lib/drawer/helpers');
+const mockGetLocalStorageUserDrawerKey = getLocalStorageUserDrawerKey as Mock;
+const mockGetIsDrawerApp = getIsDrawerApp as unknown as Mock;
+const mockGetDisplayDrawerApp = getDisplayDrawerApp as Mock;
+const mockGetLocalIDFromPathname = getLocalIDFromPathname as Mock;
+const mockGetIsIframedDrawerApp = getIsIframedDrawerApp as unknown as Mock;
+vi.mock('@proton/shared/lib/apps/helper');
+const mockGetAppHref = getAppHref as Mock;
+vi.mock('@proton/shared/lib/authentication/pathnameHelper');
 
-const mockSetIframeSrcMap = jest.fn();
-const mockSetIframeURLMap = jest.fn();
-const mockSetAppInView = jest.fn();
+const mockSetIframeSrcMap = vi.fn();
+const mockSetIframeURLMap = vi.fn();
+const mockSetAppInView = vi.fn();
 const mockLocalID = 'localId123';
 
 const mockApp = 'CALENDAR';
@@ -57,13 +58,13 @@ const mockUrl = 'https://calendar.proton.me/calendarID/calendar';
 
 describe('useOpenDrawerOnLoad', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         mockUseUseUser.mockReturnValue([{ ID: 'user123' }]);
         mockUseConfig.mockReturnValue({ APP_NAME: 'MAIL' });
         mockUseApiStatus.mockReturnValue({ offline: false });
         mockUseOnline.mockReturnValue(true);
-        mockUseAuthentication.mockReturnValue({ getLocalID: jest.fn().mockReturnValue(mockLocalID) });
+        mockUseAuthentication.mockReturnValue({ getLocalID: vi.fn().mockReturnValue(mockLocalID) });
         mockUseDrawer.mockReturnValue({
             setIframeSrcMap: mockSetIframeSrcMap,
             setIframeURLMap: mockSetIframeURLMap,
@@ -158,7 +159,7 @@ describe('useOpenDrawerOnLoad', () => {
 
     test('should handle JSON parse errors', () => {
         // Mock console.error to prevent test output pollution
-        console.error = jest.fn();
+        console.error = vi.fn();
 
         // Set invalid JSON in localStorage
         mockGetItem.mockReturnValue('invalid-json');

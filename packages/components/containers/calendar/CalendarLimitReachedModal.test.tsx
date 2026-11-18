@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
-import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
+import { mockUseConfig } from '@proton/app-context/testing/vitest/mockUseConfig';
 import { PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
@@ -11,16 +11,16 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-import { mockUseAuthentication } from '../../testing/mockUseAuthentication';
-import { mockUseLocation } from '../../testing/mockUseLocation';
+import { mockUseAuthentication } from '../../testing/vitest/mockUseAuthentication';
+import { mockUseLocation } from '../../testing/vitest/mockUseLocation';
 import CalendarLimitReachedModal from './CalendarLimitReachedModal';
 
-jest.mock('@proton/account/allSubscriptions/hooks', () => ({
-    useAllSubscriptions: jest.fn(),
+vi.mock('@proton/account/allSubscriptions/hooks', () => ({
+    useAllSubscriptions: vi.fn(),
 }));
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementCatalog: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementCatalog: vi.fn(),
 }));
 
 const catalog = buildEntitlementCatalog({
@@ -34,13 +34,13 @@ describe('CalendarLimitReachedModal', () => {
         mockUseLocation();
         mockUseConfig();
         mockUseAuthentication({ mode: '' } as any);
-        jest.mocked(useAllSubscriptions).mockReturnValue([[], false]);
-        jest.mocked(useEntitlementCatalog).mockReturnValue([catalog, false]);
+        vi.mocked(useAllSubscriptions).mockReturnValue([[], false]);
+        vi.mocked(useEntitlementCatalog).mockReturnValue([catalog, false]);
     });
 
     describe('when user is free', () => {
         it('should render correct prompt', async () => {
-            const onClose = jest.fn();
+            const onClose = vi.fn();
             const user = { isFree: true } as UserModel;
             render(<CalendarLimitReachedModal user={user} open onClose={onClose} isFreeUser />);
 
@@ -68,7 +68,7 @@ describe('CalendarLimitReachedModal', () => {
         const user = { isFree: false, isPaid: true } as UserModel;
 
         it('preselects the plan of the subscription that covers Calendar', () => {
-            jest.mocked(useAllSubscriptions).mockReturnValue([
+            vi.mocked(useAllSubscriptions).mockReturnValue([
                 [buildSubscription(PLANS.VPN2024), buildSubscription(PLANS.MAIL)],
                 false,
             ]);
@@ -83,7 +83,7 @@ describe('CalendarLimitReachedModal', () => {
 
         it('preselects the first subscription when none covers Calendar, even in an app another subscription covers', () => {
             mockUseConfig({ APP_NAME: APPS.PROTONDRIVE });
-            jest.mocked(useAllSubscriptions).mockReturnValue([
+            vi.mocked(useAllSubscriptions).mockReturnValue([
                 [buildSubscription(PLANS.VPN2024), buildSubscription(PLANS.DRIVE)],
                 false,
             ]);
@@ -99,7 +99,7 @@ describe('CalendarLimitReachedModal', () => {
 
     describe('when user is paid', () => {
         it('should render correct prompt', async () => {
-            const onClose = jest.fn();
+            const onClose = vi.fn();
             const user = { isPaid: true } as UserModel;
             render(<CalendarLimitReachedModal user={user} open onClose={onClose} isFreeUser={false} />);
 

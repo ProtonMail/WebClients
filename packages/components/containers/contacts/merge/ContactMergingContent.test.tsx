@@ -1,14 +1,15 @@
 import { render, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useApi } from '@proton/app-context/useApi';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 
 import ContactMergingContent from './ContactMergingContent';
 
-const encrypt = prepareVCardContact as jest.Mock;
+const encrypt = prepareVCardContact as Mock;
 
-jest.mock('@proton/app-context/useApi', () => {
-    const apiMock = jest.fn(({ url, method }) => {
+vi.mock('@proton/app-context/useApi', () => {
+    const apiMock = vi.fn(({ url, method }) => {
         if (method === 'get') {
             const parts = url.split('/');
             return Promise.resolve({ Contact: { ID: parts[parts.length - 1] } });
@@ -24,23 +25,23 @@ jest.mock('@proton/app-context/useApi', () => {
     return { useApi: () => apiMock };
 });
 
-jest.mock('@proton/account/userKeys/hooks', () => {
+vi.mock('@proton/account/userKeys/hooks', () => {
     return {
         useUserKeys: () => [[]],
     };
 });
 
-jest.mock('@proton/shared/lib/contacts/decrypt', () => {
+vi.mock('@proton/shared/lib/contacts/decrypt', () => {
     return {
-        prepareVCardContact: jest.fn(({ ID }) => {
+        prepareVCardContact: vi.fn(({ ID }) => {
             return Promise.resolve({ vCardContact: { nickname: [{ field: 'nickname', value: ID }] }, errors: [] });
         }),
     };
 });
 
-jest.mock('@proton/shared/lib/contacts/encrypt', () => {
+vi.mock('@proton/shared/lib/contacts/encrypt', () => {
     return {
-        prepareVCardContact: jest.fn(() => {
+        prepareVCardContact: vi.fn(() => {
             return Promise.resolve({ Cards: ['something encrypted'] });
         }),
     };
@@ -48,10 +49,10 @@ jest.mock('@proton/shared/lib/contacts/encrypt', () => {
 
 window.ResizeObserver =
     window.ResizeObserver ||
-    jest.fn().mockImplementation(() => ({
-        disconnect: jest.fn(),
-        observe: jest.fn(),
-        unobserve: jest.fn(),
+    vi.fn().mockImplementation(() => ({
+        disconnect: vi.fn(),
+        observe: vi.fn(),
+        unobserve: vi.fn(),
     }));
 
 describe('ContactMergingContent', () => {
@@ -67,11 +68,11 @@ describe('ContactMergingContent', () => {
                 beDeletedModel={{}}
                 totalBeMerged={1}
                 totalBeDeleted={1}
-                onFinish={jest.fn()}
+                onFinish={vi.fn()}
             />
         );
 
-        const apiMock = useApi() as jest.Mock;
+        const apiMock = useApi() as Mock;
 
         await waitFor(() => {
             expect(apiMock).toHaveBeenCalledTimes(4); // 2 gets, 1 update, 1 delete

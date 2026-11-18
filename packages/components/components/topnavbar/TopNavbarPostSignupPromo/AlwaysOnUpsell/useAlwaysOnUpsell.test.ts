@@ -11,14 +11,14 @@ import { getIsUserEligible, useAlwaysOnUpsell } from './useAlwaysOnUpsell';
 const today = new Date();
 const protonConfig = { APP_NAME: 'proton-mail' } as unknown as ProtonConfig;
 
-jest.mock('@proton/app-context/useConfig');
-const mockUseConfig = jest.mocked(useConfig);
+vi.mock('@proton/app-context/useConfig');
+const mockUseConfig = vi.mocked(useConfig);
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = jest.mocked(useUser);
+vi.mock('@proton/account/user/hooks');
+const mockUseUser = vi.mocked(useUser);
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = jest.mocked(useFlag);
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = vi.mocked(useFlag);
 
 const freeUser = {
     isFree: true,

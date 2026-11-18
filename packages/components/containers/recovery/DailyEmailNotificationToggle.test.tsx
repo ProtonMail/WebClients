@@ -6,12 +6,7 @@ describe('DailyEmailNotificationToggle', () => {
     describe('when annot enable', () => {
         it('should have disabled attribute', () => {
             const { container } = render(
-                <DailyEmailNotificationToggle
-                    canEnable={false}
-                    isEnabled={false}
-                    onChange={jest.fn()}
-                    id="test-toggle"
-                />
+                <DailyEmailNotificationToggle canEnable={false} isEnabled={false} onChange={vi.fn()} id="test-toggle" />
             );
 
             const input = container.querySelector('#test-toggle');
@@ -22,7 +17,7 @@ describe('DailyEmailNotificationToggle', () => {
     describe('when can enable', () => {
         it('should check checkbox if enabled', () => {
             const { container } = render(
-                <DailyEmailNotificationToggle canEnable={true} isEnabled={true} onChange={jest.fn()} id="test-toggle" />
+                <DailyEmailNotificationToggle canEnable={true} isEnabled={true} onChange={vi.fn()} id="test-toggle" />
             );
 
             const input = container.querySelector('#test-toggle');
@@ -31,7 +26,7 @@ describe('DailyEmailNotificationToggle', () => {
         });
 
         it('should emit onChange on click', async () => {
-            const mockOnChange = jest.fn();
+            const mockOnChange = vi.fn();
             const { container } = render(
                 <DailyEmailNotificationToggle
                     canEnable={true}

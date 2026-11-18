@@ -6,25 +6,25 @@ import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings
 
 import TimeFormatSelector from './TimeFormatSelector';
 
-const mockApi = jest.fn();
-const mockDispatch = jest.fn();
-const mockCreateNotification = jest.fn();
+const mockApi = vi.fn();
+const mockDispatch = vi.fn();
+const mockCreateNotification = vi.fn();
 
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
-    ...jest.requireActual('@proton/redux-shared-store/sharedProvider'),
+vi.mock('@proton/redux-shared-store/sharedProvider', async () => ({
+    ...(await vi.importActual('@proton/redux-shared-store/sharedProvider')),
     useDispatch: () => mockDispatch,
 }));
-jest.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: jest.fn() }));
-jest.mock('@proton/shared/lib/i18n/loadLocale', () => ({ loadDateLocale: jest.fn() }));
+vi.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: vi.fn() }));
+vi.mock('@proton/shared/lib/i18n/loadLocale', () => ({ loadDateLocale: vi.fn() }));
 
 describe('TimeFormatSelector', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(useUserSettings).mockReturnValue([
+        vi.clearAllMocks();
+        vi.mocked(useUserSettings).mockReturnValue([
             { TimeFormat: SETTINGS_TIME_FORMAT.LOCALE_DEFAULT } as any,
             false,
             undefined,

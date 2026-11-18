@@ -7,9 +7,9 @@ describe('Pagination component', () => {
     const limit = 10;
 
     it('should render and setup Pagination properly', () => {
-        const mockOnNext = jest.fn();
-        const mockOnPrevious = jest.fn();
-        const mockOnSelect = jest.fn();
+        const mockOnNext = vi.fn();
+        const mockOnPrevious = vi.fn();
+        const mockOnSelect = vi.fn();
         const { container, getByTitle } = render(
             <Pagination
                 onNext={mockOnNext}
@@ -43,7 +43,7 @@ describe('Pagination component', () => {
     });
 
     it('should not render NEXT and PREVIOUS buttons', () => {
-        const mockOnSelect = jest.fn();
+        const mockOnSelect = vi.fn();
         const { container } = render(
             <Pagination
                 onSelect={mockOnSelect}

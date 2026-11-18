@@ -3,6 +3,7 @@ import { Route, Router } from 'react-router';
 
 import { renderHook } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
+import type { Mock } from 'vitest';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -19,43 +20,43 @@ import useOfferFlags from '../../hooks/useOfferFlags';
 import { useOffer } from './useOffer';
 import { useTryDuo2026Discount } from './useTryDuo2026Discount';
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = useUser as jest.Mock;
+vi.mock('@proton/account/user/hooks');
+const mockUseUser = useUser as Mock;
 
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({ useEntitlementCatalog: () => [undefined] }));
-const mockUseSubscription = useSubscription as jest.Mock;
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({ useEntitlementCatalog: () => [undefined] }));
+const mockUseSubscription = useSubscription as Mock;
 
-jest.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({
+vi.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({
     __esModule: true,
-    useAutomaticCurrency: jest.fn(),
+    useAutomaticCurrency: vi.fn(),
 }));
-const mockUseAutomaticCurrency = useAutomaticCurrency as jest.Mock;
+const mockUseAutomaticCurrency = useAutomaticCurrency as Mock;
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.Mock;
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as Mock;
 
-jest.mock('../../hooks/useOfferFlags', () => ({
+vi.mock('../../hooks/useOfferFlags', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-const mockUseOfferFlags = useOfferFlags as jest.Mock;
+const mockUseOfferFlags = useOfferFlags as Mock;
 
-jest.mock('./useTryDuo2026Discount', () => ({
+vi.mock('./useTryDuo2026Discount', () => ({
     __esModule: true,
-    useTryDuo2026Discount: jest.fn(),
+    useTryDuo2026Discount: vi.fn(),
 }));
-const mockUseTryDuo2026Discount = useTryDuo2026Discount as jest.Mock;
+const mockUseTryDuo2026Discount = useTryDuo2026Discount as Mock;
 
-jest.mock('./useUnlimitedToDuoDiscountedTelemetry', () => ({
+vi.mock('./useUnlimitedToDuoDiscountedTelemetry', () => ({
     __esModule: true,
     useUnlimitedToDuoDiscountedTelemetry: () => {
         return {
-            sendReportClickTopNavbar: jest.fn(),
-            sendReportClickUpsellButton: jest.fn(),
-            sendReportCloseOffer: jest.fn(),
-            sendReportClickHideOffer: jest.fn(),
-            sendReportUserSubscribed: jest.fn(),
+            sendReportClickTopNavbar: vi.fn(),
+            sendReportClickUpsellButton: vi.fn(),
+            sendReportCloseOffer: vi.fn(),
+            sendReportClickHideOffer: vi.fn(),
+            sendReportUserSubscribed: vi.fn(),
         };
     },
 }));
@@ -93,7 +94,7 @@ const eligibleSubscription = {
 
 describe('unlimitedToDuoDiscounted useOffer', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockUseUser.mockReturnValue([
             { canPay: true, isDelinquent: false, isPaid: true, isFree: false } as UserModel,
             false,

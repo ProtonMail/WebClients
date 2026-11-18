@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { serverTime } from '@protontech/crypto';
 import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useGetUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
@@ -20,42 +21,42 @@ import useDrawer, { DrawerProvider } from './useDrawer';
 import useDrawerLocalStorage from './useDrawerLocalStorage';
 import useToggleDrawerApp from './useToggleDrawerApp';
 
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/account/earlyAccess/versionCookie', () => ({ versionCookieAtLoad: 'test-version' }));
-jest.mock('./useDrawerLocalStorage');
-jest.mock('./useToggleDrawerApp');
-jest.mock('@proton/app-context/useApi');
-jest.mock('../useAuthentication');
-jest.mock('@protontech/crypto');
-jest.mock('@proton/shared/lib/apps/helper');
-jest.mock('@proton/shared/lib/apps/slugHelper');
-jest.mock('@proton/shared/lib/authentication/persistedSessionStorage');
-jest.mock('@proton/shared/lib/authentication/pathnameHelper');
-jest.mock('@proton/shared/lib/drawer/helpers');
-jest.mock('@proton/shared/lib/fetch/ApiError', () => ({
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/account/earlyAccess/versionCookie', () => ({ versionCookieAtLoad: 'test-version' }));
+vi.mock('./useDrawerLocalStorage');
+vi.mock('./useToggleDrawerApp');
+vi.mock('@proton/app-context/useApi');
+vi.mock('../useAuthentication');
+vi.mock('@protontech/crypto');
+vi.mock('@proton/shared/lib/apps/helper');
+vi.mock('@proton/shared/lib/apps/slugHelper');
+vi.mock('@proton/shared/lib/authentication/persistedSessionStorage');
+vi.mock('@proton/shared/lib/authentication/pathnameHelper');
+vi.mock('@proton/shared/lib/drawer/helpers');
+vi.mock('@proton/shared/lib/fetch/ApiError', () => ({
     ApiError: class ApiError extends Error {},
-    serializeApiErrorData: jest.fn((err) => err),
+    serializeApiErrorData: vi.fn((err) => err),
 }));
-jest.mock('@proton/shared/lib/fetch/headers');
-jest.mock('@proton/shared/lib/helpers/sentry');
+vi.mock('@proton/shared/lib/fetch/headers');
+vi.mock('@proton/shared/lib/helpers/sentry');
 
-const mockUseApi = useApi as jest.Mock;
-const mockUseAuthentication = useAuthentication as jest.Mock;
-const mockUseGetUser = useGetUser as jest.Mock;
-const mockUseDrawerLocalStorage = useDrawerLocalStorage as jest.Mock;
-const mockUseToggleDrawerApp = useToggleDrawerApp as jest.Mock;
-const mockGetIsDrawerPostMessage = getIsDrawerPostMessage as unknown as jest.Mock;
-const mockGetDrawerAppFromURL = getDrawerAppFromURL as jest.Mock;
-const mockGetIsIframedDrawerApp = getIsIframedDrawerApp as unknown as jest.Mock;
-const mockPostMessageToIframe = postMessageToIframe as jest.Mock;
-const mockGetAppVersionHeaders = getAppVersionHeaders as jest.Mock;
-const mockGetClientID = getClientID as jest.Mock;
-const mockServerTime = serverTime as jest.Mock;
+const mockUseApi = useApi as Mock;
+const mockUseAuthentication = useAuthentication as Mock;
+const mockUseGetUser = useGetUser as Mock;
+const mockUseDrawerLocalStorage = useDrawerLocalStorage as Mock;
+const mockUseToggleDrawerApp = useToggleDrawerApp as Mock;
+const mockGetIsDrawerPostMessage = getIsDrawerPostMessage as unknown as Mock;
+const mockGetDrawerAppFromURL = getDrawerAppFromURL as Mock;
+const mockGetIsIframedDrawerApp = getIsIframedDrawerApp as unknown as Mock;
+const mockPostMessageToIframe = postMessageToIframe as Mock;
+const mockGetAppVersionHeaders = getAppVersionHeaders as Mock;
+const mockGetClientID = getClientID as Mock;
+const mockServerTime = serverTime as Mock;
 
 const MOCK_APP = 'proton-calendar';
 const MOCK_IFRAME_SRC = 'https://calendar.proton.me/u/1/';
 
-const mockApi = jest.fn();
+const mockApi = vi.fn();
 
 const fireMessage = async (data: object, origin = 'https://calendar.proton.me') => {
     await act(async () => {
@@ -79,21 +80,21 @@ describe('useDrawer', () => {
 
     describe('DrawerProvider initialized', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
 
             mockUseApi.mockReturnValue(mockApi);
             mockUseAuthentication.mockReturnValue({
-                getLocalID: jest.fn().mockReturnValue(1),
-                getUID: jest.fn().mockReturnValue('uid'),
-                getPassword: jest.fn().mockReturnValue('password'),
-                getPersistent: jest.fn().mockReturnValue(false),
-                getTrusted: jest.fn().mockReturnValue(false),
-                getClientKey: jest.fn().mockReturnValue('clientKey'),
-                getOfflineKey: jest.fn().mockReturnValue(undefined),
+                getLocalID: vi.fn().mockReturnValue(1),
+                getUID: vi.fn().mockReturnValue('uid'),
+                getPassword: vi.fn().mockReturnValue('password'),
+                getPersistent: vi.fn().mockReturnValue(false),
+                getTrusted: vi.fn().mockReturnValue(false),
+                getClientKey: vi.fn().mockReturnValue('clientKey'),
+                getOfflineKey: vi.fn().mockReturnValue(undefined),
             });
-            mockUseGetUser.mockReturnValue(jest.fn().mockResolvedValue({ ID: 'user123' }));
-            mockUseDrawerLocalStorage.mockReturnValue({ setDrawerLocalStorageKey: jest.fn() });
-            mockUseToggleDrawerApp.mockReturnValue(jest.fn());
+            mockUseGetUser.mockReturnValue(vi.fn().mockResolvedValue({ ID: 'user123' }));
+            mockUseDrawerLocalStorage.mockReturnValue({ setDrawerLocalStorageKey: vi.fn() });
+            mockUseToggleDrawerApp.mockReturnValue(vi.fn());
             mockGetIsDrawerPostMessage.mockReturnValue(true);
             mockGetDrawerAppFromURL.mockReturnValue(MOCK_APP);
             mockGetIsIframedDrawerApp.mockReturnValue(true);
@@ -252,7 +253,7 @@ describe('useDrawer', () => {
 
         describe('ABORT_REQUEST handling', () => {
             it('should do nothing when the event id is not stored', async () => {
-                const abortSpy = jest.spyOn(AbortController.prototype, 'abort');
+                const abortSpy = vi.spyOn(AbortController.prototype, 'abort');
 
                 const { result } = renderHook(() => useDrawer(), { wrapper: createWrapper() });
 
@@ -271,7 +272,7 @@ describe('useDrawer', () => {
             });
 
             it('should abort the controller when the event id is found', async () => {
-                const abortSpy = jest.spyOn(AbortController.prototype, 'abort');
+                const abortSpy = vi.spyOn(AbortController.prototype, 'abort');
 
                 // Keep the API pending so the controller stays in the array when ABORT_REQUEST arrives
                 mockApi.mockImplementation(() => new Promise(() => {}));

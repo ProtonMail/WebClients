@@ -7,9 +7,9 @@ import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { MAX_RECIPIENTS } from '@proton/shared/lib/mail/mailSettings';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 
-import { clearAll, getCard, minimalCache, mockedCryptoApi, renderWithProviders } from '../tests/render';
+import { clearAll, getCard, minimalCache, mockedCryptoApi, renderWithProviders } from '../tests/vitest/render';
 import type { ContactGroupEditProps } from './ContactGroupEditModal';
 import ContactGroupEditModal from './ContactGroupEditModal';
 
@@ -17,7 +17,7 @@ describe('ContactGroupEditModal', () => {
     const props: ContactGroupEditProps = {
         contactGroupID: 'ContactGroupID',
         selectedContactEmails: [],
-        onDelayedSave: jest.fn(),
+        onDelayedSave: vi.fn(),
     };
 
     const group: ContactGroup = {
@@ -71,10 +71,10 @@ describe('ContactGroupEditModal', () => {
     it('should display a contact group', async () => {
         minimalCache();
 
-        const updateSpy = jest.fn();
-        const createContactSpy = jest.fn();
-        const labelSpy = jest.fn();
-        const unlabelSpy = jest.fn();
+        const updateSpy = vi.fn();
+        const createContactSpy = vi.fn();
+        const labelSpy = vi.fn();
+        const unlabelSpy = vi.fn();
 
         addApiMock(`core/v4/labels/${group.ID}`, (args) => {
             updateSpy(args.data);

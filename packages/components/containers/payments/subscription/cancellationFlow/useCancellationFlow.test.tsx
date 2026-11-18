@@ -2,12 +2,12 @@ import { PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';
-import { componentsHookRenderer } from '../../../contacts/tests/render';
+import { componentsHookRenderer } from '../../../contacts/tests/vitest/render';
 import useCancellationFlow, { getCanUseCancellationReminder } from './useCancellationFlow';
 
-jest.mock('../../../../components/link/useSettingsLink');
-const mockGoToSettings = jest.fn();
-jest.mocked(useSettingsLink).mockReturnValue(mockGoToSettings);
+vi.mock('../../../../components/link/useSettingsLink');
+const mockGoToSettings = vi.fn();
+vi.mocked(useSettingsLink).mockReturnValue(mockGoToSettings);
 
 describe('getCanUseCancellationReminder', () => {
     it.each([

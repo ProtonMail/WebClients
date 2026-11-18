@@ -1,5 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { addDays, getUnixTime } from 'date-fns';
+import type { Mock } from 'vitest';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -8,13 +9,13 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { renderWithProviders } from '../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../testing/vitest/renderWithProviders';
 import LegacyReferralTopBanner from './LegacyReferralTopBanner';
 
-jest.mock('@proton/app-context/useConfig');
+vi.mock('@proton/app-context/useConfig');
 
-const mockOpenSubscriptionModal = jest.fn();
-jest.mock('../../payments/subscription/subscriptionModalContext', () => ({
+const mockOpenSubscriptionModal = vi.fn();
+vi.mock('../../payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [mockOpenSubscriptionModal, false],
 }));
 
@@ -34,11 +35,11 @@ describe('LegacyReferralTopBanner', () => {
         });
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('opens the checkout of the trial plan in the account app when the first subscription is paid without a trial', () => {
-        (useConfig as jest.Mock).mockReturnValue({ APP_NAME: APPS.PROTONACCOUNT });
+        (useConfig as Mock).mockReturnValue({ APP_NAME: APPS.PROTONACCOUNT });
 
         renderBanner();
 
@@ -54,7 +55,7 @@ describe('LegacyReferralTopBanner', () => {
     });
 
     it('links outside the account app to the upgrade path of the trial plan', () => {
-        (useConfig as jest.Mock).mockReturnValue({ APP_NAME: APPS.PROTONDRIVE });
+        (useConfig as Mock).mockReturnValue({ APP_NAME: APPS.PROTONDRIVE });
 
         renderBanner();
 

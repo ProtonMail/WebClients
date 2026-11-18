@@ -1,23 +1,24 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { Invoice } from '@proton/payments/core/interface';
 
-import { renderWithProviders } from '../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../testing/vitest/renderWithProviders';
 import { EditInvoiceModal } from './EditInvoiceModal';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(),
 }));
 
-jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
-    usePaymentsApi: jest.fn(),
+vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
+    usePaymentsApi: vi.fn(),
 }));
 
-const mockUseNotifications = useNotifications as jest.MockedFunction<typeof useNotifications>;
-const mockUsePaymentsApi = usePaymentsApi as jest.MockedFunction<typeof usePaymentsApi>;
+const mockUseNotifications = useNotifications as MockedFunction<typeof useNotifications>;
+const mockUsePaymentsApi = usePaymentsApi as MockedFunction<typeof usePaymentsApi>;
 
 const invoice: Invoice = {
     ID: 'invoice-1',
@@ -54,7 +55,7 @@ function renderEditInvoiceModal({
     initialInvoiceBillingAddress?: FullBillingAddress;
     initialFullBillingAddress?: FullBillingAddress;
 } = {}) {
-    const updateInvoiceBillingAddress = jest.fn().mockResolvedValue(undefined);
+    const updateInvoiceBillingAddress = vi.fn().mockResolvedValue(undefined);
 
     mockUsePaymentsApi.mockReturnValue({
         paymentsApi: {
@@ -62,8 +63,8 @@ function renderEditInvoiceModal({
         },
     } as any);
 
-    const onResolve = jest.fn();
-    const onReject = jest.fn();
+    const onResolve = vi.fn();
+    const onReject = vi.fn();
 
     renderWithProviders(
         <EditInvoiceModal
@@ -84,11 +85,11 @@ function renderEditInvoiceModal({
 }
 
 describe('EditInvoiceModal', () => {
-    let createNotification: jest.Mock;
+    let createNotification: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        createNotification = jest.fn();
+        vi.clearAllMocks();
+        createNotification = vi.fn();
         mockUseNotifications.mockReturnValue({
             createNotification,
         } as any);

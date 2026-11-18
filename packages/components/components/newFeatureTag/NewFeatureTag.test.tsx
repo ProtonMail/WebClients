@@ -6,14 +6,14 @@ import type { SpotlightProps } from '../spotlight/Spotlight';
 import type { IsActiveInEnvironmentContainer } from './NewFeatureTag';
 import NewFeatureTag from './NewFeatureTag';
 
-jest.mock('@proton/shared/lib/helpers/storage');
-const mockedGetItem = jest.mocked(getItem);
-const mockedSetItem = jest.mocked(setItem);
-const mockedRemoveItem = jest.mocked(removeItem);
+vi.mock('@proton/shared/lib/helpers/storage');
+const mockedGetItem = vi.mocked(getItem);
+const mockedSetItem = vi.mocked(setItem);
+const mockedRemoveItem = vi.mocked(removeItem);
 
 const SPOTLIGHT_ID = 'this-is-a-mocked-spotlight';
 const NEW_FEATURE_TAG_ID = 'this-is-a-test-instance-of-new-feature-tag';
-jest.mock('../spotlight/Spotlight', () => ({
+vi.mock('../spotlight/Spotlight', () => ({
     __esModule: true,
     default: () => <div data-testid={SPOTLIGHT_ID}></div>,
 }));
@@ -25,8 +25,8 @@ describe('NewFeatureTag component', () => {
 
     beforeEach(() => {
         // Monday, April 24, 2023 9:00:00 AM
-        jest.setSystemTime(new Date('2023-04-24T09:00:00'));
-        jest.clearAllMocks();
+        vi.setSystemTime(new Date('2023-04-24T09:00:00'));
+        vi.clearAllMocks();
     });
 
     it('NewFeatureTag should be always shown by default', () => {

@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import ImagePreview from './ImagePreview';
 
@@ -14,13 +15,13 @@ const readBlobAsText = (blob: Blob) =>
     });
 
 describe('ImagePreview', () => {
-    let createObjectURLSpy: jest.Mock;
+    let createObjectURLSpy: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        createObjectURLSpy = jest.fn().mockReturnValue('blob:mock-url');
+        vi.clearAllMocks();
+        createObjectURLSpy = vi.fn().mockReturnValue('blob:mock-url');
         URL.createObjectURL = createObjectURLSpy;
-        URL.revokeObjectURL = jest.fn();
+        URL.revokeObjectURL = vi.fn();
     });
 
     const renderAndReadBlob = async (mimeType: string, svg = MALICIOUS_SVG) => {

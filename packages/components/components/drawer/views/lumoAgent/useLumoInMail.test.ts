@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
+import { mockUseConfig } from '@proton/app-context/testing/vitest/mockUseConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -9,21 +9,21 @@ import { useFlag } from '@proton/unleash/useFlag';
 import useLumoInMail from './useLumoInMail';
 import useLumoInMailPreference from './useLumoInMailPreference';
 
-jest.mock('@proton/account/user/hooks', () => ({ useUser: jest.fn() }));
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: jest.fn() }));
+vi.mock('@proton/account/user/hooks', () => ({ useUser: vi.fn() }));
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 
 const USER_A = 'user-a';
 const USER_B = 'user-b';
 
 const signInAs = (userID: string) => {
-    jest.mocked(useUser).mockReturnValue([buildUser({ ID: userID }), false]);
+    vi.mocked(useUser).mockReturnValue([buildUser({ ID: userID }), false]);
 };
 
 describe('useLumoInMail', () => {
     beforeEach(() => {
         localStorage.clear();
         mockUseConfig();
-        jest.mocked(useFlag).mockReturnValue(true);
+        vi.mocked(useFlag).mockReturnValue(true);
         signInAs(USER_A);
     });
 
@@ -56,7 +56,7 @@ describe('useLumoInMail', () => {
 
     it('is off when the flag is off, even with the preference stored on', () => {
         localStorage.setItem(`lumo-in-mail-enabled-${USER_A}`, 'true');
-        jest.mocked(useFlag).mockReturnValue(false);
+        vi.mocked(useFlag).mockReturnValue(false);
 
         const { result } = renderHook(() => useLumoInMail());
 

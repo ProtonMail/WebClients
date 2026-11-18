@@ -47,7 +47,7 @@ describe('SelectTwo component', () => {
     });
 
     it('should select a value on click', () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
 
         const output = render(
             <SelectTwo onChange={spy} data-testid="dropdown-button">
@@ -87,7 +87,7 @@ describe('SelectTwo component', () => {
     });
 
     it(`should select "two" when typing "t"`, () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
 
         const output = render(
             <SelectTwo onChange={spy} data-testid="dropdown-button">
@@ -274,7 +274,7 @@ describe('SelectTwo component', () => {
     });
 
     it('supports multiple selection mode', () => {
-        const onChangeSpy = jest.fn();
+        const onChangeSpy = vi.fn();
 
         const output = render(
             <SelectTwo data-testid="dropdown-button" multiple value={['one', 'two']} onChange={onChangeSpy}>
@@ -295,7 +295,7 @@ describe('SelectTwo component', () => {
     });
 
     it('supports multiple selection mode with complex values', () => {
-        const onChangeSpy = jest.fn();
+        const onChangeSpy = vi.fn();
         const options = [
             { label: 'one', key: 1 },
             { label: 'two', key: 2 },

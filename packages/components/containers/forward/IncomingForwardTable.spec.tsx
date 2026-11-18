@@ -1,19 +1,21 @@
+import type { MockedFunction } from 'vitest';
+
 import { useUser } from '@proton/account/user/hooks';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces/AddressForwarding';
 
 import { applyHOCs } from '../../testing/hocs/helpers';
-import { withApi } from '../../testing/hocs/with-api';
+import { withApi } from '../../testing/vitest/with-api';
+import { withEventManager } from '../../testing/vitest/with-event-manager';
 import { withAuthentication } from '../../testing/with-authentication';
 import { withCache } from '../../testing/with-cache';
 import { withConfig } from '../../testing/with-config';
-import { withEventManager } from '../../testing/with-event-manager';
 import { withNotifications } from '../../testing/with-notifications';
-import { renderWithProviders } from '../contacts/tests/render';
+import { renderWithProviders } from '../contacts/tests/vitest/render';
 import IncomingForwardTable from './IncomingForwardTable';
 
-jest.mock('@proton/account/user/hooks');
-const mockedUseUser = useUser as jest.MockedFunction<typeof useUser>;
+vi.mock('@proton/account/user/hooks');
+const mockedUseUser = useUser as MockedFunction<typeof useUser>;
 mockedUseUser.mockReturnValue([{}] as any);
 
 const IncomingForwardTableContext = applyHOCs(

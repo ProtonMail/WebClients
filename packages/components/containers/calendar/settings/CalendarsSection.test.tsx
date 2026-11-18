@@ -6,15 +6,15 @@ import { createMemoryHistory } from 'history';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { generateSimpleCalendar } from '@proton/shared/testing/calendarBuilders';
 
-import { mockUseAuthentication } from '../../../testing/mockUseAuthentication';
+import { mockUseAuthentication } from '../../../testing/vitest/mockUseAuthentication';
 import { CacheProvider } from '../../cache/Provider';
 import ModalsProvider from '../../modals/Provider';
 import type { CalendarsSectionProps } from './CalendarsSection';
 import CalendarsSection from './CalendarsSection';
 
-jest.mock('@proton/account/addresses/hooks', () => ({
+vi.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
-    default: jest.fn(() => [
+    default: vi.fn(() => [
         [
             {
                 Email: 'test@pm.gg',
@@ -24,19 +24,19 @@ jest.mock('@proton/account/addresses/hooks', () => ({
             },
         ],
     ]),
-    useGetAddresses: jest.fn(),
+    useGetAddresses: vi.fn(),
 }));
-jest.mock('../../../hooks/useEventManager', () => () => ({}));
-jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => ({ useCalendarsInfoListener: () => ({}) }));
-jest.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
-    useCalendarModelEventManager: jest.fn(),
+vi.mock('../../../hooks/useEventManager', () => ({ __esModule: true, default: () => ({}) }));
+vi.mock('../../eventManager/calendar/useCalendarsInfoListener', () => ({ useCalendarsInfoListener: () => ({}) }));
+vi.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+    useCalendarModelEventManager: vi.fn(),
 }));
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }),
 }));
-jest.mock('@proton/account/addresses/hooks', () => ({
+vi.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
-    default: jest.fn(() => [
+    default: vi.fn(() => [
         [
             {
                 Email: 'test@pm.gg',
@@ -46,7 +46,7 @@ jest.mock('@proton/account/addresses/hooks', () => ({
             },
         ],
     ]),
-    useGetAddresses: jest.fn(),
+    useGetAddresses: vi.fn(),
 }));
 
 function renderComponent(props?: Partial<CalendarsSectionProps>) {
@@ -57,8 +57,8 @@ function renderComponent(props?: Partial<CalendarsSectionProps>) {
         // defaultCalendarID?: string,
         // loading?: boolean,
         // onSetDefault?: (id: string) => Promise<void>,
-        onEdit: jest.fn(),
-        onDelete: jest.fn(),
+        onEdit: vi.fn(),
+        onDelete: vi.fn(),
         // onExport?: (calendar: Calendar) => void,
     };
 

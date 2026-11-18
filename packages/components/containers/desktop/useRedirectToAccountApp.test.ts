@@ -14,33 +14,33 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 import { openLinkInBrowser } from './openExternalLink';
 import { useRedirectToAccountApp } from './useRedirectToAccountApp';
 
-jest.mock('@proton/shared/lib/helpers/desktop', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/desktop'),
+vi.mock('@proton/shared/lib/helpers/desktop', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/desktop')),
     isElectronApp: true,
 }));
 
-jest.mock('./useHasInboxDesktopInAppPayments', () => ({
+vi.mock('./useHasInboxDesktopInAppPayments', () => ({
     useHasInboxDesktopInAppPayments: () => false,
 }));
 
-jest.mock('./openExternalLink', () => ({
-    openLinkInBrowser: jest.fn(),
+vi.mock('./openExternalLink', () => ({
+    openLinkInBrowser: vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn(),
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn(),
 }));
 
-jest.mock('@proton/account/allSubscriptions/hooks', () => ({
-    useAllSubscriptions: jest.fn(),
+vi.mock('@proton/account/allSubscriptions/hooks', () => ({
+    useAllSubscriptions: vi.fn(),
 }));
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementCatalog: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementCatalog: vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useConfig', () => ({
-    useConfig: jest.fn(),
+vi.mock('@proton/app-context/useConfig', () => ({
+    useConfig: vi.fn(),
 }));
 
 const catalog = buildEntitlementCatalog({
@@ -58,21 +58,21 @@ const getOpenedPlan = ({
     plans: PLANS[];
     params: Parameters<ReturnType<typeof useRedirectToAccountApp>>[0];
 }) => {
-    jest.mocked(useUser).mockReturnValue([buildUser(), false]);
-    jest.mocked(useAllSubscriptions).mockReturnValue([plans.map((plan) => buildSubscription(plan)), false]);
-    jest.mocked(useEntitlementCatalog).mockReturnValue([catalog, false]);
-    jest.mocked(useConfig).mockReturnValue({ APP_NAME: appName } as ReturnType<typeof useConfig>);
+    vi.mocked(useUser).mockReturnValue([buildUser(), false]);
+    vi.mocked(useAllSubscriptions).mockReturnValue([plans.map((plan) => buildSubscription(plan)), false]);
+    vi.mocked(useEntitlementCatalog).mockReturnValue([catalog, false]);
+    vi.mocked(useConfig).mockReturnValue({ APP_NAME: appName } as ReturnType<typeof useConfig>);
 
     const { result } = renderHook(() => useRedirectToAccountApp());
     result.current(params);
 
-    const openedUrl = jest.mocked(openLinkInBrowser).mock.lastCall?.[0] ?? '';
+    const openedUrl = vi.mocked(openLinkInBrowser).mock.lastCall?.[0] ?? '';
     return new URLSearchParams(openedUrl.split('?')[1]).get('plan');
 };
 
 describe('useRedirectToAccountApp', () => {
     beforeEach(() => {
-        jest.mocked(openLinkInBrowser).mockClear();
+        vi.mocked(openLinkInBrowser).mockClear();
     });
 
     it('starts from the plan of the only subscription when no plan is given', () => {

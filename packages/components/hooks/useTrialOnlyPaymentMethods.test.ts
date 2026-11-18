@@ -1,4 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
@@ -9,28 +10,28 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { useTrialOnlyPaymentMethods } from './useTrialOnlyPaymentMethods';
 
-jest.mock('@proton/account/allSubscriptions/hooks', () => ({
-    useAllSubscriptions: jest.fn(),
+vi.mock('@proton/account/allSubscriptions/hooks', () => ({
+    useAllSubscriptions: vi.fn(),
 }));
 
-jest.mock('@proton/account/paymentMethods/hooks', () => ({
-    useGetPaymentMethods: jest.fn(),
+vi.mock('@proton/account/paymentMethods/hooks', () => ({
+    useGetPaymentMethods: vi.fn(),
 }));
 
 const savedMethod = { ID: 'method-1' } as SavedPaymentMethod;
 
 describe('useTrialOnlyPaymentMethods', () => {
-    const getPaymentMethods = jest.fn();
+    const getPaymentMethods = vi.fn();
 
     const setup = (subscriptions: readonly Subscription[] | undefined) => {
-        (useAllSubscriptions as jest.Mock).mockReturnValue([subscriptions, subscriptions === undefined]);
+        (useAllSubscriptions as Mock).mockReturnValue([subscriptions, subscriptions === undefined]);
         return renderHook(() => useTrialOnlyPaymentMethods());
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         getPaymentMethods.mockResolvedValue([savedMethod]);
-        (useGetPaymentMethods as jest.Mock).mockReturnValue(getPaymentMethods);
+        (useGetPaymentMethods as Mock).mockReturnValue(getPaymentMethods);
     });
 
     it.each([

@@ -6,23 +6,23 @@ import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import useScimSetupData, { ItemStatus } from './useScimSetupData';
 
 let mockMembers: EnhancedMember[] = [];
-const mockDispatch = jest.fn();
+const mockDispatch = vi.fn();
 
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => true }));
-jest.mock('@proton/account/groupMembers/hooks', () => ({ useGetGroupMembers: () => jest.fn() }));
-jest.mock('@proton/account/groups/hooks', () => ({ useGroups: () => [[]] }));
-jest.mock('@proton/account/members/hooks', () => ({ useMembers: () => [mockMembers] }));
-jest.mock('@proton/account/members/useMemberRoles', () => ({ useMemberRoles: jest.fn() }));
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => jest.fn() }));
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => true }));
+vi.mock('@proton/account/groupMembers/hooks', () => ({ useGetGroupMembers: () => vi.fn() }));
+vi.mock('@proton/account/groups/hooks', () => ({ useGroups: () => [[]] }));
+vi.mock('@proton/account/members/hooks', () => ({ useMembers: () => [mockMembers] }));
+vi.mock('@proton/account/members/useMemberRoles', () => ({ useMemberRoles: vi.fn() }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => vi.fn() }));
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({
     useDispatch: () => mockDispatch,
     useSelector: () => [],
 }));
-jest.mock('../../hooks/useErrorHandler', () => () => jest.fn());
-jest.mock('./groups/useGroupKeys', () => () => ({ getMemberPublicKeys: jest.fn() }));
-jest.mock('@proton/account/scimSetup/actions', () => ({
+vi.mock('../../hooks/useErrorHandler', () => ({ __esModule: true, default: () => vi.fn() }));
+vi.mock('./groups/useGroupKeys', () => ({ __esModule: true, default: () => ({ getMemberPublicKeys: vi.fn() }) }));
+vi.mock('@proton/account/scimSetup/actions', async () => ({
     approveScimChanges: async function* () {
-        const { OrgKeyDemotionApproval, Phase } = jest.requireActual('@proton/account/scimSetup');
+        const { OrgKeyDemotionApproval, Phase } = await vi.importActual<any>('@proton/account/scimSetup');
         yield { type: 'phase', phase: Phase.Working };
         yield { type: 'orgKeyDemotion', approval: OrgKeyDemotionApproval.Requested };
         yield { type: 'orgKeyDemotion', approval: OrgKeyDemotionApproval.Enqueued };
@@ -40,13 +40,13 @@ const getMember = (ID: string, hasScheduledOrgKeyDemotion: boolean) =>
 
 describe('useScimSetupData clean-up actions', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         mockDispatch.mockReset();
         mockDispatch.mockResolvedValue(undefined);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const setup = async () => {
@@ -79,7 +79,7 @@ describe('useScimSetupData clean-up actions', () => {
         await setup();
         mockDispatch.mockClear();
 
-        await act(() => jest.advanceTimersByTimeAsync(60000));
+        await act(() => vi.advanceTimersByTimeAsync(60000));
 
         expect(mockDispatch).not.toHaveBeenCalled();
     });

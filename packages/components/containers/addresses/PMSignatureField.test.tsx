@@ -1,42 +1,42 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { mockUseOrganization } from '@proton/account/testing/mockUseOrganization';
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
-import { mockUseUserSettings } from '@proton/account/testing/mockUseUserSettings';
-import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
-import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
+import { mockUseOrganization } from '@proton/account/testing/vitest/mockUseOrganization';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { mockUseUserSettings } from '@proton/account/testing/vitest/mockUseUserSettings';
+import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { mockNotifications } from '../../testing/mockNotifications';
+import { mockNotifications } from '../../testing/vitest/mockNotifications';
+import { mockUseMailSettings } from '../../testing/vitest/mockUseMailSettings';
 import PMSignatureField from './PMSignatureField';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => mockNotifications,
 }));
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({
         APP_NAME: APPS.PROTONACCOUNT,
     }),
 }));
 
-jest.mock('../../components/upsell/UpsellModal/UpsellModal', () => {
+vi.mock('../../components/upsell/UpsellModal/UpsellModal', () => {
     const MockUpsellModal = (props: any) => {
         return <div data-testid="upsell-modal">{props.title || 'Upsell Modal'}</div>;
     };
-    return MockUpsellModal;
+    return { __esModule: true, default: MockUpsellModal };
 });
 
-jest.mock('@proton/account/userSettings/hooks');
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/mail/store/mailSettings/hooks');
-jest.mock('@proton/account/organization/hooks');
-jest.mock('@proton/app-context/useApi');
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => jest.fn() }));
-jest.mock('@proton/hooks/useToggle', () => () => ({ state: false, toggle: jest.fn() }));
-jest.mock('@proton/hooks/useLoading', () => ({ __esModule: true, default: () => [false, (fn: any) => fn] }));
-jest.mock('../../components/modalTwo/useModalState', () => () => [{}, jest.fn(), true]);
+vi.mock('@proton/account/userSettings/hooks');
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/mail/store/mailSettings/hooks');
+vi.mock('@proton/account/organization/hooks');
+vi.mock('@proton/app-context/useApi');
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => vi.fn() }));
+vi.mock('@proton/hooks/useToggle', () => ({ __esModule: true, default: () => ({ state: false, toggle: vi.fn() }) }));
+vi.mock('@proton/hooks/useLoading', () => ({ __esModule: true, default: () => [false, (fn: any) => fn] }));
+vi.mock('../../components/modalTwo/useModalState', () => ({ __esModule: true, default: () => [{}, vi.fn(), true] }));
 
 describe('PMSignatureField', () => {
     const id = 'pmSignatureToggle';
@@ -48,7 +48,7 @@ describe('PMSignatureField', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('enables the toggle for free user (regardless of PMSignature state)', () => {
@@ -74,7 +74,7 @@ describe('PMSignatureField', () => {
 
     it('calls API and notification when paid user toggles', () => {
         mockUseUser([{ hasPaidMail: true }]);
-        const mockApi = jest.fn().mockResolvedValue({ MailSettings: {} });
+        const mockApi = vi.fn().mockResolvedValue({ MailSettings: {} });
         mockUseApi(mockApi);
         render(<PMSignatureField id={id} enabled={true} locked={false} />);
         const toggle = screen.getByRole('checkbox');

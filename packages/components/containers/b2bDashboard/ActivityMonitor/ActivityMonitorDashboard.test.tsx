@@ -5,23 +5,21 @@ import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organiz
 
 import ActivityMonitorDashboard from './ActivityMonitorDashboard';
 
-jest.mock(
-    './ActivityMonitorEvents',
-    () =>
-        function ActivityMonitorEvents() {
-            return <div>account events</div>;
-        }
-);
-jest.mock('../Organization/OrganizationEvents', () => ({ OrganizationEvents: () => <div>organization events</div> }));
-jest.mock('../Pass/PassEvents', () => ({ PassEvents: () => <div>pass events</div> }));
-jest.mock('../VPN/VPNEvents', () => ({ VPNEvents: () => <div>vpn events</div> }));
-jest.mock(
-    '../../account/SettingsSectionExtraWide',
-    () =>
-        function SettingsSectionExtraWide({ children }: { children: React.ReactNode }) {
-            return <div>{children}</div>;
-        }
-);
+vi.mock('./ActivityMonitorEvents', () => ({
+    __esModule: true,
+    default: function ActivityMonitorEvents() {
+        return <div>account events</div>;
+    },
+}));
+vi.mock('../Organization/OrganizationEvents', () => ({ OrganizationEvents: () => <div>organization events</div> }));
+vi.mock('../Pass/PassEvents', () => ({ PassEvents: () => <div>pass events</div> }));
+vi.mock('../VPN/VPNEvents', () => ({ VPNEvents: () => <div>vpn events</div> }));
+vi.mock('../../account/SettingsSectionExtraWide', () => ({
+    __esModule: true,
+    default: function SettingsSectionExtraWide({ children }: { children: React.ReactNode }) {
+        return <div>{children}</div>;
+    },
+}));
 
 const organizationWithoutSetup = { Name: '', RequiresKey: 0, HasKeys: 0 } as OrganizationExtended;
 const organizationWithKeys = { Name: 'Example organization', RequiresKey: 1, HasKeys: 1 } as OrganizationExtended;

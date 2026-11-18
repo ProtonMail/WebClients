@@ -4,7 +4,7 @@ import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/c
 
 import InAppPurchaseModal from './InAppPurchaseModal';
 
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
 it('should render', () => {
     const { container } = render(
@@ -19,7 +19,7 @@ it('should render', () => {
 });
 
 it('should trigger onClose when user presses the button', async () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { getByTestId } = render(
         <InAppPurchaseModal
             onClose={onClose}
@@ -50,7 +50,7 @@ it('should render iOS text if subscription is managed by Apple', async () => {
 });
 
 it('should immediately close if subscription is not managed externally', () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { container } = render(
         <InAppPurchaseModal
             onClose={onClose}

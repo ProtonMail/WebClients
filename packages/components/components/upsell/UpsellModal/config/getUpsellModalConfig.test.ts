@@ -7,23 +7,23 @@ import * as freeUserConfigModule from '../configs/getUpsellModalFreeUserConfig';
 import * as protonSentinelConfigModule from '../configs/getUpsellModalProtonSentinelConfig';
 import { getMailUpsellConfig } from './getUpsellModalConfig';
 
-jest.mock('../configs/getUpsellModalComposerAssistantConfig');
-jest.mock('../configs/getUpsellModalDefaultConfig');
-jest.mock('../configs/getUpsellModalFreeUserConfig');
-jest.mock('../configs/getUpsellModalProtonSentinelConfig');
+vi.mock('../configs/getUpsellModalComposerAssistantConfig');
+vi.mock('../configs/getUpsellModalDefaultConfig');
+vi.mock('../configs/getUpsellModalFreeUserConfig');
+vi.mock('../configs/getUpsellModalProtonSentinelConfig');
 
 const getSpies = () => {
     return {
-        composerAssistantConfig: jest.spyOn(composerAssistantConfigModule, 'getUpsellModalComposerAssistantConfig'),
-        protonSentinelConfig: jest.spyOn(protonSentinelConfigModule, 'getUpsellModalProtonSentinelConfig'),
-        defaultConfig: jest.spyOn(defaultConfigModule, 'getUpsellModalDefaultConfig'),
-        freeUserConfig: jest.spyOn(freeUserConfigModule, 'getUpsellModalFreeUserConfig'),
+        composerAssistantConfig: vi.spyOn(composerAssistantConfigModule, 'getUpsellModalComposerAssistantConfig'),
+        protonSentinelConfig: vi.spyOn(protonSentinelConfigModule, 'getUpsellModalProtonSentinelConfig'),
+        defaultConfig: vi.spyOn(defaultConfigModule, 'getUpsellModalDefaultConfig'),
+        freeUserConfig: vi.spyOn(freeUserConfigModule, 'getUpsellModalFreeUserConfig'),
     };
 };
 
 describe('getMailUpsellConfig', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('Should call the composer assistant upsell config', () => {

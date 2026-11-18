@@ -7,20 +7,22 @@ import noop from '@proton/utils/noop';
 
 import { useEventNotifier } from './useEventNotifier';
 
-const mockCall = jest.fn();
-const mockEventManager = { call: mockCall, setIntervalsOverride: jest.fn() };
-const mockApi = jest.fn();
+const mockCall = vi.fn();
+const mockEventManager = { call: mockCall, setIntervalsOverride: vi.fn() };
+const mockApi = vi.fn();
 const mockUser = { ID: 'user-1' };
 const mockConfig = { API_URL: '/api' };
 
-jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [mockUser] }));
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
-jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => mockConfig }));
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: (name: string) => name === 'PingOMatic' }));
-jest.mock('@proton/unleash/useVariant', () => ({ useVariant: () => ({ payload: undefined }) }));
-jest.mock('../../hooks/useEventManager', () => ({ __esModule: true, default: () => mockEventManager }));
-jest.mock('@proton/shared/lib/eventNotifier/EventNotifier', () => ({
-    EventNotifier: jest.fn().mockImplementation(() => ({ start: jest.fn(), stop: jest.fn() })),
+vi.mock('@proton/account/user/hooks', () => ({ useUser: () => [mockUser] }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
+vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => mockConfig }));
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: (name: string) => name === 'PingOMatic' }));
+vi.mock('@proton/unleash/useVariant', () => ({ useVariant: () => ({ payload: undefined }) }));
+vi.mock('../../hooks/useEventManager', () => ({ __esModule: true, default: () => mockEventManager }));
+vi.mock('@proton/shared/lib/eventNotifier/EventNotifier', () => ({
+    EventNotifier: vi.fn().mockImplementation(function () {
+        return { start: vi.fn(), stop: vi.fn() };
+    }),
 }));
 
 const TYPES = [EventNotifierLoopType.Mail];
@@ -39,7 +41,7 @@ const flushPromises = () => {
 
 const renderAndGetPing = () => {
     renderHook(() => useEventNotifier({ types: TYPES, debug: noop }));
-    const { onPing } = jest.mocked(EventNotifier).mock.calls[0][0];
+    const { onPing } = vi.mocked(EventNotifier).mock.calls[0][0];
     return () => {
         onPing({ type: EventNotifierLoopType.Mail });
     };
@@ -47,7 +49,7 @@ const renderAndGetPing = () => {
 
 describe('useEventNotifier', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockCall.mockResolvedValue(undefined);
     });
 

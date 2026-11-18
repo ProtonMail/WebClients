@@ -7,8 +7,8 @@ import type { PlanCardFeatureDefinition } from './interface';
 import { getLumoFree2026Features } from './lumo';
 import { getShortPlan } from './plan';
 
-const mockIsEnabled = jest.fn();
-jest.mock('@proton/unleash/standaloneClient', () => ({
+const mockIsEnabled = vi.fn();
+vi.mock('@proton/unleash/standaloneClient', () => ({
     getStandaloneUnleashClient: () => ({ isEnabled: mockIsEnabled }),
 }));
 

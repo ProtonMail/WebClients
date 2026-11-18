@@ -17,14 +17,14 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
-import { plansDefaultResponse } from '../../hooks/helpers/tests/usePlans';
-import { renderWithProviders } from '../../testing/renderWithProviders';
+import { plansDefaultResponse } from '../../hooks/helpers/tests/vitest/usePlans';
+import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import SubscriptionsSection from './SubscriptionsSection';
 
-const mockGetPaymentMethods = jest.fn();
-jest.mock('@proton/account/paymentMethods/hooks', () => ({
+const mockGetPaymentMethods = vi.fn();
+vi.mock('@proton/account/paymentMethods/hooks', () => ({
     useGetPaymentMethods: () => mockGetPaymentMethods,
 }));
 
@@ -134,7 +134,7 @@ describe('SubscriptionsSection', () => {
             'sub-upcoming'
         );
 
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         clearApiMocks();
         mockGetPaymentMethods.mockResolvedValue([{ ID: 'pm1' }]);
     });

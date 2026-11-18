@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { getUnixTime, subDays } from 'date-fns';
+import type { Mock } from 'vitest';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -11,24 +12,24 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMailPostSignup099 } from './useMailPostSignup099';
 
-jest.mock('react-router', () => {
+vi.mock('react-router', () => {
     return { useLocation: () => ({ pathname: '/inbox' }) };
 });
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = useUser as jest.Mock;
+vi.mock('@proton/account/user/hooks');
+const mockUseUser = useUser as Mock;
 
-jest.mock('@proton/account/subscription/hooks');
-const mockUseSubscription = useSubscription as jest.Mock;
+vi.mock('@proton/account/subscription/hooks');
+const mockUseSubscription = useSubscription as Mock;
 
-jest.mock('@proton/app-context/useConfig');
-const mockUseConfig = useConfig as jest.Mock;
+vi.mock('@proton/app-context/useConfig');
+const mockUseConfig = useConfig as Mock;
 
-jest.mock('@proton/features/useFeature');
-const mockUseFeature = useFeature as jest.Mock;
+vi.mock('@proton/features/useFeature');
+const mockUseFeature = useFeature as Mock;
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.Mock;
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as Mock;
 
 const setFeatures = ({ hideOffer = false }: { hideOffer?: boolean }) => {
     mockUseFeature.mockImplementation((code: FeatureCode) => {
@@ -60,7 +61,7 @@ describe('useMailPostSignup099', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should be eligible when the flag is on and the offer has not been dismissed', () => {

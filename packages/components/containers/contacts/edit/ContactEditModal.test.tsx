@@ -11,46 +11,52 @@ import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 
-import { clearAll, minimalCache, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
+import {
+    clearAll,
+    minimalCache,
+    mockedCryptoApi,
+    notificationManager,
+    renderWithProviders,
+} from '../tests/vitest/render';
 import type { ContactEditModalProps, ContactEditProps } from './ContactEditModal';
 import ContactEditModal from './ContactEditModal';
 
-jest.mock('../../../hooks/useAuthentication', () => ({
+vi.mock('../../../hooks/useAuthentication', () => ({
     __esModule: true,
-    default: jest.fn(() => ({
-        getUID: jest.fn(),
+    default: vi.fn(() => ({
+        getUID: vi.fn(),
     })),
 }));
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ API_URL: 'api' }),
 }));
 
-jest.mock('@proton/account/contactEmails/hooks', () => ({
+vi.mock('@proton/account/contactEmails/hooks', async () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/account/contactEmails/hooks'),
+    ...(await vi.importActual('@proton/account/contactEmails/hooks')),
 }));
-jest.mock('@proton/mail/store/labels/hooks', () => ({
+vi.mock('@proton/mail/store/labels/hooks', async () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/mail/store/labels/hooks'),
+    ...(await vi.importActual('@proton/mail/store/labels/hooks')),
 }));
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', async () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/account/user/hooks'),
+    ...(await vi.importActual('@proton/account/user/hooks')),
 }));
-jest.mock('@proton/mail/store/mailSettings/hooks', () => ({
+vi.mock('@proton/mail/store/mailSettings/hooks', async () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/mail/store/mailSettings/hooks'),
+    ...(await vi.importActual('@proton/mail/store/mailSettings/hooks')),
 }));
 
-jest.mock('@proton/shared/lib/helpers/image', () => ({
+vi.mock('@proton/shared/lib/helpers/image', () => ({
     toImage: (src: string) => ({ src }),
 }));
 
 const setupApiMocks = () => {
-    const saveRequestSpy = jest.fn();
+    const saveRequestSpy = vi.fn();
     addApiMock('contacts/v4/contacts/emails/label', (args) => {
         saveRequestSpy(args.data);
         return { ContactEmailIDs: [], Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
@@ -72,10 +78,10 @@ const setupApiMocks = () => {
 const props: ContactEditProps & ContactEditModalProps = {
     contactID: 'ContactID',
     vCardContact: { fn: [] },
-    onUpgrade: jest.fn(),
-    onSelectImage: jest.fn(),
-    onGroupEdit: jest.fn(),
-    onLimitReached: jest.fn(),
+    onUpgrade: vi.fn(),
+    onSelectImage: vi.fn(),
+    onGroupEdit: vi.fn(),
+    onLimitReached: vi.fn(),
 };
 
 const groupName = 'Test group';
@@ -309,16 +315,16 @@ END:VCARD`;
     it('should add user to a group at creation', async () => {
         // Mocking is a code smell (https://medium.com/javascript-scene/mocking-is-a-code-smell-944a70c90a6a)
         // but I don't think we could test this without these mocks.
-        jest.spyOn(mailLabelHooks, 'useContactGroups').mockImplementation(() => [mockContactGroup, true]);
-        jest.spyOn(useContactEmailHooks, 'useContactEmails').mockReturnValue([
+        vi.spyOn(mailLabelHooks, 'useContactGroups').mockImplementation(() => [mockContactGroup, true]);
+        vi.spyOn(useContactEmailHooks, 'useContactEmails').mockReturnValue([
             [{ Email: testEmail, Name: 'Testy McTestFace' } as ContactEmail],
             false,
         ]);
-        jest.spyOn(mailSettingsHooks, 'useMailSettings').mockImplementation(() => [
+        vi.spyOn(mailSettingsHooks, 'useMailSettings').mockImplementation(() => [
             { RecipientLimit: 100 } as MailSettings,
             true,
         ]);
-        jest.spyOn(userHooks, 'useUser').mockImplementation(() => [{ hasPaidMail: true } as UserModel, true]);
+        vi.spyOn(userHooks, 'useUser').mockImplementation(() => [{ hasPaidMail: true } as UserModel, true]);
 
         const saveRequestSpy = setupApiMocks();
 

@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { ConditionType, FilterStatement } from '@proton/sieve/filterModel';
@@ -6,17 +7,17 @@ import { ConditionType, FilterStatement } from '@proton/sieve/filterModel';
 import type { Condition } from '../filters/interfaces';
 import ForwardCondition from './ForwardCondition';
 
-jest.mock('@proton/app-context/useNotifications');
-const mockUseNotifications = useNotifications as jest.MockedFunction<any>;
+vi.mock('@proton/app-context/useNotifications');
+const mockUseNotifications = useNotifications as MockedFunction<any>;
 mockUseNotifications.mockReturnValue({
-    createNotification: jest.fn(),
+    createNotification: vi.fn(),
 });
 
 describe('ForwardCondition', () => {
     const setup = ({ index = 0, type = ConditionType.SUBJECT } = {}) => {
-        const onDelete = jest.fn();
-        const onUpdate = jest.fn();
-        const onChangeStatement = jest.fn();
+        const onDelete = vi.fn();
+        const onUpdate = vi.fn();
+        const onChangeStatement = vi.fn();
         const condition = { type, values: ['token1', 'token2'] } as Condition;
         const statement = FilterStatement.ALL;
         const utils = render(

@@ -1,9 +1,11 @@
+import type { Mock } from 'vitest';
+
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import { getImageSize } from './senderImage';
 
-jest.mock('@proton/shared/lib/helpers/dom');
-const mockedRootFontSize = rootFontSize as jest.Mock;
+vi.mock('@proton/shared/lib/helpers/dom');
+const mockedRootFontSize = rootFontSize as Mock;
 
 describe('getImageSize', () => {
     it('should return the correct image size', () => {

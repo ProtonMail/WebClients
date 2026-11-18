@@ -1,4 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import type { FeatureCode } from '@proton/features/interface';
@@ -9,24 +10,24 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import TopNavbarUpsell from '../../components/topnavbar/TopNavbarUpsell';
-import { clearAll, renderWithProviders } from '../contacts/tests/render';
+import { clearAll, renderWithProviders } from '../contacts/tests/vitest/render';
 import { OffersTestProvider } from './Offers.test.helpers';
 import useOfferConfig from './hooks/useOfferConfig';
 import type { OfferConfig } from './interface';
 
-const mockUseOfferConfig = useOfferConfig as jest.MockedFunction<typeof useOfferConfig>;
+const mockUseOfferConfig = useOfferConfig as MockedFunction<typeof useOfferConfig>;
 
 const OFFER_CONTENT = 'deal deal deal deal deal';
 
-jest.mock('./hooks/useOfferConfig', () => ({
+vi.mock('./hooks/useOfferConfig', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('./hooks/useFetchOffer', function () {
+vi.mock('./hooks/useFetchOffer', function () {
     return {
         __esModule: true,
-        default: jest.fn(({ offerConfig }) => ({
+        default: vi.fn(({ offerConfig }) => ({
             offer: offerConfig,
             loading: false,
             hasEstimationError: false,
@@ -35,10 +36,10 @@ jest.mock('./hooks/useFetchOffer', function () {
     };
 });
 
-jest.mock('./hooks/useOfferFlags', function () {
+vi.mock('./hooks/useOfferFlags', function () {
     return {
         __esModule: true,
-        default: jest.fn(() => ({
+        default: vi.fn(() => ({
             isVisited: false,
             loading: false,
             isActive: true,
@@ -48,9 +49,9 @@ jest.mock('./hooks/useOfferFlags', function () {
     };
 });
 
-jest.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({
+vi.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({
     __esModule: true,
-    useAutomaticCurrency: jest.fn().mockReturnValue(['EUR', false]),
+    useAutomaticCurrency: vi.fn().mockReturnValue(['EUR', false]),
 }));
 
 const TopNavbarComponent = () => (

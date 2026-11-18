@@ -34,7 +34,7 @@ describe('TimeInput component', () => {
     });
 
     it('should select values on click', () => {
-        const onChange = jest.fn();
+        const onChange = vi.fn();
         const date = new Date(2023, 0, 11, 12);
         const { container } = render(<TimeInput value={date} onChange={onChange} />);
         const input = container.querySelector('input');

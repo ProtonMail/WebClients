@@ -14,16 +14,16 @@ import { useVariant } from '@proton/unleash/useVariant';
 
 import useShowVPNDashboard from './useShowVPNDashboard';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
 
-jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: jest.fn(),
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn(),
 }));
 
-jest.mock('@proton/unleash/useVariant', () => ({
-    useVariant: jest.fn(),
+vi.mock('@proton/unleash/useVariant', () => ({
+    useVariant: vi.fn(),
 }));
 
 type EntitlementsCase = {
@@ -32,7 +32,7 @@ type EntitlementsCase = {
 };
 
 const renderShowVPNDashboard = ({ subscriptionPlans, viewer }: EntitlementsCase) => {
-    jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
+    vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
         buildOrgAndUserEntitlementChecks({ subscriptionPlans: [...subscriptionPlans], ...viewer }),
         false,
     ]);
@@ -40,8 +40,8 @@ const renderShowVPNDashboard = ({ subscriptionPlans, viewer }: EntitlementsCase)
 };
 
 beforeEach(() => {
-    jest.mocked(useFlag).mockReturnValue(true);
-    jest.mocked(useVariant).mockReturnValue({ name: 'B', enabled: true });
+    vi.mocked(useFlag).mockReturnValue(true);
+    vi.mocked(useVariant).mockReturnValue({ name: 'B', enabled: true });
 });
 
 describe('useShowVPNDashboard', () => {
@@ -76,7 +76,7 @@ describe('useShowVPNDashboard', () => {
     });
 
     it('hides the VPN dashboard in the control variant', () => {
-        jest.mocked(useVariant).mockReturnValue({ name: 'Control', enabled: true });
+        vi.mocked(useVariant).mockReturnValue({ name: 'Control', enabled: true });
 
         const result = renderShowVPNDashboard({ subscriptionPlans: [PLANS.FAMILY] });
 
