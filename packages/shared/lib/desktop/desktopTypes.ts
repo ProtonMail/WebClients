@@ -221,6 +221,7 @@ export type IPCMeetMessageBroker = {
     ) => void;
     getScreenCaptureAccess?: () => Promise<MeetScreenCaptureAccess>;
     requestScreenCaptureAccess?: () => Promise<MeetScreenCaptureAccess>;
+    setLocale?: (locale: string) => void;
 };
 
 export interface InboxDesktopFreeTrialDates {

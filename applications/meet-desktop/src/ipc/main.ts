@@ -1,6 +1,8 @@
-import { ipcMain, IpcMainInvokeEvent, shell } from "electron";
+import { ipcMain, IpcMainEvent, IpcMainInvokeEvent, shell } from "electron";
 import type { IPCMeetClientUpdateMessage } from "@proton/shared/lib/desktop/desktopTypes";
+import { setSessionLocale } from "../utils/locale";
 import { ipcLogger } from "../utils/log";
+import { setApplicationMenu } from "../utils/menus/menuApplication";
 import { getScreenCaptureAccess, requestScreenCaptureAccess } from "../utils/screenPicker";
 import { isHostAllowed } from "../utils/urls/urlTests";
 
@@ -12,7 +14,7 @@ function isValidMeetClientUpdateMessage(message: unknown): message is IPCMeetCli
     return type === "openExternal";
 }
 
-const isTrustedSender = (event: IpcMainInvokeEvent) => {
+const isTrustedSender = (event: IpcMainEvent | IpcMainInvokeEvent) => {
     try {
         const { host, protocol } = new URL(event.senderFrame?.url ?? "");
         return protocol === "https:" && isHostAllowed(host);
@@ -34,6 +36,21 @@ export const handleIPCCalls = () => {
             throw new Error("Untrusted sender");
         }
         return requestScreenCaptureAccess();
+    });
+
+    ipcMain.on("meetLocale:set", (event, locale: unknown) => {
+        if (!isTrustedSender(event) || typeof locale !== "string") {
+            ipcLogger.error("Rejected meetLocale:set");
+            return;
+        }
+
+        setSessionLocale(locale)
+            .then((hasChanged) => {
+                if (hasChanged) {
+                    setApplicationMenu();
+                }
+            })
+            .catch((error) => ipcLogger.error("Failed to set the session locale", error));
     });
 
     ipcMain.on("meetClientUpdate", (_e, message: unknown) => {
