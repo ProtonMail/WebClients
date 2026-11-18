@@ -8,6 +8,7 @@ import { type UseMoveItemsModalStateProps, useMoveItemsModalState } from './useM
 
 const mockInitializeTree = jest.fn();
 const mockToggleExpand = jest.fn();
+const mockExpandedTreeIds = new Map<string, boolean>();
 const mockAddNode = jest.fn();
 const mockClear = jest.fn();
 const mockCreateNotification = jest.fn();
@@ -24,6 +25,7 @@ jest.mock('../../../modules/directoryTree', () => ({
         jest.fn(() => ({
             initializeTree: mockInitializeTree,
             toggleExpand: mockToggleExpand,
+            expandedTreeIds: mockExpandedTreeIds,
             treeRoots: [],
             addNode: mockAddNode,
             clear: mockClear,
@@ -394,30 +396,47 @@ describe('useMoveItemsModalState', () => {
             );
         });
 
-        it('calls addNode, toggleExpand, and selects the new folder in onSuccess', async () => {
-            const { result } = await renderLoaded();
-
-            // Select a folder so moveTargetTreeId is set
-            const treeItemId = makeTreeItemId(ROOT_UID, FOLDER1_UID);
-            act(() => {
-                result.current.handleSelect(treeItemId, makeFolderItem(treeItemId));
-            });
-
-            act(() => {
-                void result.current.createFolder();
-            });
-
-            // Extract the onSuccess callback passed to showCreateFolderModal
-            const { onSuccess } = mockShowCreateFolderModal.mock.calls[0][0];
-
+        describe('onSuccess', () => {
             const NEW_FOLDER_UID = 'new-folder-uid';
-            await act(async () => {
-                await onSuccess({ uid: NEW_FOLDER_UID, parentUid: FOLDER1_UID, name: 'New Folder' });
+            const treeItemId = makeTreeItemId(ROOT_UID, FOLDER1_UID);
+
+            afterEach(() => {
+                mockExpandedTreeIds.clear();
             });
 
-            expect(mockAddNode).toHaveBeenCalledWith(NEW_FOLDER_UID, FOLDER1_UID, 'New Folder');
-            expect(mockToggleExpand).toHaveBeenCalledWith(treeItemId);
-            expect(result.current.moveTargetTreeId).toBe(makeTreeItemId(FOLDER1_UID, NEW_FOLDER_UID));
+            /** Selects FOLDER1, creates a folder in it and runs the create modal's onSuccess. */
+            async function createFolderInSelected() {
+                const { result } = await renderLoaded();
+                act(() => {
+                    result.current.handleSelect(treeItemId, makeFolderItem(treeItemId));
+                });
+                act(() => {
+                    void result.current.createFolder();
+                });
+                const { onSuccess } = mockShowCreateFolderModal.mock.calls[0][0];
+                await act(async () => {
+                    await onSuccess({ uid: NEW_FOLDER_UID, parentUid: FOLDER1_UID, name: 'New Folder' });
+                });
+                return result;
+            }
+
+            it('adds the new folder, expands the collapsed parent and selects the new folder', async () => {
+                const result = await createFolderInSelected();
+
+                expect(mockAddNode).toHaveBeenCalledWith(NEW_FOLDER_UID, FOLDER1_UID, 'New Folder');
+                expect(mockToggleExpand).toHaveBeenCalledWith(treeItemId);
+                expect(result.current.moveTargetTreeId).toBe(makeTreeItemId(FOLDER1_UID, NEW_FOLDER_UID));
+            });
+
+            it('keeps an expanded parent expanded and selects the new folder', async () => {
+                mockExpandedTreeIds.set(treeItemId, true);
+
+                const result = await createFolderInSelected();
+
+                expect(mockAddNode).toHaveBeenCalledWith(NEW_FOLDER_UID, FOLDER1_UID, 'New Folder');
+                expect(mockToggleExpand).not.toHaveBeenCalled();
+                expect(result.current.moveTargetTreeId).toBe(makeTreeItemId(FOLDER1_UID, NEW_FOLDER_UID));
+            });
         });
     });
 });
