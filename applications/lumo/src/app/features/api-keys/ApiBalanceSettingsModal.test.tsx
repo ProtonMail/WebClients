@@ -33,20 +33,74 @@ const setup = ({
 };
 
 const amountInput = () => screen.getByLabelText('Top up by');
+const thresholdInput = () => screen.getByLabelText('When balance falls below');
 const limitInput = () => screen.getByLabelText('Limit', { exact: true });
 const autoTopUpToggle = () => screen.getByLabelText(/^Automatic top-up/);
 const saveButton = () => screen.getByText('Save settings').closest('button')!;
 const rangeError = 'Top-up amount must be a whole amount between $25.00 and $100.00';
+const thresholdError = 'Threshold must be a whole amount between $1.00 and $49.00';
 
 describe('ApiBalanceSettingsModal', () => {
-    it('shows the threshold from the balance as fixed', () => {
+    it('shows the threshold from the balance, editable', () => {
         setup();
 
-        const threshold = screen.getByLabelText('When balance falls below');
-        expect(threshold).toHaveValue(20);
-        expect(threshold).toBeDisabled();
-        expect(screen.getByText('For now, the threshold is fixed at $20.00.')).toBeInTheDocument();
+        expect(thresholdInput()).toHaveValue(20);
+        expect(thresholdInput()).toBeEnabled();
         expect(screen.getByText('Adding $50.00 when your balance falls below $20.00')).toBeInTheDocument();
+    });
+
+    it.each(['0', '50', '10.5', ''])('rejects a threshold of %p for a $50 top-up', (threshold) => {
+        setup();
+
+        fireEvent.change(thresholdInput(), { target: { value: threshold } });
+
+        expect(screen.getByText(thresholdError)).toBeInTheDocument();
+        expect(screen.queryByText(/^Adding /)).not.toBeInTheDocument();
+        expect(saveButton()).toBeDisabled();
+    });
+
+    it.each(['1', '49'])('accepts a threshold of %p for a $50 top-up', (threshold) => {
+        setup();
+
+        fireEvent.change(thresholdInput(), { target: { value: threshold } });
+
+        expect(screen.queryByText(thresholdError)).not.toBeInTheDocument();
+        expect(saveButton()).toBeEnabled();
+    });
+
+    it('rejects a threshold not below the top-up amount', () => {
+        setup();
+
+        fireEvent.change(amountInput(), { target: { value: '25' } });
+        fireEvent.change(thresholdInput(), { target: { value: '30' } });
+
+        expect(screen.getByText('Threshold must be a whole amount between $1.00 and $24.00')).toBeInTheDocument();
+        expect(saveButton()).toBeDisabled();
+    });
+
+    it('turns automatic top-up off with the opened settings, whatever was typed', () => {
+        const { onSave } = setup();
+
+        fireEvent.change(amountInput(), { target: { value: '25' } });
+        fireEvent.change(thresholdInput(), { target: { value: '30' } });
+        fireEvent.change(limitInput(), { target: { value: '10' } });
+        fireEvent.click(autoTopUpToggle());
+        fireEvent.click(saveButton());
+
+        expect(onSave).toHaveBeenCalledWith({ ...settings, autoTopUp: { ...settings.autoTopUp, enabled: false } });
+    });
+
+    it('saves a threshold changed on its own', () => {
+        const { onSave } = setup();
+
+        fireEvent.change(thresholdInput(), { target: { value: '35' } });
+        fireEvent.click(saveButton());
+
+        expect(screen.getByText('Adding $50.00 when your balance falls below $35.00')).toBeInTheDocument();
+        expect(onSave).toHaveBeenCalledWith({
+            autoTopUp: { enabled: true, amount: 50, threshold: 35 },
+            spendingLimit: { enabled: true, limit: 250 },
+        });
     });
 
     it.each(['24', '101', '25.5', ''])('rejects a top-up amount of %p', (amount) => {

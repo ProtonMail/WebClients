@@ -178,7 +178,13 @@ describe('ApiUsageDashboard balance settings', () => {
                 {
                     url: autoTopUpUrl,
                     method: 'put',
-                    data: { Enabled: true, Quantity: 30, SpendingLimitEnabled: true, SpendingLimit: 120 },
+                    data: {
+                        Enabled: true,
+                        Quantity: 30,
+                        Threshold: 20,
+                        SpendingLimitEnabled: true,
+                        SpendingLimit: 120,
+                    },
                     silence: true,
                 },
             ],

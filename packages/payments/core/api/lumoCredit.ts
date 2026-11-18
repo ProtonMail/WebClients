@@ -23,6 +23,7 @@ export const getLumoCreditConfig = () => ({
 export const updateLumoCreditAutoTopUpConfig = (data: {
     Enabled: boolean;
     Quantity?: number;
+    Threshold?: number;
     SpendingLimitEnabled?: boolean;
     SpendingLimit?: number;
 }) => ({

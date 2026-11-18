@@ -91,6 +91,7 @@ export const useLumoCredits = () => {
             updateLumoCreditAutoTopUpConfig({
                 Enabled: autoTopUp.enabled,
                 Quantity: autoTopUp.amount,
+                Threshold: autoTopUp.threshold,
                 SpendingLimitEnabled: spendingLimit.enabled,
                 SpendingLimit: spendingLimit.limit,
             })
