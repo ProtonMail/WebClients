@@ -16,7 +16,8 @@ export interface Options {
  * day-of-year tokens (YYYY, DD).
  */
 const formatUTC = (utcDate: Date, formatString: string, options: Options = {}) => {
-    if (!isValid(utcDate)) {
+    // date-fns format throws on a format string with nothing but line breaks, which `.` does not match
+    if (!isValid(utcDate) || !/./.test(formatString)) {
         return '';
     }
 
