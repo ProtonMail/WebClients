@@ -75,10 +75,20 @@ describe('useBulkTrash', () => {
       errorTracking,
       [uid(d1), uid(d2)],
       expect.any(Function),
+      true,
     )
     const onRestored = jest.mocked(trashManyAndNotify).mock.calls[0][4]
     onRestored()
     expect(mockUpdateRecentDocuments).toHaveBeenCalled()
+  })
+
+  it("offers Undo only when every document is the user's own", async () => {
+    const shared = createMockRecentDocument({ name: 'Shared', linkId: 'link3', isSharedWithMe: true })
+    const { result } = renderBulkTrash()
+
+    await act(() => result.current.trash([d1, shared]))
+
+    expect(jest.mocked(trashManyAndNotify).mock.calls[0][5]).toBe(false)
   })
 
   it('reloads once and reports telemetry per trashed item', async () => {

@@ -57,10 +57,10 @@ export function SheetsAdapter({ children, clientInvoker, sheetsEditor }: SheetsA
   const appPlatform = useResolvedAppPlatform(clientInvoker)
   const featureFlags = useSheetsFeatureFlags(clientInvoker)
 
-  const { userName, receivedEverythingFromRTS } = useSyncedState()
-  const role = application.getRole()
-  const canEdit = role.canEdit()
-  const canTrash = role.canTrash()
+  const { userName, receivedEverythingFromRTS, canOrganize } = useSyncedState()
+  const canEdit = application.getRole().canEdit()
+  // The client's Move to trash rule, as its title menu and the homepage apply it
+  const canTrash = canOrganize
   const logger: SheetsLogger = application.logger
 
   const shellToEditorActions = useMemo<SheetsShellToEditorActions>(

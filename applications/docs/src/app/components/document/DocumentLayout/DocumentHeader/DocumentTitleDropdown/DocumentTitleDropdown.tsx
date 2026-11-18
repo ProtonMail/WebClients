@@ -62,6 +62,8 @@ import { useExportToPDFModal } from './ExportToPDFModal'
 import { useDocsContext } from '../../../context'
 import { WordCountIcon } from '../icons'
 import { useSheetImportModal } from './SheetImportModal'
+import { useDriveSharing } from './useDriveSharing'
+import { useSyncCanOrganizeToEditor } from './useSyncCanOrganizeToEditor'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import { useEvent } from '~/utils/misc'
 import { useIsSheetsEnabled, useIsDownloadLogsAllowed, useIsODTEnabled } from '~/utils/flags'
@@ -117,6 +119,17 @@ export function DocumentTitleDropdown({
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
   const [sheetImportModal, showSheetImportModal] = useSheetImportModal()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
+  const {
+    sharing,
+    failed: sharingFailed,
+    retry: retrySharing,
+  } = useDriveSharing(privateContext ? documentState.getProperty('entitlements').nodeMeta : undefined)
+  // The homepage's `DocContextMenu.tsx` `canOrganize`, for documents and spreadsheets alike. Until Drive answers, moving,
+  // renaming and trashing wait
+  const canOrganize = documentState.getProperty('userRole').canEdit() && sharing?.isSharedDirectly === false
+  useSyncCanOrganizeToEditor(documentState, application.syncedEditorState, canOrganize)
+  // Drive refuses to restore a document shared with the user, however it was shared: only its owner restores it
+  const canRestore = sharing?.isSharedWithMe === false
 
   const [tableOfContentsVisible, setTableOfContentsVisible] = useState(true)
   const [title, setTitle] = useState<string | undefined>(documentState.getProperty('documentName'))
@@ -345,17 +358,22 @@ export function DocumentTitleDropdown({
     })
   }, [handleSheetImportData, showSheetImportModal])
 
+  // A spreadsheet's own file menu offers Move to folder to everyone, and could still offer Move to trash from an editor
+  // older than this client, so its actions check `canOrganize` here
   const openMoveToFolderModal = useCallback(() => {
-    if (isPublicMode) {
+    if (!canOrganize) {
       return
     }
     const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
     showMoveItemsModal({ nodeUids: [generateNodeUid(volumeId, linkId)] })
-  }, [documentState, isPublicMode, showMoveItemsModal])
+  }, [canOrganize, documentState, showMoveItemsModal])
 
   const trashDocument = useCallback(async () => {
     if (!authenticatedController) {
       throw new Error('Attempting to trash document in a public context')
+    }
+    if (!canOrganize) {
+      return
     }
 
     try {
@@ -363,7 +381,7 @@ export function DocumentTitleDropdown({
     } finally {
       close()
     }
-  }, [authenticatedController, close])
+  }, [authenticatedController, canOrganize, close])
 
   const showVersionHistory = useCallback(() => {
     if (!authenticatedController) {
@@ -513,7 +531,7 @@ export function DocumentTitleDropdown({
               ref={renameInputRef}
               data-testid="sheet-name-input"
               size={SupportsFieldSizing ? undefined : 1} // required to make sure the input will shrink to fit the content when `field-sizing` is not supported
-              disabled={!canRename(documentState, user)}
+              disabled={!canRename(documentState, user, canOrganize)}
             />
           }
         ></Ariakit.TooltipAnchor>
@@ -546,6 +564,8 @@ export function DocumentTitleDropdown({
             onOpenProtonDrive={() => openProtonDrive('/', '_self')}
             controller={authenticatedController}
             documentState={documentState}
+            canRestore={canRestore}
+            onRetryRestoreCheck={sharingFailed ? retrySharing : undefined}
           />
         )}
       </>
@@ -608,7 +628,7 @@ export function DocumentTitleDropdown({
         }}
       >
         <DropdownMenu>
-          {canRename(documentState, user) && (
+          {canRename(documentState, user, canOrganize) && (
             <DropdownMenuButton
               className="flex items-center text-left"
               onClick={() => setIsRenaming((renaming) => !renaming)}
@@ -680,7 +700,7 @@ export function DocumentTitleDropdown({
             </DropdownMenuButton>
           )}
 
-          {!isPublicMode && authenticatedController && (
+          {authenticatedController && canOrganize && (
             <DropdownMenuButton
               className="flex items-center text-left"
               data-testid="dropdown-move-to-folder"
@@ -780,7 +800,7 @@ export function DocumentTitleDropdown({
             </DropdownMenuButton>
           )}
 
-          {documentState.getProperty('userRole').canTrash() && (
+          {canOrganize && (
             <DropdownMenuButton
               disabled={trashState === 'trashing' || trashState === 'trashed'}
               data-testid="dropdown-trash"
@@ -1015,6 +1035,8 @@ export function DocumentTitleDropdown({
           onOpenProtonDrive={() => openProtonDrive('/', '_self')}
           controller={authenticatedController}
           documentState={documentState}
+          canRestore={canRestore}
+          onRetryRestoreCheck={sharingFailed ? retrySharing : undefined}
         />
       )}
     </>
@@ -1023,14 +1045,18 @@ export function DocumentTitleDropdown({
 
 // We should also check if document created in a public shared folder was created by the current user
 // Unfortunately, we don't have that information neither from legacy nor SDK path (needs to be investigated how to fetch it)
-function canRename(documentState: DocumentState | PublicDocumentState, user: UserModel | undefined) {
+function canRename(
+  documentState: DocumentState | PublicDocumentState,
+  user: UserModel | undefined,
+  canOrganize: boolean,
+) {
   // Theoretically you should be able to rename document anymously, but currently BE throws "This value should not be blank." error
   const hasPermission = !!user && documentState.getProperty('userRole').canRename()
 
   if (documentState.getProperty('userRole').isPublicEditor()) {
     return hasPermission && publicDocumentCanBeRenamed(documentState)
   }
-  return hasPermission
+  return hasPermission && canOrganize
 }
 
 // Public documents can be renamed in first hour after creation

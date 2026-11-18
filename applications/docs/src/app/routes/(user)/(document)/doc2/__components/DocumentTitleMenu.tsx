@@ -45,7 +45,7 @@ import { useApplication } from '~/utils/application-context'
 import { useIsDownloadLogsAllowed, useIsODTEnabled, useIsSheetsEnabled } from '~/utils/flags'
 import type { EditorInvoker } from '../__utils/EditorInvoker'
 import { downloadLogs } from '../__utils/debugDownloads'
-import type { DocumentRole } from '../__utils/getDocumentRole'
+import { canOrganizeDocument, type DocumentRole } from '../__utils/getDocumentRole'
 import { getNodeName } from '../__utils/getNodeName'
 import { renameDocument } from '../__utils/renameDocument'
 import type { TrashState } from '../__utils/useDocumentFileActions'
@@ -53,7 +53,7 @@ import { useExportToPDFModal } from './ExportToPDFModal'
 import type { WordCount } from './WordCount'
 
 export type DocumentTitleMenuProps = {
-  node: Pick<NodeEntity, 'uid' | 'parentUid' | 'name'>
+  node: Pick<NodeEntity, 'uid' | 'parentUid' | 'name' | 'membership'>
   role: DocumentRole
   editorInvoker:
     | Pick<EditorInvoker, 'setTableOfContentsVisible' | 'getYDocAsJSON' | 'getCurrentEditorState'>
@@ -103,8 +103,7 @@ export function DocumentTitleMenu({
   const [showVersionNumber, setShowVersionNumber] = useState(false)
   const [showDebugToggle, setShowDebugToggle] = useState(false)
 
-  const canRename = role === 'Editor' || role === 'Admin'
-  const canTrash = role === 'Admin'
+  const canOrganize = canOrganizeDocument(role, node)
 
   useAppTitle(title)
 
@@ -252,7 +251,7 @@ export function DocumentTitleMenu({
         contentProps={{ className: 'after:!h-0' }}
       >
         <DropdownMenu>
-          {canRename && (
+          {canOrganize && (
             <DropdownMenuButton
               className="flex items-center text-left"
               disabled={isRenamePending}
@@ -297,14 +296,16 @@ export function DocumentTitleMenu({
             {isMakingACopy && <CircleLoader size="small" className="ml-auto" />}
           </DropdownMenuButton>
 
-          <DropdownMenuButton
-            className="flex items-center text-left"
-            onClick={() => onFileMenuAction({ type: 'move-to-folder' })}
-            data-testid="dropdown-move-to-folder"
-          >
-            <IcArrowsCross className="color-weak mr-2" />
-            {c('Action').t`Move to folder`}
-          </DropdownMenuButton>
+          {canOrganize && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={() => onFileMenuAction({ type: 'move-to-folder' })}
+              data-testid="dropdown-move-to-folder"
+            >
+              <IcArrowsCross className="color-weak mr-2" />
+              {c('Action').t`Move to folder`}
+            </DropdownMenuButton>
+          )}
 
           <StubMenuItem waitsFor="version history" icon={<IcClockRotateLeft />} data-testid="dropdown-versioning">
             {c('Action').t`See version history`}
@@ -321,7 +322,7 @@ export function DocumentTitleMenu({
             {tableOfContentsVisible ? c('Info').t`Hide table of contents` : c('Info').t`Show table of contents`}
           </DropdownMenuButton>
 
-          {canTrash && (
+          {canOrganize && (
             <DropdownMenuButton
               className="flex items-center text-left"
               disabled={trashState !== 'not_trashed'}

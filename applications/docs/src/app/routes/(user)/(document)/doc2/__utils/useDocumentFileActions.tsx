@@ -14,6 +14,7 @@ import { getNewWindow } from '@proton/shared/lib/helpers/window'
 import { SeedError } from '@proton-docs/realtime-sdk'
 import { c } from 'ttag'
 
+import { getIsSharedWithMe } from '~/drive-sdk/getIsSharedWithMe'
 import { useApplication } from '~/utils/application-context'
 import { useIsSheetsEnabled } from '~/utils/flags'
 import { TrashedDocumentModal } from '../__components/TrashedDocumentModal'
@@ -30,7 +31,7 @@ import {
   trashNode,
 } from './documentFileActions'
 import type { EditorInvoker } from './EditorInvoker'
-import type { DocumentRole } from './getDocumentRole'
+import { canOrganizeDocument, type DocumentRole } from './getDocumentRole'
 import { getNodeName } from './getNodeName'
 import type { AlertProps } from './useStopFollowUps'
 
@@ -44,10 +45,14 @@ export type DocumentFileActions = {
   newDocument: () => void
   /** Creates a spreadsheet next to this document and opens it on legacy sheets in a new window */
   newSpreadsheet: () => void
-  /** Copies what the editor holds into a new document next to this one, and opens that in doc2 in a new window */
+  /**
+   * Copies what the editor holds into a new document, next to this one when the user may organize it and in My files
+   * otherwise, and opens that in doc2 in a new window
+   */
   makeACopy: () => void
+  /** Editors and admins only, of a document not shared directly */
   moveToFolder: () => void
-  /** Admin only */
+  /** Editors and admins only, of a document not shared directly */
   moveToTrash: () => void
   /** Opens the document's Drive folder in a new window, or the Drive root when it can't be found */
   openProtonDrive: () => void
@@ -63,9 +68,10 @@ type TrashStatus = {
 
 /**
  * The title menu's Drive actions on the document `node`, as /doc's `DocumentTitleDropdown.tsx` and docs-core's
- * `AuthenticatedDocController` run them. Each does nothing without a node, trash and restore nothing for a
- * non-Admin, and Make a copy nothing until the editor shows the document (`exportInvoker`). The trash state follows the
- * node, so a document trashed or restored elsewhere shows or leaves the trashed modal.
+ * `AuthenticatedDocController` run them. Each does nothing without a node, move and trash nothing for a user who may
+ * not organize the document (`canOrganizeDocument`), restore nothing for anyone but its owner, and Make a copy nothing
+ * until the editor shows the document (`exportInvoker`). The trash state follows the node, so a document trashed or
+ * restored elsewhere shows or leaves the trashed modal.
  */
 export function useDocumentFileActions({
   node,
@@ -87,6 +93,9 @@ export function useDocumentFileActions({
   const isSheetsEnabled = useIsSheetsEnabled()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
   const [copyFailedModal, showCopyFailedModal] = useGenericAlertModal()
+  const canOrganize = !!node && canOrganizeDocument(role, node)
+  // Drive refuses to restore a document shared with the user, however it was shared: only its owner restores it
+  const canRestore = !!node && !getIsSharedWithMe(node)
 
   // A failed trash or restore trusts only a node Drive read while it was in flight: an earlier read can be stale, as
   // after an Undo whose Drive event hasn't come yet
@@ -162,7 +171,7 @@ export function useDocumentFileActions({
     const copyName = `${name} (copy ${getPlatformFriendlyDateForFileName()})`
     exportInvoker
       .exportData('yjs')
-      .then((state) => duplicateWithState(state, copyName, { node, driveCompat, client }))
+      .then((state) => duplicateWithState(state, copyName, { node, canOrganize, driveCompat, client }))
       .then(
         (copy) => newWindow.handle.location.assign(getDocumentHref(copy, getLocalID())),
         (error) => {
@@ -178,13 +187,13 @@ export function useDocumentFileActions({
   }
 
   const moveToFolder = () => {
-    if (node) {
+    if (node && canOrganize) {
       showMoveItemsModal({ nodeUids: [node.uid] })
     }
   }
 
   const moveToTrash = () => {
-    if (!node || role !== 'Admin' || trashBusyRef.current || trash.state !== 'not_trashed') {
+    if (!node || !canOrganize || trashBusyRef.current || trash.state !== 'not_trashed') {
       return
     }
     trashBusyRef.current = true
@@ -212,7 +221,7 @@ export function useDocumentFileActions({
   }
 
   const restore = () => {
-    if (!node || role !== 'Admin' || trashBusyRef.current || trash.state !== 'trashed') {
+    if (!node || !canRestore || trashBusyRef.current || trash.state !== 'trashed') {
       return
     }
     trashBusyRef.current = true
@@ -277,7 +286,7 @@ export function useDocumentFileActions({
             documentTitle={getNodeName(node) ?? ''}
             trashState={trash.state}
             trashedInSession={trash.trashedInSession}
-            canRestore={role === 'Admin'}
+            canRestore={canRestore}
             onRestore={restore}
             onGoToDrive={goToDrive}
           />

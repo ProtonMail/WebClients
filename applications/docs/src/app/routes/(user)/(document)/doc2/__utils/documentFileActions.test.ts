@@ -24,9 +24,10 @@ const driveCompat = { getMyFilesNodeMeta: jest.fn(), createDocumentNode: jest.fn
 const client = { seedInitialCommit: jest.fn() }
 const STATE = new Uint8Array([1, 2, 3])
 
-function duplicate(node: { uid: string; parentUid?: string }) {
+function duplicate(node: { uid: string; parentUid?: string }, canOrganize = true) {
   return duplicateWithState(STATE, 'Plans (copy)', {
     node,
+    canOrganize,
     driveCompat: driveCompat as unknown as DriveCompat,
     client,
   })
@@ -74,6 +75,12 @@ describe('documentFileActions', () => {
 
   test('duplicateWithState without a parent folder creates the copy in My files', async () => {
     await duplicate({ uid: 'VOLUME~LINK' })
+
+    expect(driveCompat.createDocumentNode.mock.calls[0][0]).toEqual({ volumeId: 'MYVOLUME', linkId: 'MYFILES' })
+  })
+
+  test('duplicateWithState creates the copy in My files for a user who may not organize the node', async () => {
+    await duplicate({ uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT' }, false)
 
     expect(driveCompat.createDocumentNode.mock.calls[0][0]).toEqual({ volumeId: 'MYVOLUME', linkId: 'MYFILES' })
   })

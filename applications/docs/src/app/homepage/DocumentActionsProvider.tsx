@@ -123,7 +123,7 @@ export function DocumentActionsProvider({
 
     try {
       const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-      await trashAndNotify(drive, createNotification, errorTracking, nodeUid, emitRestored)
+      await trashAndNotify(drive, createNotification, errorTracking, nodeUid, emitRestored, !document.isSharedWithMe)
     } catch (error) {
       reportTrashError(errorTracking, error)
       createNotification({

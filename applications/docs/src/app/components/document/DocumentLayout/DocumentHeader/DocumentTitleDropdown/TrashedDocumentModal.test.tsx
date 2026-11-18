@@ -1,23 +1,23 @@
 import '@testing-library/jest-dom'
 import type { AuthenticatedDocControllerInterface } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerInterface'
 import { DocumentState, type DocumentStateValues } from '@proton/docs-core/State/DocumentState'
-import { DocumentRole, type DocumentRoleType } from '@proton/docs-shared/Doc/DocumentRole'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { TrashedDocumentModal } from './TrashedDocumentModal'
 
 function renderModal({
   didTrashDocInCurrentSession,
-  role = 'Admin',
+  canRestore = true,
+  onRetryRestoreCheck,
 }: {
   didTrashDocInCurrentSession: boolean
-  role?: DocumentRoleType
+  canRestore?: boolean
+  onRetryRestoreCheck?: () => void
 }) {
   const controller = { didTrashDocInCurrentSession, restoreDocument: jest.fn() }
   const documentState = new DocumentState({
     ...DocumentState.defaults,
     documentTrashState: 'trashed',
-    userRole: new DocumentRole(role),
   } as DocumentStateValues)
 
   render(
@@ -26,6 +26,8 @@ function renderModal({
       documentState={documentState}
       documentTitle="Document1"
       onOpenProtonDrive={jest.fn()}
+      canRestore={canRestore}
+      onRetryRestoreCheck={onRetryRestoreCheck}
     />,
   )
 
@@ -58,18 +60,34 @@ describe('TrashedDocumentModal', () => {
   })
 
   test.each([true, false])(
-    'hides the actions when the user cannot trash (didTrashDocInCurrentSession %s)',
+    'offers only Go to Drive to a user who may not restore (didTrashDocInCurrentSession %s)',
     (didTrashDocInCurrentSession) => {
-      renderModal({ didTrashDocInCurrentSession, role: 'Editor' })
+      renderModal({ didTrashDocInCurrentSession, canRestore: false })
 
-      expect(buttonNames()).toEqual([])
+      expect(buttonNames()).toEqual(['Go to Drive'])
+      expect(screen.queryByText("We couldn't check whether you can take it out of trash.")).not.toBeInTheDocument()
+    },
+  )
+
+  test.each([true, false])(
+    'says when Drive could not tell whether the user may restore, and offers to ask again (didTrashDocInCurrentSession %s)',
+    async (didTrashDocInCurrentSession) => {
+      const onRetryRestoreCheck = jest.fn()
+      renderModal({ didTrashDocInCurrentSession, canRestore: false, onRetryRestoreCheck })
+
+      expect(screen.getByText("We couldn't check whether you can take it out of trash.")).toBeInTheDocument()
+      expect(buttonNames()).toEqual(['Go to Drive', 'Try again'])
+
+      await userEvent.click(screen.getByRole('button', { name: 'Try again', hidden: true }))
+
+      expect(onRetryRestoreCheck).toHaveBeenCalledTimes(1)
     },
   )
 
   test.each([
     { didTrashDocInCurrentSession: true, restoreButton: 'Undo' },
     { didTrashDocInCurrentSession: false, restoreButton: 'Take out of trash' },
-  ])('$restoreButton restores the document', async ({ didTrashDocInCurrentSession, restoreButton }) => {
+  ] as const)('$restoreButton restores the document', async ({ didTrashDocInCurrentSession, restoreButton }) => {
     const { controller } = renderModal({ didTrashDocInCurrentSession })
 
     await userEvent.click(screen.getByRole('button', { name: restoreButton, hidden: true }))

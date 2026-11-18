@@ -11,6 +11,8 @@ import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { getMyFilesNodeMeta } from '../DriveSDK/getMyFilesNodeMeta'
 import { findAvailableNodeName } from '../DriveSDK/findAvailableNodeName'
 import { getDecryptedNode } from '../DriveSDK/getDecryptedNode'
+import { traceErrorSDK } from '../DriveSDK/traceErrorSDK'
+import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
 import type { CreateDocumentNode } from '../Crypto/useCreateDocumentNode'
@@ -24,8 +26,16 @@ export class DuplicateDocument {
     private providedCreateDocumentNode?: CreateDocumentNode,
   ) {}
 
-  /** Execute for a private document */
-  async executePrivate(nodeMeta: NodeMeta, state: Uint8Array<ArrayBuffer>): Promise<Result<DocumentNodeMeta>> {
+  /**
+   * Execute for a private document. The copy goes next to the original only when the user can edit it and it isn't
+   * shared with them directly, as the homepage's `DocContextMenu.tsx` `canOrganize`; otherwise to My files: a viewer
+   * can't write to the folder, and a document shared directly is copied to My files even when its folder is writable.
+   */
+  async executePrivate(
+    nodeMeta: NodeMeta,
+    state: Uint8Array<ArrayBuffer>,
+    canEdit: boolean,
+  ): Promise<Result<DocumentNodeMeta>> {
     try {
       const replaceDriveCompat = isDriveCompatSDKEnabled(this.unleashClient)
 
@@ -37,12 +47,13 @@ export class DuplicateDocument {
       }
 
       const parentMetaGetter = replaceDriveCompat ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
-      const parentMeta: NodeMeta = node.parentNodeId
-        ? {
-            volumeId: node.volumeId,
-            linkId: node.parentNodeId,
-          }
-        : await parentMetaGetter()
+      const parentMeta: NodeMeta =
+        canEdit && node.parentNodeId && !(await this.isSharedDirectly(nodeMeta))
+          ? {
+              volumeId: node.volumeId,
+              linkId: node.parentNodeId,
+            }
+          : await parentMetaGetter()
 
       const date = getPlatformFriendlyDateForFileName()
       const newName = `${node.name} (copy ${date})`
@@ -55,6 +66,20 @@ export class DuplicateDocument {
       )
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to duplicate document')
+    }
+  }
+
+  /**
+   * Whether the user holds a membership on the document itself, as /doc's `useDriveSharing.ts` asks Drive.
+   * `true` when Drive fails, so the copy goes to My files, which the user can always write to.
+   */
+  private async isSharedDirectly({ volumeId, linkId }: NodeMeta): Promise<boolean> {
+    try {
+      const node = await getDrive().getNode(generateNodeUid(volumeId, linkId))
+      return !!node.membership
+    } catch (error) {
+      traceErrorSDK(error, 'DocsDriveCompatSDK')
+      return true
     }
   }
 
