@@ -1,27 +1,27 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`event payloads sent to Proton Analytics add_lumo 1`] = `
+exports[`event payloads sent to Proton Analytics > add_lumo 1`] = `
 {
   "event": "subscription_modification_add_lumo",
   "payload": undefined,
 }
 `;
 
-exports[`event payloads sent to Proton Analytics add_meet 1`] = `
+exports[`event payloads sent to Proton Analytics > add_meet 1`] = `
 {
   "event": "subscription_modification_add_meet",
   "payload": undefined,
 }
 `;
 
-exports[`event payloads sent to Proton Analytics add_pass 1`] = `
+exports[`event payloads sent to Proton Analytics > add_pass 1`] = `
 {
   "event": "subscription_modification_add_pass",
   "payload": undefined,
 }
 `;
 
-exports[`event payloads sent to Proton Analytics billing_address_edit 1`] = `
+exports[`event payloads sent to Proton Analytics > billing_address_edit 1`] = `
 {
   "event": "billing_address_edit",
   "payload": {
@@ -42,7 +42,7 @@ exports[`event payloads sent to Proton Analytics billing_address_edit 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics change_audience 1`] = `
+exports[`event payloads sent to Proton Analytics > change_audience 1`] = `
 {
   "event": "subscription_modification_change_audience",
   "payload": {
@@ -53,7 +53,7 @@ exports[`event payloads sent to Proton Analytics change_audience 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics change_billing_country 1`] = `
+exports[`event payloads sent to Proton Analytics > change_billing_country 1`] = `
 {
   "event": "subscription_modification_change_billing_country",
   "payload": {
@@ -66,7 +66,7 @@ exports[`event payloads sent to Proton Analytics change_billing_country 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics change_step 1`] = `
+exports[`event payloads sent to Proton Analytics > change_step 1`] = `
 {
   "event": "subscription_modification_change_step",
   "payload": {
@@ -77,7 +77,7 @@ exports[`event payloads sent to Proton Analytics change_step 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics checkout_condensed_addons_experiment_seen 1`] = `
+exports[`event payloads sent to Proton Analytics > checkout_condensed_addons_experiment_seen 1`] = `
 {
   "event": "subscription_modification_checkout_condensed_addons_experiment_seen",
   "payload": {
@@ -86,7 +86,7 @@ exports[`event payloads sent to Proton Analytics checkout_condensed_addons_exper
 }
 `;
 
-exports[`event payloads sent to Proton Analytics closed_by_user 1`] = `
+exports[`event payloads sent to Proton Analytics > closed_by_user 1`] = `
 {
   "event": "subscription_modification_closed_by_user",
   "payload": {
@@ -96,7 +96,7 @@ exports[`event payloads sent to Proton Analytics closed_by_user 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics estimation_change 1`] = `
+exports[`event payloads sent to Proton Analytics > estimation_change 1`] = `
 {
   "event": "subscription_modification_estimation_change",
   "payload": {
@@ -125,7 +125,7 @@ exports[`event payloads sent to Proton Analytics estimation_change 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics guard_shown 1`] = `
+exports[`event payloads sent to Proton Analytics > guard_shown 1`] = `
 {
   "event": "subscription_guard_triggered",
   "payload": {
@@ -159,7 +159,7 @@ exports[`event payloads sent to Proton Analytics guard_shown 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics init 1`] = `
+exports[`event payloads sent to Proton Analytics > init 1`] = `
 {
   "event": "subscription_modification_init",
   "payload": {
@@ -189,7 +189,7 @@ exports[`event payloads sent to Proton Analytics init 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics open_modal 1`] = `
+exports[`event payloads sent to Proton Analytics > open_modal 1`] = `
 {
   "event": "account_home_open_modal",
   "payload": {
@@ -210,7 +210,7 @@ exports[`event payloads sent to Proton Analytics open_modal 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics payment 1`] = `
+exports[`event payloads sent to Proton Analytics > payment 1`] = `
 {
   "event": "subscription_modification_payment",
   "payload": {
@@ -240,7 +240,7 @@ exports[`event payloads sent to Proton Analytics payment 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics payment, with the Apple Pay flow that was offered 1`] = `
+exports[`event payloads sent to Proton Analytics > payment, with the Apple Pay flow that was offered 1`] = `
 {
   "event": "subscription_modification_payment",
   "payload": {
@@ -270,7 +270,7 @@ exports[`event payloads sent to Proton Analytics payment, with the Apple Pay flo
 }
 `;
 
-exports[`event payloads sent to Proton Analytics payment, with the extra properties of a rejected billing address 1`] = `
+exports[`event payloads sent to Proton Analytics > payment, with the extra properties of a rejected billing address 1`] = `
 {
   "event": "subscription_modification_payment",
   "payload": {
@@ -303,7 +303,7 @@ exports[`event payloads sent to Proton Analytics payment, with the extra propert
 }
 `;
 
-exports[`event payloads sent to Proton Analytics plan_description 1`] = `
+exports[`event payloads sent to Proton Analytics > plan_description 1`] = `
 {
   "event": "subscription_modification_plan_description",
   "payload": {
@@ -312,7 +312,7 @@ exports[`event payloads sent to Proton Analytics plan_description 1`] = `
 }
 `;
 
-exports[`event payloads sent to Proton Analytics vpn2024_addons_experiment_seen 1`] = `
+exports[`event payloads sent to Proton Analytics > vpn2024_addons_experiment_seen 1`] = `
 {
   "event": "subscription_modification_vpn2024_addons_experiment_seen",
   "payload": {

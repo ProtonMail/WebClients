@@ -1,6 +1,6 @@
 // Pure rendering logic for the entitlement-names generator. Lives in CommonJS
 // so it can be required by both the generator script (Node ESM .mjs) and the
-// Jest test (.ts via @swc/jest) without extra config.
+// Vitest test without extra config.
 
 function kebabToPascal(id) {
     return id

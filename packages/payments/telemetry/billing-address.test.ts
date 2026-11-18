@@ -1,13 +1,15 @@
+import type { Mock } from 'vitest';
+
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import type { FullBillingAddress } from '../core/billing-address/billing-address';
 import { getBillingAddressEditProperties, reportBillingAddressEditSuccess } from './billing-address';
 
-jest.mock('@proton/shared/lib/telemetry', () => ({
-    telemetry: { sendCustomEvent: jest.fn() },
+vi.mock('@proton/shared/lib/telemetry', () => ({
+    telemetry: { sendCustomEvent: vi.fn() },
 }));
 
-const sendCustomEvent = telemetry.sendCustomEvent as jest.Mock;
+const sendCustomEvent = telemetry.sendCustomEvent as Mock;
 
 /**
  * The complete set of properties this event may report. Adding one must be a deliberate decision -

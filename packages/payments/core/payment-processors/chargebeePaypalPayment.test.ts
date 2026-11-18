@@ -4,24 +4,24 @@ import { createPaymentTokenV5Paypal } from '../createPaymentToken';
 import type { ChargebeeIframeEvents, ChargebeeIframeHandles } from '../interface';
 import { ChargebeePaypalPaymentProcessor } from './chargebeePaypalPayment';
 
-jest.mock('../createPaymentToken', () => ({
-    createPaymentTokenV5Paypal: jest.fn(),
+vi.mock('../createPaymentToken', () => ({
+    createPaymentTokenV5Paypal: vi.fn(),
 }));
 
-const mockedCreateToken = jest.mocked(createPaymentTokenV5Paypal);
+const mockedCreateToken = vi.mocked(createPaymentTokenV5Paypal);
 
 describe('fetchPaymentToken error contract', () => {
     const buildProcessor = () =>
         new ChargebeePaypalPaymentProcessor(
-            jest.fn(),
-            jest.fn(),
+            vi.fn(),
+            vi.fn(),
             { Amount: 100, Currency: 'EUR' as const },
             {} as ChargebeeIframeHandles,
             {} as ChargebeeIframeEvents,
             undefined
         );
 
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     it('rejects with the ignorable error flagged so it is not reported to Sentry', async () => {
         const validationError: any = {

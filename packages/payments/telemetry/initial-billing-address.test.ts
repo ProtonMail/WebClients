@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import type { BillingAddressExtended } from '../core/billing-address/billing-address';
@@ -5,11 +7,11 @@ import { CYCLE, PLANS } from '../core/constants';
 import { getInitialBillingAddressProperties } from './helpers';
 import { reportInitialization } from './shared-checkout-telemetry';
 
-jest.mock('@proton/shared/lib/telemetry', () => ({
-    telemetry: { sendCustomEvent: jest.fn() },
+vi.mock('@proton/shared/lib/telemetry', () => ({
+    telemetry: { sendCustomEvent: vi.fn() },
 }));
 
-const sendCustomEvent = telemetry.sendCustomEvent as jest.Mock;
+const sendCustomEvent = telemetry.sendCustomEvent as Mock;
 
 /**
  * The complete set of billing address facts we are allowed to report. A new entry here must be a

@@ -1,35 +1,36 @@
 import { withScope } from '@sentry/browser';
+import type { Mock } from 'vitest';
 
 import { captureMessage, getSentryError, traceError } from '@proton/shared/lib/helpers/sentry';
 
 import type { Subscription } from '../core/subscription/interface';
 import { capturePaymentMessage, tracePaymentError } from './capture';
 
-jest.mock('@sentry/browser', () => ({ withScope: jest.fn() }));
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    captureMessage: jest.fn(),
-    traceError: jest.fn(),
-    getSentryError: jest.fn((error) => error),
+vi.mock('@sentry/browser', () => ({ withScope: vi.fn() }));
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
+    captureMessage: vi.fn(),
+    traceError: vi.fn(),
+    getSentryError: vi.fn((error) => error),
 }));
 
 const scope = {
-    setTag: jest.fn(),
-    setTags: jest.fn(),
-    setExtra: jest.fn(),
-    setExtras: jest.fn(),
-    setContext: jest.fn(),
-    setLevel: jest.fn(),
-    setFingerprint: jest.fn(),
-    setTransactionName: jest.fn(),
+    setTag: vi.fn(),
+    setTags: vi.fn(),
+    setExtra: vi.fn(),
+    setExtras: vi.fn(),
+    setContext: vi.fn(),
+    setLevel: vi.fn(),
+    setFingerprint: vi.fn(),
+    setTransactionName: vi.fn(),
 };
 
 /** Mirrors the real `Hub.withScope`, which re-throws whatever the callback throws. */
 const realisticWithScope = (callback: (scope: any) => void) => callback(scope);
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    (getSentryError as jest.Mock).mockImplementation((error) => error);
-    (withScope as jest.Mock).mockImplementation(realisticWithScope);
+    vi.clearAllMocks();
+    (getSentryError as Mock).mockImplementation((error) => error);
+    (withScope as Mock).mockImplementation(realisticWithScope);
 });
 
 const throwingGetter = () => {
@@ -126,7 +127,7 @@ describe('a capture must never take down the payment flow that reported it', () 
     });
 
     it('should survive Sentry itself being broken', () => {
-        (withScope as jest.Mock).mockImplementation(() => {
+        (withScope as Mock).mockImplementation(() => {
             throw new Error('Sentry is not initialised');
         });
 
@@ -135,10 +136,10 @@ describe('a capture must never take down the payment flow that reported it', () 
     });
 
     it('should survive the transport throwing', () => {
-        (traceError as jest.Mock).mockImplementation(() => {
+        (traceError as Mock).mockImplementation(() => {
             throw new Error('transport is down');
         });
-        (captureMessage as jest.Mock).mockImplementation(() => {
+        (captureMessage as Mock).mockImplementation(() => {
             throw new Error('transport is down');
         });
 
@@ -147,7 +148,7 @@ describe('a capture must never take down the payment flow that reported it', () 
     });
 
     it('should survive the filter throwing', () => {
-        (getSentryError as jest.Mock).mockImplementation(() => {
+        (getSentryError as Mock).mockImplementation(() => {
             throw new Error('filter is broken');
         });
 

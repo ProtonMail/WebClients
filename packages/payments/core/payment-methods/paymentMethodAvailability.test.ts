@@ -1,3 +1,6 @@
+import type { MockedFunction } from 'vitest';
+
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { UNPAID_STATE } from '@proton/shared/lib/interfaces/User';
 import { buildUser } from '@proton/shared/testing/buildUser';
 
@@ -944,24 +947,23 @@ describe('Chargebee Bitcoin', () => {
 });
 
 // Mock browser helper functions
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    isSafari: jest.fn(),
-    isMobile: jest.fn().mockReturnValue(false),
-    getBrowser: jest.fn().mockReturnValue({ name: 'Chrome', version: '90.0.0' }),
-    getOS: jest.fn().mockReturnValue({ name: 'macOS', version: '10.15' }),
-    isAndroid: jest.fn().mockReturnValue(false),
-    isIos: jest.fn().mockReturnValue(false),
-    isDesktop: jest.fn().mockReturnValue(true),
-    isChromiumBased: jest.fn().mockReturnValue(true),
-    isFirefox: jest.fn().mockReturnValue(false),
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    isSafari: vi.fn(),
+    isMobile: vi.fn().mockReturnValue(false),
+    getBrowser: vi.fn().mockReturnValue({ name: 'Chrome', version: '90.0.0' }),
+    getOS: vi.fn().mockReturnValue({ name: 'macOS', version: '10.15' }),
+    isAndroid: vi.fn().mockReturnValue(false),
+    isIos: vi.fn().mockReturnValue(false),
+    isDesktop: vi.fn().mockReturnValue(true),
+    isChromiumBased: vi.fn().mockReturnValue(true),
+    isFirefox: vi.fn().mockReturnValue(false),
 }));
 
 describe('Apple Pay', () => {
-    let mockIsSafari: jest.MockedFunction<() => boolean>;
+    let mockIsSafari: MockedFunction<() => boolean>;
 
     beforeEach(() => {
-        const { isSafari } = require('@proton/shared/lib/helpers/browser');
-        mockIsSafari = isSafari as jest.MockedFunction<() => boolean>;
+        mockIsSafari = isSafari as MockedFunction<() => boolean>;
         mockIsSafari.mockReturnValue(true); // Default to Safari
     });
 
@@ -1471,8 +1473,7 @@ describe('Trial mode payment method restrictions', () => {
         });
 
         it('should not display Apple Pay when isTrial is true', () => {
-            const { isSafari } = require('@proton/shared/lib/helpers/browser');
-            const mockIsSafari = isSafari as jest.MockedFunction<() => boolean>;
+            const mockIsSafari = isSafari as MockedFunction<() => boolean>;
             mockIsSafari.mockReturnValue(true);
 
             const methods = buildContext({

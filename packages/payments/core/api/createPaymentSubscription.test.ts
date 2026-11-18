@@ -11,13 +11,13 @@ import {
     getCheckLumoCreditConfig,
 } from './createPaymentSubscription';
 
-jest.mock('../../sentry/capture', () => ({
-    capturePaymentMessage: jest.fn(),
+vi.mock('../../sentry/capture', () => ({
+    capturePaymentMessage: vi.fn(),
 }));
 
-jest.mock('../../telemetry/telemetry', () => ({
+vi.mock('../../telemetry/telemetry', () => ({
     checkoutTelemetry: {
-        reportPayment: jest.fn(),
+        reportPayment: vi.fn(),
     },
 }));
 
@@ -34,7 +34,7 @@ describe('createPaymentSubscription', () => {
         }) as unknown as SubscribeData;
 
     const subscribeWith = (Plans: PlanIDs) => {
-        const api = jest.fn().mockResolvedValue({ Subscription: {} }) as unknown as Api;
+        const api = vi.fn().mockResolvedValue({ Subscription: {} }) as unknown as Api;
 
         return createPaymentSubscription(api, buildData(Plans), {
             build: 'proton-account' as APP_NAMES,
@@ -48,10 +48,10 @@ describe('createPaymentSubscription', () => {
     };
 
     const wrongPlanNameReports = () =>
-        jest.mocked(capturePaymentMessage).mock.calls.filter(([message]) => message === 'Payments: wrong plan name');
+        vi.mocked(capturePaymentMessage).mock.calls.filter(([message]) => message === 'Payments: wrong plan name');
 
     beforeEach(() => {
-        jest.mocked(capturePaymentMessage).mockClear();
+        vi.mocked(capturePaymentMessage).mockClear();
     });
 
     it('should report the deprecated VPN plan being sent to the backend', async () => {
@@ -78,7 +78,7 @@ describe('createPaymentSubscription', () => {
     });
 
     it('should normalize the transition guard fields on the response', async () => {
-        const api = jest.fn().mockResolvedValue({
+        const api = vi.fn().mockResolvedValue({
             Subscription: {},
             GuardResult: 'refusal',
             GuardResultCode: 801005005,
@@ -99,7 +99,7 @@ describe('createPaymentSubscription', () => {
     });
 
     it('should pass the provisioning token through to the backend', async () => {
-        const api = jest.fn().mockResolvedValue({ Subscription: {} });
+        const api = vi.fn().mockResolvedValue({ Subscription: {} });
 
         await createPaymentSubscription(
             api as unknown as Api,
@@ -124,7 +124,7 @@ describe('createPaymentSubscription', () => {
     });
 
     it('should keep the postal code of a provisioned address', async () => {
-        const api = jest.fn().mockResolvedValue({ Subscription: {} });
+        const api = vi.fn().mockResolvedValue({ Subscription: {} });
 
         await createPaymentSubscription(
             api as unknown as Api,
@@ -148,7 +148,7 @@ describe('createPaymentSubscription', () => {
     });
 
     it('should drop the postal code of a country where it is not required without a provisioning token', async () => {
-        const api = jest.fn().mockResolvedValue({ Subscription: {} });
+        const api = vi.fn().mockResolvedValue({ Subscription: {} });
 
         await createPaymentSubscription(api as unknown as Api, buildData({ [PLANS.BUNDLE_PRO_2024]: 1 }), {
             build: 'proton-account' as APP_NAMES,

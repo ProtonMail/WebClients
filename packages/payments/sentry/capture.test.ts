@@ -1,4 +1,5 @@
 import { withScope } from '@sentry/browser';
+import type { Mock } from 'vitest';
 
 import { createApiError } from '@proton/shared/lib/fetch/ApiError';
 import { captureMessage, getSentryError, traceError } from '@proton/shared/lib/helpers/sentry';
@@ -8,29 +9,29 @@ import { DisplayablePaymentError } from '../core/errors';
 import type { Subscription } from '../core/subscription/interface';
 import { capturePaymentMessage, tracePaymentError } from './capture';
 
-jest.mock('@sentry/browser', () => ({ withScope: jest.fn() }));
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    captureMessage: jest.fn(),
-    traceError: jest.fn(),
-    getSentryError: jest.fn((error) => error),
+vi.mock('@sentry/browser', () => ({ withScope: vi.fn() }));
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
+    captureMessage: vi.fn(),
+    traceError: vi.fn(),
+    getSentryError: vi.fn((error) => error),
 }));
 
 const scope = {
-    setTag: jest.fn(),
-    setTags: jest.fn(),
-    setExtra: jest.fn(),
-    setExtras: jest.fn(),
-    setContext: jest.fn(),
-    setLevel: jest.fn(),
-    setFingerprint: jest.fn(),
-    setTransactionName: jest.fn(),
+    setTag: vi.fn(),
+    setTags: vi.fn(),
+    setExtra: vi.fn(),
+    setExtras: vi.fn(),
+    setContext: vi.fn(),
+    setLevel: vi.fn(),
+    setFingerprint: vi.fn(),
+    setTransactionName: vi.fn(),
 };
 
 const collectTags = () =>
     Object.assign(
         {},
         Object.fromEntries(scope.setTag.mock.calls as [string, string][]),
-        ...scope.setTags.mock.calls.map(([tags]: [any]) => tags)
+        ...scope.setTags.mock.calls.map(([tags]: any[]) => tags)
     );
 
 const chargebeeFailure = {
@@ -53,16 +54,16 @@ const subscription = {
 } as unknown as Subscription;
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    (getSentryError as jest.Mock).mockImplementation((error) => error);
-    (withScope as jest.Mock).mockImplementation((callback) => callback(scope));
+    vi.clearAllMocks();
+    (getSentryError as Mock).mockImplementation((error) => error);
+    (withScope as Mock).mockImplementation((callback) => callback(scope));
 });
 
 describe('tracePaymentError', () => {
     it('should capture a non-error payload as an error titled with the underlying reason', () => {
         tracePaymentError(chargebeeFailure, { component: 'subscription-container', subscription });
 
-        const [captured] = (traceError as jest.Mock).mock.calls[0];
+        const [captured] = (traceError as Mock).mock.calls[0];
         expect(captured).toBeInstanceOf(Error);
         expect(captured.name).toBe('ChargebeeClientError');
         expect(captured.message).toBe('Allowed values for paymentType: [RECURRING, ONETIME]');
@@ -169,7 +170,7 @@ describe('tracePaymentError', () => {
 
         tracePaymentError(apiError, { component: 'subscription-container', subscription });
 
-        const [captured] = (traceError as jest.Mock).mock.calls[0];
+        const [captured] = (traceError as Mock).mock.calls[0];
         expect(captured).not.toBe(apiError);
         expect(captured.name).toBe('PaymentsApiError 2001');
         expect(captured.message).toBe('Invalid coupon code');
@@ -186,7 +187,7 @@ describe('tracePaymentError', () => {
 
         tracePaymentError(apiError, { component: 'subscription-container', subscription });
 
-        const [captured] = (traceError as jest.Mock).mock.calls[0];
+        const [captured] = (traceError as Mock).mock.calls[0];
         expect(captured.stack).toBe(apiError.stack);
         expect(captured.name).toBe('PaymentsApiError 2001');
         expect(captured.message).toBe('Invalid coupon code');
@@ -195,12 +196,12 @@ describe('tracePaymentError', () => {
     it('should still produce a stack when the thrown value has none', () => {
         tracePaymentError(chargebeeFailure, { component: 'subscription-container', subscription });
 
-        const [captured] = (traceError as jest.Mock).mock.calls[0];
+        const [captured] = (traceError as Mock).mock.calls[0];
         expect(captured.stack).toContain('ChargebeeClientError');
     });
 
     it('should not capture errors that getSentryError filters out', () => {
-        (getSentryError as jest.Mock).mockReturnValue(undefined);
+        (getSentryError as Mock).mockReturnValue(undefined);
 
         tracePaymentError(chargebeeFailure, { component: 'subscription-container', subscription });
 
@@ -223,7 +224,7 @@ describe('tracePaymentError', () => {
 
             tracePaymentError(error, { component: 'use-chargebee-wallet', featureFlag });
 
-            const [captured] = (traceError as jest.Mock).mock.calls[0];
+            const [captured] = (traceError as Mock).mock.calls[0];
             expect(captured.name).toBe('[PaymentProcessorsRefactor] DisplayablePaymentError');
             expect(captured.message).toBe('Card was declined');
             expect(captured.stack).toBe(error.stack);
@@ -234,14 +235,14 @@ describe('tracePaymentError', () => {
 
             tracePaymentError(error, { component: 'use-chargebee-wallet', featureFlag });
 
-            expect((traceError as jest.Mock).mock.calls[0][0]).not.toBe(error);
+            expect((traceError as Mock).mock.calls[0][0]).not.toBe(error);
             expect(error.name).toBe('DisplayablePaymentError');
         });
 
         it('should prefix a non-error payload titled with its underlying reason', () => {
             tracePaymentError(chargebeeFailure, { component: 'use-chargebee-wallet', featureFlag });
 
-            const [captured] = (traceError as jest.Mock).mock.calls[0];
+            const [captured] = (traceError as Mock).mock.calls[0];
             expect(captured.name).toBe('[PaymentProcessorsRefactor] ChargebeeClientError');
             expect(captured.message).toBe('Allowed values for paymentType: [RECURRING, ONETIME]');
         });
@@ -314,7 +315,7 @@ describe('capturePaymentMessage', () => {
     });
 
     it('should not capture a message whose cause getSentryError filters out', () => {
-        (getSentryError as jest.Mock).mockReturnValue(undefined);
+        (getSentryError as Mock).mockReturnValue(undefined);
 
         capturePaymentMessage('Payments: BIN response failure', { component: 'create-payment-token' }, new Error('x'));
 
@@ -360,7 +361,7 @@ describe('the saved card verification failure reported from the subscription con
             extra: { app: 'proton-mail', step: 2, processorType: 'saved-chargebee' },
         });
 
-        return (traceError as jest.Mock).mock.calls[0][0] as Error;
+        return (traceError as Mock).mock.calls[0][0] as Error;
     };
 
     it('should be titled with the reason instead of the shape of the payload', () => {
@@ -395,7 +396,7 @@ describe('the saved card verification failure reported from the subscription con
     it('should keep the correlation id and the caller context as extras', () => {
         capture();
 
-        const extras = Object.assign({}, ...scope.setExtras.mock.calls.map(([e]: [any]) => e));
+        const extras = Object.assign({}, ...scope.setExtras.mock.calls.map(([e]: any[]) => e));
         expect(extras).toMatchObject({
             correlationId: 'id-9',
             messageType: 'chargebee-verify-saved-card-response',

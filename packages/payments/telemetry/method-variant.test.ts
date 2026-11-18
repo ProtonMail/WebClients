@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { setOfferedApplePayFlow } from '../core/apple-pay-support';
@@ -5,11 +7,11 @@ import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '../core/constants';
 import type { PaymentMethodType, PlainPaymentMethodType } from '../core/interface';
 import { reportPayment, reportSubscriptionEstimationChange } from './shared-checkout-telemetry';
 
-jest.mock('@proton/shared/lib/telemetry', () => ({
-    telemetry: { sendCustomEvent: jest.fn() },
+vi.mock('@proton/shared/lib/telemetry', () => ({
+    telemetry: { sendCustomEvent: vi.fn() },
 }));
 
-const sendCustomEvent = telemetry.sendCustomEvent as jest.Mock;
+const sendCustomEvent = telemetry.sendCustomEvent as Mock;
 
 const commonPayload = {
     context: 'account-home',

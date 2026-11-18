@@ -7,12 +7,12 @@ import { CYCLE, PLANS } from './constants';
 
 describe('computeOptimisticCheckResult', () => {
     beforeAll(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date('2025-08-26T00:00:00.000Z'));
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('2025-08-26T00:00:00.000Z'));
     });
 
     afterAll(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should return check result that uses the computed subscription mode and computed renew properties', () => {
