@@ -1,64 +1,60 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
-import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import warningIcon from '@proton/styles/assets/img/meet/warning-icon.svg';
-import clsx from '@proton/utils/clsx';
 
-import './WebRtcUnsupportedModal.scss';
+import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
 
 interface WebRtcUnsupportedModalProps {
     onClose: () => void;
 }
 
-export const WebRtcUnsupportedModal = ({ onClose }: WebRtcUnsupportedModalProps) => {
-    const firefox = isFirefox();
+const getFirefoxPeerConnectionMessage = () => {
+    const configPage = <strong key="config-page">about:config</strong>;
+    const preference = <strong key="preference">media.peerconnection.enabled</strong>;
+    const value = <strong key="value">true</strong>;
 
+    // translator: full sentence is "In Firefox, open about:config and set media.peerconnection.enabled to true." where "about:config", "media.peerconnection.enabled" and "true" are bold and stay in English, as Firefox shows them
+    return c('Info').jt`In Firefox, open ${configPage} and set ${preference} to ${value}.`;
+};
+
+export const WebRtcUnsupportedModal = ({ onClose }: WebRtcUnsupportedModalProps) => {
     return (
-        <ModalTwo
-            open={true}
-            rootClassName="web-rtc-unsupported-modal-backdrop"
-            className={clsx(
-                firefox ? 'web-rtc-unsupported-modal-firefox' : 'web-rtc-unsupported-modal',
-                'border border-norm'
-            )}
-        >
-            <ModalTwoContent className="web-rtc-unsupported-modal-content flex flex-column gap-4">
-                <div className="flex flex-column gap-4">
-                    <img
-                        className="mx-auto w-custom h-custom"
-                        src={warningIcon}
-                        alt=""
-                        style={{ '--w-custom': '5rem', '--h-custom': '5rem' }}
-                    />
-                    <div className="text-3xl text-semibold">{c('Info').t`Your browser or device isn’t supported`}</div>
-                    <span className="flex gap-4 color-weak">
-                        <div>
-                            {c('Info')
-                                .t`${MEET_APP_NAME} needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.`}
-                        </div>
-                        {isFirefox() && (
-                            <>
-                                <div>{c('Info').t`If you’re using Firefox, make sure PeerConnection is enabled.`}</div>
-                                <div>
-                                    {c('Info')
-                                        .t`Go to about:config, search for media.peerconnection.enabled, and set it to true.`}
-                                </div>
-                            </>
-                        )}
-                    </span>
-                    <Button
-                        className="close-web-rtc-unsupported-modal-button rounded-full border-none mt-5 py-4 w-full"
-                        onClick={onClose}
-                        size="large"
-                    >
-                        {c('Action').t`Close`}
-                    </Button>
-                </div>
-            </ModalTwoContent>
-        </ModalTwo>
+        <ConfirmationModal
+            icon={
+                <img
+                    className="mx-auto w-custom h-custom"
+                    src={warningIcon}
+                    alt=""
+                    style={
+                        isMobile()
+                            ? {
+                                  '--w-custom': '3rem',
+                                  '--h-custom': '3rem',
+                              }
+                            : {
+                                  '--w-custom': '5rem',
+                                  '--h-custom': '5rem',
+                              }
+                    }
+                />
+            }
+            title={c('Title').t`Browser not supported`}
+            message={
+                <>
+                    <p className="m-0">
+                        {c('Info')
+                            .t`${MEET_APP_NAME} needs WebRTC, which is off or blocked in this browser. Turn it on, turn off extensions that block it, or use another browser.`}
+                    </p>
+                    {isFirefox() && <p className="mt-2 mb-0">{getFirefoxPeerConnectionMessage()}</p>}
+                </>
+            }
+            primaryText={c('Action').t`Close`}
+            primaryButtonClass="secondary"
+            onPrimaryAction={onClose}
+            onClose={onClose}
+            showCloseButton={false}
+        />
     );
 };

@@ -70,11 +70,16 @@ export const requestMeetingInfo = (api: Api, meetingLinkName: string, silence?: 
 
 export const requestAccessToken = (
     api: Api,
-    { meetingLinkName, encryptedDisplayName }: { meetingLinkName: string; encryptedDisplayName: string }
+    {
+        meetingLinkName,
+        encryptedDisplayName,
+        silence,
+    }: { meetingLinkName: string; encryptedDisplayName: string; silence?: number[] }
 ) =>
     api<AccessTokenResponse>({
         ...queryMeetAccessToken(meetingLinkName),
         data: {
             EncryptedDisplayName: encryptedDisplayName,
         },
+        ...(silence && { silence }),
     });

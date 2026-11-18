@@ -68,6 +68,7 @@ interface ConnectWithMlsParams {
     signal?: AbortSignal;
     recoverStalledMeetCore?: boolean;
     notifyOnGenericMlsError?: boolean;
+    silencedAccessTokenErrors?: number[];
 }
 
 type ConnectionInfo = Awaited<ReturnType<UseLiveKitConnectionResult['connectWithStunFallbackToTurnRelay']>>;
@@ -195,6 +196,7 @@ export const useMeetingConnection = ({
             signal,
             recoverStalledMeetCore = false,
             notifyOnGenericMlsError = true,
+            silencedAccessTokenErrors,
         }: ConnectWithMlsParams): Promise<ConnectWithMlsResult> => {
             const fetchAccessDetails = async () => {
                 const sanitizedDisplayName = sanitizeMessage(displayNameArg);
@@ -202,7 +204,11 @@ export const useMeetingConnection = ({
                     ? await encryptDisplayNameWithKey(decryptionKeyRef.current, sanitizedDisplayName)
                     : '';
 
-                return getAccessDetails({ meetingLinkName, encryptedDisplayName });
+                return getAccessDetails({
+                    meetingLinkName,
+                    encryptedDisplayName,
+                    silence: silencedAccessTokenErrors,
+                });
             };
 
             const t0 = performance.now();

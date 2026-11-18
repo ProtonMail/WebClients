@@ -1,4 +1,5 @@
 @use 'sass:list';
+@use 'sass:map';
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/proton-meet' as *;
 
@@ -269,11 +270,11 @@ $profile-colors:
 }
 
 .unsupported-browser-container {
-	position: absolute;
-	inset-block-start: 0;
-	inset-inline-start: 0;
-	inline-size: 100%;
-	block-size: 100%;
+	position: fixed;
+	inset: 0;
+	z-index: map.get($z-indexes, 'up');
+	background: var(--background-norm);
+	color: var(--text-norm);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
