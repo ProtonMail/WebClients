@@ -23,10 +23,13 @@ vi.mock("../log", () => {
     };
 });
 vi.mock("./viewManagement", () => ({
-    getCurrentView: vi.fn(() => null),
-    getWebContentsViewName: vi.fn(() => null),
     showView: vi.fn(),
 }));
+vi.mock("./viewState", () => ({
+    getCurrentView: vi.fn(() => null),
+    getWebContentsViewName: vi.fn(() => null),
+}));
+vi.mock("./zoom", () => ({}));
 vi.mock("../../ipc/notification", () => ({}));
 vi.mock("../sentryReport", () => ({}));
 vi.mock("../openExternal/openExternal", () => ({ openExternalRedirect: vi.fn() }));

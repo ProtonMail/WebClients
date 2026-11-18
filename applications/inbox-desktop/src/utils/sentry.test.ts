@@ -14,7 +14,7 @@ vi.mock("../ipc/ipcConstants", () => ({ DESKTOP_FEATURES: {} }));
 vi.mock("./electronSession/partitions", () => ({ appSession: vi.fn(), updateSession: vi.fn() }));
 vi.mock("../store/settingsStore", () => ({ getSettings: vi.fn(() => ({})) }));
 vi.mock("../store/boundsStore", () => ({ getWindowBounds: vi.fn(() => ({})) }));
-vi.mock("./view/viewManagement", () => ({
+vi.mock("./view/viewState", () => ({
     getMainWindow: vi.fn(() => ({ isMinimized: vi.fn(() => false) })),
     getCurrentViewID: vi.fn(() => "mail"),
     getMailView: vi.fn(() => ({ webContents: { getURL: vi.fn(() => "") } })),

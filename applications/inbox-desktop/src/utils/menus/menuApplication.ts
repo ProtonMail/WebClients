@@ -3,15 +3,13 @@ import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac, isSnap, isWindows } from "../helpers";
 import {
-    getCurrentView,
-    getMainWindow,
     getSpellCheckStatus,
     openCalendarWithoutReload,
     openMailWithoutReload,
-    resetZoom,
     toggleSpellCheck,
-    updateZoom,
 } from "../view/viewManagement";
+import { getCurrentView, getMainWindow } from "../view/viewState";
+import { resetZoom, updateZoom } from "../view/zoom";
 import { isProdEnv } from "../isProdEnv";
 import { getSettings, updateSettings } from "../../store/settingsStore";
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";

@@ -2,10 +2,10 @@ import { Notification, app, Event, nativeImage, WebContentsView } from "electron
 import {
     bringWindowToFront,
     openCalendarWithoutReload,
-    getMainWindow,
     getCurrentLocalID,
     openMail,
 } from "../utils/view/viewManagement";
+import { getMainWindow } from "../utils/view/viewState";
 import { ipcLogger, notificationLogger } from "../utils/log";
 import { ElectronNotification, electronNotificationSchema } from "@proton/shared/lib/desktop/desktopTypes";
 import { isWindows, isMac } from "../utils/helpers";

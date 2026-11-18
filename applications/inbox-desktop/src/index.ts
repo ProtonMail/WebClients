@@ -8,13 +8,8 @@ import { performStoreMigrations } from "./store/storeMigrations";
 import { initializeUpdateChecks, updateDownloaded } from "./update/update";
 import { isMac } from "./utils/helpers";
 import { urlOverrideError } from "./utils/view/dialogs";
-import {
-    bringWindowToFront,
-    getCurrentViewID,
-    getMainWindow,
-    getWebContentsViewName,
-    viewCreationAppStartup,
-} from "./utils/view/viewManagement";
+import { bringWindowToFront, viewCreationAppStartup } from "./utils/view/viewManagement";
+import { getCurrentViewID, getMainWindow, getWebContentsViewName } from "./utils/view/viewState";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 import { getTheme, updateNativeTheme } from "./utils/themes";

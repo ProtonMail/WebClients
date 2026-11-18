@@ -5,7 +5,7 @@ import { loadDefaultProtocol, storeDefaultProtocol } from "./store";
 import { checkDefaultMailtoClientMac, setDefaultMailtoMac } from "./default_mailto_macos";
 import { checkDefaultMailtoClientLinux, setDefaultMailtoLinux } from "./default_mailto_linux";
 import { checkDefaultMailtoClientWindows, setDefaultMailtoWindows } from "./default_mailto_windows";
-import { getAccountView, getMailView } from "../view/viewManagement";
+import { getAccountView, getMailView } from "../view/viewState";
 import { DESKTOP_FEATURES } from "../../ipc/ipcConstants";
 import { checkDeepLinks } from "./deep_links";
 import { getSettings, updateSettings } from "../../store/settingsStore";

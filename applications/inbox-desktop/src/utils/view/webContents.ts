@@ -12,21 +12,18 @@ import {
     isUpgradeURL,
     isURLAllowed,
 } from "../urls/urlTests";
+import { resetHiddenViews, showView, showNetworkErrorPage, IGNORED_NET_ERROR_CODES } from "./viewManagement";
 import {
     getAccountView,
     getCalendarView,
     getCurrentView,
     getMailView,
     getWebContentsViewName,
-    resetHiddenViews,
-    getZoom,
-    showView,
-    showNetworkErrorPage,
-    IGNORED_NET_ERROR_CODES,
     getCurrentViewID,
     getViewURL,
     updateViewURL,
-} from "./viewManagement";
+} from "./viewState";
+import { getZoom } from "./zoom";
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, rendererLogger, viewLogger } from "../log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";

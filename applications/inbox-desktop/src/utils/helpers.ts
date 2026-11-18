@@ -1,5 +1,5 @@
 import { app, dialog, WebContentsView } from "electron";
-import { getCalendarView, getMailView } from "./view/viewManagement";
+import { getCalendarView, getMailView } from "./view/viewState";
 import { clearLogs, mainLogger } from "./log";
 import { DESKTOP_PLATFORMS, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 import { c } from "ttag";

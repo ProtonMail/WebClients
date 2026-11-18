@@ -1,7 +1,7 @@
 import { ContextMenuParams, Menu, MenuItemConstructorOptions, WebContentsView, app, clipboard } from "electron";
 import { c } from "ttag";
 import { isMac, smartTruncateText } from "../helpers";
-import { getCurrentView, getMainWindow } from "../view/viewManagement";
+import { getCurrentView, getMainWindow } from "../view/viewState";
 
 const getContextMenuSpellCheck = (props: ContextMenuParams, view: WebContentsView) => {
     if (!props.dictionarySuggestions || props.dictionarySuggestions.length === 0) {

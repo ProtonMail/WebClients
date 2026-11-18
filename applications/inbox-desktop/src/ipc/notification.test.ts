@@ -21,9 +21,12 @@ vi.mock("electron", () => ({
 vi.mock("../utils/view/viewManagement", () => ({
     bringWindowToFront: vi.fn(),
     openCalendarWithoutReload: vi.fn(),
-    getMainWindow: vi.fn(),
     getCurrentLocalID: vi.fn(() => "local-1"),
     openMail: vi.fn(),
+}));
+
+vi.mock("../utils/view/viewState", () => ({
+    getMainWindow: vi.fn(),
 }));
 
 vi.mock("../utils/view/windowUtils", () => ({

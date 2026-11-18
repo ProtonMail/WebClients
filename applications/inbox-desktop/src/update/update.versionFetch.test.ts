@@ -11,11 +11,6 @@ vi.mock("../utils/electronSession/partitions", () => ({
 
 vi.mock("../utils/sentryReport");
 
-vi.mock("../utils/view/viewManagement", () => ({
-    getCalendarView: vi.fn(),
-    getMailView: vi.fn(),
-}));
-
 import { updateSession } from "../utils/electronSession/partitions";
 import { sentryReport } from "../utils/sentryReport";
 import { getAvailableVersionsTestOnly, resetVersionFetchCounterTestOnly } from "./update";

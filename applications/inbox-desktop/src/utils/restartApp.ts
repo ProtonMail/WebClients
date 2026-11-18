@@ -1,5 +1,5 @@
 import { app } from "electron";
-import { getMainWindow } from "./view/viewManagement";
+import { getMainWindow } from "./view/viewState";
 import { quitTracker } from "./log/quitTracker";
 
 // Order matters: relaunch schedules the next process, releasing the single-instance

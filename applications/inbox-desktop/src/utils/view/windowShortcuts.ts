@@ -1,5 +1,6 @@
 import { Event, Input, WebContentsView } from "electron";
-import { getMainWindow, updateZoom } from "./viewManagement";
+import { getMainWindow } from "./viewState";
+import { updateZoom } from "./zoom";
 import { isLinux, isWindows } from "../helpers";
 
 export function handleBeforeInput(event: Event, input: Input) {
