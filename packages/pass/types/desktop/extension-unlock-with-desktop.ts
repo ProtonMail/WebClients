@@ -73,10 +73,21 @@ export type SendNativeMessageResponse = <Res extends NativeMessageResponse>(
     messageId: string
 ) => Promise<void>;
 
-export type NativeMessagePayload<Mes extends NativeMessage> =
-    Mes['encrypt'] extends true ?
-        { type: Mes['type']; messageId: string; encrypted: string; serverTime: number; userIdentifier?: string }
-    :   Omit<Mes, 'encrypt'> & { messageId: string };
+export type NativeMessagePayload<Mes extends NativeMessage> = Mes['encrypt'] extends true
+    ? { type: Mes['type']; messageId: string; encrypted: string; serverTime: number; userIdentifier?: string }
+    : Omit<Mes, 'encrypt'> & { messageId: string };
 
 type NativeMessageResponseWithError<Res extends NativeMessageResponse> =
-    Res | (Pick<Res, 'type'> & { error: NativeMessageErrorType });
+    | Res
+    | (Pick<Res, 'type'> & { error: NativeMessageErrorType });
+
+/** `installed` is false for a skipped browser (not present on this machine) and for a failed one. */
+export type NativeMessagingInstallReport = {
+    browser: string;
+    installed: boolean;
+    skipped: boolean;
+    error?: string;
+};
+
+/** `browser` of the report entry standing for a failure of the whole install call. */
+export const NATIVE_MESSAGING_ALL_BROWSERS = 'all';

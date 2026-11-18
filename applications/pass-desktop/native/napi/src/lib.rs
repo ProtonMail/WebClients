@@ -69,11 +69,42 @@ pub mod clipboard {
 
 #[napi]
 pub mod napi_native_messaging {
-    use shared::nm_install;
+    use shared::nm_install::{install_all, BrowserInstall, InstallOutcome};
+    use std::path::Path;
+
+    /// `installed` is false for a skipped browser (not installed on this machine) and for a failed one.
+    /// A failed browser carries its `error`.
+    #[napi(object)]
+    pub struct BrowserInstallReport {
+        pub browser: String,
+        pub installed: bool,
+        pub skipped: bool,
+        pub error: Option<String>,
+    }
+
+    impl From<BrowserInstall> for BrowserInstallReport {
+        fn from(result: BrowserInstall) -> Self {
+            let (installed, skipped, error) = match result.outcome {
+                InstallOutcome::Installed => (true, false, None),
+                InstallOutcome::Skipped => (false, true, None),
+                InstallOutcome::Failed(error) => (false, false, Some(error.to_string())),
+            };
+
+            Self {
+                browser: result.browser.to_string(),
+                installed,
+                skipped,
+                error,
+            }
+        }
+    }
 
     #[napi]
-    pub async fn install(chromium_binary_path: String, firefox_binary_path: String) -> napi::Result<()> {
-        napi_res!(nm_install::nm_install(&chromium_binary_path, &firefox_binary_path))
+    pub async fn install(chromium_binary_path: String, firefox_binary_path: String) -> Vec<BrowserInstallReport> {
+        install_all(Path::new(&chromium_binary_path), Path::new(&firefox_binary_path))
+            .into_iter()
+            .map(BrowserInstallReport::from)
+            .collect()
     }
 }
 

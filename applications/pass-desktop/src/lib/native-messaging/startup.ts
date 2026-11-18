@@ -2,7 +2,9 @@ import type { BrowserWindow } from 'electron';
 import { copyFile, mkdir } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
+import { NATIVE_MESSAGING_ALL_BROWSERS } from '@proton/pass/types/desktop/extension-unlock-with-desktop';
 import type { MaybeNull } from '@proton/pass/types/utils';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 
 import { napi_native_messaging } from 'proton-pass-desktop-native';
 
@@ -11,10 +13,23 @@ import { isProdEnv, isWindows } from '../../utils/platform';
 import { getFirefoxHostLocation, getHostLocation, getPackagedHostSource, getSockLocation } from './config';
 import { setupElectronIpcHandlers } from './electron-ipc';
 import { hostSockLoop } from './host-ipc';
+import type { ResolveInstallReport } from './install-report';
 
 const log = (...content: any[]) => logger.debug('[NativeMessaging]', ...content);
 
-export const nativeMessaging = async (app: Electron.App, getWindow: () => MaybeNull<BrowserWindow>) => {
+/** `warn` (not debug) on failure: a browser without its manifest cannot use desktop unlock.
+ * `info` on skip: lists which browsers were detected in the exported logs. */
+const logInstallReport = ({ browser, installed, skipped, error }: napi_native_messaging.BrowserInstallReport) => {
+    if (error) logger.warn(`[NativeMessaging] Install failed for ${browser}`, error);
+    else if (skipped) logger.info(`[NativeMessaging] Install skipped for ${browser}: browser data folder not found`);
+    else if (installed) log(`Installed manifest for ${browser}`);
+};
+
+export const nativeMessaging = async (
+    app: Electron.App,
+    getWindow: () => MaybeNull<BrowserWindow>,
+    resolveInstallReport: ResolveInstallReport
+) => {
     const config = {
         hostLocation: getHostLocation(app),
         firefoxHostLocation: getFirefoxHostLocation(app),
@@ -40,11 +55,14 @@ export const nativeMessaging = async (app: Electron.App, getWindow: () => MaybeN
     // Install Native Messaging manifests
     try {
         log(`Installing manifests...`);
-        await napi_native_messaging.install(config.hostLocation, config.firefoxHostLocation);
+        const reports = await napi_native_messaging.install(config.hostLocation, config.firefoxHostLocation);
+        reports.forEach(logInstallReport);
+        resolveInstallReport(reports);
     } catch (error) {
-        /** `warn` (not debug): a failed manifest install means native messaging is
-         * unregistered and the whole desktop-unlock feature is dead for this user. */
         logger.warn('[NativeMessaging] Install failed', error);
+        resolveInstallReport([
+            { browser: NATIVE_MESSAGING_ALL_BROWSERS, installed: false, skipped: false, error: getErrorMessage(error) },
+        ]);
     }
 
     // Setup Electron IPC sender and receiver
