@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { serverTime } from '@protontech/crypto';
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import { useGetUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
@@ -73,8 +73,7 @@ const createWrapper = (defaultShowDrawerSidebar?: boolean) => {
 describe('useDrawer', () => {
     describe('DrawerProvider not initialized', () => {
         it('should throw an error', () => {
-            const { result } = renderHook(() => useDrawer());
-            expect(result.error).toEqual(new Error('Drawer provider not initialized'));
+            expect(() => renderHook(() => useDrawer())).toThrow(new Error('Drawer provider not initialized'));
         });
     });
 

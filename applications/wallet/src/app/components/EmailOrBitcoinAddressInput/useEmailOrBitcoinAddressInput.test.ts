@@ -1,7 +1,6 @@
 import { act } from 'react';
 
-import { waitFor } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 import type { QRCode } from 'jsqr';
 
 import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresses';

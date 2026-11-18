@@ -1,9 +1,9 @@
-import type { PropsWithChildren, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import type { EnhancedStore, UnknownAction } from '@reduxjs/toolkit';
 import { configureStore, createAction } from '@reduxjs/toolkit';
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { withRequest } from '../store/request/enhancers';
 import { requestMiddleware } from '../store/request/middleware';
@@ -45,7 +45,7 @@ const buildHook = (
         onStart,
         onSuccess,
         onFailure,
-        hook: renderHook<PropsWithChildren, ReturnType<typeof useActionRequest>>(
+        hook: renderHook(
             () =>
                 useActionRequest(start, {
                     requestId: useInitialRequestId ? requestId : undefined,
@@ -80,10 +80,8 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await Promise.all([
-            hook.waitForValueToChange(() => hook.result.current.progress),
-            act(() => dispatch(progress(42))),
-        ]);
+        act(() => dispatch(progress(42)));
+        await waitFor(() => expect(hook.result.current.progress).toEqual(42));
 
         expect(hook.result.current.loading).toBe(true);
         expect(hook.result.current.progress).toEqual(42);
@@ -91,10 +89,8 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await Promise.all([
-            hook.waitForValueToChange(() => hook.result.current.progress),
-            act(() => dispatch(progress(100))),
-        ]);
+        act(() => dispatch(progress(100)));
+        await waitFor(() => expect(hook.result.current.progress).toEqual(100));
 
         expect(hook.result.current.loading).toBe(true);
         expect(hook.result.current.progress).toEqual(100);
@@ -102,10 +98,8 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await Promise.all([
-            hook.waitForValueToChange(() => hook.result.current.loading),
-            act(() => dispatch(success())),
-        ]);
+        act(() => dispatch(success()));
+        await waitFor(() => expect(hook.result.current.loading).toBe(false));
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toBe(0);
@@ -121,10 +115,8 @@ describe('useActionRequest', () => {
         expect(onSuccess).toHaveBeenCalledTimes(1);
         expect(onFailure).not.toHaveBeenCalled();
 
-        await Promise.all([
-            hook.waitForValueToChange(() => hook.result.current.loading),
-            act(() => dispatch(failure())),
-        ]);
+        act(() => dispatch(failure()));
+        await waitFor(() => expect(hook.result.current.loading).toBe(false));
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toBe(0);
@@ -137,7 +129,7 @@ describe('useActionRequest', () => {
         const { hook, onStart, onSuccess, onFailure } = buildHook(true, [successCache()]);
 
         act(() => hook.result.current.dispatch());
-        await hook.waitForValueToChange(() => hook.result.current.loading);
+        await waitFor(() => expect(hook.result.current.loading).toBe(false));
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toEqual(0);
@@ -173,10 +165,8 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await Promise.all([
-            hook.waitForValueToChange(() => hook.result.current.loading),
-            act(() => dispatch(success())),
-        ]);
+        act(() => dispatch(success()));
+        await waitFor(() => expect(hook.result.current.loading).toBe(false));
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toBe(0);
@@ -197,10 +187,8 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await Promise.all([
-            hook.waitForValueToChange(() => hook.result.current.loading),
-            act(() => dispatch(success())),
-        ]);
+        act(() => dispatch(success()));
+        await waitFor(() => expect(hook.result.current.loading).toBe(false));
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toBe(0);
@@ -215,10 +203,8 @@ describe('useActionRequest', () => {
             dispatch.mockImplementation(() => Promise.reject(new Error()) as any);
         });
 
-        await Promise.all([
-            hook.waitForValueToChange(() => hook.result.current.error),
-            act(() => hook.result.current.dispatch()),
-        ]);
+        act(() => hook.result.current.dispatch());
+        await waitFor(() => expect(hook.result.current.error).toBe(true));
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toEqual(0);

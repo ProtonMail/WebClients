@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 import { addDays, addHours, format, isSameDay, isSameHour, set, startOfTomorrow, startOfYesterday } from 'date-fns';
 
 import { dateLocale } from '@proton/shared/lib/i18n';

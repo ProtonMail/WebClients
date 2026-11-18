@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { useFlagsStatus } from '@unleash/proxy-client-react';
 
 import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';

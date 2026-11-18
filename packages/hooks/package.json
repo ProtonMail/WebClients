@@ -41,13 +41,11 @@
         "@proton/utils": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/react": "catalog:",
-        "@testing-library/react-hooks": "catalog:",
         "date-fns": "catalog:",
         "lodash": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",
-        "react-router-dom": "catalog:",
-        "react-test-renderer": "^18.3.1"
+        "react-router-dom": "catalog:"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",

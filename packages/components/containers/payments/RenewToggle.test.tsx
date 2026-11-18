@@ -1,5 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { act, fireEvent, render, renderHook, waitFor } from '@testing-library/react';
 
 import { Autopay } from '@proton/payments/core/constants';
 
@@ -114,7 +113,11 @@ describe('useRenewToggle', () => {
         });
         const { rerender, getByTestId } = render(<RenewToggle {...result.current} />, { wrapper: Wrapper });
 
-        const onChangePromise = result.current.onChange();
+        let onChangePromise!: ReturnType<typeof result.current.onChange>;
+        // Block body: returning the promise would make act wait for the modal to be answered
+        act(() => {
+            onChangePromise = result.current.onChange();
+        });
         rerender(<RenewToggle {...result.current} />);
 
         fireEvent.click(getByTestId('action-disable-autopay'));
@@ -128,7 +131,11 @@ describe('useRenewToggle', () => {
         });
         const { rerender, getByTestId } = render(<RenewToggle {...result.current} />, { wrapper: Wrapper });
 
-        const onChangePromise = result.current.onChange();
+        let onChangePromise!: ReturnType<typeof result.current.onChange>;
+        // Block body: returning the promise would make act wait for the modal to be answered
+        act(() => {
+            onChangePromise = result.current.onChange();
+        });
         rerender(<RenewToggle {...result.current} />);
 
         fireEvent.click(getByTestId('action-keep-autopay'));

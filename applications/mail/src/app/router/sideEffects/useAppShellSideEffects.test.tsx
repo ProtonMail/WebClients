@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
 
@@ -37,6 +37,10 @@ jest.mock('../../hooks/useComposerEvent', () => ({
 }));
 jest.mock('../../metrics/useMailPTTMetric', () => ({
     useMailPTTMetric: jest.fn(),
+}));
+// Needs a router; @testing-library/react-hooks used to swallow its error into result.error
+jest.mock('./useMailNavigationLogger', () => ({
+    useMailNavigationLogger: jest.fn(),
 }));
 
 const openShortcutsModal = jest.fn();

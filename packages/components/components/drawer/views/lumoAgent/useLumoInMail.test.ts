@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';

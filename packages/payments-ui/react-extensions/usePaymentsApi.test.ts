@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { hookWrapper } from '@proton/components/testing/hocs/helpers';
 import { withApi } from '@proton/components/testing/vitest/with-api';

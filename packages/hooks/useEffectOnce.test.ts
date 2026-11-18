@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import useEffectOnce from './useEffectOnce';
 
@@ -12,7 +12,7 @@ describe('useEffect()', () => {
 
     it('only calls once between renders', () => {
         const fn = vi.fn();
-        const { rerender } = renderHook<{ a: string }, void>(({ a = '' }) => useEffectOnce(fn, [a]));
+        const { rerender } = renderHook(({ a }) => useEffectOnce(fn, [a]), { initialProps: { a: '' } });
         rerender({ a: 'b' });
         expect(fn).toHaveBeenCalledTimes(1);
         rerender({ a: 'c' });

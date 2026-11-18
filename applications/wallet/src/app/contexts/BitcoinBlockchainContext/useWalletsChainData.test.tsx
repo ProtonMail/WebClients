@@ -1,8 +1,7 @@
 import type { JSX, PropsWithChildren } from 'react';
 
 import { logger } from '@protontech/logger';
-import { waitFor } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 import type { MockedFunction } from 'vitest';
 
 import type { WasmAccountSyncer } from '@proton/andromeda';
@@ -140,10 +139,10 @@ describe('useWalletsChainData', () => {
                 return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
             }
 
-            const { result, waitForNextUpdate } = renderHook(() => useWalletsChainData(apiWalletsData), {
+            const { result } = renderHook(() => useWalletsChainData(apiWalletsData), {
                 wrapper: Wrapper,
             });
-            await waitForNextUpdate();
+            await waitFor(() => expect(result.current.walletsChainData).not.toEqual({}));
 
             // we advance timer to bypass cooldown
             vi.advanceTimersByTime(2 * MINUTE);
@@ -169,10 +168,10 @@ describe('useWalletsChainData', () => {
                 return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
             }
 
-            const { result, waitForNextUpdate } = renderHook(() => useWalletsChainData(apiWalletsData), {
+            const { result } = renderHook(() => useWalletsChainData(apiWalletsData), {
                 wrapper: Wrapper,
             });
-            await waitForNextUpdate();
+            await waitFor(() => expect(result.current.walletsChainData).not.toEqual({}));
             // we advance timer to bypass cooldown
             vi.advanceTimersByTime(2 * MINUTE);
             mockedFullSync.mockClear();
@@ -249,7 +248,7 @@ describe('useWalletsChainData', () => {
                 return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
             }
 
-            const { unmount, waitForNextUpdate } = renderHook(() => useWalletsChainData(apiWalletsData), {
+            const { unmount } = renderHook(() => useWalletsChainData(apiWalletsData), {
                 wrapper: Wrapper,
             });
 
@@ -261,7 +260,6 @@ describe('useWalletsChainData', () => {
             vi.clearAllMocks();
             vi.advanceTimersByTime(10 * MINUTE);
 
-            await waitForNextUpdate();
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
             expect(mockedFullSync).toHaveBeenLastCalledWith(53);
 

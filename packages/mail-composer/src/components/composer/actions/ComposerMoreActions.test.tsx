@@ -263,9 +263,8 @@ describe('ComposerMoreActions booking action', () => {
         fireEvent.click(screen.getByTestId('composer:booking-button'));
         fireEvent.click(screen.getByTestId('mock:booking-limit-reached'));
 
-        expect(jest.mocked(BookingsLimitReached)).toHaveBeenCalledWith(
-            expect.objectContaining({ app: APPS.PROTONMAIL }),
-            expect.anything()
+        expect(jest.mocked(BookingsLimitReached).mock.calls.map(([props]) => props)).toContainEqual(
+            expect.objectContaining({ app: APPS.PROTONMAIL })
         );
     });
 

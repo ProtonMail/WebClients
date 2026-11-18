@@ -1,5 +1,4 @@
-import { renderHook } from '@testing-library/react';
-import { act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';

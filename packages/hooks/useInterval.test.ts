@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import type { Mock, MockInstance } from 'vitest';
 
 import useInterval from './useInterval';

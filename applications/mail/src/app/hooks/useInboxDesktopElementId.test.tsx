@@ -1,6 +1,6 @@
 import { useHistory, useLocation } from 'react-router';
 
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 

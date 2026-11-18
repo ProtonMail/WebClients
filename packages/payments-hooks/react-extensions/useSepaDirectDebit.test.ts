@@ -1,5 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react';
-import { act } from '@testing-library/react-hooks';
+import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { AmountAndCurrency, ChargebeeIframeEvents, ChargebeeIframeHandles } from '@proton/payments/core/interface';

@@ -57,7 +57,8 @@
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
-        "@testing-library/react-hooks": "catalog:",
+        "@testing-library/dom": "catalog:",
+        "@testing-library/react": "catalog:",
         "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
@@ -68,6 +69,7 @@
         "jest": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react-dom": "catalog:",
         "typescript": "catalog:"
     }
 }

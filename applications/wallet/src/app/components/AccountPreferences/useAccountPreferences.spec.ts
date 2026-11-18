@@ -1,8 +1,7 @@
 import { type ChangeEvent, act } from 'react';
 
 import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { waitFor } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 
 import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresses';
 import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys';

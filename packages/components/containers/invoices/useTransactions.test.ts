@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { queryTransactions } from '@proton/payments/core/api/api';
 import { InvoiceOwner, TransactionState, TransactionType } from '@proton/payments/core/constants';
@@ -54,7 +54,7 @@ describe('useTransactions', () => {
     });
 
     it('should filter out transactions with hidden states or types', async () => {
-        const { result, waitForNextUpdate } = renderHook(() => useTransactions({ owner: InvoiceOwner.User }), {
+        const { result } = renderHook(() => useTransactions({ owner: InvoiceOwner.User }), {
             wrapper,
         });
 
@@ -63,11 +63,8 @@ describe('useTransactions', () => {
 
         void result.current.request();
 
-        // Wait for the API call to resolve
-        await waitForNextUpdate();
-
-        // Should only include visible transactions
-        expect(result.current.transactions).toHaveLength(2);
+        // Wait for the API call to resolve. Should only include visible transactions
+        await waitFor(() => expect(result.current.transactions).toHaveLength(2));
         expect(result.current.transactions).toEqual([
             {
                 ID: '1',
@@ -83,23 +80,22 @@ describe('useTransactions', () => {
     });
 
     it('should maintain the total count from the API response', async () => {
-        const { result, waitForNextUpdate } = renderHook(() => useTransactions({ owner: InvoiceOwner.User }), {
+        const { result } = renderHook(() => useTransactions({ owner: InvoiceOwner.User }), {
             wrapper,
         });
 
         void result.current.request();
-        await waitForNextUpdate();
 
-        expect(result.current.total).toBe(mockTransactions.length);
+        await waitFor(() => expect(result.current.total).toBe(mockTransactions.length));
     });
 
     it('should handle pagination', async () => {
-        const { result, waitForNextUpdate } = renderHook(() => useTransactions({ owner: InvoiceOwner.User }), {
+        const { result } = renderHook(() => useTransactions({ owner: InvoiceOwner.User }), {
             wrapper,
         });
 
         void result.current.request();
-        await waitForNextUpdate();
+        await waitFor(() => expect(result.current.transactions).toHaveLength(2));
 
         // Mock API response for page 2
         addApiMock(queryTransactions({ Page: 1, PageSize: 10, Owner: InvoiceOwner.User }).url, () => ({
@@ -112,9 +108,7 @@ describe('useTransactions', () => {
             result.current.onSelect(2);
         });
 
-        await waitForNextUpdate();
-
         expect(result.current.page).toBe(2);
-        expect(result.current.transactions).toHaveLength(1);
+        await waitFor(() => expect(result.current.transactions).toHaveLength(1));
     });
 });

@@ -1,6 +1,5 @@
 import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { renderHook } from '@testing-library/react';
-import { act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
