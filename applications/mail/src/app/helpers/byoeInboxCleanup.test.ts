@@ -2,7 +2,11 @@ import { ApiImportProvider, ApiImporterState, ApiReportState } from '@proton/act
 import { ImportType } from '@proton/activation/src/interface';
 import type { Report, ReportSummary } from '@proton/activation/src/logic/reports/reports.interface';
 import type { Feature } from '@proton/features/interface';
-import { ADDRESS_FLAGS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { FeatureCode } from '@proton/features/interface';
+import { fetchFeatures } from '@proton/features/reducer';
+import { CacheType } from '@proton/redux-utilities/interface';
+import { domIsBusy } from '@proton/shared/lib/busy/busy';
+import { ADDRESS_FLAGS, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/NewsletterSubscription';
 
@@ -13,7 +17,12 @@ import {
     cleanUpBYOEInboxSenders,
     getBYOEInboxCleanupSenders,
     getFinishedBYOEImportOutcome,
+    loadSendersWhenFree,
+    waitForFreeScreen,
 } from './byoeInboxCleanup';
+
+jest.mock('@proton/shared/lib/busy/busy', () => ({ domIsBusy: jest.fn() }));
+jest.mock('@proton/features/reducer', () => ({ fetchFeatures: jest.fn() }));
 
 const withoutOneClick = (subscription: NewsletterSubscription): NewsletterSubscription => ({
     ...subscription,
@@ -604,5 +613,181 @@ describe('getFinishedBYOEImportOutcome', () => {
         expect(
             getFinishedBYOEImportOutcome({ entries: [running, finished], addresses, feature: connectionFeature })
         ).toBe('done');
+    });
+});
+
+const trackSettled = <T>(promise: Promise<T>) => {
+    const state: { settled: boolean; value?: T } = { settled: false };
+    void promise.then((value) => {
+        state.settled = true;
+        state.value = value;
+    });
+    return state;
+};
+
+const createDeferred = <T>() => {
+    let resolve = (_value: T) => {};
+    const promise = new Promise<T>((resolvePromise) => {
+        resolve = resolvePromise;
+    });
+    return { promise, resolve };
+};
+
+describe('waitForFreeScreen', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+        jest.useFakeTimers();
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
+    it('resolves straight away when the screen is free', async () => {
+        jest.mocked(domIsBusy).mockReturnValue(false);
+
+        const wait = trackSettled(waitForFreeScreen(new AbortController().signal));
+        await jest.advanceTimersByTimeAsync(0);
+
+        expect(wait.settled).toBe(true);
+        expect(domIsBusy).toHaveBeenCalledTimes(1);
+    });
+
+    it('checks every second with no time limit while the screen is busy, and resolves once it is free', async () => {
+        jest.mocked(domIsBusy).mockReturnValue(true);
+
+        const wait = trackSettled(waitForFreeScreen(new AbortController().signal));
+        await jest.advanceTimersByTimeAsync(60 * SECOND);
+
+        expect(domIsBusy).toHaveBeenCalledTimes(61);
+        expect(wait.settled).toBe(false);
+
+        jest.mocked(domIsBusy).mockReturnValue(false);
+        await jest.advanceTimersByTimeAsync(SECOND);
+
+        expect(wait.settled).toBe(true);
+    });
+
+    it('stops checking and resolves when aborted', async () => {
+        jest.mocked(domIsBusy).mockReturnValue(true);
+        const controller = new AbortController();
+
+        const wait = trackSettled(waitForFreeScreen(controller.signal));
+        controller.abort();
+        await jest.advanceTimersByTimeAsync(3 * SECOND);
+
+        expect(wait.settled).toBe(true);
+        expect(domIsBusy).toHaveBeenCalledTimes(1);
+    });
+});
+
+describe('loadSendersWhenFree', () => {
+    const senders = generateSubscriptionList(2);
+    const due = { [FeatureCode.BYOEInboxCleanupModal]: { Value: true } };
+    const notDue = { [FeatureCode.BYOEInboxCleanupModal]: { Value: false } };
+
+    const mockDispatch = jest.fn();
+    const mockApi = jest.fn();
+
+    const load = (signal = new AbortController().signal) => {
+        return loadSendersWhenFree({ dispatch: mockDispatch, api: mockApi, signal });
+    };
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        jest.useFakeTimers();
+        jest.mocked(domIsBusy).mockReturnValue(false);
+        jest.mocked(fetchFeatures).mockImplementation(() => ({ type: 'fetchFeatures' }) as any);
+        mockDispatch.mockResolvedValue(due);
+        mockSubscriptionsResponse(mockApi, senders);
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
+    it('reads the cleanup feature fresh from the server only once the screen is free, then returns the senders', async () => {
+        jest.mocked(domIsBusy).mockReturnValue(true);
+
+        const result = trackSettled(load());
+        await jest.advanceTimersByTimeAsync(SECOND);
+
+        expect(mockDispatch).not.toHaveBeenCalled();
+        expect(mockApi).not.toHaveBeenCalled();
+
+        jest.mocked(domIsBusy).mockReturnValue(false);
+        await jest.advanceTimersByTimeAsync(SECOND);
+
+        expect(fetchFeatures).toHaveBeenCalledWith([FeatureCode.BYOEInboxCleanupModal], { cache: CacheType.None });
+        expect(mockDispatch).toHaveBeenCalledWith({ type: 'fetchFeatures' });
+        expect(mockApi).toHaveBeenCalledTimes(1);
+        expect(result.value).toEqual(senders);
+    });
+
+    it("returns undefined and loads no senders when the cleanup isn't due any more", async () => {
+        mockDispatch.mockResolvedValue(notDue);
+
+        await expect(load()).resolves.toBeUndefined();
+        expect(mockApi).not.toHaveBeenCalled();
+    });
+
+    it('returns undefined and reads nothing when aborted while waiting for a free screen', async () => {
+        jest.mocked(domIsBusy).mockReturnValue(true);
+        const controller = new AbortController();
+
+        const result = load(controller.signal);
+        controller.abort();
+
+        await expect(result).resolves.toBeUndefined();
+        expect(mockDispatch).not.toHaveBeenCalled();
+    });
+
+    it('returns undefined and loads no senders when aborted while reading the feature', async () => {
+        const read = createDeferred<typeof due>();
+        mockDispatch.mockReturnValue(read.promise);
+        const controller = new AbortController();
+
+        const result = load(controller.signal);
+        await jest.advanceTimersByTimeAsync(0);
+        controller.abort();
+        read.resolve(due);
+
+        await expect(result).resolves.toBeUndefined();
+        expect(mockApi).not.toHaveBeenCalled();
+    });
+
+    it('returns undefined when aborted while loading the senders', async () => {
+        const sendersResponse = createDeferred<unknown>();
+        mockApi.mockReset();
+        mockApi.mockReturnValue(sendersResponse.promise);
+        const controller = new AbortController();
+
+        const result = load(controller.signal);
+        await jest.advanceTimersByTimeAsync(0);
+        controller.abort();
+        sendersResponse.resolve({ NewsletterSubscriptions: senders, PageInfo: { Total: 2, NextPage: null } });
+
+        await expect(result).resolves.toBeUndefined();
+    });
+
+    // Returning no senders would make the hook clear the cleanup, so a failure has to reach it as one
+    it.each([
+        {
+            request: 'reading the feature',
+            fail: () => {
+                mockDispatch.mockRejectedValue(new Error('offline'));
+            },
+        },
+        {
+            request: 'loading the senders',
+            fail: () => {
+                mockApi.mockReset();
+                mockApi.mockRejectedValue(new Error('offline'));
+            },
+        },
+    ])('rejects when $request fails, so the cleanup stays due', async ({ fail }) => {
+        fail();
+
+        await expect(load()).rejects.toThrow('offline');
     });
 });
