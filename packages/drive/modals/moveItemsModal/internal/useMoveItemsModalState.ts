@@ -86,7 +86,7 @@ export const useMoveItemsModalState = ({ onClose, nodeUids, onMoved, ...modalPro
         return { type: 'FROM_NODE' as const, rootNodeUid: scopeMoveNodeUid || '' };
     }, [scopeMoveNodeUid]);
 
-    const { initializeTree, toggleExpand, treeRoots, addNode, clear } = useMoveItemsModalDirectoryTree(
+    const { initializeTree, toggleExpand, expandedTreeIds, treeRoots, addNode, clear } = useMoveItemsModalDirectoryTree(
         'moveItemsModal',
         {
             onlyFolders: true,
@@ -240,8 +240,12 @@ export const useMoveItemsModalState = ({ onClose, nodeUids, onMoved, ...modalPro
                     await addNode(uid, parentUid, name);
 
                     if (moveTargetTreeId) {
-                        // Expand currently selected to show the newly created node (from the store),
-                        await toggleExpand(moveTargetTreeId);
+                        // Expand currently selected to show the newly created node (from the store).
+                        // Toggling an already expanded folder, such as the root expanded on open, would collapse it
+                        // and hide the new folder.
+                        if (!expandedTreeIds.get(moveTargetTreeId)) {
+                            await toggleExpand(moveTargetTreeId);
+                        }
                         // And select it:
                         const targetTreeItemId = makeTreeItemId(parentUid, uid);
                         setMoveTargetTreeId(targetTreeItemId);
