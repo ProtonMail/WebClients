@@ -140,6 +140,7 @@ const SubscriptionCheckout = ({
             app: APP_NAME,
             subscription,
             paymentForbiddenReason,
+            scribeToLumo,
         },
         (headless) => ({
             members: (item) => {

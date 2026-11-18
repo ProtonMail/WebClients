@@ -12,7 +12,6 @@ import { hasAIAssistant, hasPlanWithAIAssistantIncluded } from '@proton/payments
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -49,6 +48,11 @@ const AssistantToggle = () => {
     });
     const { assistantUpsellConfig } = useAssistantUpsellConfig({ upsellRef, plans: plans?.plans ?? [] });
 
+    // Writing-assistant seats are no longer sold, so there is nothing to upsell
+    if (scribeToLumo) {
+        return null;
+    }
+
     const isB2CUser = getIsB2CUserAbleToRunScribe(subscription, organization, member);
 
     // Do not show scribe banner to b2c users. The feature is available in Duo plan only for b2c, it's not an addon
@@ -83,19 +87,15 @@ const AssistantToggle = () => {
         <section className="border rounded flex items-start flex-column gap-2 p-6">
             <div className="flex justify-space-between items-center">
                 <div className="flex gap-2 items-center">
-                    {scribeToLumo ? (
-                        <img src={lumoIcon} alt="" width={24} height={24} />
-                    ) : (
-                        <IcPenSparks size={6} style={{ color: '#D132EA' }} />
-                    )}
-                    <p className="m-0 text-bold text-2xl">{getScribeWritingAssistantText(scribeToLumo)}</p>
+                    <IcPenSparks size={6} style={{ color: '#D132EA' }} />
+                    <p className="m-0 text-bold text-2xl">{getScribeWritingAssistantText(false)}</p>
                     {trialStatus === 'trial-ongoing' && (
                         <Badge type="info">{c('Assistant toggle').t`Trial in progress`}</Badge>
                     )}
                 </div>
             </div>
             <p className="m-0 mb-2 color-weak">
-                {getScribeUpsellText(scribeToLumo)} {learnMore}.
+                {getScribeUpsellText(false)} {learnMore}.
             </p>
             <div className="flex flex-row items-baseline gap-2">
                 <Button shape="outline" size="small" onClick={handleCustomize} loading={loadingSubscriptionModal}>{c(

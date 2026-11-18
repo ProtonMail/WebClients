@@ -190,6 +190,28 @@ describe('createAddonItem', () => {
     });
 });
 
+describe('Scribe add-on labels', () => {
+    it('passes ScribeToLumo to every label', () => {
+        const planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2 };
+        const ctx = createHeadlessCheckoutContextInner({
+            planIDs,
+            plansMap: {
+                [PLANS.MAIL_PRO]: makePlan({ Name: PLANS.MAIL_PRO, MaxMembers: 1 }),
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: makeAddon({ Name: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO }),
+            },
+            checkResult: makeCheckResult({ Cycle: CYCLE.MONTHLY }),
+            app,
+            scribeToLumo: true,
+        });
+
+        const addon = createAddonItem(ctx).addons[0];
+
+        expect(addon.labelWithQuantity).toBe('2 Lumo writing assistant seats');
+        expect(addon.labelWithoutQuantity).toBe('Lumo writing assistant seats');
+        expect(addon.labelWithoutQuantityShort).toBe('Lumo writing assistant seats');
+    });
+});
+
 describe('addons line item via getHeadlessCheckout', () => {
     it('includes addon items with correct pricing', () => {
         const checkResult = makeCheckResult({

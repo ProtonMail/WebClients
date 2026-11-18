@@ -22,6 +22,8 @@ import { type APP_NAMES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constant
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import RightSummary from './RightSummary';
@@ -120,6 +122,7 @@ const AccountStepPaymentSummary = ({
     const hasCouponCode = !!model.subscriptionData?.checkResult.Coupon?.Code;
     const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
     const loading = model.loadingDependencies || loadingPaymentDetails;
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const summaryPlan = getSummaryPlan({
         app,
@@ -137,6 +140,7 @@ const AccountStepPaymentSummary = ({
             couponConfig,
             app,
             subscription: model.session?.subscription,
+            scribeToLumo,
         },
         ({
             isLifetime,

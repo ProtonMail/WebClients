@@ -125,12 +125,14 @@ export interface GetHeadlessCheckoutParams {
     subscription?: Subscription | FreeSubscription;
     /** Payment forbidden reason - used to determine renewal notice visibility. */
     paymentForbiddenReason?: SubscriptionCheckForbiddenReason;
+    scribeToLumo?: boolean;
 }
 
 export type HeadlessCheckoutContextInner = ReturnType<typeof createHeadlessCheckoutContextInner>;
 
 export function createHeadlessCheckoutContextInner(params: GetHeadlessCheckoutParams) {
-    const { planIDs, plansMap, checkResult, couponConfig, app, subscription, paymentForbiddenReason } = params;
+    const { planIDs, plansMap, checkResult, couponConfig, app, subscription, paymentForbiddenReason, scribeToLumo } =
+        params;
 
     // Core computed checkout data
     const checkoutUi = getCheckoutUi({ planIDs, plansMap, checkResult });
@@ -173,6 +175,7 @@ export function createHeadlessCheckoutContextInner(params: GetHeadlessCheckoutPa
         app,
         subscription,
         paymentForbiddenReason,
+        scribeToLumo,
 
         // Computed
         checkoutUi,

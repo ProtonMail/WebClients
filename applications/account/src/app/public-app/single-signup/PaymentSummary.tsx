@@ -14,6 +14,8 @@ import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import type { OptimisticOptions } from '../single-signup-v2/interface';
@@ -67,6 +69,7 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
     });
 
     const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const checkoutView = createCheckoutView(
         {
@@ -76,6 +79,7 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
             isTrial,
             couponConfig,
             app: APPS.PROTONVPN_SETTINGS,
+            scribeToLumo,
         },
         (headless) => ({
             addons: (item) => {

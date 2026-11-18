@@ -66,10 +66,10 @@ export type AddonTransferStrategy = 'member' | 'domain' | 'scribe' | 'lumo' | 'm
  */
 export interface AddonConfig {
     addonType: ADDON_PREFIXES;
-    addonCheckoutTitle: (seats: number, options: { planIDs: PlanIDs }) => string;
+    addonCheckoutTitle: (seats: number, options: { planIDs: PlanIDs; scribeToLumo?: boolean }) => string;
     min?: AddonNumberConfig;
     max?: AddonNumberConfig;
-    title: (...args: any | any[]) => string;
+    title: (isB2C: boolean, options?: { short?: boolean; scribeToLumo?: boolean }) => string;
     /** Title shown in the dashboard "current plan" addon list. Return '' for addons with no dashboard line. */
     dashboardTitle: (quantity: number, maxMembers: number, scribeToLumo: boolean) => string;
     isPerMemberCapped: boolean;

@@ -17,6 +17,8 @@ import type { Currency } from '@proton/payments/core/interface';
 import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/subscription/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import SubscriptionCheckoutPlanDetails from './plan-section/SubscriptionCheckoutPlanDetails';
@@ -55,6 +57,7 @@ const SubscriptionCheckoutPlanSection = ({
     } = usePayments();
     const { currency, planIDs, cycle } = checkoutUi;
     const { APP_NAME } = useConfig();
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
     const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(multiSubscriptionContext, {
         planIDs,
         cycle,
@@ -72,6 +75,7 @@ const SubscriptionCheckoutPlanSection = ({
             app: APP_NAME,
             subscription,
             paymentForbiddenReason,
+            scribeToLumo,
         },
         (headless) => ({
             members: (membersItem) => (

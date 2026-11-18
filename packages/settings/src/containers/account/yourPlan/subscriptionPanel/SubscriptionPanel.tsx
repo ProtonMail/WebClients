@@ -377,7 +377,7 @@ const SubscriptionPanel = ({ app, subscription, organization, entitlements, user
             return false;
         }
 
-        const showGetMoreButton = MaxAI < MaxMembers && entitlements.isB2B;
+        const showGetMoreButton = !scribeToLumo && MaxAI < MaxMembers && entitlements.isB2B;
         const actionElement = showGetMoreButton ? <GetMoreButton /> : null;
 
         return {

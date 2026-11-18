@@ -10,6 +10,8 @@ import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentCont
 import { type CheckoutView, createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { getDriveMaxSpaceMap } from '../../helpers/getMaxSpaceMap';
@@ -135,6 +137,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
     const { options } = payments;
 
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const checkoutView = createCheckoutView(
         {
@@ -143,6 +146,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
             checkResult: options.checkResult,
             app: APPS.PROTONDRIVE,
             paymentForbiddenReason: { forbidden: false },
+            scribeToLumo,
         },
         (headless) => ({
             members: () => null,

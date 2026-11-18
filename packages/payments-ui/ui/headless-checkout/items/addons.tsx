@@ -41,7 +41,7 @@ export const ADDONS_LINE_ITEM_TYPE = 'addons' as const;
 export interface AddonLineItem extends BaseLineItem<typeof ADDONS_LINE_ITEM_TYPE>, ReturnType<typeof formatAddons> {}
 
 function formatAddons(ctx: HeadlessCheckoutContextInner) {
-    const { checkoutUi, cycle, currency, couponConfig } = ctx;
+    const { checkoutUi, cycle, currency, couponConfig, scribeToLumo } = ctx;
     const { couponDiscountBreakdown } = checkoutUi;
 
     const addons: AddonItem[] = checkoutUi.addons.map((addon) => {
@@ -69,9 +69,14 @@ function formatAddons(ctx: HeadlessCheckoutContextInner) {
         return {
             addonName: addon.name,
             addonType: getAddonType(addon.name),
-            labelWithQuantity: getAddonTitleWithQuantity(addon.name, addon.quantity, checkoutUi.planIDs),
-            labelWithoutQuantity: getAddonTitleWithoutQuantity(addon.name, checkoutUi.planIDs),
-            labelWithoutQuantityShort: getAddonTitleWithoutQuantity(addon.name, checkoutUi.planIDs, { short: true }),
+            labelWithQuantity: getAddonTitleWithQuantity(addon.name, addon.quantity, checkoutUi.planIDs, {
+                scribeToLumo,
+            }),
+            labelWithoutQuantity: getAddonTitleWithoutQuantity(addon.name, checkoutUi.planIDs, { scribeToLumo }),
+            labelWithoutQuantityShort: getAddonTitleWithoutQuantity(addon.name, checkoutUi.planIDs, {
+                short: true,
+                scribeToLumo,
+            }),
             quantity: addon.quantity,
             pricePerOnePerMonth,
             pricePerOnePerMonthElement,

@@ -1564,6 +1564,16 @@ describe('getAddonTitleWithQuantity()', () => {
                 '5 writing assistant seats'
             );
         });
+        it('scribe with ScribeToLumo on', () => {
+            expect(
+                getAddonTitleWithQuantity(ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, 5, b2bPlanIDs, { scribeToLumo: true })
+            ).toBe('5 Lumo writing assistant seats');
+        });
+        it('scribe with ScribeToLumo on (singular)', () => {
+            expect(
+                getAddonTitleWithQuantity(ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, 1, b2bPlanIDs, { scribeToLumo: true })
+            ).toBe('1 Lumo writing assistant seat');
+        });
     });
 
     describe('B2C titles', () => {
@@ -1586,6 +1596,11 @@ describe('getAddonTitleWithQuantity()', () => {
             expect(getAddonTitleWithQuantity(ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, 5, b2cPlanIDs)).toBe(
                 'Writing assistant'
             );
+        });
+        it('scribe with ScribeToLumo on', () => {
+            expect(
+                getAddonTitleWithQuantity(ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, 5, b2cPlanIDs, { scribeToLumo: true })
+            ).toBe('Lumo writing assistant');
         });
     });
 });
@@ -1611,6 +1626,14 @@ describe('getAddonTitleByType()', () => {
     });
     it('scribe B2B', () => {
         expect(getAddonTitleByType(ADDON_PREFIXES.SCRIBE, false)).toBe('Writing assistant seats');
+    });
+    it('scribe B2C with ScribeToLumo on', () => {
+        expect(getAddonTitleByType(ADDON_PREFIXES.SCRIBE, true, { scribeToLumo: true })).toBe('Lumo writing assistant');
+    });
+    it('scribe B2B with ScribeToLumo on', () => {
+        expect(getAddonTitleByType(ADDON_PREFIXES.SCRIBE, false, { scribeToLumo: true })).toBe(
+            'Lumo writing assistant seats'
+        );
     });
 });
 

@@ -32,7 +32,7 @@ const UserAndAddresses = () => (
         key="user-and-addresses-link"
     >
         {
-            // translator: full sentence is: Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in <Users and addresses> or <add more seats>
+            // translator: full sentence is: Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in <Users and addresses> or <add more seats>. A second version ends: Manage for individual users in <Users and addresses>.
             c('Link (Scribe)').t`Users and addresses`
         }
     </ButtonLike>
@@ -90,7 +90,7 @@ export const AccessToggleScribe = () => {
         return null;
     }
 
-    const addMoreSeats = <AddMoreSeats key="add-more-seats-link" />;
+    const addMoreSeats = scribeToLumo ? null : <AddMoreSeats key="add-more-seats-link" />;
     const userAndAddresses = <UserAndAddresses key="user-and-addresses-link" />;
 
     return (
@@ -109,11 +109,13 @@ export const AccessToggleScribe = () => {
             onChange={() => withScribeLoading(handleToggleScribe())}
         >
             <p className="m-0 text-sm">
-                {
-                    // translator: full sentence is: Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in <Users and addresses> or <add more seats>
-                    c('Info (Scribe)')
-                        .jt`Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${userAndAddresses} or ${addMoreSeats}`
-                }
+                {scribeToLumo
+                    ? // translator: full sentence is: Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in <Users and addresses>.
+                      c('Info (Scribe)')
+                          .jt`Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${userAndAddresses}.`
+                    : // translator: full sentence is: Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in <Users and addresses> or <add more seats>
+                      c('Info (Scribe)')
+                          .jt`Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${userAndAddresses} or ${addMoreSeats}`}
             </p>
         </AccessToggle>
     );

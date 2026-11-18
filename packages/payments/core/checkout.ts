@@ -36,22 +36,27 @@ const getAddonQuantity = (addon: Plan, quantity: number) => {
     return quantity * addonMultiplier;
 };
 
-export const getAddonTitleWithQuantity = (addonName: ADDON_NAMES, quantity: number, planIDs: PlanIDs) => {
-    return getAddonConfigByName(addonName)?.addonCheckoutTitle(quantity, { planIDs }) ?? '';
+export const getAddonTitleWithQuantity = (
+    addonName: ADDON_NAMES,
+    quantity: number,
+    planIDs: PlanIDs,
+    { scribeToLumo }: { scribeToLumo?: boolean } = {}
+) => {
+    return getAddonConfigByName(addonName)?.addonCheckoutTitle(quantity, { planIDs, scribeToLumo }) ?? '';
 };
 
 export const getAddonTitleByType = (
     addonType: ADDON_PREFIXES,
     isB2C: boolean,
-    { short }: { short?: boolean } = {}
+    { short, scribeToLumo }: { short?: boolean; scribeToLumo?: boolean } = {}
 ): string => {
-    return getAddonConfigByType(addonType)?.title(isB2C, { short }) ?? '';
+    return getAddonConfigByType(addonType)?.title(isB2C, { short, scribeToLumo }) ?? '';
 };
 
 export const getAddonTitleWithoutQuantity = (
     addonName: ADDON_NAMES,
     planIDs: PlanIDs,
-    options: { short?: boolean } = {}
+    options: { short?: boolean; scribeToLumo?: boolean } = {}
 ) => {
     const plan = getPlanNameFromIDs(planIDs);
     const isB2C = !getIsB2BAudienceFromPlan(plan);
