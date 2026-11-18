@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign */
-import { addDays, addMilliseconds, max } from '../../date-fns-utc';
+import { addMilliseconds } from 'date-fns';
+
+import { addDays, max } from '../../date-fns-utc';
 import differenceInCalendarDays from '../../date-fns-utc/differenceInCalendarDays';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../../date/timezone';
 import type {
@@ -217,6 +219,7 @@ export const getOccurrences = ({
         const rrule = internalValueToIcalValue('recur', modifiedRrule.value);
         iterator = rrule.iterator(dtstart);
     } catch (e: any) {
+        // eslint-disable-next-line no-console
         console.error(e);
         // Pretend it was ok
         return [];
@@ -290,6 +293,7 @@ export const getOccurrencesBetween = (
                 interval,
             };
         } catch (e: any) {
+            // eslint-disable-next-line no-console
             console.error(e);
             // Pretend it was ok
             return [];

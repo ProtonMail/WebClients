@@ -11,8 +11,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '@proton/shared/lib/calendar/calendar';
 import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';
-import { MEET_APP_NAME } from '@proton/shared/lib/constants';
-import { MILLISECONDS_IN_MINUTE } from '@proton/shared/lib/date-fns-utc';
+import { MEET_APP_NAME, MINUTE } from '@proton/shared/lib/constants';
 
 // Type guard helper to check if auto-add is enabled
 const isAutoAddMeetEnabled = (
@@ -96,7 +95,7 @@ export const useAutoAddMeetLinkNotification = () => {
                 </div>
             ),
             showCloseButton: true,
-            expiration: MILLISECONDS_IN_MINUTE,
+            expiration: MINUTE,
         });
     };
 

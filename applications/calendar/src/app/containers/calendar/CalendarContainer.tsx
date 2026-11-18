@@ -23,8 +23,8 @@ import {
     getInviteLocale,
     getSecondaryTimezone,
 } from '@proton/shared/lib/calendar/getSettings';
-import { HOUR, SECOND } from '@proton/shared/lib/constants';
-import { MILLISECONDS_IN_MINUTE, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
+import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import {
     convertZonedDateTimeToUTC,
     formatGMTOffsetAbbreviation,
@@ -383,7 +383,7 @@ const CalendarContainer = ({
         return {
             primaryTimezone: `${formatGMTOffsetAbbreviation(offset)}`,
             secondaryTimezone: `${formatGMTOffsetAbbreviation(secondaryOffset)}`,
-            secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE,
+            secondaryTimezoneOffset: (secondaryOffset - offset) * MINUTE,
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-E26E0F
     }, [utcDate, utcDateRangeInTimezone, secondaryTzid, tzid, viewportWidth['<=small']]);

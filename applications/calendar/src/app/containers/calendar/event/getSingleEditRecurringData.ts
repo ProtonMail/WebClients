@@ -1,7 +1,8 @@
+import { addMilliseconds } from 'date-fns';
+
 import { getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getRecurrenceId } from '@proton/shared/lib/calendar/veventHelper';
-import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 

@@ -6,7 +6,7 @@ import {
     screen,
     waitFor,
 } from '@testing-library/react';
-import { format, getUnixTime, set } from 'date-fns';
+import { addMinutes, format, getUnixTime, set } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import loudRejection from 'loud-rejection';
 
@@ -18,7 +18,7 @@ import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
+import { addDays } from '@proton/shared/lib/date-fns-utc';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
