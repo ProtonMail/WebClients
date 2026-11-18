@@ -1,5 +1,4 @@
 import { render, screen, within } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 import type { CountryOptions } from '@proton/payments/core/countries';
 
@@ -14,10 +13,6 @@ vi.mock('./GatewayRow', () => ({
     ),
 }));
 
-vi.mock('@proton/components/components/orgPermissions/withPermissionGuard', () => ({
-    default: (_permission: string) => (Component: any) => Component,
-}));
-
 const gateway = (Name: string) => ({ Name, Logicals: [], Users: [], GroupIds: null }) as unknown as Gateway;
 
 const renderView = (props: Partial<Parameters<typeof GatewaysTableView>[0]> = {}) =>
@@ -28,7 +23,6 @@ const renderView = (props: Partial<Parameters<typeof GatewaysTableView>[0]> = {}
             users={[]}
             groups={[]}
             canViewGateways
-            canAdd
             provisioningDuration="7 days"
             deletingLogicals={[]}
             deletedLogicals={{}}
@@ -36,7 +30,6 @@ const renderView = (props: Partial<Parameters<typeof GatewaysTableView>[0]> = {}
             editGatewayServers={() => () => {}}
             editGatewayUsers={() => () => {}}
             deleteGateway={() => () => {}}
-            addGateway={() => {}}
             {...props}
         />
     );
@@ -48,6 +41,12 @@ describe('GatewaysTableView', () => {
         expect(screen.getAllByRole('cell').map((cell) => cell.textContent)).toEqual(['DEV-VPN', 'INFRA-VPN']);
     });
 
+    it('renders no create button — the section owns it', () => {
+        renderView();
+
+        expect(screen.queryByRole('button', { name: 'Create Gateway' })).not.toBeInTheDocument();
+    });
+
     describe('when the viewer is an admin', () => {
         it('renders the members and manage columns', () => {
             renderView();
@@ -56,21 +55,6 @@ describe('GatewaysTableView', () => {
 
             expect(headers).toHaveLength(5);
             expect(headers[3]).toHaveTextContent('Members');
-        });
-
-        it('renders a create button that calls addGateway when clicked', async () => {
-            const addGateway = vi.fn();
-            renderView({ addGateway });
-
-            await userEvent.click(screen.getByRole('button', { name: 'Create Gateway' }));
-
-            expect(addGateway).toHaveBeenCalledTimes(1);
-        });
-
-        it('disables the create button when canAdd is false', () => {
-            renderView({ canAdd: false });
-
-            expect(screen.getByRole('button', { name: 'Create Gateway' })).toBeDisabled();
         });
     });
 
@@ -82,12 +66,6 @@ describe('GatewaysTableView', () => {
 
             expect(headers).toHaveLength(3);
             expect(screen.queryByRole('columnheader', { name: 'Members' })).not.toBeInTheDocument();
-        });
-
-        it('renders no create button', () => {
-            renderView({ canViewGateways: false });
-
-            expect(screen.queryByRole('button', { name: 'Create Gateway' })).not.toBeInTheDocument();
         });
     });
 });
