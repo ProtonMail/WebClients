@@ -385,6 +385,7 @@ enum MeetFeatureFlag {
     MeetNewJoinFunctions = 'MeetNewJoinFunctions',
     MeetOpenDesktopAppOnLoad = 'MeetOpenDesktopAppOnLoad',
     MeetPastMeetings = 'MeetPastMeetings',
+    MeetPrepareLiveKitConnection = 'MeetPrepareLiveKitConnection',
     MeetProtonCalendarDeepLink = 'MeetProtonCalendarDeepLink',
     MeetQualityTelemetry = 'MeetQualityTelemetry',
     MeetQualityTelemetryKillSwitch = 'MeetQualityTelemetryKillSwitch',
