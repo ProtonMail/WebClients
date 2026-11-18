@@ -3,8 +3,13 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
 import { MemoryRouter } from 'react-router'
+import { NavLink } from 'react-router-dom'
 
-import { HomepageSidebar, type HomepageSidebarListItemLinkComponentProps } from './HomepageSidebar'
+import {
+  HomepageSidebar,
+  type HomepageSidebarComponentProps,
+  type HomepageSidebarListItemLinkComponentProps,
+} from './HomepageSidebar'
 import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
 import { SidebarStateProvider } from './sidebarState'
 import { DateFormatter } from './utils/dateFormatter'
@@ -29,7 +34,29 @@ const mockAppVersion = ({ appVersion }: { appVersion: string }) => <div>App vers
 const mockLogo = ({ appName }: { appName: string }) => <div>Logo {appName}</div>
 const mockSidebarListItemLink = ({ children }: HomepageSidebarListItemLinkComponentProps) => children
 
-function renderSidebar() {
+/** Proton's sidebar, reduced to whether it is open, the button that toggles it, and its links. */
+const mockToggleSidebar = ({ expanded, onToggleExpand, children }: HomepageSidebarComponentProps) => (
+  <div>
+    <output aria-label="Sidebar">{expanded ? 'open' : 'closed'}</output>
+    <button type="button" onClick={onToggleExpand}>
+      Toggle sidebar
+    </button>
+    {children}
+  </div>
+)
+const mockNavLink = ({ to, exact, children }: HomepageSidebarListItemLinkComponentProps) => (
+  <NavLink to={to} exact={exact}>
+    {children}
+  </NavLink>
+)
+
+function renderSidebar({
+  protonSidebar = mockRenderChildren,
+  sidebarListItemLink = mockSidebarListItemLink,
+}: {
+  protonSidebar?: (props: HomepageSidebarComponentProps) => ReactNode
+  sidebarListItemLink?: (props: HomepageSidebarListItemLinkComponentProps) => ReactNode
+} = {}) {
   let finishUpdate = () => {}
   const updateRecentDocuments = jest.fn(
     () =>
@@ -59,8 +86,8 @@ function renderSidebar() {
             appsDropdown={mockRenderNothing}
             appVersionComponent={mockAppVersion}
             logo={mockLogo}
-            protonSidebar={mockRenderChildren}
-            sidebarListItemLink={mockSidebarListItemLink}
+            protonSidebar={protonSidebar}
+            sidebarListItemLink={sidebarListItemLink}
             appVersion="1.0.0"
           />
         </SidebarStateProvider>
@@ -93,5 +120,23 @@ describe('HomepageSidebar', () => {
     const { reloadInvitations } = renderSidebar()
 
     expect(reloadInvitations).not.toHaveBeenCalled()
+  })
+
+  test('closes once a link is followed, as on narrow viewports where it is open', async () => {
+    renderSidebar({ protonSidebar: mockToggleSidebar, sidebarListItemLink: mockNavLink })
+    await userEvent.click(screen.getByRole('button', { name: 'Toggle sidebar' }))
+    expect(screen.getByRole('status', { name: 'Sidebar' })).toHaveTextContent('open')
+
+    await userEvent.click(screen.getByRole('link', { name: 'Trash' }))
+
+    expect(screen.getByRole('status', { name: 'Sidebar' })).toHaveTextContent('closed')
+  })
+
+  test('following a link while it is closed, as on wide viewports, leaves it closed', async () => {
+    renderSidebar({ protonSidebar: mockToggleSidebar, sidebarListItemLink: mockNavLink })
+
+    await userEvent.click(screen.getByRole('link', { name: 'Trash' }))
+
+    expect(screen.getByRole('status', { name: 'Sidebar' })).toHaveTextContent('closed')
   })
 })

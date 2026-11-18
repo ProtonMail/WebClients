@@ -112,6 +112,8 @@ const DEVICE_DOCUMENT = createMockRecentDocument({
   ancestorsNodeUids: ['volume1~deviceFolder', 'volume1~deviceRoot'],
 })
 
+type Flow = 'one_document' | 'empty_recents' | 'empty_trash' | 'empty_search' | 'delayed' | 'trash'
+
 let mockItems = MOCK_DATA
 let mockAddresses: UserAddress[] | undefined = []
 let mockContactEmails: OwnerContact[] | undefined = []
@@ -132,6 +134,16 @@ describe('HomepageContent', () => {
     rows.forEach((row, i) => {
       checkRowContents(row, MOCK_DATA[i].name, MOCK_DATA[i].createdBy ?? '', MOCK_DATA[i].location)
     })
+  })
+
+  test.each([
+    { flow: 'empty_trash', text: 'There are no documents in the trash.' },
+    { flow: 'empty_search', text: 'No recent documents match your search.' },
+  ] as const)('the $flow state says why the list is empty, not how to start one', async ({ flow, text }) => {
+    renderWithProviders(<HomepageContent />, flow)
+
+    expect(await screen.findByText(text)).toBeInTheDocument()
+    expect(screen.queryByText('Create end-to-end encrypted documents and spreadsheets.')).not.toBeInTheDocument()
   })
 
   describe('owner', () => {
@@ -350,6 +362,17 @@ describe('HomepageContent', () => {
     await userEvent.click(screen.getAllByRole('button', { name: /Actions/ })[0])
     await userEvent.click(await screen.findByText('Open folder'))
     expect(mockOpenParent).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
+  })
+
+  test("In the trash, a document's location opens Drive's trash, not the folder it left", async () => {
+    const open = jest.spyOn(window, 'open').mockReturnValue(null)
+    const { mockOpenParent } = renderWithProviders(<HomepageContent />, 'trash')
+
+    await userEvent.click((await screen.findAllByRole('button', { name: 'Trash' }))[0])
+
+    expect(open).toHaveBeenCalledWith('/trash')
+    expect(mockOpenParent).not.toHaveBeenCalled()
+    open.mockRestore()
   })
 
   test('Navigate to the document editor when "Open" is clicked', async () => {
@@ -1105,13 +1128,7 @@ describe('HomepageContent', () => {
     )
   }
 
-  function HomepageViewMockProvider({
-    children,
-    flow,
-  }: {
-    children: ReactNode
-    flow: 'one_document' | 'empty_recents' | 'delayed' | 'trash'
-  }) {
+  function HomepageViewMockProvider({ children, flow }: { children: ReactNode; flow: Flow }) {
     const [state, setState] = useState<HomepageViewState>({ view: 'recents-initial' })
 
     useEffect(() => {
@@ -1125,6 +1142,14 @@ describe('HomepageContent', () => {
 
       if (flow === 'empty_recents') {
         setState({ view: 'recents-empty' })
+      }
+
+      if (flow === 'empty_trash') {
+        setState({ view: 'trash-empty' })
+      }
+
+      if (flow === 'empty_search') {
+        setState({ view: 'search-empty', query: 'plan' })
       }
 
       if (flow === 'delayed') {
@@ -1165,10 +1190,7 @@ describe('HomepageContent', () => {
     )
   }
 
-  function renderWithProviders(
-    node: ReactNode,
-    flow: 'one_document' | 'empty_recents' | 'delayed' | 'trash' = 'one_document',
-  ) {
+  function renderWithProviders(node: ReactNode, flow: Flow = 'one_document') {
     const mockOpen = jest.fn()
     const mockOpenParent = jest.fn()
     const mockTrash = jest.fn()

@@ -1,5 +1,12 @@
+import type { ProtonDriveClient } from '@protontech/drive-sdk'
+import { act, cleanup, render, waitFor } from '@testing-library/react'
+import { MemoryRouter, useHistory } from 'react-router'
+import { CompatRouter } from 'react-router-dom-v5-compat'
+
 import { ServerTime } from './utils/serverTime'
-import { buildRecentsState, buildSearchState, buildTrashState } from './HomepageViewProvider'
+import { buildRecentsState, buildSearchState, buildTrashState, HomepageViewProvider } from './HomepageViewProvider'
+import { useHomepageTitle } from './useHomepageTitle'
+import { useRecentsStore } from './useRecentsStore'
 import type { ProtonDocumentType } from './utils/mimetype'
 import { RecentDocumentsItem, type RecentDocumentsItemValue } from './recentDocumentsItem'
 import type { RecentDocumentsItemLocation } from './recentDocumentsItem'
@@ -266,3 +273,125 @@ function createDocumentItem(name: string, overrides: Partial<RecentDocumentsItem
     ...overrides,
   }
 }
+
+function renderProvider(path: string, { myFilesRootFolder = new Promise<never>(() => {}) } = {}) {
+  const api = jest.fn().mockResolvedValue({ RecentDocuments: [], Code: '1000' })
+  // No nodes: the recents and the trash are empty.
+  const iterateNodes = async function* () {
+    yield* []
+  }
+  const iterateTrashedNodes = jest.fn(iterateNodes)
+  const drive = {
+    getMyFilesRootFolder: () => myFilesRootFolder,
+    iterateNodes,
+    iterateTrashedNodes,
+  } as unknown as ProtonDriveClient
+  let reloadOnCoreEvent: () => unknown = () => {}
+  const coreEventSubscriber = {
+    addListener: (listener: () => unknown) => {
+      reloadOnCoreEvent = listener
+      return () => {}
+    },
+  }
+  const reportTitle = jest.fn()
+  const createNotification = jest.fn()
+  let history: ReturnType<typeof useHistory>
+  function CaptureHistory() {
+    history = useHistory()
+    return null
+  }
+  // The title the host gives the tab, read as HomepageShell reads it.
+  function CaptureTitle() {
+    reportTitle(useHomepageTitle())
+    return null
+  }
+
+  render(
+    <MemoryRouter initialEntries={[path]}>
+      <CompatRouter>
+        <HomepageViewProvider
+          drive={drive}
+          eventSubscriber={{ initialize: jest.fn(), reset: jest.fn(), subscribeToSharedDocument: jest.fn() }}
+          coreEventSubscriber={coreEventSubscriber}
+          pendingInvitations={[]}
+          recentlyAcceptedInvitations={[]}
+          acceptInvitation={jest.fn()}
+          declineInvitation={jest.fn()}
+          reloadInvitations={jest.fn()}
+          api={api}
+          logger={{ debug: jest.fn(), error: jest.fn() }}
+          reportTelemetry={jest.fn()}
+          createNotification={createNotification}
+          getAppHref={(path) => path}
+          dateLocaleCode="en-US"
+          errorTracking={ERROR_TRACKING}
+          featureFlags={FEATURE_FLAGS}
+          addresses={[]}
+          contactEmails={[]}
+        >
+          <CaptureHistory />
+          <CaptureTitle />
+        </HomepageViewProvider>
+      </CompatRouter>
+    </MemoryRouter>,
+  )
+  return {
+    api,
+    iterateTrashedNodes,
+    reportTitle,
+    createNotification,
+    reloadOnCoreEvent: () =>
+      act(() => {
+        void reloadOnCoreEvent()
+      }),
+    navigate: (to: string) => act(() => history.push(to)),
+  }
+}
+
+// Kept the same objects across renders, as the provider asks.
+const ERROR_TRACKING = { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true }
+const FEATURE_FLAGS = { bulkTrash: false, bulkMove: false }
+
+describe('HomepageViewProvider', () => {
+  afterEach(() => {
+    cleanup()
+    useRecentsStore.setState({ recentDocuments: {}, recentDocumentsInitialized: false })
+  })
+
+  test('names the page after the view, and renames it as the user moves between pages', async () => {
+    const { reportTitle, navigate } = renderProvider('/recents')
+    await waitFor(() => expect(reportTitle).toHaveBeenLastCalledWith('Recents'))
+
+    navigate('/trash')
+    await waitFor(() => expect(reportTitle).toHaveBeenLastCalledWith('Trash'))
+
+    navigate('/recents?q=plan')
+    await waitFor(() => expect(reportTitle).toHaveBeenLastCalledWith('Searching "plan"'))
+  })
+
+  test('on the trash page, loads the trash and not the recent documents', async () => {
+    const { api, iterateTrashedNodes } = renderProvider('/trash')
+
+    await waitFor(() => expect(iterateTrashedNodes).toHaveBeenCalledTimes(1))
+    expect(api).not.toHaveBeenCalled()
+  })
+
+  test('loads the recent documents again when shared documents change', async () => {
+    const { api, reloadOnCoreEvent } = renderProvider('/recents')
+    await waitFor(() => expect(api).toHaveBeenCalledTimes(1))
+
+    reloadOnCoreEvent()
+
+    await waitFor(() => expect(api).toHaveBeenCalledTimes(2))
+  })
+
+  test("says so when the My files folder can't load", async () => {
+    const { createNotification } = renderProvider('/recents', {
+      myFilesRootFolder: Promise.reject(new Error('Offline')),
+    })
+
+    await waitFor(() =>
+      expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: "Failed to load 'My files' folder" }),
+    )
+  })
+})
