@@ -12,7 +12,6 @@ import { resetMeetingState } from '@proton/meet/store/resetMeetingState';
 import {
     selectIsReconnecting,
     selectJoinedRoom,
-    selectMlsRetrying,
     selectPrejoinParticipantCount,
     selectReconnectionFailed,
     setReconnectionFailed,
@@ -136,7 +135,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const joinedRoom = useMeetSelector(selectJoinedRoom);
     const isReconnecting = useMeetSelector(selectIsReconnecting);
     const reconnectionFailed = useMeetSelector(selectReconnectionFailed);
-    const mlsRetrying = useMeetSelector(selectMlsRetrying);
     const prejoinParticipantCount = useMeetSelector(selectPrejoinParticipantCount);
 
     const meetingLinkName = useMeetSelector(selectMeetingLinkName);
@@ -260,23 +258,22 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const assignHost = useAssignHost(accessTokenRef.current as string, urlMeetingLinkName);
 
-    const { liveKitConnectionState, setLiveKitConnectionState, showReconnectedMessage, setShowReconnectedMessage } =
-        useRoomEventHandlers({
-            joinedRoom,
-            disallowHealthCheck,
-            cleanupMlsState,
-            stopPiP,
-            joinedRoomLoggedRef,
-            instantMeetingRef,
-            mlsSetupDone,
-            isReconnectingRef,
-            isExpiringRef,
-            meetingLinkRef,
-            meetingLinkNameRef,
-            triggerFullReconnectionRef,
-            cancelReconnection,
-            reportMeetError,
-        });
+    const { liveKitConnectionState } = useRoomEventHandlers({
+        joinedRoom,
+        disallowHealthCheck,
+        cleanupMlsState,
+        stopPiP,
+        joinedRoomLoggedRef,
+        instantMeetingRef,
+        mlsSetupDone,
+        isReconnectingRef,
+        isExpiringRef,
+        meetingLinkRef,
+        meetingLinkNameRef,
+        triggerFullReconnectionRef,
+        cancelReconnection,
+        reportMeetError,
+    });
 
     const { joinMeeting, joinInstantMeeting, waitingRoomProviderProps } = useJoinFlow({
         urlMeetingLinkName,
@@ -500,7 +497,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                             handleEndMeeting={handleEndMeeting}
                             handleMeetingExpired={handleMeetingExpired}
                             handleMeetingLockToggle={handleMeetingLockToggle}
-                            isDisconnected={isReconnecting || reconnectionFailed}
                             startPiP={startPiP}
                             stopPiP={stopPiP}
                             pictureInPictureWarmup={pictureInPictureWarmup}
@@ -510,11 +506,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                             assignHost={assignHost}
                             getKeychainIndexInformation={getKeychainIndexInformation}
                             liveKitConnectionState={liveKitConnectionState}
-                            showReconnectedMessage={showReconnectedMessage}
-                            setShowReconnectedMessage={setShowReconnectedMessage}
-                            setLiveKitConnectionState={setLiveKitConnectionState}
-                            isReconnecting={isReconnecting}
-                            mlsRetrying={mlsRetrying}
                             onSimulateReconnection={() => dispatch(setReconnectionFailed(true))}
                             websocketUrl={websocketUrlRef.current}
                         />

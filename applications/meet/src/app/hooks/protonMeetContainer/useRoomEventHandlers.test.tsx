@@ -345,23 +345,24 @@ describe('useRoomEventHandlers', () => {
         beforeEach(() => vi.useFakeTimers());
         afterEach(() => vi.useRealTimers());
 
-        it('shows the reconnected message when transitioning back to Connected', () => {
+        it('exposes the LiveKit connection state as it changes', () => {
             const { result } = renderHook(() => useRoomEventHandlers(createParams()));
             const handler = getHandler(RoomEvent.ConnectionStateChanged);
 
             act(() => handler(ConnectionState.Reconnecting));
-            act(() => handler(ConnectionState.Connected));
+            expect(result.current.liveKitConnectionState).toBe(ConnectionState.Reconnecting);
 
-            expect(result.current.showReconnectedMessage).toBe(true);
+            act(() => handler(ConnectionState.Connected));
+            expect(result.current.liveKitConnectionState).toBe(ConnectionState.Connected);
         });
 
-        it('does not show the reconnected message on the initial connect', () => {
+        it('clears the LiveKit connection state when the room disconnects', () => {
             const { result } = renderHook(() => useRoomEventHandlers(createParams()));
-            const handler = getHandler(RoomEvent.ConnectionStateChanged);
 
-            act(() => handler(ConnectionState.Connected));
+            act(() => getHandler(RoomEvent.ConnectionStateChanged)(ConnectionState.Reconnecting));
+            act(() => getHandler(RoomEvent.Disconnected)(DisconnectReason.CLIENT_INITIATED));
 
-            expect(result.current.showReconnectedMessage).toBe(false);
+            expect(result.current.liveKitConnectionState).toBeNull();
         });
 
         describe('reconnect stall watchdog', () => {

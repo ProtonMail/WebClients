@@ -1,94 +1,73 @@
 import { renderHook } from '@testing-library/react';
-import { ConnectionState } from 'livekit-client';
 
-import type { ConnectionAnnouncementState } from '../types';
-import { getConnectionPhase, useConnectionAnnouncements } from './useConnectionAnnouncements';
+import { AnnouncementPriority } from '@proton/components/components/liveAnnouncer/types';
+
+import type { ConnectionStatus } from '../../../hooks/useConnectionStatus/useConnectionStatus';
+import { useConnectionAnnouncements } from './useConnectionAnnouncements';
 
 const announce = vi.fn();
 
 vi.mock('@proton/components/components/liveAnnouncer/useAnnounce', () => ({ useAnnounce: () => announce }));
 
-const connected: ConnectionAnnouncementState = {
-    isReconnecting: false,
-    mlsRetrying: false,
-    isDisconnected: false,
-    liveKitConnectionState: ConnectionState.Connected,
-    showReconnectedMessage: false,
-    isWebsocketReconnecting: false,
-};
-
-describe('getConnectionPhase', () => {
-    it('is connected while every connection is up', () => {
-        expect(getConnectionPhase(connected)).toBe('connected');
+const renderAnnouncements = (initialPhase: ConnectionStatus['phase'] = 'connected') =>
+    renderHook((phase: ConnectionStatus['phase']) => useConnectionAnnouncements(phase), {
+        initialProps: initialPhase,
     });
 
-    it('is reconnecting while the meeting server reconnects', () => {
-        expect(getConnectionPhase({ ...connected, isWebsocketReconnecting: true })).toBe('reconnecting');
-    });
-
-    it('keeps the reconnected message ahead of a meeting server reconnection', () => {
-        expect(getConnectionPhase({ ...connected, showReconnectedMessage: true, isWebsocketReconnecting: true })).toBe(
-            'reconnected'
-        );
-    });
-
-    it('is disconnected when the meeting server reconnects after the connection failed', () => {
-        expect(getConnectionPhase({ ...connected, isDisconnected: true, isWebsocketReconnecting: true })).toBe(
-            'disconnected'
-        );
-    });
-});
+const announcedMessages = () => announce.mock.calls.map(([message]) => message);
 
 describe('useConnectionAnnouncements', () => {
     beforeEach(() => {
         announce.mockClear();
     });
 
-    const renderAnnouncements = () =>
-        renderHook((state: ConnectionAnnouncementState) => useConnectionAnnouncements(state), {
-            initialProps: connected,
-        });
+    it('does not announce the phase it starts in', () => {
+        renderAnnouncements('reconnecting');
 
-    it('announces the recovery when the meeting server reconnects without a reconnected message', () => {
+        expect(announce).not.toHaveBeenCalled();
+    });
+
+    it('announces the connection loss and the recovery, but not the return to connected', () => {
         const { rerender } = renderAnnouncements();
 
-        rerender({ ...connected, isWebsocketReconnecting: true });
-        rerender(connected);
+        rerender('reconnecting');
+        rerender('reconnected');
+        rerender('connected');
 
-        expect(announce.mock.calls.map(([message]) => message)).toEqual([
+        expect(announcedMessages()).toEqual(['Connection lost. Reconnecting…', 'Reconnected']);
+    });
+
+    it('announces the disconnection when reconnecting fails', () => {
+        const { rerender } = renderAnnouncements();
+
+        rerender('reconnecting');
+        rerender('disconnected');
+
+        expect(announcedMessages()).toEqual(['Connection lost. Reconnecting…', 'Disconnected from the meeting']);
+    });
+
+    it('announces a phase once while it lasts', () => {
+        const { rerender } = renderAnnouncements();
+
+        rerender('reconnecting');
+        rerender('reconnecting');
+
+        expect(announcedMessages()).toEqual(['Connection lost. Reconnecting…']);
+    });
+
+    it('announces with high priority', () => {
+        const { rerender } = renderAnnouncements();
+
+        rerender('reconnecting');
+        rerender('reconnected');
+
+        expect(announce).toHaveBeenCalledWith(
             'Connection lost. Reconnecting…',
-            'Reconnected to the meeting',
-        ]);
-    });
-
-    it('does not announce a recovery when the LiveKit connection state is cleared while reconnecting', () => {
-        const { rerender } = renderAnnouncements();
-
-        rerender({ ...connected, liveKitConnectionState: ConnectionState.Reconnecting });
-        rerender({ ...connected, liveKitConnectionState: null });
-
-        expect(announce.mock.calls.map(([message]) => message)).toEqual(['Connection lost. Reconnecting…']);
-    });
-
-    it('does not announce a recovery when the MLS retry ends without a reconnected message', () => {
-        const { rerender } = renderAnnouncements();
-
-        rerender({ ...connected, mlsRetrying: true });
-        rerender(connected);
-
-        expect(announce.mock.calls.map(([message]) => message)).toEqual(['Connection lost. Reconnecting…']);
-    });
-
-    it('announces the recovery once when the reconnected message shows before connected', () => {
-        const { rerender } = renderAnnouncements();
-
-        rerender({ ...connected, liveKitConnectionState: ConnectionState.Reconnecting });
-        rerender({ ...connected, showReconnectedMessage: true });
-        rerender(connected);
-
-        expect(announce.mock.calls.map(([message]) => message)).toEqual([
-            'Connection lost. Reconnecting…',
-            'Reconnected to the meeting',
-        ]);
+            expect.objectContaining({ priority: AnnouncementPriority.High })
+        );
+        expect(announce).toHaveBeenCalledWith(
+            'Reconnected',
+            expect.objectContaining({ priority: AnnouncementPriority.High })
+        );
     });
 });

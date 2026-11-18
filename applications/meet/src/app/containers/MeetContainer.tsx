@@ -24,6 +24,7 @@ import { MeetContext } from '../contexts/MeetContext';
 import { useMeetingRecorderContext } from '../contexts/MeetingRecorderContext';
 import { useCurrentScreenShare } from '../hooks/screenShare/useCurrentScreenShare';
 import { useMeetingTelemetry } from '../hooks/telemetry/useMeetingTelemetry';
+import { useConnectionStatus } from '../hooks/useConnectionStatus/useConnectionStatus';
 import { useStableCallback } from '../hooks/useStableCallback';
 
 interface MeetContainerProps {
@@ -32,7 +33,6 @@ interface MeetContainerProps {
     handleEndMeeting: () => Promise<void>;
     handleMeetingExpired: () => Promise<void>;
     handleMeetingLockToggle: () => Promise<void>;
-    isDisconnected: boolean;
     startPiP: () => void;
     stopPiP: () => void;
     pictureInPictureWarmup: () => void;
@@ -42,11 +42,6 @@ interface MeetContainerProps {
     assignHost: (participantUuid: string) => Promise<void>;
     getKeychainIndexInformation: () => (number | undefined)[];
     liveKitConnectionState: ConnectionState | null;
-    showReconnectedMessage: boolean;
-    setShowReconnectedMessage: React.Dispatch<React.SetStateAction<boolean>>;
-    setLiveKitConnectionState: React.Dispatch<React.SetStateAction<ConnectionState | null>>;
-    isReconnecting: boolean;
-    mlsRetrying: boolean;
     onSimulateReconnection: () => void;
     websocketUrl: string | null;
 }
@@ -57,7 +52,6 @@ export const MeetContainer = ({
     handleEndMeeting,
     handleMeetingExpired,
     handleMeetingLockToggle,
-    isDisconnected,
     startPiP,
     stopPiP,
     pictureInPictureWarmup,
@@ -67,16 +61,12 @@ export const MeetContainer = ({
     assignHost,
     getKeychainIndexInformation,
     liveKitConnectionState,
-    showReconnectedMessage,
-    setShowReconnectedMessage,
-    setLiveKitConnectionState,
-    isReconnecting,
-    mlsRetrying,
     onSimulateReconnection,
     websocketUrl,
 }: MeetContainerProps) => {
     const debugOverlay = useDebugOverlay();
     const dispatch = useMeetDispatch();
+    const connectionStatus = useConnectionStatus(liveKitConnectionState);
 
     const { startScreenShare, stopScreenShare, screenShareError, dismissScreenShareError } = useCurrentScreenShare({
         stopPiP,
@@ -180,13 +170,7 @@ export const MeetContainer = ({
     return (
         <DebugOverlayContext.Provider value={debugOverlayValue}>
             <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
-                <MeetingAnnouncer
-                    isReconnecting={isReconnecting}
-                    mlsRetrying={mlsRetrying}
-                    isDisconnected={isDisconnected}
-                    liveKitConnectionState={liveKitConnectionState}
-                    showReconnectedMessage={showReconnectedMessage}
-                >
+                <MeetingAnnouncer connectionStatus={connectionStatus}>
                     <MeetContext.Provider value={meetContextValue}>
                         {debugOverlay.isOpen && (
                             <DebugOverlay
@@ -195,15 +179,7 @@ export const MeetContainer = ({
                                 onSimulateReconnection={onSimulateReconnection}
                             />
                         )}
-                        <MeetingBody
-                            liveKitConnectionState={liveKitConnectionState}
-                            showReconnectedMessage={showReconnectedMessage}
-                            setShowReconnectedMessage={setShowReconnectedMessage}
-                            setLiveKitConnectionState={setLiveKitConnectionState}
-                            isDisconnected={isDisconnected}
-                            isReconnecting={isReconnecting}
-                            mlsRetrying={mlsRetrying}
-                        />
+                        <MeetingBody connectionStatus={connectionStatus} />
                     </MeetContext.Provider>
                     <AutoCloseMeetingModal participantCount={totalParticipantCount} onLeave={handleLeave} />
                     {screenShareError && (

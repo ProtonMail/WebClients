@@ -63,9 +63,9 @@ export const announcementMessages = {
 
     connectionLost: () => c('Accessibility announcement').t`Connection lost. Reconnecting…`,
 
-    reconnected: () => c('Accessibility announcement').t`Reconnected to the meeting`,
+    reconnected: () => c('Accessibility announcement').t`Reconnected`,
 
-    disconnected: () => c('Accessibility announcement').t`You have been disconnected from the meeting`,
+    disconnected: () => c('Accessibility announcement').t`Disconnected from the meeting`,
 
     screenShareStarted: (name?: string) =>
         name

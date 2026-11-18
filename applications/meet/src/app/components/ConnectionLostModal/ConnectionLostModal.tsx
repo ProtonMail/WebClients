@@ -16,14 +16,14 @@ export const ConnectionLostModal = ({ onRejoin, onLeave }: ConnectionLostModalPr
     return (
         <ConfirmationModal
             icon={null} // If connection is lost, there is a high chance this icon won't even load
-            title={c('Info').t`Connection failed`}
-            message={c('Info').t`Unable to reconnect to the meeting. Please rejoin or leave.`}
-            primaryText={c('Action').t`Leave meeting`}
-            primaryButtonClass="danger"
-            onPrimaryAction={onLeave}
-            secondaryText={c('Action').t`Rejoin meeting`}
-            secondaryButtonClass="secondary"
-            onSecondaryAction={onRejoin}
+            title={c('Info').t`Connection lost`}
+            message={c('Info').t`Reconnecting didn’t work. Check your internet connection, then rejoin.`}
+            primaryText={c('Action').t`Rejoin meeting`}
+            primaryButtonClass="secondary"
+            onPrimaryAction={onRejoin}
+            secondaryText={c('Action').t`Leave meeting`}
+            secondaryButtonClass="tertiary"
+            onSecondaryAction={onLeave}
         />
     );
 };
