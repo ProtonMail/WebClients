@@ -7,8 +7,8 @@ import { PLANS } from '@proton/payments/core/constants';
 import clsx from '@proton/utils/clsx';
 
 import Info from '../../../../../../components/link/Info';
-import CustomLogo from '../../CustomLogo';
 import visionaryLogo from '../../logo/plan-visionary-gold.svg';
+import { PlanIcon } from '../../PlanIcon';
 
 import './ExclusivePlanBorder.scss';
 import './PlanOfferCard.scss';
@@ -25,11 +25,7 @@ export const PlanOfferLogo = ({ planName }: { planName: PlanOfferPlanName }) => 
     if (planName === PLANS.VISIONARY) {
         return <img src={visionaryLogo} width={44} height={44} alt="" className="PlanOfferCard-logo shrink-0" />;
     }
-    return (
-        <div className="PlanOfferCard-logo PlanOfferCard-logo-tile shrink-0 flex" aria-hidden="true">
-            <CustomLogo planName={planName} size={32} />
-        </div>
-    );
+    return <PlanIcon planName={planName} size={44} />;
 };
 
 const headerLayoutClassName = {
