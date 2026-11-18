@@ -66,7 +66,7 @@ export const getProduceForkLoginResult = async ({
             return {
                 type: 'reauth',
                 location: paths.reauth,
-                payload: getReAuthState(forkParameters, session),
+                payload: await getReAuthState(forkParameters, session, api),
             };
         }
 
