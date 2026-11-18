@@ -3,7 +3,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { AmountAndCurrency, ChargebeeIframeHandles } from '@proton/payments/core/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
 import {
     getMockedEvents,
@@ -13,16 +13,16 @@ import {
 } from './__mocks__/wallet-test-helpers';
 import { type ApplePayModalHandles, useApplePay } from './useApplePay';
 
-jest.mock('@proton/payments/sentry/capture', () => ({ tracePaymentError: jest.fn() }));
+vi.mock('@proton/payments/sentry/capture', () => ({ tracePaymentError: vi.fn() }));
 
 const amountAndCurrency: AmountAndCurrency = { Amount: 1000, Currency: 'USD' };
 
 const getModalHandles = (): ApplePayModalHandles => ({
-    onAuthorize: jest.fn(),
-    onClick: jest.fn(),
-    onFailure: jest.fn(),
-    onCancel: jest.fn(),
-    onMountFailure: jest.fn(),
+    onAuthorize: vi.fn(),
+    onClick: vi.fn(),
+    onFailure: vi.fn(),
+    onCancel: vi.fn(),
+    onMountFailure: vi.fn(),
 });
 
 const renderApplePay = ({
@@ -31,7 +31,7 @@ const renderApplePay = ({
 }: { handles?: ChargebeeIframeHandles; iframeLoaded?: boolean } = {}) => {
     const { events, fire, isSubscribed, removed } = getMockedEvents();
     const applePayModalHandles = getModalHandles();
-    const onChargeable = jest.fn().mockResolvedValue(undefined);
+    const onChargeable = vi.fn().mockResolvedValue(undefined);
 
     const { result } = renderHook(() =>
         useApplePay({ amountAndCurrency, onChargeable }, { api: apiMock, handles, events, applePayModalHandles })
@@ -50,7 +50,7 @@ const initialize = async (run: (signal: AbortSignal) => Promise<void>) => {
 
 describe('useApplePay', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockPaymentIntent();
         mockTokenStatus(PAYMENT_TOKEN_STATUS.CHARGEABLE);
     });
@@ -169,7 +169,7 @@ describe('useApplePay', () => {
         'tells the modal the device cannot run apple pay on %s',
         async (code) => {
             const handles = getMockedWalletHandles();
-            handles.initializeApplePay = jest.fn().mockRejectedValue({ error: { code } });
+            handles.initializeApplePay = vi.fn().mockRejectedValue({ error: { code } });
 
             const { result, applePayModalHandles } = renderApplePay({ handles });
 
@@ -182,7 +182,7 @@ describe('useApplePay', () => {
 
     it('swallows any other initialization error without reporting a mount failure', async () => {
         const handles = getMockedWalletHandles();
-        handles.initializeApplePay = jest.fn().mockRejectedValue({ error: { code: 'card_declined' } });
+        handles.initializeApplePay = vi.fn().mockRejectedValue({ error: { code: 'card_declined' } });
 
         const { result, applePayModalHandles } = renderApplePay({ handles });
 

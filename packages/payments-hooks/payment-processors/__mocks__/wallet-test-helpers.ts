@@ -3,7 +3,7 @@ import { act } from '@testing-library/react';
 import type { BackendPaymentIntent } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { AmountAndCurrency, ChargebeeIframeEvents, ChargebeeIframeHandles } from '@proton/payments/core/interface';
-import { addApiMock, apiMock } from '@proton/test-api/api';
+import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 
 const paymentIntentData: BackendPaymentIntent = {
     ID: 'id',
@@ -68,26 +68,26 @@ export function mockTokenStatus(status: PAYMENT_TOKEN_STATUS, token = 'token') {
 
 export function getMockedWalletHandles(): ChargebeeIframeHandles {
     return {
-        submitCreditCard: jest.fn(),
-        initializeCreditCard: jest.fn(),
-        initializeSavedCreditCard: jest.fn(),
-        validateSavedCreditCard: jest.fn(),
-        initializePaypal: jest.fn(),
-        setPaypalPaymentIntent: jest.fn(),
-        getHeight: jest.fn(),
-        getBin: jest.fn(),
-        validateCardForm: jest.fn(),
-        changeRenderMode: jest.fn(),
-        updateFields: jest.fn(),
-        initializeDirectDebit: jest.fn(),
-        submitDirectDebit: jest.fn(),
-        initializeApplePay: jest.fn(),
-        setApplePayPaymentIntent: jest.fn(),
-        getApplePayCapabilities: jest.fn(),
-        initializeGooglePay: jest.fn(),
-        setGooglePayPaymentIntent: jest.fn(),
-        initializeIdeal: jest.fn(),
-        setIdealPaymentIntent: jest.fn(),
+        submitCreditCard: vi.fn(),
+        initializeCreditCard: vi.fn(),
+        initializeSavedCreditCard: vi.fn(),
+        validateSavedCreditCard: vi.fn(),
+        initializePaypal: vi.fn(),
+        setPaypalPaymentIntent: vi.fn(),
+        getHeight: vi.fn(),
+        getBin: vi.fn(),
+        validateCardForm: vi.fn(),
+        changeRenderMode: vi.fn(),
+        updateFields: vi.fn(),
+        initializeDirectDebit: vi.fn(),
+        submitDirectDebit: vi.fn(),
+        initializeApplePay: vi.fn(),
+        setApplePayPaymentIntent: vi.fn(),
+        getApplePayCapabilities: vi.fn(),
+        initializeGooglePay: vi.fn(),
+        setGooglePayPaymentIntent: vi.fn(),
+        initializeIdeal: vi.fn(),
+        setIdealPaymentIntent: vi.fn(),
     };
 }
 
@@ -102,7 +102,7 @@ export function getMockedEvents() {
     const removed: EventName[] = [];
 
     const subscribe = (name: EventName) =>
-        jest.fn((callback: (payload?: any) => any) => {
+        vi.fn((callback: (payload?: any) => any) => {
             listeners.set(name, [...(listeners.get(name) ?? []), callback]);
             return () => {
                 removed.push(name);

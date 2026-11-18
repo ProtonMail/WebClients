@@ -8,9 +8,9 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { GuardBanner, type GuardBannerTelemetry, getGuardBannerTelemetry } from './GuardBanner';
 
-jest.mock('@proton/payments/telemetry/telemetry', () => ({
+vi.mock('@proton/payments/telemetry/telemetry', () => ({
     checkoutTelemetry: {
-        reportGuardShown: jest.fn(),
+        reportGuardShown: vi.fn(),
     },
 }));
 
@@ -29,7 +29,7 @@ const telemetryOf = (result: SubscriptionEstimation): GuardBannerTelemetry => ({
     subscriptions: undefined,
 });
 
-beforeEach(() => jest.mocked(checkoutTelemetry.reportGuardShown).mockClear());
+beforeEach(() => vi.mocked(checkoutTelemetry.reportGuardShown).mockClear());
 
 describe('getGuardBannerTelemetry', () => {
     it('takes codes and selection from the check result, dropping backend messages', () => {

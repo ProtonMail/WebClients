@@ -3,7 +3,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { AmountAndCurrency, ChargebeeIframeHandles } from '@proton/payments/core/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import { addApiMock, apiMock } from '@proton/test-api/api';
+import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 
 import {
     deferTokenRequests,
@@ -14,15 +14,15 @@ import {
 } from './__mocks__/wallet-test-helpers';
 import { type ChargebeePaypalModalHandles, useChargebeePaypal } from './useChargebeePaypal';
 
-jest.mock('@proton/payments/sentry/capture', () => ({ tracePaymentError: jest.fn() }));
+vi.mock('@proton/payments/sentry/capture', () => ({ tracePaymentError: vi.fn() }));
 
 const amountAndCurrency: AmountAndCurrency = { Amount: 1000, Currency: 'USD' };
 
 const getModalHandles = (): ChargebeePaypalModalHandles => ({
-    onAuthorize: jest.fn(),
-    onClick: jest.fn(),
-    onFailure: jest.fn(),
-    onCancel: jest.fn(),
+    onAuthorize: vi.fn(),
+    onClick: vi.fn(),
+    onFailure: vi.fn(),
+    onCancel: vi.fn(),
 });
 
 const renderPaypal = ({
@@ -31,7 +31,7 @@ const renderPaypal = ({
 }: { handles?: ChargebeeIframeHandles; iframeLoaded?: boolean } = {}) => {
     const { events, fire, isSubscribed, removed } = getMockedEvents();
     const chargebeePaypalModalHandles = getModalHandles();
-    const onChargeable = jest.fn().mockResolvedValue(undefined);
+    const onChargeable = vi.fn().mockResolvedValue(undefined);
 
     const { result } = renderHook(() =>
         useChargebeePaypal(
@@ -59,7 +59,7 @@ const initialized = async (rendered: ReturnType<typeof renderPaypal>) => {
 
 describe('useChargebeePaypal', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockPaymentIntent();
         addApiMock('payments/v5/tokens/token', () => ({ Status: PAYMENT_TOKEN_STATUS.CHARGEABLE }));
     });
@@ -214,7 +214,7 @@ describe('useChargebeePaypal', () => {
         const renderWithAmount = () => {
             const { events, fire, isSubscribed } = getMockedEvents();
             const handles = getMockedWalletHandles();
-            const onChargeable = jest.fn().mockResolvedValue(undefined);
+            const onChargeable = vi.fn().mockResolvedValue(undefined);
 
             const { result, rerender } = renderHook(
                 ({ amount }: { amount: AmountAndCurrency }) =>

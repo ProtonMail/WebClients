@@ -2,13 +2,13 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { AmountAndCurrency, ChargebeeIframeEvents, ChargebeeIframeHandles } from '@proton/payments/core/interface';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
 import { getMockedIframeHandles, mockPostV5Token } from './__mocks__/mock-helpers';
 import { type Dependencies, SepaEmailNotProvidedError, useSepaDirectDebit } from './useSepaDirectDebit';
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 it('should render', () => {
@@ -17,15 +17,15 @@ it('should render', () => {
         Currency: 'EUR',
     };
 
-    const onChargeable = jest.fn();
-    const onProcessPaymentToken = jest.fn();
+    const onChargeable = vi.fn();
+    const onProcessPaymentToken = vi.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: {} as ChargebeeIframeHandles,
-        verifyPayment: jest.fn(),
+        verifyPayment: vi.fn(),
     };
 
     const { result } = renderHook(() =>
@@ -35,7 +35,7 @@ it('should render', () => {
                 onChargeable,
                 onProcessPaymentToken,
                 selectedPlanName,
-                onValidationFailed: jest.fn(),
+                onValidationFailed: vi.fn(),
             },
             dependencies
         )
@@ -50,15 +50,15 @@ it('should fetch payment token', async () => {
         Currency: 'EUR',
     };
 
-    const onChargeable = jest.fn();
-    const onProcessPaymentToken = jest.fn();
+    const onChargeable = vi.fn();
+    const onProcessPaymentToken = vi.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        verifyPayment: jest.fn(),
+        verifyPayment: vi.fn(),
     };
 
     const { result } = renderHook(() =>
@@ -68,7 +68,7 @@ it('should fetch payment token', async () => {
                 onChargeable,
                 onProcessPaymentToken,
                 selectedPlanName,
-                onValidationFailed: jest.fn(),
+                onValidationFailed: vi.fn(),
             },
             dependencies
         )
@@ -112,18 +112,18 @@ it('should not request payment token if onBeforeSepaPayment returns false', asyn
         Currency: 'EUR',
     };
 
-    const onChargeable = jest.fn();
-    const onProcessPaymentToken = jest.fn();
+    const onChargeable = vi.fn();
+    const onProcessPaymentToken = vi.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        verifyPayment: jest.fn(),
+        verifyPayment: vi.fn(),
     };
 
-    const onBeforeSepaPayment = jest.fn();
+    const onBeforeSepaPayment = vi.fn();
     onBeforeSepaPayment.mockReturnValue(false);
 
     const { result } = renderHook(() =>
@@ -133,7 +133,7 @@ it('should not request payment token if onBeforeSepaPayment returns false', asyn
                 onChargeable,
                 onProcessPaymentToken,
                 selectedPlanName,
-                onValidationFailed: jest.fn(),
+                onValidationFailed: vi.fn(),
                 onBeforeSepaPayment,
             },
             dependencies
@@ -166,15 +166,15 @@ it('should verify payment token', async () => {
         Currency: 'EUR',
     };
 
-    const onChargeable = jest.fn();
-    const onProcessPaymentToken = jest.fn();
+    const onChargeable = vi.fn();
+    const onProcessPaymentToken = vi.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        verifyPayment: jest.fn().mockImplementation((data) => {
+        verifyPayment: vi.fn().mockImplementation((data) => {
             return {
                 PaymentToken: data.token.PaymentToken,
                 v: 5,
@@ -189,7 +189,7 @@ it('should verify payment token', async () => {
                 onChargeable,
                 onProcessPaymentToken,
                 selectedPlanName,
-                onValidationFailed: jest.fn(),
+                onValidationFailed: vi.fn(),
             },
             dependencies
         )
@@ -228,15 +228,15 @@ it('should not verify token if amount is 0', async () => {
         Currency: 'EUR',
     };
 
-    const onChargeable = jest.fn();
-    const onProcessPaymentToken = jest.fn();
+    const onChargeable = vi.fn();
+    const onProcessPaymentToken = vi.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        verifyPayment: jest.fn(),
+        verifyPayment: vi.fn(),
     };
 
     const { result } = renderHook(() =>
@@ -246,7 +246,7 @@ it('should not verify token if amount is 0', async () => {
                 onChargeable,
                 onProcessPaymentToken,
                 selectedPlanName,
-                onValidationFailed: jest.fn(),
+                onValidationFailed: vi.fn(),
             },
             dependencies
         )
@@ -284,8 +284,8 @@ it('should reset token if verification fails', async () => {
         Currency: 'EUR',
     };
 
-    const onChargeable = jest.fn();
-    const onProcessPaymentToken = jest.fn();
+    const onChargeable = vi.fn();
+    const onProcessPaymentToken = vi.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
@@ -293,7 +293,7 @@ it('should reset token if verification fails', async () => {
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
         // rejects the promise
-        verifyPayment: jest.fn().mockImplementation(() => {
+        verifyPayment: vi.fn().mockImplementation(() => {
             return Promise.reject(new Error('Verification failed'));
         }),
     };
@@ -305,7 +305,7 @@ it('should reset token if verification fails', async () => {
                 onChargeable,
                 onProcessPaymentToken,
                 selectedPlanName,
-                onValidationFailed: jest.fn(),
+                onValidationFailed: vi.fn(),
             },
             dependencies
         )
@@ -342,7 +342,7 @@ it('automatically sets customer name type to company if plan is B2B', () => {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        verifyPayment: jest.fn(),
+        verifyPayment: vi.fn(),
     };
 
     const { result, rerender } = renderHook(
@@ -351,7 +351,7 @@ it('automatically sets customer name type to company if plan is B2B', () => {
                 {
                     amountAndCurrency,
                     selectedPlanName,
-                    onValidationFailed: jest.fn(),
+                    onValidationFailed: vi.fn(),
                 },
                 dependencies
             ),
@@ -373,15 +373,15 @@ it('should throw an error when email is not provided', async () => {
         Currency: 'EUR',
     };
 
-    const onChargeable = jest.fn();
-    const onProcessPaymentToken = jest.fn();
+    const onChargeable = vi.fn();
+    const onProcessPaymentToken = vi.fn();
     const selectedPlanName = PLANS.MAIL;
 
     const dependencies: Dependencies = {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        verifyPayment: jest.fn(),
+        verifyPayment: vi.fn(),
     };
 
     const { result } = renderHook(() =>
@@ -391,7 +391,7 @@ it('should throw an error when email is not provided', async () => {
                 onChargeable,
                 onProcessPaymentToken,
                 selectedPlanName,
-                onValidationFailed: jest.fn(),
+                onValidationFailed: vi.fn(),
             },
             dependencies
         )
@@ -443,7 +443,7 @@ it('should report the errors reported by the validator - B2B plan', async () => 
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        verifyPayment: jest.fn(),
+        verifyPayment: vi.fn(),
     };
 
     const { result, rerender } = renderHook(() =>
@@ -453,10 +453,10 @@ it('should report the errors reported by the validator - B2B plan', async () => 
                     Amount: 500,
                     Currency: 'EUR',
                 },
-                onChargeable: jest.fn(),
-                onProcessPaymentToken: jest.fn(),
+                onChargeable: vi.fn(),
+                onProcessPaymentToken: vi.fn(),
                 selectedPlanName: PLANS.MAIL_PRO,
-                onValidationFailed: jest.fn(),
+                onValidationFailed: vi.fn(),
             },
             dependencies
         )
@@ -481,7 +481,7 @@ it('should report the errors reported by the validator - B2C plan', async () => 
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        verifyPayment: jest.fn(),
+        verifyPayment: vi.fn(),
     };
 
     const { result, rerender } = renderHook(() =>
@@ -491,10 +491,10 @@ it('should report the errors reported by the validator - B2C plan', async () => 
                     Amount: 500,
                     Currency: 'EUR',
                 },
-                onChargeable: jest.fn(),
-                onProcessPaymentToken: jest.fn(),
+                onChargeable: vi.fn(),
+                onProcessPaymentToken: vi.fn(),
                 selectedPlanName: PLANS.MAIL,
-                onValidationFailed: jest.fn(),
+                onValidationFailed: vi.fn(),
             },
             dependencies
         )
@@ -519,7 +519,7 @@ it('should report the errors reported by the validator - no address provided', a
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        verifyPayment: jest.fn(),
+        verifyPayment: vi.fn(),
     };
 
     const { result, rerender } = renderHook(() =>
@@ -529,10 +529,10 @@ it('should report the errors reported by the validator - no address provided', a
                     Amount: 500,
                     Currency: 'EUR',
                 },
-                onChargeable: jest.fn(),
-                onProcessPaymentToken: jest.fn(),
+                onChargeable: vi.fn(),
+                onProcessPaymentToken: vi.fn(),
                 selectedPlanName: PLANS.MAIL,
-                onValidationFailed: jest.fn(),
+                onValidationFailed: vi.fn(),
             },
             dependencies
         )

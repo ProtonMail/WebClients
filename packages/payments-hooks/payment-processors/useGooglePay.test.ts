@@ -1,10 +1,11 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { PaymentVerificatorV5 } from '@proton/payments/core/createPaymentToken';
 import type { AmountAndCurrency, ChargebeeIframeHandles } from '@proton/payments/core/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
 import {
     getMockedEvents,
@@ -14,23 +15,23 @@ import {
 } from './__mocks__/wallet-test-helpers';
 import { type GooglePayModalHandles, useGooglePay } from './useGooglePay';
 
-jest.mock('@proton/payments/sentry/capture', () => ({ tracePaymentError: jest.fn() }));
+vi.mock('@proton/payments/sentry/capture', () => ({ tracePaymentError: vi.fn() }));
 
 const amountAndCurrency: AmountAndCurrency = { Amount: 1000, Currency: 'USD' };
 
 const getModalHandles = (): GooglePayModalHandles => ({
-    onAuthorize: jest.fn(),
-    onClick: jest.fn(),
-    onFailure: jest.fn(),
-    onCancel: jest.fn(),
-    on3DSChallenge: jest.fn(),
-    onInitialize: jest.fn(),
+    onAuthorize: vi.fn(),
+    onClick: vi.fn(),
+    onFailure: vi.fn(),
+    onCancel: vi.fn(),
+    on3DSChallenge: vi.fn(),
+    onInitialize: vi.fn(),
 });
 
 const renderGooglePay = ({
     handles = getMockedWalletHandles(),
     iframeLoaded = true,
-    verifyPayment = jest.fn().mockResolvedValue({ PaymentToken: 'token', v: 5 }) as unknown as PaymentVerificatorV5,
+    verifyPayment = vi.fn().mockResolvedValue({ PaymentToken: 'token', v: 5 }) as unknown as PaymentVerificatorV5,
 }: {
     handles?: ChargebeeIframeHandles;
     iframeLoaded?: boolean;
@@ -38,7 +39,7 @@ const renderGooglePay = ({
 } = {}) => {
     const { events, fire, isSubscribed, removed } = getMockedEvents();
     const googlePayModalHandles = getModalHandles();
-    const onChargeable = jest.fn().mockResolvedValue(undefined);
+    const onChargeable = vi.fn().mockResolvedValue(undefined);
 
     const { result } = renderHook(() =>
         useGooglePay(
@@ -66,7 +67,7 @@ const initialized = async (rendered: ReturnType<typeof renderGooglePay>) => {
 
 describe('useGooglePay', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockPaymentIntent();
         mockTokenStatus(PAYMENT_TOKEN_STATUS.CHARGEABLE);
     });
@@ -166,9 +167,7 @@ describe('useGooglePay', () => {
         });
 
         it('does not charge when verification rejects', async () => {
-            const verifyPayment = jest
-                .fn()
-                .mockRejectedValue(new Error('3ds failed')) as unknown as PaymentVerificatorV5;
+            const verifyPayment = vi.fn().mockRejectedValue(new Error('3ds failed')) as unknown as PaymentVerificatorV5;
             const rendered = await initialized(renderGooglePay({ verifyPayment }));
 
             await act(async () => {
@@ -193,7 +192,7 @@ describe('useGooglePay', () => {
         // abort it and report a cancellation for a payment that in fact succeeded
         it('does not report a cancellation when authorization lands mid-verification', async () => {
             let resolveVerification: (token: unknown) => void = () => {};
-            const verifyPayment = jest.fn(
+            const verifyPayment = vi.fn(
                 () => new Promise((resolve) => (resolveVerification = resolve))
             ) as unknown as PaymentVerificatorV5;
             const rendered = await initialized(renderGooglePay({ verifyPayment }));
@@ -234,7 +233,7 @@ describe('useGooglePay', () => {
 
     it('re-initializes after a failure', async () => {
         const rendered = await initialized(renderGooglePay());
-        const initializeCallsBefore = (rendered.handles.initializeGooglePay as jest.Mock).mock.calls.length;
+        const initializeCallsBefore = (rendered.handles.initializeGooglePay as Mock).mock.calls.length;
 
         const error = new Error('declined');
         await act(async () => {
@@ -243,7 +242,7 @@ describe('useGooglePay', () => {
 
         expect(rendered.googlePayModalHandles.onFailure).toHaveBeenCalledWith(error);
         await waitFor(() =>
-            expect((rendered.handles.initializeGooglePay as jest.Mock).mock.calls.length).toBeGreaterThan(
+            expect((rendered.handles.initializeGooglePay as Mock).mock.calls.length).toBeGreaterThan(
                 initializeCallsBefore
             )
         );
