@@ -198,7 +198,7 @@ export const ScheduledTaskEditorModal = ({
                                 c('collider_2025:Label').t`What should ${LUMO_SHORT_APP_NAME} do each time?`
                             }
                             labelContainerClassName="mb-2"
-                            maxLength={1024}
+                            maxLength={20000}
                             onValue={(instructions) => {
                                 clearFieldError('instructions');
                                 updateValues((prev) => ({ ...prev, instructions }));

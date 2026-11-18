@@ -18,7 +18,7 @@ export const createScheduleSchema = {
         instructions: {
             type: 'string',
             pattern: '\\S',
-            maxLength: 1024,
+            maxLength: 20000,
             description:
                 "The prompt sent to the LLM to perform the task on each scheduled run. Make it self-contained, including the user's requirements and desired output.",
         },
