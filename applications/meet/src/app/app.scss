@@ -273,11 +273,6 @@ $profile-colors:
 	position: fixed;
 	inset: 0;
 	z-index: map.get($z-indexes, 'up');
-
-	--background-norm: #16161f;
-	--text-norm: white;
-	--text-weak: #bfbfd0;
-
 	background: var(--background-norm);
 	color: var(--text-norm);
 	display: flex;
