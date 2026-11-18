@@ -2,8 +2,7 @@ import type { ReactElement, ReactNode } from 'react';
 import { useRef } from 'react';
 
 import type { RenderOptions, RenderResult } from '@testing-library/react';
-import { act, render } from '@testing-library/react';
-import { act as actHook, renderHook } from '@testing-library/react-hooks/dom';
+import { act, render, renderHook } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { ApiContext } from '@proton/app-context/apiContext';
@@ -160,8 +159,8 @@ export const composerTestRenderHook = async <TProps, TResult>(
         </ProtonStoreProvider>
     );
 
-    const result = renderHook<TProps, TResult>(useHook, { wrapper: wrapper as any });
-    await actHook(() => Promise.resolve());
+    const result = renderHook(useHook, { wrapper: wrapper as any });
+    await act(() => Promise.resolve());
 
     return { ...result, store };
 };

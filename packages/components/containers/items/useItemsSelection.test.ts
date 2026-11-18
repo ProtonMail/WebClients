@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import useItemsSelection from './useItemsSelection';
 
@@ -70,7 +70,7 @@ describe('useItemsSelection', () => {
                     })
                 );
 
-                result.current.handleCheckOnlyOne('id2');
+                act(() => result.current.handleCheckOnlyOne('id2'));
                 expect(result.current.selectedIDs).toEqual(['id2']);
             });
 
@@ -82,7 +82,7 @@ describe('useItemsSelection', () => {
                     })
                 );
 
-                result.current.handleCheck(['id1', 'id2'], true, true);
+                act(() => result.current.handleCheck(['id1', 'id2'], true, true));
                 expect(result.current.selectedIDs).toEqual(['id1', 'id2']);
             });
 
@@ -95,7 +95,7 @@ describe('useItemsSelection', () => {
                     })
                 );
 
-                result.current.handleCheck(['id1', 'id2'], true, true);
+                act(() => result.current.handleCheck(['id1', 'id2'], true, true));
                 expect(result.current.selectedIDs).toEqual(['id1', 'id2']);
             });
         });
@@ -110,10 +110,10 @@ describe('useItemsSelection', () => {
                     })
                 );
 
-                result.current.handleCheck(['id1', 'id2'], true, true);
+                act(() => result.current.handleCheck(['id1', 'id2'], true, true));
                 expect(result.current.selectedIDs).toEqual(['id1', 'id2']);
 
-                result.current.handleCheckAll(false);
+                act(() => result.current.handleCheckAll(false));
                 expect(result.current.selectedIDs).toEqual(['id1']);
             });
 
@@ -124,10 +124,10 @@ describe('useItemsSelection', () => {
                     })
                 );
 
-                result.current.handleCheck(['id1', 'id2'], true, true);
+                act(() => result.current.handleCheck(['id1', 'id2'], true, true));
                 expect(result.current.selectedIDs).toEqual(['id1', 'id2']);
 
-                result.current.handleCheckAll(false);
+                act(() => result.current.handleCheckAll(false));
                 expect(result.current.selectedIDs).toEqual([]);
             });
         });

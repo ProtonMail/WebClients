@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import type { Condition } from '../interfaces';
 import useFilterConditions from './useFilterConditions';
@@ -20,21 +20,21 @@ describe('useFilterConditions', () => {
 
     it('should add a condition', () => {
         const { result } = renderHook(() => useFilterConditions(initialConditions, onChangeConditions));
-        result.current.onAddCondition();
+        act(() => result.current.onAddCondition());
         expect(result.current.conditions).toHaveLength(2);
         expect(onChangeConditions).toHaveBeenCalled();
     });
 
     it('should delete a condition', () => {
         const { result } = renderHook(() => useFilterConditions(initialConditions, onChangeConditions));
-        result.current.onDeleteCondition(0);
+        act(() => result.current.onDeleteCondition(0));
         expect(result.current.conditions).toHaveLength(0);
         expect(onChangeConditions).toHaveBeenCalled();
     });
 
     it('should update a condition', () => {
         const { result } = renderHook(() => useFilterConditions(initialConditions, onChangeConditions));
-        result.current.onUpdateCondition(0, condition);
+        act(() => result.current.onUpdateCondition(0, condition));
         expect(result.current.conditions).toEqual([condition]);
         expect(onChangeConditions).toHaveBeenCalled();
     });

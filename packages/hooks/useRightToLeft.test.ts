@@ -1,7 +1,7 @@
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import { createElement } from 'react';
 
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import rightToLeftContext from './rightToLeftContext';
 import useRightToLeft from './useRightToLeft';

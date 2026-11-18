@@ -1,7 +1,6 @@
 import type { JSX, PropsWithChildren } from 'react';
 
-import { waitFor } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { mockUseGetAddressKeys } from '@proton/account/testing/vitest/mockUseAddressKeys';
 import { type WasmApiWalletBitcoinAddress, WasmNetwork } from '@proton/andromeda';
@@ -234,7 +233,9 @@ describe('useBitcoinAddresses', () => {
             );
             expect(getAddressHelper()?.receiveBitcoinAddress.index).toBe(0);
 
-            await getAddressHelper()?.generateNewReceiveAddress();
+            await act(async () => {
+                await getAddressHelper()?.generateNewReceiveAddress();
+            });
 
             // address at index 4
             expect(getAddressHelper()?.receiveBitcoinAddress.address).toBe(

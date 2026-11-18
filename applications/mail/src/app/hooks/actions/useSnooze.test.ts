@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react-hooks';
+import { act } from '@testing-library/react';
 
 import { minimalCache } from '../../helpers/tests/cache';
 import { renderHook } from '../../helpers/tests/render';

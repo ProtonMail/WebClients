@@ -1,6 +1,6 @@
 import { createRef } from 'react';
 
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import createScrollIntoView from '@proton/shared/lib/helpers/createScrollIntoView';

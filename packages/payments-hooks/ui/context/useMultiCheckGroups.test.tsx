@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { useMultiCheckGroups } from './useMultiCheckGroups';
 
@@ -31,7 +31,7 @@ describe('useMultiCheckGroups', () => {
     });
 
     it('should mark a group as not loading when all promises resolve', async () => {
-        const { result, waitForNextUpdate } = renderHook(() => useMultiCheckGroups());
+        const { result } = renderHook(() => useMultiCheckGroups());
 
         // Create a promise that resolves quickly
         const promise = Promise.resolve('done');
@@ -41,14 +41,14 @@ describe('useMultiCheckGroups', () => {
         });
 
         // Wait for the promise to resolve and the hook to update
-        await waitForNextUpdate();
+        await waitFor(() => expect(result.current.isGroupLoading('test-group')).toBe(false));
 
         expect(result.current.isGroupLoading('test-group')).toBe(false);
         expect(result.current.getLoadingGroups()).not.toContain('test-group');
     });
 
     it('should mark a group as not loading when all promises reject', async () => {
-        const { result, waitForNextUpdate } = renderHook(() => useMultiCheckGroups());
+        const { result } = renderHook(() => useMultiCheckGroups());
 
         // Create a promise that rejects quickly
         const promise = Promise.reject(new Error('test error')).catch(() => {
@@ -60,7 +60,7 @@ describe('useMultiCheckGroups', () => {
         });
 
         // Wait for the promise to reject and the hook to update
-        await waitForNextUpdate();
+        await waitFor(() => expect(result.current.isGroupLoading('test-group')).toBe(false));
 
         expect(result.current.isGroupLoading('test-group')).toBe(false);
         expect(result.current.getLoadingGroups()).not.toContain('test-group');
@@ -112,7 +112,7 @@ describe('useMultiCheckGroups', () => {
     });
 
     it('should handle multiple groups independently', async () => {
-        const { result, waitForNextUpdate } = renderHook(() => useMultiCheckGroups());
+        const { result } = renderHook(() => useMultiCheckGroups());
 
         // Create promises for different groups
         const promise1 = new Promise((resolve) => setTimeout(() => resolve('done1'), 50));
@@ -127,8 +127,8 @@ describe('useMultiCheckGroups', () => {
         expect(result.current.isGroupLoading('group2')).toBe(true);
         expect(result.current.getLoadingGroups().sort()).toEqual(['group1', 'group2'].sort());
 
-        // Wait for the first promise to resolve
-        await waitForNextUpdate();
+        // Wait for the first promise to resolve. Poll faster than the default 50ms so the check lands before group2 settles
+        await waitFor(() => expect(result.current.isGroupLoading('group1')).toBe(false), { interval: 5 });
 
         // Group1 should not be loading anymore, but group2 still is
         expect(result.current.isGroupLoading('group1')).toBe(false);
@@ -136,7 +136,7 @@ describe('useMultiCheckGroups', () => {
         expect(result.current.getLoadingGroups()).toEqual(['group2']);
 
         // Wait for the second promise to resolve
-        await waitForNextUpdate();
+        await waitFor(() => expect(result.current.isGroupLoading('group2')).toBe(false));
 
         // Now neither group should be loading
         expect(result.current.isGroupLoading('group1')).toBe(false);

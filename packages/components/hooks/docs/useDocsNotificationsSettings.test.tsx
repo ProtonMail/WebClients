@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook, waitFor } from '@testing-library/react';
 import { c } from 'ttag';
 
 import { useDocsNotificationsSettings } from './useDocsNotificationsSettings';
@@ -55,11 +55,11 @@ describe('useDocsNotificationsSettings', () => {
 
         mockApi.mockResolvedValueOnce(mockSettings);
 
-        const { result, waitForNextUpdate } = renderHook(() => useDocsNotificationsSettings());
+        const { result } = renderHook(() => useDocsNotificationsSettings());
 
         expect(result.current.isLoading).toBe(true);
 
-        await waitForNextUpdate();
+        await waitFor(() => expect(result.current.isReady).toBe(true));
 
         expect(result.current.emailNotificationsEnabled).toBe(true);
         expect(result.current.emailTitleEnabled).toBe(false);
@@ -75,8 +75,8 @@ describe('useDocsNotificationsSettings', () => {
             },
         });
 
-        const { result, waitForNextUpdate } = renderHook(() => useDocsNotificationsSettings());
-        await waitForNextUpdate();
+        const { result } = renderHook(() => useDocsNotificationsSettings());
+        await waitFor(() => expect(result.current.isReady).toBe(true));
 
         mockApi.mockResolvedValueOnce({});
 
@@ -103,8 +103,8 @@ describe('useDocsNotificationsSettings', () => {
             },
         });
 
-        const { result, waitForNextUpdate } = renderHook(() => useDocsNotificationsSettings());
-        await waitForNextUpdate();
+        const { result } = renderHook(() => useDocsNotificationsSettings());
+        await waitFor(() => expect(result.current.isReady).toBe(true));
 
         const error = new Error('Update failed');
         mockApi.mockRejectedValueOnce(error);
@@ -134,8 +134,8 @@ describe('useDocsNotificationsSettings', () => {
             },
         });
 
-        const { result, waitForNextUpdate } = renderHook(() => useDocsNotificationsSettings());
-        await waitForNextUpdate();
+        const { result } = renderHook(() => useDocsNotificationsSettings());
+        await waitFor(() => expect(result.current.isReady).toBe(true));
 
         mockApi.mockResolvedValueOnce({});
 
@@ -161,8 +161,8 @@ describe('useDocsNotificationsSettings', () => {
             },
         });
 
-        const { result, waitForNextUpdate } = renderHook(() => useDocsNotificationsSettings());
-        await waitForNextUpdate();
+        const { result } = renderHook(() => useDocsNotificationsSettings());
+        await waitFor(() => expect(result.current.isReady).toBe(true));
 
         mockApi.mockResolvedValueOnce({});
 

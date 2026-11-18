@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 import { vi } from 'vitest';
 
 import * as getRandomAccentColorModule from '@proton/shared/lib/colors';
@@ -11,7 +11,8 @@ describe('useBalance', () => {
     const randomAccentColorMock = vi.spyOn(getRandomAccentColorModule, 'getRandomAccentColor');
 
     beforeEach(() => {
-        vi.useFakeTimers();
+        // Only fake Date: faked timers would stall waitFor's polling
+        vi.useFakeTimers({ toFake: ['Date'] });
         vi.setSystemTime(new Date('11/27/2023'));
 
         randomAccentColorMock.mockReset();
@@ -34,10 +35,9 @@ describe('useBalance', () => {
         const [apiWallet] = apiWalletsData;
 
         it('should return the sum of all wallet accounts balances', async () => {
-            const { result, waitForNextUpdate } = renderHook(() => useBalance(apiWallet));
-            await waitForNextUpdate();
+            const { result } = renderHook(() => useBalance(apiWallet));
 
-            expect(result.current.balance).toBe(11884066);
+            await waitFor(() => expect(result.current.balance).toBe(11884066));
         });
     });
 });

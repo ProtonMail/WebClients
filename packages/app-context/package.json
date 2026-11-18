@@ -43,7 +43,8 @@
         "@proton/oxlint-config": "workspace:^",
         "@proton/utils": "workspace:^",
         "@proton/vitest-config": "workspace:^",
-        "@testing-library/react-hooks": "catalog:",
+        "@testing-library/dom": "catalog:",
+        "@testing-library/react": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/webpack-env": "catalog:",
@@ -51,7 +52,7 @@
         "jsdom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "react-test-renderer": "^18.3.1",
+        "react-dom": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
     }

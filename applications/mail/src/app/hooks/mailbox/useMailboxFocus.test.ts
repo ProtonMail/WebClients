@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';

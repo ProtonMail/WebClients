@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';

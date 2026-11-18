@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';

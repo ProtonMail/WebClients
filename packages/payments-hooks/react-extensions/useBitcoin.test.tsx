@@ -1,5 +1,4 @@
-import { act } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import { getMaxBitcoinAmount } from '@proton/payments/core/amount-limits';
 import { createToken, getTokenStatusV5 } from '@proton/payments/core/api/api';
@@ -56,7 +55,7 @@ it('should request the token', async () => {
         })
     );
 
-    await result.current.request();
+    await act(() => result.current.request());
     jest.runAllTicks();
 
     expect(apiMock).toHaveBeenCalledTimes(1);
@@ -110,7 +109,7 @@ it('should not request the token if the amount is too low', async () => {
         })
     );
 
-    await result.current.request();
+    await act(() => result.current.request());
 
     expect(apiMock).toHaveBeenCalledTimes(0);
 });
@@ -130,7 +129,7 @@ it('should not request the token if the amount is too high', async () => {
         })
     );
 
-    await result.current.request();
+    await act(() => result.current.request());
 
     expect(apiMock).toHaveBeenCalledTimes(0);
 });
@@ -172,12 +171,12 @@ describe('', () => {
             })
         );
 
-        await result.current.request();
+        await act(() => result.current.request());
         jest.runAllTicks();
 
         expect(apiMock).toHaveBeenCalledTimes(1);
 
-        await result.current.request();
+        await act(() => result.current.request());
         jest.runAllTicks();
         expect(apiMock).toHaveBeenCalledTimes(1);
     });
@@ -220,7 +219,7 @@ describe('', () => {
             }
         );
 
-        await result.current.request();
+        await act(() => result.current.request());
         expect(apiMock).toHaveBeenCalledTimes(1); // getting the token
 
         jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
@@ -290,7 +289,7 @@ describe('', () => {
             }
         );
 
-        await result.current.request();
+        await act(() => result.current.request());
         expect(apiMock).toHaveBeenCalledTimes(1); // getting the token
 
         updateResolvers();
@@ -372,8 +371,11 @@ describe('', () => {
             Status: PAYMENT_TOKEN_STATUS.CHARGEABLE,
         }));
 
-        jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
-        await flushPromises();
+        // In act, so the polling loop's state update renders before the assertion
+        await act(async () => {
+            jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
+            await flushPromises();
+        });
 
         expect(result.current.awaitingBitcoinPayment).toBe(false);
     });

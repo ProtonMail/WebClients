@@ -1,8 +1,7 @@
 import { act } from 'react';
 
 import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import { waitFor } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 
 import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys';
 import { type WasmApiWalletAccount, WasmDerivationPath, WasmScriptType } from '@proton/andromeda';

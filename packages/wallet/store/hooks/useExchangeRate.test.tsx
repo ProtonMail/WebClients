@@ -1,6 +1,6 @@
 import type { JSX, PropsWithChildren } from 'react';
 
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import type { MockedFunction } from 'vitest';
 
 import type { WasmApiExchangeRateData, WasmExchangeRateClient } from '@proton/andromeda';

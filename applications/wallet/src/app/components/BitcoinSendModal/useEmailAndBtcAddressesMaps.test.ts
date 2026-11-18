@@ -1,6 +1,6 @@
 import { act } from 'react';
 
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
@@ -13,7 +13,7 @@ describe('useEmailAndBtcAddressesMaps', () => {
         const { result } = renderHook(() => useEmailAndBtcAddressesMaps());
 
         expect(result.current.exists(recipient)).toBeFalsy();
-        result.current.addValidRecipient(recipient, 'bc1q...');
+        act(() => result.current.addValidRecipient(recipient, 'bc1q...'));
 
         expect(result.current.recipientEmailMap).toStrictEqual({
             'mytestadrres@proton.me': {
@@ -48,9 +48,11 @@ describe('useEmailAndBtcAddressesMaps', () => {
         const { result } = renderHook(() => useEmailAndBtcAddressesMaps());
 
         expect(result.current.exists(recipient)).toBeFalsy();
-        result.current.addInvalidRecipient(
-            recipient,
-            InvalidRecipientErrorCode.CouldNotFindBitcoinAddressLinkedToEmail
+        act(() =>
+            result.current.addInvalidRecipient(
+                recipient,
+                InvalidRecipientErrorCode.CouldNotFindBitcoinAddressLinkedToEmail
+            )
         );
 
         expect(result.current.recipientEmailMap).toStrictEqual({
@@ -71,7 +73,7 @@ describe('useEmailAndBtcAddressesMaps', () => {
     it('should add remove recipient', () => {
         const { result } = renderHook(() => useEmailAndBtcAddressesMaps());
 
-        result.current.addValidRecipient(recipient, 'bc1q...');
+        act(() => result.current.addValidRecipient(recipient, 'bc1q...'));
         expect(result.current.exists(recipient)).toBeTruthy();
 
         act(() => result.current.removeRecipient(recipient));

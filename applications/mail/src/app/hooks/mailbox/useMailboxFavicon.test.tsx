@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { useDynamicFavicon } from '@proton/components/hooks/useDynamicFavicon';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

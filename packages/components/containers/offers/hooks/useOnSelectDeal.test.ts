@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';

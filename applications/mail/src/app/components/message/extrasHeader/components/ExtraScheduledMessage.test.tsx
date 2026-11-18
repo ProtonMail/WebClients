@@ -1,5 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
-import { act } from '@testing-library/react-hooks';
+import { act, fireEvent, screen } from '@testing-library/react';
 import { addHours, addSeconds } from 'date-fns';
 
 import { formatDateToHuman } from '@proton/mail-message/helpers/date';

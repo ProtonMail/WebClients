@@ -1,6 +1,6 @@
 import type { useHistory } from 'react-router-dom';
 
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 import { vi } from 'vitest';
 import type { MockedFunction } from 'vitest';
 

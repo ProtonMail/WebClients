@@ -3,8 +3,7 @@ import { useRef } from 'react';
 import { Route, Router } from 'react-router';
 
 import type { RenderResult as OriginalRenderResult, RenderOptions } from '@testing-library/react';
-import { act, render as originalRender } from '@testing-library/react';
-import { act as actHook, renderHook as originalRenderHook } from '@testing-library/react-hooks';
+import { act, render as originalRender, renderHook as originalRenderHook } from '@testing-library/react';
 import type { History } from 'history';
 import { createMemoryHistory } from 'history';
 
@@ -316,7 +315,7 @@ export const renderHook = async <TProps, TResult>({
         );
     };
 
-    const result = originalRenderHook<TProps, TResult>(useCallback, { wrapper: HookWrapper as any });
-    await actHook(() => wait(0));
+    const result = originalRenderHook(useCallback, { wrapper: HookWrapper as any });
+    await act(() => wait(0));
     return { ...result, store };
 };

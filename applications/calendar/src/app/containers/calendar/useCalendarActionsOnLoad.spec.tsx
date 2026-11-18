@@ -1,6 +1,6 @@
 import { Router } from 'react-router-dom';
 
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { vi } from 'vitest';
 import type { Mock } from 'vitest';

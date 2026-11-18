@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
 import { startOauthDraft } from '../../../logic/draft/oauthDraft/oauthDraft.actions';

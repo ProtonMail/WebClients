@@ -1,7 +1,5 @@
 import type { ComponentType, JSX, ReactNode } from 'react';
-import { createElement } from 'react';
-
-import type { WrapperComponent } from '@testing-library/react-hooks';
+import { Fragment, createElement } from 'react';
 
 interface HOC<T> {
     (Component: ComponentType<T>): ComponentType<T>;
@@ -34,8 +32,8 @@ export const hookWrapper = <
     },
 >(
     ...hocs: HOC<T>[]
-): WrapperComponent<T> => {
-    return reduceHOCs(hocs)(({ children }) => createElement('', { children }));
+): ComponentType<T> => {
+    return reduceHOCs(hocs)(({ children }) => createElement(Fragment, null, children));
 };
 
 export const componentWrapper = <T extends JSX.IntrinsicAttributes & { children?: ReactNode }>(

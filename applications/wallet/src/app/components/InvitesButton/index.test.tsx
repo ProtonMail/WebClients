@@ -1,5 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { act } from '@testing-library/react-hooks';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresses';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';

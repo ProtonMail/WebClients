@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
