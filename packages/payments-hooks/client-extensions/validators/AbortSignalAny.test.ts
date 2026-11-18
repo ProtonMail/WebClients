@@ -132,7 +132,8 @@ describe('AbortSignal.any polyfill comparison tests', () => {
         expect(signal.aborted).toBe(true);
         expect(signal.reason).toBeInstanceOf(DOMException);
         expect((signal.reason as DOMException).name).toBe('AbortError');
-        expect((signal.reason as DOMException).message).toBe('The operation was aborted.');
+        // The default message wording depends on the environment, so compare it with the source signal's reason
+        expect((signal.reason as DOMException).message).toBe((controller.signal.reason as DOMException).message);
     });
 
     createComparisonTest('Signal with explicit null reason', (impl) => {
@@ -186,7 +187,7 @@ describe('AbortSignal.any polyfill comparison tests', () => {
 
         const signal = impl([controller.signal]);
 
-        await new Promise((resolve) => setTimeout(resolve, 500));
+        await new Promise((resolve) => setTimeout(resolve, 10));
 
         expect(signal.aborted).toBe(true);
         expect(signal.reason).toBe(reason);
@@ -197,8 +198,8 @@ describe('Memory leak prevention (polyfill specific)', () => {
         const controller1 = new AbortController();
         const controller2 = new AbortController();
 
-        const addEventListenerSpy = jest.spyOn(controller1.signal, 'addEventListener');
-        const removeEventListenerSpy = jest.spyOn(controller1.signal, 'removeEventListener');
+        const addEventListenerSpy = vi.spyOn(controller1.signal, 'addEventListener');
+        const removeEventListenerSpy = vi.spyOn(controller1.signal, 'removeEventListener');
 
         abortSignalAnyPolyfill([controller1.signal, controller2.signal]);
 
@@ -216,8 +217,8 @@ describe('Memory leak prevention (polyfill specific)', () => {
         const controller = new AbortController();
         controller.abort('already aborted');
 
-        const addEventListenerSpy = jest.spyOn(controller.signal, 'addEventListener');
-        const removeEventListenerSpy = jest.spyOn(controller.signal, 'removeEventListener');
+        const addEventListenerSpy = vi.spyOn(controller.signal, 'addEventListener');
+        const removeEventListenerSpy = vi.spyOn(controller.signal, 'removeEventListener');
 
         const resultSignal = abortSignalAnyPolyfill([controller.signal]);
 

@@ -4,9 +4,9 @@ import { Autopay, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES, PLANS } f
 import type { AvailablePaymentMethod, PaymentStatus, SavedPaymentMethod } from '@proton/payments/core/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { addApiMock, apiMock } from '@proton/test-api/api';
+import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 
-import { getStoreWrapper } from '../testing/renderWithProviders';
+import { getStoreWrapper } from '../testing/vitest/renderWithProviders';
 import type { Props } from './useMethods';
 import { useMethods } from './useMethods';
 
@@ -70,12 +70,12 @@ const renderMethods = (props: Partial<Props> = {}, { isAuthenticated = true } = 
 
 const renderLoadedMethods = async (props: Partial<Props> = {}, options?: { isAuthenticated?: boolean }) => {
     const rendered = renderMethods(props, options);
-    await waitFor(() => expect(rendered.result.current.loading).toBe(false));
+    await waitFor(() => expect(rendered.result.current.loading).toBe(false), { interval: 5 });
     return rendered;
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     paymentStatus = {
         CountryCode: 'US',
@@ -174,7 +174,7 @@ describe('fetching', () => {
 
         rerender({ paymentStatus, amount: 2000 });
         rerender({ paymentStatus, amount: 3000 });
-        await waitFor(() => expect(result.current.loading).toBe(false));
+        await waitFor(() => expect(result.current.loading).toBe(false), { interval: 5 });
 
         const methodsCalls = apiMock.mock.calls.filter(([{ url }]: any) => url === 'payments/v5/methods');
         expect(methodsCalls.length).toBe(1);
@@ -183,7 +183,7 @@ describe('fetching', () => {
 
 describe('deriving the methods from the props', () => {
     it('should not sort anything while loading', () => {
-        const sortNewMethods = jest.fn((methods: AvailablePaymentMethod[]) => methods);
+        const sortNewMethods = vi.fn((methods: AvailablePaymentMethod[]) => methods);
 
         renderMethods({ sortNewMethods });
 
@@ -289,7 +289,7 @@ describe('deriving the methods from the props', () => {
         ['isTrial', { isTrial: true }, [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, PAYMENT_METHOD_TYPES.CASH]],
     ])('should apply %s even when it changes during a slow initialization', async (_, override, excluded) => {
         addApiMock('payments/v5/methods', async () => {
-            await wait(100);
+            await wait(10);
             return { PaymentMethods: paymentMethods };
         });
 
@@ -297,7 +297,7 @@ describe('deriving the methods from the props', () => {
         expect(result.current.loading).toBe(true);
 
         rerender({ paymentStatus, ...override });
-        await waitFor(() => expect(result.current.loading).toBe(false));
+        await waitFor(() => expect(result.current.loading).toBe(false), { interval: 5 });
 
         const types = result.current.newMethods.map(({ type }) => type);
         excluded.forEach((type) => expect(types).not.toContain(type));
@@ -305,7 +305,7 @@ describe('deriving the methods from the props', () => {
     });
 
     it('should sort only the new methods', async () => {
-        const sortNewMethods = jest.fn((methods: AvailablePaymentMethod[]) => [...methods].reverse());
+        const sortNewMethods = vi.fn((methods: AvailablePaymentMethod[]) => [...methods].reverse());
         const { result } = await renderLoadedMethods({ paymentStatus, sortNewMethods });
 
         expect(sortNewMethods).toHaveBeenCalledWith([
@@ -332,7 +332,7 @@ describe('deriving the methods from the props', () => {
 
 describe('selection', () => {
     it('should select a method and notify the change only when it differs', async () => {
-        const onMethodChanged = jest.fn();
+        const onMethodChanged = vi.fn();
         const { result } = await renderLoadedMethods({ paymentStatus, onMethodChanged });
 
         expect(result.current.selectedMethod).toEqual(usedSavedCard);
@@ -357,7 +357,7 @@ describe('selection', () => {
     });
 
     it('should clear the selection when no id is given, and allow selecting again', async () => {
-        const onMethodChanged = jest.fn();
+        const onMethodChanged = vi.fn();
         const { result } = await renderLoadedMethods({ paymentStatus, onMethodChanged });
 
         act(() => {
@@ -386,7 +386,7 @@ describe('selection', () => {
     });
 
     it('should fall back to the first method when the selected one is no longer available', async () => {
-        const onMethodChanged = jest.fn();
+        const onMethodChanged = vi.fn();
         const { result, rerender } = await renderLoadedMethods({ paymentStatus, amount: 1000, onMethodChanged });
 
         act(() => {
@@ -401,7 +401,7 @@ describe('selection', () => {
     });
 
     it('should keep the fallback when the dropped method comes back', async () => {
-        const onMethodChanged = jest.fn();
+        const onMethodChanged = vi.fn();
         const { result, rerender } = await renderLoadedMethods({ paymentStatus, amount: 1000, onMethodChanged });
 
         act(() => {
@@ -482,7 +482,7 @@ describe('lookups', () => {
 
         expect(result.current.isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(false);
 
-        await waitFor(() => expect(result.current.loading).toBe(false));
+        await waitFor(() => expect(result.current.loading).toBe(false), { interval: 5 });
 
         expect(result.current.isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(true);
         expect(result.current.isMethodTypeEnabled(PAYMENT_METHOD_TYPES.APPLE_PAY)).toBe(false);

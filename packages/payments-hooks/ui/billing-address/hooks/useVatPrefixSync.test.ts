@@ -6,7 +6,7 @@ import { useVatPrefixSync } from './useVatPrefixSync';
 
 describe('useVatPrefixSync', () => {
     it('prefills the country prefix on mount when there is no initial VAT', () => {
-        const setVatNumber = jest.fn();
+        const setVatNumber = vi.fn();
         renderHook(() => useVatPrefixSync({ countryCode: 'DE', setVatNumber }));
 
         expect(setVatNumber).toHaveBeenCalledTimes(1);
@@ -14,28 +14,28 @@ describe('useVatPrefixSync', () => {
     });
 
     it('uses the country-specific prefix where it differs from the ISO code', () => {
-        const setVatNumber = jest.fn();
+        const setVatNumber = vi.fn();
         renderHook(() => useVatPrefixSync({ countryCode: 'GR', setVatNumber }));
 
         expect(setVatNumber).toHaveBeenCalledWith('EL');
     });
 
     it('prefills an empty string for countries that do not require a prefix', () => {
-        const setVatNumber = jest.fn();
+        const setVatNumber = vi.fn();
         renderHook(() => useVatPrefixSync({ countryCode: 'US', setVatNumber }));
 
         expect(setVatNumber).toHaveBeenCalledWith('');
     });
 
     it('leaves the field untouched on mount when an initial VAT is provided', () => {
-        const setVatNumber = jest.fn();
+        const setVatNumber = vi.fn();
         renderHook(() => useVatPrefixSync({ countryCode: 'DE', setVatNumber, initialVatNumber: 'DE123456789' }));
 
         expect(setVatNumber).not.toHaveBeenCalled();
     });
 
     it('prefills the new prefix on country change while pristine', () => {
-        const setVatNumber = jest.fn();
+        const setVatNumber = vi.fn();
         const { rerender } = renderHook((props) => useVatPrefixSync(props), {
             initialProps: { countryCode: 'DE', setVatNumber },
         });
@@ -48,7 +48,7 @@ describe('useVatPrefixSync', () => {
     });
 
     it('replaces the field on country change even after the user marked it dirty', () => {
-        const setVatNumber = jest.fn();
+        const setVatNumber = vi.fn();
         const { result, rerender } = renderHook((props) => useVatPrefixSync(props), {
             initialProps: { countryCode: 'DE', setVatNumber, initialVatNumber: 'DE123456789' },
         });
@@ -61,7 +61,7 @@ describe('useVatPrefixSync', () => {
     });
 
     it('does not touch the field when the country has not changed and it is dirty', () => {
-        const setVatNumber = jest.fn();
+        const setVatNumber = vi.fn();
         const { result, rerender } = renderHook((props) => useVatPrefixSync(props), {
             initialProps: { countryCode: 'DE', setVatNumber, initialVatNumber: 'DE123456789' },
         });
@@ -73,7 +73,7 @@ describe('useVatPrefixSync', () => {
     });
 
     it('does nothing while disabled, on mount or on country change', () => {
-        const setVatNumber = jest.fn();
+        const setVatNumber = vi.fn();
         const { rerender } = renderHook((props) => useVatPrefixSync(props), {
             initialProps: { countryCode: 'DE', setVatNumber, enabled: false },
         });
@@ -86,7 +86,7 @@ describe('useVatPrefixSync', () => {
     });
 
     it('does not clobber a user value when re-enabled after a country change happened while disabled', () => {
-        const setVatNumber = jest.fn();
+        const setVatNumber = vi.fn();
         const { rerender } = renderHook((props) => useVatPrefixSync(props), {
             // Disabled with an existing (dirty) VAT for the initial country.
             initialProps: { countryCode: 'DE', setVatNumber, initialVatNumber: 'DE123456789', enabled: false },

@@ -1,16 +1,16 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
 import type { AmountAndCurrency, ChargebeeIframeEvents, ChargebeeIframeHandles } from '@proton/payments/core/interface';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
 import { getMockedIframeHandles, mockPostV5Token } from './__mocks__/mock-helpers';
 import { useChargebeeIdeal } from './useChargebeeIdeal';
 
 const events = {
-    onIdealAuthorized: jest.fn(() => jest.fn()),
-    onIdealFailure: jest.fn(() => jest.fn()),
-    onIdealClicked: jest.fn(() => jest.fn()),
-    onIdealCancelled: jest.fn(() => jest.fn()),
+    onIdealAuthorized: vi.fn(() => vi.fn()),
+    onIdealFailure: vi.fn(() => vi.fn()),
+    onIdealClicked: vi.fn(() => vi.fn()),
+    onIdealCancelled: vi.fn(() => vi.fn()),
 } as unknown as ChargebeeIframeEvents;
 
 const tokenCalls = () => apiMock.mock.calls.filter(([config]: any[]) => config?.url === 'payments/v5/tokens');
@@ -35,7 +35,7 @@ const initialize = async (initializeIdeal: (abortSignal: AbortSignal) => Promise
 
 describe('useChargebeeIdeal', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockPostV5Token({});
     });
 
@@ -75,7 +75,7 @@ describe('useChargebeeIdeal', () => {
 
     it('should clear the initialization error after a successful retry', async () => {
         const handles = getMockedIframeHandles();
-        jest.mocked(handles.initializeIdeal).mockRejectedValueOnce(new Error('iframe failure'));
+        vi.mocked(handles.initializeIdeal).mockRejectedValueOnce(new Error('iframe failure'));
 
         const { result } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
 
@@ -87,13 +87,13 @@ describe('useChargebeeIdeal', () => {
     });
 
     it('should send the trimmed account holder name once for a burst of keystrokes', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         const handles = getMockedIframeHandles();
         const { result } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
 
         await initialize(result.current.initialize);
-        jest.mocked(handles.setIdealPaymentIntent).mockClear();
+        vi.mocked(handles.setIdealPaymentIntent).mockClear();
 
         for (const name of ['J', 'Ja', ' Jan ']) {
             act(() => result.current.setAccountHolderName(name));
@@ -101,7 +101,7 @@ describe('useChargebeeIdeal', () => {
         expect(handles.setIdealPaymentIntent).not.toHaveBeenCalled();
 
         await act(async () => {
-            jest.runOnlyPendingTimers();
+            vi.runOnlyPendingTimers();
         });
 
         expect(handles.setIdealPaymentIntent).toHaveBeenCalledTimes(1);
@@ -111,11 +111,11 @@ describe('useChargebeeIdeal', () => {
         );
         expect(result.current.readyToPay).toBe(true);
 
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should re-arm the iframe button when only the label changes', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         const handles = getMockedIframeHandles();
         const { result } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
@@ -123,7 +123,7 @@ describe('useChargebeeIdeal', () => {
         await initialize(result.current.initialize);
         act(() => result.current.setAccountHolderName('Jan'));
         await act(async () => {
-            jest.runOnlyPendingTimers();
+            vi.runOnlyPendingTimers();
         });
         expect(result.current.readyToPay).toBe(true);
 
@@ -131,7 +131,7 @@ describe('useChargebeeIdeal', () => {
         expect(result.current.readyToPay).toBe(false);
 
         await act(async () => {
-            jest.runOnlyPendingTimers();
+            vi.runOnlyPendingTimers();
         });
 
         expect(handles.setIdealPaymentIntent).toHaveBeenLastCalledWith(
@@ -140,21 +140,21 @@ describe('useChargebeeIdeal', () => {
         );
         expect(result.current.readyToPay).toBe(true);
 
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should surface an initialization error when the debounced name update fails', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         const handles = getMockedIframeHandles();
         const { result } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
 
         await initialize(result.current.initialize);
-        jest.mocked(handles.setIdealPaymentIntent).mockRejectedValueOnce(new Error('iframe failure'));
+        vi.mocked(handles.setIdealPaymentIntent).mockRejectedValueOnce(new Error('iframe failure'));
 
         act(() => result.current.setAccountHolderName('Jan'));
         await act(async () => {
-            jest.runOnlyPendingTimers();
+            vi.runOnlyPendingTimers();
         });
 
         expect(result.current.initializationError).toBe(true);
@@ -162,7 +162,7 @@ describe('useChargebeeIdeal', () => {
 
         act(() => result.current.setAccountHolderName('Jane'));
         await act(async () => {
-            jest.runOnlyPendingTimers();
+            vi.runOnlyPendingTimers();
         });
 
         expect(result.current.initializationError).toBe(false);
@@ -170,12 +170,12 @@ describe('useChargebeeIdeal', () => {
         // the retry reuses the payment token instead of re-initializing
         expect(tokenCalls()).toHaveLength(1);
 
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should clear a stale initialization error when the currency is no longer supported', async () => {
         const handles = getMockedIframeHandles();
-        jest.mocked(handles.initializeIdeal).mockRejectedValueOnce(new Error('iframe failure'));
+        vi.mocked(handles.initializeIdeal).mockRejectedValueOnce(new Error('iframe failure'));
 
         const { result, rerender } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
 
@@ -196,35 +196,35 @@ describe('useChargebeeIdeal', () => {
         await initialize(result.current.initialize);
 
         expect(events.onIdealAuthorized).toHaveBeenCalledTimes(2);
-        const removeFirstListener = jest.mocked(events.onIdealAuthorized).mock.results[0].value;
+        const removeFirstListener = vi.mocked(events.onIdealAuthorized).mock.results[0].value;
         expect(removeFirstListener).toHaveBeenCalledTimes(1);
     });
 
     it('should not report an initialization error when a pending name send races a reset', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         const handles = getMockedIframeHandles();
         const { result } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
 
         await initialize(result.current.initialize);
-        jest.mocked(handles.setIdealPaymentIntent).mockClear();
+        vi.mocked(handles.setIdealPaymentIntent).mockClear();
 
         act(() => result.current.setAccountHolderName('Jan'));
         result.current.reset();
 
         await act(async () => {
-            jest.runOnlyPendingTimers();
+            vi.runOnlyPendingTimers();
         });
 
         expect(handles.setIdealPaymentIntent).not.toHaveBeenCalled();
         expect(result.current.initializationError).toBe(false);
 
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should not report an initialization error when the initialization was aborted', async () => {
         const handles = getMockedIframeHandles();
-        jest.mocked(handles.initializeIdeal).mockRejectedValueOnce(new Error('aborted'));
+        vi.mocked(handles.initializeIdeal).mockRejectedValueOnce(new Error('aborted'));
 
         const { result } = renderIdealHook({ Amount: 999, Currency: 'EUR' }, handles);
 

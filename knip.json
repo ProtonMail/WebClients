@@ -399,7 +399,8 @@
         },
         "packages/payments-hooks": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"]
+            "project": ["**/*.{ts,tsx}"],
+            "ignoreDependencies": ["@proton/metrics"]
         },
         "packages/payments-ui": {
             "entry": [],

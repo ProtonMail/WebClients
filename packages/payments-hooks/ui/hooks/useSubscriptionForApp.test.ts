@@ -11,16 +11,16 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import { useSubscriptionForApp } from './useSubscriptionForApp';
 
-jest.mock('@proton/account/allSubscriptions/hooks', () => ({
-    useAllSubscriptions: jest.fn(),
+vi.mock('@proton/account/allSubscriptions/hooks', () => ({
+    useAllSubscriptions: vi.fn(),
 }));
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementCatalog: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementCatalog: vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useConfig', () => ({
-    useConfig: jest.fn(),
+vi.mock('@proton/app-context/useConfig', () => ({
+    useConfig: vi.fn(),
 }));
 
 const catalog = buildEntitlementCatalog({
@@ -30,14 +30,14 @@ const catalog = buildEntitlementCatalog({
 
 describe('useSubscriptionForApp', () => {
     beforeEach(() => {
-        jest.mocked(useEntitlementCatalog).mockReturnValue([catalog, false]);
+        vi.mocked(useEntitlementCatalog).mockReturnValue([catalog, false]);
     });
 
     it('returns the subscription that covers the current app', () => {
         const vpn = buildSubscription(PLANS.VPN2024);
         const mail = buildSubscription(PLANS.MAIL);
-        jest.mocked(useAllSubscriptions).mockReturnValue([[vpn, mail], false]);
-        jest.mocked(useConfig).mockReturnValue({ APP_NAME: APPS.PROTONMAIL } as ReturnType<typeof useConfig>);
+        vi.mocked(useAllSubscriptions).mockReturnValue([[vpn, mail], false]);
+        vi.mocked(useConfig).mockReturnValue({ APP_NAME: APPS.PROTONMAIL } as ReturnType<typeof useConfig>);
 
         const { result } = renderHook(() => useSubscriptionForApp());
 
@@ -47,8 +47,8 @@ describe('useSubscriptionForApp', () => {
     it('returns the subscription that covers the requested app instead of the current one', () => {
         const vpn = buildSubscription(PLANS.VPN2024);
         const mail = buildSubscription(PLANS.MAIL);
-        jest.mocked(useAllSubscriptions).mockReturnValue([[vpn, mail], false]);
-        jest.mocked(useConfig).mockReturnValue({ APP_NAME: APPS.PROTONACCOUNT } as ReturnType<typeof useConfig>);
+        vi.mocked(useAllSubscriptions).mockReturnValue([[vpn, mail], false]);
+        vi.mocked(useConfig).mockReturnValue({ APP_NAME: APPS.PROTONACCOUNT } as ReturnType<typeof useConfig>);
 
         const { result } = renderHook(() => useSubscriptionForApp(APPS.PROTONCALENDAR));
 
@@ -56,8 +56,8 @@ describe('useSubscriptionForApp', () => {
     });
 
     it('reports loading while the subscriptions load', () => {
-        jest.mocked(useAllSubscriptions).mockReturnValue([undefined, true]);
-        jest.mocked(useConfig).mockReturnValue({ APP_NAME: APPS.PROTONMAIL } as ReturnType<typeof useConfig>);
+        vi.mocked(useAllSubscriptions).mockReturnValue([undefined, true]);
+        vi.mocked(useConfig).mockReturnValue({ APP_NAME: APPS.PROTONMAIL } as ReturnType<typeof useConfig>);
 
         const { result } = renderHook(() => useSubscriptionForApp());
 

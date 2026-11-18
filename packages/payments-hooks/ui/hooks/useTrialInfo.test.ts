@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
@@ -10,8 +11,8 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { useTrialInfo } from './useTrialInfo';
 
-jest.mock('@proton/account/allSubscriptions/hooks');
-jest.mock('@proton/account/entitlementCatalog/hooks');
+vi.mock('@proton/account/allSubscriptions/hooks');
+vi.mock('@proton/account/entitlementCatalog/hooks');
 
 describe('useTrialInfo', () => {
     const entitlementCatalog = buildEntitlementCatalog({
@@ -22,12 +23,12 @@ describe('useTrialInfo', () => {
     });
 
     const mockSubscriptions = (subscriptions: Subscription[] | undefined, loading = false) => {
-        (useAllSubscriptions as jest.Mock).mockReturnValue([subscriptions, loading]);
+        (useAllSubscriptions as Mock).mockReturnValue([subscriptions, loading]);
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        (useEntitlementCatalog as jest.Mock).mockReturnValue([entitlementCatalog, false]);
+        vi.clearAllMocks();
+        (useEntitlementCatalog as Mock).mockReturnValue([entitlementCatalog, false]);
     });
 
     it('returns {} while the subscriptions are loading', () => {

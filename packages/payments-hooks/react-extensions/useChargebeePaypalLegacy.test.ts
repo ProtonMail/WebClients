@@ -2,7 +2,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { AmountAndCurrency } from '@proton/payments/core/interface';
-import { addApiMock, apiMock } from '@proton/test-api/api';
+import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 
 import {
     deferTokenRequests,
@@ -19,19 +19,19 @@ const outdatedAmount: AmountAndCurrency = { Amount: 2000, Currency: 'USD' };
 const renderWithAmount = () => {
     const { events, fire, isSubscribed } = getMockedEvents();
     const handles = getMockedWalletHandles();
-    const onChargeable = jest.fn().mockResolvedValue(undefined);
+    const onChargeable = vi.fn().mockResolvedValue(undefined);
     const chargebeePaypalModalHandles = {
-        onAuthorize: jest.fn(),
-        onCancel: jest.fn(),
-        onClick: jest.fn(),
-        onFailure: jest.fn(),
+        onAuthorize: vi.fn(),
+        onCancel: vi.fn(),
+        onClick: vi.fn(),
+        onFailure: vi.fn(),
     };
 
     const { result, rerender } = renderHook(
         ({ amount }: { amount: AmountAndCurrency }) =>
             useChargebeePaypal(
                 { amountAndCurrency: amount, onChargeable },
-                { api: apiMock, verifyPayment: jest.fn(), handles, events, chargebeePaypalModalHandles }
+                { api: apiMock, verifyPayment: vi.fn(), handles, events, chargebeePaypalModalHandles }
             ),
         { initialProps: { amount: oldAmount } }
     );
@@ -54,7 +54,7 @@ const renderWithAmount = () => {
 
 describe('useChargebeePaypal (legacy) when the amount changes while paypal is being set up', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     // overlapping token requests can fail at the payment provider (422, Code 2900)

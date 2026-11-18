@@ -26,7 +26,6 @@
         "./react-extensions/usePaymentsApi": "./react-extensions/usePaymentsApi.ts",
         "./react-extensions/useSepaDirectDebit": "./react-extensions/useSepaDirectDebit.ts",
         "./telemetry/useSubscriptionModificationChangeStepTelemetry": "./telemetry/useSubscriptionModificationChangeStepTelemetry.ts",
-        "./testing/renderWithProviders": "./testing/renderWithProviders.tsx",
         "./ui/billing-address/hooks/useVatPrefixSync": "./ui/billing-address/hooks/useVatPrefixSync.ts",
         "./ui/billing-address/hooks/vatPrefixHelper": "./ui/billing-address/hooks/vatPrefixHelper.ts",
         "./ui/components/GuardBanner": "./ui/components/GuardBanner.tsx",
@@ -44,9 +43,9 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "test": "jest",
-        "test:ci": "jest --runInBand --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "vitest run",
+        "test:ci": "vitest run",
+        "test:watch": "vitest"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
@@ -68,28 +67,28 @@
         "ttag": "catalog:"
     },
     "devDependencies": {
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/metrics": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
         "@proton/test-api": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "catalog:",
-        "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
         "@types/webpack-env": "catalog:",
+        "@vitejs/plugin-react": "catalog:",
+        "@vitest/coverage-v8": "catalog:",
         "@typescript/native": "catalog:",
         "history": "catalog:",
-        "jest": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "react-dom": "catalog:",
         "react-router": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }

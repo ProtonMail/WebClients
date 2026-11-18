@@ -7,31 +7,31 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { usePaymentPollers } from './usePaymentPollers';
 
-const mockGetSubscription = jest.fn();
-jest.mock('@proton/account/subscription/hooks', () => ({
+const mockGetSubscription = vi.fn();
+vi.mock('@proton/account/subscription/hooks', () => ({
     __esModule: true,
     useGetSubscription: () => mockGetSubscription,
 }));
 
-const mockGetPaymentMethods = jest.fn();
-jest.mock('@proton/account/paymentMethods/hooks', () => ({
+const mockGetPaymentMethods = vi.fn();
+vi.mock('@proton/account/paymentMethods/hooks', () => ({
     __esModule: true,
     useGetPaymentMethods: () => mockGetPaymentMethods,
 }));
 
-const mockGetUser = jest.fn();
-jest.mock('@proton/account/user/hooks', () => ({
+const mockGetUser = vi.fn();
+vi.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
     useGetUser: () => mockGetUser,
 }));
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    jest.useFakeTimers();
+    vi.clearAllMocks();
+    vi.useFakeTimers();
 });
 
 afterEach(() => {
-    jest.useRealTimers();
+    vi.useRealTimers();
 });
 
 it('should return all four polling factory methods', () => {
@@ -57,7 +57,7 @@ describe('createSubscriptionPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollSubscription = result.current.createSubscriptionPoller();
         const promise = pollSubscription();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(true);
     });
@@ -69,7 +69,7 @@ describe('createSubscriptionPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollSubscription = result.current.createSubscriptionPoller();
         const promise = pollSubscription();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(false);
     });
@@ -82,7 +82,7 @@ describe('createSubscriptionPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollSubscription = result.current.createSubscriptionPoller();
         const promise = pollSubscription();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(true);
     });
@@ -94,7 +94,7 @@ describe('createSubscriptionPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollSubscription = result.current.createSubscriptionPoller();
         void pollSubscription();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         expect(mockGetSubscription).toHaveBeenCalledWith({ cache: CacheType.None });
     });
@@ -108,7 +108,7 @@ describe('createSubscriptionPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollSubscription = result.current.createSubscriptionPoller();
         const promise = pollSubscription();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(false);
         expect(mockGetUser).toHaveBeenCalledWith({ cache: CacheType.None });
@@ -124,7 +124,7 @@ describe('createSubscriptionPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollSubscription = result.current.createSubscriptionPoller();
         const promise = pollSubscription();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(true);
         expect(mockGetUser).toHaveBeenCalledWith({ cache: CacheType.None });
@@ -141,7 +141,7 @@ describe('createPaymentMethodsPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollPaymentMethods = result.current.createPaymentMethodsPoller();
         const promise = pollPaymentMethods();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(true);
     });
@@ -153,7 +153,7 @@ describe('createPaymentMethodsPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollPaymentMethods = result.current.createPaymentMethodsPoller();
         const promise = pollPaymentMethods();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(false);
     });
@@ -165,7 +165,7 @@ describe('createPaymentMethodsPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollPaymentMethods = result.current.createPaymentMethodsPoller();
         void pollPaymentMethods();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         expect(mockGetPaymentMethods).toHaveBeenCalledWith({ cache: CacheType.None });
     });
@@ -178,7 +178,7 @@ describe('createCreditsPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollCredits = result.current.createCreditsPoller();
         const promise = pollCredits();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(true);
     });
@@ -189,7 +189,7 @@ describe('createCreditsPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollCredits = result.current.createCreditsPoller();
         const promise = pollCredits();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(false);
     });
@@ -200,7 +200,7 @@ describe('createCreditsPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollCredits = result.current.createCreditsPoller();
         void pollCredits();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         expect(mockGetUser).toHaveBeenCalledWith({ cache: CacheType.None });
     });
@@ -213,7 +213,7 @@ describe('createSubscriptionRenewEnabledPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollSubscriptionRenewEnabled = result.current.createSubscriptionRenewEnabledPoller();
         const promise = pollSubscriptionRenewEnabled();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(true);
     });
@@ -224,7 +224,7 @@ describe('createSubscriptionRenewEnabledPoller', () => {
         const { result } = renderHook(() => usePaymentPollers());
         const pollSubscriptionRenewEnabled = result.current.createSubscriptionRenewEnabledPoller();
         const promise = pollSubscriptionRenewEnabled();
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         await expect(promise).resolves.toBe(false);
     });

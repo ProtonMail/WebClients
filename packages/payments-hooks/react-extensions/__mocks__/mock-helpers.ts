@@ -1,7 +1,7 @@
 import type { BackendPaymentIntent } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { ChargebeeIframeHandles } from '@proton/payments/core/interface';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 
 export function mockPostV5Token({
     token = 'token',
@@ -40,25 +40,25 @@ export function mockPostV5Token({
 
 export function getMockedIframeHandles(): ChargebeeIframeHandles {
     return {
-        submitCreditCard: jest.fn(),
-        initializeCreditCard: jest.fn(),
-        initializeSavedCreditCard: jest.fn(),
-        validateSavedCreditCard: jest.fn(),
-        initializePaypal: jest.fn(),
-        setPaypalPaymentIntent: jest.fn(),
-        getHeight: jest.fn(),
-        getBin: jest.fn(),
-        validateCardForm: jest.fn(),
-        changeRenderMode: jest.fn(),
-        updateFields: jest.fn(),
-        initializeDirectDebit: jest.fn(),
-        submitDirectDebit: jest.fn(),
-        initializeApplePay: jest.fn(),
-        setApplePayPaymentIntent: jest.fn(),
-        getApplePayCapabilities: jest.fn(),
-        initializeGooglePay: jest.fn(),
-        setGooglePayPaymentIntent: jest.fn(),
-        initializeIdeal: jest.fn(),
-        setIdealPaymentIntent: jest.fn(),
+        submitCreditCard: vi.fn(),
+        initializeCreditCard: vi.fn(),
+        initializeSavedCreditCard: vi.fn(),
+        validateSavedCreditCard: vi.fn(),
+        initializePaypal: vi.fn(),
+        setPaypalPaymentIntent: vi.fn(),
+        getHeight: vi.fn(),
+        getBin: vi.fn(),
+        validateCardForm: vi.fn(),
+        changeRenderMode: vi.fn(),
+        updateFields: vi.fn(),
+        initializeDirectDebit: vi.fn(),
+        submitDirectDebit: vi.fn(),
+        initializeApplePay: vi.fn(),
+        setApplePayPaymentIntent: vi.fn(),
+        getApplePayCapabilities: vi.fn(),
+        initializeGooglePay: vi.fn(),
+        setGooglePayPaymentIntent: vi.fn(),
+        initializeIdeal: vi.fn(),
+        setIdealPaymentIntent: vi.fn(),
     };
 }

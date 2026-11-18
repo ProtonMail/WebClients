@@ -1,4 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useApi } from '@proton/app-context/useApi';
@@ -7,11 +8,11 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 
 import { useHasRedeemedCoupons } from './useHasRedeemedCoupons';
 
-jest.mock('@proton/account/allSubscriptions/hooks');
-const mockUseAllSubscriptions = useAllSubscriptions as jest.Mock;
+vi.mock('@proton/account/allSubscriptions/hooks');
+const mockUseAllSubscriptions = useAllSubscriptions as Mock;
 
-jest.mock('@proton/app-context/useApi');
-const mockUseApi = useApi as jest.Mock;
+vi.mock('@proton/app-context/useApi');
+const mockUseApi = useApi as Mock;
 
 const COUPONS = ['SALE', 'SALECS'];
 
@@ -20,10 +21,10 @@ const buildSubscription = (plan: PLANS) => {
 };
 
 describe('useHasRedeemedCoupons', () => {
-    let mockApi: jest.Mock;
+    let mockApi: Mock;
 
     beforeEach(() => {
-        mockApi = jest.fn();
+        mockApi = vi.fn();
         mockUseApi.mockReturnValue(mockApi);
         mockUseAllSubscriptions.mockReturnValue([[buildSubscription(PLANS.BUNDLE)], false]);
     });

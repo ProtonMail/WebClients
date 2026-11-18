@@ -4,7 +4,7 @@ import { useMultiCheckGroups } from './useMultiCheckGroups';
 
 describe('useMultiCheckGroups', () => {
     beforeEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should initialize with no loading groups', () => {

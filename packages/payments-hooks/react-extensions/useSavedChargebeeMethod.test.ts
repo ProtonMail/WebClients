@@ -2,13 +2,13 @@ import { renderHook, waitFor } from '@testing-library/react';
 
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { ChargebeeIframeEvents, SavedPaymentMethod } from '@proton/payments/core/interface';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
 import { getMockedIframeHandles, mockPostV5Token } from './__mocks__/mock-helpers';
 import { type Dependencies, type Props, useSavedChargebeeMethod } from './useSavedChargebeeMethod';
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 const mockSavedMethod: SavedPaymentMethod = {
@@ -33,12 +33,12 @@ const setupHook = (props: Partial<Props> = {}, dependenciesProps: Partial<Depend
             Currency: 'EUR',
         },
         savedMethod: mockSavedMethod,
-        onChargeable: jest.fn(),
-        onDeclined: jest.fn(),
+        onChargeable: vi.fn(),
+        onDeclined: vi.fn(),
     };
 
     const handles = getMockedIframeHandles();
-    handles.validateSavedCreditCard = jest.fn().mockResolvedValue({
+    handles.validateSavedCreditCard = vi.fn().mockResolvedValue({
         data: {
             authorized: true,
             authorizedPaymentIntent: {
@@ -50,10 +50,10 @@ const setupHook = (props: Partial<Props> = {}, dependenciesProps: Partial<Depend
     const dependencies: Dependencies = {
         api: apiMock,
         events: {
-            onThreeDsChallenge: jest.fn().mockReturnValue(jest.fn()),
+            onThreeDsChallenge: vi.fn().mockReturnValue(vi.fn()),
         } as unknown as ChargebeeIframeEvents,
         handles,
-        verifyPayment: jest.fn(),
+        verifyPayment: vi.fn(),
         ...dependenciesProps,
     };
 
@@ -87,7 +87,7 @@ describe('useSavedChargebeeMethod', () => {
     });
 
     it('should not request payment token if onBeforeSepaPayment returns false', async () => {
-        const onBeforeSepaPayment = jest.fn().mockResolvedValue(false);
+        const onBeforeSepaPayment = vi.fn().mockResolvedValue(false);
         const { result } = setupHook({
             savedMethod: {
                 ...mockSavedMethod,
@@ -120,7 +120,7 @@ describe('useSavedChargebeeMethod', () => {
 
             mockPostV5Token({});
             let resolveVerify: (value: any) => void = () => {};
-            const verifyPayment = jest.fn(() => new Promise((resolve) => (resolveVerify = resolve))) as any;
+            const verifyPayment = vi.fn(() => new Promise((resolve) => (resolveVerify = resolve))) as any;
             result.current.paymentProcessor!.verifyPayment = verifyPayment;
 
             const promise = result.current.processPaymentToken();
@@ -135,7 +135,7 @@ describe('useSavedChargebeeMethod', () => {
             const { result } = setupHook();
 
             mockPostV5Token({});
-            const verifyPayment = jest.fn().mockRejectedValue(new Error('boom'));
+            const verifyPayment = vi.fn().mockRejectedValue(new Error('boom'));
             result.current.paymentProcessor!.verifyPayment = verifyPayment;
 
             await expect(result.current.processPaymentToken()).rejects.toThrow('boom');
@@ -149,7 +149,7 @@ describe('useSavedChargebeeMethod', () => {
         mockPostV5Token({});
         await result.current.fetchPaymentToken();
 
-        const verifyPayment = jest.fn().mockResolvedValue({
+        const verifyPayment = vi.fn().mockResolvedValue({
             PaymentToken: 'verified-token',
             v: 5,
         });
