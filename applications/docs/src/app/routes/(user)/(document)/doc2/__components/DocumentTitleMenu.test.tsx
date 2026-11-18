@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 
 import { ConfigContext } from '@proton/app-context/configContext'
 import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
-import { NodeType, getDrive } from '@proton/drive/sdk'
+import { type NodeEntity, NodeType, getDrive } from '@proton/drive/sdk'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
@@ -43,7 +43,14 @@ jest.mock('@proton/drive/sdk', () => ({ ...jest.requireActual('@proton/drive/sdk
 
 const getAvailableName = jest.fn()
 const renameNode = jest.fn()
-const NODE = { uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT', name: { ok: true, value: 'Plans' } } as const
+// No membership: the user's own document, or one in a folder shared with them, whose role comes from the folder
+const NODE = {
+  uid: 'VOLUME~LINK',
+  parentUid: 'VOLUME~PARENT',
+  name: { ok: true, value: 'Plans' },
+  membership: undefined,
+} as const
+const SHARED_DIRECTLY = { ...NODE, membership: {} as NonNullable<NodeEntity['membership']> }
 
 // The atoms Tooltip's default open delay
 const TOOLTIP_OPEN_DELAY_MS = 1000
@@ -104,16 +111,31 @@ describe('DocumentTitleMenu', () => {
     expect(screen.getByTestId('e2e-info')).toHaveTextContent('End-to-end encrypted. Learn more')
   })
 
-  test.each<[DocumentRole, boolean, boolean]>([
-    ['Viewer', false, false],
-    ['Editor', true, false],
-    ['Admin', true, true],
-  ])('a %s gets Rename %s and Move to trash %s', async (role, canRename, canTrash) => {
-    await openMenu(role)
+  test.each<[DocumentRole, boolean]>([
+    ['Viewer', false],
+    ['Editor', true],
+    ['Admin', true],
+  ])(
+    'a %s gets Rename, Move to folder and Move to trash, on their own document or one in a shared folder: %s',
+    async (role, canOrganize) => {
+      await openMenu(role)
 
-    expect(menuItemNames().includes('Rename document')).toBe(canRename)
-    expect(menuItemNames().includes('Move to trash')).toBe(canTrash)
-  })
+      expect(menuItemNames().includes('Rename document')).toBe(canOrganize)
+      expect(menuItemNames().includes('Move to folder')).toBe(canOrganize)
+      expect(menuItemNames().includes('Move to trash')).toBe(canOrganize)
+    },
+  )
+
+  test.each<DocumentRole>(['Admin', 'Editor'])(
+    'a document shared directly gets no Rename, Move to folder or Move to trash, even for an %s',
+    async (role) => {
+      await openMenu(role, { node: SHARED_DIRECTLY })
+
+      expect(menuItemNames()).not.toContain('Rename document')
+      expect(menuItemNames()).not.toContain('Move to folder')
+      expect(menuItemNames()).not.toContain('Move to trash')
+    },
+  )
 
   test('New spreadsheet needs sheets enabled', async () => {
     mockIsSheetsEnabled = false
@@ -187,7 +209,7 @@ describe('DocumentTitleMenu', () => {
     expect(onFileMenuAction).toHaveBeenCalledTimes(1)
   })
 
-  test.each(['New document', 'Move to folder', 'Open Proton Drive'])('a Viewer gets %s too', async (name) => {
+  test.each(['New document', 'Open Proton Drive'])('a Viewer gets %s too', async (name) => {
     const { onFileMenuAction } = await openMenu('Viewer')
 
     await userEvent.click(menuItem(name))
@@ -416,11 +438,7 @@ describe('DocumentTitleMenu', () => {
 
   test('follows the node Drive reports: a rename elsewhere shows, and a move changes where the next rename checks names', async () => {
     const { rerender } = renderMenu('Editor')
-    const movedNode = {
-      uid: 'VOLUME~LINK',
-      parentUid: 'VOLUME~MOVED',
-      name: { ok: true, value: 'Plans 2027' },
-    } as const
+    const movedNode = { ...NODE, parentUid: 'VOLUME~MOVED', name: { ok: true, value: 'Plans 2027' } } as const
 
     rerender(menuElement('Editor', { node: movedNode }))
 

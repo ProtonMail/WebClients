@@ -4,6 +4,14 @@ import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { DuplicateDocument } from './DuplicateDocument'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { SeedInitialCommit } from './SeedInitialCommit'
+import { getDrive } from '@proton/drive/sdk'
+import { traceErrorSDK } from '../DriveSDK/traceErrorSDK'
+
+jest.mock('@proton/drive/sdk', () => ({
+  ...jest.requireActual('@proton/drive/sdk'),
+  getDrive: jest.fn(),
+}))
+jest.mock('../DriveSDK/traceErrorSDK')
 
 const rootMeta = { volumeId: 'volume', linkId: 'root' }
 const shell = { volumeId: 'volume', linkId: 'new-document', keys: {} }
@@ -56,5 +64,51 @@ describe('DuplicateDocument', () => {
 
     expect(result.getValue()).toBe(shell)
     expect(driveCompat.createDocumentNode).toHaveBeenCalledWith(rootMeta, 'name', 'sheet')
+  })
+
+  describe('executePrivate', () => {
+    /** `driveNode` is the node Drive's SDK answers, which tells whether the document is shared directly, or its error */
+    const executePrivate = (canEdit: boolean, driveNode: { membership?: object } | Error = {}) => {
+      driveCompat.getNode = jest
+        .fn()
+        .mockResolvedValue({ name: 'Plans', volumeId: 'volume', parentNodeId: 'folder', mimeType: 'text/plain' })
+      const getNode =
+        driveNode instanceof Error ? jest.fn().mockRejectedValue(driveNode) : jest.fn().mockResolvedValue(driveNode)
+      jest.mocked(getDrive).mockReturnValue({ getNode } as unknown as ReturnType<typeof getDrive>)
+      return new DuplicateDocument(driveCompat, getDocumentMeta, seedInitialCommit, unleashClient).executePrivate(
+        { volumeId: 'volume', linkId: 'document' },
+        state,
+        canEdit,
+      )
+    }
+
+    it('creates the copy in the original folder for a user who can edit a document not shared with them directly', async () => {
+      await executePrivate(true)
+
+      expect(driveCompat.createDocumentNode).toHaveBeenCalledWith(
+        { volumeId: 'volume', linkId: 'folder' },
+        'name',
+        'doc',
+      )
+    })
+
+    it("creates the copy in My files for a viewer, who can't write to the original folder", async () => {
+      await executePrivate(false)
+
+      expect(driveCompat.createDocumentNode).toHaveBeenCalledWith(rootMeta, 'name', 'doc')
+    })
+
+    it('creates the copy in My files for an editor of a document shared with them directly', async () => {
+      await executePrivate(true, { membership: {} })
+
+      expect(driveCompat.createDocumentNode).toHaveBeenCalledWith(rootMeta, 'name', 'doc')
+    })
+
+    it("creates the copy in My files when Drive can't tell whether the document is shared directly", async () => {
+      await executePrivate(true, new Error('offline'))
+
+      expect(driveCompat.createDocumentNode).toHaveBeenCalledWith(rootMeta, 'name', 'doc')
+      expect(traceErrorSDK).toHaveBeenCalled()
+    })
   })
 })

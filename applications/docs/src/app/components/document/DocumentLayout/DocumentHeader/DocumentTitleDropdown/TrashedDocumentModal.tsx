@@ -18,6 +18,10 @@ export type TrashedDocumentModalProps = {
   documentState: DocumentState
   documentTitle: string
   onOpenProtonDrive: () => void
+  /** Only the owner restores; anyone else gets only Go to Drive, since the modal can't be closed */
+  canRestore: boolean
+  /** Set when Drive couldn't say whether the user may restore, so the modal says so and offers to ask again */
+  onRetryRestoreCheck?: () => void
 }
 
 export function TrashedDocumentModal({
@@ -25,6 +29,8 @@ export function TrashedDocumentModal({
   documentTitle,
   onOpenProtonDrive,
   controller,
+  canRestore,
+  onRetryRestoreCheck,
 }: TrashedDocumentModalProps) {
   const { didTrashDocInCurrentSession } = controller
   const trashedState = documentState.getProperty('documentTrashState')
@@ -44,9 +50,16 @@ export function TrashedDocumentModal({
           ? c('Info')
               .t`"${documentTitle}" has been moved to the trash. It will stay there until you restore it or delete it permanently.`
           : c('Info').t`"${documentTitle}" is in trash and will stay there until you delete it permanently.`}
+        {onRetryRestoreCheck && (
+          <p className="mb-0 mt-4">{c('Error').t`We couldn't check whether you can take it out of trash.`}</p>
+        )}
       </ModalTwoContent>
       <ModalTwoFooter>
-        {documentState.getProperty('userRole').canTrash() && (
+        {!canRestore && <Button onClick={onOpenProtonDrive}>{goToPlanOrAppNameText(DRIVE_SHORT_APP_NAME)}</Button>}
+        {!canRestore && onRetryRestoreCheck && (
+          <Button color="norm" onClick={onRetryRestoreCheck}>{c('Action').t`Try again`}</Button>
+        )}
+        {canRestore && (
           <>
             {didTrashDocInCurrentSession ? (
               <>

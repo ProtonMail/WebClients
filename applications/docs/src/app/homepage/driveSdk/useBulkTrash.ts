@@ -18,9 +18,16 @@ export function useBulkTrash({ drive }: BulkTrashDependencies) {
     setIsTrashing(true)
     let batch
     try {
-      batch = await trashManyAndNotify(drive, createNotification, errorTracking, [...byUid.keys()], () => {
-        void updateRecentDocuments()
-      })
+      batch = await trashManyAndNotify(
+        drive,
+        createNotification,
+        errorTracking,
+        [...byUid.keys()],
+        () => {
+          void updateRecentDocuments()
+        },
+        documents.every((document) => !document.isSharedWithMe),
+      )
     } finally {
       setIsTrashing(false)
     }

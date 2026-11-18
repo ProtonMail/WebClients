@@ -15,6 +15,11 @@ export interface SyncedEditorStateValues {
   /** Whether the suggestions feature flag is enabled and killswitch is off */
   suggestionsEnabled: boolean
   receivedEverythingFromRTS: boolean
+  /**
+   * Whether the user may move, rename and trash the document: editors and admins of their own document or one in a
+   * folder shared with them, never one shared with them directly. The client asks Drive, so it is false until Drive answers.
+   */
+  canOrganize: boolean
 }
 
 const DefaultValues: SyncedEditorStateValues = {
@@ -22,6 +27,7 @@ const DefaultValues: SyncedEditorStateValues = {
   userName: '',
   suggestionsEnabled: true,
   receivedEverythingFromRTS: false,
+  canOrganize: false,
 }
 
 /**

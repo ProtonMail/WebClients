@@ -37,6 +37,7 @@ export function createDocumentItem(
     location: getLocation(path, isSharedWithMe),
     ancestorsNodeUids,
     isSharedWithMe,
+    isSharedDirectly: !!node.membership,
     shareId: deprecatedShareId ?? '',
     effectiveRole,
   }

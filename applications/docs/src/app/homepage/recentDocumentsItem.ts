@@ -4,7 +4,9 @@ import type { MemberRole } from '@protontech/drive-sdk'
 import type { ServerTime } from './utils/serverTime'
 
 export type RecentDocumentsItemLocation =
-  { type: 'root' } | { type: 'path'; path: string[] } | { type: 'shared-with-me' }
+  | { type: 'root' }
+  | { type: 'path'; path: string[] }
+  | { type: 'shared-with-me' }
 
 export type RecentDocumentsItemValue = {
   type: ProtonDocumentType
@@ -17,6 +19,8 @@ export type RecentDocumentsItemValue = {
   createdBy: string | undefined
   location: RecentDocumentsItemLocation
   isSharedWithMe: boolean
+  /** The user holds a membership on the document itself */
+  isSharedDirectly?: boolean
   shareId: string
   // Most immediate parent first, root last (My files root, or the share root for items shared with me)
   ancestorsNodeUids?: string[]
@@ -74,6 +78,9 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
   }
   get isSharedWithMe() {
     return this.#value.isSharedWithMe
+  }
+  get isSharedDirectly() {
+    return this.#value.isSharedDirectly ?? false
   }
   get shareId() {
     return this.#value.shareId

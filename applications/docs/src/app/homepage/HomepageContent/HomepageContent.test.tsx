@@ -401,6 +401,96 @@ describe('HomepageContent', () => {
       await waitFor(() => expect(menu.parentElement).toHaveStyle({ transform: 'translate3d(500px,233px,0)' }))
     })
 
+    describe('by role', () => {
+      afterEach(() => {
+        mockItems = MOCK_DATA
+        bulkTrashEnabled = false
+      })
+
+      const findMenuItemNames = async (documentName: string) => {
+        const row = (await screen.findByText(documentName)).closest<HTMLElement>('[role="row"]')!
+        act(() =>
+          within(row)
+            .getByRole('button', { name: /Actions/ })
+            .focus(),
+        )
+        await userEvent.keyboard('{Enter}')
+        const items = within(await screen.findByRole('menu')).getAllByRole('menuitem')
+        return items.map((item) => item.textContent)
+      }
+
+      const places = {
+        'in My files': {
+          location: { type: 'path', path: ['Folder'] },
+          isSharedWithMe: false,
+          isSharedDirectly: false,
+          ancestorsNodeUids: ['volume1~folder', MY_FILES_ROOT_UID],
+        },
+        'shared directly': {
+          location: { type: 'shared-with-me' },
+          isSharedWithMe: true,
+          isSharedDirectly: true,
+          ancestorsNodeUids: [],
+        },
+        'in a shared folder': {
+          location: { type: 'shared-with-me' },
+          isSharedWithMe: true,
+          isSharedDirectly: false,
+          ancestorsNodeUids: ['volume2~sharedFolder'],
+        },
+        'shared directly and in a shared folder': {
+          location: { type: 'shared-with-me' },
+          isSharedWithMe: true,
+          isSharedDirectly: true,
+          ancestorsNodeUids: ['volume2~sharedFolder'],
+        },
+      } satisfies Record<string, Partial<RecentDocumentsItemValue>>
+
+      const roles = [
+        { role: 'admin', items: ['Open', 'Share', 'Move', 'Open folder', 'Rename', 'Move to trash'], selectable: true },
+        { role: 'editor', items: ['Open', 'Move', 'Open folder', 'Rename', 'Move to trash'], selectable: true },
+        { role: 'viewer', items: ['Open', 'Open folder'], selectable: false },
+        // A document without a role gets no actions.
+        { role: undefined, items: ['Open', 'Open folder'], selectable: false },
+      ]
+      // A document shared directly can't be moved, renamed or trashed, whatever the role, even if it also sits in a shared
+      // folder, so it can't be selected for bulk actions either.
+      const cases = roles.flatMap((role) =>
+        Object.entries(places).map(([place, value]) => ({
+          ...role,
+          items: value.isSharedDirectly
+            ? role.items.filter((item) => item !== 'Move' && item !== 'Rename' && item !== 'Move to trash')
+            : role.items,
+          selectable: role.selectable && !value.isSharedDirectly,
+          place,
+          value,
+        })),
+      )
+
+      test.each(cases)('a $role document $place offers $items', async ({ role, value, items }) => {
+        mockItems = [
+          createMockRecentDocument({ name: 'Role Doc', effectiveRole: role as MemberRole | undefined, ...value }),
+        ]
+        renderWithProviders(<HomepageContent />)
+
+        expect(await findMenuItemNames('Role Doc')).toEqual(items)
+      })
+
+      test.each(cases)(
+        'a $role document $place can be selected for bulk actions: $selectable',
+        async ({ role, value, selectable }) => {
+          bulkTrashEnabled = true
+          mockItems = [
+            createMockRecentDocument({ name: 'Role Doc', effectiveRole: role as MemberRole | undefined, ...value }),
+          ]
+          renderWithProviders(<HomepageContent />)
+          await screen.findByText('Role Doc')
+
+          expect(screen.queryAllByRole('checkbox', { name: 'Select Role Doc' })).toHaveLength(selectable ? 1 : 0)
+        },
+      )
+    })
+
     test('Escape closes it and gives focus back to the Actions button', async () => {
       renderWithProviders(<HomepageContent />)
       const { actions } = await openMenuWithActions()

@@ -165,6 +165,10 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     })
     if (result.isFailed()) {
       this.logger.error('Failed to get node', result.getError())
+      // Only the owner can read a trashed node, but the trash or restore itself went through
+      if (options.imposeTrashState) {
+        this.documentState.setProperty('documentTrashState', options.imposeTrashState)
+      }
       return
     }
 
@@ -341,6 +345,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
       editorYjsState,
+      this.documentState.getProperty('userRole').canEdit(),
     )
 
     if (result.isFailed()) {
@@ -363,6 +368,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     const result = await this._duplicateDocument.executePrivate(
       this.documentState.getProperty('entitlements').nodeMeta,
       yjsContent,
+      this.documentState.getProperty('userRole').canEdit(),
     )
 
     if (result.isFailed()) {

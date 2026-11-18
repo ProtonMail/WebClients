@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
 
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
-import { type NodeEntity, getDrive } from '@proton/drive/sdk'
+import { MemberRole, type NodeEntity, getDrive } from '@proton/drive/sdk'
 import { assignUrl } from '@proton/shared/lib/helpers/location'
 import { getNewWindow } from '@proton/shared/lib/helpers/window'
 import { DocsApiError, SeedError } from '@proton-docs/realtime-sdk'
@@ -284,6 +284,18 @@ describe('useDocumentFileActions', () => {
       await waitFor(() => expect(newWindow.handle.location.assign).toHaveBeenCalledTimes(1))
     })
 
+    test.each<[string, Partial<NodeEntity>, DocumentRole]>([
+      ['a Viewer', {}, 'Viewer'],
+      ['an Editor of a document shared directly', { membership: {} as NodeEntity['membership'] }, 'Editor'],
+    ])('%s gets the copy in My files', async (_case, node, role) => {
+      const { result } = renderActions({ node: { ...NODE, ...node } as NodeEntity, role })
+
+      act(() => result.current.makeACopy())
+
+      await waitFor(() => expect(result.current.isMakingACopy).toBe(false))
+      expect(driveCompat.createDocumentNode.mock.calls[0][0]).toEqual({ volumeId: 'MYVOLUME', linkId: 'MYFILES' })
+    })
+
     test('does nothing until the editor shows the document', () => {
       const { result } = renderActions({ exportInvoker: undefined })
 
@@ -295,20 +307,28 @@ describe('useDocumentFileActions', () => {
   })
 
   describe('Move to folder', () => {
-    test('opens the Drive move modal on the document', () => {
-      const { result } = renderActions()
+    test.each<DocumentRole>(['Admin', 'Editor'])('an %s opens the Drive move modal on the document', (role) => {
+      const { result } = renderActions({ role })
 
       act(() => result.current.moveToFolder())
 
       expect(mockShowMoveItemsModal).toHaveBeenCalledWith({ nodeUids: ['VOLUME~LINK'] })
     })
 
-    test('a Viewer can move it too', () => {
+    test('a Viewer moves nothing, since Drive never lets a viewer move', () => {
       const { result } = renderActions({ role: 'Viewer' })
 
       act(() => result.current.moveToFolder())
 
-      expect(mockShowMoveItemsModal).toHaveBeenCalledTimes(1)
+      expect(mockShowMoveItemsModal).not.toHaveBeenCalled()
+    })
+
+    test('a document shared directly moves nothing, since it has no folder to move within', () => {
+      const { result } = renderActions({ node: { ...NODE, membership: {} } as NodeEntity })
+
+      act(() => result.current.moveToFolder())
+
+      expect(mockShowMoveItemsModal).not.toHaveBeenCalled()
     })
   })
 
@@ -353,24 +373,36 @@ describe('useDocumentFileActions', () => {
   })
 
   describe('Move to trash', () => {
-    test('an Admin trashes the document with the Drive SDK, then sees the trashed modal with Undo', async () => {
-      const gate = deferred()
-      drive.trashNodes.mockImplementation(() => waitThen(gate.promise, { ok: true }))
-      const { result } = renderActions()
+    test.each<DocumentRole>(['Admin', 'Editor'])(
+      'an %s trashes the document with the Drive SDK, then sees the trashed modal with Undo',
+      async (role) => {
+        const gate = deferred()
+        drive.trashNodes.mockImplementation(() => waitThen(gate.promise, { ok: true }))
+        const { result } = renderActions({ role })
+
+        act(() => result.current.moveToTrash())
+
+        expect(result.current.trashState).toBe('trashing')
+        expect(drive.trashNodes).toHaveBeenCalledWith(['VOLUME~LINK'])
+        await act(async () => gate.resolve())
+        expect(result.current.trashState).toBe('trashed')
+        renderModals(result.current)
+        expect(screen.getByText('Document moved to trash')).toBeInTheDocument()
+        expect(screen.getByRole('button', { name: 'Undo', hidden: true })).toBeInTheDocument()
+      },
+    )
+
+    test('a Viewer trashes nothing', () => {
+      const { result } = renderActions({ role: 'Viewer' })
 
       act(() => result.current.moveToTrash())
 
-      expect(result.current.trashState).toBe('trashing')
-      expect(drive.trashNodes).toHaveBeenCalledWith(['VOLUME~LINK'])
-      await act(async () => gate.resolve())
-      expect(result.current.trashState).toBe('trashed')
-      renderModals(result.current)
-      expect(screen.getByText('Document moved to trash')).toBeInTheDocument()
-      expect(screen.getByRole('button', { name: 'Undo', hidden: true })).toBeInTheDocument()
+      expect(drive.trashNodes).not.toHaveBeenCalled()
+      expect(result.current.trashState).toBe('not_trashed')
     })
 
-    test.each<DocumentRole>(['Editor', 'Viewer'])('a %s trashes nothing', (role) => {
-      const { result } = renderActions({ role })
+    test('a document shared directly trashes nothing, even for an Editor', () => {
+      const { result } = renderActions({ node: { ...NODE, membership: {} } as NodeEntity, role: 'Editor' })
 
       act(() => result.current.moveToTrash())
 
@@ -584,16 +616,43 @@ describe('useDocumentFileActions', () => {
       expect(result.current.trashState).toBe('trashed')
     })
 
-    test.each<DocumentRole>(['Editor', 'Viewer'])(
-      'a %s gets Go to Drive alone, and restoring does nothing',
-      async (role) => {
-        const { result } = renderActions({ node: TRASHED_NODE, role })
-        renderModals(result.current)
+    test('the owner takes it out of trash with the Drive SDK', async () => {
+      const { result } = renderActions({ node: TRASHED_NODE, role: 'Admin' })
+      renderModals(result.current)
 
-        expect(screen.queryByRole('button', { name: 'Take out of trash', hidden: true })).not.toBeInTheDocument()
-        expect(screen.getByRole('button', { name: 'Go to Drive', hidden: true })).toBeInTheDocument()
-      },
-    )
+      await userEvent.click(screen.getByRole('button', { name: 'Take out of trash', hidden: true }))
+
+      expect(drive.restoreNodes).toHaveBeenCalledWith(['VOLUME~LINK'])
+      await waitFor(() => expect(result.current.trashState).toBe('not_trashed'))
+    })
+
+    // Drive refuses to restore a document shared with the user, however it was shared and whatever the role
+    test.each<[string, Partial<NodeEntity>, DocumentRole]>([
+      ['a document shared directly', { membership: {} as NodeEntity['membership'] }, 'Admin'],
+      ['a document in a shared folder', { directRole: MemberRole.Inherited }, 'Admin'],
+      ['a document in a shared folder, for a Viewer', { directRole: MemberRole.Inherited }, 'Viewer'],
+    ])('%s gets Go to Drive alone', (_case, node, role) => {
+      const { result } = renderActions({ node: { ...TRASHED_NODE, ...node } as NodeEntity, role })
+      renderModals(result.current)
+
+      expect(screen.queryByRole('button', { name: 'Take out of trash', hidden: true })).not.toBeInTheDocument()
+      expect(screen.getByRole('button', { name: 'Go to Drive', hidden: true })).toBeInTheDocument()
+    })
+
+    test('trashing a document in a shared folder offers no Undo', async () => {
+      drive.trashNodes.mockImplementation(() => results({ ok: true }))
+      const { result } = renderActions({
+        node: { ...NODE, directRole: MemberRole.Inherited } as NodeEntity,
+        role: 'Editor',
+      })
+
+      act(() => result.current.moveToTrash())
+
+      await waitFor(() => expect(result.current.trashState).toBe('trashed'))
+      renderModals(result.current)
+      expect(screen.getByText('Document moved to trash')).toBeInTheDocument()
+      expect(screen.queryByRole('button', { name: 'Undo', hidden: true })).not.toBeInTheDocument()
+    })
 
     test('Go to Drive opens the Drive root in this window', async () => {
       const { result } = renderActions({ node: TRASHED_NODE })
@@ -604,12 +663,12 @@ describe('useDocumentFileActions', () => {
       expect(assignUrl).toHaveBeenCalledWith('http://drive.localhost/u/3')
     })
 
-    test('a role dropping from Admin takes the restore button away', () => {
+    test('Drive reporting the document as shared with the user takes the restore button away', () => {
       const { result, rerender } = renderActions({ node: TRASHED_NODE })
       const modals = renderModals(result.current)
       expect(screen.getByRole('button', { name: 'Take out of trash', hidden: true })).toBeInTheDocument()
 
-      rerender({ node: TRASHED_NODE, role: 'Editor' })
+      rerender({ node: { ...TRASHED_NODE, directRole: MemberRole.Inherited } as NodeEntity, role: 'Admin' })
       modals.rerender(<>{result.current.modals}</>)
 
       expect(screen.queryByRole('button', { name: 'Take out of trash', hidden: true })).not.toBeInTheDocument()

@@ -176,6 +176,70 @@ describe('useRecents', () => {
     })
   })
 
+  // The menu offers sharing, moving, renaming and trashing by this role, so a wrong one shows or hides them all.
+  describe('effective role', () => {
+    const ownDocument = () => [
+      createNode({ uid: 'volume1~root', type: NodeType.Folder, directRole: MemberRole.Admin }),
+      createNode({ uid: 'volume1~doc', parentUid: 'volume1~root', directRole: MemberRole.Admin }),
+    ]
+    const sharedDirectly = (role: MemberRole) => [createNode({ uid: 'volume1~doc', membership: {}, directRole: role })]
+    // The recipient sees the shared folder as the top of the hierarchy, and the document inherits its role.
+    const inSharedFolder = (role: MemberRole) => [
+      createNode({ uid: 'volume1~folder', type: NodeType.Folder, membership: {}, directRole: role }),
+      createNode({ uid: 'volume1~doc', parentUid: 'volume1~folder', directRole: MemberRole.Inherited }),
+    ]
+    // Shared on its own too, inside a folder shared with the user as a viewer
+    const sharedDirectlyInSharedFolder = (role: MemberRole) => [
+      createNode({ uid: 'volume1~folder', type: NodeType.Folder, membership: {}, directRole: MemberRole.Viewer }),
+      createNode({ uid: 'volume1~doc', parentUid: 'volume1~folder', membership: {}, directRole: role }),
+    ]
+
+    const cases = [
+      { place: 'in My files', nodes: ownDocument(), role: MemberRole.Admin, isSharedDirectly: false },
+      ...[MemberRole.Viewer, MemberRole.Editor, MemberRole.Admin].flatMap((role) => [
+        { place: 'shared directly', nodes: sharedDirectly(role), role, isSharedDirectly: true },
+        { place: 'in a shared folder', nodes: inSharedFolder(role), role, isSharedDirectly: false },
+        {
+          place: 'shared directly and in a shared folder',
+          nodes: sharedDirectlyInSharedFolder(role),
+          role,
+          isSharedDirectly: true,
+        },
+      ]),
+    ]
+
+    test.each(cases)(
+      'a document $place is loaded with the role $role, shared directly: $isSharedDirectly',
+      async ({ nodes, role, isSharedDirectly }) => {
+        const { result } = await renderLoadedRecents(nodes)
+
+        expect(result.current.recentDocuments['volume1~doc'].effectiveRole).toBe(role)
+        expect(result.current.recentDocuments['volume1~doc'].isSharedDirectly).toBe(isSharedDirectly)
+      },
+    )
+
+    test.each(cases)(
+      'a document $place keeps the role $role when it is reloaded, shared directly: $isSharedDirectly',
+      async ({ nodes, role, isSharedDirectly }) => {
+        const { result } = await renderLoadedRecents(nodes)
+        useRecentsStore.getState().updateDocument({
+          ...result.current.recentDocuments['volume1~doc'],
+          effectiveRole: undefined,
+          isSharedDirectly: undefined,
+        })
+
+        await act(() =>
+          result.current.recentsListener(
+            createEvent({ type: DriveEventType.NodeUpdated, nodeUid: 'volume1~doc', isTrashed: false }),
+          ),
+        )
+
+        expect(result.current.recentDocuments['volume1~doc'].effectiveRole).toBe(role)
+        expect(result.current.recentDocuments['volume1~doc'].isSharedDirectly).toBe(isSharedDirectly)
+      },
+    )
+  })
+
   test('updateRenamedDocumentInCache renames cached document', async () => {
     const { result } = await renderLoadedRecents([createNode({ uid: 'volume1~doc', name: 'Old' })])
 

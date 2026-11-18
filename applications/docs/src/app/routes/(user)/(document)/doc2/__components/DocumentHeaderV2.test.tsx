@@ -140,7 +140,12 @@ function headerElement(role: DocumentRole, status?: ReactNode) {
   return (
     <ConfigContext.Provider value={{ APP_VERSION: '1.2.3', APP_NAME: 'proton-docs' } as ProtonConfig}>
       <DocumentHeaderV2
-        node={{ uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT', name: { ok: true, value: 'Plans' } }}
+        node={{
+          uid: 'VOLUME~LINK',
+          parentUid: 'VOLUME~PARENT',
+          name: { ok: true, value: 'Plans' },
+          membership: undefined,
+        }}
         role={role}
         participants={[]}
         editorInvoker={undefined}
@@ -176,7 +181,12 @@ function headerWithParticipants(
   return (
     <ConfigContext.Provider value={{ APP_VERSION: '1.2.3', APP_NAME: 'proton-docs' } as ProtonConfig}>
       <DocumentHeaderV2
-        node={{ uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT', name: { ok: true, value: 'Plans' } }}
+        node={{
+          uid: 'VOLUME~LINK',
+          parentUid: 'VOLUME~PARENT',
+          name: { ok: true, value: 'Plans' },
+          membership: undefined,
+        }}
         role={role}
         participants={activeParticipants}
         editorInvoker={editorInvoker}

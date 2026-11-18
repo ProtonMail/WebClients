@@ -110,6 +110,16 @@ describe('AuthenticatedDocController', () => {
       expect(documentState.getProperty('documentTrashState')).toBe('trashed')
     })
 
+    // A user who isn't the owner, such as an editor in a shared folder, can't read the node once it's trashed
+    it('trashState should be trashed when the node can no longer be read', async () => {
+      controller._getNode.execute = jest.fn().mockResolvedValue(Result.fail('Item not found'))
+
+      await controller.trashDocument()
+
+      expect(documentState.getProperty('documentTrashState')).toBe('trashed')
+      expect(controller.didTrashDocInCurrentSession).toBe(true)
+    })
+
     it('should refreshNodeAndDocMeta', async () => {
       const refreshNodeAndDocMeta = jest.spyOn(controller, 'refreshNodeAndDocMeta')
 

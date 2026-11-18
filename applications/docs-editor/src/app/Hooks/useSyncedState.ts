@@ -11,6 +11,7 @@ export function useSyncedState() {
   const [receivedEverythingFromRTS, setReceivedEverythingFromRTS] = useState(
     application.syncedState.getProperty('receivedEverythingFromRTS'),
   )
+  const [canOrganize, setCanOrganize] = useState(application.syncedState.getProperty('canOrganize'))
 
   useEffect(() => {
     return application.syncedState.subscribeToProperty('userName', (userName) => {
@@ -30,9 +31,16 @@ export function useSyncedState() {
     })
   }, [application.syncedState])
 
+  useEffect(() => {
+    return application.syncedState.subscribeToProperty('canOrganize', (canOrganize) => {
+      setCanOrganize(canOrganize)
+    })
+  }, [application.syncedState])
+
   return {
     userName,
     suggestionsEnabled,
     receivedEverythingFromRTS,
+    canOrganize,
   }
 }

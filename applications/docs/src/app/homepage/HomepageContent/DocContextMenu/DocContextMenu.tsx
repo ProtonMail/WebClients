@@ -154,16 +154,17 @@ type DocumentMenuItemsProps = { currentDocument: RecentDocumentsItem; close: () 
 
 function DocumentMenuItems({ currentDocument, close }: DocumentMenuItemsProps) {
   const separator = <DropdownMenuSeparator />
+  const mayOrganize = canOrganize(currentDocument)
 
   return (
     <>
       <OpenButton currentDocument={currentDocument} close={close} />
       {canShare(currentDocument) ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
       {separator}
-      <MoveButton currentDocument={currentDocument} close={close} />
+      {mayOrganize ? <MoveButton currentDocument={currentDocument} close={close} /> : null}
       <OpenFolderButton currentDocument={currentDocument} close={close} />
-      <RenameButton currentDocument={currentDocument} close={close} />
-      {canTrash(currentDocument) ? (
+      {mayOrganize ? <RenameButton currentDocument={currentDocument} close={close} /> : null}
+      {mayOrganize ? (
         <>
           {separator}
           <MoveToTrashButton currentDocument={currentDocument} />
@@ -210,12 +211,18 @@ function SelectionMenuItems({ actions: { move, trash, disabled }, close }: Selec
   )
 }
 
+/*
+ * What a role may do with a document, here and in the document's own menus, documents and spreadsheets alike: admins
+ * share; editors and admins move, rename and trash their own documents and those in a shared folder, never one shared
+ * with them directly, as Drive's Shared with me; viewers do none of these. Drive reports an editor as an admin while the
+ * owner's "Editors can share" setting is on, so an editor here is one who may not share.
+ */
 function canShare(document: RecentDocumentsItem) {
   return isAdmin(document.effectiveRole)
 }
 
-export function canTrash(document: RecentDocumentsItem) {
-  return isAdmin(document.effectiveRole)
+export function canOrganize(document: RecentDocumentsItem) {
+  return (isAdmin(document.effectiveRole) || document.effectiveRole === 'editor') && !document.isSharedDirectly
 }
 
 // `MemberRole` is imported as type only, so the Drive SDK isn't loaded at runtime.

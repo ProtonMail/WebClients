@@ -28,7 +28,7 @@ import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../home
 import { isMyDocument } from '../is-my-document'
 import { useRowSelection, type RowSelection } from './useRowSelection'
 import { SortSelect } from './SortSelect'
-import { DocContextMenu, canTrash } from './DocContextMenu/DocContextMenu'
+import { DocContextMenu, canOrganize } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
@@ -59,7 +59,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   const openOnDoubleClick = featureFlags.bulkTrash
   const bulkEnabled = openOnDoubleClick && (isRecents || isSearch)
   const allItems = itemsSections.flatMap(({ items }) => items)
-  const selectableIds = bulkEnabled ? allItems.filter(canTrash).map((item) => item.uniqueId()) : []
+  const selectableIds = bulkEnabled ? allItems.filter(canOrganize).map((item) => item.uniqueId()) : []
   const selectableIdsSet = new Set(selectableIds)
   const resetKey = `${state.view}|${'query' in state ? state.query : ''}|${type}`
   const selection = useRowSelection(selectableIds, resetKey)

@@ -23,6 +23,8 @@ export async function trashAndNotify(
   errorTracking: ErrorTracking,
   nodeUid: string,
   emitRestored: () => void,
+  /** Only the owner restores: Drive refuses a document shared with the user, however it was shared */
+  canRestore: boolean,
 ) {
   await trashDocument(drive, nodeUid)
 
@@ -40,7 +42,7 @@ export async function trashAndNotify(
   createNotification({
     type: 'success',
     text: c('Notification').t`Document moved to trash`,
-    action: undoAction(undo),
+    action: canRestore ? undoAction(undo) : undefined,
   })
 }
 
@@ -50,6 +52,8 @@ export async function trashManyAndNotify(
   errorTracking: ErrorTracking,
   nodeUids: string[],
   onRestored: () => void,
+  /** Whether every document is the user's own, as `trashAndNotify`'s `canRestore` */
+  canRestore: boolean,
 ): Promise<BatchResult> {
   const result = await trashDocuments(drive, nodeUids)
   const { succeeded, failed } = result
@@ -86,7 +90,7 @@ export async function trashManyAndNotify(
         `${numberOfItems} items moved to trash`,
         numberOfItems,
       ),
-      action: undoAction(undo),
+      action: canRestore ? undoAction(undo) : undefined,
     })
   }
 

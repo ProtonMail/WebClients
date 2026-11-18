@@ -81,15 +81,28 @@ export async function createSpreadsheet(node: DocumentNode, driveCompat: DriveCo
 
 /**
  * Creates a text document named `name` next to `node` and has the SDK seed it with `state`, a whole yjs document, as
- * its first commit (ADR-0013): the copy Make a copy makes, and later version history's restore as copy. Rejects with
- * the SDK's `SeedError` or `DocsApiError` when the seed fails, which leaves the new document empty, as /doc's does.
+ * its first commit (ADR-0013): the copy Make a copy makes, and later version history's restore as copy. Unless
+ * `canOrganize` (`getDocumentRole.ts` `canOrganizeDocument`), the copy goes to My files: a viewer can't write to the
+ * node's folder, and a document shared directly is copied to My files even when it sits in a folder the user can write
+ * to. Rejects with the SDK's `SeedError` or `DocsApiError` when the seed fails, which leaves the new document empty, as
+ * /doc's does.
  */
 export async function duplicateWithState(
   state: Uint8Array<ArrayBuffer>,
   name: string,
-  { node, driveCompat, client }: { node: DocumentNode; driveCompat: DriveCompat; client: SeedingClient },
+  {
+    node,
+    canOrganize,
+    driveCompat,
+    client,
+  }: { node: DocumentNode; canOrganize: boolean; driveCompat: DriveCompat; client: SeedingClient },
 ): Promise<NodeMeta> {
-  const copy = await createDocumentNextTo(node, driveCompat, name, 'doc')
+  const copy = await createDocumentNextTo(
+    canOrganize ? node : { ...node, parentUid: undefined },
+    driveCompat,
+    name,
+    'doc',
+  )
   await client.seedInitialCommit({ nodeMeta: copy, state })
   return copy
 }
