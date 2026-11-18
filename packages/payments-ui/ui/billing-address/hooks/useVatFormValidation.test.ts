@@ -1,6 +1,7 @@
 import { act } from 'react';
 
 import { renderHook } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import {
     type VatFormFields,
@@ -11,12 +12,12 @@ import { isProduction } from '@proton/shared/lib/helpers/sentry';
 
 import { useVatFormValidation } from './useVatFormValidation';
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
-    isProduction: jest.fn().mockReturnValue(true),
+vi.mock('@proton/shared/lib/helpers/sentry', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/helpers/sentry')),
+    isProduction: vi.fn().mockReturnValue(true),
 }));
 
-const mockIsProduction = isProduction as jest.MockedFunction<typeof isProduction>;
+const mockIsProduction = isProduction as MockedFunction<typeof isProduction>;
 
 const emptyFields: VatFormFields = {
     CountryCode: 'US',

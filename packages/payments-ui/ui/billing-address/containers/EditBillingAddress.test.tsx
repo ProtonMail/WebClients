@@ -1,29 +1,30 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { changeBillingAddress } from '@proton/account/paymentStatus';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
-import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 
 import { EditBillingAddressModal } from './EditBillingAddress';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(),
 }));
 
-jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
-    usePaymentsApi: jest.fn(),
+vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
+    usePaymentsApi: vi.fn(),
 }));
 
-jest.mock('@proton/account/paymentStatus', () => ({
-    ...jest.requireActual('@proton/account/paymentStatus'),
-    changeBillingAddress: jest.fn((payload) => ({ type: 'changeBillingAddress', payload })),
+vi.mock('@proton/account/paymentStatus', async () => ({
+    ...(await vi.importActual<any>('@proton/account/paymentStatus')),
+    changeBillingAddress: vi.fn((payload) => ({ type: 'changeBillingAddress', payload })),
 }));
 
-const mockUseNotifications = useNotifications as jest.MockedFunction<typeof useNotifications>;
-const mockUsePaymentsApi = usePaymentsApi as jest.MockedFunction<typeof usePaymentsApi>;
+const mockUseNotifications = useNotifications as MockedFunction<typeof useNotifications>;
+const mockUsePaymentsApi = usePaymentsApi as MockedFunction<typeof usePaymentsApi>;
 
 function clickSave() {
     fireEvent.click(screen.getByRole('button', { name: 'Save', hidden: true }));
@@ -50,7 +51,7 @@ function renderEditBillingAddressModal({
     initialFullBillingAddress?: FullBillingAddress;
     paymentsApi?: PaymentsApi;
 } = {}) {
-    const updateFullBillingAddress = jest.fn().mockResolvedValue(undefined);
+    const updateFullBillingAddress = vi.fn().mockResolvedValue(undefined);
     const defaultPaymentsApi = {
         updateFullBillingAddress,
     } as unknown as PaymentsApi;
@@ -59,8 +60,8 @@ function renderEditBillingAddressModal({
         paymentsApi: paymentsApi ?? defaultPaymentsApi,
     } as any);
 
-    const onResolve = jest.fn();
-    const onReject = jest.fn();
+    const onResolve = vi.fn();
+    const onReject = vi.fn();
 
     const createModal = () => (
         <EditBillingAddressModal
@@ -85,11 +86,11 @@ function renderEditBillingAddressModal({
 }
 
 describe('EditBillingAddressModal', () => {
-    let createNotification: jest.Mock;
+    let createNotification: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        createNotification = jest.fn();
+        vi.clearAllMocks();
+        createNotification = vi.fn();
         mockUseNotifications.mockReturnValue({
             createNotification,
         } as any);

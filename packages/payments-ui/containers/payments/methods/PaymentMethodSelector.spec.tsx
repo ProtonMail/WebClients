@@ -22,7 +22,7 @@ it('renders the Google Pay and iDEAL option marks', () => {
                 newMethod(PAYMENT_METHOD_TYPES.GOOGLE_PAY, 'Google Pay'),
                 newMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, IDEAL_WERO_BRAND_NAME),
             ]}
-            onChange={jest.fn()}
+            onChange={vi.fn()}
         />
     );
 

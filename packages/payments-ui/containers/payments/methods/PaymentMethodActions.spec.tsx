@@ -1,8 +1,9 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { Mock } from 'vitest';
 
-import { mockUseSubscription } from '@proton/account/testing/mockUseSubscription';
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseSubscription } from '@proton/account/testing/vitest/mockUseSubscription';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -14,35 +15,35 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import PaymentMethodActions from './PaymentMethodActions';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn().mockReturnValue({
-        createNotification: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn().mockReturnValue({
+        createNotification: vi.fn(),
     }),
 }));
 
-jest.mock('@proton/components/hooks/useModals', () =>
-    jest.fn().mockReturnValue({
-        createModal: jest.fn(),
-    })
-);
+vi.mock('@proton/components/hooks/useModals', () => ({
+    default: vi.fn().mockReturnValue({
+        createModal: vi.fn(),
+    }),
+}));
 
-jest.mock('@proton/components/hooks/useEventManager', () =>
-    jest.fn().mockReturnValue({
-        call: jest.fn().mockResolvedValue(undefined),
-    })
-);
+vi.mock('@proton/components/hooks/useEventManager', () => ({
+    default: vi.fn().mockReturnValue({
+        call: vi.fn().mockResolvedValue(undefined),
+    }),
+}));
 
-jest.mock('@proton/app-context/useApi', () => ({
-    useApi: jest.fn().mockReturnValue(jest.fn()),
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: vi.fn().mockReturnValue(vi.fn()),
 }));
 
 // The real DropdownActions renders its overflow actions inside a Portal-backed dropdown.
 // Mocking Portal to render its children inline lets us exercise the real component.
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
-jest.mock('../../../ui/containers/EditCardModal', () => ({
+vi.mock('../../../ui/containers/EditCardModal', () => ({
     __esModule: true,
-    default: jest.fn().mockImplementation(() => <span>Edit Card Modal</span>),
+    default: vi.fn().mockImplementation(() => <span>Edit Card Modal</span>),
 }));
 
 beforeEach(() => {
@@ -211,13 +212,13 @@ describe('PaymentMethodActions', () => {
             };
 
             const api = useApi();
-            (api as jest.Mock).mockReset();
+            (api as Mock).mockReset();
 
             const { call } = useEventManager();
-            (call as jest.Mock).mockReset().mockResolvedValue(undefined);
+            (call as Mock).mockReset().mockResolvedValue(undefined);
 
             const { createNotification } = useNotifications();
-            (createNotification as jest.Mock).mockReset();
+            (createNotification as Mock).mockReset();
 
             render(<PaymentMethodActions method={method1} methods={[method0, method1]} app={APPS.PROTONMAIL} />);
 
@@ -261,13 +262,13 @@ describe('PaymentMethodActions', () => {
             };
 
             const api = useApi();
-            (api as jest.Mock).mockReset();
+            (api as Mock).mockReset();
 
             const { call } = useEventManager();
-            (call as jest.Mock).mockReset().mockRejectedValue(new Error('events failed'));
+            (call as Mock).mockReset().mockRejectedValue(new Error('events failed'));
 
             const { createNotification } = useNotifications();
-            (createNotification as jest.Mock).mockReset();
+            (createNotification as Mock).mockReset();
 
             render(<PaymentMethodActions method={method1} methods={[method0, method1]} app={APPS.PROTONMAIL} />);
 
@@ -298,13 +299,13 @@ describe('PaymentMethodActions', () => {
             };
 
             const api = useApi();
-            (api as jest.Mock).mockReset();
+            (api as Mock).mockReset();
 
             const { call } = useEventManager();
-            (call as jest.Mock).mockReset().mockRejectedValue(new Error('events failed'));
+            (call as Mock).mockReset().mockRejectedValue(new Error('events failed'));
 
             const { createNotification } = useNotifications();
-            (createNotification as jest.Mock).mockReset();
+            (createNotification as Mock).mockReset();
 
             render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
 
@@ -338,16 +339,16 @@ describe('PaymentMethodActions', () => {
                 Autopay: Autopay.ENABLE,
             };
             const { createModal } = useModals();
-            (createModal as jest.Mock).mockReset();
+            (createModal as Mock).mockReset();
 
             const api = useApi();
-            (api as jest.Mock).mockReset();
+            (api as Mock).mockReset();
 
             const { call } = useEventManager();
-            (call as jest.Mock).mockReset().mockResolvedValue(undefined);
+            (call as Mock).mockReset().mockResolvedValue(undefined);
 
             const { createNotification } = useNotifications();
-            (createNotification as jest.Mock).mockReset();
+            (createNotification as Mock).mockReset();
 
             render(<PaymentMethodActions method={method} methods={[method]} app={APPS.PROTONMAIL} />);
 

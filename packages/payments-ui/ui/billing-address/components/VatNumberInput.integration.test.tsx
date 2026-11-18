@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 
@@ -13,10 +13,10 @@ import { VatNumberInput } from './VatNumberInput';
 // useTaxCountry, useVatFormValidation, the countriesWithVatNumberOnSignup set and the B2B-plan
 // gating — runs for real, so this test exercises the same code path as production.
 const mockPaymentsApi = {
-    getFullBillingAddress: jest.fn().mockResolvedValue({}),
+    getFullBillingAddress: vi.fn().mockResolvedValue({}),
 } as unknown as PaymentsApi;
 
-jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
+vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
     usePaymentsApi: () => ({ paymentsApi: mockPaymentsApi }),
 }));
 

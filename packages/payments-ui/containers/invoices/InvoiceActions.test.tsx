@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useRedirectToAccountApp } from '@proton/components/containers/desktop/useRedirectToAccountApp';
@@ -11,29 +12,29 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import InvoiceActions from './InvoiceActions';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn().mockReturnValue({
-        createNotification: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn().mockReturnValue({
+        createNotification: vi.fn(),
     }),
 }));
 
-jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
-    usePaymentsApi: jest.fn(),
+vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
+    usePaymentsApi: vi.fn(),
 }));
 
-jest.mock('@proton/components/hooks/useModals', () =>
-    jest.fn().mockReturnValue({
-        createModal: jest.fn(),
-    })
-);
+vi.mock('@proton/components/hooks/useModals', () => ({
+    default: vi.fn().mockReturnValue({
+        createModal: vi.fn(),
+    }),
+}));
 
-jest.mock('@proton/components/containers/desktop/useRedirectToAccountApp', () => ({
-    useRedirectToAccountApp: jest.fn().mockReturnValue(jest.fn().mockReturnValue(false)),
+vi.mock('@proton/components/containers/desktop/useRedirectToAccountApp', () => ({
+    useRedirectToAccountApp: vi.fn().mockReturnValue(vi.fn().mockReturnValue(false)),
 }));
 
 // The real DropdownActions renders its overflow actions inside a Portal-backed dropdown.
 // Mocking Portal to render its children inline lets us exercise the real component.
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
 const baseInvoice: Invoice = {
     ID: 'invoice-1',
@@ -57,10 +58,10 @@ const openActionsDropdown = async () => {
 };
 
 function renderInvoiceActions(invoice: Invoice, overrides: Partial<Parameters<typeof InvoiceActions>[0]> = {}) {
-    const fetchInvoices = jest.fn();
-    const onPreview = jest.fn();
-    const onDownload = jest.fn();
-    const onEdit = jest.fn().mockResolvedValue(undefined);
+    const fetchInvoices = vi.fn();
+    const onPreview = vi.fn();
+    const onDownload = vi.fn();
+    const onEdit = vi.fn().mockResolvedValue(undefined);
 
     render(
         <InvoiceActions
@@ -77,17 +78,17 @@ function renderInvoiceActions(invoice: Invoice, overrides: Partial<Parameters<ty
     return { fetchInvoices, onPreview, onDownload, onEdit };
 }
 
-const mockUsePaymentsApi = usePaymentsApi as jest.MockedFunction<typeof usePaymentsApi>;
+const mockUsePaymentsApi = usePaymentsApi as MockedFunction<typeof usePaymentsApi>;
 
 describe('InvoiceActions', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        (useNotifications as jest.Mock).mockReturnValue({ createNotification: jest.fn() });
-        (useModals as jest.Mock).mockReturnValue({ createModal: jest.fn() });
-        (useRedirectToAccountApp as jest.Mock).mockReturnValue(jest.fn().mockReturnValue(false));
+        vi.clearAllMocks();
+        (useNotifications as Mock).mockReturnValue({ createNotification: vi.fn() });
+        (useModals as Mock).mockReturnValue({ createModal: vi.fn() });
+        (useRedirectToAccountApp as Mock).mockReturnValue(vi.fn().mockReturnValue(false));
         mockUsePaymentsApi.mockReturnValue({
             paymentsApi: {
-                paymentStatus: jest.fn().mockResolvedValue({ VendorStates: { Card: true, Paypal: true } }),
+                paymentStatus: vi.fn().mockResolvedValue({ VendorStates: { Card: true, Paypal: true } }),
             },
         } as any);
     });
@@ -161,8 +162,8 @@ describe('InvoiceActions', () => {
 
     describe('Pay action', () => {
         it('opens PayInvoiceModal when payments are available', async () => {
-            const createModal = jest.fn();
-            (useModals as jest.Mock).mockReturnValue({ createModal });
+            const createModal = vi.fn();
+            (useModals as Mock).mockReturnValue({ createModal });
 
             renderInvoiceActions(baseInvoice);
             await openActionsDropdown();
@@ -173,13 +174,13 @@ describe('InvoiceActions', () => {
         });
 
         it('shows an error notification and does not open the modal when no payment method is available', async () => {
-            const createNotification = jest.fn();
-            const createModal = jest.fn();
-            (useNotifications as jest.Mock).mockReturnValue({ createNotification });
-            (useModals as jest.Mock).mockReturnValue({ createModal });
+            const createNotification = vi.fn();
+            const createModal = vi.fn();
+            (useNotifications as Mock).mockReturnValue({ createNotification });
+            (useModals as Mock).mockReturnValue({ createModal });
             mockUsePaymentsApi.mockReturnValue({
                 paymentsApi: {
-                    paymentStatus: jest.fn().mockResolvedValue({ VendorStates: { Card: false, Paypal: false } }),
+                    paymentStatus: vi.fn().mockResolvedValue({ VendorStates: { Card: false, Paypal: false } }),
                 },
             } as any);
 
@@ -200,9 +201,9 @@ describe('InvoiceActions', () => {
         });
 
         it('does not open the modal when redirected to the account app', async () => {
-            const createModal = jest.fn();
-            (useModals as jest.Mock).mockReturnValue({ createModal });
-            (useRedirectToAccountApp as jest.Mock).mockReturnValue(jest.fn().mockReturnValue(true));
+            const createModal = vi.fn();
+            (useModals as Mock).mockReturnValue({ createModal });
+            (useRedirectToAccountApp as Mock).mockReturnValue(vi.fn().mockReturnValue(true));
 
             renderInvoiceActions(baseInvoice);
             await openActionsDropdown();

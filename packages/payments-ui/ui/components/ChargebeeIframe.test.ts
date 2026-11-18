@@ -2,9 +2,9 @@ import { act, renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { PaymentIntent } from '@proton/chargebee/lib/types';
-import { setLocation } from '@proton/jest-env/setLocation';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { createApiError } from '@proton/shared/lib/fetch/ApiError';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import {
     getIframeUrl,
@@ -14,18 +14,18 @@ import {
     useCbIframe,
 } from './ChargebeeIframe';
 
-jest.mock('@proton/app-context/useApi', () => ({
-    useApi: jest
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: vi
         .fn()
-        .mockReturnValue(jest.fn().mockResolvedValue({ Site: 'site', PublishableKey: 'key', Domain: 'domain' })),
+        .mockReturnValue(vi.fn().mockResolvedValue({ Site: 'site', PublishableKey: 'key', Domain: 'domain' })),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn().mockReturnValue({ createNotification: vi.fn() }),
 }));
 
-jest.mock('@proton/components/containers/themes/ThemeProvider', () => ({
-    useTheme: jest.fn().mockReturnValue({ information: {} }),
+vi.mock('@proton/components/containers/themes/ThemeProvider', () => ({
+    useTheme: vi.fn().mockReturnValue({ information: {} }),
 }));
 
 describe('getIframeUrl', () => {
@@ -168,13 +168,13 @@ describe('getUnhandledIframeErrorLevel', () => {
     );
 });
 
-const flushPromises = () => act(() => jest.advanceTimersByTimeAsync(0));
+const flushPromises = () => act(() => vi.advanceTimersByTimeAsync(0));
 
 const setup = () => {
     const iframe = document.createElement('iframe');
     document.body.appendChild(iframe);
     const contentWindow = iframe.contentWindow as Window;
-    const postMessage = jest.spyOn(contentWindow, 'postMessage').mockImplementation(() => {});
+    const postMessage = vi.spyOn(contentWindow, 'postMessage').mockImplementation(() => {});
 
     const { result, unmount } = renderHook(() => useCbIframe());
     result.current.iframeRef.current = iframe;
@@ -206,12 +206,12 @@ const setup = () => {
 
 describe('validateCardForm', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.clearAllTimers();
-        jest.useRealTimers();
+        vi.clearAllTimers();
+        vi.useRealTimers();
     });
 
     it('should wait for the card form setup before validating it', async () => {
@@ -289,7 +289,7 @@ describe('validateCardForm', () => {
             status: 'failure',
             error: 'Timeout exceeded',
         });
-        await act(() => jest.advanceTimersByTimeAsync(20000));
+        await act(() => vi.advanceTimersByTimeAsync(20000));
 
         await rejection;
         expect(getPostedMessageTypes()).toEqual([]);
@@ -306,10 +306,10 @@ describe('validateCardForm', () => {
             status: 'failure',
             error: 'Timeout exceeded',
         });
-        await act(() => jest.advanceTimersByTimeAsync(15000));
+        await act(() => vi.advanceTimersByTimeAsync(15000));
         cbIframe.notifyIframeLoaded();
         cbIframe.handles.initializeCreditCard({ isNarrow: false }).catch(() => {});
-        await act(() => jest.advanceTimersByTimeAsync(5000));
+        await act(() => vi.advanceTimersByTimeAsync(5000));
 
         await rejection;
         expect(getPostedMessageTypes()).toEqual(['set-configuration']);
@@ -325,15 +325,15 @@ describe('validateCardForm', () => {
         const validation = cbIframe.handles.validateCardForm();
         let settled = false;
         validation.catch(() => {}).finally(() => (settled = true));
-        await act(() => jest.advanceTimersByTimeAsync(15000));
+        await act(() => vi.advanceTimersByTimeAsync(15000));
         respondSuccessTo('set-configuration');
         await flushPromises();
 
         expect(getPostedMessageTypes()).toEqual(['set-configuration', 'validate-form']);
 
-        await act(() => jest.advanceTimersByTimeAsync(4900));
+        await act(() => vi.advanceTimersByTimeAsync(4900));
         expect(settled).toBe(false);
-        await act(() => jest.advanceTimersByTimeAsync(200));
+        await act(() => vi.advanceTimersByTimeAsync(200));
 
         await expect(validation).rejects.toEqual(
             expect.objectContaining({ type: 'validate-form-response', error: 'Timeout exceeded' })
@@ -364,12 +364,12 @@ describe('validateSavedCreditCard', () => {
     const paymentIntent = { id: 'payment-intent-1' } as PaymentIntent;
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.clearAllTimers();
-        jest.useRealTimers();
+        vi.clearAllTimers();
+        vi.useRealTimers();
     });
 
     it('should wait for the iframe to load and the saved card setup to settle before verifying the card', async () => {
@@ -408,7 +408,7 @@ describe('validateSavedCreditCard', () => {
 
         const verification = cbIframe.handles.validateSavedCreditCard({ paymentIntent });
         const rejection = expect(verification).rejects.toThrow('Timeout exceeded');
-        await act(() => jest.advanceTimersByTimeAsync(20000));
+        await act(() => vi.advanceTimersByTimeAsync(20000));
 
         await rejection;
         expect(getPostedMessageTypes()).toEqual([]);

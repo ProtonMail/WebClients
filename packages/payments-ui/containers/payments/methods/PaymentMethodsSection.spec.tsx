@@ -2,25 +2,27 @@ import { render } from '@testing-library/react';
 
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
 import Loader from '@proton/components/components/loader/Loader';
 import useModals from '@proton/components/hooks/useModals';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
+import { withEventManager } from '@proton/components/testing/vitest/with-event-manager';
+import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import { defaultProtonConfig, withConfig } from '@proton/components/testing/with-config';
-import { withEventManager } from '@proton/components/testing/with-event-manager';
-import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
 import PaymentMethodsSection from './PaymentMethodsSection';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
-jest.mock('@proton/account/paymentMethods/hooks');
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/components/hooks/useModals');
+vi.mock('@proton/account/paymentMethods/hooks');
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/components/hooks/useModals', () => ({
+    default: vi.fn().mockReturnValue({ createModal: vi.fn() }),
+}));
 
-jest.mock('@proton/components/components/loader/Loader');
-jest.mock('./PaymentMethodsTable');
+vi.mock('@proton/components/components/loader/Loader');
+vi.mock('./PaymentMethodsTable');
 
 const PaymentMethodsSectionContext = applyHOCs(
     withEventManager(),
@@ -33,20 +35,20 @@ const PaymentMethodsSectionContext = applyHOCs(
 
 describe('PaymentMethodsSection', () => {
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
         mockUseUser();
-        jest.mocked(usePaymentMethods).mockReturnValue([[], false]);
-        jest.mocked(useSubscription).mockReturnValue([FREE_SUBSCRIPTION as any, false]);
-        jest.mocked(useModals).mockReturnValue({
-            createModal: jest.fn(),
+        vi.mocked(usePaymentMethods).mockReturnValue([[], false]);
+        vi.mocked(useSubscription).mockReturnValue([FREE_SUBSCRIPTION as any, false]);
+        vi.mocked(useModals).mockReturnValue({
+            createModal: vi.fn(),
         } as any);
 
-        jest.mocked(Loader).mockImplementation(() => <>Loader</>);
-        jest.mocked(PaymentMethodsTable).mockImplementation(() => <>PaymentMethodsTable</>);
+        vi.mocked(Loader).mockImplementation(() => <>Loader</>);
+        vi.mocked(PaymentMethodsTable).mockImplementation(() => <>PaymentMethodsTable</>);
     });
 
     it('should render <Loading> if payment methods are loading', () => {
-        const usePaymentMethodsMock = jest.mocked(usePaymentMethods);
+        const usePaymentMethodsMock = vi.mocked(usePaymentMethods);
         usePaymentMethodsMock.mockReturnValue([[], true]);
 
         const { container } = render(<PaymentMethodsSectionContext app={APPS.PROTONMAIL} />);
@@ -55,7 +57,7 @@ describe('PaymentMethodsSection', () => {
     });
 
     it('should render <Loading> if subscriptions are loading', () => {
-        jest.mocked(useSubscription).mockReturnValue([undefined as any, true]);
+        vi.mocked(useSubscription).mockReturnValue([undefined as any, true]);
 
         const { container } = render(<PaymentMethodsSectionContext app={APPS.PROTONMAIL} />);
 
@@ -74,7 +76,7 @@ describe('PaymentMethodsSection', () => {
     });
 
     it('should NOT show the paypal button only if there is already paypal payment', () => {
-        jest.mocked(usePaymentMethods).mockReturnValue([
+        vi.mocked(usePaymentMethods).mockReturnValue([
             [
                 {
                     Order: 1,

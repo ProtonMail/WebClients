@@ -8,7 +8,7 @@ import type { ChargebeeIdealProcessorHook } from '@proton/payments-hooks/react-e
 
 import { ChargebeeIdealButton } from './ChargebeeIdealButton';
 
-jest.mock('./ChargebeeIframe', () => ({
+vi.mock('./ChargebeeIframe', () => ({
     ChargebeeIframe: () => <div data-testid="chargebee-iframe" />,
 }));
 
@@ -18,7 +18,7 @@ function createChargebeeIdeal(overrides: Partial<ChargebeeIdealProcessorHook> = 
         initializationError: false,
         accountHolderNameMissing: false,
         readyToPay: true,
-        setButtonLabel: jest.fn(),
+        setButtonLabel: vi.fn(),
         ...overrides,
     } as ChargebeeIdealProcessorHook;
 }
@@ -27,7 +27,7 @@ function renderIdealButton(
     chargebeeIdeal: ChargebeeIdealProcessorHook,
     props: Partial<ComponentProps<typeof ChargebeeIdealButton>> = {}
 ) {
-    const onSubmit = jest.fn((event) => event.preventDefault());
+    const onSubmit = vi.fn((event) => event.preventDefault());
 
     const { rerender } = render(
         <form onSubmit={onSubmit}>
@@ -79,7 +79,7 @@ describe('ChargebeeIdealButton', () => {
     });
 
     it('should keep the initialization spinner up long enough not to blink', () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         const { update } = renderIdealButton(createChargebeeIdeal({ initializing: true, readyToPay: false }));
         expect(isBusy()).toBe(true);
@@ -87,14 +87,14 @@ describe('ChargebeeIdealButton', () => {
         update(createChargebeeIdeal({ initializing: false, readyToPay: true }));
         expect(isBusy()).toBe(true);
 
-        act(() => jest.advanceTimersByTime(DEFAULT_DELAY));
+        act(() => vi.advanceTimersByTime(DEFAULT_DELAY));
         expect(screen.queryByTestId('fake-ideal-button')).not.toBeInTheDocument();
 
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should forward a click on the fake button while the name is syncing', () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         renderIdealButton(createChargebeeIdeal({ readyToPay: false }), { onClick });
 
         fireEvent.click(fakeButton());

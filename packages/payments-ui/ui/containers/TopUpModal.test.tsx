@@ -1,21 +1,22 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
-import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import { MOCK_PAYMENT_STATUS } from '@proton/payments/testing/api-endpoints';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { MOCK_PAYMENT_STATUS } from '@proton/payments/testing/vitest/api-endpoints';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { ChargebeeIdealButton } from '../components/ChargebeeIdealButton';
 import { ChargebeePaypalButton } from '../components/ChargebeePaypalButton';
 import { TopUpModal } from './TopUpModal';
 
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
 let mockSelectedMethodValue: string | undefined;
-const mockProcessPaymentToken = jest.fn();
+const mockProcessPaymentToken = vi.fn();
 
-jest.mock('../../client-extensions/usePaymentFacade', () => ({
+vi.mock('../../client-extensions/usePaymentFacade', () => ({
     usePaymentFacade: ({ amount }: { amount: number }) => ({
         selectedMethodValue: mockSelectedMethodValue,
         selectedMethodType: mockSelectedMethodValue,
@@ -29,29 +30,29 @@ jest.mock('../../client-extensions/usePaymentFacade', () => ({
     }),
 }));
 
-jest.mock('@proton/account/subscription/hooks', () => ({
+vi.mock('@proton/account/subscription/hooks', () => ({
     useSubscription: () => [buildSubscription(), false],
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     useUser: () => [{ Currency: 'EUR' }, false],
 }));
 
-jest.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({
+vi.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({
     useAutomaticCurrency: () => ['EUR'],
 }));
 
-jest.mock('../../containers/payments/PaymentWrapper', () => ({
+vi.mock('../../containers/payments/PaymentWrapper', () => ({
     __esModule: true,
     default: () => null,
 }));
 
-jest.mock('@proton/components/containers/payments/PaymentInfo', () => ({
+vi.mock('@proton/components/containers/payments/PaymentInfo', () => ({
     __esModule: true,
     default: () => null,
 }));
 
-jest.mock('@proton/components/containers/payments/AmountRow', () => ({
+vi.mock('@proton/components/containers/payments/AmountRow', () => ({
     __esModule: true,
     default: ({ onChangeAmount }: { onChangeAmount: (amount: number) => void }) => (
         <button type="button" data-testid="set-low-amount" onClick={() => onChangeAmount(100)}>
@@ -60,12 +61,12 @@ jest.mock('@proton/components/containers/payments/AmountRow', () => ({
     ),
 }));
 
-jest.mock('../components/ChargebeePaypalButton', () => ({
-    ChargebeePaypalButton: jest.fn(() => <div data-testid="chargebee-paypal-button" />),
+vi.mock('../components/ChargebeePaypalButton', () => ({
+    ChargebeePaypalButton: vi.fn(() => <div data-testid="chargebee-paypal-button" />),
 }));
 
-jest.mock('../components/ChargebeeIdealButton', () => ({
-    ChargebeeIdealButton: jest.fn(() => <div data-testid="chargebee-ideal-button" />),
+vi.mock('../components/ChargebeeIdealButton', () => ({
+    ChargebeeIdealButton: vi.fn(() => <div data-testid="chargebee-ideal-button" />),
 }));
 
 const renderTopUpModal = (props: Partial<Parameters<typeof TopUpModal>[0]> = {}) =>
@@ -77,7 +78,7 @@ const renderTopUpModal = (props: Partial<Parameters<typeof TopUpModal>[0]> = {})
             title="Add credits"
             renderDescription={() => null}
             sentryComponent="credits-modal"
-            onTopUp={jest.fn()}
+            onTopUp={vi.fn()}
             {...props}
         />
     );
@@ -98,7 +99,7 @@ const expectOnlyButton = (testId: string) => {
 
 describe('TopUpModal submit button', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockSelectedMethodValue = undefined;
         mockProcessPaymentToken.mockReturnValue(new Promise(() => {}));
     });
@@ -112,7 +113,7 @@ describe('TopUpModal submit button', () => {
         renderTopUpModal();
 
         expectOnlyButton(testId);
-        expect(Object.keys((component as jest.Mock).mock.lastCall[0]).sort()).toEqual(
+        expect(Object.keys((component as Mock).mock.lastCall![0]).sort()).toEqual(
             [processorProp, 'iframeHandles'].sort()
         );
     });
@@ -221,7 +222,7 @@ describe('TopUpModal submit button', () => {
                 TaxInclusive: 1,
                 Taxes: [],
             }),
-            onTopUpFromAccountCredit: jest.fn(),
+            onTopUpFromAccountCredit: vi.fn(),
         });
 
         expect(await screen.findByTestId('paid-by-account-credit-text')).toBeInTheDocument();

@@ -8,12 +8,12 @@ import { createToken, getTokenStatusV5 } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import { addApiMock, apiMock } from '@proton/test-api/api';
 import { flushPromises } from '@proton/test-api/flush-promises';
+import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 
 import { BitcoinView } from './BitcoinView';
 
-const onTokenValidated = jest.fn();
+const onTokenValidated = vi.fn();
 
 type InnerProps = {
     onTokenValidated: OnBitcoinTokenValidated;
@@ -38,12 +38,13 @@ const BitcoinTestComponent = (props: InnerProps) => {
 };
 
 beforeEach(() => {
-    jest.useFakeTimers();
+    // waitFor only auto-advances fake timers under jest, so let them follow the real clock
+    vi.useFakeTimers({ shouldAdvanceTime: true });
 });
 
 afterEach(() => {
-    jest.runOnlyPendingTimers();
-    jest.useRealTimers();
+    vi.runOnlyPendingTimers();
+    vi.useRealTimers();
 });
 
 const createTokenUrl = createToken({} as any).url;
@@ -56,7 +57,7 @@ const defaultTokenResponse = {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     addApiMock(createTokenUrl, () => defaultTokenResponse);
 });
@@ -131,7 +132,7 @@ it('should check the token every 10 seconds', async () => {
     );
 
     await act(async () => {
-        jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
+        vi.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
         await flushPromises();
     });
 
@@ -140,7 +141,7 @@ it('should check the token every 10 seconds', async () => {
     });
 
     await act(async () => {
-        jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
+        vi.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
         await flushPromises();
     });
 
@@ -154,7 +155,7 @@ it('should check the token every 10 seconds', async () => {
         v: 5,
     });
 
-    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
+    vi.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
     await flushPromises();
 
     expect(onTokenValidated).toHaveBeenCalledTimes(1); // check that it's called only once

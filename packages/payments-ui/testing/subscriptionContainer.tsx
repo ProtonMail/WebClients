@@ -1,16 +1,17 @@
 import { screen, waitFor } from '@testing-library/react';
 
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
-import { withDeprecatedModals } from '@proton/components/testing/with-deprecated-modals';
-import { withReduxStore } from '@proton/components/testing/with-redux-store';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { withDeprecatedModals } from '@proton/components/testing/vitest/with-deprecated-modals';
+import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 import type { FeatureFlag } from '@proton/unleash/Flags';
+import * as useFlagModule from '@proton/unleash/useFlag';
 
 import type { SubscriptionContainerProps } from '../containers/payments/subscription/SubscriptionContainer';
 import SubscriptionContainer from '../containers/payments/subscription/SubscriptionContainer';
@@ -27,7 +28,7 @@ export const ContextSubscriptionContainer = applyHOCs(
 export function enableSepaFeatureFlag() {
     const sepaFlag: FeatureFlag = 'SepaPayments';
 
-    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag');
+    const useFlagMock = vi.spyOn(useFlagModule, 'useFlag');
     useFlagMock.mockImplementation((flag) => flag === sepaFlag);
 }
 

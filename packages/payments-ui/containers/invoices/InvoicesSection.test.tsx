@@ -1,69 +1,68 @@
 import { fireEvent, render } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
-import { mockUseOrganization } from '@proton/account/testing/mockUseOrganization';
+import { mockUseOrganization } from '@proton/account/testing/vitest/mockUseOrganization';
 import { useUser } from '@proton/account/user/hooks';
 import useApiResult from '@proton/components/hooks/useApiResult';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
+import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import { withConfig } from '@proton/components/testing/with-config';
 import { withNotifications } from '@proton/components/testing/with-notifications';
-import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { APPS, INVOICE_EMAIL_STATE } from '@proton/shared/lib/constants';
 import type { InvoiceEmailSettings, OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import InvoicesSection from './InvoicesSection';
 
-jest.mock('@proton/components/hooks/useHandler', () => {
+vi.mock('@proton/components/hooks/useHandler', async () => {
     return {
-        __esModule: true,
-        ...jest.requireActual('@proton/components/hooks/useHandler'),
-        useSubscribeEventManager: jest.fn(),
+        ...(await vi.importActual<any>('@proton/components/hooks/useHandler')),
+        useSubscribeEventManager: vi.fn(),
     };
 });
 
-const requestMock = jest.fn();
+const requestMock = vi.fn();
 
-jest.mock('@proton/components/hooks/useApiResult', () => {
+vi.mock('@proton/components/hooks/useApiResult', async () => {
     return {
-        __esModule: true,
-        ...jest.requireActual('@proton/components/hooks/useApiResult'),
-        default: jest.fn().mockReturnValue({
+        ...(await vi.importActual<any>('@proton/components/hooks/useApiResult')),
+        default: vi.fn().mockReturnValue({
             request: () => requestMock(),
         }),
     };
 });
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
-    useUser: jest.fn(() => [{ isPaid: false, Flags: {} }, false]),
-    useGetUser: jest.fn(() => [{ isPaid: false, Flags: {} }, false]),
+    useUser: vi.fn(() => [{ isPaid: false, Flags: {} }, false]),
+    useGetUser: vi.fn(() => [{ isPaid: false, Flags: {} }, false]),
 }));
 
-jest.mock('@proton/account/subscription/hooks', () => {
+vi.mock('@proton/account/subscription/hooks', () => {
     return {
         __esModule: true,
-        useSubscription: jest.fn().mockReturnValue([]),
+        useSubscription: vi.fn().mockReturnValue([]),
     };
 });
 
-jest.mock('@proton/components/hooks/useModals', () => {
+vi.mock('@proton/components/hooks/useModals', () => {
     return {
         __esModule: true,
-        default: jest.fn().mockReturnValue({
-            createModal: jest.fn(),
+        default: vi.fn().mockReturnValue({
+            createModal: vi.fn(),
         }),
     };
 });
 
-jest.mock('@proton/components/hooks/useEventManager', () => ({
+vi.mock('@proton/components/hooks/useEventManager', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-const useFlagMock = jest.fn();
+const useFlagMock = vi.fn();
 
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
     useFlag: (flag: string) => useFlagMock(flag),
 }));
@@ -79,7 +78,7 @@ const mockFlags = (overrides: Record<string, boolean> = {}) => {
 const InvoicesSectionContext = applyHOCs(withConfig(), withNotifications(), withReduxStore())(InvoicesSection);
 
 const mockUser = (user: Partial<UserModel> = {}) =>
-    (useUser as jest.Mock).mockReturnValue([{ isPaid: false, isAdmin: false, Flags: {}, ...user }, false]);
+    (useUser as Mock).mockReturnValue([{ isPaid: false, isAdmin: false, Flags: {}, ...user }, false]);
 
 const mockInvoiceEmail = (invoiceEmail: Partial<InvoiceEmailSettings> = {}) =>
     mockUseOrganization([
@@ -93,22 +92,22 @@ const mockInvoiceEmail = (invoiceEmail: Partial<InvoiceEmailSettings> = {}) =>
     ]);
 
 describe('InvoicesSection', () => {
-    let subscribeMock: jest.Mock;
+    let subscribeMock: Mock;
 
     const renderSection = () => render(<InvoicesSectionContext app={APPS.PROTONMAIL} />);
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         // mockReturnValue survives clearAllMocks, so reset the defaults explicitly for the tests that
         // override the user (the organization tab is only rendered for paid admins).
         mockUser();
         mockFlags();
         mockInvoiceEmail();
-        (useApiResult as jest.Mock).mockReturnValue({
+        (useApiResult as Mock).mockReturnValue({
             request: () => requestMock(),
         });
-        subscribeMock = jest.fn();
-        (useEventManager as jest.Mock).mockReturnValue({
+        subscribeMock = vi.fn();
+        (useEventManager as Mock).mockReturnValue({
             subscribe: subscribeMock,
         });
     });
@@ -293,7 +292,7 @@ describe('InvoicesSection', () => {
     });
 
     it('should show the "Edit invoice note" entry when on the invoices tab and invoices exist', () => {
-        (useApiResult as jest.Mock).mockReturnValue({
+        (useApiResult as Mock).mockReturnValue({
             result: { Invoices: [{ ID: '123' }], Transactions: [], Total: 1 },
             request: () => requestMock(),
         });
@@ -305,7 +304,7 @@ describe('InvoicesSection', () => {
     });
 
     it('should not show the "Edit invoice note" entry when switching to the transactions tab', () => {
-        (useApiResult as jest.Mock).mockReturnValue({
+        (useApiResult as Mock).mockReturnValue({
             result: { Invoices: [{ ID: '123' }], Transactions: [], Total: 1 },
             request: () => requestMock(),
         });

@@ -1,24 +1,24 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { hookWrapper } from '@proton/components/testing/hocs/helpers';
-import { withApi } from '@proton/components/testing/hocs/with-api';
+import { withApi } from '@proton/components/testing/vitest/with-api';
+import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import { defaultProtonConfig, withConfig } from '@proton/components/testing/with-config';
-import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { addApiMock, apiMock } from '@proton/test-api/api';
+import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 
-jest.mock('@proton/account/plans/hooks', () => ({
+vi.mock('@proton/account/plans/hooks', () => ({
     __esModule: true,
-    useGetPlans: jest.fn(),
+    useGetPlans: vi.fn(),
 }));
 
 const getWrapper = () => hookWrapper(withApi(), withConfig(), withReduxStore());
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     addApiMock('payments/v5/status', () => ({
         Code: 1000,

@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
 
 import { fireEvent, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import { BILLING_ADDRESS_VALID } from '@proton/payments/core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
@@ -21,43 +22,43 @@ import { ChargebeePaypalButton } from './ChargebeePaypalButton';
 import { GooglePayButton } from './GooglePayButton';
 import { PayButton } from './PayButton';
 
-jest.mock('@proton/app-context/useConfig');
-jest.mock('../billing-address/containers/useEditBillingAddressModal');
-jest.mock('@proton/payments/telemetry/telemetry', () => ({
+vi.mock('@proton/app-context/useConfig');
+vi.mock('../billing-address/containers/useEditBillingAddressModal');
+vi.mock('@proton/payments/telemetry/telemetry', () => ({
     checkoutTelemetry: {
-        reportPayment: jest.fn(),
+        reportPayment: vi.fn(),
     },
 }));
-jest.mock('./ChargebeePaypalButton', () => ({
-    ChargebeePaypalButton: jest.fn(() => <div data-testid="chargebee-paypal-button" />),
+vi.mock('./ChargebeePaypalButton', () => ({
+    ChargebeePaypalButton: vi.fn(() => <div data-testid="chargebee-paypal-button" />),
 }));
-jest.mock('./ApplePayButton', () => ({
-    ApplePayButton: jest.fn(() => <div data-testid="apple-pay-button" />),
+vi.mock('./ApplePayButton', () => ({
+    ApplePayButton: vi.fn(() => <div data-testid="apple-pay-button" />),
 }));
-jest.mock('./GooglePayButton', () => ({
-    GooglePayButton: jest.fn(() => <div data-testid="google-pay-button" />),
+vi.mock('./GooglePayButton', () => ({
+    GooglePayButton: vi.fn(() => <div data-testid="google-pay-button" />),
 }));
-jest.mock('./ChargebeeIdealButton', () => ({
-    ChargebeeIdealButton: jest.fn(() => <div data-testid="chargebee-ideal-button" />),
+vi.mock('./ChargebeeIdealButton', () => ({
+    ChargebeeIdealButton: vi.fn(() => <div data-testid="chargebee-ideal-button" />),
 }));
 
-const mockUseConfig = jest.mocked(useConfig);
-const mockUseEditBillingAddressModal = jest.mocked(useEditBillingAddressModal);
-const mockReportPayment = jest.mocked(checkoutTelemetry.reportPayment);
+const mockUseConfig = vi.mocked(useConfig);
+const mockUseEditBillingAddressModal = vi.mocked(useEditBillingAddressModal);
+const mockReportPayment = vi.mocked(checkoutTelemetry.reportPayment);
 
 function createTaxCountry(overrides: Partial<TaxCountryHook> = {}): TaxCountryHook {
     return {
         selectedCountryCode: 'DE',
-        setSelectedCountry: jest.fn(),
+        setSelectedCountry: vi.fn(),
         federalStateCode: null,
-        setFederalStateCode: jest.fn(),
+        setFederalStateCode: vi.fn(),
         zipCode: null,
-        setZipCode: jest.fn(),
+        setZipCode: vi.fn(),
         billingAddressValid: true,
         billingAddressStatus: BILLING_ADDRESS_VALID,
         zipCodeBackendValid: true,
         paymentsApi: {} as PaymentsApi,
-        billingAddressChangedInModal: jest.fn(),
+        billingAddressChangedInModal: vi.fn(),
         ...overrides,
     };
 }
@@ -91,7 +92,7 @@ function renderPayButton(
         vatNumber?: VatNumberHook;
         children?: ReactNode;
         disabled?: boolean;
-        onClick?: jest.Mock;
+        onClick?: Mock;
         isAuthenticated?: boolean;
         showIdealAuthorizationNote?: boolean;
     } = {}
@@ -118,12 +119,12 @@ function renderPayButton(
 }
 
 describe('PayButton', () => {
-    let openBillingAddressModal: jest.Mock;
+    let openBillingAddressModal: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONMAIL } as ReturnType<typeof useConfig>);
-        openBillingAddressModal = jest.fn().mockResolvedValue(undefined);
+        openBillingAddressModal = vi.fn().mockResolvedValue(undefined);
         mockUseEditBillingAddressModal.mockReturnValue({
             editBillingAddressModal: null,
             openBillingAddressModal,
@@ -159,7 +160,7 @@ describe('PayButton', () => {
         it('calls openBillingAddressModal when Edit billing address is clicked', async () => {
             const taxCountry = createTaxCountry({
                 billingAddressStatus: { valid: false, reason: 'missingCountry' },
-                paymentsApi: { getFullBillingAddress: jest.fn() } as unknown as PaymentsApi,
+                paymentsApi: { getFullBillingAddress: vi.fn() } as unknown as PaymentsApi,
             });
             const paymentFacade = createPaymentFacade();
 
@@ -229,7 +230,7 @@ describe('PayButton', () => {
         });
 
         it('reports checkout telemetry on card submit click', () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             renderPayButton({ onClick });
 
             fireEvent.click(screen.getByRole('button', { name: 'Pay now' }));
@@ -325,7 +326,7 @@ describe('PayButton', () => {
             [PAYMENT_METHOD_TYPES.APPLE_PAY, ApplePayButton, 'apple-pay-button', undefined, undefined],
             [PAYMENT_METHOD_TYPES.GOOGLE_PAY, GooglePayButton, 'google-pay-button', undefined, undefined],
         ])('renders the dedicated button for %s', (method, component, testId, width, forwardedTestId) => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             const paymentFacade = createPaymentFacade({ selectedMethodValue: method, chargebeeIdeal: {} });
 
             renderPayButton({
@@ -337,7 +338,7 @@ describe('PayButton', () => {
 
             expect(screen.getByTestId(testId)).toBeInTheDocument();
             expect(screen.queryByTestId('pay-cta')).not.toBeInTheDocument();
-            const props = (component as jest.Mock).mock.lastCall[0];
+            const props = (component as Mock).mock.lastCall![0];
             expect(props.disabled).toBe(true);
             expect(props.width).toBe(width);
             expect(props['data-testid']).toBe(forwardedTestId);
@@ -359,7 +360,7 @@ describe('PayButton', () => {
             'saved-payment-method-id',
             undefined,
         ])('renders the submit button for %s', (method) => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             const paymentFacade = createPaymentFacade({ selectedMethodValue: method });
 
             renderPayButton({ paymentFacade, onClick });

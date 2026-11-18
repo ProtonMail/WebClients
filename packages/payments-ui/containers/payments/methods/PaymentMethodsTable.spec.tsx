@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import TableBody from '@proton/components/components/table/TableBody';
 import TableRow from '@proton/components/components/table/TableRow';
@@ -14,9 +15,9 @@ import { APPS } from '@proton/shared/lib/constants';
 import { formattedSavedSepaDetails } from '../../../payment-methods/sepa/sepa';
 import PaymentMethodsTable from './PaymentMethodsTable';
 
-jest.mock('@proton/components/components/table/TableRow', () => jest.fn());
-jest.mock('@proton/components/components/table/TableBody', () => jest.fn());
-jest.mock('./PaymentMethodActions', () => jest.fn().mockReturnValue(null));
+vi.mock('@proton/components/components/table/TableRow', () => ({ default: vi.fn() }));
+vi.mock('@proton/components/components/table/TableBody', () => ({ default: vi.fn() }));
+vi.mock('./PaymentMethodActions', () => ({ default: vi.fn().mockReturnValue(null) }));
 
 describe('PaymentMethodsTable', () => {
     it('should render message that user has no payment methods', () => {
@@ -44,11 +45,11 @@ describe('PaymentMethodsTable', () => {
             Autopay: Autopay.ENABLE,
         };
 
-        const TableBodyMock: jest.Mock = TableBody as any;
+        const TableBodyMock: Mock = TableBody as any;
         TableBodyMock.mockReset();
         TableBodyMock.mockImplementation(({ children }) => children);
 
-        const TableRowMock: jest.Mock = TableRow as any;
+        const TableRowMock: Mock = TableRow as any;
         TableRowMock.mockReset();
         TableRowMock.mockImplementation(({ cells }) => (
             <>
@@ -77,11 +78,11 @@ describe('PaymentMethodsTable', () => {
             ID: 'id123',
         };
 
-        const TableBodyMock: jest.Mock = TableBody as any;
+        const TableBodyMock: Mock = TableBody as any;
         TableBodyMock.mockReset();
         TableBodyMock.mockImplementation(({ children }) => children);
 
-        const TableRowMock: jest.Mock = TableRow as any;
+        const TableRowMock: Mock = TableRow as any;
         TableRowMock.mockReset();
         TableRowMock.mockImplementation(({ cells }) => (
             <>
@@ -168,11 +169,11 @@ describe('PaymentMethodsTable', () => {
             ID: 'id-paypal',
         };
 
-        const TableBodyMock: jest.Mock = TableBody as any;
+        const TableBodyMock: Mock = TableBody as any;
         TableBodyMock.mockReset();
         TableBodyMock.mockImplementation(({ children }) => children);
 
-        const TableRowMock: jest.Mock = TableRow as any;
+        const TableRowMock: Mock = TableRow as any;
         TableRowMock.mockReset();
         TableRowMock.mockImplementation(({ cells }) => (
             <>
@@ -259,11 +260,11 @@ describe('PaymentMethodsTable', () => {
             Autopay: Autopay.ENABLE,
         };
 
-        const TableBodyMock: jest.Mock = TableBody as any;
+        const TableBodyMock: Mock = TableBody as any;
         TableBodyMock.mockReset();
         TableBodyMock.mockImplementation(({ children }) => children);
 
-        const TableRowMock: jest.Mock = TableRow as any;
+        const TableRowMock: Mock = TableRow as any;
         TableRowMock.mockReset();
         TableRowMock.mockImplementation(({ cells }) => (
             <>
@@ -299,9 +300,9 @@ describe('PaymentMethodsTable', () => {
             ID: 'id-token',
         } as unknown as SavedPaymentMethod;
 
-        const TableBodyMock: jest.Mock = TableBody as any;
+        const TableBodyMock: Mock = TableBody as any;
         TableBodyMock.mockImplementation(({ children }) => children);
-        const TableRowMock: jest.Mock = TableRow as any;
+        const TableRowMock: Mock = TableRow as any;
         TableRowMock.mockImplementation(({ cells }) => <div data-testid="row">{cells}</div>);
 
         render(<PaymentMethodsTable methods={[unexpectedTypeMethod]} app={APPS.PROTONMAIL} />);

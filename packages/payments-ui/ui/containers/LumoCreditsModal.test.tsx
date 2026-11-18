@@ -1,14 +1,14 @@
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { withApi } from '@proton/components/testing/hocs/with-api';
+import { withApi } from '@proton/components/testing/vitest/with-api';
+import { withDeprecatedModals } from '@proton/components/testing/vitest/with-deprecated-modals';
+import { withEventManager } from '@proton/components/testing/vitest/with-event-manager';
+import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import { withAuthentication } from '@proton/components/testing/with-authentication';
 import { withCache } from '@proton/components/testing/with-cache';
 import { withConfig } from '@proton/components/testing/with-config';
-import { withDeprecatedModals } from '@proton/components/testing/with-deprecated-modals';
-import { withEventManager } from '@proton/components/testing/with-event-manager';
 import { withNotifications } from '@proton/components/testing/with-notifications';
-import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { buyCredit } from '@proton/payments/core/api/api';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
@@ -17,19 +17,20 @@ import {
     MOCK_PAYMENT_STATUS,
     mockPaymentMethods,
     mockPaymentStatus,
-} from '@proton/payments/testing/api-endpoints';
+} from '@proton/payments/testing/vitest/api-endpoints';
 import { APPS } from '@proton/shared/lib/constants';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
+import * as useFlagModule from '@proton/unleash/useFlag';
 
 import { CreditsModal } from './CreditsModal';
 import { LumoCreditsModal } from './LumoCreditsModal';
 
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
 const mockFacadeCalls: any[] = [];
 const mockFacadeResults: any[] = [];
-jest.mock('../../client-extensions/usePaymentFacade', () => {
-    const actual = jest.requireActual('../../client-extensions/usePaymentFacade');
+vi.mock('../../client-extensions/usePaymentFacade', async () => {
+    const actual: any = await vi.importActual('../../client-extensions/usePaymentFacade');
     return {
         ...actual,
         usePaymentFacade: (params: any) => {
@@ -42,10 +43,10 @@ jest.mock('../../client-extensions/usePaymentFacade', () => {
 });
 
 const buyProductUrl = 'payments/v5/products';
-const buyProductMock = jest.fn().mockResolvedValue({});
+const buyProductMock = vi.fn().mockResolvedValue({});
 const checkProductUrl = 'payments/v5/products/check';
-const checkProductMock = jest.fn();
-const buyCreditMock = jest.fn().mockResolvedValue({});
+const checkProductMock = vi.fn();
+const buyCreditMock = vi.fn().mockResolvedValue({});
 
 const getCheckResponse = (data: { Quantity: number; Currency: string }) =>
     data.Quantity === 20
@@ -67,12 +68,19 @@ const createDeferred = <T,>() => {
     return { promise, resolve };
 };
 
+// The charge is authorized against the product check, so wait for it to settle before charging
+const waitForFacadeReady = async () => {
+    await waitFor(() => expect(mockFacadeCalls.length).toBeGreaterThan(0));
+    await waitFor(() => expect(checkProductMock).toHaveBeenCalled());
+    await act(async () => {});
+};
+
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     mockFacadeCalls.length = 0;
     mockFacadeResults.length = 0;
 
-    (window as any).SVGElement.prototype.getBBox = jest.fn().mockReturnValue({ width: 0 });
+    (window as any).SVGElement.prototype.getBBox = vi.fn().mockReturnValue({ width: 0 });
 
     addApiMock(buyProductUrl, buyProductMock);
     checkProductMock.mockImplementation(({ data }) => getCheckResponse(data));
@@ -111,8 +119,7 @@ const productRefusedMethods = [
     PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
 ];
 
-const enableIdealFlag = () =>
-    jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag').mockImplementation((flag) => flag === 'EnableIdeal');
+const enableIdealFlag = () => vi.spyOn(useFlagModule, 'useFlag').mockImplementation((flag) => flag === 'EnableIdeal');
 
 const typeCredits = async (credits: string) => {
     fireEvent.change(await screen.findByTestId('other-amount'), { target: { value: credits } });
@@ -137,7 +144,7 @@ it('should render the Lumo top-up copy', async () => {
 it('should buy the lumo-credit product once the payment is chargeable', async () => {
     mockPaymentMethods().noSaved();
 
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     render(
         <ContextLumoCreditsModal
             paymentStatus={MOCK_PAYMENT_STATUS}
@@ -146,7 +153,7 @@ it('should buy the lumo-credit product once the payment is chargeable', async ()
             app={APPS.PROTONLUMO}
         />
     );
-    await waitFor(() => expect(mockFacadeCalls.length).toBeGreaterThan(0));
+    await waitForFacadeReady();
 
     const chargeablePaymentParameters = { Amount: 5000, Currency: 'EUR', PaymentToken: 'payment-token-123' };
     const { onChargeable } = mockFacadeCalls[mockFacadeCalls.length - 1];
@@ -184,14 +191,14 @@ const chargeLumoCreditsModal = async (onSuccess: () => void) => {
             app={APPS.PROTONLUMO}
         />
     );
-    await waitFor(() => expect(mockFacadeCalls.length).toBeGreaterThan(0));
+    await waitForFacadeReady();
     const chargeablePaymentParameters = { Amount: 5000, Currency: 'EUR', PaymentToken: 'payment-token-123' };
     const { onChargeable } = mockFacadeCalls.at(-1);
     return act(() => onChargeable({}, { chargeablePaymentParameters, sourceType: 'card' }));
 };
 
 it('should report success once the lumo-credit purchase went through', async () => {
-    const onSuccess = jest.fn();
+    const onSuccess = vi.fn();
 
     await chargeLumoCreditsModal(onSuccess);
 
@@ -200,7 +207,7 @@ it('should report success once the lumo-credit purchase went through', async () 
 });
 
 it('should report success even when refreshing the payment methods fails after the purchase', async () => {
-    const onSuccess = jest.fn();
+    const onSuccess = vi.fn();
     mockPaymentMethods().noSaved();
     render(
         <ContextLumoCreditsModal
@@ -210,7 +217,7 @@ it('should report success even when refreshing the payment methods fails after t
             app={APPS.PROTONLUMO}
         />
     );
-    await waitFor(() => expect(mockFacadeCalls.length).toBeGreaterThan(0));
+    await waitForFacadeReady();
     addApiMock('payments/v5/methods', () => {
         throw new Error('Refresh failed');
     });
@@ -227,7 +234,7 @@ it('should report success even when refreshing the payment methods fails after t
 
 it('should not report success when the lumo-credit purchase fails', async () => {
     buyProductMock.mockRejectedValueOnce(new Error('Payment declined'));
-    const onSuccess = jest.fn();
+    const onSuccess = vi.fn();
 
     await chargeLumoCreditsModal(onSuccess).catch(() => {});
 
@@ -282,7 +289,7 @@ it('should not offer Cash, unlike the regular credits modal', async () => {
 
 describe('payment methods the BE refuses for products', () => {
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('should not offer a new iDEAL, unlike the regular credits modal', async () => {
@@ -550,8 +557,8 @@ describe('tax', () => {
             TaxInclusive: 1,
             Taxes: [],
         }));
-        const onClose = jest.fn();
-        const onSuccess = jest.fn();
+        const onClose = vi.fn();
+        const onSuccess = vi.fn();
 
         render(
             <ContextLumoCreditsModal
@@ -576,7 +583,7 @@ describe('tax', () => {
         fireEvent.click(screen.getByTestId('top-up-button'));
 
         await waitFor(() => expect(onClose).toHaveBeenCalled());
-        const { data } = buyProductMock.mock.calls.at(-1)[0];
+        const { data } = buyProductMock.mock.calls.at(-1)![0];
         expect(data).toMatchObject({ ProductType: 'lumo-credit', Quantity: 25, Amount: 0 });
         expect(data.PaymentToken).toBeUndefined();
         expect(onSuccess).toHaveBeenCalledTimes(1);
@@ -621,7 +628,7 @@ describe('tax', () => {
 
     it('should still buy credits in the regular credits modal once the payment is chargeable', async () => {
         mockPaymentMethods().noSaved();
-        const onClose = jest.fn();
+        const onClose = vi.fn();
 
         render(
             <ContextCreditsModal
@@ -632,7 +639,7 @@ describe('tax', () => {
             />
         );
         await waitFor(() => expect(mockFacadeCalls.length).toBeGreaterThan(0));
-        const buyCredit = jest.fn().mockResolvedValue(undefined);
+        const buyCredit = vi.fn().mockResolvedValue(undefined);
         const { onChargeable, amount, currency } = mockFacadeCalls.at(-1);
         const chargeablePaymentParameters = { Amount: amount, Currency: currency, PaymentToken: 'payment-token-123' };
 

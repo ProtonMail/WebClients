@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 
 import { render, waitFor } from '@testing-library/react';
+import type { MockInstance } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { getStoreWrapper } from '@proton/payments-hooks/testing/renderWithProviders';
+import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
@@ -14,14 +15,14 @@ import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { PaymentsContextProvider } from './PaymentContext';
 
-const checkSubscription = jest.fn();
+const checkSubscription = vi.fn();
 
-jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
+vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
     const paymentsApi = {
         checkSubscription: (...args: any[]) => checkSubscription(...args),
-        cacheMultiCheck: jest.fn(),
-        multiCheck: jest.fn().mockResolvedValue([]),
-        getFullBillingAddress: jest.fn().mockResolvedValue({}),
+        cacheMultiCheck: vi.fn(),
+        multiCheck: vi.fn().mockResolvedValue([]),
+        getFullBillingAddress: vi.fn().mockResolvedValue({}),
     } as unknown as PaymentsApi;
 
     return {
@@ -120,11 +121,11 @@ const renderPaymentsContext = () => {
 };
 
 describe('payments context telemetry', () => {
-    let sendCustomEvent: jest.SpyInstance;
+    let sendCustomEvent: MockInstance;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        sendCustomEvent = jest.spyOn(telemetry, 'sendCustomEvent').mockImplementation(() => {});
+        vi.clearAllMocks();
+        sendCustomEvent = vi.spyOn(telemetry, 'sendCustomEvent').mockImplementation(() => {});
     });
 
     afterEach(() => {

@@ -4,15 +4,15 @@ import cloneDeep from 'lodash/cloneDeep';
 import { getModelState } from '@proton/account/testing/getModelState';
 import type { OpenSubscriptionModalCallback } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
-import { mockOrganizationApi } from '@proton/components/hooks/helpers/tests/useOrganization';
-import { mockStatusApi } from '@proton/components/hooks/helpers/tests/usePaymentStatus';
-import { mockPlansApi } from '@proton/components/hooks/helpers/tests/usePlans';
+import { userDefault } from '@proton/components/hooks/helpers/tests/useUser';
+import { mockOrganizationApi } from '@proton/components/hooks/helpers/tests/vitest/useOrganization';
+import { mockStatusApi } from '@proton/components/hooks/helpers/tests/vitest/usePaymentStatus';
+import { mockPlansApi } from '@proton/components/hooks/helpers/tests/vitest/usePlans';
 import {
     mockSubscriptionApi,
     subscriptionDefaultResponse,
-} from '@proton/components/hooks/helpers/tests/useSubscription';
-import { userDefault } from '@proton/components/hooks/helpers/tests/useUser';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+} from '@proton/components/hooks/helpers/tests/vitest/useSubscription';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { formatSubscription } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
@@ -23,16 +23,19 @@ import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/c
 import SubscriptionContainer from './SubscriptionContainer';
 import SubscriptionModalProvider from './SubscriptionModalProvider';
 
-jest.mock('@proton/components/hooks/useModals');
-jest.mock('@proton/atoms/Portal/Portal');
-jest.mock('./SubscriptionContainer');
-jest.mock('@proton/features/useFeature', () => () => ({}));
+vi.mock('@proton/components/hooks/useModals', () => ({
+    default: vi.fn().mockReturnValue({ createModal: vi.fn() }),
+}));
+vi.mock('@proton/atoms/Portal/Portal');
+vi.mock('./SubscriptionContainer');
+vi.mock('@proton/features/useFeature', () => ({ default: () => ({}) }));
 
 // userSettings has no default in the shared preloaded state; without it the model auto-fetches
 // (on a timer) and throws because the test store has no thunk `api`. Preload it so it never fetches.
 const userSettingsPreloadedState = { userSettings: getModelState({} as UserSettings) };
 
 beforeEach(() => {
+    vi.clearAllMocks();
     mockSubscriptionApi();
     mockOrganizationApi();
     mockPlansApi();
@@ -105,7 +108,7 @@ it('should render <SubscriptionContainer> with B2B default audience if it was se
         await openSubscriptionModal({ defaultAudience: Audience.B2B } as any);
     });
 
-    expect(jest.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
+    expect(vi.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
         expect.objectContaining({
             defaultAudience: Audience.B2B,
         })
@@ -114,7 +117,7 @@ it('should render <SubscriptionContainer> with B2B default audience if it was se
     expect(container).toHaveTextContent('SubscriptionContainer');
 });
 
-it('should render <SubscriptionContainer> with B2B default audience if plan is a B2B plan', async () => {
+it('should render <SubscriptionContainer> with the requested plan, so it can pick the B2B audience', async () => {
     let openSubscriptionModal!: OpenSubscriptionModalCallback;
     const ContextReaderComponent = () => {
         const modal = useSubscriptionModal();
@@ -138,16 +141,16 @@ it('should render <SubscriptionContainer> with B2B default audience if plan is a
         await openSubscriptionModal({ plan: PLANS.BUNDLE_PRO } as any);
     });
 
-    expect(jest.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
+    expect(vi.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
         expect.objectContaining({
-            defaultAudience: Audience.B2B,
+            plan: PLANS.BUNDLE_PRO,
         })
     );
 
     expect(container).toHaveTextContent('SubscriptionContainer');
 });
 
-it('should render <SubscriptionContainer> with B2B default audience if subscription has a B2B plan', async () => {
+it('should render <SubscriptionContainer> with the current B2B subscription, so it can pick the B2B audience', async () => {
     const subscription = cloneDeep(subscriptionDefaultResponse);
     subscription.Subscription.Plans = [
         {
@@ -168,7 +171,14 @@ it('should render <SubscriptionContainer> with B2B default audience if subscript
         <SubscriptionModalProvider app="proton-account">
             <ContextReaderComponent />
         </SubscriptionModalProvider>,
-        { preloadedState: userSettingsPreloadedState }
+        {
+            preloadedState: {
+                ...userSettingsPreloadedState,
+                subscription: getSubscriptionState(
+                    formatSubscription(subscription.Subscription, subscription.UpcomingSubscription, undefined)
+                ),
+            },
+        }
     );
 
     await waitFor(() => {
@@ -179,9 +189,11 @@ it('should render <SubscriptionContainer> with B2B default audience if subscript
         await openSubscriptionModal({} as any);
     });
 
-    expect(jest.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
+    expect(vi.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
         expect.objectContaining({
-            defaultAudience: Audience.B2B,
+            subscription: expect.objectContaining({
+                Plans: [expect.objectContaining({ Name: PLANS.BUNDLE_PRO })],
+            }),
         })
     );
 
@@ -212,7 +224,7 @@ it('should render <SubscriptionContainer> with FAMILY default audience if it is 
         await openSubscriptionModal({ defaultAudience: Audience.FAMILY } as any);
     });
 
-    expect(jest.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
+    expect(vi.mocked(SubscriptionContainer).mock.calls.map(([props]) => props)).toContainEqual(
         expect.objectContaining({
             defaultAudience: Audience.FAMILY,
         })

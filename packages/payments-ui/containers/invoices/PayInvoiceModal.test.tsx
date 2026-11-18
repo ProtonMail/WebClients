@@ -2,10 +2,11 @@ import type { ReactNode } from 'react';
 
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { Mock } from 'vitest';
 
 import { useGetPaymentsInit } from '@proton/account/paymentsInit/hooks';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { InvoiceState, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Invoice } from '@proton/payments/core/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -19,18 +20,18 @@ import { ChargebeePaypalButton } from '../../ui/components/ChargebeePaypalButton
 import { GooglePayButton } from '../../ui/components/GooglePayButton';
 import PayInvoiceModal, { type Props } from './PayInvoiceModal';
 
-const getPaymentsInit = jest.fn().mockResolvedValue({
+const getPaymentsInit = vi.fn().mockResolvedValue({
     hasPostedInvoices: false,
     postedInvoices: [],
 });
 
-jest.mock('@proton/account/paymentsInit/hooks', () => ({
-    useGetPaymentsInit: jest.fn(),
+vi.mock('@proton/account/paymentsInit/hooks', () => ({
+    useGetPaymentsInit: vi.fn(),
 }));
 
-const payInvoice = jest.fn().mockResolvedValue(undefined);
+const payInvoice = vi.fn().mockResolvedValue(undefined);
 
-type OnChargeable = (operations: { payInvoice: jest.Mock }) => Promise<void>;
+type OnChargeable = (operations: { payInvoice: Mock }) => Promise<void>;
 
 let selectedMethodValue: string | undefined;
 let amountDue: number;
@@ -38,10 +39,10 @@ let amountLoading: boolean;
 /** Wallet processors call onChargeable themselves once the user authorizes in the Apple Pay / Google Pay sheet */
 let authorizeWalletPayment: () => Promise<void>;
 
-const chargebeeCardProcessPaymentToken = jest.fn((onChargeable: OnChargeable) => onChargeable({ payInvoice }));
-const selectedProcessorProcessPaymentToken = jest.fn().mockResolvedValue(undefined);
+const chargebeeCardProcessPaymentToken = vi.fn((onChargeable: OnChargeable) => onChargeable({ payInvoice }));
+const selectedProcessorProcessPaymentToken = vi.fn().mockResolvedValue(undefined);
 
-jest.mock('../../client-extensions/usePaymentFacade', () => ({
+vi.mock('../../client-extensions/usePaymentFacade', () => ({
     usePaymentFacade: ({ onChargeable, amount }: { onChargeable: OnChargeable; amount: number }) => {
         authorizeWalletPayment = () => onChargeable({ payInvoice });
 
@@ -65,48 +66,48 @@ jest.mock('../../client-extensions/usePaymentFacade', () => ({
     },
 }));
 
-jest.mock('../../ui/components/ApplePayButton', () => ({
-    ApplePayButton: jest.fn(() => (
+vi.mock('../../ui/components/ApplePayButton', () => ({
+    ApplePayButton: vi.fn(() => (
         <button type="button" data-testid="apple-pay-button">
             Apple Pay
         </button>
     )),
 }));
 
-jest.mock('../../ui/components/ChargebeeIdealButton', () => ({
-    ChargebeeIdealButton: jest.fn(() => (
+vi.mock('../../ui/components/ChargebeeIdealButton', () => ({
+    ChargebeeIdealButton: vi.fn(() => (
         <button type="button" data-testid="chargebee-ideal-button">
             iDEAL
         </button>
     )),
 }));
 
-jest.mock('../../ui/components/ChargebeePaypalButton', () => ({
-    ChargebeePaypalButton: jest.fn(() => (
+vi.mock('../../ui/components/ChargebeePaypalButton', () => ({
+    ChargebeePaypalButton: vi.fn(() => (
         <button type="button" data-testid="chargebee-paypal-button">
             PayPal
         </button>
     )),
 }));
 
-jest.mock('../../ui/components/GooglePayButton', () => ({
-    GooglePayButton: jest.fn(() => (
+vi.mock('../../ui/components/GooglePayButton', () => ({
+    GooglePayButton: vi.fn(() => (
         <button type="button" data-testid="google-pay-button">
             Google Pay
         </button>
     )),
 }));
 
-jest.mock('../payments/PaymentWrapper', () => ({
+vi.mock('../payments/PaymentWrapper', () => ({
     __esModule: true,
     default: () => null,
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
 
-jest.mock('@proton/components/hooks/useApiResult', () => ({
+vi.mock('@proton/components/hooks/useApiResult', () => ({
     __esModule: true,
     default: () => ({
         result: amountLoading
@@ -116,14 +117,14 @@ jest.mock('@proton/components/hooks/useApiResult', () => ({
     }),
 }));
 
-const call = jest.fn().mockResolvedValue(undefined);
+const call = vi.fn().mockResolvedValue(undefined);
 
-jest.mock('@proton/components/hooks/useEventManager', () => ({
+vi.mock('@proton/components/hooks/useEventManager', () => ({
     __esModule: true,
     default: () => ({ call }),
 }));
 
-jest.mock('@proton/atoms/Portal/Portal', () => ({
+vi.mock('@proton/atoms/Portal/Portal', () => ({
     Portal: ({ children }: { children: ReactNode }) => children,
 }));
 
@@ -144,7 +145,7 @@ const baseInvoice: Invoice = {
 const renderPayInvoiceModal = (props: Partial<Props> = {}) => {
     const modalProps: Props & Pick<ModalProps, 'open'> = {
         invoice: baseInvoice,
-        fetchInvoices: jest.fn(),
+        fetchInvoices: vi.fn(),
         app: APPS.PROTONMAIL,
         open: true,
         ...props,
@@ -155,15 +156,15 @@ const renderPayInvoiceModal = (props: Partial<Props> = {}) => {
 
 describe('PayInvoiceModal', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         selectedMethodValue = undefined;
         amountDue = 0;
         amountLoading = false;
-        (useGetPaymentsInit as jest.Mock).mockReturnValue(getPaymentsInit);
+        (useGetPaymentsInit as Mock).mockReturnValue(getPaymentsInit);
     });
 
     it('should refresh payments init after paying an invoice', async () => {
-        const fetchInvoices = jest.fn().mockResolvedValue(undefined);
+        const fetchInvoices = vi.fn().mockResolvedValue(undefined);
 
         const props: Props & Pick<ModalProps, 'open'> = {
             invoice: baseInvoice,
@@ -186,7 +187,7 @@ describe('PayInvoiceModal', () => {
 
     it('should close the modal even if a refresh after paying fails', async () => {
         call.mockRejectedValueOnce(new Error('events failed'));
-        const onClose = jest.fn();
+        const onClose = vi.fn();
 
         renderPayInvoiceModal({ onClose });
 
@@ -211,7 +212,7 @@ describe('PayInvoiceModal', () => {
 
         expect(screen.getByTestId(buttonTestId)).toBeInTheDocument();
         expect(screen.queryByTestId('pay-invoice-button')).not.toBeInTheDocument();
-        const props = (component as jest.Mock).mock.lastCall[0];
+        const props = (component as Mock).mock.lastCall![0];
         expect(props.width).toBe(width);
         expect(props.loading).toBe(loading);
     });
@@ -315,8 +316,8 @@ describe('PayInvoiceModal', () => {
     it('should pay the invoice and close once a wallet payment is authorized', async () => {
         selectedMethodValue = PAYMENT_METHOD_TYPES.APPLE_PAY;
         amountDue = 1000;
-        const fetchInvoices = jest.fn().mockResolvedValue(undefined);
-        const onClose = jest.fn();
+        const fetchInvoices = vi.fn().mockResolvedValue(undefined);
+        const onClose = vi.fn();
 
         renderPayInvoiceModal({ fetchInvoices, onClose });
 

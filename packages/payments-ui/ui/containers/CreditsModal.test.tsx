@@ -2,33 +2,38 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
-import { mockEventManager } from '@proton/components/testing/event-manager';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { withApi } from '@proton/components/testing/hocs/with-api';
+import { mockEventManager } from '@proton/components/testing/vitest/event-manager';
+import { withApi } from '@proton/components/testing/vitest/with-api';
+import { withDeprecatedModals } from '@proton/components/testing/vitest/with-deprecated-modals';
+import { withEventManager } from '@proton/components/testing/vitest/with-event-manager';
+import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import { withAuthentication } from '@proton/components/testing/with-authentication';
 import { withCache } from '@proton/components/testing/with-cache';
 import { withConfig } from '@proton/components/testing/with-config';
-import { withDeprecatedModals } from '@proton/components/testing/with-deprecated-modals';
-import { withEventManager } from '@proton/components/testing/with-event-manager';
 import { withNotifications } from '@proton/components/testing/with-notifications';
-import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { buyCredit, createToken } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
-import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/payments/testing/api-endpoints';
+import {
+    MOCK_PAYMENT_STATUS,
+    mockPaymentMethods,
+    mockPaymentStatus,
+} from '@proton/payments/testing/vitest/api-endpoints';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
+import * as useFlagModule from '@proton/unleash/useFlag';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import PaymentMethodSelector from '../../containers/payments/methods/PaymentMethodSelector';
 import { getIdealAuthorizationText } from '../../payment-methods/ideal/IdealAuthorizationText';
 import { CreditsModal } from './CreditsModal';
 
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
 const mockPaymentMethodSelectorRenders = { count: 0 };
-jest.mock('../../containers/payments/methods/PaymentMethodSelector', () => {
-    const actual = jest.requireActual('../../containers/payments/methods/PaymentMethodSelector');
+vi.mock('../../containers/payments/methods/PaymentMethodSelector', async () => {
+    const actual: any = await vi.importActual('../../containers/payments/methods/PaymentMethodSelector');
 
     return {
         __esModule: true,
@@ -40,7 +45,7 @@ jest.mock('../../containers/payments/methods/PaymentMethodSelector', () => {
     };
 });
 
-const createTokenMock = jest.fn((request) => {
+const createTokenMock = vi.fn((request) => {
     const type = request?.data?.Payment?.Type ?? '';
     let Token: string;
     if (type === 'paypal') {
@@ -56,13 +61,13 @@ const createTokenMock = jest.fn((request) => {
 });
 
 const buyCreditUrl = buyCredit({} as any).url;
-const buyCreditMock = jest.fn().mockResolvedValue({});
+const buyCreditMock = vi.fn().mockResolvedValue({});
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     // That's an unresolved issue of jsdom https://github.com/jsdom/jsdom/issues/918
-    (window as any).SVGElement.prototype.getBBox = jest.fn().mockReturnValue({ width: 0 });
+    (window as any).SVGElement.prototype.getBBox = vi.fn().mockReturnValue({ width: 0 });
 
     addApiMock(createToken({} as any).url, createTokenMock);
     addApiMock(buyCreditUrl, buyCreditMock);
@@ -72,7 +77,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
 });
 
 const ContextCreditsModal = applyHOCs(
@@ -236,7 +241,7 @@ it.skip('should display invalid expiration date error', async () => {
 // todo: this test is no longer valid after Chargebee migration. For the update, the only viable option seems to
 // mock the CB iframe response.
 it.skip('should create payment token and then buy credits with it', async () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { findByTestId, queryByTestId } = render(
         <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
@@ -289,7 +294,7 @@ it.skip('should create payment token and then buy credits with it', async () => 
 // todo: this test is no longer valid after Chargebee migration. For the update, the only viable option seems to
 // mock the CB iframe response.
 it.skip('should create payment token and then buy credits with it - custom amount', async () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { findByTestId, queryByTestId } = render(
         <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
@@ -344,7 +349,7 @@ it.skip('should create payment token and then buy credits with it - custom amoun
 });
 
 it.skip('should create payment token for paypal and then buy credits with it', async () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { container, queryByTestId } = render(
         <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
@@ -389,7 +394,7 @@ it.skip('should create payment token for paypal and then buy credits with it', a
 });
 
 it.skip('should create payment token for paypal and then buy credits with it - custom amount', async () => {
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { container, queryByTestId } = render(
         <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
@@ -498,7 +503,7 @@ it.skip('should create payment token for saved card and then buy credits with it
         ZIP: '11111',
     });
 
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { container, findByTestId } = render(
         <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
@@ -545,7 +550,7 @@ it.skip('should create payment token for saved paypal and then buy credits with 
         Payer: '',
     });
 
-    const onClose = jest.fn();
+    const onClose = vi.fn();
     const { container, findByTestId } = render(
         <ContextCreditsModal paymentStatus={status} open={true} onClose={onClose} app={APPS.PROTONMAIL} />
     );
@@ -622,7 +627,7 @@ it('should not re-render in a loop while the payment methods settle', async () =
 });
 
 it('should offer iDEAL when the account country is the Netherlands', async () => {
-    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag');
+    const useFlagMock = vi.spyOn(useFlagModule, 'useFlag');
     useFlagMock.mockImplementation((flag) => flag === 'EnableIdeal');
 
     render(<ContextCreditsModal paymentStatus={{ ...status, CountryCode: 'NL' }} open={true} app={APPS.PROTONMAIL} />);
@@ -631,7 +636,7 @@ it('should offer iDEAL when the account country is the Netherlands', async () =>
 });
 
 it('should render the iDEAL authorization note only when iDEAL is selected', async () => {
-    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag');
+    const useFlagMock = vi.spyOn(useFlagModule, 'useFlag');
     useFlagMock.mockImplementation((flag) => flag === 'EnableIdeal');
 
     render(<ContextCreditsModal paymentStatus={{ ...status, CountryCode: 'NL' }} open={true} app={APPS.PROTONMAIL} />);

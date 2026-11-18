@@ -1,7 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import { WrongBillingAddressError } from '@proton/payments/core/errors';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
@@ -12,20 +13,20 @@ import { type OnBillingAddressChange, useTaxCountry } from '../hooks/useTaxCount
 import { InlineTaxCountrySelector } from './InlineTaxCountrySelector';
 
 // Mock the feature flag to be enabled by default for all tests (to match existing test expectations)
-jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: jest.fn().mockReturnValue(true),
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn().mockReturnValue(true),
 }));
-jest.mock('@proton/unleash/useGetFlag', () => ({
-    useGetFlag: jest.fn().mockReturnValue(() => true),
+vi.mock('@proton/unleash/useGetFlag', () => ({
+    useGetFlag: vi.fn().mockReturnValue(() => true),
 }));
 
 // Mock useConfig to provide APP_NAME
-jest.mock('@proton/app-context/useConfig');
+vi.mock('@proton/app-context/useConfig');
 
-const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 
 // Mock useConfig with default APP_NAME
-(useConfig as jest.Mock).mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
+(useConfig as Mock).mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
 
 // Test component that calls the hook and passes the result to InlineTaxCountrySelector
 const TestInlineTaxCountrySelector = ({

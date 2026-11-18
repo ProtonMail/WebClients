@@ -11,8 +11,8 @@ import { defaultApp as app, makeAddon, makeCheckResult, makePlan, makePricing } 
 
 // Decouple the integration test from live coupon configs: it supplies its own mockCouponDiscountBreakdown so it
 // exercises the breakdown→checkout pipeline, not whatever data a real campaign config happens to carry.
-jest.mock('@proton/payments/core/coupon-config/get-static-coupon-config', () => ({
-    getStaticCouponConfig: jest.fn(),
+vi.mock('@proton/payments/core/coupon-config/get-static-coupon-config', () => ({
+    getStaticCouponConfig: vi.fn(),
 }));
 
 const mockBreakdownConfig = {
@@ -27,7 +27,7 @@ const mockBreakdownConfig = {
 } as unknown as CouponConfig;
 
 beforeEach(() => {
-    jest.mocked(getStaticCouponConfig).mockImplementation((couponCode) =>
+    vi.mocked(getStaticCouponConfig).mockImplementation((couponCode) =>
         couponCode === COUPON_CODES.JUNE26BUNDLESALE ? mockBreakdownConfig : undefined
     );
 });

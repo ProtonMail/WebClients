@@ -6,7 +6,7 @@ import type { ChargebeeIdealProcessorHook } from '@proton/payments-hooks/react-e
 import { IdealAccountHolderInput } from './IdealAccountHolderInput';
 
 function renderInput(overrides: Partial<ChargebeeIdealProcessorHook> = {}) {
-    const setAccountHolderName = jest.fn();
+    const setAccountHolderName = vi.fn();
 
     render(
         <IdealAccountHolderInput
@@ -15,7 +15,7 @@ function renderInput(overrides: Partial<ChargebeeIdealProcessorHook> = {}) {
                     accountHolderName: '',
                     setAccountHolderName,
                     accountHolderNameError: '',
-                    touchAccountHolderName: jest.fn(),
+                    touchAccountHolderName: vi.fn(),
                     initializing: false,
                     ...overrides,
                 } as ChargebeeIdealProcessorHook

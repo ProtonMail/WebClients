@@ -1,9 +1,9 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { organizationDefaultResponse } from '@proton/components/hooks/helpers/tests/useOrganization';
-import { plansDefaultResponse } from '@proton/components/hooks/helpers/tests/usePlans';
-import { defaultSubscriptionCache } from '@proton/components/hooks/helpers/tests/useSubscription';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { organizationDefaultResponse } from '@proton/components/hooks/helpers/tests/vitest/useOrganization';
+import { plansDefaultResponse } from '@proton/components/hooks/helpers/tests/vitest/usePlans';
+import { defaultSubscriptionCache } from '@proton/components/hooks/helpers/tests/vitest/useSubscription';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
@@ -25,7 +25,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
-import { addApiMock, apiMock } from '@proton/test-api/api';
+import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
+import * as useFlagModule from '@proton/unleash/useFlag';
 
 import {
     ContextSubscriptionContainer,
@@ -35,18 +36,18 @@ import {
 } from '../../../testing/subscriptionContainer';
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 
-jest.mock('@proton/atoms/Portal/Portal', () => ({
+vi.mock('@proton/atoms/Portal/Portal', () => ({
     __esModule: true,
-    Portal: jest.fn(({ children }) => <>{children}</>),
+    Portal: vi.fn(({ children }) => <>{children}</>),
 }));
 
-jest.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled', () => ({
+vi.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled', () => ({
     __esModule: true,
-    default: jest.fn(() => ({ paymentsEnabled: false, enabled: false })),
+    default: vi.fn(() => ({ paymentsEnabled: false, enabled: false })),
 }));
 
-jest.mock('@proton/unleash/useVariant', () => ({
-    useVariant: jest.fn(() => ({ name: 'disabled' })),
+vi.mock('@proton/unleash/useVariant', () => ({
+    useVariant: vi.fn(() => ({ name: 'disabled' })),
 }));
 
 async function waitUntilChecked() {
@@ -70,7 +71,7 @@ describe('SubscriptionContainer', () => {
     let props: SubscriptionContainerProps;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         props = {
             app: 'proton-mail',
@@ -222,10 +223,43 @@ describe('SubscriptionContainer', () => {
         expect(screen.queryByText(/Pay .* now/)).not.toBeInTheDocument();
     });
 
+    it('should open on the B2B audience if the requested plan is a B2B plan', async () => {
+        props.step = SUBSCRIPTION_STEPS.PLAN_SELECTION;
+        props.plan = PLANS.BUNDLE_PRO;
+
+        renderWithProviders(<ContextSubscriptionContainer {...props} />);
+
+        await waitFor(() => {
+            expect(screen.getByTestId('b2b-plan')).toBeInTheDocument();
+        });
+        expect(screen.queryByTestId('b2c-plan')).not.toBeInTheDocument();
+    });
+
+    it('should open on the B2B audience if the current subscription has a B2B plan', async () => {
+        props.step = SUBSCRIPTION_STEPS.PLAN_SELECTION;
+        props.subscription = buildSubscription(PLANS.BUNDLE_PRO);
+
+        renderWithProviders(<ContextSubscriptionContainer {...props} />);
+
+        await waitFor(() => {
+            expect(screen.getByTestId('b2b-plan')).toBeInTheDocument();
+        });
+        expect(screen.queryByTestId('b2c-plan')).not.toBeInTheDocument();
+    });
+
+    it('should open on the B2C audience by default', async () => {
+        props.step = SUBSCRIPTION_STEPS.PLAN_SELECTION;
+
+        renderWithProviders(<ContextSubscriptionContainer {...props} />);
+
+        await waitFor(() => {
+            expect(screen.getByTestId('b2c-plan')).toBeInTheDocument();
+        });
+        expect(screen.queryByTestId('b2b-plan')).not.toBeInTheDocument();
+    });
+
     it('keeps the web Lumo currency for Mail Plus, also back on plan selection', async () => {
-        jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag').mockImplementation(
-            (flag) => flag === 'LumoMultiSubscriptions'
-        );
+        vi.spyOn(useFlagModule, 'useFlag').mockImplementation((flag) => flag === 'LumoMultiSubscriptions');
         mockCheckResult();
         props.step = SUBSCRIPTION_STEPS.CHECKOUT;
         props.planIDs = { [PLANS.MAIL]: 1 };
@@ -264,7 +298,7 @@ describe('SubscriptionContainer subscription guards', () => {
     let props: SubscriptionContainerProps;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         props = {
             app: 'proton-mail',
