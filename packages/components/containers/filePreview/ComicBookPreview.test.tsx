@@ -1,4 +1,5 @@
 import JSZip from 'jszip';
+import type { Mock } from 'vitest';
 
 import { getCBZCover, getExtractedImagesFromCBZ } from './ComicBookPreview';
 
@@ -41,10 +42,10 @@ describe('ComicBookPreview', () => {
 
     describe('getExtractedImagesFromCBZ', () => {
         const originalCreateObjectURL = URL.createObjectURL;
-        let createObjectURL: jest.Mock;
+        let createObjectURL: Mock;
 
         beforeEach(() => {
-            createObjectURL = jest.fn((blob: Blob) => `blob:${blob.type}`);
+            createObjectURL = vi.fn((blob: Blob) => `blob:${blob.type}`);
             URL.createObjectURL = createObjectURL;
         });
 

@@ -10,26 +10,26 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import useEventManager from '../../../../hooks/useEventManager';
-import { componentsHookRenderer } from '../../../contacts/tests/render';
+import { componentsHookRenderer } from '../../../contacts/tests/vitest/render';
 import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';
 import type { FeedbackDowngradeFormData } from '../content/interface';
 import { useCancelRenewal } from './useCancelRenewal';
 
-jest.mock('@proton/app-context/useApi');
-jest.mock('../../../../hooks/useEventManager');
-jest.mock('@proton/app-context/useNotifications');
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/account/organization/hooks');
-jest.mock('@proton/account/entitlementCatalog/hooks');
+vi.mock('@proton/app-context/useApi');
+vi.mock('../../../../hooks/useEventManager');
+vi.mock('@proton/app-context/useNotifications');
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/account/organization/hooks');
+vi.mock('@proton/account/entitlementCatalog/hooks');
 
-const mockApi = jest.fn().mockResolvedValue({});
-const mockEventManagerCall = jest.fn().mockResolvedValue(undefined);
-const mockCreateNotification = jest.fn().mockReturnValue('notification-id');
-const mockHideNotification = jest.fn();
+const mockApi = vi.fn().mockResolvedValue({});
+const mockEventManagerCall = vi.fn().mockResolvedValue(undefined);
+const mockCreateNotification = vi.fn().mockReturnValue('notification-id');
+const mockHideNotification = vi.fn();
 
-jest.mocked(useApi).mockReturnValue(mockApi);
-jest.mocked(useEventManager).mockReturnValue({ call: mockEventManagerCall } as any);
-jest.mocked(useNotifications).mockReturnValue({
+vi.mocked(useApi).mockReturnValue(mockApi);
+vi.mocked(useEventManager).mockReturnValue({ call: mockEventManagerCall } as any);
+vi.mocked(useNotifications).mockReturnValue({
     createNotification: mockCreateNotification,
     hideNotification: mockHideNotification,
 } as any);
@@ -38,9 +38,9 @@ const lumoSubscription = { ...buildSubscription(PLANS.LUMO), ID: 'sub-lumo' };
 const trialSubscription = buildSubscription(PLANS.BUNDLE_PRO_2024, { IsTrial: true });
 const nonTrialSubscription = buildSubscription(PLANS.BUNDLE_PRO_2024, { IsTrial: false });
 
-jest.mocked(useSubscription).mockReturnValue([mailSubscription, false]);
-jest.mocked(useOrganization).mockReturnValue([{} as any, false]);
-jest.mocked(useEntitlementCatalog).mockReturnValue([
+vi.mocked(useSubscription).mockReturnValue([mailSubscription, false]);
+vi.mocked(useOrganization).mockReturnValue([{} as any, false]);
+vi.mocked(useEntitlementCatalog).mockReturnValue([
     buildEntitlementCatalog({ [PLANS.BUNDLE_PRO_2024]: [EntitlementName.Business] }),
     false,
 ]);
@@ -54,7 +54,7 @@ const feedback: FeedbackDowngradeFormData = {
 
 describe('useCancelRenewal', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should cancel the given subscription by its ID with feedback', async () => {
@@ -78,7 +78,7 @@ describe('useCancelRenewal', () => {
     });
 
     it('should decide the trial notification from the given subscription, not from useSubscription', async () => {
-        jest.mocked(useSubscription).mockReturnValueOnce([nonTrialSubscription, false]);
+        vi.mocked(useSubscription).mockReturnValueOnce([nonTrialSubscription, false]);
         const { result } = componentsHookRenderer(useCancelRenewal);
 
         await result.current.cancelSubscriptionRenewal(trialSubscription, feedback);
@@ -136,7 +136,7 @@ describe('useCancelRenewal', () => {
     });
 
     it('should dispatch trial canceled event for B2B trial', async () => {
-        const dispatchEventSpy = jest.spyOn(document, 'dispatchEvent');
+        const dispatchEventSpy = vi.spyOn(document, 'dispatchEvent');
         const { result } = componentsHookRenderer(useCancelRenewal);
 
         await result.current.cancelSubscriptionRenewal(trialSubscription, feedback);
@@ -146,7 +146,7 @@ describe('useCancelRenewal', () => {
     });
 
     it('should not dispatch trial canceled event when not B2B trial', async () => {
-        const dispatchEventSpy = jest.spyOn(document, 'dispatchEvent');
+        const dispatchEventSpy = vi.spyOn(document, 'dispatchEvent');
         const { result } = componentsHookRenderer(useCancelRenewal);
 
         await result.current.cancelSubscriptionRenewal(nonTrialSubscription, feedback);

@@ -7,7 +7,7 @@ describe('Toggle component', () => {
     const getInput = (container) => container.querySelector('.toggle-checkbox');
 
     it('should be checked', () => {
-        const mockOnChange = jest.fn();
+        const mockOnChange = vi.fn();
         const { container } = render(<Toggle id={id} checked onChange={mockOnChange} />);
         const inputNode = getInput(container);
 
@@ -15,7 +15,7 @@ describe('Toggle component', () => {
     });
 
     it('should be unchecked', () => {
-        const mockOnChange = jest.fn();
+        const mockOnChange = vi.fn();
         const { container } = render(<Toggle id={id} checked={false} onChange={mockOnChange} />);
         const inputNode = getInput(container);
 
@@ -23,7 +23,7 @@ describe('Toggle component', () => {
     });
 
     it('should call onChange', () => {
-        const mockOnChange = jest.fn();
+        const mockOnChange = vi.fn();
         const { container } = render(<Toggle id={id} checked={false} onChange={mockOnChange} />);
 
         expect(mockOnChange).toHaveBeenCalledTimes(0);
@@ -32,7 +32,7 @@ describe('Toggle component', () => {
     });
 
     it("should not call onChange since it's disabled", () => {
-        const mockOnChange = jest.fn();
+        const mockOnChange = vi.fn();
         const { container } = render(<Toggle id={id} checked={false} disabled onChange={mockOnChange} />);
 
         fireEvent.click(container.firstChild);

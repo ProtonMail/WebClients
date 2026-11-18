@@ -6,9 +6,9 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { DAY } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
-import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
-import { getStoreWrapper, renderWithProviders } from '../../testing/renderWithProviders';
+import { getStoreWrapper, renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import { PostedInvoiceTopBanner } from './PostedInvoiceTopBanner';
 
 const DUE_TIME = new Date('2026-10-01T12:00:00Z');

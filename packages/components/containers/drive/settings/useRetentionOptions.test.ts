@@ -13,12 +13,12 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { useRetentionOptions } from './useRetentionOptions';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn(),
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn(),
 }));
 
 const renderRetentionOptions = ({
@@ -39,8 +39,8 @@ const renderRetentionOptions = ({
     entitlements?: ReturnType<typeof buildOrgAndUserEntitlementChecks>;
     revisionRetentionDays: RevisionRetentionDaysSetting;
 }) => {
-    jest.mocked(useUser).mockReturnValue([buildUser({ hasPaidDrive }), false]);
-    jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([entitlements, loadingEntitlements]);
+    vi.mocked(useUser).mockReturnValue([buildUser({ hasPaidDrive }), false]);
+    vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([entitlements, loadingEntitlements]);
 
     const { options, canUpsellFree, canContactSalesForLongerHistory } = renderHook(() =>
         useRetentionOptions(revisionRetentionDays)

@@ -1,15 +1,16 @@
 import { screen } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import { mockDefaultBreakpoints } from '../../testing/mockUseActiveBreakpoint';
-import { renderWithProviders } from '../../testing/renderWithProviders';
+import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import { AppSwitcher } from './AppSwitcher';
 
-jest.mock('../../hooks/useActiveBreakpoint');
-const mockUseActiveBreakpoint = useActiveBreakpoint as jest.MockedFunction<typeof useActiveBreakpoint>;
+vi.mock('../../hooks/useActiveBreakpoint');
+const mockUseActiveBreakpoint = useActiveBreakpoint as MockedFunction<typeof useActiveBreakpoint>;
 
 const mockViewport = (small: boolean) =>
     mockUseActiveBreakpoint.mockReturnValue({

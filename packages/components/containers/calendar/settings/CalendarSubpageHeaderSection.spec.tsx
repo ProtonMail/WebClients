@@ -2,7 +2,7 @@ import type { ComponentProps } from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import { mockUseContactEmailsCache } from '../../../testing/mockUseContactEmailsCache';
+import { mockUseContactEmailsCache } from '../../../testing/vitest/mockUseContactEmailsCache';
 import CalendarSubpageHeaderSection from './CalendarSubpageHeaderSection';
 
 const defaultCalendar = {

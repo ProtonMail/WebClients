@@ -7,11 +7,11 @@ import { LastChanged } from './LastChanged';
 
 describe('LastChanged', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(new Date(2026, 5, 15));
+        vi.useFakeTimers().setSystemTime(new Date(2026, 5, 15));
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         setDateLocales({ dateLocale: enUSLocale });
     });
 

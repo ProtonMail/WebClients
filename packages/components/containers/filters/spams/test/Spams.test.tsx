@@ -3,7 +3,7 @@ import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { clearAll, renderWithProviders } from '../../../contacts/tests/render';
+import { clearAll, renderWithProviders } from '../../../contacts/tests/vitest/render';
 import Spams from '../Spams';
 import SpamModal from '../modals/SpamModal';
 
@@ -42,7 +42,7 @@ describe('Spams - Incoming defaults', () => {
     });
 
     it('Modal submission should return correct values', async () => {
-        const mockedSubmit = jest.fn();
+        const mockedSubmit = vi.fn();
         const EMAIL = 'homer@simpsons.fr';
 
         renderWithProviders(

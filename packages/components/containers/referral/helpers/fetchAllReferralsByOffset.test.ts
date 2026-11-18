@@ -9,7 +9,7 @@ interface ApiResults {
 
 describe('fetchAllReferralsByOffset', () => {
     it('Should make 1 call if total is inferior to limit', async () => {
-        const apiSpy = jest.fn<Promise<ApiResults>, [Api]>(() =>
+        const apiSpy = vi.fn<(api: Api) => Promise<ApiResults>>(() =>
             Promise.resolve({
                 Total: 10,
                 Referrals: new Array(10),
@@ -26,7 +26,7 @@ describe('fetchAllReferralsByOffset', () => {
         const LIMIT = 5;
         const TOTAL = 10;
         const CALLS_NUMBER = 2;
-        const apiSpy = jest.fn<Promise<ApiResults>, [Api]>(() =>
+        const apiSpy = vi.fn<(api: Api) => Promise<ApiResults>>(() =>
             Promise.resolve({
                 Total: 10,
                 Referrals: new Array(LIMIT),
@@ -43,7 +43,7 @@ describe('fetchAllReferralsByOffset', () => {
         const TOTAL = 460;
         const CALLS_NUMBER = 5;
         let calls = 0;
-        const apiSpy = jest.fn<Promise<ApiResults>, [Api]>(() => {
+        const apiSpy = vi.fn<(api: Api) => Promise<ApiResults>>(() => {
             calls += 1;
             return Promise.resolve({
                 Total: TOTAL,

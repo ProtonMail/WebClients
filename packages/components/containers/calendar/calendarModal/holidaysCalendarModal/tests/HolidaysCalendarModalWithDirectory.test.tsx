@@ -1,5 +1,4 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
-import { mocked } from 'jest-mock';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
@@ -8,52 +7,52 @@ import { localeCode, setLocales } from '@proton/shared/lib/i18n';
 import type { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { generateHolidaysCalendars } from '@proton/shared/testing/calendarBuilders';
 
-import { mockNotifications } from '../../../../../testing/mockNotifications';
+import { mockNotifications } from '../../../../../testing/vitest/mockNotifications';
 import { CALENDAR_MODAL_TYPE } from '../../interface';
 import HolidaysCalendarModalWithDirectory from '../HolidaysCalendarModalWithDirectory';
 
-jest.mock('@proton/account/addresses/hooks', () => ({
+vi.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
-    default: jest.fn(() => []),
-    useGetAddresses: jest.fn(),
+    default: vi.fn(() => []),
+    useGetAddresses: vi.fn(),
 }));
-jest.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
+vi.mock('@proton/calendar/calendarBootstrap/hooks', () => ({
     __esModule: true,
-    default: jest.fn(() => () => Promise.resolve({ CalendarSettings: { DefaultFullDayNotifications: [] } })),
-    useGetCalendarBootstrap: jest.fn(),
+    default: vi.fn(() => () => Promise.resolve({ CalendarSettings: { DefaultFullDayNotifications: [] } })),
+    useGetCalendarBootstrap: vi.fn(),
 }));
-jest.mock('../../../../../hooks/useEventManager', () => () => ({}));
-jest.mock('../../../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
-    useCalendarModelEventManager: jest.fn(() => ({})),
+vi.mock('../../../../../hooks/useEventManager', () => ({ __esModule: true, default: () => ({}) }));
+vi.mock('../../../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+    useCalendarModelEventManager: vi.fn(() => ({})),
 }));
-jest.mock('@proton/account/addressKeys/hooks', () => ({
+vi.mock('@proton/account/addressKeys/hooks', () => ({
     __esModule: true,
-    useAddressesKeys: jest.fn(() => []),
-    useGetAddressKeys: jest.fn(() => []),
+    useAddressesKeys: vi.fn(() => []),
+    useGetAddressKeys: vi.fn(() => []),
 }));
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
     useConfig: () => {
         return { APP_NAME: 'proton-calendar' };
     },
 }));
 
-jest.mock('@proton/app-context/useNotifications');
-jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
-    ...jest.requireActual('@proton/calendar/calendarUserSettings/hooks'),
-    useCalendarUserSettings: jest.fn(),
+vi.mock('@proton/app-context/useNotifications');
+vi.mock('@proton/calendar/calendarUserSettings/hooks', async () => ({
+    ...(await vi.importActual('@proton/calendar/calendarUserSettings/hooks')),
+    useCalendarUserSettings: vi.fn(),
 }));
 
 const mockedColor = '#273EB2';
-jest.mock('@proton/shared/lib/colors', () => ({
-    ...jest.requireActual('@proton/shared/lib/colors'),
-    getRandomAccentColor: jest.fn(() => mockedColor), // return cobalt
+vi.mock('@proton/shared/lib/colors', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/colors')),
+    getRandomAccentColor: vi.fn(() => mockedColor), // return cobalt
 }));
 
-jest.mock('../../../hooks/useBusySlotsAvailable', () => ({
+vi.mock('../../../hooks/useBusySlotsAvailable', () => ({
     __esModule: true,
-    default: jest.fn(() => false),
+    default: vi.fn(() => false),
 }));
 
 // Holidays calendars mocks
@@ -233,7 +232,7 @@ const holidaysCalendars: VisualCalendar[] = generateHolidaysCalendars(2, [
 ]);
 
 describe('HolidaysCalendarModal - Subscribe to a holidays calendar', () => {
-    const mockedUseNotifications = mocked(useNotifications);
+    const mockedUseNotifications = vi.mocked(useNotifications);
 
     beforeEach(async () => {
         mockedUseNotifications.mockImplementation(() => mockNotifications);

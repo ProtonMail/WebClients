@@ -2,13 +2,16 @@ import { CryptoProxy } from '@protontech/crypto';
 import { fireEvent } from '@testing-library/react';
 
 import { API_CODES } from '@proton/shared/lib/constants';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 import range from '@proton/utils/range';
 
-import { clearAll, getCard, mockedCryptoApi, renderWithProviders } from '../tests/render';
+import { clearAll, getCard, mockedCryptoApi, renderWithProviders } from '../tests/vitest/render';
 import ContactImportModal from './ContactImportModal';
 
-jest.mock('@proton/features/useFeature', () => jest.fn(() => ({ feature: {}, update: jest.fn() })));
+vi.mock('@proton/features/useFeature', () => ({
+    __esModule: true,
+    default: vi.fn(() => ({ feature: {}, update: vi.fn() })),
+}));
 
 describe('ContactImportModal', () => {
     beforeAll(() => {
@@ -29,7 +32,7 @@ Peter,Rabbit,peter@pm.me,Carrot,,03/12/1969,856-264-4130,123-456-789,123-456-789
 Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
         const file = new File([csv], 'test.csv', { type: 'text/csv' });
 
-        const saveRequestSpy = jest.fn();
+        const saveRequestSpy = vi.fn();
         const Responses = range(0, 4).map((i) => ({
             Index: 0,
             Response: { Code: API_CODES.SINGLE_SUCCESS, Contact: { ID: `ContactID${i}`, ContactEmails: [] } },

@@ -14,13 +14,13 @@ const getCountry = (el: HTMLElement) => {
     return el.getAttribute('aria-label');
 };
 
-jest.mock('./flagSvgs', () => {
+vi.mock('./flagSvgs', () => {
     return {
         getFlagSvg: () => true,
     };
 });
-jest.mock('react-virtualized', () => {
-    const ReactVirtualized = jest.requireActual('react-virtualized');
+vi.mock('react-virtualized', async () => {
+    const ReactVirtualized = await vi.importActual('react-virtualized');
     return {
         ...ReactVirtualized,
         // @ts-ignore
@@ -60,7 +60,7 @@ const runTest = (testCommands: TestCommands[]) => {
 
 describe('PhoneInput', () => {
     it('should set default country async once', () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
         const { getByRole, rerender } = render(<PhoneInput value="" data-testid="input" onChange={spy} />);
         const button = getByRole('button') as HTMLButtonElement;
         expect(getCountry(button)).toBe(null);
@@ -71,7 +71,7 @@ describe('PhoneInput', () => {
     });
 
     it('should format input', () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
         const { getByTestId, getByRole, rerender } = render(
             <PhoneInput value="+41781234567" data-testid="input" onChange={spy} />
         );

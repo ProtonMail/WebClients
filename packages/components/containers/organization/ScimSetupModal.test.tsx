@@ -6,11 +6,11 @@ import type { EnhancedMember, MemberReadyForManualUnprivatization } from '@proto
 
 import ScimSetupModal from './ScimSetupModal';
 
-jest.mock('@proton/atoms/Portal/Portal');
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => true }));
+vi.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => true }));
 
 let mockIsScimEnabled = true;
-jest.mock('@proton/account/organization/hooks', () => ({
+vi.mock('@proton/account/organization/hooks', () => ({
     useOrganization: () => [{ IsScimEnabled: mockIsScimEnabled }],
 }));
 
@@ -31,7 +31,7 @@ const getGroup = (ID: string, status = ItemStatus.Unknown) => ({
 });
 
 const renderModal = (props: Partial<Parameters<typeof ScimSetupModal>[0]> = {}) => {
-    const onFinish = jest.fn();
+    const onFinish = vi.fn();
     render(
         <ScimSetupModal
             open
@@ -41,7 +41,7 @@ const renderModal = (props: Partial<Parameters<typeof ScimSetupModal>[0]> = {}) 
             pendingMembers={{}}
             phase={Phase.Idle}
             onFinish={onFinish}
-            onClose={jest.fn()}
+            onClose={vi.fn()}
             {...props}
         />
     );

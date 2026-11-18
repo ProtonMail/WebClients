@@ -4,7 +4,7 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { UNPAID_STATE } from '@proton/shared/lib/interfaces/User';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-import { renderWithProviders } from '../../testing/renderWithProviders';
+import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import UnpaidInvoiceTopBanner from './UnpaidInvoiceTopBanner';
 
 describe('UnpaidInvoiceTopBanner', () => {

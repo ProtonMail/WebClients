@@ -6,7 +6,7 @@ import CycleSelector from './CycleSelector';
 
 describe('CycleSelector', () => {
     const defaultProps = {
-        onSelect: jest.fn(),
+        onSelect: vi.fn(),
         cycle: CYCLE.YEARLY,
     };
 

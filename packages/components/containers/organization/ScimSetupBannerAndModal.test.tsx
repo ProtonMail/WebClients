@@ -1,24 +1,25 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { MockedFunction } from 'vitest';
 
 import { useFlag } from '@proton/unleash/useFlag';
 
 import ScimSetupBannerAndModal from './ScimSetupBannerAndModal';
 import useScimSetupData from './useScimSetupData';
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.MockedFunction<any>;
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as MockedFunction<any>;
 
-jest.mock('@proton/account/organization/hooks', () => ({ useOrganization: () => [{ IsScimEnabled: true }] }));
+vi.mock('@proton/account/organization/hooks', () => ({ useOrganization: () => [{ IsScimEnabled: true }] }));
 
-jest.mock('./useScimSetupData', () => ({
-    ...jest.requireActual('./useScimSetupData'),
+vi.mock('./useScimSetupData', async () => ({
+    ...(await vi.importActual('./useScimSetupData')),
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-const mockUseScimSetupData = useScimSetupData as jest.MockedFunction<any>;
+const mockUseScimSetupData = useScimSetupData as MockedFunction<any>;
 
-jest.mock('./ScimSetupModal', () => ({
+vi.mock('./ScimSetupModal', () => ({
     __esModule: true,
     default: ({ open }: { open?: boolean }) => (open ? <div data-testid="scim-setup-modal" /> : null),
 }));
@@ -33,9 +34,9 @@ const getScimSetupData = (overrides: Record<string, unknown> = {}) => ({
     userStatuses: {},
     groupStatuses: {},
     groupMemberStatuses: {},
-    approvePendingChanges: jest.fn(),
+    approvePendingChanges: vi.fn(),
     orgKeyDemotionStatuses: {},
-    resetApproval: jest.fn(),
+    resetApproval: vi.fn(),
     ...overrides,
 });
 

@@ -9,44 +9,53 @@ import OrganizationGroupsManagementSection from './OrganizationGroupsManagementS
 import { useGroupsManagement } from './context/GroupsManagementContext';
 import { GROUPS_RESTRICTION_REASON } from './types';
 
-const mockDispatch = jest.fn(() => Promise.resolve());
+const mockDispatch = vi.fn(() => Promise.resolve());
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
-jest.mock('@proton/account/groupOwnerInvites', () => ({
-    groupOwnerInvitesThunk: jest.fn(() => 'groupOwnerInvitesThunk'),
+vi.mock('@proton/account/groupOwnerInvites', () => ({
+    groupOwnerInvitesThunk: vi.fn(() => 'groupOwnerInvitesThunk'),
 }));
-jest.mock('@proton/account/userPermissions/hooks', () => ({
+vi.mock('@proton/account/userPermissions/hooks', () => ({
     AdminRolesUIState: { Enabled: 'enabled', Disabled: 'disabled' },
     useAdminRolesUI: () => ['disabled'],
     useCanUpdateBilling: () => [true, false],
 }));
-jest.mock('@proton/features/useFeature', () => () => ({ feature: undefined, update: jest.fn(), loading: false }));
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => mockDispatch }));
-jest.mock('../../payments/subscription/subscriptionModalContext', () => ({
-    useSubscriptionModal: () => [jest.fn(), false],
+vi.mock('@proton/features/useFeature', () => ({
+    __esModule: true,
+    default: () => ({ feature: undefined, update: vi.fn(), loading: false }),
 }));
-jest.mock('./context/GroupsManagementContext', () => ({
-    useGroupsManagement: jest.fn(),
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => mockDispatch }));
+vi.mock('../../payments/subscription/subscriptionModalContext', () => ({
+    useSubscriptionModal: () => [vi.fn(), false],
+}));
+vi.mock('./context/GroupsManagementContext', () => ({
+    useGroupsManagement: vi.fn(),
     withGroupsManagementContext: (Component: any) => Component,
 }));
-jest.mock('./components/GroupsMemberManagementPanel', () => () => null);
-jest.mock('../ScimSetupBannerAndModal', () => () => null);
-jest.mock('../../members/rolesAndPermissions/RoleAssignmentPausedBanner', () => () => null);
-jest.mock('../../members/rolesAndPermissions/AdminRolesOnboardingModal', () => () => null);
+vi.mock('./components/GroupsMemberManagementPanel', () => ({ __esModule: true, default: () => null }));
+vi.mock('../ScimSetupBannerAndModal', () => ({ __esModule: true, default: () => null }));
+vi.mock('../../members/rolesAndPermissions/RoleAssignmentPausedBanner', () => ({
+    __esModule: true,
+    default: () => null,
+}));
+vi.mock('../../members/rolesAndPermissions/AdminRolesOnboardingModal', () => ({
+    __esModule: true,
+    default: () => null,
+}));
 
 describe('OrganizationGroupsManagementSection group owner invites', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('dispatches the group owner invites thunk on mount (the thunk decides whether to fetch)', () => {
-        jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
+        vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
             buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.PASS_BUSINESS] }),
             false,
         ]);
-        jest.mocked(useGroupsManagement).mockReturnValue({
+        vi.mocked(useGroupsManagement).mockReturnValue({
             groups: [],
             actions: {},
             restrictedBy: { reason: GROUPS_RESTRICTION_REASON.NONE },

@@ -8,19 +8,19 @@ import { type ThemeSetting, getDefaultThemeSetting } from '@proton/shared/lib/th
 import { ThemeInjector } from './ThemeInjector';
 import { useTheme } from './ThemeProvider';
 
-jest.mock('@proton/account/userSettings/hooks');
-jest.mock('@proton/app-context/useSilentApi', () => ({ useSilentApi: () => jest.fn() }));
-jest.mock('@proton/shared/lib/helpers/dom', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/dom'),
-    rootFontSize: jest.fn(),
+vi.mock('@proton/account/userSettings/hooks');
+vi.mock('@proton/app-context/useSilentApi', () => ({ useSilentApi: () => vi.fn() }));
+vi.mock('@proton/shared/lib/helpers/dom', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/dom')),
+    rootFontSize: vi.fn(),
 }));
-jest.mock('./ThemeProvider');
+vi.mock('./ThemeProvider');
 
 const mockUseTheme = (settings: ThemeSetting) => {
-    jest.mocked(useTheme).mockReturnValue({
+    vi.mocked(useTheme).mockReturnValue({
         settings,
         addListener: () => () => {},
-        setThemeSetting: jest.fn(),
+        setThemeSetting: vi.fn(),
     } as unknown as ReturnType<typeof useTheme>);
 };
 
@@ -28,16 +28,16 @@ describe('ThemeInjector', () => {
     const defaultSettings = getDefaultThemeSetting();
 
     beforeEach(() => {
-        jest.mocked(useUserSettings).mockReturnValue([{ Theme: defaultSettings }, false] as unknown as ReturnType<
+        vi.mocked(useUserSettings).mockReturnValue([{ Theme: defaultSettings }, false] as unknown as ReturnType<
             typeof useUserSettings
         >);
-        jest.mocked(rootFontSize).mockClear();
+        vi.mocked(rootFontSize).mockClear();
     });
 
     it('refreshes the cached root font size when the font size changes', () => {
         mockUseTheme(defaultSettings);
         const { rerender } = render(<ThemeInjector />);
-        jest.mocked(rootFontSize).mockClear();
+        vi.mocked(rootFontSize).mockClear();
 
         mockUseTheme({ ...defaultSettings, FontSize: ThemeFontSizeSetting.LARGE });
         rerender(<ThemeInjector />);
@@ -49,7 +49,7 @@ describe('ThemeInjector', () => {
     it('refreshes the cached root font size when the font face changes', () => {
         mockUseTheme(defaultSettings);
         const { rerender } = render(<ThemeInjector />);
-        jest.mocked(rootFontSize).mockClear();
+        vi.mocked(rootFontSize).mockClear();
 
         mockUseTheme({ ...defaultSettings, FontFace: ThemeFontFaceSetting.ATKINSON });
         rerender(<ThemeInjector />);

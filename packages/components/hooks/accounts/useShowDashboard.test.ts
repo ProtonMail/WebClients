@@ -14,16 +14,16 @@ import { useVariant } from '@proton/unleash/useVariant';
 
 import useShowDashboard, { useShowDriveDashboard, useShowGenericDashboard } from './useShowDashboard';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
 
-jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: jest.fn(),
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn(),
 }));
 
-jest.mock('@proton/unleash/useVariant', () => ({
-    useVariant: jest.fn(),
+vi.mock('@proton/unleash/useVariant', () => ({
+    useVariant: vi.fn(),
 }));
 
 type EntitlementsCase = {
@@ -32,7 +32,7 @@ type EntitlementsCase = {
 };
 
 const mockEntitlements = ({ subscriptionPlans, viewer }: EntitlementsCase) => {
-    jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
+    vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
         buildOrgAndUserEntitlementChecks({ subscriptionPlans: [...subscriptionPlans], ...viewer }),
         false,
     ]);
@@ -60,8 +60,8 @@ const businessCases = [
 ] as const;
 
 beforeEach(() => {
-    jest.mocked(useFlag).mockReturnValue(true);
-    jest.mocked(useVariant).mockReturnValue({ name: 'B', enabled: true });
+    vi.mocked(useFlag).mockReturnValue(true);
+    vi.mocked(useVariant).mockReturnValue({ name: 'B', enabled: true });
 });
 
 describe('useShowDashboard', () => {

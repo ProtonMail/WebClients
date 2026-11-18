@@ -1,11 +1,13 @@
 import React, { act } from 'react';
 import ReactDOM from 'react-dom/client';
 
+import type { Mock } from 'vitest';
+
 import * as storage from '@proton/shared/lib/helpers/storage';
 
 import { useDeclarativeLocalState } from './useDeclarativeLocalState';
 
-jest.mock('@proton/shared/lib/helpers/storage');
+vi.mock('@proton/shared/lib/helpers/storage');
 
 describe('useDeclarativeLocalState', () => {
     let container: HTMLDivElement;
@@ -13,7 +15,7 @@ describe('useDeclarativeLocalState', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     afterEach(() => {
@@ -56,7 +58,7 @@ describe('useDeclarativeLocalState', () => {
         ${JSON.stringify('')}      | ${''}
         ${JSON.stringify(null)}    | ${null}
     `('handles stored value: $stored', ({ stored, expected }) => {
-        (storage.getItem as jest.Mock).mockReturnValue(stored);
+        (storage.getItem as Mock).mockReturnValue(stored);
 
         const hook = renderHook();
 
@@ -65,7 +67,7 @@ describe('useDeclarativeLocalState', () => {
     });
 
     it('handles invalid JSON but still marks as stored', () => {
-        (storage.getItem as jest.Mock).mockReturnValue('bad-json');
+        (storage.getItem as Mock).mockReturnValue('bad-json');
 
         const hook = renderHook();
 
@@ -74,7 +76,7 @@ describe('useDeclarativeLocalState', () => {
     });
 
     it('returns undefined when nothing stored', () => {
-        (storage.getItem as jest.Mock).mockReturnValue(null);
+        (storage.getItem as Mock).mockReturnValue(null);
 
         const hook = renderHook();
 
@@ -83,7 +85,7 @@ describe('useDeclarativeLocalState', () => {
     });
 
     it('updates state and persists value', () => {
-        (storage.getItem as jest.Mock).mockReturnValue(null);
+        (storage.getItem as Mock).mockReturnValue(null);
 
         const hook = renderHook();
 

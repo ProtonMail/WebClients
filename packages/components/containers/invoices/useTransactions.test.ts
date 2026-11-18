@@ -2,10 +2,10 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { queryTransactions } from '@proton/payments/core/api/api';
 import { InvoiceOwner, TransactionState, TransactionType } from '@proton/payments/core/constants';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 
 import { hookWrapper } from '../../testing/hocs/helpers';
-import { withApi } from '../../testing/hocs/with-api';
+import { withApi } from '../../testing/vitest/with-api';
 import useTransactions from './useTransactions';
 
 const wrapper = hookWrapper(withApi());
@@ -49,7 +49,7 @@ describe('useTransactions', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         addApiMock(queryTransactions({ Page: 0, PageSize: 10, Owner: InvoiceOwner.User }).url, () => mockApiResponse);
     });
 

@@ -12,12 +12,12 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 
 import useIsB2BAdmin from './useIsB2BAdmin';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn(),
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn(),
 }));
 
 const renderIsB2BAdmin = ({
@@ -29,8 +29,8 @@ const renderIsB2BAdmin = ({
     subscriptionPlans: CataloguedPlan[];
     isSubsidiary?: boolean;
 }) => {
-    jest.mocked(useUser).mockReturnValue([buildUser({ Role: role }), false]);
-    jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
+    vi.mocked(useUser).mockReturnValue([buildUser({ Role: role }), false]);
+    vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
         buildOrgAndUserEntitlementChecks({
             subscriptionPlans,
             user: { Role: role },

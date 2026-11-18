@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { act, render, screen } from '@testing-library/react';
 
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
 import { ThemeColor } from '@proton/colors/types';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 
@@ -10,7 +10,7 @@ import useKeyTransparencyNotification from '../../hooks/useKeyTransparencyNotifi
 import { QuickSettingsRemindersContext } from './MailQuickSettingsReminderContext';
 import MailQuickSettingsReminderContextProvider from './MailQuickSettingsReminderContextProvider';
 
-jest.mock('../../hooks/useKeyTransparencyNotification');
+vi.mock('../../hooks/useKeyTransparencyNotification');
 
 const Reminders = () => {
     const context = useContext(QuickSettingsRemindersContext);
@@ -36,7 +36,7 @@ describe('MailQuickSettingsReminderContextProvider', () => {
     beforeEach(() => {
         window.localStorage.clear();
         mockUseUser([{ ID: 'user' }]);
-        jest.mocked(useKeyTransparencyNotification).mockReturnValue(ThemeColor.Danger);
+        vi.mocked(useKeyTransparencyNotification).mockReturnValue(ThemeColor.Danger);
     });
 
     it('hides the key transparency reminder once the user has seen the details', () => {

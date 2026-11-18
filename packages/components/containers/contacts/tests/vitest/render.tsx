@@ -1,0 +1,198 @@
+import type { JSX, PropsWithChildren, ReactElement, ReactNode } from 'react';
+import { Router } from 'react-router';
+
+import type { CryptoApiInterface } from '@protontech/crypto';
+import { VERIFICATION_STATUS } from '@protontech/crypto';
+import type { RenderOptions } from '@testing-library/react';
+import { render as originalRender, renderHook } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
+
+import { getModelState } from '@proton/account/testing/getModelState';
+import { getOrganizationState } from '@proton/account/testing/redux-state';
+import { ApiContext } from '@proton/app-context/apiContext';
+import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
+import { getPaymentStatusState, getSubscriptionState } from '@proton/payments/testing/redux-state';
+import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
+import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
+import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
+import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
+import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces/ApiEnvironmentConfig';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
+import { apiMock } from '@proton/test-api/vitest/api';
+
+import { mockCache } from '../../../../testing/cache';
+import AuthenticationProvider from '../../../authentication/Provider';
+import { CacheProvider } from '../../../cache/Provider';
+import ConfigProvider from '../../../config/Provider';
+import EventManagerContext from '../../../eventManager/context';
+import { extendStore, setupStore } from '../store';
+
+export const mockedCryptoApi = {
+    encryptMessage: vi.fn().mockImplementation(async ({ textData }) => ({
+        signature: `mocked signature over ${textData}`,
+        message: `${textData}`,
+    })),
+    decryptMessage: vi.fn().mockImplementation(async ({ armoredMessage }) => ({
+        data: `${armoredMessage}`,
+        verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
+    })),
+    signMessage: vi
+        .fn()
+        .mockImplementation(async ({ textData }) => ({ signature: `mocked signature over ${textData}` })),
+    verifyMessage: vi.fn().mockImplementation(async () => ({
+        verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
+        signatureTimestamp: new Date(),
+    })),
+} as any as CryptoApiInterface;
+
+window.ResizeObserver = class {
+    observe = vi.fn();
+
+    unobserve = vi.fn();
+
+    disconnect = vi.fn();
+} as unknown as typeof ResizeObserver;
+// https://github.com/nickcolley/jest-axe/issues/147#issuecomment-758804533
+const { getComputedStyle } = window;
+window.getComputedStyle = (elt) => getComputedStyle(elt);
+
+export const notificationManager = {
+    createNotification: vi.fn(),
+    removeNotification: vi.fn(),
+    hideNotification: vi.fn(),
+    removeDuplicate: vi.fn(),
+    clearNotifications: vi.fn(),
+    setOffset: vi.fn(),
+};
+
+const config = {
+    APP_NAME: APPS.PROTONMAIL,
+    APP_VERSION: 'test-version',
+    DATE_VERSION: 'test-date-version',
+} as ProtonConfig;
+
+const eventManager = {
+    start: vi.fn(),
+    stop: vi.fn(),
+    call: vi.fn(),
+    subscribe: vi.fn(),
+} as any;
+
+const TestProvider = ({ children }: { children: ReactNode }) => {
+    const history = createMemoryHistory();
+    return (
+        <ConfigProvider config={config}>
+            <ApiContext.Provider value={apiMock}>
+                <CacheProvider cache={mockCache}>
+                    <NotificationsContext.Provider value={notificationManager}>
+                        <EventManagerContext.Provider value={eventManager}>
+                            <AuthenticationProvider store={{} as any}>
+                                <Router history={history}>{children}</Router>
+                            </AuthenticationProvider>
+                        </EventManagerContext.Provider>
+                    </NotificationsContext.Provider>
+                </CacheProvider>
+            </ApiContext.Provider>
+        </ConfigProvider>
+    );
+};
+
+interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
+    preloadedState?: Partial<Parameters<typeof setupStore>[0]['preloadedState']>;
+}
+
+export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloadedState']) => {
+    const store = setupStore({
+        preloadedState: {
+            user: getModelState({} as UserModel),
+            addresses: getModelState([]),
+            addressKeys: {},
+            contacts: getModelState([]),
+            calendars: getModelState([]),
+            categories: getModelState([]),
+            contactEmails: getModelState([]),
+            userKeys: getModelState([{ publicKey: {}, privateKey: {} } as DecryptedKey]),
+            userSettings: getModelState({} as UserSettings),
+            mailSettings: getModelState({} as MailSettings),
+            subscription: getSubscriptionState(),
+            paymentStatus: getPaymentStatusState(),
+            organization: getOrganizationState(),
+            organizationKey: getModelState({} as CachedOrganizationKey),
+            userInvitations: getModelState([]),
+            plans: getModelState({ plans: [], freePlan: FREE_PLAN }),
+            entitlementCatalog: getModelState(buildEntitlementCatalog()),
+            features: {},
+            importerConfig: getModelState({} as ApiEnvironmentConfig),
+            ...preloadedState,
+        },
+    });
+
+    extendStore({
+        config: {
+            APP_NAME: APPS.PROTONMAIL,
+        } as ProtonConfig,
+        authentication: {
+            getPassword: () => '',
+        } as any,
+        api: apiMock as any,
+        eventManager: vi.fn() as any,
+        history: createMemoryHistory(),
+    });
+
+    function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+        return (
+            <ProtonStoreProvider store={store}>
+                <TestProvider>{children}</TestProvider>
+            </ProtonStoreProvider>
+        );
+    }
+
+    return { Wrapper, store };
+};
+
+export function renderWithProviders(
+    ui: ReactElement,
+    { preloadedState, ...renderOptions }: ExtendedRenderOptions = {}
+) {
+    const { store, Wrapper } = getStoreWrapper(preloadedState);
+    return { store, ...originalRender(ui, { wrapper: Wrapper, ...renderOptions }) };
+}
+
+export const minimalCache = () => {};
+
+export const clearAll = () => {
+    vi.clearAllMocks();
+    mockCache.clear();
+};
+
+export const prepareContact = async (vcard: string) => {
+    const vCardContact = parseToVCard(vcard);
+    const Cards = await prepareVCardContact(vCardContact, { privateKey: {} as any, publicKey: {} as any });
+    return Cards;
+};
+
+export const getCard = (cards: any[], encrypted = false) => {
+    return cards.find(
+        ({ Type }: { Type: CONTACT_CARD_TYPE }) =>
+            Type === (encrypted ? CONTACT_CARD_TYPE.ENCRYPTED_AND_SIGNED : CONTACT_CARD_TYPE.SIGNED)
+    ).Data;
+};
+
+const componentsHookWrapper = ({ children }: { children: any }) => {
+    const { Wrapper } = getStoreWrapper();
+    return (
+        <Wrapper>
+            <TestProvider>{children}</TestProvider>
+        </Wrapper>
+    );
+};
+
+export const componentsHookRenderer = (hook: any, options?: Parameters<typeof renderHook>[1]) =>
+    renderHook((...args) => hook(...args), { ...options, wrapper: componentsHookWrapper });

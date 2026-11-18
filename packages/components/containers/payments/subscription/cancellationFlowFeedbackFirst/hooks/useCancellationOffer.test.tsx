@@ -10,9 +10,9 @@ import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { UNPAID_STATE } from '@proton/shared/lib/interfaces/User';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
-import { getStoreWrapper } from '../../../../../testing/renderWithProviders';
+import { getStoreWrapper } from '../../../../../testing/vitest/renderWithProviders';
 import { useCancellationOffer } from './useCancellationOffer';
 
 const checkUrl = 'payments/v5/subscription/check';
@@ -35,7 +35,7 @@ const getWrapper = (
     }).Wrapper;
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     clearApiMocks();
     addApiMock('core/v4/features', () => ({
         Features: [{ Code: FeatureCode.CanUseFeedbackFirstCancellationOffer, Value: true }],

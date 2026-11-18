@@ -4,11 +4,11 @@ import userEvent from '@testing-library/user-event';
 import ConfirmActionModal from './ConfirmActionModal';
 
 const renderModal = () => {
-    const onSubmit = jest.fn().mockResolvedValue(undefined);
-    const onClose = jest.fn();
+    const onSubmit = vi.fn().mockResolvedValue(undefined);
+    const onClose = vi.fn();
 
     render(
-        <ConfirmActionModal open onClose={onClose} onExit={jest.fn()} onSubmit={onSubmit} message="Archive?" canUndo />
+        <ConfirmActionModal open onClose={onClose} onExit={vi.fn()} onSubmit={onSubmit} message="Archive?" canUndo />
     );
 
     return { onSubmit, onClose };

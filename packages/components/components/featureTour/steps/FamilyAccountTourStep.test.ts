@@ -7,17 +7,17 @@ import familyPlanBackground from '@proton/styles/assets/img/onboarding/familyPla
 
 import { shouldDisplayFamilyAccountTourStep } from './FamilyAccountTourStep';
 
-jest.mock('@proton/account/user', () => ({
-    ...jest.requireActual('@proton/account/user'),
-    userThunk: jest.fn(() => 'user'),
+vi.mock('@proton/account/user', async () => ({
+    ...(await vi.importActual('@proton/account/user')),
+    userThunk: vi.fn(() => 'user'),
 }));
-jest.mock('@proton/account/organization', () => ({
-    ...jest.requireActual('@proton/account/organization'),
-    organizationThunk: jest.fn(() => 'organization'),
+vi.mock('@proton/account/organization', async () => ({
+    ...(await vi.importActual('@proton/account/organization')),
+    organizationThunk: vi.fn(() => 'organization'),
 }));
-jest.mock('@proton/account/allSubscriptions', () => ({
-    ...jest.requireActual('@proton/account/allSubscriptions'),
-    allSubscriptionsThunk: jest.fn(() => 'allSubscriptions'),
+vi.mock('@proton/account/allSubscriptions', async () => ({
+    ...(await vi.importActual('@proton/account/allSubscriptions')),
+    allSubscriptionsThunk: vi.fn(() => 'allSubscriptions'),
 }));
 
 const preloadUrls = [familyPlanBackground];
@@ -36,7 +36,7 @@ const buildDispatch = ({
         organization: { UsedMembers: usedMembers } as OrganizationExtended,
         allSubscriptions: subscriptionPlans.map((plan) => buildSubscription(plan)),
     };
-    return jest.fn((action: string) => Promise.resolve(values[action])) as unknown as SharedStore['dispatch'];
+    return vi.fn((action: string) => Promise.resolve(values[action])) as unknown as SharedStore['dispatch'];
 };
 
 describe('shouldDisplayFamilyAccountTourStep', () => {

@@ -4,7 +4,7 @@ import { unauthenticatedApps } from '@proton/account/availableApps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
-import { renderWithProviders } from '../../testing/renderWithProviders';
+import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import AppsDropdown, { UnAuthenticatedAppsDropdown } from './AppsDropdown';
 
 const openDropdown = () => fireEvent.click(screen.getByTitle('Proton applications'));

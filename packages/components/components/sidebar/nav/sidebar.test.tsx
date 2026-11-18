@@ -43,7 +43,7 @@ function ControlledBranch({ open, onOpenChange }: { open: boolean; onOpenChange:
 }
 describe('useBranchContext', () => {
     beforeEach(() => {
-        jest.spyOn(console, 'error').mockImplementation(() => {});
+        vi.spyOn(console, 'error').mockImplementation(() => {});
     });
 
     it('throws when Branch.Header is rendered outside a Branch', () => {
@@ -141,7 +141,7 @@ describe('Branch (controlled)', () => {
     });
 
     it('calls onOpenChange with the toggled value on header click', () => {
-        const onOpenChange = jest.fn();
+        const onOpenChange = vi.fn();
         renderInRouter(<ControlledBranch open={false} onOpenChange={onOpenChange} />);
         fireEvent.click(screen.getByRole('button'));
         expect(onOpenChange).toHaveBeenCalledTimes(1);
@@ -149,7 +149,7 @@ describe('Branch (controlled)', () => {
     });
 
     it('does not mutate internal state when controlled', () => {
-        const onOpenChange = jest.fn();
+        const onOpenChange = vi.fn();
         renderInRouter(<ControlledBranch open={false} onOpenChange={onOpenChange} />);
         const btn = screen.getByRole('button');
 
@@ -292,7 +292,7 @@ describe('Leaf', () => {
     });
 
     it('calls onClick when clicked', () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         renderInRouter(
             <Root>
                 <Leaf to="/x" onClick={onClick}>

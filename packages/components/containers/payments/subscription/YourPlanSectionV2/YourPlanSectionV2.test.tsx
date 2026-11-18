@@ -1,4 +1,5 @@
 import { screen, within } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -8,19 +9,19 @@ import { APPS } from '@proton/shared/lib/constants';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/payments/constants';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
 
 import { type TestPreloadedStateOverrides, buildPreloadedState } from '../../../../testing/buildPreloadedState';
-import { renderWithProviders } from '../../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
 import YourPlanSectionV2 from './YourPlanSectionV2';
 
-jest.mock('@proton/app-context/useConfig');
-const mockUseConfig = useConfig as jest.MockedFunction<any>;
+vi.mock('@proton/app-context/useConfig');
+const mockUseConfig = useConfig as MockedFunction<any>;
 
-jest.mock('../../../../hooks/useLoad');
+vi.mock('../../../../hooks/useLoad');
 
-const mockOpenSubscriptionModal = jest.fn();
-jest.mock('../subscriptionModalContext', () => ({
+const mockOpenSubscriptionModal = vi.fn();
+vi.mock('../subscriptionModalContext', () => ({
     __esModule: true,
     useSubscriptionModal: () => [mockOpenSubscriptionModal, false],
     useSubscriptionModalRaw: () => mockOpenSubscriptionModal,
@@ -93,7 +94,7 @@ const getPlanRows = () => screen.getAllByTestId('current-plan-subscription');
 
 describe('YourPlanSectionV2', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONACCOUNT });
     });
 

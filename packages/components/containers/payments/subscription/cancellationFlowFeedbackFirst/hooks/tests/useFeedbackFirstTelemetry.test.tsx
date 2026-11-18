@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -14,44 +15,44 @@ import { getBaseTelemetryDimensions } from '@proton/shared/lib/helpers/metrics';
 
 import { useFeedbackFirstTelemetry } from '../useFeedbackFirstTelemetry';
 
-jest.mock('@proton/app-context/useSilentApi');
-const mockUseSilentApi = useSilentApi as jest.MockedFunction<any>;
+vi.mock('@proton/app-context/useSilentApi');
+const mockUseSilentApi = useSilentApi as MockedFunction<any>;
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     useUser: () => [{}, false],
 }));
 
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({ useEntitlementCatalog: () => [undefined] }));
-const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({ useEntitlementCatalog: () => [undefined] }));
+const mockUseSubscription = useSubscription as MockedFunction<any>;
 
-jest.mock('@proton/account/userSettings/hooks');
-const mockUseUserSettings = useUserSettings as jest.MockedFunction<any>;
+vi.mock('@proton/account/userSettings/hooks');
+const mockUseUserSettings = useUserSettings as MockedFunction<any>;
 
-jest.mock('@proton/shared/lib/api/telemetry', () => {
-    const actual = jest.requireActual('@proton/shared/lib/api/telemetry');
+vi.mock('@proton/shared/lib/api/telemetry', async () => {
+    const actual = await vi.importActual('@proton/shared/lib/api/telemetry');
     return {
         ...actual,
-        sendTelemetryData: jest.fn((data) => ({ url: 'data/v1/stats', data })),
-        sendMultipleTelemetryData: jest.fn(() => ({ url: 'data/v1/stats/multiple' })),
+        sendTelemetryData: vi.fn((data) => ({ url: 'data/v1/stats', data })),
+        sendMultipleTelemetryData: vi.fn(() => ({ url: 'data/v1/stats/multiple' })),
     };
 });
-const mockSendTelemetryData = sendTelemetryData as jest.MockedFunction<any>;
-const mockSendMultipleTelemetryData = sendMultipleTelemetryData as jest.MockedFunction<any>;
+const mockSendTelemetryData = sendTelemetryData as MockedFunction<any>;
+const mockSendMultipleTelemetryData = sendMultipleTelemetryData as MockedFunction<any>;
 
-jest.mock('@proton/shared/lib/helpers/metrics', () => ({
-    getBaseTelemetryDimensions: jest.fn(() => ({})),
+vi.mock('@proton/shared/lib/helpers/metrics', () => ({
+    getBaseTelemetryDimensions: vi.fn(() => ({})),
 }));
 
 const mailSubscription = buildSubscription(PLANS.MAIL, { CouponCode: 'MAILCOUPON' });
 const lumoSubscription = buildSubscription(PLANS.LUMO, { CouponCode: 'LUMOCOUPON' });
 
 describe('useFeedbackFirstTelemetry', () => {
-    let mockSilentApi: jest.Mock;
+    let mockSilentApi: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        mockSilentApi = jest.fn();
+        vi.clearAllMocks();
+        mockSilentApi = vi.fn();
         mockUseSilentApi.mockReturnValue(mockSilentApi);
         mockUseSubscription.mockReturnValue([mailSubscription, false]);
         mockUseUserSettings.mockReturnValue([{}, false]);
@@ -134,7 +135,7 @@ describe('useFeedbackFirstTelemetry', () => {
             TelemetryAccountCancellationFlowFeedbackEvents.confirmCancellation,
         ]);
 
-        mockSilentApi.mock.calls.forEach(([request]: [any]) => {
+        mockSilentApi.mock.calls.forEach(([request]: any[]) => {
             expect(request.url).toBe('data/v1/stats');
         });
         expect(mockSendMultipleTelemetryData).not.toHaveBeenCalled();

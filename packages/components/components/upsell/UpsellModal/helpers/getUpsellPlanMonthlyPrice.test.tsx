@@ -7,9 +7,9 @@ import type { Currency } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
-import { getStoreWrapper } from '../../../../testing/renderWithProviders';
+import { getStoreWrapper } from '../../../../testing/vitest/renderWithProviders';
 import { getUpsellPlanMonthlyPrice } from './getUpsellPlanMonthlyPrice';
 
 const checkUrl = 'payments/v5/subscription/check';
@@ -30,7 +30,7 @@ const getPaymentsApi = (currency: Currency) => {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     clearApiMocks();
 });
 

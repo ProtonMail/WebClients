@@ -16,21 +16,21 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { AccountSpotlightsProvider, useAccountSpotlights } from './AccountSpotlightsProvider';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
 
-jest.mock('@proton/account/organization/hooks', () => ({
-    useOrganization: jest.fn(),
+vi.mock('@proton/account/organization/hooks', () => ({
+    useOrganization: vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn(),
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn(),
 }));
 
-jest.mock('@proton/features/useFeature', () => ({
+vi.mock('@proton/features/useFeature', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
 const SpotlightState = () => {
@@ -55,15 +55,15 @@ const renderProvider = ({
     step: 'SetupOrg' | 'UsePass' | 'Done';
     viewer?: typeof regularAdmin;
 }) => {
-    jest.mocked(useUser).mockReturnValue([viewer.user as UserModel, false]);
-    jest.mocked(useOrganization).mockReturnValue([viewer.organization as OrganizationExtended, false]);
-    jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
+    vi.mocked(useUser).mockReturnValue([viewer.user as UserModel, false]);
+    vi.mocked(useOrganization).mockReturnValue([viewer.organization as OrganizationExtended, false]);
+    vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
         buildOrgAndUserEntitlementChecks({ subscriptionPlans, ...viewer }),
         false,
     ]);
-    jest.mocked(useFeature).mockReturnValue({
+    vi.mocked(useFeature).mockReturnValue({
         feature: { Value: step },
-        update: jest.fn(),
+        update: vi.fn(),
         loading: false,
     } as unknown as ReturnType<typeof useFeature>);
 

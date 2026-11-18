@@ -12,19 +12,19 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { OtherMailPreferencesSection } from './OtherMailPreferencesSection';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn(),
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn(),
 }));
 
-jest.mock('./AutomaticallySaveContacts', () => () => null);
-jest.mock('./KeyboardShortcut', () => ({ KeyboardShortcut: () => null }));
-jest.mock('./SenderImages', () => ({ SenderImages: () => null }));
-jest.mock('./UnreadFaviconCounter', () => ({ UnreadFaviconCounter: () => null }));
-jest.mock('./TipsAndInsights', () => ({ TipsAndInsights: () => <div>Tips and insights</div> }));
+vi.mock('./AutomaticallySaveContacts', () => ({ __esModule: true, default: () => null }));
+vi.mock('./KeyboardShortcut', () => ({ KeyboardShortcut: () => null }));
+vi.mock('./SenderImages', () => ({ SenderImages: () => null }));
+vi.mock('./UnreadFaviconCounter', () => ({ UnreadFaviconCounter: () => null }));
+vi.mock('./TipsAndInsights', () => ({ TipsAndInsights: () => <div>Tips and insights</div> }));
 
 const renderSection = ({
     subscriptionPlans,
@@ -37,8 +37,8 @@ const renderSection = ({
     loadingEntitlements?: boolean;
     viewer?: Partial<typeof organizationMember>;
 }) => {
-    jest.mocked(useUser).mockReturnValue([{ isPaid } as UserModel, false]);
-    jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
+    vi.mocked(useUser).mockReturnValue([{ isPaid } as UserModel, false]);
+    vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
         buildOrgAndUserEntitlementChecks({ subscriptionPlans, ...viewer }),
         loadingEntitlements,
     ]);

@@ -8,25 +8,25 @@ import GroupItem from './GroupItem';
 import { useGroupsManagement } from './context/GroupsManagementContext';
 import { GROUPS_RESTRICTION_REASON, type GroupsRestriction } from './types';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementChecksForOrgAndUser: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementChecksForOrgAndUser: vi.fn(),
 }));
-jest.mock('./context/GroupsManagementContext', () => ({
-    useGroupsManagement: jest.fn(),
+vi.mock('./context/GroupsManagementContext', () => ({
+    useGroupsManagement: vi.fn(),
 }));
 
 const group = { ID: 'group-1', Name: 'Marketing', Flags: GroupFlags.None, Address: { Email: '' } } as EnhancedGroup;
 const scimGroup = { ...group, Flags: GroupFlags.Scim } as EnhancedGroup;
 
-const onViewGroup = jest.fn();
-const onEditGroup = jest.fn();
-const openAddUsersModal = jest.fn();
+const onViewGroup = vi.fn();
+const onEditGroup = vi.fn();
+const openAddUsersModal = vi.fn();
 
 const renderGroupRow = (
     rowGroup: EnhancedGroup,
     restrictedBy: GroupsRestriction = { reason: GROUPS_RESTRICTION_REASON.NONE }
 ) => {
-    jest.mocked(useGroupsManagement).mockReturnValue({
+    vi.mocked(useGroupsManagement).mockReturnValue({
         restrictedBy,
         selectedGroup: rowGroup,
         groupRolesMap: {},
@@ -47,10 +47,10 @@ const getMenuItemLabels = () => {
 
 describe('GroupItemMoreOptionsDropdown', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
-            { hasGroupMail: true },
-        ] as unknown as ReturnType<typeof useEntitlementChecksForOrgAndUser>);
+        vi.clearAllMocks();
+        vi.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([{ hasGroupMail: true }] as unknown as ReturnType<
+            typeof useEntitlementChecksForOrgAndUser
+        >);
     });
 
     it('lists add user, edit group then delete group for a regular group', () => {

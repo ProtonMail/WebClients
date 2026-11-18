@@ -7,6 +7,7 @@
         "./vitest/api": "./src/vitest/api.ts",
         "./flush-promises": "./src/flush-promises.ts",
         "./mockApiWithServer": "./src/mockApiWithServer.ts",
+        "./vitest/mockApiWithServer": "./src/vitest/mockApiWithServer.ts",
         "./mockRandomValues": "./src/mockRandomValues.ts"
     },
     "scripts": {

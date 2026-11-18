@@ -10,11 +10,12 @@ import type { ThemeColorUnion } from '@proton/colors/types';
 import Prompt from './Prompt';
 
 // Mocked so that the modal renders in the same container
-jest.mock('react-dom', () => {
-    const original = jest.requireActual('react-dom');
+vi.mock('react-dom', async () => {
+    const original: any = await vi.importActual('react-dom');
     return {
         ...original,
         createPortal: (node: any) => node,
+        default: { ...original.default, createPortal: (node: any) => node },
     };
 });
 const Container = ({
@@ -48,7 +49,7 @@ const getDialog = () => document.querySelector<HTMLElement>('.modal-two-dialog')
 
 describe('Prompt Hotkeys', () => {
     it('should not click the cancel button', () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
         const { container } = render(
             <Container
                 open={true}
@@ -71,7 +72,7 @@ describe('Prompt Hotkeys', () => {
     test.each([{ buttonType: 'norm' }, { buttonType: 'warning' }, { buttonType: 'success' }, { buttonType: 'info' }])(
         'should click on the $buttonType button',
         ({ buttonType }) => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const { container } = render(
                 <Container
                     open={true}
@@ -93,7 +94,7 @@ describe('Prompt Hotkeys', () => {
     );
 
     it("shouldn't click on destructive buttons", () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
         render(
             <Container
                 open={true}
@@ -110,8 +111,8 @@ describe('Prompt Hotkeys', () => {
         expect(spy).not.toHaveBeenCalled();
     });
     it('should click the second button', () => {
-        const cancelSpy = jest.fn();
-        const submitSpy = jest.fn();
+        const cancelSpy = vi.fn();
+        const submitSpy = vi.fn();
         render(
             <Container
                 open={true}
@@ -134,8 +135,8 @@ describe('Prompt Hotkeys', () => {
 
     describe('when an element inside the prompt has focus', () => {
         const renderWithCancelAndConfirm = () => {
-            const cancelSpy = jest.fn();
-            const confirmSpy = jest.fn();
+            const cancelSpy = vi.fn();
+            const confirmSpy = vi.fn();
             render(
                 <Container
                     open={true}

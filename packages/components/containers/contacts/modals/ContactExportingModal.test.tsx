@@ -1,23 +1,22 @@
 import { CryptoProxy } from '@protontech/crypto';
 import { fireEvent } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 
-import { clearAll, minimalCache, mockedCryptoApi, prepareContact, renderWithProviders } from '../tests/render';
+import { clearAll, minimalCache, mockedCryptoApi, prepareContact, renderWithProviders } from '../tests/vitest/render';
 import type { ContactExportingProps } from './ContactExportingModal';
 import ContactExportingModal from './ContactExportingModal';
 
-jest.mock('@proton/shared/lib/helpers/downloadFile', () => {
-    return jest.fn();
-});
+vi.mock('@proton/shared/lib/helpers/downloadFile', () => ({ __esModule: true, default: vi.fn() }));
 
 describe('ContactExportingModal', () => {
     const props: ContactExportingProps = {
         contactGroupID: 'contactGroupID',
-        onSave: jest.fn(),
+        onSave: vi.fn(),
     };
 
     const contact1 = {
@@ -84,7 +83,7 @@ END:VCARD`;
 
         expect(downloadFile).toHaveBeenCalled();
 
-        const args = (downloadFile as jest.Mock).mock.calls[0];
+        const args = (downloadFile as Mock).mock.calls[0];
         const blob = args[0] as Blob;
         const content = await new Promise((resolve) => {
             var reader = new FileReader();

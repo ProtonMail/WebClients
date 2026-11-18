@@ -12,29 +12,29 @@ import * as composerAssistantUpsellModalHelpersModule from '../../modals/Compose
 import { UpsellModalComposerAssistantSubmitButton } from '../components/UpsellModalSubmitButtons';
 import { getUpsellModalComposerAssistantConfig } from './getUpsellModalComposerAssistantConfig';
 
-jest.mock('@proton/payments/core/checkout');
-jest.mock('@proton/payments/core/subscription/selected-plan', () => ({
-    SelectedPlan: { createFromSubscription: jest.fn() },
+vi.mock('@proton/payments/core/checkout');
+vi.mock('@proton/payments/core/subscription/selected-plan', () => ({
+    SelectedPlan: { createFromSubscription: vi.fn() },
 }));
-jest.mock('@proton/account/organization');
-jest.mock('@proton/account/member');
-jest.mock('../../modals/ComposerAssistantUpsellModal.helpers');
-jest.mock('@proton/shared/lib/organization/helper');
-jest.mock('../../../../hooks/assistant/assistantUpsellConfig');
+vi.mock('@proton/account/organization');
+vi.mock('@proton/account/member');
+vi.mock('../../modals/ComposerAssistantUpsellModal.helpers');
+vi.mock('@proton/shared/lib/organization/helper');
+vi.mock('../../../../hooks/assistant/assistantUpsellConfig');
 const fakeDispatch = (result: unknown) => Promise.resolve(result);
 
-const organisationThunkMock = jest.fn();
-const memberThunkMock = jest.fn();
-const getIsB2CUserAbleToRunScribeMock = jest.fn();
-const getIsOrganizationUserMock = jest.fn();
-const getIsSuperAdminMock = jest.fn();
+const organisationThunkMock = vi.fn();
+const memberThunkMock = vi.fn();
+const getIsB2CUserAbleToRunScribeMock = vi.fn();
+const getIsOrganizationUserMock = vi.fn();
+const getIsSuperAdminMock = vi.fn();
 
 // @ts-expect-error - mock
 const paymentsApiMock: PaymentsApi = {
-    checkSubscription: jest.fn(),
+    checkSubscription: vi.fn(),
 };
 
-const getAssistantUpsellConfigPlanAndCycleMock = jest.fn();
+const getAssistantUpsellConfigPlanAndCycleMock = vi.fn();
 
 const NON_MAIN_CURRENCY_MOCK_AMOUNT = 20 * 12;
 const NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT = 30 * 12;
@@ -43,19 +43,19 @@ const PROTON_DUO_YEARLY_PRICE = 100;
 const PROTON_LUMO_YEARLY_PRICE = 60;
 
 async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin?: boolean, scribeToLumo = false) {
-    jest.spyOn(organizationModule, 'organizationThunk').mockImplementation(organisationThunkMock);
-    jest.spyOn(memberModule, 'memberThunk').mockImplementation(memberThunkMock);
+    vi.spyOn(organizationModule, 'organizationThunk').mockImplementation(organisationThunkMock);
+    vi.spyOn(memberModule, 'memberThunk').mockImplementation(memberThunkMock);
 
     getIsB2CUserAbleToRunScribeMock.mockReturnValue(userType === 'B2C');
-    jest.spyOn(composerAssistantUpsellModalHelpersModule, 'getIsB2CUserAbleToRunScribe').mockImplementation(
+    vi.spyOn(composerAssistantUpsellModalHelpersModule, 'getIsB2CUserAbleToRunScribe').mockImplementation(
         getIsB2CUserAbleToRunScribeMock
     );
 
     getIsOrganizationUserMock.mockReturnValue(userType === 'B2B');
-    jest.spyOn(organizationHelperModule, 'isOrganization').mockImplementation(getIsOrganizationUserMock);
+    vi.spyOn(organizationHelperModule, 'isOrganization').mockImplementation(getIsOrganizationUserMock);
 
     getIsSuperAdminMock.mockReturnValue(userType === 'B2B' && isOrgAdmin);
-    jest.spyOn(organizationHelperModule, 'isSuperAdmin').mockImplementation(getIsSuperAdminMock);
+    vi.spyOn(organizationHelperModule, 'isSuperAdmin').mockImplementation(getIsSuperAdminMock);
 
     getAssistantUpsellConfigPlanAndCycleMock.mockReturnValue(
         ['B2C', 'B2B'].includes(userType)
@@ -67,7 +67,7 @@ async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin
               }
             : undefined
     );
-    jest.spyOn(assistantUpsellConfigModule, 'getAssistantUpsellConfigPlanAndCycle').mockImplementation(
+    vi.spyOn(assistantUpsellConfigModule, 'getAssistantUpsellConfigPlanAndCycle').mockImplementation(
         getAssistantUpsellConfigPlanAndCycleMock
     );
 
@@ -76,7 +76,7 @@ async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin
         AmountDue: NON_MAIN_CURRENCY_MOCK_AMOUNT,
     });
     // @ts-expect-error - mock of checkout call
-    jest.spyOn(checkoutModule, 'getCheckoutUi').mockReturnValue({
+    vi.spyOn(checkoutModule, 'getCheckoutUi').mockReturnValue({
         withDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT,
         withoutDiscountPerCycle: NON_MAIN_CURRENCY_MOCK_AMOUNT_WITHOUT_DISCOUNT,
     });
@@ -129,7 +129,7 @@ async function setupTest(currency: Currency, userType: 'B2C' | 'B2B', isOrgAdmin
 
 describe('getUpsellModalComposerAssistantConfig', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('B2C users - ScribeToLumo flag OFF', () => {

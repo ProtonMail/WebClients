@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { MockInstance } from 'vitest';
 
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
@@ -7,14 +8,14 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import type { CheckoutCondensedAddonsParams } from './getCheckoutCondensedAddons';
 import { useCheckoutCondensedAddons } from './useCheckoutCondensedAddons';
 
-const mockUseFlagsStatus = jest.fn();
-jest.mock('@unleash/proxy-client-react', () => ({
-    ...jest.requireActual('@unleash/proxy-client-react'),
+const mockUseFlagsStatus = vi.fn();
+vi.mock('@unleash/proxy-client-react', async () => ({
+    ...(await vi.importActual('@unleash/proxy-client-react')),
     useFlagsStatus: () => mockUseFlagsStatus(),
 }));
 
-const mockUseVariant = jest.fn();
-jest.mock('@proton/unleash/useVariant', () => ({
+const mockUseVariant = vi.fn();
+vi.mock('@proton/unleash/useVariant', () => ({
     useVariant: () => mockUseVariant(),
 }));
 
@@ -27,7 +28,7 @@ const eligibleArgs: Args = {
     isLiteApp: false,
 };
 
-let reportSeen: jest.SpyInstance;
+let reportSeen: MockInstance;
 
 const setup = ({
     flagsReady = true,
@@ -40,7 +41,7 @@ const setup = ({
 };
 
 beforeEach(() => {
-    reportSeen = jest
+    reportSeen = vi
         .spyOn(checkoutTelemetry.subscriptionContainer, 'reportCheckoutCondensedAddonsExperimentSeen')
         .mockImplementation(() => {});
 });

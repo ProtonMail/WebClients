@@ -9,11 +9,12 @@ import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
 import ModalTwo from './Modal';
 
 // Mocked so that the modal renders in the same container
-jest.mock('react-dom', () => {
-    const original = jest.requireActual('react-dom');
+vi.mock('react-dom', async () => {
+    const original: any = await vi.importActual('react-dom');
     return {
         ...original,
         createPortal: (node: any) => node,
+        default: { ...original.default, createPortal: (node: any) => node },
     };
 });
 
@@ -126,7 +127,7 @@ describe('ModalTwo rendering', () => {
     });
 
     it('should only trigger mount once per render', async () => {
-        const handleMount = jest.fn();
+        const handleMount = vi.fn();
         const { container, getByTestId, queryByTestId } = render(
             <Container>
                 <Inner onMount={handleMount} />
@@ -155,7 +156,7 @@ describe('ModalTwo rendering', () => {
     });
 
     it('should only trigger mount once per render if initially opened', async () => {
-        const handleMount = jest.fn();
+        const handleMount = vi.fn();
         const { container, getByTestId, queryByTestId } = render(
             <Container open={true}>
                 <Inner onMount={handleMount} />
@@ -214,7 +215,7 @@ describe('ModalTwo Hotkeys', () => {
 
 describe('ModalTwo Hotkeys', () => {
     it('should allow extra hotkeys', () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
         const { container, getByTestId } = render(
             <Container
                 open={true}

@@ -3,18 +3,18 @@ import userEvent from '@testing-library/user-event';
 
 import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar/Subscription';
 
-import { renderWithProviders } from '../../../contacts/tests/render';
+import { renderWithProviders } from '../../../contacts/tests/vitest/render';
 import SubscribedCalendarModal from './SubscribedCalendarModal';
 
-jest.mock('../../hooks/useGetCalendarSetup', () => () => ({}));
+vi.mock('../../hooks/useGetCalendarSetup', () => ({ __esModule: true, default: () => ({}) }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({}),
 }));
 
-jest.mock('../personalCalendarModal/calendarModalState', () => ({
-    ...jest.requireActual('../personalCalendarModal/calendarModalState'),
-    getDefaultModel: jest.fn(() => ({
+vi.mock('../personalCalendarModal/calendarModalState', async () => ({
+    ...(await vi.importActual('../personalCalendarModal/calendarModalState')),
+    getDefaultModel: vi.fn(() => ({
         calendarID: '7824929ac66f483ba12ee051c056b9e5',
         name: 'A fake calendar',
         members: [],
@@ -28,36 +28,36 @@ jest.mock('../personalCalendarModal/calendarModalState', () => ({
     })),
 }));
 
-jest.mock('../../hooks/useBusySlotsAvailable', () => ({
+vi.mock('../../hooks/useBusySlotsAvailable', () => ({
     __esModule: true,
-    default: jest.fn(() => false),
+    default: vi.fn(() => false),
 }));
 
-const mockApi = jest.fn();
-jest.mock('@proton/app-context/useApi', () => ({
+const mockApi = vi.fn();
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    useApi: jest.fn(() => mockApi),
+    useApi: vi.fn(() => mockApi),
 }));
 
-const mockHandleCreateCalendar = jest.fn();
-jest.mock('../../hooks/useGetCalendarActions', () => ({
+const mockHandleCreateCalendar = vi.fn();
+vi.mock('../../hooks/useGetCalendarActions', () => ({
     __esModule: true,
-    default: jest.fn(() => ({
+    default: vi.fn(() => ({
         handleCreateCalendar: mockHandleCreateCalendar,
     })),
 }));
 
-jest.mock('../../../../hooks/useEventManager', () => ({
+vi.mock('../../../../hooks/useEventManager', () => ({
     __esModule: true,
-    default: jest.fn(() => ({
-        call: jest.fn(),
-        subscribe: jest.fn(),
+    default: vi.fn(() => ({
+        call: vi.fn(),
+        subscribe: vi.fn(),
     })),
 }));
 
-jest.mock('../../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
-    useCalendarModelEventManager: jest.fn(() => ({
-        subscribe: jest.fn(),
+vi.mock('../../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+    useCalendarModelEventManager: vi.fn(() => ({
+        subscribe: vi.fn(),
     })),
 }));
 

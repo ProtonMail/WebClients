@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
@@ -11,7 +12,7 @@ import useAssistantSubscriptionStatus from '../../../hooks/assistant/useAssistan
 import type { ModalStateProps } from '../../modalTwo/useModalState';
 import ComposerAssistantB2CUpsellModal from './ComposerAssistantB2CUpsellModal';
 
-jest.mock('../UpsellModal/UpsellModal', () => ({
+vi.mock('../UpsellModal/UpsellModal', () => ({
     __esModule: true,
     default: ({ title, description }: { title: string; description: React.ReactNode }) => (
         <>
@@ -20,14 +21,14 @@ jest.mock('../UpsellModal/UpsellModal', () => ({
         </>
     ),
 }));
-jest.mock('../UpsellFeatureList', () => ({ __esModule: true, default: () => null }));
-jest.mock('../../../hooks/assistant/useAssistantSubscriptionStatus');
-jest.mock('@proton/unleash/useFlag');
-jest.mock('@proton/account/user/hooks');
+vi.mock('../UpsellFeatureList', () => ({ __esModule: true, default: () => null }));
+vi.mock('../../../hooks/assistant/useAssistantSubscriptionStatus');
+vi.mock('@proton/unleash/useFlag');
+vi.mock('@proton/account/user/hooks');
 
-const mockUseAssistantSubscriptionStatus = useAssistantSubscriptionStatus as jest.Mock;
-const mockUseFlag = useFlag as jest.Mock;
-const mockUseUser = useUser as jest.Mock;
+const mockUseAssistantSubscriptionStatus = useAssistantSubscriptionStatus as Mock;
+const mockUseFlag = useFlag as Mock;
+const mockUseUser = useUser as Mock;
 
 const paidUser = buildUser();
 const freeUser = buildUser({ Subscribed: 0, isFree: true, isPaid: false, hasPaidMail: false });
@@ -47,7 +48,7 @@ const renderModal = ({
         canUseAssistant: false,
         trialEndDate: null,
         trialStatus,
-        start: jest.fn(),
+        start: vi.fn(),
     });
     render(<ComposerAssistantB2CUpsellModal modalProps={{} as ModalStateProps} />);
 };

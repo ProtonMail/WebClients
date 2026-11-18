@@ -6,34 +6,34 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { Deal, Offer } from '../interface';
 import useOnSelectDeal from './useOnSelectDeal';
 
-const mockGoToSettingsLink = jest.fn();
-const mockOpenSubscriptionModal = jest.fn();
+const mockGoToSettingsLink = vi.fn();
+const mockOpenSubscriptionModal = vi.fn();
 
 let mockHasInAppPayment = false;
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ APP_NAME: APPS.PROTONMAIL }),
 }));
 
-jest.mock('../../../components/link/useSettingsLink', () => ({
+vi.mock('../../../components/link/useSettingsLink', () => ({
     __esModule: true,
     default: () => mockGoToSettingsLink,
 }));
 
-jest.mock('../../desktop/useHasInboxDesktopInAppPayments', () => ({
+vi.mock('../../desktop/useHasInboxDesktopInAppPayments', () => ({
     useHasInboxDesktopInAppPayments: () => false,
 }));
 
-jest.mock('../../payments/subscription/subscriptionModalContext', () => ({
+vi.mock('../../payments/subscription/subscriptionModalContext', () => ({
     useOptionalSubscriptionModal: () => [mockHasInAppPayment ? mockOpenSubscriptionModal : undefined, false],
 }));
 
-jest.mock('@proton/shared/lib/helpers/desktop', () => ({
+vi.mock('@proton/shared/lib/helpers/desktop', () => ({
     isElectronApp: false,
     isElectronMail: false,
 }));
 
-global.fetch = jest.fn(() => Promise.resolve({} as Response));
+global.fetch = vi.fn(() => Promise.resolve({} as Response));
 
 describe('useOnSelectDeal', () => {
     const offer = { ID: 'go-unlimited-2022', enableCycleSelector: true } as Offer;
@@ -45,7 +45,7 @@ describe('useOnSelectDeal', () => {
     } as Deal;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockHasInAppPayment = false;
     });
 
@@ -79,7 +79,7 @@ describe('useOnSelectDeal', () => {
     });
 
     it('calls the optional callback after redirecting to settings', () => {
-        const callback = jest.fn();
+        const callback = vi.fn();
         const { result } = renderHook(() => useOnSelectDeal(callback));
 
         result.current(offer, deal, 'EUR');

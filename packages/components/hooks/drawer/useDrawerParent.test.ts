@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import React from 'react';
 
 import { renderHook } from '@testing-library/react';
+import type { Mock, MockInstance } from 'vitest';
 
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -10,22 +11,22 @@ import * as drawerHelpers from '@proton/shared/lib/drawer/helpers';
 import { DrawerContext } from './useDrawer';
 import useDrawerParent from './useDrawerParent';
 
-jest.mock('@proton/shared/lib/apps/slugHelper', () => ({
-    getAppFromPathnameSafe: jest.fn(),
+vi.mock('@proton/shared/lib/apps/slugHelper', () => ({
+    getAppFromPathnameSafe: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/drawer/helpers', () => ({
-    ...jest.requireActual('@proton/shared/lib/drawer/helpers'),
-    addParentAppToUrl: jest.fn(),
+vi.mock('@proton/shared/lib/drawer/helpers', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/drawer/helpers')),
+    addParentAppToUrl: vi.fn(),
     // getIsAuthorizedApp is not mocked: the real implementation returns true for APPS.PROTONMAIL
 }));
 
-const mockGetAppFromPathnameSafe = getAppFromPathnameSafe as jest.Mock;
-const mockAddParentAppToUrl = drawerHelpers.addParentAppToUrl as unknown as jest.Mock;
+const mockGetAppFromPathnameSafe = getAppFromPathnameSafe as Mock;
+const mockAddParentAppToUrl = drawerHelpers.addParentAppToUrl as unknown as Mock;
 
 const CORRECTED_URL = 'https://calendar.proton.me/u/0/mail/week';
 
-const makeWrapper = (mockSetParentApp: jest.Mock) =>
+const makeWrapper = (mockSetParentApp: Mock) =>
     function Wrapper({ children }: { children: ReactNode }) {
         return React.createElement(
             DrawerContext.Provider,
@@ -33,15 +34,15 @@ const makeWrapper = (mockSetParentApp: jest.Mock) =>
                 value: {
                     setParentApp: mockSetParentApp,
                     appInView: undefined,
-                    setAppInView: jest.fn(),
+                    setAppInView: vi.fn(),
                     iframeSrcMap: {},
-                    setIframeSrcMap: jest.fn(),
+                    setIframeSrcMap: vi.fn(),
                     iframeURLMap: {},
-                    setIframeURLMap: jest.fn(),
+                    setIframeURLMap: vi.fn(),
                     showDrawerSidebar: undefined,
-                    setShowDrawerSidebar: jest.fn(),
+                    setShowDrawerSidebar: vi.fn(),
                     drawerSidebarMounted: false,
-                    setDrawerSidebarMounted: jest.fn(),
+                    setDrawerSidebarMounted: vi.fn(),
                     parentApp: undefined,
                 },
             },
@@ -50,13 +51,13 @@ const makeWrapper = (mockSetParentApp: jest.Mock) =>
     };
 
 describe('useDrawerParent', () => {
-    let mockSetParentApp: jest.Mock;
-    let replaceStateSpy: jest.SpyInstance;
+    let mockSetParentApp: Mock;
+    let replaceStateSpy: MockInstance;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        mockSetParentApp = jest.fn();
-        replaceStateSpy = jest.spyOn(window.history, 'replaceState').mockImplementation(() => {});
+        vi.clearAllMocks();
+        mockSetParentApp = vi.fn();
+        replaceStateSpy = vi.spyOn(window.history, 'replaceState').mockImplementation(() => {});
         mockAddParentAppToUrl.mockReturnValue(CORRECTED_URL);
     });
 

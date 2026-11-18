@@ -1,25 +1,26 @@
 import { screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
-import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
+import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
 
-import { renderWithProviders } from '../../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
 import ReferralTrialInfoDashboardV2 from './ReferralTrialInfoDashboardV2';
 
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    ...jest.requireActual('@proton/account/entitlementCatalog/hooks'),
-    useEntitlementCatalog: jest.fn(),
+vi.mock('@proton/account/entitlementCatalog/hooks', async () => ({
+    ...(await vi.importActual('@proton/account/entitlementCatalog/hooks')),
+    useEntitlementCatalog: vi.fn(),
 }));
 
-jest.mock('@proton/account/referralInfo/hooks', () => ({
-    ...jest.requireActual('@proton/account/referralInfo/hooks'),
-    useReferralInfo: jest.fn(),
+vi.mock('@proton/account/referralInfo/hooks', async () => ({
+    ...(await vi.importActual('@proton/account/referralInfo/hooks')),
+    useReferralInfo: vi.fn(),
 }));
 
 describe('ReferralTrialInfoDashboardV2', () => {
@@ -40,9 +41,9 @@ describe('ReferralTrialInfoDashboardV2', () => {
         });
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        (useEntitlementCatalog as jest.Mock).mockReturnValue([buildEntitlementCatalog({}), false]);
-        (useReferralInfo as jest.Mock).mockReturnValue([{ uiData: { referrerRewardAmount: '$20' } }, false]);
+        vi.clearAllMocks();
+        (useEntitlementCatalog as Mock).mockReturnValue([buildEntitlementCatalog({}), false]);
+        (useReferralInfo as Mock).mockReturnValue([{ uiData: { referrerRewardAmount: '$20' } }, false]);
     });
 
     it('shows the plan title and end date of a single referral trial', () => {

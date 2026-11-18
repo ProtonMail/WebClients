@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 
-import '@testing-library/jest-dom';
 import { act, render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import type { Mock } from 'vitest';
 
 import { VisibilityTracker } from './VisibilityTracker';
 import type { VisibilityThreshold, VisibilityTrackerOptions } from './types';
@@ -17,9 +18,9 @@ interface MockObserverInstance {
     callback: IOCallback;
     options: IntersectionObserverInit | undefined;
     targets: Set<Element>;
-    observe: jest.Mock;
-    unobserve: jest.Mock;
-    disconnect: jest.Mock;
+    observe: Mock;
+    unobserve: Mock;
+    disconnect: Mock;
     trigger: (entries: Partial<IntersectionObserverEntry>[]) => void;
 }
 
@@ -28,14 +29,14 @@ let observerInstances: MockObserverInstance[] = [];
 function createMockIntersectionObserver() {
     observerInstances = [];
 
-    const MockIO = jest.fn().mockImplementation((callback: IOCallback, options?: IntersectionObserverInit) => {
+    const MockIO = vi.fn().mockImplementation(function (callback: IOCallback, options?: IntersectionObserverInit) {
         const instance: MockObserverInstance = {
             callback,
             options,
             targets: new Set<Element>(),
-            observe: jest.fn((el: Element) => instance.targets.add(el)),
-            unobserve: jest.fn((el: Element) => instance.targets.delete(el)),
-            disconnect: jest.fn(() => instance.targets.clear()),
+            observe: vi.fn((el: Element) => instance.targets.add(el)),
+            unobserve: vi.fn((el: Element) => instance.targets.delete(el)),
+            disconnect: vi.fn(() => instance.targets.clear()),
             trigger(entries) {
                 callback(
                     entries.map((e) => ({
@@ -81,7 +82,7 @@ describe('VisibilityTracker', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     // ===========================================================================
@@ -91,7 +92,7 @@ describe('VisibilityTracker', () => {
     describe('rendering', () => {
         it('renders a div wrapper by default', () => {
             render(
-                <VisibilityTracker onEnter={jest.fn()}>
+                <VisibilityTracker onEnter={vi.fn()}>
                     <span data-testid="child">hello</span>
                 </VisibilityTracker>
             );
@@ -191,8 +192,8 @@ describe('VisibilityTracker', () => {
         });
 
         it('does NOT re-create the observer when only callbacks change', () => {
-            const { rerender } = render(<VisibilityTracker onEnter={jest.fn()}>child</VisibilityTracker>);
-            rerender(<VisibilityTracker onEnter={jest.fn()}>child</VisibilityTracker>);
+            const { rerender } = render(<VisibilityTracker onEnter={vi.fn()}>child</VisibilityTracker>);
+            rerender(<VisibilityTracker onEnter={vi.fn()}>child</VisibilityTracker>);
             expect(observerInstances).toHaveLength(1);
         });
     });
@@ -241,21 +242,21 @@ describe('VisibilityTracker', () => {
 
     describe('onEnter', () => {
         it('fires onEnter when the element becomes visible', () => {
-            const onEnter = jest.fn();
+            const onEnter = vi.fn();
             render(<VisibilityTracker onEnter={onEnter}>child</VisibilityTracker>);
             act(() => latestObserver().trigger([{ isIntersecting: true }]));
             expect(onEnter).toHaveBeenCalledTimes(1);
         });
 
         it('does NOT fire onEnter when the element is not intersecting', () => {
-            const onEnter = jest.fn();
+            const onEnter = vi.fn();
             render(<VisibilityTracker onEnter={onEnter}>child</VisibilityTracker>);
             act(() => latestObserver().trigger([{ isIntersecting: false }]));
             expect(onEnter).not.toHaveBeenCalled();
         });
 
         it('fires onEnter at most once in one-shot mode (once=true)', () => {
-            const onEnter = jest.fn();
+            const onEnter = vi.fn();
             render(
                 <VisibilityTracker onEnter={onEnter} once={true}>
                     child
@@ -269,7 +270,7 @@ describe('VisibilityTracker', () => {
         });
 
         it('fires onEnter multiple times when once=false', () => {
-            const onEnter = jest.fn();
+            const onEnter = vi.fn();
             render(
                 <VisibilityTracker onEnter={onEnter} once={false}>
                     child
@@ -283,8 +284,8 @@ describe('VisibilityTracker', () => {
         });
 
         it('uses the latest onEnter callback (stale-closure fix)', () => {
-            const firstEnter = jest.fn();
-            const secondEnter = jest.fn();
+            const firstEnter = vi.fn();
+            const secondEnter = vi.fn();
 
             const { rerender } = render(
                 <VisibilityTracker onEnter={firstEnter} once={false}>
@@ -316,7 +317,7 @@ describe('VisibilityTracker', () => {
 
     describe('onExit', () => {
         it('fires onExit after the element has entered and then left', () => {
-            const onExit = jest.fn();
+            const onExit = vi.fn();
             render(<VisibilityTracker onExit={onExit}>child</VisibilityTracker>);
             const obs = latestObserver();
             act(() => obs.trigger([{ isIntersecting: true }]));
@@ -325,14 +326,14 @@ describe('VisibilityTracker', () => {
         });
 
         it('does NOT fire onExit if the element has never entered', () => {
-            const onExit = jest.fn();
+            const onExit = vi.fn();
             render(<VisibilityTracker onExit={onExit}>child</VisibilityTracker>);
             act(() => latestObserver().trigger([{ isIntersecting: false }]));
             expect(onExit).not.toHaveBeenCalled();
         });
 
         it('fires onExit at most once in one-shot mode (once=true)', () => {
-            const onExit = jest.fn();
+            const onExit = vi.fn();
             render(
                 <VisibilityTracker onExit={onExit} once={true}>
                     child
@@ -347,7 +348,7 @@ describe('VisibilityTracker', () => {
         });
 
         it('fires onExit multiple times when once=false', () => {
-            const onExit = jest.fn();
+            const onExit = vi.fn();
             render(
                 <VisibilityTracker onExit={onExit} once={false}>
                     child
@@ -362,8 +363,8 @@ describe('VisibilityTracker', () => {
         });
 
         it('uses the latest onExit callback (stale-closure fix)', () => {
-            const firstExit = jest.fn();
-            const secondExit = jest.fn();
+            const firstExit = vi.fn();
+            const secondExit = vi.fn();
 
             const { rerender } = render(
                 <VisibilityTracker onExit={firstExit} once={false}>
@@ -400,7 +401,7 @@ describe('VisibilityTracker', () => {
     describe('one-shot mode (once=true)', () => {
         it('calls unobserve after both onEnter and onExit have fired', () => {
             render(
-                <VisibilityTracker onEnter={jest.fn()} onExit={jest.fn()} once={true}>
+                <VisibilityTracker onEnter={vi.fn()} onExit={vi.fn()} once={true}>
                     child
                 </VisibilityTracker>
             );
@@ -413,7 +414,7 @@ describe('VisibilityTracker', () => {
 
         it('does not call unobserve if only onEnter has fired (no exit yet)', () => {
             render(
-                <VisibilityTracker onEnter={jest.fn()} onExit={jest.fn()} once={true}>
+                <VisibilityTracker onEnter={vi.fn()} onExit={vi.fn()} once={true}>
                     child
                 </VisibilityTracker>
             );
@@ -423,7 +424,7 @@ describe('VisibilityTracker', () => {
         });
 
         it('resets one-shot flags when observer options change', () => {
-            const onEnter = jest.fn();
+            const onEnter = vi.fn();
             const { rerender } = render(
                 <VisibilityTracker onEnter={onEnter} threshold="any" once={true}>
                     child
@@ -450,7 +451,7 @@ describe('VisibilityTracker', () => {
 
     describe('multiple entries in one callback', () => {
         it('processes all entries in a batch (once=false)', () => {
-            const onEnter = jest.fn();
+            const onEnter = vi.fn();
             const { container } = render(
                 <VisibilityTracker onEnter={onEnter} once={false}>
                     child
@@ -480,7 +481,7 @@ describe('VisibilityTracker', () => {
 
     describe('counts', () => {
         it('passes count=1 to onEnter on first entry (once=true)', () => {
-            const onEnter = jest.fn();
+            const onEnter = vi.fn();
             render(
                 <VisibilityTracker onEnter={onEnter} once={true}>
                     child
@@ -491,7 +492,7 @@ describe('VisibilityTracker', () => {
         });
 
         it('passes count=1 to onExit on first exit (once=true)', () => {
-            const onExit = jest.fn();
+            const onExit = vi.fn();
             render(
                 <VisibilityTracker onExit={onExit} once={true}>
                     child
@@ -504,7 +505,7 @@ describe('VisibilityTracker', () => {
         });
 
         it('increments enter count on each entry (once=false)', () => {
-            const onEnter = jest.fn();
+            const onEnter = vi.fn();
             render(
                 <VisibilityTracker onEnter={onEnter} once={false}>
                     child
@@ -522,7 +523,7 @@ describe('VisibilityTracker', () => {
         });
 
         it('increments exit count on each exit (once=false)', () => {
-            const onExit = jest.fn();
+            const onExit = vi.fn();
             render(
                 <VisibilityTracker onExit={onExit} once={false}>
                     child
@@ -538,8 +539,8 @@ describe('VisibilityTracker', () => {
         });
 
         it('enter and exit counts are tracked independently', () => {
-            const onEnter = jest.fn();
-            const onExit = jest.fn();
+            const onEnter = vi.fn();
+            const onExit = vi.fn();
             render(
                 <VisibilityTracker onEnter={onEnter} onExit={onExit} once={false}>
                     child
@@ -554,7 +555,7 @@ describe('VisibilityTracker', () => {
         });
 
         it('resets counts when observer is re-created (options change)', () => {
-            const onEnter = jest.fn();
+            const onEnter = vi.fn();
             const { rerender } = render(
                 <VisibilityTracker onEnter={onEnter} once={false} threshold="any">
                     child
@@ -591,19 +592,19 @@ describe('VisibilityTracker', () => {
         }
 
         it('creates an IntersectionObserver', () => {
-            renderHook({ onEnter: jest.fn() });
+            renderHook({ onEnter: vi.fn() });
             expect(observerInstances).toHaveLength(1);
         });
 
         it('fires onEnter via the hook', () => {
-            const onEnter = jest.fn();
+            const onEnter = vi.fn();
             const { obs } = renderHook({ onEnter, once: false });
             act(() => obs.trigger([{ isIntersecting: true }]));
             expect(onEnter).toHaveBeenCalledTimes(1);
         });
 
         it('fires onExit via the hook after entering', () => {
-            const onExit = jest.fn();
+            const onExit = vi.fn();
             const { obs } = renderHook({ onExit, once: false });
             act(() => obs.trigger([{ isIntersecting: true }]));
             act(() => obs.trigger([{ isIntersecting: false }]));
@@ -613,7 +614,7 @@ describe('VisibilityTracker', () => {
         it('does nothing when ref.current is null', () => {
             function NullRefHook() {
                 const ref = useRef<HTMLDivElement>(null);
-                useVisibilityTracker(ref, { onEnter: jest.fn() });
+                useVisibilityTracker(ref, { onEnter: vi.fn() });
                 return <div data-testid="no-ref" />;
             }
 
@@ -634,8 +635,8 @@ describe('VisibilityTracker', () => {
 
     describe('integration', () => {
         it('handles all props simultaneously', () => {
-            const onEnter = jest.fn();
-            const onExit = jest.fn();
+            const onEnter = vi.fn();
+            const onExit = vi.fn();
 
             render(
                 <VisibilityTracker
@@ -669,8 +670,8 @@ describe('VisibilityTracker', () => {
         });
 
         it('does not interfere between two independent instances', () => {
-            const enterA = jest.fn();
-            const enterB = jest.fn();
+            const enterA = vi.fn();
+            const enterB = vi.fn();
 
             render(
                 <>

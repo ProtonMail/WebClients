@@ -83,11 +83,11 @@ describe('Mail Paid user nudge', () => {
         const mockDate = new Date('2025-02-26T12:00:00Z');
 
         beforeEach(() => {
-            jest.spyOn(global.Date, 'now').mockImplementation(() => mockDate.getTime());
+            vi.spyOn(global.Date, 'now').mockImplementation(() => mockDate.getTime());
         });
 
         afterEach(() => {
-            jest.restoreAllMocks();
+            vi.restoreAllMocks();
         });
 
         it('returns null when not in a window', () => {

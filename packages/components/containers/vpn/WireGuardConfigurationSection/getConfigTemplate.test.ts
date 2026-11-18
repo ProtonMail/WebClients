@@ -1,14 +1,14 @@
 import { getConfigTemplate } from './getConfigTemplate';
 import type { Peer } from './peer';
 
-jest.mock('../../../helpers/getObjectKeys', () => ({
-    getObjectKeys: jest.fn((obj) => (obj ? Object.keys(obj) : [])),
+vi.mock('../../../helpers/getObjectKeys', () => ({
+    getObjectKeys: vi.fn((obj) => (obj ? Object.keys(obj) : [])),
 }));
 
-jest.mock('./feature', () => ({
-    formatFeatureShortName: jest.fn(),
-    formatFeatureValue: jest.fn(),
-    getKeyOfCheck: jest.fn(() => (key: string) => ['peerIp', 'peerName', 'peerPublicKey', 'platform'].includes(key)),
+vi.mock('./feature', () => ({
+    formatFeatureShortName: vi.fn(),
+    formatFeatureValue: vi.fn(),
+    getKeyOfCheck: vi.fn(() => (key: string) => ['peerIp', 'peerName', 'peerPublicKey', 'platform'].includes(key)),
 }));
 
 describe('getConfigTemplate', () => {
@@ -22,7 +22,7 @@ describe('getConfigTemplate', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('Basic functionality', () => {

@@ -306,7 +306,7 @@ describe('FocusTrap', () => {
     });
 
     it('should contain focus when elements are deleted', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         const Component = () => {
             const rootRef = useRef<HTMLDivElement>(null);
@@ -329,9 +329,9 @@ describe('FocusTrap', () => {
         const { getByTestId } = render(<Component />);
         expect(getByTestId('1')).toHaveFocus();
         fireEvent.click(getByTestId('1'));
-        jest.runOnlyPendingTimers();
+        vi.runOnlyPendingTimers();
         expect(getByTestId('root')).toHaveFocus();
 
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 });

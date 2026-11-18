@@ -6,7 +6,7 @@ describe('MiniCalendar', () => {
     const getFakeNow = () => new Date(Date.UTC(2021, 0, 1, 0, 0, 0));
 
     beforeAll(() => {
-        jest.useFakeTimers().setSystemTime(getFakeNow().getTime());
+        vi.useFakeTimers().setSystemTime(getFakeNow().getTime());
     });
 
     it('disables today button when out of range', async () => {
@@ -59,7 +59,7 @@ describe('MiniCalendar', () => {
     });
 
     it('calls onMonthChange when navigating to different month', () => {
-        const onMonthChange = jest.fn();
+        const onMonthChange = vi.fn();
         render(<MiniCalendar date={getFakeNow()} onMonthChange={onMonthChange} />);
 
         const getNextMonthButton = () => screen.getByTestId(/minicalendar:next-month/);
@@ -73,7 +73,7 @@ describe('MiniCalendar', () => {
     });
 
     it('applies custom className from getDayClassName', () => {
-        const getDayClassName = jest.fn((date: Date) => {
+        const getDayClassName = vi.fn((date: Date) => {
             return date.getDate() === 15 ? 'custom-day-class' : '';
         });
 

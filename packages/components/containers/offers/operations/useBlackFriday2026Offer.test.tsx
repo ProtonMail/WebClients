@@ -3,6 +3,7 @@ import { Route, Router } from 'react-router';
 import { renderHook } from '@testing-library/react';
 import { getUnixTime } from 'date-fns';
 import { createMemoryHistory } from 'history';
+import type { Mock } from 'vitest';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -29,30 +30,30 @@ import { useOffer as usePlusToUnlimited } from './blackFriday2026PlusToUnlimited
 import { configuration as unlimitedToDuoConfig } from './blackFriday2026UnlimitedToDuo/configuration';
 import { useOffer as useUnlimitedToDuo } from './blackFriday2026UnlimitedToDuo/useOffer';
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = useUser as jest.Mock;
+vi.mock('@proton/account/user/hooks');
+const mockUseUser = useUser as Mock;
 
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({ useEntitlementCatalog: () => [undefined] }));
-const mockUseSubscription = useSubscription as jest.Mock;
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({ useEntitlementCatalog: () => [undefined] }));
+const mockUseSubscription = useSubscription as Mock;
 
-jest.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({
+vi.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({
     __esModule: true,
-    useAutomaticCurrency: jest.fn(),
+    useAutomaticCurrency: vi.fn(),
 }));
-const mockUseAutomaticCurrency = useAutomaticCurrency as jest.Mock;
+const mockUseAutomaticCurrency = useAutomaticCurrency as Mock;
 
-jest.mock('../hooks/useOfferFlags', () => ({
+vi.mock('../hooks/useOfferFlags', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-const mockUseOfferFlags = useOfferFlags as jest.Mock;
+const mockUseOfferFlags = useOfferFlags as Mock;
 
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
-    useFlag: jest.fn(),
+    useFlag: vi.fn(),
 }));
-const mockUseFlag = useFlag as jest.Mock;
+const mockUseFlag = useFlag as Mock;
 
 const DRIVE_CONFIG = {
     APP_NAME: APPS.PROTONDRIVE,
@@ -162,7 +163,7 @@ const setupMocks = ({
 
 describe('useBlackFriday2026Offer', () => {
     afterEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     it.each(offerHooks)('$name resolves its tracking ref in full', ({ useOffer, plan, cycle, isPaid, ref }) => {

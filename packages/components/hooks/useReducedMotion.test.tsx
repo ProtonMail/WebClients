@@ -16,7 +16,7 @@ const stubMatchMedia = (matches: boolean) => {
         },
     };
 
-    const matchMedia = jest.fn().mockReturnValue(query);
+    const matchMedia = vi.fn().mockReturnValue(query);
 
     Object.defineProperty(window, 'matchMedia', { writable: true, value: matchMedia });
 

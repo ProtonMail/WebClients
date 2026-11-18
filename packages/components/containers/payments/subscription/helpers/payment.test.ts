@@ -152,13 +152,13 @@ describe('notHigherThanAvailableOnBackend', () => {
 
 describe('getAutoCoupon', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        // Set default date - can be overridden in individual tests with jest.setSystemTime()
-        jest.setSystemTime(new Date('2025-01-15T10:00:00.000Z'));
+        vi.useFakeTimers();
+        // Set default date - can be overridden in individual tests with vi.setSystemTime()
+        vi.setSystemTime(new Date('2025-01-15T10:00:00.000Z'));
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('trial scenarios', () => {

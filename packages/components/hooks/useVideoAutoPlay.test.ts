@@ -1,39 +1,42 @@
 import { act, renderHook } from '@testing-library/react';
+import type { MockInstance } from 'vitest';
 
 import { useVideoAutoPlay } from './useVideoAutoPlay';
 
-jest.mock('@proton/unleash/useFlag');
+vi.mock('@proton/unleash/useFlag');
 
 describe('useVideoAutoPlay', () => {
     let mockVideoElement: Partial<HTMLVideoElement>;
-    let mockAddEventListener: jest.SpyInstance<
-        void,
-        [
-            type: string,
-            listener: EventListenerOrEventListenerObject,
-            options?: boolean | AddEventListenerOptions | undefined,
-        ]
+    let mockAddEventListener: MockInstance<
+        (
+            ...args: [
+                type: string,
+                listener: EventListenerOrEventListenerObject,
+                options?: boolean | AddEventListenerOptions | undefined,
+            ]
+        ) => void
     >;
-    let mockRemoveEventListener: jest.SpyInstance<
-        void,
-        [
-            type: string,
-            listener: EventListenerOrEventListenerObject,
-            options?: boolean | EventListenerOptions | undefined,
-        ]
+    let mockRemoveEventListener: MockInstance<
+        (
+            ...args: [
+                type: string,
+                listener: EventListenerOrEventListenerObject,
+                options?: boolean | EventListenerOptions | undefined,
+            ]
+        ) => void
     >;
 
     beforeEach(() => {
         mockVideoElement = {
-            play: jest.fn().mockResolvedValue(undefined),
-            pause: jest.fn(),
+            play: vi.fn().mockResolvedValue(undefined),
+            pause: vi.fn(),
             currentTime: 0,
             paused: true,
             muted: false,
         };
 
-        mockAddEventListener = jest.spyOn(document, 'addEventListener');
-        mockRemoveEventListener = jest.spyOn(document, 'removeEventListener');
+        mockAddEventListener = vi.spyOn(document, 'addEventListener');
+        mockRemoveEventListener = vi.spyOn(document, 'removeEventListener');
 
         Object.defineProperty(document, 'hidden', {
             writable: true,
@@ -47,7 +50,7 @@ describe('useVideoAutoPlay', () => {
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
         mockAddEventListener.mockRestore();
         mockRemoveEventListener.mockRestore();
     });
@@ -131,8 +134,8 @@ describe('useVideoAutoPlay', () => {
     });
 
     it('handles autoplay failure gracefully', async () => {
-        const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
-        const mockPlay = jest.fn().mockRejectedValue(new Error('Autoplay failed'));
+        const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+        const mockPlay = vi.fn().mockRejectedValue(new Error('Autoplay failed'));
         mockVideoElement.play = mockPlay;
 
         const { result } = renderHook(() => useVideoAutoPlay());
@@ -192,7 +195,7 @@ describe('useVideoAutoPlay', () => {
     it('updates tab active state when visibility changes', () => {
         renderHook(() => useVideoAutoPlay());
 
-        const visibilityCall = mockAddEventListener.mock.calls.find((call) => call[0] === 'visibilitychange');
+        const visibilityCall = mockAddEventListener.mock.calls.find((call: any[]) => call[0] === 'visibilitychange');
         const visibilityHandler = visibilityCall?.[1] as () => void;
 
         expect(visibilityHandler).toBeDefined();

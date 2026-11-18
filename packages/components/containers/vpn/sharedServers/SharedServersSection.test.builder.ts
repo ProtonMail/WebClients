@@ -1,7 +1,9 @@
+import type { Mock } from 'vitest';
+
 import { PolicyState, PolicyType } from './constants';
 
 type MockLocation = { Country: string; City: string };
-type MockTranslations = { refresh: jest.Mock; cities: Record<string, Record<string, null>> };
+type MockTranslations = { refresh: Mock; cities: Record<string, Record<string, null>> };
 type MockUser = { UserID: string; Email: string; Name: string };
 type MockPolicy = { State: PolicyState; Type: PolicyType; Groups: []; Users: MockUser[]; Locations: MockLocation[] };
 type MockState = {
@@ -11,7 +13,7 @@ type MockState = {
     translations: MockTranslations;
     users: MockUser[];
     groups: any[];
-    refresh: jest.Mock;
+    refresh: Mock;
     countUsersNotInAnyPolicy: number;
 };
 
@@ -21,12 +23,12 @@ export class SharedServersBuilder {
         policies: [],
         locations: [],
         translations: {
-            refresh: jest.fn(),
+            refresh: vi.fn(),
             cities: {},
         },
         users: [],
         groups: [],
-        refresh: jest.fn(),
+        refresh: vi.fn(),
         countUsersNotInAnyPolicy: 0,
     };
 

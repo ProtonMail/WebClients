@@ -8,27 +8,27 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 
 import AssistantUpdateSubscriptionButton from './AssistantUpdateSubscriptionButton';
 
-jest.mock('@proton/account/allSubscriptions/hooks', () => ({
-    useAllSubscriptions: jest.fn(),
+vi.mock('@proton/account/allSubscriptions/hooks', () => ({
+    useAllSubscriptions: vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn(),
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn(),
 }));
 
-jest.mock('@proton/account/userPermissions/hooks', () => ({
-    ...jest.requireActual('@proton/account/userPermissions/hooks'),
+vi.mock('@proton/account/userPermissions/hooks', async () => ({
+    ...(await vi.importActual('@proton/account/userPermissions/hooks')),
     useCanUpdateBilling: () => [true, false],
 }));
 
-jest.mock('../../../../components/link/SettingsLink', () => ({
+vi.mock('../../../../components/link/SettingsLink', () => ({
     __esModule: true,
     default: ({ path, children }: { path: string; children: string }) => <a href={path}>{children}</a>,
 }));
 
 const renderCheckoutParams = (plans: PLANS[]) => {
-    jest.mocked(useUser).mockReturnValue([buildUser(), false]);
-    jest.mocked(useAllSubscriptions).mockReturnValue([plans.map((plan) => buildSubscription(plan)), false]);
+    vi.mocked(useUser).mockReturnValue([buildUser(), false]);
+    vi.mocked(useAllSubscriptions).mockReturnValue([plans.map((plan) => buildSubscription(plan)), false]);
     render(<AssistantUpdateSubscriptionButton />);
 
     const href = screen.getByRole('link', { name: 'Add to your subscription' }).getAttribute('href') ?? '';

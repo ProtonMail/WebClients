@@ -1,52 +1,48 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
+import { useFlag } from '@proton/unleash/useFlag';
 
+import useAllowedProducts from '../../../../containers/organization/accessControl/useAllowedProducts';
 import useVPNDrawer from './useVPNDrawer';
 
 // Mock dependencies
-jest.mock('@proton/account/organization/hooks', () => ({
-    useOrganization: jest.fn(),
+vi.mock('@proton/account/organization/hooks', () => ({
+    useOrganization: vi.fn(),
 }));
 
-jest.mock('../../../../containers/organization/accessControl/useAllowedProducts', () => ({
+vi.mock('../../../../containers/organization/accessControl/useAllowedProducts', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    useConfig: jest.fn(),
+    useConfig: vi.fn(),
 }));
 
-jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: jest.fn(),
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/payments/plan/helpers', () => ({
-    getIsB2BAudienceFromPlan: jest.fn(),
+vi.mock('@proton/shared/lib/payments/plan/helpers', () => ({
+    getIsB2BAudienceFromPlan: vi.fn(),
 }));
 
 describe('useVPNDrawer', () => {
-    let mockUseOrganization: jest.Mock;
-    let mockUseAllowedProducts: jest.Mock;
-    let mockUseConfig: jest.Mock;
-    let mockUseFlag: jest.Mock;
-    let mockGetIsB2BAudienceFromPlan: jest.Mock;
-
-    beforeAll(() => {
-        mockUseOrganization = require('@proton/account/organization/hooks').useOrganization as jest.Mock;
-        mockUseAllowedProducts = require('../../../../containers/organization/accessControl/useAllowedProducts')
-            .default as jest.Mock;
-        mockUseConfig = require('@proton/app-context/useConfig').useConfig as jest.Mock;
-        mockUseFlag = require('@proton/unleash/useFlag').useFlag as jest.Mock;
-        mockGetIsB2BAudienceFromPlan = require('@proton/shared/lib/payments/plan/helpers')
-            .getIsB2BAudienceFromPlan as jest.Mock;
-    });
+    const mockUseOrganization = useOrganization as Mock;
+    const mockUseAllowedProducts = useAllowedProducts as Mock;
+    const mockUseConfig = useConfig as Mock;
+    const mockUseFlag = useFlag as Mock;
+    const mockGetIsB2BAudienceFromPlan = getIsB2BAudienceFromPlan as Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         // Default mock implementations for passing case
         mockUseOrganization.mockReturnValue([{ PlanName: 'free' }, false]);
         mockUseAllowedProducts.mockReturnValue([new Set([Product.VPN]), false]);

@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { getUnixTime, subDays } from 'date-fns';
+import type { Mock } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -17,20 +18,20 @@ interface EligibilityMockConfig {
     accountAgeDays?: number;
 }
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = useUser as jest.Mock;
+vi.mock('@proton/account/user/hooks');
+const mockUseUser = useUser as Mock;
 
-jest.mock('@proton/account/userSettings/hooks');
-const mockUseUserSettings = useUserSettings as jest.Mock;
+vi.mock('@proton/account/userSettings/hooks');
+const mockUseUserSettings = useUserSettings as Mock;
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.Mock;
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as Mock;
 
-jest.mock('@proton/features/useFeature', () => ({
+vi.mock('@proton/features/useFeature', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-const mockUseFeature = useFeature as jest.Mock;
+const mockUseFeature = useFeature as Mock;
 
 const daysAgo = (days: number) => getUnixTime(subDays(new Date(), days));
 
@@ -57,7 +58,7 @@ const setupMocks = (overrides: EligibilityMockConfig = {}) => {
 
 describe('Net promoters score eligibility', () => {
     afterEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     it('should call all inner hooks', () => {

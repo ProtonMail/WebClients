@@ -5,7 +5,7 @@ import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/c
 import ModalTwo from '../../../../../../components/modalTwo/Modal';
 import { ManagedExternallyContent } from '../ManagedExternallyContent';
 
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
 const renderContent = (subscription: any, onClose = () => {}) => {
     return render(
@@ -33,7 +33,7 @@ describe('ManagedExternallyContent', () => {
     });
 
     it('should call onClose when the "Got it" button is pressed', () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         const { getByTestId } = renderContent({ External: SubscriptionPlatform.Android }, onClose);
 
         fireEvent.click(getByTestId('ManagedExternallyContent/onClose'));

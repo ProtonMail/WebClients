@@ -1,9 +1,10 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { sub } from 'date-fns';
+import type { MockedFunction } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
+import { mockUseConfig } from '@proton/app-context/testing/vitest/mockUseConfig';
 import { useApi } from '@proton/app-context/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
@@ -11,26 +12,26 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import EditEmailSubscription from './EditEmailSubscription';
 
-jest.mock('@proton/app-context/useApi');
-const mockedUseApi = useApi as jest.MockedFunction<any>;
+vi.mock('@proton/app-context/useApi');
+const mockedUseApi = useApi as MockedFunction<any>;
 let mockedApi: ReturnType<typeof mockedUseApi>;
 
-jest.mock('../../hooks/useEventManager', () => () => ({ call: jest.fn() }));
+vi.mock('../../hooks/useEventManager', () => ({ __esModule: true, default: () => ({ call: vi.fn() }) }));
 
-jest.mock('@proton/redux-shared-store/sharedProvider');
-const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>;
+vi.mock('@proton/redux-shared-store/sharedProvider');
+const mockedUseDispatch = useDispatch as MockedFunction<typeof useDispatch>;
 
-jest.mock('@proton/hooks/useLoading', () => () => [false, jest.fn((fn) => fn())]);
+vi.mock('@proton/hooks/useLoading', () => ({ __esModule: true, default: () => [false, vi.fn((fn) => fn())] }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
 
-jest.mock('@proton/account/user/hooks');
-const mockedUseUser = useUser as jest.MockedFunction<any>;
+vi.mock('@proton/account/user/hooks');
+const mockedUseUser = useUser as MockedFunction<any>;
 
-jest.mock('@proton/account/userSettings/hooks');
-const mockedUseUserSettings = useUserSettings as jest.MockedFunction<any>;
+vi.mock('@proton/account/userSettings/hooks');
+const mockedUseUserSettings = useUserSettings as MockedFunction<any>;
 
 const user: Partial<UserModel> = {
     CreateTime: Math.floor(sub(new Date(), { weeks: 1 }).getTime() / 1000),
@@ -43,8 +44,8 @@ const paidUser = {
 
 describe('EditEmailSubscription', () => {
     beforeEach(() => {
-        mockedApi = jest.fn();
-        mockedUseDispatch.mockReturnValue(jest.fn());
+        mockedApi = vi.fn();
+        mockedUseDispatch.mockReturnValue(vi.fn());
         mockedUseApi.mockReturnValue(mockedApi);
         mockedUseUserSettings.mockReturnValue([{ EarlyAccess: 1, News: 0 }]);
         mockedUseUser.mockReturnValue([user]);

@@ -1,7 +1,6 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { mocked } from 'jest-mock';
 import type { RequestHandler } from 'msw';
 import { setupServer } from 'msw/node';
 
@@ -12,20 +11,20 @@ import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
 import { addressBuilder, calendarBuilder } from '@proton/shared/testing/calendarBuilders';
-import { mockApiWithServer } from '@proton/test-api/mockApiWithServer';
+import { mockApiWithServer } from '@proton/test-api/vitest/mockApiWithServer';
 
 import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferences';
-import { mockNotifications } from '../../../testing/mockNotifications';
+import { mockNotifications } from '../../../testing/vitest/mockNotifications';
 import { CacheProvider } from '../../cache/Provider';
 import ShareCalendarModal from './ShareCalendarModal';
 
 const server = setupServer(...(getHandlers() as RequestHandler[]));
 
-jest.mock('../../../hooks/useGetEncryptionPreferences');
-jest.mock('@proton/app-context/useNotifications');
-jest.mock('@proton/app-context/useApi');
-jest.mock('@proton/account/addresses/hooks');
-jest.mock('../../contacts/ContactEmailsProvider', () => ({
+vi.mock('../../../hooks/useGetEncryptionPreferences');
+vi.mock('@proton/app-context/useNotifications');
+vi.mock('@proton/app-context/useApi');
+vi.mock('@proton/account/addresses/hooks');
+vi.mock('../../contacts/ContactEmailsProvider', () => ({
     useContactEmailsCache: () => ({
         contactEmails: [],
         contactGroups: [],
@@ -34,9 +33,9 @@ jest.mock('../../contacts/ContactEmailsProvider', () => ({
     }),
 }));
 
-const mockedUseApi = mocked(useApi);
-const mockedUseNotifications = mocked(useNotifications);
-const mockedUseGetEncryptionPreferences = mocked(useGetEncryptionPreferences);
+const mockedUseApi = vi.mocked(useApi);
+const mockedUseNotifications = vi.mocked(useNotifications);
+const mockedUseGetEncryptionPreferences = vi.mocked(useGetEncryptionPreferences);
 
 const mockedEncryptionPreferences: EncryptionPreferences = {
     encrypt: true,
@@ -82,7 +81,7 @@ function addRecipients(emails: string[]) {
     });
 }
 
-xdescribe('ShareCalendarModal', () => {
+describe.skip('ShareCalendarModal', () => {
     beforeAll(() => server.listen());
 
     afterAll(() => server.close());

@@ -7,20 +7,20 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 
 import type useAssistantSubscriptionStatusType from './useAssistantSubscriptionStatus';
 
-const mockUseUser = jest.fn();
-const mockUseFlag = jest.fn();
-const mockUseFeature = jest.fn();
-const mockUpdate = jest.fn();
-const mockCreateNotification = jest.fn();
-const mockSendFreeTrialStart = jest.fn();
+const mockUseUser = vi.fn();
+const mockUseFlag = vi.fn();
+const mockUseFeature = vi.fn();
+const mockUpdate = vi.fn();
+const mockCreateNotification = vi.fn();
+const mockSendFreeTrialStart = vi.fn();
 
-jest.mock('@proton/account/user/hooks', () => ({ useUser: () => mockUseUser() }));
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: (name: string) => mockUseFlag(name) }));
-jest.mock('@proton/features/useFeature', () => ({ __esModule: true, default: () => mockUseFeature() }));
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/account/user/hooks', () => ({ useUser: () => mockUseUser() }));
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: (name: string) => mockUseFlag(name) }));
+vi.mock('@proton/features/useFeature', () => ({ __esModule: true, default: () => mockUseFeature() }));
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
-jest.mock('./useAssistantTelemetry', () => ({
+vi.mock('./useAssistantTelemetry', () => ({
     __esModule: true,
     default: () => ({ sendFreeTrialStart: mockSendFreeTrialStart }),
 }));
@@ -46,60 +46,60 @@ const setup = ({
 };
 
 // A fresh module per test resets the module-level `started` guard
-const renderFreshHook = () => {
-    let useAssistantSubscriptionStatus: typeof useAssistantSubscriptionStatusType | undefined;
-    jest.isolateModules(() => {
-        useAssistantSubscriptionStatus = require('./useAssistantSubscriptionStatus').default;
-    });
-    return renderHook(() => useAssistantSubscriptionStatus!()).result.current;
+const renderFreshHook = async () => {
+    vi.resetModules();
+    const useAssistantSubscriptionStatus: typeof useAssistantSubscriptionStatusType = (
+        await import('./useAssistantSubscriptionStatus')
+    ).default;
+    return renderHook(() => useAssistantSubscriptionStatus()).result.current;
 };
 
-const getTrialStatus = () => renderFreshHook().trialStatus;
+const getTrialStatus = async () => (await renderFreshHook()).trialStatus;
 
 describe('useAssistantSubscriptionStatus', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(NOW);
-        jest.clearAllMocks();
+        vi.useFakeTimers().setSystemTime(NOW);
+        vi.clearAllMocks();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe.each([false, true])('ScribeToLumo %s', (scribeToLumo) => {
-        it('gives trial-ongoing for a trial started 5 days ago', () => {
+        it('gives trial-ongoing for a trial started 5 days ago', async () => {
             setup({ scribeToLumo, trialStartedDaysAgo: 5 });
-            expect(getTrialStatus()).toBe('trial-ongoing');
+            expect(await getTrialStatus()).toBe('trial-ongoing');
         });
 
-        it('gives trial-ended for a trial started 15 days ago', () => {
+        it('gives trial-ended for a trial started 15 days ago', async () => {
             setup({ scribeToLumo, trialStartedDaysAgo: 15 });
-            expect(getTrialStatus()).toBe('trial-ended');
+            expect(await getTrialStatus()).toBe('trial-ended');
         });
 
         it.each([
             ['NumAI', buildUser({ NumAI: 1 })],
             ['NumLumo', buildUser({ NumLumo: 1 })],
-        ])('gives is-paid with %s', (_, user) => {
+        ])('gives is-paid with %s', async (_, user) => {
             setup({ user, scribeToLumo });
-            expect(getTrialStatus()).toBe('is-paid');
+            expect(await getTrialStatus()).toBe('is-paid');
         });
 
-        it('gives no-trial for a free user, even with a trial date', () => {
+        it('gives no-trial for a free user, even with a trial date', async () => {
             setup({ user: freeUser, scribeToLumo, trialStartedDaysAgo: 5 });
-            expect(getTrialStatus()).toBe('no-trial');
+            expect(await getTrialStatus()).toBe('no-trial');
         });
     });
 
     describe('ScribeToLumo off', () => {
-        it('gives trial-not-started for a paid user with no trial date', () => {
+        it('gives trial-not-started for a paid user with no trial date', async () => {
             setup({ scribeToLumo: false });
-            expect(getTrialStatus()).toBe('trial-not-started');
+            expect(await getTrialStatus()).toBe('trial-not-started');
         });
 
         it('writes the trial start date once when start is called twice', async () => {
             setup({ scribeToLumo: false });
-            const { start } = renderFreshHook();
+            const { start } = await renderFreshHook();
 
             await start();
             await start();
@@ -112,14 +112,14 @@ describe('useAssistantSubscriptionStatus', () => {
     });
 
     describe('ScribeToLumo on', () => {
-        it('gives no-trial for a paid user with no trial date', () => {
+        it('gives no-trial for a paid user with no trial date', async () => {
             setup({ scribeToLumo: true });
-            expect(getTrialStatus()).toBe('no-trial');
+            expect(await getTrialStatus()).toBe('no-trial');
         });
 
         it('does not start a trial', async () => {
             setup({ scribeToLumo: true });
-            const { start } = renderFreshHook();
+            const { start } = await renderFreshHook();
 
             await start();
 

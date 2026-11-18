@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
@@ -15,14 +16,14 @@ import useUpsellConfig from '../../../upsell/config/useUpsellConfig';
 import { MonthylPaidUsersNudge } from './MonthylPaidUsersNudge';
 import { usePaidUsersNudge } from './hooks/usePaidUsersNudge';
 
-jest.mock('./hooks/usePaidUsersNudgeTelemetry', () => ({
-    usePaidUsersNudgeTelemetry: jest.fn(() => ({
-        sendPaidUserNudgeReport: jest.fn(),
+vi.mock('./hooks/usePaidUsersNudgeTelemetry', () => ({
+    usePaidUsersNudgeTelemetry: vi.fn(() => ({
+        sendPaidUserNudgeReport: vi.fn(),
     })),
 }));
 
-jest.mock('./hooks/useGetPlanPriceWithCoupon', () => ({
-    useGetPlanPriceWithCoupon: jest.fn(() => ({
+vi.mock('./hooks/useGetPlanPriceWithCoupon', () => ({
+    useGetPlanPriceWithCoupon: vi.fn(() => ({
         loading: false,
         prices: {
             yearlyPrice: 1000,
@@ -32,54 +33,54 @@ jest.mock('./hooks/useGetPlanPriceWithCoupon', () => ({
     })),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    useNotifications: jest.fn().mockReturnValue({
-        createNotification: jest.fn(),
+    useNotifications: vi.fn().mockReturnValue({
+        createNotification: vi.fn(),
     }),
 }));
 
-jest.mock('../../../upsell/config/useUpsellConfig', () => ({
+vi.mock('../../../upsell/config/useUpsellConfig', () => ({
     __esModule: true,
-    default: jest.fn(() => ({
-        onUpgrade: jest.fn(),
+    default: vi.fn(() => ({
+        onUpgrade: vi.fn(),
         upgradePath: '/mock-upgrade-path',
     })),
     appsWithInApp: new Set(['proton-mail', 'proton-account', 'proton-calendar']),
 }));
 
-jest.mock('../../../link/useSettingsLink', () => ({
+vi.mock('../../../link/useSettingsLink', () => ({
     __esModule: true,
-    default: jest.fn().mockReturnValue(jest.fn()),
+    default: vi.fn().mockReturnValue(vi.fn()),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
-    useUser: jest.fn().mockReturnValue([]),
+    useUser: vi.fn().mockReturnValue([]),
 }));
 
-jest.mock('@proton/account/subscription/hooks', () => ({
+vi.mock('@proton/account/subscription/hooks', () => ({
     __esModule: true,
-    useSubscription: jest.fn().mockReturnValue([]),
+    useSubscription: vi.fn().mockReturnValue([]),
 }));
 
-jest.mock('@proton/features/useFeature', () => ({
+vi.mock('@proton/features/useFeature', () => ({
     __esModule: true,
-    default: jest.fn(() => ({ update: jest.fn() })),
+    default: vi.fn(() => ({ update: vi.fn() })),
 }));
 
-jest.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({
+vi.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({
     __esModule: true,
-    useAutomaticCurrency: jest.fn().mockReturnValue(['CHF', false]),
+    useAutomaticCurrency: vi.fn().mockReturnValue(['CHF', false]),
 }));
 
-jest.mock('./hooks/usePaidUsersNudge');
-const mockedPaidUserNudge = usePaidUsersNudge as jest.Mock;
+vi.mock('./hooks/usePaidUsersNudge');
+const mockedPaidUserNudge = usePaidUsersNudge as Mock;
 
-jest.mock('@proton/app-context/useConfig');
-const mockUseConfig = useConfig as jest.Mock;
+vi.mock('@proton/app-context/useConfig');
+const mockUseConfig = useConfig as Mock;
 
-const mockUseUpsellConfig = useUpsellConfig as jest.Mock;
+const mockUseUpsellConfig = useUpsellConfig as Mock;
 
 describe('MonthylPaidUsersNudge', () => {
     it('Should create appropriate config for Mail', () => {

@@ -9,7 +9,7 @@ const type = (value: string) => fireEvent.change(screen.getByRole('textbox'), { 
 
 describe('EditableText', () => {
     it('submits what was typed', () => {
-        const onSubmit = jest.fn();
+        const onSubmit = vi.fn();
         render(<EditableText initialText="" onSubmit={onSubmit} />);
 
         openEditor();
@@ -26,7 +26,7 @@ describe('EditableText', () => {
         ['a null initial value', null as unknown as string],
     ])('with %s', (_label, initialText) => {
         it('discards a draft that was closed instead of confirmed', () => {
-            const onSubmit = jest.fn();
+            const onSubmit = vi.fn();
             render(<EditableText initialText={initialText} onSubmit={onSubmit} />);
 
             openEditor();
@@ -38,7 +38,7 @@ describe('EditableText', () => {
         });
 
         it('does not submit a stale draft after reopening the editor', () => {
-            const onSubmit = jest.fn();
+            const onSubmit = vi.fn();
             render(<EditableText initialText={initialText} onSubmit={onSubmit} />);
 
             openEditor();
@@ -51,7 +51,7 @@ describe('EditableText', () => {
         });
 
         it('submits the address typed after reopening the editor', () => {
-            const onSubmit = jest.fn();
+            const onSubmit = vi.fn();
             render(<EditableText initialText={initialText} onSubmit={onSubmit} />);
 
             openEditor();

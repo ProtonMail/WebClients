@@ -1,5 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { addDays, getUnixTime } from 'date-fns';
+import type { Mock } from 'vitest';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
@@ -13,25 +14,25 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
 import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
 
-import { renderWithProviders } from '../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../testing/vitest/renderWithProviders';
 import ReferralTopBanner from './ReferralTopBanner';
 
-jest.mock('@proton/app-context/useConfig');
+vi.mock('@proton/app-context/useConfig');
 
-jest.mock('@proton/features/useFeature');
+vi.mock('@proton/features/useFeature');
 
-jest.mock('@proton/account/plans/hooks', () => ({
-    ...jest.requireActual('@proton/account/plans/hooks'),
-    usePlans: jest.fn(),
+vi.mock('@proton/account/plans/hooks', async () => ({
+    ...(await vi.importActual('@proton/account/plans/hooks')),
+    usePlans: vi.fn(),
 }));
 
-jest.mock('@proton/account/referralInfo/hooks', () => ({
-    ...jest.requireActual('@proton/account/referralInfo/hooks'),
-    useReferralInfo: jest.fn(),
+vi.mock('@proton/account/referralInfo/hooks', async () => ({
+    ...(await vi.importActual('@proton/account/referralInfo/hooks')),
+    useReferralInfo: vi.fn(),
 }));
 
-const mockOpenSubscriptionModal = jest.fn();
-jest.mock('../../payments/subscription/subscriptionModalContext', () => ({
+const mockOpenSubscriptionModal = vi.fn();
+vi.mock('../../payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [mockOpenSubscriptionModal, false],
 }));
 
@@ -45,11 +46,11 @@ describe('ReferralTopBanner', () => {
     });
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        (useConfig as jest.Mock).mockReturnValue({ APP_NAME: APPS.PROTONACCOUNT });
-        (useFeature as jest.Mock).mockReturnValue({ feature: { Value: true }, update: jest.fn() });
-        (usePlans as jest.Mock).mockReturnValue([{ plans: [], freePlan: FREE_PLAN }, false]);
-        (useReferralInfo as jest.Mock).mockReturnValue([
+        vi.clearAllMocks();
+        (useConfig as Mock).mockReturnValue({ APP_NAME: APPS.PROTONACCOUNT });
+        (useFeature as Mock).mockReturnValue({ feature: { Value: true }, update: vi.fn() });
+        (usePlans as Mock).mockReturnValue([{ plans: [], freePlan: FREE_PLAN }, false]);
+        (useReferralInfo as Mock).mockReturnValue([
             { uiData: { refereeRewardAmount: '$20', referrerRewardAmount: '$20' } },
             false,
         ]);
@@ -76,7 +77,7 @@ describe('ReferralTopBanner', () => {
     });
 
     it('links outside the account app to the checkout of the referral trial plan', () => {
-        (useConfig as jest.Mock).mockReturnValue({ APP_NAME: APPS.PROTONPASS });
+        (useConfig as Mock).mockReturnValue({ APP_NAME: APPS.PROTONPASS });
 
         renderWithProviders(<ReferralTopBanner app={APPS.PROTONPASS} subscription={passReferralTrial} />, {
             preloadedState: {

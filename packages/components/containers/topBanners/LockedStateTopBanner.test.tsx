@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useGetPreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { getModelState } from '@proton/account/testing/getModelState';
@@ -9,7 +10,7 @@ import { UserLockedFlags } from '@proton/shared/lib/interfaces/User';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 
-import { renderWithProviders } from '../../testing/renderWithProviders';
+import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import { LockedStateTopBanner } from './LockedStateTopBanner';
 
 const expectHrefParams = (link: HTMLElement, expected: Record<string, string>) => {
@@ -18,13 +19,11 @@ const expectHrefParams = (link: HTMLElement, expected: Record<string, string>) =
     Object.entries(expected).forEach(([key, value]) => expect(params.get(key)).toBe(value));
 };
 
-jest.mock('@proton/account/previousSubscription/hooks', () => ({
-    useGetPreviousSubscription: jest.fn(),
+vi.mock('@proton/account/previousSubscription/hooks', () => ({
+    useGetPreviousSubscription: vi.fn(),
 }));
 
-const useGetPreviousSubscriptionMock = useGetPreviousSubscription as jest.MockedFunction<
-    typeof useGetPreviousSubscription
->;
+const useGetPreviousSubscriptionMock = useGetPreviousSubscription as MockedFunction<typeof useGetPreviousSubscription>;
 
 const previousSubscription: PreviousSubscription = {
     cycle: CYCLE.YEARLY,
@@ -41,7 +40,7 @@ const previousSubscription: PreviousSubscription = {
 
 describe('LockedStateTopBanner', () => {
     const user = buildUser();
-    const getPreviousSubscription = jest.fn();
+    const getPreviousSubscription = vi.fn();
 
     beforeEach(() => {
         getPreviousSubscription.mockResolvedValue(undefined);

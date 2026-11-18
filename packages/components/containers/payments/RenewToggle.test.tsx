@@ -2,14 +2,22 @@ import { act, fireEvent, render, renderHook, waitFor } from '@testing-library/re
 
 import { Autopay } from '@proton/payments/core/constants';
 
-import { getStoreWrapper } from '../contacts/tests/render';
+import { getStoreWrapper } from '../contacts/tests/vitest/render';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 
-jest.mock('@proton/atoms/Portal/Portal');
-jest.mock('../../components/toggle/Toggle');
+vi.mock('@proton/atoms/Portal/Portal');
+// Works around "checked" not updating on <input type="checkbox" />
+vi.mock('../../components/toggle/Toggle', () => ({
+    __esModule: true,
+    default: vi.fn().mockImplementation(({ id, checked, onChange, ...rest }: any) => (
+        <button type="button" id={id} onClick={() => onChange(!checked)} {...rest}>
+            {checked ? 'CHECKED' : ''}
+        </button>
+    )),
+}));
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 const { Wrapper } = getStoreWrapper();

@@ -11,7 +11,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { buildPreloadedState } from '../../../../../testing/buildPreloadedState';
-import { renderWithProviders } from '../../../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../../../testing/vitest/renderWithProviders';
 import AlsoInYourPlanSection from './AlsoInYourPlanSection';
 import AlsoInYourPlanProtonMail from './products/AlsoInYourPlanProtonMail';
 

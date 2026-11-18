@@ -16,7 +16,7 @@ describe('FileInput component', () => {
     });
 
     it('should upload a file', () => {
-        const mockOnChange = jest.fn(({ target }) => [...target.files]);
+        const mockOnChange = vi.fn(({ target }) => [...target.files]);
         const { container } = render(<FileInput onChange={mockOnChange}>{value}</FileInput>);
         const inputNode = container.querySelector('input');
 

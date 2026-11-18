@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -8,7 +9,7 @@ import useAssistantSubscriptionStatus from '../../../hooks/assistant/useAssistan
 import type { ModalStateProps } from '../../modalTwo/useModalState';
 import ComposerAssistantB2BUpsellModal from './ComposerAssistantB2BUpsellModal';
 
-jest.mock('../UpsellModal/UpsellModal', () => ({
+vi.mock('../UpsellModal/UpsellModal', () => ({
     __esModule: true,
     default: ({ title, description }: { title: string; description: React.ReactNode }) => (
         <>
@@ -17,12 +18,12 @@ jest.mock('../UpsellModal/UpsellModal', () => ({
         </>
     ),
 }));
-jest.mock('../UpsellFeatureList', () => ({ __esModule: true, default: () => null }));
-jest.mock('../../../hooks/assistant/useAssistantSubscriptionStatus');
-jest.mock('@proton/unleash/useFlag');
+vi.mock('../UpsellFeatureList', () => ({ __esModule: true, default: () => null }));
+vi.mock('../../../hooks/assistant/useAssistantSubscriptionStatus');
+vi.mock('@proton/unleash/useFlag');
 
-const mockUseAssistantSubscriptionStatus = useAssistantSubscriptionStatus as jest.Mock;
-const mockUseFlag = useFlag as jest.Mock;
+const mockUseAssistantSubscriptionStatus = useAssistantSubscriptionStatus as Mock;
+const mockUseFlag = useFlag as Mock;
 
 const renderModal = ({
     scribeToLumo,
@@ -38,7 +39,7 @@ const renderModal = ({
         canUseAssistant: false,
         trialEndDate: null,
         trialStatus,
-        start: jest.fn(),
+        start: vi.fn(),
     });
     render(<ComposerAssistantB2BUpsellModal modalProps={{} as ModalStateProps} isOrgUser={isOrgUser} />);
 };

@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { CondensedAddonRow } from './CondensedAddonRow';
 import { CondensedAddonsCard } from './CondensedAddonsCard';
 
-const onAddMock = jest.fn();
+const onAddMock = vi.fn();
 
 const description = 'Lumo is a privacy-first AI';
 
@@ -20,7 +20,7 @@ const renderRow = () =>
     );
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 describe('CondensedAddonRow', () => {

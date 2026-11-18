@@ -1,29 +1,29 @@
 import { render } from '@testing-library/react';
 
 import { apiStatusActions } from '@proton/account/apiStatus';
-import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
+import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 
-import { extendStore, setupStore } from '../../testing/store';
+import { extendStore, setupStore } from '../../testing/vitest/store';
 import ApiProvider from './ApiProvider';
 
-const dispatchMock = jest.fn();
-jest.mock('@proton/app-context/useConfig', () => ({
+const dispatchMock = vi.fn();
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ APP_NAME: 'proton-mail', APP_VERSION: 'test' }),
 }));
-jest.mock('./ApiModals', () => ({
+vi.mock('./ApiModals', () => ({
     __esModule: true,
     default: () => null,
 }));
-jest.mock('../../hooks/useAuthentication', jest.fn);
-jest.mock('@proton/redux-shared-store/sharedProvider', () => {
+vi.mock('../../hooks/useAuthentication', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('@proton/redux-shared-store/sharedProvider', async () => {
     return {
-        ...jest.requireActual('@proton/redux-shared-store/sharedProvider'),
+        ...(await vi.importActual('@proton/redux-shared-store/sharedProvider')),
         useDispatch: () => dispatchMock,
     };
 });
-jest.mock('@proton/shared/lib/authentication/logout', () => ({
+vi.mock('@proton/shared/lib/authentication/logout', () => ({
     handleInvalidSession: () => undefined,
 }));
 
@@ -52,13 +52,13 @@ const setupTest = (apiMock: ApiWithListener) => {
 
 describe('ApiProvider', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
     describe('ApiStatus', () => {
         it('should update status', async () => {
             mockUseNotifications();
 
-            const listenerMockFn = jest.fn();
+            const listenerMockFn = vi.fn();
             const listeners: Function[] = [listenerMockFn];
             const api = Object.assign(
                 (type: 'status' | 'notification' | 'server-time') => {
@@ -74,8 +74,8 @@ describe('ApiProvider', () => {
                 }
             );
 
-            const apiStatusMock = jest.fn();
-            jest.spyOn(apiStatusActions, 'update').mockImplementation(apiStatusMock);
+            const apiStatusMock = vi.fn();
+            vi.spyOn(apiStatusActions, 'update').mockImplementation(apiStatusMock);
 
             setupTest(api as unknown as ApiWithListener);
 

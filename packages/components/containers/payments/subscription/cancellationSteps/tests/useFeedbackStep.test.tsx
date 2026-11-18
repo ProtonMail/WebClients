@@ -4,18 +4,18 @@ import { PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
-import { componentsHookRenderer } from '../../../../contacts/tests/render';
+import { componentsHookRenderer } from '../../../../contacts/tests/vitest/render';
 import type { FeedbackDowngradeFormData, FeedbackDowngradeResult } from '../../content/interface';
 import { useFeedbackStep } from '../useFeedbackStep';
 import type { FeedbackStepResult } from '../useFeedbackStep';
 
-jest.mock('@proton/account/user/hooks');
-jest.mock('../../../../../components/modalTwo/useModalTwo');
+vi.mock('@proton/account/user/hooks');
+vi.mock('../../../../../components/modalTwo/useModalTwo');
 
-const mockSendFeedbackModalCancelReport = jest.fn();
-const mockSendFeedbackModalSubmitReport = jest.fn();
+const mockSendFeedbackModalCancelReport = vi.fn();
+const mockSendFeedbackModalSubmitReport = vi.fn();
 
-jest.mock('../../cancellationFlow/useCancellationTelemetry', () => ({
+vi.mock('../../cancellationFlow/useCancellationTelemetry', () => ({
     __esModule: true,
     default: () => ({
         sendFeedbackModalCancelReport: mockSendFeedbackModalCancelReport,
@@ -23,14 +23,14 @@ jest.mock('../../cancellationFlow/useCancellationTelemetry', () => ({
     }),
 }));
 
-const mockShowModal = jest.fn();
+const mockShowModal = vi.fn();
 const lumoSubscription = { ...buildSubscription(PLANS.LUMO), ID: 'sub-lumo' };
 
 describe('useFeedbackStep', () => {
     beforeEach(() => {
-        jest.resetAllMocks();
-        jest.mocked(useModalTwoPromise).mockReturnValue([() => null, mockShowModal]);
-        jest.mocked(useUser).mockReturnValue([{ ID: 'user-123' } as any, false]);
+        vi.resetAllMocks();
+        vi.mocked(useModalTwoPromise).mockReturnValue([() => null, mockShowModal]);
+        vi.mocked(useUser).mockReturnValue([{ ID: 'user-123' } as any, false]);
     });
     it('should return kept when canShow returns false', async () => {
         const { result } = componentsHookRenderer(() => useFeedbackStep({ canShow: async () => false }));
@@ -70,13 +70,13 @@ describe('useFeedbackStep', () => {
 
     it('should render the feedback form for the subscription it was shown for', () => {
         let modalElement: any;
-        jest.mocked(useModalTwoPromise).mockReturnValue([
+        vi.mocked(useModalTwoPromise).mockReturnValue([
             (cb: any) => {
                 modalElement = cb({
                     subscription: lumoSubscription,
-                    onResolve: jest.fn(),
-                    onReject: jest.fn(),
-                    onClose: jest.fn(),
+                    onResolve: vi.fn(),
+                    onReject: vi.fn(),
+                    onClose: vi.fn(),
                 });
                 return null;
             },
@@ -90,16 +90,16 @@ describe('useFeedbackStep', () => {
 });
 
 describe('useFeedbackStep telemetry', () => {
-    const mockOnResolve = jest.fn();
+    const mockOnResolve = vi.fn();
 
     // handleResolve is what the hook passes to FeedbackDowngradeContent as onResolve, so read it
     // off the modal element the hook builds: <Modal><FeedbackDowngradeContent onResolve={...} /></Modal>
     const getHandleResolve = (): ((result: FeedbackDowngradeResult) => void) => {
         let modalElement: any;
 
-        jest.mocked(useModalTwoPromise).mockReturnValue([
+        vi.mocked(useModalTwoPromise).mockReturnValue([
             (cb: any) => {
-                modalElement = cb({ onResolve: mockOnResolve, onReject: jest.fn(), onClose: jest.fn() });
+                modalElement = cb({ onResolve: mockOnResolve, onReject: vi.fn(), onClose: vi.fn() });
                 return null;
             },
             mockShowModal,
@@ -113,8 +113,8 @@ describe('useFeedbackStep telemetry', () => {
     };
 
     beforeEach(() => {
-        jest.resetAllMocks();
-        jest.mocked(useUser).mockReturnValue([{ ID: 'user-123' } as any, false]);
+        vi.resetAllMocks();
+        vi.mocked(useUser).mockReturnValue([{ ID: 'user-123' } as any, false]);
     });
 
     it('should send the cancel report when the result is a keep subscription value', () => {

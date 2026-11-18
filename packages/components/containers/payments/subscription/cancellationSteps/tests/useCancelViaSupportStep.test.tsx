@@ -1,15 +1,15 @@
 import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
-import { componentsHookRenderer } from '../../../../contacts/tests/render';
+import { componentsHookRenderer } from '../../../../contacts/tests/vitest/render';
 import { useCancelViaSupportStep } from '../useCancelViaSupportStep';
 
-jest.mock('../../../../../components/modalTwo/useModalTwo');
+vi.mock('../../../../../components/modalTwo/useModalTwo');
 
-const mockShowModal = jest.fn();
+const mockShowModal = vi.fn();
 
 describe('useCancelViaSupportStep', () => {
     beforeEach(() => {
-        jest.resetAllMocks();
-        jest.mocked(useModalTwoPromise).mockReturnValue([() => null, mockShowModal]);
+        vi.resetAllMocks();
+        vi.mocked(useModalTwoPromise).mockReturnValue([() => null, mockShowModal]);
     });
 
     it('should call showModal when canShow returns true', async () => {

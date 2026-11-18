@@ -8,22 +8,22 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { BookingsLimitReached } from './BookingsLimitReached';
 
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/calendar/bookings/store/hooks');
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/calendar/bookings/store/hooks');
 
 const setup = ({ canPay, pageCount, app }: { canPay: boolean; pageCount: number; app?: APP_NAMES }) => {
-    jest.mocked(useUser).mockReturnValue([{ canPay }, false] as any);
-    jest.mocked(useInternalBooking).mockReturnValue([
+    vi.mocked(useUser).mockReturnValue([{ canPay }, false] as any);
+    vi.mocked(useInternalBooking).mockReturnValue([
         { bookingPages: Array.from({ length: pageCount }, (_, i) => ({ id: `page-${i}` })) },
         false,
     ] as any);
 
-    render(<BookingsLimitReached app={app} open onClose={jest.fn()} onExit={jest.fn()} />);
+    render(<BookingsLimitReached app={app} open onClose={vi.fn()} onExit={vi.fn()} />);
 };
 
 describe('BookingsLimitReached', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should point to the Booking pages sidebar by default', () => {

@@ -14,17 +14,17 @@ import { APPS } from '@proton/shared/lib/constants';
 import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 
-import { renderWithProviders } from '../../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
 import { CancelSubscriptionSection } from './CancelSubscriptionSection';
 
-const mockStartCancellation = jest.fn();
+const mockStartCancellation = vi.fn();
 
-jest.mock('@proton/account/allSubscriptions/hooks');
-jest.mock('@proton/account/entitlementCatalog/hooks');
-jest.mock('@proton/account/paymentMethods/hooks');
-jest.mock('@proton/account/referralInfo/hooks');
-jest.mock('@proton/account/user/hooks');
-jest.mock('./useStartCancellation', () => ({
+vi.mock('@proton/account/allSubscriptions/hooks');
+vi.mock('@proton/account/entitlementCatalog/hooks');
+vi.mock('@proton/account/paymentMethods/hooks');
+vi.mock('@proton/account/referralInfo/hooks');
+vi.mock('@proton/account/user/hooks');
+vi.mock('./useStartCancellation', () => ({
     useStartCancellation: () => ({
         startCancellation: (subscription: Subscription) => mockStartCancellation(subscription.ID),
         modals: null,
@@ -32,10 +32,10 @@ jest.mock('./useStartCancellation', () => ({
     }),
 }));
 
-jest.mocked(useUser).mockReturnValue([buildUser({ isPaid: true, isFree: false }), false] as any);
-jest.mocked(usePaymentMethods).mockReturnValue([[], false] as any);
-jest.mocked(useReferralInfo).mockReturnValue([{ uiData: { referrerRewardAmount: 'CHF 20' } }] as any);
-jest.mocked(useEntitlementCatalog).mockReturnValue([
+vi.mocked(useUser).mockReturnValue([buildUser({ isPaid: true, isFree: false }), false] as any);
+vi.mocked(usePaymentMethods).mockReturnValue([[], false] as any);
+vi.mocked(useReferralInfo).mockReturnValue([{ uiData: { referrerRewardAmount: 'CHF 20' } }] as any);
+vi.mocked(useEntitlementCatalog).mockReturnValue([
     buildEntitlementCatalog({
         [PLANS.MAIL]: [EntitlementName.FlagsInbox],
         [PLANS.LUMO]: [EntitlementName.FlagsLumo],
@@ -54,7 +54,7 @@ const androidDrive: Subscription = {
 };
 
 const renderSection = (subscriptions: Subscription[]) => {
-    jest.mocked(useAllSubscriptions).mockReturnValue([subscriptions, false] as any);
+    vi.mocked(useAllSubscriptions).mockReturnValue([subscriptions, false] as any);
     return renderWithProviders(<CancelSubscriptionSection app={APPS.PROTONACCOUNT} />);
 };
 

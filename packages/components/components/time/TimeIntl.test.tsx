@@ -6,15 +6,15 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 
 import TimeIntl from './TimeIntl';
 
-jest.mock('@proton/shared/lib/i18n', () => ({
+vi.mock('@proton/shared/lib/i18n', () => ({
     dateLocale: {
         code: 'en-US',
         formatLong: {
-            time: jest.fn(),
+            time: vi.fn(),
         },
     },
 }));
-const mockedFormatLongTime = jest.mocked(dateLocale.formatLong!.time).mockReturnValue('h:mm:ss a zzzz');
+const mockedFormatLongTime = vi.mocked(dateLocale.formatLong!.time).mockReturnValue('h:mm:ss a zzzz');
 
 describe('TimeIntl component', () => {
     const unixDate = 1552897937;
@@ -26,7 +26,7 @@ describe('TimeIntl component', () => {
     });
 
     it('should display time if same day', () => {
-        jest.useFakeTimers().setSystemTime(fromUnixTime(unixDate));
+        vi.useFakeTimers().setSystemTime(fromUnixTime(unixDate));
         const { container } = render(<TimeIntl>{unixDate}</TimeIntl>);
 
         expect(container.firstChild?.textContent).toBe(
@@ -38,11 +38,11 @@ describe('TimeIntl component', () => {
                 },
             })
         );
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should display time with AM/PM if b is present in date-fns time format', () => {
-        jest.useFakeTimers().setSystemTime(fromUnixTime(unixDate));
+        vi.useFakeTimers().setSystemTime(fromUnixTime(unixDate));
 
         mockedFormatLongTime.mockReturnValueOnce('h:mm:ss b zzzz');
         const { container } = render(<TimeIntl>{unixDate}</TimeIntl>);
@@ -56,7 +56,7 @@ describe('TimeIntl component', () => {
                 },
             })
         );
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should support Intl options', () => {

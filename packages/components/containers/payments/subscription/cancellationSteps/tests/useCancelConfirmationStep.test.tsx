@@ -3,22 +3,22 @@ import { PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
-import { componentsHookRenderer } from '../../../../contacts/tests/render';
+import { componentsHookRenderer } from '../../../../contacts/tests/vitest/render';
 import type { CancelSubscriptionResult } from '../../cancelSubscription/types';
 import { useCancelConfirmationStep } from '../useCancelConfirmationStep';
 
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('../../../../../components/modalTwo/useModalTwo');
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('../../../../../components/modalTwo/useModalTwo');
 
-const mockShowModal = jest.fn();
+const mockShowModal = vi.fn();
 const mailSubscription = { ...buildSubscription(PLANS.MAIL), ID: 'sub-mail' };
 const lumoSubscription = { ...buildSubscription(PLANS.LUMO), ID: 'sub-lumo' };
 
 describe('useCancelConfirmationStep', () => {
     beforeEach(() => {
-        jest.resetAllMocks();
-        jest.mocked(useModalTwoPromise).mockReturnValue([() => null, mockShowModal]);
-        jest.mocked(useSubscription).mockReturnValue([mailSubscription, false]);
+        vi.resetAllMocks();
+        vi.mocked(useModalTwoPromise).mockReturnValue([() => null, mockShowModal]);
+        vi.mocked(useSubscription).mockReturnValue([mailSubscription, false]);
     });
 
     it('should return kept when canShow returns false', async () => {

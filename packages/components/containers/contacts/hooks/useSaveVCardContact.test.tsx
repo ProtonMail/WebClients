@@ -3,13 +3,13 @@ import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { ContactMetadata } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 
-import { clearAll, componentsHookRenderer, notificationManager } from '../tests/render';
+import { clearAll, componentsHookRenderer, notificationManager } from '../tests/vitest/render';
 import { SaveVCardContactError, useSaveVCardContact } from './useSaveVCardContact';
 
-jest.mock('@proton/shared/lib/contacts/encrypt', () => ({
-    prepareVCardContacts: jest.fn().mockResolvedValue([{ Cards: [] }]),
+vi.mock('@proton/shared/lib/contacts/encrypt', () => ({
+    prepareVCardContacts: vi.fn().mockResolvedValue([{ Cards: [] }]),
 }));
 
 const ADA: VCardContact = { fn: [{ field: 'fn', value: 'Ada Lovelace', uid: createContactPropertyUid() }] };

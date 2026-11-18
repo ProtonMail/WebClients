@@ -1,25 +1,26 @@
 import { fireEvent, render } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
-import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
-import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
-import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
+import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
+import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { updateKT } from '@proton/shared/lib/api/mailSettings';
 import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/mail/mailSettings';
 
 import { applyHOCs } from '../../testing/hocs/helpers';
-import { withApi } from '../../testing/hocs/with-api';
-import { withEventManager } from '../../testing/with-event-manager';
+import { mockUseMailSettings } from '../../testing/vitest/mockUseMailSettings';
+import { withApi } from '../../testing/vitest/with-api';
+import { withEventManager } from '../../testing/vitest/with-event-manager';
+import { withReduxStore } from '../../testing/vitest/with-redux-store';
 import { withNotifications } from '../../testing/with-notifications';
-import { withReduxStore } from '../../testing/with-redux-store';
 import KTToggle from './KTToggle';
 
 const KTToggleContext = applyHOCs(withApi(), withEventManager(), withNotifications(), withReduxStore())(KTToggle);
 
 describe('KTToggle', () => {
-    let mockedApi: jest.Mock;
+    let mockedApi: Mock;
 
     beforeEach(() => {
-        mockedApi = jest.fn();
+        mockedApi = vi.fn();
 
         mockUseApi(mockedApi);
 

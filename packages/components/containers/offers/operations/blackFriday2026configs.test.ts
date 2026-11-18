@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useHasRedeemedCoupons } from '@proton/payments-hooks/client-extensions/useHasRedeemedCoupons';
 import { BLACK_FRIDAY_2026_COUPONS } from '@proton/payments/core/subscription/helpers';
@@ -13,18 +14,18 @@ import { useOffer as usePlusToUnlimited } from './blackFriday2026PlusToUnlimited
 import { useOffer as useUnlimitedToDuo } from './blackFriday2026UnlimitedToDuo/useOffer';
 import { useBlackFriday2026 } from './blackFriday2026configs';
 
-jest.mock('./blackFriday2026UnlimitedToDuo/useOffer', () => ({ useOffer: jest.fn() }));
-jest.mock('./blackFriday2026DuoToFamily/useOffer', () => ({ useOffer: jest.fn() }));
-jest.mock('./blackFriday2026PlusToUnlimited/useOffer', () => ({ useOffer: jest.fn() }));
-jest.mock('./blackFriday2026FreeToUnlimited/useOffer', () => ({ useOffer: jest.fn() }));
-jest.mock('./blackFriday2026FreeToMailPlus/useOffer', () => ({ useOffer: jest.fn() }));
-jest.mock('./blackFriday2026FreeToDrivePlus/useOffer', () => ({ useOffer: jest.fn() }));
-jest.mock('./blackFriday2026FreeToPassPlus/useOffer', () => ({ useOffer: jest.fn() }));
+vi.mock('./blackFriday2026UnlimitedToDuo/useOffer', () => ({ useOffer: vi.fn() }));
+vi.mock('./blackFriday2026DuoToFamily/useOffer', () => ({ useOffer: vi.fn() }));
+vi.mock('./blackFriday2026PlusToUnlimited/useOffer', () => ({ useOffer: vi.fn() }));
+vi.mock('./blackFriday2026FreeToUnlimited/useOffer', () => ({ useOffer: vi.fn() }));
+vi.mock('./blackFriday2026FreeToMailPlus/useOffer', () => ({ useOffer: vi.fn() }));
+vi.mock('./blackFriday2026FreeToDrivePlus/useOffer', () => ({ useOffer: vi.fn() }));
+vi.mock('./blackFriday2026FreeToPassPlus/useOffer', () => ({ useOffer: vi.fn() }));
 
-jest.mock('@proton/payments-hooks/client-extensions/useHasRedeemedCoupons', () => ({
-    useHasRedeemedCoupons: jest.fn(),
+vi.mock('@proton/payments-hooks/client-extensions/useHasRedeemedCoupons', () => ({
+    useHasRedeemedCoupons: vi.fn(),
 }));
-const mockUseHasRedeemed = useHasRedeemedCoupons as jest.Mock;
+const mockUseHasRedeemed = useHasRedeemedCoupons as Mock;
 
 const useOffers = [
     useUnlimitedToDuo,
@@ -34,7 +35,7 @@ const useOffers = [
     useFreeToMailPlus,
     useFreeToDrivePlus,
     useFreeToPassPlus,
-] as jest.Mock[];
+] as Mock[];
 
 const buildOperation = (overrides: Partial<Operation> = {}): Operation => {
     return {
@@ -53,7 +54,7 @@ const setFreeToUnlimited = (overrides: Partial<Operation>) => {
     useOffers.forEach((useOffer) => {
         useOffer.mockReturnValue(buildOperation());
     });
-    (useFreeToUnlimited as jest.Mock).mockReturnValue(buildOperation({ isEligible: true, ...overrides }));
+    (useFreeToUnlimited as Mock).mockReturnValue(buildOperation({ isEligible: true, ...overrides }));
 };
 
 describe('useBlackFriday2026', () => {

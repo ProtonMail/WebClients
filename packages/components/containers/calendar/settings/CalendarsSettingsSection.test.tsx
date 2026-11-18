@@ -30,23 +30,25 @@ import {
     generateSubscribedCalendars,
 } from '@proton/shared/testing/calendarBuilders';
 
-import { mockUseAuthentication } from '../../../testing/mockUseAuthentication';
+import { mockUseAuthentication } from '../../../testing/vitest/mockUseAuthentication';
 import type { CalendarsSettingsSectionProps } from './CalendarsSettingsSection';
 import CalendarsSettingsSection from './CalendarsSettingsSection';
 
-jest.mock('../../../hooks/useCalendarShareInvitations', () =>
-    jest.fn().mockReturnValue({
+vi.mock('../../../hooks/useCalendarShareInvitations', () => ({
+    __esModule: true,
+    default: vi.fn().mockReturnValue({
         loading: false,
         invitations: [],
-    })
-);
-jest.mock('../../../hooks/useCalendarShareInvitationActions', () =>
-    jest.fn().mockReturnValue({
+    }),
+}));
+vi.mock('../../../hooks/useCalendarShareInvitationActions', () => ({
+    __esModule: true,
+    default: vi.fn().mockReturnValue({
         accept: () => {},
         reject: () => {},
-    })
-);
-jest.mock('@proton/app-context/useConfig', () => ({
+    }),
+}));
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({
         CLIENT_TYPE: 1,
         CLIENT_SECRET: 'not_so_secret',
@@ -61,32 +63,35 @@ jest.mock('@proton/app-context/useConfig', () => ({
         VERSION_PATH: 'test',
     }),
 }));
-jest.mock('../../../hooks/useAppTitle', () => jest.fn().mockReturnValue(undefined));
-jest.mock('@proton/app-context/useApi', () => ({
-    useApi: jest.fn(() => jest.fn().mockResolvedValue({})),
+vi.mock('../../../hooks/useAppTitle', () => ({ __esModule: true, default: vi.fn().mockReturnValue(undefined) }));
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: vi.fn(() => vi.fn().mockResolvedValue({})),
 }));
 
-jest.mock('../../../hooks/useEventManager', () => () => ({}));
-jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => ({ useCalendarsInfoListener: () => ({}) }));
-jest.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
-    useCalendarModelEventManager: jest.fn(() => ({ call: jest.fn() })),
+vi.mock('../../../hooks/useEventManager', () => ({ __esModule: true, default: () => ({}) }));
+vi.mock('../../eventManager/calendar/useCalendarsInfoListener', () => ({ useCalendarsInfoListener: () => ({}) }));
+vi.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+    useCalendarModelEventManager: vi.fn(() => ({ call: vi.fn() })),
 }));
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({}),
 }));
-jest.mock('@proton/features/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
-jest.mock('../../../hooks/useEarlyAccess', () => () => ({}));
-
-jest.mock('@proton/account/allSubscriptions/hooks', () => ({
-    useAllSubscriptions: jest.fn(),
-}));
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
-    useEntitlementCatalog: jest.fn(),
-}));
-
-jest.mock('@proton/calendar/holidaysDirectory/hooks', () => ({
+vi.mock('@proton/features/useFeature', () => ({
     __esModule: true,
-    default: jest.fn(() => []),
+    default: vi.fn(() => ({ feature: { Value: true } })),
+}));
+vi.mock('../../../hooks/useEarlyAccess', () => ({ __esModule: true, default: () => ({}) }));
+
+vi.mock('@proton/account/allSubscriptions/hooks', () => ({
+    useAllSubscriptions: vi.fn(),
+}));
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementCatalog: vi.fn(),
+}));
+
+vi.mock('@proton/calendar/holidaysDirectory/hooks', () => ({
+    __esModule: true,
+    default: vi.fn(() => []),
 }));
 
 const memoryHistory = createMemoryHistory();
@@ -136,8 +141,8 @@ const renderComponent = ({
 
 describe('My calendars section', () => {
     beforeEach(() => {
-        jest.mocked(useAllSubscriptions).mockReturnValue([[], false]);
-        jest.mocked(useEntitlementCatalog).mockReturnValue([undefined, false]);
+        vi.mocked(useAllSubscriptions).mockReturnValue([[], false]);
+        vi.mocked(useEntitlementCatalog).mockReturnValue([undefined, false]);
     });
 
     const createCalendarText = `Create calendar`;
@@ -191,14 +196,14 @@ describe('My calendars section', () => {
         });
 
         it('links both limit reached messages to an upgrade from the first subscription when none covers Calendar', () => {
-            jest.mocked(useEntitlementCatalog).mockReturnValue([
+            vi.mocked(useEntitlementCatalog).mockReturnValue([
                 buildEntitlementCatalog({
                     [PLANS.PASS]: [EntitlementName.FlagsPass],
                     [PLANS.VPN2024]: [EntitlementName.FlagsVpn],
                 }),
                 false,
             ]);
-            jest.mocked(useAllSubscriptions).mockReturnValue([
+            vi.mocked(useAllSubscriptions).mockReturnValue([
                 [buildSubscription(PLANS.PASS), buildSubscription(PLANS.VPN2024)],
                 false,
             ]);

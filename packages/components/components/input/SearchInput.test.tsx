@@ -18,11 +18,11 @@ const Controlled = () => {
 
 describe('<SearchInput />', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const type = (input: HTMLElement, value: string) => fireEvent.change(input, { target: { value } });
@@ -35,13 +35,13 @@ describe('<SearchInput />', () => {
         // Debounce fires: the effect emits "Wil" to the parent, which will echo it back through `value`.
         // The next character is typed in the same batch, before the echo is committed.
         act(() => {
-            jest.advanceTimersByTime(200);
+            vi.advanceTimersByTime(200);
             type(input, 'Will');
         });
         expect(input.value).toBe('Will');
 
         act(() => {
-            jest.advanceTimersByTime(200);
+            vi.advanceTimersByTime(200);
         });
         expect(input.value).toBe('Will');
     });
@@ -52,7 +52,7 @@ describe('<SearchInput />', () => {
 
         type(input, 'William');
         act(() => {
-            jest.advanceTimersByTime(200);
+            vi.advanceTimersByTime(200);
         });
         expect(input.value).toBe('William');
 

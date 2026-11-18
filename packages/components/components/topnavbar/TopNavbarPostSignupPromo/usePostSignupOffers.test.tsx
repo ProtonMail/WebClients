@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -12,29 +13,29 @@ import { useMailPostSignup099 } from './PostSignupZeroNinetyNine/useMailPostSign
 import { useUnlimitedToDuoOffer } from './UnlimitedToDuoOffer/hooks/useUnlimitedToDuoOffer';
 import { usePostSignupOffers } from './usePostSignupOffers';
 
-jest.mock('./PostSignupOneDollar/MailPostSignupOneDollar/useMailPostSignupOneDollar');
-const mockUseMailPostSignupOneDollar = useMailPostSignupOneDollar as jest.Mock;
+vi.mock('./PostSignupOneDollar/MailPostSignupOneDollar/useMailPostSignupOneDollar');
+const mockUseMailPostSignupOneDollar = useMailPostSignupOneDollar as Mock;
 
-jest.mock('./PostSignupZeroNinetyNine/useMailPostSignup099');
-const mockUseMailPostSignup099 = useMailPostSignup099 as jest.Mock;
+vi.mock('./PostSignupZeroNinetyNine/useMailPostSignup099');
+const mockUseMailPostSignup099 = useMailPostSignup099 as Mock;
 
-jest.mock('./PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollar');
-const mockUseDrivePostSignupOneDollar = useDrivePostSignupOneDollar as jest.Mock;
+vi.mock('./PostSignupOneDollar/DrivePostSignupOneDollar/useDrivePostSignupOneDollar');
+const mockUseDrivePostSignupOneDollar = useDrivePostSignupOneDollar as Mock;
 
-jest.mock('./AlwaysOnUpsell/useAlwaysOnUpsell');
-const mockUseAlwaysOnUpsell = useAlwaysOnUpsell as jest.Mock;
+vi.mock('./AlwaysOnUpsell/useAlwaysOnUpsell');
+const mockUseAlwaysOnUpsell = useAlwaysOnUpsell as Mock;
 
-jest.mock('./MailSubscriptionReminder/useMailSubscriptionReminder');
-const mockUseMailSubscriptionReminder = useMailSubscriptionReminder as jest.Mock;
+vi.mock('./MailSubscriptionReminder/useMailSubscriptionReminder');
+const mockUseMailSubscriptionReminder = useMailSubscriptionReminder as Mock;
 
-jest.mock('./PaidUsersNudge/hooks/usePaidUsersNudge');
-const mockUsePaidUsersNudge = usePaidUsersNudge as jest.Mock;
+vi.mock('./PaidUsersNudge/hooks/usePaidUsersNudge');
+const mockUsePaidUsersNudge = usePaidUsersNudge as Mock;
 
-jest.mock('./GoUnlimitedOffer/hooks/useGoUnlimited2025');
-const mockUseGoUnlimited2025 = useGoUnlimited2025 as jest.Mock;
+vi.mock('./GoUnlimitedOffer/hooks/useGoUnlimited2025');
+const mockUseGoUnlimited2025 = useGoUnlimited2025 as Mock;
 
-jest.mock('./UnlimitedToDuoOffer/hooks/useUnlimitedToDuoOffer');
-const mockUseUnlimitedToDuoOffer = useUnlimitedToDuoOffer as jest.Mock;
+vi.mock('./UnlimitedToDuoOffer/hooks/useUnlimitedToDuoOffer');
+const mockUseUnlimitedToDuoOffer = useUnlimitedToDuoOffer as Mock;
 
 describe('usePostSignupOffers', () => {
     beforeEach(() => {
@@ -88,7 +89,7 @@ describe('usePostSignupOffers', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should return the mail post-signup offer when user is eligible for both mail offer and always-on upsell', () => {

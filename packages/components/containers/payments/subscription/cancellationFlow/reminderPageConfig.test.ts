@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { PLANS } from '@proton/payments/core/constants';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
 import { APPS } from '@proton/shared/lib/constants';
@@ -5,14 +7,14 @@ import { APPS } from '@proton/shared/lib/constants';
 import { subscriptionBundlePro } from '../../../../testing/subscriptionData';
 import { getReminderPageConfig } from './reminderPageConfig';
 
-jest.mock('@proton/payments/core/subscription/helpers', () => ({
+vi.mock('@proton/payments/core/subscription/helpers', async () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/payments/core/subscription/helpers'),
-    getPlan: jest.fn(),
+    ...(await vi.importActual('@proton/payments/core/subscription/helpers')),
+    getPlan: vi.fn(),
 }));
 
 const setMockPlan = (planName: PLANS) => {
-    (getPlan as jest.Mock).mockReturnValue({
+    (getPlan as Mock).mockReturnValue({
         MaxAddresses: 5,
         MaxCalendars: 1,
         MaxDomains: 1,
@@ -24,7 +26,7 @@ const setMockPlan = (planName: PLANS) => {
 
 describe('getReminderPageConfig', () => {
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     test.each([

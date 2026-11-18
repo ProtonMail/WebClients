@@ -3,28 +3,28 @@ import { CryptoProxy } from '@protontech/crypto';
 import { getModelState } from '@proton/account/testing/getModelState';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 
-import { clearAll, minimalCache, mockedCryptoApi, prepareContact, renderWithProviders } from '../tests/render';
+import { clearAll, minimalCache, mockedCryptoApi, prepareContact, renderWithProviders } from '../tests/vitest/render';
 import type { ContactDetailsProps } from './ContactDetailsModal';
 import ContactDetailsModal from './ContactDetailsModal';
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ API_URL: 'api' }),
 }));
 
 describe('ContactDetailsModal', () => {
     const props: ContactDetailsProps = {
         contactID: 'ContactID',
-        onEdit: jest.fn(),
-        onDelete: jest.fn(),
-        onMailTo: jest.fn(),
-        onEmailSettings: jest.fn(),
-        onGroupDetails: jest.fn(),
-        onGroupEdit: jest.fn(),
-        onUpgrade: jest.fn(),
-        onDecryptionError: jest.fn(),
-        onSignatureError: jest.fn(),
+        onEdit: vi.fn(),
+        onDelete: vi.fn(),
+        onMailTo: vi.fn(),
+        onEmailSettings: vi.fn(),
+        onGroupDetails: vi.fn(),
+        onGroupEdit: vi.fn(),
+        onUpgrade: vi.fn(),
+        onDecryptionError: vi.fn(),
+        onSignatureError: vi.fn(),
     };
 
     beforeAll(() => {

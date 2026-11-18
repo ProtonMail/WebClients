@@ -4,12 +4,12 @@ import userEvent from '@testing-library/user-event';
 import * as featureTourActions from '@proton/account/featuresTour/actions';
 import type { FeatureTourStepId } from '@proton/account/featuresTour/interface';
 
-import { renderWithProviders } from '../../testing/renderWithProviders';
+import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import FeatureTourSteps from './FeatureTourSteps';
 import { FEATURE_TOUR_STEPS_MAP } from './constants';
 
 // Mock the step components
-jest.mock('./constants', () => ({
+vi.mock('./constants', () => ({
     FEATURE_TOUR_STEPS_MAP: {
         'short-domain': {
             component: ({ onNext, bullets }: any) => (
@@ -20,7 +20,7 @@ jest.mock('./constants', () => ({
                     </button>
                 </div>
             ),
-            shouldDisplay: jest
+            shouldDisplay: vi
                 .fn()
                 .mockResolvedValue({ canDisplay: true, preloadIllustration: () => Promise.resolve() }),
         },
@@ -33,24 +33,24 @@ jest.mock('./constants', () => ({
                     </button>
                 </div>
             ),
-            shouldDisplay: jest
+            shouldDisplay: vi
                 .fn()
                 .mockResolvedValue({ canDisplay: true, preloadIllustration: () => Promise.resolve() }),
         },
     },
 }));
 
-jest.mock('@proton/account/featuresTour/actions', () => ({
+vi.mock('@proton/account/featuresTour/actions', async () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/account/featuresTour/actions'),
+    ...(await vi.importActual('@proton/account/featuresTour/actions')),
 }));
 
 describe('FeatureTourSteps', () => {
-    const mockOnClose = jest.fn();
+    const mockOnClose = vi.fn();
     const stepsList: FeatureTourStepId[] = ['short-domain', 'auto-delete'];
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     const renderComponent = () => {
@@ -82,8 +82,8 @@ describe('FeatureTourSteps', () => {
 
     it('should close and dispatch completed action on last step next click', async () => {
         renderComponent();
-        const completedFeatureTourActionMock = jest.fn();
-        jest.spyOn(featureTourActions, 'completedFeatureTourAction').mockReturnValue(completedFeatureTourActionMock);
+        const completedFeatureTourActionMock = vi.fn();
+        vi.spyOn(featureTourActions, 'completedFeatureTourAction').mockReturnValue(completedFeatureTourActionMock);
 
         // Navigate to last step
         const firstNextButton = await screen.findByRole('button', { name: /next/i });
@@ -112,11 +112,11 @@ describe('FeatureTourSteps', () => {
     });
 
     it('should filter out steps that should not be displayed', async () => {
-        const completedFeatureTourActionMock = jest.fn();
-        jest.spyOn(featureTourActions, 'completedFeatureTourAction').mockReturnValue(completedFeatureTourActionMock);
+        const completedFeatureTourActionMock = vi.fn();
+        vi.spyOn(featureTourActions, 'completedFeatureTourAction').mockReturnValue(completedFeatureTourActionMock);
 
         // Mock one step to not be displayed
-        jest.mocked(FEATURE_TOUR_STEPS_MAP['auto-delete'].shouldDisplay).mockResolvedValue({
+        vi.mocked(FEATURE_TOUR_STEPS_MAP['auto-delete'].shouldDisplay).mockResolvedValue({
             canDisplay: false,
             preloadUrls: [],
         });

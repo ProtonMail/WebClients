@@ -6,18 +6,20 @@ import metrics from '@proton/metrics/metricsInstance';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import StandardErrorPage from './StandardErrorPage';
 
-jest.mock('../../hooks/useDocumentTitle');
-jest.mock('@proton/metrics/metricsInstance', () => ({
-    core_ui_blocking_error_page_total: {
-        increment: jest.fn(),
+vi.mock('../../hooks/useDocumentTitle');
+vi.mock('@proton/metrics/metricsInstance', () => ({
+    default: {
+        core_ui_blocking_error_page_total: {
+            increment: vi.fn(),
+        },
     },
 }));
 
-jest.mock('react', () => {
-    const originalReact = jest.requireActual('react');
+vi.mock('react', async () => {
+    const originalReact = await vi.importActual<any>('react');
     return {
         ...originalReact,
-        useContext: jest.fn().mockImplementation((context) => {
+        useContext: vi.fn().mockImplementation((context) => {
             if (context === FlagContext) {
                 return true;
             }
@@ -28,7 +30,7 @@ jest.mock('react', () => {
 
 describe('StandardErrorPage', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('renders GenericError component with children', () => {

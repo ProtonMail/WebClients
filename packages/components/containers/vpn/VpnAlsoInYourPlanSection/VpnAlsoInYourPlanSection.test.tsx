@@ -11,14 +11,14 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { buildPreloadedState } from '../../../testing/buildPreloadedState';
-import { renderWithProviders } from '../../../testing/renderWithProviders';
+import { renderWithProviders } from '../../../testing/vitest/renderWithProviders';
 import { VpnAlsoInYourPlanSection } from './VpnAlsoInYourPlanSection';
 
-jest.mock('../../payments/subscription/subscriptionModalContext', () => ({
-    useSubscriptionModal: () => [jest.fn(), false],
+vi.mock('../../payments/subscription/subscriptionModalContext', () => ({
+    useSubscriptionModal: () => [vi.fn(), false],
 }));
 
-jest.mock('../../../hooks/useDashboardPaymentFlow', () => () => 'subscription');
+vi.mock('../../../hooks/useDashboardPaymentFlow', () => ({ __esModule: true, default: () => 'subscription' }));
 
 const freeUser: Partial<UserModel> = { isFree: true, isPaid: false, Subscribed: 0 };
 const passLifetimeUser: Partial<UserModel> = { ...freeUser, hasPassLifetime: true };

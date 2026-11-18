@@ -1,19 +1,19 @@
 import { fireEvent } from '@testing-library/react';
 
-import { renderWithProviders } from '../../containers/contacts/tests/render';
+import { renderWithProviders } from '../../containers/contacts/tests/vitest/render';
 import CheckListItem from './CheckListItem';
 
 const checklistItemProps = {
     icon: 'icon',
     text: 'text',
-    onClick: jest.fn(),
+    onClick: vi.fn(),
     smallVariant: false,
     done: false,
 };
 
 describe('ChecklistItem', () => {
     it('Should trigger onclick when clicked', async () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         const { getByRole } = renderWithProviders(<CheckListItem {...checklistItemProps} onClick={onClick} />);
         const item = getByRole('button');
         fireEvent.click(item);
@@ -21,7 +21,7 @@ describe('ChecklistItem', () => {
     });
 
     it('Should not trigger onclick when disabled', async () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         const { getByRole } = renderWithProviders(<CheckListItem {...checklistItemProps} onClick={onClick} disabled />);
         const item = getByRole('button');
         fireEvent.click(item);
@@ -29,7 +29,7 @@ describe('ChecklistItem', () => {
     });
 
     it('Should trigger onclick when done', async () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         const { getByRole } = renderWithProviders(<CheckListItem {...checklistItemProps} onClick={onClick} done />);
         const item = getByRole('button');
         fireEvent.click(item);
