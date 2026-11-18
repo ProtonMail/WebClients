@@ -877,6 +877,21 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Dismiss notification": [
+        "Închidere notificare"
+      ],
+      "Go to today": [
+        "Salt la astăzi"
+      ],
+      "Open item": [
+        "Deschidere articol"
+      ],
+      "Remove passkey": [
+        "Eliminare cheie de acces"
+      ],
+      "Toggle section": [
+        "Comutare secțiune"
       ]
     },
     "Activity": {
@@ -2426,9 +2441,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."

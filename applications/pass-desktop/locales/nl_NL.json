@@ -845,6 +845,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
+      ],
+      "Bulk select items": [
+        "Bulk selecteer items"
+      ],
+      "Dismiss notification": [
+        "Melding sluiten"
+      ],
+      "Download for Linux": [
+        "Download voor Linux"
+      ],
+      "Move folder": [
+        "Verplaats map"
+      ],
+      "Multiple select": [
+        "Meerkeuze"
+      ],
+      "Open the browser again": [
+        "Open de browser opnieuw"
       ]
     },
     "Activity": {
@@ -2271,8 +2289,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2987,6 +3004,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Voeg een betaalmethode toe zodat je abonnement doorloopt wanneer je proefperiode afloopt."
+      ],
+      "Choose how you want to sign in": [
+        "Kies je loginmethode"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Het verplaatsen van items naar een andere kluis verwijdert hun beveiligde links."
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scan om ${ PASS_APP_NAME } te downloaden voor iOS en Android"
+      ],
+      "Your session could not be authorized.": [
+        "Uw sessie kon niet worden geautoriseerd."
       ]
     },
     "Keyboard key": {
@@ -4292,6 +4324,18 @@
       ],
       "ZIP or Postal code": [
         "Postcode"
+      ],
+      "Add a payment method": [
+        "Betaalmethode toevoegen"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5380,6 +5424,21 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ],
+      "Add an account": [
+        "Account toevoegen"
+      ],
+      "Get mobile apps": [
+        "Download mobiele apps"
+      ],
+      "Keep your subscription active": [
+        "Hou je abonnement actief"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Verplaats \"${ folderName }\" naar"
+      ],
+      "Signing you in": [
+        "Je wordt ingelogd"
       ]
     },
     "Title_cloned_item": {
@@ -5758,6 +5817,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Je kan een map niet in zichzelf of in submappen verplaatsen"
       ]
     }
   }
