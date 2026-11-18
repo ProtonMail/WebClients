@@ -42,7 +42,8 @@ describe('SearchService metrics', () => {
             new DatabaseLock(),
             new LoggerProxy(undefined),
             metricService,
-            true
+            true,
+            async () => {}
         );
         // The worker is only handed to `Search`, which is faked here.
         jest.spyOn(searchService as any, 'getWorkerAndMessageCacheDeps').mockResolvedValue(undefined);
@@ -101,5 +102,71 @@ describe('SearchService metrics', () => {
         await flushPromises();
 
         expect(metricService.searchCompleted).toHaveBeenCalledTimes(1);
+    });
+});
+
+describe('SearchService worker connection', () => {
+    let searchService: SearchService;
+    let createWorker: jest.SpyInstance;
+    let rawWorkers: { terminate: jest.Mock }[];
+
+    beforeEach(() => {
+        searches.length = 0;
+        rawWorkers = [];
+        searchService = new SearchService(
+            'user',
+            async () => [],
+            new DatabaseLock(),
+            new LoggerProxy(undefined),
+            fakeMetricService(),
+            true,
+            async () => {}
+        );
+        createWorker = jest
+            .spyOn(searchService as any, 'createAndInitNewWorkerInstance')
+            .mockImplementation(async () => {
+                const rawWorker = { terminate: jest.fn() };
+                rawWorkers.push(rawWorker);
+                return { worker: {}, indexKey: {}, rawWorker };
+            });
+    });
+
+    const closeConnection = (rawWorker: { terminate: jest.Mock }) => {
+        (searchService as any).onWorkerConnectionClosed(rawWorker);
+    };
+
+    it('starts a new worker for the next warm-up once the connection is closed', async () => {
+        await searchService.warmUp();
+        closeConnection(rawWorkers[0]);
+        await flushPromises();
+
+        await searchService.warmUp();
+
+        expect(rawWorkers[0].terminate).toHaveBeenCalledTimes(1);
+        expect(createWorker).toHaveBeenCalledTimes(2);
+    });
+
+    it('terminates the worker only once the running search settles', async () => {
+        searchService.search(params);
+        await flushPromises();
+        closeConnection(rawWorkers[0]);
+        await flushPromises();
+        expect(rawWorkers[0].terminate).not.toHaveBeenCalled();
+
+        searches[0].end('failed');
+        await flushPromises();
+
+        expect(rawWorkers[0].terminate).toHaveBeenCalledTimes(1);
+    });
+
+    it('keeps the current worker when an older one reports its connection closed', async () => {
+        await searchService.warmUp();
+        closeConnection(rawWorkers[0]);
+        await searchService.warmUp();
+
+        closeConnection(rawWorkers[0]);
+        await searchService.warmUp();
+
+        expect(createWorker).toHaveBeenCalledTimes(2);
     });
 });

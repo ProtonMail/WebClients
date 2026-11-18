@@ -29,11 +29,19 @@ const reportSearchOutcome = (search: Search, outcome: SearchOutcome, metricServi
     });
 };
 
+interface WorkerSetup {
+    worker: Comlink.Remote<SearchWorker>;
+    indexKey: CryptoKey;
+    rawWorker: Pick<Worker, 'terminate'>;
+}
+
 /** public interface into search functionality */
 export class SearchService {
-    private workerReadyPromise:
-        | Promise<{ worker: Comlink.Remote<SearchWorker>; indexKey: CryptoKey } | undefined>
-        | undefined;
+    private workerReadyPromise: Promise<WorkerSetup | undefined> | undefined;
+    /** The worker `workerReadyPromise` resolved to, to tell whether a closed connection belongs to it. */
+    private currentRawWorker: Pick<Worker, 'terminate'> | undefined;
+    /** Searches that haven't settled: a worker is only terminated once the ones that may be using it are done. */
+    private readonly runningSearches = new Set<Promise<SearchOutcome>>();
     /** The most recent search; only its completion is reported — see `search()`. */
     private currentSearch: Search | undefined;
 
@@ -43,7 +51,9 @@ export class SearchService {
         private readonly dbLock: DatabaseLock,
         private readonly logger: Logger,
         private readonly metricService: MetricService,
-        private readonly useV2Indexing: boolean
+        private readonly useV2Indexing: boolean,
+        /** See `IndexService.waitForDbReset`: the key must come from the database this session's path uses. */
+        private readonly waitForDbReset: () => Promise<void>
     ) {}
 
     /**
@@ -70,6 +80,10 @@ export class SearchService {
         const search = new Search(params, this.dbLock, workerCacheParamsPromise, this.userId, this.logger);
         search.start();
         this.currentSearch = search;
+        this.runningSearches.add(search.done);
+        void search.done.finally(() => {
+            this.runningSearches.delete(search.done);
+        });
         this.startSearchSession();
         this.metricService.searchStarted();
 
@@ -116,6 +130,7 @@ export class SearchService {
                     if (!workerSetup) {
                         this.workerReadyPromise = undefined;
                     }
+                    this.currentRawWorker = workerSetup?.rawWorker;
                     return workerSetup;
                 })
                 .catch((error) => {
@@ -128,7 +143,23 @@ export class SearchService {
         return this.workerReadyPromise;
     }
 
-    private async createAndInitNewWorkerInstance() {
+    /**
+     * The worker's database connection was closed, e.g. by another tab deleting the database: every search on
+     * it would fail from now on, so the next one starts a new worker. Terminating the old one waits for the
+     * searches already running, as a call into a terminated worker never settles.
+     */
+    private onWorkerConnectionClosed(rawWorker: Pick<Worker, 'terminate'>) {
+        if (this.currentRawWorker === rawWorker) {
+            this.logger.info('the search worker lost its database connection, the next search starts a new one');
+            this.currentRawWorker = undefined;
+            this.workerReadyPromise = undefined;
+        }
+        void Promise.allSettled([...this.runningSearches]).then(() => {
+            rawWorker.terminate();
+        });
+    }
+
+    private async createAndInitNewWorkerInstance(): Promise<WorkerSetup | undefined> {
         performance.mark('search-get-worker-start');
         const indexKey = await this.getIndexKey();
         if (!indexKey) {
@@ -141,10 +172,21 @@ export class SearchService {
         );
         try {
             const worker = Comlink.wrap<SearchWorker>(rawWorker);
-            await worker.init(this.userId, indexKey);
+            let connectionClosed = false;
+            await worker.init(
+                this.userId,
+                indexKey,
+                Comlink.proxy(() => {
+                    connectionClosed = true;
+                    this.onWorkerConnectionClosed(rawWorker);
+                })
+            );
+            if (connectionClosed) {
+                throw new Error('the search worker lost its database connection while starting');
+            }
             performance.measure('search-get-worker', 'search-get-worker-start');
             // return the worker, but also the index key for the message cache since we have it already
-            return { worker, indexKey };
+            return { worker, indexKey, rawWorker };
         } catch (error) {
             rawWorker.terminate();
             throw error;
@@ -152,6 +194,7 @@ export class SearchService {
     }
 
     private async getIndexKey() {
+        await this.waitForDbReset();
         const db = await openContentSearchDB(this.userId);
         try {
             return await getIndexKey(db, await this.getUserKeys());

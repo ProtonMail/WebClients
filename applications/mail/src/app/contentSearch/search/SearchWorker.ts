@@ -10,12 +10,15 @@ export default class SearchWorker {
     private initPromise?: Promise<void>;
     private abortController?: AbortController;
 
-    async init(userId: string, indexKey: CryptoKey): Promise<void> {
+    /** `onConnectionClosed` is called when the reader's connection is closed, after which every search fails. */
+    async init(userId: string, indexKey: CryptoKey, onConnectionClosed: () => void): Promise<void> {
         // NOTE: if we ever use the reader here,
         // we also need to guard worker.init with the dbLock in Search.ts
         this.initPromise = (async () => {
             await initWasm();
-            const db = await openContentSearchDB(userId);
+            const db = await openContentSearchDB(userId, () => {
+                void onConnectionClosed();
+            });
             this.reader = new IndexReader(db, indexKey);
         })();
         await this.initPromise;
