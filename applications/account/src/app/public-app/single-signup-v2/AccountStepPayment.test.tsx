@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
@@ -72,7 +72,8 @@ describe('AccountStepPayment - PaypalFirst experiment', () => {
             'payment-method-chargebee-paypal',
             'payment-method-chargebee-card',
         ]);
-        expect(screen.getByTestId('payment-method-chargebee-paypal')).toBeChecked();
+        // The default method is selected one render after the methods load
+        await waitFor(() => expect(screen.getByTestId('payment-method-chargebee-paypal')).toBeChecked());
         expect(screen.getByTestId('payment-method-chargebee-card')).not.toBeChecked();
     });
 
@@ -87,7 +88,7 @@ describe('AccountStepPayment - PaypalFirst experiment', () => {
                 'payment-method-chargebee-card',
                 'payment-method-chargebee-paypal',
             ]);
-            expect(screen.getByTestId('payment-method-chargebee-card')).toBeChecked();
+            await waitFor(() => expect(screen.getByTestId('payment-method-chargebee-card')).toBeChecked());
             expect(screen.getByTestId('payment-method-chargebee-paypal')).not.toBeChecked();
         }
     );

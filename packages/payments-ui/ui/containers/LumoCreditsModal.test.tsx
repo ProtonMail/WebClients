@@ -342,7 +342,10 @@ describe('payment methods the BE refuses for products', () => {
         const lumoMethods = await getOfferedMethodTypes();
         expect(lumoMethods).toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
         productRefusedMethods.forEach((type) => expect(lumoMethods).not.toContain(type));
-        expect(mockFacadeResults.at(-1).methods.selectedMethod?.type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+        // The default method is selected one render after the methods load
+        await waitFor(() =>
+            expect(mockFacadeResults.at(-1).methods.selectedMethod?.type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)
+        );
     });
 });
 
