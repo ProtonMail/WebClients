@@ -30,6 +30,7 @@ import {
     handleStartupDeepLink,
 } from "./utils/protocol/deep_links";
 import { handleIPCCalls } from "./ipc/main";
+import { initializeLocale } from "./utils/locale";
 
 (async function () {
     initializeLog();
@@ -125,6 +126,7 @@ import { handleIPCCalls } from "./ipc/main";
 
     // After this point we should be able to use all electron APIs safely.
     await app.whenReady();
+    await initializeLocale();
 
     // Register app as default protocol client
     checkDeepLinks();
