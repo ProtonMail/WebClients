@@ -1,4 +1,6 @@
-import { cleanText } from './esBuild';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { cleanText, getBaseMessage } from './esBuild';
 import {
     contentWithBlocquote,
     contentWithoutBlockquote,
@@ -618,6 +620,18 @@ describe('ESBuild', () => {
                     '---------- Forwarded message ---------\nFrom: sender@example.com\nDate: Mon, Jan 1, 2024\nSubject: Test'
                 );
             });
+        });
+    });
+
+    describe('getBaseMessage', () => {
+        it('keeps the attachments metadata, which content search indexes', () => {
+            const attachmentsMetadata = [
+                { ID: 'a1', Name: 'invoice.pdf', MIMEType: 'application/pdf', Disposition: 'attachment', Size: 1 },
+            ] as Message['AttachmentsMetadata'];
+
+            const baseMessage = getBaseMessage({ ID: 'm1', AttachmentsMetadata: attachmentsMetadata } as Message);
+
+            expect(baseMessage.AttachmentsMetadata).toEqual(attachmentsMetadata);
         });
     });
 });
