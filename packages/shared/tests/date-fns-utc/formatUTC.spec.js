@@ -41,6 +41,12 @@ describe('date-fn utc', () => {
         expect(format(new Date(NaN), 'Pp')).toBe('');
     });
 
+    it('it should return an empty string for an empty format string', () => {
+        const utcDate = new Date(Date.UTC(2000, 0, 1, 1, 0));
+        expect(format(utcDate, '')).toBe('');
+        expect(format(utcDate, '\n')).toBe('');
+    });
+
     it('it should allow the week-year and day-of-year tokens', () => {
         const utcDate = new Date(Date.UTC(2020, 11, 31, 23, 0));
         expect(format(utcDate, 'YYYY DD')).toBe('2021 366');
