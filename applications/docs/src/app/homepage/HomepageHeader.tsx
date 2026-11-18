@@ -48,7 +48,8 @@ export function HomepageHeader({
   const { expanded, toggleExpanded } = useSidebarState()
   const isNarrow = useIsNarrow()
   const { state, type, setSearch } = useHomepageView()
-  const searchValue = state.view === 'search' || state.view === 'search-empty' ? state.query : undefined
+  // Every search view has the query, also while the recents load: the field must keep what's typed meanwhile.
+  const searchValue = 'query' in state ? state.query : undefined
 
   return (
     <div className="homepage-header shrink-0 items-center justify-center small:pe-[.625rem]">

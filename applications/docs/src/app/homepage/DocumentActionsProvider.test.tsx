@@ -42,7 +42,8 @@ function renderDocumentActions() {
   const createNotification = jest.fn()
   const reportTelemetry = jest.fn()
   const updateMovedDocuments = jest.fn()
-  const getAppHref = (path: string) => path
+  // As the host's, an app's address on its own subdomain.
+  const getAppHref = (path: string, app: string) => `https://${app.replace('proton-', '')}.proton.me${path}`
 
   const { result } = renderHook(() => useContext(DocumentActionsContext)!, {
     wrapper: ({ children }: { children: ReactNode }) => (
@@ -292,5 +293,41 @@ describe('DocumentActionsProvider', () => {
     )
     expect(reportTrashError).toHaveBeenCalledWith(errorTracking, error)
     expect(reportTelemetry).not.toHaveBeenCalled()
+  })
+
+  describe('open', () => {
+    let open: jest.SpyInstance
+    beforeEach(() => (open = jest.spyOn(window, 'open').mockReturnValue(null)))
+    afterEach(() => open.mockRestore())
+
+    test('opens a spreadsheet in the spreadsheet editor, in a new tab', () => {
+      const { result, reportTelemetry } = renderDocumentActions()
+      const spreadsheet = RecentDocumentsItem.create({ ...recentDocument.value, type: 'spreadsheet' })
+
+      act(() => result.current.open(spreadsheet))
+
+      expect(open).toHaveBeenCalledWith('https://docs.proton.me/sheet?mode=open&volumeId=volume1&linkId=link1')
+      expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_opened)
+    })
+
+    test('reports a document opened from the trash apart from the others', () => {
+      const { result, reportTelemetry } = renderDocumentActions()
+
+      act(() => result.current.open(recentDocument, 'trash'))
+
+      expect(open).toHaveBeenCalledWith('https://docs.proton.me/doc?mode=open&volumeId=volume1&linkId=link1')
+      expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_opened_in_trash)
+      expect(reportTelemetry).not.toHaveBeenCalledWith(TelemetryEvent.document_opened)
+    })
+
+    test('openParent opens the folder in Drive, not in Docs', () => {
+      const { result, reportTelemetry } = renderDocumentActions()
+      const inFolder = RecentDocumentsItem.create({ ...recentDocument.value, parentLinkId: 'folder1' })
+
+      act(() => result.current.openParent(inFolder))
+
+      expect(open).toHaveBeenCalledWith('https://drive.proton.me/share1/folder/folder1')
+      expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_source_opened)
+    })
   })
 })

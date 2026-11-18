@@ -1,7 +1,20 @@
-import { RecentDocumentsItem } from './recentDocumentsItem'
+import { RecentDocumentsItem, type RecentDocumentsItemValue } from './recentDocumentsItem'
 import { ServerTime } from './utils/serverTime'
-import type { ItemsSectionId } from './homepageViewContext'
-import { filterDocuments, splitIntoSectionsByTime } from './homepageViewUtils'
+import { act, renderHook } from '@testing-library/react'
+import type { ReactNode } from 'react'
+import { MemoryRouter } from 'react-router'
+import { CompatRouter, useLocation } from 'react-router-dom-v5-compat'
+
+import type { ItemsSection, ItemsSectionId } from './homepageViewContext'
+import {
+  filterDocuments,
+  splitIntoSectionsByLocation,
+  splitIntoSectionsByOwner,
+  splitIntoSectionsByTime,
+  useRecentsSort,
+  useSearch,
+} from './homepageViewUtils'
+import type { UserAddress } from './is-my-document'
 
 function createMockItems({ firstNameOverride }: { firstNameOverride?: string } = {}) {
   return [
@@ -175,3 +188,109 @@ function expectSections(sections: ReturnType<typeof splitIntoSectionsByTime>) {
     expect(itemNames).toBe(mockNames)
   }
 }
+
+function renderQueryHook<T>(useHook: () => T, path: string) {
+  let location = ''
+  function CurrentLocation() {
+    const { pathname, search } = useLocation()
+    location = `${pathname}${search}`
+    return null
+  }
+  const { result } = renderHook(useHook, {
+    wrapper: ({ children }: { children: ReactNode }) => (
+      <MemoryRouter initialEntries={[path]}>
+        <CompatRouter>
+          {children}
+          <CurrentLocation />
+        </CompatRouter>
+      </MemoryRouter>
+    ),
+  })
+  return { result, getLocation: () => location }
+}
+
+describe('useRecentsSort', () => {
+  test('an unknown sort in the address sorts by the default and leaves the address', () => {
+    const { result, getLocation } = renderQueryHook(useRecentsSort, '/recents?sort=size&type=document')
+
+    expect(result.current[0]).toBe('viewed')
+    expect(getLocation()).toBe('/recents?type=document')
+  })
+
+  test('a sort joins the search and the type in the address, and the default sort leaves it', () => {
+    const { result, getLocation } = renderQueryHook(useRecentsSort, '/recents?q=plan&type=document')
+
+    act(() => result.current[1]('owner'))
+
+    expect(getLocation()).toBe('/recents?q=plan&type=document&sort=owner')
+    expect(result.current[0]).toBe('owner')
+
+    act(() => result.current[1]('viewed'))
+
+    expect(getLocation()).toBe('/recents?q=plan&type=document')
+  })
+})
+
+describe('useSearch', () => {
+  test('an emptied search leaves the address', () => {
+    const { result, getLocation } = renderQueryHook(useSearch, '/recents?q=plan&sort=name')
+
+    act(() => result.current[1](''))
+
+    expect(getLocation()).toBe('/recents?sort=name')
+    expect(result.current[0]).toBeUndefined()
+  })
+})
+
+function createItem(name: string, value: Partial<RecentDocumentsItemValue>) {
+  return RecentDocumentsItem.create({
+    type: 'document',
+    name,
+    linkId: name,
+    parentLinkId: undefined,
+    volumeId: 'volume1',
+    lastViewed: new ServerTime(1_700_000_000),
+    lastModified: new ServerTime(1_700_000_000),
+    createdBy: undefined,
+    location: { type: 'root' },
+    isSharedWithMe: false,
+    shareId: 'share1',
+    ...value,
+  })
+}
+
+const names = (sections: ItemsSection[]) => sections.flatMap((section) => section.items.map((item) => item.name))
+
+describe('splitIntoSectionsByOwner', () => {
+  test('lists shared documents by owner, and those whose owner is unknown last', () => {
+    const shared = { isSharedWithMe: true, location: { type: 'shared-with-me' } } as const
+    const items = [
+      createItem('From nobody', shared),
+      createItem('From Zoe', { ...shared, createdBy: 'zoe@example.com' }),
+      createItem('Mine', { createdBy: 'me@example.com' }),
+      createItem('From Amy', { ...shared, createdBy: 'amy@example.com' }),
+    ]
+    const addresses = [{ Email: 'me@example.com' }] as UserAddress[]
+
+    expect(names(splitIntoSectionsByOwner(items, addresses, []))).toEqual([
+      'Mine',
+      'From Amy',
+      'From Zoe',
+      'From nobody',
+    ])
+  })
+})
+
+describe('splitIntoSectionsByLocation', () => {
+  test('orders documents in the same place by name', () => {
+    const shared = { isSharedWithMe: true, location: { type: 'shared-with-me' } } as const
+    const items = [
+      createItem('Shared b', shared),
+      createItem('Root b', {}),
+      createItem('Shared a', shared),
+      createItem('Root a', {}),
+    ]
+
+    expect(names(splitIntoSectionsByLocation(items))).toEqual(['Root a', 'Root b', 'Shared a', 'Shared b'])
+  })
+})
