@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { VolumesStateProvider } from '../_volumes/useVolumesState';
@@ -87,52 +87,44 @@ describe('useLinksState', () => {
     });
 
     it('finds device by shareId', async () => {
-        await act(async () => {
-            await hook.current.loadDevices(new AbortController().signal);
-            const device = hook.current.getDeviceByShareId(SHARE_ID_0);
-            expect(device).toEqual(DEVICE_0);
-        });
+        await act(() => hook.current.loadDevices(new AbortController().signal));
+        // Read after act, once the loaded devices have rendered
+        const device = hook.current.getDeviceByShareId(SHARE_ID_0);
+        expect(device).toEqual(DEVICE_0);
     });
 
     it('lists loaded devices', async () => {
-        await act(async () => {
-            await hook.current.loadDevices(new AbortController().signal);
-            const cachedDevices = hook.current.cachedDevices;
+        await act(() => hook.current.loadDevices(new AbortController().signal));
+        const cachedDevices = hook.current.cachedDevices;
 
-            const targetList = [DEVICE_0, DEVICE_1];
-            expect(cachedDevices).toEqual(targetList);
-        });
+        const targetList = [DEVICE_0, DEVICE_1];
+        expect(cachedDevices).toEqual(targetList);
     });
 
     it('should call getLink to get root link', async () => {
         mockedLoadDevices.mockResolvedValue([DEVICE_2]);
-        await act(async () => {
-            const name = 'rootName';
-            mockedGetLink.mockResolvedValue({ name });
-            await hook.current.loadDevices(new AbortController().signal);
-            const cachedDevices = hook.current.cachedDevices;
+        const name = 'rootName';
+        mockedGetLink.mockResolvedValue({ name });
+        await act(() => hook.current.loadDevices(new AbortController().signal));
+        const cachedDevices = hook.current.cachedDevices;
 
-            const targetList = [{ ...DEVICE_2, name }];
-            expect(cachedDevices).toEqual(targetList);
-            expect(mockedGetLink).toHaveBeenCalled();
-            expect(mockedCreateNotification).not.toHaveBeenCalled();
-            expect(mockedSendErrorReport).not.toHaveBeenCalled();
-        });
+        const targetList = [{ ...DEVICE_2, name }];
+        expect(cachedDevices).toEqual(targetList);
+        expect(mockedGetLink).toHaveBeenCalled();
+        expect(mockedCreateNotification).not.toHaveBeenCalled();
+        expect(mockedSendErrorReport).not.toHaveBeenCalled();
     });
 
     it('should notify the user if there is a failure loading a link', async () => {
         mockedLoadDevices.mockResolvedValue([DEVICE_2]);
-        await act(async () => {
-            mockedGetLink.mockRejectedValue('error');
+        mockedGetLink.mockRejectedValue('error');
+        await act(() => hook.current.loadDevices(new AbortController().signal));
+        const cachedDevices = hook.current.cachedDevices;
 
-            await hook.current.loadDevices(new AbortController().signal);
-            const cachedDevices = hook.current.cachedDevices;
-
-            const targetList: Device[] = [];
-            expect(cachedDevices).toEqual(targetList);
-            expect(mockedGetLink).toHaveBeenCalled();
-            expect(mockedCreateNotification).toHaveBeenCalled();
-            expect(mockedSendErrorReport).toHaveBeenCalled();
-        });
+        const targetList: Device[] = [];
+        expect(cachedDevices).toEqual(targetList);
+        expect(mockedGetLink).toHaveBeenCalled();
+        expect(mockedCreateNotification).toHaveBeenCalled();
+        expect(mockedSendErrorReport).toHaveBeenCalled();
     });
 });

@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 
 import { API_CODES } from '@proton/shared/lib/constants';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
