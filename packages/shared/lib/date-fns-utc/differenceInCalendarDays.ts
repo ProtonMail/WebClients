@@ -1,13 +1,9 @@
 import { DAY } from '../constants';
-import startOfDay from './startOfDay';
 
-const differenceInCalendarDays = (left: Date, right: Date) => {
-    const startOfDayLeft = startOfDay(left);
-    const startOfDayRight = startOfDay(right);
-
-    const diff = startOfDayLeft.getTime() - startOfDayRight.getTime();
-
-    return Math.round(diff / DAY);
-};
+/**
+ * Same result as date-fns `differenceInCalendarDays` with `in: utc`, which is about 10x slower. UTC days always last
+ * exactly `DAY` milliseconds, so counting day numbers is enough.
+ */
+const differenceInCalendarDays = (left: Date, right: Date) => Math.floor(+left / DAY) - Math.floor(+right / DAY);
 
 export default differenceInCalendarDays;
