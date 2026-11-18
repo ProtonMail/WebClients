@@ -90,12 +90,12 @@ $meet-background-colors-list:
 }
 
 $meet-room-background-colors: (
-	'purple': linear-gradient(141.78deg, #968aef 8.4%, #4a4478 93.76%),
-	'green': linear-gradient(141.78deg, #51cc52 8.4%, #1b3228 93.76%),
-	'norm': linear-gradient(141.78deg, #9581ff 8.4%, #413968 93.76%),
-	'blue': linear-gradient(141.78deg, #0bf 8.4%, #094a62 93.76%),
-	'red': linear-gradient(141.78deg, #fb7878 8.4%, #552c40 93.76%),
-	'orange': linear-gradient(141.78deg, #ff9761 8.4%, #523a2e 93.76%),
+	'purple': linear-gradient(141.78deg, var(--interaction-norm) 8.4%, var(--interaction-norm-minor-2) 93.76%),
+	'green': linear-gradient(141.78deg, var(--ui-green-interaction-norm) 8.4%, #1b3228 93.76%),
+	'norm': linear-gradient(141.78deg, var(--ui-purple-interaction-norm) 8.4%, #413968 93.76%),
+	'blue': linear-gradient(141.78deg, var(--ui-blue-interaction-norm) 8.4%, var(--ui-blue-interaction-minor-3) 93.76%),
+	'red': linear-gradient(141.78deg, var(--ui-red-interaction-norm) 8.4%, var(--signal-danger-minor-2) 93.76%),
+	'orange': linear-gradient(141.78deg, var(--signal-warning) 8.4%, var(--ui-orange-interaction-minor-3) 93.76%),
 );
 
 [class^='meet-room-background-'] {
