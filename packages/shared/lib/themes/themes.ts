@@ -284,6 +284,7 @@ export const getDarkThemes = () => [
     ThemeTypes.ContrastDark,
     ThemeTypes.PassDark,
     ThemeTypes.WalletDark,
+    ThemeTypes.LumoDark,
 ];
 
 export const getProminentHeaderThemes = () => [ThemeTypes.Classic, ThemeTypes.Legacy];
@@ -452,7 +453,7 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
 };
 
 const getValidatedThemeType = (themeType: number): ThemeTypes | undefined => {
-    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.LumoLight) {
+    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.LumoDark) {
         return themeType;
     }
 };
