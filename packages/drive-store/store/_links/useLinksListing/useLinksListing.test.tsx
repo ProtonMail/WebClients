@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
@@ -136,16 +136,19 @@ describe('useLinksListing', () => {
     it('fetches from the beginning when sorting changes', async () => {
         const links = LINKS.slice(0, PAGE_SIZE);
         mockRequest.mockReturnValue({ Links: linksToApiLinks(links) });
-        await act(async () => {
-            await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId', {
+        // Separate acts, so the second fetch sees the state the first one rendered
+        await act(() =>
+            hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId', {
                 sortField: 'createTime',
                 sortOrder: SORT_DIRECTION.ASC,
-            });
-            await hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId', {
+            })
+        );
+        await act(() =>
+            hook.current.fetchChildrenNextPage(abortSignal, 'shareId', 'parentLinkId', {
                 sortField: 'createTime',
                 sortOrder: SORT_DIRECTION.DESC,
-            });
-        });
+            })
+        );
         // Check fetch calls - twice starting from the first page.
         expect(mockRequest.mock.calls.map(([{ params }]) => params)).toMatchObject([
             { Page: 0, Sort: 'CreateTime', Desc: 0 },

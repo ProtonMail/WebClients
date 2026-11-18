@@ -1,6 +1,5 @@
-import { act } from '@testing-library/react';
-import type { RenderResult } from '@testing-library/react-hooks';
-import { renderHook } from '@testing-library/react-hooks';
+import type { RenderHookResult } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
@@ -35,7 +34,7 @@ const apiMock = jest.fn().mockImplementation(() => Promise.resolve(EVENT_PAYLOAD
 
 describe('useDriveEventManager', () => {
     let eventManager: EventManager<DriveEventsResult>;
-    let hook: RenderResult<ReturnType<typeof useDriveEventManagerProvider>>;
+    let hook: RenderHookResult<ReturnType<typeof useDriveEventManagerProvider>, unknown>['result'];
 
     const renderTestHook = () => {
         const { result } = renderHook(() => useDriveEventManagerProvider(apiMock as Api, eventManager));

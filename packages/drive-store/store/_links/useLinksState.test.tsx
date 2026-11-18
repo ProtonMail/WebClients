@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
