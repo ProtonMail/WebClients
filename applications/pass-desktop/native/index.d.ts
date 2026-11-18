@@ -37,7 +37,20 @@ export declare namespace msix_updater {
 }
 
 export declare namespace napi_native_messaging {
-    export function install(chromiumBinaryPath: string, firefoxBinaryPath: string): Promise<void>;
+    /**
+     * `installed` is false for a skipped browser (not installed on this machine) and for a failed one.
+     * A failed browser carries its `error`.
+     */
+    export interface BrowserInstallReport {
+        browser: string;
+        installed: boolean;
+        skipped: boolean;
+        error?: string;
+    }
+    export function install(
+        chromiumBinaryPath: string,
+        firefoxBinaryPath: string
+    ): Promise<Array<BrowserInstallReport>>;
 }
 
 export declare namespace ssh_agent_napi {

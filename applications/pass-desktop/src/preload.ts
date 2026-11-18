@@ -82,6 +82,7 @@ const contextBridgeApi: ContextBridgeApi = {
     /* native messaging */
     onNmRequest: (callback) => handler('nm:request', callback),
     nmResponse: (props) => invoke('nm:response', props),
+    getNmInstallReport: () => invoke('nm:getInstallReport'),
 
     /* ssh agent */
     sshAgent: {

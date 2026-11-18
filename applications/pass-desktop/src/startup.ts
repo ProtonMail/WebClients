@@ -6,6 +6,7 @@ import { setupIpcHandlers as client } from './lib/client';
 import { setupIpcHandlers as clipboard } from './lib/clipboard/clipboard.ipc';
 import contextMenu from './lib/context-menu';
 import { setupIpcHandlers as info } from './lib/install-info';
+import { setupInstallReportHandler } from './lib/native-messaging/install-report';
 import { nativeMessaging } from './lib/native-messaging/startup';
 import { setupIpcHandlers as navigation } from './lib/navigation';
 import { setupIpcHandlers as sshAgent } from './lib/ssh-agent';
@@ -40,7 +41,10 @@ export const startup = async (app: Electron.App, ctx: PassElectronContext) => {
         () => ctx.session
     );
 
-    const shutdownNativeMessaging = isE2E() ? noop : await nativeMessaging(app, () => ctx.window);
+    const resolveInstallReport = setupInstallReportHandler();
+    if (isE2E()) resolveInstallReport([]);
+
+    const shutdownNativeMessaging = isE2E() ? noop : await nativeMessaging(app, () => ctx.window, resolveInstallReport);
 
     // Return cleanup function
     return async () => {

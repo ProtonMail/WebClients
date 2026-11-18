@@ -7,6 +7,7 @@ import type {
     NativeMessagePayload,
     NativeMessageRequest,
     NativeMessageResponse,
+    NativeMessagingInstallReport,
 } from './extension-unlock-with-desktop';
 import type { UpdateStore } from './update';
 
@@ -59,6 +60,7 @@ export type ContextBridgeApi = {
 
     onNmRequest: (callback: (request: NativeMessagePayload<NativeMessageRequest>) => void) => () => void;
     nmResponse: (response: NativeMessagePayload<NativeMessageResponse>) => Promise<void>;
+    getNmInstallReport: () => Promise<NativeMessagingInstallReport[]>;
 
     sshAgent: {
         clear: () => Promise<void>;

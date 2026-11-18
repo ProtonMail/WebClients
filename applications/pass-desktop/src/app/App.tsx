@@ -59,6 +59,7 @@ import { toUnlockError } from '../lib/biometrics/unlock-error';
 import { clipboard } from '../lib/clipboard';
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { useDesktopContextMenu } from '../lib/hooks/useDesktopContextMenu';
+import { reportNativeMessagingInstallOnBoot } from '../lib/native-messaging/report-install';
 import { installStorageFlush } from '../lib/storage/storage.view';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
 import { isFirstLaunch } from './firstLaunch';
@@ -84,6 +85,7 @@ sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
 connectivity.init();
 
 createNativeMessagingService(authStore, respondToDesktopLockMessage);
+reportNativeMessagingInstallOnBoot();
 
 const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
