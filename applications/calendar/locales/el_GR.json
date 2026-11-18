@@ -1052,6 +1052,18 @@
       ],
       "Cancel trial": [
         "Ακύρωση δοκιμής"
+      ],
+      "Dismiss notification": [
+        "Απόρριψη ειδοποίησης"
+      ],
+      "Go to today": [
+        "Πηγαίνετε στο σήμερα"
+      ],
+      "Next contact": [
+        "Επόμενη επαφή"
+      ],
+      "Previous contact": [
+        "Προηγούμενη επαφή"
       ]
     },
     "action": {
@@ -4129,6 +4141,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Η σύνδεσή σας στο Zoom έχει λήξει. Παρακαλούμε επανασυνδεθείτε για να συνεχίσετε."
+      ],
+      "Meeting not created. Try again.": [
+        "Η σύσκεψη δεν δημιουργήθηκε. Δοκιμάστε ξανά."
       ]
     },
     "error": {
@@ -4399,6 +4414,9 @@
     "Event popover close button": {
       "Close popover": [
         "Κλείστε το αναδυόμενο παράθυρο"
+      ],
+      "Close": [
+        "Κλείσιμο"
       ]
     },
     "Event reply": {
@@ -4542,6 +4560,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
       ]
     },
     "fido2: Info": {
@@ -6596,6 +6617,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Οι θέσεις για βοηθούς συγγραφής δεν πωλούνται πλέον."
       ]
     },
     "info": {
@@ -13056,6 +13080,73 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x Βασική χρήση"
+      ],
+      "5x Plus usage": [
+        "5 φορές περισσότερη χρήση"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Πρόσβαση σε API, με πίστωση ${ credit } ανά μήνα"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Πρόσβαση σε API, με πίστωση ${ credit } ανά μήνα για κάθε χρήστη"
+      ],
+      "Everything in Basic, and:": [
+        "Τα πάντα στο Basic, και:"
+      ],
+      "Everything in Free, and:": [
+        "Τα πάντα στο Free, και:"
+      ],
+      "Everything in Plus, and:": [
+        "Τα πάντα στο Plus, και:"
+      ],
+      "Extended image generation": [
+        "Εκτεταμένη δημιουργία εικόνων"
+      ],
+      "Includes:": [
+        "Περιλαμβάνει:"
+      ],
+      "Limited image generation": [
+        "Περιορισμένη δημιουργία εικόνων"
+      ],
+      "Limited messages and chat history": [
+        "Περιορισμένα μηνύματα και ιστορικό συνομιλιών"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Περιορισμένες Δεξιότητες, Έργα και προγραμματισμένες εργασίες"
+      ],
+      "Maximum image generation": [
+        "Μέγιστη παραγωγή εικόνων"
+      ],
+      "Maximum Skills and Projects": [
+        "Μέγιστες Δεξιότητες και Έργα"
+      ],
+      "More image generation": [
+        "Περισσότερη δημιουργία εικόνων"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Περισσότερες Δεξιότητες, Έργα και προγραμματισμένες εργασίες"
+      ],
+      "More usage": [
+        "Περισσότερη χρήση"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Για προγραμματισμό και κατασκευή"
+      ],
+      "For everyday chats": [
+        "Για καθημερινές συζητήσεις"
+      ],
+      "For getting more done": [
+        "Για να πετυχαίνετε περισσότερα"
       ]
     }
   }

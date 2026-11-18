@@ -1052,6 +1052,18 @@
       ],
       "Cancel trial": [
         "Denemeyi iptal et"
+      ],
+      "Dismiss notification": [
+        "Bildirimi yok say"
+      ],
+      "Go to today": [
+        "Bugüne git"
+      ],
+      "Next contact": [
+        "Sonraki kişi"
+      ],
+      "Previous contact": [
+        "Önceki kişi"
       ]
     },
     "action": {
@@ -4129,6 +4141,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom bağlantınızın geçerlilik süresi dolmuş. İlerlemek için lütfen yeniden bağlantı kurun."
+      ],
+      "Meeting not created. Try again.": [
+        "Görüşme oluşturulmadı. Yeniden deneyin."
       ]
     },
     "error": {
@@ -4399,6 +4414,9 @@
     "Event popover close button": {
       "Close popover": [
         "Açılan pencereyi kapat"
+      ],
+      "Close": [
+        "Kapat"
       ]
     },
     "Event reply": {
@@ -4542,6 +4560,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
       ]
     },
     "fido2: Info": {
@@ -6596,6 +6617,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Yazma yardımcısı koltukları artık satılmıyor"
       ]
     },
     "info": {
@@ -13056,6 +13080,73 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2 kat Basic kullanım"
+      ],
+      "5x Plus usage": [
+        "5 kat Plus kullanım"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Aylık ${ credit } krediyle API erişimi"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
+      ],
+      "Everything in Basic, and:": [
+        "Basic tarifesindeki her şey ve:"
+      ],
+      "Everything in Free, and:": [
+        "Free tarifesindeki herşey ve:"
+      ],
+      "Everything in Plus, and:": [
+        "Plus tarifesindeki her şey ve:"
+      ],
+      "Extended image generation": [
+        "Genişletilmiş görsel oluşturma"
+      ],
+      "Includes:": [
+        "İçindekiler:"
+      ],
+      "Limited image generation": [
+        "Sınırlı görsel oluşturma"
+      ],
+      "Limited messages and chat history": [
+        "Sınırlı sayıda ileti ve sohbet geçmişi"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Sınırlı sayıda yetenek, proje ve zamanlanmış görev"
+      ],
+      "Maximum image generation": [
+        "En fazla görsel oluşturma"
+      ],
+      "Maximum Skills and Projects": [
+        "En fazla yetenek ve projeler"
+      ],
+      "More image generation": [
+        "Daha fazla görsel oluşturma"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Daha fazla yetenek, proje ve zamanlanmış görev"
+      ],
+      "More usage": [
+        "Daha fazla kullanım"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Kodlama ve geliştirme için"
+      ],
+      "For everyday chats": [
+        "Günlük sohbetler için"
+      ],
+      "For getting more done": [
+        "Daha fazlasını yapmak için"
       ]
     }
   }

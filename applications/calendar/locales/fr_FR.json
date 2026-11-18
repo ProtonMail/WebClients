@@ -4391,6 +4391,9 @@
     "Event popover close button": {
       "Close popover": [
         "Fermer la boite de dialogue"
+      ],
+      "Close": [
+        "Fermer"
       ]
     },
     "Event reply": {
@@ -4534,6 +4537,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
       ]
     },
     "fido2: Info": {
@@ -8811,7 +8817,7 @@
     },
     "ngc_access_banner: action": {
       "Try it now": [
-        "Essayez-la maintenant"
+        "Essayez-le maintenant"
       ]
     },
     "ngc_access_banner: info": {
@@ -11452,7 +11458,7 @@
         "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (A2F) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+        "L'abonnement inclut 2 950 serveurs basés dans plus de 65 pays, la possibilité de connecter votre compte à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
@@ -12264,7 +12270,7 @@
         "Mise à niveau vers ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Passez à la version supérieure pour conserver vos avantages premium."
+        "Changer d'abonnement pour conserver vos avantages premium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Améliorez votre productivité pour ${ formattedPrice } avec ${ planName }"

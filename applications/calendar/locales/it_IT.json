@@ -1052,6 +1052,18 @@
       ],
       "Preview logs": [
         "Mostra anteprima log."
+      ],
+      "Dismiss notification": [
+        "Ignora notifica"
+      ],
+      "Go to today": [
+        "Vai a oggi"
+      ],
+      "Next contact": [
+        "Contatto successivo"
+      ],
+      "Previous contact": [
+        "Contatto precedente"
       ]
     },
     "action": {
@@ -4129,6 +4141,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La tua connessione a Zoom è scaduta. Riconnettiti per continuare."
+      ],
+      "Meeting not created. Try again.": [
+        "Riunione non creata. Riprova."
       ]
     },
     "error": {
@@ -4399,6 +4414,9 @@
     "Event popover close button": {
       "Close popover": [
         "Chiudi popover"
+      ],
+      "Close": [
+        "Chiudi"
       ]
     },
     "Event reply": {
@@ -4542,6 +4560,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
       ]
     },
     "fido2: Info": {
@@ -6596,6 +6617,9 @@
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
         "Per aggiungere una pagina di prenotazione, eliminane una dalla sezione Pagine di prenotazione in ${ CALENDAR_APP_NAME }."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Le licenze per assistenti alla scrittura non sono più in vendita."
       ]
     },
     "info": {
@@ -13056,6 +13080,73 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "Codice ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "2x Basic usage": [
+        "2x Utilizzo di base"
+      ],
+      "5x Plus usage": [
+        "Utilizzo 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Accesso all'API, con un credito di ${ credit } al mese"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Accesso all'API, con un credito di ${ credit } al mese per utente"
+      ],
+      "Everything in Basic, and:": [
+        "Tutte le funzionalità del piano base, più:"
+      ],
+      "Everything in Free, and:": [
+        "Tutte le funzionalità del Piano Gratuito, più:"
+      ],
+      "Everything in Plus, and:": [
+        "Tutte le funzionalità del Piano Plus, più:"
+      ],
+      "Extended image generation": [
+        "Generazione di immagini estesa"
+      ],
+      "Includes:": [
+        "Include:"
+      ],
+      "Limited image generation": [
+        "Generazione di immagini limitata"
+      ],
+      "Limited messages and chat history": [
+        "Messaggi e cronologia chat limitati"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Competenze, progetti e attività pianificate limitati"
+      ],
+      "Maximum image generation": [
+        "Generazione massima di immagini"
+      ],
+      "Maximum Skills and Projects": [
+        "Competenze e progetti al massimo livello"
+      ],
+      "More image generation": [
+        "Generazione di ulteriori immagini"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Ulteriori competenze, progetti e attività pianificate"
+      ],
+      "More usage": [
+        "Ulteriori utilizzi"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Per programmare e costruire"
+      ],
+      "For everyday chats": [
+        "Per le chat di tutti i giorni"
+      ],
+      "For getting more done": [
+        "Per fare di più"
       ]
     }
   }

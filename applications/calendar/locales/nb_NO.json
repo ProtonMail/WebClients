@@ -1046,6 +1046,12 @@
       ],
       "Cancel trial": [
         "Avbryt prøveperioden"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Legg til ${ name }"
       ]
     },
     "action": {
@@ -4526,6 +4532,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Denne nettleseren støtter ikke sikkerhetsnøkler. Prøv en annen nettleser."
       ]
     },
     "fido2: Info": {
@@ -12558,6 +12567,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne brukeren får administratorrettigheter neste gang brukeren logger på."
       ]
     },
     "Validation": {

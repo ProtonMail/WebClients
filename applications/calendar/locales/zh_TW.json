@@ -1027,6 +1027,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Switch to ${ planName }": [
+        "切換至 ${ planName }"
       ]
     },
     "action": {
@@ -1816,6 +1819,9 @@
       ],
       "Total": [
         "總共"
+      ],
+      "Amount due after trial": [
+        "試用後的欠款"
       ]
     },
     "Collapsible tooltip": {
@@ -11892,6 +11898,9 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "訂閱至 ${ planTitle }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

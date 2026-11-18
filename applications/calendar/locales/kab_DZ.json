@@ -4087,6 +4087,18 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Izḍi usrid n unagraw-inek·inem yettban yettusenfel ɣer ${ timezone }. Tebɣiḍ ad tleqqmeḍ asmenyif-inek·inem n yizḍi usrid?"
+      ],
+      "Important note": [
+        "Tamawt taxatart"
+      ],
+      "Not connected": [
+        "Ur iqqin ara"
+      ],
+      "When working remotely": [
+        "Mi ara txeddmeḍ s wudem anmeggag"
+      ],
+      "Your online activity is protected": [
+        "Armud-ik deg internet yettummesten"
       ]
     },
     "info": {
@@ -6904,6 +6916,18 @@
       ],
       "Your plan": [
         "Aɣawas-ik·im"
+      ],
+      "Download the app": [
+        "Sider asnas"
+      ],
+      "Enable 2FA": [
+        "Sermed 2FA"
+      ],
+      "Security center": [
+        "Ammas n tɣellist"
+      ],
+      "Your account is protected": [
+        "Amiḍan-ik yettummesten"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -7405,6 +7429,11 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Sider i Windows"
       ]
     }
   }

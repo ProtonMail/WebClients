@@ -1030,6 +1030,24 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "Про ${ name }"
+      ],
+      "Add ${ name }": [
+        "Додати ${ name }"
+      ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
+      ],
+      "Next contact": [
+        "Наступний контакт"
+      ],
+      "Previous contact": [
+        "Попередній контакт"
       ]
     },
     "action": {
@@ -3332,7 +3350,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Proton Mail захищає ваші листи за допомогою наскрізного шифрування з нульовим доступом, щоб ніхто сторонній (навіть Proton) не зміг прочитати ваші листи."
+        "Допоможіть нам покращитися"
       ]
     },
     "Downgrade warning": {
@@ -4410,6 +4428,9 @@
     "Event popover close button": {
       "Close popover": [
         "Закрити спливне вікно"
+      ],
+      "Close": [
+        "Закрити"
       ]
     },
     "Event reply": {
@@ -4552,6 +4573,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
       ]
     },
     "fido2: Info": {
@@ -6629,6 +6653,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ви досягли ліміту слотів для бронювання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
+      ],
+      "UnionPay logo": [
+        "Логотип UnionPay"
       ]
     },
     "info": {
@@ -7566,6 +7596,9 @@
       ],
       "What’s this?": [
         "Що це?"
+      ],
+      "Customer Support": [
+        "Клієнтська підтримка"
       ]
     },
     "Link label (optional)": {
@@ -12690,6 +12723,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Ви зможете призначати ролі після того, як користувач прийме запрошення."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Цей користувач отримає права адміністратора при наступному вході."
       ]
     },
     "Validation": {
@@ -13236,6 +13272,11 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
       ]
     }
   }

@@ -944,6 +944,15 @@
       ],
       "Special Offer": [
         "Akciós ajánlat"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Fedezze fel a ${ MEET_SHORT_APP_NAME } szolgáltatást"
+      ],
+      "Next contact": [
+        "Következő névjegy"
+      ],
+      "Previous contact": [
+        "Előző névjegy"
       ]
     },
     "action": {
@@ -1027,6 +1036,13 @@
       ],
       "Writing assistant seats": [
         "Írási segéd licencek"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikált VPN szerver",
+        "${ ips } dedikált VPN szerver"
+      ],
+      "Users": [
+        "Felhasználók"
       ]
     },
     "Alarm notification": {
@@ -3800,6 +3816,9 @@
       ],
       "You cannot enter the organizer's email": [
         "Nem tudja megadni a szervező e-mail címét"
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Nem sikerült hozzáadni a ${ MEET_APP_NAME } meetinget"
       ]
     },
     "error": {
@@ -5962,6 +5981,15 @@
       ],
       "Other location": [
         "Másik helyszín"
+      ],
+      "1 vault per user": [
+        "Felhasználónként 1 széf"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Csak fájlok (nem képek, ${ DOCS_APP_NAME } vagy ${ SHEETS_APP_NAME })) - max. 100GB, 100.000 fájl, 50GB fájlonként"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Automatikusan hozzáadtunk egy ${ MEET_APP_NAME } hivatkozást"
       ]
     },
     "info": {
@@ -6632,6 +6660,12 @@
       ],
       "Drive": [
         "Drive"
+      ],
+      "Add notice period": [
+        "Emlékeztető hozzáadása"
+      ],
+      "Check additional calendars for availability": [
+        "További elérhető naptár keresése"
       ]
     },
     "Label for contact group color": {
@@ -6791,6 +6825,9 @@
       ],
       "What’s this?": [
         "Mi ez?"
+      ],
+      "Customer Support": [
+        "Ügyfélszolgálat"
       ]
     },
     "Link label (optional)": {
@@ -6896,12 +6933,18 @@
       ],
       "for ${ price }": [
         "${ price } áron"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } írássegéd"
       ]
     },
     "meet_2025: Addon": {
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
+      ],
+      "${ price } per seat": [
+        "${ price } felhasználónként"
       ]
     },
     "meet_2025: Feature": {
@@ -8688,6 +8731,9 @@
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Fizetés ${ IDEAL_WERO_BRAND_NAME }val"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% adót tartalmaz: ${ taxAmountElement }"
       ]
     },
     "Payments.Error": {
@@ -11749,6 +11795,16 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Adminisztrátor szerepkörök használatához váltson egy erre alkalmas csomagra."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "A megerősítéssel felhatalmazza a ${ BRAND_NAME } és a Stripe-ot - a fizetési szolgáltatónkat -, hogy az előfizetéshez kapcsolódó jövőbeli fizetéseket csoportos beszedési megbízás (SEPA) útján levonják erről a bankszámláról, és a bankját hogy ezeket az összegeket levonja a számlájáról. Az első fizetést most a(z) ${ IDEAL_WERO_BRAND_NAME } szolgáltatáson keresztül történik. Előfizetése automatikusan megújul, amíg le nem mondja; minden terhelés előtt értesítést küldünk. A csoportos beszedési megbízással teljesített fizetések esetén – a bankjával kötött megállapodás feltételei szerint – a terhelés napjától számított 8 héten belül kérheti a levont összeg visszatérítését. Ez nem vonatkozik a mostani ${ IDEAL_WERO_BRAND_NAME } befizetésre."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kártya, a következő végződéssel: ${ Last4 }"
       ]
     }
   }

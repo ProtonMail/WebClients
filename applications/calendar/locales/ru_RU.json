@@ -12678,6 +12678,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы сможете назначать должности, как только пользователь примет приглашение."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Нельзя изменить собственную роль. Попросите другого администратора изменить её за вас."
       ]
     },
     "Validation": {
@@ -13224,6 +13227,11 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Приложение ${ appName } для ПК"
       ]
     }
   }
