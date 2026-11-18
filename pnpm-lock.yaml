@@ -5478,18 +5478,9 @@ importers:
       '@proton/components':
         specifier: workspace:^
         version: link:../components
-      '@proton/jest-env':
-        specifier: workspace:^
-        version: link:../jest-env
-      '@proton/jest-swc-preset':
-        specifier: workspace:^
-        version: link:../jest-swc-preset
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
-      '@types/jest':
-        specifier: 'catalog:'
-        version: 30.0.0
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.2
@@ -5499,9 +5490,6 @@ importers:
       '@typescript/native':
         specifier: 'catalog:'
         version: typescript@7.0.2
-      jest:
-        specifier: 'catalog:'
-        version: 30.5.2(@types/node@24.19.2)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       oxlint:
         specifier: 'catalog:'
         version: 1.93.0(oxlint-tsgolint@7.0.2006)
