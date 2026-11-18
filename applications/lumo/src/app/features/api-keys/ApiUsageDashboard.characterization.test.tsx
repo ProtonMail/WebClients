@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
 
-import { fireEvent, render, screen, within } from '@testing-library/react';
+import { act, fireEvent, render, screen, within } from '@testing-library/react';
 
 import { useMembers } from '@proton/account/members/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -13,6 +14,7 @@ import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { ApiUsageDashboard } from './ApiUsageDashboard';
 import { useApiUsageMembers } from './useApiUsageMembers';
 import { useApiUsageSummary } from './useApiUsageSummary';
+import { useMembersLumoApi } from './useMembersLumoApi';
 
 jest.mock('@proton/account/paymentStatus/hooks');
 jest.mock('@proton/account/subscription/hooks');
@@ -36,7 +38,9 @@ jest.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
 
 jest.mock('./useApiUsageSummary');
 jest.mock('./useApiUsageMembers');
+jest.mock('./useMembersLumoApi');
 jest.mock('@proton/account/members/hooks');
+jest.mock('@proton/account/organization/hooks');
 
 const memberTotals = (tokensIn: number, costMicros: number) => ({
     TokensIn: tokensIn,
@@ -55,6 +59,7 @@ const memberUsageRows = [
     { MemberID: null, Totals: memberTotals(100_000, 250_000) },
 ];
 
+const setApiAccess = jest.fn();
 const usageDates = Array.from({ length: 90 }, (_, index) => `day-${index}`);
 const usageRow = (
     date: string,
@@ -86,6 +91,10 @@ const setup = ({
     usage = {},
     memberUsage = {},
     isLoadingMembers = false,
+    apiAccess = {},
+    isOrganizationApiEnabled = true,
+    isLoadingOrganization = false,
+    members = organizationMembers,
 }: {
     isOrgAdmin?: boolean;
     isOrgMember?: boolean;
@@ -94,7 +103,22 @@ const setup = ({
     usage?: { isLoading?: boolean; error?: boolean; rows?: ReturnType<typeof usageRow>[] };
     memberUsage?: { isLoading?: boolean; error?: boolean; rows?: typeof memberUsageRows };
     isLoadingMembers?: boolean;
+    apiAccess?: { error?: boolean; enabledByMemberId?: Record<string, boolean> };
+    isOrganizationApiEnabled?: boolean;
+    isLoadingOrganization?: boolean;
+    members?: typeof organizationMembers;
 } = {}) => {
+    setApiAccess.mockReset().mockResolvedValue(undefined);
+    (useMembersLumoApi as jest.Mock).mockReturnValue({
+        enabledByMemberId: { 'member-alice': true, 'member-bob': false },
+        error: false,
+        setApiAccess,
+        ...apiAccess,
+    });
+    (useOrganization as jest.Mock).mockReturnValue([
+        isLoadingOrganization ? undefined : { Settings: { LumoApiEnabled: isOrganizationApiEnabled } },
+        isLoadingOrganization,
+    ]);
     (useApi as jest.Mock).mockReturnValue(jest.fn(() => creditResponse));
     (useApiUsageSummary as jest.Mock).mockReturnValue({
         dates: usageDates,
@@ -109,7 +133,7 @@ const setup = ({
         error: false,
         ...memberUsage,
     });
-    (useMembers as jest.Mock).mockReturnValue([organizationMembers, isLoadingMembers]);
+    (useMembers as jest.Mock).mockReturnValue([members, isLoadingMembers]);
     (useUser as jest.Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
     (useSubscription as jest.Mock).mockReturnValue([{ Currency: 'USD' }]);
     (usePaymentStatus as jest.Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
@@ -301,15 +325,66 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         expect(useApiUsageMembers).toHaveBeenLastCalledWith('day-83', 'day-89');
     });
 
-    it('shows API access and per-model usage as not available yet', () => {
+    it('shows and changes each current member’s API access', () => {
         setup({ isOrgAdmin: true });
+
+        expect(screen.getByLabelText('Toggle API access for Alice')).toBeChecked();
+        expect(screen.getByLabelText('Toggle API access for Bob')).not.toBeChecked();
+        expect(screen.getByLabelText('Toggle API access for Bob')).toBeEnabled();
+        expect(screen.queryByLabelText('Toggle API access for Former members')).not.toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'Show usage details for Alice' })).toBeDisabled();
+
+        fireEvent.click(screen.getByLabelText('Toggle API access for Bob'));
+
+        expect(setApiAccess).toHaveBeenCalledWith('member-bob', true);
+
+        fireEvent.click(screen.getByLabelText('Toggle API access for Alice'));
+
+        expect(setApiAccess).toHaveBeenCalledWith('member-alice', false);
+    });
+
+    it.each([
+        [
+            'the organization has the Lumo API off',
+            { isOrganizationApiEnabled: false },
+            'Turn on the Lumo API for your organization first.',
+        ],
+        [
+            'it could not be loaded',
+            { apiAccess: { error: true, enabledByMemberId: {} } },
+            'API access could not be loaded.',
+        ],
+    ])('disables API access when %s', (_, options, hint) => {
+        setup({ isOrgAdmin: true, ...options });
 
         const accessToggle = screen.getByLabelText('Toggle API access for Alice');
         expect(accessToggle).toBeDisabled();
-        expect(accessToggle).not.toBeChecked();
-        expect(screen.getByText('Alice').closest('article')).toHaveTextContent('Not available yet');
-        expect(screen.getByRole('button', { name: 'Show usage details for Alice' })).toBeDisabled();
-        expect(screen.getByText('Former members').closest('article')).not.toHaveTextContent('Not available yet');
+        expect(accessToggle.closest('[title]')).toHaveAttribute('title', hint);
+    });
+
+    it('disables API access for a member whose access is not known', () => {
+        setup({ isOrgAdmin: true, apiAccess: { enabledByMemberId: {} } });
+
+        expect(screen.getByLabelText('Toggle API access for Alice')).toBeDisabled();
+    });
+
+    it('keeps the API access toggle busy until the change is saved', async () => {
+        let resolveSave: () => void = () => {};
+        setup({ isOrgAdmin: true });
+        setApiAccess.mockReturnValueOnce(new Promise<void>((resolve) => (resolveSave = resolve)));
+
+        fireEvent.click(screen.getByLabelText('Toggle API access for Bob'));
+
+        expect(screen.getByLabelText('Toggle API access for Bob')).toBeDisabled();
+        await act(async () => resolveSave());
+        expect(screen.getByLabelText('Toggle API access for Bob')).toBeEnabled();
+    });
+
+    it('waits for the organization before showing member usage', () => {
+        setup({ isOrgAdmin: true, isLoadingOrganization: true });
+
+        expect(within(getMembersSection()).getByText('Loading usage…')).toBeInTheDocument();
+        expect(screen.queryByText(/Turn on the Lumo API/)).not.toBeInTheDocument();
     });
 
     it('filters the members by name', () => {
@@ -339,8 +414,16 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         expect(within(getMembersSection()).getByText('Could not load usage.')).toBeInTheDocument();
     });
 
-    it('says when no member has used the API in the period', () => {
+    it('lists every member, at zero, so their API access can be changed before they use the API', () => {
         setup({ isOrgAdmin: true, memberUsage: { rows: [] } });
+
+        expect(screen.getByText('Alice').closest('article')).toHaveTextContent('$0.00');
+        expect(screen.getByLabelText('Toggle API access for Bob')).toBeEnabled();
+        expect(screen.queryByText('No member API usage yet')).not.toBeInTheDocument();
+    });
+
+    it('says when there is no member and no usage', () => {
+        setup({ isOrgAdmin: true, memberUsage: { rows: [] }, members: [] });
 
         expect(screen.getByText('No member API usage yet')).toBeInTheDocument();
         expect(screen.queryByText('No members match your search.')).not.toBeInTheDocument();

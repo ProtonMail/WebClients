@@ -3,19 +3,61 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Input } from '@proton/atoms/Input/Input';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import useLoading from '@proton/hooks/useLoading';
 import type { Currency } from '@proton/payments/core/interface';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { formatTokenCount } from './apiKeysHelpers';
-import { type ApiMemberUsage, filterMembersByName, getApiMemberUsage, getCostLabel } from './apiUsage';
+import {
+    type ApiMemberUsage,
+    filterMembersByName,
+    getApiAccessHint,
+    getApiMemberUsage,
+    getCostLabel,
+} from './apiUsage';
 import { useApiUsageMembers } from './useApiUsageMembers';
+import { useMembersLumoApi } from './useMembersLumoApi';
 
-const MemberUsageCard = ({ member, currency }: { member: ApiMemberUsage; currency: Currency }) => {
+interface MemberApiAccess {
+    enabledByMemberId: Record<string, boolean>;
+    hint: string | undefined;
+    onChange: (memberId: string, enabled: boolean) => Promise<void>;
+}
+
+const MemberApiAccessToggle = ({ member, apiAccess }: { member: ApiMemberUsage; apiAccess: MemberApiAccess }) => {
+    const [loading, withLoading] = useLoading();
+    const enabled = apiAccess.enabledByMemberId[member.id];
+    return (
+        <div className="api-usage-member-card__access flex items-center gap-2" title={apiAccess.hint}>
+            <Toggle
+                id={`api-access-${member.id}`}
+                checked={!!enabled}
+                disabled={enabled === undefined || apiAccess.hint !== undefined}
+                loading={loading}
+                onChange={() => withLoading(apiAccess.onChange(member.id, !enabled))}
+                aria-label={c('collider_2025: Action').t`Toggle API access for ${member.name}`}
+                className="shrink-0"
+            />
+            <span className="api-usage-access-label">{c('collider_2025: Label').t`API access`}</span>
+        </div>
+    );
+};
+
+const MemberUsageCard = ({
+    member,
+    currency,
+    apiAccess,
+}: {
+    member: ApiMemberUsage;
+    currency: Currency;
+    apiAccess: MemberApiAccess;
+}) => {
     return (
         <article className="api-usage-member-card rounded-xl border border-weak">
             <header className="api-usage-member-card__header flex flex-wrap items-start justify-space-between gap-4 md:flex-nowrap md:items-center">
@@ -37,23 +79,7 @@ const MemberUsageCard = ({ member, currency }: { member: ApiMemberUsage; currenc
                         <small>{c('collider_2025: Label').t`Balance used`}</small>
                         <strong>{getCostLabel(member.cost, currency)}</strong>
                     </div>
-                    {member.isCurrentMember && (
-                        <div
-                            className="api-usage-member-card__access flex items-center gap-2"
-                            title={c('collider_2025: Info').t`Managing API access per member is not available yet.`}
-                        >
-                            <Toggle
-                                id={`api-access-${member.id}`}
-                                checked={false}
-                                disabled
-                                aria-label={c('collider_2025: Action').t`Toggle API access for ${member.name}`}
-                                className="shrink-0"
-                            />
-                            <span className="api-usage-access-label">
-                                {c('collider_2025: Status').t`Not available yet`}
-                            </span>
-                        </div>
-                    )}
+                    {member.isCurrentMember && <MemberApiAccessToggle member={member} apiAccess={apiAccess} />}
                     <Button
                         icon
                         shape="ghost"
@@ -77,12 +103,14 @@ const MemberUsageList = ({
     isLoading,
     error,
     currency,
+    apiAccess,
 }: {
     members: ApiMemberUsage[];
     search: string;
     isLoading: boolean;
     error: boolean;
     currency: Currency;
+    apiAccess: MemberApiAccess;
 }) => {
     if (isLoading) {
         return <p className="m-0 text-sm color-weak">{c('collider_2025: Info').t`Loading usage…`}</p>;
@@ -113,7 +141,7 @@ const MemberUsageList = ({
     return (
         <div className="api-usage-member-list">
             {matchingMembers.map((member) => (
-                <MemberUsageCard key={member.id} member={member} currency={currency} />
+                <MemberUsageCard key={member.id} member={member} currency={currency} apiAccess={apiAccess} />
             ))}
             {matchingMembers.length === 0 && (
                 <div className="api-usage-member-list__empty rounded-xl border border-weak text-center">
@@ -136,9 +164,19 @@ export const ApiUsageMembers = ({
     currency: Currency;
 }) => {
     const [organizationMembers = [], isLoadingMembers] = useMembers();
+    const [organization, isLoadingOrganization] = useOrganization();
     const usage = useApiUsageMembers(from, to);
+    const membersLumoApi = useMembersLumoApi();
     const [search, setSearch] = useState('');
     const members = getApiMemberUsage(usage.rows, organizationMembers);
+    const apiAccess = {
+        enabledByMemberId: membersLumoApi.enabledByMemberId,
+        hint: getApiAccessHint({
+            isOrganizationApiEnabled: !!organization?.Settings.LumoApiEnabled,
+            error: membersLumoApi.error,
+        }),
+        onChange: membersLumoApi.setApiAccess,
+    };
 
     return (
         <div className="api-usage-members flex flex-column gap-4 w-full max-w-full min-w-0">
@@ -168,9 +206,10 @@ export const ApiUsageMembers = ({
             <MemberUsageList
                 members={members}
                 search={search}
-                isLoading={usage.isLoading || isLoadingMembers}
+                isLoading={usage.isLoading || isLoadingMembers || isLoadingOrganization}
                 error={usage.error}
                 currency={currency}
+                apiAccess={apiAccess}
             />
         </div>
     );

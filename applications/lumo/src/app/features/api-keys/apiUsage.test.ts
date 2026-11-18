@@ -9,6 +9,7 @@ import {
     getAverageDailySpend,
     getUsageDays,
     getCostLabel,
+    getApiAccessHint,
     filterMembersByName,
     filterRowsBySource,
     getPeriodDates,
@@ -215,6 +216,13 @@ describe('getApiMemberUsage', () => {
         });
     });
 
+    it('lists the members without usage after the others, at zero', () => {
+        const usage = getApiMemberUsage([{ MemberID: 'member-bob', Totals: totals({ TokensIn: 3 }) }], members);
+
+        expect(usage.map(({ name }) => name)).toEqual(['Bob', 'Alice', 'Unknown member']);
+        expect(usage[1]).toMatchObject({ id: 'member-alice', isCurrentMember: true, totalTokens: 0, cost: 0 });
+    });
+
     it('names former, unknown and nameless members', () => {
         const [bob, former, unknown, nameless] = getApiMemberUsage(
             [
@@ -251,5 +259,23 @@ describe('getApiMemberUsage', () => {
         );
 
         expect(filterMembersByName(usage, 'BO').map(({ name }) => name)).toEqual(['Bob']);
+    });
+});
+
+describe('getApiAccessHint', () => {
+    it('asks to turn on the organization switch first, even when the access could not be loaded', () => {
+        expect(getApiAccessHint({ isOrganizationApiEnabled: false, error: true })).toBe(
+            'Turn on the Lumo API for your organization first.'
+        );
+    });
+
+    it('says when the access could not be loaded', () => {
+        expect(getApiAccessHint({ isOrganizationApiEnabled: true, error: true })).toBe(
+            'API access could not be loaded.'
+        );
+    });
+
+    it('has no hint when the access can be changed', () => {
+        expect(getApiAccessHint({ isOrganizationApiEnabled: true, error: false })).toBeUndefined();
     });
 });
