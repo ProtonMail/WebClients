@@ -201,6 +201,7 @@ describe('getApiMemberUsage', () => {
                 {
                     MemberID: 'member-alice',
                     Totals: totals({ TokensIn: 10, TokensInCached: 5, TokensGenerated: 2, CostMicros: 1_500_000 }),
+                    Usage: [],
                 },
             ],
             members
@@ -213,23 +214,48 @@ describe('getApiMemberUsage', () => {
             isCurrentMember: true,
             totalTokens: 17,
             cost: 1.5,
+            models: [],
         });
     });
 
     it('lists the members without usage after the others, at zero', () => {
-        const usage = getApiMemberUsage([{ MemberID: 'member-bob', Totals: totals({ TokensIn: 3 }) }], members);
+        const usage = getApiMemberUsage(
+            [{ MemberID: 'member-bob', Totals: totals({ TokensIn: 3 }), Usage: [] }],
+            members
+        );
 
         expect(usage.map(({ name }) => name)).toEqual(['Bob', 'Alice', 'Unknown member']);
         expect(usage[1]).toMatchObject({ id: 'member-alice', isCurrentMember: true, totalTokens: 0, cost: 0 });
     });
 
+    it('lists each model the member used, an unpriced one without a cost', () => {
+        const [alice] = getApiMemberUsage(
+            [
+                {
+                    MemberID: 'member-alice',
+                    Totals: totals({}),
+                    Usage: [
+                        row({ Model: 'lumo-lite', InputTokens: 15, OutputTokens: 2, CostMicros: 1_500_000 }),
+                        row({ Model: 'lumo-next', InputTokens: 4, OutputTokens: 1, CostMicros: null }),
+                    ].map(({ Date: _, ...entry }) => entry),
+                },
+            ],
+            members
+        );
+
+        expect(alice.models).toEqual([
+            { model: 'lumo-lite', inputTokens: 15, outputTokens: 2, cost: 1.5 },
+            { model: 'lumo-next', inputTokens: 4, outputTokens: 1, cost: null },
+        ]);
+    });
+
     it('names former, unknown and nameless members', () => {
         const [bob, former, unknown, nameless] = getApiMemberUsage(
             [
-                { MemberID: 'member-bob', Totals: totals({}) },
-                { MemberID: null, Totals: totals({}) },
-                { MemberID: 'member-gone', Totals: totals({}) },
-                { MemberID: 'member-nameless', Totals: totals({}) },
+                { MemberID: 'member-bob', Totals: totals({}), Usage: [] },
+                { MemberID: null, Totals: totals({}), Usage: [] },
+                { MemberID: 'member-gone', Totals: totals({}), Usage: [] },
+                { MemberID: 'member-nameless', Totals: totals({}), Usage: [] },
             ],
             members
         );
@@ -242,7 +268,10 @@ describe('getApiMemberUsage', () => {
     });
 
     it('keeps an unpriced total as unpriced, not zero', () => {
-        const [member] = getApiMemberUsage([{ MemberID: 'member-bob', Totals: totals({ CostMicros: null }) }], members);
+        const [member] = getApiMemberUsage(
+            [{ MemberID: 'member-bob', Totals: totals({ CostMicros: null }), Usage: [] }],
+            members
+        );
 
         expect(member.cost).toBeNull();
         expect(getCostLabel(member.cost, 'USD')).toBe('Not priced yet');
@@ -252,8 +281,8 @@ describe('getApiMemberUsage', () => {
     it('filters members by name, ignoring case', () => {
         const usage = getApiMemberUsage(
             [
-                { MemberID: 'member-alice', Totals: totals({}) },
-                { MemberID: 'member-bob', Totals: totals({}) },
+                { MemberID: 'member-alice', Totals: totals({}), Usage: [] },
+                { MemberID: 'member-bob', Totals: totals({}), Usage: [] },
             ],
             members
         );

@@ -38,7 +38,8 @@ export const ApiUsageModelStats = ({
     const rates = getApiModelPricingUsd(model);
 
     return (
-        <>
+        <div role="group" aria-label={model} className="api-usage-model rounded-lg border border-weak">
+            <span className={`api-usage-model__name api-usage-model__name--${model} inline-flex`}>{model}</span>
             <div className="api-usage-model__stats mt-3">
                 <div className="flex flex-column gap-0.5">
                     <span>{c('collider_2025: Label').t`Input`}</span>
@@ -56,6 +57,6 @@ export const ApiUsageModelStats = ({
                 </div>
             </div>
             {rates ? <p className="api-usage-model__rates-note">{getRatesNote(rates.cacheInput)}</p> : null}
-        </>
+        </div>
     );
 };

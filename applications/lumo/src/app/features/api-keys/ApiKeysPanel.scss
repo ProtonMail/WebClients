@@ -890,6 +890,10 @@ im.$media-expressions: $media-expressions;
 			font-variant-numeric: tabular-nums;
 		}
 	}
+
+	&__expand[aria-expanded='true'] svg {
+		transform: rotate(180deg);
+	}
 }
 
 .api-usage-member-avatar {
