@@ -88,6 +88,7 @@ export enum EntitlementName {
     MaxSubWallets = 'max-sub-wallets',
     /** Max Subsidiaries */
     MaxSubsidiaries = 'max-subsidiaries',
+    MaxVaultFolderShares = 'max-vault-folder-shares',
     /** Max Vault Item Shares */
     MaxVaultItemShares = 'max-vault-item-shares',
     /** Max Vault Shares */
@@ -105,13 +106,36 @@ export enum EntitlementName {
     /** Grants access to paid (Tier 2) VPN servers. */
     PaidVpnServers = 'paid-vpn-servers',
     PassAliasManagement = 'pass-alias-management',
+    PassAutoMigrateOwnership = 'pass-auto-migrate-ownership',
+    PassAutotype = 'pass-autotype',
     /** This entitlement check does NOT cover all Pass B2B plans.It only says that user has a plan that has entitlements on the level of at least passbiz2024. Thus passpro2024 does NOT include pass-business entitlement. */
     PassBusiness = 'pass-business',
+    PassBusinessUpsell = 'pass-business-upsell',
     PassCli = 'pass-cli',
+    PassCreditCard = 'pass-credit-card',
+    PassCustomFields = 'pass-custom-fields',
     /** Plan includes the Pass-specific features that Pass Essentials would grant */
     PassEssentials = 'pass-essentials',
     PassFileUpload = 'pass-file-upload',
+    PassFolderSharing = 'pass-folder-sharing',
     PassFolders = 'pass-folders',
+    PassIdentityCustomSections = 'pass-identity-custom-sections',
+    PassItemHistory = 'pass-item-history',
+    PassItemSharing = 'pass-item-sharing',
+    PassMaxAliases = 'pass-max-aliases',
+    PassMaxShares = 'pass-max-shares',
+    PassMaxTotp = 'pass-max-totp',
+    PassMonitorCompromisedPasswords = 'pass-monitor-compromised-passwords',
+    PassMonitorDarkWeb = 'pass-monitor-dark-web',
+    PassMonitorDeduplication = 'pass-monitor-deduplication',
+    PassMonitorInactive2fa = 'pass-monitor-inactive-2fa',
+    PassOrgActivityLog = 'pass-org-activity-log',
+    PassOrgPolicies = 'pass-org-policies',
+    PassOrgReports = 'pass-org-reports',
+    PassSecureLink = 'pass-secure-link',
+    PassSshAgent = 'pass-ssh-agent',
+    PassVaultLimitHidden = 'pass-vault-limit-hidden',
+    PassVaultOwnershipAutoMigration = 'pass-vault-ownership-auto-migration',
     /** Indicates whether the plan supports private members. */
     PrivateMembers = 'private-members',
     /** Add-on that gives a separate product, such as Lumo, Scribe or Meet */
