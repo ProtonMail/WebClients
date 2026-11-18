@@ -1580,7 +1580,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -9761,6 +9762,10 @@
       ],
       "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
         "Affiche ${ REALISTIC_ENTRIES } lignes de journal réalistes au fur et à mesure pendant une minute, comme lors d'une véritable session, plutôt que toutes en même temps. L'exécution prend environ une minute. Veillez à ce que cet onglet reste actif : les mesures sont mises en pause en arrière-plan."
+      ],
+      "${ n } unread message": [
+        "${ n } message non lu",
+        "${ n } messages non lus"
       ]
     },
     "info": {

@@ -1568,7 +1568,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -5451,6 +5452,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Inbäddade bilder kunde inte tas bort. Meddelandet ändrades inte till oformaterad text."
       ]
     },
     "error": {
@@ -8408,7 +8412,7 @@
       ],
       "Read your ${ count } filter": [
         "Läs ditt ${ count } filter",
-        "Läs ditt ${ count } filter"
+        "Läs dina ${ count } filter"
       ],
       "Read your ${ count } folder": [
         "Läs din ${ count } mapp",
@@ -9696,6 +9700,36 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Berätta för mig när du är borta och vad du vill att det ska stå, och du får se allting innan det sparas."
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } märke"
+      ],
+      "Checked Proton support": [
+        "Kollad Proton-support"
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Välj en. Det hjälper oss förbättra ${ MAIL_APP_NAME }."
+      ],
+      "Draft a ${ kind }": [
+        "Gör ett utkast ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Gör ett utkast ${ kind } till ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "Gjorde ett utkast till ${ kind }"
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Hej Lumo, sök igenom mina mejl från de senaste 7 dagarna och berätta vilka av dem som faktiskt kräver ett svar från mig. Ge mig en kort sammanfattning av vad varje mejl handlar om, och utelämna allt som jag kan ignorera."
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Markera hela ${ place } som läst"
+      ],
+      "Readdressed the draft": [
+        "Omarbetade utkastet"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Skrev om och omarbetade utkastet"
       ]
     },
     "info": {
@@ -11431,6 +11465,9 @@
       ],
       "Pay it": [
         "Betala den"
+      ],
+      "Add formatting, links or images": [
+        "Lägg till formattering, länkar eller bilder"
       ]
     },
     "Link to calendar event": {

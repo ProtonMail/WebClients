@@ -1239,6 +1239,9 @@
       ],
       "Trust key": [
         "Tasarut yettwamanen"
+      ],
+      "Create and copy alias": [
+        "Snulfu-d sakin nɣel azunisem"
       ]
     },
     "action": {
@@ -3609,6 +3612,15 @@
       ],
       "Add at least one action": [
         "Arnu xarṣum yiwet n tigawt"
+      ],
+      "Alias is not valid": [
+        "Azunisem d arameɣtu"
+      ],
+      "An error occurred while saving your alias": [
+        "Teḍra-d tuccḍa deg usekles n wazunisem-ik"
+      ],
+      "Name is required": [
+        "Isem yettwasra"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -5690,6 +5702,18 @@
       ],
       "Update the filter ${ filter }": [
         "mucceḍ tastayt ${ filter }"
+      ],
+      "Important note": [
+        "Tamawt taxatart"
+      ],
+      "Not connected": [
+        "Ur iqqin ara"
+      ],
+      "When working remotely": [
+        "Mi ara txeddmeḍ s wudem anmeggag"
+      ],
+      "Your online activity is protected": [
+        "Armud-ik deg internet yettummesten"
       ]
     },
     "info": {
@@ -6811,6 +6835,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Ilaq ad talseḍ armad n tsura-inek·inem iwakken ad twaliḍ tinubga yettwaleqqmen"
+      ],
+      "Views": [
+        "Timeẓriyin"
       ]
     },
     "Link to calendar event": {
@@ -7904,6 +7931,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Ɛreḍ ${ PASS_APP_NAME }"
+      ],
+      "Create an alias": [
+        "Snulfu-d azunisem"
       ]
     },
     "Select files": {
@@ -8617,6 +8647,9 @@
       ],
       "Verification successful": [
         "Asenqed yedda akken iwata"
+      ],
+      "Alias saved and copied": [
+        "Azunisem yettwasekles yerna yettwanɣel"
       ]
     },
     "Success notification": {
@@ -9436,6 +9469,18 @@
       ],
       "Trash all messages?": [
         "Smutti meṛṛa iznan ɣer tqecwalt n yiḍumman?"
+      ],
+      "Download the app": [
+        "Sider asnas"
+      ],
+      "Enable 2FA": [
+        "Sermed 2FA"
+      ],
+      "Security center": [
+        "Ammas n tɣellist"
+      ],
+      "Your account is protected": [
+        "Amiḍan-ik yettummesten"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9955,6 +10000,11 @@
       ],
       "Unread": [
         "Ur yettwaɣri ara"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Sider i Windows"
       ]
     }
   }

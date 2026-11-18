@@ -1583,7 +1583,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -9787,6 +9788,10 @@
       ],
       "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
         "Chatte mit ${ LUMO_SHORT_APP_NAME }, um deine E-Mails zu suchen, zu lesen, zu organisieren und zu verfassen."
+      ],
+      "${ n } unread message": [
+        "${ n } ungelesene Nachricht",
+        "${ n } ungelesene Nachrichten"
       ]
     },
     "info": {
@@ -12847,7 +12852,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "Du hast nun Zugriff auf die neue ${ CALENDAR_APP_NAME }. ${ link }"
+        "Du hast nun Zugriff auf den neuen ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {

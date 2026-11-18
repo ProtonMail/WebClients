@@ -1583,7 +1583,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -9799,6 +9800,10 @@
       ],
       "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
         "Bate-papo com o ${ LUMO_SHORT_APP_NAME } para pesquisar, ler, organizar e redigir seus e-mails."
+      ],
+      "${ n } unread message": [
+        "${ n } mensagem não lida",
+        "${ n } mensagens não lidas"
       ]
     },
     "info": {

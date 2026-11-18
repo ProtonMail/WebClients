@@ -1583,7 +1583,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -9776,6 +9777,10 @@
       ],
       "Move one-time code emails to Trash on copy": [
         "Flytt e-poster med engangskoder til papirkurven når koden kopieres"
+      ],
+      "${ n } unread message": [
+        "${ n } ulest melding",
+        "${ n } uleste meldinger"
       ]
     },
     "info": {
