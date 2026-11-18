@@ -1,7 +1,12 @@
+import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
+import { ConnectionError, ConnectionErrorReason } from 'livekit-client';
+
+import { INVALID_SRP_PARAMS_ERROR_CODE } from '@proton/meet/api/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { MEETING_LOCKED_ERROR_CODE } from '../constants';
+import { toMeetCoreErrorEnum } from '../wasm/meetCoreError';
 import { isConnectionTimeoutError } from './connectionErrors';
 
 export enum MeetingErrorKind {
@@ -9,8 +14,14 @@ export enum MeetingErrorKind {
     MeetingLocked = 'meetingLocked',
     AlreadyNotified = 'alreadyNotified',
     ConnectionFailed = 'connectionFailed',
+    MeetingOutdated = 'meetingOutdated',
+    DeviceClock = 'deviceClock',
+    WrongPassword = 'wrongPassword',
     Unknown = 'unknown',
 }
+
+const isLiveKitConnectionTimeout = (error: unknown) =>
+    error instanceof ConnectionError && error.reason === ConnectionErrorReason.Timeout;
 
 export const classifyMeetingError = (error: any): MeetingErrorKind => {
     if (!error) {
@@ -21,8 +32,15 @@ export const classifyMeetingError = (error: any): MeetingErrorKind => {
         return MeetingErrorKind.AlreadyNotified;
     }
 
-    if (isConnectionTimeoutError(error)) {
+    if (isConnectionTimeoutError(error) || isLiveKitConnectionTimeout(error)) {
         return MeetingErrorKind.ConnectionFailed;
+    }
+
+    switch (toMeetCoreErrorEnum(error)) {
+        case MeetCoreErrorEnum.MlsServerVersionNotSupported:
+            return MeetingErrorKind.MeetingOutdated;
+        case MeetCoreErrorEnum.CheckDeviceClock:
+            return MeetingErrorKind.DeviceClock;
     }
 
     const { code } = getApiError(error);
@@ -33,6 +51,10 @@ export const classifyMeetingError = (error: any): MeetingErrorKind => {
 
     if (code === MEETING_LOCKED_ERROR_CODE) {
         return MeetingErrorKind.MeetingLocked;
+    }
+
+    if (code === INVALID_SRP_PARAMS_ERROR_CODE) {
+        return MeetingErrorKind.WrongPassword;
     }
 
     return MeetingErrorKind.Unknown;

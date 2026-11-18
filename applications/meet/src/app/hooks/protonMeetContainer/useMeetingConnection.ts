@@ -47,7 +47,7 @@ import {
     canStartAutomaticRejoinRun,
     recordAutomaticRejoinRunStart,
 } from './rejoinRunLimit';
-import type { UseMlsSessionResult } from './useMlsSession';
+import type { MlsErrorNotifications, UseMlsSessionResult } from './useMlsSession';
 
 export interface MeetingAccessDetails {
     accessToken: string;
@@ -67,7 +67,7 @@ interface ConnectWithMlsParams {
     accessDetails?: MeetingAccessDetails;
     signal?: AbortSignal;
     recoverStalledMeetCore?: boolean;
-    notifyOnGenericMlsError?: boolean;
+    notifyMlsErrors?: MlsErrorNotifications;
     silencedAccessTokenErrors?: number[];
 }
 
@@ -195,7 +195,7 @@ export const useMeetingConnection = ({
             accessDetails,
             signal,
             recoverStalledMeetCore = false,
-            notifyOnGenericMlsError = true,
+            notifyMlsErrors = 'all',
             silencedAccessTokenErrors,
         }: ConnectWithMlsParams): Promise<ConnectWithMlsResult> => {
             const fetchAccessDetails = async () => {
@@ -233,7 +233,7 @@ export const useMeetingConnection = ({
 
             const t1 = performance.now();
             const setupMls = () =>
-                handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom, notifyOnGenericMlsError);
+                handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom, notifyMlsErrors);
             const { key: groupKey, epoch } =
                 (await (recoverStalledMeetCore
                     ? callMeetCoreWithinDeadline(meetCoreClient, setupMls, {
@@ -442,7 +442,7 @@ export const useMeetingConnection = ({
                 resetParticipantsBeforeFetch: true,
                 signal,
                 recoverStalledMeetCore: isHandleStalledLiveKitReconnectEnabled,
-                notifyOnGenericMlsError: !isHandleStalledLiveKitReconnectEnabled,
+                notifyMlsErrors: isHandleStalledLiveKitReconnectEnabled ? 'actionable' : 'all',
             });
         };
 

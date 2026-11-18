@@ -27,6 +27,14 @@ export enum PermissionPromptStatus {
     CLOSED = 'CLOSED',
 }
 
+export type JoinError =
+    | 'joinFailed'
+    | 'startFailed'
+    | 'meetingOutdated'
+    | 'deviceClock'
+    | 'wrongPassword'
+    | 'connectionFailed';
+
 enum ParticipantListTabs {
     WaitingRoom = 0,
     AllParticipants = 1,
@@ -51,6 +59,7 @@ interface UIState {
     participantCountMismatchSince: number | null;
     participantCountMismatchBannerDismissed: boolean;
     transcriptionEnabled: boolean;
+    joinError: JoinError | null;
 }
 
 const initialState: UIState = {
@@ -79,6 +88,7 @@ const initialState: UIState = {
     participantCountMismatchSince: null,
     participantCountMismatchBannerDismissed: false,
     transcriptionEnabled: false,
+    joinError: null,
 };
 
 const slice = createSlice({
@@ -174,6 +184,9 @@ const slice = createSlice({
             state.sideBarState[MeetingSideBars.Participants] = true;
             state.participantListTab = ParticipantListTabs.WaitingRoom;
         },
+        setJoinError: (state, action: PayloadAction<JoinError | null>) => {
+            state.joinError = action.payload;
+        },
         resetUiState: (state) => {
             state.meetingReadyPopupOpen = initialState.meetingReadyPopupOpen;
             state.showDuration = initialState.showDuration;
@@ -186,6 +199,8 @@ const slice = createSlice({
             state.participantCountMismatchSince = initialState.participantCountMismatchSince;
             state.participantCountMismatchBannerDismissed = initialState.participantCountMismatchBannerDismissed;
             state.transcriptionEnabled = initialState.transcriptionEnabled;
+            // Not joinError: a failed join's room disconnect also resets the ui, and its modal must stay up
+            // (resetMeetingState clears it on leave).
         },
     },
 });
@@ -206,6 +221,7 @@ export const {
     setParticipantCountMismatchSince,
     dismissParticipantCountMismatchBanner,
     toggleTranscription,
+    setJoinError,
     resetUiState,
 } = slice.actions;
 
@@ -222,6 +238,7 @@ export const selectParticipantCountMismatchSince = (state: MeetState) => state.u
 export const selectParticipantCountMismatchBannerDismissed = (state: MeetState) =>
     state.uiState.participantCountMismatchBannerDismissed;
 export const selectTranscriptionEnabled = (state: MeetState) => state.uiState.transcriptionEnabled;
+export const selectJoinError = (state: MeetState) => state.uiState.joinError;
 export const selectIsSideBarOpen = (state: MeetState) =>
     Object.values(state.uiState.sideBarState).some((value) => value);
 

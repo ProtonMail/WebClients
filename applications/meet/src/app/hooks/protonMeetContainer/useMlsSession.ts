@@ -34,6 +34,9 @@ interface UseMlsSessionParams {
     refreshMlsGroupState: (epoch: bigint) => Promise<void>;
 }
 
+/** Which MLS join errors `handleMlsSetup` notifies itself: the actionable ones are an outdated meeting and a wrong device clock. */
+export type MlsErrorNotifications = 'all' | 'actionable' | 'none';
+
 export interface UseMlsSessionResult {
     mlsSetupDone: MutableRefObject<boolean>;
     handleMlsSetup: (
@@ -41,7 +44,7 @@ export interface UseMlsSessionResult {
         accessToken: string,
         meetingPassword: string,
         isWaitingRoom?: boolean,
-        notifyOnGenericError?: boolean
+        notifyErrors?: MlsErrorNotifications
     ) => Promise<{ key: string; epoch: bigint } | undefined>;
 }
 
@@ -195,7 +198,7 @@ export const useMlsSession = ({
         accessToken: string,
         meetingPassword: string,
         isWaitingRoom = false,
-        notifyOnGenericError = true
+        notifyErrors: MlsErrorNotifications = 'all'
     ): Promise<{ key: string; epoch: bigint } | undefined> => {
         if (!mlsSetupDone.current) {
             mlsSetupDone.current = true;
@@ -284,15 +287,16 @@ export const useMlsSession = ({
                 case MeetCoreErrorEnum.HttpClientError:
                 default:
                     logger.error('Failed to join the MLS session', error);
-                    if (notifyOnGenericError) {
+                    if (notifyErrors === 'all') {
                         message = c('Error').t`Failed to join meeting. Please try again later.`;
                     }
             }
-            if (message) {
-                notifyError(message);
+            const notifiedMessage = notifyErrors === 'none' ? undefined : message;
+            if (notifiedMessage) {
+                notifyError(notifiedMessage);
             }
             const err = new Error(`MLS setup failed: ${getMeetCoreErrorName(error) ?? String(error)}`);
-            Object.assign(err, { userNotified: message !== undefined, coreError: error });
+            Object.assign(err, { userNotified: notifiedMessage !== undefined, coreError: error });
             throw err;
         }
     };

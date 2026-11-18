@@ -14,6 +14,7 @@ import {
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
+import { type JoinError, selectJoinError } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 import type { FeatureFlag } from '@proton/unleash/Flags';
@@ -26,6 +27,7 @@ import {
     tryOpenInDesktopApp,
 } from '../../utils/desktopAppDetector';
 import { openDesktopAppOnLoad } from '../../utils/openDesktopAppOnLoad';
+import { JoinErrorModal } from '../JoinErrorModal/JoinErrorModal';
 import { PreJoinDetails } from './PreJoinDetails';
 
 const MEETING_ID = 'meetingabc';
@@ -45,6 +47,7 @@ const mocks = vi.hoisted(() => ({
     waitingRoomEnabled: false,
     isGuest: false,
     userId: 'user-1',
+    joinError: null as JoinError | null,
 }));
 
 vi.mock('@proton/shared/lib/helpers/desktop', () => ({
@@ -76,6 +79,7 @@ vi.mock('@proton/meet/store/hooks', () => ({
             [selectPermissionsModals, { permissionsModal: PermissionsModalType.NONE }],
             [selectCameraPermission, 'granted'],
             [selectMicrophonePermission, 'granted'],
+            [selectJoinError, mocks.joinError],
         ]);
         return values.get(selector);
     },
@@ -162,6 +166,72 @@ beforeEach(() => {
     mocks.waitingRoomEnabled = false;
     mocks.isGuest = false;
     mocks.userId = 'user-1';
+    mocks.joinError = null;
+});
+
+describe('PreJoinDetails after a failed join', () => {
+    // ModalTwo shows its <dialog> through the app's CSS, which happy-dom does not load
+    beforeAll(() => {
+        const style = document.createElement('style');
+        style.textContent = 'dialog { display: block; }';
+        document.head.appendChild(style);
+    });
+
+    // A failed join brings the prejoin back in the same render that opens the join error modal
+    const renderAfterFailedJoin = (joinError: JoinError) => {
+        loadPage(MEETING_PATH);
+        mocks.joinError = joinError;
+        const getPage = () => (
+            <>
+                <PreJoinDetails
+                    meetingLinkName={MEETING_ID}
+                    displayName="Alice"
+                    keepDisplayName={false}
+                    onDisplayNameChange={vi.fn()}
+                    onJoinMeeting={vi.fn()}
+                    instantMeeting={false}
+                />
+                {mocks.joinError && (
+                    <JoinErrorModal
+                        joinError={mocks.joinError}
+                        onRetry={vi.fn()}
+                        onClose={() => {
+                            mocks.joinError = null;
+                        }}
+                    />
+                )}
+            </>
+        );
+        const { rerender } = render(getPage());
+        return { rerenderPage: () => rerender(getPage()) };
+    };
+
+    it.each([
+        {
+            joinError: 'joinFailed' as const,
+            closedWith: 'Close',
+            close: () => fireEvent.click(screen.getByRole('button', { name: 'Close' })),
+        },
+        {
+            joinError: 'wrongPassword' as const,
+            closedWith: 'Close',
+            close: () => fireEvent.click(screen.getByRole('button', { name: 'Close' })),
+        },
+        {
+            joinError: 'connectionFailed' as const,
+            closedWith: 'Escape',
+            close: () => fireEvent.keyDown(screen.getByRole('dialog'), { key: 'Escape' }),
+        },
+    ])('moves focus to the name field when the $joinError modal is closed with $closedWith', ({ joinError, close }) => {
+        const { rerenderPage } = renderAfterFailedJoin(joinError);
+        expect(screen.getByRole('textbox', { name: 'Name' })).not.toHaveFocus();
+
+        close();
+        rerenderPage();
+
+        expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+        expect(screen.getByRole('textbox', { name: 'Name' })).toHaveFocus();
+    });
 });
 
 describe.each([

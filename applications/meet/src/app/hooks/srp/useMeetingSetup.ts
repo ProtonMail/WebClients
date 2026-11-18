@@ -1,8 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
-import { c } from 'ttag';
-
-import { useNotifications } from '@proton/app-context/useNotifications';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectMeetingLinkName,
@@ -15,21 +12,13 @@ import { getUrlMeetingLinkName, getUrlMeetingPassword } from './getUrlMeetingPar
 export const useMeetingSetup = () => {
     const dispatch = useMeetDispatch();
     const urlMeetingLinkName = getUrlMeetingLinkName();
-    const { createNotification } = useNotifications();
-    const lastHashError = useRef<string | null>(null);
 
     let urlMeetingPassword = '';
+    let isUrlMeetingPasswordInvalid = false;
     try {
         urlMeetingPassword = getUrlMeetingPassword();
-    } catch (error) {
-        // We avoid showing the error notification multiple times for the same password
-        if (lastHashError.current !== window.location.hash) {
-            lastHashError.current = window.location.hash;
-            createNotification({
-                type: 'error',
-                text: c('Error').t`The meeting password is invalid`,
-            });
-        }
+    } catch {
+        isUrlMeetingPasswordInvalid = true;
     }
 
     const storedMeetingLinkName = useMeetSelector(selectMeetingLinkName);
@@ -48,5 +37,6 @@ export const useMeetingSetup = () => {
     return {
         urlMeetingLinkName,
         urlMeetingPassword,
+        isUrlMeetingPasswordInvalid,
     };
 };

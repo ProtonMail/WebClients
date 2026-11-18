@@ -159,7 +159,7 @@ describe('meetingInfoModel', () => {
             expect(countRequests()).toEqual({ handshake: 0, sessionToken: 1, meetingInfo: 1 });
         });
 
-        it('notifies the user and flags the error when the password is wrong', async () => {
+        it('rejects a wrong password with the api error and leaves telling the user to the caller', async () => {
             const store = setupStore();
             const wrongPasswordError = { data: { Code: 2026, Error: 'Invalid SRP parameter' } };
             requestSessionTokenMock.mockRejectedValue(wrongPasswordError);
@@ -170,24 +170,9 @@ describe('meetingInfoModel', () => {
                 )
             ).rejects.toBe(wrongPasswordError);
 
-            expect(createNotification).toHaveBeenCalledWith(
-                expect.objectContaining({ type: 'error', text: 'The meeting password is incorrect' })
-            );
-            expect(wrongPasswordError).toHaveProperty('userNotified', true);
-            expect(countRequests().meetingInfo).toBe(0);
-        });
-
-        it('does not notify the user for errors other than a wrong password', async () => {
-            const store = setupStore();
-            requestSessionTokenMock.mockRejectedValue({ data: { Code: 2502, Error: 'Meeting is locked' } });
-
-            await expect(
-                store.dispatch(
-                    meetingInfoThunk({ meetingLinkName: MEETING_LINK_NAME, meetingPassword: MEETING_PASSWORD }) as any
-                )
-            ).rejects.toBeTruthy();
-
             expect(createNotification).not.toHaveBeenCalled();
+            expect(wrongPasswordError).not.toHaveProperty('userNotified');
+            expect(countRequests().meetingInfo).toBe(0);
         });
     });
 

@@ -19,7 +19,7 @@ import {
 } from '@proton/meet/store/slices/meetingInfoModel';
 import { setIsGuestAdmin } from '@proton/meet/store/slices/participants/participantsSlice';
 import { hydrateMeetingPolicies, selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
-import { setMeetingReadyPopupOpen } from '@proton/meet/store/slices/uiStateSlice';
+import { type JoinError, setJoinError, setMeetingReadyPopupOpen } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
 import { deriveEncryptionKeyFromSessionKey, encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
@@ -64,7 +64,6 @@ interface UseJoinFlowParams {
     joinedRoomLoggedRef: MutableRefObject<boolean>;
     setIsWebRtcUnsupportedModalOpen: Dispatch<SetStateAction<boolean>>;
     setIsMeetingLockedModalOpen: Dispatch<SetStateAction<boolean>>;
-    setIsConnectionFailedModalOpen: Dispatch<SetStateAction<boolean>>;
     isUsingTurnRelay: boolean;
     reportMeetError: ReportMeetError;
     displayName: string;
@@ -86,6 +85,13 @@ const SLOW_JOIN_THRESHOLD_MS = 15 * SECOND;
 const isMeetingSessionLost = (error: unknown) => {
     const { status, code } = getApiError(error);
     return status === HTTP_STATUS_CODE.UNAUTHORIZED || code === API_CUSTOM_ERROR_CODES.PERMISSION_DENIED;
+};
+
+const joinErrorByMeetingErrorKind: Partial<Record<MeetingErrorKind, JoinError>> = {
+    [MeetingErrorKind.ConnectionFailed]: 'connectionFailed',
+    [MeetingErrorKind.MeetingOutdated]: 'meetingOutdated',
+    [MeetingErrorKind.DeviceClock]: 'deviceClock',
+    [MeetingErrorKind.WrongPassword]: 'wrongPassword',
 };
 
 const getNetworkHints = () => {
@@ -174,7 +180,6 @@ export const useJoinFlow = ({
     joinedRoomLoggedRef,
     setIsWebRtcUnsupportedModalOpen,
     setIsMeetingLockedModalOpen,
-    setIsConnectionFailedModalOpen,
     isUsingTurnRelay,
     reportMeetError,
     displayName,
@@ -211,10 +216,6 @@ export const useJoinFlow = ({
         accessTokenRef.current = accessToken;
     };
 
-    const handleMeetingIsLockedError = async () => {
-        setIsMeetingLockedModalOpen(true);
-    };
-
     const handleWebRtcUnsupported = () => {
         if (!isWebRtcSupported()) {
             setIsWebRtcUnsupportedModalOpen(true);
@@ -222,13 +223,69 @@ export const useJoinFlow = ({
         }
     };
 
-    const handleJoin = async (
-        displayName: string,
-        meetingLinkName: string = urlMeetingLinkName,
-        meetingPassword: string,
+    const showJoinFailure = (errorKind: MeetingErrorKind, fallbackJoinError: JoinError) => {
+        switch (errorKind) {
+            case MeetingErrorKind.MeetingGone:
+                handleInvalidMeetingLink();
+                return;
+            case MeetingErrorKind.AlreadyNotified:
+                return;
+            default:
+                dispatch(setJoinError(joinErrorByMeetingErrorKind[errorKind] ?? fallbackJoinError));
+        }
+    };
+
+    const notifyJoinFailure = (errorKind: MeetingErrorKind) => {
+        switch (errorKind) {
+            case MeetingErrorKind.MeetingGone:
+                handleInvalidMeetingLink();
+                return;
+            case MeetingErrorKind.AlreadyNotified:
+                return;
+            case MeetingErrorKind.ConnectionFailed:
+                dispatch(setJoinError('connectionFailed'));
+                return;
+            default:
+                notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
+        }
+    };
+
+    const logJoinedRoomFailed = async (code: string | undefined) => {
+        try {
+            await meetCoreClient.logJoinedRoomFailed(code);
+        } catch (error) {
+            reportMeetError('Failed to log joined room failed', { context: { error } });
+        }
+    };
+
+    // Runs once the person is in the meeting, where a join error would offer them to join again
+    const refreshMeetingInfoAfterJoin = async (meetingLinkName: string, meetingPassword: string) => {
+        try {
+            // ExpirationTime only exists once the meeting started
+            await dispatch(refreshMeetingInfoThunk({ meetingLinkName, meetingPassword }));
+        } catch (error) {
+            reportMeetError('Failed to refresh meeting info after joining', { context: { error } });
+        }
+    };
+
+    /** Resolves to whether the person joined; a failure is already shown to them. */
+    const handleJoin = async ({
+        displayName,
+        meetingLinkName,
+        meetingPassword,
         isWaitingRoom = false,
-        accessDetails?: MeetingAccessDetails
-    ) => {
+        accessDetails,
+        fallbackJoinError = 'joinFailed',
+        failureFeedback = 'modal',
+    }: {
+        displayName: string;
+        meetingLinkName: string;
+        meetingPassword: string;
+        isWaitingRoom?: boolean;
+        accessDetails?: MeetingAccessDetails;
+        fallbackJoinError?: JoinError;
+        failureFeedback?: 'modal' | 'notification';
+    }): Promise<boolean> => {
         setDisplayName(displayName);
 
         let connectResult: ConnectWithMlsResult | undefined;
@@ -246,6 +303,7 @@ export const useJoinFlow = ({
                 queryParticipantsCount: true,
                 isWaitingRoom,
                 accessDetails,
+                notifyMlsErrors: failureFeedback === 'notification' ? 'all' : 'none',
                 silencedAccessTokenErrors: [MEETING_LOCKED_ERROR_CODE],
             });
 
@@ -313,6 +371,8 @@ export const useJoinFlow = ({
                     reportMeetError('Failed to log joined room', { context: { error } });
                 }
             }
+
+            return true;
         } catch (error: any) {
             if (meetJoinTelemetryEnabled) {
                 void gatherAndLogJoinStats({
@@ -336,33 +396,22 @@ export const useJoinFlow = ({
             dispatch(setJoiningInProgress(false));
             joinBlockedRef.current = false;
 
+            if (errorKind === MeetingErrorKind.MeetingLocked) {
+                setIsMeetingLockedModalOpen(true);
+            } else if (failureFeedback === 'notification') {
+                notifyJoinFailure(errorKind);
+            } else {
+                showJoinFailure(errorKind, fallbackJoinError);
+            }
+
             const { code } = getApiError(error);
             logger.info('[telemetry] logJoinedRoomFailed', { code });
 
-            // Log failed room join
             if (isMeetClientMetricsLogEnabled) {
-                try {
-                    await meetCoreClient.logJoinedRoomFailed(code ? String(code) : undefined);
-                } catch (logError) {
-                    reportMeetError('Failed to log joined room failed', { context: { error: logError } });
-                }
+                void logJoinedRoomFailed(code ? String(code) : undefined);
             }
 
-            switch (errorKind) {
-                case MeetingErrorKind.MeetingGone:
-                    handleInvalidMeetingLink();
-                    return;
-                case MeetingErrorKind.MeetingLocked:
-                    await handleMeetingIsLockedError();
-                    return;
-                case MeetingErrorKind.ConnectionFailed:
-                    setIsConnectionFailedModalOpen(true);
-                    return;
-                case MeetingErrorKind.AlreadyNotified:
-                    return;
-                default:
-                    notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
-            }
+            return false;
         }
     };
 
@@ -413,14 +462,21 @@ export const useJoinFlow = ({
             dispatch(hydrateMeetingPolicies(meetingInfo));
             dispatch(setMeetingReadyPopupOpen(true));
 
-            await handleJoin(displayName, meetingLinkName, passwordBase, waitingRoom);
+            const joined = await handleJoin({
+                displayName,
+                meetingLinkName,
+                meetingPassword: passwordBase,
+                isWaitingRoom: waitingRoom,
+                fallbackJoinError: 'startFailed',
+            });
 
-            // ExpirationTime only exists once the meeting started
-            await dispatch(refreshMeetingInfoThunk({ meetingLinkName, meetingPassword: passwordBase }));
+            if (joined) {
+                await refreshMeetingInfoAfterJoin(meetingLinkName, passwordBase);
 
-            dispatch(setIsGuestAdmin(isGuest));
+                dispatch(setIsGuestAdmin(isGuest));
 
-            history.push(getMeetingLink(meetingLinkName, passwordBase));
+                history.push(getMeetingLink(meetingLinkName, passwordBase));
+            }
         } catch (error: any) {
             const errorKind = classifyMeetingError(error);
 
@@ -430,15 +486,7 @@ export const useJoinFlow = ({
 
             dispatch(setJoiningInProgress(false));
 
-            switch (errorKind) {
-                case MeetingErrorKind.MeetingGone:
-                    handleInvalidMeetingLink();
-                    break;
-                case MeetingErrorKind.AlreadyNotified:
-                    break;
-                default:
-                    notifyJoinError(c('Error').t`Failed to start meeting. Please try again.`);
-            }
+            showJoinFailure(errorKind, 'startFailed');
         }
 
         joinBlockedRef.current = false;
@@ -468,6 +516,14 @@ export const useJoinFlow = ({
         return accessToken;
     };
 
+    const notifyGuestSessionFailure = (error: any) => {
+        if (classifyMeetingError(error) === MeetingErrorKind.WrongPassword) {
+            dispatch(setJoinError('wrongPassword'));
+        } else if (!error?.userNotified) {
+            notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
+        }
+    };
+
     const getSessionId = () => (authentication.hasSession() ? authentication.getUID() : undefined);
 
     const prepareGuestSession = useStableCallback(async (meetingLinkName: string) => {
@@ -482,9 +538,7 @@ export const useJoinFlow = ({
             return true;
         } catch (error: any) {
             reportMeetError('Failed to prepare MLS session for waiting room', { context: { error } });
-            if (!error?.userNotified) {
-                notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
-            }
+            notifyGuestSessionFailure(error);
             return false;
         }
     });
@@ -501,22 +555,21 @@ export const useJoinFlow = ({
             return true;
         } catch (error: any) {
             reportMeetError('Failed to refresh guest session for waiting room', { context: { error } });
-            if (!error?.userNotified) {
-                notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
-            }
+            notifyGuestSessionFailure(error);
             return false;
         }
     });
 
     const joinAfterAdmission = useStableCallback(async (meetingLinkName: string) => {
         dispatch(setJoiningInProgress(true));
-        await handleJoin(
+        await handleJoin({
             displayName,
             meetingLinkName,
-            urlMeetingPassword,
-            true,
-            waitingRoomAccessDetailsRef.current ?? undefined
-        );
+            meetingPassword: urlMeetingPassword,
+            isWaitingRoom: true,
+            accessDetails: waitingRoomAccessDetailsRef.current ?? undefined,
+            failureFeedback: 'notification',
+        });
     });
 
     const { beginJoin: beginWaitingRoomJoin, providerProps: waitingRoomProviderProps } = useWaitingRoom({
@@ -596,15 +649,7 @@ export const useJoinFlow = ({
                 dispatch(setJoiningInProgress(false));
                 joinBlockedRef.current = false;
 
-                switch (classifyMeetingError(error)) {
-                    case MeetingErrorKind.MeetingGone:
-                        handleInvalidMeetingLink();
-                        break;
-                    case MeetingErrorKind.AlreadyNotified:
-                        break;
-                    default:
-                        notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
-                }
+                showJoinFailure(classifyMeetingError(error), 'joinFailed');
 
                 return;
             }
@@ -622,10 +667,16 @@ export const useJoinFlow = ({
                 return;
             }
 
-            await handleJoin(displayName, meetingLinkName, urlMeetingPassword, waitingRoom.isWaitingRoomHostJoin);
+            const joined = await handleJoin({
+                displayName,
+                meetingLinkName,
+                meetingPassword: urlMeetingPassword,
+                isWaitingRoom: waitingRoom.isWaitingRoomHostJoin,
+            });
 
-            // ExpirationTime only exists once the meeting started
-            await dispatch(refreshMeetingInfoThunk({ meetingLinkName, meetingPassword: urlMeetingPassword }));
+            if (joined) {
+                await refreshMeetingInfoAfterJoin(meetingLinkName, urlMeetingPassword);
+            }
         } catch (error: any) {
             const errorKind = classifyMeetingError(error);
 
@@ -635,16 +686,7 @@ export const useJoinFlow = ({
 
             dispatch(setJoiningInProgress(false));
 
-            switch (errorKind) {
-                case MeetingErrorKind.MeetingGone:
-                    handleInvalidMeetingLink();
-                    break;
-                case MeetingErrorKind.ConnectionFailed:
-                case MeetingErrorKind.AlreadyNotified:
-                    break;
-                default:
-                    notifyJoinError(c('Error').t`Failed to join meeting. Please try again.`);
-            }
+            showJoinFailure(errorKind, 'joinFailed');
         }
 
         joinBlockedRef.current = false;

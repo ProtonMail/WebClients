@@ -6,6 +6,7 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsMeetingLoading, setCurrentMeeting, setNavigationSeed } from '@proton/meet/store/slices/currentMeeting';
 import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
 import { hydrateMeetingPolicies, setWaitingRoomSetting } from '@proton/meet/store/slices/settings';
+import { setJoinError } from '@proton/meet/store/slices/uiStateSlice';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { markMeetingInfoNeeded } from '../../telemetry/loadPerformance';
@@ -26,10 +27,12 @@ import { useInvalidMeetingLink } from './useInvalidMeetingLink';
 export const useMeetingInfoHydration = ({
     meetingLinkName,
     meetingPassword,
+    isMeetingPasswordInvalid,
     instantMeeting,
 }: {
     meetingLinkName: string;
     meetingPassword: string;
+    isMeetingPasswordInvalid: boolean;
     instantMeeting: boolean;
 }) => {
     const dispatch = useMeetDispatch();
@@ -49,6 +52,10 @@ export const useMeetingInfoHydration = ({
     useLayoutEffect(() => {
         if (!isMeetingLoading) {
             return;
+        }
+
+        if (isMeetingPasswordInvalid) {
+            dispatch(setJoinError('wrongPassword'));
         }
 
         if (instantMeeting) {
@@ -85,14 +92,18 @@ export const useMeetingInfoHydration = ({
                 dispatch(hydrateMeetingPolicies(meetingInfo));
                 setIsReadyToDecrypt(true);
             } catch (error) {
+                const errorKind = classifyMeetingError(error);
+
                 // Only a meeting that no longer exists justifies sending the user away
-                if (classifyMeetingError(error) === MeetingErrorKind.MeetingGone) {
+                if (errorKind === MeetingErrorKind.MeetingGone) {
                     handleInvalidMeetingLink();
 
                     return;
                 }
 
-                if (!isExpectedApiFailure(error)) {
+                if (errorKind === MeetingErrorKind.WrongPassword) {
+                    dispatch(setJoinError('wrongPassword'));
+                } else if (!isExpectedApiFailure(error)) {
                     const { code, message } = getApiError(error);
 
                     reportMeetError(`Failed to resolve meeting info: ${code} - ${message}`, {
@@ -114,6 +125,7 @@ export const useMeetingInfoHydration = ({
         instantMeeting,
         navigationDetails,
         meetingPassword,
+        isMeetingPasswordInvalid,
         meetingLinkName,
         reportMeetError,
         handleInvalidMeetingLink,

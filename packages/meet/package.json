@@ -4,6 +4,7 @@
     "license": "GPL-3.0",
     "author": "",
     "exports": {
+        "./api/constants": "./api/constants.ts",
         "./api/meetSrpRequests": "./api/meetSrpRequests.ts",
         "./constants": "./constants.ts",
         "./contexts/AnalyticsContext": "./contexts/AnalyticsContext.tsx",
