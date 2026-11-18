@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { getUnixTime } from 'date-fns';
+import { addMilliseconds, getUnixTime } from 'date-fns';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
@@ -12,7 +12,7 @@ import getRecurrenceIdValueFromTimestamp from '@proton/shared/lib/calendar/recur
 import { getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { getIsPropertyAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/veventHelper';
-import { addMilliseconds, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';

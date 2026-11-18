@@ -1,8 +1,6 @@
 import { utc } from '@date-fns/utc';
 import {
     addDays as addDaysInZone,
-    addMilliseconds as addMillisecondsToDate,
-    addMinutes as addMinutesToDate,
     addMonths as addMonthsInZone,
     addWeeks as addWeeksInZone,
     addYears as addYearsInZone,
@@ -33,11 +31,6 @@ export const min = (a: Date, b: Date) => {
 export const max = (a: Date, b: Date) => {
     return +a > +b ? a : b;
 };
-
-export const addMilliseconds = (date: Date, amount: number) => addMillisecondsToDate(date, amount);
-
-export const MILLISECONDS_IN_MINUTE = 60000;
-export const addMinutes = (date: Date, amount: number) => addMinutesToDate(date, amount);
 
 export const addDays = (date: Date, amount: number) => new Date(+addDaysInZone(date, amount, { in: utc }));
 

@@ -1,4 +1,6 @@
-import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
+import { addMinutes } from 'date-fns';
+
+import { addDays } from '@proton/shared/lib/date-fns-utc';
 import startOfDay from '@proton/shared/lib/date-fns-utc/startOfDay';
 
 import { getRelativePosition } from './mathHelpers';

@@ -1,4 +1,4 @@
-import { addMinutes } from '@proton/shared/lib/date-fns-utc';
+import { addMinutes } from 'date-fns';
 
 import { isBookingSlotEvent } from '../../../containers/bookings/utils/calendar/calendarHelper';
 import type { CalendarViewBusyEvent, CalendarViewEvent } from '../../../containers/calendar/interface';
