@@ -88,11 +88,16 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // Both orchestrators are invoked unconditionally (rules of hooks); the active one is
     // selected by the `ContentSearch` flag. `useContentSearch` mirrors `useEncryptedSearch`'s
     // API but resolves results from the content-search-v2 index instead of the legacy ES flow.
-    const isContentSearchEnabled = useFlag('ContentSearch');
-    const isContentSearchIndexationEnabled = useFlag('ContentSearchIndexation');
+    // Unleash refreshes flags while the app runs, but the engine in charge and the v2 path are settled
+    // for the session, read once at mount: a flip mid-session would route events and searches to an
+    // engine whose index this session didn't set up. A change applies on the next load.
+    const contentSearchFlag = useFlag('ContentSearch');
+    const contentSearchIndexationFlag = useFlag('ContentSearchIndexation');
+    const [isContentSearchEnabled] = useState(contentSearchFlag);
+    const [isContentSearchIndexationEnabled] = useState(contentSearchIndexationFlag);
     const [searchVersion] = useLocalStateSync<'v1' | 'v2'>('v2', 'OVERRIDE_SEARCH_V2');
     // Which engine is in charge this session. The `OVERRIDE_SEARCH_V2` debug toggle reloads the app
-    // when it changes (see `ContentSearchVersionToggle`), so this is settled for the session.
+    // when it changes (see `ContentSearchVersionToggle`), so this is settled for the session too.
     const isV2Active = isContentSearchEnabled && searchVersion === 'v2';
 
     const metricService = useRef<MetricService>(undefined);
@@ -119,6 +124,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // Keep the legacy ES index in sync while v2 is active by forwarding events to its handler
         esLibraryFunctionsV1,
         isActive: isV2Active,
+        isContentSearchEnabled,
+        isIndexationPath: isContentSearchIndexationEnabled,
         metricService: metricService.current,
     });
 
