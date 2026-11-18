@@ -1,3 +1,7 @@
+@use 'sass:map';
+@use '../lib/config' as *;
+@use '../lib/rem' as *;
+
 /* to hide text with accessibility… a11y */
 .invisible,
 .sr-only {
@@ -10,6 +14,32 @@
 	overflow: hidden;
 	border: 0;
 	clip: rect(0 0 0 0);
+}
+
+/* sr-only until it has keyboard focus, then shown in the top start corner, e.g. a skip link: class="sr-only sr-only-focusable" */
+.sr-only-focusable:focus {
+	inset-block-start: var(--space-2);
+	inset-inline-start: var(--space-2);
+	z-index: map.get($z-indexes, 'up') + 1; // above the collapsed sidebar, which is also 'up' and comes later in the page
+	block-size: auto;
+	inline-size: auto;
+	padding-block: var(--space-2);
+	padding-inline: var(--space-4);
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+	border: 1px solid var(--border-norm);
+	border-radius: var(--border-radius-full);
+	background-color: var(--background-norm);
+	color: var(--text-norm);
+	font-weight: var(--font-weight-semibold);
+	text-decoration: none;
+}
+
+/* The macOS window buttons are drawn over the top start corner of the desktop apps */
+.is-electron-mac .sr-only-focusable:focus {
+	inset-inline-start: rem(80);
+	-webkit-app-region: no-drag;
 }
 
 .visibility-hidden {

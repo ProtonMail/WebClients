@@ -17,6 +17,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';
 import { renderWithProviders } from '../../../../testing/vitest/renderWithProviders';
+import { MAIN_CONTENT_ID } from '../../../layout/constants';
 import { CancellationReminderSection } from './CancellationReminderSection';
 
 vi.mock('@proton/atoms/Portal/Portal');
@@ -59,6 +60,13 @@ describe('Cancellation flow section', () => {
         renderSection(mailSubscription);
 
         expect(getHeading(PLANS.MAIL)).toBeInTheDocument();
+    });
+
+    it('renders its content in the main landmark, the target of the skip link', () => {
+        renderSection(mailSubscription);
+
+        expect(screen.getByRole('main')).toHaveAttribute('id', MAIN_CONTENT_ID);
+        expect(screen.getByRole('main')).toContainElement(getHeading(PLANS.MAIL));
     });
 
     it.each([PLANS.BUNDLE, PLANS.DRIVE, PLANS.BUNDLE_PRO_2024])(

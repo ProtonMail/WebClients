@@ -7,7 +7,6 @@ import AccessDeniedError from '@proton/components/containers/error/AccessDeniedE
 import GenericError from '@proton/components/containers/error/GenericError';
 import InternalServerError from '@proton/components/containers/error/InternalServerError';
 import NotFoundError from '@proton/components/containers/error/NotFoundError';
-import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
@@ -31,6 +30,8 @@ const AppErrorBoundary = ({ children }: Props) => {
         if (state.error) {
             setState({ id: generateUID('error-boundary') });
         }
+        // Only reset the boundary on navigation, not when the error itself is set
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location]);
 
     const handleError = (error: Error) => {
@@ -64,7 +65,10 @@ const AppErrorBoundary = ({ children }: Props) => {
         <ErrorBoundary
             key={state.id}
             onError={handleError}
-            component={<PrivateMainArea>{renderError()}</PrivateMainArea>}
+            component={
+                // Rendered inside the PrivateMainArea of DriveWindow, so not a second <main>
+                <div className="flex flex-nowrap flex-auto w-full h-full overflow-auto relative">{renderError()}</div>
+            }
         >
             {children}
         </ErrorBoundary>

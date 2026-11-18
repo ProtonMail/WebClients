@@ -18,6 +18,7 @@ import SettingsLink from '../../../../components/link/SettingsLink';
 import useSettingsLink from '../../../../components/link/useSettingsLink';
 import useModalState from '../../../../components/modalTwo/useModalState';
 import useAppTitle from '../../../../hooks/useAppTitle';
+import PrivateMainArea from '../../../layout/PrivateMainArea';
 import { useCancelSubscriptionFlow } from '../cancelSubscription/useCancelSubscriptionFlow';
 import { useSubscriptionModalRaw } from '../subscriptionModalContext';
 import useSubscriptionModalTelemetry from '../useSubscriptionModalTelemetry';
@@ -119,38 +120,40 @@ const CancellationReminderContent = ({ app, subscription }: ContentProps) => {
 
     return (
         <>
-            <div className="overflow-auto" data-testid="cancellation-flow:reminder-container">
-                <div className="container-section-sticky">
-                    <ReminderSectionPlan {...config.reminder} />
-                    <div className="columns-1 md:columns-2 gap-10 mt-6">
-                        <ReminderSectionFeatures {...config.features} />
-                        <ReminderSectionTestimonials {...config.testimonials} />
-                    </div>
-                    <div className="flex justify-center gap-4 mb-8">
-                        <ButtonLike
-                            as={SettingsLink}
-                            onClick={() => {
-                                sendCancelPageKeepPlanReport();
-                            }}
-                            path="/dashboard"
-                            shape="outline"
-                            color="weak"
-                            className="flex flex-nowrap gap-2 items-center justify-center"
-                        >
-                            {c('Subscription reminder').t`Keep subscription`}
-                        </ButtonLike>
+            <PrivateMainArea data-testid="cancellation-flow:reminder-container">
+                <div className="w-full">
+                    <div className="container-section-sticky">
+                        <ReminderSectionPlan {...config.reminder} />
+                        <div className="columns-1 md:columns-2 gap-10 mt-6">
+                            <ReminderSectionFeatures {...config.features} />
+                            <ReminderSectionTestimonials {...config.testimonials} />
+                        </div>
+                        <div className="flex justify-center gap-4 mb-8">
+                            <ButtonLike
+                                as={SettingsLink}
+                                onClick={() => {
+                                    sendCancelPageKeepPlanReport();
+                                }}
+                                path="/dashboard"
+                                shape="outline"
+                                color="weak"
+                                className="flex flex-nowrap gap-2 items-center justify-center"
+                            >
+                                {c('Subscription reminder').t`Keep subscription`}
+                            </ButtonLike>
 
-                        <Button
-                            color="danger"
-                            data-testid="cancellation-flow:confirm-cancellation"
-                            onClick={() => {
-                                sendCancelPageConfirmCancelReport();
-                                setCancelModalOpen(true);
-                            }}
-                        >{c('Subscription reminder').t`Cancel subscription`}</Button>
+                            <Button
+                                color="danger"
+                                data-testid="cancellation-flow:confirm-cancellation"
+                                onClick={() => {
+                                    sendCancelPageConfirmCancelReport();
+                                    setCancelModalOpen(true);
+                                }}
+                            >{c('Subscription reminder').t`Cancel subscription`}</Button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </PrivateMainArea>
             {cancelRenderModal && (
                 <CancelConfirmationModal
                     {...cancelModalProps}

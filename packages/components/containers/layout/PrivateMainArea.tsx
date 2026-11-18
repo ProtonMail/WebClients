@@ -4,8 +4,10 @@ import { forwardRef } from 'react';
 import clsx from '@proton/utils/clsx';
 
 import { useTheme } from '../themes/ThemeProvider';
+import { MAIN_CONTENT_ID } from './constants';
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+// No id: it is always MAIN_CONTENT_ID, the target of the "Skip to main content" link
+interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'id'> {
     className?: string;
     innerClassName?: string;
     children?: ReactNode;
@@ -48,6 +50,7 @@ const PrivateMainAreaBase = (
             ref={ref}
             tabIndex={-1}
             {...rest}
+            id={MAIN_CONTENT_ID}
         >
             <div
                 className={clsx(
