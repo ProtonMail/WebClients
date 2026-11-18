@@ -949,6 +949,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "New": [
+        "Nuevo"
       ]
     },
     "Actions message": {
@@ -4719,7 +4722,7 @@
         "Creando el documento..."
       ],
       "Creating new document…": [
-        "Creando el nuevo documento…"
+        "Creando el documento…"
       ],
       "Current plan": [
         "Plan actual"
@@ -6400,25 +6403,25 @@
     },
     "lumo_2026: feature": {
       "${ LUMO_SHORT_APP_NAME } Code": [
-        "${ LUMO_SHORT_APP_NAME } Código"
+        "${ LUMO_SHORT_APP_NAME } Code"
       ],
       "2x Basic usage": [
-        "El doble de uso que el plan Básico"
+        "2x del plan Basic"
       ],
       "5x Plus usage": [
         "Uso 5 veces superior al plan Plus"
       ],
       "API access, with ${ credit } a month credit": [
-        "Acceso con API, con ${ credit } de crédito mensual"
+        "Acceso a la API, con un crédito de ${ credit } al mes"
       ],
       "API access, with ${ credit } a month credit per user": [
-        "Acceso API, con un crédito mensual de ${ credit } por usuario."
+        "Acceso a la API, con un crédito de ${ credit } al mes por usuario"
       ],
       "Everything in Basic, and:": [
-        "Todo en Básico, y:"
+        "Todo en Basic y:"
       ],
       "Everything in Free, and:": [
-        "Todo en Gratis, y:"
+        "Todo en Free y:"
       ],
       "Everything in Plus, and:": [
         "Todo en Plus, y:"
@@ -6430,13 +6433,13 @@
         "Incluye:"
       ],
       "Limited image generation": [
-        "Generación limitada de imágenes"
+        "Generación de imágenes limitada"
       ],
       "Limited messages and chat history": [
         "Mensajes limitados e historial de conversaciones"
       ],
       "Limited Skills, Projects, and scheduled tasks": [
-        "Habilidades, proyectos y tareas programadas con límites"
+        "Habilidades, proyectos y tareas programadas limitados"
       ],
       "Maximum image generation": [
         "Generación máxima de imágenes"
@@ -6448,7 +6451,7 @@
         "Más generación de imágenes"
       ],
       "More Skills, Projects, and scheduled tasks": [
-        "Más Habilidades, Proyectos y tareas programadas"
+        "Más habilidades, proyectos y tareas programadas"
       ],
       "More usage": [
         "Mayor uso"
@@ -6456,10 +6459,10 @@
     },
     "lumo_2026: Info": {
       "For coding and building": [
-        "Para programar y crear aplicaciones"
+        "Para programar y crear"
       ],
       "For everyday chats": [
-        "Para conversaciones cotidianas"
+        "Para charlas cotidianas"
       ],
       "For getting more done": [
         "Para lograr más"

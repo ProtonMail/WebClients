@@ -934,6 +934,24 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
+      ],
+      "Dismiss notification": [
+        "Luk notifikation"
+      ],
+      "Go to today": [
+        "Gå til i dag"
+      ],
+      "New": [
+        "Ny"
+      ],
+      "Next contact": [
+        "Næste kontakt"
+      ],
+      "Previous contact": [
+        "Forrige kontakt"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Vis/skjul undermapper i ${ itemName }"
       ]
     },
     "Actions message": {
@@ -5665,6 +5683,30 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Can't connect": [
+        "Kan ikke forbinde"
+      ],
+      "Creating new document…": [
+        "Opretter nyt dokument..."
+      ],
+      "Decrypting document…": [
+        "Dekrypterer dokumentet..."
+      ],
+      "Opening document…": [
+        "Åbner dokumentet..."
+      ],
+      "Preparing editor…": [
+        "Forbereder redigeringsvindue..."
+      ],
+      "Redirecting…": [
+        "Omdirigerer..."
+      ],
+      "Syncing latest changes…": [
+        "Synkroniserer seneste ændringer..."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Pladser til skriveassistenten sælges ikke længere."
       ]
     },
     "info": {
@@ -6157,6 +6199,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "Loading": [
+        "Indlæser"
       ]
     },
     "Label for contact group color": {
@@ -10165,6 +10210,73 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x Basic forbrug"
+      ],
+      "5x Plus usage": [
+        "5x Plus forbrug"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API-adgang med ${ credit } i kredit om måneden"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API-adgang med ${ credit } i kredit om måneden per bruger"
+      ],
+      "Everything in Basic, and:": [
+        "Alt i Basic, og:"
+      ],
+      "Everything in Free, and:": [
+        "Alt i Free, og:"
+      ],
+      "Everything in Plus, and:": [
+        "Alt i Plus, og:"
+      ],
+      "Extended image generation": [
+        "Udvidet billedegenerering"
+      ],
+      "Includes:": [
+        "Inkluderer:"
+      ],
+      "Limited image generation": [
+        "Begrænset billedegenerering"
+      ],
+      "Limited messages and chat history": [
+        "Begrænset besked- og chathistorik"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Begrænsede skills, projekter og planlagte opgaver"
+      ],
+      "Maximum image generation": [
+        "Maksimal billedegenerering"
+      ],
+      "Maximum Skills and Projects": [
+        "Maksimale Skills og Projekter"
+      ],
+      "More image generation": [
+        "Mere billedegenerering"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Flere skills, projekter og planlagte opgaver"
+      ],
+      "More usage": [
+        "Mere forbrug"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Til at kode og bygge"
+      ],
+      "For everyday chats": [
+        "Til hverdagsbrug"
+      ],
+      "For getting more done": [
+        "For at få meget gjort"
       ]
     }
   }
