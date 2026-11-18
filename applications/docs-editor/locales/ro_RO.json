@@ -244,6 +244,9 @@
       ],
       "Undo": [
         "Anulare"
+      ],
+      "Dismiss notification": [
+        "Închidere notificare"
       ]
     },
     "color": {
@@ -708,6 +711,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Există deja o foaie cu acest nume"
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "„History” este un nume rezervat și nu poate fi utilizat pentru o foaie."
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Numele foilor nu pot avea mai mult de 31 de caractere."
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Numele foilor nu pot conține \\ / ? * [ ] sau :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Numele foilor nu pot începe și nu se pot termina cu un apostrof."
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
