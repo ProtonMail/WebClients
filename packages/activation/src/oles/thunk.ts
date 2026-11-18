@@ -474,73 +474,88 @@ export const completeMigration = createAsyncThunk<
 >('oles/completeMigration', async ({ providerUsers, importerOrganizationId }, { dispatch, extra, rejectWithValue }) => {
     const api = getPersistedApi(extra.api);
 
+    // Only an importer organization with migrated users can be completed, so none means the users failed to load.
+    // Completing anyway would leave E2EE disabled on every migrated address.
+    const migratedUsers = providerUsers.filter((u) => u.ImporterOrganizationUser);
+    if (!migratedUsers.length) {
+        throw new Error(c('Error').t`We couldn't load your migrated users. Please refresh the page and try again`);
+    }
+
     try {
         await api(unlockPasswordChanges());
     } catch (err) {
         return rejectWithValue(getApiError(err));
     }
 
-    const [members, orgKey] = await Promise.all([dispatch(membersThunk()), dispatch(organizationKeyThunk())]);
+    try {
+        const [members, orgKey] = await Promise.all([dispatch(membersThunk()), dispatch(organizationKeyThunk())]);
 
-    if (!orgKey.privateKey) {
-        throw new Error(c('Error').t`Missing organization private key`);
-    }
-
-    if (!orgKey.publicKey) {
-        throw new Error(c('Error').t`Missing organization public key`);
-    }
-
-    const { keyTransparencyVerify } = createKTVerifier({
-        api,
-        ktActivation: dispatch(getKTActivation()),
-        config: extra.config,
-    });
-
-    const migratedUsers = providerUsers.filter((u) => u.ImporterOrganizationUser);
-
-    const membersWithAddresses = await Promise.all(
-        members.map(async (member) => ({
-            member,
-            address: await dispatch(getMemberAddresses({ member, cache: CacheType.None })).then((addresses) =>
-                addresses.find((a) => hasBit(a.Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE))
-            ),
-        }))
-    );
-
-    const selfMigration = membersWithAddresses.find(({ member }) => member.Self);
-
-    if (selfMigration?.member && selfMigration?.address) {
-        await enableAddressE2EE({
-            api,
-            address: selfMigration.address,
-            getAddressKeys: (addressID) => dispatch(addressKeysThunk({ addressID })),
-            keyTransparencyVerify,
-        });
-    }
-
-    for (const user of migratedUsers) {
-        const { member, address } =
-            membersWithAddresses.find((m) => areEquivalentEmails(m.address?.Email, user.Email)) ?? {};
-
-        if (!member || !address || member.Self) {
-            continue;
+        if (!orgKey.privateKey) {
+            throw new Error(c('Error').t`Missing organization private key`);
         }
 
-        const memberApi = await getMemberApi(api, member);
+        if (!orgKey.publicKey) {
+            throw new Error(c('Error').t`Missing organization public key`);
+        }
 
-        await enableAddressE2EE({
-            getAddressKeys: () => getMemberAddressKeys(memberApi, address, orgKey),
-            api: memberApi,
-            address,
-            keyTransparencyVerify,
+        const { keyTransparencyVerify } = createKTVerifier({
+            api,
+            ktActivation: dispatch(getKTActivation()),
+            config: extra.config,
         });
 
-        await memberApi(revoke()).catch(noop);
-    }
+        const membersWithAddresses = await Promise.all(
+            members.map(async (member) => ({
+                member,
+                address: await dispatch(getMemberAddresses({ member, cache: CacheType.None })).then((addresses) =>
+                    addresses.find(
+                        (a) =>
+                            hasBit(a.Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE) &&
+                            migratedUsers.some((u) => areEquivalentEmails(a.Email, u.Email))
+                    )
+                ),
+            }))
+        );
 
-    return api<ApiImporterOrganization>(
-        patchOrganizationImporter(importerOrganizationId!, {
-            State: ApiImporterOrganizationState.COMPLETED,
-        })
-    );
+        const selfMigration = membersWithAddresses.find(({ member }) => member.Self);
+
+        if (selfMigration?.member && selfMigration?.address) {
+            await enableAddressE2EE({
+                api,
+                address: selfMigration.address,
+                getAddressKeys: (addressID) => dispatch(addressKeysThunk({ addressID })),
+                keyTransparencyVerify,
+            });
+        }
+
+        for (const user of migratedUsers) {
+            const { member, address } =
+                membersWithAddresses.find((m) => areEquivalentEmails(m.address?.Email, user.Email)) ?? {};
+
+            if (!member || !address || member.Self) {
+                continue;
+            }
+
+            const memberApi = await getMemberApi(api, member);
+
+            await enableAddressE2EE({
+                getAddressKeys: () => getMemberAddressKeys(memberApi, address, orgKey),
+                api: memberApi,
+                address,
+                keyTransparencyVerify,
+            });
+
+            await memberApi(revoke()).catch(noop);
+        }
+
+        return await api<ApiImporterOrganization>(
+            patchOrganizationImporter(importerOrganizationId!, {
+                State: ApiImporterOrganizationState.COMPLETED,
+            })
+        );
+    } catch (err: any) {
+        // Thrown API errors reach the UI without the backend message, so reject with it explicitly
+        const apiError = getApiError(err);
+        return rejectWithValue({ ...apiError, message: apiError.message || err?.message || undefined });
+    }
 });
