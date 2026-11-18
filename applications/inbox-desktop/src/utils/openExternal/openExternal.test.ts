@@ -1,25 +1,26 @@
-jest.mock("electron", () => ({
+import type { Mocked } from "vitest";
+vi.mock("electron", () => ({
     app: {
-        on: jest.fn(),
+        on: vi.fn(),
         isPackaged: false,
-        getAppPath: jest.fn(() => "/mock/app"),
+        getAppPath: vi.fn(() => "/mock/app"),
     },
-    shell: { openExternal: jest.fn().mockResolvedValue(undefined) },
-    dialog: { showMessageBox: jest.fn().mockResolvedValue({ response: 0 }) },
+    shell: { openExternal: vi.fn().mockResolvedValue(undefined) },
+    dialog: { showMessageBox: vi.fn().mockResolvedValue({ response: 0 }) },
 }));
 
-jest.mock("../log", () => ({
-    mainLogger: { info: jest.fn(), error: jest.fn(), warn: jest.fn(), debug: jest.fn() },
+vi.mock("../log", () => ({
+    mainLogger: { info: vi.fn(), error: vi.fn(), warn: vi.fn(), debug: vi.fn() },
 }));
 
-jest.mock("../sentryReport");
+vi.mock("../sentryReport");
 
 import { dialog, shell } from "electron";
 
 import { openExternalIPC, openExternalRedirect, openExternalWithoutSanitization } from "./openExternal";
 
-const mockedShell = shell as jest.Mocked<typeof shell>;
-const mockedDialog = dialog as jest.Mocked<typeof dialog>;
+const mockedShell = shell as Mocked<typeof shell>;
+const mockedDialog = dialog as Mocked<typeof dialog>;
 
 const ALLOWED_URL = "https://example.com/path";
 const UNLISTED_PROTOCOL_URL = "magnet:?xt=urn:btih:abcdef";

@@ -1,26 +1,27 @@
-jest.mock("../store/idStore", () => ({
-    getAppID: jest.fn(() => ({ id: "test-id", hash: "test-hash", distribution: 0.5 })),
+import type { Mock } from "vitest";
+vi.mock("../store/idStore", () => ({
+    getAppID: vi.fn(() => ({ id: "test-id", hash: "test-hash", distribution: 0.5 })),
 }));
-jest.mock("../store/urlStore", () => ({
-    getAppURL: jest.fn(() => ({ mail: "https://mail.proton.me" })),
+vi.mock("../store/urlStore", () => ({
+    getAppURL: vi.fn(() => ({ mail: "https://mail.proton.me" })),
 }));
-jest.mock("./isProdEnv", () => ({
-    isProdEnv: jest.fn(() => true),
+vi.mock("./isProdEnv", () => ({
+    isProdEnv: vi.fn(() => true),
 }));
-jest.mock("../../package.json", () => ({ name: "test", version: "1.0.0" }), { virtual: true });
-jest.mock("./helpers", () => ({ isMac: true, isWindows: false, isLinux: false }));
-jest.mock("../ipc/ipcConstants", () => ({ DESKTOP_FEATURES: {} }));
-jest.mock("./electronSession/partitions", () => ({ appSession: jest.fn(), updateSession: jest.fn() }));
-jest.mock("../store/settingsStore", () => ({ getSettings: jest.fn(() => ({})) }));
-jest.mock("../store/boundsStore", () => ({ getWindowBounds: jest.fn(() => ({})) }));
-jest.mock("./view/viewManagement", () => ({
-    getMainWindow: jest.fn(() => ({ isMinimized: jest.fn(() => false) })),
-    getCurrentViewID: jest.fn(() => "mail"),
-    getMailView: jest.fn(() => ({ webContents: { getURL: jest.fn(() => "") } })),
-    getCalendarView: jest.fn(() => ({ webContents: { getURL: jest.fn(() => "") } })),
-    getAccountView: jest.fn(() => ({ webContents: { getURL: jest.fn(() => "") } })),
+vi.mock("../../package.json", () => ({ default: { name: "test", version: "1.0.0" } }));
+vi.mock("./helpers", () => ({ isMac: true, isWindows: false, isLinux: false }));
+vi.mock("../ipc/ipcConstants", () => ({ DESKTOP_FEATURES: {} }));
+vi.mock("./electronSession/partitions", () => ({ appSession: vi.fn(), updateSession: vi.fn() }));
+vi.mock("../store/settingsStore", () => ({ getSettings: vi.fn(() => ({})) }));
+vi.mock("../store/boundsStore", () => ({ getWindowBounds: vi.fn(() => ({})) }));
+vi.mock("./view/viewManagement", () => ({
+    getMainWindow: vi.fn(() => ({ isMinimized: vi.fn(() => false) })),
+    getCurrentViewID: vi.fn(() => "mail"),
+    getMailView: vi.fn(() => ({ webContents: { getURL: vi.fn(() => "") } })),
+    getCalendarView: vi.fn(() => ({ webContents: { getURL: vi.fn(() => "") } })),
+    getAccountView: vi.fn(() => ({ webContents: { getURL: vi.fn(() => "") } })),
 }));
-jest.mock("./log/getOSInfo", () => ({ getOSInfo: jest.fn(() => ({})) }));
+vi.mock("./log/getOSInfo", () => ({ getOSInfo: vi.fn(() => ({})) }));
 
 import { addBreadcrumb, captureMessage, init } from "@sentry/electron/main";
 import Logger, { LogMessage } from "electron-log";
@@ -31,10 +32,10 @@ describe("beforeSend", () => {
     let beforeSend: (event: Event) => Event | null;
 
     beforeEach(async () => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         process.env.DESKTOP_SENTRY_DSN = "https://key@sentry/123";
         await initializeSentry();
-        beforeSend = (init as jest.Mock).mock.calls[0][0].beforeSend;
+        beforeSend = (init as Mock).mock.calls[0][0].beforeSend;
     });
 
     afterEach(() => {
@@ -69,7 +70,7 @@ describe("beforeSend", () => {
 
 describe("Sentry transport", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         process.env.DESKTOP_SENTRY_DSN = "https://key@sentry/123";
     });
 

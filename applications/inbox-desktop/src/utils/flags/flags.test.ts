@@ -1,26 +1,26 @@
 import { destroyFeatureFlagManagerTest, getFeatureFlagManager, initializeFeatureFlagManagerTest } from "./manager";
 
-jest.mock("../../store/safeStore/safeStore", () => ({
+vi.mock("../../store/safeStore/safeStore", () => ({
     SafeStore: class {
-        get = jest.fn();
-        set = jest.fn();
-        delete = jest.fn();
+        get = vi.fn();
+        set = vi.fn();
+        delete = vi.fn();
     },
 }));
 
-jest.mock("../log", () => ({
+vi.mock("../log", () => ({
     flagManagerLogger: {
-        info: jest.fn(),
-        debug: jest.fn(),
-        error: jest.fn(),
-        warn: jest.fn(),
+        info: vi.fn(),
+        debug: vi.fn(),
+        error: vi.fn(),
+        warn: vi.fn(),
     },
 }));
 
-const mockExecuteJavaScript = jest.fn();
-const mockGetMailView = jest.fn();
+const mockExecuteJavaScript = vi.fn();
+const mockGetMailView = vi.fn();
 
-jest.mock("../view/viewManagement", () => ({
+vi.mock("../view/viewManagement", () => ({
     getMailView: () => mockGetMailView(),
 }));
 
@@ -33,15 +33,15 @@ describe("FeatureFlagManager", () => {
 
     beforeEach(() => {
         destroyFeatureFlagManagerTest();
-        jest.clearAllMocks();
-        jest.useFakeTimers();
+        vi.clearAllMocks();
+        vi.useFakeTimers();
 
         mockStore = {
-            get: jest.fn().mockReturnValue({
+            get: vi.fn().mockReturnValue({
                 flags: {},
                 lastUpdated: 0,
             }),
-            set: jest.fn(),
+            set: vi.fn(),
         };
 
         mockGetMailView.mockReturnValue({
@@ -95,7 +95,7 @@ describe("FeatureFlagManager", () => {
             initializeFeatureFlagManagerTest({ store: mockStore, pollInterval });
             mockExecuteJavaScript.mockClear();
 
-            jest.advanceTimersByTime(pollIntervalMargin);
+            vi.advanceTimersByTime(pollIntervalMargin);
 
             expect(mockExecuteJavaScript).toHaveBeenCalledTimes(1);
             expect(mockExecuteJavaScript).toHaveBeenCalledWith(
@@ -109,7 +109,7 @@ describe("FeatureFlagManager", () => {
             mockExecuteJavaScript.mockClear();
 
             const count = 10;
-            jest.advanceTimersByTime(pollIntervalMargin * count);
+            vi.advanceTimersByTime(pollIntervalMargin * count);
 
             expect(mockExecuteJavaScript).toHaveBeenCalledTimes(count);
             expect(mockExecuteJavaScript).toHaveBeenCalledWith(
@@ -123,7 +123,7 @@ describe("FeatureFlagManager", () => {
             initializeFeatureFlagManagerTest({ store: mockStore, pollInterval });
             mockExecuteJavaScript.mockClear();
 
-            jest.advanceTimersByTime(pollIntervalMargin);
+            vi.advanceTimersByTime(pollIntervalMargin);
 
             expect(mockExecuteJavaScript).not.toHaveBeenCalled();
         });
@@ -133,7 +133,7 @@ describe("FeatureFlagManager", () => {
             initializeFeatureFlagManagerTest({ store: mockStore, pollInterval });
             mockExecuteJavaScript.mockClear();
 
-            jest.advanceTimersByTime(pollIntervalMargin);
+            vi.advanceTimersByTime(pollIntervalMargin);
 
             expect(mockExecuteJavaScript).not.toHaveBeenCalled();
         });
@@ -263,8 +263,8 @@ describe("FeatureFlagManager", () => {
             };
 
             mockStore = {
-                get: jest.fn().mockImplementation(() => storedData),
-                set: jest.fn().mockImplementation((key, value) => {
+                get: vi.fn().mockImplementation(() => storedData),
+                set: vi.fn().mockImplementation((key, value) => {
                     storedData = value;
                 }),
             };
@@ -295,7 +295,7 @@ describe("FeatureFlagManager", () => {
 
     describe("Flag change handlers", () => {
         it("should call handlers with cached values on startup", () => {
-            const handler = jest.fn();
+            const handler = vi.fn();
             mockStore.get.mockReturnValue({
                 flags: { [FeatureFlag.INDA_TEST_FLAG_1]: true },
                 lastUpdated: Date.now(),
@@ -311,7 +311,7 @@ describe("FeatureFlagManager", () => {
         });
 
         it("should not call handlers on startup for flags absent from cache", () => {
-            const handler = jest.fn();
+            const handler = vi.fn();
 
             initializeFeatureFlagManagerTest({
                 store: mockStore,
@@ -322,7 +322,7 @@ describe("FeatureFlagManager", () => {
         });
 
         it("should call handlers with the new value when a flag changes", async () => {
-            const handler = jest.fn();
+            const handler = vi.fn();
             mockExecuteJavaScript.mockResolvedValue(
                 JSON.stringify([{ name: FeatureFlag.INDA_TEST_FLAG_1, enabled: true }]),
             );
@@ -338,7 +338,7 @@ describe("FeatureFlagManager", () => {
         });
 
         it("should not call handlers again when a flag value is unchanged", async () => {
-            const handler = jest.fn();
+            const handler = vi.fn();
             mockStore.get.mockReturnValue({
                 flags: { [FeatureFlag.INDA_TEST_FLAG_1]: true },
                 lastUpdated: Date.now(),
@@ -358,7 +358,7 @@ describe("FeatureFlagManager", () => {
         });
 
         it("should keep updating flags when a handler throws", async () => {
-            const throwingHandler = jest.fn(() => {
+            const throwingHandler = vi.fn(() => {
                 throw new Error("handler failure");
             });
             mockExecuteJavaScript.mockResolvedValue(

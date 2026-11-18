@@ -1,15 +1,15 @@
-import { describe } from "@jest/globals";
+import { describe } from "vitest";
 import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
 import { VersionFile } from "@proton/shared/lib/desktop/DesktopVersion";
 import { expectGetNewUpdate } from "./update.test.utils";
 
-jest.mock("../utils/view/viewManagement", () => ({
+vi.mock("../utils/view/viewManagement", () => ({
     getCalendarView: () => {},
     getMailView: () => {},
 }));
 
-jest.mock("electron", () => ({
-    app: { on: jest.fn(), isPackaged: true },
+vi.mock("electron", () => ({
+    app: { on: vi.fn(), isPackaged: true },
     autoUpdater: {
         on: () => {},
     },

@@ -1,33 +1,33 @@
-jest.mock("electron", () => ({
+vi.mock("electron", () => ({
     app: {
-        on: jest.fn(),
-        getPath: jest.fn(() => "/mock/home"),
-        getAppPath: jest.fn(() => "/mock/app"),
-        getVersion: jest.fn(() => "0.0.0"),
+        on: vi.fn(),
+        getPath: vi.fn(() => "/mock/home"),
+        getAppPath: vi.fn(() => "/mock/app"),
+        getVersion: vi.fn(() => "0.0.0"),
     },
     screen: {
-        getDisplayNearestPoint: jest.fn(),
+        getDisplayNearestPoint: vi.fn(),
         getCursorScreenPoint: () => {},
     },
     session: {
-        fromPartition: jest.fn(() => ({
+        fromPartition: vi.fn(() => ({
             webRequest: {
-                onBeforeRequest: jest.fn(),
-                onResponseStarted: jest.fn(),
-                onCompleted: jest.fn(),
-                onErrorOccurred: jest.fn(),
-                onBeforeSendHeaders: jest.fn(),
+                onBeforeRequest: vi.fn(),
+                onResponseStarted: vi.fn(),
+                onCompleted: vi.fn(),
+                onErrorOccurred: vi.fn(),
+                onBeforeSendHeaders: vi.fn(),
             },
-            setPermissionRequestHandler: jest.fn(),
+            setPermissionRequestHandler: vi.fn(),
         })),
     },
 }));
 
-jest.mock("../electronSession/webRequestRouter", () => ({
+vi.mock("../electronSession/webRequestRouter", () => ({
     webRequestRouter: {
-        onBeforeRequest: jest.fn(() => jest.fn()),
-        onResponseStarted: jest.fn(() => jest.fn()),
-        onCompleted: jest.fn(() => jest.fn()),
-        onErrorOccurred: jest.fn(() => jest.fn()),
+        onBeforeRequest: vi.fn(() => vi.fn()),
+        onResponseStarted: vi.fn(() => vi.fn()),
+        onCompleted: vi.fn(() => vi.fn()),
+        onErrorOccurred: vi.fn(() => vi.fn()),
     },
 }));

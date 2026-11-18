@@ -1,16 +1,17 @@
+import type { MockedFunction } from "vitest";
 import { ThemeSetting } from "@proton/shared/lib/themes/themes";
 import { getSettings, updateSettings } from "../store/settingsStore";
 import { performStoreMigrations } from "./storeMigrations";
 import { ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
 
-jest.mock("../utils/log");
-jest.mock("../store/settingsStore", () => ({
-    getSettings: jest.fn(),
-    updateSettings: jest.fn(),
+vi.mock("../utils/log");
+vi.mock("../store/settingsStore", () => ({
+    getSettings: vi.fn(),
+    updateSettings: vi.fn(),
 }));
 
-const getSettingsMock = getSettings as jest.MockedFn<typeof getSettings>;
-const updateSettingsMock = updateSettings as jest.MockedFn<typeof updateSettings>;
+const getSettingsMock = getSettings as MockedFunction<typeof getSettings>;
+const updateSettingsMock = updateSettings as MockedFunction<typeof updateSettings>;
 
 const setThemeMock = (theme: Partial<ThemeSetting>) => {
     getSettingsMock.mockReturnValue({

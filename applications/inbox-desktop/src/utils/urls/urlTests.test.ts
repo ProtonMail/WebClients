@@ -1,8 +1,8 @@
 import { isCalendarCreateBookingURL, isHostAllowed, isSameURL, isURLAllowed, trimLocalID } from "./urlTests";
 
-jest.mock("../config", () => {});
+vi.mock("../config", () => {});
 
-jest.mock("../../store/urlStore", () => ({
+vi.mock("../../store/urlStore", () => ({
     getAppURL: () => ({
         account: "https://account.proton.me",
         mail: "https://mail.proton.me",

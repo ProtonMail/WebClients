@@ -1,13 +1,13 @@
-import { describe, it, expect, beforeEach } from "@jest/globals";
+import { describe, it, expect, beforeEach, Mock } from "vitest";
 
 const mockSession = {
-    resolveHost: jest.fn(),
-    resolveProxy: jest.fn(),
+    resolveHost: vi.fn(),
+    resolveProxy: vi.fn(),
 };
 
-jest.mock("electron", () => ({}));
+vi.mock("electron", () => ({}));
 
-jest.mock("../store/urlStore", () => ({
+vi.mock("../store/urlStore", () => ({
     getAppURL: () => ({
         account: "https://account.proton.me",
         mail: "https://mail.proton.me",
@@ -15,24 +15,24 @@ jest.mock("../store/urlStore", () => ({
     }),
 }));
 
-jest.mock("./electronSession/partitions", () => ({
+vi.mock("./electronSession/partitions", () => ({
     appSession: () => mockSession,
 }));
 
-jest.mock("./log", () => ({
-    networkLogger: { info: jest.fn(), error: jest.fn() },
+vi.mock("./log", () => ({
+    networkLogger: { info: vi.fn(), error: vi.fn() },
 }));
 
-jest.mock("./profiler/network", () => ({
-    probeOnce: jest.fn(),
+vi.mock("./profiler/network", () => ({
+    probeOnce: vi.fn(),
 }));
 
 import { networkLogger } from "./log";
 import { probeOnce } from "./profiler/network";
 import { logNetworkDiagnostics, resetNetworkDiagnosticsTestOnly } from "./networkDiagnostics";
 
-const mockProbeOnce = probeOnce as jest.Mock;
-const mockLoggerInfo = networkLogger.info as jest.Mock;
+const mockProbeOnce = probeOnce as Mock;
+const mockLoggerInfo = networkLogger.info as Mock;
 
 const FIVE_MINUTES_MS = 5 * 60 * 1000;
 
@@ -40,10 +40,10 @@ describe("logNetworkDiagnostics", () => {
     let now: number;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         resetNetworkDiagnosticsTestOnly();
         now = 1_000_000;
-        jest.spyOn(Date, "now").mockImplementation(() => now);
+        vi.spyOn(Date, "now").mockImplementation(() => now);
 
         mockSession.resolveProxy.mockResolvedValue("PROXY corp-proxy:8080");
         mockSession.resolveHost.mockResolvedValue({ endpoints: [{ address: "185.70.42.37", family: "ipv4" }] });

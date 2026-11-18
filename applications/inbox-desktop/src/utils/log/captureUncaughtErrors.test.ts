@@ -1,24 +1,25 @@
-jest.mock("electron", () => ({
+import type { Mock } from "vitest";
+vi.mock("electron", () => ({
     app: {
-        on: jest.fn(),
-        getPath: jest.fn(() => "/mock/home"),
-        getAppPath: jest.fn(() => "/mock/app"),
-        exit: jest.fn(),
+        on: vi.fn(),
+        getPath: vi.fn(() => "/mock/home"),
+        getAppPath: vi.fn(() => "/mock/app"),
+        exit: vi.fn(),
         isPackaged: true,
     },
     dialog: {
-        showErrorBox: jest.fn(),
+        showErrorBox: vi.fn(),
     },
 }));
 
-jest.mock("../sentryReport");
+vi.mock("../sentryReport");
 
-jest.mock("./quitTracker", () => ({
+vi.mock("./quitTracker", () => ({
     quitTracker: {
-        setReason: jest.fn(),
+        setReason: vi.fn(),
     },
 }));
-jest.mock("./index");
+vi.mock("./index");
 
 import { app, dialog } from "electron";
 import { flush as sentryFlush } from "@sentry/electron/main";
@@ -109,7 +110,7 @@ describe("shouldSendSentryReport", () => {
 
 describe("captureUncaughtErrors", () => {
     it("registers process handlers", () => {
-        const onSpy = jest.spyOn(process, "on").mockImplementation(() => process);
+        const onSpy = vi.spyOn(process, "on").mockImplementation(() => process);
         captureUncaughtErrors();
 
         expect(onSpy).toHaveBeenCalledWith("unhandledRejection", expect.any(Function));
@@ -120,13 +121,13 @@ describe("captureUncaughtErrors", () => {
 
     describe("unhandledRejection handler", () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             resetUnhandledRejectionCountTestOnly();
         });
 
         function getUnhandledRejectionHandler(): (reason: unknown) => void {
             const handlers: Record<string, (...args: unknown[]) => void> = {};
-            const onSpy = jest.spyOn(process, "on").mockImplementation((event, handler) => {
+            const onSpy = vi.spyOn(process, "on").mockImplementation((event, handler) => {
                 handlers[event as string] = handler as (...args: unknown[]) => void;
                 return process;
             });
@@ -244,7 +245,7 @@ describe("captureUncaughtErrors", () => {
 
 describe("captureTopLevelRejection", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         resetIsExitingTestOnly();
     });
 
@@ -308,11 +309,11 @@ describe("captureTopLevelRejection", () => {
 
     it("flushes Sentry then exits", async () => {
         const exitOrder: string[] = [];
-        (sentryFlush as jest.Mock).mockImplementation(async () => {
+        (sentryFlush as Mock).mockImplementation(async () => {
             exitOrder.push("flush");
             return true;
         });
-        (app.exit as jest.Mock).mockImplementation(() => {
+        (app.exit as Mock).mockImplementation(() => {
             exitOrder.push("exit");
         });
 

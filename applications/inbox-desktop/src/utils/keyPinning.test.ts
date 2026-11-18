@@ -3,19 +3,19 @@ import { checkKeys, verifyDownloadCertificate, VerificationResult, resetPinningR
 import { sentryReport } from "./sentryReport";
 import { networkLogger } from "./log";
 
-jest.mock("electron", () => ({
+vi.mock("electron", () => ({
     app: {
-        on: jest.fn(),
+        on: vi.fn(),
         isPackaged: true,
-        getAppPath: jest.fn(() => "/mock/app"),
+        getAppPath: vi.fn(() => "/mock/app"),
     },
 }));
 
-jest.mock("./sentryReport");
-jest.mock("./log");
+vi.mock("./sentryReport");
+vi.mock("./log");
 
-jest.mock("./isProdEnv", () => ({ isProdEnv: jest.fn(() => true) }));
-jest.mock("./urls/urlTests", () => ({ isHostAllowed: jest.fn(() => true) }));
+vi.mock("./isProdEnv", () => ({ isProdEnv: vi.fn(() => true) }));
+vi.mock("./urls/urlTests", () => ({ isHostAllowed: vi.fn(() => true) }));
 
 const CERTIFICATE_DATA_rsa4096_badssl_com = `-----BEGIN CERTIFICATE-----
 MIIF8TCCBNmgAwIBAgISA/X7F7ww9TqyWle5qFeJa4fqMA0GCSqGSIb3DQEBCwUA
@@ -89,7 +89,7 @@ xUysZKNxowc6dl5p9hAqU/Oo9ZM=
 -----END CERTIFICATE-----`;
 
 function test_verifyDownloadCertificate(hostname: string, certificateData: string, wantResult: VerificationResult) {
-    const mockCallback = jest.fn();
+    const mockCallback = vi.fn();
     const r = {
         hostname,
         validatedCertificate: {
@@ -104,7 +104,7 @@ function test_verifyDownloadCertificate(hostname: string, certificateData: strin
 
 describe("checkKeys", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         resetPinningReportedTestOnly();
     });
 
@@ -179,7 +179,7 @@ describe("checkKeys", () => {
 
 describe("key pinning", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         resetPinningReportedTestOnly();
     });
 

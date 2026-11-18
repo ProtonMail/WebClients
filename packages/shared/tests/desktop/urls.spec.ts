@@ -1,4 +1,4 @@
-// Also run by inbox-desktop's jest (applications/inbox-desktop/jest.config.ts `roots`).
+// Also run by inbox-desktop's vitest (applications/inbox-desktop/vitest.config.mts `include`).
 // Keep runner-agnostic: no `vi.*` or imports from 'vitest'.
 import { urlRule } from '../../lib/desktop/urls/builder';
 import { matchUrlRules } from '../../lib/desktop/urls/matcher';

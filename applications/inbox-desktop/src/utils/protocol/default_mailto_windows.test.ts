@@ -1,37 +1,39 @@
-jest.mock("electron", () => ({
+import type { Mock, Mocked } from "vitest";
+vi.mock("electron", () => ({
     app: {
-        on: jest.fn(),
+        on: vi.fn(),
         isPackaged: false,
-        getAppPath: jest.fn(() => "/mock/app"),
+        getAppPath: vi.fn(() => "/mock/app"),
     },
-    shell: { openExternal: jest.fn().mockResolvedValue(undefined) },
+    shell: { openExternal: vi.fn().mockResolvedValue(undefined) },
 }));
 
-jest.mock("../../store/safeStore/safeStore", () => ({
+vi.mock("../../store/safeStore/safeStore", () => ({
     SafeStore: class {
-        get = jest.fn();
-        set = jest.fn();
-        delete = jest.fn();
+        get = vi.fn();
+        set = vi.fn();
+        delete = vi.fn();
     },
 }));
 
-jest.mock("../log", () => ({
-    protocolLogger: { info: jest.fn(), error: jest.fn(), log: jest.fn(), debug: jest.fn(), warn: jest.fn() },
+vi.mock("../log", () => ({
+    protocolLogger: { info: vi.fn(), error: vi.fn(), log: vi.fn(), debug: vi.fn(), warn: vi.fn() },
 }));
 
-jest.mock("../sentryReport");
+vi.mock("../sentryReport");
 
-jest.mock("node:child_process", () => ({
-    execSync: jest.fn(),
-    spawn: jest.fn(),
+vi.mock("node:child_process", () => ({
+    execSync: vi.fn(),
+    spawn: vi.fn(),
 }));
 
-jest.mock("node:os", () => ({
-    release: jest.fn(),
-}));
+vi.mock("node:os", () => {
+    const release = vi.fn();
+    return { release, default: { release } };
+});
 
-jest.mock("./setup_mailto_windows", () => ({
-    getRegExe: jest.fn().mockReturnValue("C:\\Windows\\System32\\reg.exe"),
+vi.mock("./setup_mailto_windows", () => ({
+    getRegExe: vi.fn().mockReturnValue("C:\\Windows\\System32\\reg.exe"),
 }));
 
 import { checkDefaultMailtoClientWindows, setDefaultMailtoWindows } from "./default_mailto_windows";
@@ -40,9 +42,9 @@ import { shell } from "electron";
 import os from "node:os";
 import { UNCHECKED_PROTOCOL } from "@proton/shared/lib/desktop/DefaultProtocol";
 
-const mockedExecSync = jest.mocked(execSync);
-const mockedShell = shell as jest.Mocked<typeof shell>;
-const mockedOsRelease = jest.mocked(os.release);
+const mockedExecSync = vi.mocked(execSync);
+const mockedShell = shell as Mocked<typeof shell>;
+const mockedOsRelease = vi.mocked(os.release);
 
 const makeUserChoiceOutput = (progId: string) =>
     `\nHKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\Shell\\Associations\\UrlAssociations\\mailto\\UserChoice\n    ProgId    REG_SZ    ${progId}\n`;
@@ -144,7 +146,7 @@ describe("setDefaultMailtoWindows", () => {
         expect(mockedShell.openExternal).toHaveBeenCalledWith(expect.stringContaining("ms-settings:defaultapps"));
         expect(mockedShell.openExternal).toHaveBeenCalledWith(expect.stringContaining("registeredAppUser="));
 
-        const url = (mockedShell.openExternal as jest.Mock).mock.calls[0][0] as string;
+        const url = (mockedShell.openExternal as Mock).mock.calls[0][0] as string;
         expect(url).toMatch(/registeredAppUser=ProtonMail$/);
     });
 
@@ -153,7 +155,7 @@ describe("setDefaultMailtoWindows", () => {
 
         setDefaultMailtoWindows();
 
-        const url = (mockedShell.openExternal as jest.Mock).mock.calls[0][0] as string;
+        const url = (mockedShell.openExternal as Mock).mock.calls[0][0] as string;
         expect(url).toBe("ms-settings:defaultapps");
     });
 
@@ -162,7 +164,7 @@ describe("setDefaultMailtoWindows", () => {
 
         setDefaultMailtoWindows();
 
-        const url = (mockedShell.openExternal as jest.Mock).mock.calls[0][0] as string;
+        const url = (mockedShell.openExternal as Mock).mock.calls[0][0] as string;
         expect(url).toBe("ms-settings:defaultapps");
     });
 });

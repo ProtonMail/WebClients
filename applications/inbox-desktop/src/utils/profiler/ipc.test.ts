@@ -1,11 +1,12 @@
-jest.mock("node:perf_hooks", () => ({
-    performance: { now: jest.fn() },
+import type { Mock } from "vitest";
+vi.mock("node:perf_hooks", () => ({
+    performance: { now: vi.fn() },
 }));
 
 import { performance } from "node:perf_hooks";
 import { IpcRecorder } from "./ipc";
 
-const mockPerfNow = performance.now as jest.Mock;
+const mockPerfNow = performance.now as Mock;
 
 describe("IpcRecorder", () => {
     beforeEach(() => {

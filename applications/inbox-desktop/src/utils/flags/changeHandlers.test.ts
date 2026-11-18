@@ -1,4 +1,4 @@
-jest.mock("../electronSession/appCache", () => ({ toggleAppCache: jest.fn() }));
+vi.mock("../electronSession/appCache", () => ({ toggleAppCache: vi.fn() }));
 
 import { toggleAppCache } from "../electronSession/appCache";
 import { featureFlagChangeHandlers } from "./changeHandlers";
@@ -6,7 +6,7 @@ import { FeatureFlag } from "./flags";
 
 describe("featureFlagChangeHandlers", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it.each([

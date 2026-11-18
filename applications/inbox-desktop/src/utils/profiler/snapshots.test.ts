@@ -1,16 +1,17 @@
-import { describe, it, expect, beforeEach } from "@jest/globals";
+import { describe, it, expect, beforeEach, Mock } from "vitest";
 
-jest.mock("node:perf_hooks", () => ({
-    performance: { now: jest.fn() },
+vi.mock("node:perf_hooks", () => ({
+    performance: { now: vi.fn() },
 }));
 
-jest.mock("node:os", () => ({
-    cpus: jest.fn(),
-}));
+vi.mock("node:os", () => {
+    const cpus = vi.fn();
+    return { cpus, default: { cpus } };
+});
 
-jest.mock("electron", () => ({
+vi.mock("electron", () => ({
     app: {
-        getAppMetrics: jest.fn(),
+        getAppMetrics: vi.fn(),
     },
 }));
 
@@ -19,9 +20,9 @@ import os from "node:os";
 import { app } from "electron";
 import { SnapshotRecorder } from "./snapshots";
 
-const mockPerfNow = performance.now as jest.Mock;
-const mockCpus = os.cpus as jest.Mock;
-const mockGetAppMetrics = app.getAppMetrics as jest.Mock;
+const mockPerfNow = performance.now as Mock;
+const mockCpus = os.cpus as Mock;
+const mockGetAppMetrics = app.getAppMetrics as Mock;
 
 function makeCpu(user: number, sys: number, idle: number) {
     return { model: "Test CPU", speed: 3000, times: { user, nice: 0, sys, idle, irq: 0 } };

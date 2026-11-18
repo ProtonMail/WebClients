@@ -1,18 +1,19 @@
-jest.mock("electron", () => ({
-    app: { on: jest.fn(), isPackaged: true },
-    autoUpdater: { on: jest.fn() },
+import type { Mock } from "vitest";
+vi.mock("electron", () => ({
+    app: { on: vi.fn(), isPackaged: true },
+    autoUpdater: { on: vi.fn() },
 }));
 
-jest.mock("../utils/electronSession/partitions", () => ({
-    updateSession: jest.fn(),
-    appSession: jest.fn(),
+vi.mock("../utils/electronSession/partitions", () => ({
+    updateSession: vi.fn(),
+    appSession: vi.fn(),
 }));
 
-jest.mock("../utils/sentryReport");
+vi.mock("../utils/sentryReport");
 
-jest.mock("../utils/view/viewManagement", () => ({
-    getCalendarView: jest.fn(),
-    getMailView: jest.fn(),
+vi.mock("../utils/view/viewManagement", () => ({
+    getCalendarView: vi.fn(),
+    getMailView: vi.fn(),
 }));
 
 import { updateSession } from "../utils/electronSession/partitions";
@@ -20,12 +21,12 @@ import { sentryReport } from "../utils/sentryReport";
 import { getAvailableVersionsTestOnly, resetVersionFetchCounterTestOnly } from "./update";
 import { DESKTOP_PLATFORMS } from "@proton/shared/lib/constants";
 
-const mockFetch = jest.fn();
+const mockFetch = vi.fn();
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     resetVersionFetchCounterTestOnly();
-    (updateSession as jest.Mock).mockReturnValue({ fetch: mockFetch });
+    (updateSession as Mock).mockReturnValue({ fetch: mockFetch });
 });
 
 describe("getAvailableVersions consecutive failure threshold", () => {

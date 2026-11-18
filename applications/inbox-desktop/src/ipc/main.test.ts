@@ -1,3 +1,4 @@
+import type { Mock } from "vitest";
 import { IpcMainEvent, IpcMainInvokeEvent, ipcMain } from "electron";
 import { handleIPCCalls } from "./main";
 import { ipcLogger } from "../utils/log";
@@ -7,11 +8,11 @@ import { getLogs } from "../utils/log/getLogsIPC";
 import { getProfilerReports } from "../utils/profiler/reports";
 import { clearOAuthSession, startOAuthSession } from "../utils/oauthSession";
 
-jest.mock("electron", () => ({
-    ipcMain: { on: jest.fn(), handle: jest.fn() },
+vi.mock("electron", () => ({
+    ipcMain: { on: vi.fn(), handle: vi.fn() },
 }));
 
-jest.mock("../store/urlStore", () => ({
+vi.mock("../store/urlStore", () => ({
     getAppURL: () => ({
         account: "https://account.proton.me",
         mail: "https://mail.proton.me",
@@ -19,32 +20,32 @@ jest.mock("../store/urlStore", () => ({
     }),
 }));
 
-jest.mock("../utils/log", () => ({
-    ipcLogger: { info: jest.fn(), error: jest.fn(), warn: jest.fn(), debug: jest.fn() },
+vi.mock("../utils/log", () => ({
+    ipcLogger: { info: vi.fn(), error: vi.fn(), warn: vi.fn(), debug: vi.fn() },
 }));
-jest.mock("../utils/themes", () => ({ getTheme: jest.fn(() => "mocked-theme") }));
-jest.mock("../utils/appVersions", () => ({ storeAppVersion: jest.fn() }));
-jest.mock("../utils/log/getLogsIPC", () => ({ getLogs: jest.fn(async () => "logs") }));
-jest.mock("../utils/profiler/profiler", () => ({ profiler: { ipcMessage: jest.fn() } }));
-jest.mock("../utils/profiler/reports", () => ({ getProfilerReports: jest.fn(async () => []) }));
-jest.mock("../utils/sentryReport");
+vi.mock("../utils/themes", () => ({ getTheme: vi.fn(() => "mocked-theme") }));
+vi.mock("../utils/appVersions", () => ({ storeAppVersion: vi.fn() }));
+vi.mock("../utils/log/getLogsIPC", () => ({ getLogs: vi.fn(async () => "logs") }));
+vi.mock("../utils/profiler/profiler", () => ({ profiler: { ipcMessage: vi.fn() } }));
+vi.mock("../utils/profiler/reports", () => ({ getProfilerReports: vi.fn(async () => []) }));
+vi.mock("../utils/sentryReport");
 
-jest.mock("../store/settingsStore", () => ({}));
-jest.mock("../update/update", () => ({}));
-jest.mock("../utils/helpers", () => ({}));
-jest.mock("../utils/view/viewManagement", () => ({}));
-jest.mock("./notification", () => ({}));
-jest.mock("../store/installInfoStore", () => ({}));
-jest.mock("../store/userSettingsStore", () => ({}));
-jest.mock("../utils/protocol/default", () => ({}));
-jest.mock("../utils/metrics", () => ({}));
-jest.mock("../utils/telemetry", () => ({}));
-jest.mock("../utils/logout/logout", () => ({}));
-jest.mock("../utils/oauthSession", () => ({ startOAuthSession: jest.fn(), clearOAuthSession: jest.fn() }));
-jest.mock("../utils/openExternal/openExternal", () => ({}));
-jest.mock("../utils/openExternal/manager", () => ({}));
-jest.mock("../utils/urlRedirects/manager", () => ({}));
-jest.mock("../utils/auth/authPoller", () => ({}));
+vi.mock("../store/settingsStore", () => ({}));
+vi.mock("../update/update", () => ({}));
+vi.mock("../utils/helpers", () => ({}));
+vi.mock("../utils/view/viewManagement", () => ({}));
+vi.mock("./notification", () => ({}));
+vi.mock("../store/installInfoStore", () => ({}));
+vi.mock("../store/userSettingsStore", () => ({}));
+vi.mock("../utils/protocol/default", () => ({}));
+vi.mock("../utils/metrics", () => ({}));
+vi.mock("../utils/telemetry", () => ({}));
+vi.mock("../utils/logout/logout", () => ({}));
+vi.mock("../utils/oauthSession", () => ({ startOAuthSession: vi.fn(), clearOAuthSession: vi.fn() }));
+vi.mock("../utils/openExternal/openExternal", () => ({}));
+vi.mock("../utils/openExternal/manager", () => ({}));
+vi.mock("../utils/urlRedirects/manager", () => ({}));
+vi.mock("../utils/auth/authPoller", () => ({}));
 
 type Handler = (event: IpcMainEvent | IpcMainInvokeEvent, ...args: unknown[]) => unknown;
 
@@ -66,10 +67,7 @@ const UNTRUSTED_ORIGINS = [
 beforeAll(() => {
     handleIPCCalls();
 
-    for (const [channel, handler] of [
-        ...(ipcMain.on as jest.Mock).mock.calls,
-        ...(ipcMain.handle as jest.Mock).mock.calls,
-    ]) {
+    for (const [channel, handler] of [...(ipcMain.on as Mock).mock.calls, ...(ipcMain.handle as Mock).mock.calls]) {
         handlers[channel] = handler;
     }
 });

@@ -1,28 +1,29 @@
-jest.mock("../store/idStore", () => ({
-    getAppIDSync: jest.fn(() => ({ id: "test-id", hash: "test-hash", distribution: 0.5 })),
+import type { Mock } from "vitest";
+vi.mock("../store/idStore", () => ({
+    getAppIDSync: vi.fn(() => ({ id: "test-id", hash: "test-hash", distribution: 0.5 })),
 }));
-jest.mock("../store/settingsStore", () => ({
-    getSettings: jest.fn(() => ({ spellChecker: true })),
+vi.mock("../store/settingsStore", () => ({
+    getSettings: vi.fn(() => ({ spellChecker: true })),
 }));
-jest.mock("../store/boundsStore", () => ({
-    getWindowBounds: jest.fn(() => ({ zoom: 1, width: 800, height: 600 })),
+vi.mock("../store/boundsStore", () => ({
+    getWindowBounds: vi.fn(() => ({ zoom: 1, width: 800, height: 600 })),
 }));
-jest.mock("../store/urlStore", () => ({
-    getAppURL: jest.fn(() => ({
+vi.mock("../store/urlStore", () => ({
+    getAppURL: vi.fn(() => ({
         mail: "https://mail.proton.me",
         calendar: "https://calendar.proton.me",
         account: "https://account.proton.me",
     })),
 }));
-jest.mock("./view/viewManagement", () => ({
-    getMainWindow: jest.fn(() => ({ isMinimized: () => false })),
-    getCurrentViewID: jest.fn(() => "mail"),
-    getMailView: jest.fn(() => ({ webContents: { getURL: () => "https://mail.proton.me/inbox" } })),
-    getCalendarView: jest.fn(() => null),
-    getAccountView: jest.fn(() => null),
+vi.mock("./view/viewManagement", () => ({
+    getMainWindow: vi.fn(() => ({ isMinimized: () => false })),
+    getCurrentViewID: vi.fn(() => "mail"),
+    getMailView: vi.fn(() => ({ webContents: { getURL: () => "https://mail.proton.me/inbox" } })),
+    getCalendarView: vi.fn(() => null),
+    getAccountView: vi.fn(() => null),
 }));
-jest.mock("./log/getOSInfo", () => ({
-    getOSInfo: jest.fn(() => ({ cpuCount: 8 })),
+vi.mock("./log/getOSInfo", () => ({
+    getOSInfo: vi.fn(() => ({ cpuCount: 8 })),
 }));
 
 import { captureException, withScope } from "@sentry/electron/main";
@@ -32,25 +33,25 @@ const { reportMessage, reportException } = sentryReport;
 
 function makeMockScope() {
     return {
-        setExtras: jest.fn(),
-        setTags: jest.fn(),
-        setLevel: jest.fn(),
-        setContext: jest.fn(),
-        setFingerprint: jest.fn(),
+        setExtras: vi.fn(),
+        setTags: vi.fn(),
+        setLevel: vi.fn(),
+        setContext: vi.fn(),
+        setFingerprint: vi.fn(),
     };
 }
 
 describe("collectContext failure", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it("falls back to { contextCollectionFailed: true } when a getter throws", () => {
-        (getMainWindow as jest.Mock).mockImplementationOnce(() => {
+        (getMainWindow as Mock).mockImplementationOnce(() => {
             throw new Error("window not ready");
         });
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         reportException(new Error("crash"));
 
@@ -62,7 +63,7 @@ describe("collectContext failure", () => {
 
 describe("reportMessage", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it("calls captureException with correct level and centralized context", () => {
@@ -74,7 +75,7 @@ describe("reportMessage", () => {
 
     it("attaches additional tags when provided", () => {
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         reportMessage("test message", { tags: { viewID: "mail" } });
 
@@ -83,7 +84,7 @@ describe("reportMessage", () => {
 
     it("attaches error as extra context when provided", () => {
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         const error = new Error("underlying cause");
         reportMessage("operation failed", { error });
@@ -97,7 +98,7 @@ describe("reportMessage", () => {
 
     it("merges call-site extras with collected context", () => {
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         reportMessage("did-fail-load", {
             extras: { url: "https://mail.proton.me/inbox", errorDescription: "ERR_CONNECTION_REFUSED" },
@@ -114,7 +115,7 @@ describe("reportMessage", () => {
 
     it("defaults to error level when no level is specified", () => {
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         reportMessage("test");
 
@@ -123,7 +124,7 @@ describe("reportMessage", () => {
 
     it("sets fingerprint to the message string so each distinct message creates a separate Sentry issue", () => {
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         reportMessage("renderer unresponsive");
 
@@ -134,12 +135,12 @@ describe("reportMessage", () => {
 
 describe("reportException", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it("calls captureException with the error object", () => {
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         const error = new Error("crash");
         reportException(error);
@@ -149,7 +150,7 @@ describe("reportException", () => {
 
     it("includes centralized context in extras", () => {
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         reportException(new Error("crash"));
 
@@ -168,7 +169,7 @@ describe("reportException", () => {
 
     it("defaults to error level", () => {
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         reportException(new Error("crash"));
 
@@ -177,7 +178,7 @@ describe("reportException", () => {
 
     it("attaches tags when provided", () => {
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         reportException(new Error("crash"), { tags: { component: "autoUpdater" } });
 
@@ -186,7 +187,7 @@ describe("reportException", () => {
 
     it("includes error.name in fingerprint so same-message different-type errors create separate Sentry issues", () => {
         const mockScope = makeMockScope();
-        (withScope as jest.Mock).mockImplementation((cb) => cb(mockScope));
+        (withScope as Mock).mockImplementation((cb) => cb(mockScope));
 
         const error = new TypeError("request failed");
         reportException(error);

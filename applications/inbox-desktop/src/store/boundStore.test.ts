@@ -1,12 +1,13 @@
+import type { MockedFunction } from "vitest";
 import { BrowserWindow, Display, screen } from "electron";
 import { getWindowBounds, saveWindowBounds } from "./boundsStore";
 import { MockedStore } from "../utils/tests/electronStoreMock";
 
-jest.mock("../utils/view/windowBounds.ts", () => ({
+vi.mock("../utils/view/windowBounds.ts", () => ({
     ensureWindowIsVisible: () => {},
 }));
 
-jest.mock("../utils/view/viewManagement.ts", () => ({
+vi.mock("../utils/view/viewManagement.ts", () => ({
     ZOOM_FACTOR_LIST: [1],
     getZoom: () => 1,
 }));
@@ -34,7 +35,7 @@ describe("boundStore", () => {
         });
 
         it("detaults to the center of the nearest display", () => {
-            (screen.getDisplayNearestPoint as jest.MockedFn<typeof screen.getDisplayNearestPoint>).mockReturnValue({
+            (screen.getDisplayNearestPoint as MockedFunction<typeof screen.getDisplayNearestPoint>).mockReturnValue({
                 workArea: {
                     x: 123,
                     y: 456,
@@ -63,7 +64,7 @@ describe("boundStore", () => {
         });
 
         it("rounds to the nearest integer when centering the window", () => {
-            (screen.getDisplayNearestPoint as jest.MockedFn<typeof screen.getDisplayNearestPoint>).mockReturnValue({
+            (screen.getDisplayNearestPoint as MockedFunction<typeof screen.getDisplayNearestPoint>).mockReturnValue({
                 workArea: {
                     x: 123,
                     y: 456,
@@ -92,7 +93,7 @@ describe("boundStore", () => {
         });
 
         it("rounds to the nearest integer when centering the window", () => {
-            (screen.getDisplayNearestPoint as jest.MockedFn<typeof screen.getDisplayNearestPoint>).mockReturnValue({
+            (screen.getDisplayNearestPoint as MockedFunction<typeof screen.getDisplayNearestPoint>).mockReturnValue({
                 workArea: {
                     x: 123,
                     y: 456,
