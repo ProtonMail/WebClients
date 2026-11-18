@@ -13,6 +13,7 @@ import useLoading from '@proton/hooks/useLoading';
 import type { Currency } from '@proton/payments/core/interface';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import { ApiUsageModelStats } from './ApiUsageModelStats';
 import { formatTokenCount } from './apiKeysHelpers';
 import {
     type ApiMemberUsage,
@@ -58,6 +59,8 @@ const MemberUsageCard = ({
     currency: Currency;
     apiAccess: MemberApiAccess;
 }) => {
+    const [expanded, setExpanded] = useState(false);
+    const isExpanded = expanded && member.models.length > 0;
     return (
         <article className="api-usage-member-card rounded-xl border border-weak">
             <header className="api-usage-member-card__header flex flex-wrap items-start justify-space-between gap-4 md:flex-nowrap md:items-center">
@@ -84,15 +87,29 @@ const MemberUsageCard = ({
                         icon
                         shape="ghost"
                         size="small"
-                        disabled
-                        className="shrink-0"
-                        title={c('collider_2025: Info').t`Usage per model is not available yet.`}
+                        disabled={member.models.length === 0}
+                        className="api-usage-member-card__expand shrink-0"
+                        aria-expanded={isExpanded}
                         aria-label={c('collider_2025: Action').t`Show usage details for ${member.name}`}
+                        onClick={() => setExpanded(!expanded)}
                     >
                         <LumoIcon name="ChevronDown" size={16} />
                     </Button>
                 </div>
             </header>
+            {isExpanded && (
+                <div className="api-usage-models-grid mt-4">
+                    {member.models.map((usage) => (
+                        <ApiUsageModelStats
+                            key={usage.model}
+                            model={usage.model}
+                            inputTokens={usage.inputTokens}
+                            outputTokens={usage.outputTokens}
+                            formattedCost={getCostLabel(usage.cost, currency)}
+                        />
+                    ))}
+                </div>
+            )}
         </article>
     );
 };

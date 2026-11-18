@@ -53,10 +53,22 @@ const organizationMembers = [
     { ID: 'member-alice', Name: 'Alice', Role: MEMBER_ROLE.ORGANIZATION_ADMIN },
     { ID: 'member-bob', Name: 'Bob', Role: MEMBER_ROLE.ORGANIZATION_MEMBER },
 ];
+const modelUsage = (model: string, inputTokens: number, outputTokens: number, costMicros: number | null) => ({
+    ClientType: 'api',
+    Model: model,
+    InputTokens: inputTokens,
+    OutputTokens: outputTokens,
+    Calls: 1,
+    CostMicros: costMicros,
+});
 const memberUsageRows = [
-    { MemberID: 'member-alice', Totals: memberTotals(1_000_000, 2_500_000) },
-    { MemberID: 'member-bob', Totals: memberTotals(500_000, 1_250_000) },
-    { MemberID: null, Totals: memberTotals(100_000, 250_000) },
+    {
+        MemberID: 'member-alice',
+        Totals: memberTotals(1_000_000, 2_500_000),
+        Usage: [modelUsage('lumo-lite', 600_000, 25_000, 1_000_000), modelUsage('lumo-max', 400_000, 0, null)],
+    },
+    { MemberID: 'member-bob', Totals: memberTotals(500_000, 1_250_000), Usage: [] },
+    { MemberID: null, Totals: memberTotals(100_000, 250_000), Usage: [] },
 ];
 
 const setApiAccess = jest.fn();
@@ -156,9 +168,7 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         expect(getMetric('Input tokens')).toContain('3.5M');
         expect(getMetric('Output tokens')).toContain('3.0M');
         expect(screen.getByTestId('token-usage-chart')).toHaveAttribute('data-days', '30');
-        expect(screen.getByText('lumo-max', { selector: '.api-usage-model__name' }).parentElement).toHaveTextContent(
-            '$4.50'
-        );
+        expect(screen.getByRole('group', { name: 'lumo-max' })).toHaveTextContent('$4.50');
     });
 
     it('updates the usage for the selected period', () => {
@@ -332,7 +342,6 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         expect(screen.getByLabelText('Toggle API access for Bob')).not.toBeChecked();
         expect(screen.getByLabelText('Toggle API access for Bob')).toBeEnabled();
         expect(screen.queryByLabelText('Toggle API access for Former members')).not.toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Show usage details for Alice' })).toBeDisabled();
 
         fireEvent.click(screen.getByLabelText('Toggle API access for Bob'));
 
@@ -360,6 +369,53 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         const accessToggle = screen.getByLabelText('Toggle API access for Alice');
         expect(accessToggle).toBeDisabled();
         expect(accessToggle.closest('[title]')).toHaveAttribute('title', hint);
+    });
+
+    it('shows a member’s usage per model on demand', () => {
+        setup({ isOrgAdmin: true });
+        const alice = screen.getByText('Alice').closest('article') as HTMLElement;
+        const details = screen.getByRole('button', { name: 'Show usage details for Alice' });
+
+        expect(details).toHaveAttribute('aria-expanded', 'false');
+        expect(within(alice).queryByRole('group', { name: 'lumo-lite' })).not.toBeInTheDocument();
+
+        fireEvent.click(details);
+
+        expect(details).toHaveAttribute('aria-expanded', 'true');
+        const liteUsage = within(alice).getByRole('group', { name: 'lumo-lite' });
+        expect(liteUsage).toHaveTextContent(/Input600\.0k.*Output25\.0k.*Balance used\$1\.00/);
+        expect(within(alice).getByRole('group', { name: 'lumo-max' })).toHaveTextContent('Not priced yet');
+
+        fireEvent.click(details);
+
+        expect(within(alice).queryByRole('group', { name: 'lumo-lite' })).not.toBeInTheDocument();
+    });
+
+    it('offers usage per model only for a member who used a model', () => {
+        setup({ isOrgAdmin: true });
+
+        expect(screen.getByRole('button', { name: 'Show usage details for Alice' })).toBeEnabled();
+        expect(screen.getByRole('button', { name: 'Show usage details for Bob' })).toBeDisabled();
+    });
+
+    it('closes a member’s usage per model when the member no longer has any', () => {
+        setup({ isOrgAdmin: true });
+        const details = screen.getByRole('button', { name: 'Show usage details for Alice' });
+        fireEvent.click(details);
+        (useApiUsageMembers as jest.Mock).mockReturnValue({
+            rows: memberUsageRows.map((row) => ({ ...row, Usage: [] })),
+            isLoading: false,
+            error: false,
+        });
+
+        selectPeriod('Last 7 days');
+
+        expect(details).toHaveAttribute('aria-expanded', 'false');
+        expect(
+            within(screen.getByText('Alice').closest('article') as HTMLElement).queryByRole('group', {
+                name: 'lumo-lite',
+            })
+        ).not.toBeInTheDocument();
     });
 
     it('disables API access for a member whose access is not known', () => {

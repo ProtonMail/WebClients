@@ -97,7 +97,10 @@ export type ApiMemberUsage = {
     isCurrentMember: boolean;
     totalTokens: number;
     cost: number | null;
+    models: { model: string; inputTokens: number; outputTokens: number; cost: number | null }[];
 };
+
+const toCredits = (costMicros: number | null) => (costMicros === null ? null : costMicros / CREDIT_MICROS);
 
 const getMemberName = (memberId: string | null, member: Member | undefined) => {
     if (memberId === null) {
@@ -129,10 +132,10 @@ const NO_USAGE: UsageMemberRow['Totals'] = {
 const getIdleMemberRows = (rows: UsageMemberRow[], members: Member[]): UsageMemberRow[] =>
     members
         .filter(({ ID }) => !rows.some(({ MemberID }) => MemberID === ID))
-        .map(({ ID }) => ({ MemberID: ID, Totals: NO_USAGE }));
+        .map(({ ID }) => ({ MemberID: ID, Totals: NO_USAGE, Usage: [] }));
 
 export const getApiMemberUsage = (rows: UsageMemberRow[], members: Member[]): ApiMemberUsage[] =>
-    [...rows, ...getIdleMemberRows(rows, members)].map(({ MemberID, Totals }) => {
+    [...rows, ...getIdleMemberRows(rows, members)].map(({ MemberID, Totals, Usage }) => {
         const member = members.find(({ ID }) => ID === MemberID);
         return {
             id: MemberID ?? 'former-members',
@@ -140,7 +143,13 @@ export const getApiMemberUsage = (rows: UsageMemberRow[], members: Member[]): Ap
             role: getMemberRole(MemberID, member),
             isCurrentMember: member !== undefined,
             totalTokens: Totals.TokensIn + Totals.TokensInCached + Totals.TokensGenerated,
-            cost: Totals.CostMicros === null ? null : Totals.CostMicros / CREDIT_MICROS,
+            cost: toCredits(Totals.CostMicros),
+            models: Usage.map((entry) => ({
+                model: entry.Model,
+                inputTokens: entry.InputTokens,
+                outputTokens: entry.OutputTokens,
+                cost: toCredits(entry.CostMicros),
+            })),
         };
     });
 

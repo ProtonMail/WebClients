@@ -51,6 +51,7 @@ interface UsageTotals {
 export interface UsageMemberRow {
     MemberID: string | null;
     Totals: UsageTotals;
+    Usage: UsageEntry[];
 }
 
 export interface UsageMembersResponse {

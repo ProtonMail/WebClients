@@ -189,17 +189,13 @@ const ApiUsageOverviewContent = ({
 
             <div className="api-usage-models-grid">
                 {modelUsage.map((usage) => (
-                    <div key={usage.model} className="api-usage-model rounded-lg border border-weak">
-                        <span className={`api-usage-model__name api-usage-model__name--${usage.model} inline-flex`}>
-                            {usage.model}
-                        </span>
-                        <ApiUsageModelStats
-                            model={usage.model}
-                            inputTokens={usage.inputTokens}
-                            outputTokens={usage.outputTokens}
-                            formattedCost={getCostLabel(usage.cost, currency)}
-                        />
-                    </div>
+                    <ApiUsageModelStats
+                        key={usage.model}
+                        model={usage.model}
+                        inputTokens={usage.inputTokens}
+                        outputTokens={usage.outputTokens}
+                        formattedCost={getCostLabel(usage.cost, currency)}
+                    />
                 ))}
             </div>
         </div>
