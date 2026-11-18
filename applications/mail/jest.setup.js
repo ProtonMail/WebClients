@@ -137,3 +137,8 @@ jest.mock('./src/app/hooks/useShowBYOESpotlightModal', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
+
+jest.mock('./src/app/hooks/useShowBYOEInboxCleanupModal', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));

@@ -2,6 +2,9 @@ import { ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
 import type { Report, ReportSummary } from '@proton/activation/src/logic/reports/reports.interface';
 import type { Feature } from '@proton/features/interface';
+import { FeatureCode } from '@proton/features/interface';
+import { fetchFeatures } from '@proton/features/reducer';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
@@ -9,7 +12,8 @@ import {
     getNewsletterSubscription,
     unsubscribeNewsletterSubscription,
 } from '@proton/shared/lib/api/newsletterSubscription';
-import { HTTP_STATUS_CODE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { domIsBusy } from '@proton/shared/lib/busy/busy';
+import { HTTP_STATUS_CODE, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -19,6 +23,8 @@ import type {
     GetNewsletterSubscriptionsApiResponse,
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
+
+import type { MailDispatch } from '../store/store';
 
 const MAX_BYOE_INBOX_CLEANUP_SENDERS = 10;
 
@@ -205,4 +211,60 @@ export const getFinishedBYOEImportOutcome = ({
     }
 
     return latestOutcome;
+};
+
+/**
+ * Resolves once nothing is on screen, checking every second with no time limit, as `StartupModals` does.
+ * Stops checking and resolves when the signal aborts.
+ */
+export const waitForFreeScreen = (signal: AbortSignal) => {
+    return new Promise<void>((resolve) => {
+        if (!domIsBusy()) {
+            resolve();
+            return;
+        }
+
+        const intervalID = window.setInterval(() => {
+            if (!domIsBusy()) {
+                window.clearInterval(intervalID);
+                resolve();
+            }
+        }, SECOND);
+
+        signal.addEventListener('abort', () => {
+            window.clearInterval(intervalID);
+            resolve();
+        });
+    });
+};
+
+interface LoadSendersWhenFreeOptions {
+    dispatch: MailDispatch;
+    api: Api;
+    signal: AbortSignal;
+}
+
+/**
+ * Waits for a free screen, then loads the senders to offer, or resolves to `undefined` when aborted or no longer due.
+ * The value from `useFeature` is cached from page load and isn't updated by events, so another tab or device may have
+ * shown or cleared the cleanup since. It's read fresh from the server right before opening, so it isn't shown twice.
+ * The senders load last so the list is current when the window opens.
+ */
+export const loadSendersWhenFree = async ({ dispatch, api, signal }: LoadSendersWhenFreeOptions) => {
+    await waitForFreeScreen(signal);
+    if (signal.aborted) {
+        return undefined;
+    }
+
+    const features = await dispatch(fetchFeatures([FeatureCode.BYOEInboxCleanupModal], { cache: CacheType.None }));
+    if (signal.aborted || features[FeatureCode.BYOEInboxCleanupModal].Value !== true) {
+        return undefined;
+    }
+
+    const subscriptions = await getBYOEInboxCleanupSenders(api);
+    if (signal.aborted) {
+        return undefined;
+    }
+
+    return subscriptions;
 };

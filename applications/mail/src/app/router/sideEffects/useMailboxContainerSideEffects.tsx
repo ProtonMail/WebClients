@@ -10,6 +10,7 @@ import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import useInboxBadgeCount from '../../hooks/useInboxBadgeCount';
 import useInboxDesktopElementId from '../../hooks/useInboxDesktopElementId';
 import useMailtoHash from '../../hooks/useMailtoHash';
+import useShowBYOEInboxCleanupModal from '../../hooks/useShowBYOEInboxCleanupModal';
 import useShowBYOESpotlightModal from '../../hooks/useShowBYOESpotlightModal';
 import type { Element } from '../../models/element';
 
@@ -59,4 +60,6 @@ export const useMailboxContainerSideEffects = ({
     usePreLoadElements({ elements, labelID, loading });
 
     useShowBYOESpotlightModal();
+
+    useShowBYOEInboxCleanupModal();
 };

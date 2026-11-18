@@ -11,6 +11,7 @@ import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import useInboxBadgeCount from '../../hooks/useInboxBadgeCount';
 import useInboxDesktopElementId from '../../hooks/useInboxDesktopElementId';
 import useMailtoHash from '../../hooks/useMailtoHash';
+import useShowBYOEInboxCleanupModal from '../../hooks/useShowBYOEInboxCleanupModal';
 import { useMailboxContainerSideEffects } from './useMailboxContainerSideEffects';
 
 jest.mock('../../hooks/useMailtoHash', () => ({
@@ -100,6 +101,12 @@ describe('useMailboxContainerSideEffects', () => {
         callback();
 
         expect(handleCheckAll).toHaveBeenCalledWith(false);
+    });
+
+    it('runs the inbox cleanup check without the current folder', () => {
+        renderHook(() => useMailboxContainerSideEffects(props));
+
+        expect(useShowBYOEInboxCleanupModal).toHaveBeenCalledWith();
     });
 
     it('should pass correct parameters when props change', () => {
