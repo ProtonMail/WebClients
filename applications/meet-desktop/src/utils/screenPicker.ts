@@ -20,7 +20,7 @@ import { FeatureFlag } from "./flags/flags";
 import { getFeatureFlagManager } from "./flags/manager";
 import { isLinux, isMac, isWindows } from "./helpers";
 import { mainLogger } from "./log";
-import { getMainWindow } from "./view/viewManagement";
+import { getMainWindow, IGNORED_NET_ERROR_CODES } from "./view/viewManagement";
 
 declare const SCREEN_PICKER_WEBPACK_ENTRY: string;
 declare const SCREEN_PICKER_PRELOAD_WEBPACK_ENTRY: string;
@@ -305,7 +305,7 @@ export const pickScreenSource = async (audioRequested: boolean): Promise<ScreenP
         picker.webContents.ipc.on(SCREEN_PICKER_CHANNELS.cancel, () => finish(undefined));
         picker.on("closed", () => finish(undefined));
 
-        picker.webContents.once("did-finish-load", () => {
+        picker.webContents.on("did-finish-load", () => {
             const init: ScreenPickerInit = {
                 labels: getLabels(),
                 showAudioToggle: audioRequested && isWindows,
@@ -316,12 +316,18 @@ export const pickScreenSource = async (audioRequested: boolean): Promise<ScreenP
             sendSources();
             picker.show();
             picker.focus();
+            clearTimeout(refreshTimer);
             scheduleRefresh();
         });
 
-        picker.loadURL(SCREEN_PICKER_WEBPACK_ENTRY).catch((error) => {
-            mainLogger.error("Screen picker failed to load", error);
+        picker.webContents.on("did-fail-load", (_event, errorCode, errorDescription, _url, isMainFrame) => {
+            if (!isMainFrame || IGNORED_NET_ERROR_CODES.includes(errorCode)) {
+                return;
+            }
+            mainLogger.error("Screen picker failed to load", errorCode, errorDescription);
             finish(undefined);
         });
+
+        picker.loadURL(SCREEN_PICKER_WEBPACK_ENTRY).catch(() => {});
     });
 };

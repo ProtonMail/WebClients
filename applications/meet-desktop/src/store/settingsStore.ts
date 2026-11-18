@@ -11,6 +11,7 @@ export interface SettingsStore {
     releaseCategory?: RELEASE_CATEGORIES;
     rolloutProportion?: number;
     screenCapturePermissionRequested?: boolean;
+    locale?: string;
 }
 
 const defaultSettings = {

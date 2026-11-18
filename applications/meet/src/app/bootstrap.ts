@@ -61,6 +61,7 @@ import {
     holdGuestLoggerLock,
 } from './utils/meetLogger';
 import { openDesktopAppOnLoad } from './utils/openDesktopAppOnLoad';
+import { sendLocaleToDesktopApp } from './utils/sendLocaleToDesktopApp';
 import { startMeetingInfoPreload } from './utils/startMeetingInfoPreload';
 import { installWaitingRoomCallbackNamespaces } from './utils/wasmUtils';
 import { DirectMeetCoreClient } from './wasm/DirectMeetCoreClient';
@@ -192,7 +193,8 @@ const loadUserData = async (dispatch: MeetDispatch) => {
     dispatch(welcomeFlagsActions.initial(userSettings));
 
     bootstrap.enableTelemetryBasedOnUserSettings({ userSettings });
-    await bootstrap.loadLocales({ userSettings, locales });
+    const { localeCode } = await bootstrap.loadLocales({ userSettings, locales });
+    sendLocaleToDesktopApp(localeCode);
 
     return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope] };
 };
@@ -540,7 +542,7 @@ export const bootstrapGuestApp = async (
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
     const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
     const useMessageQueues = unleashClient.isEnabled(MEET_USE_MESSAGE_QUEUES_FLAG);
-    const [meetCoreClient] = await Promise.all([
+    const [meetCoreClient, , { localeCode }] = await Promise.all([
         measureLoadPhase(
             'wasmInitMs',
             initializeMeetCoreClient({
@@ -554,6 +556,7 @@ export const bootstrapGuestApp = async (
         measureLoadPhase('cryptoInitMs', bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient })),
         loadLocales({ locale: getBrowserLocale(), locales, userSettings: undefined }),
     ]);
+    sendLocaleToDesktopApp(localeCode);
     setWasmMode(meetCoreClient);
     bootstrap.onAbort(signal, () => meetCoreClient.dispose());
 
