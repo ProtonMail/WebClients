@@ -326,7 +326,7 @@
         "No ho torneu a mostrar"
       ],
       "Do not show again when I press": [
-        "No m'ho tornis a mostrar quan ho premi"
+        "No ho tornis a mostrar quan premi"
       ],
       "Don't show this again": [
         "No m'ho torneu a mostrar"
@@ -413,7 +413,7 @@
         "Torna enrere"
       ],
       "Go to today": [
-        "Vés a avui"
+        "Va a avui"
       ],
       "Hide": [
         "Amaga"
@@ -629,7 +629,7 @@
         "Esborra el membre"
       ],
       "Remove passkey": [
-        "Suprimeix la clau d'accés"
+        "Esborra la clau d'accés"
       ],
       "Rename": [
         "Canvia el nom"
@@ -650,7 +650,7 @@
         "Restableix"
       ],
       "Reset filters": [
-        "Restablir els filtres"
+        "Restableix els filtres"
       ],
       "Reset history": [
         "Restableix l'historial"
@@ -2311,8 +2311,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2690,7 +2689,7 @@
         "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de còpia de seguretat."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
-        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya addicional."
+        "Per a iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya addicional."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la segona contrasenya."
@@ -3265,7 +3264,7 @@
         "Tots els elements"
       ],
       "Allow viewers to see passwords": [
-        "Permeteu que els espectadors vegin les contrasenyes"
+        "Permet que els lectors vegin les contrasenyes"
       ],
       "Alphabetical": [
         "Alfabètic"
@@ -3514,7 +3513,7 @@
         "Caduca en"
       ],
       "Expiry Date": [
-        "Data d'expiració"
+        "Data de caducitat"
       ],
       "Export": [
         "Exporta"
@@ -3763,7 +3762,7 @@
         "Estableix tots com a editors"
       ],
       "Make all managers": [
-        "Defineix tots com a gestor"
+        "Defineix tots com a gestors"
       ],
       "Make all viewers": [
         "Estableix tots com a visualitzadors"
@@ -5115,7 +5114,7 @@
         "Caixes fortes ocultes"
       ],
       "Hide passwords from viewers?": [
-        "Voleu amagar les contrasenyes als espectadors?"
+        "Voleu amagar les contrasenyes per als lectors?"
       ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"

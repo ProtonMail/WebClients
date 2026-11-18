@@ -828,6 +828,21 @@
       ],
       "Your password manager is not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
+      ],
+      "Cancel bulk selection": [
+        "Отменить массовый выбор"
+      ],
+      "Open item": [
+        "Открыть элемент"
+      ],
+      "Remove passkey": [
+        "Удалить ключ доступа"
+      ],
+      "Sign in in the app instead": [
+        "Вместо этого войдите в приложение"
+      ],
+      "Toggle section": [
+        "Переключить раздел"
       ]
     },
     "Activity": {
@@ -1514,6 +1529,24 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Биометрическая аутентификация отменена."
+      ],
+      "Failed to delete folder": [
+        "Не удалось удалить папку",
+        "Не удалось удалить папки",
+        "Не удалось удалить папки",
+        "Не удалось удалить папки"
+      ],
+      "Failed to update folder": [
+        "Не удалось обновить папку"
+      ],
+      "Folder name does not match": [
+        "Название папки не совпадает"
+      ],
+      "This invite is no longer available": [
+        "Это приглашение больше недоступно"
       ]
     },
     "Error message": {
@@ -2254,9 +2287,6 @@
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
         "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
@@ -2957,6 +2987,45 @@
       ],
       "Your session could not be authorized.": [
         "Ваш сеанс не может быть авторизован."
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Папка \"${ payload.folder.name }\" создана"
+      ],
+      "Folder deleted": [
+        "Папка удалена"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Папка переименована в \"${ payload.folder.name }\""
+      ],
+      "Only aliases are shown": [
+        "Отображаются только псевдонимы"
+      ],
+      "Only cards are shown": [
+        "Отображаются только карты"
+      ],
+      "Only custom items are shown": [
+        "Отображаются только пользовательские элементы"
+      ],
+      "Only identities are shown": [
+        "Отображаются только личные данные"
+      ],
+      "Only logins are shown": [
+        "Отображаются только логины"
+      ],
+      "Only notes are shown": [
+        "Отображаются только заметки"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Для запуска приложения ${ PASS_APP_NAME } в режиме офлайн потребуется ваш дополнительный пароль."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "Для настройки разблокировки по биометрии ${ PASS_APP_NAME } требуется новое разрешение для браузера."
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "В вашей организации запрещено использование кодов 2FA, хранящихся в ${ PASS_APP_NAME }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "В вашей организации запрещено использование ключей доступа, хранящихся в ${ PASS_APP_NAME }"
       ]
     },
     "Keyboard key": {
@@ -4242,6 +4311,15 @@
       ],
       "ZIP or Postal code": [
         "ZIP-код или почтовый индекс"
+      ],
+      "Confirm folder name": [
+        "Подтвердите название папки"
+      ],
+      "Create a folder": [
+        "Создать папку"
+      ],
+      "Folders": [
+        "Папки"
       ]
     },
     "Link": {
@@ -4588,6 +4666,12 @@
       ],
       "Used on ${ url }": [
         "Использовать на ${ url }"
+      ],
+      "Folder name": [
+        "Название папки"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Введите \"${ name }\", чтобы подтвердить удаление"
       ]
     },
     "Result": {
@@ -4596,6 +4680,12 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Этот URL НЕ будет заблокирован для автозаполнения"
+      ],
+      "URL doesn't match the rule": [
+        "URL не соответствует правилу"
+      ],
+      "URL matches the rule": [
+        "URL соответствует правилу"
       ]
     },
     "Security Center - Info": {
@@ -5339,6 +5429,36 @@
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонима.",
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов.",
         "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов."
+      ],
+      "Create folder in \"${ vaultName }\"": [
+        "Создать папку в \"${ vaultName }\""
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Создать подпапку в \"${ folderName }\""
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Удалить папку \"${ name }\"?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Удалить хранилище \"${ name }\"?"
+      ],
+      "Enable offline mode": [
+        "Включить режим офлайн"
+      ],
+      "Move all items?": [
+        "Переместить все элементы?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Переместить элемент в \"${ target }\""
+      ],
+      "Rename folder": [
+        "Переименовать папку"
+      ],
+      "Reused password": [
+        "Повторно использованный пароль"
+      ],
+      "Your folder is empty": [
+        "Папка пуста"
       ]
     },
     "Title_cloned_item": {
@@ -5433,7 +5553,7 @@
         "Псевдонимы в корзине будут продолжать пересылать письма."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
-        "Все ваши объекты, попавшие в корзину, будут удалены безвозвратно. Отменить это действие невозможно."
+        "Все ваши элементы, попавшие в корзину, будут удалены безвозвратно. Отменить это действие невозможно."
       ],
       "An error occurred while exporting your data": [
         "При экспорте данных произошла ошибка"
@@ -5716,6 +5836,26 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Все элементы в этой папке, включая ее подпапки, будут удалены. Отменить это действие невозможно."
+      ],
+      "Folder name is required": [
+        "Название папки обязательно"
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Хранилище \"${ name }\" и все его элементы будут безвозвратно удалены. Отменить это действие невозможно."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Вы достигли максимального уровня вложенности папок"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Вы достигли максимального количества папок в этом хранилище"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Приложение ${ appName } для ПК"
       ]
     }
   }
