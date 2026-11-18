@@ -101,23 +101,11 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => (
     </div>
 );
 
-export const App = () => {
+const MeetApp = () => {
     const isGuest = getIsGuestFromUrl();
-
-    const meetThemeStyle = <style id="meet-dark-theme">{meetTheme.toString()}</style>;
-
-    if (!isWasmSupported()) {
-        return (
-            <>
-                {meetThemeStyle}
-                <WasmUnsupportedError />
-            </>
-        );
-    }
 
     return (
         <ProtonApp config={config}>
-            {meetThemeStyle}
             <div className={clsx('w-full h-full', isElectronApp ? 'pt-4' : '')}>
                 {isElectronApp && isMac() ? (
                     <div
@@ -150,3 +138,11 @@ export const App = () => {
         </ProtonApp>
     );
 };
+
+export const App = () => (
+    <>
+        {isWasmSupported() ? <MeetApp /> : <WasmUnsupportedError />}
+        {/* After ProtonApp, so its variables override the theme-root style ThemeProvider renders */}
+        <style id="meet-dark-theme">{meetTheme.toString()}</style>
+    </>
+);
