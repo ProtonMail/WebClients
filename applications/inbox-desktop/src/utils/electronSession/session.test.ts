@@ -1,4 +1,4 @@
-import { describe, expect } from "@jest/globals";
+import { describe, expect } from "vitest";
 import {
     destroyFeatureFlagManagerTest,
     getFeatureFlagManager,
@@ -6,27 +6,27 @@ import {
 } from "../flags/manager";
 import { FeatureFlag } from "../flags/flags";
 
-jest.mock("../../store/safeStore/safeStore", () => ({
+vi.mock("../../store/safeStore/safeStore", () => ({
     SafeStore: class {
-        get = jest.fn();
-        set = jest.fn();
-        delete = jest.fn();
+        get = vi.fn();
+        set = vi.fn();
+        delete = vi.fn();
     },
 }));
 
-jest.mock("../log", () => ({
+vi.mock("../log", () => ({
     flagManagerLogger: {
-        info: jest.fn(),
-        debug: jest.fn(),
-        error: jest.fn(),
-        warn: jest.fn(),
+        info: vi.fn(),
+        debug: vi.fn(),
+        error: vi.fn(),
+        warn: vi.fn(),
     },
 }));
 
-const mockExecuteJavaScript = jest.fn();
-const mockGetMailView = jest.fn();
+const mockExecuteJavaScript = vi.fn();
+const mockGetMailView = vi.fn();
 
-jest.mock("../view/viewManagement", () => ({
+vi.mock("../view/viewManagement", () => ({
     getMailView: () => mockGetMailView(),
 }));
 
@@ -57,15 +57,15 @@ describe("retrieve", () => {
 
     beforeEach(() => {
         destroyFeatureFlagManagerTest();
-        jest.clearAllMocks();
-        jest.useFakeTimers();
+        vi.clearAllMocks();
+        vi.useFakeTimers();
 
         mockStore = {
-            get: jest.fn().mockReturnValue({
+            get: vi.fn().mockReturnValue({
                 flags: {},
                 lastUpdated: 0,
             }),
-            set: jest.fn(),
+            set: vi.fn(),
         };
 
         mockGetMailView.mockReturnValue({
@@ -96,7 +96,7 @@ describe("retrieve", () => {
         expect(manager.isEnabled(FeatureFlag.APPVERSION_EXTENSION_DISABLED)).toBeTruthy();
 
         mockExecuteJavaScript.mockResolvedValue([TEST_DISABLED_FLAG]);
-        jest.advanceTimersByTime(pollInterval);
+        vi.advanceTimersByTime(pollInterval);
         await Promise.resolve();
 
         await mockExecuteJavaScript.mock.results[0].value;

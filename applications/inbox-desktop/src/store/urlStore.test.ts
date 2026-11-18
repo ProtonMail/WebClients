@@ -1,37 +1,38 @@
-const mockStoreGet = jest.fn();
-const mockApp = { isPackaged: true };
+const { mockStoreGet, mockApp } = vi.hoisted(() => ({
+    mockStoreGet: vi.fn(),
+    mockApp: { isPackaged: true },
+}));
 
-jest.mock("electron", () => ({
+vi.mock("electron", () => ({
     app: mockApp,
 }));
 
-jest.mock("./safeStore/safeStore", () => ({
-    SafeStore: jest.fn().mockImplementation(() => ({
-        get: mockStoreGet,
-    })),
+vi.mock("./safeStore/safeStore", () => ({
+    SafeStore: vi.fn(function () {
+        return { get: mockStoreGet };
+    }),
 }));
 
-jest.mock("./settingsStore", () => ({
-    updateSettings: jest.fn(),
+vi.mock("./settingsStore", () => ({
+    updateSettings: vi.fn(),
 }));
 
-jest.mock("../utils/log", () => ({
-    mainLogger: { error: jest.fn() },
+vi.mock("../utils/log", () => ({
+    mainLogger: { error: vi.fn() },
 }));
 
 describe("getAppURL / overrideURL validation", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockApp.isPackaged = true;
         delete process.env.BASE_LOCAL_URL;
     });
 
-    function getAppURLWithOverride(overrideURL: unknown) {
+    async function getAppURLWithOverride(overrideURL: unknown) {
         mockStoreGet.mockReturnValue(overrideURL);
-        jest.resetModules();
+        vi.resetModules();
         mockStoreGet.mockReturnValue(overrideURL);
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
-        const { getAppURL } = require("./urlStore");
+        const { getAppURL } = await import("./urlStore");
         return getAppURL();
     }
 
@@ -86,8 +87,8 @@ describe("getAppURL / overrideURL validation", () => {
         },
     ];
 
-    test.each(legitimateOverrides)("accepts $name", ({ value }) => {
-        expect(getAppURLWithOverride(value)).toEqual(value);
+    test.each(legitimateOverrides)("accepts $name", async ({ value }) => {
+        expect(await getAppURLWithOverride(value)).toEqual(value);
     });
 
     const maliciousOverrides = [
@@ -149,16 +150,15 @@ describe("getAppURL / overrideURL validation", () => {
         },
     ];
 
-    test.each(maliciousOverrides)("rejects $name and falls back to defaultAppURL", ({ value }) => {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
-        const { defaultAppURL } = require("./urlStore");
-        expect(getAppURLWithOverride(value)).toEqual(defaultAppURL);
+    test.each(maliciousOverrides)("rejects $name and falls back to defaultAppURL", async ({ value }) => {
+        const { defaultAppURL } = await import("./urlStore");
+        expect(await getAppURLWithOverride(value)).toEqual(defaultAppURL);
     });
 });
 
 describe("getAppURL / BASE_LOCAL_URL gating", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockApp.isPackaged = true;
         delete process.env.BASE_LOCAL_URL;
     });
@@ -168,7 +168,7 @@ describe("getAppURL / BASE_LOCAL_URL gating", () => {
         delete process.env.PLAYWRIGHT_TEST;
     });
 
-    function getAppURLWithLocalEnv(isPackaged: boolean, baseLocalUrl: string, playwrightTest = false) {
+    async function getAppURLWithLocalEnv(isPackaged: boolean, baseLocalUrl: string, playwrightTest = false) {
         mockApp.isPackaged = isPackaged;
         process.env.BASE_LOCAL_URL = baseLocalUrl;
         if (playwrightTest) {
@@ -177,30 +177,28 @@ describe("getAppURL / BASE_LOCAL_URL gating", () => {
             delete process.env.PLAYWRIGHT_TEST;
         }
         mockStoreGet.mockReturnValue(undefined);
-        jest.resetModules();
+        vi.resetModules();
         mockApp.isPackaged = isPackaged;
         mockStoreGet.mockReturnValue(undefined);
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
-        const { getAppURL } = require("./urlStore");
+        const { getAppURL } = await import("./urlStore");
         return getAppURL();
     }
 
-    test("ignores BASE_LOCAL_URL in a packaged build, even when an attacker sets it", () => {
-        // eslint-disable-next-line @typescript-eslint/no-require-imports
-        const { defaultAppURL } = require("./urlStore");
-        expect(getAppURLWithLocalEnv(true, "attacker.com")).toEqual(defaultAppURL);
+    test("ignores BASE_LOCAL_URL in a packaged build, even when an attacker sets it", async () => {
+        const { defaultAppURL } = await import("./urlStore");
+        expect(await getAppURLWithLocalEnv(true, "attacker.com")).toEqual(defaultAppURL);
     });
 
-    test("honors BASE_LOCAL_URL in a packaged playwright test build", () => {
-        expect(getAppURLWithLocalEnv(true, "hutton.proton.black", true)).toEqual({
+    test("honors BASE_LOCAL_URL in a packaged playwright test build", async () => {
+        expect(await getAppURLWithLocalEnv(true, "hutton.proton.black", true)).toEqual({
             account: "https://account.hutton.proton.black",
             mail: "https://mail.hutton.proton.black",
             calendar: "https://calendar.hutton.proton.black",
         });
     });
 
-    test("honors BASE_LOCAL_URL in an unpackaged (dev) build", () => {
-        expect(getAppURLWithLocalEnv(false, "proton.dev:8443")).toEqual({
+    test("honors BASE_LOCAL_URL in an unpackaged (dev) build", async () => {
+        expect(await getAppURLWithLocalEnv(false, "proton.dev:8443")).toEqual({
             account: "https://account.proton.dev:8443",
             mail: "https://mail.proton.dev:8443",
             calendar: "https://calendar.proton.dev:8443",

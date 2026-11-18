@@ -1,10 +1,10 @@
-import { describe, it, expect, beforeEach } from "@jest/globals";
+import { describe, it, expect, beforeEach, Mock } from "vitest";
 
-jest.mock("node:perf_hooks", () => ({
-    performance: { now: jest.fn() },
+vi.mock("node:perf_hooks", () => ({
+    performance: { now: vi.fn() },
 }));
 
-jest.mock("../../store/urlStore", () => ({
+vi.mock("../../store/urlStore", () => ({
     getAppURL: () => ({
         mail: "https://mail.proton.me",
         calendar: "https://calendar.proton.me",
@@ -24,23 +24,23 @@ let onResponseStarted: (details: MockRequestDetails) => void;
 let onCompleted: (details: MockRequestDetails) => void;
 let onErrorOccurred: (details: MockRequestDetails) => void;
 
-jest.mock("../electronSession/webRequestRouter", () => ({
+vi.mock("../electronSession/webRequestRouter", () => ({
     webRequestRouter: {
-        onBeforeRequest: jest.fn((cb: typeof onBeforeRequest) => {
+        onBeforeRequest: vi.fn((cb: typeof onBeforeRequest) => {
             onBeforeRequest = cb;
-            return jest.fn();
+            return vi.fn();
         }),
-        onResponseStarted: jest.fn((cb: typeof onResponseStarted) => {
+        onResponseStarted: vi.fn((cb: typeof onResponseStarted) => {
             onResponseStarted = cb;
-            return jest.fn();
+            return vi.fn();
         }),
-        onCompleted: jest.fn((cb: typeof onCompleted) => {
+        onCompleted: vi.fn((cb: typeof onCompleted) => {
             onCompleted = cb;
-            return jest.fn();
+            return vi.fn();
         }),
-        onErrorOccurred: jest.fn((cb: typeof onErrorOccurred) => {
+        onErrorOccurred: vi.fn((cb: typeof onErrorOccurred) => {
             onErrorOccurred = cb;
-            return jest.fn();
+            return vi.fn();
         }),
     },
 }));
@@ -48,7 +48,7 @@ jest.mock("../electronSession/webRequestRouter", () => ({
 import { performance } from "node:perf_hooks";
 import { StartupRequestRecorder } from "./startupRequests";
 
-const mockPerfNow = performance.now as jest.Mock;
+const mockPerfNow = performance.now as Mock;
 
 let requestId = 0;
 let recorder: StartupRequestRecorder;

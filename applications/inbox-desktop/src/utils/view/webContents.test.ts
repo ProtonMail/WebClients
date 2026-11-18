@@ -5,15 +5,15 @@ import { openExternalRedirect } from "../openExternal/openExternal";
 import { handleWebContents } from "./webContents";
 import { showView } from "./viewManagement";
 
-jest.mock("../../store/urlStore", () => ({
+vi.mock("../../store/urlStore", () => ({
     getAppURL: () => ({
         account: "https://account.proton.me",
         mail: "https://mail.proton.me",
         calendar: "https://calendar.proton.me",
     }),
 }));
-jest.mock("../log", () => {
-    const logger = { info: jest.fn(), debug: jest.fn(), warn: jest.fn(), error: jest.fn() };
+vi.mock("../log", () => {
+    const logger = { info: vi.fn(), debug: vi.fn(), warn: vi.fn(), error: vi.fn() };
     return {
         mainLogger: logger,
         viewLogger: () => logger,
@@ -22,15 +22,15 @@ jest.mock("../log", () => {
         urlRedirectsLogger: logger,
     };
 });
-jest.mock("./viewManagement", () => ({
-    getCurrentView: jest.fn(() => null),
-    getWebContentsViewName: jest.fn(() => null),
-    showView: jest.fn(),
+vi.mock("./viewManagement", () => ({
+    getCurrentView: vi.fn(() => null),
+    getWebContentsViewName: vi.fn(() => null),
+    showView: vi.fn(),
 }));
-jest.mock("../../ipc/notification", () => ({}));
-jest.mock("../sentryReport", () => ({}));
-jest.mock("../openExternal/openExternal", () => ({ openExternalRedirect: jest.fn() }));
-jest.mock("./utils/stuckViewTracker", () => ({}));
+vi.mock("../../ipc/notification", () => ({}));
+vi.mock("../sentryReport", () => ({}));
+vi.mock("../openExternal/openExternal", () => ({ openExternalRedirect: vi.fn() }));
+vi.mock("./utils/stuckViewTracker", () => ({}));
 
 type Listener = (...args: unknown[]) => unknown;
 
@@ -71,7 +71,7 @@ const createHandledWebContents = () => {
         emit,
         openWindow: (url: string) => windowOpenHandler({ url }),
         navigate: (url: string) => {
-            const details = { url, preventDefault: jest.fn() };
+            const details = { url, preventDefault: vi.fn() };
             emit("will-navigate", details);
             return details;
         },
@@ -93,7 +93,7 @@ const openOAuthPopup = () => {
 describe("handleWebContents OAuth windows", () => {
     afterEach(() => {
         clearOAuthSession(SESSION_ID);
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it("opens a URL matching an active OAuth session in a sandboxed window", () => {
@@ -122,9 +122,9 @@ describe("handleWebContents OAuth windows", () => {
     });
 
     it("lets the popup follow a multi-hop SSO chain", () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         const { popup } = openOAuthPopup();
-        jest.advanceTimersByTime(10_000);
+        vi.advanceTimersByTime(10_000);
 
         const navigations = [
             "https://accounts.google.com/signin",

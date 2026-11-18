@@ -1,24 +1,24 @@
 import { VersionFile } from "@proton/shared/lib/desktop/DesktopVersion";
 import { expectGetNewUpdate } from "./update.test.utils";
 
-jest.mock("../utils/view/viewManagement", () => ({
+vi.mock("../utils/view/viewManagement", () => ({
     getCalendarView: () => {},
     getMailView: () => {},
 }));
 
-jest.mock("electron", () => ({
-    app: { on: jest.fn(), isPackaged: true },
+vi.mock("electron", () => ({
+    app: { on: vi.fn(), isPackaged: true },
     autoUpdater: {
         on: () => {},
     },
 }));
 
-const mockGetOSVersion = jest.fn();
-const mockIsMac = jest.fn();
+const mockGetOSVersion = vi.fn();
+const mockIsMac = vi.fn();
 
-jest.mock("../utils/helpers", () => ({
-    isMacMockable: jest.fn((...args) => mockIsMac(...args)),
-    getOSVersion: jest.fn((...args) => mockGetOSVersion(...args)),
+vi.mock("../utils/helpers", () => ({
+    isMacMockable: vi.fn((...args) => mockIsMac(...args)),
+    getOSVersion: vi.fn((...args) => mockGetOSVersion(...args)),
 }));
 
 const availableVersionsWithMinimumOsVersion: VersionFile = {
@@ -98,7 +98,7 @@ const availableVersionsWithNoMinimumOsVersion: VersionFile = {
 
 describe("MinimumOsVersion", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockIsMac.mockReturnValue(true);
         mockGetOSVersion.mockReturnValue("15.0.0");
     });
@@ -236,7 +236,7 @@ describe("MinimumOsVersion", () => {
 
 describe("MinimumOsVersion With Kill switch enabled", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockIsMac.mockReturnValue(true);
         mockGetOSVersion.mockReturnValue("15.0.0");
     });

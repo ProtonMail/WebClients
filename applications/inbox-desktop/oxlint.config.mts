@@ -33,14 +33,14 @@ const inboxDesktopMainProcessDevDependencies = withLintStagedPaths([
     "src/macos/**",
     "src/debug/**",
     "src/__mocks__/**",
-    "jest.*.ts",
+    "vitest.*.ts",
 ]);
 
 /** Build/config entry points that import devDependencies. */
 const inboxDesktopDevDependencies = [
     ...extraneousDependenciesDevDependencies,
     ...inboxDesktopMainProcessDevDependencies,
-    ...withLintStagedPaths(["forge.config.ts", "webpack.*.ts", "jest.config.ts", "jest.setup.ts", "tasks/**"]),
+    ...withLintStagedPaths(["forge.config.ts", "webpack.*.ts", "vitest.config.mts", "vitest.setup.ts", "tasks/**"]),
 ];
 
 const config = createOxlintConfig({

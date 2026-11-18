@@ -1,47 +1,53 @@
-import { describe, it, expect, beforeEach } from "@jest/globals";
+import { describe, it, expect, beforeEach, Mock, MockedClass } from "vitest";
 
-jest.mock("node:perf_hooks", () => ({
-    performance: { now: jest.fn() },
-    monitorEventLoopDelay: jest.fn(() => ({
-        enable: jest.fn(),
-        disable: jest.fn(),
-        percentile: jest.fn(() => 0),
+vi.mock("node:perf_hooks", () => ({
+    performance: { now: vi.fn() },
+    monitorEventLoopDelay: vi.fn(() => ({
+        enable: vi.fn(),
+        disable: vi.fn(),
+        percentile: vi.fn(() => 0),
         max: 0,
     })),
 }));
 
-jest.mock("../../store/settingsStore", () => ({
-    getSettings: jest.fn(),
+vi.mock("../../store/settingsStore", () => ({
+    getSettings: vi.fn(),
 }));
 
-jest.mock("../log", () => ({
-    profilerLogger: { info: jest.fn(), error: jest.fn() },
+vi.mock("../log", () => ({
+    profilerLogger: { info: vi.fn(), error: vi.fn() },
 }));
 
-jest.mock("./snapshots", () => ({
-    SnapshotRecorder: jest.fn().mockImplementation(() => ({
-        captureSystemMemory: jest.fn(),
-        captureProcessSnapshot: jest.fn(),
-        buildSystemResourceUsage: jest.fn(),
-    })),
+vi.mock("./snapshots", () => ({
+    SnapshotRecorder: vi.fn(function () {
+        return {
+            captureSystemMemory: vi.fn(),
+            captureProcessSnapshot: vi.fn(),
+            buildSystemResourceUsage: vi.fn(),
+        };
+    }),
 }));
 
-jest.mock("./ipc", () => ({
-    IpcRecorder: jest.fn().mockImplementation(() => ({
-        ipcMessage: jest.fn(),
-        closeIpcWindow: jest.fn(),
-        build: jest.fn(),
-    })),
+vi.mock("./ipc", () => ({
+    IpcRecorder: vi.fn(function () {
+        return {
+            ipcMessage: vi.fn(),
+            closeIpcWindow: vi.fn(),
+            build: vi.fn(),
+        };
+    }),
 }));
 
 const mockMainFrameFirstByteMs = new Map<string, number>();
-jest.mock("./startupRequests", () => ({
-    StartupRequestRecorder: jest.fn().mockImplementation(() => ({
-        closeResourceWindow: jest.fn(),
-        mainFrameFirstByteMs: mockMainFrameFirstByteMs,
-        buildResources: jest.fn(),
-        cleanup: jest.fn(),
-    })),
+vi.mock("./startupRequests", () => ({
+    StartupRequestRecorder: vi.fn(function () {
+        return {
+            closeResourceWindow: vi.fn(),
+            mainFrameFirstByteMs: mockMainFrameFirstByteMs,
+            buildResources: vi.fn(),
+            cleanup: vi.fn(),
+        };
+    }),
 }));
 
 import { performance } from "node:perf_hooks";
@@ -50,19 +56,19 @@ import { profiler, profilerTestOnly } from "./profiler";
 import { SnapshotRecorder } from "./snapshots";
 import { IpcRecorder } from "./ipc";
 
-const MockSnapshotRecorder = SnapshotRecorder as jest.MockedClass<typeof SnapshotRecorder>;
-const MockIpcRecorder = IpcRecorder as jest.MockedClass<typeof IpcRecorder>;
+const MockSnapshotRecorder = SnapshotRecorder as MockedClass<typeof SnapshotRecorder>;
+const MockIpcRecorder = IpcRecorder as MockedClass<typeof IpcRecorder>;
 
-const mockPerfNow = performance.now as jest.Mock;
-const mockGetSettings = getSettings as jest.Mock;
+const mockPerfNow = performance.now as Mock;
+const mockGetSettings = getSettings as Mock;
 
 describe("profiler — buildStartup", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockPerfNow.mockReset();
         mockGetSettings.mockReturnValue({ profilingEnabled: true, profilingMode: "warm" });
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (process as any).getCreationTime = jest.fn().mockReturnValue(null);
+        (process as any).getCreationTime = vi.fn().mockReturnValue(null);
         mockMainFrameFirstByteMs.clear();
         profilerTestOnly.resetAll();
         profiler.init(Date.now(), 0);
@@ -71,7 +77,7 @@ describe("profiler — buildStartup", () => {
     it("reports all 12 phases correctly when every mark and the mail first byte are present", () => {
         // Re-init so getCreationTime → forkToIife = 100ms (process started 100ms before IIFE)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (process as any).getCreationTime = jest.fn().mockReturnValue(Date.now() - 100);
+        (process as any).getCreationTime = vi.fn().mockReturnValue(Date.now() - 100);
         profiler.init(Date.now(), 0);
 
         mockPerfNow.mockReturnValueOnce(100);
@@ -211,11 +217,11 @@ describe("profiler — buildStartup", () => {
 
 describe("profiler — mark() side effects", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockPerfNow.mockReset();
         mockGetSettings.mockReturnValue({ profilingEnabled: true, profilingMode: "warm" });
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (process as any).getCreationTime = jest.fn().mockReturnValue(null);
+        (process as any).getCreationTime = vi.fn().mockReturnValue(null);
         mockMainFrameFirstByteMs.clear();
         profilerTestOnly.resetAll();
         profiler.init(Date.now(), 0);

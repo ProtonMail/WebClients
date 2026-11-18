@@ -1,36 +1,37 @@
+import type { Mock, Mocked } from "vitest";
 import { EventEmitter } from "node:events";
 import { resolve } from "node:path";
 
-jest.mock("electron", () => ({
+vi.mock("electron", () => ({
     app: {
-        getPath: jest.fn().mockReturnValue("C:\\temp"),
-        quit: jest.fn(),
+        getPath: vi.fn().mockReturnValue("C:\\temp"),
+        quit: vi.fn(),
     },
 }));
 
-jest.mock("../../store/safeStore/safeStore", () => ({
+vi.mock("../../store/safeStore/safeStore", () => ({
     SafeStore: class {
-        get = jest.fn();
-        set = jest.fn();
-        delete = jest.fn();
+        get = vi.fn();
+        set = vi.fn();
+        delete = vi.fn();
     },
 }));
 
-jest.mock("../log", () => ({
-    protocolLogger: { info: jest.fn(), error: jest.fn(), log: jest.fn(), debug: jest.fn(), warn: jest.fn() },
+vi.mock("../log", () => ({
+    protocolLogger: { info: vi.fn(), error: vi.fn(), log: vi.fn(), debug: vi.fn(), warn: vi.fn() },
 }));
 
-jest.mock("../log/quitTracker", () => ({
-    quitTracker: { setReason: jest.fn() },
+vi.mock("../log/quitTracker", () => ({
+    quitTracker: { setReason: vi.fn() },
 }));
 
-jest.mock("node:child_process", () => ({
-    spawn: jest.fn(),
+vi.mock("node:child_process", () => ({
+    spawn: vi.fn(),
 }));
 
-jest.mock("node:fs", () => ({
-    readFileSync: jest.fn(),
-    writeFileSync: jest.fn(),
+vi.mock("node:fs", () => ({
+    readFileSync: vi.fn(),
+    writeFileSync: vi.fn(),
 }));
 
 import { getRegExe, registerMailtoApp } from "./setup_mailto_windows";
@@ -39,11 +40,13 @@ import { readFileSync as mockReadFileSync, writeFileSync as mockWriteFileSync } 
 import { app } from "electron";
 import { quitTracker } from "../log/quitTracker";
 
-const mockedSpawn = jest.mocked(spawn);
-const mockedReadFileSync = jest.mocked(mockReadFileSync);
-const mockedWriteFileSync = jest.mocked(mockWriteFileSync);
-const mockedApp = app as jest.Mocked<typeof app>;
-const mockedQuitTracker = quitTracker as jest.Mocked<typeof quitTracker>;
+const { readFileSync: realReadFileSync } = await vi.importActual<typeof import("node:fs")>("node:fs");
+
+const mockedSpawn = vi.mocked(spawn);
+const mockedReadFileSync = vi.mocked(mockReadFileSync);
+const mockedWriteFileSync = vi.mocked(mockWriteFileSync);
+const mockedApp = app as Mocked<typeof app>;
+const mockedQuitTracker = quitTracker as Mocked<typeof quitTracker>;
 
 class MockChildProcess extends EventEmitter {
     stdout = new EventEmitter();
@@ -86,7 +89,6 @@ describe("getRegExe", () => {
 
 describe("protonmail-mailto-register.reg template content", () => {
     const templatePath = resolve(__dirname, "protonmail-mailto-register.reg");
-    const { readFileSync: realReadFileSync } = jest.requireActual<typeof import("node:fs")>("node:fs");
     const content = realReadFileSync(templatePath, "utf8");
 
     it('has "URL Protocol"="" on the ProtonMail.Url.mailto ProgID key', () => {
@@ -121,7 +123,7 @@ describe("registerMailtoApp", () => {
     let originalExecPath: string;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         originalResourcesPath = (process as NodeJS.Process & { resourcesPath?: string }).resourcesPath ?? "";
         originalExecPath = process.execPath;
@@ -133,7 +135,7 @@ describe("registerMailtoApp", () => {
             configurable: true,
         });
 
-        (mockedApp.getPath as jest.Mock).mockReturnValue(MOCK_TEMP_PATH);
+        (mockedApp.getPath as Mock).mockReturnValue(MOCK_TEMP_PATH);
     });
 
     afterEach(() => {

@@ -1,16 +1,16 @@
-import { describe, it, expect, beforeEach, afterEach } from "@jest/globals";
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 
 let mockLogsDir = "";
 
-jest.mock("electron", () => ({
+vi.mock("electron", () => ({
     app: { getPath: () => mockLogsDir },
 }));
 
-jest.mock("../log", () => ({
-    profilerLogger: { info: jest.fn(), error: jest.fn() },
+vi.mock("../log", () => ({
+    profilerLogger: { info: vi.fn(), error: vi.fn() },
 }));
 
 import { getProfilerReports } from "./reports";

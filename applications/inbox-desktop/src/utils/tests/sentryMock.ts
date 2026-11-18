@@ -1,21 +1,21 @@
-jest.mock("@sentry/electron/main", () => ({
-    addBreadcrumb: jest.fn(),
-    captureException: jest.fn(),
-    captureMessage: jest.fn(),
-    childProcessIntegration: jest.fn(() => ({ name: "ChildProcess" })),
-    electronMinidumpIntegration: jest.fn(() => ({ name: "ElectronMinidump" })),
-    flush: jest.fn().mockResolvedValue(true),
-    init: jest.fn(),
-    setTag: jest.fn(),
-    setTags: jest.fn(),
-    setUser: jest.fn(),
-    withScope: jest.fn((cb) =>
+vi.mock("@sentry/electron/main", () => ({
+    addBreadcrumb: vi.fn(),
+    captureException: vi.fn(),
+    captureMessage: vi.fn(),
+    childProcessIntegration: vi.fn(() => ({ name: "ChildProcess" })),
+    electronMinidumpIntegration: vi.fn(() => ({ name: "ElectronMinidump" })),
+    flush: vi.fn().mockResolvedValue(true),
+    init: vi.fn(),
+    setTag: vi.fn(),
+    setTags: vi.fn(),
+    setUser: vi.fn(),
+    withScope: vi.fn((cb) =>
         cb({
-            setExtras: jest.fn(),
-            setTags: jest.fn(),
-            setLevel: jest.fn(),
-            setContext: jest.fn(),
-            setFingerprint: jest.fn(),
+            setExtras: vi.fn(),
+            setTags: vi.fn(),
+            setLevel: vi.fn(),
+            setContext: vi.fn(),
+            setFingerprint: vi.fn(),
         }),
     ),
 }));

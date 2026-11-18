@@ -2,7 +2,7 @@ import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 
 import { clearOAuthSession, matchesActiveOAuthSession, startOAuthSession } from "./oauthSession";
 
-jest.mock("./log", () => ({ ipcLogger: { warn: jest.fn() } }));
+vi.mock("./log", () => ({ ipcLogger: { warn: vi.fn() } }));
 
 const SESSION_ID = "session";
 const AUTHORIZATION_URL = `https://account.proton.me${GOOGLE_OAUTH_PATH}`;
@@ -50,30 +50,30 @@ describe("matchesActiveOAuthSession", () => {
 
 describe("OAuth session timeout", () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
         clearOAuthSession(SESSION_ID);
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it("clears the session after 10 seconds", () => {
         startOAuthSession(SESSION_ID, AUTHORIZATION_URL);
 
-        jest.advanceTimersByTime(9_999);
+        vi.advanceTimersByTime(9_999);
         expect(matchesActiveOAuthSession(AUTHORIZATION_URL)).toBe(true);
 
-        jest.advanceTimersByTime(1);
+        vi.advanceTimersByTime(1);
         expect(matchesActiveOAuthSession(AUTHORIZATION_URL)).toBe(false);
     });
 
     it("restarts the timeout when the same session starts again", () => {
         startOAuthSession(SESSION_ID, AUTHORIZATION_URL);
-        jest.advanceTimersByTime(9_000);
+        vi.advanceTimersByTime(9_000);
         startOAuthSession(SESSION_ID, AUTHORIZATION_URL);
 
-        jest.advanceTimersByTime(9_000);
+        vi.advanceTimersByTime(9_000);
         expect(matchesActiveOAuthSession(AUTHORIZATION_URL)).toBe(true);
     });
 });

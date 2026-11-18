@@ -1,45 +1,47 @@
+import type { Mock } from "vitest";
 import type { ElectronNotification } from "@proton/shared/lib/desktop/desktopTypes";
 import { Notification } from "electron";
 import { notificationLogger } from "../utils/log";
 import { showNotification, windowsToastNotification } from "./notification";
 
-const mockedNotification = Notification as unknown as jest.Mock;
-const mockedError = notificationLogger.error as jest.Mock;
+const mockedNotification = Notification as unknown as Mock;
+const mockedError = notificationLogger.error as Mock;
 
-const mockShow = jest.fn();
-const mockOn = jest.fn();
+const { mockShow, mockOn } = vi.hoisted(() => ({ mockShow: vi.fn(), mockOn: vi.fn() }));
 
-jest.mock("electron", () => ({
-    Notification: jest.fn().mockImplementation(() => ({ on: mockOn, show: mockShow })),
-    app: { on: jest.fn() },
-    nativeImage: { createFromDataURL: jest.fn() },
-    WebContentsView: jest.fn(),
+vi.mock("electron", () => ({
+    Notification: vi.fn(function () {
+        return { on: mockOn, show: mockShow };
+    }),
+    app: { on: vi.fn() },
+    nativeImage: { createFromDataURL: vi.fn() },
+    WebContentsView: vi.fn(),
 }));
 
-jest.mock("../utils/view/viewManagement", () => ({
-    bringWindowToFront: jest.fn(),
-    openCalendarWithoutReload: jest.fn(),
-    getMainWindow: jest.fn(),
-    getCurrentLocalID: jest.fn(() => "local-1"),
-    openMail: jest.fn(),
+vi.mock("../utils/view/viewManagement", () => ({
+    bringWindowToFront: vi.fn(),
+    openCalendarWithoutReload: vi.fn(),
+    getMainWindow: vi.fn(),
+    getCurrentLocalID: vi.fn(() => "local-1"),
+    openMail: vi.fn(),
 }));
 
-jest.mock("../utils/view/windowUtils", () => ({
-    isWindowValid: jest.fn(() => true),
+vi.mock("../utils/view/windowUtils", () => ({
+    isWindowValid: vi.fn(() => true),
 }));
 
-jest.mock("../utils/log", () => ({
-    ipcLogger: { info: jest.fn(), error: jest.fn(), warn: jest.fn(), debug: jest.fn() },
-    notificationLogger: { info: jest.fn(), error: jest.fn(), warn: jest.fn(), debug: jest.fn() },
+vi.mock("../utils/log", () => ({
+    ipcLogger: { info: vi.fn(), error: vi.fn(), warn: vi.fn(), debug: vi.fn() },
+    notificationLogger: { info: vi.fn(), error: vi.fn(), warn: vi.fn(), debug: vi.fn() },
 }));
 
-jest.mock("../utils/helpers", () => ({
-    ...jest.requireActual("../utils/helpers"),
+vi.mock("../utils/helpers", async (importOriginal) => ({
+    ...(await importOriginal<typeof import("../utils/helpers")>()),
     isWindows: true,
     isMac: false,
 }));
 
-jest.mock("../constants/resources", () => ({ getFileResourcePath: jest.fn(() => "/tmp/blank.html") }));
+vi.mock("../constants/resources", () => ({ getFileResourcePath: vi.fn(() => "/tmp/blank.html") }));
 
 const baseMailPayload: ElectronNotification = {
     title: "New email received",
@@ -79,7 +81,7 @@ describe("windowsToastNotification", () => {
 
 describe("showNotification", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it("shows a notification for a valid payload", () => {

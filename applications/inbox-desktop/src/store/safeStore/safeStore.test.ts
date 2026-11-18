@@ -1,28 +1,31 @@
-jest.unmock("./safeStore");
+import type { Mock } from "vitest";
+vi.unmock("./safeStore");
 
 let capturedDeserialize: (text: string) => unknown;
 
-jest.mock("electron-store", () => {
-    return class MockStore {
-        constructor(options: { deserialize?: (text: string) => unknown }) {
-            if (options?.deserialize) {
-                capturedDeserialize = options.deserialize;
+vi.mock("electron-store", () => {
+    return {
+        default: class MockStore {
+            constructor(options: { deserialize?: (text: string) => unknown }) {
+                if (options?.deserialize) {
+                    capturedDeserialize = options.deserialize;
+                }
             }
-        }
+        },
     };
 });
 
-jest.mock("electron-log", () => {
-    const mockErrorFn = jest.fn();
+vi.mock("electron-log", () => {
+    const mockErrorFn = vi.fn();
     return {
-        scope: () => ({ error: mockErrorFn }),
+        default: { scope: () => ({ error: mockErrorFn }) },
     };
 });
 
 import Logger from "electron-log";
 import { SafeStore } from "./safeStore";
 
-const mockError = Logger.scope("").error as jest.Mock;
+const mockError = Logger.scope("").error as Mock;
 
 describe("SafeStore", () => {
     describe("safeDeserialize", () => {
