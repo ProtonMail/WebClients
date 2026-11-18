@@ -1,4 +1,5 @@
-import { getMailView, showView } from "../view/viewManagement";
+import { showView } from "../view/viewManagement";
+import { getMailView } from "../view/viewState";
 import { addHashToCurrentURL } from "./urlHelpers";
 import { mainLogger } from "../log";
 import telemetryService from "../telemetry";

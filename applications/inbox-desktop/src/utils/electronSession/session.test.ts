@@ -26,7 +26,7 @@ vi.mock("../log", () => ({
 const mockExecuteJavaScript = vi.fn();
 const mockGetMailView = vi.fn();
 
-vi.mock("../view/viewManagement", () => ({
+vi.mock("../view/viewState", () => ({
     getMailView: () => mockGetMailView(),
 }));
 

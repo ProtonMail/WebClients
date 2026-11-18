@@ -7,11 +7,6 @@ vi.mock("../utils/view/windowBounds.ts", () => ({
     ensureWindowIsVisible: () => {},
 }));
 
-vi.mock("../utils/view/viewManagement.ts", () => ({
-    ZOOM_FACTOR_LIST: [1],
-    getZoom: () => 1,
-}));
-
 describe("boundStore", () => {
     describe("getWindowBounds", () => {
         it("returns stored window bounds", () => {
@@ -123,6 +118,17 @@ describe("boundStore", () => {
     });
 
     describe("saveWindowBounds", () => {
+        beforeEach(() => {
+            MockedStore.INSTANCE.get.mockReturnValue({
+                x: 0,
+                y: 0,
+                width: 1000,
+                height: 500,
+                maximized: false,
+                zoom: 1,
+            });
+        });
+
         it("does nothing if window is destroyed", () => {
             saveWindowBounds({
                 isDestroyed: () => true,
@@ -147,6 +153,32 @@ describe("boundStore", () => {
                 height: 100,
                 maximized: true,
                 zoom: 1,
+            });
+        });
+
+        it("keeps the stored zoom", () => {
+            MockedStore.INSTANCE.get.mockReturnValue({
+                x: 0,
+                y: 0,
+                width: 1000,
+                height: 500,
+                maximized: false,
+                zoom: 1.5,
+            });
+
+            saveWindowBounds({
+                isDestroyed: () => false,
+                getBounds: () => ({ x: 123, y: 456, width: 1000, height: 100 }),
+                isMaximized: () => false,
+            } as BrowserWindow);
+
+            expect(MockedStore.INSTANCE.set).toHaveBeenCalledWith("windowBounds", {
+                x: 123,
+                y: 456,
+                width: 1000,
+                height: 100,
+                maximized: false,
+                zoom: 1.5,
             });
         });
 

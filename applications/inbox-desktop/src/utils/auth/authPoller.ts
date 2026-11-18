@@ -1,7 +1,7 @@
 import { BrowserWindow } from "electron";
 
 import { IPCInboxClientUpdateMessage } from "@proton/shared/lib/desktop/desktopTypes";
-import { getCurrentView } from "../view/viewManagement";
+import { getCurrentView } from "../view/viewState";
 
 type AuthStatusResultMessage = Extract<IPCInboxClientUpdateMessage, { type: "authStatusResult" }>;
 

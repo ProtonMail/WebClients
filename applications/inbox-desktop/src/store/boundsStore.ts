@@ -1,7 +1,6 @@
 import { BrowserWindow, screen } from "electron";
 import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../constants/zoom";
 import { mainLogger } from "../utils/log";
-import { getZoom } from "../utils/view/viewManagement";
 import { ensureWindowIsVisible } from "../utils/view/windowBounds";
 import { isWindowValid } from "../utils/view/windowUtils";
 import { SafeStore } from "./safeStore/safeStore";
@@ -81,7 +80,7 @@ export const saveWindowBounds = (browserWindow: BrowserWindow, overrides: Partia
     const newBounds = {
         ...browserWindow.getBounds(),
         maximized: browserWindow.isMaximized(),
-        zoom: getZoom(),
+        zoom: getWindowBounds().zoom,
         ...overrides,
     } satisfies WindowBounds;
 

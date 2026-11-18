@@ -7,7 +7,7 @@ import {
     PROTON_THEMES_MAP,
     ThemeSetting,
 } from "@proton/shared/lib/themes/themes";
-import { getAccountView, getCalendarView, getMailView, getMainWindow } from "./view/viewManagement";
+import { getAccountView, getCalendarView, getMailView, getMainWindow } from "./view/viewState";
 import { ColorScheme, ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { isWindowValid } from "./view/windowUtils";
 import { isMac } from "./helpers";

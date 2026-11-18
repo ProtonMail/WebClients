@@ -1,6 +1,6 @@
 import type { Transport, LogMessage } from "electron-log";
 import type { HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson } from "@proton/metrics/types/desktop_inbox_heartbeat_total_v1.schema";
-import { getMailView } from "./view/viewManagement";
+import { getMailView } from "./view/viewState";
 import { getSettings } from "../store/settingsStore";
 import { mainLogger } from "./log";
 

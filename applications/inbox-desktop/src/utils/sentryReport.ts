@@ -4,7 +4,7 @@ import { getAppIDSync } from "../store/idStore";
 import { getSettings } from "../store/settingsStore";
 import { getAppURL } from "../store/urlStore";
 import { getOSInfo } from "./log/getOSInfo";
-import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewManagement";
+import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewState";
 
 interface ReportOptions {
     level?: SeverityLevel;

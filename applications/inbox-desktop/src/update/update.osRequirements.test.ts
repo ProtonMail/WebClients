@@ -1,11 +1,6 @@
 import { VersionFile } from "@proton/shared/lib/desktop/DesktopVersion";
 import { expectGetNewUpdate } from "./update.test.utils";
 
-vi.mock("../utils/view/viewManagement", () => ({
-    getCalendarView: () => {},
-    getMailView: () => {},
-}));
-
 vi.mock("electron", () => ({
     app: { on: vi.fn(), isPackaged: true },
     autoUpdater: {

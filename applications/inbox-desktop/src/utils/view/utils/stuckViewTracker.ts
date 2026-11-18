@@ -1,7 +1,8 @@
 import { WebContents } from "electron";
 import { webRequestRouter } from "../../electronSession/webRequestRouter";
 import { stuckLoaderWatchLogger as logger } from "../../log";
-import { getWebContentsViewName, getViewURL, openMailToDefaultAndForceReload } from "../viewManagement";
+import { openMailToDefaultAndForceReload } from "../viewManagement";
+import { getWebContentsViewName, getViewURL } from "../viewState";
 import { sentryReport } from "../../sentryReport";
 import { getFeatureFlagManager } from "../../flags/manager";
 import { FeatureFlag } from "../../flags/flags";

@@ -1,4 +1,4 @@
-import { getMailView } from "../view/viewManagement";
+import { getMailView } from "../view/viewState";
 import { FeatureFlag } from "./flags";
 import { flagManagerLogger } from "../log";
 import { SafeStore } from "../../store/safeStore/safeStore";

@@ -3,14 +3,13 @@ import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
-import { app, BrowserWindow, Event, nativeTheme, Rectangle, WebContents, WebContentsView } from "electron";
+import { app, BrowserWindow, Event, nativeTheme, Rectangle, WebContentsView } from "electron";
 import { debounce } from "lodash";
 import { c } from "ttag";
 import { getFileResourcePath } from "../../constants/resources";
-import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, updateSettings } from "../../store/settingsStore";
-import { getAppURL, URLConfig } from "../../store/urlStore";
+import { getAppURL } from "../../store/urlStore";
 import { updateDownloaded } from "../../update/update";
 import { authStatusPoller } from "../auth/authPoller";
 import { isLinux, isMac, isWindows } from "../helpers";
@@ -42,37 +41,24 @@ import { getWindowConfig, getWindowPlaywrightConfig } from "../view/windowHelper
 import telemetryService from "./../telemetry";
 import { handleBeforeHandle } from "./dialogs";
 import { MenuBarMonitor } from "./MenuBarMonitor";
+import {
+    getCurrentView,
+    getCurrentViewID,
+    getMailView,
+    getMainWindow,
+    getMainWindowOrNull,
+    getViewURL,
+    setCurrentViewID,
+    setMainWindow,
+    ViewID,
+    viewMap,
+    viewURLMap,
+} from "./viewState";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
 import { isWindowValid } from "./windowUtils";
 
-type ViewID = keyof URLConfig;
-
-let currentViewID: ViewID;
-
-const viewMap: Record<ViewID, WebContentsView | undefined> = {
-    mail: undefined,
-    calendar: undefined,
-    account: undefined,
-};
-
 const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
-    mail: undefined,
-    calendar: undefined,
-    account: undefined,
-};
-
-// If some view is showing url X, and we call loadURL with url Y, webContents.getURL()
-// will return X until Y has fully loaded (all network requests have finished, including resource loading).
-// This has historically introduced lots of race condition issues, because we have to either assume
-// that we are still on X url or wait until the load process of Y has fully finished. This information
-// is something we need during view changes, like the login process or navigating to settings view.
-//
-// Although viewURLMap can introduce inconsistencies, the only possible side effect might be some duplicated
-// loading, but at least we have a synchronous source of truth to check which URL is being shown in a view.
-// It is important to keep this updated in all loadURL and loadFile calls, and also monitor the did-navigate
-// and did-navigate-in-page events.
-const viewURLMap: Record<ViewID, string | undefined> = {
     mail: undefined,
     calendar: undefined,
     account: undefined,
@@ -85,7 +71,6 @@ const viewTitleMap: Record<ViewID, string> = {
 };
 
 const PRELOADED_VIEWS: ViewID[] = ["mail", "calendar"];
-let mainWindow: BrowserWindow | null = null;
 let loadingView: WebContentsView | null = null;
 
 export const IGNORED_NET_ERROR_CODES: number[] = [NET_ERROR_CODE.ABORTED];
@@ -102,7 +87,7 @@ const loadFailCounts = new Map<string, number>();
 const errorPageFailReported = new Set<string>();
 
 export const viewCreationAppStartup = async () => {
-    mainWindow = createBrowserWindow();
+    const mainWindow = createBrowserWindow();
     profiler.mark("window-created");
 
     // We need this for E2E tests because Playwright waits for something
@@ -116,7 +101,7 @@ export const viewCreationAppStartup = async () => {
     createViews();
     profiler.mark("views-created");
 
-    const debouncedSaveWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
+    const debouncedSaveWindowBounds = debounce(() => saveWindowBounds(getMainWindow()), 1000);
     mainWindow.on("move", debouncedSaveWindowBounds);
     mainWindow.on("resize", debouncedSaveWindowBounds);
     mainWindow.on("maximize", debouncedSaveWindowBounds);
@@ -141,26 +126,26 @@ export const viewCreationAppStartup = async () => {
         event.preventDefault();
 
         if (isMac) {
-            macOSExitEvent(mainWindow!);
+            macOSExitEvent(getMainWindow());
         } else {
-            windowsAndLinuxExitEvent(mainWindow!);
+            windowsAndLinuxExitEvent(getMainWindow());
         }
     });
 
     if (getWindowBounds().maximized) {
-        mainWindow!.maximize();
+        getMainWindow().maximize();
     }
 
     // Clean up main window reference when it's destroyed.
     mainWindow.on("closed", () => {
-        mainWindow = null;
+        setMainWindow(null);
     });
 
     // For e2e playwright tests load mail immediately.
     if (isPlaywrightTest) {
         await loadURL("mail", getAppURL().mail);
         showView("mail");
-        mainWindow!.show();
+        getMainWindow().show();
         return;
     }
 
@@ -172,7 +157,7 @@ export const viewCreationAppStartup = async () => {
     if (mailto) {
         loadURL("mail", getAppURL().mail + `/inbox#mailto=${mailto}`).then(() => {
             showView("mail");
-            mainWindow!.show();
+            getMainWindow().show();
             profiler.markWindowShownAndWriteReport();
         });
         return;
@@ -182,7 +167,7 @@ export const viewCreationAppStartup = async () => {
     if (openMail) {
         loadURL("mail", getAppURL().mail + `/inbox#${openMail}`).then(() => {
             showView("mail");
-            mainWindow!.show();
+            getMainWindow().show();
             profiler.markWindowShownAndWriteReport();
         });
         return;
@@ -192,7 +177,7 @@ export const viewCreationAppStartup = async () => {
     if (openCalendar) {
         loadURL("calendar", getAppURL().calendar).then(() => {
             showView("calendar");
-            mainWindow!.show();
+            getMainWindow().show();
             profiler.markWindowShownAndWriteReport();
         });
         return;
@@ -200,7 +185,7 @@ export const viewCreationAppStartup = async () => {
 
     loadURL("mail", getAppURL().mail).then(() => {
         showView("mail");
-        mainWindow!.show();
+        getMainWindow().show();
         profiler.markWindowShownAndWriteReport();
     });
 };
@@ -243,14 +228,15 @@ const createViews = () => {
     viewMap.account = createView("account");
 
     if (isWindows) {
-        mainWindow!.setMenuBarVisibility(false);
+        getMainWindow().setMenuBarVisibility(false);
     }
 
     viewMap.mail.webContents.on("before-input-event", handleBeforeInput);
     viewMap.calendar.webContents.on("before-input-event", handleBeforeInput);
     viewMap.account.webContents.on("before-input-event", handleBeforeInput);
 
-    mainWindow!.on("resize", () => {
+    getMainWindow().on("resize", () => {
+        const mainWindow = getMainWindowOrNull();
         if (!isWindowValid(mainWindow)) {
             return;
         }
@@ -265,7 +251,8 @@ const createViews = () => {
 
 const createBrowserWindow = () => {
     const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
-    mainWindow = new BrowserWindow(isPlaywrightTest ? getWindowPlaywrightConfig() : getWindowConfig());
+    const mainWindow = new BrowserWindow(isPlaywrightTest ? getWindowPlaywrightConfig() : getWindowConfig());
+    setMainWindow(mainWindow);
 
     setApplicationMenu();
 
@@ -281,6 +268,7 @@ const createBrowserWindow = () => {
 };
 
 function updateViewBounds(view: WebContentsView | undefined, viewID: ViewID | null = null) {
+    const mainWindow = getMainWindowOrNull();
     if (!isWindowValid(mainWindow)) {
         return;
     }
@@ -337,7 +325,7 @@ async function updateLocalID(urlString: string) {
         return urlString;
     }
 
-    const currentURLString = getViewURL(currentViewID);
+    const currentURLString = getViewURL(getCurrentViewID());
     const currentLocalID = getLocalID(currentURLString);
 
     if (currentLocalID === null) {
@@ -356,7 +344,7 @@ async function updateLocalID(urlString: string) {
 }
 
 export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
-    if (!isWindowValid(mainWindow)) {
+    if (!isWindowValid(getMainWindowOrNull())) {
         return;
     }
 
@@ -364,7 +352,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     updateViewBounds(view, viewID);
     view.webContents.setZoomFactor(getWindowBounds().zoom);
 
-    if (viewID === currentViewID) {
+    if (viewID === getCurrentViewID()) {
         authStatusPoller.performPoll();
         if (!url) {
             viewLogger(viewID).silly("already in current view");
@@ -376,10 +364,10 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
         return;
     }
 
-    const previousViewID = currentViewID;
-    currentViewID = viewID;
+    const previousViewID = getCurrentViewID();
+    setCurrentViewID(viewID);
 
-    mainWindow!.title = viewTitleMap[viewID];
+    getMainWindow().title = viewTitleMap[viewID];
 
     authStatusPoller.performPoll();
 
@@ -389,21 +377,21 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
         viewLogger(viewID).debug(`showView loading mailto ${url} from`, getViewURL(viewID));
         await showLoadingPage(viewTitleMap[viewID]);
         await loadURL(viewID, url);
-        mainWindow!.setContentView(view);
+        getMainWindow().setContentView(view);
     } else if (url && urlHasOpenMailParams(url)) {
         viewLogger(viewID).debug(`showView loading open mail ${url} from`, getViewURL(viewID));
         await showLoadingPage(viewTitleMap[viewID]);
         await loadURL(viewID, url);
-        mainWindow!.setContentView(view);
+        getMainWindow().setContentView(view);
     } else if (url && (isCalendarCreateBookingURL(url) || !isSameURL(url, getViewURL(viewID)))) {
         viewLogger(viewID).debug("showView current url is different", getViewURL(viewID));
         viewLogger(viewID).info("showView loading", url);
         await showLoadingPage(viewTitleMap[viewID]);
         await loadURL(viewID, url);
-        mainWindow!.setContentView(view);
+        getMainWindow().setContentView(view);
     } else {
         viewLogger(viewID).info("showView showing view for ", url);
-        mainWindow!.setContentView(view);
+        getMainWindow().setContentView(view);
     }
 
     const contents = view.webContents;
@@ -434,6 +422,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
  * May or may not reload the Mail application, depends on the passed in parameters and the current state of the web app.
  */
 export const openMail = (labelID?: string, elementID?: string, messageID?: string) => {
+    const mainWindow = getMainWindowOrNull();
     if (!isWindowValid(mainWindow)) {
         viewLogger("mail").warn("Ignoring openMail action, mainWindow is not available");
         return;
@@ -473,6 +462,7 @@ export const openMailToDefaultAndForceReload = async () => {
 };
 
 const openViewWithoutReload = (view: "mail" | "calendar") => {
+    const mainWindow = getMainWindowOrNull();
     if (!isWindowValid(mainWindow)) {
         viewLogger(view).warn(`Ignoring open ${view} action, mainWindow is not available`);
         return;
@@ -652,7 +642,7 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
 }
 
 async function showLoadingPage(title: string): Promise<void> {
-    if (!mainWindow) {
+    if (!getMainWindowOrNull()) {
         mainLogger.error("Cannot show loading page, mainWindow is null");
         return;
     }
@@ -662,7 +652,7 @@ async function showLoadingPage(title: string): Promise<void> {
     loadingView = new WebContentsView(isPlaywrightTest ? getWindowPlaywrightConfig() : getWindowConfig());
     await renderLoadingPage(loadingView, title);
 
-    mainWindow.setContentView(loadingView);
+    getMainWindow().setContentView(loadingView);
 }
 
 async function renderLoadingPage(view: WebContentsView, title: string): Promise<void> {
@@ -693,25 +683,10 @@ async function renderLoadingPage(view: WebContentsView, title: string): Promise<
     updateViewBounds(view);
 }
 
-export function getViewURL(viewID: ViewID) {
-    return viewURLMap[viewID] || "";
-}
-
-export function updateViewURL(webContents: WebContents, url: string) {
-    const [viewID] =
-        (Object.entries(viewMap) as Array<[ViewID, WebContentsView]>).find(
-            ([, view]) => view.webContents === webContents,
-        ) || [];
-
-    if (viewID) {
-        viewURLMap[viewID] = url;
-    }
-}
-
 export async function reloadHiddenViews() {
     const loadPromises = [];
     for (const [viewID, view] of Object.entries(viewMap)) {
-        if (viewID !== currentViewID && view) {
+        if (viewID !== getCurrentViewID() && view) {
             viewLogger(viewID as ViewID).info("Reloading hidden view");
             loadPromises.push(loadURL(viewID as ViewID, getViewURL(viewID as ViewID), { force: true }));
         }
@@ -723,7 +698,7 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
     const appURL = getAppURL();
     const loadPromises = [];
     for (const [viewID, view] of Object.entries(viewMap)) {
-        if (viewID !== currentViewID && view) {
+        if (viewID !== getCurrentViewID() && view) {
             if (PRELOADED_VIEWS.includes(viewID as ViewID) && toHomepage) {
                 const homepageURL = await updateLocalID(appURL[viewID as ViewID]);
                 viewLogger(viewID as ViewID).info("reset to home page", homepageURL);
@@ -745,89 +720,16 @@ export async function showEndOfTrial() {
 }
 
 export function getSpellCheckStatus() {
-    return mainWindow?.webContents?.session?.spellCheckerEnabled ?? getSettings().spellChecker;
+    return getMainWindowOrNull()?.webContents?.session?.spellCheckerEnabled ?? getSettings().spellChecker;
 }
 
 export function toggleSpellCheck(enabled: boolean) {
     updateSettings({ spellChecker: enabled });
-    mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
-}
-
-export function getMailView() {
-    return viewMap.mail!;
-}
-
-export function getCalendarView() {
-    return viewMap.calendar!;
-}
-
-export function getAccountView() {
-    return viewMap.account;
-}
-
-export function getMainWindow() {
-    return mainWindow!;
-}
-
-export function getCurrentViewID() {
-    return currentViewID;
-}
-
-export function getCurrentView() {
-    return viewMap[currentViewID];
-}
-
-export function getWebContentsViewName(webContents: WebContents): ViewID | null {
-    for (const [viewID, view] of Object.entries(viewMap)) {
-        if (view?.webContents === webContents) {
-            return viewID as ViewID;
-        }
-    }
-
-    return null;
-}
-
-export function getZoom() {
-    const zoomFactor = getWindowBounds().zoom;
-
-    if (ZOOM_FACTOR_LIST.includes(zoomFactor)) {
-        return zoomFactor;
-    }
-
-    return DEFAULT_ZOOM_FACTOR;
-}
-
-function setZoom(zoomFactor: ZoomFactor) {
-    mainLogger.info("set zoom factor to", zoomFactor);
-
-    for (const view of Object.values(viewMap)) {
-        view?.webContents.setZoomFactor(zoomFactor);
-    }
-
-    if (mainWindow) {
-        saveWindowBounds(mainWindow, {
-            zoom: zoomFactor,
-        });
-    }
-}
-
-export function resetZoom() {
-    mainLogger.info("reset zoom");
-    setZoom(DEFAULT_ZOOM_FACTOR);
-}
-
-export function updateZoom(direction: "in" | "out") {
-    const zoomFactorIndex = ZOOM_FACTOR_LIST.indexOf(getZoom());
-
-    const nextZoomFactor =
-        direction === "in"
-            ? ZOOM_FACTOR_LIST[Math.min(ZOOM_FACTOR_LIST.length - 1, zoomFactorIndex + 1)]
-            : ZOOM_FACTOR_LIST[Math.max(0, zoomFactorIndex - 1)];
-
-    setZoom(nextZoomFactor);
+    getMainWindowOrNull()?.webContents?.session?.setSpellCheckerEnabled(enabled);
 }
 
 export const bringWindowToFront = () => {
+    const mainWindow = getMainWindowOrNull();
     if (!isWindowValid(mainWindow)) {
         mainLogger.info("Cannot bring window to front: window unavailable.");
         return;

@@ -15,7 +15,7 @@ vi.mock("../store/urlStore", () => ({
         account: "https://account.proton.me",
     })),
 }));
-vi.mock("./view/viewManagement", () => ({
+vi.mock("./view/viewState", () => ({
     getMainWindow: vi.fn(() => ({ isMinimized: () => false })),
     getCurrentViewID: vi.fn(() => "mail"),
     getMailView: vi.fn(() => ({ webContents: { getURL: () => "https://mail.proton.me/inbox" } })),
@@ -27,7 +27,7 @@ vi.mock("./log/getOSInfo", () => ({
 }));
 
 import { captureException, withScope } from "@sentry/electron/main";
-import { getMainWindow } from "./view/viewManagement";
+import { getMainWindow } from "./view/viewState";
 import { sentryReport } from "./sentryReport";
 const { reportMessage, reportException } = sentryReport;
 

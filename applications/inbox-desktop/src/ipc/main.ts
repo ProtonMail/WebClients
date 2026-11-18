@@ -11,13 +11,8 @@ import type {
 import { clearStorage, isSnap, snapRevision } from "../utils/helpers";
 import { ipcLogger } from "../utils/log";
 import { getColorScheme, getTheme, isEqualTheme, setTheme } from "../utils/themes";
-import {
-    reloadHiddenViews,
-    resetHiddenViews,
-    showEndOfTrial,
-    showView,
-    getMailView,
-} from "../utils/view/viewManagement";
+import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
+import { getMailView } from "../utils/view/viewState";
 import { DESKTOP_FEATURES } from "./ipcConstants";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import { setInstallSourceReported, getInstallSource } from "../store/installInfoStore";
