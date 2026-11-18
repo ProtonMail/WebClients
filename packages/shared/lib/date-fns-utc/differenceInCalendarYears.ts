@@ -1,7 +1,6 @@
-import { utc } from '@date-fns/utc';
-import { differenceInCalendarYears as differenceInCalendarYearsInZone } from 'date-fns';
-
-const differenceInCalendarYears = (left: Date, right: Date) =>
-    differenceInCalendarYearsInZone(left, right, { in: utc });
+/**
+ * Same result as date-fns `differenceInCalendarYears` with `in: utc`, which is about 8x slower.
+ */
+const differenceInCalendarYears = (left: Date, right: Date) => left.getUTCFullYear() - right.getUTCFullYear();
 
 export default differenceInCalendarYears;

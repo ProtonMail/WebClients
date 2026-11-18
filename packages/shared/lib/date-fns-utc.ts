@@ -50,8 +50,8 @@ export const addMonths = (date: Date, amount: number) => new Date(+addMonthsInZo
 export const addYears = (date: Date, amount: number) => new Date(+addYearsInZone(date, amount, { in: utc }));
 
 /*
- * The isSame* helpers stay hand-written: Calendar calls them in render loops, and the date-fns versions are about
- * 10x slower because they build a UTCDate for each argument.
+ * The isSame* and isNextDay helpers stay hand-written: Calendar calls them in render loops, and the date-fns versions
+ * are about 10x slower because they build a UTCDate for each argument.
  */
 export const isSameYear = (dateLeft: Date, dateRight: Date) => {
     return dateLeft.getUTCFullYear() === dateRight.getUTCFullYear();
@@ -70,4 +70,6 @@ export const isSameDay = (dateLeft: Date, dateRight: Date) => {
  * @param {Date} dateLeft       Earlier date
  * @param {Date} dateRight      Later date
  */
-export const isNextDay = (dateLeft: Date, dateRight: Date) => isSameDay(addDays(dateLeft, 1), dateRight);
+export const isNextDay = (dateLeft: Date, dateRight: Date) => {
+    return Math.floor(+dateRight / DAY) - Math.floor(+dateLeft / DAY) === 1;
+};
