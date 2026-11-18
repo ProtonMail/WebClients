@@ -221,7 +221,9 @@ export class CameraTrackSubscriptionManager {
             return;
         }
 
-        this.markMostRecentlyUsed(trackSid);
+        if (entry) {
+            this.markMostRecentlyUsed(trackSid);
+        }
 
         void this.runSerialized(() => {
             try {
@@ -384,6 +386,7 @@ export class CameraTrackSubscriptionManager {
 
             if (!entry) {
                 this.cacheOrderByRecencyTrackSids.splice(index, 1);
+                index = index - 1;
                 continue;
             }
 
