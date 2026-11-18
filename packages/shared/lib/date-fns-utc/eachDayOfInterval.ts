@@ -1,22 +1,16 @@
-const eachDayOfInterval = (start: Date, end: Date) => {
-    const endTime = end.getTime();
+import { utc } from '@date-fns/utc';
+import { eachDayOfInterval as eachDayOfIntervalInZone } from 'date-fns';
 
-    if (!(start.getTime() <= endTime)) {
+/**
+ * Unlike date-fns eachDayOfInterval, this throws on a reversed or invalid interval instead of returning the days in
+ * reverse or an empty list.
+ */
+const eachDayOfInterval = (start: Date, end: Date) => {
+    if (!(start.getTime() <= end.getTime())) {
         throw new RangeError('Invalid interval');
     }
 
-    const dates: Date[] = [];
-
-    const currentDate = new Date(start);
-    currentDate.setUTCHours(0, 0, 0, 0);
-
-    const step = 1;
-    while (currentDate.getTime() <= endTime) {
-        dates.push(new Date(currentDate));
-        currentDate.setUTCDate(currentDate.getUTCDate() + step);
-        currentDate.setUTCHours(0, 0, 0, 0);
-    }
-    return dates;
+    return eachDayOfIntervalInZone({ start, end }, { in: utc }).map((date) => new Date(+date));
 };
 
 export default eachDayOfInterval;

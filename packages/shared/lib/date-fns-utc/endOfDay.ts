@@ -1,7 +1,6 @@
-const endOfDay = (date: Date) => {
-    const result = new Date(+date);
-    result.setUTCHours(23, 59, 59, 999);
-    return result;
-};
+import { utc } from '@date-fns/utc';
+import { endOfDay as endOfDayInZone } from 'date-fns';
+
+const endOfDay = (date: Date) => new Date(+endOfDayInZone(date, { in: utc }));
 
 export default endOfDay;
