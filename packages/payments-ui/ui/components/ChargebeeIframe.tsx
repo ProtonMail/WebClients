@@ -51,6 +51,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import type { ThemeCode } from '@proton/payments-hooks/client-extensions/helpers';
 import type { ApplePayProcessorHook } from '@proton/payments-hooks/payment-processors/useApplePay';
 import type { ChargebeePaypalProcessorHook } from '@proton/payments-hooks/payment-processors/useChargebeePaypal';
@@ -1006,6 +1007,7 @@ export const ChargebeeIframe = ({
     const applePayAbortRef = useRef<AbortController | null>(null);
     const googlePayAbortRef = useRef<AbortController | null>(null);
     const loadingTimeoutRef = useRef<any>(null);
+    const isMounted = useIsMounted();
 
     useEffect(() => {
         return () => {
@@ -1072,7 +1074,7 @@ export const ChargebeeIframe = ({
     const threeDs = useThreeDsChallenge(false);
 
     const reportInitializationFailure = (error: any) => {
-        if (!isInitializationFailureReportable(error)) {
+        if (!isMounted() || !isInitializationFailureReportable(error)) {
             return;
         }
 
