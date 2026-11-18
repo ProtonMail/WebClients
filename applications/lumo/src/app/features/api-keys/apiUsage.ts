@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { Currency } from '@proton/payments/core/interface';
-import { MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { LUMO_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 import type { BilledClientType, UsageDay, UsageEntry, UsageMemberRow } from '../../remote/usage';
@@ -118,8 +118,21 @@ const getMemberRole = (memberId: string | null, member: Member | undefined) => {
         : c('collider_2025: Label').t`Member`;
 };
 
+const NO_USAGE: UsageMemberRow['Totals'] = {
+    TokensIn: 0,
+    TokensInCached: 0,
+    TokensGenerated: 0,
+    ApiCalls: 0,
+    CostMicros: 0,
+};
+
+const getIdleMemberRows = (rows: UsageMemberRow[], members: Member[]): UsageMemberRow[] =>
+    members
+        .filter(({ ID }) => !rows.some(({ MemberID }) => MemberID === ID))
+        .map(({ ID }) => ({ MemberID: ID, Totals: NO_USAGE }));
+
 export const getApiMemberUsage = (rows: UsageMemberRow[], members: Member[]): ApiMemberUsage[] =>
-    rows.map(({ MemberID, Totals }) => {
+    [...rows, ...getIdleMemberRows(rows, members)].map(({ MemberID, Totals }) => {
         const member = members.find(({ ID }) => ID === MemberID);
         return {
             id: MemberID ?? 'former-members',
@@ -136,3 +149,19 @@ export const filterMembersByName = (members: ApiMemberUsage[], search: string) =
 
 export const getCostLabel = (cost: number | null, currency: Currency) =>
     cost === null ? c('collider_2025: Info').t`Not priced yet` : formatApiCurrency(cost, currency);
+
+export const getApiAccessHint = ({
+    isOrganizationApiEnabled,
+    error,
+}: {
+    isOrganizationApiEnabled: boolean;
+    error: boolean;
+}) => {
+    if (!isOrganizationApiEnabled) {
+        return c('collider_2025: Info').t`Turn on the ${LUMO_APP_NAME} API for your organization first.`;
+    }
+    if (error) {
+        return c('collider_2025: Error').t`API access could not be loaded.`;
+    }
+    return undefined;
+};
