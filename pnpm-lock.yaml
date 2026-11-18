@@ -11125,6 +11125,9 @@ importers:
       '@protontech/crypto':
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
+      '@protontech/drive-sdk':
+        specifier: 'catalog:'
+        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@tpe/loki-client':
         specifier: 0.2.1
         version: 0.2.1(encoding@0.1.13)(supports-color@11.0.0)
