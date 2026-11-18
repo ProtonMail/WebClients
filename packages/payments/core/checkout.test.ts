@@ -4,6 +4,10 @@ import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscript
 
 import { PLANS_MAP, getTestPlansMap } from '../testing/data-plans';
 import { getAddonDisplayOrder, getAddonTrialLimit } from './addon/addons';
+import { LUMO_ADDON_CONFIG } from './addon/configs/lumoAddonConfig';
+import { MEET_ADDON_CONFIG } from './addon/configs/meetAddonConfig';
+import { MEMBER_ADDON_CONFIG } from './addon/configs/memberAddonConfig';
+import { SCRIBE_ADDON_CONFIG } from './addon/configs/scribeAddonConfig';
 import {
     getAddonTitleByType,
     getAddonTitleWithQuantity,
@@ -1661,22 +1665,21 @@ describe('getAddonTrialLimit()', () => {
     });
 });
 
+const getPool = (config: { featureLimit: unknown }) =>
+    (config.featureLimit as { pool?: { group: string; preferred?: boolean } }).pool;
+
 describe('addon config seat-pool preference', () => {
     it('lumo is the preferred type in the ai pool', () => {
-        const { LUMO_ADDON_CONFIG } = require('./addon/configs/lumoAddonConfig');
-        expect(LUMO_ADDON_CONFIG.featureLimit.pool).toEqual({ group: 'ai', preferred: true });
+        expect(getPool(LUMO_ADDON_CONFIG)).toEqual({ group: 'ai', preferred: true });
     });
     it('scribe shares the ai pool but is not preferred', () => {
-        const { SCRIBE_ADDON_CONFIG } = require('./addon/configs/scribeAddonConfig');
-        expect(SCRIBE_ADDON_CONFIG.featureLimit.pool?.group).toBe('ai');
-        expect(SCRIBE_ADDON_CONFIG.featureLimit.pool?.preferred).toBeFalsy();
+        expect(getPool(SCRIBE_ADDON_CONFIG)?.group).toBe('ai');
+        expect(getPool(SCRIBE_ADDON_CONFIG)?.preferred).toBeFalsy();
     });
     it('member config has no seat pool', () => {
-        const { MEMBER_ADDON_CONFIG } = require('./addon/configs/memberAddonConfig');
-        expect(MEMBER_ADDON_CONFIG.featureLimit.pool).toBeUndefined();
+        expect(getPool(MEMBER_ADDON_CONFIG)).toBeUndefined();
     });
     it('meet config has no seat pool', () => {
-        const { MEET_ADDON_CONFIG } = require('./addon/configs/meetAddonConfig');
-        expect(MEET_ADDON_CONFIG.featureLimit.pool).toBeUndefined();
+        expect(getPool(MEET_ADDON_CONFIG)).toBeUndefined();
     });
 });

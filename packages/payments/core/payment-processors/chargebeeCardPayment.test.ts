@@ -4,11 +4,11 @@ import { createPaymentTokenV5CreditCard } from '../createPaymentToken';
 import type { ChargebeeIframeEvents, ChargebeeIframeHandles } from '../interface';
 import { ChargebeeCardPaymentProcessor, isPostalCode } from './chargebeeCardPayment';
 
-jest.mock('../createPaymentToken', () => ({
-    createPaymentTokenV5CreditCard: jest.fn(),
+vi.mock('../createPaymentToken', () => ({
+    createPaymentTokenV5CreditCard: vi.fn(),
 }));
 
-const mockedCreateToken = jest.mocked(createPaymentTokenV5CreditCard);
+const mockedCreateToken = vi.mocked(createPaymentTokenV5CreditCard);
 
 describe('postal code', () => {
     it('should validate invalid postal code', () => {
@@ -29,24 +29,24 @@ describe('postal code', () => {
 describe('fetchPaymentToken error contract', () => {
     const buildProcessor = () => {
         const processor = new ChargebeeCardPaymentProcessor(
-            jest.fn(),
-            jest.fn(),
+            vi.fn(),
+            vi.fn(),
             { Amount: 100, Currency: 'EUR' as const },
             {
-                validateCardForm: jest.fn().mockResolvedValue({ status: 'success', data: {} }),
+                validateCardForm: vi.fn().mockResolvedValue({ status: 'success', data: {} }),
             } as unknown as ChargebeeIframeHandles,
             {} as ChargebeeIframeEvents,
             false,
             undefined,
-            jest.fn(),
-            jest.fn(),
-            jest.fn()
+            vi.fn(),
+            vi.fn(),
+            vi.fn()
         );
         processor.setPostalCode('94107');
         return processor;
     };
 
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     it('rejects with the ignorable error flagged so it is not reported to Sentry', async () => {
         const declineError: any = {

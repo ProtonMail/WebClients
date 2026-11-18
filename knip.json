@@ -394,7 +394,8 @@
         },
         "packages/payments": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"]
+            "project": ["**/*.{ts,tsx}"],
+            "ignoreDependencies": ["@proton/metrics"]
         },
         "packages/payments-hooks": {
             "entry": [],

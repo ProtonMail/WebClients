@@ -6,7 +6,7 @@ import type { Subscription } from '../subscription/interface';
 import { changeRenewState, fetchPreviousSubscription, getPaymentsInit, getSubscription } from './api';
 
 describe('fetchPreviousSubscription', () => {
-    const buildApi = (response: unknown) => jest.fn().mockResolvedValue(response) as unknown as Api;
+    const buildApi = (response: unknown) => vi.fn().mockResolvedValue(response) as unknown as Api;
 
     it('returns null when Subscription is null', async () => {
         const api = buildApi({ Subscription: null });
@@ -167,12 +167,12 @@ describe('fetchPreviousSubscription', () => {
 
     it('propagates API rejections', async () => {
         const error = new Error('network down');
-        const api = jest.fn().mockRejectedValue(error) as unknown as Api;
+        const api = vi.fn().mockRejectedValue(error) as unknown as Api;
         await expect(fetchPreviousSubscription(api)).rejects.toBe(error);
     });
 
     it('issues GET payments/v6/subscription/latest', async () => {
-        const api = jest.fn().mockResolvedValue({ Subscription: null });
+        const api = vi.fn().mockResolvedValue({ Subscription: null });
         await fetchPreviousSubscription(api as unknown as Api);
         expect(api).toHaveBeenCalledTimes(1);
         expect(api).toHaveBeenCalledWith({
@@ -197,7 +197,7 @@ describe('getSubscription', () => {
             ...override,
         }) as Subscription;
 
-    const buildApi = (response: unknown) => jest.fn().mockResolvedValue(response) as unknown as Api;
+    const buildApi = (response: unknown) => vi.fn().mockResolvedValue(response) as unknown as Api;
 
     it('issues GET payments/v4/subscription', async () => {
         const sub = buildSub();

@@ -24,14 +24,14 @@ describe('PaymentProcessor', () => {
     const initialState: TestPaymentProcessorState = {
         value: 'initial',
     };
-    const mockHandler = jest.fn();
+    const mockHandler = vi.fn();
 
     beforeEach(() => {
         paymentProcessor = new PaymentProcessorTest(initialState, amountAndCurrency);
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should call the handler when the state is updated', () => {

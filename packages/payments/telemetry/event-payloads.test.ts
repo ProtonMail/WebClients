@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { setOfferedApplePayFlow } from '../core/apple-pay-support';
@@ -6,11 +8,11 @@ import { ADDON_NAMES, CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '../core/constan
 import { buildSubscription } from '../testing/buildSubscription';
 import { checkoutTelemetry } from './telemetry';
 
-jest.mock('@proton/shared/lib/telemetry', () => ({
-    telemetry: { sendCustomEvent: jest.fn() },
+vi.mock('@proton/shared/lib/telemetry', () => ({
+    telemetry: { sendCustomEvent: vi.fn() },
 }));
 
-const sendCustomEvent = telemetry.sendCustomEvent as jest.Mock;
+const sendCustomEvent = telemetry.sendCustomEvent as Mock;
 
 /**
  * Every event payload we hand to Proton Analytics, snapshotted.

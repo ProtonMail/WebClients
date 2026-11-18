@@ -11,7 +11,7 @@ const plansMap = {
     [ADDON_NAMES.LUMO_BUNDLE]: { Pricing: { [CYCLE.YEARLY]: 9588 } },
 } as unknown as PlansMap;
 
-const makePaymentsApi = (checkSubscription = jest.fn()): Pick<PaymentsApi, 'checkSubscription'> => ({
+const makePaymentsApi = (checkSubscription = vi.fn()): Pick<PaymentsApi, 'checkSubscription'> => ({
     checkSubscription,
 });
 
@@ -90,7 +90,7 @@ describe('runSecondarySubscriptionEstimation', () => {
         const estimation = { AmountDue: 17376 } as SubscriptionEstimation;
 
         it('checks the subscription with the addon added and returns the result', async () => {
-            const checkSubscription = jest.fn().mockResolvedValue(estimation);
+            const checkSubscription = vi.fn().mockResolvedValue(estimation);
             const signal = new AbortController().signal;
 
             const result = await runSecondarySubscriptionEstimation({
@@ -115,7 +115,7 @@ describe('runSecondarySubscriptionEstimation', () => {
         });
 
         it('passes `quantity` seats and overrides an addon already in the payload', async () => {
-            const checkSubscription = jest.fn().mockResolvedValue(estimation);
+            const checkSubscription = vi.fn().mockResolvedValue(estimation);
 
             await runSecondarySubscriptionEstimation({
                 checkPayload: makePayload({
@@ -135,7 +135,7 @@ describe('runSecondarySubscriptionEstimation', () => {
         });
 
         it('returns null when the check fails', async () => {
-            const checkSubscription = jest.fn().mockRejectedValue(new Error('network'));
+            const checkSubscription = vi.fn().mockRejectedValue(new Error('network'));
 
             const result = await runSecondarySubscriptionEstimation({
                 checkPayload: makePayload({ Codes: ['JUNE26BUNDLESALE'] }),

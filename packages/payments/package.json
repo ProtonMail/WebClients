@@ -117,16 +117,16 @@
         "./testing/redux-state": "./testing/redux-state.ts",
         "./testing/regularAdmin": "./testing/regularAdmin.ts",
         "./testing/signup": "./testing/signup.ts",
-        "./testing/usersWhoCannotReadSubscriptions": "./testing/usersWhoCannotReadSubscriptions.ts"
+        "./testing/usersWhoCannotReadSubscriptions": "./testing/usersWhoCannotReadSubscriptions.ts",
+        "./testing/vitest/api-endpoints": "./testing/vitest/api-endpoints.ts"
     },
     "scripts": {
         "check:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs --check",
         "check:types": "tsc --checkers 1",
         "generate:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs",
         "lint": "oxlint --quiet",
-        "test": "jest",
-        "test:ci": "jest --runInBand --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "vitest",
+        "test:ci": "vitest run"
     },
     "dependencies": {
         "@proton/chargebee": "workspace:^",
@@ -144,19 +144,17 @@
     },
     "devDependencies": {
         "@proton/app-context": "workspace:^",
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/metrics": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/test-api": "workspace:^",
-        "@types/jest": "catalog:",
+        "@proton/vitest-config": "workspace:^",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }

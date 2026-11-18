@@ -169,7 +169,7 @@ describe('isBillingAddressValid', () => {
 
 describe('getBillingAddressFromPaymentStatus', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should apply all normalizations when all fields are missing', () => {

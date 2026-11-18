@@ -1,3 +1,6 @@
+// @vitest-environment happy-dom
+import type { Mock } from 'vitest';
+
 import { PAYMENT_TOKEN_STATUS } from './constants';
 import { type EnsureTokenChargeableTranslations, ensureTokenChargeable } from './ensureTokenChargeable';
 
@@ -17,25 +20,25 @@ describe('process', () => {
     const ApprovalURL = 'https://example.proton.me';
     const ReturnHost = 'https://return.proton.me';
     const Token = 'some-payment-token-222';
-    let api: jest.Mock;
+    let api: Mock;
     let signal: AbortSignal;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        tab = { closed: false, close: jest.fn() };
-        jest.spyOn(window, 'open').mockReturnValue(tab as any);
-        jest.spyOn(window, 'removeEventListener');
-        jest.spyOn(window, 'addEventListener');
+        vi.clearAllMocks();
+        tab = { closed: false, close: vi.fn() };
+        vi.spyOn(window, 'open').mockReturnValue(tab as any);
+        vi.spyOn(window, 'removeEventListener');
+        vi.spyOn(window, 'addEventListener');
 
-        api = jest.fn();
+        api = vi.fn();
         signal = {
             aborted: false,
             reason: null,
-            onabort: jest.fn(),
-            throwIfAborted: jest.fn(),
-            addEventListener: jest.fn(),
-            removeEventListener: jest.fn(),
-            dispatchEvent: jest.fn(),
+            onabort: vi.fn(),
+            throwIfAborted: vi.fn(),
+            addEventListener: vi.fn(),
+            removeEventListener: vi.fn(),
+            dispatchEvent: vi.fn(),
         };
     });
 
@@ -50,17 +53,17 @@ describe('process', () => {
         const promise = ensureTokenChargeable({ api, ApprovalURL, ReturnHost, signal, Token }, translations);
 
         expect(signal.addEventListener).toHaveBeenCalledTimes(1);
-        const signalAddEventListenerMock = signal.addEventListener as jest.Mock;
-        expect(signalAddEventListenerMock.mock.lastCall[0]).toEqual('abort');
-        expect(typeof signalAddEventListenerMock.mock.lastCall[1]).toBe('function');
+        const signalAddEventListenerMock = signal.addEventListener as Mock;
+        expect(signalAddEventListenerMock.mock.lastCall![0]).toEqual('abort');
+        expect(typeof signalAddEventListenerMock.mock.lastCall![1]).toBe('function');
 
         expect(window.addEventListener).toHaveBeenCalledTimes(1);
-        const windowAddEventListenerMock = window.addEventListener as jest.Mock;
-        expect(windowAddEventListenerMock.mock.lastCall[0]).toEqual('message');
-        expect(typeof windowAddEventListenerMock.mock.lastCall[1]).toEqual('function');
-        const onMessage = windowAddEventListenerMock.mock.lastCall[1];
+        const windowAddEventListenerMock = window.addEventListener as Mock;
+        expect(windowAddEventListenerMock.mock.lastCall![0]).toEqual('message');
+        expect(typeof windowAddEventListenerMock.mock.lastCall![1]).toEqual('function');
+        const onMessage = windowAddEventListenerMock.mock.lastCall![1];
 
-        const abort = signalAddEventListenerMock.mock.lastCall[1];
+        const abort = signalAddEventListenerMock.mock.lastCall![1];
 
         abort();
 
