@@ -1,0 +1,24 @@
+// Static gradient border of the plans offered to subscribers only, same colors as the recommended plan cards of the
+// Pass signup
+.exclusive-plan-border {
+	border: 2px solid #8a6eff;
+
+	@supports (background: conic-gradient(white, black)) {
+		border-color: transparent;
+		background:
+			linear-gradient(var(--background-elevated), var(--background-elevated)) padding-box,
+			conic-gradient(
+					from 0deg at 50% 50%,
+					#8a6eff 0deg,
+					#8a6eff 45deg,
+					#c486cb 90deg,
+					#c486cb 135deg,
+					#ffc977 180deg,
+					#ffc977 225deg,
+					#f6c592 270deg,
+					#8a6eff 315deg,
+					#8a6eff 360deg
+				)
+				border-box;
+	}
+}

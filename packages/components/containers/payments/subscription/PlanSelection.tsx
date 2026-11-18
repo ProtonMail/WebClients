@@ -17,6 +17,7 @@ import type {
 } from '@proton/payments/core/interface';
 import { getPlanFeatureLimit } from '@proton/payments/core/plan/feature-limits';
 import { switchPlan } from '@proton/payments/core/planIDs';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getIpPricePerMonth } from '@proton/payments/core/price-helpers';
 import {
     getAutoCoupon,
@@ -75,6 +76,13 @@ import { getShortPlan } from '../features/plan';
 import { getForcedFeatureLimitations } from '../planCustomizer/forced-addon-limits';
 import PlanCardFeatures, { PlanCardFeaturesShort } from './PlanCardFeatures';
 import PlanSelectionPlanCard, { type HocPrice } from './PlanSelectionPlanCard';
+import {
+    getSubscribersOnlyLabel,
+    getUltraServersFeatureText,
+    getUltraServersTooltip,
+    getUpgradeWindowPrice,
+} from './YourPlanSectionV2/Upsells/visionary/helpers';
+import useIsVisionaryUpsellEnabled from './YourPlanSectionV2/Upsells/visionary/useIsVisionaryUpsellEnabled';
 import { getAllowedCycles } from './helpers/getAllowedCycles';
 
 import './PlanSelection.scss';
@@ -240,6 +248,13 @@ export function useAccessiblePlans({
 
     const plansMap = getPlansMap(plans, currency, true);
 
+    const showsVisionaryUpsell = useIsVisionaryUpsellEnabled({
+        app,
+        user,
+        subscription,
+        visionaryPlan: plansMap[PLANS.VISIONARY],
+    });
+
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
 
     const enabledProductB2CPlanNames = (
@@ -312,6 +327,7 @@ export function useAccessiblePlans({
             canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
             canAccessPassFamilyPlan ? plansMap[PLANS.PASS_FAMILY] : null,
             plansMap[PLANS.FAMILY],
+            showsVisionaryUpsell ? plansMap[PLANS.VISIONARY] : null,
         ]);
     }
 
@@ -442,6 +458,7 @@ export function useAccessiblePlans({
         },
         isPassLifetimeEligible,
         showsLumoPlans2026,
+        showsVisionaryUpsell,
     };
 
     return result;
@@ -505,6 +522,7 @@ const PlanSelection = (props: Props) => {
         availableCurrenciesByAudience,
         isPassLifetimeEligible,
         showsLumoPlans2026,
+        showsVisionaryUpsell,
     } = useAccessiblePlans({
         ...props,
         user,
@@ -619,20 +637,40 @@ const PlanSelection = (props: Props) => {
         if (isRecommended) {
             hasRecommended.add(audience);
         }
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, {
+        const defaultShortPlan = getShortPlan(plan.Name as PLANS, plansMap, {
             freePlan,
             prioritizeMeetFeatures: isMeetSettingsApp,
             prioritizeLumoFeatures: isLumoSettingsApp,
         });
 
-        if (!shortPlan) {
+        if (!defaultShortPlan) {
             return null;
         }
+
+        // Visionary offered to the subscribers of the VPN dashboard: always on 12 months, Ultra servers first
+        const isVisionaryUpsell = showsVisionaryUpsell && audience === Audience.FAMILY && plan.Name === PLANS.VISIONARY;
+        const shortPlan = isVisionaryUpsell
+            ? {
+                  ...defaultShortPlan,
+                  features: [
+                      {
+                          id: 'ultra-servers',
+                          text: getUltraServersFeatureText(),
+                          tooltip: getUltraServersTooltip(),
+                          included: true,
+                      },
+                      ...defaultShortPlan.features,
+                  ],
+              }
+            : defaultShortPlan;
+        const visionaryPrice = isVisionaryUpsell ? getUpgradeWindowPrice(plan) : undefined;
 
         // This was added to display Wallet Plus 12 even if users selects 24 months. wallet2024 doesn't have 24 cycle
         // on the backend, so without this hack the frontend attempts to display wallet2024 24 months, doesn't
         // find prices for it and completely hides the card of wallet plan.
-        const cycle = notHigherThanAvailableOnBackend({ [plan.Name]: 1 }, plansMap, restrictedCycle);
+        const cycle = isVisionaryUpsell
+            ? CYCLE.YEARLY
+            : notHigherThanAvailableOnBackend({ [plan.Name]: 1 }, plansMap, restrictedCycle);
 
         const planTitle = shortPlan.title;
 
@@ -727,6 +765,19 @@ const PlanSelection = (props: Props) => {
                     )
                 }
                 recommended={isRecommended}
+                exclusiveLabel={isVisionaryUpsell ? getSubscribersOnlyLabel() : undefined}
+                priceHeader={
+                    visionaryPrice && visionaryPrice.discountPercent > 0 ? (
+                        <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                            <del className="color-weak">
+                                {getSimplePriceString(visionaryPrice.currency, visionaryPrice.monthlyPrice)}
+                            </del>
+                            <span className="text-sm text-semibold color-success">
+                                −&nbsp;{visionaryPrice.discountPercent}%
+                            </span>
+                        </div>
+                    ) : undefined
+                }
                 disabled={loading}
                 key={plan.ID}
                 getPrice={getPrice}

@@ -36,6 +36,7 @@ enum AccountFeatureFlag {
     VisionarySignup = 'VisionarySignup',
     VpnBitcoinPaymentMethod = 'VpnBitcoinPaymentMethod',
     VPNDashboard = 'VPNDashboard',
+    VpnDashboardVisionaryUpsell = 'VpnDashboardVisionaryUpsell',
     VPNReferralWithoutTrial = 'VPNReferralWithoutTrial',
 }
 
