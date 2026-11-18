@@ -6,8 +6,8 @@ import { deleteESDB, hasESDB, openESDB } from './indexedDB';
 
 // Use a short timeout for the "blocked delete" tests instead of the real
 // ES_DELETE_DB_BLOCKED_TIMEOUT, so a blocked delete test doesn't have to wait 5s.
-jest.mock('../constants', () => ({
-    ...jest.requireActual('../constants'),
+vi.mock('../constants', async () => ({
+    ...(await vi.importActual('../constants')),
     ES_DELETE_DB_BLOCKED_TIMEOUT: 50,
 }));
 

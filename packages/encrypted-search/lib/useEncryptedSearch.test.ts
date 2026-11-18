@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
@@ -8,116 +9,117 @@ import { syncItemEvents } from './esHelpers/esSync';
 import { readEnabled, readLimited } from './esIDB/configObjectStore';
 import { deleteESDB, hasESDB } from './esIDB/indexedDB';
 import { contentIndexingProgress, metadataIndexingProgress } from './esIDB/indexingProgress';
+import type * as IndexingProgress from './esIDB/indexingProgress';
 import { useEncryptedSearch } from './useEncryptedSearch';
 import { useEncryptedSearchStatus } from './useEncryptedSearchStatus';
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
-    traceInitiativeError: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sentry', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/sentry')),
+    traceInitiativeError: vi.fn(),
 }));
 
 const mockedESCallback = {
-    queryItemsMetadata: jest.fn(),
-    getPreviousEventID: jest.fn(),
-    getSearchParams: jest.fn().mockReturnValue({
+    queryItemsMetadata: vi.fn(),
+    getPreviousEventID: vi.fn(),
+    getSearchParams: vi.fn().mockReturnValue({
         isSearch: false,
     }),
-    getKeywords: jest.fn(),
-    searchKeywords: jest.fn(),
-    getTotalItems: jest.fn(),
-    getEventFromIDB: jest.fn(),
-    getItemInfo: jest.fn(),
-    resetSort: jest.fn(),
-    checkIsReverse: jest.fn(),
-    shouldOnlySortResults: jest.fn(),
-    getSearchInterval: jest.fn(),
-    applyFilters: jest.fn(),
-    onContentDeletion: jest.fn(),
-    correctDecryptionErrors: jest.fn(),
+    getKeywords: vi.fn(),
+    searchKeywords: vi.fn(),
+    getTotalItems: vi.fn(),
+    getEventFromIDB: vi.fn(),
+    getItemInfo: vi.fn(),
+    resetSort: vi.fn(),
+    checkIsReverse: vi.fn(),
+    shouldOnlySortResults: vi.fn(),
+    getSearchInterval: vi.fn(),
+    applyFilters: vi.fn(),
+    onContentDeletion: vi.fn(),
+    correctDecryptionErrors: vi.fn(),
     getContentVersion: () => 1,
 };
 
-jest.mock('@proton/account/userKeys/hooks', () => ({
-    useGetUserKeys: () => jest.fn(),
+vi.mock('@proton/account/userKeys/hooks', async () => ({
+    useGetUserKeys: () => vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn().mockReturnValue([{ ID: 'userID' }, false]),
+vi.mock('@proton/account/user/hooks', async () => ({
+    useUser: vi.fn().mockReturnValue([{ ID: 'userID' }, false]),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', async () => ({
+    useNotifications: vi.fn().mockReturnValue({ createNotification: vi.fn() }),
 }));
 
-jest.mock('./useSearchTelemetry', () => ({
-    ...jest.requireActual('./useSearchTelemetry'),
-    useSearchTelemetry: jest.fn().mockReturnValue({
-        sendDeleteESDataReport: jest.fn(),
-        sendPerformSearchReport: jest.fn(),
+vi.mock('./useSearchTelemetry', async () => ({
+    ...(await vi.importActual('./useSearchTelemetry')),
+    useSearchTelemetry: vi.fn().mockReturnValue({
+        sendDeleteESDataReport: vi.fn(),
+        sendPerformSearchReport: vi.fn(),
     }),
 }));
 
-jest.mock('./useEncryptedSearchStatus', () => ({
-    useEncryptedSearchStatus: jest.fn().mockReturnValue([{}, jest.fn()]),
+vi.mock('./useEncryptedSearchStatus', async () => ({
+    useEncryptedSearchStatus: vi.fn().mockReturnValue([{}, vi.fn()]),
 }));
 
-jest.mock('./esIDB/indexedDB', () => ({
-    ...jest.requireActual('./esIDB/indexedDB'),
-    hasESDB: jest.fn(),
-    deleteESDB: jest.fn(),
+vi.mock('./esIDB/indexedDB', async () => ({
+    ...(await vi.importActual('./esIDB/indexedDB')),
+    hasESDB: vi.fn(),
+    deleteESDB: vi.fn(),
 }));
 
-jest.mock('./esIDB/configObjectStore', () => ({
-    ...jest.requireActual('./esIDB/configObjectStore'),
-    readEnabled: jest.fn(),
-    readLimited: jest.fn(),
+vi.mock('./esIDB/configObjectStore', async () => ({
+    ...(await vi.importActual('./esIDB/configObjectStore')),
+    readEnabled: vi.fn(),
+    readLimited: vi.fn(),
 }));
 
-jest.mock('./esIDB/indexingProgress', () => {
-    const actual = jest.requireActual('./esIDB/indexingProgress');
+vi.mock('./esIDB/indexingProgress', async () => {
+    const actual = await vi.importActual<typeof IndexingProgress>('./esIDB/indexingProgress');
 
     return {
         ...actual,
         metadataIndexingProgress: {
             ...actual.metadataIndexingProgress,
-            read: jest.fn(),
+            read: vi.fn(),
         },
         contentIndexingProgress: {
             ...actual.contentIndexingProgress,
-            read: jest.fn(),
+            read: vi.fn(),
         },
     };
 });
 
-jest.mock('./esHelpers/esSync', () => ({
-    ...jest.requireActual('./esHelpers/esSync'),
-    syncItemEvents: jest.fn(),
+vi.mock('./esHelpers/esSync', async () => ({
+    ...(await vi.importActual('./esHelpers/esSync')),
+    syncItemEvents: vi.fn(),
 }));
 
-jest.mock('./esHelpers/esCache', () => ({
-    ...jest.requireActual('./esHelpers/esCache'),
-    refreshESCache: jest.fn(),
+vi.mock('./esHelpers/esCache', async () => ({
+    ...(await vi.importActual('./esHelpers/esCache')),
+    refreshESCache: vi.fn(),
 }));
 
-jest.mock('./esHelpers/esRetries', () => ({
-    ...jest.requireActual('./esHelpers/esRetries'),
-    retryAPICalls: jest.fn(),
+vi.mock('./esHelpers/esRetries', async () => ({
+    ...(await vi.importActual('./esHelpers/esRetries')),
+    retryAPICalls: vi.fn(),
 }));
 
-jest.mock('./esIDB/events', () => ({
-    ...jest.requireActual('./esIDB/events'),
-    writeAllEvents: jest.fn(),
+vi.mock('./esIDB/events', async () => ({
+    ...(await vi.importActual('./esIDB/events')),
+    writeAllEvents: vi.fn(),
 }));
 
-jest.mock('./esHelpers/esBuild', () => ({
-    ...jest.requireActual('./esHelpers/esBuild'),
-    getIndexKey: jest.fn(),
+vi.mock('./esHelpers/esBuild', async () => ({
+    ...(await vi.importActual('./esHelpers/esBuild')),
+    getIndexKey: vi.fn(),
 }));
 
 describe('useEncryptedSearch', () => {
     describe('correctDecryptionErrors', () => {
         it('should return 0 if there is no database', async () => {
-            jest.mocked(hasESDB).mockResolvedValue(false);
+            vi.mocked(hasESDB).mockResolvedValue(false);
 
             const { result } = renderHook(() =>
                 useEncryptedSearch({
@@ -133,11 +135,11 @@ describe('useEncryptedSearch', () => {
 
     describe('initializeES', () => {
         beforeEach(() => {
-            jest.mocked(traceInitiativeError).mockClear();
+            vi.mocked(traceInitiativeError).mockClear();
         });
 
         it('should return if there is no database', async () => {
-            jest.mocked(hasESDB).mockResolvedValue(false);
+            vi.mocked(hasESDB).mockResolvedValue(false);
 
             const { result } = renderHook(() =>
                 useEncryptedSearch({
@@ -151,8 +153,8 @@ describe('useEncryptedSearch', () => {
         });
 
         it('should delete the database if metadata progress is missing (zombie DB)', async () => {
-            jest.mocked(hasESDB).mockResolvedValue(true);
-            jest.mocked(metadataIndexingProgress.read).mockResolvedValue(undefined);
+            vi.mocked(hasESDB).mockResolvedValue(true);
+            vi.mocked(metadataIndexingProgress.read).mockResolvedValue(undefined);
 
             const { result } = renderHook(() =>
                 useEncryptedSearch({
@@ -168,13 +170,13 @@ describe('useEncryptedSearch', () => {
         });
 
         it('should delete the database if the index key is missing', async () => {
-            jest.mocked(deleteESDB).mockClear();
-            jest.mocked(traceInitiativeError).mockClear();
-            jest.mocked(hasESDB).mockResolvedValue(true);
-            jest.mocked(metadataIndexingProgress.read).mockResolvedValue({
+            vi.mocked(deleteESDB).mockClear();
+            vi.mocked(traceInitiativeError).mockClear();
+            vi.mocked(hasESDB).mockResolvedValue(true);
+            vi.mocked(metadataIndexingProgress.read).mockResolvedValue({
                 status: INDEXING_STATUS.ACTIVE,
             } as any);
-            jest.mocked(getIndexKey).mockResolvedValue(undefined);
+            vi.mocked(getIndexKey).mockResolvedValue(undefined);
 
             const { result } = renderHook(() =>
                 useEncryptedSearch({
@@ -197,23 +199,23 @@ describe('useEncryptedSearch', () => {
     // call returns, because resuming or restarting an index only returns once that index is built.
     describe('initializeES - onStateSettled', () => {
         const setupIndexedDB = (contentStatus: INDEXING_STATUS) => {
-            jest.mocked(hasESDB).mockResolvedValue(true);
-            jest.mocked(metadataIndexingProgress.read).mockResolvedValue({
+            vi.mocked(hasESDB).mockResolvedValue(true);
+            vi.mocked(metadataIndexingProgress.read).mockResolvedValue({
                 status: INDEXING_STATUS.ACTIVE,
             } as any);
-            jest.mocked(contentIndexingProgress.read).mockResolvedValue({ status: contentStatus } as any);
-            jest.mocked(readEnabled).mockResolvedValue(true);
-            jest.mocked(readLimited).mockResolvedValue(false);
-            jest.mocked(getIndexKey).mockResolvedValue({} as CryptoKey);
+            vi.mocked(contentIndexingProgress.read).mockResolvedValue({ status: contentStatus } as any);
+            vi.mocked(readEnabled).mockResolvedValue(true);
+            vi.mocked(readLimited).mockResolvedValue(false);
+            vi.mocked(getIndexKey).mockResolvedValue({} as CryptoKey);
         };
 
-        const initialize = async (onStateSettled: jest.Mock) => {
+        const initialize = async (onStateSettled: Mock) => {
             const { result } = renderHook(() =>
                 useEncryptedSearch({
                     refreshMask: 1,
                     esCallbacks: {
                         ...mockedESCallback,
-                        getEventFromIDB: jest
+                        getEventFromIDB: vi
                             .fn()
                             .mockResolvedValue({ newEvents: [], shouldRefresh: false, eventsToStore: {} }),
                     },
@@ -225,7 +227,7 @@ describe('useEncryptedSearch', () => {
 
         it('should report an index that can serve searches', async () => {
             setupIndexedDB(INDEXING_STATUS.ACTIVE);
-            const onStateSettled = jest.fn();
+            const onStateSettled = vi.fn();
 
             await initialize(onStateSettled);
 
@@ -238,7 +240,7 @@ describe('useEncryptedSearch', () => {
 
         it('should report an index whose content is still being indexed', async () => {
             setupIndexedDB(INDEXING_STATUS.INDEXING);
-            const onStateSettled = jest.fn();
+            const onStateSettled = vi.fn();
 
             await initialize(onStateSettled);
 
@@ -248,8 +250,8 @@ describe('useEncryptedSearch', () => {
         // Nothing was concluded, so nothing is reported: the caller is expected to settle on the call
         // returning instead (see `EncryptedSearchProvider`).
         it('should report nothing when there is no database', async () => {
-            jest.mocked(hasESDB).mockResolvedValue(false);
-            const onStateSettled = jest.fn();
+            vi.mocked(hasESDB).mockResolvedValue(false);
+            const onStateSettled = vi.fn();
 
             await initialize(onStateSettled);
 
@@ -265,7 +267,7 @@ describe('useEncryptedSearch', () => {
             const kept = { ID: 'kept' };
             const moved = { ID: 'moved' };
             const permanentResults = [kept, moved];
-            jest.mocked(useEncryptedSearchStatus).mockReturnValue([
+            vi.mocked(useEncryptedSearchStatus).mockReturnValue([
                 {
                     ...defaultESStatus,
                     dbExists: true,
@@ -275,13 +277,13 @@ describe('useEncryptedSearch', () => {
                     permanentResults,
                     cachedIndexKey: {} as CryptoKey,
                 },
-                jest.fn(),
+                vi.fn(),
             ] as any);
-            jest.mocked(contentIndexingProgress.read).mockResolvedValue(undefined);
-            jest.mocked(readLimited).mockResolvedValue(false);
+            vi.mocked(contentIndexingProgress.read).mockResolvedValue(undefined);
+            vi.mocked(readLimited).mockResolvedValue(false);
 
             let finishSync = () => {};
-            jest.mocked(syncItemEvents).mockImplementation(
+            vi.mocked(syncItemEvents).mockImplementation(
                 () =>
                     new Promise((resolve) => {
                         finishSync = () => {
@@ -296,14 +298,14 @@ describe('useEncryptedSearch', () => {
                     refreshMask: 1,
                     esCallbacks: {
                         ...mockedESCallback,
-                        getSearchParams: jest.fn().mockReturnValue({ isSearch: true, esSearchParams: {} }),
-                        shouldOnlySortResults: jest.fn().mockReturnValue(true),
+                        getSearchParams: vi.fn().mockReturnValue({ isSearch: true, esSearchParams: {} }),
+                        shouldOnlySortResults: vi.fn().mockReturnValue(true),
                     },
                 })
             );
 
             await result.current.handleEvent({ Items: [{}], eventsToStore: {}, Refresh: 0 } as any);
-            const setResultsList = jest.fn();
+            const setResultsList = vi.fn();
             const search = result.current.encryptedSearch(setResultsList);
             await new Promise((resolve) => setTimeout(resolve, 0));
 
@@ -318,9 +320,9 @@ describe('useEncryptedSearch', () => {
 
         // A failing sync retries itself indefinitely, so the wait is capped
         it('should hand back the results anyway when the sync takes too long', async () => {
-            jest.useFakeTimers();
+            vi.useFakeTimers();
             const permanentResults = [{ ID: 'kept' }, { ID: 'moved' }];
-            jest.mocked(useEncryptedSearchStatus).mockReturnValue([
+            vi.mocked(useEncryptedSearchStatus).mockReturnValue([
                 {
                     ...defaultESStatus,
                     dbExists: true,
@@ -330,33 +332,33 @@ describe('useEncryptedSearch', () => {
                     permanentResults,
                     cachedIndexKey: {} as CryptoKey,
                 },
-                jest.fn(),
+                vi.fn(),
             ] as any);
-            jest.mocked(syncItemEvents).mockReturnValue(new Promise(() => {}));
+            vi.mocked(syncItemEvents).mockReturnValue(new Promise(() => {}));
 
             const { result } = renderHook(() =>
                 useEncryptedSearch({
                     refreshMask: 1,
                     esCallbacks: {
                         ...mockedESCallback,
-                        getSearchParams: jest.fn().mockReturnValue({ isSearch: true, esSearchParams: {} }),
-                        shouldOnlySortResults: jest.fn().mockReturnValue(true),
+                        getSearchParams: vi.fn().mockReturnValue({ isSearch: true, esSearchParams: {} }),
+                        shouldOnlySortResults: vi.fn().mockReturnValue(true),
                     },
                 })
             );
 
             await result.current.handleEvent({ Items: [{}], eventsToStore: {}, Refresh: 0 } as any);
-            const setResultsList = jest.fn();
+            const setResultsList = vi.fn();
             const search = result.current.encryptedSearch(setResultsList);
 
-            await jest.advanceTimersByTimeAsync(1000);
+            await vi.advanceTimersByTimeAsync(1000);
             expect(setResultsList).not.toHaveBeenCalled();
 
-            await jest.advanceTimersByTimeAsync(1000);
+            await vi.advanceTimersByTimeAsync(1000);
             await expect(search).resolves.toBe(true);
             expect(setResultsList).toHaveBeenCalledWith(permanentResults);
 
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
     });
 });

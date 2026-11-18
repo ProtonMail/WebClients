@@ -5,28 +5,28 @@ import { getIndexKey } from './esBuild';
 import { getESLogger } from './esLogger';
 import { esSentryReport } from './esReporting';
 
-jest.mock('@protontech/crypto', () => ({
-    CryptoProxy: { decryptMessage: jest.fn() },
+vi.mock('@protontech/crypto', () => ({
+    CryptoProxy: { decryptMessage: vi.fn() },
 }));
-jest.mock('../esIDB/configObjectStore', () => ({
-    readIndexKey: jest.fn(),
+vi.mock('../esIDB/configObjectStore', () => ({
+    readIndexKey: vi.fn(),
 }));
-jest.mock('./esLogger', () => {
-    const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn() };
+vi.mock('./esLogger', () => {
+    const logger = { info: vi.fn(), warn: vi.fn(), error: vi.fn() };
     return { getESLogger: () => logger };
 });
-jest.mock('./esReporting', () => ({
-    esSentryReport: jest.fn(),
-    esErrorReport: jest.fn(),
+vi.mock('./esReporting', () => ({
+    esSentryReport: vi.fn(),
+    esErrorReport: vi.fn(),
 }));
 
 describe('getIndexKey', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should resolve undefined without reporting when there is no index key', async () => {
-        jest.mocked(readIndexKey).mockResolvedValue(null as any);
+        vi.mocked(readIndexKey).mockResolvedValue(null as any);
 
         await expect(getIndexKey([], 'userID')).resolves.toBeUndefined();
         expect(esSentryReport).not.toHaveBeenCalled();
@@ -35,8 +35,8 @@ describe('getIndexKey', () => {
 
     it('should report when decryption fails', async () => {
         const error = new Error('decrypt failed');
-        jest.mocked(readIndexKey).mockResolvedValue('armored' as any);
-        jest.mocked(CryptoProxy.decryptMessage).mockRejectedValue(error);
+        vi.mocked(readIndexKey).mockResolvedValue('armored' as any);
+        vi.mocked(CryptoProxy.decryptMessage).mockRejectedValue(error);
 
         await expect(getIndexKey([], 'userID')).resolves.toBeUndefined();
         expect(esSentryReport).toHaveBeenCalledWith('getIndexKey', { error });
