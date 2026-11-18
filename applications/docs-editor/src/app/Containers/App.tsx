@@ -566,6 +566,14 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         }
       },
 
+      async showSpreadsheetCellChanges(changes) {
+        spreadsheetRef.current?.showCellChanges(changes)
+      },
+
+      async goToSpreadsheetCell(sheetId, rowIndex, columnIndex) {
+        spreadsheetRef.current?.goToCell(sheetId, rowIndex, columnIndex)
+      },
+
       async focusSpreadsheet() {
         if (spreadsheetRef.current) {
           spreadsheetRef.current.focusSheet?.()

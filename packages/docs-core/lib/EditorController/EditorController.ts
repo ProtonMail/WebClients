@@ -41,6 +41,10 @@ export interface EditorControllerInterface {
   restoreRevisionByReplacingLexicalState(lexicalState: SerializedEditorState): Promise<void>
   restoreRevisionByReplacingSpreadsheetState(spreadsheetState: unknown): Promise<void>
   replaceLocalSpreadsheetState(spreadsheetState: unknown, broadcastPatches: boolean): Promise<void>
+  showSpreadsheetCellChanges(
+    changes: Parameters<ClientRequiresEditorMethods['showSpreadsheetCellChanges']>[0],
+  ): Promise<void>
+  goToSpreadsheetCell(sheetId: number, rowIndex: number, columnIndex: number): Promise<void>
   showCommentsPanel(): void
   toggleDebugTreeView(): Promise<void>
   initializeEditor(
@@ -444,6 +448,24 @@ export class EditorController implements EditorControllerInterface {
     }
 
     await this.editorInvoker.replaceLocalSpreadsheetState(spreadsheetState, broadcastPatches)
+  }
+
+  async showSpreadsheetCellChanges(
+    changes: Parameters<ClientRequiresEditorMethods['showSpreadsheetCellChanges']>[0],
+  ): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to show spreadsheet cell changes before editor invoker is initialized')
+    }
+
+    await this.editorInvoker.showSpreadsheetCellChanges(changes)
+  }
+
+  async goToSpreadsheetCell(sheetId: number, rowIndex: number, columnIndex: number): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to go to a spreadsheet cell before editor invoker is initialized')
+    }
+
+    await this.editorInvoker.goToSpreadsheetCell(sheetId, rowIndex, columnIndex)
   }
 
   reloadEditingLockedState(): void {

@@ -33,6 +33,8 @@ function createEditorController() {
     applyUpdate: jest.fn(async () => {}),
     getLocalSpreadsheetStateJSON: jest.fn(async () => ({ stateVersion: stateVersion++ })),
     replaceLocalSpreadsheetState: jest.fn(async () => {}),
+    showSpreadsheetCellChanges: jest.fn(async () => {}),
+    goToSpreadsheetCell: jest.fn(async () => {}),
   }
 }
 
@@ -130,7 +132,7 @@ describe('UpdateReplayTool', () => {
     answer({ stateVersion: 99 })
     await screen.findByText('Applied: 1 / 5')
 
-    // Only the snapshot from loading is kept.
-    expect(screen.getByText('1 / 0')).toBeInTheDocument()
+    // Only the snapshot from loading is kept, so step 0 is still the only step.
+    expect(screen.getByText('0 / 0')).toBeInTheDocument()
   })
 })

@@ -31,6 +31,24 @@ export interface ClientRequiresEditorMethods {
    */
   replaceEditorState(state: SerializedEditorState): Promise<void>
   replaceLocalSpreadsheetState(state: object, broadcastPatches: boolean): Promise<void>
+  /**
+   * Highlights cells in the sheet as added, deleted or modified, or clears the highlighting when passed null.
+   * Used by the update replay debug tool to show what an update changed.
+   */
+  showSpreadsheetCellChanges(
+    changes:
+      | {
+          sheetId: number
+          rowIndex: number
+          columnIndex: number
+          kind: 'added' | 'deleted' | 'modified'
+          valueChanged: boolean
+          formatChanged: boolean
+          textBefore: string
+        }[]
+      | null,
+  ): Promise<void>
+  goToSpreadsheetCell(sheetId: number, rowIndex: number, columnIndex: number): Promise<void>
   getClientId(): Promise<number>
   showEditor(): Promise<void>
   showCommentsPanel(): Promise<void>

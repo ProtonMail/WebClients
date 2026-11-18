@@ -133,6 +133,16 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('replaceLocalSpreadsheetState', [state, broadcastPatches])
   }
 
+  async showSpreadsheetCellChanges(
+    changes: Parameters<ClientRequiresEditorMethods['showSpreadsheetCellChanges']>[0],
+  ): Promise<void> {
+    return this.invokeEditorMethod('showSpreadsheetCellChanges', [changes])
+  }
+
+  async goToSpreadsheetCell(sheetId: number, rowIndex: number, columnIndex: number): Promise<void> {
+    return this.invokeEditorMethod('goToSpreadsheetCell', [sheetId, rowIndex, columnIndex])
+  }
+
   async getYDocAsJSON(): Promise<unknown> {
     return this.invokeEditorMethod('getYDocAsJSON', [])
   }
