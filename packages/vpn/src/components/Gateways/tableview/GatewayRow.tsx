@@ -9,8 +9,8 @@ import clsx from '@proton/utils/clsx';
 
 import { getFormattedLoad, getMembers } from '../../../functions/gatewayHelpers';
 import type { Gateway, GatewayGroup, GatewayLogical, GatewayServer, GatewayUser } from '../../../types/Gateway';
+import { GatewayManageButton } from '../GatewayManageButton';
 import { isLogicalDeleted } from '../isLogicalDeleted';
-import { GatewayManageButton } from './GatewayManageButton';
 
 import './GatewayRow.scss';
 
