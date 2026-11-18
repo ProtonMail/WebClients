@@ -702,16 +702,16 @@ describe('DocumentViewerV2', () => {
     renderViewer(createSession(), { role: 'Admin' })
 
     expect(await screen.findByText('File action modals')).toBeInTheDocument()
+    // The node arrives one render after the role
     await waitFor(() =>
-      expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith(expect.objectContaining({ role: 'Admin' })),
+      expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith({
+        node: expect.objectContaining({ uid: 'VOLUME~LINK', name: 'Plans' }),
+        role: 'Admin',
+        driveCompat: DRIVE_COMPAT,
+        client: mockRealtimeClient,
+        exportInvoker: undefined,
+      }),
     )
-    expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith({
-      node: expect.objectContaining({ uid: 'VOLUME~LINK', name: 'Plans' }),
-      role: 'Admin',
-      driveCompat: DRIVE_COMPAT,
-      client: mockRealtimeClient,
-      exportInvoker: undefined,
-    })
   })
 
   describe('the loading screen', () => {
@@ -1169,7 +1169,8 @@ describe('DocumentViewerV2', () => {
       const fake = createSession()
       renderViewer(fake)
       await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
-      expect(screen.getByTestId('header-exports')).toHaveTextContent('exports disabled')
+      // The header renders after the connection starts
+      expect(await screen.findByTestId('header-exports')).toHaveTextContent('exports disabled')
 
       act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
       await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
