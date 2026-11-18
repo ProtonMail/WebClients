@@ -1739,6 +1739,18 @@
       ],
       "Add ${ name }": [
         "Додати ${ name }"
+      ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
+      ],
+      "Next contact": [
+        "Наступний контакт"
+      ],
+      "Previous contact": [
+        "Попередній контакт"
       ]
     },
     "action": {
@@ -4415,6 +4427,12 @@
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "Для користування ${ LUMO_SHORT_APP_NAME } в ${ MAIL_APP_NAME } запитайте доступ у вашого адміністратора."
+      ],
+      "High-performance model for complex tasks": [
+        "Високопродуктивна модель для виконання складних завдань"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Легка модель для щоденних завдань"
       ]
     },
     "description": {
@@ -4481,7 +4499,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Proton Mail захищає ваші листи за допомогою наскрізного шифрування з нульовим доступом, щоб ніхто сторонній (навіть Proton) не зміг прочитати ваші листи."
+        "Допоможіть нам покращитися"
       ]
     },
     "Downgrade warning": {
@@ -5809,6 +5827,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
       ]
     },
     "fido2: Info": {
@@ -7812,9 +7833,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -9379,6 +9397,9 @@
       ],
       "UnionPay logo": [
         "Логотип UnionPay"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Спілкуйтеся з ${ LUMO_SHORT_APP_NAME }, щоб шукати, читати, упорядковувати та створювати чернетки своїх електронних листів."
       ]
     },
     "info": {
@@ -10632,6 +10653,12 @@
       ],
       "One-time codes": [
         "Одноразові коди"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } — ШІ помічник"
+      ],
+      "Model": [
+        "Модель"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15483,6 +15510,12 @@
       ],
       "One-time codes enabled": [
         "Увімкнено одноразові коди"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } ШІ помічника вимкнено"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } ШІ помічника увімкнено"
       ]
     },
     "Success notification": {

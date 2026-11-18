@@ -1742,6 +1742,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Dismiss notification": [
+        "Melding sluiten"
       ]
     },
     "action": {
@@ -7715,8 +7718,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -9351,6 +9353,14 @@
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
         "We hebben een aantal mailinglijsten gevonden die u niet leest. U kunt zich met één klik hiervoor afmelden."
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } lid)",
+        "${ contactGroupName } (${ numberOfContacts } leden)"
+      ],
+      "${ n } unread message": [
+        "${ n } ongelezen bericht",
+        "${ n } ongelezen berichten"
       ]
     },
     "info": {
@@ -13765,6 +13775,9 @@
       ],
       "User Admin": [
         "Gebruiker Beheerder"
+      ],
+      "Organization Admin": [
+        "Organisatie Beheerder"
       ]
     },
     "Safety review": {

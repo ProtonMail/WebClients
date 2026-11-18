@@ -1236,6 +1236,12 @@
       ],
       "Zoom out": [
         "Semẓi"
+      ],
+      "Create and copy alias": [
+        "Snulfu-d sakin nɣel azunisem"
+      ],
+      "Remove from list": [
+        "Kkes seg tebdart"
       ]
     },
     "action": {
@@ -3603,6 +3609,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ddeqs n igmaḍ i d-yerra unadi-ik. Ma ulac aɣilif, err talast i unadi-inek sakin ɛreḍ tikelt- nniḍen."
+      ],
+      "Add at least one action": [
+        "Arnu xarṣum yiwet n tigawt"
+      ],
+      "Alias is not valid": [
+        "Azunisem d arameɣtu"
+      ],
+      "An error occurred while saving your alias": [
+        "Teḍra-d tuccḍa deg usekles n wazunisem-ik"
+      ],
+      "Name is required": [
+        "Isem yettwasra"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4957,8 +4975,7 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
+        "Ger tugna"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -5660,6 +5677,43 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "${ unreadCount } newsletter": [
+        "Aɣmis ${ unreadCount }",
+        "${ unreadCount } n tebratin n yisallen"
+      ],
+      "Create a filter": [
+        "Snulfu-d tastayt"
+      ],
+      "Create filter": [
+        "Snulfu-d tastayt"
+      ],
+      "Important note": [
+        "Tamawt taxatart"
+      ],
+      "Mark all as unread": [
+        "Creḍ meṛṛa amzun ur ttwaɣran ara"
+      ],
+      "newsletter": [
+        "Tabrat n yisallen"
+      ],
+      "Not connected": [
+        "Ur iqqin ara"
+      ],
+      "Unread conversations": [
+        "Idiwenniyen ur nettwaɣra ara"
+      ],
+      "Unread messages": [
+        "Iznan ur nettwaɣra ara"
+      ],
+      "Update the filter ${ filter }": [
+        "mucceḍ tastayt ${ filter }"
+      ],
+      "When working remotely": [
+        "Mi ara txeddmeḍ s wudem anmeggag"
+      ],
+      "Your online activity is protected": [
+        "Armud-ik deg internet yettummesten"
       ]
     },
     "info": {
@@ -6510,6 +6564,30 @@
       ],
       "Font size": [
         "Tiddi n tseftit"
+      ],
+      "Enable filter": [
+        "Sermed tastayt"
+      ],
+      "Filter": [
+        "Tastayt"
+      ],
+      "Filter name": [
+        "Isem n testayt"
+      ],
+      "Filters": [
+        "Tistayin"
+      ],
+      "Go to Social": [
+        "Ddu ɣer Unmetti"
+      ],
+      "Newsletters": [
+        "Tibratin n yisallen"
+      ],
+      "Sieve script": [
+        "Sekles askript"
+      ],
+      "Social": [
+        "Anmetti"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -6757,6 +6835,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Ilaq ad talseḍ armad n tsura-inek·inem iwakken ad twaliḍ tinubga yettwaleqqmen"
+      ],
+      "Views": [
+        "Timeẓriyin"
       ]
     },
     "Link to calendar event": {
@@ -7850,6 +7931,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Ɛreḍ ${ PASS_APP_NAME }"
+      ],
+      "Create an alias": [
+        "Snulfu-d azunisem"
       ]
     },
     "Select files": {
@@ -8050,6 +8134,9 @@
       ],
       "Smallest first": [
         "Ameẓẓyan maḍi qbel"
+      ],
+      "Sort by": [
+        "Smizzwer s"
       ]
     },
     "specialoffer: Action": {
@@ -8560,11 +8647,17 @@
       ],
       "Verification successful": [
         "Asenqed yedda akken iwata"
+      ],
+      "Alias saved and copied": [
+        "Azunisem yettwasekles yerna yettwanɣel"
       ]
     },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } yettwakkes"
+      ],
+      "The filter is active again": [
+        "Tastayt tettwarmed tikkelt nniḍen"
       ]
     },
     "Suffix": {
@@ -9349,6 +9442,45 @@
       ],
       "Your plan": [
         "Aɣawas-ik·im"
+      ],
+      "A filter name is required": [
+        "Isem n testayt yettwasra"
+      ],
+      "Download the app": [
+        "Sider asnas"
+      ],
+      "Enable 2FA": [
+        "Sermed 2FA"
+      ],
+      "Filter on": [
+        "Tastayt termed"
+      ],
+      "Loading...": [
+        "Asali..."
+      ],
+      "Mark all messages as read": [
+        "Creḍ meṛṛa iznan amzun ttwaɣren"
+      ],
+      "Mark conversations as unread": [
+        "Creḍ idiwenniyen amzun ur tatwaɣran ara"
+      ],
+      "Newsletters": [
+        "Tibratin n yisallen"
+      ],
+      "Newsletters view": [
+        "Taskant n tebratin n yisallen"
+      ],
+      "Remove from list?": [
+        "Kkes seg tebdart?"
+      ],
+      "Security center": [
+        "Ammas n tɣellist"
+      ],
+      "Trash all messages?": [
+        "Smutti meṛṛa iznan ɣer tqecwalt n yiḍumman?"
+      ],
+      "Your account is protected": [
+        "Amiḍan-ik yettummesten"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9848,6 +9980,31 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Sider i Windows"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "Tastayt"
+      ],
+      "Filter and sort emails": [
+        "Tastayt d usmizzwer n yimaylen"
+      ],
+      "Has attachments": [
+        "Yesɛa imeddayen"
+      ],
+      "Read": [
+        "Yettwaɣra"
+      ],
+      "Reset": [
+        "Ales awennez"
+      ],
+      "Unread": [
+        "Ur yettwaɣri ara"
       ]
     }
   }

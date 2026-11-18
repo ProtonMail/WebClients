@@ -1781,6 +1781,12 @@
       ],
       "Cancel trial": [
         "取消试用"
+      ],
+      "Next contact": [
+        "下一个联系人"
+      ],
+      "Previous contact": [
+        "上一个联系人"
       ]
     },
     "action": {
@@ -4434,6 +4440,12 @@
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "要在 ${ MAIL_APP_NAME } 中使用 ${ LUMO_SHORT_APP_NAME }，请向您的管理员申请访问权限。"
+      ],
+      "High-performance model for complex tasks": [
+        "适合复杂任务的高性能模型"
+      ],
+      "Lightweight model for everyday tasks": [
+        "适合日常任务的轻量模型"
       ]
     },
     "description": {
@@ -5809,6 +5821,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "使用安全密钥认证时出现问题，请重试。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "此浏览器不支持安全密钥，请换用其他浏览器。"
       ]
     },
     "fido2: Info": {
@@ -9604,6 +9619,9 @@
       ],
       "Move one-time code emails to Trash on copy": [
         "复制后请将一次性验证码邮件移至回收站"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "与 ${ LUMO_SHORT_APP_NAME } 对话，搜索、阅读、整理和起草您的邮件。"
       ]
     },
     "info": {
@@ -10977,6 +10995,12 @@
       ],
       "One-time codes": [
         "一次性验证码"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI 助手"
+      ],
+      "Model": [
+        "模型"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15674,6 +15698,12 @@
       ],
       "One-time codes enabled": [
         "一次性验证码已启用"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI 助手已停用"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } AI 助手已启用"
       ]
     },
     "Success notification": {

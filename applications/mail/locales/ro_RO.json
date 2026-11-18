@@ -73,13 +73,13 @@
         "Adăugare alt cont"
       ],
       "Add Bcc recipients": [
-        "Adăugare destinatari la copia ascunsă"
+        "Adăugare destinatari ascunși"
       ],
       "Add birthday": [
         "Adăugare dată naștere"
       ],
       "Add Cc recipients": [
-        "Adăugare destinatari la copie"
+        "Adăugare destinatari vizibili"
       ],
       "Add condition": [
         "Adăugare condiție"
@@ -207,7 +207,7 @@
         "Anulare perioadă de evaluare și plătire"
       ],
       "Carbon Copy": [
-        "Copie"
+        "Destinatari vizibili"
       ],
       "Change password": [
         "Modificare parolă"
@@ -1793,6 +1793,18 @@
       ],
       "Cancel trial": [
         "Anulare perioadă de probare"
+      ],
+      "Dismiss notification": [
+        "Închidere notificare"
+      ],
+      "Go to today": [
+        "Salt la astăzi"
+      ],
+      "Next contact": [
+        "Contact următor"
+      ],
+      "Previous contact": [
+        "Contact anterior"
       ]
     },
     "action": {
@@ -4498,6 +4510,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Model de înaltă performanță pentru sarcini complexe."
+      ],
+      "Lightweight model for everyday tasks": [
+        "Model simplu pentru sarcinile de zi cu zi."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Pentru a utiliza ${ LUMO_SHORT_APP_NAME } în ${ MAIL_APP_NAME }, adăugați-l la abonamentul actual."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Pentru a utiliza ${ LUMO_SHORT_APP_NAME } în ${ MAIL_APP_NAME }, solicitați acces de la administratorul organizației."
       ]
     },
     "description": {
@@ -5905,6 +5929,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
       ]
     },
     "fido2: Info": {
@@ -8069,9 +8096,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9938,6 +9963,23 @@
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
         "S-au găsit câteva liste de corespondență pe care nu le citiți. Vă puteți dezabona de la ele cu un singur clic."
+      ],
+      "${ n } unread message": [
+        "Mesaje necitite: ${ n }",
+        "Mesaje necitite: ${ n }",
+        "Mesaje necitite: ${ n }"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Conversați cu ${ LUMO_SHORT_APP_NAME } pentru a căuta, citi, organiza și schița e-mailuri."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copiază cu un singur clic codurile de unică folosință din mesaje."
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Mutare mesaje cu coduri de unică folosință în gunoi după copiere."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Licențele pentru asistentul de scriere nu se mai vând."
       ]
     },
     "info": {
@@ -10393,7 +10435,7 @@
         "Mesaj de indisponibilitate"
       ],
       "BCC": [
-        "Ca"
+        "BCC"
       ],
       "Beta Access": [
         "Acces la Beta"
@@ -10432,7 +10474,7 @@
         "Calendare"
       ],
       "Carbon Copy": [
-        "Copie"
+        "Destinatari vizibili"
       ],
       "Card details": [
         "Detalii card"
@@ -11323,6 +11365,18 @@
         "Selectare toți expeditorii neutilizați: ${ count }",
         "Selectare toți expeditorii neutilizați: ${ count }",
         "Selectare toți expeditorii neutilizați: ${ count }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "Asistent ${ LUMO_SHORT_APP_NAME } AI"
+      ],
+      "Model": [
+        "Model"
+      ],
+      "Move to Trash": [
+        "Mutare în gunoi"
+      ],
+      "One-time codes": [
+        "Cod de unică folosință"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16256,6 +16310,18 @@
       ],
       "You have successfully canceled your subscription.": [
         "V-ați anulat abonamentul."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Asistentul ${ LUMO_SHORT_APP_NAME } AI este dezactivat"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "Asistentul ${ LUMO_SHORT_APP_NAME } AI este activat"
+      ],
+      "One-time codes disabled": [
+        "Codurile de unică folosință s-au dezactivat."
+      ],
+      "One-time codes enabled": [
+        "Codurile de unică folosință s-au activat."
       ]
     },
     "Success notification": {
@@ -16587,7 +16653,7 @@
         "Moment nepotrivit pentru acest mesaj?"
       ],
       "BCC": [
-        "CA"
+        "BCC"
       ],
       "Billing cycle": [
         "Ciclu de facturare"
@@ -16599,7 +16665,7 @@
         "Black Friday"
       ],
       "Blind Carbon Copy": [
-        "Copie ascunsă"
+        "Destinatari ascunși"
       ],
       "Block sender": [
         "Blocare expeditor"
@@ -16620,7 +16686,7 @@
         "Nu se mai pot crea pagini de rezervare"
       ],
       "Carbon Copy": [
-        "Copie"
+        "Destinatari vizibili"
       ],
       "Card verification": [
         "Verificare card"
@@ -18308,6 +18374,73 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2X Utilizare de bază"
+      ],
+      "5x Plus usage": [
+        "Utilizare Plus 5X"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acces la API, cu ${ credit } credit pe lună"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acces la API, cu ${ credit } credit pe lună per utilizator"
+      ],
+      "Everything in Basic, and:": [
+        "Torul din Basic și:"
+      ],
+      "Everything in Free, and:": [
+        "Totul din Free și:"
+      ],
+      "Everything in Plus, and:": [
+        "Totul din Plus și:"
+      ],
+      "Extended image generation": [
+        "Generare de imagini extinsă"
+      ],
+      "Includes:": [
+        "Include:"
+      ],
+      "Limited image generation": [
+        "Generare de imagini limitată"
+      ],
+      "Limited messages and chat history": [
+        "Mesaje si istoric conversații limitate"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Aptitudini, proiecte și sarcini planificate limitate"
+      ],
+      "Maximum image generation": [
+        "Maximum generări de imagini"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximum de proiecte și aptitudini"
+      ],
+      "More image generation": [
+        "Mai multe generări de imagini"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mai multe aptitudini, proiecte și sarcini planificate"
+      ],
+      "More usage": [
+        "Mai multă utilizare"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Pentru programare și construire"
+      ],
+      "For everyday chats": [
+        "Pentru conversațiile zilnice"
+      ],
+      "For getting more done": [
+        "Pentru a realiza mai multe"
       ]
     }
   }

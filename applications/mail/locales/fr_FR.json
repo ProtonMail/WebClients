@@ -1781,6 +1781,9 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the right": [
         "Déplacer ${ LUMO_SHORT_APP_NAME } sur la droite"
+      ],
+      "Write ${ count } logs": [
+        "Écrire ${ count } entrées de journal"
       ]
     },
     "action": {
@@ -4452,6 +4455,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Modèle haute performance pour les tâches complexes"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Modèle léger pour les tâches quotidiennes"
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Pour utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, ajoutez-le à votre abonnement."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Pour utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, demandez l'accès à votre admin."
       ]
     },
     "description": {
@@ -5446,6 +5461,9 @@
       ],
       "Cannot send an empty message. Message is not sent.": [
         "Impossible d'envoyer un message vide. Le message n'a pas été envoyé."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Les images intégrées ne peuvent pas être supprimées. Le message n'a pas été transformé en texte brut."
       ]
     },
     "error": {
@@ -5840,6 +5858,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
       ]
     },
     "fido2: Info": {
@@ -7868,8 +7889,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8402,7 +8422,7 @@
         "Lire le brouillon ouvert"
       ],
       "Read your ${ count } filter": [
-        "Lire votre ${ count } filtre",
+        "Lire votre filtre ${ count }",
         "Lire vos ${ count } filtres"
       ],
       "Read your ${ count } folder": [
@@ -9706,6 +9726,46 @@
       ],
       "Move one-time code emails to Trash on copy": [
         "Déplacer les codes à usage unique reçus par e-mail vers la corbeille après les avoir copiés."
+      ],
+      "${ n } unread message": [
+        "${ n } message non lu",
+        "${ n } messages non lus"
+      ],
+      "Change how your mail is grouped": [
+        "Changez la manière dont vos messages sont regroupés"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Discutez avec ${ LUMO_SHORT_APP_NAME } pour rechercher, lire, organiser et rédiger vos messages."
+      ],
+      "Document in foundation-search index": [
+        "Document figurant dans l'index « foundation-search »"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Marquer ${ emails } comme ${ names }"
+      ],
+      "Leave Big Tech": [
+        "Quitter les géants de la tech"
+      ],
+      "Opened ${ location }": [
+        "${ location } ouvert"
+      ],
+      "Read open email “${ subject }”": [
+        "Lire l'e-mail ouvert « ${ subject } »"
+      ],
+      "Star ${ emails }": [
+        "Marquer ${ emails } d'une étoile"
+      ],
+      "Stop companies reading my emails": [
+        "Bloquer les sociétés qui lisent mes messages"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Cette adresse Gmail est associée à un autre compte ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } et autres). Nous travaillons à rendre cette connexion plus fluide, mais pour l'instant, vous devrez suivre quelques étapes."
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Nous avons trouvé quelques listes de diffusion que vous ne lisez pas. Vous pouvez vous en désinscrire en un clic."
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Affiche ${ REALISTIC_ENTRIES } lignes de journal réalistes au fur et à mesure pendant une minute, comme lors d'une véritable session, plutôt que toutes en même temps. L'exécution prend environ une minute. Veillez à ce que cet onglet reste actif : les mesures sont mises en pause en arrière-plan."
       ]
     },
     "info": {
@@ -11073,6 +11133,21 @@
       "Select all ${ count } unused sender": [
         "Sélectionnez ${ count } expéditeur inutilisé.",
         "Sélectionnez ${ count } expéditeurs inutilisés."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "Assistant IA ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Model": [
+        "Modèle"
+      ],
+      "Sum of write() calls": [
+        "Somme des appels en écriture"
+      ],
+      "Write (whole session)": [
+        "Ecrire la session complète"
+      ],
+      "Write-chain drain after last line": [
+        "Vider la chaîne d'écriture après la dernière ligne"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13014,7 +13089,7 @@
         "navigateur"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Supprimez les e-mails dans la corbeille et les spams après 30 jours."
+        "Effacer les e-mails dans la corbeille et les indésirables/spam après 30 jours."
       ],
       "Continue": [
         "Continuer"
@@ -14757,6 +14832,9 @@
       ],
       "Snooze ${ emails } until ${ wakeTime }": [
         "Mettre en attente ${ emails } jusqu'à ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Remettre ${ emails } à plus tard"
       ]
     },
     "Snooze message": {
@@ -15882,6 +15960,12 @@
       ],
       "One-time codes enabled": [
         "Les codes à usage unique ont été activés."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "L'assistant IA ${ LUMO_SHORT_APP_NAME } a été désactivé"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "L'assistant IA ${ LUMO_SHORT_APP_NAME } a été activé"
       ]
     },
     "Success notification": {
@@ -15922,7 +16006,7 @@
         "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (A2F) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+        "L'abonnement inclut 2 950 serveurs basés dans plus de 65 pays, la possibilité de connecter votre compte à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
@@ -16770,7 +16854,7 @@
         "Aucun traqueur n'a été trouvé."
       ],
       "No unsubscribed newsletters": [
-        "Aucun désabonnement à une newsletter"
+        "Aucun newsletter à laquelle vous vous êtes désabonné(e)"
       ],
       "No-reply address detected": [
         "Une adresse sans réponse (no-reply) a été détectée."
@@ -17086,7 +17170,7 @@
         "Mise à niveau vers ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Passez à la version supérieure pour conserver vos avantages premium."
+        "Changer d'abonnement pour conserver vos avantages premium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Améliorez votre productivité pour ${ formattedPrice } avec ${ planName }"
@@ -17190,6 +17274,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Start with a cleaner Inbox": [
+        "Commencez par nettoyer votre boite de réception"
       ]
     },
     "Title header for keys table": {

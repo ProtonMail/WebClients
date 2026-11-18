@@ -1769,6 +1769,33 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the left": [
         "Flytta ${ LUMO_SHORT_APP_NAME } till vänster"
+      ],
+      "Cancel trial": [
+        "Avbryt provperioden"
+      ],
+      "Detach": [
+        "Koppla från"
+      ],
+      "Dismiss notification": [
+        "Avfärda avisering"
+      ],
+      "Dock to side panel": [
+        "Docka till sidopanelen"
+      ],
+      "Go to today": [
+        "Gå till idag"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Flytta ${ LUMO_SHORT_APP_NAME } till höger"
+      ],
+      "Next contact": [
+        "Nästa kontakt"
+      ],
+      "Previous contact": [
+        "Tidigare kontakt"
+      ],
+      "Write ${ count } logs": [
+        "Skriv ${ count } loggar"
       ]
     },
     "action": {
@@ -1914,6 +1941,12 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
+      ],
+      "Managed Service Provider": [
+        "Hanterad tjänsteleverantör"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Visar sätt att få hjälp med verifiering"
       ]
     },
     "Alert": {
@@ -4416,6 +4449,18 @@
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "För att använda ${ LUMO_SHORT_APP_NAME } i  ${ MAIL_APP_NAME },  begär tillgång från din administratör."
+      ],
+      "High-performance model for complex tasks": [
+        "Högpresterande modell för komplexa uppgifter"
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Låt folk boka tid med dig direkt via dina mejl, utan att behöva skicka meddelanden fram och tillbaka."
+      ],
+      "Lightweight model for everyday tasks": [
+        "Lättviktsmodell för vardagsuppdrag"
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "Flytta e-post till rätt kategori för att förbättra kategoriseringen."
       ]
     },
     "description": {
@@ -5407,6 +5452,9 @@
       ],
       "Cannot send an empty message. Message is not sent.": [
         "Kan inte skicka ett tomt meddelande. Meddelande är inte skickat."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Inbäddade bilder kunde inte tas bort. Meddelandet ändrades inte till oformaterad text."
       ]
     },
     "error": {
@@ -5801,6 +5849,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
       ]
     },
     "fido2: Info": {
@@ -6241,6 +6292,12 @@
       ],
       "Username": [
         "Användarnamn"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Innan ${ MAIL_APP_NAME }, vilken e-post använde du mest?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Vilket är huvudskälet till att du gick med i ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -7775,8 +7832,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8307,7 +8363,7 @@
       ],
       "Read your ${ count } filter": [
         "Läs ditt ${ count } filter",
-        "Läs ditt ${ count } filter"
+        "Läs dina ${ count } filter"
       ],
       "Read your ${ count } folder": [
         "Läs din ${ count } mapp",
@@ -9516,13 +9572,164 @@
         "Berätta mer (valfritt)"
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "Vi hittade några E-postlistor som du inte läser. Du kan avbryta prenumerationen från dem med ett klick."
+        "Vi hittade några e-postlistor som du inte läser. Du kan avbryta prenumerationen på dem med ett klick."
       ],
       "Copy one-time codes from recent emails in one click": [
         "Kopiera engångs-kodeks från senaste e-postmeddelanden i ett klick"
       ],
       "Move one-time code emails to Trash on copy": [
         "Flytta engångs-kodeks e-post till Papperskorg när de kopieras"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } märke"
+      ],
+      "${ n } unread message": [
+        "${ n } oläst meddelande",
+        "${ n } olästa meddelanden"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** används också för att logga in på ett separat ${ BRAND_NAME } konto, utanför ${ MAIL_APP_NAME }."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Efter uppdatering, din Mac kan komma att fråga efter ett lösenord. Skriv lösenordet du använder för att låsa upp din Mac, klicka sedan på Tillåt Alltid för att fortsätta vara inloggad. ${ learnMore }"
+      ],
+      "Change your list density": [
+        "Ändra din listtäthet"
+      ],
+      "Change your mailbox layout": [
+        "Ändra din mejlboxs layout"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Chatta med  ${ LUMO_SHORT_APP_NAME } för att söka, läsa, organisera och göra utkast till din e-post."
+      ],
+      "Checked Proton support": [
+        "Kollad Proton-support"
+      ],
+      "Choose all that apply.": [
+        "Välj alla som är tillämpliga."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Välj en. Det hjälper oss förbättra ${ MAIL_APP_NAME }."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna beräknas utifrån ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "Draft a ${ kind }": [
+        "Gör ett utkast ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Gör ett ${ kind } till ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Upprätta ett ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Gör ett utkast ${ kind } till ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "Gjorde ett utkast till ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Upprättade ett ${ kind }"
+      ],
+      "forward": [
+        "framåt"
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Hej Lumo, sök igenom mina mejl från de senaste 7 dagarna och berätta vilka av dem som faktiskt kräver ett svar från mig. Ge mig en kort sammanfattning av vad varje mejl handlar om, och utelämna allt som jag kan ignorera."
+      ],
+      "I didn't have one": [
+        "Jag har ingen"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Jag ska gå igenom förra veckans e-post och ta fram vad som faktiskt behöver besvaras, så du kan hantera allt på en gång."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+      ],
+      "Mark ${ emails } as read": [
+        "Markera ${ emails } som lästa"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Markera hela ${ place } som läst"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Markera hela ${ place } som oläst"
+      ],
+      "No booking pages yet": [
+        "Inga bokningssidor än"
+      ],
+      "No emails selected": [
+        "Inga e-postmeddelanden valda"
+      ],
+      "Read open email “${ subject }”": [
+        "Läs öppen e-post “${ subject }”"
+      ],
+      "Read your display settings": [
+        "Läs dina skärminställningar"
+      ],
+      "Readdressed": [
+        "Adresserade på nytt"
+      ],
+      "Readdressed the draft": [
+        "Omarbetade utkastet"
+      ],
+      "Remove the star from ${ emails }": [
+        "Ta bort stjärnan från ${ emails }"
+      ],
+      "Rename this label": [
+        "Byt namn på den här etiketten"
+      ],
+      "Revise the ${ draft }": [
+        "Revidera ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "skrev om och adresserade på nytt"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Skrev om och omarbetade utkastet"
+      ],
+      "Searched your mail": [
+        "Sökte din e-post"
+      ],
+      "Set my out of office": [
+        "Ange mitt frånvaromeddelande"
+      ],
+      "Stop companies reading my emails": [
+        "Stoppa företag från att läsa mina mejl"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Enkätsvar är inte end-to-end-krypterade, skicka ingen känslig information."
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Berätta för mig när du är borta och vad du vill att det ska stå, och du får se allting innan det sparas."
+      ],
+      "Tidy up my inbox": [
+        "Städa upp min inbox"
+      ],
+      "Turn off your away message": [
+        "Slå av ditt frånvaromeddelande"
+      ],
+      "What needs handling?": [
+        "Vad behöver hanteras?"
+      ],
+      "Work or business": [
+        "Arbete eller företag"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Platser för skrivassistenten säljs inte längre"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en öppen faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en öppen faktura på ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "You'll choose a new username": [
+        "Du får välja ett nytt användarnamn"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Du använder den för att logga in från och med nu. Det är den enda förändringen."
       ]
     },
     "info": {
@@ -9780,6 +9987,9 @@
       ],
       "Star": [
         "Stjärnmärk"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Öppna ${ LUMO_SHORT_APP_NAME } / fokusinmatning"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -9816,6 +10026,9 @@
       ],
       "Message shortcuts": [
         "Meddelandegenvägar"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } genvägar"
       ]
     },
     "Label": {
@@ -10868,7 +11081,34 @@
         "Flytta till Papperskorg"
       ],
       "One-time codes": [
-        "Engångs-kodeks"
+        "Engångskoder"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent "
+      ],
+      "At": [
+        "Vid"
+      ],
+      "Cc": [
+        "Cc"
+      ],
+      "IndexedDB store": [
+        "IndexedDB-datalager"
+      ],
+      "Log performance": [
+        "Logprestanda"
+      ],
+      "Model": [
+        "Modell"
+      ],
+      "Single messages": [
+        "Enstaka meddelanden"
+      ],
+      "Sum of write() calls": [
+        "Summan av write()-anrop"
+      ],
+      "Until time": [
+        "Tills tiden är inne"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11219,6 +11459,15 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du måste återaktivera dina nycklar för att se den uppdaterade inbjudan"
+      ],
+      "Add formatting, links or images": [
+        "Lägg till formattering, länkar eller bilder"
+      ],
+      "Advanced auto-reply options": [
+        "Avancerade alternativ för automatiskt svar"
+      ],
+      "Pay it": [
+        "Betala den"
       ]
     },
     "Link to calendar event": {
@@ -12729,6 +12978,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Obegränsat antal alias för att skydda din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
       ]
     },
     "Onboarding List Placeholder": {
@@ -12953,6 +13205,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Har du ångrat dig efter försöksperioden** Avbryt inom 30 dagar från din första betalning och vi kommer att betala tillbaka för den oanvända tiden."
       ]
     },
     "Option": {
@@ -13385,6 +13640,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Genom att byta godkänner du våra ${ termsLink }."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Denna prenumeration kan inte slutföras just nu. Försök igen."
       ]
     },
     "Payments.Error": {
@@ -14447,6 +14708,9 @@
       ],
       "Snooze ${ emails }": [
         "Snooza ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Snooza ${ emails } tills ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -15562,10 +15826,16 @@
         "Du har avbrutit din prenumeration."
       ],
       "One-time codes disabled": [
-        "Engångs-kodeks inaktiverade"
+        "Engångskoder inaktiverade"
       ],
       "One-time codes enabled": [
-        "Engångs-kodeks inaktiverade"
+        "Engångskoder aktiverade"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent inaktiverad"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent aktiverad"
       ]
     },
     "Success notification": {
@@ -16874,6 +17144,9 @@
       ],
       "Start with a cleaner Inbox": [
         "Börja med en renare inkorg"
+      ],
+      "Make Categories work better for you": [
+        "Få Kategorier att fungera bättre för dig"
       ]
     },
     "Title header for keys table": {
@@ -17078,6 +17351,12 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Uppgradera till en stödd version för att använda administratörroller."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan inte ändra dina egna roller. Be en annan administratör att ändra dem."
       ]
     },
     "Validation": {
@@ -17538,6 +17817,88 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Döp om ${ folder } till …"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Ändra namn ${ label } till …"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Kod"
+      ],
+      "2x Basic usage": [
+        "2X Basic användning"
+      ],
+      "5x Plus usage": [
+        "5x Plus användning"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API tillgång, med ${ credit } en månads kredit"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API tillgång, med ${ credit } en månads kredit per användare"
+      ],
+      "Everything in Basic, and:": [
+        "Allt i Gratis, och:"
+      ],
+      "Everything in Free, and:": [
+        "Allt i Gratis-paketet, och:"
+      ],
+      "Everything in Plus, and:": [
+        "Allt i Plus, och:"
+      ],
+      "Extended image generation": [
+        "Utökad bildgenerering"
+      ],
+      "Includes:": [
+        "Inkluderar:"
+      ],
+      "Limited image generation": [
+        "Begränsade bildgenereringar"
+      ],
+      "Limited messages and chat history": [
+        "Begränsade meddelanden och chatthistorik"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Begränsade Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "Maximum image generation": [
+        "Maximal bildgenerering"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximala Färdigheter och Projekt"
+      ],
+      "More image generation": [
+        "Mer bildgenereringar"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mera Färdigheter, Projekt och schemalagda uppdrag"
+      ],
+      "More usage": [
+        "Mer användning"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "För kodning och byggande"
+      ],
+      "For everyday chats": [
+        "För chattar varje dag"
+      ],
+      "For getting more done": [
+        "För att få mer gjort"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Genom att bekräfta, ger du ${ BRAND_NAME } och Stripe, vår betalningstjänsteleverantör, tillstånd att dra framtida betalningar för din prenumeration från detta bankkontot via SEPA-autogiro, och din bank tillstånd att genomföra dessa dragningar. Din första betalning sker nu via ${ IDEAL_WERO_BRAND_NAME }. Din prenumeration förnyas automatiskt, tills du säger upp den; vi meddelar dig inför varje dragning. Vid betalningar via autogiro kan du i enlighet med villkoren i ditt avtal med banken begära återbetalning från din bank inom 8 veckor från dragningsdatumet. Detta gäller inte den betalning via ${ IDEAL_WERO_BRAND_NAME } som du genomför nu."
       ]
     }
   }

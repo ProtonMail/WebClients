@@ -1787,6 +1787,18 @@
       ],
       "Preview logs": [
         "Mostra anteprima log."
+      ],
+      "Dismiss notification": [
+        "Ignora notifica"
+      ],
+      "Go to today": [
+        "Vai a oggi"
+      ],
+      "Next contact": [
+        "Contatto successivo"
+      ],
+      "Previous contact": [
+        "Contatto precedente"
       ]
     },
     "action": {
@@ -4465,10 +4477,16 @@
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
-        "Per utilizzare ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, aggiungilo alla tua iscrizione."
+        "Per utilizzare ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, aggiungilo al tuo abbonamento."
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "Per utilizzare ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, richiedi l'accesso al tuo amministratore."
+      ],
+      "High-performance model for complex tasks": [
+        "Modello ad alte prestazioni per attività complesse"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Modello leggero per le attività quotidiane"
       ]
     },
     "description": {
@@ -5860,6 +5878,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
       ]
     },
     "fido2: Info": {
@@ -7542,7 +7563,7 @@
         "Redigi un ${ kind }"
       ],
       "Draft an ${ kind } to ${ recipient }": [
-        "Redigi un ${ kind }a ${ recipient }"
+        "Redigi un ${ kind } a ${ recipient }"
       ],
       "Draft discarded": [
         "Bozza scartata"
@@ -7897,8 +7918,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -8506,7 +8526,7 @@
         "Rinomina cartella"
       ],
       "Rename this label": [
-        "RInomina questa etichetta"
+        "Rinomina questa etichetta"
       ],
       "reply": [
         "rispondi"
@@ -8533,7 +8553,7 @@
         "Revisiona il ${ draft }"
       ],
       "Rewrote and readdressed": [
-        "Riscritto e rindirizzato"
+        "Riscritto e reindirizzato"
       ],
       "Rewrote and readdressed the draft": [
         "Ho riscritto e rielaborato la bozza"
@@ -9755,16 +9775,38 @@
         "Rimuovi email dai preferiti"
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "Abbiamo rilevato alcune liste di diffusione che non leggi. Puoi annullare l'iscrizione con un solo clic."
+        "Abbiamo rilevato alcune mailing list che non leggi. Puoi annullare l'iscrizione con un solo clic."
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "È possibile importarlo come nuovo indice \"foundation-search\" per attività di sviluppo."
       ],
       "Copy one-time codes from recent emails in one click": [
-        "Copia i codici monouso dalle e-mail recenti con un solo clic"
+        "Copia i codici monouso dalle email recenti con un solo clic"
       ],
       "Move one-time code emails to Trash on copy": [
-        "Sposta le e-mail con codice monouso nel Cestino al momento della copia"
+        "Sposta le email con codice monouso nel Cestino al momento della copia"
+      ],
+      "${ n } unread message": [
+        "${ n } messaggio non letto",
+        "${ n } messaggi non letti"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Conversa con ${ LUMO_SHORT_APP_NAME } per cercare, leggere, organizzare e redigere le email."
+      ],
+      "Read your ${ count } filter": [
+        "Leggi il tuo ${ count } filtro",
+        "Leggi i ${ count } filtri"
+      ],
+      "Read your ${ count } folder": [
+        "Leggi la tua ${ count } cartella",
+        "Leggi le ${ count } cartelle"
+      ],
+      "Read your ${ count } label": [
+        "Leggi la tua ${ count } etichetta",
+        "Leggi le ${ count } etichette"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Le licenze per assistenti alla scrittura non sono più in vendita."
       ]
     },
     "info": {
@@ -11147,6 +11189,12 @@
       ],
       "One-time codes": [
         "Codici monouso"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "Assistente IA ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Model": [
+        "Modello"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15965,6 +16013,12 @@
       ],
       "One-time codes enabled": [
         "Codici monouso abilitati"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Assistente IA ${ LUMO_SHORT_APP_NAME } disabilitato"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "Assistente IA ${ LUMO_SHORT_APP_NAME } abilitato"
       ]
     },
     "Success notification": {
@@ -17949,6 +18003,73 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "Codice ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "2x Basic usage": [
+        "2x Utilizzo di base"
+      ],
+      "5x Plus usage": [
+        "Utilizzo 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Accesso all'API, con un credito di ${ credit } al mese"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Accesso all'API, con un credito di ${ credit } al mese per utente"
+      ],
+      "Everything in Basic, and:": [
+        "Tutte le funzionalità del piano base, più:"
+      ],
+      "Everything in Free, and:": [
+        "Tutte le funzionalità del Piano Gratuito, più:"
+      ],
+      "Everything in Plus, and:": [
+        "Tutte le funzionalità del Piano Plus, più:"
+      ],
+      "Extended image generation": [
+        "Generazione di immagini estesa"
+      ],
+      "Includes:": [
+        "Include:"
+      ],
+      "Limited image generation": [
+        "Generazione di immagini limitata"
+      ],
+      "Limited messages and chat history": [
+        "Messaggi e cronologia chat limitati"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Competenze, progetti e attività pianificate limitati"
+      ],
+      "Maximum image generation": [
+        "Generazione massima di immagini"
+      ],
+      "Maximum Skills and Projects": [
+        "Competenze e progetti al massimo livello"
+      ],
+      "More image generation": [
+        "Generazione di ulteriori immagini"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Ulteriori competenze, progetti e attività pianificate"
+      ],
+      "More usage": [
+        "Ulteriori utilizzi"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Per programmare e costruire"
+      ],
+      "For everyday chats": [
+        "Per le chat di tutti i giorni"
+      ],
+      "For getting more done": [
+        "Per fare di più"
       ]
     }
   }

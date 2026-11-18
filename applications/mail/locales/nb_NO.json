@@ -4459,6 +4459,12 @@
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "Hvis du vil bruke ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, må du be om tilgang fra administratoren din."
+      ],
+      "High-performance model for complex tasks": [
+        "Høyytelsesmodell for komplekse oppgaver"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Lettvektsmodell for hverdagslige oppgaver"
       ]
     },
     "description": {
@@ -5850,6 +5856,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Denne nettleseren støtter ikke sikkerhetsnøkler. Prøv en annen nettleser."
       ]
     },
     "fido2: Info": {
@@ -7902,8 +7911,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9761,6 +9769,13 @@
       ],
       "Move one-time code emails to Trash on copy": [
         "Flytt e-poster med engangskoder til papirkurven når koden kopieres"
+      ],
+      "${ n } unread message": [
+        "${ n } ulest melding",
+        "${ n } uleste meldinger"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Chat med ${ LUMO_SHORT_APP_NAME } for å søke, lese, organisere og skrive utkast til e-postene dine."
       ]
     },
     "info": {
@@ -11143,6 +11158,12 @@
       ],
       "One-time codes": [
         "Engangskoder"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } KI-assistent"
+      ],
+      "Model": [
+        "Modell"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15946,6 +15967,12 @@
       ],
       "One-time codes enabled": [
         "Engangskoder aktivert"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } KI-assistent deaktivert"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } KI-assistent aktivert"
       ]
     },
     "Success notification": {

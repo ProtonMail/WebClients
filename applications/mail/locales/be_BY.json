@@ -4523,6 +4523,12 @@
       ],
       "Move emails to the right category to improve categorization.": [
         "Перамяшчайце лісты ў правільную катэгорыю, каб палепшыць катэгарызацыю."
+      ],
+      "High-performance model for complex tasks": [
+        "Высокапрадукцыйная мадэль для складаных задач"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Палегчаная мадэль для штодзённых задач"
       ]
     },
     "description": {
@@ -8123,10 +8129,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -10059,6 +10062,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Ваш Gmail падключаны да гэтага адраса ${ MAIL_APP_NAME }"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Перамясціць лісты з аднаразовым кодам у сметніцу пры капіяванні"
       ]
     },
     "info": {
@@ -11450,6 +11456,18 @@
       ],
       "One-time codes": [
         "Аднаразовыя коды"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "Памочнік ШІ ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Model": [
+        "Мадэль"
+      ],
+      "Select all ${ count } unused sender": [
+        "Выбраць ${ count } нявыкарыстанага адпраўніка",
+        "Выбраць ${ count } нявыкарыстаных адпраўнікоў",
+        "Выбраць ${ count } нявыкарыстаных адпраўнікоў",
+        "Выбраць ${ count } нявыкарыстаных адпраўнікоў"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13145,7 +13163,7 @@
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Мы не пакідаем журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
+        "У нашым сэрвісе адсутнічаюць журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Мы лічым сваім абавязкова дапамагаць кліентам у адпаведнасці з прававымі нормамі HIPAA/HITECH у дачыненні абароненай інфармацыі аб здароўі (PHI). Падпісаныя пагадненні аб дзелавым партнёрстве даступны для ўсіх кліентаў ${ BRAND_NAME } у сферы бізнесу."
@@ -16499,6 +16517,9 @@
       ],
       "One-time codes enabled": [
         "Аднаразовыя коды ўключаны"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Памочнік ШІ ${ LUMO_SHORT_APP_NAME } адключаны"
       ]
     },
     "Success notification": {

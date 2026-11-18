@@ -1787,6 +1787,18 @@
       ],
       "Cancel trial": [
         "Denemeyi iptal et"
+      ],
+      "Dismiss notification": [
+        "Bildirimi yok say"
+      ],
+      "Go to today": [
+        "Bugüne git"
+      ],
+      "Next contact": [
+        "Sonraki kişi"
+      ],
+      "Previous contact": [
+        "Önceki kişi"
       ]
     },
     "action": {
@@ -4469,6 +4481,12 @@
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmak için yöneticinizden erişme izni vermesini isteyin."
+      ],
+      "High-performance model for complex tasks": [
+        "Karmaşık görevler için yüksek başarımlı model"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Günlük işler için hafif model"
       ]
     },
     "description": {
@@ -5860,6 +5878,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
       ]
     },
     "fido2: Info": {
@@ -7939,8 +7960,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9777,6 +9797,16 @@
       ],
       "Move one-time code emails to Trash on copy": [
         "Kopyalama sırasında tek kullanımlık kod bulunan e-postalar çöpe atılsın"
+      ],
+      "${ n } unread message": [
+        "${ n } okunmamış ileti",
+        "${ n } okunmamış ileti"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "${ LUMO_SHORT_APP_NAME } ile sohbet ederek e-postalarınızı arayın, okuyun, düzenleyin ve taslaklarını hazırlayın."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Yazma yardımcısı koltukları artık satılmıyor"
       ]
     },
     "info": {
@@ -11159,6 +11189,12 @@
       ],
       "One-time codes": [
         "Tek kullanımlık kodlar"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısı"
+      ],
+      "Model": [
+        "Model"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15977,6 +16013,12 @@
       ],
       "One-time codes enabled": [
         "Tek kullanımlık kodlar kullanıma alındı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısı kapalı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısı açık"
       ]
     },
     "Success notification": {
@@ -17961,6 +18003,73 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2 kat Basic kullanım"
+      ],
+      "5x Plus usage": [
+        "5 kat Plus kullanım"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Aylık ${ credit } krediyle API erişimi"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
+      ],
+      "Everything in Basic, and:": [
+        "Basic tarifesindeki her şey ve:"
+      ],
+      "Everything in Free, and:": [
+        "Free tarifesindeki herşey ve:"
+      ],
+      "Everything in Plus, and:": [
+        "Plus tarifesindeki her şey ve:"
+      ],
+      "Extended image generation": [
+        "Genişletilmiş görsel oluşturma"
+      ],
+      "Includes:": [
+        "İçindekiler:"
+      ],
+      "Limited image generation": [
+        "Sınırlı görsel oluşturma"
+      ],
+      "Limited messages and chat history": [
+        "Sınırlı sayıda ileti ve sohbet geçmişi"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Sınırlı sayıda yetenek, proje ve zamanlanmış görev"
+      ],
+      "Maximum image generation": [
+        "En fazla görsel oluşturma"
+      ],
+      "Maximum Skills and Projects": [
+        "En fazla yetenek ve projeler"
+      ],
+      "More image generation": [
+        "Daha fazla görsel oluşturma"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Daha fazla yetenek, proje ve zamanlanmış görev"
+      ],
+      "More usage": [
+        "Daha fazla kullanım"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Kodlama ve geliştirme için"
+      ],
+      "For everyday chats": [
+        "Günlük sohbetler için"
+      ],
+      "For getting more done": [
+        "Daha fazlasını yapmak için"
       ]
     }
   }

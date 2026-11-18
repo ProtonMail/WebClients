@@ -1787,6 +1787,18 @@
       ],
       "Cancel trial": [
         "Cancelar periodo de prueba"
+      ],
+      "Dismiss notification": [
+        "Descartar notificación"
+      ],
+      "Go to today": [
+        "Ir al día de hoy"
+      ],
+      "Next contact": [
+        "Siguiente contacto"
+      ],
+      "Previous contact": [
+        "Contacto anterior"
       ]
     },
     "action": {
@@ -4469,6 +4481,12 @@
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "Para usar ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicita acceso a tu administrador."
+      ],
+      "High-performance model for complex tasks": [
+        "Modelo de alto rendimiento para tareas complejas"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Modelo ligero para las tareas de todos los días"
       ]
     },
     "description": {
@@ -5860,6 +5878,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
       ]
     },
     "fido2: Info": {
@@ -7909,8 +7930,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9761,7 +9781,7 @@
         "Cuéntanos más (opcional)"
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "Hemos encontrado algunas listas de correo que no lees. Puedes darte de baja de ellas con un solo clic."
+        "Hemos detectado algunas listas de correo que no lees. Puedes darte de baja de ellas con un solo clic."
       ],
       "Which feature? (optional)": [
         "¿Qué característica? (opcional)"
@@ -9773,10 +9793,20 @@
         "Trabajo o negocios"
       ],
       "Copy one-time codes from recent emails in one click": [
-        "Copia los códigos de uso único de los correos recientes en un solo clic"
+        "Copia los códigos de un solo uso de los correos recientes con un solo clic"
       ],
       "Move one-time code emails to Trash on copy": [
-        "Mueve los códigos de uso único a la papelera al copiarlos"
+        "Mover los correos con códigos de un solo uso a la papelera al copiarlos"
+      ],
+      "${ n } unread message": [
+        "${ n } mensaje sin leer",
+        "${ n } mensajes sin leer"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Chatea con ${ LUMO_SHORT_APP_NAME } para buscar, leer, organizar y redactar tus correos."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Ya no se ofrecen lugares como asistentes de redacción"
       ]
     },
     "info": {
@@ -11151,14 +11181,20 @@
         "Tamaño de fuente"
       ],
       "Select all ${ count } unused sender": [
-        "Seleccionar ${ count } remitente(s) sin usar",
+        "Seleccionar ${ count } remitente sin usar",
         "Seleccionar los ${ count } remitentes sin usar"
       ],
       "Move to Trash": [
         "Mover a la papelera"
       ],
       "One-time codes": [
-        "Códigos de uso único"
+        "Código de un solo uso"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistente de IA"
+      ],
+      "Model": [
+        "Modelo"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15973,10 +16009,16 @@
         "La suscripción ha sido cancelada."
       ],
       "One-time codes disabled": [
-        "Códigos de uso único desactivados"
+        "Códigos de un solo uso desactivados"
       ],
       "One-time codes enabled": [
-        "Códigos de uso único activados"
+        "Códigos de un solo uso activados"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } asistente de IA desactivado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } asistente de IA activado"
       ]
     },
     "Success notification": {
@@ -17287,7 +17329,7 @@
         "Habilitar filtro"
       ],
       "Start with a cleaner Inbox": [
-        "Empieza con una bandeja de entrada más limpia"
+        "Empieza por ordenar tu bandeja de entrada"
       ]
     },
     "Title header for keys table": {
@@ -17961,6 +18003,73 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Código"
+      ],
+      "2x Basic usage": [
+        "2x uso Básico"
+      ],
+      "5x Plus usage": [
+        "Uso de 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acceso con API, con ${ credit } de crédito mensual"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acceso API, con un crédito mensual de ${ credit } por usuario."
+      ],
+      "Everything in Basic, and:": [
+        "Todo en Básico, y:"
+      ],
+      "Everything in Free, and:": [
+        "Todo en Gratis, y:"
+      ],
+      "Everything in Plus, and:": [
+        "Todo sobre Plus, y:"
+      ],
+      "Extended image generation": [
+        "Generación extendida de imágenes"
+      ],
+      "Includes:": [
+        "Incluye:"
+      ],
+      "Limited image generation": [
+        "Generación limitada de imágenes"
+      ],
+      "Limited messages and chat history": [
+        "Mensajes limitados e historial de conversaciones"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilidades limitadas, Proyectos y tareas programadas"
+      ],
+      "Maximum image generation": [
+        "Generación máxima de imágenes"
+      ],
+      "Maximum Skills and Projects": [
+        "Mayores habilidades y Proyectos"
+      ],
+      "More image generation": [
+        "Más generación de imágenes"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Más habilidades, Proyectos y tareas programadas"
+      ],
+      "More usage": [
+        "Uso mayor"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Por codificación y construcción"
+      ],
+      "For everyday chats": [
+        "Por conversaciones diarias"
+      ],
+      "For getting more done": [
+        "Por hacer más"
       ]
     }
   }

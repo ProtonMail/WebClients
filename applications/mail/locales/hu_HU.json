@@ -1682,6 +1682,12 @@
       ],
       "Special Offer": [
         "Akciós ajánlat"
+      ],
+      "Next contact": [
+        "Következő névjegy"
+      ],
+      "Previous contact": [
+        "Előző névjegy"
       ]
     },
     "action": {
@@ -1780,6 +1786,9 @@
       "${ ips } dedicated VPN server": [
         "${ ips } dedikált VPN szerver",
         "${ ips } dedikált VPN szerver"
+      ],
+      "Users": [
+        "Felhasználók"
       ]
     },
     "Alert": {
@@ -4176,6 +4185,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Már létrehozott 10 e-mail álnevet. Szerezzen korlátlan e-mail álnevet és 500 GB tárhelyet a ${ BRAND_NAME } Unlimited szolgáltatással."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Tegye lehetővé hogy az emberek közvetlenül az e-mailjeiből foglaljanak időpontot Önnel, anélkül, hogy oda-vissza levelezniük kellene."
       ]
     },
     "description": {
@@ -7259,7 +7271,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8764,6 +8775,25 @@
       ],
       "Other (tell us)": [
         "Más (ossza meg velünk)"
+      ],
+      "${ n } unread message": [
+        "${ n } olvasatlan üzenet",
+        "${ n } olvasatlan üzenet"
+      ],
+      "1 vault per user": [
+        "Felhasználónként 1 széf"
+      ],
+      "Dismiss": [
+        "Elvet"
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Csak fájlok (nem képek, ${ DOCS_APP_NAME } vagy ${ SHEETS_APP_NAME })) - max. 100GB, 100.000 fájl, 50GB fájlonként"
+      ],
+      "No ads": [
+        "Nincsenek hirdetések"
+      ],
+      "No draft open": [
+        "Nincs megnyitott piszkozat"
       ]
     },
     "info": {
@@ -9874,6 +9904,16 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Ossza meg elérhetőségét időfoglaló táblákkal a ${ CALENDAR_APP_NAME } -ban, és indítson biztonságos megbeszéléseket a ${ MEET_APP_NAME }-ben!"
+      ],
+      "Long tasks (≥ 50 ms)": [
+        "Hosszú műveletek (≥ 50 ms)"
+      ],
+      "Select all ${ count } unused sender": [
+        "Az összes (${ count }) nem használt feladó kiválasztása",
+        "Az összes (${ count }) nem használt feladó kiválasztása"
+      ],
+      "To": [
+        "Címzett"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10221,6 +10261,9 @@
       ],
       "Learn more.": [
         "További információk."
+      ],
+      "Customer Support": [
+        "Ügyfélszolgálat"
       ]
     },
     "Link to calendar event": {
@@ -10321,6 +10364,9 @@
       ],
       "for ${ price }": [
         "${ price } áron"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } írássegéd"
       ]
     },
     "Mailbox": {
@@ -10341,6 +10387,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
+      ],
+      "${ price } per seat": [
+        "${ price } felhasználónként"
       ]
     },
     "meet_2025: Feature": {
@@ -12071,6 +12120,9 @@
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Fizetés ${ IDEAL_WERO_BRAND_NAME }val"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% adót tartalmaz: ${ taxAmountElement }"
       ]
     },
     "Payments.Error": {
@@ -15302,6 +15354,12 @@
       ],
       "You're in control": [
         "Az irányítás az Ön kezében van"
+      ],
+      "Craft better emails with ${ LUMO_SHORT_APP_NAME }": [
+        "Írjon jobb emaileket a ${ LUMO_SHORT_APP_NAME } segítségével!"
+      ],
+      "Share your availability": [
+        "Ossza meg, mikor elérhető"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15947,6 +16005,16 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Adminisztrátor szerepkörök használatához váltson egy erre alkalmas csomagra."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "A megerősítéssel felhatalmazza a ${ BRAND_NAME } és a Stripe-ot - a fizetési szolgáltatónkat -, hogy az előfizetéshez kapcsolódó jövőbeli fizetéseket csoportos beszedési megbízás (SEPA) útján levonják erről a bankszámláról, és a bankját hogy ezeket az összegeket levonja a számlájáról. Az első fizetést most a(z) ${ IDEAL_WERO_BRAND_NAME } szolgáltatáson keresztül történik. Előfizetése automatikusan megújul, amíg le nem mondja; minden terhelés előtt értesítést küldünk. A csoportos beszedési megbízással teljesített fizetések esetén – a bankjával kötött megállapodás feltételei szerint – a terhelés napjától számított 8 héten belül kérheti a levont összeg visszatérítését. Ez nem vonatkozik a mostani ${ IDEAL_WERO_BRAND_NAME } befizetésre."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kártya, a következő végződéssel: ${ Last4 }"
       ]
     }
   }
