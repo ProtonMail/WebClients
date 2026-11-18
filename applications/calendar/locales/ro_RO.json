@@ -1056,6 +1056,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Dismiss notification": [
+        "Închidere notificare"
+      ],
+      "Go to today": [
+        "Salt la astăzi"
+      ],
+      "Next contact": [
+        "Contact următor"
+      ],
+      "Previous contact": [
+        "Contact anterior"
       ]
     },
     "action": {
@@ -4171,6 +4183,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Conexiunea la Zoom a expirat. Reconectați-vă pentru a continua."
+      ],
+      "Meeting not created. Try again.": [
+        "Conferința nu s-a creat. Reîncercați."
       ]
     },
     "error": {
@@ -4444,6 +4459,9 @@
     "Event popover close button": {
       "Close popover": [
         "Închidere fereastră"
+      ],
+      "Close": [
+        "Închidere"
       ]
     },
     "Event reply": {
@@ -6691,6 +6709,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Licențele pentru asistentul de scriere nu se mai vând."
       ]
     },
     "info": {
@@ -13328,6 +13349,73 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2X Utilizare de bază"
+      ],
+      "5x Plus usage": [
+        "Utilizare Plus 5X"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acces la API, cu ${ credit } credit pe lună"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acces la API, cu ${ credit } credit pe lună per utilizator"
+      ],
+      "Everything in Basic, and:": [
+        "Torul din Basic și:"
+      ],
+      "Everything in Free, and:": [
+        "Totul din Free și:"
+      ],
+      "Everything in Plus, and:": [
+        "Totul din Plus și:"
+      ],
+      "Extended image generation": [
+        "Generare de imagini extinsă"
+      ],
+      "Includes:": [
+        "Include:"
+      ],
+      "Limited image generation": [
+        "Generare de imagini limitată"
+      ],
+      "Limited messages and chat history": [
+        "Mesaje si istoric conversații limitate"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Aptitudini, proiecte și sarcini planificate limitate"
+      ],
+      "Maximum image generation": [
+        "Maximum generări de imagini"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximum de proiecte și aptitudini"
+      ],
+      "More image generation": [
+        "Mai multe generări de imagini"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mai multe aptitudini, proiecte și sarcini planificate"
+      ],
+      "More usage": [
+        "Mai multă utilizare"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Pentru programare și construire"
+      ],
+      "For everyday chats": [
+        "Pentru conversațiile zilnice"
+      ],
+      "For getting more done": [
+        "Pentru a realiza mai multe"
       ]
     }
   }

@@ -1036,6 +1036,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Безплатний пробний період програми для комп'ютера завершується ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Dismiss notification": [
+        "Закрити сповіщення"
+      ],
+      "Go to today": [
+        "Перейти до сьогоднішнього дня"
+      ],
+      "Next contact": [
+        "Наступний контакт"
+      ],
+      "Previous contact": [
+        "Попередній контакт"
       ]
     },
     "action": {
@@ -3343,7 +3355,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve": [
-        "Proton Mail захищає ваші листи за допомогою наскрізного шифрування з нульовим доступом, щоб ніхто сторонній (навіть Proton) не зміг прочитати ваші листи."
+        "Допоможіть нам покращитися"
       ]
     },
     "Downgrade warning": {
@@ -4421,6 +4433,9 @@
     "Event popover close button": {
       "Close popover": [
         "Закрити спливне вікно"
+      ],
+      "Close": [
+        "Закрити"
       ]
     },
     "Event reply": {
@@ -4563,6 +4578,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Під час автентифікації за допомогою ключа безпеки сталася помилка. Спробуйте ще раз."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
       ]
     },
     "fido2: Info": {

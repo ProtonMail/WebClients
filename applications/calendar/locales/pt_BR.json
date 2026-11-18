@@ -1052,6 +1052,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Dismiss notification": [
+        "Descartar notificação"
+      ],
+      "Go to today": [
+        "Ir para hoje"
+      ],
+      "Next contact": [
+        "Próximo contato"
+      ],
+      "Previous contact": [
+        "Contato anterior"
       ]
     },
     "action": {
@@ -4129,6 +4141,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Sua conexão do Zoom expirou. Reconecte-se para continuar."
+      ],
+      "Meeting not created. Try again.": [
+        "Reunião não criada. Tente novamente."
       ]
     },
     "error": {
@@ -4398,6 +4413,9 @@
     },
     "Event popover close button": {
       "Close popover": [
+        "Fechar"
+      ],
+      "Close": [
         "Fechar"
       ]
     },
@@ -5197,7 +5215,7 @@
         "1 dispositivo por usuário"
       ],
       "1 vault per user": [
-        "1 cofres por usuário"
+        "1 cofre por usuário"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
@@ -12600,7 +12618,7 @@
         "Faça upgrade para um plano suportado para usar funções de administrador."
       ],
       "You can't change your own roles. Ask another admin to change them.": [
-        "Você não pode mudar seus próprios papéis. Peça a outro administrador para alterá-los."
+        "Você não pode alterar seus próprios papéis. Peça a outro administrador que os altere."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Você poderá atribuir funções assim que o usuário aceitar o convite."
@@ -13062,6 +13080,64 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x o uso Basic"
+      ],
+      "5x Plus usage": [
+        "5x uso do Plus"
+      ],
+      "Everything in Basic, and:": [
+        "Tudo do plano básico e e:"
+      ],
+      "Everything in Free, and:": [
+        "Tudo que está incluso no Free, e:"
+      ],
+      "Everything in Plus, and:": [
+        "Tudo que está incluso no Plus, e:"
+      ],
+      "Extended image generation": [
+        "Geração de imagem estendidas"
+      ],
+      "Includes:": [
+        "Incluí:"
+      ],
+      "Limited image generation": [
+        "Geração de imagem limitada"
+      ],
+      "Limited messages and chat history": [
+        "Histórico de mensagens e bate-papos limitados"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Habilidades, projetos e tarefas agendadas limitadas"
+      ],
+      "Maximum image generation": [
+        "Geração de imagem máxima"
+      ],
+      "Maximum Skills and Projects": [
+        "Habilidades e projetos ao máximo"
+      ],
+      "More image generation": [
+        "Mais geração de imagem"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mais habilidades, projetos e tarefas agendadas"
+      ],
+      "More usage": [
+        "Mais uso"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Para programação e construção"
+      ],
+      "For everyday chats": [
+        "Para todos os bate-papos"
       ]
     }
   }

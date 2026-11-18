@@ -5470,7 +5470,7 @@
         "Introduza o código de verificação que foi enviado para ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduza o código de verificação. Dígito ${ digit }."
+        "Insira o código de verificação. Dígito ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Introduza a sua palavra-passe (como administrador da organização)."
@@ -9268,7 +9268,7 @@
         "É necessário privatizar todos os utilizadores antes de gerar uma nova chave de organização."
       ],
       "You need access to the organization key to perform this operation.": [
-        "Precisa de acesso à chave da organização para executar esta operação."
+        "Precisa de acesso ao código da organização para executar esta operação."
       ]
     },
     "Payment method option": {
@@ -12295,7 +12295,7 @@
         "A ativação do membro é incompleta."
       ],
       "Organization key must be activated to request data access": [
-        "A chave da organização deve ser ativada para solicitar acesso aos dados."
+        "O código da organização deve ser ativado para solicitar acesso aos dados"
       ],
       "The user must have an address to request data access": [
         "O utilizador deve ter um endereço para solicitar acesso aos dados."
