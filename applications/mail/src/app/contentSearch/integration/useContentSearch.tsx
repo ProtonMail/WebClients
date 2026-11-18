@@ -13,7 +13,6 @@ import type { ESCallbacks } from '@proton/encrypted-search/models/esCallbacks';
 import type { EncryptedSearchFunctions } from '@proton/encrypted-search/models/esFunctions';
 import type { ESIndexingState, ESTimepoint } from '@proton/encrypted-search/models/interfaces';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { isSearch } from '../../helpers/elements';
 import { useGetMessageKeys } from '../../hooks/message/useGetMessageKeys';
@@ -57,6 +56,16 @@ interface Props {
      * reports goes nowhere. `handleEvent` stays live regardless — see `ESAdapter.handleEvent`.
      */
     isActive: boolean;
+    /**
+     * Whether the `ContentSearch` flag was on when `EncryptedSearchProvider` mounted. Unlike `isActive`, it
+     * ignores the `OVERRIDE_SEARCH_V2` debug toggle: the import path records events into v2 even when v1 answers.
+     */
+    isContentSearchEnabled: boolean;
+    /**
+     * Whether v2 builds its index itself (`ContentSearchIndexation` on) rather than importing v1's. Read once
+     * by `EncryptedSearchProvider`, so it can't change during the session, unlike the flag.
+     */
+    isIndexationPath: boolean;
     metricService: MetricService;
 }
 
@@ -102,6 +111,8 @@ export const useContentSearch = ({
     esCallbacks,
     esLibraryFunctionsV1,
     isActive,
+    isContentSearchEnabled,
+    isIndexationPath,
     metricService,
 }: Props): ContentSearchFunctions => {
     const api = useApi();
@@ -126,19 +137,25 @@ export const useContentSearch = ({
     // per-render deps (esCallbacks/esLibraryFunctionsV1, which change most renders) are refreshed
     // onto it below — rather than recreating it, which is what encoding them as memo deps would do.
     // It only depends on the userID which doesn't change within the lifetime of the app.
-    const isFFContentSearchIndexation = useFlag('ContentSearchIndexation');
     const adapterRef = useRef<ImportESAdapter | IndexESAdapter>(undefined);
     if (!adapterRef.current) {
         const indexService = getSharedIndexService(user.ID, api, getUserKeys, getMessageKeys, logger);
+        // Without `ContentSearch` the database is left alone: neither path uses it.
+        if (isContentSearchEnabled) {
+            indexService.resetDbBetweenFeatureFlagSwitches(isIndexationPath);
+        }
         const searchService = new SearchService(
             user.ID,
             getUserKeys,
             indexService.dbLock,
             logger,
             metricService,
-            isFFContentSearchIndexation
+            isIndexationPath,
+            () => {
+                return indexService.waitForDbReset();
+            }
         );
-        if (isFFContentSearchIndexation) {
+        if (isIndexationPath) {
             adapterRef.current = new IndexESAdapter({
                 searchService,
                 indexService,

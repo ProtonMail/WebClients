@@ -10,6 +10,7 @@ import type { ESEvent } from '@proton/encrypted-search/models/interfaces';
 import type { GetMessageKeys } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import noop from '@proton/utils/noop';
 
 import type { ESBaseMessage } from '../../models/encryptedSearch';
 import { getOrGenerateIndexKey as getOrGenerateIndexKeyV2 } from '../crypto/indexKey';
@@ -25,6 +26,7 @@ import type { LogLevel, Logger } from '../utils/logger';
 import { EventUpdateMapper } from './EventUpdateMapper';
 import { MailApiBridge } from './MailApiBridge';
 import { createBatchBodyDecryptor } from './batchBodyDecryptor';
+import { dropImportedIndex, dropIndexationIndex } from './switchIndexPath';
 import type { IndexWorker, TaskName, WorkerIndexListener } from './worker/IndexWorker';
 import type { IndexWorkerFactory } from './worker/index.worker';
 
@@ -36,6 +38,8 @@ type WorkerCallback = (worker: Comlink.Remote<IndexWorker>) => Promise<boolean>;
 
 export class IndexService {
     private importHandle?: AsyncInit<ImportHandle | undefined>;
+    /** Promise to drop the database when `ContentSearchIndexation` switches. */
+    private dbReset: Promise<void> = Promise.resolve();
     private indexationPromise?: Promise<void>;
     public readonly dbLock = new DatabaseLock();
     /**
@@ -130,6 +134,26 @@ export class IndexService {
     }
 
     /**
+     * Neither the import path nor the indexation path can use the database the other one built: call once per
+     * session, when the path is settled, before anything opens the database. On the indexation path, an imported
+     * index is replaced with an empty enabled one when v1 search is enabled, so it gets rebuilt from scratch.
+     * Temporary, until the import path goes: a failed reset fails everything waiting on it until the next load.
+     */
+    resetDbBetweenFeatureFlagSwitches(isIndexationPath: boolean) {
+        this.dbReset = isIndexationPath
+            ? dropImportedIndex(this.userId, this.logger)
+            : dropIndexationIndex(this.userId, this.logger);
+        this.dbReset.catch((err) => {
+            this.logger.error('failed to reset the database between feature flag switches', err);
+        });
+    }
+
+    /** Everything that opens the database waits for this first, see {@link resetDbBetweenFeatureFlagSwitches}. */
+    waitForDbReset() {
+        return this.dbReset;
+    }
+
+    /**
      * Record what an event touched, so a later import knows what to refresh.
      * Returns whether it recorded anything: the mail event loop ticks every 30s or so and most of
      * those events carry no message changes, which is not worth an import (each one spawns a worker
@@ -139,6 +163,7 @@ export class IndexService {
         if (!event.Items?.length && !event.Refresh) {
             return false;
         }
+        await this.dbReset;
         const db = await openContentSearchDB(this.userId);
         try {
             const txn = db.transaction('outdated_import_ids', 'readwrite');
@@ -206,6 +231,7 @@ export class IndexService {
 
     /** emits reportStatusUpdate and reportIndexComplete if the index is usable as is */
     public async initialize() {
+        await this.dbReset;
         const statusAndHistoricalFinished = await this.readStatus();
         this.listeners.forEach((l) => l.reportStatusUpdate(statusAndHistoricalFinished?.status));
         if (!statusAndHistoricalFinished) {
@@ -224,6 +250,7 @@ export class IndexService {
     }
 
     async enable() {
+        await this.dbReset;
         if (this.status !== 'enabled') {
             await this.writeStatus('enabled');
             await this.initialize();
@@ -362,6 +389,7 @@ export class IndexService {
     async importFromEncryptedSearch(isFreshIndex = false): Promise<ImportHandle | undefined> {
         if (!this.importHandle || this.importHandle.failed) {
             this.importHandle = new AsyncInit(async () => {
+                await this.dbReset;
                 // The v1 ES DB is the import source. Bail out before touching any v1 read helper
                 // when it doesn't exist: those helpers go through openESDB, which *creates* the DB
                 // if absent, leaving an empty shell. That shell makes hasESDB report true, so a
@@ -449,6 +477,9 @@ export class IndexService {
     }
 
     async deleteIndex(): Promise<void> {
+        // An in-flight path switch could recreate the database after we delete it. Its failure must not stop
+        // the user from clearing their data, see `resetDbBetweenFeatureFlagSwitches`.
+        await this.dbReset.catch(noop);
         // Cancel any running import to avoid blocked connections
         this.importHandle?.value?.stop();
         this.workerQueue = [];

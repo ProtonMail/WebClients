@@ -5,24 +5,24 @@ import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/li
 
 import { getDBName } from './schema';
 
-const DB_BLOCKED_TIMEOUT = 5_000;
-
+/**
+ * Resolves once the database is deleted. A delete waits for every open connection to close; connections
+ * opened through `openContentSearchDB` close themselves when asked, so being blocked means another one
+ * didn't, e.g. a tab still running an older build. It's reported, and the delete goes through once that
+ * connection closes. Waiting is no slower than not waiting, as any later open of the database waits too.
+ * Rejects when the delete fails, after reporting it: the database is still there, so callers must not go on
+ * as if it were gone.
+ */
 export async function deleteContentSearchDB(userId: string) {
     const dbName = getDBName(userId);
-    let wasBlocked = false;
-
-    const deletion = deleteDB(dbName, {
-        blocked: () => {
-            wasBlocked = true;
-            esSentryReport('deleteContentSearchDB: blocked by another open connection', { dbName });
-        },
-    }).catch((e) => traceInitiativeError(SentryCommonInitiatives.ENCRYPTED_SEARCH, e));
-
-    const timeout = new Promise<void>((resolve) => setTimeout(resolve, DB_BLOCKED_TIMEOUT));
-
-    await Promise.race([deletion, timeout]);
-
-    if (wasBlocked) {
-        esSentryReport('deleteContentSearchDB: gave up waiting for blocked delete to complete', { dbName });
+    try {
+        await deleteDB(dbName, {
+            blocked: () => {
+                esSentryReport('deleteContentSearchDB: waiting for another open connection to close', { dbName });
+            },
+        });
+    } catch (e) {
+        traceInitiativeError(SentryCommonInitiatives.ENCRYPTED_SEARCH, e);
+        throw e;
     }
 }
