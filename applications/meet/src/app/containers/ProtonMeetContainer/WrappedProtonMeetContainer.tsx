@@ -38,16 +38,13 @@ const MeetCallProviders = () => {
     const isMeetSimulcast = useFlag('MeetSimulcast');
 
     const isCpuOptimizations = useFlag('MeetCpuOptimizations');
-    const isMeetE2eeReplayActiveKeyOnly = useFlag('MeetE2eeReplayActiveKeyOnly');
 
     const { reportMeetError } = useMeetErrorReporting();
     const dispatch = useMeetDispatch();
 
     const primaryCodec = isMeetH264 ? 'h264' : 'vp8';
 
-    const [keyProvider] = useState(
-        () => new ProtonMeetKeyProvider({ replayOnlyActiveKey: isMeetE2eeReplayActiveKeyOnly })
-    );
+    const [keyProvider] = useState(() => new ProtonMeetKeyProvider());
     const [worker] = useState(() => new Worker(new URL('livekit-client/e2ee-worker', import.meta.url)));
     const [meetAudioContext] = useState(() =>
         createMeetAudioContext({
