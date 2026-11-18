@@ -13,6 +13,7 @@ import {
 } from '@proton/meet/store/slices/currentMeeting';
 import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
 import { initialState as initialSettingsState, settingsReducer } from '@proton/meet/store/slices/settings';
+import { uiStateReducer } from '@proton/meet/store/slices/uiStateSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import type { JoinLocationState } from '../../types';
@@ -61,6 +62,7 @@ const createMockStore = () =>
         reducer: {
             ...currentMeetingReducer,
             ...settingsReducer,
+            ...uiStateReducer,
         },
         preloadedState: {
             currentMeeting: { ...initialCurrentMeetingState },
@@ -81,10 +83,12 @@ function createTestWrapper(store: ReturnType<typeof createMockStore>) {
 
 const renderHydration = ({
     meetingPassword = 'password-abc',
+    isMeetingPasswordInvalid = false,
     instantMeeting = false,
     meetingDetails,
 }: {
     meetingPassword?: string;
+    isMeetingPasswordInvalid?: boolean;
     instantMeeting?: boolean;
     meetingDetails?: JoinLocationState['meetingDetails'];
 } = {}) => {
@@ -92,7 +96,13 @@ const renderHydration = ({
 
     const store = createMockStore();
     const { result } = renderHook(
-        () => useMeetingInfoHydration({ meetingLinkName: 'meeting-abc', meetingPassword, instantMeeting }),
+        () =>
+            useMeetingInfoHydration({
+                meetingLinkName: 'meeting-abc',
+                meetingPassword,
+                isMeetingPasswordInvalid,
+                instantMeeting,
+            }),
         { wrapper: createTestWrapper(store) }
     );
 
@@ -120,7 +130,39 @@ describe('useMeetingInfoHydration', () => {
 
         expect(result.current.isReadyToDecrypt).toBe(true);
         expect(store.getState().currentMeeting.isMeetingLoading).toBe(false);
+        expect(store.getState().uiState.joinError).toBeNull();
         expect(meetingInfoThunkMock).not.toHaveBeenCalled();
+    });
+
+    it('tells the user the password is wrong when the url password is malformed, keeping the prejoin usable', () => {
+        const { store, result } = renderHydration({ meetingPassword: '', isMeetingPasswordInvalid: true });
+
+        expect(store.getState().uiState.joinError).toBe('wrongPassword');
+        expect(result.current.isReadyToDecrypt).toBe(true);
+        expect(meetingInfoThunkMock).not.toHaveBeenCalled();
+    });
+
+    it('tells the user the password is wrong when an instant meeting url has a malformed password', () => {
+        const { store, result } = renderHydration({
+            meetingPassword: '',
+            isMeetingPasswordInvalid: true,
+            instantMeeting: true,
+        });
+
+        expect(store.getState().uiState.joinError).toBe('wrongPassword');
+        expect(result.current.isReadyToDecrypt).toBe(true);
+    });
+
+    it('tells the user the password is wrong when the server rejects it, keeping the prejoin usable', async () => {
+        rejectThunkWith(apiError(2026, 'Invalid SRP parameter'));
+
+        const { store, result } = renderHydration();
+
+        await waitFor(() => expect(result.current.isReadyToDecrypt).toBe(true));
+
+        expect(store.getState().uiState.joinError).toBe('wrongPassword');
+        expect(handleInvalidMeetingLink).not.toHaveBeenCalled();
+        expect(reportMeetError).not.toHaveBeenCalled();
     });
 
     it('seeds the prejoin from the navigation state without waiting for the fetch', async () => {

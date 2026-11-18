@@ -187,11 +187,11 @@ describe('useMlsSession', () => {
             expect(notifyError).toHaveBeenCalledTimes(1);
         });
 
-        it('throws without telling the user when asked not to notify generic errors', async () => {
+        it('throws without telling the user when asked to notify only actionable errors', async () => {
             const { handleMlsSetup } = joinMeetingFailing();
 
             await expect(
-                handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD, false, false)
+                handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD, false, 'actionable')
             ).rejects.toMatchObject({ message: expect.stringContaining('MLS setup failed'), userNotified: false });
             expect(notifyError).not.toHaveBeenCalled();
         });
@@ -200,17 +200,32 @@ describe('useMlsSession', () => {
             { error: MeetCoreErrorEnum.CheckDeviceClock, hint: 'clock' },
             { error: MeetCoreErrorEnum.MlsServerVersionNotSupported, hint: 'older version' },
         ])(
-            'still tells the user how to fix $hint errors when asked not to notify generic errors',
+            'still tells the user how to fix $hint errors when asked to notify only actionable errors',
             async ({ error, hint }) => {
                 const { handleMlsSetup } = joinMeetingFailing(error);
 
                 await expect(
-                    handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD, false, false)
+                    handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD, false, 'actionable')
                 ).rejects.toMatchObject({ coreError: error, userNotified: true });
                 expect(notifyError).toHaveBeenCalledTimes(1);
                 expect(notifyError).toHaveBeenCalledWith(expect.stringContaining(hint));
             }
         );
+
+        it.each(
+            [
+                MeetCoreErrorEnum.CheckDeviceClock,
+                MeetCoreErrorEnum.MlsServerVersionNotSupported,
+                MeetCoreErrorEnum.MaxRetriesReached,
+            ].map((error) => ({ error, name: MeetCoreErrorEnum[error] }))
+        )('leaves telling the user about $name to the caller when asked to notify nothing', async ({ error }) => {
+            const { handleMlsSetup } = joinMeetingFailing(error);
+
+            await expect(
+                handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD, false, 'none')
+            ).rejects.toMatchObject({ coreError: error, userNotified: false });
+            expect(notifyError).not.toHaveBeenCalled();
+        });
     });
 
     it('starts the pending agents sweep only after the join read the group state', async () => {

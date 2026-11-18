@@ -1,18 +1,15 @@
 import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { createSlice, miniSerializeError } from '@reduxjs/toolkit';
-import { c } from 'ttag';
 
 import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities/fetchedAt';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { cacheHelper, createPromiseMapStore } from '@proton/redux-utilities/promiseStore';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SECOND } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 
-import { INVALID_SRP_PARAMS_ERROR_CODE } from '../../api/constants';
 import type { SRPHandshakeInfo } from '../../api/meetSrpRequests';
 import { requestHandshakeInfo, requestMeetingInfo, requestSessionToken } from '../../api/meetSrpRequests';
 import { decryptMeetingName } from '../../utils/cryptoUtils';
@@ -94,7 +91,6 @@ const establishMeetingSession = async ({
     meetingPassword,
     handshakeInfo,
     cryptoReady,
-    notifyWrongPassword,
 }: {
     api: Api;
     uid?: string;
@@ -102,30 +98,18 @@ const establishMeetingSession = async ({
     meetingPassword: string;
     handshakeInfo?: SRPHandshakeInfo;
     cryptoReady?: Promise<unknown>;
-    notifyWrongPassword: () => void;
 }) => {
     const [resolvedHandshakeInfo] = await Promise.all([
         handshakeInfo ?? requestHandshakeInfo(api, meetingLinkName),
         cryptoReady,
     ]);
 
-    try {
-        await requestSessionToken(api, {
-            token: meetingLinkName,
-            password: meetingPassword,
-            handshakeInfo: resolvedHandshakeInfo,
-            uid,
-        });
-    } catch (error) {
-        const { code } = getApiError(error);
-
-        if (code === INVALID_SRP_PARAMS_ERROR_CODE) {
-            notifyWrongPassword();
-            Object.assign(error as object, { userNotified: true });
-        }
-
-        throw error;
-    }
+    await requestSessionToken(api, {
+        token: meetingLinkName,
+        password: meetingPassword,
+        handshakeInfo: resolvedHandshakeInfo,
+        uid,
+    });
 };
 
 export interface MeetingInfoThunkOptions {
@@ -170,7 +154,7 @@ export const meetingInfoThunk = ({
     UnknownAction
 > => {
     return (dispatch, getState, extraArgument) => {
-        const { api, authentication, notificationsManager } = extraArgument;
+        const { api, authentication } = extraArgument;
 
         const select = () => selectModelForMeeting(getState(), meetingLinkName);
 
@@ -183,11 +167,6 @@ export const meetingInfoThunk = ({
                     meetingPassword,
                     handshakeInfo,
                     cryptoReady,
-                    notifyWrongPassword: () =>
-                        notificationsManager?.createNotification({
-                            type: 'error',
-                            text: c('Error').t`The meeting password is incorrect`,
-                        }),
                 });
 
                 return decryptAndBuildModel({ api, meetingLinkName, meetingPassword });

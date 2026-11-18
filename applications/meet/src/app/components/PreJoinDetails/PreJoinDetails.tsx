@@ -1,5 +1,5 @@
 import type { KeyboardEvent } from 'react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,6 +20,7 @@ import {
     selectMeetingName,
 } from '@proton/meet/store/slices/currentMeeting';
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
+import { selectJoinError } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -40,7 +41,7 @@ import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
 import { WaitingRoomAdmission } from './WaitingRoomAdmission/WaitingRoomAdmission';
 import { WaitingRoomDropdown } from './WaitingRoomDropdown';
 import { PreJoinDetailsShell } from './shared/PreJoinDetailsShell';
-import { focusKeepingSelection, useFocusEmptyNameField } from './useFocusEmptyNameField';
+import { focusKeepingSelection, isNothingFocused, useFocusEmptyNameField } from './useFocusEmptyNameField';
 
 import './PreJoinDetails.scss';
 
@@ -71,6 +72,7 @@ export const PreJoinDetails = ({
     const meetingLink = useMeetSelector(selectMeetingLink);
     const showWaitingRoomAdmission = useMeetSelector(selectIsWaitingRoomAdmissionActive);
     const waitingRoomEnabled = useMeetSelector(selectWaitingRoomSetting);
+    const isJoinErrorOpen = useMeetSelector(selectJoinError) !== null;
     const desktopAppPreferenceStorageKey = useDesktopAppPreferenceStorageKey();
     const desktopAppOption = getDesktopAppOption(useFlag('MeetOpenDesktopAppOnLoad'));
     const [prefersBrowser] = useState(() => getBrowserPreference(desktopAppPreferenceStorageKey));
@@ -84,6 +86,17 @@ export const PreJoinDetails = ({
     const isNameEmpty = displayName.trim() === '';
 
     useFocusEmptyNameField(nameInputRef, isNameEmpty);
+
+    // A failed join opens the join error modal in the render that brings this view back, so the modal's
+    // focus trap has nothing to return focus to. Its cleanup runs before this effect, once the modal is gone.
+    const wasJoinErrorOpenRef = useRef(isJoinErrorOpen);
+    useEffect(() => {
+        const wasOpen = wasJoinErrorOpenRef.current;
+        wasJoinErrorOpenRef.current = isJoinErrorOpen;
+        if (wasOpen && !isJoinErrorOpen && nameInputRef.current && isNothingFocused(false)) {
+            focusKeepingSelection(nameInputRef.current);
+        }
+    }, [isJoinErrorOpen]);
 
     const getActionLabel = () => {
         if (instantMeeting) {

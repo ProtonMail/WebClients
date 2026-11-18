@@ -143,7 +143,7 @@ describe('useMeetingConnection', () => {
             expect(mockGetAccessDetails).toHaveBeenCalledWith(
                 expect.objectContaining({ meetingLinkName: 'meeting-abc' })
             );
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, 'all');
             expect(params.keyProvider.setKeyWithEpoch).toHaveBeenCalledWith('group-key', 1n);
             expect(mockRoom.setE2EEEnabled).toHaveBeenCalledWith(true);
             expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalledWith('wss://x', 'tok', 20_000);
@@ -269,7 +269,7 @@ describe('useMeetingConnection', () => {
 
             expect(params.getQueryParticipantsCount).toHaveBeenCalledWith('meeting-abc');
             expect(mockDispatch).toHaveBeenCalledWith(setPrejoinParticipantCount(5));
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, 'all');
         });
 
         it('does not query the participant count when not requested', async () => {
@@ -282,7 +282,7 @@ describe('useMeetingConnection', () => {
 
             expect(params.getQueryParticipantsCount).not.toHaveBeenCalled();
             expect(mockDispatch).not.toHaveBeenCalledWith(setPrejoinParticipantCount(5));
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, 'all');
         });
 
         it('forwards the waiting room flag to MLS setup', async () => {
@@ -293,7 +293,7 @@ describe('useMeetingConnection', () => {
                 await result.current.connectWithMls({ ...baseConnectParams, isWaitingRoom: true });
             });
 
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', true, true);
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', true, 'all');
         });
 
         it('asks the token request not to notify the given API errors', async () => {
@@ -659,7 +659,7 @@ describe('useMeetingConnection', () => {
 
                 await act(() => result.current.performFullReconnection(RejoinReasonInfo.Other));
 
-                expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, false);
+                expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, 'actionable');
             });
 
             it('a rejoin still shows them when MeetHandleStalledLiveKitReconnect is disabled', async () => {
@@ -668,17 +668,17 @@ describe('useMeetingConnection', () => {
 
                 await act(() => result.current.performFullReconnection(RejoinReasonInfo.Other));
 
-                expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
+                expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, 'all');
             });
 
-            it('the initial join shows them when MeetHandleStalledLiveKitReconnect is enabled', async () => {
+            it('a connect passes on which ones its caller asks for, whatever MeetHandleStalledLiveKitReconnect', async () => {
                 useFlagMock.mockImplementation((name: string) => name === 'MeetHandleStalledLiveKitReconnect');
                 const params = createParams();
                 const { result } = renderHook(() => useMeetingConnection(params));
 
-                await act(() => result.current.connectWithMls(baseConnectParams));
+                await act(() => result.current.connectWithMls({ ...baseConnectParams, notifyMlsErrors: 'none' }));
 
-                expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
+                expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, 'none');
             });
         });
 

@@ -1,3 +1,5 @@
+import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
+import { ConnectionError } from 'livekit-client';
 import { describe, expect, it } from 'vitest';
 
 import { MeetingErrorKind, classifyMeetingError } from './classifyMeetingError';
@@ -21,6 +23,33 @@ describe('classifyMeetingError', () => {
         expect(classifyMeetingError(new Error('Connection timeout after 20000ms'))).toBe(
             MeetingErrorKind.ConnectionFailed
         );
+    });
+
+    it('recognises a LiveKit signal connection that timed out', () => {
+        const signalTimeout = ConnectionError.timeout(
+            'could not establish signal connection: signal connection timed out while waiting for the first message'
+        );
+
+        expect(classifyMeetingError(signalTimeout)).toBe(MeetingErrorKind.ConnectionFailed);
+    });
+
+    it('does not treat a LiveKit connection error other than a timeout as a connection timeout', () => {
+        expect(classifyMeetingError(ConnectionError.serverUnreachable('could not establish signal connection'))).toBe(
+            MeetingErrorKind.Unknown
+        );
+    });
+
+    it.each([
+        [MeetCoreErrorEnum.MlsServerVersionNotSupported, MeetingErrorKind.MeetingOutdated],
+        [MeetCoreErrorEnum.CheckDeviceClock, MeetingErrorKind.DeviceClock],
+    ])('recognises the meet-core error %s thrown by the MLS setup', (coreError, kind) => {
+        const mlsSetupError = Object.assign(new Error('MLS setup failed'), { userNotified: false, coreError });
+
+        expect(classifyMeetingError(mlsSetupError)).toBe(kind);
+    });
+
+    it('recognises a wrong meeting password', () => {
+        expect(classifyMeetingError(apiError(2026, 'Invalid SRP parameter'))).toBe(MeetingErrorKind.WrongPassword);
     });
 
     it('recognises an error the user was already notified about', () => {

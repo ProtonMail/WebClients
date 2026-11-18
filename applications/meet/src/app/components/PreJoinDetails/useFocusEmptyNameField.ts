@@ -32,7 +32,7 @@ export const focusKeepingSelection = (input: HTMLInputElement) => {
     }
 };
 
-const isNothingFocused = (countMainAsNothing: boolean) => {
+export const isNothingFocused = (countMainAsNothing: boolean) => {
     const { activeElement } = document;
     return (
         !activeElement ||

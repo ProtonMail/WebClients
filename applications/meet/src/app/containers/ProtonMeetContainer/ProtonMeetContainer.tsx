@@ -28,7 +28,12 @@ import {
     selectIsLocalParticipantAdminOrHost,
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import { toggleMeetingLockThunk } from '@proton/meet/store/slices/settings';
-import { PopUpControls, setPopupStateValue } from '@proton/meet/store/slices/uiStateSlice';
+import {
+    PopUpControls,
+    selectJoinError,
+    setJoinError,
+    setPopupStateValue,
+} from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectSubscriptionStatus, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { toToggleState } from '@proton/meet/telemetry/dimensions';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
@@ -36,9 +41,10 @@ import { MeetingEndedReasons, UpsellModalTypes } from '@proton/meet/types/types'
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
-import { ConnectionFailedModal } from '../../components/ConnectionFailedModal/ConnectionFailedModal';
 import { ConnectionLostModal } from '../../components/ConnectionLostModal/ConnectionLostModal';
+import { JoinErrorModal } from '../../components/JoinErrorModal/JoinErrorModal';
 import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingLockedModal';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
@@ -113,9 +119,9 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
 
     const [isMeetingLockedModalOpen, setIsMeetingLockedModalOpen] = useState(false);
     const [isWebRtcUnsupportedModalOpen, setIsWebRtcUnsupportedModalOpen] = useState(false);
-    const [isConnectionFailedModalOpen, setIsConnectionFailedModalOpen] = useState(false);
+    const joinError = useMeetSelector(selectJoinError);
 
-    const { urlMeetingLinkName, urlMeetingPassword } = useMeetingSetup();
+    const { urlMeetingLinkName, urlMeetingPassword, isUrlMeetingPasswordInvalid } = useMeetingSetup();
 
     const instantMeetingRef = useRef(!urlMeetingLinkName);
 
@@ -127,6 +133,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const { isReadyToDecrypt } = useMeetingInfoHydration({
         meetingLinkName: urlMeetingLinkName,
         meetingPassword: urlMeetingPassword,
+        isMeetingPasswordInvalid: isUrlMeetingPasswordInvalid,
         instantMeeting: instantMeetingRef.current,
     });
 
@@ -290,7 +297,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         joinedRoomLoggedRef,
         setIsWebRtcUnsupportedModalOpen,
         setIsMeetingLockedModalOpen,
-        setIsConnectionFailedModalOpen,
         isUsingTurnRelay,
         reportMeetError,
         displayName,
@@ -485,6 +491,8 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         return <TrackedLoaderPage onUnmount={markPrejoinLoaderUnmount} />;
     }
 
+    const handleJoin = instantMeetingRef.current ? joinInstantMeeting : joinMeeting;
+
     return (
         <div className="h-full w-full">
             {isMeetingLockedModalOpen && <MeetingLockedModal onClose={() => setIsMeetingLockedModalOpen(false)} />}
@@ -512,7 +520,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                     </MeetingRecorderProvider>
                 ) : (
                     <PrejoinContainer
-                        handleJoin={instantMeetingRef.current ? joinInstantMeeting : joinMeeting}
+                        handleJoin={handleJoin}
                         meetingLinkName={urlMeetingLinkName}
                         instantMeeting={instantMeetingRef.current}
                         participantsCount={prejoinParticipantCount}
@@ -553,16 +561,24 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                     }}
                 />
             )}
-            {isConnectionFailedModalOpen && (
-                <ConnectionFailedModal
-                    onTryAgain={() => {
-                        setIsConnectionFailedModalOpen(false);
+            {joinError && (
+                <JoinErrorModal
+                    joinError={joinError}
+                    onRetry={() => {
+                        dispatch(setJoinError(null));
+                        // Same as the prejoin's Join button: this click is the user gesture the playback context needs
+                        room.startAudio().catch(noop);
+                        void handleJoin(displayName);
                     }}
-                    onLeave={() => {
-                        setIsConnectionFailedModalOpen(false);
-                        history.push('/dashboard');
-                    }}
-                    showLeaveButton={!isGuest}
+                    onClose={() => dispatch(setJoinError(null))}
+                    onLeave={
+                        isGuest
+                            ? undefined
+                            : () => {
+                                  dispatch(setJoinError(null));
+                                  history.push('/dashboard');
+                              }
+                    }
                 />
             )}
             {joinedRoom && !!canvas && isPipActive && isFirefox() ? (

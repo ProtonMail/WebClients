@@ -1,13 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { describe, expect, it } from 'vitest';
 
+import { resetMeetingState } from '../resetMeetingState';
 import type { MeetState } from '../rootReducer';
+import { meetReducers } from './index';
 import {
     MeetingSideBars,
     clearChatFocusedMessage,
     openChatAtMessage,
+    resetUiState,
     selectChatFocusedMessageId,
+    selectJoinError,
     selectSideBarState,
+    setJoinError,
     toggleSideBarState,
     uiStateReducer,
 } from './uiStateSlice';
@@ -97,6 +102,26 @@ describe('uiStateSlice', () => {
             store.dispatch(toggleSideBarState(MeetingSideBars.Settings));
 
             expect(getChatFocusedMessageId(store)).toBeNull();
+        });
+    });
+
+    describe('joinError', () => {
+        it('survives the ui reset that the failed join’s room disconnect dispatches', () => {
+            const store = createStore();
+            store.dispatch(setJoinError('connectionFailed'));
+
+            store.dispatch(resetUiState());
+
+            expect(selectJoinError(store.getState())).toBe('connectionFailed');
+        });
+
+        it('is cleared when the meeting state is torn down', () => {
+            const store = configureStore({ reducer: meetReducers });
+            store.dispatch(setJoinError('connectionFailed'));
+
+            store.dispatch(resetMeetingState() as any);
+
+            expect(selectJoinError(store.getState() as MeetState)).toBeNull();
         });
     });
 });

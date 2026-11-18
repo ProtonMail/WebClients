@@ -184,11 +184,7 @@ export const useLiveKitConnection = ({ reportMeetError }: UseLiveKitConnectionPa
                 context: { error: roomConnectionError },
             });
             setJoiningLoaderHeader(c('Warning').t`Connection is taking longer than expected`);
-            setJoiningLoaderSubtitle(
-                isTimeout
-                    ? c('Warning').t`STUN UDP connection timeout, trying with TURN relay`
-                    : c('Warning').t`STUN UDP connection failed, trying with TURN relay…`
-            );
+            setJoiningLoaderSubtitle(c('Warning').t`Trying another route…`);
 
             if (isTimeout) {
                 await room.disconnect();
