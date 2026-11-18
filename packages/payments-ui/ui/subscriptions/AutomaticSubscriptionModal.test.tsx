@@ -1,14 +1,16 @@
 import type { ReactNode } from 'react';
 
 import { fireEvent, screen, waitFor } from '@testing-library/react';
+import type { Mock, MockInstance } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { SubscriptionModalContext } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
-import { mockOrganizationApi } from '@proton/components/hooks/helpers/tests/useOrganization';
-import { mockStatusApi } from '@proton/components/hooks/helpers/tests/usePaymentStatus';
-import { mockPlansApi } from '@proton/components/hooks/helpers/tests/usePlans';
-import { mockSubscriptionApi } from '@proton/components/hooks/helpers/tests/useSubscription';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { mockOrganizationApi } from '@proton/components/hooks/helpers/tests/vitest/useOrganization';
+import { mockStatusApi } from '@proton/components/hooks/helpers/tests/vitest/usePaymentStatus';
+import { mockPlansApi } from '@proton/components/hooks/helpers/tests/vitest/usePlans';
+import { mockSubscriptionApi } from '@proton/components/hooks/helpers/tests/vitest/useSubscription';
+import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import {
@@ -35,8 +37,9 @@ import { getUserMock } from '@proton/payments/testing/data-user';
 import { getPaymentStatusState, getSubscriptionState } from '@proton/payments/testing/redux-state';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { getAddonNameByPlan } from '@proton/shared/lib/payments/plan/helpers';
-import { addApiMock, apiMock } from '@proton/test-api/api';
+import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 import { type FeatureFlag, MailFeatureFlag } from '@proton/unleash/Flags';
+import * as useFlagModule from '@proton/unleash/useFlag';
 
 import SubscriptionModalProvider from '../../containers/payments/subscription/SubscriptionModalProvider';
 import { PaymentsContextProvider } from '../context/PaymentContext';
@@ -337,31 +340,33 @@ describe('getParameters', () => {
     });
 });
 
-jest.mock('@proton/components/hooks/useModals');
-jest.mock('@proton/atoms/Portal/Portal', () => ({
-    __esModule: true,
-    Portal: jest.fn(({ children }) => <>{children}</>),
+vi.mock('@proton/components/hooks/useModals', () => ({
+    default: vi.fn().mockReturnValue({ createModal: vi.fn() }),
 }));
-jest.mock('@proton/payments-ui/ui/subscriptions/eligibility');
-jest.mock('@proton/components/containers/desktop/useRedirectToAccountApp', () => ({
+vi.mock('@proton/atoms/Portal/Portal', () => ({
+    __esModule: true,
+    Portal: vi.fn(({ children }) => <>{children}</>),
+}));
+vi.mock('@proton/payments-ui/ui/subscriptions/eligibility');
+vi.mock('@proton/components/containers/desktop/useRedirectToAccountApp', () => ({
     useRedirectToAccountApp: () => () => false,
 }));
-jest.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled', () => ({
+vi.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled', () => ({
     __esModule: true,
-    default: jest.fn(() => ({ paymentsEnabled: false, enabled: false })),
+    default: vi.fn(() => ({ paymentsEnabled: false, enabled: false })),
 }));
-jest.mock('@proton/unleash/useVariant', () => ({
-    useVariant: jest.fn(() => ({ name: 'disabled' })),
+vi.mock('@proton/unleash/useVariant', () => ({
+    useVariant: vi.fn(() => ({ name: 'disabled' })),
 }));
-jest.mock('@proton/features/useFeature', () => () => ({}));
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
+vi.mock('@proton/features/useFeature', () => ({ default: () => ({}) }));
+vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
     __esModule: true,
-    default: () => jest.requireActual('@proton/components/testing/mockUseActiveBreakpoint').mockDefaultBreakpoints,
+    default: () => mockDefaultBreakpoints,
 }));
 
-const mockOpenSubscriptionModal = jest.fn();
+const mockOpenSubscriptionModal = vi.fn();
 
-const mockedGetEligibility = getEligibility as jest.Mock;
+const mockedGetEligibility = getEligibility as Mock;
 
 const renderModal = (search: string, subscriptionOverride?: Subscription) => {
     const subscription =
@@ -386,7 +391,7 @@ const renderModal = (search: string, subscriptionOverride?: Subscription) => {
 
 describe('<AutomaticSubscriptionModal />', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedGetEligibility.mockReturnValue({ type: 'pass-through' });
     });
 
@@ -509,10 +514,10 @@ describe('<AutomaticSubscriptionModal />', () => {
         });
 
         describe('with ScribeToLumo on', () => {
-            let useFlagSpy: jest.SpyInstance;
+            let useFlagSpy: MockInstance;
 
             beforeEach(() => {
-                useFlagSpy = jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag');
+                useFlagSpy = vi.spyOn(useFlagModule, 'useFlag');
                 useFlagSpy.mockImplementation((flag) => flag === MailFeatureFlag.ScribeToLumo);
             });
 
@@ -778,7 +783,7 @@ function GuardTestHarness({ children }: { children: ReactNode }) {
 function enableSepaFeatureFlag() {
     const sepaFlag: FeatureFlag = 'SepaPayments';
 
-    const useFlagMock = jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag');
+    const useFlagMock = vi.spyOn(useFlagModule, 'useFlag');
     useFlagMock.mockImplementation((flag) => flag === sepaFlag);
 }
 
@@ -802,7 +807,7 @@ function renderAutomaticSubscriptionModal(search: string) {
 
 describe('<AutomaticSubscriptionModal /> subscription guards', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedGetEligibility.mockReturnValue({ type: 'pass-through' });
         mockSubscriptionApi({
             Code: 1000,
@@ -813,7 +818,7 @@ describe('<AutomaticSubscriptionModal /> subscription guards', () => {
         mockOrganizationApi();
         mockStatusApi();
         enableSepaFeatureFlag();
-        jest.spyOn(global, 'fetch').mockResolvedValue({ ok: true } as Response);
+        vi.spyOn(global, 'fetch').mockResolvedValue({ ok: true } as Response);
     });
 
     it('does not send ValidateGuards while browsing plan selection from upsell URL', async () => {

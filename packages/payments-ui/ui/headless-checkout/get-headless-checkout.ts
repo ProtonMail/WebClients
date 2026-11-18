@@ -78,7 +78,10 @@ export type CheckoutLineItemMandatory =
     | VatReverseChargeLineItem;
 
 export type CheckoutLineItemOptional =
-    PlanAmountWithDiscountPerMonthLineItem | BaseRenewAmount | GuardLineItem | PlanDiscountLineItem;
+    | PlanAmountWithDiscountPerMonthLineItem
+    | BaseRenewAmount
+    | GuardLineItem
+    | PlanDiscountLineItem;
 
 export type CheckoutLineItem = CheckoutLineItemMandatory | CheckoutLineItemOptional;
 /**

@@ -7,7 +7,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { PromiseWithController, Props } from './PaymentVerificationModal';
 import PaymentVerificationModal from './PaymentVerificationModal';
 
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal');
 
 let props: Props;
 let promiseWithController: PromiseWithController;
@@ -15,7 +15,7 @@ let promiseResolve: () => void;
 let promiseReject: (error: any) => void;
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     promiseWithController = {
         promise: new Promise((resolve, reject) => {
@@ -23,15 +23,15 @@ beforeEach(() => {
             promiseReject = reject;
         }),
         abort: {
-            abort: jest.fn(),
+            abort: vi.fn(),
         } as any,
     };
 
     props = {
         open: true,
-        onSubmit: jest.fn(),
-        onClose: jest.fn(),
-        onProcess: jest.fn().mockReturnValue(promiseWithController),
+        onSubmit: vi.fn(),
+        onClose: vi.fn(),
+        onProcess: vi.fn().mockReturnValue(promiseWithController),
     };
 });
 

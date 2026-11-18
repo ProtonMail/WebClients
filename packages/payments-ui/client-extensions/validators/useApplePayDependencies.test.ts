@@ -8,31 +8,31 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { useApplePayDependencies } from './validators';
 
-jest.mock('@proton/unleash/useFlag');
-jest.mock('@proton/chargebee/lib/getCanMakePaymentsWithActiveCard');
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/unleash/useFlag');
+vi.mock('@proton/chargebee/lib/getCanMakePaymentsWithActiveCard');
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-const createModal = jest.fn(() => 'modal-id');
-const removeModal = jest.fn();
-jest.mock('@proton/components/hooks/useModals', () => () => ({ createModal, removeModal }));
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/browser'),
-    isDesktop: jest.fn(),
+const createModal = vi.fn(() => 'modal-id');
+const removeModal = vi.fn();
+vi.mock('@proton/components/hooks/useModals', () => ({ default: () => ({ createModal, removeModal }) }));
+vi.mock('@proton/shared/lib/helpers/browser', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/helpers/browser')),
+    isDesktop: vi.fn(),
 }));
 
-const mockedIsDesktop = jest.mocked(isDesktop);
-const mockedUseFlag = jest.mocked(useFlag);
-const mockedCanMakePaymentsOnCurrentDomain = jest.mocked(getCanMakePaymentsWithActiveCard);
+const mockedIsDesktop = vi.mocked(isDesktop);
+const mockedUseFlag = vi.mocked(useFlag);
+const mockedCanMakePaymentsOnCurrentDomain = vi.mocked(getCanMakePaymentsWithActiveCard);
 
-const getApplePayCapabilities = jest.fn();
+const getApplePayCapabilities = vi.fn();
 const handles = { getApplePayCapabilities } as unknown as ChargebeeIframeHandles;
 
 const modalHandles = {
-    onPaymentFailure: jest.fn(),
-    onVerificationCancelled: jest.fn(),
-    onVerificationSuccess: jest.fn(),
-    onQrPendingModalClosed: jest.fn(),
+    onPaymentFailure: vi.fn(),
+    onVerificationCancelled: vi.fn(),
+    onVerificationSuccess: vi.fn(),
+    onQrPendingModalClosed: vi.fn(),
 };
 
 const renderAndSettle = async () => {
@@ -63,7 +63,7 @@ const setNativeApplePaySession = (isPresent: boolean) => {
 afterEach(() => setNativeApplePaySession(false));
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     setOfferedApplePayFlow(null);
     mockedIsDesktop.mockReturnValue(true);
     mockedCanMakePaymentsOnCurrentDomain.mockResolvedValue(true);

@@ -223,15 +223,15 @@ const getProps = (
 
 describe('RenewalNotice', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.useFakeTimers();
+        vi.clearAllMocks();
+        vi.useFakeTimers();
 
         const mockedDate = new Date(2023, 10, 1);
-        jest.setSystemTime(mockedDate);
+        vi.setSystemTime(mockedDate);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('Regular subscriptions', () => {
@@ -717,11 +717,11 @@ describe('RenewalNotice', () => {
 
 describe('Trials (from check result)', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date(2023, 10, 1));
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date(2023, 10, 1));
     });
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should render trial monthly notice with T&C (full string)', () => {
@@ -1248,12 +1248,12 @@ describe('terms and Conditions link', () => {
 
 describe('Custom Billing', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date(2023, 10, 1));
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date(2023, 10, 1));
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('Regular renewal notice', () => {

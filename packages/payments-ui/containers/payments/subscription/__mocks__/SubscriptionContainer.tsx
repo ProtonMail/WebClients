@@ -1,3 +1,3 @@
-const SubscriptionContainer = jest.fn().mockImplementation(() => <>SubscriptionContainer</>);
+const SubscriptionContainer = vi.fn().mockImplementation(() => <>SubscriptionContainer</>);
 
 export default SubscriptionContainer;

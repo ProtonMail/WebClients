@@ -403,7 +403,8 @@
         "packages/payments-ui": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignore": ["./examples/utils.ts"]
+            "ignore": ["./examples/utils.ts"],
+            "ignoreDependencies": ["@proton/features", "@proton/metrics"]
         },
         "packages/polyfill": {
             "entry": [],

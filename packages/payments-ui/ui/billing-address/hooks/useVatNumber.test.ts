@@ -8,41 +8,41 @@ import type { PaymentsApi } from '@proton/payments/core/interface';
 import type { TaxCountryHook } from './useTaxCountry';
 import { useVatNumber } from './useVatNumber';
 
-const mockSelectUser = jest.fn();
-jest.mock('@proton/account/user', () => ({
+const mockSelectUser = vi.fn();
+vi.mock('@proton/account/user', () => ({
     selectUser: (...args: any[]) => mockSelectUser(...args),
 }));
 
-const mockGetFullBillingAddress = jest.fn();
+const mockGetFullBillingAddress = vi.fn();
 const mockDefaultPaymentsApi = {
     getFullBillingAddress: mockGetFullBillingAddress,
 } as unknown as PaymentsApi;
 
-jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
+vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
     usePaymentsApi: () => ({ paymentsApi: mockDefaultPaymentsApi }),
 }));
 
-const mockWithLoading = jest.fn((promise: Promise<unknown>) => promise);
-jest.mock('@proton/hooks/useLoading', () => {
+const mockWithLoading = vi.fn((promise: Promise<unknown>) => promise);
+vi.mock('@proton/hooks/useLoading', () => {
     return {
         __esModule: true,
-        default: () => [false, mockWithLoading, jest.fn()],
+        default: () => [false, mockWithLoading, vi.fn()],
     };
 });
 
-const mockGetState = jest.fn();
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
+const mockGetState = vi.fn();
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({
     useStore: () => ({ getState: mockGetState }),
 }));
 
-jest.mock('@proton/payments/core/billing-address/vat-helpers', () => ({
+vi.mock('@proton/payments/core/billing-address/vat-helpers', () => ({
     getVatFormErrors: () => ({
         hasErrors: false,
         errorMessages: { VatId: '', Company: '', FirstName: '', LastName: '', Address: '', City: '' },
     }),
 }));
 
-jest.mock('@proton/shared/lib/payments/plan/helpers', () => ({
+vi.mock('@proton/shared/lib/payments/plan/helpers', () => ({
     getIsB2BAudienceFromPlan: (plan: string | undefined) => {
         const b2bPlans = new Set([
             PLANS.MAIL_PRO,
@@ -63,16 +63,16 @@ jest.mock('@proton/shared/lib/payments/plan/helpers', () => ({
 function buildTaxCountryStub(overrides: Partial<TaxCountryHook> = {}): TaxCountryHook {
     return {
         selectedCountryCode: 'DE',
-        setSelectedCountry: jest.fn(),
+        setSelectedCountry: vi.fn(),
         federalStateCode: null,
-        setFederalStateCode: jest.fn(),
+        setFederalStateCode: vi.fn(),
         zipCode: null,
-        setZipCode: jest.fn(),
+        setZipCode: vi.fn(),
         billingAddressValid: true,
         billingAddressStatus: { valid: true },
         zipCodeBackendValid: true,
         paymentsApi: mockDefaultPaymentsApi,
-        billingAddressChangedInModal: jest.fn(),
+        billingAddressChangedInModal: vi.fn(),
         ...overrides,
     } as TaxCountryHook;
 }
@@ -88,7 +88,7 @@ function defaultProps(overrides: Record<string, any> = {}) {
 
 describe('useVatNumber', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockGetState.mockReturnValue({});
         mockSelectUser.mockReturnValue(undefined);
         mockGetFullBillingAddress.mockResolvedValue({ VatId: 'VAT123' });
@@ -168,7 +168,7 @@ describe('useVatNumber', () => {
         });
 
         it('should expose paymentsApi and shouldEditInModal in return value', () => {
-            const customApi = { getFullBillingAddress: jest.fn() } as unknown as PaymentsApi;
+            const customApi = { getFullBillingAddress: vi.fn() } as unknown as PaymentsApi;
             const { result } = renderHook(() =>
                 useVatNumber(
                     defaultProps({ paymentsApi: customApi, isAuthenticated: true, selectedPlanName: PLANS.MAIL })
@@ -278,7 +278,7 @@ describe('useVatNumber', () => {
 
     describe('paymentsApi resolution', () => {
         it('should use paymentsApi prop when provided', () => {
-            const customApi = { getFullBillingAddress: jest.fn() } as unknown as PaymentsApi;
+            const customApi = { getFullBillingAddress: vi.fn() } as unknown as PaymentsApi;
 
             const { result } = renderHook(() =>
                 useVatNumber(defaultProps({ paymentsApi: customApi, isAuthenticated: false }))
@@ -310,7 +310,7 @@ describe('useVatNumber', () => {
         });
 
         it('should call onVatChange callback with new value', () => {
-            const onVatChange = jest.fn();
+            const onVatChange = vi.fn();
             const { result } = renderHook(() => useVatNumber(defaultProps({ isAuthenticated: false, onVatChange })));
 
             act(() => {
@@ -321,7 +321,7 @@ describe('useVatNumber', () => {
         });
 
         it('reports an empty VAT to onVatChange when only the bare prefix is entered', () => {
-            const onVatChange = jest.fn();
+            const onVatChange = vi.fn();
             const { result } = renderHook(() =>
                 useVatNumber(
                     defaultProps({
@@ -374,7 +374,7 @@ describe('useVatNumber', () => {
         });
 
         it('does not leak a bare prefix through onBillingAddressChange', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useVatNumber(
                     defaultProps({
@@ -400,7 +400,7 @@ describe('useVatNumber', () => {
 
     describe('Country/plan change effect', () => {
         it('should clear vatNumber when country changes to non-VAT country', () => {
-            const onVatChange = jest.fn();
+            const onVatChange = vi.fn();
             const taxCountry = buildTaxCountryStub({ selectedCountryCode: 'DE' });
 
             const { result, rerender } = renderHook((props) => useVatNumber(props), {
@@ -430,7 +430,7 @@ describe('useVatNumber', () => {
         });
 
         it('should clear vatNumber when plan changes to non-B2B', () => {
-            const onVatChange = jest.fn();
+            const onVatChange = vi.fn();
 
             const { result, rerender } = renderHook((props) => useVatNumber(props), {
                 initialProps: defaultProps({ isAuthenticated: false, onVatChange }),
@@ -454,7 +454,7 @@ describe('useVatNumber', () => {
         });
 
         it('should reset vatNumber to the new prefix and notify when switching between VAT countries', () => {
-            const onVatChange = jest.fn();
+            const onVatChange = vi.fn();
             const { result, rerender } = renderHook((props) => useVatNumber(props), {
                 initialProps: defaultProps({ isAuthenticated: false, onVatChange }),
             });
@@ -476,7 +476,7 @@ describe('useVatNumber', () => {
         });
 
         it('should NOT trigger when vatNumber is already empty', () => {
-            const onVatChange = jest.fn();
+            const onVatChange = vi.fn();
 
             const { rerender } = renderHook((props) => useVatNumber(props), {
                 initialProps: defaultProps({
@@ -543,7 +543,7 @@ describe('useVatNumber', () => {
         });
 
         it('should call onVatUpdated when isAuthenticated is true', async () => {
-            const onVatUpdated = jest.fn();
+            const onVatUpdated = vi.fn();
             const { result } = renderHook(() =>
                 useVatNumber(defaultProps({ isAuthenticated: true, onVatUpdated, selectedPlanName: PLANS.MAIL }))
             );
@@ -566,7 +566,7 @@ describe('useVatNumber', () => {
         });
 
         it('should NOT call onVatUpdated when isAuthenticated is false', async () => {
-            const onVatUpdated = jest.fn();
+            const onVatUpdated = vi.fn();
             const { result } = renderHook(() => useVatNumber(defaultProps({ isAuthenticated: false, onVatUpdated })));
 
             await act(async () => {
@@ -587,7 +587,7 @@ describe('useVatNumber', () => {
         });
 
         it('should pass new vatNumber to onVatUpdated', async () => {
-            const onVatUpdated = jest.fn();
+            const onVatUpdated = vi.fn();
             const { result } = renderHook(() =>
                 useVatNumber(defaultProps({ isAuthenticated: true, onVatUpdated, selectedPlanName: PLANS.MAIL }))
             );

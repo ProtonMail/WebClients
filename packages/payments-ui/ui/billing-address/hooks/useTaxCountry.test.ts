@@ -1,10 +1,11 @@
 import { act } from 'react';
 
 import { renderHook as baseRenderHook } from '@testing-library/react';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { componentWrapper } from '@proton/components/testing/hocs/helpers';
+import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import { withConfig } from '@proton/components/testing/with-config';
-import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { WrongBillingAddressError } from '@proton/payments/core/errors';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -15,24 +16,24 @@ import type { PaymentFacade } from '../../../client-extensions/usePaymentFacade'
 import { useTaxCountry } from './useTaxCountry';
 
 // Mock the feature flag to be enabled by default for all tests (to match existing test expectations)
-jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: jest.fn().mockReturnValue(true),
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn().mockReturnValue(true),
 }));
-jest.mock('@proton/unleash/useGetFlag', () => ({
-    useGetFlag: jest.fn().mockReturnValue(() => true),
-}));
-
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
+vi.mock('@proton/unleash/useGetFlag', () => ({
+    useGetFlag: vi.fn().mockReturnValue(() => true),
 }));
 
-jest.mock('@proton/payments/telemetry/telemetry', () => ({
-    checkoutTelemetry: { reportBillingCountryChange: jest.fn() },
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn().mockReturnValue({ createNotification: vi.fn() }),
 }));
 
-const reportBillingCountryChange = checkoutTelemetry.reportBillingCountryChange as jest.Mock;
+vi.mock('@proton/payments/telemetry/telemetry', () => ({
+    checkoutTelemetry: { reportBillingCountryChange: vi.fn() },
+}));
 
-const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+const reportBillingCountryChange = checkoutTelemetry.reportBillingCountryChange as Mock;
+
+const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 
 const getWrapper = () => componentWrapper(withReduxStore(), withConfig());
 
@@ -52,7 +53,7 @@ describe('useTaxCountry hook', () => {
     });
 
     describe('Zip code change telemetry', () => {
-        const renderUsCalifornia = (onBillingAddressChange = jest.fn()) =>
+        const renderUsCalifornia = (onBillingAddressChange = vi.fn()) =>
             renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -216,7 +217,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should not update billing address if paymentStatus values are the same', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { rerender } = renderHook((props) => useTaxCountry(props), {
                 initialProps: {
                     initialBillingAddress: {
@@ -245,7 +246,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should call onBillingAddressChange when billing address updates', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -271,7 +272,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should handle cascading state transitions (country → state → zip code)', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -321,7 +322,7 @@ describe('useTaxCountry hook', () => {
         // This case is now handled on the parent level of useTaxCountry by informedFallback property of
         // checkSubscription
         it.skip('should handle previous valid zip code override functionality', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result, rerender } = renderHook((props) => useTaxCountry(props), {
                 initialProps: {
                     onBillingAddressChange,
@@ -357,7 +358,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should not override zip code when already valid', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result, rerender } = renderHook((props) => useTaxCountry(props), {
                 initialProps: {
                     onBillingAddressChange,
@@ -392,7 +393,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should not update when values are the same (early returns)', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -428,8 +429,8 @@ describe('useTaxCountry hook', () => {
         it('should integrate with PaymentFacade chargebee card', () => {
             const mockPaymentFacade = {
                 chargebeeCard: {
-                    setCountryCode: jest.fn(),
-                    setPostalCode: jest.fn(),
+                    setCountryCode: vi.fn(),
+                    setPostalCode: vi.fn(),
                 },
                 checkResult: { error: undefined } as SubscriptionEstimation,
             };
@@ -460,7 +461,7 @@ describe('useTaxCountry hook', () => {
 
     describe('Validation & Error Messages', () => {
         it('should handle invalid zip codes', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -672,7 +673,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should call callbacks at the right times', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -701,7 +702,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should respect skipCallback option', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -731,7 +732,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should handle multiple rapid changes correctly', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -754,7 +755,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should handle callback errors gracefully', () => {
-            const throwingCallback = jest.fn(() => {
+            const throwingCallback = vi.fn(() => {
                 throw new Error('Callback error');
             });
 
@@ -794,8 +795,8 @@ describe('useTaxCountry hook', () => {
         it('should cleanup properly on unmount', () => {
             const mockPaymentFacade = {
                 chargebeeCard: {
-                    setCountryCode: jest.fn(),
-                    setPostalCode: jest.fn(),
+                    setCountryCode: vi.fn(),
+                    setPostalCode: vi.fn(),
                 },
                 checkResult: { error: undefined } as SubscriptionEstimation,
             };
@@ -921,7 +922,7 @@ describe('useTaxCountry hook', () => {
 
     describe('Concurrent/Async Scenarios', () => {
         it('should handle race conditions with rapid successive calls', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -958,7 +959,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should include ZipCode in billing address callback when flag is enabled', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -985,7 +986,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should trigger callback when setting valid zip code', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,
@@ -1013,12 +1014,12 @@ describe('useTaxCountry hook', () => {
 
     describe('Outer state staleness when payment status changes', () => {
         const chargebeeCardStub = {
-            setCountryCode: jest.fn(),
-            setPostalCode: jest.fn(),
+            setCountryCode: vi.fn(),
+            setPostalCode: vi.fn(),
         };
 
         it('should call onBillingAddressChange when no paymentFacade is provided', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { rerender } = renderHook((props) => useTaxCountry(props), {
                 initialProps: {
                     initialBillingAddress: {
@@ -1054,7 +1055,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should call onBillingAddressChange when paymentFacade has no checkResult', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const mockPaymentFacade = {
                 chargebeeCard: chargebeeCardStub,
             };
@@ -1096,7 +1097,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should call onBillingAddressChange when checkResult billing address differs from new payment status', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const mockPaymentFacade = {
                 chargebeeCard: chargebeeCardStub,
                 checkResult: {
@@ -1147,7 +1148,7 @@ describe('useTaxCountry hook', () => {
         });
 
         it('should NOT call onBillingAddressChange when checkResult billing address matches new payment status', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const newBillingAddress = {
                 CountryCode: 'CA',
                 State: 'ON',
@@ -1200,7 +1201,7 @@ describe('useTaxCountry hook', () => {
 
     describe('billingAddressChangedInModal', () => {
         it('should update local state and call onBillingAddressChange', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const { result } = renderHook(() =>
                 useTaxCountry({
                     onBillingAddressChange,

@@ -2,19 +2,19 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { useSepaDirectDebit } from '@proton/payments-hooks/react-extensions/useSepaDirectDebit';
 import { PLANS } from '@proton/payments/core/constants';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
 import { ChargebeeIframe } from './ChargebeeIframe';
 import { SepaDirectDebit } from './SepaDirectDebit';
 
 // Mock ChargebeeIframe component
-jest.mock('@proton/payments-ui/ui/components/ChargebeeIframe', () => ({
-    ChargebeeIframe: jest.fn(() => null),
+vi.mock('@proton/payments-ui/ui/components/ChargebeeIframe', () => ({
+    ChargebeeIframe: vi.fn(() => null),
 }));
 
 // Mock useFormErrors hook
-const mockValidator = jest.fn();
-const mockOnFormSubmit = jest.fn();
+const mockValidator = vi.fn();
+const mockOnFormSubmit = vi.fn();
 
 const TestComponent = () => {
     const directDebit = useSepaDirectDebit(
@@ -23,41 +23,41 @@ const TestComponent = () => {
                 Amount: 999,
                 Currency: 'EUR',
             },
-            onChargeable: jest.fn(),
+            onChargeable: vi.fn(),
             selectedPlanName: PLANS.VPN2024,
-            onBeforeSepaPayment: jest.fn(),
-            onValidationFailed: jest.fn(),
+            onBeforeSepaPayment: vi.fn(),
+            onValidationFailed: vi.fn(),
         },
         {
             api: apiMock,
             events: {
-                onPaypalAuthorized: jest.fn(),
-                onPaypalFailure: jest.fn(),
-                onPaypalClicked: jest.fn(),
-                onPaypalCancelled: jest.fn(),
-                onThreeDsChallenge: jest.fn(),
-                onThreeDsSuccess: jest.fn(),
-                onThreeDsFailure: jest.fn(),
-                onCardVeririfcationSuccess: jest.fn(),
-                onCardVeririfcationFailure: jest.fn(),
-                onUnhandledError: jest.fn(),
-                onApplePayAuthorized: jest.fn(),
-                onApplePayFailure: jest.fn(),
-                onApplePayClicked: jest.fn(),
-                onApplePayCancelled: jest.fn(),
-                onGooglePayAuthorized: jest.fn(),
-                onGooglePayFailure: jest.fn(),
-                onGooglePayClicked: jest.fn(),
-                onGooglePayCancelled: jest.fn(),
-                onIdealAuthorized: jest.fn(),
-                onIdealFailure: jest.fn(),
-                onIdealClicked: jest.fn(),
-                onIdealCancelled: jest.fn(),
+                onPaypalAuthorized: vi.fn(),
+                onPaypalFailure: vi.fn(),
+                onPaypalClicked: vi.fn(),
+                onPaypalCancelled: vi.fn(),
+                onThreeDsChallenge: vi.fn(),
+                onThreeDsSuccess: vi.fn(),
+                onThreeDsFailure: vi.fn(),
+                onCardVeririfcationSuccess: vi.fn(),
+                onCardVeririfcationFailure: vi.fn(),
+                onUnhandledError: vi.fn(),
+                onApplePayAuthorized: vi.fn(),
+                onApplePayFailure: vi.fn(),
+                onApplePayClicked: vi.fn(),
+                onApplePayCancelled: vi.fn(),
+                onGooglePayAuthorized: vi.fn(),
+                onGooglePayFailure: vi.fn(),
+                onGooglePayClicked: vi.fn(),
+                onGooglePayCancelled: vi.fn(),
+                onIdealAuthorized: vi.fn(),
+                onIdealFailure: vi.fn(),
+                onIdealClicked: vi.fn(),
+                onIdealCancelled: vi.fn(),
             },
             handles: {
-                submitDirectDebit: jest.fn(),
+                submitDirectDebit: vi.fn(),
             } as any,
-            verifyPayment: jest.fn(),
+            verifyPayment: vi.fn(),
         }
     );
 
@@ -77,7 +77,7 @@ const TestComponent = () => {
 
 describe('SepaDirectDebit', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('renders SepaDirectDebit component', () => {
@@ -137,7 +137,7 @@ describe('SepaDirectDebit', () => {
 
     it('renders ChargebeeIframe component', () => {
         render(<TestComponent />);
-        expect(jest.mocked(ChargebeeIframe).mock.calls.map(([props]) => props)).toContainEqual(
+        expect(vi.mocked(ChargebeeIframe).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({
                 type: 'direct-debit',
             })

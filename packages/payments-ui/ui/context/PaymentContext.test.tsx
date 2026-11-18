@@ -1,7 +1,7 @@
 import { act, render } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { getStoreWrapper } from '@proton/payments-hooks/testing/renderWithProviders';
+import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
@@ -17,18 +17,18 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { PaymentsContextProvider } from './PaymentContext';
 
-const checkSubscription = jest.fn();
+const checkSubscription = vi.fn();
 
-jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: jest.fn().mockReturnValue(false),
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn().mockReturnValue(false),
 }));
 
-jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
+vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
     const paymentsApi = {
         checkSubscription: (...args: any[]) => checkSubscription(...args),
-        cacheMultiCheck: jest.fn(),
-        multiCheck: jest.fn().mockResolvedValue([]),
-        getFullBillingAddress: jest.fn().mockResolvedValue({}),
+        cacheMultiCheck: vi.fn(),
+        multiCheck: vi.fn().mockResolvedValue([]),
+        getFullBillingAddress: vi.fn().mockResolvedValue({}),
     } as unknown as PaymentsApi;
 
     return {
@@ -141,7 +141,7 @@ const sentData = () => checkSubscription.mock.calls.map(([data]) => data);
 
 describe('PaymentsContext subscription guards', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         checkSubscription.mockImplementation((_data, { signal } = {}) =>
             respondWith(signal, Promise.resolve(buildCheckResult()))
         );
@@ -420,18 +420,18 @@ describe('PaymentsContext currency for the selection', () => {
         });
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         checkSubscription.mockImplementation((data, { signal } = {}) =>
             respondWith(signal, Promise.resolve(buildCheckResult({ Currency: data.Currency })))
         );
     });
 
     afterEach(() => {
-        jest.mocked(useFlag).mockReturnValue(false);
+        vi.mocked(useFlag).mockReturnValue(false);
     });
 
     it('checks Lumo added next to web Mail Plus in the Mail Plus currency', async () => {
-        jest.mocked(useFlag).mockImplementation((flag) => flag === 'LumoMultiSubscriptions');
+        vi.mocked(useFlag).mockImplementation((flag) => flag === 'LumoMultiSubscriptions');
         const { select } = renderWithWebMailPlusInUsd();
 
         await select(lumoMonthlyInChf);

@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type {
     BillingAddress,
     BillingAddressExtended,
@@ -28,12 +30,12 @@ function createFullBillingAddress(billingAddress: Partial<BillingAddressExtended
 }
 
 describe('loadInitialBillingAddress', () => {
-    let getPaymentStatus: jest.Mock<Promise<PaymentStatus>>;
-    let getFullBillingAddress: jest.Mock<Promise<FullBillingAddress>, [GetFullBillingAddressOptions]>;
+    let getPaymentStatus: Mock<() => Promise<PaymentStatus>>;
+    let getFullBillingAddress: Mock<(options: GetFullBillingAddressOptions) => Promise<FullBillingAddress>>;
 
     beforeEach(() => {
-        getPaymentStatus = jest.fn();
-        getFullBillingAddress = jest.fn();
+        getPaymentStatus = vi.fn();
+        getFullBillingAddress = vi.fn();
     });
 
     describe('authenticated user with valid billing address', () => {

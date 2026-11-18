@@ -11,7 +11,7 @@ let props: Props;
 
 beforeEach(() => {
     props = {
-        onChangeCycle: jest.fn(),
+        onChangeCycle: vi.fn(),
         mode: 'buttons',
         currency: 'CHF',
         cycle: CYCLE.TWO_YEARS,

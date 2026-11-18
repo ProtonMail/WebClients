@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { screen } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -17,14 +17,14 @@ import { getIdealAuthorizationText } from '../../../../payment-methods/ideal/Ide
 import { useTaxCountry } from '../../../../ui/billing-address/hooks/useTaxCountry';
 import SubscriptionCheckout, { type SubscriptionCheckoutProps } from './SubscriptionCheckout';
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
-    useConfig: jest.fn().mockReturnValue({
+    useConfig: vi.fn().mockReturnValue({
         APP_NAME: 'proton-account',
     }),
 }));
 
-jest.mock('@proton/components/containers/payments/Checkout', () => {
+vi.mock('@proton/components/containers/payments/Checkout', () => {
     const MockCheckout = ({
         children,
         renewNotice,

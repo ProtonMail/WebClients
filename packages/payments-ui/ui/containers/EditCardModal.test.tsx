@@ -12,11 +12,11 @@
 //     withNotifications,
 // } from '@proton/testing';
 
-// import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
+// import { renderWithProviders } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 // import EditCardModal from './EditCardModal';
 
-// jest.mock('@proton/atoms/Portal/Portal');
-// jest.mock('@proton/components/components/toggle/Toggle');
+// vi.mock('@proton/atoms/Portal/Portal');
+// vi.mock('@proton/components/components/toggle/Toggle');
 
 // const defaultCard: CardModel = {
 //     number: '',
@@ -28,7 +28,7 @@
 // };
 
 // beforeEach(() => {
-//     jest.clearAllMocks();
+//     vi.clearAllMocks();
 // });
 
 // const ContextEditCardModal = applyHOCs(
@@ -47,7 +47,7 @@
 
 // it('should update Autopay and close modal if user edits the existing payment method', async () => {
 //     const paymentMethodId = 'paymentMethodId123';
-//     const onClose = jest.fn();
+//     const onClose = vi.fn();
 //     const { getByTestId } = renderWithProviders(
 //         <ContextEditCardModal
 //             card={defaultCard}
@@ -70,7 +70,7 @@
 
 // it('should update Autopay and close modal if user edits the existing payment method (toggle off)', async () => {
 //     const paymentMethodId = 'paymentMethodId123';
-//     const onClose = jest.fn();
+//     const onClose = vi.fn();
 //     const { getByTestId } = renderWithProviders(
 //         <ContextEditCardModal
 //             card={defaultCard}
@@ -93,7 +93,7 @@
 // });
 
 // it('should not update autopay if this is Add Credit card mode', async () => {
-//     const onClose = jest.fn();
+//     const onClose = vi.fn();
 //     const { getByTestId } = renderWithProviders(<ContextEditCardModal open={true} onClose={onClose} />);
 
 //     fireEvent.click(getByTestId('toggle-subscription-renew'));
@@ -109,7 +109,7 @@
 //     apiMock.mockRejectedValue(new Error());
 
 //     const paymentMethodId = 'paymentMethodId123';
-//     const onClose = jest.fn();
+//     const onClose = vi.fn();
 //     const { getByTestId } = renderWithProviders(
 //         <ContextEditCardModal
 //             card={defaultCard}
@@ -139,7 +139,7 @@
 //     apiMock.mockReturnValue(manualPromise);
 
 //     const paymentMethodId = 'paymentMethodId123';
-//     const onClose = jest.fn();
+//     const onClose = vi.fn();
 //     const { getByTestId } = renderWithProviders(
 //         <ContextEditCardModal
 //             card={defaultCard}

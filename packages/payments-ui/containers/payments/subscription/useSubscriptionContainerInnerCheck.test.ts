@@ -1,7 +1,8 @@
-import { act } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
-import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers/getAllowedCycles';
+import { getStoreWrapper } from '@proton/components/testing/vitest/renderWithProviders';
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
@@ -21,28 +22,30 @@ import {
     useSubscriptionContainerInnerCheck,
 } from './useSubscriptionContainerInnerCheck';
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const componentsHookRenderer = <T>(hook: () => T) => renderHook(hook, { wrapper: getStoreWrapper().Wrapper });
+
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
-jest.mock('@proton/payments/core/subscription/forbidden-plan-transition', () => ({
-    ...jest.requireActual('@proton/payments/core/subscription/forbidden-plan-transition'),
-    getIsPlanTransitionForbidden: jest.fn(),
+vi.mock('@proton/payments/core/subscription/forbidden-plan-transition', async () => ({
+    ...(await vi.importActual<any>('@proton/payments/core/subscription/forbidden-plan-transition')),
+    getIsPlanTransitionForbidden: vi.fn(),
 }));
 
-jest.mock('@proton/payments/core/subscription/helpers', () => ({
-    ...jest.requireActual('@proton/payments/core/subscription/helpers'),
-    isSubscriptionCheckForbiddenWithReason: jest.fn(),
+vi.mock('@proton/payments/core/subscription/helpers', async () => ({
+    ...(await vi.importActual<any>('@proton/payments/core/subscription/helpers')),
+    isSubscriptionCheckForbiddenWithReason: vi.fn(),
 }));
 
-jest.mock('@proton/components/containers/payments/subscription/helpers/getAllowedCycles', () => ({
-    getAllowedCycles: jest.fn(),
+vi.mock('@proton/components/containers/payments/subscription/helpers/getAllowedCycles', () => ({
+    getAllowedCycles: vi.fn(),
 }));
 
-jest.mock('./helpers/subscriptionTelemetry', () => ({
-    reportPlanIDsIfChangedTelemetry: jest.fn(),
+vi.mock('./helpers/subscriptionTelemetry', () => ({
+    reportPlanIDsIfChangedTelemetry: vi.fn(),
 }));
 
 function buildModel(overrides: Partial<Model> = {}): Model {
@@ -84,7 +87,7 @@ function buildDeps(
         subscriptionCouponCode: undefined,
         subscription: buildSubscription(),
         paymentsApi: {
-            checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+            checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
         } as any,
         paymentFacadeSelectedMethodType: undefined,
         skipPlanTransitionChecks: true,
@@ -94,18 +97,18 @@ function buildDeps(
             giftCodeRef: { current: null },
         },
         setters: {
-            setCheckResult: jest.fn(),
-            setModel: jest.fn(),
-            setVatReverseChargeErrorModal: jest.fn(),
-            fitCurrencyToSelection: jest.fn((_planIDs, currency) => currency),
+            setCheckResult: vi.fn(),
+            setModel: vi.fn(),
+            setVatReverseChargeErrorModal: vi.fn(),
+            fitCurrencyToSelection: vi.fn((_planIDs, currency) => currency),
         },
         callbacks: {
-            runAdditionalEstimations: jest.fn().mockResolvedValue(undefined),
-            shouldPassIsTrial: jest.fn().mockReturnValue(false),
-            onPlusToPlusTransition: jest.fn(),
-            onVisionaryDowngradeWarning: jest.fn().mockResolvedValue(undefined),
-            onVisionaryDowngradeHide: jest.fn(),
-            onCheck: jest.fn(),
+            runAdditionalEstimations: vi.fn().mockResolvedValue(undefined),
+            shouldPassIsTrial: vi.fn().mockReturnValue(false),
+            onPlusToPlusTransition: vi.fn(),
+            onVisionaryDowngradeWarning: vi.fn().mockResolvedValue(undefined),
+            onVisionaryDowngradeHide: vi.fn(),
+            onCheck: vi.fn(),
         },
         telemetry: {
             user: {} as any,
@@ -120,10 +123,10 @@ function buildDeps(
 
 describe('useSubscriptionCheck', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(isSubscriptionCheckForbiddenWithReason).mockReturnValue({ forbidden: false });
-        jest.mocked(getIsPlanTransitionForbidden).mockReturnValue(null);
-        jest.mocked(getAllowedCycles).mockReturnValue([CYCLE.MONTHLY, CYCLE.YEARLY]);
+        vi.clearAllMocks();
+        vi.mocked(isSubscriptionCheckForbiddenWithReason).mockReturnValue({ forbidden: false });
+        vi.mocked(getIsPlanTransitionForbidden).mockReturnValue(null);
+        vi.mocked(getAllowedCycles).mockReturnValue([CYCLE.MONTHLY, CYCLE.YEARLY]);
         mockCreateNotification.mockClear();
     });
 
@@ -172,7 +175,7 @@ describe('useSubscriptionCheck', () => {
             const deps = buildDeps({
                 subscription: buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'EUR' }),
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -201,7 +204,7 @@ describe('useSubscriptionCheck', () => {
                     initialCheckComplete: true,
                 }),
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -225,14 +228,14 @@ describe('useSubscriptionCheck', () => {
             const deps = buildDeps({
                 subscription: FREE_SUBSCRIPTION,
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
             await result.current.check(buildModel({ planIDs: { [PLANS.MAIL]: 1 } }));
 
-            const payload = (deps.paymentsApi.checkSubscription as jest.Mock).mock.calls[0][0];
+            const payload = (deps.paymentsApi.checkSubscription as Mock).mock.calls[0][0];
             expect(payload.ValidateGuards).toBe(false);
         });
 
@@ -247,7 +250,7 @@ describe('useSubscriptionCheck', () => {
                     initialCheckComplete: true,
                 }),
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -261,7 +264,7 @@ describe('useSubscriptionCheck', () => {
                 })
             );
 
-            const payload = (deps.paymentsApi.checkSubscription as jest.Mock).mock.calls[0][0];
+            const payload = (deps.paymentsApi.checkSubscription as Mock).mock.calls[0][0];
             expect(payload.ValidateGuards).toBe(false);
         });
 
@@ -274,7 +277,7 @@ describe('useSubscriptionCheck', () => {
                     initialCheckComplete: true,
                 }),
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -287,7 +290,7 @@ describe('useSubscriptionCheck', () => {
                 })
             );
 
-            const payload = (deps.paymentsApi.checkSubscription as jest.Mock).mock.calls[0][0];
+            const payload = (deps.paymentsApi.checkSubscription as Mock).mock.calls[0][0];
             expect(payload.ValidateGuards).toBe(false);
         });
 
@@ -298,7 +301,7 @@ describe('useSubscriptionCheck', () => {
             });
             const deps = buildDeps({
                 subscription: buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'EUR' }),
-                paymentsApi: { checkSubscription: jest.fn().mockResolvedValue(apiResult) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockResolvedValue(apiResult) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -324,7 +327,7 @@ describe('useSubscriptionCheck', () => {
                 }),
                 checkResult: buildCheckResult({ GuardResult: guardErrors }),
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult({ GuardResult: [] })),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult({ GuardResult: [] })),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -362,7 +365,7 @@ describe('useSubscriptionCheck', () => {
                 model: modelAfterRefusal,
                 checkResult: refusedResult,
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(passiveResult),
+                    checkSubscription: vi.fn().mockResolvedValue(passiveResult),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -410,7 +413,7 @@ describe('useSubscriptionCheck', () => {
                 }),
                 checkResult: refusedResult,
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(clearedResult),
+                    checkSubscription: vi.fn().mockResolvedValue(clearedResult),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(depsAfterRefusal));
@@ -438,7 +441,7 @@ describe('useSubscriptionCheck', () => {
 
     describe('forbidden plan', () => {
         it('sets optimistic result with AmountDue 0 and paymentForbiddenReason without calling API', async () => {
-            jest.mocked(isSubscriptionCheckForbiddenWithReason).mockReturnValueOnce({
+            vi.mocked(isSubscriptionCheckForbiddenWithReason).mockReturnValueOnce({
                 forbidden: true,
                 reason: 'already-subscribed',
             });
@@ -463,7 +466,7 @@ describe('useSubscriptionCheck', () => {
                 AmountDue: 400,
             });
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockResolvedValue(apiResult) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockResolvedValue(apiResult) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -481,7 +484,7 @@ describe('useSubscriptionCheck', () => {
                 Coupon: { Code: 'SAVE20', Description: '', MaximumRedemptionsPerUser: null },
             });
             const secondResult = buildCheckResult({ Coupon: null });
-            const checkSubscription = jest.fn().mockResolvedValueOnce(firstResult).mockResolvedValueOnce(secondResult);
+            const checkSubscription = vi.fn().mockResolvedValueOnce(firstResult).mockResolvedValueOnce(secondResult);
             const deps = buildDeps({
                 paymentsApi: { checkSubscription } as any,
                 subscriptionCouponCode: undefined,
@@ -491,33 +494,33 @@ describe('useSubscriptionCheck', () => {
             await result.current.check(buildModel()); // seeds the internal ref with SAVE20
             await result.current.check(buildModel());
 
-            const calledModel = (deps.setters.setModel as jest.Mock).mock.calls[1][0] as Model;
+            const calledModel = (deps.setters.setModel as Mock).mock.calls[1][0] as Model;
             expect(calledModel.coupon).toBe('SAVE20');
         });
 
         it('preserves gift on model when Gift > 0', async () => {
             const apiResult = buildCheckResult({ Gift: 100, Coupon: null });
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockResolvedValue(apiResult) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockResolvedValue(apiResult) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
             await result.current.check(buildModel({ gift: 'GIFTCODE' }));
 
-            const calledModel = (deps.setters.setModel as jest.Mock).mock.calls[0][0] as Model;
+            const calledModel = (deps.setters.setModel as Mock).mock.calls[0][0] as Model;
             expect(calledModel.gift).toBe('GIFTCODE');
         });
 
         it('removes gift from model when Gift is 0', async () => {
             const apiResult = buildCheckResult({ Gift: 0, Coupon: null });
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockResolvedValue(apiResult) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockResolvedValue(apiResult) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
             await result.current.check(buildModel({ gift: 'GIFTCODE' }));
 
-            const calledModel = (deps.setters.setModel as jest.Mock).mock.calls[0][0] as Model;
+            const calledModel = (deps.setters.setModel as Mock).mock.calls[0][0] as Model;
             expect(calledModel.gift).toBeUndefined();
         });
 
@@ -527,27 +530,27 @@ describe('useSubscriptionCheck', () => {
                     Coupon: { Code: 'FROMAPI', Description: '', MaximumRedemptionsPerUser: null },
                 });
                 const deps = buildDeps({
-                    paymentsApi: { checkSubscription: jest.fn().mockResolvedValue(apiResult) } as any,
+                    paymentsApi: { checkSubscription: vi.fn().mockResolvedValue(apiResult) } as any,
                 });
                 const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
                 await result.current.check(buildModel());
 
-                const calledModel = (deps.setters.setModel as jest.Mock).mock.calls[0][0] as Model;
+                const calledModel = (deps.setters.setModel as Mock).mock.calls[0][0] as Model;
                 expect(calledModel.coupon).toBe('FROMAPI');
             });
 
             it('falls back to subscriptionCouponCode when Code is empty', async () => {
                 const apiResult = buildCheckResult({ Coupon: null });
                 const deps = buildDeps({
-                    paymentsApi: { checkSubscription: jest.fn().mockResolvedValue(apiResult) } as any,
+                    paymentsApi: { checkSubscription: vi.fn().mockResolvedValue(apiResult) } as any,
                     subscriptionCouponCode: 'SUB_COUPON',
                 });
                 const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
                 await result.current.check(buildModel());
 
-                const calledModel = (deps.setters.setModel as jest.Mock).mock.calls[0][0] as Model;
+                const calledModel = (deps.setters.setModel as Mock).mock.calls[0][0] as Model;
                 expect(calledModel.coupon).toBe('SUB_COUPON');
             });
 
@@ -556,7 +559,7 @@ describe('useSubscriptionCheck', () => {
                     Coupon: { Code: 'PREV_VALID', Description: '', MaximumRedemptionsPerUser: null },
                 });
                 const secondResult = buildCheckResult({ Coupon: null });
-                const checkSubscription = jest
+                const checkSubscription = vi
                     .fn()
                     .mockResolvedValueOnce(firstResult)
                     .mockResolvedValueOnce(secondResult);
@@ -569,7 +572,7 @@ describe('useSubscriptionCheck', () => {
                 await result.current.check(buildModel()); // seeds ref with PREV_VALID
                 await result.current.check(buildModel());
 
-                const calledModel = (deps.setters.setModel as jest.Mock).mock.calls[1][0] as Model;
+                const calledModel = (deps.setters.setModel as Mock).mock.calls[1][0] as Model;
                 expect(calledModel.coupon).toBe('PREV_VALID');
             });
         });
@@ -580,14 +583,14 @@ describe('useSubscriptionCheck', () => {
             const deps = buildDeps({
                 subscriptionCouponCode: 'ACTIVE_COUPON',
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
             await result.current.check(buildModel({ gift: 'ACTIVE_COUPON' }));
 
-            const payload = (deps.paymentsApi.checkSubscription as jest.Mock).mock.calls[0][0];
+            const payload = (deps.paymentsApi.checkSubscription as Mock).mock.calls[0][0];
             // Only the subscription coupon code — no gift code alongside it
             expect(payload.Codes).toEqual(['ACTIVE_COUPON']);
         });
@@ -596,14 +599,14 @@ describe('useSubscriptionCheck', () => {
             const deps = buildDeps({
                 subscriptionCouponCode: 'SUB_COUPON',
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
             await result.current.check(buildModel({ gift: 'DIFFERENT_CODE' }));
 
-            const payload = (deps.paymentsApi.checkSubscription as jest.Mock).mock.calls[0][0];
+            const payload = (deps.paymentsApi.checkSubscription as Mock).mock.calls[0][0];
             expect(payload.Codes).toContain('DIFFERENT_CODE');
         });
     });
@@ -614,14 +617,14 @@ describe('useSubscriptionCheck', () => {
             async (selectedMethod) => {
                 const deps = buildDeps({
                     paymentsApi: {
-                        checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                        checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                     } as any,
                 });
                 const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
                 await result.current.check(buildModel(), false, selectedMethod);
 
-                const payload = (deps.paymentsApi.checkSubscription as jest.Mock).mock.calls[0][0];
+                const payload = (deps.paymentsApi.checkSubscription as Mock).mock.calls[0][0];
                 expect(payload.ProrationMode).toBe(ProrationMode.Exact);
             }
         );
@@ -630,35 +633,35 @@ describe('useSubscriptionCheck', () => {
             const deps = buildDeps({
                 paymentFacadeSelectedMethodType: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
             await result.current.check(buildModel(), false, undefined);
 
-            const payload = (deps.paymentsApi.checkSubscription as jest.Mock).mock.calls[0][0];
+            const payload = (deps.paymentsApi.checkSubscription as Mock).mock.calls[0][0];
             expect(payload.ProrationMode).toBe(ProrationMode.Exact);
         });
 
         it('does not set ProrationMode for a non-direct-debit method', async () => {
             const deps = buildDeps({
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
             await result.current.check(buildModel(), false, PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
 
-            const payload = (deps.paymentsApi.checkSubscription as jest.Mock).mock.calls[0][0];
+            const payload = (deps.paymentsApi.checkSubscription as Mock).mock.calls[0][0];
             expect(payload.ProrationMode).toBeUndefined();
         });
     });
 
     describe('invalid gift code', () => {
         it('shows error notification, focuses gift input, and returns previous checkResult without updating state', async () => {
-            const focusMock = jest.fn();
+            const focusMock = vi.fn();
             const previousCheckResult = buildCheckResult({ AmountDue: 999 });
             const deps = buildDeps({
                 checkResult: previousCheckResult,
@@ -667,7 +670,7 @@ describe('useSubscriptionCheck', () => {
                     giftCodeRef: { current: { focus: focusMock } },
                 },
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult({ Gift: 0, Coupon: null })),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult({ Gift: 0, Coupon: null })),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -684,7 +687,7 @@ describe('useSubscriptionCheck', () => {
         it('skips gift code validation when wantToApplyNewGiftCode is false', async () => {
             const deps = buildDeps({
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult({ Gift: 0, Coupon: null })),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult({ Gift: 0, Coupon: null })),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -699,7 +702,7 @@ describe('useSubscriptionCheck', () => {
 
     describe('abort controller', () => {
         it('aborts the previous in-flight request when called again', async () => {
-            const abortSpy = jest.fn();
+            const abortSpy = vi.fn();
             const OriginalAbortController = AbortController;
             (global as any).AbortController = class {
                 abort = abortSpy;
@@ -709,7 +712,7 @@ describe('useSubscriptionCheck', () => {
             try {
                 const deps = buildDeps({
                     paymentsApi: {
-                        checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                        checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                     } as any,
                 });
                 const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -727,7 +730,7 @@ describe('useSubscriptionCheck', () => {
             const latestResultGuard = 'latest selection guard';
             let rejectOlderCheck: (reason: unknown) => void = () => {};
 
-            const checkSubscription = jest
+            const checkSubscription = vi
                 .fn()
                 .mockImplementationOnce(
                     (_payload, { signal }: { signal: AbortSignal }) =>
@@ -772,7 +775,7 @@ describe('useSubscriptionCheck', () => {
 
         it('calls onPlusToPlusTransition with the plan from plansMap on plus-to-plus transition', async () => {
             const unlockPlan = { ID: 'plan123', Name: 'mail2022' } as any;
-            jest.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({
+            vi.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({
                 type: 'plus-to-plus',
                 newPlanName: 'mail2022',
             } as any);
@@ -792,7 +795,7 @@ describe('useSubscriptionCheck', () => {
 
         it('updates planIDs to newPlanIDs on lumo-plus transition', async () => {
             const newPlanIDs = { lumo: 1 };
-            jest.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({
+            vi.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({
                 type: 'lumo-plus',
                 newPlanIDs,
             } as any);
@@ -802,12 +805,12 @@ describe('useSubscriptionCheck', () => {
 
             await result.current.check(buildModel());
 
-            const calledModel = (deps.setters.setModel as jest.Mock).mock.calls[0][0] as Model;
+            const calledModel = (deps.setters.setModel as Mock).mock.calls[0][0] as Model;
             expect(calledModel.planIDs).toMatchObject(newPlanIDs);
         });
 
         it('calls onVisionaryDowngradeHide for non-visionary transitions', async () => {
-            jest.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce(null);
+            vi.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce(null);
 
             const deps = withoutPlanTransitionChecks();
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -818,7 +821,7 @@ describe('useSubscriptionCheck', () => {
         });
 
         it('proceeds normally when visionary downgrade is confirmed', async () => {
-            jest.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({ type: 'visionary-downgrade' } as any);
+            vi.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({ type: 'visionary-downgrade' } as any);
 
             const deps = withoutPlanTransitionChecks();
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -830,7 +833,7 @@ describe('useSubscriptionCheck', () => {
         });
 
         it('returns undefined and skips state updates when visionary downgrade is cancelled', async () => {
-            jest.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({ type: 'visionary-downgrade' } as any);
+            vi.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({ type: 'visionary-downgrade' } as any);
 
             const deps = withoutPlanTransitionChecks({
                 subscription: buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.MONTHLY, currency: 'EUR' }),
@@ -841,11 +844,11 @@ describe('useSubscriptionCheck', () => {
                     initialCheckComplete: true,
                 }),
                 callbacks: {
-                    runAdditionalEstimations: jest.fn().mockResolvedValue(undefined),
-                    shouldPassIsTrial: jest.fn().mockReturnValue(false),
-                    onPlusToPlusTransition: jest.fn(),
-                    onVisionaryDowngradeWarning: jest.fn().mockRejectedValue(new Error('cancelled')),
-                    onVisionaryDowngradeHide: jest.fn(),
+                    runAdditionalEstimations: vi.fn().mockResolvedValue(undefined),
+                    shouldPassIsTrial: vi.fn().mockReturnValue(false),
+                    onPlusToPlusTransition: vi.fn(),
+                    onVisionaryDowngradeWarning: vi.fn().mockRejectedValue(new Error('cancelled')),
+                    onVisionaryDowngradeHide: vi.fn(),
                 },
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -867,7 +870,7 @@ describe('useSubscriptionCheck', () => {
 
         it('keeps the guard verdict when visionary downgrade is cancelled', async () => {
             const guardErrors = [{ Code: GUARD_ERROR_CODES.TOO_LITTLE_SPACE, Message: 'raw' }];
-            jest.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({ type: 'visionary-downgrade' } as any);
+            vi.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({ type: 'visionary-downgrade' } as any);
 
             const deps = withoutPlanTransitionChecks({
                 subscription: buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'EUR' }),
@@ -879,11 +882,11 @@ describe('useSubscriptionCheck', () => {
                 }),
                 checkResult: buildCheckResult({ GuardResult: guardErrors }),
                 callbacks: {
-                    runAdditionalEstimations: jest.fn().mockResolvedValue(undefined),
-                    shouldPassIsTrial: jest.fn().mockReturnValue(false),
-                    onPlusToPlusTransition: jest.fn(),
-                    onVisionaryDowngradeWarning: jest.fn().mockRejectedValue(new Error('cancelled')),
-                    onVisionaryDowngradeHide: jest.fn(),
+                    runAdditionalEstimations: vi.fn().mockResolvedValue(undefined),
+                    shouldPassIsTrial: vi.fn().mockReturnValue(false),
+                    onPlusToPlusTransition: vi.fn(),
+                    onVisionaryDowngradeWarning: vi.fn().mockRejectedValue(new Error('cancelled')),
+                    onVisionaryDowngradeHide: vi.fn(),
                 },
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -898,7 +901,7 @@ describe('useSubscriptionCheck', () => {
         });
 
         it('sends ValidateGuards: false after plus-to-plus reverts to the current subscription', async () => {
-            jest.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({
+            vi.mocked(getIsPlanTransitionForbidden).mockReturnValueOnce({
                 type: 'plus-to-plus',
                 newPlanName: 'mail2022',
             } as any);
@@ -946,7 +949,7 @@ describe('useSubscriptionCheck', () => {
         it('becomes true when the check fails', async () => {
             const deps = buildDeps({
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockRejectedValue({ status: 422, data: { Code: 2000 } }),
+                    checkSubscription: vi.fn().mockRejectedValue({ status: 422, data: { Code: 2000 } }),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -959,7 +962,7 @@ describe('useSubscriptionCheck', () => {
         });
 
         it('becomes false again when a later check succeeds', async () => {
-            const checkSubscription = jest
+            const checkSubscription = vi
                 .fn()
                 .mockRejectedValueOnce({ status: 422, data: { Code: 2000 } })
                 .mockResolvedValueOnce(buildCheckResult());
@@ -980,7 +983,7 @@ describe('useSubscriptionCheck', () => {
         it('stays false when the check is aborted', async () => {
             const abortError = Object.assign(new Error('aborted'), { name: 'AbortError' });
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(abortError) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockRejectedValue(abortError) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -994,7 +997,7 @@ describe('useSubscriptionCheck', () => {
         it('becomes false when the selection is the free plan', async () => {
             const deps = buildDeps({
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockRejectedValue({ status: 422, data: { Code: 2000 } }),
+                    checkSubscription: vi.fn().mockRejectedValue({ status: 422, data: { Code: 2000 } }),
                 } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
@@ -1015,7 +1018,7 @@ describe('useSubscriptionCheck', () => {
             const abortError = new Error('aborted');
             abortError.name = 'AbortError';
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(abortError) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockRejectedValue(abortError) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -1030,7 +1033,7 @@ describe('useSubscriptionCheck', () => {
             const offlineError = new Error('offline');
             offlineError.name = 'OfflineError';
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(offlineError) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockRejectedValue(offlineError) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -1044,7 +1047,7 @@ describe('useSubscriptionCheck', () => {
         it('opens VAT modal and does not call onCheck on VatReverseChargeNotSupportedError', async () => {
             const vatError = new VatReverseChargeNotSupportedError();
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(vatError) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockRejectedValue(vatError) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -1057,7 +1060,7 @@ describe('useSubscriptionCheck', () => {
         it('calls onCheck with type error for unknown errors', async () => {
             const unknownError = new Error('something went wrong');
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(unknownError) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockRejectedValue(unknownError) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -1074,7 +1077,7 @@ describe('useSubscriptionCheck', () => {
                 data: { Code: 2011, Error: 'You do not have permission to modify your subscription' },
             };
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(forbiddenError) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockRejectedValue(forbiddenError) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -1090,7 +1093,7 @@ describe('useSubscriptionCheck', () => {
             const offlineError = new Error('offline');
             offlineError.name = 'OfflineError';
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(offlineError) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockRejectedValue(offlineError) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -1101,7 +1104,7 @@ describe('useSubscriptionCheck', () => {
 
         it('does not notify about errors without a message', async () => {
             const deps = buildDeps({
-                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(new Error('boom')) } as any,
+                paymentsApi: { checkSubscription: vi.fn().mockRejectedValue(new Error('boom')) } as any,
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
 
@@ -1113,14 +1116,14 @@ describe('useSubscriptionCheck', () => {
         it('still commits state even if runAdditionalChecks throws', async () => {
             const deps = buildDeps({
                 paymentsApi: {
-                    checkSubscription: jest.fn().mockResolvedValue(buildCheckResult()),
+                    checkSubscription: vi.fn().mockResolvedValue(buildCheckResult()),
                 } as any,
                 callbacks: {
-                    runAdditionalEstimations: jest.fn().mockRejectedValue(new Error('additional check failed')),
-                    shouldPassIsTrial: jest.fn().mockReturnValue(false),
-                    onPlusToPlusTransition: jest.fn(),
-                    onVisionaryDowngradeWarning: jest.fn().mockResolvedValue(undefined),
-                    onVisionaryDowngradeHide: jest.fn(),
+                    runAdditionalEstimations: vi.fn().mockRejectedValue(new Error('additional check failed')),
+                    shouldPassIsTrial: vi.fn().mockReturnValue(false),
+                    onPlusToPlusTransition: vi.fn(),
+                    onVisionaryDowngradeWarning: vi.fn().mockResolvedValue(undefined),
+                    onVisionaryDowngradeHide: vi.fn(),
                 },
             });
             const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));

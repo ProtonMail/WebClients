@@ -1,8 +1,9 @@
 import { act } from 'react';
 
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
-import { getStoreWrapper } from '@proton/payments-hooks/testing/renderWithProviders';
+import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 
@@ -14,10 +15,10 @@ import { EXPECTED_VAT_ID_COUNTRIES } from './vatIdCountries.testdata';
 // (getIsB2BAudienceFromPlan) and the countriesWithVatNumberOnSignup set run for real, so
 // enableVatNumber and renderVatNumberInput are derived exactly as they are in production.
 const mockPaymentsApi = {
-    getFullBillingAddress: jest.fn().mockResolvedValue({}),
+    getFullBillingAddress: vi.fn().mockResolvedValue({}),
 } as unknown as PaymentsApi;
 
-jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
+vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
     usePaymentsApi: () => ({ paymentsApi: mockPaymentsApi }),
 }));
 
@@ -27,7 +28,7 @@ type RenderUseVatNumberOptions = {
     countryCode: string;
     selectedPlanName: PLANS;
     initialVatNumber?: string;
-    onBillingAddressChange?: jest.Mock;
+    onBillingAddressChange?: Mock;
 };
 
 const renderUseVatNumber = ({
@@ -158,7 +159,7 @@ describe('useVatNumber integration', () => {
         });
 
         it('does not propagate billing address changes while extended fields are incomplete', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const vatNumber = renderUseVatNumber({
                 countryCode: 'DE',
                 selectedPlanName: PLANS.MAIL_PRO,
@@ -175,7 +176,7 @@ describe('useVatNumber integration', () => {
         });
 
         it('propagates billing address changes once all required fields are complete', () => {
-            const onBillingAddressChange = jest.fn();
+            const onBillingAddressChange = vi.fn();
             const vatNumber = renderUseVatNumber({
                 countryCode: 'DE',
                 selectedPlanName: PLANS.MAIL_PRO,

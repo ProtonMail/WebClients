@@ -144,8 +144,7 @@ export const PaymentsContextProvider = ({
         subscription: subscriptionInitial,
         plans: plansInitial,
         entitlementCatalog: entitlementCatalogInitial,
-    } = // Avoid using model hooks to avoid fetching data
-    useSelector(selectInitialPaymentData);
+    } = useSelector(selectInitialPaymentData); // Avoid using model hooks to avoid fetching data
     const dispatch = useDispatch();
     const lumoMultiSubscriptions = useFlag('LumoMultiSubscriptions');
 

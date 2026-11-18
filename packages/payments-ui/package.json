@@ -6,8 +6,6 @@
         "*.scss"
     ],
     "exports": {
-        "./__mocks__/fileMock.js": "./__mocks__/fileMock.js",
-        "./__mocks__/styleMock.js": "./__mocks__/styleMock.js",
         "./client-extensions/billed-user/BilledUserModal": "./client-extensions/billed-user/BilledUserModal.tsx",
         "./client-extensions/useMethods": "./client-extensions/useMethods.ts",
         "./client-extensions/usePaymentFacade": "./client-extensions/usePaymentFacade.ts",
@@ -69,9 +67,9 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "test": "jest",
-        "test:ci": "jest --runInBand --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "vitest run",
+        "test:ci": "vitest run",
+        "test:watch": "vitest"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
@@ -103,17 +101,15 @@
     },
     "devDependencies": {
         "@proton/features": "workspace:^",
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/metrics": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/test-api": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "catalog:",
         "@testing-library/react-hooks": "catalog:",
         "@testing-library/user-event": "catalog:",
-        "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
@@ -121,9 +117,11 @@
         "@types/react-router-dom": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
+        "@vitejs/plugin-react": "catalog:",
+        "happy-dom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }

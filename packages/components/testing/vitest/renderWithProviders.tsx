@@ -1,0 +1,58 @@
+import type { JSX, PropsWithChildren, ReactElement } from 'react';
+
+import type { RenderOptions } from '@testing-library/react';
+import { render as originalRender } from '@testing-library/react';
+
+import { applyHOCs } from '../hocs/helpers';
+import { withMemoryRouter } from '../hocs/with-memory-router';
+import { withAuthentication } from '../with-authentication';
+import { withCache } from '../with-cache';
+import { withConfig } from '../with-config';
+import { withNotifications } from '../with-notifications';
+import { setupStore } from './store';
+import { withApi } from './with-api';
+import { withEventManager } from './with-event-manager';
+import { getPreloadedState, withReduxStore } from './with-redux-store';
+
+interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
+    preloadedState?: Partial<Parameters<typeof setupStore>[0]['preloadedState']>;
+    initialUrl?: string;
+}
+
+interface StoreWrapperOptions {
+    preloadedState?: ExtendedRenderOptions['preloadedState'];
+    initialUrl?: ExtendedRenderOptions['initialUrl'];
+}
+
+export const getStoreWrapper = ({ preloadedState, initialUrl }: StoreWrapperOptions = {}) => {
+    const store = setupStore({
+        preloadedState: getPreloadedState(preloadedState),
+    });
+
+    const applyProviders = applyHOCs(
+        withReduxStore({ store }),
+        withConfig(),
+        withApi(),
+        withCache(),
+        withNotifications(),
+        withEventManager(),
+        withAuthentication(),
+        withMemoryRouter(initialUrl ? [initialUrl] : undefined)
+    );
+
+    const ChildrenWithProviders = applyProviders(({ children }: PropsWithChildren<{}>) => <>{children}</>);
+
+    function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+        return <ChildrenWithProviders>{children}</ChildrenWithProviders>;
+    }
+
+    return { Wrapper, store };
+};
+
+export function renderWithProviders(
+    ui: ReactElement,
+    { preloadedState, initialUrl, ...renderOptions }: ExtendedRenderOptions = {}
+) {
+    const { store, Wrapper } = getStoreWrapper({ preloadedState, initialUrl });
+    return { store, ...originalRender(ui, { wrapper: Wrapper, ...renderOptions }) };
+}

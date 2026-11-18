@@ -7,7 +7,7 @@ import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/const
 
 import { type Props, SubscriptionSubmitButton } from './SubscriptionSubmitButton';
 
-jest.mock('../../../../ui/components/PayButton', () => ({
+vi.mock('../../../../ui/components/PayButton', () => ({
     PayButton: ({
         children,
         taxCountry: _taxCountry,
@@ -23,12 +23,12 @@ jest.mock('../../../../ui/components/PayButton', () => ({
     ),
 }));
 
-jest.mock('@proton/components/containers/payments/subscription/InAppPurchaseModal', () => ({
-    getSubscriptionManagerName: jest.fn(() => 'App Store'),
+vi.mock('@proton/components/containers/payments/subscription/InAppPurchaseModal', () => ({
+    getSubscriptionManagerName: vi.fn(() => 'App Store'),
 }));
 
-jest.mock('@proton/components/containers/payments/subscription/VisionaryDowngradeWarningModal', () => ({
-    getVisionaryDowngradeWarningTextElement: jest.fn(() => 'warning'),
+vi.mock('@proton/components/containers/payments/subscription/VisionaryDowngradeWarningModal', () => ({
+    getVisionaryDowngradeWarningTextElement: vi.fn(() => 'warning'),
 }));
 
 const baseCheckResult: SubscriptionEstimation = {
@@ -58,7 +58,7 @@ function renderButton(overrides: Partial<Props> = {}) {
         vatNumber: undefined,
         paymentFacade: { selectedMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD } as any,
         showVisionaryWarning: false,
-        onSubmit: jest.fn(),
+        onSubmit: vi.fn(),
         app: 'proton-mail',
         ...overrides,
     };
@@ -129,7 +129,7 @@ describe('SubscriptionSubmitButton', () => {
         ['saved-payment-method-id', /^Pay .* now$/, false, 0],
         [undefined, /^Pay .* now$/, false, 0],
     ])('should render the pay button for %s as %s', (method, text, disabled, onDoneCalls) => {
-        const onDone = jest.fn();
+        const onDone = vi.fn();
 
         renderButton({
             currency: 'EUR',

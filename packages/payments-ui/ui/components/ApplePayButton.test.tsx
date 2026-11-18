@@ -4,7 +4,7 @@ import type { ApplePayProcessorHook } from '@proton/payments-hooks/payment-proce
 
 import { ApplePayButton } from './ApplePayButton';
 
-jest.mock('./ChargebeeIframe', () => ({
+vi.mock('./ChargebeeIframe', () => ({
     ChargebeeIframe: ({ width }: { width?: number | string }) => (
         <div data-testid="chargebee-iframe" data-width={width} />
     ),

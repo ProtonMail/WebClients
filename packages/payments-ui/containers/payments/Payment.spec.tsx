@@ -1,13 +1,14 @@
 import type { ReactNode } from 'react';
+import { useState } from 'react';
 
 import { render, screen, waitFor } from '@testing-library/react';
 
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
-import { withApi } from '@proton/components/testing/hocs/with-api';
+import { withApi } from '@proton/components/testing/vitest/with-api';
+import { withReduxStore } from '@proton/components/testing/vitest/with-redux-store';
 import { withCache } from '@proton/components/testing/with-cache';
 import { withConfig } from '@proton/components/testing/with-config';
 import { withNotifications } from '@proton/components/testing/with-notifications';
-import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
 import { IcBrandVisa } from '@proton/icons/icons/IcBrandVisa';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
@@ -18,8 +19,8 @@ import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import type { ViewPaymentMethod } from '../../client-extensions/useMethods';
 import { PaymentsNoApi, type Props } from './Payment';
 
-const apiMock = jest.fn();
-jest.mock('@proton/app-context/useApi', () => {
+const apiMock = vi.fn();
+vi.mock('@proton/app-context/useApi', () => {
     return {
         __esModule: true,
         useApi: () => apiMock,
@@ -28,28 +29,28 @@ jest.mock('@proton/app-context/useApi', () => {
 
 // The Chargebee credit card form renders a third-party iframe and reads the chargebeeCard
 // hook, neither of which is exercised here. Stub it so the surrounding Payment UI can render.
-jest.mock('../../ui/components/ChargebeeWrapper', () => ({
-    ...jest.requireActual('../../ui/components/ChargebeeWrapper'),
+vi.mock('../../ui/components/ChargebeeWrapper', async () => ({
+    ...(await vi.importActual<any>('../../ui/components/ChargebeeWrapper')),
     ChargebeeCreditCardWrapper: ({ suffix }: { suffix: ReactNode }) => (
         <div data-testid="chargebee-credit-card-wrapper">{suffix}</div>
     ),
 }));
 
 // Same for the SEPA form: it renders a third-party iframe and reads the full directDebit hook.
-jest.mock('../../ui/components/SepaDirectDebit', () => ({
-    ...jest.requireActual('../../ui/components/SepaDirectDebit'),
+vi.mock('../../ui/components/SepaDirectDebit', async () => ({
+    ...(await vi.importActual<any>('../../ui/components/SepaDirectDebit')),
     SepaDirectDebit: () => <div data-testid="sepa-direct-debit" />,
 }));
 
 let mockTaxFieldsMountCount = 0;
-jest.mock('../../ui/billing-address/components/TaxFields', () => ({
+vi.mock('../../ui/billing-address/components/TaxFields', () => ({
     TaxFields: () => {
-        const [mountId] = jest.requireActual('react').useState(() => ++mockTaxFieldsMountCount);
+        const [mountId] = useState(() => ++mockTaxFieldsMountCount);
         return <div data-testid="tax-fields" data-mount-id={mountId} />;
     },
 }));
 
-jest.mock('../../payment-methods/bitcoin/BitcoinView', () => ({
+vi.mock('../../payment-methods/bitcoin/BitcoinView', () => ({
     BitcoinView: () => <div data-testid="bitcoin" />,
 }));
 
@@ -71,7 +72,7 @@ const WrappedPaymentsNoApi = applyHOCs(
 )(PaymentsNoApi);
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 
     paymentMethods = [
         {
@@ -183,8 +184,8 @@ describe('Payment', () => {
                 iframeHandles={
                     {
                         handles: {
-                            initializeSavedCreditCard: jest.fn(),
-                            getHeight: jest.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
+                            initializeSavedCreditCard: vi.fn(),
+                            getHeight: vi.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
                         },
                         iframeRef: { current: null },
                     } as any
@@ -202,7 +203,7 @@ describe('Payment', () => {
                 }
                 savedPaymentMethods={[]}
                 showTaxCountry={true}
-                paymentComponentLoaded={jest.fn()}
+                paymentComponentLoaded={vi.fn()}
                 selectedProcessor={undefined}
                 processingPayment={false}
             />
@@ -224,8 +225,8 @@ describe('Payment', () => {
                 iframeHandles={
                     {
                         handles: {
-                            initializeSavedCreditCard: jest.fn(),
-                            getHeight: jest.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
+                            initializeSavedCreditCard: vi.fn(),
+                            getHeight: vi.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
                         },
                         iframeRef: { current: null },
                     } as any
@@ -243,7 +244,7 @@ describe('Payment', () => {
                 }
                 savedPaymentMethods={[]}
                 showTaxCountry={true}
-                paymentComponentLoaded={jest.fn()}
+                paymentComponentLoaded={vi.fn()}
                 selectedProcessor={undefined}
                 processingPayment={false}
             />
@@ -306,11 +307,11 @@ describe('Payment', () => {
                     {
                         iframeRef: { current: null },
                         handles: {
-                            initializeSavedCreditCard: jest.fn(),
-                            getHeight: jest.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
+                            initializeSavedCreditCard: vi.fn(),
+                            getHeight: vi.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
                         },
-                        notifyIframeUnloaded: jest.fn(),
-                        notifyIframeLoaded: jest.fn(),
+                        notifyIframeUnloaded: vi.fn(),
+                        notifyIframeLoaded: vi.fn(),
                     } as any
                 }
                 chargebeeCard={null as any}
@@ -322,12 +323,12 @@ describe('Payment', () => {
                     {
                         customer: {} as any,
                         bankAccount: {} as any,
-                        reset: jest.fn(),
+                        reset: vi.fn(),
                     } as any
                 }
                 savedPaymentMethods={[]}
                 showTaxCountry={true}
-                paymentComponentLoaded={jest.fn()}
+                paymentComponentLoaded={vi.fn()}
                 selectedProcessor={undefined}
                 processingPayment={false}
             />
@@ -385,7 +386,7 @@ describe('Payment', () => {
                     {
                         iframeRef: { current: null },
                         handles: {
-                            initializeSavedCreditCard: jest.fn(),
+                            initializeSavedCreditCard: vi.fn(),
                         },
                     } as any
                 }
@@ -402,7 +403,7 @@ describe('Payment', () => {
                 }
                 savedPaymentMethods={[]}
                 showTaxCountry={true}
-                paymentComponentLoaded={jest.fn()}
+                paymentComponentLoaded={vi.fn()}
                 selectedProcessor={undefined}
                 processingPayment={false}
             />
@@ -429,8 +430,8 @@ describe('Payment', () => {
                     iframeHandles={
                         {
                             handles: {
-                                initializeSavedCreditCard: jest.fn(),
-                                getHeight: jest.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
+                                initializeSavedCreditCard: vi.fn(),
+                                getHeight: vi.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
                             },
                             iframeRef: { current: null },
                         } as any
@@ -448,7 +449,7 @@ describe('Payment', () => {
                     }
                     savedPaymentMethods={[]}
                     showTaxCountry={true}
-                    paymentComponentLoaded={jest.fn()}
+                    paymentComponentLoaded={vi.fn()}
                     selectedProcessor={overrides.selectedProcessor}
                     processingPayment={overrides.processingPayment ?? false}
                 />
@@ -492,11 +493,11 @@ describe('Payment', () => {
                     {
                         iframeRef: { current: null },
                         handles: {
-                            initializeSavedCreditCard: jest.fn(),
-                            getHeight: jest.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
+                            initializeSavedCreditCard: vi.fn(),
+                            getHeight: vi.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
                         },
-                        notifyIframeUnloaded: jest.fn(),
-                        notifyIframeLoaded: jest.fn(),
+                        notifyIframeUnloaded: vi.fn(),
+                        notifyIframeLoaded: vi.fn(),
                     } as any
                 }
                 chargebeeCard={null as any}
@@ -504,10 +505,10 @@ describe('Payment', () => {
                 chargebeeIdeal={{ accountHolderName: '' } as any}
                 bitcoinChargebee={{} as any}
                 user={undefined}
-                directDebit={{ customer: {} as any, bankAccount: {} as any, reset: jest.fn() } as any}
+                directDebit={{ customer: {} as any, bankAccount: {} as any, reset: vi.fn() } as any}
                 savedPaymentMethods={[]}
                 showTaxCountry={true}
-                paymentComponentLoaded={jest.fn()}
+                paymentComponentLoaded={vi.fn()}
                 selectedProcessor={undefined}
                 processingPayment={false}
                 {...props}

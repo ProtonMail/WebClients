@@ -4,10 +4,10 @@ import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { getHeadlessCheckout } from '../get-headless-checkout';
 import { defaultApp as app, makeCheckResult, makePlan, makePricing } from './test-helpers';
 
-jest.mock('../../components/RenewalNotice', () => ({
-    getCheckoutRenewNoticeTextFromCheckResult: jest.fn(() => 'mocked renewal notice'),
-    getSwitchTermsNoticeText: jest.fn(() => 'mocked switch terms notice'),
-    calculateRenewalTimeDuringCheckout: jest.fn(() => 'mocked renewal time'),
+vi.mock('../../components/RenewalNotice', () => ({
+    getCheckoutRenewNoticeTextFromCheckResult: vi.fn(() => 'mocked renewal notice'),
+    getSwitchTermsNoticeText: vi.fn(() => 'mocked switch terms notice'),
+    calculateRenewalTimeDuringCheckout: vi.fn(() => 'mocked renewal time'),
 }));
 
 const mailPlan = makePlan({

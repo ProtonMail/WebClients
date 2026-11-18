@@ -4,6 +4,7 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "exports": {
+        "./testing/vitest/api-endpoints": "./testing/vitest/api-endpoints.ts",
         "./core/addon/addons": "./core/addon/addons.ts",
         "./core/addon/interfaces": "./core/addon/interfaces.ts",
         "./core/amount-limits": "./core/amount-limits.ts",
