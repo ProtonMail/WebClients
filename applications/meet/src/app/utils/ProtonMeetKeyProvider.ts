@@ -1,4 +1,4 @@
-import { BaseKeyProvider, type KeyInfo, importKey } from 'livekit-client';
+import { BaseKeyProvider, importKey } from 'livekit-client';
 
 type ImportedKey = Awaited<ReturnType<typeof importKey>>;
 
@@ -15,18 +15,15 @@ export class ProtonMeetKeyProvider extends BaseKeyProvider {
     private currentEpoch: bigint | undefined;
     private currentKey: string | undefined;
     private installedEpochsByIndex = new Map<number, { epoch: bigint; material: ImportedKey }>();
-    private activeEpoch: { epoch: bigint; index: number; material: ImportedKey } | undefined;
+    private activeEpoch: { epoch: bigint; index: number } | undefined;
 
-    private readonly replayOnlyActiveKey: boolean;
-
-    constructor({ replayOnlyActiveKey }: { replayOnlyActiveKey: boolean }) {
+    constructor() {
         super({
             sharedKey: true,
             ratchetWindowSize: 0,
             failureTolerance: -1,
             keyringSize: 256,
         });
-        this.replayOnlyActiveKey = replayOnlyActiveKey;
     }
 
     async setKeyWithEpoch(base64Key: string, epoch: bigint) {
@@ -41,7 +38,7 @@ export class ProtonMeetKeyProvider extends BaseKeyProvider {
 
             // we already have the key material cached, but it is not currently active, so import it directly
             this.onSetEncryptionKey(installedEpoch.material, undefined, index);
-            this.activeEpoch = { epoch, index, material: installedEpoch.material };
+            this.activeEpoch = { epoch, index };
 
             return true;
         }
@@ -53,7 +50,7 @@ export class ProtonMeetKeyProvider extends BaseKeyProvider {
         const material = await importKey(bytes.buffer, 'PBKDF2', 'derive');
         this.onSetEncryptionKey(material, undefined, index);
         this.installedEpochsByIndex.set(index, { epoch, material });
-        this.activeEpoch = { epoch, index, material };
+        this.activeEpoch = { epoch, index };
 
         return true;
     }
@@ -81,16 +78,8 @@ export class ProtonMeetKeyProvider extends BaseKeyProvider {
         this.activeEpoch = undefined;
     }
 
-    getKeys(): KeyInfo[] {
-        if (!this.replayOnlyActiveKey) {
-            return super.getKeys();
-        }
-        return this.activeEpoch ? [{ key: this.activeEpoch.material, keyIndex: this.activeEpoch.index }] : [];
-    }
-
     getKeychainIndexInformation() {
-        return super
-            .getKeys()
+        return this.getKeys()
             .filter((keyInfo) => !!keyInfo.key)
             .map((keyInfo) => keyInfo.keyIndex);
     }

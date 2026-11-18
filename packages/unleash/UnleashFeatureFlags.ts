@@ -369,7 +369,6 @@ enum MeetFeatureFlag {
     MeetE2eeDebugStats = 'MeetE2eeDebugStats',
     MeetE2eeDisableRecovery = 'MeetE2eeDisableRecovery',
     MeetE2eeRecoveryAggressive = 'MeetE2eeRecoveryAggressive',
-    MeetE2eeReplayActiveKeyOnly = 'MeetE2eeReplayActiveKeyOnly',
     MeetEnableAudioMixing = 'MeetEnableAudioMixing',
     MeetEnableScreenShareAudio = 'MeetEnableScreenShareAudio',
     MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
