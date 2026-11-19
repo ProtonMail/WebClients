@@ -561,10 +561,10 @@
         "Cancel·la"
       ],
       "Cancel ${ planTitle }": [
-        "Cancel·lar ${ planTitle }"
+        "Cancel·la ${ planTitle }"
       ],
       "Cancel ${ planTitle } trial": [
-        "Cancel·lar la prova de ${ planTitle }"
+        "Cancel·la la prova de ${ planTitle }"
       ],
       "Cancel import": [
         "Cancel·la la importació"
@@ -1215,7 +1215,7 @@
         "Obtén ${ planOrAppName }"
       ],
       "Get a free ${ BRAND_NAME } address": [
-        "Aconseguiu una adreça gratuïta de ${ BRAND_NAME }"
+        "Aconsegueix una adreça gratuïta de ${ BRAND_NAME }"
       ],
       "Get a new encrypted email address": [
         "Obteniu una adreça nova de correu xifrat"
@@ -1308,7 +1308,7 @@
         "Ves a les preferències"
       ],
       "Go to today": [
-        "Vés a avui"
+        "Va a avui"
       ],
       "Google": [
         "Google"
@@ -2376,7 +2376,7 @@
         "Mireu l'entrevista"
       ],
       "Weak key: learn more": [
-        "Clau feble: saber-ne més"
+        "Clau feble: més informació"
       ],
       "Welcome": [
         "Us donem la benvinguda"
@@ -2401,6 +2401,21 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Change plan": [
+        "Canvia el pla"
+      ],
+      "Hide plan details": [
+        "Amaga els detalls del pla"
+      ],
+      "Show plan details": [
+        "Mostra els detalls del pla"
+      ],
+      "Skip to main content": [
+        "Ves al contingut principal"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Milloreu el pla a ${ planTitle }"
       ]
     },
     "action": {
@@ -2425,7 +2440,7 @@
     },
     "Action subscription": {
       "Cancel subscription": [
-        "Cancel·lar la subscripció"
+        "Cancel·la la subscripció"
       ],
       "Reactivate": [
         "Reactiva"
@@ -4335,7 +4350,7 @@
         "Confirma la cancel·lació"
       ],
       "If you exceed your plan limits, you won't be able to:": [
-        "Si supereu els límits del vostre pla, ja no podreu:"
+        "Si supereu els límits del pla, ja no podreu:"
       ],
       "Keep current plan": [
         "Manté el pla actual"
@@ -4353,10 +4368,10 @@
         "Carrega qualsevol fitxer nou"
       ],
       "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
-        "Quan s'acabi la vostra subscripció ${ planDisplayName } el ${ endDate }, perdreu les característiques incloses. Si l'ús que en feu excedeix els límits del pla, és possible que algunes deixin d'estar disponibles temporalment."
+        "Quan s'acabi la vostra subscripció ${ planDisplayName } el ${ endDate }, perdreu les característiques incloses. Si l'ús que en feu llavors excedeix els límits del pla, és possible que algunes deixin d'estar disponibles temporalment."
       ],
       "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
-        "Quan s'acabi la vostra subscripció el ${ endDate }, perdreu les característiques incloses. Si l'ús que en feu excedeix els límits del pla, és possible que algunes deixin d'estar disponibles temporalment."
+        "Quan s'acabi la vostra subscripció el ${ endDate }, perdreu les característiques incloses. Si l'ús que en feu llavors excedeix els límits del pla, és possible que algunes deixin d'estar disponibles temporalment."
       ]
     },
     "Confirm modal title": {
@@ -8370,6 +8385,9 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "No s'han pogut carregar els usuaris migrats. Actualitzeu la pàgina i torneu-ho a provar."
       ]
     },
     "error": {
@@ -11219,13 +11237,13 @@
         "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari **${ username }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
-        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }**."
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
-        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }** o **${ thirdEmail }**."
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }** o **${ thirdEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
-        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }**."
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari, **${ username }**, o amb **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Podeu accedir a la vostra sessió activa?"
@@ -12984,7 +13002,7 @@
         "Restaura"
       ],
       "Review and export the data for reporting or client invoicing.": [
-        "Reviseu-ho i exporteu les dades per a informes o facturació de clients."
+        "Reviseu i exporteu les dades per a informes o facturació de clients."
       ],
       "Right to Left": [
         "De dreta a esquerra"
@@ -13600,7 +13618,7 @@
         "Per a continuar a ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
-        "Per tal de millorar contínuament els nostres serveis, a vegades recopilem dades per controlar el bon funcionament de les nostres aplicacions. **Aquesta informació no es comparteix amb serveis de tercers.**"
+        "Per tal de millorar contínuament els nostres serveis, a vegades recopilem dades per a controlar el bon funcionament de les nostres aplicacions. **Aquesta informació no es comparteix amb serveis de tercers.**"
       ],
       "To create your first user group, go to": [
         "Per crear el vostre primer grup d'usuaris, aneu a"
@@ -13960,7 +13978,7 @@
         "No s'ha pogut verificar aquesta invitació. Demaneu a l'administrador (${ admin }) que us esborri de l'organització i us hi torni a afegir."
       ],
       "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
-        "No s'ha pogut verificar la identitat de la vostra organització. Demaneu a l'administrador (${ admin }) que la comprovi a les preferències corresponents i, a continuació, torneu a obrir aquest enllaç."
+        "No s'ha pogut verificar la identitat de la vostra organització. Demaneu a l'administrador, ${ admin }, que la comprovi a les preferències de l'organització i, a continuació, torneu a obrir aquest enllaç."
       ],
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
@@ -14086,13 +14104,13 @@
         "Quan l'inici de sessió estigui restringit, només podreu utilitzar el nom d'usuari **${ username }** per a iniciar la sessió. Les altres adreces no es podran enllaçar amb el vostre compte, ni tan sols si algú les coneix."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Quan l'inici de sessió està restringit, només la podeu iniciar amb el nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }**. Les vostres altres adreces de correu electrònic no funcionaran per iniciar sessió."
+        "Quan l'inici de sessió està restringit, només podeu iniciar la sessió amb el nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }**. Les altres adreces de correu electrònic no us funcionaran per a iniciar la sessió."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Quan l'inici de sessió està restringit, només la podeu iniciar amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**. Les vostres altres adreces de correu electrònic no funcionaran per iniciar sessió."
+        "Quan l'inici de sessió està restringit, només podeu iniciar la sessió amb el nom d'usuari, **${ username }**, o amb **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**. Les altres adreces de correu electrònic no us funcionaran per a iniciar la sessió."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Quan l'inici de sessió està restringit, només la podeu iniciar amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }**. Les vostres altres adreces de correu electrònic no funcionaran per iniciar sessió."
+        "Quan l'inici de sessió està restringit, només podeu iniciar la sessió amb el nom d'usuari, **${ username }**, o amb **${ firstEmail }**. Les altres adreces de correu electrònic no us funcionaran per a iniciar la sessió."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quan cancel·leu, la subscripció no es renovarà, però encara podreu gaudir dels avantatges del pla fins al final del període de subscripció. Després d'això, passarà al pla gratuït de ${ BRAND_NAME }."
@@ -14353,7 +14371,7 @@
         "No teniu cap transacció."
       ],
       "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
-        "Teniu diverses subscripcions. Trieu quina una voleu cancel·lar, les altres no es veuran afectades. Una subscripció cancel·lada no es renovarà, i en conservareu els avantatges fins al final del període de subscripció."
+        "Teniu diverses subscripcions. Trieu quina voleu cancel·lar; les altres no es veuran afectades. Una subscripció cancel·lada no es renovarà i en conservareu els avantatges fins al final del període de subscripció."
       ],
       "You have unpublished changes": [
         "Teniu canvis sense publicar."
@@ -15683,7 +15701,7 @@
         "El codi consta de 6 dígits sense espais"
       ],
       "Collect anonymous usage diagnostics": [
-        "Recopilar diagnòstics d'ús anònims"
+        "Recopila diagnòstics d'ús anònims"
       ],
       "Color": [
         "Color"
@@ -18867,7 +18885,7 @@
         "Múltiples rols d'administració"
       ],
       "No streaming support": [
-        "No hi ha suport per la reproducció en continu"
+        "Sense suport d'estríming"
       ],
       "No-logs policy": [
         "Política de no registres"
@@ -22240,7 +22258,7 @@
         "**Es registren en un pla Pro anual** i obtenen ${ refereeRewardAmount } de descompte addicional en el seu primer any"
       ],
       "**You earn ${ referrerRewardAmount } for every seat** they add during sign-up.": [
-        "**Guanyeu ${ referrerRewardAmount } per cada lloc** que afegeixin durant el registre."
+        "**Guanyeu ${ referrerRewardAmount } per cada llicència** que afegeixin durant el registre."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
         "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Free**. Si canvieu d'opinió, podreu **reactivar la subscripció** per a mantenir l'accés a les característiques prèmium."
@@ -23863,7 +23881,7 @@
         "aconseguiu una adreça segura de ${ MAIL_APP_NAME }."
       ],
       "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
-        "Aconseguiu un descompte addicional del ${ referralDiscountPercent }% en el primer any de ${ BRAND_NAME } per a empreses"
+        "Aconseguiu un descompte addicional del ${ referralDiscountPercent }% durant el primer any de ${ BRAND_NAME } per a empreses"
       ],
       "Gifted by **${ referrerName }**": [
         "Regalat per **${ referrerName }**"
@@ -24078,7 +24096,7 @@
         "Us convidem a unir-vos a més de 100.000 organitzacions que protegeixen les seves dades amb l'ecosistema xifrat de ${ BRAND_NAME }."
       ],
       "Your account has been created, but we couldn't sign you in.": [
-        "S'ha creat el vostre compte, però no hem pogut iniciar sessió."
+        "S'ha creat el vostre compte, però no hem pogut iniciar la sessió."
       ],
       "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
         "El vostre compte inclou accés a funcions gratuïtes a ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ LUMO_SHORT_APP_NAME }."
@@ -30132,6 +30150,113 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada any, ${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per usuari"
+      ],
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet },${ lumo } i Scribe inclosos"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartit"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } d'emmagatzematge"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } facturats cada 12 mesos."
+      ],
+      "10 years": [
+        "10 anys"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Una categoria de servidors de ${ VPN_APP_NAME } de més capacitat: molts menys usuaris en comparteixen cadascun i utilitzen adreces IP pròpies de ${ BRAND_NAME }. Quick Connect els selecciona automàticament quan estan disponibles."
+      ],
+      "Calendars": [
+        "Calendaris"
+      ],
+      "Custom email domains": [
+        "Dominis de correu electrònic personalitzats"
+      ],
+      "Early access to new features": [
+        "Accés anticipat a novetats"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Tot el que inclou ${ unlimitedName } i, a més:"
+      ],
+      "Exclusive to subscribers": [
+        "Exclusiu per a subscriptors"
+      ],
+      "Feature": [
+        "Característica"
+      ],
+      "Group plans": [
+        "Plans de grup"
+      ],
+      "Hide-my-email aliases": [
+        "Àlies de hide-my-email"
+      ],
+      "Included": [
+        "Inclòs"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Inclou servidors Ultra, reservats per a vós"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Anomenat així en honor als mecenes de micromecenatge que van fer possible ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME } el 2014. Tots els serveis prèmium de ${ BRAND_NAME }, en un sol pla."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nous serveis de ${ BRAND_NAME } sense cost addicional"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Nous serveis sense cost addicional i accés anticipat a allò que construirem a continuació."
+      ],
+      "Not included": [
+        "No inclòs"
+      ],
+      "Password vaults": [
+        "Caixes fortes de contrasenyes"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive i Pass prèmium"
+      ],
+      "Previous versions": [
+        "Versions anteriors"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "Conjunt de privacitat amb correu electrònic segur, ${ VPN_SHORT_APP_NAME }, emmagatzematge al núvol i gestor de contrasenyes en un sol paquet."
+      ],
+      "Storage": [
+        "Emmagatzematge"
+      ],
+      "Subscribers only": [
+        "Només per a subscriptors"
+      ],
+      "Ultra servers": [
+        "Servidors Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidors Ultra, reservats per a vós"
+      ],
+      "Unlimited": [
+        "Sense límit"
+      ],
+      "Up to ${ limit }": [
+        "Fins a ${ limit }"
+      ],
+      "Users": [
+        "Usuaris"
+      ],
+      "VPN devices at once": [
+        "Dispositius VPN alhora"
+      ],
+      "Your plan": [
+        "El vostre pla"
       ]
     }
   }

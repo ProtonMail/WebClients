@@ -2401,6 +2401,21 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Change plan": [
+        "Cambia piano"
+      ],
+      "Hide plan details": [
+        "Nascondi i dettagli del piano"
+      ],
+      "Show plan details": [
+        "Mostra i dettagli del piano"
+      ],
+      "Skip to main content": [
+        "Passa direttamente al contenuto principale"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Effettua l'upgrade a ${ planTitle }"
       ]
     },
     "action": {
@@ -8370,6 +8385,9 @@
       ],
       "Zero keys reactivated": [
         "Chiavi zero riattivate"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "Impossibile caricare gli utenti migrati. Ricarica la pagina e riprova"
       ]
     },
     "error": {
@@ -30129,6 +30147,113 @@
       ],
       "Yearly, ${ untilString }": [
         "Ogni anno, ${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per utente"
+      ],
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet }, ${ lumo } e Scribe inclusi"
+      ],
+      "${ storage } shared": [
+        "${ storage } condivisi"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } di spazio di archiviazione"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } fatturati ogni 12 mesi."
+      ],
+      "10 years": [
+        "10 anni"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Un livello di capacità superiore di server ${ VPN_APP_NAME }: un numero di utenti molto inferiore condivide ciascun server e utilizza indirizzi IP di proprietà di ${ BRAND_NAME }. Quick Connect li seleziona automaticamente quando disponibili."
+      ],
+      "Calendars": [
+        "Calendari"
+      ],
+      "Custom email domains": [
+        "Domini email personalizzati"
+      ],
+      "Early access to new features": [
+        "Accesso anticipato alle nuove funzionalità"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Tutte le funzionalità di ${ unlimitedName }, più:"
+      ],
+      "Exclusive to subscribers": [
+        "Esclusiva per gli abbonati"
+      ],
+      "Feature": [
+        "Funzionalità"
+      ],
+      "Group plans": [
+        "Piani di gruppo"
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide-my-email"
+      ],
+      "Included": [
+        "Incluso"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Include server Ultra riservati a te"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Prende il nome dai sostenitori del crowdfunding che hanno reso possibile ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } nel 2014. Tutti i servizi premium di ${ BRAND_NAME }, in un unico piano."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nuovi servizi ${ BRAND_NAME } senza costi aggiuntivi"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Nuovi servizi senza costi aggiuntivi e accesso anticipato alle nostre prossime novità."
+      ],
+      "Not included": [
+        "Non incluso"
+      ],
+      "Password vaults": [
+        "Casseforti digitali"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive e Pass Premium"
+      ],
+      "Previous versions": [
+        "Versioni precedenti"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "Suite di privacy con email sicura, ${ VPN_SHORT_APP_NAME }, archiviazione cloud e gestore di password, tutto in un unico pacchetto."
+      ],
+      "Storage": [
+        "Spazio di archiviazione"
+      ],
+      "Subscribers only": [
+        "Solo per abbonati"
+      ],
+      "Ultra servers": [
+        "Server Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Server Ultra riservati a te"
+      ],
+      "Unlimited": [
+        "Illimitati"
+      ],
+      "Up to ${ limit }": [
+        "Fino a ${ limit }"
+      ],
+      "Users": [
+        "Utenti"
+      ],
+      "VPN devices at once": [
+        "Dispositivi VPN contemporaneamente"
+      ],
+      "Your plan": [
+        "Il tuo piano"
       ]
     }
   }

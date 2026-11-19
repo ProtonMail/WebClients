@@ -2401,6 +2401,21 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Change plan": [
+        "Cambiar plan"
+      ],
+      "Hide plan details": [
+        "Ocultar detalles del plan"
+      ],
+      "Show plan details": [
+        "Mostrar detalles del plan"
+      ],
+      "Skip to main content": [
+        "Omitir al contenido principal"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Ascender a ${ planTitle }"
       ]
     },
     "action": {
@@ -8370,6 +8385,9 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "No pudimos cargar los usuarios migrados. Favor de refrescar la página e inténtelo de nuevo"
       ]
     },
     "error": {
@@ -27107,7 +27125,7 @@
         "Correo electrónico"
       ],
       "Email address": [
-        "Dirección de correo electrónico"
+        "Correo electrónico"
       ],
       "Email breaches": [
         "Vulneraciones de correo electrónico"
@@ -30135,6 +30153,113 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuario"
+      ],
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet }, ${ lumo } y Scribe incluidos"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartido"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage }almacenamiento"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } facturado cada 12 meses."
+      ],
+      "10 years": [
+        "10 años"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Una capa de mayor capacidad con servidores ${ VPN_APP_NAME }: mucho menos personas comparten cada uno, y utilizan ${ BRAND_NAME } con direcciones IP propias. Quick Connect las selecciona automáticamente donde estén disponibles."
+      ],
+      "Calendars": [
+        "Calendarios"
+      ],
+      "Custom email domains": [
+        "Personalizar dominios de correo electrónico"
+      ],
+      "Early access to new features": [
+        "Acceso anticipado a nuevas funcionalidades"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Todo lo que incluye ${ unlimitedName }, más:"
+      ],
+      "Exclusive to subscribers": [
+        "Exclusivo para suscriptores"
+      ],
+      "Feature": [
+        "Funcionalidad"
+      ],
+      "Group plans": [
+        "Planes grupales"
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide-my-email"
+      ],
+      "Included": [
+        "Incluido"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Incluye servidores Ultra, reservados para usted"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Llamado así por el financiamiento colectivo de los simpatizantes que hicieron posible ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } en 2014. Todos los servicios premium ${ BRAND_NAME } en un solo plan."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nuevos ${ BRAND_NAME } servicios sin costo adicional"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Nuevos servicios sin costo adicional, y acceso anticipado a lo que desarrollemos más adelante."
+      ],
+      "Not included": [
+        "No incluido"
+      ],
+      "Password vaults": [
+        "Bóveda de contraseñas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Correo premium, Calendario, Drive y Pass"
+      ],
+      "Previous versions": [
+        "Versiones anteriores"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "Paquete de privacidad con correo electrónico seguro, ${ VPN_SHORT_APP_NAME }, almacenamiento en la nube y gestor de contraseñas en un solo paquete."
+      ],
+      "Storage": [
+        "Almacenamiento"
+      ],
+      "Subscribers only": [
+        "Solo suscriptores"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra reservados para usted"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Hasta ${ limit }"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN de inmediato"
+      ],
+      "Your plan": [
+        "Su plan"
       ]
     }
   }

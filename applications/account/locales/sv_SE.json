@@ -330,6 +330,12 @@
       ],
       "Zoom meeting links": [
         "Zoom möteslänkar"
+      ],
+      "Allow list": [
+        "Tillåt lista"
+      ],
+      "Gateway logs": [
+        "Gatewayloggar"
       ]
     },
     "Accounts": {
@@ -2359,6 +2365,30 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Change plan": [
+        "Ändra plan"
+      ],
+      "Continue with Bitcoin": [
+        "Fortsätt med Bitcoin"
+      ],
+      "Hide plan details": [
+        "Göm paketdetaljer"
+      ],
+      "Import actions": [
+        "Importera åtgärder"
+      ],
+      "Show plan details": [
+        "Visa paketdetaljer"
+      ],
+      "Sign in to a different account": [
+        "Logga in på ett annat konto"
+      ],
+      "Skip to main content": [
+        "Hoppa över till huvudinnehåll"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Uppgradera till ${ planTitle }"
       ]
     },
     "action": {
@@ -3099,6 +3129,10 @@
       ],
       "Will be replaced by your upcoming subscription on ${ replacementDate }": [
         "Kommer att ersättas av din kommande prenumeration på ${ replacementDate }"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Sedan ${ price }, för ${ cycle } månad",
+        "Sedan ${ price }, för ${ cycle } månader"
       ]
     },
     "Billing cycle option": {
@@ -3141,6 +3175,9 @@
     "Billing type": {
       "Prepaid": [
         "Förbetalt"
+      ],
+      "Billed at renewal": [
+        "Faktureras vid förnyelse"
       ]
     },
     "Blog": {
@@ -5731,6 +5768,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Dina andra sessioner har avslutats. Du kan nu igen logga in på den här enheten."
       ]
     },
     "description": {
@@ -8178,6 +8218,36 @@
       ],
       "Zero keys reactivated": [
         "Noll nycklar återaktiverade"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Ett meddelande krävs för att rapportera brott mot upphovsrätt eller stulen data"
+      ],
+      "Bookmark password is not available": [
+        "Lösenord för bokmärke är inte tillgängligt"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Upprättande av dokument utanför mappar är inte tillåtet"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Misslyckades avkryptera nodnyckel: ${ message }"
+      ],
+      "Failed to get the organization domains": [
+        "Misslyckades med att hämta organisationens domäner"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation har inte tillräckligt med platser tillgängliga"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
+      ],
+      "This code or link is no longer valid. Please try again.": [
+        "Denna kod eller länk är inte längre giltig. Försök igen."
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "Vi kunde inte koppla från denna adress. Försök igen."
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "Vi kunde inte ladda dina migrerade användare. Uppdatera sidan och försök igen"
       ]
     },
     "error": {
@@ -10969,10 +11039,10 @@
         "Genom att dela all information om händelser i denna kalender, accepterar du att ge ${ BRAND_NAME } åtkomst till denna kalenders krypterade information."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
-        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn,  **${ username }**, eller med **${ firstEmail }** eller  **${ secondEmail }**."
+        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**."
       ],
       "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
-        "När du slår på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }**, eller **${ thirdEmail }**."
+        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
       ],
       "Can you access your active session?": [
         "Kan du komma åt din aktiva session?"
@@ -13511,10 +13581,10 @@
         "Vi kunde inte skicka fakturor till din e-postadress. Automatisk fakturering har pausats tills du uppdaterar adressen."
       ],
       "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
-        "Vi kunde inte verifiera den här inbjudan. Vänligen be din administratör,  ${ admin }, att ta bort dig från organisationen och lägga till dig igen."
+        "Vi kunde inte verifiera den här inbjudan. Vänligen be din administratör, ${ admin }, att ta bort dig från organisationen och lägga till dig igen."
       ],
       "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
-        "Vi kunde inte verifiera din organisations identitet. Vänligen be din administratör,  ${ admin }, att kontrollera organisationsidentiteten i organisationsinställningarna. Öppna sedan den här länken igen."
+        "Vi kunde inte verifiera din organisations identitet. Be din administratör, ${ admin }, att kontrollera organisationsidentiteten i organisationsinställningarna. Öppna sedan denna länk igen."
       ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
@@ -13613,7 +13683,7 @@
         "När aviseringar är aktiverade skickar vi en notis till din e-postadress för återställning om du har nya meddelanden i ditt ${ MAIL_APP_NAME }-konto."
       ],
       "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
-        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn,**${ username }** eller med  **${ firstEmail }**, **${ secondEmail }**, eller **${ thirdEmail }**.  Dina andra e-postadresser kommer inte att fungera för inloggning."
+        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dina andra e-postadresser kommer inte att fungera för inloggning."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din prenumeration inte att förnyas, men du kan fortfarande dra nytta av paketförmåner fram till slutet av prenumerationsperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
@@ -14154,6 +14224,69 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } märke"
+      ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** begärde att logga in från:"
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** begärde att logga in."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Genom att slå på detta kommer du bara att kunna logga in med ditt användarnamn **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Genom att slå på den här, kommer du bara att kunna logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**."
+      ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "Om du inte nyss försökte logga in på **${ applicationName }** på en enhet som du äger, klicka på **Avbryt**."
+      ],
+      "It can take up to 24 hours for these changes to propagate.": [
+        "Det kan ta upp till 24 timmar för dessa ändringar att spridas."
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Meddelanden fån andra ${ BRAND_NAME }-användare förlorar också end-to-end-kryptering."
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "Logga in med det Gmail-konto du vill ansluta för att fortsätta."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
+      ],
+      "Signup link no longer valid": [
+        "Inloggningslänk är inte längre giltig"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denna användare kan inte migreras eftersom deras e-postadress inte är tillgänglig på ${ BRAND_NAME }."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Detta ger dig snabb och säker åtkomst till ditt ${ BRAND_NAME } Konto så du kan ändra ditt lösenord."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
+      ],
+      "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
+        "Vi bygger ett nytt sätt för dig att hantera din organisation, och vi söker specifika användare som vill delta i ett videosamtal och testa en tidig version. Undrar du om du skulle passa för detta? Svara på några korta frågor för att se om du kan vara med."
+      ],
+      "We’re switching on end-to-end encryption for everyone. Every email, every event is now yours alone. Visible to your team only. Not us, not anyone else.": [
+        "Vi byter till end-to-end-kryptering för alla. Varje mejl, varje händelse är nu bara din. Synlig för bara ditt team. Inte oss, ingen annan."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**. Dina andra e-postadresser kommer inte att fungera för inloggning."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "När inloggning är begränsad, kan du bara logga in med ditt användarnamn, **${ username }**, eller med **${ firstEmail }**. Dina andra e-postadresser kommer inte att fungera för inloggning."
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Din adress anslöts. Vi importerar dina mejl."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra.\n"
       ]
     },
     "info": {
@@ -16540,6 +16673,18 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Add managers": [
+        "Lägg till managers"
+      ],
+      "Enforce Always-on VPN": [
+        "Hävda Alltid-på-VPN"
+      ],
+      "Invoice email": [
+        "Faktura via e-post"
+      ],
+      "Restrict sign-in to email address": [
+        "Begränsa inloggning till e-postadress"
       ]
     },
     "label": {
@@ -19481,6 +19626,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**När din fullständiga prenumeration startar...** Du kan fortfarande avbryta inom 30 dagar och få en proportionerlig återbetalning."
       ]
     },
     "Option": {
@@ -20502,6 +20650,9 @@
       "${ days } day": [
         "${ days } dag",
         "${ days } dagar"
+      ],
+      "Due on receipt": [
+        "Betalas vid mottagandet"
       ]
     },
     "Payment.Sepa.Action": {
@@ -24411,6 +24562,9 @@
       ],
       "Total due today": [
         "Totalt att betala idag"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "${ planDiscountItem.discountPercent } % rabatt tillämpad"
       ]
     },
     "Subscription attribute": {
@@ -24977,6 +25131,9 @@
       ],
       "View VPN session details for your organization.": [
         "Visa VPN-sessionsdetaljer för din organisation."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importera dina filer och mappar från Google Drive och håll dem privata i ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -27740,6 +27897,15 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Easy Switch from Google Drive": [
+        "Enkelt byte från Google Drive"
+      ],
+      "Subscription breakdown": [
+        "Specifikation av prenumeration"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Denna Gmail är länkad med ett annat ${ BRAND_NAME } konto"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28190,6 +28356,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ditt externa konto kan ha nått sin bandbreddsgräns för det här dygnet. ${ BRAND_NAME } kommer att försöka återuppta importen så snart som möjligt."
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Användare som har åtkomst till sitt ${ BRAND_NAME }-konto"
       ]
     },
     "tooltip": {
@@ -28237,6 +28406,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Extern adress - Ingen end-to-end-kryptering eller resursdelning, och roller och tillstånd kan inte tilldelas."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -29380,6 +29552,41 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet }, ${ lumo } och Scribe inkluderat"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } lagringsutrymme"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } faktureras var 12:e månad."
+      ],
+      "Early access to new features": [
+        "Tidig tillgång till nya funktioner"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Allt i ${ unlimitedName }, plus:"
+      ],
+      "Exclusive to subscribers": [
+        "Exklusivt för prenumeranter"
+      ],
+      "Feature": [
+        "Funktion"
+      ],
+      "Group plans": [
+        "Gruppaket"
+      ],
+      "Included": [
+        "Inkluderad"
+      ],
+      "Not included": [
+        "Inte inkluderad"
+      ],
+      "Your plan": [
+        "Ditt paket"
       ]
     }
   }

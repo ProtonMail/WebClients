@@ -1895,6 +1895,15 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Continue with Bitcoin": [
+        "ビットコインで続ける"
+      ],
+      "Skip to main content": [
+        "メインコンテンツへスキップ"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "${ planTitle }にアップグレード"
       ]
     },
     "action": {
@@ -7505,6 +7514,9 @@
       ],
       "Zero keys reactivated": [
         "ゼロキーが再有効化されました"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "移行されたユーザーを読み込むことができませんでした。ページをリロードし、再度お試しください。"
       ]
     },
     "error": {
@@ -27028,6 +27040,50 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet },${ lumo },Scribeが含まれます"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } ストレージ"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "12ヶ月で ${ yearlyTotal } を請求"
+      ],
+      "Early access to new features": [
+        "新機能への早期アクセス"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "${ unlimitedName } のすべての機能， さらに："
+      ],
+      "Exclusive to subscribers": [
+        "購読者限定"
+      ],
+      "Feature": [
+        "機能"
+      ],
+      "Included": [
+        "含まれる"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "専用の特別サーバーをあなたに"
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "追加料金なしで${ BRAND_NAME }を使用"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "追加料金なしで新しいサービスを利用でき、次の早期アクセスを入手します。"
+      ],
+      "Not included": [
+        "含まれません"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME } 、クラウドストレージ、そしてパスワードマネージャーが1つのバンドルに含まれています。"
+      ],
+      "Your plan": [
+        "あなたのプラン"
       ]
     }
   }

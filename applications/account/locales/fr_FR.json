@@ -2152,6 +2152,24 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Change plan": [
+        "Changer d’abonnement"
+      ],
+      "Continue with Bitcoin": [
+        "Continuer avec Bitcoin"
+      ],
+      "Hide plan details": [
+        "Masquer les informations de l'abonnement"
+      ],
+      "Show plan details": [
+        "Afficher les informations de l'abonnement"
+      ],
+      "Skip to main content": [
+        "Passer au contenu principal"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Passez à ${ planTitle }"
       ]
     },
     "action": {
@@ -7945,6 +7963,9 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "File download failed due to empty response": [
+        "Impossible de télécharger le fichier : la réponse est vide"
       ]
     },
     "error": {
@@ -28943,6 +28964,56 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "10 years": [
+        "10 ans"
+      ],
+      "Calendars": [
+        "Calendriers"
+      ],
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
+      "Feature": [
+        "Fonctionalité"
+      ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
+      ],
+      "Included": [
+        "Inclus"
+      ],
+      "Not included": [
+        "Non inclus"
+      ],
+      "Password vaults": [
+        "Coffre-fort de mot de passe"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive et Pass premium"
+      ],
+      "Previous versions": [
+        "Version précédente"
+      ],
+      "Storage": [
+        "Espace de stockage"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Jusqu'à ${ limit }"
+      ],
+      "Users": [
+        "Utilisateurs"
+      ],
+      "Your plan": [
+        "Votre abonnement"
       ]
     }
   }

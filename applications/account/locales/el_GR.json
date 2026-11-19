@@ -2401,6 +2401,21 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Change plan": [
+        "Αλλαγή πλάνου"
+      ],
+      "Hide plan details": [
+        "Απόκρυψη λεπτομερειών πλάνου"
+      ],
+      "Show plan details": [
+        "Εμφάνιση λεπτομερειών πλάνου"
+      ],
+      "Skip to main content": [
+        "Μετάβαση στο κύριο περιεχόμενο"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Αναβάθμιση σε ${ planTitle }"
       ]
     },
     "action": {
@@ -8370,6 +8385,9 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "Δεν ήταν δυνατή η φόρτωση των μεταφερθέντων χρηστών σας. Παρακαλούμε ανανεώστε τη σελίδα και δοκιμάστε ξανά."
       ]
     },
     "error": {
@@ -30129,6 +30147,113 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } ανά χρήστη"
+      ],
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet }, ${ lumo } και Scribe περιλαμβάνονται"
+      ],
+      "${ storage } shared": [
+        "${ storage } κοινόχρηστος"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } αποθηκευτικός χώρος"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } με χρέωση κάθε 12 μήνες."
+      ],
+      "10 years": [
+        "10 χρόνια"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Μια κατηγορία διακομιστών του ${ VPN_APP_NAME } με μεγαλύτερη χωρητικότητα: κάθε διακομιστής χρησιμοποιείται από πολύ λιγότερους χρήστες και αξιοποιεί διευθύνσεις IP που ανήκουν στην ${ BRAND_NAME }. Η λειτουργία Quick Connect τους επιλέγει αυτόματα, όπου είναι διαθέσιμοι."
+      ],
+      "Calendars": [
+        "Ημερολόγια"
+      ],
+      "Custom email domains": [
+        "Προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Early access to new features": [
+        "Πρώιμη πρόσβαση σε νέα χαρακτηριστικά"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Τα πάντα από ${ unlimitedName }, συν:"
+      ],
+      "Exclusive to subscribers": [
+        "Αποκλειστικά για συνδρομητές"
+      ],
+      "Feature": [
+        "Χαρακτηριστικό"
+      ],
+      "Group plans": [
+        "Ομαδικά πλάνα"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email ψευδώνυμα"
+      ],
+      "Included": [
+        "Περιλαμβάνονται"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Περιλαμβάνει διακομιστές Ultra, δεσμευμένους για εσάς"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Ονομάστηκε προς τιμήν των υποστηρικτών από τη διαδικασία συλλογικής χρηματοδότησης που κατέστησαν δυνατή την υλοποίηση του ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } το 2014. Όλες οι premium υπηρεσίες του ${ BRAND_NAME }, σε ένα ενιαίο πρόγραμμα."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Νέες υπηρεσίες ${ BRAND_NAME } χωρίς επιπλέον κόστος"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Νέες υπηρεσίες χωρίς επιπλέον κόστος, καθώς και πρώιμη πρόσβαση σε ό,τι δημιουργήσουμε στη συνέχεια."
+      ],
+      "Not included": [
+        "Δεν συμπεριλαμβάνεται"
+      ],
+      "Password vaults": [
+        "Κρύπτες κωδικών πρόσβασης"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive και Pass"
+      ],
+      "Previous versions": [
+        "Προηγούμενες εκδόσεις"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "Σουίτα προστασίας προσωπικών δεδομένων με ασφαλές email, ${ VPN_SHORT_APP_NAME }, αποθήκευση στο cloud και διαχείριση κωδικών πρόσβασης σε ένα πακέτο."
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
+      ],
+      "Subscribers only": [
+        "Μόνο συνδρομητές"
+      ],
+      "Ultra servers": [
+        "Διακομιστές Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Διακομιστές Ultra, δεσμευμένοι για εσάς"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Έως ${ limit }"
+      ],
+      "Users": [
+        "Χρήστες"
+      ],
+      "VPN devices at once": [
+        "Συσκευές VPN ταυτόχρονα"
+      ],
+      "Your plan": [
+        "Το πλάνο σας"
       ]
     }
   }
