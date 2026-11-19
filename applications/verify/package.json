@@ -10,9 +10,9 @@
         "i18n:validate:context:web": "proton-i18n validate",
         "lint": "oxlint --quiet",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --noLogicalScss",
-        "test": "jest",
-        "test:ci": "jest --runInBand --ci --logHeapUsage",
-        "test:dev": "jest --watch"
+        "test": "vitest run",
+        "test:ci": "vitest run",
+        "test:watch": "vitest"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
@@ -35,22 +35,19 @@
     },
     "devDependencies": {
         "@proton/i18n": "workspace:^",
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/pack": "workspace:^",
-        "@testing-library/jest-dom": "catalog:",
-        "@types/jest": "catalog:",
+        "@proton/vitest-config": "workspace:^",
         "@types/node": "catalog:",
         "@types/react-router": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
+        "@vitest/coverage-v8": "catalog:",
         "cross-env": "catalog:",
-        "jest": "catalog:",
-        "jest-junit": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "typescript": "catalog:",
+        "vitest": "catalog:",
         "webpack": "catalog:"
     }
 }
