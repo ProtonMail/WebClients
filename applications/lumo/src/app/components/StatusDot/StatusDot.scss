@@ -1,0 +1,105 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+$status-dot-pop-duration: 0.5s;
+
+.status-dot {
+	position: relative;
+	display: block;
+	flex-shrink: 0;
+	inline-size: rem(8);
+	block-size: rem(8);
+	border-radius: 50%;
+
+	&--accent {
+		background-color: var(--interaction-norm);
+	}
+
+	&--attention {
+		background-color: var(--signal-warning);
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: inherit;
+			background-color: inherit;
+			opacity: 0;
+			animation: status-dot-glow 3.2s ease-out infinite;
+			pointer-events: none;
+		}
+
+		// First show: grows from nothing past its size, then settles back with a small bounce.
+		&--pop {
+			animation: status-dot-pop $status-dot-pop-duration cubic-bezier(0.34, 1.56, 0.64, 1) both;
+
+			&::after {
+				animation-delay: $status-dot-pop-duration;
+			}
+		}
+	}
+}
+
+@keyframes status-dot-pop {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	40% {
+		opacity: 1;
+	}
+
+	65% {
+		transform: scale(1.1);
+	}
+
+	85% {
+		transform: scale(0.9);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+// Three ripples that lose reach and strength (damped), then a rest before the next round.
+// Each ripple restarts hidden behind the dot, so the jump back to scale 1 is not visible.
+@keyframes status-dot-glow {
+	0% {
+		opacity: 0.65;
+		transform: scale(1);
+	}
+
+	20% {
+		opacity: 0;
+		transform: scale(2.5);
+	}
+
+	20.01% {
+		opacity: 0.45;
+		transform: scale(1);
+	}
+
+	38% {
+		opacity: 0;
+		transform: scale(2);
+	}
+
+	38.01% {
+		opacity: 0.3;
+		transform: scale(1);
+	}
+
+	54% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(1.5);
+	}
+}

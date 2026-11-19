@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import { clsx } from 'clsx';
+import { c } from 'ttag';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { AttentionDot } from '../../../components/StatusDot/AttentionDot';
 import { useSidebar } from '../../../providers/SidebarProvider';
 
 import './CollapsibleSidebarSection.scss';
@@ -14,6 +16,8 @@ interface CollapsibleSidebarSectionProps {
     actionButton?: React.ReactNode;
     labelExtra?: React.ReactNode;
     className?: string;
+    /** Set when an item of the section waits on the user: the header shows a dot while the section is collapsed. */
+    attentionKey?: string;
 }
 
 export const CollapsibleSidebarSection = ({
@@ -23,10 +27,12 @@ export const CollapsibleSidebarSection = ({
     actionButton,
     labelExtra,
     className,
+    attentionKey,
 }: CollapsibleSidebarSectionProps) => {
     const [isExpanded, setIsExpanded] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
     const { isVisible, isSmallScreen } = useSidebar();
+    const collapsedAttentionKey = isExpanded ? undefined : attentionKey;
 
     useEffect(() => {
         if (isSmallScreen) {
@@ -42,7 +48,10 @@ export const CollapsibleSidebarSection = ({
     return (
         <div className={clsx('collapsible-sidebar-section flex flex-column min-w-0 flex-nowrap', className)}>
             <div
-                className="collapsible-section-header flex items-center py-2 px-1.5 rounded-lg"
+                className={clsx(
+                    'collapsible-section-header flex items-center py-2 px-1.5 rounded-lg',
+                    collapsedAttentionKey && 'collapsible-section-header--with-attention relative flex-nowrap'
+                )}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
@@ -53,6 +62,16 @@ export const CollapsibleSidebarSection = ({
                 >
                     <span className="collapsible-section--title overflow-hidden text-ellipsis">{label}</span>
                     {labelExtra}
+                    {collapsedAttentionKey && (
+                        <AttentionDot
+                            attentionKey={collapsedAttentionKey}
+                            className="sidebar-status-dot-slot"
+                            label={
+                                // translator: Read out after a collapsed sidebar heading, such as Favorites or Projects, when a chat inside it waits for the user's answer or approval.
+                                c('collider_2025:Info').t`Something here is waiting for you`
+                            }
+                        />
+                    )}
                     {isHovered && (
                         <>
                             {isExpanded ? (

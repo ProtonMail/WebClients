@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
@@ -15,23 +15,73 @@ import './QuestionCard.scss';
 interface QuestionCardProps {
     questions: QuestionCardQuestionData[];
     onSubmit: (answers: QuestionCardAnswerData[]) => void;
-    onDismiss: () => void;
 }
 
-export const QuestionCard = ({ questions, onSubmit, onDismiss }: QuestionCardProps) => {
+export const QuestionCard = ({ questions, onSubmit }: QuestionCardProps) => {
     const id = useId();
     const titleRef = useRef<HTMLHeadingElement>(null);
+    const showQuestionsRef = useRef<HTMLButtonElement>(null);
+    const [isMinimized, setIsMinimized] = useState(false);
     const [index, setIndex] = useState(0);
     const [drafts, setDrafts] = useState<Record<string, QuestionCardDraftData>>({});
     const question = questions[index];
 
     useEffect(() => {
-        // Intentionally focus the title on mount to request an answer and announce the question.
-        // Repeat after navigation so keyboard and screen-reader users follow the active question.
-        titleRef.current?.focus();
-    }, [index]);
+        // Keep focus in the card when switching questions or minimizing and reopening it.
+        (isMinimized ? showQuestionsRef.current : titleRef.current)?.focus();
+    }, [index, isMinimized]);
 
     if (!question) return null;
+
+    if (isMinimized) {
+        return (
+            <section
+                aria-labelledby={`${id}-title`}
+                className="question-card question-card--minimized flex flex-nowrap items-center w-full p-2 pl-4 rounded-xl bg-norm"
+            >
+                <LumoIcon
+                    aria-hidden="true"
+                    className="shrink-0 mr-2 color-primary"
+                    name="ClipboardPen"
+                    size={14}
+                    strokeWidth={1.4}
+                />
+                <span className="text-ellipsis">
+                    <span className="mr-2 text-sm">
+                        {
+                            // translator: Status on a minimized card. The wording depends on how many questions the card contains.
+                            c('collider_2025:Status').ngettext(
+                                msgid`Waiting for your answer…`,
+                                `Waiting for your answers…`,
+                                questions.length
+                            )
+                        }
+                    </span>
+                    <span
+                        id={`${id}-title`}
+                        className="flex-1 min-w-0 mr-3 text-sm color-weak"
+                        dir="auto"
+                        title={question.title}
+                    >
+                        {question.title}
+                    </span>
+                </span>
+                <Button
+                    ref={showQuestionsRef}
+                    className="shrink-0 ml-auto"
+                    shape="ghost"
+                    size="tiny"
+                    type="button"
+                    onClick={() => setIsMinimized(false)}
+                >
+                    {
+                        // translator: Button to reopen a minimized card. The label depends on how many questions the card contains.
+                        c('collider_2025:Action').ngettext(msgid`Show question`, `Show questions`, questions.length)
+                    }
+                </Button>
+            </section>
+        );
+    }
 
     const adapter = getQuestionAdapter(question);
     const draft = drafts[question.id] ?? adapter.createInitialDraft();
@@ -93,14 +143,14 @@ export const QuestionCard = ({ questions, onSubmit, onDismiss }: QuestionCardPro
                         onPrevious={() => navigate(index - 1)}
                     />
                     <Button
-                        // translator: Button to close the entire set of questions without submitting answers.
-                        aria-label={c('collider_2025:Action').t`Dismiss questions`}
+                        // translator: Button to minimize the question card while keeping draft answers.
+                        aria-label={c('collider_2025:Action').t`Minimize questions`}
                         className="p-0 color-weak"
                         icon
                         shape="ghost"
                         size="small"
                         type="button"
-                        onClick={onDismiss}
+                        onClick={() => setIsMinimized(true)}
                     >
                         <LumoIcon aria-hidden="true" name="X" size={16} strokeWidth={1.4} />
                     </Button>

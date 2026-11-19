@@ -205,12 +205,41 @@ im.$media-expressions: $media-expressions;
 }
 
 .chats-sidebar-section {
+	--sidebar-chat-action-padding: var(--space-1);
+
 	min-inline-size: 0;
+
+	.chat-history-list .navigation-link {
+		padding-inline-end: var(--sidebar-chat-action-padding);
+	}
 }
 
 // Chat history sidebar section — no longer owns its own scroll area.
 .chat-history-sidebar-section {
 	min-inline-size: 0;
+
+	> .collapsible-section-header {
+		flex-wrap: nowrap;
+
+		// Include the chat row's border when aligning the header action with the row actions.
+		padding-inline-end: calc(var(--sidebar-chat-action-padding) + 1px);
+	}
+
+	.chat-history-group-by-menu-button {
+		display: inline-grid;
+		place-items: center;
+		inline-size: var(--space-7);
+		padding-inline: 0;
+	}
+}
+
+.collapsible-sidebar-section > .collapsible-section-header--with-attention {
+	// Reserve the last slot for the dot, with room for a header action beside it.
+	padding-inline-end: calc(var(--sidebar-chat-action-padding, var(--space-2)) + var(--space-8) + 1px);
+}
+
+.sidebar-chat-link--with-actions {
+	padding-inline-end: calc(var(--space-8) + var(--sidebar-chat-action-padding, var(--space-2)));
 }
 
 // Inner button for sidebar rows that have a separate right-side element (e.g. NewChatSidebarButton toggle)
@@ -523,14 +552,14 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-// A chat that is generating a reply: a soft sheen travels across its title in the sidebar.
+// A soft sheen travels across the sidebar title while a chat generates or a schedule runs.
 // Both ends of the gradient come from the theme, so it reads in light and dark mode alike.
-.sidebar-chat-generating {
+.sidebar-chat-generating,
+:where(.navigation-link > a:has(> [data-schedule-running])) > .sidebar-nav-list--label {
 	// Without text clipping the title simply breathes instead.
 	animation: sidebar-chat-breathe 2s ease-in-out infinite;
 
 	@supports (background-clip: text) or (-webkit-background-clip: text) {
-		animation: none;
 		color: transparent !important;
 		background-image: linear-gradient(
 			100deg,
@@ -542,7 +571,6 @@ im.$media-expressions: $media-expressions;
 		);
 		background-size: 300% 100%;
 		background-position: 100% 0;
-		-webkit-background-clip: text;
 		background-clip: text;
 		animation: sidebar-chat-sheen 2.4s linear infinite;
 	}
@@ -574,4 +602,19 @@ im.$media-expressions: $media-expressions;
 	50% {
 		opacity: 0.55;
 	}
+}
+
+// Center the 8px dot where the 28px menu button sits.
+.status-dot.sidebar-status-dot-slot {
+	position: absolute;
+	inset-block: 0;
+	inset-inline-end: calc(var(--sidebar-chat-action-padding, var(--space-2)) + rem(10));
+	margin-block: auto;
+	pointer-events: none;
+}
+
+.collapsible-section-header--with-attention .sidebar-status-dot-slot {
+	// The header has no border, unlike the rows below it.
+	margin-inline-end: 1px;
+	pointer-events: auto;
 }

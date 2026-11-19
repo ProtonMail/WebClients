@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { ASK_USER_QUESTIONS_TOOL_NAME } from '../../../../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
 import {
     isAskUserQuestionsToolSuccessResult,
@@ -28,7 +26,6 @@ export const AskUserQuestionsToolMessage = ({
 }) => {
     const { handleSendAskUserQuestionsToolResponse } = useConversationActions();
     const { isWebSearchButtonToggled } = useWebSearch();
-    const [isClosed, setIsClosed] = useState(false);
 
     if (shouldShowAskUserQuestionsSkeleton(blocks, isGenerating)) {
         return (
@@ -47,15 +44,13 @@ export const AskUserQuestionsToolMessage = ({
         validateAskUserQuestionsToolArguments
     );
 
-    if (!latestQuestionSet || isClosed) return null;
+    if (!latestQuestionSet) return null;
 
     const {
         id,
         arguments: { questions },
     } = latestQuestionSet;
-
     const submit = async (answers: QuestionCardAnswerData[]) => {
-        setIsClosed(true);
         // Combine each question and its submitted answer into the database-ready QuestionAnswer structure,
         // preserving the title, selected values, and skipped status for storage with the user message.
         const askUserQuestionsToolResponse = questions.map((question) => {
@@ -77,7 +72,6 @@ export const AskUserQuestionsToolMessage = ({
                 onSubmit={(answers) => {
                     submit(answers).catch(() => console.error('Failed to submit question answers'));
                 }}
-                onDismiss={() => setIsClosed(true)}
             />
         </ComposerPreInputPortal>
     );

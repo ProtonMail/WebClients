@@ -1,5 +1,32 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
 .lumo-layout-header .button.button-ghost-weak {
 	--interaction-weak: var(--interaction-solid-weak-custom-contrast);
 	--button-active-background-color: var(--interaction-solid-weak-custom-active);
 	--button-hover-background-color: var(--interaction-solid-weak-custom-hover);
+}
+
+.sidebar-toggle-icon {
+	--sidebar-toggle-dot-center: #{rem(3)};
+}
+
+.sidebar-toggle-icon--badged > svg {
+	--sidebar-toggle-mask-x: calc(100% - var(--sidebar-toggle-dot-center));
+
+	mask-image: radial-gradient(
+		circle at var(--sidebar-toggle-mask-x) var(--sidebar-toggle-dot-center),
+		transparent #{rem(5.5)},
+		#000 #{rem(6)}
+	);
+
+	[dir='rtl'] & {
+		--sidebar-toggle-mask-x: var(--sidebar-toggle-dot-center);
+	}
+}
+
+.status-dot.sidebar-toggle-attention-dot {
+	position: absolute;
+	inset-block-start: calc(var(--sidebar-toggle-dot-center) - var(--space-1));
+	inset-inline-end: calc(var(--sidebar-toggle-dot-center) - var(--space-1));
+	pointer-events: none;
 }

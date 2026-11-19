@@ -3,10 +3,13 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { ScheduleSidebarLabel } from '../../features/schedules/components/ScheduleSidebarLabel';
+import { getGroupAttentionKey, useAttentionKeys } from '../../providers/ConversationAttentionProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectLatestRunsByScheduleId, selectSchedulesSortedByLatestRun } from '../../redux/selectors';
 import { CollapsibleSidebarSection } from './components/CollapsibleSidebarSection';
 import { SidebarNavList } from './components/SidebarNavList';
+
+const DEFAULT_SCHEDULE_LIMIT = 5;
 
 export const ScheduledSidebarSection = ({ onItemClick }: { onItemClick?: () => void }) => {
     const history = useHistory();
@@ -14,9 +17,15 @@ export const ScheduledSidebarSection = ({ onItemClick }: { onItemClick?: () => v
     const scheduleRoute = useRouteMatch<{ scheduleId: string }>('/schedules/:scheduleId');
     const scheduleEntries = useLumoSelector(selectSchedulesSortedByLatestRun);
     const latestRuns = useLumoSelector(selectLatestRunsByScheduleId);
+    const { bySpace: attentionBySpace } = useAttentionKeys();
     const currentSpaceId = useLumoSelector((state) =>
         conversationRoute ? state.conversations[conversationRoute.params.conversationId]?.spaceId : undefined
     );
+
+    const visibleEntries = scheduleEntries.filter(
+        ([id], index) => index < DEFAULT_SCHEDULE_LIMIT || attentionBySpace.has(id)
+    );
+    const sectionAttentionKey = getGroupAttentionKey(visibleEntries.map(([id]) => attentionBySpace.get(id)?.key));
 
     const handleSchedulesClick = () => {
         onItemClick?.();
@@ -27,24 +36,27 @@ export const ScheduledSidebarSection = ({ onItemClick }: { onItemClick?: () => v
         <CollapsibleSidebarSection
             // translator: Collapsible sidebar heading above the user's scheduled tasks.
             label={c('collider_2025:Title').t`Scheduled`}
+            attentionKey={sectionAttentionKey}
         >
             <div>
                 {scheduleEntries.length > 0 && (
                     <SidebarNavList
-                        items={scheduleEntries.slice(0, 5).map(([id, schedule]) => {
-                            const run = latestRuns[id];
+                        items={visibleEntries.map(([id, schedule]) => {
+                            const attention = attentionBySpace.get(id);
+                            const runId = attention?.conversationId ?? latestRuns[id]?.id;
                             return {
                                 id,
-                                to: run ? `/c/${run.id}` : `/schedules/${id}`,
+                                to: runId ? `/c/${runId}` : `/schedules/${id}`,
                                 label: schedule.name,
                                 trailingLabel: <ScheduleSidebarLabel rule={schedule.recurrenceRule} scheduleId={id} />,
                                 isSelected: id === currentSpaceId || id === scheduleRoute?.params.scheduleId,
+                                attentionKey: attention?.key,
                             };
                         })}
                         onItemClick={onItemClick}
                     />
                 )}
-                {scheduleEntries.length > 5 && (
+                {scheduleEntries.length > DEFAULT_SCHEDULE_LIMIT && (
                     <button
                         className="flex items-center justify-center px-3 py-2 text-sm color-weak transition-colors hover:color-norm"
                         onClick={handleSchedulesClick}
