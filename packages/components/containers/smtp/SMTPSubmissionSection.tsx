@@ -8,6 +8,7 @@ import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCa
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import useLoading from '@proton/hooks/useLoading';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { deleteToken, getTokens } from '@proton/shared/lib/api/smtptokens';
@@ -35,10 +36,9 @@ import TableBody from '../../components/table/TableBody';
 import TableHeader from '../../components/table/TableHeader';
 import TableRow from '../../components/table/TableRow';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSection from '../account/SettingsSection';
-import SettingsSectionWide from '../account/SettingsSectionWide';
+import { SettingsCardSection } from '../account/SettingsCardSection';
 import UpgradeBanner from '../account/UpgradeBanner';
+import { getSettingsCardTableProps } from '../account/getSettingsCardTableProps';
 import { getDeleteText } from '../general/helper';
 import SMTPTokenModal from './SMTPTokenModal';
 
@@ -50,15 +50,22 @@ interface SmtpTokens {
     LastUsedTime: number | null;
 }
 
+/** Whether the section shows the upgrade banner instead of the tokens. `undefined` while it loads. */
+export const useShowSmtpSubmissionUpsell = () => {
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
+    return loadingEntitlements ? undefined : !entitlements.hasSmtpSubmission;
+};
+
 const SMTPSubmissionSection = () => {
+    const cardTable = getSettingsCardTableProps();
     const api = useApi();
     const [addresses = []] = useAddresses();
     const addressMap = new Map(addresses.map((address) => [address.ID, address.Email]));
     const hasActiveCustomAddress = addresses.some(
         (address) => address.Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN && getIsAddressEnabled(address)
     );
-    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
-    const hasSmtpSubmission = !loadingEntitlements && entitlements.hasSmtpSubmission;
+    const [, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
+    const hasSmtpSubmission = useShowSmtpSubmissionUpsell() === false;
     const [tokenIDToRemove, setTokenIDToRemove] = useState('');
     const [loadingTokens, withLoadingTokens] = useLoading();
     const [loading, withLoading] = useLoading();
@@ -116,11 +123,7 @@ const SMTPSubmissionSection = () => {
     }, [hasSmtpSubmission]);
 
     if (loadingEntitlements) {
-        return (
-            <SettingsSection>
-                <Loader />
-            </SettingsSection>
-        );
+        return <Loader />;
     }
 
     const plus = PLAN_NAMES[PLANS.MAIL];
@@ -134,35 +137,50 @@ const SMTPSubmissionSection = () => {
 
     if (!hasSmtpSubmission) {
         return (
-            <SettingsSectionWide>
-                <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
-                    {c('Info')
-                        .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses.`}
-                </SettingsParagraph>
-                <UpgradeBanner audience={Audience.B2B} upsellPath={upsellRef}>
-                    {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
-                </UpgradeBanner>
-            </SettingsSectionWide>
+            <SettingsCardSection
+                title={c('Title').t`SMTP submission`}
+                description={
+                    <>
+                        {c('Info')
+                            .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses.`}{' '}
+                        <Href href={getKnowledgeBaseUrl('/smtp-submission')}>{c('Link').t`Learn more`}</Href>
+                    </>
+                }
+                notice={
+                    <UpgradeBanner promotion audience={Audience.B2B} upsellPath={upsellRef}>
+                        {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
+                    </UpgradeBanner>
+                }
+            />
         );
     }
 
     return (
-        <SettingsSectionWide>
-            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
-                {
-                    // translator: full sentence will be: SMTP submission allows 3rd-party services or devices to send email through <Proton Mail> for your custom domain addresses. To use this feature, start by generating a new token.
-                    c('Info')
-                        .t`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. To use this feature, start by generating a new token.`
-                }
-            </SettingsParagraph>
-            <div className="mb-4">
+        <SettingsCardSection
+            title={c('Title').t`SMTP submission`}
+            description={
+                <>
+                    {
+                        // translator: full sentence will be: SMTP submission allows 3rd-party services or devices to send email through <Proton Mail> for your custom domain addresses. To use this feature, start by generating a new token.
+                        c('Info')
+                            .t`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. To use this feature, start by generating a new token.`
+                    }{' '}
+                    <Href href={getKnowledgeBaseUrl('/smtp-submission')}>{c('Link').t`Learn more`}</Href>
+                </>
+            }
+            flush
+            actions={
                 <Button
                     data-testid="smtp-submission:generate-token"
                     disabled={loadingTokens}
                     onClick={openGenerateTokenModal}
                 >{c('Action').t`Generate token`}</Button>
-            </div>
-            <Table className={clsx(!loadingTokens && hasTokens && 'simple-table--has-actions')}>
+            }
+        >
+            <Table
+                {...cardTable}
+                className={clsx(!loadingTokens && hasTokens && 'simple-table--has-actions', cardTable?.className)}
+            >
                 <TableHeader cells={headers} />
                 <TableBody colSpan={headersLength} loading={loadingTokens}>
                     {tokens.map((token) => {
@@ -227,7 +245,7 @@ const SMTPSubmissionSection = () => {
                     {...generateTokenModalProps}
                 />
             ) : null}
-        </SettingsSectionWide>
+        </SettingsCardSection>
     );
 };
 

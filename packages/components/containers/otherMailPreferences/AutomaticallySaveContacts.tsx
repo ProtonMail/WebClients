@@ -1,12 +1,10 @@
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href/Href';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import Info from '../../components/link/Info';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import AutoSaveContactsToggle from '../general/AutoSaveContactsToggle';
 
 const AutomaticallySaveContacts = () => {
@@ -14,17 +12,18 @@ const AutomaticallySaveContacts = () => {
     const { AutoSaveContacts } = mailSettings || {};
 
     return (
-        <SettingsLayout>
-            <SettingsLayoutLeft>
-                <label htmlFor="saveContactToggle">
-                    <span className="mr-2 text-semibold">{c('Label').t`Automatically save contacts`}</span>
-                </label>
-                <Info url={getKnowledgeBaseUrl('/autosave-contact-list')} />
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight isToggleContainer>
-                <AutoSaveContactsToggle autoSaveContacts={!!AutoSaveContacts} id="saveContactToggle" />
-            </SettingsLayoutRight>
-        </SettingsLayout>
+        <SettingsToggleRow
+            id="saveContactToggle"
+            label={
+                <>
+                    <SettingsToggleRow.Label>{c('Label').t`Automatically save contacts`}</SettingsToggleRow.Label>
+                    <SettingsToggleRow.Description>
+                        <Href href={getKnowledgeBaseUrl('/autosave-contact-list')}>{c('Link').t`Learn more`}</Href>
+                    </SettingsToggleRow.Description>
+                </>
+            }
+            toggle={<AutoSaveContactsToggle autoSaveContacts={!!AutoSaveContacts} id="saveContactToggle" />}
+        />
     );
 };
 

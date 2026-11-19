@@ -1,26 +1,22 @@
 import { c } from 'ttag';
 
-import Info from '../../components/link/Info';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import SenderImagesToggle from './SenderImagesToggle';
 
 export const SenderImages = () => {
     return (
-        <SettingsLayout>
-            <SettingsLayoutLeft>
-                <label htmlFor="senderImagesToggle">
-                    <span className="text-semibold mr-2">{c('Label').t`Show sender images`}</span>
-                    <Info
-                        title={c('Tooltip')
+        <SettingsToggleRow
+            id="senderImagesToggle"
+            label={
+                <>
+                    <SettingsToggleRow.Label>{c('Label').t`Show sender images`}</SettingsToggleRow.Label>
+                    <SettingsToggleRow.Description>
+                        {c('Tooltip')
                             .t`Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.`}
-                    />
-                </label>
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight isToggleContainer>
-                <SenderImagesToggle className="mr-4" id="senderImagesToggle" />
-            </SettingsLayoutRight>
-        </SettingsLayout>
+                    </SettingsToggleRow.Description>
+                </>
+            }
+            toggle={<SenderImagesToggle id="senderImagesToggle" />}
+        />
     );
 };

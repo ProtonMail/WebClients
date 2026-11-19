@@ -3,6 +3,9 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { Href } from '@proton/atoms/Href/Href';
 import useLoading from '@proton/hooks/useLoading';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -13,16 +16,12 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { ATTACH_PUBLIC_KEY, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
-import Info from '../../components/link/Info';
 import useModalState from '../../components/modalTwo/useModalState';
 import type { PromptProps } from '../../components/prompt/Prompt';
 import Prompt from '../../components/prompt/Prompt';
-import Toggle from '../../components/toggle/Toggle';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSection from '../account/SettingsSection';
+import { SettingsCardRows } from '../account/SettingsCardRows';
+import { SettingsSelectRow } from '../account/SettingsSelectRow';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import { PGPSchemeSelect } from './PGPSchemeSelect';
 
 interface AutomaticallySignModalProps extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
@@ -98,7 +97,7 @@ export const ExternalPGPSettingsSection = () => {
     };
 
     return (
-        <SettingsSection>
+        <DashboardGrid as="div">
             {renderAutomaticallySign && (
                 <AutomaticallySignModal
                     onConfirm={(shouldSign) => {
@@ -111,81 +110,99 @@ export const ExternalPGPSettingsSection = () => {
                     {...automaticallySignModalProps}
                 />
             )}
-            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/how-to-use-pgp')}>
-                {c('Info').t`Only change these settings if you are using PGP with non-${BRAND_NAME} recipients.`}
-            </SettingsParagraph>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="signToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Sign external messages`}</span>
-                        <Info
-                            url={getKnowledgeBaseUrl('/what-is-a-digital-signature')}
-                            title={c('Tooltip sign external messages')
-                                .t`Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <Toggle
-                        id="signToggle"
-                        checked={!!Sign}
-                        onChange={(e) => {
-                            withLoadingSign(handleChangeSign(+e.target.checked));
-                        }}
-                        loading={loadingSign}
-                    />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="attachPublicKeyToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Attach public key`}</span>
-                        <Info
-                            url={getKnowledgeBaseUrl('/how-to-use-pgp')}
-                            title={c('Tooltip automatically attach public key')
-                                .t`This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <Toggle
-                        id="attachPublicKeyToggle"
-                        checked={!!AttachPublicKey}
-                        onChange={(e) => {
-                            const newValue = +e.target.checked;
-                            if (newValue && !Sign) {
-                                setAutomaticallySignModalOpen(true);
-                            } else {
-                                withLoadingAttach(handleAttachPublicKey(newValue));
+            <DashboardGridSectionHeader
+                title={c('Title').t`External PGP settings`}
+                subtitle={
+                    <>
+                        {c('Info')
+                            .t`Only change these settings if you are using PGP with non-${BRAND_NAME} recipients.`}{' '}
+                        <Href href={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Link').t`Learn more`}</Href>
+                    </>
+                }
+            />
+            <DashboardCard>
+                <DashboardCardContent>
+                    <SettingsCardRows>
+                        <SettingsToggleRow
+                            id="signToggle"
+                            label={
+                                <>
+                                    <SettingsToggleRow.Label>{c('Label')
+                                        .t`Sign external messages`}</SettingsToggleRow.Label>
+                                    <SettingsToggleRow.Description>
+                                        {c('Tooltip sign external messages')
+                                            .t`Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.`}{' '}
+                                        <Href href={getKnowledgeBaseUrl('/what-is-a-digital-signature')}>
+                                            {c('Link').t`Learn more`}
+                                        </Href>
+                                    </SettingsToggleRow.Description>
+                                </>
                             }
-                        }}
-                        loading={loadingAttach}
-                    />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="PGPSchemeSelect" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Default PGP scheme`}</span>
-                        <Info
-                            url={getKnowledgeBaseUrl('/pgp-mime-pgp-inline')}
-                            title={c('Tooltip default pgp scheme')
-                                .t`Select the default PGP settings used to sign or encrypt messages with non-${BRAND_NAME} PGP users. Note that Inline PGP forces plain text messages.`}
+                            toggle={
+                                <SettingsToggleRow.Toggle
+                                    checked={!!Sign}
+                                    onChange={(e) => {
+                                        withLoadingSign(handleChangeSign(+e.target.checked));
+                                    }}
+                                    loading={loadingSign}
+                                />
+                            }
                         />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
-                    <PGPSchemeSelect
-                        id="PGPSchemeSelect"
-                        pgpScheme={PGPScheme}
-                        onChange={(e) => {
-                            withLoadingScheme(handleChangeScheme(+e.target.value));
-                        }}
-                        disabled={loadingScheme}
-                    />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-        </SettingsSection>
+                        <SettingsToggleRow
+                            id="attachPublicKeyToggle"
+                            label={
+                                <>
+                                    <SettingsToggleRow.Label>{c('Label').t`Attach public key`}</SettingsToggleRow.Label>
+                                    <SettingsToggleRow.Description>
+                                        {c('Tooltip automatically attach public key')
+                                            .t`This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.`}
+                                    </SettingsToggleRow.Description>
+                                </>
+                            }
+                            toggle={
+                                <SettingsToggleRow.Toggle
+                                    checked={!!AttachPublicKey}
+                                    onChange={(e) => {
+                                        const newValue = +e.target.checked;
+                                        if (newValue && !Sign) {
+                                            setAutomaticallySignModalOpen(true);
+                                        } else {
+                                            withLoadingAttach(handleAttachPublicKey(newValue));
+                                        }
+                                    }}
+                                    loading={loadingAttach}
+                                />
+                            }
+                        />
+                        <SettingsSelectRow
+                            id="PGPSchemeSelect"
+                            label={
+                                <>
+                                    <SettingsSelectRow.Label>{c('Label')
+                                        .t`Default PGP scheme`}</SettingsSelectRow.Label>
+                                    <SettingsSelectRow.Description>
+                                        {c('Tooltip default pgp scheme')
+                                            .t`Select the default PGP settings used to sign or encrypt messages with non-${BRAND_NAME} PGP users. Note that Inline PGP forces plain text messages.`}{' '}
+                                        <Href href={getKnowledgeBaseUrl('/pgp-mime-pgp-inline')}>
+                                            {c('Link').t`Learn more`}
+                                        </Href>
+                                    </SettingsSelectRow.Description>
+                                </>
+                            }
+                            select={
+                                <PGPSchemeSelect
+                                    id="PGPSchemeSelect"
+                                    pgpScheme={PGPScheme}
+                                    onChange={(e) => {
+                                        withLoadingScheme(handleChangeScheme(+e.target.value));
+                                    }}
+                                    disabled={loadingScheme}
+                                />
+                            }
+                        />
+                    </SettingsCardRows>
+                </DashboardCardContent>
+            </DashboardCard>
+        </DashboardGrid>
     );
 };

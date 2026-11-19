@@ -14,8 +14,8 @@ import type { Filter } from '@proton/sieve/filterModel';
 import move from '@proton/utils/move';
 
 import Loader from '../../components/loader/Loader';
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSection from '../account/SettingsSection';
+import { SettingsCardSection } from '../account/SettingsCardSection';
+import { SettingsLayoutVariant } from '../layout/interface';
 import ActionsFilterToolbar from './ActionsFilterToolbar';
 import FilterSortableList from './FilterSortableList';
 import { useFilterDispatch } from './useFilterDispatch';
@@ -63,25 +63,30 @@ function FiltersSection() {
         }
 
         return list.length ? (
-            <FilterSortableList items={list} onSortEnd={onSortEnd} onApplyFilter={handleApplyFilter} />
+            <FilterSortableList
+                variant={SettingsLayoutVariant.Card}
+                items={list}
+                onSortEnd={onSortEnd}
+                onApplyFilter={handleApplyFilter}
+            />
         ) : null;
     };
 
     return (
-        <SettingsSection>
-            <SettingsParagraph>
-                <span>
+        <SettingsCardSection
+            flush={!loading && !!list.length}
+            title={c('Title').t`Custom filters`}
+            description={
+                <>
                     {c('FilterSettings')
-                        .t`Add a custom filter to automatically perform certain actions, like labeling or archiving messages.`}
-                </span>
-                <br />
-                <Href href={getKnowledgeBaseUrl('/email-inbox-filters')}>{c('Link').t`Learn more`}</Href>
-            </SettingsParagraph>
-
-            <ActionsFilterToolbar />
-
+                        .t`Add a custom filter to automatically perform certain actions, like labeling or archiving messages.`}{' '}
+                    <Href href={getKnowledgeBaseUrl('/email-inbox-filters')}>{c('Link').t`Learn more`}</Href>
+                </>
+            }
+            actions={<ActionsFilterToolbar />}
+        >
             {contentRenderer()}
-        </SettingsSection>
+        </SettingsCardSection>
     );
 }
 

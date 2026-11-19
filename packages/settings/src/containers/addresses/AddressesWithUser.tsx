@@ -28,7 +28,9 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
+import { SettingsCardActions, SettingsCardBody } from '@proton/components/containers/account/SettingsCardSection';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import { getSettingsCardTableProps } from '@proton/components/containers/account/getSettingsCardTableProps';
 import AddressStatus from '@proton/components/containers/addresses/AddressStatus';
 import ExternalAddressInfo from '@proton/components/containers/addresses/ExternalAddressInfo';
 import {
@@ -37,6 +39,7 @@ import {
     getPermissions,
     getStatus,
 } from '@proton/components/containers/addresses/helper';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { usePostSubscriptionTourTelemetry } from '@proton/components/hooks/mail/usePostSubscriptionTourTelemetry';
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -61,6 +64,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import addressesImg from '@proton/styles/assets/img/illustrations/new-upsells-img/addresses.svg';
 import { useFlag } from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 import move from '@proton/utils/move';
 
 import AddressActions from './AddressActions';
@@ -72,6 +76,8 @@ interface Props {
     hasDescription?: boolean;
     allowAddressDeletion: boolean;
     hasAccessToBYOE?: boolean;
+    /** The card variant renders the buttons above a flush card holding the table. */
+    variant?: SettingsLayoutVariant;
 }
 
 const upsellRef = getUpsellRef({
@@ -172,7 +178,9 @@ const AddressesUser = ({
     hasDescription = true,
     allowAddressDeletion,
     hasAccessToBYOE,
+    variant = SettingsLayoutVariant.Default,
 }: Props) => {
+    const isCard = variant === SettingsLayoutVariant.Card;
     const { createNotification } = useNotifications();
     const [savingIndex, setSavingIndex] = useState<number | undefined>();
     const dispatch = useDispatch();
@@ -272,6 +280,94 @@ const AddressesUser = ({
 
     const disabledSortItems = new Set(addresses?.filter((address) => getIsNonDefault(address)).map((item) => item.ID));
 
+    const cardTable = isCard ? getSettingsCardTableProps() : undefined;
+
+    const table = (
+        <Table hasActions responsive="cards" {...cardTable} className={cardTable ? cardTable.className : 'mt-4'}>
+            <TableHeader>
+                <tr>
+                    {/* The card table pads cells more: keep room for the drag icon */}
+                    <th scope="col" className="w-custom" style={{ '--w-custom': cardTable ? '3rem' : '5%' }}>
+                        <IcArrowsCross alt={c('Header for addresses table').t`Drag to reorder`} />
+                    </th>
+                    <th scope="col">{c('Header for addresses table').t`Address`}</th>
+                    <th scope="col">{c('Header for addresses table').t`Status`}</th>
+                    <th scope="col">{c('Header for addresses table').t`Actions`}</th>
+                </tr>
+            </TableHeader>
+            <TableBody colSpan={4} loading={loadingAddresses} ref={containerRef}>
+                <SortableList onSortEnd={handleSortEnd} containerRef={containerRef}>
+                    {list.map((address, index) => {
+                        return (
+                            <SortableListItem
+                                key={address.ID}
+                                address={address}
+                                user={user}
+                                member={member}
+                                index={index}
+                                onClickEmail={handleCopyEmail}
+                                onSetDefault={getSetDefaultAddress(index)}
+                                savingIndex={savingIndex}
+                                disableSort={disabledSortItems.has(address.ID)}
+                                allowAddressDeletion={allowAddressDeletion}
+                                isSignInRestricted={isSignInRestricted}
+                                addressStatuses={getStatus(address, index)}
+                                addressPermissions={getPermissions({
+                                    addressIndex: index,
+                                    member,
+                                    address,
+                                    addresses: list,
+                                    user,
+                                    organizationKey,
+                                })}
+                            />
+                        );
+                    })}
+                </SortableList>
+            </TableBody>
+        </Table>
+    );
+
+    const actionButtons = (
+        <>
+            {!user.hasPaidMail && !showClaimProtonAddressButton && (
+                <div>
+                    <MailUpsellButton
+                        onClick={() => handleUpsellModalDisplay(true)}
+                        text={c('Action').t`Get more addresses`}
+                    />
+                    <p className={clsx('color-weak text-sm', isCard ? 'mt-1 mb-0' : 'my-2')}>{c('Label')
+                        .t`0 of 1 email address available`}</p>
+                </div>
+            )}
+            {!user.hasPaidMail && showClaimProtonAddressButton && (
+                <div>
+                    <Button onClick={() => setClaimProtonAddressModalOpen(true)}>
+                        {c('Action').t`Claim ${BRAND_NAME} address`}
+                    </Button>
+                    <p className={clsx('color-weak text-sm', isCard ? 'mt-1 mb-0' : 'my-2')}>{c('Label')
+                        .t`1 of 1 email address available`}</p>
+                </div>
+            )}
+
+            {hasAccessToBYOE && (
+                <div>
+                    <ConnectGmailButton
+                        buttonText={c('Action').t`Connect Gmail address`}
+                        source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_ADDRESSES_BYOE}
+                    />
+                    <p className={clsx('color-weak text-sm', isCard ? 'mt-1 mb-0' : 'my-2')}>
+                        {c('Label BYOE').ngettext(
+                            msgid`${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email address available`,
+                            `${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email addresses available`,
+                            byoeAddressesAvailableCount
+                        )}
+                    </p>
+                </div>
+            )}
+        </>
+    );
+
     return (
         <>
             {hasDescription && (
@@ -285,86 +381,14 @@ const AddressesUser = ({
                 </SettingsParagraph>
             )}
 
-            {(!user.hasPaidMail || hasAccessToBYOE) && (
-                <div className="mb-4 flex gap-6 self-start items-start">
-                    {!user.hasPaidMail && !showClaimProtonAddressButton && (
-                        <div>
-                            <MailUpsellButton
-                                onClick={() => handleUpsellModalDisplay(true)}
-                                text={c('Action').t`Get more addresses`}
-                            />
-                            <p className="color-weak text-sm my-2">{c('Label').t`0 of 1 email address available`}</p>
-                        </div>
-                    )}
-                    {!user.hasPaidMail && showClaimProtonAddressButton && (
-                        <div>
-                            <Button onClick={() => setClaimProtonAddressModalOpen(true)}>
-                                {c('Action').t`Claim ${BRAND_NAME} address`}
-                            </Button>
-                            <p className="color-weak text-sm my-2">{c('Label').t`1 of 1 email address available`}</p>
-                        </div>
-                    )}
+            {(!user.hasPaidMail || hasAccessToBYOE) &&
+                (isCard ? (
+                    <SettingsCardActions>{actionButtons}</SettingsCardActions>
+                ) : (
+                    <div className="mb-4 flex gap-6 self-start items-start">{actionButtons}</div>
+                ))}
 
-                    {hasAccessToBYOE && (
-                        <div>
-                            <ConnectGmailButton
-                                buttonText={c('Action').t`Connect Gmail address`}
-                                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_ADDRESSES_BYOE}
-                            />
-                            <p className="color-weak text-sm my-2">
-                                {c('Label BYOE').ngettext(
-                                    msgid`${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email address available`,
-                                    `${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email addresses available`,
-                                    byoeAddressesAvailableCount
-                                )}
-                            </p>
-                        </div>
-                    )}
-                </div>
-            )}
-
-            <Table className="mt-4" hasActions responsive="cards">
-                <TableHeader>
-                    <tr>
-                        <th scope="col" className="w-custom" style={{ '--w-custom': '5%' }}>
-                            <IcArrowsCross alt={c('Header for addresses table').t`Drag to reorder`} />
-                        </th>
-                        <th scope="col">{c('Header for addresses table').t`Address`}</th>
-                        <th scope="col">{c('Header for addresses table').t`Status`}</th>
-                        <th scope="col">{c('Header for addresses table').t`Actions`}</th>
-                    </tr>
-                </TableHeader>
-                <TableBody colSpan={4} loading={loadingAddresses} ref={containerRef}>
-                    <SortableList onSortEnd={handleSortEnd} containerRef={containerRef}>
-                        {list.map((address, index) => {
-                            return (
-                                <SortableListItem
-                                    key={address.ID}
-                                    address={address}
-                                    user={user}
-                                    member={member}
-                                    index={index}
-                                    onClickEmail={handleCopyEmail}
-                                    onSetDefault={getSetDefaultAddress(index)}
-                                    savingIndex={savingIndex}
-                                    disableSort={disabledSortItems.has(address.ID)}
-                                    allowAddressDeletion={allowAddressDeletion}
-                                    isSignInRestricted={isSignInRestricted}
-                                    addressStatuses={getStatus(address, index)}
-                                    addressPermissions={getPermissions({
-                                        addressIndex: index,
-                                        member,
-                                        address,
-                                        addresses: list,
-                                        user,
-                                        organizationKey,
-                                    })}
-                                />
-                            );
-                        })}
-                    </SortableList>
-                </TableBody>
-            </Table>
+            {isCard ? <SettingsCardBody flush>{table}</SettingsCardBody> : table}
 
             {renderUpsellModal && (
                 <UpsellModal

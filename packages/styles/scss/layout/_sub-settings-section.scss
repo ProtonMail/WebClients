@@ -32,6 +32,11 @@ im.$media-expressions: $media-expressions;
 }
 
 .settings-cards {
+	// A table at the end of a card would add its default bottom margin to the card padding
+	.DashboardCard-content .simple-table-wrapper:last-child > .simple-table {
+		margin-block-end: 0;
+	}
+
 	&.bg-lowered {
 		.ui-standard.main-area-rounded--left {
 			background-color: var(--background-lowered);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -18,11 +18,9 @@ import { querySessions } from '@proton/shared/lib/api/auth';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
+import Loader from '../../../components/loader/Loader';
 import { useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
-import SettingsParagraph from '../../account/SettingsParagraph';
-import SettingsSection from '../../account/SettingsSection';
-import SettingsSectionTitle from '../../account/SettingsSectionTitle';
-import SettingsSectionWide from '../../account/SettingsSectionWide';
+import { SettingsCardSection } from '../../account/SettingsCardSection';
 import type { Session } from '../../sessions/interface';
 import PostQuantumOptInModal, { PostQuantumSetupStep } from './PostQuantumOptInModal';
 
@@ -60,19 +58,7 @@ const PostQuantumKeysOptInSection = () => {
     }, []);
 
     if (loading || loadingUserKeys || loadingAddressesKeys) {
-        // copied from PrivateMainAreaLoading
-        return (
-            <>
-                <SettingsSectionTitle className="settings-loading-section-title" />
-                <SettingsSection>
-                    <SettingsParagraph className="mb-4">
-                        <span className="block settings-loading-paragraph-line" />
-                        <span className="block settings-loading-paragraph-line" />
-                        <span className="block settings-loading-paragraph-line" />
-                    </SettingsParagraph>
-                </SettingsSection>
-            </>
-        );
+        return <Loader />;
     }
 
     // section title rendering is handled here temporarily, since it depends on whether the section is shown,
@@ -120,83 +106,66 @@ const PostQuantumKeysOptInSection = () => {
         </Link>
     );
 
-    const sectionTitleElement = (
-        <SettingsSectionTitle className="group-hover-opacity-container relative">
+    const renderSection = ({ description, action }: { description: ReactNode; action?: ReactNode }) => (
+        <div className="group-hover-opacity-container relative">
             {linkElement}
-            <span>{title}</span>
-        </SettingsSectionTitle>
+            <SettingsCardSection title={title} description={description} actions={action} />
+        </div>
     );
+
+    const isEnabled = !!userSettings.Flags.SupportPgpV6Keys;
 
     return (
         <>
             {optInModal}
-            {!!userSettings.Flags.SupportPgpV6Keys ? (
-                <>
-                    {sectionTitleElement}
-                    {loadingWhileOptin ? (
-                        <SettingsSection>
-                            <SettingsParagraph className="mb-4">
-                                <span className="block settings-loading-paragraph-line" />
-                                <span className="block settings-loading-paragraph-line" />
-                                <span className="block settings-loading-paragraph-line" />
-                            </SettingsParagraph>
-                        </SettingsSection>
-                    ) : (
-                        <SettingsSectionWide>
-                            <SettingsParagraph>
-                                {c('Info').t`Support for post-quantum keys is enabled for your account.`}
-                            </SettingsParagraph>
+            {isEnabled &&
+                renderSection({
+                    description: (
+                        <>
+                            {c('Info').t`Support for post-quantum keys is enabled for your account.`}
                             {resumeKeyGenerationStep && (
-                                <SettingsParagraph>
+                                <>
+                                    <br />
                                     {c('Info')
                                         .t`To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.`}
-                                </SettingsParagraph>
+                                </>
                             )}
-                            {resumeKeyGenerationStep && (
-                                <div className="mb-4">
-                                    <Button
-                                        shape="outline"
-                                        onClick={() =>
-                                            showOptInModal({
-                                                resumeKeyGenerationStep,
-                                                withLoadingWhileInProgress: withLoadingWhileOptin,
-                                            })
-                                        }
-                                        data-testid="postQuantumResumeKeyGeneration"
-                                    >
-                                        {c('Action').t`Generate missing keys`}
-                                    </Button>
-                                </div>
-                            )}
-                        </SettingsSectionWide>
-                    )}
-                </>
-            ) : (
-                !state.pqcIncompatibleState && (
-                    <>
-                        {sectionTitleElement}
-                        <SettingsSectionWide>
-                            <SettingsParagraph>
-                                {c('Info')
-                                    .t`Protect your account from quantum computing threats with quantum-resistant cryptographic keys.`}
-                            </SettingsParagraph>
-                            {
-                                <div className="mb-4">
-                                    <Button
-                                        shape="outline"
-                                        onClick={() =>
-                                            showOptInModal({ withLoadingWhileInProgress: withLoadingWhileOptin })
-                                        }
-                                        data-testid="postQuantumOptIn"
-                                    >
-                                        {c('Action').t`Enable post-quantum protection`}
-                                    </Button>
-                                </div>
-                            }
-                        </SettingsSectionWide>
-                    </>
-                )
-            )}
+                        </>
+                    ),
+                    action: loadingWhileOptin ? (
+                        <Loader />
+                    ) : (
+                        resumeKeyGenerationStep && (
+                            <Button
+                                shape="outline"
+                                onClick={() =>
+                                    showOptInModal({
+                                        resumeKeyGenerationStep,
+                                        withLoadingWhileInProgress: withLoadingWhileOptin,
+                                    })
+                                }
+                                data-testid="postQuantumResumeKeyGeneration"
+                            >
+                                {c('Action').t`Generate missing keys`}
+                            </Button>
+                        )
+                    ),
+                })}
+            {!isEnabled &&
+                !state.pqcIncompatibleState &&
+                renderSection({
+                    description: c('Info')
+                        .t`Protect your account from quantum computing threats with quantum-resistant cryptographic keys.`,
+                    action: (
+                        <Button
+                            shape="outline"
+                            onClick={() => showOptInModal({ withLoadingWhileInProgress: withLoadingWhileOptin })}
+                            data-testid="postQuantumOptIn"
+                        >
+                            {c('Action').t`Enable post-quantum protection`}
+                        </Button>
+                    ),
+                })}
         </>
     );
 };

@@ -16,6 +16,8 @@ import TableBody from '../../components/table/TableBody';
 import TableCell from '../../components/table/TableCell';
 import TableHeader from '../../components/table/TableHeader';
 import TableRow from '../../components/table/TableRow';
+import { getSettingsCardTableProps } from '../account/getSettingsCardTableProps';
+import { SettingsLayoutVariant } from '../layout/interface';
 import ActionsLabel from './ActionsLabel';
 
 const SortableListItem = ({ label, index }: { label: Label; index: number }) => {
@@ -46,18 +48,27 @@ const SortableListItem = ({ label, index }: { label: Label; index: number }) => 
 interface Props {
     items: Label[];
     onSortEnd?: (event: { oldIndex: number; newIndex: number }) => void;
+    /** The card variant styles the table to fill a flush settings card. */
+    variant?: SettingsLayoutVariant;
 }
 
-const LabelSortableList = ({ items, onSortEnd }: Props) => {
+const LabelSortableList = ({ items, onSortEnd, variant }: Props) => {
     const containerRef = useRef<HTMLTableSectionElement>(null);
+    const cardTable = variant === SettingsLayoutVariant.Card ? getSettingsCardTableProps() : undefined;
 
     return (
         <Scroll className={clsx('overflow-hidden', items.length > 17 && 'h-custom')} style={{ '--h-custom': '50rem' }}>
-            <Table responsive="cards" hasActions className="border-none border-collapse mt-4">
+            <Table
+                responsive="cards"
+                hasActions
+                {...cardTable}
+                className={clsx('border-none border-collapse', cardTable?.className ?? 'mt-4')}
+            >
                 <caption className="sr-only">{c('Settings/labels').t`Labels/Folders`}</caption>
                 <TableHeader>
                     <tr>
-                        <th scope="col" className="w-custom" style={{ '--w-custom': '5%' }}>
+                        {/* The card table pads cells more: keep room for the drag icon */}
+                        <th scope="col" className="w-custom" style={{ '--w-custom': cardTable ? '3rem' : '5%' }}>
                             <IcArrowsCross alt={c('Settings/labels - table').t`Drag to reorder`} />
                         </th>
                         <th scope="col">{c('Settings/labels - table').t`Labels`}</th>

@@ -42,6 +42,31 @@ describe('Pagination component', () => {
         expect(mockOnSelect).toHaveBeenCalledTimes(1);
     });
 
+    it('disables navigation and an already-open page picker while loading', () => {
+        const onNext = vi.fn();
+        const onPrevious = vi.fn();
+        const onSelect = vi.fn();
+        const props = { total, limit, page: 2, onNext, onPrevious, onSelect };
+        const { getByTitle, getByRole, rerender } = render(<Pagination {...props} />);
+
+        fireEvent.click(getByTitle('Open pagination'));
+        const pageOption = getByRole('button', { name: '3', exact: true });
+
+        rerender(<Pagination {...props} disabled />);
+
+        for (const control of [getByTitle('Previous'), getByTitle('Next'), getByTitle('Open pagination'), pageOption]) {
+            expect(control).toBeDisabled();
+            fireEvent.click(control);
+        }
+        expect(onNext).not.toHaveBeenCalled();
+        expect(onPrevious).not.toHaveBeenCalled();
+        expect(onSelect).not.toHaveBeenCalled();
+
+        rerender(<Pagination {...props} />);
+        fireEvent.click(getByTitle('Next'));
+        expect(onNext).toHaveBeenCalledTimes(1);
+    });
+
     it('should not render NEXT and PREVIOUS buttons', () => {
         const mockOnSelect = vi.fn();
         const { container } = render(

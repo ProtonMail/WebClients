@@ -1,11 +1,9 @@
 import { c } from 'ttag';
 
-import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 
 import useModalState from '../../components/modalTwo/useModalState';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 import MailShortcutsModal from '../mail/MailShortcutsModal';
 
@@ -14,30 +12,20 @@ export const KeyboardShortcut = () => {
 
     return (
         <>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="shortcutsToggle" className="flex-1">
-                        <span className="text-semibold">{c('Title').t`Keyboard shortcuts`}</span>
-                        <button
-                            type="button"
-                            className="ml-2 inline-flex relative interactive-pseudo-protrude interactive--no-background"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                setMailShortcutsModalOpen(true);
-                            }}
-                        >
-                            <IcInfoCircle
-                                className="color-primary"
-                                alt={c('Action').t`More info: Keyboard shortcuts`}
-                                size={4}
-                            />
-                        </button>
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <ShortcutsToggle className="mr-4" id="shortcutsToggle" />
-                </SettingsLayoutRight>
-            </SettingsLayout>
+            <SettingsToggleRow
+                id="shortcutsToggle"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>{c('Title').t`Keyboard shortcuts`}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            <InlineLinkButton onClick={() => setMailShortcutsModalOpen(true)}>
+                                {c('Action').t`View keyboard shortcuts`}
+                            </InlineLinkButton>
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={<ShortcutsToggle id="shortcutsToggle" />}
+            />
             <MailShortcutsModal {...mailShortcutsProps} />
         </>
     );

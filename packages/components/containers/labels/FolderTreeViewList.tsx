@@ -18,6 +18,7 @@ import TreeViewContainer from '../../components/treeview/TreeViewContainer';
 import TreeViewItem from '../../components/treeview/TreeViewItem';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import useEventManager from '../../hooks/useEventManager';
+import { SettingsLayoutVariant } from '../layout/interface';
 import ActionsLabel from './ActionsLabel';
 import FolderIcon from './FolderIcon';
 import ToggleNotify from './ToggleNotify';
@@ -49,9 +50,11 @@ const Header = ({ isSmallViewport }: HeaderProps) => {
 
 interface Props {
     items: Folder[];
+    /** The card variant styles the list to fill a flush settings card. */
+    variant?: SettingsLayoutVariant;
 }
 
-const FolderTreeViewList = ({ items = [] }: Props) => {
+const FolderTreeViewList = ({ items = [], variant }: Props) => {
     const api = useApi();
     const { viewportWidth } = useActiveBreakpoint();
     const { call } = useEventManager();
@@ -201,12 +204,15 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
         };
     }, []);
 
-    return (
+    const content = (
         <>
             <Header isSmallViewport={viewportWidth['<=small']} />
             {buildTreeView(rootFolders)}
         </>
     );
+
+    // In a flush settings card, the tree is styled like the card tables (see `.treeview--card`)
+    return variant === SettingsLayoutVariant.Card ? <div className="treeview--card">{content}</div> : content;
 };
 
 export default FolderTreeViewList;

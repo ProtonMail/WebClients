@@ -46,6 +46,7 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
                     {
                         id: CALENDAR_SETTINGS_SECTION_ID.MOBILE_APP,
                         text: c('Title').t`Download the mobile apps`,
+                        invisibleTitle: true,
                         keywords: [
                             c('account_search_index').t`App Store`,
                             c('account_search_index').t`Play Store`,
@@ -55,6 +56,7 @@ export const getCalendarAppRoutes = ({ app, user, organization, flags }: Organiz
                     {
                         id: CALENDAR_SETTINGS_SECTION_ID.DESKTOP_APP,
                         text: c('Title').t`Download the desktop app`,
+                        invisibleTitle: true,
                         keywords: [
                             c('Action').t`Download for Windows`,
                             c('Action').t`Download for macOS`,

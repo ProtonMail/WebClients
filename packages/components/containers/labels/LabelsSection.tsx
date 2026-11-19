@@ -24,7 +24,9 @@ import useModalState from '../../components/modalTwo/useModalState';
 import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
 import MailUpsellButton from '../../components/upsell/MailUpsellButton';
 import LabelsUpsellModal from '../../components/upsell/modals/LabelsUpsellModal';
+import { SettingsCardSection } from '../account/SettingsCardSection';
 import SettingsSection from '../account/SettingsSection';
+import { SettingsLayoutVariant } from '../layout/interface';
 import LabelSortableList from './LabelSortableList';
 import ConfirmSortModal from './modals/ConfirmSortModal';
 import EditLabelModal from './modals/EditLabelModal';
@@ -35,9 +37,11 @@ const toLabelIDs = (labels: Label[]) => labels.map(({ ID }) => ID).join(',');
 
 interface Props {
     showPromptOnAction?: boolean;
+    /** The card variant shows the buttons above a card holding the labels, and no card without labels. */
+    variant?: SettingsLayoutVariant;
 }
 
-function LabelsSection({ showPromptOnAction }: Props) {
+function LabelsSection({ showPromptOnAction, variant = SettingsLayoutVariant.Default }: Props) {
     const [user] = useUser();
     const [labels = [], loadingLabels] = useLabels();
     const dispatch = useDispatch();
@@ -107,48 +111,77 @@ function LabelsSection({ showPromptOnAction }: Props) {
         }
     };
 
+    const actions = (
+        <>
+            {canCreateLabel ? (
+                <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
+                    {c('Action').t`Add label`}
+                </Button>
+            ) : (
+                <MailUpsellButton onClick={handleClickUpsell} text={c('Action').t`Get more labels`} />
+            )}
+            {localLabels.length > 1 ? (
+                <Button
+                    shape="outline"
+                    title={c('Title').t`Sort labels alphabetically`}
+                    loading={loading}
+                    onClick={() => withLoading(handleSortLabel())}
+                >
+                    {c('Action').t`Sort`}
+                </Button>
+            ) : null}
+        </>
+    );
+
+    const modals = (
+        <>
+            {renderEditLabelModal && <EditLabelModal {...editLabelProps} type="label" />}
+
+            {renderUpsellModal && (
+                <LabelsUpsellModal
+                    modalProps={upsellModalProps}
+                    feature={MAIL_UPSELL_PATHS.UNLIMITED_LABELS}
+                    isSettings
+                />
+            )}
+
+            {confirmModal(({ onResolve, onReject, ...props }) => (
+                <ConfirmSortModal modalProps={props} onReject={onReject} onResolve={onResolve} type="label" />
+            ))}
+        </>
+    );
+
+    if (variant === SettingsLayoutVariant.Card) {
+        const hasLabels = !loadingLabels && !!localLabels.length;
+        return (
+            <>
+                <SettingsCardSection
+                    title={c('Title').t`Labels`}
+                    description={c('Info')
+                        .t`Labels are tags that make your messages easier to search and filter. A message can have several labels.`}
+                    actions={loadingLabels ? <Loader /> : actions}
+                    flush={hasLabels}
+                >
+                    {hasLabels ? (
+                        <LabelSortableList items={localLabels} onSortEnd={onSortEnd} variant={variant} />
+                    ) : null}
+                </SettingsCardSection>
+                {modals}
+            </>
+        );
+    }
+
     return (
         <SettingsSection>
             {loadingLabels ? (
                 <Loader />
             ) : (
                 <>
-                    <div className="flex gap-4 mb-7 labels-action">
-                        {canCreateLabel ? (
-                            <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
-                                {c('Action').t`Add label`}
-                            </Button>
-                        ) : (
-                            <MailUpsellButton onClick={handleClickUpsell} text={c('Action').t`Get more labels`} />
-                        )}
-                        {localLabels.length ? (
-                            <Button
-                                shape="outline"
-                                title={c('Title').t`Sort labels alphabetically`}
-                                loading={loading}
-                                onClick={() => withLoading(handleSortLabel())}
-                            >
-                                {c('Action').t`Sort`}
-                            </Button>
-                        ) : null}
-                    </div>
+                    <div className="flex gap-4 mb-7 labels-action">{actions}</div>
                     {localLabels.length ? <LabelSortableList items={localLabels} onSortEnd={onSortEnd} /> : null}
-
-                    {renderEditLabelModal && <EditLabelModal {...editLabelProps} type="label" />}
-
-                    {renderUpsellModal && (
-                        <LabelsUpsellModal
-                            modalProps={upsellModalProps}
-                            feature={MAIL_UPSELL_PATHS.UNLIMITED_LABELS}
-                            isSettings
-                        />
-                    )}
                 </>
             )}
-
-            {confirmModal(({ onResolve, onReject, ...props }) => (
-                <ConfirmSortModal modalProps={props} onReject={onReject} onResolve={onResolve} type="label" />
-            ))}
+            {modals}
         </SettingsSection>
     );
 }

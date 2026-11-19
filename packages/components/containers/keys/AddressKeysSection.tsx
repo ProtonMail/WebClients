@@ -20,8 +20,8 @@ import { FlagAction } from '@proton/shared/lib/keys/getNewAddressKeyFlags';
 import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSectionWide from '../account/SettingsSectionWide';
+import { SettingsCardSection } from '../account/SettingsCardSection';
+import { SettingsLayoutVariant } from '../layout/interface';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
@@ -189,57 +189,46 @@ const AddressKeysSection = () => {
     const canReactivate = isSelf;
     const canImport = canAdd;
 
-    const children = (() => {
+    const content = (() => {
         if (addressIndex === -1 || loadingAddresses) {
-            return (
-                <SettingsSectionWide>
-                    <Loader />
-                </SettingsSectionWide>
-            );
+            return { children: <Loader /> };
         }
 
         if (!Array.isArray(Addresses) || !Addresses.length) {
-            return (
-                <SettingsSectionWide>
-                    <SettingsParagraph>{c('Info').t`No addresses exist`}</SettingsParagraph>
-                </SettingsSectionWide>
-            );
+            return { children: c('Info').t`No addresses exist` };
         }
 
         if (loadingAddressesKeys && !Array.isArray(addressKeys)) {
-            return (
-                <SettingsSectionWide>
-                    <Loader />
-                </SettingsSectionWide>
-            );
+            return { children: <Loader /> };
         }
 
-        return (
-            <SettingsSectionWide>
-                <SettingsParagraph>
-                    {c('Info').t`Download your PGP keys for use with other PGP-compatible services.`}
-                </SettingsParagraph>
-                {canReactivate && !!keyReactivationRequests.length && (
-                    <div className="mb-4">
+        return {
+            flush: true,
+            actions: (
+                <>
+                    {canReactivate && !!keyReactivationRequests.length && (
                         <Button disabled={isLoadingKey} color="norm" onClick={() => setReactivateKeyModalOpen(true)}>
                             {c('Action').t`Reactivate keys`}
                         </Button>
-                    </div>
-                )}
-                <AddressKeysHeaderActions
-                    addresses={Addresses}
-                    addressIndex={addressIndex}
-                    onAddKey={canAdd ? handleAddKey : undefined}
-                    onImportKey={canImport ? handleImportKey : undefined}
-                    onChangeAddress={({ target: { value } }: ChangeEvent<HTMLSelectElement>) => {
-                        if (isLoadingKey) {
-                            return;
-                        }
+                    )}
+                    <AddressKeysHeaderActions
+                        addresses={Addresses}
+                        addressIndex={addressIndex}
+                        onAddKey={canAdd ? handleAddKey : undefined}
+                        onImportKey={canImport ? handleImportKey : undefined}
+                        onChangeAddress={({ target: { value } }: ChangeEvent<HTMLSelectElement>) => {
+                            if (isLoadingKey) {
+                                return;
+                            }
 
-                        setAddressIndex(+value);
-                    }}
-                />
+                            setAddressIndex(+value);
+                        }}
+                    />
+                </>
+            ),
+            children: (
                 <KeysTable
+                    variant={SettingsLayoutVariant.Card}
                     keys={addressKeysDisplay}
                     onExportPrivateKey={handleExportPrivate}
                     onExportPublicKey={handleExportPublic}
@@ -250,8 +239,8 @@ const AddressKeysSection = () => {
                     onSetObsolete={handleSetObsolete}
                     onSetNotObsolete={handleSetNotObsolete}
                 />
-            </SettingsSectionWide>
-        );
+            ),
+        };
     })();
 
     const tmpDecryptedAddressKey = getKeyByID(addressKeys || [], tmpId);
@@ -330,7 +319,14 @@ const AddressKeysSection = () => {
                     }}
                 />
             )}
-            {children}
+            <SettingsCardSection
+                title={c('Title').t`Email encryption keys`}
+                description={c('Info').t`Download your PGP keys for use with other PGP-compatible services.`}
+                actions={content.actions}
+                flush={content.flush}
+            >
+                {content.children}
+            </SettingsCardSection>
         </>
     );
 };

@@ -33,9 +33,9 @@ const AddressKeysHeaderActions = ({ addresses, addressIndex, onAddKey, onImportK
     }
 
     return (
-        <div className="mb-4 flex items-start">
+        <div className="flex flex-wrap items-start gap-2 md:gap-4">
             {addresses.length > 1 && (
-                <div className="mr-4 mb-2">
+                <div>
                     <Select
                         value={addressIndex}
                         options={addresses.map(({ Email }, i) => ({ text: Email, value: i }))}
@@ -44,7 +44,7 @@ const AddressKeysHeaderActions = ({ addresses, addressIndex, onAddKey, onImportK
                 </div>
             )}
             {createActions.length ? (
-                <span className="inline-flex mr-4 mb-2">
+                <span className="inline-flex">
                     <DropdownActions list={createActions} />
                 </span>
             ) : null}

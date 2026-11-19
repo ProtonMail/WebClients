@@ -23,11 +23,9 @@ import {
 } from '@proton/shared/lib/mail/fontFace';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
-import Label from '../../components/label/Label';
-import Info from '../../components/link/Info';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsCardRows } from '../account/SettingsCardRows';
+import { SettingsSelectRow } from '../account/SettingsSelectRow';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import DelaySendSecondsSelect from '../messages/DelaySendSecondsSelect';
 import RemoveImageMetadataToggle from '../messages/RemoveImageMetadataToggle';
 import DraftTypeSelect from './DraftTypeSelect';
@@ -85,14 +83,11 @@ const MessagesOtherSection = () => {
     };
 
     return (
-        <>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <Label htmlFor="draftType" className="text-semibold">
-                        {c('Label').t`Composer mode`}
-                    </Label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
+        <SettingsCardRows>
+            <SettingsSelectRow
+                id="draftType"
+                label={<SettingsSelectRow.Label>{c('Label').t`Composer mode`}</SettingsSelectRow.Label>}
+                select={
                     <DraftTypeSelect
                         id="draftType"
                         draftType={DraftMIMEType}
@@ -100,16 +95,12 @@ const MessagesOtherSection = () => {
                         loading={loadingDraftType}
                         data-testid="appearance:draft-type-select"
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="textDirection" className="text-semibold">
-                        {c('Label').t`Composer text direction`}
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
+                }
+            />
+            <SettingsSelectRow
+                id="textDirection"
+                label={<SettingsSelectRow.Label>{c('Label').t`Composer text direction`}</SettingsSelectRow.Label>}
+                select={
                     <TextDirectionSelect
                         id="textDirection"
                         rightToLeft={RightToLeft}
@@ -117,69 +108,71 @@ const MessagesOtherSection = () => {
                         loading={loadingRightToLeft}
                         data-testid="appearance:text-direction-select"
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="fontFace" id="label-composer-default-font-size" className="text-semibold">
+                }
+            />
+            <SettingsSelectRow
+                id="fontFace"
+                label={
+                    <SettingsSelectRow.Label id="label-composer-default-font-size">
                         {c('Label').t`Composer default font/size`}
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight className="settings-layout-right-fixed-size flex flex-row">
-                    <div className="flex-1 pr-2">
-                        <FontFaceSelect
-                            id="fontFace"
-                            aria-labelledby="label-composer-default-font-size"
-                            fontFace={fontFaceValue}
-                            onChange={(value) => withLoadingFontFace(handleChangeFontFace(value))}
-                            loading={loadingFontFace}
-                        />
+                    </SettingsSelectRow.Label>
+                }
+                select={
+                    <div className="flex flex-nowrap gap-2">
+                        <div className="flex-1 min-w-0">
+                            <FontFaceSelect
+                                id="fontFace"
+                                aria-labelledby="label-composer-default-font-size"
+                                fontFace={fontFaceValue}
+                                onChange={(value) => withLoadingFontFace(handleChangeFontFace(value))}
+                                loading={loadingFontFace}
+                            />
+                        </div>
+                        <div className="shrink-0">
+                            <FontSizeSelect
+                                id="fontSize"
+                                aria-labelledby="label-composer-default-font-size"
+                                fontSize={FontSize || DEFAULT_FONT_SIZE}
+                                onChange={(value) => withLoadingFontSize(handleChangeFontSize(value))}
+                                loading={loadingFontSize}
+                            />
+                        </div>
                     </div>
-                    <div className="shrink-0">
-                        <FontSizeSelect
-                            id="fontSize"
-                            aria-labelledby="label-composer-default-font-size"
-                            fontSize={FontSize || DEFAULT_FONT_SIZE}
-                            onChange={(value) => withLoadingFontSize(handleChangeFontSize(value))}
-                            loading={loadingFontSize}
-                        />
-                    </div>
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="delaySendSecondsSelect" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Undo send`}</span>
-                        <Info
-                            title={c('Tooltip')
+                }
+            />
+            <SettingsSelectRow
+                id="delaySendSecondsSelect"
+                label={
+                    <>
+                        <SettingsSelectRow.Label>{c('Label').t`Undo send`}</SettingsSelectRow.Label>
+                        <SettingsSelectRow.Description>
+                            {c('Tooltip')
                                 .t`This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
-                    <DelaySendSecondsSelect id="delaySendSecondsSelect" delaySendSeconds={DelaySendSeconds} />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="removeImageMetadata" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Remove image metadata`}</span>
-                        <Info title={c('Tooltip').t`Remove metadata from images to protect your privacy.`} />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
+                        </SettingsSelectRow.Description>
+                    </>
+                }
+                select={<DelaySendSecondsSelect id="delaySendSecondsSelect" delaySendSeconds={DelaySendSeconds} />}
+            />
+            <SettingsToggleRow
+                id="removeImageMetadata"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>{c('Label').t`Remove image metadata`}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            {c('Tooltip').t`Remove metadata from images to protect your privacy.`}
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={
                     <RemoveImageMetadataToggle
                         id="removeImageMetadata"
                         removeImageMetadata={RemoveImageMetadata}
                         loading={loadingRemoveImageMetadata}
                         onChange={(newValue) => withLoadingRemoveImageMetadata(handleRemoveImageMetadata(newValue))}
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-        </>
+                }
+            />
+        </SettingsCardRows>
     );
 };
 

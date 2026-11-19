@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 
 import type { SpamItem, SpamListAction, SpamListActionName, SpamLocation } from './Spams.interfaces';
@@ -50,10 +52,10 @@ export const getNotificationByAction = (action: SpamListActionName, apiCallstate
 export type HandleSpamListActionClick = (type: SpamListActionName, item: SpamItem) => void;
 export const getActionsByLocation = (item: SpamItem, onClick: HandleSpamListActionClick): SpamListAction[] => {
     const actions: Record<SpamListActionName, SpamListAction> = {
-        block: { name: c('Action').t`Block`, onClick: () => onClick('block', item) },
-        delete: { name: c('Action').t`Delete`, onClick: () => onClick('delete', item) },
-        spam: { name: c('Action').t`Spam`, onClick: () => onClick('spam', item) },
-        unspam: { name: c('Action').t`Allow`, onClick: () => onClick('unspam', item) },
+        block: { name: c('Action').t`Block`, icon: IcArrowRight, onClick: () => onClick('block', item) },
+        delete: { name: c('Action').t`Delete`, icon: IcTrash, danger: true, onClick: () => onClick('delete', item) },
+        spam: { name: c('Action').t`Spam`, icon: IcArrowRight, onClick: () => onClick('spam', item) },
+        unspam: { name: c('Action').t`Allow`, icon: IcArrowRight, onClick: () => onClick('unspam', item) },
     };
 
     switch (item.location) {

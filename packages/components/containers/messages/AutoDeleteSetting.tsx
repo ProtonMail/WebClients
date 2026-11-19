@@ -2,8 +2,6 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
-import { FeatureCode } from '@proton/features/interface';
-import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -11,13 +9,10 @@ import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
-import Info from '../../components/link/Info';
 import useModalState from '../../components/modalTwo/useModalState';
 import UpsellIcon from '../../components/upsell/UpsellIcon';
 import AutoDeleteUpsellModal from '../../components/upsell/modals/AutoDeleteUpsellModal';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import AutoDeleteSpamAndTrashDaysToggle from './AutoDeleteSpamAndTrashDaysToggle';
 
 interface Props {
@@ -27,7 +22,6 @@ interface Props {
 
 const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED, onSaved }: Props) => {
     const api = useApi();
-    const { feature: autoDeleteFeature } = useFeature(FeatureCode.AutoDelete);
     const [{ hasPaidMail }, userLoading] = useUser();
     const dispatch = useDispatch();
 
@@ -42,26 +36,25 @@ const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISA
 
     const disabled = userLoading || !hasPaidMail;
 
-    return autoDeleteFeature?.Value === true ? (
+    return (
         <>
             {renderUpsellModal && <AutoDeleteUpsellModal modalProps={upsellModalProps} />}
 
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="autoDelete" className="text-semibold flex flex-nowrap items-start">
-                        <span className="mr-2 flex-1">
-                            <span className="mr-2">{c('Label').t`Auto-delete trash and spam`}</span>
-                            <Info
-                                className="shrink-0"
-                                title={c('Tooltip')
-                                    .t`Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.`}
-                            />
-                        </span>
-                        {!hasPaidMail && <UpsellIcon className="mt-1" />}
-                    </label>
-                </SettingsLayoutLeft>
-
-                <SettingsLayoutRight isToggleContainer>
+            <SettingsToggleRow
+                id="autoDelete"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>
+                            {c('Label').t`Auto-delete trash and spam`}
+                            {!hasPaidMail && <UpsellIcon />}
+                        </SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            {c('Tooltip')
+                                .t`Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.`}
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={
                     <AutoDeleteSpamAndTrashDaysToggle
                         id="autoDelete"
                         loading={loadingAutoDelete}
@@ -76,10 +69,10 @@ const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISA
                         }}
                         dataTestID="message-setting:auto-delete-toggle"
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
+                }
+            />
         </>
-    ) : null;
+    );
 };
 
 export default AutoDeleteSetting;

@@ -11,6 +11,8 @@ import Table from '../../components/table/Table';
 import TableBody from '../../components/table/TableBody';
 import TableCell from '../../components/table/TableCell';
 import TableRow from '../../components/table/TableRow';
+import { getSettingsCardTableProps } from '../account/getSettingsCardTableProps';
+import { SettingsLayoutVariant } from '../layout/interface';
 import KeyVersionBadge from './KeyVersionBadge';
 import KeysActions from './KeysActions';
 import KeysStatus, { getKeyFunction } from './KeysStatus';
@@ -18,6 +20,8 @@ import type { KeyActions, KeyDisplay } from './shared/interface';
 
 interface Props extends Partial<KeyActions> {
     keys: KeyDisplay[];
+    /** The card variant styles the table to fill a flush settings card. */
+    variant?: SettingsLayoutVariant;
 }
 
 const KeysTable = ({
@@ -30,7 +34,9 @@ const KeysTable = ({
     onSetNotCompromised,
     onSetObsolete,
     onSetNotObsolete,
+    variant,
 }: Props) => {
+    const cardTable = variant === SettingsLayoutVariant.Card ? getSettingsCardTableProps() : undefined;
     const { createNotification } = useNotifications();
     const headerCells = [
         { node: c('Title header for keys table').t`Creation date`, className: 'w-1/6' },
@@ -38,7 +44,12 @@ const KeysTable = ({
         { node: c('Title header for keys table').t`Fingerprint`, className: 'w-1/5 text-ellipsis' },
         { node: c('Title header for keys table').t`Function`, className: 'w-1/4' },
         { node: c('Title header for keys table').t`Status`, className: 'w-custom', style: { '--w-custom': '8.5em' } },
-        { node: c('Title header for keys table').t`Actions`, className: 'w-custom', style: { '--w-custom': '13em' } },
+        {
+            node: c('Title header for keys table').t`Actions`,
+            className: 'w-custom',
+            // Room for the cell padding of the card table, so the export button stays on one line
+            style: { '--w-custom': cardTable ? 'calc(13em + 2 * var(--space-4))' : '13em' },
+        },
     ].map(({ node, className = '', style }) => {
         return (
             <TableCell key={node} className={className} style={style} type="header">
@@ -52,7 +63,7 @@ const KeysTable = ({
     const sortedKeys = keys[0]?.status.isPrimaryFallback ? [keys[1], keys[0], ...keys.slice(2)] : keys;
 
     return (
-        <Table hasActions responsive="cards" responsiveBreakpoint="wide">
+        <Table hasActions responsive="cards" responsiveBreakpoint="wide" {...cardTable}>
             <thead>
                 <tr>{headerCells}</tr>
             </thead>

@@ -1,15 +1,16 @@
-import type { ReactNode } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
 import { useRef } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import AliasPromotionSection from '@proton/components/containers/addresses/AliasPromotionSection';
 import IdentitySection from '@proton/components/containers/addresses/IdentitySection';
 import { AutoReplySection } from '@proton/components/containers/autoReply/AutoReplySection';
 import { ProtonMailBridgeSection } from '@proton/components/containers/bridge/ProtonMailBridgeSection';
 import { InboxDesktopSettingsSection } from '@proton/components/containers/desktop/InboxDesktopSettingsSection';
 import CatchAllSection from '@proton/components/containers/domains/CatchAllSection';
-import DomainsSection from '@proton/components/containers/domains/DomainsSection';
+import DomainsSection, { useShowDomainsUpsell } from '@proton/components/containers/domains/DomainsSection';
 import { SimpleEditorProvider } from '@proton/components/containers/editor/SimpleEditorContext';
 import EmailPrivacySection from '@proton/components/containers/emailPrivacy/EmailPrivacySection';
 import FiltersSection from '@proton/components/containers/filters/FiltersSection';
@@ -25,6 +26,11 @@ import LabelsSection from '@proton/components/containers/labels/LabelsSection';
 import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import {
+    type SettingsAreaConfig,
+    SettingsCardMaxWidth,
+    SettingsLayoutVariant,
+} from '@proton/components/containers/layout/interface';
 import LayoutsSection from '@proton/components/containers/layouts/LayoutsSection';
 import MessagesOtherSection from '@proton/components/containers/layouts/MessagesOtherSection';
 import MessagesSection from '@proton/components/containers/messages/MessagesSection';
@@ -32,7 +38,9 @@ import MobileAppSettingsSection from '@proton/components/containers/mobile/Mobil
 import { OtherMailPreferencesSection } from '@proton/components/containers/otherMailPreferences/OtherMailPreferencesSection';
 import { AddressVerificationSection } from '@proton/components/containers/security/AddressVerificationSection';
 import { ExternalPGPSettingsSection } from '@proton/components/containers/security/ExternalPGPSettingsSection';
-import SMTPSubmissionSection from '@proton/components/containers/smtp/SMTPSubmissionSection';
+import SMTPSubmissionSection, {
+    useShowSmtpSubmissionUpsell,
+} from '@proton/components/containers/smtp/SMTPSubmissionSection';
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { useLoadAllowedTimeZones } from '@proton/components/hooks/useLoadAllowedTimeZones';
 import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
@@ -44,6 +52,46 @@ import MessagesGeneralSection from './MessagesGeneralSection';
 import type { getMailAppRoutes } from './routes';
 import { getHasPmMeAddress } from './routes';
 import { CategoriesViewSections } from './sections/CategoriesViewSections';
+
+// The next two pages use the narrow width while they only show upgrade banners, and the
+// wider one once they show content. While loading, they keep the wider width.
+
+const DomainNamesSettings = ({
+    config,
+    onceRef,
+}: {
+    config: SettingsAreaConfig;
+    onceRef: MutableRefObject<boolean>;
+}) => {
+    const showUpsell = useShowDomainsUpsell();
+    return (
+        <PrivateMainSettingsArea
+            config={config}
+            variant={SettingsLayoutVariant.Card}
+            maxWidth={showUpsell ? SettingsCardMaxWidth.Narrow : SettingsCardMaxWidth.Medium}
+        >
+            <DomainsSection onceRef={onceRef} variant={SettingsLayoutVariant.Card} />
+            <CatchAllSection variant={SettingsLayoutVariant.Card} />
+        </PrivateMainSettingsArea>
+    );
+};
+
+const ImapSmtpSettings = ({ config }: { config: SettingsAreaConfig }) => {
+    const [user] = useUser();
+    const showSmtpSubmissionUpsell = useShowSmtpSubmissionUpsell();
+    // Bridge shows its upgrade banner without paid Mail
+    const showUpsellOnly = !user.hasPaidMail && showSmtpSubmissionUpsell === true;
+    return (
+        <PrivateMainSettingsArea
+            config={config}
+            variant={SettingsLayoutVariant.Card}
+            maxWidth={showUpsellOnly ? SettingsCardMaxWidth.Narrow : SettingsCardMaxWidth.Medium}
+        >
+            <ProtonMailBridgeSection />
+            <SMTPSubmissionSection />
+        </PrivateMainSettingsArea>
+    );
+};
 
 const MailSettingsRouter = ({
     mailAppRoutes,
@@ -72,7 +120,11 @@ const MailSettingsRouter = ({
                     {loadingAddresses && !Array.isArray(addresses) ? (
                         <PrivateMainAreaLoading />
                     ) : (
-                        <PrivateMainSettingsArea config={general}>
+                        <PrivateMainSettingsArea
+                            config={general}
+                            variant={SettingsLayoutVariant.Card}
+                            maxWidth={SettingsCardMaxWidth.Narrow}
+                        >
                             <MessagesGeneralSection />
                             <CategoriesViewSections />
                             <LayoutsSection />
@@ -83,13 +135,21 @@ const MailSettingsRouter = ({
                     )}
                 </Route>
                 <Route path={getSectionPath(path, desktop)}>
-                    <PrivateMainSettingsArea config={desktop}>
+                    <PrivateMainSettingsArea
+                        config={desktop}
+                        variant={SettingsLayoutVariant.Card}
+                        maxWidth={SettingsCardMaxWidth.Medium}
+                    >
                         <MobileAppSettingsSection />
                         {isElectronEnabled && <InboxDesktopSettingsSection />}
                     </PrivateMainSettingsArea>
                 </Route>
                 <Route path={getSectionPath(path, identity)}>
-                    <PrivateMainSettingsArea config={identity}>
+                    <PrivateMainSettingsArea
+                        config={identity}
+                        variant={SettingsLayoutVariant.Card}
+                        maxWidth={SettingsCardMaxWidth.Narrow}
+                    >
                         <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
                         <IdentitySection />
                         <AliasPromotionSection />
@@ -97,33 +157,46 @@ const MailSettingsRouter = ({
                     </PrivateMainSettingsArea>
                 </Route>
                 <Route path={getSectionPath(path, folder)}>
-                    <PrivateMainSettingsArea config={folder}>
-                        <FoldersSection />
-                        <LabelsSection />
+                    <PrivateMainSettingsArea
+                        config={folder}
+                        variant={SettingsLayoutVariant.Card}
+                        maxWidth={SettingsCardMaxWidth.Narrow}
+                    >
+                        <FoldersSection variant={SettingsLayoutVariant.Card} />
+                        <LabelsSection variant={SettingsLayoutVariant.Card} />
                     </PrivateMainSettingsArea>
                 </Route>
                 <Route path={getSectionPath(path, filter)}>
-                    <PrivateMainSettingsArea config={filter}>
+                    <PrivateMainSettingsArea
+                        config={filter}
+                        variant={SettingsLayoutVariant.Card}
+                        maxWidth={SettingsCardMaxWidth.Narrow}
+                    >
                         <FiltersSection />
-                        <SpamFiltersSection />
+                        <SpamFiltersSection variant={SettingsLayoutVariant.Card} />
                     </PrivateMainSettingsArea>
                 </Route>
                 <Route path={getSectionPath(path, autoReply)}>
-                    <PrivateMainSettingsArea config={autoReply}>
+                    <PrivateMainSettingsArea
+                        config={autoReply}
+                        variant={SettingsLayoutVariant.Card}
+                        maxWidth={SettingsCardMaxWidth.Narrow}
+                    >
                         <ForwardSection />
                         <AutoReplySection />
                     </PrivateMainSettingsArea>
                 </Route>
                 {getIsSectionAvailable(domainNames) && (
                     <Route path={getSectionPath(path, domainNames)}>
-                        <PrivateMainSettingsArea config={domainNames}>
-                            <DomainsSection onceRef={onceRef} />
-                            <CatchAllSection />
-                        </PrivateMainSettingsArea>
+                        <DomainNamesSettings config={domainNames} onceRef={onceRef} />
                     </Route>
                 )}
                 <Route path={getSectionPath(path, keys)}>
-                    <PrivateMainSettingsArea config={keys}>
+                    <PrivateMainSettingsArea
+                        config={keys}
+                        variant={SettingsLayoutVariant.Card}
+                        maxWidth={SettingsCardMaxWidth.Medium}
+                    >
                         <AddressVerificationSection />
                         <ExternalPGPSettingsSection />
                         <PostQuantumKeysOptInSection />
@@ -132,10 +205,7 @@ const MailSettingsRouter = ({
                     </PrivateMainSettingsArea>
                 </Route>
                 <Route path={getSectionPath(path, imap)}>
-                    <PrivateMainSettingsArea config={imap}>
-                        <ProtonMailBridgeSection />
-                        <SMTPSubmissionSection />
-                    </PrivateMainSettingsArea>
+                    <ImapSmtpSettings config={imap} />
                 </Route>
                 <Route path={`${path}/invitation/view`}>
                     <Redirect to={`${path}/dashboard#your-plan`} />
@@ -145,14 +215,22 @@ const MailSettingsRouter = ({
                 </Route>
                 {getIsSectionAvailable(backup) && (
                     <Route path={getSectionPath(path, backup)}>
-                        <PrivateMainSettingsArea config={backup}>
+                        <PrivateMainSettingsArea
+                            config={backup}
+                            variant={SettingsLayoutVariant.Card}
+                            maxWidth={SettingsCardMaxWidth.Medium}
+                        >
                             <ImportExportAppSection key="import-export-app" />
                         </PrivateMainSettingsArea>
                     </Route>
                 )}
                 {getIsSectionAvailable(privacy) && (
                     <Route path={getSectionPath(path, privacy)}>
-                        <PrivateMainSettingsArea config={privacy}>
+                        <PrivateMainSettingsArea
+                            config={privacy}
+                            variant={SettingsLayoutVariant.Card}
+                            maxWidth={SettingsCardMaxWidth.Narrow}
+                        >
                             <EmailPrivacySection />
                         </PrivateMainSettingsArea>
                     </Route>

@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import SettingsParagraph from '../../account/SettingsParagraph';
 import DayOfMonthField from './fields/DayOfMonthField';
 import TimeField from './fields/TimeField';
 import TimeZoneField from './fields/TimeZoneField';
@@ -13,10 +12,7 @@ interface Props {
 
 const AutoReplyFormMonthly = ({ model: { start, end, timezone }, updateModel }: Props) => {
     return (
-        <>
-            <SettingsParagraph>
-                {c('Info').t`Auto-reply is active each month between the selected start and end time.`}
-            </SettingsParagraph>
+        <div className="grid md:grid-cols-2 gap-4">
             <DayOfMonthField
                 id="startDayOfMonth"
                 label={c('Label').t`Start day of month`}
@@ -41,8 +37,10 @@ const AutoReplyFormMonthly = ({ model: { start, end, timezone }, updateModel }: 
                 label={c('Label').t`End time`}
                 id="endTime"
             />
-            <TimeZoneField value={timezone} onChange={updateModel('timezone')} />
-        </>
+            <div className="md:grid-col-span-2">
+                <TimeZoneField value={timezone} onChange={updateModel('timezone')} />
+            </div>
+        </div>
     );
 };
 

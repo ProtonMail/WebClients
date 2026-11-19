@@ -23,27 +23,21 @@ function ActionsFilterToolbar() {
 
     return (
         <>
-            <div className="mb-4">
-                {canCreateFilters ? (
-                    <>
-                        <Button color="norm" onClick={() => setFilterModalOpen(true)} className="mb-2 md:mb-0 mr-4">
-                            {c('Action').t`Add filter`}
-                        </Button>
-                        <Button
-                            shape="outline"
-                            onClick={() => setAdvancedFilterModalOpen(true)}
-                            className="mb-2 md:mb-0"
-                        >
-                            {c('Action').t`Add sieve filter`}
-                        </Button>
-                    </>
-                ) : (
-                    <MailUpsellButton
-                        onClick={() => handleUpsellModalDisplay(true)}
-                        text={c('Action').t`Get more filters`}
-                    />
-                )}
-            </div>
+            {canCreateFilters ? (
+                <>
+                    <Button color="norm" onClick={() => setFilterModalOpen(true)}>
+                        {c('Action').t`Add filter`}
+                    </Button>
+                    <Button shape="outline" onClick={() => setAdvancedFilterModalOpen(true)}>
+                        {c('Action').t`Add sieve filter`}
+                    </Button>
+                </>
+            ) : (
+                <MailUpsellButton
+                    onClick={() => handleUpsellModalDisplay(true)}
+                    text={c('Action').t`Get more filters`}
+                />
+            )}
             {renderFilterModal && <FilterModal {...filterModalProps} />}
             {renderAdvancedFilterModal && <AdvancedFilterModal {...advancedFilterModalProps} />}
 

@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
+import clsx from '@proton/utils/clsx';
 
 import Dropdown from '../../../components/dropdown/Dropdown';
 import DropdownButton from '../../../components/dropdown/DropdownButton';
@@ -41,9 +42,18 @@ const SpamsButtonDropdown = ({ title, actions, buttonProps }: Props) => {
                 onClose={() => setIsOpen(!isOpen)}
             >
                 <DropdownMenu>
-                    {actions.map((action, index) => (
-                        <DropdownMenuButton key={index} className="text-left" onClick={action.onClick}>
-                            {action.name}
+                    {actions.map(({ name, onClick, icon: Icon, danger }) => (
+                        <DropdownMenuButton
+                            key={name}
+                            className={clsx(
+                                'text-left',
+                                Icon && 'flex flex-nowrap items-center gap-2',
+                                danger && 'color-danger'
+                            )}
+                            onClick={onClick}
+                        >
+                            {Icon && <Icon className="shrink-0" />}
+                            {name}
                         </DropdownMenuButton>
                     ))}
                 </DropdownMenu>

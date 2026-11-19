@@ -61,9 +61,9 @@ const PMSignature = ({ id, enabled, locked }: Props) => {
     };
 
     return (
-        <div className="flex flex-1 align-items-center">
+        <div className="flex flex-nowrap items-center gap-4">
             <div
-                className="border-container flex-1 pr-4 py-2 mb-4"
+                className="flex-1"
                 dangerouslySetInnerHTML={{
                     __html: getProtonMailSignature(
                         !!mailSettings.PMSignatureReferralLink,
@@ -72,7 +72,7 @@ const PMSignature = ({ id, enabled, locked }: Props) => {
                     ),
                 }}
             />
-            <div className="ml-0 md:ml-2 pt-2" data-testid="settings:identity-section:signature-toggle">
+            <div className="shrink-0 flex" data-testid="settings:identity-section:signature-toggle">
                 <Toggle
                     loading={loading}
                     title={enabled ? undefined : c('Tooltip: PM signature locked').t`This signature cannot be modified`}

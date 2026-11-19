@@ -3,9 +3,7 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import useLoading from '@proton/hooks/useLoading';
 import useToggle from '@proton/hooks/useToggle';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -33,20 +31,17 @@ export const CategoriesUnreadCountToggle = () => {
     };
 
     return (
-        <SettingsLayout className="w-full">
-            <SettingsLayoutLeft>
-                <label htmlFor="toggleCategoryViewCounters" className="text-semibold">
-                    <span className="mr-2">{c('Label').t`Show unread count`}</span>
-                </label>
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight isToggleContainer>
+        <SettingsToggleRow
+            id="toggleCategoryViewCounters"
+            label={<SettingsToggleRow.Label>{c('Label').t`Show unread count`}</SettingsToggleRow.Label>}
+            toggle={
                 <Toggle
                     id="toggleCategoryViewCounters"
                     checked={state}
                     onChange={({ target }) => withLoading(handleChange(target.checked))}
                     loading={loading || mailSettingsLoading}
                 />
-            </SettingsLayoutRight>
-        </SettingsLayout>
+            }
+        />
     );
 };

@@ -6,6 +6,8 @@ import { c } from 'ttag';
 import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
+import { Href } from '@proton/atoms/Href/Href';
 import { Input } from '@proton/atoms/Input/Input';
 import { useHotkeys } from '@proton/hooks/useHotkeys';
 import useLoading from '@proton/hooks/useLoading';
@@ -15,12 +17,9 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { formatSignature } from '@proton/shared/lib/mail/signature';
 
-import Info from '../../components/link/Info';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsSelectRow } from '../account/SettingsSelectRow';
 import type { SimpleEditorActions } from '../editor/SimpleEditorContext';
 import { useSimpleEditor } from '../editor/SimpleEditorContext';
 
@@ -92,13 +91,10 @@ const EditAddressesSection = ({ address }: Props) => {
                 await withLoading(handleSubmit());
             }}
         >
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="displayName" className="text-semibold">
-                        {c('Label').t`Display name`}
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
+            <SettingsSelectRow
+                id="displayName"
+                label={<SettingsSelectRow.Label>{c('Label').t`Display name`}</SettingsSelectRow.Label>}
+                select={
                     <Input
                         id="displayName"
                         value={displayName}
@@ -106,49 +102,50 @@ const EditAddressesSection = ({ address }: Props) => {
                         onChange={handleDisplayName}
                         data-testid="settings:identity-section:display-name"
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
+                }
+            />
 
-            <SettingsLayout stackEarlier className="max-w-custom" style={{ '--max-w-custom': '49em' }}>
-                <SettingsLayoutLeft>
+            <DashboardCardDivider />
+
+            <div className="flex flex-column flex-nowrap gap-3">
+                <div className="flex flex-column gap-1">
                     {/* eslint-disable-next-line */}
                     <label
                         htmlFor="rooster-editor"
                         className="text-semibold"
                         onClick={() => editorRef.current?.focus()}
                     >
-                        <span className="mr-2">{c('Label').t`Signature`}</span>
-                        <Info
-                            url={getKnowledgeBaseUrl('/display-name-email-signature')}
-                            title={c('Tooltip').t`Click here to learn how to create a customized signature with HTML.`}
-                        />
+                        {c('Label').t`Signature`}
                     </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
-                    <div ref={editorWrapperRef} tabIndex={-1}>
-                        <SimpleEditor
-                            onReady={handleReady}
-                            onChange={() => {
-                                setSignatureUpdated(true);
-                            }}
-                            isSmallViewportForToolbar={viewportWidth['<=medium']}
-                            mailSettings={mailSettings}
-                            title={c('Label').t`Signature`}
-                        />
-                    </div>
-
+                    <p className="m-0 text-sm color-weak">
+                        <Href href={getKnowledgeBaseUrl('/display-name-email-signature')}>
+                            {c('Tooltip').t`Click here to learn how to create a customized signature with HTML.`}
+                        </Href>
+                    </p>
+                </div>
+                <div ref={editorWrapperRef} tabIndex={-1}>
+                    <SimpleEditor
+                        onReady={handleReady}
+                        onChange={() => {
+                            setSignatureUpdated(true);
+                        }}
+                        isSmallViewportForToolbar={viewportWidth['<=medium']}
+                        mailSettings={mailSettings}
+                        title={c('Label').t`Signature`}
+                    />
+                </div>
+                <div>
                     <Button
                         color="norm"
                         type="submit"
                         disabled={loading}
                         loading={loading}
-                        className="mt-4"
                         data-testid="settings:identity-section:update"
                     >
                         {c('Action').t`Update`}
                     </Button>
-                </SettingsLayoutRight>
-            </SettingsLayout>
+                </div>
+            </div>
         </form>
     );
 };

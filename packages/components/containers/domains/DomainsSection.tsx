@@ -10,6 +10,7 @@ import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCa
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import useLoading from '@proton/hooks/useLoading';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -37,9 +38,12 @@ import Table from '../../components/table/Table';
 import TableBody from '../../components/table/TableBody';
 import TableHeader from '../../components/table/TableHeader';
 import TableRow from '../../components/table/TableRow';
+import { SettingsCardSection } from '../account/SettingsCardSection';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSectionWide from '../account/SettingsSectionWide';
 import UpgradeBanner from '../account/UpgradeBanner';
+import { getSettingsCardTableProps } from '../account/getSettingsCardTableProps';
+import { SettingsLayoutVariant } from '../layout/interface';
 import useOrganizationModals from '../organization/useOrganizationModals';
 import CatchAllModal from './CatchAllModal';
 import DeleteDomainModal from './DeleteDomainModal';
@@ -51,16 +55,30 @@ import DomainStatus from './DomainStatus';
 const GuardedAddDomainButton = withPermissionGuard('account.domain.create')(Button);
 const GuardedDarkWebMonitoringToggle = withPermissionGuard('account.domain.update')(DomainDarkWebMonitoringToggle);
 
+const getDomainsText = () =>
+    c('Message')
+        .t`Connect your custom domain to ${BRAND_NAME} to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.`;
+
 const DomainsSectionText = () => {
     return (
         <SettingsParagraph className="text-cut" learnMoreUrl={getDomainsSupportURL()}>
-            {c('Message')
-                .t`Connect your custom domain to ${BRAND_NAME} to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.`}
+            {getDomainsText()}
         </SettingsParagraph>
     );
 };
 
-const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
+const DomainsCardDescription = () => (
+    <>
+        {getDomainsText()} <Href href={getDomainsSupportURL()}>{c('Link').t`Learn more`}</Href>
+    </>
+);
+
+interface VariantProps {
+    /** The organization settings render the section without cards. */
+    variant?: SettingsLayoutVariant;
+}
+
+const DomainsSectionInternal = ({ onceRef, variant }: { onceRef: MutableRefObject<boolean> } & VariantProps) => {
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const dispatch = useDispatch();
     const [domainsAddressesMap, loadingDomainsAddressesMap] = useDomainsAddresses(customDomains);
@@ -103,6 +121,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
     const deleteText = c('Action').t`Delete`;
 
     const isB2bDarkWebMonitoringEnable = useFlag('B2BDarkWebMonitoring');
+    const cardTable = variant === SettingsLayoutVariant.Card ? getSettingsCardTableProps() : undefined;
     const headerCells = [
         c('Header for addresses table').t`Domain`,
         c('Header for addresses table').t`Status`,
@@ -110,8 +129,8 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
         c('Header for addresses table').t`Actions`,
     ].filter(isTruthy);
 
-    return (
-        <SettingsSectionWide>
+    const modals = (
+        <>
             {organizationModals.modals}
             {renderNewDomain && <DomainModal {...newDomainModalProps} />}
             {renderEditDomain && tmpDomainProps && (
@@ -131,7 +150,123 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                     {...catchAllDomainModalProps}
                 />
             )}
+        </>
+    );
 
+    const domainsTable = !!customDomains?.length && domainsAddressesMap && (
+        <Table hasActions responsive="cards" {...cardTable}>
+            <TableHeader cells={headerCells} />
+            <TableBody loading={loading} colSpan={headerCells.length}>
+                {customDomains.map((domain) => {
+                    const domainAddresses = domainsAddressesMap[domain.ID] || [];
+                    return (
+                        <TableRow
+                            key={domain.ID}
+                            data-testid="domain-row"
+                            labels={[
+                                c('Header for addresses table').t`Domain`,
+                                c('Header for addresses table').t`Status`,
+                                isB2bDarkWebMonitoringEnable && DARK_WEB_MONITORING_NAME,
+                                '',
+                            ].filter(isTruthy)}
+                            cells={[
+                                <DomainName domain={domain} />,
+                                <DomainStatus domain={domain} domainAddresses={domainAddresses} />,
+                                isB2bDarkWebMonitoringEnable && (
+                                    <GuardedDarkWebMonitoringToggle domain={domain} disabled={!isOrgActive} />
+                                ),
+                                <PermissionTooltip hasPermission={canManageDomain}>
+                                    <DropdownActions
+                                        size="small"
+                                        disabled={!canManageDomain}
+                                        list={[
+                                            isOrgActive &&
+                                                ({
+                                                    text: reviewText,
+                                                    'aria-label': `${reviewText} ${domain.DomainName}`,
+                                                    disabled: !canUpdateDomain,
+                                                    onClick: () => {
+                                                        setTmpDomainProps({ domain, domainAddresses });
+                                                        setEditDomainModalOpen(true);
+                                                    },
+                                                    key: 'review',
+                                                } as const),
+                                            isOrgActive &&
+                                                Array.isArray(domainAddresses) &&
+                                                domainAddresses.length &&
+                                                ({
+                                                    text: setCatchAllText,
+                                                    'aria-label': `${setCatchAllText} (${domain.DomainName})`,
+                                                    disabled: !canUpdateDomain,
+                                                    onClick: () => {
+                                                        setTmpDomainProps({ domain, domainAddresses });
+                                                        setCatchAllDomainModalOpen(true);
+                                                    },
+                                                    key: 'catch-all',
+                                                } as const),
+                                            {
+                                                text: deleteText,
+                                                'aria-label': `${deleteText} ${domain.DomainName}`,
+                                                actionType: 'delete',
+                                                disabled: !canDeleteDomain,
+                                                onClick: () => {
+                                                    setTmpDomainProps({ domain, domainAddresses });
+                                                    setDeleteDomainModalOpen(true);
+                                                },
+                                                key: 'delete',
+                                            } as const,
+                                        ].filter(isTruthy)}
+                                    />
+                                </PermissionTooltip>,
+                            ].filter(isTruthy)}
+                        />
+                    );
+                })}
+            </TableBody>
+        </Table>
+    );
+
+    const usedDomainsText = isOrgActive && (
+        <>
+            {UsedDomains} / {MaxDomains} {c('Info').ngettext(msgid`domain used`, `domains used`, MaxDomains)}
+        </>
+    );
+
+    if (variant === SettingsLayoutVariant.Card) {
+        return (
+            <>
+                {modals}
+                <SettingsCardSection
+                    flush={!loading && !!domainsTable}
+                    description={<DomainsCardDescription />}
+                    notice={organizationModals.info}
+                    actions={
+                        <>
+                            <GuardedAddDomainButton
+                                color="norm"
+                                onClick={() => setNewDomainModalOpen(true)}
+                                disabled={hasReachedDomainsLimit || !isOrgActive}
+                            >
+                                {c('Action').t`Add domain`}
+                            </GuardedAddDomainButton>
+                            <Button
+                                loading={loadingRefresh || loadingDomainsAddressesMap}
+                                onClick={() => withLoadingRefresh(handleRefresh())}
+                                disabled={!isOrgActive}
+                            >{c('Action').t`Refresh status`}</Button>
+                            {usedDomainsText && <span className="color-weak">{usedDomainsText}</span>}
+                        </>
+                    }
+                >
+                    {loading ? <Loader /> : domainsTable || undefined}
+                </SettingsCardSection>
+            </>
+        );
+    }
+
+    return (
+        <SettingsSectionWide>
+            {modals}
             {loading ? (
                 <Loader />
             ) : (
@@ -155,94 +290,15 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                             disabled={!isOrgActive}
                         >{c('Action').t`Refresh status`}</Button>
                     </div>
-                    {!!customDomains?.length && domainsAddressesMap && (
-                        <Table hasActions responsive="cards">
-                            <TableHeader cells={headerCells} />
-                            <TableBody loading={loading} colSpan={headerCells.length}>
-                                {customDomains.map((domain) => {
-                                    const domainAddresses = domainsAddressesMap[domain.ID] || [];
-                                    return (
-                                        <TableRow
-                                            key={domain.ID}
-                                            data-testid="domain-row"
-                                            labels={[
-                                                c('Header for addresses table').t`Domain`,
-                                                c('Header for addresses table').t`Status`,
-                                                isB2bDarkWebMonitoringEnable && DARK_WEB_MONITORING_NAME,
-                                                '',
-                                            ].filter(isTruthy)}
-                                            cells={[
-                                                <DomainName domain={domain} />,
-                                                <DomainStatus domain={domain} domainAddresses={domainAddresses} />,
-                                                isB2bDarkWebMonitoringEnable && (
-                                                    <GuardedDarkWebMonitoringToggle
-                                                        domain={domain}
-                                                        disabled={!isOrgActive}
-                                                    />
-                                                ),
-                                                <PermissionTooltip hasPermission={canManageDomain}>
-                                                    <DropdownActions
-                                                        size="small"
-                                                        disabled={!canManageDomain}
-                                                        list={[
-                                                            isOrgActive &&
-                                                                ({
-                                                                    text: reviewText,
-                                                                    'aria-label': `${reviewText} ${domain.DomainName}`,
-                                                                    disabled: !canUpdateDomain,
-                                                                    onClick: () => {
-                                                                        setTmpDomainProps({ domain, domainAddresses });
-                                                                        setEditDomainModalOpen(true);
-                                                                    },
-                                                                    key: 'review',
-                                                                } as const),
-                                                            isOrgActive &&
-                                                                Array.isArray(domainAddresses) &&
-                                                                domainAddresses.length &&
-                                                                ({
-                                                                    text: setCatchAllText,
-                                                                    'aria-label': `${setCatchAllText} (${domain.DomainName})`,
-                                                                    disabled: !canUpdateDomain,
-                                                                    onClick: () => {
-                                                                        setTmpDomainProps({ domain, domainAddresses });
-                                                                        setCatchAllDomainModalOpen(true);
-                                                                    },
-                                                                    key: 'catch-all',
-                                                                } as const),
-                                                            {
-                                                                text: deleteText,
-                                                                'aria-label': `${deleteText} ${domain.DomainName}`,
-                                                                actionType: 'delete',
-                                                                disabled: !canDeleteDomain,
-                                                                onClick: () => {
-                                                                    setTmpDomainProps({ domain, domainAddresses });
-                                                                    setDeleteDomainModalOpen(true);
-                                                                },
-                                                                key: 'delete',
-                                                            } as const,
-                                                        ].filter(isTruthy)}
-                                                    />
-                                                </PermissionTooltip>,
-                                            ].filter(isTruthy)}
-                                        />
-                                    );
-                                })}
-                            </TableBody>
-                        </Table>
-                    )}
-                    {isOrgActive && (
-                        <div className="mb-4 color-weak">
-                            {UsedDomains} / {MaxDomains}{' '}
-                            {c('Info').ngettext(msgid`domain used`, `domains used`, MaxDomains)}
-                        </div>
-                    )}
+                    {domainsTable}
+                    {usedDomainsText && <div className="mb-4 color-weak">{usedDomainsText}</div>}
                 </>
             )}
         </SettingsSectionWide>
     );
 };
 
-const DomainsSectionUpgrade = () => {
+const DomainsSectionUpgrade = ({ variant }: VariantProps) => {
     const plus = PLAN_NAMES[PLANS.MAIL];
     const bundle = PLAN_NAMES[PLANS.BUNDLE];
 
@@ -253,22 +309,51 @@ const DomainsSectionUpgrade = () => {
         isSettings: true,
     });
 
+    const banner = (
+        <UpgradeBanner upsellPath={upsellRef} promotion={variant === SettingsLayoutVariant.Card}>
+            {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
+        </UpgradeBanner>
+    );
+
+    if (variant === SettingsLayoutVariant.Card) {
+        return <SettingsCardSection description={<DomainsCardDescription />} notice={banner} />;
+    }
+
     return (
         <SettingsSectionWide>
             <DomainsSectionText />
-            <UpgradeBanner upsellPath={upsellRef}>
-                {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
-            </UpgradeBanner>
+            {banner}
         </SettingsSectionWide>
     );
 };
 
-const DomainsSection = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
+/**
+ * Whether the section shows the upgrade banner instead of the domains: no access to custom
+ * domains and no existing domain. `undefined` while it loads.
+ */
+export const useShowDomainsUpsell = () => {
     const [customDomains] = useCustomDomains();
     const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const [{ permissions }] = useUserPermissions();
 
     if (permissions === null || loadingEntitlements) {
+        return undefined;
+    }
+
+    const hasPermission = !!permissions?.['account.domain.read'] && entitlements.hasCustomDomainAddresses;
+    return !hasPermission && !customDomains?.length;
+};
+
+const DomainsSection = ({
+    onceRef,
+    variant = SettingsLayoutVariant.Default,
+}: { onceRef: MutableRefObject<boolean> } & VariantProps) => {
+    const showUpsell = useShowDomainsUpsell();
+
+    if (showUpsell === undefined) {
+        if (variant === SettingsLayoutVariant.Card) {
+            return <Loader />;
+        }
         return (
             <SettingsSectionWide>
                 <Loader />
@@ -276,12 +361,10 @@ const DomainsSection = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => 
         );
     }
 
-    const hasPermission = !!permissions?.['account.domain.read'] && entitlements.hasCustomDomainAddresses;
-
-    return hasPermission || (!hasPermission && customDomains?.length) ? (
-        <DomainsSectionInternal onceRef={onceRef} />
+    return showUpsell ? (
+        <DomainsSectionUpgrade variant={variant} />
     ) : (
-        <DomainsSectionUpgrade />
+        <DomainsSectionInternal onceRef={onceRef} variant={variant} />
     );
 };
 

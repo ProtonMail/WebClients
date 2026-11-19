@@ -78,7 +78,8 @@ const OutgoingForwardActions = ({
     const list = [
         user.hasPaidMail &&
             (isActive || isPending) && {
-                text: c('email_forwarding_2023: Action').t`Edit conditions`,
+                key: 'edit',
+                text: c('email_forwarding_2023: Action').t`Edit`,
                 onClick: () => {
                     showForwardModal({ existingForwardingConfig });
                 },
@@ -86,6 +87,7 @@ const OutgoingForwardActions = ({
         user.hasPaidMail &&
             isInternal &&
             isOutdated && {
+                key: 're-enable',
                 text: c('email_forwarding_2023: Action').t`Re-enable`,
                 onClick: async () => {
                     // the primary keys might need fixing up, same as during initial forwarding setup
@@ -95,6 +97,7 @@ const OutgoingForwardActions = ({
         user.hasPaidMail &&
             isInternal &&
             isRejected && {
+                key: 'request-confirmation-internal',
                 text: c('email_forwarding_2023: Action').t`Request confirmation`,
                 onClick: async () => {
                     try {
@@ -108,6 +111,7 @@ const OutgoingForwardActions = ({
         user.hasPaidMail &&
             isExternal &&
             isRejected && {
+                key: 'request-confirmation-external',
                 text: c('email_forwarding_2023: Action').t`Request confirmation`,
                 onClick: async () => {
                     try {
@@ -121,6 +125,7 @@ const OutgoingForwardActions = ({
         user.hasPaidMail &&
             isExternal &&
             isPending && {
+                key: 'resend-confirmation',
                 text: c('email_forwarding_2023: Action').t`Re-send confirmation email`,
                 onClick: async () => {
                     try {
@@ -133,6 +138,7 @@ const OutgoingForwardActions = ({
             },
         user.hasPaidMail &&
             isActive && {
+                key: 'pause',
                 text: c('email_forwarding_2023: Action').t`Pause`,
                 onClick: async () => {
                     try {
@@ -147,6 +153,7 @@ const OutgoingForwardActions = ({
             },
         user.hasPaidMail &&
             isPaused && {
+                key: 'resume',
                 text: c('email_forwarding_2023: Action').t`Resume`,
                 onClick: async () => {
                     try {
@@ -160,6 +167,7 @@ const OutgoingForwardActions = ({
                 },
             },
         {
+            key: 'delete',
             text: c('email_forwarding_2023: Action').t`Delete`,
             onClick: () => {
                 setConfirmDeleteModalOpen(true);
