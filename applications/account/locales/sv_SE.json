@@ -2389,6 +2389,9 @@
       ],
       "Upgrade to ${ planTitle }": [
         "Uppgradera till ${ planTitle }"
+      ],
+      "Continue with single sign-on": [
+        "Fortsätt med enkel inloggning"
       ]
     },
     "action": {
@@ -2898,6 +2901,9 @@
       ],
       "You have reached the trial limit.": [
         "Du har nått provperiodsgränsen."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS }${ LUMO_SHORT_APP_NAME } \nplatser för skrivassistenter under provperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -5771,6 +5777,9 @@
       ],
       "Your other sessions have been ended. You can now sign in on this device.": [
         "Dina andra sessioner har avslutats. Du kan nu igen logga in på den här enheten."
+      ],
+      "To stay signed in everywhere, upgrade your plan instead.": [
+        "För att förbli inloggad överallt, uppgradera ditt paket istället."
       ]
     },
     "description": {
@@ -8248,6 +8257,9 @@
       ],
       "We couldn't load your migrated users. Please refresh the page and try again": [
         "Vi kunde inte ladda dina migrerade användare. Uppdatera sidan och försök igen"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
       ]
     },
     "error": {
