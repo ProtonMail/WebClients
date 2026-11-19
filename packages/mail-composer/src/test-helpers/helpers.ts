@@ -1,7 +1,7 @@
 import { waitFor } from '@testing-library/react';
 
 import { clearCache } from '@proton/components/testing/cache';
-import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 /** Recipients without public keys, unless a test registers its own `core/v4/keys/all` mock. */
 const addDefaultApiMocks = () => {
@@ -11,7 +11,7 @@ const addDefaultApiMocks = () => {
 addDefaultApiMocks();
 
 export const clearAll = () => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     apiMock.mockClear();
     clearApiMocks();
     clearCache();

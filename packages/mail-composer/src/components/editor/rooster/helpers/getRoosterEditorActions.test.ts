@@ -1,3 +1,4 @@
+// @vitest-environment jsdom -- Rooster needs Range/Selection and iframe behaviour missing in happy-dom
 import { Editor } from 'roosterjs';
 import { EditorAdapter } from 'roosterjs-editor-adapter';
 import type { EditorOptions, IEditor } from 'roosterjs-editor-types';
@@ -20,10 +21,10 @@ describe.each(Object.keys(createEditors))('getRoosterEditorActions with %s', (ve
     let element: HTMLDivElement;
     let editor: IEditor;
     let iframe: HTMLIFrameElement;
-    const clearUndoHistory = jest.fn();
-    const setTextDirection = jest.fn();
-    const showModalLink = jest.fn();
-    const openEmojiPicker = jest.fn();
+    const clearUndoHistory = vi.fn();
+    const setTextDirection = vi.fn();
+    const showModalLink = vi.fn();
+    const openEmojiPicker = vi.fn();
 
     const getActions = () =>
         getRoosterEditorActions(
@@ -46,7 +47,7 @@ describe.each(Object.keys(createEditors))('getRoosterEditorActions with %s', (ve
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         element = document.createElement('div');
         // JSDOM can only focus a contenteditable element with a tabindex, and Rooster inserts only when it has the focus
         element.tabIndex = 0;
@@ -101,7 +102,7 @@ describe.each(Object.keys(createEditors))('getRoosterEditorActions with %s', (ve
     });
 
     // INWEB-1526: it starts a new line before every inline element, so formatting splits a line: "\nOne \nbold\n word\nSecond"
-    it.failing('reads the selected text, with a line break between blocks only', () => {
+    it.fails('reads the selected text, with a line break between blocks only', () => {
         select(firstLineText(), 0, secondLineText(), 6);
 
         expect(getActions().getSelectionContent()).toBe('One bold word\nSecond');
@@ -135,7 +136,7 @@ describe.each(Object.keys(createEditors))('getRoosterEditorActions with %s', (ve
 
     it('does not focus a disposed editor', () => {
         const actions = getActions();
-        const focusIframe = jest.spyOn(iframe, 'focus');
+        const focusIframe = vi.spyOn(iframe, 'focus');
 
         editor.dispose();
         actions.focus();

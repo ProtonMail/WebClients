@@ -10,40 +10,40 @@ import {
 import { composerTestRender } from '../../../test-helpers/render';
 import ComposerBookingDropdownContent from './ComposerBookingDropdownContent';
 
-jest.mock('@proton/calendar/bookings/store/hooks', () => ({
+vi.mock('@proton/calendar/bookings/store/hooks', () => ({
     useInternalBooking: () => [
         { bookingPages: [{ id: 'page-1', summary: 'Booking page 01', link: 'https://example.com/booking' }] },
         false,
     ],
 }));
-jest.mock('@proton/calendar/bookings/store/useBookingUpsell', () => ({
-    ...jest.requireActual('@proton/calendar/bookings/store/useBookingUpsell'),
-    useBookingUpsell: jest.fn(),
+vi.mock('@proton/calendar/bookings/store/useBookingUpsell', async () => ({
+    ...(await vi.importActual('@proton/calendar/bookings/store/useBookingUpsell')),
+    useBookingUpsell: vi.fn(),
 }));
-jest.mock('@proton/components/hooks/useAuthentication', () => ({
+vi.mock('@proton/components/hooks/useAuthentication', () => ({
     __esModule: true,
     default: () => ({ getLocalID: () => 0 }),
 }));
-jest.mock('../../../telemetry/composerBookingsEvents', () => ({
-    ...jest.requireActual('../../../telemetry/composerBookingsEvents'),
-    useComposerBookingsTracking: jest.fn(),
+vi.mock('../../../telemetry/composerBookingsEvents', async () => ({
+    ...(await vi.importActual('../../../telemetry/composerBookingsEvents')),
+    useComposerBookingsTracking: vi.fn(),
 }));
 
-const mockOnClose = jest.fn();
-const mockOnUpsell = jest.fn();
-const mockOnLimitReached = jest.fn();
+const mockOnClose = vi.fn();
+const mockOnUpsell = vi.fn();
+const mockOnLimitReached = vi.fn();
 const mockTracking = {
-    trackBookingActionClick: jest.fn(),
-    trackBookingPageInserted: jest.fn(),
-    trackCreateBookingPageClick: jest.fn(),
-    trackBookingUpsellDisplayed: jest.fn(),
-    trackBookingLimitDisplayed: jest.fn(),
-    trackBookingUpsellDismissed: jest.fn(),
-    trackBookingUpsellSubscribed: jest.fn(),
+    trackBookingActionClick: vi.fn(),
+    trackBookingPageInserted: vi.fn(),
+    trackCreateBookingPageClick: vi.fn(),
+    trackBookingUpsellDisplayed: vi.fn(),
+    trackBookingLimitDisplayed: vi.fn(),
+    trackBookingUpsellDismissed: vi.fn(),
+    trackBookingUpsellSubscribed: vi.fn(),
 };
 
 const render = async (createBookingAction: BookingCreateAction, { bookingPageLimitReached = false } = {}) => {
-    jest.mocked(useBookingUpsell).mockReturnValue({
+    vi.mocked(useBookingUpsell).mockReturnValue({
         shouldShowLimitModal: () => ({ bookingPageLimitReached, planLimitReached: !bookingPageLimitReached }),
         getCreateBookingAction: () => createBookingAction,
         loadingLimits: false,
@@ -68,13 +68,13 @@ const setup = async (createBookingAction: BookingCreateAction, options?: { booki
 
 describe('ComposerBookingDropdownContent create action', () => {
     beforeEach(() => {
-        jest.mocked(useComposerBookingsTracking).mockReturnValue(mockTracking);
-        jest.spyOn(window, 'open').mockImplementation(() => null);
+        vi.mocked(useComposerBookingsTracking).mockReturnValue(mockTracking);
+        vi.spyOn(window, 'open').mockImplementation(() => null);
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
-        jest.clearAllMocks();
+        vi.restoreAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should open the limit modal when the user has reached their limit', async () => {

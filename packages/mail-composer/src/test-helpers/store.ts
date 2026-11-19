@@ -9,7 +9,7 @@ import { addMessagesCases } from '@proton/mail-message/store/messages/messagesCa
 import type { MessagesState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
 import { composersReducer } from '../store/composers/composersSlice';
 

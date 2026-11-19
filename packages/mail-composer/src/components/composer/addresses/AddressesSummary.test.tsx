@@ -20,7 +20,7 @@ const props = {
     onFocus: noop,
     toggleExpanded: (_type: RecipientType) => noop,
     disabled: false,
-    handleContactModal: jest.fn(),
+    handleContactModal: vi.fn(),
 };
 const recipient = { Name: 'RecipientName', Address: 'Address' };
 const recipientLabel = getRecipientLabel(recipient, {}) || '';

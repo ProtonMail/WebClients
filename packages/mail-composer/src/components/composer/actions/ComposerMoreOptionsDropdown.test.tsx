@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import ComposerMoreOptionsDropdown from './ComposerMoreOptionsDropdown';
 
 describe('ComposerMoreOptionsDropdown', () => {
-    const mockOnOpen = jest.fn();
+    const mockOnOpen = vi.fn();
 
     const setupTest = () => {
         return render(
@@ -14,7 +14,7 @@ describe('ComposerMoreOptionsDropdown', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should call onOpen when the dropdown opens', () => {

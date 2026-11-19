@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
@@ -6,17 +7,16 @@ import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsle
 
 import { useComposerBookingSpotlight } from './useComposerBookingSpotlight';
 
-jest.mock('@proton/account/userSettings/hooks');
-const mockedUseUserSettings = useUserSettings as jest.MockedFunction<any>;
+vi.mock('@proton/account/userSettings/hooks');
+const mockedUseUserSettings = useUserSettings as Mock<any>;
 
-jest.mock('@proton/components/hooks/useSpotlightOnFeature');
-const mockedUseSpotlightOnFeature = useSpotlightOnFeature as jest.MockedFunction<typeof useSpotlightOnFeature>;
+vi.mock('@proton/components/hooks/useSpotlightOnFeature');
+const mockedUseSpotlightOnFeature = useSpotlightOnFeature as MockedFunction<typeof useSpotlightOnFeature>;
 
-jest.mock('@proton/components/components/spotlight/useSpotlightShow', () => {
-    return (show: boolean) => {
-        return show;
-    };
-});
+vi.mock('@proton/components/components/spotlight/useSpotlightShow', () => ({
+    __esModule: true,
+    default: (show: boolean) => show,
+}));
 
 const getInitialShow = () => {
     return mockedUseSpotlightOnFeature.mock.calls.at(-1)?.[1];
@@ -25,11 +25,11 @@ const getInitialShow = () => {
 describe('useComposerBookingSpotlight', () => {
     beforeEach(() => {
         mockedUseUserSettings.mockReturnValue([{ News: NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS }]);
-        mockedUseSpotlightOnFeature.mockReturnValue({ show: true, onDisplayed: jest.fn(), onClose: jest.fn() });
+        mockedUseSpotlightOnFeature.mockReturnValue({ show: true, onDisplayed: vi.fn(), onClose: vi.fn() });
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should allow the spotlight when the composer is rich text', () => {

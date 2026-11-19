@@ -4,7 +4,7 @@ import { addComposerAction } from './composerActions';
 import { composerActions } from './composersSlice';
 
 const run = async (composerMode: COMPOSER_MODE | undefined, payload: Parameters<typeof addComposerAction>[0]) => {
-    const dispatch = jest.fn();
+    const dispatch = vi.fn();
     const getState = () => ({
         mailSettings: { value: composerMode === undefined ? undefined : { ComposerMode: composerMode } },
     });

@@ -7,11 +7,11 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { PromiseHandlers } from '../usePromise';
 import { useSwitchToPlainText } from './useSwitchToPlainText';
 
-const mockApi = jest.fn();
-const mockCreateNotification = jest.fn();
+const mockApi = vi.fn();
+const mockCreateNotification = vi.fn();
 
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
@@ -45,9 +45,9 @@ const getMessage = (ID: string | undefined): MessageState => ({
 const getPendingSave = (isPending: boolean) => ({ isPending }) as PromiseHandlers<void>;
 
 const setup = (initialProps: { modelMessage: MessageState; syncedMessageID?: string; isSaving?: boolean }) => {
-    const onChange = jest.fn();
-    const setBlockquoteExpanded = jest.fn();
-    const removeEmbedded = jest.fn();
+    const onChange = vi.fn();
+    const setBlockquoteExpanded = vi.fn();
+    const removeEmbedded = vi.fn();
     let modelMessage = initialProps.modelMessage;
 
     const hook = renderHook(

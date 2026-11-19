@@ -1,3 +1,4 @@
+// @vitest-environment jsdom -- DOMPurify insertBefore on the document throws in happy-dom
 import { protonizer } from '@proton/sanitize/purify';
 
 import { mailtoParser, toAddresses } from './mailto';

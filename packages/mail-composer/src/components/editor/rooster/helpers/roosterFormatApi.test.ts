@@ -1,3 +1,4 @@
+// @vitest-environment jsdom -- Rooster needs Range/Selection and iframe behaviour missing in happy-dom
 import { Editor } from 'roosterjs';
 import { EditorAdapter } from 'roosterjs-editor-adapter';
 import type { IEditor } from 'roosterjs-editor-types';
