@@ -38,7 +38,15 @@ export type LoaderStatus =
   | ({ name: 'loading'; step: LoaderStep } & Opened)
   /** The session stopped before the Reveal Point; the run waits in its step for a retry */
   | ({ name: 'stopped'; step: LoaderStep; retryable: boolean } & Opened)
-  | { name: 'revealed'; node: NodeEntity; role: DocumentRole; session: Session; editorInvoker: EditorInvoker }
+  | {
+      name: 'revealed'
+      node: NodeEntity
+      role: DocumentRole
+      session: Session
+      editorInvoker: EditorInvoker
+      /** The SDK refused an edit, a lock cause the session's snapshot doesn't hold */
+      editRefused: boolean
+    }
   /** In the trash: RTS refuses a trashed document a token, so no session opens until it is restored */
   | { name: 'trashed'; node: NodeEntity; role: DocumentRole }
   /** A failed editor leaves its session open, so the edits it sent are still delivered */
@@ -262,6 +270,7 @@ class LoaderRun {
       session.on('refusal', () => {
         this.editRefused = true
         this.syncLock()
+        this.publish()
       }),
     )
     this.listen(this.rereadRoleAfterRebootstraps(session))
@@ -512,9 +521,9 @@ class LoaderRun {
   }
 
   private status(): LoaderStatus {
-    const { node, role, session, editorInvoker } = this
+    const { node, role, session, editorInvoker, editRefused } = this
     if (this.revealed && node && role && session && editorInvoker) {
-      return { name: 'revealed', node, role, session, editorInvoker }
+      return { name: 'revealed', node, role, session, editorInvoker, editRefused }
     }
     const opened = { node, role, session, editorInvoker }
     const status = session?.getSnapshot().status

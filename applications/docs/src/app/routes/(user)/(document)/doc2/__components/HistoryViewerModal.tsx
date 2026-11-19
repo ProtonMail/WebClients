@@ -1,14 +1,17 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react'
 
+import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/app-context/notifications/constants'
+import { useNotifications } from '@proton/app-context/useNotifications'
 import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import ModalTwo from '@proton/components/components/modalTwo/Modal'
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent'
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader'
-import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
-import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
+import useModalState, { type ModalStateProps } from '@proton/components/components/modalTwo/useModalState'
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton'
 import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
 import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc'
 import useLoading from '@proton/hooks/useLoading'
@@ -16,6 +19,7 @@ import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft'
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig'
 import { IcEye } from '@proton/icons/icons/IcEye'
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
+import type { SerializedEditorState } from 'lexical'
 import { c } from 'ttag'
 
 import { useApplication } from '~/utils/application-context'
@@ -34,9 +38,18 @@ type HistoryViewerModalContentProps = {
   /** The document's name, which the exports' file names start with */
   documentName: string
   onClose: () => void
-}
+  /** The page's latest live props, read as a restore or its Undo runs: the Undo outlives the history */
+  readLive: () => HistoryViewerLiveProps
+} & HistoryViewerLiveProps
 
-function HistoryViewerModalContent({ versionHistory, documentName, onClose }: HistoryViewerModalContentProps) {
+function HistoryViewerModalContent({
+  versionHistory,
+  documentName,
+  onClose,
+  liveEditorInvoker,
+  locked,
+  readLive,
+}: HistoryViewerModalContentProps) {
   const { logger } = useApplication()
   const { isDebugMode } = useDebugMode()
   const isODTEnabled = useIsODTEnabled()
@@ -46,6 +59,10 @@ function HistoryViewerModalContent({ versionHistory, documentName, onClose }: Hi
   // The view's editor, from its frame's start: what the exports read
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker | undefined>()
 
+  const { createNotification, hideNotification } = useNotifications()
+  const [confirmModal, showConfirmModal] = useConfirmActionModal()
+
+  const [isRestoring, withRestoring] = useLoading()
   const [isExporting, withExporting] = useLoading()
 
   // Read on every render: a new batch threshold batches `versionHistory` again in place
@@ -81,6 +98,98 @@ function HistoryViewerModalContent({ versionHistory, documentName, onClose }: Hi
 
   const [formattedBatchGroups, setFormattedBatchGroups] = useState(() => versionHistory.getFormattedBatchGroups())
 
+  // The restore in place, its toast and its Undo. Copied from
+  // `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryViewerModal.tsx`,
+  // its text branch only, without the comments sentence in the confirmation, which doc2 has no comments for.
+  const showSuccessfulUndoNotification = useCallback(() => {
+    createNotification({
+      type: 'success',
+      text: c('Info').t`Undo successful`,
+    })
+  }, [createNotification])
+
+  /** "Restored version to <time>", with Undo, which gives the live editor `stateBeforeRestoring` back */
+  const showSuccessfulRestoreNotification = (
+    restoredInvoker: EditorInvoker,
+    stateBeforeRestoring: SerializedEditorState,
+  ) => {
+    const shortDate = versionHistory.getShortFormattedDateAndTimeForBatch(selectedBatch)
+    const notificationId = createNotification({
+      type: 'success',
+      expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME * 1.5,
+      text: (
+        <>
+          <span>
+            {/*
+             * Translator: This is a notification that appears after restoring a version of the document from history.
+             * It is followed by a timestamp. Example: Restored version to 12/01/2024, 12:00
+             */}
+            {c('Info').t`Restored version to`} {` ${shortDate}`}
+          </span>
+          <NotificationButton
+            onClick={() => {
+              // Locked since, or the editor gone, the undo couldn't be saved: the header shows why, and the toast
+              // stays for a click once the lock lifts
+              if (!canReplace(restoredInvoker)) {
+                return
+              }
+              hideNotification(notificationId)
+              // The history has closed by now: nothing of it is left to show the undo's progress
+              restoredInvoker
+                .replaceEditorState(stateBeforeRestoring)
+                .then(showSuccessfulUndoNotification)
+                .catch((error) => logger.error('Failed to undo the restore', error))
+            }}
+          >{c('Action').t`Undo`}</NotificationButton>
+        </>
+      ),
+    })
+  }
+
+  /** Whether the page's latest live editor is still `invoker`, and unlocked, so that a replaced state is saved */
+  const canReplace = (invoker: EditorInvoker) => {
+    const live = readLive()
+    return !live.locked && live.liveEditorInvoker === invoker
+  }
+
+  /**
+   * After the confirmation, replaces the live editor's state with the view's, an ordinary edit that the live editor
+   * sends as any other. The calls go straight to the EditorInvoker, as `restoreRevisionByReplacingLexicalState` makes
+   * them: Adapted from `packages/docs-core/lib/EditorController/EditorController.ts`. The button shows progress only once confirmed:
+   * the confirmation closes without a call when dismissed. A failure is logged and leaves the history open.
+   */
+  const restoreByReplacing = () => {
+    if (!editorInvoker || !liveEditorInvoker) {
+      return
+    }
+    showConfirmModal({
+      title: c('Action').t`Restore this version?`,
+      submitText: c('Action').t`Restore`,
+      className: 'restore-revision-modal',
+      canUndo: true,
+      message: c('Info').t`Your current document will be replaced with this version.`,
+      onSubmit: () =>
+        withRestoring(async () => {
+          // The editor may have locked while the confirmation was open, as for a role read again, or be gone
+          if (!canReplace(liveEditorInvoker)) {
+            return
+          }
+          const editorStateBeforeReplacing = await liveEditorInvoker.getCurrentEditorState()
+          const lexicalState = await editorInvoker.getCurrentEditorState()
+          if (!lexicalState || !editorStateBeforeReplacing) {
+            return
+          }
+          // Read again after the reads above, which wait on the editors
+          if (!canReplace(liveEditorInvoker)) {
+            return
+          }
+          await liveEditorInvoker.replaceEditorState(lexicalState)
+          onClose()
+          showSuccessfulRestoreNotification(liveEditorInvoker, editorStateBeforeReplacing)
+        }).catch((error) => logger.error('Failed to restore the version', error)),
+    })
+  }
+
   /** Runs one export of the selected version at a time; a failure is logged, as the title menu's Download does */
   const exportVersion = (run: (editorInvoker: EditorInvoker) => Promise<void>) => {
     if (!editorInvoker) {
@@ -94,6 +203,7 @@ function HistoryViewerModalContent({ versionHistory, documentName, onClose }: Hi
 
   return (
     <div className="grid h-full grid-cols-[2fr,_minmax(18.75rem,_auto)]">
+      {confirmModal}
       {/* Left column */}
       <div className="flex flex-col">
         <div className="flex items-center gap-3 px-3 py-2.5">
@@ -166,9 +276,24 @@ function HistoryViewerModalContent({ versionHistory, documentName, onClose }: Hi
               />
             </label>
           )}
-          {/* /doc's Make a copy and Restore this version come first here; this view has no restore yet */}
+          {/* /doc's Make a copy comes first here; this view has no copy yet */}
           {selectedBatchIndex >= 0 && !isSelectedRevisionCurrentDocument && (
             <>
+              {/*
+               * Hidden while the live editor is locked, as for a viewer, whose restore couldn't be saved; disabled
+               * until the view's editor exists
+               */}
+              {!locked && (
+                <Button
+                  className="w-full"
+                  data-testid="restore-revision-by-replace"
+                  loading={isRestoring}
+                  disabled={!editorInvoker || !liveEditorInvoker}
+                  onClick={restoreByReplacing}
+                >
+                  {c('Action').t`Restore this version`}
+                </Button>
+              )}
               <Button
                 className="mt-2 w-full"
                 data-testid="export-revision"
@@ -235,20 +360,48 @@ function HistoryViewerModalContent({ versionHistory, documentName, onClose }: Hi
   )
 }
 
-export type HistoryViewerModalProps = ModalStateProps & {
+/** What the history reads from the page on every render, not only as it opens */
+export type HistoryViewerLiveProps = {
+  /** The live document's editor, which a restore replaces the state of, once it shows the document */
+  liveEditorInvoker: EditorInvoker | undefined
+  /**
+   * Whether the live editor is locked now, for any of `getLockCauses`' reasons (a viewer's role among them): a locked
+   * user can't restore, nor undo a restore
+   */
+  locked: boolean
+}
+
+/** A page gone, or not yet with an editor: nothing to restore into */
+const NOTHING_LIVE: HistoryViewerLiveProps = { liveEditorInvoker: undefined, locked: true }
+
+/** What the history is opened with */
+export type HistoryViewerOpenProps = {
   /** The History Log's Revisions, read as the history opened; none for an empty log */
   versionHistory: NativeVersionHistory | undefined
   documentName: string
 }
 
+export type HistoryViewerModalProps = ModalStateProps &
+  HistoryViewerOpenProps &
+  HistoryViewerLiveProps &
+  Pick<HistoryViewerModalContentProps, 'readLive'>
+
 /**
  * The document's version history, read-only: the Revisions' timeline, a view of the selected one, and its exports.
  * Copied from
  * `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryViewerModal.tsx`,
- * for text documents only, without its restore and copy, which doc2 doesn't have yet. A revision's view, and its
- * exports, wait for its own editor; an empty History Log gets the small modal alone.
+ * for text documents only, without its restore as a copy, which doc2 doesn't have yet. A revision's view, its restore and
+ * its exports wait for its own editor; an empty History Log gets the small modal alone.
  */
-function HistoryViewerModal({ versionHistory, documentName, onClose, ...rest }: HistoryViewerModalProps) {
+function HistoryViewerModal({
+  versionHistory,
+  documentName,
+  onClose,
+  liveEditorInvoker,
+  locked,
+  readLive,
+  ...rest
+}: HistoryViewerModalProps) {
   const isVersionHistoryAvailable = !!versionHistory
   return (
     <ModalTwo
@@ -260,7 +413,14 @@ function HistoryViewerModal({ versionHistory, documentName, onClose, ...rest }: 
       {...rest}
     >
       {versionHistory ? (
-        <HistoryViewerModalContent versionHistory={versionHistory} documentName={documentName} onClose={onClose} />
+        <HistoryViewerModalContent
+          versionHistory={versionHistory}
+          documentName={documentName}
+          onClose={onClose}
+          liveEditorInvoker={liveEditorInvoker}
+          locked={locked}
+          readLive={readLive}
+        />
       ) : (
         <>
           <ModalTwoHeader title="Document history" />
@@ -272,6 +432,39 @@ function HistoryViewerModal({ versionHistory, documentName, onClose, ...rest }: 
   )
 }
 
-export function useHistoryViewerModal() {
-  return useModalTwoStatic(HistoryViewerModal)
+/**
+ * The history and what opens it, as `useModalTwoStatic` gives a modal, except that the page passes its live props on
+ * every render: a lock that changes while the history is open hides or shows Restore this version at once. The hook
+ * keeps the latest committed ones past the history's close, for the restore's Undo, and none once the page is gone.
+ */
+export function useHistoryViewerModal(liveProps: HistoryViewerLiveProps) {
+  const [modalStateProps, setOpen, render] = useModalState()
+  const [openProps, setOpenProps] = useState<HistoryViewerOpenProps>()
+  const liveRef = useRef<HistoryViewerLiveProps>(NOTHING_LIVE)
+  const readLive = useCallback(() => liveRef.current, [])
+  const { liveEditorInvoker, locked } = liveProps
+  useLayoutEffect(() => {
+    liveRef.current = { liveEditorInvoker, locked }
+  }, [liveEditorInvoker, locked])
+  useLayoutEffect(
+    () => () => {
+      liveRef.current = NOTHING_LIVE
+    },
+    [],
+  )
+
+  const showHistory = useCallback(
+    (props: HistoryViewerOpenProps) => {
+      setOpenProps(props)
+      setOpen(true)
+    },
+    [setOpen],
+  )
+
+  const historyModal =
+    render && openProps ? (
+      <HistoryViewerModal {...modalStateProps} {...openProps} {...liveProps} readLive={readLive} />
+    ) : null
+
+  return [historyModal, showHistory] as const
 }

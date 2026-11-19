@@ -221,6 +221,7 @@ describe('loadDocument', () => {
       role: 'Editor',
       session: load.fake.session,
       editorInvoker: mockEditor,
+      editRefused: false,
     })
     expect(load.drive.getNodeHierarchy).toHaveBeenCalledTimes(1)
     expect(load.drive.getNodeHierarchy).toHaveBeenCalledWith(NODE_UID)
@@ -602,6 +603,8 @@ describe('loadDocument', () => {
       await flush()
 
       expect(mockEditorCalls).toEqual(['lock'])
+      // The page reads it too: the history's restore follows the same lock
+      expect(load.latest()).toMatchObject({ name: 'revealed', editRefused: true })
     })
 
     test('stays editable while paused or reconnecting', async () => {

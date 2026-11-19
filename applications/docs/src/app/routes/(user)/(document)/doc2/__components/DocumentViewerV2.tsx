@@ -22,7 +22,7 @@ import { fetchExternalImageAsBase64 } from '../__utils/fetchExternalImageAsBase6
 import { getNodeName } from '../__utils/getNodeName'
 import { handleFileMenuAction, openHelp } from '../__utils/handleFileMenuAction'
 import type { LoaderDeps } from '../__utils/loadDocument'
-import { getLoadingScreenStatus } from '../__utils/loadingScreen'
+import { getLoadingScreenStatus, isLocked } from '../__utils/loadingScreen'
 import { createVersionHistory } from '../__utils/NativeVersionHistory'
 import { useDocumentFileActions } from '../__utils/useDocumentFileActions'
 import { useDocumentLoader } from '../__utils/useDocumentLoader'
@@ -79,7 +79,6 @@ export function DocumentViewerV2({
   const getUserSettings = useGetUserSettings()
   const [wordCount, setWordCountInfo] = useWordCountState()
   const [modal, showModal] = useGenericAlertModal()
-  const [historyModal, showHistoryModal] = useHistoryViewerModal()
   const { isDebugMode, toggleDebugMode } = useDebugMode()
   const isDarkMode = useIsEditorDarkMode()
   const userName = useUserName()
@@ -133,6 +132,9 @@ export function DocumentViewerV2({
   const role = ('role' in status && status.role) || 'Viewer'
   const node = useLiveDocumentNode('node' in status ? status.node : undefined)
   const snapshot = useSyncExternalStore(session?.subscribe ?? subscribeToNothing, session?.getSnapshot ?? getNothing)
+  // The editor's lock, as the Loader computes it, for what edits the document outside the editor: the history's restore
+  const editRefused = status.name === 'revealed' && status.editRefused
+  const isEditorLocked = !snapshot || isLocked({ snapshot, role, editRefused })
 
   const retryConnection = () => {
     // A second click, or a retry on activity after an idle eviction, may have left `stopped` already
@@ -144,6 +146,10 @@ export function DocumentViewerV2({
 
   // Only once revealed does the editor hold the edits RTS replayed and its Lexical editor, which exports need
   const exportInvoker = revealed ? editorInvoker : undefined
+  const [historyModal, showHistoryModal] = useHistoryViewerModal({
+    liveEditorInvoker: exportInvoker,
+    locked: isEditorLocked,
+  })
   const fileActions = useDocumentFileActions({ node, role, driveCompat, client, exportInvoker })
   // Out of the trash, restored here or elsewhere: a document opened trashed opens now, and a session that stopped
   // while RTS refused the trashed document reconnects (one still trying reconnects by itself)
@@ -170,7 +176,8 @@ export function DocumentViewerV2({
       logger.error('Failed to download the document', error),
     )
   }
-  // The version history, read from the session's History Log as it opens, once the editor shows the document
+  // The version history, read from the session's History Log as it opens, once the editor shows the document. A
+  // restore replaces the live editor's state: an ordinary edit, sent as the editor's own are.
   const seeVersionHistory = () => {
     const name = node && getNodeName(node)
     if (!session || !exportInvoker || !name) {
