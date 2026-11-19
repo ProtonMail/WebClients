@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { addDays, fromUnixTime, isBefore } from 'date-fns';
@@ -18,7 +18,9 @@ import SettingsLink from '../../../../components/link/SettingsLink';
 import useSettingsLink from '../../../../components/link/useSettingsLink';
 import useModalState from '../../../../components/modalTwo/useModalState';
 import useAppTitle from '../../../../hooks/useAppTitle';
+import BackToMenuButton from '../../../layout/BackToMenuButton';
 import PrivateMainArea from '../../../layout/PrivateMainArea';
+import { useFocusMainOnNavigation } from '../../../layout/useFocusMainOnNavigation';
 import { useCancelSubscriptionFlow } from '../cancelSubscription/useCancelSubscriptionFlow';
 import { useSubscriptionModalRaw } from '../subscriptionModalContext';
 import useSubscriptionModalTelemetry from '../useSubscriptionModalTelemetry';
@@ -68,6 +70,10 @@ const CancellationReminderContent = ({ app, subscription }: ContentProps) => {
     }, [hasAccess]);
 
     useAppTitle(c('Subscription reminder').t`Cancel subscription`);
+
+    const mainAreaRef = useRef<HTMLDivElement>(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
+    useFocusMainOnNavigation(mainAreaRef, titleRef);
 
     const isUpsellEnabled = useFlag('NewCancellationFlowUpsell');
 
@@ -120,10 +126,11 @@ const CancellationReminderContent = ({ app, subscription }: ContentProps) => {
 
     return (
         <>
-            <PrivateMainArea data-testid="cancellation-flow:reminder-container">
+            <PrivateMainArea ref={mainAreaRef} data-testid="cancellation-flow:reminder-container">
                 <div className="w-full">
                     <div className="container-section-sticky">
-                        <ReminderSectionPlan {...config.reminder} />
+                        <BackToMenuButton />
+                        <ReminderSectionPlan {...config.reminder} titleRef={titleRef} />
                         <div className="columns-1 md:columns-2 gap-10 mt-6">
                             <ReminderSectionFeatures {...config.features} />
                             <ReminderSectionTestimonials {...config.testimonials} />
