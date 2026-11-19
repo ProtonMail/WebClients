@@ -1,10 +1,11 @@
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
-import { getInfo } from '@proton/shared/lib/api/auth';
+import { auth, getInfo } from '@proton/shared/lib/api/auth';
 import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
 import { updatePassword } from '@proton/shared/lib/api/settings';
 import { getUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS } from '@proton/shared/lib/constants';
@@ -14,19 +15,68 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 
-import { authenticateDonationUser } from '../../emailReservation/helpers/emailReservationRequests';
-
 export interface ActivationParams {
     reservedEmail: string;
     activationCode: string;
 }
 
+/** Base32 alphabet (0-9, A-Z excluding I, L, O, U) to avoid confusing characters */
+const BASE32_CHARS = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+
 /**
- * Decodes the base64 hash fragment from the activation URL.
- * Reverses the encoding performed by `getActivationUrl()` in emailReservationHelpers.
+ * Generates 16 base32 characters, hyphenated every 4 and uppercase.
+ * Example: "9K7Q-P6HD-X28R-G5YV"
+ */
+export const generateReadableActivationCode = (): string => {
+    const randomValues = crypto.getRandomValues(new Uint8Array(16));
+    return Array.from(randomValues)
+        .map((n, i) => (i > 0 && i % 4 === 0 ? '-' : '') + BASE32_CHARS[n % BASE32_CHARS.length])
+        .join('');
+};
+
+export interface AuthenticateDonationUserParams {
+    username: string;
+    domain: string;
+    password: string;
+    api: Api;
+    persistent?: boolean;
+    silenceAuthErrors?: boolean;
+}
+
+export interface AuthenticateDonationUserResult {
+    UID: string;
+    AccessToken: string;
+    LocalID: number;
+}
+
+/**
+ * Authenticates the reserved account and returns credentials for making authenticated API calls.
+ * No session cookies are set, so the browser session is unchanged.
+ */
+export const authenticateDonationUser = async ({
+    username,
+    domain,
+    password,
+    api,
+    persistent = false,
+    silenceAuthErrors = false,
+}: AuthenticateDonationUserParams): Promise<AuthenticateDonationUserResult> => {
+    const userEmail = `${username}@${domain}`;
+
+    const authResult = await srpAuth({
+        api,
+        credentials: { username: userEmail, password },
+        config: { ...auth({ Username: userEmail }, persistent), silence: silenceAuthErrors },
+    }).then((response): Promise<AuthResponse> => response.json());
+
+    return authResult;
+};
+
+/**
+ * Decodes the base64 hash fragment from the activation URL in the reservation voucher.
  *
  * The hash contains a base64-encoded string of the form:
- *   username=<encodeURIComponent(email)>&activationCode=<encodeURIComponent(code)>
+ *   reservedEmail=<encodeURIComponent(email)>&activationCode=<encodeURIComponent(code)>
  */
 export const decodeActivationParams = (hash: string): ActivationParams | null => {
     try {

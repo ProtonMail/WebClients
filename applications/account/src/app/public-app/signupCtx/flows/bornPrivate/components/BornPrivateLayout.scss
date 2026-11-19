@@ -19,16 +19,6 @@ body:has(.born-private-reservation-main-container) {
 		max-inline-size: rem(1200);
 	}
 
-	&-reservation-heading {
-		.large-font {
-			font-size: rem(40);
-
-			@include im.media('<=small') {
-				font-size: rem(24);
-			}
-		}
-	}
-
 	&-reservation-bg-gradient {
 		position: relative;
 

@@ -18,13 +18,12 @@ import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
+import { authenticateDonationUser, generateReadableActivationCode } from '../../activation/helpers/activationHelpers';
 import BornPrivateHeader from '../../components/BornPrivateHeader';
 import BornPrivateLayout from '../../components/BornPrivateLayout';
 import BornPrivateMain from '../../components/BornPrivateMain';
 import BornPrivateFormContainer from '../../components/form/BornPrivateFormContainer';
 import BornPrivateFormHeading from '../../components/form/BornPrivateFormHeading';
-import { generateReadableActivationCode } from '../../emailReservation/helpers/emailReservationHelpers';
-import { authenticateDonationUser } from '../../emailReservation/helpers/emailReservationRequests';
 import { recoverBornPrivateDetails } from '../helpers/recoveryRequests';
 
 interface RecoveryVerificationCodeProps {

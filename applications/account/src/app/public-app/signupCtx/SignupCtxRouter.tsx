@@ -5,7 +5,6 @@ import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { cachedPlans } from '../signup/defaultPlans';
 import type { BaseSignupContextProps } from './context/SignupContext';
-import EmailReservationSignup from './flows/bornPrivate/emailReservation/EmailReservationSignup';
 import BusinessReferralSignup from './flows/businessReferral/BusinessReferralSignup';
 import DrivePricing from './flows/drive/DrivePricing';
 import DriveSignup from './flows/drive/DriveSignup';
@@ -68,9 +67,6 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                 </Route>
                 <Route path={SSO_PATHS.MEET_SIGNUP}>
                     <MeetB2CSignup {...props} />
-                </Route>
-                <Route path={SSO_PATHS.BORN_PRIVATE}>
-                    <EmailReservationSignup />
                 </Route>
                 <Route path={SSO_PATHS.MAIL_SIGNUP}>
                     <MailSignup {...props} />
