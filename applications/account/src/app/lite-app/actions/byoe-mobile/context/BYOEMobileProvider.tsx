@@ -17,6 +17,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
+import { resolveNativeRedirect } from '../persistedRedirect';
 import { getNativeUpsellUrl } from '../redirectToNative';
 import { useBYOEMobileTelemetry } from '../telemetry/useBYOEMobileTelemetry';
 import { type BYOEMobileStatus, REDIRECT_PATH } from './interface';
@@ -66,7 +67,7 @@ const getAutoConnectParams = (params: URLSearchParams) => {
     };
 };
 
-export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: Props) => {
+export const BYOEMobileProvider = ({ redirect: redirectFromUrl, initialSearchParams, children }: Props) => {
     const { UID, localID } = useAuthentication();
     const { createNotification } = useNotifications();
 
@@ -76,6 +77,11 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         features: [EASY_SWITCH_FEATURES.BYOE],
         redirectPath: REDIRECT_PATH,
     });
+
+    // The URL only has the redirect on the first load, so it is recovered from the OAuth state or the tab storage
+    const [redirect] = useState(() =>
+        resolveNativeRedirect(redirectFromUrl, callback.type === 'none' ? undefined : callback.state?.redirect)
+    );
 
     const telemetry = useBYOEMobileTelemetry();
 
@@ -132,6 +138,7 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
         startOAuthFlow({
             importEmails,
             redirect,
+            autoConnect: status === 'auto-starting',
             sessionUID: UID,
             sessionLocalID: localID,
             creationStartedAt: getAccountImportBYOEStartedAt(),

@@ -65,8 +65,10 @@ export const useBYOEMobileConnection = ({ redirectUri, defaultImportEmails, setS
 
         trackConnectSucceeded();
 
+        // Only an automatic connection hands the user back: from the settings they may want to manage their addresses.
         // The stored redirect comes back from session storage, so it is validated again
-        const nativeUrl = getNativeSuccessUrl(oauthStateRef.current?.redirect, result.address.Email);
+        const state = oauthStateRef.current;
+        const nativeUrl = state?.autoConnect ? getNativeSuccessUrl(state.redirect, result.address.Email) : undefined;
         if (nativeUrl) {
             replaceUrl(nativeUrl);
             return true;
