@@ -29,6 +29,7 @@ import type {
     SubscriptionEstimation,
 } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -138,7 +139,7 @@ const SubscriptionCheckout = ({
             isTrial: trial,
             couponConfig,
             app: APP_NAME,
-            subscription,
+            subscription: getChangedSubscription(multiSubscriptionContext, planIDs),
             paymentForbiddenReason,
             scribeToLumo,
         },
