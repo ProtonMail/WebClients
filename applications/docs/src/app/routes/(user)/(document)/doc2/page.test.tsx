@@ -53,7 +53,7 @@ jest.mock('./__components/DocumentHeaderV2', () => ({ DocumentHeaderV2: () => <d
 // A fixed version for the page's log line; the rest of the SDK, such as DocsApiError, stays real.
 jest.mock('@proton-docs/realtime-sdk', () => ({ ...jest.requireActual('@proton-docs/realtime-sdk'), version: '0.0.0' }))
 const mockCreateSession = jest.fn()
-const mockClient = { createSession: mockCreateSession }
+const mockClient = { createSession: mockCreateSession, prefetchBootstrap: () => ({ confirm: () => {}, end: () => {} }) }
 jest.mock('./__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockClient }))
 jest.mock('@proton/app-context/useNotifications', () => ({
   useNotifications: () => ({ createNotification: jest.fn() }),
@@ -156,6 +156,7 @@ describe('DocumentPageV2', () => {
       expect(mockCreateSession).toHaveBeenCalledWith({
         documentType: 'doc',
         nodeMeta: { volumeId: 'MY_VOLUME', linkId: 'NEW_DOC' },
+        prefetch: expect.anything(),
         // The page runs on a dev host.
         commitDuLimit: 50,
       })

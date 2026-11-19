@@ -6,7 +6,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { getClientID } from '@proton/shared/lib/apps/helper'
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers'
-import { type PrivateNodeMeta, createClient } from '@proton-docs/realtime-sdk'
+import { type PrivateNodeMeta, createClient, prefetchBootstrap } from '@proton-docs/realtime-sdk'
 
 import { useApplication } from '~/utils/application-context'
 
@@ -27,10 +27,16 @@ export function useRealtimeClient() {
     const appVersion = getAppVersionStr(getClientID(APP_NAME), APP_VERSION)
 
     const getNodeUid = ({ volumeId, linkId }: PrivateNodeMeta) => generateNodeUid(volumeId, linkId)
+    const docsApi = {
+      baseUrl: API_URL,
+      appVersion,
+      uid: UID,
+      fetch: createDocsApiFetch(api, API_URL, application.logger),
+    }
 
-    return createClient({
+    const realtimeClient = createClient({
       mode: 'private',
-      api: { baseUrl: API_URL, appVersion, uid: UID, fetch: createDocsApiFetch(api, API_URL, application.logger) },
+      api: docsApi,
       rts: {
         serverUrl: getWebSocketServerURL(),
         appVersion,
@@ -49,6 +55,10 @@ export function useRealtimeClient() {
       },
       logging: { enabled: true, sink: (line) => application.logger.info(line) },
     })
+    return {
+      ...realtimeClient,
+      prefetchBootstrap: (nodeMeta: PrivateNodeMeta) => prefetchBootstrap({ api: docsApi, nodeMeta }),
+    }
   })
 
   return client

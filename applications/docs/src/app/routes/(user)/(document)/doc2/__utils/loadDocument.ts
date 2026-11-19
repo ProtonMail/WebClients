@@ -4,7 +4,7 @@ import { type NodeEntity, generateNodeUid, type getDrive } from '@proton/drive/s
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
-import type { PrivateNodeMeta, Session } from '@proton-docs/realtime-sdk'
+import type { BootstrapPrefetch, PrivateNodeMeta, Session } from '@proton-docs/realtime-sdk'
 
 import { ClientEditorBridge } from './ClientEditorBridge'
 import type { EditorInvoker } from './EditorInvoker'
@@ -45,7 +45,7 @@ export type LoaderStatus =
   | { name: 'failed'; reason: LoaderFailure; session?: Session }
 
 export type LoaderDeps = {
-  client: Pick<ReturnType<typeof useRealtimeClient>, 'createSession'>
+  client: Pick<ReturnType<typeof useRealtimeClient>, 'createSession' | 'prefetchBootstrap'>
   drive: Pick<ReturnType<typeof getDrive>, 'getNodeHierarchy'>
   nodeMeta: PrivateNodeMeta
   logger: LoggerInterface
@@ -78,12 +78,10 @@ export async function loadDocument(deps: LoaderDeps, io: LoaderIO): Promise<void
   clearLoaderMeasures()
   const run = new LoaderRun(deps, io)
   try {
-    const { node, role } = await run.step('node', () => run.readNode())
-    if (node.trashTime) {
-      run.openTrashed(node, role)
+    const opened = await run.open()
+    if (!opened) {
       return
     }
-    await run.step('bootstrap', () => run.bootstrap())
     const editorInvoker = await run.step('frame', () => run.buildBridge(io.frame))
     await run.step('baseState', () => run.sendBaseState(editorInvoker))
     await run.step('catchUp', () => run.catchUp())
@@ -180,6 +178,29 @@ class LoaderRun {
     }
   }
 
+  /**
+   * The `node` and `bootstrap` steps, with an Early Start: the SDK prefetches the bootstrap's Docs API reads beside the
+   * node step, which they don't need, and the session's bootstrap takes them. Confirmed at once, so the realtime token
+   * is fetched beside the node step too: a document in the trash then gets one refused token request, which costs less
+   * than waiting for the node step on every open. Ended here too, for a run that opens no session. Resolves `false` for
+   * a document in the trash.
+   */
+  async open(): Promise<boolean> {
+    const prefetch = this.deps.client.prefetchBootstrap(this.deps.nodeMeta)
+    prefetch.confirm()
+    try {
+      const { node, role } = await this.step('node', () => this.readNode())
+      if (node.trashTime) {
+        this.openTrashed(node, role)
+        return false
+      }
+      await this.step('bootstrap', () => this.bootstrap(prefetch))
+      return true
+    } finally {
+      prefetch.end()
+    }
+  }
+
   /** The node is the last item of its hierarchy, so one read gives both it and the user's role */
   async readNode(): Promise<{ node: NodeEntity; role: DocumentRole }> {
     const nodeUid = this.nodeUid()
@@ -206,11 +227,12 @@ class LoaderRun {
    * A base state with an unreadable update fails, since showing the rest would pass an incomplete document as whole.
    * The session is disconnected when the run is aborted, once bootstrapped if it was still bootstrapping.
    */
-  async bootstrap(): Promise<void> {
+  async bootstrap(prefetch: BootstrapPrefetch): Promise<void> {
     const { client, nodeMeta, logger } = this.deps
     const pending = client.createSession({
       documentType: 'doc',
       nodeMeta,
+      prefetch,
       // As /doc squashes on dev and black. Mirrors `packages/docs-core/lib/Types/SquashingConstants.ts`, its
       // `GetCommitDULimit`.
       ...(isDevOrBlack() && { commitDuLimit: 50 }),

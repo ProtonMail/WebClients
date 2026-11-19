@@ -26,7 +26,11 @@ import { docsLoadMarks, withNodePerformance } from '../__utils/loadMarksTesting'
 import type { DocumentDebugMenuProps } from './DocumentDebugMenu'
 import { DocumentViewerV2 } from './DocumentViewerV2'
 
-const mockRealtimeClient = { seedInitialCommit: jest.fn(), createSession: jest.fn() }
+const mockRealtimeClient = {
+  seedInitialCommit: jest.fn(),
+  createSession: jest.fn(),
+  prefetchBootstrap: () => ({ confirm: () => {}, end: () => {} }),
+}
 jest.mock('../__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockRealtimeClient }))
 jest.mock('@proton/drive/sdk', () => ({
   ...jest.requireActual('@proton/drive/sdk'),
