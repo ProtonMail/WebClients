@@ -9,7 +9,7 @@ import { isProtonDocsDocument } from '../utils/mimetype'
 import { getInitials } from './getInitials'
 import { clsx } from '../utils/clsx'
 import { type ComponentPropsWithoutRef, useState } from 'react'
-import { c, msgid } from 'ttag'
+import { createInvitesTableMessages } from '../messages/invitesTable'
 import { useHomepageView } from '../homepageViewContext'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
@@ -35,6 +35,7 @@ export function InvitesTable(props: InvitesTableProps) {
   const acceptedIds = new Set(recentlyAcceptedInvitations.map(({ invitation }) => invitation.invitationId))
   const allInvites = pendingInvitations.filter(({ invitation }) => !acceptedIds.has(invitation.invitationId))
   const pendingCount = allInvites.length
+  const messages = createInvitesTableMessages().invitesTable
   if (pendingCount === 0) {
     return null
   }
@@ -66,7 +67,7 @@ export function InvitesTable(props: InvitesTableProps) {
           <Table.Header isTitle data-testid="invite-column-name">
             <div className="flex w-full items-center justify-between">
               <span className="flex flex-nowrap items-center gap-[.375rem]">
-                <span className="shrink-0">{c('Info').t`Pending invitations`}</span>
+                <span className="shrink-0">{messages.pendingInvitations}</span>
                 <div className="flex h-5 !min-w-5 shrink-0 items-center justify-center rounded-[.375rem] bg-[#0284C7] px-1">
                   <span className="text-[.75rem] leading-none text-[#ffffff]">{pendingCount}</span>
                 </div>
@@ -74,11 +75,15 @@ export function InvitesTable(props: InvitesTableProps) {
               <span className="-me-3 medium:hidden">{collapseButton}</span>
             </div>
           </Table.Header>
-          <Table.Header target="large" data-testid="invite-column-date">{c('Info').t`Shared on`}</Table.Header>
-          <Table.Header target="medium" data-testid="invite-column-shared-by">{c('Info').t`Shared by`}</Table.Header>
+          <Table.Header target="large" data-testid="invite-column-date">
+            {messages.sharedOn}
+          </Table.Header>
+          <Table.Header target="medium" data-testid="invite-column-shared-by">
+            {messages.sharedBy}
+          </Table.Header>
           <Table.Header target="medium" data-testid="invite-column-actions">
             <div className="flex w-full flex-nowrap items-center justify-between">
-              <span>{c('Info').t`Accept/decline`}</span>
+              <span>{messages.acceptDecline}</span>
               {collapseButton}
             </div>
           </Table.Header>
@@ -156,13 +161,7 @@ export function InvitesTable(props: InvitesTableProps) {
           className="flex h-[3.375rem] w-full items-center gap-3 px-6 text-[#0284C7]"
         >
           <IcChevronDown size={4} className="shrink-0" />
-          <span className="text-[.875rem]">
-            {c('Action').ngettext(
-              msgid`View ${pendingCount} invitation`,
-              `View all ${pendingCount} invitations`,
-              pendingCount,
-            )}
-          </span>
+          <span className="text-[.875rem]">{messages.viewInvitations(pendingCount)}</span>
         </button>
       )}
     </ContentSheet>
@@ -180,6 +179,7 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
   const [isAcceptingInvite, setIsAcceptingInvite] = useState(false)
 
   const { updateRecentDocuments, reportTelemetry, logger, errorTracking } = useHomepageView()
+  const messages = createInvitesTableMessages().invitesTable
 
   async function handleAcceptInvite(invite: ExtendedInvitationDetails) {
     try {
@@ -209,22 +209,22 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
   return (
     <div className="flex flex-nowrap gap-[.625rem]">
       <IconButton
-        label={c('Action').t`Accept invitation`}
+        label={messages.accept}
         shape="outline"
         disabled={invite.isLocked || isAcceptingInvite}
         loading={isAcceptingInvite}
         onClick={() => handleAcceptInvite(invite)}
-        aria-label={c('Action').t`Accept invitation to document`}
+        aria-label={messages.acceptLabel}
         data-testid="accept-invite-button"
       >
         <IcCheckmark />
       </IconButton>
       <IconButton
-        label={c('Action').t`Decline invitation`}
+        label={messages.decline}
         shape="outline"
         disabled={invite.isLocked}
         onClick={() => handleRejectInvite(invite)}
-        aria-label={c('Action').t`Decline invitation to document`}
+        aria-label={messages.declineLabel}
         data-testid="reject-invite-button"
       >
         <IcCross />
@@ -236,11 +236,12 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
 type CollapseButtonProps = { collapse: () => void }
 
 function CollapseButton({ collapse }: CollapseButtonProps) {
+  const messages = createInvitesTableMessages().invitesTable
   return (
     <IconButton
-      label={c('Action').t`Collapse list`}
+      label={messages.collapse}
       onClick={collapse}
-      aria-label={c('Action').t`Collapse list of pending invitations`}
+      aria-label={messages.collapseLabel}
       shape="ghost"
       className="ml-auto shrink-0 px-2"
     >
@@ -250,6 +251,6 @@ function CollapseButton({ collapse }: CollapseButtonProps) {
 }
 
 function getRelativeDate(dateFormatter: DateFormatter, date: Date): string {
-  const text = dateFormatter.formatDateOrTimeIfToday(date, c('Info').t`Just now`)
+  const text = dateFormatter.formatDateOrTimeIfToday(date, createInvitesTableMessages().invitesTable.justNow)
   return text.charAt(0).toUpperCase() + text.slice(1)
 }

@@ -2,20 +2,14 @@ import * as Ariakit from '@ariakit/react'
 import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp'
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
 import { type KeyboardEvent, useRef, useState } from 'react'
-import { c } from 'ttag'
 import { IconButton } from '../components/ui'
 import { useHomepageView, type RecentsSort } from '../homepageViewContext'
+import { createSortMessages } from '../messages/sort'
 import { TelemetryEvent } from '../utils/telemetry'
 import { DropdownMenu, DropdownMenuItem } from './menu'
 
-const SORT_SELECT_OPTIONS = [
-  { value: 'viewed', label: () => c('Sort menu options').t`Last viewed first` },
-  // TODO: re-enable once "last modified" is supported.
-  // { value: 'modified', label: () => c('Actions').t`Last modified first` },
-  { value: 'name', label: () => c('Sort menu options').t`Name` },
-  { value: 'owner', label: () => c('Sort menu options').t`Created by` },
-  { value: 'location', label: () => c('Sort menu options').t`Location` },
-] satisfies { value: RecentsSort; label: () => string }[]
+// TODO: add 'modified' once "last modified" is supported.
+const SORT_SELECT_OPTIONS = ['viewed', 'name', 'owner', 'location'] satisfies RecentsSort[]
 
 const TELEMETRY_EVENT_BY_SORT: Record<RecentsSort, TelemetryEvent> = {
   viewed: TelemetryEvent.sorting_changed_to_time,
@@ -32,6 +26,7 @@ export function SortSelect() {
   const [openedByArrow, setOpenedByArrow] = useState(false)
   // Where Proton's dropdown ended up, with the button at the table's right edge.
   const menu = Ariakit.useMenuStore({ placement: 'bottom-end', focusLoop: true })
+  const messages = createSortMessages().sort
 
   return (
     <Ariakit.MenuProvider store={menu}>
@@ -40,8 +35,8 @@ export function SortSelect() {
         onClick={() => setOpenedByArrow(false)}
         render={
           <IconButton
-            label={c('Action').t`Sort by`}
-            aria-label={c('Action').t`Change sort order`}
+            label={messages.sortBy}
+            aria-label={messages.changeSortOrder}
             shape="ghost"
             className="ml-auto shrink-0 px-2 aria-expanded:bg-[--interaction-default-active]"
           />
@@ -57,7 +52,7 @@ export function SortSelect() {
         gutter={8}
       >
         <p className="m-0 px-4 py-2 text-[.875rem] font-bold">Sort by</p>
-        {SORT_SELECT_OPTIONS.map(({ label, value }) => (
+        {SORT_SELECT_OPTIONS.map((value) => (
           <DropdownMenuItem
             key={value}
             onClick={() => {
@@ -65,7 +60,7 @@ export function SortSelect() {
               reportTelemetry(TELEMETRY_EVENT_BY_SORT[value])
             }}
           >
-            <span>{label()}</span>
+            <span>{messages.options[value]}</span>
             {sortValue === value ? <IcCheckmark /> : null}
           </DropdownMenuItem>
         ))}

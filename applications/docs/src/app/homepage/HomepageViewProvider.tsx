@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useRouteMatch } from 'react-router'
-import { c } from 'ttag'
+import { createLoadingMessages } from './messages/loading'
 
 import { RecentDocumentsItem } from './recentDocumentsItem'
 import type { RecentDocumentsItemValue } from './recentDocumentsItem'
@@ -122,7 +122,7 @@ export function HomepageViewProvider({
       .catch((error) => {
         createNotification({
           type: 'error',
-          text: c('Error').t`Failed to load 'My files' folder`,
+          text: createLoadingMessages().loading.myFilesFailed,
         })
         traceRecentsError(errorTracking, error)
       })

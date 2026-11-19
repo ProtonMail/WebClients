@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag'
+import { createTrashMessages } from '../messages/trash'
 import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { trashDocument, restoreDocument, reportTrashError } from './trash'
 import { trashDocuments, restoreDocuments, type BatchResult } from './trashMany'
@@ -9,10 +9,10 @@ export function handleRestoreError(createNotification: CreateNotification, error
   if (isRestorePermissionError(error)) {
     createNotification({
       type: 'error',
-      text: c('Notification').t`Because this document was in a shared folder, only the folder owner can restore it`,
+      text: createTrashMessages().trash.restoreNotAllowed,
     })
   } else {
-    createNotification({ type: 'error', text: c('Notification').t`Failed to restore document` })
+    createNotification({ type: 'error', text: createTrashMessages().trash.restoreFailed })
     reportTrashError(errorTracking, error)
   }
 }
@@ -35,13 +35,13 @@ export async function trashAndNotify(
       handleRestoreError(createNotification, errorTracking, error)
       return
     }
-    createNotification({ type: 'success', text: c('Notification').t`Document restored from trash` })
+    createNotification({ type: 'success', text: createTrashMessages().trash.restored })
     emitRestored()
   }
 
   createNotification({
     type: 'success',
-    text: c('Notification').t`Document moved to trash`,
+    text: createTrashMessages().trash.trashed,
     action: canRestore ? undoAction(undo) : undefined,
   })
 }
@@ -64,11 +64,7 @@ export async function trashManyAndNotify(
     if (numberOfItems > 0) {
       createNotification({
         type: 'success',
-        text: c('Notification').ngettext(
-          msgid`${numberOfItems} item restored from trash`,
-          `${numberOfItems} items restored from trash`,
-          numberOfItems,
-        ),
+        text: createTrashMessages().trash.itemsRestored(numberOfItems),
       })
       onRestored()
     }
@@ -82,27 +78,17 @@ export async function trashManyAndNotify(
   }
 
   if (succeeded.length > 0) {
-    const numberOfItems = succeeded.length
     createNotification({
       type: 'success',
-      text: c('Notification').ngettext(
-        msgid`${numberOfItems} item moved to trash`,
-        `${numberOfItems} items moved to trash`,
-        numberOfItems,
-      ),
+      text: createTrashMessages().trash.itemsTrashed(succeeded.length),
       action: canRestore ? undoAction(undo) : undefined,
     })
   }
 
   if (failed.length > 0) {
-    const count = failed.length
     createNotification({
       type: 'error',
-      text: c('Notification').ngettext(
-        msgid`${count} item could not be moved to trash`,
-        `${count} items could not be moved to trash`,
-        count,
-      ),
+      text: createTrashMessages().trash.itemsNotTrashed(failed.length),
     })
     new Set(failed.map((f) => f.error)).forEach((error) => reportTrashError(errorTracking, error))
   }
@@ -124,22 +110,22 @@ export async function restoreAndNotify(
       await trashDocument(drive, nodeUid)
     } catch (error) {
       reportTrashError(errorTracking, error)
-      createNotification({ type: 'error', text: c('Notification').t`Failed to trash document` })
+      createNotification({ type: 'error', text: createTrashMessages().trash.trashFailed })
       return
     }
-    createNotification({ type: 'success', text: c('Notification').t`Document moved to trash` })
+    createNotification({ type: 'success', text: createTrashMessages().trash.trashed })
     emitTrashed()
   }
 
   createNotification({
     type: 'success',
-    text: c('Notification').t`Document restored from trash`,
+    text: createTrashMessages().trash.restored,
     action: undoAction(undo),
   })
 }
 
 function undoAction(onClick: () => void) {
-  return { label: c('Action').t`Undo`, onClick }
+  return { label: createTrashMessages().trash.undo, onClick }
 }
 
 function isRestorePermissionError(error: Error) {

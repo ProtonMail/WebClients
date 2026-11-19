@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { c } from 'ttag'
+import { createLoadingMessages } from './messages/loading'
 
 import { useHomepageView } from './homepageViewContext'
 
@@ -10,7 +10,7 @@ export function useReloadRecents() {
     reloadInvitations()
     await updateRecentDocuments()
     createNotification({
-      text: c('Notification').t`Recent documents updated`,
+      text: createLoadingMessages().loading.recentsUpdated,
     })
   }, [updateRecentDocuments, reloadInvitations, createNotification])
 }

@@ -3,7 +3,7 @@
 // Dropped what the homepage doesn't use: the tiny and medium sizes and `srLabelHidden`.
 
 import { type ComponentPropsWithoutRef, useId } from 'react'
-import { c } from 'ttag'
+import { createLoadingMessages } from '../messages/loading'
 import { clsx } from '../utils/clsx'
 import './CircleLoader.css'
 
@@ -31,7 +31,7 @@ export function CircleLoader({ size, className, ...rest }: CircleLoaderProps) {
         <use href={`#${circleId}`} className="homepage-circle-loader__track" />
         <use href={`#${circleId}`} className="homepage-circle-loader__circle" />
       </svg>
-      <span className="sr-only">{c('Info').t`Loading`}</span>
+      <span className="sr-only">{createLoadingMessages().loading.loading}</span>
     </>
   )
 }

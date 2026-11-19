@@ -1,6 +1,6 @@
 import { useMemo, useState, type ComponentType, type ReactNode } from 'react'
 import { useHistory, useRouteMatch } from 'react-router'
-import { c } from 'ttag'
+import { createHeaderMessages } from './messages/header'
 
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier'
 
@@ -57,7 +57,7 @@ export function HomepageHeader({
         className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
         app={APPS.PROTONDRIVE}
         userDropdown={<UserDropdown app={APPS.PROTONDOCS} reportDescriptionContext={reportDescriptionContext} />}
-        title={c('Title').t`Docs`}
+        title={createHeaderMessages().header.title}
         expanded={expanded}
         onToggleExpand={toggleExpanded}
         isSmallViewport={isNarrow}
@@ -82,6 +82,18 @@ export function HomepageHeader({
   )
 }
 
+function searchPlaceholder(type: ProtonDocumentType | undefined) {
+  const messages = createHeaderMessages().header
+  switch (type) {
+    case 'document':
+      return messages.searchRecentDocuments
+    case 'spreadsheet':
+      return messages.searchRecentSpreadsheets
+    default:
+      return messages.searchRecents
+  }
+}
+
 type SearchProps = {
   value: string | undefined
   onChange: (value: string | undefined) => void
@@ -99,17 +111,8 @@ function Search({ value, onChange, type, className }: SearchProps) {
     }
     onChange(value)
   })
-  const placeholder = useMemo(() => {
-    if (type) {
-      switch (type) {
-        case 'document':
-          return c('Action').t`Search recent documents`
-        case 'spreadsheet':
-          return c('Action').t`Search recent spreadsheets`
-      }
-    }
-    return c('Action').t`Search recents`
-  }, [type])
+  const messages = createHeaderMessages().header
+  const placeholder = useMemo(() => searchPlaceholder(type), [type])
   return (
     <div className={className}>
       <Input
@@ -122,7 +125,7 @@ function Search({ value, onChange, type, className }: SearchProps) {
         }}
         prefix={
           <span>
-            <IcMagnifier size={5} color="weak" alt={c('Action').t`Search`} />
+            <IcMagnifier size={5} color="weak" alt={messages.search} />
           </span>
         }
         value={value ?? ''}
@@ -145,17 +148,8 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
   })
   const [isActive, setActive] = useState(false)
   const isInput = (value && value.length > 0) || isActive
-  const placeholder = useMemo(() => {
-    if (type) {
-      switch (type) {
-        case 'document':
-          return c('Action').t`Search recent documents`
-        case 'spreadsheet':
-          return c('Action').t`Search recent spreadsheets`
-      }
-    }
-    return c('Action').t`Search recents`
-  }, [type])
+  const messages = createHeaderMessages().header
+  const placeholder = useMemo(() => searchPlaceholder(type), [type])
   return (
     <div className={clsx('flex grow items-center gap-2', className)}>
       {isInput ? (
@@ -176,7 +170,7 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
           inputClassName="h-[32px] small:h-auto"
           prefix={
             <span>
-              <IcMagnifier size={5} color="weak" alt={c('Action').t`Search`} />
+              <IcMagnifier size={5} color="weak" alt={messages.search} />
             </span>
           }
           value={value ?? ''}
@@ -185,9 +179,7 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
         />
       ) : (
         <>
-          <div className="grow font-[.875rem] font-semibold">
-            {isRecentsRoute ? c('Info').t`Recents` : c('Info').t`Trash`}
-          </div>
+          <div className="grow font-[.875rem] font-semibold">{isRecentsRoute ? messages.recents : messages.trash}</div>
           <IconButton label={placeholder} shape="outline" onClick={() => setActive(true)}>
             <IcMagnifier size={4} />
           </IconButton>

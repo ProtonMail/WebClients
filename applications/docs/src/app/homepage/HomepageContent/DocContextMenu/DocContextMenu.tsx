@@ -18,7 +18,7 @@ import { DeletePermanentlyButton } from './buttons/DeletePermanently'
 import type { MemberRole } from '@protontech/drive-sdk'
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
-import { c } from 'ttag'
+import { createContextMenuMessages } from '../../messages/contextMenu'
 import { ContextMenuButton } from './ContextMenuButton'
 import type { MenuPosition } from './context'
 
@@ -186,12 +186,13 @@ function TrashedDocumentMenuItems({ currentDocument, close }: DocumentMenuItemsP
 type SelectionMenuItemsProps = { actions: SelectionActions; close: () => void }
 
 function SelectionMenuItems({ actions: { move, trash, disabled }, close }: SelectionMenuItemsProps) {
+  const messages = createContextMenuMessages().contextMenu
   return (
     <>
       {move ? (
         <>
           <ContextMenuButton
-            name={c('Action').t`Move`}
+            name={messages.move}
             icon={<IcArrowsCross className="mr-2" />}
             action={move}
             close={close}
@@ -201,7 +202,7 @@ function SelectionMenuItems({ actions: { move, trash, disabled }, close }: Selec
         </>
       ) : null}
       <ContextMenuButton
-        name={c('Action').t`Move to trash`}
+        name={messages.moveToTrash}
         icon={<IcTrash className="mr-2" />}
         action={trash}
         close={close}

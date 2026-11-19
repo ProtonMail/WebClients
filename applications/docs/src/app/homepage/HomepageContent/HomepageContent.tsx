@@ -6,7 +6,8 @@ import type { TableVariant } from './DocumentsTable'
 import { DocumentsTable } from './DocumentsTable'
 import { InvitesTable } from './InvitesTable'
 import { ContextMenuProvider } from './DocContextMenu/context'
-import { c } from 'ttag'
+import { createContentMessages } from '../messages/content'
+import { createNewDocumentMessages } from '../messages/newDocument'
 import { useHomepageView } from '../homepageViewContext'
 import { forwardRef, useEffect } from 'react'
 import { COLOR_BY_TYPE, ContentSheet, REFRESH_AFTER_NEW_DOCUMENT } from './shared'
@@ -98,13 +99,14 @@ function HomepageView(): JSX.Element | null {
 type EmptyStateVariant = 'recents' | 'trash' | 'search'
 
 function getEmptyStateText(variant: EmptyStateVariant): string {
+  const messages = createContentMessages().content
   switch (variant) {
     case 'recents':
-      return c('Info').t`Create end-to-end encrypted documents and spreadsheets.`
+      return messages.emptyRecents
     case 'trash':
-      return c('Info').t`There are no documents in the trash.`
+      return messages.emptyTrash
     case 'search':
-      return c('Info').t`No recent documents match your search.`
+      return messages.emptySearch
   }
 }
 
@@ -126,6 +128,7 @@ const HomepageButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(functi
 
 function RecentsEmptyStateButtons() {
   const { updateRecentDocuments, reportTelemetry, getAppHref } = useHomepageView()
+  const messages = createNewDocumentMessages().newDocument
   return (
     <div className="flex items-center justify-center gap-4">
       <HomepageButton
@@ -140,7 +143,7 @@ function RecentsEmptyStateButtons() {
           className="shrink-0 text-[--icon-color]"
           style={{ '--icon-color': COLOR_BY_TYPE.document }}
         />
-        {c('Action').t`New document`}
+        {messages.document}
       </HomepageButton>
 
       <HomepageButton
@@ -153,14 +156,16 @@ function RecentsEmptyStateButtons() {
           className="shrink-0 text-[--icon-color]"
           style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
         />
-        {c('sheets_2025:Action').t`New spreadsheet`}
+        {messages.spreadsheet}
         <span
           className={clsx(
             'flex h-4 items-center justify-center rounded-full bg-[--background-weak] px-1.5',
             'text-[0.625rem]/[1rem] font-semibold text-[--link-norm]',
             'pointer-events-none absolute -right-5 -top-2',
           )}
-        >{c('Info').t`New`}</span>
+        >
+          {createContentMessages().content.newBadge}
+        </span>
       </HomepageButton>
     </div>
   )
