@@ -2,9 +2,21 @@ import { act, renderHook } from '@testing-library/react';
 import { ConnectionState, type Room } from 'livekit-client';
 import { type Mock, afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { setAudioPlaybackStatus } from '@proton/meet/store/slices/deviceManagementSlice';
+import { TelemetryMeetActionsEvents } from '@proton/meet/telemetry/meetTelemetry';
+
 import { useAudioContextOutput } from './useAudioContextOutput';
 
-const storeMocks = vi.hoisted(() => ({ useMeetSelector: vi.fn((_selector: unknown): unknown => undefined) }));
+const telemetryMocks = vi.hoisted(() => ({ sendMeetActionsEvent: vi.fn() }));
+vi.mock('@proton/meet/telemetry/meetTelemetry', async (importOriginal) => ({
+    ...(await importOriginal<Record<string, unknown>>()),
+    sendMeetActionsEvent: telemetryMocks.sendMeetActionsEvent,
+}));
+
+const storeMocks = vi.hoisted(() => ({
+    useMeetSelector: vi.fn((_selector: unknown): unknown => undefined),
+    useMeetDispatch: vi.fn(),
+}));
 vi.mock('@proton/meet/store/hooks', () => storeMocks);
 
 const browserMocks = vi.hoisted(() => ({ supportsSetSinkId: vi.fn(() => true) }));
@@ -87,10 +99,17 @@ const setup = ({
         options: { webAudioMix: isPlaybackContext ? { audioContext } : false },
     } as unknown as Room;
     const reportMeetError = vi.fn();
+    const dispatch = vi.fn();
 
     storeMocks.useMeetSelector.mockReturnValue(activeAudioOutputId);
+    storeMocks.useMeetDispatch.mockReturnValue(dispatch);
 
-    const { unmount, rerender } = renderHook(() => useAudioContextOutput({ meetAudioContext, room, reportMeetError }));
+    const { unmount, rerender: rerenderWith } = renderHook(
+        (reporter: typeof reportMeetError) =>
+            useAudioContextOutput({ meetAudioContext, room, reportMeetError: reporter }),
+        { initialProps: reportMeetError }
+    );
+    const rerender = (reporter = reportMeetError) => rerenderWith(reporter);
 
     const advance = async (ms: number) => {
         await act(async () => {
@@ -104,11 +123,18 @@ const setup = ({
         setSinkId: setSinkIdMock,
         switchActiveDevice,
         reportMeetError,
+        dispatch,
         unmount,
         rerender,
         advance,
     };
 };
+
+const playbackStatuses = (dispatch: Mock) =>
+    dispatch.mock.calls
+        .map(([action]) => action)
+        .filter((action) => action.type === setAudioPlaybackStatus.type)
+        .map((action) => action.payload);
 
 describe('useAudioContextOutput', () => {
     beforeEach(() => {
@@ -468,5 +494,139 @@ describe('useAudioContextOutput', () => {
 
         expect(audioContext.listenerCount()).toBe(0);
         expect(startAudio).not.toHaveBeenCalled();
+    });
+
+    describe('playback status', () => {
+        it('reports a context that already runs as running', () => {
+            const { dispatch } = setup({ initialState: 'running' });
+
+            expect(playbackStatuses(dispatch)).toEqual(['running']);
+        });
+
+        it('reports a context that is still suspended as blocked, then running once it starts', () => {
+            const { audioContext, dispatch } = setup({ initialState: 'suspended' });
+
+            audioContext.goTo('running');
+
+            expect(playbackStatuses(dispatch)).toEqual(['blocked', 'running']);
+        });
+
+        it('reports recovering, never blocked, while a lost output comes back on its own', async () => {
+            const { audioContext, dispatch, advance } = setup({ initialState: 'running' });
+
+            audioContext.goTo('suspended');
+            await advance(DELAYS_MS[0] / 2);
+            audioContext.goTo('running');
+            await advance(10_000);
+
+            expect(playbackStatuses(dispatch)).toEqual(['running', 'recovering', 'running']);
+        });
+
+        it('reports blocked once the recovery gives up', async () => {
+            const { audioContext, dispatch, advance } = setup({ initialState: 'running' });
+
+            audioContext.goTo('suspended');
+            await advance(10_000);
+
+            expect(playbackStatuses(dispatch)).toEqual(['running', 'recovering', 'blocked']);
+        });
+
+        it('reports recovering again when the context drops while a recovery is still running', async () => {
+            const { audioContext, dispatch, advance } = setup({ initialState: 'running' });
+
+            audioContext.goTo('suspended');
+            await advance(DELAYS_MS[0] / 2);
+            audioContext.goTo('running');
+            audioContext.goTo('suspended');
+            await advance(10_000);
+
+            expect(playbackStatuses(dispatch)).toEqual(['running', 'recovering', 'running', 'recovering', 'blocked']);
+        });
+
+        it('reports blocked when the context is suspended before anything has played', () => {
+            const { audioContext, dispatch } = setup({ initialState: 'suspended' });
+
+            audioContext.goTo('suspended');
+
+            expect(playbackStatuses(dispatch)).toEqual(['blocked', 'blocked']);
+        });
+
+        it('keeps an interrupted context out of blocked, since the button only covers a suspended one', async () => {
+            const { audioContext, dispatch, advance } = setup({ initialState: 'interrupted' });
+
+            audioContext.goTo('running');
+            audioContext.goTo('interrupted');
+            await advance(10_000);
+
+            expect(playbackStatuses(dispatch)).toEqual(['recovering', 'running', 'recovering', 'recovering']);
+        });
+
+        it('keeps recovering after the hook runs again in the middle of a recovery', async () => {
+            const { audioContext, dispatch, rerender, advance } = setup({ initialState: 'running' });
+
+            audioContext.goTo('suspended');
+            rerender(vi.fn());
+            audioContext.goTo('running');
+            audioContext.goTo('suspended');
+            await advance(10_000);
+
+            expect(playbackStatuses(dispatch).at(-1)).toBe('blocked');
+        });
+
+        it('reports blocked in a disconnected room, which only resumes the context when it connects', () => {
+            const { audioContext, dispatch } = setup({
+                initialState: 'running',
+                roomState: ConnectionState.Disconnected,
+            });
+
+            audioContext.goTo('suspended');
+
+            expect(playbackStatuses(dispatch)).toEqual(['running', 'blocked']);
+        });
+
+        it('leaves the status alone when the context closes', () => {
+            const { audioContext, dispatch, startAudio } = setup({ initialState: 'running' });
+
+            audioContext.goTo('closed');
+
+            expect(playbackStatuses(dispatch)).toEqual(['running']);
+            expect(startAudio).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('recovery telemetry', () => {
+        it('reports a recovery by the retry with the state the context was in', async () => {
+            const { audioContext, advance } = setup({ initialState: 'running' });
+
+            audioContext.goTo('interrupted');
+            await advance(DELAYS_MS[0]);
+            audioContext.goTo('running');
+            await advance(10_000);
+
+            expect(telemetryMocks.sendMeetActionsEvent).toHaveBeenCalledWith(
+                TelemetryMeetActionsEvents.audio_playback_recovered,
+                { trigger: 'retry', fromState: 'interrupted' }
+            );
+        });
+
+        it('does not report a recovery when the context comes back before any retry', async () => {
+            const { audioContext, advance } = setup({ initialState: 'running' });
+
+            audioContext.goTo('suspended');
+            await advance(DELAYS_MS[0] / 2);
+            audioContext.goTo('running');
+            await advance(10_000);
+
+            expect(telemetryMocks.sendMeetActionsEvent).not.toHaveBeenCalled();
+        });
+
+        it('does not report a recovery when the retry gives up', async () => {
+            const { audioContext, advance } = setup({ initialState: 'running' });
+
+            audioContext.goTo('suspended');
+            await advance(10_000);
+
+            expect(telemetryMocks.sendMeetActionsEvent).not.toHaveBeenCalled();
+        });
     });
 });

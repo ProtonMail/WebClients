@@ -9,7 +9,7 @@ import type { SerializableDeviceInfo } from '../../../utils/deviceUtils';
 import { isAudioSessionAvailable, setAudioSessionType } from '../../../utils/iosAudioSession';
 import type { MeetState } from '../../rootReducer';
 import { getLastUsedDeviceIdKey } from './constants';
-import { type DeviceKind, type DeviceManagementState, PermissionsModalType } from './types';
+import { type AudioPlaybackStatus, type DeviceKind, type DeviceManagementState, PermissionsModalType } from './types';
 
 const deviceManagementInitialState: DeviceManagementState = {
     permissions: {
@@ -40,6 +40,7 @@ const deviceManagementInitialState: DeviceManagementState = {
     userCameraIntent: null,
     isMicrophoneInitializing: false,
     isCameraInitializing: false,
+    audioPlaybackStatus: 'blocked',
     uiModals: {
         permissionsModal: PermissionsModalType.NONE,
     },
@@ -166,6 +167,9 @@ const slice = createSlice({
         setDevicesInitializing: (state, action: PayloadAction<{ microphone?: boolean; camera?: boolean }>) => {
             state.isMicrophoneInitializing = action.payload.microphone ?? state.isMicrophoneInitializing;
             state.isCameraInitializing = action.payload.camera ?? state.isCameraInitializing;
+        },
+        setAudioPlaybackStatus: (state, action: PayloadAction<AudioPlaybackStatus>) => {
+            state.audioPlaybackStatus = action.payload;
         },
         dismissPermissionsModal: (state) => {
             state.uiModals.permissionsModal = PermissionsModalType.NONE;
@@ -297,6 +301,7 @@ export const {
     setInitialAudioState,
     setUserCameraIntent,
     setDevicesInitializing,
+    setAudioPlaybackStatus,
     dismissPermissionsModal,
     showPermissionsModal,
     resetActiveDevices,

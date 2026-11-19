@@ -1,33 +1,24 @@
-import { useCallback, useSyncExternalStore } from 'react';
-
 import { useRoomContext, useStartAudio, useTracks } from '@livekit/components-react';
 import { Track } from 'livekit-client';
+
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectAudioPlaybackStatus } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 
 export const useIsAudioPlaybackBlocked = () => {
     const room = useRoomContext();
 
     // LiveKit's flag goes false when a resume misses its 200ms window, and true when the muted
-    // elements play while the mixing context stays suspended, so only the context state is reliable
+    // elements play while the mixing context stays suspended, so only the playback status is reliable
     const { canPlayAudio } = useStartAudio({ room, props: {} });
-
-    const { webAudioMix } = room.options;
-    const audioContext = typeof webAudioMix === 'object' ? webAudioMix.audioContext : undefined;
-
-    const subscribe = useCallback(
-        (onStateChange: () => void) => {
-            audioContext?.addEventListener('statechange', onStateChange);
-            return () => audioContext?.removeEventListener('statechange', onStateChange);
-        },
-        [audioContext]
-    );
-    const audioContextState = useSyncExternalStore(subscribe, () => audioContext?.state);
+    const audioPlaybackStatus = useMeetSelector(selectAudioPlaybackStatus);
 
     const hasRemoteAudio = useTracks([Track.Source.Microphone, Track.Source.ScreenShareAudio], {
         updateOnlyOn: [],
         onlySubscribed: true,
     }).some((trackRef) => !trackRef.participant.isLocal && trackRef.publication.kind === Track.Kind.Audio);
 
-    const isPlaybackRunning = audioContext ? audioContextState !== 'suspended' : canPlayAudio;
+    const isAudioMixed = typeof room.options.webAudioMix === 'object';
+    const isPlaybackBlocked = isAudioMixed ? audioPlaybackStatus === 'blocked' : !canPlayAudio;
 
-    return hasRemoteAudio && !isPlaybackRunning;
+    return hasRemoteAudio && isPlaybackBlocked;
 };

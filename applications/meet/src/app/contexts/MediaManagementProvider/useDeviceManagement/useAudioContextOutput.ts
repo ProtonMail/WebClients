@@ -3,8 +3,10 @@ import { useCallback, useEffect, useRef } from 'react';
 import { ConnectionState, type Room } from 'livekit-client';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { setAudioPlaybackStatus } from '@proton/meet/store/slices/deviceManagementSlice';
 import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -25,9 +27,12 @@ const STALLED_CLOCK_SECONDS = 0.05;
 
 const isSilent = (state: AudioContextState) => state === 'suspended' || state === 'interrupted';
 
+const needsUnblock = (state: AudioContextState) => state === 'suspended';
+
 /**
  * Applies the active output device to the shared playback AudioContext, and resumes that context when
- * it turns suspended, which happens when the OS removes the device it was rendering to.
+ * it turns suspended, which happens when the OS removes the device it was rendering to. It is the one
+ * place that tells whether playback is running, recovering or blocked.
  */
 export const useAudioContextOutput = ({
     meetAudioContext,
@@ -38,11 +43,11 @@ export const useAudioContextOutput = ({
     room: Room;
     reportMeetError: ReportMeetError;
 }) => {
+    const dispatch = useMeetDispatch();
     const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
 
     // Before the first remote track the context is suspended by the autoplay policy, not by a failure
     const hasBeenRunningRef = useRef(false);
-    const isRecoveringRef = useRef(false);
 
     // Without webAudioMix this context renders nothing: LiveKit plays through audio elements
     // instead, so pinning this sink would point at a device that is not the one playing.
@@ -154,28 +159,50 @@ export const useAudioContextOutput = ({
         const { audioContext } = meetAudioContext;
 
         let isMounted = true;
+        let isRecovering = false;
 
         const recover = async () => {
-            isRecoveringRef.current = true;
+            isRecovering = true;
 
+            const fromState = audioContext.state;
+            let attempts = 0;
             let lastError: unknown;
 
             // startAudio() replays the attached audio elements on top of resuming, but it resolves
             // whether or not the context came back, so the state is what decides on another attempt
-            await retry(() => room.startAudio(), {
-                delayMs: RECOVERY_DELAYS_MS,
-                shouldAttempt: () => isMounted && isSilent(audioContext.state),
-                onFailure: (error) => {
-                    lastError = error;
+            await retry(
+                () => {
+                    attempts++;
+                    return room.startAudio();
                 },
-            });
+                {
+                    delayMs: RECOVERY_DELAYS_MS,
+                    shouldAttempt: () => isMounted && isSilent(audioContext.state),
+                    onFailure: (error) => {
+                        lastError = error;
+                    },
+                }
+            );
 
-            isRecoveringRef.current = false;
+            isRecovering = false;
 
-            if (isMounted && isSilent(audioContext.state)) {
+            if (!isMounted) {
+                return;
+            }
+
+            if (isSilent(audioContext.state)) {
+                dispatch(setAudioPlaybackStatus(needsUnblock(audioContext.state) ? 'blocked' : 'recovering'));
                 reportMeetError('Audio context stayed suspended after recovery attempts', {
                     context: { error: lastError },
                     tags: { audioContextState: audioContext.state },
+                });
+                return;
+            }
+
+            if (audioContext.state === 'running' && attempts > 0) {
+                sendMeetActionsEvent(TelemetryMeetActionsEvents.audio_playback_recovered, {
+                    trigger: 'retry',
+                    fromState,
                 });
             }
         };
@@ -185,24 +212,28 @@ export const useAudioContextOutput = ({
 
             if (state === 'running') {
                 hasBeenRunningRef.current = true;
+                dispatch(setAudioPlaybackStatus('running'));
                 return;
             }
 
-            if (!hasBeenRunningRef.current || !isSilent(state) || isRecoveringRef.current) {
+            if (!isSilent(state)) {
                 return;
             }
 
-            // Avoid recovery on disconnected rooms
-            if (room.state === ConnectionState.Disconnected) {
+            // Avoid recovery before anything has played and on disconnected rooms
+            if (!hasBeenRunningRef.current || room.state === ConnectionState.Disconnected) {
+                dispatch(setAudioPlaybackStatus(needsUnblock(state) ? 'blocked' : 'recovering'));
                 return;
             }
 
-            void recover();
+            dispatch(setAudioPlaybackStatus('recovering'));
+
+            if (!isRecovering) {
+                void recover();
+            }
         };
 
-        if (audioContext.state === 'running') {
-            hasBeenRunningRef.current = true;
-        }
+        handleStateChange();
 
         audioContext.addEventListener('statechange', handleStateChange);
 
@@ -210,5 +241,5 @@ export const useAudioContextOutput = ({
             isMounted = false;
             audioContext.removeEventListener('statechange', handleStateChange);
         };
-    }, [meetAudioContext, room, reportMeetError]);
+    }, [meetAudioContext, room, reportMeetError, dispatch]);
 };

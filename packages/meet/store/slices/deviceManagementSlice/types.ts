@@ -52,6 +52,8 @@ export interface DeviceManagementState {
     isMicrophoneInitializing: boolean;
     isCameraInitializing: boolean;
 
+    audioPlaybackStatus: AudioPlaybackStatus;
+
     // UI
     uiModals: {
         permissionsModal: PermissionsModalType;
@@ -59,6 +61,8 @@ export interface DeviceManagementState {
 }
 
 export type DeviceKind = 'audioinput' | 'audiooutput' | 'videoinput';
+
+export type AudioPlaybackStatus = 'running' | 'recovering' | 'blocked';
 
 export interface SliceDeviceState {
     systemDefault: SerializableDeviceInfo | null;
