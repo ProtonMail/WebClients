@@ -163,26 +163,29 @@ export class SearchModule {
                     throw new InvalidSearchModuleState('Incompatible environment for SearchModule');
                 }
 
-                SearchModule.instance = new SearchModule(context);
+                // Published as `instance` only once its initial state is loaded: a caller that got it earlier could
+                // opt in, and the initial state read would then overwrite that opt-in.
+                const searchModule = new SearchModule(context);
 
                 const [isUserOptIn, indexerState, isPartialIndexNoticeDismissed] = await Promise.all([
-                    SearchModule.instance.optInManager.isOptedIn(),
-                    SearchModule.instance.queryPersistedIndexerDisplayState(),
-                    SearchModule.instance.workerClient.isPartialIndexNoticeDismissed(),
+                    searchModule.optInManager.isOptedIn(),
+                    searchModule.queryPersistedIndexerDisplayState(),
+                    searchModule.workerClient.isPartialIndexNoticeDismissed(),
                 ]);
                 Logger.info(isUserOptIn ? 'Search: Opt-in user detected' : 'Search: User not opted in');
-                SearchModule.instance.setState({
-                    ...SearchModule.instance.state,
+                searchModule.setState({
+                    ...searchModule.state,
                     isUserOptIn,
                     ...indexerState,
                     isPartialIndexNoticeDismissed,
                 });
+                SearchModule.instance = searchModule;
 
                 new ClientAppVersionGuard(context.userId, context.appVersion, async () =>
                     SearchModule.instance?.deactivateAsOutdated()
                 );
 
-                return SearchModule.instance;
+                return searchModule;
             })().catch((error) => {
                 SearchModule.instance = null;
                 SearchModule.creating = null;
