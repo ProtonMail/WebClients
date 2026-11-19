@@ -310,7 +310,7 @@ describe('messageDraft', () => {
                     mailSettings,
                     userSettings,
                     addresses,
-                    getAttachment: jest.fn(),
+                    getAttachment: vi.fn(),
                 });
                 expect(result.data?.AddressID).toBe(address.ID);
             });
@@ -323,7 +323,7 @@ describe('messageDraft', () => {
                         mailSettings,
                         userSettings,
                         addresses,
-                        getAttachment: jest.fn(),
+                        getAttachment: vi.fn(),
                     });
                     expect(result.draftFlags?.ParentID).toBe(ID);
                 });
@@ -337,7 +337,7 @@ describe('messageDraft', () => {
                         mailSettings,
                         userSettings,
                         addresses,
-                        getAttachment: jest.fn(),
+                        getAttachment: vi.fn(),
                     });
                     expect(result.data?.ToList?.length).toBeDefined();
                     expect(result.data?.CCList?.length).toBeDefined();
@@ -357,7 +357,7 @@ describe('messageDraft', () => {
                     mailSettings,
                     userSettings,
                     addresses,
-                    getAttachment: jest.fn(),
+                    getAttachment: vi.fn(),
                 });
                 expect(result.data?.Subject).toBe(`${RE_PREFIX()} ${Subject}`);
                 expect(result.data?.ToList).toEqual([recipient4]);
@@ -375,7 +375,7 @@ describe('messageDraft', () => {
                     mailSettings,
                     userSettings,
                     addresses,
-                    getAttachment: jest.fn(),
+                    getAttachment: vi.fn(),
                 });
                 const { expiresIn } = result.draftFlags || {};
                 expect(expiresIn).toBeDefined();
@@ -394,7 +394,7 @@ describe('messageDraft', () => {
                     mailSettings,
                     userSettings,
                     addresses,
-                    getAttachment: jest.fn(),
+                    getAttachment: vi.fn(),
                 });
                 expect(result.data?.AddressID).toBe(address.ID);
                 expect(result.data?.Sender?.Address).toBe(address.Email);
@@ -410,7 +410,7 @@ describe('messageDraft', () => {
                     ],
                 };
 
-                const getAttachment = jest.fn((id: string) => ({
+                const getAttachment = vi.fn((id: string) => ({
                     attachment: { ID: id, Name: id === 'att1' ? 'file.pdf' : 'image.jpg' },
                 }));
 
@@ -435,7 +435,7 @@ describe('messageDraft', () => {
                     mailSettings,
                     userSettings,
                     addresses,
-                    getAttachment: jest.fn(),
+                    getAttachment: vi.fn(),
                 });
                 expect(result.messageDocument?.document).toBeDefined();
                 expect(result.messageDocument?.document?.innerHTML).toContain(address.Signature);
@@ -452,7 +452,7 @@ describe('messageDraft', () => {
                     mailSettings,
                     userSettings,
                     addresses,
-                    getAttachment: jest.fn(),
+                    getAttachment: vi.fn(),
                 });
                 expect(result.messageDocument?.document).toBeDefined();
                 expect(result.messageDocument?.document?.innerHTML).toContain('blockquote');
@@ -479,7 +479,7 @@ describe('messageDraft', () => {
                     mailSettings: plaintextMailSettings,
                     userSettings,
                     addresses,
-                    getAttachment: jest.fn(),
+                    getAttachment: vi.fn(),
                 });
 
                 expect(result.messageDocument?.plainText).toBeDefined();
@@ -505,7 +505,7 @@ describe('messageDraft', () => {
                     mailSettings: plaintextMailSettings,
                     userSettings,
                     addresses,
-                    getAttachment: jest.fn(),
+                    getAttachment: vi.fn(),
                 });
 
                 expect(result.messageDocument?.plainText).toBeDefined();
@@ -533,7 +533,7 @@ describe('messageDraft', () => {
                     mailSettings: plaintextMailSettings,
                     userSettings,
                     addresses,
-                    getAttachment: jest.fn(),
+                    getAttachment: vi.fn(),
                 });
 
                 expect(result.messageDocument?.plainText).toBeDefined();
@@ -558,7 +558,7 @@ describe('messageDraft', () => {
                     mailSettings: plaintextMailSettings,
                     userSettings,
                     addresses,
-                    getAttachment: jest.fn(),
+                    getAttachment: vi.fn(),
                 });
 
                 expect(result.messageDocument?.plainText).toBeDefined();

@@ -1,12 +1,14 @@
+import type { Mock } from 'vitest';
+
 import { isWebKit } from '@proton/shared/lib/helpers/browser';
 
 import { getIframeSandboxAttributes } from './composer';
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    isWebKit: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    isWebKit: vi.fn(),
 }));
 
-const mockedIsWebKit = isWebKit as jest.Mock;
+const mockedIsWebKit = isWebKit as Mock;
 
 const getTokens = (isPrint: boolean) => getIframeSandboxAttributes(isPrint).split(' ');
 

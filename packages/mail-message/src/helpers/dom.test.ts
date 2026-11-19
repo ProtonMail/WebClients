@@ -40,5 +40,3 @@ describe('isHTMLEmpty', () => {
         expect(isHTMLEmpty(html2)).toBeFalsy();
     });
 });
-
-describe('createErrorHandler', () => {});

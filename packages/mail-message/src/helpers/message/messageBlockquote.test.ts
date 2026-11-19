@@ -1,3 +1,6 @@
+// @vitest-environment jsdom
+// happy-dom throws on some selectors used here and serializes the DOM differently
+
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
@@ -438,7 +441,7 @@ ${exportPlainTextSignature(getProtonMailSignature())}
             mailSettings: { PMSignature: PM_SIGNATURE.ENABLED } as MailSettings,
             userSettings: {} as UserSettings,
             addresses: [] as Address[],
-            getAttachment: jest.fn(),
+            getAttachment: vi.fn(),
         });
 
         const expectedBlockquotes = `On ${formattedDate}, ${referenceMessageSender.Name} <${referenceMessageSender.Address}> wrote:
@@ -458,7 +461,7 @@ ${exportPlainTextSignature(getProtonMailSignature())}
             mailSettings: { PMSignature: PM_SIGNATURE.ENABLED } as MailSettings,
             userSettings: {} as UserSettings,
             addresses: [] as Address[],
-            getAttachment: jest.fn(),
+            getAttachment: vi.fn(),
         });
 
         const expectedBlockquotes = `${FORWARDED_MESSAGE}

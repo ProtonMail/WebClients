@@ -55,7 +55,7 @@ describe('getHeaders', () => {
 
 describe('convertSingle', () => {
     it('should convert a single parsed attachment to an attachment', () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
 
         const attachment = convertSingle(message, mimeAttachment, 1, spy);
 
@@ -81,7 +81,7 @@ describe('convertSingle', () => {
 
 describe('convert', () => {
     it('should convert multiple parsed attachments to attachment', function () {
-        const spy = jest.fn();
+        const spy = vi.fn();
 
         const mimeAttachment2 = {
             contentId: `${contentID}-2`,
@@ -133,7 +133,7 @@ describe('convert', () => {
 
 describe('convertToFile', () => {
     it('should return normal attachments and convert to file pgp attachments', () => {
-        const spy = jest.fn((ID: string) => {
+        const spy = vi.fn((ID: string) => {
             return {
                 filename: 'attachment-2',
                 verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
