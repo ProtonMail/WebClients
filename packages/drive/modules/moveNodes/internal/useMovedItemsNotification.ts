@@ -4,7 +4,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { getEllipsedName } from '../../intl';
-import { useListNotifications } from '../../notifications';
+import { useListNotifications } from '../../listNotifications';
 
 export const useMovedItemsNotification = () => {
     const { createSuccessMessage } = useListNotifications();

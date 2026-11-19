@@ -4,7 +4,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import { showAggregatedErrorNotification } from '@proton/drive/legacy/errorHandling';
 import { getEllipsedName } from '@proton/drive/modules/intl';
-import { useListNotifications } from '@proton/drive/modules/notifications';
+import { useListNotifications } from '@proton/drive/modules/listNotifications';
 
 export const useTrashNotifications = () => {
     const { createSuccessMessage } = useListNotifications();

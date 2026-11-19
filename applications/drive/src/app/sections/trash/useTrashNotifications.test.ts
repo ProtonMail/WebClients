@@ -8,7 +8,7 @@ jest.mock('@proton/drive/legacy/errorHandling', () => ({
     showAggregatedErrorNotification: jest.fn(),
 }));
 
-jest.mock('@proton/drive/modules/notifications', () => ({
+jest.mock('@proton/drive/modules/listNotifications', () => ({
     useListNotifications: () => ({ createSuccessMessage: jest.fn() }),
 }));
 

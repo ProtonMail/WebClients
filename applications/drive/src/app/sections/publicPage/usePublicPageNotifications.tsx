@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { showAggregatedErrorNotification } from '@proton/drive/legacy/errorHandling';
-import { useListNotifications } from '@proton/drive/modules/notifications';
+import { useListNotifications } from '@proton/drive/modules/listNotifications';
 
 export const usePublicPageNotifications = () => {
     const { createSuccessMessage } = useListNotifications();
