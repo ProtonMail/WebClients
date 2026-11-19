@@ -46,6 +46,8 @@
 	&:hover,
 	&:focus-visible {
 		--circle-button-bg: var(--signal-danger);
+
+		color: var(--text-invert) !important;
 	}
 }
 
