@@ -14,6 +14,7 @@ describe('handleFileMenuAction', () => {
     openProtonDrive: jest.fn(),
     print: jest.fn(),
     download: jest.fn(),
+    seeVersionHistory: jest.fn(),
   } satisfies FileMenuHandlers
   const logger = { debug: jest.fn() } as unknown as Parameters<typeof handleFileMenuAction>[2]
 
@@ -29,6 +30,7 @@ describe('handleFileMenuAction', () => {
     [{ type: 'move-to-trash' }, 'moveToTrash'],
     [{ type: 'open-proton-drive' }, 'openProtonDrive'],
     [{ type: 'print' }, 'print'],
+    [{ type: 'see-version-history' }, 'seeVersionHistory'],
   ])('$type runs %s alone', (action, handler) => {
     handleFileMenuAction(action, handlers, logger)
 
@@ -51,15 +53,14 @@ describe('handleFileMenuAction', () => {
     }
   })
 
-  test.each<FileMenuAction>([
-    { type: 'see-version-history' },
-    { type: 'import' },
-    { type: 'view-recent-spreadsheets' },
-  ])('$type, a stub or sheets only, does nothing', (action) => {
-    handleFileMenuAction(action, handlers, logger)
+  test.each<FileMenuAction>([{ type: 'import' }, { type: 'view-recent-spreadsheets' }])(
+    '$type, sheets only, does nothing',
+    (action) => {
+      handleFileMenuAction(action, handlers, logger)
 
-    for (const handler of Object.values(handlers)) {
-      expect(handler).not.toHaveBeenCalled()
-    }
-  })
+      for (const handler of Object.values(handlers)) {
+        expect(handler).not.toHaveBeenCalled()
+      }
+    },
+  )
 })

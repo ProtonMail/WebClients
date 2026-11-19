@@ -10,6 +10,7 @@ import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayloa
 import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
 import { GenerateUUID } from '@proton/docs-shared/GenerateUuid'
 import type { SyncedEditorEvent, SyncedEditorStateValues } from '@proton/docs-shared/State/SyncedEditorState'
+import type { YjsState } from '@proton/docs-shared/YjsState'
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 import type { SerializedEditorState } from 'lexical'
 
@@ -35,6 +36,7 @@ type EditorMethodsCalledByDoc2 = Pick<
   | 'getCurrentSelection'
   | 'getCurrentEditorState'
   | 'getYDocAsJSON'
+  | 'getDocumentState'
   | 'toggleDebugTreeView'
 >
 
@@ -108,6 +110,10 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
 
   async getYDocAsJSON(): Promise<unknown> {
     return this.invokeEditorMethod('getYDocAsJSON', [])
+  }
+
+  async getDocumentState(): Promise<YjsState> {
+    return this.invokeEditorMethod('getDocumentState', [])
   }
 
   async toggleDebugTreeView(): Promise<void> {

@@ -23,6 +23,7 @@ const SCROLL_TO_USER_CURSOR: SyncedEditorEvent = {
 
 const EDITOR_STATE = { root: { children: [], type: 'root' } }
 const YDOC_JSON = { root: [] }
+const YJS_STATE = new Uint8Array([1, 2, 3])
 
 const logger = { debug: jest.fn(), warn: jest.fn(), error: jest.fn() } as unknown as ConstructorParameters<
   typeof ClientEditorBridge
@@ -347,6 +348,12 @@ describe('ClientEditorBridge', () => {
       returnValue: EDITOR_STATE,
     },
     { functionName: 'getYDocAsJSON', call: (invoker) => invoker.getYDocAsJSON(), args: [], returnValue: YDOC_JSON },
+    {
+      functionName: 'getDocumentState',
+      call: (invoker) => invoker.getDocumentState(),
+      args: [],
+      returnValue: YJS_STATE,
+    },
     { functionName: 'toggleDebugTreeView', call: (invoker) => invoker.toggleDebugTreeView(), args: [] },
   ])(
     "calls the editor's $functionName, and resolves with its reply",

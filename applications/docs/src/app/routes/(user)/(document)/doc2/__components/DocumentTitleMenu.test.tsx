@@ -52,11 +52,6 @@ const NODE = {
 } as const
 const SHARED_DIRECTLY = { ...NODE, membership: {} as NonNullable<NodeEntity['membership']> }
 
-// The atoms Tooltip's default open delay
-const TOOLTIP_OPEN_DELAY_MS = 1000
-
-const STUB_ITEMS: [string, string][] = [['See version history', 'version history']]
-
 const FILE_ACTION_ITEMS: [string, FileMenuAction][] = [
   ['New document', { type: 'new-document' }],
   ['New spreadsheet', { type: 'new-spreadsheet' }],
@@ -180,26 +175,6 @@ describe('DocumentTitleMenu', () => {
     expect(menuItemNames()).not.toContain('Word count')
   })
 
-  test.each(STUB_ITEMS)(
-    '%s is a stub waiting for %s: disabled, with a tooltip, and does nothing',
-    async (name, ticket) => {
-      const { onFileMenuAction } = await openMenu('Admin')
-      const item = menuItem(name)
-
-      expect(item).toHaveAttribute('aria-disabled', 'true')
-      expect(item).toHaveAttribute('data-stub', ticket)
-      jest.useFakeTimers()
-      await userEvent.setup({ advanceTimers: jest.advanceTimersByTime }).hover(item)
-      act(() => jest.advanceTimersByTime(TOOLTIP_OPEN_DELAY_MS))
-      expect(screen.getByRole('tooltip')).toHaveTextContent('Not available yet')
-      jest.useRealTimers()
-
-      await userEvent.click(item)
-      expect(onFileMenuAction).not.toHaveBeenCalled()
-      expect(menuItem(name)).toBeInTheDocument()
-    },
-  )
-
   test.each(FILE_ACTION_ITEMS)('%s runs its file menu action', async (name, action) => {
     const { onFileMenuAction } = await openMenu('Admin')
 
@@ -289,6 +264,30 @@ describe('DocumentTitleMenu', () => {
       await userEvent.click(screen.getByTestId('dropdown-duplicate'))
       expect(onFileMenuAction).not.toHaveBeenCalled()
     })
+  })
+
+  describe('See version history', () => {
+    const exportInvoker = { getCurrentSelection: jest.fn() }
+
+    test('is disabled until the editor shows the document', async () => {
+      const { onFileMenuAction } = await openMenu('Admin', { exportInvoker: undefined })
+
+      expect(screen.getByTestId('dropdown-versioning')).toBeDisabled()
+      await userEvent.click(screen.getByTestId('dropdown-versioning'))
+      expect(onFileMenuAction).not.toHaveBeenCalled()
+    })
+
+    test.each<DocumentRole>(['Admin', 'Editor', 'Viewer'])(
+      'runs the version history action for an %s',
+      async (role) => {
+        const { onFileMenuAction } = await openMenu(role, { exportInvoker })
+
+        await userEvent.click(menuItem('See version history'))
+
+        expect(onFileMenuAction).toHaveBeenCalledWith({ type: 'see-version-history' })
+        expect(onFileMenuAction).toHaveBeenCalledTimes(1)
+      },
+    )
   })
 
   describe('print, download and copy as markdown', () => {

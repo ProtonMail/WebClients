@@ -23,6 +23,7 @@ import { getNodeName } from '../__utils/getNodeName'
 import { handleFileMenuAction, openHelp } from '../__utils/handleFileMenuAction'
 import type { LoaderDeps } from '../__utils/loadDocument'
 import { getLoadingScreenStatus } from '../__utils/loadingScreen'
+import { createVersionHistory } from '../__utils/NativeVersionHistory'
 import { useDocumentFileActions } from '../__utils/useDocumentFileActions'
 import { useDocumentLoader } from '../__utils/useDocumentLoader'
 import { sendEditorBasics, useEditorBasicsInSync, useIsEditorDarkMode, useUserName } from '../__utils/useEditorBasics'
@@ -40,6 +41,7 @@ import { DocumentDebugMenu } from './DocumentDebugMenu'
 import { DocumentHeaderV2 } from './DocumentHeaderV2'
 import { DocumentShell } from './DocumentShell'
 import { DocumentSizeLimitModal } from './DocumentSizeLimitModal'
+import { useHistoryViewerModal } from './HistoryViewerModal'
 import { IdleActivityCatcher } from './IdleActivityCatcher'
 import { LoadingScreen } from './LoadingScreen'
 import { OpenActionError } from './OpenActionError'
@@ -77,6 +79,7 @@ export function DocumentViewerV2({
   const getUserSettings = useGetUserSettings()
   const [wordCount, setWordCountInfo] = useWordCountState()
   const [modal, showModal] = useGenericAlertModal()
+  const [historyModal, showHistoryModal] = useHistoryViewerModal()
   const { isDebugMode, toggleDebugMode } = useDebugMode()
   const isDarkMode = useIsEditorDarkMode()
   const userName = useUserName()
@@ -92,7 +95,11 @@ export function DocumentViewerV2({
   const onWordCount = useEvent(setWordCountInfo)
   const onShowModal = useEvent(showModal)
   const onFileMenuAction = useEvent((action: FileMenuAction) =>
-    handleFileMenuAction(action, { ...fileActions, openHelp, toggleDebugMode, print, download }, logger),
+    handleFileMenuAction(
+      action,
+      { ...fileActions, openHelp, toggleDebugMode, print, download, seeVersionHistory },
+      logger,
+    ),
   )
   const fetchImage = useEvent((url: string) => fetchExternalImageAsBase64(url, { apiUrl: API_URL, uid: UID }))
   const onPresenceUpdate = useEvent((update: Uint8Array<ArrayBuffer>) => receivePresenceFromEditor(update))
@@ -162,6 +169,14 @@ export function DocumentViewerV2({
     exportAndDownload(exportInvoker, name, format).catch((error) =>
       logger.error('Failed to download the document', error),
     )
+  }
+  // The version history, read from the session's History Log as it opens, once the editor shows the document
+  const seeVersionHistory = () => {
+    const name = node && getNodeName(node)
+    if (!session || !exportInvoker || !name) {
+      return
+    }
+    showHistoryModal({ versionHistory: createVersionHistory(session.getHistory()), documentName: name })
   }
 
   useSessionNotices(session)
@@ -245,6 +260,7 @@ export function DocumentViewerV2({
           />
         )}
         {modal}
+        {historyModal}
         {fileActions.modals}
         <DocumentSizeLimitModal
           session={session}
