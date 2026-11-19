@@ -1,7 +1,6 @@
-import { c } from 'ttag'
-
 import type { HomepageViewState } from './homepageViewContext'
 import { useHomepageView } from './homepageViewContext'
+import { createPageTitleMessages } from './messages/pageTitle'
 
 export function useHomepageTitle() {
   const { state } = useHomepageView()
@@ -10,21 +9,22 @@ export function useHomepageTitle() {
 }
 
 function titleByViewState(state: HomepageViewState): string {
+  const messages = createPageTitleMessages().pageTitle
   switch (state.view) {
     case 'search-initial':
     case 'search-loading':
     case 'search-empty':
     case 'search':
-      return `${c('Page title').t`Searching`} "${state.query}"`
+      return `${messages.searching} "${state.query}"`
     case 'recents-initial':
     case 'recents-empty':
     case 'recents-loading':
     case 'recents':
-      return c('Page title').t`Recents`
+      return messages.recents
     case 'trash-loading':
     case 'trash-empty':
     case 'trash':
-      return c('Page title').t`Trash`
+      return messages.trash
     case 'unknown':
       return ''
   }

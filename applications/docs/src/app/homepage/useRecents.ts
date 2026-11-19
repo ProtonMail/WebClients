@@ -9,7 +9,7 @@ import {
   generateNodeUid,
 } from '@protontech/drive-sdk'
 import { useCallback, useState } from 'react'
-import { c } from 'ttag'
+import { createLoadingMessages } from './messages/loading'
 import { getFullPathFromAncestry } from './driveSdk/getFullPathFromAncestry'
 import { getIsSharedWithMe } from './driveSdk/getIsSharedWithMe'
 import { createDocumentItem } from './createDocumentItems'
@@ -160,7 +160,7 @@ export function useRecents({
           if (documents.length > documentItems.length) {
             createNotification({
               type: 'error',
-              text: c('Error').t`Some documents could not be loaded`,
+              text: createLoadingMessages().loading.someRecentsFailed,
             })
           }
 
@@ -177,7 +177,7 @@ export function useRecents({
           traceRecentsError(errorTracking, error)
           createNotification({
             type: 'error',
-            text: c('Error').t`Failed to load recent documents`,
+            text: createLoadingMessages().loading.recentsFailed,
           })
         })
     },

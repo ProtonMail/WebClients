@@ -4,7 +4,7 @@
 import * as Ariakit from '@ariakit/react'
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig'
 import { type FormEvent, useState } from 'react'
-import { c } from 'ttag'
+import { createDeletePermanentlyDialogMessages } from './messages/deletePermanentlyDialog'
 import { Button, IconButton } from './components/ui'
 
 export type DeletePermanentlyDialogProps = {
@@ -15,9 +15,7 @@ export type DeletePermanentlyDialogProps = {
 
 export function DeletePermanentlyDialog({ documentName, onDelete, onClose }: DeletePermanentlyDialogProps) {
   const [isDeleting, setIsDeleting] = useState(false)
-  // Named as in Drive's identical string (applications/drive's useTrashNotifications.ts), so the string keeps its
-  // existing translations.
-  const itemName = documentName
+  const messages = createDeletePermanentlyDialogMessages().deletePermanentlyDialog
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault()
@@ -42,39 +40,33 @@ export function DeletePermanentlyDialog({ documentName, onDelete, onClose }: Del
       className="fixed inset-0 z-[900] m-auto h-fit max-h-[calc(100vh-2rem)] w-[calc(100%-2rem)] max-w-[37.5rem] overflow-auto rounded-[--border-radius-lg] bg-[--modal-background-color] px-8 text-[--modal-text-color] shadow-[--shadow-lifted] outline-none"
     >
       <div className="mb-2 mt-8 flex items-start justify-between gap-2">
-        <Ariakit.DialogHeading className="mt-1 text-[calc(24em/14)] font-bold">
-          {c('Title').t`Delete permanently`}
-        </Ariakit.DialogHeading>
+        <Ariakit.DialogHeading className="mt-1 text-[calc(24em/14)] font-bold">{messages.title}</Ariakit.DialogHeading>
         <Ariakit.DialogDismiss
           // Proton's modal focuses its first button.
           autoFocus
           disabled={isDeleting}
           render={
-            <IconButton
-              shape="ghost"
-              label={c('Action').t`Close`}
-              className="-mr-[calc(10em/14)] -mt-[calc(9.5em/14)]"
-            />
+            <IconButton shape="ghost" label={messages.close} className="-mr-[calc(10em/14)] -mt-[calc(9.5em/14)]" />
           }
         >
           <IcCrossBig />
         </Ariakit.DialogDismiss>
       </div>
       <Ariakit.DialogDescription className="mb-4 mt-2">
-        {c('Info').t`Are you sure you want to permanently delete "${itemName}" from trash?`}
+        {messages.confirm(documentName)}
         <br />
-        {c('Info').t`You cannot undo this action.`}
+        {messages.cannotUndo}
       </Ariakit.DialogDescription>
       <div className="mb-6 mt-4 flex justify-between gap-2">
         <Ariakit.DialogDismiss disabled={isDeleting} render={<Button />}>
-          {c('Action').t`Cancel`}
+          {messages.cancel}
         </Ariakit.DialogDismiss>
         <Button
           type="submit"
           loading={isDeleting}
           className="bg-[--signal-danger] text-[--signal-danger-contrast] hover:bg-[--signal-danger-major-1] active:bg-[--signal-danger-major-2]"
         >
-          {c('Action').t`Delete permanently`}
+          {messages.deletePermanently}
         </Button>
       </div>
     </Ariakit.Dialog>

@@ -1,7 +1,7 @@
 import type { ComponentType, ReactNode } from 'react'
 import { useHistory, useRouteMatch } from 'react-router'
 import type { NavLinkProps } from 'react-router-dom'
-import { c } from 'ttag'
+import { createSidebarMessages } from './messages/sidebar'
 import * as Ariakit from '@ariakit/react'
 
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
@@ -119,12 +119,13 @@ function Sidebar({
   const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
   const { isRecentsUpdating, type, reportTelemetry, getAppHref } = useHomepageView()
+  const messages = createSidebarMessages().sidebar
   const reloadRecents = useReloadRecents()
   const newDocumentButton = (
     <Ariakit.MenuProvider>
       <Ariakit.MenuButton className="flex w-full items-center justify-center gap-2 rounded-[0.5rem] !bg-[--docs-blue-color] px-4 py-2.5 text-[#fff]">
         <IcPlus />
-        {c('Action').t`New`}
+        {messages.new}
       </Ariakit.MenuButton>
       <NewDocumentMenu sameWidth />
     </Ariakit.MenuProvider>
@@ -148,10 +149,10 @@ function Sidebar({
       <SidebarNav>
         <div className="flex items-center justify-between px-3 py-2">
           <div className="px-3 !text-xs text-[#8F8D8A] [[data-theme-mode=dark]_&]:!text-[--text-weak]">
-            {c('Info').t`Recents`}
+            {messages.recents}
           </div>
           <IconButton
-            label={c('Info').t`Update recent documents`}
+            label={messages.updateRecentDocuments}
             size="small"
             shape="ghost"
             className="-mr-1"
@@ -188,7 +189,7 @@ function Sidebar({
             >
               <span className="flex items-center gap-2">
                 <IcHouse />
-                <span>{c('Info').t`All`}</span>
+                <span>{messages.all}</span>
               </span>
             </SidebarListItemLink>
           </SidebarListItem>
@@ -210,7 +211,7 @@ function Sidebar({
                   className="shrink-0 text-[--icon-color]"
                   style={{ '--icon-color': COLOR_BY_TYPE.document }}
                 />
-                <span>{c('Info').t`Documents`}</span>
+                <span>{messages.documents}</span>
               </span>
             </SidebarListItemLink>
           </SidebarListItem>
@@ -232,7 +233,7 @@ function Sidebar({
                   className="shrink-0 text-[--icon-color]"
                   style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
                 />
-                <span>{c('Info').t`Spreadsheets`}</span>
+                <span>{messages.spreadsheets}</span>
               </span>
             </SidebarListItemLink>
           </SidebarListItem>
@@ -244,7 +245,7 @@ function Sidebar({
             <SidebarListItemLink to="/trash" exact={true} activeClassName="!font-semibold">
               <span className="flex items-center gap-2">
                 <IcTrash />
-                <span>{c('Info').t`Trash`}</span>
+                <span>{messages.trash}</span>
               </span>
             </SidebarListItemLink>
           </SidebarListItem>
@@ -259,7 +260,7 @@ function Sidebar({
               }}
             >
               <SidebarListItemDiv className="flex items-center gap-2">
-                <IcBrandProtonDrive /> {goToPlanOrAppNameText(DRIVE_APP_NAME)}
+                <IcBrandProtonDrive /> {messages.goTo(DRIVE_APP_NAME)}
               </SidebarListItemDiv>
             </a>
           </SidebarListItem>
@@ -267,9 +268,4 @@ function Sidebar({
       </SidebarNav>
     </ProtonSidebar>
   )
-}
-
-// Copy of packages/shared/lib/i18n/ttag.ts: the same msgid, parameter name included, keeps its translations
-function goToPlanOrAppNameText(planOrAppName: string) {
-  return c('Action').t`Go to ${planOrAppName}`
 }

@@ -2,7 +2,7 @@ import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import { type DriveEvent, type NodeEntity, type ProtonDriveClient, generateNodeUid } from '@protontech/drive-sdk'
 import { mimeTypeToProtonDocumentType } from './utils/mimetype'
 import { useCallback, useState } from 'react'
-import { c } from 'ttag'
+import { createLoadingMessages } from './messages/loading'
 import { nodeToTrashedDocumentItem } from './createDocumentItems'
 import { traceErrorSDK } from './driveSdk/traceErrorSDK'
 import type { SDKEventListener } from './homepageViewUtils'
@@ -36,7 +36,7 @@ export function useTrashed(
         traceErrorSDK(errorTracking, error, 'DocsLoadRecentsWithDriveSDK')
         createNotification({
           type: 'error',
-          text: c('Error').t`Some trashed documents could not be loaded`,
+          text: createLoadingMessages().loading.someTrashedFailed,
         })
       }
 

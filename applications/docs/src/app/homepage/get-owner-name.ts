@@ -1,4 +1,4 @@
-import { c } from 'ttag'
+import { createNamesMessages } from './messages/names'
 
 export type OwnerContact = { Email: string; Name?: string }
 
@@ -10,7 +10,7 @@ export function getOwnerName(
   contactEmails: OwnerContact[] | undefined,
 ) {
   if (isMine) {
-    return c('Info').t`Me`
+    return createNamesMessages().names.me
   }
 
   if (!recentDocument.createdBy) {

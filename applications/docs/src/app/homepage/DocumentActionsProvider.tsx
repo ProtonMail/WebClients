@@ -5,7 +5,7 @@ import { type ReactNode, useCallback, useMemo, useState } from 'react'
 import { constructDriveFolderUrl } from './driveFolderUrl'
 import { useEvent } from './utils/useEvent'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
-import { c } from 'ttag'
+import { createDocumentActionsMessages } from './messages/documentActions'
 import { deleteDocument, reportTrashError } from './driveSdk/trash'
 import { DocumentActionsContext } from './documentActionsContext'
 import { trashAndNotify, restoreAndNotify, handleRestoreError } from './driveSdk/trashRestoreNotify'
@@ -88,7 +88,7 @@ export function DocumentActionsProvider({
     try {
       try {
         await drive.renameNode(generateNodeUid(document.volumeId, document.linkId), newName)
-        const successNotificationText = c('Notification').jt`"${newName}" renamed successfully`
+        const successNotificationText = createDocumentActionsMessages().documentActions.renamed(newName)
         createNotification({
           text: <span className="text-pre-wrap">{successNotificationText}</span>,
         })
@@ -128,7 +128,7 @@ export function DocumentActionsProvider({
       reportTrashError(errorTracking, error)
       createNotification({
         type: 'error',
-        text: c('Error').t`Failed to trash document`,
+        text: createDocumentActionsMessages().documentActions.trashFailed,
       })
       setCurrentlyTrashingId(undefined)
       return
@@ -184,13 +184,13 @@ export function DocumentActionsProvider({
       reportTrashError(errorTracking, error)
       createNotification({
         type: 'error',
-        text: c('Notification').t`Failed to delete document`,
+        text: createDocumentActionsMessages().documentActions.deleteFailed,
       })
       return
     }
     createNotification({
       type: 'success',
-      text: c('Notification').t`"Document deleted permanently`,
+      text: createDocumentActionsMessages().documentActions.deleted,
     })
     reportTelemetry(TelemetryEvent.document_permanently_deleted)
   })

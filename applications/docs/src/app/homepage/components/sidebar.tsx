@@ -1,7 +1,6 @@
 import type { HTMLAttributes, LiHTMLAttributes, ReactNode } from 'react'
 import { forwardRef } from 'react'
-import { c } from 'ttag'
-
+import { createSidebarMessages } from '../messages/sidebar'
 import { clsx } from '../utils/clsx'
 
 export interface SidebarListProps extends HTMLAttributes<HTMLUListElement> {
@@ -48,19 +47,14 @@ export interface SidebarNavProps extends HTMLAttributes<HTMLElement> {
 }
 
 export function SidebarNav({ children, className, ...props }: SidebarNavProps) {
+  const messages = createSidebarMessages().sidebar
   return (
     <nav
       className={clsx('navigation max-w-full flex-auto flex-nowrap flex-column', className)}
       {...props}
-      // translator: Label for the primary navigation for screen readers. Omit the word "navigation" as it's announced in the landmarks menu as "Main navigation" automatically.
-      aria-label={c('Label').t`Main`}
+      aria-label={messages.navigationLabel}
     >
-      <h2 className="sr-only">
-        {
-          // translator: This is a hidden headline for users with screen readers to highlight the main navigation
-          c('Label').t`Navigation`
-        }
-      </h2>
+      <h2 className="sr-only">{messages.navigationHeading}</h2>
       {children}
     </nav>
   )

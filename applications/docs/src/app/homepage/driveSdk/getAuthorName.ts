@@ -1,10 +1,10 @@
 import type { NodeEntity } from '@protontech/drive-sdk'
-import { c } from 'ttag'
+import { createNamesMessages } from '../messages/names'
 
 export function getAuthorName(author: NodeEntity['keyAuthor']) {
   if (author.ok) {
     if (author.value === null) {
-      return c('Label').t`Unknown user`
+      return createNamesMessages().names.unknownUser
     }
     return author.value
   }
@@ -13,5 +13,5 @@ export function getAuthorName(author: NodeEntity['keyAuthor']) {
     return author.error.claimedAuthor
   }
 
-  return c('Label').t`Unknown user`
+  return createNamesMessages().names.unknownUser
 }

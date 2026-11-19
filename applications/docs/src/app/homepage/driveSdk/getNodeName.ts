@@ -1,8 +1,8 @@
 import type { NodeEntity } from '@protontech/drive-sdk'
-import { c } from 'ttag'
+import { createNamesMessages } from '../messages/names'
 
 export function getNodeNameOrFallback(node: Pick<NodeEntity, 'name'>) {
-  return getNodeName(node) ?? c('Label').t`⚠️ Undecryptable name`
+  return getNodeName(node) ?? createNamesMessages().names.undecryptable
 }
 
 export function getNodeName(node: Pick<NodeEntity, 'name'>) {

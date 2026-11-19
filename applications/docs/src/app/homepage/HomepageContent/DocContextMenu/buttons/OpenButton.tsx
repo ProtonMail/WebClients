@@ -1,7 +1,7 @@
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../documentActionsContext'
 import type { RecentDocumentsItem } from '../../../recentDocumentsItem'
-import { c } from 'ttag'
+import { createContextMenuMessages } from '../../../messages/contextMenu'
 import { MIME_ICON_BY_TYPE } from '../../shared'
 
 export type OpenButtonProps = {
@@ -14,7 +14,7 @@ export function OpenButton({ currentDocument, close }: OpenButtonProps) {
   const DocumentTypeIcon = MIME_ICON_BY_TYPE[currentDocument.type]
   return (
     <ContextMenuButton
-      name={c('Action').t`Open`}
+      name={createContextMenuMessages().contextMenu.open}
       icon={<DocumentTypeIcon className="mr-2" />}
       action={() => documentActions.open(currentDocument)}
       close={close}

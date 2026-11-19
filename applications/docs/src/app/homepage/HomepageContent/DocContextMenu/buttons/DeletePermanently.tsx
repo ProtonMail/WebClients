@@ -3,7 +3,7 @@ import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle'
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../documentActionsContext'
 import type { RecentDocumentsItem } from '../../../recentDocumentsItem'
-import { c } from 'ttag'
+import { createContextMenuMessages } from '../../../messages/contextMenu'
 
 export type DeletePermanentlyButtonProps = {
   currentDocument: RecentDocumentsItem
@@ -14,7 +14,7 @@ export function DeletePermanentlyButton({ currentDocument, close }: DeletePerman
   const documentActions = useDocumentActions()
   return (
     <ContextMenuButton
-      name={c('Action').t`Delete permanently`}
+      name={createContextMenuMessages().contextMenu.deletePermanently}
       icon={<IcCrossCircle className="mr-2" />}
       action={async () => {
         close()

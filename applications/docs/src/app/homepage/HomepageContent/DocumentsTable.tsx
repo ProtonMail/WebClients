@@ -21,7 +21,7 @@ import { getInitials } from './getInitials'
 import { clsx } from '../utils/clsx'
 import type { ComponentPropsWithoutRef, KeyboardEvent, MouseEvent, ReactNode } from 'react'
 import { Fragment, useEffect, useRef, useState } from 'react'
-import { c, msgid } from 'ttag'
+import { createDocumentsTableMessages } from '../messages/documentsTable'
 import { useEvent } from '../utils/useEvent'
 import { useDocumentActions } from '../documentActionsContext'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../homepageViewContext'
@@ -50,6 +50,7 @@ export type TableVariant =
 export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: TableVariant }
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {
+  const messages = createDocumentsTableMessages().documentsTable
   const { type, state, myFilesRootUid, featureFlags } = useHomepageView()
   const contextMenu = useContextMenu()
   const isRecents = variant.startsWith('recents')
@@ -93,7 +94,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   const isNarrow = useIsNarrow()
   const hasSelectionControls = selectableIds.length > 0
 
-  const label = isRecents || isSearch ? recentsLabelByType(type) : c('Info').t`Trash`
+  const label = isRecents || isSearch ? recentsLabelByType(type) : messages.trash
   const bulkActions = (
     <span className="ml-auto flex shrink-0 items-center">
       {canBulkMove && <BulkMoveButton onMove={moveSelection} disabled={isTrashing} />}
@@ -187,16 +188,13 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
 type SelectionLabelProps = { selection: RowSelection; isTrashing: boolean; label: string }
 
 function SelectionLabel({ selection, isTrashing, label }: SelectionLabelProps) {
+  const messages = createDocumentsTableMessages().documentsTable
   return (
     <span className="flex items-center gap-3">
       <SelectAllCheckbox selection={selection} isTrashing={isTrashing} />
       {selection.selectedIds.length > 0 ? (
         <span aria-live="polite" data-testid="bulk-selected-count">
-          {c('Info').ngettext(
-            msgid`${selection.selectedIds.length} selected`,
-            `${selection.selectedIds.length} selected`,
-            selection.selectedIds.length,
-          )}
+          {messages.selected(selection)}
         </span>
       ) : (
         label
@@ -208,12 +206,13 @@ function SelectionLabel({ selection, isTrashing, label }: SelectionLabelProps) {
 type SelectAllCheckboxProps = { selection: RowSelection; isTrashing: boolean }
 
 function SelectAllCheckbox({ selection, isTrashing }: SelectAllCheckboxProps) {
+  const messages = createDocumentsTableMessages().documentsTable
   return (
     <Checkbox
       checked={selection.allState === 'some' ? 'mixed' : selection.allState === 'all'}
       onChange={selection.toggleAll}
       disabled={isTrashing}
-      aria-label={c('Label').t`Select all`}
+      aria-label={messages.selectAll}
       data-testid="bulk-select-all"
     />
   )
@@ -227,9 +226,10 @@ function isInMyFiles(document: RecentDocumentsItem, myFilesRootUid: string | und
 type BulkMoveButtonProps = { onMove: () => void; disabled: boolean }
 
 function BulkMoveButton({ onMove, disabled }: BulkMoveButtonProps) {
+  const messages = createDocumentsTableMessages().documentsTable
   return (
     <IconButton
-      label={c('Action').t`Move`}
+      label={messages.move}
       shape="ghost"
       className="shrink-0 px-2"
       disabled={disabled}
@@ -244,9 +244,10 @@ function BulkMoveButton({ onMove, disabled }: BulkMoveButtonProps) {
 type BulkTrashButtonProps = { onTrash: () => Promise<void>; isTrashing: boolean }
 
 function BulkTrashButton({ onTrash, isTrashing }: BulkTrashButtonProps) {
+  const messages = createDocumentsTableMessages().documentsTable
   return (
     <IconButton
-      label={c('Action').t`Move to trash`}
+      label={messages.moveToTrash}
       shape="ghost"
       className="shrink-0 px-2"
       loading={isTrashing}
@@ -259,13 +260,14 @@ function BulkTrashButton({ onTrash, isTrashing }: BulkTrashButtonProps) {
 }
 
 function recentsLabelByType(type: ProtonDocumentType | undefined): string {
+  const messages = createDocumentsTableMessages().documentsTable
   switch (type) {
     case undefined:
-      return c('Info').t`Recents`
+      return messages.recents
     case 'document':
-      return c('Info').t`Recent documents`
+      return messages.recentDocuments
     case 'spreadsheet':
-      return c('Info').t`Recent spreadsheets`
+      return messages.recentSpreadsheets
   }
 }
 
@@ -280,6 +282,7 @@ type HeadProps = {
 }
 
 function Head({ variant, sectionId, hasCheckbox, selectionControls }: HeadProps) {
+  const messages = createDocumentsTableMessages().documentsTable
   const firstHeaderSorted = variant === 'recents-name' || variant === 'trash'
   const secondHeaderSorted = variant === 'recents-viewed' || variant === 'recents-modified'
   const thirdHeaderSorted = variant === 'recents-owner'
@@ -302,12 +305,12 @@ function Head({ variant, sectionId, hasCheckbox, selectionControls }: HeadProps)
         </MaybeSorted>
       </Table.Header>
       <Table.Header target="medium">
-        <MaybeSorted sorted={thirdHeaderSorted}>{c('Recent documents table header').t`Created by`}</MaybeSorted>
+        <MaybeSorted sorted={thirdHeaderSorted}>{messages.header.createdBy}</MaybeSorted>
       </Table.Header>
       <Table.Header target="medium">
         <div className="flex flex-nowrap items-center justify-between">
           <MaybeSorted sorted={fourthHeaderSorted}>
-            <span>{c('Recent documents table header').t`Location`}</span>
+            <span>{messages.header.location}</span>
           </MaybeSorted>
         </div>
       </Table.Header>
@@ -345,32 +348,34 @@ function MaybeSorted({ sorted, ...props }: MaybeSortedProps) {
 }
 
 function getSectionLabel(id: ItemsSectionId): string {
+  const messages = createDocumentsTableMessages().documentsTable
   switch (id) {
     case 'search-results':
-      return c('Recent documents table header').t`Search results`
+      return messages.header.searchResults
     case 'name':
-      return c('Recent documents table header').t`Name`
+      return messages.header.name
     case 'today':
-      return c('Recent documents table header').t`Today`
+      return messages.header.today
     case 'yesterday':
-      return c('Recent documents table header').t`Yesterday`
+      return messages.header.yesterday
     case 'previous7Days':
-      return c('Recent documents table header').t`Previous 7 days`
+      return messages.header.previous7Days
     case 'previous30Days':
-      return c('Recent documents table header').t`Previous 30 days`
+      return messages.header.previous30Days
     case 'earlier':
-      return c('Recent documents table header').t`Earlier`
+      return messages.header.earlier
   }
 }
 
 function getDateHeaderLabel(variant: TableVariant): string {
+  const messages = createDocumentsTableMessages().documentsTable
   switch (variant) {
     case 'recents-modified':
-      return c('Recent documents table header').t`Modified`
+      return messages.header.modified
     case 'trash':
-      return c('Recent documents table header').t`Deleted`
+      return messages.header.deleted
     default:
-      return c('Recent documents table header').t`Viewed`
+      return messages.header.viewed
   }
 }
 
@@ -423,6 +428,7 @@ type RowProps = {
 }
 
 function Row({ document, variant, selection, isSelectable, isTrashing, openOnDoubleClick }: RowProps) {
+  const messages = createDocumentsTableMessages().documentsTable
   const documentActions = useDocumentActions()
   const { location } = document
   const { displayName, avatarContent } = useNameAndAvatar(document)
@@ -445,13 +451,13 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
   let locationLabel: string
   if (variant === 'trash') {
     LocationIcon = IcTrash
-    locationLabel = c('Label').t`Trash`
+    locationLabel = messages.location.trash
   } else if (location?.type === 'shared-with-me') {
     LocationIcon = IcUsers
-    locationLabel = c('Label').t`Shared with me`
+    locationLabel = messages.location.sharedWithMe
   } else if (location?.type === 'root') {
     LocationIcon = IcInbox
-    locationLabel = c('Label').t`My files`
+    locationLabel = messages.location.myFiles
   } else {
     LocationIcon = IcFolder
     locationLabel = location?.path.at(-1)!
@@ -553,7 +559,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
                     }
                   }}
                   disabled={isTrashing}
-                  aria-label={c('Label').t`Select ${document.name}`}
+                  aria-label={messages.selectDocument(document)}
                   data-testid="bulk-row-checkbox"
                 />
               )}
@@ -583,7 +589,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
                   } catch (error) {
                     createNotification({
                       type: 'error',
-                      text: c('Notification').t`Failed to rename document`,
+                      text: messages.renameFailed,
                     })
                     errorTracking.traceError(error, {
                       tags: {
@@ -632,7 +638,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
         <div className="-ms-2 flex w-full flex-nowrap justify-between">
           {locationContent}
           <IconButton
-            label={c('Action').t`Actions`}
+            label={messages.actions}
             // A text button's padding, as before, so the row keeps its height.
             icon={false}
             onClick={(event) => {
@@ -748,15 +754,16 @@ type RowAriaLabelParams = {
 
 // Like Drive's `getFolderItemAriaLabel`: mirrors the visible columns, prefixed with the selection state.
 function getRowAriaLabel({ document, isSelected, dateLabel, displayName, locationLabel }: RowAriaLabelParams) {
+  const messages = createDocumentsTableMessages().documentsTable
   const parts = [
     document.name,
-    document.type === 'spreadsheet' ? c('Label').t`Spreadsheet` : c('Label').t`Document`,
+    document.type === 'spreadsheet' ? messages.rowLabel.spreadsheet : messages.rowLabel.document,
     dateLabel,
-    displayName && c('Label').t`Created by ${displayName}`,
-    c('Label').t`Location ${locationLabel}`,
+    displayName && messages.rowLabel.createdBy(displayName),
+    messages.rowLabel.location(locationLabel),
   ].filter(Boolean)
   if (isSelected !== undefined) {
-    parts.unshift(isSelected ? c('Label').t`Selected` : c('Label').t`Not selected`)
+    parts.unshift(isSelected ? messages.rowLabel.selected : messages.rowLabel.notSelected)
   }
   return parts.join(', ')
 }
@@ -791,6 +798,7 @@ function useNameAndAvatar(document: RecentDocumentsItem) {
 }
 
 function getRelativeDate(dateFormatter: DateFormatter, { lastViewed }: RecentDocumentsItem): string {
-  const text = dateFormatter.formatDateOrTimeIfToday(lastViewed.date, c('Info').t`Just now`)
+  const messages = createDocumentsTableMessages().documentsTable
+  const text = dateFormatter.formatDateOrTimeIfToday(lastViewed.date, messages.justNow)
   return text.charAt(0).toUpperCase() + text.slice(1)
 }
