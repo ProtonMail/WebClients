@@ -10,7 +10,7 @@ import { ipcLogger, notificationLogger } from "../utils/log";
 import { ElectronNotification, electronNotificationSchema } from "@proton/shared/lib/desktop/desktopTypes";
 import { isWindows, isMac } from "../utils/helpers";
 import { parseURLParams } from "../utils/urls/urlHelpers";
-import { DEEPLINK_PROTOCOL, DeepLinkActions } from "../utils/protocol/deep_links";
+import { DEEPLINK_PROTOCOL, DeepLinkActions } from "../utils/protocol/deepLinkProtocol";
 import { isWindowValid } from "../utils/view/windowUtils";
 import { getFileResourcePath } from "../constants/resources";
 import { escapeXML } from "../utils/xml";

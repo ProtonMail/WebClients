@@ -8,7 +8,8 @@ import { performStoreMigrations } from "./store/storeMigrations";
 import { initializeUpdateChecks, updateDownloaded } from "./update/update";
 import { isMac } from "./utils/helpers";
 import { urlOverrideError } from "./utils/view/dialogs";
-import { bringWindowToFront, viewCreationAppStartup } from "./utils/view/viewManagement";
+import { bringWindowToFront } from "./utils/view/viewManagement";
+import { startup } from "./startup";
 import { getCurrentViewID, getMainWindow, getWebContentsViewName } from "./utils/view/viewState";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
@@ -185,7 +186,7 @@ import { enableNotInAccountMenuItems } from "./utils/menus/menuApplication";
 
     // After this point the main window and views have been created
     profiler.mark("pre-view-creation");
-    viewCreationAppStartup();
+    startup();
     metrics.initialize();
 
     const settings = getSettings();
@@ -205,7 +206,7 @@ import { enableNotInAccountMenuItems } from "./utils/menus/menuApplication";
         }
 
         if (!getMainWindow()) {
-            viewCreationAppStartup();
+            startup();
         }
     });
 

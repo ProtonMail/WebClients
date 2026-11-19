@@ -7,7 +7,7 @@ import { checkDefaultMailtoClientLinux, setDefaultMailtoLinux } from "./default_
 import { checkDefaultMailtoClientWindows, setDefaultMailtoWindows } from "./default_mailto_windows";
 import { getAccountView, getMailView } from "../view/viewState";
 import { DESKTOP_FEATURES } from "../../ipc/ipcConstants";
-import { checkDeepLinks } from "./deep_links";
+import { checkDeepLinks } from "./deepLinkProtocol";
 import { getSettings, updateSettings } from "../../store/settingsStore";
 
 export function checkDefaultProtocols() {

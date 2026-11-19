@@ -12,7 +12,13 @@ import {
     isUpgradeURL,
     isURLAllowed,
 } from "../urls/urlTests";
-import { resetHiddenViews, showView, showNetworkErrorPage, IGNORED_NET_ERROR_CODES } from "./viewManagement";
+import {
+    resetHiddenViews,
+    showView,
+    showNetworkErrorPage,
+    IGNORED_NET_ERROR_CODES,
+    openMailToDefaultAndForceReload,
+} from "./viewManagement";
 import {
     getAccountView,
     getCalendarView,
@@ -174,7 +180,7 @@ export function handleWebContents(contents: WebContents) {
 
     contents.on("did-finish-load", () => {
         if (!isCurrentContent()) return;
-        void watchForStuckLoader(contents, isCurrentContent);
+        void watchForStuckLoader(contents, isCurrentContent, openMailToDefaultAndForceReload);
     });
 
     contents.on("will-navigate", (details) => {

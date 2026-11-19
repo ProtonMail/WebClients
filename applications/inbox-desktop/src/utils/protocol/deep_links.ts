@@ -3,21 +3,7 @@ import { isMac, OneTimeArgument } from "../helpers";
 import { protocolLogger } from "../log";
 import { openCalendarWithoutReload, getCurrentLocalID, openMail } from "../view/viewManagement";
 import { parseURLParams } from "../urls/urlHelpers";
-
-export const DEEPLINK_PROTOCOL = "proton-inbox";
-
-export const checkDeepLinks = () => {
-    app.setAsDefaultProtocolClient(DEEPLINK_PROTOCOL);
-};
-
-export enum DeepLinkActions {
-    OpenMail = "open_mail",
-    OpenCalendar = "open_calendar",
-}
-
-export const urlHasOpenMailParams = (url: string): boolean => {
-    return url.includes("#labelID=") || url.includes("#elementID=");
-};
+import { DEEPLINK_PROTOCOL, DeepLinkActions } from "./deepLinkProtocol";
 
 const findDeepLink = (argv: string[], action: DeepLinkActions): string | undefined => {
     return argv.find(
