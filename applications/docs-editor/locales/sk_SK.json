@@ -712,6 +712,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Hárok s týmto názvom už existuje"
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "„History“ je vyhradený názov a nemožno ho použiť pre hárok"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Názvy hárkov nemôžu byť dlhšie ako 31 znakov"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Názvy hárkov nesmú obsahovať znaky \\ / ? * [ ] ani :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Názvy hárkov nemôžu začínať ani končiť apostrofom"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {

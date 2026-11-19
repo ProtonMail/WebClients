@@ -771,6 +771,12 @@
       ],
       "Top": [
         "Toppen"
+      ],
+      "Clip": [
+        "Urklipp"
+      ],
+      "Scientific": [
+        "Vetenskaplig"
       ]
     },
     "sheets_2025:Spreadsheet chartAggregates": {
@@ -785,6 +791,12 @@
       ],
       "Min": [
         "Min"
+      ],
+      "Count": [
+        "Antal"
+      ],
+      "Sum": [
+        "Summa"
       ]
     },
     "sheets_2025:Spreadsheet chartEditorDialog": {
@@ -804,6 +816,15 @@
       ],
       "Treemap": [
         "Trädkarta"
+      ],
+      "2D Pie": [
+        "2D Paj"
+      ],
+      "Doughnut": [
+        "Munk"
+      ],
+      "Pie": [
+        "Paj"
       ]
     },
     "sheets_2025:Spreadsheet conditions": {
@@ -980,6 +1001,21 @@
       ],
       "Yesterday": [
         "Igår"
+      ],
+      "Date is before": [
+        "Datum är innan"
+      ],
+      "Date is on or after": [
+        "Datum är på eller efter"
+      ],
+      "Date is on or before": [
+        "Datum är på eller innan"
+      ],
+      "Greater than or equal to": [
+        "Större än eller lika med"
+      ],
+      "Top N percent": [
+        "Topp N procent"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -1956,6 +1992,12 @@
       ],
       "Zoom": [
         "Zooma"
+      ],
+      "Apply fill color": [
+        "Tillämpa fyllnadsfärg"
+      ],
+      "Choose fill color": [
+        "Välj fyllnadsfärg"
       ]
     },
     "sheets_2025:Spreadsheet filter menu": {
@@ -2065,6 +2107,12 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Specify column width (px)": [
+        "Specificera kolumnbredd (px)"
+      ],
+      "Specify row height (px)": [
+        "Specificera radhöjd (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -2541,6 +2589,20 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Ge förslag inuti kodblock stöds inte"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "History is a reserved name and can't be used for a sheet": [
+        "Historia är ett reserverat namn och kan inte användas för ett blad"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Bladnamn får inte vara längre än 31 tecken"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Bladnamn kan inte innhålla  \\ / ? * [ ] eller :"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Bladnamn kan inte börja eller sluta med en apostrof"
       ]
     }
   }
