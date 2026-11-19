@@ -710,6 +710,18 @@
     "sheets_2025:Sheet tab rename": {
       "A sheet with this name already exists": [
         "Aynı adlı bir sayfa zaten var"
+      ],
+      "History is a reserved name and can't be used for a sheet": [
+        "History ayrılmış bir addır ve sayfa adı olarak kullanılamaz"
+      ],
+      "Sheet names can't be longer than 31 characters": [
+        "Sayfa adları 31 karakterden uzun olamaz"
+      ],
+      "Sheet names can't contain \\ / ? * [ ] or :": [
+        "Sayfa adlarında \\ / ? * [ ] : veya şu karakterler bulunamaz:"
+      ],
+      "Sheet names can't start or end with an apostrophe": [
+        "Sayfa adları kesme işareti ile başlayamaz veya bitemez"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
