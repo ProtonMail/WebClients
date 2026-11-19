@@ -1,7 +1,8 @@
 import { meetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
 import type { MeetDispatch } from '@proton/meet/store/store';
+import { getUrlMeetingLinkName } from '@proton/meet/utils/getUrlMeetingLinkName';
 
-import { getUrlMeetingLinkName, getUrlMeetingPassword } from '../hooks/srp/getUrlMeetingParams';
+import { getUrlMeetingPassword } from '../hooks/srp/getUrlMeetingParams';
 import { trackMeetingInfoPreload } from '../telemetry/loadPerformance';
 
 /**

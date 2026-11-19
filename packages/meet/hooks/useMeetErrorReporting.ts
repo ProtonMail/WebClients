@@ -1,6 +1,5 @@
 import { useCallback, useRef } from 'react';
 
-import { logger } from '@protontech/logger';
 import type { LogLevel } from '@protontech/logger/types';
 import type { SeverityLevel } from '@sentry/browser';
 import type { Primitive } from '@sentry/types';
@@ -10,6 +9,7 @@ import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useGetAnalyticsAttributes } from '../contexts/AnalyticsContext';
+import { meetingLogger } from '../utils/meetingLogger';
 
 const MAX_SAME_ERROR = 10;
 
@@ -77,7 +77,7 @@ export const useMeetErrorReporting = () => {
                 label,
             };
 
-            logger[LOG_LEVEL_BY_SEVERITY[level]](reportLabel, ...getLoggerArgs(context), {
+            meetingLogger[LOG_LEVEL_BY_SEVERITY[level]](reportLabel, ...getLoggerArgs(context), {
                 tags: tagsWithAnalyticsAttributes,
             });
 

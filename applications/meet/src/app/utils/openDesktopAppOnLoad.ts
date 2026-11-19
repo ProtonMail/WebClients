@@ -1,8 +1,9 @@
 import type { MeetExtraThunkArguments } from '@proton/meet/store/store';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
+import { getUrlMeetingLinkName } from '@proton/meet/utils/getUrlMeetingLinkName';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
-import { getUrlMeetingLinkName, getUrlMeetingPassword } from '../hooks/srp/getUrlMeetingParams';
+import { getUrlMeetingPassword } from '../hooks/srp/getUrlMeetingParams';
 import {
     getBrowserPreference,
     getDesktopAppOption,
