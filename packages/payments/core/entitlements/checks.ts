@@ -51,6 +51,10 @@ export const entitlementChecksForSelection = {
 
     hasLumo: (r) => r.hasEntitlement(EntitlementName.FlagsLumo),
 
+    hasLumoApi: (r) => r.hasEntitlement(EntitlementName.LumoApi),
+
+    hasLumoCredits: (r) => r.hasEntitlement(EntitlementName.LumoCredits),
+
     isLumoOnlyB2C: (r) =>
         r.hasMatchingSubscription({
             includes: [EntitlementName.FlagsLumo],
