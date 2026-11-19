@@ -16,7 +16,8 @@ import pkg from "../package.json";
 import { getTheme, updateNativeTheme } from "./utils/themes";
 import { isWindowValid } from "./utils/view/windowUtils";
 import { handleWebContents } from "./utils/view/webContents";
-import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
+import { initializeLog, mainLogger } from "./utils/log";
+import { connectNetLogger } from "./utils/electronSession/netLogger";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { handleDeepLink, handleStartupDeepLink } from "./utils/protocol/deep_links";
 import { checkDefaultProtocols } from "./utils/protocol/default";
@@ -25,7 +26,7 @@ import { setRequestPermission, extendAppVersionHeader } from "./utils/electronSe
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 import { logInitialAppInfo, logPostReadyInfo } from "./utils/log/logInitialAppInfo";
 import { registerSystemEventLog } from "./utils/log/appEventLog";
-import metrics from "./utils/metrics";
+import metrics, { registerMetricsLogTransport } from "./utils/metrics";
 import { measureRequestTime } from "./utils/log/measureRequestTime";
 import { initializeFeatureFlagManager } from "./utils/flags/manager";
 import { handleSecondInstance } from "./utils/event-handlers/second-instance";
@@ -51,6 +52,7 @@ import { enableNotInAccountMenuItems } from "./utils/menus/menuApplication";
     profiler.init(PROFILER_IIFE_START, PROFILER_IIFE_START_PERF);
 
     initializeLog();
+    registerMetricsLogTransport();
     captureUncaughtErrors();
     registerIOStreamErrorHandlers();
 

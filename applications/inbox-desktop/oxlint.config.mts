@@ -65,7 +65,6 @@ const config = createOxlintConfig({
                 "custom-rules/no-boolean-entitlement-composition": "off",
                 "custom-rules/no-package-self-import": "off",
                 "custom-rules/no-single-entitlement-condition": "off",
-                "import/no-cycle": "off",
                 "no-console": "off",
                 "no-duplicate-imports": "off",
                 "no-empty-function": "off",
