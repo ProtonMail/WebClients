@@ -1,4 +1,4 @@
-import type { Transport, LogMessage } from "electron-log";
+import Logger, { type Transport, type LogMessage } from "electron-log";
 import type { HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson } from "@proton/metrics/types/desktop_inbox_heartbeat_total_v1.schema";
 import { getMailView } from "./view/viewState";
 import { getSettings } from "../store/settingsStore";
@@ -113,5 +113,9 @@ class MetricsService {
 }
 
 const metrics = new MetricsService();
+
+export function registerMetricsLogTransport() {
+    Logger.transports.metrics = metrics.logTransporter;
+}
 
 export default metrics;

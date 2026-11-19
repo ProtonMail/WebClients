@@ -1,11 +1,8 @@
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
-import { app, WebContents } from "electron";
+import { app } from "electron";
 import Logger, { Hook, LogMessage, Transport } from "electron-log";
 import { createHash } from "node:crypto";
 import { isAbsolute } from "node:path";
-import { getTrackedUID, setViewName } from "../electronSession/uidTracker";
-import { webRequestRouter } from "../electronSession/webRequestRouter";
-import metrics from "../metrics";
 
 if (process.env.NODE_ENV === "test") {
     Logger.transports.console.level = "error";
@@ -16,7 +13,7 @@ const NET_LOGGER_VIEW_PREFIX = "net/";
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
-const netLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
+export const netLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
     viewID ? Logger.scope(`${NET_LOGGER_VIEW_PREFIX}${viewID}`) : Logger.scope("net");
 export const settingsLogger = Logger.scope("settings");
 export const updateLogger = Logger.scope("update");
@@ -164,46 +161,7 @@ export function initializeLog() {
     Logger.initialize({ preload: true });
     Logger.transports.file.maxSize = 5 * 1024 * 1024; // 5MB
     Logger.hooks.push(filterSensitiveLogMessage);
-    Logger.transports.metrics = metrics.logTransporter;
     Logger.eventLogger.startLogging();
-}
-
-// High-freq requests that add a lot of noise to the logs. Non-200 responses are still recorded.
-const NET_LOG_SKIP_PATTERNS = [/\/assets\/static\//, /\/api\/calendar\/v1\//, /\/api\/core\/v4\/images/];
-
-export async function connectNetLogger(
-    getWebContentsViewName: (webContents: WebContents) => CHANGE_VIEW_TARGET | null,
-) {
-    webRequestRouter.onCompleted((details) => {
-        const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
-        if (details.webContents && viewName) {
-            setViewName(details.webContents.id, viewName);
-        }
-        const uid = details.webContents ? getTrackedUID(details.webContents.id) : undefined;
-
-        if (details.statusCode >= 200 && details.statusCode < 400) {
-            if (NET_LOG_SKIP_PATTERNS.some((re) => re.test(details.url))) {
-                return;
-            }
-
-            netLogger(viewName).verbose(details.method, details.url, details.statusCode, details.statusLine, uid);
-        } else {
-            netLogger(viewName).error(
-                details.method,
-                details.url,
-                details.statusCode,
-                details.statusLine,
-                details.error,
-                uid,
-            );
-        }
-    });
-
-    webRequestRouter.onErrorOccurred((details) => {
-        const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
-        const uid = details.webContents ? getTrackedUID(details.webContents.id) : undefined;
-        netLogger(viewName).error(details.method, details.url, details.error, uid);
-    });
 }
 
 export function clearLogs() {
