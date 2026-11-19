@@ -8,7 +8,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
+import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import type { DENSITY } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -22,6 +22,7 @@ import SettingsSectionWide from '../account/SettingsSectionWide';
 import ComposerModeCards from './ComposerModeCards';
 import DensityRadiosCards from './DensityRadiosCards';
 import ViewLayoutCards from './ViewLayoutCards';
+import useUpdateViewLayout from './useUpdateViewLayout';
 
 const LayoutsSection = () => {
     const [{ ComposerMode, ViewLayout }, loadingMailSettings] = useMailSettings();
@@ -29,6 +30,7 @@ const LayoutsSection = () => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const dispatch = useDispatch();
+    const updateViewLayout = useUpdateViewLayout();
     const [loadingComposerMode, withLoadingComposerMode] = useLoading();
     const [loadingViewLayout, withLoadingViewLayout] = useLoading();
     const [loadingDensity, withLoadingDensity] = useLoading();
@@ -42,8 +44,7 @@ const LayoutsSection = () => {
     };
 
     const handleChangeViewLayout = async (layout: VIEW_LAYOUT) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateViewLayout(layout));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
+        await updateViewLayout(layout);
         notifyPreferenceSaved();
     };
 

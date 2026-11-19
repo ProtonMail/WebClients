@@ -13,6 +13,8 @@ import { mailContext } from './context';
 
 type OnboardingThemeLabel = (typeof ONBOARDING_THEMES)[number]['label'];
 
+export type OnboardingViewLayout = 'row' | 'column';
+
 export enum ONBOARDING_STEPS {
     displayName = 'display_name',
     partner = 'partner',
@@ -23,6 +25,7 @@ export enum ONBOARDING_STEPS {
     desktopApp = 'get_desktop_app',
     mobileApp = 'get_mobile_app',
     themeSelection = 'theme',
+    viewLayout = 'view_layout',
 }
 
 export enum ONBOARDING_ACTIONS {
@@ -30,6 +33,7 @@ export enum ONBOARDING_ACTIONS {
     openAppStore = 'open_app_store',
     openPlayStore = 'open_play_store',
     selectTheme = 'select_theme',
+    selectViewLayout = 'select_view_layout',
     startOrgSetup = 'start_org_setup',
     back = 'back',
     toggleSetting = 'toggle_setting',
@@ -120,6 +124,13 @@ const themeStepCompleted = defineEvent({
     dimensions: { ...baseDimensions, theme: allowed(ONBOARDING_THEMES.map(({ label }) => label)) },
 });
 
+/** Same event as `stepCompleted`, the layout step also says which inbox layout the user ends up with */
+const viewLayoutStepCompleted = defineEvent({
+    ...baseEvent,
+    event: TelemetryMailOnboardingEvents.stepCompleted,
+    dimensions: { ...baseDimensions, viewLayout: allowed(['row', 'column']) },
+});
+
 const flowFinished = defineEvent({
     ...baseEvent,
     event: TelemetryMailOnboardingEvents.flowFinished,
@@ -191,6 +202,17 @@ const trackThemeStepCompleted = (theme: OnboardingThemeLabel) => {
     );
 };
 
+const trackViewLayoutStepCompleted = (viewLayout: OnboardingViewLayout) => {
+    tracker.emit(
+        viewLayoutStepCompleted,
+        {
+            dimensions: { flow: 'onboarding', step: ONBOARDING_STEPS.viewLayout, viewLayout },
+            ...withTiming(),
+        },
+        timing
+    );
+};
+
 const trackSettingToggled = (step: ONBOARDING_STEPS, setting: ONBOARDING_SETTINGS, enabled: boolean) => {
     tracker.emit(
         settingToggled,
@@ -249,6 +271,11 @@ export const useOnboardingTracking = () => {
         trackThemeStepCompleted: (theme: OnboardingThemeLabel) => {
             if (!isReplay) {
                 trackThemeStepCompleted(theme);
+            }
+        },
+        trackViewLayoutStepCompleted: (viewLayout: OnboardingViewLayout) => {
+            if (!isReplay) {
+                trackViewLayoutStepCompleted(viewLayout);
             }
         },
         trackSettingToggled: (step: ONBOARDING_STEPS, setting: ONBOARDING_SETTINGS, enabled: boolean) => {

@@ -129,3 +129,35 @@ describe('signup proof of concept', () => {
         expect(getPocEvents()).toHaveLength(0);
     });
 });
+
+describe('view layout step', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+        sessionStorage.clear();
+        setReplay(false);
+    });
+
+    it('sends step_completed with the chosen layout', () => {
+        const { result } = renderHook(() => useOnboardingTracking());
+
+        result.current.trackViewLayoutStepCompleted('column');
+
+        const [event, payload] = jest.mocked(tracker.emit).mock.calls.at(-1) ?? [];
+        expect(event?.event).toBe(TelemetryMailOnboardingEvents.stepCompleted);
+        expect(event?.group).toBe(TelemetryMeasurementGroups.mailOnboarding);
+        expect(payload?.dimensions).toEqual({
+            flow: 'onboarding',
+            step: ONBOARDING_STEPS.viewLayout,
+            viewLayout: 'column',
+        });
+    });
+
+    it('does not send it on a replay', () => {
+        setReplay(true);
+        const { result } = renderHook(() => useOnboardingTracking());
+
+        result.current.trackViewLayoutStepCompleted('row');
+
+        expect(tracker.emit).not.toHaveBeenCalled();
+    });
+});
