@@ -15,19 +15,17 @@ import {
     isUpgradeURL,
     isUpsellURL,
 } from "../urls/urlTests";
+import { resetHiddenViews, showView, showNetworkErrorPage } from "./viewManagement";
 import {
     getAccountView,
     getCurrentView,
     getWebContentsViewName,
-    resetHiddenViews,
-    getZoom,
-    showView,
-    showNetworkErrorPage,
-    IGNORED_NET_ERROR_CODES,
     getCurrentViewID,
     getViewURL,
     updateViewURL,
-} from "./viewManagement";
+} from "./viewState";
+import { getZoom } from "./zoom";
+import { IGNORED_NET_ERROR_CODES } from "../netErrors";
 import { mainLogger, sanitizeUrlForLogging, viewLogger } from "../log";
 
 function isSafeUrl(

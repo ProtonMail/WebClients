@@ -1,5 +1,5 @@
 import Store from "electron-store";
-import { getMeetView } from "../view/viewManagement";
+import { getMeetView } from "../view/viewState";
 import { FeatureFlag } from "./flags";
 import { isValidFlagString } from "./isValidFlagString";
 

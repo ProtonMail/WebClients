@@ -20,7 +20,8 @@ import { FeatureFlag } from "./flags/flags";
 import { getFeatureFlagManager } from "./flags/manager";
 import { isLinux, isMac, isWindows } from "./helpers";
 import { mainLogger } from "./log";
-import { getMainWindow, IGNORED_NET_ERROR_CODES } from "./view/viewManagement";
+import { IGNORED_NET_ERROR_CODES } from "./netErrors";
+import { getMainWindow } from "./view/viewState";
 
 declare const SCREEN_PICKER_WEBPACK_ENTRY: string;
 declare const SCREEN_PICKER_PRELOAD_WEBPACK_ENTRY: string;

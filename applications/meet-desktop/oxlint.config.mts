@@ -11,7 +11,6 @@ export default createOxlintConfig({
             // TODO: These rules came with the move from a standalone ESLint config to the shared one. Fix the findings and re-enable them.
             rules: {
                 curly: "off",
-                "import/no-cycle": "off",
                 "no-use-before-define": "off",
                 "proton/naming-convention": "off",
                 "proton/no-extraneous-dependencies": "off",

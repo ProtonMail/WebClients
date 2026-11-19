@@ -1,9 +1,8 @@
-import { app, WebContents } from "electron";
+import { app } from "electron";
 import Logger, { Hook, LogMessage, Transport } from "electron-log";
 import { escapeRegExp } from "lodash";
 import { createHash } from "node:crypto";
 import { isAbsolute } from "node:path";
-import { appSession } from "../session";
 
 if (process.env.NODE_ENV === "test") {
     Logger.transports.console.level = "error";
@@ -16,7 +15,7 @@ type ViewID = "meet" | "account";
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
-const netLogger = (viewID: ViewID | null) =>
+export const netLogger = (viewID: ViewID | null) =>
     viewID ? Logger.scope(`${NET_LOGGER_VIEW_PREFIX}${viewID}`) : Logger.scope("net");
 export const settingsLogger = Logger.scope("settings");
 export const updateLogger = Logger.scope("update");
@@ -243,23 +242,6 @@ export function initializeLog() {
     Logger.initialize({ preload: true });
     Logger.transports.file.maxSize = 5 * 1024 * 1024; // 3MB
     Logger.hooks.push(filterSensitiveLogMessage);
-}
-
-export async function connectNetLogger(getWebContentsViewName: (webContents: WebContents) => ViewID | null) {
-    appSession().webRequest.onCompleted((details) => {
-        const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
-
-        // Only log network errors - successful requests don't need logging
-        if (details.statusCode < 200 || details.statusCode >= 400) {
-            netLogger(viewName).error(
-                details.method,
-                sanitizeUrlForLogging(details.url),
-                details.statusCode,
-                details.statusLine,
-                details.error,
-            );
-        }
-    });
 }
 
 export function clearLogs() {

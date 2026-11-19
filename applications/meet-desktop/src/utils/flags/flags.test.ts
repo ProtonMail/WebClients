@@ -3,7 +3,7 @@ import { destroyFeatureFlagManagerTest, getFeatureFlagManager, initializeFeature
 const mockExecuteJavaScript = vi.fn();
 const mockGetMeetView = vi.fn();
 
-vi.mock("../view/viewManagement", () => ({
+vi.mock("../view/viewState", () => ({
     getMeetView: () => mockGetMeetView(),
 }));
 

@@ -1,7 +1,8 @@
 import { app, Menu, shell, WebContentsView, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { clearStorage, isMac } from "../helpers";
-import { getMainWindow, resetZoom, updateZoom } from "../view/viewManagement";
+import { getMainWindow } from "../view/viewState";
+import { resetZoom, updateZoom } from "../view/zoom";
 import { isProdEnv } from "../isProdEnv";
 import { MEET_APP_NAME } from "@proton/shared/lib/constants";
 import { getFeatureFlagManager } from "../flags/manager";

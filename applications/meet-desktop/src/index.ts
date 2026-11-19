@@ -4,19 +4,15 @@ import { getSettings } from "./store/settingsStore";
 import { initializeUpdateChecks, updateDownloaded } from "./update";
 import { isMac } from "./utils/helpers";
 import { urlOverrideError } from "./utils/view/dialogs";
-import {
-    bringWindowToFront,
-    getMainWindow,
-    getViewURL,
-    getWebContentsViewName,
-    showView,
-    viewCreationAppStartup,
-} from "./utils/view/viewManagement";
+import { bringWindowToFront, showView } from "./utils/view/viewManagement";
+import { getMainWindow, getViewURL, getWebContentsViewName } from "./utils/view/viewState";
+import { startup } from "./startup";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 import { initializeDarkTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
-import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
+import { initializeLog, mainLogger } from "./utils/log";
+import { connectNetLogger } from "./utils/netLogger";
 import { initializeSentry } from "./utils/sentry";
 import { setRequestPermission, extendAppVersionHeader } from "./utils/session";
 import { confirmQuitWithActiveDownloads, trackDownloads } from "./utils/downloads";
@@ -136,7 +132,7 @@ import { initializeLocale } from "./utils/locale";
     new Notification();
 
     // After this point the main window and views have been created
-    viewCreationAppStartup();
+    startup();
 
     // Flush any deep link URL that arrived before the window was ready (macOS cold start)
     flushPendingDeepLink();
@@ -162,7 +158,7 @@ import { initializeLocale } from "./utils/locale";
         }
 
         if (!getMainWindow()) {
-            viewCreationAppStartup();
+            startup();
         }
     });
 
