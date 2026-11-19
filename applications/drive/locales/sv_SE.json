@@ -1425,6 +1425,12 @@
       ],
       "Toggle subfolders of ${ itemName }": [
         "Växla undermappar till ${ itemName }"
+      ],
+      "Search recent items": [
+        "Sök senaste använda objekt"
+      ],
+      "Skip to main content": [
+        "Hoppa över till huvudinnehåll"
       ]
     },
     "Action: Docs": {
@@ -4569,6 +4575,18 @@
       ],
       "This file has missing crypto material": [
         "Den här filen har saknat kryptomaterial"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Ett meddelande krävs för att rapportera brott mot upphovsrätt eller stulen data"
+      ],
+      "Bookmark password is not available": [
+        "Lösenord för bokmärke är inte tillgängligt"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Upprättande av dokument utanför mappar är inte tillåtet"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Misslyckades avkryptera nodnyckel: ${ message }"
       ]
     },
     "error": {
@@ -6140,7 +6158,7 @@
         "Aktiverar automatisk borttagning…"
       ],
       "Enabling drive search": [
-        "Aktiverar sökning på lagringsenhet"
+        "Aktivera sökning i Drive"
       ],
       "Encrypted": [
         "Krypterad"
@@ -7823,7 +7841,7 @@
         "Inga befolkningstillstånd hittade."
       ],
       "One encrypted suite. Full business protection.": [
-        "En krypterad svit. Fullt företagsskydd."
+        "En krypterad svit. Fullständigt skydd för företaget."
       ],
       "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
         "För att aktivera en verkligt privat sökfunktion behöver vi indexera dina filer lokalt. Du kan fortfarande använda ${ DRIVE_APP_NAME } som vanligt - vi meddelar dig när indexeringen är klar."
@@ -8041,6 +8059,15 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Din Google Drive kan vara tom eller innehålla bara filer som inte stöds."
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } märke"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra.\n"
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Din import är blockerad. Uppgradera nu för att föra över resten av dina filer."
       ]
     },
     "info": {
@@ -8833,7 +8860,7 @@
         "Skapad ${ created }"
       ],
       "Deleted ${ deleted }": [
-        "Ta bort ${ deleted }"
+        "Tog bort ${ deleted }"
       ],
       "Device #${ position }": [
         "Enhet #${ position }"
@@ -11287,7 +11314,7 @@
         "Arbeta tillsammans"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "Du har precis fått lite gratis data och säkrat dina filer med end-to-end-kryptering – på rekordtid!"
+        "Du har precis knipit åt dig lite gratis data och säkrat dina filer med end-to-end-kryptering – på rekordtid!"
       ],
       "Files uploaded during this time won’t count towards your storage limit.": [
         "Filer som laddas upp under denna tid kommer inte att räknas av mot din gräns för lagringsutrymme."
@@ -11353,6 +11380,9 @@
       ],
       "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
         "**Har du ångrat dig efter försöksperioden** Avbryt inom 30 dagar från din första betalning och vi kommer att betala tillbaka för den oanvända tiden."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**När din fullständiga prenumeration startar...** Du kan fortfarande avbryta inom 30 dagar och få en proportionerlig återbetalning."
       ]
     },
     "Option": {
@@ -13429,6 +13459,9 @@
       ],
       "Your videos will appear here": [
         "Dina videoklipp kommer visas här"
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importera dina filer och mappar från Google Drive och håll dem privata i ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -14915,6 +14948,12 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "För dina Google Drive filer till ${ DRIVE_APP_NAME }"
+      ],
+      "Easy switch": [
+        "Enkel växling"
+      ],
+      "Easy Switch from Google Drive": [
+        "Enkelt byte från Google Drive"
       ]
     },
     "Today icon tooltip in mini calendar": {

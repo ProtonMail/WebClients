@@ -1223,6 +1223,12 @@
       ],
       "Special Offer": [
         "Akciós ajánlat"
+      ],
+      "Next contact": [
+        "Következő névjegy"
+      ],
+      "Previous contact": [
+        "Előző névjegy"
       ]
     },
     "Actions": {
@@ -1294,6 +1300,9 @@
       "${ ips } dedicated VPN server": [
         "${ ips } dedikált VPN szerver",
         "${ ips } dedikált VPN szerver"
+      ],
+      "Users": [
+        "Felhasználók"
       ]
     },
     "Alert": {
@@ -6649,6 +6658,9 @@
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Csak fájlok (nem képek, ${ DOCS_APP_NAME } vagy ${ SHEETS_APP_NAME })) - max. 100GB, 100.000 fájl, 50GB fájlonként"
+      ],
+      "1 vault per user": [
+        "Felhasználónként 1 széf"
       ]
     },
     "info": {
@@ -7544,6 +7556,9 @@
       ],
       "Terms and conditions": [
         "Felhasználási feltételek"
+      ],
+      "Customer Support": [
+        "Ügyfélszolgálat"
       ]
     },
     "List title": {
@@ -7639,6 +7654,9 @@
       ],
       "for ${ price }": [
         "${ price } áron"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } írássegéd"
       ]
     },
     "Message": {
@@ -9704,6 +9722,9 @@
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Fizetés ${ IDEAL_WERO_BRAND_NAME }val"
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% adót tartalmaz: ${ taxAmountElement }"
       ]
     },
     "Payments.Error": {
@@ -9764,6 +9785,9 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - kártya, a következő végződéssel: ${ paymentMethod.Details.Last4 }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kártya, a következő végződéssel: ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -12792,6 +12816,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
+      ],
+      "${ price } per seat": [
+        "${ price } felhasználónként"
       ]
     },
     "meet_2025: Info": {
@@ -12995,6 +13022,11 @@
     "user_modal": {
       "Upgrade to a supported plan to use admin roles.": [
         "Adminisztrátor szerepkörök használatához váltson egy erre alkalmas csomagra."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "A megerősítéssel felhatalmazza a ${ BRAND_NAME } és a Stripe-ot - a fizetési szolgáltatónkat -, hogy az előfizetéshez kapcsolódó jövőbeli fizetéseket csoportos beszedési megbízás (SEPA) útján levonják erről a bankszámláról, és a bankját hogy ezeket az összegeket levonja a számlájáról. Az első fizetést most a(z) ${ IDEAL_WERO_BRAND_NAME } szolgáltatáson keresztül történik. Előfizetése automatikusan megújul, amíg le nem mondja; minden terhelés előtt értesítést küldünk. A csoportos beszedési megbízással teljesített fizetések esetén – a bankjával kötött megállapodás feltételei szerint – a terhelés napjától számított 8 héten belül kérheti a levont összeg visszatérítését. Ez nem vonatkozik a mostani ${ IDEAL_WERO_BRAND_NAME } befizetésre."
       ]
     }
   }

@@ -1380,6 +1380,27 @@
       ],
       "Don't show this offer again": [
         "Toon deze aanbieding niet opnieuw"
+      ],
+      "About ${ name }": [
+        "Over ${ name }"
+      ],
+      "Add ${ name }": [
+        "${ name } toevoegen"
+      ],
+      "Cancel trial": [
+        "Proefperiode annuleren"
+      ],
+      "Dismiss notification": [
+        "Melding sluiten"
+      ],
+      "Next contact": [
+        "Volgend contact"
+      ],
+      "Previous contact": [
+        "Vorig contact"
+      ],
+      "Skip to main content": [
+        "Direct naar hoofdinhoud"
       ]
     },
     "Action: Docs": {
@@ -7947,6 +7968,9 @@
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ],
+      "1 vault per user": [
+        "1 kluis per gebruiker"
       ]
     },
     "info": {
@@ -8872,6 +8896,9 @@
       ],
       "Why would you like to cancel?": [
         "Waarom wil u annuleren?"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tekens"
       ]
     },
     "Label for contact group color": {
@@ -15299,6 +15326,9 @@
       ],
       "You can't change your own roles. Ask another admin to change them.": [
         "U kunt uw eigen rollen niet veranderen. Vraag een andere beheerder om deze te wijzigen."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Deze gebruiker krijgt beheerdersrechten bij de volgende aanmelding."
       ]
     },
     "Role": {
@@ -15310,6 +15340,9 @@
       ],
       "User Admin": [
         "Gebruiker Beheerder"
+      ],
+      "Organization Admin": [
+        "Organisatie Beheerder"
       ]
     },
     "Role description": {
@@ -15619,6 +15652,31 @@
     "collider_2025: Error": {
       "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
         "Dit gesprek is te lang om verder te gaan. Start een nieuwe chat om ${ LUMO_SHORT_APP_NAME } actief en responsief te houden."
+      ]
+    },
+    "lumo_2026: feature": {
+      "5x Plus usage": [
+        "5 × Plus gebruik"
+      ],
+      "Everything in Free, and:": [
+        "Alles in het Free Plan, en:"
+      ],
+      "Everything in Plus, and:": [
+        "Alles in het Plus Plan, en:"
+      ],
+      "Includes:": [
+        "Omvat:"
+      ],
+      "Limited messages and chat history": [
+        "Gelimiteerde berichten en gespreksgechiedenis"
+      ],
+      "More usage": [
+        "Meer gebruik"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Voor coderen en bouwen"
       ]
     }
   }

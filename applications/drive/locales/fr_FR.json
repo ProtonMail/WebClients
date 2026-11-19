@@ -843,7 +843,7 @@
         "Retirer le code-cadeau"
       ],
       "Remove me": [
-        "Me retirer"
+        "Me supprimer"
       ],
       "Remove without saving": [
         "Retirer sans enregistrer"
@@ -903,7 +903,7 @@
         "Restaurer cette version"
       ],
       "Restore version": [
-        "Restaurer la version"
+        "Restaurer cette version"
       ],
       "Resume all": [
         "Tout redémarrer"
@@ -1413,6 +1413,9 @@
       ],
       "Special Offer": [
         "Offre spéciale"
+      ],
+      "Skip to main content": [
+        "Passer au contenu principal"
       ]
     },
     "Action: Docs": {
@@ -4501,6 +4504,9 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "La phrase de récupération n'est pas correcte. Réessayez ou utilisez une autre méthode de récupération."
+      ],
+      "File download failed due to empty response": [
+        "Impossible de télécharger le fichier : la réponse est vide"
       ]
     },
     "error": {
@@ -4678,7 +4684,7 @@
         "Lorsque le mot de passe supplémentaire est activé, la gestion des alias ne peut se faire que dans ${ PASS_APP_NAME }."
       ],
       "You may also refresh the page or try again later.": [
-        "Vous pouvez aussi rafraîchir la page ou réessayer plus tard."
+        "Vous pouvez aussi actualiser la page ou réessayer plus tard."
       ]
     },
     "Error notification": {
@@ -5782,7 +5788,7 @@
         "Crédit de votre précédent abonnement"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "${ DRIVE_APP_NAME } étant chiffré de bout en bout, nous ne pouvons pas accéder à vos fichiers, ni les déchiffrer pour vous. Pour déverrouiller votre drive après une réinitialisation du mot de passe, vous devez avoir l'un des éléments suivants :"
+        "${ DRIVE_APP_NAME } étant chiffré de bout en bout, nous ne pouvons pas accéder à vos fichiers ni les déchiffrer pour vous. Pour déverrouiller votre drive après une réinitialisation du mot de passe, vous devez avoir l'un des éléments suivants :"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
@@ -6294,7 +6300,7 @@
         "Les éléments dans le dossier Corbeille y resteront jusqu'à ce que vous les supprimiez définitivement."
       ],
       "Items moved to the trash will stay here until deleted": [
-        "Les éléments déplacés dans le dossier Corbeille y resteront jusqu'à ce qu'ils soient supprimés."
+        "Les éléments déplacés dans la corbeille y resteront jusqu'à ce qu'ils soient supprimés."
       ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Il est préférable d'utiliser un VPN en permanence. Mais voici les cas où les menaces à la cybersécurité peuvent être les plus importantes :"
@@ -6538,7 +6544,7 @@
         "Les paiements sont protégés par le chiffrement TLS et par les lois suisses en matière de protection de la vie privée."
       ],
       "Permanently delete all files in your locked drive": [
-        "Supprimez définitivement tous les fichiers de votre disque dur verrouillé."
+        "Supprimez définitivement tous les fichiers de votre drive verrouillé."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline est uniquement compatible avec le format texte brut."
@@ -7748,7 +7754,7 @@
         "Ré-indexation en cours"
       ],
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
-        "Vos fichiers sont en cours de ré-indexation. Vous pouvez continuer à chercher ; les résultats peuvent être incomplets jusqu'à la fin du processus. Nous vous préviendrons quand il sera terminé."
+        "Vos fichiers sont en cours de ré-indexation. Vous pouvez continuer à chercher mais les résultats peuvent être incomplets jusqu'à la fin du processus. Nous vous préviendrons quand il sera terminé."
       ],
       "Album": [
         "Album"
@@ -8748,7 +8754,7 @@
         "Thème"
       ],
       "This will permanently delete all files in your locked drive.": [
-        "Cela supprimera définitivement tous les fichiers dans votre disque verrouillé."
+        "Cela supprimera définitivement tous les fichiers dans votre drive verrouillé."
       ],
       "Thomas": [
         "Camille"
@@ -8874,7 +8880,7 @@
         "Créé le ${ created }"
       ],
       "Deleted ${ deleted }": [
-        "Supprimé le ${ deleted }"
+        "${ deleted } a été effacé"
       ],
       "Device #${ position }": [
         "Appareil #${ position }"
@@ -11197,7 +11203,7 @@
         "Ignorer"
       ],
       "Skip for now": [
-        "Ignorer pour le moment"
+        "Passer pour le moment"
       ],
       "Try the app": [
         "Essayez l'application"
@@ -11265,7 +11271,7 @@
         "Téléchargez l'application de bureau"
       ],
       "Get the mobile app": [
-        "Téléchargez l'application mobile"
+        "Télécharger l'application mobile"
       ],
       "Got an Android? We've got you covered.": [
         "Vous avez un Android ? On s'occupe de tout."
@@ -11274,7 +11280,7 @@
         "Vous avez un iPhone ? On s'occupe de tout."
       ],
       "Hang tight": [
-        "Patientez un instant."
+        "Accrochez-vous!"
       ],
       "Invitation accepted": [
         "Invitation acceptée"
@@ -11325,7 +11331,7 @@
         "Travaillez en équipe"
       ],
       "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
-        "Vous avez récupéré du stockage gratuit et sécuriser vos fichiers avec le chiffrement de bout en bout — en un temps record !"
+        "Vous avez récupéré de données gratuites et sécurisé vos fichiers avec le chiffrement de bout en bout — en un temps record !"
       ]
     },
     "Onboarding Trial": {
@@ -14408,7 +14414,7 @@
         "Aucune capture d'écran"
       ],
       "No selfies": [
-        "Aucuns selfies"
+        "Aucun selfie"
       ],
       "No shared albums": [
         "Aucun album partagé"
@@ -15999,6 +16005,44 @@
     "Payment Method": {
       "Bank Account": [
         "Compte bancaire"
+      ]
+    },
+    "Visionary upsell": {
+      "10 years": [
+        "10 ans"
+      ],
+      "Calendars": [
+        "Calendriers"
+      ],
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
+      ],
+      "Password vaults": [
+        "Coffre-fort de mot de passe"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive et Pass premium"
+      ],
+      "Previous versions": [
+        "Version précédente"
+      ],
+      "Storage": [
+        "Espace de stockage"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Jusqu'à ${ limit }"
+      ],
+      "Users": [
+        "Utilisateurs"
       ]
     }
   }
