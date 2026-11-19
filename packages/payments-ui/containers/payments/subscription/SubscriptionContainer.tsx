@@ -1165,6 +1165,9 @@ const SubscriptionContainerInner = ({
         paymentForbiddenReason: model.paymentForbiddenReason,
         couponConfig,
         checkResult,
+        subscriptions: multiSubscriptionContext.subscriptions,
+        planIDs: model.planIDs,
+        cycle: model.cycle,
     }) ? (
         <>
             {couponCode && (
