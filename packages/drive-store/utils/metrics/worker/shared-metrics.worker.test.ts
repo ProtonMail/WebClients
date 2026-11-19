@@ -3,17 +3,19 @@ import metrics from '@proton/metrics/metricsInstance';
 import { UserAvailabilityTypes } from '../types/userSuccessMetricsTypes';
 import { MetricSharedWorker } from './shared-metrics.worker';
 
-jest.mock('@proton/metrics/metricsInstance', () => ({
-    setVersionHeaders: jest.fn(),
-    setAuthHeaders: jest.fn(),
-    drive_users_success_rate_total: {
-        increment: jest.fn(),
+vi.mock('@proton/metrics/metricsInstance', () => ({
+    default: {
+        setVersionHeaders: vi.fn(),
+        setAuthHeaders: vi.fn(),
+        drive_users_success_rate_total: {
+            increment: vi.fn(),
+        },
+        processAllRequests: vi.fn(),
+        clearAuthHeaders: vi.fn(),
     },
-    processAllRequests: jest.fn(),
-    clearAuthHeaders: jest.fn(),
 }));
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 describe('MetricSharedWorker', () => {
     let worker: MetricSharedWorker;
@@ -22,11 +24,11 @@ describe('MetricSharedWorker', () => {
     beforeEach(() => {
         worker = new MetricSharedWorker();
         originalDateNow = Date.now;
-        Date.now = jest.fn(() => 1000000);
+        Date.now = vi.fn(() => 1000000);
     });
 
     afterEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
         Date.now = originalDateNow;
     });
 
@@ -40,9 +42,9 @@ describe('MetricSharedWorker', () => {
         worker.mark(connectionId, UserAvailabilityTypes.coreFeatureError);
 
         const expectedUser = worker._getUsers().get(connectionId);
-        const reportSpy = jest.spyOn(worker, 'report').mockResolvedValue(undefined);
+        const reportSpy = vi.spyOn(worker, 'report').mockResolvedValue(undefined);
 
-        jest.advanceTimersByTime(5 * 60 * 1000);
+        vi.advanceTimersByTime(5 * 60 * 1000);
         await Promise.resolve();
 
         expect(reportSpy).toHaveBeenCalled();

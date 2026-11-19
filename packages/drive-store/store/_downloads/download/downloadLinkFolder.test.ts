@@ -88,7 +88,7 @@ function makeChildrenLinkMeta(linkId: string, size?: number): ChildrenLinkMeta {
 }
 
 describe('FolderTreeLoader', () => {
-    const mockLog = jest.fn();
+    const mockLog = vi.fn();
 
     const linkDownload = { shareId: 'shareId', linkId: 'linkId' } as LinkDownload;
 

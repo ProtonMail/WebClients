@@ -5,7 +5,7 @@ import { PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY, getUrlPassword } from './pa
 describe('URL Password Functions', () => {
     afterEach(() => {
         localStorageWithExpiry.deleteData(PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY);
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('getUrlPassword', () => {

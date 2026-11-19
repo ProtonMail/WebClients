@@ -1,4 +1,5 @@
 import { waitFor } from '@testing-library/react';
+import type { MockedObject } from 'vitest';
 
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import type { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
@@ -13,8 +14,8 @@ const createNotFoundError = () => createApiError('Error', { status: 404, statusT
 
 const TIME_TO_RESET_RETRIES_LOCAL = 50; // Milliseconds.
 
-jest.mock('../constants');
-const mockConstants = constants as jest.MockedObject<typeof constants>;
+vi.mock('../constants');
+const mockConstants = constants as MockedObject<typeof constants>;
 
 let offlineURL = '';
 let expiredURL = '';
@@ -44,7 +45,7 @@ const mockTransformBlockStream = async (abortSignal: AbortSignal, stream: Readab
     };
 };
 
-const mockDownloadBlock = jest.fn(
+const mockDownloadBlock = vi.fn(
     (abortController: AbortController, url: string): Promise<ReadableStream<Uint8Array<ArrayBuffer>>> => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -76,10 +77,10 @@ const mockDownloadBlock = jest.fn(
 );
 
 describe('initDownload', () => {
-    const mockLog = jest.fn();
+    const mockLog = vi.fn();
 
     beforeAll(() => {
-        jest.spyOn(global.console, 'warn').mockReturnValue();
+        vi.spyOn(global.console, 'warn').mockReturnValue();
     });
 
     beforeEach(() => {
@@ -89,7 +90,7 @@ describe('initDownload', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should download data from remote server using block metadata', async () => {
@@ -128,8 +129,8 @@ describe('initDownload', () => {
     });
 
     it('should call scanForVirus if passed as callback', async () => {
-        const mockScanForVirus = jest.fn();
-        const mockCheckFileHash = jest.fn();
+        const mockScanForVirus = vi.fn();
+        const mockCheckFileHash = vi.fn();
         const downloadControls = initDownloadBlocks(
             'filename',
             {
