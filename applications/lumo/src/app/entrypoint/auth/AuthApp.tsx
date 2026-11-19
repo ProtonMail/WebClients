@@ -119,7 +119,11 @@ const AuthApp = () => {
                         <AuthenticationProvider store={extraThunkArguments.authentication}>
                             <ApiProvider api={extraThunkArguments.api}>
                                 <DrawerProvider defaultShowDrawerSidebar={state.showDrawerSidebar}>
-                                    <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
+                                    <UnleashFlagProviderWithToolbar
+                                        unleashClient={extraThunkArguments.unleashClient}
+                                        // Keep the loader up while the dev-only toolbar chunk loads.
+                                        fallback={loader}
+                                    >
                                         <Router history={extraThunkArguments.history}>
                                             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                                 <ErrorBoundary big component={<StandardErrorPage big />}>

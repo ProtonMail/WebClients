@@ -26,6 +26,14 @@ textarea[dir='auto'] {
 	// (not rem()) and the duration in ms.
 	--lumo-sidebar-expanded-width: 300px;
 	--lumo-sidebar-transition-duration: 200ms;
+
+	// Page background before the Lumo theme <style> is injected (index.tsx), which then overrides it.
+	// Values are --background-norm of lumo-light and lumo-dark.
+	--background-norm: white;
+
+	@media (prefers-color-scheme: dark) {
+		--background-norm: #141414;
+	}
 }
 
 .main-text-container {

@@ -1,28 +1,16 @@
-import type { SyntheticEvent } from 'react';
-import { useMemo } from 'react';
+import type { Dispatch, PropsWithChildren, SetStateAction, SyntheticEvent } from 'react';
+import { createContext, useContext, useLayoutEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useConfig } from '@proton/app-context/useConfig';
 import TextLoader from '@proton/components/components/loader/TextLoader';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
-import { getAppShortName } from '@proton/shared/lib/apps/helper';
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LUMO_FULL_APP_TITLE } from '../../constants';
-import {
-    getDefaultSettings,
-    getLumoSettings,
-    getLumoThemeFromSettings,
-    getThemeConfig,
-    matchDarkTheme,
-} from '../../providers';
 import { LazyLottie } from '../LazyLottie';
 
-interface Props {
-    documentTitle?: string;
-    text?: string;
-}
+import './LumoLoader.scss';
 
 // Lazy-load the loader animation + lottie-react so neither sits on the first-paint
 // critical path. lottie-web (~298KB) was being pulled into the initial GuestApp/AuthApp
@@ -30,61 +18,60 @@ interface Props {
 // where a native placeholder covers the web view until the app signals it is ready).
 const getLoaderAnimationData = () => import('../Animations/loader.json');
 
-const LumoLoader = ({ documentTitle = '', text }: Props) => {
-    const { APP_NAME } = useConfig();
+const preventDefaultEvent = (e: SyntheticEvent) => e.preventDefault();
 
-    const appName = getAppShortName(APP_NAME);
-    const textToDisplay = text || c('Info').t`Loading ${appName}`;
+const LumoBootLoaderContext = createContext<Dispatch<SetStateAction<number>>>(() => {});
 
-    useDocumentTitle(documentTitle || LUMO_FULL_APP_TITLE);
-
-    // Since loader is outside of Store Provider, check local storage for theme settings to update loader background
-    const themeConfig = useMemo(() => {
-        try {
-            const localSettings = getLumoSettings() || getDefaultSettings();
-            const systemIsDark = matchDarkTheme().matches;
-            const currentTheme = getLumoThemeFromSettings(localSettings, systemIsDark);
-
-            return {
-                theme: currentTheme,
-                isDark: currentTheme === ThemeTypes.LumoDark,
-                styles: getThemeConfig(currentTheme).styles,
-            };
-        } catch {
-            // Fallback to system preference if there's any error
-            const systemIsDark = matchDarkTheme().matches;
-            const fallbackTheme = systemIsDark ? ThemeTypes.LumoDark : ThemeTypes.LumoLight;
-            return {
-                theme: fallbackTheme,
-                isDark: systemIsDark,
-                styles: getThemeConfig(fallbackTheme).styles,
-            };
-        }
-    }, []);
-
-    const preventDefaultEvent = (e: SyntheticEvent) => e.preventDefault();
+/**
+ * One loader for the whole boot, wrapping the app in `AppGuard`. Every `LumoLoader` below only adds a
+ * hold; this shows the loader while any hold exists. Hand-offs between loading screens remove one hold
+ * and add the next in the same commit, so the animation is never remounted.
+ */
+export const LumoBootLoader = ({ children }: PropsWithChildren) => {
+    const [holdCount, setHoldCount] = useState(0);
+    const appName = LUMO_SHORT_APP_NAME;
 
     return (
-        <>
-            {/* Inject theme styles for the loader */}
-            <style>{themeConfig.styles}</style>
-            <div
-                className="loader-page h-full lumo-loader-bg lumo-color-primary"
-                // Ignore drag & drop during loading to avoid issue when user drops
-                // file too soon before the app is ready causing stop of the app
-                // load and showing the file instead.
-                onDragOver={preventDefaultEvent}
-                onDragEnter={preventDefaultEvent}
-                onDragEnd={preventDefaultEvent}
-                onDrop={preventDefaultEvent}
-            >
-                <div className="absolute inset-center text-center">
-                    <LazyLottie getAnimationData={getLoaderAnimationData} loop={true} style={{ width: 180 }} />
-                    <TextLoader className="color-weak ml-5">{textToDisplay}</TextLoader>
+        <LumoBootLoaderContext.Provider value={setHoldCount}>
+            {holdCount > 0 && (
+                <div
+                    className="loader-page h-full lumo-boot-loader lumo-color-primary"
+                    // Ignore drag & drop during loading to avoid issue when user drops
+                    // file too soon before the app is ready causing stop of the app
+                    // load and showing the file instead.
+                    onDragOver={preventDefaultEvent}
+                    onDragEnter={preventDefaultEvent}
+                    onDragEnd={preventDefaultEvent}
+                    onDrop={preventDefaultEvent}
+                >
+                    <div className="absolute inset-center text-center">
+                        <div className="lumo-loader">
+                            <LazyLottie getAnimationData={getLoaderAnimationData} loop={true} />
+                        </div>
+                        <TextLoader className="color-weak ml-3">{c('Info').t`Loading ${appName}`}</TextLoader>
+                    </div>
                 </div>
-            </div>
-        </>
+            )}
+            {children}
+        </LumoBootLoaderContext.Provider>
     );
+};
+
+/**
+ * A phantom loading screen: renders nothing itself and keeps `LumoBootLoader` visible while mounted.
+ */
+const LumoLoader = () => {
+    const setHoldCount = useContext(LumoBootLoaderContext);
+
+    useDocumentTitle(LUMO_FULL_APP_TITLE);
+
+    // A layout effect, so a hand-off lands in one commit before paint.
+    useLayoutEffect(() => {
+        setHoldCount((count) => count + 1);
+        return () => setHoldCount((count) => count - 1);
+    }, [setHoldCount]);
+
+    return null;
 };
 
 export default LumoLoader;

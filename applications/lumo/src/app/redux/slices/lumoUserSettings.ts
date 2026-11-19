@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 
-import { getDefaultSettings, getLumoSettings } from '../../providers/lumoThemeStorage';
+import { getDefaultSettings, getInitialLumoSettings } from '../../providers/lumoThemeStorage';
 import { localSettingsToUserSettings } from '../../providers/lumoThemeUtils';
 import {
     resetLumoUserSettings,
@@ -27,7 +27,7 @@ export {
     updateLumoUserSettingsWithAutoSave,
 } from './lumoUserSettingsActions';
 
-/** Builds initial settings from `lumo-settings` in localStorage. */
+/** Builds initial settings from `lumo-settings` in localStorage (see `getInitialLumoSettings`). */
 export const createInitialLumoUserSettings = (): LumoUserSettings => {
     let theme: LumoUserSettings['theme'] = 'auto';
     let animatedBackgroundEnabled: boolean | undefined;
@@ -35,7 +35,9 @@ export const createInitialLumoUserSettings = (): LumoUserSettings => {
     let dictationLanguage: string | undefined;
 
     try {
-        const localSettings = getLumoSettings() || getDefaultSettings();
+        // Same lookup as the early theme (index.tsx), so the store doesn't start from another session's
+        // settings on `/` before the redirect to `/u/<localID>/`.
+        const localSettings = getInitialLumoSettings() || getDefaultSettings();
         theme = localSettingsToUserSettings(localSettings);
         if (typeof localSettings.animatedBackgroundEnabled === 'boolean') {
             animatedBackgroundEnabled = localSettings.animatedBackgroundEnabled;

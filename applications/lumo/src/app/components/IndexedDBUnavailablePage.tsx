@@ -1,20 +1,10 @@
-import { useMemo } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import lumoCatAlert from '@proton/styles/assets/img/lumo/lumo-cat-alert.svg';
 
-import {
-    getDefaultSettings,
-    getLumoSettings,
-    getLumoThemeFromSettings,
-    getThemeConfig,
-    matchDarkTheme,
-} from '../providers';
 import { LumoIcon } from './LumoIcon/LumoIcon';
 
 /**
@@ -22,29 +12,14 @@ import { LumoIcon } from './LumoIcon/LumoIcon';
  *
  * This typically happens on iOS Safari when website data is blocked
  * ("Block All Cookies"), in private browsing, or with Lockdown Mode enabled.
- * It is rendered outside the Redux store, so it derives the theme from local
- * storage the same way {@link LumoLoader} does.
+ * It is rendered outside the Redux store; the theme is already applied from local
+ * storage by `applyInitialLumoTheme` (index.tsx).
  */
 const IndexedDBUnavailablePage = () => {
     useDocumentTitle(LUMO_SHORT_APP_NAME);
 
-    const themeConfig = useMemo(() => {
-        try {
-            const localSettings = getLumoSettings() || getDefaultSettings();
-            const systemIsDark = matchDarkTheme().matches;
-            const currentTheme = getLumoThemeFromSettings(localSettings, systemIsDark);
-
-            return { styles: getThemeConfig(currentTheme).styles };
-        } catch {
-            const systemIsDark = matchDarkTheme().matches;
-            const fallbackTheme = systemIsDark ? ThemeTypes.LumoDark : ThemeTypes.LumoLight;
-            return { styles: getThemeConfig(fallbackTheme).styles };
-        }
-    }, []);
-
     return (
         <>
-            <style>{themeConfig.styles}</style>
             <div className="loader-page h-full lumo-loader-bg lumo-color-primary">
                 <div
                     className="absolute inset-center text-center flex flex-column items-center flex-nowrap gap-4 max-w-custom px-4"

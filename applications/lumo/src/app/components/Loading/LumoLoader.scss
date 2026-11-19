@@ -1,0 +1,25 @@
+@use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+
+// Covers the app instead of sitting before it in the flow, so the app mounted under it is laid out
+// (layout effects, autofocus) at its real position. Stays below modals, e.g. human verification.
+.lumo-boot-loader {
+	position: fixed;
+	inset: 0;
+	z-index: map.get($z-indexes, 'spotlights');
+	background-color: var(--background-norm);
+}
+
+// Reserve the animation's full box (loader.json is 903x771) before lottie loads, so the text below
+// neither drops when the box appears nor shifts sideways when the SVG widens the centered block.
+.lumo-loader {
+	inline-size: rem(180);
+	block-size: rem(154);
+	margin-inline: auto;
+
+	> * {
+		inline-size: 100%;
+		block-size: 100%;
+	}
+}

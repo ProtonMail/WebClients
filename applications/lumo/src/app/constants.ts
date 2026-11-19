@@ -25,5 +25,3 @@ export const MAX_SERIALIZED_ASSET_BYTES = 50 * 1024 * 1024 - 1024;
 export const MAX_PROVISIONAL_ATTACHMENTS = 20;
 
 export const LUMO_FULL_APP_TITLE = 'Lumo: Privacy-first AI assistant where chats stay confidential';
-
-export const LUMO_APP_NAME = 'Lumo';

@@ -5,8 +5,7 @@ import '@proton/polyfill';
 
 import AppGuard from './entrypoint/AppGuard';
 import './polyfill';
-
-// import MSWController from './__mocks__/MSWController';
+import { applyInitialLumoTheme } from './providers/lumoThemeDom';
 
 import './index.scss';
 
@@ -45,6 +44,9 @@ if (typeof Element !== 'undefined' && !Element.prototype.matches) {
         return i > -1;
     };
 }
+
+// Apply the saved Lumo theme before React renders anything, so the loading indicator and background is already themed.
+applyInitialLumoTheme();
 
 ReactDOM.createRoot(document.querySelector('.app-root')!).render(
     <React.StrictMode>
