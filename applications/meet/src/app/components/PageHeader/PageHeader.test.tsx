@@ -1,7 +1,8 @@
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, Router } from 'react-router-dom';
 
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createMemoryHistory } from 'history';
 
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 
@@ -9,6 +10,8 @@ import { PageHeader } from './PageHeader';
 
 const mocks = vi.hoisted(() => ({
     isSignInTruncated: false,
+    isGuest: true,
+    isRecordingSupported: true,
 }));
 
 vi.mock('./useIsTextTruncated', () => ({
@@ -16,7 +19,11 @@ vi.mock('./useIsTextTruncated', () => ({
 }));
 
 vi.mock('@proton/meet/store/hooks', () => ({
-    useMeetSelector: (selector: unknown) => (selector === selectIsGuest ? true : undefined),
+    useMeetSelector: (selector: unknown) => (selector === selectIsGuest ? mocks.isGuest : undefined),
+}));
+
+vi.mock('../../hooks/useMeetingRecorder/hooks/useIsRecordingSupported', () => ({
+    useIsRecordingSupported: () => mocks.isRecordingSupported,
 }));
 
 vi.mock('@proton/meet/telemetry/meetTelemetry', async (importOriginal) => ({
@@ -34,12 +41,36 @@ vi.mock('@proton/components/containers/heading/UserDropdown', () => ({
 }));
 
 vi.mock('./SettingsDropdown', () => ({
-    SettingsDropdown: () => null,
+    SettingsDropdown: () => <button type="button">Settings</button>,
 }));
 
-vi.mock('../../hooks/useHelpAndFeedback', () => ({
-    useHelpAndFeedback: () => ({ openHelpAndFeedback: vi.fn(), modals: null }),
-}));
+const renderHeaderAt = (pathname: string, { isGuest }: { isGuest: boolean }) => {
+    mocks.isGuest = isGuest;
+    window.history.pushState({}, '', pathname);
+    const history = createMemoryHistory({ initialEntries: [pathname] });
+    render(
+        <Router history={history}>
+            <PageHeader showAppSwitcher={false} />
+        </Router>
+    );
+    return { history };
+};
+
+const openMoreOptions = async (user: ReturnType<typeof userEvent.setup>) => {
+    await user.click(screen.getByRole('button', { name: 'More options' }));
+    return screen.getByRole('dialog', { name: 'More options' });
+};
+
+const menuRowNames = (menu: HTMLElement) =>
+    within(menu)
+        .getAllByRole('button')
+        .filter((row) => row.closest('li'))
+        .map((row) => row.textContent);
+
+const finishClosingHelpDialog = () => {
+    const modalRoot = screen.getByRole('dialog', { name: 'Help and feedback' }).closest('.modal-two') as Element;
+    fireEvent.animationEnd(modalRoot, { animationName: 'anime-modal-two-out' });
+};
 
 const renderGuestHeader = ({ isSignInTruncated }: { isSignInTruncated: boolean }) => {
     mocks.isSignInTruncated = isSignInTruncated;
@@ -59,6 +90,12 @@ const tabTo = async (user: ReturnType<typeof userEvent.setup>, name: string) => 
     }
 };
 
+const arrowDownTo = async (user: ReturnType<typeof userEvent.setup>, element: HTMLElement) => {
+    while (document.activeElement !== element) {
+        await user.keyboard('{ArrowDown}');
+    }
+};
+
 const finishClosingTooltips = () => {
     act(() => {
         vi.advanceTimersByTime(250);
@@ -69,13 +106,98 @@ const finishClosingTooltips = () => {
 };
 
 describe('PageHeader', () => {
+    const initialPathname = window.location.pathname;
+
+    beforeAll(() => {
+        const style = document.createElement('style');
+        style.textContent = 'dialog { display: block; }';
+        document.head.appendChild(style);
+    });
+
     beforeEach(() => {
         vi.useFakeTimers({ shouldAdvanceTime: true });
+        mocks.isGuest = true;
+        mocks.isRecordingSupported = true;
     });
 
     afterEach(() => {
         vi.runOnlyPendingTimers();
         vi.useRealTimers();
+        window.history.pushState({}, '', initialPathname);
+    });
+
+    it('gives a guest on the join page a More options menu with only Help and feedback, instead of the Help and feedback button', async () => {
+        const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+        renderHeaderAt('/join', { isGuest: true });
+
+        expect(screen.queryByRole('button', { name: 'Help and feedback' })).not.toBeInTheDocument();
+
+        const menu = await openMoreOptions(user);
+        expect(menuRowNames(menu)).toEqual(['Help and feedback']);
+
+        await user.click(within(menu).getByRole('button', { name: 'Help and feedback' }));
+        expect(screen.getByRole('dialog', { name: 'Help and feedback' })).toBeInTheDocument();
+    });
+
+    it('returns focus to More options when a keyboard user closes the Help and feedback dialog opened from it', async () => {
+        const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+        renderHeaderAt('/join', { isGuest: true });
+
+        await tabTo(user, 'More options');
+        await user.keyboard('{Enter}');
+        const menu = screen.getByRole('dialog', { name: 'More options' });
+        await arrowDownTo(user, within(menu).getByRole('button', { name: 'Help and feedback' }));
+        await user.keyboard('{Enter}');
+
+        const helpDialog = screen.getByRole('dialog', { name: 'Help and feedback' });
+        expect(helpDialog).toContainElement(document.activeElement as HTMLElement);
+
+        await user.keyboard('{Escape}');
+        finishClosingHelpDialog();
+
+        expect(screen.queryByRole('dialog', { name: 'Help and feedback' })).not.toBeInTheDocument();
+        expect(screen.getByRole('button', { name: 'More options' })).toHaveFocus();
+    });
+
+    it('lists Manage recordings then Help and feedback for a signed-in user on the join page when recording is supported', async () => {
+        const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+        const { history } = renderHeaderAt('/join', { isGuest: false });
+
+        const menu = await openMoreOptions(user);
+        expect(menuRowNames(menu)).toEqual(['Manage recordings', 'Help and feedback']);
+
+        await user.click(within(menu).getByRole('button', { name: 'Manage recordings' }));
+        expect(history.location.pathname).toBe('/manage-recordings');
+    });
+
+    it('lists only Help and feedback for a signed-in user on the join page when recording is not supported', async () => {
+        const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+        mocks.isRecordingSupported = false;
+        renderHeaderAt('/join', { isGuest: false });
+
+        const menu = await openMoreOptions(user);
+        expect(menuRowNames(menu)).toEqual(['Help and feedback']);
+    });
+
+    it('shows More options instead of the settings menu to a signed-in user on the join page', () => {
+        renderHeaderAt('/join', { isGuest: false });
+
+        expect(screen.getByRole('button', { name: 'More options' })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: 'Settings' })).not.toBeInTheDocument();
+    });
+
+    it('keeps the settings menu and no More options menu for a signed-in user on the dashboard', () => {
+        renderHeaderAt('/dashboard', { isGuest: false });
+
+        expect(screen.getByRole('button', { name: 'Settings' })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: 'More options' })).not.toBeInTheDocument();
+    });
+
+    it('keeps the Help and feedback button and no More options menu for a guest on the dashboard', () => {
+        renderHeaderAt('/dashboard', { isGuest: true });
+
+        expect(screen.getByRole('button', { name: 'Help and feedback' })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: 'More options' })).not.toBeInTheDocument();
     });
 
     it('shows the full Sign in label in a tooltip when a keyboard user reaches the truncated button', async () => {

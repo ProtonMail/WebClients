@@ -131,6 +131,10 @@ im.$media-expressions: $media-expressions;
 		border: 1px solid var(--border-card) !important;
 	}
 
+	.join-page-header-button {
+		color: var(--text-norm) !important;
+	}
+
 	.logo-button {
 		background: transparent !important;
 	}
@@ -170,6 +174,14 @@ im.$media-expressions: $media-expressions;
 
 .dropdown {
 	box-shadow: none !important;
+}
+
+.more-options-dropdown {
+	min-inline-size: rem(212);
+
+	.create-meeting-dropdown-menu:hover {
+		color: var(--text-weak);
+	}
 }
 
 .create-account-header-button {

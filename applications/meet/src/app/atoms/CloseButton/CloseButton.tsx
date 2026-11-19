@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
 import './CloseButton.scss';
@@ -11,9 +12,10 @@ interface CloseButtonProps {
     className?: string;
     style?: React.CSSProperties;
     tabIndex?: number;
+    iconSize?: IconSize;
 }
 
-export const CloseButton = ({ onClose, className, style, tabIndex }: CloseButtonProps) => {
+export const CloseButton = ({ onClose, className, style, tabIndex, iconSize = 6 }: CloseButtonProps) => {
     return (
         <Button
             className={clsx('close-button rounded-full w-custom h-custom shrink-0 p-0', className)}
@@ -27,7 +29,7 @@ export const CloseButton = ({ onClose, className, style, tabIndex }: CloseButton
             onClick={onClose}
             tabIndex={tabIndex}
         >
-            <IcCross size={6} alt={c('Action').t`Close`} />
+            <IcCross size={iconSize} alt={c('Action').t`Close`} />
         </Button>
     );
 };
