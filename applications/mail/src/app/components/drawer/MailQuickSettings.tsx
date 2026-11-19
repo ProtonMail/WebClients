@@ -29,6 +29,7 @@ import { useElectronDefaultApp } from '@proton/components/containers/desktop/def
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import ToggleAssistant from '@proton/components/containers/general/ToggleAssistant/ToggleAssistant';
 import ToggleAssistantEnvironment from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantEnvironment';
+import useUpdateViewLayout from '@proton/components/containers/layouts/useUpdateViewLayout';
 import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
@@ -45,7 +46,7 @@ import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
+import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { DENSITY, LUMO_SHORT_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -79,6 +80,7 @@ interface QuickSettingsSelectOption {
 const MailQuickSettings = () => {
     const api = useApi();
     const dispatch = useDispatch();
+    const updateViewLayout = useUpdateViewLayout();
     const { createNotification } = useNotifications();
 
     const [{ Density, AIAssistantFlags }] = useUserSettings();
@@ -161,9 +163,8 @@ const MailQuickSettings = () => {
     const defaultComposerModeOption =
         composerSizeOptions.find((option) => option.value === ComposerMode) || composerSizeOptions[0];
 
-    const handleChangeViewLayout = async (layout: number) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateViewLayout(layout));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
+    const handleChangeViewLayout = async (layout: VIEW_LAYOUT) => {
+        await updateViewLayout(layout);
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
@@ -254,7 +255,7 @@ const MailQuickSettings = () => {
                             unstyled
                             originalPlacement="bottom-end"
                             value={defaultViewLayoutOption.value}
-                            onValue={(value: number) => withLoadingViewLayout(handleChangeViewLayout(value))}
+                            onValue={(value: VIEW_LAYOUT) => withLoadingViewLayout(handleChangeViewLayout(value))}
                             renderSelected={(selected) => {
                                 const value = viewLayoutOptions.find((option) => option.value === selected);
                                 return <>{value?.text}</>;

@@ -300,6 +300,8 @@ export enum MailFeatureFlag {
     PostSignupSurveyExperiment = 'PostSignupSurveyExperiment',
     RemoveReplyStyles = 'RemoveReplyStyles',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
+    // Shared with the API: it records the A/B assignment at signup with this same flag
+    WebMailOnboardingViewExperiment = 'WebMailOnboardingViewExperiment',
     // Category view flags, used to control the whole category view
     CategoryOnboardingDisableCategorize = 'CategoryOnboardingDisableCategorize',
     CategoryReportUnreadCountDisabled = 'CategoryReportUnreadCountDisabled',

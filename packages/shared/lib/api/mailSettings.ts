@@ -99,10 +99,16 @@ export const updateRightToLeft = (RightToLeft: DIRECTION) => ({
     data: { RightToLeft },
 });
 
-export const updateViewLayout = (ViewLayout: number) => ({
+/**
+ * Where the layout change comes from. `onboarding` makes the API also record the choice for the
+ * onboarding layout experiment (`WebMailOnboardingViewExperiment`), so only send it from the onboarding.
+ */
+export type ViewLayoutSource = 'onboarding';
+
+export const updateViewLayout = (ViewLayout: number, Source?: ViewLayoutSource) => ({
     url: 'mail/v4/settings/viewlayout',
     method: 'put',
-    data: { ViewLayout },
+    data: Source ? { ViewLayout, Source } : { ViewLayout },
 });
 
 export const updatePromptPin = (PromptPin: number) => ({

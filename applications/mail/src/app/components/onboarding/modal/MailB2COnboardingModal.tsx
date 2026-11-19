@@ -12,6 +12,7 @@ import type { OnboardingStepEligibleCallback } from './interface';
 import ActivatePremiumFeaturesStep, {
     isActivatePremiumFeaturesStepEligible,
 } from './steps/ActivatePremiumFeaturesStep';
+import ChooseViewLayoutStep, { isChooseViewLayoutStepEligible } from './steps/ChooseViewLayoutStep';
 import { DiscoverAppsStep } from './steps/DiscoverAppsStep';
 import DisplayNameStep, { isDisplayNameStepEligible } from './steps/DisplayNameStep';
 import GetDesktopAppStep, { isGetDesktopAppStepEligible } from './steps/GetDesktopAppStep';
@@ -39,6 +40,7 @@ type StepId =
     | 'get-mobile-app'
     | 'get-desktop-app'
     | 'activate-premium-features'
+    | 'choose-view-layout'
     | 'partner'
     | 'display-name';
 
@@ -74,6 +76,10 @@ const STEPS: Record<
     'activate-premium-features': {
         eligible: isActivatePremiumFeaturesStepEligible,
         component: ActivatePremiumFeaturesStep,
+    },
+    'choose-view-layout': {
+        eligible: isChooseViewLayoutStepEligible,
+        component: ChooseViewLayoutStep,
     },
     // DAWG-88 add new telemetry
     partner: {
@@ -169,6 +175,8 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
                     getStepComponent('display-name'),
                     getStepComponent('partner'),
                     getStepComponent('onboarding-welcome'),
+                    // 'choose-view-layout' is shown right after the welcome step, as the second step.
+                    getStepComponent('choose-view-layout'),
                     getStepComponent('get-desktop-app'),
                     getStepComponent('get-mobile-app'),
                 ].filter(isTruthy)}
