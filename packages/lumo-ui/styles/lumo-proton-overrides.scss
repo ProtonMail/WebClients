@@ -1,0 +1,805 @@
+// Compatibility for existing Proton controls only. New Lumo styles use --lumo-* directly.
+// The app uses html:root; embedded consumers keep the adapter inside .lumo-ui.
+@mixin overrides($scope) {
+	$component-scope: $scope;
+
+	// html:root is needed for theme variables, but controls need only one scope class.
+	@if $scope == 'html:root' {
+		$component-scope: ':root';
+	}
+
+	#{$scope},
+	#{$scope}.ui-standard,
+	#{$scope} .ui-standard,
+	#{$scope} .ai-paper-trail {
+		--text-norm: var(--lumo-glyph);
+		--text-weak: var(--lumo-glyph-mid);
+		--text-hint: var(--lumo-glyph-low);
+		--text-disabled: var(--lumo-glyph-disabled);
+		--text-invert: var(--lumo-glyph-inverse);
+		--text-dark: var(--lumo-black);
+		--text-light: var(--lumo-white);
+		--background-norm: var(--lumo-panel);
+		--background-weak: var(--lumo-control-fill);
+		--background-strong: var(--lumo-control-fill-mid);
+		--background-elevated: var(--lumo-panel-elevated);
+		--background-lowered: var(--lumo-control-fill-low);
+		--background-invert: var(--lumo-panel-inverse);
+		--border-weak: var(--lumo-border);
+		--border-norm: var(--lumo-border);
+		--border-strong: var(--lumo-border-mid);
+		--backdrop-norm: var(--lumo-scrim);
+		--focus-outline: var(--lumo-control-border-focus);
+		--focus-ring: var(--lumo-control-border-focus);
+		--interaction-default: var(--lumo-control-fill-empty);
+		--interaction-default-hover: var(--lumo-control-fill);
+		--interaction-default-active: var(--lumo-control-fill-mid);
+		--interaction-weak: var(--lumo-control-fill-mid);
+		--interaction-weak-hover: var(--lumo-control-fill-strongest);
+		--interaction-weak-active: var(--lumo-control-fill-strongest);
+		--interaction-weak-contrast: var(--lumo-glyph);
+		--interaction-weak-minor-2: var(--lumo-control-fill-low);
+		--interaction-weak-minor-1: var(--lumo-control-fill);
+		--interaction-weak-major-1: var(--lumo-control-fill-strongest);
+		--interaction-weak-major-2: var(--lumo-control-fill-strongest);
+		--interaction-weak-major-3: var(--lumo-control-fill-strongest);
+
+		@each $family in (primary, interaction-norm) {
+			--#{$family}: var(--lumo-control-brand-fill);
+			--#{$family}-hover: var(--lumo-control-brand-fill-mid);
+			--#{$family}-active: var(--lumo-control-brand-fill-strong);
+			--#{$family}-major-1: var(--lumo-control-brand-fill-mid);
+			--#{$family}-major-2: var(--lumo-control-brand-fill-strong);
+			--#{$family}-major-3: var(--lumo-control-brand-fill-strong);
+			--#{$family}-minor-1: var(--lumo-control-fill-mid);
+			--#{$family}-minor-2: var(--lumo-control-fill);
+			--#{$family}-contrast: var(--lumo-control-brand-text);
+		}
+
+		// Lumo has no minor/major palette for warning, success, or info. Keep their
+		// identity, use neutral surfaces, and do not invent new tinted token values.
+		@each $signal in (danger, warning, success, info) {
+			--signal-#{$signal}: var(--lumo-signal-#{$signal});
+			--signal-#{$signal}-minor-1: var(--lumo-control-fill-mid);
+			--signal-#{$signal}-minor-2: var(--lumo-control-fill);
+			--signal-#{$signal}-major-1: var(--lumo-signal-#{$signal});
+			--signal-#{$signal}-major-2: var(--lumo-signal-#{$signal});
+			--signal-#{$signal}-major-3: var(--lumo-signal-#{$signal});
+			--signal-#{$signal}-contrast: var(--lumo-black);
+		}
+
+		--signal-danger-major-1: var(--lumo-signal-danger-hover);
+		--signal-danger-major-2: var(--lumo-signal-danger-pressed);
+		--signal-danger-contrast: var(--lumo-signal-danger-text);
+		--field-norm: var(--lumo-control-border-strong);
+		--field-hover: var(--lumo-control-border-strong);
+		--field-disabled: var(--lumo-border-mid);
+		--field-background-color: var(--lumo-panel-elevated);
+		--field-hover-background-color: var(--lumo-panel-elevated);
+		--field-focus-background-color: var(--lumo-panel-elevated);
+		--field-text-color: var(--lumo-glyph);
+		--field-hover-text-color: var(--lumo-glyph);
+		--field-focus-text-color: var(--lumo-glyph);
+		--field-placeholder-color: var(--lumo-glyph-low);
+		--field-disabled-background-color: var(--lumo-control-fill);
+		--field-disabled-text-color: var(--lumo-glyph-disabled);
+		--toggle-container-unchecked-loader-color: var(--lumo-glyph);
+		--transition-slot-duration: var(--lumo-duration-200);
+		--select-background-color: var(--lumo-panel-elevated);
+		--link-norm: var(--lumo-glyph-brand-text);
+		--link-hover: var(--lumo-glyph-brand-mid);
+		--link-active: var(--lumo-glyph-brand-strong);
+		--tooltip-background-color: var(--lumo-panel-inverse);
+		--tooltip-text-color: var(--lumo-glyph-inverse);
+		--modal-background-color: var(--lumo-panel-elevated);
+		--modal-text-color: var(--lumo-glyph);
+		--shadow-norm: var(--lumo-elevation-1);
+		--shadow-raised: var(--lumo-elevation-3);
+		--shadow-lifted: var(--lumo-elevation-4);
+		--shadow-norm-opacity: var(--lumo-opacity-5);
+		--shadow-raised-opacity: var(--lumo-opacity-10);
+		--shadow-lifted-opacity: var(--lumo-opacity-16);
+		--font-weight-normal: var(--lumo-font-weight-regular);
+		--font-weight-semibold: var(--lumo-font-weight-semibold);
+		--font-weight-bold: var(--lumo-font-weight-semibold);
+
+		@each $name, $size in (sm: 4, md: 8, lg: 12, xl: 16, xxl: 28, full: full) {
+			--border-radius-#{$name}: var(--lumo-radius-#{$size});
+		}
+	}
+
+	// A scope's default text style must not beat an explicit Lumo typography utility.
+	:where(#{$scope}) {
+		color: var(--lumo-glyph);
+		font: var(--lumo-type-body-medium);
+		letter-spacing: var(--lumo-font-letter-spacing);
+	}
+
+	// Match both scoped descendants and a component carrying the scope itself.
+	// Keep component behavior and portal destinations; adapt documented control geometry.
+	:is(#{$component-scope}, #{$component-scope} *) {
+		&:is(.interactive-pseudo, .interactive-pseudo-inset, .interactive-pseudo-protrude)[class*='lumo-radius-']::after {
+			border-radius: inherit;
+		}
+
+		// Buttons: use the documented hook families for all Proton shapes and colors.
+		&.button,
+		&.button-underline {
+			font: var(--lumo-type-label-large);
+			letter-spacing: var(--lumo-font-letter-spacing);
+			transition-duration: var(--lumo-duration-150);
+			transition-timing-function: var(--lumo-easing-standard);
+
+			&:active {
+				transition-duration: var(--lumo-duration-100);
+			}
+		}
+
+		&.button {
+			border-radius: var(--lumo-radius-8);
+
+			&.button-pill {
+				border-radius: var(--lumo-radius-full);
+			}
+
+			&.button-medium {
+				--padding-block: var(--lumo-space-8);
+				--padding-inline: var(--lumo-space-16);
+			}
+
+			&.button-small {
+				--padding-block: var(--lumo-space-6);
+				--padding-inline: var(--lumo-space-12);
+
+				font: var(--lumo-type-label-medium);
+			}
+
+			&.button-tiny {
+				font: var(--lumo-type-label-small);
+			}
+
+			&.button-for-icon {
+				--padding-inline: var(--padding-block);
+			}
+		}
+
+		@each $variant in (norm, weak, danger, warning, success, info) {
+			&.button-ghost-#{$variant},
+			&.button-outline-#{$variant} {
+				--button-default-background-color: var(--lumo-control-fill-empty);
+				--button-hover-background-color: var(--lumo-control-fill);
+				--button-active-background-color: var(--lumo-control-fill-mid);
+			}
+
+			&.button-outline-#{$variant} {
+				--button-default-border-color: var(--lumo-border-mid);
+				--button-hover-border-color: var(--lumo-border-mid);
+				--button-active-border-color: var(--lumo-border-mid);
+			}
+
+			// Neutral ghost/outline buttons use glyph, not the brand palette.
+			@if $variant == norm or $variant == weak {
+				&.button-ghost-#{$variant},
+				&.button-outline-#{$variant} {
+					--button-default-text-color: var(--lumo-glyph);
+					--button-hover-text-color: var(--lumo-glyph);
+					--button-active-text-color: var(--lumo-glyph);
+				}
+			} @else {
+				&.button-ghost-#{$variant},
+				&.button-outline-#{$variant},
+				&.button-underline-#{$variant} {
+					--button-default-text-color: var(--lumo-signal-#{$variant});
+					--button-hover-text-color: var(--lumo-signal-#{$variant});
+					--button-active-text-color: var(--lumo-signal-#{$variant});
+				}
+
+				&.button-outline-#{$variant} {
+					--button-default-border-color: var(--lumo-signal-#{$variant});
+					--button-hover-border-color: var(--lumo-signal-#{$variant});
+					--button-active-border-color: var(--lumo-signal-#{$variant});
+				}
+			}
+		}
+
+		&.button-underline-norm {
+			--button-default-text-color: var(--lumo-glyph-brand-text);
+			--button-hover-text-color: var(--lumo-glyph-brand-mid);
+			--button-active-text-color: var(--lumo-glyph-brand-strong);
+		}
+
+		&.button:is([disabled], .is-disabled):not([aria-busy='true'], .no-disabled-styles),
+		&.button-underline:is([disabled], .is-disabled):not([aria-busy='true'], .no-disabled-styles) {
+			--button-default-background-color: var(--lumo-control-fill);
+
+			border-color: transparent;
+			background-color: var(--lumo-control-fill);
+			background-image: none;
+			color: var(--lumo-glyph-disabled);
+			opacity: 1;
+
+			@each $variant in (norm, weak, danger, warning, success, info) {
+				&.button-outline-#{$variant} {
+					border-color: var(--lumo-border-mid);
+				}
+			}
+		}
+
+		&.button[aria-busy='true'] {
+			background-color: var(--button-default-background-color, transparent);
+			border-color: var(--button-default-border-color, transparent);
+		}
+
+		// Keyboard focus uses the design's 2px ring and 2px offset. Retain Proton's
+		// explicit focus-visible class; loading/disabled controls keep their own behavior.
+		&:is(.button, .button-underline, .link, .tabs-list-link):is(
+				:focus-visible,
+				:has(:focus-visible),
+				.display-focus-visible
+			) {
+			outline: 2px solid var(--lumo-control-border-focus);
+			outline-offset: 2px;
+			box-shadow: none;
+		}
+
+		&.button:is(:focus-visible, :has(:focus-visible), .display-focus-visible) {
+			border-color: var(--button-default-border-color, transparent);
+		}
+
+		// Field roles use Lumo typography and padding; multiline fields retain caller-selected rows.
+		&.input:not(.unstyled),
+		&.textarea:not(.unstyled),
+		&.field,
+		&.select {
+			font: var(--lumo-type-body-large);
+			letter-spacing: var(--lumo-font-letter-spacing);
+		}
+
+		&.input:not(.unstyled) .input-element {
+			padding-block: var(--lumo-space-12);
+			padding-inline: var(--lumo-space-12);
+		}
+
+		// Search is the compact field role; the wrapper contributes its two border pixels.
+		&.input:not(.unstyled) .input-element[type='search'] {
+			font: var(--lumo-type-body-medium);
+			min-block-size: calc(var(--lumo-space-32) + var(--lumo-space-2));
+			padding-block: var(--lumo-space-6);
+		}
+
+		&.field:is(input):not([type='date'], [type='time'], [type='search'], .field--tiny, .field--small, .field--large) {
+			block-size: auto;
+			padding-block: var(--lumo-space-12);
+			padding-inline: var(--lumo-space-12);
+		}
+
+		&.field:is(select),
+		&.select,
+		&.field[type='date'],
+		&.field[type='time'] {
+			min-block-size: var(--lumo-space-40);
+			padding-block: var(--lumo-space-8);
+			padding-inline: var(--lumo-space-12);
+		}
+
+		&.textarea:not(.unstyled),
+		&.field:is(textarea),
+		&.input:not(.unstyled) textarea.input-element {
+			padding: var(--lumo-space-12);
+		}
+
+		&.field-two-label-container {
+			margin-block-end: var(--lumo-space-8);
+			font: var(--lumo-type-title-small);
+		}
+
+		// Keep iOS from zooming the page when a field receives focus.
+		@media (width <= 680px) {
+			&.input:not(.unstyled) .input-element,
+			&.textarea:not(.unstyled),
+			&.field,
+			&.select {
+				font-size: max(16px, 1rem);
+			}
+		}
+
+		// Preserve adornment layout, validation, and explicit compact size variants.
+		&.input:not(.unstyled),
+		&.textarea:not(.unstyled),
+		&.field,
+		&.field-icon-container,
+		&.select {
+			border-radius: var(--lumo-radius-8);
+			transition-duration: var(--lumo-duration-150);
+			transition-timing-function: var(--lumo-easing-standard);
+		}
+
+		&.input:not(.unstyled):is(.focus, :focus-within):not(.disabled),
+		&.textarea:not(.unstyled):is(:focus, .focus):not(:disabled, .disabled),
+		&.field:is(:focus, :focus-within, .focus),
+		&.field[aria-expanded='true']:not([aria-controls]),
+		&.field-icon-container:focus-within,
+		&.multi-select-container:focus-within {
+			// An inset stroke adds the second pixel without changing field layout.
+			border-color: var(--focus-outline);
+			box-shadow: inset 0 0 0 1px var(--focus-outline);
+		}
+
+		&.input.error,
+		&.textarea.error:not(.unstyled),
+		&.field[aria-invalid='true'] {
+			--focus-outline: var(--lumo-signal-danger);
+		}
+
+		&.input.error:not(.disabled),
+		&.textarea.error:not(.unstyled, .disabled, :disabled),
+		&.field[aria-invalid='true']:not(:disabled) {
+			box-shadow: inset 0 0 0 1px var(--lumo-signal-danger);
+		}
+
+		// TextAreaTwo passes the native attribute without Proton's .disabled class.
+		&.textarea:not(.unstyled):disabled {
+			border-color: var(--lumo-border-mid);
+			background-color: var(--lumo-control-fill);
+			color: var(--lumo-glyph-disabled);
+			box-shadow: none;
+
+			&::placeholder {
+				color: inherit;
+			}
+		}
+
+		// Radio shares Proton's checkbox surface class; keep its circular shape separate.
+		&.checkbox-fakecheck:not(.radio-fakeradio) {
+			min-inline-size: var(--lumo-icon-size-16);
+			inline-size: var(--lumo-icon-size-16);
+			block-size: var(--lumo-icon-size-16);
+			border-radius: var(--lumo-radius-4);
+			border-width: 1.5px;
+
+			> .checkbox-fakecheck-img {
+				inline-size: var(--lumo-icon-size-12);
+				block-size: var(--lumo-icon-size-12);
+			}
+		}
+
+		// Proton gives the mixed glyph a disabled utility even when the control is enabled.
+		&.checkbox-input:indeterminate + .checkbox-fakecheck > .checkbox-fakecheck-img {
+			color: inherit;
+		}
+
+		&.checkbox-input:focus-visible + .checkbox-fakecheck,
+		&.checkbox-input:checked:focus-visible + .checkbox-fakecheck,
+		&.radio:focus-visible + .radio-fakeradio {
+			outline: 2px solid var(--lumo-control-border-focus);
+			outline-offset: 2px;
+			box-shadow: none;
+		}
+
+		&.checkbox-input[disabled] + .checkbox-fakecheck,
+		&.checkbox-input:checked[disabled] + .checkbox-fakecheck,
+		&.checkbox-input:checked:indeterminate[disabled] + .checkbox-fakecheck {
+			border-color: var(--lumo-border-mid);
+			background-color: var(--lumo-control-fill);
+			color: var(--lumo-glyph-disabled);
+		}
+
+		&.checkbox-input:checked[disabled]:not(:indeterminate) + .checkbox-fakecheck {
+			border-color: transparent;
+		}
+
+		&.radio-fakeradio {
+			min-inline-size: var(--lumo-icon-size-16);
+			inline-size: var(--lumo-icon-size-16);
+			block-size: var(--lumo-icon-size-16);
+			border-radius: var(--lumo-radius-full);
+			border-width: 1.5px;
+			border-color: var(--lumo-control-border-strong);
+			background-color: var(--lumo-panel-elevated);
+
+			&::before {
+				inline-size: var(--lumo-space-6);
+				block-size: var(--lumo-space-6);
+			}
+		}
+
+		&.radio:checked + .radio-fakeradio,
+		&.radio:checked:focus-visible:hover + .radio-fakeradio,
+		&.radio:checked[disabled] + .radio-fakeradio {
+			border-color: var(--lumo-control-brand-fill);
+			background-color: var(--lumo-control-brand-fill);
+
+			&::before {
+				background-color: var(--lumo-control-brand-text);
+			}
+		}
+
+		// Disabled radios retain their off/on palette; Proton's label supplies 50% opacity.
+		&.radio[disabled]:not(:checked) + .radio-fakeradio {
+			border-color: var(--lumo-control-border-strong);
+			background-color: var(--lumo-panel-elevated);
+		}
+
+		&.toggle-container {
+			// Proton's hover/loading selectors also use these variables for the thumb.
+			--field-hover: var(--lumo-control-fill-contrast);
+			--interaction-norm-hover: var(--lumo-control-fill-contrast);
+
+			inline-size: var(--lumo-space-32);
+			min-block-size: var(--lumo-space-20);
+			max-block-size: var(--lumo-space-20);
+			border-radius: var(--lumo-radius-full);
+			background-color: var(--lumo-control-fill-strongest);
+
+			&::after {
+				inline-size: 100%;
+				border: 1px solid var(--lumo-control-border-strong);
+				border-radius: var(--lumo-radius-full);
+			}
+
+			&::before {
+				inset-block: var(--lumo-space-2);
+				inset-inline-start: calc(var(--lumo-space-2) + 1px);
+				inline-size: var(--lumo-icon-size-16);
+				block-size: var(--lumo-icon-size-16);
+				background-color: var(--lumo-control-fill-contrast);
+				transform: none;
+			}
+
+			&.toggle-container--checked {
+				background-color: var(--lumo-control-brand-fill);
+
+				&::after {
+					border-color: transparent;
+				}
+
+				&::before {
+					transform: translateX(var(--lumo-space-10));
+				}
+
+				&:dir(rtl)::before {
+					transform: translateX(calc(-1 * var(--lumo-space-10)));
+				}
+			}
+
+			&.toggle-container--disabled:not(.toggle-container--loading) {
+				opacity: 0.5;
+			}
+
+			// Keep the thumb white during hover, disabled, and pending states.
+			&:is(:hover, .toggle-container--disabled, .toggle-container--loading)::before {
+				background-color: var(--lumo-control-fill-contrast);
+			}
+
+			& > .toggle-container-text {
+				inline-size: var(--lumo-space-20);
+			}
+
+			& .toggle-container-img {
+				// Lumo's switch uses a plain thumb, without Proton's state icons.
+				display: none;
+			}
+
+			& .circle-loader {
+				font-size: var(--lumo-icon-size-12);
+			}
+		}
+
+		&.toggle-container:not(.toggle-container--disabled):has(:focus-visible)::after {
+			outline: 2px solid var(--lumo-control-border-focus);
+			outline-offset: 2px;
+			box-shadow: none;
+		}
+
+		// Surfaces use inherited bridge variables so fullscreen/mobile adaptations
+		// remain intact instead of being overwritten by a fixed radius or background.
+		&.modal-two {
+			--border-radius-lg: var(--lumo-radius-16);
+			--shadow-lifted: var(--lumo-elevation-4);
+		}
+
+		// Use the dialog gutter without replacing fullscreen/mobile layout or caller widths.
+		@media (width > 450px) {
+			&.modal-two-dialog {
+				--margin: var(--lumo-space-24);
+			}
+		}
+
+		&.modal-two-header-title > h1 {
+			font: var(--lumo-type-title-large);
+			letter-spacing: var(--lumo-font-letter-spacing);
+		}
+
+		&.modal-two-content {
+			font: var(--lumo-type-body-medium);
+		}
+
+		&.dropdown {
+			--border-radius-md: var(--lumo-radius-12);
+			--shadow-lifted: var(--lumo-elevation-3);
+			--selection-background-color: var(--lumo-control-fill);
+			--selection-text-color: var(--lumo-glyph);
+			--background-norm: var(--lumo-panel-elevated);
+		}
+
+		// Keep padding inside the scroll frame used by Floating UI to constrain its size.
+		&.dropdown-content {
+			padding: var(--lumo-space-6);
+
+			// Keep scroll hints aligned with their masking pseudo-elements inside the padding.
+			background-origin: content-box;
+		}
+
+		&.dropdown-item + .dropdown-item {
+			margin-block-start: var(--lumo-space-2);
+		}
+
+		&.dropdown-item-button,
+		&.dropdown-item-link {
+			font: var(--lumo-type-body-medium);
+			padding-block: var(--lumo-space-10);
+			padding-inline: var(--lumo-space-12);
+			gap: var(--lumo-space-10);
+			text-align: start;
+			border-radius: var(--lumo-radius-8);
+		}
+
+		&:is(.dropdown-item-button, .dropdown-item-link) {
+			// Paint the item, not Proton's foreground pseudo-element, so its label stays visible.
+			&:focus-visible,
+			&:focus-visible:hover {
+				background-color: var(--lumo-control-fill);
+
+				&::after {
+					border-color: transparent;
+					background-color: transparent;
+					box-shadow: none;
+				}
+			}
+
+			&:disabled:not([aria-busy='true']) {
+				color: var(--lumo-glyph-disabled);
+				opacity: 1;
+			}
+		}
+
+		// Info's primary icon is foreground content, not a filled primary control.
+		&.info-button {
+			--primary: var(--lumo-glyph-brand-text);
+		}
+
+		&.tooltip {
+			font: var(--lumo-type-label-small);
+			box-shadow: var(--lumo-elevation-3);
+			padding-block: var(--lumo-space-8);
+			padding-inline: var(--lumo-space-10);
+		}
+
+		&.notification {
+			font: var(--lumo-type-body-medium);
+			padding-block: var(--lumo-space-8);
+			padding-inline: var(--lumo-space-16) var(--lumo-space-8);
+			box-shadow: var(--lumo-elevation-3);
+		}
+
+		&.notification .button {
+			--button-default-text-color: var(--lumo-glyph-inverse);
+			--button-hover-text-color: var(--lumo-glyph-inverse);
+			--button-active-text-color: var(--lumo-glyph-inverse);
+		}
+
+		// No inverse-control fill role exists yet; translucent inverse glyph keeps toast actions legible.
+		&.notification .button:is([class*='button-ghost-'], [class*='button-underline-']) {
+			--button-hover-background-color: color-mix(
+				in srgb,
+				var(--lumo-glyph-inverse) calc(var(--lumo-opacity-8) * 100%),
+				transparent
+			);
+			--button-active-background-color: color-mix(
+				in srgb,
+				var(--lumo-glyph-inverse) calc(var(--lumo-opacity-16) * 100%),
+				transparent
+			);
+		}
+
+		&.banner {
+			border-radius: var(--lumo-radius-12);
+			font: var(--lumo-type-body-medium);
+
+			// Signal accent stays on the icon; body text needs the normal glyph role.
+			--banner-text-color: var(--lumo-glyph);
+			--banner-text-color-fallback: var(--lumo-glyph);
+		}
+
+		&.banner.banner--no-border {
+			border: none;
+		}
+
+		&.kbd {
+			font-family: var(--lumo-font-mono);
+		}
+
+		&.button-promotion {
+			--upgrade-color-stop-1: var(--lumo-control-brand-fill);
+			--upgrade-color-stop-2: var(--lumo-control-brand-fill-mid);
+		}
+
+		&.slider {
+			block-size: var(--lumo-space-20);
+
+			&:has(input:disabled) {
+				opacity: 0.5;
+				pointer-events: none;
+			}
+		}
+
+		&.slider-rail {
+			inset-block-start: 50%;
+			block-size: var(--lumo-space-4);
+			transform: translateY(-50%);
+		}
+
+		&.slider-track {
+			// Slider sets its color variable inline; override the painted track instead.
+			background: var(--lumo-control-brand-fill);
+		}
+
+		&.slider .slider-thumb {
+			inset-block-start: 50%;
+			inline-size: var(--lumo-space-20);
+			block-size: var(--lumo-space-20);
+			padding: 0;
+			border: 2px solid var(--lumo-control-brand-fill);
+			border-radius: var(--lumo-radius-full);
+			background: var(--lumo-panel-elevated);
+			box-shadow: var(--lumo-elevation-1);
+			transform: translate(-50%, -50%);
+
+			&:dir(rtl) {
+				transform: translate(50%, -50%);
+			}
+
+			> svg {
+				// Lumo's slider uses a circular thumb without the resize-arrow icon.
+				display: none;
+			}
+		}
+
+		&.tabs > .tabs-nav .tabs-link,
+		&.tabs-list-link {
+			font: var(--lumo-type-label-large);
+
+			&[disabled] {
+				color: var(--lumo-glyph-disabled);
+				opacity: 1;
+			}
+		}
+
+		// Underline tabs keep equal label weights and height across selected states.
+		&.tabs--underline > .tabs-nav .tabs-list {
+			gap: var(--lumo-space-24);
+		}
+
+		&.tabs--underline > .tabs-nav .tabs-list-link {
+			min-block-size: calc(var(--lumo-space-40) + var(--lumo-space-4));
+			padding-inline: 0;
+			padding-block: var(--lumo-space-10);
+			color: var(--lumo-glyph-mid);
+
+			&[aria-selected='true'] {
+				color: var(--lumo-glyph);
+				border-block-end-color: var(--lumo-glyph-brand-text);
+			}
+		}
+
+		&.tabs--underline > .tabs-nav .tabs-indicator {
+			border-block-end-color: var(--lumo-glyph-brand-text);
+		}
+
+		&.tabs--modern > .tabs-nav .tabs-list {
+			padding: var(--lumo-space-2);
+			gap: var(--lumo-space-2);
+			border-radius: var(--lumo-radius-8);
+			background-color: var(--lumo-control-fill);
+		}
+
+		&.tabs--modern > .tabs-nav .tabs-list-link {
+			font: var(--lumo-type-label-small);
+			padding-block: var(--lumo-space-4);
+			padding-inline: var(--lumo-space-10);
+			color: var(--lumo-glyph-mid);
+
+			&[aria-selected='true'] {
+				color: var(--lumo-glyph);
+			}
+
+			// Proton reserves a semibold label width; Lumo uses the same weight in every state.
+			> span::after {
+				font-weight: inherit;
+			}
+
+			&:focus-visible::after {
+				border-color: transparent;
+				box-shadow: none;
+			}
+		}
+
+		&.tabs--modern > .tabs-nav .tabs-list-item:not(.tabs-list-item--selected):hover::after {
+			background-color: var(--lumo-control-fill-mid);
+		}
+
+		&.tabs--modern > .tabs-nav .tabs-indicator {
+			inset-block: var(--lumo-space-2);
+			box-shadow: var(--lumo-elevation-1);
+		}
+
+		&.skeleton-loader {
+			background-color: var(--lumo-glyph-brand);
+		}
+
+		&.dropdown-item-button,
+		&.dropdown-item-link,
+		&.checkbox-fakecheck,
+		&.checkbox-fakecheck-img,
+		&.radio-fakeradio::before,
+		&.toggle-container::before,
+		&.toggle-container::after {
+			transition-duration: var(--lumo-duration-150);
+			transition-timing-function: var(--lumo-easing-standard);
+		}
+
+		&.tooltip,
+		&.dropdown,
+		&.spotlight {
+			animation-duration: var(--lumo-duration-150);
+			animation-timing-function: var(--lumo-easing-enter);
+		}
+
+		&.modal-two,
+		&.modal-two-dialog,
+		&.notification {
+			animation-duration: var(--lumo-duration-200);
+			animation-timing-function: var(--lumo-easing-enter);
+		}
+
+		// Preserve animation names/end events used to close portals and tooltips.
+		// A tiny duration completes them without visible motion; removing the animation
+		// entirely would leave transition-driven components mounted indefinitely.
+		@media (prefers-reduced-motion: reduce) {
+			&:is(
+				.button,
+				.button-underline,
+				.input,
+				.textarea,
+				.field,
+				.toggle-container,
+				.tabs-list-link,
+				.panel-section--content
+			) {
+				transition-duration: 0s;
+			}
+
+			&:is(.tooltip, .dropdown, .spotlight, .modal-two, .modal-two-dialog, .notification) {
+				animation-duration: 0.01ms;
+				animation-delay: 0s;
+			}
+
+			&.checkbox-fakecheck,
+			&.checkbox-fakecheck-img,
+			&.radio-fakeradio::before,
+			&.toggle-container::before,
+			&.toggle-container::after {
+				transition-duration: 0s;
+			}
+
+			&.circle-chart-circle {
+				animation: none;
+			}
+
+			&.skeleton-loader {
+				animation: none;
+				opacity: var(--lumo-opacity-16);
+			}
+		}
+	}
+}

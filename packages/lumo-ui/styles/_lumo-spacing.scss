@@ -1,0 +1,115 @@
+@use 'sass:map';
+@use '~@proton/styles/scss/lib/config';
+@use '~@proton/styles/scss/lib/dash-join' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/responsive-classes' as *;
+
+// Each stylesheet compiles independently, so set Proton's breakpoints here too.
+im.$breakpoints: config.$breakpoints-product;
+im.$media-expressions: config.$media-expressions;
+
+// Proton's spacing utilities with an added 2.5 step (10px).
+
+// Responsive spacing relies on source order: base classes come before sm: to xxl:, and within
+// each breakpoint p comes before px/py, then pt and so on, so the more specific class wins.
+// Emitting only the 2.5 classes after Proton would let them win every conflict, so this file
+// regenerates the whole set in Proton's order. Loaded after Proton, it supersedes Proton's copy
+// with the same names and values, and 2.5 takes its place in the order.
+
+// Keep $spacings, the placements and the class order in step with
+// packages/styles/scss/utilities/_spacing.scss. Load this only from the document-wide entry point:
+// it redefines spacing classes for the whole page, so embedded consumers must not include it.
+$spacings: (
+	'0': 0,
+	'px': 1,
+	'0\\\.5': 2,
+	'1': 4,
+	'1\\\.5': 6,
+	'2': 8,
+	'2\\\.5': 10,
+	'3': 12,
+	'4': 16,
+	'5': 20,
+	'6': 24,
+	'7': 28,
+	'8': 32,
+	'10': 40,
+	'11': 44,
+	'12': 48,
+	'14': 56,
+	'16': 64,
+	'20': 80,
+	'auto': 'auto',
+);
+
+@function -value($size) {
+	@return if(sass($size == 'auto'): $size; else: rem($size));
+}
+
+$classes: ();
+
+// margin and padding: every value, then the custom class, for each placement in turn
+@each $prefix, $property in (m: 'margin', p: 'padding') {
+	@each $placement,
+		$suffix in ('': '', y: 'block', t: 'block-start', b: 'block-end', x: 'inline', l: 'inline-start', r: 'inline-end')
+	{
+		$css-property: dash-join($property, $suffix);
+
+		@each $name, $size in $spacings {
+			@if not ($property == 'padding' and $name == 'auto') {
+				$classes: map.set(
+					$classes,
+					dash-join($prefix + $placement, $name),
+					(
+						#{$css-property}: -value($size),
+					)
+				);
+			}
+		}
+
+		$custom: dash-join($prefix + $placement, 'custom');
+		$classes: map.set(
+			$classes,
+			$custom,
+			(
+				#{$css-property}: var(--#{'[BPN]' + $custom}),
+			)
+		);
+	}
+}
+
+// gap: every value, then the custom class, for each axis in turn
+@each $axis, $css-property in ('': 'gap', x: 'column-gap', y: 'row-gap') {
+	@each $name, $size in $spacings {
+		@if $name != 'auto' {
+			$classes: map.set(
+				$classes,
+				dash-join('gap', $axis, $name),
+				(
+					#{$css-property}: -value($size),
+				)
+			);
+		}
+	}
+
+	$custom: dash-join('gap', $axis, 'custom');
+	$classes: map.set(
+		$classes,
+		$custom,
+		(
+			#{$css-property}: var(--#{'[BPN]' + $custom}),
+		)
+	);
+}
+
+@include responsive-classes($classes);
+
+// Proton resets these print containers after its spacing classes; keep that precedence.
+@include im.media('print') {
+	.page,
+	.reset4print {
+		margin: 0;
+		padding: 0;
+	}
+}

@@ -1,0 +1,306 @@
+@mixin stable {
+	/* Color primitives: raw palette values; use semantic roles in components. */
+	--color-white: white;
+	--color-black: black;
+	--iris-25: #fafbff;
+	--iris-50: #f5f6fe;
+	--iris-100: #e9eafc;
+	--iris-150: #dddefb;
+	--iris-200: #c5c9f8;
+	--iris-300: #9a97f7;
+	--iris-400: #7c6df9;
+	--iris-500: #6d4aff;
+	--iris-600: #6439ed;
+	--iris-700: #4c2cb3;
+	--iris-800: #311e71;
+	--iris-900: #372480;
+	--neutral-50: #f6f6f6;
+	--neutral-200: #c2c2c2;
+	--neutral-300: #949494;
+	--neutral-400: #707070;
+	--neutral-600: #525252;
+	--neutral-700: #3f3f3f;
+	--neutral-800: #292929;
+	--neutral-850: #191919;
+	--neutral-900: #141414;
+	--neutral-950: #0b0b0b;
+	--red-300: #e77085;
+	--red-350: #e35b74;
+	--red-400: #f5385a;
+	--red-500: #dc3251;
+	--red-600: #c62d49;
+	--red-700: #b02841;
+	--amber-400: #f8a23f;
+	--amber-500: #f90;
+	--teal-150: #baf8e6;
+	--teal-500: #1ea885;
+	--sky-500: #239ece;
+
+	/* Spacing: pixel-based steps, separate from Proton's numbered spacing variables. */
+	--lumo-space-0: 0px;
+	--lumo-space-2: 2px;
+	--lumo-space-4: 4px;
+	--lumo-space-6: 6px;
+	--lumo-space-8: 8px;
+	--lumo-space-10: 10px;
+	--lumo-space-12: 12px;
+	--lumo-space-16: 16px;
+	--lumo-space-20: 20px;
+	--lumo-space-24: 24px;
+	--lumo-space-32: 32px;
+	--lumo-space-40: 40px;
+
+	/* Corner radii: fixed steps and a full pill radius. */
+	--lumo-radius-4: 4px;
+	--lumo-radius-8: 8px;
+	--lumo-radius-12: 12px;
+	--lumo-radius-16: 16px;
+	--lumo-radius-28: 28px;
+	--lumo-radius-full: 9999px;
+
+	/* Opacity: fractional values for translucent effects. */
+	--lumo-opacity-4: 0.04;
+	--lumo-opacity-5: 0.05;
+	--lumo-opacity-8: 0.08;
+	--lumo-opacity-10: 0.1;
+	--lumo-opacity-16: 0.16;
+	--lumo-opacity-20: 0.2;
+	--lumo-opacity-30: 0.3;
+	--lumo-opacity-48: 0.48;
+
+	/* Font families: interface text and code; font files must be loaded separately. */
+	--lumo-font-sans: 'Inter', sans-serif;
+	--lumo-font-mono: 'JetBrains Mono', monospace;
+	--lumo-font-letter-spacing: 0px;
+
+	/* Font weights: regular, medium, and semibold. */
+	--lumo-font-weight-regular: 400;
+	--lumo-font-weight-medium: 500;
+	--lumo-font-weight-semibold: 600;
+
+	/* Icons: supported sizes and stroke width. */
+	--lumo-icon-size-12: 12px;
+	--lumo-icon-size-14: 14px;
+	--lumo-icon-size-16: 16px;
+	--lumo-icon-size-18: 18px;
+	--lumo-icon-size-20: 20px;
+	--lumo-icon-size-24: 24px;
+	--lumo-icon-stroke: 1.4px;
+
+	/* Glyph roles: text and icons, including muted, disabled, inverse, and brand variants. */
+	--lumo-glyph-contrast: var(--color-white);
+
+	/* Control fills: transparent, translucent, and progressively stronger backgrounds. */
+	--lumo-control-fill-contrast: var(--color-white);
+
+	/* Brand controls: primary fill, hover, pressed, and contrasting text. */
+	--lumo-control-brand-text: var(--color-white);
+
+	/* Panels: main, elevated, inverse, layer, and overlay surfaces. */
+	--lumo-layer: var(--color-white);
+
+	/* Scrims: translucent backdrops behind dialogs and drawers. */
+	--lumo-scrim: rgb(0 0 0 / 0.48);
+	--lumo-scrim-light: rgb(0 0 0 / 0.2);
+
+	/* Signals: danger, warning, success, information, and destructive-action states. */
+	--lumo-signal-warning: var(--amber-500);
+	--lumo-signal-success: var(--teal-500);
+	--lumo-signal-info: var(--sky-500);
+
+	/* Fixed color roles: white and black stay constant across themes. */
+	--lumo-white: var(--color-white);
+	--lumo-black: var(--color-black);
+
+	/* Elevation: shadows from raised controls through dialogs. */
+	--lumo-elevation-1: 0px 1px 4px 0px rgb(0 0 0 / 0.05);
+	--lumo-elevation-2: 0px 4px 16px 0px rgb(0 0 0 / 0.05);
+	--lumo-elevation-3: 0px 8px 24px 0px rgb(0 0 0 / 0.1);
+	--lumo-elevation-4: 0px 16px 40px 0px rgb(0 0 0 / 0.16);
+
+	/* Motion durations: small state changes through panel transitions. */
+	--lumo-duration-100: 100ms;
+	--lumo-duration-150: 150ms;
+	--lumo-duration-200: 200ms;
+	--lumo-duration-300: 300ms;
+
+	/* Motion easing: standard changes, entrances, loops, and Lottie keyframes. */
+	--lumo-easing-standard: cubic-bezier(0.42, 0, 0.58, 1);
+	--lumo-easing-enter: cubic-bezier(0, 0, 0.58, 1);
+	--lumo-easing-linear: cubic-bezier(0, 0, 1, 1);
+	--lumo-easing-lottie: cubic-bezier(0.33, 0, 0.67, 1);
+
+	/* Headlines and titles: font shorthands with rem size and line height. */
+	--lumo-type-headline-small: 600 1.5rem/2rem var(--lumo-font-sans);
+	--lumo-type-title-large: 600 1.25rem/1.75rem var(--lumo-font-sans);
+	--lumo-type-title-medium: 600 1rem/1.375rem var(--lumo-font-sans);
+	--lumo-type-title-small: 600 0.875rem/1.25rem var(--lumo-font-sans);
+
+	/* Body text: content and descriptions. */
+	--lumo-type-body-large: 400 0.9375rem/1.25rem var(--lumo-font-sans);
+	--lumo-type-body-medium: 400 0.875rem/1.25rem var(--lumo-font-sans);
+	--lumo-type-body-small: 400 0.8125rem/1.25rem var(--lumo-font-sans);
+
+	/* Labels: buttons, chips, tabs, and other controls. */
+	--lumo-type-label-large: 500 0.875rem/1.25rem var(--lumo-font-sans);
+	--lumo-type-label-medium: 500 0.8125rem/1.125rem var(--lumo-font-sans);
+	--lumo-type-label-small: 500 0.75rem/1rem var(--lumo-font-sans);
+}
+
+@mixin light {
+	/* Glyph roles: text and icons, including muted, disabled, inverse, and brand variants. */
+	--lumo-glyph: var(--neutral-950);
+	--lumo-glyph-mid: var(--neutral-400);
+	--lumo-glyph-low: var(--neutral-300);
+	--lumo-glyph-disabled: var(--neutral-200);
+	--lumo-glyph-inverse: var(--neutral-50);
+	--lumo-glyph-brand: var(--iris-600);
+	--lumo-glyph-brand-mid: var(--iris-700);
+	--lumo-glyph-brand-strong: var(--iris-800);
+	--lumo-glyph-brand-text: var(--iris-600);
+
+	/* Border roles: general dividers and boundaries. */
+	--lumo-border: var(--iris-100);
+	--lumo-border-mid: var(--iris-150);
+
+	/* Control fills: transparent, translucent, and progressively stronger backgrounds. */
+	--lumo-control-fill-empty: rgb(255 255 255 / 0);
+	--lumo-control-fill-translucent: rgb(0 0 0 / 0.04);
+	--lumo-control-fill-low: var(--iris-25);
+	--lumo-control-fill: var(--iris-50);
+	--lumo-control-fill-mid: var(--iris-100);
+	--lumo-control-fill-strongest: var(--iris-150);
+
+	/* Control borders: input boundaries and keyboard focus. */
+	--lumo-control-border: var(--iris-100);
+	--lumo-control-border-translucent: rgb(0 0 0 / 0.08);
+	--lumo-control-border-mid: var(--iris-150);
+	--lumo-control-border-strong: var(--neutral-300);
+	--lumo-control-border-focus: var(--iris-600);
+
+	/* Brand controls: primary fill, hover, pressed, and contrasting text. */
+	--lumo-control-brand-fill: var(--iris-600);
+	--lumo-control-brand-fill-mid: var(--iris-700);
+	--lumo-control-brand-fill-strong: var(--iris-800);
+
+	/* Panels: main, elevated, inverse, layer, and overlay surfaces. */
+	--lumo-canvas: var(--iris-50);
+	--lumo-panel: var(--color-white);
+	--lumo-panel-elevated: var(--color-white);
+	--lumo-panel-inverse: var(--neutral-950);
+	--lumo-overlay: var(--color-white);
+
+	/* Signals: danger, warning, success, information, and destructive-action states. */
+	--lumo-signal-danger: var(--red-500);
+	--lumo-signal-danger-text: var(--color-white);
+	--lumo-signal-danger-hover: var(--red-600);
+	--lumo-signal-danger-pressed: var(--red-700);
+
+	/* Artifact syntax: code highlighting, line numbers, and selection. */
+	--lumo-artifact-syntax-keyword: #a626a4;
+	--lumo-artifact-syntax-string: #50a14f;
+	--lumo-artifact-syntax-number: #b76b01;
+	--lumo-artifact-syntax-comment: #a0a1a7;
+	--lumo-artifact-syntax-function: #4078f2;
+	--lumo-artifact-syntax-type: #c18401;
+	--lumo-artifact-syntax-line-number: #b4b4bc;
+	--lumo-artifact-syntax-selection: rgb(100 57 237 / 0.16);
+
+	/* Artifact surfaces: code background and loading skeleton. */
+	--lumo-artifact-code-bg: #f7f8fa;
+	--lumo-artifact-skeleton: #e6e3fb;
+
+	/* Document tiles: background, border, and icon. */
+	--lumo-artifact-doc-tile: #eaf2fd;
+	--lumo-artifact-doc-border: #d3e3fa;
+	--lumo-artifact-doc-icon: #2563eb;
+
+	/* Code tiles: background, border, and icon. */
+	--lumo-artifact-code-tile: #f0ecfe;
+	--lumo-artifact-code-border: #e0d8fc;
+	--lumo-artifact-code-icon: #6d4aff;
+
+	/* Web-page tiles: background, border, and icon. */
+	--lumo-artifact-web-tile: #fef1e6;
+	--lumo-artifact-web-border: #fadcc2;
+	--lumo-artifact-web-icon: #e0701f;
+}
+
+@mixin dark {
+	/* Glyph roles: text and icons, including muted, disabled, inverse, and brand variants. */
+	--lumo-glyph: var(--neutral-50);
+	--lumo-glyph-mid: var(--neutral-300);
+	--lumo-glyph-low: var(--neutral-400);
+	--lumo-glyph-disabled: var(--neutral-700);
+	--lumo-glyph-inverse: var(--neutral-950);
+	--lumo-glyph-brand: var(--iris-500);
+	--lumo-glyph-brand-mid: var(--iris-400);
+	--lumo-glyph-brand-strong: var(--iris-300);
+	--lumo-glyph-brand-text: var(--iris-300);
+
+	/* Border roles: general dividers and boundaries. */
+	--lumo-border: var(--neutral-800);
+	--lumo-border-mid: var(--neutral-700);
+
+	/* Control fills: transparent, translucent, and progressively stronger backgrounds. */
+	--lumo-control-fill-empty: rgb(0 0 0 / 0);
+	--lumo-control-fill-translucent: rgb(255 255 255 / 0.05);
+	--lumo-control-fill-low: var(--neutral-850);
+	--lumo-control-fill: var(--neutral-800);
+	--lumo-control-fill-mid: var(--neutral-700);
+	--lumo-control-fill-strongest: var(--neutral-600);
+
+	/* Control borders: input boundaries and keyboard focus. */
+	--lumo-control-border: var(--neutral-800);
+	--lumo-control-border-translucent: rgb(255 255 255 / 0.1);
+	--lumo-control-border-mid: var(--neutral-700);
+	--lumo-control-border-strong: var(--neutral-400);
+	--lumo-control-border-focus: var(--iris-400);
+
+	/* Brand controls: primary fill, hover, pressed, and contrasting text. */
+	--lumo-control-brand-fill: var(--iris-500);
+	--lumo-control-brand-fill-mid: var(--iris-600);
+	--lumo-control-brand-fill-strong: var(--iris-700);
+
+	/* Panels: main, elevated, inverse, layer, and overlay surfaces. */
+	--lumo-canvas: var(--neutral-950);
+	--lumo-panel: var(--neutral-900);
+	--lumo-panel-elevated: var(--neutral-850);
+	--lumo-panel-inverse: var(--neutral-50);
+	--lumo-overlay: var(--neutral-900);
+
+	/* Signals: danger, warning, success, information, and destructive-action states. */
+	--lumo-signal-danger: var(--red-400);
+	--lumo-signal-danger-text: var(--neutral-950);
+	--lumo-signal-danger-hover: var(--red-350);
+	--lumo-signal-danger-pressed: var(--red-300);
+
+	/* Artifact syntax: code highlighting, line numbers, and selection. */
+	--lumo-artifact-syntax-keyword: #c678dd;
+	--lumo-artifact-syntax-string: #98c379;
+	--lumo-artifact-syntax-number: #d19a66;
+	--lumo-artifact-syntax-comment: #7f848e;
+	--lumo-artifact-syntax-function: #61afef;
+	--lumo-artifact-syntax-type: #e5c07b;
+	--lumo-artifact-syntax-line-number: #5c5c66;
+	--lumo-artifact-syntax-selection: rgb(109 74 255 / 0.34);
+
+	/* Artifact surfaces: code background and loading skeleton. */
+	--lumo-artifact-code-bg: #0f0f10;
+	--lumo-artifact-skeleton: #2a2738;
+
+	/* Document tiles: background, border, and icon. */
+	--lumo-artifact-doc-tile: #172235;
+	--lumo-artifact-doc-border: #22324d;
+	--lumo-artifact-doc-icon: #6ea0f5;
+
+	/* Code tiles: background, border, and icon. */
+	--lumo-artifact-code-tile: #221c38;
+	--lumo-artifact-code-border: #322a52;
+	--lumo-artifact-code-icon: #9c86ff;
+
+	/* Web-page tiles: background, border, and icon. */
+	--lumo-artifact-web-tile: #2e2117;
+	--lumo-artifact-web-border: #45301f;
+	--lumo-artifact-web-icon: #f2994a;
+}

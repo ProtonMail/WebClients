@@ -1,0 +1,11 @@
+@use './lumo-tokens';
+@use './lumo-utilities';
+@use './lumo-spacing';
+@use './lumo-proton-overrides';
+
+// Document-wide scope covers portals; html:root also outranks dynamic Proton :root themes.
+@include lumo-proton-overrides.overrides('html:root');
+
+:root {
+	@include lumo-tokens.stable;
+}

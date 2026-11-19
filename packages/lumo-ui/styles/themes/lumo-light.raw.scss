@@ -1,0 +1,7 @@
+@use '../lumo-tokens';
+
+:root,
+.ui-standard,
+.lumo-ui {
+	@include lumo-tokens.light;
+}

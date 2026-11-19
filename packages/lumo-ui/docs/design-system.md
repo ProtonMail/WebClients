@@ -1,0 +1,38 @@
+# Lumo design system
+
+These documents define implementation rules for Lumo UI in the clients repository. Visual specifications belong in `lumo-design/foundations/`, `lumo-design/components/`, and `lumo-design/tokens/`; do not duplicate their value tables here.
+
+Follow [Writing component styles](styling.md) when implementing UI and [Utility classes](utilities.md) when choosing and ordering classes.
+
+## Choose the correct styling source
+
+| Concern | Use |
+| --- | --- |
+| Display, layout, alignment and flex behavior | Proton utility classes |
+| Relative sizing, positioning and overflow | Proton utility classes |
+| Visibility, accessibility and text alignment/wrapping/truncation | Proton utility classes |
+| Spacing | Proton utility classes, extended with the `2.5` step for 10px in the document-wide entry point |
+| Colors, typography, border colors, radius, elevation, opacity, icon sizing and motion | Lumo utility classes and tokens |
+| Shared control behavior | Existing Proton components and supported props |
+
+Prefer utility classes over equivalent CSS-variable declarations in component SCSS. Use semantic Lumo roles rather than raw colors or new consumers of Proton visual aliases such as `color-norm` and `--background-norm`.
+
+## Integration
+
+The foundation is opt-in. Adding package exports does not activate it in an application.
+
+- `@proton/lumo-ui/styles/lumo-design-system.scss` emits stable tokens, utility classes, the Proton spacing utilities with the `2.5` step, and document-wide Proton overrides. Import it once after the base Proton styles when enabling the refresh, so its spacing classes supersede the Proton copy.
+- `@proton/lumo-ui/styles/themes/lumo-light.raw.scss` and `lumo-dark.raw.scss` emit theme-dependent tokens. Load the selected stylesheet through the consumer's theme provider, alongside its Proton theme.
+- Embedded consumers must scope token declarations and the adapter to their opted-in UI, including portals. Do not import the document-wide entry point into an unrelated host application.
+- Consumers load font files separately; token stylesheets do not load fonts.
+
+## Token changes
+
+Keep declarations in [`_lumo-tokens.scss`](../styles/_lumo-tokens.scss), aligned with the design specifications.
+
+- Prefix variables with `--lumo-`, except color primitives.
+- Put theme-independent values in `stable` and theme-dependent values in both `light` and `dark`. Use rem for web typography.
+- Edit the declarations directly; do not add a token generator or build-time dependency on the design repository.
+- Keep Proton compatibility mappings inside the adapter. New Lumo-owned styles use Lumo roles; map by semantic purpose, not similar names.
+
+Proton and Lumo spacing variables use different scales: `--space-4` is 16px, while `--lumo-space-4` is 4px. They are not interchangeable.
