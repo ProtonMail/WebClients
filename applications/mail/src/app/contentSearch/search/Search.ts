@@ -172,7 +172,7 @@ export class Search {
             await this.dbLock.runSearch(() =>
                 worker.search(
                     this.params,
-                    Comlink.proxy((ids) => {
+                    Comlink.proxy(async (ids) => {
                         promises.push(fetchMessagesForIDs(ids));
                     })
                 )
