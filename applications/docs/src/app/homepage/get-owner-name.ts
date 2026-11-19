@@ -1,4 +1,4 @@
-import { createNamesMessages } from './messages/names'
+import type { HomepageMessages } from './messages/defaultHomepageMessages'
 
 export type OwnerContact = { Email: string; Name?: string }
 
@@ -8,9 +8,10 @@ export function getOwnerName(
   recentDocument: OwnedDocument,
   isMine: boolean,
   contactEmails: OwnerContact[] | undefined,
+  names: HomepageMessages['names'],
 ) {
   if (isMine) {
-    return createNamesMessages().names.me
+    return names.me
   }
 
   if (!recentDocument.createdBy) {

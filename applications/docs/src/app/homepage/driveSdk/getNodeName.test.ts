@@ -1,5 +1,6 @@
 import type { NodeEntity } from '@protontech/drive-sdk'
 import { getNodeName, getNodeNameOrFallback } from './getNodeName'
+import { defaultHomepageMessages } from '../messages/defaultHomepageMessages'
 
 describe('getNodeName', () => {
   test('returns placeholder of invalid name', () => {
@@ -19,6 +20,6 @@ describe('getNodeNameOrFallback', () => {
   test('returns fallback for undecryptable name', () => {
     const name = { ok: false, error: new Error('Failed to decrypt name') }
 
-    expect(getNodeNameOrFallback({ name } as NodeEntity)).toBe('⚠️ Undecryptable name')
+    expect(getNodeNameOrFallback({ name } as NodeEntity, defaultHomepageMessages.names)).toBe('⚠️ Undecryptable name')
   })
 })

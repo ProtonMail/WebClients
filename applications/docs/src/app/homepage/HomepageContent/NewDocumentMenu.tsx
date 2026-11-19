@@ -2,7 +2,7 @@ import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
 import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
 import { APPS } from '../utils/apps'
 import { Menu, MenuItem } from './menu'
-import { createNewDocumentMessages } from '../messages/newDocument'
+import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
 import { COLOR_BY_TYPE, REFRESH_AFTER_NEW_DOCUMENT } from './shared'
 import { useHomepageView } from '../homepageViewContext'
 import { clsx } from '../utils/clsx'
@@ -13,7 +13,7 @@ interface Props extends Ariakit.MenuProps {}
 
 export function NewDocumentMenu({ className, ...rest }: Props) {
   const { updateRecentDocuments, reportTelemetry, getAppHref } = useHomepageView()
-  const messages = createNewDocumentMessages().newDocument
+  const messages = useHomepageMessages().newDocument
   return (
     <Menu className={clsx('[&_a]:hover:text-[--text-norm]', className)} {...rest}>
       <MenuItem

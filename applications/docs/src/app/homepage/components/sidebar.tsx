@@ -1,6 +1,6 @@
 import type { HTMLAttributes, LiHTMLAttributes, ReactNode } from 'react'
 import { forwardRef } from 'react'
-import { createSidebarMessages } from '../messages/sidebar'
+import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
 import { clsx } from '../utils/clsx'
 
 export interface SidebarListProps extends HTMLAttributes<HTMLUListElement> {
@@ -47,7 +47,7 @@ export interface SidebarNavProps extends HTMLAttributes<HTMLElement> {
 }
 
 export function SidebarNav({ children, className, ...props }: SidebarNavProps) {
-  const messages = createSidebarMessages().sidebar
+  const messages = useHomepageMessages().sidebar
   return (
     <nav
       className={clsx('navigation max-w-full flex-auto flex-nowrap flex-column', className)}

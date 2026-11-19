@@ -1,7 +1,7 @@
 import type { ComponentType, ReactNode } from 'react'
 import { useHistory, useRouteMatch } from 'react-router'
 import type { NavLinkProps } from 'react-router-dom'
-import { createSidebarMessages } from './messages/sidebar'
+import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import * as Ariakit from '@ariakit/react'
 
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
@@ -119,7 +119,7 @@ function Sidebar({
   const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
   const { isRecentsUpdating, type, reportTelemetry, getAppHref } = useHomepageView()
-  const messages = createSidebarMessages().sidebar
+  const messages = useHomepageMessages().sidebar
   const reloadRecents = useReloadRecents()
   const newDocumentButton = (
     <Ariakit.MenuProvider>

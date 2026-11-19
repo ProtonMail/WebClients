@@ -3,6 +3,7 @@ import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { restoreDocuments, trashDocuments } from './trashMany'
 import { handleRestoreError, restoreAndNotify, trashAndNotify, trashManyAndNotify } from './trashRestoreNotify'
 import type { ErrorTracking } from '../utils/errorTracking'
+import { defaultHomepageMessages } from '../messages/defaultHomepageMessages'
 
 jest.mock('./trash', () => ({
   reportTrashError: jest.fn(),
@@ -16,6 +17,7 @@ const drive = {} as ProtonDriveClient
 const createNotification = jest.fn()
 const errorTracking = {} as ErrorTracking
 const onRestored = jest.fn()
+const messages = defaultHomepageMessages.trash
 
 async function clickUndo(callIndex = 0) {
   await createNotification.mock.calls[callIndex][0].action.onClick()
@@ -33,7 +35,7 @@ describe('handleRestoreError', () => {
   })
 
   it('shows the shared folder message and does not report a permission error', () => {
-    handleRestoreError(createNotification, errorTracking, permissionError)
+    handleRestoreError(createNotification, errorTracking, permissionError, messages)
 
     expect(createNotification).toHaveBeenCalledWith({
       type: 'error',
@@ -45,7 +47,7 @@ describe('handleRestoreError', () => {
   it('shows the generic message and reports any other error', () => {
     const error = new Error('Network error')
 
-    handleRestoreError(createNotification, errorTracking, error)
+    handleRestoreError(createNotification, errorTracking, error, messages)
 
     expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to restore document' })
     expect(reportTrashError).toHaveBeenCalledWith(errorTracking, error)
@@ -61,7 +63,7 @@ describe('trashAndNotify', () => {
   })
 
   it('trashes the document and shows a success toast with Undo', async () => {
-    await trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true)
+    await trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true, messages)
 
     expect(trashDocument).toHaveBeenCalledWith(drive, 'a')
     expect(createNotification).toHaveBeenCalledTimes(1)
@@ -73,7 +75,7 @@ describe('trashAndNotify', () => {
   })
 
   it('offers no Undo for a document shared with the user, which only its owner restores', async () => {
-    await trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, false)
+    await trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, false, messages)
 
     expect(createNotification).toHaveBeenCalledWith({ type: 'success', text: 'Document moved to trash' })
   })
@@ -81,16 +83,16 @@ describe('trashAndNotify', () => {
   it('does not notify when trashing fails', async () => {
     jest.mocked(trashDocument).mockRejectedValue(new Error('e1'))
 
-    await expect(trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true)).rejects.toThrow(
-      'e1',
-    )
+    await expect(
+      trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true, messages),
+    ).rejects.toThrow('e1')
 
     expect(createNotification).not.toHaveBeenCalled()
   })
 
   it('undo restores the document, shows a toast and calls emitRestored', async () => {
     jest.mocked(restoreDocument).mockResolvedValue(undefined)
-    await trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true)
+    await trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true, messages)
 
     await clickUndo()
 
@@ -101,7 +103,7 @@ describe('trashAndNotify', () => {
 
   it('undo that fails runs handleRestoreError and does not call emitRestored', async () => {
     jest.mocked(restoreDocument).mockRejectedValue(permissionError)
-    await trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true)
+    await trashAndNotify(drive, createNotification, errorTracking, 'a', emitRestored, true, messages)
 
     await clickUndo()
 
@@ -123,7 +125,7 @@ describe('restoreAndNotify', () => {
   })
 
   it('restores the document and shows a success toast with Undo', async () => {
-    await restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed)
+    await restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed, messages)
 
     expect(restoreDocument).toHaveBeenCalledWith(drive, 'a')
     expect(createNotification).toHaveBeenCalledTimes(1)
@@ -137,14 +139,16 @@ describe('restoreAndNotify', () => {
   it('does not notify when restoring fails', async () => {
     jest.mocked(restoreDocument).mockRejectedValue(new Error('e1'))
 
-    await expect(restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed)).rejects.toThrow('e1')
+    await expect(
+      restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed, messages),
+    ).rejects.toThrow('e1')
 
     expect(createNotification).not.toHaveBeenCalled()
   })
 
   it('undo trashes the document, shows a toast and calls emitTrashed', async () => {
     jest.mocked(trashDocument).mockResolvedValue(undefined)
-    await restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed)
+    await restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed, messages)
 
     await clickUndo()
 
@@ -156,7 +160,7 @@ describe('restoreAndNotify', () => {
   it('undo that fails shows an error toast, reports the error and does not call emitTrashed', async () => {
     const error = new Error('e1')
     jest.mocked(trashDocument).mockRejectedValue(error)
-    await restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed)
+    await restoreAndNotify(drive, createNotification, errorTracking, 'a', emitTrashed, messages)
 
     await clickUndo()
 
@@ -178,7 +182,15 @@ describe('trashManyAndNotify', () => {
     const batch = { succeeded: ['a', 'b'], failed: [] }
     jest.mocked(trashDocuments).mockResolvedValue(batch)
 
-    const result = await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b'], onRestored, true)
+    const result = await trashManyAndNotify(
+      drive,
+      createNotification,
+      errorTracking,
+      ['a', 'b'],
+      onRestored,
+      true,
+      messages,
+    )
 
     expect(createNotification).toHaveBeenCalledTimes(1)
     expect(createNotification).toHaveBeenCalledWith({
@@ -193,7 +205,7 @@ describe('trashManyAndNotify', () => {
   it('offers no Undo when a document is shared with the user', async () => {
     jest.mocked(trashDocuments).mockResolvedValue({ succeeded: ['a', 'b'], failed: [] })
 
-    await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b'], onRestored, false)
+    await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b'], onRestored, false, messages)
 
     expect(createNotification).toHaveBeenCalledWith({ type: 'success', text: '2 items moved to trash' })
   })
@@ -208,7 +220,7 @@ describe('trashManyAndNotify', () => {
       ],
     })
 
-    await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b', 'c', 'd'], onRestored, true)
+    await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b', 'c', 'd'], onRestored, true, messages)
 
     expect(createNotification).toHaveBeenCalledTimes(2)
     expect(createNotification).toHaveBeenNthCalledWith(1, {
@@ -223,7 +235,7 @@ describe('trashManyAndNotify', () => {
   it('shows only an error toast when nothing was trashed', async () => {
     jest.mocked(trashDocuments).mockResolvedValue({ succeeded: [], failed: [{ uid: 'a', error: e1 }] })
 
-    await trashManyAndNotify(drive, createNotification, errorTracking, ['a'], onRestored, true)
+    await trashManyAndNotify(drive, createNotification, errorTracking, ['a'], onRestored, true, messages)
 
     expect(createNotification).toHaveBeenCalledTimes(1)
     expect(createNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'error' }))
@@ -232,7 +244,7 @@ describe('trashManyAndNotify', () => {
   it('undo restores only the trashed uids and calls onRestored', async () => {
     jest.mocked(trashDocuments).mockResolvedValue({ succeeded: ['a', 'b'], failed: [{ uid: 'c', error: e1 }] })
     jest.mocked(restoreDocuments).mockResolvedValue({ succeeded: ['a', 'b'], failed: [] })
-    await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b', 'c'], onRestored, true)
+    await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b', 'c'], onRestored, true, messages)
 
     await clickUndo()
 
@@ -251,7 +263,7 @@ describe('trashManyAndNotify', () => {
         { uid: 'c', error: e2 },
       ],
     })
-    await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b', 'c'], onRestored, true)
+    await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b', 'c'], onRestored, true, messages)
 
     await clickUndo()
 

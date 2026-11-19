@@ -1,15 +1,20 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { act, cleanup, render, waitFor } from '@testing-library/react'
+import { type ReactNode, useState } from 'react'
 import { MemoryRouter, useHistory } from 'react-router'
 import { CompatRouter } from 'react-router-dom-v5-compat'
 
 import { ServerTime } from './utils/serverTime'
 import { buildRecentsState, buildSearchState, buildTrashState, HomepageViewProvider } from './HomepageViewProvider'
+import { defaultHomepageMessages, type HomepageMessages } from './messages/defaultHomepageMessages'
+import { HomepageMessagesProvider } from './messages/HomepageMessagesProvider'
 import { useHomepageTitle } from './useHomepageTitle'
 import { useRecentsStore } from './useRecentsStore'
 import type { ProtonDocumentType } from './utils/mimetype'
 import { RecentDocumentsItem, type RecentDocumentsItemValue } from './recentDocumentsItem'
 import type { RecentDocumentsItemLocation } from './recentDocumentsItem'
+
+const { names } = defaultHomepageMessages
 
 describe('buildTrashState', () => {
   test('no trashed documents means empty state', () => {
@@ -35,25 +40,25 @@ describe('buildTrashState', () => {
 
 describe('buildRecentsState', () => {
   test('recents initial state', () => {
-    expect(buildRecentsState([], false, false, 'viewed', undefined, [], undefined)).toStrictEqual({
+    expect(buildRecentsState([], false, false, 'viewed', undefined, [], undefined, names)).toStrictEqual({
       view: 'recents-initial',
     })
   })
 
   test('recents loading state (when not initialized)', () => {
-    expect(buildRecentsState([], false, true, 'viewed', undefined, [], undefined)).toStrictEqual({
+    expect(buildRecentsState([], false, true, 'viewed', undefined, [], undefined, names)).toStrictEqual({
       view: 'recents-loading',
     })
   })
 
   test('recents loading state (when initialized)', () => {
-    expect(buildRecentsState([], true, true, 'viewed', undefined, [], undefined)).toStrictEqual({
+    expect(buildRecentsState([], true, true, 'viewed', undefined, [], undefined, names)).toStrictEqual({
       view: 'recents-loading',
     })
   })
 
   test('recents empty state', () => {
-    expect(buildRecentsState([], true, false, 'viewed', undefined, [], undefined)).toStrictEqual({
+    expect(buildRecentsState([], true, false, 'viewed', undefined, [], undefined, names)).toStrictEqual({
       view: 'recents-empty',
     })
   })
@@ -63,7 +68,9 @@ describe('buildRecentsState', () => {
     const itemA = createDocumentItem('Alice')
     const itemB = createDocumentItem('Bob')
 
-    expect(buildRecentsState([itemC, itemA, itemB], true, false, 'name', undefined, [], undefined)).toStrictEqual({
+    expect(
+      buildRecentsState([itemC, itemA, itemB], true, false, 'name', undefined, [], undefined, names),
+    ).toStrictEqual({
       view: 'recents',
       sort: 'name',
       itemSections: [
@@ -82,7 +89,7 @@ describe('buildRecentsState', () => {
   test('group recents by time (old file)', () => {
     const oldItem = createDocumentItem('old')
     // oldItem has ServerTime(1_000_000_000) which is year 2001 → 'earlier' section
-    const result = buildRecentsState([oldItem], true, false, 'viewed', undefined, [], undefined)
+    const result = buildRecentsState([oldItem], true, false, 'viewed', undefined, [], undefined, names)
 
     expect(result).toMatchObject({ view: 'recents', sort: 'viewed' })
     expect((result as any).itemSections).toHaveLength(1)
@@ -93,7 +100,7 @@ describe('buildRecentsState', () => {
     const nowSeconds = Math.floor(Date.now() / 1000)
     const todayItem = createDocumentItem('fresh', { lastViewed: new ServerTime(nowSeconds) })
 
-    const result = buildRecentsState([todayItem], true, false, 'viewed', undefined, [], undefined)
+    const result = buildRecentsState([todayItem], true, false, 'viewed', undefined, [], undefined, names)
 
     expect(result).toMatchObject({ view: 'recents', sort: 'viewed' })
     expect((result as any).itemSections[0].id).toBe('today')
@@ -106,7 +113,16 @@ describe('buildRecentsState', () => {
     const sharedZack = createDocumentItem('Zack doc', { isSharedWithMe: true, createdBy: 'zack@example.com' })
 
     expect(
-      buildRecentsState([sharedZack, ownDocB, sharedAlice, ownDocA], true, false, 'owner', undefined, [], undefined),
+      buildRecentsState(
+        [sharedZack, ownDocB, sharedAlice, ownDocA],
+        true,
+        false,
+        'owner',
+        undefined,
+        [],
+        undefined,
+        names,
+      ),
     ).toStrictEqual({
       view: 'recents',
       sort: 'owner',
@@ -139,6 +155,7 @@ describe('buildRecentsState', () => {
         undefined,
         [],
         undefined,
+        names,
       ),
     ).toStrictEqual({
       view: 'recents',
@@ -161,7 +178,7 @@ describe('buildRecentsState', () => {
     const docItem = createDocumentItem('myDoc', { type: 'document' })
     const sheetItem = createDocumentItem('mySheet', { type: 'spreadsheet' })
 
-    const result = buildRecentsState([docItem, sheetItem], true, false, 'name', undefined, [], 'document')
+    const result = buildRecentsState([docItem, sheetItem], true, false, 'name', undefined, [], 'document', names)
 
     expect(result).toMatchObject({ view: 'recents' })
     expect((result as any).itemSections[0].items).toHaveLength(1)
@@ -171,7 +188,7 @@ describe('buildRecentsState', () => {
   test('type filter removes non-matching documents - empty state (no documents found)', () => {
     const sheetItem = createDocumentItem('mySheet', { type: 'spreadsheet' })
 
-    expect(buildRecentsState([sheetItem], true, false, 'name', undefined, [], 'document')).toStrictEqual({
+    expect(buildRecentsState([sheetItem], true, false, 'name', undefined, [], 'document', names)).toStrictEqual({
       view: 'recents-empty',
     })
   })
@@ -305,33 +322,42 @@ function renderProvider(path: string, { myFilesRootFolder = new Promise<never>((
     reportTitle(useHomepageTitle())
     return null
   }
+  // The host rebuilds its messages when the locale changes.
+  let setMessages: (messages: HomepageMessages) => void = () => {}
+  function HostMessages({ children }: { children: ReactNode }) {
+    const [messages, setState] = useState(defaultHomepageMessages)
+    setMessages = setState
+    return <HomepageMessagesProvider messages={messages}>{children}</HomepageMessagesProvider>
+  }
 
   render(
     <MemoryRouter initialEntries={[path]}>
       <CompatRouter>
-        <HomepageViewProvider
-          drive={drive}
-          eventSubscriber={{ initialize: jest.fn(), reset: jest.fn(), subscribeToSharedDocument: jest.fn() }}
-          coreEventSubscriber={coreEventSubscriber}
-          pendingInvitations={[]}
-          recentlyAcceptedInvitations={[]}
-          acceptInvitation={jest.fn()}
-          declineInvitation={jest.fn()}
-          reloadInvitations={jest.fn()}
-          api={api}
-          logger={{ debug: jest.fn(), error: jest.fn() }}
-          reportTelemetry={jest.fn()}
-          createNotification={createNotification}
-          getAppHref={(path) => path}
-          dateLocaleCode="en-US"
-          errorTracking={ERROR_TRACKING}
-          featureFlags={FEATURE_FLAGS}
-          addresses={[]}
-          contactEmails={[]}
-        >
-          <CaptureHistory />
-          <CaptureTitle />
-        </HomepageViewProvider>
+        <HostMessages>
+          <HomepageViewProvider
+            drive={drive}
+            eventSubscriber={{ initialize: jest.fn(), reset: jest.fn(), subscribeToSharedDocument: jest.fn() }}
+            coreEventSubscriber={coreEventSubscriber}
+            pendingInvitations={[]}
+            recentlyAcceptedInvitations={[]}
+            acceptInvitation={jest.fn()}
+            declineInvitation={jest.fn()}
+            reloadInvitations={jest.fn()}
+            api={api}
+            logger={{ debug: jest.fn(), error: jest.fn() }}
+            reportTelemetry={jest.fn()}
+            createNotification={createNotification}
+            getAppHref={(path) => path}
+            dateLocaleCode="en-US"
+            errorTracking={ERROR_TRACKING}
+            featureFlags={FEATURE_FLAGS}
+            addresses={[]}
+            contactEmails={[]}
+          >
+            <CaptureHistory />
+            <CaptureTitle />
+          </HomepageViewProvider>
+        </HostMessages>
       </CompatRouter>
     </MemoryRouter>,
   )
@@ -340,6 +366,7 @@ function renderProvider(path: string, { myFilesRootFolder = new Promise<never>((
     iterateTrashedNodes,
     reportTitle,
     createNotification,
+    changeMessages: (messages: HomepageMessages) => act(() => setMessages(messages)),
     reloadOnCoreEvent: () =>
       act(() => {
         void reloadOnCoreEvent()
@@ -383,6 +410,19 @@ describe('HomepageViewProvider', () => {
     reloadOnCoreEvent()
 
     await waitFor(() => expect(api).toHaveBeenCalledTimes(2))
+  })
+
+  test('renames the page in the new language without loading the recent documents again', async () => {
+    const { api, reportTitle, changeMessages } = renderProvider('/recents')
+    await waitFor(() => expect(api).toHaveBeenCalledTimes(1))
+
+    changeMessages({
+      ...defaultHomepageMessages,
+      pageTitle: { ...defaultHomepageMessages.pageTitle, recents: 'Récents' },
+    })
+
+    await waitFor(() => expect(reportTitle).toHaveBeenLastCalledWith('Récents'))
+    expect(api).toHaveBeenCalledTimes(1)
   })
 
   test("says so when the My files folder can't load", async () => {

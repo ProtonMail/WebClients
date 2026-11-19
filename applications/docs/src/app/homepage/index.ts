@@ -20,3 +20,5 @@ export { HomepageStyleScope, type HomepageStyleScopeProps } from './HomepageStyl
 export { HomepageViewProvider } from './HomepageViewProvider'
 export type { HomepageViewProviderProps } from './homepageViewUtils'
 export { DocumentActionsProvider, type DocumentActionsProviderProps } from './DocumentActionsProvider'
+export { HomepageMessagesProvider, type HomepageMessagesProviderProps } from './messages/HomepageMessagesProvider'
+export type { HomepageMessages } from './messages/defaultHomepageMessages'

@@ -8,6 +8,7 @@ import { trashManyAndNotify } from './trashRestoreNotify'
 import { HomepageViewContext, type HomepageViewValue } from '../homepageViewContext'
 import type { ErrorTracking } from '../utils/errorTracking'
 import { useBulkTrash } from './useBulkTrash'
+import { defaultHomepageMessages } from '../messages/defaultHomepageMessages'
 import { TelemetryEvent } from '../utils/telemetry'
 
 jest.mock('./trashRestoreNotify', () => ({ trashManyAndNotify: jest.fn() }))
@@ -76,6 +77,7 @@ describe('useBulkTrash', () => {
       [uid(d1), uid(d2)],
       expect.any(Function),
       true,
+      defaultHomepageMessages.trash,
     )
     const onRestored = jest.mocked(trashManyAndNotify).mock.calls[0][4]
     onRestored()

@@ -1,18 +1,25 @@
-import { createTrashMessages } from '../messages/trash'
+import type { HomepageMessages } from '../messages/defaultHomepageMessages'
 import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { trashDocument, restoreDocument, reportTrashError } from './trash'
 import { trashDocuments, restoreDocuments, type BatchResult } from './trashMany'
 import type { CreateNotification } from '../utils/notifications'
 import type { ErrorTracking } from '../utils/errorTracking'
 
-export function handleRestoreError(createNotification: CreateNotification, errorTracking: ErrorTracking, error: any) {
+type TrashMessages = HomepageMessages['trash']
+
+export function handleRestoreError(
+  createNotification: CreateNotification,
+  errorTracking: ErrorTracking,
+  error: any,
+  messages: TrashMessages,
+) {
   if (isRestorePermissionError(error)) {
     createNotification({
       type: 'error',
-      text: createTrashMessages().trash.restoreNotAllowed,
+      text: messages.restoreNotAllowed,
     })
   } else {
-    createNotification({ type: 'error', text: createTrashMessages().trash.restoreFailed })
+    createNotification({ type: 'error', text: messages.restoreFailed })
     reportTrashError(errorTracking, error)
   }
 }
@@ -25,6 +32,7 @@ export async function trashAndNotify(
   emitRestored: () => void,
   /** Only the owner restores: Drive refuses a document shared with the user, however it was shared */
   canRestore: boolean,
+  messages: TrashMessages,
 ) {
   await trashDocument(drive, nodeUid)
 
@@ -32,17 +40,17 @@ export async function trashAndNotify(
     try {
       await restoreDocument(drive, nodeUid)
     } catch (error: any) {
-      handleRestoreError(createNotification, errorTracking, error)
+      handleRestoreError(createNotification, errorTracking, error, messages)
       return
     }
-    createNotification({ type: 'success', text: createTrashMessages().trash.restored })
+    createNotification({ type: 'success', text: messages.restored })
     emitRestored()
   }
 
   createNotification({
     type: 'success',
-    text: createTrashMessages().trash.trashed,
-    action: canRestore ? undoAction(undo) : undefined,
+    text: messages.trashed,
+    action: canRestore ? undoAction(undo, messages) : undefined,
   })
 }
 
@@ -54,6 +62,7 @@ export async function trashManyAndNotify(
   onRestored: () => void,
   /** Whether every document is the user's own, as `trashAndNotify`'s `canRestore` */
   canRestore: boolean,
+  messages: TrashMessages,
 ): Promise<BatchResult> {
   const result = await trashDocuments(drive, nodeUids)
   const { succeeded, failed } = result
@@ -64,13 +73,13 @@ export async function trashManyAndNotify(
     if (numberOfItems > 0) {
       createNotification({
         type: 'success',
-        text: createTrashMessages().trash.itemsRestored(numberOfItems),
+        text: messages.itemsRestored(numberOfItems),
       })
       onRestored()
     }
     if (restore.failed.length > 0) {
       const [first, ...others] = new Set(restore.failed.map((f) => f.error))
-      handleRestoreError(createNotification, errorTracking, first)
+      handleRestoreError(createNotification, errorTracking, first, messages)
       others
         .filter((error) => !isRestorePermissionError(error))
         .forEach((error) => reportTrashError(errorTracking, error))
@@ -80,15 +89,15 @@ export async function trashManyAndNotify(
   if (succeeded.length > 0) {
     createNotification({
       type: 'success',
-      text: createTrashMessages().trash.itemsTrashed(succeeded.length),
-      action: canRestore ? undoAction(undo) : undefined,
+      text: messages.itemsTrashed(succeeded.length),
+      action: canRestore ? undoAction(undo, messages) : undefined,
     })
   }
 
   if (failed.length > 0) {
     createNotification({
       type: 'error',
-      text: createTrashMessages().trash.itemsNotTrashed(failed.length),
+      text: messages.itemsNotTrashed(failed.length),
     })
     new Set(failed.map((f) => f.error)).forEach((error) => reportTrashError(errorTracking, error))
   }
@@ -102,6 +111,7 @@ export async function restoreAndNotify(
   errorTracking: ErrorTracking,
   nodeUid: string,
   emitTrashed: () => void,
+  messages: TrashMessages,
 ) {
   await restoreDocument(drive, nodeUid)
 
@@ -110,22 +120,22 @@ export async function restoreAndNotify(
       await trashDocument(drive, nodeUid)
     } catch (error) {
       reportTrashError(errorTracking, error)
-      createNotification({ type: 'error', text: createTrashMessages().trash.trashFailed })
+      createNotification({ type: 'error', text: messages.trashFailed })
       return
     }
-    createNotification({ type: 'success', text: createTrashMessages().trash.trashed })
+    createNotification({ type: 'success', text: messages.trashed })
     emitTrashed()
   }
 
   createNotification({
     type: 'success',
-    text: createTrashMessages().trash.restored,
-    action: undoAction(undo),
+    text: messages.restored,
+    action: undoAction(undo, messages),
   })
 }
 
-function undoAction(onClick: () => void) {
-  return { label: createTrashMessages().trash.undo, onClick }
+function undoAction(onClick: () => void, messages: TrashMessages) {
+  return { label: messages.undo, onClick }
 }
 
 function isRestorePermissionError(error: Error) {

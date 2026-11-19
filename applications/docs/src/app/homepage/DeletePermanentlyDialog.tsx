@@ -4,7 +4,7 @@
 import * as Ariakit from '@ariakit/react'
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig'
 import { type FormEvent, useState } from 'react'
-import { createDeletePermanentlyDialogMessages } from './messages/deletePermanentlyDialog'
+import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import { Button, IconButton } from './components/ui'
 
 export type DeletePermanentlyDialogProps = {
@@ -15,7 +15,7 @@ export type DeletePermanentlyDialogProps = {
 
 export function DeletePermanentlyDialog({ documentName, onDelete, onClose }: DeletePermanentlyDialogProps) {
   const [isDeleting, setIsDeleting] = useState(false)
-  const messages = createDeletePermanentlyDialogMessages().deletePermanentlyDialog
+  const messages = useHomepageMessages().deletePermanentlyDialog
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault()

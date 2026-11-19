@@ -1,21 +1,24 @@
 import { MemberRole, type NodeEntity } from '@protontech/drive-sdk'
 import { createDocumentItem } from './createDocumentItems'
+import { defaultHomepageMessages } from './messages/defaultHomepageMessages'
+
+const { names } = defaultHomepageMessages
 
 describe('createDocumentItem', () => {
   test('location is shared with me even if document has path', () => {
-    const item = createDocumentItem(createNode(), { ...documentDetails, isSharedWithMe: true, path: ['Folder'] })
+    const item = createDocumentItem(createNode(), { ...documentDetails, isSharedWithMe: true, path: ['Folder'] }, names)
 
     expect(item.location).toEqual({ type: 'shared-with-me' })
   })
 
   test('takes volume, link and parent link IDs from node UIDs', () => {
-    const item = createDocumentItem({ ...createNode(), parentUid: 'volume1~folder' }, documentDetails)
+    const item = createDocumentItem({ ...createNode(), parentUid: 'volume1~folder' }, documentDetails, names)
 
     expect(item).toMatchObject({ volumeId: 'volume1', linkId: 'doc', parentLinkId: 'folder' })
   })
 
   test('throws on a malformed node UID', () => {
-    expect(() => createDocumentItem({ ...createNode(), uid: 'volume1' }, documentDetails)).toThrow(
+    expect(() => createDocumentItem({ ...createNode(), uid: 'volume1' }, documentDetails, names)).toThrow(
       '"volume1" is not a valid node UID',
     )
   })

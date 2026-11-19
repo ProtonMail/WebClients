@@ -16,6 +16,7 @@ import type {
 } from './invitationTypes'
 import { isMyDocument, type UserAddress } from './is-my-document'
 import { getOwnerName, type OwnerContact } from './get-owner-name'
+import type { HomepageMessages } from './messages/defaultHomepageMessages'
 import type { Api } from './docsApi/api'
 import type { Logger } from './utils/logger'
 import type { GetAppHref } from './utils/apps'
@@ -240,6 +241,7 @@ export function splitIntoSectionsByOwner(
   items: RecentDocumentsItem[],
   addresses: UserAddress[] | undefined,
   contactEmails: OwnerContact[] | undefined,
+  names: HomepageMessages['names'],
 ): ItemsSection[] {
   return [
     {
@@ -248,8 +250,8 @@ export function splitIntoSectionsByOwner(
         if (a.isSharedWithMe !== b.isSharedWithMe) {
           return !a.isSharedWithMe ? -1 : 1
         }
-        const aName = getOwnerName(a, isMyDocument(a, addresses), contactEmails)
-        const bName = getOwnerName(b, isMyDocument(b, addresses), contactEmails)
+        const aName = getOwnerName(a, isMyDocument(a, addresses), contactEmails, names)
+        const bName = getOwnerName(b, isMyDocument(b, addresses), contactEmails, names)
         if (aName && bName) {
           return aName.localeCompare(bName)
         }

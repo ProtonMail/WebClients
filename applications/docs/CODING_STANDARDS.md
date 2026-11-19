@@ -52,7 +52,7 @@ It is advised not to modify monorepo-wide shared packages e.g. `packages/compone
   ```
 
 - Give every component that takes props a `<ComponentName>Props` type, exported if the component is.
-- Contexts: `createContext<T | undefined>(undefined)`, a `useX()` hook that throws an error naming the missing provider, and an `XProvider` with exported `XProviderProps`. Model: `applications/docs/src/app/utils/application-context.tsx`.
+- Contexts: `createContext<T | undefined>(undefined)`, a `useX()` hook that throws an error naming the missing provider, and an `XProvider` with exported `XProviderProps`. Model: `applications/docs/src/app/utils/application-context.tsx`. Exception: the homepage's `HomepageMessagesProvider` defaults to the English messages, so `useHomepageMessages()` never throws.
 
 ### Errors
 
@@ -60,7 +60,7 @@ It is advised not to modify monorepo-wide shared packages e.g. `packages/compone
 
 ### i18n
 
-- Wrap every user-visible string in ttag: `` c('<Context>').t`Text` ``. Context is the string's role: `Action`, `Info`, `Title`, `Label`, `Notification`, `Error`, `Placeholder`, or a precise description (`'Recent documents table header'`).
+- Wrap every user-visible string in ttag: `` c('<Context>').t`Text` ``. Context is the string's role: `Action`, `Info`, `Title`, `Label`, `Notification`, `Error`, `Placeholder`, or a precise description (`'Recent documents table header'`). Exception: the homepage module, `src/app/homepage/`, imports no ttag; its `README.md` says where its strings are translated.
 - Define translated strings held in constants as functions, so `c()` runs at render time after the locale has loaded (a plain constant is evaluated at import and stays untranslated):
 
   ```ts

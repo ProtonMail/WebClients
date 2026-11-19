@@ -1,9 +1,9 @@
 // Copy of drive/docs/realtime's packages/sheets-editor/src/components/CircleLoader/CircleLoader.tsx,
-// with its label from ttag, as Proton's is, and its SVG id from useId, as Proton's useSvgId gives it.
+// with its label from the homepage messages, and its SVG id from useId, as Proton's useSvgId gives it.
 // Dropped what the homepage doesn't use: the tiny and medium sizes and `srLabelHidden`.
 
 import { type ComponentPropsWithoutRef, useId } from 'react'
-import { createLoadingMessages } from '../messages/loading'
+import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
 import { clsx } from '../utils/clsx'
 import './CircleLoader.css'
 
@@ -15,6 +15,7 @@ export interface CircleLoaderProps extends ComponentPropsWithoutRef<'svg'> {
 export function CircleLoader({ size, className, ...rest }: CircleLoaderProps) {
   // `<use href>` takes the id as a URL fragment, so drop useId's colons.
   const circleId = `homepage-circle-loader-${useId().replace(/:/g, '')}`
+  const messages = useHomepageMessages().loading
 
   return (
     <>
@@ -31,7 +32,7 @@ export function CircleLoader({ size, className, ...rest }: CircleLoaderProps) {
         <use href={`#${circleId}`} className="homepage-circle-loader__track" />
         <use href={`#${circleId}`} className="homepage-circle-loader__circle" />
       </svg>
-      <span className="sr-only">{createLoadingMessages().loading.loading}</span>
+      <span className="sr-only">{messages.loading}</span>
     </>
   )
 }
