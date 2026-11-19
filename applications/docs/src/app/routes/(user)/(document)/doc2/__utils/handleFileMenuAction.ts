@@ -13,6 +13,7 @@ export type FileMenuHandlers = Pick<
   toggleDebugMode: () => void
   print: () => void
   download: (format: DataTypesThatDocumentCanBeExportedAs) => void
+  seeVersionHistory: () => void
 }
 
 export function openHelp() {
@@ -21,8 +22,7 @@ export function openHelp() {
 
 /**
  * Runs a docs file menu action, from the title menu or from the editor, as /doc's `DocumentTitleDropdown.tsx` does.
- * Version history, a stub, does nothing, like its disabled menu item, and the sheets-only actions never come from a text
- * document. The handlers check the role and flags themselves.
+ * The sheets-only actions never come from a text document. The handlers check the role and flags themselves.
  */
 export function handleFileMenuAction(action: FileMenuAction, handlers: FileMenuHandlers, logger: LoggerInterface) {
   switch (action.type) {
@@ -46,10 +46,8 @@ export function handleFileMenuAction(action: FileMenuAction, handlers: FileMenuH
       return handlers.print()
     case 'download':
       return handlers.download(action.format)
-    // A stub with no ticket: version history is kept for later
     case 'see-version-history':
-      logger.debug('File menu action not available in doc2 yet', { type: action.type })
-      return
+      return handlers.seeVersionHistory()
     case 'import':
     case 'view-recent-spreadsheets':
       logger.debug('Sheets file menu action ignored', { type: action.type })

@@ -3,16 +3,18 @@ import userEvent from '@testing-library/user-event'
 
 import { ConfigContext } from '@proton/app-context/configContext'
 import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { MemberRole, getDrive } from '@proton/drive/sdk'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 import { DocsApiError, decodeAwarenessUpdate, encodeAwarenessUpdate } from '@proton-docs/realtime-sdk'
-import type { Participant, RecoveryCondition, SessionStatus } from '@proton-docs/realtime-sdk'
+import type { HistoryEntry, Participant, RecoveryCondition, SessionStatus } from '@proton-docs/realtime-sdk'
 import { type ReactNode, StrictMode } from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { CompatRouter } from 'react-router-dom-v5-compat'
+import * as Y from 'yjs'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 import { DebugModeProvider } from '~/utils/debug-mode-context'
@@ -44,7 +46,9 @@ jest.mock('@proton/app-context/useNotifications', () => ({
   useNotifications: () => ({ createNotification: jest.fn() }),
 }))
 
-jest.mock('~/utils/flags', () => ({ useIsDarkThemeEnabled: () => false }))
+let mockIsODTEnabled = false
+jest.mock('~/utils/flags', () => ({ useIsDarkThemeEnabled: () => false, useIsODTEnabled: () => mockIsODTEnabled }))
+jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }))
 jest.mock('~/drive-sdk/event-subscriber', () => ({
   getEventSubscriber: () => ({ initialize: async () => {}, reset: () => {} }),
 }))
@@ -100,16 +104,20 @@ jest.mock('./DocumentHeaderV2', () => ({
     editorInvoker,
     exportInvoker,
     status,
+    onFileMenuAction,
   }: {
     node: { uid: string }
     role: string
     editorInvoker?: object
     exportInvoker?: object
     status?: ReactNode
+    onFileMenuAction: (action: FileMenuAction) => void
   }) => (
     <div>
       {`Header for ${node.uid} as ${role}, ${editorInvoker ? 'with' : 'without'} the editor`}
       <span data-testid="header-exports">{exportInvoker ? 'exports enabled' : 'exports disabled'}</span>
+      {/* The title menu's item, which its own tests show disabled until the editor shows the document */}
+      <button onClick={() => onFileMenuAction({ type: 'see-version-history' })}>See version history</button>
       {status}
     </div>
   ),
@@ -118,6 +126,15 @@ jest.mock('./DocumentHeaderV2', () => ({
 const mockExportAndDownload = jest.fn(async (..._args: unknown[]) => {})
 jest.mock('../__utils/downloadExport', () => ({
   exportAndDownload: (...args: unknown[]) => mockExportAndDownload(...args),
+}))
+const mockDownloadJSONFile = jest.fn()
+jest.mock('~/utils/download-json-file', () => ({
+  downloadJSONFile: (...args: unknown[]) => mockDownloadJSONFile(...args),
+}))
+const mockDownloadFile = jest.fn()
+jest.mock('@proton/shared/lib/helpers/downloadFile', () => ({
+  __esModule: true,
+  default: (...args: unknown[]) => mockDownloadFile(...args),
 }))
 const mockFetchExternalImageAsBase64 = jest.fn(async (..._args: unknown[]) => 'data:image/png;base64,iVBORw0K')
 jest.mock('../__utils/fetchExternalImageAsBase64', () => ({
@@ -161,8 +178,33 @@ const mockReceiveMessage = jest.fn(async ({ content }: RtsMessagePayload) => {
   mockEditorCalls.push(`receiveMessage:${content[0]}`)
 })
 let mockClientHandler: ClientHandler
+/** The history's revision view: what it was sent, and its editor's exports */
+const mockRevisionCalls: string[] = []
+const mockRevisionStates: Uint8Array<ArrayBuffer>[] = []
+const REVISION_EDITOR_STATE = { root: { children: [], type: 'root' } }
+const REVISION_YJS_STATE = new Uint8Array([9, 9])
+const mockRevisionInvoker = {
+  initializeEditor: jest.fn(async (..._args: unknown[]) => {
+    mockRevisionCalls.push('initializeEditor')
+  }),
+  receiveMessage: jest.fn(async ({ type, content }: RtsMessagePayload) => {
+    mockRevisionCalls.push(`receiveMessage:${type.wrapper}`)
+    if (type.wrapper === 'du') {
+      mockRevisionStates.push(content)
+    }
+  }),
+  showEditor: jest.fn(async () => {
+    mockRevisionCalls.push('showEditor')
+  }),
+  setDarkMode: jest.fn(async () => {}),
+  getCurrentEditorState: jest.fn(async () => REVISION_EDITOR_STATE),
+  getDocumentState: jest.fn(async () => REVISION_YJS_STATE),
+}
 jest.mock('../__utils/ClientEditorBridge', () => ({
-  ClientEditorBridge: jest.fn().mockImplementation((_frame, clientHandler: ClientHandler) => {
+  ClientEditorBridge: jest.fn().mockImplementation((frame: HTMLIFrameElement, clientHandler: ClientHandler) => {
+    if (frame.dataset.systemMode === 'revision') {
+      return { editorInvoker: mockRevisionInvoker, destroy: jest.fn() }
+    }
     mockClientHandler = clientHandler
     return {
       editorInvoker: {
@@ -193,8 +235,18 @@ jest.mock('../__utils/ClientEditorBridge', () => ({
 jest.mock('~/components/document/EditorFrame', () => {
   const { useEffect } = jest.requireActual('react')
   return {
-    EditorFrame: ({ onFrameReady }: { onFrameReady: (frame: HTMLIFrameElement) => void }) => {
-      useEffect(() => onFrameReady(document.createElement('iframe')), [onFrameReady])
+    EditorFrame: ({
+      onFrameReady,
+      systemMode,
+    }: {
+      onFrameReady: (frame: HTMLIFrameElement) => void
+      systemMode: string
+    }) => {
+      useEffect(() => {
+        const frame = document.createElement('iframe')
+        frame.dataset.systemMode = systemMode
+        void onFrameReady(frame)
+      }, [onFrameReady, systemMode])
       return null
     },
   }
@@ -1299,5 +1351,295 @@ describe('DocumentViewerV2', () => {
     act(() => fake.emit('refusal', { reason: 'documentSizeLimitReached', attemptedBytes: 2, limitBytes: 1 }))
 
     expect(await screen.findByText('Document Size Limit Exceeded')).toBeInTheDocument()
+  })
+
+  describe('version history', () => {
+    const NOW = Date.now()
+    const DAY_MS = 24 * 60 * 60 * 1000
+
+    /**
+     * A History Log of `count` entries, each typing one character: the first `earlier` three days ago, the rest today,
+     * a minute apart
+     */
+    function historyLog(count: number, earlier = 0): HistoryEntry[] {
+      const doc = new Y.Doc()
+      const entries: HistoryEntry[] = []
+      doc.on('update', (update) => {
+        const index = entries.length
+        const timestamp = (index < earlier ? NOW - 3 * DAY_MS : NOW - count * 60_000) + index * 60_000
+        entries.push({
+          uuid: `update-${index}`,
+          origin: 'baseState',
+          timestamp,
+          authorAddress: 'author@example.com',
+          content: new Uint8Array(update),
+        })
+      })
+      for (let index = 0; index < count; index++) {
+        doc.getText('text').insert(index, String.fromCharCode(97 + (index % 26)))
+      }
+      return entries
+    }
+
+    function textOf(state: Uint8Array<ArrayBuffer>) {
+      const doc = new Y.Doc()
+      Y.applyUpdate(doc, state)
+      return doc.getText('text').toString()
+    }
+
+    function modal() {
+      return screen.getByTestId('history-modal')
+    }
+
+    /** The timeline's revisions, newest first, as their times and labels read */
+    function timeline() {
+      return [...modal().querySelectorAll<HTMLButtonElement>('button[data-batch-index]')]
+    }
+
+    async function openHistory(fake: ReturnType<typeof createFakeSession>, role: DocumentRole = 'Editor') {
+      await renderRevealed(fake, { role })
+      await userEvent.click(screen.getByRole('button', { name: 'See version history' }))
+      await waitFor(() => expect(mockRevisionCalls).toContain('showEditor'))
+    }
+
+    afterEach(() => {
+      mockRevisionCalls.length = 0
+      mockRevisionStates.length = 0
+      mockIsODTEnabled = false
+      localStorage.removeItem('proton-docs-debug')
+    })
+
+    test.each<DocumentRole>(['Admin', 'Editor', 'Viewer'])(
+      'See version history opens the history for an %s, read from the History Log once, as it opens',
+      async (role) => {
+        const fake = createSession()
+        fake.mocks.getHistory.mockReturnValue(historyLog(25))
+        await renderRevealed(fake, { role })
+        expect(fake.mocks.getHistory).not.toHaveBeenCalled()
+
+        await userEvent.click(screen.getByRole('button', { name: 'See version history' }))
+
+        expect(modal()).toBeInTheDocument()
+        expect(fake.mocks.getHistory).toHaveBeenCalledTimes(1)
+        expect(timeline()).toHaveLength(3)
+      },
+    )
+
+    test("the editor's file menu opens it too", async () => {
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(3))
+      await renderRevealed(fake)
+
+      await act(() => mockClientHandler.handleFileMenuAction({ type: 'see-version-history' }))
+
+      expect(modal()).toBeInTheDocument()
+    })
+
+    test('it opens nothing before the editor shows the document', async () => {
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(3))
+      renderViewer(fake)
+      await waitFor(() => expect(mockClientHandler).toBeDefined())
+
+      await act(() => mockClientHandler.handleFileMenuAction({ type: 'see-version-history' }))
+
+      expect(screen.queryByTestId('history-modal')).not.toBeInTheDocument()
+      expect(fake.mocks.getHistory).not.toHaveBeenCalled()
+    })
+
+    test('the timeline groups ten entries a revision by day, newest first, and marks the current version, which it shows first', async () => {
+      const fake = createSession()
+      // Revision 0 three days ago, revisions 1 and 2 today
+      fake.mocks.getHistory.mockReturnValue(historyLog(25, 10))
+      await openHistory(fake)
+
+      expect(timeline().map((revision) => revision.dataset.batchIndex)).toEqual(['2', '1', '0'])
+      expect(timeline()[0]).toHaveTextContent('Current version')
+      expect(timeline()[1]).not.toHaveTextContent('Current version')
+      expect(within(modal()).getByText('today')).toBeInTheDocument()
+      expect(within(modal()).getByText('The Beginning')).toBeInTheDocument()
+      expect(within(modal()).getByText('View only')).toBeInTheDocument()
+      expect(within(modal()).getByTestId('history-selected-time')).toHaveTextContent(
+        new Date(NOW - 60_000).toLocaleString(),
+      )
+
+      // The view is a viewer in revision mode, sent the current version as one update, then that it has everything
+      expect(mockRevisionCalls).toEqual([
+        'initializeEditor',
+        'receiveMessage:du',
+        'receiveMessage:events',
+        'showEditor',
+      ])
+      expect(mockRevisionInvoker.initializeEditor.mock.calls[0][2]).toBe('Viewer')
+      expect(textOf(mockRevisionStates[0])).toBe('abcdefghijklmnopqrstuvwxy')
+      // No button on the current version
+      expect(within(modal()).queryByTestId('export-revision')).not.toBeInTheDocument()
+    })
+
+    test('selecting a revision shows its state, every entry up to it merged, in a new view', async () => {
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(25))
+      await openHistory(fake)
+
+      await userEvent.click(timeline()[2])
+
+      await waitFor(() => expect(mockRevisionStates).toHaveLength(2))
+      expect(textOf(mockRevisionStates[1])).toBe('abcdefghij')
+      expect(within(modal()).getByTestId('history-selected-time')).toHaveTextContent(
+        new Date(NOW - 16 * 60_000).toLocaleString(),
+      )
+      expect(timeline()[2].className).toContain('signal-success')
+    })
+
+    test("exports the selected revision as docx, from the view's editor, as the document name", async () => {
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(25))
+      await openHistory(fake)
+      await userEvent.click(timeline()[1])
+      expect(within(modal()).queryByTestId('export-revision-odt')).not.toBeInTheDocument()
+
+      await userEvent.click(within(modal()).getByTestId('export-revision'))
+
+      await waitFor(() => expect(mockExportAndDownload).toHaveBeenCalledWith(mockRevisionInvoker, 'Plans', 'docx'))
+    })
+
+    test('selecting the revision that is already selected keeps its view, and its exports', async () => {
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(25))
+      await openHistory(fake)
+      await userEvent.click(timeline()[1])
+      await waitFor(() => expect(mockRevisionStates).toHaveLength(2))
+      await waitFor(() => expect(within(modal()).getByTestId('export-revision')).toBeEnabled())
+
+      await userEvent.click(timeline()[1])
+
+      expect(mockRevisionStates).toHaveLength(2)
+      expect(within(modal()).getByTestId('export-revision')).toBeEnabled()
+      await userEvent.click(within(modal()).getByTestId('export-revision'))
+      await waitFor(() => expect(mockExportAndDownload).toHaveBeenCalledWith(mockRevisionInvoker, 'Plans', 'docx'))
+    })
+
+    test('entering the batch size it already has then exports work from another revision', async () => {
+      localStorage.setItem('proton-docs-debug', 'true')
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(25))
+      await openHistory(fake)
+      fireEvent.change(within(modal()).getByTestId('history-batch-granularity'), { target: { value: '5' } })
+      await waitFor(() => expect(mockRevisionStates).toHaveLength(2))
+
+      // 1, then 0, which clamps to 1 again: the same size, on the same (current) revision
+      fireEvent.change(within(modal()).getByTestId('history-batch-granularity'), { target: { value: '1' } })
+      await waitFor(() => expect(mockRevisionStates).toHaveLength(3))
+      fireEvent.change(within(modal()).getByTestId('history-batch-granularity'), { target: { value: '0' } })
+
+      await userEvent.click(timeline()[1])
+      await waitFor(() => expect(within(modal()).getByTestId('export-revision')).toBeEnabled())
+      await userEvent.click(within(modal()).getByTestId('export-revision'))
+      await waitFor(() => expect(mockExportAndDownload).toHaveBeenCalledWith(mockRevisionInvoker, 'Plans', 'docx'))
+    })
+
+    test('exports it as odt with the DocsODTEnabled flag', async () => {
+      mockIsODTEnabled = true
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(25))
+      await openHistory(fake)
+      await userEvent.click(timeline()[1])
+
+      await userEvent.click(within(modal()).getByTestId('export-revision-odt'))
+
+      await waitFor(() => expect(mockExportAndDownload).toHaveBeenCalledWith(mockRevisionInvoker, 'Plans', 'odt'))
+    })
+
+    test('a failed export is logged, not thrown', async () => {
+      const error = new Error('Editor did not answer exportData')
+      mockExportAndDownload.mockRejectedValueOnce(error)
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(25))
+      const { logger } = await renderRevealed(fake)
+      await userEvent.click(screen.getByRole('button', { name: 'See version history' }))
+      await userEvent.click(timeline()[1])
+
+      await userEvent.click(within(modal()).getByTestId('export-revision'))
+
+      await waitFor(() => expect(logger.error).toHaveBeenCalledWith('Failed to export the version', error))
+    })
+
+    test('Debug Mode adds the batch granularity, and the editor state and yjs state exports', async () => {
+      localStorage.setItem('proton-docs-debug', 'true')
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(25))
+      await openHistory(fake)
+
+      fireEvent.change(within(modal()).getByTestId('history-batch-granularity'), { target: { value: '5' } })
+      expect(timeline()).toHaveLength(5)
+      await userEvent.click(timeline()[4])
+
+      await userEvent.click(within(modal()).getByTestId('export-revision-editor-state'))
+      await waitFor(() =>
+        expect(mockDownloadJSONFile).toHaveBeenCalledWith(
+          REVISION_EDITOR_STATE,
+          expect.stringMatching(/^Plans-editor-state-.+\.json$/),
+        ),
+      )
+
+      await userEvent.click(within(modal()).getByTestId('export-revision-yjs-state'))
+      await waitFor(() =>
+        expect(mockDownloadFile).toHaveBeenCalledWith(
+          expect.any(Blob),
+          expect.stringMatching(/^Plans-yjs-state-.+\.bin$/),
+        ),
+      )
+    })
+
+    test('a new batch granularity shows the newest revision again, in a new view, even at the same index', async () => {
+      localStorage.setItem('proton-docs-debug', 'true')
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(25))
+      await openHistory(fake)
+      await userEvent.click(timeline()[1])
+      await waitFor(() => expect(mockRevisionStates).toHaveLength(2))
+      expect(textOf(mockRevisionStates[1])).toBe('abcdefghijklmnopqrst')
+
+      // Two revisions now, of 20 and 5 entries: index 1 is the current version
+      fireEvent.change(within(modal()).getByTestId('history-batch-granularity'), { target: { value: '20' } })
+
+      await waitFor(() => expect(mockRevisionStates).toHaveLength(3))
+      expect(textOf(mockRevisionStates[2])).toBe('abcdefghijklmnopqrstuvwxy')
+      expect(timeline()[0]).toHaveTextContent('Current version')
+      expect(within(modal()).queryByTestId('export-revision')).not.toBeInTheDocument()
+    })
+
+    test('without Debug Mode, no batch granularity and no state exports', async () => {
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(25))
+      await openHistory(fake)
+      await userEvent.click(timeline()[1])
+
+      expect(within(modal()).queryByTestId('history-batch-granularity')).not.toBeInTheDocument()
+      expect(within(modal()).queryByTestId('export-revision-editor-state')).not.toBeInTheDocument()
+      expect(within(modal()).queryByTestId('export-revision-yjs-state')).not.toBeInTheDocument()
+    })
+
+    test('an empty History Log shows that there is no version history', async () => {
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue([])
+      await renderRevealed(fake)
+
+      await userEvent.click(screen.getByRole('button', { name: 'See version history' }))
+
+      expect(within(modal()).getByText('No version history available')).toBeInTheDocument()
+      expect(mockRevisionCalls).toEqual([])
+    })
+
+    test('Close closes the history', async () => {
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(3))
+      await openHistory(fake)
+
+      await userEvent.click(within(modal()).getByTestId('history-close'))
+
+      // Gone once its exit animation ends, which jsdom never runs
+      await waitFor(() => expect(modal().closest('.modal-two--out')).not.toBeNull())
+    })
   })
 })

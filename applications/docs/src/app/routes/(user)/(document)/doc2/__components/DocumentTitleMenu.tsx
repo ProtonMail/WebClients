@@ -1,10 +1,9 @@
-import { type MouseEvent, type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { type MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
 
 import { useConfig } from '@proton/app-context/useConfig'
 import { useNotifications } from '@proton/app-context/useNotifications'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import Dropdown from '@proton/components/components/dropdown/Dropdown'
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton'
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
@@ -58,7 +57,10 @@ export type DocumentTitleMenuProps = {
   editorInvoker:
     | Pick<EditorInvoker, 'setTableOfContentsVisible' | 'getYDocAsJSON' | 'getCurrentEditorState'>
     | undefined
-  /** The editor once it shows the document; until then Make a copy, Print, Download and Copy as markdown are disabled */
+  /**
+   * The editor once it shows the document; until then Make a copy, See version history, Print, Download and Copy as
+   * markdown are disabled
+   */
   exportInvoker: Pick<EditorInvoker, 'getCurrentSelection'> | undefined
   wordCount: WordCount
   trashState: TrashState
@@ -70,7 +72,7 @@ export type DocumentTitleMenuProps = {
 /**
  * The document name, which opens /doc's title menu with every docs item in its order. Adapted from
  * `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/DocumentTitleDropdown.tsx`.
- * See version history is a stub; the sheets-only items are left out.
+ * The sheets-only items are left out.
  */
 export function DocumentTitleMenu({
   node,
@@ -307,9 +309,15 @@ export function DocumentTitleMenu({
             </DropdownMenuButton>
           )}
 
-          <StubMenuItem waitsFor="version history" icon={<IcClockRotateLeft />} data-testid="dropdown-versioning">
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            disabled={!exportInvoker}
+            onClick={() => onFileMenuAction({ type: 'see-version-history' })}
+            data-testid="dropdown-versioning"
+          >
+            <IcClockRotateLeft className="color-weak mr-2" />
             {c('Action').t`See version history`}
-          </StubMenuItem>
+          </DropdownMenuButton>
 
           {isWordCountSupported && <WordCountMenu wordCount={wordCount} />}
 
@@ -485,35 +493,6 @@ function downloadFormats(isODTEnabled: boolean): { format: DataTypesThatDocument
     { format: 'txt', label: c('Action').t`Plain Text (.txt)` },
     { format: 'md', label: c('Action').t`Markdown (.md)` },
   ]
-}
-
-/** What a stub waits for. Version history has no ticket: it is kept for later. */
-type StubTicket = 'version history'
-
-type StubMenuItemProps = { waitsFor: StubTicket; icon: ReactNode; children: ReactNode; 'data-testid': string }
-
-/** A menu item doc2 doesn't have yet: shown disabled, with a tooltip saying so. */
-function StubMenuItem({ waitsFor, icon, children, 'data-testid': testId }: StubMenuItemProps) {
-  // Keeps the menu open, as a disabled item would
-  const ignoreClick = (event: MouseEvent) => {
-    event.preventDefault()
-    event.stopPropagation()
-  }
-  return (
-    <Tooltip title={c('Info').t`Not available yet`} originalPlacement="right">
-      <DropdownMenuButton
-        className="flex items-center text-left"
-        fakeDisabled
-        aria-disabled="true"
-        onClick={ignoreClick}
-        data-stub={waitsFor}
-        data-testid={testId}
-      >
-        <span className="color-weak mr-2 flex">{icon}</span>
-        <span>{children}</span>
-      </DropdownMenuButton>
-    </Tooltip>
-  )
 }
 
 type WordCountMenuProps = { wordCount: WordCount }

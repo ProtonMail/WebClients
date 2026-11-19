@@ -74,7 +74,7 @@
     "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/DocumentTitleDropdown.tsx",
     "sourceCommit": "e485f5ff7a350db5dbdd68c1ebbffbef08ffe5ff",
     "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
-    "notes": "The menu, its test ids, the version and debug key chords and the word-count submenu, extended in later doc2 commits with the source unchanged. Sheets items dropped; items not built for doc2 yet are stubs."
+    "notes": "The menu, its test ids, the version and debug key chords and the word-count submenu, extended in later doc2 commits with the source unchanged. Sheets items dropped. See version history opens doc2's history, disabled until the editor shows the document, as Make a copy."
   },
   {
     "doc2": "__components/ErrorHeader.tsx",
@@ -93,6 +93,22 @@
     "sourceCommit": "f7ab3baa8b357a847de986f4af016fefbeb5ad98",
     "copiedIn": "6802af2d1ceaf734e4ef4b260ae210ed05d04e54",
     "notes": "The modal and its strings; prints only once the modal and the backdrop have finished exiting."
+  },
+  {
+    "doc2": "__components/HistoryTimeline.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryTimeline.tsx",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
+    "notes": "The timeline, on doc2's Revisions model."
+  },
+  {
+    "doc2": "__components/HistoryViewerModal.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryViewerModal.tsx",
+    "sourceCommit": "068a15c952ea72df34c8e663c6f72bfdb0a61ea8",
+    "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
+    "notes": "The fullscreen modal, its layout, timeline, view, exports and Debug Mode extras, for text documents only: no sheet branches, and no Make a copy or Restore this version yet. Exports through doc2's exportAndDownload with the document's name; a failed export is logged. Another revision's exports wait for its own view's editor, and a new batch granularity always shows a new view. The Debug Mode exports get their own test ids."
   },
   {
     "doc2": "__components/LoadingScreen.tsx",
@@ -142,6 +158,26 @@
     "notes": "The 1 s Saving\u2026 stays shown at least, so the pill doesn't flicker."
   },
   {
+    "doc2": "__components/SingleRevisionViewer.tsx",
+    "doc2Symbol": "createRevisionClientHandler",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/SingleRevisionViewer.tsx",
+    "sourceSymbol": "the orchestrator it hands ClientToEditorBridge",
+    "sourceCommit": "71c2c970a6af63160f385d775a902b93b5571be6",
+    "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
+    "notes": "The flag check and the error report as a partial client handler for doc2's bridge, in place of an orchestrator."
+  },
+  {
+    "doc2": "__components/SingleRevisionViewer.tsx",
+    "doc2Symbol": "SingleRevisionViewer",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/SingleRevisionViewer.tsx",
+    "sourceSymbol": "SingleRevisionViewer",
+    "sourceCommit": "71c2c970a6af63160f385d775a902b93b5571be6",
+    "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
+    "notes": "On doc2's ClientEditorBridge, destroyed with the view; text documents only, and doc2's editor dark mode."
+  },
+  {
     "doc2": "__components/TrashedDocumentModal.tsx",
     "kind": "copy",
     "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/TrashedDocumentModal.tsx",
@@ -167,12 +203,28 @@
     "notes": "Takes the counts as a prop instead of reading docs-core's event bus."
   },
   {
+    "doc2": "__utils/BatchDocumentUpdates.ts",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/VersionHistory/BatchDocumentUpdates.ts",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
+    "notes": "Verbatim but for docs-core's use case interface."
+  },
+  {
     "doc2": "__utils/ClientEditorBridge.ts",
     "kind": "adaptation",
     "source": "packages/docs-core/lib/Bridge/ClientToEditorBridge.ts",
     "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
     "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
-    "notes": "Message dispatch near-verbatim. No synced-state subscriptions, orchestrator or devtools filter."
+    "notes": "Message dispatch near-verbatim. No synced-state subscriptions, orchestrator or devtools filter. Takes a partial client handler, as the revision view's: a call it has no method for gets no reply."
+  },
+  {
+    "doc2": "__utils/DateFormatter.ts",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/VersionHistory/DateFormatter.ts",
+    "sourceCommit": "1e89eb3248970555f1e16cdad079ea4f0b18d01b",
+    "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
+    "notes": "Without formatDateOrTimeIfToday, which the history doesn't use."
   },
   {
     "doc2": "__utils/EditorInvoker.ts",
@@ -180,7 +232,26 @@
     "source": "packages/docs-core/lib/Bridge/EditorInvoker.ts",
     "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
     "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
-    "notes": "Only the methods doc2 calls, added as doc2 needed them through 6802af2d1ce with the source unchanged. A call the editor doesn't answer within EDITOR_CALL_TIMEOUT_MS rejects instead of waiting forever."
+    "notes": "Only the methods doc2 calls, added as doc2 needed them through 6802af2d1ce, and getDocumentState for the version history, with the source unchanged. A call the editor doesn't answer within EDITOR_CALL_TIMEOUT_MS rejects instead of waiting forever."
+  },
+  {
+    "doc2": "__utils/NativeVersionHistory.ts",
+    "doc2Symbol": "NativeVersionHistory",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/VersionHistory/NativeVersionHistory.ts",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
+    "notes": "Over the SDK's HistoryEntry[]; no document type, so always ten entries a revision, the text document threshold."
+  },
+  {
+    "doc2": "__utils/NativeVersionHistory.ts",
+    "doc2Symbol": "createVersionHistory",
+    "kind": "mirror",
+    "source": "packages/docs-core/lib/AuthenticatedDocController/AuthenticatedDocController.ts",
+    "sourceSymbol": "getVersionHistory",
+    "sourceCommit": "72e87593350d92420b86613631fd2ed9ae3af54a",
+    "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
+    "notes": "No version history for an empty log; the entries come from the session's History Log instead of the base commit and the controller's own list."
   },
   {
     "doc2": "__utils/UpdateRecorder.ts",
@@ -191,6 +262,14 @@
     "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
     "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
     "notes": "The 2.5 s window doc2's own updates are merged into, so the recorded timeline has /doc's granularity."
+  },
+  {
+    "doc2": "__utils/VersionHistoryBatch.ts",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/VersionHistory/VersionHistoryBatch.ts",
+    "sourceCommit": "313564b7b0f4f61765d39b192d03168ad65f3d2d",
+    "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
+    "notes": "The types only, over the SDK's HistoryEntry; no getVersionHistoryUpdatesFromCommit, as the SDK hands decompressed updates."
   },
   {
     "doc2": "__utils/createClientHandler.ts",

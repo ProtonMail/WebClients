@@ -22,7 +22,8 @@ export class ClientEditorBridge {
 
   constructor(
     private readonly editorFrame: HTMLIFrameElement,
-    private readonly clientHandler: ClientHandler,
+    /** The calls the client answers; a view that needs only a few, as the revision view, leaves the others out */
+    private readonly clientHandler: Partial<ClientHandler>,
     private readonly logger: LoggerInterface,
   ) {
     this.editorInvoker = new EditorInvoker(editorFrame)
