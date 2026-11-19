@@ -506,21 +506,35 @@ describe('switchPlan', () => {
         });
     });
 
-    it('should not transfer lumo addons if the user already has lumo on mobile (multi-subs)', () => {
-        const subscription = buildSubscription(PLANS.LUMO, {
-            External: SubscriptionPlatform.iOS,
+    describe('a web subscription with the Lumo addon', () => {
+        const webMailPlusWithLumo = buildSubscription({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 });
+        const mobileLumoPlus = buildSubscription(PLANS.LUMO, { External: SubscriptionPlatform.iOS });
+
+        it('should transfer the lumo addon to the new plan', () => {
+            expect(
+                switchPlan({
+                    multiSubscriptionContext: buildMultiSubscriptionContext([webMailPlusWithLumo], false),
+                    subscription: webMailPlusWithLumo,
+                    newPlan: PLANS.BUNDLE,
+                    plans: getLongTestPlans(),
+                    organization: MOCK_ORGANIZATION,
+                })
+            ).toEqual({ [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 });
         });
 
-        expect(
-            switchPlan({
-                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
-                subscription,
-                newPlan: PLANS.MAIL,
-                plans: getLongTestPlans(),
-                organization: MOCK_ORGANIZATION,
-            })
-        ).toEqual({
-            [PLANS.MAIL]: 1,
+        it('should not transfer the lumo addon when another subscription of the user is lumo on mobile', () => {
+            expect(
+                switchPlan({
+                    multiSubscriptionContext: buildMultiSubscriptionContext(
+                        [webMailPlusWithLumo, mobileLumoPlus],
+                        false
+                    ),
+                    subscription: webMailPlusWithLumo,
+                    newPlan: PLANS.BUNDLE,
+                    plans: getLongTestPlans(),
+                    organization: MOCK_ORGANIZATION,
+                })
+            ).toEqual({ [PLANS.BUNDLE]: 1 });
         });
     });
 

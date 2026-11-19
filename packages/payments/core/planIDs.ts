@@ -11,13 +11,13 @@ import { getDefaultMainCurrency } from './currencies';
 import type { FeatureLimitKey, FreeSubscription, PlanIDs } from './interface';
 import { getSupportedAddons, isAddonType } from './plan/addons';
 import { getPlanFeatureLimit, getPlansLimit } from './plan/feature-limits';
-import { getSubscriptionsArray, isManagedExternally } from './subscription/helpers/external-management';
+import { isManagedExternally } from './subscription/helpers/external-management';
 import { getPlanIDs } from './subscription/helpers/plan-ids';
 import type { Subscription } from './subscription/interface';
 import { isLumoAddonExcluded } from './subscription/lumo-purchase-rules';
 import type { MultiSubscriptionContext } from './subscription/multi-subscription-context';
 import { SelectedPlan } from './subscription/selected-plan';
-import { isFreeSubscription, isValidPlanName } from './type-guards';
+import { isValidPlanName } from './type-guards';
 
 export { getPlanFromIDs, hasFreePlanIDs, hasPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 
@@ -407,8 +407,9 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
     // This code isn't exactly scalable in case if we allow more combinations of multi-subs. Perhaps in the future
     // we can remove addons from the resulting newPlanIDs instead of manipulating the dontTransferAddons set.
     {
-        const multisubs = subscription && !isFreeSubscription(subscription) ? getSubscriptionsArray(subscription) : [];
-        const hasExternallyManagedLumo = multisubs.some((sub) => isManagedExternally(sub) && hasLumo(sub));
+        const hasExternallyManagedLumo = multiSubscriptionContext.subscriptions.some(
+            (sub) => isManagedExternally(sub) && hasLumo(sub)
+        );
         if (hasExternallyManagedLumo) {
             dontTransferAddons.add(ADDON_PREFIXES.LUMO);
         }
