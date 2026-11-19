@@ -45,13 +45,12 @@ const PublicAppSignIn = () => {
         onSessionExpired,
     };
 
-    const signIn = <SignInContainer {...signInProps} />;
     // The Spaces sign-in is only built in some releases; Spaces uses the normal sign-in without it
     if (SpacesSignIn && getIsSpacesApp(toApp)) {
-        return <SpacesSignIn {...signInProps} fallback={signIn} />;
+        return <SpacesSignIn {...signInProps} />;
     }
 
-    return signIn;
+    return <SignInContainer {...signInProps} />;
 };
 
 export default PublicAppSignIn;
