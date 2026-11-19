@@ -26,6 +26,7 @@ import clsx from '@proton/utils/clsx';
 import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { useHelpAndFeedback } from '../../hooks/useHelpAndFeedback';
 import { MeetSignIn } from '../SignIn/SignIn';
+import { MoreOptionsDropdown } from './MoreOptionsDropdown';
 import { SettingsDropdown } from './SettingsDropdown';
 import { useIsTextTruncated } from './useIsTextTruncated';
 
@@ -167,34 +168,46 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                                                 <IcUserPlus size={5} color="var(--icon-color)" />
                                             </Button>
                                         </Tooltip>
-                                        <Tooltip title={c('Action').t`Help and feedback`}>
-                                            <Button
-                                                shape="ghost"
-                                                className="settings-button settings-button-icon p-0 flex items-center justify-center shrink-0"
-                                                aria-label={c('Action').t`Help and feedback`}
-                                                onClick={helpAndFeedback.openHelpAndFeedback}
-                                            >
-                                                <IcQuestionCircle size={5} color="var(--icon-color)" />
-                                            </Button>
-                                        </Tooltip>
+                                    </>
+                                ) : (
+                                    <UserDropdown
+                                        app={APPS.PROTONMEET}
+                                        logoutRedirectUrl={logoutRedirectUrl}
+                                        extraSessionForkData={{ returnUrl: switchAccountReturnPath }}
+                                        sessionOptions={
+                                            switchAccountReturnPath
+                                                ? { path: switchAccountReturnPath, target: '_self' }
+                                                : undefined
+                                        }
+                                    />
+                                )}
+                                {isJoinPage ? (
+                                    <>
+                                        <MoreOptionsDropdown onHelpAndFeedback={helpAndFeedback.openHelpAndFeedback} />
+                                        <CloseButton
+                                            onClose={() => history.push('/dashboard')}
+                                            className="settings-button settings-button-icon join-page-header-button flex items-center justify-center"
+                                            iconSize={5}
+                                        />
                                     </>
                                 ) : (
                                     <>
-                                        <UserDropdown
-                                            app={APPS.PROTONMEET}
-                                            logoutRedirectUrl={logoutRedirectUrl}
-                                            extraSessionForkData={{ returnUrl: switchAccountReturnPath }}
-                                            sessionOptions={
-                                                switchAccountReturnPath
-                                                    ? { path: switchAccountReturnPath, target: '_self' }
-                                                    : undefined
-                                            }
-                                        />
-                                        <SettingsDropdown />
+                                        {isGuest ? (
+                                            <Tooltip title={c('Action').t`Help and feedback`}>
+                                                <Button
+                                                    shape="ghost"
+                                                    className="settings-button settings-button-icon p-0 flex items-center justify-center shrink-0"
+                                                    aria-label={c('Action').t`Help and feedback`}
+                                                    onClick={helpAndFeedback.openHelpAndFeedback}
+                                                >
+                                                    <IcQuestionCircle size={5} color="var(--icon-color)" />
+                                                </Button>
+                                            </Tooltip>
+                                        ) : (
+                                            <SettingsDropdown />
+                                        )}
+                                        {isSchedulePage && <CloseButton onClose={() => history.push('/dashboard')} />}
                                     </>
-                                )}
-                                {(isJoinPage || isSchedulePage) && (
-                                    <CloseButton onClose={() => history.push('/dashboard')} />
                                 )}
                             </div>
                         </div>
