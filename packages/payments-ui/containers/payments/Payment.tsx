@@ -18,7 +18,7 @@ import type { BitcoinHook } from '@proton/payments-hooks/react-extensions/useBit
 import type { ChargebeeCardProcessorHook } from '@proton/payments-hooks/react-extensions/useChargebeeCard';
 import type { ChargebeeIdealProcessorHook } from '@proton/payments-hooks/react-extensions/useChargebeeIdeal';
 import type { ChargebeeDirectDebitProcessorHook } from '@proton/payments-hooks/react-extensions/useSepaDirectDebit';
-import { getMinCreditAmount, getMinDonationAmount } from '@proton/payments/core/amount-limits';
+import { getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import type { BillingAddressStatus } from '@proton/payments/core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { savedMethodRequires3DS } from '@proton/payments/core/createPaymentToken';
@@ -174,19 +174,6 @@ export const PaymentsNoApi = ({
         );
     }
 
-    const minDonationAmount = getMinDonationAmount(currency);
-    if (flow === 'reservation-donation' && amount < minDonationAmount) {
-        const price = (
-            <Price key="price" currency={currency}>
-                {minDonationAmount}
-            </Price>
-        );
-        return (
-            <Banner className="mb-4" variant={BannerVariants.DANGER}>{c('Error')
-                .jt`The minimum donation amount is ${price}`}</Banner>
-        );
-    }
-
     if (loading) {
         return <Loader />;
     }
@@ -201,8 +188,7 @@ export const PaymentsNoApi = ({
         isSignupVpn ||
         isSignupWallet ||
         flow === 'signup-v2' ||
-        flow === 'signup-v2-upgrade' ||
-        flow === 'reservation-donation'
+        flow === 'signup-v2-upgrade'
     );
 
     const sharedCbProps: Pick<

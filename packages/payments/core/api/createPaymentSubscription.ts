@@ -102,9 +102,9 @@ export function getLifetimeProductType(data: Pick<SubscribeData, 'Plans'>) {
 }
 
 /**
- * Builds the request config for payments/v5/products (used by buyProduct and by donation capture).
+ * Builds the request config for payments/v5/products (used by buyProduct and getBuyLumoCreditConfig).
  */
-export function getBuyProductConfig(product: ProductParam, params: BuyProductConfigParams) {
+function getBuyProductConfig(product: ProductParam, params: BuyProductConfigParams) {
     const url = 'payments/v5/products';
     return {
         url,

@@ -118,7 +118,8 @@ const bitcoinEnabledFlows: PaymentMethodFlow[] = [
     'subscription',
 ];
 
-const applePayEnabledFlows: PaymentMethodFlow[] = [
+/** Flows that offer Apple Pay and Google Pay. */
+const walletPaymentEnabledFlows: PaymentMethodFlow[] = [
     'signup',
     'signup-pass',
     'signup-pass-upgrade',
@@ -129,8 +130,6 @@ const applePayEnabledFlows: PaymentMethodFlow[] = [
     'subscription',
     'invoice',
 ];
-
-const googlePayEnabledFlows: PaymentMethodFlow[] = [...applePayEnabledFlows, 'reservation-donation'];
 
 const isB2BPlan = ({ selectedPlanName }: PaymentMethodsContext) =>
     selectedPlanName ? getIsB2BAudienceFromPlan(selectedPlanName) : false;
@@ -233,14 +232,14 @@ const isApplePayAvailable = ({
 }: PaymentMethodsContext) =>
     paymentStatus.VendorStates.Apple &&
     amount >= getMinApplePayAmount(currency) &&
-    applePayEnabledFlows.includes(flow) &&
+    walletPaymentEnabledFlows.includes(flow) &&
     !!canUseApplePay &&
     !isTrial;
 
 const isGooglePayAvailable = ({ paymentStatus, amount, currency, flow, isTrial }: PaymentMethodsContext) =>
     paymentStatus.VendorStates.Google &&
     amount >= getMinGooglePayAmount(currency) &&
-    googlePayEnabledFlows.includes(flow) &&
+    walletPaymentEnabledFlows.includes(flow) &&
     !isTrial;
 
 const isChargebeeIdealAvailable = (context: PaymentMethodsContext) => {

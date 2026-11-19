@@ -61,7 +61,6 @@ const ALL_FLOWS = Object.keys({
     subscription: true,
     'add-card': true,
     'add-paypal': true,
-    'reservation-donation': true,
 } satisfies Record<PaymentMethodFlow, true>) as PaymentMethodFlow[];
 
 const ALL_METHOD_TYPES: PlainPaymentMethodType[] = Object.values(PAYMENT_METHOD_TYPES);
@@ -1922,7 +1921,6 @@ describe('availability per flow', () => {
             'signup-vpn',
             'subscription',
             'invoice',
-            'reservation-donation',
         ],
     };
 
@@ -2165,13 +2163,6 @@ describe('Google Pay', () => {
         const paymentStatus = { ...status, VendorStates: { ...status.VendorStates, Google: false } };
 
         expect(hasNewMethod(PAYMENT_METHOD_TYPES.GOOGLE_PAY, { ...permissive, paymentStatus })).toBe(false);
-    });
-
-    it('should be offered for reservation-donation while Apple Pay is not', () => {
-        const overrides = { ...permissive, flow: 'reservation-donation' as PaymentMethodFlow };
-
-        expect(hasNewMethod(PAYMENT_METHOD_TYPES.GOOGLE_PAY, overrides)).toBe(true);
-        expect(hasNewMethod(PAYMENT_METHOD_TYPES.APPLE_PAY, overrides)).toBe(false);
     });
 });
 

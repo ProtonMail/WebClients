@@ -268,8 +268,6 @@ export type PaymentTelemetryContext =
     | 'ctx-signup-referral'
     /** Context-based business referral signup */
     | 'ctx-signup-business-referral'
-    /** Context-based email reservation */
-    | 'ctx-email-reservation'
     /** Subscription modification modal for existing users */
     | 'subscription-modification'
     /** Legacy Upgrade settings page at /{product}/upgrade */

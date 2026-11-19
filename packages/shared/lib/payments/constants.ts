@@ -27,7 +27,6 @@ export const signupFlows: readonly PaymentMethodFlow[] = Object.freeze([
     'signup-vpn',
     'signup-v2',
     'signup-v2-upgrade',
-    'reservation-donation',
 ]);
 export enum Autopay {
     DISABLE = 0,
