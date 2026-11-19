@@ -68,16 +68,19 @@ const checkResponse = (query: any) => ({
 
 const getCycleMapping = () => {
     const { subscriptionData } = createMockModel();
-    const mapping = (cycle: CYCLE) => ({
-        planIDs: { [PLANS.VPN2024]: 1 },
+    const mapping = (planName: PLANS, cycle: CYCLE) => ({
+        planIDs: { [planName]: 1 },
         checkResult: { ...subscriptionData.checkResult, Cycle: cycle },
     });
-    return {
-        [PLANS.VPN2024]: Object.fromEntries(
+    const planMapping = (planName: PLANS) =>
+        Object.fromEntries(
             Object.values(CYCLE)
                 .filter(Number.isInteger)
-                .map((cycle) => [cycle, mapping(cycle as CYCLE)])
-        ),
+                .map((cycle) => [cycle, mapping(planName, cycle as CYCLE)])
+        );
+    return {
+        [PLANS.VPN2024]: planMapping(PLANS.VPN2024),
+        [PLANS.BUNDLE]: planMapping(PLANS.BUNDLE),
     };
 };
 
@@ -92,7 +95,7 @@ const expectedPayload = (overrides: Record<string, unknown>) => ({
     ...overrides,
 });
 
-const Harness = () => {
+const Harness = ({ showThreePlans = false, coupon }: { showThreePlans?: boolean; coupon?: COUPON_CODES }) => {
     const [model, setModel] = useState(() => ({
         ...createMockModel(),
         subscriptionDataCycleMapping: getCycleMapping(),
@@ -103,6 +106,10 @@ const Harness = () => {
             ...createMockModel().subscriptionData,
             planIDs: { [PLANS.VPN2024]: 1 },
             vatNumber: 'VAT-123',
+            checkResult: {
+                ...createMockModel().subscriptionData.checkResult,
+                Coupon: coupon ? { Code: coupon, Description: '', MaximumRedemptionsPerUser: null } : null,
+            },
         },
     }));
 
@@ -114,6 +121,7 @@ const Harness = () => {
                 selectedPlan={PLANS_MAP[PLANS.VPN2024] as any}
                 cycleData={model.cycleData}
                 isB2bPlan={false}
+                showThreePlans={showThreePlans}
                 upsellShortPlan={undefined}
                 onComplete={jest.fn()}
                 onCurrencyChange={async () => {}}
@@ -184,5 +192,70 @@ describe('single-signup Step1 subscription check payload', () => {
 
         await waitFor(() => expect(requests).toHaveLength(1));
         expect(requests[0]).toEqual(expectedPayload({}));
+    });
+});
+
+describe('single-signup Step1 three plans', () => {
+    const requests: any[] = [];
+
+    beforeEach(() => {
+        requests.length = 0;
+        addApiMock(
+            CHECK_URL,
+            (query: any) => {
+                requests.push(query.data);
+                return checkResponse(query);
+            },
+            'post'
+        );
+    });
+
+    afterEach(() => {
+        clearApiMocks();
+    });
+
+    it('keeps the regular plan selection outside of the experiment', async () => {
+        renderWithProviders(<Harness />, { preloadedState: { staticExperiments: { PaypalFirst: 'disabled' } } });
+
+        expect(await screen.findByText('change cycle')).toBeInTheDocument();
+        expect(screen.queryByTestId(`three-plans-card-${PLANS.VPN2024}`)).not.toBeInTheDocument();
+    });
+
+    it('shows the Free, VPN Plus and Proton Unlimited cards', async () => {
+        renderWithProviders(<Harness showThreePlans />, {
+            preloadedState: { staticExperiments: { PaypalFirst: 'disabled' } },
+        });
+
+        expect(await screen.findByTestId(`three-plans-card-${PLANS.FREE}`)).toBeInTheDocument();
+        expect(screen.getByTestId(`three-plans-card-${PLANS.VPN2024}`)).toBeInTheDocument();
+        expect(screen.getByTestId(`three-plans-card-${PLANS.BUNDLE}`)).toBeInTheDocument();
+        expect(screen.queryByText('change cycle')).not.toBeInTheDocument();
+    });
+
+    it('checks Proton Unlimited without the coupon of VPN Plus', async () => {
+        renderWithProviders(<Harness showThreePlans coupon={COUPON_CODES.VPN_INTRO_2025} />, {
+            preloadedState: { staticExperiments: { PaypalFirst: 'disabled' } },
+        });
+
+        await userEvent.click(await screen.findByTestId(`three-plans-select-${PLANS.BUNDLE}`));
+
+        await waitFor(() => expect(requests).toHaveLength(1));
+        expect(requests[0].Plans).toEqual({ [PLANS.BUNDLE]: 1 });
+        expect(requests[0].CouponCode).toBeUndefined();
+    });
+
+    it('keeps the code entered by the user when changing plan', async () => {
+        renderWithProviders(<Harness showThreePlans coupon={COUPON_CODES.VPN_INTRO_2025} />, {
+            preloadedState: { staticExperiments: { PaypalFirst: 'disabled' } },
+        });
+
+        await userEvent.click(await screen.findByText('apply code'));
+        await waitFor(() => expect(requests).toHaveLength(1));
+
+        await userEvent.click(screen.getByTestId(`three-plans-select-${PLANS.BUNDLE}`));
+
+        await waitFor(() => expect(requests).toHaveLength(2));
+        expect(requests[1].Plans).toEqual({ [PLANS.BUNDLE]: 1 });
+        expect(requests[1].CouponCode).toBe('GIFT10');
     });
 });

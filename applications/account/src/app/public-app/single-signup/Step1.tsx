@@ -106,6 +106,7 @@ import PayButtonSuffix from './PayButtonSuffix';
 import PaymentSummary from './PaymentSummary';
 import RightPlanSummary from './RightPlanSummary';
 import SignIntoLink from './SignIntoLink';
+import ThreePlansSelector from './ThreePlansSelector';
 import VPNPassUpsellToggle from './VPNPassUpsellButton';
 import { VpnPassBundleUpsell } from './VpnPassBundleUpsell';
 import swissFlag from './flag.svg';
@@ -174,6 +175,7 @@ const Step1 = ({
     selectedPlan,
     cycleData,
     isB2bPlan,
+    showThreePlans,
     background,
     onComplete,
     onCurrencyChange,
@@ -192,6 +194,7 @@ const Step1 = ({
     selectedPlan: StrictPlan;
     cycleData: { cycles: Cycle[]; upsellCycle: Cycle };
     isB2bPlan: boolean;
+    showThreePlans: boolean;
     background?: Background;
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
     onComplete: (
@@ -234,6 +237,8 @@ const Step1 = ({
     const [toggleUpsell, setToggleUpsell] = useState<{ from: CYCLE; to: CYCLE } | undefined>(undefined);
     const accountDetailsRef = useRef<AccountStepDetailsRef>(undefined);
     const [couponCode, setCouponCode] = useState(model.subscriptionData.checkResult.Coupon?.Code);
+    // Whether couponCode was entered by the user, rather than the coupon of the first check
+    const hasChangedCouponRef = useRef(false);
     const { viewportWidth } = activeBreakpoint;
     const { APP_NAME } = useConfig();
 
@@ -539,8 +544,18 @@ const Step1 = ({
 
             setOptimisticDiff(newOptimistic);
 
-            const coupon =
-                couponCode || subscriptionMapping?.checkResult.Coupon?.Code || options.checkResult.Coupon?.Code;
+            const coupon = (() => {
+                // The plan cards show the prefetched price, so charge its coupon too. Otherwise the automatic
+                // coupon of VPN Plus would be sent for Proton Unlimited. Without a prefetched price,
+                // getSubscriptionPrices still adds the automatic coupon of the new selection.
+                if (showThreePlans) {
+                    if (hasChangedCouponRef.current) {
+                        return couponCode;
+                    }
+                    return subscriptionMapping?.checkResult.Coupon?.Code;
+                }
+                return couponCode || subscriptionMapping?.checkResult.Coupon?.Code || options.checkResult.Coupon?.Code;
+            })();
 
             const checkResult = await getSubscriptionPrices({
                 paymentsApi: getPaymentsApi(silentApi),
@@ -655,6 +670,7 @@ const Step1 = ({
     };
 
     const handleChangeCoupon = (coupon: string | undefined) => {
+        hasChangedCouponRef.current = true;
         setCouponCode(coupon);
         reportEstimationChange('coupon_changed', {
             selectedCoupon: coupon,
@@ -673,6 +689,21 @@ const Step1 = ({
         withCheckingTrial(resultPromise).catch(noop);
         const result = await resultPromise;
         setCheckTrialResult(result);
+    };
+
+    const handleSelectFree = async () => {
+        void measure({
+            event: TelemetryAccountSignupEvents.planSelect,
+            dimensions: { plan: PLANS.FREE },
+        });
+        try {
+            await fetchTrialPrice();
+            setUpsellModal(true);
+        } catch {
+            // If the check call fails, fall back to free signup
+            // rather than showing a broken offer.
+            void handleChangePlanIds({}, PLANS.FREE);
+        }
     };
 
     const billingAddressHook = useBillingAddress({
@@ -1073,6 +1104,28 @@ const Step1 = ({
         />
     );
 
+    const planSelectionTitle = (() => {
+        if (upsellToVPNPassBundle) {
+            return c('Header').t`Select your deal`;
+        }
+
+        if (isBlackFriday) {
+            // if (isBlackFridayPeriod) {
+            //     return c('bf2023: header').t`Select your Black Friday offer`;
+            // }
+            // if (isCyberWeekPeriod) {
+            //     return c('bf2023: header').t`Select your Cyber Week offer`;
+            // }
+            // return c('bf2023: header').t`Select your End of Year offer`;
+            return c('bf2023: header').t`Select your Black Friday offer`;
+        }
+
+        if (showThreePlans) {
+            return c('pass_signup_2023: Header').t`Select your plan`;
+        }
+        return c('Header').t`Select your pricing plan`;
+    })();
+
     const loadingPaymentsForm = isLoadingModelDeps;
 
     const title = (() => {
@@ -1256,28 +1309,44 @@ const Step1 = ({
                         })}
                     </div>
                 )}
-                {showCycleAndSelectors && (
+                {showCycleAndSelectors && showThreePlans && (
                     <Box className={`mt-8 w-full ${padding}`}>
-                        <BoxHeader
-                            title={(() => {
-                                if (upsellToVPNPassBundle) {
-                                    return c('Header').t`Select your deal`;
+                        <ThreePlansSelector
+                            title={planSelectionTitle}
+                            currencySelector={currencySelector}
+                            footer={
+                                <div className="flex justify-center mt-10 text-sm">
+                                    <Guarantee />
+                                </div>
+                            }
+                            plansMap={plansMap}
+                            subscriptionDataCycleMapping={model.subscriptionDataCycleMapping}
+                            selectedPlanName={options.plan.Name}
+                            cycle={options.cycle}
+                            cycles={cycleData.cycles}
+                            currency={options.currency}
+                            loading={isLoadingModelDeps}
+                            disabled={isLoadingModelDeps || checkingTrial}
+                            hideFreePlan={!!hideFreePlan}
+                            onChangeCycle={(cycle) => {
+                                handleUpdate('plan');
+                                setToggleUpsell(undefined);
+                                handleChangeCycle({ cycle });
+                            }}
+                            onSelectPlan={(planName) => {
+                                setToggleUpsell(undefined);
+                                if (options.plan.Name !== planName) {
+                                    void handleChangePlanIds({ [planName]: 1 }, planName);
                                 }
-
-                                if (isBlackFriday) {
-                                    // if (isBlackFridayPeriod) {
-                                    //     return c('bf2023: header').t`Select your Black Friday offer`;
-                                    // }
-                                    // if (isCyberWeekPeriod) {
-                                    //     return c('bf2023: header').t`Select your Cyber Week offer`;
-                                    // }
-                                    // return c('bf2023: header').t`Select your End of Year offer`;
-                                    return c('bf2023: header').t`Select your Black Friday offer`;
-                                }
-                                return c('Header').t`Select your pricing plan`;
-                            })()}
-                            right={currencySelector}
+                                accountDetailsRef.current?.scrollInto('email');
+                            }}
+                            onSelectFree={handleSelectFree}
                         />
+                    </Box>
+                )}
+                {showCycleAndSelectors && !showThreePlans && (
+                    <Box className={`mt-8 w-full ${padding}`}>
+                        <BoxHeader title={planSelectionTitle} right={currencySelector} />
                         <BoxContent>
                             <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                                 <CycleSelector
@@ -1336,20 +1405,7 @@ const Step1 = ({
                                         <InlineLinkButton
                                             className="color-weak"
                                             disabled={checkingTrial}
-                                            onClick={async () => {
-                                                void measure({
-                                                    event: TelemetryAccountSignupEvents.planSelect,
-                                                    dimensions: { plan: PLANS.FREE },
-                                                });
-                                                try {
-                                                    await fetchTrialPrice();
-                                                    setUpsellModal(true);
-                                                } catch {
-                                                    // If the check call fails, fall back to free signup
-                                                    // rather than showing a broken offer.
-                                                    void handleChangePlanIds({}, PLANS.FREE);
-                                                }
-                                            }}
+                                            onClick={handleSelectFree}
                                         >
                                             {c('Action').t`sign up for free`}
                                         </InlineLinkButton>

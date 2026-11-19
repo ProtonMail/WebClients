@@ -97,6 +97,7 @@ import onboardingVPNWelcome2 from './illustration.svg';
 import type { VPNSignupMode, VPNSignupModel } from './interface';
 import type { TelemetryMeasurementData } from './measure';
 import { filterCycleDataByPlan, getCycleData } from './state';
+import { useVpnSignupThreePlans } from './useVpnSignupThreePlans';
 import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
 
 interface Props {
@@ -289,6 +290,19 @@ const SingleSignupContainer = ({
         setMode(getSignupMode(signupParameters.coupon, currency));
     };
 
+    const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
+    const upsellShortPlan = getUpsellShortPlan(selectedPlan);
+
+    const isB2bPlan = getIsVpnB2BPlan(selectedPlan.Name) || getIsB2BAudienceFromPlan(selectedPlan.Name);
+
+    const { variant: threePlansVariant, showThreePlans } = useVpnSignupThreePlans({
+        mode: model.mode,
+        isB2bPlan,
+        coupon: signupParameters.coupon,
+        trial: signupParameters.trial,
+        preSelectedPlan: signupParameters.preSelectedPlan,
+    });
+
     const measure = (data: TelemetryMeasurementData) => {
         const values = 'values' in data ? data.values : {};
         return sendTelemetryReport({
@@ -298,16 +312,12 @@ const SingleSignupContainer = ({
             dimensions: {
                 ...data.dimensions,
                 flow: model.mode === 'signup' ? 'vpn_signup_2step' : 'vpn_signup_3step',
+                ...(threePlansVariant && { three_plans_variant: threePlansVariant }),
             },
             values,
             delay: false,
         }).catch(noop);
     };
-
-    const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
-    const upsellShortPlan = getUpsellShortPlan(selectedPlan);
-
-    const isB2bPlan = getIsVpnB2BPlan(selectedPlan.Name) || getIsB2BAudienceFromPlan(selectedPlan.Name);
     const background = (() => {
         if (isB2bPlan) {
             return 'dark';
@@ -376,6 +386,8 @@ const SingleSignupContainer = ({
                     planIDs,
                     !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined,
                     !planIDs[PLANS.VPN_PASS_BUNDLE] ? { [PLANS.VPN_PASS_BUNDLE]: 1 } : undefined,
+                    // Prices of the Proton Unlimited card
+                    showThreePlans && !planIDs[PLANS.BUNDLE] ? { [PLANS.BUNDLE]: 1 } : undefined,
                 ].filter(isTruthy),
                 cycles: unique([cycle, ...filteredCycleData.cycles]),
                 coupon,
@@ -849,6 +861,7 @@ const SingleSignupContainer = ({
                     selectedPlan={selectedPlan}
                     cycleData={model.cycleData}
                     isB2bPlan={isB2bPlan}
+                    showThreePlans={showThreePlans}
                     background={background}
                     upsellShortPlan={upsellShortPlan}
                     model={model}
