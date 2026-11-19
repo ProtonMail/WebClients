@@ -12,4 +12,8 @@ export interface FormValues {
     waitingRoom?: WaitingRoomState;
 }
 
+type ValidatedField = 'meetingName' | 'startDate' | 'startTime' | 'endDate' | 'endTime' | 'timeZone';
+
+export type FormErrors = Partial<Record<ValidatedField, string | true>>;
+
 export type OnDateTimeChange = (params: { fieldName: string; value: Date | string | undefined }) => void;

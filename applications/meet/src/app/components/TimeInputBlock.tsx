@@ -1,7 +1,10 @@
 import type { ReactNode } from 'react';
 
+import { c } from 'ttag';
+
 import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
@@ -32,9 +35,14 @@ export const TimeInputBlock = ({
     timeFormat: SETTINGS_TIME_FORMAT;
     showIcon?: boolean;
     editableTimeZone?: boolean;
-    timeError?: boolean;
-    dateError?: boolean;
+    timeError?: string | boolean;
+    dateError?: string | boolean;
 }) => {
+    const labels =
+        name === 'start'
+            ? { date: c('Label').t`Start date`, time: c('Label').t`Start time` }
+            : { date: c('Label').t`End date`, time: c('Label').t`End time` };
+
     return (
         <div className="w-full flex flex-nowrap items-center gap-4">
             <IcClock
@@ -44,16 +52,19 @@ export const TimeInputBlock = ({
             />
             <div className="flex-1 flex flex-column *:min-size-auto md:flex-row flex-nowrap items-center gap-2">
                 <div
-                    className={clsx('flex-1 flex flex-nowrap items-center gap-2 ', showTimezones && 'grow-custom')}
+                    className={clsx('flex-1 flex flex-nowrap items-start gap-2', showTimezones && 'grow-custom')}
                     style={{ '--grow-custom': '1.25' }}
                 >
-                    <DateInputTwo
+                    <InputFieldTwo
+                        as={DateInputTwo}
                         id={`${name}Date`}
                         name={`${name}Date`}
+                        aria-label={labels.date}
                         min={new Date(Date.now() - 24 * 60 * 60 * 1000)}
                         preventValueReset
                         onChange={(value) => onDateTimeChange({ fieldName: `${name}Date`, value })}
-                        className="date-input flex-1"
+                        rootClassName="flex-1"
+                        className="date-input"
                         inputClassName="date-input"
                         value={values[`${name}Date`]}
                         dropdownClassName="create-container-dropdown"
@@ -62,6 +73,7 @@ export const TimeInputBlock = ({
                     <TimeInput
                         id={`${name}Time`}
                         name={`${name}Time`}
+                        aria-label={labels.time}
                         value={values[`${name}Time`]}
                         onChange={(value) => onDateTimeChange({ fieldName: `${name}Time`, value })}
                         options={timeOptions}

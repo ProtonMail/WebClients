@@ -32,7 +32,11 @@
 	}
 
 	.meeting-link-input-error {
-		inset-block-end: -1rem;
+		position: absolute;
+		inset-block-start: 100%;
+		inset-inline: 0;
+		margin-block-start: 0.5rem;
+		padding-inline-start: 0.25rem;
 		line-height: 1rem;
 	}
 }

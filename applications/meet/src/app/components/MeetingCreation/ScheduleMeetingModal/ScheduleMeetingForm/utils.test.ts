@@ -1,6 +1,7 @@
 import { CustomPasswordState, type Meeting, MeetingType } from '@proton/shared/lib/interfaces/Meet';
 
-import { combineDateAndTime, getEditValues, getInitialValues } from './utils';
+import type { FormValues } from './types';
+import { combineDateAndTime, getEditValues, getInitialValues, validate } from './utils';
 
 describe('combineDateAndTime', () => {
     afterEach(() => {
@@ -184,6 +185,62 @@ describe('getEditValues', () => {
                 endDate: new Date(2026, 10, 12),
                 endTime: '10:30',
             });
+        });
+    });
+});
+
+describe('validate', () => {
+    const validValues: FormValues = {
+        meetingName: 'Weekly sync',
+        startDate: new Date(2026, 10, 12),
+        startTime: '10:00',
+        endDate: new Date(2026, 10, 12),
+        endTime: '10:30',
+        timeZone: 'Europe/Zurich',
+        recurrence: 'NO_REPEAT',
+    };
+
+    it('reports no errors for a meeting that ends after it starts', () => {
+        expect(validate(validValues)).toEqual({});
+    });
+
+    it('asks for a meeting name when it is empty', () => {
+        expect(validate({ ...validValues, meetingName: '' })).toEqual({ meetingName: 'Enter a meeting name' });
+    });
+
+    it('asks for a date when the start or end date cannot be read', () => {
+        expect(
+            validate({
+                ...validValues,
+                startDate: undefined as unknown as Date,
+                endDate: undefined as unknown as Date,
+            })
+        ).toEqual({ startDate: 'Enter a date', endDate: 'Enter a date' });
+    });
+
+    it('reports an unreadable start time on the start time field', () => {
+        expect(validate({ ...validValues, startTime: '' })).toEqual({ startTime: 'Enter a time' });
+    });
+
+    it('reports an unreadable end time on the end time field', () => {
+        expect(validate({ ...validValues, endTime: '25:99' })).toEqual({ endTime: 'Enter a time' });
+    });
+
+    it('marks a time zone missing from the list without a message', () => {
+        expect(validate({ ...validValues, timeZone: 'Asia/Calcutta' })).toEqual({ timeZone: true });
+    });
+
+    it('explains on the end time and marks the start time when the end is earlier on the same day', () => {
+        expect(validate({ ...validValues, endTime: '09:00' })).toEqual({
+            endTime: 'End time must be after start time',
+            startTime: true,
+        });
+    });
+
+    it('explains on the end date and marks the start date when the end is on an earlier day', () => {
+        expect(validate({ ...validValues, endDate: new Date(2026, 10, 11), endTime: '11:00' })).toEqual({
+            endDate: 'End time must be after start time',
+            startDate: true,
         });
     });
 });

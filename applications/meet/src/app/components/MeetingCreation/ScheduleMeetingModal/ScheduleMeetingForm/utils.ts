@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { MINUTE } from '@proton/shared/lib/constants';
 import {
     convertUTCDateTimeToZone,
@@ -11,7 +13,7 @@ import { type Meeting, WaitingRoomState } from '@proton/shared/lib/interfaces/Me
 
 import { getNextOccurrence } from '../../../../utils/getNextOccurrence';
 import { isTimeZoneKnown } from '../../../../utils/zonedTime';
-import type { FormValues } from './types';
+import type { FormErrors, FormValues } from './types';
 
 const timeZoneOptions = getTimeZoneOptions();
 
@@ -78,19 +80,19 @@ const validateTime = (time?: string) => {
     return checkIfCorrectMinuteOrSeconds(parts[0]) && checkIfCorrectMinuteOrSeconds(parts[1]);
 };
 
-export const validate = (values: FormValues) => {
-    const errors: Record<string, boolean> = {};
+export const validate = (values: FormValues): FormErrors => {
+    const errors: FormErrors = {};
 
     if (!values.meetingName) {
-        errors.meetingName = true;
+        errors.meetingName = c('Error').t`Enter a meeting name`;
     }
 
     if (!validateDate(values.startDate)) {
-        errors.startDate = true;
+        errors.startDate = c('Error').t`Enter a date`;
     }
 
     if (!validateDate(values.endDate)) {
-        errors.endDate = true;
+        errors.endDate = c('Error').t`Enter a date`;
     }
 
     if (!validateTimeZone(values.timeZone)) {
@@ -98,29 +100,27 @@ export const validate = (values: FormValues) => {
     }
 
     if (!validateTime(values.startTime)) {
-        errors.time = true;
+        errors.startTime = c('Error').t`Enter a time`;
     }
 
     if (!validateTime(values.endTime)) {
-        errors.endTime = true;
+        errors.endTime = c('Error').t`Enter a time`;
     }
 
     if (
         combineDateAndTime(values.startDate, values.startTime, values.timeZone) >
         combineDateAndTime(values.endDate, values.endTime, values.timeZone)
     ) {
-        // Check if the dates are different
         const startDateOnly = new Date(values.startDate).setHours(0, 0, 0, 0);
         const endDateOnly = new Date(values.endDate).setHours(0, 0, 0, 0);
+        const endBeforeStartError = c('Error').t`End time must be after start time`;
 
         if (startDateOnly !== endDateOnly) {
-            // If dates are different, mark date fields as error
-            errors.endDate = true;
-            errors.startDate = true;
+            errors.endDate ??= endBeforeStartError;
+            errors.startDate ??= true;
         } else {
-            // If dates are the same, mark time fields as error
-            errors.endTime = true;
-            errors.startTime = true;
+            errors.endTime ??= endBeforeStartError;
+            errors.startTime ??= true;
         }
     }
 
