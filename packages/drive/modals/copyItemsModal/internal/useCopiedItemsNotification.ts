@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { showAggregatedErrorNotification } from '../../../legacy/errorHandling';
 import { getEllipsedName } from '../../../modules/intl';
-import { useListNotifications } from '../../../modules/notifications';
+import { useListNotifications } from '../../../modules/listNotifications';
 
 /**
  * Handles aggregation of success/error notifications for batch copy operations.
