@@ -1545,6 +1545,9 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Organisationen mit dem Add-on „Managed Service Provider“ können untergeordnete Organisationen anlegen und verwalten."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Plätze für den ${ LUMO_SHORT_APP_NAME }-Schreibassistenten"
       ]
     },
     "Alert": {
@@ -8201,6 +8204,9 @@
       ],
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
         "Dieser Ordner kann nach Abschluss des Imports geöffnet werden. Bislang wurde ${ importedSize } importiert. Du wirst per E-Mail benachrichtigt, sobald der Vorgang abgeschlossen ist."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Du kannst diesen Ordner öffnen, sobald der Import abgeschlossen ist. Wir schicken dir eine E-Mail, wenn er fertig ist."
       ]
     },
     "info": {

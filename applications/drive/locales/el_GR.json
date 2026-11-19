@@ -1557,6 +1557,13 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Οι οργανισμοί που διαθέτουν το πρόσθετο Πάροχος Διαχειριζόμενων Υπηρεσιών μπορούν να δημιουργούν και να διαχειρίζονται θυγατρικούς οργανισμούς."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέση βοηθού γραφής",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
       ]
     },
     "Alert": {
@@ -8231,6 +8238,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Οι θέσεις για βοηθούς συγγραφής δεν πωλούνται πλέον."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Μπορείτε να ανοίξετε αυτόν τον φάκελο μόλις ολοκληρωθεί η εισαγωγή. Θα σας στείλουμε ένα email όταν ολοκληρωθεί η διαδικασία."
       ]
     },
     "info": {

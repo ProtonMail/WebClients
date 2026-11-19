@@ -1593,6 +1593,15 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Organizácie s doplnkom „Poskytovateľ spravovaných služieb“ môžu vytvárať a spravovať dcérske organizácie."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licencií asistentov písania"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencia asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencie asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencií asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencií asistenta písania"
       ]
     },
     "Alert": {
@@ -8461,6 +8470,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Licencie pre asistentov písania už nie sú v predaji."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Tento priečinok si môžete otvoriť po dokončení importu. Akonáhle bude import hotový, pošleme vám email."
       ]
     },
     "info": {

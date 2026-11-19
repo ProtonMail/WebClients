@@ -381,7 +381,7 @@
         "Editar"
       ],
       "Edit billing address": [
-        "Editar o endereço da fatura"
+        "Editar a morada da fatura"
       ],
       "Edit email address": [
         "Editar o endereço de e-mail"
@@ -543,7 +543,7 @@
         "Aderir ao álbum"
       ],
       "Keep my subscription": [
-        "Manter a minha assinatura"
+        "Manter a minha subscrição"
       ],
       "Later": [
         "Mais tarde"
@@ -4100,7 +4100,7 @@
         "Parte do ficheiro parece estar corrompida"
       ],
       "Signature is missing": [
-        "Assinatura em falta."
+        "Assinatura em falta"
       ],
       "This file has no version available to download": [
         "Este ficheiro não tem nenhuma versão disponível para descarregar"
@@ -10903,13 +10903,13 @@
         "A sua subscrição beneficia atualmente de um desconto. Ao aderir a esta nova promoção, o desconto atual deixará de ser aplicado."
       ],
       "${ formattedPrice } (excl. tax)": [
-        "${ formattedPrice } (excl. imposto)"
+        "${ formattedPrice } (excluindo imposto)"
       ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "Imposto de ${ rate }%: ${ taxAmountElement }"
       ],
       "Edit billing address": [
-        "Editar o endereço de faturação"
+        "Editar a morada de faturação"
       ],
       "Including ${ rate }% taxes": [
         "Incluindo impostos de ${ rate }%"
@@ -10918,7 +10918,7 @@
         "termos e condições"
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
-        "O preço com desconto especial é válido para o primeiro mês. Em seguida, será renovado automaticamente por ${ renewPriceStr } todos os meses. Pode cancelar a qualquer momento."
+        "O preço com desconto especial é válido para o primeiro mês. Depois, será renovado automaticamente por ${ renewPriceStr } todos os meses. Pode cancelar a qualquer momento."
       ],
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta ação expande a sua subscrição atual. Ser-lhe-á cobrado apenas o valor dos novos extras e do tempo restante do ciclo de faturação atual. A data de renovação da sua subscrição não será alterada."
@@ -13120,7 +13120,7 @@
         "Encontrada pasta duplicada"
       ],
       "Edit billing address": [
-        "Editar o endereço da fatura"
+        "Editar a morada da fatura"
       ],
       "Edit contact": [
         "Editar contacto"
@@ -13794,7 +13794,7 @@
         "Assinatura digital parcialmente verificada. Este ficheiro foi carregado com uma ligação de partilha acessível publicamente por um utilizador sem uma conta ${ BRAND_NAME }, pelo que a sua identidade não pode ser verificada."
       ],
       "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
-        "Assinatura digital parcialmente verificada. Esta pasta foi criada com uma ligação de partilha acessível publicamente por um utilizador sem uma conta ${ BRAND_NAME }, pelo que a sua identidade não pode ser verificada."
+        "Assinatura digital parcialmente verificada. Esta pasta foi criada com uma hiperligação de partilha acessível publicamente por um utilizador sem uma conta ${ BRAND_NAME }, pelo que a sua identidade não pode ser verificada."
       ],
       "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Assinatura digital parcialmente verificada. Esta pasta foi carregada com uma ligação de partilha acessível publicamente por um utilizador sem uma conta ${ BRAND_NAME }, pelo que a sua identidade não pode ser verificada."
