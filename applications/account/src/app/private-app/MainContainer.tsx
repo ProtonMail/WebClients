@@ -17,6 +17,7 @@ import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCa
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { usePasswordReminder } from '@proton/account/passwordReminder/hooks';
 import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
 import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
@@ -168,6 +169,7 @@ const MainContainer = () => {
     const hasPendingInvitations = invites.length > 0;
 
     const { isUserEligible: isReferralProgramEnabled } = useReferralUserEligible();
+    const { isAvailable: isPasswordReminderAvailable } = usePasswordReminder();
 
     const accountRecoveryRouterFlags: AccountRecoveryRouterFlags = {
         isDelegatedAccessAvailable: user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user),
@@ -193,6 +195,7 @@ const MainContainer = () => {
         showDriveDashboard,
         showDriveDashboardVariant: showDriveDashboardVariant.name,
         hasPendingInvitations,
+        isPasswordReminderAvailable,
     };
 
     const organizationSettingsRouterParams: OrganizationSettingsRouterParams = {

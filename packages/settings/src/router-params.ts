@@ -39,6 +39,7 @@ export type AccountSettingsRouterParams = {
     showDriveDashboardVariant: DriveDashboardVariant | 'disabled' | undefined;
     showGenericDashboard: boolean;
     hasPendingInvitations: boolean;
+    isPasswordReminderAvailable: boolean;
 };
 
 // Define the feature flag that are used in the account app

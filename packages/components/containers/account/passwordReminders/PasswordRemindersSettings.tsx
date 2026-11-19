@@ -22,7 +22,8 @@ import { SettingsIconRow } from '../SettingsIconRow';
 import { SettingsToggleRow } from '../SettingsToggleRow';
 import ConfirmDisablePasswordRemindersModal from './ConfirmDisablePasswordRemindersModal';
 
-const PasswordRemindersSettings = () => {
+/** Password check-ins toggle, without a card or icon so it can sit among other rows */
+export const PasswordRemindersRow = () => {
     const [userSettings] = useUserSettings();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
@@ -56,48 +57,59 @@ const PasswordRemindersSettings = () => {
             {renderConfirmDisablePasswordRemindersModal && (
                 <ConfirmDisablePasswordRemindersModal {...confirmDisablePasswordRemindersModal} />
             )}
-            <DashboardCard>
-                <DashboardCardContent>
-                    <SettingsIconRow icon={IcBell}>
-                        <SettingsToggleRow
-                            id="passwordRemindersToggle"
-                            label={
-                                <>
-                                    <SettingsToggleRow.Label>{c('Label')
-                                        .t`Password check-ins`}</SettingsToggleRow.Label>
-                                    <SettingsToggleRow.Description>
-                                        {c('Info')
-                                            .t`Periodically prompts you to verify your ${BRAND_NAME} password to ensure you don't forget it. You'll be asked less frequently over time.`}{' '}
-                                        <Href key="to-password-learn" href={getKnowledgeBaseUrl('/password-check-in')}>
-                                            {c('Link').t`Learn more`}
-                                        </Href>
-                                    </SettingsToggleRow.Description>
-                                </>
-                            }
-                            toggle={
-                                <EnforcedByOrganization enforced={isEnforcedByOrganization}>
-                                    <SettingsToggleRow.Toggle
-                                        loading={loadingPasswordReminders}
-                                        // When the org enforces check-ins, the member's opt-out is ignored
-                                        // server-side, so reminders are on regardless of their own flag.
-                                        checked={hasPasswordRemindersEnabled || isEnforcedByOrganization}
-                                        disabled={isEnforcedByOrganization}
-                                        onChange={({ target: { checked } }) => {
-                                            if (!checked) {
-                                                setConfirmDisablePasswordRemindersModalOpen(true);
-                                                return;
-                                            }
+            <SettingsToggleRow
+                id="passwordRemindersToggle"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>{c('Label').t`Password check-ins`}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            {c('Info')
+                                .t`Periodically prompts you to verify your ${BRAND_NAME} password to ensure you don't forget it. You'll be asked less frequently over time.`}{' '}
+                            <Href key="to-password-learn" href={getKnowledgeBaseUrl('/password-check-in')}>
+                                {c('Link').t`Learn more`}
+                            </Href>
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={
+                    <EnforcedByOrganization enforced={isEnforcedByOrganization}>
+                        <SettingsToggleRow.Toggle
+                            loading={loadingPasswordReminders}
+                            // When the org enforces check-ins, the member's opt-out is ignored
+                            // server-side, so reminders are on regardless of their own flag.
+                            checked={hasPasswordRemindersEnabled || isEnforcedByOrganization}
+                            disabled={isEnforcedByOrganization}
+                            onChange={({ target: { checked } }) => {
+                                if (!checked) {
+                                    setConfirmDisablePasswordRemindersModalOpen(true);
+                                    return;
+                                }
 
-                                            void withLoadingPasswordReminders(enablePasswordReminders());
-                                        }}
-                                    />
-                                </EnforcedByOrganization>
-                            }
+                                void withLoadingPasswordReminders(enablePasswordReminders());
+                            }}
                         />
-                    </SettingsIconRow>
-                </DashboardCardContent>
-            </DashboardCard>
+                    </EnforcedByOrganization>
+                }
+            />
         </>
+    );
+};
+
+const PasswordRemindersSettings = () => {
+    const { isAvailable } = usePasswordReminder();
+
+    if (!isAvailable) {
+        return null;
+    }
+
+    return (
+        <DashboardCard>
+            <DashboardCardContent>
+                <SettingsIconRow icon={IcBell}>
+                    <PasswordRemindersRow />
+                </SettingsIconRow>
+            </DashboardCardContent>
+        </DashboardCard>
     );
 };
 

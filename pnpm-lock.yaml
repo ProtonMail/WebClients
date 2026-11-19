@@ -10199,9 +10199,6 @@ importers:
       '@proton/wallet':
         specifier: workspace:^
         version: link:../wallet
-      '@types/history':
-        specifier: 'catalog:'
-        version: 4.7.11
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
@@ -10211,9 +10208,6 @@ importers:
       date-fns:
         specifier: 'catalog:'
         version: 4.4.0
-      history:
-        specifier: 'catalog:'
-        version: 4.10.1
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
