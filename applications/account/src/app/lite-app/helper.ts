@@ -36,6 +36,7 @@ const list: { value: string; product: ProductParam }[] = [
     { value: 'drive', product: APPS.PROTONDRIVE },
     { value: 'pass', product: APPS.PROTONPASS },
     { value: 'docs', product: APPS.PROTONDOCS },
+    { value: 'lumo', product: APPS.PROTONLUMO },
     { value: 'generic', product: 'generic' },
     { value: 'business', product: 'business' },
 ];
