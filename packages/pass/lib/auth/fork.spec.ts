@@ -44,7 +44,7 @@ describe('fork', () => {
     });
 
     describe('pullFork', () => {
-        const api = jest.fn().mockResolvedValue({}) as unknown as Api;
+        const api = vi.fn().mockResolvedValue({}) as unknown as Api;
 
         const payload: ConsumeForkPayload = {
             forkSecret: null,
@@ -57,7 +57,7 @@ describe('fork', () => {
             state: 'state',
         };
 
-        beforeEach(() => jest.clearAllMocks());
+        beforeEach(() => vi.clearAllMocks());
 
         test('should send the fork secret header when provided', async () => {
             await pullFork({ api, payload: { ...payload, forkSecret: 'secret' } });

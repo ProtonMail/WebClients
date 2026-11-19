@@ -2,15 +2,15 @@ import { createEventLimiter } from './limiter';
 
 describe('createEventLimiter', () => {
     beforeAll(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.clearAllTimers();
+        vi.clearAllTimers();
     });
 
     afterAll(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     test('should allow messages within limit', () => {
@@ -33,7 +33,7 @@ describe('createEventLimiter', () => {
         expect(limiter.allowMessage()).toBe(true);
         expect(limiter.allowMessage()).toBe(false);
 
-        jest.advanceTimersByTime(1000);
+        vi.advanceTimersByTime(1000);
         expect(limiter.allowMessage()).toBe(true);
         expect(limiter.allowMessage()).toBe(false);
     });
@@ -53,7 +53,7 @@ describe('createEventLimiter', () => {
         expect(limiter.allowMessage()).toBe(false);
         expect(limiter.allowMessage()).toBe(false);
 
-        jest.advanceTimersByTime(1000);
+        vi.advanceTimersByTime(1000);
         expect(limiter.allowMessage()).toBe(false);
     });
 
@@ -101,7 +101,7 @@ describe('createEventLimiter', () => {
         expect(limiter.allowMessage('key2')).toBe(false);
 
         /** override window resets after overridden windowMs, not base windowMs */
-        jest.advanceTimersByTime(500);
+        vi.advanceTimersByTime(500);
         expect(limiter.allowMessage('key1', { windowMax: 3, windowMs: 500 })).toBe(true);
         expect(limiter.allowMessage('key2')).toBe(false);
     });

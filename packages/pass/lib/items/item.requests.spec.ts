@@ -8,12 +8,12 @@ import { PassErrorCode } from '../api/errors';
 import { PassCrypto } from '../crypto';
 import { batchByShareId, intoRevisionID, moveItems, requestItem } from './item.requests';
 
-const api = jest.fn();
+const api = vi.fn();
 exposeApi(api as any);
 
-jest.mock('@proton/pass/lib/crypto', () => ({
+vi.mock('@proton/pass/lib/crypto', () => ({
     PassCrypto: {
-        moveItem: jest.fn(async ({ itemId, targetFolderId }) => ({
+        moveItem: vi.fn(async ({ itemId, targetFolderId }) => ({
             ItemID: itemId,
             ItemKeys: [{ KeyRotation: 1, Key: 'reencrypted' }],
             DestinationFolderID: targetFolderId ?? null,
@@ -21,8 +21,8 @@ jest.mock('@proton/pass/lib/crypto', () => ({
     },
 }));
 
-jest.mock('./item.parser', () => ({
-    parseItemRevision: jest.fn(async (shareId: string, item: ItemRevisionContentsResponse) => ({
+vi.mock('./item.parser', () => ({
+    parseItemRevision: vi.fn(async (shareId: string, item: ItemRevisionContentsResponse) => ({
         shareId,
         itemId: item.ItemID,
     })),
@@ -30,7 +30,7 @@ jest.mock('./item.parser', () => ({
 
 describe('Item requests', () => {
     describe('requestItem', () => {
-        afterEach(() => jest.clearAllMocks());
+        afterEach(() => vi.clearAllMocks());
 
         test('resolves `undefined` when the share has been removed', async () => {
             api.mockRejectedValue(createShareRemovedError(PassErrorCode.NOT_EXIST_SHARE));
@@ -87,7 +87,7 @@ describe('Item requests', () => {
     });
 
     describe('moveItems', () => {
-        afterEach(() => jest.clearAllMocks());
+        afterEach(() => vi.clearAllMocks());
 
         const mockApi = (moveResponse: any) =>
             api.mockImplementation(async ({ url }: { url: string }) => {
@@ -95,7 +95,7 @@ describe('Item requests', () => {
                 return moveResponse;
             });
 
-        const putCall = () => api.mock.calls.find(([{ method }]: [{ method: string }]) => method === 'put')![0];
+        const putCall = () => api.mock.calls.find(([{ method }]: any[]) => method === 'put')![0];
 
         const folderMoveResponse = (FolderID: string | null) => ({
             Items: [{ ItemID: 'item1', Revision: 6, FolderID, ModifyTime: 10, RevisionTime: 10 }],

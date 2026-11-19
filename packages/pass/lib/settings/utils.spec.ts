@@ -4,18 +4,18 @@ import { selectCanCreateItems } from '../../store/selectors/shares';
 import type { State } from '../../store/types';
 import { sanitizeSettings } from './utils';
 
-jest.mock('../../store/selectors/shares', () => ({
-    selectCanCreateItems: jest.fn(),
+vi.mock('../../store/selectors/shares', () => ({
+    selectCanCreateItems: vi.fn(),
 }));
 
-jest.mock('../../store/selectors/organization', () => ({
-    selectOrgPasskeyDisabled: jest.fn(),
-    selectOrgTOTPDisabled: jest.fn(),
+vi.mock('../../store/selectors/organization', () => ({
+    selectOrgPasskeyDisabled: vi.fn(),
+    selectOrgTOTPDisabled: vi.fn(),
 }));
 
-const mockSelectCanCreateItems = jest.mocked(selectCanCreateItems);
-const mockSelectOrgTOTPDisabled = jest.mocked(selectOrgTOTPDisabled);
-const mockSelectOrgPasskeyDisabled = jest.mocked(selectOrgPasskeyDisabled);
+const mockSelectCanCreateItems = vi.mocked(selectCanCreateItems);
+const mockSelectOrgTOTPDisabled = vi.mocked(selectOrgTOTPDisabled);
+const mockSelectOrgPasskeyDisabled = vi.mocked(selectOrgPasskeyDisabled);
 const state = {} as State;
 
 describe('Settings utils', () => {

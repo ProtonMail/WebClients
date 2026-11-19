@@ -10,9 +10,9 @@ import type { State } from '../types';
 import { getPaymentNudgePaymentMethods } from './actions';
 import { selectPaymentNudgeEligible } from './selectors';
 
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    ...jest.requireActual('@proton/pass/utils/time/epoch'),
-    getEpoch: jest.fn(),
+vi.mock('@proton/pass/utils/time/epoch', async () => ({
+    ...(await vi.importActual('@proton/pass/utils/time/epoch')),
+    getEpoch: vi.fn(),
 }));
 
 const NOW = 1_000;
@@ -45,7 +45,7 @@ const mockState = ({ plan = TRIAL_PLAN, user = ADMIN_USER, paymentMethods, pendi
 };
 
 describe('`selectPaymentNudgeEligible`', () => {
-    beforeEach(() => jest.mocked(epoch.getEpoch).mockReturnValue(NOW));
+    beforeEach(() => vi.mocked(epoch.getEpoch).mockReturnValue(NOW));
 
     test('resolves `true` for a B2B trial without a payment method', () => {
         expect(selectPaymentNudgeEligible(mockState({ paymentMethods: [] }))).toBe(true);

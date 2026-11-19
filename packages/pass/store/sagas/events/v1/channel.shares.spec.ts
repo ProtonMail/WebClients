@@ -20,33 +20,33 @@ import * as channelShare from './channel.share';
 import * as SharesChannel from './channel.shares';
 import type { EventChannel } from './types';
 
-jest.mock('./channel.share', () => ({ getShareChannelForks: jest.fn().mockReturnValue(jest.fn()) }));
-jest.mock('./channel.worker', () => ({
-    ...jest.requireActual('./channel.worker'),
-    channelInitalize: jest.fn(),
+vi.mock('./channel.share', async () => ({ getShareChannelForks: vi.fn().mockReturnValue(vi.fn()) }));
+vi.mock('./channel.worker', async () => ({
+    ...(await vi.importActual('./channel.worker')),
+    channelInitalize: vi.fn(),
 }));
-jest.mock('@proton/pass/lib/shares/share.parser', () => ({
-    ...jest.requireActual('@proton/pass/lib/shares/share.parser'),
-    parseShareResponse: jest.fn(),
+vi.mock('@proton/pass/lib/shares/share.parser', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/shares/share.parser')),
+    parseShareResponse: vi.fn(),
 }));
-jest.mock('@proton/pass/lib/items/item.requests', () => ({
-    ...jest.requireActual('@proton/pass/lib/items/item.requests'),
-    requestItemsForShareId: jest.fn(),
+vi.mock('@proton/pass/lib/items/item.requests', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/items/item.requests')),
+    requestItemsForShareId: vi.fn(),
 }));
-jest.mock('@proton/pass/lib/folders/folders.requests', () => ({
-    ...jest.requireActual('@proton/pass/lib/folders/folders.requests'),
-    requestFoldersForShareId: jest.fn(),
+vi.mock('@proton/pass/lib/folders/folders.requests', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/folders/folders.requests')),
+    requestFoldersForShareId: vi.fn(),
 }));
-jest.mock('./channel.shares', () => ({
-    ...jest.requireActual('./channel.shares'),
-    createSharesChannel: jest.fn(jest.requireActual('./channel.shares').createSharesChannel),
+vi.mock('./channel.shares', async () => ({
+    ...(await vi.importActual('./channel.shares')),
+    createSharesChannel: vi.fn(((await vi.importActual('./channel.shares')) as typeof SharesChannel).createSharesChannel),
 }));
 
-const parseShareResponse = jest.mocked(shareParser.parseShareResponse).mockImplementation();
-const requestItemsForShareId = jest.mocked(itemRequests.requestItemsForShareId).mockImplementation();
-const requestFoldersForShareId = jest.mocked(folderRequests.requestFoldersForShareId).mockImplementation();
-const getShareChannelForks = jest.mocked(channelShare.getShareChannelForks);
-const createSharesChannel = jest.mocked(SharesChannel.createSharesChannel);
+const parseShareResponse = vi.mocked(shareParser.parseShareResponse).mockImplementation(() => undefined as any);
+const requestItemsForShareId = vi.mocked(itemRequests.requestItemsForShareId).mockImplementation(() => undefined as any);
+const requestFoldersForShareId = vi.mocked(folderRequests.requestFoldersForShareId).mockImplementation(() => undefined as any);
+const getShareChannelForks = vi.mocked(channelShare.getShareChannelForks);
+const createSharesChannel = vi.mocked(SharesChannel.createSharesChannel);
 
 describe('channel.shares saga', () => {
     const api = {} as unknown as Api;
@@ -86,7 +86,7 @@ describe('channel.shares saga', () => {
     ];
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         requestItemsForShareId.mockImplementation(async (shareId) => Object.values(items[shareId]));
         requestFoldersForShareId.mockImplementation(async () => []);
         parseShareResponse.mockImplementation(async ({ ShareID }) => shares.find(({ shareId }) => shareId === ShareID));
@@ -183,7 +183,7 @@ describe('channel.shares saga', () => {
             const { onSharesIncoming } = SharesChannel;
 
             const incoming = channel<ShareGetResponse[]>();
-            jest.spyOn(incoming, 'close');
+            vi.spyOn(incoming, 'close');
 
             const saga = sagaSetup();
             const task = runSaga(saga.options, onSharesIncoming, incoming, api, options);
@@ -203,13 +203,13 @@ describe('channel.shares saga', () => {
                 manager,
                 channel: eventChannel(() => noop),
                 channelId: 'test-shares',
-                onEvent: jest.fn(),
-                onError: jest.fn(),
+                onEvent: vi.fn(),
+                onError: vi.fn(),
             } as unknown as EventChannel<SharesGetResponse>;
 
             const incoming = channel<ShareGetResponse[]>();
-            jest.spyOn(incoming, 'close');
-            jest.spyOn(events.channel, 'close');
+            vi.spyOn(incoming, 'close');
+            vi.spyOn(events.channel, 'close');
 
             try {
                 const saga = sagaSetup();
@@ -220,7 +220,9 @@ describe('channel.shares saga', () => {
                 expect(incoming.close).toHaveBeenCalled();
                 expect(events.channel.close).toHaveBeenCalled();
             } finally {
-                createSharesChannel.mockImplementation(jest.requireActual('./channel.shares').createSharesChannel);
+                createSharesChannel.mockImplementation(
+                    ((await vi.importActual('./channel.shares')) as typeof SharesChannel).createSharesChannel
+                );
             }
         });
     });

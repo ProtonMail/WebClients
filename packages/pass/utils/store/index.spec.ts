@@ -23,7 +23,7 @@ describe('createMemoryStore', () => {
 
     test('should coalesce synchronous `set()` calls into a single notification', async () => {
         const store = createMemoryStore();
-        const spy = jest.fn();
+        const spy = vi.fn();
         store.subscribe(spy);
 
         store.set('a', 1);
@@ -37,7 +37,7 @@ describe('createMemoryStore', () => {
 
     test('should notify again on the next synchronous batch', async () => {
         const store = createMemoryStore();
-        const spy = jest.fn();
+        const spy = vi.fn();
         store.subscribe(spy);
 
         store.set('a', 1);
@@ -52,7 +52,7 @@ describe('createMemoryStore', () => {
 
     test('should unsubscribe', async () => {
         const store = createMemoryStore();
-        const spy = jest.fn();
+        const spy = vi.fn();
         const unsubscribe = store.subscribe(spy);
 
         store.set('a', 1);

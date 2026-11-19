@@ -17,7 +17,7 @@ const reducer = (state: State = { value: 0 }, action: Action): State => {
 describe('`registerStoreEffect`', () => {
     test('does not fire on initial registration', () => {
         const store = createStore(reducer);
-        const effect = jest.fn();
+        const effect = vi.fn();
 
         registerStoreEffect(store, (state) => state.value, effect);
 
@@ -26,7 +26,7 @@ describe('`registerStoreEffect`', () => {
 
     test('fires with the new value when the selected value changes', () => {
         const store = createStore(reducer);
-        const effect = jest.fn();
+        const effect = vi.fn();
 
         registerStoreEffect(store, (state) => state.value, effect);
         store.dispatch({ type: 'increment' });
@@ -37,7 +37,7 @@ describe('`registerStoreEffect`', () => {
 
     test('does not fire again when the selected value is unchanged', () => {
         const store = createStore(reducer);
-        const effect = jest.fn();
+        const effect = vi.fn();
 
         registerStoreEffect(store, (state) => state.value, effect);
         store.dispatch({ type: 'noop' });
@@ -47,7 +47,7 @@ describe('`registerStoreEffect`', () => {
 
     test('stops firing after unsubscribing', () => {
         const store = createStore(reducer);
-        const effect = jest.fn();
+        const effect = vi.fn();
 
         const unsubscribe = registerStoreEffect(store, (state) => state.value, effect);
         unsubscribe();

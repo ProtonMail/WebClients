@@ -1,5 +1,6 @@
 import { decryptData, encryptData, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+import type { Mock } from 'vitest';
 
 import * as browser from '@proton/shared/lib/helpers/browser';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
@@ -14,10 +15,10 @@ import {
     isPRFSupported,
 } from './prf';
 
-jest.mock('@proton/shared/lib/helpers/browser');
-const isChromiumBased = browser.isChromiumBased as jest.Mock;
-const isMinimumSafariVersion = browser.isMinimumSafariVersion as jest.Mock;
-const isUserVerifyingPlatformAuthenticatorAvailable = jest.fn();
+vi.mock('@proton/shared/lib/helpers/browser');
+const isChromiumBased = browser.isChromiumBased as Mock;
+const isMinimumSafariVersion = browser.isMinimumSafariVersion as Mock;
+const isUserVerifyingPlatformAuthenticatorAvailable = vi.fn();
 
 const TEST_PRF_BYTES = utf8StringToUint8Array('test.webauthn.prf.salt');
 const TEST_HKDF_B64 = 'xW/XzmkKNMbwoBJ6UuFR1rdOAd5Fbp2QO9OPp6QYt6s=';

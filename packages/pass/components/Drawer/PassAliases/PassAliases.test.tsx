@@ -4,45 +4,47 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { mockNotifications } from '@proton/components/testing/mockNotifications';
+import { mockNotifications } from '@proton/components/testing/vitest/mockNotifications';
 
 import PassAliases from './PassAliases';
 import * as passAliasesProvider from './PassAliasesProvider';
 
-jest.mock('./PassAliasesProvider', () => ({
+vi.mock('./PassAliasesProvider', async () => ({
     __esModule: true,
-    ...jest.requireActual('./PassAliasesProvider'),
+    ...(await vi.importActual('./PassAliasesProvider')),
 }));
 
-jest.mock('../../../lib/bridge/PassBridgeProvider', () => ({
+vi.mock('../../../lib/bridge/PassBridgeProvider', async () => ({
     __esModule: true,
     PassBridgeProvider: ({ children }: { children: ReactNode }) => children,
 }));
-jest.mock('./usePassAliasesProviderSetup', () => ({
+vi.mock('./usePassAliasesProviderSetup', async () => ({
     __esModule: true,
     usePassAliasesSetup: () => {},
 }));
 
-jest.mock('@proton/app-context/useNotifications');
-jest.mock('@proton/account/addresses/hooks', () => jest.fn().mockImplementation(() => [[], false]));
-jest.mock('@proton/components/hooks/useAuthentication', () => jest.fn().mockImplementation(() => [{}, false]));
-jest.mock('@proton/account/user/hooks', () => jest.fn().mockImplementation(() => [{}, false]));
-jest.mock('@proton/account/subscription/hooks', () => jest.fn().mockImplementation(() => [{}, false]));
-jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
-jest.mock('@proton/components/containers/app/ErrorBoundary', () => ({
+vi.mock('@proton/app-context/useNotifications');
+vi.mock('@proton/account/addresses/hooks', () => ({ default: vi.fn().mockImplementation(() => [[], false]) }));
+vi.mock('@proton/components/hooks/useAuthentication', () => ({
+    default: vi.fn().mockImplementation(() => [{}, false]),
+}));
+vi.mock('@proton/account/user/hooks', () => ({ default: vi.fn().mockImplementation(() => [{}, false]) }));
+vi.mock('@proton/account/subscription/hooks', () => ({ default: vi.fn().mockImplementation(() => [{}, false]) }));
+vi.mock('@proton/components/components/link/SettingsLink', () => ({ default: 'string' }));
+vi.mock('@proton/components/containers/app/ErrorBoundary', async () => ({
     __esModule: true,
     default: ({ children }: { children: ReactNode }) => children,
 }));
 
 describe('PassAliases', () => {
-    const mockedUseNotifications = jest.mocked(useNotifications);
+    const mockedUseNotifications = vi.mocked(useNotifications);
 
     beforeEach(async () => {
         mockedUseNotifications.mockImplementation(() => mockNotifications);
     });
 
     it('renders the aliases list when there are aliases', async () => {
-        jest.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(() => ({
+        vi.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(() => ({
             hasAliases: true,
             hasUsedProtonPassApp: false,
             loading: false,
@@ -60,8 +62,8 @@ describe('PassAliases', () => {
                     },
                 },
             ] as any,
-            getAliasOptions: jest.fn(),
-            submitNewAlias: jest.fn(),
+            getAliasOptions: vi.fn(),
+            submitNewAlias: vi.fn(),
             passAliasesUpsellModal: {} as any,
             hasReachedAliasesCountLimit: false,
             hadInitialisedPreviously: false,
@@ -76,14 +78,14 @@ describe('PassAliases', () => {
     });
 
     it('renders the "No aliases" message when there are no aliases', () => {
-        jest.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(() => ({
+        vi.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(() => ({
             hasAliases: false,
             hasUsedProtonPassApp: false,
             loading: false,
             passAliasesVaultName: 'Test Vault',
             passAliasesItems: [],
-            getAliasOptions: jest.fn(),
-            submitNewAlias: jest.fn(),
+            getAliasOptions: vi.fn(),
+            submitNewAlias: vi.fn(),
             passAliasesUpsellModal: {} as any,
             hasReachedAliasesCountLimit: false,
             hadInitialisedPreviously: false,
@@ -102,14 +104,14 @@ describe('PassAliases', () => {
     });
 
     it('opens the create alias modal when the "Get an alias" button is clicked', async () => {
-        jest.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(() => ({
+        vi.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(() => ({
             hasAliases: false,
             hasUsedProtonPassApp: false,
             loading: false,
             passAliasesVaultName: 'Test Vault',
             passAliasesItems: [],
-            getAliasOptions: jest.fn(),
-            submitNewAlias: jest.fn(),
+            getAliasOptions: vi.fn(),
+            submitNewAlias: vi.fn(),
             passAliasesUpsellModal: {} as any,
             hasReachedAliasesCountLimit: false,
             hadInitialisedPreviously: false,

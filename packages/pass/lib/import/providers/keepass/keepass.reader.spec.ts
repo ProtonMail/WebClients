@@ -8,16 +8,16 @@ import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportPayload, ImportVault } from '../../types';
 import { readKeePassData } from './keepass.reader';
 
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    ...jest.requireActual('@proton/pass/utils/time/epoch'),
-    getEpoch: jest.fn(),
+vi.mock('@proton/pass/utils/time/epoch', async () => ({
+    ...(await vi.importActual('@proton/pass/utils/time/epoch')),
+    getEpoch: vi.fn(),
 }));
 
 describe('Import KeePass xml', () => {
     let payload: ImportPayload;
     let vault: ImportVault;
 
-    const dateMock = jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
+    const dateMock = vi.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
         const sourceData = fs.readFileSync(__dirname + '/mocks/keepass.xml');

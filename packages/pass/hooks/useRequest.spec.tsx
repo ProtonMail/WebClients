@@ -33,9 +33,9 @@ const buildHook = (
 
     initialActions.forEach((action) => store.dispatch(action));
 
-    const onStart = jest.fn();
-    const onSuccess = jest.fn();
-    const onFailure = jest.fn();
+    const onStart = vi.fn();
+    const onSuccess = vi.fn();
+    const onFailure = vi.fn();
 
     return {
         store,
@@ -199,7 +199,7 @@ describe('useActionRequest', () => {
 
     test('Should handle aysnc dispatch throwing', async () => {
         const { hook, onStart, onSuccess, onFailure } = buildHook(false, [], (store) => {
-            const dispatch = jest.spyOn(store, 'dispatch');
+            const dispatch = vi.spyOn(store, 'dispatch');
             dispatch.mockImplementation(() => Promise.reject(new Error()) as any);
         });
 

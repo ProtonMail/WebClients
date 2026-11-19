@@ -1,4 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import * as busy from '@proton/shared/lib/busy/busy';
 
@@ -7,8 +8,8 @@ import type { InAppNotification } from '../../types/data/notification';
 import { uniqueId } from '../../utils/string/unique-id';
 import { useInAppNotificationVisibility } from './useInAppNotificationVisibility';
 
-jest.mock('@proton/shared/lib/busy/busy', () => ({ isModalOpen: jest.fn() }));
-const isModalOpen = busy.isModalOpen as jest.MockedFunction<typeof busy.isModalOpen>;
+vi.mock('@proton/shared/lib/busy/busy', () => ({ isModalOpen: vi.fn() }));
+const isModalOpen = busy.isModalOpen as MockedFunction<typeof busy.isModalOpen>;
 
 const createNotification = (displayType: InAppNotificationDisplayType): InAppNotification => {
     const id = uniqueId();
@@ -33,14 +34,14 @@ const createNotification = (displayType: InAppNotificationDisplayType): InAppNot
 
 describe('useInAppNotificationVisibility', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.useFakeTimers();
+        vi.clearAllMocks();
+        vi.useFakeTimers();
         isModalOpen.mockReturnValue(false);
     });
 
     afterEach(() => {
-        jest.runOnlyPendingTimers();
-        jest.useRealTimers();
+        vi.runOnlyPendingTimers();
+        vi.useRealTimers();
     });
 
     test('should return `false` when no notification is provided', () => {
@@ -52,7 +53,7 @@ describe('useInAppNotificationVisibility', () => {
         const notification = createNotification(InAppNotificationDisplayType.BANNER);
         const { result } = renderHook(() => useInAppNotificationVisibility(notification));
 
-        jest.runAllTimers();
+        vi.runAllTimers();
         await waitFor(() => {
             expect(result.current).toBe(true);
         });
@@ -64,7 +65,7 @@ describe('useInAppNotificationVisibility', () => {
         const notification = createNotification(InAppNotificationDisplayType.MODAL);
         const { result } = renderHook(() => useInAppNotificationVisibility(notification));
 
-        jest.runAllTimers();
+        vi.runAllTimers();
         await waitFor(() => expect(result.current).toBe(true));
 
         expect(isModalOpen).toHaveBeenCalled();
@@ -76,7 +77,7 @@ describe('useInAppNotificationVisibility', () => {
         const notification = createNotification(InAppNotificationDisplayType.MODAL);
         const { result } = renderHook(() => useInAppNotificationVisibility(notification));
 
-        jest.runAllTimers();
+        vi.runAllTimers();
         await waitFor(() => expect(isModalOpen).toHaveBeenCalled());
 
         expect(result.current).toBe(false);
@@ -86,11 +87,11 @@ describe('useInAppNotificationVisibility', () => {
         const initialProps = createNotification(InAppNotificationDisplayType.BANNER);
         const { result, rerender } = renderHook(useInAppNotificationVisibility, { initialProps });
 
-        jest.runAllTimers();
+        vi.runAllTimers();
         await waitFor(() => expect(result.current).toBe(true));
 
         rerender(undefined);
-        jest.runAllTimers();
+        vi.runAllTimers();
         await waitFor(() => expect(result.current).toBe(false));
     });
 
@@ -98,13 +99,13 @@ describe('useInAppNotificationVisibility', () => {
         const initialProps = createNotification(InAppNotificationDisplayType.MODAL);
         const { result, rerender } = renderHook(useInAppNotificationVisibility, { initialProps });
 
-        jest.runAllTimers();
+        vi.runAllTimers();
         await waitFor(() => expect(result.current).toBe(true));
         expect(isModalOpen).toHaveBeenCalled();
         isModalOpen.mockClear();
 
         rerender(createNotification(InAppNotificationDisplayType.MODAL));
-        jest.runAllTimers();
+        vi.runAllTimers();
         expect(isModalOpen).not.toHaveBeenCalled();
         await waitFor(() => expect(result.current).toBe(true));
     });
@@ -114,7 +115,7 @@ describe('useInAppNotificationVisibility', () => {
         const { result, rerender } = renderHook(useInAppNotificationVisibility, { initialProps });
 
         rerender(createNotification(InAppNotificationDisplayType.BANNER));
-        jest.runAllTimers();
+        vi.runAllTimers();
 
         await waitFor(() => expect(result.current).toBe(true));
     });

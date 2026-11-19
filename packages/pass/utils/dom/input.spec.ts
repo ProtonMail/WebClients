@@ -93,7 +93,7 @@ class DOMBuilder {
     setup() {
         const instance = this;
 
-        Element.prototype.getBoundingClientRect = jest.fn(function (this: Element) {
+        Element.prototype.getBoundingClientRect = vi.fn(function (this: Element) {
             const mock = instance.els.get(this);
             return {
                 x: mock?.rect?.x ?? 0,
@@ -107,13 +107,13 @@ class DOMBuilder {
             } as DOMRect;
         });
 
-        global.getComputedStyle = jest.fn((element: Element) => {
+        global.getComputedStyle = vi.fn((element: Element) => {
             const el = instance.els.get(element);
             const styles = { ...DOMBuilder.DEFAULT_STYLES, ...el?.styles };
 
             return {
                 ...styles,
-                getPropertyValue: jest.fn((property: string) => {
+                getPropertyValue: vi.fn((property: string) => {
                     const camelCase = property.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
                     return styles[camelCase as keyof typeof styles] || styles[property as keyof typeof styles] || '';
                 }),
@@ -132,7 +132,7 @@ describe('findInputBoundingElement', () => {
     });
 
     afterEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     describe('input with border (Case 1)', () => {

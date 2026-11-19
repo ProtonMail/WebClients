@@ -4,19 +4,19 @@ import { MOCK_FIELDS, MOCK_SECTIONS } from '../../utils/tests/fixtures/identity'
 import { addFormSectionOptionalField, buildFormSections } from './useIdentityForm';
 import * as utils from './utils';
 
-jest.mock('./utils', () => ({
-    ...jest.requireActual('./utils'),
-    getIdentityFields: jest.fn(),
-    getInitialSections: jest.fn(),
+vi.mock('./utils', async () => ({
+    ...(await vi.importActual('./utils')),
+    getIdentityFields: vi.fn(),
+    getInitialSections: vi.fn(),
 }));
 
 describe('`buildFormSections`', () => {
     beforeEach(() => {
-        jest.mocked(utils.getIdentityFields).mockReturnValue(MOCK_FIELDS);
-        jest.mocked(utils.getInitialSections).mockReturnValue(MOCK_SECTIONS);
+        vi.mocked(utils.getIdentityFields).mockReturnValue(MOCK_FIELDS);
+        vi.mocked(utils.getInitialSections).mockReturnValue(MOCK_SECTIONS);
     });
 
-    afterEach(() => jest.resetAllMocks());
+    afterEach(() => vi.resetAllMocks());
 
     it('should build form sections correctly', () => {
         const item = itemBuilder('identity');

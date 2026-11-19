@@ -11,16 +11,16 @@ import watcher from './lock-create.saga';
 
 describe('lock-create saga', () => {
     const authService = {
-        checkLock: jest.fn().mockResolvedValue(undefined),
-        createLock: jest.fn().mockResolvedValue(undefined),
-        deleteLock: jest.fn().mockResolvedValue(undefined),
+        checkLock: vi.fn().mockResolvedValue(undefined),
+        createLock: vi.fn().mockResolvedValue(undefined),
+        deleteLock: vi.fn().mockResolvedValue(undefined),
     };
 
-    const authStore = { getLockMode: jest.fn().mockReturnValue(LockMode.NONE) };
+    const authStore = { getLockMode: vi.fn().mockReturnValue(LockMode.NONE) };
     const options = { getAuthService: () => authService, getAuthStore: () => authStore } as any;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     test('should fail when state is destroyed during lock creation', async () => {

@@ -7,9 +7,9 @@ import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportPayload } from '../../types';
 import { readNordPassData } from './nordpass.reader';
 
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    ...jest.requireActual('@proton/pass/utils/time/epoch'),
-    getEpoch: jest.fn(),
+vi.mock('@proton/pass/utils/time/epoch', async () => ({
+    ...(await vi.importActual('@proton/pass/utils/time/epoch')),
+    getEpoch: vi.fn(),
 }));
 
 const sourceFiles = {
@@ -18,7 +18,7 @@ const sourceFiles = {
 };
 
 const data: Record<string, ImportPayload> = {};
-const dateMock = jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
+const dateMock = vi.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
 
 const getNordPassData = (sourceKey: string) => data[sourceKey];
 const getNordPassItem = <T extends ItemType>(sourceKey: string, vaultIndex: number = 0, itemIndex: number = 0) =>

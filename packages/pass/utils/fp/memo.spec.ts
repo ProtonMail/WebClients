@@ -1,14 +1,15 @@
 import { createWeakRefCache, dynMemo, maxAgeMemoize } from './memo';
 
-const asyncFn = jest.fn((value: number) => Promise.resolve(value * Math.random()));
+// nosemgrep: rules_lgpl_javascript_crypto_rule-node-insecure-random-generator -- unique test value, no security use
+const asyncFn = vi.fn((value: number) => Promise.resolve(value * Math.random()));
 
 describe('`maxAgeMemoize`', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         asyncFn.mockClear();
     });
 
-    afterEach(() => jest.clearAllTimers());
+    afterEach(() => vi.clearAllTimers());
 
     test('should cache the result for the specified maximum age', async () => {
         const memoizedFunction = maxAgeMemoize(asyncFn, { maxAge: 10_000 });
@@ -17,14 +18,14 @@ describe('`maxAgeMemoize`', () => {
         expect(asyncFn).toHaveBeenCalledTimes(1);
 
         /* advance timer below maxAge */
-        jest.advanceTimersByTime(5_000);
+        vi.advanceTimersByTime(5_000);
 
         const result2 = await memoizedFunction(1);
         expect(asyncFn).toHaveBeenCalledTimes(1);
         expect(result2).toBe(result1);
 
         /* advance timer over maxAge */
-        jest.advanceTimersByTime(5_001);
+        vi.advanceTimersByTime(5_001);
 
         const result3 = await memoizedFunction(1);
         expect(result3).not.toBe(result1);
@@ -39,14 +40,14 @@ describe('`maxAgeMemoize`', () => {
         expect(asyncFn).toHaveBeenCalledTimes(2);
 
         /* advance timer below maxAge */
-        jest.advanceTimersByTime(5_000);
+        vi.advanceTimersByTime(5_000);
 
         await memoizedFunction(1);
         await memoizedFunction(2);
         expect(asyncFn).toHaveBeenCalledTimes(2);
 
         /* advance timer over maxAge */
-        jest.advanceTimersByTime(5_001);
+        vi.advanceTimersByTime(5_001);
 
         await memoizedFunction(1);
         await memoizedFunction(2);
@@ -60,7 +61,7 @@ describe('`maxAgeMemoize`', () => {
         expect(asyncFn).toHaveBeenCalledTimes(1);
 
         /* advance timer below maxAge */
-        jest.advanceTimersByTime(6_000);
+        vi.advanceTimersByTime(6_000);
 
         await memoizedFunction(1);
         expect(asyncFn).toHaveBeenCalledTimes(1);
@@ -71,7 +72,8 @@ describe('`maxAgeMemoize`', () => {
     });
 
     test('should not cache a result who throwed error', async () => {
-        const asyncFn = jest.fn((value: number) => Promise.resolve(value * Math.random()));
+        // nosemgrep: rules_lgpl_javascript_crypto_rule-node-insecure-random-generator -- unique test value, no security use
+        const asyncFn = vi.fn((value: number) => Promise.resolve(value * Math.random()));
         const memoizedFunction = maxAgeMemoize(asyncFn, { maxAge: 10_000 });
 
         asyncFn.mockImplementationOnce(async () => {
@@ -85,14 +87,14 @@ describe('`maxAgeMemoize`', () => {
         expect(asyncFn).toHaveBeenCalledTimes(2);
 
         /* advance timer below maxAge */
-        jest.advanceTimersByTime(6_000);
+        vi.advanceTimersByTime(6_000);
 
         await memoizedFunction(1);
         expect(asyncFn).toHaveBeenCalledTimes(2);
     });
 
     test('should handle `createWeakRefCache` factory', async () => {
-        const elementFn = jest.fn(async (element: HTMLElement, data: string) => `${element.tagName}-${data}`);
+        const elementFn = vi.fn(async (element: HTMLElement, data: string) => `${element.tagName}-${data}`);
 
         const memoizedFunction = maxAgeMemoize(elementFn, {
             maxAge: 10_000,
@@ -110,7 +112,7 @@ describe('`maxAgeMemoize`', () => {
         expect(result1).toBe('DIV-test');
         expect(result2).toBe('SPAN-test');
 
-        jest.advanceTimersByTime(5_000);
+        vi.advanceTimersByTime(5_000);
 
         expect(await memoizedFunction(element1, 'test')).toEqual(result1);
         expect(await memoizedFunction(element2, 'test')).toEqual(result2);
@@ -127,7 +129,7 @@ describe('`maxAgeMemoize`', () => {
         const result2 = await memoizedFunction(2);
         expect(asyncFn).toHaveBeenCalledTimes(2);
 
-        jest.advanceTimersByTime(5_000);
+        vi.advanceTimersByTime(5_000);
 
         await memoizedFunction(1);
         await memoizedFunction(2);
@@ -143,7 +145,7 @@ describe('`maxAgeMemoize`', () => {
     });
 
     test('should clear cache with `createWeakRefCache` via `clear`', async () => {
-        const elementFn = jest.fn(async (element: HTMLElement, data: string) => `${element.tagName}-${data}`);
+        const elementFn = vi.fn(async (element: HTMLElement, data: string) => `${element.tagName}-${data}`);
         const memoizedFunction = maxAgeMemoize(elementFn, {
             maxAge: 10_000,
             cache: createWeakRefCache((element) => element),
@@ -156,7 +158,7 @@ describe('`maxAgeMemoize`', () => {
         const result2 = await memoizedFunction(element2, 'test');
         expect(elementFn).toHaveBeenCalledTimes(2);
 
-        jest.advanceTimersByTime(5_000);
+        vi.advanceTimersByTime(5_000);
 
         expect(await memoizedFunction(element1, 'test')).toEqual(result1);
         expect(await memoizedFunction(element2, 'test')).toEqual(result2);
@@ -171,7 +173,7 @@ describe('`maxAgeMemoize`', () => {
 });
 
 describe('`dynMemo`', () => {
-    const spy = jest.fn((str: string) => str.toUpperCase());
+    const spy = vi.fn((str: string) => str.toUpperCase());
     const memoized = dynMemo(spy);
 
     beforeEach(() => {

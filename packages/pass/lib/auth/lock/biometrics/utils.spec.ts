@@ -1,3 +1,5 @@
+import type { Mocked } from 'vitest';
+
 import { BIOMETRICS_KEY } from '../../../../constants';
 import type { AuthStore } from '../../store';
 import {
@@ -32,9 +34,9 @@ describe('Biometrics utils', () => {
 
     describe('`inferBiometricsStorageKey`', () => {
         const mockAuthStore = {
-            getLocalID: jest.fn(),
-            getEncryptedOfflineKD: jest.fn(),
-        } as unknown as jest.Mocked<AuthStore>;
+            getLocalID: vi.fn(),
+            getEncryptedOfflineKD: vi.fn(),
+        } as unknown as Mocked<AuthStore>;
 
         beforeEach(() => {
             mockAuthStore.getLocalID.mockClear();

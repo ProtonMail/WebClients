@@ -8,12 +8,12 @@ import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportFolder, ImportPayload } from '../../types';
 import { readKeeperData } from './keeper.reader';
 
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    ...jest.requireActual('@proton/pass/utils/time/epoch'),
-    getEpoch: jest.fn(),
+vi.mock('@proton/pass/utils/time/epoch', async () => ({
+    ...(await vi.importActual('@proton/pass/utils/time/epoch')),
+    getEpoch: vi.fn(),
 }));
 
-const dateMock = jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
+const dateMock = vi.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
 let data: ImportPayload;
 
 const getKeeperItem = <T extends ItemType>(vaultIndex: number = 0, itemIndex: number = 0) =>

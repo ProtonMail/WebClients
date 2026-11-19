@@ -29,7 +29,7 @@ import { serializeItemContent } from '../items/item-proto.transformer';
 import { createPassBridge } from './PassBridgeFactory';
 
 describe('PassBridge', () => {
-    const api = jest.fn();
+    const api = vi.fn();
     const bridge = createPassBridge(api);
     let userKey: DecryptedKey;
 
@@ -150,7 +150,7 @@ describe('PassBridge', () => {
         });
 
         test('resolves aliases outside folders when the folders request fails', async () => {
-            jest.spyOn(logger, 'warn').mockImplementation(noop);
+            vi.spyOn(logger, 'warn').mockImplementation(noop);
             const { shareId, vaultKey } = await openVault();
             const encryptedFolder = await createEncryptedFolder('folder-2', vaultKey);
             const { folderKey } = await processes.openFolder({ encryptedFolder, parentKey: vaultKey });

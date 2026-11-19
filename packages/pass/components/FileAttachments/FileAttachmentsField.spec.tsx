@@ -13,27 +13,27 @@ import { FileAttachmentsField } from './FileAttachmentsField';
 
 /** Branches under test are driven by these hooks/selectors. Mock them directly
  * rather than seeding the redux store, so each scenario is isolated. */
-jest.mock('../../hooks/useFeatureFlag', () => ({ useFeatureFlag: jest.fn() }));
-jest.mock('../../hooks/useMatchUser', () => ({ useMatchUser: jest.fn() }));
-jest.mock('../../hooks/useNavigateToUpgrade', () => ({ useNavigateToUpgrade: jest.fn() }));
-jest.mock('../../store/selectors/user', () => ({
-    ...jest.requireActual('../../store/selectors/user'),
-    selectUser: jest.fn(),
-    selectUserStorageAllowed: jest.fn(),
+vi.mock('../../hooks/useFeatureFlag', async () => ({ useFeatureFlag: vi.fn() }));
+vi.mock('../../hooks/useMatchUser', async () => ({ useMatchUser: vi.fn() }));
+vi.mock('../../hooks/useNavigateToUpgrade', async () => ({ useNavigateToUpgrade: vi.fn() }));
+vi.mock('../../store/selectors/user', async () => ({
+    ...(await vi.importActual('../../store/selectors/user')),
+    selectUser: vi.fn(),
+    selectUserStorageAllowed: vi.fn(),
 }));
 
-const mockUseFeatureFlag = jest.mocked(useFeatureFlag);
-const mockUseMatchUser = jest.mocked(useMatchUser);
-const mockUseNavigateToUpgrade = jest.mocked(useNavigateToUpgrade);
-const mockSelectUser = jest.mocked(selectUser);
-const mockSelectUserStorageAllowed = jest.mocked(selectUserStorageAllowed);
-const mockNavigateToUpgrade = jest.fn();
+const mockUseFeatureFlag = vi.mocked(useFeatureFlag);
+const mockUseMatchUser = vi.mocked(useMatchUser);
+const mockUseNavigateToUpgrade = vi.mocked(useNavigateToUpgrade);
+const mockSelectUser = vi.mocked(selectUser);
+const mockSelectUserStorageAllowed = vi.mocked(selectUserStorageAllowed);
+const mockNavigateToUpgrade = vi.fn();
 
 describe('FileAttachmentsField', () => {
     const mockForm = {
-        setStatus: jest.fn(),
-        setValues: jest.fn(),
-        setFieldValue: jest.fn(),
+        setStatus: vi.fn(),
+        setValues: vi.fn(),
+        setFieldValue: vi.fn(),
         values: { files: { toAdd: [] } },
     } as unknown as FieldProps['form'];
 
@@ -48,7 +48,7 @@ describe('FileAttachmentsField', () => {
         mockSelectUserStorageAllowed.mockReturnValue(false);
     });
 
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     test('hides the field for Essentials users when the upsell flag is off', () => {
         mockUseMatchUser.mockReturnValue(true);

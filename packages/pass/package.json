@@ -457,10 +457,10 @@
         "lint": "oxlint --quiet",
         "pretty": "oxfmt --write \"src/app/**/*.{js,ts,tsx}\"",
         "start": "proton-pack dev-server --appMode=standalone",
-        "test": "NODE_NO_WARNINGS=1 jest --verbose",
-        "test:ci": "pnpm run test:tz && jest --runInBand --ci --logHeapUsage",
-        "test:tz": "bash -c 'for tz in UTC America/New_York Europe/Paris Asia/Tokyo; do TZ=$tz pnpm run test time/format.spec.ts || exit 1; done'",
-        "test:watch": "jest --watch",
+        "test": "NODE_NO_WARNINGS=1 vitest",
+        "test:ci": "pnpm run test:tz && vitest run",
+        "test:tz": "bash -c 'for tz in UTC America/New_York Europe/Paris Asia/Tokyo; do TZ=$tz vitest run utils/time/format.spec.ts || exit 1; done'",
+        "test:watch": "vitest --watch",
         "version:update": "scripts/version.sh"
     },
     "dependencies": {
@@ -511,18 +511,17 @@
     "devDependencies": {
         "@protobuf-ts/plugin": "^2.11.1",
         "@proton/i18n": "workspace:^",
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxfmt-config": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/pack": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "catalog:",
         "@testing-library/user-event": "catalog:",
+        "@vitejs/plugin-react": "catalog:",
         "@types/chrome": "catalog:",
         "@types/history": "catalog:",
-        "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/papaparse": "^5.5.2",
         "@types/react": "catalog:",
@@ -535,7 +534,7 @@
         "@typescript/native": "catalog:",
         "core-js": "catalog:",
         "fake-indexeddb": "catalog:",
-        "jest": "catalog:",
+        "happy-dom": "catalog:",
         "json-schema-to-typescript": "^13.1.2",
         "jszip": "catalog:",
         "msw": "catalog:",
@@ -544,6 +543,7 @@
         "oxlint-tsgolint": "catalog:",
         "tsx": "catalog:",
         "typescript": "catalog:",
+        "vitest": "catalog:",
         "webpack": "catalog:"
     }
 }

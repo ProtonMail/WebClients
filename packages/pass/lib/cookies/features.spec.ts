@@ -1,23 +1,25 @@
+import type { MockedFunction } from 'vitest';
+
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 
 import type { PassFeature } from '../../types/api/features';
 import { getFeaturesFromCookie, updateFeatureVariantCookie } from './features';
 
-jest.mock('@proton/shared/lib/helpers/cookies');
-jest.mock('@proton/shared/lib/date-fns-utc', () => ({
-    addDays: jest.fn((date) => date),
+vi.mock('@proton/shared/lib/helpers/cookies');
+vi.mock('@proton/shared/lib/date-fns-utc', () => ({
+    addDays: vi.fn((date) => date),
 }));
-jest.mock('@proton/shared/lib/date-fns-utc/endOfDay', () => ({
+vi.mock('@proton/shared/lib/date-fns-utc/endOfDay', () => ({
     __esModule: true,
-    default: jest.fn((date) => date),
+    default: vi.fn((date) => date),
 }));
 
-const mockGetCookie = getCookie as jest.MockedFunction<typeof getCookie>;
-const mockSetCookie = setCookie as jest.MockedFunction<typeof setCookie>;
+const mockGetCookie = getCookie as MockedFunction<typeof getCookie>;
+const mockSetCookie = setCookie as MockedFunction<typeof setCookie>;
 
 describe('getFeaturesFromCookie', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should return empty object when cookie is not set', () => {
@@ -58,7 +60,7 @@ describe('getFeaturesFromCookie', () => {
 
 describe('updateFeatureVariantCookie', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it.each([

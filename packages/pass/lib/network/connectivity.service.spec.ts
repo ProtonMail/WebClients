@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 
 import type { Api, ApiState, ApiSubscriptionEvent } from '../../types/api/api';
@@ -12,7 +14,7 @@ const setupMockAPI = () => {
     let apiState = { online: true, unreachable: false, pendingCount: 0 } as ApiState;
 
     const pubsub = createPubSub<ApiSubscriptionEvent>();
-    const api = jest.fn(async () => {}) as unknown as Api;
+    const api = vi.fn(async () => {}) as unknown as Api;
 
     const setState = (updates: Partial<ApiState>) => (apiState = { ...apiState, ...updates });
     const publish = (event: ApiSubscriptionEvent) => {
@@ -51,28 +53,28 @@ const nextTick = () => Promise.resolve();
  * Then advances `CONNECTIVITY_PROBE_DELAY` more to settle so the next
  * retry timer is scheduled before the helper returns. */
 const expectNextCheck = async (api: Api, delay: number) => {
-    const before = (api as unknown as jest.Mock).mock.calls.length;
+    const before = (api as unknown as Mock).mock.calls.length;
 
     /** Just-before boundary: no new check */
-    await jest.advanceTimersByTimeAsync(delay - 1);
+    await vi.advanceTimersByTimeAsync(delay - 1);
     expect(api).toHaveBeenCalledTimes(before);
 
     /** Retry timer fires & dispatches `check` */
-    await jest.advanceTimersByTimeAsync(1);
+    await vi.advanceTimersByTimeAsync(1);
     expect(api).toHaveBeenCalledTimes(before + 1);
     expect(api).toHaveBeenLastCalledWith(EXPECTED_PING);
 
     /** Settle internal delay so the next retry timer is scheduled */
-    await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+    await vi.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
 };
 
 beforeEach(() => {
-    jest.useFakeTimers();
-    jest.clearAllMocks();
+    vi.useFakeTimers();
+    vi.clearAllMocks();
 });
 
 afterEach(() => {
-    jest.clearAllTimers();
+    vi.clearAllTimers();
 });
 
 describe('ConnectivityService', () => {
@@ -94,7 +96,7 @@ describe('ConnectivityService', () => {
         const service = createConnectivityService({ api });
         service.init();
 
-        await jest.runOnlyPendingTimersAsync();
+        await vi.runOnlyPendingTimersAsync();
         expect(api).not.toHaveBeenCalled();
         expect(service.retryHandler).toBe(null);
 
@@ -181,8 +183,8 @@ describe('ConnectivityService', () => {
 
         /** 5. Ensure retry handler is cleared & no new pings dispatched */
         expect(service.retryHandler).toBe(null);
-        (api as unknown as jest.Mock).mockClear();
-        await jest.runAllTimersAsync();
+        (api as unknown as Mock).mockClear();
+        await vi.runAllTimersAsync();
         expect(api).not.toHaveBeenCalled();
 
         service.destroy();
@@ -231,8 +233,8 @@ describe('ConnectivityService', () => {
 
         /** 5. Ensure retry handler is cleared & no new pings dispatched */
         expect(service.retryHandler).toBe(null);
-        (api as unknown as jest.Mock).mockClear();
-        await jest.runAllTimersAsync();
+        (api as unknown as Mock).mockClear();
+        await vi.runAllTimersAsync();
         expect(api).not.toHaveBeenCalled();
 
         service.destroy();
@@ -272,7 +274,7 @@ describe('ConnectivityService', () => {
         const { api, setState, publish } = setupMockAPI();
         setNavigatorOnline(true);
         setState({ online: true, unreachable: false });
-        const getRetryTimeout = jest.fn(() => 1_000);
+        const getRetryTimeout = vi.fn(() => 1_000);
         const service = createConnectivityService({ api, getRetryTimeout });
         service.init();
 
@@ -309,7 +311,7 @@ describe('ConnectivityService', () => {
         expect(service.retryHandler).toBe(null);
 
         /** 4. No api call should fire even after long advance */
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_RETRY_TIMEOUT * 10);
+        await vi.advanceTimersByTimeAsync(CONNECTIVITY_RETRY_TIMEOUT * 10);
         expect(api).not.toHaveBeenCalled();
     });
 
@@ -331,9 +333,9 @@ describe('ConnectivityService', () => {
 
         /** 4. Navigator flips back online while api is still unreachable.
          * Fast-path fires `check()` and rewinds the backoff to FIB[0]. */
-        (api as unknown as jest.Mock).mockClear();
+        (api as unknown as Mock).mockClear();
         setNavigatorOnline(true);
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+        await vi.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         expect(api).toHaveBeenCalledTimes(1);
 
         await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
@@ -350,7 +352,7 @@ describe('ConnectivityService', () => {
         expect(service.retryHandler).toBe(null);
 
         setNavigatorOnline(true);
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+        await vi.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         expect(api).not.toHaveBeenCalled();
 
         service.destroy();
@@ -366,9 +368,9 @@ describe('ConnectivityService', () => {
         expect(service.retryHandler).not.toBe(null);
 
         /** navigator was already true — re-dispatching 'online' is a no-op for the fast-path */
-        (api as unknown as jest.Mock).mockClear();
+        (api as unknown as Mock).mockClear();
         setNavigatorOnline(true);
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+        await vi.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         expect(api).not.toHaveBeenCalled();
 
         service.destroy();
@@ -406,7 +408,7 @@ describe('ConnectivityService', () => {
         expect(service.retryHandler).not.toBe(null);
 
         /** 2. Next ping causes the api to publish ONLINE  */
-        (api as unknown as jest.Mock).mockImplementationOnce(async () => {
+        (api as unknown as Mock).mockImplementationOnce(async () => {
             publish({
                 type: 'connectivity',
                 online: true,
@@ -416,7 +418,7 @@ describe('ConnectivityService', () => {
 
         /** 3. Trigger `check` */
         const check = service.check();
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+        await vi.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         await check;
 
         /** 4. Status flipped, handler cancelled by the api subscriber path */
@@ -424,8 +426,8 @@ describe('ConnectivityService', () => {
         expect(service.retryHandler).toBe(null);
 
         /** 5. No leftover timers, nothing should fire on a long advance */
-        (api as unknown as jest.Mock).mockClear();
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_RETRY_TIMEOUT * 10);
+        (api as unknown as Mock).mockClear();
+        await vi.advanceTimersByTimeAsync(CONNECTIVITY_RETRY_TIMEOUT * 10);
         expect(api).not.toHaveBeenCalled();
 
         service.destroy();
@@ -444,7 +446,7 @@ describe('ConnectivityService', () => {
 
         /** 2. Trigger `check`: ping returns non-ONLINE (api state unchanged) */
         const check = service.check();
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+        await vi.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         await check;
 
         /** 3. Backoff reset: next tick restarts from FIB[0] */
@@ -464,12 +466,10 @@ describe('ConnectivityService', () => {
 
         /** 2. Hang the next retry probe's api call so we can defer `check()` */
         let resolveApi!: () => void;
-        (api as unknown as jest.Mock).mockImplementationOnce(
-            () => new Promise<void>((resolve) => (resolveApi = resolve))
-        );
+        (api as unknown as Mock).mockImplementationOnce(() => new Promise<void>((resolve) => (resolveApi = resolve)));
 
         /** 3. Fire the retry tick: probe is now in-flight, paused on the api call */
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
+        await vi.advanceTimersByTimeAsync(CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[0]);
         expect(api).toHaveBeenCalledTimes(1);
 
         /** 4. External `check()` joins the in-flight probe via `asyncLock` */
@@ -478,10 +478,10 @@ describe('ConnectivityService', () => {
         /** 5. Resolve the probe: `reset()` from `check` and the retry callback's
          * continuation both run but only ONE next tick should be scheduled */
         resolveApi();
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+        await vi.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         await check;
 
-        expect(jest.getTimerCount()).toBe(1);
+        expect(vi.getTimerCount()).toBe(1);
 
         service.destroy();
     });
@@ -525,8 +525,8 @@ describe('ConnectivityService', () => {
         service.destroy();
         expect(service.retryHandler).toBe(null);
 
-        (api as unknown as jest.Mock).mockClear();
-        await jest.runAllTimersAsync();
+        (api as unknown as Mock).mockClear();
+        await vi.runAllTimersAsync();
         expect(api).not.toHaveBeenCalled();
     });
 
@@ -538,7 +538,7 @@ describe('ConnectivityService', () => {
         service.init();
 
         const check = service.check();
-        await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+        await vi.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
         await check;
 
         expect(api).toHaveBeenCalledTimes(1);
@@ -558,7 +558,7 @@ describe('ConnectivityService', () => {
             service.subscribe((event) => events.push(event.type));
 
             service.syncNavigatorOnline(true);
-            await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+            await vi.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
             expect(events).toEqual([]);
             expect(api).not.toHaveBeenCalled();
 
@@ -591,7 +591,7 @@ describe('ConnectivityService', () => {
             /** 2. Api recovers first (e.g., via a concurrent request),
              *  then navigator catches up. Sync flips status immediately. */
             setState({ online: true, unreachable: false });
-            (api as unknown as jest.Mock).mockClear();
+            (api as unknown as Mock).mockClear();
             service.syncNavigatorOnline(true);
 
             expect(service.status).toBe(ConnectivityStatus.ONLINE);
@@ -632,10 +632,10 @@ describe('ConnectivityService', () => {
             await expectNextCheck(api, CONNECTIVITY_RETRY_TIMEOUT * FIBONACCI_LIST[1]);
 
             /** 2. Flap navigator: offline → online */
-            (api as unknown as jest.Mock).mockClear();
+            (api as unknown as Mock).mockClear();
             service.syncNavigatorOnline(false);
             service.syncNavigatorOnline(true);
-            await jest.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
+            await vi.advanceTimersByTimeAsync(CONNECTIVITY_PROBE_DELAY);
             expect(api).toHaveBeenCalledTimes(1);
 
             /** 3. Backoff rewound: next retry fires at FIB[0], not the next fib step */

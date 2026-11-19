@@ -6,19 +6,19 @@ import * as MEMORY from './fs.memory';
 import * as OPFS from './fs.opfs';
 import type { FileStorage } from './types';
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/browser'),
-    isSafari: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/browser')),
+    isSafari: vi.fn(),
 }));
 
-jest.mock('./fs.idb', () => ({
-    ...jest.requireActual('./fs.idb'),
-    openPassFileDB: jest.fn(),
+vi.mock('./fs.idb', async () => ({
+    ...(await vi.importActual('./fs.idb')),
+    openPassFileDB: vi.fn(),
 }));
 
 describe('file-storage/fs', () => {
-    const isSafari = jest.mocked(browserUtils.isSafari).mockImplementation(() => false);
-    const openPassFileDB = jest.mocked(IDB.openPassFileDB).mockResolvedValue({} as any);
+    const isSafari = vi.mocked(browserUtils.isSafari).mockImplementation(() => false);
+    const openPassFileDB = vi.mocked(IDB.openPassFileDB).mockResolvedValue({} as any);
     const self = global as any;
 
     beforeEach(() => {
@@ -26,14 +26,14 @@ describe('file-storage/fs', () => {
         self.EXTENSION_BUILD = false;
 
         Object.defineProperty(global.navigator, 'storage', {
-            value: { getDirectory: jest.fn() },
+            value: { getDirectory: vi.fn() },
             configurable: true,
         });
 
         Object.defineProperty(global, 'FileSystemFileHandle', {
             value: {
                 prototype: {
-                    createWritable: jest.fn(),
+                    createWritable: vi.fn(),
                 },
             },
             configurable: true,
@@ -46,7 +46,7 @@ describe('file-storage/fs', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('getSupportedFileStorage', () => {
@@ -108,8 +108,8 @@ describe('file-storage/fs', () => {
             self.EXTENSION_BUILD = true;
 
             let instance: FileStorage = new OPFS.FileStorageOPFS();
-            const onSwitch = jest.fn((val: FileStorage) => (instance = val));
-            const onReady = jest.fn();
+            const onSwitch = vi.fn((val: FileStorage) => (instance = val));
+            const onReady = vi.fn();
 
             await onStorageFallback(instance, onSwitch, onReady);
 
@@ -122,8 +122,8 @@ describe('file-storage/fs', () => {
             self.navigator.storage.getDirectory.mockRejectedValue(new Error());
 
             let instance: FileStorage = new OPFS.FileStorageOPFS();
-            const onSwitch = jest.fn((val: FileStorage) => (instance = val));
-            const onReady = jest.fn();
+            const onSwitch = vi.fn((val: FileStorage) => (instance = val));
+            const onReady = vi.fn();
 
             await onStorageFallback(instance, onSwitch, onReady);
 
@@ -136,8 +136,8 @@ describe('file-storage/fs', () => {
             openPassFileDB.mockRejectedValue(new Error());
 
             let instance: FileStorage = new IDB.FileStorageIDB();
-            const onSwitch = jest.fn((val: FileStorage) => (instance = val));
-            const onReady = jest.fn();
+            const onSwitch = vi.fn((val: FileStorage) => (instance = val));
+            const onReady = vi.fn();
 
             await onStorageFallback(instance, onSwitch, onReady);
 
@@ -152,8 +152,8 @@ describe('file-storage/fs', () => {
             self.EXTENSION_BUILD = true;
 
             let instance: FileStorage = new OPFS.FileStorageOPFS();
-            const onSwitch = jest.fn((val: FileStorage) => (instance = val));
-            const onReady = jest.fn();
+            const onSwitch = vi.fn((val: FileStorage) => (instance = val));
+            const onReady = vi.fn();
 
             await onStorageFallback(instance, onSwitch, onReady);
 
@@ -164,8 +164,8 @@ describe('file-storage/fs', () => {
 
         test('calls `onReady` when no fallback needed', async () => {
             const instance: FileStorage = new OPFS.FileStorageOPFS();
-            const onSwitch = jest.fn();
-            const onReady = jest.fn();
+            const onSwitch = vi.fn();
+            const onReady = vi.fn();
 
             await onStorageFallback(instance, onSwitch, onReady);
 

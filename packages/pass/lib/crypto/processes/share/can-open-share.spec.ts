@@ -36,7 +36,7 @@ describe('canOpenShare', () => {
     });
 
     test('no keys should rely on manager', async () => {
-        const manager = { isActive: jest.fn(() => true) } as unknown as ShareManager;
+        const manager = { isActive: vi.fn(() => true) } as unknown as ShareManager;
         expect(canOpenShare(encryptedGroupShare, undefined, manager, undefined)).toBe(true);
         expect(manager.isActive).toHaveBeenCalled();
     });

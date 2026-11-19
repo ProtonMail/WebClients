@@ -4,7 +4,7 @@ import { TopLayerManager, safeMatch, safeQuery } from './popover';
 
 describe('TopLayerManager', () => {
     const toggleEl = async (el: HTMLElement, open: boolean) => {
-        jest.spyOn(el, 'matches').mockImplementation((s: string) => open && (s === ':popover-open' || s === ':modal'));
+        vi.spyOn(el, 'matches').mockImplementation((s: string) => open && (s === ':popover-open' || s === ':modal'));
         el.dispatchEvent(new Event('toggle'));
         await wait(0);
     };
@@ -23,7 +23,7 @@ describe('TopLayerManager', () => {
         document.body.innerHTML = '';
         await wait(0);
         TopLayerManager.disconnect();
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     test('reflects current top-layer ordering', async () => {
@@ -76,13 +76,13 @@ describe('TopLayerManager', () => {
     test('rejects a guard no longer in the top-layer even if still tracked', async () => {
         const guard = createPopoverEl();
         await toggleEl(guard, true);
-        jest.spyOn(guard, 'matches').mockReturnValue(false);
+        vi.spyOn(guard, 'matches').mockReturnValue(false);
         expect(TopLayerManager.elements).toContain(guard);
         expect(TopLayerManager.ensureTopLevel(guard)).toBe(false);
     });
 
     test('foreign element cycling above guard poisons within the window', async () => {
-        const now = jest.spyOn(performance, 'now');
+        const now = vi.spyOn(performance, 'now');
         let time = 1000;
         now.mockImplementation(() => time);
         /** 1. Open guarded popover */
@@ -110,7 +110,7 @@ describe('TopLayerManager', () => {
     });
 
     test('`arm` resets prior contamination', async () => {
-        jest.spyOn(performance, 'now').mockImplementation(() => 1000);
+        vi.spyOn(performance, 'now').mockImplementation(() => 1000);
         /** 1. Poison the guard */
         const guard = createPopoverEl();
         await toggleEl(guard, true);
@@ -124,7 +124,7 @@ describe('TopLayerManager', () => {
     });
 
     test('`disarm` stops foreign elements from poisoning', async () => {
-        jest.spyOn(performance, 'now').mockImplementation(() => 1000);
+        vi.spyOn(performance, 'now').mockImplementation(() => 1000);
         /** 1. Arm then immediately disarm */
         const guard = createPopoverEl();
         await toggleEl(guard, true);
@@ -157,7 +157,7 @@ describe('`safeMatch`', () => {
     });
 
     test('should return `false` when `matches()` throws [Firefox ESR 115 regression]', () => {
-        jest.spyOn(el, 'matches').mockImplementation(() => {
+        vi.spyOn(el, 'matches').mockImplementation(() => {
             throw new Error();
         });
 
@@ -187,7 +187,7 @@ describe('`safeQuery`', () => {
     });
 
     test('should return empty array when querySelectorAll throws', () => {
-        jest.spyOn(document, 'querySelectorAll').mockImplementation(() => {
+        vi.spyOn(document, 'querySelectorAll').mockImplementation(() => {
             throw new Error();
         });
 

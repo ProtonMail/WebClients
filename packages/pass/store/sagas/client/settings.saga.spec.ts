@@ -7,14 +7,14 @@ import type { RootSagaOptions } from '../../types';
 import watcher from './settings.saga';
 
 describe('settings saga', () => {
-    const onSettingsUpdated = jest.fn();
-    const getAppState = jest.fn();
+    const onSettingsUpdated = vi.fn();
+    const getAppState = vi.fn();
     const action = updatePauseListItem({ hostname: 'example.com', criteria: 'Autofill' });
 
     const state = { settings: {} };
     const options = { onSettingsUpdated, getAppState } as unknown as RootSagaOptions;
 
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     test('skips `onSettingsUpdated` when not booted and status is "post-state-destroyed"', async () => {
         getAppState.mockReturnValue({ booted: false, status: AppStatus.SESSION_LOCKED });

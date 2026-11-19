@@ -2,9 +2,9 @@ import { getInitialSettings } from '../../store/reducers/settings';
 import { createSettingsService } from './service';
 
 describe('createSettingsService', () => {
-    const clear = jest.fn();
-    const read = jest.fn();
-    const sync = jest.fn();
+    const clear = vi.fn();
+    const read = vi.fn();
+    const sync = vi.fn();
 
     beforeEach(() => {
         clear.mockClear();

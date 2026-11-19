@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { InjectionMode, contextHandlerFactory, contextInjectorFactory } from './create-shared-context';
 
 interface TestContext {
@@ -35,7 +37,7 @@ describe('`contextHandlerFactory`', () => {
 
     test('should correctly handle object contexts', () => {
         const handler = contextHandlerFactory<TestContext>('test-context');
-        const mockMethod = jest.fn().mockReturnValue('result');
+        const mockMethod = vi.fn().mockReturnValue('result');
         handler.set({ value: 42, getData: mockMethod });
 
         expect(handler.get().value).toBe(42);
@@ -46,10 +48,10 @@ describe('`contextHandlerFactory`', () => {
 
 describe('`contextInjectorFactory`', () => {
     let context: ReturnType<typeof contextHandlerFactory<TestContext>>;
-    let mockGetData: jest.Mock;
+    let mockGetData: Mock;
 
     beforeEach(() => {
-        mockGetData = jest.fn((id) => `data-${id}`);
+        mockGetData = vi.fn((id) => `data-${id}`);
         context = contextHandlerFactory<TestContext>('test-context');
     });
 

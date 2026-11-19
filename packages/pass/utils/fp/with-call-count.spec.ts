@@ -1,11 +1,11 @@
 import { withCallCount } from './with-call-count';
 
 const TEST_COUNT = 42;
-const fn = withCallCount(jest.fn);
+const fn = withCallCount(vi.fn);
 
 describe('withCallCount', () => {
-    beforeAll(() => jest.useFakeTimers());
-    afterAll(() => jest.useRealTimers());
+    beforeAll(() => vi.useFakeTimers());
+    afterAll(() => vi.useRealTimers());
 
     test('Should keep track of number of calls', () => {
         expect(fn.callCount).toEqual(0);
@@ -25,11 +25,11 @@ describe('withCallCount', () => {
     });
 
     test('Should keep track of last call epoch in seconds', () => {
-        jest.setSystemTime(new Date(0));
+        vi.setSystemTime(new Date(0));
         fn();
         expect(fn.lastCalledAt).toEqual(0);
 
-        jest.setSystemTime(new Date(1_000));
+        vi.setSystemTime(new Date(1_000));
         fn();
         expect(fn.lastCalledAt).toEqual(1);
     });

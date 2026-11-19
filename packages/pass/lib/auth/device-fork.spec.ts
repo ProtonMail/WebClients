@@ -1,4 +1,5 @@
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
 import { type ForkEncryptedBlob, getForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
@@ -23,23 +24,23 @@ const CLIENT_ID = 'macos-pass';
 const pending = { status: 422 };
 const pulled = { UID: 'uid', Payload: 'payload' } as PullForkResponse;
 
-const mockApi = (pull: jest.Mock = jest.fn().mockRejectedValue(pending)) => {
+const mockApi = (pull: Mock = vi.fn().mockRejectedValue(pending)) => {
     let forks = 0;
-    return jest.fn(async ({ url }: { url: string }) => {
+    return vi.fn(async ({ url }: { url: string }) => {
         if (url === 'auth/v4/sessions/forks') {
             forks += 1;
             return { Selector: `selector-${forks}`, UserCode: 'ABCDEFGH' };
         }
         return pull(url);
-    }) as unknown as jest.MockedFunction<Api>;
+    }) as unknown as MockedFunction<Api>;
 };
 
-const pullCalls = (api: jest.MockedFunction<Api>) =>
+const pullCalls = (api: MockedFunction<Api>) =>
     api.mock.calls.filter(([{ url }]) => url?.startsWith('auth/v4/sessions/forks/'));
 
 describe('device fork', () => {
-    beforeEach(() => jest.useFakeTimers());
-    afterEach(() => jest.useRealTimers());
+    beforeEach(() => vi.useFakeTimers());
+    afterEach(() => vi.useRealTimers());
 
     describe('requestDeviceFork', () => {
         test('should build the `/desktop/login` URL carrying the payload in the hash', async () => {
@@ -71,16 +72,16 @@ describe('device fork', () => {
 
     describe('pollDeviceFork', () => {
         test('should resolve with the pulled fork once the pull is not pending anymore', async () => {
-            const pull = jest
+            const pull = vi
                 .fn()
                 .mockRejectedValueOnce(pending)
                 .mockRejectedValueOnce(pending)
                 .mockResolvedValue(pulled);
             const api = mockApi(pull);
-            const onFork = jest.fn();
+            const onFork = vi.fn();
 
             const promise = pollDeviceFork({ api, clientID: CLIENT_ID, host: HOST, onFork });
-            await jest.advanceTimersByTimeAsync(2 * DEVICE_FORK_POLL_INTERVAL);
+            await vi.advanceTimersByTimeAsync(2 * DEVICE_FORK_POLL_INTERVAL);
             const result = await promise;
 
             expect(result.response).toEqual(pulled);
@@ -92,23 +93,21 @@ describe('device fork', () => {
         });
 
         test('should keep polling on offline errors', async () => {
-            const pull = jest.fn().mockRejectedValueOnce({ name: 'OfflineError' }).mockResolvedValue(pulled);
-            const promise = pollDeviceFork({ api: mockApi(pull), clientID: CLIENT_ID, host: HOST, onFork: jest.fn() });
-            await jest.advanceTimersByTimeAsync(DEVICE_FORK_POLL_INTERVAL);
+            const pull = vi.fn().mockRejectedValueOnce({ name: 'OfflineError' }).mockResolvedValue(pulled);
+            const promise = pollDeviceFork({ api: mockApi(pull), clientID: CLIENT_ID, host: HOST, onFork: vi.fn() });
+            await vi.advanceTimersByTimeAsync(DEVICE_FORK_POLL_INTERVAL);
             expect((await promise).response).toEqual(pulled);
         });
 
         test('should throw errors other than pending', async () => {
             const error = { status: 400, data: { Code: 2011, Error: 'Invalid' } };
-            const api = mockApi(jest.fn().mockRejectedValue(error));
-            await expect(pollDeviceFork({ api, clientID: CLIENT_ID, host: HOST, onFork: jest.fn() })).rejects.toBe(
-                error
-            );
+            const api = mockApi(vi.fn().mockRejectedValue(error));
+            await expect(pollDeviceFork({ api, clientID: CLIENT_ID, host: HOST, onFork: vi.fn() })).rejects.toBe(error);
             expect(pullCalls(api)).toHaveLength(1);
         });
 
         test('should request a new fork when the current one expires', async () => {
-            const pull = jest.fn().mockImplementation(async (url: string) => {
+            const pull = vi.fn().mockImplementation(async (url: string) => {
                 if (url.endsWith('selector-2')) return pulled;
                 throw pending;
             });
@@ -116,7 +115,7 @@ describe('device fork', () => {
             const forks: DeviceFork[] = [];
 
             const promise = pollDeviceFork({ api, clientID: CLIENT_ID, host: HOST, onFork: (f) => forks.push(f) });
-            await jest.advanceTimersByTimeAsync(DEVICE_FORK_LIFETIME + DEVICE_FORK_POLL_INTERVAL);
+            await vi.advanceTimersByTimeAsync(DEVICE_FORK_LIFETIME + DEVICE_FORK_POLL_INTERVAL);
             const result = await promise;
 
             expect(forks.map((fork) => fork.selector)).toEqual(['selector-1', 'selector-2']);
@@ -127,11 +126,11 @@ describe('device fork', () => {
 
         test('should give up after the total lifetime', async () => {
             const api = mockApi();
-            const onFork = jest.fn();
+            const onFork = vi.fn();
 
             const promise = pollDeviceFork({ api, clientID: CLIENT_ID, host: HOST, onFork });
             const assertion = expect(promise).rejects.toBeInstanceOf(DeviceForkExpiredError);
-            await jest.advanceTimersByTimeAsync(DEVICE_FORK_TOTAL_LIFETIME + DEVICE_FORK_POLL_INTERVAL);
+            await vi.advanceTimersByTimeAsync(DEVICE_FORK_TOTAL_LIFETIME + DEVICE_FORK_POLL_INTERVAL);
             await assertion;
 
             expect(onFork).toHaveBeenCalledTimes(3);
@@ -146,14 +145,14 @@ describe('device fork', () => {
                 clientID: CLIENT_ID,
                 host: HOST,
                 signal: controller.signal,
-                onFork: jest.fn(),
+                onFork: vi.fn(),
             });
             const assertion = expect(promise).rejects.toMatchObject({ name: 'AbortError' });
-            await jest.advanceTimersByTimeAsync(DEVICE_FORK_POLL_INTERVAL);
+            await vi.advanceTimersByTimeAsync(DEVICE_FORK_POLL_INTERVAL);
             const callsBeforeAbort = pullCalls(api).length;
             controller.abort();
             await assertion;
-            await jest.advanceTimersByTimeAsync(5 * DEVICE_FORK_POLL_INTERVAL);
+            await vi.advanceTimersByTimeAsync(5 * DEVICE_FORK_POLL_INTERVAL);
 
             expect(pullCalls(api)).toHaveLength(callsBeforeAbort);
         });
@@ -167,12 +166,12 @@ describe('device fork', () => {
                 clientID: CLIENT_ID,
                 host: HOST,
                 signal: controller.signal,
-                onFork: jest.fn(),
+                onFork: vi.fn(),
             });
             const assertion = expect(promise).rejects.toMatchObject({ name: 'AbortError' });
-            await jest.advanceTimersByTimeAsync(10 * DEVICE_FORK_POLL_INTERVAL);
+            await vi.advanceTimersByTimeAsync(10 * DEVICE_FORK_POLL_INTERVAL);
 
-            const clearTimeoutSpy = jest.spyOn(globalThis, 'clearTimeout');
+            const clearTimeoutSpy = vi.spyOn(globalThis, 'clearTimeout');
             controller.abort();
             await assertion;
 
@@ -185,7 +184,7 @@ describe('getDeviceForkConsumeOptions', () => {
     const OFFLINE_KD = 'k'.repeat(32);
     const user = { ID: 'user-id', Email: 'user@example.com', DisplayName: 'User', Flags: { sso: false } };
 
-    const api = jest.fn(async ({ url }: { url: string }) => {
+    const api = vi.fn(async ({ url }: { url: string }) => {
         if (url === 'auth/v4/refresh') return { AccessToken: 'access', RefreshToken: 'refresh' };
         if (url === 'core/v4/users') return { User: user };
         return {};

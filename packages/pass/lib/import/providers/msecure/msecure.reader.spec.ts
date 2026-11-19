@@ -7,14 +7,14 @@ import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportPayload } from '../../types';
 import { readMSecureData } from './msecure.reader';
 
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    ...jest.requireActual('@proton/pass/utils/time/epoch'),
-    getEpoch: jest.fn(),
+vi.mock('@proton/pass/utils/time/epoch', async () => ({
+    ...(await vi.importActual('@proton/pass/utils/time/epoch')),
+    getEpoch: vi.fn(),
 }));
 
 describe('Import mSecure csv', () => {
     let payload: ImportPayload;
-    const dateMock = jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
+    const dateMock = vi.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
 
     const getItem = <T extends ItemImportIntent['type']>(index: number) =>
         deobfuscateItem(payload.vaults[0].items[index]) as unknown as ItemImportIntent<T>;
@@ -134,7 +134,7 @@ describe('Import mSecure csv (French app export)', () => {
         deobfuscateItem(items.find((item) => item.metadata.name === name)!) as unknown as ItemImportIntent<T>;
 
     beforeAll(async () => {
-        jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
+        vi.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
         const sourceData = fs.readFileSync(__dirname + '/mocks/msecure-fr.csv');
         const payload = await readMSecureData(new File([sourceData], 'msecure-fr.csv'));
         items = payload.vaults[0].items;
@@ -215,7 +215,7 @@ describe('Import mSecure csv (French app export)', () => {
 
 describe('Import mSecure csv (other app languages)', () => {
     beforeAll(() => {
-        jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
+        vi.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
     });
 
     const readCard = async (row: string) => {

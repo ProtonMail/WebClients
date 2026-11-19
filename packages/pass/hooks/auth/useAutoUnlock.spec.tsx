@@ -20,20 +20,20 @@ const Wrapper: FC<PropsWithChildren> = ({ children }) => (
 
 describe('useAutoUnlock', () => {
     beforeEach(() => {
-        jest.spyOn(document, 'hasFocus').mockReturnValue(true);
+        vi.spyOn(document, 'hasFocus').mockReturnValue(true);
     });
 
-    afterEach(() => jest.restoreAllMocks());
+    afterEach(() => vi.restoreAllMocks());
 
     test('prompts once when the window is visible', async () => {
-        const onUnlock = jest.fn().mockResolvedValue(undefined);
+        const onUnlock = vi.fn().mockResolvedValue(undefined);
         renderHook(() => useAutoUnlock({ loading: false, onUnlock }), { wrapper: Wrapper });
 
         await waitFor(() => expect(onUnlock).toHaveBeenCalledTimes(1));
     });
 
     test('does not prompt while the last attempt is flagged as failed or declined', async () => {
-        const onUnlock = jest.fn().mockResolvedValue(undefined);
+        const onUnlock = vi.fn().mockResolvedValue(undefined);
         renderHook(() => useAutoUnlock({ loading: false, onUnlock, error: true }), { wrapper: Wrapper });
 
         await settle();
@@ -41,7 +41,7 @@ describe('useAutoUnlock', () => {
     });
 
     test('does not prompt again when the attempt settles as declined', async () => {
-        const onUnlock = jest.fn().mockResolvedValue(undefined);
+        const onUnlock = vi.fn().mockResolvedValue(undefined);
         const { rerender } = renderHook(
             (props: { loading: boolean; error: boolean }) => useAutoUnlock({ ...props, onUnlock }),
             { wrapper: Wrapper, initialProps: { loading: false, error: false } }
@@ -57,7 +57,7 @@ describe('useAutoUnlock', () => {
     });
 
     test('prompts again after the attempt settles without an error', async () => {
-        const onUnlock = jest.fn().mockResolvedValue(undefined);
+        const onUnlock = vi.fn().mockResolvedValue(undefined);
         const { rerender } = renderHook(
             (props: { loading: boolean; error: boolean }) => useAutoUnlock({ ...props, onUnlock }),
             { wrapper: Wrapper, initialProps: { loading: false, error: false } }

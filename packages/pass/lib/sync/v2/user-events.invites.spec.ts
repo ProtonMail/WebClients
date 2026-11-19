@@ -18,14 +18,14 @@ import {
     processSharesWithInvitesToCreate,
 } from './user-events.invites';
 
-jest.mock('@proton/pass/lib/invites/invite.requests', () => ({
-    ...jest.requireActual('@proton/pass/lib/invites/invite.requests'),
-    resolveUserInvites: jest.fn(),
-    resolveGroupInvites: jest.fn(),
+vi.mock('@proton/pass/lib/invites/invite.requests', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/invites/invite.requests')),
+    resolveUserInvites: vi.fn(),
+    resolveGroupInvites: vi.fn(),
 }));
 
-const resolveUserInvites = jest.mocked(inviteRequests.resolveUserInvites);
-const resolveGroupInvites = jest.mocked(inviteRequests.resolveGroupInvites);
+const resolveUserInvites = vi.mocked(inviteRequests.resolveUserInvites);
+const resolveGroupInvites = vi.mocked(inviteRequests.resolveGroupInvites);
 const event: SyncEventChangedWithTokenOutput = { EventToken: uniqueId() };
 
 const run = async <A>(saga: (arg: A) => EventProcessor, arg: A, state?: any) => {
@@ -34,7 +34,7 @@ const run = async <A>(saga: (arg: A) => EventProcessor, arg: A, state?: any) => 
     return { result, dispatched: setup.dispatched };
 };
 
-beforeEach(() => jest.clearAllMocks());
+beforeEach(() => vi.clearAllMocks());
 
 describe('processInvitesChanged', () => {
     test('returns `true` without dispatching when there is no event', async () => {

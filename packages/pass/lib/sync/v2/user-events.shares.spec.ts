@@ -17,34 +17,34 @@ import * as shareRequests from '../../shares/share.requests';
 import type { EventProcessor } from '../types';
 import { processSharesCreated, processSharesDeleted, processSharesUpdated } from './user-events.shares';
 
-jest.mock('@proton/pass/lib/folders/folders.requests', () => ({
-    ...jest.requireActual('@proton/pass/lib/folders/folders.requests'),
-    requestFoldersForShareId: jest.fn(),
+vi.mock('@proton/pass/lib/folders/folders.requests', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/folders/folders.requests')),
+    requestFoldersForShareId: vi.fn(),
 }));
 
-jest.mock('@proton/pass/lib/items/item.requests', () => ({
-    ...jest.requireActual('@proton/pass/lib/items/item.requests'),
-    requestItemsForShareId: jest.fn(),
+vi.mock('@proton/pass/lib/items/item.requests', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/items/item.requests')),
+    requestItemsForShareId: vi.fn(),
 }));
 
-jest.mock('@proton/pass/lib/shares/share.parser', () => ({
-    ...jest.requireActual('@proton/pass/lib/shares/share.parser'),
-    parseShareResponse: jest.fn(),
+vi.mock('@proton/pass/lib/shares/share.parser', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/shares/share.parser')),
+    parseShareResponse: vi.fn(),
 }));
 
-jest.mock('@proton/pass/lib/shares/share.requests', () => ({
-    ...jest.requireActual('@proton/pass/lib/shares/share.requests'),
-    requestShare: jest.fn(),
+vi.mock('@proton/pass/lib/shares/share.requests', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/shares/share.requests')),
+    requestShare: vi.fn(),
 }));
 
-const requestShare = jest.mocked(shareRequests.requestShare);
-const parseShareResponse = jest.mocked(shareParser.parseShareResponse);
-const requestItemsForShareId = jest.mocked(itemRequests.requestItemsForShareId);
-const requestFoldersForShareId = jest.mocked(folderRequests.requestFoldersForShareId);
+const requestShare = vi.mocked(shareRequests.requestShare);
+const parseShareResponse = vi.mocked(shareParser.parseShareResponse);
+const requestItemsForShareId = vi.mocked(itemRequests.requestItemsForShareId);
+const requestFoldersForShareId = vi.mocked(folderRequests.requestFoldersForShareId);
 
 const createEvent = (ShareID: ShareId) => ({ ShareID }) as SyncEventShareOutput;
-const removeShare = jest.fn();
-const canOpenShare = jest.fn(() => true);
+const removeShare = vi.fn();
+const canOpenShare = vi.fn(() => true);
 const share = createTestShare({ shareId: 's1' });
 const items = [createTestItem('login', { itemId: 'i1', shareId: 's1' })];
 const folders = [{ folderId: 'f1', shareId: 's1', vaultId: 'v1', parentFolderId: null, name: 'Work', keyRotation: 1 }];
@@ -70,7 +70,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 describe('processSharesCreated', () => {

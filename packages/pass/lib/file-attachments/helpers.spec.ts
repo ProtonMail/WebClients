@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type { ItemFileOutput } from '../../types/api/pass';
 import type { ItemKey } from '../../types/crypto/pass-types';
 import type { FileDescriptor } from '../../types/data/files';
@@ -16,21 +18,21 @@ import {
     validateFileName,
 } from './helpers';
 
-jest.mock('./file-proto.transformer', () => ({
-    ...jest.requireActual('./file-proto.transformer'),
-    decodeFileMetadata: jest.fn().mockImplementation((data) => ({
+vi.mock('./file-proto.transformer', async () => ({
+    ...(await vi.importActual('./file-proto.transformer')),
+    decodeFileMetadata: vi.fn().mockImplementation((data) => ({
         name: `File ${data[0]}`,
         mimeType: 'text/plain',
     })),
 }));
 
 describe('intoFileDescriptors', () => {
-    let openFileDescriptor: jest.Mock;
+    let openFileDescriptor: Mock;
 
     beforeEach(() => {
-        openFileDescriptor = jest.fn();
+        openFileDescriptor = vi.fn();
         exposePassCrypto({ openFileDescriptor } as any);
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     test('should transform ItemFileOutput into FileDescriptor', async () => {
@@ -156,12 +158,12 @@ describe('isFileForRevision', () => {
 });
 
 describe('intoPublicFileDescriptors', () => {
-    let openSecureLinkFileDescriptor: jest.Mock;
+    let openSecureLinkFileDescriptor: Mock;
 
     beforeEach(() => {
-        openSecureLinkFileDescriptor = jest.fn();
+        openSecureLinkFileDescriptor = vi.fn();
         exposePassCrypto({ openSecureLinkFileDescriptor } as any);
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     test('should transform ItemFileOutput into FileDescriptor for secure links', async () => {

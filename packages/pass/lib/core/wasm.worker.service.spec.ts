@@ -9,8 +9,8 @@ type TestMethods = {
 
 const createMessagePort = (): MessagePort =>
     ({
-        close: jest.fn(),
-        addEventListener: jest.fn(),
+        close: vi.fn(),
+        addEventListener: vi.fn(),
         onmessage: null,
     }) as any;
 
@@ -21,24 +21,24 @@ const createMessageChannel = (): MessageChannel => {
 };
 
 const createWorker = () => ({
-    postMessage: jest.fn(),
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
+    postMessage: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
 });
 
 describe('`wasmWorkerServiceFactory`', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     test('should create a singleton instance', () => {
         const worker = createWorker();
-        const spawn = jest.fn(() => worker as unknown as Worker);
-        const channelFactory = jest.fn(() => createMessageChannel());
+        const spawn = vi.fn(() => worker as unknown as Worker);
+        const channelFactory = vi.fn(() => createMessageChannel());
 
         const service = wasmWorkerServiceFactory<TestMethods>({ id: 'TestWorker', spawn }, channelFactory);
 
@@ -52,8 +52,8 @@ describe('`wasmWorkerServiceFactory`', () => {
     test('should handle success response correctly', async () => {
         const worker = createWorker();
         const channel = createMessageChannel();
-        const spawn = jest.fn(() => worker as unknown as Worker);
-        const channelFactory = jest.fn(() => channel);
+        const spawn = vi.fn(() => worker as unknown as Worker);
+        const channelFactory = vi.fn(() => channel);
 
         const service = wasmWorkerServiceFactory<TestMethods>({ id: 'TestWorker', spawn }, channelFactory);
         const exec = service.exec('add', 1, 2);
@@ -61,7 +61,7 @@ describe('`wasmWorkerServiceFactory`', () => {
         const readyCallback = worker.addEventListener.mock.calls[0][1];
         readyCallback({ data: { type: WASM_WORKER_READY_EVENT } });
 
-        await jest.advanceTimersToNextTimerAsync();
+        await vi.advanceTimersToNextTimerAsync();
 
         const [workerMessage] = worker.postMessage.mock.calls[0];
         const onMessage = channel.port2.onmessage as (ev: MessageEvent) => void;
@@ -78,8 +78,8 @@ describe('`wasmWorkerServiceFactory`', () => {
 
         const worker = createWorker();
         const channel = createMessageChannel();
-        const spawn = jest.fn(() => worker as unknown as Worker);
-        const channelFactory = jest.fn(() => channel);
+        const spawn = vi.fn(() => worker as unknown as Worker);
+        const channelFactory = vi.fn(() => channel);
 
         const service = wasmWorkerServiceFactory<TestMethods>({ id: 'TestWorker', spawn }, channelFactory);
         const exec = service.exec('add', 1, 2).catch((err) => (error = err));
@@ -87,7 +87,7 @@ describe('`wasmWorkerServiceFactory`', () => {
         const readyCallback = worker.addEventListener.mock.calls[0][1];
         readyCallback({ data: { type: WASM_WORKER_READY_EVENT } });
 
-        await jest.advanceTimersToNextTimerAsync();
+        await vi.advanceTimersToNextTimerAsync();
 
         const onMessage = channel.port2.onmessage as (ev: MessageEvent) => void;
         onMessage({ data: { ok: false, error: 'Operation failed' } } as any);
@@ -104,8 +104,8 @@ describe('`wasmWorkerServiceFactory`', () => {
 
         const worker = createWorker();
         const channel = createMessageChannel();
-        const spawn = jest.fn(() => worker as unknown as Worker);
-        const channelFactory = jest.fn(() => channel);
+        const spawn = vi.fn(() => worker as unknown as Worker);
+        const channelFactory = vi.fn(() => channel);
 
         const service = wasmWorkerServiceFactory<TestMethods>({ id: 'TestWorker', spawn }, channelFactory);
 
@@ -114,7 +114,7 @@ describe('`wasmWorkerServiceFactory`', () => {
         const readyCallback = worker.addEventListener.mock.calls[0][1];
         readyCallback({ data: { type: WASM_WORKER_READY_EVENT } });
 
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
         await exec;
 
         expect(error).toMatchObject({ name: 'TestWorkerError', message: 'Procedure timed out [add]' });
@@ -125,8 +125,8 @@ describe('`wasmWorkerServiceFactory`', () => {
     test('should transfer transferables correctly', async () => {
         const worker = createWorker();
         const channel = createMessageChannel();
-        const spawn = jest.fn(() => worker as unknown as Worker);
-        const channelFactory = jest.fn(() => channel);
+        const spawn = vi.fn(() => worker as unknown as Worker);
+        const channelFactory = vi.fn(() => channel);
 
         const service = wasmWorkerServiceFactory<TestMethods>({ id: 'TestWorker', spawn }, channelFactory);
 
@@ -136,7 +136,7 @@ describe('`wasmWorkerServiceFactory`', () => {
         const readyCallback = worker.addEventListener.mock.calls[0][1];
         readyCallback({ data: { type: WASM_WORKER_READY_EVENT } });
 
-        await jest.advanceTimersToNextTimerAsync();
+        await vi.advanceTimersToNextTimerAsync();
 
         const [message, transferList] = worker.postMessage.mock.calls[0];
         expect(message).toEqual({ method: 'sendBuffer', args: [arr] });

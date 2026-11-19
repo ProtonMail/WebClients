@@ -7,9 +7,9 @@ import { deobfuscateItem } from '../../../items/item.obfuscation';
 import type { ImportPayload, ImportVault } from '../../types';
 import { readRoboformData } from './roboform.reader';
 
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    ...jest.requireActual('@proton/pass/utils/time/epoch'),
-    getEpoch: jest.fn(),
+vi.mock('@proton/pass/utils/time/epoch', async () => ({
+    ...(await vi.importActual('@proton/pass/utils/time/epoch')),
+    getEpoch: vi.fn(),
 }));
 
 const getFolderPaths = (vault: ImportVault): Map<string, string> => {
@@ -25,7 +25,7 @@ const getFolderPaths = (vault: ImportVault): Map<string, string> => {
 
 describe('Import Roboform csv', () => {
     let payload: ImportPayload;
-    const dateMock = jest.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
+    const dateMock = vi.mocked(epochUtils.getEpoch).mockImplementation(() => 1682585156);
 
     beforeAll(async () => {
         const sourceData = fs.readFileSync(__dirname + '/mocks/roboform.csv');

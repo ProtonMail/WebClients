@@ -9,14 +9,14 @@ import type { RootSagaOptions } from '../../types';
 import watcher from './boot.saga';
 import * as hydrateSaga from './hydrate.saga';
 
-jest.mock('./hydrate.saga', () => ({
-    ...jest.requireActual('./hydrate.saga'),
-    hydrate: jest.fn(),
+vi.mock('./hydrate.saga', async () => ({
+    ...(await vi.importActual('./hydrate.saga')),
+    hydrate: vi.fn(),
 }));
 
-const setResumeLock = jest.fn();
-const setAppStatus = jest.fn();
-const onBoot = jest.fn();
+const setResumeLock = vi.fn();
+const setAppStatus = vi.fn();
+const onBoot = vi.fn();
 
 const options = {
     getSettings: () => Promise.resolve({}),
@@ -97,7 +97,7 @@ describe('Boot saga', () => {
             setAppStatus.mockClear();
             onBoot.mockClear();
 
-            jest.mocked(hydrateSaga.hydrate).mockImplementation(function* () {
+            vi.mocked(hydrateSaga.hydrate).mockImplementation(function* () {
                 /** Stall `hydrate` so the boot is suspended mid-hydration:
                  * the exact window a cross-tab `cacheConflict` targets, leaving
                  * only the watcher's race able to resolve the boot. */

@@ -16,13 +16,13 @@ import { createAuthStore } from '../../store';
 import { LockMode } from '../types';
 import { biometricsLockAdapterFactory, generateBiometricsKey, getBiometricsUnlockKey } from './adapter';
 
-jest.mock('../../../../store/selectors/cache', () => ({ selectCachableState: (state: unknown) => state }));
+vi.mock('../../../../store/selectors/cache', () => ({ selectCachableState: (state: unknown) => state }));
 
 const setup = (core: Partial<PassCoreContextValue>) => {
     const authStore = createAuthStore(createStore());
-    const api = { reset: jest.fn().mockResolvedValue(undefined) };
-    const syncLock = jest.fn().mockResolvedValue(undefined);
-    const lock = jest.fn().mockResolvedValue(undefined);
+    const api = { reset: vi.fn().mockResolvedValue(undefined) };
+    const syncLock = vi.fn().mockResolvedValue(undefined);
+    const lock = vi.fn().mockResolvedValue(undefined);
     const auth = { syncLock, lock, config: { authStore, api } } as unknown as AuthService;
 
     authStore.setLocalID(1);
@@ -33,10 +33,10 @@ const setup = (core: Partial<PassCoreContextValue>) => {
 };
 
 describe('biometricsLockAdapterFactory::unlock [app-unbound platform]', () => {
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     test('a verified gesture unlocks without yielding an `offlineKD`', async () => {
-        const promptBiometricsCheck = jest.fn().mockResolvedValue(undefined);
+        const promptBiometricsCheck = vi.fn().mockResolvedValue(undefined);
         const { authStore, syncLock, adapter } = setup({
             biometricsKeyAppBound: false,
             promptBiometricsCheck,
@@ -51,9 +51,7 @@ describe('biometricsLockAdapterFactory::unlock [app-unbound platform]', () => {
     });
 
     test('a failed prompt throws `UnlockFailedError` with its message and burns no retry', async () => {
-        const promptBiometricsCheck = jest
-            .fn()
-            .mockRejectedValue(new Error('There have been too many failed attempts.'));
+        const promptBiometricsCheck = vi.fn().mockRejectedValue(new Error('There have been too many failed attempts.'));
         const { authStore, syncLock, lock, adapter } = setup({
             biometricsKeyAppBound: false,
             promptBiometricsCheck,
@@ -73,7 +71,7 @@ describe('biometricsLockAdapterFactory::unlock [app-unbound platform]', () => {
     });
 
     test('a dismissed prompt throws `UnlockDeclinedError` and burns no retry', async () => {
-        const promptBiometricsCheck = jest.fn().mockRejectedValue(new UnlockDeclinedError());
+        const promptBiometricsCheck = vi.fn().mockRejectedValue(new UnlockDeclinedError());
         const { authStore, syncLock, lock, adapter } = setup({
             biometricsKeyAppBound: false,
             promptBiometricsCheck,
@@ -92,7 +90,7 @@ describe('biometricsLockAdapterFactory::unlock [app-unbound platform]', () => {
     test.each([LockMode.PASSWORD, LockMode.SESSION, LockMode.NONE])(
         'a %s lock mode is never cleared by a gesture',
         async (lockMode) => {
-            const promptBiometricsCheck = jest.fn().mockResolvedValue(undefined);
+            const promptBiometricsCheck = vi.fn().mockResolvedValue(undefined);
             const { authStore, syncLock, adapter } = setup({
                 biometricsKeyAppBound: false,
                 promptBiometricsCheck,
@@ -123,7 +121,7 @@ describe('biometricsLockAdapterFactory::lock', () => {
     test('app-unbound: a cache written after a lock and unlock round trip decrypts on an offline cold boot', async () => {
         exposePassCrypto({ serialize: () => ({}) } as unknown as PassCryptoWorker);
 
-        const promptBiometricsCheck = jest.fn().mockResolvedValue(undefined);
+        const promptBiometricsCheck = vi.fn().mockResolvedValue(undefined);
         const { authStore, adapter } = setup({ biometricsKeyAppBound: false, promptBiometricsCheck });
         const offlineKD = uint8ArrayToBinaryString(generateKey());
         const state = { items: { byShareId: { share: { item: 'secret' } } } } as unknown as State;
@@ -151,7 +149,7 @@ describe('biometricsLockAdapterFactory::lock', () => {
     });
 
     test('app-unbound: the store holds no `offlineKD` while locked, the gesture restores it', async () => {
-        const promptBiometricsCheck = jest.fn().mockResolvedValue(undefined);
+        const promptBiometricsCheck = vi.fn().mockResolvedValue(undefined);
         const { authStore, adapter } = setup({ biometricsKeyAppBound: false, promptBiometricsCheck });
 
         authStore.setOfflineKD('offline-kd');
@@ -167,7 +165,7 @@ describe('biometricsLockAdapterFactory::lock', () => {
     });
 
     test('app-unbound: a denied gesture keeps the `offlineKD` out of the store', async () => {
-        const promptBiometricsCheck = jest
+        const promptBiometricsCheck = vi
             .fn()
             .mockRejectedValueOnce(new UnlockDeclinedError())
             .mockResolvedValueOnce(undefined);
@@ -185,7 +183,7 @@ describe('biometricsLockAdapterFactory::lock', () => {
     });
 
     test('app-unbound: a second lock while locked keeps the held `offlineKD`', async () => {
-        const promptBiometricsCheck = jest.fn().mockResolvedValue(undefined);
+        const promptBiometricsCheck = vi.fn().mockResolvedValue(undefined);
         const { authStore, adapter } = setup({ biometricsKeyAppBound: false, promptBiometricsCheck });
 
         authStore.setOfflineKD('offline-kd');
@@ -212,7 +210,7 @@ describe('biometricsLockAdapterFactory::lock', () => {
 
 describe('generateBiometricsKey', () => {
     test('refuses to generate key material where the key is not app-bound', async () => {
-        const core = { biometricsKeyAppBound: false, generateBiometricsKey: jest.fn() };
+        const core = { biometricsKeyAppBound: false, generateBiometricsKey: vi.fn() };
 
         await expect(generateBiometricsKey(core as unknown as PassCoreContextValue, 'offline-kd')).rejects.toThrow(
             'Biometrics key is not app-bound'
@@ -225,14 +223,14 @@ describe('getBiometricsUnlockKey', () => {
     const authStore = createAuthStore(createStore());
 
     test('resolves an empty key without prompting where the key is not app-bound', async () => {
-        const core = { biometricsKeyAppBound: false, getBiometricsKey: jest.fn() };
+        const core = { biometricsKeyAppBound: false, getBiometricsKey: vi.fn() };
 
         await expect(getBiometricsUnlockKey(core as unknown as PassCoreContextValue, authStore)).resolves.toBe('');
         expect(core.getBiometricsKey).not.toHaveBeenCalled();
     });
 
     test('reads the key from the platform store where the key is app-bound', async () => {
-        const core = { biometricsKeyAppBound: true, getBiometricsKey: jest.fn().mockResolvedValue('biometrics-key') };
+        const core = { biometricsKeyAppBound: true, getBiometricsKey: vi.fn().mockResolvedValue('biometrics-key') };
 
         await expect(getBiometricsUnlockKey(core as unknown as PassCoreContextValue, authStore)).resolves.toBe(
             'biometrics-key'
@@ -243,7 +241,7 @@ describe('getBiometricsUnlockKey', () => {
     test('propagates a failed platform store read', async () => {
         const core = {
             biometricsKeyAppBound: true,
-            getBiometricsKey: jest.fn().mockRejectedValue(new Error('denied')),
+            getBiometricsKey: vi.fn().mockRejectedValue(new Error('denied')),
         };
 
         await expect(getBiometricsUnlockKey(core as unknown as PassCoreContextValue, authStore)).rejects.toThrow(

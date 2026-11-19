@@ -16,30 +16,30 @@ import { inviteAccept } from '../../actions/creators/invite';
 import type { RootSagaOptions } from '../../types';
 import acceptInviteSaga from './invite-accept.saga';
 
-jest.mock('../../../lib/invites/invite.requests', () => ({
-    ...jest.requireActual('../../../lib/invites/invite.requests'),
-    acceptInvite: jest.fn(),
+vi.mock('../../../lib/invites/invite.requests', async () => ({
+    ...(await vi.importActual('../../../lib/invites/invite.requests')),
+    acceptInvite: vi.fn(),
 }));
 
-jest.mock('../../../lib/shares/share.parser', () => ({
-    ...jest.requireActual('../../../lib/shares/share.parser'),
-    parseShareResponse: jest.fn(),
+vi.mock('../../../lib/shares/share.parser', async () => ({
+    ...(await vi.importActual('../../../lib/shares/share.parser')),
+    parseShareResponse: vi.fn(),
 }));
 
-jest.mock('../../../lib/folders/folders.requests', () => ({
-    ...jest.requireActual('../../../lib/folders/folders.requests'),
-    requestFoldersForShareId: jest.fn(),
+vi.mock('../../../lib/folders/folders.requests', async () => ({
+    ...(await vi.importActual('../../../lib/folders/folders.requests')),
+    requestFoldersForShareId: vi.fn(),
 }));
 
-jest.mock('../../../lib/items/item.requests', () => ({
-    ...jest.requireActual('../../../lib/items/item.requests'),
-    requestItemsForShareId: jest.fn(),
+vi.mock('../../../lib/items/item.requests', async () => ({
+    ...(await vi.importActual('../../../lib/items/item.requests')),
+    requestItemsForShareId: vi.fn(),
 }));
 
-const acceptInvite = jest.mocked(inviteRequests.acceptInvite);
-const parseShareResponse = jest.mocked(shareParser.parseShareResponse);
-const requestFoldersForShareId = jest.mocked(folderRequests.requestFoldersForShareId);
-const requestItemsForShareId = jest.mocked(itemRequests.requestItemsForShareId);
+const acceptInvite = vi.mocked(inviteRequests.acceptInvite);
+const parseShareResponse = vi.mocked(shareParser.parseShareResponse);
+const requestFoldersForShareId = vi.mocked(folderRequests.requestFoldersForShareId);
+const requestItemsForShareId = vi.mocked(itemRequests.requestItemsForShareId);
 
 const inviteToken = 'token-1';
 const invite = { inviteToken, targetType: ShareType.Vault, keys: [] } as unknown as Invite;
@@ -60,7 +60,7 @@ describe('invite-accept saga', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         acceptInvite.mockResolvedValue({} as ShareGetResponse);
         parseShareResponse.mockResolvedValue(share);
         requestFoldersForShareId.mockResolvedValue(folders);

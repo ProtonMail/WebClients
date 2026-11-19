@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 
 import type { Api } from '../../types/api/api';
@@ -7,11 +9,11 @@ const TEST_INTERVAL = 5_000;
 const getTestEventID = (n: number = 1) => `TEST_EVENT_ID_${n}`;
 
 const createMockedEventManager = () => {
-    const mockApi = jest.fn().mockImplementation(() => Promise.resolve({}));
+    const mockApi = vi.fn().mockImplementation(() => Promise.resolve({}));
     (mockApi as any).getState = () => ({});
 
-    const mockQuery = jest.fn().mockImplementation(() => ({ url: 'test/endpoint' }));
-    const mockGetCursor = jest.fn().mockImplementation((res) => ({ EventID: res.EventID, More: Boolean(res.More) }));
+    const mockQuery = vi.fn().mockImplementation(() => ({ url: 'test/endpoint' }));
+    const mockGetCursor = vi.fn().mockImplementation((res) => ({ EventID: res.EventID, More: Boolean(res.More) }));
 
     const manager = eventManager({
         api: mockApi as any as Api,
@@ -23,14 +25,14 @@ const createMockedEventManager = () => {
 
     return {
         manager,
-        api: mockApi as jest.Mock,
-        query: mockQuery as jest.Mock,
+        api: mockApi as Mock,
+        query: mockQuery as Mock,
         setApiResponse: (EventID: string, More: 0 | 1) => mockApi.mockResolvedValue({ EventID, More }),
     };
 };
 
 describe('event manager', () => {
-    beforeEach(() => jest.useFakeTimers());
+    beforeEach(() => vi.useFakeTimers());
 
     test('should initialize configuration correctly', () => {
         const { manager } = createMockedEventManager();
@@ -102,12 +104,12 @@ describe('event manager', () => {
         manager.start();
 
         expect(manager.state.timeoutHandle).toBeDefined();
-        jest.advanceTimersByTime(TEST_INTERVAL);
+        vi.advanceTimersByTime(TEST_INTERVAL);
 
         expect(api).toHaveBeenCalledTimes(1);
         expect(manager.state.abortController).toBeDefined();
 
-        await jest.advanceTimersToNextTimerAsync();
+        await vi.advanceTimersToNextTimerAsync();
 
         expect(manager.state.lastEventID).toEqual(getTestEventID(1));
         expect(manager.state.retryIndex).toEqual(0);
@@ -123,12 +125,12 @@ describe('event manager', () => {
         manager.start();
 
         expect(manager.state.timeoutHandle).toBeDefined();
-        jest.advanceTimersByTime(TEST_INTERVAL - 1);
+        vi.advanceTimersByTime(TEST_INTERVAL - 1);
 
         manager.stop();
-        await jest.advanceTimersToNextTimerAsync();
+        await vi.advanceTimersToNextTimerAsync();
 
-        jest.advanceTimersByTime(1);
+        vi.advanceTimersByTime(1);
 
         expect(api).not.toHaveBeenCalled();
         expect(query).not.toHaveBeenCalled();
@@ -145,12 +147,12 @@ describe('event manager', () => {
         manager.start();
 
         expect(manager.state.timeoutHandle).toBeDefined();
-        jest.advanceTimersByTime(TEST_INTERVAL - 1);
+        vi.advanceTimersByTime(TEST_INTERVAL - 1);
 
         manager.reset();
-        await jest.advanceTimersToNextTimerAsync();
+        await vi.advanceTimersToNextTimerAsync();
 
-        jest.advanceTimersByTime(1);
+        vi.advanceTimersByTime(1);
 
         expect(api).not.toHaveBeenCalled();
         expect(query).not.toHaveBeenCalled();
@@ -163,7 +165,7 @@ describe('event manager', () => {
 
     test('should notify listeners on events & errors', async () => {
         const { manager, api } = createMockedEventManager();
-        const listener = jest.fn().mockImplementation();
+        const listener = vi.fn().mockImplementation(() => undefined);
         manager.subscribe(listener);
 
         let count = 0;
@@ -178,13 +180,13 @@ describe('event manager', () => {
         manager.start();
 
         while (count < 5) {
-            await jest.advanceTimersToNextTimerAsync();
+            await vi.advanceTimersToNextTimerAsync();
             expect(listener).toHaveBeenCalledTimes(count);
             expect(listener.mock.calls[count - 1][0]).toEqual({ EventID: getTestEventID(count), More: 0 });
         }
 
         api.mockImplementation(() => Promise.reject('FAILURE'));
-        await jest.advanceTimersToNextTimerAsync();
+        await vi.advanceTimersToNextTimerAsync();
         expect(listener).toHaveBeenCalledTimes(count + 1);
         expect(listener.mock.calls[count][0]).toEqual({ error: 'FAILURE' });
 
@@ -200,7 +202,7 @@ describe('event manager', () => {
         let count = 0;
         while (count < 10) {
             count++;
-            await jest.advanceTimersByTimeAsync(TEST_INTERVAL * FIBONACCI_LIST[manager.state.retryIndex]);
+            await vi.advanceTimersByTimeAsync(TEST_INTERVAL * FIBONACCI_LIST[manager.state.retryIndex]);
             const retryIndex = Math.min(count, FIBONACCI_LIST.length - 1);
             expect(manager.state.retryIndex).toEqual(retryIndex);
         }

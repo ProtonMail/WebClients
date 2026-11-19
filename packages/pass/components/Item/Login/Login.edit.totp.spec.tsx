@@ -7,27 +7,26 @@ import type { LoginItemFormValues } from '../../../types/forms/item';
 import { render } from '../../../utils/tests/render';
 import { LoginEditTOTP } from './Login.edit.totp';
 
-jest.mock('webextension-polyfill', () => ({}));
-jest.mock('imask/esm/masked/range', () => ({}));
+vi.mock('webextension-polyfill', () => ({ default: {} }));
 
-jest.mock('../../../store/selectors/limits', () => ({
-    ...jest.requireActual('../../../store/selectors/limits'),
-    selectTOTPLimits: jest.fn(),
+vi.mock('../../../store/selectors/limits', async () => ({
+    ...(await vi.importActual('../../../store/selectors/limits')),
+    selectTOTPLimits: vi.fn(),
 }));
 
-jest.mock('../../../store/selectors/organization', () => ({
-    ...jest.requireActual('../../../store/selectors/organization'),
-    selectOrgTOTPDisabled: jest.fn(),
+vi.mock('../../../store/selectors/organization', async () => ({
+    ...(await vi.importActual('../../../store/selectors/organization')),
+    selectOrgTOTPDisabled: vi.fn(),
 }));
 
-const mockSelectOrgTOTPDisabled = jest.mocked(selectOrgTOTPDisabled);
-const mockSelectTOTPLimits = jest.mocked(selectTOTPLimits);
+const mockSelectOrgTOTPDisabled = vi.mocked(selectOrgTOTPDisabled);
+const mockSelectTOTPLimits = vi.mocked(selectTOTPLimits);
 
 const SECRET = 'otpauth://totp/test?secret=JBSWY3DPEHPK3PXP';
 
 const renderField = (totpUri: string) =>
     render(
-        <Formik<Partial<LoginItemFormValues>> initialValues={{ totpUri }} onSubmit={jest.fn()}>
+        <Formik<Partial<LoginItemFormValues>> initialValues={{ totpUri }} onSubmit={vi.fn()}>
             {(form) => <LoginEditTOTP form={form as any} />}
         </Formik>
     );
@@ -40,7 +39,7 @@ describe('LoginEditTOTP', () => {
         mockSelectTOTPLimits.mockReturnValue({ needsUpgrade } as ReturnType<typeof selectTOTPLimits>);
     };
 
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     test('renders the secret field when nothing restricts TOTP', () => {
         setPolicy({});

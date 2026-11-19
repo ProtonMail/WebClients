@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { createMemoryStore } from '../../../../utils/store';
 import { getEpoch } from '../../../../utils/time/epoch';
 import { PassErrorCode } from '../../../api/errors';
@@ -7,32 +9,32 @@ import { LockMode } from '../types';
 import { sessionLockAdapterFactory } from './adapter';
 import * as lockRequests from './lock.requests';
 
-jest.mock('./lock.requests');
-jest.mock('../../../../utils/time/epoch');
-jest.mock('../../session', () => ({
-    ...jest.requireActual('../../session'),
-    decryptSessionBlob: jest.fn(),
-    getPersistedSessionKey: jest.fn(),
+vi.mock('./lock.requests');
+vi.mock('../../../../utils/time/epoch');
+vi.mock('../../session', async () => ({
+    ...(await vi.importActual('../../session')),
+    decryptSessionBlob: vi.fn(),
+    getPersistedSessionKey: vi.fn(),
 }));
 
-const unlockSessionMock = lockRequests.unlockSession as jest.Mock;
-const checkSessionLockMock = lockRequests.checkSessionLock as jest.Mock;
-const getEpochMock = getEpoch as jest.Mock;
-const decryptSessionBlobMock = authSession.decryptSessionBlob as jest.Mock;
-const getPersistedSessionKeyMock = authSession.getPersistedSessionKey as jest.Mock;
+const unlockSessionMock = lockRequests.unlockSession as Mock;
+const checkSessionLockMock = lockRequests.checkSessionLock as Mock;
+const getEpochMock = getEpoch as Mock;
+const decryptSessionBlobMock = authSession.decryptSessionBlob as Mock;
+const getPersistedSessionKeyMock = authSession.getPersistedSessionKey as Mock;
 
 const TOKEN = 'session-lock-token';
 
 const setupAdapter = () => {
-    const api = { reset: jest.fn() };
+    const api = { reset: vi.fn() };
     const authStore = createAuthStore(createMemoryStore());
-    const onNotification = jest.fn();
-    const getPersistedSession = jest.fn().mockResolvedValue({ blob: 'blob' });
-    const persistSession = jest.fn().mockResolvedValue(undefined);
-    const syncLock = jest.fn().mockResolvedValue(undefined);
-    const onLockUpdate = jest.fn();
-    const logout = jest.fn();
-    const lock = jest.fn();
+    const onNotification = vi.fn();
+    const getPersistedSession = vi.fn().mockResolvedValue({ blob: 'blob' });
+    const persistSession = vi.fn().mockResolvedValue(undefined);
+    const syncLock = vi.fn().mockResolvedValue(undefined);
+    const onLockUpdate = vi.fn();
+    const logout = vi.fn();
+    const lock = vi.fn();
 
     const config = { api, authStore, onNotification, getPersistedSession };
     const auth = { persistSession, syncLock, onLockUpdate, lock, logout };
@@ -47,7 +49,7 @@ describe('SessionLock adapter', () => {
         decryptSessionBlobMock.mockResolvedValue({ sessionLockToken: TOKEN });
     });
 
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     describe('Factory', () => {
         test('should set correct lock mode type', () => {
@@ -110,7 +112,7 @@ describe('SessionLock adapter', () => {
         test('should set state and `persistSession` when mode changed', async () => {
             const { adapter, authStore, auth } = setupAdapter();
             unlockSessionMock.mockResolvedValue(TOKEN);
-            jest.spyOn(authStore, 'validSession').mockReturnValue(true);
+            vi.spyOn(authStore, 'validSession').mockReturnValue(true);
             authStore.setLockMode(LockMode.NONE);
 
             const token = await adapter.unlock('123456');
@@ -126,7 +128,7 @@ describe('SessionLock adapter', () => {
         test('should `syncLock` without full persist when already in SESSION mode with matching token', async () => {
             const { adapter, authStore, auth } = setupAdapter();
             unlockSessionMock.mockResolvedValue(TOKEN);
-            jest.spyOn(authStore, 'validSession').mockReturnValue(true);
+            vi.spyOn(authStore, 'validSession').mockReturnValue(true);
             authStore.setLockMode(LockMode.SESSION);
             authStore.setLockToken(TOKEN);
 

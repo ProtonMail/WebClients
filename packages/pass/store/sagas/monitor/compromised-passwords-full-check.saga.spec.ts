@@ -7,10 +7,10 @@ import { sagaSetup } from '../../../utils/tests/saga';
 import { requestCancel } from '../../request/actions';
 import compromisedPasswordsFullCheck from './compromised-passwords-full-check.saga';
 
-const checkPasswordCompromised = jest.fn();
-const getLastChangeTimestamp = jest.fn();
+const checkPasswordCompromised = vi.fn();
+const getLastChangeTimestamp = vi.fn();
 
-jest.mock('../../../lib/monitor/compromised-password.request', () => ({
+vi.mock('../../../lib/monitor/compromised-password.request', async () => ({
     checkPasswordCompromised: (...args: unknown[]) => checkPasswordCompromised(...args),
     getLastChangeTimestamp: (...args: unknown[]) => getLastChangeTimestamp(...args),
 }));
@@ -24,13 +24,13 @@ let online = true;
 
 exposeApi({ getState: () => ({ online, unreachable: false }) } as any);
 
-jest.mock('../../selectors/user', () => ({
-    ...jest.requireActual('../../selectors/user'),
+vi.mock('../../selectors/user', async () => ({
+    ...(await vi.importActual('../../selectors/user')),
     selectFeatureFlag: () => () => featureEnabled,
 }));
 
-jest.mock('../../selectors/monitor', () => ({
-    ...jest.requireActual('../../selectors/monitor'),
+vi.mock('../../selectors/monitor', async () => ({
+    ...(await vi.importActual('../../selectors/monitor')),
     selectCanCheckCompromisedPasswords: () => canCheck,
     selectLoginsEligibleForMonitorCheck: () => () => logins,
     selectCompromisedPasswordsCache: () => cache,
@@ -50,7 +50,7 @@ describe('compromisedPasswordsFullCheck saga', () => {
     let task: Task;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         featureEnabled = true;
         canCheck = true;
         online = true;
