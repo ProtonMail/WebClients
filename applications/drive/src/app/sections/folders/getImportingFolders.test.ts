@@ -1,7 +1,6 @@
 import { ApiImportProvider, ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
 import type { ActiveImporter, Importer } from '@proton/activation/src/logic/importers/importers.interface';
-import { generateNodeUid } from '@proton/drive/sdk';
 
 import { getImportingFolders } from './getImportingFolders';
 
@@ -12,7 +11,7 @@ const importer: Importer = {
     provider: ApiImportProvider.GOOGLE,
 };
 
-const buildDriveImport = (overrides: Partial<ActiveImporter>) => ({
+const buildDriveImport = (overrides: Partial<ActiveImporter> = {}) => ({
     importer,
     activeImporter: {
         localID: 'importer-id-Drive',
@@ -20,16 +19,27 @@ const buildDriveImport = (overrides: Partial<ActiveImporter>) => ({
         product: ImportType.DRIVE,
         importState: ApiImporterState.RUNNING,
         startDate: 1601053249,
-        importFolder: { volumeID: 'volume-id', linkID: 'link-id' },
         ...overrides,
     } satisfies ActiveImporter,
 });
 
 describe('getImportingFolders', () => {
-    it('maps a running import to its folder and imported size', () => {
+    it('maps a running import to a placeholder row with its imported size', () => {
         expect(getImportingFolders([buildDriveImport({ importedBytes: 2048 })])).toEqual([
-            { uid: generateNodeUid('volume-id', 'link-id'), importedBytes: 2048, pausedImport: undefined },
+            {
+                uid: 'drive-import-importer-id-Drive',
+                name: 'google-drive-user',
+                startTime: new Date(1601053249 * 1000),
+                importedBytes: 2048,
+                pausedImport: undefined,
+            },
         ]);
+    });
+
+    it('counts 0 bytes while the API has not sent any size yet', () => {
+        const [folder] = getImportingFolders([buildDriveImport()]);
+
+        expect(folder.importedBytes).toBe(0);
     });
 
     it('keeps the importer and the pause reason of a paused import', () => {
@@ -41,9 +51,5 @@ describe('getImportingFolders', () => {
         ]);
 
         expect(folder.pausedImport).toEqual({ importer, errorCode: ApiImporterError.ERROR_CODE_IMAP_CONNECTION });
-    });
-
-    it('skips an import whose folder is not known yet', () => {
-        expect(getImportingFolders([buildDriveImport({ importFolder: undefined })])).toEqual([]);
     });
 });

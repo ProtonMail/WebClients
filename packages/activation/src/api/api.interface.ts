@@ -148,9 +148,6 @@ export interface ApiImporterActive {
     FilterEndDate?: string;
     /** Only for Drive importer: bytes imported so far. */
     ImportedBytes?: number;
-    /** Only for Drive importer: the folder the files are imported into. */
-    ImportFolderLinkID?: string | null;
-    ImportFolderVolumeID?: string | null;
 }
 
 export interface ApiImporter {
