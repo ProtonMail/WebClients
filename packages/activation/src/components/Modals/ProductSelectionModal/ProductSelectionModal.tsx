@@ -32,6 +32,7 @@ import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../i
 import { useDriveSdk } from '../../../logic/driveContext';
 import { trackAccountImportEasySwitchStarted } from '../../../telemetry/accountImportFlow';
 import { EasySwitchProviderName } from '../../ProviderName/EasySwitchProviderName';
+import { useIsDriveImportRestricted } from '../OAuth/Drive/useIsDriveImportRestricted';
 import { ProductCheckbox } from './ProductCheckbox';
 import { ProductItem } from './ProductItem';
 import { useProductSelectionSubmit } from './useProductSelectionSubmit';
@@ -76,8 +77,9 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
     const hasCalendar = !isBYOEAccount && writeableCalendars.length > 0;
 
     const isDriveFlagEnabled = useFlag('EasySwitchB2CForDriveWeb');
+    const isDriveImportRestricted = useIsDriveImportRestricted();
     // Don't offer Drive unless the Drive SDK has been initialized by the host app.
-    const isDriveAvailable = isDriveFlagEnabled && !!drive;
+    const isDriveAvailable = isDriveFlagEnabled && !!drive && !isDriveImportRestricted;
 
     const [selectedProvider, setSelectedProvider] = useState(provider);
     const [selectedProducts, setSelectedProducts] = useState<ImportType[]>(
