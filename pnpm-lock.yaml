@@ -706,57 +706,9 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
     devDependencies:
-      '@proton/account':
-        specifier: workspace:^
-        version: link:packages/account
-      '@proton/account-recovery':
-        specifier: workspace:^
-        version: link:packages/account-recovery
-      '@proton/account-security':
-        specifier: workspace:^
-        version: link:packages/account-security
-      '@proton/activation':
-        specifier: workspace:^
-        version: link:packages/activation
-      '@proton/byoe':
-        specifier: workspace:^
-        version: link:packages/byoe
-      '@proton/calendar':
-        specifier: workspace:^
-        version: link:packages/calendar
-      '@proton/components':
-        specifier: workspace:^
-        version: link:packages/components
-      '@proton/delegated-access':
-        specifier: workspace:^
-        version: link:packages/delegated-access
-      '@proton/docs-core':
-        specifier: workspace:^
-        version: link:packages/docs-core
-      '@proton/nav':
-        specifier: workspace:^
-        version: link:packages/nav
       '@proton/oxfmt-config':
         specifier: workspace:^
         version: link:packages/oxfmt-config
-      '@proton/payments':
-        specifier: workspace:^
-        version: link:packages/payments
-      '@proton/payments-hooks':
-        specifier: workspace:^
-        version: link:packages/payments-hooks
-      '@proton/payments-ui':
-        specifier: workspace:^
-        version: link:packages/payments-ui
-      '@proton/redux-shared-store':
-        specifier: workspace:^
-        version: link:packages/redux-shared-store
-      '@proton/safety-review':
-        specifier: workspace:^
-        version: link:packages/safety-review
-      '@proton/shared':
-        specifier: workspace:^
-        version: link:packages/shared
       '@proton/types':
         specifier: workspace:^
         version: link:packages/types
@@ -5003,6 +4955,9 @@ importers:
       '@proton/metrics':
         specifier: workspace:^
         version: link:../metrics
+      '@proton/payments':
+        specifier: workspace:^
+        version: link:../payments
       '@proton/react-redux-store':
         specifier: workspace:^
         version: link:../react-redux-store
@@ -6352,6 +6307,9 @@ importers:
       '@proton/payments':
         specifier: workspace:^
         version: link:../payments
+      '@proton/payments-hooks':
+        specifier: workspace:^
+        version: link:../payments-hooks
       '@proton/react-polymorphic-types':
         specifier: workspace:^
         version: link:../react-polymorphic-types

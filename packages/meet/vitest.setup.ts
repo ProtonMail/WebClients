@@ -4,7 +4,6 @@ import { vi } from 'vitest';
 import '@proton/polyfill';
 import '@proton/unleash/testing/vitest/mockUnleash';
 
-import './testing/setup/mockFlagSvg';
 import './testing/setup/mockMatchMedia';
 
 // @ts-ignore
@@ -22,47 +21,12 @@ vi.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: vi.fn(),
 }));
 
-// Globally mocked @proton/components modules
-vi.mock('@proton/components/hooks/useEventManager', () => {
-    const subscribe = vi.fn();
-    const call = vi.fn();
-    const stop = vi.fn();
-    const start = vi.fn();
-
-    const result = () => {
-        return { subscribe, call, stop, start };
-    };
-
-    result.subscribe = subscribe;
-    result.call = call;
-    result.stop = stop;
-    result.start = start;
-
-    return { default: result };
-});
-
 // @ts-ignore
 global.MutationObserver = class {
     disconnect() {}
     observe() {}
 };
 
-// Mock backdrop container because it's always rendered, and it's rendered in a portal which causes issues with the hook renderer
-vi.mock('@proton/components/components/modalTwo/BackdropContainer', () => ({
-    __esModule: true,
-    default: () => null,
-}));
-
 // Silence JDOM warnings triggered by emoji-mart
 // @ts-ignore
 HTMLCanvasElement.prototype.getContext = vi.fn();
-
-vi.mock('@proton/components/components/input/TelInput', () => ({
-    __esModule: true,
-    default: () => null,
-}));
-
-vi.mock('@proton/components/containers/vpn/OpenVPNConfigurationSection/LoadIndicator', () => ({
-    __esModule: true,
-    default: () => null,
-}));
