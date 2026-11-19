@@ -104,11 +104,32 @@
   },
   {
     "doc2": "__components/HistoryViewerModal.tsx",
+    "doc2Symbol": "HistoryViewerModal",
     "kind": "copy",
     "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryViewerModal.tsx",
     "sourceCommit": "068a15c952ea72df34c8e663c6f72bfdb0a61ea8",
     "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
-    "notes": "The fullscreen modal, its layout, timeline, view, exports and Debug Mode extras, for text documents only: no sheet branches, and no Make a copy or Restore this version yet. Exports through doc2's exportAndDownload with the document's name; a failed export is logged. Another revision's exports wait for its own view's editor, and a new batch granularity always shows a new view. The Debug Mode exports get their own test ids."
+    "notes": "The fullscreen modal, its layout, timeline, view, exports and Debug Mode extras, for text documents only: no sheet branches, and no Make a copy yet; the restore in place has its own entry. Exports through doc2's exportAndDownload with the document's name; a failed export is logged. Another revision's exports wait for its own view's editor, and a new batch granularity always shows a new view. The Debug Mode exports get their own test ids."
+  },
+  {
+    "doc2": "__components/HistoryViewerModal.tsx",
+    "doc2Symbol": "restoreByReplacing, showSuccessfulRestoreNotification, showSuccessfulUndoNotification, the Restore this version button",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryViewerModal.tsx",
+    "sourceSymbol": "onRestore('replace'), showSuccessfullRestoreNotification, showSuccessfulUndoNotification, the restore-revision-by-replace button",
+    "sourceCommit": "a9f236b5e491044fb0817628b61db659032e1076",
+    "copiedIn": "f744b58abcde0642dffd165e8b7178f392c6d0b6",
+    "notes": "The text branch only. The confirmation drops the sentence on comments. The live editor is the page's EditorInvoker, not docs-core's EditorController. Two fixes to /doc: the button is hidden while the live editor is locked, for any of doc2's lock causes (a viewer's role among them), and disabled until the view's editor exists; the confirmation's submit and the toast's Undo check the lock again, and do nothing when locked. The button shows progress only once the restore is confirmed, as a confirmation dismissed with Escape or its close button left /doc's spinning; a failed restore or undo is logged."
+  },
+  {
+    "doc2": "__components/HistoryViewerModal.tsx",
+    "doc2Symbol": "restoreByReplacing",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/EditorController/EditorController.ts",
+    "sourceSymbol": "restoreRevisionByReplacingLexicalState, getEditorJSON",
+    "sourceCommit": "a9f236b5e491044fb0817628b61db659032e1076",
+    "copiedIn": "f744b58abcde0642dffd165e8b7178f392c6d0b6",
+    "notes": "Inlined as the calls to the live EditorInvoker they make; no check for a missing invoker, as the button needs it."
   },
   {
     "doc2": "__components/LoadingScreen.tsx",
@@ -232,7 +253,7 @@
     "source": "packages/docs-core/lib/Bridge/EditorInvoker.ts",
     "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
     "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
-    "notes": "Only the methods doc2 calls, added as doc2 needed them through 6802af2d1ce, and getDocumentState for the version history, with the source unchanged. A call the editor doesn't answer within EDITOR_CALL_TIMEOUT_MS rejects instead of waiting forever."
+    "notes": "Only the methods doc2 calls, added as doc2 needed them through 6802af2d1ce, getDocumentState for the version history, and replaceEditorState for its restore, with the source unchanged. A call the editor doesn't answer within EDITOR_CALL_TIMEOUT_MS rejects instead of waiting forever."
   },
   {
     "doc2": "__utils/NativeVersionHistory.ts",

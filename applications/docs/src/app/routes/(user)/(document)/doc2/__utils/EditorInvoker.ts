@@ -37,6 +37,7 @@ type EditorMethodsCalledByDoc2 = Pick<
   | 'getCurrentEditorState'
   | 'getYDocAsJSON'
   | 'getDocumentState'
+  | 'replaceEditorState'
   | 'toggleDebugTreeView'
 >
 
@@ -114,6 +115,10 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
 
   async getDocumentState(): Promise<YjsState> {
     return this.invokeEditorMethod('getDocumentState', [])
+  }
+
+  async replaceEditorState(state: SerializedEditorState): Promise<void> {
+    return this.invokeEditorMethod('replaceEditorState', [state])
   }
 
   async toggleDebugTreeView(): Promise<void> {

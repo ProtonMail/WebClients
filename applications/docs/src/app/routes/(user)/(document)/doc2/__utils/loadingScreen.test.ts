@@ -69,7 +69,7 @@ describe('getLoadingScreenStatus', () => {
   test.each<[string, LoaderStatus, LoadingScreenStatus | undefined]>([
     [
       'revealed: no screen, whatever the session does next',
-      { name: 'revealed', node, role: 'Editor', session, editorInvoker },
+      { name: 'revealed', node, role: 'Editor', session, editorInvoker, editRefused: false },
       undefined,
     ],
     ['trashed: the first stage, behind the trashed modal', { name: 'trashed', node, role: 'Admin' }, 'opening'],

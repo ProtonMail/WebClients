@@ -42,8 +42,13 @@ const mockGetNodeHierarchy = jest.fn()
 jest.mock('@proton/components/hooks/useAuthentication', () => () => ({ UID: 'session-uid' }))
 const mockIsFlagEnabled = () => false
 jest.mock('@proton/unleash/useGetFlag', () => ({ useGetFlag: () => mockIsFlagEnabled }))
+/** The toasts shown, in order: each has its text, which may hold a button */
+type MockNotification = { type?: string; text: ReactNode; expiration?: number }
+const mockNotifications: MockNotification[] = []
+const mockCreateNotification = jest.fn((notification: MockNotification) => mockNotifications.push(notification))
+const mockHideNotification = jest.fn()
 jest.mock('@proton/app-context/useNotifications', () => ({
-  useNotifications: () => ({ createNotification: jest.fn() }),
+  useNotifications: () => ({ createNotification: mockCreateNotification, hideNotification: mockHideNotification }),
 }))
 
 let mockIsODTEnabled = false
@@ -173,11 +178,17 @@ const mockChangeLockedState = jest.fn(async (_locked: boolean) => {})
 const mockDestroyBridge = jest.fn()
 const mockLoadUserSettings = jest.fn(async () => {})
 const mockPrintAsPDF = jest.fn(async () => {})
+/** The live editor's state, as a restore reads it and Undo gives it back */
+const LIVE_EDITOR_STATE = { root: { children: [{ type: 'paragraph' }], type: 'root' } }
+const mockLiveGetCurrentEditorState = jest.fn(async (): Promise<object | undefined> => LIVE_EDITOR_STATE)
+const mockReplaceEditorState = jest.fn(async (_state: unknown) => {})
 const EDITOR_CLIENT_ID = 7
 const mockReceiveMessage = jest.fn(async ({ content }: RtsMessagePayload) => {
   mockEditorCalls.push(`receiveMessage:${content[0]}`)
 })
 let mockClientHandler: ClientHandler
+/** While set, a revision view's frame waits here to be ready, as a frame still loading does */
+let mockHeldRevisionFrames: (() => void)[] | undefined
 /** The history's revision view: what it was sent, and its editor's exports */
 const mockRevisionCalls: string[] = []
 const mockRevisionStates: Uint8Array<ArrayBuffer>[] = []
@@ -227,6 +238,8 @@ jest.mock('../__utils/ClientEditorBridge', () => ({
           mockEditorCalls.push('broadcastPresenceState')
         }),
         printAsPDF: mockPrintAsPDF,
+        getCurrentEditorState: mockLiveGetCurrentEditorState,
+        replaceEditorState: mockReplaceEditorState,
       },
       destroy: mockDestroyBridge,
     }
@@ -245,6 +258,10 @@ jest.mock('~/components/document/EditorFrame', () => {
       useEffect(() => {
         const frame = document.createElement('iframe')
         frame.dataset.systemMode = systemMode
+        if (systemMode === 'revision' && mockHeldRevisionFrames) {
+          mockHeldRevisionFrames.push(() => onFrameReady(frame))
+          return
+        }
         void onFrameReady(frame)
       }, [onFrameReady, systemMode])
       return null
@@ -1640,6 +1657,330 @@ describe('DocumentViewerV2', () => {
 
       // Gone once its exit animation ends, which jsdom never runs
       await waitFor(() => expect(modal().closest('.modal-two--out')).not.toBeNull())
+    })
+
+    describe('Restore this version', () => {
+      afterEach(() => {
+        mockNotifications.length = 0
+        mockHeldRevisionFrames = undefined
+        mockReplaceEditorState.mockImplementation(async () => {})
+        mockLiveGetCurrentEditorState.mockImplementation(async () => LIVE_EDITOR_STATE)
+      })
+
+      function restoreButton() {
+        return within(modal()).queryByTestId('restore-revision-by-replace')
+      }
+
+      /** The confirmation, which opens over the history */
+      function confirmation() {
+        return screen.getByRole('dialog', { name: 'Restore this version?' })
+      }
+
+      /** Opens the history as `role` on the older of two revisions, its view loaded */
+      async function openOlderRevision(role: DocumentRole = 'Editor') {
+        const fake = createSession()
+        fake.mocks.getHistory.mockReturnValue(historyLog(15))
+        const rendered = await renderRevealed(fake, { role })
+        await userEvent.click(screen.getByRole('button', { name: 'See version history' }))
+        await userEvent.click(timeline()[1])
+        await waitFor(() => expect(mockRevisionStates).toHaveLength(2))
+        return { fake, ...rendered }
+      }
+
+      /** Restores the selected revision, confirmed */
+      async function restore() {
+        await userEvent.click(restoreButton()!)
+        expect(
+          within(confirmation()).getByText(/Your current document will be replaced with this version\./),
+        ).toBeInTheDocument()
+        await userEvent.click(within(confirmation()).getByRole('button', { name: 'Restore' }))
+      }
+
+      /** Clicks the toast's Undo */
+      async function undo(notification: MockNotification) {
+        render(<>{notification.text}</>)
+        await userEvent.click(screen.getByRole('button', { name: 'Undo' }))
+      }
+
+      test.each<DocumentRole>(['Editor', 'Admin'])(
+        "shows for an %s on an older revision, never on the current version, before the view's exports",
+        async (role) => {
+          const fake = createSession()
+          fake.mocks.getHistory.mockReturnValue(historyLog(15))
+          await openHistory(fake, role)
+          expect(restoreButton()).not.toBeInTheDocument()
+
+          await userEvent.click(timeline()[1])
+
+          await waitFor(() => expect(restoreButton()).toBeEnabled())
+          expect(restoreButton()).toHaveTextContent('Restore this version')
+          const buttons = within(modal())
+            .getAllByRole('button')
+            .map((button) => button.dataset.testid)
+          expect(buttons.indexOf('restore-revision-by-replace')).toBeLessThan(buttons.indexOf('export-revision'))
+        },
+      )
+
+      test('is hidden for a Viewer, who keeps the exports', async () => {
+        await openOlderRevision('Viewer')
+
+        expect(restoreButton()).not.toBeInTheDocument()
+        expect(within(modal()).getByTestId('export-revision')).toBeInTheDocument()
+      })
+
+      test('hides as soon as a role read again while the history is open makes the user a Viewer', async () => {
+        const { fake } = await openOlderRevision('Editor')
+        expect(restoreButton()).toBeInTheDocument()
+
+        mockGetNodeHierarchy.mockResolvedValue(hierarchy('Viewer'))
+        act(() => fake.setSnapshot({ status: { name: 'opening' } }))
+        act(() => fake.setSnapshot({ status: { name: 'connected' } }))
+
+        await waitFor(() => expect(restoreButton()).not.toBeInTheDocument())
+        expect(modal()).toBeInTheDocument()
+      })
+
+      test("is disabled until the view's editor exists", async () => {
+        mockHeldRevisionFrames = []
+        const fake = createSession()
+        fake.mocks.getHistory.mockReturnValue(historyLog(15))
+        await renderRevealed(fake, { role: 'Editor' })
+        await userEvent.click(screen.getByRole('button', { name: 'See version history' }))
+        await userEvent.click(timeline()[1])
+
+        expect(restoreButton()).toBeDisabled()
+        await userEvent.click(restoreButton()!)
+        expect(screen.queryByRole('dialog', { name: 'Restore this version?' })).not.toBeInTheDocument()
+
+        act(() => mockHeldRevisionFrames?.forEach((ready) => ready()))
+
+        await waitFor(() => expect(restoreButton()).toBeEnabled())
+      })
+
+      test("confirmed, replaces the live editor's state with the view's, closes the history and offers Undo", async () => {
+        await openOlderRevision()
+
+        await restore()
+
+        await waitFor(() => expect(mockReplaceEditorState).toHaveBeenCalledWith(REVISION_EDITOR_STATE))
+        expect(mockLiveGetCurrentEditorState).toHaveBeenCalledTimes(1)
+        expect(mockRevisionInvoker.getCurrentEditorState).toHaveBeenCalledTimes(1)
+        // The live state is read before it is replaced
+        expect(mockLiveGetCurrentEditorState.mock.invocationCallOrder[0]).toBeLessThan(
+          mockReplaceEditorState.mock.invocationCallOrder[0],
+        )
+        await waitFor(() => expect(modal().closest('.modal-two--out')).not.toBeNull())
+        expect(mockNotifications).toHaveLength(1)
+        const [toast] = mockNotifications
+        expect(toast).toEqual(expect.objectContaining({ type: 'success', expiration: 7500 }))
+        render(<>{toast.text}</>)
+        expect(screen.getByText(/Restored version to/)).toHaveTextContent(
+          // The older revision's last entry, the tenth
+          new Date(NOW - 6 * 60_000).toLocaleString('en-US', {
+            year: '2-digit',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+          }),
+        )
+      })
+
+      test('Undo gives the live editor back its state from before the restore, and says so', async () => {
+        await openOlderRevision()
+        await restore()
+        await waitFor(() => expect(mockNotifications).toHaveLength(1))
+
+        await undo(mockNotifications[0])
+
+        await waitFor(() => expect(mockReplaceEditorState).toHaveBeenLastCalledWith(LIVE_EDITOR_STATE))
+        expect(mockReplaceEditorState).toHaveBeenCalledTimes(2)
+        expect(mockHideNotification).toHaveBeenCalled()
+        await waitFor(() => expect(mockNotifications).toHaveLength(2))
+        expect(mockNotifications[1]).toEqual(expect.objectContaining({ type: 'success', text: 'Undo successful' }))
+      })
+
+      test("the restore's edits, and Undo's, leave through the session as the editor's own do", async () => {
+        const { fake } = await openOlderRevision()
+        // The live editor sends what a replaced state changes, as any edit
+        let edit = 10
+        mockReplaceEditorState.mockImplementation(async () => {
+          await mockClientHandler.editorRequestsPropagationOfUpdate(
+            { type: { wrapper: 'du' }, content: new Uint8Array([edit++]) },
+            BroadcastSource.DocumentBufferFlush,
+          )
+        })
+
+        await restore()
+        await waitFor(() => expect(fake.mocks.sendUpdate).toHaveBeenCalledWith(new Uint8Array([10])))
+
+        await undo(mockNotifications[0])
+        await waitFor(() => expect(fake.mocks.sendUpdate).toHaveBeenCalledWith(new Uint8Array([11])))
+      })
+
+      test('a confirmation submitted after the role was read again as Viewer restores nothing', async () => {
+        const { fake } = await openOlderRevision('Editor')
+        await userEvent.click(restoreButton()!)
+        const dialog = confirmation()
+
+        mockGetNodeHierarchy.mockResolvedValue(hierarchy('Viewer'))
+        act(() => fake.setSnapshot({ status: { name: 'opening' } }))
+        act(() => fake.setSnapshot({ status: { name: 'connected' } }))
+        await waitFor(() => expect(restoreButton()).not.toBeInTheDocument())
+        await userEvent.click(within(dialog).getByRole('button', { name: 'Restore' }))
+
+        // The confirmation closes, gone once its exit animation ends, which jsdom never runs
+        await waitFor(() => expect(dialog.closest('.modal-two--out')).not.toBeNull())
+        expect(mockLiveGetCurrentEditorState).not.toHaveBeenCalled()
+        expect(mockReplaceEditorState).not.toHaveBeenCalled()
+        expect(mockNotifications).toEqual([])
+      })
+
+      // Every lock cause but the role, which the tests above cover: a locked editor's restore couldn't be saved
+      test.each<[string, (fake: ReturnType<typeof createSession>) => void]>([
+        [
+          'a stopped session',
+          (fake) => fake.setSnapshot({ status: { name: 'stopped', condition: 'transient', retryable: true } }),
+        ],
+        ['a failed delivery', (fake) => fake.setSnapshot({ delivery: 'failed' })],
+        ['a size-locked document', (fake) => fake.setSnapshot({ editing: { allowed: false, reason: 'sizeLocked' } })],
+        [
+          'an incomplete base state',
+          (fake) => fake.setSnapshot({ editing: { allowed: false, reason: 'incompleteBaseState' } }),
+        ],
+        [
+          'an edit the SDK refused',
+          (fake) => fake.emit('refusal', { reason: 'updateTooLarge', attemptedBytes: 2, limitBytes: 1 }),
+        ],
+        ['an editor at the participant limit', (fake) => fake.setSnapshot({ participants: users(20) })],
+      ])('hides as soon as the live editor locks for %s, the history left open', async (_, lock) => {
+        const { fake } = await openOlderRevision('Editor')
+        expect(restoreButton()).toBeInTheDocument()
+
+        act(() => lock(fake))
+
+        await waitFor(() => expect(restoreButton()).not.toBeInTheDocument())
+        expect(within(modal()).getByTestId('export-revision')).toBeInTheDocument()
+      })
+
+      test('stays for an Admin at the participant limit, who keeps editing', async () => {
+        const { fake } = await openOlderRevision('Admin')
+
+        act(() => fake.setSnapshot({ participants: users(20) }))
+
+        expect(restoreButton()).toBeInTheDocument()
+      })
+
+      test('a confirmation submitted after the live editor locked restores nothing, with no toast', async () => {
+        const { fake } = await openOlderRevision('Editor')
+        await userEvent.click(restoreButton()!)
+        const dialog = confirmation()
+
+        act(() => fake.setSnapshot({ delivery: 'failed' }))
+        await waitFor(() => expect(restoreButton()).not.toBeInTheDocument())
+        await userEvent.click(within(dialog).getByRole('button', { name: 'Restore' }))
+
+        await waitFor(() => expect(dialog.closest('.modal-two--out')).not.toBeNull())
+        expect(mockLiveGetCurrentEditorState).not.toHaveBeenCalled()
+        expect(mockReplaceEditorState).not.toHaveBeenCalled()
+        expect(mockNotifications).toEqual([])
+      })
+
+      test('a lock that arrives while the restore reads the editors replaces nothing, with no toast', async () => {
+        let answerRead: () => void = () => {}
+        mockLiveGetCurrentEditorState.mockImplementation(
+          () => new Promise((resolve) => (answerRead = () => resolve(LIVE_EDITOR_STATE))),
+        )
+        const { fake } = await openOlderRevision('Editor')
+
+        await restore()
+        await waitFor(() => expect(mockLiveGetCurrentEditorState).toHaveBeenCalled())
+        act(() => fake.setSnapshot({ editing: { allowed: false, reason: 'sizeLocked' } }))
+        await act(async () => answerRead())
+
+        await waitFor(() => expect(mockRevisionInvoker.getCurrentEditorState).toHaveBeenCalled())
+        await act(async () => {})
+        expect(mockReplaceEditorState).not.toHaveBeenCalled()
+        expect(mockNotifications).toEqual([])
+        expect(modal().closest('.modal-two--out')).toBeNull()
+      })
+
+      test('Undo while the live editor is locked gives nothing back and keeps the toast, for a click once it lifts', async () => {
+        const { fake } = await openOlderRevision()
+        await restore()
+        await waitFor(() => expect(mockNotifications).toHaveLength(1))
+        expect(mockReplaceEditorState).toHaveBeenCalledTimes(1)
+
+        // The history has closed: the page still has the lock for the toast's Undo
+        act(() => fake.setSnapshot({ delivery: 'failed' }))
+        await undo(mockNotifications[0])
+
+        await act(async () => {})
+        expect(mockReplaceEditorState).toHaveBeenCalledTimes(1)
+        expect(mockHideNotification).not.toHaveBeenCalled()
+        expect(mockNotifications).toHaveLength(1)
+
+        act(() => fake.setSnapshot({ delivery: 'synced' }))
+        await userEvent.click(screen.getByRole('button', { name: 'Undo' }))
+
+        await waitFor(() => expect(mockReplaceEditorState).toHaveBeenLastCalledWith(LIVE_EDITOR_STATE))
+        expect(mockHideNotification).toHaveBeenCalled()
+      })
+
+      test.each<[string, (rendered: Awaited<ReturnType<typeof openOlderRevision>>) => Promise<void> | void]>([
+        [
+          'the live editor failed',
+          (_) => act(() => mockClientHandler.reportUserInterfaceError(new Error('The editor crashed'))),
+        ],
+        ['the page is gone', ({ unmount }) => unmount()],
+      ])('Undo after %s gives nothing back', async (_, end) => {
+        const rendered = await openOlderRevision()
+        await restore()
+        await waitFor(() => expect(mockNotifications).toHaveLength(1))
+
+        await end(rendered)
+        await undo(mockNotifications[0])
+
+        await act(async () => {})
+        expect(mockReplaceEditorState).toHaveBeenCalledTimes(1)
+        expect(mockNotifications).toHaveLength(1)
+      })
+
+      test('an editor that gives no state restores nothing', async () => {
+        mockLiveGetCurrentEditorState.mockImplementation(async () => undefined)
+        await openOlderRevision()
+
+        await restore()
+
+        await waitFor(() => expect(mockLiveGetCurrentEditorState).toHaveBeenCalled())
+        expect(mockReplaceEditorState).not.toHaveBeenCalled()
+        expect(mockNotifications).toEqual([])
+        expect(modal().closest('.modal-two--out')).toBeNull()
+      })
+
+      test('Cancel restores nothing and leaves the history open', async () => {
+        await openOlderRevision()
+
+        await userEvent.click(restoreButton()!)
+        await userEvent.click(within(confirmation()).getByRole('button', { name: 'Cancel' }))
+
+        expect(mockReplaceEditorState).not.toHaveBeenCalled()
+        expect(mockNotifications).toEqual([])
+        expect(modal().closest('.modal-two--out')).toBeNull()
+        expect(restoreButton()).not.toHaveAttribute('aria-busy', 'true')
+      })
+
+      test('a failed restore is logged, and leaves the history open', async () => {
+        const error = new Error('Editor did not answer replaceEditorState')
+        mockReplaceEditorState.mockRejectedValueOnce(error)
+        const { logger } = await openOlderRevision()
+
+        await restore()
+
+        await waitFor(() => expect(logger.error).toHaveBeenCalledWith('Failed to restore the version', error))
+        expect(mockNotifications).toEqual([])
+        expect(modal().closest('.modal-two--out')).toBeNull()
+      })
     })
   })
 })
