@@ -19,15 +19,15 @@ describe('ScheduleSidebarLabel', () => {
         jest.mocked(useScheduleRunState).mockReturnValue(state as never);
         const label = <ScheduleSidebarLabel rule={rule} scheduleId="schedule" />;
         const { rerender } = render(label);
-        expect(screen.getByText('Weekdays')).toBeInTheDocument();
+        expect(screen.getByText('Weekdays')).not.toHaveAttribute('data-schedule-running');
 
         jest.mocked(useScheduleRunState).mockReturnValue({ ...state, isRunning: true, isPaused: true } as never);
         rerender(<ScheduleSidebarLabel rule={rule} scheduleId="schedule" />);
-        expect(screen.getByText('Running')).toBeInTheDocument();
+        expect(screen.getByText('Running')).toHaveAttribute('data-schedule-running', 'true');
 
         jest.mocked(useScheduleRunState).mockReturnValue({ ...state, isPaused: true } as never);
         rerender(<ScheduleSidebarLabel rule={rule} scheduleId="schedule" />);
-        expect(screen.getByText('Paused')).toBeInTheDocument();
+        expect(screen.getByText('Paused')).not.toHaveAttribute('data-schedule-running');
 
         jest.mocked(useScheduleRunState).mockReturnValue(state as never);
         rerender(<ScheduleSidebarLabel rule={rule} scheduleId="schedule" />);

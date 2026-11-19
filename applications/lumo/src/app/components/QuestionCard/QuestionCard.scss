@@ -6,7 +6,7 @@
 	border: 1px solid var(--composer-glow-border);
 	max-block-size: 100%;
 
-	& > *:not(.question-card__body) {
+	&:not(.question-card--minimized) > *:not(.question-card__body) {
 		flex-shrink: 0;
 	}
 

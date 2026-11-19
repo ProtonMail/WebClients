@@ -10,6 +10,7 @@ import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { NewProjectModal, useProjects } from '../../features/projects';
 import { ProjectActionsDropdown } from '../../features/projects/ProjectActionsDropdown';
 import { ProjectLimitModal } from '../../features/projects/modals/ProjectLimitModal';
+import { getGroupAttentionKey, useAttentionKeys } from '../../providers/ConversationAttentionProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { CollapsibleSidebarSection } from './components/CollapsibleSidebarSection';
@@ -23,6 +24,8 @@ interface ProjectsSidebarSectionProps {
     isSmallScreen: boolean;
 }
 
+const DEFAULT_PROJECT_LIMIT = 5;
+
 export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsSidebarSectionProps) => {
     const projects = useProjects();
     const history = useHistory();
@@ -30,6 +33,7 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
 
     const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
+    const { bySpace: attentionBySpace } = useAttentionKeys();
     const newProjectModal = useModalStateObject();
     const projectLimitModal = useModalStateObject();
 
@@ -62,6 +66,13 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
 
         newProjectModal.openModal(true);
     };
+
+    const visibleProjects = projects.filter(
+        (project, index) => index < DEFAULT_PROJECT_LIMIT || attentionBySpace.has(project.id)
+    );
+    const sectionAttentionKey = getGroupAttentionKey(
+        visibleProjects.map((project) => attentionBySpace.get(project.id)?.key)
+    );
 
     if (isGuest) {
         return (
@@ -110,23 +121,25 @@ export const ProjectsSidebarSection = ({ onItemClick, isSmallScreen }: ProjectsS
                     </Button>
                 }
                 className="projects-sidebar-section"
+                attentionKey={sectionAttentionKey}
             >
                 <div className="projects-list">
                     {projects.length > 0 && (
                         <SidebarNavList
-                            items={projects.slice(0, 5).map((project) => {
+                            items={visibleProjects.map((project) => {
                                 return {
                                     id: project.id,
                                     to: `/projects/${project.id}`,
                                     label: project.name,
                                     isSelected: currentProjectId === project.id,
                                     trailingContent: <ProjectActionsDropdown project={project} />,
+                                    attentionKey: attentionBySpace.get(project.id)?.key,
                                 };
                             })}
                             onItemClick={onItemClick}
                         />
                     )}
-                    {projects.length > 5 && (
+                    {projects.length > DEFAULT_PROJECT_LIMIT && (
                         <button
                             className="project-sidebar-item-see-all flex items-center justify-center px-3 py-2 text-sm color-weak hover:color-norm transition-colors"
                             onClick={handleProjectsClick}

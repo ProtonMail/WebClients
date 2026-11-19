@@ -29,11 +29,9 @@ const questions: QuestionCardChoiceQuestion[] = [
 
 const renderCard = (questionSet = questions) => {
     const onSubmit = jest.fn();
-    const onDismiss = jest.fn();
     return {
-        ...render(<QuestionCard questions={questionSet} onSubmit={onSubmit} onDismiss={onDismiss} />),
+        ...render(<QuestionCard questions={questionSet} onSubmit={onSubmit} />),
         onSubmit,
-        onDismiss,
     };
 };
 
@@ -252,17 +250,33 @@ describe('QuestionCard', () => {
         expect(onSubmit).toHaveBeenCalledWith([{ questionId: 'length', selections: ['Long'] }]);
     });
 
-    it.each([0, 1])('dismisses from question index %i without submitting', (index) => {
-        const { onSubmit, onDismiss } = renderCard();
-        fireEvent.click(screen.getByRole('checkbox', { name: 'Mail' }));
+    it.each([
+        { index: 0, count: 1, showLabel: 'Show question' },
+        { index: 0, count: 2, showLabel: 'Show questions' },
+        { index: 1, count: 2, showLabel: 'Show questions' },
+    ])('minimizes and restores question $index of $count and its draft', ({ index, count, showLabel }) => {
+        const { onSubmit } = renderCard(questions.slice(0, count));
         if (index === 1) clickButton('Next question');
-        clickButton('Dismiss questions');
-        expect(onDismiss).toHaveBeenCalledTimes(1);
+        const role = index === 0 ? 'checkbox' : 'radio';
+        const name = index === 0 ? 'Mail' : 'Short';
+        fireEvent.click(screen.getByRole(role, { name }));
+
+        clickButton('Minimize questions');
+        expect(screen.queryByRole('heading', { name: questions[index].title })).not.toBeInTheDocument();
+        expect(screen.getByRole('region', { name: questions[index].title })).toContainElement(
+            screen.getByRole('button', { name: showLabel })
+        );
+        expect(screen.getByRole('button', { name: showLabel })).toHaveFocus();
+        expect(onSubmit).not.toHaveBeenCalled();
+
+        clickButton(showLabel);
+        expect(screen.getByRole('heading', { name: questions[index].title })).toHaveFocus();
+        expect(screen.getByRole(role, { name })).toBeChecked();
         expect(onSubmit).not.toHaveBeenCalled();
     });
 
     it('keeps navigation within the first and last questions without submitting', () => {
-        const { onSubmit, onDismiss } = renderCard();
+        const { onSubmit } = renderCard();
         clickButton('Previous question');
         expect(screen.getByRole('heading', { name: questions[0].title })).toBeInTheDocument();
         clickButton('Next question');
@@ -272,11 +286,10 @@ describe('QuestionCard', () => {
         clickButton('Previous question');
         expect(screen.getByRole('heading', { name: questions[0].title })).toHaveFocus();
         expect(onSubmit).not.toHaveBeenCalled();
-        expect(onDismiss).not.toHaveBeenCalled();
     });
 
     it('submits the latest edits to earlier answers while preserving later answers', () => {
-        const { onSubmit, onDismiss } = renderCard();
+        const { onSubmit } = renderCard();
         fireEvent.click(screen.getByRole('checkbox', { name: 'Mail' }));
         clickButton('Next question');
         fireEvent.click(screen.getByRole('radio', { name: 'Short' }));
@@ -291,7 +304,6 @@ describe('QuestionCard', () => {
             { questionId: 'sources', selections: ['Updated source'] },
             { questionId: 'length', selections: ['Short'] },
         ]);
-        expect(onDismiss).not.toHaveBeenCalled();
     });
 
     it('discards a valid final answer on Skip while keeping earlier answers', () => {

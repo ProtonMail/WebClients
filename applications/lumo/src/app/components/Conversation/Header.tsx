@@ -3,15 +3,80 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 
+import { useSidebarVisibility } from '../../layouts/sidebar/hooks/useSidebarVisibility';
+import { applyRetentionPolicy } from '../../layouts/sidepanel/helpers';
+import { getGroupAttentionKey, useAttentionKeys } from '../../providers/ConversationAttentionProvider';
+import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useRightPanel } from '../../providers/RightPanelProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
+import { useLumoSelector } from '../../redux/hooks';
+import type { LumoState } from '../../redux/store';
+import { SpaceType } from '../../types';
 import { NewChatButtonHeader } from '../Buttons/NewChatButton';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
+import { AttentionDot } from '../StatusDot/AttentionDot';
 
 import './Header.scss';
 
+/**
+ * Only badge the toggle if opening the sidebar can reveal the request.
+ * The sidebar already keeps eligible pending entries beyond its section limits.
+ */
+function selectSidebarAttentionKey(
+    { conversations, spaces, lumoUserSettings }: LumoState,
+    {
+        byConversation,
+        hasLumoPlus,
+        isSmallScreen,
+        showSchedules,
+    }: {
+        byConversation: ReturnType<typeof useAttentionKeys>['byConversation'];
+        hasLumoPlus: boolean;
+        isSmallScreen: boolean;
+        showSchedules: boolean;
+    }
+) {
+    const eligible = [];
+    for (const [id, key] of byConversation) {
+        const conversation = conversations[id];
+        // Seen requests have no dot key. Missing and ghost chats have no sidebar row.
+        if (!key || !conversation || conversation.ghost) continue;
+
+        const spaceType = spaces[conversation.spaceId]?.spaceType;
+        if (spaceType === SpaceType.Schedule) {
+            // Scheduled is the sidebar entry point for run chats.
+            if (!showSchedules) continue;
+        } else {
+            // A run whose schedule is missing has no entry in any sidebar section.
+            if (conversation.scheduleRun) continue;
+            // On small screens Projects is a shortcut. A dot needs a row in Favorites or Recent.
+            if (
+                spaceType === SpaceType.Project &&
+                isSmallScreen &&
+                !conversation.starred &&
+                !lumoUserSettings.showProjectConversationsInHistory
+            ) {
+                continue;
+            }
+        }
+        eligible.push({ key, createdAt: conversation.createdAt });
+    }
+
+    // Use the chat lists' retention window even while expired conversations are still loaded.
+    return getGroupAttentionKey(applyRetentionPolicy(eligible, hasLumoPlus).map(({ key }) => key));
+}
+
 const SidebarToggleButton = ({ className }: { className?: string }) => {
     const { toggle: toggleSideMenu, isVisible } = useSidebar();
+    const { isGuest, isSmallScreen, showSchedules } = useSidebarVisibility();
+    const { hasLumoPlus } = useLumoPlan();
+    const { byConversation } = useAttentionKeys();
+
+    const attentionKey = useLumoSelector((state) =>
+        isGuest || isVisible
+            ? undefined
+            : selectSidebarAttentionKey(state, { byConversation, hasLumoPlus, isSmallScreen, showSchedules })
+    );
 
     return (
         <Button
@@ -25,7 +90,20 @@ const SidebarToggleButton = ({ className }: { className?: string }) => {
             <span className="sr-only">
                 {isVisible ? c('collider_2025:Button').t`Close sidebar` : c('collider_2025:Action').t`Show sidebar`}
             </span>
-            <LumoIcon name="PanelLeft" size={20} />
+            <span className={clsx('sidebar-toggle-icon relative flex', attentionKey && 'sidebar-toggle-icon--badged')}>
+                <LumoIcon name="PanelLeft" size={20} />
+                {attentionKey && (
+                    <AttentionDot
+                        attentionKey={`sidebar:${attentionKey}`}
+                        className="sidebar-toggle-attention-dot"
+                        variant="accent"
+                        label={
+                            // translator: Read out after "Show sidebar" when at least one chat in the hidden sidebar needs a response or approval.
+                            c('collider_2025:Info').t`A chat needs your attention`
+                        }
+                    />
+                )}
+            </span>
         </Button>
     );
 };

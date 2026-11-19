@@ -8,6 +8,7 @@ import { ChatHistoryLoadingSkeleton } from '../../../components/ChatHistoryLoadi
 import { useLumoUserSettings } from '../../../hooks';
 import { useIsChatHistoryHydrating } from '../../../hooks/useIsChatHistoryHydrating';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
+import { getGroupAttentionKey, useAttentionKeys } from '../../../providers/ConversationAttentionProvider';
 import { useConversation } from '../../../providers/ConversationProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
@@ -63,12 +64,13 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
     const { hasLumoPlus } = useLumoPlan();
     const { lumoUserSettings } = useLumoUserSettings();
     const showProjectConversationsInHistory = lumoUserSettings.showProjectConversationsInHistory ?? false;
+    const { byConversation: attentionByConversation } = useAttentionKeys();
 
     const retainedFavorites = useMemo(() => {
         return applyRetentionPolicy(favorites, hasLumoPlus);
     }, [favorites, hasLumoPlus]);
 
-    const { filteredHistoryRows, visibleHistoryRows, showSeeMore } = useMemo(() => {
+    const filteredHistoryRows = useMemo(() => {
         const filteredRows = conversationRows.filter((row) => {
             const space = row.spaceId ? spaceMap[row.spaceId] : undefined;
             return (
@@ -77,22 +79,27 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
             );
         });
 
-        const retainedRows = applyRetentionPolicy(filteredRows, hasLumoPlus);
+        return applyRetentionPolicy(filteredRows, hasLumoPlus);
+    }, [conversationRows, spaceMap, showProjectConversationsInHistory, hasLumoPlus]);
 
-        const historySlots = Math.max(0, SIDEBAR_CHAT_TOTAL_LIMIT - retainedFavorites.length);
-
-        return {
-            filteredHistoryRows: retainedRows,
-            visibleHistoryRows: retainedRows.slice(0, historySlots),
-            showSeeMore: retainedRows.length > historySlots,
-        };
-    }, [conversationRows, retainedFavorites.length, spaceMap, showProjectConversationsInHistory, hasLumoPlus]);
+    const historySlots = Math.max(0, SIDEBAR_CHAT_TOTAL_LIMIT - retainedFavorites.length);
+    const visibleHistoryRows = filteredHistoryRows.filter(
+        (row, index) => index < historySlots || attentionByConversation.has(row.id)
+    );
+    const showSeeMore = filteredHistoryRows.length > historySlots;
+    const favoritesAttentionKey = getGroupAttentionKey(
+        retainedFavorites.map((conversation) => attentionByConversation.get(conversation.id))
+    );
+    const historyAttentionKey = getGroupAttentionKey(
+        visibleHistoryRows.map((row) => attentionByConversation.get(row.id))
+    );
 
     return (
         <div className="chats-sidebar-section flex flex-column min-w-0 gap-2">
             <CollapsibleSidebarSection
                 label={c('collider_2025:Title').t`Favorites`}
                 className="favorites-sidebar-section"
+                attentionKey={favoritesAttentionKey}
             >
                 {retainedFavorites.length === 0 ? (
                     <div className="color-weak text-sm px-1.5 py-1">
@@ -113,6 +120,7 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
                 label={c('collider_2025:Title').t`Recent`}
                 className="chat-history-sidebar-section"
                 actionButton={<ChatHistoryGroupByMenu />}
+                attentionKey={historyAttentionKey}
             >
                 {filteredHistoryRows.length === 0 ? (
                     <div className="color-weak text-sm px-1.5 py-1">

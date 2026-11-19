@@ -13,6 +13,7 @@ import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
 import { useResourceLimitNotifications } from '../hooks/useResourceLimitNotifications';
 import { useUserSettingsLoadFailedNotification } from '../hooks/useUserSettingsLoadFailedNotification';
 import { ArtifactPanelHostProvider } from '../providers/ArtifactPanelHostProvider';
+import { ConversationAttentionProvider } from '../providers/ConversationAttentionProvider';
 import { DragAreaProvider } from '../providers/DragAreaProvider';
 import { GhostChatProvider } from '../providers/GhostChatProvider';
 import { useIsGuest } from '../providers/IsGuestProvider';
@@ -82,15 +83,17 @@ export const MainLayout = ({ children }: Props) => {
             <SidebarProvider defaultMode={isGuest ? 'expanded' : 'hidden'}>
                 <SearchModalProvider>
                     <RightPanelProvider>
-                        <ArtifactPanelHostProvider>
-                            {!isGuest ? (
-                                <DriveIndexingProviderLazy>
+                        <ConversationAttentionProvider>
+                            <ArtifactPanelHostProvider>
+                                {!isGuest ? (
+                                    <DriveIndexingProviderLazy>
+                                        <MainLayoutContent children={children} />
+                                    </DriveIndexingProviderLazy>
+                                ) : (
                                     <MainLayoutContent children={children} />
-                                </DriveIndexingProviderLazy>
-                            ) : (
-                                <MainLayoutContent children={children} />
-                            )}
-                        </ArtifactPanelHostProvider>
+                                )}
+                            </ArtifactPanelHostProvider>
+                        </ConversationAttentionProvider>
                     </RightPanelProvider>
                 </SearchModalProvider>
             </SidebarProvider>

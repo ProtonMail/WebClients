@@ -6,10 +6,12 @@ import { c } from 'ttag';
 import { Input } from '@proton/atoms/Input/Input';
 
 import { LumoLink } from '../../components/Links/LumoLink';
+import { AttentionDot } from '../../components/StatusDot/AttentionDot';
 import { useConversationRename } from '../../hooks/useConversationRename';
 import { useIsConversationGenerating } from '../../hooks/useIsConversationGenerating';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useIsTouchDevice } from '../../hooks/useIsTouchDevice';
+import { useConversationAttention } from '../../providers/ConversationAttentionProvider';
 import type { Conversation, ConversationId } from '../../types';
 import { ConversationExpirationIndicator } from './ConversationExpirationIndicator';
 import { ConversationSidebarActions } from './ConversationSidebarActions';
@@ -27,6 +29,7 @@ export const ConversationListItem = memo(
         const { isSmallScreen } = useIsLumoSmallScreen();
         const isTouchDevice = useIsTouchDevice();
         const isGenerating = useIsConversationGenerating(conversation.id);
+        const attentionKey = useConversationAttention(conversation.id);
         const [isHovered, setIsHovered] = useState(false);
         const [isDropdownOpen, setIsDropdownOpen] = useState(false);
         const [hasActiveOverlay, setHasActiveOverlay] = useState(false);
@@ -79,15 +82,15 @@ export const ConversationListItem = memo(
                     <LumoLink
                         to={`/c/${conversation.id}`}
                         className={clsx(
-                            'absolute inset-0 flex items-center gap-1.5 min-w-0 overflow-hidden pl-1.5 hover:text-primary',
-                            showDropdown ? 'pr-10' : 'pr-2'
+                            'absolute inset-0 flex flex-nowrap items-center gap-1.5 min-w-0 overflow-hidden pl-1.5 hover:text-primary',
+                            showDropdown || attentionKey ? 'sidebar-chat-link--with-actions' : 'pr-2'
                         )}
                         onClick={onItemClick}
                     >
                         <ConversationExpirationIndicator conversation={conversation} />
                         <span
                             className={clsx(
-                                'sidebar-nav-list--label text-ellipsis',
+                                'sidebar-nav-list--label min-w-0 text-ellipsis',
                                 isGenerating && 'sidebar-chat-generating'
                             )}
                             dir="auto"
@@ -102,6 +105,13 @@ export const ConversationListItem = memo(
                                     c('collider_2025:Info').t`Generating a reply`
                                 }
                             </span>
+                        )}
+                        {attentionKey && (
+                            <AttentionDot
+                                attentionKey={attentionKey}
+                                className={alwaysShowActions && showDropdown ? 'ml-auto' : 'sidebar-status-dot-slot'}
+                                screenReaderOnly={shouldMountActions && !alwaysShowActions}
+                            />
                         )}
                     </LumoLink>
                 )}
