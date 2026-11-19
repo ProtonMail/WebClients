@@ -12,7 +12,6 @@ import { ThirdPartySection } from '@proton/calendar-video-conferencing/thirdPart
 import SettingsMaintenanceLayoutWrapper from '@proton/components/components/maintenanceLayout/SettingsMaintenanceLayoutWrapper';
 import AccessibilitySection from '@proton/components/containers/account/AccessibilitySection';
 import DeleteSection from '@proton/components/containers/account/DeleteSection';
-import EmailSubscriptionSection from '@proton/components/containers/account/EmailSubscriptionSection';
 import FamilyPlanSection from '@proton/components/containers/account/FamilyPlanSection';
 import PasswordsSection from '@proton/components/containers/account/PasswordsSection';
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
@@ -61,8 +60,9 @@ import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
 
-import { DashboardLinkRedirect } from './dashboard/DashboardLinkRedirect';
+import { SettingsLinkRedirect, type SettingsLinkRedirectRule } from './SettingsLinkRedirect';
 import AccountDashboard from './dashboard/dashboard';
+import EmailSubscriptionSettings from './notifications/EmailSubscriptionSettings';
 import RecoverySettingsRouter from './recovery/RecoverySettingsRouter';
 import type { getAccountAppRoutes } from './routes';
 import YourPlanSection from './yourPlan/YourPlanSection';
@@ -92,6 +92,7 @@ const AccountSettingsRouter = ({
             password,
             language,
             appearance,
+            notifications,
             groupMembership,
         },
     } = accountAppRoutes;
@@ -100,93 +101,112 @@ const AccountSettingsRouter = ({
         return <>{redirect}</>;
     }
 
+    // Sections that moved off the dashboard and subscription pages, so links to their old anchors keep working
+    const subscriptionLinks: SettingsLinkRedirectRule = {
+        hashes: [
+            '#your-subscriptions',
+            '#payment-methods',
+            '#credits',
+            '#gift-code',
+            '#invoices',
+            '#cancel-subscription',
+        ],
+        section: subscription,
+        keepHash: true,
+    };
+    const notificationsLinks: SettingsLinkRedirectRule = { hashes: ['#email-subscription'], section: notifications };
+
     return (
         <Switch>
             {getIsSectionAvailable(vpnDashboardV2) && (
                 <Route path={getSectionPath(path, vpnDashboardV2)}>
-                    <DashboardTelemetry app={app} />
-                    <AutomaticSubscriptionModal />
-                    <UpsellModalTelemetryProvider context="account-home">
-                        <PrivateMainSettingsArea
-                            config={vpnDashboardV2}
-                            variant={SettingsLayoutVariant.Card}
-                            maxWidth={SettingsCardMaxWidth.Wide}
-                        >
-                            <YourPlanSectionV2 app={app} />
-                            <PaymentsContextProvider>
-                                <YourPlanUpsellsSectionV2 app={app} />
-                            </PaymentsContextProvider>
-                            <VPNDownloadAndInfoSection app={app} />
-                            <VpnAlsoInYourPlanSection app={app} />
-                            <VpnBlogSection />
-                        </PrivateMainSettingsArea>
-                    </UpsellModalTelemetryProvider>
+                    <SettingsLinkRedirect path={path} rules={[notificationsLinks]}>
+                        <DashboardTelemetry app={app} />
+                        <AutomaticSubscriptionModal />
+                        <UpsellModalTelemetryProvider context="account-home">
+                            <PrivateMainSettingsArea
+                                config={vpnDashboardV2}
+                                variant={SettingsLayoutVariant.Card}
+                                maxWidth={SettingsCardMaxWidth.Wide}
+                            >
+                                <YourPlanSectionV2 app={app} />
+                                <PaymentsContextProvider>
+                                    <YourPlanUpsellsSectionV2 app={app} />
+                                </PaymentsContextProvider>
+                                <VPNDownloadAndInfoSection app={app} />
+                                <VpnAlsoInYourPlanSection app={app} />
+                                <VpnBlogSection />
+                            </PrivateMainSettingsArea>
+                        </UpsellModalTelemetryProvider>
+                    </SettingsLinkRedirect>
                 </Route>
             )}
             {/* VPN's new dashboard lives at /dashboardV2, but old /dashboard links (like "Pay invoice") still come here. */}
             {/* Send them to the right page once the user's plan has loaded. */}
             {getIsSectionAvailable(vpnDashboardV2) && (
                 <Route path={getSectionPath(path, dashboard)}>
-                    <DashboardLinkRedirect path={path} subscription={subscription}>
+                    <SettingsLinkRedirect path={path} rules={[subscriptionLinks, notificationsLinks]}>
                         {redirect}
-                    </DashboardLinkRedirect>
+                    </SettingsLinkRedirect>
                 </Route>
             )}
             {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboardV2' && (
                 <Route path={getSectionPath(path, dashboard)}>
-                    <DashboardLinkRedirect path={path} subscription={subscription}>
+                    <SettingsLinkRedirect path={path} rules={[subscriptionLinks, notificationsLinks]}>
                         <DashboardTelemetry app={app} />
                         <AutomaticSubscriptionModal />
                         <PaymentsContextProvider>
                             <AccountDashboard app={app} config={dashboard} />
                         </PaymentsContextProvider>
-                    </DashboardLinkRedirect>
+                    </SettingsLinkRedirect>
                 </Route>
             )}
             {getIsSectionAvailable(subscription) && (
                 <Route path={getSectionPath(path, subscription)}>
-                    <AutomaticSubscriptionModal />
-                    <UpsellModalTelemetryProvider context="account-home">
-                        <PrivateMainSettingsArea
-                            config={subscription}
-                            variant={SettingsLayoutVariant.Card}
-                            maxWidth={SettingsCardMaxWidth.Wide}
-                        >
-                            <YourPlanSectionV2
-                                app={app}
-                                editBillingCycle={true}
-                                cta={<DashboardComparePlansCTA app={app} />}
-                            />
+                    <SettingsLinkRedirect path={path} rules={[notificationsLinks]}>
+                        <AutomaticSubscriptionModal />
+                        <UpsellModalTelemetryProvider context="account-home">
+                            <PrivateMainSettingsArea
+                                config={subscription}
+                                variant={SettingsLayoutVariant.Card}
+                                maxWidth={SettingsCardMaxWidth.Wide}
+                            >
+                                <YourPlanSectionV2
+                                    app={app}
+                                    editBillingCycle={true}
+                                    cta={<DashboardComparePlansCTA app={app} />}
+                                />
+                                <AssistantToggle />
+                                <SubscriptionsSection />
+                                <PaymentMethodsSection app={app} />
+                                <CreditsSection app={app} />
+                                <GiftCodeSection />
+                                <InvoicesSection app={app} />
+                                <CancelSubscriptionSection app={app} />
+                                <CancelSubscriptionViaSupportSection />
+                            </PrivateMainSettingsArea>
+                        </UpsellModalTelemetryProvider>
+                    </SettingsLinkRedirect>
+                </Route>
+            )}
+            {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboard' && (
+                <Route path={getSectionPath(path, dashboard)}>
+                    <SettingsLinkRedirect path={path} rules={[notificationsLinks]}>
+                        <DashboardTelemetry app={app} />
+                        <AutomaticSubscriptionModal />
+                        <PrivateMainSettingsArea config={dashboard}>
+                            <YourStorageSection app={app} />
+                            <YourPlanSection app={app} />
                             <AssistantToggle />
                             <SubscriptionsSection />
                             <PaymentMethodsSection app={app} />
                             <CreditsSection app={app} />
                             <GiftCodeSection />
                             <InvoicesSection app={app} />
-                            <EmailSubscriptionSection toggleContainerClassName="gap-4" />
                             <CancelSubscriptionSection app={app} />
                             <CancelSubscriptionViaSupportSection />
                         </PrivateMainSettingsArea>
-                    </UpsellModalTelemetryProvider>
-                </Route>
-            )}
-            {getIsSectionAvailable(dashboard) && dashboard.id === 'dashboard' && (
-                <Route path={getSectionPath(path, dashboard)}>
-                    <DashboardTelemetry app={app} />
-                    <AutomaticSubscriptionModal />
-                    <PrivateMainSettingsArea config={dashboard}>
-                        <YourStorageSection app={app} />
-                        <YourPlanSection app={app} />
-                        <AssistantToggle />
-                        <SubscriptionsSection />
-                        <PaymentMethodsSection app={app} />
-                        <CreditsSection app={app} />
-                        <GiftCodeSection />
-                        <InvoicesSection app={app} />
-                        <EmailSubscriptionSection toggleContainerClassName="gap-4" />
-                        <CancelSubscriptionSection app={app} />
-                        <CancelSubscriptionViaSupportSection />
-                    </PrivateMainSettingsArea>
+                    </SettingsLinkRedirect>
                 </Route>
             )}
             {getIsSectionAvailable(upgrade) && (
@@ -255,6 +275,11 @@ const AccountSettingsRouter = ({
                     <AccessibilitySection />
                 </PrivateMainSettingsArea>
             </Route>
+            {getIsSectionAvailable(notifications) && (
+                <Route path={getSectionPath(path, notifications)}>
+                    <EmailSubscriptionSettings config={notifications} />
+                </Route>
+            )}
             <Route path={getSectionPath(path, security)}>
                 <AutomaticSubscriptionModal />
                 <PrivateMainSettingsArea

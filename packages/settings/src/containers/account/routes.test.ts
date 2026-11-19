@@ -7,6 +7,7 @@ import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitleme
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS } from '@proton/shared/lib/constants';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 
@@ -66,6 +67,7 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         showDriveDashboardVariant: 'disabled',
         showGenericDashboard: false,
         hasPendingInvitations: false,
+        isPasswordReminderAvailable: true,
         permissions: getOrgPermissions([], true),
         flags: { ...defaultFlags, ...flagOverrides },
         groups: undefined,
@@ -297,6 +299,87 @@ describe('getAccountAppRoutes', () => {
                     showVPNDashboardVariant: 'A',
                 })
             ).toBe(true);
+        });
+    });
+
+    describe('notifications section', () => {
+        // The settings used to live on the dashboard and subscription pages, in a subsection hidden from members,
+        // so the page keeps exactly that audience
+        const orgAdmin = buildUser({ isAdmin: true, isMember: false, canPay: true, isFree: false, isPaid: true });
+        const getAvailability = (overrides: Overrides) => {
+            const { routes } = getAccountAppRoutes(buildDefaultParams(overrides));
+            return { dashboard: routes.dashboard.available, notifications: routes.notifications.available };
+        };
+
+        it('is available to a user outside an organization', () => {
+            const user = buildUser({ isAdmin: false, isMember: false, canPay: true, isFree: true, isPaid: false });
+
+            expect(getAvailability({ user })).toEqual({ dashboard: true, notifications: true });
+        });
+
+        it('is available to an admin with the dashboard permission', () => {
+            const permissions = getOrgPermissions(['account.dashboard.read'], false);
+
+            expect(getAvailability({ user: orgAdmin, permissions })).toEqual({ dashboard: true, notifications: true });
+        });
+
+        it('is not available to an admin without the dashboard permission', () => {
+            const permissions = getOrgPermissions(['account.user.read'], false);
+
+            expect(getAvailability({ user: orgAdmin, permissions })).toEqual({
+                dashboard: false,
+                notifications: false,
+            });
+        });
+
+        it('is not available in an MSP subsidiary organization', () => {
+            const permissions = getOrgPermissions(['account.dashboard.read'], false);
+            const organization = { IsSubsidiary: true } as unknown as OrganizationExtended;
+
+            expect(getAvailability({ user: orgAdmin, permissions, organization })).toEqual({
+                dashboard: false,
+                notifications: false,
+            });
+        });
+
+        it('is not available to a member, even one who can see the dashboard', () => {
+            const user = buildUser({ isAdmin: false, isMember: true, canPay: false, isFree: false, isPaid: true });
+            const permissions = getOrgPermissions(['account.dashboard.read'], false);
+
+            expect(getAvailability({ user, permissions })).toEqual({ dashboard: true, notifications: false });
+        });
+
+        it('has one card subsection per category, in the order the router renders them', () => {
+            const result = getAccountAppRoutes(buildDefaultParams());
+
+            expect(result.routes.notifications.subsections.map(({ id }) => id)).toEqual([
+                'email-subscriptions',
+                'product-updates',
+                'account-updates',
+                'application-notifications',
+            ]);
+        });
+
+        it('makes every visible toggle searchable', () => {
+            const result = getAccountAppRoutes(buildDefaultParams());
+            const keywords = result.routes.notifications.subsections.flatMap((subsection) => subsection.keywords);
+
+            expect(keywords).toEqual(
+                expect.arrayContaining(['In-app notifications', 'Recovery checklist', 'Password check-ins'])
+            );
+            expect(keywords).not.toContain('Daily email notifications');
+        });
+
+        it('only makes password check-ins searchable when they are available', () => {
+            const getPasswordReminderKeywords = (isPasswordReminderAvailable: boolean) => {
+                const { routes } = getAccountAppRoutes(buildDefaultParams({ isPasswordReminderAvailable }));
+                return [...routes.notifications.subsections, ...routes.password.subsections]
+                    .flatMap((subsection) => subsection.keywords ?? [])
+                    .filter((keyword) => keyword === 'Password check-ins');
+            };
+
+            expect(getPasswordReminderKeywords(true)).toHaveLength(2);
+            expect(getPasswordReminderKeywords(false)).toHaveLength(0);
         });
     });
 });

@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
 import {
+    APPS,
+    type APP_NAMES,
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
     DRIVE_APP_NAME,
@@ -26,6 +28,8 @@ export interface EmailSubscription {
     flag: NEWSLETTER_SUBSCRIPTIONS_BITS;
     frequency?: string;
     tooltip?: string;
+    /** Displays the product logo next to the subscription */
+    appName?: APP_NAMES;
 }
 
 interface EmailSubscriptionData {
@@ -73,8 +77,8 @@ export const getEmailSubscriptions = (
             id: 'newsletter',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.NEWSLETTER,
             title: c('news').t`${BRAND_NAME} newsletter`,
-            frequency: c('news')
-                .t`1 email per month. Get the latest privacy news and what is going on in the ${BRAND_NAME} universe.`,
+            frequency: c('news').t`1 email per month`,
+            tooltip: c('news').t`Get the latest privacy news and what is going on in the ${BRAND_NAME} universe.`,
         },
         {
             id: 'offers',
@@ -97,7 +101,7 @@ export const getEmailSubscriptions = (
             id: 'user_survey',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.USER_SURVEY,
             title: c('news').t`${BRAND_NAME} user survey`,
-            frequency: c('news').t`Participate in surveys to improve ${BRAND_NAME} services`,
+            tooltip: c('news').t`Participate in surveys to improve ${BRAND_NAME} services`,
         },
     ].filter(filter);
 
@@ -105,42 +109,49 @@ export const getEmailSubscriptions = (
         {
             id: 'news_product_inbox',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.INBOX_NEWS,
+            appName: APPS.PROTONMAIL,
             title: getProductUpdatesString(MAIL_APP_NAME, CALENDAR_SHORT_APP_NAME),
             frequency: c('news').t`1 email per month`,
         },
         {
             id: 'news_product_drive',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.DRIVE_NEWS,
+            appName: APPS.PROTONDRIVE,
             title: getProductUpdatesString(DRIVE_APP_NAME),
             frequency: c('news').t`4-6 emails per year`,
         },
         {
             id: 'news_product_pass',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.PASS_NEWS,
+            appName: APPS.PROTONPASS,
             title: getProductUpdatesString(PASS_APP_NAME),
             frequency: c('news').t`4-6 emails per year`,
         },
         {
             id: 'news_product_wallet',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.WALLET_NEWS,
+            appName: APPS.PROTONWALLET,
             title: getProductUpdatesString(WALLET_APP_NAME),
             frequency: c('news').t`4-6 emails per year`,
         },
         {
             id: 'news_product_vpn',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.VPN_NEWS,
+            appName: APPS.PROTONVPN_SETTINGS,
             title: getProductUpdatesString(VPN_APP_NAME),
             frequency: c('news').t`4-6 emails per year`,
         },
         {
             id: 'news_product_lumo',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.LUMO_NEWS,
+            appName: APPS.PROTONLUMO,
             title: getProductUpdatesString(LUMO_APP_NAME),
             frequency: c('news').t`4-6 emails per year`,
         },
         {
             id: 'news_product_meet',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.MEET_NEWS,
+            appName: APPS.PROTONMEET,
             title: getProductUpdatesString(MEET_APP_NAME),
             frequency: c('news').t`4-6 emails per year`,
         },
@@ -153,7 +164,8 @@ export const getEmailSubscriptions = (
             id: 'account_recovery',
             flag: NEWSLETTER_SUBSCRIPTIONS_BITS.ACCOUNT_RECOVERY,
             title: c('news').t`Recovery checklist`,
-            frequency: c('news').t`1-4 emails per year. Reminders to keep your recovery methods up to date.`,
+            frequency: c('news').t`1-4 emails per year`,
+            tooltip: c('news').t`Reminders to keep your recovery methods up to date.`,
         },
     ].filter(filter);
 
@@ -169,7 +181,7 @@ export const getEmailSubscriptions = (
     ].filter(filter);
 
     return {
-        general: { title: c('news').t`Email communications`, toggles: general },
+        general: { title: c('news').t`Email subscriptions`, toggles: general },
         product: { title: c('news').t`Product email updates`, toggles: product },
         accountUpdates: { title: c('news').t`Account email updates`, toggles: accountUpdates },
         notifications: { title: c('news').t`Application notifications`, toggles: notifications },

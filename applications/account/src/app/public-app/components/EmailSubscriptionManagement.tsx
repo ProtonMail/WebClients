@@ -57,11 +57,8 @@ const EmailSubscriptionManagement = ({ News, onChange }: EmailSubscriptionManage
                         {c('Email Unsubscribe').t`Which emails do you want to receive from ${BRAND_NAME}?`}
                     </div>
                     <div className="flex flex-column gap-4">
-                        <EmailSubscriptionToggleWithHeader
-                            title={general.title}
-                            subscriptions={general.toggles}
-                            {...sharedProps}
-                        />
+                        {/* No group heading, the page header already says "Email subscriptions" */}
+                        <EmailSubscriptionToggleWithHeader subscriptions={general.toggles} {...sharedProps} />
                         <EmailSubscriptionToggleWithHeader
                             title={product.title}
                             subscriptions={product.toggles}

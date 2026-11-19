@@ -2,10 +2,12 @@ import { c } from 'ttag';
 
 import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
 import type { ThemeColor } from '@proton/colors/types';
+import { filterNews, getEmailSubscriptions } from '@proton/components/containers/account/constants/email-subscriptions';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import type { SectionConfig, SubrouteGroup } from '@proton/components/containers/layout/interface';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcArrowUpBigLine } from '@proton/icons/icons/IcArrowUpBigLine';
+import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 import { IcHouse } from '@proton/icons/icons/IcHouse';
@@ -124,7 +126,6 @@ function getV1DashboardSections(
     canPay: boolean,
     assistantKillSwitch: boolean,
     isPaid: boolean,
-    isMember: boolean,
     cancelSubscriptionAvailable: boolean,
     cancellableOnlyViaSupport: boolean
 ) {
@@ -199,16 +200,6 @@ function getV1DashboardSections(
                 c('Action').t`Edit billing address`,
                 c('Select invoice document').t`Credit note`,
                 c('Select invoice document').t`Transactions`,
-            ],
-        },
-        {
-            text: c('Title').t`Notifications`,
-            id: 'email-subscription',
-            available: !isMember,
-            keywords: [
-                c('news').t`${BRAND_NAME} newsletter`,
-                c('news').t`${BRAND_NAME} offers and promotions`,
-                c('news').t`Daily email notifications`,
             ],
         },
         {
@@ -422,6 +413,7 @@ export const getAccountAppRoutes = ({
     showDriveDashboard,
     showGenericDashboard,
     hasPendingInvitations,
+    isPasswordReminderAvailable,
     permissions,
     flags,
     accountRecoveryRouterFlags,
@@ -445,6 +437,10 @@ export const getAccountAppRoutes = ({
     //Used to determine if a user is on a visionary plan (works for both old and new visionary plans)
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
     const isMemberProton = Type === UserType.PROTON;
+    const emailSubscriptions = getEmailSubscriptions((emailSubscription) =>
+        filterNews({ emailSubscription, user, userSettings: undefined })
+    );
+    const passwordReminderKeywords = isPasswordReminderAvailable ? [c('Label').t`Password check-ins`] : [];
 
     const cancelSubscriptionAvailable = isCancelSubscriptionSectionAvailable(allSubscriptions);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
@@ -590,7 +586,6 @@ export const getAccountAppRoutes = ({
                           canPay,
                           assistantKillSwitch,
                           isPaid,
-                          isMember,
                           cancelSubscriptionAvailable,
                           cancellableOnlyViaSupport
                       ),
@@ -673,17 +668,6 @@ export const getAccountAppRoutes = ({
                         ],
                     },
                     {
-                        text: c('Title').t`Notifications`,
-                        id: 'email-subscription',
-                        available: !isMember,
-                        variant: SettingsLayoutVariant.Card,
-                        keywords: [
-                            c('news').t`${BRAND_NAME} newsletter`,
-                            c('news').t`${BRAND_NAME} offers and promotions`,
-                            c('news').t`Daily email notifications`,
-                        ],
-                    },
-                    {
                         text: c('Title').t`Cancel subscription`,
                         id: 'cancel-subscription',
                         available: isPaid && canPay && cancelSubscriptionAvailable,
@@ -746,7 +730,7 @@ export const getAccountAppRoutes = ({
                         keywords: [
                             c('Title').t`Change password`,
                             c('Label').t`Two-password mode`,
-                            c('Label').t`Password check-ins`,
+                            ...passwordReminderKeywords,
                         ],
                     },
                     {
@@ -990,6 +974,45 @@ export const getAccountAppRoutes = ({
                             c('account_search_index').t`Telemetry`,
                         ],
                         variant: SettingsLayoutVariant.Card,
+                    },
+                ],
+            },
+            notifications: {
+                // Not `notifications`, which the account and password page already uses for a subsection
+                id: 'email-notifications',
+                text: c('Title').t`Notifications`,
+                to: '/notifications',
+                icon: IcBell,
+                // Same audience as the dashboard and subscription pages these settings moved from
+                available: shouldShowDashboard && !isMember,
+                // Every group keeps toggles that are never filtered out, so each card is always shown
+                subsections: [
+                    {
+                        id: 'email-subscriptions',
+                        text: emailSubscriptions.general.title,
+                        variant: SettingsLayoutVariant.Card,
+                        keywords: emailSubscriptions.general.toggles.map(({ title }) => title),
+                    },
+                    {
+                        id: 'product-updates',
+                        text: emailSubscriptions.product.title,
+                        variant: SettingsLayoutVariant.Card,
+                        keywords: emailSubscriptions.product.toggles.map(({ title }) => title),
+                    },
+                    {
+                        id: 'account-updates',
+                        text: emailSubscriptions.accountUpdates.title,
+                        variant: SettingsLayoutVariant.Card,
+                        keywords: emailSubscriptions.accountUpdates.toggles.map(({ title }) => title),
+                    },
+                    {
+                        id: 'application-notifications',
+                        text: emailSubscriptions.notifications.title,
+                        variant: SettingsLayoutVariant.Card,
+                        keywords: [
+                            ...emailSubscriptions.notifications.toggles.map(({ title }) => title),
+                            ...passwordReminderKeywords,
+                        ],
                     },
                 ],
             },
