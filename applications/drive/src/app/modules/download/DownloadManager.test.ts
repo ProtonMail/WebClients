@@ -881,6 +881,50 @@ describe('DownloadManager', () => {
         });
     });
 
+    it('should keep an archive download cancelled when its traversal completes after the cancel', async () => {
+        const manager = DownloadManager.getInstance();
+        storeMockState.addDownloadItem.mockReturnValue('archive-cancelled');
+        storeMockState.getQueueItem.mockReturnValue(undefined);
+
+        const nodes: NodeEntity[] = [
+            createMockNodeEntity({
+                uid: 'folder-1',
+                name: { ok: true as const, value: 'folder' },
+                type: NodeType.Folder,
+                activeRevision: undefined,
+            }),
+        ];
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
+        const traversalDeferred = createDeferred<{ totalEncryptedSize: number; containsUnsupportedFile: boolean }>();
+        traverseNodeStructureMock.mockReturnValue({
+            nodesQueue: { iterator: jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>()) },
+            traversalCompletedPromise: traversalDeferred.promise,
+            parentPathByUid: new Map(),
+        });
+        archiveGeneratorTracker.setFactory(() => ({
+            stream: createClosedReadableStream(),
+            writeLinks: jest.fn().mockReturnValue(createDeferred<void>().promise),
+            cancel: jest.fn(),
+        }));
+        fileSaverSaveAsFileMock.mockReturnValue(createDeferred<void>().promise);
+
+        await manager.download(nodes.map((node) => node.uid));
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Preparing });
+        await manager.cancel(['archive-cancelled']);
+        storeMockState.updateDownloadItem.mockClear();
+
+        // The traversal of a big folder can end after the user cancelled.
+        traversalDeferred.resolve({ totalEncryptedSize: 4096, containsUnsupportedFile: false });
+        await flushAsync();
+
+        expect(storeMockState.updateDownloadItem).not.toHaveBeenCalledWith(
+            'archive-cancelled',
+            expect.objectContaining({ status: DownloadStatus.InProgress })
+        );
+
+        archiveGeneratorTracker.restoreFactory();
+    });
+
     it('should cancel downloads by aborting controllers and marking them cancelled', async () => {
         const manager = DownloadManager.getInstance();
         const abortMock = jest.fn();

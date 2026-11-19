@@ -450,6 +450,10 @@ export class DownloadManager {
             // then transitions to InProgress.
             // Traversal timing is logged inside traverseNodeStructure ('Traversal complete').
             void traversalCompletedPromise.then((traversalResult) => {
+                // The traversal can end after a cancel: it must not bring the download back to InProgress.
+                if (abortController.signal.aborted) {
+                    return;
+                }
                 totalEncryptedSize = traversalResult.totalEncryptedSize;
                 updateDownloadItem(downloadId, {
                     status: DownloadStatus.InProgress,
