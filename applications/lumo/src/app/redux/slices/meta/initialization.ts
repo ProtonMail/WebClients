@@ -12,14 +12,14 @@ export const setLumoUserSettingsBootstrapped = createAction('lumo/meta/setLumoUs
  * never deleted, so as long as this is true we must not let an auto-save PUT the current
  * (default) settings over that blob — that would destroy it for good.
  *
- * Cleared as soon as a load actually succeeds in decrypting something (real recovery), or once
- * `useDataLossWarningNotification` has told the user their pre-reset data is gone — at that
- * point there's no more reason to keep refusing to sync settings forever, so new settings are
- * free to overwrite the old, now-acknowledged-as-lost blob.
+ * Cleared when settings can be loaded or the acknowledged pre-reset blob has been replaced.
  */
-export const setRemoteUserSettingsUndecryptable = createAction<boolean>(
-    'lumo/meta/setRemoteUserSettingsUndecryptable'
-);
+export const setRemoteUserSettingsUndecryptable = createAction<boolean>('lumo/meta/setRemoteUserSettingsUndecryptable');
+
+export const acknowledgeLumoDataLossWarning = createAction('lumo/meta/acknowledgeLumoDataLossWarning');
+
+/** True when the startup settings load from the server failed; `useUserSettingsLoadFailedNotification` shows a toast. */
+export const setRemoteUserSettingsLoadFailed = createAction<boolean>('lumo/meta/setRemoteUserSettingsLoadFailed');
 
 interface InitializationState {
     reduxLoadedFromIdb: boolean;
@@ -30,6 +30,8 @@ interface InitializationState {
     /** True once the first pullSpaces has finished, successfully or not. */
     spacesPullSettled: boolean;
     remoteUserSettingsUndecryptable: boolean;
+    lumoDataLossWarningShown: boolean;
+    remoteUserSettingsLoadFailed: boolean;
 }
 
 const initialState: InitializationState = {
@@ -38,6 +40,8 @@ const initialState: InitializationState = {
     lastSpacesPullAt: 0,
     spacesPullSettled: false,
     remoteUserSettingsUndecryptable: false,
+    lumoDataLossWarningShown: false,
+    remoteUserSettingsLoadFailed: false,
 };
 
 const initializationReducer = createReducer<InitializationState>(initialState, (builder) => {
@@ -58,8 +62,13 @@ const initializationReducer = createReducer<InitializationState>(initialState, (
         })
         .addCase(setRemoteUserSettingsUndecryptable, (state, action: PayloadAction<boolean>) => {
             state.remoteUserSettingsUndecryptable = action.payload;
+        })
+        .addCase(acknowledgeLumoDataLossWarning, (state) => {
+            state.lumoDataLossWarningShown = true;
+        })
+        .addCase(setRemoteUserSettingsLoadFailed, (state, action: PayloadAction<boolean>) => {
+            state.remoteUserSettingsLoadFailed = action.payload;
         });
 });
 
 export default initializationReducer;
-

@@ -1,9 +1,11 @@
 import { matchDarkTheme, setLumoSettings, userSettingsToLocalSettings } from '../../providers';
 import { safeLogger } from '../../util/safeLogger';
+import { mergeUserSettingsChanges } from '../../util/userSettingsMerge';
 import { loadUserSettingsFromStorage, saveUserSettingsToStorage } from '../../util/userSettingsStorage';
 import { selectMasterKey, selectMasterKeysBundle } from '../selectors';
 import { addMasterKey } from '../slices/core/credentials';
 import { updateFeatureFlags } from '../slices/featureFlags';
+import type { LumoUserSettings } from '../slices/lumoUserSettings';
 import {
     loadLumoUserSettingsFromRemote,
     resetLumoUserSettings,
@@ -12,9 +14,15 @@ import {
     updateLumoUserSettings,
     updateLumoUserSettingsWithAutoSave,
 } from '../slices/lumoUserSettings';
+import { refreshLumoUserSettings } from '../slices/lumoUserSettingsActions';
+import { USER_SETTINGS_NEED_KEY_MIGRATION, setUserSettingsMergeBase } from '../slices/lumoUserSettingsThunks';
+import type { SaveLumoUserSettingsResult } from '../slices/lumoUserSettingsThunks';
+import { setLumoUserSettingsBootstrapped, setRemoteUserSettingsLoadFailed } from '../slices/meta/initialization';
 import { updatePersonalizationSettings } from '../slices/personalization';
-import { setLumoUserSettingsBootstrapped } from '../slices/meta/initialization';
-import type { AppStartListening } from '../store';
+import type { AppStartListening, LumoDispatch, LumoState } from '../store';
+
+const SAVE_DEBOUNCE_MS = 1000;
+const SAVE_RETRY_MS = 30_000;
 
 /**
  * Start Lumo user settings-related listeners
@@ -22,13 +30,13 @@ import type { AppStartListening } from '../store';
 export function startLumoUserSettingsListeners(startListening: AppStartListening) {
     // Save Lumo user settings changes to encrypted localStorage and sync theme localStorage (for all changes)
     startListening({
-        matcher: (action) =>
+        predicate: (action) =>
             updateLumoUserSettings.match(action) ||
             updateLumoUserSettingsWithAutoSave.match(action) ||
             resetLumoUserSettings.match(action) ||
             setLumoUserSettings.match(action) ||
-            loadLumoUserSettingsFromRemote.fulfilled.match(action),
-        effect: async (action, listenerApi) => {
+            (loadLumoUserSettingsFromRemote.fulfilled.match(action) && action.meta.arg !== 'migration'),
+        effect: async (_, listenerApi) => {
             const state = listenerApi.getState();
             const masterKey = selectMasterKey(state);
             const lumoUserSettings = state.lumoUserSettings;
@@ -53,31 +61,137 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
         },
     });
 
-    // Auto-save to remote API only for explicit auto-save actions (like theme changes)
+    // Auto-save to remote API only for explicit auto-save actions (like theme changes). Only the keys those actions
+    // changed are sent, applied to the server's latest copy (see `saveLumoUserSettingsToRemote`), so a device holding
+    // defaults or stale settings can't overwrite the rest.
+    let pendingChanges: Partial<LumoUserSettings> = {};
+    let saveTimer: ReturnType<typeof setTimeout> | undefined;
+    let saveInFlight = false;
+    let refreshRequested = false;
+    let refreshController: AbortController | undefined;
+
+    type SaveListenerApi = { dispatch: LumoDispatch; getState: () => LumoState };
+
+    // A refresh replaces the snapshot used to compute local edits, so apply it only when the save queue is idle.
+    const refreshWhenIdle = async (listenerApi: SaveListenerApi): Promise<void> => {
+        const { dispatch, getState } = listenerApi;
+        if (
+            !refreshRequested ||
+            refreshController ||
+            saveInFlight ||
+            saveTimer ||
+            !getState().initialization.lumoUserSettingsBootstrapped
+        ) {
+            return;
+        }
+        refreshRequested = false;
+        const controller = new AbortController();
+        refreshController = controller;
+        try {
+            await dispatch(loadLumoUserSettingsFromRemote('background', { signal: controller.signal }));
+        } finally {
+            refreshController = undefined;
+        }
+        // An event may have arrived while this request was running.
+        await refreshWhenIdle(listenerApi);
+    };
+
+    startListening({
+        actionCreator: refreshLumoUserSettings,
+        effect: async (_, listenerApi) => {
+            refreshRequested = true;
+            await refreshWhenIdle(listenerApi);
+        },
+    });
+
+    /**
+     * Brings local state up to date with what was just saved, which can include changes from other devices. The save
+     * moved the merge base to `merged`; local state must follow, or the next save would read items missing locally
+     * (but present in the base) as deleted here. Changes made while the save ran are rebased onto `merged`, in state
+     * and in `pendingChanges`, so they keep what other devices added.
+     */
+    const rebaseOnSavedSettings = (
+        { dispatch, getState }: SaveListenerApi,
+        { merged, base }: SaveLumoUserSettingsResult
+    ) => {
+        const rebased = mergeUserSettingsChanges(base, pendingChanges, merged);
+        pendingChanges = Object.fromEntries(
+            Object.keys(pendingChanges).map((key) => [key, rebased[key as keyof LumoUserSettings]])
+        );
+        // The prompt counter is counted on this device and may have moved while the save ran.
+        rebased.memoryPromptsSinceAutoSave = getState().lumoUserSettings.memoryPromptsSinceAutoSave;
+        dispatch(updateLumoUserSettings(rebased));
+        // Keep the slices that mirror these settings in sync, as a remote load does. A server copy written by another
+        // client may lack these keys.
+        if (rebased.personalization) {
+            dispatch(updatePersonalizationSettings(rebased.personalization));
+        }
+        if (Array.isArray(rebased.featureFlags)) {
+            dispatch(updateFeatureFlags(rebased.featureFlags));
+        }
+    };
+
+    const scheduleRemoteSave = (listenerApi: SaveListenerApi, delay: number) => {
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(async () => {
+            saveTimer = undefined;
+            // One save at a time: two concurrent read-modify-writes would drop each other's changes.
+            if (saveInFlight) {
+                scheduleRemoteSave(listenerApi, SAVE_DEBOUNCE_MS);
+                return;
+            }
+            const changes: Partial<LumoUserSettings> = {
+                ...pendingChanges,
+                // The prompt counter changes without auto-save, so send this device's value along with every save,
+                // as whole-object saves used to; otherwise the server copy, and every reload, would reset it.
+                memoryPromptsSinceAutoSave: listenerApi.getState().lumoUserSettings.memoryPromptsSinceAutoSave,
+            };
+            const hadChanges = Object.keys(pendingChanges).length > 0;
+            pendingChanges = {};
+            if (!hadChanges) {
+                return;
+            }
+
+            saveInFlight = true;
+            try {
+                const result = await listenerApi.dispatch(saveLumoUserSettingsToRemote(changes)).unwrap();
+                console.log('LumoUserSettingsListener: Remote API save successful');
+                rebaseOnSavedSettings(listenerApi, result);
+            } catch (error) {
+                // Keep the changes (newer ones win) and try again later.
+                pendingChanges = { ...changes, ...pendingChanges };
+                if (error === USER_SETTINGS_NEED_KEY_MIGRATION) {
+                    const migration = await listenerApi.dispatch(loadLumoUserSettingsFromRemote('migration'));
+                    const delay = loadLumoUserSettingsFromRemote.fulfilled.match(migration)
+                        ? SAVE_DEBOUNCE_MS
+                        : SAVE_RETRY_MS;
+                    scheduleRemoteSave(listenerApi, delay);
+                } else {
+                    console.error('Failed to auto-save Lumo user settings to remote API:', error);
+                    if (!saveTimer) {
+                        scheduleRemoteSave(listenerApi, SAVE_RETRY_MS);
+                    }
+                }
+            } finally {
+                saveInFlight = false;
+                void refreshWhenIdle(listenerApi);
+            }
+        }, delay);
+    };
+
     startListening({
         matcher: (action) => updateLumoUserSettingsWithAutoSave.match(action),
         effect: async (action, listenerApi) => {
             console.log('LumoUserSettingsListener: Auto-save to remote API triggered', action.type, action.payload);
-            const state = listenerApi.getState();
-            const masterKey = selectMasterKey(state);
-
-            if (masterKey) {
-                console.log('LumoUserSettingsListener: Scheduling remote API save in 1 second');
-                setTimeout(async () => {
-                    try {
-                        const latestSettings = listenerApi.getState().lumoUserSettings;
-                        if (!latestSettings) {
-                            return;
-                        }
-                        console.log('LumoUserSettingsListener: Executing remote API save', latestSettings);
-                        await listenerApi.dispatch(saveLumoUserSettingsToRemote(latestSettings)).unwrap();
-                        console.log('LumoUserSettingsListener: Remote API save successful');
-                    } catch (error) {
-                        console.error('Failed to auto-save Lumo user settings to remote API:', error);
-                    }
-                }, 1000); // 1 second debounce
-            } else {
+            if (!selectMasterKey(listenerApi.getState())) {
                 console.log('LumoUserSettingsListener: No master key available for remote save');
+                return;
+            }
+            pendingChanges = { ...pendingChanges, ...action.payload };
+            scheduleRemoteSave(listenerApi, SAVE_DEBOUNCE_MS);
+            if (refreshController) {
+                refreshRequested = true;
+                refreshController.abort();
             }
         },
     });
@@ -103,6 +217,7 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
                     loadedFromRemote = result !== null;
                 } catch (error) {
                     safeLogger.warn('Failed to load Lumo user settings from remote API:', error);
+                    listenerApi.dispatch(setRemoteUserSettingsLoadFailed(true));
                 }
 
                 // If remote API failed or returned undecryptable data, fallback to localStorage
@@ -133,28 +248,28 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
                             return;
                         }
 
-                        // Only update if we don't already have user settings data
-                        const currentLumoUserSettings = listenerApi.getState().lumoUserSettings;
-                        let hasExistingData = false;
-
-                        if (currentLumoUserSettings && typeof currentLumoUserSettings === 'object') {
-                            hasExistingData = currentLumoUserSettings.theme !== 'auto';
-                        }
-
-                        if (!hasExistingData) {
-                            console.log('LumoUserSettingsListener: Setting Lumo user settings from localStorage');
-                            listenerApi.dispatch(setLumoUserSettings(storedUserSettings));
-                        }
+                        // The server copy didn't load into state, so use the local copy. Don't gate this on
+                        // the theme: it's restored from unencrypted localStorage at startup, so it isn't
+                        // 'auto' for anyone who picked Light or Dark, and their settings stayed on defaults.
+                        console.log('LumoUserSettingsListener: Setting Lumo user settings from localStorage');
+                        listenerApi.dispatch(setLumoUserSettings(storedUserSettings));
+                        // Memories in this copy may have been deleted elsewhere since; as the merge base they
+                        // aren't mistaken for additions and written back.
+                        setUserSettingsMergeBase(storedUserSettings);
 
                         if (needsMasterKeyMigration) {
                             try {
                                 console.log(
                                     'LumoUserSettingsListener: Re-wrapping local user settings with primary master key'
                                 );
-                                await listenerApi.dispatch(saveLumoUserSettingsToRemote(storedUserSettings)).unwrap();
+                                // Local only: the remote copy didn't load, so pushing this one could
+                                // overwrite newer settings. The remote blob is re-wrapped when it loads.
                                 await saveUserSettingsToStorage(storedUserSettings, masterKeysBundle.primaryMasterKey);
                             } catch (error) {
-                                safeLogger.warn('Failed to re-wrap local user settings with primary master key:', error);
+                                safeLogger.warn(
+                                    'Failed to re-wrap local user settings with primary master key:',
+                                    error
+                                );
                             }
                         }
                     }
@@ -165,6 +280,7 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
                 safeLogger.error('Failed to load Lumo user settings from storage:', error);
             } finally {
                 listenerApi.dispatch(setLumoUserSettingsBootstrapped());
+                void refreshWhenIdle(listenerApi);
             }
         },
     });
@@ -173,8 +289,22 @@ export function startLumoUserSettingsListeners(startListening: AppStartListening
     startListening({
         actionCreator: loadLumoUserSettingsFromRemote.fulfilled,
         effect: async (action, listenerApi) => {
+            if (action.meta.arg === 'migration') {
+                return;
+            }
             const lumoUserSettings = action.payload;
+            if (lumoUserSettings) {
+                setUserSettingsMergeBase(lumoUserSettings);
+            }
             console.log('LumoUserSettingsListener: loadLumoUserSettingsFromRemote.fulfilled', lumoUserSettings);
+
+            // The server answered, so an earlier load failure is no longer current: don't let the
+            // toast show it if it hasn't been shown yet.
+            const { remoteUserSettingsLoadFailed, remoteUserSettingsUndecryptable } =
+                listenerApi.getState().initialization;
+            if (remoteUserSettingsLoadFailed && !remoteUserSettingsUndecryptable) {
+                listenerApi.dispatch(setRemoteUserSettingsLoadFailed(false));
+            }
 
             if (lumoUserSettings && lumoUserSettings.personalization) {
                 console.log(

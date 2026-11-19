@@ -1,7 +1,7 @@
 import { ActionEventV6 } from '@proton/shared/lib/api/events';
 
 import { resetLumoUserSettings } from '../../slices/lumoUserSettings';
-import { loadLumoUserSettingsFromRemote } from '../../slices/lumoUserSettingsThunks';
+import { refreshLumoUserSettings } from '../../slices/lumoUserSettingsActions';
 import type { LumoEventLoopCallback } from '../interface';
 
 export const lumoUserSettingsLoop: LumoEventLoopCallback = ({ event, dispatch }) => {
@@ -18,5 +18,5 @@ export const lumoUserSettingsLoop: LumoEventLoopCallback = ({ event, dispatch })
         return;
     }
 
-    return dispatch(loadLumoUserSettingsFromRemote());
+    dispatch(refreshLumoUserSettings());
 };

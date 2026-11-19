@@ -7,7 +7,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { dismissDataLossWarning, selectDataLossWarnings } from '../redux/slices/meta/errors';
-import { setRemoteUserSettingsUndecryptable } from '../redux/slices/meta/initialization';
+import { acknowledgeLumoDataLossWarning } from '../redux/slices/meta/initialization';
 
 /**
  * Surfaces `addDataLossWarning` (dispatched from `lumoBootstrap` when every master key envelope
@@ -17,11 +17,7 @@ import { setRemoteUserSettingsUndecryptable } from '../redux/slices/meta/initial
  *
  * Deliberately separate from `MasterKeyBanner`, which reports an ongoing, blocking failure.
  *
- * Also clears `remoteUserSettingsUndecryptable`: once the user has been told their pre-reset data
- * is gone, there is no more reason to keep refusing to sync settings to the server — that flag
- * exists only to protect the old blob for the brief window before the user has even been told
- * about the loss. Without this, a user who never recovers their old keys would never see their
- * settings sync again (see LUMO-853 follow-up discussion).
+ * Records that the recovery warning was shown so settings sync can replace the pre-reset blob.
  */
 export const useDataLossWarningNotification = () => {
     const { createNotification } = useNotifications();
@@ -40,7 +36,7 @@ export const useDataLossWarningNotification = () => {
                 expiration: 8000,
             });
             dispatch(dismissDataLossWarning(warning.id));
-            dispatch(setRemoteUserSettingsUndecryptable(false));
+            dispatch(acknowledgeLumoDataLossWarning());
         }
     }, [warnings, createNotification, dispatch]);
 };

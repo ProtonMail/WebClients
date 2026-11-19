@@ -12,9 +12,6 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { useLumoUserSettings } from '../../../hooks';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { initialFeatureFlags } from '../../../redux/slices/featureFlags';
-import type { LumoUserSettings } from '../../../redux/slices/lumoUserSettings';
-import { saveLumoUserSettingsToRemote } from '../../../redux/slices/lumoUserSettingsThunks';
 import {
     type PersonalizationSettings,
     getAvailableTraits,
@@ -100,7 +97,6 @@ const PersonalizationPanel = () => {
         context: 0,
     });
 
-    const [isSaving, setIsSaving] = useState(false);
     const [lastSavedPersonalization, setLastSavedPersonalization] = useState<PersonalizationSettings | null>(null);
     const [isInitialized, setIsInitialized] = useState(false);
     const [hasUserInteracted, setHasUserInteracted] = useState(false);
@@ -253,33 +249,10 @@ const PersonalizationPanel = () => {
         );
     })();
 
-    const handleSave = async () => {
-        if (isSaving) {
-            return;
-        }
-
-        setIsSaving(true);
-        try {
-            // First update the Redux state
-            dispatch(savePersonalizationSettings(personalization));
-
-            // Get the current user settings and update it with personalization
-            const updatedUserSettings: LumoUserSettings = {
-                theme: (userSettings as any)?.theme || 'auto',
-                personalization,
-                featureFlags: (userSettings as any)?.featureFlags || initialFeatureFlags,
-                showGallerySuggestions: (userSettings as any)?.showGallerySuggestions ?? true,
-            };
-
-            // Directly save to remote API and wait for completion
-            await dispatch(saveLumoUserSettingsToRemote(updatedUserSettings)).unwrap();
-
-            setLastSavedPersonalization({ ...personalization });
-        } catch (error) {
-            safeLogger.error('PersonalizationPanel: Failed to save personalization:', error);
-        } finally {
-            setIsSaving(false);
-        }
+    const handleSave = () => {
+        // The personalization listener queues this for the remote auto-save, like the reset above.
+        dispatch(savePersonalizationSettings(personalization));
+        setLastSavedPersonalization({ ...personalization });
     };
 
     return (
@@ -435,14 +408,8 @@ const PersonalizationPanel = () => {
                         {c('Action').t`Reset all`}
                     </Button>
                     <div className="flex-1" />
-                    <Button
-                        color="norm"
-                        size="small"
-                        onClick={handleSave}
-                        disabled={!hasUnsavedChanges || isSaving}
-                        loading={isSaving}
-                    >
-                        {isSaving ? c('Action').t`Saving...` : c('Action').t`Save`}
+                    <Button color="norm" size="small" onClick={handleSave} disabled={!hasUnsavedChanges}>
+                        {c('Action').t`Save`}
                     </Button>
                 </div>
             )}

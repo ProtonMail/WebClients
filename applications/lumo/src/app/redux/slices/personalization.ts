@@ -103,7 +103,7 @@ export const getPersonalityOptions = () =>
         },
     ] as const;
 
-const initialState: PersonalizationSettings = {
+export const initialPersonalizationSettings: PersonalizationSettings = {
     nickname: '',
     jobRole: '',
     personality: 'default',
@@ -125,7 +125,7 @@ export const resetPersonalizationSettings = createAction('personalization/resetS
 export const toggleTrait = createAction<string>('personalization/toggleTrait');
 
 // Reducer
-const personalizationReducer = createReducer(initialState, (builder) => {
+const personalizationReducer = createReducer(initialPersonalizationSettings, (builder) => {
     builder
         .addCase(updatePersonalizationSettings, (state, action) => {
             console.log('Personalization reducer: Received updatePersonalizationSettings', action.payload);
@@ -134,7 +134,7 @@ const personalizationReducer = createReducer(initialState, (builder) => {
             return newState;
         })
         .addCase(resetPersonalizationSettings, () => {
-            return initialState;
+            return initialPersonalizationSettings;
         })
         .addCase(toggleTrait, (state, action) => {
             const traitId = action.payload;
