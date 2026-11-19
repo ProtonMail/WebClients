@@ -55,6 +55,8 @@ const MAXIMUM_CONCURRENT_STREAMS = 3;
  * @param port MessageChannel port to listen on
  */
 function createDownloadStream(port: MessagePort) {
+    let onChunkReceived: (() => void) | undefined;
+
     return new ReadableStream<Uint8Array<ArrayBuffer>>({
         start(controller) {
             port.onmessage = ({ data }) => {
@@ -62,13 +64,23 @@ function createDownloadStream(port: MessagePort) {
                     case 'end':
                         return controller.close();
                     case 'download_chunk':
-                        return controller.enqueue(data?.payload);
+                        controller.enqueue(data?.payload);
+                        onChunkReceived?.();
+                        onChunkReceived = undefined;
+                        return;
                     case 'abort':
                         return controller.error(data?.reason);
                     default:
                         console.error(`received unknown action "${data?.action}"`);
                 }
             };
+        },
+        // Browser saved the previous chunk --> ask the page for the next one --> page never sends more than is saved
+        pull() {
+            return new Promise<void>((resolve) => {
+                onChunkReceived = resolve;
+                port.postMessage({ action: 'pull' });
+            });
         },
         cancel() {
             port.postMessage({ action: 'download_canceled' });
@@ -439,7 +451,7 @@ class DownloadServiceWorker {
             });
 
             const downloadUrl = new URL(`/sw/${id}`, self.registration.scope);
-            port.postMessage({ action: 'download_started', payload: downloadUrl.toString() });
+            port.postMessage({ action: 'download_started', payload: downloadUrl.toString(), supportsPull: true });
         }
     };
 }
