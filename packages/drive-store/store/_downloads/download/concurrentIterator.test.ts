@@ -6,12 +6,10 @@ import type { DownloadCallbacks } from '../interface';
 import ConcurrentIterator from './concurrentIterator';
 import type { NestedLinkDownload } from './interface';
 
-const mockDownloadLinkFile = jest.fn();
-jest.mock('./downloadLinkFile', () => {
-    return (...args: any[]) => {
-        return mockDownloadLinkFile(...args);
-    };
-});
+const mockDownloadLinkFile = vi.hoisted(() => vi.fn());
+vi.mock('./downloadLinkFile', () => ({
+    default: (...args: any[]) => mockDownloadLinkFile(...args),
+}));
 
 async function* generateLinks(count: number, size = 123) {
     for (let i = 0; i < count; i++) {
@@ -23,12 +21,12 @@ async function* generateLinks(count: number, size = 123) {
 }
 
 describe('ConcurrentIterator', () => {
-    const mockStart = jest.fn();
-    const mockCancel = jest.fn();
-    const mockLog = jest.fn();
+    const mockStart = vi.fn();
+    const mockCancel = vi.fn();
+    const mockLog = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         mockDownloadLinkFile.mockReturnValue({
             start: mockStart,

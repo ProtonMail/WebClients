@@ -6,66 +6,66 @@ import { SharesKeysProvider } from '../../_shares/useSharesKeys';
 import type { EncryptedLink } from '../interface';
 import { useLinksListingProvider } from './useLinksListing';
 
-jest.mock('../../_utils/errorHandler', () => {
+vi.mock('../../_utils/errorHandler', () => {
     return {
         useErrorHandler: () => ({
-            showErrorNotification: jest.fn(),
-            showAggregatedErrorNotification: jest.fn(),
+            showErrorNotification: vi.fn(),
+            showAggregatedErrorNotification: vi.fn(),
         }),
     };
 });
 
-const mockRequest = jest.fn();
-jest.mock('../../_api/useDebouncedRequest', () => {
+const mockRequest = vi.hoisted(() => vi.fn());
+vi.mock('../../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockRequest;
     };
-    return useDebouncedRequest;
+    return { default: useDebouncedRequest };
 });
 
-jest.mock('../../_crypto/useDriveCrypto', () => {
+vi.mock('../../_crypto/useDriveCrypto', () => {
     const useDriveCrypto = () => {
         return {};
     };
-    return useDriveCrypto;
+    return { default: useDriveCrypto };
 });
 
-jest.mock('../../_shares/useShare', () => {
+vi.mock('../../_shares/useShare', () => {
     const useShare = () => {
         return {};
     };
-    return useShare;
+    return { default: useShare };
 });
 
-jest.mock('../../_shares/useDefaultShare', () => {
+vi.mock('../../_shares/useDefaultShare', () => {
     const useDefaultShare = () => {
         return {
-            getDefaultShare: jest.fn(),
-            getDefaultPhotosShare: jest.fn(),
+            getDefaultShare: vi.fn(),
+            getDefaultPhotosShare: vi.fn(),
         };
     };
-    return useDefaultShare;
+    return { default: useDefaultShare };
 });
 
-const mockDecrypt = jest.fn();
-jest.mock('../useLink', () => {
+const mockDecrypt = vi.hoisted(() => vi.fn());
+vi.mock('../useLink', () => {
     const useLink = () => {
         return {
             decryptLink: mockDecrypt,
         };
     };
-    return useLink;
+    return { default: useLink };
 });
 
-const mockGetChildren = jest.fn();
-jest.mock('../useLinksState', () => {
+const mockGetChildren = vi.hoisted(() => vi.fn());
+vi.mock('../useLinksState', () => {
     const useLinksState = () => {
         return {
-            setLinks: jest.fn(),
+            setLinks: vi.fn(),
             getChildren: mockGetChildren,
         };
     };
-    return useLinksState;
+    return { default: useLinksState };
 });
 
 describe('useLinksListing', () => {
@@ -75,7 +75,7 @@ describe('useLinksListing', () => {
     };
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
 
         mockDecrypt.mockImplementation((abortSignal: AbortSignal, shareId: string, encrypted: EncryptedLink) =>
             Promise.resolve(encrypted)

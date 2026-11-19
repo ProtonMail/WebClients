@@ -2,7 +2,7 @@ import downloadBlock from './downloadBlock';
 
 describe('download block', () => {
     it('waits specified time when rate limited', async () => {
-        const mockFetch = jest.fn(() => {
+        const mockFetch = vi.fn(() => {
             // Fail only once.
             if (mockFetch.mock.calls.length === 1) {
                 return Promise.resolve({

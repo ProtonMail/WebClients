@@ -18,7 +18,7 @@ const emptyExtendedAttributes: ParsedExtendedAttributes = {
 
 describe('extended attrbiutes', () => {
     beforeAll(() => {
-        jest.spyOn(global.console, 'warn').mockReturnValue();
+        vi.spyOn(global.console, 'warn').mockReturnValue();
     });
 
     beforeEach(() => {

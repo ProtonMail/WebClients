@@ -11,54 +11,54 @@ import type { IntegrityMetrics } from '../_crypto/integrityMetrics';
 import { ShareType } from '../_shares/interface';
 import { useLinkInner } from './useLink';
 
-jest.mock('@proton/shared/lib/keys/driveKeys');
+vi.mock('@proton/shared/lib/keys/driveKeys');
 
-jest.mock('@proton/shared/lib/keys/drivePassphrase');
+vi.mock('@proton/shared/lib/keys/drivePassphrase');
 
-jest.mock('../../utils/url/token');
-const mockedTokenIsValid = jest.mocked(tokenIsValid).mockReturnValue(false);
+vi.mock('../../utils/url/token');
+const mockedTokenIsValid = vi.mocked(tokenIsValid).mockReturnValue(false);
 
-const mockRequest = jest.fn();
-jest.mock('../_api/useDebouncedRequest', () => {
+const mockRequest = vi.hoisted(() => vi.fn());
+vi.mock('../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockRequest;
     };
-    return useDebouncedRequest;
+    return { default: useDebouncedRequest };
 });
 
-jest.mock('../_utils/useDebouncedFunction', () => {
+vi.mock('../_utils/useDebouncedFunction', () => {
     const useDebouncedFunction = () => {
         return (wrapper: any) => wrapper();
     };
-    return useDebouncedFunction;
+    return { default: useDebouncedFunction };
 });
 
 describe('useLink', () => {
-    const mockFetchLink = jest.fn();
+    const mockFetchLink = vi.fn();
     const mockLinksKeys = {
-        getPassphrase: jest.fn(),
-        setPassphrase: jest.fn(),
-        getPassphraseSessionKey: jest.fn(),
-        setPassphraseSessionKey: jest.fn(),
-        getPrivateKey: jest.fn(),
-        setPrivateKey: jest.fn(),
-        getSessionKey: jest.fn(),
-        setSessionKey: jest.fn(),
-        getHashKey: jest.fn(),
-        setHashKey: jest.fn(),
+        getPassphrase: vi.fn(),
+        setPassphrase: vi.fn(),
+        getPassphraseSessionKey: vi.fn(),
+        setPassphraseSessionKey: vi.fn(),
+        getPrivateKey: vi.fn(),
+        setPrivateKey: vi.fn(),
+        getSessionKey: vi.fn(),
+        setSessionKey: vi.fn(),
+        getHashKey: vi.fn(),
+        setHashKey: vi.fn(),
     };
     const mockLinksState = {
-        getLink: jest.fn(),
-        setLinks: jest.fn(),
+        getLink: vi.fn(),
+        setLinks: vi.fn(),
     };
-    const mockGetVerificationKey = jest.fn();
-    const mockGetSharePrivateKey = jest.fn();
-    const mockGetShare = jest.fn();
-    const mockGetDefaultShareAddressEmail = jest.fn();
-    const mockGetDirectSharingInfo = jest.fn();
-    const mockDecryptPrivateKey = jest.fn();
-    const mockIntegrityMetricsDecryptionError = jest.fn();
-    const mockIntegrityMetricsSignatureVerificationError = jest.fn();
+    const mockGetVerificationKey = vi.fn();
+    const mockGetSharePrivateKey = vi.fn();
+    const mockGetShare = vi.fn();
+    const mockGetDefaultShareAddressEmail = vi.fn();
+    const mockGetDirectSharingInfo = vi.fn();
+    const mockDecryptPrivateKey = vi.fn();
+    const mockIntegrityMetricsDecryptionError = vi.fn();
+    const mockIntegrityMetricsSignatureVerificationError = vi.fn();
 
     const plan = MetricUserPlan.Paid;
     const abortSignal = new AbortController().signal;
@@ -69,15 +69,15 @@ describe('useLink', () => {
 
     beforeAll(() => {
         // Time relative function can have issue with test environments
-        // To prevent hanging async function we use Timer Mocks from jest
-        // https://jestjs.io/docs/timer-mocks
-        jest.useFakeTimers();
+        // To prevent hanging async function we use Timer Mocks from vitest
+        // https://vitest.dev/guide/mocking/timers
+        vi.useFakeTimers();
     });
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
 
-        global.URL.createObjectURL = jest.fn(() => 'blob:objecturl');
+        global.URL.createObjectURL = vi.fn(() => 'blob:objecturl');
 
         // @ts-ignore
         decryptSigned.mockImplementation(({ armoredMessage }) =>

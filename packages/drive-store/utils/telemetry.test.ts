@@ -3,8 +3,8 @@ import { sendTelemetryReport, setMetricsEnabled } from '@proton/shared/lib/helpe
 
 import { Actions, countActionWithTelemetry } from './telemetry';
 
-jest.mock('@proton/shared/lib/api/telemetry');
-jest.mock('@proton/shared/lib/helpers/metrics');
+vi.mock('@proton/shared/lib/api/telemetry');
+vi.mock('@proton/shared/lib/helpers/metrics');
 
 describe('countActionWithTelemetry', () => {
     beforeEach(() => {
@@ -12,7 +12,7 @@ describe('countActionWithTelemetry', () => {
     });
 
     afterEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     it('countActionWithTelemetry: should send telemetry report with a count', async () => {

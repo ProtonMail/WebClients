@@ -4,8 +4,8 @@ import { LAST_ACTIVE_PING } from '../store/_user/useActivePing';
 import { sendErrorReport } from './errorHandling';
 import { getLastActivePersistedUserSession } from './lastActivePersistedUserSession';
 
-jest.mock('./errorHandling');
-const mockedSendErrorReport = jest.mocked(sendErrorReport);
+vi.mock('./errorHandling');
+const mockedSendErrorReport = vi.mocked(sendErrorReport);
 
 describe('getLastActivePersistedUserSession', () => {
     afterEach(() => {
