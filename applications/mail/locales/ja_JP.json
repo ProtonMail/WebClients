@@ -1775,6 +1775,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Skip to main content": [
+        "メインコンテンツへスキップ"
       ]
     },
     "action": {
@@ -5403,6 +5406,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "一部のメーリングリストを登録解除できませんでした。再度お試しください。"
       ]
     },
     "error": {
@@ -15558,6 +15564,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
         "${ LUMO_SHORT_APP_NAME } AIアシスタントを有効にしました"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "${ count }件のメーリングリストを登録解除し、アーカイブに移動しました。"
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "メーリングリストから ${ count } 件を登録解除しました。"
       ]
     },
     "Success notification": {
@@ -17468,6 +17480,11 @@
       ],
       "Passcode:": [
         "パスコード："
+      ]
+    },
+    "Visionary upsell": {
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "追加料金なしで${ BRAND_NAME }を使用"
       ]
     }
   }

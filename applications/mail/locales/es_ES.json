@@ -1799,6 +1799,9 @@
       ],
       "Previous contact": [
         "Contacto anterior"
+      ],
+      "Skip to main content": [
+        "Omitir al contenido principal"
       ]
     },
     "action": {
@@ -5484,6 +5487,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Tu búsqueda ha coincidido con muchos resultados. Limita tu búsqueda e inténtalo de nuevo."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Algunas listas de correo no se pudieron dar de baja. Inténtelo de nuevo para terminar de darse de baja."
       ]
     },
     "error": {
@@ -16016,6 +16022,14 @@
       ],
       "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
         "${ LUMO_SHORT_APP_NAME } asistente de IA activado"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Dado de baja de ${ count } listas de correo y sus mensajes movidos a Archive.",
+        "Dado de baja de ${ count } listas de correo y sus mensajes movidos a Archive."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Se dio de baja de la lista de correo ${ count }.",
+        "Dado de baja de la lista de correo ${ count }."
       ]
     },
     "Success notification": {
@@ -18067,6 +18081,71 @@
       ],
       "For getting more done": [
         "Por hacer más"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuario"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartido"
+      ],
+      "10 years": [
+        "10 años"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Una capa de mayor capacidad con servidores ${ VPN_APP_NAME }: mucho menos personas comparten cada uno, y utilizan ${ BRAND_NAME } con direcciones IP propias. Quick Connect las selecciona automáticamente donde estén disponibles."
+      ],
+      "Calendars": [
+        "Calendarios"
+      ],
+      "Custom email domains": [
+        "Personalizar dominios de correo electrónico"
+      ],
+      "Email addresses": [
+        "Direcciones de correo electrónico"
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Llamado así por el financiamiento colectivo de los simpatizantes que hicieron posible ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } en 2014. Todos los servicios premium ${ BRAND_NAME } en un solo plan."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nuevos ${ BRAND_NAME } servicios sin costo adicional"
+      ],
+      "Password vaults": [
+        "Bóveda de contraseñas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Correo premium, Calendario, Drive y Pass"
+      ],
+      "Previous versions": [
+        "Versiones anteriores"
+      ],
+      "Storage": [
+        "Almacenamiento"
+      ],
+      "Subscribers only": [
+        "Solo suscriptores"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra reservados para usted"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Hasta ${ limit }"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN de inmediato"
       ]
     }
   }

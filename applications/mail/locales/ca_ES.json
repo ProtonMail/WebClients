@@ -1799,6 +1799,9 @@
       ],
       "Previous contact": [
         "Contacte anterior"
+      ],
+      "Skip to main content": [
+        "Ves al contingut principal"
       ]
     },
     "action": {
@@ -5306,7 +5309,7 @@
         "Pestanya tancada"
       ],
       "Text is too long to refine": [
-        "El text és massa llarg per ser optimitzat"
+        "El text és massa llarg per a ser optimitzat"
       ],
       "Thanks for the feedback!": [
         "Gràcies pels vostres comentaris!"
@@ -5484,6 +5487,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "No s'ha pogut anul·lar la subscripció d'algunes llistes de correu. Torneu-ho a provar per a acabar d'anul·lar-les."
       ]
     },
     "error": {
@@ -12295,7 +12301,7 @@
         "Múltiples rols d'administració"
       ],
       "No streaming support": [
-        "No hi ha suport per la reproducció en continu"
+        "Sense suport d'estríming"
       ],
       "Online document editor": [
         "Editor de documents en línia"
@@ -16016,6 +16022,14 @@
       ],
       "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
         "S'ha activat l'assistent d'IA de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "S'ha anul·lat la subscripció a ${ count } llista de correu i s'han mogut els seus missatges a l'Arxiu.",
+        "S'ha anul·lat la subscripció a ${ count } llistes de correu i s'han mogut els seus missatges a l'Arxiu."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "S'ha anul·lat la subscripció a ${ count } llista de correu.",
+        "S'ha anul·lat la subscripció a ${ count } llistes de correu."
       ]
     },
     "Success notification": {
@@ -18067,6 +18081,71 @@
       ],
       "For getting more done": [
         "Per a fer més coses"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per usuari"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartit"
+      ],
+      "10 years": [
+        "10 anys"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Una categoria de servidors de ${ VPN_APP_NAME } de més capacitat: molts menys usuaris en comparteixen cadascun i utilitzen adreces IP pròpies de ${ BRAND_NAME }. Quick Connect els selecciona automàticament quan estan disponibles."
+      ],
+      "Calendars": [
+        "Calendaris"
+      ],
+      "Custom email domains": [
+        "Dominis de correu electrònic personalitzats"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Hide-my-email aliases": [
+        "Àlies de hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Anomenat així en honor als mecenes de micromecenatge que van fer possible ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME } el 2014. Tots els serveis prèmium de ${ BRAND_NAME }, en un sol pla."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nous serveis de ${ BRAND_NAME } sense cost addicional"
+      ],
+      "Password vaults": [
+        "Caixes fortes de contrasenyes"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive i Pass prèmium"
+      ],
+      "Previous versions": [
+        "Versions anteriors"
+      ],
+      "Storage": [
+        "Emmagatzematge"
+      ],
+      "Subscribers only": [
+        "Només per a subscriptors"
+      ],
+      "Ultra servers": [
+        "Servidors Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidors Ultra, reservats per a vós"
+      ],
+      "Unlimited": [
+        "Sense límit"
+      ],
+      "Up to ${ limit }": [
+        "Fins a ${ limit }"
+      ],
+      "Users": [
+        "Usuaris"
+      ],
+      "VPN devices at once": [
+        "Dispositius VPN alhora"
       ]
     }
   }

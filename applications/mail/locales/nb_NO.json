@@ -1787,6 +1787,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Skip to main content": [
+        "Hopp over til hovedinnhold"
       ]
     },
     "action": {
@@ -5467,6 +5470,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Abonnementet på noen e-postlister kunne ikke avsluttes. Prøv igjen for å avslutte resten."
       ]
     },
     "error": {
@@ -15975,6 +15981,14 @@
       ],
       "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
         "${ LUMO_SHORT_APP_NAME } KI-assistent aktivert"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Avsluttet abonnementet på ${ count } e-postliste og flyttet meldingene fra den til Arkiv.",
+        "Avsluttet abonnementet på ${ count } e-postlister og flyttet meldingene fra dem til Arkiv."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Avsluttet abonnementet på ${ count } e-postliste",
+        "Avsluttet abonnementet på ${ count } e-postlister"
       ]
     },
     "Success notification": {

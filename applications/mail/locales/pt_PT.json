@@ -206,7 +206,7 @@
         "Cancelar subscrição"
       ],
       "Cancel trial and pay": [
-        "Cancelar o período de avaliação e pagar"
+        "Cancelar o período de testes e pagar"
       ],
       "Carbon Copy": [
         "Cópia Carbono (CC)"
@@ -1751,6 +1751,18 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "Cancel trial": [
+        "Cancelar período de teste"
+      ],
+      "Don't show this offer again": [
+        "Não voltar a mostrar esta oferta"
+      ],
+      "Skip to main content": [
+        "Ignorar para o conteúdo principal"
+      ],
+      "Switch to ${ planName }": [
+        "Mudar para ${ planName }"
       ]
     },
     "action": {
@@ -1897,6 +1909,13 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Assistente de escrita de ${ LUMO_SHORT_APP_NAME } (para ${ quantity } utilizador)",
+        "Assistente de escrita de ${ LUMO_SHORT_APP_NAME } (para ${ quantity } utilizadores)"
+      ],
+      "Managed Service Provider": [
+        "Provedor de Serviço Gerido"
       ]
     },
     "Alert": {
@@ -2053,7 +2072,7 @@
         "Pode ter até ${ TRIAL_MAX_USERS } utilizadores durante o período de avaliação."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Você não pode adicionar domínios personalizados durante o período de avaliação."
+        "Não pode adicionar domínios personalizados durante o período de testes."
       ],
       "You have reached the trial limit.": [
         "Atingiu o limite da avaliação."
@@ -2069,7 +2088,7 @@
     },
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
-        "A sua avaliação gratuita termina em ${ timeRemaining }."
+        "O seu período de testes gratuito termina em ${ timeRemaining }."
       ]
     },
     "bf2023: Deal details": {
@@ -2712,6 +2731,15 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Amount due": [
+        "Montante devido"
+      ],
+      "Amount due after trial": [
+        "Montante devido depois da avaliação"
+      ],
+      "Amount due now": [
+        "Montante devido agora"
       ]
     },
     "Collapsible tooltip": {
@@ -5345,6 +5373,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa obteve muitas correspondências. Limite a pesquisa e tente novamente."
+      ],
+      "Contact your administrator to start a migration.": [
+        "Contacte o seu administrador para iniciar uma migração."
       ]
     },
     "error": {
@@ -5736,6 +5767,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com a sua chave de segurança. Tente novamente."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "O navegador não suporta as chaves de segurança. Por favor, tente um navegador diferente."
       ]
     },
     "fido2: Info": {
@@ -5962,10 +5996,10 @@
     },
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicativo para desktop do ${ MAIL_APP_NAME }"
+        "Aplicação de PC ${ MAIL_APP_NAME }"
       ],
       "14-day desktop app trial.": [
-        "14 dias de avaliação para a aplicação para desktop"
+        "14 dias de testes para a aplicação de PC"
       ],
       "Enjoy fast, secure, and distraction-free access to your inbox and calendar.": [
         "Desfrute de acesso rápido, seguro e sem distrações à sua caixa de entrada e calendário."
@@ -7050,7 +7084,7 @@
         "Pelo menos ${ BETTER_PASSWORD_LENGTH } carateres"
       ],
       "At the end of your trial ${ boldCancelDate }, you’ll be downgraded to ${ boldProtonFree }. All user accounts will be removed from your organization.": [
-        "No final da sua avaliação ${ boldCancelDate }, irá regredir para o ${ boldProtonFree }. Todas as contas de utilizador serão removidas da sua organização."
+        "No final do seu período de testes ${ boldCancelDate }, será transferido para ${ boldProtonFree }. Todas as contas de utilizador serão removidas da sua organização."
       ],
       "Attach public key": [
         "Anexar chave pública"
@@ -9138,7 +9172,7 @@
         "Os seus ficheiros serão encriptados e depois guardados."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
-        "A sua avaliação gratuita foi convertida para uma subscrição de ${ cycle } meses. A sua data de renovação é o ${ nextBillingDate }."
+        "O seu período de testes gratuito foi convertido para uma subscrição de ${ cycle } meses. A sua data de renovação é ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "A sua avaliação gratuita foi convertida para uma subscrição mensal. A sua data de renovação é o ${ nextBillingDate }."
@@ -9212,13 +9246,16 @@
         "Vai perder o acesso ao ${ boldPlanTitle } em ${ boldEndDate }."
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
-        "Ainda poderá ver os seus dados de conta, mas todas as contas de utilizador serão removidas da sua organização."
+        "Ainda poderá ver os seus dados da conta, mas todas as contas de utilizador serão removidas da sua organização."
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a alguns cliques de ter uma caixa de entrada organizada"
       ],
       "Star emails": [
         "Mensagens com estrela"
+      ],
+      "No payment is required.": [
+        "Não é necessário pagamento."
       ]
     },
     "info": {
@@ -10851,6 +10888,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Tem de reativar as suas chaves para ver o convite actualizado."
+      ],
+      "Pay it": [
+        "Pague-a"
       ]
     },
     "Link to calendar event": {
@@ -11053,7 +11093,7 @@
         "${ seats } licenças incluídas"
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
-        "Pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
+        "Pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de testes."
       ]
     },
     "Message": {
@@ -11079,7 +11119,7 @@
         "Regra de correspondência de padrão de caráter universal"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
-        "A sua avaliação gratuita terminou. ${ nonAutoRenewalAction }"
+        "O seu período de testes gratuito terminou. ${ nonAutoRenewalAction }"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "O seu teste gratuito terminou. O acesso à sua conta será desativado em breve. ${ action }"
@@ -12189,7 +12229,7 @@
         "O assistente de escrita está pronto para ser usado"
       ],
       "Trial started": [
-        "Avaliação Iniciada"
+        "Periodo de testes iniciado"
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "O seu endereço do ${ BRAND_NAME } está pronto a usar"
@@ -12550,10 +12590,19 @@
         "Poderá usar ${ planTitle } até o fim da avaliação e não lhe será cobrado."
       ],
       "Your free trial has started": [
-        "A sua avaliação gratuita começou."
+        "O seu período de testes começou."
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "A sua subscrição completa do ${ planTitle } começa em ${ boldEndDate }."
+      ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
+      "If you continue after your trial,": [
+        "Se continuar depois da avaliação,"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "pode cancelar no prazo de 30 dias e receber um reembolso proporcional."
       ]
     },
     "Option": {
@@ -12992,6 +13041,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente com outro cartão ou contacte o seu banco para autorizar esta compra."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "Nao foi possivel inicializar ${ IDEAL_WERO_BRAND_NAME }. Por favor, tente novamente mais tarde."
       ]
     },
     "Payments.error": {
@@ -13466,7 +13518,7 @@
         "${ referrerRewardAmount } por cada recomendação"
       ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
-        "**Se cancelar antes desta data,** a sua conta sofrerá uma **regressão** para o ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando a avaliação terminar."
+        "**Se cancelar antes desta data,** a sua conta será **transferida** para o ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando o período de testes terminar."
       ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**Se não subscrever,** a sua conta sofrerá uma **regressão** para o ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
@@ -13478,7 +13530,7 @@
         "**Se subscrever antes desta data,** obterá **${ referrerRewardAmount }** em créditos."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
-        "Após essa data, a sua conta será regredida para **${ BRAND_NAME } Free**. Se mudar de ideias, pode **reativar a sua subscrição** para manter o acesso às funcionalidades premium."
+        "Depois dessa data, a sua conta é transferida para o plano **${ BRAND_NAME } Grátis**. Se mudar de ideias, pode **reativar a sua subscrição** para manter o acesso às funcionalidades Premium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Ganhe até ${ maxRewardAmount } em crédito. Receberá ${ referrerRewardAmount } quando a pessoa que convidou subscrever um plano ${ BRAND_NAME }."
@@ -16380,7 +16432,7 @@
         "O controlo é seu"
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
-        "A sua avaliação gratuita ${ planName } finaliza em ${ textDate }."
+        "O seu período de testes gratuito ${ planName } termina em ${ textDate }."
       ],
       "Your ${ planTitle } subscription has started": [
         "A sua subscrição do ${ planTitle } começou."
@@ -16408,6 +16460,9 @@
       ],
       "Your shorter address is now ready": [
         "O seu endereço mais curto já está pronto"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Subscrever ${ planTitle }"
       ]
     },
     "Title header for keys table": {
@@ -16615,6 +16670,9 @@
       ],
       "This user gets administrator rights the next time they sign in.": [
         "Este utilizador obtém direitos de administrador na próxima vez que se autenticar."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Atualizar para um plano suportado para utilizar funções de administrador."
       ]
     },
     "Validation": {
@@ -17085,6 +17143,11 @@
     "Payment Method": {
       "Bank Account": [
         "Conta Bancária"
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - cartão terminado em ${ Last4 }"
       ]
     }
   }

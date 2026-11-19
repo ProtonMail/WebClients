@@ -1796,6 +1796,9 @@
       ],
       "Write ${ count } logs": [
         "Skriv ${ count } loggar"
+      ],
+      "Skip to main content": [
+        "Hoppa över till huvudinnehåll"
       ]
     },
     "action": {
@@ -2110,6 +2113,9 @@
       ],
       "You have reached the trial limit.": [
         "Du har nått provperiodsgränsen."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS }${ LUMO_SHORT_APP_NAME } \nplatser för skrivassistenter under provperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -5455,6 +5461,9 @@
       ],
       "Embedded images could not be removed. The message was not switched to plain text.": [
         "Inbäddade bilder kunde inte tas bort. Meddelandet ändrades inte till oformaterad text."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "\nDet gick inte att avsluta prenumerationen på vissa e-postlistor. Försök igen för att slutföra avregistreringen."
       ]
     },
     "error": {
@@ -9730,6 +9739,12 @@
       ],
       "Rewrote and readdressed the draft": [
         "Skrev om och omarbetade utkastet"
+      ],
+      "Document lookup failed": [
+        "Sökning efter dokument misslyckades"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra.\n"
       ]
     },
     "info": {
@@ -13208,6 +13223,9 @@
       ],
       "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
         "**Har du ångrat dig efter försöksperioden** Avbryt inom 30 dagar från din första betalning och vi kommer att betala tillbaka för den oanvända tiden."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**När din fullständiga prenumeration startar...** Du kan fortfarande avbryta inom 30 dagar och få en proportionerlig återbetalning."
       ]
     },
     "Option": {
@@ -15836,6 +15854,14 @@
       ],
       "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
         "${ LUMO_SHORT_APP_NAME } AI-assistent aktiverad"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Avprenumererade från ${ count } e-postlista och flyttade meddelandena till Arkiv.",
+        "Avprenumererade från ${ count } e-postlistor och flyttade meddelandena till Arkiv."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Avprenumererade från ${ count } e-postlista.",
+        "Avprenumererade från ${ count } e-postlistor."
       ]
     },
     "Success notification": {

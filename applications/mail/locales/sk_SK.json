@@ -1811,6 +1811,9 @@
       ],
       "Previous contact": [
         "Predchádzajúci kontakt"
+      ],
+      "Skip to main content": [
+        "Prejsť na hlavný obsah"
       ]
     },
     "action": {
@@ -5580,6 +5583,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Z niektorých diskusných skupín sa nepodarilo odhlásiť. Skúste to znovu, aby ste dokončili odhlásenie."
       ]
     },
     "error": {
@@ -16622,6 +16628,18 @@
       ],
       "One-time codes enabled": [
         "Jednorazové kódy sú povolené"
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Odhlásili sme vás z ${ count } diskusnej skupiny a jej správy sme presunuli do archívu.",
+        "Odhlásili sme vás z ${ count } diskusných skupín a ich správy sme presunuli do archívu.",
+        "Odhlásili sme vás z ${ count } diskusných skupín a ich správy sme presunuli do archívu.",
+        "Odhlásili sme vás z ${ count } diskusných skupín a ich správy sme presunuli do archívu."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Odhlásili ste sa z ${ count } diskusnej skupiny.",
+        "Odhlásili ste sa z ${ count } diskusných skupín.",
+        "Odhlásili ste sa z ${ count } diskusných skupín.",
+        "Odhlásili ste sa z ${ count } diskusných skupín."
       ]
     },
     "Success notification": {
@@ -18809,6 +18827,71 @@
       ],
       "For getting more done": [
         "Aby ste stihli viac práce"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } za používateľa"
+      ],
+      "${ storage } shared": [
+        "${ storage } zdieľaného"
+      ],
+      "10 years": [
+        "10 rokov"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Vyššia kapacita ${ VPN_APP_NAME } serverov: každý z nich zdieľa oveľa menej používateľov a využívajú IP adresy vo vlastníctve spoločnosti ${ BRAND_NAME }. Funkcia Rýchle pripojenie ich automaticky vyberá, ak sú k dispozícii."
+      ],
+      "Calendars": [
+        "Kalendáre"
+      ],
+      "Custom email domains": [
+        "Vlastných emailových domén"
+      ],
+      "Email addresses": [
+        "Emailových adries"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email aliasov"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Pomenované na počesť podporovateľov z crowdfundingu, vďaka ktorým vznikol v roku 2014 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }. Všetky prémiové služby ${ BRAND_NAME } v jednom balíku."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nové ${ BRAND_NAME } služby bez dodatočných nákladov"
+      ],
+      "Password vaults": [
+        "Trezorov na heslá"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive a Pass"
+      ],
+      "Previous versions": [
+        "Predchádzajúce verzie"
+      ],
+      "Storage": [
+        "Úložiska"
+      ],
+      "Subscribers only": [
+        "Len pre predplatiteľov"
+      ],
+      "Ultra servers": [
+        "Ultra serverov"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra serverov, vyhradených pre vás"
+      ],
+      "Unlimited": [
+        "Bez obmedzenia"
+      ],
+      "Up to ${ limit }": [
+        "Až do ${ limit }"
+      ],
+      "Users": [
+        "Používateľov"
+      ],
+      "VPN devices at once": [
+        "VPN zariadení súčasne"
       ]
     }
   }
