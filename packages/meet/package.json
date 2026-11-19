@@ -62,11 +62,13 @@
         "./utils/deviceUtils": "./utils/deviceUtils.ts",
         "./utils/generateMeetingLinkFromMeeting": "./utils/generateMeetingLinkFromMeeting.ts",
         "./utils/getMeetingLink": "./utils/getMeetingLink.ts",
+        "./utils/getUrlMeetingLinkName": "./utils/getUrlMeetingLinkName.ts",
         "./utils/guestBackgroundIdentity": "./utils/guestBackgroundIdentity.ts",
         "./utils/iosAudioSession": "./utils/iosAudioSession.ts",
         "./utils/isChatThreadExpanded": "./utils/isChatThreadExpanded.ts",
         "./utils/isRelevantThreadMessage": "./utils/isRelevantThreadMessage.ts",
         "./utils/isUrlPasswordValid": "./utils/isUrlPasswordValid.ts",
+        "./utils/meetingLogger": "./utils/meetingLogger.ts",
         "./utils/mentions/mentionToken": "./utils/mentions/mentionToken.ts",
         "./utils/virtualBackgrounds": "./utils/virtualBackgrounds.ts",
         "./utils/withTimeout": "./utils/withTimeout.ts"

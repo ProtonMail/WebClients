@@ -1,4 +1,4 @@
-import { logger } from '@protontech/logger';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 
 import type { WorkerLogLevel } from './workerLogger';
 
@@ -9,6 +9,9 @@ export const forwardWorkerLog = (data: any): boolean => {
         return false;
     }
 
-    (logger[data.level as WorkerLogLevel] ?? logger.info)(`[${data.source}] ${data.message}`, ...data.args);
+    (meetingLogger[data.level as WorkerLogLevel] ?? meetingLogger.info)(
+        `[${data.source}] ${data.message}`,
+        ...data.args
+    );
     return true;
 };

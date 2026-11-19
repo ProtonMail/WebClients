@@ -6,8 +6,9 @@ import {
     selectMeetingPassword,
     setCurrentMeeting,
 } from '@proton/meet/store/slices/currentMeeting';
+import { getUrlMeetingLinkName } from '@proton/meet/utils/getUrlMeetingLinkName';
 
-import { getUrlMeetingLinkName, getUrlMeetingPassword } from './getUrlMeetingParams';
+import { getUrlMeetingPassword } from './getUrlMeetingParams';
 
 export const useMeetingSetup = () => {
     const dispatch = useMeetDispatch();
