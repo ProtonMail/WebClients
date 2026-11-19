@@ -1670,6 +1670,9 @@ importers:
       '@proton/account-recovery':
         specifier: workspace:^
         version: link:../../packages/account-recovery
+      '@proton/app-context':
+        specifier: workspace:^
+        version: link:../../packages/app-context
       '@proton/atoms':
         specifier: workspace:^
         version: link:../../packages/atoms
