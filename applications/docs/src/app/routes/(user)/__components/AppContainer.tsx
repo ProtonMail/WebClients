@@ -55,7 +55,6 @@ function Content() {
     <ApplicationProvider application={application}>
       <DocsNotificationsProvider>
         <AppRoutes driveCompat={driveCompat} application={application} />
-        {driveCompat.modals}
       </DocsNotificationsProvider>
     </ApplicationProvider>
   )

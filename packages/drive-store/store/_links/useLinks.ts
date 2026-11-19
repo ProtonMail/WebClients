@@ -7,7 +7,7 @@ import type { DecryptedLink, EncryptedLink } from './interface';
 import useLink from './useLink';
 
 export default function useLinks() {
-    const { decryptLink, getLink } = useLink();
+    const { decryptLink } = useLink();
 
     const decryptLinks = async (
         abortSignal: AbortSignal,
@@ -42,20 +42,7 @@ export default function useLinks() {
         return { links, errors };
     };
 
-    const getLinks = async (
-        abortSignal: AbortSignal,
-        ids: { linkId: string; shareId: string }[]
-    ): Promise<DecryptedLink[]> => {
-        const queue = ids.map(
-            ({ linkId, shareId }) =>
-                async () =>
-                    getLink(abortSignal, shareId, linkId)
-        );
-        return runInQueue(queue, MAX_THREADS_PER_REQUEST);
-    };
-
     return {
         decryptLinks,
-        getLinks,
     };
 }

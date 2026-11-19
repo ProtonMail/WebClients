@@ -29,5 +29,3 @@ const validateNameEmpty = (str: string) => {
 };
 
 export const validateLinkName = composeValidators([validateNameEmpty, validateNameLength]);
-
-export const validateLinkNameField = composeValidators([validateNameEmpty, validateNameLength]);

@@ -15,7 +15,8 @@ export type DeletePermanentlyDialogProps = {
 
 export function DeletePermanentlyDialog({ documentName, onDelete, onClose }: DeletePermanentlyDialogProps) {
   const [isDeleting, setIsDeleting] = useState(false)
-  // drive-store has the same string with `itemName`, and one string can't have two variable names.
+  // Named as in Drive's identical string (applications/drive's useTrashNotifications.ts), so the string keeps its
+  // existing translations.
   const itemName = documentName
 
   const onSubmit = async (event: FormEvent) => {

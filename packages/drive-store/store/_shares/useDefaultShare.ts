@@ -10,7 +10,6 @@ import { shareMetaShortToShare } from '../_api/transformers';
 import useDebouncedRequest from '../_api/useDebouncedRequest';
 import useDriveCrypto from '../_crypto/useDriveCrypto';
 import useDebouncedFunction from '../_utils/useDebouncedFunction';
-import useVolumesState from '../_volumes/useVolumesState';
 import { type Share, ShareType, type ShareWithKey } from './interface';
 import useShare from './useShare';
 import useVolume from './useVolume';
@@ -38,7 +37,6 @@ function useDefaultShare() {
 
     const { getShareWithKey } = useShare();
     const { createVolume, listVolumes } = useVolume();
-    const volumesState = useVolumesState();
     const { getOwnAddressAndPrimaryKeys } = useDriveCrypto();
 
     const loadUserShares = useCallback(async (force = false): Promise<{ defaultShareId?: string; shares: Share[] }> => {
@@ -88,9 +86,6 @@ function useDefaultShare() {
 
                 const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
                 const shares = Shares.map(shareMetaShortToShare);
-                shares.forEach(({ volumeId, shareId }) => {
-                    volumesState.setVolumeShareIds(volumeId, [shareId]);
-                });
                 sharesState.setShares(shares);
                 return { defaultShareId, shares };
             })();

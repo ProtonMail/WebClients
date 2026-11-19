@@ -3,7 +3,6 @@ import { act, renderHook } from '@testing-library/react';
 import { VolumeState, VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
 import { useSharesStore } from '../../zustand/share/shares.store';
-import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import { ShareType } from './interface';
 import useDefaultShare from './useDefaultShare';
 
@@ -70,7 +69,6 @@ describe('useDefaultShare', () => {
         // Reset the Zustand store state
         useSharesStore.setState({
             shares: {},
-            lockedVolumesForRestore: [],
             defaultSharePromise: null,
             loadUserSharesPromise: null,
             defaultPhotosSharePromise: null,
@@ -89,11 +87,7 @@ describe('useDefaultShare', () => {
             return { Shares: [] };
         });
 
-        const wrapper = ({ children }: { children: React.ReactNode }) => (
-            <VolumesStateProvider>{children}</VolumesStateProvider>
-        );
-
-        const { result } = renderHook(() => useDefaultShare(), { wrapper });
+        const { result } = renderHook(() => useDefaultShare());
         hook = result;
     });
 

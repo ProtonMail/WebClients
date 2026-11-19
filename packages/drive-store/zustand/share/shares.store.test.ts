@@ -1,4 +1,4 @@
-import type { LockedVolumeForRestore, Share, ShareWithKey } from '../../store/_shares/interface';
+import type { Share, ShareWithKey } from '../../store/_shares/interface';
 import { ShareState, ShareType } from '../../store/_shares/interface';
 import { findDefaultPhotosShareId, findDefaultShareId, useSharesStore } from './shares.store';
 
@@ -20,7 +20,7 @@ const createTestShare = (overrides: Partial<Share> = {}): Share => ({
 describe('useSharesStore', () => {
     beforeEach(() => {
         // Clear the store before each test
-        useSharesStore.setState({ shares: {}, lockedVolumesForRestore: [] });
+        useSharesStore.setState({ shares: {} });
     });
 
     describe('setShares', () => {
@@ -49,29 +49,6 @@ describe('useSharesStore', () => {
         });
     });
 
-    describe('removeShares', () => {
-        it('should remove specified shares from the store', () => {
-            const share1 = createTestShare({ shareId: 'share1' });
-            const share2 = createTestShare({ shareId: 'share2' });
-            useSharesStore.getState().setShares([share1, share2]);
-
-            useSharesStore.getState().removeShares(['share1']);
-
-            const result = useSharesStore.getState().shares;
-            expect(result).toEqual({ share2 });
-        });
-
-        it('should handle removing non-existent shares', () => {
-            const share1 = createTestShare({ shareId: 'share1' });
-            useSharesStore.getState().setShares([share1]);
-
-            useSharesStore.getState().removeShares(['non-existent']);
-
-            const result = useSharesStore.getState().shares;
-            expect(result).toEqual({ share1 });
-        });
-    });
-
     describe('getShare', () => {
         it('should return the correct share by ID', () => {
             const share1 = createTestShare({ shareId: 'share1' });
@@ -84,40 +61,6 @@ describe('useSharesStore', () => {
         it('should return undefined for non-existent share ID', () => {
             const result = useSharesStore.getState().getShare('non-existent');
             expect(result).toBeUndefined();
-        });
-    });
-
-    describe('getLockedShares', () => {
-        it('should return locked default shares with their associated devices and photos', () => {
-            const defaultShare = createTestShare({
-                shareId: 'default1',
-                volumeId: 'vol1',
-                isDefault: true,
-                isLocked: true,
-            });
-            const deviceShare = createTestShare({
-                shareId: 'device1',
-                volumeId: 'vol1',
-                type: ShareType.device,
-                isLocked: true,
-            });
-            const photosShare = createTestShare({
-                shareId: 'photos1',
-                volumeId: 'vol1',
-                type: ShareType.photos,
-                isLocked: true,
-            });
-
-            useSharesStore.getState().setShares([defaultShare, deviceShare, photosShare]);
-
-            const result = useSharesStore.getState().getLockedShares();
-            expect(result).toEqual([
-                {
-                    defaultShares: [defaultShare],
-                    devices: [deviceShare],
-                    photos: [photosShare],
-                },
-            ]);
         });
     });
 
@@ -172,62 +115,6 @@ describe('useSharesStore', () => {
 
             const result = useSharesStore.getState().getDefaultPhotosShareId();
             expect(result).toBeUndefined();
-        });
-    });
-
-    describe('getRestoredPhotosShares', () => {
-        it('should return all restored unlocked photos shares', () => {
-            const restoredShare1 = createTestShare({
-                shareId: 'photos1',
-                type: ShareType.photos,
-                state: ShareState.restored,
-                isLocked: false,
-            });
-            const restoredShare2 = createTestShare({
-                shareId: 'photos2',
-                type: ShareType.photos,
-                state: ShareState.restored,
-                isLocked: false,
-            });
-            useSharesStore.getState().setShares([restoredShare1, restoredShare2]);
-
-            const result = useSharesStore.getState().getRestoredPhotosShares();
-            expect(result).toEqual([restoredShare1, restoredShare2]);
-        });
-
-        it('should not return locked or non-restored photos shares', () => {
-            const restoredShare = createTestShare({
-                shareId: 'photos1',
-                type: ShareType.photos,
-                state: ShareState.restored,
-                isLocked: false,
-            });
-            const lockedShare = createTestShare({
-                shareId: 'photos2',
-                type: ShareType.photos,
-                state: ShareState.restored,
-                isLocked: true,
-            });
-            const activeShare = createTestShare({
-                shareId: 'photos3',
-                type: ShareType.photos,
-                state: ShareState.active,
-                isLocked: false,
-            });
-            useSharesStore.getState().setShares([restoredShare, lockedShare, activeShare]);
-
-            const result = useSharesStore.getState().getRestoredPhotosShares();
-            expect(result).toEqual([restoredShare]);
-        });
-    });
-
-    describe('setLockedVolumesForRestore', () => {
-        it('should set locked volumes for restore', () => {
-            const volumes = [{ volumeId: 'vol1' }, { volumeId: 'vol2' }];
-            useSharesStore.getState().setLockedVolumesForRestore(volumes as unknown as LockedVolumeForRestore[]);
-
-            const result = useSharesStore.getState().lockedVolumesForRestore;
-            expect(result).toEqual(volumes);
         });
     });
 });
@@ -300,7 +187,6 @@ describe('Promise cache operations', () => {
     beforeEach(() => {
         useSharesStore.setState({
             shares: {},
-            lockedVolumesForRestore: [],
             loadUserSharesPromise: null,
             defaultSharePromise: null,
             defaultPhotosSharePromise: null,
@@ -309,7 +195,7 @@ describe('Promise cache operations', () => {
     });
 
     describe('loadUserSharesPromise', () => {
-        it('should set and clear loadUserSharesPromise', async () => {
+        it('should set loadUserSharesPromise', async () => {
             const mockPromise = Promise.resolve({
                 defaultShareId: 'defaultShareId',
                 shares: [createTestShare()],
@@ -317,27 +203,21 @@ describe('Promise cache operations', () => {
 
             useSharesStore.getState().setLoadUserSharesPromise(mockPromise);
             expect(useSharesStore.getState().loadUserSharesPromise).toBe(mockPromise);
-
-            useSharesStore.getState().clearLoadUserSharesPromise();
-            expect(useSharesStore.getState().loadUserSharesPromise).toBeNull();
         });
     });
 
     describe('defaultSharePromise', () => {
-        it('should set and clear defaultSharePromise', async () => {
+        it('should set defaultSharePromise', async () => {
             const mockShare = createTestShare({ shareId: 'default-share' }) as ShareWithKey;
             const mockPromise = Promise.resolve(mockShare);
 
             useSharesStore.getState().setDefaultSharePromise(mockPromise);
             expect(useSharesStore.getState().defaultSharePromise).toBe(mockPromise);
-
-            useSharesStore.getState().clearDefaultSharePromise();
-            expect(useSharesStore.getState().defaultSharePromise).toBeNull();
         });
     });
 
     describe('defaultPhotosSharePromise', () => {
-        it('should set and clear defaultPhotosSharePromise', async () => {
+        it('should set defaultPhotosSharePromise', async () => {
             const mockShare = createTestShare({
                 shareId: 'photos-share',
                 type: ShareType.photos,
@@ -346,9 +226,6 @@ describe('Promise cache operations', () => {
 
             useSharesStore.getState().setDefaultPhotosSharePromise(mockPromise);
             expect(useSharesStore.getState().defaultPhotosSharePromise).toBe(mockPromise);
-
-            useSharesStore.getState().clearDefaultPhotosSharePromise();
-            expect(useSharesStore.getState().defaultPhotosSharePromise).toBeNull();
         });
 
         it('should handle undefined result in defaultPhotosSharePromise', async () => {
@@ -389,11 +266,6 @@ describe('Promise cache operations', () => {
             useSharesStore.getState().setDefaultPhotosSharePromise(photosSharePromise);
 
             expect(useSharesStore.getState().loadUserSharesPromise).toBe(sharesPromise);
-            expect(useSharesStore.getState().defaultSharePromise).toBe(defaultSharePromise);
-            expect(useSharesStore.getState().defaultPhotosSharePromise).toBe(photosSharePromise);
-
-            useSharesStore.getState().clearLoadUserSharesPromise();
-            expect(useSharesStore.getState().loadUserSharesPromise).toBeNull();
             expect(useSharesStore.getState().defaultSharePromise).toBe(defaultSharePromise);
             expect(useSharesStore.getState().defaultPhotosSharePromise).toBe(photosSharePromise);
         });

@@ -916,7 +916,6 @@ export function useLinkInner(
     };
 
     return {
-        getLinkPassphraseAndSessionKey,
         getLinkPrivateKey,
         getLinkSessionKey,
         getLinkHashKey,

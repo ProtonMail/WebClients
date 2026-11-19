@@ -1,3 +1,4 @@
+import 'core-js/actual/set/difference';
 import { useCallback, useRef } from 'react';
 
 import { c } from 'ttag';

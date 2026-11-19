@@ -8,12 +8,10 @@ import {
     sign,
 } from '@proton/shared/lib/keys/driveKeys';
 
-import useActions from '../../store/_actions/useActions';
 import useDebouncedRequest from '../../store/_api/useDebouncedRequest';
 import type { DocumentType } from '../../store/_documents/useOpenDocument';
 import { encryptExtendedAttributes } from '../../store/_links/extendedAttributes';
 import useLink from '../../store/_links/useLink';
-import useLinksState from '../../store/_links/useLinksState';
 import useShare from '../../store/_shares/useShare';
 import useAbortSignal from '../../store/_views/utils/useAbortSignal';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -23,10 +21,8 @@ import type { DocumentNodeMeta } from './interface';
 export const useDocuments = () => {
     const debouncedRequest = useDebouncedRequest();
     const abortSignal = useAbortSignal([]);
-    const { getLink, getLinkPrivateKey, getLinkHashKey, getLinkSessionKey } = useLink();
-    const { removeLinkForDriveCompat } = useLinksState();
+    const { getLinkPrivateKey, getLinkHashKey, getLinkSessionKey } = useLink();
     const { getShareCreatorKeys } = useShare();
-    const { trashLinks, restoreLinks, deletePermanently, confirmModal } = useActions();
 
     const getDocumentSigningKeys = async (shareId: string) => {
         // getShareCreatorKeys gets the key from `share.addressId` which is always
@@ -140,37 +136,8 @@ export const useDocuments = () => {
         return contentKey;
     };
 
-    const trashDocument = async (
-        { shareId, linkId, volumeId }: LegacyNodeMeta,
-        parentLinkId: string
-    ): Promise<void> => {
-        await trashLinks(abortSignal, [{ linkId, rootShareId: shareId, parentLinkId, isFile: true, volumeId }]);
-        removeLinkForDriveCompat(shareId, linkId);
-        await getLink(abortSignal, shareId, linkId);
-    };
-
-    const deleteDocumentPermanently = async (
-        { shareId, linkId, volumeId }: LegacyNodeMeta,
-        parentLinkId: string
-    ): Promise<void> => {
-        await deletePermanently(abortSignal, [{ linkId, rootShareId: shareId, parentLinkId, isFile: true, volumeId }]);
-    };
-
-    const restoreDocument = async (
-        { shareId, linkId, volumeId }: LegacyNodeMeta,
-        parentLinkId: string
-    ): Promise<void> => {
-        await restoreLinks(abortSignal, [{ linkId, parentLinkId, rootShareId: shareId, isFile: true, volumeId }]);
-        removeLinkForDriveCompat(shareId, linkId);
-        await getLink(abortSignal, shareId, linkId);
-    };
-
     return {
         createDocumentNode,
         getDocumentKeys,
-        trashDocument,
-        restoreDocument,
-        deleteDocumentPermanently,
-        confirmModal,
     };
 };

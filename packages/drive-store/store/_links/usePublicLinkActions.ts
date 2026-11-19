@@ -8,7 +8,6 @@ import getRandomString from '@proton/utils/getRandomString';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
-import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
 import usePublicSession from '../_api/usePublicSession';
 import useShare from '../_shares/useShare';
 import useLink from './useLink';
@@ -19,9 +18,6 @@ import { validateLinkName } from './validation';
  */
 export function usePublicLinkActions() {
     const { preventLeave } = usePreventLeave();
-    const { getUploadToken } = useAnonymousUploadAuthStore((state) => ({
-        getUploadToken: state.getUploadToken,
-    }));
     const { request: publicDebouncedRequest, getAddressKeyInfo } = usePublicSession();
     const { getLinkPrivateKey, getLinkHashKey, getLink } = useLink();
     const { getSharePrivateKey } = useShare();
@@ -67,7 +63,6 @@ export function usePublicLinkActions() {
         );
 
         const signingKeys = addressKeyInfo?.privateKey || parentPrivateKey;
-        const authorizationToken = !addressKeyInfo ? getUploadToken(linkId) : undefined;
 
         const [Hash, { message: encryptedName }] = await Promise.all([
             parentHashKey
@@ -108,7 +103,6 @@ export function usePublicLinkActions() {
                     NameSignatureEmail: addressKeyInfo?.address.Email,
                     Hash,
                     OriginalHash: meta.hash,
-                    AuthorizationToken: authorizationToken,
                 })
             )
         );

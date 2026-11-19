@@ -1,10 +1,7 @@
-import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useState } from 'react';
 
-import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { DriveEvent, DriveEvents } from '../_events/interface';
-import { useDriveEventManager } from '../_events/useDriveEventManager';
 import type { DecryptedLink, EncryptedLink, LinkShareUrl, SignatureIssues } from './interface';
 import { isDecryptedLinkSame, isEncryptedLinkSame } from './link';
 
@@ -12,11 +9,6 @@ export type LinksState = {
     [shareId: string]: {
         links: Links;
         tree: Tree;
-        // Timestamp of the last "Empty Trash" action to properly compute
-        // isLocked flag for newly added links. Links added later needs
-        // to have isLocked based on the information if API will delete it
-        // or not.
-        latestTrashEmptiedAt?: number;
     };
 };
 
@@ -44,29 +36,10 @@ export function isLinkDecrypted(link: Link | undefined): link is Required<Link> 
  * useLinksStateProvider provides a storage to cache links.
  */
 export function useLinksStateProvider() {
-    const eventsManager = useDriveEventManager();
-
     const [state, setState] = useState<LinksState>({});
-
-    useEffect(() => {
-        const callbackId = eventsManager.eventHandlers.register((_volumeId, events, processedEventCounter) =>
-            setState((state) => updateByEvents(state, events, processedEventCounter))
-        );
-        return () => {
-            eventsManager.eventHandlers.unregister(callbackId);
-        };
-    }, []);
 
     const setLinks = useCallback((shareId: string, links: Link[]) => {
         setState((state) => addOrUpdate(state, shareId, links));
-    }, []);
-
-    const lockLinks = useCallback((shareId: string, linkIds: string[]) => {
-        setState((state) => setLock(state, shareId, linkIds, true));
-    }, []);
-
-    const unlockLinks = useCallback((shareId: string, linkIds: string[]) => {
-        setState((state) => setLock(state, shareId, linkIds, false));
     }, []);
 
     const getLink = useCallback(
@@ -87,157 +60,17 @@ export function useLinksStateProvider() {
         [state]
     );
 
-    const getAllShareLinks = useCallback(
-        (shareId: string): Link[] => {
-            return Object.values(state[shareId]?.links || []);
-        },
-        [state]
-    );
-
-    const getTrashed = useCallback(
-        (shareId: string): Link[] => {
-            return getAllShareLinks(shareId).filter(
-                (link) => !!link.encrypted.trashed && !link.encrypted.trashedByParent
-            );
-        },
-        [getAllShareLinks]
-    );
-
-    const removeLinkForDriveCompat = useCallback((shareId: string, linkId: string) => {
-        setState((state) => deleteLinks(state, shareId, [linkId]));
-    }, []);
-
     return {
         setLinks,
-        lockLinks,
-        unlockLinks,
         getLink,
         getChildren,
-        getTrashed,
-        /** Should never be used outside of `drive-store`. */
-        removeLinkForDriveCompat,
     };
 }
 
-export function updateByEvents(
-    state: LinksState,
-    { events, eventId }: DriveEvents,
-    processedEventcounter: (eventId: string, event: DriveEvent) => void
-): LinksState {
-    // Create a new state object to avoid mutations
-    let newState = { ...state };
-
-    // Sort events to ensure consistent ordering
-    // Process DELETE events last to avoid race conditions
-    const sortedEvents = [...events].sort((a, b) => {
-        if (a.eventType === EVENT_TYPES.DELETE) {
-            return 1;
-        }
-        if (b.eventType === EVENT_TYPES.DELETE) {
-            return -1;
-        }
-        return 0;
-    });
-
-    sortedEvents.forEach((event) => {
-        if (event.eventType === EVENT_TYPES.DELETE) {
-            // Delete event does not contain context share ID because
-            // the link is already deleted and backend might not know
-            // it anymore. There might be two links in mulitple shares
-            // with the same link IDs, but it is very rare, and it can
-            // happen in user cache only with direct sharing. Because
-            // the risk is almost zero, it is simply deleting all the
-            // links with the given ID. In future when we have full sync
-            // we will have storage mapped with volumes instead removing
-            // the problem altogether.
-            newState = Object.keys(newState).reduce((acc, shareId) => {
-                return deleteLinks(acc, shareId, [event.encryptedLink.linkId], () => {
-                    processedEventcounter(eventId, event);
-                });
-            }, newState);
-            return;
-        }
-
-        // If link is moved from one share to the another one, we need
-        // to delete it from the original one too. It is not very efficient
-        // as it will delete the decrypted content. But this is rare and
-        // it will be solved in the future with volume-centric approach
-        // as described above.
-        if (
-            event.originShareId &&
-            event.encryptedLink.rootShareId !== event.originShareId &&
-            newState[event.originShareId]
-        ) {
-            newState = deleteLinks(newState, event.originShareId, [event.encryptedLink.linkId], () => {
-                processedEventcounter(eventId, event);
-            });
-        }
-
-        if (!newState[event.encryptedLink.rootShareId]) {
-            return state;
-        }
-        newState = addOrUpdate(newState, event.encryptedLink.rootShareId, [{ encrypted: event.encryptedLink }], () => {
-            processedEventcounter(eventId, event);
-        });
-    });
-
-    return newState;
-}
-
-export function deleteLinks(state: LinksState, shareId: string, linkIds: string[], onDelete?: () => void): LinksState {
-    if (!state[shareId]) {
-        return state;
-    }
-
-    const newState = { ...state };
-    const newShareState = {
-        ...newState[shareId],
-        links: { ...newState[shareId].links },
-        tree: { ...newState[shareId].tree },
-    };
-    newState[shareId] = newShareState;
-
-    let updated = false;
-
-    linkIds.forEach((linkId) => {
-        const original = newShareState.links[linkId];
-        if (!original) {
-            return;
-        }
-
-        updated = true;
-
-        const parentId = original.encrypted.parentLinkId;
-        if (parentId && newShareState.tree[parentId]) {
-            newShareState.tree[parentId] = newShareState.tree[parentId].filter((childId) => childId !== linkId);
-        }
-
-        const deleteChildren = (parentLinkId: string) => {
-            const children = newShareState.tree[parentLinkId];
-            if (children) {
-                children.forEach((childId) => {
-                    delete newShareState.links[childId];
-                    deleteChildren(childId);
-                });
-                delete newShareState.tree[parentLinkId];
-            }
-        };
-
-        deleteChildren(linkId);
-        delete newShareState.links[linkId];
-
-        onDelete?.();
-    });
-
-    return updated ? newState : state;
-}
-
-export function addOrUpdate(state: LinksState, shareId: string, links: Link[], onAddOrUpdate?: () => void): LinksState {
+export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): LinksState {
     if (!links.length) {
         return state;
     }
-
-    let stateUpdated = false;
 
     if (!state[shareId]) {
         state[shareId] = {
@@ -285,7 +118,6 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[], o
         }
 
         if (original) {
-            stateUpdated = true;
             const originalParentId = original.encrypted.parentLinkId;
             if (originalParentId !== parentLinkId) {
                 const originalParentChildren = state[shareId].tree[originalParentId];
@@ -309,15 +141,6 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[], o
             state[shareId].links[linkId] = link;
         }
 
-        // Lock newly loaded trashed link if the whole trash is locked.
-        // For example, when trash is being emptied but at the same time
-        // the next page is loaded.
-        const lastTrashed = state[shareId].latestTrashEmptiedAt;
-        const cachedLink = state[shareId].links[linkId].decrypted;
-        if (cachedLink?.trashed && lastTrashed && cachedLink.trashed < lastTrashed) {
-            cachedLink.isLocked = true;
-        }
-
         // Only root link has no parent ID.
         if (parentLinkId) {
             const parentChildIds = state[shareId].tree[parentLinkId];
@@ -327,33 +150,24 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[], o
                 // parent is restored.
                 if (link.encrypted.trashedByParent) {
                     if (!parentChildIds.includes(linkId)) {
-                        stateUpdated = true;
                         state[shareId].tree[parentLinkId] = [...parentChildIds, linkId];
                     }
                 } else if (link.encrypted.trashed) {
-                    stateUpdated = true;
                     state[shareId].tree[parentLinkId] = parentChildIds.filter((childId) => childId !== linkId);
                     recursivelyTrashChildren(state, shareId, linkId, link.encrypted.trashed);
                 } else {
                     if (!parentChildIds.includes(linkId)) {
-                        stateUpdated = true;
                         state[shareId].tree[parentLinkId] = [...parentChildIds, linkId];
                     }
                     if (originalTrashed) {
-                        stateUpdated = true;
                         recursivelyRestoreChildren(state, shareId, linkId, originalTrashed);
                     }
                 }
             } else {
-                stateUpdated = true;
                 state[shareId].tree[parentLinkId] = [linkId];
             }
         }
     });
-
-    if (stateUpdated && onAddOrUpdate) {
-        onAddOrUpdate();
-    }
 
     return { ...state };
 }
@@ -468,7 +282,7 @@ function getNewSignatureIssues(original: EncryptedLink, newLink: Link): Signatur
 
 /**
  * getNewDecryptedLink returns new version of decrypted link. It tries to
- * preserve the locally cached data, such as thumbnail or isLocked flag.
+ * preserve the locally cached data, such as share URL num accesses.
  * If the `newLink` has decrypted version, it is used directly and enhanced
  * with `getDecryptedLinkComputedData`.
  * If the `original` link has decrypted version, the new decrypted link
@@ -484,11 +298,7 @@ function getNewDecryptedLink(original: Link, newLink: Link): DecryptedLink | und
     if (newLink.decrypted) {
         return {
             ...newLink.decrypted,
-            ...getDecryptedLinkComputedData(
-                original.decrypted,
-                newLink.decrypted.activeRevision?.id,
-                newLink.decrypted.shareUrl
-            ),
+            ...getDecryptedLinkComputedData(original.decrypted, newLink.decrypted.shareUrl),
         };
     }
     if (original.decrypted) {
@@ -502,11 +312,7 @@ function getNewDecryptedLink(original: Link, newLink: Link): DecryptedLink | und
             isAnonymous: original.decrypted.isAnonymous,
             sharedOn: original.decrypted.sharedOn,
             sharedBy: original.decrypted.sharedBy,
-            ...getDecryptedLinkComputedData(
-                original.decrypted,
-                newLink.encrypted.activeRevision?.id,
-                newLink.encrypted.shareUrl
-            ),
+            ...getDecryptedLinkComputedData(original.decrypted, newLink.encrypted.shareUrl),
             isStale: !isDecryptedLinkSame(original.encrypted, newLink.encrypted),
         };
     }
@@ -514,13 +320,10 @@ function getNewDecryptedLink(original: Link, newLink: Link): DecryptedLink | und
 }
 
 /**
- * getDecryptedLinkComputedData returns locally computed data.
- * The list includes:
- *  - numAccesses from shareUrl,
- *  - isLocked,
- *  - and cachedThumbnailUrl.
+ * getDecryptedLinkComputedData returns locally computed data:
+ * numAccesses from shareUrl.
  */
-function getDecryptedLinkComputedData(link?: DecryptedLink, newRevisionId?: string, newShareUrl?: LinkShareUrl) {
+function getDecryptedLinkComputedData(link?: DecryptedLink, newShareUrl?: LinkShareUrl) {
     return !link
         ? {}
         : {
@@ -530,8 +333,6 @@ function getDecryptedLinkComputedData(link?: DecryptedLink, newRevisionId?: stri
                         numAccesses: getNewNumAccesses(newShareUrl, link),
                     }
                   : undefined,
-              isLocked: link.isLocked,
-              cachedThumbnailUrl: link.activeRevision?.id === newRevisionId ? link.cachedThumbnailUrl : undefined,
           };
 }
 
@@ -554,63 +355,6 @@ function getNewNumAccesses(newShareUrl: LinkShareUrl, oldLink?: DecryptedLink): 
     }
     // In all other cases keep undefined. We just don't know.
     return undefined;
-}
-
-export function setLock(
-    state: LinksState,
-    shareId: string,
-    linkIdsOrTrash: string[] | 'trash',
-    isLocked: boolean
-): LinksState {
-    if (!state[shareId]) {
-        return state;
-    }
-
-    if (Array.isArray(linkIdsOrTrash)) {
-        linkIdsOrTrash.forEach((linkId) => {
-            if (!state[shareId].links[linkId]?.decrypted) {
-                return;
-            }
-
-            state[shareId].links[linkId].decrypted = {
-                ...(state[shareId].links[linkId].decrypted as DecryptedLink),
-                isLocked,
-            };
-        });
-    } else {
-        state[shareId].latestTrashEmptiedAt = Date.now() / 1000; // From ms to sec.
-        Object.entries(state[shareId].links)
-            .filter(([, link]) => link.decrypted && link.decrypted.trashed)
-            .forEach(([linkId, link]) => {
-                state[shareId].links[linkId].decrypted = {
-                    ...(link.decrypted as DecryptedLink),
-                    isLocked,
-                };
-            });
-    }
-    return { ...state };
-}
-
-export function setCachedThumbnailUrl(
-    state: LinksState,
-    shareId: string,
-    linkId: string,
-    cachedThumbnailUrl: string
-): LinksState {
-    if (!state[shareId]) {
-        return state;
-    }
-
-    const link = state[shareId].links[linkId];
-    if (!link?.decrypted) {
-        return state;
-    }
-
-    link.decrypted = {
-        ...link.decrypted,
-        cachedThumbnailUrl,
-    };
-    return { ...state };
 }
 
 const LinksStateContext = createContext<ReturnType<typeof useLinksStateProvider> | null>(null);

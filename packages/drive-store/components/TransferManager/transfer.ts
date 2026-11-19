@@ -21,43 +21,9 @@ export interface TransferMeta {
     size?: number;
 }
 
-export interface TransferSummary {
-    size: number;
-    progress: number;
-}
-
 export class TransferCancel extends Error {
     constructor(options: { id: string } | { message: string }) {
         super('id' in options ? `Transfer ${options.id} canceled` : options.message);
         this.name = 'TransferCancel';
     }
-}
-interface Upload {
-    id: string;
-    meta: TransferMeta;
-    state: TransferState;
-    startDate: Date;
-    error?: Error;
-
-    files?: Upload[];
-    folders?: Upload[];
-}
-
-interface Download {
-    id: string;
-    meta: TransferMeta;
-    state: TransferState;
-    startDate: Date;
-    error?: Error;
-}
-
-export type Transfer = Upload | Download;
-
-interface TransferStats {
-    progress: number;
-    averageSpeed: number;
-}
-
-export interface TransfersStats {
-    [id: string]: TransferStats;
 }

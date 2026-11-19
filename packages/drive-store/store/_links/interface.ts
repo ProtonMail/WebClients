@@ -104,7 +104,14 @@ export type SignatureIssues = {
 };
 
 export type SignatureIssueLocation =
-    'passphrase' | 'hash' | 'name' | 'xattrs' | 'contentKeyPacket' | 'blocks' | 'thumbnail' | 'manifest';
+    | 'passphrase'
+    | 'hash'
+    | 'name'
+    | 'xattrs'
+    | 'contentKeyPacket'
+    | 'blocks'
+    | 'thumbnail'
+    | 'manifest';
 
 export interface EncryptedLink extends Link {
     nodeKey: string;
@@ -122,19 +129,12 @@ export interface DecryptedLink extends Link {
     encryptedName: string;
     // See metaDataModifyTime of Link.
     fileModifyTime: number;
-    // isLocked is set to true when file is being manipulated, such as moved
-    // to different location. When link is locked, it should not be allowed
-    // to do anything else with the link (until the operation is done).
-    isLocked?: boolean;
     // isStale is indicating whether link needs to be re-decrypted due to
     // server-side update. By default, we don't want to automatically decrypt
     // everything, also, we don't want to simply remove stale link from cache
     // to not cause GUI blinks. App should re-decrypt link on background next
     // time link should be displayed.
     isStale?: boolean;
-    // cachedThumbnailUrl is computed URL to cached image. This is not part
-    // of any request and not filled automatically.
-    cachedThumbnailUrl?: string;
     originalSize?: number;
     // In case of image it might contain dimensions stored in XAttributes.
     originalDimensions?: {
