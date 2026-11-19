@@ -239,7 +239,9 @@ it('shares chat settings and tool composition, preserves streamed metadata, and 
         'generated-image'
     );
     expect(model).toHaveBeenCalledTimes(1);
-    expect(h.createTools).toHaveBeenCalledWith(expect.objectContaining({ readOnlyConnectorIds: ['calendar'] }));
+    expect(h.createTools).toHaveBeenCalledWith(expect.objectContaining({ readOnlyConnectorIds: ['calendar'] }), {
+        conversationId: h.target.conversationId,
+    });
     h.source.dispose();
 });
 

@@ -157,6 +157,8 @@ export type DesktopToolApprovalRequest = {
     input: unknown;
     /** Absent when the tool asks by policy, and on older desktop builds. */
     reason?: DesktopToolApprovalReason;
+    /** The conversation whose tool call asks. Absent on older desktop builds and calls made without one. */
+    conversationId?: string;
 };
 
 /** Native's resolution of a request the webview may still be showing (timeout, policy change, …). */

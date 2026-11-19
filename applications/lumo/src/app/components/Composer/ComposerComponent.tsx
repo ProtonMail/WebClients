@@ -38,6 +38,7 @@ import { base64ToFile } from '../../util/imageHelpers';
 import { notifyMobileAppLoaded } from '../../util/mobileAppNotification';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
 import { FileAnalysisLimitCard } from '../Conversation/FileAnalysisLimitUpsell';
+import DesktopApprovalCards from '../Conversation/messageChain/message/DesktopToolApproval/DesktopApprovalCards';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
 import { ModelSwitchNotificationCard } from '../Notifications/ModelSwitchNotificationCard';
@@ -531,6 +532,8 @@ const ComposerComponentInner = ({
             {composerMode === ComposerMode.CONVERSATION && (
                 <ComposerNativeNotificationPermissionBanner messageChain={messageChain} spaceId={spaceId} />
             )}
+
+            <DesktopApprovalCards conversationId={conversationId} />
 
             <ComposerPreInputPortalRoot />
         </>
