@@ -14,6 +14,11 @@ import { easySwitchRender } from '../../../tests/render';
 import { ProductSelectionModal } from './ProductSelectionModal';
 
 const mockHandleSubmit = vi.fn();
+const { restriction } = vi.hoisted(() => ({ restriction: { isRestricted: false } }));
+
+vi.mock('../OAuth/Drive/useIsDriveImportRestricted', () => ({
+    useIsDriveImportRestricted: () => restriction.isRestricted,
+}));
 
 vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
@@ -189,6 +194,22 @@ describe('ProductSelectionModal - product selection', () => {
 });
 
 describe('ProductSelectionModal - Drive option', () => {
+    beforeEach(() => {
+        restriction.isRestricted = false;
+    });
+
+    it('hides Drive from B2B users and never submits it', () => {
+        restriction.isRestricted = true;
+        setDriveFlag(true);
+        renderModal(ImportProvider.GOOGLE);
+
+        expect(screen.queryByTestId('productCheckbox:Drive')).not.toBeInTheDocument();
+        expect(screen.getByTestId('productCheckbox:Mail')).toBeInTheDocument();
+
+        fireEvent.click(screen.getByText('Continue'));
+        expect(getSubmittedProducts()).not.toContain(ImportType.DRIVE);
+    });
+
     it('shows Drive, pre-selected, when the flag is on and the provider is Google', () => {
         setDriveFlag(true);
         renderModal(ImportProvider.GOOGLE);

@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { DriveImportGenericErrorStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportGenericErrorStep';
 import { DriveImportPausedStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportPausedStep';
 import { DriveImportSuccessStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportSuccessStep';
+import { useIsDriveImportRestricted } from '@proton/activation/src/components/Modals/OAuth/Drive/useIsDriveImportRestricted';
 import { useProductSelectionSubmit } from '@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
@@ -52,6 +53,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
     const hasOngoingImport = isImporting || isPaused;
 
     const { userType, showNewBadge } = useEasySwitchSidebarUserType(hasCompletedImport);
+    const isImportRestricted = useIsDriveImportRestricted();
 
     const { feature: dismissedFeature, update: setDismissed } = useFeature<boolean>(
         FeatureCode.DriveEasySwitchSidebarDismissed
@@ -62,9 +64,9 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
         FeatureCode.DriveEasySwitchSpotlight
     );
 
-    // Ongoing import --> always shown (ignores dismiss and rollout)
-    // Otherwise --> shown to eligible users who did not dismiss it
-    const showEntry = isLoaded && (hasOngoingImport || (!!userType && !isDismissed));
+    // Ongoing import --> always shown (ignores B2B, dismiss and rollout)
+    // Otherwise --> shown to eligible non B2B users who did not dismiss it
+    const showEntry = isLoaded && (hasOngoingImport || (!isImportRestricted && !!userType && !isDismissed));
 
     const isSpotlightEligible =
         showEntry &&

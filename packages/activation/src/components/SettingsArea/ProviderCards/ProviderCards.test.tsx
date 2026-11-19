@@ -91,6 +91,10 @@ vi.mock('../../../oles/useOLESFeatureStatus', () => ({
     }),
 }));
 
+vi.mock('../../Modals/OAuth/Drive/useIsDriveImportRestricted', () => ({
+    useIsDriveImportRestricted: () => false,
+}));
+
 vi.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useCalendarUserSettings: () => [],
     useGetCalendarUserSettings: () => () => [],
