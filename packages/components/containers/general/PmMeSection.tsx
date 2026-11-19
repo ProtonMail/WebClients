@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { Href } from '@proton/atoms/Href/Href';
 import { useSubscriptionForApp } from '@proton/payments-hooks/ui/hooks/useSubscriptionForApp';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -11,8 +12,7 @@ import useSettingsLink from '../../components/link/useSettingsLink';
 import useModalState from '../../components/modalTwo/useModalState';
 import MailUpsellButton from '../../components/upsell/MailUpsellButton';
 import PmMeUpsellModal from '../../components/upsell/modals/PmMeUpsellModal';
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSection from '../account/SettingsSection';
+import { SettingsCardSection } from '../account/SettingsCardSection';
 import PmMeButton, { getActivateString } from './PmMeButton';
 
 interface Props {
@@ -57,37 +57,49 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
         return null;
     }
 
-    return (
-        <SettingsSection>
-            {display === 'can-enable' && (
-                <>
-                    <SettingsParagraph className="mb-4" learnMoreUrl={getKnowledgeBaseUrl('/pm-me-addresses')}>
-                        {c('Info')
-                            .t`Add a @pm.me email address to your account. This simple, shorter domain stands for "${MAIL_APP_NAME} me" or "Private Message me."`}
-                    </SettingsParagraph>
-                    <PmMeButton>{getActivateString(user)}</PmMeButton>
-                </>
-            )}
-            {display === 'free-needs-upgrade' && (
-                <>
-                    <SettingsParagraph className="mb-4" learnMoreUrl={getKnowledgeBaseUrl('/pm-me-addresses')}>
-                        {c('Info')
-                            .t`Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${MAIL_APP_NAME} me” or “Private Message me”.`}
-                    </SettingsParagraph>
+    const learnMoreLink = <Href href={getKnowledgeBaseUrl('/pm-me-addresses')}>{c('Link').t`Learn more`}</Href>;
 
+    const { description, action } = (() => {
+        if (display === 'can-enable') {
+            return {
+                description: (
+                    <>
+                        {c('Info')
+                            .t`Add a @pm.me email address to your account. This simple, shorter domain stands for "${MAIL_APP_NAME} me" or "Private Message me."`}{' '}
+                        {learnMoreLink}
+                    </>
+                ),
+                action: <PmMeButton>{getActivateString(user)}</PmMeButton>,
+            };
+        }
+        if (display === 'free-needs-upgrade') {
+            return {
+                description: (
+                    <>
+                        {c('Info')
+                            .t`Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${MAIL_APP_NAME} me” or “Private Message me”.`}{' '}
+                        {learnMoreLink}
+                    </>
+                ),
+                action: (
                     <MailUpsellButton onClick={() => handleUpsellModalDisplay(true)} text={getActivateString(user)} />
-                </>
-            )}
-            {display === 'free-can-only-receive' && (
-                <>
-                    <SettingsParagraph className="mb-4">
-                        {c('Info')
-                            .t`With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.`}
-                    </SettingsParagraph>
+                ),
+            };
+        }
+        return {
+            description: c('Info')
+                .t`With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.`,
+            action: <MailUpsellButton onClick={handleUpgrade} text={c('Action').t`Send messages with @pm.me`} />,
+        };
+    })();
 
-                    <MailUpsellButton onClick={handleUpgrade} text={c('Action').t`Send messages with @pm.me`} />
-                </>
-            )}
+    return (
+        <>
+            <SettingsCardSection
+                title={c('Title').t`Short domain (@pm.me)`}
+                description={description}
+                actions={action}
+            />
 
             {renderUpsellModal && (
                 <PmMeUpsellModal
@@ -99,7 +111,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
                     }}
                 />
             )}
-        </SettingsSection>
+        </>
     );
 };
 

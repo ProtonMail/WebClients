@@ -6,6 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import useLoading from '@proton/hooks/useLoading';
 import { categoriesThunk } from '@proton/mail/store/labels';
@@ -23,10 +24,14 @@ import useModalState from '../../components/modalTwo/useModalState';
 import { useModalTwoPromise } from '../../components/modalTwo/useModalTwo';
 import MailUpsellButton from '../../components/upsell/MailUpsellButton';
 import LabelsUpsellModal from '../../components/upsell/modals/LabelsUpsellModal';
+import { SettingsCardRows } from '../account/SettingsCardRows';
+import { SettingsCardActions, SettingsCardBody } from '../account/SettingsCardSection';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsSection from '../account/SettingsSection';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
+import { SettingsLayoutVariant } from '../layout/interface';
 import FolderTreeViewList from './FolderTreeViewList';
 import ToggleEnableFolderColor from './ToggleEnableFolderColor';
 import ToggleInheritParentFolderColor from './ToggleInheritParentFolderColor';
@@ -45,9 +50,11 @@ function ScrollWrapper({ children, scroll }: { children: JSX.Element; scroll?: b
 
 interface Props {
     showPromptOnAction?: boolean;
+    /** The card variant shows the buttons above a card holding the color settings and the folders, and no card without folders. */
+    variant?: SettingsLayoutVariant;
 }
 
-export default function FoldersSection({ showPromptOnAction = false }: Props) {
+export default function FoldersSection({ showPromptOnAction = false, variant = SettingsLayoutVariant.Default }: Props) {
     const [user] = useUser();
     const [folders = [], loadingFolders] = useFolders();
     const dispatch = useDispatch();
@@ -78,6 +85,103 @@ export default function FoldersSection({ showPromptOnAction = false }: Props) {
             handleUpsellModalDisplay(true);
         }
     };
+
+    const actions = (
+        <>
+            {canCreateFolder ? (
+                <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
+                    {c('Action').t`Add folder`}
+                </Button>
+            ) : (
+                <MailUpsellButton onClick={handleClickUpsell} text={c('Action').t`Get more folders`} />
+            )}
+            {folders.length > 1 ? (
+                <Button
+                    shape="outline"
+                    title={c('Title').t`Sort folders alphabetically`}
+                    loading={loading}
+                    onClick={() => withLoading(handleSortAllFolders())}
+                >
+                    {c('Action').t`Sort`}
+                </Button>
+            ) : null}
+        </>
+    );
+
+    const folderList = (
+        // 17 is the number of elements before we have more than 50rem, will be replaced soon by a fix in scroll component
+        <ScrollWrapper scroll={folders.length > 17}>
+            <FolderTreeViewList items={folders} variant={variant} />
+        </ScrollWrapper>
+    );
+
+    const modals = (
+        <>
+            {renderEditLabelModal && <EditLabelModal {...editLabelModalProps} type="folder" />}
+
+            {renderUpsellModal && (
+                <LabelsUpsellModal
+                    modalProps={upsellModalProps}
+                    feature={MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS}
+                    isSettings
+                />
+            )}
+
+            {confirmModal(({ onResolve, onReject, ...props }) => (
+                <ConfirmSortModal modalProps={props} onReject={onReject} onResolve={onResolve} type="folder" />
+            ))}
+        </>
+    );
+
+    if (variant === SettingsLayoutVariant.Card) {
+        const hasFolders = !loadingFolders && !!folders.length;
+        return (
+            <>
+                <DashboardGrid as="div">
+                    <DashboardGridSectionHeader
+                        title={c('Title').t`Folders`}
+                        subtitle={c('Info')
+                            .t`Folders are where your messages are stored. A message can only be in one folder.`}
+                    />
+                    <SettingsCardActions>{loadingFolders ? <Loader /> : actions}</SettingsCardActions>
+                    {/* The color settings only affect existing folders: both cards show once there are some */}
+                    {hasFolders && <SettingsCardBody flush>{folderList}</SettingsCardBody>}
+                    {hasFolders && (
+                        <SettingsCardBody>
+                            <SettingsCardRows>
+                                <SettingsToggleRow
+                                    id="folder-colors"
+                                    label={
+                                        <SettingsToggleRow.Label>{c('Label')
+                                            .t`Use folder colors`}</SettingsToggleRow.Label>
+                                    }
+                                    toggle={<ToggleEnableFolderColor id="folder-colors" />}
+                                />
+                                {mailSettings.EnableFolderColor ? (
+                                    <SettingsToggleRow
+                                        id="parent-folder-color"
+                                        label={
+                                            <>
+                                                <SettingsToggleRow.Label>
+                                                    {c('Label').t`Inherit color from parent folder`}
+                                                </SettingsToggleRow.Label>
+                                                <SettingsToggleRow.Description>
+                                                    {c('Info - folder colouring feature')
+                                                        .t`When enabled, sub-folders inherit the color of the parent folder.`}
+                                                </SettingsToggleRow.Description>
+                                            </>
+                                        }
+                                        toggle={<ToggleInheritParentFolderColor id="parent-folder-color" />}
+                                    />
+                                ) : null}
+                            </SettingsCardRows>
+                        </SettingsCardBody>
+                    )}
+                </DashboardGrid>
+                {modals}
+            </>
+        );
+    }
 
     return (
         <SettingsSection>
@@ -113,48 +217,12 @@ export default function FoldersSection({ showPromptOnAction = false }: Props) {
                         </SettingsLayout>
                     ) : null}
 
-                    <div className="flex gap-4 my-7 folders-action">
-                        {canCreateFolder ? (
-                            <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
-                                {c('Action').t`Add folder`}
-                            </Button>
-                        ) : (
-                            <MailUpsellButton onClick={handleClickUpsell} text={c('Action').t`Get more folders`} />
-                        )}
-                        {folders.length ? (
-                            <Button
-                                shape="outline"
-                                title={c('Title').t`Sort folders alphabetically`}
-                                loading={loading}
-                                onClick={() => withLoading(handleSortAllFolders())}
-                            >
-                                {c('Action').t`Sort`}
-                            </Button>
-                        ) : null}
-                    </div>
+                    <div className="flex gap-4 my-7 folders-action">{actions}</div>
 
-                    {folders.length ? (
-                        // 17 is the number of elements before we have more than 50rem, will be replaced soon by a fix in scroll component
-                        <ScrollWrapper scroll={folders.length > 17}>
-                            <FolderTreeViewList items={folders} />
-                        </ScrollWrapper>
-                    ) : null}
-
-                    {renderEditLabelModal && <EditLabelModal {...editLabelModalProps} type="folder" />}
-
-                    {renderUpsellModal && (
-                        <LabelsUpsellModal
-                            modalProps={upsellModalProps}
-                            feature={MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS}
-                            isSettings
-                        />
-                    )}
+                    {folders.length ? folderList : null}
                 </>
             )}
-
-            {confirmModal(({ onResolve, onReject, ...props }) => (
-                <ConfirmSortModal modalProps={props} onReject={onReject} onResolve={onResolve} type="folder" />
-            ))}
+            {modals}
         </SettingsSection>
     );
 }

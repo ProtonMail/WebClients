@@ -15,7 +15,7 @@ import Toggle from '../../components/toggle/Toggle';
 
 const TIP_HIDDEN = -1 as const;
 
-const TipsAndInsightsToggle = () => {
+const TipsAndInsightsToggle = ({ id }: { id?: string }) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { update, feature, loading: featureLoading } = useFeature(FeatureCode.ProtonTipsSnoozeTime);
@@ -48,6 +48,7 @@ const TipsAndInsightsToggle = () => {
 
     return (
         <Toggle
+            id={id}
             checked={state}
             loading={loading}
             onChange={() => {

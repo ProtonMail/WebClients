@@ -8,17 +8,15 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import Loader from '../../components/loader/Loader';
 import Option from '../../components/option/Option';
-import SelectTwo from '../../components/selectTwo/SelectTwo';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSectionWide from '../account/SettingsSectionWide';
+import { SettingsCardRows } from '../account/SettingsCardRows';
+import { SettingsCardSection } from '../account/SettingsCardSection';
+import { SettingsSelectRow } from '../account/SettingsSelectRow';
 import EditAddressesSection from './EditAddressesSection';
-import { PMSignatureSection } from './PMSignatureSection';
+import { PMSignatureSection, usePMSignatureSectionVisible } from './PMSignatureSection';
 
 const IdentitySection = () => {
     const [addresses, loading] = useAddresses();
+    const showPMSignatureSection = usePMSignatureSectionVisible();
 
     const [addressID, setAddressID] = useState<string>();
 
@@ -34,25 +32,23 @@ const IdentitySection = () => {
         }
     }, [addressID, filteredAddresses]);
 
+    const title = c('Title').t`Display name and signature`;
+
     if (!loading && !filteredAddresses.length) {
-        return <SettingsParagraph>{c('Info').t`No addresses exist`}</SettingsParagraph>;
+        return <SettingsCardSection title={title} description={c('Info').t`No addresses exist`} />;
     }
 
     return (
-        <SettingsSectionWide>
+        <SettingsCardSection title={title}>
             {loading || !Array.isArray(addresses) ? (
                 <Loader />
             ) : (
-                <>
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <label className="pb-0 text-semibold" htmlFor="addressSelector">
-                                {c('Label').t`Email address`}
-                            </label>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pb-0 flex flex-row flex-nowrap">
-                            <SelectTwo<Address>
-                                id="addressSelector"
+                <SettingsCardRows>
+                    <SettingsSelectRow
+                        id="addressSelector"
+                        label={<SettingsSelectRow.Label>{c('Label').t`Email address`}</SettingsSelectRow.Label>}
+                        select={
+                            <SettingsSelectRow.Select<Address>
                                 onValue={(address) => {
                                     setAddressID(address.ID);
                                 }}
@@ -62,16 +58,14 @@ const IdentitySection = () => {
                                 {filteredAddresses.map((address) => (
                                     <Option key={address.ID} value={address} title={address.Email} />
                                 ))}
-                            </SelectTwo>
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
-
+                            </SettingsSelectRow.Select>
+                        }
+                    />
                     {selectedAddress && <EditAddressesSection address={selectedAddress} />}
-
-                    <PMSignatureSection />
-                </>
+                    {showPMSignatureSection && <PMSignatureSection />}
+                </SettingsCardRows>
             )}
-        </SettingsSectionWide>
+        </SettingsCardSection>
     );
 };
 

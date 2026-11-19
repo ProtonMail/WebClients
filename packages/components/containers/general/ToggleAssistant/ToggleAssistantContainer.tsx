@@ -8,9 +8,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { getWritingAssistantTitle } from '../../../helpers/assistant';
 import useAssistantFeatureEnabled from '../../../hooks/assistant/useAssistantFeatureEnabled';
-import SettingsLayout from '../../account/SettingsLayout';
-import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../../account/SettingsLayoutRight';
+import { SettingsToggleRow } from '../../account/SettingsToggleRow';
 import ToggleAssistant from './ToggleAssistant';
 import ToggleAssistantEnvironment from './ToggleAssistantEnvironment';
 
@@ -31,22 +29,23 @@ const ToggleAssistantContainer = () => {
     }
 
     return (
-        <>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="assistantSelect" className="flex-1">
-                        <span className="text-semibold">{getWritingAssistantTitle(scribeToLumo)}</span>
-                    </label>
-                    <Href className="block text-sm" href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant')}>{c(
-                        'Link'
-                    ).t`Learn more`}</Href>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <ToggleAssistant id="assistantSelect" aiFlag={aiFlag} />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-            {aiFlag !== OFF && <ToggleAssistantEnvironment aiFlag={AIAssistantFlags} />}
-        </>
+        <div className="flex flex-column gap-4">
+            <SettingsToggleRow
+                id="assistantSelect"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>{getWritingAssistantTitle(scribeToLumo)}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            <Href href={getKnowledgeBaseUrl('/proton-scribe-writing-assistant')}>
+                                {c('Link').t`Learn more`}
+                            </Href>
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={<ToggleAssistant id="assistantSelect" aiFlag={aiFlag} />}
+            />
+            {aiFlag !== OFF && <ToggleAssistantEnvironment aiFlag={AIAssistantFlags} optionClassName="mb-0" />}
+        </div>
     );
 };
 

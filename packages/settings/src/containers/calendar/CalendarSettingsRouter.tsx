@@ -20,6 +20,7 @@ import { useCalendarsInfoListener } from '@proton/components/containers/eventMan
 import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import MobileAppSettingsSection from '@proton/components/containers/mobile/MobileAppSettingsSection';
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { useLoadAllowedTimeZones } from '@proton/components/hooks/useLoadAllowedTimeZones';
@@ -117,7 +118,11 @@ const CalendarSettingsRouter = ({ user, calendarAppRoutes, redirect }: Props) =>
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, desktop)}>
-                <PrivateMainSettingsArea config={desktop}>
+                <PrivateMainSettingsArea
+                    config={desktop}
+                    variant={SettingsLayoutVariant.Card}
+                    maxWidth={SettingsCardMaxWidth.Medium}
+                >
                     <MobileAppSettingsSection />
                     {isElectronEnabled && <InboxDesktopSettingsSection />}
                 </PrivateMainSettingsArea>

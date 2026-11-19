@@ -106,3 +106,34 @@ $treeview-indentation-margin: rem(30) !default;
 		}
 	}
 }
+
+// A folder tree filling a flush settings card, matching the settings card tables:
+// roomier rows, weak borders, and no border under the last row since the card edge ends it
+.treeview--card {
+	.treeview-header {
+		padding: var(--space-4);
+		border-block-end-color: var(--border-weak);
+	}
+
+	.treeview-item {
+		border-block-end-color: var(--border-weak);
+	}
+
+	.treeview-content > .treeview-item {
+		padding: var(--space-4);
+	}
+
+	// Sub-folder rows keep their indentation on top of the cell padding
+	.treeview-item .treeview-item .treeview-content > .treeview-item {
+		padding-inline-start: calc(#{$treeview-indentation-margin} + var(--space-4));
+	}
+
+	// The last row at any depth. A row followed by its expanded sub-folders keeps its border
+	li.treeview-item:last-child:not(li:not(:last-child) li) {
+		border-block-end: none;
+
+		&:not(:has(> .treeview-container > li)) > .treeview-content > .treeview-item {
+			border-block-end: none;
+		}
+	}
+}

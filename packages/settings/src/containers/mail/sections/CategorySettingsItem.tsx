@@ -38,7 +38,7 @@ export const CategorySettingsItem = ({
     };
 
     return (
-        <div key={category.id} className="flex items-center px-4 py-2">
+        <div key={category.id} className="flex items-center py-2">
             <Toggle
                 id={`enable-${category.id}`}
                 className={clsx('mr-3', categoriesEnabled ? 'visible' : 'hidden')}
@@ -53,7 +53,7 @@ export const CategorySettingsItem = ({
                     categoryId={category.id}
                     colorShade={category.colorShade}
                     variant="filled"
-                    className="mt-0.5 mail-category-color self-center"
+                    className="mt-0.5 mail-category-color self-center shrink-0"
                 />
                 <div className="flex flex-column">
                     <span>{categoryLabel}</span>

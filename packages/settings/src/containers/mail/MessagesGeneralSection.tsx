@@ -6,15 +6,14 @@ import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import Info from '@proton/components/components/link/Info';
+import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
-import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
-import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import { SettingsCardRows } from '@proton/components/containers/account/SettingsCardRows';
+import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import ToggleAssistantContainer from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantContainer';
 import DailyEmailNotificationToggle from '@proton/components/containers/recovery/DailyEmailNotificationToggle';
 import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -34,6 +33,7 @@ const MessagesGeneralSection = () => {
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const accountRecovery = useUpdateAccountRecovery();
+    const assistantFeatureEnabled = useAssistantFeatureEnabled();
 
     const showRecoveryEmailInput = !user.isPrivate;
     const canEnableDailyEmails = !!userSettings?.Email?.Value;
@@ -58,50 +58,48 @@ const MessagesGeneralSection = () => {
     return (
         <>
             {accountRecovery.el}
-            <SettingsSection>
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="dailyNotificationsToggle" className="flex-1">
-                            <span className="pr-2 text-semibold">{c('Label').t`Daily email notifications`}</span>
-                            <Info
-                                url={getStaticURL('/support/notification-email')}
-                                title={c('Info')
-                                    .t`When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${MAIL_APP_NAME} account.`}
-                            />
-                        </label>
-
-                        {!userLoading && !showRecoveryEmailInput && (
-                            <div className="text-sm">
-                                <SettingsLink path="/recovery#account" app={APPS.PROTONMAIL}>
-                                    {isDailyEmailEnabled && userSettings?.Email?.Status === SETTINGS_STATUS.UNVERIFIED
-                                        ? c('Action').t`Requires a verified recovery email address`
-                                        : c('Link').t`Set email address`}
-                                </SettingsLink>{' '}
-                            </div>
-                        )}
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex flex-1 items-center">
-                        {!userLoading && showRecoveryEmailInput && (
-                            <RecoveryEmail className="mb-4 md:mb-0" {...accountRecovery.recoveryEmail.props} />
-                        )}
-                        <div className="flex items-center">
+            <SettingsCardRows>
+                <div className="flex flex-column gap-4">
+                    <SettingsToggleRow
+                        id="dailyNotificationsToggle"
+                        label={
+                            <>
+                                <SettingsToggleRow.Label>{c('Label')
+                                    .t`Daily email notifications`}</SettingsToggleRow.Label>
+                                <SettingsToggleRow.Description>
+                                    {c('Info')
+                                        .t`When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${MAIL_APP_NAME} account.`}{' '}
+                                    <Href href={getStaticURL('/support/notification-email')}>{c('Link')
+                                        .t`Learn more`}</Href>
+                                    {!userLoading && !showRecoveryEmailInput && (
+                                        <>
+                                            <br />
+                                            <SettingsLink path="/recovery#account" app={APPS.PROTONMAIL}>
+                                                {isDailyEmailEnabled &&
+                                                userSettings?.Email?.Status === SETTINGS_STATUS.UNVERIFIED
+                                                    ? c('Action').t`Requires a verified recovery email address`
+                                                    : c('Link').t`Set email address`}
+                                            </SettingsLink>
+                                        </>
+                                    )}
+                                </SettingsToggleRow.Description>
+                            </>
+                        }
+                        toggle={
                             <DailyEmailNotificationToggle
                                 id="dailyNotificationsToggle"
-                                className="mr-2"
                                 isEnabled={isDailyEmailEnabled}
                                 canEnable={canEnableDailyEmails}
                                 onChange={handleChangeEmailNotify}
                             />
-                            {!userLoading && showRecoveryEmailInput && (
-                                <label htmlFor="dailyNotificationsToggle" className="flex-1">
-                                    {c('Label').t`Allow notifications by email`}
-                                </label>
-                            )}
-                        </div>
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-                <ToggleAssistantContainer />
-            </SettingsSection>
+                        }
+                    />
+                    {!userLoading && showRecoveryEmailInput && (
+                        <RecoveryEmail {...accountRecovery.recoveryEmail.props} />
+                    )}
+                </div>
+                {assistantFeatureEnabled.enabled && <ToggleAssistantContainer />}
+            </SettingsCardRows>
         </>
     );
 };

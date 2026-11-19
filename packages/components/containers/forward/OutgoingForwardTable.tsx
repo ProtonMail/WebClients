@@ -10,6 +10,8 @@ import TableCell from '../../components/table/TableCell';
 import TableHeader from '../../components/table/TableHeader';
 import TableHeaderCell from '../../components/table/TableHeaderCell';
 import TableRow from '../../components/table/TableRow';
+import { getSettingsCardTableProps } from '../account/getSettingsCardTableProps';
+import { SettingsLayoutVariant } from '../layout/interface';
 import ForwardStatus from './ForwardStatus';
 import OutgoingForwardActions from './OutgoingForwardActions';
 import WarningChainedForwarding from './WarningChainedForwarding';
@@ -21,11 +23,21 @@ interface Props {
     outgoingAddressForwardings: OutgoingAddressForwarding[];
     user: UserModel;
     chainedEmails: string[];
+    /** The card variant styles the table to fill a flush settings card. */
+    variant?: SettingsLayoutVariant;
 }
 
-const OutgoingForwardTable = ({ addresses, loading, outgoingAddressForwardings, chainedEmails, user }: Props) => {
+const OutgoingForwardTable = ({
+    addresses,
+    loading,
+    outgoingAddressForwardings,
+    chainedEmails,
+    user,
+    variant,
+}: Props) => {
+    const cardTable = variant === SettingsLayoutVariant.Card ? getSettingsCardTableProps() : undefined;
     return (
-        <Table responsive="cards" hasActions={outgoingAddressForwardings.length > 0}>
+        <Table responsive="cards" hasActions={outgoingAddressForwardings.length > 0} {...cardTable}>
             <TableHeader>
                 <TableRow>
                     <TableHeaderCell>{c('email_forwarding_2023: Header').t`Forward from`}</TableHeaderCell>
@@ -33,9 +45,11 @@ const OutgoingForwardTable = ({ addresses, loading, outgoingAddressForwardings, 
                     <TableHeaderCell className="w-custom" style={{ '--w-custom': '11em' }}>{c(
                         'email_forwarding_2023: Header'
                     ).t`Status`}</TableHeaderCell>
-                    <TableHeaderCell className="w-custom" style={{ '--w-custom': '5em' }}>{c(
-                        'email_forwarding_2023: Header'
-                    ).t`Actions`}</TableHeaderCell>
+                    <TableHeaderCell
+                        // In the card, the column fits its buttons, which stay on one line (see the cell below)
+                        className={cardTable ? undefined : 'w-custom'}
+                        style={cardTable ? undefined : { '--w-custom': '5em' }}
+                    >{c('email_forwarding_2023: Header').t`Actions`}</TableHeaderCell>
                 </TableRow>
             </TableHeader>
             <TableBody loading={loading} colSpan={4}>
@@ -71,7 +85,7 @@ const OutgoingForwardTable = ({ addresses, loading, outgoingAddressForwardings, 
                             <TableCell label={c('email_forwarding_2023: Header').t`Status`}>
                                 <ForwardStatus forwardingConfig={forwardingConfig} />
                             </TableCell>
-                            <TableCell>
+                            <TableCell className={cardTable ? 'text-nowrap' : undefined}>
                                 <OutgoingForwardActions
                                     addresses={addresses}
                                     user={user}

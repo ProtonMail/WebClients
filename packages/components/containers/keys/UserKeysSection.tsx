@@ -8,8 +8,8 @@ import { Button } from '@proton/atoms/Button/Button';
 
 import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSectionWide from '../account/SettingsSectionWide';
+import { SettingsCardSection } from '../account/SettingsCardSection';
+import { SettingsLayoutVariant } from '../layout/interface';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
 import { DeleteInactiveUserKeyModal } from './deleteKey/DeleteInactiveUserKeyModal';
@@ -40,40 +40,32 @@ const UserKeysSections = () => {
 
     const canGenerateUserKey = User.isSelf && User.isPrivate && userKeysDisplay.length < 20;
 
-    const children = (() => {
+    const content = (() => {
         if (loadingUserKeys && !Array.isArray(userKeys)) {
-            return (
-                <SettingsSectionWide>
-                    <Loader />
-                </SettingsSectionWide>
-            );
+            return { children: <Loader /> };
         }
 
         // E.g. vpn user
         if (!userKeysDisplay.length) {
-            return (
-                <SettingsSectionWide>
-                    <SettingsParagraph>{c('Info').t`No account keys exist`}</SettingsParagraph>
-                </SettingsSectionWide>
-            );
+            return { children: c('Info').t`No account keys exist` };
         }
 
-        return (
-            <SettingsSectionWide>
-                {canGenerateUserKey && (
-                    <div className="mb-4">
-                        <Button
-                            shape="outline"
-                            onClick={() => {
-                                setAddKeyModalOpen(true);
-                            }}
-                            data-testid="generateUserKey"
-                        >
-                            {c('Action').t`Generate key`}
-                        </Button>
-                    </div>
-                )}
+        return {
+            flush: true,
+            actions: canGenerateUserKey && (
+                <Button
+                    shape="outline"
+                    onClick={() => {
+                        setAddKeyModalOpen(true);
+                    }}
+                    data-testid="generateUserKey"
+                >
+                    {c('Action').t`Generate key`}
+                </Button>
+            ),
+            children: (
                 <KeysTable
+                    variant={SettingsLayoutVariant.Card}
                     keys={userKeysDisplay}
                     onExportPrivateKey={(ID) => {
                         setExportKeyOpen(true);
@@ -84,8 +76,8 @@ const UserKeysSections = () => {
                         setTmpId(ID);
                     }}
                 />
-            </SettingsSectionWide>
-        );
+            ),
+        };
     })();
 
     return (
@@ -114,7 +106,9 @@ const UserKeysSections = () => {
                     }}
                 />
             )}
-            {children}
+            <SettingsCardSection title={c('Title').t`Account keys`} actions={content.actions} flush={content.flush}>
+                {content.children}
+            </SettingsCardSection>
         </>
     );
 };

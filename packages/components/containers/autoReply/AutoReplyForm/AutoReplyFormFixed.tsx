@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import SettingsParagraph from '../../account/SettingsParagraph';
 import DateField from './fields/DateField';
 import TimeField from './fields/TimeField';
 import TimeZoneField from './fields/TimeZoneField';
@@ -28,10 +27,7 @@ const AutoReplyFormFixed = ({ model: { start, end, timezone }, updateModel }: Pr
     };
 
     return (
-        <>
-            <SettingsParagraph>
-                {c('Info').t`Auto-reply is active from the start time to the end time.`}
-            </SettingsParagraph>
+        <div className="grid md:grid-cols-2 gap-4">
             <DateField
                 id="startDate"
                 label={c('Label').t`Start date`}
@@ -63,8 +59,10 @@ const AutoReplyFormFixed = ({ model: { start, end, timezone }, updateModel }: Pr
                 }
                 preventNextDayOverflow
             />
-            <TimeZoneField value={timezone} onChange={updateModel('timezone')} />
-        </>
+            <div className="md:grid-col-span-2">
+                <TimeZoneField value={timezone} onChange={updateModel('timezone')} />
+            </div>
+        </div>
     );
 };
 

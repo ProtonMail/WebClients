@@ -54,18 +54,21 @@ const IncomingForwardActions = ({ forward, addresses }: Props) => {
         isPending &&
             address &&
             hasForwardingKeys && {
+                key: 'accept',
                 text: c('email_forwarding_2023: Action').t`Accept`,
                 onClick: () => {
                     void withLoading(handleAccept()).catch(handleError);
                 },
             },
         isPending && {
+            key: 'decline',
             text: c('email_forwarding_2023: Action').t`Decline`,
             onClick: async () => {
                 void withLoading(handleDecline()).catch(handleError);
             },
         },
         (isActive || isRejected) && {
+            key: 'delete',
             text: c('email_forwarding_2023: Action').t`Delete`,
             onClick: async () => {
                 void withLoading(handleDelete()).catch(handleError);

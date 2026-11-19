@@ -12,12 +12,11 @@ interface Props {
 
 const LayoutCards = ({ list = [], className, liClassName, describedByID }: Props) => {
     return (
-        <ul className={clsx(['unstyled m-0 flex', className])}>
-            {list.map(({ selected, label, src, onChange, disabled }, index) => {
+        <ul className={clsx(['unstyled m-0 flex gap-4', className])}>
+            {list.map(({ selected, label, src, onChange, disabled }) => {
                 return (
                     <li className={liClassName} key={label}>
                         <LayoutCard
-                            key={index.toString()}
                             selected={selected}
                             label={label}
                             src={src}

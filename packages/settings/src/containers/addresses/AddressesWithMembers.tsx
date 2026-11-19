@@ -21,9 +21,11 @@ import Alert from '@proton/components/components/alert/Alert';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { SettingsCardActions, SettingsCardBody } from '@proton/components/containers/account/SettingsCardSection';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import AddressModal from '@proton/components/containers/addresses/AddressModal';
 import GenericError from '@proton/components/containers/error/GenericError';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import { ALL_MEMBERS_ID, APPS, BRAND_NAME, MAIL_APP_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains, getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -31,6 +33,7 @@ import type { Member } from '@proton/shared/lib/interfaces/Member';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { getOrganizationKeyInfo, isSuperAdmin, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
+import clsx from '@proton/utils/clsx';
 
 import AddressesTable from './AddressesTable';
 import AddressesWithUser from './AddressesWithUser';
@@ -54,6 +57,8 @@ interface Props {
     allowAddressDeletion: boolean;
     hasDescription?: boolean;
     hasAccessToBYOE?: boolean;
+    /** The card variant renders the buttons above a card holding the table. */
+    variant?: SettingsLayoutVariant;
 }
 
 const AddressesWithMembers = ({
@@ -64,6 +69,7 @@ const AddressesWithMembers = ({
     allowAddressDeletion,
     hasDescription = true,
     hasAccessToBYOE,
+    variant = SettingsLayoutVariant.Default,
 }: Props) => {
     const [members, loadingMembers] = useMembers();
     const [addresses, loadingAddresses] = useAddresses();
@@ -162,7 +168,102 @@ const AddressesWithMembers = ({
         return member.addressState === 'rejected';
     });
 
-    const children = (
+    const isCard = variant === SettingsLayoutVariant.Card;
+
+    const actions = (() => {
+        if (!currentMember || !user.isSelf) {
+            return null;
+        }
+        if (mustActivateOrganizationKey) {
+            return (
+                <Alert className="mb-4" type="warning">
+                    {c('Warning')
+                        .jt`You must ${activateLink} the organization key before adding an email address to a non-private member.`}
+                </Alert>
+            );
+        }
+        return (
+            <div className="inline-flex flex-wrap gap-6">
+                <div>
+                    <Button
+                        shape="outline"
+                        onClick={() => handleAddAddress(currentMember)}
+                        data-testid="settings:identity-section:add-address"
+                    >
+                        {c('Action').t`Add ${BRAND_NAME} address`}
+                    </Button>
+                    <p className={clsx('color-weak text-sm', isCard ? 'mt-1 mb-0' : 'my-2')}>
+                        {c('Label').ngettext(
+                            msgid`${addressesAvailable} of ${maxAddresses} email address available`,
+                            `${addressesAvailable} of ${maxAddresses} email addresses available`,
+                            addressesAvailable
+                        )}
+                    </p>
+                </div>
+                <div>
+                    {hasAccessToBYOE && isSelfSelected && (
+                        <>
+                            <ConnectGmailButton
+                                buttonText={c('Action').t`Connect Gmail address`}
+                                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_ADDRESSES_BYOE}
+                            />
+                            <p className={clsx('color-weak text-sm', isCard ? 'mt-1 mb-0' : 'my-2')}>
+                                {c('Label BYOE').ngettext(
+                                    msgid`${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email address available`,
+                                    `${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email addresses available`,
+                                    byoeAddressesAvailableCount
+                                )}
+                            </p>
+                        </>
+                    )}
+                </div>
+            </div>
+        );
+    })();
+
+    const content = (() => {
+        if (isSelfSelected) {
+            return (
+                <AddressesWithUser
+                    user={user}
+                    member={currentMember}
+                    organizationKey={organizationKey}
+                    hasDescription={false}
+                    allowAddressDeletion={allowAddressDeletion}
+                    variant={variant}
+                />
+            );
+        }
+
+        if (membersWithError.length) {
+            return (
+                <GenericError>
+                    <Button onClick={() => retry(membersWithError)}>{c('Action').t`Retry`}</Button>
+                </GenericError>
+            );
+        }
+
+        return (
+            <AddressesTable
+                hasUsername={hasUsernameDisplay}
+                loading={selectedMembers.some(({ ID }) => !Array.isArray(memberAddressesMap?.[ID]))}
+                user={user}
+                members={selectedMembers}
+                memberAddressesMap={memberAddressesMap}
+                isPrimaryAdmin={isSuperAdmin(members ?? [])}
+                organizationKey={organizationKey}
+                allowAddressDeletion={allowAddressDeletion}
+            />
+        );
+    })();
+
+    const children = isCard ? (
+        <>
+            {actions && <SettingsCardActions>{actions}</SettingsCardActions>}
+            {/* The own addresses render their table in a flush card themselves */}
+            {isSelfSelected ? content : <SettingsCardBody>{content}</SettingsCardBody>}
+        </>
+    ) : (
         <>
             {hasDescription && (
                 <SettingsParagraph className="mt-2">
@@ -175,91 +276,13 @@ const AddressesWithMembers = ({
                 </SettingsParagraph>
             )}
 
-            {currentMember && user.isSelf && (
-                <>
-                    <div className="mb-2 flex gap-2 self-start items-center">
-                        <div className="mr-4">
-                            {mustActivateOrganizationKey ? (
-                                <Alert className="mb-4" type="warning">
-                                    {c('Warning')
-                                        .jt`You must ${activateLink} the organization key before adding an email address to a non-private member.`}
-                                </Alert>
-                            ) : (
-                                <div className="inline-flex flex-wrap gap-6">
-                                    <div>
-                                        <Button
-                                            shape="outline"
-                                            onClick={() => handleAddAddress(currentMember)}
-                                            data-testid="settings:identity-section:add-address"
-                                        >
-                                            {c('Action').t`Add ${BRAND_NAME} address`}
-                                        </Button>
-                                        <p className="color-weak text-sm my-2">
-                                            {c('Label').ngettext(
-                                                msgid`${addressesAvailable} of ${maxAddresses} email address available`,
-                                                `${addressesAvailable} of ${maxAddresses} email addresses available`,
-                                                addressesAvailable
-                                            )}
-                                        </p>
-                                    </div>
-                                    <div>
-                                        {hasAccessToBYOE && isSelfSelected && (
-                                            <>
-                                                <ConnectGmailButton
-                                                    buttonText={c('Action').t`Connect Gmail address`}
-                                                    source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_ADDRESSES_BYOE}
-                                                />
-                                                <p className="color-weak text-sm my-2">
-                                                    {c('Label BYOE').ngettext(
-                                                        msgid`${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email address available`,
-                                                        `${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email addresses available`,
-                                                        byoeAddressesAvailableCount
-                                                    )}
-                                                </p>
-                                            </>
-                                        )}
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </>
+            {actions && (
+                <div className="mb-2 flex gap-2 self-start items-center">
+                    <div className="mr-4">{actions}</div>
+                </div>
             )}
 
-            {(() => {
-                if (isSelfSelected) {
-                    return (
-                        <AddressesWithUser
-                            user={user}
-                            member={currentMember}
-                            organizationKey={organizationKey}
-                            hasDescription={false}
-                            allowAddressDeletion={allowAddressDeletion}
-                        />
-                    );
-                }
-
-                if (membersWithError.length) {
-                    return (
-                        <GenericError>
-                            <Button onClick={() => retry(membersWithError)}>{c('Action').t`Retry`}</Button>
-                        </GenericError>
-                    );
-                }
-
-                return (
-                    <AddressesTable
-                        hasUsername={hasUsernameDisplay}
-                        loading={selectedMembers.some(({ ID }) => !Array.isArray(memberAddressesMap?.[ID]))}
-                        user={user}
-                        members={selectedMembers}
-                        memberAddressesMap={memberAddressesMap}
-                        isPrimaryAdmin={isSuperAdmin(members ?? [])}
-                        organizationKey={organizationKey}
-                        allowAddressDeletion={allowAddressDeletion}
-                    />
-                );
-            })()}
+            {content}
         </>
     );
     const loading = loadingMembers || loadingAddresses || memberIndex === -1;

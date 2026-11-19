@@ -19,9 +19,8 @@ import { useModalTwoStatic } from '../../components/modalTwo/useModalTwo';
 import { Tabs } from '../../components/tabs/Tabs';
 import MailUpsellButton from '../../components/upsell/MailUpsellButton';
 import UpsellModal from '../../components/upsell/UpsellModal/UpsellModal';
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSection from '../account/SettingsSection';
-import SettingsSectionWide from '../account/SettingsSectionWide';
+import { SettingsCardSection } from '../account/SettingsCardSection';
+import { SettingsLayoutVariant } from '../layout/interface';
 import ForwardModal from './ForwardModal';
 import IncomingForwardTable from './IncomingForwardTable';
 import OutgoingForwardTable from './OutgoingForwardTable';
@@ -66,19 +65,19 @@ const ForwardSection = () => {
     }, [hash, isIncomingTableAvailable, isOutgoingTableAvailable]);
 
     return (
-        <SettingsSectionWide className="overflow-hidden">
-            <SettingsSection>
-                <SettingsParagraph>
-                    <span>
-                        {c('email_forwarding_2023: Info').t`Automatically forward emails to another email address.`}
-                    </span>
-                    <br />
-                    <Href href={getKnowledgeBaseUrl('/email-forwarding')}>{c('email_forwarding_2023: Link')
-                        .t`Learn more`}</Href>
-                </SettingsParagraph>
-
-                <div className="mb-4">
-                    {user.hasPaidMail ? (
+        <>
+            <SettingsCardSection
+                flush
+                title={c('Title').t`Forward emails`}
+                description={
+                    <>
+                        {c('email_forwarding_2023: Info').t`Automatically forward emails to another email address.`}{' '}
+                        <Href href={getKnowledgeBaseUrl('/email-forwarding')}>{c('email_forwarding_2023: Link')
+                            .t`Learn more`}</Href>
+                    </>
+                }
+                actions={
+                    user.hasPaidMail ? (
                         <Button color="norm" onClick={() => showForwardModal({})}>
                             {c('email_forwarding_2023: Action').t`Add forwarding rule`}
                         </Button>
@@ -87,38 +86,45 @@ const ForwardSection = () => {
                             onClick={() => handleUpsellModalDisplay(true)}
                             text={c('email_forwarding_2023: Action').t`Set up email forwarding`}
                         />
-                    )}
-                </div>
-                <Tabs
-                    tabs={[
-                        isOutgoingTableAvailable && {
-                            title: c('email_forwarding_2023: Incoming forwarding tab name').t`From me`,
-                            content: (
-                                <OutgoingForwardTable
-                                    addresses={addresses}
-                                    outgoingAddressForwardings={outgoingAddressForwardings}
-                                    chainedEmails={chainedEmails}
-                                    loading={loadingAddresses && loadingIncomingAddressForwardings}
-                                    user={user}
-                                />
-                            ),
-                        },
-                        isIncomingTableAvailable && {
-                            title: c('email_forwarding_2023: Outgoing forwarding tab name').t`To me`,
-                            content: (
-                                <IncomingForwardTable
-                                    addresses={addresses}
-                                    forwardings={incomingAddressForwardings}
-                                    chainedEmails={chainedEmails}
-                                    loading={loadingAddresses && loadingOutgoingAddressForwardings}
-                                />
-                            ),
-                        },
-                    ].filter(isTruthy)}
-                    value={activeTab}
-                    onChange={setActiveTab}
-                />
-            </SettingsSection>
+                    )
+                }
+            >
+                {(isOutgoingTableAvailable || isIncomingTableAvailable) && (
+                    <Tabs
+                        // The card is flush for the tables: pad the tab bar instead
+                        navContainerClassName="px-4 pt-2"
+                        tabs={[
+                            isOutgoingTableAvailable && {
+                                title: c('email_forwarding_2023: Incoming forwarding tab name').t`From me`,
+                                content: (
+                                    <OutgoingForwardTable
+                                        variant={SettingsLayoutVariant.Card}
+                                        addresses={addresses}
+                                        outgoingAddressForwardings={outgoingAddressForwardings}
+                                        chainedEmails={chainedEmails}
+                                        loading={loadingAddresses && loadingIncomingAddressForwardings}
+                                        user={user}
+                                    />
+                                ),
+                            },
+                            isIncomingTableAvailable && {
+                                title: c('email_forwarding_2023: Outgoing forwarding tab name').t`To me`,
+                                content: (
+                                    <IncomingForwardTable
+                                        variant={SettingsLayoutVariant.Card}
+                                        addresses={addresses}
+                                        forwardings={incomingAddressForwardings}
+                                        chainedEmails={chainedEmails}
+                                        loading={loadingAddresses && loadingOutgoingAddressForwardings}
+                                    />
+                                ),
+                            },
+                        ].filter(isTruthy)}
+                        value={activeTab}
+                        onChange={setActiveTab}
+                    />
+                )}
+            </SettingsCardSection>
             {forwardModal}
             {renderUpsellModal && (
                 <UpsellModal
@@ -130,7 +136,7 @@ const ForwardSection = () => {
                     upsellRef={upsellRef}
                 />
             )}
-        </SettingsSectionWide>
+        </>
     );
 };
 

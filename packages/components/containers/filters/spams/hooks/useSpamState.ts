@@ -25,6 +25,7 @@ type Action =
 
 const INITIAL_PAGE = 1;
 
+// Loading keeps the current list and total, so the table stays on screen until the next list arrives
 const reducer =
     (fetchSpams: (args: State) => void) =>
     (state: State, action: Action): State => {
@@ -47,11 +48,9 @@ const reducer =
                 }
                 const setSearchState: State = {
                     ...state,
-                    list: [],
                     page: INITIAL_PAGE,
                     search: action.payload || undefined,
                     status: 'loading',
-                    total: 0,
                 };
                 fetchSpams(setSearchState);
 
@@ -64,10 +63,8 @@ const reducer =
                 const setDisplayState: State = {
                     ...state,
                     display: action.payload,
-                    list: [],
                     page: INITIAL_PAGE,
                     status: 'loading',
-                    total: 0,
                 };
                 fetchSpams(setDisplayState);
 
@@ -77,9 +74,7 @@ const reducer =
             case 'refetchList':
                 const refetchListState: State = {
                     ...state,
-                    list: [],
                     status: 'loading',
-                    total: 0,
                 };
                 fetchSpams(refetchListState);
 
@@ -94,10 +89,8 @@ const reducer =
             case 'setPage':
                 const setPageState: State = {
                     ...state,
-                    list: [],
                     page: action.payload,
                     status: 'loading',
-                    total: 0,
                 };
                 fetchSpams(setPageState);
 

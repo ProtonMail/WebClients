@@ -1,3 +1,5 @@
+import type { IconComponent } from '@proton/icons/component';
+
 export type SpamNavItem = 'ALL' | SpamLocation;
 
 export type SpamLocation = 'SPAM' | 'NON_SPAM' | 'BLOCKED';
@@ -21,4 +23,4 @@ interface SpamDomainItem extends SpamBase {
 export type SpamItem = SpamEmailItem | SpamDomainItem;
 
 export type SpamListActionName = 'block' | 'delete' | 'spam' | 'unspam';
-export type SpamListAction = { name: string; onClick: () => void };
+export type SpamListAction = { name: string; onClick: () => void; icon?: IconComponent; danger?: boolean };

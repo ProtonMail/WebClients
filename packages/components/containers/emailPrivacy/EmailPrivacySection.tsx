@@ -2,16 +2,16 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href/Href';
 import { FeatureCode } from '@proton/features/interface';
 import useFeatures from '@proton/features/useFeatures';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
-import Info from '../../components/link/Info';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsCardRows } from '../account/SettingsCardRows';
+import { SettingsSelectRow } from '../account/SettingsSelectRow';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import PreventTrackingToggle from './PreventTrackingToggle';
 import ProtectionModeSelect from './ProtectionModeSelect';
 import RemoteToggle from './RemoteToggle';
@@ -30,65 +30,68 @@ const EmailPrivacySection = () => {
 
     const showProtectionMode = ImageProxy !== IMAGE_PROXY_FLAGS.NONE && featureSpyTrackerIncorporator?.Value;
 
+    const trackerProtectionLink = (
+        <Href href={getKnowledgeBaseUrl('/email-tracker-protection')}>{c('Link').t`Learn more`}</Href>
+    );
+
     return (
-        <>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="remoteToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Auto show remote images`}</span>
-                        <Info
-                            url={getKnowledgeBaseUrl('/images-by-default')}
-                            title={c('Info')
-                                .t`Loaded content is being protected by our proxy when tracker protection is activated.`}
+        <SettingsCardRows>
+            <SettingsToggleRow
+                id="remoteToggle"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>{c('Label').t`Auto show remote images`}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            {c('Info')
+                                .t`Loaded content is being protected by our proxy when tracker protection is activated.`}{' '}
+                            <Href href={getKnowledgeBaseUrl('/images-by-default')}>{c('Link').t`Learn more`}</Href>
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={<RemoteToggle id="remoteToggle" data-testid="privacy:remote-content-toggle" />}
+            />
+            <SettingsToggleRow
+                id="preventTrackingToggle"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>{c('Label').t`Block email tracking`}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            {c('Info').t`Blocks senders from seeing if and when you opened a message.`}{' '}
+                            {trackerProtectionLink}
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={
+                    <PreventTrackingToggle
+                        id="preventTrackingToggle"
+                        preventTracking={ImageProxy}
+                        data-testid="privacy:prevent-tracking-toggle"
+                    />
+                }
+            />
+            {showProtectionMode && (
+                <SettingsSelectRow
+                    id="protectiontModeToggle"
+                    label={
+                        <>
+                            <SettingsSelectRow.Label>{c('Label').t`Protection mode`}</SettingsSelectRow.Label>
+                            <SettingsSelectRow.Description>
+                                {c('Info')
+                                    .t`Hides identifying information by loading remote content through a proxy. Option to store content as attachments.`}{' '}
+                                {trackerProtectionLink}
+                            </SettingsSelectRow.Description>
+                        </>
+                    }
+                    select={
+                        <ProtectionModeSelect
+                            id="protectiontModeToggle"
+                            defaultProtectionMode={ImageProxy}
+                            data-testid="privacy:protect-mode-select"
                         />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <RemoteToggle id="remoteToggle" data-testid="privacy:remote-content-toggle" />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-            <>
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="preventTrackingToggle" className="text-semibold">
-                            <span className="mr-2">{c('Label').t`Block email tracking`}</span>
-                            <Info
-                                url={getKnowledgeBaseUrl('/email-tracker-protection')}
-                                title={c('Info').t`Blocks senders from seeing if and when you opened a message.`}
-                            />
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight isToggleContainer>
-                        <PreventTrackingToggle
-                            id="preventTrackingToggle"
-                            preventTracking={ImageProxy}
-                            data-testid="privacy:prevent-tracking-toggle"
-                        />
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-                {showProtectionMode && (
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <label htmlFor="protectiontModeToggle" className="text-semibold">
-                                <span className="mr-2">{c('Label').t`Protection mode`}</span>
-                                <Info
-                                    url={getKnowledgeBaseUrl('/email-tracker-protection')}
-                                    title={c('Info')
-                                        .t`Hides identifying information by loading remote content through a proxy. Option to store content as attachments.`}
-                                />
-                            </label>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight isToggleContainer>
-                            <ProtectionModeSelect
-                                id="protectiontModeToggle"
-                                defaultProtectionMode={ImageProxy}
-                                data-testid="privacy:protect-mode-select"
-                            />
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
-                )}
-            </>
-        </>
+                    }
+                />
+            )}
+        </SettingsCardRows>
     );
 };
 

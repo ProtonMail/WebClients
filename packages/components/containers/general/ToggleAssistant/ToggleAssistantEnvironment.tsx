@@ -8,6 +8,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import clsx from '@proton/utils/clsx';
 
 import RadioGroup from '../../../components/input/RadioGroup';
 import Info from '../../../components/link/Info';
@@ -16,6 +17,8 @@ interface Props {
     aiFlag: AI_ASSISTANT_ACCESS;
     onEnableLocal?: () => void;
     onEnableServer?: () => void;
+    /** Extra classes for each option, e.g. `mb-0` to drop the default bottom margin. */
+    optionClassName?: string;
 }
 
 const { SERVER_ONLY, CLIENT_ONLY } = AI_ASSISTANT_ACCESS;
@@ -45,7 +48,7 @@ const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
     );
 };
 
-const ToggleAssistantEnvironment = ({ aiFlag, onEnableLocal, onEnableServer }: Props) => {
+const ToggleAssistantEnvironment = ({ aiFlag, onEnableLocal, onEnableServer, optionClassName }: Props) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -69,7 +72,7 @@ const ToggleAssistantEnvironment = ({ aiFlag, onEnableLocal, onEnableServer }: P
             <div className="flex flex-column gap-2">
                 <RadioGroup<AI_ASSISTANT_ACCESS>
                     name="assistant-runtime"
-                    className="md:mr-0 w-full flex-nowrap"
+                    className={clsx('md:mr-0 w-full flex-nowrap', optionClassName)}
                     value={aiFlag}
                     disableChange={loading}
                     onChange={(value) => {

@@ -2,6 +2,7 @@ import { useAllowAddressDeletion } from '@proton/account/allowAddressDeletion/ho
 import { useUser } from '@proton/account/user/hooks';
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
+import type { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import AddressesWithMembers from './AddressesWithMembers';
@@ -13,9 +14,18 @@ interface AddressesProps {
     memberID?: string;
     hasDescription?: boolean;
     hasAccessToBYOE?: boolean;
+    /** The card variant renders the buttons above a card holding the table. */
+    variant?: SettingsLayoutVariant;
 }
 
-const Addresses = ({ isOnlySelf, organization, memberID, hasDescription, hasAccessToBYOE }: AddressesProps) => {
+const Addresses = ({
+    isOnlySelf,
+    organization,
+    memberID,
+    hasDescription,
+    hasAccessToBYOE,
+    variant,
+}: AddressesProps) => {
     const [user] = useUser();
     const [allowAddressDeletion] = useAllowAddressDeletion();
 
@@ -31,6 +41,7 @@ const Addresses = ({ isOnlySelf, organization, memberID, hasDescription, hasAcce
                         allowAddressDeletion={allowAddressDeletion ?? false}
                         hasDescription={hasDescription}
                         hasAccessToBYOE={hasAccessToBYOE}
+                        variant={variant}
                     />
                 ) : (
                     <AddressesWithUser
@@ -38,6 +49,7 @@ const Addresses = ({ isOnlySelf, organization, memberID, hasDescription, hasAcce
                         allowAddressDeletion={allowAddressDeletion ?? false}
                         hasDescription={hasDescription}
                         hasAccessToBYOE={hasAccessToBYOE}
+                        variant={variant}
                     />
                 )}
             </EasySwitchStoreInitializer>

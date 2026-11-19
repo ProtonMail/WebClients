@@ -5,6 +5,9 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { Href } from '@proton/atoms/Href/Href';
 import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
 import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
 import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
@@ -23,11 +26,7 @@ import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { semver } from '@proton/utils/semver';
 
 import Select from '../../components/select/Select';
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSectionWide from '../account/SettingsSectionWide';
 import UpgradeBanner from '../account/UpgradeBanner';
-
-import './ProtonMailBridgeSection.scss';
 
 interface BridgeClient {
     id: string;
@@ -178,13 +177,13 @@ export const ProtonMailBridgeSection = () => {
             })) || [];
 
         return (
-            <div key={id} className="flex">
-                <div className="border p-7 flex-1 rounded flex flex-column items-center">
+            <DashboardCard key={id}>
+                <DashboardCardContent className="h-full flex flex-column flex-nowrap items-center">
                     {icon}
 
                     <h3 className="text-bold text-xl m-0 text-center">{c('Title').t`Bridge for ${platform}`}</h3>
 
-                    <span className="bridge-client-version mb-4 text-center">{version}</span>
+                    <span className="mb-4 text-center">{version}</span>
 
                     {downloads.length > 1 && (
                         <>
@@ -213,8 +212,8 @@ export const ProtonMailBridgeSection = () => {
                             {c('Action').t`Download`}
                         </ButtonLike>
                     )}
-                </div>
-            </div>
+                </DashboardCardContent>
+            </DashboardCard>
         );
     };
 
@@ -229,18 +228,29 @@ export const ProtonMailBridgeSection = () => {
     });
 
     return (
-        <SettingsSectionWide>
-            <SettingsParagraph className="mt-0 mb-4" learnMoreUrl={hasPaidMail ? getBridgeURL() : undefined}>
-                {c('Info')
-                    .t`You can use ${MAIL_APP_NAME} with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.`}
-            </SettingsParagraph>
+        <DashboardGrid columns={hasPaidMail ? 3 : undefined}>
+            <DashboardGridSectionHeader
+                title={c('Title').t`${MAIL_APP_NAME} Bridge`}
+                subtitle={
+                    <>
+                        {c('Info')
+                            .t`You can use ${MAIL_APP_NAME} with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.`}
+                        {hasPaidMail && (
+                            <>
+                                {' '}
+                                <Href href={getBridgeURL()}>{c('Link').t`Learn more`}</Href>
+                            </>
+                        )}
+                    </>
+                }
+            />
             {hasPaidMail ? (
-                <div className="mt-8 bridge-grid">{bridgeClients.map(renderBox)}</div>
+                bridgeClients.map(renderBox)
             ) : (
-                <UpgradeBanner upsellPath={upsellRef}>
+                <UpgradeBanner promotion upsellPath={upsellRef}>
                     {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}
-        </SettingsSectionWide>
+        </DashboardGrid>
     );
 };

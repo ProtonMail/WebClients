@@ -2,6 +2,7 @@ import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCa
 import { useUser } from '@proton/account/user/hooks';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
+import { SettingsCardRows } from '../account/SettingsCardRows';
 import AutomaticallySaveContacts from './AutomaticallySaveContacts';
 import { KeyboardShortcut } from './KeyboardShortcut';
 import { SenderImages } from './SenderImages';
@@ -15,12 +16,12 @@ export const OtherMailPreferencesSection = () => {
     const canToggleTips = !loadingEntitlements && user.isPaid && !entitlements.isB2B;
 
     return (
-        <>
+        <SettingsCardRows>
             <KeyboardShortcut />
             <SenderImages />
             {!isElectronMail && <UnreadFaviconCounter />}
             {canToggleTips && <TipsAndInsights />}
             <AutomaticallySaveContacts />
-        </>
+        </SettingsCardRows>
     );
 };

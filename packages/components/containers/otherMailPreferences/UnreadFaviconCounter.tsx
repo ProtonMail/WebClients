@@ -1,23 +1,21 @@
 import { c } from 'ttag';
 
-import Info from '../../components/link/Info';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import { UnreadFaviconCounterToggle } from './UnreadFaviconCounterToggle';
 
 export const UnreadFaviconCounter = () => {
     return (
-        <SettingsLayout>
-            <SettingsLayoutLeft>
-                <label htmlFor="unreadFaviconCounterToggle">
-                    <span className="text-semibold mr-2">{c('Label').t`Show unread count in Favicon`}</span>
-                    <Info title={c('Tooltip').t`See number of unread messages in the tab icon`} />
-                </label>
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight isToggleContainer>
-                <UnreadFaviconCounterToggle className="mr-4" id="unreadFaviconCounterToggle" />
-            </SettingsLayoutRight>
-        </SettingsLayout>
+        <SettingsToggleRow
+            id="unreadFaviconCounterToggle"
+            label={
+                <>
+                    <SettingsToggleRow.Label>{c('Label').t`Show unread count in Favicon`}</SettingsToggleRow.Label>
+                    <SettingsToggleRow.Description>
+                        {c('Tooltip').t`See number of unread messages in the tab icon`}
+                    </SettingsToggleRow.Description>
+                </>
+            }
+            toggle={<UnreadFaviconCounterToggle id="unreadFaviconCounterToggle" />}
+        />
     );
 };

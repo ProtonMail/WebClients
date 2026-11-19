@@ -6,6 +6,8 @@ import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { useHotkeys } from '@proton/hooks/useHotkeys';
 import useLoading from '@proton/hooks/useLoading';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -24,20 +26,14 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
-import Toggle from '../../components/toggle/Toggle';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSectionWide from '../account/SettingsSectionWide';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import UpgradeBanner from '../account/UpgradeBanner';
 import type { SimpleEditorActions } from '../editor/SimpleEditorContext';
 import { useSimpleEditor } from '../editor/SimpleEditorContext';
 import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';
 import AutoReplyFormMonthly from './AutoReplyForm/AutoReplyFormMonthly';
-import AutoReplyFormPermanent from './AutoReplyForm/AutoReplyFormPermanent';
 import AutoReplyFormWeekly from './AutoReplyForm/AutoReplyFormWeekly';
 import DurationField from './AutoReplyForm/fields/DurationField';
 import useAutoReplyForm, { getDefaultAutoResponder } from './AutoReplyForm/useAutoReplyForm';
@@ -129,8 +125,6 @@ export const AutoReplySection = () => {
                 return <AutoReplyFormMonthly model={model} updateModel={updateModel} />;
             case AutoReplyDuration.WEEKLY:
                 return <AutoReplyFormWeekly model={model} updateModel={updateModel} />;
-            case AutoReplyDuration.PERMANENT:
-                return <AutoReplyFormPermanent />;
             default:
                 return null;
         }
@@ -157,44 +151,45 @@ export const AutoReplySection = () => {
     });
 
     return (
-        <SettingsSectionWide className="overflow-hidden">
-            <SettingsParagraph className="mt-0 mb-4">
-                {c('new_plans: info')
+        <DashboardGrid as="div">
+            <DashboardGridSectionHeader
+                title={c('Title').t`Auto-reply`}
+                subtitle={c('new_plans: info')
                     .t`Set automatic replies to inform senders you are out of the office or unable to respond.`}
-            </SettingsParagraph>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="autoReplyToggle" className="text-semibold">
-                        {c('Label').t`Auto-reply`}
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <Toggle
+            />
+            <DashboardCard>
+                <DashboardCardContent>
+                    <SettingsToggleRow
                         id="autoReplyToggle"
-                        loading={enablingLoading}
-                        checked={isEnabled}
-                        onChange={({ target: { checked } }) =>
-                            withEnablingLoading(handleToggle(checked).catch(errorHandler))
+                        label={<SettingsToggleRow.Label>{c('Label').t`Auto-reply`}</SettingsToggleRow.Label>}
+                        toggle={
+                            <SettingsToggleRow.Toggle
+                                loading={enablingLoading}
+                                checked={isEnabled}
+                                onChange={({ target: { checked } }) =>
+                                    withEnablingLoading(handleToggle(checked).catch(errorHandler))
+                                }
+                            />
                         }
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
 
-            {hasPaidMail ? (
-                isEnabled && (
-                    <form
-                        onSubmit={async (e) => {
-                            e.preventDefault();
-                            await withUpdatingLoading(handleSubmit());
-                        }}
-                    >
-                        <DurationField value={model.duration} onChange={updateModel('duration')} />
+                    {hasPaidMail && isEnabled && (
+                        <form
+                            onSubmit={async (e) => {
+                                e.preventDefault();
+                                await withUpdatingLoading(handleSubmit());
+                            }}
+                        >
+                            <DashboardCardDivider />
 
-                        {formRenderer(model.duration)}
+                            <div className="flex flex-column flex-nowrap gap-6">
+                                <DurationField value={model.duration} onChange={updateModel('duration')} />
+                                {formRenderer(model.duration)}
+                            </div>
 
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
+                            <DashboardCardDivider />
+
+                            <div className="flex flex-column flex-nowrap gap-3">
                                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
                                 <label
                                     htmlFor="rooster-editor"
@@ -203,8 +198,6 @@ export const AutoReplySection = () => {
                                 >
                                     {c('Label').t`Message`}
                                 </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight>
                                 <div ref={composerRef} tabIndex={-1} className="w-full">
                                     <SimpleEditor
                                         supportFiles={false}
@@ -215,28 +208,29 @@ export const AutoReplySection = () => {
                                     />
                                 </div>
                                 {messageLimitReached && (
-                                    <p className="mt-1 mb-0 color-danger">{c('Error')
+                                    <p className="m-0 color-danger">{c('Error')
                                         .t`Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.`}</p>
                                 )}
-
-                                <Button
-                                    color="norm"
-                                    type="submit"
-                                    disabled={updatingLoading || messageLimitReached}
-                                    loading={updatingLoading}
-                                    className="mt-4"
-                                >
-                                    {c('Action').t`Save`}
-                                </Button>
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
-                    </form>
-                )
-            ) : (
-                <UpgradeBanner className="mt-8" upsellPath={upsellRef}>
+                                <div>
+                                    <Button
+                                        color="norm"
+                                        type="submit"
+                                        disabled={updatingLoading || messageLimitReached}
+                                        loading={updatingLoading}
+                                    >
+                                        {c('Action').t`Save`}
+                                    </Button>
+                                </div>
+                            </div>
+                        </form>
+                    )}
+                </DashboardCardContent>
+            </DashboardCard>
+            {!hasPaidMail && (
+                <UpgradeBanner promotion upsellPath={upsellRef}>
                     {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}
-        </SettingsSectionWide>
+        </DashboardGrid>
     );
 };

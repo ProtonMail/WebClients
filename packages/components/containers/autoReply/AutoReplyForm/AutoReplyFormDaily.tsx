@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import SettingsParagraph from '../../account/SettingsParagraph';
 import DaysOfWeekField from './fields/DaysOfWeekField';
 import TimeField from './fields/TimeField';
 import TimeZoneField from './fields/TimeZoneField';
@@ -13,12 +12,10 @@ interface Props {
 
 const AutoReplyFormDaily = ({ model: { daysOfWeek, start, end, timezone }, updateModel }: Props) => {
     return (
-        <>
-            <SettingsParagraph>
-                {c('Info')
-                    .t`Auto-reply is always active on the days of the week you select, between the selected hours.`}
-            </SettingsParagraph>
-            <DaysOfWeekField value={daysOfWeek} onChange={updateModel('daysOfWeek')} />
+        <div className="grid md:grid-cols-2 gap-4">
+            <div className="md:grid-col-span-2">
+                <DaysOfWeekField value={daysOfWeek} onChange={updateModel('daysOfWeek')} />
+            </div>
             <TimeField
                 value={start.time}
                 onChange={updateModel('start.time')}
@@ -31,8 +28,10 @@ const AutoReplyFormDaily = ({ model: { daysOfWeek, start, end, timezone }, updat
                 label={c('Label').t`End time`}
                 id="endTime"
             />
-            <TimeZoneField value={timezone} onChange={updateModel('timezone')} />
-        </>
+            <div className="md:grid-col-span-2">
+                <TimeZoneField value={timezone} onChange={updateModel('timezone')} />
+            </div>
+        </div>
     );
 };
 

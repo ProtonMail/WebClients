@@ -6,9 +6,7 @@ import { c } from 'ttag';
 import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
 
 import Select from '../../../../components/select/Select';
-import SettingsLayout from '../../../account/SettingsLayout';
-import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../../../account/SettingsLayoutRight';
+import AutoReplyField from './AutoReplyField';
 
 interface Props {
     value: string;
@@ -23,16 +21,9 @@ const TimeZoneField = ({ value, onChange }: Props) => {
     }, []);
 
     return (
-        <SettingsLayout>
-            <SettingsLayoutLeft>
-                <label htmlFor="timezone" className="text-semibold">
-                    {c('Label').t`Time zone`}
-                </label>
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight>
-                <Select id="timezone" options={options} onChange={handleChange} value={value} />
-            </SettingsLayoutRight>
-        </SettingsLayout>
+        <AutoReplyField label={c('Label').t`Time zone`} htmlFor="timezone">
+            <Select id="timezone" options={options} onChange={handleChange} value={value} />
+        </AutoReplyField>
     );
 };
 

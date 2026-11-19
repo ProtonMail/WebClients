@@ -1,10 +1,8 @@
 import type { ChangeEvent } from 'react';
 
 import Select from '../../../../components/select/Select';
-import SettingsLayout from '../../../account/SettingsLayout';
-import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../../../account/SettingsLayoutRight';
 import { getDaysOfMonthOptions } from '../../utils';
+import AutoReplyField from './AutoReplyField';
 
 interface Props {
     id: string;
@@ -17,16 +15,9 @@ const DayOfMonthField = ({ id, label, value, onChange }: Props) => {
     const handleChange = ({ target }: ChangeEvent<HTMLSelectElement>) => onChange(+target.value);
 
     return (
-        <SettingsLayout>
-            <SettingsLayoutLeft>
-                <label htmlFor={id} className="text-semibold">
-                    {label}
-                </label>
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight>
-                <Select id={id} options={getDaysOfMonthOptions()} value={value} onChange={handleChange} />
-            </SettingsLayoutRight>
-        </SettingsLayout>
+        <AutoReplyField label={label} htmlFor={id}>
+            <Select id={id} options={getDaysOfMonthOptions()} value={value} onChange={handleChange} />
+        </AutoReplyField>
     );
 };
 

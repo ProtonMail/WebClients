@@ -2,8 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { SettingsCardRows } from '@proton/components/containers/account/SettingsCardRows';
+import { SettingsCardBody } from '@proton/components/containers/account/SettingsCardSection';
 import { getCategoryTabFromLabel } from '@proton/mail/features/categoriesView/categoriesHelpers';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
@@ -79,48 +82,50 @@ export const CategoriesViewSections = () => {
 
     return (
         <>
-            <div className="categories-section">
-                <CategoryViewToggle />
-                {mailSettings.MailCategoryView && <CategoriesUnreadCountToggle />}
-                <div
-                    className={clsx(
-                        'border border-weak rounded-xl',
-                        mailSettings.MailCategoryView ? 'opacity-100' : 'opacity-50'
-                    )}
-                >
-                    <div className="inner">
-                        <div className="categories-header flex justify-space-between border-bottom border-weak p-4">
-                            <p className="m-0 text-semibold text-sm">{c('Label').t`Categories`} </p>
-                            <div className="items-center flex gap-1">
-                                <p
-                                    className={clsx(
-                                        'm-0 text-semibold text-sm',
-                                        mailSettings.MailCategoryView ? 'visible' : 'hidden'
-                                    )}
-                                >
-                                    {c('Label').t`Notifications`}
-                                </p>
-                                <Info title={c('Tooltip').t`System notification`} />
+            <DashboardGrid as="div" className="categories-section">
+                <DashboardGridSectionHeader title={c('Title').t`Email categories`} />
+                <SettingsCardBody>
+                    <SettingsCardRows>
+                        <CategoryViewToggle />
+                        {mailSettings.MailCategoryView && <CategoriesUnreadCountToggle />}
+                    </SettingsCardRows>
+                </SettingsCardBody>
+                <SettingsCardBody>
+                    <div className={clsx(mailSettings.MailCategoryView ? 'opacity-100' : 'opacity-50')}>
+                        <div className="inner">
+                            <div className="categories-header flex justify-space-between border-bottom border-weak pb-3">
+                                <p className="m-0 text-semibold text-sm">{c('Label').t`Categories`} </p>
+                                <div className="items-center flex gap-1">
+                                    <p
+                                        className={clsx(
+                                            'm-0 text-semibold text-sm',
+                                            mailSettings.MailCategoryView ? 'visible' : 'hidden'
+                                        )}
+                                    >
+                                        {c('Label').t`Notifications`}
+                                    </p>
+                                    <Info title={c('Tooltip').t`System notification`} />
+                                </div>
                             </div>
+
+                            {categoriesStore.map((tmp) => {
+                                const category = getCategoryTabFromLabel(tmp);
+
+                                return (
+                                    <CategorySettingsItem
+                                        key={category.id}
+                                        categoriesEnabled={mailSettings.MailCategoryView}
+                                        category={category}
+                                        loading={pendingID === tmp.ID}
+                                        updateDisplay={handleChangeDisplay}
+                                        updateNotify={handleChangeNotify}
+                                    />
+                                );
+                            })}
                         </div>
-
-                        {categoriesStore.map((tmp) => {
-                            const category = getCategoryTabFromLabel(tmp);
-
-                            return (
-                                <CategorySettingsItem
-                                    key={category.id}
-                                    categoriesEnabled={mailSettings.MailCategoryView}
-                                    category={category}
-                                    loading={pendingID === tmp.ID}
-                                    updateDisplay={handleChangeDisplay}
-                                    updateNotify={handleChangeNotify}
-                                />
-                            );
-                        })}
                     </div>
-                </div>
-            </div>
+                </SettingsCardBody>
+            </DashboardGrid>
             {renderModal && <PromptDisableCategories {...modal} />}
         </>
     );

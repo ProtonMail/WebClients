@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Href } from '@proton/atoms/Href/Href';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
@@ -14,10 +15,9 @@ import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import Info from '../../components/link/Info';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { SettingsCardRows } from '../account/SettingsCardRows';
+import { SettingsSelectRow } from '../account/SettingsSelectRow';
+import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
 import ViewModeToggle from '../layouts/ViewModeToggle';
 import AlmostAllMailToggle from './AlmostAllMailToggle';
@@ -33,6 +33,7 @@ const MessagesSection = () => {
         useMailSettings();
     const { createNotification } = useNotifications();
     const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
+    const isAutoDeleteEnabled = useFeature(FeatureCode.AutoDelete).feature?.Value === true;
     const dispatch = useDispatch();
     const api = useApi();
 
@@ -64,77 +65,69 @@ const MessagesSection = () => {
     };
 
     return (
-        <>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="embeddedToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Auto show embedded images`}</span>
-                        <Info
-                            url={getKnowledgeBaseUrl('/images-by-default')}
-                            title={c('Info')
-                                .t`When disabled, this prevents image files from loading on your device without your knowledge.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <EmbeddedToggle id="embeddedToggle" />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="showMovedToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Keep messages in Sent/Drafts`}</span>
-                        <Info
-                            title={c('Tooltip')
-                                .t`Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <ShowMovedToggle id="showMovedToggle" />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-            <SettingsLayout>
-                {isAlmostAllMailEnabled && (
+        <SettingsCardRows>
+            <SettingsToggleRow
+                id="embeddedToggle"
+                label={
                     <>
-                        <SettingsLayoutLeft>
-                            <label htmlFor="almostAllMail" className="text-semibold">
-                                <span className="mr-2">{c('Label').t`Exclude Spam/Trash from All mail`}</span>
-                            </label>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight isToggleContainer>
-                            <AlmostAllMailToggle id="almostAllMail" showAlmostAllMail={AlmostAllMail} />
-                        </SettingsLayoutRight>
+                        <SettingsToggleRow.Label>{c('Label').t`Auto show embedded images`}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            {c('Info')
+                                .t`When disabled, this prevents image files from loading on your device without your knowledge.`}{' '}
+                            <Href href={getKnowledgeBaseUrl('/images-by-default')}>{c('Link').t`Learn more`}</Href>
+                        </SettingsToggleRow.Description>
                     </>
-                )}
-            </SettingsLayout>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="requestLinkConfirmationToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Confirm link URLs`}</span>
-                        <Info
-                            title={c('Tooltip')
+                }
+                toggle={<EmbeddedToggle id="embeddedToggle" />}
+            />
+            <SettingsToggleRow
+                id="showMovedToggle"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>{c('Label').t`Keep messages in Sent/Drafts`}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            {c('Tooltip')
+                                .t`Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.`}
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={<ShowMovedToggle id="showMovedToggle" />}
+            />
+            {isAlmostAllMailEnabled && (
+                <SettingsToggleRow
+                    id="almostAllMail"
+                    label={
+                        <SettingsToggleRow.Label>{c('Label')
+                            .t`Exclude Spam/Trash from All mail`}</SettingsToggleRow.Label>
+                    }
+                    toggle={<AlmostAllMailToggle id="almostAllMail" showAlmostAllMail={AlmostAllMail} />}
+                />
+            )}
+            <SettingsToggleRow
+                id="requestLinkConfirmationToggle"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>{c('Label').t`Confirm link URLs`}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            {c('Tooltip')
                                 .t`When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <RequestLinkConfirmationToggle confirmLink={ConfirmLink} id="requestLinkConfirmationToggle" />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="viewMode" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Conversation grouping`}</span>
-                        <Info
-                            title={c('Tooltip')
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={<RequestLinkConfirmationToggle confirmLink={ConfirmLink} id="requestLinkConfirmationToggle" />}
+            />
+            <SettingsToggleRow
+                id="viewMode"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>{c('Label').t`Conversation grouping`}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            {c('Tooltip')
                                 .t`Group emails in the same conversation together in your Inbox or display them separately.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-
-                <SettingsLayoutRight isToggleContainer>
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={
                     <ViewModeToggle
                         id="viewMode"
                         viewMode={ViewMode}
@@ -142,22 +135,23 @@ const MessagesSection = () => {
                         onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
                         data-testid="appearance:conversation-group-toggle"
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <AutoDeleteSetting settingValue={AutoDeleteSpamAndTrashDays} onSaved={notifyPreferenceSaved} />
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="stickyLabelsToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Sticky labels`}</span>
-                        <Info
-                            title={c('Tooltip')
+                }
+            />
+            {isAutoDeleteEnabled && (
+                <AutoDeleteSetting settingValue={AutoDeleteSpamAndTrashDays} onSaved={notifyPreferenceSaved} />
+            )}
+            <SettingsToggleRow
+                id="stickyLabelsToggle"
+                label={
+                    <>
+                        <SettingsToggleRow.Label>{c('Label').t`Sticky labels`}</SettingsToggleRow.Label>
+                        <SettingsToggleRow.Description>
+                            {c('Tooltip')
                                 .t`When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
+                        </SettingsToggleRow.Description>
+                    </>
+                }
+                toggle={
                     <StickyLabelsToggle
                         id="stickyLabelsToggle"
                         stickyLabels={StickyLabels}
@@ -166,43 +160,45 @@ const MessagesSection = () => {
                         data-testid="appearance:sticky-labels-toggle"
                         disabled={ViewMode !== VIEW_MODE.GROUP}
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="spamActionLabelSelect" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Auto-unsubscribe`}</span>
-                        <Info
-                            title={c('Tooltip')
+                }
+            />
+            <SettingsSelectRow
+                id="spamActionLabelSelect"
+                label={
+                    <>
+                        <SettingsSelectRow.Label>{c('Label').t`Auto-unsubscribe`}</SettingsSelectRow.Label>
+                        <SettingsSelectRow.Description>
+                            {c('Tooltip')
                                 .t`When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
+                        </SettingsSelectRow.Description>
+                    </>
+                }
+                select={
                     <SpamActionSelect
                         id="spamActionLabelSelect"
                         value={SpamAction}
                         onChange={(value) => withLoadingSpamAction(handleChangeSpamAction(value))}
                         loading={loadingSpamAction}
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="pageSizeSelector" className="text-semibold" id="label-pageSizeSelector">
-                        <span className="mr-2">
-                            {ViewMode === VIEW_MODE.GROUP
-                                ? c('Label').t`Conversations per page`
-                                : c('Label').t`Messages per page`}
-                        </span>
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
-                    <PageSizeSelector id="pageSizeSelector" />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-        </>
+                }
+            />
+            <SettingsSelectRow
+                id="pageSizeSelector"
+                label={
+                    <SettingsSelectRow.Label id="label-pageSizeSelector">
+                        {ViewMode === VIEW_MODE.GROUP
+                            ? c('Label').t`Conversations per page`
+                            : c('Label').t`Messages per page`}
+                    </SettingsSelectRow.Label>
+                }
+                select={
+                    // The selector is narrower than the column: align it with the other controls
+                    <div className="flex md:justify-end">
+                        <PageSizeSelector id="pageSizeSelector" />
+                    </div>
+                }
+            />
+        </SettingsCardRows>
     );
 };
 

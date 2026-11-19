@@ -1,7 +1,5 @@
 import TimeInput from '../../../../components/input/TimeInput';
-import SettingsLayout from '../../../account/SettingsLayout';
-import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../../../account/SettingsLayoutRight';
+import AutoReplyField from './AutoReplyField';
 
 interface Props {
     id: string;
@@ -14,22 +12,15 @@ interface Props {
 
 const TimeField = ({ id, label, value = new Date(), onChange, min, preventNextDayOverflow }: Props) => {
     return (
-        <SettingsLayout>
-            <SettingsLayoutLeft>
-                <label htmlFor={id} className="text-semibold">
-                    {label}
-                </label>
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight>
-                <TimeInput
-                    id={id}
-                    value={value}
-                    onChange={onChange}
-                    min={min}
-                    preventNextDayOverflow={preventNextDayOverflow}
-                />
-            </SettingsLayoutRight>
-        </SettingsLayout>
+        <AutoReplyField label={label} htmlFor={id}>
+            <TimeInput
+                id={id}
+                value={value}
+                onChange={onChange}
+                min={min}
+                preventNextDayOverflow={preventNextDayOverflow}
+            />
+        </AutoReplyField>
     );
 };
 

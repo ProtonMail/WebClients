@@ -18,6 +18,7 @@ interface Props {
     onPrevious?: () => void;
     hasNext?: boolean;
     hasPrevious?: boolean;
+    disabled?: boolean;
 }
 
 const Pagination = ({
@@ -26,6 +27,7 @@ const Pagination = ({
     onSelect,
     hasNext = true,
     hasPrevious = true,
+    disabled = false,
     page = 1,
     total,
     limit,
@@ -45,6 +47,7 @@ const Pagination = ({
         return (
             <DropdownMenuButton
                 key={index}
+                disabled={disabled}
                 onClick={() => onSelect(index)}
                 aria-current={index === page}
                 className={index === page ? 'is-active text-center' : 'text-center'}
@@ -54,8 +57,8 @@ const Pagination = ({
         );
     });
 
-    const disablePrevious = page === 1;
-    const disableNext = page === pages;
+    const disablePrevious = disabled || page === 1;
+    const disableNext = disabled || page === pages;
 
     return (
         <ButtonGroup>
@@ -70,7 +73,7 @@ const Pagination = ({
                     <IcArrowLeft />
                 </Button>
             ) : null}
-            <SimpleDropdown as={Button} title={c('Title').t`Open pagination`} content={page}>
+            <SimpleDropdown as={Button} title={c('Title').t`Open pagination`} content={page} disabled={disabled}>
                 <DropdownMenu>{actions}</DropdownMenu>
             </SimpleDropdown>
             {hasNext ? (

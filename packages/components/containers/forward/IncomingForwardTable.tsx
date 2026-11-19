@@ -9,6 +9,8 @@ import TableCell from '../../components/table/TableCell';
 import TableHeader from '../../components/table/TableHeader';
 import TableHeaderCell from '../../components/table/TableHeaderCell';
 import TableRow from '../../components/table/TableRow';
+import { getSettingsCardTableProps } from '../account/getSettingsCardTableProps';
+import { SettingsLayoutVariant } from '../layout/interface';
 import ForwardStatus from './ForwardStatus';
 import IncomingForwardActions from './IncomingForwardActions';
 import WarningChainedForwarding from './WarningChainedForwarding';
@@ -18,11 +20,14 @@ interface Props {
     loading?: boolean;
     forwardings: IncomingAddressForwarding[];
     chainedEmails: string[];
+    /** The card variant styles the table to fill a flush settings card. */
+    variant?: SettingsLayoutVariant;
 }
 
-const IncomingForwardTable = ({ addresses, loading, forwardings, chainedEmails }: Props) => {
+const IncomingForwardTable = ({ addresses, loading, forwardings, chainedEmails, variant }: Props) => {
+    const cardTable = variant === SettingsLayoutVariant.Card ? getSettingsCardTableProps() : undefined;
     return (
-        <Table responsive="cards" hasActions={!!forwardings.length}>
+        <Table responsive="cards" hasActions={!!forwardings.length} {...cardTable}>
             <TableHeader>
                 <TableRow>
                     <TableHeaderCell>{c('email_forwarding_2023: Header').t`From`}</TableHeaderCell>
@@ -30,9 +35,11 @@ const IncomingForwardTable = ({ addresses, loading, forwardings, chainedEmails }
                     <TableHeaderCell className="w-custom" style={{ '--w-custom': '11em' }}>{c(
                         'email_forwarding_2023: Header'
                     ).t`Status`}</TableHeaderCell>
-                    <TableHeaderCell className="w-custom" style={{ '--w-custom': '9em' }}>{c(
-                        'email_forwarding_2023: Header'
-                    ).t`Actions`}</TableHeaderCell>
+                    <TableHeaderCell
+                        // In the card, the column fits its buttons, which stay on one line (see the cell below)
+                        className={cardTable ? undefined : 'w-custom'}
+                        style={cardTable ? undefined : { '--w-custom': '9em' }}
+                    >{c('email_forwarding_2023: Header').t`Actions`}</TableHeaderCell>
                 </TableRow>
             </TableHeader>
             <TableBody loading={loading} colSpan={4}>
@@ -65,7 +72,7 @@ const IncomingForwardTable = ({ addresses, loading, forwardings, chainedEmails }
                             <TableCell label={c('email_forwarding_2023: Header').t`Status`}>
                                 <ForwardStatus forwardingConfig={forward} />
                             </TableCell>
-                            <TableCell>
+                            <TableCell className={cardTable ? 'text-nowrap' : undefined}>
                                 <IncomingForwardActions forward={forward} addresses={addresses} />
                             </TableCell>
                         </TableRow>

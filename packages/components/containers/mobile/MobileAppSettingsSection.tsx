@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import { CALENDAR_MOBILE_APP_LINKS } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -24,44 +26,47 @@ const ProductDownloadCard = ({ app, qrCodeLink, appStoreLink, playStoreLink }: P
     const appName = app === 'proton-mail' ? MAIL_APP_NAME : CALENDAR_APP_NAME;
 
     return (
-        <section className="flex flex-column gap-6 items-center border rounded-lg p-6 text-center align-center">
-            <div
-                className="border rounded p-1.5 h-custom w-custom"
-                style={{ '--h-custom': '7.5rem', '--w-custom': '7.5rem' }}
-            >
-                <QRCode value={qrCodeLink} />
-            </div>
-            <div>
-                <Logo appName={app} variant="glyph-only" size={12} />
-                <h3 className="text-bold text-4xl">{appName}</h3>
-            </div>
-            <div className="flex gap-2">
-                <Href href={getAppStoreLink(appStoreLink)} target="_blank">
-                    <img
-                        className="h-custom"
-                        style={{ '--h-custom': '2.25rem' }}
-                        src={appStoreSvg}
-                        // translator: Shows the app name such as: Proton Mail on App Store. Only supports Proton Mail and Proton Calendar
-                        alt={c('Get started checklist instructions').t`${appName} on App Store`}
-                    />
-                </Href>
-                <Href href={getPlayStoreLink(playStoreLink)} target="_blank">
-                    <img
-                        className="h-custom"
-                        style={{ '--h-custom': '2.25rem' }}
-                        src={playStoreSvg}
-                        // translator: Shows the app name such as: Proton Mail on Play Store. Only supports Proton Mail and Proton Calendar
-                        alt={c('Get started checklist instructions').t`${appName} on Play Store`}
-                    />
-                </Href>
-            </div>
-        </section>
+        <DashboardCard>
+            <DashboardCardContent className="flex flex-column gap-6 items-center text-center">
+                <div
+                    className="border rounded p-1.5 h-custom w-custom"
+                    style={{ '--h-custom': '7.5rem', '--w-custom': '7.5rem' }}
+                >
+                    <QRCode value={qrCodeLink} />
+                </div>
+                <div>
+                    <Logo appName={app} variant="glyph-only" size={12} />
+                    <h3 className="text-bold text-xl mt-2 mb-0">{appName}</h3>
+                </div>
+                <div className="flex gap-2">
+                    <Href href={getAppStoreLink(appStoreLink)} target="_blank">
+                        <img
+                            className="h-custom"
+                            style={{ '--h-custom': '2.25rem' }}
+                            src={appStoreSvg}
+                            // translator: Shows the app name such as: Proton Mail on App Store. Only supports Proton Mail and Proton Calendar
+                            alt={c('Get started checklist instructions').t`${appName} on App Store`}
+                        />
+                    </Href>
+                    <Href href={getPlayStoreLink(playStoreLink)} target="_blank">
+                        <img
+                            className="h-custom"
+                            style={{ '--h-custom': '2.25rem' }}
+                            src={playStoreSvg}
+                            // translator: Shows the app name such as: Proton Mail on Play Store. Only supports Proton Mail and Proton Calendar
+                            alt={c('Get started checklist instructions').t`${appName} on Play Store`}
+                        />
+                    </Href>
+                </div>
+            </DashboardCardContent>
+        </DashboardCard>
     );
 };
 
 const MobileAppSecttingsSection = () => {
     return (
-        <div className="flex gap-6 mt-3">
+        <DashboardGrid columns={2}>
+            <DashboardGridSectionHeader title={c('Title').t`Download the mobile apps`} />
             <ProductDownloadCard
                 app="proton-mail"
                 qrCodeLink={MAIL_MOBILE_APP_LINKS.qrCode}
@@ -74,7 +79,7 @@ const MobileAppSecttingsSection = () => {
                 appStoreLink={CALENDAR_MOBILE_APP_LINKS.appStore}
                 playStoreLink={CALENDAR_MOBILE_APP_LINKS.playStore}
             />
-        </div>
+        </DashboardGrid>
     );
 };
 

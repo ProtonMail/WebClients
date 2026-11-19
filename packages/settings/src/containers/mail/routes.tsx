@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { getMailRouteTitles } from '@proton/components/containers/account/constants/settingsRouteTitles';
-import type { SidebarConfig } from '@proton/components/containers/layout/interface';
+import { SettingsLayoutVariant, type SidebarConfig } from '@proton/components/containers/layout/interface';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
 import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
@@ -70,6 +70,7 @@ export const getMailAppRoutes = ({
                     {
                         id: 'proton-mail-mobile-apps',
                         text: c('Title').t`Download the mobile apps`,
+                        invisibleTitle: true,
                         keywords: [
                             c('account_search_index').t`App Store`,
                             c('account_search_index').t`Play Store`,
@@ -79,6 +80,7 @@ export const getMailAppRoutes = ({
                     {
                         id: 'proton-mail-desktop-apps',
                         text: c('Title').t`Download the desktop app`,
+                        invisibleTitle: true,
                         keywords: [
                             c('Action').t`Download for Windows`,
                             c('Action').t`Download for macOS`,
@@ -97,6 +99,7 @@ export const getMailAppRoutes = ({
                         text: c('Title').t`General`,
                         id: 'general',
                         keywords: [c('Label').t`Daily email notifications`, c('Label').t`Allow notifications by email`],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Email categories`,
@@ -107,6 +110,7 @@ export const getMailAppRoutes = ({
                             c('Label').t`Show unread count`,
                             c('account_search_index').t`Inbox tabs`,
                         ],
+                        invisibleTitle: true,
                     },
                     {
                         text: c('Title').t`Layout`,
@@ -116,6 +120,7 @@ export const getMailAppRoutes = ({
                             c('Label').t`Density`,
                             c('Label to change density').t`Compact`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Messages`,
@@ -125,6 +130,7 @@ export const getMailAppRoutes = ({
                             c('Label').t`Auto show embedded images`,
                             c('Label').t`Auto-unsubscribe`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Composing`,
@@ -134,6 +140,7 @@ export const getMailAppRoutes = ({
                             c('Label').t`Undo send`,
                             c('Label').t`Composer text direction`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`Other preferences`,
@@ -143,6 +150,7 @@ export const getMailAppRoutes = ({
                             c('Label').t`Show sender images`,
                             c('Label').t`Automatically save contacts`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                 ],
             },
@@ -159,6 +167,7 @@ export const getMailAppRoutes = ({
                             c('Label').t`Block email tracking`,
                             c('Label').t`Protection mode`,
                         ],
+                        variant: SettingsLayoutVariant.Card,
                     },
                 ],
             },
@@ -173,6 +182,7 @@ export const getMailAppRoutes = ({
                         id: 'pmme',
                         available: getShowPmMeSection(user, addresses),
                         keywords: [c('Action').t`Send messages with @pm.me`],
+                        invisibleTitle: true,
                     },
                     {
                         text: c('Title').t`Display name and signature`,
@@ -182,6 +192,7 @@ export const getMailAppRoutes = ({
                             c('Label').t`Signature`,
                             c('Label').t`${MAIL_APP_NAME} footer`,
                         ],
+                        invisibleTitle: true,
                     },
                     {
                         id: 'alias-promotion',
@@ -199,6 +210,7 @@ export const getMailAppRoutes = ({
                             c('Action').t`Connect Gmail address`,
                             c('account_search_index').t`Add address`,
                         ],
+                        invisibleTitle: true,
                     },
                 ],
             },
@@ -218,6 +230,7 @@ export const getMailAppRoutes = ({
                             c('Label').t`Use folder colors`,
                             c('Label').t`Inherit color from parent folder`,
                         ],
+                        invisibleTitle: true,
                     },
                     {
                         text: c('Title').t`Labels`,
@@ -227,6 +240,7 @@ export const getMailAppRoutes = ({
                             c('Action').t`Get more labels`,
                             c('Title').t`Sort labels alphabetically`,
                         ],
+                        invisibleTitle: true,
                     },
                 ],
             },
@@ -244,6 +258,7 @@ export const getMailAppRoutes = ({
                             c('Action').t`Add sieve filter`,
                             c('Action').t`Get more filters`,
                         ],
+                        invisibleTitle: true,
                     },
                     {
                         text: c('Title').t`Spam, block, and allow lists`,
@@ -253,6 +268,7 @@ export const getMailAppRoutes = ({
                             c('account_search_index').t`Block sender`,
                             c('account_search_index').t`Allow list`,
                         ],
+                        invisibleTitle: true,
                     },
                 ],
             },
@@ -270,6 +286,7 @@ export const getMailAppRoutes = ({
                             c('email_forwarding_2023: Action').t`Set up email forwarding`,
                             c('account_search_index').t`Redirect incoming emails`,
                         ],
+                        invisibleTitle: true,
                     },
                     {
                         text: c('Title').t`Auto-reply`,
@@ -279,6 +296,7 @@ export const getMailAppRoutes = ({
                             c('account_search_index').t`Vacation responder`,
                             c('Label').t`Start date`,
                         ],
+                        invisibleTitle: true,
                     },
                 ],
             },
@@ -297,6 +315,7 @@ export const getMailAppRoutes = ({
                             c('account_search_index').t`Custom domain`,
                             c('Label in domain modal').t`Verify`,
                         ],
+                        invisibleTitle: true,
                     },
                     {
                         text: c('Title').t`Catch-all address`,
@@ -305,6 +324,7 @@ export const getMailAppRoutes = ({
                             c('account_search_index').t`Receive misaddressed emails`,
                             c('account_search_index').t`Catch-all`,
                         ],
+                        invisibleTitle: true,
                     },
                 ],
             },
@@ -318,6 +338,7 @@ export const getMailAppRoutes = ({
                         text: c('Title').t`Address and key verification`,
                         id: 'address-verification',
                         keywords: [c('Label').t`Prompt to trust keys`, c('Label').t`Verify keys with Key Transparency`],
+                        variant: SettingsLayoutVariant.Card,
                     },
                     {
                         text: c('Title').t`External PGP settings`,
@@ -327,6 +348,7 @@ export const getMailAppRoutes = ({
                             c('Label').t`Attach public key`,
                             c('Label').t`Default PGP scheme`,
                         ],
+                        invisibleTitle: true,
                     },
                     {
                         // title rendering is temporarily handled in the PostQuantumKeysOptInSection
@@ -346,6 +368,7 @@ export const getMailAppRoutes = ({
                             c('Keys actions').t`Export public key`,
                             c('Action').t`Import key`,
                         ],
+                        invisibleTitle: true,
                     },
                     {
                         text: c('Title').t`Account keys`,
@@ -355,6 +378,7 @@ export const getMailAppRoutes = ({
                             c('Keys actions').t`Export private key`,
                             c('Title header for keys table').t`Fingerprint`,
                         ],
+                        invisibleTitle: true,
                     },
                 ],
             },
@@ -371,11 +395,13 @@ export const getMailAppRoutes = ({
                             c('account_search_index').t`IMAP and SMTP`,
                             c('account_search_index').t`Outlook, Apple Mail, and Thunderbird`,
                         ],
+                        invisibleTitle: true,
                     },
                     {
                         text: c('Title').t`SMTP submission`,
                         id: 'smtp-tokens',
                         keywords: [c('Action').t`Generate token`, c('Header for table').t`Token name`],
+                        invisibleTitle: true,
                     },
                 ],
             },
@@ -394,6 +420,7 @@ export const getMailAppRoutes = ({
                             c('account_search_index').t`Back up emails`,
                             c('account_search_index').t`Export messages`,
                         ],
+                        invisibleTitle: true,
                     },
                 ],
             },
