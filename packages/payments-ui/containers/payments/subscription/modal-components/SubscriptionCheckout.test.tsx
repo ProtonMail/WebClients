@@ -2,12 +2,18 @@ import type { ReactNode } from 'react';
 
 import { screen } from '@testing-library/react';
 
+import { getReadableTime } from '@proton/components/components/time/Time';
 import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { ADDON_NAMES, CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import {
+    buildLumoSubscription,
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
@@ -62,9 +68,12 @@ vi.mock('@proton/components/containers/payments/Checkout', () => {
     };
 });
 
-const WrappedSubscriptionCheckout = (
-    props: Omit<SubscriptionCheckoutProps, 'taxCountry' | 'multiSubscriptionContext'>
-) => {
+const WrappedSubscriptionCheckout = ({
+    multiSubscriptionContext,
+    ...props
+}: Omit<SubscriptionCheckoutProps, 'taxCountry' | 'multiSubscriptionContext'> & {
+    multiSubscriptionContext?: MultiSubscriptionContext;
+}) => {
     const taxCountry = useTaxCountry({
         telemetryContext: 'other',
     });
@@ -72,7 +81,9 @@ const WrappedSubscriptionCheckout = (
         <SubscriptionCheckout
             {...props}
             taxCountry={taxCountry}
-            multiSubscriptionContext={buildMultiSubscriptionContextFromSubscription(props.subscription)}
+            multiSubscriptionContext={
+                multiSubscriptionContext ?? buildMultiSubscriptionContextFromSubscription(props.subscription)
+            }
         />
     );
 };
@@ -236,6 +247,106 @@ describe('SubscriptionCheckout', () => {
 
         expect(container).toHaveTextContent('Start date');
         expect(container).not.toHaveTextContent('Proration');
+    });
+
+    it('shows the start date of the subscription the purchase changes, not of the loaded one', () => {
+        const mailPlusPeriodEnd = 1825000000;
+        const lumoPlusPeriodEnd = 1796000000;
+        const webLumoPlus = buildLumoSubscription(PLANS.LUMO, { Cycle: CYCLE.MONTHLY, PeriodEnd: lumoPlusPeriodEnd });
+        const webMailPlus = buildSubscription(
+            { cycle: CYCLE.YEARLY, planName: PLANS.MAIL, currency: 'CHF' },
+            { PeriodEnd: mailPlusPeriodEnd }
+        );
+        const checkResult = getOptimisticCheckResult({
+            cycle: CYCLE.YEARLY,
+            planIDs: { [PLANS.LUMO]: 1 },
+            plansMap: getTestPlansMap('CHF'),
+            currency: 'CHF',
+        });
+        checkResult.Proration = 0;
+        checkResult.SubscriptionMode = SubscriptionMode.ScheduledChargedImmediately;
+        checkResult.optimistic = false;
+
+        const { container } = renderWithProviders(
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
+                checkResult={checkResult}
+                plansMap={{} as any}
+                currency="CHF"
+                cycle={CYCLE.YEARLY}
+                planIDs={{ [PLANS.LUMO]: 1 }}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledChargedImmediately={true}
+                isScheduledChargedLater={false}
+                isScheduled={true}
+                subscription={{ ...webMailPlus, SecondarySubscriptions: [webLumoPlus] }}
+                multiSubscriptionContext={buildMultiSubscriptionContext([webMailPlus, webLumoPlus])}
+                paymentForbiddenReason={{ forbidden: false }}
+                paymentFacade={{ showTaxCountry: true } as any}
+                trial={false}
+            />
+        );
+
+        expect(container).toHaveTextContent(getReadableTime({ value: lumoPlusPeriodEnd }));
+        expect(container).not.toHaveTextContent(getReadableTime({ value: mailPlusPeriodEnd }));
+    });
+
+    it('keeps the current term end of the changed subscription when it already has an upcoming term', () => {
+        const mailPlusPeriodEnd = 1825000000;
+        const lumoPlusPeriodEnd = 1796000000;
+        const lumoPlusUpcomingPeriodEnd = 1827536000;
+        const webLumoPlus = {
+            ...buildLumoSubscription(PLANS.LUMO, { Cycle: CYCLE.MONTHLY, PeriodEnd: lumoPlusPeriodEnd }),
+            UpcomingSubscription: buildLumoSubscription(PLANS.LUMO, {
+                Cycle: CYCLE.YEARLY,
+                PeriodStart: lumoPlusPeriodEnd,
+                PeriodEnd: lumoPlusUpcomingPeriodEnd,
+                IsPrepaid: true,
+            }),
+        };
+        const webMailPlus = buildSubscription(
+            { cycle: CYCLE.YEARLY, planName: PLANS.MAIL, currency: 'CHF' },
+            { PeriodEnd: mailPlusPeriodEnd }
+        );
+        const checkResult = getOptimisticCheckResult({
+            cycle: CYCLE.YEARLY,
+            planIDs: { [PLANS.LUMO_ULTRA]: 1 },
+            plansMap: getTestPlansMap('CHF'),
+            currency: 'CHF',
+        });
+        checkResult.Proration = 0;
+        checkResult.SubscriptionMode = SubscriptionMode.ScheduledChargedImmediately;
+        checkResult.optimistic = false;
+
+        const { container } = renderWithProviders(
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
+                checkResult={checkResult}
+                plansMap={{} as any}
+                currency="CHF"
+                cycle={CYCLE.YEARLY}
+                planIDs={{ [PLANS.LUMO_ULTRA]: 1 }}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledChargedImmediately={true}
+                isScheduledChargedLater={false}
+                isScheduled={true}
+                subscription={{ ...webMailPlus, SecondarySubscriptions: [webLumoPlus] }}
+                multiSubscriptionContext={buildMultiSubscriptionContext([webMailPlus, webLumoPlus])}
+                paymentForbiddenReason={{ forbidden: false }}
+                paymentFacade={{ showTaxCountry: true } as any}
+                trial={false}
+            />
+        );
+
+        expect(container).toHaveTextContent(getReadableTime({ value: lumoPlusPeriodEnd }));
+        expect(container).not.toHaveTextContent(getReadableTime({ value: lumoPlusUpcomingPeriodEnd }));
+        expect(container).not.toHaveTextContent(getReadableTime({ value: mailPlusPeriodEnd }));
     });
 
     it('should display positive proration', () => {
