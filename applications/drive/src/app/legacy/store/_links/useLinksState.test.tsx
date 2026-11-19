@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import type { DecryptedLink, EncryptedLink, LinkShareUrl } from './interface';
 import type { Link, LinksState } from './useLinksState';

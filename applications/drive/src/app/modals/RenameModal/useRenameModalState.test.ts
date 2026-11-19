@@ -1,5 +1,4 @@
-import { waitFor } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import type { InvalidNameError } from '@proton/drive/sdk';

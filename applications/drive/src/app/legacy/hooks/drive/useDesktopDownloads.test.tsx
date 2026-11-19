@@ -1,4 +1,5 @@
-import { renderHook } from '@testing-library/react-hooks';
+import type { RenderHookResult } from '@testing-library/react';
+import { renderHook, waitFor } from '@testing-library/react';
 
 import { fetchDesktopVersion } from '@proton/shared/lib/apps/desktopVersions';
 
@@ -12,11 +13,12 @@ const originalConsoleWarn = console.warn;
 const mockConsoleWarn = jest.fn();
 
 describe('useDesktopDownloads', () => {
-    let hook: ReturnType<typeof renderHook<{}, ReturnType<typeof useDesktopDownloads>>>;
+    let hook: RenderHookResult<ReturnType<typeof useDesktopDownloads>, unknown>;
 
     const render = async () => {
         hook = renderHook(() => useDesktopDownloads());
-        await hook.waitForNextUpdate();
+        // Wait for the fetch on mount to settle
+        await waitFor(() => expect(hook.result.current.isLoading).toBe(false));
     };
 
     const assertOK = (
