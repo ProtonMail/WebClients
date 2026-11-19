@@ -2,18 +2,16 @@ import { APPS, APPS_CONFIGURATION } from "@proton/shared/lib/constants";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
-import { app, BrowserWindow, Event, nativeTheme, Rectangle, WebContents, WebContentsView } from "electron";
+import { app, BrowserWindow, Event, nativeTheme, Rectangle, WebContentsView } from "electron";
 import { debounce } from "lodash";
 import { join } from "node:path";
 import { c } from "ttag";
-import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constants/zoom";
-import { getAppURL, URLConfig } from "../../store/urlStore";
-import { updateDownloaded } from "../../update";
-import { confirmQuitWithActiveDownloads } from "../downloads";
+import { DEFAULT_ZOOM_FACTOR } from "../../constants/zoom";
+import { getAppURL } from "../../store/urlStore";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, sanitizeUrlForLogging, viewLogger } from "../log";
-import { setApplicationMenu } from "../menus/menuApplication";
+import { IGNORED_NET_ERROR_CODES } from "../netErrors";
 import {
     getLocalID,
     isAccountLogin,
@@ -26,34 +24,20 @@ import {
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { MenuBarMonitor } from "./MenuBarMonitor";
-import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
+import {
+    getCurrentViewID,
+    getMainWindow,
+    getMainWindowOrUndefined,
+    getViewURL,
+    setCurrentViewID,
+    setMainWindow,
+    ViewID,
+    viewMap,
+    viewURLMap,
+} from "./viewState";
 import { handleBeforeInput } from "./windowShortcuts";
 
-type ViewID = keyof URLConfig;
-
-let currentViewID: ViewID;
-
-const viewMap: Record<ViewID, WebContentsView | undefined> = {
-    meet: undefined,
-    account: undefined,
-};
-
 const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
-    meet: undefined,
-    account: undefined,
-};
-
-// If some view is showing url X, and we call loadURL with url Y, webContents.getURL()
-// will return X until Y has fully loaded (all network requests have finished, including resource loading).
-// This has historically introduced lots of race condition issues, because we have to either assume
-// that we are still on X url or wait until the load process of Y has fully finished. This information
-// is something we need during view changes, like the login process or navigating to settings view.
-//
-// Although viewURLMap can introduce inconsistencies, the only possible side effect might be some duplicated
-// loading, but at least we have a synchronous source of truth to check which URL is being shown in a view.
-// It is important to keep this updated in all loadURL and loadFile calls, and also monitor the did-navigate
-// and did-navigate-in-page events.
-const viewURLMap: Record<ViewID, string | undefined> = {
     meet: undefined,
     account: undefined,
 };
@@ -64,63 +48,38 @@ const viewTitleMap: Record<ViewID, string> = {
 };
 
 const PRELOADED_VIEWS: ViewID[] = ["meet"];
-let mainWindow: undefined | BrowserWindow = undefined;
 let loadingView: undefined | WebContentsView = undefined;
 
+export const createMainWindow = () => {
+    const mainWindow = new BrowserWindow(getWindowConfig());
+    setMainWindow(mainWindow);
+    return mainWindow;
+};
+
 /**
- * @see https://www.electronjs.org/docs/latest/api/web-contents#event-did-fail-load
- * @see https://source.chromium.org/chromium/chromium/src/+/main:net/base/net_error_list.h
+ * Call after the application menu is set: MenuBarMonitor reads and createViews hides the menu bar.
  */
-const NET_ERROR_CODE = {
-    ABORTED: -3,
-    CONNECTION_REFUSED: -102,
-    ERR_NAME_NOT_RESOLVED: -105,
-    INVALID_URL: -300,
-};
+export const setUpMainWindow = (mainWindow: BrowserWindow) => {
+    const menuBarMonitor = new MenuBarMonitor(mainWindow);
+    menuBarMonitor.onVisibilityChange(debouncedUpdateViewsBounds);
 
-export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
+    mainWindow.webContents.session.setCertificateVerifyProc((request, callback) => {
+        const callbackValue = checkKeys(request);
+        callback(callbackValue);
+    });
 
-export const getMeetView = () => {
-    return viewMap.meet!;
-};
-
-export const viewCreationAppStartup = async () => {
-    mainWindow = createBrowserWindow();
     createViews();
 
     mainWindow.on("maximize", debouncedUpdateViewsBounds);
     mainWindow.on("unmaximize", debouncedUpdateViewsBounds);
     mainWindow.on("enter-full-screen", debouncedUpdateViewsBounds);
     mainWindow.on("leave-full-screen", debouncedUpdateViewsBounds);
+};
 
-    mainWindow.on("close", (event) => {
-        // We don't want to prevent the close event if the update is downloaded
-        if (updateDownloaded) {
-            return;
-        }
-
-        event.preventDefault();
-
-        // Mac close event doesn't quit the app
-        if (!isMac && !confirmQuitWithActiveDownloads()) {
-            return;
-        }
-
-        if (isMac) {
-            macOSExitEvent(mainWindow!);
-        } else {
-            windowsAndLinuxExitEvent(mainWindow!);
-        }
-    });
-
-    // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
-    const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
-    await new Promise((resolve) => setTimeout(resolve, delay));
-
-    loadURL("meet", getAppURL().meet).then(() => {
-        showView("meet");
-        mainWindow!.show();
-    });
+export const openFirstView = async (viewID: ViewID, url: string) => {
+    await loadURL(viewID, url);
+    showView(viewID);
+    getMainWindow().show();
 };
 
 const createView = (viewID: ViewID) => {
@@ -143,13 +102,14 @@ const createViews = () => {
     viewMap.account = createView("account");
 
     if (isWindows) {
-        mainWindow!.setMenuBarVisibility(false);
+        getMainWindow().setMenuBarVisibility(false);
     }
 
     viewMap.meet.webContents.on("before-input-event", handleBeforeInput);
     viewMap.account.webContents.on("before-input-event", handleBeforeInput);
 
-    mainWindow!.on("resize", () => {
+    getMainWindow().on("resize", () => {
+        const mainWindow = getMainWindowOrUndefined();
         if (!mainWindow || mainWindow.isDestroyed()) {
             return;
         }
@@ -161,23 +121,8 @@ const createViews = () => {
     });
 };
 
-const createBrowserWindow = () => {
-    mainWindow = new BrowserWindow(getWindowConfig());
-
-    setApplicationMenu();
-
-    const menuBarMonitor = new MenuBarMonitor(mainWindow);
-    menuBarMonitor.onVisibilityChange(debouncedUpdateViewsBounds);
-
-    mainWindow.webContents.session.setCertificateVerifyProc((request, callback) => {
-        const callbackValue = checkKeys(request);
-        callback(callbackValue);
-    });
-
-    return mainWindow;
-};
-
 function updateViewBounds(view: WebContentsView | undefined, viewID: ViewID | null = null) {
+    const mainWindow = getMainWindowOrUndefined();
     if (!mainWindow || mainWindow.isDestroyed()) {
         return;
     }
@@ -233,7 +178,7 @@ async function updateLocalID(urlString: string) {
         return urlString;
     }
 
-    const currentURLString = getViewURL(currentViewID);
+    const currentURLString = getViewURL(getCurrentViewID());
     const currentLocalID = getLocalID(currentURLString);
 
     if (currentLocalID === null) {
@@ -252,6 +197,7 @@ async function updateLocalID(urlString: string) {
 }
 
 export async function showView(viewID: ViewID, url: string = "") {
+    const mainWindow = getMainWindowOrUndefined();
     if (!mainWindow || mainWindow.isDestroyed()) {
         return;
     }
@@ -260,7 +206,7 @@ export async function showView(viewID: ViewID, url: string = "") {
     updateViewBounds(view, viewID);
     view.webContents.setZoomFactor(DEFAULT_ZOOM_FACTOR);
 
-    if (viewID === currentViewID) {
+    if (viewID === getCurrentViewID()) {
         if (!url) {
             return;
         }
@@ -269,15 +215,15 @@ export async function showView(viewID: ViewID, url: string = "") {
         return;
     }
 
-    currentViewID = viewID;
-    mainWindow!.title = viewTitleMap[viewID];
+    setCurrentViewID(viewID);
+    mainWindow.title = viewTitleMap[viewID];
 
     if (url && !isSameURL(url, getViewURL(viewID))) {
         await showLoadingPage(viewTitleMap[viewID]);
         await loadURL(viewID, url);
-        mainWindow!.setContentView(view);
+        getMainWindow().setContentView(view);
     } else {
-        mainWindow!.setContentView(view);
+        mainWindow.setContentView(view);
     }
 }
 
@@ -380,6 +326,7 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
 }
 
 async function showLoadingPage(title: string): Promise<void> {
+    const mainWindow = getMainWindowOrUndefined();
     if (!mainWindow) {
         mainLogger.error("Cannot show loading page, mainWindow is null");
         return;
@@ -388,7 +335,7 @@ async function showLoadingPage(title: string): Promise<void> {
     loadingView = new WebContentsView(getWindowConfig());
     await renderLoadingPage(loadingView, title);
 
-    mainWindow.setContentView(loadingView);
+    getMainWindow().setContentView(loadingView);
 }
 
 async function renderLoadingPage(view: WebContentsView, title: string): Promise<void> {
@@ -421,26 +368,11 @@ async function renderLoadingPage(view: WebContentsView, title: string): Promise<
     updateViewBounds(view);
 }
 
-export function getViewURL(viewID: ViewID) {
-    return viewURLMap[viewID] || "";
-}
-
-export function updateViewURL(webContents: WebContents, url: string) {
-    const [viewID] =
-        (Object.entries(viewMap) as Array<[ViewID, WebContentsView]>).find(
-            ([, view]) => view.webContents === webContents,
-        ) || [];
-
-    if (viewID) {
-        viewURLMap[viewID] = url;
-    }
-}
-
 export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
     const appURL = getAppURL();
     const loadPromises = [];
     for (const [viewID, view] of Object.entries(viewMap)) {
-        if (viewID !== currentViewID && view) {
+        if (viewID !== getCurrentViewID() && view) {
             if (PRELOADED_VIEWS.includes(viewID as ViewID) && toHomepage) {
                 const homepageURL = await updateLocalID(appURL[viewID as ViewID]);
                 loadPromises.push(loadURL(viewID as ViewID, homepageURL));
@@ -452,58 +384,8 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
     await Promise.all(loadPromises);
 }
 
-export function getAccountView() {
-    return viewMap.account;
-}
-
-export function getMainWindow() {
-    return mainWindow!;
-}
-
-export function getCurrentViewID() {
-    return currentViewID;
-}
-
-export function getCurrentView() {
-    return viewMap[currentViewID];
-}
-
-export function getWebContentsViewName(webContents: WebContents): ViewID | null {
-    for (const [viewID, view] of Object.entries(viewMap)) {
-        if (view?.webContents === webContents) {
-            return viewID as ViewID;
-        }
-    }
-
-    return null;
-}
-
-export function getZoom() {
-    return DEFAULT_ZOOM_FACTOR;
-}
-
-function setZoom(zoomFactor: ZoomFactor) {
-    for (const view of Object.values(viewMap)) {
-        view?.webContents.setZoomFactor(zoomFactor);
-    }
-}
-
-export function resetZoom() {
-    setZoom(DEFAULT_ZOOM_FACTOR);
-}
-
-export function updateZoom(direction: "in" | "out") {
-    const zoomFactorIndex = ZOOM_FACTOR_LIST.indexOf(getZoom());
-
-    const nextZoomFactor =
-        direction === "in"
-            ? ZOOM_FACTOR_LIST[Math.min(ZOOM_FACTOR_LIST.length - 1, zoomFactorIndex + 1)]
-            : ZOOM_FACTOR_LIST[Math.max(0, zoomFactorIndex - 1)];
-
-    setZoom(nextZoomFactor);
-}
-
 export const bringWindowToFront = () => {
+    const mainWindow = getMainWindowOrUndefined();
     if (!mainWindow) {
         return;
     }

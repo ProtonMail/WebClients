@@ -16,7 +16,7 @@ import { isLinux, isMac, isWindows } from "./helpers";
 import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
-import { getAccountView, getCurrentViewID, getMainWindow } from "./view/viewManagement";
+import { getAccountView, getCurrentViewID, getMainWindow } from "./view/viewState";
 import { describeError, getFilteredHomePath, NET_LOGGER_VIEW_PREFIX, sanitizeUrlForLogging, sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
 import { getOSInfo } from "./log/getOSInfo";

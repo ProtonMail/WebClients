@@ -1,5 +1,6 @@
 import { Event, Input, WebContentsView } from "electron";
-import { getMainWindow, updateZoom } from "./viewManagement";
+import { getMainWindow } from "./viewState";
+import { updateZoom } from "./zoom";
 import { isLinux, isWindows } from "../helpers";
 import { getFeatureFlagManager } from "../flags/manager";
 import { FeatureFlag } from "../flags/flags";

@@ -2,7 +2,8 @@ import { Event, app } from "electron";
 import { isMac } from "../helpers";
 import { protocolLogger } from "../log";
 import { isMeet, isNavigationAllowed } from "../urls/urlTests";
-import { bringWindowToFront, getMainWindow, showView } from "../view/viewManagement";
+import { bringWindowToFront, showView } from "../view/viewManagement";
+import { getMainWindow } from "../view/viewState";
 
 const DEEPLINK_PROTOCOL = "proton-meet";
 
