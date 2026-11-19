@@ -3,12 +3,17 @@ import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { getUrlMeetingLinkName, getUrlMeetingPassword } from '../hooks/srp/getUrlMeetingParams';
-import { getBrowserPreference, getDesktopAppOption, tryOpenInDesktopApp } from './desktopAppDetector';
+import {
+    getBrowserPreference,
+    getDesktopAppOption,
+    getDesktopAppPreference,
+    tryOpenInDesktopApp,
+} from './desktopAppDetector';
 import { getOpenInDesktopAppStorageKey } from './storage';
 
 const OPEN_DESKTOP_APP_ON_LOAD_FLAG = 'MeetOpenDesktopAppOnLoad';
 
-let meetingLinkNameTriedOnLoad: string | undefined;
+let triedMeetingLinkName: string | undefined;
 
 const getMeetingFromLocation = () => {
     try {
@@ -26,7 +31,14 @@ const getMeetingFromLocation = () => {
     }
 };
 
-export const wasDesktopAppTriedOnLoad = (meetingLinkName: string) => meetingLinkName === meetingLinkNameTriedOnLoad;
+const openMeetingFromLocation = () => {
+    const meeting = getMeetingFromLocation();
+
+    if (meeting && meeting.meetingLinkName !== triedMeetingLinkName) {
+        tryOpenInDesktopApp(meeting.meetingLink);
+        triedMeetingLinkName = meeting.meetingLinkName;
+    }
+};
 
 export const openDesktopAppOnLoad = ({
     unleashClient,
@@ -35,7 +47,7 @@ export const openDesktopAppOnLoad = ({
     unleashClient: Pick<MeetExtraThunkArguments['unleashClient'], 'isEnabled'>;
     userId?: string;
 }) => {
-    meetingLinkNameTriedOnLoad = undefined;
+    triedMeetingLinkName = undefined;
 
     if (isElectronApp) {
         return;
@@ -49,10 +61,25 @@ export const openDesktopAppOnLoad = ({
         return;
     }
 
-    const meeting = getMeetingFromLocation();
+    openMeetingFromLocation();
+};
 
-    if (meeting) {
-        tryOpenInDesktopApp(meeting.meetingLink);
-        meetingLinkNameTriedOnLoad = meeting.meetingLinkName;
+// The pre-join page covers what the load cannot: a meeting opened from the dashboard, a flag that arrived after the load,
+// and the app chosen where it is not opened on load
+export const openDesktopAppOnPreJoin = ({
+    isOpenDesktopAppOnLoadEnabled,
+    desktopAppPreferenceStorageKey,
+}: {
+    isOpenDesktopAppOnLoadEnabled: boolean;
+    desktopAppPreferenceStorageKey: string;
+}) => {
+    const desktopAppOption = getDesktopAppOption(isOpenDesktopAppOnLoadEnabled);
+    const shouldOpen =
+        desktopAppOption === 'openOnLoad'
+            ? !getBrowserPreference(desktopAppPreferenceStorageKey)
+            : desktopAppOption === 'appButton' && getDesktopAppPreference(desktopAppPreferenceStorageKey);
+
+    if (shouldOpen) {
+        openMeetingFromLocation();
     }
 };

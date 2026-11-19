@@ -13,7 +13,7 @@ import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { useSendOnce } from '../../telemetry/useSendOnce';
 import { saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { useDesktopAppPreferenceStorageKey } from './useDesktopAppPreferenceStorageKey';
-import { useLaunchDesktopAppOnLoad } from './useLaunchDesktopAppOnLoad';
+import { useOpenDesktopAppOnPreJoin } from './useOpenDesktopAppOnPreJoin';
 
 import './OpenInDesktopApp.scss';
 
@@ -22,7 +22,7 @@ const DOWNLOAD_URL = 'https://proton.me/meet/download';
 export const OpenInDesktopApp = () => {
     const meetingLink = useMeetSelector(selectMeetingLink);
     const desktopAppPreferenceStorageKey = useDesktopAppPreferenceStorageKey();
-    useLaunchDesktopAppOnLoad();
+    useOpenDesktopAppOnPreJoin();
     const [isAppDidNotOpenHintVisible, setIsAppDidNotOpenHintVisible] = useState(false);
 
     useSendOnce(() => sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_shown));
