@@ -11,6 +11,7 @@ import { useGuestMigrationNotification } from '../components/useGuestMigrationNo
 import { useDataLossWarningNotification } from '../hooks/useDataLossWarningNotification';
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
 import { useResourceLimitNotifications } from '../hooks/useResourceLimitNotifications';
+import { useUserSettingsLoadFailedNotification } from '../hooks/useUserSettingsLoadFailedNotification';
 import { ArtifactPanelHostProvider } from '../providers/ArtifactPanelHostProvider';
 import { DragAreaProvider } from '../providers/DragAreaProvider';
 import { GhostChatProvider } from '../providers/GhostChatProvider';
@@ -36,6 +37,7 @@ const MainLayoutContent = ({ children }: Props) => {
     useGuestMigrationNotification();
     useResourceLimitNotifications();
     useDataLossWarningNotification();
+    useUserSettingsLoadFailedNotification();
     useNativeSidebarLayoutApi();
     useNativeRightPanelLayoutApi(chatRef);
 

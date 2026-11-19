@@ -486,19 +486,19 @@ export class LumoApi {
     }
 
     // User settings methods
-    public async getUserSettings(): Promise<SerializedUserSettings | null> {
-        try {
-            const data = await this.callListJson('settings');
-            const userSettingsFromApi = data?.UserSettings as UserSettingsFromApi;
 
-            if (!userSettingsFromApi) {
-                return null;
-            }
-            return convertUserSettingsFromApi(userSettingsFromApi);
-        } catch (error) {
-            console.warn('Failed to get user settings:', error);
+    /**
+     * Returns `null` when the user has no settings: Slim-API then answers 200 with a placeholder whose `Encrypted` is
+     * null. Any failed request throws, so callers never mistake it for an empty account and save over the settings.
+     */
+    public async getUserSettings(): Promise<SerializedUserSettings | null> {
+        const data = await this.callListJson('settings');
+        const userSettingsFromApi = data?.UserSettings as UserSettingsFromApi | undefined;
+
+        if (!userSettingsFromApi?.Encrypted) {
             return null;
         }
+        return convertUserSettingsFromApi(userSettingsFromApi);
     }
 
     public async postUserSettings(userSettingsArgs: UserSettingsToApi): Promise<RemoteStatus> {

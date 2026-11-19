@@ -29,28 +29,27 @@ function makeState(remoteUserSettingsUndecryptable: boolean): LumoState {
 describe('saveLumoUserSettingsToRemote — must not clobber an undecryptable remote blob (LUMO-853)', () => {
     afterEach(() => jest.resetModules());
 
-    it('skips the remote PUT/POST entirely when the remote blob is flagged as undecryptable', async () => {
-        const getUserSettings = jest.fn(() => Promise.resolve({ UserSettingsTag: 'x', Encrypted: 'y' }));
+    it('skips writes while the same undecryptable blob remains protected', async () => {
+        const getUserSettings = jest.fn(() => Promise.resolve({ userSettingsTag: 'x', encrypted: 'y' }));
         const putUserSettings = jest.fn(() => Promise.resolve(undefined));
         const postUserSettings = jest.fn(() => Promise.resolve(undefined));
 
-        jest.doMock('../../crypto', () => ({
-            base64ToMasterKey: () => Promise.resolve({ wrappingKey: {} }),
-        }));
         jest.doMock('../../serialization', () => ({
-            serializeUserSettings: () => Promise.resolve({ UserSettingsTag: 'tag', Encrypted: 'enc' }),
+            deserializeUserSettingsWithMasterKeys: () =>
+                Promise.resolve({ userSettings: null, needsMasterKeyMigration: false }),
+        }));
+        jest.doMock('../../util/masterKeys', () => ({
+            buildMasterKeyContext: () => Promise.resolve({ primary: { id: 'primary' }, legacy: [] }),
         }));
 
-        const { saveLumoUserSettingsToRemote } = await import('./lumoUserSettingsThunks');
+        const { loadLumoUserSettingsFromRemote, saveLumoUserSettingsToRemote } =
+            await import('./lumoUserSettingsThunks');
+        const extra = { lumoApi: { getUserSettings, putUserSettings, postUserSettings } } as never;
+        await loadLumoUserSettingsFromRemote()(jest.fn() as never, () => makeState(false), extra);
 
-        const thunk = saveLumoUserSettingsToRemote({ theme: 'dark' } as never);
-        await thunk(
-            jest.fn() as never,
-            () => makeState(true),
-            { lumoApi: { getUserSettings, putUserSettings, postUserSettings } } as never
-        );
+        const thunk = saveLumoUserSettingsToRemote({ theme: 'dark' });
+        await thunk(jest.fn() as never, () => makeState(true), extra);
 
-        expect(getUserSettings).not.toHaveBeenCalled();
         expect(putUserSettings).not.toHaveBeenCalled();
         expect(postUserSettings).not.toHaveBeenCalled();
     });
@@ -60,21 +59,24 @@ describe('saveLumoUserSettingsToRemote — must not clobber an undecryptable rem
         const putUserSettings = jest.fn(() => Promise.resolve(undefined));
         const postUserSettings = jest.fn(() => Promise.resolve(undefined));
 
-        jest.doMock('../../crypto', () => ({
-            base64ToMasterKey: () => Promise.resolve({ wrappingKey: {} }),
-        }));
         jest.doMock('../../serialization', () => ({
             serializeUserSettings: () => Promise.resolve({ UserSettingsTag: 'tag', Encrypted: 'enc' }),
+            deserializeUserSettingsWithMasterKeys: () =>
+                Promise.resolve({
+                    userSettings: { theme: 'light', personalization: {} },
+                    needsMasterKeyMigration: false,
+                }),
+        }));
+        jest.doMock('../../util/masterKeys', () => ({
+            buildMasterKeyContext: () => Promise.resolve({ primary: { id: 'primary' }, legacy: [] }),
         }));
 
         const { saveLumoUserSettingsToRemote } = await import('./lumoUserSettingsThunks');
 
-        const thunk = saveLumoUserSettingsToRemote({ theme: 'dark' } as never);
-        await thunk(
-            jest.fn() as never,
-            () => makeState(false),
-            { lumoApi: { getUserSettings, putUserSettings, postUserSettings } } as never
-        );
+        const thunk = saveLumoUserSettingsToRemote({ theme: 'dark' });
+        await thunk(jest.fn() as never, () => makeState(false), {
+            lumoApi: { getUserSettings, putUserSettings, postUserSettings },
+        } as never);
 
         expect(putUserSettings).toHaveBeenCalledTimes(1);
         expect(postUserSettings).not.toHaveBeenCalled();
@@ -96,7 +98,7 @@ describe('loadLumoUserSettingsFromRemote — flags an existing-but-undecryptable
         const { loadLumoUserSettingsFromRemote } = await import('./lumoUserSettingsThunks');
         const { setRemoteUserSettingsUndecryptable } = await import('./meta/initialization');
 
-        const getUserSettings = jest.fn(() => Promise.resolve({ UserSettingsTag: 'x', Encrypted: 'stale-blob' }));
+        const getUserSettings = jest.fn(() => Promise.resolve({ userSettingsTag: 'x', encrypted: 'stale-blob' }));
         const dispatched: unknown[] = [];
         const dispatch = jest.fn((action: unknown) => {
             dispatched.push(action);
@@ -104,7 +106,9 @@ describe('loadLumoUserSettingsFromRemote — flags an existing-but-undecryptable
         });
 
         const thunk = loadLumoUserSettingsFromRemote();
-        const result = await thunk(dispatch as never, () => makeState(false), { lumoApi: { getUserSettings } } as never);
+        const result = await thunk(dispatch as never, () => makeState(false), {
+            lumoApi: { getUserSettings },
+        } as never);
 
         expect((result as { payload: unknown }).payload).toBeNull();
         expect(dispatched).toEqual(

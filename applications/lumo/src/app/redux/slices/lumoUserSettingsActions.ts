@@ -10,3 +10,4 @@ export const updateLumoUserSettingsWithAutoSave = createAction<Partial<LumoUserS
 );
 export const resetLumoUserSettings = createAction('lumoUserSettings/resetLumoUserSettings');
 export const setLumoUserSettings = createAction<LumoUserSettings>('lumoUserSettings/setLumoUserSettings');
+export const refreshLumoUserSettings = createAction('lumoUserSettings/refreshLumoUserSettings');

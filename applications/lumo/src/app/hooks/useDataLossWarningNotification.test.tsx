@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react';
 
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { dismissDataLossWarning } from '../redux/slices/meta/errors';
-import { setRemoteUserSettingsUndecryptable } from '../redux/slices/meta/initialization';
+import { acknowledgeLumoDataLossWarning } from '../redux/slices/meta/initialization';
 import { useDataLossWarningNotification } from './useDataLossWarningNotification';
 
 jest.mock('../redux/hooks', () => ({
@@ -26,7 +26,7 @@ describe('useDataLossWarningNotification', () => {
         mockedUseLumoDispatch.mockReturnValue(dispatch);
     });
 
-    it('shows a toast and clears remoteUserSettingsUndecryptable once a data-loss warning lands', () => {
+    it('shows the toast and records that the recovery warning was shown', () => {
         mockedUseLumoSelector.mockImplementation((selector) =>
             selector({ errors: { dataLossWarnings: [{ id: 'warning-1', timestamp: 1 }] } })
         );
@@ -37,7 +37,7 @@ describe('useDataLossWarningNotification', () => {
         expect(createNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'warning' }));
 
         expect(dispatch).toHaveBeenCalledWith(dismissDataLossWarning('warning-1'));
-        expect(dispatch).toHaveBeenCalledWith(setRemoteUserSettingsUndecryptable(false));
+        expect(dispatch).toHaveBeenCalledWith(acknowledgeLumoDataLossWarning());
     });
 
     it('does nothing when there are no warnings', () => {
