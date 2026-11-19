@@ -19,7 +19,11 @@ export type BackgroundEffectType = 'none' | 'blur' | 'preset' | 'custom';
 export type LayoutDimension = 'gallery' | 'speaker' | 'screen_share';
 export type MediaToggleTrigger = 'button' | 'keyboard_shortcut' | 'host_action';
 export type PictureInPictureTrigger =
-    'screen_share_start' | 'window_blur' | 'browser_media_control' | 'user_closed' | 'screen_share_end';
+    | 'screen_share_start'
+    | 'window_blur'
+    | 'browser_media_control'
+    | 'user_closed'
+    | 'screen_share_end';
 type LayoutTrigger = 'manual' | 'auto_screen_share';
 type SuccessOutcome = 'success' | 'failed';
 export type PermissionOutcome = 'granted' | 'denied' | 'dismissed';
@@ -109,6 +113,7 @@ export interface MeetActionsDimensions {
     [Actions.meeting_details_opened]: NoDimensions;
     [Actions.connection_lost_modal_shown]: NoDimensions;
     [Actions.connection_lost_modal_answered]: { action: 'rejoin' | 'leave'; outcome: SuccessOutcome };
+    [Actions.audio_playback_recovered]: { trigger: 'retry' | 'user_tap'; fromState: AudioContextState };
 }
 
 export interface MeetActionsValues {
