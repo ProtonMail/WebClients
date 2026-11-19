@@ -58,6 +58,10 @@ const mockNode: Partial<NodeEntity> = {
             ok: true,
             value: 'test@example.com',
         },
+        acceptedBy: {
+            ok: true,
+            value: 'invitee@example.com',
+        },
     },
 };
 const mockDrive = {

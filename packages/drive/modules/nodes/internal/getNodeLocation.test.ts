@@ -39,6 +39,7 @@ const createMockNode = (
             role,
             inviteTime: new Date(),
             sharedBy: { ok: true, value: 'sharer@proton.me' },
+            acceptedBy: { ok: true, value: 'test@proton.me' },
         },
     }),
 });

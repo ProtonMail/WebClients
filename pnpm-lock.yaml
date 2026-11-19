@@ -237,8 +237,8 @@ catalogs:
       specifier: ^2.2.0
       version: 2.2.0
     '@protontech/drive-sdk':
-      specifier: ^0.23.0
-      version: 0.23.0
+      specifier: ^0.24.0
+      version: 0.24.0
     '@protontech/logger':
       specifier: ^1.0.0
       version: 1.0.0
@@ -1898,7 +1898,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
+        version: 0.24.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -2356,7 +2356,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
+        version: 0.24.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -2772,7 +2772,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
+        version: 0.24.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@protontech/timezone-support':
         specifier: 'catalog:'
         version: 2.2.0
@@ -5368,7 +5368,7 @@ importers:
         version: link:../utils
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
+        version: 0.24.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -7072,7 +7072,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
+        version: 0.24.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@sentry/types':
         specifier: 'catalog:'
         version: 7.120.4
@@ -11101,7 +11101,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@protontech/drive-sdk':
         specifier: 'catalog:'
-        version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
+        version: 0.24.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@tpe/loki-client':
         specifier: 0.2.1
         version: 0.2.1(encoding@0.1.13)(supports-color@11.0.0)
@@ -12841,8 +12841,8 @@ packages:
   '@blazediff/core@1.10.0':
     resolution: {integrity: sha512-AOQff0zgR7cGsZL+4E7hVkmujoPUpm0J9xzWGWZj5wCjd3gmxESXAPfKyuzs93VdpQNFhHlBhfOjrcZ+XTERtQ==}
 
-  '@boltffi/runtime@0.31.0':
-    resolution: {integrity: sha512-nxht21tsG0KLzkdN2gHqSAZv7Ainht5v/Q6ZGVT8xXAmJKdewk4PwwryLeQR4xrejwDOtuWRD7p7OGkKGw8JIQ==}
+  '@boltffi/runtime@0.31.1':
+    resolution: {integrity: sha512-yo9jK8vSKrTW5/SU5J3zB3QuhCx3Z5m/jrX5CyCWIkVKHokv5hNgjz4urFj23aXHR46aItz2F5cOIs/m+TYKIg==}
 
   '@braintree/sanitize-url@7.1.2':
     resolution: {integrity: sha512-jigsZK+sMF/cuiB7sERuo9V7N9jx+dhmHHnQyDSVdpZwVutaBu7WvNYqMDLSgFgfB30n452TP3vjDAvFC973mA==}
@@ -17022,10 +17022,10 @@ packages:
   '@protontech/crypto@2.2.0':
     resolution: {integrity: sha256-a1IzJ+1yxhc/hsDs6XCZYXTGyBvlqi+P+L0cPabd6uQ=}
 
-  '@protontech/drive-sdk@0.23.0':
-    resolution: {integrity: sha512-64oDsEBwjRiuQCxVi/ogoiked8Whm+I3DorUkD4n4esaqREBQ1qHTobzwkKFR+4h8kkc7K5KcjPMPDfZiD8lHw==}
+  '@protontech/drive-sdk@0.24.0':
+    resolution: {integrity: sha512-A4h61EPWhq+9yYpE9VLOwnnlpTxjWSOWJHI9rrpjlDrUoQlWLT1ngw/6JUestAy2HsahkljcZk9h1EuKumjJ9g==}
     peerDependencies:
-      '@protontech/crypto': ^2.0.0
+      '@protontech/crypto': ^2.2.0
 
   '@protontech/fathom@0.0.42001045':
     resolution: {integrity: sha512-2Ple0Bh3f9Uqw8g/BWMnHxZCKoxelrkKrazlOZ+XDM3J6YjdVaWuhm9D1cXvfW7kdajGdmvDFBFl3WMaV9f09Q==}
@@ -30409,7 +30409,7 @@ snapshots:
 
   '@blazediff/core@1.10.0': {}
 
-  '@boltffi/runtime@0.31.0': {}
+  '@boltffi/runtime@0.31.1': {}
 
   '@braintree/sanitize-url@7.1.2': {}
 
@@ -34959,9 +34959,9 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@protontech/drive-sdk@0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))':
+  '@protontech/drive-sdk@0.24.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))':
     dependencies:
-      '@boltffi/runtime': 0.31.0
+      '@boltffi/runtime': 0.31.1
       '@noble/hashes': 1.8.0
       '@protontech/crypto': 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       comlink: 4.4.2
