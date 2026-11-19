@@ -66,11 +66,6 @@ export const queryLatestVolumeEvent = (volumeId: string) => ({
     method: 'get',
 });
 
-export const queryVolumeEvents = (volumeId: string, eventId: string) => ({
-    url: `drive/volumes/${volumeId}/events/${eventId}`,
-    method: 'get',
-});
-
 export const queryTransferPhotoLinks = (volumeID: string, data: TransferPhotoLinks) => ({
     method: 'put',
     url: `drive/volumes/${volumeID}/links/transfer-multiple`,

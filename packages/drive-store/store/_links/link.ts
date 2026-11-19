@@ -29,8 +29,6 @@ const WINDOWS_RESERVED_NAMES = [
     'LPT9',
 ];
 
-export const formatLinkName = (str: string) => str.trim();
-
 export const splitLinkName = (linkName: string) => {
     if (linkName.endsWith('.')) {
         return [linkName, ''];

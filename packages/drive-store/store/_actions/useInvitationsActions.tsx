@@ -12,17 +12,13 @@ import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useInvitations } from '../_invitations/useInvitations';
 import { useInvitationsState } from '../_invitations/useInvitationsState';
 import useLink from '../_links/useLink';
-import useLinksListing from '../_links/useLinksListing/useLinksListing';
-import useVolumesState from '../_volumes/useVolumesState';
 
 export const useInvitationsActions = () => {
-    const { setVolumeShareIds } = useVolumesState();
     const { getLink } = useLink();
     const { acceptInvitation, rejectInvitation } = useInvitations();
     const { createNotification } = useNotifications();
     const invitationsState = useInvitationsState();
     const { getInvitation } = useInvitations();
-    const linksListing = useLinksListing();
 
     const handleAcceptInvitation = async (
         abortSignal: AbortSignal,
@@ -71,8 +67,6 @@ export const useInvitationsActions = () => {
         if (preloadLink) {
             await getLink(abortSignal, invitation.share.shareId, invitation.link.linkId);
         }
-        linksListing.setShareIdsState([invitation.share.shareId]);
-        setVolumeShareIds(invitation.share.volumeId, [invitation.share.shareId]);
         /* --- SECTION-END --- */
 
         invitationsState.removeInvitations([invitation.invitation.invitationId]);

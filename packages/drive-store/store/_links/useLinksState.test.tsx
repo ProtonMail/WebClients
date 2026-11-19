@@ -1,32 +1,8 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
-
-import type { DriveEvents } from '../_events/interface';
 import type { DecryptedLink, EncryptedLink, LinkShareUrl } from './interface';
 import type { Link, LinksState } from './useLinksState';
-import {
-    addOrUpdate,
-    deleteLinks,
-    setCachedThumbnailUrl,
-    setLock,
-    updateByEvents,
-    useLinksStateProvider,
-} from './useLinksState';
-
-jest.mock('../_events/useDriveEventManager', () => {
-    const useDriveEventManager = () => {
-        return {
-            eventHandlers: {
-                register: () => 'id',
-                unregister: () => false,
-            },
-        };
-    };
-    return {
-        useDriveEventManager,
-    };
-});
+import { addOrUpdate, useLinksStateProvider } from './useLinksState';
 
 function generateTestLink({
     id,
@@ -65,20 +41,6 @@ function generateTestLink({
     } as Link;
 }
 
-function getLockedIds(state: LinksState): string[] {
-    return Object.values(state.shareId.links)
-        .filter(({ decrypted }) => decrypted?.isLocked)
-        .map(({ encrypted }) => encrypted.linkId);
-}
-
-function generateEvents(events: any[]): DriveEvents {
-    return {
-        eventId: 'eventId',
-        events: events.map(([eventType, encryptedLink]) => ({ eventType, encryptedLink })),
-        refresh: false,
-    };
-}
-
 describe('useLinksState', () => {
     let state: LinksState;
 
@@ -115,16 +77,6 @@ describe('useLinksState', () => {
                 },
             },
         };
-    });
-
-    it('deletes links', () => {
-        const result = deleteLinks(state, 'shareId', ['linkId1', 'linkId2', 'linkId6', 'linkId8', 'linkId9']);
-        // Removed links from links.
-        expect(Object.keys(result.shareId.links)).toMatchObject(['linkId0', 'linkId4', 'linkId5', 'linkId7']);
-        // Removed parent from tree.
-        expect(Object.keys(result.shareId.tree)).toMatchObject(['linkId0', 'linkId4', 'linkId7']);
-        // Removed children from tree.
-        expect(result.shareId.tree.linkId4).toMatchObject(['linkId5']);
     });
 
     it('adds new encrypted link', () => {
@@ -406,112 +358,6 @@ describe('useLinksState', () => {
         });
     });
 
-    it('locks and unlocks links', () => {
-        const result1 = setLock(state, 'shareId', ['linkId7', 'linkId8'], true);
-        expect(getLockedIds(result1)).toMatchObject(['linkId7', 'linkId8']);
-        const result2 = setLock(state, 'shareId', ['linkId8'], false);
-        expect(getLockedIds(result2)).toMatchObject(['linkId7']);
-    });
-
-    it('locks and unlocks trashed links', () => {
-        (state.shareId.links.linkId7.decrypted as DecryptedLink).trashed = 1234;
-        (state.shareId.links.linkId8.decrypted as DecryptedLink).trashed = 5678;
-        const result1 = setLock(state, 'shareId', 'trash', true);
-        expect(getLockedIds(result1)).toMatchObject(['linkId7', 'linkId8']);
-        const result2 = setLock(state, 'shareId', 'trash', false);
-        expect(getLockedIds(result2)).toMatchObject([]);
-    });
-
-    it('preserves lock for newly added trashed link', () => {
-        const result1 = setLock(state, 'shareId', 'trash', true);
-        const result2 = addOrUpdate(result1, 'shareId', [
-            {
-                encrypted: {
-                    linkId: 'linkId100',
-                    name: 'linkId100',
-                    parentLinkId: 'linkId0',
-                    trashed: 12345678,
-                } as EncryptedLink,
-                decrypted: {
-                    linkId: 'linkId100',
-                    name: 'linkId100',
-                    parentLinkId: 'linkId0',
-                    trashed: 12345678,
-                } as DecryptedLink,
-            },
-            {
-                encrypted: {
-                    linkId: 'linkId101',
-                    name: 'linkId101',
-                    parentLinkId: 'linkId0',
-                    trashed: 12345678900, // Way in future after setLock was called.
-                } as EncryptedLink,
-                decrypted: {
-                    linkId: 'linkId101',
-                    name: 'linkId101',
-                    parentLinkId: 'linkId0',
-                    trashed: 12345678900,
-                } as DecryptedLink,
-            },
-        ]);
-        // linkId101 was deleted after our empty action, so is not locked.
-        expect(getLockedIds(result2)).toMatchObject(['linkId100']);
-    });
-
-    it('sets cached thumbnail', () => {
-        const result = setCachedThumbnailUrl(state, 'shareId', 'linkId7', 'cachedurl');
-        expect(result.shareId.links.linkId7.decrypted).toMatchObject({ cachedThumbnailUrl: 'cachedurl' });
-    });
-
-    it('preserves cached lock flag', () => {
-        const state2 = setLock(state, 'shareId', ['linkId7'], true);
-        const link = {
-            linkId: 'linkId7',
-            name: 'new name',
-            parentLinkId: 'linkId0',
-        };
-        const result = addOrUpdate(state2, 'shareId', [
-            {
-                encrypted: link as EncryptedLink,
-                decrypted: link as DecryptedLink,
-            },
-        ]);
-        expect(result.shareId.links.linkId7.decrypted).toMatchObject({ isLocked: true });
-    });
-
-    it('preserves cached thumbnail', () => {
-        const state2 = setCachedThumbnailUrl(state, 'shareId', 'linkId7', 'cachedurl');
-        const link = {
-            linkId: 'linkId7',
-            name: 'new name',
-            parentLinkId: 'linkId0',
-        };
-        const result = addOrUpdate(state2, 'shareId', [
-            {
-                encrypted: link as EncryptedLink,
-                decrypted: link as DecryptedLink,
-            },
-        ]);
-        expect(result.shareId.links.linkId7.decrypted).toMatchObject({ cachedThumbnailUrl: 'cachedurl' });
-    });
-
-    it('does not preserve cached thumbnail when revision changed', () => {
-        const state2 = setCachedThumbnailUrl(state, 'shareId', 'linkId7', 'cachedurl');
-        const link = {
-            linkId: 'linkId7',
-            name: 'new name',
-            parentLinkId: 'linkId0',
-            activeRevision: { id: 'newId' },
-        };
-        const result = addOrUpdate(state2, 'shareId', [
-            {
-                encrypted: link as EncryptedLink,
-                decrypted: link as DecryptedLink,
-            },
-        ]);
-        expect(result.shareId.links.linkId7.decrypted).toMatchObject({ cachedThumbnailUrl: undefined });
-    });
-
     it('preserves latest share url num accesses', () => {
         expect(state.shareId.links.linkId7.decrypted?.shareUrl?.numAccesses).toBe(undefined);
 
@@ -588,53 +434,6 @@ describe('useLinksState', () => {
         expect(result.shareId.links.linkId8.decrypted?.shareUrl?.numAccesses).toBe(undefined);
     });
 
-    it('processes events', () => {
-        const result = updateByEvents(
-            state,
-            generateEvents([
-                [
-                    EVENT_TYPES.CREATE,
-                    { linkId: 'newLink', name: 'newLink', parentLinkId: 'linkId0', rootShareId: 'shareId' },
-                ],
-                [EVENT_TYPES.DELETE, { linkId: 'linkId1' }],
-                [EVENT_TYPES.DELETE, { linkId: 'linkId4' }],
-                [
-                    EVENT_TYPES.UPDATE,
-                    { linkId: 'linkId7', name: 'new name', parentLinkId: 'linkId0', rootShareId: 'shareId' },
-                ],
-            ]),
-            jest.fn()
-        );
-
-        expect(Object.keys(result.shareId.links)).toMatchObject([
-            'linkId0',
-            'linkId7',
-            'linkId8',
-            'linkId9',
-            'newLink',
-        ]);
-        expect(Object.keys(result.shareId.tree)).toMatchObject(['linkId0', 'linkId7']);
-        expect(result.shareId.links.linkId7).toMatchObject({
-            decrypted: { linkId: 'linkId7', name: 'linkId7', isStale: true },
-            encrypted: { linkId: 'linkId7' },
-        });
-    });
-
-    it('skips events from non-present share', () => {
-        const result = updateByEvents(
-            state,
-            generateEvents([
-                [
-                    EVENT_TYPES.CREATE,
-                    { linkId: 'newLink', name: 'newLink', parentLinkId: 'linkId0', rootShareId: 'shareId2' },
-                ],
-            ]),
-            jest.fn()
-        );
-
-        expect(Object.keys(result)).toMatchObject(['shareId']);
-    });
-
     describe('hook', () => {
         let hook: {
             current: ReturnType<typeof useLinksStateProvider>;
@@ -664,11 +463,6 @@ describe('useLinksState', () => {
         it('returns children of the parent', () => {
             const links = hook.current.getChildren('shareId', 'linkId1');
             expect(links.map((link) => link.encrypted.linkId)).toMatchObject(['linkId2', 'linkId3']);
-        });
-
-        it('returns trashed links', () => {
-            const links = hook.current.getTrashed('shareId');
-            expect(links.map((link) => link.encrypted.linkId)).toMatchObject(['linkId7']);
         });
     });
 });

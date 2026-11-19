@@ -68,7 +68,6 @@ export const useDirectSharingInfo = () => {
     };
 
     return {
-        isSharedWithMe,
         getSharePermissions,
         getDirectSharingInfo,
     };

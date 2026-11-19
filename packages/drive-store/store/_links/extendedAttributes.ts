@@ -71,15 +71,6 @@ export interface ParsedExtendedAttributes {
 
 type MaybeExtendedAttributes = DeepPartial<ExtendedAttributes>;
 
-export async function encryptFolderExtendedAttributes(
-    modificationTime: Date,
-    nodePrivateKey: PrivateKeyReference,
-    addressPrivateKey: PrivateKeyReference
-) {
-    const xattr = createFolderExtendedAttributes(modificationTime);
-    return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
-}
-
 export function createFolderExtendedAttributes(modificationTime: Date): ExtendedAttributes {
     return {
         Common: {

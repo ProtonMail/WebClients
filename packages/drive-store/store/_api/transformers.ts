@@ -1,9 +1,6 @@
 import { getUnixTime } from 'date-fns';
 
-import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
-import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
-import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { type DriveFileRevisionPayload, PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type {
     ShareInvitationDetailsPayload,
@@ -15,8 +12,6 @@ import type { ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import type { Device } from '../_devices/interface';
-import type { DriveEvents } from '../_events/interface';
 import type { EncryptedLink } from '../_links/interface';
 import type { DriveFileRevision } from '../_revisions/interface';
 import type {
@@ -208,45 +203,6 @@ export function shareMetaToShareWithKey(share: ShareMeta): ShareWithKey {
         memberships: share.Memberships.map((membership) => shareMembershipPayloadToShareMembership(membership)),
     };
 }
-
-export function driveEventsResultToDriveEvents({ EventID, Events, Refresh }: DriveEventsResult): DriveEvents {
-    return {
-        eventId: EventID,
-        events: Events.map((event) => ({
-            eventType: event.EventType,
-            data: event.Data
-                ? {
-                      externalInvitationSignup: event.Data.ExternalInvitationSignup,
-                  }
-                : undefined,
-            // ContextShareID is guaranteed to be on the event for all types
-            // besides delete (after link is deleted, it is not possible to
-            // find the share it was part of). For delete operation, it is
-            // fine to keep rootShareId empty as its only for deleting data
-            // from cache. In future, once the cache is volume oriented, it
-            // will not be a problem, because we will always know proper
-            // volume ID.
-            encryptedLink:
-                event.EventType === EVENT_TYPES.DELETE
-                    ? linkMetaToEncryptedLink(event.Link, '')
-                    : linkMetaToEncryptedLink(event.Link, event.ContextShareID),
-            originShareId: event.EventType === EVENT_TYPES.DELETE ? undefined : event.FromContextShareID,
-        })),
-        refresh: Refresh !== 0,
-    };
-}
-
-export const deviceInfoToDevices = (info: DevicePayload): Device => {
-    return {
-        id: info.Device.DeviceID,
-        volumeId: info.Device.VolumeID,
-        shareId: info.Share.ShareID,
-        name: info.Share.Name,
-        modificationTime: info.Device.ModifyTime,
-        linkId: info.Share.LinkID,
-        haveLegacyName: !!info.Share.Name,
-    };
-};
 
 export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): DriveFileRevision => {
     return {

@@ -15,10 +15,6 @@ export const PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY = 'public-share-redirect
  * When retrieving an URL password, it is recommended to use these functions and not re-create others.
  */
 
-export const deleteStoredUrlPassword = () => {
-    localStorageWithExpiry.deleteData(PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY);
-};
-
 const getUrlPasswordWithCustomPassword = (urlPassword: string) => {
     // Since we can have custom password in urlPassword we retrieve the generated password from it to open link without it
     // We can force type 2 of flags as we hide bookmarking feature to legacy shared url pages

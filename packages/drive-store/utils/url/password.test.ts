@@ -1,21 +1,11 @@
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 
-import { PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY, deleteStoredUrlPassword, getUrlPassword } from './password';
+import { PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY, getUrlPassword } from './password';
 
 describe('URL Password Functions', () => {
     afterEach(() => {
-        deleteStoredUrlPassword();
+        localStorageWithExpiry.deleteData(PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY);
         jest.clearAllMocks();
-    });
-
-    describe('deleteStoredUrlPassword', () => {
-        it('should remove password from localStorage', () => {
-            localStorageWithExpiry.storeData(PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY, 'testPassword');
-            expect(getUrlPassword()).toBe('testPassword');
-            deleteStoredUrlPassword();
-            window.location.hash = '';
-            expect(getUrlPassword()).toBe('');
-        });
     });
 
     describe('getUrlPassword', () => {

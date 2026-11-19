@@ -7221,24 +7221,15 @@ importers:
       '@proton/app-context':
         specifier: workspace:^
         version: link:../app-context
-      '@proton/atoms':
-        specifier: workspace:^
-        version: link:../atoms
       '@proton/components':
         specifier: workspace:^
         version: link:../components
       '@proton/drive':
         specifier: workspace:^
         version: link:../drive
-      '@proton/file-icons':
-        specifier: workspace:^
-        version: link:../file-icons
       '@proton/hooks':
         specifier: workspace:^
         version: link:../hooks
-      '@proton/icons':
-        specifier: workspace:^
-        version: link:../icons
       '@proton/metrics':
         specifier: workspace:^
         version: link:../metrics
@@ -7251,9 +7242,6 @@ importers:
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
-      '@proton/styles':
-        specifier: workspace:^
-        version: link:../styles
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash

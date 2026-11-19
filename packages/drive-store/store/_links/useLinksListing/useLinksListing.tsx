@@ -10,7 +10,6 @@ import type { DecryptedLink } from './../interface';
 import useLinksState from './../useLinksState';
 import type { FetchMeta, FetchResponse, SortParams } from './useLinksListingHelpers';
 import { PAGE_SIZE, sortParamsToServerSortArgs, useLinksListingHelpers } from './useLinksListingHelpers';
-import { useSharedWithMeLinksListingByVolume } from './useSharedWithMeLinksListingByVolume';
 
 type FetchState = {
     [shareId: string]: FetchShareState;
@@ -55,7 +54,6 @@ type FetchShareState = {
 export function useLinksListingProvider() {
     const debouncedRequest = useDebouncedRequest();
     const linksState = useLinksState();
-    const sharedWithMeLinksListingByVolume = useSharedWithMeLinksListingByVolume();
 
     const { fetchNextPageWithSortingHelper, loadFullListing, getDecryptedLinksAndDecryptRest } =
         useLinksListingHelpers();
@@ -194,9 +192,6 @@ export function useLinksListingProvider() {
         fetchChildrenNextPage,
         loadChildren,
         getCachedChildren,
-
-        // TODO: Remove this with Invitation section refactor
-        setShareIdsState: sharedWithMeLinksListingByVolume.setShareIdsState,
     };
 }
 

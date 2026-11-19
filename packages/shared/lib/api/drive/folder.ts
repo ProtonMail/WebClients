@@ -1,6 +1,5 @@
 import { SORT_DIRECTION } from '../../constants';
 import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER, FOLDER_PAGE_SIZE } from '../../drive/constants';
-import type { CreateNewFolder } from '../../interfaces/drive/folder';
 
 export const queryFolderChildren = (
     shareID: string,
@@ -17,10 +16,4 @@ export const queryFolderChildren = (
     method: 'get',
     url: `drive/shares/${shareID}/folders/${linkID}/children`,
     params: { Page, PageSize, FoldersOnly, Sort, Desc, Thumbnails: 1, ShowAll },
-});
-
-export const queryCreateFolder = (shareID: string, data: CreateNewFolder) => ({
-    method: 'post',
-    url: `drive/shares/${shareID}/folders`,
-    data,
 });

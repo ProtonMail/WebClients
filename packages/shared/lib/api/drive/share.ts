@@ -27,16 +27,6 @@ export const queryShareMeta = (shareID: string) => ({
     silence: [API_CUSTOM_ERROR_CODES.NOT_ALLOWED],
 });
 
-export const queryRenameLink = (
-    shareID: string,
-    linkID: string,
-    data: { Name: string; MIMEType?: string; Hash: string; NameSignatureEmail: string; OriginalHash: string }
-) => ({
-    method: `put`,
-    url: `drive/shares/${shareID}/links/${linkID}/rename`,
-    data,
-});
-
 export const queryMoveLink = (shareID: string, linkID: string, data: MoveLink) => ({
     method: 'put',
     url: `drive/shares/${shareID}/links/${linkID}/move`,

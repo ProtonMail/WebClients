@@ -1,5 +1,3 @@
-import type { SessionKey } from '@protontech/crypto';
-
 import type { SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 import type { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
@@ -46,26 +44,6 @@ export interface ShareWithKey extends Share {
     memberships: ShareMembership[];
 }
 
-export interface LockedVolumeForRestore {
-    lockedVolumeId: string;
-    defaultShares: LockedShareForRestore[];
-    devices: LockedDeviceForRestore[];
-    photos: LockedPhotosForRestore[];
-}
-
-interface LockedShareForRestore {
-    shareId: string;
-    linkDecryptedPassphrase: string;
-}
-
-interface LockedDeviceForRestore extends LockedShareForRestore {
-    shareDecryptedPassphrase: string;
-    shareSessionKey: SessionKey;
-}
-interface LockedPhotosForRestore extends LockedShareForRestore {
-    shareDecryptedPassphrase: string;
-    shareSessionKey: SessionKey;
-}
 export interface ShareMembership {
     memberId: string;
     shareId: string;

@@ -3,7 +3,6 @@ import { act, renderHook } from '@testing-library/react';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { SharesKeysProvider } from '../../_shares/useSharesKeys';
-import { VolumesStateProvider } from '../../_volumes/useVolumesState';
 import type { EncryptedLink } from '../interface';
 import { LinksStateProvider } from '../useLinksState';
 import { useLinksListingProvider } from './useLinksListing';
@@ -30,20 +29,6 @@ jest.mock('../../_api/useDebouncedRequest', () => {
         return mockRequest;
     };
     return useDebouncedRequest;
-});
-
-jest.mock('../../_events/useDriveEventManager', () => {
-    const useDriveEventManager = () => {
-        return {
-            eventHandlers: {
-                register: () => 'id',
-                unregister: () => false,
-            },
-        };
-    };
-    return {
-        useDriveEventManager,
-    };
 });
 
 jest.mock('../../_crypto/useDriveCrypto', () => {
@@ -94,11 +79,9 @@ describe('useLinksListing', () => {
         );
 
         const wrapper = ({ children }: { children: React.ReactNode }) => (
-            <VolumesStateProvider>
-                <LinksStateProvider>
-                    <SharesKeysProvider>{children}</SharesKeysProvider>
-                </LinksStateProvider>
-            </VolumesStateProvider>
+            <LinksStateProvider>
+                <SharesKeysProvider>{children}</SharesKeysProvider>
+            </LinksStateProvider>
         );
 
         const { result } = renderHook(() => useLinksListingProvider(), { wrapper });
