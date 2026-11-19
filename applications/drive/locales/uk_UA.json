@@ -7760,6 +7760,9 @@
       ],
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
         "Ви зможете відкрити цю папку після завершення імпорту. Наразі ми імпортували ${ importedSize }. Ми надішлемо вам електронного листа, коли процес завершиться."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Ліцензії для помічників із написання більше не продаються."
       ]
     },
     "info": {
@@ -15612,6 +15615,73 @@
     "collider_2025: Error": {
       "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
         "Ця розмова задовга, щоб її продовжувати. Почніть новий чат, щоб забезпечити безперебійну та швидку роботу ${ LUMO_SHORT_APP_NAME }."
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Код"
+      ],
+      "2x Basic usage": [
+        "2x Базове використання"
+      ],
+      "5x Plus usage": [
+        "Використання 5x Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Доступ до API з щомісячним лімітом у розмірі ${ credit }"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Доступ до API з ${ credit } кредиту на місяць на кожного користувача"
+      ],
+      "Everything in Basic, and:": [
+        "Усе, що в Basic, а також:"
+      ],
+      "Everything in Free, and:": [
+        "Усе безкоштовно, а також:"
+      ],
+      "Everything in Plus, and:": [
+        "Усе, що є у Plus, а також:"
+      ],
+      "Extended image generation": [
+        "Розширене створення зображень"
+      ],
+      "Includes:": [
+        "Включає:"
+      ],
+      "Limited image generation": [
+        "Обмежене створення зображень"
+      ],
+      "Limited messages and chat history": [
+        "Обмежена кількість повідомлень та історія чату"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Обмежені навички, проекти та заплановані завдання"
+      ],
+      "Maximum image generation": [
+        "Максимальна кількість згенерованих зображень"
+      ],
+      "Maximum Skills and Projects": [
+        "Найкращі навички та проекти"
+      ],
+      "More image generation": [
+        "Більше генерації зображень"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Більше навичок, проєктів та запланованих завдань"
+      ],
+      "More usage": [
+        "Інші варіанти використання"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Для програмування та розробки"
+      ],
+      "For everyday chats": [
+        "Для щоденних розмов"
+      ],
+      "For getting more done": [
+        "Щоб встигнути зробити більше"
       ]
     }
   }
