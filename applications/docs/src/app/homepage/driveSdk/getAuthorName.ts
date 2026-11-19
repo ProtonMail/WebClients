@@ -1,10 +1,10 @@
 import type { NodeEntity } from '@protontech/drive-sdk'
-import { createNamesMessages } from '../messages/names'
+import type { HomepageMessages } from '../messages/defaultHomepageMessages'
 
-export function getAuthorName(author: NodeEntity['keyAuthor']) {
+export function getAuthorName(author: NodeEntity['keyAuthor'], names: HomepageMessages['names']) {
   if (author.ok) {
     if (author.value === null) {
-      return createNamesMessages().names.unknownUser
+      return names.unknownUser
     }
     return author.value
   }
@@ -13,5 +13,5 @@ export function getAuthorName(author: NodeEntity['keyAuthor']) {
     return author.error.claimedAuthor
   }
 
-  return createNamesMessages().names.unknownUser
+  return names.unknownUser
 }

@@ -9,7 +9,9 @@ import {
   generateNodeUid,
 } from '@protontech/drive-sdk'
 import { useCallback, useState } from 'react'
-import { createLoadingMessages } from './messages/loading'
+import { useHomepageMessages } from './messages/HomepageMessagesProvider'
+import type { HomepageMessages } from './messages/defaultHomepageMessages'
+import { useEvent } from './utils/useEvent'
 import { getFullPathFromAncestry } from './driveSdk/getFullPathFromAncestry'
 import { getIsSharedWithMe } from './driveSdk/getIsSharedWithMe'
 import { createDocumentItem } from './createDocumentItems'
@@ -45,6 +47,10 @@ export function useRecents({
   const recentDocumentsInitialized = useRecentsStore((state) => state.recentDocumentsInitialized)
 
   const [isRecentsUpdating, setIsRecentsUpdating] = useState(false)
+
+  const messages = useHomepageMessages()
+  // Read when called: as a callback dependency, a locale change would reload the recents and resubscribe to events.
+  const getMessages = useEvent(() => messages)
 
   const fetchRecents = useCallback(
     async (abort: AbortSignal) => {
@@ -145,8 +151,8 @@ export function useRecents({
                 continue
               }
 
-              const documentDetails = getDocumentDetails(document, node, nodesByUid)
-              documentItems.push(createDocumentItem(node, documentDetails))
+              const documentDetails = getDocumentDetails(document, node, nodesByUid, getMessages().names)
+              documentItems.push(createDocumentItem(node, documentDetails, getMessages().names))
 
               if (documentDetails.isSharedWithMe) {
                 eventSubscriber.subscribeToSharedDocument(node.uid, node.treeEventScopeId)
@@ -160,7 +166,7 @@ export function useRecents({
           if (documents.length > documentItems.length) {
             createNotification({
               type: 'error',
-              text: createLoadingMessages().loading.someRecentsFailed,
+              text: getMessages().loading.someRecentsFailed,
             })
           }
 
@@ -177,11 +183,11 @@ export function useRecents({
           traceRecentsError(errorTracking, error)
           createNotification({
             type: 'error',
-            text: createLoadingMessages().loading.recentsFailed,
+            text: getMessages().loading.recentsFailed,
           })
         })
     },
-    [fetchRecents, logger, eventSubscriber, createNotification, errorTracking],
+    [fetchRecents, logger, eventSubscriber, createNotification, errorTracking, getMessages],
   )
 
   const updateRenamedDocumentInCache = useCallback((uniqueId: string, name: string) => {
@@ -222,7 +228,7 @@ export function useRecents({
               // Updated document is not in recents list - ignore
               return
             }
-            updateDocument(await loadDocument(drive, event.nodeUid, document))
+            updateDocument(await loadDocument(drive, event.nodeUid, getMessages().names, document))
           } else if (node.type === NodeType.Folder) {
             const childrenOfUpdatedFolder: RecentDocumentsItemValue[] = []
 
@@ -237,7 +243,7 @@ export function useRecents({
 
             // In case we have children of the updated folder we'll only reload existing nodes
             if (childrenOfUpdatedFolder.length > 0) {
-              await reloadDocuments(drive, errorTracking, childrenOfUpdatedFolder)
+              await reloadDocuments(drive, errorTracking, childrenOfUpdatedFolder, getMessages().names)
             } else {
               // This is probably a folder restored from trash - reload everything
               // Currently not supported
@@ -246,7 +252,7 @@ export function useRecents({
         }
       }
     },
-    [drive, errorTracking],
+    [drive, errorTracking, getMessages],
   )
 
   const removeDocument = useCallback((nodeUid: string) => {
@@ -262,9 +268,10 @@ export function useRecents({
         drive,
         errorTracking,
         nodeUids.flatMap((nodeUid) => recentDocuments[nodeUid] ?? []),
+        getMessages().names,
       )
     },
-    [drive, errorTracking],
+    [drive, errorTracking, getMessages],
   )
 
   return {
@@ -279,7 +286,12 @@ export function useRecents({
   }
 }
 
-function getDocumentDetails(document: RecentDocumentAPIItem, node: NodeEntity, nodesByUid: Map<string, NodeEntity>) {
+function getDocumentDetails(
+  document: RecentDocumentAPIItem,
+  node: NodeEntity,
+  nodesByUid: Map<string, NodeEntity>,
+  names: HomepageMessages['names'],
+) {
   // most immediate parent first, root last
   const ancestorsNodeUids = document.AncestorIDs.map((ancestorLinkID) =>
     generateNodeUid(document.VolumeID, ancestorLinkID),
@@ -298,7 +310,7 @@ function getDocumentDetails(document: RecentDocumentAPIItem, node: NodeEntity, n
 
   return {
     isSharedWithMe,
-    path: getFullPathFromAncestry(ancestorsReversed),
+    path: getFullPathFromAncestry(ancestorsReversed, names),
     ancestorsNodeUids,
     effectiveRole: getRoleFromHierarchy([node, ...ancestors]) ?? MemberRole.Viewer,
     lastOpenTime: document.LastOpenTime,
@@ -310,9 +322,12 @@ async function reloadDocuments(
   drive: ProtonDriveClient,
   errorTracking: ErrorTracking,
   documents: RecentDocumentsItemValue[],
+  names: HomepageMessages['names'],
 ) {
   const results = await Promise.allSettled(
-    documents.map((document) => loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), document)),
+    documents.map((document) =>
+      loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), names, document),
+    ),
   )
   const { updateDocument } = useRecentsStore.getState()
   for (const result of results) {
@@ -324,7 +339,12 @@ async function reloadDocuments(
   }
 }
 
-async function loadDocument(drive: ProtonDriveClient, nodeUid: string, document?: RecentDocumentsItemValue) {
+async function loadDocument(
+  drive: ProtonDriveClient,
+  nodeUid: string,
+  names: HomepageMessages['names'],
+  document?: RecentDocumentsItemValue,
+) {
   const hierarchy = await drive.getNodeHierarchy(nodeUid)
   // Always present - getNodeHierarchy includes self (so at least 1 item)
   const node = hierarchy.at(-1) as NodeEntity
@@ -337,12 +357,16 @@ async function loadDocument(drive: ProtonDriveClient, nodeUid: string, document?
 
   const isSharedWithMe = getIsSharedWithMe(node)
 
-  return createDocumentItem(node, {
-    isSharedWithMe,
-    path: getFullPathFromAncestry(ancestors),
-    ancestorsNodeUids,
-    effectiveRole: getRoleFromHierarchy(hierarchy.toReversed()) ?? MemberRole.Viewer,
-    lastOpenTime: document?.lastViewed.serverTimestamp ?? Date.now(),
-    deprecatedShareId: document?.shareId,
-  })
+  return createDocumentItem(
+    node,
+    {
+      isSharedWithMe,
+      path: getFullPathFromAncestry(ancestors, names),
+      ancestorsNodeUids,
+      effectiveRole: getRoleFromHierarchy(hierarchy.toReversed()) ?? MemberRole.Viewer,
+      lastOpenTime: document?.lastViewed.serverTimestamp ?? Date.now(),
+      deprecatedShareId: document?.shareId,
+    },
+    names,
+  )
 }

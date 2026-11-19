@@ -19,6 +19,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 ## Apps and contexts
 
 - **Docs homepage**: the page listing documents (recents, owned by me, shared with me, trash).
+- **`HomepageMessages`**: the typed catalogue of homepage UI strings (`typeof defaultHomepageMessages`), translated by the host and read with `useHomepageMessages()`. `app/homepage/messages/`, translated in `app/routes/(user)/(homepage)/__utils/homepageMessages/`.
 - **Document viewer** (`DocumentViewer`): the shell UI around one document. Hosts the editor iframe and the header (title, sharing, history). `app/components/document/DocumentViewer/`.
 - **User app / public app**: the two root components. `PublicApp` renders when the URL `mode` is `open-url` or `open-url-download`, otherwise `UserApp`. `app/index.tsx`, `app/routes/(user)/`, `app/routes/(public)/`.
 - **Public vs private**: whether the document was opened through a public share link. Three splits exist in code:

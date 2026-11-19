@@ -4,7 +4,7 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
 import { type KeyboardEvent, useRef, useState } from 'react'
 import { IconButton } from '../components/ui'
 import { useHomepageView, type RecentsSort } from '../homepageViewContext'
-import { createSortMessages } from '../messages/sort'
+import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
 import { TelemetryEvent } from '../utils/telemetry'
 import { DropdownMenu, DropdownMenuItem } from './menu'
 
@@ -26,7 +26,7 @@ export function SortSelect() {
   const [openedByArrow, setOpenedByArrow] = useState(false)
   // Where Proton's dropdown ended up, with the button at the table's right edge.
   const menu = Ariakit.useMenuStore({ placement: 'bottom-end', focusLoop: true })
-  const messages = createSortMessages().sort
+  const messages = useHomepageMessages().sort
 
   return (
     <Ariakit.MenuProvider store={menu}>

@@ -8,7 +8,7 @@ Drive SDK: the `ProtonDriveClient` instance (from `getDrive`) is injected by the
 
 The host injects values and functions, never hooks.
 
-Strings: only `messages/` imports ttag. Each area has a `create<Area>Messages()` function there, which a component or helper calls when it needs the strings, so ttag runs after the locale has loaded. Keep a moved string's context, msgid and parameter names, which existing translations match.
+Strings: nothing here imports ttag. `messages/` holds the English defaults, one group per area, and components read them with `useHomepageMessages()`; a helper outside React takes its group as a parameter. The host translates them with ttag in `routes/(user)/(homepage)/__utils/homepageMessages/`, one `create<Area>Messages()` per group, and passes them to `HomepageMessagesProvider`; without it, the homepage shows the defaults. A string with a parameter or plural is a function with the same signature in both. Keep the host's context, msgid and parameter names, which existing translations match.
 
 It reads no feature flags itself (no `~/utils/flags` or `@proton/unleash`): the host resolves the ones it needs into `featureFlags`.
 

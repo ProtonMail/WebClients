@@ -4,7 +4,7 @@ import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../documentActionsContext'
 import type { RecentDocumentsItem } from '../../../recentDocumentsItem'
-import { createContextMenuMessages } from '../../../messages/contextMenu'
+import { useHomepageMessages } from '../../../messages/HomepageMessagesProvider'
 import { useState } from 'react'
 
 export type MoveToTrashButtonProps = {
@@ -14,7 +14,7 @@ export type MoveToTrashButtonProps = {
 export function MoveToTrashButton({ currentDocument }: MoveToTrashButtonProps) {
   const documentActions = useDocumentActions()
   const [isLoading, setLoading] = useState(documentActions.currentlyTrashingId === currentDocument.uniqueId())
-  const messages = createContextMenuMessages().contextMenu
+  const messages = useHomepageMessages().contextMenu
   return (
     <ContextMenuButton
       disabled={isLoading}

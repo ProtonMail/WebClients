@@ -1,15 +1,15 @@
 import type { HomepageViewState } from './homepageViewContext'
 import { useHomepageView } from './homepageViewContext'
-import { createPageTitleMessages } from './messages/pageTitle'
+import { useHomepageMessages } from './messages/HomepageMessagesProvider'
+import type { HomepageMessages } from './messages/defaultHomepageMessages'
 
 export function useHomepageTitle() {
   const { state } = useHomepageView()
 
-  return titleByViewState(state)
+  return titleByViewState(state, useHomepageMessages().pageTitle)
 }
 
-function titleByViewState(state: HomepageViewState): string {
-  const messages = createPageTitleMessages().pageTitle
+function titleByViewState(state: HomepageViewState, messages: HomepageMessages['pageTitle']): string {
   switch (state.view) {
     case 'search-initial':
     case 'search-loading':

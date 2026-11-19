@@ -4,12 +4,14 @@ import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { trashManyAndNotify } from './trashRestoreNotify'
 import { useEvent } from '../utils/useEvent'
 import { useHomepageView } from '../homepageViewContext'
+import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
 import { TelemetryEvent } from '../utils/telemetry'
 
 type BulkTrashDependencies = { drive: ProtonDriveClient }
 
 export function useBulkTrash({ drive }: BulkTrashDependencies) {
   const { updateRecentDocuments, reportTelemetry, createNotification, errorTracking } = useHomepageView()
+  const messages = useHomepageMessages().trash
   const [isTrashing, setIsTrashing] = useState(false)
 
   const trash = useEvent(async (documents: RecentDocumentsItem[]): Promise<RecentDocumentsItem[]> => {
@@ -27,6 +29,7 @@ export function useBulkTrash({ drive }: BulkTrashDependencies) {
           void updateRecentDocuments()
         },
         documents.every((document) => !document.isSharedWithMe),
+        messages,
       )
     } finally {
       setIsTrashing(false)

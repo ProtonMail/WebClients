@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useRouteMatch } from 'react-router'
-import { createLoadingMessages } from './messages/loading'
+import { useHomepageMessages } from './messages/HomepageMessagesProvider'
+import type { HomepageMessages } from './messages/defaultHomepageMessages'
+import { useEvent } from './utils/useEvent'
 
 import { RecentDocumentsItem } from './recentDocumentsItem'
 import type { RecentDocumentsItemValue } from './recentDocumentsItem'
@@ -59,6 +61,9 @@ export function HomepageViewProvider({
   const [search, setSearch] = useSearch()
   const [recentsSort, setRecentsSort] = useRecentsSort()
   const [type] = useType()
+  const messages = useHomepageMessages()
+  // Read when called: as an effect dependency, a locale change would reload My files and resubscribe to events.
+  const getMessages = useEvent(() => messages)
 
   const guardedApi = useUnloadGuardedApi(api)
   const {
@@ -122,11 +127,11 @@ export function HomepageViewProvider({
       .catch((error) => {
         createNotification({
           type: 'error',
-          text: createLoadingMessages().loading.myFilesFailed,
+          text: getMessages().loading.myFilesFailed,
         })
         traceRecentsError(errorTracking, error)
       })
-  }, [createNotification, drive, errorTracking])
+  }, [createNotification, drive, errorTracking, getMessages])
 
   useEffect(() => {
     // Do not subscribe if we don't have treeEventScopeId yet
@@ -156,6 +161,7 @@ export function HomepageViewProvider({
           contactEmails,
           addresses,
           type,
+          messages.names,
         )
       }
     } catch (error) {
@@ -175,6 +181,7 @@ export function HomepageViewProvider({
     trashedDocumentItems,
     type,
     errorTracking,
+    messages.names,
   ])
 
   const dateFormatter = useMemo(() => new DateFormatter(dateLocaleCode), [dateLocaleCode])
@@ -243,6 +250,7 @@ export function buildRecentsState(
   contactEmails: OwnerContact[] | undefined,
   addresses: UserAddress[] | undefined,
   type: ProtonDocumentType | undefined,
+  names: HomepageMessages['names'],
 ): HomepageViewState {
   if (isRecentsUpdating) {
     return { view: 'recents-loading' }
@@ -263,7 +271,7 @@ export function buildRecentsState(
   if (recentsSort === 'viewed') {
     itemSections = splitIntoSectionsByTime(filtered, 'lastViewed')
   } else if (recentsSort === 'owner') {
-    itemSections = splitIntoSectionsByOwner(filtered, addresses, contactEmails)
+    itemSections = splitIntoSectionsByOwner(filtered, addresses, contactEmails, names)
   } else if (recentsSort === 'location') {
     itemSections = splitIntoSectionsByLocation(filtered)
   } else {

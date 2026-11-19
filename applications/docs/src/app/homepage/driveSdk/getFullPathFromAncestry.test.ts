@@ -1,11 +1,14 @@
 import type { NodeEntity } from '@protontech/drive-sdk'
 import { getFullPathFromAncestry } from './getFullPathFromAncestry'
+import { defaultHomepageMessages } from '../messages/defaultHomepageMessages'
+
+const { names } = defaultHomepageMessages
 
 describe('getFullPathFromAncestry', () => {
   test('skips root and keeps order of folders', () => {
     const ancestry = ['My files', 'Projects', 'Docs'].map((value) => ({ name: { ok: true, value } }) as NodeEntity)
 
-    expect(getFullPathFromAncestry(ancestry)).toEqual(['Projects', 'Docs'])
+    expect(getFullPathFromAncestry(ancestry, names)).toEqual(['Projects', 'Docs'])
   })
 
   test('keeps folders with invalid or undecryptable name', () => {
@@ -15,6 +18,6 @@ describe('getFullPathFromAncestry', () => {
       { name: { ok: false, error: new Error('Failed to decrypt name') } },
     ] as NodeEntity[]
 
-    expect(getFullPathFromAncestry(ancestry)).toEqual(['Invalid/Name', '⚠️ Undecryptable name'])
+    expect(getFullPathFromAncestry(ancestry, names)).toEqual(['Invalid/Name', '⚠️ Undecryptable name'])
   })
 })

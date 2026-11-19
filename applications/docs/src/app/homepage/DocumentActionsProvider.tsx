@@ -5,7 +5,7 @@ import { type ReactNode, useCallback, useMemo, useState } from 'react'
 import { constructDriveFolderUrl } from './driveFolderUrl'
 import { useEvent } from './utils/useEvent'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
-import { createDocumentActionsMessages } from './messages/documentActions'
+import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import { deleteDocument, reportTrashError } from './driveSdk/trash'
 import { DocumentActionsContext } from './documentActionsContext'
 import { trashAndNotify, restoreAndNotify, handleRestoreError } from './driveSdk/trashRestoreNotify'
@@ -40,6 +40,7 @@ export function DocumentActionsProvider({
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
 
   const { updateMovedDocuments, reportTelemetry, createNotification, getAppHref, errorTracking } = useHomepageView()
+  const { documentActions: messages, trash: trashMessages } = useHomepageMessages()
   const [documentToDelete, setDocumentToDelete] = useState<RecentDocumentsItem>()
   const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash({ drive })
   const { move: bulkMove } = useBulkMove({ openMoveItemsModal })
@@ -88,7 +89,7 @@ export function DocumentActionsProvider({
     try {
       try {
         await drive.renameNode(generateNodeUid(document.volumeId, document.linkId), newName)
-        const successNotificationText = createDocumentActionsMessages().documentActions.renamed(newName)
+        const successNotificationText = messages.renamed(newName)
         createNotification({
           text: <span className="text-pre-wrap">{successNotificationText}</span>,
         })
@@ -123,12 +124,20 @@ export function DocumentActionsProvider({
 
     try {
       const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-      await trashAndNotify(drive, createNotification, errorTracking, nodeUid, emitRestored, !document.isSharedWithMe)
+      await trashAndNotify(
+        drive,
+        createNotification,
+        errorTracking,
+        nodeUid,
+        emitRestored,
+        !document.isSharedWithMe,
+        trashMessages,
+      )
     } catch (error) {
       reportTrashError(errorTracking, error)
       createNotification({
         type: 'error',
-        text: createDocumentActionsMessages().documentActions.trashFailed,
+        text: messages.trashFailed,
       })
       setCurrentlyTrashingId(undefined)
       return
@@ -153,9 +162,9 @@ export function DocumentActionsProvider({
 
     try {
       const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-      await restoreAndNotify(drive, createNotification, errorTracking, nodeUid, emitTrashed)
+      await restoreAndNotify(drive, createNotification, errorTracking, nodeUid, emitTrashed, trashMessages)
     } catch (error: any) {
-      handleRestoreError(createNotification, errorTracking, error)
+      handleRestoreError(createNotification, errorTracking, error, trashMessages)
       setCurrentlyRestoringId(undefined)
       return
     }
@@ -184,13 +193,13 @@ export function DocumentActionsProvider({
       reportTrashError(errorTracking, error)
       createNotification({
         type: 'error',
-        text: createDocumentActionsMessages().documentActions.deleteFailed,
+        text: messages.deleteFailed,
       })
       return
     }
     createNotification({
       type: 'success',
-      text: createDocumentActionsMessages().documentActions.deleted,
+      text: messages.deleted,
     })
     reportTelemetry(TelemetryEvent.document_permanently_deleted)
   })

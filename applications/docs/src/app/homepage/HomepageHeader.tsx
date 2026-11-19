@@ -1,6 +1,7 @@
 import { useMemo, useState, type ComponentType, type ReactNode } from 'react'
 import { useHistory, useRouteMatch } from 'react-router'
-import { createHeaderMessages } from './messages/header'
+import { useHomepageMessages } from './messages/HomepageMessagesProvider'
+import type { HomepageMessages } from './messages/defaultHomepageMessages'
 
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier'
 
@@ -50,6 +51,7 @@ export function HomepageHeader({
   const { state, type, setSearch } = useHomepageView()
   // Every search view has the query, also while the recents load: the field must keep what's typed meanwhile.
   const searchValue = 'query' in state ? state.query : undefined
+  const messages = useHomepageMessages().header
 
   return (
     <div className="homepage-header shrink-0 items-center justify-center small:pe-[.625rem]">
@@ -57,7 +59,7 @@ export function HomepageHeader({
         className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
         app={APPS.PROTONDRIVE}
         userDropdown={<UserDropdown app={APPS.PROTONDOCS} reportDescriptionContext={reportDescriptionContext} />}
-        title={createHeaderMessages().header.title}
+        title={messages.title}
         expanded={expanded}
         onToggleExpand={toggleExpanded}
         isSmallViewport={isNarrow}
@@ -82,8 +84,7 @@ export function HomepageHeader({
   )
 }
 
-function searchPlaceholder(type: ProtonDocumentType | undefined) {
-  const messages = createHeaderMessages().header
+function searchPlaceholder(type: ProtonDocumentType | undefined, messages: HomepageMessages['header']) {
   switch (type) {
     case 'document':
       return messages.searchRecentDocuments
@@ -111,8 +112,8 @@ function Search({ value, onChange, type, className }: SearchProps) {
     }
     onChange(value)
   })
-  const messages = createHeaderMessages().header
-  const placeholder = useMemo(() => searchPlaceholder(type), [type])
+  const messages = useHomepageMessages().header
+  const placeholder = useMemo(() => searchPlaceholder(type, messages), [type, messages])
   return (
     <div className={className}>
       <Input
@@ -148,8 +149,8 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
   })
   const [isActive, setActive] = useState(false)
   const isInput = (value && value.length > 0) || isActive
-  const messages = createHeaderMessages().header
-  const placeholder = useMemo(() => searchPlaceholder(type), [type])
+  const messages = useHomepageMessages().header
+  const placeholder = useMemo(() => searchPlaceholder(type, messages), [type, messages])
   return (
     <div className={clsx('flex grow items-center gap-2', className)}>
       {isInput ? (

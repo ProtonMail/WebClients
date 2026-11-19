@@ -3,7 +3,7 @@ import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../documentActionsContext'
 import type { RecentDocumentsItem } from '../../../recentDocumentsItem'
-import { createContextMenuMessages } from '../../../messages/contextMenu'
+import { useHomepageMessages } from '../../../messages/HomepageMessagesProvider'
 import { useState } from 'react'
 
 export type RestoreFromTrashButtonProps = {
@@ -13,7 +13,7 @@ export type RestoreFromTrashButtonProps = {
 export function RestoreFromTrashButton({ currentDocument }: RestoreFromTrashButtonProps) {
   const documentActions = useDocumentActions()
   const [isLoading, setLoading] = useState(documentActions.currentlyRestoringId === currentDocument.uniqueId())
-  const messages = createContextMenuMessages().contextMenu
+  const messages = useHomepageMessages().contextMenu
   return (
     <ContextMenuButton
       disabled={isLoading}

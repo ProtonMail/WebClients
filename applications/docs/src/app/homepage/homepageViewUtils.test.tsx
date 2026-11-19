@@ -15,6 +15,7 @@ import {
   useSearch,
 } from './homepageViewUtils'
 import type { UserAddress } from './is-my-document'
+import { defaultHomepageMessages } from './messages/defaultHomepageMessages'
 
 function createMockItems({ firstNameOverride }: { firstNameOverride?: string } = {}) {
   return [
@@ -272,7 +273,7 @@ describe('splitIntoSectionsByOwner', () => {
     ]
     const addresses = [{ Email: 'me@example.com' }] as UserAddress[]
 
-    expect(names(splitIntoSectionsByOwner(items, addresses, []))).toEqual([
+    expect(names(splitIntoSectionsByOwner(items, addresses, [], defaultHomepageMessages.names))).toEqual([
       'Mine',
       'From Amy',
       'From Zoe',

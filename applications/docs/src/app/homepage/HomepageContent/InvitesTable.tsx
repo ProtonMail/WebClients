@@ -9,7 +9,8 @@ import { isProtonDocsDocument } from '../utils/mimetype'
 import { getInitials } from './getInitials'
 import { clsx } from '../utils/clsx'
 import { type ComponentPropsWithoutRef, useState } from 'react'
-import { createInvitesTableMessages } from '../messages/invitesTable'
+import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
+import type { HomepageMessages } from '../messages/defaultHomepageMessages'
 import { useHomepageView } from '../homepageViewContext'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
@@ -35,7 +36,7 @@ export function InvitesTable(props: InvitesTableProps) {
   const acceptedIds = new Set(recentlyAcceptedInvitations.map(({ invitation }) => invitation.invitationId))
   const allInvites = pendingInvitations.filter(({ invitation }) => !acceptedIds.has(invitation.invitationId))
   const pendingCount = allInvites.length
-  const messages = createInvitesTableMessages().invitesTable
+  const messages = useHomepageMessages().invitesTable
   if (pendingCount === 0) {
     return null
   }
@@ -125,9 +126,9 @@ export function InvitesTable(props: InvitesTableProps) {
                   <div
                     data-testid="invite-shared-date"
                     className="text-ellipsis"
-                    title={getRelativeDate(dateFormatter, new ServerTime(invite.invitation.createTime).date)}
+                    title={getRelativeDate(dateFormatter, new ServerTime(invite.invitation.createTime).date, messages)}
                   >
-                    {getRelativeDate(dateFormatter, new ServerTime(invite.invitation.createTime).date)}
+                    {getRelativeDate(dateFormatter, new ServerTime(invite.invitation.createTime).date, messages)}
                   </div>
                 </Table.DataCell>
                 <Table.DataCell target="medium">
@@ -179,7 +180,7 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
   const [isAcceptingInvite, setIsAcceptingInvite] = useState(false)
 
   const { updateRecentDocuments, reportTelemetry, logger, errorTracking } = useHomepageView()
-  const messages = createInvitesTableMessages().invitesTable
+  const messages = useHomepageMessages().invitesTable
 
   async function handleAcceptInvite(invite: ExtendedInvitationDetails) {
     try {
@@ -236,7 +237,7 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
 type CollapseButtonProps = { collapse: () => void }
 
 function CollapseButton({ collapse }: CollapseButtonProps) {
-  const messages = createInvitesTableMessages().invitesTable
+  const messages = useHomepageMessages().invitesTable
   return (
     <IconButton
       label={messages.collapse}
@@ -250,7 +251,7 @@ function CollapseButton({ collapse }: CollapseButtonProps) {
   )
 }
 
-function getRelativeDate(dateFormatter: DateFormatter, date: Date): string {
-  const text = dateFormatter.formatDateOrTimeIfToday(date, createInvitesTableMessages().invitesTable.justNow)
+function getRelativeDate(dateFormatter: DateFormatter, date: Date, messages: HomepageMessages['invitesTable']): string {
+  const text = dateFormatter.formatDateOrTimeIfToday(date, messages.justNow)
   return text.charAt(0).toUpperCase() + text.slice(1)
 }

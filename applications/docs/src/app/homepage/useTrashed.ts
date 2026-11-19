@@ -2,7 +2,9 @@ import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import { type DriveEvent, type NodeEntity, type ProtonDriveClient, generateNodeUid } from '@protontech/drive-sdk'
 import { mimeTypeToProtonDocumentType } from './utils/mimetype'
 import { useCallback, useState } from 'react'
-import { createLoadingMessages } from './messages/loading'
+import { useHomepageMessages } from './messages/HomepageMessagesProvider'
+import type { HomepageMessages } from './messages/defaultHomepageMessages'
+import { useEvent } from './utils/useEvent'
 import { nodeToTrashedDocumentItem } from './createDocumentItems'
 import { traceErrorSDK } from './driveSdk/traceErrorSDK'
 import type { SDKEventListener } from './homepageViewUtils'
@@ -16,6 +18,10 @@ export function useTrashed(
 ) {
   const [trashedDocumentItems, setTrashedDocumentItems] = useState<RecentDocumentsItemValue[]>([])
   const [isTrashLoading, setIsTrashLoading] = useState(false)
+
+  const messages = useHomepageMessages()
+  // Read when called: as a callback dependency, a locale change would reload the trash and resubscribe to events.
+  const getMessages = useEvent(() => messages)
 
   const fetchTrashed = useCallback(
     async (abort: AbortSignal) => {
@@ -36,14 +42,14 @@ export function useTrashed(
         traceErrorSDK(errorTracking, error, 'DocsLoadRecentsWithDriveSDK')
         createNotification({
           type: 'error',
-          text: createLoadingMessages().loading.someTrashedFailed,
+          text: getMessages().loading.someTrashedFailed,
         })
       }
 
-      setTrashedDocumentItems(nodes.map(nodeToTrashedDocumentItem))
+      setTrashedDocumentItems(nodes.map((node) => nodeToTrashedDocumentItem(node, getMessages().names)))
       setIsTrashLoading(false)
     },
-    [createNotification, drive, errorTracking],
+    [createNotification, drive, errorTracking, getMessages],
   )
 
   const trashedListener: SDKEventListener = useCallback(
@@ -54,7 +60,7 @@ export function useTrashed(
           if (!mimeTypeToProtonDocumentType(node.mediaType)) {
             return
           }
-          setTrashedDocumentItems((items) => createOrUpdateItem(items, node))
+          setTrashedDocumentItems((items) => createOrUpdateItem(items, node, getMessages().names))
         } else {
           setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
         }
@@ -64,7 +70,7 @@ export function useTrashed(
         setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
       }
     },
-    [drive],
+    [drive, getMessages],
   )
 
   return {
@@ -75,14 +81,18 @@ export function useTrashed(
   }
 }
 
-function createOrUpdateItem(previousItems: RecentDocumentsItemValue[], node: NodeEntity) {
+function createOrUpdateItem(
+  previousItems: RecentDocumentsItemValue[],
+  node: NodeEntity,
+  names: HomepageMessages['names'],
+) {
   const existingItemIndex = previousItems.findIndex((item) => node.uid === generateNodeUid(item.volumeId, item.linkId))
   if (existingItemIndex >= 0) {
     const updatedItems = [...previousItems]
-    updatedItems[existingItemIndex] = nodeToTrashedDocumentItem(node)
+    updatedItems[existingItemIndex] = nodeToTrashedDocumentItem(node, names)
     return updatedItems
   } else {
-    return [...previousItems, nodeToTrashedDocumentItem(node)]
+    return [...previousItems, nodeToTrashedDocumentItem(node, names)]
   }
 }
 

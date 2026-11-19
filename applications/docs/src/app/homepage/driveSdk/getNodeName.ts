@@ -1,8 +1,8 @@
 import type { NodeEntity } from '@protontech/drive-sdk'
-import { createNamesMessages } from '../messages/names'
+import type { HomepageMessages } from '../messages/defaultHomepageMessages'
 
-export function getNodeNameOrFallback(node: Pick<NodeEntity, 'name'>) {
-  return getNodeName(node) ?? createNamesMessages().names.undecryptable
+export function getNodeNameOrFallback(node: Pick<NodeEntity, 'name'>, names: HomepageMessages['names']) {
+  return getNodeName(node) ?? names.undecryptable
 }
 
 export function getNodeName(node: Pick<NodeEntity, 'name'>) {

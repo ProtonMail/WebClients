@@ -4,6 +4,7 @@ import { getAuthorName } from './driveSdk/getAuthorName'
 import { mimeTypeToProtonDocumentType } from './utils/mimetype'
 import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import { getNodeNameOrFallback } from './driveSdk/getNodeName'
+import type { HomepageMessages } from './messages/defaultHomepageMessages'
 
 /**
  * Creates value for RecentDocumentsItem instances based on node data from SDK and response from /recents endpoint
@@ -18,6 +19,7 @@ export function createDocumentItem(
     lastOpenTime: number
     deprecatedShareId?: string
   },
+  names: HomepageMessages['names'],
 ): RecentDocumentsItemValue {
   const { lastOpenTime, path, isSharedWithMe, ancestorsNodeUids, deprecatedShareId, effectiveRole } = documentDetails
 
@@ -26,14 +28,14 @@ export function createDocumentItem(
 
   return {
     type: mimeTypeToProtonDocumentType(node.mediaType) ?? 'document',
-    name: getNodeNameOrFallback(node),
+    name: getNodeNameOrFallback(node, names),
     linkId,
     parentLinkId,
     volumeId,
     // lastViewed and lastModified are the same - consistent with pre-SDK behavior
     lastViewed: new ServerTime(lastOpenTime),
     lastModified: new ServerTime(lastOpenTime),
-    createdBy: getAuthorName(node.keyAuthor),
+    createdBy: getAuthorName(node.keyAuthor, names),
     location: getLocation(path, isSharedWithMe),
     ancestorsNodeUids,
     isSharedWithMe,
@@ -60,12 +62,15 @@ function getLocation(path: string[], isSharedWithMe: boolean) {
   return { type: 'root' } as const
 }
 
-export function nodeToTrashedDocumentItem(node: NodeEntity): RecentDocumentsItemValue {
+export function nodeToTrashedDocumentItem(
+  node: NodeEntity,
+  names: HomepageMessages['names'],
+): RecentDocumentsItemValue {
   const { volumeId, nodeId: linkId } = splitNodeUid(node.uid)
   const { nodeId: parentLinkId } = node.parentUid ? splitNodeUid(node.parentUid) : {}
 
   return {
-    name: getNodeNameOrFallback(node),
+    name: getNodeNameOrFallback(node, names),
     type: mimeTypeToProtonDocumentType(node.mediaType) ?? 'document',
     linkId,
     parentLinkId,
@@ -73,7 +78,7 @@ export function nodeToTrashedDocumentItem(node: NodeEntity): RecentDocumentsItem
     // In case trashTime is missing it will use Sept 2001, but that's HIGHLY unlikely
     lastViewed: new ServerTime(node.trashTime?.getTime() ?? 1000000000),
     lastModified: new ServerTime(node.trashTime?.getTime() ?? 1000000000),
-    createdBy: getAuthorName(node.keyAuthor),
+    createdBy: getAuthorName(node.keyAuthor, names),
     // Properties below are irrelevant for trashed items
     isSharedWithMe: false,
     shareId: '',

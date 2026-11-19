@@ -6,8 +6,8 @@ import type { TableVariant } from './DocumentsTable'
 import { DocumentsTable } from './DocumentsTable'
 import { InvitesTable } from './InvitesTable'
 import { ContextMenuProvider } from './DocContextMenu/context'
-import { createContentMessages } from '../messages/content'
-import { createNewDocumentMessages } from '../messages/newDocument'
+import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
+import type { HomepageMessages } from '../messages/defaultHomepageMessages'
 import { useHomepageView } from '../homepageViewContext'
 import { forwardRef, useEffect } from 'react'
 import { COLOR_BY_TYPE, ContentSheet, REFRESH_AFTER_NEW_DOCUMENT } from './shared'
@@ -98,8 +98,7 @@ function HomepageView(): JSX.Element | null {
 
 type EmptyStateVariant = 'recents' | 'trash' | 'search'
 
-function getEmptyStateText(variant: EmptyStateVariant): string {
-  const messages = createContentMessages().content
+function getEmptyStateText(variant: EmptyStateVariant, messages: HomepageMessages['content']): string {
   switch (variant) {
     case 'recents':
       return messages.emptyRecents
@@ -128,7 +127,7 @@ const HomepageButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(functi
 
 function RecentsEmptyStateButtons() {
   const { updateRecentDocuments, reportTelemetry, getAppHref } = useHomepageView()
-  const messages = createNewDocumentMessages().newDocument
+  const { newDocument: messages, content } = useHomepageMessages()
   return (
     <div className="flex items-center justify-center gap-4">
       <HomepageButton
@@ -164,7 +163,7 @@ function RecentsEmptyStateButtons() {
             'pointer-events-none absolute -right-5 -top-2',
           )}
         >
-          {createContentMessages().content.newBadge}
+          {content.newBadge}
         </span>
       </HomepageButton>
     </div>
@@ -173,6 +172,7 @@ function RecentsEmptyStateButtons() {
 
 type EmptyStateProps = { variant: EmptyStateVariant }
 function EmptyState({ variant }: EmptyStateProps) {
+  const messages = useHomepageMessages().content
   return (
     <ContentSheet isBottom className="flex shrink-0 grow items-center justify-center">
       <div className="flex flex-col items-center gap-6 p-8">
@@ -182,7 +182,7 @@ function EmptyState({ variant }: EmptyStateProps) {
           src={variant === 'recents' ? emptyStateRecentsImage : emptyStateImage}
           alt="Empty state illustration"
         />
-        <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">{getEmptyStateText(variant)}</p>
+        <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">{getEmptyStateText(variant, messages)}</p>
         {variant === 'recents' ? <RecentsEmptyStateButtons /> : null}
       </div>
     </ContentSheet>
