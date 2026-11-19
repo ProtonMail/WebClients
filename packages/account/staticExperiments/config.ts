@@ -39,4 +39,18 @@ export const staticExperimentsConfig = {
             },
         ],
     },
+    /**
+     * VPN signup: Free, VPN Plus and Proton Unlimited cards instead of the VPN Plus cycle selector.
+     * Only the default B2C pricing page takes part, see `useVpnSignupThreePlans`.
+     */
+    VpnSignupThreePlans: {
+        enabled: true,
+        owner: 'jpratvil',
+        schedule: [
+            {
+                startsAt: '2026-11-19T00:00:00.000Z',
+                weights: { Control: 100, Treatment: 0 },
+            },
+        ],
+    },
 } satisfies Record<string, StaticExperimentConfig> & Partial<Record<FeatureFlag, never>>;
