@@ -13,6 +13,7 @@ import {
   type SuggestionSummaryType,
 } from '@proton-docs/docs-editor'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { FeatureFlag } from '@proton/unleash/Flags'
 import { EditorEvent } from '@proton/docs-shared/Bridge/EditorEvent'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
 import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
@@ -28,6 +29,25 @@ const hostTelemetryEvents: Record<DocsEditorTelemetryEvent, TelemetryDocsEditorE
   [DocsEditorTelemetryEvents.table_of_contents_opened]: TelemetryDocsEditorEvents.table_of_contents_opened,
   [DocsEditorTelemetryEvents.table_of_contents_heading_clicked]:
     TelemetryDocsEditorEvents.table_of_contents_heading_clicked,
+}
+
+function useFeatureFlag(clientInvoker: EditorRequiresClientMethods, featureFlag: FeatureFlag) {
+  const [enabled, setEnabled] = useState(false)
+  useEffect(() => {
+    let disposed = false
+    void clientInvoker
+      .checkIfFeatureFlagIsEnabled(featureFlag)
+      .then((isEnabled) => {
+        if (!disposed) {
+          setEnabled(isEnabled)
+        }
+      })
+      .catch(reportErrorToSentry)
+    return () => {
+      disposed = true
+    }
+  }, [clientInvoker, featureFlag])
+  return enabled
 }
 
 /**
@@ -46,21 +66,9 @@ export function DocsAdapter({
   const role = application.getRole()
   const canEdit = role.canEdit()
   const canComment = role.canComment()
-  const [emojiPickerEnabled, setEmojiPickerEnabled] = useState(false)
-  useEffect(() => {
-    let disposed = false
-    void clientInvoker
-      .checkIfFeatureFlagIsEnabled('DocsEmojiPicker')
-      .then((enabled) => {
-        if (!disposed) {
-          setEmojiPickerEnabled(enabled)
-        }
-      })
-      .catch(reportErrorToSentry)
-    return () => {
-      disposed = true
-    }
-  }, [clientInvoker])
+  const emojiPickerEnabled = useFeatureFlag(clientInvoker, 'DocsEmojiPicker')
+  const pageBreaksEnabled = useFeatureFlag(clientInvoker, 'DocsPageBreaksEnabled')
+  const subscriptSuperscriptEnabled = useFeatureFlag(clientInvoker, 'DocsSubscriptSuperscriptEnabled')
   const [languageCode, setLanguageCode] = useState(application.languageCode)
   useEffect(() => application.subscribeToLocale(setLanguageCode), [application])
   const messages = useDocsLocalization()
@@ -145,6 +153,8 @@ export function DocsAdapter({
       userName,
       suggestionsEnabled,
       emojiPickerEnabled,
+      pageBreaksEnabled,
+      subscriptSuperscriptEnabled,
       messages,
       isAlpha,
       canEdit,
@@ -175,6 +185,8 @@ export function DocsAdapter({
       userName,
       suggestionsEnabled,
       emojiPickerEnabled,
+      pageBreaksEnabled,
+      subscriptSuperscriptEnabled,
       messages,
       isAlpha,
       canEdit,

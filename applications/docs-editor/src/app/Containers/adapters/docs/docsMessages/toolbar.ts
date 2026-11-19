@@ -32,10 +32,9 @@ export function createToolbarMessages(): Pick<DocsMessages, 'toolbar' | 'alignme
       'Code block': c('Action').t`Code block`,
       Quote: c('Action').t`Quote`,
       'Clear formatting': c('Action').t`Clear formatting`,
-      // The "(alpha only)" suffix stays untranslated so the existing msgids keep their translations.
-      'Subscript (alpha only)': `${c('Action').t`Subscript`} (alpha only)`,
-      'Superscript (alpha only)': `${c('Action').t`Superscript`} (alpha only)`,
-      'Page break (alpha only)': `${c('Action').t`Page break`} (alpha only)`,
+      Subscript: c('Action').t`Subscript`,
+      Superscript: c('Action').t`Superscript`,
+      'Page break': c('Action').t`Page break`,
       New: c('Info').t`New`,
       'More options': c('Action').t`More options`,
       Editing: c('Info').t`Editing`,

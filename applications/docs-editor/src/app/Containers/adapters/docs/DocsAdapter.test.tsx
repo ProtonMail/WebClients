@@ -5,6 +5,7 @@ import { CommentsEvent } from '@proton/docs-shared/CommentsEvent'
 import { DocAwarenessEvent } from '@proton/docs-shared/DocAwarenessEvent'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
+import type { FeatureFlag } from '@proton/unleash/Flags'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import { getDateFnLocaleWithSettings } from '@proton/shared/lib/i18n/dateFnLocale'
@@ -44,11 +45,13 @@ function setup({
   onComments,
   onAwareness,
   initialLocale,
+  enabledFlags = [],
 }: {
   onCursor?: (state: SafeDocsUserState) => void
   onComments?: (event: DocsCommentEvent) => void
   onAwareness?: (states: SafeDocsUserState[]) => void
   initialLocale?: string
+  enabledFlags?: FeatureFlag[]
 } = {}) {
   const application = new Application()
   if (initialLocale) {
@@ -58,6 +61,7 @@ function setup({
   application.syncedState.setProperty('userName', 'First user')
   application.syncedState.setProperty('suggestionsEnabled', true)
   const clientInvoker = createClientInvokerFixture()
+  clientInvoker.checkIfFeatureFlagIsEnabled = jest.fn(async (flag: FeatureFlag) => enabledFlags.includes(flag))
   let dependencies: DocsDependencies
   function Consumer() {
     dependencies = useDocsDependencies()
@@ -157,6 +161,19 @@ describe('DocsAdapter runtime services', () => {
     expect(host.dependencies.isAlpha).toBe(true)
   })
 
+  it('turns page breaks on from the DocsPageBreaksEnabled flag', async () => {
+    const host = setup({ enabledFlags: ['DocsPageBreaksEnabled'] })
+
+    await waitFor(() => expect(host.dependencies.pageBreaksEnabled).toBe(true))
+    expect(host.dependencies.emojiPickerEnabled).toBe(false)
+  })
+
+  it('turns subscript and superscript on from the DocsSubscriptSuperscriptEnabled flag', async () => {
+    const host = setup({ enabledFlags: ['DocsSubscriptSuperscriptEnabled'] })
+
+    await waitFor(() => expect(host.dependencies.subscriptSuperscriptEnabled).toBe(true))
+  })
+
   it('updates contact display names and exposes current role and locale metadata', () => {
     const host = setup()
     expect(host.dependencies).toMatchObject({ canEdit: false, canComment: false, languageCode: 'en' })
@@ -237,7 +254,7 @@ describe('DocsAdapter runtime services', () => {
   it('rebuilds translated messages once the account locale activates', async () => {
     const host = setup()
     expect(host.dependencies.messages?.toolbar.Bold).toBe('Bold')
-    expect(host.dependencies.messages?.toolbar['Subscript (alpha only)']).toBe('Subscript (alpha only)')
+    expect(host.dependencies.messages?.toolbar.Subscript).toBe('Subscript')
     const french = {
       charset: 'utf-8',
       headers: { 'plural-forms': 'nplurals=2; plural=(n > 1);' },
@@ -252,7 +269,7 @@ describe('DocsAdapter runtime services', () => {
       expect(host.dependencies.messages?.toolbar.Bold).toBe('Bold')
       await act(() => loadLocale('fr_FR', { fr_FR: async () => french }))
       expect(host.dependencies.messages?.toolbar.Bold).toBe('Gras')
-      expect(host.dependencies.messages?.toolbar['Subscript (alpha only)']).toBe('Indice (alpha only)')
+      expect(host.dependencies.messages?.toolbar.Subscript).toBe('Indice')
       expect(host.dependencies.messages?.alignmentMenuOptions['Left align']).toBe('Aligner à gauche')
       expect(host.dependencies.messages?.emoji.categories.flags).toBe('Drapeaux')
     } finally {
