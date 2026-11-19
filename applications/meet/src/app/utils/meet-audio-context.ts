@@ -85,7 +85,22 @@ export const createMeetAudioContext = ({
     const audioContext = createPlaybackContext(sampleRate, reportMeetError);
 
     // setSinkId is supported in Chrome 110+ but not yet in the TypeScript lib types.
-    const ctx = audioContext as AudioContext & { setSinkId?: (sinkId: string) => Promise<void> };
+    const ctx = audioContext as AudioContext & {
+        sinkId?: string | { type: string };
+        setSinkId?: (sinkId: string) => Promise<void>;
+    };
+
+    let pendingSwitch: { deviceId: string; result: Promise<boolean> } | undefined;
+
+    const switchSink = async (deviceId: string) => {
+        try {
+            await ctx.setSinkId?.(deviceId);
+            return true;
+        } catch (error) {
+            reportMeetError('Error setting sink id', { context: { error, deviceId } });
+            return false;
+        }
+    };
 
     // Recovering from a lost output device is the caller's job: this context is only half of the
     // pin, and moving it alone would leave the remote audio elements on the device that went away.
@@ -94,13 +109,24 @@ export const createMeetAudioContext = ({
             return false;
         }
 
-        try {
-            await ctx.setSinkId(deviceId);
+        if (pendingSwitch) {
+            if (pendingSwitch.deviceId === deviceId) {
+                return pendingSwitch.result;
+            }
+        } else if (ctx.sinkId === deviceId) {
             return true;
-        } catch (error) {
-            reportMeetError('Error setting sink id', { context: { error, deviceId } });
-            return false;
         }
+
+        const result = switchSink(deviceId);
+        pendingSwitch = { deviceId, result };
+
+        void result.finally(() => {
+            if (pendingSwitch?.result === result) {
+                pendingSwitch = undefined;
+            }
+        });
+
+        return result;
     };
 
     if (!isSafari()) {

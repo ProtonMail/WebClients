@@ -20,6 +20,22 @@ const createFakeAudioContext = (initialState: FakeState) => {
 
     const fake = {
         state: initialState as FakeState,
+        isClockFrozen: false,
+        frozenTime: 0,
+        get currentTime() {
+            return fake.isClockFrozen ? fake.frozenTime : Date.now() / 1000;
+        },
+        freezeClock: () => {
+            fake.frozenTime = Date.now() / 1000;
+            fake.isClockFrozen = true;
+        },
+        suspend: vi.fn(async () => {
+            fake.goTo('suspended');
+        }),
+        resume: vi.fn(async () => {
+            fake.isClockFrozen = false;
+            fake.goTo('running');
+        }),
         addEventListener: (type: string, listener: () => void) => {
             const forType = listeners.get(type) ?? new Set<() => void>();
             forType.add(listener);
@@ -65,6 +81,8 @@ const setup = ({
     const room = {
         startAudio,
         switchActiveDevice,
+        getActiveDevice: vi.fn(),
+        remoteParticipants: new Map(),
         state: roomState,
         options: { webAudioMix: isPlaybackContext ? { audioContext } : false },
     } as unknown as Room;
@@ -195,6 +213,75 @@ describe('useAudioContextOutput', () => {
         await advance(0);
 
         expect(switchActiveDevice).not.toHaveBeenCalled();
+    });
+
+    it('restarts a context whose clock stopped after an output change, and reports it', async () => {
+        const { audioContext, reportMeetError, advance } = setup({
+            initialState: 'running',
+            activeAudioOutputId: 'speakers',
+        });
+
+        audioContext.freezeClock();
+        await advance(1_000);
+
+        expect(audioContext.suspend).toHaveBeenCalledTimes(1);
+        expect(audioContext.resume).toHaveBeenCalledTimes(1);
+        expect(reportMeetError).toHaveBeenCalledWith(
+            'Audio context clock stalled after an output change',
+            expect.objectContaining({ level: 'warning' })
+        );
+    });
+
+    it('reports a failed restart of a stopped clock instead of leaving it unhandled', async () => {
+        const { audioContext, reportMeetError, advance } = setup({
+            initialState: 'running',
+            activeAudioOutputId: 'speakers',
+        });
+        const error = new Error('context closed');
+        audioContext.resume.mockRejectedValueOnce(error);
+
+        audioContext.freezeClock();
+        await advance(1_000);
+
+        expect(reportMeetError).toHaveBeenCalledWith(
+            'Audio context clock stalled after an output change',
+            expect.objectContaining({ level: 'warning' })
+        );
+        expect(reportMeetError).toHaveBeenCalledWith(
+            'Error restarting a stalled audio context',
+            expect.objectContaining({ context: { error } })
+        );
+    });
+
+    it('leaves a context alone when its clock keeps moving after an output change', async () => {
+        const { audioContext, reportMeetError, advance } = setup({
+            initialState: 'running',
+            activeAudioOutputId: 'speakers',
+        });
+
+        await advance(1_000);
+
+        expect(audioContext.suspend).not.toHaveBeenCalled();
+        expect(reportMeetError).not.toHaveBeenCalled();
+    });
+
+    it('leaves a stopped clock to the newer output change when the device changed meanwhile', async () => {
+        const { audioContext, rerender, advance } = setup({
+            initialState: 'running',
+            activeAudioOutputId: 'speakers',
+        });
+
+        audioContext.freezeClock();
+        await advance(500);
+        storeMocks.useMeetSelector.mockReturnValue('jabra');
+        rerender();
+        await advance(500);
+
+        expect(audioContext.suspend).not.toHaveBeenCalled();
+
+        await advance(500);
+
+        expect(audioContext.suspend).toHaveBeenCalledTimes(1);
     });
 
     // Pinning a sink on an idle context hands Chrome a silent echo cancellation reference

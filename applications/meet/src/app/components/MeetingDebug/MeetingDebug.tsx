@@ -81,8 +81,26 @@ export const MeetingDebug = () => {
         let enumeratedAt = 0;
         let cameraPermissions = '(unknown)';
         let microphonePermissions = '(unknown)';
+        let previousClockReading: { contextTime: number; wallTime: number } | undefined;
 
         const panelWindow = reportRef.current?.ownerDocument.defaultView ?? window;
+
+        const readClockRate = (audioContext: AudioContext | undefined) => {
+            if (!audioContext) {
+                previousClockReading = undefined;
+                return undefined;
+            }
+
+            const reading = { contextTime: audioContext.currentTime, wallTime: performance.now() };
+            const previous = previousClockReading;
+            previousClockReading = reading;
+
+            if (!previous) {
+                return undefined;
+            }
+
+            return (reading.contextTime - previous.contextTime) / ((reading.wallTime - previous.wallTime) / SECOND);
+        };
 
         const refreshBrowserState = async () => {
             if (isRefreshingBrowserState) {
@@ -130,6 +148,8 @@ export const MeetingDebug = () => {
             const microphoneCaptureState = microphoneTrack?.mediaStream?.getAudioTracks()[0]?.readyState;
             const microphoneProcessedState = microphoneTrack?.getProcessor()?.processedTrack?.readyState;
 
+            const clockRate = readClockRate(audioContext);
+
             setSnapshot({
                 enumerated,
                 enumeratedAgo: enumeratedAt ? `${Math.round((Date.now() - enumeratedAt) / SECOND)}s ago` : '(pending)',
@@ -160,6 +180,9 @@ export const MeetingDebug = () => {
                 audioContextSampleRate: audioContext ? String(audioContext.sampleRate) : '(none)',
                 audioContextSinkId:
                     contextWithSink?.sinkId === '' ? '(system default)' : shortId(contextWithSink?.sinkId),
+                audioContextClockRate: clockRate === undefined ? '(measuring)' : `${clockRate.toFixed(2)}x`,
+                isAudioContextClockStalled:
+                    audioContext?.state === 'running' && clockRate !== undefined && clockRate < 0.5,
             });
         };
 

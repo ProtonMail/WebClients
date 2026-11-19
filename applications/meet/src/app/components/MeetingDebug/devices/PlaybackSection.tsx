@@ -18,6 +18,11 @@ export const PlaybackSection = ({ snapshot }: { snapshot: Snapshot }) => (
         />
         <Field name="audioContext.sampleRate" value={snapshot.audioContextSampleRate} />
         <Field name="audioContext.sinkId" value={snapshot.audioContextSinkId} />
+        <Field
+            name="audioContext.clockRate"
+            value={snapshot.audioContextClockRate}
+            highlight={snapshot.isAudioContextClockStalled}
+        />
         <Field name="cameraPermissions" value={snapshot.cameraPermissions} />
         <Field name="microphonePermissions" value={snapshot.microphonePermissions} />
 
