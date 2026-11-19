@@ -6,12 +6,12 @@ import * as constants from '../constants';
 import { MissingDataError, UnsupportedFormatError } from '../thumbnailError';
 import { CbzHandler } from './cbzHandler';
 
-jest.mock('@proton/components/containers/filePreview/ComicBookPreview', () => ({
-    getCBZCover: jest.fn(),
+vi.mock('@proton/components/containers/filePreview/ComicBookPreview', () => ({
+    getCBZCover: vi.fn(),
 }));
 
-jest.mock('../constants', () => ({
-    ...jest.requireActual('../constants'),
+vi.mock('../constants', async () => ({
+    ...(await vi.importActual('../constants')),
     isIosDevice: false,
 }));
 
@@ -20,7 +20,7 @@ describe('CbzHandler', () => {
 
     beforeEach(() => {
         handler = new CbzHandler();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('canHandle', () => {
@@ -63,7 +63,7 @@ describe('CbzHandler', () => {
 
         test('Throws MissingDataError when CBZ has no cover', async () => {
             const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
-            jest.mocked(getCBZCover).mockResolvedValue({ cover: undefined, file: undefined });
+            vi.mocked(getCBZCover).mockResolvedValue({ cover: undefined, file: undefined });
 
             const blob = new Blob(['cbz content'], { type: 'application/x-cbz' });
 
@@ -81,7 +81,7 @@ describe('CbzHandler', () => {
 
         test('MissingDataError includes proper context', async () => {
             const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
-            jest.mocked(getCBZCover).mockResolvedValue({ cover: undefined, file: undefined });
+            vi.mocked(getCBZCover).mockResolvedValue({ cover: undefined, file: undefined });
 
             const blob = new Blob(['cbz content'], { type: 'application/x-cbz' });
 
@@ -94,7 +94,7 @@ describe('CbzHandler', () => {
                     [ThumbnailType.Type1],
                     'application/x-cbz'
                 );
-                fail('Should have thrown MissingDataError');
+                expect.unreachable('Should have thrown MissingDataError');
             } catch (error) {
                 expect(error).toBeInstanceOf(MissingDataError);
                 if (error instanceof MissingDataError) {
@@ -106,7 +106,7 @@ describe('CbzHandler', () => {
 
         test('Throws UnsupportedFormatError when archive extraction fails', async () => {
             const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
-            jest.mocked(getCBZCover).mockRejectedValue(new Error('Corrupted archive'));
+            vi.mocked(getCBZCover).mockRejectedValue(new Error('Corrupted archive'));
 
             const blob = new Blob(['corrupted cbz'], { type: 'application/x-cbz' });
 
@@ -124,7 +124,7 @@ describe('CbzHandler', () => {
 
         test('UnsupportedFormatError includes proper context', async () => {
             const { getCBZCover } = await import('@proton/components/containers/filePreview/ComicBookPreview');
-            jest.mocked(getCBZCover).mockRejectedValue(new Error('Corrupted archive'));
+            vi.mocked(getCBZCover).mockRejectedValue(new Error('Corrupted archive'));
 
             const blob = new Blob(['corrupted cbz'], { type: 'application/x-cbz' });
 
@@ -137,7 +137,7 @@ describe('CbzHandler', () => {
                     [ThumbnailType.Type1],
                     'application/x-cbz'
                 );
-                fail('Should have thrown UnsupportedFormatError');
+                expect.unreachable('Should have thrown UnsupportedFormatError');
             } catch (error) {
                 expect(error).toBeInstanceOf(UnsupportedFormatError);
                 if (error instanceof UnsupportedFormatError) {

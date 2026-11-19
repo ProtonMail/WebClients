@@ -1,5 +1,8 @@
 import { parseMp4Metadata, readMp4CreationTime } from './mp4BoxParser';
 
+// A Blob only reads typed array views from this realm's buffers, not the bare ArrayBuffers.
+const blobOf = (parts: ArrayBuffer[]) => new Blob(parts.map((part) => new Uint8Array(part)));
+
 function concat(...buffers: ArrayBufferLike[]): ArrayBuffer {
     const total = buffers.reduce((sum, buffer) => sum + buffer.byteLength, 0);
     const result = new Uint8Array(total);
@@ -251,19 +254,19 @@ describe('readMp4CreationTime', () => {
     const EXPECTED_DATE = new Date('2009-08-07T17:03:58.000Z');
 
     test('reads creation_time from mvhd (version 0) and converts from the MP4 epoch to a JS Date', async () => {
-        const file = new Blob([mp4File(mvhd(MAC_EPOCH_SECONDS))]);
+        const file = blobOf([mp4File(mvhd(MAC_EPOCH_SECONDS))]);
 
         await expect(readMp4CreationTime(file)).resolves.toEqual(EXPECTED_DATE);
     });
 
     test('reads version-1 (64-bit) mvhd creation_time', async () => {
-        const file = new Blob([mp4File(mvhdV1(MAC_EPOCH_SECONDS))]);
+        const file = blobOf([mp4File(mvhdV1(MAC_EPOCH_SECONDS))]);
 
         await expect(readMp4CreationTime(file)).resolves.toEqual(EXPECTED_DATE);
     });
 
     test('finds moov when it trails a large mdat, as camera recordings write it', async () => {
-        const file = new Blob([
+        const file = blobOf([
             concat(
                 box('ftyp', new TextEncoder().encode('isom').buffer),
                 box('mdat', zeros(64 * 1024)),
@@ -275,7 +278,7 @@ describe('readMp4CreationTime', () => {
     });
 
     test('reads only the box headers and the start of moov, not the whole file', async () => {
-        const file = new Blob([
+        const file = blobOf([
             concat(
                 box('ftyp', new TextEncoder().encode('isom').buffer),
                 box('mdat', zeros(64 * 1024)),
@@ -284,7 +287,7 @@ describe('readMp4CreationTime', () => {
         ]);
         const bytesRead: number[] = [];
         const slice = file.slice.bind(file);
-        jest.spyOn(file, 'slice').mockImplementation((start, end) => {
+        vi.spyOn(file, 'slice').mockImplementation((start, end) => {
             const sliced = slice(start, end);
             bytesRead.push(sliced.size);
             return sliced;
@@ -296,19 +299,19 @@ describe('readMp4CreationTime', () => {
     });
 
     test('returns null when creation_time is zero (unset)', async () => {
-        const file = new Blob([mp4File(mvhd(0))]);
+        const file = blobOf([mp4File(mvhd(0))]);
 
         await expect(readMp4CreationTime(file)).resolves.toBeNull();
     });
 
     test('returns null when there is no mvhd box', async () => {
-        const file = new Blob([mp4File(trak(1, 640, 480, 1000, 1000))]);
+        const file = blobOf([mp4File(trak(1, 640, 480, 1000, 1000))]);
 
         await expect(readMp4CreationTime(file)).resolves.toBeNull();
     });
 
     test('returns null when there is no moov box', async () => {
-        const webmLikeHeader = new Blob([new Uint8Array([0x1a, 0x45, 0xdf, 0xa3, 0, 0, 0, 0, 0, 0]).buffer]);
+        const webmLikeHeader = blobOf([new Uint8Array([0x1a, 0x45, 0xdf, 0xa3, 0, 0, 0, 0, 0, 0]).buffer]);
 
         await expect(readMp4CreationTime(webmLikeHeader)).resolves.toBeNull();
     });

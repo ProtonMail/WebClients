@@ -1,54 +1,53 @@
 import { MemberRole, NodeType } from '@protontech/drive-sdk';
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { useCreateFolderModal } from '../../createFolderModal';
 import { useCopyItems } from './useCopyItems';
 import { useCopyItemsModalState } from './useCopyItemsModalState';
 
+const mockTree = vi.hoisted(() => ({
+    initializeTree: vi.fn().mockResolvedValue(undefined),
+    get: vi.fn(),
+    toggleExpand: vi.fn(),
+    addNode: vi.fn(),
+    treeRoots: [] as any[],
+}));
+
 // directoryTreeFactory() is called at module level in useCopyItemsModalState.
-// We expose the inner mocks via private keys so tests can access and configure them.
-jest.mock('@proton/drive/modules/directoryTree', () => {
-    const mockFns = {
-        initializeTree: jest.fn().mockResolvedValue(undefined),
-        get: jest.fn(),
-        toggleExpand: jest.fn(),
-        addNode: jest.fn(),
-        treeRoots: [] as any[],
-    };
-    const mockHook = jest.fn(() => mockFns);
+// The inner mocks are hoisted so tests can access and configure them.
+vi.mock('@proton/drive/modules/directoryTree', async () => {
+    const mockHook = vi.fn(() => mockTree);
     return {
-        ...jest.requireActual('@proton/drive/modules/directoryTree'),
-        directoryTreeFactory: jest.fn(() => mockHook),
-        _mockFns: mockFns,
+        ...(await vi.importActual('@proton/drive/modules/directoryTree')),
+        directoryTreeFactory: vi.fn(() => mockHook),
     };
 });
 
-jest.mock('./useCopyItems');
-jest.mock('@proton/drive/legacy/errorHandling');
-jest.mock('@proton/drive/modals/createFolderModal');
+vi.mock('./useCopyItems');
+vi.mock('@proton/drive/legacy/errorHandling');
+vi.mock('@proton/drive/modals/createFolderModal');
 
-const mockedUseCopyItems = jest.mocked(useCopyItems);
-const mockedUseCreateFolderModal = jest.mocked(useCreateFolderModal);
-const { _mockFns: mockTree } = jest.requireMock('@proton/drive/modules/directoryTree');
+const mockedUseCopyItems = vi.mocked(useCopyItems);
+const mockedUseCreateFolderModal = vi.mocked(useCreateFolderModal);
 
 const FOLDER_TREE_ID = 'null___folder-uid';
 const FOLDER_UID = 'folder-uid';
 
 const defaultProps = {
     itemsToCopy: [{ uid: 'item-1', name: 'File 1', type: NodeType.File }],
-    onClose: jest.fn(),
-    onExit: jest.fn(),
+    onClose: vi.fn(),
+    onExit: vi.fn(),
     open: true,
 };
 
 describe('useCopyItemsModalState', () => {
-    const mockHandleError = jest.mocked(handleSdkError);
-    const mockCopyItems = jest.fn().mockResolvedValue(undefined);
-    const mockShowCreateFolderModal = jest.fn();
+    const mockHandleError = vi.mocked(handleSdkError);
+    const mockCopyItems = vi.fn().mockResolvedValue(undefined);
+    const mockShowCreateFolderModal = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         mockTree.initializeTree.mockResolvedValue(undefined);
         mockTree.get.mockReturnValue(undefined);
@@ -101,7 +100,7 @@ describe('useCopyItemsModalState', () => {
 
     describe('errorMessage', () => {
         it('returns null for writable roles and a message for Viewer', async () => {
-            const { result } = renderHook(() => useCopyItemsModalState(defaultProps));
+            const { result, rerender } = renderHook(() => useCopyItemsModalState(defaultProps));
 
             mockTree.get.mockReturnValue({ highestEffectiveRole: MemberRole.Editor });
             await act(async () => {
@@ -113,6 +112,8 @@ describe('useCopyItemsModalState', () => {
             act(() => {
                 result.current.handleSelect(FOLDER_TREE_ID, { type: NodeType.Folder } as any);
             });
+            // Selecting the same folder does not re-render: the role is read from the tree during render
+            rerender();
             expect(result.current.errorMessage).toBeTruthy();
         });
     });

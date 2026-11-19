@@ -6,14 +6,14 @@ import { CopyPublicLink } from './CopyPublicLink';
 describe('CopyPublicLink', () => {
     const defaultProps = {
         url: 'https://example.com/public-link',
-        onClick: jest.fn(),
+        onClick: vi.fn(),
         disabled: false,
         isExpired: false,
     };
     const user = userEvent.setup();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('renders the copy link button when not expired', () => {
@@ -23,7 +23,7 @@ describe('CopyPublicLink', () => {
     });
 
     it('calls onClick when the copy link button is clicked', async () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         render(<CopyPublicLink {...defaultProps} onClick={onClick} />);
 
         await user.click(screen.getByTestId('share-anyone-copyUrlButton'));

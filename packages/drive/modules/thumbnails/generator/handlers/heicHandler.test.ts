@@ -5,8 +5,8 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { UnsupportedFormatError } from '../thumbnailError';
 import { HeicHandler } from './heicHandler';
 
-jest.mock('heic-to/csp', () => ({
-    heicTo: jest.fn(),
+vi.mock('heic-to/csp', () => ({
+    heicTo: vi.fn(),
 }));
 
 describe('HeicHandler', () => {
@@ -14,7 +14,7 @@ describe('HeicHandler', () => {
 
     beforeEach(() => {
         handler = new HeicHandler();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('canHandle', () => {
@@ -33,7 +33,7 @@ describe('HeicHandler', () => {
     describe('generate', () => {
         test('Throws UnsupportedFormatError when HEIC conversion fails', async () => {
             const { heicTo } = await import('heic-to/csp');
-            jest.mocked(heicTo).mockRejectedValue(new Error('Conversion failed'));
+            vi.mocked(heicTo).mockRejectedValue(new Error('Conversion failed'));
 
             const blob = new Blob(['heic content'], { type: 'image/heic' });
 
@@ -51,7 +51,7 @@ describe('HeicHandler', () => {
 
         test('UnsupportedFormatError includes proper context', async () => {
             const { heicTo } = await import('heic-to/csp');
-            jest.mocked(heicTo).mockRejectedValue(new Error('Unsupported HEIC variant'));
+            vi.mocked(heicTo).mockRejectedValue(new Error('Unsupported HEIC variant'));
 
             const blob = new Blob(['heic content'], { type: 'image/heic' });
 
@@ -64,7 +64,7 @@ describe('HeicHandler', () => {
                     [ThumbnailType.Type1],
                     'image/heic'
                 );
-                fail('Should have thrown UnsupportedFormatError');
+                expect.unreachable('Should have thrown UnsupportedFormatError');
             } catch (error) {
                 expect(error).toBeInstanceOf(UnsupportedFormatError);
                 if (error instanceof UnsupportedFormatError) {

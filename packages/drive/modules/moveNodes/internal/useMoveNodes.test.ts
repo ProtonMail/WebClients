@@ -5,29 +5,29 @@ import { BusDriverEventName } from '../../../modules/busDriver';
 import { generateNodeUid } from '../../../sdk';
 import { useMoveNodes } from './useMoveNodes';
 
-const mockDriveMoveNodes = jest.fn();
-const mockEmit = jest.fn();
-const mockCreateMovedItemsNotifications = jest.fn();
+const mockDriveMoveNodes = vi.fn();
+const mockEmit = vi.fn();
+const mockCreateMovedItemsNotifications = vi.fn();
 
-jest.mock('../../../sdk', () => ({
-    ...jest.requireActual('../../../sdk'),
-    useDrive: jest.fn(() => ({ drive: { moveNodes: mockDriveMoveNodes } })),
-    getDrive: jest.fn(() => ({})),
+vi.mock('../../../sdk', async () => ({
+    ...(await vi.importActual('../../../sdk')),
+    useDrive: vi.fn(() => ({ drive: { moveNodes: mockDriveMoveNodes } })),
+    getDrive: vi.fn(() => ({})),
 }));
 
-jest.mock('../../../modules/busDriver', () => ({
-    ...jest.requireActual('../../../modules/busDriver'),
-    getBusDriver: jest.fn(() => ({ emit: mockEmit })),
+vi.mock('../../../modules/busDriver', async () => ({
+    ...(await vi.importActual('../../../modules/busDriver')),
+    getBusDriver: vi.fn(() => ({ emit: mockEmit })),
 }));
 
-jest.mock('./useMovedItemsNotification', () => ({
-    useMovedItemsNotification: jest.fn(() => ({
+vi.mock('./useMovedItemsNotification', () => ({
+    useMovedItemsNotification: vi.fn(() => ({
         createMovedItemsNotifications: mockCreateMovedItemsNotifications,
     })),
 }));
 
-jest.mock('../../../legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('../../../legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
 const NODE1_UID = generateNodeUid('vol1', 'node1');
@@ -48,7 +48,7 @@ async function* makeAsyncIterable<T>(items: T[]): AsyncIterable<T> {
 
 describe('useMoveNodes', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockEmit.mockResolvedValue(undefined);
     });
 

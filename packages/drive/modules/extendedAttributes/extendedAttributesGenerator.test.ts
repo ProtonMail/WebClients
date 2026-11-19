@@ -2,12 +2,12 @@ import { getExifInfo } from './exifParser/exifParser';
 import { generateExtendedAttributes } from './extendedAttributesGenerator';
 import { buildExtendedAttributesMetadata } from './metadataBuilder/metadataBuilder';
 
-jest.mock('./exifParser/exifParser');
-jest.mock('./metadataBuilder/metadataBuilder');
+vi.mock('./exifParser/exifParser');
+vi.mock('./metadataBuilder/metadataBuilder');
 
 describe('generateExtendedAttributes', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should resolve metadata with built metadata', async () => {
@@ -16,8 +16,8 @@ describe('generateExtendedAttributes', () => {
             Media: { Width: 1920, Height: 1080, Duration: 120 },
             Location: { Latitude: 48.8566, Longitude: 2.3522 },
         };
-        jest.mocked(getExifInfo).mockResolvedValue(undefined);
-        jest.mocked(buildExtendedAttributesMetadata).mockReturnValue(expectedMetadata);
+        vi.mocked(getExifInfo).mockResolvedValue(undefined);
+        vi.mocked(buildExtendedAttributesMetadata).mockReturnValue(expectedMetadata);
 
         const { metadata } = await generateExtendedAttributes(file, 'image/jpeg');
 
@@ -26,8 +26,8 @@ describe('generateExtendedAttributes', () => {
 
     it('should handle undefined mediaInfo', async () => {
         const file = new File(['content'], 'test.jpg', { type: 'image/jpeg' });
-        jest.mocked(getExifInfo).mockResolvedValue(undefined);
-        jest.mocked(buildExtendedAttributesMetadata).mockReturnValue({
+        vi.mocked(getExifInfo).mockResolvedValue(undefined);
+        vi.mocked(buildExtendedAttributesMetadata).mockReturnValue({
             Media: {},
         });
 

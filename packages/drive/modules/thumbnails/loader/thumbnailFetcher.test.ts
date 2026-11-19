@@ -5,18 +5,18 @@ import { getCachedThumbnail, setCachedThumbnail } from '../encryptedThumbnailCac
 import { type MockDrive, makeDrive } from './testUtils';
 import { fetchThumbnails, storeKeyOf } from './thumbnailFetcher';
 
-jest.mock('../../../legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('../../../legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
-jest.mock('../encryptedThumbnailCache', () => ({
-    getCachedThumbnail: jest.fn(async () => undefined),
-    setCachedThumbnail: jest.fn(async () => undefined),
+vi.mock('../encryptedThumbnailCache', () => ({
+    getCachedThumbnail: vi.fn(async () => undefined),
+    setCachedThumbnail: vi.fn(async () => undefined),
 }));
 
-const mockGetCachedThumbnail = jest.mocked(getCachedThumbnail);
-const mockSetCachedThumbnail = jest.mocked(setCachedThumbnail);
-const mockHandleSdkError = jest.mocked(handleSdkError);
+const mockGetCachedThumbnail = vi.mocked(getCachedThumbnail);
+const mockSetCachedThumbnail = vi.mocked(setCachedThumbnail);
+const mockHandleSdkError = vi.mocked(handleSdkError);
 
 /** Makes the persistent cache hit for `key` only, missing for everything else. */
 const cacheHitOn = (key: string, bytes: Uint8Array<ArrayBuffer>) =>
@@ -29,7 +29,7 @@ it('storeKeyOf prefers revisionUid, falls back to nodeUid', () => {
 
 describe('fetchThumbnails', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('returns empty for empty input, touching neither cache nor SDK', async () => {
@@ -102,7 +102,7 @@ describe('fetchThumbnails', () => {
     it('keeps cache hits and reports handleSdkError when the SDK call throws', async () => {
         cacheHitOn('rev-1', new Uint8Array([9]) as Uint8Array<ArrayBuffer>);
         const drive = {
-            iterateThumbnails: jest.fn(async function* (): AsyncGenerator<never> {
+            iterateThumbnails: vi.fn(async function* (): AsyncGenerator<never> {
                 throw new Error('network error');
             }),
         } as unknown as MockDrive;

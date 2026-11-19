@@ -1,18 +1,19 @@
 import { MemberRole, NodeType } from '@protontech/drive-sdk';
 import type { NodeEntity, ProtonDriveClient, Result } from '@protontech/drive-sdk';
+import type { MockInstance, Mocked } from 'vitest';
 
 import { getNodeAncestry } from './getNodeAncestry';
 
 describe('getNodeAncestry', () => {
-    let mockDrive: jest.Mocked<ProtonDriveClient>;
-    let consoleWarnSpy: jest.SpyInstance;
+    let mockDrive: Mocked<ProtonDriveClient>;
+    let consoleWarnSpy: MockInstance;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockDrive = {
-            getNode: jest.fn(),
+            getNode: vi.fn(),
         } as any;
-        consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation();
+        consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     afterEach(() => {

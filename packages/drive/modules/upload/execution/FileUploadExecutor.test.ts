@@ -1,4 +1,5 @@
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
@@ -9,16 +10,16 @@ import { useUploadControllerStore } from '../store/uploadController.store';
 import type { EventCallback, FileUploadTask } from '../types';
 import { FileUploadExecutor } from './FileUploadExecutor';
 
-jest.mock('../UploadDriveClientRegistry');
-jest.mock('../../thumbnails');
-jest.mock('../../extendedAttributes/extendedAttributesGenerator');
-jest.mock('../store/uploadController.store');
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    traceError: jest.fn(),
-    addSentryBreadcrumb: jest.fn(),
+vi.mock('../UploadDriveClientRegistry');
+vi.mock('../../thumbnails');
+vi.mock('../../extendedAttributes/extendedAttributesGenerator');
+vi.mock('../store/uploadController.store');
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
+    traceError: vi.fn(),
+    addSentryBreadcrumb: vi.fn(),
 }));
-jest.mock('../utils/createFileStream', () => ({
-    createFileStream: jest.fn(() => {
+vi.mock('../utils/createFileStream', () => ({
+    createFileStream: vi.fn(() => {
         return new ReadableStream({
             start(controller) {
                 controller.enqueue(new Uint8Array([1, 2, 3]));
@@ -30,33 +31,33 @@ jest.mock('../utils/createFileStream', () => ({
 
 describe('FileUploadExecutor', () => {
     let executor: FileUploadExecutor;
-    let mockEventCallback: jest.MockedFunction<EventCallback>;
-    let mockUploadFromStream: jest.Mock;
-    let mockCompletion: jest.Mock;
-    let mockGetFileUploader: jest.Mock;
-    let mockGetFileRevisionUploader: jest.Mock;
-    let mockGetController: jest.Mock;
+    let mockEventCallback: MockedFunction<EventCallback>;
+    let mockUploadFromStream: Mock;
+    let mockCompletion: Mock;
+    let mockGetFileUploader: Mock;
+    let mockGetFileRevisionUploader: Mock;
+    let mockGetController: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        mockEventCallback = jest.fn();
-        mockUploadFromStream = jest.fn();
-        mockCompletion = jest.fn();
-        mockGetFileUploader = jest.fn();
-        mockGetFileRevisionUploader = jest.fn();
-        mockGetController = jest.fn();
+        mockEventCallback = vi.fn();
+        mockUploadFromStream = vi.fn();
+        mockCompletion = vi.fn();
+        mockGetFileUploader = vi.fn();
+        mockGetFileRevisionUploader = vi.fn();
+        mockGetController = vi.fn();
 
         mockGetController.mockReturnValue({
             abortController: new AbortController(),
             uploadController: null,
         });
 
-        jest.mocked(useUploadControllerStore.getState).mockReturnValue({
+        vi.mocked(useUploadControllerStore.getState).mockReturnValue({
             getController: mockGetController,
         } as any);
 
-        jest.mocked(generateThumbnail).mockReturnValue({
+        vi.mocked(generateThumbnail).mockReturnValue({
             thumbnailsPromise: Promise.resolve({
                 ok: true,
                 result: {
@@ -68,7 +69,7 @@ describe('FileUploadExecutor', () => {
             mimeTypePromise: Promise.resolve('image/jpeg'),
         });
 
-        jest.mocked(generateExtendedAttributes).mockResolvedValue({
+        vi.mocked(generateExtendedAttributes).mockResolvedValue({
             metadata: {
                 Media: {
                     Width: 1920,
@@ -93,7 +94,7 @@ describe('FileUploadExecutor', () => {
             uploadFromStream: mockUploadFromStream,
         });
 
-        jest.mocked(UploadDriveClientRegistry.getDriveClient).mockReturnValue({
+        vi.mocked(UploadDriveClientRegistry.getDriveClient).mockReturnValue({
             getFileUploader: mockGetFileUploader,
             getFileRevisionUploader: mockGetFileRevisionUploader,
         } as any);
@@ -118,7 +119,7 @@ describe('FileUploadExecutor', () => {
     describe('setEventCallback', () => {
         it('should set event callback', () => {
             const newExecutor = new FileUploadExecutor();
-            const callback = jest.fn();
+            const callback = vi.fn();
 
             newExecutor.setEventCallback(callback);
 
@@ -228,7 +229,7 @@ describe('FileUploadExecutor', () => {
         });
 
         it('should include media metadata when available', async () => {
-            jest.mocked(generateThumbnail).mockReturnValue({
+            vi.mocked(generateThumbnail).mockReturnValue({
                 thumbnailsPromise: Promise.resolve({
                     ok: true,
                     result: {
@@ -241,7 +242,7 @@ describe('FileUploadExecutor', () => {
                 mimeTypePromise: Promise.resolve('video/mp4'),
             });
 
-            jest.mocked(generateExtendedAttributes).mockResolvedValue({
+            vi.mocked(generateExtendedAttributes).mockResolvedValue({
                 metadata: {
                     Media: {
                         Width: 1920,
@@ -272,7 +273,7 @@ describe('FileUploadExecutor', () => {
         });
 
         it('should extract EXIF info and pass to metadata helper', async () => {
-            jest.mocked(generateExtendedAttributes).mockResolvedValue({
+            vi.mocked(generateExtendedAttributes).mockResolvedValue({
                 metadata: {
                     Media: {
                         Width: 1920,
@@ -310,7 +311,7 @@ describe('FileUploadExecutor', () => {
 
         it('should trace error and continue upload with undefined additionalMetadata when generateExtendedAttributes throws', async () => {
             const exifError = new Error('EXIF parsing failed');
-            jest.mocked(generateExtendedAttributes).mockRejectedValue(exifError);
+            vi.mocked(generateExtendedAttributes).mockRejectedValue(exifError);
 
             const task = createFileTask();
 
@@ -333,7 +334,7 @@ describe('FileUploadExecutor', () => {
         });
 
         it('should handle thumbnail generation failure gracefully', async () => {
-            jest.mocked(generateThumbnail).mockReturnValue({
+            vi.mocked(generateThumbnail).mockReturnValue({
                 thumbnailsPromise: Promise.resolve({
                     ok: false,
                     error: new Error(),
@@ -446,7 +447,7 @@ describe('FileUploadExecutor', () => {
 
         it('should pass thumbnails to upload', async () => {
             const mockThumbnails = [{ type: 1, thumbnail: new Uint8Array() }];
-            jest.mocked(generateThumbnail).mockReturnValue({
+            vi.mocked(generateThumbnail).mockReturnValue({
                 thumbnailsPromise: Promise.resolve({
                     ok: true,
                     result: {

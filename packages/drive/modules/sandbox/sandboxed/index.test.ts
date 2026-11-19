@@ -8,18 +8,12 @@ type Sandboxed = typeof SandboxedModule;
 
 // The sandboxed code keeps its port in module state, so each test loads a fresh copy and
 // removes the copy's `message` listener afterwards.
-const addListener = jest.spyOn(window, 'addEventListener');
+const addListener = vi.spyOn(window, 'addEventListener');
 const openPorts: { close(): void }[] = [];
 
-const loadSandboxed = (): Sandboxed => {
-    let sandboxed: Sandboxed | undefined;
-    jest.isolateModules(() => {
-        sandboxed = require('./index');
-    });
-    if (!sandboxed) {
-        throw new Error('Sandboxed module did not load');
-    }
-    return sandboxed;
+const loadSandboxed = async (): Promise<Sandboxed> => {
+    vi.resetModules();
+    return import('./index');
 };
 
 const sendInit = ({
@@ -52,7 +46,7 @@ afterEach(() => {
 
 describe('sandboxed runtime', () => {
     it('publishes the API once the init from the parent arrives', async () => {
-        const sandboxed = loadSandboxed();
+        const sandboxed = await loadSandboxed();
         sandboxed.expose({ echo: (value: string) => value });
 
         const remote = sendInit();
@@ -62,7 +56,7 @@ describe('sandboxed runtime', () => {
     });
 
     it('calls sandboxed methods with the API object as `this`', async () => {
-        const sandboxed = loadSandboxed();
+        const sandboxed = await loadSandboxed();
         sandboxed.expose({
             async outer() {
                 return this.inner();
@@ -76,7 +70,7 @@ describe('sandboxed runtime', () => {
     });
 
     it('publishes the API when the init lands before expose()', async () => {
-        const sandboxed = loadSandboxed();
+        const sandboxed = await loadSandboxed();
         const remote = sendInit();
 
         sandboxed.expose({ echo: (value: string) => value });
@@ -87,7 +81,7 @@ describe('sandboxed runtime', () => {
     it('ignores an init from a sibling frame', async () => {
         const sibling = document.createElement('iframe');
         document.body.appendChild(sibling);
-        const sandboxed = loadSandboxed();
+        const sandboxed = await loadSandboxed();
         sandboxed.expose({ echo: (value: string) => value });
 
         const remote = sendInit({ source: sibling.contentWindow });
@@ -97,7 +91,7 @@ describe('sandboxed runtime', () => {
     });
 
     it('accepts only the first init, so a later one cannot take over the port', async () => {
-        const sandboxed = loadSandboxed();
+        const sandboxed = await loadSandboxed();
         sandboxed.expose({ echo: (value: string) => value });
 
         const first = sendInit({ assets: { wasm: new Uint8Array([1]).buffer } });
@@ -109,7 +103,7 @@ describe('sandboxed runtime', () => {
     });
 
     it('hands over the asset bytes sent with the init', async () => {
-        const sandboxed = loadSandboxed();
+        const sandboxed = await loadSandboxed();
         sendInit({ assets: { wasm: new Uint8Array([0, 97, 115, 109]).buffer } });
 
         expect(new Uint8Array(await sandboxed.getAsset('wasm'))).toEqual(new Uint8Array([0, 97, 115, 109]));

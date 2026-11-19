@@ -1,4 +1,5 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { sendErrorReport } from '../../../legacy/errorHandling';
 import { directoryTreeFactory, makeTreeItemId } from '../../../modules/directoryTree';
@@ -6,23 +7,23 @@ import { createMockNodeEntity } from '../../../modules/testing';
 import { generateNodeUid } from '../../../sdk';
 import { type UseMoveItemsModalStateProps, useMoveItemsModalState } from './useMoveItemsModalState';
 
-const mockInitializeTree = jest.fn();
-const mockToggleExpand = jest.fn();
+const mockInitializeTree = vi.fn();
+const mockToggleExpand = vi.fn();
 const mockExpandedTreeIds = new Map<string, boolean>();
-const mockAddNode = jest.fn();
-const mockClear = jest.fn();
-const mockCreateNotification = jest.fn();
-const mockMoveNodes = jest.fn();
-const mockShowCreateFolderModal = jest.fn();
-const mockIterateNodes = jest.fn();
-const mockGetNodeHierarchy = jest.fn();
-const mockOnClose = jest.fn();
-const mockOnExit = jest.fn();
+const mockAddNode = vi.fn();
+const mockClear = vi.fn();
+const mockCreateNotification = vi.fn();
+const mockMoveNodes = vi.fn();
+const mockShowCreateFolderModal = vi.fn();
+const mockIterateNodes = vi.fn();
+const mockGetNodeHierarchy = vi.fn();
+const mockOnClose = vi.fn();
+const mockOnExit = vi.fn();
 
-jest.mock('../../../modules/directoryTree', () => ({
-    ...jest.requireActual('../../../modules/directoryTree'),
-    directoryTreeFactory: jest.fn(() =>
-        jest.fn(() => ({
+vi.mock('../../../modules/directoryTree', async () => ({
+    ...(await vi.importActual('../../../modules/directoryTree')),
+    directoryTreeFactory: vi.fn(() =>
+        vi.fn(() => ({
             initializeTree: mockInitializeTree,
             toggleExpand: mockToggleExpand,
             expandedTreeIds: mockExpandedTreeIds,
@@ -33,31 +34,31 @@ jest.mock('../../../modules/directoryTree', () => ({
     ),
 }));
 
-jest.mock('../../../legacy/errorHandling', () => ({
-    sendErrorReport: jest.fn(),
-    handleSdkError: jest.fn(),
+vi.mock('../../../legacy/errorHandling', () => ({
+    sendErrorReport: vi.fn(),
+    handleSdkError: vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(() => ({ createNotification: mockCreateNotification })),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(() => ({ createNotification: mockCreateNotification })),
 }));
 
-jest.mock('../../../modules/moveNodes', () => ({
-    useMoveNodes: jest.fn(() => ({ moveNodes: mockMoveNodes, isLoading: false })),
+vi.mock('../../../modules/moveNodes', () => ({
+    useMoveNodes: vi.fn(() => ({ moveNodes: mockMoveNodes, isLoading: false })),
 }));
 
-jest.mock('../../createFolderModal', () => ({
-    useCreateFolderModal: jest.fn(() => ({
+vi.mock('../../createFolderModal', () => ({
+    useCreateFolderModal: vi.fn(() => ({
         createFolderModal: null,
         showCreateFolderModal: mockShowCreateFolderModal,
     })),
 }));
 
-jest.mock('../../../sdk', () => {
-    let driveInstance: { iterateNodes: jest.Mock; getNodeHierarchy: jest.Mock };
+vi.mock('../../../sdk', async () => {
+    let driveInstance: { iterateNodes: Mock; getNodeHierarchy: Mock };
     return {
-        ...jest.requireActual('../../../sdk'),
-        getDrive: jest.fn(() => {
+        ...(await vi.importActual('../../../sdk')),
+        getDrive: vi.fn(() => {
             if (!driveInstance) {
                 driveInstance = { iterateNodes: mockIterateNodes, getNodeHierarchy: mockGetNodeHierarchy };
             }
@@ -66,7 +67,7 @@ jest.mock('../../../sdk', () => {
     };
 });
 
-const mockSendErrorReport = sendErrorReport as jest.MockedFunction<typeof sendErrorReport>;
+const mockSendErrorReport = sendErrorReport as MockedFunction<typeof sendErrorReport>;
 
 const ROOT_UID = generateNodeUid('vol1', 'root');
 const NODE1_UID = generateNodeUid('vol1', 'node1');
@@ -127,11 +128,11 @@ async function renderLoaded(props = defaultProps) {
 
 // Capture the inner hook mock returned by directoryTreeFactory() at module load time,
 // before clearAllMocks wipes the factory's recorded results.
-const mockUseDirectoryTree = (directoryTreeFactory as jest.Mock).mock.results[0].value as jest.Mock;
+const mockUseDirectoryTree = (directoryTreeFactory as Mock).mock.results[0].value as Mock;
 
 describe('useMoveItemsModalState', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         mockGetNodeHierarchy.mockResolvedValue(createMockHierarchy(ROOT_UID, NODE1_UID));
         mockInitializeTree.mockResolvedValue(undefined);
@@ -303,7 +304,7 @@ describe('useMoveItemsModalState', () => {
                 targetFolderUid: FOLDER1_UID,
             };
             mockMoveNodes.mockResolvedValue(moveResult);
-            const onMoved = jest.fn(() => {
+            const onMoved = vi.fn(() => {
                 expect(mockOnClose).not.toHaveBeenCalled();
             });
             const { result } = await renderLoaded({ ...defaultProps, onMoved });
@@ -329,7 +330,7 @@ describe('useMoveItemsModalState', () => {
             };
             mockMoveNodes.mockResolvedValue(moveResult);
             const callbackError = new Error('Callback failure');
-            const onMoved = jest.fn(() => {
+            const onMoved = vi.fn(() => {
                 throw callbackError;
             });
             const { result } = await renderLoaded({ ...defaultProps, onMoved });
@@ -350,7 +351,7 @@ describe('useMoveItemsModalState', () => {
 
         it('does not call onMoved when the move throws', async () => {
             mockMoveNodes.mockRejectedValue(new Error('Network error'));
-            const onMoved = jest.fn();
+            const onMoved = vi.fn();
             const { result } = await renderLoaded({ ...defaultProps, onMoved });
 
             const treeItemId = makeTreeItemId(ROOT_UID, FOLDER1_UID);

@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// happy-dom has no user-agent stylesheet: `<bdi>` gets no `unicode-bidi: isolate` from getComputedStyle.
 import { MemberRole, NonProtonInvitationState } from '@protontech/drive-sdk';
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -6,16 +8,16 @@ import type { DirectMember } from '../interfaces';
 import { MemberType } from '../interfaces';
 import { DirectSharingListing } from './DirectSharingListing';
 
-jest.mock('@proton/account/contactEmails/hooks', () => ({
-    useContactEmails: jest.fn(() => [[]]),
+vi.mock('@proton/account/contactEmails/hooks', () => ({
+    useContactEmails: vi.fn(() => [[]]),
 }));
 
-jest.mock('@proton/account/addresses/hooks', () => ({
-    useAddresses: jest.fn(() => [[{ Email: 'owner@example.com' }]]),
+vi.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: vi.fn(() => [[{ Email: 'owner@example.com' }]]),
 }));
 
-jest.mock('./helpers/userNames', () => ({
-    getContactNameAndEmail: jest.fn((email) => {
+vi.mock('./helpers/userNames', () => ({
+    getContactNameAndEmail: vi.fn((email) => {
         let contactName = '';
         if (email === 'john@example.com') {
             contactName = 'John Doe';
@@ -45,17 +47,17 @@ describe('DirectSharingListing', () => {
         ownerDisplayName: 'Owner Name',
         members: [],
         isLoading: false,
-        onRemove: jest.fn(),
-        onChangeRole: jest.fn(),
-        onResendInvitation: jest.fn(),
-        onCopyInvitationLink: jest.fn(),
+        onRemove: vi.fn(),
+        onChangeRole: vi.fn(),
+        onResendInvitation: vi.fn(),
+        onCopyInvitationLink: vi.fn(),
         viewOnly: false,
     };
 
     const user = userEvent.setup();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('renders loading state when isLoading is true', () => {
@@ -143,7 +145,7 @@ describe('DirectSharingListing', () => {
     });
 
     it('calls onChangeRole when role is changed', async () => {
-        const onChangeRole = jest.fn().mockResolvedValue(undefined);
+        const onChangeRole = vi.fn().mockResolvedValue(undefined);
 
         render(<DirectSharingListing {...defaultProps} members={MEMBERS} onChangeRole={onChangeRole} />);
 
@@ -157,7 +159,7 @@ describe('DirectSharingListing', () => {
     });
 
     it('calls onRemove when remove access is clicked', async () => {
-        const onRemove = jest.fn().mockResolvedValue(undefined);
+        const onRemove = vi.fn().mockResolvedValue(undefined);
 
         render(<DirectSharingListing {...defaultProps} members={MEMBERS} onRemove={onRemove} />);
 
@@ -170,7 +172,7 @@ describe('DirectSharingListing', () => {
     });
 
     it('calls onResendInvitation for ProtonInvitation', async () => {
-        const onResendInvitation = jest.fn().mockResolvedValue(undefined);
+        const onResendInvitation = vi.fn().mockResolvedValue(undefined);
 
         render(<DirectSharingListing {...defaultProps} members={MEMBERS} onResendInvitation={onResendInvitation} />);
 
@@ -183,7 +185,7 @@ describe('DirectSharingListing', () => {
     });
 
     it('calls onCopyInvitationLink for ProtonInvitation', async () => {
-        const onCopyInvitationLink = jest.fn();
+        const onCopyInvitationLink = vi.fn();
 
         render(
             <DirectSharingListing {...defaultProps} members={MEMBERS} onCopyInvitationLink={onCopyInvitationLink} />

@@ -10,28 +10,28 @@ import type { DirectSharingRole } from '../interfaces';
 import { useEditorsManageAccessContext } from '../useEditorsManageAccess';
 import { DirectSharingMemberMenu } from './DirectSharingMemberMenu';
 
-jest.mock('@proton/atoms/Popper/usePopperAnchor', () => ({
-    usePopperAnchor: jest.fn(),
+vi.mock('@proton/atoms/Popper/usePopperAnchor', () => ({
+    usePopperAnchor: vi.fn(),
 }));
-jest.mock('@proton/hooks/useLoading');
-jest.mock('@proton/utils/noop');
-jest.mock('@proton/unleash/useFlag', () => jest.fn(() => false));
-jest.mock('../useEditorsManageAccess');
+vi.mock('@proton/hooks/useLoading');
+vi.mock('@proton/utils/noop');
+vi.mock('@proton/unleash/useFlag', () => vi.fn(() => false));
+vi.mock('../useEditorsManageAccess');
 
-const mockedUsePopperAnchor = jest.mocked(usePopperAnchor);
-const mockedUseLoading = jest.mocked(useLoading);
-const mockedNoop = jest.mocked(noop);
-const mockedUseEditorsManageAccessContext = jest.mocked(useEditorsManageAccessContext);
+const mockedUsePopperAnchor = vi.mocked(usePopperAnchor);
+const mockedUseLoading = vi.mocked(useLoading);
+const mockedNoop = vi.mocked(noop);
+const mockedUseEditorsManageAccessContext = vi.mocked(useEditorsManageAccessContext);
 
 const defaultUsePopperAnchorProps = {
     anchorRef: { current: null },
     isOpen: false,
-    open: jest.fn(),
-    toggle: jest.fn(),
-    close: jest.fn(),
+    open: vi.fn(),
+    toggle: vi.fn(),
+    close: vi.fn(),
 };
 
-const defaultUseLoadingProps = [false, jest.fn(), jest.fn()] as const;
+const defaultUseLoadingProps = [false, vi.fn(), vi.fn()] as const;
 
 mockedUsePopperAnchor.mockReturnValue(defaultUsePopperAnchorProps);
 mockedUseLoading.mockReturnValue(defaultUseLoadingProps as any);
@@ -40,18 +40,18 @@ describe('DirectSharingMemberMenu', () => {
     const defaultProps = {
         disabled: false,
         selectedRole: MemberRole.Viewer as DirectSharingRole,
-        onChangeRole: jest.fn(),
-        onRemoveAccess: jest.fn().mockResolvedValue(undefined),
+        onChangeRole: vi.fn(),
+        onRemoveAccess: vi.fn().mockResolvedValue(undefined),
     };
     const user = userEvent.setup();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedUsePopperAnchor.mockReturnValue(defaultUsePopperAnchorProps);
         mockedUseLoading.mockReturnValue(defaultUseLoadingProps as any);
         mockedUseEditorsManageAccessContext.mockReturnValue({
             editorsManageAccess: false,
-            changeManageAccess: jest.fn(),
+            changeManageAccess: vi.fn(),
         });
     });
 
@@ -105,8 +105,8 @@ describe('DirectSharingMemberMenu', () => {
         render(
             <DirectSharingMemberMenu
                 {...defaultProps}
-                onRemoveAccess={jest.fn().mockResolvedValue(undefined)}
-                onCopyInvitationLink={jest.fn()}
+                onRemoveAccess={vi.fn().mockResolvedValue(undefined)}
+                onCopyInvitationLink={vi.fn()}
             />
         );
         expect(screen.getAllByText('can view')).toHaveLength(1);
@@ -134,7 +134,7 @@ describe('DirectSharingMemberMenu', () => {
     });
 
     it('shows loading state when internal loading is true', () => {
-        mockedUseLoading.mockReturnValueOnce([true, jest.fn(), jest.fn()] as any);
+        mockedUseLoading.mockReturnValueOnce([true, vi.fn(), vi.fn()] as any);
         render(<DirectSharingMemberMenu {...defaultProps} />);
         expect(screen.getByText('can view')).toBeDisabled();
         expect(screen.getByTestId('circle-loader')).toBeInTheDocument();
@@ -142,7 +142,7 @@ describe('DirectSharingMemberMenu', () => {
 
     it('calls onChangeRole when role option is clicked', async () => {
         mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
-        const onChangeRole = jest.fn();
+        const onChangeRole = vi.fn();
         render(<DirectSharingMemberMenu {...defaultProps} onChangeRole={onChangeRole} />);
 
         const editorOption = screen.getByText('Editor');
@@ -153,7 +153,7 @@ describe('DirectSharingMemberMenu', () => {
 
     it('does not call onChangeRole when transitioning from the same role', async () => {
         mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
-        const onChangeRole = jest.fn();
+        const onChangeRole = vi.fn();
         render(<DirectSharingMemberMenu {...defaultProps} onChangeRole={onChangeRole} />);
 
         await user.click(screen.getByText('Viewer'));
@@ -192,7 +192,7 @@ describe('DirectSharingMemberMenu', () => {
         mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
         mockedUseEditorsManageAccessContext.mockReturnValueOnce({
             editorsManageAccess: true,
-            changeManageAccess: jest.fn(),
+            changeManageAccess: vi.fn(),
         });
         render(<DirectSharingMemberMenu {...defaultProps} />);
 

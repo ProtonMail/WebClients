@@ -1,41 +1,46 @@
 import { ThumbnailType } from '@protontech/drive-sdk';
+import type { MockInstance } from 'vitest';
 
+import metrics from '@proton/metrics/metricsInstance';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
+import { ThumbnailProcessor } from './handlerRegistry';
 import { CanvasError, NoHandlerError, ThumbnailSizeError, UnsupportedFormatError, wrapError } from './thumbnailError';
 import { generateThumbnail } from './thumbnailGenerator';
 
-jest.mock('./handlerRegistry');
-jest.mock('@proton/metrics/metricsInstance', () => ({
-    __esModule: true,
+vi.mock('./handlerRegistry');
+vi.mock('@proton/metrics/metricsInstance', () => ({
     default: {
-        drive_thumbnail_errors_total: { increment: jest.fn() },
-        drive_thumbnail_no_handler_total: { increment: jest.fn() },
-        drive_thumbnail_success_rate_total: { increment: jest.fn() },
+        drive_thumbnail_errors_total: { increment: vi.fn() },
+        drive_thumbnail_no_handler_total: { increment: vi.fn() },
+        drive_thumbnail_success_rate_total: { increment: vi.fn() },
     },
 }));
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({ traceError: jest.fn() }));
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    isIos: jest.fn().mockReturnValue(false),
-    isWebKit: jest.fn().mockReturnValue(false),
-    isMobile: jest.fn().mockReturnValue(false),
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({ traceError: vi.fn() }));
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    isIos: vi.fn().mockReturnValue(false),
+    isWebKit: vi.fn().mockReturnValue(false),
+    isMobile: vi.fn().mockReturnValue(false),
 }));
 
-const mockProcess = jest.fn();
-jest.requireMock('./handlerRegistry').ThumbnailProcessor.mockImplementation(() => ({ process: mockProcess }));
+const mockProcess = vi.fn();
+vi.mocked(ThumbnailProcessor).mockImplementation(function () {
+    return { process: mockProcess } as any;
+});
 
-const mockMetrics = jest.requireMock('@proton/metrics/metricsInstance').default;
+const mockMetrics = metrics as any;
 const mockErrorsIncrement = mockMetrics.drive_thumbnail_errors_total.increment;
 const mockNoHandlerIncrement = mockMetrics.drive_thumbnail_no_handler_total.increment;
 const mockSuccessRateIncrement = mockMetrics.drive_thumbnail_success_rate_total.increment;
-const mockTraceError = jest.requireMock('@proton/shared/lib/helpers/sentry').traceError;
+const mockTraceError = vi.mocked(traceError);
 
 describe('generateThumbnail', () => {
-    let consoleDebugSpy: jest.SpyInstance;
+    let consoleDebugSpy: MockInstance;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        consoleDebugSpy = jest.spyOn(console, 'debug').mockImplementation();
+        vi.clearAllMocks();
+        consoleDebugSpy = vi.spyOn(console, 'debug').mockImplementation(() => {});
     });
 
     afterEach(() => {
@@ -220,7 +225,7 @@ describe('generateThumbnail', () => {
         await thumbnailsPromise;
 
         const [, context] = mockTraceError.mock.calls[0];
-        expect(context.tags).not.toHaveProperty('mimeType');
+        expect((context as { tags: Record<string, unknown> }).tags).not.toHaveProperty('mimeType');
     });
 
     it('should count NoHandlerError in the metric without reporting it to Sentry', async () => {

@@ -1,21 +1,22 @@
 import type { ProtonDriveHTTPClientBlobRequest, ProtonDriveHTTPClientJsonRequest } from '@protontech/drive-sdk';
 
 import { useHttpClient } from './useHttpClient';
+import { withTimeout } from './withTimeout';
 
-const mockApiRequest = jest.fn();
-const mockCallWithTimeout = jest.fn(<T>(promise: Promise<T>) => promise);
-const mockIncrement = jest.fn();
-jest.mock('react', () => ({
+const mockApiRequest = vi.fn();
+const mockCallWithTimeout = vi.fn(<T>(promise: Promise<T>) => promise);
+const mockIncrement = vi.fn();
+vi.mock('react', () => ({
     __esModule: true,
-    useRef: jest.fn((value) => ({ current: value })),
+    useRef: vi.fn((value) => ({ current: value })),
 }));
 
-jest.mock('@proton/app-context/useApi', () => ({
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
     useApi: () => mockApiRequest,
 }));
 
-jest.mock('@proton/metrics/metricsInstance', () => ({
+vi.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
         drive_warnings_total: {
@@ -24,9 +25,9 @@ jest.mock('@proton/metrics/metricsInstance', () => ({
     },
 }));
 
-jest.mock('./withTimeout', () => ({
+vi.mock('./withTimeout', () => ({
     __esModule: true,
-    withTimeout: jest.fn(() => ({
+    withTimeout: vi.fn(() => ({
         signalWithTimeout: new AbortController().signal,
         callWithTimeout: mockCallWithTimeout,
     })),
@@ -39,19 +40,18 @@ describe('useHttpClient', () => {
     afterEach(() => {
         global.fetch = originalFetch;
         global.Request = originalRequest;
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('returns the raw fetch response when a GET request succeeds', async () => {
         const httpClient = useHttpClient();
         const mockResponse = new Response('ok', { status: 200 });
-        const fetchMock = jest.fn().mockResolvedValue(mockResponse);
+        const fetchMock = vi.fn().mockResolvedValue(mockResponse);
         global.fetch = fetchMock as typeof global.fetch;
 
-        const stubRequest = jest.fn().mockImplementation((url: string, init: RequestInit) => ({
-            ...init,
-            url,
-        }));
+        const stubRequest = vi.fn().mockImplementation(function (url: string, init: RequestInit) {
+            return { ...init, url };
+        });
         global.Request = stubRequest as typeof global.Request;
 
         const request: ProtonDriveHTTPClientBlobRequest = {
@@ -64,8 +64,7 @@ describe('useHttpClient', () => {
         const result = await httpClient.fetchBlob(request);
 
         expect(result).toBe(mockResponse);
-        const withTimeoutModule = require('./withTimeout') as { withTimeout: jest.Mock };
-        expect(withTimeoutModule.withTimeout).toHaveBeenCalledWith(request.timeoutMs, undefined);
+        expect(withTimeout).toHaveBeenCalledWith(request.timeoutMs, undefined);
         expect(mockCallWithTimeout).toHaveBeenCalledTimes(1);
 
         expect(stubRequest).toHaveBeenCalledWith(request.url, {

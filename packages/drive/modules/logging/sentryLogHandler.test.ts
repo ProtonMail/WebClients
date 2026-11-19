@@ -4,20 +4,20 @@ import { addSentryBreadcrumb, traceError } from '@proton/shared/lib/helpers/sent
 
 import { NO_SENTRY_COMPONENT_DEFINED, SentryLogHandler } from './sentryLogHandler';
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    addSentryBreadcrumb: jest.fn(),
-    traceError: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
+    addSentryBreadcrumb: vi.fn(),
+    traceError: vi.fn(),
 }));
 
-const mockAddSentryBreadcrumb = jest.mocked(addSentryBreadcrumb);
-const mockTraceError = jest.mocked(traceError);
+const mockAddSentryBreadcrumb = vi.mocked(addSentryBreadcrumb);
+const mockTraceError = vi.mocked(traceError);
 
 describe('SentryLogHandler', () => {
     let handler: SentryLogHandler;
 
     beforeEach(() => {
         handler = new SentryLogHandler();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should add a breadcrumb for INFO logs without reporting an issue', () => {

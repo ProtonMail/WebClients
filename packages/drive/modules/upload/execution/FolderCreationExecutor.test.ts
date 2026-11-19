@@ -1,23 +1,24 @@
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import type { EventCallback, UploadTask } from '../types';
 import { FolderCreationExecutor } from './FolderCreationExecutor';
 
-jest.mock('../UploadDriveClientRegistry');
+vi.mock('../UploadDriveClientRegistry');
 
 describe('FolderCreationExecutor', () => {
     let executor: FolderCreationExecutor;
-    let mockEventCallback: jest.MockedFunction<EventCallback>;
-    let mockCreateFolder: jest.Mock;
+    let mockEventCallback: MockedFunction<EventCallback>;
+    let mockCreateFolder: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        mockEventCallback = jest.fn();
-        mockCreateFolder = jest.fn();
+        mockEventCallback = vi.fn();
+        mockCreateFolder = vi.fn();
 
-        jest.mocked(UploadDriveClientRegistry.getDriveClient).mockReturnValue({
+        vi.mocked(UploadDriveClientRegistry.getDriveClient).mockReturnValue({
             createFolder: mockCreateFolder,
         } as any);
 
@@ -44,7 +45,7 @@ describe('FolderCreationExecutor', () => {
     describe('setEventCallback', () => {
         it('should set event callback', () => {
             const newExecutor = new FolderCreationExecutor();
-            const callback = jest.fn();
+            const callback = vi.fn();
 
             newExecutor.setEventCallback(callback);
 

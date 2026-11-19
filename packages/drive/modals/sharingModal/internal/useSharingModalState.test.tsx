@@ -8,10 +8,9 @@ import {
     resultOk,
 } from '@protontech/drive-sdk';
 import { splitInvitationUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
-import { waitFor } from '@testing-library/react';
-import { act, renderHook } from '@testing-library/react-hooks';
-import { when } from 'jest-when';
+import { act, renderHook, waitFor } from '@testing-library/react';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
@@ -24,6 +23,7 @@ import { handleSdkError } from '../../../legacy/errorHandling';
 import { getBusDriver } from '../../../modules/busDriver';
 import { useFlagsDriveDocsPublicSharing } from '../../../modules/flags';
 import { type DirectMember, MemberType } from './interfaces';
+import { when } from './testUtils/when';
 import { useSharingModalState } from './useSharingModalState';
 
 const mockVolumeId = 'volume-123';
@@ -36,20 +36,20 @@ const mockInvitationId = 'invitation-id-789';
 const mockEmail = 'test@example.com';
 
 const mockDrive = {
-    getSharingInfo: jest.fn(),
-    getNode: jest.fn(),
-    unshareNode: jest.fn(),
-    shareNode: jest.fn(),
-    resendInvitation: jest.fn(),
+    getSharingInfo: vi.fn(),
+    getNode: vi.fn(),
+    unshareNode: vi.fn(),
+    shareNode: vi.fn(),
+    resendInvitation: vi.fn(),
 };
 
 const mockProps = {
     nodeUid: mockUid,
     shareId: mockShareId,
     drive: mockDrive as any,
-    onClose: jest.fn(),
+    onClose: vi.fn(),
     open: true,
-    onExit: jest.fn(),
+    onExit: vi.fn(),
 };
 
 const mockShareResult = {
@@ -96,38 +96,37 @@ const mockUser = {
     DisplayName: 'Test User',
 } as unknown as UserModel;
 
-const mockedCreateNotification = jest.fn();
-const mockedUseUser = jest.mocked(useUser);
-const mockedUseNotifications = jest.mocked(useNotifications);
-const mockedGenerateNodeUid = jest.mocked(generateNodeUid);
-const mockedSplitInvitationUid = jest.mocked(splitInvitationUid);
-const mockedSplitNodeUid = jest.mocked(splitNodeUid);
-const mockedUseLoading = jest.mocked(useLoading);
-const mockedUseFlagsDriveDocsPublicSharing = jest.mocked(useFlagsDriveDocsPublicSharing);
-const mockedGetAppHref = jest.mocked(getAppHref);
-const mockedTextToClipboard = jest.mocked(textToClipboard);
-const mockedResultOk = jest.mocked(resultOk);
-const mockedResultError = jest.mocked(resultError);
+const mockedCreateNotification = vi.fn();
+const mockedUseUser = vi.mocked(useUser);
+const mockedUseNotifications = vi.mocked(useNotifications);
+const mockedGenerateNodeUid = vi.mocked(generateNodeUid);
+const mockedSplitInvitationUid = vi.mocked(splitInvitationUid);
+const mockedSplitNodeUid = vi.mocked(splitNodeUid);
+const mockedUseLoading = vi.mocked(useLoading);
+const mockedUseFlagsDriveDocsPublicSharing = vi.mocked(useFlagsDriveDocsPublicSharing);
+const mockedGetAppHref = vi.mocked(getAppHref);
+const mockedTextToClipboard = vi.mocked(textToClipboard);
+const mockedResultOk = vi.mocked(resultOk);
+const mockedResultError = vi.mocked(resultError);
 
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/app-context/useNotifications');
-jest.mock('@proton/hooks/useLoading');
-jest.mock('@proton/shared/lib/apps/helper');
-jest.mock('@proton/shared/lib/helpers/browser');
-jest.mock('../../../modules/flags', () => ({
-    ...jest.requireActual('../../../modules/flags'),
-    useFlagsDriveDocsPublicSharing: jest.fn(),
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/app-context/useNotifications');
+vi.mock('@proton/hooks/useLoading');
+vi.mock('@proton/shared/lib/apps/helper');
+vi.mock('@proton/shared/lib/helpers/browser');
+vi.mock('../../../modules/flags', async () => ({
+    ...(await vi.importActual('../../../modules/flags')),
+    useFlagsDriveDocsPublicSharing: vi.fn(),
 }));
-jest.mock('../../../legacy/errorHandling');
-jest.mock('../../../modules/busDriver');
-jest.mock('@proton/account/contactEmails/hooks', () => ({
-    useContactEmails: jest.fn(() => [[]]),
+vi.mock('../../../legacy/errorHandling');
+vi.mock('../../../modules/busDriver');
+vi.mock('@proton/account/contactEmails/hooks', () => ({
+    useContactEmails: vi.fn(() => [[]]),
 }));
-jest.mock('@protontech/drive-sdk');
-jest.mock('@protontech/drive-sdk/dist/internal/uids');
+vi.mock('@protontech/drive-sdk');
+vi.mock('@protontech/drive-sdk/dist/internal/uids');
 
-const { useContactEmails } = require('@proton/account/contactEmails/hooks');
-const mockedUseContactEmails = jest.mocked(useContactEmails);
+const mockedUseContactEmails = vi.mocked(useContactEmails);
 
 const expectedDirectMembers: DirectMember[] = [
     {
@@ -151,19 +150,19 @@ const expectedDirectMembers: DirectMember[] = [
 ];
 
 describe('useSharingModalState', () => {
-    const mockBusEmit = jest.fn();
+    const mockBusEmit = vi.fn();
 
-    const mockHandleError = jest.mocked(handleSdkError);
+    const mockHandleError = vi.mocked(handleSdkError);
 
     beforeEach(() => {
         mockedUseUser.mockReturnValue([mockUser, false]);
         mockedUseNotifications.mockReturnValue({
             createNotification: mockedCreateNotification,
         } as any);
-        const mockedWithLoading = jest.fn((promise) => promise);
-        const mockedSetIsLoading = jest.fn();
+        const mockedWithLoading = vi.fn((promise) => promise);
+        const mockedSetIsLoading = vi.fn();
         mockedUseLoading.mockReturnValue([false, mockedWithLoading, mockedSetIsLoading]);
-        jest.mocked(getBusDriver).mockReturnValue({ emit: mockBusEmit } as any);
+        vi.mocked(getBusDriver).mockReturnValue({ emit: mockBusEmit } as any);
         when(mockedSplitNodeUid).calledWith(mockUid).mockReturnValue({ volumeId: mockVolumeId, nodeId: mockLinkId });
         mockedUseFlagsDriveDocsPublicSharing.mockReturnValue({
             isDocsPublicSharingEnabled: true,
@@ -186,7 +185,7 @@ describe('useSharingModalState', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should initialize with default values and fetch sharing info', async () => {
@@ -298,7 +297,7 @@ describe('useSharingModalState', () => {
     });
 
     it('should update share node with direct sharing', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         const shareNodeSettings = {
             users: [{ email: 'new@example.com', role: MemberRole.Viewer }],
@@ -324,13 +323,13 @@ describe('useSharingModalState', () => {
         });
 
         expect(mockDrive.shareNode).toHaveBeenCalledWith(mockNodeUid, shareNodeSettings);
-        jest.runAllTimers();
+        vi.runAllTimers();
         expect(mockedCreateNotification).toHaveBeenCalledWith({
             text: '"Test File" shared',
         });
         expect(mockBusEmit).toHaveBeenCalled();
 
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should update public link and show notification', async () => {
@@ -453,7 +452,7 @@ describe('useSharingModalState', () => {
     });
 
     it('should call onShareSnapshot with the updated share result when createSharePublic succeeds', async () => {
-        const onShareSnapshot = jest.fn();
+        const onShareSnapshot = vi.fn();
         const mockShareResultWithoutPublicLink = {
             ...mockShareResult,
             urlAccess: undefined,
@@ -489,7 +488,7 @@ describe('useSharingModalState', () => {
     });
 
     it('should call onShareSnapshot for non-public-link mutations', async () => {
-        const onShareSnapshot = jest.fn();
+        const onShareSnapshot = vi.fn();
         const shareNodeSettings = {
             users: [{ email: 'new@example.com', role: MemberRole.Viewer }],
         };
@@ -520,7 +519,7 @@ describe('useSharingModalState', () => {
     });
 
     it('should call onShareSnapshot with the fetched share result on initial load', async () => {
-        const onShareSnapshot = jest.fn();
+        const onShareSnapshot = vi.fn();
 
         const { result } = renderHook(() => useSharingModalState({ ...mockProps, onShareSnapshot }));
 
@@ -685,7 +684,7 @@ describe('useSharingModalState', () => {
             },
         };
 
-        mockedUseContactEmails.mockReturnValue([contactEmails]);
+        mockedUseContactEmails.mockReturnValue([contactEmails as any, false]);
         mockedUseUser.mockReturnValue([mockUser, false]);
         when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(nodeInfoWithDifferentOwner);
 
@@ -708,7 +707,7 @@ describe('useSharingModalState', () => {
             },
         };
 
-        mockedUseContactEmails.mockReturnValue([contactEmails]);
+        mockedUseContactEmails.mockReturnValue([contactEmails as any, false]);
         mockedUseUser.mockReturnValue([mockUser, false]);
         when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(nodeInfoWithDifferentOwner);
 
@@ -729,7 +728,7 @@ describe('useSharingModalState', () => {
             },
         };
 
-        mockedUseContactEmails.mockReturnValue([[]]);
+        mockedUseContactEmails.mockReturnValue([[], false]);
         mockedUseUser.mockReturnValue([mockUser, false]);
         when(mockDrive.getNode).calledWith(mockNodeUid).mockResolvedValue(nodeInfoWithDifferentOwner);
 
@@ -890,7 +889,7 @@ describe('useSharingModalState', () => {
         });
 
         it('should call onShareSnapshot with the error when createSharePublic fails', async () => {
-            const onShareSnapshot = jest.fn();
+            const onShareSnapshot = vi.fn();
             const error = new Error('Create public share failed');
             when(mockDrive.shareNode)
                 .calledWith(mockNodeUid, { urlAccess: { role: MemberRole.Viewer } })
@@ -982,7 +981,7 @@ describe('useSharingModalState', () => {
         });
 
         it('should call onShareSnapshot with the error when initial fetch fails', async () => {
-            const onShareSnapshot = jest.fn();
+            const onShareSnapshot = vi.fn();
             const error = new Error('Get sharing info failed');
             when(mockDrive.getSharingInfo).calledWith(mockNodeUid).mockRejectedValue(error);
 

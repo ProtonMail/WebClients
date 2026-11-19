@@ -1,4 +1,5 @@
 import type { NodeEntity } from '@protontech/drive-sdk';
+import type { MockInstance } from 'vitest';
 
 import { getBusDriver } from './BusDriver';
 import type {
@@ -14,28 +15,28 @@ import { BusDriverEventName } from './BusDriverTypes';
 
 const mockDriveClient = {} as BusDriverClient;
 
-jest.mock('@proton/shared/lib/helpers/promise', () => {
-    const actual = jest.requireActual('@proton/shared/lib/helpers/promise');
+vi.mock('@proton/shared/lib/helpers/promise', async () => {
+    const actual = await vi.importActual('@proton/shared/lib/helpers/promise');
     return {
         ...actual,
-        wait: jest.fn(() => Promise.resolve()),
+        wait: vi.fn(() => Promise.resolve()),
     };
 });
 
-jest.mock('./errorHandling', () => {
-    const actual = jest.requireActual('./errorHandling');
+vi.mock('./errorHandling', async () => {
+    const actual = await vi.importActual('./errorHandling');
     return {
         ...actual,
-        sendErrorReport: jest.fn(),
-        handleSdkError: jest.fn(),
+        sendErrorReport: vi.fn(),
+        handleSdkError: vi.fn(),
     };
 });
 
-const mockDispose = jest.fn();
-const mockSubscribeToTreeEvents = jest.fn();
+const mockDispose = vi.fn();
+const mockSubscribeToTreeEvents = vi.fn();
 
-jest.mock('../../../sdk', () => ({
-    getDrive: jest.fn(() => ({
+vi.mock('../../../sdk', () => ({
+    getDrive: vi.fn(() => ({
         subscribeToTreeEvents: mockSubscribeToTreeEvents,
     })),
     DriveEventType: {
@@ -54,12 +55,12 @@ const mockNodeEntity: NodeEntity = {
 
 describe('BusDriver', () => {
     let eventBus: ReturnType<typeof getBusDriver>;
-    let consoleWarnSpy: jest.SpyInstance;
+    let consoleWarnSpy: MockInstance;
 
     beforeEach(() => {
         eventBus = getBusDriver();
         eventBus.clear();
-        consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+        consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     afterEach(() => {
@@ -69,7 +70,7 @@ describe('BusDriver', () => {
 
     describe('subscribe and emit', () => {
         it('should call listener when event is emitted', async () => {
-            const mockListener = jest.fn().mockResolvedValue(undefined);
+            const mockListener = vi.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
@@ -83,8 +84,8 @@ describe('BusDriver', () => {
         });
 
         it('should call multiple listeners for the same event type', async () => {
-            const mockListener1 = jest.fn().mockResolvedValue(undefined);
-            const mockListener2 = jest.fn().mockResolvedValue(undefined);
+            const mockListener1 = vi.fn().mockResolvedValue(undefined);
+            const mockListener2 = vi.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
@@ -99,8 +100,8 @@ describe('BusDriver', () => {
         });
 
         it('should only call listeners for the correct event type', async () => {
-            const trashListener = jest.fn().mockResolvedValue(undefined);
-            const createListener = jest.fn().mockResolvedValue(undefined);
+            const trashListener = vi.fn().mockResolvedValue(undefined);
+            const createListener = vi.fn().mockResolvedValue(undefined);
             const trashEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
@@ -117,7 +118,7 @@ describe('BusDriver', () => {
 
     describe('unsubscribe', () => {
         it('should remove listener when unsubscribed', async () => {
-            const mockListener = jest.fn().mockResolvedValue(undefined);
+            const mockListener = vi.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
@@ -131,8 +132,8 @@ describe('BusDriver', () => {
         });
 
         it('should only remove the specific listener', async () => {
-            const mockListener1 = jest.fn().mockResolvedValue(undefined);
-            const mockListener2 = jest.fn().mockResolvedValue(undefined);
+            const mockListener1 = vi.fn().mockResolvedValue(undefined);
+            const mockListener2 = vi.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
@@ -150,11 +151,11 @@ describe('BusDriver', () => {
 
     describe('event type enforcement', () => {
         it('should handle different event shapes correctly', async () => {
-            const trashListener = jest.fn().mockResolvedValue(undefined);
-            const createListener = jest.fn().mockResolvedValue(undefined);
-            const bookmarkDeleteListener = jest.fn().mockResolvedValue(undefined);
-            const acceptInvitationListener = jest.fn().mockResolvedValue(undefined);
-            const rejectInvitationListener = jest.fn().mockResolvedValue(undefined);
+            const trashListener = vi.fn().mockResolvedValue(undefined);
+            const createListener = vi.fn().mockResolvedValue(undefined);
+            const bookmarkDeleteListener = vi.fn().mockResolvedValue(undefined);
+            const acceptInvitationListener = vi.fn().mockResolvedValue(undefined);
+            const rejectInvitationListener = vi.fn().mockResolvedValue(undefined);
 
             const trashEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
@@ -208,8 +209,8 @@ describe('BusDriver', () => {
 
     describe('error handling', () => {
         it('should handle listener errors gracefully', async () => {
-            const errorListener = jest.fn().mockRejectedValue(new Error('Test error'));
-            const successListener = jest.fn().mockResolvedValue(undefined);
+            const errorListener = vi.fn().mockRejectedValue(new Error('Test error'));
+            const successListener = vi.fn().mockResolvedValue(undefined);
 
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
@@ -227,7 +228,7 @@ describe('BusDriver', () => {
 
     describe('BusDriverEventName.ALL subscription', () => {
         it('should call ALL listener for any event type', async () => {
-            const allListener = jest.fn().mockResolvedValue(undefined);
+            const allListener = vi.fn().mockResolvedValue(undefined);
             const trashEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
@@ -273,8 +274,8 @@ describe('BusDriver', () => {
         });
 
         it('should call both specific and ALL listeners when event is emitted', async () => {
-            const specificListener = jest.fn().mockResolvedValue(undefined);
-            const allListener = jest.fn().mockResolvedValue(undefined);
+            const specificListener = vi.fn().mockResolvedValue(undefined);
+            const allListener = vi.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
@@ -291,7 +292,7 @@ describe('BusDriver', () => {
         });
 
         it('should be able to unsubscribe from ALL events', async () => {
-            const allListener = jest.fn().mockResolvedValue(undefined);
+            const allListener = vi.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
@@ -305,8 +306,8 @@ describe('BusDriver', () => {
         });
 
         it('should handle multiple ALL listeners', async () => {
-            const allListener1 = jest.fn().mockResolvedValue(undefined);
-            const allListener2 = jest.fn().mockResolvedValue(undefined);
+            const allListener1 = vi.fn().mockResolvedValue(undefined);
+            const allListener2 = vi.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
@@ -321,8 +322,8 @@ describe('BusDriver', () => {
         });
 
         it('should only remove specific ALL listener when unsubscribed', async () => {
-            const allListener1 = jest.fn().mockResolvedValue(undefined);
-            const allListener2 = jest.fn().mockResolvedValue(undefined);
+            const allListener1 = vi.fn().mockResolvedValue(undefined);
+            const allListener2 = vi.fn().mockResolvedValue(undefined);
             const testEvent: TrashedNodesEvent = {
                 type: BusDriverEventName.TRASHED_NODES,
                 uids: ['1'],
@@ -340,7 +341,7 @@ describe('BusDriver', () => {
 
     describe('subscription context management', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             mockDispose.mockClear();
             mockSubscribeToTreeEvents.mockClear();
             mockSubscribeToTreeEvents.mockResolvedValue({ dispose: mockDispose });
@@ -425,12 +426,12 @@ describe('BusDriver', () => {
 
     describe('handleSdkEvent', () => {
         let eventBus: ReturnType<typeof getBusDriver>;
-        let emitInternalSpy: jest.SpyInstance;
+        let emitInternalSpy: MockInstance;
 
         beforeEach(() => {
             eventBus = getBusDriver();
             eventBus.clear();
-            emitInternalSpy = jest.spyOn(eventBus as any, 'emitInternal');
+            emitInternalSpy = vi.spyOn(eventBus as any, 'emitInternal');
         });
 
         afterEach(() => {

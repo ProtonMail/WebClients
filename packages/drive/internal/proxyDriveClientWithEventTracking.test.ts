@@ -2,12 +2,12 @@ import { LatestEventIdProvider } from './latestEventIdProvider';
 import { proxyDriveClientWithEventTracking } from './proxyDriveClientWithEventTracking';
 
 const mockDriveClient = {
-    subscribeToTreeEvents: jest.fn(),
-    getMyFilesRootFolder: jest.fn(),
-    otherMethod: jest.fn(),
+    subscribeToTreeEvents: vi.fn(),
+    getMyFilesRootFolder: vi.fn(),
+    otherMethod: vi.fn(),
 } as any;
 
-const mockDispose = jest.fn();
+const mockDispose = vi.fn();
 const mockSubscription = {
     dispose: mockDispose,
 };
@@ -25,7 +25,7 @@ describe('proxyDriveClientWithEventTracking', () => {
     let proxiedClient: any;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         latestEventIdProvider = new LatestEventIdProvider();
         mockDriveClient.subscribeToTreeEvents.mockResolvedValue(mockSubscription);
         proxiedClient = proxyDriveClientWithEventTracking(mockDriveClient, latestEventIdProvider);
@@ -33,7 +33,7 @@ describe('proxyDriveClientWithEventTracking', () => {
 
     describe('subscribeToTreeEvents', () => {
         it('should intercept subscribeToTreeEvents calls', async () => {
-            const callback = jest.fn().mockResolvedValue(undefined);
+            const callback = vi.fn().mockResolvedValue(undefined);
 
             await proxiedClient.subscribeToTreeEvents('scope-123', callback);
 
@@ -41,7 +41,7 @@ describe('proxyDriveClientWithEventTracking', () => {
         });
 
         it('should save event ID when callback is executed', async () => {
-            const callback = jest.fn().mockResolvedValue(undefined);
+            const callback = vi.fn().mockResolvedValue(undefined);
 
             await proxiedClient.subscribeToTreeEvents('scope-123', callback);
 
@@ -53,7 +53,7 @@ describe('proxyDriveClientWithEventTracking', () => {
         });
 
         it('should save event ID even if callback throws', async () => {
-            const callback = jest.fn().mockRejectedValue(new Error('Callback error'));
+            const callback = vi.fn().mockRejectedValue(new Error('Callback error'));
 
             await proxiedClient.subscribeToTreeEvents('scope-123', callback);
 
@@ -64,7 +64,7 @@ describe('proxyDriveClientWithEventTracking', () => {
         });
 
         it('should clean up event scope when dispose is called', async () => {
-            const callback = jest.fn().mockResolvedValue(undefined);
+            const callback = vi.fn().mockResolvedValue(undefined);
             await latestEventIdProvider.saveLatestEventId('scope-123', 'some-event-id');
 
             const result = await proxiedClient.subscribeToTreeEvents('scope-123', callback);

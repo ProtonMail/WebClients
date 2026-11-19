@@ -5,12 +5,12 @@ describe('exif', () => {
     const MOCK_NOW_TIMESTAMP = MOCK_NOW.getTime();
 
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(MOCK_NOW);
+        vi.useFakeTimers();
+        vi.setSystemTime(MOCK_NOW);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const mockExif = {

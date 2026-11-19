@@ -1,28 +1,30 @@
+import type { Mock } from 'vitest';
+
 import { SDKEvent, getDrive } from '../../../sdk';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import { UploadStatus } from '../types';
 import { SDKTransferActivity } from './SDKTransferActivity';
 
-jest.mock('../../../sdk');
-jest.mock('../store/uploadQueue.store');
+vi.mock('../../../sdk');
+vi.mock('../store/uploadQueue.store');
 
 describe('SDKTransferActivity', () => {
     let manager: SDKTransferActivity;
     let mockDrive: any;
-    let mockOnMessage: jest.Mock;
-    let mockUnsubscribePaused: jest.Mock;
-    let mockUnsubscribeResumed: jest.Mock;
-    let mockGetQueue: jest.Mock;
-    let mockUpdateQueueItems: jest.Mock;
+    let mockOnMessage: Mock;
+    let mockUnsubscribePaused: Mock;
+    let mockUnsubscribeResumed: Mock;
+    let mockGetQueue: Mock;
+    let mockUpdateQueueItems: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        mockOnMessage = jest.fn();
-        mockUnsubscribePaused = jest.fn();
-        mockUnsubscribeResumed = jest.fn();
-        mockGetQueue = jest.fn().mockReturnValue([]);
-        mockUpdateQueueItems = jest.fn();
+        mockOnMessage = vi.fn();
+        mockUnsubscribePaused = vi.fn();
+        mockUnsubscribeResumed = vi.fn();
+        mockGetQueue = vi.fn().mockReturnValue([]);
+        mockUpdateQueueItems = vi.fn();
 
         mockOnMessage.mockReturnValueOnce(mockUnsubscribePaused).mockReturnValueOnce(mockUnsubscribeResumed);
 
@@ -30,9 +32,9 @@ describe('SDKTransferActivity', () => {
             onMessage: mockOnMessage,
         };
 
-        jest.mocked(getDrive).mockReturnValue(mockDrive);
+        vi.mocked(getDrive).mockReturnValue(mockDrive);
 
-        jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+        vi.mocked(useUploadQueueStore.getState).mockReturnValue({
             getQueue: mockGetQueue,
             updateQueueItems: mockUpdateQueueItems,
         } as any);

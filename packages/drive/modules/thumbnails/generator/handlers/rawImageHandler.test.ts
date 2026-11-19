@@ -1,4 +1,5 @@
 import { ThumbnailType } from '@protontech/drive-sdk';
+import type { MockedFunction } from 'vitest';
 
 import type { createWorker } from '@proton/raw-images/createWorker';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
@@ -7,26 +8,26 @@ import * as constants from '../constants';
 import { MissingDataError, UnsupportedFormatError } from '../thumbnailError';
 import { RawImageHandler } from './rawImageHandler';
 
-jest.mock('@proton/raw-images/createWorker', () => ({
-    createWorker: jest.fn(),
+vi.mock('@proton/raw-images/createWorker', () => ({
+    createWorker: vi.fn(),
 }));
 
-jest.mock('../constants', () => ({
-    ...jest.requireActual('../constants'),
+vi.mock('../constants', async () => ({
+    ...(await vi.importActual('../constants')),
     isIosDevice: false,
     MAX_MEDIA_SIZE_FOR_THUMBNAIL_IOS: 100 * 1024 * 1024,
 }));
 
 describe('RawImageHandler', () => {
     let handler: RawImageHandler;
-    let mockCreateWorker: jest.MockedFunction<typeof createWorker>;
+    let mockCreateWorker: MockedFunction<typeof createWorker>;
 
     beforeEach(async () => {
         handler = new RawImageHandler();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         const rawImagesModule = await import('@proton/raw-images/createWorker');
-        mockCreateWorker = jest.mocked(rawImagesModule.createWorker);
+        mockCreateWorker = vi.mocked(rawImagesModule.createWorker);
     });
 
     describe('canHandle', () => {
@@ -71,9 +72,9 @@ describe('RawImageHandler', () => {
         });
 
         test('Throws MissingDataError when RAW has no embedded thumbnail', async () => {
-            const mockTerminate = jest.fn();
-            const mockInitialize = jest.fn().mockResolvedValue(undefined);
-            const mockExtractThumbnail = jest.fn().mockResolvedValue(null);
+            const mockTerminate = vi.fn();
+            const mockInitialize = vi.fn().mockResolvedValue(undefined);
+            const mockExtractThumbnail = vi.fn().mockResolvedValue(null);
 
             mockCreateWorker.mockResolvedValue({
                 initialize: mockInitialize,
@@ -82,7 +83,7 @@ describe('RawImageHandler', () => {
             } as any);
 
             const blob = new Blob(['raw content'], { type: 'image/x-nikon-nef' });
-            blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
+            blob.arrayBuffer = vi.fn().mockResolvedValue(new ArrayBuffer(8));
 
             await expect(
                 handler.generate(
@@ -99,9 +100,9 @@ describe('RawImageHandler', () => {
         });
 
         test('MissingDataError includes proper context', async () => {
-            const mockTerminate = jest.fn();
-            const mockInitialize = jest.fn().mockResolvedValue(undefined);
-            const mockExtractThumbnail = jest.fn().mockResolvedValue(null);
+            const mockTerminate = vi.fn();
+            const mockInitialize = vi.fn().mockResolvedValue(undefined);
+            const mockExtractThumbnail = vi.fn().mockResolvedValue(null);
 
             mockCreateWorker.mockResolvedValue({
                 initialize: mockInitialize,
@@ -110,7 +111,7 @@ describe('RawImageHandler', () => {
             } as any);
 
             const blob = new Blob(['raw content'], { type: 'image/x-nikon-nef' });
-            blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
+            blob.arrayBuffer = vi.fn().mockResolvedValue(new ArrayBuffer(8));
 
             try {
                 await handler.generate(
@@ -121,7 +122,7 @@ describe('RawImageHandler', () => {
                     [ThumbnailType.Type1],
                     'image/x-nikon-nef'
                 );
-                fail('Should have thrown MissingDataError');
+                expect.unreachable('Should have thrown MissingDataError');
             } catch (error) {
                 expect(error).toBeInstanceOf(MissingDataError);
                 if (error instanceof MissingDataError) {
@@ -134,9 +135,9 @@ describe('RawImageHandler', () => {
         });
 
         test('Throws UnsupportedFormatError when RAW processing fails', async () => {
-            const mockTerminate = jest.fn();
-            const mockInitialize = jest.fn().mockResolvedValue(undefined);
-            const mockExtractThumbnail = jest.fn().mockRejectedValue(new Error('Unsupported RAW format'));
+            const mockTerminate = vi.fn();
+            const mockInitialize = vi.fn().mockResolvedValue(undefined);
+            const mockExtractThumbnail = vi.fn().mockRejectedValue(new Error('Unsupported RAW format'));
 
             mockCreateWorker.mockResolvedValue({
                 initialize: mockInitialize,
@@ -145,7 +146,7 @@ describe('RawImageHandler', () => {
             } as any);
 
             const blob = new Blob(['corrupted raw'], { type: 'image/x-nikon-nef' });
-            blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
+            blob.arrayBuffer = vi.fn().mockResolvedValue(new ArrayBuffer(8));
 
             await expect(
                 handler.generate(
@@ -162,9 +163,9 @@ describe('RawImageHandler', () => {
         });
 
         test('UnsupportedFormatError includes proper context', async () => {
-            const mockTerminate = jest.fn();
-            const mockInitialize = jest.fn().mockResolvedValue(undefined);
-            const mockExtractThumbnail = jest.fn().mockRejectedValue(new Error('Processing failed'));
+            const mockTerminate = vi.fn();
+            const mockInitialize = vi.fn().mockResolvedValue(undefined);
+            const mockExtractThumbnail = vi.fn().mockRejectedValue(new Error('Processing failed'));
 
             mockCreateWorker.mockResolvedValue({
                 initialize: mockInitialize,
@@ -173,7 +174,7 @@ describe('RawImageHandler', () => {
             } as any);
 
             const blob = new Blob(['corrupted raw'], { type: 'image/x-nikon-nef' });
-            blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
+            blob.arrayBuffer = vi.fn().mockResolvedValue(new ArrayBuffer(8));
 
             try {
                 await handler.generate(
@@ -184,7 +185,7 @@ describe('RawImageHandler', () => {
                     [ThumbnailType.Type1],
                     'image/x-nikon-nef'
                 );
-                fail('Should have thrown UnsupportedFormatError');
+                expect.unreachable('Should have thrown UnsupportedFormatError');
             } catch (error) {
                 expect(error).toBeInstanceOf(UnsupportedFormatError);
                 if (error instanceof UnsupportedFormatError) {
@@ -197,9 +198,9 @@ describe('RawImageHandler', () => {
         });
 
         test('Worker is terminated even on success', async () => {
-            const mockTerminate = jest.fn();
-            const mockInitialize = jest.fn().mockResolvedValue(undefined);
-            const mockExtractThumbnail = jest.fn().mockResolvedValue(new Uint8Array([0xff, 0xd8, 0xff]));
+            const mockTerminate = vi.fn();
+            const mockInitialize = vi.fn().mockResolvedValue(undefined);
+            const mockExtractThumbnail = vi.fn().mockResolvedValue(new Uint8Array([0xff, 0xd8, 0xff]));
 
             mockCreateWorker.mockResolvedValue({
                 initialize: mockInitialize,
@@ -208,7 +209,11 @@ describe('RawImageHandler', () => {
             } as any);
 
             const blob = new Blob(['raw content'], { type: 'image/x-nikon-nef' });
-            blob.arrayBuffer = jest.fn().mockResolvedValue(new ArrayBuffer(8));
+            blob.arrayBuffer = vi.fn().mockResolvedValue(new ArrayBuffer(8));
+            // The DOM never loads images: make loading the extracted thumbnail fail right away.
+            const createObjectURL = vi.spyOn(URL, 'createObjectURL').mockImplementation(() => {
+                throw new Error('Image loading is not supported');
+            });
 
             try {
                 await handler.generate(
@@ -223,6 +228,7 @@ describe('RawImageHandler', () => {
                 // Expected to fail on image loading
             }
 
+            createObjectURL.mockRestore();
             expect(mockTerminate).toHaveBeenCalled();
         });
 
