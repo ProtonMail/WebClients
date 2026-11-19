@@ -4,6 +4,7 @@ import type { DocStateCallbacks } from './DocStateCallbacks'
 import type { UnsafeDocsUserState } from './DocsAwareness'
 import { BroadcastSource } from '../Bridge/BroadcastSource'
 import { decodeUpdate } from 'yjs'
+import type * as Yjs from 'yjs'
 
 const EmptyAwarenessUpdate = {
   added: [],
@@ -11,55 +12,58 @@ const EmptyAwarenessUpdate = {
   removed: [],
 }
 
-jest.mock('yjs', () => ({
-  ...jest.requireActual('yjs'),
-  decodeUpdate: jest.fn(),
-  mergeUpdates: jest.fn(),
+vi.mock('yjs', async (importOriginal) => ({
+  ...(await importOriginal<typeof Yjs>()),
+  decodeUpdate: vi.fn(),
+  mergeUpdates: vi.fn(),
 }))
-;(decodeUpdate as jest.Mock).mockImplementation(() => ({
-  structs: [{ id: { clock: 0 } }],
-}))
+vi.mocked(decodeUpdate).mockImplementation(
+  () =>
+    ({
+      structs: [{ id: { clock: 0 } }],
+    }) as unknown as ReturnType<typeof decodeUpdate>,
+)
 
 describe('DocState', () => {
   let state: DocState
 
   beforeEach(() => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     state = new DocState(
       {
-        handleAwarenessStateUpdate: jest.fn(),
-        docStateRequestsPropagationOfUpdate: jest.fn(),
+        handleAwarenessStateUpdate: vi.fn(),
+        docStateRequestsPropagationOfUpdate: vi.fn(),
       } as unknown as DocStateCallbacks,
       {
-        debug: jest.fn(),
-        info: jest.fn(),
-        warn: jest.fn(),
-        error: jest.fn(),
+        debug: vi.fn(),
+        info: vi.fn(),
+        warn: vi.fn(),
+        error: vi.fn(),
       } as unknown as LoggerInterface,
     )
   })
 
   afterEach(() => {
     state.destroy()
-    jest.clearAllMocks()
-    jest.useRealTimers()
+    vi.clearAllMocks()
+    vi.useRealTimers()
   })
 
   describe('broadcastPresenceInterval', () => {
     it('should broadcast awareness state if it needs an update', () => {
-      state.broadcastCurrentAwarenessState = jest.fn()
+      state.broadcastCurrentAwarenessState = vi.fn()
 
       state.needsPresenceBroadcast = BroadcastSource.AwarenessInterval
 
-      jest.advanceTimersByTime(PRESENCE_UPDATE_REPEAT_INTERVAL + 1)
+      vi.advanceTimersByTime(PRESENCE_UPDATE_REPEAT_INTERVAL + 1)
 
       expect(state.broadcastCurrentAwarenessState).toHaveBeenCalled()
     })
 
     it('should not broadcast awareness state if it needs an update', () => {
-      state.broadcastCurrentAwarenessState = jest.fn()
+      state.broadcastCurrentAwarenessState = vi.fn()
 
-      jest.advanceTimersByTime(PRESENCE_UPDATE_REPEAT_INTERVAL + 1)
+      vi.advanceTimersByTime(PRESENCE_UPDATE_REPEAT_INTERVAL + 1)
 
       expect(state.broadcastCurrentAwarenessState).not.toHaveBeenCalled()
     })
@@ -78,11 +82,11 @@ describe('DocState', () => {
 
   describe('handleAwarenessUpdateOrChange', () => {
     it('should invoke removeDuplicateClients', () => {
-      state.awareness.getStates = jest.fn(
+      state.awareness.getStates = vi.fn(
         () => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]),
       )
 
-      const removeDuplicateClientsSpy = jest.spyOn(state.awareness, 'removeDuplicateClients')
+      const removeDuplicateClientsSpy = vi.spyOn(state.awareness, 'removeDuplicateClients')
 
       state.handleAwarenessUpdateOrChange(EmptyAwarenessUpdate, {})
 
@@ -90,11 +94,11 @@ describe('DocState', () => {
     })
 
     it('should notify callbacks about the change', () => {
-      state.awareness.getStates = jest.fn(
+      state.awareness.getStates = vi.fn(
         () => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]),
       )
 
-      const callbackSpy = jest.spyOn(state.callbacks, 'handleAwarenessStateUpdate')
+      const callbackSpy = vi.spyOn(state.callbacks, 'handleAwarenessStateUpdate')
 
       state.handleAwarenessUpdateOrChange(EmptyAwarenessUpdate, {})
 
@@ -106,10 +110,10 @@ describe('DocState', () => {
       state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as UnsafeDocsUserState
       state.doc.clientID = 1
 
-      const broadcastCurrentAwarenessStateSpy = jest.spyOn(state, 'broadcastCurrentAwarenessState')
+      const broadcastCurrentAwarenessStateSpy = vi.spyOn(state, 'broadcastCurrentAwarenessState')
 
-      state.awareness.getClientIds = jest.fn(() => [1])
-      state.awareness.getStates = jest.fn(
+      state.awareness.getClientIds = vi.fn(() => [1])
+      state.awareness.getStates = vi.fn(
         () => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]),
       )
       state.awareness.meta = new Map([[1, { lastUpdated: 0, clock: 0 }]])
@@ -131,10 +135,10 @@ describe('DocState', () => {
       state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as UnsafeDocsUserState
       state.doc.clientID = 1
 
-      const spy = jest.spyOn(state, 'setNeedsBroadcastCurrentAwarenessState')
+      const spy = vi.spyOn(state, 'setNeedsBroadcastCurrentAwarenessState')
 
-      state.awareness.getClientIds = jest.fn(() => [1, 2])
-      state.awareness.getStates = jest.fn(
+      state.awareness.getClientIds = vi.fn(() => [1, 2])
+      state.awareness.getStates = vi.fn(
         () =>
           new Map([
             [
@@ -171,10 +175,10 @@ describe('DocState', () => {
       state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as UnsafeDocsUserState
       state.doc.clientID = 1
 
-      const spy = jest.spyOn(state, 'setNeedsBroadcastCurrentAwarenessState')
+      const spy = vi.spyOn(state, 'setNeedsBroadcastCurrentAwarenessState')
 
-      state.awareness.getClientIds = jest.fn(() => [1, 2])
-      state.awareness.getStates = jest.fn(
+      state.awareness.getClientIds = vi.fn(() => [1, 2])
+      state.awareness.getStates = vi.fn(
         () =>
           new Map([
             [
@@ -211,10 +215,10 @@ describe('DocState', () => {
       state.lastEmittedMyState = { name: 'user1', awarenessData: {} } as UnsafeDocsUserState
       state.doc.clientID = 1
 
-      const spy = jest.spyOn(state, 'setNeedsBroadcastCurrentAwarenessState')
+      const spy = vi.spyOn(state, 'setNeedsBroadcastCurrentAwarenessState')
 
-      state.awareness.getClientIds = jest.fn(() => [1])
-      state.awareness.getStates = jest.fn(
+      state.awareness.getClientIds = vi.fn(() => [1])
+      state.awareness.getStates = vi.fn(
         () => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]),
       )
       state.awareness.meta = new Map([[1, { lastUpdated: 0, clock: 0 }]])
@@ -234,7 +238,7 @@ describe('DocState', () => {
 
   describe('setNeedsBroadcastCurrentAwarenessState', () => {
     it('should bypass debouncing if the source is ExternalCallerRequestingUsToBroadcastOurState', () => {
-      state.broadcastCurrentAwarenessState = jest.fn()
+      state.broadcastCurrentAwarenessState = vi.fn()
 
       state.setNeedsBroadcastCurrentAwarenessState(BroadcastSource.ExternalCallerRequestingUsToBroadcastOurState)
 
@@ -242,7 +246,7 @@ describe('DocState', () => {
     })
 
     it('should not bypass debouncing if the source is not ExternalCallerRequestingUsToBroadcastOurState', () => {
-      state.broadcastCurrentAwarenessState = jest.fn()
+      state.broadcastCurrentAwarenessState = vi.fn()
 
       state.setNeedsBroadcastCurrentAwarenessState(BroadcastSource.AwarenessUpdateHandler)
 
@@ -253,7 +257,7 @@ describe('DocState', () => {
   describe('handleDocBeingUpdatedByLexical', () => {
     /** A self origin indicates the change was made through internal shuffling, rather than by the user editing directly */
     it('should abort if origin is self', () => {
-      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+      const docStateRequestsPropagationOfUpdateSpy = vi.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
       state.handleYDocUpdate(new Uint8Array(), state)
 
@@ -262,7 +266,7 @@ describe('DocState', () => {
 
     /** BaseCommit origin is when the document is initially populated; we don't want to trigger a broadcast event with this data */
     it('should abort if origin is BaseCommit', () => {
-      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+      const docStateRequestsPropagationOfUpdateSpy = vi.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
       state.handleYDocUpdate(new Uint8Array(), DocUpdateOrigin.BaseCommit)
 
@@ -270,19 +274,25 @@ describe('DocState', () => {
     })
 
     it('should hold back editor initialization update and merge with the next update', () => {
-      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+      const docStateRequestsPropagationOfUpdateSpy = vi.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
       state.docWasInitializedWithEmptyNode = true
-      ;(decodeUpdate as jest.Mock).mockImplementationOnce(() => ({
-        structs: [{ id: { clock: 0 } }],
-      }))
+      vi.mocked(decodeUpdate).mockImplementationOnce(
+        () =>
+          ({
+            structs: [{ id: { clock: 0 } }],
+          }) as unknown as ReturnType<typeof decodeUpdate>,
+      )
 
       state.handleYDocUpdate(new Uint8Array(), {})
 
       expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
-      ;(decodeUpdate as jest.Mock).mockImplementationOnce(() => ({
-        structs: [{ id: { clock: 1 } }],
-      }))
+      vi.mocked(decodeUpdate).mockImplementationOnce(
+        () =>
+          ({
+            structs: [{ id: { clock: 1 } }],
+          }) as unknown as ReturnType<typeof decodeUpdate>,
+      )
 
       state.handleYDocUpdate(new Uint8Array(), {})
 
@@ -290,7 +300,7 @@ describe('DocState', () => {
     })
 
     it('should propagate update as conversion if is in conversion flow', () => {
-      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+      const docStateRequestsPropagationOfUpdateSpy = vi.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
       state.isInConversionFromOtherFormatFlow = true
 
@@ -305,7 +315,7 @@ describe('DocState', () => {
     })
 
     it('should not propagate update as conversion if is not in conversion flow', () => {
-      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+      const docStateRequestsPropagationOfUpdateSpy = vi.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
       state.isInConversionFromOtherFormatFlow = false
 
@@ -320,7 +330,7 @@ describe('DocState', () => {
     })
 
     it('should not propagate update when document update guard blocks it', () => {
-      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+      const docStateRequestsPropagationOfUpdateSpy = vi.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
       state.runWithDocumentUpdateGuard(
         () => false,
@@ -333,9 +343,9 @@ describe('DocState', () => {
     })
 
     it('should restore the previous document update guard after a scoped callback', () => {
-      const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
-      const firstGuard = jest.fn(() => true)
-      const secondGuard = jest.fn(() => false)
+      const docStateRequestsPropagationOfUpdateSpy = vi.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
+      const firstGuard = vi.fn(() => true)
+      const secondGuard = vi.fn(() => false)
 
       state.runWithDocumentUpdateGuard(firstGuard, () => {
         state.runWithDocumentUpdateGuard(secondGuard, () => undefined)

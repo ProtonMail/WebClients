@@ -1,4 +1,4 @@
-import { setLocation } from '@proton/jest-env/setLocation'
+import { setLocation } from '@proton/vitest-config/setLocation'
 
 import { BridgeOriginProvider } from './BridgeOriginProvider'
 

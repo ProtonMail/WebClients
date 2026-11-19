@@ -97,9 +97,9 @@
   "scripts": {
     "check:types": "tsc --checkers 1",
     "lint": "oxlint --quiet",
-    "test": "jest",
-    "test:ci": "jest --runInBand --ci --logHeapUsage",
-    "test:watch": "jest --watch"
+    "test": "vitest",
+    "test:ci": "pnpm run test --run",
+    "test:watch": "pnpm run test --watch"
   },
   "dependencies": {
     "@ariakit/react": "0.4.29",
@@ -124,24 +124,18 @@
     "yjs": "catalog:"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.7",
-    "@proton/jest-env": "workspace:^",
-    "@proton/jest-swc-preset": "workspace:^",
     "@proton/oxlint-config": "workspace:^",
+    "@proton/vitest-config": "workspace:^",
     "@proton/unleash": "workspace:^",
-    "@testing-library/jest-dom": "catalog:",
-    "@types/jest": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/webpack-env": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
     "@typescript/native": "catalog:",
-    "babel-jest": "catalog:",
-    "browserslist": "catalog:",
-    "core-js": "catalog:",
-    "jest": "catalog:",
-    "jest-junit": "catalog:",
+    "happy-dom": "catalog:",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }
