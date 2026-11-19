@@ -1,3 +1,4 @@
+// @vitest-environment jsdom -- happy-dom rejects the quote-detection selector (:not(:empty) group)
 import loudRejection from 'loud-rejection';
 
 import type { SendInfo } from '@proton/mail-message/models/crypto';
@@ -180,11 +181,11 @@ const mockEncryptionPreferences: { [email: string]: EncryptionPreferences } = {
     },
 };
 
-const mockCreateModalSpy = jest.fn(({ ...props }) => {
+const mockCreateModalSpy = vi.fn(({ ...props }) => {
     props.props.onSubmit();
 });
 
-jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
+vi.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
     __esModule: true,
     default: () => {
         const getEncryptionPreferences: ({ email }: { email: string }) => EncryptionPreferences = ({ email }) =>
@@ -192,7 +193,7 @@ jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
         return getEncryptionPreferences;
     },
 }));
-jest.mock('@proton/components/hooks/useModals', () => ({
+vi.mock('@proton/components/hooks/useModals', () => ({
     __esModule: true,
     default: () => {
         return {
@@ -201,30 +202,15 @@ jest.mock('@proton/components/hooks/useModals', () => ({
     },
 }));
 
-jest.mock('@proton/account/addresses/hooks', () => ({
+vi.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
     useAddresses: () => [mockAddresses, false],
 }));
 
-const originalResizeObserver = window.ResizeObserver;
-const ResizeObserverMock = jest.fn(() => ({
-    disconnect: jest.fn(),
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-}));
-
-const mockHandleNoAttachments = jest.fn();
-const mockHandleNoReplyEmail = jest.fn();
-const mockHandleNoSubjects = jest.fn();
-const mockHandleNoRecipients = jest.fn();
-
-beforeAll(() => {
-    window.ResizeObserver = ResizeObserverMock;
-});
-
-afterAll(() => {
-    window.ResizeObserver = originalResizeObserver;
-});
+const mockHandleNoAttachments = vi.fn();
+const mockHandleNoReplyEmail = vi.fn();
+const mockHandleNoSubjects = vi.fn();
+const mockHandleNoRecipients = vi.fn();
 
 describe('useSendVerifications', () => {
     const setup = async () => {

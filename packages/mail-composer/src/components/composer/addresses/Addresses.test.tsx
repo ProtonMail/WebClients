@@ -9,7 +9,7 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { addComposerAction } from '../../../store/composers/composerActions';
@@ -17,8 +17,8 @@ import { clearAll } from '../../../test-helpers/helpers';
 import { composerTestRender } from '../../../test-helpers/render';
 import Addresses from './Addresses';
 
-jest.mock('@proton/shared/lib/helpers/dom', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/dom'),
+vi.mock('@proton/shared/lib/helpers/dom', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/dom')),
     rootFontSize: () => 16,
 }));
 
@@ -97,14 +97,14 @@ const messageSendInfo: MessageSendInfo = {
             emailValidation: true,
         },
     },
-    setMapSendInfo: () => jest.fn(),
+    setMapSendInfo: () => vi.fn(),
 };
 
 const DEFAULT_PROPS = {
     message,
     messageSendInfo,
     disabled: false,
-    onChange: jest.fn(),
+    onChange: vi.fn(),
     addressesBlurRef: {} as MutableRefObject<() => void>,
     addressesFocusRef: {} as MutableRefObject<() => void>,
 } as const;

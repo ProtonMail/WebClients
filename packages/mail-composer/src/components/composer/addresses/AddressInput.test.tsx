@@ -42,7 +42,7 @@ describe('AddressInput', () => {
             },
         ];
 
-        await setup({ value: '', onChange: jest.fn() }, { preloadedState: { contactEmails: getModelState(contact) } });
+        await setup({ value: '', onChange: vi.fn() }, { preloadedState: { contactEmails: getModelState(contact) } });
 
         const input = screen.getByTestId('sender');
 

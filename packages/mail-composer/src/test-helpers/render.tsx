@@ -15,7 +15,7 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { mockCache } from '@proton/components/testing/cache';
 import { withNotifications } from '@proton/components/testing/with-notifications';
-import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
+import { registerFeatureFlagsApiMock } from '@proton/features/testing/vitest/features';
 import { mailContactsInitialState } from '@proton/mail-message/store/contacts/contactsInitialState';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
@@ -24,7 +24,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
 import { ComposerAssistantProvider } from '../components/assistant/provider/ComposerAssistantProvider';
 import { ComposeProvider } from '../containers/ComposeProvider';
@@ -47,11 +47,11 @@ const onCompose = async () => {};
 const config = { APP_NAME: APPS.PROTONMAIL, APP_VERSION: 'test-version' } as ProtonConfig;
 
 const authentication = {
-    getUID: jest.fn(() => 'uid'),
-    getLocalID: jest.fn(),
-    getPassword: jest.fn(() => ''),
-    getPersistent: jest.fn(() => false),
-    onLogout: jest.fn(),
+    getUID: vi.fn(() => 'uid'),
+    getLocalID: vi.fn(),
+    getPassword: vi.fn(() => ''),
+    getPersistent: vi.fn(() => false),
+    onLogout: vi.fn(),
     mode: '',
 } as unknown as PrivateAuthenticationStore;
 
@@ -91,7 +91,7 @@ const ComposerTestProviders = ({ children }: { children: ReactNode }) => {
 };
 
 const createStore = (preloadedState: Partial<ComposerTestState> = {}) => {
-    Object.assign(composerTestThunkArguments, { config, authentication, eventManager: { getEventID: jest.fn() } });
+    Object.assign(composerTestThunkArguments, { config, authentication, eventManager: { getEventID: vi.fn() } });
 
     return setupComposerTestStore({
         preloadedState: {

@@ -6,8 +6,8 @@ import type { MessageState } from '@proton/mail-message/store/messages/messagesT
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { addApiMock } from '@proton/test-api/api';
-import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
+import { addApiMock } from '@proton/test-api/vitest/api';
+import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
 
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { addComposerAction } from '../../../store/composers/composerActions';
@@ -51,7 +51,7 @@ const messageSendInfo: MessageSendInfo = {
             emailValidation: true,
         },
     },
-    setMapSendInfo: () => jest.fn(),
+    setMapSendInfo: () => vi.fn(),
 };
 
 let ccExpanded = false;
@@ -60,15 +60,15 @@ let bccExpanded = false;
 const props = {
     message,
     messageSendInfo,
-    onChange: jest.fn(),
+    onChange: vi.fn(),
     expanded: false,
-    toggleExpanded: jest.fn(),
+    toggleExpanded: vi.fn(),
     inputFocusRefs: {
         to: {} as MutableRefObject<() => void>,
         cc: {} as MutableRefObject<() => void>,
         bcc: {} as MutableRefObject<() => void>,
     },
-    handleContactModal: jest.fn(),
+    handleContactModal: vi.fn(),
     ccExpanded,
     bccExpanded,
     expandCC: () => {
@@ -218,7 +218,7 @@ describe('AddressesEditor', () => {
     });
 
     it('should copy an address', async () => {
-        document.execCommand = jest.fn();
+        const writeText = vi.spyOn(navigator.clipboard, 'writeText').mockResolvedValue();
 
         const { getAllByTestId } = await composerTestRender(<AddressesEditor {...props} composerID={composerID} />, {
             onStore: (store) => {
@@ -236,7 +236,7 @@ describe('AddressesEditor', () => {
 
         fireEvent.click(copyAddressButton);
 
-        expect(document.execCommand).toHaveBeenCalledWith('copy');
+        expect(writeText).toHaveBeenCalled();
     });
 
     it('should edit an address in option dropdown', async () => {

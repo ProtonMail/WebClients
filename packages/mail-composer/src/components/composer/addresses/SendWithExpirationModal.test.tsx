@@ -3,8 +3,8 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import SendWithExpirationModal from './SendWithExpirationModal';
 
 describe('SendWithExpirationModal', () => {
-    const mockOnSubmit = jest.fn();
-    const mockOnClose = jest.fn();
+    const mockOnSubmit = vi.fn();
+    const mockOnClose = vi.fn();
 
     const setupTest = (emails: string[]) => {
         // @ts-expect-error `open` prop is passed with spread. Force passing it for testing
@@ -12,7 +12,7 @@ describe('SendWithExpirationModal', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should render correctly with single email', () => {

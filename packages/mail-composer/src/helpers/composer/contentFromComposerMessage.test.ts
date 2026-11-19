@@ -1,3 +1,4 @@
+// @vitest-environment jsdom -- happy-dom rejects the quote-detection selector and DOMPurify insertBefore
 import { buildAddress } from '@proton/account/testing/buildAddress';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { locateBlockquote } from '@proton/mail-message/helpers/message/messageBlockquote';
@@ -103,7 +104,7 @@ describe('insertBodyIntoNewDraft', () => {
             mailSettings: { ...mailSettings, DraftMIMEType: mimeType },
             userSettings,
             addresses: [buildAddress({ Signature: '<div>signature</div>' })],
-            getAttachment: jest.fn(),
+            getAttachment: vi.fn(),
         }) as MessageState;
     };
 

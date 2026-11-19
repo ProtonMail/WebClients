@@ -1,4 +1,5 @@
 import { type BeforePasteEvent, ChangeSource, type IEditor, PasteType, PluginEventType } from 'roosterjs-editor-types';
+import type { Mock } from 'vitest';
 
 import EditorCustomPastePlugin from './EditorCustomPastePlugin';
 
@@ -24,14 +25,14 @@ const createMockSelection = (text: string) => ({
 describe('EditorCustomPastePlugin', () => {
     let plugin: EditorCustomPastePlugin;
     let mockEditor: Pick<IEditor, 'getSelectionRange' | 'deleteSelectedContent' | 'insertNode'>;
-    let mockOnPasteFiles: jest.Mock;
+    let mockOnPasteFiles: Mock;
 
     beforeEach(() => {
-        mockOnPasteFiles = jest.fn();
+        mockOnPasteFiles = vi.fn();
         mockEditor = {
-            getSelectionRange: jest.fn(),
-            deleteSelectedContent: jest.fn(),
-            insertNode: jest.fn(),
+            getSelectionRange: vi.fn(),
+            deleteSelectedContent: vi.fn(),
+            insertNode: vi.fn(),
         };
 
         plugin = new EditorCustomPastePlugin(mockOnPasteFiles);
@@ -66,28 +67,28 @@ describe('EditorCustomPastePlugin', () => {
     describe('handleUrlPaste', () => {
         it('should return false when no text is selected', () => {
             const event = createPasteEvent('https://example.com', ['text/plain']);
-            mockEditor.getSelectionRange = jest.fn().mockReturnValue(null);
+            mockEditor.getSelectionRange = vi.fn().mockReturnValue(null);
             plugin.onPluginEvent(event);
             expect(mockEditor.insertNode).not.toHaveBeenCalled();
         });
 
         it('should return false when pasted content is not a valid URL', () => {
             const event = createPasteEvent('not-a-url', ['text/plain']);
-            mockEditor.getSelectionRange = jest.fn().mockReturnValue(createMockSelection('selected text'));
+            mockEditor.getSelectionRange = vi.fn().mockReturnValue(createMockSelection('selected text'));
             plugin.onPluginEvent(event);
             expect(mockEditor.insertNode).not.toHaveBeenCalled();
         });
 
         it('should return false when URL protocol is not allowed', () => {
             const event = createPasteEvent('ftp://example.com', ['text/plain']);
-            mockEditor.getSelectionRange = jest.fn().mockReturnValue(createMockSelection('selected text'));
+            mockEditor.getSelectionRange = vi.fn().mockReturnValue(createMockSelection('selected text'));
             plugin.onPluginEvent(event);
             expect(mockEditor.insertNode).not.toHaveBeenCalled();
         });
 
         it('should convert selected text to link when valid URL is pasted', () => {
             const event = createPasteEvent('https://example.com', ['text/plain']);
-            mockEditor.getSelectionRange = jest.fn().mockReturnValue(createMockSelection('selected text'));
+            mockEditor.getSelectionRange = vi.fn().mockReturnValue(createMockSelection('selected text'));
             plugin.onPluginEvent(event);
             expect(mockEditor.deleteSelectedContent).toHaveBeenCalled();
             expect(mockEditor.insertNode).toHaveBeenCalledWith(
@@ -136,7 +137,7 @@ describe('EditorCustomPastePlugin', () => {
 
         it('should leave them out of the paste', () => {
             plugin = new EditorCustomPastePlugin(mockOnPasteFiles, isPastedImageAllowed);
-            plugin.initialize({ ...mockEditor, addDomEventHandler: jest.fn() } as unknown as IEditor);
+            plugin.initialize({ ...mockEditor, addDomEventHandler: vi.fn() } as unknown as IEditor);
 
             const event = createHTMLPasteEvent(`<div>Text</div>${imagesHTML}`);
             plugin.onPluginEvent(event);
@@ -162,11 +163,11 @@ describe('EditorCustomPastePlugin', () => {
                 content.append(...parseNodes('<img src="blob:before" data-embedded-img="cid:before">'));
                 dropEditor = {
                     ...mockEditor,
-                    queryElements: jest.fn(() => Array.from(content.querySelectorAll('img'))),
-                    addUndoSnapshot: jest.fn((callback: () => void) => callback()),
-                    addDomEventHandler: jest.fn((_name: string, handler: () => void) => {
+                    queryElements: vi.fn(() => Array.from(content.querySelectorAll('img'))),
+                    addUndoSnapshot: vi.fn((callback: () => void) => callback()),
+                    addDomEventHandler: vi.fn((_name: string, handler: () => void) => {
                         onDrop = handler;
-                        return jest.fn();
+                        return vi.fn();
                     }),
                 } as unknown as IEditor;
 

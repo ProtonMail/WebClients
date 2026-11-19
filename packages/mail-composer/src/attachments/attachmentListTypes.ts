@@ -9,4 +9,5 @@ export enum AttachmentAction {
 }
 
 export type AttachmentHandler =
-    ((attachment: Attachment) => Promise<void>) | ((pendingUpload: PendingUpload) => Promise<void>);
+    | ((attachment: Attachment) => Promise<void>)
+    | ((pendingUpload: PendingUpload) => Promise<void>);

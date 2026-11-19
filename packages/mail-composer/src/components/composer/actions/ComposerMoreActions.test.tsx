@@ -12,29 +12,29 @@ import { BookingUpsellSource, useComposerBookingsTracking } from '../../../telem
 import { composerTestRender } from '../../../test-helpers/render';
 import ComposerMoreActions from './ComposerMoreActions';
 
-const mockGetInternalBooking = jest.fn();
-jest.mock('@proton/calendar/bookings/store/hooks', () => ({
+const mockGetInternalBooking = vi.fn();
+vi.mock('@proton/calendar/bookings/store/hooks', () => ({
     useGetInternalBooking: () => mockGetInternalBooking,
 }));
-jest.mock('@proton/unleash/useFlag');
-jest.mock('../../../telemetry/composerBookingsEvents', () => ({
-    ...jest.requireActual('../../../telemetry/composerBookingsEvents'),
-    useComposerBookingsTracking: jest.fn(),
+vi.mock('@proton/unleash/useFlag');
+vi.mock('../../../telemetry/composerBookingsEvents', async () => ({
+    ...(await vi.importActual('../../../telemetry/composerBookingsEvents')),
+    useComposerBookingsTracking: vi.fn(),
 }));
-jest.mock('@proton/components/hooks/useActiveBreakpoint');
-const mockSpotlightClose = jest.fn();
-const mockUseComposerBookingSpotlight = jest.fn();
-jest.mock('./bookingSpotlight/useComposerBookingSpotlight', () => ({
+vi.mock('@proton/components/hooks/useActiveBreakpoint');
+const mockSpotlightClose = vi.fn();
+const mockUseComposerBookingSpotlight = vi.fn();
+vi.mock('./bookingSpotlight/useComposerBookingSpotlight', () => ({
     useComposerBookingSpotlight: () => mockUseComposerBookingSpotlight(),
     ComposerBookingSpotlightContent: () => null,
 }));
-jest.mock('./MoreActionsExtension', () => ({
+vi.mock('./MoreActionsExtension', () => ({
     __esModule: true,
-    default: jest.fn(() => null),
+    default: vi.fn(() => null),
 }));
-jest.mock('./ComposerBookingDropdownContent', () => ({
+vi.mock('./ComposerBookingDropdownContent', () => ({
     __esModule: true,
-    default: jest.fn(
+    default: vi.fn(
         ({ onLimitReached, onUpsell }: { onLimitReached: () => void; onUpsell: (pageCount: string) => void }) => (
             <div data-testid="composer:booking-dropdown">
                 <button
@@ -53,12 +53,12 @@ jest.mock('./ComposerBookingDropdownContent', () => ({
         )
     ),
 }));
-jest.mock('@proton/components/containers/calendar/BookingsLimitReached', () => ({
-    BookingsLimitReached: jest.fn(() => <div data-testid="composer:booking-limit-modal" />),
+vi.mock('@proton/components/containers/calendar/BookingsLimitReached', () => ({
+    BookingsLimitReached: vi.fn(() => <div data-testid="composer:booking-limit-modal" />),
 }));
-jest.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => ({
+vi.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => ({
     __esModule: true,
-    default: jest.fn(
+    default: vi.fn(
         ({
             'data-testid': dataTestId,
             onClose,
@@ -82,7 +82,7 @@ jest.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => 
 }));
 
 const mockViewport = (isSmallViewport: boolean) => {
-    jest.mocked(useActiveBreakpoint).mockReturnValue({
+    vi.mocked(useActiveBreakpoint).mockReturnValue({
         viewportWidth: { '<=small': isSmallViewport },
     } as ReturnType<typeof useActiveBreakpoint>);
 };
@@ -105,48 +105,48 @@ const setup = async ({
         <ComposerMoreActions
             isExpiration={false}
             message={{ localID: 'local-id', data: {} } as any}
-            onExpiration={jest.fn()}
+            onExpiration={vi.fn()}
             lock={false}
-            onChangeFlag={jest.fn()}
+            onChangeFlag={vi.fn()}
             editorActionsRef={{ current: undefined }}
             editorMetadata={{ isPlainText } as any}
-            onChange={jest.fn()}
-            onSwitchToPlainText={jest.fn()}
+            onChange={vi.fn()}
+            onSwitchToPlainText={vi.fn()}
             isPassword={false}
-            onPassword={jest.fn()}
-            onRemoveOutsideEncryption={jest.fn()}
-            onDelete={jest.fn()}
+            onPassword={vi.fn()}
+            onRemoveOutsideEncryption={vi.fn()}
+            onDelete={vi.fn()}
         />,
         { preloadedState: { user: getModelState({ isFree, canPay, Flags: {} } as UserModel) } }
     );
 };
 
 const mockTracking = {
-    trackBookingActionClick: jest.fn(),
-    trackBookingPageInserted: jest.fn(),
-    trackCreateBookingPageClick: jest.fn(),
-    trackBookingUpsellDisplayed: jest.fn(),
-    trackBookingLimitDisplayed: jest.fn(),
-    trackBookingUpsellDismissed: jest.fn(),
-    trackBookingUpsellSubscribed: jest.fn(),
+    trackBookingActionClick: vi.fn(),
+    trackBookingPageInserted: vi.fn(),
+    trackCreateBookingPageClick: vi.fn(),
+    trackBookingUpsellDisplayed: vi.fn(),
+    trackBookingLimitDisplayed: vi.fn(),
+    trackBookingUpsellDismissed: vi.fn(),
+    trackBookingUpsellSubscribed: vi.fn(),
 };
 
 describe('ComposerMoreActions booking action', () => {
     beforeEach(() => {
-        jest.mocked(useFlag).mockImplementation((flag) => {
+        vi.mocked(useFlag).mockImplementation((flag) => {
             return flag === 'BookingsInComposerEnabled';
         });
-        jest.mocked(useComposerBookingsTracking).mockReturnValue(mockTracking);
+        vi.mocked(useComposerBookingsTracking).mockReturnValue(mockTracking);
         mockViewport(false);
         mockUseComposerBookingSpotlight.mockReturnValue({
             shouldShowSpotlight: false,
-            onDisplayed: jest.fn(),
+            onDisplayed: vi.fn(),
             onClose: mockSpotlightClose,
         });
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should open the upsell directly for a free user', async () => {
@@ -263,7 +263,7 @@ describe('ComposerMoreActions booking action', () => {
         fireEvent.click(screen.getByTestId('composer:booking-button'));
         fireEvent.click(screen.getByTestId('mock:booking-limit-reached'));
 
-        expect(jest.mocked(BookingsLimitReached).mock.calls.map(([props]) => props)).toContainEqual(
+        expect(vi.mocked(BookingsLimitReached).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({ app: APPS.PROTONMAIL })
         );
     });

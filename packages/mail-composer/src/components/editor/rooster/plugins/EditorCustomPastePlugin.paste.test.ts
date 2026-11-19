@@ -1,3 +1,4 @@
+// @vitest-environment jsdom -- Rooster needs Range/Selection and iframe behaviour missing in happy-dom
 import { Editor, Paste } from 'roosterjs';
 import { formatContainerProcessor } from 'roosterjs-content-model-dom';
 import { PastePlugin } from 'roosterjs-content-model-plugins';

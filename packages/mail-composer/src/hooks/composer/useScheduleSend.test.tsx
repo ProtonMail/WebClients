@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
+import type { Mock } from 'vitest';
 
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 
@@ -11,68 +12,68 @@ import { useScheduleSend } from './useScheduleSend';
 loudRejection();
 
 const mockUseScheduleSendFeature = (value?: Partial<ReturnType<typeof useScheduleSendFeature>>) =>
-    jest.mocked(useScheduleSendFeature).mockReturnValue({
+    vi.mocked(useScheduleSendFeature).mockReturnValue({
         canScheduleSend: false,
         canScheduleSendCustom: false,
         loading: false,
         ...value,
     });
 
-// Mock functions - using 'mock' prefix allows Jest to hoist these properly
-const mockUseLocation = jest.fn(() => ({ pathname: '/inbox' }));
-const mockUseFlag = jest.fn();
-const mockDispatch = jest.fn();
-const mockSetModalOpen = jest.fn((value: boolean) => value);
-const mockPreliminaryVerifications = jest.fn();
+// Mock functions - lazily referenced by the vi.mock factories below
+const mockUseLocation = vi.fn(() => ({ pathname: '/inbox' }));
+const mockUseFlag = vi.fn();
+const mockDispatch = vi.fn();
+const mockSetModalOpen = vi.fn((value: boolean) => value);
+const mockPreliminaryVerifications = vi.fn();
 
-jest.mock('react-router-dom', () => ({
+vi.mock('react-router-dom', () => ({
     useLocation: () => mockUseLocation(),
 }));
 
-jest.mock('../../components/composer/actions/scheduleSend/useScheduleSendFeature', () => ({
+vi.mock('../../components/composer/actions/scheduleSend/useScheduleSendFeature', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     useFlag: () => mockUseFlag(),
 }));
 
-jest.mock('../../store/hooks', () => ({
+vi.mock('../../store/hooks', () => ({
     useComposerDispatch: () => mockDispatch,
 }));
 
-jest.mock('@proton/components/components/modalTwo/useModalState', () => ({
+vi.mock('@proton/components/components/modalTwo/useModalState', () => ({
     __esModule: true,
     default: () => [
         {
             open: false,
-            onClose: jest.fn(),
-            onExit: jest.fn(),
+            onClose: vi.fn(),
+            onExit: vi.fn(),
         },
         mockSetModalOpen,
     ],
 }));
 
-jest.mock('@proton/components/components/prompt/Prompt', () => ({
+vi.mock('@proton/components/components/prompt/Prompt', () => ({
     __esModule: true,
     default: ({ children, ...props }: any) => <div data-testid={props['data-testid']}>{children}</div>,
 }));
 
-jest.mock('@proton/atoms/Button/Button', () => ({
+vi.mock('@proton/atoms/Button/Button', () => ({
     Button: ({ children, ...props }: any) => <button {...props}>{children}</button>,
 }));
 
-jest.mock('ttag', () => ({
+vi.mock('ttag', () => ({
     c: (_context: string) => ({
         t: (text: string) => text,
     }),
 }));
 
-jest.mock('./useComposerHost');
-const mockUseComposerHost = useComposerHost as jest.Mock;
+vi.mock('./useComposerHost');
+const mockUseComposerHost = useComposerHost as Mock;
 
-jest.mock('./useSendVerifications', () => ({
+vi.mock('./useSendVerifications', () => ({
     useSendVerifications: () => ({
         preliminaryVerifications: () => mockPreliminaryVerifications(),
     }),
@@ -95,16 +96,16 @@ const createMockMessage = (overrides?: Partial<MessageStateWithData>): MessageSt
 
 describe('useScheduleSend', () => {
     // Props that are passed to the hook
-    const mockSetInnerModal = jest.fn();
-    const mockSetModelMessage = jest.fn();
-    const mockHandleSend = jest.fn();
-    const mockHandleNoRecipients = jest.fn();
-    const mockHandleNoSubjects = jest.fn();
-    const mockHandleNoAttachments = jest.fn();
-    const mockHandleNoReplyEmail = jest.fn();
+    const mockSetInnerModal = vi.fn();
+    const mockSetModelMessage = vi.fn();
+    const mockHandleSend = vi.fn();
+    const mockHandleNoRecipients = vi.fn();
+    const mockHandleNoSubjects = vi.fn();
+    const mockHandleNoAttachments = vi.fn();
+    const mockHandleNoReplyEmail = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockPreliminaryVerifications.mockResolvedValue(undefined);
         mockUseFlag.mockReturnValue(false);
     });
@@ -132,8 +133,8 @@ describe('useScheduleSend', () => {
         mockUseComposerHost.mockReturnValue({
             scheduledCount: mockOverrides?.scheduleCount ?? 0,
             scheduledCountLoading: mockOverrides?.loadingScheduleCount ?? false,
-            onMessageSent: jest.fn(),
-            onDraftDiscarded: jest.fn(),
+            onMessageSent: vi.fn(),
+            onDraftDiscarded: vi.fn(),
         });
 
         const { result } = renderHook(() =>
@@ -203,13 +204,9 @@ describe('useScheduleSend', () => {
         });
     });
 
-    describe('handleScheduleSendModal', () => {
-        // TODO: Implement test for handleScheduleSendModal
-    });
+    describe.todo('handleScheduleSendModal');
 
-    describe('handleScheduleSend', () => {
-        // TODO: Implement test for handleScheduleSend
-    });
+    describe.todo('handleScheduleSend');
 
     describe('scheduleCount', () => {
         it('should return the scheduled count from the composer host', () => {

@@ -11,10 +11,10 @@ import {
     useComposerBookingsTracking,
 } from './composerBookingsEvents';
 
-jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [{}] }));
-jest.mock('@proton/account/subscription/hooks', () => ({ useSubscription: () => [{}] }));
-jest.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: () => [{}] }));
-jest.mock('@proton/shared/lib/helpers/metrics', () => ({
+vi.mock('@proton/account/user/hooks', () => ({ useUser: () => [{}] }));
+vi.mock('@proton/account/subscription/hooks', () => ({ useSubscription: () => [{}] }));
+vi.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: () => [{}] }));
+vi.mock('@proton/shared/lib/helpers/metrics', () => ({
     getBaseTelemetryDimensions: () => ({
         accountAge: '31-60',
         userLocale: 'en_GB',
@@ -57,7 +57,7 @@ describe('useComposerBookingsTracking', () => {
 
     afterEach(() => {
         tracker.restore();
-        jest.mocked(useFlag).mockReset();
+        vi.mocked(useFlag).mockReset();
     });
 
     const getTracking = () => {
@@ -78,7 +78,7 @@ describe('useComposerBookingsTracking', () => {
     });
 
     it('should send the editor version the composer runs on', () => {
-        jest.mocked(useFlag).mockImplementation((name) => name === 'MailComposerRoosterV9');
+        vi.mocked(useFlag).mockImplementation((name) => name === 'MailComposerRoosterV9');
 
         getTracking().trackBookingActionClick();
 
