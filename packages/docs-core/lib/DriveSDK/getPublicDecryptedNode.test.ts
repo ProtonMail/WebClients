@@ -1,26 +1,26 @@
 import { getPublicDecryptedNode } from './getPublicDecryptedNode'
 import { traceErrorSDK } from './traceErrorSDK'
 
-const mockGetNode = jest.fn()
-const mockGetPublicDrive = jest.fn()
-const mockGetPublicLinkInfo = jest.fn()
+const mockGetNode = vi.fn()
+const mockGetPublicDrive = vi.fn()
+const mockGetPublicLinkInfo = vi.fn()
 
-jest.mock('./getPublicDrive', () => ({
+vi.mock('./getPublicDrive', () => ({
   getPublicDrive: () => mockGetPublicDrive(),
   getPublicLinkInfo: () => mockGetPublicLinkInfo(),
 }))
 
-jest.mock('./getDecryptedNode', () => ({
+vi.mock('./getDecryptedNode', () => ({
   toDecryptedNode: (node: { uid: string }) => ({ uid: node.uid }),
 }))
 
-jest.mock('./traceErrorSDK', () => ({
-  traceErrorSDK: jest.fn(),
+vi.mock('./traceErrorSDK', () => ({
+  traceErrorSDK: vi.fn(),
 }))
 
 describe('getPublicDecryptedNode', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     mockGetPublicDrive.mockReturnValue({ getNode: mockGetNode })
     mockGetPublicLinkInfo.mockReturnValue({ volumeId: 'volume-id' })
   })

@@ -4,7 +4,7 @@ import type { ClientMessageWithDocumentUpdates } from '@proton/docs-proto/Genera
 import type { ServerMessageWithMessageAcks } from '@proton/docs-proto/Generated/ServerMessage'
 import metrics from '@proton/metrics/metricsInstance'
 
-const mockMetric = jest.mocked(metrics.docs_document_updates_ack_error_total.increment)
+const mockMetric = vi.mocked(metrics.docs_document_updates_ack_error_total.increment)
 
 describe('AckLedger', () => {
   let ledger: AckLedger
@@ -12,7 +12,7 @@ describe('AckLedger', () => {
   const createService = (callback: () => void) =>
     new AckLedger(
       {
-        info: jest.fn(),
+        info: vi.fn(),
       } as unknown as LoggerInterface,
       callback,
     )
@@ -111,7 +111,7 @@ describe('AckLedger', () => {
 
   describe('checkForUnackedMessages', () => {
     it('should add to concerning messages if concern threshold is passed', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
       const message = {
         updates: {
@@ -123,7 +123,7 @@ describe('AckLedger', () => {
 
       ledger.thresholdForConcern = () => 10
 
-      jest.advanceTimersByTime(11)
+      vi.advanceTimersByTime(11)
 
       ledger.checkForUnackedMessages()
 
@@ -138,7 +138,7 @@ describe('AckLedger', () => {
     })
 
     it('should add to erorred messages if error threshold is passed', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
       const message = {
         updates: {
@@ -150,7 +150,7 @@ describe('AckLedger', () => {
 
       ledger.thresholdForError = () => 10
 
-      jest.advanceTimersByTime(11)
+      vi.advanceTimersByTime(11)
 
       ledger.checkForUnackedMessages()
 
@@ -166,9 +166,9 @@ describe('AckLedger', () => {
     })
 
     it('should notify of status change if messages are added', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
-      const mock = (ledger.notifyOfStatusChange = jest.fn())
+      const mock = (ledger.notifyOfStatusChange = vi.fn())
 
       const message = {
         updates: {
@@ -180,7 +180,7 @@ describe('AckLedger', () => {
 
       ledger.thresholdForConcern = () => 10
 
-      jest.advanceTimersByTime(11)
+      vi.advanceTimersByTime(11)
 
       ledger.checkForUnackedMessages()
 

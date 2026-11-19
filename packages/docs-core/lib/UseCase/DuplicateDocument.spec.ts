@@ -1,3 +1,4 @@
+import type { Mock, Mocked } from 'vitest'
 import { Result } from '@proton/docs-shared/Result'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
@@ -7,35 +8,35 @@ import type { SeedInitialCommit } from './SeedInitialCommit'
 import { getDrive } from '@proton/drive/sdk'
 import { traceErrorSDK } from '../DriveSDK/traceErrorSDK'
 
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
-jest.mock('../DriveSDK/traceErrorSDK')
+vi.mock('../DriveSDK/traceErrorSDK')
 
 const rootMeta = { volumeId: 'volume', linkId: 'root' }
 const shell = { volumeId: 'volume', linkId: 'new-document', keys: {} }
 const state = new Uint8Array()
 
 describe('DuplicateDocument', () => {
-  let driveCompat: jest.Mocked<DriveCompat>
-  let getDocumentMeta: jest.Mocked<GetDocumentMeta>
-  let seedInitialCommit: jest.Mocked<SeedInitialCommit>
+  let driveCompat: Mocked<DriveCompat>
+  let getDocumentMeta: Mocked<GetDocumentMeta>
+  let seedInitialCommit: Mocked<SeedInitialCommit>
   const unleashClient = { isReady: () => true, isEnabled: () => false } as unknown as UnleashClient
 
   beforeEach(() => {
     driveCompat = {
-      getMyFilesNodeMeta: jest.fn().mockResolvedValue(rootMeta),
-      findAvailableNodeName: jest.fn().mockResolvedValue('name'),
-      createDocumentNode: jest.fn().mockResolvedValue(shell),
-    } as unknown as jest.Mocked<DriveCompat>
-    getDocumentMeta = { execute: jest.fn().mockResolvedValue(Result.ok({})) } as unknown as jest.Mocked<GetDocumentMeta>
+      getMyFilesNodeMeta: vi.fn().mockResolvedValue(rootMeta),
+      findAvailableNodeName: vi.fn().mockResolvedValue('name'),
+      createDocumentNode: vi.fn().mockResolvedValue(shell),
+    } as unknown as Mocked<DriveCompat>
+    getDocumentMeta = { execute: vi.fn().mockResolvedValue(Result.ok({})) } as unknown as Mocked<GetDocumentMeta>
     seedInitialCommit = {
-      execute: jest.fn().mockResolvedValue(Result.ok({})),
-    } as unknown as jest.Mocked<SeedInitialCommit>
+      execute: vi.fn().mockResolvedValue(Result.ok({})),
+    } as unknown as Mocked<SeedInitialCommit>
   })
 
-  const executePublic = (createDocumentNode?: jest.Mock) =>
+  const executePublic = (createDocumentNode?: Mock) =>
     new DuplicateDocument(
       driveCompat,
       getDocumentMeta,
@@ -45,7 +46,7 @@ describe('DuplicateDocument', () => {
     ).executePublic('name', state, 'sheet')
 
   it('uses provided createDocumentNode', async () => {
-    const createDocumentNode = jest.fn().mockResolvedValue(shell)
+    const createDocumentNode = vi.fn().mockResolvedValue(shell)
 
     const result = await executePublic(createDocumentNode)
 
@@ -69,12 +70,12 @@ describe('DuplicateDocument', () => {
   describe('executePrivate', () => {
     /** `driveNode` is the node Drive's SDK answers, which tells whether the document is shared directly, or its error */
     const executePrivate = (canEdit: boolean, driveNode: { membership?: object } | Error = {}) => {
-      driveCompat.getNode = jest
+      driveCompat.getNode = vi
         .fn()
         .mockResolvedValue({ name: 'Plans', volumeId: 'volume', parentNodeId: 'folder', mimeType: 'text/plain' })
       const getNode =
-        driveNode instanceof Error ? jest.fn().mockRejectedValue(driveNode) : jest.fn().mockResolvedValue(driveNode)
-      jest.mocked(getDrive).mockReturnValue({ getNode } as unknown as ReturnType<typeof getDrive>)
+        driveNode instanceof Error ? vi.fn().mockRejectedValue(driveNode) : vi.fn().mockResolvedValue(driveNode)
+      vi.mocked(getDrive).mockReturnValue({ getNode } as unknown as ReturnType<typeof getDrive>)
       return new DuplicateDocument(driveCompat, getDocumentMeta, seedInitialCommit, unleashClient).executePrivate(
         { volumeId: 'volume', linkId: 'document' },
         state,

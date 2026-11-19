@@ -1,3 +1,4 @@
+import type { Mock, Mocked } from 'vitest'
 import { Result } from '@proton/docs-shared/Result'
 import type { DecryptedNode } from '@proton/docs-shared/DecryptedNode'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
@@ -6,35 +7,35 @@ import { getDrive } from '@proton/drive/sdk'
 import { CreateNewDocument } from './CreateNewDocument'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
-jest.mock('../DriveSDK/traceErrorSDK')
+vi.mock('../DriveSDK/traceErrorSDK')
 
 const parentMeta = { volumeId: 'volume', linkId: 'parent' }
 const shell = { ...parentMeta, linkId: 'new-document', keys: {} }
 const myFilesMeta = { volumeId: 'my-volume', linkId: 'my-files' }
 
 describe('CreateNewDocument', () => {
-  let driveCompat: jest.Mocked<DriveCompat>
-  let getDocumentMeta: jest.Mocked<GetDocumentMeta>
+  let driveCompat: Mocked<DriveCompat>
+  let getDocumentMeta: Mocked<GetDocumentMeta>
   const unleashClient = { isReady: () => true, isEnabled: () => false } as unknown as UnleashClient
 
   beforeEach(() => {
     driveCompat = {
-      findAvailableNodeName: jest.fn().mockResolvedValue('name'),
-      createDocumentNode: jest.fn().mockResolvedValue(shell),
-      getMyFilesNodeMeta: jest.fn().mockResolvedValue(myFilesMeta),
-    } as unknown as jest.Mocked<DriveCompat>
-    getDocumentMeta = { execute: jest.fn().mockResolvedValue(Result.ok({})) } as unknown as jest.Mocked<GetDocumentMeta>
+      findAvailableNodeName: vi.fn().mockResolvedValue('name'),
+      createDocumentNode: vi.fn().mockResolvedValue(shell),
+      getMyFilesNodeMeta: vi.fn().mockResolvedValue(myFilesMeta),
+    } as unknown as Mocked<DriveCompat>
+    getDocumentMeta = { execute: vi.fn().mockResolvedValue(Result.ok({})) } as unknown as Mocked<GetDocumentMeta>
   })
 
   /** `driveNode` is the node Drive's SDK answers, which tells whether the sibling is shared directly, or its error */
-  const execute = (createDocumentNode?: jest.Mock, canEdit = true, driveNode: { membership?: object } | Error = {}) => {
+  const execute = (createDocumentNode?: Mock, canEdit = true, driveNode: { membership?: object } | Error = {}) => {
     const getNode =
-      driveNode instanceof Error ? jest.fn().mockRejectedValue(driveNode) : jest.fn().mockResolvedValue(driveNode)
-    jest.mocked(getDrive).mockReturnValue({ getNode } as unknown as ReturnType<typeof getDrive>)
+      driveNode instanceof Error ? vi.fn().mockRejectedValue(driveNode) : vi.fn().mockResolvedValue(driveNode)
+    vi.mocked(getDrive).mockReturnValue({ getNode } as unknown as ReturnType<typeof getDrive>)
     return new CreateNewDocument(driveCompat, getDocumentMeta, unleashClient, createDocumentNode).execute(
       'name',
       parentMeta,
@@ -45,7 +46,7 @@ describe('CreateNewDocument', () => {
   }
 
   it('uses provided createDocumentNode', async () => {
-    const createDocumentNode = jest.fn().mockResolvedValue(shell)
+    const createDocumentNode = vi.fn().mockResolvedValue(shell)
 
     const result = await execute(createDocumentNode)
 

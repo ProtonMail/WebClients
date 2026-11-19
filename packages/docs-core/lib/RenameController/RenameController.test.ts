@@ -7,20 +7,20 @@ import { renameNode } from '../DriveSDK/renameNode'
 import { renamePublicNode } from '../DriveSDK/renamePublicNode'
 import { findAvailableNodeName } from '../DriveSDK/findAvailableNodeName'
 
-jest.mock('../DriveSDK/renameNode', () => ({ renameNode: jest.fn() }))
-jest.mock('../DriveSDK/renamePublicNode', () => ({ renamePublicNode: jest.fn() }))
-jest.mock('../DriveSDK/findAvailableNodeName', () => ({ findAvailableNodeName: jest.fn() }))
+vi.mock('../DriveSDK/renameNode', () => ({ renameNode: vi.fn() }))
+vi.mock('../DriveSDK/renamePublicNode', () => ({ renamePublicNode: vi.fn() }))
+vi.mock('../DriveSDK/findAvailableNodeName', () => ({ findAvailableNodeName: vi.fn() }))
 
 const nodeMeta = { volumeId: 'volume-id', linkId: 'link-id' }
 const publicNodeMeta = { token: 'token', linkId: 'link-id' }
 const parentMeta = { volumeId: 'volume-id', linkId: 'parent-id' }
 
 describe('PublicRenameController', () => {
-  const getNode = { updateNodeNameInCache: jest.fn() }
-  const logger = { error: jest.fn() }
+  const getNode = { updateNodeNameInCache: vi.fn() }
+  const logger = { error: vi.fn() }
   const documentState = {
-    getProperty: jest.fn().mockReturnValue({ nodeMeta: publicNodeMeta }),
-    setProperty: jest.fn(),
+    getProperty: vi.fn().mockReturnValue({ nodeMeta: publicNodeMeta }),
+    setProperty: vi.fn(),
   }
 
   const createController = () =>
@@ -31,7 +31,7 @@ describe('PublicRenameController', () => {
     )
 
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('renames with SDK', async () => {
@@ -49,7 +49,7 @@ describe('PublicRenameController', () => {
   })
 
   it('logs and returns failure when rename fails', async () => {
-    jest.mocked(renamePublicNode).mockRejectedValueOnce(new Error('Rename failed'))
+    vi.mocked(renamePublicNode).mockRejectedValueOnce(new Error('Rename failed'))
 
     const result = await createController().renameDocument('New name')
 
@@ -61,14 +61,14 @@ describe('PublicRenameController', () => {
 })
 
 describe('PrivateRenameController', () => {
-  const compat = { findAvailableNodeName: jest.fn() }
-  const getNode = { updateNodeNameInCache: jest.fn() }
-  const logger = { error: jest.fn() }
-  const unleashClient = { isReady: () => true, isEnabled: jest.fn() }
+  const compat = { findAvailableNodeName: vi.fn() }
+  const getNode = { updateNodeNameInCache: vi.fn() }
+  const logger = { error: vi.fn() }
+  const unleashClient = { isReady: () => true, isEnabled: vi.fn() }
   let decryptedNode: { volumeId: string; parentNodeId?: string }
   const documentState = {
-    getProperty: jest.fn((key: string) => (key === 'decryptedNode' ? decryptedNode : { nodeMeta })),
-    setProperty: jest.fn(),
+    getProperty: vi.fn((key: string) => (key === 'decryptedNode' ? decryptedNode : { nodeMeta })),
+    setProperty: vi.fn(),
   }
 
   const controller = new PrivateRenameController(
@@ -80,10 +80,10 @@ describe('PrivateRenameController', () => {
   )
 
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     decryptedNode = { volumeId: 'volume-id', parentNodeId: 'parent-id' }
     unleashClient.isEnabled.mockReturnValue(true)
-    jest.mocked(findAvailableNodeName).mockResolvedValue('New name (1)')
+    vi.mocked(findAvailableNodeName).mockResolvedValue('New name (1)')
   })
 
   it('finds available name with SDK when flag is enabled', async () => {
@@ -127,7 +127,7 @@ describe('PrivateRenameController', () => {
   })
 
   it('logs and returns failure when finding available name fails', async () => {
-    jest.mocked(findAvailableNodeName).mockRejectedValueOnce(new Error('Name lookup failed'))
+    vi.mocked(findAvailableNodeName).mockRejectedValueOnce(new Error('Name lookup failed'))
 
     const result = await controller.renameDocument('New name')
 
@@ -138,7 +138,7 @@ describe('PrivateRenameController', () => {
   })
 
   it('logs and returns failure when rename fails', async () => {
-    jest.mocked(renameNode).mockRejectedValueOnce(new Error('Rename failed'))
+    vi.mocked(renameNode).mockRejectedValueOnce(new Error('Rename failed'))
 
     const result = await controller.renameDocument('New name')
 

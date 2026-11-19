@@ -1,3 +1,4 @@
+import type { Mock, Mocked } from 'vitest'
 import { Result } from '@proton/docs-shared/Result'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
@@ -14,10 +15,10 @@ describe('DecryptMessage', () => {
 
   beforeEach(() => {
     encryptionSerivce = {
-      decryptData: jest.fn().mockReturnValue(Result.ok({ content: new Uint8Array(), signature: new Uint8Array() })),
-      getVerificationKey: jest.fn().mockReturnValue(Result.ok(new Uint8Array())),
-      verifyData: jest.fn().mockReturnValue(Result.ok(2)),
-    } as unknown as jest.Mocked<EncryptionService<EncryptionContext.RealtimeMessage>>
+      decryptData: vi.fn().mockReturnValue(Result.ok({ content: new Uint8Array(), signature: new Uint8Array() })),
+      getVerificationKey: vi.fn().mockReturnValue(Result.ok(new Uint8Array())),
+      verifyData: vi.fn().mockReturnValue(Result.ok(2)),
+    } as unknown as Mocked<EncryptionService<EncryptionContext.RealtimeMessage>>
     decryptMessage = new DecryptMessage(encryptionSerivce)
   })
 
@@ -28,7 +29,7 @@ describe('DecryptMessage', () => {
         authorAddress: 'string',
         timestamp: 0,
         version: 0,
-      } as unknown as jest.Mocked<DocumentUpdate>,
+      } as unknown as Mocked<DocumentUpdate>,
       documentContentKey: key,
       verify: true,
     }
@@ -44,7 +45,7 @@ describe('DecryptMessage', () => {
         authorAddress: 'string',
         timestamp: 0,
         version: 0,
-      } as unknown as jest.Mocked<DocumentUpdate>,
+      } as unknown as Mocked<DocumentUpdate>,
       documentContentKey: key,
       verify: true,
     }
@@ -54,7 +55,7 @@ describe('DecryptMessage', () => {
   })
 
   it('should fail if cannot fetch verification key', async () => {
-    ;(encryptionSerivce.getVerificationKey as jest.Mock).mockReturnValue(Result.fail('error'))
+    ;(encryptionSerivce.getVerificationKey as Mock).mockReturnValue(Result.fail('error'))
 
     const dto: DecryptMessageDTO = {
       message: {
@@ -62,7 +63,7 @@ describe('DecryptMessage', () => {
         authorAddress: 'string',
         timestamp: 0,
         version: 0,
-      } as unknown as jest.Mocked<DocumentUpdate>,
+      } as unknown as Mocked<DocumentUpdate>,
       documentContentKey: key,
       verify: true,
     }
@@ -79,7 +80,7 @@ describe('DecryptMessage', () => {
         authorAddress: 'string',
         timestamp: 0,
         version: 0,
-      } as unknown as jest.Mocked<DocumentUpdate>,
+      } as unknown as Mocked<DocumentUpdate>,
       documentContentKey: key,
       verify: true,
     }
@@ -89,7 +90,7 @@ describe('DecryptMessage', () => {
   })
 
   it('should fail if verification fails', async () => {
-    ;(encryptionSerivce.verifyData as jest.Mock).mockReturnValue(Result.fail('error'))
+    ;(encryptionSerivce.verifyData as Mock).mockReturnValue(Result.fail('error'))
 
     const dto: DecryptMessageDTO = {
       message: {
@@ -97,7 +98,7 @@ describe('DecryptMessage', () => {
         authorAddress: 'string',
         timestamp: 0,
         version: 0,
-      } as unknown as jest.Mocked<DocumentUpdate>,
+      } as unknown as Mocked<DocumentUpdate>,
       documentContentKey: key,
       verify: true,
     }
@@ -114,7 +115,7 @@ describe('DecryptMessage', () => {
         authorAddress: 'string',
         timestamp: 0,
         version: 0,
-      } as unknown as jest.Mocked<DocumentUpdate>,
+      } as unknown as Mocked<DocumentUpdate>,
       documentContentKey: key,
       verify: false,
     }

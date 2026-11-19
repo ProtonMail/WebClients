@@ -1,3 +1,4 @@
+import type { Mocked } from 'vitest'
 import { utf8StringToUint8Array } from '@protontech/crypto/utils'
 import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 import type { DocumentKeys } from '@proton/docs-shared/CryptoTypes'
@@ -55,7 +56,7 @@ describe('WebsocketService', () => {
       debouncer.destroy()
     }
 
-    metricService = new MetricService(jest.fn(), 'private')
+    metricService = new MetricService(vi.fn(), 'private')
 
     document = { linkId: 'link-id-123', volumeId: 'volume-id-456' } as NodeMeta
 
@@ -76,39 +77,39 @@ describe('WebsocketService', () => {
     } as DocumentStateValues)
 
     eventBus = {
-      publish: jest.fn(),
-    } as unknown as jest.Mocked<InternalEventBusInterface>
+      publish: vi.fn(),
+    } as unknown as Mocked<InternalEventBusInterface>
 
     encryptMessage = {
-      execute: jest.fn().mockReturnValue(Result.ok(utf8StringToUint8Array('123'))),
-    } as unknown as jest.Mocked<EncryptMessage>
+      execute: vi.fn().mockReturnValue(Result.ok(utf8StringToUint8Array('123'))),
+    } as unknown as Mocked<EncryptMessage>
 
     logger = {
-      info: jest.fn(),
-      debug: jest.fn(),
-      error: jest.fn(),
-      warn: jest.fn(),
-    } as unknown as jest.Mocked<LoggerInterface>
+      info: vi.fn(),
+      debug: vi.fn(),
+      error: vi.fn(),
+      warn: vi.fn(),
+    } as unknown as Mocked<LoggerInterface>
 
     service = new WebsocketService(
-      {} as jest.Mocked<FetchRealtimeToken>,
+      {} as Mocked<FetchRealtimeToken>,
       encryptMessage,
       {
-        execute: jest.fn().mockReturnValue(
+        execute: vi.fn().mockReturnValue(
           Result.ok({
             content: new Uint8Array(),
           }),
         ),
-      } as unknown as jest.Mocked<DecryptMessage>,
+      } as unknown as Mocked<DecryptMessage>,
       logger,
       eventBus,
       metricService,
       'proton-docs',
       '0.0.0.0',
       {
-        isReady: jest.fn().mockReturnValue(true),
-        isEnabled: jest.fn().mockReturnValue(true),
-      } as unknown as jest.Mocked<UnleashClient>,
+        isReady: vi.fn().mockReturnValue(true),
+        isEnabled: vi.fn().mockReturnValue(true),
+      } as unknown as Mocked<UnleashClient>,
       new DocSizeTracker(logger, eventBus),
       'private',
     )
@@ -122,8 +123,8 @@ describe('WebsocketService', () => {
     debouncer.markAsReadyToFlush()
 
     connection = record.connection
-    connection.broadcastMessage = jest.fn()
-    connection.canBroadcastMessages = jest.fn().mockReturnValue(true)
+    connection.broadcastMessage = vi.fn()
+    connection.canBroadcastMessages = vi.fn().mockReturnValue(true)
   }
 
   beforeEach(async () => {
@@ -131,7 +132,7 @@ describe('WebsocketService', () => {
   })
 
   afterEach(() => {
-    jest.resetAllMocks()
+    vi.resetAllMocks()
 
     service.destroy()
 
@@ -156,7 +157,7 @@ describe('WebsocketService', () => {
 
   describe('sendDocumentUpdateMessage', () => {
     it('should add to buffer', async () => {
-      debouncer.addUpdates = jest.fn()
+      debouncer.addUpdates = vi.fn()
 
       await service.sendDocumentUpdateMessage(
         document,
@@ -177,7 +178,7 @@ describe('WebsocketService', () => {
     }
 
     it('should encrypt updates', async () => {
-      const encryptMock = (service.encryptMessage = jest.fn().mockResolvedValueOnce(new Uint8Array()))
+      const encryptMock = (service.encryptMessage = vi.fn().mockResolvedValueOnce(new Uint8Array()))
 
       await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array(), broadcastUpdate)
 
@@ -191,7 +192,7 @@ describe('WebsocketService', () => {
     })
 
     it('should track size', async () => {
-      const incrementSize = jest.spyOn(service.sizeTracker, 'incrementSize')
+      const incrementSize = vi.spyOn(service.sizeTracker, 'incrementSize')
 
       await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array(), broadcastUpdate)
 
@@ -207,7 +208,7 @@ describe('WebsocketService', () => {
     })
 
     it('should add message to ack ledger', async () => {
-      service.ledger.messagePosted = jest.fn()
+      service.ledger.messagePosted = vi.fn()
 
       await service.prepareAndBroadcastDocumentUpdate(document, new Uint8Array(), broadcastUpdate)
 
@@ -217,7 +218,7 @@ describe('WebsocketService', () => {
 
   describe('onDocumentConnectionOpened', () => {
     it('should retry failed messages', async () => {
-      service.retryFailedDocumentUpdatesForDoc = jest.fn()
+      service.retryFailedDocumentUpdatesForDoc = vi.fn()
 
       service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
 
@@ -227,7 +228,7 @@ describe('WebsocketService', () => {
 
   describe('onDocumentConnectionReadyToBroadcast', () => {
     it('should mark connection as ready to broadcast', async () => {
-      connection.markAsReadyToAcceptMessages = jest.fn()
+      connection.markAsReadyToAcceptMessages = vi.fn()
 
       service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
 
@@ -235,7 +236,7 @@ describe('WebsocketService', () => {
     })
 
     it('should mark debouncer as ready to flush', () => {
-      debouncer.markAsReadyToFlush = jest.fn()
+      debouncer.markAsReadyToFlush = vi.fn()
 
       service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
 
@@ -243,7 +244,7 @@ describe('WebsocketService', () => {
     })
 
     it('should retry failed document updates', () => {
-      service.retryFailedDocumentUpdatesForDoc = jest.fn()
+      service.retryFailedDocumentUpdatesForDoc = vi.fn()
 
       service.onDocumentConnectionReadyToBroadcast(record, mockOnReadyContentPayload)
 
@@ -280,7 +281,7 @@ describe('WebsocketService', () => {
 
   describe('retryAllFailedDocumentUpdates', () => {
     it('should get ledger unacknowledged updates', async () => {
-      service.ledger.getUnacknowledgedUpdates = jest.fn().mockReturnValue([])
+      service.ledger.getUnacknowledgedUpdates = vi.fn().mockReturnValue([])
 
       service.retryFailedDocumentUpdatesForDoc(document)
 
@@ -290,7 +291,7 @@ describe('WebsocketService', () => {
 
   describe('handleWindowUnload', () => {
     it('should not prevent leaving if no unsaved changes', async () => {
-      const event = { preventDefault: jest.fn() } as unknown as BeforeUnloadEvent
+      const event = { preventDefault: vi.fn() } as unknown as BeforeUnloadEvent
 
       service.handleWindowUnload(event)
 
@@ -300,7 +301,7 @@ describe('WebsocketService', () => {
     it('should prevent leaving if unsaved changes', async () => {
       debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
-      const event = { preventDefault: jest.fn() } as unknown as BeforeUnloadEvent
+      const event = { preventDefault: vi.fn() } as unknown as BeforeUnloadEvent
 
       service.handleWindowUnload(event)
 
@@ -308,11 +309,11 @@ describe('WebsocketService', () => {
     })
 
     it('should immediately flush a buffer that has pending changes', async () => {
-      debouncer.flush = jest.fn()
+      debouncer.flush = vi.fn()
 
       debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
-      const event = { preventDefault: jest.fn() } as unknown as BeforeUnloadEvent
+      const event = { preventDefault: vi.fn() } as unknown as BeforeUnloadEvent
 
       service.handleWindowUnload(event)
 
@@ -320,9 +321,9 @@ describe('WebsocketService', () => {
     })
 
     it('should prevent leaving if unacked changes', async () => {
-      const event = { preventDefault: jest.fn() } as unknown as BeforeUnloadEvent
+      const event = { preventDefault: vi.fn() } as unknown as BeforeUnloadEvent
 
-      service.ledger.hasConcerningMessages = jest.fn().mockReturnValue(true)
+      service.ledger.hasConcerningMessages = vi.fn().mockReturnValue(true)
 
       service.handleWindowUnload(event)
 
@@ -332,7 +333,7 @@ describe('WebsocketService', () => {
 
   describe('flushPendingUpdates', () => {
     it('should immediately flush a buffer that has pending changes', async () => {
-      debouncer.flush = jest.fn()
+      debouncer.flush = vi.fn()
 
       debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
@@ -344,7 +345,7 @@ describe('WebsocketService', () => {
 
   describe('sendEventMessage', () => {
     it('should encrypt event message', async () => {
-      const encryptMock = (service.encryptMessage = jest.fn().mockReturnValue(utf8StringToUint8Array('123')))
+      const encryptMock = (service.encryptMessage = vi.fn().mockReturnValue(utf8StringToUint8Array('123')))
 
       await service.sendEventMessage(
         document,
@@ -357,7 +358,7 @@ describe('WebsocketService', () => {
     })
 
     it('should ignore sending ClientIsBroadcastingItsPresenceState event if not in realtime mode', async () => {
-      debouncer.getMode = jest.fn().mockReturnValue(DocumentDebounceMode.SinglePlayer)
+      debouncer.getMode = vi.fn().mockReturnValue(DocumentDebounceMode.SinglePlayer)
 
       await service.sendEventMessage(
         document,
@@ -370,7 +371,7 @@ describe('WebsocketService', () => {
     })
 
     it('should ignore sending ClientHasSentACommentMessage event if not in realtime mode', async () => {
-      debouncer.getMode = jest.fn().mockReturnValue(DocumentDebounceMode.SinglePlayer)
+      debouncer.getMode = vi.fn().mockReturnValue(DocumentDebounceMode.SinglePlayer)
 
       await service.sendEventMessage(
         document,
@@ -396,7 +397,7 @@ describe('WebsocketService', () => {
     })
 
     it('should not broadcast if connection cannot send messages', async () => {
-      connection.canBroadcastMessages = jest.fn().mockReturnValue(false)
+      connection.canBroadcastMessages = vi.fn().mockReturnValue(false)
 
       await service.sendEventMessage(
         document,
@@ -411,7 +412,7 @@ describe('WebsocketService', () => {
 
   describe('handleIncomingDocumentUpdatesMessage', () => {
     it('should put us into realtime mode if message is not ours', async () => {
-      const switchToRealtimeMode = (service.switchToRealtimeMode = jest.fn())
+      const switchToRealtimeMode = (service.switchToRealtimeMode = vi.fn())
 
       await service.handleIncomingDocumentUpdatesMessage(record, {
         updates: {
@@ -419,7 +420,7 @@ describe('WebsocketService', () => {
             {
               encryptedContent: new Uint8Array(),
               authorAddress: 'bar',
-              serializeBinary: jest.fn().mockReturnValue(new Uint8Array()),
+              serializeBinary: vi.fn().mockReturnValue(new Uint8Array()),
             },
           ],
         },
@@ -429,9 +430,9 @@ describe('WebsocketService', () => {
     })
 
     it('should not put us into realtime mode if message is ours', async () => {
-      const switchToRealtimeMode = (service.switchToRealtimeMode = jest.fn())
+      const switchToRealtimeMode = (service.switchToRealtimeMode = vi.fn())
 
-      const incrementSize = jest.spyOn(service.sizeTracker, 'incrementSize')
+      const incrementSize = vi.spyOn(service.sizeTracker, 'incrementSize')
 
       await service.handleIncomingDocumentUpdatesMessage(record, {
         updates: {
@@ -439,7 +440,7 @@ describe('WebsocketService', () => {
             {
               encryptedContent: new Uint8Array(),
               authorAddress: 'foo',
-              serializeBinary: jest.fn().mockReturnValue(new Uint8Array()),
+              serializeBinary: vi.fn().mockReturnValue(new Uint8Array()),
             },
           ],
         },
@@ -450,9 +451,9 @@ describe('WebsocketService', () => {
     })
 
     it('should not process updates with known UUIDs', async () => {
-      const decryptAndPublishDocumentUpdate = jest.spyOn(service, 'decryptAndPublishDocumentUpdate')
+      const decryptAndPublishDocumentUpdate = vi.spyOn(service, 'decryptAndPublishDocumentUpdate')
 
-      const incrementSize = jest.spyOn(service.sizeTracker, 'incrementSize')
+      const incrementSize = vi.spyOn(service.sizeTracker, 'incrementSize')
 
       await service.handleIncomingDocumentUpdatesMessage(record, {
         updates: {
@@ -460,7 +461,7 @@ describe('WebsocketService', () => {
             {
               encryptedContent: new Uint8Array(),
               authorAddress: 'foo',
-              serializeBinary: jest.fn().mockReturnValue(new Uint8Array()),
+              serializeBinary: vi.fn().mockReturnValue(new Uint8Array()),
               uuid: 'foo',
             },
           ],
@@ -475,7 +476,7 @@ describe('WebsocketService', () => {
             {
               encryptedContent: new Uint8Array(),
               authorAddress: 'foo',
-              serializeBinary: jest.fn().mockReturnValue(new Uint8Array()),
+              serializeBinary: vi.fn().mockReturnValue(new Uint8Array()),
               uuid: 'foo',
             },
           ],
@@ -489,7 +490,7 @@ describe('WebsocketService', () => {
 
   describe('handleIncomingEventsMessage', () => {
     it('should switch to realtime mode if event includes ClientIsRequestingOtherClientsToBroadcastTheirState', async () => {
-      const switchToRealtimeMode = (service.switchToRealtimeMode = jest.fn())
+      const switchToRealtimeMode = (service.switchToRealtimeMode = vi.fn())
 
       const events = {
         events: [{ type: EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState }],
@@ -501,7 +502,7 @@ describe('WebsocketService', () => {
     })
 
     it('should switch to realtime mode if event includes ClientIsBroadcastingItsPresenceState', async () => {
-      const switchToRealtimeMode = (service.switchToRealtimeMode = jest.fn())
+      const switchToRealtimeMode = (service.switchToRealtimeMode = vi.fn())
 
       const events = {
         events: [{ type: EventTypeEnum.ClientIsBroadcastingItsPresenceState }],
@@ -513,7 +514,7 @@ describe('WebsocketService', () => {
     })
 
     it('should not switch to realtime mode for all other event types', async () => {
-      const switchToRealtimeMode = (service.switchToRealtimeMode = jest.fn())
+      const switchToRealtimeMode = (service.switchToRealtimeMode = vi.fn())
 
       const events = {
         events: [
@@ -536,7 +537,7 @@ describe('WebsocketService', () => {
         events: [{ type: EventTypeEnum.ServerIsReadyToAcceptClientMessages }],
       } as unknown as ServerMessageWithEvents
 
-      connection.markAsReadyToAcceptMessages = jest.fn()
+      connection.markAsReadyToAcceptMessages = vi.fn()
 
       await service.handleIncomingEventsMessage(record, events)
 
@@ -557,9 +558,9 @@ describe('WebsocketService', () => {
 
   describe('encryptMessage', () => {
     it('should publish encryption error event if failed to encrypt', async () => {
-      encryptMessage.execute = jest.fn().mockReturnValue(Result.fail('error'))
+      encryptMessage.execute = vi.fn().mockReturnValue(Result.fail('error'))
 
-      const spy = (eventBus.publish = jest.fn())
+      const spy = (eventBus.publish = vi.fn())
 
       try {
         await service.encryptMessage(

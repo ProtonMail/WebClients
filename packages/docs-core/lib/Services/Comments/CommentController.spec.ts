@@ -1,3 +1,4 @@
+import type { Mocked } from 'vitest'
 import { CommentController } from './CommentController'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
@@ -33,49 +34,49 @@ describe('CommentController', () => {
 
   beforeEach(() => {
     websocketService = {
-      sendEventMessage: jest.fn(),
-    } as unknown as jest.Mocked<WebsocketServiceInterface>
+      sendEventMessage: vi.fn(),
+    } as unknown as Mocked<WebsocketServiceInterface>
 
-    api = {} as unknown as jest.Mocked<DocsApi>
+    api = {} as unknown as Mocked<DocsApi>
 
     eventBus = {
-      addEventHandler: jest.fn(),
-    } as unknown as jest.Mocked<InternalEventBusInterface>
+      addEventHandler: vi.fn(),
+    } as unknown as Mocked<InternalEventBusInterface>
 
     logger = {
-      info: jest.fn(),
-      debug: jest.fn(),
-      error: jest.fn(),
-    } as unknown as jest.Mocked<LoggerInterface>
+      info: vi.fn(),
+      debug: vi.fn(),
+      error: vi.fn(),
+    } as unknown as Mocked<LoggerInterface>
 
     encryptComment = {
-      execute: jest.fn(),
-    } as unknown as jest.Mocked<EncryptComment>
+      execute: vi.fn(),
+    } as unknown as Mocked<EncryptComment>
 
     createThread = {
-      execute: jest.fn().mockReturnValue(
+      execute: vi.fn().mockReturnValue(
         Result.ok({
-          asPayload: jest.fn(),
+          asPayload: vi.fn(),
         }),
       ),
-    } as unknown as jest.Mocked<CreateThread>
+    } as unknown as Mocked<CreateThread>
 
     createComment = {
-      execute: jest.fn(),
-    } as unknown as jest.Mocked<CreateComment>
+      execute: vi.fn(),
+    } as unknown as Mocked<CreateComment>
 
     loadThreads = {
-      execute: jest.fn(),
-    } as unknown as jest.Mocked<LoadThreads>
+      execute: vi.fn(),
+    } as unknown as Mocked<LoadThreads>
 
     handleRealtimeCommentsEvent = {
-      execute: jest.fn(),
-    } as unknown as jest.Mocked<HandleRealtimeCommentsEvent>
+      execute: vi.fn(),
+    } as unknown as Mocked<HandleRealtimeCommentsEvent>
 
     const metricService = {
-      reportSuggestionsTelemetry: jest.fn(),
-      reportSuggestionCreated: jest.fn(),
-    } as unknown as jest.Mocked<MetricService>
+      reportSuggestionsTelemetry: vi.fn(),
+      reportSuggestionCreated: vi.fn(),
+    } as unknown as Mocked<MetricService>
 
     documentState = new DocumentState({
       ...DocumentState.defaults,
@@ -107,7 +108,7 @@ describe('CommentController', () => {
   })
 
   it('should not refetch all comments on the first websocket connection', async () => {
-    controller.fetchAllComments = jest.fn()
+    controller.fetchAllComments = vi.fn()
 
     await controller.handleEvent({
       type: WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady,
@@ -118,7 +119,7 @@ describe('CommentController', () => {
   })
 
   it('should refetch all comments upon websocket reconnection', async () => {
-    controller.fetchAllComments = jest.fn()
+    controller.fetchAllComments = vi.fn()
 
     await controller.handleEvent({
       type: WebsocketConnectionEvent.ConnectionEstablishedButNotYetReady,

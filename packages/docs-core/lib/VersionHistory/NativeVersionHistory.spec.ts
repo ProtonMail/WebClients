@@ -4,7 +4,7 @@ import { NativeVersionHistory } from './NativeVersionHistory'
 
 describe('NativeVersionHistory', () => {
   describe('getFormattedBatchGroups', () => {
-    jest.useFakeTimers().setSystemTime(new Date('2023-07-08'))
+    vi.useFakeTimers().setSystemTime(new Date('2023-07-08'))
     setDateLocales({ dateLocale: enUSLocale })
     const versionHistory = new NativeVersionHistory(
       [

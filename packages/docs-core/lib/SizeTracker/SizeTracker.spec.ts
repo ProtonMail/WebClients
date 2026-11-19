@@ -5,10 +5,10 @@ import type { InternalEventBusInterface } from '@proton/docs-shared/Events/Inter
 
 describe('SizeTracker', () => {
   const logger = {
-    info: jest.fn(),
+    info: vi.fn(),
   } as unknown as LoggerInterface
   const eventBus = {
-    publish: jest.fn(),
+    publish: vi.fn(),
   } as unknown as InternalEventBusInterface
 
   it('should be able to post small update', () => {

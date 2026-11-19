@@ -1,3 +1,4 @@
+import type { Mocked } from 'vitest'
 import { ApiResult } from '@proton/docs-shared/ApiResult'
 import { DynamicResult } from '@proton/docs-shared/DynamicResult'
 import { Result } from '@proton/docs-shared/Result'
@@ -21,28 +22,28 @@ import { setPublicLinkInfo, type PublicLinkInfo } from '../DriveSDK/getPublicDri
 import { getPublicDocumentKeys } from '../DriveSDK/getDocumentKeys'
 import { hasDirectAccessToPublicNode } from '../DriveSDK/hasDirectAccessToPublicNode'
 
-jest.mock('jwt-decode', () => ({
-  jwtDecode: jest.fn(),
+vi.mock('jwt-decode', () => ({
+  jwtDecode: vi.fn(),
 }))
 
-jest.mock('../DriveSDK/getDocumentKeys', () => ({
-  getPublicDocumentKeys: jest.fn(),
+vi.mock('../DriveSDK/getDocumentKeys', () => ({
+  getPublicDocumentKeys: vi.fn(),
 }))
 
-jest.mock('../DriveSDK/hasDirectAccessToPublicNode', () => ({
-  hasDirectAccessToPublicNode: jest.fn(),
+vi.mock('../DriveSDK/hasDirectAccessToPublicNode', () => ({
+  hasDirectAccessToPublicNode: vi.fn(),
 }))
 
-const mockJwtDecode = jest.mocked(jwtDecode)
+const mockJwtDecode = vi.mocked(jwtDecode)
 
 describe('LoadDocument', () => {
   let loadDocument: LoadDocument
-  let mockGetNode: jest.Mocked<GetNode>
-  let mockDecryptCommit: jest.Mocked<DecryptCommit>
-  let mockLoadMetaAndCommit: jest.Mocked<FetchMetaAndRawCommit>
-  let mockGetDocumentKeys: jest.Mocked<GetDocumentKeys>
-  let mockGetNodePermissions: jest.Mocked<GetNodePermissions>
-  let mockLogger: jest.Mocked<LoggerInterface>
+  let mockGetNode: Mocked<GetNode>
+  let mockDecryptCommit: Mocked<DecryptCommit>
+  let mockLoadMetaAndCommit: Mocked<FetchMetaAndRawCommit>
+  let mockGetDocumentKeys: Mocked<GetDocumentKeys>
+  let mockGetNodePermissions: Mocked<GetNodePermissions>
+  let mockLogger: Mocked<LoggerInterface>
 
   const nodeMeta: NodeMeta = {
     volumeId: 'volume-1',
@@ -52,31 +53,31 @@ describe('LoadDocument', () => {
   const token = 'token-1'
 
   beforeEach(() => {
-    jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
+    vi.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(vi.fn())
 
     mockGetNode = {
-      execute: jest.fn(),
-    } as unknown as jest.Mocked<GetNode>
+      execute: vi.fn(),
+    } as unknown as Mocked<GetNode>
 
     mockDecryptCommit = {
-      execute: jest.fn(),
-    } as unknown as jest.Mocked<DecryptCommit>
+      execute: vi.fn(),
+    } as unknown as Mocked<DecryptCommit>
 
     mockLoadMetaAndCommit = {
-      execute: jest.fn().mockResolvedValue(Result.ok({ realtimeTokenResult: ApiResult.ok({ preferences: {} }) })),
-    } as unknown as jest.Mocked<FetchMetaAndRawCommit>
+      execute: vi.fn().mockResolvedValue(Result.ok({ realtimeTokenResult: ApiResult.ok({ preferences: {} }) })),
+    } as unknown as Mocked<FetchMetaAndRawCommit>
 
     mockGetDocumentKeys = {
-      execute: jest.fn(),
-    } as unknown as jest.Mocked<GetDocumentKeys>
+      execute: vi.fn(),
+    } as unknown as Mocked<GetDocumentKeys>
 
     mockGetNodePermissions = {
-      execute: jest.fn(),
-    } as unknown as jest.Mocked<GetNodePermissions>
+      execute: vi.fn(),
+    } as unknown as Mocked<GetNodePermissions>
 
     mockLogger = {
-      error: jest.fn(),
-    } as unknown as jest.Mocked<LoggerInterface>
+      error: vi.fn(),
+    } as unknown as Mocked<LoggerInterface>
 
     mockJwtDecode.mockReturnValue({
       Permissions: SHARE_URL_PERMISSIONS.EDITOR,
@@ -216,8 +217,8 @@ describe('LoadDocument', () => {
           fromCache: false,
         } as any),
       )
-      jest.mocked(getPublicDocumentKeys).mockResolvedValue({ documentContentKey: 'public-key' as any })
-      jest.mocked(hasDirectAccessToPublicNode).mockResolvedValue(false)
+      vi.mocked(getPublicDocumentKeys).mockResolvedValue({ documentContentKey: 'public-key' as any })
+      vi.mocked(hasDirectAccessToPublicNode).mockResolvedValue(false)
       mockLoadMetaAndCommit.execute.mockResolvedValue(
         DynamicResult.ok({
           serverBasedMeta: { latestCommitId: () => 'commit-1' },

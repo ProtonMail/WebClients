@@ -266,7 +266,7 @@
         "packages/docs-core": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@babel/plugin-transform-class-properties"]
+            "ignoreDependencies": ["@proton/raw-images"]
         },
         "packages/docs-proto": {
             "entry": ["lib/index.ts"],

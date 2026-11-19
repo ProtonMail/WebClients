@@ -1,3 +1,4 @@
+import type { Mock } from 'vitest'
 import { useGetAddresses } from '@proton/account/addresses/hooks'
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks'
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
@@ -7,38 +8,38 @@ import { renderHook } from '@testing-library/react'
 import { traceErrorSDK } from '../DriveSDK/traceErrorSDK'
 import { useGetMemberAddressKeys } from './useGetMemberAddressKeys'
 
-jest.mock('@proton/account/addresses/hooks')
-jest.mock('@proton/account/addressKeys/hooks')
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+vi.mock('@proton/account/addresses/hooks')
+vi.mock('@proton/account/addressKeys/hooks')
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
-jest.mock('../DriveSDK/traceErrorSDK')
+vi.mock('../DriveSDK/traceErrorSDK')
 
 const nodeMeta = { volumeId: 'volume', linkId: 'document' }
 const addressKeys = [{ privateKey: 'member-key' }]
 
 describe('useGetMemberAddressKeys', () => {
-  let api: jest.Mock
-  let getNodeHierarchy: jest.Mock
+  let api: Mock
+  let getNodeHierarchy: Mock
 
   beforeEach(() => {
-    jest.clearAllMocks()
-    api = jest.fn().mockResolvedValue({ AddressID: 'member-address-id' })
-    getNodeHierarchy = jest
+    vi.clearAllMocks()
+    api = vi.fn().mockResolvedValue({ AddressID: 'member-address-id' })
+    getNodeHierarchy = vi
       .fn()
       .mockResolvedValue([
         { uid: generateNodeUid('volume', 'shared-folder'), deprecatedShareId: 'share-id' },
         { uid: generateNodeUid('volume', 'document') },
       ])
-    jest.mocked(getDrive).mockReturnValue({ getNodeHierarchy } as any)
-    jest.mocked(useGetAddresses).mockReturnValue(
-      jest.fn().mockResolvedValue([
+    vi.mocked(getDrive).mockReturnValue({ getNodeHierarchy } as any)
+    vi.mocked(useGetAddresses).mockReturnValue(
+      vi.fn().mockResolvedValue([
         { ID: 'primary-address-id', Email: 'primary@pm.me', Status: ADDRESS_STATUS.STATUS_ENABLED },
         { ID: 'member-address-id', Email: 'member@pm.me', Status: ADDRESS_STATUS.STATUS_ENABLED },
       ]),
     )
-    jest.mocked(useGetAddressKeys).mockReturnValue(jest.fn().mockResolvedValue(addressKeys))
+    vi.mocked(useGetAddressKeys).mockReturnValue(vi.fn().mockResolvedValue(addressKeys))
   })
 
   const getMemberAddressKeys = () =>
@@ -51,15 +52,13 @@ describe('useGetMemberAddressKeys', () => {
   })
 
   it('fails when member address is disabled', async () => {
-    jest
-      .mocked(useGetAddresses)
-      .mockReturnValue(
-        jest
-          .fn()
-          .mockResolvedValue([
-            { ID: 'member-address-id', Email: 'member@pm.me', Status: ADDRESS_STATUS.STATUS_DISABLED },
-          ]),
-      )
+    vi.mocked(useGetAddresses).mockReturnValue(
+      vi
+        .fn()
+        .mockResolvedValue([
+          { ID: 'member-address-id', Email: 'member@pm.me', Status: ADDRESS_STATUS.STATUS_DISABLED },
+        ]),
+    )
 
     await expect(getMemberAddressKeys()).rejects.toThrow('Address is not available')
   })

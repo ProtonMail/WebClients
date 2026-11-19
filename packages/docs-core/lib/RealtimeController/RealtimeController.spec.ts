@@ -1,6 +1,7 @@
-const mockAssertUnreachableAndLog = jest.fn()
-jest.mock('@proton/docs-shared/AssertUnreachable', () => ({
-  ...jest.requireActual('@proton/docs-shared/AssertUnreachable'),
+import type { Mocked } from 'vitest'
+const mockAssertUnreachableAndLog = vi.fn()
+vi.mock('@proton/docs-shared/AssertUnreachable', async () => ({
+  ...(await vi.importActual('@proton/docs-shared/AssertUnreachable')),
   assertUnreachableAndLog: (...args: any[]) => mockAssertUnreachableAndLog(...args),
 }))
 
@@ -39,12 +40,12 @@ import type { UnleashClient } from '@proton/unleash/UnleashClient'
 describe('RealtimeController', () => {
   let controller: RealtimeController
   let documentState: DocumentState
-  let websocketService: jest.Mocked<WebsocketServiceInterface>
-  let logger: jest.Mocked<LoggerInterface>
-  let eventBus: jest.Mocked<InternalEventBusInterface>
+  let websocketService: Mocked<WebsocketServiceInterface>
+  let logger: Mocked<LoggerInterface>
+  let eventBus: Mocked<InternalEventBusInterface>
 
   beforeEach(async () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
     documentState = new DocumentState({
       ...DocumentState.defaults,
@@ -56,55 +57,55 @@ describe('RealtimeController', () => {
     } as DocumentStateValues)
 
     websocketService = {
-      createConnection: jest.fn().mockReturnValue({ connect: jest.fn().mockResolvedValue(true) }),
-      sendDocumentUpdateMessage: jest.fn(),
-      flushPendingUpdates: jest.fn(),
-      reconnectToDocumentWithoutDelay: jest.fn(),
-      closeConnection: jest.fn(),
-      sendEventMessage: jest.fn(),
-      debugSendCommitCommandToRTS: jest.fn(),
-      isConnected: jest.fn(),
-      setDocumentType: jest.fn(),
-    } as unknown as jest.Mocked<WebsocketServiceInterface>
+      createConnection: vi.fn().mockReturnValue({ connect: vi.fn().mockResolvedValue(true) }),
+      sendDocumentUpdateMessage: vi.fn(),
+      flushPendingUpdates: vi.fn(),
+      reconnectToDocumentWithoutDelay: vi.fn(),
+      closeConnection: vi.fn(),
+      sendEventMessage: vi.fn(),
+      debugSendCommitCommandToRTS: vi.fn(),
+      isConnected: vi.fn(),
+      setDocumentType: vi.fn(),
+    } as unknown as Mocked<WebsocketServiceInterface>
 
     logger = {
-      debug: jest.fn(),
-      info: jest.fn(),
-      warn: jest.fn(),
-      error: jest.fn(),
-    } as unknown as jest.Mocked<LoggerInterface>
+      debug: vi.fn(),
+      info: vi.fn(),
+      warn: vi.fn(),
+      error: vi.fn(),
+    } as unknown as Mocked<LoggerInterface>
 
     eventBus = {
-      addEventHandler: jest.fn(),
-      publish: jest.fn(),
-    } as unknown as jest.Mocked<InternalEventBusInterface>
+      addEventHandler: vi.fn(),
+      publish: vi.fn(),
+    } as unknown as Mocked<InternalEventBusInterface>
 
     controller = new RealtimeController(
       websocketService,
       eventBus,
       documentState,
       {
-        execute: jest.fn().mockReturnValue(
+        execute: vi.fn().mockReturnValue(
           Result.ok({
-            numberOfUpdates: jest.fn(),
-            squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array(0)),
-            needsSquash: jest.fn().mockReturnValue(false),
+            numberOfUpdates: vi.fn(),
+            squashedRepresentation: vi.fn().mockReturnValue(new Uint8Array(0)),
+            needsSquash: vi.fn().mockReturnValue(false),
             byteSize: 0,
           }),
         ),
-      } as unknown as jest.Mocked<FetchDecryptedCommit>,
+      } as unknown as Mocked<FetchDecryptedCommit>,
       {
-        execute: jest.fn().mockReturnValue(
+        execute: vi.fn().mockReturnValue(
           Result.ok({
-            latestCommitId: jest.fn().mockReturnValue('123'),
+            latestCommitId: vi.fn().mockReturnValue('123'),
           }),
         ),
-      } as unknown as jest.Mocked<GetDocumentMeta>,
+      } as unknown as Mocked<GetDocumentMeta>,
       logger,
       {
-        isReady: jest.fn().mockReturnValue(true),
-        isEnabled: jest.fn().mockReturnValue(false),
-      } as unknown as jest.Mocked<UnleashClient>,
+        isReady: vi.fn().mockReturnValue(true),
+        isEnabled: vi.fn().mockReturnValue(false),
+      } as unknown as Mocked<UnleashClient>,
       'doc',
       new DocSizeTracker(logger, eventBus),
       'private',
@@ -118,7 +119,7 @@ describe('RealtimeController', () => {
     if (!controller.isDestroyed) {
       controller.destroy()
     }
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   test('should properly initialize controller with all dependencies', () => {
@@ -131,13 +132,13 @@ describe('RealtimeController', () => {
   describe('RealtimeController subscriptions', () => {
     describe('editorReady subscription', () => {
       it('should call onEditorReadyEvent when editor becomes ready', () => {
-        const spy = jest.spyOn(controller, 'onEditorReadyEvent')
+        const spy = vi.spyOn(controller, 'onEditorReadyEvent')
         documentState.setProperty('editorReady', true)
         expect(spy).toHaveBeenCalled()
       })
 
       it('should not call onEditorReadyEvent when editor is not ready', () => {
-        const spy = jest.spyOn(controller, 'onEditorReadyEvent')
+        const spy = vi.spyOn(controller, 'onEditorReadyEvent')
         documentState.setProperty('editorReady', false)
         expect(spy).not.toHaveBeenCalled()
       })
@@ -145,13 +146,13 @@ describe('RealtimeController', () => {
 
     describe('baseCommit subscription', () => {
       it('should reset size tracker when baseCommit is set', () => {
-        const spy = jest.spyOn(controller, 'resetSizeTracker')
+        const spy = vi.spyOn(controller, 'resetSizeTracker')
         documentState.setProperty('baseCommit', { byteSize: 1000 } as DecryptedCommit)
         expect(spy).toHaveBeenCalledWith(1000)
       })
 
       it('should not reset size tracker when baseCommit is null', () => {
-        const spy = jest.spyOn(controller, 'resetSizeTracker')
+        const spy = vi.spyOn(controller, 'resetSizeTracker')
         documentState.setProperty('baseCommit', undefined)
         expect(spy).not.toHaveBeenCalled()
       })
@@ -159,7 +160,7 @@ describe('RealtimeController', () => {
 
     describe('EditorRequestsPropagationOfUpdate subscription', () => {
       it('should propagate non-conversion updates', () => {
-        const spy = jest.spyOn(controller, 'propagateUpdate')
+        const spy = vi.spyOn(controller, 'propagateUpdate')
         const payload = {
           message: { type: { wrapper: 'du' }, content: new Uint8Array() },
           debugSource: BroadcastSource.TypingStatusChange,
@@ -266,7 +267,7 @@ describe('RealtimeController', () => {
       }),
     )
 
-    controller.handleDocumentUpdatesMessage = jest.fn()
+    controller.handleDocumentUpdatesMessage = vi.fn()
 
     documentState.setProperty('editorReady', true)
 
@@ -276,7 +277,7 @@ describe('RealtimeController', () => {
 
   describe('websocket lifecycle', () => {
     it('should begin initial sync timer on connected event', () => {
-      controller.beginInitialSyncTimer = jest.fn()
+      controller.beginInitialSyncTimer = vi.fn()
 
       controller.handleWebsocketConnectedEvent()
 
@@ -286,7 +287,7 @@ describe('RealtimeController', () => {
 
   describe('propagateUpdate', () => {
     it('should refuse propagation of update if the update is larger than the max update size', () => {
-      controller.handleAttemptingToBroadcastUpdateThatIsTooLarge = jest.fn()
+      controller.handleAttemptingToBroadcastUpdateThatIsTooLarge = vi.fn()
 
       void controller.propagateUpdate(
         {
@@ -307,7 +308,7 @@ describe('RealtimeController', () => {
     it('should refuse propagation of update if the update would exceed total document size', () => {
       controller.sizeTracker.resetWithSize(MAX_DOC_SIZE - 1)
 
-      controller.handleAttemptingToBroadcastUpdateThatIsTooLarge = jest.fn()
+      controller.handleAttemptingToBroadcastUpdateThatIsTooLarge = vi.fn()
 
       void controller.propagateUpdate(
         {
@@ -328,15 +329,15 @@ describe('RealtimeController', () => {
 
   describe('handleAttemptingToBroadcastUpdateThatIsTooLarge', () => {
     it('should flush pending updates', () => {
-      controller.logger.error = jest.fn()
+      controller.logger.error = vi.fn()
 
-      controller.websocketService.flushPendingUpdates = jest.fn()
+      controller.websocketService.flushPendingUpdates = vi.fn()
 
       controller.handleAttemptingToBroadcastUpdateThatIsTooLarge()
     })
 
     it('should set isLockedDueToSizeContraint', () => {
-      controller.logger.error = jest.fn()
+      controller.logger.error = vi.fn()
 
       controller.handleAttemptingToBroadcastUpdateThatIsTooLarge()
 
@@ -361,7 +362,7 @@ describe('RealtimeController', () => {
         type: EventTypeEnum.ClientIsRequestingOtherClientsToBroadcastTheirState,
       })
 
-      documentState.emitEvent = jest.fn()
+      documentState.emitEvent = vi.fn()
 
       await controller.handleRealtimeServerEvent([event])
 
@@ -378,7 +379,7 @@ describe('RealtimeController', () => {
         content: new TextEncoder().encode(JSON.stringify({ commitId })),
       })
 
-      documentState.setProperty = jest.fn()
+      documentState.setProperty = vi.fn()
 
       await controller.handleRealtimeServerEvent([event])
 
@@ -392,7 +393,7 @@ describe('RealtimeController', () => {
         content,
       })
 
-      eventBus.publish = jest.fn()
+      eventBus.publish = vi.fn()
 
       await controller.handleRealtimeServerEvent([event])
 
@@ -411,7 +412,7 @@ describe('RealtimeController', () => {
         content,
       })
 
-      documentState.emitEvent = jest.fn()
+      documentState.emitEvent = vi.fn()
 
       await controller.handleRealtimeServerEvent([event])
 
@@ -422,7 +423,7 @@ describe('RealtimeController', () => {
     })
 
     it('should call handleRealtimeConnectionReady for ServerHasMoreOrLessGivenTheClientEverythingItHas event', async () => {
-      const spy = jest.spyOn(controller, 'handleRealtimeConnectionReady')
+      const spy = vi.spyOn(controller, 'handleRealtimeConnectionReady')
       const event = new ProcessedIncomingRealtimeEventMessage({
         type: EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas,
       })
@@ -433,7 +434,7 @@ describe('RealtimeController', () => {
     })
 
     it('should do nothing for activity indicator events', async () => {
-      const spy = jest.spyOn(controller, 'handleRealtimeConnectionReady')
+      const spy = vi.spyOn(controller, 'handleRealtimeConnectionReady')
       const event = new ProcessedIncomingRealtimeEventMessage({
         type: EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive,
       })
@@ -444,7 +445,7 @@ describe('RealtimeController', () => {
     })
 
     it('should do nothing for debug commit request events', async () => {
-      const spy = jest.spyOn(controller, 'handleRealtimeConnectionReady')
+      const spy = vi.spyOn(controller, 'handleRealtimeConnectionReady')
       const event = new ProcessedIncomingRealtimeEventMessage({
         type: EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit,
       })
@@ -455,7 +456,7 @@ describe('RealtimeController', () => {
     })
 
     it('should do nothing for ready to accept messages events', async () => {
-      const spy = jest.spyOn(controller, 'handleRealtimeConnectionReady')
+      const spy = vi.spyOn(controller, 'handleRealtimeConnectionReady')
       const event = new ProcessedIncomingRealtimeEventMessage({
         type: EventTypeEnum.ServerIsReadyToAcceptClientMessages,
       })
@@ -466,7 +467,7 @@ describe('RealtimeController', () => {
     })
 
     it('should do nothing for disconnect clients events', async () => {
-      const spy = jest.spyOn(controller, 'handleRealtimeConnectionReady')
+      const spy = vi.spyOn(controller, 'handleRealtimeConnectionReady')
       const event = new ProcessedIncomingRealtimeEventMessage({
         type: EventTypeEnum.ServerIsNotifyingOtherServersToDisconnectAllClientsFromTheStream,
       })
@@ -509,7 +510,7 @@ describe('RealtimeController', () => {
     it('should log error if connection fails', async () => {
       const mockError = new Error('Connection failed')
       const mockConnection = {
-        connect: jest.fn().mockRejectedValue(mockError),
+        connect: vi.fn().mockRejectedValue(mockError),
       } as unknown as WebsocketConnectionInterface
 
       websocketService.createConnection.mockReturnValue(mockConnection)
@@ -527,7 +528,7 @@ describe('RealtimeController', () => {
 
     it('should return connection', () => {
       const mockConnection = {
-        connect: jest.fn().mockResolvedValue(undefined),
+        connect: vi.fn().mockResolvedValue(undefined),
       } as unknown as WebsocketConnectionInterface
 
       websocketService.createConnection.mockReturnValue(mockConnection)
@@ -540,7 +541,7 @@ describe('RealtimeController', () => {
     })
 
     it('should pass abort callback to connect', async () => {
-      const mockConnect = jest.fn().mockResolvedValue(undefined)
+      const mockConnect = vi.fn().mockResolvedValue(undefined)
       const mockConnection = {
         connect: mockConnect,
       } as unknown as WebsocketConnectionInterface
@@ -566,7 +567,7 @@ describe('RealtimeController', () => {
       // Set up both timers
       controller.beginInitialSyncTimer()
 
-      const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout')
+      const clearTimeoutSpy = vi.spyOn(global, 'clearTimeout')
 
       controller.destroy()
 
@@ -575,7 +576,7 @@ describe('RealtimeController', () => {
     })
 
     it('should not attempt to clear timers if they do not exist', () => {
-      const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout')
+      const clearTimeoutSpy = vi.spyOn(global, 'clearTimeout')
 
       controller.destroy()
 
@@ -591,7 +592,7 @@ describe('RealtimeController', () => {
 
   describe('resetSizeTracker', () => {
     it('should reset size tracker and clear received DUs', () => {
-      controller.sizeTracker.resetWithSize = jest.fn()
+      controller.sizeTracker.resetWithSize = vi.fn()
 
       controller.resetSizeTracker(100)
 
@@ -619,7 +620,7 @@ describe('RealtimeController', () => {
         serverReason: ConnectionCloseReason.create({ code: 1000, message: 'test' }),
       }
 
-      documentState.emitEvent = jest.fn()
+      documentState.emitEvent = vi.fn()
 
       controller.handleWebsocketDisconnectedEvent(event)
 
@@ -634,7 +635,7 @@ describe('RealtimeController', () => {
   describe('handleWebsocketFailedToConnectEvent', () => {
     it('should update status and call callback', () => {
       documentState.setProperty('realtimeStatus', 'connecting')
-      documentState.emitEvent = jest.fn()
+      documentState.emitEvent = vi.fn()
 
       controller.handleWebsocketFailedToConnectEvent()
 
@@ -648,7 +649,7 @@ describe('RealtimeController', () => {
 
   describe('handleWebsocketAckStatusChangeEvent', () => {
     it('should update sync status and call callback', () => {
-      const mockLedger = { hasErroredMessages: jest.fn().mockReturnValue(true) } as unknown as AckLedgerInterface
+      const mockLedger = { hasErroredMessages: vi.fn().mockReturnValue(true) } as unknown as AckLedgerInterface
 
       controller.handleWebsocketAckStatusChangeEvent({ ledger: mockLedger })
 
@@ -656,7 +657,7 @@ describe('RealtimeController', () => {
     })
 
     it('should handle non-errored status', () => {
-      const mockLedger = { hasErroredMessages: jest.fn().mockReturnValue(false) } as unknown as AckLedgerInterface
+      const mockLedger = { hasErroredMessages: vi.fn().mockReturnValue(false) } as unknown as AckLedgerInterface
 
       controller.handleWebsocketAckStatusChangeEvent({ ledger: mockLedger })
 
@@ -675,7 +676,7 @@ describe('RealtimeController', () => {
 
     it('should clear sync timer and update ready status', () => {
       controller.initialSyncTimer = setTimeout(() => {}, 1000)
-      const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout')
+      const clearTimeoutSpy = vi.spyOn(global, 'clearTimeout')
 
       controller.handleRealtimeConnectionReady()
 
@@ -686,7 +687,7 @@ describe('RealtimeController', () => {
 
     it('should not set realtimeReadyToBroadcast if it is already true', () => {
       documentState.setProperty('realtimeReadyToBroadcast', true)
-      const spy = jest.spyOn(documentState, 'setProperty')
+      const spy = vi.spyOn(documentState, 'setProperty')
 
       controller.handleRealtimeConnectionReady()
 
@@ -700,7 +701,7 @@ describe('RealtimeController', () => {
 
       expect(controller.initialSyncTimer).toBeDefined()
 
-      jest.advanceTimersByTime(1000)
+      vi.advanceTimersByTime(1000)
 
       expect(controller.logger.warn).toHaveBeenCalledWith(
         'Client did not receive ServerHasMoreOrLessGivenTheClientEverythingItHas event in time',
@@ -786,7 +787,7 @@ describe('RealtimeController', () => {
 
   describe('DebugMenuRequestingCommitWithRTS subscription', () => {
     it('should call debugSendCommitCommandToRTS with payload', () => {
-      const spy = jest.spyOn(controller, 'debugSendCommitCommandToRTS')
+      const spy = vi.spyOn(controller, 'debugSendCommitCommandToRTS')
       const mockEntitlements = {} as DocumentEntitlements
 
       documentState.emitEvent({
@@ -813,7 +814,7 @@ describe('RealtimeController', () => {
       })
       controller.updatesReceivedWhileParentNotReady.push(mockMessage)
 
-      const spy = jest.spyOn(controller, 'handleRealtimeServerEvent')
+      const spy = vi.spyOn(controller, 'handleRealtimeServerEvent')
       controller.onEditorReadyEvent()
 
       expect(spy).toHaveBeenCalledWith([mockMessage])
@@ -829,7 +830,7 @@ describe('RealtimeController', () => {
       })
       controller.updatesReceivedWhileParentNotReady.push(mockMessage)
 
-      const spy = jest.spyOn(controller, 'handleDocumentUpdatesMessage')
+      const spy = vi.spyOn(controller, 'handleDocumentUpdatesMessage')
       controller.onEditorReadyEvent()
 
       expect(spy).toHaveBeenCalledWith(mockMessage)
@@ -838,7 +839,7 @@ describe('RealtimeController', () => {
 
   describe('handleEvent', () => {
     it('should handle Disconnected event', async () => {
-      const spy = jest.spyOn(controller, 'handleWebsocketDisconnectedEvent')
+      const spy = vi.spyOn(controller, 'handleWebsocketDisconnectedEvent')
       const payload = { serverReason: { props: { code: 1000, message: 'test' } } }
 
       await controller.handleEvent({
@@ -850,7 +851,7 @@ describe('RealtimeController', () => {
     })
 
     it('should handle FailedToConnect event', async () => {
-      const spy = jest.spyOn(controller, 'handleWebsocketFailedToConnectEvent')
+      const spy = vi.spyOn(controller, 'handleWebsocketFailedToConnectEvent')
 
       await controller.handleEvent({
         type: WebsocketConnectionEvent.FailedToConnect,
@@ -861,7 +862,7 @@ describe('RealtimeController', () => {
     })
 
     it('should handle ConnectedAndReady event', async () => {
-      const spy = jest.spyOn(controller, 'handleWebsocketConnectedEvent')
+      const spy = vi.spyOn(controller, 'handleWebsocketConnectedEvent')
 
       await controller.handleEvent({
         type: WebsocketConnectionEvent.ConnectedAndReady,
@@ -872,7 +873,7 @@ describe('RealtimeController', () => {
     })
 
     it('should handle Connecting event', async () => {
-      const spy = jest.spyOn(controller, 'handleWebsocketConnectingEvent')
+      const spy = vi.spyOn(controller, 'handleWebsocketConnectingEvent')
 
       await controller.handleEvent({
         type: WebsocketConnectionEvent.Connecting,
@@ -883,7 +884,7 @@ describe('RealtimeController', () => {
     })
 
     it('should handle DocumentUpdateMessage event', async () => {
-      const spy = jest.spyOn(controller, 'handleDocumentUpdatesMessage')
+      const spy = vi.spyOn(controller, 'handleDocumentUpdatesMessage')
       const message = new DecryptedMessage({
         content: new Uint8Array(),
         signature: new Uint8Array(),
@@ -901,7 +902,7 @@ describe('RealtimeController', () => {
     })
 
     it('should handle EventMessage event', async () => {
-      const spy = jest.spyOn(controller, 'handleRealtimeServerEvent')
+      const spy = vi.spyOn(controller, 'handleRealtimeServerEvent')
       const message = [
         new ProcessedIncomingRealtimeEventMessage({
           type: EventTypeEnum.ClientHasSentACommentMessage,
@@ -918,7 +919,7 @@ describe('RealtimeController', () => {
     })
 
     it('should handle AckStatusChange event', async () => {
-      const spy = jest.spyOn(controller, 'handleWebsocketAckStatusChangeEvent')
+      const spy = vi.spyOn(controller, 'handleWebsocketAckStatusChangeEvent')
       const payload = {
         ledger: {
           hasErroredMessages: () => false,
@@ -934,7 +935,7 @@ describe('RealtimeController', () => {
     })
 
     it('should return early for unhandled event types', async () => {
-      const emitEventSpy = jest.spyOn(documentState, 'emitEvent')
+      const emitEventSpy = vi.spyOn(documentState, 'emitEvent')
 
       const event: InternalEventInterface<unknown> = {
         type: 'UnhandledEventType',
@@ -947,7 +948,7 @@ describe('RealtimeController', () => {
     })
 
     it('should refetch commit', async () => {
-      controller.refetchCommitDueToStaleContents = jest.fn()
+      controller.refetchCommitDueToStaleContents = vi.fn()
 
       const event: InternalEventInterface<unknown> = {
         type: WebsocketConnectionEvent.FailedToGetTokenCommitIdOutOfSync,
@@ -962,7 +963,7 @@ describe('RealtimeController', () => {
 
   describe('handleWebsocketConnectedEvent', () => {
     it('should not attempt to clear timer if it does not exist', () => {
-      const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout')
+      const clearTimeoutSpy = vi.spyOn(global, 'clearTimeout')
 
       controller.handleWebsocketConnectedEvent()
 
@@ -972,7 +973,7 @@ describe('RealtimeController', () => {
 
   describe('handle realtime disconnection', () => {
     it('should refetch commit if disconnect reason is stale commit id', () => {
-      controller.refetchCommitDueToStaleContents = jest.fn()
+      controller.refetchCommitDueToStaleContents = vi.fn()
 
       controller.handleWebsocketDisconnectedEvent({
         serverReason: ConnectionCloseReason.create({ code: ConnectionCloseReason.CODES.STALE_COMMIT_ID }),
@@ -985,13 +986,13 @@ describe('RealtimeController', () => {
 
   describe('refetchCommitDueToStaleContents', () => {
     it('should post UnableToResolveCommitIdConflict error if unable to resolve', async () => {
-      controller.logger.error = jest.fn()
-      eventBus.publish = jest.fn()
+      controller.logger.error = vi.fn()
+      eventBus.publish = vi.fn()
 
-      controller._fetchDecryptedCommit.execute = jest
+      controller._fetchDecryptedCommit.execute = vi
         .fn()
         .mockReturnValue(ApiResult.fail({ message: 'Unable to resolve', code: 0 }))
-      controller._getDocumentMeta.execute = jest
+      controller._getDocumentMeta.execute = vi
         .fn()
         .mockReturnValue(ApiResult.fail({ message: 'Unable to resolve', code: 0 }))
 
@@ -1004,14 +1005,14 @@ describe('RealtimeController', () => {
     })
 
     it('should not reprocess if already processing', async () => {
-      controller._fetchDecryptedCommit.execute = jest.fn().mockReturnValue(
+      controller._fetchDecryptedCommit.execute = vi.fn().mockReturnValue(
         Result.ok({
-          numberOfUpdates: jest.fn(),
-          squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
-          needsSquash: jest.fn().mockReturnValue(false),
+          numberOfUpdates: vi.fn(),
+          squashedRepresentation: vi.fn().mockReturnValue(new Uint8Array()),
+          needsSquash: vi.fn().mockReturnValue(false),
         }),
       )
-      controller._getDocumentMeta.execute = jest.fn().mockReturnValue(Result.ok({}))
+      controller._getDocumentMeta.execute = vi.fn().mockReturnValue(Result.ok({}))
 
       controller.isRefetchingStaleCommit = true
 
@@ -1021,15 +1022,15 @@ describe('RealtimeController', () => {
     })
 
     it('should re-set the initial commit if commit is successfully resolved', async () => {
-      controller._fetchDecryptedCommit.execute = jest.fn().mockReturnValue(
+      controller._fetchDecryptedCommit.execute = vi.fn().mockReturnValue(
         Result.ok({
-          numberOfMessages: jest.fn().mockReturnValue(0),
-          needsSquash: jest.fn().mockReturnValue(false),
-          squashedRepresentation: jest.fn().mockReturnValue(new Uint8Array()),
+          numberOfMessages: vi.fn().mockReturnValue(0),
+          needsSquash: vi.fn().mockReturnValue(false),
+          squashedRepresentation: vi.fn().mockReturnValue(new Uint8Array()),
         }),
       )
 
-      documentState.setProperty = jest.fn()
+      documentState.setProperty = vi.fn()
 
       await controller.refetchCommitDueToStaleContents('rts-disconnect')
 

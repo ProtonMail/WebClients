@@ -6,14 +6,14 @@ import type { LoggerInterface } from '@proton/shared/lib/logs'
 
 describe('UpdateDebouncer', () => {
   let debouncer: UpdateDebouncer
-  let onEvent = jest.fn()
+  let onEvent = vi.fn()
 
   beforeEach(() => {
     debouncer = new UpdateDebouncer(
       {} as NodeMeta,
       {
-        info: jest.fn(),
-        debug: jest.fn(),
+        info: vi.fn(),
+        debug: vi.fn(),
       } as unknown as LoggerInterface,
       onEvent,
     )
@@ -23,7 +23,7 @@ describe('UpdateDebouncer', () => {
 
   afterEach(() => {
     debouncer.destroy()
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   describe('markAsReadyToFlush', () => {
@@ -36,7 +36,7 @@ describe('UpdateDebouncer', () => {
     })
 
     it('should flush', () => {
-      debouncer.flush = jest.fn()
+      debouncer.flush = vi.fn()
 
       debouncer.markAsReadyToFlush()
 
@@ -66,7 +66,7 @@ describe('UpdateDebouncer', () => {
     it('should clear existing single player idle timeout', () => {
       debouncer.setMode(DocumentDebounceMode.SinglePlayer)
 
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
       const previousTimeout = debouncer.singlePlayerIdleTimeout
 
@@ -76,14 +76,14 @@ describe('UpdateDebouncer', () => {
     })
 
     it('should flush after single player debounce period', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
-      debouncer.flush = jest.fn()
+      debouncer.flush = vi.fn()
 
       debouncer.setMode(DocumentDebounceMode.SinglePlayer)
       debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
-      jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod)
+      vi.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod)
 
       expect(debouncer.flush).toHaveBeenCalledTimes(1)
     })
@@ -96,7 +96,7 @@ describe('UpdateDebouncer', () => {
     })
 
     it('should not flush if size limit is not exceeded', () => {
-      debouncer.flush = jest.fn()
+      debouncer.flush = vi.fn()
 
       const maxSize = debouncer.maxSizeBeforeFlush
 
@@ -106,7 +106,7 @@ describe('UpdateDebouncer', () => {
     })
 
     it('should flush if size limit is exceeded', () => {
-      debouncer.flush = jest.fn()
+      debouncer.flush = vi.fn()
 
       const maxSize = debouncer.maxSizeBeforeFlush
 
@@ -139,7 +139,7 @@ describe('UpdateDebouncer', () => {
       debouncer.isReadyToFlush = false
       debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
-      onEvent = jest.fn()
+      onEvent = vi.fn()
       debouncer.flush()
 
       expect(onEvent).not.toHaveBeenCalled()
@@ -198,13 +198,13 @@ describe('UpdateDebouncer', () => {
 
   describe('realtime mode', () => {
     it('should flush after realtime streaming period', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
-      debouncer.flush = jest.fn()
+      debouncer.flush = vi.fn()
 
       debouncer.setMode(DocumentDebounceMode.Realtime)
 
-      jest.advanceTimersByTime(debouncer.realtimeStreamingPeriod)
+      vi.advanceTimersByTime(debouncer.realtimeStreamingPeriod)
 
       expect(debouncer.flush).toHaveBeenCalledTimes(1)
     })
@@ -212,49 +212,49 @@ describe('UpdateDebouncer', () => {
 
   describe('singleplayer mode', () => {
     it('should flush after debounce period', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
-      debouncer.flush = jest.fn()
+      debouncer.flush = vi.fn()
 
       debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
-      jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod)
+      vi.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod)
 
       expect(debouncer.flush).toHaveBeenCalledTimes(1)
     })
 
     it('should not flush if debounce period passes but updates are still being added', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
-      debouncer.flush = jest.fn()
-
-      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
-
-      jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod - 100)
+      debouncer.flush = vi.fn()
 
       debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
-      jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod - 100)
+      vi.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod - 100)
+
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
+
+      vi.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod - 100)
 
       expect(debouncer.flush).not.toHaveBeenCalled()
     })
 
     it('debounce period should reset after adding a new update', () => {
-      debouncer.flush = jest.fn()
+      debouncer.flush = vi.fn()
 
-      jest.useFakeTimers()
-
-      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
-
-      jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod / 2)
+      vi.useFakeTimers()
 
       debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
 
-      jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod / 2)
+      vi.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod / 2)
+
+      debouncer.addUpdates([new DecryptedValue(new Uint8Array())])
+
+      vi.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod / 2)
 
       expect(debouncer.flush).not.toHaveBeenCalled()
 
-      jest.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod / 2)
+      vi.advanceTimersByTime(debouncer.singlePlayerDebouncePeriod / 2)
 
       expect(debouncer.flush).toHaveBeenCalledTimes(1)
     })

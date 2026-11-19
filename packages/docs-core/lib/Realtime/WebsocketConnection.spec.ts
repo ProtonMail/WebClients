@@ -8,7 +8,7 @@ import { getWebSocketServerURL } from './getWebSocketServerURL'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { WebsocketCallbacks } from '@proton/docs-shared/Realtime/WebsocketCallbacks'
 import { ApiResult } from '@proton/docs-shared/ApiResult'
-import { setLocation } from '@proton/jest-env/setLocation'
+import { setLocation } from '@proton/vitest-config/setLocation'
 import { Result } from '@proton/docs-shared/Result'
 import { MetricService } from '../Services/Metrics/MetricService'
 import type { Api } from '@proton/shared/lib/interfaces/Api'
@@ -25,7 +25,7 @@ describe('WebsocketConnection', () => {
   let documentState: DocumentState
 
   beforeEach(() => {
-    jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
+    vi.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(vi.fn())
 
     metricService = new MetricService({} as Api, 'private')
     documentState = new DocumentState({
@@ -35,18 +35,18 @@ describe('WebsocketConnection', () => {
     connection = new WebsocketConnection(
       documentState,
       {
-        onFailToGetToken: jest.fn(),
-        onConnecting: jest.fn(),
+        onFailToGetToken: vi.fn(),
+        onConnecting: vi.fn(),
       } as unknown as WebsocketCallbacks,
       {
-        execute: jest.fn().mockResolvedValue(ApiResult.ok({ token: '123' })),
+        execute: vi.fn().mockResolvedValue(ApiResult.ok({ token: '123' })),
         docsApi: {} as Api,
       } as unknown as FetchRealtimeToken,
       metricService,
       {
-        error: jest.fn(),
-        info: jest.fn(),
-        warn: jest.fn(),
+        error: vi.fn(),
+        info: vi.fn(),
+        warn: vi.fn(),
       } as unknown as LoggerInterface,
       'proton-docs',
       '0.0.0.0',
@@ -60,8 +60,8 @@ describe('WebsocketConnection', () => {
 
   afterEach(() => {
     connection.destroy()
-    jest.clearAllMocks()
-    jest.useRealTimers()
+    vi.clearAllMocks()
+    vi.useRealTimers()
   })
 
   describe('DebugConnection', () => {
@@ -77,7 +77,7 @@ describe('WebsocketConnection', () => {
         writable: true,
       })
 
-      const reconnect = (connection.queueReconnection = jest.fn())
+      const reconnect = (connection.queueReconnection = vi.fn())
 
       connection.handleVisibilityChangeEvent()
 
@@ -85,24 +85,24 @@ describe('WebsocketConnection', () => {
     })
 
     it('should queue disconnect if visibility state is hidden and socket is open', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
       Object.defineProperty(document, 'visibilityState', {
         value: 'hidden',
         writable: true,
       })
 
-      const disconnect = (connection.disconnect = jest.fn())
+      const disconnect = (connection.disconnect = vi.fn())
 
       connection.handleVisibilityChangeEvent()
 
-      jest.advanceTimersByTime(TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES + 1)
+      vi.advanceTimersByTime(TIME_TO_WAIT_BEFORE_CLOSING_CONNECTION_AFTER_DOCUMENT_HIDES + 1)
 
       expect(disconnect).toHaveBeenCalled()
     })
 
     it('should cancel queued disconnect if visibility state is visible', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
       Object.defineProperty(document, 'visibilityState', {
         value: 'hidden',
@@ -124,7 +124,7 @@ describe('WebsocketConnection', () => {
     })
 
     it('should cancel reconnection timeout if present', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
       connection.reconnectTimeout = setTimeout(() => {}, 1000)
 
@@ -141,7 +141,7 @@ describe('WebsocketConnection', () => {
 
   describe('disconnect', () => {
     it('should cancel reconnection timeout if present', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
       connection.reconnectTimeout = setTimeout(() => {}, 1000)
 
@@ -152,12 +152,12 @@ describe('WebsocketConnection', () => {
 
     describe('should not queue reconnection if last disconnect reason is document timeout until there is user activity', () => {
       beforeEach(() => {
-        jest.useFakeTimers()
+        vi.useFakeTimers()
 
         connection.reconnectionStopped = ReconnectionStopReason.DocumentTimeout
 
-        connection.queueReconnection = jest.fn()
-        connection.callbacks.onFailToConnect = jest.fn()
+        connection.queueReconnection = vi.fn()
+        connection.callbacks.onFailToConnect = vi.fn()
         connection.handleSocketClose(3005, 'Document timeout')
       })
 
@@ -167,7 +167,7 @@ describe('WebsocketConnection', () => {
       })
 
       it('should not queue reconnection after some time', () => {
-        jest.advanceTimersByTime(3000) // slightly more than 2 seconds, which is the base reconnection delay
+        vi.advanceTimersByTime(3000) // slightly more than 2 seconds, which is the base reconnection delay
         expect(connection.reconnectionStopped).toBe(ReconnectionStopReason.DocumentTimeout)
         expect(connection.queueReconnection).not.toHaveBeenCalled()
       })
@@ -180,7 +180,7 @@ describe('WebsocketConnection', () => {
 
       it('should queue reconnection on key down', () => {
         connection.handleSocketClose(3005, 'Document timeout')
-        jest.advanceTimersByTime(3000)
+        vi.advanceTimersByTime(3000)
         expect(connection.reconnectionStopped).toBe(ReconnectionStopReason.DocumentTimeout)
         expect(connection.queueReconnection).not.toHaveBeenCalled()
         document.dispatchEvent(new Event('keydown'))
@@ -190,7 +190,7 @@ describe('WebsocketConnection', () => {
 
       it('should queue reconnection on visibility change to visible', () => {
         connection.handleSocketClose(3005, 'Document timeout')
-        jest.advanceTimersByTime(3000)
+        vi.advanceTimersByTime(3000)
         expect(connection.reconnectionStopped).toBe(ReconnectionStopReason.DocumentTimeout)
         expect(connection.queueReconnection).not.toHaveBeenCalled()
 
@@ -214,12 +214,12 @@ describe('WebsocketConnection', () => {
 
     describe('should queue reconnection normally if last disconnect reason is not document timeout', () => {
       beforeEach(() => {
-        jest.useFakeTimers()
+        vi.useFakeTimers()
 
         connection.reconnectionStopped = undefined
 
-        connection.queueReconnection = jest.fn()
-        connection.callbacks.onFailToConnect = jest.fn()
+        connection.queueReconnection = vi.fn()
+        connection.callbacks.onFailToConnect = vi.fn()
         connection.handleSocketClose(1000, 'Some other error')
       })
 
@@ -232,7 +232,7 @@ describe('WebsocketConnection', () => {
 
   describe('handleWindowCameOnlineEvent', () => {
     it('should reconnect without delay', () => {
-      const reconnect = (connection.queueReconnection = jest.fn())
+      const reconnect = (connection.queueReconnection = vi.fn())
 
       connection.handleWindowCameOnlineEvent()
 
@@ -247,7 +247,7 @@ describe('WebsocketConnection', () => {
         writable: true,
       })
 
-      const getToken = (connection.getTokenOrFailConnection = jest.fn())
+      const getToken = (connection.getTokenOrFailConnection = vi.fn())
 
       void connection.connect()
 
@@ -257,7 +257,7 @@ describe('WebsocketConnection', () => {
     it('should abort if abort signal returns true', async () => {
       const abortSignal = () => true
 
-      connection.getTokenOrFailConnection = jest.fn().mockReturnValue(Result.ok({ token: '123' }))
+      connection.getTokenOrFailConnection = vi.fn().mockReturnValue(Result.ok({ token: '123' }))
 
       await connection.connect(abortSignal)
 
@@ -267,31 +267,31 @@ describe('WebsocketConnection', () => {
 
   describe('queueReconnection', () => {
     it('should reconnect with delay if skipDelay is not set', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
-      const connect = (connection.connect = jest.fn())
+      const connect = (connection.connect = vi.fn())
 
-      connection.state.getReconnectDelay = jest.fn().mockReturnValue(1000)
+      connection.state.getReconnectDelay = vi.fn().mockReturnValue(1000)
 
       connection.queueReconnection()
 
-      jest.advanceTimersByTime(500)
+      vi.advanceTimersByTime(500)
 
       expect(connect).not.toHaveBeenCalled()
 
-      jest.advanceTimersByTime(1000)
+      vi.advanceTimersByTime(1000)
 
       expect(connect).toHaveBeenCalled()
     })
 
     it('should reconnect without delay if skipDelay is set', () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
 
-      const connect = (connection.connect = jest.fn())
+      const connect = (connection.connect = vi.fn())
 
       connection.queueReconnection({ skipDelay: true })
 
-      jest.advanceTimersByTime(1)
+      vi.advanceTimersByTime(1)
 
       expect(connect).toHaveBeenCalled()
     })
@@ -309,7 +309,7 @@ describe('WebsocketConnection', () => {
   })
 
   it('should disconnect websocket when offline browser event is triggered', async () => {
-    const fn = (connection.disconnect = jest.fn())
+    const fn = (connection.disconnect = vi.fn())
 
     window.dispatchEvent(new Event('offline'))
 
@@ -326,9 +326,9 @@ describe('WebsocketConnection', () => {
   })
 
   it('should connect websocket when online browser event is triggered', async () => {
-    const fn = (connection.connect = jest.fn())
+    const fn = (connection.connect = vi.fn())
 
-    connection.state.getReconnectDelay = jest.fn().mockReturnValue(0)
+    connection.state.getReconnectDelay = vi.fn().mockReturnValue(0)
 
     window.dispatchEvent(new Event('online'))
 
@@ -348,7 +348,7 @@ describe('WebsocketConnection', () => {
     it('should call callbacks.onFailToGetToken if it fails', async () => {
       connection.destroy()
 
-      const onFailToGetToken = jest.fn()
+      const onFailToGetToken = vi.fn()
 
       connection = new WebsocketConnection(
         documentState,
@@ -357,7 +357,7 @@ describe('WebsocketConnection', () => {
           onFailToGetToken: onFailToGetToken,
         } as unknown as WebsocketCallbacks,
         {
-          execute: jest.fn().mockResolvedValue(
+          execute: vi.fn().mockResolvedValue(
             ApiResult.fail({
               code: DocsApiErrorCode.CommitIdOutOfSync,
               message: 'error',
@@ -367,8 +367,8 @@ describe('WebsocketConnection', () => {
         } as unknown as FetchRealtimeToken,
         metricService,
         {
-          error: jest.fn(),
-          info: jest.fn(),
+          error: vi.fn(),
+          info: vi.fn(),
         } as unknown as LoggerInterface,
         'proton-docs',
         '0.0.0.0',
@@ -392,7 +392,7 @@ describe('WebsocketConnection', () => {
 
       connection.socket = {
         readyState: 1,
-        close: jest.fn(),
+        close: vi.fn(),
       } as unknown as WebSocket
 
       connection.state.didOpen()
@@ -405,7 +405,7 @@ describe('WebsocketConnection', () => {
     it('should return false if socket is not open', () => {
       connection.socket = {
         readyState: 0,
-        close: jest.fn(),
+        close: vi.fn(),
       } as unknown as WebSocket
 
       connection.state.didOpen()
@@ -416,7 +416,7 @@ describe('WebsocketConnection', () => {
     it('should return true if socket is open', () => {
       connection.socket = {
         readyState: 1,
-        close: jest.fn(),
+        close: vi.fn(),
       } as unknown as WebSocket
 
       connection.state.didOpen()

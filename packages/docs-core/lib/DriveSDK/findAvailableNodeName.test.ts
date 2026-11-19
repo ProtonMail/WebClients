@@ -2,20 +2,20 @@ import { NodeType } from '@proton/drive/sdk'
 import { findAvailableNodeName } from './findAvailableNodeName'
 import { traceErrorSDK } from './traceErrorSDK'
 
-const mockGetAvailableName = jest.fn()
+const mockGetAvailableName = vi.fn()
 
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
   getDrive: () => ({ getAvailableName: mockGetAvailableName }),
 }))
 
-jest.mock('./traceErrorSDK', () => ({
-  traceErrorSDK: jest.fn(),
+vi.mock('./traceErrorSDK', () => ({
+  traceErrorSDK: vi.fn(),
 }))
 
 describe('findAvailableNodeName', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('returns the available file name in the parent folder', async () => {

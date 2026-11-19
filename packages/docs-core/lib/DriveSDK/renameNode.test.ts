@@ -1,20 +1,20 @@
 import { renameNode } from './renameNode'
 import { traceErrorSDK } from './traceErrorSDK'
 
-const mockRenameNode = jest.fn()
+const mockRenameNode = vi.fn()
 
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
   getDrive: () => ({ renameNode: mockRenameNode }),
 }))
 
-jest.mock('./traceErrorSDK', () => ({
-  traceErrorSDK: jest.fn(),
+vi.mock('./traceErrorSDK', () => ({
+  traceErrorSDK: vi.fn(),
 }))
 
 describe('renameNode', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('renames the node identified by volume and link ids', async () => {

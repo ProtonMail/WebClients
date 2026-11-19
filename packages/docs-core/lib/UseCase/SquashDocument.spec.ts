@@ -13,10 +13,10 @@ import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { CacheService } from '../Services/CacheService'
 
-jest.mock('@proton/docs-proto/Generated/Squash', () => ({
-  ...jest.requireActual('@proton/docs-proto/Generated/Squash'),
+vi.mock('@proton/docs-proto/Generated/Squash', async () => ({
+  ...(await vi.importActual('@proton/docs-proto/Generated/Squash')),
   SquashLock: {
-    deserializeBinary: jest.fn().mockReturnValue({
+    deserializeBinary: vi.fn().mockReturnValue({
       commit: {
         updates: {
           documentUpdates: [{}],
@@ -26,6 +26,9 @@ jest.mock('@proton/docs-proto/Generated/Squash', () => ({
     }),
   },
 }))
+
+// isDevOrBlack reads window.location.host, there is no DOM on node
+vi.stubGlobal('window', { location: { host: '' } })
 
 describe('SquashDocument', () => {
   let usecase: SquashDocument
@@ -43,18 +46,18 @@ describe('SquashDocument', () => {
     nodeMeta: {} as any,
     commitId: 'commitId',
     keys: {} as any,
-    handleVerificationObjection: jest.fn(),
+    handleVerificationObjection: vi.fn(),
     documentType: 'doc',
   }
 
   beforeEach(() => {
     docsApi = {
-      lockDocument: jest.fn().mockReturnValue(Result.ok({})),
-      squashCommit: jest.fn().mockReturnValue(Result.ok({})),
+      lockDocument: vi.fn().mockReturnValue(Result.ok({})),
+      squashCommit: vi.fn().mockReturnValue(Result.ok({})),
     } as unknown as DocsApi
 
     decryptCommit = {
-      execute: jest.fn().mockReturnValue(
+      execute: vi.fn().mockReturnValue(
         Result.ok({
           messages: [],
         }),
@@ -62,15 +65,15 @@ describe('SquashDocument', () => {
     } as unknown as DecryptCommit
 
     verifyCommit = {
-      execute: jest.fn().mockReturnValue(Result.ok(true)),
+      execute: vi.fn().mockReturnValue(Result.ok(true)),
     } as unknown as VerifyCommit
 
     encryptMessage = {
-      execute: jest.fn().mockReturnValue(Result.ok({})),
+      execute: vi.fn().mockReturnValue(Result.ok({})),
     } as unknown as EncryptMessage
 
     squashAlgorithm = {
-      squashNormal: jest.fn().mockReturnValue(
+      squashNormal: vi.fn().mockReturnValue(
         Result.ok({
           updatesAsSquashed: new Uint8Array(),
           unmodifiedUpdates: [],
@@ -79,13 +82,13 @@ describe('SquashDocument', () => {
     } as unknown as SquashAlgorithm
 
     logger = {
-      info: jest.fn(),
-      error: jest.fn(),
+      info: vi.fn(),
+      error: vi.fn(),
     } as unknown as LoggerInterface
 
     unleashClient = {
-      isReady: jest.fn().mockReturnValue(true),
-      isEnabled: jest.fn().mockImplementation((feature: string) => {
+      isReady: vi.fn().mockReturnValue(true),
+      isEnabled: vi.fn().mockImplementation((feature: string) => {
         if (feature === 'DocsClientSquashingEnabled') {
           return true
         }
@@ -96,11 +99,11 @@ describe('SquashDocument', () => {
     } as unknown as UnleashClient
 
     cacheService = {
-      removeCachedCommit: jest.fn().mockResolvedValue(Result.ok()),
+      removeCachedCommit: vi.fn().mockResolvedValue(Result.ok()),
     } as unknown as CacheService
 
     eventBus = {
-      publish: jest.fn(),
+      publish: vi.fn(),
     } as unknown as InternalEventBusInterface
 
     usecase = new SquashDocument(
@@ -117,14 +120,14 @@ describe('SquashDocument', () => {
   })
 
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('should lock document before doing anything else', async () => {
-    const lockDocumentSpy = jest.spyOn(docsApi, 'lockDocument')
+    const lockDocumentSpy = vi.spyOn(docsApi, 'lockDocument')
 
-    decryptCommit.execute = jest.fn().mockResolvedValue(Result.fail('failed'))
-    const decryptCommitSpy = jest.spyOn(decryptCommit, 'execute')
+    decryptCommit.execute = vi.fn().mockResolvedValue(Result.fail('failed'))
+    const decryptCommitSpy = vi.spyOn(decryptCommit, 'execute')
 
     await usecase.execute(dto)
 
@@ -135,7 +138,7 @@ describe('SquashDocument', () => {
   })
 
   it('should fail if lock document fails', async () => {
-    docsApi.lockDocument = jest.fn().mockReturnValue(ApiResult.fail({ message: 'failed', code: 0 }))
+    docsApi.lockDocument = vi.fn().mockReturnValue(ApiResult.fail({ message: 'failed', code: 0 }))
 
     const result = await usecase.execute(dto)
 
@@ -143,7 +146,7 @@ describe('SquashDocument', () => {
   })
 
   it('should verify signature of data', async () => {
-    const verifyCommitSpy = jest.spyOn(verifyCommit, 'execute')
+    const verifyCommitSpy = vi.spyOn(verifyCommit, 'execute')
 
     await usecase.execute(dto)
 
@@ -152,10 +155,10 @@ describe('SquashDocument', () => {
 
   it('should issue objection is verification fails', async () => {
     const verificationResult = Result.fail('failed')
-    verifyCommit.execute = jest.fn().mockReturnValue(verificationResult)
-    const verifyCommitSpy = jest.spyOn(verifyCommit, 'execute')
+    verifyCommit.execute = vi.fn().mockReturnValue(verificationResult)
+    const verifyCommitSpy = vi.spyOn(verifyCommit, 'execute')
 
-    dto.handleVerificationObjection = jest.fn().mockReturnValue(SquashVerificationObjectionDecision.AbortSquash)
+    dto.handleVerificationObjection = vi.fn().mockReturnValue(SquashVerificationObjectionDecision.AbortSquash)
 
     await usecase.execute(dto)
 
@@ -165,11 +168,11 @@ describe('SquashDocument', () => {
 
   it('should abort squash if verification object decision is to abort', async () => {
     const verificationResult = Result.fail('failed')
-    verifyCommit.execute = jest.fn().mockReturnValue(verificationResult)
+    verifyCommit.execute = vi.fn().mockReturnValue(verificationResult)
 
-    dto.handleVerificationObjection = jest.fn().mockReturnValue(SquashVerificationObjectionDecision.AbortSquash)
+    dto.handleVerificationObjection = vi.fn().mockReturnValue(SquashVerificationObjectionDecision.AbortSquash)
 
-    const squashTheCommitSpy = jest.spyOn(usecase, 'squashTheCommit')
+    const squashTheCommitSpy = vi.spyOn(usecase, 'squashTheCommit')
 
     const result = await usecase.execute(dto)
 
@@ -179,20 +182,20 @@ describe('SquashDocument', () => {
 
   it('should continue squash if verification object decision is to continue', async () => {
     const verificationResult = Result.fail('failed')
-    verifyCommit.execute = jest.fn().mockReturnValue(verificationResult)
+    verifyCommit.execute = vi.fn().mockReturnValue(verificationResult)
 
-    dto.handleVerificationObjection = jest.fn().mockReturnValue(SquashVerificationObjectionDecision.ContinueSquash)
+    dto.handleVerificationObjection = vi.fn().mockReturnValue(SquashVerificationObjectionDecision.ContinueSquash)
 
-    const squashTheCommitSpy = jest.spyOn(usecase, 'squashTheCommit')
+    const squashTheCommitSpy = vi.spyOn(usecase, 'squashTheCommit')
 
     await usecase.execute(dto)
 
     expect(squashTheCommitSpy).toHaveBeenCalled()
   })
 
-  it.only('should upload the squashed commit', async () => {
+  it('should upload the squashed commit', async () => {
     const commitResult = Result.ok({})
-    docsApi.squashCommit = jest.fn().mockReturnValue(commitResult)
+    docsApi.squashCommit = vi.fn().mockReturnValue(commitResult)
 
     await usecase.execute(dto)
 
@@ -201,9 +204,9 @@ describe('SquashDocument', () => {
 
   describe('squashTheCommit', () => {
     it('should encrypt the result', async () => {
-      decryptCommit.execute = jest.fn().mockResolvedValue(Result.ok({ messages: [{}] }))
+      decryptCommit.execute = vi.fn().mockResolvedValue(Result.ok({ messages: [{}] }))
 
-      const encryptSpy = jest.spyOn(usecase, 'encryptSquashResult')
+      const encryptSpy = vi.spyOn(usecase, 'encryptSquashResult')
 
       await usecase.execute(dto)
 

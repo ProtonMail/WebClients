@@ -2,7 +2,7 @@ import metrics from '@proton/metrics/metricsInstance'
 import { MetricService } from './MetricService'
 import type { Api } from '@proton/shared/lib/interfaces/Api'
 
-jest.mock('@proton/metrics/metricsInstance')
+vi.mock('@proton/metrics/metricsInstance')
 
 describe('MetricService', () => {
   let metricService: MetricService
@@ -12,18 +12,18 @@ describe('MetricService', () => {
 
     metricService = new MetricService(api, 'private')
 
-    jest.useFakeTimers()
+    vi.useFakeTimers()
   })
 
   afterEach(() => {
-    jest.useRealTimers()
+    vi.useRealTimers()
 
     metricService.destroy()
   })
 
   describe('initialize', () => {
     it('should heartbeat once immediately', () => {
-      const spy = jest.spyOn(metricService, 'heartbeat')
+      const spy = vi.spyOn(metricService, 'heartbeat')
 
       metricService.initialize()
 
@@ -31,13 +31,13 @@ describe('MetricService', () => {
     })
 
     it('should heartbeat every 60 seconds', () => {
-      const spy = jest.spyOn(metricService, 'heartbeat')
+      const spy = vi.spyOn(metricService, 'heartbeat')
 
       metricService.initialize()
 
       expect(spy).toHaveBeenCalledTimes(1)
 
-      jest.advanceTimersByTime(60_000)
+      vi.advanceTimersByTime(60_000)
 
       expect(spy).toHaveBeenCalledTimes(2)
     })

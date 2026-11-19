@@ -1,13 +1,14 @@
+import type { MockedFunction } from 'vitest'
 import { RouteExecutor } from './RouteExecutor'
 import { ApiResult } from '@proton/docs-shared/ApiResult'
 import type { Api } from '@proton/shared/lib/interfaces/Api'
 
 describe('RouteExecutor', () => {
-  let mockApi: jest.MockedFunction<Api>
+  let mockApi: MockedFunction<Api>
   let executor: RouteExecutor
 
   beforeEach(() => {
-    mockApi = jest.fn()
+    mockApi = vi.fn() as unknown as MockedFunction<Api>
     executor = new RouteExecutor(mockApi)
   })
 
@@ -31,7 +32,7 @@ describe('RouteExecutor', () => {
   it('should handle raw binary response', async () => {
     const mockArrayBuffer = new ArrayBuffer(8)
     const mockResponse = {
-      arrayBuffer: jest.fn().mockResolvedValueOnce(mockArrayBuffer),
+      arrayBuffer: vi.fn().mockResolvedValueOnce(mockArrayBuffer),
     }
     mockApi.mockResolvedValueOnce(mockResponse)
 
