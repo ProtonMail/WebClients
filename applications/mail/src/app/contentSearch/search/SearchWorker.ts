@@ -35,15 +35,28 @@ export default class SearchWorker {
         return this.reader;
     }
 
-    async search(params: NormalizedSearchParams, resultCallback: (results: string[]) => void): Promise<void> {
+    /**
+     * `resultCallback` is a Comlink proxy: its calls go over their own port, so without waiting for them the
+     * reply of this method could reach the main thread before the results, which closes the database once
+     * the search is done. Across Comlink, each call returns a promise that resolves once the main thread has
+     * handled it.
+     */
+    async search(params: NormalizedSearchParams, resultCallback: (results: string[]) => Promise<void>): Promise<void> {
         // if search is already running, abort it as we won't use the results anymore
         this.abortController?.abort();
         const reader = await this.getReader();
         const expression = buildQuery(params);
         const abortController = new AbortController();
         this.abortController = abortController;
+        const deliveries: Promise<void>[] = [];
         try {
-            await reader.search(expression, resultCallback, this.abortController.signal);
+            await reader.search(
+                expression,
+                (results) => {
+                    deliveries.push(resultCallback(results));
+                },
+                this.abortController.signal
+            );
         } catch (err) {
             if (!(err instanceof Error && err.name === 'AbortError')) {
                 throw err;
@@ -52,6 +65,8 @@ export default class SearchWorker {
             if (this.abortController === abortController) {
                 this.abortController = undefined;
             }
+            // Also when aborted or failing: batches sent before that are still on their way.
+            await Promise.allSettled(deliveries);
         }
     }
 }
