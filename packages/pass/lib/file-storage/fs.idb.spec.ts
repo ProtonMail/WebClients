@@ -1,5 +1,5 @@
+// @vitest-environment node
 import 'fake-indexeddb/auto';
-
 import { createMockBlob, createMockReadableStream } from '../../utils/tests/fixtures/file-storage';
 import {
     FileStorageIDB,
@@ -27,10 +27,11 @@ const writeChunks = async (filename: string, totalChunks: number) => {
 describe('FileStorageIDB', () => {
     const fs: FileStorage = new FileStorageIDB();
 
-    jest.useFakeTimers();
+    // fake-indexeddb schedules its work with `setImmediate`: keep it real
+    vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout', 'setInterval', 'clearInterval', 'Date'] });
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         void fs.clearAll();
     });
 
@@ -185,7 +186,7 @@ describe('FileStorageIDB', () => {
             setTimeout(() => controller.abort(), 250);
 
             const job = fs.writeFile('test.cancelled', stream, controller.signal);
-            jest.runAllTimers();
+            vi.runAllTimers();
 
             await expect(job).rejects.toThrow();
             const result = await fs.readFile('test.cancelled');

@@ -17,20 +17,20 @@ import * as folderRequests from '../../folders/folders.requests';
 import type { EventProcessor } from '../types';
 import { processFoldersDeleted, processFoldersUpdated } from './user-events.folders';
 
-jest.mock('../../folders/folders.requests', () => ({
-    ...jest.requireActual('../../folders/folders.requests'),
-    fetchFolder: jest.fn(),
+vi.mock('../../folders/folders.requests', async () => ({
+    ...(await vi.importActual('../../folders/folders.requests')),
+    fetchFolder: vi.fn(),
 }));
 
-jest.mock('../../folders/folders.parser', () => ({
-    ...jest.requireActual('../../folders/folders.parser'),
-    parseFolderResponse: jest.fn(),
+vi.mock('../../folders/folders.parser', async () => ({
+    ...(await vi.importActual('../../folders/folders.parser')),
+    parseFolderResponse: vi.fn(),
 }));
 
-const fetchFolder = jest.mocked(folderRequests.fetchFolder);
-const parseFolderResponse = jest.mocked(folderParser.parseFolderResponse);
-const removeFolderKeys = jest.fn();
-jest.spyOn(logger, 'warn').mockImplementation(noop);
+const fetchFolder = vi.mocked(folderRequests.fetchFolder);
+const parseFolderResponse = vi.mocked(folderParser.parseFolderResponse);
+const removeFolderKeys = vi.fn();
+vi.spyOn(logger, 'warn').mockImplementation(noop);
 
 beforeEach(() => {
     exposePassCrypto({ removeFolderKeys } as unknown as PassCryptoWorker);
@@ -62,7 +62,7 @@ const run = async (
 };
 
 describe('processFoldersUpdated', () => {
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     test('returns `true` without dispatching for an empty batch', async () => {
         const { result, dispatched } = await run(processFoldersUpdated, []);

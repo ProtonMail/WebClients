@@ -1,22 +1,24 @@
+import type { Mock, Mocked, MockedFunction } from 'vitest';
+
 import { createClipboardService } from './service';
 import type { ClipboardApi } from './types';
 
 const AUTOCLEAR_MS = 5_000;
 
 describe('createClipboardService', () => {
-    let clipboard: jest.Mocked<ClipboardApi>;
-    let alarmFactory: jest.MockedFunction<any>;
-    let alarm: { set: jest.Mock; reset: jest.Mock; when: jest.Mock };
-    const date = jest.spyOn(global.Date, 'now').mockImplementation(() => 1759222063325);
+    let clipboard: Mocked<ClipboardApi>;
+    let alarmFactory: MockedFunction<(...args: any[]) => any>;
+    let alarm: { set: Mock; reset: Mock; when: Mock };
+    const date = vi.spyOn(global.Date, 'now').mockImplementation(() => 1759222063325);
 
     beforeEach(() => {
-        clipboard = { read: jest.fn(), write: jest.fn() };
-        alarm = { set: jest.fn(), reset: jest.fn(), when: jest.fn() };
-        alarmFactory = jest.fn().mockReturnValue(alarm);
+        clipboard = { read: vi.fn(), write: vi.fn() };
+        alarm = { set: vi.fn(), reset: vi.fn(), when: vi.fn() };
+        alarmFactory = vi.fn().mockReturnValue(alarm);
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     afterAll(() => {

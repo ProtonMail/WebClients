@@ -11,12 +11,12 @@ import * as itemRequests from '../../items/item.requests';
 import type { EventProcessor } from '../types';
 import { processItemsDeleted, processItemsUpdated } from './user-events.items';
 
-jest.mock('@proton/pass/lib/items/item.requests', () => ({
-    ...jest.requireActual('@proton/pass/lib/items/item.requests'),
-    requestItem: jest.fn(),
+vi.mock('@proton/pass/lib/items/item.requests', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/items/item.requests')),
+    requestItem: vi.fn(),
 }));
 
-const requestItem = jest.mocked(itemRequests.requestItem);
+const requestItem = vi.mocked(itemRequests.requestItem);
 const createEvent = (ShareID: ShareId, ItemID: ItemId) => ({ ShareID, ItemID }) as SyncEventShareItemOutput;
 const item = createTestItem('login', { itemId: 'i1', shareId: 's1' });
 
@@ -30,7 +30,7 @@ const run = async (
 };
 
 describe('processItemsUpdated', () => {
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     test('returns `true` without dispatching for an empty batch', async () => {
         const { result, dispatched } = await run(processItemsUpdated, []);

@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import identity from '@proton/utils/identity';
 
 import { msToEpoch } from '../time/epoch';
@@ -8,28 +10,28 @@ const pastBundle = JSON.stringify({ sendTime: msToEpoch(Date.now() - 1_000), eve
 
 describe('EventDispatcher', () => {
     let dispatcher: EventDispatcher<string>;
-    let storage: { setItem: jest.Mock; getItem: jest.Mock; removeItem: jest.Mock };
+    let storage: { setItem: Mock; getItem: Mock; removeItem: Mock };
     let options: EventDispatcherOptions<string, string>;
-    let alarm: { set: jest.Mock; reset: jest.Mock; when: jest.Mock };
-    let getEnabled: jest.Mock;
-    let dispatch: jest.Mock;
-    let getSendTime: jest.Mock;
-    let prepare: jest.Mock;
+    let alarm: { set: Mock; reset: Mock; when: Mock };
+    let getEnabled: Mock;
+    let dispatch: Mock;
+    let getSendTime: Mock;
+    let prepare: Mock;
     const key = 'test-key';
 
     beforeEach(() => {
         localStorage.clear();
 
-        const getItem = jest.fn((key: string) => localStorage.getItem(key));
-        const setItem = jest.fn((key: string, value: string) => localStorage.setItem(key, value));
-        const removeItem = jest.fn((key: string) => localStorage.removeItem(key));
+        const getItem = vi.fn((key: string) => localStorage.getItem(key));
+        const setItem = vi.fn((key: string, value: string) => localStorage.setItem(key, value));
+        const removeItem = vi.fn((key: string) => localStorage.removeItem(key));
 
         storage = { setItem, getItem, removeItem };
-        alarm = { set: jest.fn(), reset: jest.fn(), when: jest.fn() };
-        getEnabled = jest.fn().mockReturnValue(true);
-        dispatch = jest.fn().mockImplementation(async () => {});
-        getSendTime = jest.fn().mockReturnValue(Date.now() + 60000);
-        prepare = jest.fn().mockImplementation(identity);
+        alarm = { set: vi.fn(), reset: vi.fn(), when: vi.fn() };
+        getEnabled = vi.fn().mockReturnValue(true);
+        dispatch = vi.fn().mockImplementation(async () => {});
+        getSendTime = vi.fn().mockReturnValue(Date.now() + 60000);
+        prepare = vi.fn().mockImplementation(identity);
 
         options = {
             id: 'test',

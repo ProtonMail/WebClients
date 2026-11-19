@@ -19,12 +19,12 @@ describe('`onUserRefreshed`', () => {
 
     const user: User = { Keys: UserKeys } as unknown as User;
     const addresses: Address[] = [{ ID: 'addr1' }, { ID: 'addr2' }] as Address[];
-    const PassCrypto = { getContext: jest.fn(), hydrate: jest.fn() };
+    const PassCrypto = { getContext: vi.fn(), hydrate: vi.fn() };
     const keyPassword = uniqueId();
 
     beforeEach(() => {
         exposePassCrypto(PassCrypto as unknown as PassCryptoWorker);
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     test('should return early if no `keyPassword` provided', async () => {

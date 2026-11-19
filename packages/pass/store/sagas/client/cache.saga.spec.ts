@@ -1,4 +1,5 @@
 import { runSaga } from 'redux-saga';
+import type { Mock } from 'vitest';
 
 import * as generate from '../../../lib/cache/generate';
 import { exposePassCrypto } from '../../../lib/crypto';
@@ -9,23 +10,23 @@ import { withCache } from '../../actions/enhancers/cache';
 import type { RootSagaOptions } from '../../types';
 import { cacheWorker } from './cache.saga';
 
-jest.mock('@proton/pass/lib/cache/generate', () => ({
-    ...jest.requireActual('@proton/pass/lib/cache/generate'),
-    generateCache: jest.fn(),
+vi.mock('@proton/pass/lib/cache/generate', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/cache/generate')),
+    generateCache: vi.fn(),
 }));
 
-const generateCache = jest.mocked(generate.generateCache);
+const generateCache = vi.mocked(generate.generateCache);
 
 const makeOptions = (appState: { booted: boolean; authorized: boolean }) => {
     const authStore = {
-        getPassword: jest.fn(() => 'pw'),
-        hasSession: jest.fn(() => true),
-        getLockToken: jest.fn(),
-        getOfflineKD: jest.fn(),
+        getPassword: vi.fn(() => 'pw'),
+        hasSession: vi.fn(() => true),
+        getLockToken: vi.fn(),
+        getOfflineKD: vi.fn(),
     };
 
     return {
-        setCache: jest.fn(),
+        setCache: vi.fn(),
         getAppState: () => appState,
         getAuthStore: () => authStore,
     } as unknown as RootSagaOptions;
@@ -35,7 +36,7 @@ const runWorker = (options: RootSagaOptions) =>
     runSaga(sagaSetup().options, cacheWorker, withCache({ type: 'test_cache_action' }), options).toPromise();
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     exposePassCrypto({ ready: true } as PassCryptoWorker);
     generateCache.mockReturnValue(async () => ({}) as EncryptedPassCache);
 });
@@ -55,7 +56,7 @@ describe('Cache saga worker', () => {
 
     test('does not write cache without a valid session', async () => {
         const options = makeOptions({ booted: true, authorized: true });
-        (options.getAuthStore().getPassword as jest.Mock).mockReturnValue(undefined);
+        (options.getAuthStore().getPassword as Mock).mockReturnValue(undefined);
         await runWorker(options);
         expect(options.setCache).not.toHaveBeenCalled();
     });

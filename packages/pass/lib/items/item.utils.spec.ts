@@ -1,4 +1,5 @@
 import { CCFieldType } from '@protontech/autofill/types';
+import type { Mock } from 'vitest';
 
 import { omit } from '@proton/shared/lib/helpers/object';
 
@@ -34,9 +35,9 @@ import {
     sortItems,
 } from './item.utils';
 
-jest.mock('../../utils/time/epoch', () => ({
-    ...jest.requireActual('../../utils/time/epoch'),
-    getEpoch: jest.fn(),
+vi.mock('../../utils/time/epoch', async () => ({
+    ...(await vi.importActual('../../utils/time/epoch')),
+    getEpoch: vi.fn(),
 }));
 
 describe('Item utils', () => {
@@ -112,7 +113,7 @@ describe('Item utils', () => {
     describe('interpolateRecentItems', () => {
         test('should interpolate items into correct date clusters', () => {
             const now = 1000000000;
-            (getEpoch as jest.Mock).mockReturnValue(now);
+            (getEpoch as Mock).mockReturnValue(now);
 
             const items = [
                 createTestItem('login', {
@@ -164,7 +165,7 @@ describe('Item utils', () => {
 
         test('should return all items in fallback cluster if `shouldInterpolate` is false', () => {
             const now = 1000000000;
-            (getEpoch as jest.Mock).mockReturnValue(now);
+            (getEpoch as Mock).mockReturnValue(now);
 
             const items = [
                 createTestItem('login', {

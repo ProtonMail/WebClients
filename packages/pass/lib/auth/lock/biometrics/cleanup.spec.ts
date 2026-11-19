@@ -7,14 +7,14 @@ import { deleteBiometricsKeyIfNotAppBound } from './cleanup';
 
 const setup = (core: Partial<PassCoreContextValue> = {}) => {
     const authStore = createAuthStore(createStore());
-    const syncPersistedSession = jest.fn().mockResolvedValue(undefined);
+    const syncPersistedSession = vi.fn().mockResolvedValue(undefined);
     const auth = { authStore, syncPersistedSession, config: { authStore } };
 
     return { authStore, auth: auth as any, core: core as PassCoreContextValue };
 };
 
 describe('deleteBiometricsKeyIfNotAppBound', () => {
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     test('no-op when the OS store is app-bound (macOS / web)', async () => {
         const { authStore, auth, core } = setup({ biometricsKeyAppBound: true });
@@ -34,7 +34,7 @@ describe('deleteBiometricsKeyIfNotAppBound', () => {
     });
 
     test('deletes envelope and OS secret on app-unbound platforms, keeps lock mode', async () => {
-        const removeBiometricsKey = jest.fn().mockResolvedValue(undefined);
+        const removeBiometricsKey = vi.fn().mockResolvedValue(undefined);
         const { authStore, auth, core } = setup({ biometricsKeyAppBound: false, removeBiometricsKey });
         authStore.setLocalID(1);
         authStore.setLockMode(LockMode.BIOMETRICS);
@@ -55,7 +55,7 @@ describe('deleteBiometricsKeyIfNotAppBound', () => {
     });
 
     test('still clears the envelope when removing the OS secret fails', async () => {
-        const removeBiometricsKey = jest.fn().mockRejectedValue(new Error('os store error'));
+        const removeBiometricsKey = vi.fn().mockRejectedValue(new Error('os store error'));
         const { authStore, auth, core } = setup({ biometricsKeyAppBound: false, removeBiometricsKey });
         authStore.setEncryptedOfflineKD('kd');
 

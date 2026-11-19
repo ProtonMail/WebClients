@@ -9,8 +9,8 @@ import {
     hashPassword,
 } from './compromised-password.request';
 
-/* jsdom test env (`@proton/jest-env`) forwards `fetch`/`ReadableStream`/etc but not
- * `(De)CompressionStream` — same fix `packages/docs-core/jest.setup.js` uses. */
+/* The test environment forwards `fetch`/`ReadableStream`/etc but not
+ * `(De)CompressionStream`. */
 (global as any).CompressionStream = CompressionStream;
 (global as any).DecompressionStream = DecompressionStream;
 
@@ -30,7 +30,7 @@ const gzipText = async (text: string): Promise<Uint8Array<ArrayBuffer>> => {
     return new Uint8Array(await new Response(stream).arrayBuffer());
 };
 
-const fetchMock = jest.fn<Promise<Response>, [RequestInfo | URL, RequestInit?]>();
+const fetchMock = vi.fn<(input: RequestInfo | URL, init?: RequestInit) => Promise<Response>>();
 (global as any).fetch = fetchMock;
 
 describe('compromised-password.request', () => {

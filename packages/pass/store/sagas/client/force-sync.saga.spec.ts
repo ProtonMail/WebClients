@@ -1,4 +1,5 @@
 import { runSaga } from 'redux-saga';
+import type { MockedFunction } from 'vitest';
 
 import { hasFoldersApi } from '../../../lib/folders/folders.requests';
 import { INITIAL_FORCE_SYNC_ENTRY } from '../../../lib/sync/force-sync';
@@ -10,9 +11,9 @@ import { syncFailure, syncIntent, syncSuccess } from '../../actions/creators/cli
 import { syncRequest } from '../../actions/requests';
 import { checkForForceSync } from './force-sync.saga';
 
-jest.mock('../../../lib/folders/folders.requests', () => ({ hasFoldersApi: jest.fn() }));
+vi.mock('../../../lib/folders/folders.requests', () => ({ hasFoldersApi: vi.fn() }));
 
-const hasFolders = hasFoldersApi as jest.MockedFunction<typeof hasFoldersApi>;
+const hasFolders = hasFoldersApi as MockedFunction<typeof hasFoldersApi>;
 
 const vault = (shareId: string) => ({
     shareId,
@@ -36,8 +37,8 @@ const createStore = (initial?: Partial<ForceSyncEntry>) => {
     let entry: ForceSyncEntry = { ...INITIAL_FORCE_SYNC_ENTRY, ...initial };
 
     return {
-        read: jest.fn(async () => entry),
-        write: jest.fn(async (next: ForceSyncEntry) => {
+        read: vi.fn(async () => entry),
+        write: vi.fn(async (next: ForceSyncEntry) => {
             entry = next;
         }),
         get current() {
@@ -65,7 +66,7 @@ const dispatchedSync = (setup: Setup) => setup.dispatched.filter((action: any) =
 
 describe('checkForForceSync', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         hasFolders.mockResolvedValue(true);
     });
 

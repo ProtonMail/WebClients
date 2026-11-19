@@ -6,7 +6,7 @@ import { failReducer } from './fail';
 
 describe('optimistic fail reducer', () => {
     test('should return original optimistic state if optimisticId is not found in history', () => {
-        jest.spyOn(console, 'error').mockImplementationOnce(jest.fn());
+        vi.spyOn(console, 'error').mockImplementationOnce(vi.fn());
 
         const optimistic: OptimisticState<TestState> = {
             checkpoint: { items: [] },

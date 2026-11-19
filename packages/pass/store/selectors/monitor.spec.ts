@@ -36,8 +36,8 @@ const createMockItem = (password: string): ItemRevision<'login'> => ({
     shareCount: 0,
 });
 
-jest.mock('./items', () => {
-    const actualItems = jest.requireActual('./items') as typeof ItemsSelectorsModule;
+vi.mock('./items', async () => {
+    const actualItems = (await vi.importActual('./items')) as typeof ItemsSelectorsModule;
 
     return {
         ...actualItems,

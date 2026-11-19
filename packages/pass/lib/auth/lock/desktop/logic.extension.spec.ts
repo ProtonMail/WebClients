@@ -3,7 +3,7 @@ import { NativeMessageError } from '../../../native-messaging/errors';
 import { sendSetupLockSecretMessage, sendUnlockMessage } from './logic.extension';
 
 const makeNativeMessaging = (response: any) => ({
-    sendNativeMessageRequest: jest.fn().mockResolvedValue(response),
+    sendNativeMessageRequest: vi.fn().mockResolvedValue(response),
 });
 
 const makeAuthStore = (uid = 'uid-1', userID = 'user-1', localID = 1, desktopLockUserIdentifier?: string) => ({
@@ -43,7 +43,7 @@ describe('sendSetupLockSecretMessage', () => {
 
     test('should propagate DESKTOP_APP_LOCKED as a NativeMessageError without wrapping it', async () => {
         const nativeMessaging = {
-            sendNativeMessageRequest: jest
+            sendNativeMessageRequest: vi
                 .fn()
                 .mockRejectedValue(new NativeMessageError(NativeMessageErrorType.DESKTOP_APP_LOCKED)),
         };
@@ -55,7 +55,7 @@ describe('sendSetupLockSecretMessage', () => {
 
     test('should wrap unknown errors as UNKNOWN NativeMessageError', async () => {
         const nativeMessaging = {
-            sendNativeMessageRequest: jest.fn().mockRejectedValue(new Error('unexpected')),
+            sendNativeMessageRequest: vi.fn().mockRejectedValue(new Error('unexpected')),
         };
 
         await expect(

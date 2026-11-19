@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import createStore from '@proton/shared/lib/helpers/store';
 
 import { NativeMessageErrorType } from '../../../../types/desktop/extension-unlock-with-desktop';
@@ -8,22 +10,22 @@ import { LockMode } from '../types';
 import { desktopLockAdapterFactory } from './adapter';
 import * as logicExtension from './logic.extension';
 
-jest.mock('./logic.extension');
-jest.mock('../../../../utils/time/epoch');
+vi.mock('./logic.extension');
+vi.mock('../../../../utils/time/epoch');
 
-const setupLockSecretMessage = logicExtension.sendSetupLockSecretMessage as jest.Mock;
-const unlockMessage = logicExtension.sendUnlockMessage as jest.Mock;
-const getEpoch = epoch.getEpoch as jest.Mock;
+const setupLockSecretMessage = logicExtension.sendSetupLockSecretMessage as Mock;
+const unlockMessage = logicExtension.sendUnlockMessage as Mock;
+const getEpoch = epoch.getEpoch as Mock;
 
 const setupAdapter = () => {
     const authStore = createAuthStore(createStore());
-    const persistSession = jest.fn().mockResolvedValue(undefined);
-    const syncLock = jest.fn().mockResolvedValue(undefined);
-    const lock = jest.fn().mockResolvedValue(undefined);
-    const logout = jest.fn().mockResolvedValue(undefined);
+    const persistSession = vi.fn().mockResolvedValue(undefined);
+    const syncLock = vi.fn().mockResolvedValue(undefined);
+    const lock = vi.fn().mockResolvedValue(undefined);
+    const logout = vi.fn().mockResolvedValue(undefined);
     const auth = { persistSession, syncLock, lock, logout, config: { authStore } };
     const nativeMessaging = {} as any;
-    const onDeclined = jest.fn();
+    const onDeclined = vi.fn();
 
     return {
         adapter: desktopLockAdapterFactory(auth as any, nativeMessaging, onDeclined),
@@ -37,7 +39,7 @@ describe('DesktopLock adapter', () => {
     let capturedSecret: string;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         capturedSecret = '';
 
         getEpoch.mockReturnValue(1700000000);

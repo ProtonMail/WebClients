@@ -8,7 +8,7 @@ import { revertReducer } from './revert';
 
 describe('optimistic revert reducer', () => {
     test('should return original inner / optimistic state tuple if optimisticId is not found in history', () => {
-        jest.spyOn(console, 'error').mockImplementationOnce(jest.fn());
+        vi.spyOn(console, 'error').mockImplementationOnce(vi.fn());
 
         const state: WrappedOptimisticState<TestState> = {
             items: [],

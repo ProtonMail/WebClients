@@ -1,29 +1,31 @@
+import type { Mock } from 'vitest';
+
 import type { Rect } from '../../types/utils/dom';
 import { REFRESH_RATE, animatePositionChange } from './animation';
 
 describe('animatePositionChange', () => {
-    let get: jest.Mock;
-    let set: jest.Mock;
-    let onComplete: jest.Mock;
-    let onAnimate: jest.Mock;
+    let get: Mock;
+    let set: Mock;
+    let onComplete: Mock;
+    let onAnimate: Mock;
     let positions: Partial<Rect>[];
     let callCount: number;
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         callCount = 0;
         positions = [];
 
-        get = jest.fn(() => positions[Math.min(callCount++, positions.length - 1)]);
-        set = jest.fn();
-        onComplete = jest.fn();
-        onAnimate = jest.fn((requestId) => requestId);
+        get = vi.fn(() => positions[Math.min(callCount++, positions.length - 1)]);
+        set = vi.fn();
+        onComplete = vi.fn();
+        onAnimate = vi.fn((requestId) => requestId);
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
-        jest.clearAllTimers();
+        vi.restoreAllMocks();
+        vi.clearAllTimers();
     });
 
     test('should complete when position stabilizes', () => {
@@ -37,7 +39,7 @@ describe('animatePositionChange', () => {
 
         animatePositionChange({ get, set, onComplete, onAnimate });
 
-        for (let i = 0; i < 4; i++) jest.advanceTimersByTime(REFRESH_RATE);
+        for (let i = 0; i < 4; i++) vi.advanceTimersByTime(REFRESH_RATE);
 
         expect(set).toHaveBeenCalledTimes(3);
         expect(onComplete).toHaveBeenCalledTimes(1);
@@ -51,7 +53,7 @@ describe('animatePositionChange', () => {
         ];
 
         animatePositionChange({ get, set, onComplete, onAnimate, threshold: 0.1 });
-        for (let i = 0; i < 2; i++) jest.advanceTimersByTime(REFRESH_RATE);
+        for (let i = 0; i < 2; i++) vi.advanceTimersByTime(REFRESH_RATE);
 
         expect(set).toHaveBeenCalledTimes(1);
         expect(onComplete).toHaveBeenCalledTimes(1);
@@ -62,7 +64,7 @@ describe('animatePositionChange', () => {
         get.mockImplementation(() => ({ top: callCount++, left: 0, right: 100, bottom: 100 }));
 
         animatePositionChange({ get, set, onComplete, onAnimate, maxDuration: 200 });
-        jest.advanceTimersByTime(250);
+        vi.advanceTimersByTime(250);
 
         expect(onComplete).toHaveBeenCalledTimes(1);
     });

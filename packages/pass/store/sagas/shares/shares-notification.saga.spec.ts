@@ -11,7 +11,7 @@ import type { RootSagaOptions, State } from '../../types';
 import notificationForShares from './shares-notification.saga';
 
 describe('notif-shares saga', () => {
-    const onNotification = jest.fn();
+    const onNotification = vi.fn();
 
     const group = {
         groupId: 'groupId',
@@ -47,7 +47,7 @@ describe('notif-shares saga', () => {
         const options = { onNotification } as unknown as RootSagaOptions;
         task = runSaga(saga.options, notificationForShares, options);
         dispatch = saga.options.dispatch;
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     afterEach(() => {
@@ -68,7 +68,7 @@ describe('notif-shares saga', () => {
         it('should show notification for a single group vault sharing', () => {
             dispatch(sharesEventNew({ shares: { [vault.shareId]: vault }, items: {}, folders: {}, v: 1 }));
             expect(onNotification).toHaveBeenCalled();
-            expect(onNotification.mock.lastCall[0].text).toBe(
+            expect(onNotification.mock.lastCall![0].text).toBe(
                 `You now have access to "Vault ${vault.content.name}" because your group ${group.name} has been granted access.`
             );
         });
@@ -76,7 +76,7 @@ describe('notif-shares saga', () => {
         it('should show notification for a single group item sharing', () => {
             dispatch(sharesEventNew({ shares: { [item.shareId]: item }, items: {}, folders: {}, v: 1 }));
             expect(onNotification).toHaveBeenCalled();
-            expect(onNotification.mock.lastCall[0].text).toBe(
+            expect(onNotification.mock.lastCall![0].text).toBe(
                 `You now have access to "Item ${itemRevision.data.metadata.name}" because your group ${group.name} has been granted access.`
             );
         });
@@ -99,7 +99,7 @@ describe('notif-shares saga', () => {
             (saga.options.getState() as State).shares[vault.shareId].groupId = null;
             dispatch(shareDeleted(vault));
             expect(onNotification).toHaveBeenCalled();
-            expect(onNotification.mock.lastCall[0].text).toBe(`Vault \"${vault.content.name}\" was removed.`);
+            expect(onNotification.mock.lastCall![0].text).toBe(`Vault \"${vault.content.name}\" was removed.`);
             (saga.options.getState() as State).shares[vault.shareId].groupId = groupId;
         });
 
@@ -108,14 +108,14 @@ describe('notif-shares saga', () => {
             (saga.options.getState() as State).shares[item.shareId].groupId = null;
             dispatch(shareDeleted(item));
             expect(onNotification).toHaveBeenCalled();
-            expect(onNotification.mock.lastCall[0].text).toBe(`An item previously shared with you was removed.`);
+            expect(onNotification.mock.lastCall![0].text).toBe(`An item previously shared with you was removed.`);
             (saga.options.getState() as State).shares[item.shareId].groupId = groupId;
         });
 
         it('should show notification when a group vault share deleted', () => {
             dispatch(shareDeleted(vault));
             expect(onNotification).toHaveBeenCalled();
-            expect(onNotification.mock.lastCall[0].text).toBe(
+            expect(onNotification.mock.lastCall![0].text).toBe(
                 `You no longer have access to some vaults or items because your group ${group.name}'s access was removed.`
             );
         });
@@ -123,7 +123,7 @@ describe('notif-shares saga', () => {
         it('should show notification when a group item share deleted', () => {
             dispatch(shareDeleted(item));
             expect(onNotification).toHaveBeenCalled();
-            expect(onNotification.mock.lastCall[0].text).toBe(
+            expect(onNotification.mock.lastCall![0].text).toBe(
                 `You no longer have access to some vaults or items because your group ${group.name}'s access was removed.`
             );
         });

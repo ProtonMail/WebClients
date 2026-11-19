@@ -1,6 +1,16 @@
 {
     "extends": "../../tsconfig.base.json",
-    "exclude": ["**/node_modules", "**/dist", "**/public", "**/.*/", "docs/starlight"],
+    "exclude": [
+        "lib/items/__mocks__/item.requests.ts",
+        "utils/logger/loglevel.mock.ts",
+        "lib/core/__mocks__/core.proxy.ts",
+        "lib/core/__mocks__/ui.proxy.ts",
+        "**/node_modules",
+        "**/dist",
+        "**/public",
+        "**/.*/",
+        "docs/starlight"
+    ],
     "compilerOptions": {
         "target": "esnext",
         "lib": ["dom", "dom.iterable", "esnext", "WebWorker", "DOM.AsyncIterable"],
@@ -8,7 +18,7 @@
             "@proton/types",
             "global-types-monorepo",
             "webpack-env",
-            "jest",
+            "vitest/globals",
             "chrome",
             "webextension-polyfill",
             "./globals.d.ts"

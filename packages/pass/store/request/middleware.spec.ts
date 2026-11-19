@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import noop from '@proton/utils/noop';
 
 import { uniqueId } from '../../utils/string/unique-id';
@@ -5,21 +7,22 @@ import * as time from '../../utils/time/epoch';
 import { withRequest } from './enhancers';
 import { type RequestTracker, requestMiddlewareFactory, requestTrackerFactory } from './middleware';
 
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    ...jest.requireActual('@proton/pass/utils/time/epoch'),
-    getEpoch: jest.fn(),
+vi.mock('@proton/pass/utils/time/epoch', async () => ({
+    ...(await vi.importActual('@proton/pass/utils/time/epoch')),
+    getEpoch: vi.fn(),
 }));
 
 describe('requestMiddleware', () => {
-    let next: jest.Mock;
-    let getState: jest.Mock;
+    let next: Mock;
+    let getState: Mock;
     let tracker: RequestTracker;
     let apply: (action: unknown) => unknown;
-    let acceptAsync: jest.Mock;
+    let acceptAsync: Mock;
 
-    const getEpoch = jest.mocked(time.getEpoch).mockImplementation(() => 1);
+    const getEpoch = vi.mocked(time.getEpoch).mockImplementation(() => 1);
 
     const requestID = `test-request-${uniqueId()}`;
+    // nosemgrep: rules_lgpl_javascript_crypto_rule-node-insecure-random-generator -- unique test value, no security use
     const payload = { value: Math.random() };
     const error = new Error('Test');
     const action = { type: 'test-action', payload };
@@ -27,11 +30,11 @@ describe('requestMiddleware', () => {
     const cachedState = { request: { [requestID]: { status: 'success', maxAge: 10, requestedAt: 0, data: payload } } };
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        next = jest.fn();
-        getState = jest.fn(() => ({ request: {} }));
+        vi.clearAllMocks();
+        next = vi.fn();
+        getState = vi.fn(() => ({ request: {} }));
         tracker = requestTrackerFactory();
-        acceptAsync = jest.fn(() => true);
+        acceptAsync = vi.fn(() => true);
         apply = requestMiddlewareFactory({ tracker, acceptAsync })({ getState } as any)(next);
     });
 

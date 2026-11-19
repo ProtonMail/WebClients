@@ -2,30 +2,30 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { mockNotifications } from '@proton/components/testing/mockNotifications';
+import { mockNotifications } from '@proton/components/testing/vitest/mockNotifications';
 
 import * as passAliasesProvider from '../../PassAliasesProvider';
 import CreatePassAliasesForm from './CreatePassAliasesForm';
 
-jest.mock('../../PassAliasesProvider', () => ({
+vi.mock('../../PassAliasesProvider', async () => ({
     __esModule: true,
-    ...jest.requireActual('../../PassAliasesProvider'),
+    ...(await vi.importActual('../../PassAliasesProvider')),
 }));
-jest.mock('@proton/app-context/useNotifications');
+vi.mock('@proton/app-context/useNotifications');
 
 const SUFFIX = '.suffix@passmail.net';
 const MAILBOX = { id: 1, email: 'user@proton.me' };
 
 describe('CreatePassAliasesForm', () => {
-    const submitNewAlias = jest.fn();
+    const submitNewAlias = vi.fn();
 
     beforeEach(() => {
-        jest.mocked(useNotifications).mockImplementation(() => mockNotifications);
-        jest.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(
+        vi.mocked(useNotifications).mockImplementation(() => mockNotifications);
+        vi.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(
             () =>
                 ({
                     submitNewAlias,
-                    getAliasOptions: jest.fn().mockResolvedValue({
+                    getAliasOptions: vi.fn().mockResolvedValue({
                         mailboxes: [MAILBOX],
                         suffixes: [{ suffix: SUFFIX, signedSuffix: 'signed-suffix' }],
                     }),
@@ -34,11 +34,11 @@ describe('CreatePassAliasesForm', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     const renderForm = async () => {
-        render(<CreatePassAliasesForm modalProps={{ open: true }} onSubmit={jest.fn()} passAliasesURL="" />);
+        render(<CreatePassAliasesForm modalProps={{ open: true }} onSubmit={vi.fn()} passAliasesURL="" />);
 
         return {
             nameInput: await screen.findByLabelText('Alias title'),

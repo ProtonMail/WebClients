@@ -4,34 +4,34 @@ import { LockMode } from '../../lib/auth/lock/types';
 import { UnlockDeclinedError } from '../../utils/errors/errors';
 import { useLockSetup } from './useLockSetup';
 
-const mockGetBiometricsUnlockKey = jest.fn();
-const mockCreateNotification = jest.fn();
+const mockGetBiometricsUnlockKey = vi.fn();
+const mockCreateNotification = vi.fn();
 
-jest.mock('react-redux', () => ({ useSelector: () => LockMode.BIOMETRICS }));
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('react-redux', () => ({ useSelector: () => LockMode.BIOMETRICS }));
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
-jest.mock('../../components/Core/AuthStoreProvider', () => ({ useAuthStore: () => ({}) }));
-jest.mock('../../components/Core/PassCoreProvider', () => ({
+vi.mock('../../components/Core/AuthStoreProvider', () => ({ useAuthStore: () => ({}) }));
+vi.mock('../../components/Core/PassCoreProvider', () => ({
     usePassCore: () => ({ biometricsKeyAppBound: true, supportsBiometrics: () => Promise.resolve(true) }),
 }));
-jest.mock('../../components/Core/PermissionsProvider', () => ({ usePermissionsProvider: () => ({}) }));
-jest.mock('../../components/Lock/PasswordUnlockProvider', () => ({
-    usePasswordUnlock: () => jest.fn(),
-    usePasswordTypeSwitch: () => jest.fn(),
+vi.mock('../../components/Core/PermissionsProvider', () => ({ usePermissionsProvider: () => ({}) }));
+vi.mock('../../components/Lock/PasswordUnlockProvider', () => ({
+    usePasswordUnlock: () => vi.fn(),
+    usePasswordTypeSwitch: () => vi.fn(),
 }));
-jest.mock('../../components/Lock/PinUnlockProvider', () => ({ usePinUnlock: () => jest.fn() }));
-jest.mock('../../components/Lock/UnlockProvider', () => ({ useUnlock: () => jest.fn() }));
-jest.mock('../../components/Organization/OrganizationProvider', () => ({ useOrganization: () => undefined }));
-jest.mock('../../lib/auth/lock/biometrics/adapter', () => ({
+vi.mock('../../components/Lock/PinUnlockProvider', () => ({ usePinUnlock: () => vi.fn() }));
+vi.mock('../../components/Lock/UnlockProvider', () => ({ useUnlock: () => vi.fn() }));
+vi.mock('../../components/Organization/OrganizationProvider', () => ({ useOrganization: () => undefined }));
+vi.mock('../../lib/auth/lock/biometrics/adapter', () => ({
     getBiometricsUnlockKey: (...args: unknown[]) => mockGetBiometricsUnlockKey(...args),
 }));
-jest.mock('../useFeatureFlag', () => ({ useFeatureFlag: () => false }));
-jest.mock('../useRequest', () => ({ useActionRequest: () => ({ loading: false, dispatch: jest.fn() }) }));
-jest.mock('./useDesktopUnlock', () => ({ useDesktopUnlock: () => jest.fn() }));
+vi.mock('../useFeatureFlag', () => ({ useFeatureFlag: () => false }));
+vi.mock('../useRequest', () => ({ useActionRequest: () => ({ loading: false, dispatch: vi.fn() }) }));
+vi.mock('./useDesktopUnlock', () => ({ useDesktopUnlock: () => vi.fn() }));
 
 describe('useLockSetup', () => {
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     test('reports loading while the biometric prompt of the current lock is open', async () => {
         let answerPrompt: (err: Error) => void = () => {};

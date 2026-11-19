@@ -8,14 +8,14 @@ import { exposeApi } from '../api/api';
 import { PassErrorCode } from '../api/errors';
 import { fetchFolder, requestFoldersForShareId } from './folders.requests';
 
-const api = jest.fn();
+const api = vi.fn();
 exposeApi(api as any);
-const warn = jest.spyOn(logger, 'warn').mockImplementation(noop);
+const warn = vi.spyOn(logger, 'warn').mockImplementation(noop);
 
 const mockDecrypt = { order: [] as string[], failures: new Set<string>() };
 
-jest.mock('./folders.parser', () => ({
-    parseFolderResponse: jest.fn(async (shareId: string, folder: FolderDataResponse) => {
+vi.mock('./folders.parser', () => ({
+    parseFolderResponse: vi.fn(async (shareId: string, folder: FolderDataResponse) => {
         mockDecrypt.order.push(folder.FolderID);
         if (mockDecrypt.failures.has(folder.FolderID)) throw new Error('Could not resolve folder key');
 
@@ -38,7 +38,7 @@ const mockFolders = (folders: FolderDataResponse[]) =>
 
 describe('requestFoldersForShareId', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockDecrypt.order = [];
         mockDecrypt.failures = new Set();
     });
@@ -71,7 +71,7 @@ describe('requestFoldersForShareId', () => {
 });
 
 describe('fetchFolder', () => {
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     test('resolves `undefined` when the share has been removed', async () => {
         api.mockRejectedValue(createShareRemovedError(PassErrorCode.NOT_EXIST_SHARE));

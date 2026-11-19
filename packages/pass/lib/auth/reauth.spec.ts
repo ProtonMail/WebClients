@@ -85,7 +85,7 @@ describe('reauth helpers', () => {
     describe('resolveReauthKey', () => {
         test('should derive key from session lock token and salt', async () => {
             const sessionLockToken = uniqueId(32);
-            const getLockToken = jest.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
+            const getLockToken = vi.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
             const salt = crypto.getRandomValues(new Uint8Array(32));
             const key = await resolveReauthKey(authStore, salt);
             expect(getLockToken).toHaveBeenCalled();
@@ -94,7 +94,7 @@ describe('reauth helpers', () => {
         });
 
         test('should throw error when no session lock token available', async () => {
-            const getLockToken = jest.spyOn(authStore, 'getLockToken').mockReturnValue(undefined);
+            const getLockToken = vi.spyOn(authStore, 'getLockToken').mockReturnValue(undefined);
             const salt = crypto.getRandomValues(new Uint8Array(32));
             await expect(resolveReauthKey(authStore, salt)).rejects.toThrow('Reauth key resolution failure');
             expect(getLockToken).toHaveBeenCalled();
@@ -110,7 +110,7 @@ describe('reauth helpers', () => {
 
         test('should encrypt payload when `current` is defined', async () => {
             const sessionLockToken = uniqueId(32);
-            const getLockToken = jest.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
+            const getLockToken = vi.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
             const payload = { pin: 'sensitive-data', ttl: 3600 };
             const result = await encryptReauthLock(payload, authStore);
 
@@ -126,7 +126,7 @@ describe('reauth helpers', () => {
 
         test('should encrypt and decrypt payload successfully', async () => {
             const sessionLockToken = uniqueId(32);
-            const getLockToken = jest.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
+            const getLockToken = vi.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
             const payload = { pin: 'sensitive-data', ttl: 3600 };
             const encrypted = await encryptReauthLock(payload, authStore);
             const decrypted = await decryptReauthLock(encrypted, authStore);
@@ -146,7 +146,7 @@ describe('reauth helpers', () => {
 
         test('should decrypt previously encrypted payload', async () => {
             const sessionLockToken = uniqueId(32);
-            const getLockToken = jest.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
+            const getLockToken = vi.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
 
             const originalData = 'confidential-information';
             const originalPayload = { pin: originalData, ttl: 3600 };
@@ -161,21 +161,21 @@ describe('reauth helpers', () => {
 
         test('should throw error when session lock token is not available during decryption', async () => {
             const sessionLockToken = uniqueId(32);
-            jest.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
+            vi.spyOn(authStore, 'getLockToken').mockReturnValue(sessionLockToken);
 
             const originalPayload = { pin: 'secret-data', ttl: 3600 };
             const encrypted = await encryptReauthLock(originalPayload, authStore);
-            jest.spyOn(authStore, 'getLockToken').mockReturnValue(undefined);
+            vi.spyOn(authStore, 'getLockToken').mockReturnValue(undefined);
 
             await expect(decryptReauthLock(encrypted, authStore)).rejects.toThrow('Reauth key resolution failure');
         });
 
         test('should fail to decrypt with wrong session lock token', async () => {
-            jest.spyOn(authStore, 'getLockToken').mockReturnValue(uniqueId(32));
+            vi.spyOn(authStore, 'getLockToken').mockReturnValue(uniqueId(32));
             const originalPayload = { pin: 'secret-data', ttl: 3600 };
             const encrypted = await encryptReauthLock(originalPayload, authStore);
 
-            jest.spyOn(authStore, 'getLockToken').mockReturnValue(uniqueId(32));
+            vi.spyOn(authStore, 'getLockToken').mockReturnValue(uniqueId(32));
             await expect(decryptReauthLock(encrypted, authStore)).rejects.toThrow();
         });
     });

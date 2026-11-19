@@ -4,14 +4,14 @@ const TEST_TIMEOUT_MS = 5000;
 const TEST_ALARM_NAME = 'TEST_ALARM';
 
 describe('createTimeoutAlarm', () => {
-    const onAlarm = jest.fn();
+    const onAlarm = vi.fn();
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         onAlarm.mockClear();
     });
 
@@ -33,7 +33,7 @@ describe('createTimeoutAlarm', () => {
         const when = Date.now() + TEST_TIMEOUT_MS;
         void alarm.set(when);
 
-        jest.advanceTimersByTime(TEST_TIMEOUT_MS);
+        vi.advanceTimersByTime(TEST_TIMEOUT_MS);
         expect(onAlarm).toHaveBeenCalledTimes(1);
     });
 
@@ -42,7 +42,7 @@ describe('createTimeoutAlarm', () => {
         const when = Date.now() + TEST_TIMEOUT_MS;
         void alarm.set(when);
 
-        jest.advanceTimersByTime(TEST_TIMEOUT_MS - 1);
+        vi.advanceTimersByTime(TEST_TIMEOUT_MS - 1);
         expect(onAlarm).not.toHaveBeenCalled();
     });
 
@@ -55,7 +55,7 @@ describe('createTimeoutAlarm', () => {
 
         expect(alarm.when()).toBeUndefined();
 
-        jest.advanceTimersByTime(TEST_TIMEOUT_MS);
+        vi.advanceTimersByTime(TEST_TIMEOUT_MS);
         expect(onAlarm).not.toHaveBeenCalled();
     });
 
@@ -69,10 +69,10 @@ describe('createTimeoutAlarm', () => {
 
         expect(alarm.when()).toBe(when2);
 
-        jest.advanceTimersByTime(TEST_TIMEOUT_MS);
+        vi.advanceTimersByTime(TEST_TIMEOUT_MS);
         expect(onAlarm).not.toHaveBeenCalled();
 
-        jest.advanceTimersByTime(TEST_TIMEOUT_MS);
+        vi.advanceTimersByTime(TEST_TIMEOUT_MS);
         expect(onAlarm).toHaveBeenCalledTimes(1);
     });
 
@@ -81,7 +81,7 @@ describe('createTimeoutAlarm', () => {
         const when = Date.now() - 1000;
         void alarm.set(when);
 
-        jest.advanceTimersByTime(0);
+        vi.advanceTimersByTime(0);
         expect(onAlarm).toHaveBeenCalledTimes(1);
     });
 

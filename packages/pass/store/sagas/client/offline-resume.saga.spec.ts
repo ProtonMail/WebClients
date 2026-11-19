@@ -7,20 +7,20 @@ import type { State } from '../../types';
 import * as hydrateSaga from './hydrate.saga';
 import watcher from './offline-resume.saga';
 
-jest.mock('./hydrate.saga', () => ({
-    ...jest.requireActual('./hydrate.saga'),
-    hydrate: jest.fn(),
+vi.mock('./hydrate.saga', async () => ({
+    ...(await vi.importActual('./hydrate.saga')),
+    hydrate: vi.fn(),
 }));
 
-const setResumeLock = jest.fn();
+const setResumeLock = vi.fn();
 exposeApi({ setResumeLock } as any);
 
-jest.mocked(hydrateSaga.hydrate).mockImplementation(function* () {
+vi.mocked(hydrateSaga.hydrate).mockImplementation(function* () {
     return { fromCache: false, version: '0', state: {} as State };
 });
 
 describe('offline-resume saga', () => {
-    const resumeSession = jest.fn();
+    const resumeSession = vi.fn();
     const options = { getAuthService: () => ({ resumeSession }) } as any;
 
     beforeEach(() => {

@@ -2,8 +2,6 @@ import { createPassCoreProxy } from '../core/core.proxy';
 import { generateTOTPCode, getOTPSecret, getSecretOrUri, hasDefaultOTPOptions, parseOTPValue } from './otp';
 import { B32_ALPHABET } from './patch';
 
-jest.mock('../core/core.proxy');
-
 const toOtpUri = (secret: string) =>
     `otpauth://totp/Proton%20Pass?secret=${secret.split(' ').join('')}&algorithm=SHA1&digits=6&period=30`;
 
@@ -196,11 +194,11 @@ describe('generateTOTPCode', () => {
     const secret = 'JBSWY3DPEHPK3PXP';
 
     beforeAll(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(1_760_000_000_000);
+        vi.useFakeTimers();
+        vi.setSystemTime(1_760_000_000_000);
     });
 
-    afterAll(() => jest.useRealTimers());
+    afterAll(() => vi.useRealTimers());
 
     test('should generate a code from a TOTP URI', async () => {
         const totpUri = `otpauth://totp/Issuer:me@example.com?secret=${secret}&issuer=Issuer`;

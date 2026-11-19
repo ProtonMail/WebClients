@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react';
 import { useConfirm } from './useConfirm';
 
 describe('useConfirm', () => {
-    const action = jest.fn((param: number) => param);
+    const action = vi.fn((param: number) => param);
     beforeEach(() => action.mockClear());
 
     it('should initialize with pending `false` and `null` param', () => {

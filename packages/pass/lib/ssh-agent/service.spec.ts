@@ -1,3 +1,5 @@
+import type { Mocked } from 'vitest';
+
 import type { SSHKeyItem } from '../../types/data/items';
 import type { ContextBridgeApi } from '../../types/desktop';
 import type { Maybe } from '../../types/utils';
@@ -5,19 +7,19 @@ import { createSshAgentService } from './service';
 
 type SshAgentBridge = ContextBridgeApi['sshAgent'];
 
-const createBridge = (): jest.Mocked<SshAgentBridge> => {
+const createBridge = (): Mocked<SshAgentBridge> => {
     let socketPath: Maybe<string> = undefined;
 
     return {
-        clear: jest.fn().mockResolvedValue(undefined),
-        destroy: jest.fn(async () => {
+        clear: vi.fn().mockResolvedValue(undefined),
+        destroy: vi.fn(async () => {
             socketPath = undefined;
         }),
-        getEnabled: jest.fn().mockResolvedValue(false),
-        getStatus: jest.fn(async () => ({ socketPath })),
-        setEnabled: jest.fn().mockResolvedValue(undefined),
-        setKeys: jest.fn().mockResolvedValue(undefined),
-        start: jest.fn(async () => {
+        getEnabled: vi.fn().mockResolvedValue(false),
+        getStatus: vi.fn(async () => ({ socketPath })),
+        setEnabled: vi.fn().mockResolvedValue(undefined),
+        setKeys: vi.fn().mockResolvedValue(undefined),
+        start: vi.fn(async () => {
             socketPath = 'pass-ssh-agent.sock';
         }),
     };
@@ -28,7 +30,7 @@ const createKey = (shareId: string, itemId: string, revision: number): SSHKeyIte
 
 const setup = (items: SSHKeyItem[] = []) => {
     const sshAgent = createBridge();
-    const datasource = jest.fn(() => items);
+    const datasource = vi.fn(() => items);
     const service = createSshAgentService({ bridge: { sshAgent } as unknown as ContextBridgeApi, datasource });
     return { sshAgent, datasource, service };
 };

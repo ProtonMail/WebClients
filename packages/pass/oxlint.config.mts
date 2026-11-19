@@ -7,6 +7,10 @@ export default createOxlintConfig({
     overrides: [
         refObjectNullOverride,
         {
+            files: ['vitest.config.ts', 'vitest.setup.ts', 'vitest.d.ts', 'testing/vitest/**'],
+            rules: { 'proton/no-extraneous-dependencies': 'off' },
+        },
+        {
             files: allGlobs,
             rules: {
                 'no-console': ['error', { allow: ['warn', 'error'] }],

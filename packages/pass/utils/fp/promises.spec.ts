@@ -5,7 +5,7 @@ type TestResolvers = { resolve: (val: number) => void; reject: (err: unknown) =>
 const resolvers: TestResolvers = [];
 const error = new Error('invalid');
 
-const asyncFn = jest.fn<Promise<number>, [key?: string]>(() => {
+const asyncFn = vi.fn<(key?: string) => Promise<number>>(() => {
     return new Promise<number>((resolve, reject) => {
         resolvers.push({ resolve, reject });
     });
@@ -173,7 +173,7 @@ describe('promise', () => {
         const resolvers: LatestResolver[] = [];
         const effects: number[] = [];
 
-        const fn = jest.fn<Promise<void>, [AbortSignal, number]>(
+        const fn = vi.fn<(signal: AbortSignal, n: number) => Promise<void>>(
             (signal, value) =>
                 new Promise<void>((resolve) =>
                     resolvers.push({
@@ -253,7 +253,7 @@ describe('promise', () => {
         type PoolResolver = { resolve: (val: string) => void; reject: (err: unknown) => void };
         const poolResolvers: PoolResolver[] = [];
 
-        const poolJob = jest.fn(
+        const poolJob = vi.fn(
             (_item: number, _index: number) =>
                 new Promise<string>((resolve, reject) => poolResolvers.push({ resolve, reject }))
         );
@@ -297,7 +297,7 @@ describe('promise', () => {
         });
 
         test('reports progress as each item completes', async () => {
-            const onProgress = jest.fn();
+            const onProgress = vi.fn();
             const result = pool([0, 1, 2], 2, poolJob, onProgress);
 
             poolResolvers[0].resolve('a');
@@ -365,7 +365,7 @@ describe('promise', () => {
 
     describe('cancelable', () => {
         test('should resolve when job completes without cancellation', async () => {
-            const job = jest.fn(() => Promise.resolve(42));
+            const job = vi.fn(() => Promise.resolve(42));
             const cancelableJob = cancelable(job);
             const result = cancelableJob.run();
 
@@ -374,20 +374,20 @@ describe('promise', () => {
         });
 
         test('should reject when canceled before job completes', async () => {
-            jest.useFakeTimers();
-            const job = jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(42), 100)));
+            vi.useFakeTimers();
+            const job = vi.fn(() => new Promise((resolve) => setTimeout(() => resolve(42), 100)));
             const cancelableJob = cancelable(job);
 
             const result = cancelableJob.run();
             cancelableJob.cancel();
-            jest.runAllTimers();
+            vi.runAllTimers();
 
             await expect(result).rejects.toBeUndefined();
             expect(job).toHaveBeenCalledTimes(1);
         });
 
         test('should reject on next call if canceled after job completes', async () => {
-            const job = jest.fn(() => Promise.resolve(42));
+            const job = vi.fn(() => Promise.resolve(42));
             const cancelableJob = cancelable(job);
             const result = cancelableJob.run();
 

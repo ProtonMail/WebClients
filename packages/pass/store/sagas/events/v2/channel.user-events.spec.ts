@@ -12,22 +12,22 @@ import { setUserEventID } from '../../../actions/creators/user';
 import type { RootSagaOptions } from '../../../types';
 import { userEventsChannel } from './channel.user-events';
 
-jest.mock('@proton/pass/lib/sync/v2/user-events.requests', () => ({
-    ...jest.requireActual('@proton/pass/lib/sync/v2/user-events.requests'),
-    getUserEventsSince: jest.fn(),
+vi.mock('@proton/pass/lib/sync/v2/user-events.requests', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/sync/v2/user-events.requests')),
+    getUserEventsSince: vi.fn(),
 }));
-jest.mock('@proton/pass/lib/sync/v2/user-events.processor', () => ({
-    ...jest.requireActual('@proton/pass/lib/sync/v2/user-events.processor'),
-    processUserEvents: jest.fn(),
+vi.mock('@proton/pass/lib/sync/v2/user-events.processor', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/sync/v2/user-events.processor')),
+    processUserEvents: vi.fn(),
 }));
-jest.mock('@proton/pass/lib/sync/v2/user-events.sync', () => ({
-    ...jest.requireActual('@proton/pass/lib/sync/v2/user-events.sync'),
-    processFullRefresh: jest.fn(),
+vi.mock('@proton/pass/lib/sync/v2/user-events.sync', async () => ({
+    ...(await vi.importActual('@proton/pass/lib/sync/v2/user-events.sync')),
+    processFullRefresh: vi.fn(),
 }));
 
-const getUserEventsSince = jest.mocked(requests.getUserEventsSince);
-const processUserEvents = jest.mocked(processor.processUserEvents);
-const processFullRefresh = jest.mocked(sync.processFullRefresh);
+const getUserEventsSince = vi.mocked(requests.getUserEventsSince);
+const processUserEvents = vi.mocked(processor.processUserEvents);
+const processFullRefresh = vi.mocked(sync.processFullRefresh);
 
 const createEvents = (data: Partial<SyncEventListOutput> = {}) =>
     ({
@@ -47,7 +47,7 @@ const run = async (userEventId: MaybeNull<string> = 'event-1') => {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     getUserEventsSince.mockResolvedValue(createEvents());
     processUserEvents.mockImplementation(sagaReturn(true));
     processFullRefresh.mockImplementation(sagaReturn(true));

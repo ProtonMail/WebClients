@@ -260,7 +260,7 @@ describe('PassCrypto', () => {
             const encryptedShareUpdate: ShareGetResponse = { ...encryptedShare, ContentKeyRotation: 2 };
             const newShareKey: ShareKeyResponse = { ...shareKey, KeyRotation: 2 };
 
-            jest.spyOn(shareManager, 'addVaultShareKey');
+            vi.spyOn(shareManager, 'addVaultShareKey');
 
             const shareUpdate = await PassCrypto.openShare({
                 encryptedShare: encryptedShareUpdate,
@@ -496,7 +496,7 @@ describe('PassCrypto', () => {
 
             const shareManager = PassCrypto.getShareManager(encryptedShare.ShareID);
 
-            jest.spyOn(shareManager, 'addVaultShareKey');
+            vi.spyOn(shareManager, 'addVaultShareKey');
 
             const content = randomContents();
             const vault = await processes.createVault({

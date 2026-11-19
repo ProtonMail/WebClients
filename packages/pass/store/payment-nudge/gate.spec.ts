@@ -8,9 +8,9 @@ import { PlanType } from '../../types/api/pass';
 import * as epoch from '../../utils/time/epoch';
 import { canQueryPaymentNudge, hasNoPaymentMethod } from './gate';
 
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    ...jest.requireActual('@proton/pass/utils/time/epoch'),
-    getEpoch: jest.fn(),
+vi.mock('@proton/pass/utils/time/epoch', async () => ({
+    ...(await vi.importActual('@proton/pass/utils/time/epoch')),
+    getEpoch: vi.fn(),
 }));
 
 const NOW = 1_000;
@@ -30,7 +30,7 @@ const createUser = (user: Partial<User> = {}): User => ({ Role: USER_ROLES.ADMIN
 const createPaymentMethod = (): SavedPaymentMethod => ({ ID: 'method-1' }) as SavedPaymentMethod;
 
 describe('payment nudge gate', () => {
-    beforeEach(() => jest.mocked(epoch.getEpoch).mockReturnValue(NOW));
+    beforeEach(() => vi.mocked(epoch.getEpoch).mockReturnValue(NOW));
 
     describe('canQueryPaymentNudge', () => {
         test('accepts an admin on a B2B plan inside the trial window', () => {

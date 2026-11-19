@@ -15,12 +15,12 @@ const setupAdapter = async () => {
     authStore.setOfflineComponents(await createTestOfflineComponents());
     authStore.setLockMode(LockMode.PASSWORD);
 
-    const syncLock = jest.fn(async (update: { unlockRetryCount?: number }) => {
+    const syncLock = vi.fn(async (update: { unlockRetryCount?: number }) => {
         if (update.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(update.unlockRetryCount);
     });
-    const lock = jest.fn().mockResolvedValue(undefined);
-    const logout = jest.fn().mockResolvedValue(undefined);
-    const api = { reset: jest.fn().mockResolvedValue(undefined) };
+    const lock = vi.fn().mockResolvedValue(undefined);
+    const logout = vi.fn().mockResolvedValue(undefined);
+    const api = { reset: vi.fn().mockResolvedValue(undefined) };
     const auth = { syncLock, lock, logout, config: { authStore, api } };
 
     return { adapter: passwordLockAdapterFactory(auth as any), authStore, auth };
@@ -31,10 +31,10 @@ describe('PasswordLock adapter', () => {
     afterAll(releaseCryptoProxy);
 
     beforeEach(() => {
-        jest.mocked(loadCryptoWorker).mockResolvedValue(undefined);
+        vi.mocked(loadCryptoWorker).mockResolvedValue(undefined);
     });
 
-    afterEach(() => jest.restoreAllMocks());
+    afterEach(() => vi.restoreAllMocks());
 
     describe('unlock', () => {
         test('the offline password unlocks and resets the failed attempts', async () => {
@@ -72,9 +72,9 @@ describe('PasswordLock adapter', () => {
          * (`desktop/adapter.spec.ts`). Known gap: the password adapter counts any key derivation
          * failure (crypto worker crash, out of memory) as a wrong password. At the third one it
          * wipes the local data, including the offline components. */
-        test.failing('a failing key derivation does not count as a wrong password', async () => {
+        test.fails('a failing key derivation does not count as a wrong password', async () => {
             const { adapter, auth } = await setupAdapter();
-            jest.spyOn(CryptoProxy, 'computeArgon2').mockRejectedValue(new Error('crypto worker crashed'));
+            vi.spyOn(CryptoProxy, 'computeArgon2').mockRejectedValue(new Error('crypto worker crashed'));
 
             await adapter.unlock(obfuscate(TEST_OFFLINE_PASSWORD)).catch(() => {});
 

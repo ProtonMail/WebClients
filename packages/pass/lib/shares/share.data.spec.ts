@@ -9,19 +9,19 @@ import * as folderRequests from '../folders/folders.requests';
 import * as itemRequests from '../items/item.requests';
 import { requestShareData, requestSharesData } from './share.data';
 
-jest.mock('../folders/folders.requests', () => ({
-    ...jest.requireActual('../folders/folders.requests'),
-    requestFoldersForShareId: jest.fn(),
+vi.mock('../folders/folders.requests', async () => ({
+    ...(await vi.importActual('../folders/folders.requests')),
+    requestFoldersForShareId: vi.fn(),
 }));
 
-jest.mock('../items/item.requests', () => ({
-    ...jest.requireActual('../items/item.requests'),
-    requestItemsForShareId: jest.fn(),
+vi.mock('../items/item.requests', async () => ({
+    ...(await vi.importActual('../items/item.requests')),
+    requestItemsForShareId: vi.fn(),
 }));
 
-const requestFoldersForShareId = jest.mocked(folderRequests.requestFoldersForShareId);
-const requestItemsForShareId = jest.mocked(itemRequests.requestItemsForShareId);
-jest.spyOn(logger, 'warn').mockImplementation(noop);
+const requestFoldersForShareId = vi.mocked(folderRequests.requestFoldersForShareId);
+const requestItemsForShareId = vi.mocked(itemRequests.requestItemsForShareId);
+vi.spyOn(logger, 'warn').mockImplementation(noop);
 
 const folder = (folderId: string, shareId: string) => ({ folderId, shareId }) as FolderData;
 const item = (itemId: string, shareId: string) => ({ itemId, shareId }) as ItemRevision;
@@ -32,7 +32,7 @@ const vaultShare = (shareId: string) => createTestShare({ shareId, targetType: S
 const itemShare = (shareId: string) => createTestShare({ shareId, targetType: ShareType.Item });
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     requestFoldersForShareId.mockImplementation(async (shareId) => [folder('f1', shareId)]);
     requestItemsForShareId.mockImplementation(async (shareId) => [item('i1', shareId)]);
 });
@@ -62,7 +62,7 @@ describe('requestShareData', () => {
     });
 
     test('forwards item progress', async () => {
-        const onItemProgress = jest.fn();
+        const onItemProgress = vi.fn();
         await requestShareData(vaultShare('s1'), { onItemProgress });
 
         expect(requestItemsForShareId).toHaveBeenCalledWith('s1', onItemProgress);
@@ -76,7 +76,7 @@ describe('requestShareData', () => {
     });
 
     test('reports and tolerates folder failure when an error handler is provided', async () => {
-        const onFolderError = jest.fn();
+        const onFolderError = vi.fn();
         requestFoldersForShareId.mockRejectedValue(new Error('boom'));
 
         const result = await requestShareData(vaultShare('s1'), { onFolderError });

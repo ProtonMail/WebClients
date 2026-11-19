@@ -5,22 +5,22 @@ import * as cache from './cache';
 import { createAbortResponse, createNetworkError } from './fetch-controller';
 import { createImageProxyHandler } from './images';
 
-jest.mock('./cache', () => ({
-    ...jest.requireActual('./cache'),
-    getCache: jest.fn(),
+vi.mock('./cache', async () => ({
+    ...(await vi.importActual('./cache')),
+    getCache: vi.fn(),
 }));
 
 const { withMaxAgeHeaders } = cache;
 
 describe('createImageProxyHandler', () => {
     const mockUrl = '/test/image';
-    const mockApi = jest.fn();
-    const mockCache = { match: jest.fn(), put: jest.fn().mockImplementation(() => Promise.resolve()) };
+    const mockApi = vi.fn();
+    const mockCache = { match: vi.fn(), put: vi.fn().mockImplementation(() => Promise.resolve()) };
     const imageProxy = createImageProxyHandler(mockApi as unknown as Api);
     const apiParams = { url: mockUrl, output: 'raw', sideEffects: false };
 
     beforeEach(() => {
-        jest.mocked(cache.getCache).mockImplementation(() => Promise.resolve(mockCache as unknown as Cache));
+        vi.mocked(cache.getCache).mockImplementation(() => Promise.resolve(mockCache as unknown as Cache));
         mockApi.mockClear();
         mockCache.match.mockClear();
         mockCache.put.mockClear();

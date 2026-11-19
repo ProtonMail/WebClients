@@ -7,20 +7,20 @@ import { AuthMode } from '../../types/api/api';
 import { TEST_SERVER_TIME, mockAPIResponse } from '../../utils/tests/fixtures/api';
 import { refreshHandlerFactory } from './refresh';
 
-jest.mock('@proton/shared/lib/helpers/promise', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/promise'),
-    wait: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/promise', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/promise')),
+    wait: vi.fn(),
 }));
 
 const { TOO_MANY_REQUESTS } = HTTP_ERROR_CODES;
 
 describe('Refresh handlers', () => {
-    jest.useFakeTimers().setSystemTime(TEST_SERVER_TIME);
+    vi.useFakeTimers().setSystemTime(TEST_SERVER_TIME);
 
-    const call = jest.fn();
-    const onRefresh = jest.fn();
-    const getAuth = jest.fn();
-    const wait = jest.mocked(time.wait).mockImplementation(() => Promise.resolve());
+    const call = vi.fn();
+    const onRefresh = vi.fn();
+    const getAuth = vi.fn();
+    const wait = vi.mocked(time.wait).mockImplementation(() => Promise.resolve());
 
     const getMockResponse = (date: Date = new Date()) =>
         ({ headers: { get: () => date.toString() } }) as unknown as Response;

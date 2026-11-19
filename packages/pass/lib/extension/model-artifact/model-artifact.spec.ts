@@ -148,7 +148,7 @@ describe('`createModelProvider`', () => {
 });
 
 describe('`fetchModelArtifact`', () => {
-    const fetchMock = jest.spyOn(global, 'fetch' as any);
+    const fetchMock = vi.spyOn(global, 'fetch' as any);
 
     afterEach(() => fetchMock.mockReset());
     afterAll(() => fetchMock.mockRestore());

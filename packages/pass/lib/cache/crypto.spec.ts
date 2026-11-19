@@ -13,8 +13,8 @@ describe('cache crypto operations', () => {
 
     describe('generateOfflineComponents', () => {
         test('Should compute offline components correctly for a given password', async () => {
-            /** mock argon2 to avoid jest keeping a dangling worker alive */
-            const argon2 = jest.spyOn(CryptoProxy, 'computeArgon2').mockImplementation(async () => generateKey());
+            /** mock argon2 to avoid the test runner keeping a dangling worker alive */
+            const argon2 = vi.spyOn(CryptoProxy, 'computeArgon2').mockImplementation(async () => generateKey());
 
             const randomPassword = uint8ArrayToBinaryString(generateKey());
             const components = await generateOfflineComponents(randomPassword);

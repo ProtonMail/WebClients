@@ -1,17 +1,18 @@
 import safeRegexLib from 'safe-regex2';
+import type { MockedFunction } from 'vitest';
 
 import { RegexSafety, checkRegex, safeRegex } from './safe-regex';
 
-jest.mock('safe-regex2', () => jest.fn(() => true));
+vi.mock('safe-regex2', () => ({ default: vi.fn(() => true) }));
 
-const safeRegexLibMock = safeRegexLib as jest.MockedFunction<typeof safeRegexLib>;
+const safeRegexLibMock = safeRegexLib as MockedFunction<typeof safeRegexLib>;
 
 class MockWorker {
     onmessage: ((e: MessageEvent) => void) | null = null;
     onerror: ((e: ErrorEvent) => void) | null = null;
-    terminate = jest.fn();
+    terminate = vi.fn();
 
-    postMessage = jest.fn().mockImplementation(() => {
+    postMessage = vi.fn().mockImplementation(() => {
         this.onmessage?.({ data: { elapsed: 1 } } as MessageEvent);
     });
 }
@@ -19,12 +20,12 @@ class MockWorker {
 class NeverRespondingWorker {
     onmessage: ((e: MessageEvent) => void) | null = null;
     onerror: ((e: ErrorEvent) => void) | null = null;
-    terminate = jest.fn();
-    postMessage = jest.fn();
+    terminate = vi.fn();
+    postMessage = vi.fn();
 }
 
 describe('checkRegex', () => {
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     test('returns Invalid for a regex that fails to compile', async () => {
         const result = checkRegex('[invalid');
@@ -41,7 +42,7 @@ describe('checkRegex', () => {
 // Skip those tests as long as they are unused in production
 // Check safeRegex comment
 describe.skip('safeRegex', () => {
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     test('returns Safe when the regex completes within the time limit', async () => {
         global.Worker = MockWorker as unknown as typeof Worker;
@@ -50,14 +51,14 @@ describe.skip('safeRegex', () => {
     });
 
     test('returns Unsafe when the regex times out in the worker', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         global.Worker = NeverRespondingWorker as unknown as typeof Worker;
 
         const promise = safeRegex('hello');
-        jest.advanceTimersByTime(600);
+        vi.advanceTimersByTime(600);
         const result = await promise;
 
         expect(result).toBe(RegexSafety.Unsafe);
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 });

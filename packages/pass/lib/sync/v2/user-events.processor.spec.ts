@@ -13,42 +13,42 @@ import * as shares from './user-events.shares';
 import * as sync from './user-events.sync';
 import * as user from './user-events.user';
 
-jest.mock('./user-events.items', () => ({
-    ...jest.requireActual('./user-events.items'),
-    processItemsUpdated: jest.fn(),
-    processItemsDeleted: jest.fn(),
+vi.mock('./user-events.items', async () => ({
+    ...(await vi.importActual('./user-events.items')),
+    processItemsUpdated: vi.fn(),
+    processItemsDeleted: vi.fn(),
 }));
-jest.mock('./user-events.alias', () => ({
-    ...jest.requireActual('./user-events.alias'),
-    processAliasNoteChanged: jest.fn(),
-    processPendingAliasToCreate: jest.fn(),
+vi.mock('./user-events.alias', async () => ({
+    ...(await vi.importActual('./user-events.alias')),
+    processAliasNoteChanged: vi.fn(),
+    processPendingAliasToCreate: vi.fn(),
 }));
-jest.mock('./user-events.user', () => ({
-    ...jest.requireActual('./user-events.user'),
-    processBreachUpdate: jest.fn(),
-    processUserRefresh: jest.fn(),
-    processOrganizationInfoChanged: jest.fn(),
+vi.mock('./user-events.user', async () => ({
+    ...(await vi.importActual('./user-events.user')),
+    processBreachUpdate: vi.fn(),
+    processUserRefresh: vi.fn(),
+    processOrganizationInfoChanged: vi.fn(),
 }));
-jest.mock('./user-events.shares', () => ({
-    ...jest.requireActual('./user-events.shares'),
-    processSharesCreated: jest.fn(),
-    processSharesUpdated: jest.fn(),
-    processSharesDeleted: jest.fn(),
+vi.mock('./user-events.shares', async () => ({
+    ...(await vi.importActual('./user-events.shares')),
+    processSharesCreated: vi.fn(),
+    processSharesUpdated: vi.fn(),
+    processSharesDeleted: vi.fn(),
 }));
-jest.mock('./user-events.folders', () => ({
-    ...jest.requireActual('./user-events.folders'),
-    processFoldersUpdated: jest.fn(),
-    processFoldersDeleted: jest.fn(),
+vi.mock('./user-events.folders', async () => ({
+    ...(await vi.importActual('./user-events.folders')),
+    processFoldersUpdated: vi.fn(),
+    processFoldersDeleted: vi.fn(),
 }));
-jest.mock('./user-events.invites', () => ({
-    ...jest.requireActual('./user-events.invites'),
-    processInvitesChanged: jest.fn(),
-    processGroupInvitesChanged: jest.fn(),
-    processSharesWithInvitesToCreate: jest.fn(),
+vi.mock('./user-events.invites', async () => ({
+    ...(await vi.importActual('./user-events.invites')),
+    processInvitesChanged: vi.fn(),
+    processGroupInvitesChanged: vi.fn(),
+    processSharesWithInvitesToCreate: vi.fn(),
 }));
-jest.mock('./user-events.sync', () => ({
-    ...jest.requireActual('./user-events.sync'),
-    processFullRefresh: jest.fn(),
+vi.mock('./user-events.sync', async () => ({
+    ...(await vi.importActual('./user-events.sync')),
+    processFullRefresh: vi.fn(),
 }));
 
 const event = (overrides?: Partial<SyncEventListOutput>) =>
@@ -78,12 +78,12 @@ const processors = [
 describe('processUserEvents', () => {
     beforeEach(() => {
         processors.forEach(([mod, name]) => (mod as any)[name].mockImplementation(sagaReturn(true)));
-        jest.mocked(sync.processFullRefresh).mockImplementation(sagaReturn(true));
+        vi.mocked(sync.processFullRefresh).mockImplementation(sagaReturn(true));
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
-        jest.restoreAllMocks();
+        vi.clearAllMocks();
+        vi.restoreAllMocks();
     });
 
     test('resolves `true` when every processor succeeds', async () => {
@@ -92,7 +92,7 @@ describe('processUserEvents', () => {
     });
 
     test('resolves `false` when any processor fails', async () => {
-        jest.mocked(shares.processSharesUpdated).mockImplementation(sagaReturn(false));
+        vi.mocked(shares.processSharesUpdated).mockImplementation(sagaReturn(false));
         await expect(run(event())).resolves.toBe(false);
     });
 
@@ -103,7 +103,7 @@ describe('processUserEvents', () => {
     });
 
     test('skips the batch when an updated item has a pending file link', async () => {
-        jest.spyOn(PendingFileLinkTracker, 'isPending').mockReturnValue(true);
+        vi.spyOn(PendingFileLinkTracker, 'isPending').mockReturnValue(true);
         await expect(run(event({ ItemsUpdated: [{ ShareID: 's1', ItemID: 'i1' }] as any }))).resolves.toBe(false);
         expect(items.processItemsUpdated).not.toHaveBeenCalled();
     });

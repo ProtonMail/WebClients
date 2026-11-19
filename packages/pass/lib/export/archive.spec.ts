@@ -68,7 +68,9 @@ describe('Archive generation', () => {
     describe('getArchiveName', () => {
         test('should generate correct archive name format', () => {
             const mockDate = new Date('2023-01-15T12:34:56Z');
-            const date = jest.spyOn(global, 'Date').mockImplementation(() => mockDate as unknown as Date);
+            const date = vi.spyOn(global, 'Date').mockImplementation(function () {
+                return mockDate as unknown as Date;
+            });
             expect(getArchiveName('zip')).toBe(`${PASS_APP_NAME}_export_2023-01-15_1673786096.zip`);
             date.mockRestore();
         });

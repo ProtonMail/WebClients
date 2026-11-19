@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { APPS } from '@proton/shared/lib/constants';
 
 import type { Api } from '../../types/api/api';
@@ -14,39 +16,39 @@ describe('Core AuthService', () => {
     let api: Api;
     let authStore: AuthStore;
     let auth: AuthService;
-    let onSessionPersist: jest.Mock;
-    let getPersistedSession: jest.Mock;
-    let getMemorySession: jest.Mock;
-    let onResumeStart: jest.Mock;
-    let onLockUpdate: jest.Mock;
-    let onForkRequest: jest.Mock;
+    let onSessionPersist: Mock;
+    let getPersistedSession: Mock;
+    let getMemorySession: Mock;
+    let onResumeStart: Mock;
+    let onLockUpdate: Mock;
+    let onForkRequest: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        api = jest.fn() as unknown as Api;
-        api.subscribe = jest.fn();
-        api.setResumeLock = jest.fn();
-        api.reset = jest.fn().mockResolvedValue(undefined);
+        vi.clearAllMocks();
+        api = vi.fn() as unknown as Api;
+        api.subscribe = vi.fn();
+        api.setResumeLock = vi.fn();
+        api.reset = vi.fn().mockResolvedValue(undefined);
         authStore = createAuthStore(createMemoryStore());
 
-        onSessionPersist = jest.fn().mockResolvedValue(undefined);
-        getPersistedSession = jest.fn().mockResolvedValue(null);
-        getMemorySession = jest.fn().mockResolvedValue({});
-        onResumeStart = jest.fn().mockResolvedValue(true);
-        onLockUpdate = jest.fn().mockResolvedValue(undefined);
-        onForkRequest = jest.fn();
+        onSessionPersist = vi.fn().mockResolvedValue(undefined);
+        getPersistedSession = vi.fn().mockResolvedValue(null);
+        getMemorySession = vi.fn().mockResolvedValue({});
+        onResumeStart = vi.fn().mockResolvedValue(true);
+        onLockUpdate = vi.fn().mockResolvedValue(undefined);
+        onForkRequest = vi.fn();
 
         auth = createAuthService({
             api,
             authStore,
-            onInit: jest.fn(),
+            onInit: vi.fn(),
             getPersistedSession,
             getMemorySession,
             onSessionPersist,
             onResumeStart,
             onLockUpdate,
             onForkRequest,
-            onSessionFailure: jest.fn(),
+            onSessionFailure: vi.fn(),
         });
     });
 
@@ -61,8 +63,8 @@ describe('Core AuthService', () => {
 
         test('should proceed when `onResumeStart` returns `true`', async () => {
             getMemorySession.mockResolvedValueOnce({ LocalID: 0 });
-            jest.spyOn(auth, 'login').mockResolvedValueOnce(true);
-            jest.spyOn(authStore, 'validSession').mockReturnValueOnce(true);
+            vi.spyOn(auth, 'login').mockResolvedValueOnce(true);
+            vi.spyOn(authStore, 'validSession').mockReturnValueOnce(true);
             const result = await auth.resumeSession(0, {});
 
             expect(result).toBe(true);
@@ -165,17 +167,17 @@ describe('Core AuthService', () => {
     });
 
     describe('AuthService::checkLock', () => {
-        let adapterCheck: jest.Mock;
+        let adapterCheck: Mock;
 
         const registerFakeAdapter = (mode: LockMode) => {
-            adapterCheck = jest.fn();
+            adapterCheck = vi.fn();
             auth.registerLockAdapter({
                 type: mode,
                 check: adapterCheck,
-                create: jest.fn(),
-                delete: jest.fn(),
-                lock: jest.fn(),
-                unlock: jest.fn(),
+                create: vi.fn(),
+                delete: vi.fn(),
+                lock: vi.fn(),
+                unlock: vi.fn(),
             });
         };
 
@@ -191,7 +193,7 @@ describe('Core AuthService', () => {
             const lock: Lock = { mode: LockMode.SESSION, locked: false, ttl: 600 };
             adapterCheck.mockResolvedValue(lock);
 
-            const syncLock = jest.spyOn(auth, 'syncLock');
+            const syncLock = vi.spyOn(auth, 'syncLock');
             await auth.checkLock();
 
             expect(syncLock).toHaveBeenCalledTimes(1);
@@ -205,7 +207,7 @@ describe('Core AuthService', () => {
             const lock: Lock = { mode: LockMode.SESSION, locked: true, ttl: 600 };
             adapterCheck.mockResolvedValue(lock);
 
-            const syncLock = jest.spyOn(auth, 'syncLock');
+            const syncLock = vi.spyOn(auth, 'syncLock');
             await auth.checkLock();
 
             expect(syncLock).not.toHaveBeenCalled();
@@ -221,14 +223,14 @@ describe('Core AuthService', () => {
         });
 
         test('should short-circuit via `checkAutoLock` when TTL is expired and skip adapter check', async () => {
-            adapterCheck = jest.fn();
+            adapterCheck = vi.fn();
             auth.registerLockAdapter({
                 type: LockMode.SESSION,
                 check: adapterCheck,
-                create: jest.fn(),
-                delete: jest.fn(),
-                lock: jest.fn().mockResolvedValue({ mode: LockMode.SESSION, locked: true, ttl: 600 }),
-                unlock: jest.fn(),
+                create: vi.fn(),
+                delete: vi.fn(),
+                lock: vi.fn().mockResolvedValue({ mode: LockMode.SESSION, locked: true, ttl: 600 }),
+                unlock: vi.fn(),
             });
             authStore.setLockLastExtendTime(0);
             authStore.setLockTTL(1);
@@ -243,7 +245,7 @@ describe('Core AuthService', () => {
             registerFakeAdapter(LockMode.SESSION);
             adapterCheck.mockResolvedValue({ mode: LockMode.NONE, locked: false });
 
-            const syncLock = jest.spyOn(auth, 'syncLock');
+            const syncLock = vi.spyOn(auth, 'syncLock');
             await auth.checkLock();
 
             expect(syncLock).not.toHaveBeenCalled();
@@ -265,11 +267,11 @@ describe('Core AuthService', () => {
             authStore.setLockLastExtendTime(1234);
             auth.registerLockAdapter({
                 type: LockMode.SESSION,
-                check: jest.fn(),
-                create: jest.fn(),
-                delete: jest.fn(),
-                lock: jest.fn().mockResolvedValue({ mode: LockMode.SESSION, locked: true, ttl: 600 }),
-                unlock: jest.fn(),
+                check: vi.fn(),
+                create: vi.fn(),
+                delete: vi.fn(),
+                lock: vi.fn().mockResolvedValue({ mode: LockMode.SESSION, locked: true, ttl: 600 }),
+                unlock: vi.fn(),
             });
 
             await auth.lock(LockMode.SESSION, { soft: true });
@@ -284,14 +286,14 @@ describe('Core AuthService', () => {
             authStore.setLocalID(0);
             auth.registerLockAdapter({
                 type: LockMode.SESSION,
-                check: jest.fn(),
-                create: jest.fn(),
-                delete: jest.fn(),
-                lock: jest.fn(),
-                unlock: jest.fn().mockResolvedValue('token'),
+                check: vi.fn(),
+                create: vi.fn(),
+                delete: vi.fn(),
+                lock: vi.fn(),
+                unlock: vi.fn().mockResolvedValue('token'),
             });
 
-            const syncPersistedSession = jest.spyOn(auth, 'syncPersistedSession');
+            const syncPersistedSession = vi.spyOn(auth, 'syncPersistedSession');
             await auth.unlock({ mode: LockMode.SESSION, pin: '123456' });
 
             expect(syncPersistedSession).not.toHaveBeenCalled();
@@ -306,7 +308,7 @@ describe('Core AuthService', () => {
         });
 
         test('`lock` should release the resume lock', async () => {
-            auth.registerLockAdapter({ type: LockMode.SESSION, lock: jest.fn().mockResolvedValue({}) } as any);
+            auth.registerLockAdapter({ type: LockMode.SESSION, lock: vi.fn().mockResolvedValue({}) } as any);
             await auth.lock(LockMode.SESSION, { soft: true });
             expect(api.setResumeLock).toHaveBeenCalledWith(false);
         });
