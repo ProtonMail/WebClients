@@ -20,6 +20,7 @@ import useOLESFeatureStatus from '../../oles/useOLESFeatureStatus';
 import DriveConnectEntry from '../Modals/OAuth/Drive/DriveConnectEntry';
 import { DriveImportOutcomeModal } from '../Modals/OAuth/Drive/DriveImportOutcomeModal';
 import { driveOAuthViewsOverride } from '../Modals/OAuth/Drive/driveOAuthViews';
+import { useIsDriveImportRestricted } from '../Modals/OAuth/Drive/useIsDriveImportRestricted';
 import ImportsTable from '../ReportsTable/ImportsTable';
 import { SyncsTable } from '../ReportsTable/SyncsTable';
 import ProviderCard from './ProviderCards/ProviderCard';
@@ -36,6 +37,8 @@ const SettingsArea = ({ config, app }: Props) => {
     const isDriveEnabled = useFlag('EasySwitchB2CForDriveWeb');
     // Also needs the base Drive flag, which loads the Drive SDK provider this flow depends on.
     const isDriveNewUIEnabled = useFlag('EasySwitchB2CForDriveWebNewUI') && isDriveEnabled && app === APPS.PROTONDRIVE;
+    // B2B admins and members --> no Drive import section
+    const isDriveImportRestricted = useIsDriveImportRestricted();
     const [DriveProvider, setDriveProvider] = useState<
         ((props: { children: (drive: ProtonDriveClient | undefined) => ReactNode }) => ReactNode) | null
     >(null);
@@ -59,18 +62,20 @@ const SettingsArea = ({ config, app }: Props) => {
         <EasySwitchStoreProvider drive={drive} oauthViews={isDriveNewUIEnabled ? driveOAuthViewsOverride : undefined}>
             <EasySwitchStoreInitializer>
                 <PrivateMainSettingsArea config={config}>
-                    <SettingsSectionWide data-testid="SettingsArea:forwardSection">
-                        <ProviderCard
-                            app={app}
-                            entryView={isDriveNewUIEnabled ? DriveConnectEntry : undefined}
-                            showAdvancedImport={!isDriveNewUIEnabled}
-                            source={
-                                hasAccessToBYOE
-                                    ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS_BYOE
-                                    : EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS
-                            }
-                        />
-                    </SettingsSectionWide>
+                    {isDriveNewUIEnabled && isDriveImportRestricted ? null : (
+                        <SettingsSectionWide data-testid="SettingsArea:forwardSection">
+                            <ProviderCard
+                                app={app}
+                                entryView={isDriveNewUIEnabled ? DriveConnectEntry : undefined}
+                                showAdvancedImport={!isDriveNewUIEnabled}
+                                source={
+                                    hasAccessToBYOE
+                                        ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS_BYOE
+                                        : EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS
+                                }
+                            />
+                        </SettingsSectionWide>
+                    )}
                     <SettingsSectionWide>
                         {hasAccessToOLES ? (
                             <ImporterOrganizationsProvider>
