@@ -36,6 +36,7 @@ const NODE = {
   name: { ok: true, value: 'Plans' },
 } as unknown as NodeEntity
 const TRASHED_NODE = { ...NODE, trashTime: new Date() } as NodeEntity
+const SHARED_DIRECTLY_NODE = { ...NODE, membership: {} } as NodeEntity
 
 const drive = {
   trashNodes: jest.fn(),
@@ -106,6 +107,17 @@ describe('useDocumentFileActions', () => {
       expect(getNewWindow).toHaveBeenCalledWith('http://docs.localhost/u/3/doc2')
     })
 
+    test.each([
+      { who: 'a viewer', role: 'Viewer' as const, node: NODE },
+      { who: 'an editor of a document shared directly', role: 'Editor' as const, node: SHARED_DIRECTLY_NODE },
+    ])('for $who, opens the bare doc2 URL, which creates the document in My files', ({ role, node }) => {
+      const { result } = renderActions({ role, node })
+
+      act(() => result.current.newDocument())
+
+      expect(getNewWindow).toHaveBeenCalledWith('http://docs.localhost/u/3/doc2')
+    })
+
     test('does nothing before the node is there', () => {
       const { result } = renderActions({ node: undefined })
 
@@ -155,6 +167,19 @@ describe('useDocumentFileActions', () => {
       act(() => result.current.newSpreadsheet())
 
       await waitFor(() => expect(driveCompat.createDocumentNode).toHaveBeenCalled())
+      expect(driveCompat.createDocumentNode.mock.calls[0][0]).toEqual({ volumeId: 'MYVOLUME', linkId: 'MYFILES' })
+    })
+
+    test.each([
+      { who: 'a viewer', role: 'Viewer' as const, node: NODE },
+      { who: 'an editor of a document shared directly', role: 'Editor' as const, node: SHARED_DIRECTLY_NODE },
+    ])('for $who, creates the sheet in My files', async ({ role, node }) => {
+      const { result } = renderActions({ role, node })
+
+      act(() => result.current.newSpreadsheet())
+
+      await waitFor(() => expect(driveCompat.createDocumentNode).toHaveBeenCalled())
+      expect(drive.getAvailableName.mock.calls[0][0]).toBe('MYVOLUME~MYFILES')
       expect(driveCompat.createDocumentNode.mock.calls[0][0]).toEqual({ volumeId: 'MYVOLUME', linkId: 'MYFILES' })
     })
 

@@ -15,8 +15,9 @@ export function getDocumentRole(hierarchy: Pick<NodeEntity, 'directRole'>[]): Do
 }
 
 /**
- * Whether the user may move, rename and trash the document, and make a copy next to it: editors and admins,
- * of a document not shared with them directly. The homepage's `DocContextMenu.tsx` `canOrganize` is the same rule.
+ * Whether the user may move, rename and trash the document, and make a copy or a new document next to it: editors
+ * and admins, of a document not shared with them directly. The homepage's `DocContextMenu.tsx` `canOrganize` is the same
+ * rule.
  */
 export function canOrganizeDocument(role: DocumentRole, node: Pick<NodeEntity, 'membership'>) {
   return (role === 'Editor' || role === 'Admin') && !node.membership

@@ -50,8 +50,14 @@ describe('documentFileActions', () => {
   afterEach(() => jest.clearAllMocks())
 
   test('getNewDocumentHref creates in the sibling folder, without a local ID too', () => {
-    expect(getNewDocumentHref({ uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT' }, undefined)).toBe(
+    expect(getNewDocumentHref({ uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT' }, true, undefined)).toBe(
       'http://docs.localhost/doc2?mode=create&volumeId=VOLUME&parentLinkId=PARENT',
+    )
+  })
+
+  test('getNewDocumentHref for a user who may not organize the node is the bare doc2 URL, which creates in My files', () => {
+    expect(getNewDocumentHref({ uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT' }, false, undefined)).toBe(
+      'http://docs.localhost/doc2',
     )
   })
 
