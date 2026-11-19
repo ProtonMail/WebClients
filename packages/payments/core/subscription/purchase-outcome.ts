@@ -8,7 +8,9 @@ import { canRunAlongside } from './lumo-purchase-rules';
 import type { MultiSubscriptionContext } from './multi-subscription-context';
 
 export type PurchaseOutcome =
-    { type: 'new-subscription' } | { type: 'replaces'; subscription: Subscription } | { type: 'refused' };
+    | { type: 'new-subscription' }
+    | { type: 'replaces'; subscription: Subscription }
+    | { type: 'refused' };
 
 const refused: PurchaseOutcome = { type: 'refused' };
 
@@ -55,6 +57,7 @@ export const getPurchaseOutcome = (context: MultiSubscriptionContext, planIDs: P
     const remainingSubscriptions = subscriptions.filter((subscription) => subscription !== replacedSubscription);
     const allowedNextToTheRemainingSubscriptions =
         remainingSubscriptions.length === 0 ||
+        (!context.lumoMultiSubscriptions && remainingSubscriptions.every(isManagedExternally)) ||
         canRunAlongside({ ...context, subscriptions: remainingSubscriptions }, planIDs);
     if (!allowedNextToTheRemainingSubscriptions) {
         return refused;
@@ -62,3 +65,16 @@ export const getPurchaseOutcome = (context: MultiSubscriptionContext, planIDs: P
 
     return { type: 'replaces', subscription: replacedSubscription };
 };
+
+export const getChangedSubscription = (
+    context: MultiSubscriptionContext,
+    planIDs: PlanIDs
+): Subscription | undefined => {
+    const outcome = getPurchaseOutcome(context, planIDs);
+    return outcome.type === 'replaces' ? outcome.subscription : undefined;
+};
+
+export const getSubscriptionChangedByPlan = (
+    context: MultiSubscriptionContext,
+    planName: keyof PlanIDs
+): Subscription | undefined => getChangedSubscription(context, { [planName]: 1 });
