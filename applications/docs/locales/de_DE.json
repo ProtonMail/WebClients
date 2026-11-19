@@ -934,6 +934,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
+      "New": [
+        "Neu"
+      ],
+      "Skip to main content": [
+        "Zum Hauptinhalt springen"
       ]
     },
     "Actions message": {
@@ -3599,6 +3605,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nicht entschlüsselbarer Name"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Es konnte nicht geprüft werden, ob es aus dem Papierkorb wiederhergestellt werden kann."
       ]
     },
     "error": {
@@ -7379,7 +7388,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "Du hast nun Zugriff auf die neue ${ CALENDAR_APP_NAME }. ${ link }"
+        "Du hast nun Zugriff auf den neuen ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {
