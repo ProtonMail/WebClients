@@ -4,7 +4,7 @@ import { RemoveButton } from '../statelessComponents/RemoveButton';
 import { RenameButton } from '../statelessComponents/RenameButton';
 
 interface Props {
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: React.RefObject<HTMLElement | null>;
     isOpen: boolean;
     position: ContextMenuPosition | undefined;
     open: () => void;

@@ -13,7 +13,7 @@ import { RestoreButton } from '../statelessComponents/RestoreButton';
 import type { TrashItem } from '../useTrash.store';
 
 interface Props {
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: React.RefObject<HTMLElement | null>;
     isOpen: boolean;
     position: ContextMenuPosition | undefined;
     open: () => void;

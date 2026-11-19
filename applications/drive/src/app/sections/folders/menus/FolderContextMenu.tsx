@@ -29,7 +29,7 @@ export function FolderContextMenu({
     uploadFile,
     uploadFolder,
 }: {
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: React.RefObject<HTMLElement | null>;
     isOpen: boolean;
     position: ContextMenuPosition | undefined;
     open: () => void;

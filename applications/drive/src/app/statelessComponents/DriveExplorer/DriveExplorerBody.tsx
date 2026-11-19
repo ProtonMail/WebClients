@@ -1,5 +1,6 @@
-import type { ReactNode, RefObject } from 'react';
+import type { ReactNode } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import clsx from '@proton/utils/clsx';
@@ -23,7 +24,7 @@ import { useListVirtualizer } from './useListVirtualizer';
 interface DriveExplorerBodyProps {
     cells: CellDefinition[];
     itemIds: string[];
-    containerRef: RefObject<HTMLDivElement>;
+    containerRef: RefObjectReact18Compat<HTMLDivElement>;
     config?: DriveExplorerConfig;
     events?: DriveExplorerEvents;
     conditions: DriveExplorerConditions;

@@ -21,7 +21,7 @@ interface DriveExplorerHeaderProps {
     sort?: DriveExplorerSort;
     caption?: string;
     config?: DriveExplorerConfig;
-    containerRef: RefObject<HTMLDivElement>;
+    containerRef: RefObject<HTMLDivElement | null>;
     itemCount: number;
     layout: LayoutSetting;
     loading: boolean;

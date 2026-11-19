@@ -1,5 +1,6 @@
-import { type ReactNode, type RefObject, useRef } from 'react';
+import { type ReactNode, useRef } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import useElementRect from '@proton/hooks/useElementRect';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
@@ -21,7 +22,7 @@ import { useItemVisibility } from './useItemVisibility';
 interface DriveExplorerGridBodyProps {
     grid: GridDefinition;
     itemIds: string[];
-    containerRef: RefObject<HTMLDivElement>;
+    containerRef: RefObjectReact18Compat<HTMLDivElement>;
     config?: DriveExplorerConfig;
     events?: DriveExplorerEvents;
     conditions: DriveExplorerConditions;

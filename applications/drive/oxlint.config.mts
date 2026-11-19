@@ -1,5 +1,6 @@
 import { createOxlintConfig } from '@proton/oxlint-config/createOxlintConfig';
 import { allGlobs } from '@proton/oxlint-config/globs';
+import { refObjectNullOverride } from '@proton/oxlint-config/react19';
 
 export default createOxlintConfig({
     // The shared @proton/drive fence is skipped for this app: it owns the drive code, so it may import any folder
@@ -18,6 +19,7 @@ export default createOxlintConfig({
         ],
     },
     overrides: [
+        refObjectNullOverride,
         {
             files: allGlobs,
             rules: {

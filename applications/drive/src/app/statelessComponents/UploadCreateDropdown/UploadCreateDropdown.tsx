@@ -15,7 +15,7 @@ interface UploadCreateDropdownProps {
     onCreateFolder?: () => void;
     onCreateDocument?: () => void;
     onCreateSpreadsheet?: () => void;
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: React.RefObject<HTMLElement | null>;
     isOpen: boolean;
     onClose: () => void;
 }

@@ -18,7 +18,7 @@ import { EmptyRootFolder } from './EmptyRootFolder';
 const getEmptyContent = (
     isFreeUploadInProgress: boolean,
     folder: ReturnType<typeof useFolderStore.getState>['folder'],
-    anchorRef: React.RefObject<HTMLDivElement>,
+    anchorRef: React.Ref<HTMLDivElement>,
     close: () => void,
     permissions: ReturnType<typeof useFolderStore.getState>['permissions'],
     isEasySwitchNewUIEnabled: boolean

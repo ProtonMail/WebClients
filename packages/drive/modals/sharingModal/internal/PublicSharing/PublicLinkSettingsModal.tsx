@@ -1,4 +1,4 @@
-import { type ChangeEvent, type FormEvent, useEffect, useState } from 'react';
+import { type FormEvent, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -206,8 +206,8 @@ const PublicLinkSettingsModal = ({
                                 label={false}
                                 autoComplete="new-password"
                                 value={password}
-                                onInput={(e: ChangeEvent<HTMLInputElement>) => {
-                                    setPassword(e.target.value);
+                                onInput={(e: FormEvent<HTMLInputElement>) => {
+                                    setPassword(e.currentTarget.value);
                                 }}
                                 error={
                                     isPasswordInvalid &&

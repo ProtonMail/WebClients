@@ -3,7 +3,7 @@ import type React from 'react';
 import type { AlbumProperties, PhotoProperties } from '../../../legacy/store';
 
 export interface ContextMenuProps {
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: React.RefObject<HTMLElement | null>;
     children?: React.ReactNode;
     isOpen: boolean;
     position:
