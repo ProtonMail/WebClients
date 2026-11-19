@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useMember } from '@proton/account/member/hook';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -14,6 +15,7 @@ import { ApiUsageDashboard } from './ApiUsageDashboard';
 import { ApiUsagePanel } from './ApiUsagePanel';
 import { useCanBuyLumoCredits } from './useCanBuyLumoCredits';
 
+jest.mock('@proton/account/entitlementCatalog/hooks');
 jest.mock('@proton/account/member/hook');
 jest.mock('@proton/account/paymentMethods/hooks');
 jest.mock('@proton/account/user/hooks');
@@ -30,13 +32,16 @@ const renderedProps = ({
     paymentMethods = [card],
     autoTopUpFlag = true,
     canBuyLumoCredits = true,
+    hasLumoCredits = true,
 }: {
     Role?: USER_ROLES;
     member?: { Subscriber?: MEMBER_SUBSCRIBER };
     paymentMethods?: object[];
     autoTopUpFlag?: boolean;
     canBuyLumoCredits?: boolean;
+    hasLumoCredits?: boolean;
 } = {}) => {
+    (useEntitlementChecksForOrgAndUser as jest.Mock).mockReturnValue([{ hasLumoCredits }, false]);
     (useCanBuyLumoCredits as jest.Mock).mockReturnValue(canBuyLumoCredits);
     (useFlag as jest.Mock).mockImplementation(
         (name: string) => name === 'LumoAllowAutomaticCreditTopUps' && autoTopUpFlag
@@ -76,6 +81,10 @@ describe('ApiUsagePanel', () => {
         const member = { Subscriber: MEMBER_SUBSCRIBER.NON_PAYER };
 
         expect(renderedProps({ Role: USER_ROLES.ADMIN_ROLE, member }).canManageBalance).toBe(false);
+    });
+
+    it('does not let a user whose plan has no Lumo credits manage the balance', () => {
+        expect(renderedProps({ hasLumoCredits: false }).canManageBalance).toBe(false);
     });
 
     it('does not let a user who cannot pay manage the balance', () => {

@@ -1,3 +1,4 @@
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useMember } from '@proton/account/member/hook';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -31,6 +32,7 @@ export const ApiUsagePanel = () => {
     const { isOrgAdmin, userIsMember } = useLumoPlan();
     const [user] = useUser();
     const [member] = useMember();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
     const [paymentMethods] = usePaymentMethods();
     const showAutoTopUp = useFlag('LumoAllowAutomaticCreditTopUps');
     const canTopUp = useCanBuyLumoCredits();
@@ -42,7 +44,9 @@ export const ApiUsagePanel = () => {
         <ApiUsageDashboard
             isOrgAdmin={effectiveOrgAdmin}
             isOrgMember={debugOrganizationMemberView || (!effectiveOrgAdmin && userIsMember)}
-            canManageBalance={user.canPay && member?.Subscriber !== MEMBER_SUBSCRIBER.NON_PAYER}
+            canManageBalance={
+                user.canPay && member?.Subscriber !== MEMBER_SUBSCRIBER.NON_PAYER && entitlements.hasLumoCredits
+            }
             canChargeAutoTopUp={canChargeAutoTopUp(paymentMethods)}
             showAutoTopUp={showAutoTopUp}
             canTopUp={canTopUp}
