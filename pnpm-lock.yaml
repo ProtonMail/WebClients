@@ -2080,8 +2080,8 @@ importers:
         specifier: catalog:docs
         version: 0.32.0(yjs@13.6.27)
       '@proton-docs/docs-editor':
-        specifier: 0.2.0
-        version: 0.2.0(@lexical/clipboard@0.32.0)(@lexical/code@0.32.0)(@lexical/hashtag@0.32.0)(@lexical/headless@0.32.0)(@lexical/html@0.32.0)(@lexical/link@0.32.0)(@lexical/list@0.32.0)(@lexical/markdown@0.32.0)(@lexical/overflow@0.32.0)(@lexical/react@0.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.32.0)(@lexical/selection@0.32.0)(@lexical/table@0.32.0(patch_hash=21652bf350fea212da7d186363ad2cb487a81bc17c8dacc13290d86909fd8a29))(@lexical/text@0.32.0)(@lexical/utils@0.32.0)(@lexical/yjs@0.32.0(yjs@13.6.27))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(lexical@0.32.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
+        specifier: 0.2.2
+        version: 0.2.2(@lexical/clipboard@0.32.0)(@lexical/code@0.32.0)(@lexical/hashtag@0.32.0)(@lexical/headless@0.32.0)(@lexical/html@0.32.0)(@lexical/link@0.32.0)(@lexical/list@0.32.0)(@lexical/markdown@0.32.0)(@lexical/overflow@0.32.0)(@lexical/react@0.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.32.0)(@lexical/selection@0.32.0)(@lexical/table@0.32.0(patch_hash=21652bf350fea212da7d186363ad2cb487a81bc17c8dacc13290d86909fd8a29))(@lexical/text@0.32.0)(@lexical/utils@0.32.0)(@lexical/yjs@0.32.0(yjs@13.6.27))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(lexical@0.32.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
       '@proton-docs/sheets-editor':
         specifier: 0.1.87
         version: 0.1.87(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)
@@ -17019,8 +17019,8 @@ packages:
   '@protobufjs/utf8@1.1.1':
     resolution: {integrity: sha512-oOAWABowe8EAbMyWKM0tYDKi8Yaox52D+HWZhAIJqQXbqe0xI/GV7FhLWqlEKreMkfDjshR5FKgi3mnle0h6Eg==}
 
-  '@proton-docs/docs-editor@0.2.0':
-    resolution: {integrity: sha512-j3/czrwZuwy5i/C0mhmk/5TultYNVfFfKH171Hm7Xf/gPhVb6WKKPLuq74GY2AlT46DestfK3t71nMdnY0edxQ==}
+  '@proton-docs/docs-editor@0.2.2':
+    resolution: {integrity: sha256-ZR4fZA0nyVuPotfiTD658t6RUvIIzU9SeIbRh6blns0=}
     peerDependencies:
       '@lexical/clipboard': 0.32.0
       '@lexical/code': 0.32.0
@@ -17045,12 +17045,12 @@ packages:
       yjs: ^13.6.15
 
   '@proton-docs/realtime-sdk@0.11.15':
-    resolution: {integrity: sha512-/yq1hjN+BlBcnxXccfNrjor8a5e6GdD4TzkD6EAIjRzWkPXkFjl6pos+g+svO9OEcyldJzWXwbD+lo1Tzl/pyg==}
+    resolution: {integrity: sha256-Beksmc0/Qf1cd0NTuIAvwgYP5m278ly13RuY5qiaK7A=}
     peerDependencies:
       yjs: ^13.5.0
 
   '@proton-docs/sheets-editor@0.1.87':
-    resolution: {integrity: sha512-uab3hoO/rcV81mY2wG4XrSU7PDMKQxby7rFA36ufDLChKkIZNbw4z3FLiV3LT1fsNfGkkdwOYQuuGS/7Qa6NZw==}
+    resolution: {integrity: sha256-kV0geUFcrbbB0Tvq4x3SKlzzvulPZWp9pTpAANCIQF4=}
     peerDependencies:
       react: ^18.3.1
       react-dom: ^18.3.1
@@ -17079,7 +17079,7 @@ packages:
     resolution: {integrity: sha512-hm2m+L2AESN+/F0erIBqt3/qce8eHE0VbLj4uUjKx8PUFqZ1lB6boHwd5ZK4g+3EKq1lr/n596YTJXX6f6ITEg==}
 
   '@protontech/crypto@2.2.0':
-    resolution: {integrity: sha512-WjoNBMn07LxnYE6QLgniEnNfP0Apmvqgi8P48udFtvAxhSnVwiHqmXxMaVHJxBRaJev/DlOKJ67OGYj+3yGYPA==}
+    resolution: {integrity: sha256-a1IzJ+1yxhc/hsDs6XCZYXTGyBvlqi+P+L0cPabd6uQ=}
 
   '@protontech/drive-sdk@0.23.0':
     resolution: {integrity: sha512-64oDsEBwjRiuQCxVi/ogoiked8Whm+I3DorUkD4n4esaqREBQ1qHTobzwkKFR+4h8kkc7K5KcjPMPDfZiD8lHw==}
@@ -17093,7 +17093,7 @@ packages:
     resolution: {integrity: sha512-XwC15KtHFwExKYfCn4d0i2sjV4XTSMlsmSAPZluczR9GHzwi7oCMBHOzhHg3EbhCYjqLJBAxGHFsepfKyfP9ng==}
 
   '@protontech/logger@1.0.0':
-    resolution: {integrity: sha512-Plgc+hND4ngpj1+LP+rLhvbD7CYiDZ3agwVZ8/rx0G6oT3mRSLfDMNKnyi+6W0qEYDLKNrP5cy8O8hJynUGWxQ==}
+    resolution: {integrity: sha256-zQE88w8kSggacpCzchAYgtBPr7dvil1SIfyB0iitZcI=}
     peerDependencies:
       '@protontech/crypto': ^2.2.0
 
@@ -34939,7 +34939,7 @@ snapshots:
 
   '@protobufjs/utf8@1.1.1': {}
 
-  '@proton-docs/docs-editor@0.2.0(@lexical/clipboard@0.32.0)(@lexical/code@0.32.0)(@lexical/hashtag@0.32.0)(@lexical/headless@0.32.0)(@lexical/html@0.32.0)(@lexical/link@0.32.0)(@lexical/list@0.32.0)(@lexical/markdown@0.32.0)(@lexical/overflow@0.32.0)(@lexical/react@0.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.32.0)(@lexical/selection@0.32.0)(@lexical/table@0.32.0(patch_hash=21652bf350fea212da7d186363ad2cb487a81bc17c8dacc13290d86909fd8a29))(@lexical/text@0.32.0)(@lexical/utils@0.32.0)(@lexical/yjs@0.32.0(yjs@13.6.27))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(lexical@0.32.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)':
+  '@proton-docs/docs-editor@0.2.2(@lexical/clipboard@0.32.0)(@lexical/code@0.32.0)(@lexical/hashtag@0.32.0)(@lexical/headless@0.32.0)(@lexical/html@0.32.0)(@lexical/link@0.32.0)(@lexical/list@0.32.0)(@lexical/markdown@0.32.0)(@lexical/overflow@0.32.0)(@lexical/react@0.32.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27))(@lexical/rich-text@0.32.0)(@lexical/selection@0.32.0)(@lexical/table@0.32.0(patch_hash=21652bf350fea212da7d186363ad2cb487a81bc17c8dacc13290d86909fd8a29))(@lexical/text@0.32.0)(@lexical/utils@0.32.0)(@lexical/yjs@0.32.0(yjs@13.6.27))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(lexical@0.32.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(y-protocols@1.0.6(yjs@13.6.27))(yjs@13.6.27)':
     dependencies:
       '@ariakit/react': 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@emoji-mart/data': 1.2.1
