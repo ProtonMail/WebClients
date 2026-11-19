@@ -59,8 +59,6 @@ export function SheetsAdapter({ children, clientInvoker, sheetsEditor }: SheetsA
 
   const { userName, receivedEverythingFromRTS, canOrganize } = useSyncedState()
   const canEdit = application.getRole().canEdit()
-  // The client's Move to trash rule, as its title menu and the homepage apply it
-  const canTrash = canOrganize
   const logger: SheetsLogger = application.logger
 
   const shellToEditorActions = useMemo<SheetsShellToEditorActions>(
@@ -133,7 +131,7 @@ export function SheetsAdapter({ children, clientInvoker, sheetsEditor }: SheetsA
       userName,
       isDevOrBlack,
       canEdit,
-      canTrash,
+      canOrganize,
       versionInfo: {
         environment: application.environment,
         version: application.appVersion,
@@ -149,7 +147,7 @@ export function SheetsAdapter({ children, clientInvoker, sheetsEditor }: SheetsA
       application.appVersion,
       application.environment,
       canEdit,
-      canTrash,
+      canOrganize,
       logger,
       theme,
       featureFlags,
