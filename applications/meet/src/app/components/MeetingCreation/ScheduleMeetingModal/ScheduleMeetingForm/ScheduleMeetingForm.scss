@@ -39,7 +39,7 @@
 		word-break: break-word;
 	}
 
-	.field-two-assist {
+	.field-two-assist:empty {
 		display: none !important;
 	}
 

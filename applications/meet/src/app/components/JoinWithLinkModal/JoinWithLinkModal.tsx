@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Input } from '@proton/atoms/Input/Input';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { parseMeetingLink } from '@proton/shared/lib/meet/parseMeetingLink';
@@ -82,7 +82,7 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                         {c('Info').t`Paste your ${MEET_APP_NAME} link to join a secure meeting`}
                     </div>
                 </div>
-                <div className="flex flex-column w-full relative">
+                <div className="flex flex-column w-full">
                     <div className={clsx('flex items-center w-full justify-start flex-nowrap gap-2 my-4')}>
                         <img
                             src={linkIcon}
@@ -90,7 +90,9 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                             className="w-custom h-custom"
                             style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
                         />
-                        <Input
+                        <InputFieldTwo
+                            rootClassName="flex-1"
+                            assistContainerClassName="meeting-link-input-error text-left"
                             className="meeting-link-input rounded-full p-2"
                             type="url"
                             value={meetingLink}
@@ -99,7 +101,7 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                             aria-label={c('Label').t`Meeting link`}
                             onFocus={() => setIsInputFocused(true)}
                             onBlur={() => setIsInputFocused(false)}
-                            error={isError}
+                            error={isError ? c('Error').t`Paste the full meeting link` : undefined}
                             autoFocus
                             suffix={
                                 <Button
@@ -112,11 +114,6 @@ export const JoinWithLinkModal = ({ open, onClose, onJoin }: JoinWithLinkModalPr
                             }
                         />
                     </div>
-                    {isError && (
-                        <span className="meeting-link-input-error absolute text-left text-sm color-danger ml-11 mb-2">{c(
-                            'Error'
-                        ).t`Invalid meeting link`}</span>
-                    )}
                 </div>
                 <div className="flex flex-column md:flex-row gap-4 w-full py-10">
                     <Button
