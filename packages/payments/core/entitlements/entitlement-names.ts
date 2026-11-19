@@ -48,6 +48,8 @@ export enum EntitlementName {
     InvitationRefillInterval = 'invitation-refill-interval',
     /** Loyalty Bonus Space for every year of loyalty */
     LoyaltyBonusSpace = 'loyalty-bonus-space',
+    LumoApi = 'lumo-api',
+    LumoCredits = 'lumo-credits',
     /** Indicates whether this plan supports managed members. */
     ManagedMembers = 'managed-members',
     /** The maximum amount of active meetings */
