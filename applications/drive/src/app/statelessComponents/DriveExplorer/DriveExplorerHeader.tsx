@@ -138,6 +138,7 @@ export const DriveExplorerHeader = ({
                                         className="ml-2 expand-click-area"
                                         checked={headerCheckboxState.checked}
                                         indeterminate={headerCheckboxState.indeterminate}
+                                        disabled={itemCount === 0}
                                         onChange={handleHeaderCheckboxClick}
                                         data-testid="checkbox-select-all"
                                     >

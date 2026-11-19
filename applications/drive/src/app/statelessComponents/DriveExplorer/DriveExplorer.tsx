@@ -310,6 +310,8 @@ const DriveExplorer = ({
     const resolvedConditions: DriveExplorerConditions = {
         isDraggable: () => true,
         isDoubleClickable: () => true,
+        isSelectable: () => true,
+        hasContextMenu: () => true,
         ...conditions,
     };
 
@@ -374,7 +376,7 @@ const DriveExplorer = ({
                 config={config}
                 containerRef={containerRef}
                 cells={cells}
-                itemCount={itemIds.length}
+                itemCount={itemIds.filter(resolvedConditions.isSelectable).length}
                 layout={layout}
                 loading={loading}
                 showCheckboxColumn={showCheckboxColumn}

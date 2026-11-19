@@ -10,7 +10,7 @@ import { IMPORT_ERROR } from '../../../../interface';
 const sanitizeFolderNamePart = (name: string) => name.replace(/[<>:"/\\|?*\x00-\x1F]/g, '-');
 
 // We only support google for now
-const getDriveImportFolderName = (importedEmail: string) => {
+export const getDriveImportFolderName = (importedEmail: string) => {
     const accountName = sanitizeFolderNamePart(importedEmail.split('@')[0]);
     return `google-drive-${accountName}`;
 };

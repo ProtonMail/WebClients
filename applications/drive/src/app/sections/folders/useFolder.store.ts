@@ -72,7 +72,6 @@ type FolderState = {
     role: MemberRole;
     permissions: FolderPermissions;
     importingFolders: Map<string, ImportingFolder>;
-    itemsWithImportPosition: Set<string>;
 };
 
 type FolderActions = {
@@ -120,15 +119,10 @@ const initialState: FolderState = {
         canReportAbuse: false,
     },
     importingFolders: new Map(),
-    itemsWithImportPosition: new Set(),
 };
 
 function resort(state: FolderState): string[] {
-    const sortedUids = sortFolderItems(Array.from(state.items.values()), state.sortField, state.sortDirection);
-    return [
-        ...sortedUids.filter((uid) => state.itemsWithImportPosition.has(uid)),
-        ...sortedUids.filter((uid) => !state.itemsWithImportPosition.has(uid)),
-    ];
+    return sortFolderItems(Array.from(state.items.values()), state.sortField, state.sortDirection);
 }
 
 export const useFolderStore = create<FolderStore>()((set, get) => ({
@@ -185,19 +179,13 @@ export const useFolderStore = create<FolderStore>()((set, get) => ({
                 sortedItemUids: state.sortedItemUids.filter((id) => id !== uid),
             };
         }),
-    setSorting: ({ sortField, direction }) =>
-        set((state) => {
-            const itemsWithImportPosition = new Set(state.importingFolders.keys());
-            const newState = { ...state, sortField, sortDirection: direction, itemsWithImportPosition };
-            return { sortField, sortDirection: direction, itemsWithImportPosition, sortedItemUids: resort(newState) };
-        }),
-    setImportingFolders: (folders) =>
-        set((state) => {
-            const importingFolders = new Map(folders.map((folder) => [folder.uid, folder]));
-            const itemsWithImportPosition = new Set([...state.itemsWithImportPosition, ...importingFolders.keys()]);
-            const newState = { ...state, importingFolders, itemsWithImportPosition };
-            return { importingFolders, itemsWithImportPosition, sortedItemUids: resort(newState) };
-        }),
+    setSorting: ({ sortField, direction }) => {
+        const state = get();
+        const allItems = Array.from(state.items.values());
+        const sortedItemUids = sortFolderItems(allItems, sortField, direction);
+        set({ sortField, sortDirection: direction, sortedItemUids });
+    },
+    setImportingFolders: (folders) => set({ importingFolders: new Map(folders.map((folder) => [folder.uid, folder])) }),
     setPermissions: (permissions) => set({ permissions }),
     setFolder: (folder, treeEventScopeId) => set({ folder, treeEventScopeId }),
     setError: (error) => set({ error }),
@@ -209,7 +197,6 @@ export const useFolderStore = create<FolderStore>()((set, get) => ({
             sortField: state.sortField,
             sortDirection: state.sortDirection,
             importingFolders: state.importingFolders,
-            itemsWithImportPosition: new Set(state.importingFolders.keys()),
         })),
     setHasEverLoaded: () => set({ hasEverLoaded: true }),
     checkAndSetHasEverLoaded: () => {

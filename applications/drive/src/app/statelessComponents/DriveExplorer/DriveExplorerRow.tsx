@@ -176,7 +176,9 @@ export const DriveExplorerRow = ({
                         style={{ '--w-custom': '2.75rem' }}
                         data-testid="checkbox"
                     >
-                        <CheckboxCell className="ml-2" uid={itemId} selectionMethods={selection.selectionMethods} />
+                        {conditions.isSelectable(itemId) && (
+                            <CheckboxCell className="ml-2" uid={itemId} selectionMethods={selection.selectionMethods} />
+                        )}
                     </TableCell>
                 ) : (
                     <TableCell className="m-0">
@@ -195,12 +197,21 @@ export const DriveExplorerRow = ({
                     })}
                 {contextMenuControls && (
                     <TableCell className="m-0 flex items-center relative z-up" data-testid="column-options">
-                        <ContextMenuCellWithControls
-                            uid={itemId}
-                            isSelected={isSelected}
-                            contextMenuControls={contextMenuControls}
-                            selectionMethods={selection.selectionMethods}
-                        />
+                        {conditions.hasContextMenu(itemId) ? (
+                            <ContextMenuCellWithControls
+                                uid={itemId}
+                                isSelected={isSelected}
+                                contextMenuControls={contextMenuControls}
+                                selectionMethods={selection.selectionMethods}
+                            />
+                        ) : (
+                            // Small icon button size (28px) --> rows without a menu keep their columns aligned.
+                            <div
+                                className="w-custom"
+                                style={{ '--w-custom': '1.75rem' }}
+                                data-testid="no-context-menu"
+                            />
+                        )}
                     </TableCell>
                 )}
             </TableRow>

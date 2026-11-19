@@ -42,6 +42,7 @@ jest.mock('../../../legacy/components/sections/useIsEditEnabled', () => ({
 jest.mock('../../../legacy/hooks/drive/useActiveShare', () => ({
     useActiveShare: () => ({
         activeFolder: { shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' },
+        defaultShareRoot: { shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' },
     }),
 }));
 

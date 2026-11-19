@@ -135,6 +135,8 @@ export interface DriveExplorerEvents {
 export interface DriveExplorerConditions {
     isDraggable: (uid: string) => boolean;
     isDoubleClickable: (uid: string) => boolean;
+    isSelectable: (uid: string) => boolean;
+    hasContextMenu: (uid: string) => boolean;
 }
 
 /**

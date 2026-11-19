@@ -46,7 +46,12 @@ const Activator = ({ events, conditions }: { events: DriveExplorerEvents; condit
 };
 
 const renderActivator = (
-    conditions: DriveExplorerConditions = { isDraggable: () => true, isDoubleClickable: () => true }
+    conditions: DriveExplorerConditions = {
+        isDraggable: () => true,
+        isDoubleClickable: () => true,
+        isSelectable: () => true,
+        hasContextMenu: () => true,
+    }
 ) => {
     const onItemDoubleClick = jest.fn();
     render(<Activator events={{ onItemDoubleClick }} conditions={conditions} />);
@@ -168,6 +173,8 @@ describe('useItemInteraction touch handling', () => {
         const { onItemDoubleClick, activator } = renderActivator({
             isDraggable: () => true,
             isDoubleClickable: () => false,
+            isSelectable: () => true,
+            hasContextMenu: () => true,
         });
 
         tap(activator);
