@@ -123,7 +123,6 @@ const PublicAppMainRoutes = () => {
                                         SSO_PATHS.SPACES_SIGNUP,
                                         SSO_PATHS.PORKBUN_SIGNUP,
                                         SSO_PATHS.PORKBUN_SIGN_IN,
-                                        SSO_PATHS.BORN_PRIVATE,
                                         // A sales-provisioned link (`provisioningToken`) keeps the /vpn path but
                                         // signs up here, since this signup resolves and redeems the deal. The VPN
                                         // signup ignores the token, so links without one still go to it.
