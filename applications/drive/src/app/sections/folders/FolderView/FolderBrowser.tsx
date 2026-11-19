@@ -12,7 +12,7 @@ import { MemberRole, getDrive, splitNodeUid } from '@proton/drive/sdk';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import type { DriveFolder } from '../../../legacy/hooks/drive/useActiveShare';
+import { type DriveFolder, useActiveShare } from '../../../legacy/hooks/drive/useActiveShare';
 import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
@@ -82,6 +82,12 @@ export function FolderBrowser({
     );
 
     const sortedItemUids = sortedList.map((item) => item.uid);
+    const { defaultShareRoot } = useActiveShare();
+    // Imports go to My files --> no import rows in computers or other roots.
+    const isMyFilesRoot = volumeId === defaultShareRoot.volumeId && linkId === defaultShareRoot.linkId;
+    const importRowUids = useFolderStore(
+        useShallow((state) => (isMyFilesRoot ? Array.from(state.importingFolders.keys()) : []))
+    );
 
     const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
     const selectedItemIdsArray = Array.from(selectedItemIds);
@@ -143,17 +149,17 @@ export function FolderBrowser({
 
     const handleClick = useCallback(
         (uid: string) => {
+            if (useFolderStore.getState().importingFolders.has(uid)) {
+                setOpenedImportingFolderUid(uid);
+                return;
+            }
+
             const item = useFolderStore.getState().items.get(uid);
             if (!item) {
                 return;
             }
             const { nodeId } = splitNodeUid(uid);
             document.getSelection()?.removeAllRanges();
-
-            if (useFolderStore.getState().importingFolders.has(uid)) {
-                setOpenedImportingFolderUid(uid);
-                return;
-            }
 
             const openInDocsInfo = getOpenInDocsInfo(item.mimeType);
             if (openInDocsInfo && openInDocsInfo.isNative) {
@@ -209,7 +215,7 @@ export function FolderBrowser({
         }
     }, []);
 
-    const isEmpty = hasEverLoaded && !isLoading && !sortedList.length;
+    const isEmpty = hasEverLoaded && !isLoading && !sortedList.length && !importRowUids.length;
     const isNotFound = hasEverLoaded && !isLoading && !folder;
 
     const uploadInputs = (
@@ -307,8 +313,12 @@ export function FolderBrowser({
         onSort: handleDriveExplorerSorting,
     };
 
+    // Import rows are placeholders, not nodes --> no selection, drag or menu.
+    const isNode = (uid: string) => !useFolderStore.getState().importingFolders.has(uid);
+
     const a11y: DriveExplorerA11y = {
         getItemAriaLabel: ({ uid, isSelected, index }) =>
+            useFolderStore.getState().importingFolders.get(uid)?.name ??
             getFolderItemAriaLabel({ item: useFolderStore.getState().items.get(uid), isSelected, index }),
     };
 
@@ -339,7 +349,7 @@ export function FolderBrowser({
                 canShareSelectedItem={canShareSelectedItem}
             />
             <DriveExplorer
-                itemIds={sortedItemUids}
+                itemIds={[...importRowUids, ...sortedItemUids]}
                 layout={layout}
                 cells={cells}
                 grid={grid}
@@ -354,6 +364,7 @@ export function FolderBrowser({
                     showContextMenu: contextMenu.handleContextMenu,
                     close: contextMenu.close,
                 }}
+                conditions={{ isDraggable: isNode, isSelectable: isNode, hasContextMenu: isNode }}
                 a11y={a11y}
             />
             {uploadInputs}

@@ -28,7 +28,6 @@ export type ActiveImporter = {
     startDate: ApiImporterActive['CreateTime'];
     total?: ApiImporterActive['Total'];
     importedBytes?: ApiImporterActive['ImportedBytes'];
-    importFolder?: { volumeID: string; linkID: string };
 };
 
 export type ImportersMap = Record<string, Importer>;

@@ -2,7 +2,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
-import { MemberRole, getDrive } from '@proton/drive/sdk';
+import { MemberRole, NodeType, getDrive } from '@proton/drive/sdk';
 
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
@@ -12,7 +12,7 @@ import { NameCell, defaultNameCellConfig } from '../commonDriveExplorerCells/Nam
 import { ShareOptionsCell, defaultShareOptionsCellConfig } from '../commonDriveExplorerCells/ShareOptionsCell';
 import { SizeCell, defaultSizeCellConfig } from '../commonDriveExplorerCells/SizeCell';
 import { defaultModifiedTimeCellConfig } from '../commonDriveExplorerCells/modifiedTimeCellConfig';
-import { ImportNameCell } from './driveExplorerCells/ImportNameCell';
+import { ImportNameCell, ImportStatusIcon } from './driveExplorerCells/ImportNameCell';
 import { useFolderStore } from './useFolder.store';
 
 const ShareOptionsCellComponent = ({ uid }: { uid: string }) => {
@@ -60,12 +60,12 @@ export const getFolderCells = ({
                 const thumbnail = useThumbnail(activeRevisionUid);
                 const importingFolder = useFolderStore((state) => state.importingFolders.get(uid));
 
-                if (!name || !type) {
-                    return null;
+                if (importingFolder) {
+                    return <ImportNameCell importingFolder={importingFolder} />;
                 }
 
-                if (importingFolder) {
-                    return <ImportNameCell name={name} importingFolder={importingFolder} />;
+                if (!name || !type) {
+                    return null;
                 }
 
                 return (
@@ -87,7 +87,9 @@ export const getFolderCells = ({
         disabled: !viewportWidth['>=large'],
         render: (uid) => {
             const ModifiedCellComponent = () => {
-                const fileModifyTime = useFolderStore((state) => state.items.get(uid)?.fileModifyTime);
+                const fileModifyTime = useFolderStore(
+                    (state) => state.importingFolders.get(uid)?.startTime ?? state.items.get(uid)?.fileModifyTime
+                );
                 if (!fileModifyTime) {
                     return null;
                 }
@@ -122,6 +124,10 @@ export const getFolderGrid = (): GridDefinition => ({
                     return { name: item?.name, type: item?.type, hasSignatureIssues: item?.hasSignatureIssues };
                 })
             );
+            const importingFolder = useFolderStore((state) => state.importingFolders.get(uid));
+            if (importingFolder) {
+                return <GridItemName name={importingFolder.name} type={NodeType.Folder} />;
+            }
             if (!name || !type) {
                 return null;
             }
@@ -143,6 +149,15 @@ export const getFolderGrid = (): GridDefinition => ({
                 })
             );
             const thumbnail = useThumbnail(activeRevisionUid);
+            const importingFolder = useFolderStore((state) => state.importingFolders.get(uid));
+
+            if (importingFolder) {
+                return (
+                    <div className="w-full h-full flex items-center justify-center">
+                        <ImportStatusIcon importingFolder={importingFolder} size={12} />
+                    </div>
+                );
+            }
 
             if (!type || !name) {
                 return null;

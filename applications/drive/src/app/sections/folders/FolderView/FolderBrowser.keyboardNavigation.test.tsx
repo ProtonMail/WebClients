@@ -57,9 +57,11 @@ jest.mock('../../../legacy/components/sections/useIsEditEnabled', () => ({
     default: () => false,
 }));
 
+const mockDefaultShareRoot = { shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' };
 jest.mock('../../../legacy/hooks/drive/useActiveShare', () => ({
     useActiveShare: () => ({
         activeFolder: { shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' },
+        defaultShareRoot: mockDefaultShareRoot,
     }),
 }));
 
@@ -204,16 +206,18 @@ describe('FolderBrowser keyboard a11y (cell content)', () => {
         expect(mockNavigateToLink).toHaveBeenCalledWith('share-1', 'link-0', false);
     });
 
-    it('Enter on the folder of a running import shows the import progress instead of opening it', async () => {
-        const folder = makeFolderItem(0, {
-            isFile: false,
-            type: NodeType.Folder,
-            mimeType: 'application/vnd.proton.folder',
-        });
-        renderBrowser([folder, makeFolderItem(1)], LayoutSetting.List, [{ uid: folder.uid, importedBytes: 2048 }]);
+    it('lists a running import first in My files and shows its progress on Enter', async () => {
+        const items = [makeFolderItem(0), makeFolderItem(1)];
+        renderBrowser(items, LayoutSetting.List, [
+            { uid: 'drive-import-1', name: 'google-drive-user', startTime: new Date(2026, 0, 15), importedBytes: 2048 },
+        ]);
         const user = userEvent.setup();
 
-        getActivator(folder.uid).focus();
+        const rows = document.querySelectorAll('[data-drive-explorer-item-uid]');
+        expect(rows[0].getAttribute('data-drive-explorer-item-uid')).toBe('drive-import-1');
+        expect(within(getRow('drive-import-1')).getByText('google-drive-user')).toBeInTheDocument();
+
+        getActivator('drive-import-1').focus();
         await user.keyboard('{Enter}');
 
         expect(mockNavigateToLink).not.toHaveBeenCalled();
@@ -221,27 +225,104 @@ describe('FolderBrowser keyboard a11y (cell content)', () => {
         expect(screen.getByText('2.00 KB')).toBeInTheDocument();
     });
 
-    it('shows the progress of the opened import when several imports run', async () => {
-        const firstImport = makeFolderItem(0, {
-            isFile: false,
-            type: NodeType.Folder,
-            mimeType: 'application/vnd.proton.folder',
-        });
-        const secondImport = makeFolderItem(1, {
-            isFile: false,
-            type: NodeType.Folder,
-            mimeType: 'application/vnd.proton.folder',
-        });
-        renderBrowser([firstImport, secondImport], LayoutSetting.List, [
-            { uid: firstImport.uid, importedBytes: 2048 },
-            { uid: secondImport.uid, importedBytes: 4096 },
+    it('gives the import row no options menu, no checkbox and no drag', () => {
+        const items = [makeFolderItem(0)];
+        renderBrowser(items, LayoutSetting.List, [
+            { uid: 'drive-import-1', name: 'google-drive-user', startTime: new Date(2026, 0, 15), importedBytes: 0 },
+        ]);
+
+        const importRow = getRow('drive-import-1');
+        expect(within(importRow).queryByRole('button', { name: 'More options' })).toBeNull();
+        expect(within(importRow).getByTestId('no-context-menu')).toBeInTheDocument();
+        expect(within(importRow).queryByRole('checkbox')).toBeNull();
+        expect(importRow.getAttribute('draggable')).not.toBe('true');
+        expect(getContextMenuButton(items[0].uid)).toBeInTheDocument();
+        expect(getCheckbox(items[0].uid)).toBeInTheDocument();
+    });
+
+    it('shows the import loader in place of the folder icon in grid view', () => {
+        renderBrowser([makeFolderItem(0)], LayoutSetting.Grid, [
+            { uid: 'drive-import-1', name: 'google-drive-user', startTime: new Date(2026, 0, 15), importedBytes: 0 },
+        ]);
+
+        const importTile = getRow('drive-import-1');
+        expect(within(importTile).getByTestId('circle-loader')).toBeInTheDocument();
+        expect(within(importTile).getByText('google-drive-user')).toBeInTheDocument();
+        expect(within(importTile).queryByRole('checkbox')).toBeNull();
+    });
+
+    it('checks the header checkbox when all files are selected next to an import row', async () => {
+        renderBrowser([makeFolderItem(0), makeFolderItem(1)], LayoutSetting.List, [
+            { uid: 'drive-import-1', name: 'google-drive-user', startTime: new Date(2026, 0, 15), importedBytes: 0 },
+        ]);
+        const user = userEvent.setup();
+        const [headerCheckbox] = screen.getAllByRole('checkbox');
+
+        await user.click(headerCheckbox);
+
+        expect(headerCheckbox).toBeChecked();
+    });
+
+    it('disables select all when the import row is the only row', () => {
+        renderBrowser([], LayoutSetting.List, [
+            { uid: 'drive-import-1', name: 'google-drive-user', startTime: new Date(2026, 0, 15), importedBytes: 0 },
+        ]);
+        act(() => useFolderStore.getState().setHasEverLoaded());
+
+        const [headerCheckbox] = screen.getAllByRole('checkbox');
+        expect(headerCheckbox).toBeDisabled();
+    });
+
+    it('does not select the import row on click or Space', async () => {
+        renderBrowser([makeFolderItem(0)], LayoutSetting.List, [
+            { uid: 'drive-import-1', name: 'google-drive-user', startTime: new Date(2026, 0, 15), importedBytes: 0 },
         ]);
         const user = userEvent.setup();
 
-        getActivator(secondImport.uid).focus();
+        await user.click(within(getRow('drive-import-1')).getByText('google-drive-user'));
+        getActivator('drive-import-1').focus();
+        await user.keyboard(' ');
+
+        expect(useSelectionStore.getState().selectedItemIds.size).toBe(0);
+    });
+
+    it('shows the import row in an otherwise empty My files', () => {
+        renderBrowser([], LayoutSetting.List, [
+            { uid: 'drive-import-1', name: 'google-drive-user', startTime: new Date(2026, 0, 15), importedBytes: 0 },
+        ]);
+        act(() => useFolderStore.getState().setHasEverLoaded());
+
+        expect(getRow('drive-import-1')).toBeInTheDocument();
+    });
+
+    it('shows no import row in another root folder, like a computer', () => {
+        mockDefaultShareRoot.linkId = 'my-files-link';
+        try {
+            renderBrowser([makeFolderItem(0)], LayoutSetting.List, [
+                {
+                    uid: 'drive-import-1',
+                    name: 'google-drive-user',
+                    startTime: new Date(2026, 0, 15),
+                    importedBytes: 0,
+                },
+            ]);
+
+            expect(document.querySelector('[data-drive-explorer-item-uid="drive-import-1"]')).toBeNull();
+        } finally {
+            mockDefaultShareRoot.linkId = 'link-1';
+        }
+    });
+
+    it('shows the progress of the opened import when several imports run', async () => {
+        renderBrowser([makeFolderItem(0)], LayoutSetting.List, [
+            { uid: 'drive-import-1', name: 'google-drive-user', startTime: new Date(2026, 0, 15), importedBytes: 2048 },
+            { uid: 'drive-import-2', name: 'google-drive-user', startTime: new Date(2026, 0, 15), importedBytes: 4096 },
+        ]);
+        const user = userEvent.setup();
+
+        getActivator('drive-import-2').focus();
         await user.keyboard('{Enter}');
 
-        expect(mockNavigateToLink).not.toHaveBeenCalled();
         expect(screen.getByText('4.00 KB')).toBeInTheDocument();
     });
 
@@ -259,44 +340,44 @@ describe('FolderBrowser keyboard a11y (cell content)', () => {
     ])(
         'shows why the import paused and opens the matching modal ($tooltip)',
         async ({ errorCode, tooltip, modalTitle }) => {
-            const folder = makeFolderItem(0, {
-                isFile: false,
-                type: NodeType.Folder,
-                mimeType: 'application/vnd.proton.folder',
-            });
             const importer = {
                 ID: 'importer-id',
                 account: 'user@example.com',
                 products: [ImportType.DRIVE],
                 provider: ApiImportProvider.GOOGLE,
             };
-            renderBrowser([folder, makeFolderItem(1)], LayoutSetting.List, [
-                { uid: folder.uid, importedBytes: 0, pausedImport: { importer, errorCode } },
+            renderBrowser([makeFolderItem(0)], LayoutSetting.List, [
+                {
+                    uid: 'drive-import-1',
+                    name: 'google-drive-user',
+                    startTime: new Date(2026, 0, 15),
+                    importedBytes: 0,
+                    pausedImport: { importer, errorCode },
+                },
             ]);
             const user = userEvent.setup();
 
-            await user.hover(within(getRow(folder.uid)).getByTestId('import-error-icon'));
+            await user.hover(within(getRow('drive-import-1')).getByTestId('import-error-icon'));
             expect(await screen.findByText(new RegExp(tooltip), undefined, { timeout: 3000 })).toBeInTheDocument();
 
-            getActivator(folder.uid).focus();
+            getActivator('drive-import-1').focus();
             await user.keyboard('{Enter}');
 
-            expect(mockNavigateToLink).not.toHaveBeenCalled();
             expect(screen.getByText(modalTitle)).toBeInTheDocument();
         }
     );
 
     it('does not reopen the import progress when the import stops and runs again', async () => {
-        const folder = makeFolderItem(0, {
-            isFile: false,
-            type: NodeType.Folder,
-            mimeType: 'application/vnd.proton.folder',
-        });
-        const importingFolder = { uid: folder.uid, importedBytes: 2048 };
-        renderBrowser([folder, makeFolderItem(1)], LayoutSetting.List, [importingFolder]);
+        const importingFolder = {
+            uid: 'drive-import-1',
+            name: 'google-drive-user',
+            startTime: new Date(2026, 0, 15),
+            importedBytes: 2048,
+        };
+        renderBrowser([makeFolderItem(0)], LayoutSetting.List, [importingFolder]);
         const user = userEvent.setup();
 
-        getActivator(folder.uid).focus();
+        getActivator('drive-import-1').focus();
         await user.keyboard('{Enter}');
         expect(screen.getByText('Your import is in progress')).toBeInTheDocument();
 

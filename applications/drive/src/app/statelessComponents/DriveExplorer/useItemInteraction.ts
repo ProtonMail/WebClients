@@ -27,8 +27,14 @@ export const useItemInteraction = ({
     isMultiSelectionDisabled,
     dragMoveControls,
 }: UseItemInteractionParams) => {
+    const isSelectable = conditions.isSelectable(itemId);
+    const hasContextMenu = conditions.hasContextMenu(itemId);
+
     const performSelection = useCallback(
         (event: React.MouseEvent) => {
+            if (!isSelectable) {
+                return;
+            }
             if (event.shiftKey && !isMultiSelectionDisabled) {
                 selection?.selectionMethods.toggleRange(itemId);
             } else if ((event.ctrlKey || event.metaKey) && !isMultiSelectionDisabled) {
@@ -37,7 +43,7 @@ export const useItemInteraction = ({
                 selection?.selectionMethods.selectItem(itemId);
             }
         },
-        [isMultiSelectionDisabled, itemId, selection?.selectionMethods]
+        [isSelectable, isMultiSelectionDisabled, itemId, selection?.selectionMethods]
     );
 
     const handleMouseDown = useCallback(
@@ -180,12 +186,15 @@ export const useItemInteraction = ({
                 return;
             }
             event.preventDefault();
+            if (!hasContextMenu) {
+                return;
+            }
             if (!isSelected) {
                 selection?.selectionMethods.selectItem(itemId);
             }
             events?.onItemContextMenu?.(itemId, event);
         },
-        [itemId, isSelected, selection, events]
+        [itemId, isSelected, hasContextMenu, selection, events]
     );
 
     const handleKeyDown = useCallback(
@@ -195,10 +204,12 @@ export const useItemInteraction = ({
                 events?.onItemDoubleClick?.(itemId, event);
             } else if (event.key === ' ') {
                 event.preventDefault();
-                selection?.selectionMethods.toggleSelectItem(itemId);
+                if (isSelectable) {
+                    selection?.selectionMethods.toggleSelectItem(itemId);
+                }
             }
         },
-        [itemId, events, selection?.selectionMethods]
+        [itemId, isSelectable, events, selection?.selectionMethods]
     );
 
     const handleDragStart = useCallback(

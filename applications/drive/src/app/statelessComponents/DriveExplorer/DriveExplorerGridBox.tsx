@@ -152,7 +152,7 @@ export const DriveExplorerGridBox = ({
                     onTouchEnd={handleTouchEnd}
                     onKeyDown={handleKeyDown}
                 />
-                {showCheckboxColumn && (
+                {showCheckboxColumn && conditions.isSelectable(itemId) && (
                     <CheckboxCell
                         className="absolute top-0 left-0 pl-0.5 pt-0.5 z-up"
                         uid={itemId}
@@ -171,7 +171,7 @@ export const DriveExplorerGridBox = ({
                     }}
                 >
                     {grid.name(itemId)}
-                    {contextMenuControls && (
+                    {contextMenuControls && conditions.hasContextMenu(itemId) && (
                         <div className="absolute right-0 mr-1 z-up">
                             <ContextMenuCellWithControls
                                 uid={itemId}
