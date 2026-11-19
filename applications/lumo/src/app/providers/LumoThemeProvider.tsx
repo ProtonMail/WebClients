@@ -1,7 +1,9 @@
-import { type FC, type PropsWithChildren, createContext, useContext } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { createContext, useContext, useLayoutEffect } from 'react';
 
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
+import { applyLumoTheme } from './lumoThemeDom';
 import { getLumoDefaultTheme } from './lumoThemeUtils';
 import { useLumoThemeLogic } from './useLumoThemeLogic';
 
@@ -24,11 +26,16 @@ const LumoThemeContext = createContext<LumoThemeContextType>({
 });
 
 export const LumoThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { theme, setTheme, setAutoTheme, isDarkLumoTheme, isAutoMode, config } = useLumoThemeLogic();
+    const { theme, setTheme, setAutoTheme, isDarkLumoTheme, isAutoMode } = useLumoThemeLogic();
+
+    // Updates the theme <style> created in index.tsx instead of rendering one, so nothing is removed
+    // when this provider unmounts or the app tree is swapped.
+    useLayoutEffect(() => {
+        applyLumoTheme(theme);
+    }, [theme]);
 
     return (
         <LumoThemeContext.Provider value={{ theme, setTheme, setAutoTheme, isDarkLumoTheme, isAutoMode }}>
-            <style id={isDarkLumoTheme ? 'lumo-dark-theme' : 'lumo-light-theme'}>{config.styles}</style>
             {children}
         </LumoThemeContext.Provider>
     );

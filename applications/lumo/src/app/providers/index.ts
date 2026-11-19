@@ -2,6 +2,6 @@
 export { LumoThemeProvider, useLumoTheme, ThemeTypes } from './LumoThemeProvider';
 
 // Utility exports for advanced usage
-export { getLumoSettings, setLumoSettings, getDefaultSettings } from './lumoThemeStorage';
+export { getLumoSettings, setLumoSettings } from './lumoThemeStorage';
 
-export { getThemeConfig, matchDarkTheme, getLumoThemeFromSettings, userSettingsToLocalSettings } from './lumoThemeUtils';
+export { matchDarkTheme, userSettingsToLocalSettings } from './lumoThemeUtils';

@@ -8,7 +8,6 @@ import {
     createAutoThemeSettings,
     createThemeSettings,
     getLumoThemeFromSettings,
-    getThemeConfig,
     matchDarkTheme,
     userSettingsToLocalSettings,
 } from './lumoThemeUtils';
@@ -22,7 +21,6 @@ export const useLumoThemeLogic = () => {
 
     // Calculate theme values from Redux state
     const theme = getLumoThemeFromSettings(localSettings, systemIsDark);
-    const config = getThemeConfig(theme);
     const isDarkLumoTheme = theme === ThemeTypes.LumoDark;
     const isAutoMode = lumoUserSettings.theme === 'auto';
 
@@ -72,6 +70,5 @@ export const useLumoThemeLogic = () => {
         setAutoTheme,
         isDarkLumoTheme,
         isAutoMode,
-        config,
     };
 };

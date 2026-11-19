@@ -10,6 +10,8 @@ const LazyUnleashToolbarFlagProvider = lazy(() => import('./UnleashToolbarFlagPr
 interface Props {
     children: ReactNode;
     unleashClient: UnleashClient;
+    /** Shown instead of `children` while the toolbar chunk loads (only when the toolbar is enabled). */
+    fallback?: ReactNode;
 }
 
 const FlagProviderWrapper = ({ children, unleashClient }: Props) => (
@@ -18,13 +20,13 @@ const FlagProviderWrapper = ({ children, unleashClient }: Props) => (
     </FlagProvider>
 );
 
-export const UnleashFlagProviderWithToolbar = ({ children, unleashClient }: Props) => {
+export const UnleashFlagProviderWithToolbar = ({ children, unleashClient, fallback = null }: Props) => {
     if (!isUnleashToolbarEnabled()) {
         return <FlagProviderWrapper unleashClient={unleashClient}>{children}</FlagProviderWrapper>;
     }
 
     return (
-        <Suspense fallback={null}>
+        <Suspense fallback={fallback}>
             <LazyUnleashToolbarFlagProvider unleashClient={unleashClient}>{children}</LazyUnleashToolbarFlagProvider>
         </Suspense>
     );
