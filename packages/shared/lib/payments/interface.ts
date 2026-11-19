@@ -34,8 +34,7 @@ export type PaymentMethodFlow =
     | 'lumo-credit'
     | 'subscription'
     | 'add-card'
-    | 'add-paypal'
-    | 'reservation-donation';
+    | 'add-paypal';
 
 type Quantity = number;
 

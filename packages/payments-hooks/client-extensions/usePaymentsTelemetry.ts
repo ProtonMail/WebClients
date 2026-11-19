@@ -51,7 +51,6 @@ type DimensionFlows =
     | 'subscription'
     | 'add-card'
     | 'add-paypal'
-    | 'reservation-donation'
     | DashboardTelemetryFlow;
 
 function mapFlows(flow: TelemetryPaymentFlow): DimensionFlows {
