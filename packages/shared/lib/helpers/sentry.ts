@@ -76,7 +76,20 @@ const QUERY_PARAM_REGEX = /([?&])([\w%][^=&#\s]*)=([^&#\r\n]*)/g;
 const EMAIL_ADDRESS_REGEX = /(^|[\s/?#&=@"'<>,;])[^\s/?#&=@"'<>,;]{1,64}(?:@|%40)[^\s/?#&@"'<>,;]{1,253}\.[a-z]{2,}/gi;
 const RESET_TOKEN_PATH_REGEX = /(core\/v4\/reset\/)[^/?#]+\/[^/?#]+/gi;
 const VERIFICATION_TOKEN_PATH_REGEX = /(core\/v4\/verification\/[^/?#]+\/)[^?#]+/gi;
-const FRAGMENT_REGEX = /(?:#|%23).*$/is;
+/**
+ * Anything from the first hash on. A minified Lexical or React error (`Minified Lexical error #131; visit …`) keeps
+ * its `#<code>`: that hash starts no fragment, and the code is what identifies the error. What follows the code is
+ * still redacted.
+ */
+const FRAGMENT_REGEX = /(?:(Minified (?:Lexical|React) error #\d+)|#|%23).*$/is;
+
+const redactFragmentMatch = (match: string, minifiedError?: string) => {
+    if (minifiedError === undefined) {
+        return '#[Filtered]';
+    }
+
+    return match.length > minifiedError.length ? `${minifiedError}[Filtered]` : minifiedError;
+};
 
 /**
  * Maximum depth we walk into `data` / `extra` containers when redacting. Kept in
@@ -101,6 +114,8 @@ type RedactionOptions = {
  * - email addresses, wherever they are (path: calendar busy-schedule, free text);
  * - the username and token of core/v4/reset/{username}/{token};
  * - the token and code of core/v4/verification/{method}/{token}/{code}.
+ *
+ * The code of a minified Lexical or React error is kept, see `FRAGMENT_REGEX`.
  */
 export const redactSensitiveString = (value: string, { redactFragment = true }: RedactionOptions = {}) => {
     const withoutPII = value
@@ -111,7 +126,7 @@ export const redactSensitiveString = (value: string, { redactFragment = true }: 
         .replace(RESET_TOKEN_PATH_REGEX, '$1[Filtered]/[Filtered]')
         .replace(VERIFICATION_TOKEN_PATH_REGEX, '$1[Filtered]');
 
-    return redactFragment ? withoutPII.replace(FRAGMENT_REGEX, '#[Filtered]') : withoutPII;
+    return redactFragment ? withoutPII.replace(FRAGMENT_REGEX, redactFragmentMatch) : withoutPII;
 };
 
 const isPlainObject = (value: unknown): value is Record<string, unknown> => {

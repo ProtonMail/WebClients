@@ -166,6 +166,16 @@ describe('sentry beforeSend', () => {
             'Error at https://drive.proton.me/some/other/path#[Filtered]'
         );
     });
+
+    it('keeps the code of a minified Lexical error in exception messages', () => {
+        const beforeSend = getBeforeSend();
+        const event = {
+            exception: {
+                values: [{ value: 'Minified Lexical error #131; visit https://lexical.dev/docs/error?code=131' }],
+            },
+        } as unknown as ErrorEvent;
+        expect(beforeSend(event)?.exception?.values?.[0].value).toEqual('Minified Lexical error #131[Filtered]');
+    });
 });
 
 describe('redactSensitiveString()', () => {
@@ -290,6 +300,40 @@ describe('redactSensitiveString()', () => {
         const value = "TypeError: Cannot read properties of undefined (reading 'foo')";
 
         expect(redactSensitiveString(value)).toBe(value);
+    });
+
+    it('keeps the code of a minified Lexical error and redacts the rest', () => {
+        expect(
+            redactSensitiveString(
+                'Minified Lexical error #131; visit https://lexical.dev/docs/error?code=131&v=key for the full message'
+            )
+        ).toBe('Minified Lexical error #131[Filtered]');
+    });
+
+    it('keeps the code of a minified React error and redacts the rest', () => {
+        expect(redactSensitiveString('Minified React error #418; visit https://react.dev/errors/418 for more')).toBe(
+            'Minified React error #418[Filtered]'
+        );
+    });
+
+    it('redacts anything right after a minified error code', () => {
+        expect(redactSensitiveString('Minified Lexical error #131secret\nhttps://drive.proton.me/urls/A#pw')).toBe(
+            'Minified Lexical error #131[Filtered]'
+        );
+    });
+
+    it('leaves a bare minified error code alone', () => {
+        expect(redactSensitiveString('Minified React error #418')).toBe('Minified React error #418');
+    });
+
+    it('redacts everything after a hash, including a later minified error code', () => {
+        expect(
+            redactSensitiveString('https://drive.proton.me/urls/TBYS1295RG#secret Minified Lexical error #131 secret')
+        ).toBe('https://drive.proton.me/urls/TBYS1295RG#[Filtered]');
+    });
+
+    it('redacts a hash that only looks like a minified error code', () => {
+        expect(redactSensitiveString('Minified Lexical error #secret')).toBe('Minified Lexical error #[Filtered]');
     });
 
     it('can keep a hash, for DOM selectors', () => {
