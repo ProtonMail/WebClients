@@ -21,6 +21,7 @@ const withLintStagedPaths = (patterns: string[]) =>
  */
 const inboxDesktopMainProcessDevDependencies = withLintStagedPaths([
     "src/index.ts",
+    "src/startup.ts",
     "src/preload.ts",
     "src/renderer.ts",
     "src/constants*",

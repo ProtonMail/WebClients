@@ -5,10 +5,6 @@ import { handleMailToUrls } from "../urls/mailtoLinks";
 
 const mailtoArgument = new OneTimeArgument();
 
-export function urlHasMailto(url: string): boolean {
-    return url.includes("#mailto=");
-}
-
 export function getMailtoArg(argv: string[]): string {
     return argv.find((val: string): boolean => val.startsWith("mailto:")) ?? "";
 }

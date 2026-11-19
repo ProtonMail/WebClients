@@ -12,6 +12,14 @@ export const addHashToCurrentURL = (currentURLString: string, hash: string) => {
     return currentURLString;
 };
 
+export const urlHasMailto = (url: string): boolean => {
+    return url.includes("#mailto=");
+};
+
+export const urlHasOpenMailParams = (url: string): boolean => {
+    return url.includes("#labelID=") || url.includes("#elementID=");
+};
+
 export const parseURLParams = (url: string): URLSearchParams | undefined => {
     const question = url.indexOf("?");
     if (question === -1 || question === url.length - 1) return undefined;

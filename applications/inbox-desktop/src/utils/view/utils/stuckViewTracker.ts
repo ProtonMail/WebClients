@@ -1,7 +1,6 @@
 import { WebContents } from "electron";
 import { webRequestRouter } from "../../electronSession/webRequestRouter";
 import { stuckLoaderWatchLogger as logger } from "../../log";
-import { openMailToDefaultAndForceReload } from "../viewManagement";
 import { getWebContentsViewName, getViewURL } from "../viewState";
 import { sentryReport } from "../../sentryReport";
 import { getFeatureFlagManager } from "../../flags/manager";
@@ -37,7 +36,11 @@ function cleanup(webContentsId: number) {
  * another timeout executing after NETWORK_OBSERVATION_MS. If no network activity is registered, and the loader is still visible
  * we display the mail view, and force a reload to the base mail view URL. Otherwise we simply teardown the content tracking.
  */
-export async function watchForStuckLoader(contents: WebContents, isCurrentContent: () => boolean) {
+export async function watchForStuckLoader(
+    contents: WebContents,
+    isCurrentContent: () => boolean,
+    onStuck: () => Promise<void>,
+) {
     if (isKillSwitchOn()) return;
 
     if (!(await hasLoaderInContents(contents))) {
@@ -127,7 +130,7 @@ export async function watchForStuckLoader(contents: WebContents, isCurrentConten
             });
 
             teardown();
-            void openMailToDefaultAndForceReload();
+            void onStuck();
         }, NETWORK_OBSERVATION_MS);
     }, LOADER_CHECK_DELAY_MS);
 }

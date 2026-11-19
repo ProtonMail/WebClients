@@ -3,29 +3,24 @@ import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
 import { ThemeTypes } from "@proton/shared/lib/themes/constants";
 import { PROTON_THEMES_MAP } from "@proton/shared/lib/themes/themes";
-import { app, BrowserWindow, Event, nativeTheme, Rectangle, WebContentsView } from "electron";
+import { BrowserWindow, Event, nativeTheme, Rectangle, WebContentsView } from "electron";
 import { debounce } from "lodash";
 import { c } from "ttag";
 import { getFileResourcePath } from "../../constants/resources";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, updateSettings } from "../../store/settingsStore";
 import { getAppURL } from "../../store/urlStore";
-import { updateDownloaded } from "../../update/update";
 import { authStatusPoller } from "../auth/authPoller";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
-import { registerWindowEventLog } from "../log/appEventLog";
-import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
 import metrics from "../metrics";
 import { isUserNetworkErrorCode, NET_ERROR_CODE } from "../netErrors";
 import { logNetworkDiagnostics } from "../networkDiagnostics";
 import { profiler } from "../profiler/profiler";
-import { readAndClearOpenCalendarArgs, readAndClearOpenMailArgs, urlHasOpenMailParams } from "../protocol/deep_links";
-import { readAndClearMailtoArgs, urlHasMailto } from "../protocol/mailto";
 import { sentryReport } from "../sentryReport";
-import { addHashToCurrentURL } from "../urls/urlHelpers";
+import { addHashToCurrentURL, urlHasMailto, urlHasOpenMailParams } from "../urls/urlHelpers";
 import { watchForStuckLoader } from "./utils/stuckViewTracker";
 import {
     getLocalID,
@@ -44,7 +39,6 @@ import { MenuBarMonitor } from "./MenuBarMonitor";
 import {
     getCurrentView,
     getCurrentViewID,
-    getMailView,
     getMainWindow,
     getMainWindowOrNull,
     getViewURL,
@@ -54,7 +48,6 @@ import {
     viewMap,
     viewURLMap,
 } from "./viewState";
-import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
 import { isWindowValid } from "./windowUtils";
 
@@ -86,14 +79,29 @@ const loadFailCounts = new Map<string, number>();
 // Report error page asset failures once per session per view.
 const errorPageFailReported = new Set<string>();
 
-export const viewCreationAppStartup = async () => {
-    const mainWindow = createBrowserWindow();
+export const createMainWindow = () => {
+    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
+    const mainWindow = new BrowserWindow(isPlaywrightTest ? getWindowPlaywrightConfig() : getWindowConfig());
+    setMainWindow(mainWindow);
+    return mainWindow;
+};
+
+/**
+ * Call after the application menu is set: MenuBarMonitor reads and createViews hides the menu bar.
+ */
+export const setUpMainWindow = (mainWindow: BrowserWindow) => {
+    const menuBarMonitor = new MenuBarMonitor(mainWindow);
+    menuBarMonitor.onVisibilityChange(debouncedUpdateViewsBounds);
+
+    mainWindow.webContents.session.setCertificateVerifyProc((request, callback) => {
+        const callbackValue = checkKeys(request);
+        callback(callbackValue);
+    });
     profiler.mark("window-created");
 
     // We need this for E2E tests because Playwright waits for something
     // to be loaded before connecting to the browser view.
-    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
-    if (isPlaywrightTest) {
+    if (process.env.PLAYWRIGHT_TEST === "true") {
         mainWindow.show();
         mainWindow.loadURL("about:blank").catch(() => {});
     }
@@ -111,83 +119,27 @@ export const viewCreationAppStartup = async () => {
     mainWindow.on("unmaximize", debouncedUpdateViewsBounds);
     mainWindow.on("enter-full-screen", debouncedUpdateViewsBounds);
     mainWindow.on("leave-full-screen", debouncedUpdateViewsBounds);
+};
 
-    authStatusPoller.attachToWindow(mainWindow);
-
-    registerWindowEventLog(mainWindow);
-    telemetryService.registerAppInFocusTelemetry(mainWindow, getMailView);
-
-    mainWindow.on("close", (event) => {
-        // We don't want to prevent the close event if the update is downloaded
-        if (updateDownloaded) {
-            return;
-        }
-
-        event.preventDefault();
-
-        if (isMac) {
-            macOSExitEvent(getMainWindow());
-        } else {
-            windowsAndLinuxExitEvent(getMainWindow());
-        }
-    });
-
+/**
+ * Call after the auth poller is attached: maximize() also shows the window, and the poller starts on "show".
+ */
+export const restoreMainWindowState = (mainWindow: BrowserWindow) => {
     if (getWindowBounds().maximized) {
-        getMainWindow().maximize();
+        mainWindow.maximize();
     }
 
     // Clean up main window reference when it's destroyed.
     mainWindow.on("closed", () => {
         setMainWindow(null);
     });
+};
 
-    // For e2e playwright tests load mail immediately.
-    if (isPlaywrightTest) {
-        await loadURL("mail", getAppURL().mail);
-        showView("mail");
-        getMainWindow().show();
-        return;
-    }
-
-    // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
-    const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
-    await new Promise((resolve) => setTimeout(resolve, delay));
-
-    const mailto = readAndClearMailtoArgs();
-    if (mailto) {
-        loadURL("mail", getAppURL().mail + `/inbox#mailto=${mailto}`).then(() => {
-            showView("mail");
-            getMainWindow().show();
-            profiler.markWindowShownAndWriteReport();
-        });
-        return;
-    }
-
-    const openMail = readAndClearOpenMailArgs();
-    if (openMail) {
-        loadURL("mail", getAppURL().mail + `/inbox#${openMail}`).then(() => {
-            showView("mail");
-            getMainWindow().show();
-            profiler.markWindowShownAndWriteReport();
-        });
-        return;
-    }
-
-    const openCalendar = readAndClearOpenCalendarArgs();
-    if (openCalendar) {
-        loadURL("calendar", getAppURL().calendar).then(() => {
-            showView("calendar");
-            getMainWindow().show();
-            profiler.markWindowShownAndWriteReport();
-        });
-        return;
-    }
-
-    loadURL("mail", getAppURL().mail).then(() => {
-        showView("mail");
-        getMainWindow().show();
-        profiler.markWindowShownAndWriteReport();
-    });
+export const openFirstView = async (viewID: ViewID, url: string) => {
+    await loadURL(viewID, url);
+    showView(viewID);
+    getMainWindow().show();
+    profiler.markWindowShownAndWriteReport();
 };
 
 const createView = (viewID: ViewID) => {
@@ -247,24 +199,6 @@ const createViews = () => {
         viewMap.account?.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
         loadingView?.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
     });
-};
-
-const createBrowserWindow = () => {
-    const isPlaywrightTest = process.env.PLAYWRIGHT_TEST === "true";
-    const mainWindow = new BrowserWindow(isPlaywrightTest ? getWindowPlaywrightConfig() : getWindowConfig());
-    setMainWindow(mainWindow);
-
-    setApplicationMenu();
-
-    const menuBarMonitor = new MenuBarMonitor(mainWindow);
-    menuBarMonitor.onVisibilityChange(debouncedUpdateViewsBounds);
-
-    mainWindow.webContents.session.setCertificateVerifyProc((request, callback) => {
-        const callbackValue = checkKeys(request);
-        callback(callbackValue);
-    });
-
-    return mainWindow;
 };
 
 function updateViewBounds(view: WebContentsView | undefined, viewID: ViewID | null = null) {
@@ -395,7 +329,11 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
     }
 
     const contents = view.webContents;
-    void watchForStuckLoader(contents, () => getCurrentView()?.webContents === contents);
+    void watchForStuckLoader(
+        contents,
+        () => getCurrentView()?.webContents === contents,
+        openMailToDefaultAndForceReload,
+    );
 
     if (previousViewID === "account") {
         let reportedError: Error | undefined;
