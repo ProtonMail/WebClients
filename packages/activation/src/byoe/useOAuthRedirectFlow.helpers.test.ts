@@ -21,7 +21,12 @@ describe('useOAuthRedirectFlow helpers', () => {
         it('should return the stored state', () => {
             storeOAuthRedirectState({ uid: 'abc', importEmails: true, redirect: 'proton://done' });
 
-            expect(readOAuthRedirectState()).toEqual({ uid: 'abc', importEmails: true, redirect: 'proton://done' });
+            expect(readOAuthRedirectState()).toEqual({
+                uid: 'abc',
+                importEmails: true,
+                redirect: 'proton://done',
+                autoConnect: undefined,
+            });
         });
 
         it('should keep the expected email address of a reconnection', () => {
@@ -39,10 +44,27 @@ describe('useOAuthRedirectFlow helpers', () => {
             expect(readOAuthRedirectState()?.reconnectAddressID).toBeUndefined();
         });
 
+        it('should keep the auto connect flag', () => {
+            storeOAuthRedirectState({ uid: 'abc', importEmails: true, autoConnect: true });
+
+            expect(readOAuthRedirectState()?.autoConnect).toBe(true);
+        });
+
+        it('should drop an auto connect flag that is not a boolean', () => {
+            sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ uid: 'abc', importEmails: true, autoConnect: 'yes' }));
+
+            expect(readOAuthRedirectState()?.autoConnect).toBeUndefined();
+        });
+
         it('should drop a redirect that is not a string', () => {
             sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ uid: 'abc', importEmails: false, redirect: 42 }));
 
-            expect(readOAuthRedirectState()).toEqual({ uid: 'abc', importEmails: false, redirect: undefined });
+            expect(readOAuthRedirectState()).toEqual({
+                uid: 'abc',
+                importEmails: false,
+                redirect: undefined,
+                autoConnect: undefined,
+            });
         });
 
         it.each([

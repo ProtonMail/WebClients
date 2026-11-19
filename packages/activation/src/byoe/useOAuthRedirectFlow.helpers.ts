@@ -8,6 +8,8 @@ export interface OAuthRedirectState {
     importEmails: boolean;
     /** Where to send the user once the flow is done. Not validated here. */
     redirect?: string;
+    /** Whether the native app asked to connect without a tap, so the user is handed back to it once connected. */
+    autoConnect?: boolean;
     /** Set when reconnecting a disconnected address: its ID, to find the address (and so the Gmail account) back. */
     reconnectAddressID?: string;
     /** Epoch ms at which the funnel began, so its duration survives the redirect (telemetry timers live in memory). */
@@ -53,6 +55,7 @@ export const readOAuthRedirectState = (): OAuthRedirectState | undefined => {
             uid: parsed.uid,
             importEmails: parsed.importEmails,
             redirect: typeof parsed.redirect === 'string' ? parsed.redirect : undefined,
+            autoConnect: typeof parsed.autoConnect === 'boolean' ? parsed.autoConnect : undefined,
             reconnectAddressID: typeof parsed.reconnectAddressID === 'string' ? parsed.reconnectAddressID : undefined,
             creationStartedAt: typeof parsed.creationStartedAt === 'number' ? parsed.creationStartedAt : undefined,
             sessionUID: typeof parsed.sessionUID === 'string' ? parsed.sessionUID : undefined,

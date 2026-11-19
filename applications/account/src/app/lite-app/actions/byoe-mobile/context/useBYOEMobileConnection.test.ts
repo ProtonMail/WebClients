@@ -13,6 +13,9 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
+const mockReplaceUrl = jest.fn();
+jest.mock('@proton/shared/lib/helpers/browser', () => ({ replaceUrl: (url: string) => mockReplaceUrl(url) }));
+
 const mockTrackConnectSucceeded = jest.fn();
 const mockTrackConnectFailed = jest.fn();
 jest.mock('../telemetry/useBYOEMobileTelemetry', () => ({
@@ -235,6 +238,84 @@ describe('useBYOEMobileConnection reconnection', () => {
             expect(setStatus).not.toHaveBeenCalled();
             expect(trackAccountImportBYOEError).not.toHaveBeenCalled();
             expect(mockReconnectWithCode).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('hand back to the native app', () => {
+        const getCallback = (state: {
+            redirect?: string;
+            autoConnect?: boolean;
+        }): Exclude<OAuthCallbackResult, { type: 'none' }> => ({
+            type: 'code',
+            code: 'google-code',
+            state: { uid: 'uid', importEmails: true, ...state },
+        });
+
+        beforeEach(() => {
+            mockConnectBYOEAddressWithCode.mockResolvedValue({
+                status: 'success',
+                address: disconnectedAddress,
+                importEmails: true,
+            });
+        });
+
+        it('redirects to the app after an automatic connection', async () => {
+            const { result, setStatus } = setup();
+
+            await act(() =>
+                result.current.handleOAuthCallback(
+                    getCallback({ redirect: 'protonmail://connect-gmail/complete', autoConnect: true })
+                )
+            );
+
+            expect(mockReplaceUrl).toHaveBeenCalledWith(
+                'protonmail://connect-gmail/complete?status=success&email=Jane%40gmail.com'
+            );
+            expect(setStatus).not.toHaveBeenCalledWith('idle');
+        });
+
+        it.each([{ autoConnect: false }, { autoConnect: undefined }])(
+            'stays on the page after a manual connection ($autoConnect)',
+            async ({ autoConnect }) => {
+                const { result, setStatus } = setup();
+
+                await act(() =>
+                    result.current.handleOAuthCallback(
+                        getCallback({ redirect: 'protonmail://connect-gmail/complete', autoConnect })
+                    )
+                );
+
+                expect(mockReplaceUrl).not.toHaveBeenCalled();
+                expect(mockCreateNotification).toHaveBeenCalledWith({
+                    text: "Your address was connected. We're importing your emails.",
+                });
+                expect(setStatus).toHaveBeenLastCalledWith('idle');
+            }
+        );
+
+        it('stays on the page after an automatic connection without a valid redirect', async () => {
+            const { result } = setup();
+
+            await act(() =>
+                result.current.handleOAuthCallback(getCallback({ redirect: 'https://evil.example', autoConnect: true }))
+            );
+
+            expect(mockReplaceUrl).not.toHaveBeenCalled();
+        });
+
+        it('stays on the page when an automatic connection fails', async () => {
+            mockConnectBYOEAddressWithCode.mockResolvedValue({ status: 'failure', reason: { type: 'unknown' } });
+            const { result, setStatus } = setup();
+
+            await act(() =>
+                result.current.handleOAuthCallback(
+                    getCallback({ redirect: 'protonmail://connect-gmail/complete', autoConnect: true })
+                )
+            );
+
+            expect(mockReplaceUrl).not.toHaveBeenCalled();
+            expect(result.current.error).toEqual({ type: 'unknown' });
+            expect(setStatus).toHaveBeenLastCalledWith('idle');
         });
     });
 });
