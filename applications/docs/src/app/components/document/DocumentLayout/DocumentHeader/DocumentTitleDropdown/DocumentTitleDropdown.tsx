@@ -358,8 +358,6 @@ export function DocumentTitleDropdown({
     })
   }, [handleSheetImportData, showSheetImportModal])
 
-  // A spreadsheet's own file menu offers Move to folder to everyone, and could still offer Move to trash from an editor
-  // older than this client, so its actions check `canOrganize` here
   const openMoveToFolderModal = useCallback(() => {
     if (!canOrganize) {
       return
@@ -660,6 +658,7 @@ export function DocumentTitleDropdown({
             <DropdownMenuButton
               disabled={isMakingNewSheetDocument}
               className="flex items-center text-left"
+              data-testid="dropdown-new-spreadsheet"
               onClick={(e) => {
                 e.preventDefault()
                 e.stopPropagation()

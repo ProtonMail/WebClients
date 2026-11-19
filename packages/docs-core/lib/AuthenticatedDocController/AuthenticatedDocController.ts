@@ -393,6 +393,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
       this.documentState.getProperty('entitlements').nodeMeta,
       this.documentState.getProperty('decryptedNode'),
       documentType,
+      this.documentState.getProperty('userRole').canEdit(),
     )
 
     if (result.isFailed()) {

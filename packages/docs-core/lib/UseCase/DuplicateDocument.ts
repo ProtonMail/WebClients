@@ -11,8 +11,7 @@ import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { getMyFilesNodeMeta } from '../DriveSDK/getMyFilesNodeMeta'
 import { findAvailableNodeName } from '../DriveSDK/findAvailableNodeName'
 import { getDecryptedNode } from '../DriveSDK/getDecryptedNode'
-import { traceErrorSDK } from '../DriveSDK/traceErrorSDK'
-import { generateNodeUid, getDrive } from '@proton/drive/sdk'
+import { isSharedDirectly } from '../DriveSDK/isSharedDirectly'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
 import type { CreateDocumentNode } from '../Crypto/useCreateDocumentNode'
@@ -48,7 +47,7 @@ export class DuplicateDocument {
 
       const parentMetaGetter = replaceDriveCompat ? getMyFilesNodeMeta : () => this.driveCompat.getMyFilesNodeMeta()
       const parentMeta: NodeMeta =
-        canEdit && node.parentNodeId && !(await this.isSharedDirectly(nodeMeta))
+        canEdit && node.parentNodeId && !(await isSharedDirectly(nodeMeta))
           ? {
               volumeId: node.volumeId,
               linkId: node.parentNodeId,
@@ -66,20 +65,6 @@ export class DuplicateDocument {
       )
     } catch (error) {
       return Result.fail(getErrorString(error) ?? 'Failed to duplicate document')
-    }
-  }
-
-  /**
-   * Whether the user holds a membership on the document itself, as /doc's `useDriveSharing.ts` asks Drive.
-   * `true` when Drive fails, so the copy goes to My files, which the user can always write to.
-   */
-  private async isSharedDirectly({ volumeId, linkId }: NodeMeta): Promise<boolean> {
-    try {
-      const node = await getDrive().getNode(generateNodeUid(volumeId, linkId))
-      return !!node.membership
-    } catch (error) {
-      traceErrorSDK(error, 'DocsDriveCompatSDK')
-      return true
     }
   }
 

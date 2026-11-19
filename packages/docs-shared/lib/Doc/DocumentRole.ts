@@ -29,10 +29,6 @@ export class DocumentRole {
     return this.roleType === 'Editor' || this.roleType === 'Admin' || this.roleType === 'PublicEditor'
   }
 
-  canTrash(): boolean {
-    return this.isAdmin()
-  }
-
   canShare(): boolean {
     return this.isAdmin()
   }

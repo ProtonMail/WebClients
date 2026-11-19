@@ -33,6 +33,9 @@ jest.mock('../DriveSDK/trash', () => ({
 describe('AuthenticatedDocController', () => {
   let controller: AuthenticatedDocController
   let documentState: DocumentState
+  const createNewDocument = {
+    execute: jest.fn().mockResolvedValue(Result.ok({ volumeId: 'volume', linkId: 'new' })),
+  } as unknown as jest.Mocked<CreateNewDocument>
 
   beforeEach(async () => {
     documentState = new DocumentState({
@@ -49,7 +52,7 @@ describe('AuthenticatedDocController', () => {
       {} as jest.Mocked<SquashDocument>,
       {} as jest.Mocked<SeedInitialCommit>,
       {} as jest.Mocked<DuplicateDocument>,
-      {} as jest.Mocked<CreateNewDocument>,
+      createNewDocument,
       {
         execute: jest.fn().mockReturnValue(Result.ok({ node: {} })),
       } as unknown as jest.Mocked<GetNode>,
@@ -78,6 +81,28 @@ describe('AuthenticatedDocController', () => {
 
       expect(controller.createInitialCommit).toHaveBeenCalled()
     })
+  })
+
+  describe('createNewDocument', () => {
+    it.each([
+      ['Editor', true],
+      ['Viewer', false],
+    ] as const)(
+      'tells the use case whether a %s can edit the document, which decides where it goes',
+      async (role, canEdit) => {
+        documentState.setProperty('userRole', new DocumentRole(role))
+
+        await controller.createNewDocument('sheet')
+
+        expect(createNewDocument.execute).toHaveBeenCalledWith(
+          expect.any(String),
+          documentState.getProperty('entitlements').nodeMeta,
+          documentState.getProperty('decryptedNode'),
+          'sheet',
+          canEdit,
+        )
+      },
+    )
   })
 
   describe('trashDocument', () => {

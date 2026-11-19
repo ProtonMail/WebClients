@@ -41,9 +41,9 @@ export type DocumentFileActions = {
   trashState: TrashState
   isCreatingSpreadsheet: boolean
   isMakingACopy: boolean
-  /** Opens a new window on doc2, which creates a text document next to this one */
+  /** Opens a new window on doc2, which creates a text document next to this one, or in My files */
   newDocument: () => void
-  /** Creates a spreadsheet next to this document and opens it on legacy sheets in a new window */
+  /** Creates a spreadsheet next to this document, or in My files, and opens it on legacy sheets in a new window */
   newSpreadsheet: () => void
   /**
    * Copies what the editor holds into a new document, next to this one when the user may organize it and in My files
@@ -128,7 +128,7 @@ export function useDocumentFileActions({
     if (!node) {
       return
     }
-    getNewWindow(getNewDocumentHref(node, getLocalID()))
+    getNewWindow(getNewDocumentHref(node, canOrganize, getLocalID()))
   }
 
   const newSpreadsheet = () => {
@@ -139,7 +139,7 @@ export function useDocumentFileActions({
     setIsCreatingSpreadsheet(true)
     // Opened on the click, so no popup blocker stops it after the creation
     const newWindow = getNewWindow()
-    createSpreadsheet(node, driveCompat)
+    createSpreadsheet(node, canOrganize, driveCompat)
       .then(
         (nodeMeta) => newWindow.handle.location.assign(getSpreadsheetHref(nodeMeta, getLocalID())),
         (error) => {

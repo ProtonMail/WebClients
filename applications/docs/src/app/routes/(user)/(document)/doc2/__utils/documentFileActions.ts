@@ -25,23 +25,20 @@ export type SeedingClient = Pick<ReturnType<typeof useRealtimeClient>, 'seedInit
 
 /**
  * The folder a new document goes in: the document's own folder, as docs-core `UseCase/CreateNewDocument.ts` picks it.
- * None for a document with no parent folder, such as one shared with the user.
+ * None, so My files, when the user may not organize the document (`canOrganizeDocument`) or it has no parent folder.
  */
-function getSiblingFolder({ parentUid }: DocumentNode): NodeMeta | undefined {
-  if (!parentUid) {
+function getSiblingFolder({ parentUid }: DocumentNode, canOrganize: boolean): NodeMeta | undefined {
+  if (!canOrganize || !parentUid) {
     return undefined
   }
   const { volumeId, nodeId } = splitNodeUid(parentUid)
   return { volumeId, linkId: nodeId }
 }
 
-/**
- * The doc2 URL that creates a text document next to `node`. Without a parent folder it is the bare doc2 URL, which
- * creates the document in My files.
- */
-export function getNewDocumentHref(node: DocumentNode, localID: number | undefined): string {
+/** The doc2 URL that creates a text document next to `node`, or in My files when it is the bare doc2 URL. */
+export function getNewDocumentHref(node: DocumentNode, canOrganize: boolean, localID: number | undefined): string {
   const url = new URL(getAppHref(DOCUMENT_V2_PATH, APPS.PROTONDOCS, localID))
-  const folder = getSiblingFolder(node)
+  const folder = getSiblingFolder(node, canOrganize)
   if (folder) {
     url.searchParams.set('mode', 'create')
     url.searchParams.set('volumeId', folder.volumeId)
@@ -51,16 +48,17 @@ export function getNewDocumentHref(node: DocumentNode, localID: number | undefin
 }
 
 /**
- * Creates a document of `documentType` next to `node`, or in My files without a parent folder, under `name` or the one
- * Drive offers when that is taken, as docs-core `UseCase/CreateNewDocument.ts` and `UseCase/DuplicateDocument.ts` do.
+ * Creates a document of `documentType` in `getSiblingFolder`, under `name` or the one Drive offers when that is taken,
+ * as docs-core `UseCase/CreateNewDocument.ts` and `UseCase/DuplicateDocument.ts` do.
  */
 async function createDocumentNextTo(
   node: DocumentNode,
+  canOrganize: boolean,
   driveCompat: DriveCompat,
   name: string,
   documentType: DocumentType,
 ): Promise<NodeMeta> {
-  const folder = getSiblingFolder(node) ?? (await driveCompat.getMyFilesNodeMeta())
+  const folder = getSiblingFolder(node, canOrganize) ?? (await driveCompat.getMyFilesNodeMeta())
   const availableName = await getDrive().getAvailableName(
     generateNodeUid(folder.volumeId, folder.linkId),
     name,
@@ -70,9 +68,14 @@ async function createDocumentNextTo(
   return { volumeId, linkId }
 }
 
-export async function createSpreadsheet(node: DocumentNode, driveCompat: DriveCompat): Promise<NodeMeta> {
+export async function createSpreadsheet(
+  node: DocumentNode,
+  canOrganize: boolean,
+  driveCompat: DriveCompat,
+): Promise<NodeMeta> {
   return createDocumentNextTo(
     node,
+    canOrganize,
     driveCompat,
     getDefaultDocumentName('sheet', getPlatformFriendlyDateForFileName()),
     'sheet',
@@ -80,11 +83,9 @@ export async function createSpreadsheet(node: DocumentNode, driveCompat: DriveCo
 }
 
 /**
- * Creates a text document named `name` next to `node` and has the SDK seed it with `state`, a whole yjs document, as
- * its first commit (ADR-0013): the copy Make a copy makes, and later version history's restore as copy. Unless
- * `canOrganize` (`getDocumentRole.ts` `canOrganizeDocument`), the copy goes to My files: a viewer can't write to the
- * node's folder, and a document shared directly is copied to My files even when it sits in a folder the user can write
- * to. Rejects with the SDK's `SeedError` or `DocsApiError` when the seed fails, which leaves the new document empty, as
+ * Creates a text document named `name` in `getSiblingFolder` and has the SDK seed it with `state`, a whole yjs
+ * document, as its first commit (ADR-0013): the copy Make a copy makes, and later version history's restore as copy.
+ * Rejects with the SDK's `SeedError` or `DocsApiError` when the seed fails, which leaves the new document empty, as
  * /doc's does.
  */
 export async function duplicateWithState(
@@ -97,12 +98,7 @@ export async function duplicateWithState(
     client,
   }: { node: DocumentNode; canOrganize: boolean; driveCompat: DriveCompat; client: SeedingClient },
 ): Promise<NodeMeta> {
-  const copy = await createDocumentNextTo(
-    canOrganize ? node : { ...node, parentUid: undefined },
-    driveCompat,
-    name,
-    'doc',
-  )
+  const copy = await createDocumentNextTo(node, canOrganize, driveCompat, name, 'doc')
   await client.seedInitialCommit({ nodeMeta: copy, state })
   return copy
 }
