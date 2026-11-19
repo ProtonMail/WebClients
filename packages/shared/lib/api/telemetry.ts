@@ -209,6 +209,7 @@ export enum TelemetryMeetActionsEvents {
     meeting_details_opened = 'meeting_details_opened',
     connection_lost_modal_shown = 'connection_lost_modal_shown',
     connection_lost_modal_answered = 'connection_lost_modal_answered',
+    audio_playback_recovered = 'audio_playback_recovered',
 }
 
 export enum TelemetryMeetDashboardEvents {

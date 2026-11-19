@@ -1,6 +1,9 @@
-import { act, renderHook } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 import { type Room, Track } from 'livekit-client';
 import { afterEach, describe, expect, it, vi } from 'vitest';
+
+import { selectAudioPlaybackStatus } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import type { AudioPlaybackStatus } from '@proton/meet/store/slices/deviceManagementSlice/types';
 
 import { useIsAudioPlaybackBlocked } from './useIsAudioPlaybackBlocked';
 
@@ -11,23 +14,8 @@ const livekitMocks = vi.hoisted(() => ({
 }));
 vi.mock('@livekit/components-react', () => livekitMocks);
 
-type FakeState = 'suspended' | 'running';
-
-const createFakeAudioContext = (initialState: FakeState) => {
-    const listeners = new Set<() => void>();
-
-    const fake = {
-        state: initialState as FakeState,
-        addEventListener: (_type: string, listener: () => void) => listeners.add(listener),
-        removeEventListener: (_type: string, listener: () => void) => listeners.delete(listener),
-        goTo: (state: FakeState) => {
-            fake.state = state;
-            listeners.forEach((listener) => listener());
-        },
-    };
-
-    return fake;
-};
+const storeMocks = vi.hoisted(() => ({ useMeetSelector: vi.fn() }));
+vi.mock('@proton/meet/store/hooks', () => storeMocks);
 
 const remoteMicrophone = {
     participant: { isLocal: false },
@@ -38,23 +26,25 @@ const remoteMicrophone = {
 const localMicrophone = { ...remoteMicrophone, participant: { isLocal: true } };
 
 const setup = ({
-    audioContextState = 'suspended' as FakeState,
+    audioPlaybackStatus = 'blocked' as AudioPlaybackStatus,
     isAudioMixingEnabled = true,
     canPlayAudio = true,
     trackRefs = [remoteMicrophone] as unknown[],
 } = {}) => {
-    const audioContext = createFakeAudioContext(audioContextState);
     const room = {
-        options: { webAudioMix: isAudioMixingEnabled ? { audioContext } : false },
+        options: { webAudioMix: isAudioMixingEnabled ? { audioContext: {} } : false },
     } as unknown as Room;
 
     livekitMocks.useRoomContext.mockReturnValue(room);
     livekitMocks.useStartAudio.mockReturnValue({ canPlayAudio, mergedProps: {} });
     livekitMocks.useTracks.mockReturnValue(trackRefs);
+    storeMocks.useMeetSelector.mockImplementation((selector: unknown) =>
+        selector === selectAudioPlaybackStatus ? audioPlaybackStatus : undefined
+    );
 
     const { result } = renderHook(() => useIsAudioPlaybackBlocked());
 
-    return { audioContext, result };
+    return { result };
 };
 
 describe('useIsAudioPlaybackBlocked', () => {
@@ -64,7 +54,7 @@ describe('useIsAudioPlaybackBlocked', () => {
 
     it('only counts subscribed remote audio tracks', () => {
         const remoteVideo = { ...remoteMicrophone, publication: { kind: Track.Kind.Video } };
-        const { result } = setup({ audioContextState: 'suspended', trackRefs: [remoteVideo] });
+        const { result } = setup({ audioPlaybackStatus: 'blocked', trackRefs: [remoteVideo] });
 
         expect(result.current).toBe(false);
         expect(livekitMocks.useTracks).toHaveBeenCalledWith(
@@ -73,38 +63,32 @@ describe('useIsAudioPlaybackBlocked', () => {
         );
     });
 
-    // LiveKit reports playback as started once the muted elements play, even with the context suspended
-    it('ignores LiveKit reporting playback when the mixing context is suspended', () => {
-        const { result } = setup({ audioContextState: 'suspended', canPlayAudio: true });
+    it('is blocked when the playback is blocked, even if LiveKit reports playback', () => {
+        const { result } = setup({ audioPlaybackStatus: 'blocked', canPlayAudio: true });
 
         expect(result.current).toBe(true);
     });
 
-    // LiveKit gives up after 200ms of resuming, while a slow output device can start right after
-    it('ignores LiveKit reporting blocked playback when the mixing context runs', () => {
-        const { result } = setup({ audioContextState: 'running', canPlayAudio: false });
+    it('is not blocked while the playback recovers on its own, such as during an output switch', () => {
+        const { result } = setup({ audioPlaybackStatus: 'recovering' });
 
         expect(result.current).toBe(false);
     });
 
-    it('unblocks once the context starts running', () => {
-        const { audioContext, result } = setup({ audioContextState: 'suspended' });
-
-        act(() => {
-            audioContext.goTo('running');
-        });
+    it('is not blocked when the playback runs, even if LiveKit reports blocked playback', () => {
+        const { result } = setup({ audioPlaybackStatus: 'running', canPlayAudio: false });
 
         expect(result.current).toBe(false);
     });
 
     it('is not blocked when nobody else is sending audio', () => {
-        const { result } = setup({ audioContextState: 'suspended', trackRefs: [] });
+        const { result } = setup({ audioPlaybackStatus: 'blocked', trackRefs: [] });
 
         expect(result.current).toBe(false);
     });
 
     it('is not blocked by the local microphone alone', () => {
-        const { result } = setup({ audioContextState: 'suspended', trackRefs: [localMicrophone] });
+        const { result } = setup({ audioPlaybackStatus: 'blocked', trackRefs: [localMicrophone] });
 
         expect(result.current).toBe(false);
     });
