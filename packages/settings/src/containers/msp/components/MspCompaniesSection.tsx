@@ -41,6 +41,7 @@ import { MEMBER_STATE } from '@proton/shared/lib/interfaces/Member';
 import type { MspSubsidiary } from '@proton/shared/lib/interfaces/Msp';
 import type { UserOrganization } from '@proton/shared/lib/interfaces/Organization';
 import emptyCompaniesImg from '@proton/styles/assets/img/illustrations/empty-companies.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { UNAUTHENTICATED_ROUTES } from '../../../helpers/unauthenticatedRoutes';
@@ -126,6 +127,7 @@ const MspCompaniesSection = () => {
     const loading =
         isOrganizationOwnerLoading || (isOrganizationOwner ? subsidiariesLoading : userOrganizationsLoading);
     const { viewportWidth } = useActiveBreakpoint();
+    const isMspV2 = useFlag('MspV2');
 
     // Org admins already have implicit access via the "All admins" entry, so exclude them here to
     // avoid showing them a second time as an explicit delegated manager (they can end up as one as
@@ -242,8 +244,12 @@ const MspCompaniesSection = () => {
     return (
         <SettingsSectionExtraWide>
             <SettingsPageTitle className="mt-14">{c('Title').t`Companies`}</SettingsPageTitle>
-            <SettingsParagraph className="mb-12">{c('Info')
-                .t`Manage the companies you're responsible for.`}</SettingsParagraph>
+            <SettingsParagraph className="mb-12">
+                {isMspV2
+                    ? c('Info')
+                          .t`With managed companies, you can add, edit, and disable access for organizations you oversee.`
+                    : c('Info').t`Manage the companies you're responsible for.`}
+            </SettingsParagraph>
             <div className="mb-4 flex items-center justify-space-between">
                 <div className="w-custom" style={{ '--w-custom': '20em' }}>
                     <SearchInput
