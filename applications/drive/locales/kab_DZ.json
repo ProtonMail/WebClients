@@ -970,6 +970,10 @@
       ],
       "Yearly": [
         "S useggas"
+      ],
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
       ]
     },
     "Bug category": {
@@ -1072,6 +1076,10 @@
       ],
       "Try ${ planName }": [
         "Ɛreḍ ${ planName }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } n useqdac",
+        "Alamma d ${ numberOfUsers } yiseqdacen"
       ]
     },
     "Checkout row": {
@@ -2767,6 +2775,10 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Tettwanecdeḍ ad ternuḍ i${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "View the invitation": [
+        "Wali tinnubga",
+        "Wali tinnubgiwin"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7361,6 +7373,18 @@
     "Drawer tab, Action": {
       "Download for Windows": [
         "Sider i Windows"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } yimtteki",
+        "${ n } yimttekkiyen"
+      ]
+    },
+    "Referral": {
+      "Friend joined": [
+        "Yerna-d umeddakel",
+        "Rnan-d imeddukal"
       ]
     }
   }
