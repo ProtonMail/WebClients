@@ -14,6 +14,8 @@ export interface Snapshot {
     audioContextState: string;
     audioContextSampleRate: string;
     audioContextSinkId: string;
+    audioContextClockRate: string;
+    isAudioContextClockStalled: boolean;
     cameraPermissions: string;
     microphonePermissions: string;
 }
@@ -32,6 +34,8 @@ export const EMPTY_SNAPSHOT: Snapshot = {
     audioContextState: '(none)',
     audioContextSampleRate: '(none)',
     audioContextSinkId: '(none)',
+    audioContextClockRate: '(none)',
+    isAudioContextClockStalled: false,
     cameraPermissions: '(unknown)',
     microphonePermissions: '(unknown)',
 };

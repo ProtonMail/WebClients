@@ -6,7 +6,9 @@ import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveAudioOutputId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { readAudioOutputState } from '../../../utils/audioOutputDebug';
 import { supportsSetSinkId } from '../../../utils/browser';
 import type { MeetAudioContext } from '../../../utils/meet-audio-context';
 import { retry } from '../../../utils/retry';
@@ -16,6 +18,10 @@ import { retry } from '../../../utils/retry';
 const RECOVERY_DELAYS_MS = [250, 500, 1_000, 2_000];
 
 const FALLBACK_TIMEOUT_MS = 5_000;
+
+const CLOCK_CHECK_MS = 1_000;
+
+const STALLED_CLOCK_SECONDS = 0.05;
 
 const isSilent = (state: AudioContextState) => state === 'suspended' || state === 'interrupted';
 
@@ -71,10 +77,42 @@ export const useAudioContextOutput = ({
         // A pending setSinkId can resolve after the effect re-ran for a newer device
         let isStale = false;
 
-        const applyOutput = async () => {
-            if (!(await meetAudioContext.setSinkId(activeAudioOutputDeviceId)) && !isStale) {
-                await fallBackToDefault();
+        const restartIfClockStalled = async () => {
+            const { audioContext } = meetAudioContext;
+            const startTime = audioContext.currentTime;
+            await wait(CLOCK_CHECK_MS);
+            const clockAdvancedSeconds = audioContext.currentTime - startTime;
+
+            if (isStale || audioContext.state !== 'running' || clockAdvancedSeconds >= STALLED_CLOCK_SECONDS) {
+                return;
             }
+
+            reportMeetError('Audio context clock stalled after an output change', {
+                level: 'warning',
+                context: { clockAdvancedSeconds, ...readAudioOutputState(room) },
+            });
+
+            try {
+                await audioContext.suspend();
+                await audioContext.resume();
+            } catch (error) {
+                reportMeetError('Error restarting a stalled audio context', { context: { error } });
+            }
+        };
+
+        const applyOutput = async () => {
+            const isApplied = await meetAudioContext.setSinkId(activeAudioOutputDeviceId);
+
+            if (isStale) {
+                return;
+            }
+
+            if (isApplied) {
+                void restartIfClockStalled();
+                return;
+            }
+
+            await fallBackToDefault();
         };
 
         void applyOutput();
@@ -82,7 +120,7 @@ export const useAudioContextOutput = ({
         return () => {
             isStale = true;
         };
-    }, [activeAudioOutputDeviceId, isPlaybackContext, meetAudioContext, fallBackToDefault]);
+    }, [activeAudioOutputDeviceId, isPlaybackContext, meetAudioContext, fallBackToDefault, room, reportMeetError]);
 
     // Chrome fires 'error' when the device this context renders to goes away. Attached whether or
     // not an output was applied, because recovery cannot wait for the store to be populated.
