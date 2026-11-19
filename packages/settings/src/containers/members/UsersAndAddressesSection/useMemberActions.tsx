@@ -95,14 +95,14 @@ export const useMemberActions = ({
     const getOrganizationKey = useGetOrganizationKey();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
-    const [entitlements] = useEntitlementChecksForOrgAndUser();
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const [customDomains, loadingCustomDomains] = useCustomDomains();
-    const [addresses] = useAddresses();
-    const [user] = useUser();
+    const [addresses, loadingAddresses] = useAddresses();
+    const [user, loadingUser] = useUser();
     const [organizationKey] = useOrganizationKey();
     const [samlSSO] = useSamlSSO();
     const accessToAssistant = useAssistantFeatureEnabled();
-    const [{ protonDomains, premiumDomains }] = useProtonDomains();
+    const [{ protonDomains, premiumDomains }, loadingProtonDomains] = useProtonDomains();
     const ssoDomainsSet = useMemo(() => {
         return getSSODomainsSet({ domains: customDomains, ssoConfigs: samlSSO?.configs });
     }, [customDomains, samlSSO?.configs]);
@@ -191,6 +191,16 @@ export const useMemberActions = ({
     const hasSetupActiveOrganizationWithKeys =
         organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetupWithKeys(organization);
 
+    const loading =
+        loadingSubscription ||
+        loadingOrganization ||
+        loadingEntitlements ||
+        loadingCustomDomains ||
+        loadingMembers ||
+        loadingProtonDomains ||
+        loadingUser ||
+        loadingAddresses ||
+        permissions === null;
     const [addAddressModalProps, setAddAddressModalOpen, renderAddAddressModal] = useModalState();
     const [subUserCreateModalProps, setSubUserCreateModalOpen, renderSubUserCreateModal] = useModalState();
     const [attachSSOPromptProps, setAttachSSOPrompt, renderAttachSSOPrompt] = useModalState(cleanOption);
@@ -550,6 +560,21 @@ export const useMemberActions = ({
         pausedMembers,
         resumingMemberID,
         isSubUserEditModalRendered: renderSubUserEditModal,
+        loading,
+        // Keep in sync with `modals`.
+        hasOpenModal:
+            renderUserSetupModal ||
+            renderAddAddressModal ||
+            renderSubUserDeleteModal ||
+            renderUserRemoveModal ||
+            renderSubUserCreateModal ||
+            renderResendInviteModal ||
+            renderSubUserEditModal ||
+            renderUserInviteOrEditModal ||
+            renderLoginMemberModal ||
+            renderChangeMemberPasswordModal ||
+            renderAttachSSOPrompt ||
+            renderInviteOrCreateUserModal,
     };
 
     const models = {
