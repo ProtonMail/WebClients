@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
@@ -7,8 +7,10 @@ import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitleme
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS } from '@proton/shared/lib/constants';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import SubscriptionPanel from './SubscriptionPanel';
@@ -262,6 +264,46 @@ describe('SubscriptionPanel', () => {
 
             expect(screen.getByText('Limited daily chats')).toBeInTheDocument();
             expect(screen.queryByText('Limited messages and chat history')).not.toBeInTheDocument();
+        });
+    });
+
+    describe('Scribe seat holder', () => {
+        const renderScribeSeatHolder = (scribeToLumo: boolean) => {
+            mockUseFlag.mockImplementation((flag) => flag === MailFeatureFlag.ScribeToLumo && scribeToLumo);
+            renderWithProviders(
+                <SubscriptionPanel
+                    {...defaultProps}
+                    user={buildUser({ isPaid: true, hasPaidMail: true })}
+                    subscription={buildSubscription({
+                        planName: PLANS.MAIL_PRO,
+                        cycle: CYCLE.MONTHLY,
+                        currency: 'USD',
+                    })}
+                    organization={{ MaxMembers: 3, MaxAI: 2, MaxLumo: 1 } as Organization}
+                    entitlements={{ ...defaultEntitlements, isB2B: true }}
+                />
+            );
+        };
+
+        const getRow = (text: RegExp) => screen.getByText(text).closest('li') as HTMLElement;
+
+        afterEach(() => {
+            mockUseFlag.mockReset();
+        });
+
+        it('hides Get more on the Scribe row and keeps it on the Lumo row with ScribeToLumo on', () => {
+            renderScribeSeatHolder(true);
+
+            expect(
+                within(getRow(/writing assistant for 2 users/)).queryByTestId('get-more-btn')
+            ).not.toBeInTheDocument();
+            expect(within(getRow(/^Lumo for 1 user/)).getByTestId('get-more-btn')).toBeInTheDocument();
+        });
+
+        it('keeps Get more on the Scribe row with ScribeToLumo off', () => {
+            renderScribeSeatHolder(false);
+
+            expect(within(getRow(/writing assistant for 2 users/)).getByTestId('get-more-btn')).toBeInTheDocument();
         });
     });
 

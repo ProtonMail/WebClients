@@ -46,11 +46,27 @@ export const SCRIBE_ADDON_CONFIG: AddonConfig = {
     featureLimit: { kind: 'synthetic', key: 'MaxAI', grants: { MaxAI: 1 }, pool: { group: 'ai' } },
     transferStrategy: 'scribe',
     syncWithMembersAddon: 'when-equal',
-    title: (isB2C: boolean) => (isB2C ? c('Addon').t`Writing assistant` : c('Addon').t`Writing assistant seats`),
+    title: (isB2C, { scribeToLumo = false } = {}) => {
+        if (scribeToLumo) {
+            return isB2C
+                ? getScribeWritingAssistantText(true)
+                : c('Addon').t`${LUMO_SHORT_APP_NAME} writing assistant seats`;
+        }
+        return isB2C ? c('Addon').t`Writing assistant` : c('Addon').t`Writing assistant seats`;
+    },
     dashboardTitle: (quantity, maxMembers, scribeToLumo) => getScribeDashboardTitle(quantity, maxMembers, scribeToLumo),
-    addonCheckoutTitle: (seats, { planIDs }) =>
-        getIsB2BAudienceFromPlanIDs(planIDs)
-            ? // translator: sentence is "1 writing assistant seat" or "2 writing assistant seats"
-              c('Addon').ngettext(msgid`${seats} writing assistant seat`, `${seats} writing assistant seats`, seats)
-            : c('Info').t`Writing assistant`,
+    addonCheckoutTitle: (seats, { planIDs, scribeToLumo = false }) => {
+        if (!getIsB2BAudienceFromPlanIDs(planIDs)) {
+            return scribeToLumo ? getScribeWritingAssistantText(scribeToLumo) : c('Info').t`Writing assistant`;
+        }
+        return scribeToLumo
+            ? // translator: sentence is "1 Lumo writing assistant seat" or "2 Lumo writing assistant seats"
+              c('Addon').ngettext(
+                  msgid`${seats} ${LUMO_SHORT_APP_NAME} writing assistant seat`,
+                  `${seats} ${LUMO_SHORT_APP_NAME} writing assistant seats`,
+                  seats
+              )
+            : // translator: sentence is "1 writing assistant seat" or "2 writing assistant seats"
+              c('Addon').ngettext(msgid`${seats} writing assistant seat`, `${seats} writing assistant seats`, seats);
+    },
 };

@@ -38,6 +38,8 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { isBilledUser } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { usePaypalFirstSort } from '../signup/usePaypalFirstSort';
@@ -145,12 +147,14 @@ const AccountStepPayment = ({
     };
 
     const { subscriptionData } = model;
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const { isB2B, isGuardBlocked, getItem } = getHeadlessCheckout({
         planIDs: options.planIDs,
         plansMap: model.plansMap,
         checkResult: options.checkResult,
         app,
+        scribeToLumo,
     });
 
     const validatePayment = () => {

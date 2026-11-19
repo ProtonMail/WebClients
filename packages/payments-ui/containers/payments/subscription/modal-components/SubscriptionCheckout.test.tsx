@@ -4,14 +4,17 @@ import { screen } from '@testing-library/react';
 
 import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
-import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
+import type { FullPlansMap } from '@proton/shared/lib/payments/subscription/interface';
 import { buildUser } from '@proton/shared/testing/buildUser';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import type * as UseFlagModule from '@proton/unleash/useFlag';
 
 import { getIdealAuthorizationText } from '../../../../payment-methods/ideal/IdealAuthorizationText';
 import { useTaxCountry } from '../../../../ui/billing-address/hooks/useTaxCountry';
@@ -23,6 +26,16 @@ vi.mock('@proton/app-context/useConfig', () => ({
         APP_NAME: 'proton-account',
     }),
 }));
+
+const mockScribeToLumo = vi.fn(() => false);
+vi.mock('@proton/unleash/useFlag', async (importOriginal) => {
+    const actual = await importOriginal<typeof UseFlagModule>();
+    return {
+        ...actual,
+        useFlag: (flag: Parameters<typeof actual.useFlag>[0]) =>
+            flag === MailFeatureFlag.ScribeToLumo ? mockScribeToLumo() : actual.useFlag(flag),
+    };
+});
 
 vi.mock('@proton/components/containers/payments/Checkout', () => {
     const MockCheckout = ({
@@ -530,6 +543,39 @@ describe('SubscriptionCheckout', () => {
 
         expect(container).not.toHaveTextContent('Total for');
         expect(container).not.toHaveTextContent('Total for 12 months');
+    });
+
+    it('should name held writing-assistant seats after Lumo with ScribeToLumo on', () => {
+        mockScribeToLumo.mockReturnValue(true);
+        onTestFinished(() => {
+            mockScribeToLumo.mockReset();
+        });
+        const planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2 };
+        const plansMap = getTestPlansMap('CHF') as FullPlansMap;
+
+        const { container } = renderWithProviders(
+            <WrappedSubscriptionCheckout
+                freePlan={FREE_PLAN}
+                checkResult={getOptimisticCheckResult({ cycle: CYCLE.MONTHLY, planIDs, plansMap, currency: 'CHF' })}
+                plansMap={plansMap}
+                currency="CHF"
+                cycle={CYCLE.MONTHLY}
+                planIDs={planIDs}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledChargedImmediately={false}
+                isScheduledChargedLater={false}
+                isScheduled={false}
+                subscription={buildSubscription()}
+                paymentForbiddenReason={{ forbidden: false }}
+                paymentFacade={{ showTaxCountry: true } as any}
+                trial={false}
+            />
+        );
+
+        expect(container).toHaveTextContent('2 Lumo writing assistant seats');
     });
 
     it('should display member price per month', () => {

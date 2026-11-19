@@ -55,6 +55,7 @@ import type { SubscriptionPlan } from '@proton/shared/lib/payments/plan/interfac
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -196,6 +197,7 @@ const Step1 = ({
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
     const passTrialOfferEnabled = useFlag('PassTrialOffer');
     const passLifetimeEnabled = useFlag('PassSimpleLoginLifetimeOffer');
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
@@ -709,6 +711,7 @@ const Step1 = ({
             couponConfig,
             app,
             subscription: model.session?.subscription,
+            scribeToLumo,
         },
         {
             addons: () => [],

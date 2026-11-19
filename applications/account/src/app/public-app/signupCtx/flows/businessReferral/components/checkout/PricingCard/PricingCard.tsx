@@ -10,6 +10,8 @@ import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentCont
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import { APPS } from '@proton/shared/lib/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { type BusinessReferralPlan, getBusinessReferralPlanConfigs } from '../../../config/planConfigs';
@@ -29,6 +31,7 @@ export const PricingCard = ({ taxCountryCode }: { taxCountryCode?: string }) => 
     );
 
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const checkoutView = useMemo(
         () =>
@@ -39,6 +42,7 @@ export const PricingCard = ({ taxCountryCode }: { taxCountryCode?: string }) => 
                     checkResult: options.checkResult,
                     app: APPS.PROTONACCOUNT,
                     paymentForbiddenReason: { forbidden: false },
+                    scribeToLumo,
                 },
                 (headless) => ({
                     members: (item) => {
@@ -183,6 +187,7 @@ export const PricingCard = ({ taxCountryCode }: { taxCountryCode?: string }) => 
             hasFullCheckoutDetails,
             referralDiscountPercent,
             countryName,
+            scribeToLumo,
         ]
     );
 

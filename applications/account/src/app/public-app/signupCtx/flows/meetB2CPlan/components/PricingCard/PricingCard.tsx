@@ -22,6 +22,8 @@ import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentCont
 import { type CheckoutView, createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
@@ -139,6 +141,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
     const { options } = payments;
 
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const cycleOptions = [
         { text: c('Signup').t`Monthly`, value: CYCLE.MONTHLY },
@@ -152,6 +155,7 @@ export const PricingCard = ({ step }: { step: PricingStep }) => {
             checkResult: options.checkResult,
             app: APPS.PROTONMEET,
             paymentForbiddenReason: { forbidden: false },
+            scribeToLumo,
         },
         (headless) => ({
             members: () => null,
