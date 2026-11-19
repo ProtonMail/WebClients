@@ -459,6 +459,83 @@ describe('useSubscriptionCheck', () => {
         });
     });
 
+    describe('when an unpaid upcoming subscription renews the current plan and cycle', () => {
+        const currentCoupon = 'BF25PROMO';
+        const newCoupon = 'RETAIN30';
+        const planIDs = { [PLANS.VPN2024]: 1 };
+        const subscription = buildSubscription(
+            { planIDs, cycle: CYCLE.YEARLY, currency: 'EUR' },
+            {
+                CouponCode: currentCoupon,
+                UpcomingSubscription: buildSubscription(
+                    { planIDs, cycle: CYCLE.YEARLY, currency: 'EUR' },
+                    { IsPrepaid: false, CouponCode: null }
+                ),
+            }
+        );
+        const buildRenewalDeps = (checkSubscription = vi.fn()) =>
+            buildDeps({
+                subscription,
+                subscriptionCouponCode: currentCoupon,
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
+                paymentsApi: { checkSubscription } as any,
+            });
+        const buildRenewalModel = (overrides: Partial<Model> = {}) =>
+            buildModel({ planIDs, cycle: CYCLE.YEARLY, coupon: currentCoupon, ...overrides });
+
+        beforeEach(async () => {
+            const { isSubscriptionCheckForbiddenWithReason: actualIsSubscriptionCheckForbiddenWithReason } =
+                await vi.importActual<{
+                    isSubscriptionCheckForbiddenWithReason: typeof isSubscriptionCheckForbiddenWithReason;
+                }>('@proton/payments/core/subscription/helpers');
+            vi.mocked(isSubscriptionCheckForbiddenWithReason).mockImplementation(
+                actualIsSubscriptionCheckForbiddenWithReason
+            );
+        });
+
+        it('does not call checkSubscription and reports already-subscribed without a new coupon', async () => {
+            const deps = buildRenewalDeps();
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(buildRenewalModel());
+
+            expect(deps.paymentsApi.checkSubscription).not.toHaveBeenCalled();
+            expect(deps.setters.setModel).toHaveBeenCalledWith(
+                expect.objectContaining({ paymentForbiddenReason: { forbidden: true, reason: 'already-subscribed' } })
+            );
+        });
+
+        it('sends the new coupon to checkSubscription and lets the user pay the discounted renewal', async () => {
+            const discountedRenewal = buildCheckResult({
+                Amount: 8388,
+                AmountDue: 5872,
+                CouponDiscount: -2516,
+                Cycle: CYCLE.YEARLY,
+                Coupon: { Code: newCoupon, Description: 'Retention', MaximumRedemptionsPerUser: null },
+                SubscriptionMode: SubscriptionMode.ScheduledChargedImmediately,
+            });
+            const deps = buildRenewalDeps(vi.fn().mockResolvedValue(discountedRenewal));
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await result.current.check(buildRenewalModel({ gift: newCoupon }), true);
+
+            expect(deps.paymentsApi.checkSubscription).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    Plans: planIDs,
+                    Cycle: CYCLE.YEARLY,
+                    Currency: 'EUR',
+                    Codes: [newCoupon, currentCoupon],
+                }),
+                expect.anything()
+            );
+            expect(deps.setters.setCheckResult).toHaveBeenCalledWith(discountedRenewal);
+            expect(deps.setters.setModel).toHaveBeenCalledWith(
+                expect.objectContaining({ coupon: newCoupon, paymentForbiddenReason: { forbidden: false } })
+            );
+            expect(mockCreateNotification).not.toHaveBeenCalled();
+        });
+    });
+
     describe('happy path', () => {
         it('calls checkSubscription and updates state on success', async () => {
             const apiResult = buildCheckResult({

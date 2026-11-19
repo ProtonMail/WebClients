@@ -594,6 +594,7 @@ function getCheckForbiddenReasonForSubscription(
      * | hasUpcomingPrepaidSubscription | check forbidden (1*)  | check forbidden        |
      * | hasNoUpcomingSubscription      | check forbidden (1*)  | n/a                    |
      * | hasScheduledUnpaidDowncycling  | check allowed         | check forbidden        |
+     * | hasUnpaidSameTermRenewal       | check forbidden (1*)  | check forbidden (1*)   |
      *
      * (1*) - unless a NEW coupon/code is provided — one that differs from the coupon already applied to the active
      *  subscription (or more than one code). In that case the check is allowed so the backend can validate the coupon
@@ -625,10 +626,15 @@ function getCheckForbiddenReasonForSubscription(
      * scribe addons and they want to decrease the number of scribes then it creates a scheduled subscription with lower
      * number of scribes.
      *
-     * The four cases described above are handled by:
-     * `(forbiddenWithoutNewCoupon && !hasNewCoupon) || selectedSameAsUpcoming`, where
-     * `forbiddenWithoutNewCoupon = selectedSameAsCurrent && !hasScheduledUnpaidModification`. When it matches, the
-     * function returns reason 'already-subscribed'.
+     * hasUnpaidSameTermRenewal - the backend scheduled an unpaid upcoming subscription with the same plans and cycle
+     * as the current one, for example to renew vpn2024 12m at a newer price point (P2-3035). Selecting that plan and
+     * cycle matches both the current and the upcoming subscription, and a NEW coupon lets the user re-subscribe.
+     *
+     * The five cases described above are handled by:
+     * `(forbiddenWithoutNewCoupon && !hasNewCoupon) || forbiddenEvenWithNewCoupon`, where
+     * `forbiddenWithoutNewCoupon = (selectedSameAsCurrent && !hasScheduledUnpaidModification) ||
+     * selectedSameAsUnpaidSameTermRenewal` and `forbiddenEvenWithNewCoupon = selectedSameAsUpcoming &&
+     * !selectedSameAsUnpaidSameTermRenewal`. When it matches, the function returns reason 'already-subscribed'.
      *
      * The `!hasNewCoupon` part allows the /check call when a NEW coupon or promo code is present, even if the plan and
      * cycle are the same as the current subscription. This is needed so the backend can validate the coupon and return
@@ -636,7 +642,8 @@ function getCheckForbiddenReasonForSubscription(
      * (see {@link isDangerouslyAllowedSubscriptionEstimation}). A coupon counts as new only when it differs from the
      * coupon already applied to the subscription (or when more than one code is supplied) — re-supplying the existing
      * coupon stays 'already-subscribed', see P2-2106. The coupon exception intentionally does not apply to
-     * `selectedSameAsUpcoming`.
+     * `selectedSameAsUpcoming`, except when the selection is also the current subscription
+     * (`selectedSameAsUnpaidSameTermRenewal`).
      *
      * The condition `selectedSameAsCurrentIgnorringCycle && managedExternally` is a special case for multi-subs. If
      * user has a mobile subscription (for example, Lumo) and selects the same plan on web (any cycle) then the check is
@@ -684,9 +691,14 @@ function getCheckForbiddenReasonForSubscription(
     const hasScheduledUnpaidModification =
         hasUpcomingSubscription && !variableCycleOffer && isUpcomingSubscriptionUnpaid(subscription);
 
-    const forbiddenWithoutNewCoupon = selectedSameAsCurrent && !hasScheduledUnpaidModification;
+    const selectedSameAsUnpaidSameTermRenewal =
+        selectedSameAsCurrent && selectedSameAsUpcoming && isUpcomingSubscriptionUnpaid(subscription);
+
+    const forbiddenWithoutNewCoupon =
+        (selectedSameAsCurrent && !hasScheduledUnpaidModification) || selectedSameAsUnpaidSameTermRenewal;
+    const forbiddenEvenWithNewCoupon = selectedSameAsUpcoming && !selectedSameAsUnpaidSameTermRenewal;
     const hasNewCoupon = !!codes.length && (codes.length >= 2 || codes[0] !== subscription.CouponCode);
-    if ((forbiddenWithoutNewCoupon && !hasNewCoupon) || selectedSameAsUpcoming) {
+    if ((forbiddenWithoutNewCoupon && !hasNewCoupon) || forbiddenEvenWithNewCoupon) {
         return { forbidden: true, reason: 'already-subscribed' };
     }
 

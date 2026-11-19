@@ -57,7 +57,15 @@ const SubscriptionCheckoutPlanMoreInformation = ({ checkoutView }: { checkoutVie
     };
 
     const showGiftCodeLink =
-        !showGiftCodeForm && canShowGiftCodeInput({ paymentForbiddenReason, couponConfig, checkResult });
+        !showGiftCodeForm &&
+        canShowGiftCodeInput({
+            paymentForbiddenReason,
+            couponConfig,
+            checkResult,
+            subscriptions: multiSubscriptionContext.subscriptions,
+            planIDs,
+            cycle,
+        });
 
     const openPlanFeatureModal = () => {
         checkoutTelemetry.subscriptionContainer.reportPlanDescriptionInteraction({ action: 'expand' });

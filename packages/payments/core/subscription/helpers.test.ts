@@ -1060,6 +1060,83 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
             reason: 'possibly-invalid-coupon',
         });
     });
+
+    describe('when the unpaid upcoming subscription renews the same plan and cycle', () => {
+        const planIDs = { [PLANS.VPN2024]: 1 };
+        const cycle = CYCLE.YEARLY;
+        const buildRenewingSubscription = ({ IsPrepaid }: { IsPrepaid: boolean }) =>
+            buildSubscription(
+                { planIDs, cycle, currency: 'EUR' },
+                {
+                    CouponCode: 'FIRST_YEAR_COUPON',
+                    UpcomingSubscription: buildSubscription({ planIDs, cycle, currency: 'EUR' }, { IsPrepaid }),
+                }
+            );
+
+        it('should return already-subscribed without a coupon', () => {
+            expect(
+                isSubscriptionCheckForbiddenWithReason(
+                    buildMultiSubscriptionContextFromSubscription(buildRenewingSubscription({ IsPrepaid: false })),
+                    { planIDs, cycle }
+                )
+            ).toEqual({ forbidden: true, reason: 'already-subscribed' });
+        });
+
+        it('should return possibly-invalid-coupon with a new coupon', () => {
+            expect(
+                isSubscriptionCheckForbiddenWithReason(
+                    buildMultiSubscriptionContextFromSubscription(buildRenewingSubscription({ IsPrepaid: false })),
+                    { planIDs, cycle, coupon: 'NEW_COUPON' }
+                )
+            ).toEqual({ forbidden: false, reason: 'possibly-invalid-coupon' });
+        });
+
+        it('should return already-subscribed with the coupon the subscription already has', () => {
+            expect(
+                isSubscriptionCheckForbiddenWithReason(
+                    buildMultiSubscriptionContextFromSubscription(buildRenewingSubscription({ IsPrepaid: false })),
+                    { planIDs, cycle, coupon: 'FIRST_YEAR_COUPON' }
+                )
+            ).toEqual({ forbidden: true, reason: 'already-subscribed' });
+        });
+
+        it('should return already-subscribed with a new coupon when the upcoming subscription is prepaid', () => {
+            expect(
+                isSubscriptionCheckForbiddenWithReason(
+                    buildMultiSubscriptionContextFromSubscription(buildRenewingSubscription({ IsPrepaid: true })),
+                    { planIDs, cycle, coupon: 'NEW_COUPON' }
+                )
+            ).toEqual({ forbidden: true, reason: 'already-subscribed' });
+        });
+    });
+
+    it('should return already-subscribed with a new coupon when the selection is an unpaid upcoming addon decrease', () => {
+        const cycle = CYCLE.MONTHLY;
+        const UpcomingSubscription = buildSubscription(
+            {
+                planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 1 },
+                cycle,
+                currency: 'USD',
+            },
+            { IsPrepaid: false }
+        );
+        const subscription = buildSubscription(
+            {
+                planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2 },
+                cycle,
+                currency: 'USD',
+            },
+            { UpcomingSubscription }
+        );
+
+        expect(
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                planIDs: getPlanIDs(UpcomingSubscription),
+                cycle,
+                coupon: 'NEW_COUPON',
+            })
+        ).toEqual({ forbidden: true, reason: 'already-subscribed' });
+    });
 });
 
 describe('isDangerouslyAllowedSubscriptionEstimation', () => {
