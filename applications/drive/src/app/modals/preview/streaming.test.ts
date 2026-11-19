@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import type { DownloadController, ProtonDriveClient, SeekableReadableStream } from '@proton/drive/sdk';
 import { traceError } from '@proton/shared/lib/helpers/sentry';

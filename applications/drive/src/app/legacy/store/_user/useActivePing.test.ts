@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 
 import { ACTIVE_PING_INTERVAL } from '@proton/shared/lib/drive/constants';
 
@@ -37,7 +37,7 @@ describe('useActivePing', () => {
 
     it('call the api periodically based on the interval', async () => {
         const interval = 1000;
-        const { waitFor } = renderHook(() => useActivePing(interval));
+        renderHook(() => useActivePing(interval));
 
         jest.advanceTimersByTime(interval);
 

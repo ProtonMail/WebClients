@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook, waitFor } from '@testing-library/react';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
@@ -105,10 +105,10 @@ describe('useSearchModule', () => {
         });
 
         it('returns isAvailable: true after init', async () => {
-            const { result, waitForNextUpdate } = renderHook(() => useSearchModule());
+            const { result } = renderHook(() => useSearchModule());
             expect(result.current.isAvailable).toBe(false);
 
-            await waitForNextUpdate();
+            await waitFor(() => expect(result.current.isAvailable).toBe(true));
 
             expect(result.current.isAvailable).toBe(true);
         });
@@ -116,8 +116,8 @@ describe('useSearchModule', () => {
 
     describe('auto-start when idle', () => {
         it('does not start when user has not opted in', async () => {
-            const { waitForNextUpdate } = renderHook(() => useSearchModule());
-            await waitForNextUpdate();
+            const { result } = renderHook(() => useSearchModule());
+            await waitFor(() => expect(result.current.isAvailable).toBe(true));
 
             expect(mockWorkerStart).not.toHaveBeenCalled();
         });
@@ -125,8 +125,8 @@ describe('useSearchModule', () => {
 
     describe('optIn triggers start', () => {
         it('calling optIn also calls WorkerClient.start', async () => {
-            const { result, waitForNextUpdate } = renderHook(() => useSearchModule());
-            await waitForNextUpdate();
+            const { result } = renderHook(() => useSearchModule());
+            await waitFor(() => expect(result.current.isAvailable).toBe(true));
 
             await act(async () => {
                 await expectAvailable(result).optIn();
@@ -152,8 +152,8 @@ describe('useSearchModule', () => {
         // a fresh index may or may not end up capped again. The cached flag on SearchModule (and
         // this hook's local state) must follow, in the same render pass - not just after a reload.
         it('re-flips isPartialIndexNoticeDismissed to false after reset(), without remounting', async () => {
-            const { result, waitForNextUpdate } = renderHook(() => useSearchModule());
-            await waitForNextUpdate();
+            const { result } = renderHook(() => useSearchModule());
+            await waitFor(() => expect(result.current.isAvailable).toBe(true));
 
             await act(async () => {
                 await expectAvailable(result).dismissPartialIndexNotice();
@@ -169,8 +169,8 @@ describe('useSearchModule', () => {
         });
 
         it('re-flips isPartialIndexNoticeDismissed to false after rebuild(), without remounting', async () => {
-            const { result, waitForNextUpdate } = renderHook(() => useSearchModule());
-            await waitForNextUpdate();
+            const { result } = renderHook(() => useSearchModule());
+            await waitFor(() => expect(result.current.isAvailable).toBe(true));
 
             await act(async () => {
                 await expectAvailable(result).dismissPartialIndexNotice();

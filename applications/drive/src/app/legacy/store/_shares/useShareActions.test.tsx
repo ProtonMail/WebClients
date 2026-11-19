@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react';
 import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import { queryMigrateLegacyShares } from '@proton/shared/lib/api/drive/share';

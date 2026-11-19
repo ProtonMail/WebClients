@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';

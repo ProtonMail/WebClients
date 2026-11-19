@@ -1,7 +1,7 @@
-import type { JSX } from 'react';
+import type { ReactNode } from 'react';
 import { MemoryRouter } from 'react-router-dom-v5-compat';
 
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 import { useUrlSearchParams } from './useUrlSearchParam';
 
@@ -10,7 +10,7 @@ import { useUrlSearchParams } from './useUrlSearchParam';
 const routerFutureFlags = { v7_startTransition: true, v7_relativeSplatPath: true };
 
 const createWrapper = (initialEntries: string[]) => {
-    const Wrapper = ({ children }: { children: JSX.Element }) => (
+    const Wrapper = ({ children }: { children: ReactNode }) => (
         <MemoryRouter initialEntries={initialEntries} future={routerFutureFlags}>
             {children}
         </MemoryRouter>

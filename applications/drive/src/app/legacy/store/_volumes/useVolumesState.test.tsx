@@ -1,5 +1,5 @@
-import type { RenderResult } from '@testing-library/react-hooks';
-import { renderHook } from '@testing-library/react-hooks';
+import type { RenderHookResult } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 
 import { useVolumesStateProvider } from './useVolumesState';
 
@@ -7,7 +7,7 @@ const VOLUME_ID_1 = 'volumeId-1';
 const VOLUME_ID_2 = 'volumeId-2';
 
 describe('useVolumesState', () => {
-    let hook: RenderResult<ReturnType<typeof useVolumesStateProvider>>;
+    let hook: RenderHookResult<ReturnType<typeof useVolumesStateProvider>, unknown>['result'];
 
     const renderTestHook = () => {
         const { result } = renderHook(() => useVolumesStateProvider());

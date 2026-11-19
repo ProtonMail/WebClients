@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 
 import { queryListPendingExternalInvitations } from '@proton/shared/lib/api/drive/invitation';
 import type { ListDrivePendingExternalInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
@@ -44,15 +44,14 @@ describe('useOnboarding', () => {
     });
 
     it('should initialize with default values and fetch pending invitations', async () => {
-        const { result, waitFor } = renderHook(() => useOnboarding());
+        const { result } = renderHook(() => useOnboarding());
 
         expect(result.current.isLoading).toBe(true);
         expect(result.current.checklist).toBe(checklistMock);
         expect(result.current.hasPendingExternalInvitations).toBe(false);
-        await act(async () => {
-            await waitFor(() =>
-                expect(mockedDebouncedRequest).toHaveBeenCalledWith(queryListPendingExternalInvitations())
-            );
+        await waitFor(() => expect(mockedDebouncedRequest).toHaveBeenCalledWith(queryListPendingExternalInvitations()));
+        // RTL's waitFor can't run inside act(), so wait for the state the request settles into
+        await waitFor(() => {
             expect(result.current.hasPendingExternalInvitations).toBe(true);
             expect(result.current.isLoading).toBe(false);
         });

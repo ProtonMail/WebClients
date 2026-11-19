@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom-v5-compat';
 
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 import { when } from 'jest-when';
 
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
