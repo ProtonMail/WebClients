@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { renderHook } from '@testing-library/react';
 import { useFlagsStatus } from '@unleash/proxy-client-react';
 
@@ -15,18 +16,18 @@ import type { CategoryTab } from './categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from './categoriesConstants';
 import { useCategoriesData } from './useCategoriesData';
 
-jest.mock('@unleash/proxy-client-react');
-jest.mock('@proton/react-redux-store/ProtonStoreContext');
-jest.mock('@proton/unleash/useFlag');
+vi.mock('@unleash/proxy-client-react', () => ({ useFlagsStatus: vi.fn() }));
+vi.mock('@proton/react-redux-store/ProtonStoreContext', () => ({ baseUseSelector: vi.fn() }));
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 
-jest.mock('../../store/labels/selector', () => ({
-    selectActiveCategoriesTabs: jest.fn(),
-    selectCategoriesLabel: jest.fn(),
+vi.mock('../../store/labels/selector', () => ({
+    selectActiveCategoriesTabs: vi.fn(),
+    selectCategoriesLabel: vi.fn(),
 }));
 
-jest.mock('../../store/categoriesView/categoriesViewSelector', () => ({
-    selectCategoryViewLoading: jest.fn(),
-    selectCategoryViewSettingAccess: jest.fn(),
+vi.mock('../../store/categoriesView/categoriesViewSelector', () => ({
+    selectCategoryViewLoading: vi.fn(),
+    selectCategoryViewSettingAccess: vi.fn(),
 }));
 
 interface FlagOptions {
@@ -34,7 +35,7 @@ interface FlagOptions {
 }
 
 const mockFlags = ({ categoryView = false }: FlagOptions = {}) => {
-    jest.mocked(useFlag).mockImplementation((flag) => {
+    vi.mocked(useFlag).mockImplementation((flag) => {
         if (flag === 'CategoryViewDisabled') {
             return !categoryView;
         }
@@ -69,7 +70,7 @@ const mockSelectors = ({
     categoriesStore = [],
     activeCategoriesTabs = [PRIMARY_TAB, SOCIAL_TAB],
 }: SelectorOptions = {}) => {
-    jest.mocked(baseUseSelector).mockImplementation((selector: any) => {
+    vi.mocked(baseUseSelector).mockImplementation((selector: any) => {
         if (selector === selectCategoryViewLoading) {
             return isLoading;
         }
@@ -89,12 +90,12 @@ const mockSelectors = ({
 describe('useCategoriesData', () => {
     beforeEach(() => {
         mockFlags();
-        jest.mocked(useFlagsStatus).mockReturnValue({ flagsReady: true } as any);
+        vi.mocked(useFlagsStatus).mockReturnValue({ flagsReady: true } as any);
         mockSelectors();
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('isCategoryViewEnabled', () => {
