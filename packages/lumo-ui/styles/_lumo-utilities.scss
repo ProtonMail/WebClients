@@ -1,0 +1,196 @@
+@use 'sass:map';
+
+// Shared by the application and embedded .lumo-ui entry points. The host supplies
+// Proton's layout utilities; visual classes use Lumo tokens.
+// Use these inside .lumo-ui in embedded apps, where the token values are scoped.
+
+// Color classes follow lumo-{property}-{role}, for example lumo-color-glyph-mid.
+// Roles stay semantic so theme changes update values without changing class names.
+// These lists intentionally exclude raw palette colors such as iris-600.
+$colors: (
+	// Text and icons that inherit currentColor; does not force SVG fill or stroke.
+	color: (
+		glyph,
+		glyph-mid,
+		glyph-low,
+		glyph-disabled,
+		glyph-inverse,
+		glyph-contrast,
+		glyph-brand,
+		glyph-brand-mid,
+		glyph-brand-strong,
+		glyph-brand-text,
+		control-brand-text,
+		signal-danger,
+		signal-danger-text,
+		signal-warning,
+		signal-success,
+		signal-info,
+		artifact-syntax-keyword,
+		artifact-syntax-string,
+		artifact-syntax-number,
+		artifact-syntax-comment,
+		artifact-syntax-function,
+		artifact-syntax-type,
+		artifact-syntax-line-number,
+		artifact-doc-icon,
+		artifact-code-icon,
+		artifact-web-icon,
+		'white',
+		'black',
+	),
+	// Background only: pair with a suitable foreground role. State names such as
+	// signal-danger-hover select a value, not a :hover interaction.
+	bg: (
+		control-fill-empty,
+		control-fill-translucent,
+		control-fill-low,
+		control-fill,
+		control-fill-mid,
+		control-fill-strongest,
+		control-fill-contrast,
+		control-brand-fill,
+		control-brand-fill-mid,
+		control-brand-fill-strong,
+		canvas,
+		panel,
+		panel-elevated,
+		panel-inverse,
+		overlay,
+		layer,
+		scrim,
+		scrim-light,
+		signal-danger,
+		signal-danger-hover,
+		signal-danger-pressed,
+		signal-warning,
+		signal-success,
+		signal-info,
+		artifact-syntax-selection,
+		artifact-code-bg,
+		artifact-skeleton,
+		artifact-doc-tile,
+		artifact-code-tile,
+		artifact-web-tile,
+		'white',
+		'black',
+	),
+);
+$color-properties: (
+	color: color,
+	bg: background-color,
+);
+
+@each $utility, $roles in $colors {
+	@each $role in $roles {
+		.lumo-#{$utility}-#{$role} {
+			#{map.get($color-properties, $utility)}: var(--lumo-#{$role});
+		}
+	}
+}
+
+// Border color only; components supply width/style and focus behavior.
+// Keep class names concise while mapping explicitly to the semantic token names.
+@each $class,
+	$token
+		in (
+			lumo-border: border,
+			lumo-border-mid: border-mid,
+			lumo-border-control: control-border,
+			lumo-border-control-translucent: control-border-translucent,
+			lumo-border-control-mid: control-border-mid,
+			lumo-border-control-strong: control-border-strong,
+			lumo-border-control-focus: control-border-focus,
+			lumo-border-artifact-doc: artifact-doc-border,
+			lumo-border-artifact-code: artifact-code-border,
+			lumo-border-artifact-web: artifact-web-border
+		)
+{
+	.#{$class} {
+		border-color: var(--lumo-#{$token});
+	}
+}
+
+// Each role sets family, weight, size, and line height together through the font shorthand.
+// Reset letter spacing as well, so tracking inherited from a heading or button cannot leak in.
+// Sizes use rem for text scaling; consumers must load the font files separately.
+@each $role
+		in (
+			headline-small,
+			title-large,
+			title-medium,
+			title-small,
+			body-large,
+			body-medium,
+			body-small,
+			label-large,
+			label-medium,
+			label-small
+		)
+{
+	.lumo-#{$role} {
+		font: var(--lumo-type-#{$role});
+		letter-spacing: var(--lumo-font-letter-spacing);
+	}
+}
+
+// Combine with a type role to keep its size and line height while switching to the code font.
+.lumo-font-mono {
+	font-family: var(--lumo-font-mono);
+}
+
+// Radius suffixes match pixel-based token names; full makes pill-shaped corners.
+// This rounds the border box but does not clip overflowing children.
+@each $size in (4, 8, 12, 16, 28, full) {
+	.lumo-radius-#{$size} {
+		border-radius: var(--lumo-radius-#{$size});
+	}
+}
+
+// Elevation applies a shadow only; surface color, borders, and stacking order stay independent.
+@each $level in (1, 2, 3, 4) {
+	.lumo-elevation-#{$level} {
+		box-shadow: var(--lumo-elevation-#{$level});
+	}
+}
+
+// Suffixes are percentages: lumo-opacity-20 uses 0.2, affecting children as well.
+// Use a translucent fill role when only the background should fade.
+@each $opacity in (4, 5, 8, 10, 16, 20, 30, 48) {
+	.lumo-opacity-#{$opacity} {
+		opacity: var(--lumo-opacity-#{$opacity});
+	}
+}
+
+// Square icon dimensions use logical properties. These classes do not change
+// stroke width, the SVG viewBox, or flex shrinking; compose layout utilities as needed.
+@each $size in (12, 14, 16, 18, 20, 24) {
+	.lumo-icon-size-#{$size} {
+		inline-size: var(--lumo-icon-size-#{$size});
+		block-size: var(--lumo-icon-size-#{$size});
+	}
+}
+
+// Duration suffixes are milliseconds and apply to transitions and keyframe animations.
+// Components choose properties/keyframes; no transition: all is introduced.
+// Reduced-motion preferences override the duration without changing the end state.
+@each $duration in (100, 150, 200, 300) {
+	.lumo-duration-#{$duration} {
+		transition-duration: var(--lumo-duration-#{$duration});
+		animation-duration: var(--lumo-duration-#{$duration});
+
+		@media (prefers-reduced-motion: reduce) {
+			transition-duration: 0s;
+			animation-duration: 0s;
+		}
+	}
+}
+
+// Pair with a duration class. The lottie curve is a CSS timing token; it does not
+// configure a Lottie player or start an animation on its own.
+@each $easing in (standard, enter, linear, lottie) {
+	.lumo-easing-#{$easing} {
+		transition-timing-function: var(--lumo-easing-#{$easing});
+		animation-timing-function: var(--lumo-easing-#{$easing});
+	}
+}

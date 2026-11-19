@@ -26,7 +26,10 @@
         "./shared-components/ItemCheckList/ItemCheckList": "./shared-components/ItemCheckList/ItemCheckList.tsx",
         "./shared-components/NoteLine/NoteLine": "./shared-components/NoteLine/NoteLine.tsx",
         "./shared-components/sentenceValue/sentenceValue": "./shared-components/sentenceValue/sentenceValue.tsx",
-        "./styles/lumo-ui.scss": "./styles/lumo-ui.scss"
+        "./styles/lumo-ui.scss": "./styles/lumo-ui.scss",
+        "./styles/lumo-design-system.scss": "./styles/lumo-design-system.scss",
+        "./styles/themes/lumo-light.raw.scss": "./styles/themes/lumo-light.raw.scss",
+        "./styles/themes/lumo-dark.raw.scss": "./styles/themes/lumo-dark.raw.scss"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
