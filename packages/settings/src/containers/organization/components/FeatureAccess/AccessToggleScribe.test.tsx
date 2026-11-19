@@ -3,23 +3,23 @@ import { screen } from '@testing-library/react';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { CommonFeatureFlag, MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { AccessToggleScribe } from './AccessToggleScribe';
 
-jest.mock('@proton/account/organization/hooks');
-jest.mocked(useOrganization).mockReturnValue([{ Settings: { ShowScribeWritingAssistant: true } } as any, false]);
+vi.mock('@proton/account/organization/hooks');
+vi.mocked(useOrganization).mockReturnValue([{ Settings: { ShowScribeWritingAssistant: true } } as any, false]);
 
-jest.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled');
-jest.mocked(useAssistantFeatureEnabled).mockReturnValue({ paymentsEnabled: true } as any);
+vi.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled');
+vi.mocked(useAssistantFeatureEnabled).mockReturnValue({ paymentsEnabled: true } as any);
 
-jest.mock('@proton/components/containers/payments/subscription/subscriptionModalContext');
-jest.mocked(useSubscriptionModal).mockReturnValue([jest.fn(), false, true]);
+vi.mock('@proton/components/containers/payments/subscription/subscriptionModalContext');
+vi.mocked(useSubscriptionModal).mockReturnValue([vi.fn(), false, true]);
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = jest.mocked(useFlag);
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = vi.mocked(useFlag);
 
 describe('AccessToggleScribe', () => {
     const renderWithScribeToLumo = (scribeToLumo: boolean) => {

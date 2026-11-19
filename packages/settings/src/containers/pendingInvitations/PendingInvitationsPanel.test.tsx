@@ -1,12 +1,13 @@
 import { render, screen } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useGetUserInvitations } from '@proton/account/userInvitations/hooks';
 import { pendingInvite } from '@proton/components/testing/subscriptionData';
 
 import PendingInvitationsPanel from './PendingInvitationsPanel';
 
-jest.mock('@proton/account/userInvitations/hooks');
-const mockUseGetUserInvitations = useGetUserInvitations as jest.MockedFunction<any>;
+vi.mock('@proton/account/userInvitations/hooks');
+const mockUseGetUserInvitations = useGetUserInvitations as MockedFunction<any>;
 mockUseGetUserInvitations.mockReturnValue(async () => []);
 
 describe('PendingInvitationsPanel', () => {

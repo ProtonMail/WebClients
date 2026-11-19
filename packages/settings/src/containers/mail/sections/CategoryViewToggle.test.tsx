@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -7,33 +8,33 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { CategoryViewToggle } from './CategoryViewToggle';
 
-jest.mock('@proton/mail/store/mailSettings/hooks');
-const mockUseMailSettings = useMailSettings as jest.Mock;
+vi.mock('@proton/mail/store/mailSettings/hooks');
+const mockUseMailSettings = useMailSettings as Mock;
 
-jest.mock('@proton/account/organization/hooks');
-const mockUseOrganization = useOrganization as jest.Mock;
+vi.mock('@proton/account/organization/hooks');
+const mockUseOrganization = useOrganization as Mock;
 
 // We assume the flag is always enabled
-jest.mock('@proton/unleash/useFlag');
-jest.mocked(useFlag).mockReturnValue(false);
+vi.mock('@proton/unleash/useFlag');
+vi.mocked(useFlag).mockReturnValue(false);
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn().mockReturnValue({ createNotification: vi.fn() }),
 }));
 
-jest.mock('@proton/react-redux-store/ProtonStoreContext', () => ({
-    ...jest.requireActual('@proton/react-redux-store/ProtonStoreContext'),
-    baseUseDispatch: () => jest.fn(),
+vi.mock('@proton/react-redux-store/ProtonStoreContext', async () => ({
+    ...(await vi.importActual('@proton/react-redux-store/ProtonStoreContext')),
+    baseUseDispatch: () => vi.fn(),
 }));
 
-jest.mock('@proton/mail/features/categoriesView/useCategoriesTelemetry', () => ({
+vi.mock('@proton/mail/features/categoriesView/useCategoriesTelemetry', () => ({
     useCategoriesTelemetry: () => ({
-        sendReportChangeCategorySettings: jest.fn(),
+        sendReportChangeCategorySettings: vi.fn(),
     }),
 }));
 
-jest.mock('@proton/mail/features/categoriesView/useMarkOnboardingComplete', () => ({
-    useMarkOnboardingComplete: () => jest.fn(),
+vi.mock('@proton/mail/features/categoriesView/useMarkOnboardingComplete', () => ({
+    useMarkOnboardingComplete: () => vi.fn(),
 }));
 
 describe('CategoryViewSection', () => {

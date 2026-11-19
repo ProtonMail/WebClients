@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useUpdateAccountRecovery } from '@proton/account-recovery/recovery/useUpdateAccountRecovery';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
@@ -6,24 +7,24 @@ import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 
 import RecoveryEmailSubpage from './RecoveryEmailSubpage';
 
-jest.mock('@proton/account/recovery/sentinelHooks');
-jest.mock('@proton/account-recovery/recovery/useUpdateAccountRecovery');
-jest.mock('@proton/components/containers/themes/ThemeProvider');
-jest.mock('@proton/components/containers/recovery/email/RecoveryEmail', () => ({
+vi.mock('@proton/account/recovery/sentinelHooks');
+vi.mock('@proton/account-recovery/recovery/useUpdateAccountRecovery');
+vi.mock('@proton/components/containers/themes/ThemeProvider');
+vi.mock('@proton/components/containers/recovery/email/RecoveryEmail', () => ({
     __esModule: true,
     default: () => {
         return null;
     },
 }));
-jest.mock('@proton/components/containers/recovery/LastChanged', () => ({
+vi.mock('@proton/components/containers/recovery/LastChanged', () => ({
     LastChanged: () => {
         return null;
     },
 }));
 
-const mockUseIsSentinelUser = jest.mocked(useIsSentinelUser);
-const mockUseUpdateAccountRecovery = useUpdateAccountRecovery as jest.Mock;
-const mockUseTheme = useTheme as jest.Mock;
+const mockUseIsSentinelUser = vi.mocked(useIsSentinelUser);
+const mockUseUpdateAccountRecovery = useUpdateAccountRecovery as Mock;
+const mockUseTheme = useTheme as Mock;
 
 const DESCRIPTION = 'If disabled, Proton will still use your recovery email to send security notifications.';
 const SENTINEL_DISABLE_WARNING = 'To ensure the highest possible security of your account, disable Recovery by email.';
@@ -39,7 +40,7 @@ interface SetupOptions {
 }
 
 const setup = ({ isSentinelUser, hasReset }: SetupOptions) => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     mockUseIsSentinelUser.mockReturnValue([{ isSentinelUser } as ReturnType<typeof useIsSentinelUser>[0], false]);
     mockUseTheme.mockReturnValue({ information: { dark: false } });
     mockUseUpdateAccountRecovery.mockReturnValue({
@@ -55,7 +56,7 @@ const setup = ({ isSentinelUser, hasReset }: SetupOptions) => {
             },
         },
         recoveryEmail: {
-            handleChangeEmailValue: jest.fn(),
+            handleChangeEmailValue: vi.fn(),
             toggleProps: { checked: hasReset, onChange, loading: false },
             props: {},
         },
@@ -68,7 +69,7 @@ const setup = ({ isSentinelUser, hasReset }: SetupOptions) => {
 
 describe('RecoveryEmailSubpage', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('lets a Sentinel user enable recovery by email', () => {
