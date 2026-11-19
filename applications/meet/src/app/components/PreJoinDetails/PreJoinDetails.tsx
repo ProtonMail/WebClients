@@ -28,13 +28,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
-import {
-    clearDesktopAppPreference,
-    getBrowserPreference,
-    getDesktopAppOption,
-    saveBrowserPreference,
-} from '../../utils/desktopAppDetector';
-import { wasDesktopAppTriedOnLoad } from '../../utils/openDesktopAppOnLoad';
+import { clearDesktopAppPreference, getDesktopAppOption, saveBrowserPreference } from '../../utils/desktopAppDetector';
 import { OpenInDesktopApp } from '../OpenInDesktopApp/OpenInDesktopApp';
 import { useDesktopAppPreferenceStorageKey } from '../OpenInDesktopApp/useDesktopAppPreferenceStorageKey';
 import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
@@ -75,8 +69,6 @@ export const PreJoinDetails = ({
     const isJoinErrorOpen = useMeetSelector(selectJoinError) !== null;
     const desktopAppPreferenceStorageKey = useDesktopAppPreferenceStorageKey();
     const desktopAppOption = getDesktopAppOption(useFlag('MeetOpenDesktopAppOnLoad'));
-    const [prefersBrowser] = useState(() => getBrowserPreference(desktopAppPreferenceStorageKey));
-    const showJoinMeetingOnly = desktopAppOption === 'openOnLoad' && !prefersBrowser;
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
@@ -102,16 +94,16 @@ export const PreJoinDetails = ({
         if (instantMeeting) {
             return c('Action').t`Start meeting`;
         }
-        if (isElectronApp || showJoinMeetingOnly) {
+        if (isElectronApp) {
             return c('Action').t`Join meeting`;
         }
         return isHost ? c('Action').t`Start meeting in browser` : c('Action').t`Join in browser`;
     };
 
-    const showOpenInDesktopApp = !instantMeeting && desktopAppOption !== 'unavailable' && !showJoinMeetingOnly;
+    const showOpenInDesktopApp = !instantMeeting && desktopAppOption !== 'unavailable';
 
     const handleJoinMeeting = () => {
-        if (showOpenInDesktopApp || wasDesktopAppTriedOnLoad(meetingLinkName)) {
+        if (showOpenInDesktopApp) {
             if (desktopAppOption === 'openOnLoad') {
                 saveBrowserPreference(desktopAppPreferenceStorageKey);
             } else {

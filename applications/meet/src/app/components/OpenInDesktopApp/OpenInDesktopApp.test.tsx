@@ -1,12 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import type { Mock } from 'vitest';
 
 import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
-import type * as DesktopAppDetector from '../../utils/desktopAppDetector';
-import { getDesktopAppPreference, saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { openDesktopAppOnPreJoin } from '../../utils/openDesktopAppOnLoad';
 import { OpenInDesktopApp } from './OpenInDesktopApp';
 
 const MEETING_LINK = 'https://meet.proton.me/join/id-meeting-abc#pwd-password-abc';
@@ -29,19 +28,25 @@ vi.mock('@proton/meet/telemetry/meetTelemetry', async (importOriginal) => ({
     sendMeetActionsEvent: vi.fn(),
 }));
 
+const mocks = vi.hoisted(() => ({ isOpenDesktopAppOnLoadEnabled: false }));
+
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: () => mocks.isOpenDesktopAppOnLoadEnabled,
+}));
+
 vi.mock('../../utils/desktopAppDetector', () => ({
-    getDesktopAppPreference: vi.fn(),
     saveDesktopAppPreference: vi.fn(),
     tryOpenInDesktopApp: vi.fn(),
 }));
 
-const getDesktopAppPreferenceMock = getDesktopAppPreference as unknown as Mock;
+vi.mock('../../utils/openDesktopAppOnLoad', () => ({
+    openDesktopAppOnPreJoin: vi.fn(),
+}));
 
 describe('OpenInDesktopApp', () => {
     beforeEach(() => {
         vi.clearAllMocks();
-        localStorage.clear();
-        getDesktopAppPreferenceMock.mockReturnValue(false);
+        mocks.isOpenDesktopAppOnLoadEnabled = false;
     });
 
     it('reports that the button was shown once', () => {
@@ -52,11 +57,31 @@ describe('OpenInDesktopApp', () => {
         expect(sendMeetActionsEvent).toHaveBeenCalledWith(TelemetryMeetActionsEvents.desktop_app_banner_shown);
     });
 
-    it('waits for a click before opening the app when the choice was never made', () => {
+    it("hands the account's choice and the flag to the pre-join attempt, and opens the app only on a click", () => {
         render(<OpenInDesktopApp />);
 
+        expect(openDesktopAppOnPreJoin).toHaveBeenCalledTimes(1);
+        expect(openDesktopAppOnPreJoin).toHaveBeenCalledWith({
+            isOpenDesktopAppOnLoadEnabled: false,
+            desktopAppPreferenceStorageKey: 'openInDesktopApp.user.user-1',
+        });
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
         expect(screen.queryByText(HINT_TITLE)).not.toBeInTheDocument();
+    });
+
+    it('asks for the pre-join attempt again when MeetOpenDesktopAppOnLoad changes, not on other re-renders', () => {
+        const { rerender } = render(<OpenInDesktopApp />);
+        rerender(<OpenInDesktopApp />);
+        expect(openDesktopAppOnPreJoin).toHaveBeenCalledTimes(1);
+
+        mocks.isOpenDesktopAppOnLoadEnabled = true;
+        rerender(<OpenInDesktopApp />);
+
+        expect(openDesktopAppOnPreJoin).toHaveBeenCalledTimes(2);
+        expect(openDesktopAppOnPreJoin).toHaveBeenLastCalledWith({
+            isOpenDesktopAppOnLoadEnabled: true,
+            desktopAppPreferenceStorageKey: 'openInDesktopApp.user.user-1',
+        });
     });
 
     it('opens the meeting in the desktop app, remembers the choice and shows the hint', () => {
@@ -104,50 +129,5 @@ describe('OpenInDesktopApp', () => {
         expect(sendMeetActionsEvent).toHaveBeenCalledWith(TelemetryMeetActionsEvents.desktop_app_banner_clicked, {
             action: 'download',
         });
-    });
-
-    it('opens the app on load without the hint when the choice was remembered', () => {
-        getDesktopAppPreferenceMock.mockReturnValue(true);
-
-        render(<OpenInDesktopApp />);
-
-        expect(getDesktopAppPreferenceMock).toHaveBeenCalledWith('openInDesktopApp.user.user-1');
-        expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(1);
-        expect(tryOpenInDesktopApp).toHaveBeenCalledWith(MEETING_LINK);
-        expect(screen.queryByText(HINT_TITLE)).not.toBeInTheDocument();
-    });
-
-    it('shows the hint and opens the app again on a click after the load opened it', () => {
-        getDesktopAppPreferenceMock.mockReturnValue(true);
-        render(<OpenInDesktopApp />);
-        expect(screen.queryByText(HINT_TITLE)).not.toBeInTheDocument();
-
-        fireEvent.click(screen.getByRole('button', { name: JOIN_FROM_APP }));
-
-        expect(screen.getByText(HINT_TITLE)).toBeInTheDocument();
-        expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(2);
-        expect(tryOpenInDesktopApp).toHaveBeenNthCalledWith(2, MEETING_LINK);
-    });
-
-    it('opens the app on load only once across re-renders', () => {
-        getDesktopAppPreferenceMock.mockReturnValue(true);
-
-        const { rerender } = render(<OpenInDesktopApp />);
-        rerender(<OpenInDesktopApp />);
-
-        expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(1);
-    });
-
-    it('waits for a click when the browser was preferred', async () => {
-        const { getDesktopAppPreference: readDesktopAppPreference, saveBrowserPreference } = await vi.importActual<
-            typeof DesktopAppDetector
-        >('../../utils/desktopAppDetector');
-        getDesktopAppPreferenceMock.mockImplementation(readDesktopAppPreference);
-        saveBrowserPreference('openInDesktopApp.user.user-1');
-
-        render(<OpenInDesktopApp />);
-
-        expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
-        expect(screen.queryByText(HINT_TITLE)).not.toBeInTheDocument();
     });
 });
