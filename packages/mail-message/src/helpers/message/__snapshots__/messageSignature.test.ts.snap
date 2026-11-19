@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature false 1`] = `
+exports[`signature > insertSignature > snapshots > should match with protonSignature false, userSignature false 1`] = `
 "<div><br></div>
 <div class="protonmail_signature_block protonmail_signature_block-empty">
     <div class="protonmail_signature_block-user protonmail_signature_block-empty">
@@ -14,7 +14,7 @@ exports[`signature insertSignature snapshots should match with protonSignature f
 <p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature false, userSignature true 1`] = `
+exports[`signature > insertSignature > snapshots > should match with protonSignature false, userSignature true 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user">
@@ -29,7 +29,7 @@ exports[`signature insertSignature snapshots should match with protonSignature f
 <p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature false 1`] = `
+exports[`signature > insertSignature > snapshots > should match with protonSignature true, userSignature false 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user protonmail_signature_block-empty">
@@ -43,7 +43,7 @@ exports[`signature insertSignature snapshots should match with protonSignature t
 <p>test</p>"
 `;
 
-exports[`signature insertSignature snapshots should match with protonSignature true, userSignature true 1`] = `
+exports[`signature > insertSignature > snapshots > should match with protonSignature true, userSignature true 1`] = `
 "<div><br></div><div><br></div>
 <div class="protonmail_signature_block">
     <div class="protonmail_signature_block-user">

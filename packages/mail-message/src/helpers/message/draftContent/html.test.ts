@@ -7,27 +7,27 @@ import { formatFullDate } from '../../date';
 import { createHTMLDraftContent, generateBlockquote, generatePreviousMessageInfos } from './html';
 
 // Mock dependencies to avoid DOM and other issues in tests
-jest.mock('../messageContentConversion', () => ({
-    plainTextToHTML: jest.fn((_message, body) => {
+vi.mock('../messageContentConversion', () => ({
+    plainTextToHTML: vi.fn((_message, body) => {
         return `<p>${body}</p>`;
     }),
 }));
 
-jest.mock('../messageContentQuery', () => ({
-    getDocumentContent: jest.fn((doc: any) => {
+vi.mock('../messageContentQuery', () => ({
+    getDocumentContent: vi.fn((doc: any) => {
         return doc?.innerHTML || '<p>HTML content</p>';
     }),
 }));
 
-jest.mock('../messageSignature', () => ({
-    insertSignature: jest.fn((content, signature) => {
+vi.mock('../messageSignature', () => ({
+    insertSignature: vi.fn((content, signature) => {
         if (signature) {
             // Mimics real insertSignature which prepends signature before content
             return `<div class="protonmail_signature_block">${signature}</div>${content}`;
         }
         return content;
     }),
-    templateBuilder: jest.fn(() => ''),
+    templateBuilder: vi.fn(() => ''),
 }));
 
 const ID = 'ID';

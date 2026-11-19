@@ -1,3 +1,6 @@
+// @vitest-environment jsdom
+// happy-dom quotes font-family values and the sanitizer output differs, which breaks assertions and snapshots
+
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -25,7 +28,7 @@ const PM_SIGNATURE = getProtonMailSignature();
 
 describe('signature', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('insertSignature', () => {

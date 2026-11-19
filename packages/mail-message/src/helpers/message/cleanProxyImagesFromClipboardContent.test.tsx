@@ -3,12 +3,12 @@ import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import { cleanProblematicImagesFromClipboardContent } from './cleanProblematicImagesFromClipboardContent';
 
 describe('cleanProxyImagesFromClipboardContent', () => {
-    const mockSetData = jest.fn();
+    const mockSetData = vi.fn();
     const mockClipboardEvent: ClipboardEvent = {
         clipboardData: {
             setData: mockSetData,
         },
-        preventDefault: jest.fn(),
+        preventDefault: vi.fn(),
     } as any;
     const mockDragEvent: DragEvent = {
         dataTransfer: {
@@ -35,7 +35,7 @@ describe('cleanProxyImagesFromClipboardContent', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should replace images proxy urls with original urls from copied content [copy event]', () => {

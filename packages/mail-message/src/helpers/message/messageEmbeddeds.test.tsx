@@ -1,4 +1,5 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+import type { Mock } from 'vitest';
 
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -160,10 +161,10 @@ describe('messageEmbeddeds', () => {
     });
 
     describe('createBlob', () => {
-        let createObjectURL: jest.Mock;
+        let createObjectURL: Mock;
 
         beforeEach(() => {
-            createObjectURL = jest.fn(() => 'url');
+            createObjectURL = vi.fn(() => 'url');
             global.URL.createObjectURL = createObjectURL;
         });
 
@@ -213,10 +214,12 @@ describe('messageEmbeddeds', () => {
             status: 'loaded',
         } as MessageEmbeddedImage;
 
-        // Ignore generated id for testing
-        const { id, ...embeddedImage } = createEmbeddedImageFromUpload(attachment);
+        it('should create an embedded image from an upload', () => {
+            // Ignore generated id for testing
+            const { id, ...embeddedImage } = createEmbeddedImageFromUpload(attachment);
 
-        expect(embeddedImage).toEqual(expectedImage);
+            expect(embeddedImage).toEqual(expectedImage);
+        });
     });
 
     describe('finEmbedded', () => {

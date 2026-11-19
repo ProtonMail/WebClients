@@ -7,8 +7,8 @@ import { getAutoDeleteOnMessage, getExpiresOnMessage } from './messageExpiration
 let mockDateLocale = enUSLocale;
 const testDate = new Date('2025-01-01T20:00:00');
 
-jest.mock('@proton/shared/lib/i18n', () => ({
-    ...jest.requireActual('@proton/shared/lib/i18n'),
+vi.mock('@proton/shared/lib/i18n', async () => ({
+    ...(await vi.importActual<object>('@proton/shared/lib/i18n')),
     get dateLocale() {
         return mockDateLocale;
     },
