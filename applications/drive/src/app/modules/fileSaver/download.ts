@@ -99,6 +99,53 @@ export async function initDownloadSW() {
     serviceWorkerKeepAlive();
 }
 
+// Credit = one "send the next block" request from the SW, sent once the browser saved the previous block.
+// SW asks --> page gets a credit --> page sends one block and spends it.
+// No credit --> write() waits --> SDK stops downloading.
+// An older SW never asks --> flow control is turned off, blocks go through without waiting.
+const createPullCredits = () => {
+    let credits = 0;
+    let isFlowControlled = true;
+    let wakeUp: (() => void) | undefined;
+
+    const notify = () => {
+        wakeUp?.();
+        wakeUp = undefined;
+    };
+
+    const waitForWakeUp = (signal?: AbortSignal) =>
+        new Promise<void>((resolve, reject) => {
+            const onAbort = () => reject(signal?.reason);
+            signal?.addEventListener('abort', onAbort, { once: true });
+            wakeUp = () => {
+                signal?.removeEventListener('abort', onAbort);
+                resolve();
+            };
+        });
+
+    return {
+        grant: () => {
+            credits++;
+            notify();
+        },
+        disable: () => {
+            isFlowControlled = false;
+            notify();
+        },
+        take: async (signal?: AbortSignal) => {
+            while (isFlowControlled && credits === 0) {
+                if (signal?.aborted) {
+                    throw signal.reason;
+                }
+                await waitForWakeUp(signal);
+            }
+            if (isFlowControlled) {
+                credits--;
+            }
+        },
+    };
+};
+
 /**
  * Opens download stream into service worker. Use abort signal when pipeTo can't close the download stream.
  */
@@ -107,8 +154,13 @@ export async function openDownloadStream(
     { onCancel, abortSignal }: { onCancel: () => void; abortSignal?: AbortSignal }
 ) {
     const channel = new MessageChannel();
+    const pullCredits = createPullCredits();
     const stream = new WritableStream({
-        write(block: Uint8Array<ArrayBuffer>) {
+        async write(block: Uint8Array<ArrayBuffer>, controller) {
+            await pullCredits.take('signal' in controller ? controller.signal : undefined);
+            if (abortSignal?.aborted) {
+                throw new Error('Download stream aborted');
+            }
             channel.port1.postMessage({ action: 'download_chunk', payload: block });
         },
         close() {
@@ -121,6 +173,7 @@ export async function openDownloadStream(
 
     if (abortSignal) {
         abortSignal.addEventListener('abort', () => {
+            pullCredits.disable();
             channel.port1.postMessage({ action: 'abort', reason: 'Download stream aborted' });
         });
     }
@@ -133,9 +186,15 @@ export async function openDownloadStream(
 
     // Channel to stream file contents through
     channel.port1.onmessage = ({ data }) => {
-        if (data?.action === 'download_canceled') {
+        if (data?.action === 'pull') {
+            pullCredits.grant();
+        } else if (data?.action === 'download_canceled') {
+            pullCredits.disable();
             onCancel();
         } else if (data?.action === 'download_started') {
+            if (!data.supportsPull) {
+                pullCredits.disable();
+            }
             createDownloadIframe(data.payload);
         }
     };
