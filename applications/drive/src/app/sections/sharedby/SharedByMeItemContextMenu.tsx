@@ -13,7 +13,7 @@ import { useSharedByMeActions } from './actions/useSharedByMeActions';
 import { useSharedByMeStore } from './useSharedByMe.store';
 
 interface SharedByMeItemContextMenuProps {
-    anchorRef: React.RefObject<HTMLElement>;
+    anchorRef: React.RefObject<HTMLElement | null>;
 }
 
 export function SharedByMeItemContextMenu({ anchorRef }: SharedByMeItemContextMenuProps) {

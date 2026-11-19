@@ -15,7 +15,7 @@ import { formatIndexingProgress } from '../formatIndexingProgress';
 
 interface Props {
     isOpen: boolean;
-    anchorRef: React.RefObject<HTMLDivElement>;
+    anchorRef: React.RefObject<HTMLDivElement | null>;
     onClose: () => void;
     onClosed: () => void;
     isSearchable: boolean;
@@ -110,7 +110,7 @@ export function SearchDropdown({
 
     return (
         <Dropdown
-            anchorRef={anchorRef as React.RefObject<HTMLElement>}
+            anchorRef={anchorRef as React.RefObject<HTMLElement | null>}
             isOpen={isOpen}
             originalPlacement="bottom-start"
             autoClose={false}

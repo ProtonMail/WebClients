@@ -17,9 +17,9 @@ const MINIMUM_ITEMS_FOR_FAST_SCROLL = 50; // Below 50 items, we do not show fast
 export interface FastScrollBarProps {
     uids: string[];
     containerHeight: number;
-    containerRef: React.RefObject<HTMLDivElement>;
+    containerRef: React.RefObject<HTMLDivElement | null>;
     containerRect: DOMRect;
-    groupsPositions: React.RefObject<Map<string, number>>;
+    groupsPositions: React.RefObject<Map<string, number> | null>;
     innerStyle: { height: number; itemWidth: number };
     isScrolling: boolean;
     currentTopGroup: { year: number; month: number } | undefined;
@@ -248,7 +248,6 @@ export const FastScrollBar: FC<FastScrollBarProps> = ({
                 ref={scrollBarRef}
             >
                 {scrollElements.map((el, i) => (
-                    // eslint-disable-next-line jsx-a11y/no-aria-hidden-on-focusable
                     <button
                         key={el.dataKey}
                         ref={(node) => {
@@ -258,6 +257,7 @@ export const FastScrollBar: FC<FastScrollBarProps> = ({
                                 elementRefsCache.current.delete(el.dataKey);
                             }
                         }}
+                        // eslint-disable-next-line jsx-a11y/no-aria-hidden-on-focusable
                         aria-hidden="true"
                         className={clsx(
                             'fast-scroll-dot',
