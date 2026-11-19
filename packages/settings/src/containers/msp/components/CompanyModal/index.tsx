@@ -5,6 +5,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import type { CompanyFormData, MspCompany } from '../../types';
 import GeneralSettings from './GeneralSettings';
@@ -19,14 +20,20 @@ interface Props {
     onClose: () => void;
 }
 
+const getTitle = (isEditing: boolean, isMspV2: boolean) => {
+    if (isEditing) {
+        return c('Title').t`Edit company`;
+    }
+    return isMspV2 ? c('Title').t`Add new company` : c('Title').t`Add company`;
+};
+
 const CompanyModalContent = ({ onClose }: { onClose: () => void }) => {
     const { isEditing, name, isSubmitting, handleSubmit } = useCompanyModalContext();
-
-    const title = isEditing ? c('Title').t`Edit company` : c('Title').t`Add company`;
+    const isMspV2 = useFlag('MspV2');
 
     return (
         <ModalTwo open onClose={onClose}>
-            <ModalTwoHeader title={title} />
+            <ModalTwoHeader title={getTitle(isEditing, isMspV2)} />
             <ModalTwoContent>
                 <GeneralSettings />
             </ModalTwoContent>
@@ -38,7 +45,7 @@ const CompanyModalContent = ({ onClose }: { onClose: () => void }) => {
                     loading={isSubmitting}
                     disabled={isSubmitting || !name.trim()}
                 >
-                    {isEditing ? c('Action').t`Save` : c('Action').t`Add`}
+                    {isEditing || isMspV2 ? c('Action').t`Save` : c('Action').t`Add`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>

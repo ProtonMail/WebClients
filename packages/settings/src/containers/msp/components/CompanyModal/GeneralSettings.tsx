@@ -6,14 +6,17 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useCompanyModalContext } from './context';
 
 const GeneralSettings = () => {
     const { name, setName, seatsText, setSeatsText, assignedSeats, minSeats } = useCompanyModalContext();
+    const isMspV2 = useFlag('MspV2');
 
     return (
         <>
+            {isMspV2 && <p className="mt-0 mb-4 color-weak">{c('Info').t`Set the name and allocated licenses`}</p>}
             <InputFieldTwo
                 className="mb-6"
                 label={c('Label').t`Company name`}

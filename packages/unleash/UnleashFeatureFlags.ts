@@ -10,6 +10,7 @@ enum AccountB2BFeatureFlag {
     AdminRolesWithMSP = 'AdminRolesWithMSP',
     DataRetentionPolicy = 'DataRetentionPolicy',
     MembersRemote = 'MembersRemote',
+    MspV2 = 'MspV2',
     SsoForPbs = 'SsoForPbs',
     SyncOwnerRoleClientKillSwitch = 'SyncOwnerRoleClientKillSwitch',
     UserGroupsGroupOwner = 'UserGroupsGroupOwner',
