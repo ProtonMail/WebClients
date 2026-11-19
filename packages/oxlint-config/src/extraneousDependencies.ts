@@ -14,7 +14,7 @@ export const extraneousDependenciesDevDependencies = [
     '**/jest.transform.{js,ts}',
     // Vite
     '**/vite.config.{js,ts}',
-    '**/vitest.config.{js,ts}',
+    '**/vitest*.config.{js,ts}',
     '**/vitest.setup.{js,ts}',
     // Tests, including directories holding helpers consumed only by test files
     '**/e2e/**',
