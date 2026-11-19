@@ -324,6 +324,7 @@
         "@proton/icons": "workspace:^",
         "@proton/key-transparency": "workspace:^",
         "@proton/metrics": "workspace:^",
+        "@proton/payments": "workspace:^",
         "@proton/react-redux-store": "workspace:^",
         "@proton/recovery-kit": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
@@ -368,8 +369,5 @@
         "react-redux": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
-    },
-    "peerDependencies": {
-        "@proton/payments": "*"
     }
 }

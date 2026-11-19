@@ -984,6 +984,7 @@
         "@proton/mail": "workspace:^",
         "@proton/metrics": "workspace:^",
         "@proton/payments": "workspace:^",
+        "@proton/payments-hooks": "workspace:^",
         "@proton/react-polymorphic-types": "workspace:^",
         "@proton/react-redux-store": "workspace:^",
         "@proton/redux-shared-store": "workspace:^",
@@ -1060,8 +1061,5 @@
         "react-redux": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
-    },
-    "peerDependencies": {
-        "@proton/payments-hooks": "workspace:^"
     }
 }

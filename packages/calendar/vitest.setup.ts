@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom/vitest';
 import '@proton/app-context/testing/vitest/mockTelemetry';
 import '@proton/unleash/testing/vitest/mockUnleash';
-import './testing/setup/mockFlagSvg';
 import './testing/setup/mockMatchMedia';
 
 window.ResizeObserver = class {

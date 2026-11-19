@@ -53,7 +53,8 @@ export const addDevEntry = (config: any) => {
         return;
     }
     // @ts-ignore
-    config.entry.dev = [require.resolve('@proton/components/containers/app/StandaloneApp')];
+    // Resolved from the app: @proton/pack does not depend on @proton/components.
+    config.entry.dev = [require.resolve('@proton/components/containers/app/StandaloneApp', { paths: [process.cwd()] })];
     config.plugins.push(
         new HtmlWebpackPlugin({
             filename: 'login.html',
