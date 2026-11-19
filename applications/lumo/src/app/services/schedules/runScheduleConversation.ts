@@ -1,6 +1,10 @@
 import type { ClientToolExecutor } from '@proton/lumo-api-client/core/client-tools';
 import type { ScheduleRun } from '@proton/lumo-api-client/core/desktop-schedules';
-import type { DesktopConnector, ScheduleExecutionInput } from '@proton/lumo-api-client/core/desktop-tools';
+import type {
+    DesktopConnector,
+    DesktopToolCallOptions,
+    ScheduleExecutionInput,
+} from '@proton/lumo-api-client/core/desktop-tools';
 import busy from '@proton/shared/lib/busy/busy';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
@@ -38,7 +42,7 @@ export function createScheduleConversationRunner({
     storage: ScheduleStorage;
     api: Api;
     getOptions: () => ScheduleGenerationOptions;
-    createTools: (input: ScheduleExecutionInput) => ClientToolExecutor;
+    createTools: (input: ScheduleExecutionInput, options?: DesktopToolCallOptions) => ClientToolExecutor;
     getConnectors: () => Promise<DesktopConnector[]>;
 }) {
     return async (
@@ -65,12 +69,15 @@ export function createScheduleConversationRunner({
                       isPreviewEnabled: options.previewModelAvailable,
                   });
         const tools = restrictScheduleTools(
-            createTools({
-                runId: run.runId,
-                connectorIds: task.connectorIds,
-                readOnlyConnectorIds: task.readOnlyConnectorIds,
-                autoApprove: task.autoApprove === true,
-            }),
+            createTools(
+                {
+                    runId: run.runId,
+                    connectorIds: task.connectorIds,
+                    readOnlyConnectorIds: task.readOnlyConnectorIds,
+                    autoApprove: task.autoApprove === true,
+                },
+                { conversationId: target.conversationId }
+            ),
             task.connectorIds,
             getConnectors,
             guard,

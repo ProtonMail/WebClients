@@ -27,12 +27,16 @@ function resolveRequest(
     };
 }
 
-export function useDesktopToolApprovals(): {
+/** Keeps the requests of `conversationId`, plus those older desktop builds send without one. */
+export function useDesktopToolApprovals(conversationId?: string): {
     approvals: ResolvedToolApproval[];
     approve: (requestId: string, always?: boolean) => void;
     reject: (requestId: string) => void;
 } {
-    const pending = useSyncExternalStore(subscribeToolApprovals, getPendingToolApprovals);
+    const allPending = useSyncExternalStore(subscribeToolApprovals, getPendingToolApprovals);
+    const pending = allPending.filter(
+        (request) => !request.conversationId || request.conversationId === conversationId
+    );
     const [connectorsById, setConnectorsById] = useState<Map<string, DesktopConnector>>(new Map());
 
     const hasUnknownConnector = pending.some((request) => !connectorsById.has(request.connectorId));

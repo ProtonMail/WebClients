@@ -1,24 +1,26 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
+import { clsx } from 'clsx';
+import { c, msgid } from 'ttag';
 
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import ConfirmCard from '@proton/llm/lib/lumoAgent/ui/cardRenderers';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import { openDesktopSettings } from '@proton/lumo-api-client/core/desktop-tools';
 import type { DesktopToolApprovalReason } from '@proton/lumo-api-client/core/desktop-tools';
+import { openDesktopSettings } from '@proton/lumo-api-client/core/desktop-tools';
 import ToolCallCard from '@proton/lumo-ui/shared-components/ToolCallCard/ToolCallCard';
 import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { getIntlLocale } from '@proton/shared/lib/i18n/helper';
 
-import ChatContainerItem from '../../../../ChatContainerItem';
-import { useDesktopToolApprovals } from './useDesktopToolApprovals';
-
 import '@proton/lumo-ui/styles/lumo-ui.scss';
+
+import './DesktopApprovalCards.scss';
+import { useDesktopToolApprovals } from './useDesktopToolApprovals';
 
 const sourceLabel = (source: DesktopToolApprovalReason['sources'][number]) => {
     switch (source) {
@@ -68,8 +70,8 @@ export const reasonText = ({ kind, sources, destination }: DesktopToolApprovalRe
               .t`This conversation has read ${read}, which can contain hidden instructions. Approving may send data outside ${LUMO_SHORT_APP_NAME}.`;
 };
 
-const DesktopApprovalCards = () => {
-    const { approvals, approve, reject } = useDesktopToolApprovals();
+const DesktopApprovalCards = ({ conversationId }: { conversationId: string | undefined }) => {
+    const { approvals, approve, reject } = useDesktopToolApprovals(conversationId);
     const [always, setAlways] = useState<ReadonlySet<string>>(new Set());
     const toggleAlways = (requestId: string, checked: boolean) =>
         setAlways((prev) => {
@@ -82,75 +84,90 @@ const DesktopApprovalCards = () => {
             return next;
         });
 
-    if (approvals.length === 0) {
+    const [approval] = approvals;
+
+    if (!approval) {
         return null;
     }
 
-    return (
-        <ChatContainerItem className="lumo-tool-approvals px-6 md:px-0 pb-2">
-            <div className="flex flex-column flex-nowrap gap-3 w-full">
-                {approvals.map((approval) => {
-                    const renderer: CardRenderer = {
-                        icon: IcShield,
-                        sentence: () => {
-                            const tool = sentenceValue(approval.toolLabel);
-                            const connector = sentenceValue(approval.connectorName);
+    // Requests are answered one at a time; the rest show as cards stacked behind this one.
+    const waiting = approvals.length - 1;
 
-                            // translator: a desktop connector asking to run one of its tools, e.g. "Run Search files with Obsidian"
-                            return c('Info').jt`Run ${tool} with ${connector}`;
-                        },
-                        renderBody: () => (
-                            <>
-                                {(approval.reason?.kind === 'untrusted_content' ||
-                                    approval.reason?.kind === 'untrusted_write' ||
-                                    approval.reason?.kind === 'hidden_text') && (
-                                    <p className="m-0 mb-2 text-sm color-warning text-break">
-                                        {reasonText(approval.reason)}
-                                    </p>
-                                )}
-                                <ToolCallCard args={approval.input} />
-                                {!approval.reason && (
-                                    <Checkbox
-                                        className="mt-2 text-sm"
-                                        checked={always.has(approval.requestId)}
-                                        onChange={(event) => toggleAlways(approval.requestId, event.target.checked)}
-                                    >
-                                        {
-                                            // translator: checkbox on a tool approval card
-                                            c('Action').t`Don't ask again for this tool`
-                                        }
-                                    </Checkbox>
-                                )}
-                                {(approval.reason?.kind === 'untrusted_content' ||
-                                    approval.reason?.kind === 'untrusted_write') && (
-                                    <InlineLinkButton
-                                        className="mt-2 text-sm"
-                                        onClick={() => openDesktopSettings('connectors', approval.connectorId)}
-                                    >
-                                        {
-                                            // translator: link on a tool approval card shown after the conversation read emails, web pages or similar; opens settings where the tool can be allowed to run without asking even then
-                                            c('Action').t`Always allow this tool in Settings`
-                                        }
-                                    </InlineLinkButton>
-                                )}
-                            </>
-                        ),
-                    };
-                    return (
-                        <ConfirmCard
-                            key={approval.requestId}
-                            renderer={renderer}
-                            action={{ type: approval.toolName }}
-                            labels={{}}
-                            onApply={() =>
-                                approve(approval.requestId, !approval.reason && always.has(approval.requestId))
-                            }
-                            onCancel={() => reject(approval.requestId)}
-                        />
-                    );
-                })}
+    const renderer: CardRenderer = {
+        icon: IcShield,
+        sentence: () => {
+            const tool = sentenceValue(approval.toolLabel);
+            const connector = sentenceValue(approval.connectorName);
+
+            // translator: a desktop connector asking to run one of its tools, e.g. "Run Search files with Obsidian"
+            return c('Info').jt`Run ${tool} with ${connector}`;
+        },
+        renderBody: () => (
+            <>
+                {(approval.reason?.kind === 'untrusted_content' ||
+                    approval.reason?.kind === 'untrusted_write' ||
+                    approval.reason?.kind === 'hidden_text') && (
+                    <Banner className="mb-2 text-break" variant={BannerVariants.WARNING}>
+                        {reasonText(approval.reason)}
+                    </Banner>
+                )}
+                <ToolCallCard args={approval.input} />
+                {!approval.reason && (
+                    <Checkbox
+                        className="mt-2 text-sm"
+                        checked={always.has(approval.requestId)}
+                        onChange={(event) => toggleAlways(approval.requestId, event.target.checked)}
+                    >
+                        {
+                            // translator: checkbox on a tool approval card
+                            c('Action').t`Don't ask again for this tool`
+                        }
+                    </Checkbox>
+                )}
+                {(approval.reason?.kind === 'untrusted_content' || approval.reason?.kind === 'untrusted_write') && (
+                    <InlineLinkButton
+                        className="mt-2 text-sm"
+                        onClick={() => openDesktopSettings('connectors', approval.connectorId)}
+                    >
+                        {
+                            // translator: link on a tool approval card shown after the conversation read emails, web pages or similar; opens settings where the tool can be allowed to run without asking even then
+                            c('Action').t`Always allow this tool in Settings`
+                        }
+                    </InlineLinkButton>
+                )}
+            </>
+        ),
+    };
+
+    return (
+        <div className="desktop-approval-cards w-full px-1.5">
+            <div
+                className={clsx(
+                    'desktop-approval-cards__stack',
+                    waiting > 0 && 'desktop-approval-cards__stack--depth-2',
+                    waiting > 1 && 'desktop-approval-cards__stack--depth-3'
+                )}
+            >
+                <ConfirmCard
+                    key={approval.requestId}
+                    renderer={renderer}
+                    action={{ type: approval.toolName }}
+                    labels={{}}
+                    onApply={() => approve(approval.requestId, !approval.reason && always.has(approval.requestId))}
+                    onCancel={() => reject(approval.requestId)}
+                />
             </div>
-        </ChatContainerItem>
+            {/* Mounted with the card so screen readers announce changes to the count. */}
+            <span className="sr-only" aria-live="polite">
+                {waiting > 0 &&
+                    // translator: screen reader text below a tool approval card when more tool calls are waiting for approval after it
+                    c('Info').ngettext(
+                        msgid`${waiting} more approval waiting`,
+                        `${waiting} more approvals waiting`,
+                        waiting
+                    )}
+            </span>
+        </div>
     );
 };
 

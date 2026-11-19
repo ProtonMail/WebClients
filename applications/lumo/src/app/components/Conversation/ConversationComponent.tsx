@@ -35,7 +35,6 @@ import { ArtifactPanelSlot } from './artifact/ArtifactPanelSlot';
 import { getConversationArtifactsForDrawer } from './artifact/conversationArtifactDrawerList';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
-import DesktopApprovalCards from './messageChain/message/DesktopToolApproval/DesktopApprovalCards';
 import { WebSearchSourcesView } from './messageChain/message/toolCall/WebSearchSourcesView';
 import { useImageLimitInfo } from './useImageLimitInfo';
 import { usePrefetchPdfPageImages } from './usePrefetchPdfPageImages';
@@ -337,7 +336,6 @@ const ConversationLayout = ({
                             onRetryPanelToggle={handleRetryPanelToggle}
                             composerContainerRef={composerContainerRef}
                             conversationId={conversationId}
-                            afterMessages={<DesktopApprovalCards />}
                         />
                         {conversationErrors.length > 0 && (
                             <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
