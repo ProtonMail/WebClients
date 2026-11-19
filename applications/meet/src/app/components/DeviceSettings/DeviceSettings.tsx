@@ -201,6 +201,11 @@ export const DeviceSettings = ({
         cameraLabel = selectedCamera?.label ?? c('Info').t`Loading…`;
     }
 
+    // translator: screen reader name of the microphone selector: the "Audio" caption, then the selected device's name or its status, e.g. "Audio: Default - WH-1000XM4 (Bluetooth)" or "Audio: Microphone blocked"
+    const microphoneAccessibleLabel = c('Label').t`Audio: ${microphoneLabel}`;
+    // translator: screen reader name of the camera selector: the "Video" caption, then the selected device's name or its status, e.g. "Video: MacBook Pro Camera (0000:0001)" or "Video: Camera blocked"
+    const cameraAccessibleLabel = c('Label').t`Video: ${cameraLabel}`;
+
     const getInitalsCircleSize = () => {
         if (viewportWidth.xsmall) {
             return 'small';
@@ -364,6 +369,7 @@ export const DeviceSettings = ({
                     <div className="device-selectors flex flex-nowrap gap-2 mt-2" {...inertProps(isBackgroundsOpen)}>
                         <DeviceSelect
                             label={microphoneLabel}
+                            accessibleLabel={microphoneAccessibleLabel}
                             icon={IcMeetMicrophone}
                             title={c('Label').t`Audio`}
                             disabled={microphoneHasWarning}
@@ -397,6 +403,7 @@ export const DeviceSettings = ({
                         />
                         <DeviceSelect
                             label={cameraLabel}
+                            accessibleLabel={cameraAccessibleLabel}
                             icon={IcMeetCamera}
                             title={c('Label').t`Video`}
                             disabled={cameraHasWarning}
