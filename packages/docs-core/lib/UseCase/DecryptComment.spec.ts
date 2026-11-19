@@ -1,7 +1,10 @@
+import 'core-js/actual/typed-array/from-base64'
+import type { Mock, Mocked } from 'vitest'
 import { CommentType } from '@proton/docs-shared/CommentType'
 import { Result } from '@proton/docs-shared/Result'
 import type { DocumentKeys, PublicDocumentKeys } from '@proton/docs-shared/CryptoTypes'
 import { DecryptComment } from './DecryptComment'
+import { isAnonymousComment } from './GetAdditionalEncryptionData'
 import { VERIFICATION_STATUS } from '@protontech/crypto'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
@@ -9,9 +12,9 @@ import type { EncryptionService } from '../Services/Encryption/EncryptionService
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { SignedPlaintextContent } from '@proton/docs-proto/Generated/DocumentUpdate'
 
-jest.mock('./GetAdditionalEncryptionData', () => ({
-  ...jest.requireActual('./GetAdditionalEncryptionData'),
-  isAnonymousComment: jest.fn().mockReturnValue(false),
+vi.mock('./GetAdditionalEncryptionData', async () => ({
+  ...(await vi.importActual('./GetAdditionalEncryptionData')),
+  isAnonymousComment: vi.fn().mockReturnValue(false),
 }))
 
 describe('DecryptComment', () => {
@@ -47,15 +50,15 @@ describe('DecryptComment', () => {
 
   beforeEach(() => {
     encryptionSerivce = {
-      decryptData: jest.fn().mockReturnValue(Result.ok({ content: new Uint8Array(), signature: new Uint8Array() })),
-      getVerificationKey: jest.fn().mockReturnValue(Result.ok(new Uint8Array())),
-      verifyData: jest.fn().mockReturnValue(Result.ok(2)),
-    } as unknown as jest.Mocked<EncryptionService<EncryptionContext.PersistentComment>>
+      decryptData: vi.fn().mockReturnValue(Result.ok({ content: new Uint8Array(), signature: new Uint8Array() })),
+      getVerificationKey: vi.fn().mockReturnValue(Result.ok(new Uint8Array())),
+      verifyData: vi.fn().mockReturnValue(Result.ok(2)),
+    } as unknown as Mocked<EncryptionService<EncryptionContext.PersistentComment>>
 
     logger = {
-      error: jest.fn(),
-      info: jest.fn(),
-    } as unknown as jest.Mocked<LoggerInterface>
+      error: vi.fn(),
+      info: vi.fn(),
+    } as unknown as Mocked<LoggerInterface>
 
     decryptComment = new DecryptComment(encryptionSerivce, logger)
   })
@@ -79,7 +82,7 @@ describe('DecryptComment', () => {
   })
 
   it('should succeed if verification fails', async () => {
-    ;(encryptionSerivce.verifyData as jest.Mock).mockReturnValue(Result.fail('error'))
+    ;(encryptionSerivce.verifyData as Mock).mockReturnValue(Result.fail('error'))
 
     const result = await decryptComment.execute(dto, markId, privateKeys)
 
@@ -87,7 +90,7 @@ describe('DecryptComment', () => {
   })
 
   it('should not verify if public viewer/editor', async () => {
-    encryptionSerivce.verifyData = jest.fn()
+    encryptionSerivce.verifyData = vi.fn()
 
     const result = await decryptComment.execute(dto, markId, publicKeys)
 
@@ -103,8 +106,7 @@ describe('DecryptComment', () => {
     } as unknown as SignedPlaintextContent
 
     it('should return unverified for anonymous comments', async () => {
-      const { isAnonymousComment } = require('./GetAdditionalEncryptionData')
-      ;(isAnonymousComment as jest.Mock).mockReturnValue(true)
+      ;(isAnonymousComment as Mock).mockReturnValue(true)
 
       const result = await decryptComment.verifySignature('aad', 'email@test.com', content, privateKeys)
 
@@ -115,8 +117,7 @@ describe('DecryptComment', () => {
     })
 
     it('should return unverified for public keys', async () => {
-      const { isAnonymousComment } = require('./GetAdditionalEncryptionData')
-      ;(isAnonymousComment as jest.Mock).mockReturnValue(false)
+      ;(isAnonymousComment as Mock).mockReturnValue(false)
 
       const result = await decryptComment.verifySignature('aad', 'email@test.com', content, publicKeys)
 
@@ -127,8 +128,7 @@ describe('DecryptComment', () => {
     })
 
     it('should return failed verification when email is missing', async () => {
-      const { isAnonymousComment } = require('./GetAdditionalEncryptionData')
-      ;(isAnonymousComment as jest.Mock).mockReturnValue(false)
+      ;(isAnonymousComment as Mock).mockReturnValue(false)
 
       const result = await decryptComment.verifySignature('aad', undefined, content, privateKeys)
 
@@ -139,9 +139,8 @@ describe('DecryptComment', () => {
     })
 
     it('should return failed verification when verification key cannot be retrieved', async () => {
-      const { isAnonymousComment } = require('./GetAdditionalEncryptionData')
-      ;(isAnonymousComment as jest.Mock).mockReturnValue(false)
-      ;(encryptionSerivce.getVerificationKey as jest.Mock).mockReturnValue(Result.fail('error'))
+      ;(isAnonymousComment as Mock).mockReturnValue(false)
+      ;(encryptionSerivce.getVerificationKey as Mock).mockReturnValue(Result.fail('error'))
 
       const result = await decryptComment.verifySignature('aad', 'email@test.com', content, privateKeys)
 
@@ -155,9 +154,8 @@ describe('DecryptComment', () => {
     })
 
     it('should return failed verification when verify operation fails', async () => {
-      const { isAnonymousComment } = require('./GetAdditionalEncryptionData')
-      ;(isAnonymousComment as jest.Mock).mockReturnValue(false)
-      ;(encryptionSerivce.verifyData as jest.Mock).mockReturnValue(Result.fail('error'))
+      ;(isAnonymousComment as Mock).mockReturnValue(false)
+      ;(encryptionSerivce.verifyData as Mock).mockReturnValue(Result.fail('error'))
 
       const result = await decryptComment.verifySignature('aad', 'email@test.com', content, privateKeys)
 
@@ -171,9 +169,8 @@ describe('DecryptComment', () => {
     })
 
     it('should return failed verification when verification status is not valid', async () => {
-      const { isAnonymousComment } = require('./GetAdditionalEncryptionData')
-      ;(isAnonymousComment as jest.Mock).mockReturnValue(false)
-      ;(encryptionSerivce.verifyData as jest.Mock).mockReturnValue(Result.ok(VERIFICATION_STATUS.NOT_SIGNED))
+      ;(isAnonymousComment as Mock).mockReturnValue(false)
+      ;(encryptionSerivce.verifyData as Mock).mockReturnValue(Result.ok(VERIFICATION_STATUS.NOT_SIGNED))
 
       const result = await decryptComment.verifySignature('aad', 'email@test.com', content, privateKeys)
 
@@ -187,9 +184,8 @@ describe('DecryptComment', () => {
     })
 
     it('should return successful verification when everything is valid', async () => {
-      const { isAnonymousComment } = require('./GetAdditionalEncryptionData')
-      ;(isAnonymousComment as jest.Mock).mockReturnValue(false)
-      ;(encryptionSerivce.verifyData as jest.Mock).mockReturnValue(Result.ok(VERIFICATION_STATUS.SIGNED_AND_VALID))
+      ;(isAnonymousComment as Mock).mockReturnValue(false)
+      ;(encryptionSerivce.verifyData as Mock).mockReturnValue(Result.ok(VERIFICATION_STATUS.SIGNED_AND_VALID))
 
       const result = await decryptComment.verifySignature('aad', 'email@test.com', content, privateKeys)
 

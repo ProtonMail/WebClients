@@ -86,12 +86,12 @@ describe('WebsocketState', () => {
     })
 
     it('should get backoff with jitter', () => {
-      state.getJitterFactor = jest.fn().mockReturnValue(1)
+      state.getJitterFactor = vi.fn().mockReturnValue(1)
 
       state.didClose()
       expect(state.getReconnectDelay()).toBe(2000)
 
-      state.getJitterFactor = jest.fn().mockReturnValue(1.5)
+      state.getJitterFactor = vi.fn().mockReturnValue(1.5)
 
       state.didClose()
       expect(state.getReconnectDelay()).toBe(6000)

@@ -1,3 +1,4 @@
+import type { Mocked } from 'vitest'
 import type { DecryptedNode } from '@proton/docs-shared/DecryptedNode'
 import type { DocumentMetaInterface } from '@proton/docs-shared/DocumentMetaInterface'
 import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
@@ -19,23 +20,23 @@ import { generateNodeUid } from '@proton/drive/sdk'
 import { restoreDocument as restoreDocumentSDK, trashDocument as trashDocumentSDK } from '../DriveSDK/trash'
 
 const mockDrive = {}
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
   getDrive: () => mockDrive,
 }))
 
-jest.mock('../DriveSDK/trash', () => ({
-  trashDocument: jest.fn(),
-  restoreDocument: jest.fn(),
-  reportTrashError: jest.fn(),
+vi.mock('../DriveSDK/trash', () => ({
+  trashDocument: vi.fn(),
+  restoreDocument: vi.fn(),
+  reportTrashError: vi.fn(),
 }))
 
 describe('AuthenticatedDocController', () => {
   let controller: AuthenticatedDocController
   let documentState: DocumentState
   const createNewDocument = {
-    execute: jest.fn().mockResolvedValue(Result.ok({ volumeId: 'volume', linkId: 'new' })),
-  } as unknown as jest.Mocked<CreateNewDocument>
+    execute: vi.fn().mockResolvedValue(Result.ok({ volumeId: 'volume', linkId: 'new' })),
+  } as unknown as Mocked<CreateNewDocument>
 
   beforeEach(async () => {
     documentState = new DocumentState({
@@ -49,31 +50,31 @@ describe('AuthenticatedDocController', () => {
 
     controller = new AuthenticatedDocController(
       documentState,
-      {} as jest.Mocked<SquashDocument>,
-      {} as jest.Mocked<SeedInitialCommit>,
-      {} as jest.Mocked<DuplicateDocument>,
+      {} as Mocked<SquashDocument>,
+      {} as Mocked<SeedInitialCommit>,
+      {} as Mocked<DuplicateDocument>,
       createNewDocument,
       {
-        execute: jest.fn().mockReturnValue(Result.ok({ node: {} })),
-      } as unknown as jest.Mocked<GetNode>,
+        execute: vi.fn().mockReturnValue(Result.ok({ node: {} })),
+      } as unknown as Mocked<GetNode>,
       {
-        addEventHandler: jest.fn(),
-        addEventCallback: jest.fn(),
-        publish: jest.fn(),
-      } as unknown as jest.Mocked<InternalEventBusInterface>,
+        addEventHandler: vi.fn(),
+        addEventCallback: vi.fn(),
+        publish: vi.fn(),
+      } as unknown as Mocked<InternalEventBusInterface>,
       {
-        debug: jest.fn(),
-        info: jest.fn(),
-        warn: jest.fn(),
+        debug: vi.fn(),
+        info: vi.fn(),
+        warn: vi.fn(),
         error: console.error,
-      } as unknown as jest.Mocked<LoggerInterface>,
+      } as unknown as Mocked<LoggerInterface>,
       'doc',
     )
   })
 
   describe('handleEditorProvidingInitialConversionContent', () => {
     beforeEach(() => {
-      controller.createInitialCommit = jest.fn().mockReturnValue(Result.ok({ commitId: '123' }))
+      controller.createInitialCommit = vi.fn().mockReturnValue(Result.ok({ commitId: '123' }))
     })
 
     it('should create initial commit', async () => {
@@ -137,7 +138,7 @@ describe('AuthenticatedDocController', () => {
 
     // A user who isn't the owner, such as an editor in a shared folder, can't read the node once it's trashed
     it('trashState should be trashed when the node can no longer be read', async () => {
-      controller._getNode.execute = jest.fn().mockResolvedValue(Result.fail('Item not found'))
+      controller._getNode.execute = vi.fn().mockResolvedValue(Result.fail('Item not found'))
 
       await controller.trashDocument()
 
@@ -146,7 +147,7 @@ describe('AuthenticatedDocController', () => {
     })
 
     it('should refreshNodeAndDocMeta', async () => {
-      const refreshNodeAndDocMeta = jest.spyOn(controller, 'refreshNodeAndDocMeta')
+      const refreshNodeAndDocMeta = vi.spyOn(controller, 'refreshNodeAndDocMeta')
 
       await controller.trashDocument()
       expect(refreshNodeAndDocMeta).toHaveBeenCalled()
@@ -187,7 +188,7 @@ describe('AuthenticatedDocController', () => {
     })
 
     it('trashState should be restored when complete', async () => {
-      controller._getNode.execute = jest
+      controller._getNode.execute = vi
         .fn()
         .mockResolvedValue(Result.ok({ node: { parentNodeId: '123', trashed: false } }))
       await controller.restoreDocument()
@@ -195,7 +196,7 @@ describe('AuthenticatedDocController', () => {
     })
 
     it('should refreshNodeAndDocMeta', async () => {
-      const refreshNodeAndDocMeta = jest.spyOn(controller, 'refreshNodeAndDocMeta')
+      const refreshNodeAndDocMeta = vi.spyOn(controller, 'refreshNodeAndDocMeta')
 
       await controller.restoreDocument()
       expect(refreshNodeAndDocMeta).toHaveBeenCalled()
@@ -206,7 +207,7 @@ describe('AuthenticatedDocController', () => {
     it('trashed state will be not_trashed if DecryptedNode trashed property is null', async () => {
       documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456))
 
-      controller._getNode.execute = jest
+      controller._getNode.execute = vi
         .fn()
         .mockResolvedValueOnce(Result.ok({ node: { parentNodeId: 123, trashed: null } }))
 
@@ -217,7 +218,7 @@ describe('AuthenticatedDocController', () => {
     it('trashed state will be not_trashed if DecryptedNode trashed property is omitted', async () => {
       documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456))
 
-      controller._getNode.execute = jest.fn().mockResolvedValueOnce(Result.ok({ node: { parentNodeId: 123 } }))
+      controller._getNode.execute = vi.fn().mockResolvedValueOnce(Result.ok({ node: { parentNodeId: 123 } }))
 
       await controller.refreshNodeAndDocMeta({ imposeTrashState: undefined })
       expect(documentState.getProperty('documentTrashState')).toBe('not_trashed')
@@ -226,7 +227,7 @@ describe('AuthenticatedDocController', () => {
     it('trashed state will be trashed if DecryptedNode trashed property is populated', async () => {
       documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456))
 
-      controller._getNode.execute = jest
+      controller._getNode.execute = vi
         .fn()
         .mockResolvedValueOnce(Result.ok({ node: { parentNodeId: 123, trashed: 123 } }))
 

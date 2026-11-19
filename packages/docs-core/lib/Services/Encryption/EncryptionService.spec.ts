@@ -1,3 +1,4 @@
+import type { Mock } from 'vitest'
 import { CryptoProxy } from '@protontech/crypto'
 import { VERIFICATION_STATUS } from '@protontech/crypto/constants'
 import { SignedPlaintextContent } from '@proton/docs-proto/Generated/DocumentUpdate'
@@ -9,40 +10,40 @@ import { EncryptionContext } from './EncryptionContext'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 
-jest.mock('@protontech/crypto', () => ({
+vi.mock('@protontech/crypto', () => ({
   CryptoProxy: {
-    signMessage: jest.fn(),
-    verifyMessage: jest.fn(),
-    importPublicKey: jest.fn(),
+    signMessage: vi.fn(),
+    verifyMessage: vi.fn(),
+    importPublicKey: vi.fn(),
   },
 }))
 
-jest.mock('@protontech/crypto/subtle/aesGcm.ts', () => ({
-  encryptDataWith16ByteIV: jest.fn(),
-  decryptData: jest.fn(),
+vi.mock('@protontech/crypto/subtle/aesGcm.ts', () => ({
+  encryptDataWith16ByteIV: vi.fn(),
+  decryptData: vi.fn(),
 }))
 
-jest.mock('../../Crypto/deriveGcmKey', () => ({
-  deriveGcmKey: jest.fn(),
+vi.mock('../../Crypto/deriveGcmKey', () => ({
+  deriveGcmKey: vi.fn(),
 }))
 
 describe('EncryptionService', () => {
   const mockContext = EncryptionContext.RealtimeMessage
   const mockDriveCompat = new DriveCompatWrapper({
     userCompat: {
-      getVerificationKey: jest.fn(),
+      getVerificationKey: vi.fn(),
     } as unknown as DriveCompat,
   })
 
-  const mockApi = jest.fn()
+  const mockApi = vi.fn()
 
   let service: EncryptionService<EncryptionContext.RealtimeMessage>
 
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     service = new EncryptionService(mockContext, mockDriveCompat, mockApi)
-    ;(aesGcm.encryptDataWith16ByteIV as jest.Mock).mockResolvedValue(new Uint8Array([10, 11, 12]))
-    ;(aesGcm.decryptData as jest.Mock).mockResolvedValue(new Uint8Array([13, 14, 15]))
+    ;(aesGcm.encryptDataWith16ByteIV as Mock).mockResolvedValue(new Uint8Array([10, 11, 12]))
+    ;(aesGcm.decryptData as Mock).mockResolvedValue(new Uint8Array([13, 14, 15]))
   })
 
   describe('signAndEncryptData', () => {
@@ -54,9 +55,9 @@ describe('EncryptionService', () => {
     const mockDerivedKey = { key: 'derived-key' } as any
 
     beforeEach(() => {
-      ;(CryptoProxy.signMessage as jest.Mock).mockResolvedValue({ signature: mockSignature })
-      ;(deriveGcmKey as jest.Mock).mockResolvedValue(mockDerivedKey)
-      global.crypto.getRandomValues = jest.fn().mockReturnValue(new Uint8Array(HKDF_SALT_SIZE))
+      ;(CryptoProxy.signMessage as Mock).mockResolvedValue({ signature: mockSignature })
+      ;(deriveGcmKey as Mock).mockResolvedValue(mockDerivedKey)
+      global.crypto.getRandomValues = vi.fn().mockReturnValue(new Uint8Array(HKDF_SALT_SIZE))
     })
 
     it('should successfully sign and encrypt data', async () => {
@@ -75,7 +76,7 @@ describe('EncryptionService', () => {
 
     it('should handle errors gracefully', async () => {
       const error = new Error('Signing failed')
-      ;(CryptoProxy.signMessage as jest.Mock).mockRejectedValue(error)
+      ;(CryptoProxy.signMessage as Mock).mockRejectedValue(error)
 
       const result = await service.signAndEncryptData(mockData, mockAssociatedData, mockSessionKey, mockSigningKey)
 
@@ -92,8 +93,8 @@ describe('EncryptionService', () => {
     const mockDerivedKey = { key: 'derived-key' } as any
 
     beforeEach(() => {
-      ;(deriveGcmKey as jest.Mock).mockResolvedValue(mockDerivedKey)
-      global.crypto.getRandomValues = jest.fn().mockReturnValue(new Uint8Array(HKDF_SALT_SIZE))
+      ;(deriveGcmKey as Mock).mockResolvedValue(mockDerivedKey)
+      global.crypto.getRandomValues = vi.fn().mockReturnValue(new Uint8Array(HKDF_SALT_SIZE))
     })
 
     it('should successfully encrypt anonymous data', async () => {
@@ -106,7 +107,7 @@ describe('EncryptionService', () => {
 
     it('should handle errors gracefully', async () => {
       const error = new Error('Encryption failed')
-      ;(deriveGcmKey as jest.Mock).mockRejectedValue(error)
+      ;(deriveGcmKey as Mock).mockRejectedValue(error)
 
       const result = await service.encryptAnonymousData(mockData, mockAssociatedData, mockSessionKey)
 
@@ -124,8 +125,8 @@ describe('EncryptionService', () => {
     const mockDecryptedData = new Uint8Array([4, 5, 6])
 
     beforeEach(() => {
-      ;(deriveGcmKey as jest.Mock).mockResolvedValue(mockDerivedKey)
-      SignedPlaintextContent.deserializeBinary = jest.fn().mockReturnValue({ content: mockDecryptedData })
+      ;(deriveGcmKey as Mock).mockResolvedValue(mockDerivedKey)
+      SignedPlaintextContent.deserializeBinary = vi.fn().mockReturnValue({ content: mockDecryptedData })
     })
 
     it('should successfully decrypt data', async () => {
@@ -138,7 +139,7 @@ describe('EncryptionService', () => {
 
     it('should handle errors gracefully', async () => {
       const error = new Error('Decryption failed')
-      ;(deriveGcmKey as jest.Mock).mockRejectedValue(error)
+      ;(deriveGcmKey as Mock).mockRejectedValue(error)
 
       const result = await service.decryptData(mockEncryptedData, mockAssociatedData, mockSessionKey)
 
@@ -155,7 +156,7 @@ describe('EncryptionService', () => {
     const mockVerificationKeys = { key: 'verification-key' } as any
 
     beforeEach(() => {
-      ;(CryptoProxy.verifyMessage as jest.Mock).mockResolvedValue({
+      ;(CryptoProxy.verifyMessage as Mock).mockResolvedValue({
         verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
       })
     })
@@ -176,7 +177,7 @@ describe('EncryptionService', () => {
 
     it('should handle errors gracefully', async () => {
       const error = new Error('Verification failed')
-      ;(CryptoProxy.verifyMessage as jest.Mock).mockRejectedValue(error)
+      ;(CryptoProxy.verifyMessage as Mock).mockRejectedValue(error)
 
       const result = await service.verifyData(mockData, mockSignature, mockAssociatedData, mockVerificationKeys)
 
@@ -191,7 +192,7 @@ describe('EncryptionService', () => {
     const mockVerificationKey = ['test-key']
 
     it('should successfully get verification key', async () => {
-      ;(mockDriveCompat.getUserCompat().getVerificationKey as jest.Mock).mockResolvedValue(mockVerificationKey)
+      ;(mockDriveCompat.getUserCompat().getVerificationKey as Mock).mockResolvedValue(mockVerificationKey)
 
       const result = await service.getVerificationKey(mockEmail)
 
@@ -202,7 +203,7 @@ describe('EncryptionService', () => {
 
     it('should handle errors gracefully', async () => {
       const error = new Error('Get verification key failed')
-      ;(mockDriveCompat.getUserCompat().getVerificationKey as jest.Mock).mockRejectedValue(error)
+      ;(mockDriveCompat.getUserCompat().getVerificationKey as Mock).mockRejectedValue(error)
 
       const result = await service.getVerificationKey(mockEmail)
 
@@ -215,7 +216,7 @@ describe('EncryptionService', () => {
       const mockImportedKey = { key: 'imported-key' }
 
       beforeEach(() => {
-        ;(CryptoProxy.importPublicKey as jest.Mock).mockResolvedValue(mockImportedKey)
+        ;(CryptoProxy.importPublicKey as Mock).mockResolvedValue(mockImportedKey)
       })
 
       it('should get public keys from api', async () => {

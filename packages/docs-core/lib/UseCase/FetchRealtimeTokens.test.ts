@@ -9,17 +9,17 @@ describe('FetchRealtimeToken', () => {
   let mockDocsApi: any
 
   beforeEach(() => {
-    jest.spyOn(metrics.docs_commit_id_out_of_sync_total, 'increment')
+    vi.spyOn(metrics.docs_commit_id_out_of_sync_total, 'increment')
 
     mockDocsApi = {
-      createRealtimeValetToken: jest.fn(),
+      createRealtimeValetToken: vi.fn(),
     }
 
     fetchRealtimeToken = new FetchRealtimeToken(mockDocsApi)
   })
 
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('should successfully fetch token and preferences', async () => {

@@ -1,3 +1,4 @@
+import type { Mock } from 'vitest'
 import type { DocumentStateValues } from './DocumentState'
 import { DocumentState } from './DocumentState'
 import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
@@ -7,7 +8,7 @@ describe('DocumentState', () => {
   let documentPropertiesState: DocumentState
 
   beforeEach(() => {
-    console.error = jest.fn()
+    console.error = vi.fn()
     documentPropertiesState = new DocumentState({
       ...DocumentState.defaults,
     } as DocumentStateValues)
@@ -15,7 +16,7 @@ describe('DocumentState', () => {
 
   describe('property subscription', () => {
     it('should call property subscriber immediately with current value and undefined previous value', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       documentPropertiesState.subscribeToProperty('realtimeEnabled', callback)
 
       expect(callback).toHaveBeenCalledTimes(1)
@@ -23,7 +24,7 @@ describe('DocumentState', () => {
     })
 
     it('should notify property subscribers with new and previous values', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       documentPropertiesState.subscribeToProperty('realtimeEnabled', callback)
       callback.mockClear()
 
@@ -34,8 +35,8 @@ describe('DocumentState', () => {
     })
 
     it('should handle multiple property subscribers', () => {
-      const callback1 = jest.fn()
-      const callback2 = jest.fn()
+      const callback1 = vi.fn()
+      const callback2 = vi.fn()
 
       documentPropertiesState.subscribeToProperty('realtimeEnabled', callback1)
       documentPropertiesState.subscribeToProperty('realtimeEnabled', callback2)
@@ -49,7 +50,7 @@ describe('DocumentState', () => {
     })
 
     it('should not call property subscriber after unsubscribe', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       const unsubscribe = documentPropertiesState.subscribeToProperty('realtimeEnabled', callback)
       callback.mockClear()
 
@@ -62,7 +63,7 @@ describe('DocumentState', () => {
 
   describe('event handling', () => {
     it('should notify event subscribers with payload', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback)
 
       documentPropertiesState.emitEvent({
@@ -74,8 +75,8 @@ describe('DocumentState', () => {
     })
 
     it('should handle multiple event subscribers', () => {
-      const callback1 = jest.fn()
-      const callback2 = jest.fn()
+      const callback1 = vi.fn()
+      const callback2 = vi.fn()
 
       documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback1)
       documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback2)
@@ -90,7 +91,7 @@ describe('DocumentState', () => {
     })
 
     it('should not call event subscriber after unsubscribe', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       const unsubscribe = documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback)
 
       unsubscribe()
@@ -103,7 +104,7 @@ describe('DocumentState', () => {
     })
 
     it('should notify event subscribers with correct payload when event matches', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback)
 
       const payload = { reason: 'test' } as unknown as ConnectionCloseReason
@@ -145,8 +146,8 @@ describe('DocumentState', () => {
 
   describe('property subscription cleanup', () => {
     it('should remove property from propertySubscribers map when last subscriber is removed', () => {
-      const callback1 = jest.fn()
-      const callback2 = jest.fn()
+      const callback1 = vi.fn()
+      const callback2 = vi.fn()
 
       const unsubscribe1 = documentPropertiesState.subscribeToProperty('realtimeEnabled', callback1)
       const unsubscribe2 = documentPropertiesState.subscribeToProperty('realtimeEnabled', callback2)
@@ -170,7 +171,7 @@ describe('DocumentState', () => {
     })
 
     it('should handle errors in initial property subscriber call', () => {
-      const errorCallback = jest.fn().mockImplementation(() => {
+      const errorCallback = vi.fn().mockImplementation(() => {
         throw new Error('Initial subscriber error')
       })
 
@@ -186,17 +187,17 @@ describe('DocumentState', () => {
     })
 
     it('should handle errors in property subscriber calls', () => {
-      const errorCallback = jest.fn().mockImplementation(() => {
+      const errorCallback = vi.fn().mockImplementation(() => {
         throw new Error('Property subscriber error')
       })
-      const normalCallback = jest.fn()
+      const normalCallback = vi.fn()
 
       documentPropertiesState.subscribeToProperty('realtimeEnabled', errorCallback)
       documentPropertiesState.subscribeToProperty('realtimeEnabled', normalCallback)
 
       errorCallback.mockClear()
       normalCallback.mockClear()
-      ;(console.error as jest.Mock).mockClear()
+      ;(console.error as Mock).mockClear()
 
       expect(() => {
         documentPropertiesState.setProperty('realtimeEnabled', false)
@@ -208,16 +209,16 @@ describe('DocumentState', () => {
     })
 
     it('should handle errors in event subscriber calls', () => {
-      const errorCallback = jest.fn().mockImplementation(() => {
+      const errorCallback = vi.fn().mockImplementation(() => {
         throw new Error('Event subscriber error')
       })
-      const normalCallback = jest.fn()
+      const normalCallback = vi.fn()
 
       documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', errorCallback)
       documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', normalCallback)
 
       const payload = { reason: 'test' } as unknown as ConnectionCloseReason
-      ;(console.error as jest.Mock).mockClear()
+      ;(console.error as Mock).mockClear()
 
       expect(() => {
         documentPropertiesState.emitEvent({
@@ -237,8 +238,8 @@ describe('DocumentState', () => {
 
   describe('event subscription cleanup', () => {
     it('should remove event from eventSubscribers map when last subscriber is removed', () => {
-      const callback1 = jest.fn()
-      const callback2 = jest.fn()
+      const callback1 = vi.fn()
+      const callback2 = vi.fn()
 
       const unsubscribe1 = documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback1)
       const unsubscribe2 = documentPropertiesState.subscribeToEvent('RealtimeConnectionClosed', callback2)

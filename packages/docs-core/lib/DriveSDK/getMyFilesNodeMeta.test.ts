@@ -3,20 +3,20 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { getMyFilesNodeMeta } from './getMyFilesNodeMeta'
 import { traceErrorSDK } from './traceErrorSDK'
 
-const mockGetMyFilesRootFolder = jest.fn()
+const mockGetMyFilesRootFolder = vi.fn()
 
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
   getDrive: () => ({ getMyFilesRootFolder: mockGetMyFilesRootFolder }),
 }))
 
-jest.mock('./traceErrorSDK', () => ({
-  traceErrorSDK: jest.fn(),
+vi.mock('./traceErrorSDK', () => ({
+  traceErrorSDK: vi.fn(),
 }))
 
 describe('getMyFilesNodeMeta', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('returns the main volume and root node identifiers', async () => {

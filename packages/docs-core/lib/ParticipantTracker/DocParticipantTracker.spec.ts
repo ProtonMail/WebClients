@@ -1,16 +1,17 @@
+import type { Mocked } from 'vitest'
 import { DocParticipantTracker, MAX_USER_STATES_FOR_LOCKING_EDITOR } from './DocParticipantTracker'
 import type { DocumentState } from '../State/DocumentState'
 import type { SafeDocsUserState } from '@proton/docs-shared/Doc/DocsAwareness'
 
 describe('DocParticipantTracker', () => {
   let tracker: DocParticipantTracker
-  let mockSharedState: jest.Mocked<DocumentState>
+  let mockSharedState: Mocked<DocumentState>
 
   beforeEach(() => {
     mockSharedState = {
-      getProperty: jest.fn(),
-      setProperty: jest.fn(),
-    } as unknown as jest.Mocked<DocumentState>
+      getProperty: vi.fn(),
+      setProperty: vi.fn(),
+    } as unknown as Mocked<DocumentState>
 
     tracker = new DocParticipantTracker(mockSharedState)
   })

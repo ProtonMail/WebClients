@@ -48,9 +48,9 @@
   "scripts": {
     "check:types": "tsc --checkers 1",
     "lint": "oxlint --quiet",
-    "test": "jest",
-    "test:ci": "jest --runInBand --ci --logHeapUsage",
-    "test:watch": "jest --watch"
+    "test": "vitest",
+    "test:ci": "pnpm run test --run",
+    "test:watch": "pnpm run test --watch"
   },
   "dependencies": {
     "@proton/account": "workspace:^",
@@ -75,28 +75,24 @@
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@babel/plugin-transform-class-properties": "^7.29.7",
-    "@proton/jest-env": "workspace:^",
-    "@proton/jest-swc-preset": "workspace:^",
     "@proton/oxlint-config": "workspace:^",
     "@proton/raw-images": "workspace:^",
+    "@proton/vitest-config": "workspace:^",
     "@testing-library/dom": "catalog:",
-    "@testing-library/jest-dom": "catalog:",
     "@testing-library/react": "catalog:",
-    "@types/jest": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/webpack-env": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
     "@typescript/native": "catalog:",
-    "babel-jest": "catalog:",
-    "browserslist": "catalog:",
     "core-js": "catalog:",
     "fake-indexeddb": "catalog:",
-    "jest": "catalog:",
-    "jest-junit": "catalog:",
+    "happy-dom": "catalog:",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
     "react-dom": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }

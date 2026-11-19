@@ -1,3 +1,4 @@
+import type { Mock, Mocked } from 'vitest'
 import { ApiResult } from '@proton/docs-shared/ApiResult'
 import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
@@ -14,55 +15,57 @@ import type { DocsApi } from '../Api/DocsApi'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 
-jest.mock('@proton/docs-shared/GenerateUuid', () => ({
-  ...jest.requireActual('@proton/docs-shared/GenerateUuid'),
-  GenerateUUID: jest.fn(),
+vi.mock('@proton/docs-shared/GenerateUuid', async () => ({
+  ...(await vi.importActual('@proton/docs-shared/GenerateUuid')),
+  GenerateUUID: vi.fn(),
 }))
 
-jest.mock('@proton/docs-shared/ServerTime', () => ({
-  ...jest.requireActual('@proton/docs-shared/ServerTime'),
-  ServerTime: jest.fn().mockImplementation(() => ({})),
+vi.mock('@proton/docs-shared/ServerTime', async () => ({
+  ...(await vi.importActual('@proton/docs-shared/ServerTime')),
+  ServerTime: vi.fn().mockImplementation(function () {
+    return {}
+  }),
 }))
 
-jest.mock('@proton/docs-shared/CommentThreadState', () => ({
-  ...jest.requireActual('@proton/docs-shared/CommentThreadState'),
+vi.mock('@proton/docs-shared/CommentThreadState', async () => ({
+  ...(await vi.importActual('@proton/docs-shared/CommentThreadState')),
   CommentThreadState: {
     Active: 'Active',
   },
 }))
 
-jest.mock('@proton/docs-shared/CommentsEvent', () => ({
-  ...jest.requireActual('@proton/docs-shared/CommentsEvent'),
+vi.mock('@proton/docs-shared/CommentsEvent', async () => ({
+  ...(await vi.importActual('@proton/docs-shared/CommentsEvent')),
   CommentsEvent: {
     CreateMarkNode: 'CreateMarkNode',
   },
 }))
 
 const mockEncryptComment = {
-  execute: jest.fn(),
-} as unknown as jest.Mocked<EncryptComment>
+  execute: vi.fn(),
+} as unknown as Mocked<EncryptComment>
 
 const mockDecryptComment = {
-  execute: jest.fn(),
-} as unknown as jest.Mocked<DecryptComment>
+  execute: vi.fn(),
+} as unknown as Mocked<DecryptComment>
 
 const mockCommentsApi = {
-  createThread: jest.fn(),
-} as unknown as jest.Mocked<DocsApi>
+  createThread: vi.fn(),
+} as unknown as Mocked<DocsApi>
 
 const mockCommentsState = {
-  findThreadById: jest.fn(),
-  addThread: jest.fn(),
-  deleteThread: jest.fn(),
-  replacePlaceholderThread: jest.fn(),
+  findThreadById: vi.fn(),
+  addThread: vi.fn(),
+  deleteThread: vi.fn(),
+  replacePlaceholderThread: vi.fn(),
 }
 
 const logger = {
-  error: jest.fn(),
-} as unknown as jest.Mocked<LoggerInterface>
+  error: vi.fn(),
+} as unknown as Mocked<LoggerInterface>
 
 const mockEventBus = {
-  publish: jest.fn(),
+  publish: vi.fn(),
 }
 
 describe('CreateThread', () => {
@@ -91,9 +94,9 @@ describe('CreateThread', () => {
       mockEventBus as unknown as InternalEventBusInterface,
       logger,
     )
-    ;(GenerateUUID as jest.Mock).mockReturnValue('uuid')
-    ServerTime.now = jest.fn()
-    ;(ServerTime.now as jest.Mock).mockReturnValue(new Date())
+    ;(GenerateUUID as Mock).mockReturnValue('uuid')
+    ServerTime.now = vi.fn()
+    ;(ServerTime.now as Mock).mockReturnValue(new Date())
   })
 
   it('should create mark node, call encryptComment, api.createThread, and decryptComment in order', async () => {

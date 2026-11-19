@@ -1,3 +1,4 @@
+import type { Mock } from 'vitest'
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto'
 import { useGetAddresses } from '@proton/account/addresses/hooks'
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks'
@@ -16,20 +17,21 @@ import { traceErrorSDK } from '../DriveSDK/traceErrorSDK'
 import { useCreateDocumentNode } from './useCreateDocumentNode'
 import { useGetVerificationKey } from './useGetVerificationKey'
 
-jest.mock('@proton/account/addresses/hooks')
-jest.mock('@proton/account/addressKeys/hooks')
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+vi.mock('@proton/account/addresses/hooks')
+vi.mock('@proton/account/addressKeys/hooks')
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
-jest.mock('@protontech/crypto', () => ({
-  VERIFICATION_STATUS: jest.requireActual('@protontech/crypto').VERIFICATION_STATUS,
-  CryptoProxy: { importPrivateKey: jest.fn(), decryptMessage: jest.fn() },
+vi.mock('@protontech/crypto', async () => ({
+  VERIFICATION_STATUS: (await vi.importActual<{ VERIFICATION_STATUS: unknown }>('@protontech/crypto'))
+    .VERIFICATION_STATUS,
+  CryptoProxy: { importPrivateKey: vi.fn(), decryptMessage: vi.fn() },
 }))
-jest.mock('@proton/shared/lib/keys/driveKeys')
-jest.mock('../DriveSDK/traceErrorSDK')
+vi.mock('@proton/shared/lib/keys/driveKeys')
+vi.mock('../DriveSDK/traceErrorSDK')
 // Factory avoids loading @proton/components, which needs browser APIs
-jest.mock('./useGetVerificationKey', () => ({ useGetVerificationKey: jest.fn() }))
+vi.mock('./useGetVerificationKey', () => ({ useGetVerificationKey: vi.fn() }))
 
 const volumeId = 'volume'
 const parentMeta = { volumeId, linkId: 'parent' }
@@ -56,13 +58,13 @@ const parentLink = {
 }
 
 describe('useCreateDocumentNode', () => {
-  let api: jest.Mock
+  let api: Mock
   let links: unknown[]
   let share: { AddressID: string; Key: string; Passphrase: string; PassphraseSignature: string; Creator: string }
   let verificationStatus: VERIFICATION_STATUS
 
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     links = [parentLink, rootLink]
     share = {
       AddressID: 'address-id',
@@ -72,7 +74,7 @@ describe('useCreateDocumentNode', () => {
       Creator: 'creator@pm.me',
     }
     verificationStatus = VERIFICATION_STATUS.SIGNED_AND_VALID
-    api = jest.fn(async ({ url }: { url: string }) => {
+    api = vi.fn(async ({ url }: { url: string }) => {
       if (url === 'drive/shares/share-id') {
         return share
       }
@@ -82,14 +84,12 @@ describe('useCreateDocumentNode', () => {
       return { Document: { LinkID: 'new-document' } }
     })
 
-    jest
-      .mocked(useGetAddresses)
-      .mockReturnValue(
-        jest.fn().mockResolvedValue([{ ID: 'address-id', Email: 'me@pm.me', Status: ADDRESS_STATUS.STATUS_ENABLED }]),
-      )
-    jest.mocked(useGetAddressKeys).mockReturnValue(jest.fn().mockResolvedValue([{ privateKey: 'address-key' }]))
-    jest.mocked(getDrive).mockReturnValue({
-      getNodeHierarchy: jest
+    vi.mocked(useGetAddresses).mockReturnValue(
+      vi.fn().mockResolvedValue([{ ID: 'address-id', Email: 'me@pm.me', Status: ADDRESS_STATUS.STATUS_ENABLED }]),
+    )
+    vi.mocked(useGetAddressKeys).mockReturnValue(vi.fn().mockResolvedValue([{ privateKey: 'address-key' }]))
+    vi.mocked(getDrive).mockReturnValue({
+      getNodeHierarchy: vi
         .fn()
         .mockResolvedValue([
           { uid: generateNodeUid(volumeId, 'root'), deprecatedShareId: 'share-id' },
@@ -97,34 +97,30 @@ describe('useCreateDocumentNode', () => {
         ]),
     } as any)
 
-    jest
-      .mocked(useGetVerificationKey)
-      .mockReturnValue(jest.fn(async (email?: string) => [`${email}-public-key`]) as any)
+    vi.mocked(useGetVerificationKey).mockReturnValue(vi.fn(async (email?: string) => [`${email}-public-key`]) as any)
 
     // Each key is "unlocked" by wrapping its name, so the unlock chain is visible in the result
-    jest
-      .mocked(CryptoProxy.decryptMessage)
-      .mockImplementation((async ({ armoredMessage, decryptionKeys }: any) =>
-        armoredMessage === 'parent-hash-key'
-          ? { data: 'parent-hash' }
-          : { data: `${armoredMessage}|${decryptionKeys}`, verificationStatus }) as any)
-    jest
-      .mocked(CryptoProxy.importPrivateKey)
-      .mockImplementation(async ({ armoredKey, passphrase }: any) => `${armoredKey}(${passphrase})` as any)
-    jest.mocked(generateLookupHash).mockResolvedValue('hash')
-    jest.mocked(generateNodeKeys).mockResolvedValue({
+    vi.mocked(CryptoProxy.decryptMessage).mockImplementation((async ({ armoredMessage, decryptionKeys }: any) =>
+      armoredMessage === 'parent-hash-key'
+        ? { data: 'parent-hash' }
+        : { data: `${armoredMessage}|${decryptionKeys}`, verificationStatus }) as any)
+    vi.mocked(CryptoProxy.importPrivateKey).mockImplementation(
+      async ({ armoredKey, passphrase }: any) => `${armoredKey}(${passphrase})` as any,
+    )
+    vi.mocked(generateLookupHash).mockResolvedValue('hash')
+    vi.mocked(generateNodeKeys).mockResolvedValue({
       NodeKey: 'node-key',
       NodePassphrase: 'node-passphrase',
       NodePassphraseSignature: 'node-passphrase-signature',
       privateKey: 'node-private-key',
     } as any)
-    jest.mocked(encryptName).mockResolvedValue('encrypted-name')
-    jest.mocked(generateContentKeys).mockResolvedValue({
+    vi.mocked(encryptName).mockResolvedValue('encrypted-name')
+    vi.mocked(generateContentKeys).mockResolvedValue({
       sessionKey: 'session-key',
       ContentKeyPacket: 'content-key-packet',
       ContentKeyPacketSignature: 'content-key-packet-signature',
     } as any)
-    jest.mocked(sign).mockResolvedValue('manifest-signature')
+    vi.mocked(sign).mockResolvedValue('manifest-signature')
   })
 
   const createDocumentNode = (documentType: 'doc' | 'sheet' = 'doc') =>
@@ -184,9 +180,9 @@ describe('useCreateDocumentNode', () => {
   })
 
   it('signs with the first address key and unlocks share with all of them', async () => {
-    jest
-      .mocked(useGetAddressKeys)
-      .mockReturnValue(jest.fn().mockResolvedValue([{ privateKey: 'primary-key' }, { privateKey: 'other-key' }]))
+    vi.mocked(useGetAddressKeys).mockReturnValue(
+      vi.fn().mockResolvedValue([{ privateKey: 'primary-key' }, { privateKey: 'other-key' }]),
+    )
 
     await createDocumentNode()
 
@@ -244,7 +240,7 @@ describe('useCreateDocumentNode', () => {
 
   it('does not report unverified passphrase without verification keys', async () => {
     verificationStatus = VERIFICATION_STATUS.NOT_SIGNED
-    jest.mocked(useGetVerificationKey).mockReturnValue(jest.fn().mockResolvedValue([]))
+    vi.mocked(useGetVerificationKey).mockReturnValue(vi.fn().mockResolvedValue([]))
 
     await createDocumentNode()
 
@@ -252,15 +248,15 @@ describe('useCreateDocumentNode', () => {
   })
 
   it('fails when root node has no share', async () => {
-    jest.mocked(getDrive).mockReturnValue({
-      getNodeHierarchy: jest.fn().mockResolvedValue([{ uid: generateNodeUid(volumeId, 'parent') }]),
+    vi.mocked(getDrive).mockReturnValue({
+      getNodeHierarchy: vi.fn().mockResolvedValue([{ uid: generateNodeUid(volumeId, 'parent') }]),
     } as any)
 
     await expect(createDocumentNode()).rejects.toThrow('Root node has no share')
   })
 
   it('fails when share address is not own address', async () => {
-    jest.mocked(useGetAddresses).mockReturnValue(jest.fn().mockResolvedValue([]))
+    vi.mocked(useGetAddresses).mockReturnValue(vi.fn().mockResolvedValue([]))
 
     await expect(createDocumentNode()).rejects.toThrow('Address is not available')
   })

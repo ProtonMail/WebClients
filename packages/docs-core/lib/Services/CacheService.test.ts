@@ -8,7 +8,7 @@ describe('document localID cache', () => {
   })
 
   afterEach(() => {
-    jest.restoreAllMocks()
+    vi.restoreAllMocks()
   })
 
   it('reports when the localID is durable', () => {
@@ -17,7 +17,7 @@ describe('document localID cache', () => {
   })
 
   it('reports when the localID cannot be persisted', () => {
-    jest.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+    vi.spyOn(localStorage, 'setItem').mockImplementation(() => {
       throw new Error('Storage unavailable')
     })
 

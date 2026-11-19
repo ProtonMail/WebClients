@@ -10,7 +10,7 @@ describe('LocalCommentsState', () => {
 
   beforeEach(() => {
     eventBus = {
-      publish: jest.fn(),
+      publish: vi.fn(),
     } as unknown as InternalEventBusInterface
     state = new LocalCommentsState(eventBus)
   })

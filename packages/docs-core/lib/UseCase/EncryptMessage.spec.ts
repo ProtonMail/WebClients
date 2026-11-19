@@ -1,3 +1,4 @@
+import type { Mock, Mocked } from 'vitest'
 import { Result } from '@proton/docs-shared/Result'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
@@ -5,12 +6,12 @@ import type { DocumentKeys } from '@proton/docs-shared/CryptoTypes'
 import { EncryptMessage } from './EncryptMessage'
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'
 
-jest.mock('../Services/Encryption/EncryptionService')
-jest.mock('./GetAdditionalEncryptionData')
+vi.mock('../Services/Encryption/EncryptionService')
+vi.mock('./GetAdditionalEncryptionData')
 
 describe('EncryptMessage', () => {
   let encryptMessage: EncryptMessage
-  let encryptionService: jest.Mocked<EncryptionService<EncryptionContext.RealtimeMessage>>
+  let encryptionService: Mocked<EncryptionService<EncryptionContext.RealtimeMessage>>
 
   const update = new Uint8Array()
   const metadata = { version: 1, authorAddress: 'author@example.com', timestamp: 1234567890 }
@@ -22,16 +23,16 @@ describe('EncryptMessage', () => {
 
   beforeEach(() => {
     encryptionService = {
-      signAndEncryptData: jest.fn().mockResolvedValue(Result.ok(new Uint8Array())),
-      decryptData: jest.fn().mockResolvedValue(Result.ok(new Uint8Array())),
-    } as unknown as jest.Mocked<EncryptionService<EncryptionContext.RealtimeMessage>>
+      signAndEncryptData: vi.fn().mockResolvedValue(Result.ok(new Uint8Array())),
+      decryptData: vi.fn().mockResolvedValue(Result.ok(new Uint8Array())),
+    } as unknown as Mocked<EncryptionService<EncryptionContext.RealtimeMessage>>
 
     encryptMessage = new EncryptMessage(encryptionService)
   })
 
   it('should call signAndEncryptData with correct parameters', async () => {
     const associatedData = new Uint8Array([1, 2, 3])
-    ;(GetAssociatedEncryptionDataForRealtimeMessage as jest.Mock).mockReturnValue(associatedData)
+    ;(GetAssociatedEncryptionDataForRealtimeMessage as Mock).mockReturnValue(associatedData)
     encryptionService.signAndEncryptData.mockResolvedValue(Result.ok(new Uint8Array([4, 5, 6])))
 
     await encryptMessage.execute(update, metadata, keys)
@@ -47,7 +48,7 @@ describe('EncryptMessage', () => {
 
   it('should return encrypted data on success', async () => {
     const encryptedData = new Uint8Array([4, 5, 6])
-    encryptionService.signAndEncryptData = jest.fn().mockResolvedValue(Result.ok(encryptedData))
+    encryptionService.signAndEncryptData = vi.fn().mockResolvedValue(Result.ok(encryptedData))
 
     const result = await encryptMessage.execute(update, metadata, keys)
 

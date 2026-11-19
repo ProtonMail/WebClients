@@ -1,6 +1,9 @@
 import { DecryptedMessage } from '@proton/docs-shared/Realtime/DecryptedMessage'
 import { DecryptedCommit } from './DecryptedCommit'
 
+// isDevOrBlack reads window.location.host, there is no DOM on node
+vi.stubGlobal('window', { location: { host: '' } })
+
 describe('DecryptedCommit', () => {
   it('should create an instance', () => {
     const decryptedCommit = new DecryptedCommit('commitId', [

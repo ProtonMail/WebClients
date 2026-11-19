@@ -1,3 +1,4 @@
+import type { Mocked } from 'vitest'
 import { EditorController } from './EditorController'
 import type { Logger } from '@proton/shared/lib/logs'
 import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
@@ -17,31 +18,33 @@ import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 import { downloadExport } from '../UseCase/ExportAndDownload'
 
-jest.mock('@proton/metrics/metricsInstance', () => ({
-  docs_readonly_mode_documents_total: {
-    increment: jest.fn(),
+vi.mock('@proton/metrics/metricsInstance', () => ({
+  default: {
+    docs_readonly_mode_documents_total: {
+      increment: vi.fn(),
+    },
   },
 }))
 
-jest.mock('@proton/docs-core/UseCase/ExportAndDownload', () => ({
-  downloadExport: jest.fn(),
+vi.mock('@proton/docs-core/UseCase/ExportAndDownload', () => ({
+  downloadExport: vi.fn(),
 }))
 
 describe('EditorController', () => {
   let controller: EditorController
   let logger: Logger
   let sharedState: DocumentState
-  let editorInvoker: jest.Mocked<ClientRequiresEditorMethods>
+  let editorInvoker: Mocked<ClientRequiresEditorMethods>
   let eventBus: InternalEventBusInterface
 
   beforeEach(() => {
-    jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
+    vi.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(vi.fn())
 
     logger = {
-      info: jest.fn(),
-      error: jest.fn(),
-      warn: jest.fn(),
-      debug: jest.fn(),
+      info: vi.fn(),
+      error: vi.fn(),
+      warn: vi.fn(),
+      debug: vi.fn(),
     } as unknown as Logger
 
     sharedState = new DocumentState({
@@ -50,22 +53,22 @@ describe('EditorController', () => {
     } as DocumentStateValues)
 
     editorInvoker = {
-      receiveMessage: jest.fn(),
-      showEditor: jest.fn(),
-      performOpeningCeremony: jest.fn(),
-      performClosingCeremony: jest.fn(),
-      changeLockedState: jest.fn(),
-      broadcastPresenceState: jest.fn(),
-      toggleDebugTreeView: jest.fn(),
-      printAsPDF: jest.fn(),
-      getCurrentEditorState: jest.fn(),
-      showCommentsPanel: jest.fn(),
-      exportData: jest.fn(),
-      getDocumentState: jest.fn(),
-      getClientId: jest.fn(),
-      replaceEditorState: jest.fn(),
-      getEditorBuildInfo: jest.fn(),
-    } as unknown as jest.Mocked<ClientRequiresEditorMethods>
+      receiveMessage: vi.fn(),
+      showEditor: vi.fn(),
+      performOpeningCeremony: vi.fn(),
+      performClosingCeremony: vi.fn(),
+      changeLockedState: vi.fn(),
+      broadcastPresenceState: vi.fn(),
+      toggleDebugTreeView: vi.fn(),
+      printAsPDF: vi.fn(),
+      getCurrentEditorState: vi.fn(),
+      showCommentsPanel: vi.fn(),
+      exportData: vi.fn(),
+      getDocumentState: vi.fn(),
+      getClientId: vi.fn(),
+      replaceEditorState: vi.fn(),
+      getEditorBuildInfo: vi.fn(),
+    } as unknown as Mocked<ClientRequiresEditorMethods>
 
     eventBus = {} as InternalEventBusInterface
 
@@ -180,7 +183,7 @@ describe('EditorController', () => {
       sharedState.setProperty('realtimeEnabled', false)
       sharedState.setProperty('realtimeReadyToBroadcast', false)
       sharedState.setProperty('realtimeConnectionTimedOut', false)
-      sharedState.emitEvent = jest.fn()
+      sharedState.emitEvent = vi.fn()
 
       controller.showEditorForTheFirstTime()
 
@@ -194,7 +197,7 @@ describe('EditorController', () => {
       sharedState.setProperty('realtimeEnabled', true)
       sharedState.setProperty('realtimeReadyToBroadcast', true)
 
-      controller.reloadEditingLockedState = jest.fn()
+      controller.reloadEditingLockedState = vi.fn()
 
       controller.showEditorForTheFirstTime()
 
@@ -373,7 +376,7 @@ describe('EditorController', () => {
 
     it('should request realtime propagation when persistence is requested', async () => {
       const update = new Uint8Array([1, 2, 3])
-      const emitEvent = jest.spyOn(sharedState, 'emitEvent')
+      const emitEvent = vi.spyOn(sharedState, 'emitEvent')
 
       await controller.applyUpdate(update, true)
 
@@ -720,7 +723,7 @@ describe('EditorController', () => {
 
   describe('editor ready state', () => {
     it('should emit EditorIsReadyToBeShown event when showing editor', () => {
-      const emitEventSpy = jest.spyOn(sharedState, 'emitEvent')
+      const emitEventSpy = vi.spyOn(sharedState, 'emitEvent')
       controller.receiveEditor(editorInvoker)
       sharedState.setProperty('realtimeEnabled', true)
       sharedState.setProperty('realtimeReadyToBroadcast', true)

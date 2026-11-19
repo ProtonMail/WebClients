@@ -1,3 +1,4 @@
+import type { Mock, Mocked } from 'vitest'
 import { ApiResult } from '@proton/docs-shared/ApiResult'
 import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
@@ -12,25 +13,25 @@ import type { DocsApi } from '../Api/DocsApi'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 
-jest.mock('@proton/docs-shared/GenerateUuid', () => ({
-  ...jest.requireActual('@proton/docs-shared/GenerateUuid'),
-  GenerateUUID: jest.fn(),
+vi.mock('@proton/docs-shared/GenerateUuid', async () => ({
+  ...(await vi.importActual('@proton/docs-shared/GenerateUuid')),
+  GenerateUUID: vi.fn(),
 }))
 
 const mockEncryptComment = {
-  execute: jest.fn(),
-} as unknown as jest.Mocked<EncryptComment>
+  execute: vi.fn(),
+} as unknown as Mocked<EncryptComment>
 
 const mockCommentsApi = {
-  addCommentToThread: jest.fn(),
-} as unknown as jest.Mocked<DocsApi>
+  addCommentToThread: vi.fn(),
+} as unknown as Mocked<DocsApi>
 
 const mockCommentsState = {
-  findThreadById: jest.fn(),
-  addComment: jest.fn(),
-  deleteComment: jest.fn(),
-  replacePlaceholderComment: jest.fn(),
-} as unknown as jest.Mocked<LocalCommentsState>
+  findThreadById: vi.fn(),
+  addComment: vi.fn(),
+  deleteComment: vi.fn(),
+  replacePlaceholderComment: vi.fn(),
+} as unknown as Mocked<LocalCommentsState>
 
 describe('CreateComment', () => {
   let createComment: CreateComment
@@ -57,7 +58,7 @@ describe('CreateComment', () => {
       mockCommentsApi as unknown as DocsApi,
       mockEncryptComment as unknown as EncryptComment,
     )
-    ;(GenerateUUID as jest.Mock).mockReturnValue('uuid')
+    ;(GenerateUUID as Mock).mockReturnValue('uuid')
   })
 
   it('should call encryptComment, api.addCommentToThread, and decryptComment in order', async () => {

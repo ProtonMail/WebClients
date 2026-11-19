@@ -4,20 +4,23 @@ import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { DatabaseSchema } from './Schema'
 import { CURRENT_DB_VERSION, DATABASE_NAME, migrations } from './Schema'
 
+// The code under test reads window.indexedDB, which fake-indexeddb installs on the global
+vi.stubGlobal('window', globalThis)
+
 describe('IndexedDatabase', () => {
   const TEST_DB_NAME = DATABASE_NAME
   let db: IndexedDatabase<DatabaseSchema>
   const mockLogger = {
-    error: jest.fn(),
-    info: jest.fn(),
-    warn: jest.fn(),
-    debug: jest.fn(),
+    error: vi.fn(),
+    info: vi.fn(),
+    warn: vi.fn(),
+    debug: vi.fn(),
   } as unknown as LoggerInterface
 
   beforeEach(() => {
     indexedDB = new IDBFactory()
     db = new IndexedDatabase<DatabaseSchema>(TEST_DB_NAME, CURRENT_DB_VERSION, migrations, mockLogger)
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   describe('openDatabase', () => {
@@ -37,7 +40,7 @@ describe('IndexedDatabase', () => {
     })
 
     it('should call onNewDatabase callback when creating new database', async () => {
-      const onNewDatabase = jest.fn()
+      const onNewDatabase = vi.fn()
       await db.openDatabase(onNewDatabase)
       expect(onNewDatabase).toHaveBeenCalled()
     })

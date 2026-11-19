@@ -1,22 +1,22 @@
 import { renamePublicNode } from './renamePublicNode'
 import { traceErrorSDK } from './traceErrorSDK'
 
-const mockRenameNode = jest.fn()
-const mockGetPublicDrive = jest.fn()
-const mockGetPublicLinkInfo = jest.fn()
+const mockRenameNode = vi.fn()
+const mockGetPublicDrive = vi.fn()
+const mockGetPublicLinkInfo = vi.fn()
 
-jest.mock('./getPublicDrive', () => ({
+vi.mock('./getPublicDrive', () => ({
   getPublicDrive: () => mockGetPublicDrive(),
   getPublicLinkInfo: () => mockGetPublicLinkInfo(),
 }))
 
-jest.mock('./traceErrorSDK', () => ({
-  traceErrorSDK: jest.fn(),
+vi.mock('./traceErrorSDK', () => ({
+  traceErrorSDK: vi.fn(),
 }))
 
 describe('renamePublicNode', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     mockGetPublicDrive.mockReturnValue({ renameNode: mockRenameNode })
     mockGetPublicLinkInfo.mockReturnValue({ volumeId: 'volume-id' })
   })
