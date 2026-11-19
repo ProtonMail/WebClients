@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom needed: DOMPurify fails under happy-dom here (insertBefore: "Only one element on document allowed")
 import type { Base64Cache } from '@proton/mail-message/hooks/useBase64Cache';
 import createCache from '@proton/shared/lib/helpers/cache';
 
@@ -157,7 +159,7 @@ describe('transformEscape', () => {
     };
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         base64Cache.clear();
     });
 

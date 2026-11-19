@@ -20,9 +20,10 @@ describe('transformLinks service', () => {
 
     const setup = (content = ADD_REF) => {
         const doc = document.createElement('DIV');
+        // nosemgrep: insecure-innerhtml -- `content` is a static test fixture, never user input
         doc.innerHTML = content;
 
-        transformLinks(doc, jest.fn(), true);
+        transformLinks(doc, vi.fn(), true);
 
         const querySelector = (selectors: string) => doc.querySelector(selectors);
         const querySelectorAll = (selectors: string) => [...doc.querySelectorAll(selectors)];
@@ -31,7 +32,7 @@ describe('transformLinks service', () => {
     };
 
     beforeAll(() => {
-        jest.spyOn(console, 'log').mockImplementation(() => {});
+        vi.spyOn(console, 'log').mockImplementation(() => {});
     });
 
     describe('Improve privacy', () => {
