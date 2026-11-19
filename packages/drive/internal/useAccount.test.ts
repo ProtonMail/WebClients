@@ -2,38 +2,38 @@ import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 
 import { useAccount } from './useAccount';
 
-const mockApi = jest.fn();
-const mockGetUID = jest.fn();
-const mockGetAddresses = jest.fn();
-const mockGetAddressKeys = jest.fn();
-const mockImportPublicKey = jest.fn();
+const mockApi = vi.fn();
+const mockGetUID = vi.fn();
+const mockGetAddresses = vi.fn();
+const mockGetAddressKeys = vi.fn();
+const mockImportPublicKey = vi.fn();
 
-jest.mock('react', () => ({
+vi.mock('react', () => ({
     __esModule: true,
-    useRef: jest.fn((value) => ({ current: value })),
+    useRef: vi.fn((value) => ({ current: value })),
 }));
 
-jest.mock('@proton/app-context/useApi', () => ({
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
     useApi: () => mockApi,
 }));
 
-jest.mock('@proton/components/hooks/useAuthentication', () => ({
+vi.mock('@proton/components/hooks/useAuthentication', () => ({
     __esModule: true,
     default: () => ({ getUID: mockGetUID }),
 }));
 
-jest.mock('@proton/account/addresses/hooks', () => ({
+vi.mock('@proton/account/addresses/hooks', () => ({
     __esModule: true,
     useGetAddresses: () => mockGetAddresses,
 }));
 
-jest.mock('@proton/account/addressKeys/hooks', () => ({
+vi.mock('@proton/account/addressKeys/hooks', () => ({
     __esModule: true,
     useGetAddressKeys: () => mockGetAddressKeys,
 }));
 
-jest.mock('@protontech/crypto', () => ({
+vi.mock('@protontech/crypto', () => ({
     __esModule: true,
     CryptoProxy: {
         importPublicKey: (...args: unknown[]) => mockImportPublicKey(...args),
@@ -75,7 +75,7 @@ describe('useAccount.getPublicKeys', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should return [] when there is no UID', async () => {

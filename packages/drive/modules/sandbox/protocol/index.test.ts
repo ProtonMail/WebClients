@@ -85,7 +85,7 @@ describe('collectTransferables', () => {
     });
 });
 
-// Checked by tsc, not jest: each `@ts-expect-error` fails the type check if the
+// Checked by tsc, not the test runner: each `@ts-expect-error` fails the type check if the
 // line below it stops being an error.
 describe('BlobOnlyApi', () => {
     it('accepts Blobs and refuses raw bytes, even nested', () => {

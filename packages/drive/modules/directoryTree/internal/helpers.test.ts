@@ -3,7 +3,7 @@ import type { NodeEntity, ProtonDriveClient } from '../../../sdk';
 import { MemberRole } from '../../../sdk';
 import { findEffectiveRole } from './helpers';
 
-jest.mock('../../../legacy/errorHandling');
+vi.mock('../../../legacy/errorHandling');
 
 const createMockNode = (
     directRole: MemberRole,
@@ -47,7 +47,7 @@ describe('findEffectiveRole', () => {
             const childNode = createMockNode(MemberRole.Viewer, 'parent-1');
 
             const mockDrive = {
-                getNodeHierarchy: jest.fn().mockResolvedValue([parentNode]),
+                getNodeHierarchy: vi.fn().mockResolvedValue([parentNode]),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
@@ -62,7 +62,7 @@ describe('findEffectiveRole', () => {
             const childNode = createMockNode(MemberRole.Viewer, 'parent-1');
 
             const mockDrive = {
-                getNodeHierarchy: jest.fn().mockResolvedValue([rootNode, parentNode]),
+                getNodeHierarchy: vi.fn().mockResolvedValue([rootNode, parentNode]),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
@@ -75,7 +75,7 @@ describe('findEffectiveRole', () => {
             const error = new Error('Permission denied');
 
             const mockDrive = {
-                getNodeHierarchy: jest.fn().mockRejectedValue(error),
+                getNodeHierarchy: vi.fn().mockRejectedValue(error),
             } as unknown as ProtonDriveClient;
 
             await expect(findEffectiveRole(mockDrive, childNode)).rejects.toBe(error);
@@ -93,7 +93,7 @@ describe('findEffectiveRole', () => {
             const childNode = createMockNode(childRole, 'parent-1');
 
             const mockDrive = {
-                getNodeHierarchy: jest.fn().mockResolvedValue([parentNode]),
+                getNodeHierarchy: vi.fn().mockResolvedValue([parentNode]),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
@@ -107,7 +107,7 @@ describe('findEffectiveRole', () => {
         const childNode = createMockNode(MemberRole.Inherited, 'parent-1');
 
         const mockDrive = {
-            getNodeHierarchy: jest.fn().mockResolvedValue([parentNode]),
+            getNodeHierarchy: vi.fn().mockResolvedValue([parentNode]),
         } as unknown as ProtonDriveClient;
 
         const result = await findEffectiveRole(mockDrive, childNode);
@@ -126,7 +126,7 @@ describe('findEffectiveRole', () => {
             });
 
             const mockDrive = {
-                getNodeHierarchy: jest.fn().mockResolvedValue([parentNode]),
+                getNodeHierarchy: vi.fn().mockResolvedValue([parentNode]),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
@@ -144,8 +144,8 @@ describe('findEffectiveRole', () => {
             const level0Node = createMockNode(MemberRole.Inherited, 'level-1');
 
             const mockDrive = {
-                getNode: jest.fn(),
-                getNodeHierarchy: jest.fn().mockResolvedValue([level3Node, level2Node, level1Node]),
+                getNode: vi.fn(),
+                getNodeHierarchy: vi.fn().mockResolvedValue([level3Node, level2Node, level1Node]),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, level0Node);

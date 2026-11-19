@@ -1,20 +1,21 @@
 import { NodeType } from '@protontech/drive-sdk';
+import type { Mock } from 'vitest';
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { proxyDriveClientWithSDKMismatchDetection } from './proxyDriveClientWithSDKMismatchDetection';
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    traceError: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
+    traceError: vi.fn(),
 }));
 
-const mockedTraceError = jest.mocked(traceError);
+const mockedTraceError = vi.mocked(traceError);
 
 const node = (type: NodeType, uid: string) => ({ ok: true, value: { node: { type, uid } } });
 const degradedNode = (uid: string) => ({ ok: false, error: { uid } });
 
-function fakeClient(overrides: Record<string, jest.Mock> = {}) {
-    return { getNode: jest.fn(), iterateNodes: jest.fn(), someOtherMethod: jest.fn(), ...overrides } as any;
+function fakeClient(overrides: Record<string, Mock> = {}) {
+    return { getNode: vi.fn(), iterateNodes: vi.fn(), someOtherMethod: vi.fn(), ...overrides } as any;
 }
 
 function asyncIterable<T>(items: T[]) {
@@ -26,7 +27,7 @@ function asyncIterable<T>(items: T[]) {
 }
 
 describe('proxyDriveClientWithSDKMismatchDetection', () => {
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     describe('reports mismatches', () => {
         it.each([
@@ -36,7 +37,7 @@ describe('proxyDriveClientWithSDKMismatchDetection', () => {
             { scope: 'photos' as const, type: NodeType.Folder, tag: 'photos-got-folder' },
         ])('$scope client + $type node → $tag', async ({ scope, type, tag }) => {
             const uid = `${type}-1`;
-            const client = fakeClient({ getNode: jest.fn().mockResolvedValue(node(type, uid)) });
+            const client = fakeClient({ getNode: vi.fn().mockResolvedValue(node(type, uid)) });
             const proxied = proxyDriveClientWithSDKMismatchDetection(client, scope);
 
             const result = await proxied.getNode(uid);
@@ -66,7 +67,7 @@ describe('proxyDriveClientWithSDKMismatchDetection', () => {
             { scope: 'photos' as const, type: NodeType.Photo },
             { scope: 'photos' as const, type: NodeType.Album },
         ])('$scope client + $type node → no report', async ({ scope, type }) => {
-            const client = fakeClient({ getNode: jest.fn().mockResolvedValue(node(type, 'uid-1')) });
+            const client = fakeClient({ getNode: vi.fn().mockResolvedValue(node(type, 'uid-1')) });
             const proxied = proxyDriveClientWithSDKMismatchDetection(client, scope);
 
             await proxied.getNode('uid-1');
@@ -75,7 +76,7 @@ describe('proxyDriveClientWithSDKMismatchDetection', () => {
         });
 
         it('ignores degraded nodes', async () => {
-            const client = fakeClient({ getNode: jest.fn().mockResolvedValue(degradedNode('bad-1')) });
+            const client = fakeClient({ getNode: vi.fn().mockResolvedValue(degradedNode('bad-1')) });
             const proxied = proxyDriveClientWithSDKMismatchDetection(client, 'drive');
 
             await proxied.getNode('bad-1');
@@ -87,7 +88,7 @@ describe('proxyDriveClientWithSDKMismatchDetection', () => {
     describe('iterateNodes', () => {
         it('reports only mismatched nodes and yields all', async () => {
             const items = [node(NodeType.Photo, 'p-1'), node(NodeType.File, 'f-1')];
-            const client = fakeClient({ iterateNodes: jest.fn().mockReturnValue(asyncIterable(items)) });
+            const client = fakeClient({ iterateNodes: vi.fn().mockReturnValue(asyncIterable(items)) });
             const proxied = proxyDriveClientWithSDKMismatchDetection(client, 'drive');
 
             const results = [];
@@ -106,7 +107,7 @@ describe('proxyDriveClientWithSDKMismatchDetection', () => {
 
     describe('passthrough', () => {
         it('does not intercept other methods', () => {
-            const client = fakeClient({ someOtherMethod: jest.fn().mockReturnValue('hello') });
+            const client = fakeClient({ someOtherMethod: vi.fn().mockReturnValue('hello') });
             const proxied = proxyDriveClientWithSDKMismatchDetection(client, 'drive');
 
             expect(proxied.someOtherMethod()).toBe('hello');

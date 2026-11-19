@@ -5,18 +5,18 @@ import { ValidationError } from './ValidationError';
 import { showAggregatedErrorNotification } from './errorNotifications';
 import { sendErrorReport } from './sendErrorReport';
 
-jest.mock('./sendErrorReport', () => ({
-    sendErrorReport: jest.fn(),
-    isIgnoredError: jest.requireActual('./sendErrorReport').isIgnoredError,
+vi.mock('./sendErrorReport', async () => ({
+    sendErrorReport: vi.fn(),
+    isIgnoredError: (await vi.importActual('./sendErrorReport')).isIgnoredError,
 }));
 
 const makeMockManager = (): NotificationsManager => ({
-    createNotification: jest.fn().mockReturnValue(1),
-    removeNotification: jest.fn(),
-    hideNotification: jest.fn(),
-    clearNotifications: jest.fn(),
-    setOffset: jest.fn(),
-    removeDuplicate: jest.fn(),
+    createNotification: vi.fn().mockReturnValue(1),
+    removeNotification: vi.fn(),
+    hideNotification: vi.fn(),
+    clearNotifications: vi.fn(),
+    setOffset: vi.fn(),
+    removeDuplicate: vi.fn(),
 });
 
 describe('showAggregatedErrorNotification', () => {
@@ -29,7 +29,7 @@ describe('showAggregatedErrorNotification', () => {
 
     afterEach(() => {
         setNotificationsManager(null);
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('does nothing when errors array is empty', () => {

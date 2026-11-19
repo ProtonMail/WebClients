@@ -1,24 +1,25 @@
 import { ThumbnailType } from '@protontech/drive-sdk';
 
+import { handleSdkError } from '../../../legacy/errorHandling';
 import { getCachedThumbnail, setCachedThumbnail } from '../encryptedThumbnailCache';
 import { getThumbnail, getThumbnailBytes, loadThumbnail } from '../index';
 import { type MockDrive, type ThumbnailResult, makeDrive } from './testUtils';
 import { useThumbnailsStore } from './useThumbnails.store';
 
-jest.mock('../../../legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('../../../legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
-jest.mock('../encryptedThumbnailCache', () => ({
-    getCachedThumbnail: jest.fn(async () => undefined),
-    setCachedThumbnail: jest.fn(async () => undefined),
+vi.mock('../encryptedThumbnailCache', () => ({
+    getCachedThumbnail: vi.fn(async () => undefined),
+    setCachedThumbnail: vi.fn(async () => undefined),
 }));
 
-const mockGetCachedThumbnail = jest.mocked(getCachedThumbnail);
-const mockSetCachedThumbnail = jest.mocked(setCachedThumbnail);
+const mockGetCachedThumbnail = vi.mocked(getCachedThumbnail);
+const mockSetCachedThumbnail = vi.mocked(setCachedThumbnail);
 
-global.URL.createObjectURL = jest.fn(() => 'blob:mock-url');
-global.URL.revokeObjectURL = jest.fn();
+global.URL.createObjectURL = vi.fn(() => 'blob:mock-url');
+global.URL.revokeObjectURL = vi.fn();
 
 const makeNodes = (count: number): ThumbnailResult[] =>
     Array.from({ length: count }, (_, i) => ({
@@ -30,18 +31,18 @@ const makeNodes = (count: number): ThumbnailResult[] =>
 const cached = (key: string) => useThumbnailsStore.getState().getThumbnailFromCache(key);
 
 const flushBatch = async () => {
-    await jest.runAllTimersAsync();
+    await vi.runAllTimersAsync();
 };
 
 describe('useThumbnailsStore', () => {
     beforeEach(() => {
         useThumbnailsStore.setState({ thumbnails: new Map(), attempted: new Set(), batches: new Map() });
-        jest.useFakeTimers();
-        jest.clearAllMocks();
+        vi.useFakeTimers();
+        vi.clearAllMocks();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('getThumbnailFromCache', () => {
@@ -136,11 +137,10 @@ describe('useThumbnailsStore', () => {
         });
 
         it('sets sdStatus to loaded and calls handleSdkError on batch error', async () => {
-            const { handleSdkError } = jest.requireMock('../../../legacy/errorHandling');
             async function* throwingGenerator(): AsyncGenerator<never> {
                 throw new Error('network error');
             }
-            const drive = { iterateThumbnails: jest.fn(throwingGenerator) } as unknown as MockDrive;
+            const drive = { iterateThumbnails: vi.fn(throwingGenerator) } as unknown as MockDrive;
 
             loadThumbnail(drive, { nodeUid: 'node-1', revisionUid: 'rev-1' });
             loadThumbnail(drive, { nodeUid: 'node-2', revisionUid: 'rev-2' });
@@ -338,7 +338,6 @@ describe('useThumbnailsStore', () => {
         });
 
         it('settles to loaded instead of hanging when fetchThumbnails rejects before yielding anything', async () => {
-            const { handleSdkError } = jest.requireMock('../../../legacy/errorHandling');
             mockGetCachedThumbnail.mockRejectedValueOnce(new Error('idb error'));
             const drive = makeDrive([]);
 
@@ -368,7 +367,7 @@ describe('useThumbnailsStore', () => {
     describe('getThumbnailBytes (cache-or-request bytes)', () => {
         it('hands back freshly-fetched bytes directly, without reading any blob url', async () => {
             const drive = makeDrive([{ nodeUid: 'node-1', ok: true, thumbnail: new Uint8Array([1, 2, 3]) }]);
-            const fetchSpy = jest.spyOn(global, 'fetch');
+            const fetchSpy = vi.spyOn(global, 'fetch');
 
             const bytes = await getThumbnailBytes(drive, { nodeUid: 'node-1', revisionUid: 'rev-1' });
 
@@ -379,7 +378,7 @@ describe('useThumbnailsStore', () => {
 
         it('falls back to the next requested type when the first is unavailable', async () => {
             const drive = {
-                iterateThumbnails: jest.fn(async function* (_uids: string[], type: ThumbnailType) {
+                iterateThumbnails: vi.fn(async function* (_uids: string[], type: ThumbnailType) {
                     if (type === ThumbnailType.Type2) {
                         yield { nodeUid: 'node-1', ok: false };
                     } else {
@@ -399,7 +398,7 @@ describe('useThumbnailsStore', () => {
 
         it('waits for a batch fetch already in flight instead of double-fetching', async () => {
             const drive = makeDrive([{ nodeUid: 'node-1', ok: true, thumbnail: new Uint8Array([5]) }]);
-            global.fetch = jest.fn(async () => ({ arrayBuffer: async () => new Uint8Array([5]).buffer }) as Response);
+            global.fetch = vi.fn(async () => ({ arrayBuffer: async () => new Uint8Array([5]).buffer }) as Response);
 
             loadThumbnail(drive, { nodeUid: 'node-1', revisionUid: 'rev-1' });
             const bytesPromise = getThumbnailBytes(drive, { nodeUid: 'node-1', revisionUid: 'rev-1' });
@@ -412,7 +411,7 @@ describe('useThumbnailsStore', () => {
 
         it('waits for a concurrent getThumbnailBytes call instead of double-fetching', async () => {
             const drive = makeDrive([{ nodeUid: 'node-1', ok: true, thumbnail: new Uint8Array([7]) }]);
-            global.fetch = jest.fn(async () => ({ arrayBuffer: async () => new Uint8Array([7]).buffer }) as Response);
+            global.fetch = vi.fn(async () => ({ arrayBuffer: async () => new Uint8Array([7]).buffer }) as Response);
 
             const results = await Promise.all([
                 getThumbnailBytes(drive, { nodeUid: 'node-1', revisionUid: 'rev-1' }),

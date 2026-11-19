@@ -1,27 +1,29 @@
+import type { Mock, MockInstance } from 'vitest';
+
 import metrics from '@proton/metrics/metricsInstance';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { DrivePerformanceMetrics } from './drivePerformanceMetrics';
 
-jest.mock('@proton/metrics/metricsInstance', () => ({
+vi.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
         drive_performance_v2_pageload_histogram: {
-            observe: jest.fn(),
+            observe: vi.fn(),
         },
         drive_performance_v2_dataload_histogram: {
-            observe: jest.fn(),
+            observe: vi.fn(),
         },
     },
 }));
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    isMobile: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    isMobile: vi.fn(),
 }));
 
-jest.mock('../../logging', () => ({
+vi.mock('../../logging', () => ({
     logging: {
-        getLogger: () => ({ debug: jest.fn() }),
+        getLogger: () => ({ debug: vi.fn() }),
     },
 }));
 
@@ -37,14 +39,14 @@ type DataloadObservePayload = {
 };
 
 describe('DrivePerformanceMetrics', () => {
-    let performanceNowSpy: jest.SpyInstance;
+    let performanceNowSpy: MockInstance;
     let nowMs: number;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        (isMobile as jest.Mock).mockReturnValue(false);
+        vi.clearAllMocks();
+        (isMobile as Mock).mockReturnValue(false);
         nowMs = 0;
-        performanceNowSpy = jest.spyOn(performance, 'now').mockImplementation(() => nowMs);
+        performanceNowSpy = vi.spyOn(performance, 'now').mockImplementation(() => nowMs);
     });
 
     afterEach(() => {
@@ -164,8 +166,8 @@ describe('DrivePerformanceMetrics', () => {
         });
 
         function expectDataloadHistogramObserved(expectedPayloads: DataloadObservePayload[]): void {
-            const observe = metrics.drive_performance_v2_dataload_histogram.observe as jest.Mock;
-            const actual = observe.mock.calls.map((call: [DataloadObservePayload]) => call[0]);
+            const observe = metrics.drive_performance_v2_dataload_histogram.observe as Mock;
+            const actual = observe.mock.calls.map((call) => call[0] as DataloadObservePayload);
             expect(actual).toEqual(expectedPayloads);
         }
 

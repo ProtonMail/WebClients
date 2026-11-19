@@ -5,77 +5,79 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { MetricHandler, reduceSizePrecision } from './telemetry';
 
-jest.mock('@proton/metrics/metricsInstance', () => ({
-    drive_sdk_api_retry_succeeded_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_upload_success_rate_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_upload_errors_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_upload_errors_transfer_size_histogram: {
-        observe: jest.fn(),
-    },
-    drive_sdk_upload_errors_file_size_histogram: {
-        observe: jest.fn(),
-    },
-    drive_sdk_upload_erroring_users_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_download_success_rate_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_download_errors_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_download_errors_transfer_size_histogram: {
-        observe: jest.fn(),
-    },
-    drive_sdk_download_errors_file_size_histogram: {
-        observe: jest.fn(),
-    },
-    drive_sdk_download_erroring_users_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_integrity_decryption_errors_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_integrity_verification_errors_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_integrity_erroring_users_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_integrity_block_verification_errors_total: {
-        increment: jest.fn(),
-    },
-    drive_sdk_volume_events_subscriptions_histogram: {
-        observe: jest.fn(),
-    },
-    drive_crypto_speed_histogram: {
-        observe: jest.fn(),
+vi.mock('@proton/metrics/metricsInstance', () => ({
+    default: {
+        drive_sdk_api_retry_succeeded_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_upload_success_rate_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_upload_errors_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_upload_errors_transfer_size_histogram: {
+            observe: vi.fn(),
+        },
+        drive_sdk_upload_errors_file_size_histogram: {
+            observe: vi.fn(),
+        },
+        drive_sdk_upload_erroring_users_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_download_success_rate_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_download_errors_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_download_errors_transfer_size_histogram: {
+            observe: vi.fn(),
+        },
+        drive_sdk_download_errors_file_size_histogram: {
+            observe: vi.fn(),
+        },
+        drive_sdk_download_erroring_users_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_integrity_decryption_errors_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_integrity_verification_errors_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_integrity_erroring_users_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_integrity_block_verification_errors_total: {
+            increment: vi.fn(),
+        },
+        drive_sdk_volume_events_subscriptions_histogram: {
+            observe: vi.fn(),
+        },
+        drive_crypto_speed_histogram: {
+            observe: vi.fn(),
+        },
     },
 }));
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    captureMessage: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
+    captureMessage: vi.fn(),
 }));
 
 describe('MetricHandler', () => {
     let metricHandler: MetricHandler;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date('2024-01-01T00:00:00Z'));
+        vi.clearAllMocks();
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('2024-01-01T00:00:00Z'));
 
         metricHandler = new MetricHandler('free');
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('apiRetrySucceeded', () => {
@@ -298,7 +300,7 @@ describe('MetricHandler', () => {
                 expect(metrics.drive_sdk_upload_erroring_users_total.increment).toHaveBeenCalledTimes(1);
 
                 // Advance time by 5 minutes
-                jest.advanceTimersByTime(5 * 60 * 1000 + 1);
+                vi.advanceTimersByTime(5 * 60 * 1000 + 1);
 
                 metricHandler.onEvent({
                     time: new Date(),
@@ -527,7 +529,7 @@ describe('MetricHandler', () => {
                 expect(metrics.drive_sdk_download_erroring_users_total.increment).toHaveBeenCalledTimes(1);
 
                 // Advance time by 5 minutes
-                jest.advanceTimersByTime(5 * 60 * 1000 + 1);
+                vi.advanceTimersByTime(5 * 60 * 1000 + 1);
 
                 metricHandler.onEvent({
                     time: new Date(),
@@ -698,7 +700,7 @@ describe('MetricHandler', () => {
                 expect(metrics.drive_sdk_integrity_erroring_users_total.increment).toHaveBeenCalledTimes(1);
 
                 // Advance time by 5 minutes
-                jest.advanceTimersByTime(5 * 60 * 1000 + 1);
+                vi.advanceTimersByTime(5 * 60 * 1000 + 1);
 
                 metricHandler.onEvent({
                     time: new Date(),
@@ -827,7 +829,7 @@ describe('MetricHandler', () => {
 
             expect(metrics.drive_crypto_speed_histogram.observe).not.toHaveBeenCalled();
 
-            jest.advanceTimersByTime(30 * 1000);
+            vi.advanceTimersByTime(30 * 1000);
 
             expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledTimes(1);
             expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledWith({
@@ -861,7 +863,7 @@ describe('MetricHandler', () => {
                 },
             });
 
-            jest.advanceTimersByTime(30 * 1000);
+            vi.advanceTimersByTime(30 * 1000);
 
             // 3 MB in 1 second = 3 MB/s
             expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledTimes(1);
@@ -896,7 +898,7 @@ describe('MetricHandler', () => {
                 },
             });
 
-            jest.advanceTimersByTime(30 * 1000);
+            vi.advanceTimersByTime(30 * 1000);
 
             expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledTimes(2);
             expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledWith({
@@ -921,7 +923,7 @@ describe('MetricHandler', () => {
                 },
             });
 
-            jest.advanceTimersByTime(30 * 1000);
+            vi.advanceTimersByTime(30 * 1000);
 
             expect(metrics.drive_crypto_speed_histogram.observe).not.toHaveBeenCalled();
         });
@@ -938,7 +940,7 @@ describe('MetricHandler', () => {
                 },
             });
 
-            jest.advanceTimersByTime(30 * 1000);
+            vi.advanceTimersByTime(30 * 1000);
 
             expect(metrics.drive_crypto_speed_histogram.observe).not.toHaveBeenCalled();
         });
@@ -955,7 +957,7 @@ describe('MetricHandler', () => {
                 },
             });
 
-            jest.advanceTimersByTime(30 * 1000);
+            vi.advanceTimersByTime(30 * 1000);
             expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledTimes(1);
             expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenLastCalledWith({
                 Value: 1,
@@ -973,7 +975,7 @@ describe('MetricHandler', () => {
                 },
             });
 
-            jest.advanceTimersByTime(30 * 1000);
+            vi.advanceTimersByTime(30 * 1000);
             expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenCalledTimes(2);
             expect(metrics.drive_crypto_speed_histogram.observe).toHaveBeenLastCalledWith({
                 Value: 2,
@@ -998,7 +1000,10 @@ describe('MetricHandler', () => {
                     driveSdkMetricEvent: 'unknownEvent',
                 },
                 extra: {
-                    event: { eventName: 'unknownEvent', someProperty: 'value' },
+                    event: {
+                        eventName: 'unknownEvent',
+                        someProperty: 'value',
+                    },
                 },
             });
         });

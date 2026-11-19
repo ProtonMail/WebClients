@@ -1,4 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
 import { getNodeEffectiveRoleFromHierarchy } from '../../../modules/nodes';
@@ -7,22 +8,22 @@ import type { ProtonDriveClient } from '../../../sdk';
 import { MemberRole, generateNodeUid } from '../../../sdk';
 import { useMoveEligibility } from './useMoveEligibility';
 
-jest.mock('../../../legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('../../../legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
-jest.mock('../../../modules/nodes', () => ({
-    ...jest.requireActual('../../../modules/nodes'),
-    getNodeEffectiveRoleFromHierarchy: jest.fn(),
+vi.mock('../../../modules/nodes', async () => ({
+    ...(await vi.importActual('../../../modules/nodes')),
+    getNodeEffectiveRoleFromHierarchy: vi.fn(),
 }));
 
-const mockGetNodeEffectiveRoleFromHierarchy = getNodeEffectiveRoleFromHierarchy as jest.MockedFunction<
+const mockGetNodeEffectiveRoleFromHierarchy = getNodeEffectiveRoleFromHierarchy as MockedFunction<
     typeof getNodeEffectiveRoleFromHierarchy
 >;
-const mockHandleSdkError = handleSdkError as jest.MockedFunction<typeof handleSdkError>;
+const mockHandleSdkError = handleSdkError as MockedFunction<typeof handleSdkError>;
 
-const mockGetNode = jest.fn();
-const mockGetNodeHierarchy = jest.fn();
+const mockGetNode = vi.fn();
+const mockGetNodeHierarchy = vi.fn();
 const drive: ProtonDriveClient = { getNode: mockGetNode, getNodeHierarchy: mockGetNodeHierarchy } as any;
 
 /*
@@ -65,7 +66,7 @@ const mockAncestryForTarget = ({ target, targetAncestors }: { target: string; ta
 
 describe('useMoveEligibility', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockGetNode.mockResolvedValue(createMockNodeEntity());
         mockGetNodeEffectiveRoleFromHierarchy.mockReturnValue(MemberRole.Editor);
     });

@@ -9,8 +9,8 @@ import { NoHandlerError, ThumbnailTimeoutError } from './thumbnailError';
 const createMockHandler = (canHandle: boolean, handlerName: string = 'MockHandler'): GenericHandler => {
     return {
         handlerName,
-        canHandle: jest.fn().mockReturnValue(canHandle),
-        generate: jest.fn().mockResolvedValue({
+        canHandle: vi.fn().mockReturnValue(canHandle),
+        generate: vi.fn().mockResolvedValue({
             thumbnails: { thumbnails: [] },
         }),
     };
@@ -105,8 +105,8 @@ describe('ThumbnailProcessor', () => {
     it('should include performance data when debug enabled', async () => {
         const handler: GenericHandler = {
             handlerName: 'PerformanceTestHandler',
-            canHandle: jest.fn().mockReturnValue(true),
-            generate: jest.fn().mockResolvedValue({
+            canHandle: vi.fn().mockReturnValue(true),
+            generate: vi.fn().mockResolvedValue({
                 thumbnails: { thumbnails: [] },
                 performance: { generationTime: '10ms' },
             }),
@@ -132,12 +132,12 @@ describe('ThumbnailProcessor', () => {
     });
 
     it('should throw ThumbnailTimeoutError when handler exceeds global timeout', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         const handler: GenericHandler = {
             handlerName: 'SlowHandler',
-            canHandle: jest.fn().mockReturnValue(true),
-            generate: jest.fn().mockReturnValue(new Promise(() => {})),
+            canHandle: vi.fn().mockReturnValue(true),
+            generate: vi.fn().mockReturnValue(new Promise(() => {})),
         };
         const registry = createEmptyRegistry();
         registry.registerHandler(handler);
@@ -151,13 +151,13 @@ describe('ThumbnailProcessor', () => {
                 return error;
             });
 
-        await jest.advanceTimersByTimeAsync(10_000);
+        await vi.advanceTimersByTimeAsync(10_000);
 
         const error = await promise;
         expect(error).toBeInstanceOf(ThumbnailTimeoutError);
         expect((error as ThumbnailTimeoutError).context.stage).toBe('global generation timeout');
 
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should not include performance data when debug disabled', async () => {

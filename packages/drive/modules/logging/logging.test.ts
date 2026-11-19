@@ -1,9 +1,10 @@
 import { ConsoleLogHandler, LogLevel, MemoryLogHandler } from '@protontech/drive-sdk/dist/telemetry';
+import type { Mock } from 'vitest';
 
 import { Logging } from './logging';
 import { SentryLogHandler } from './sentryLogHandler';
 
-jest.mock('@protontech/drive-sdk/dist/telemetry', () => {
+vi.mock('@protontech/drive-sdk/dist/telemetry', () => {
     return {
         LogLevel: {
             DEBUG: 'DEBUG',
@@ -11,29 +12,29 @@ jest.mock('@protontech/drive-sdk/dist/telemetry', () => {
             WARNING: 'WARNING',
             ERROR: 'ERROR',
         },
-        ConsoleLogHandler: jest.fn().mockImplementation(() => {
-            return { log: jest.fn() };
+        ConsoleLogHandler: vi.fn().mockImplementation(function () {
+            return { log: vi.fn() };
         }),
-        MemoryLogHandler: jest.fn().mockImplementation(() => {
+        MemoryLogHandler: vi.fn().mockImplementation(function () {
             return {
-                log: jest.fn(),
-                getLogs: jest.fn().mockReturnValue(['log1', 'log2']),
+                log: vi.fn(),
+                getLogs: vi.fn().mockReturnValue(['log1', 'log2']),
             };
         }),
     };
 });
 
-jest.mock('./sentryLogHandler', () => {
+vi.mock('./sentryLogHandler', () => {
     return {
-        SentryLogHandler: jest.fn().mockImplementation(() => {
-            return { log: jest.fn() };
+        SentryLogHandler: vi.fn().mockImplementation(function () {
+            return { log: vi.fn() };
         }),
     };
 });
 
 describe('Logging', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should initialize all log handlers', () => {
@@ -61,9 +62,9 @@ describe('Logging', () => {
 
         logging.log(logRecord);
 
-        const consoleHandler = (ConsoleLogHandler as jest.Mock).mock.results[0].value;
-        const memoryHandler = (MemoryLogHandler as jest.Mock).mock.results[0].value;
-        const sentryHandler = (SentryLogHandler as jest.Mock).mock.results[0].value;
+        const consoleHandler = (ConsoleLogHandler as Mock).mock.results[0].value;
+        const memoryHandler = (MemoryLogHandler as Mock).mock.results[0].value;
+        const sentryHandler = (SentryLogHandler as Mock).mock.results[0].value;
 
         expect(consoleHandler.log).toHaveBeenCalledWith(logRecord);
         expect(memoryHandler.log).toHaveBeenCalledWith(logRecord);
@@ -82,7 +83,7 @@ describe('Logging', () => {
 describe('Logger', () => {
     it('should log with correct level and logger name', () => {
         const logging = new Logging();
-        const mockLog = jest.spyOn(logging, 'log');
+        const mockLog = vi.spyOn(logging, 'log');
         const logger = logging.getLogger('test-logger');
 
         logger.debug('debug message');

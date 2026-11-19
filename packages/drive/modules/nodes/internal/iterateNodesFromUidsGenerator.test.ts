@@ -2,10 +2,10 @@ import { AbortError, type MissingNode, ProtonDriveError } from '@protontech/driv
 
 import { iterateNodesFromUidsGenerator } from './iterateNodesFromUidsGenerator';
 
-const mockDebug = jest.fn();
-const mockInfo = jest.fn();
+const mockDebug = vi.fn();
+const mockInfo = vi.fn();
 
-jest.mock('../../logging', () => ({
+vi.mock('../../logging', () => ({
     logging: {
         getLogger: () => ({
             debug: (message: string) => mockDebug(message),
@@ -35,14 +35,14 @@ async function* loadTestNodes(
 }
 
 const makeDrive = (missingUids: string[] = [], degradedUids: string[] = []) => ({
-    iterateNodes: jest.fn((uids: string[]) => loadTestNodes(uids, missingUids, degradedUids)),
+    iterateNodes: vi.fn((uids: string[]) => loadTestNodes(uids, missingUids, degradedUids)),
 });
 
 const range = (count: number) => Array.from({ length: count }, (_, i) => `uid-${i}`);
 
 describe('iterateNodesFromUidsGenerator', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('yields nothing and does not load nodes for an empty listing', async () => {

@@ -7,18 +7,18 @@ import { userEvent } from '@testing-library/user-event';
 
 import { buildAddress } from '@proton/account/testing/buildAddress';
 import { getModelState } from '@proton/account/testing/getModelState';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 
 import { useSharingModal } from './SharingModal';
 import type { SharingModalInnerProps } from './useSharingModalState';
 
 const DRIVE_BASE = {
-    getNode: jest.fn(),
-    getSharingInfo: jest.fn(),
-    shareNode: jest.fn(),
-    unshareNode: jest.fn(),
-    resendInvitation: jest.fn(),
-    convertNonProtonInvitation: jest.fn(),
+    getNode: vi.fn(),
+    getSharingInfo: vi.fn(),
+    shareNode: vi.fn(),
+    unshareNode: vi.fn(),
+    resendInvitation: vi.fn(),
+    convertNonProtonInvitation: vi.fn(),
 };
 
 const commonNodeProperties = {
@@ -146,7 +146,7 @@ describe('SharingModal', () => {
             directRole: MemberRole.Admin,
         } as NodeEntity;
 
-        const shareNode = jest.fn().mockResolvedValue({
+        const shareNode = vi.fn().mockResolvedValue({
             protonInvitations: [],
             nonProtonInvitations: [],
             members: [],
@@ -213,7 +213,7 @@ describe('SharingModal', () => {
             directRole: MemberRole.Admin,
         } as NodeEntity;
 
-        const unshareNode = jest.fn();
+        const unshareNode = vi.fn();
         const drive = {
             ...DRIVE_BASE,
             getNode: (uid: string): Promise<NodeEntity> =>
@@ -391,7 +391,7 @@ describe('SharingModal', () => {
             },
         } as NodeEntity;
 
-        const shareNode = jest.fn();
+        const shareNode = vi.fn();
         const drive = {
             ...DRIVE_BASE,
             getNode: (uid: string): Promise<NodeEntity> =>
@@ -523,7 +523,7 @@ describe('SharingModal', () => {
             },
         } as NodeEntity;
 
-        const shareNode = jest.fn();
+        const shareNode = vi.fn();
         const drive = {
             ...DRIVE_BASE,
             getNode: (uid: string): Promise<NodeEntity> =>
@@ -580,7 +580,7 @@ describe('SharingModal', () => {
             },
         } as NodeEntity;
 
-        const unshareNode = jest.fn().mockResolvedValue(undefined);
+        const unshareNode = vi.fn().mockResolvedValue(undefined);
         const drive = {
             ...DRIVE_BASE,
             getNode: (): Promise<NodeEntity> => Promise.resolve(viewedNode),
@@ -648,7 +648,7 @@ describe('SharingModal', () => {
             },
         } as NodeEntity;
 
-        const unshareNode = jest.fn().mockResolvedValue(undefined);
+        const unshareNode = vi.fn().mockResolvedValue(undefined);
         const drive = {
             ...DRIVE_BASE,
             getNode: (uid: string): Promise<NodeEntity> =>

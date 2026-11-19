@@ -1,25 +1,27 @@
+import type { Mock } from 'vitest';
+
 import { TransferSpeedMetrics } from './transferSpeedMetrics';
 
 const ONE_MINUTE_MS = 60_000;
 
 function advanceActiveTime(ms: number = 1000) {
-    jest.advanceTimersByTime(ms);
+    vi.advanceTimersByTime(ms);
 }
 
 describe('TransferSpeedMetrics', () => {
     let metrics: TransferSpeedMetrics;
-    let reportMock: jest.Mock;
+    let reportMock: Mock;
 
     beforeEach(() => {
-        jest.useFakeTimers();
-        reportMock = jest.fn();
+        vi.useFakeTimers();
+        reportMock = vi.fn();
         metrics = new TransferSpeedMetrics(reportMock);
     });
 
     afterEach(() => {
         metrics?.dispose();
-        jest.clearAllTimers();
-        jest.useRealTimers();
+        vi.clearAllTimers();
+        vi.useRealTimers();
     });
 
     it('should schedule minute timer when first file starts', () => {

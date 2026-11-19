@@ -2,12 +2,12 @@ import { withTimeout } from './withTimeout';
 
 describe('withTimeout', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        void jest.runAllTimersAsync();
+        vi.useFakeTimers();
+        void vi.runAllTimersAsync();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should call the promise and return its result', async () => {
@@ -31,7 +31,7 @@ describe('withTimeout', () => {
             )
         );
 
-        jest.advanceTimersByTime(1000);
+        vi.advanceTimersByTime(1000);
 
         await expect(promise).rejects.toThrow('Request timed out');
     });
@@ -51,7 +51,7 @@ describe('withTimeout', () => {
 
         controller.abort();
 
-        jest.advanceTimersByTime(2000);
+        vi.advanceTimersByTime(2000);
 
         expect(signalWithTimeout.aborted).toBe(true);
         await expect(promise).rejects.toThrow('Promise aborted');

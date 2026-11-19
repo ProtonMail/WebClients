@@ -1,4 +1,5 @@
 import { NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
+import type { Mock, Mocked } from 'vitest';
 
 import type { CapacityManager } from '../scheduling/CapacityManager';
 import { useUploadControllerStore } from '../store/uploadController.store';
@@ -9,46 +10,46 @@ import type { ConflictManager } from './ConflictManager';
 import type { SDKTransferActivity } from './SDKTransferActivity';
 import { UploadEventHandler } from './UploadEventHandler';
 
-jest.mock('../store/uploadController.store');
-jest.mock('../store/uploadQueue.store');
-jest.mock('../utils/uploadLogger');
+vi.mock('../store/uploadController.store');
+vi.mock('../store/uploadQueue.store');
+vi.mock('../utils/uploadLogger');
 
 describe('UploadEventHandler', () => {
     let handler: UploadEventHandler;
-    let mockCapacityManager: jest.Mocked<CapacityManager>;
-    let mockConflictManager: jest.Mocked<ConflictManager>;
-    let mockSDKTransferActivity: jest.Mocked<SDKTransferActivity>;
-    let mockSDKPhotosTransferActivity: jest.Mocked<SDKTransferActivity>;
-    let mockCancelFolderChildren: jest.Mock;
-    let mockUpdateQueueItems: jest.Mock;
-    let mockSetController: jest.Mock;
-    let mockSetUploadController: jest.Mock;
-    let mockRemoveControllers: jest.Mock;
-    let mockGetController: jest.Mock;
-    let mockCheckAndUnsubscribeIfQueueEmpty: jest.Mock;
-    let mockPhotosCheckAndUnsubscribeIfQueueEmpty: jest.Mock;
-    let mockGetItem: jest.Mock;
+    let mockCapacityManager: Mocked<CapacityManager>;
+    let mockConflictManager: Mocked<ConflictManager>;
+    let mockSDKTransferActivity: Mocked<SDKTransferActivity>;
+    let mockSDKPhotosTransferActivity: Mocked<SDKTransferActivity>;
+    let mockCancelFolderChildren: Mock;
+    let mockUpdateQueueItems: Mock;
+    let mockSetController: Mock;
+    let mockSetUploadController: Mock;
+    let mockRemoveControllers: Mock;
+    let mockGetController: Mock;
+    let mockCheckAndUnsubscribeIfQueueEmpty: Mock;
+    let mockPhotosCheckAndUnsubscribeIfQueueEmpty: Mock;
+    let mockGetItem: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        mockUpdateQueueItems = jest.fn();
-        mockSetController = jest.fn();
-        mockSetUploadController = jest.fn();
-        mockRemoveControllers = jest.fn();
-        mockGetController = jest.fn();
-        mockCheckAndUnsubscribeIfQueueEmpty = jest.fn();
-        mockPhotosCheckAndUnsubscribeIfQueueEmpty = jest.fn();
-        mockCancelFolderChildren = jest.fn();
-        mockGetItem = jest.fn();
+        mockUpdateQueueItems = vi.fn();
+        mockSetController = vi.fn();
+        mockSetUploadController = vi.fn();
+        mockRemoveControllers = vi.fn();
+        mockGetController = vi.fn();
+        mockCheckAndUnsubscribeIfQueueEmpty = vi.fn();
+        mockPhotosCheckAndUnsubscribeIfQueueEmpty = vi.fn();
+        mockCancelFolderChildren = vi.fn();
+        mockGetItem = vi.fn();
 
-        jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+        vi.mocked(useUploadQueueStore.getState).mockReturnValue({
             updateQueueItems: mockUpdateQueueItems,
             queue: new Map(),
             getItem: mockGetItem,
         } as any);
 
-        jest.mocked(useUploadControllerStore.getState).mockReturnValue({
+        vi.mocked(useUploadControllerStore.getState).mockReturnValue({
             setController: mockSetController,
             setUploadController: mockSetUploadController,
             removeControllers: mockRemoveControllers,
@@ -56,22 +57,22 @@ describe('UploadEventHandler', () => {
         } as any);
 
         mockCapacityManager = {
-            updateProgress: jest.fn(),
+            updateProgress: vi.fn(),
         } as any;
 
         mockConflictManager = {
-            handleConflict: jest.fn(),
-            chooseConflictStrategy: jest.fn(),
-            setBatchStrategy: jest.fn(),
+            handleConflict: vi.fn(),
+            chooseConflictStrategy: vi.fn(),
+            setBatchStrategy: vi.fn(),
         } as any;
 
         mockSDKTransferActivity = {
-            isPaused: jest.fn().mockReturnValue(false),
+            isPaused: vi.fn().mockReturnValue(false),
             checkAndUnsubscribeIfQueueEmpty: mockCheckAndUnsubscribeIfQueueEmpty,
         } as any;
 
         mockSDKPhotosTransferActivity = {
-            isPaused: jest.fn().mockReturnValue(false),
+            isPaused: vi.fn().mockReturnValue(false),
             checkAndUnsubscribeIfQueueEmpty: mockPhotosCheckAndUnsubscribeIfQueueEmpty,
         } as any;
 
@@ -199,7 +200,7 @@ describe('UploadEventHandler', () => {
 
         it('should mark file as finished even when a subscriber fails', async () => {
             const error = new Error('Item not found');
-            handler.subscribeToEvents('failing', jest.fn().mockRejectedValue(error));
+            handler.subscribeToEvents('failing', vi.fn().mockRejectedValue(error));
             const event = {
                 type: 'file:complete' as const,
                 uploadId: 'task123',
@@ -396,7 +397,7 @@ describe('UploadEventHandler', () => {
                 ],
             ]);
 
-            jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+            vi.mocked(useUploadQueueStore.getState).mockReturnValue({
                 updateQueueItems: mockUpdateQueueItems,
                 queue: mockQueue,
             } as any);
@@ -434,7 +435,7 @@ describe('UploadEventHandler', () => {
                 ],
             ]);
 
-            jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+            vi.mocked(useUploadQueueStore.getState).mockReturnValue({
                 updateQueueItems: mockUpdateQueueItems,
                 queue: mockQueue,
             } as any);
@@ -527,17 +528,17 @@ describe('UploadEventHandler', () => {
                 ['file1', { uploadId: 'file1', status: UploadStatus.InProgress }],
                 ['file2', { uploadId: 'file2', status: UploadStatus.Pending }],
             ]);
-            jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+            vi.mocked(useUploadQueueStore.getState).mockReturnValue({
                 updateQueueItems: mockUpdateQueueItems,
                 queue: mockQueue,
             } as any);
 
             const mockAbortController = new AbortController();
-            const abortSpy = jest.spyOn(mockAbortController, 'abort');
+            const abortSpy = vi.spyOn(mockAbortController, 'abort');
             mockGetController.mockReturnValue({ abortController: mockAbortController });
 
-            const mockRemoveControllers = jest.fn();
-            jest.mocked(useUploadControllerStore.getState).mockReturnValue({
+            const mockRemoveControllers = vi.fn();
+            vi.mocked(useUploadControllerStore.getState).mockReturnValue({
                 getController: mockGetController,
                 removeControllers: mockRemoveControllers,
             } as any);
@@ -561,13 +562,13 @@ describe('UploadEventHandler', () => {
                 ['child2', { uploadId: 'child2', parentUploadId: 'folder1', status: UploadStatus.Pending }],
                 ['unrelated', { uploadId: 'unrelated', parentUploadId: 'other', status: UploadStatus.Pending }],
             ]);
-            jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+            vi.mocked(useUploadQueueStore.getState).mockReturnValue({
                 updateQueueItems: mockUpdateQueueItems,
                 queue: mockQueue,
             } as any);
 
-            const mockRemoveControllers = jest.fn();
-            jest.mocked(useUploadControllerStore.getState).mockReturnValue({
+            const mockRemoveControllers = vi.fn();
+            vi.mocked(useUploadControllerStore.getState).mockReturnValue({
                 getController: mockGetController,
                 removeControllers: mockRemoveControllers,
             } as any);
@@ -586,13 +587,13 @@ describe('UploadEventHandler', () => {
 
         it('should ignore ids that no longer exist in the queue', () => {
             const mockQueue = new Map([['file1', { uploadId: 'file1', status: UploadStatus.InProgress }]]);
-            jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+            vi.mocked(useUploadQueueStore.getState).mockReturnValue({
                 updateQueueItems: mockUpdateQueueItems,
                 queue: mockQueue,
             } as any);
 
-            const mockRemoveControllers = jest.fn();
-            jest.mocked(useUploadControllerStore.getState).mockReturnValue({
+            const mockRemoveControllers = vi.fn();
+            vi.mocked(useUploadControllerStore.getState).mockReturnValue({
                 getController: mockGetController,
                 removeControllers: mockRemoveControllers,
             } as any);

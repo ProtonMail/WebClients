@@ -6,14 +6,14 @@ import { buildExtendedAttributesMetadata } from './metadataBuilder/metadataBuild
 import { generatePhotosExtendedAttributes } from './photosExtendedAttributesGenerator';
 import { getPhotoTags } from './tagDetector/tagDetector';
 
-jest.mock('./exifParser/exifParser');
-jest.mock('./exifParser/exifUtils');
-jest.mock('./metadataBuilder/metadataBuilder');
-jest.mock('./tagDetector/tagDetector');
+vi.mock('./exifParser/exifParser');
+vi.mock('./exifParser/exifUtils');
+vi.mock('./metadataBuilder/metadataBuilder');
+vi.mock('./tagDetector/tagDetector');
 
 describe('generatePhotosExtendedAttributes', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should call buildExtendedAttributesMetadata with exifInfo and mediaInfo', async () => {
@@ -25,13 +25,13 @@ describe('generatePhotosExtendedAttributes', () => {
             Location: { Latitude: 48.8566, Longitude: 2.3522 },
         };
         const expectedCaptureTime = new Date('2024-01-15T14:30:00Z');
-        jest.mocked(getExifInfo).mockResolvedValue(mockExifInfo);
-        jest.mocked(buildExtendedAttributesMetadata).mockReturnValue({
+        vi.mocked(getExifInfo).mockResolvedValue(mockExifInfo);
+        vi.mocked(buildExtendedAttributesMetadata).mockReturnValue({
             Media: { Width: 1920, Height: 1080 },
         });
-        jest.mocked(getPhotoTags).mockResolvedValue(expectedTags);
-        jest.mocked(getCaptureDateTime).mockReturnValue(expectedCaptureTime);
-        jest.mocked(buildExtendedAttributesMetadata).mockReturnValue(expectedMetadata);
+        vi.mocked(getPhotoTags).mockResolvedValue(expectedTags);
+        vi.mocked(getCaptureDateTime).mockReturnValue(expectedCaptureTime);
+        vi.mocked(buildExtendedAttributesMetadata).mockReturnValue(expectedMetadata);
 
         const result = await generatePhotosExtendedAttributes(file, 'image/jpeg', {
             width: 1920,
@@ -56,12 +56,12 @@ describe('generatePhotosExtendedAttributes', () => {
 
     it('should handle undefined exifInfo', async () => {
         const file = new File(['content'], 'photo.jpg', { type: 'image/jpeg' });
-        jest.mocked(getExifInfo).mockResolvedValue(undefined);
-        jest.mocked(buildExtendedAttributesMetadata).mockReturnValue({
+        vi.mocked(getExifInfo).mockResolvedValue(undefined);
+        vi.mocked(buildExtendedAttributesMetadata).mockReturnValue({
             Media: { Width: 1920, Height: 1080 },
         });
-        jest.mocked(getPhotoTags).mockResolvedValue([]);
-        jest.mocked(getCaptureDateTime).mockReturnValue(new Date('2024-01-01T00:00:00Z'));
+        vi.mocked(getPhotoTags).mockResolvedValue([]);
+        vi.mocked(getCaptureDateTime).mockReturnValue(new Date('2024-01-01T00:00:00Z'));
 
         await generatePhotosExtendedAttributes(file, 'image/jpeg');
 
@@ -71,12 +71,12 @@ describe('generatePhotosExtendedAttributes', () => {
 
     it('should handle undefined mediaInfo', async () => {
         const file = new File(['content'], 'photo.jpg', { type: 'image/jpeg' });
-        jest.mocked(getExifInfo).mockResolvedValue(undefined);
-        jest.mocked(buildExtendedAttributesMetadata).mockReturnValue({
+        vi.mocked(getExifInfo).mockResolvedValue(undefined);
+        vi.mocked(buildExtendedAttributesMetadata).mockReturnValue({
             Media: {},
         });
-        jest.mocked(getPhotoTags).mockResolvedValue([]);
-        jest.mocked(getCaptureDateTime).mockReturnValue(new Date('2024-01-01T00:00:00Z'));
+        vi.mocked(getPhotoTags).mockResolvedValue([]);
+        vi.mocked(getCaptureDateTime).mockReturnValue(new Date('2024-01-01T00:00:00Z'));
 
         await generatePhotosExtendedAttributes(file, 'image/jpeg');
 

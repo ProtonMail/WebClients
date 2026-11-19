@@ -1,43 +1,45 @@
+import type { Mock } from 'vitest';
+
 import metrics from '@proton/metrics/metricsInstance';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { GlobalErrorsMetrics } from './globalErrorsMetrics';
 import { MetricUserPlan } from './types';
 
-jest.mock('@proton/metrics/metricsInstance', () => ({
+vi.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
         drive_error_total: {
-            increment: jest.fn(),
+            increment: vi.fn(),
         },
         drive_error_erroring_users_total: {
-            increment: jest.fn(),
+            increment: vi.fn(),
         },
     },
 }));
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    traceError: jest.fn(),
-    addSentryBreadcrumb: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
+    traceError: vi.fn(),
+    addSentryBreadcrumb: vi.fn(),
 }));
 
 describe('GlobalErrorsMetrics', () => {
     let globalErrorsMetrics: GlobalErrorsMetrics;
-    let mockUserPlanProvider: { getUserPlan: jest.Mock };
+    let mockUserPlanProvider: { getUserPlan: Mock };
 
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(1000000);
-        jest.clearAllMocks();
-        mockUserPlanProvider = { getUserPlan: jest.fn().mockReturnValue(MetricUserPlan.Unknown) };
+        vi.useFakeTimers();
+        vi.setSystemTime(1000000);
+        vi.clearAllMocks();
+        mockUserPlanProvider = { getUserPlan: vi.fn().mockReturnValue(MetricUserPlan.Unknown) };
         globalErrorsMetrics = new GlobalErrorsMetrics(mockUserPlanProvider);
         globalErrorsMetrics.init();
     });
 
     afterEach(() => {
         globalErrorsMetrics.destroy();
-        jest.clearAllTimers();
-        jest.useRealTimers();
+        vi.clearAllTimers();
+        vi.useRealTimers();
     });
 
     describe('mark methods', () => {
@@ -72,12 +74,12 @@ describe('GlobalErrorsMetrics', () => {
         test('periodic report sends aggregated metrics after 5 minutes', async () => {
             globalErrorsMetrics.markCoreFeatureError();
 
-            jest.advanceTimersByTime(5 * 60 * 1000 - 10);
+            vi.advanceTimersByTime(5 * 60 * 1000 - 10);
             await Promise.resolve();
 
             expect(metrics.drive_error_erroring_users_total.increment).not.toHaveBeenCalled();
 
-            jest.advanceTimersByTime(10);
+            vi.advanceTimersByTime(10);
             await Promise.resolve();
 
             expect(metrics.drive_error_erroring_users_total.increment).toHaveBeenCalledWith({
@@ -87,7 +89,7 @@ describe('GlobalErrorsMetrics', () => {
                 otherError: 'false',
             });
 
-            jest.advanceTimersByTime(5 * 60 * 1000);
+            vi.advanceTimersByTime(5 * 60 * 1000);
             await Promise.resolve();
 
             expect(metrics.drive_error_erroring_users_total.increment).toHaveBeenCalledWith({
@@ -102,7 +104,7 @@ describe('GlobalErrorsMetrics', () => {
             mockUserPlanProvider.getUserPlan.mockReturnValue(MetricUserPlan.Paid);
             globalErrorsMetrics.markCrashError(new Error('test crash error'));
 
-            jest.advanceTimersByTime(5 * 60 * 1000);
+            vi.advanceTimersByTime(5 * 60 * 1000);
             await Promise.resolve();
 
             expect(metrics.drive_error_erroring_users_total.increment).toHaveBeenCalledWith(

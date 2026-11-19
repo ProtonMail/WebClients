@@ -1,4 +1,5 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
+import type { Mocked } from 'vitest';
 
 import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
 import { getBusDriver } from '../../../modules/busDriver';
@@ -6,34 +7,35 @@ import { MemberRole, NodeType, getDrive, useDrive } from '../../../sdk';
 import { TreeEventManager } from './events/treeEventManager';
 import { DEVICES_ROOT_ID, SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from './helpers';
 import { DirectoryTreeRootType } from './types';
+import type * as UseDirectoryTreeModule from './useDirectoryTree';
 
-jest.mock('../../../sdk', () => ({
-    ...jest.requireActual('../../../sdk'),
-    useDrive: jest.fn(),
-    getDrive: jest.fn(),
+vi.mock('../../../sdk', async () => ({
+    ...(await vi.importActual('../../../sdk')),
+    useDrive: vi.fn(),
+    getDrive: vi.fn(),
 }));
-const mockedUseDrive = jest.mocked(useDrive);
-const mockedGetDrive = jest.mocked(getDrive);
+const mockedUseDrive = vi.mocked(useDrive);
+const mockedGetDrive = vi.mocked(getDrive);
 
-jest.mock('../../../legacy/errorHandling');
-const mockedHandleSdkError = jest.mocked(handleSdkError);
+vi.mock('../../../legacy/errorHandling');
+const mockedHandleSdkError = vi.mocked(handleSdkError);
 
-jest.mock('../../../legacy/errorHandling');
-jest.mocked(sendErrorReport);
+vi.mock('../../../legacy/errorHandling');
+vi.mocked(sendErrorReport);
 
-jest.mock('../../../modules/busDriver', () => ({
-    ...jest.requireActual('../../../modules/busDriver'),
-    getBusDriver: jest.fn(),
+vi.mock('../../../modules/busDriver', async () => ({
+    ...(await vi.importActual('../../../modules/busDriver')),
+    getBusDriver: vi.fn(),
 }));
 
-jest.mock('./events/treeEventManager');
+vi.mock('./events/treeEventManager');
 
-const mockedGetBusDriver = jest.mocked(getBusDriver);
-const MockTreeEventManager = jest.mocked(TreeEventManager);
+const mockedGetBusDriver = vi.mocked(getBusDriver);
+const MockTreeEventManager = vi.mocked(TreeEventManager);
 
-const getMockEventManagerInstance = () => MockTreeEventManager.mock.instances[0] as jest.Mocked<TreeEventManager>;
+const getMockEventManagerInstance = () => MockTreeEventManager.mock.instances[0] as Mocked<TreeEventManager>;
 
-const { directoryTreeFactory } = jest.requireActual('./useDirectoryTree');
+const { directoryTreeFactory } = await vi.importActual<typeof UseDirectoryTreeModule>('./useDirectoryTree');
 
 const TEST_CONTEXT = 'directoryTree-test';
 
@@ -74,11 +76,11 @@ const findTreeItem = (treeRoots: any[], nodeUid: string): any => {
 };
 
 describe('useDirectoryTree', () => {
-    const mockGetMyFilesRootFolder = jest.fn();
-    const mockIterateDevices = jest.fn();
-    const mockSharedWithMeNodes = jest.fn();
-    const mockFolderChildren = jest.fn();
-    const mockGetNode = jest.fn();
+    const mockGetMyFilesRootFolder = vi.fn();
+    const mockIterateDevices = vi.fn();
+    const mockSharedWithMeNodes = vi.fn();
+    const mockFolderChildren = vi.fn();
+    const mockGetNode = vi.fn();
 
     // The tests mock the listed nodes; the UID listings and iterateNodes are derived from them, like in the SDK.
     const listedNodes = new Map<string, any>();
@@ -117,7 +119,7 @@ describe('useDirectoryTree', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         listedNodes.clear();
 
         mockedUseDrive.mockReturnValue({
@@ -126,9 +128,9 @@ describe('useDirectoryTree', () => {
         mockedGetDrive.mockReturnValue(mockDrive as any);
 
         mockedGetBusDriver.mockReturnValue({
-            subscribeSdkEventsMyUpdates: jest.fn(),
-            unsubscribeSdkEventsMyUpdates: jest.fn(),
-            subscribe: jest.fn().mockReturnValue(jest.fn()),
+            subscribeSdkEventsMyUpdates: vi.fn(),
+            unsubscribeSdkEventsMyUpdates: vi.fn(),
+            subscribe: vi.fn().mockReturnValue(vi.fn()),
         } as unknown as ReturnType<typeof getBusDriver>);
     });
 
@@ -967,7 +969,7 @@ describe('useDirectoryTree', () => {
             createMyFilesRoot();
 
             // Structure: shared-parent/middle-non-shared/leaf-shared
-            const localMockGetNode = jest.fn().mockImplementation((uid) => {
+            const localMockGetNode = vi.fn().mockImplementation((uid) => {
                 if (uid === 'middle-non-shared') {
                     return Promise.resolve({
                         uid: 'middle-non-shared',

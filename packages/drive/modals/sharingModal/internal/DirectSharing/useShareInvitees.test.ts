@@ -1,11 +1,11 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
-import { act, renderHook } from '@testing-library/react-hooks';
-import { verifyAllWhenMocksCalled, when } from 'jest-when';
+import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import noop from '@proton/utils/noop';
 
+import { when } from '../testUtils/when';
 import { ShareInviteeValidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
 import { useGetPublicKeysForEmail } from './helpers/useGetPublicKeysForEmail';
 import { useShareInvitees } from './useShareInvitees';
@@ -34,32 +34,32 @@ const inviteeExternalNonProton = {
     email: 'rob@jon.foo',
 };
 
-const mockedCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useApi', () => ({
-    useApi: jest.fn().mockReturnValue(() => new Promise((resolve) => resolve(undefined))),
+const mockedCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: vi.fn().mockReturnValue(() => new Promise((resolve) => resolve(undefined))),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(),
 }));
 
-jest.mocked(useNotifications).mockReturnValue({
+vi.mocked(useNotifications).mockReturnValue({
     createNotification: mockedCreateNotification,
 } as any);
 
-jest.mock('@protontech/crypto');
-const mockedImportPublicKey = jest.mocked(CryptoProxy.importPublicKey);
+vi.mock('@protontech/crypto');
+const mockedImportPublicKey = vi.mocked(CryptoProxy.importPublicKey);
 
-jest.mock('./helpers/useGetPublicKeysForEmail');
-const mockedGetPrimaryPublicKey = jest.fn();
-jest.mocked(useGetPublicKeysForEmail).mockReturnValue({
+vi.mock('./helpers/useGetPublicKeysForEmail');
+const mockedGetPrimaryPublicKey = vi.fn();
+vi.mocked(useGetPublicKeysForEmail).mockReturnValue({
     getPrimaryPublicKeyForEmail: mockedGetPrimaryPublicKey,
-    getPublicKeysForEmail: jest.fn(),
+    getPublicKeysForEmail: vi.fn(),
 });
 
-jest.mock('../../../../modules/flags', () => ({
-    ...jest.requireActual('../../../../modules/flags'),
-    useFlagsDriveDirectSharing: jest.fn().mockReturnValue({ isSharingExternalInviteDisabled: false }),
+vi.mock('../../../../modules/flags', async () => ({
+    ...(await vi.importActual('../../../../modules/flags')),
+    useFlagsDriveDirectSharing: vi.fn().mockReturnValue({ isSharingExternalInviteDisabled: false }),
 }));
 
 const primaryPublicKey = 'primaryPublicKey';
@@ -72,34 +72,36 @@ const publicKey = {
 describe('useShareInvitees', () => {
     beforeEach(() => {
         when(mockedGetPrimaryPublicKey)
-            .calledWith(inviteeInternal.email, new AbortController().signal, true)
+            .calledWith(inviteeInternal.email, expect.anything(), true)
             .mockResolvedValue(primaryPublicKey);
 
         when(mockedImportPublicKey).calledWith({ armoredKey: primaryPublicKey }).mockResolvedValue(publicKey);
     });
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('add', () => {
         it('should be able to add proton/non-proton invitee', async () => {
             const { result } = renderHook(() => useShareInvitees([]));
             when(mockedGetPrimaryPublicKey)
-                .calledWith(inviteeInternal2.email, new AbortController().signal, true)
+                .calledWith(inviteeInternal2.email, expect.anything(), true)
                 .mockResolvedValueOnce(undefined);
 
-            await act(async () => {
+            act(() => {
                 void result.current
                     .add([inviteeInternal, inviteeInternal2, inviteeExternalProton, inviteeExternalNonProton])
                     .catch(noop);
             });
-            // @ts-ignore
-            expect(result.all[1].invitees).toEqual([
+            // Right after adding, all invitees are still loading
+            expect(result.current.invitees).toEqual([
                 { ...inviteeInternal, isLoading: true },
                 { ...inviteeInternal2, isLoading: true },
                 { ...inviteeExternalProton, isLoading: true },
                 { ...inviteeExternalNonProton, isLoading: true },
             ]);
+
+            await waitFor(() => expect(result.current.invitees.every((invitee) => !invitee.isLoading)).toBe(true));
 
             expect(result.current.invitees).toEqual([
                 { ...inviteeInternal, publicKey, isExternal: false, isLoading: false },
@@ -122,11 +124,12 @@ describe('useShareInvitees', () => {
                     isLoading: false,
                 },
             ]);
-            verifyAllWhenMocksCalled();
+            expect(mockedGetPrimaryPublicKey).toHaveBeenCalledWith(inviteeInternal.email, expect.anything(), true);
+            expect(mockedGetPrimaryPublicKey).toHaveBeenCalledWith(inviteeInternal2.email, expect.anything(), true);
         });
 
         it('should show duplicate notification', async () => {
-            const { result, waitFor } = renderHook(() => useShareInvitees([]));
+            const { result } = renderHook(() => useShareInvitees([]));
 
             act(() => {
                 result.current.add([inviteeInternal, inviteeInternal]).catch(noop);
@@ -144,7 +147,7 @@ describe('useShareInvitees', () => {
         });
 
         it('adding an existing invitee should add it with an error', async () => {
-            const { result, waitFor } = renderHook(() => useShareInvitees([inviteeInternal.email]));
+            const { result } = renderHook(() => useShareInvitees([inviteeInternal.email]));
 
             act(() => {
                 result.current.add([inviteeInternal]).catch(noop);
@@ -161,7 +164,7 @@ describe('useShareInvitees', () => {
         });
 
         it('adding an invitee with bad email should add it with an error', async () => {
-            const { result, waitFor } = renderHook(() => useShareInvitees([]));
+            const { result } = renderHook(() => useShareInvitees([]));
 
             act(() => {
                 result.current.add([{ ...inviteeInternal, email: 'lucienTest.com' }]).catch(noop);
@@ -179,8 +182,8 @@ describe('useShareInvitees', () => {
         });
 
         it.skip('failed loadInvitee should show error notification', async () => {
-            jest.spyOn(console, 'error').mockImplementationOnce(() => {});
-            const { result, waitFor } = renderHook(() => useShareInvitees([]));
+            vi.spyOn(console, 'error').mockImplementationOnce(() => {});
+            const { result } = renderHook(() => useShareInvitees([]));
 
             const error = new Error('This is an error');
 
@@ -204,7 +207,7 @@ describe('useShareInvitees', () => {
     describe('remove', () => {
         it('should be able to remove an invitee added previously', async () => {
             when(mockedGetPrimaryPublicKey)
-                .calledWith(inviteeInternal2.email, new AbortController().signal, true)
+                .calledWith(inviteeInternal2.email, expect.anything(), true)
                 .mockResolvedValue(primaryPublicKey);
             const { result } = renderHook(() => useShareInvitees([]));
 
@@ -229,7 +232,7 @@ describe('useShareInvitees', () => {
 
     describe('clean', () => {
         it('should be able to clean all invitees added previously and abort requests', async () => {
-            const abortSpy = jest.spyOn(AbortController.prototype, 'abort');
+            const abortSpy = vi.spyOn(AbortController.prototype, 'abort');
             const abortController = new AbortController();
             when(mockedGetPrimaryPublicKey)
                 .calledWith(inviteeInternal2.email, abortController.signal, true)

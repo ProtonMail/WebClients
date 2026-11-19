@@ -1,3 +1,5 @@
+import type { MockInstance } from 'vitest';
+
 import { getExifInfo } from './exifParser';
 
 const DATE_TIME_ORIGINAL = '2024:01:07 09:00:53';
@@ -50,7 +52,7 @@ const createLargeJpegWithExif = () => {
 const trackBytesRead = () => {
     const originalSlice = Blob.prototype.slice;
     let bytesRead = 0;
-    jest.spyOn(Blob.prototype, 'slice').mockImplementation(function (this: Blob, ...args) {
+    vi.spyOn(Blob.prototype, 'slice').mockImplementation(function (this: Blob, ...args) {
         const chunk = originalSlice.apply(this, args);
         bytesRead += chunk.size;
         return chunk;
@@ -59,14 +61,14 @@ const trackBytesRead = () => {
 };
 
 describe('getExifInfo', () => {
-    let consoleWarnSpy: jest.SpyInstance;
+    let consoleWarnSpy: MockInstance;
 
     beforeEach(() => {
-        consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation();
+        consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('should return undefined for non-image mime types', async () => {
@@ -79,7 +81,7 @@ describe('getExifInfo', () => {
 
     it('should read EXIF data from a JPEG without loading the whole file', async () => {
         const file = createLargeJpegWithExif();
-        const arrayBufferSpy = jest.fn();
+        const arrayBufferSpy = vi.fn();
         file.arrayBuffer = arrayBufferSpy;
         const bytesRead = trackBytesRead();
 
@@ -117,7 +119,7 @@ describe('getExifInfo', () => {
             'screenshot.jpg',
             { type: 'image/jpeg' }
         );
-        const arrayBufferSpy = jest.fn();
+        const arrayBufferSpy = vi.fn();
         file.arrayBuffer = arrayBufferSpy;
         const bytesRead = trackBytesRead();
 
@@ -131,7 +133,7 @@ describe('getExifInfo', () => {
     it('should fall back to a full read for plain TIFF files', async () => {
         const tiff = createTiffWithDateTimeOriginal();
         const file = new File([tiff], 'photo.tiff', { type: 'image/tiff' });
-        file.arrayBuffer = jest.fn().mockResolvedValue(tiff.buffer);
+        file.arrayBuffer = vi.fn().mockResolvedValue(tiff.buffer);
 
         const result = await getExifInfo(file, 'image/tiff');
 
@@ -142,7 +144,7 @@ describe('getExifInfo', () => {
     it('should return undefined and warn when the file has no readable EXIF data', async () => {
         const content = new TextEncoder().encode('not an image');
         const file = new File([content], 'photo.jpg', { type: 'image/jpeg' });
-        file.arrayBuffer = jest.fn().mockResolvedValue(content.buffer);
+        file.arrayBuffer = vi.fn().mockResolvedValue(content.buffer);
 
         const result = await getExifInfo(file, 'image/jpeg');
 

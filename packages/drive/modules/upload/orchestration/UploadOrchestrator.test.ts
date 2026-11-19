@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { NodeType } from '../../../sdk';
 import { UploadDriveClientRegistry } from '../UploadDriveClientRegistry';
 import { FileUploadExecutor } from '../execution/FileUploadExecutor';
@@ -11,137 +13,131 @@ import { SDKTransferActivity } from './SDKTransferActivity';
 import { UploadEventHandler } from './UploadEventHandler';
 import { UploadOrchestrator } from './UploadOrchestrator';
 
-jest.mock('../store/uploadQueue.store');
-jest.mock('../execution/FileUploadExecutor');
-jest.mock('../execution/FolderCreationExecutor');
-jest.mock('./ConflictManager');
-jest.mock('./SDKTransferActivity');
-jest.mock('./UploadEventHandler');
-jest.mock('../utils/schedulerHelpers');
-jest.mock('../scheduling/CapacityManager');
-jest.mock('../UploadDriveClientRegistry');
+vi.mock('../store/uploadQueue.store');
+vi.mock('../execution/FileUploadExecutor');
+vi.mock('../execution/FolderCreationExecutor');
+vi.mock('./ConflictManager');
+vi.mock('./SDKTransferActivity');
+vi.mock('./UploadEventHandler');
+vi.mock('../utils/schedulerHelpers');
+vi.mock('../scheduling/CapacityManager');
+vi.mock('../UploadDriveClientRegistry');
 
 describe('UploadOrchestrator', () => {
     let orchestrator: UploadOrchestrator;
-    let mockGetQueue: jest.Mock;
-    let mockGetItem: jest.Mock;
-    let mockUpdateQueueItems: jest.Mock;
-    let mockGetNextTasks: jest.Mock;
-    let mockGetCurrentLoad: jest.Mock;
-    let mockReservePreparing: jest.Mock;
-    let mockReserveFolder: jest.Mock;
-    let mockReleaseFile: jest.Mock;
-    let mockReleaseFolder: jest.Mock;
-    let mockReset: jest.Mock;
-    let mockFileExecutorExecute: jest.Mock;
-    let mockFolderExecutorExecute: jest.Mock;
-    let mockSetEventCallback: jest.Mock;
-    let mockSubscribe: jest.Mock;
-    let mockUnsubscribe: jest.Mock;
-    let mockIsSubscribed: jest.Mock;
-    let mockCheckAndUnsubscribeIfQueueEmpty: jest.Mock;
+    let mockGetQueue: Mock;
+    let mockGetItem: Mock;
+    let mockUpdateQueueItems: Mock;
+    let mockGetNextTasks: Mock;
+    let mockGetCurrentLoad: Mock;
+    let mockReservePreparing: Mock;
+    let mockReserveFolder: Mock;
+    let mockReleaseFile: Mock;
+    let mockReleaseFolder: Mock;
+    let mockReset: Mock;
+    let mockFileExecutorExecute: Mock;
+    let mockFolderExecutorExecute: Mock;
+    let mockSetEventCallback: Mock;
+    let mockSubscribe: Mock;
+    let mockUnsubscribe: Mock;
+    let mockIsSubscribed: Mock;
+    let mockCheckAndUnsubscribeIfQueueEmpty: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.useFakeTimers();
+        vi.clearAllMocks();
+        vi.useFakeTimers();
 
-        jest.mocked(UploadDriveClientRegistry.getDriveClient).mockReturnValue({} as any);
-        jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient).mockReturnValue({} as any);
+        vi.mocked(UploadDriveClientRegistry.getDriveClient).mockReturnValue({} as any);
+        vi.mocked(UploadDriveClientRegistry.getDrivePhotosClient).mockReturnValue({} as any);
 
-        mockGetQueue = jest.fn().mockReturnValue([]);
-        mockGetItem = jest.fn();
-        mockUpdateQueueItems = jest.fn();
+        mockGetQueue = vi.fn().mockReturnValue([]);
+        mockGetItem = vi.fn();
+        mockUpdateQueueItems = vi.fn();
 
-        jest.mocked(useUploadQueueStore.getState).mockReturnValue({
+        vi.mocked(useUploadQueueStore.getState).mockReturnValue({
             getQueue: mockGetQueue,
             getItem: mockGetItem,
             updateQueueItems: mockUpdateQueueItems,
         } as any);
 
-        jest.mocked(useUploadQueueStore.subscribe).mockReturnValue(jest.fn());
+        vi.mocked(useUploadQueueStore.subscribe).mockReturnValue(vi.fn());
 
-        mockGetNextTasks = jest.fn().mockReturnValue([]);
-        jest.mocked(getNextTasks).mockImplementation(mockGetNextTasks);
+        mockGetNextTasks = vi.fn().mockReturnValue([]);
+        vi.mocked(getNextTasks).mockImplementation(mockGetNextTasks);
 
-        mockGetCurrentLoad = jest.fn().mockReturnValue({
+        mockGetCurrentLoad = vi.fn().mockReturnValue({
             activePreparingFiles: 0,
             activeUploadingFiles: 0,
             activeFolders: 0,
             activeBytesTotal: 0,
             taskLoads: new Map(),
         });
-        mockReservePreparing = jest.fn();
-        mockReserveFolder = jest.fn();
-        mockReleaseFile = jest.fn();
-        mockReleaseFolder = jest.fn();
-        mockReset = jest.fn();
+        mockReservePreparing = vi.fn();
+        mockReserveFolder = vi.fn();
+        mockReleaseFile = vi.fn();
+        mockReleaseFolder = vi.fn();
+        mockReset = vi.fn();
 
-        jest.mocked(CapacityManager).mockImplementation(
-            () =>
-                ({
-                    getCurrentLoad: mockGetCurrentLoad,
-                    reservePreparing: mockReservePreparing,
-                    reserveFolder: mockReserveFolder,
-                    releaseFile: mockReleaseFile,
-                    releaseFolder: mockReleaseFolder,
-                    reset: mockReset,
-                }) as any
-        );
+        vi.mocked(CapacityManager).mockImplementation(function () {
+            return {
+                getCurrentLoad: mockGetCurrentLoad,
+                reservePreparing: mockReservePreparing,
+                reserveFolder: mockReserveFolder,
+                releaseFile: mockReleaseFile,
+                releaseFolder: mockReleaseFolder,
+                reset: mockReset,
+            } as any;
+        });
 
-        mockSetEventCallback = jest.fn();
-        mockFileExecutorExecute = jest.fn().mockResolvedValue(undefined);
-        jest.mocked(FileUploadExecutor).mockImplementation(
-            () =>
-                ({
-                    setEventCallback: mockSetEventCallback,
-                    execute: mockFileExecutorExecute,
-                }) as any
-        );
+        mockSetEventCallback = vi.fn();
+        mockFileExecutorExecute = vi.fn().mockResolvedValue(undefined);
+        vi.mocked(FileUploadExecutor).mockImplementation(function () {
+            return {
+                setEventCallback: mockSetEventCallback,
+                execute: mockFileExecutorExecute,
+            } as any;
+        });
 
-        mockFolderExecutorExecute = jest.fn().mockResolvedValue(undefined);
-        jest.mocked(FolderCreationExecutor).mockImplementation(
-            () =>
-                ({
-                    setEventCallback: mockSetEventCallback,
-                    execute: mockFolderExecutorExecute,
-                }) as any
-        );
+        mockFolderExecutorExecute = vi.fn().mockResolvedValue(undefined);
+        vi.mocked(FolderCreationExecutor).mockImplementation(function () {
+            return {
+                setEventCallback: mockSetEventCallback,
+                execute: mockFolderExecutorExecute,
+            } as any;
+        });
 
-        mockSubscribe = jest.fn();
-        mockUnsubscribe = jest.fn();
-        mockIsSubscribed = jest.fn().mockReturnValue(false);
-        mockCheckAndUnsubscribeIfQueueEmpty = jest.fn();
+        mockSubscribe = vi.fn();
+        mockUnsubscribe = vi.fn();
+        mockIsSubscribed = vi.fn().mockReturnValue(false);
+        mockCheckAndUnsubscribeIfQueueEmpty = vi.fn();
 
-        jest.mocked(SDKTransferActivity).mockImplementation(
-            () =>
-                ({
-                    subscribe: mockSubscribe,
-                    unsubscribe: mockUnsubscribe,
-                    isSubscribed: mockIsSubscribed,
-                    checkAndUnsubscribeIfQueueEmpty: mockCheckAndUnsubscribeIfQueueEmpty,
-                }) as any
-        );
+        vi.mocked(SDKTransferActivity).mockImplementation(function () {
+            return {
+                subscribe: mockSubscribe,
+                unsubscribe: mockUnsubscribe,
+                isSubscribed: mockIsSubscribed,
+                checkAndUnsubscribeIfQueueEmpty: mockCheckAndUnsubscribeIfQueueEmpty,
+            } as any;
+        });
 
-        jest.mocked(ConflictManager).mockImplementation(
-            () =>
-                ({
-                    chooseConflictStrategy: jest.fn().mockResolvedValue(undefined),
-                }) as any
-        );
+        vi.mocked(ConflictManager).mockImplementation(function () {
+            return {
+                chooseConflictStrategy: vi.fn().mockResolvedValue(undefined),
+            } as any;
+        });
 
-        jest.mocked(UploadEventHandler).mockImplementation(
-            () =>
-                ({
-                    handleEvent: jest.fn().mockResolvedValue(undefined),
-                    cancel: jest.fn(),
-                }) as any
-        );
+        vi.mocked(UploadEventHandler).mockImplementation(function () {
+            return {
+                handleEvent: vi.fn().mockResolvedValue(undefined),
+                cancel: vi.fn(),
+            } as any;
+        });
 
         orchestrator = new UploadOrchestrator();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const createFileTask = (overrides = {}) => ({
@@ -181,9 +177,9 @@ describe('UploadOrchestrator', () => {
             const startPromise1 = orchestrator.start();
             const startPromise2 = orchestrator.start();
 
-            jest.advanceTimersByTime(200);
+            vi.advanceTimersByTime(200);
             orchestrator.stop();
-            jest.advanceTimersByTime(200);
+            vi.advanceTimersByTime(200);
 
             await Promise.all([startPromise1, startPromise2]);
 
@@ -195,9 +191,9 @@ describe('UploadOrchestrator', () => {
             mockGetNextTasks.mockReturnValue([]);
 
             const startPromise = orchestrator.start();
-            jest.advanceTimersByTime(200);
+            vi.advanceTimersByTime(200);
             orchestrator.stop();
-            jest.advanceTimersByTime(200);
+            vi.advanceTimersByTime(200);
 
             await startPromise;
 
@@ -210,9 +206,9 @@ describe('UploadOrchestrator', () => {
             mockGetNextTasks.mockReturnValue([]);
 
             const startPromise = orchestrator.start();
-            jest.advanceTimersByTime(200);
+            vi.advanceTimersByTime(200);
             orchestrator.stop();
-            jest.advanceTimersByTime(200);
+            vi.advanceTimersByTime(200);
 
             await startPromise;
 
@@ -235,7 +231,7 @@ describe('UploadOrchestrator', () => {
             mockGetCurrentLoad.mockReturnValue(mockEmptyLoad());
 
             const startPromise = orchestrator.start();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             await startPromise;
 
             expect(mockFileExecutorExecute).toHaveBeenCalledWith(fileTask);
@@ -248,7 +244,7 @@ describe('UploadOrchestrator', () => {
             mockGetCurrentLoad.mockReturnValue(mockEmptyLoad());
 
             const startPromise = orchestrator.start();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             await startPromise;
 
             expect(mockReservePreparing).toHaveBeenCalledWith('file1');
@@ -264,7 +260,7 @@ describe('UploadOrchestrator', () => {
             mockGetCurrentLoad.mockReturnValue(mockEmptyLoad());
 
             const startPromise = orchestrator.start();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             await startPromise;
 
             expect(mockReserveFolder).toHaveBeenCalled();
@@ -278,13 +274,13 @@ describe('UploadOrchestrator', () => {
 
             const startPromise = orchestrator.start();
 
-            await jest.advanceTimersByTimeAsync(600);
+            await vi.advanceTimersByTimeAsync(600);
             expect(mockGetNextTasks).toHaveBeenCalled();
 
             mockGetCurrentLoad.mockReturnValue({ activePreparingFiles: 0, activeUploadingFiles: 0, activeFolders: 0 });
             mockGetQueue.mockReturnValue([]);
 
-            await jest.advanceTimersByTimeAsync(600);
+            await vi.advanceTimersByTimeAsync(600);
 
             await startPromise;
         });
@@ -298,7 +294,7 @@ describe('UploadOrchestrator', () => {
             const startPromise = orchestrator.start();
             orchestrator.stop();
 
-            jest.advanceTimersByTime(200);
+            vi.advanceTimersByTime(200);
 
             await startPromise;
 
@@ -322,7 +318,7 @@ describe('UploadOrchestrator', () => {
 
             await orchestrator.chooseConflictStrategy('file1', UploadConflictStrategy.Rename);
 
-            const conflictManagerInstance = jest.mocked(ConflictManager).mock.results[0].value;
+            const conflictManagerInstance = vi.mocked(ConflictManager).mock.results[0].value;
             expect(conflictManagerInstance.chooseConflictStrategy).toHaveBeenCalledWith(
                 'file1',
                 UploadConflictStrategy.Rename
@@ -334,7 +330,7 @@ describe('UploadOrchestrator', () => {
         it('should delegate to eventHandler.cancel', () => {
             orchestrator.cancel(['file1', 'folder1']);
 
-            const eventHandlerInstance = jest.mocked(UploadEventHandler).mock.results[0].value;
+            const eventHandlerInstance = vi.mocked(UploadEventHandler).mock.results[0].value;
             expect(eventHandlerInstance.cancel).toHaveBeenCalledWith(['file1', 'folder1']);
         });
     });
@@ -354,7 +350,7 @@ describe('UploadOrchestrator', () => {
 
             const startPromise = orchestrator.start();
 
-            await jest.advanceTimersByTimeAsync(3500);
+            await vi.advanceTimersByTimeAsync(3500);
 
             expect(mockGetQueue.mock.calls.length).toBeGreaterThan(5);
 

@@ -1,7 +1,9 @@
 import { type WebStream, toStream } from '@openpgp/web-stream-tools';
 import { CryptoProxy } from '@protontech/crypto';
 import { NodeType, NodeWithSameNameExistsValidationError } from '@protontech/drive-sdk';
+import type { Mock, MockedFunction } from 'vitest';
 
+import { isRAWExtension } from '@proton/shared/lib/helpers/mimetype';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { generatePhotosExtendedAttributes } from '../../extendedAttributes/photosExtendedAttributesGenerator';
@@ -11,32 +13,32 @@ import { useUploadControllerStore } from '../store/uploadController.store';
 import type { EventCallback, PhotosUploadTask } from '../types';
 import { PhotosUploadExecutor } from './PhotosUploadExecutor';
 
-jest.mock('../UploadDriveClientRegistry');
-jest.mock('../../thumbnails');
-jest.mock('../../extendedAttributes/photosExtendedAttributesGenerator');
-jest.mock('../store/uploadController.store');
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    traceError: jest.fn(),
-    addSentryBreadcrumb: jest.fn(),
+vi.mock('../UploadDriveClientRegistry');
+vi.mock('../../thumbnails');
+vi.mock('../../extendedAttributes/photosExtendedAttributesGenerator');
+vi.mock('../store/uploadController.store');
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
+    traceError: vi.fn(),
+    addSentryBreadcrumb: vi.fn(),
 }));
-jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
-    isImage: jest.fn((mime: string) => mime.startsWith('image/')),
-    isVideo: jest.fn((mime: string) => mime.startsWith('video/')),
-    isRAWPhoto: jest.fn(() => false),
-    getFileExtension: jest.fn((name: string) => name.split('.').pop()),
-    isRAWExtension: jest.fn(() => false),
+vi.mock('@proton/shared/lib/helpers/mimetype', () => ({
+    isImage: vi.fn((mime: string) => mime.startsWith('image/')),
+    isVideo: vi.fn((mime: string) => mime.startsWith('video/')),
+    isRAWPhoto: vi.fn(() => false),
+    getFileExtension: vi.fn((name: string) => name.split('.').pop()),
+    isRAWExtension: vi.fn(() => false),
 }));
-jest.mock('@protontech/crypto', () => {
-    const actual = jest.requireActual('@protontech/crypto');
+vi.mock('@protontech/crypto', async () => {
+    const actual = await vi.importActual('@protontech/crypto');
     return {
         ...actual,
         CryptoProxy: {
-            computeHashStream: jest.fn(),
+            computeHashStream: vi.fn(),
         },
     };
 });
-jest.mock('../utils/createFileStream', () => ({
-    createFileStream: jest.fn(() => {
+vi.mock('../utils/createFileStream', () => ({
+    createFileStream: vi.fn(() => {
         return new ReadableStream({
             start(controller) {
                 controller.enqueue(new Uint8Array([1, 2, 3]));
@@ -48,13 +50,13 @@ jest.mock('../utils/createFileStream', () => ({
 
 describe('PhotosUploadExecutor', () => {
     let executor: PhotosUploadExecutor;
-    let mockEventCallback: jest.MockedFunction<EventCallback>;
-    let mockUploadFromStream: jest.Mock;
-    let mockCompletion: jest.Mock;
-    let mockGetFileUploader: jest.Mock;
-    let mockGetController: jest.Mock;
+    let mockEventCallback: MockedFunction<EventCallback>;
+    let mockUploadFromStream: Mock;
+    let mockCompletion: Mock;
+    let mockGetFileUploader: Mock;
+    let mockGetController: Mock;
 
-    // TODO: Remove that once jest/node include newly added toHex
+    // TODO: Remove that once node include newly added toHex
     beforeAll(() => {
         if (!Uint8Array.prototype.toHex) {
             Uint8Array.prototype.toHex = function () {
@@ -66,24 +68,24 @@ describe('PhotosUploadExecutor', () => {
     });
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        mockEventCallback = jest.fn();
-        mockUploadFromStream = jest.fn();
-        mockCompletion = jest.fn();
-        mockGetFileUploader = jest.fn();
-        mockGetController = jest.fn();
+        mockEventCallback = vi.fn();
+        mockUploadFromStream = vi.fn();
+        mockCompletion = vi.fn();
+        mockGetFileUploader = vi.fn();
+        mockGetController = vi.fn();
 
         mockGetController.mockReturnValue({
             abortController: new AbortController(),
             uploadController: null,
         });
 
-        jest.mocked(useUploadControllerStore.getState).mockReturnValue({
+        vi.mocked(useUploadControllerStore.getState).mockReturnValue({
             getController: mockGetController,
         } as any);
 
-        jest.mocked(generateThumbnail).mockReturnValue({
+        vi.mocked(generateThumbnail).mockReturnValue({
             thumbnailsPromise: Promise.resolve({
                 ok: true,
                 result: {
@@ -95,7 +97,7 @@ describe('PhotosUploadExecutor', () => {
             mimeTypePromise: Promise.resolve('image/jpeg'),
         });
 
-        jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
+        vi.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
             metadata: {
                 Media: {
                     Width: 1920,
@@ -106,11 +108,11 @@ describe('PhotosUploadExecutor', () => {
             captureTime: new Date('2024-01-01T00:00:00Z'),
         });
 
-        jest.mocked(CryptoProxy.computeHashStream).mockResolvedValue({
+        vi.mocked(CryptoProxy.computeHashStream).mockResolvedValue({
             hashedDataStream: toStream(new Uint8Array([1, 2, 3, 4])) as WebStream<Uint8Array<ArrayBuffer>>,
         });
 
-        const mockFindPhotoDuplicates = jest.fn().mockResolvedValue([]);
+        const mockFindPhotoDuplicates = vi.fn().mockResolvedValue([]);
 
         mockUploadFromStream.mockResolvedValue({
             completion: mockCompletion,
@@ -124,10 +126,10 @@ describe('PhotosUploadExecutor', () => {
             uploadFromStream: mockUploadFromStream,
         });
 
-        jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient).mockReturnValue({
+        vi.mocked(UploadDriveClientRegistry.getDrivePhotosClient).mockReturnValue({
             getFileUploader: mockGetFileUploader,
             findPhotoDuplicates: mockFindPhotoDuplicates,
-            getMyPhotosRootFolder: jest.fn().mockResolvedValue({ uid: 'photos-root-uid' }),
+            getMyPhotosRootFolder: vi.fn().mockResolvedValue({ uid: 'photos-root-uid' }),
         } as any);
 
         executor = new PhotosUploadExecutor();
@@ -162,7 +164,7 @@ describe('PhotosUploadExecutor', () => {
     describe('setEventCallback', () => {
         it('should set event callback', () => {
             const newExecutor = new PhotosUploadExecutor();
-            const callback = jest.fn();
+            const callback = vi.fn();
 
             newExecutor.setEventCallback(callback);
 
@@ -173,7 +175,7 @@ describe('PhotosUploadExecutor', () => {
     describe('execute', () => {
         it('should check for duplicate photo before upload', async () => {
             const task = createFileTask();
-            const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
+            const driveForPhotos = vi.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
 
             await executor.execute(task);
 
@@ -185,8 +187,8 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should emit photo:exist event when photo is duplicate', async () => {
-            const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
-            jest.mocked(driveForPhotos.findPhotoDuplicates).mockResolvedValue(['duplicate-uid-123']);
+            const driveForPhotos = vi.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
+            vi.mocked(driveForPhotos.findPhotoDuplicates).mockResolvedValue(['duplicate-uid-123']);
             const task = createFileTask();
 
             await executor.execute(task);
@@ -201,8 +203,8 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should emit photo:exist event with multiple duplicates', async () => {
-            const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
-            jest.mocked(driveForPhotos.findPhotoDuplicates).mockResolvedValue([
+            const driveForPhotos = vi.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
+            vi.mocked(driveForPhotos.findPhotoDuplicates).mockResolvedValue([
                 'duplicate-uid-1',
                 'duplicate-uid-2',
                 'duplicate-uid-3',
@@ -306,7 +308,7 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should include media metadata when available', async () => {
-            jest.mocked(generateThumbnail).mockReturnValue({
+            vi.mocked(generateThumbnail).mockReturnValue({
                 thumbnailsPromise: Promise.resolve({
                     ok: true,
                     result: {
@@ -319,7 +321,7 @@ describe('PhotosUploadExecutor', () => {
                 mimeTypePromise: Promise.resolve('video/mp4'),
             });
 
-            jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
+            vi.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
                 metadata: {
                     Media: {
                         Width: 1920,
@@ -350,7 +352,7 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should include Location metadata when available', async () => {
-            jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
+            vi.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
                 metadata: {
                     Media: {
                         Width: 1920,
@@ -377,7 +379,7 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should include Camera metadata when available', async () => {
-            jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
+            vi.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
                 metadata: {
                     Media: {
                         Width: 1920,
@@ -418,7 +420,7 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should include tags metadata', async () => {
-            jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
+            vi.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
                 metadata: {
                     Media: {
                         Width: 1920,
@@ -439,7 +441,7 @@ describe('PhotosUploadExecutor', () => {
 
         it('should include captureTime metadata', async () => {
             const captureDate = new Date('2024-06-15T12:30:00Z');
-            jest.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
+            vi.mocked(generatePhotosExtendedAttributes).mockResolvedValue({
                 metadata: {
                     Media: {
                         Width: 1920,
@@ -469,7 +471,7 @@ describe('PhotosUploadExecutor', () => {
 
         it('should trace error and continue upload with fallback values when generatePhotosExtendedAttributes throws', async () => {
             const exifError = new Error('EXIF parsing failed');
-            jest.mocked(generatePhotosExtendedAttributes).mockRejectedValue(exifError);
+            vi.mocked(generatePhotosExtendedAttributes).mockRejectedValue(exifError);
 
             const task = createFileTask();
 
@@ -494,7 +496,7 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should handle thumbnail generation failure gracefully', async () => {
-            jest.mocked(generateThumbnail).mockReturnValue({
+            vi.mocked(generateThumbnail).mockReturnValue({
                 thumbnailsPromise: Promise.resolve({
                     ok: false,
                     error: new Error(),
@@ -575,7 +577,7 @@ describe('PhotosUploadExecutor', () => {
 
         it('should pass thumbnails to upload', async () => {
             const mockThumbnails = [{ type: 1, thumbnail: new Uint8Array() }];
-            jest.mocked(generateThumbnail).mockReturnValue({
+            vi.mocked(generateThumbnail).mockReturnValue({
                 thumbnailsPromise: Promise.resolve({
                     ok: true,
                     result: {
@@ -596,7 +598,7 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should emit photo:unsupported event when file is not a photo, video, or RAW', async () => {
-            jest.mocked(generateThumbnail).mockReturnValue({
+            vi.mocked(generateThumbnail).mockReturnValue({
                 thumbnailsPromise: Promise.resolve({ ok: false, error: new Error() }),
                 mimeTypePromise: Promise.resolve('application/pdf'),
             });
@@ -616,10 +618,9 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should not emit photo:unsupported for RAW files resolved to application/octet-stream but with RAW extension', async () => {
-            const { isRAWExtension } = jest.requireMock('@proton/shared/lib/helpers/mimetype');
-            isRAWExtension.mockReturnValueOnce(true);
+            vi.mocked(isRAWExtension).mockReturnValueOnce(true);
 
-            jest.mocked(generateThumbnail).mockReturnValue({
+            vi.mocked(generateThumbnail).mockReturnValue({
                 thumbnailsPromise: Promise.resolve({ ok: false, error: new Error() }),
                 mimeTypePromise: Promise.resolve('application/octet-stream'),
             });
@@ -636,8 +637,8 @@ describe('PhotosUploadExecutor', () => {
         });
 
         it('should proceed with upload when duplicate check throws (e.g. crypto worker error)', async () => {
-            const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
-            jest.mocked(driveForPhotos.findPhotoDuplicates).mockRejectedValue(
+            const driveForPhotos = vi.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
+            vi.mocked(driveForPhotos.findPhotoDuplicates).mockRejectedValue(
                 new DOMException('A network error occurred.', 'NetworkError')
             );
             const task = createFileTask();
@@ -653,11 +654,11 @@ describe('PhotosUploadExecutor', () => {
 
         it('should compute SHA1 hash for duplicate detection', async () => {
             const task = createFileTask();
-            const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
+            const driveForPhotos = vi.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
 
             await executor.execute(task);
 
-            const hashFunction = jest.mocked(driveForPhotos.findPhotoDuplicates).mock.calls[0][1];
+            const hashFunction = vi.mocked(driveForPhotos.findPhotoDuplicates).mock.calls[0][1];
             await hashFunction();
 
             expect(CryptoProxy.computeHashStream).toHaveBeenCalledWith({

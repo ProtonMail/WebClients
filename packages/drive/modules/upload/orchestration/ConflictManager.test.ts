@@ -4,62 +4,63 @@ import {
     NodeWithSameNameExistsValidationError,
     type NodeWithSameNameExistsValidationError as NodeWithSameNameExistsValidationErrorType,
 } from '@protontech/drive-sdk';
+import type { Mock } from 'vitest';
 
+import { getDrive } from '../../../sdk';
 import { useUploadQueueStore } from '../store/uploadQueue.store';
 import type { FileUploadItem, FolderCreationItem } from '../types';
 import { UploadConflictStrategy, UploadConflictType, UploadStatus } from '../types';
 import { getBlockedDescendants, getDirectChildren } from '../utils/dependencyHelpers';
 import { ConflictManager } from './ConflictManager';
 
-jest.mock('../store/uploadQueue.store', () => {
-    const actual = jest.requireActual('../store/uploadQueue.store');
+vi.mock('../store/uploadQueue.store', async () => {
+    const actual = await vi.importActual('../store/uploadQueue.store');
     return {
         ...actual,
         useUploadQueueStore: {
-            getState: jest.fn(),
-            subscribe: jest.fn(),
+            getState: vi.fn(),
+            subscribe: vi.fn(),
         },
     };
 });
-jest.mock('../utils/dependencyHelpers');
-jest.mock('../../../sdk', () => {
-    const actual = jest.requireActual('../../../sdk');
+vi.mock('../utils/dependencyHelpers');
+vi.mock('../../../sdk', async () => {
+    const actual = await vi.importActual('../../../sdk');
     return {
         ...actual,
-        getDrive: jest.fn(),
+        getDrive: vi.fn(),
     };
 });
 
 describe('ConflictManager', () => {
     let conflictManager: ConflictManager;
-    let mockOnQueueEmptyCheck: jest.Mock;
-    let mockGetState: jest.Mock;
-    let mockUpdateQueueItems: jest.Mock;
-    let mockGetItem: jest.Mock;
-    let mockGetQueue: jest.Mock;
-    let mockGetAvailableName: jest.Mock;
+    let mockOnQueueEmptyCheck: Mock;
+    let mockGetState: Mock;
+    let mockUpdateQueueItems: Mock;
+    let mockGetItem: Mock;
+    let mockGetQueue: Mock;
+    let mockGetAvailableName: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        mockOnQueueEmptyCheck = jest.fn();
-        mockUpdateQueueItems = jest.fn();
-        mockGetItem = jest.fn();
-        mockGetQueue = jest.fn().mockReturnValue([]);
-        mockGetAvailableName = jest.fn().mockResolvedValue('renamed-file');
+        mockOnQueueEmptyCheck = vi.fn();
+        mockUpdateQueueItems = vi.fn();
+        mockGetItem = vi.fn();
+        mockGetQueue = vi.fn().mockReturnValue([]);
+        mockGetAvailableName = vi.fn().mockResolvedValue('renamed-file');
 
-        mockGetState = jest.fn().mockReturnValue({
+        mockGetState = vi.fn().mockReturnValue({
             updateQueueItems: mockUpdateQueueItems,
             getItem: mockGetItem,
             getQueue: mockGetQueue,
         });
 
-        jest.mocked(useUploadQueueStore.getState).mockImplementation(mockGetState);
-        jest.mocked(getDirectChildren).mockReturnValue([]);
-        jest.mocked(getBlockedDescendants).mockReturnValue([]);
+        vi.mocked(useUploadQueueStore.getState).mockImplementation(mockGetState);
+        vi.mocked(getDirectChildren).mockReturnValue([]);
+        vi.mocked(getBlockedDescendants).mockReturnValue([]);
 
-        const { getDrive } = require('../../../sdk');
-        jest.mocked(getDrive).mockReturnValue({
+        vi.mocked(getDrive).mockReturnValue({
             getAvailableName: mockGetAvailableName,
         } as any);
 
@@ -367,7 +368,7 @@ describe('ConflictManager', () => {
                 { uploadId: 'child2', parentUploadId: 'task1' },
                 { uploadId: 'other', parentUploadId: 'other-parent' },
             ]);
-            jest.mocked(getDirectChildren).mockReturnValue(['child1', 'child2']);
+            vi.mocked(getDirectChildren).mockReturnValue(['child1', 'child2']);
 
             await conflictManager.chooseConflictStrategy('task1', UploadConflictStrategy.Replace);
 
@@ -398,7 +399,7 @@ describe('ConflictManager', () => {
                 { uploadId: 'child1', parentUploadId: 'task1' },
                 { uploadId: 'nested-child', parentUploadId: 'child1' },
             ]);
-            jest.mocked(getBlockedDescendants).mockReturnValue(['child1', 'nested-child']);
+            vi.mocked(getBlockedDescendants).mockReturnValue(['child1', 'nested-child']);
 
             await conflictManager.chooseConflictStrategy('task1', UploadConflictStrategy.Skip);
 

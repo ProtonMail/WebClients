@@ -1,7 +1,7 @@
 import { processDroppedItems } from './processDroppedItems';
 import { uploadLogDebug, uploadLogError } from './uploadLogger';
 
-jest.mock('./uploadLogger');
+vi.mock('./uploadLogger');
 
 const READ_ENTRIES_BATCH_SIZE = 100;
 
@@ -331,7 +331,7 @@ describe('processDroppedItems', () => {
 
     describe('logging', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
         });
 
         it('should log what the browser handed over', async () => {

@@ -171,7 +171,7 @@ describe('createFileStream', () => {
         const reader = stream.getReader();
 
         const originalArrayBuffer = Blob.prototype.arrayBuffer;
-        Blob.prototype.arrayBuffer = jest.fn().mockRejectedValue(new Error('ArrayBuffer failed'));
+        Blob.prototype.arrayBuffer = vi.fn().mockRejectedValue(new Error('ArrayBuffer failed'));
 
         await expect(reader.read()).rejects.toThrow('ArrayBuffer failed');
 

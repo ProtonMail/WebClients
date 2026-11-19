@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { getNodeEntity } from '../../../../legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '../../../../modules/busDriver';
 import { NodeType, getDrive } from '../../../../sdk';
@@ -8,28 +10,28 @@ import type { TreeStoreItem } from '../types';
 import { DirectoryTreeRootType } from '../types';
 import { TreeEventManager } from './treeEventManager';
 
-jest.mock('../../../../sdk', () => ({
-    ...jest.requireActual('../../../../sdk'),
-    getDrive: jest.fn(),
+vi.mock('../../../../sdk', async () => ({
+    ...(await vi.importActual('../../../../sdk')),
+    getDrive: vi.fn(),
 }));
 
-jest.mock('../../../../modules/busDriver', () => ({
-    ...jest.requireActual('../../../../modules/busDriver'),
-    getBusDriver: jest.fn(),
+vi.mock('../../../../modules/busDriver', async () => ({
+    ...(await vi.importActual('../../../../modules/busDriver')),
+    getBusDriver: vi.fn(),
 }));
 
-jest.mock('../../../../legacy/sdkUtils/getNodeEntity');
-jest.mock('../../../nodes', () => ({
-    ...jest.requireActual('../../../nodes'),
-    getDeviceName: jest.fn(),
-    getNodeName: jest.fn(),
+vi.mock('../../../../legacy/sdkUtils/getNodeEntity');
+vi.mock('../../../nodes', async () => ({
+    ...(await vi.importActual('../../../nodes')),
+    getDeviceName: vi.fn(),
+    getNodeName: vi.fn(),
 }));
 
-const mockedGetBusDriver = jest.mocked(getBusDriver);
-const mockedGetDrive = jest.mocked(getDrive);
-const mockedGetNodeEntity = jest.mocked(getNodeEntity);
-const mockedGetDeviceName = jest.mocked(getDeviceName);
-const mockedGetNodeName = jest.mocked(getNodeName);
+const mockedGetBusDriver = vi.mocked(getBusDriver);
+const mockedGetDrive = vi.mocked(getDrive);
+const mockedGetNodeEntity = vi.mocked(getNodeEntity);
+const mockedGetDeviceName = vi.mocked(getDeviceName);
+const mockedGetNodeName = vi.mocked(getNodeName);
 
 // helpers
 function makeItem(partial: Partial<TreeStoreItem> & { nodeUid: string }): TreeStoreItem {
@@ -137,8 +139,8 @@ function collapseFolderScope(
 }
 
 const makeSharedWithMeDrive = (nodes: ({ uid: string } & Record<string, unknown>)[]) => ({
-    iterateSharedWithMeNodeUids: jest.fn().mockReturnValue(makeAsyncIterator(nodes.map((node) => node.uid))),
-    iterateNodes: jest
+    iterateSharedWithMeNodeUids: vi.fn().mockReturnValue(makeAsyncIterator(nodes.map((node) => node.uid))),
+    iterateNodes: vi
         .fn()
         .mockImplementation((uids: string[]) =>
             makeAsyncIterator(uids.map((uid) => nodes.find((node) => node.uid === uid) ?? { missingUid: uid }))
@@ -149,13 +151,13 @@ describe('TreeEventManager', () => {
     // Shared event subscriber list – simulates BusDriver fanout
     const eventSubscribers: ((event: any) => Promise<void>)[] = [];
 
-    const mockSubscribeSdkDriveEvents = jest.fn().mockResolvedValue(undefined);
-    const mockUnsubscribeSdkDriveEvents = jest.fn().mockResolvedValue(undefined);
-    const mockSubscribeSdkEventsScope = jest.fn();
-    const mockUnsubscribeSdkEventsScope = jest.fn().mockResolvedValue(undefined);
+    const mockSubscribeSdkDriveEvents = vi.fn().mockResolvedValue(undefined);
+    const mockUnsubscribeSdkDriveEvents = vi.fn().mockResolvedValue(undefined);
+    const mockSubscribeSdkEventsScope = vi.fn();
+    const mockUnsubscribeSdkEventsScope = vi.fn().mockResolvedValue(undefined);
 
     const mockBusDriver = {
-        subscribe: jest.fn(),
+        subscribe: vi.fn(),
         subscribeSdkDriveEvents: mockSubscribeSdkDriveEvents,
         unsubscribeSdkDriveEvents: mockUnsubscribeSdkDriveEvents,
         subscribeSdkEventsScope: mockSubscribeSdkEventsScope,
@@ -169,12 +171,12 @@ describe('TreeEventManager', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         eventSubscribers.length = 0;
 
         mockBusDriver.subscribe.mockImplementation((_eventType: any, callback: any) => {
             eventSubscribers.push(callback);
-            return jest.fn().mockImplementation(() => {
+            return vi.fn().mockImplementation(() => {
                 const idx = eventSubscribers.indexOf(callback);
                 if (idx !== -1) {
                     eventSubscribers.splice(idx, 1);
@@ -196,7 +198,7 @@ describe('TreeEventManager', () => {
                 node: { uid: 'node-1', name: 'Updated', type: NodeType.Folder, parentUid: 'parent-folder' } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             expandSection(store, manager, 'myFiles');
 
             await fireEvent({
@@ -218,7 +220,7 @@ describe('TreeEventManager', () => {
                 node: { uid: 'node-1', name: 'Updated', type: NodeType.Folder, parentUid: 'parent-folder' } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             expandSection(store, manager, 'myFiles');
 
             await fireEvent({
@@ -243,7 +245,7 @@ describe('TreeEventManager', () => {
                 } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             expandSection(store, manager, 'myFiles');
 
             await fireEvent({
@@ -336,9 +338,9 @@ describe('TreeEventManager', () => {
             const { store, manager } = createManager();
             mockedGetDeviceName.mockReturnValue('My PC');
             mockedGetDrive.mockReturnValue({
-                getMyFilesRootFolder: jest.fn().mockResolvedValue({ ok: true, value: { uid: MY_FILES_ROOT_UID } }),
-                getNode: jest.fn().mockResolvedValue({ ok: true, value: { uid: 'new-device' } }),
-                iterateDevices: jest
+                getMyFilesRootFolder: vi.fn().mockResolvedValue({ ok: true, value: { uid: MY_FILES_ROOT_UID } }),
+                getNode: vi.fn().mockResolvedValue({ ok: true, value: { uid: 'new-device' } }),
+                iterateDevices: vi
                     .fn()
                     .mockReturnValue(
                         makeAsyncIterator([{ rootFolderUid: 'new-device', name: { ok: true, value: 'My PC' } }])
@@ -400,7 +402,7 @@ describe('TreeEventManager', () => {
                 node: { uid: 'child-1', name: 'Updated', type: NodeType.Folder, parentUid: 'device-1' } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             expandSection(store, manager, 'devices');
             // device-1 itself is NOT marked as expanded
 
@@ -426,7 +428,7 @@ describe('TreeEventManager', () => {
                 node: { uid: 'child-1', name: 'Updated', type: NodeType.Folder, parentUid: 'device-1' } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             expandSection(store, manager, 'devices');
 
             await fireEvent({
@@ -523,7 +525,7 @@ describe('TreeEventManager', () => {
                 node: { uid: 'child-1', name: 'Updated', type: NodeType.Folder, parentUid: 'shared-folder' } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             // expand shared root so listener is registered, but NOT the shared-folder
             store.getState().setExpanded(sharedRoot.treeItemId, true);
             manager.syncSubscriptions();
@@ -550,7 +552,7 @@ describe('TreeEventManager', () => {
                 node: { uid: 'child-1', name: 'Updated', type: NodeType.Folder, parentUid: 'shared-folder' } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             expandSection(store, manager, 'shared');
 
             await fireEvent({
@@ -573,7 +575,7 @@ describe('TreeEventManager', () => {
                 node: { uid: 'new-child', name: 'New Child', type: NodeType.Folder, parentUid: 'shared-folder' } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             expandFolderScope(store, manager, 'scope-shared', {
                 nodeUid: 'shared-folder',
                 parentUid: SHARED_WITH_ME_ROOT_ID,
@@ -638,7 +640,7 @@ describe('TreeEventManager', () => {
                 } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             expandFolderScope(store, manager, ALICE_SCOPE, {
                 nodeUid: 'alice-root',
                 parentUid: SHARED_WITH_ME_ROOT_ID,
@@ -688,7 +690,7 @@ describe('TreeEventManager', () => {
                 node: { uid: 'node-1', name: 'Updated', type: NodeType.Folder, parentUid: 'alice-root' } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             expandFolderScope(store, manager, ALICE_SCOPE, {
                 nodeUid: 'alice-root',
                 parentUid: SHARED_WITH_ME_ROOT_ID,
@@ -721,7 +723,7 @@ describe('TreeEventManager', () => {
                 node: { uid: 'node-c', name: 'Updated', type: NodeType.Folder, parentUid: 'node-b' } as any,
                 errors: new Map(),
             });
-            mockedGetDrive.mockReturnValue({ getNode: jest.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
+            mockedGetDrive.mockReturnValue({ getNode: vi.fn().mockResolvedValue({ ok: true, value: {} }) } as any);
             expandFolderScope(store, manager, ALICE_SCOPE, { nodeUid: 'node-b', parentUid: 'shared-parent' });
 
             await fireEvent({
@@ -738,7 +740,7 @@ describe('TreeEventManager', () => {
         it('bus listener starts at construction; stops at destroy()', () => {
             const { manager } = createManager();
             expect(mockBusDriver.subscribe).toHaveBeenCalledTimes(1);
-            const unsubscribe = mockBusDriver.subscribe.mock.results[0]?.value as jest.Mock;
+            const unsubscribe = mockBusDriver.subscribe.mock.results[0]?.value as Mock;
 
             manager.destroy();
             expect(unsubscribe).toHaveBeenCalledTimes(1);
@@ -747,7 +749,7 @@ describe('TreeEventManager', () => {
         it('exactly one bus listener regardless of how many sections are expanded; survives collapse; stops at destroy()', () => {
             const { store, manager } = createManager();
             expect(mockBusDriver.subscribe).toHaveBeenCalledTimes(1);
-            const unsubscribe = mockBusDriver.subscribe.mock.results[0]?.value as jest.Mock;
+            const unsubscribe = mockBusDriver.subscribe.mock.results[0]?.value as Mock;
 
             expandSection(store, manager, 'devices');
             expandSection(store, manager, 'myFiles');
@@ -836,7 +838,7 @@ describe('TreeEventManager', () => {
         it('destroy() removes all subscriptions', () => {
             const { store, manager } = createManager();
             expandSection(store, manager, 'shared');
-            const unsubscribe = mockBusDriver.subscribe.mock.results[0]?.value as jest.Mock;
+            const unsubscribe = mockBusDriver.subscribe.mock.results[0]?.value as Mock;
 
             manager.destroy();
             expect(unsubscribe).toHaveBeenCalledTimes(1);

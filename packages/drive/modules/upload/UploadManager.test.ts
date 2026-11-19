@@ -17,21 +17,21 @@ const createEmptyFileWithPath = (name: string, path: string, type?: string) => {
     return file;
 };
 
-jest.mock('./orchestration/UploadOrchestrator', () => {
+vi.mock('./orchestration/UploadOrchestrator', () => {
     return {
-        UploadOrchestrator: jest.fn().mockImplementation(() => {
+        UploadOrchestrator: vi.fn().mockImplementation(function () {
             return {
-                start: jest.fn().mockResolvedValue(undefined),
-                stop: jest.fn(),
-                reset: jest.fn(),
-                cancel: jest.fn(),
-                chooseConflictStrategy: jest.fn(),
-                setConflictResolver: jest.fn(),
-                removeConflictResolver: jest.fn(),
-                subscribeToEvents: jest.fn().mockReturnValue(() => {}),
-                hasSubscriptions: jest.fn().mockReturnValue(false),
-                setDriveClient: jest.fn(),
-                emitFileQueued: jest.fn(),
+                start: vi.fn().mockResolvedValue(undefined),
+                stop: vi.fn(),
+                reset: vi.fn(),
+                cancel: vi.fn(),
+                chooseConflictStrategy: vi.fn(),
+                setConflictResolver: vi.fn(),
+                removeConflictResolver: vi.fn(),
+                subscribeToEvents: vi.fn().mockReturnValue(() => {}),
+                hasSubscriptions: vi.fn().mockReturnValue(false),
+                setDriveClient: vi.fn(),
+                emitFileQueued: vi.fn(),
             };
         }),
     };
@@ -144,7 +144,7 @@ describe('UploadManager', () => {
 
     describe('empty file handling', () => {
         it('should not prompt for the .proton-drive-keep placeholder and still create its empty folder', async () => {
-            const emptyFileResolver = jest.fn().mockResolvedValue(EmptyFileDecision.Cancel);
+            const emptyFileResolver = vi.fn().mockResolvedValue(EmptyFileDecision.Cancel);
             uploadManager.setEmptyFileResolver(emptyFileResolver);
 
             const files = [
@@ -167,7 +167,7 @@ describe('UploadManager', () => {
         });
 
         it('should prompt for genuine 0-byte files', async () => {
-            const emptyFileResolver = jest.fn().mockResolvedValue(EmptyFileDecision.Allow);
+            const emptyFileResolver = vi.fn().mockResolvedValue(EmptyFileDecision.Allow);
             uploadManager.setEmptyFileResolver(emptyFileResolver);
 
             const files = [createEmptyFileWithPath('empty.txt', 'empty.txt', 'text/plain')];
@@ -182,7 +182,7 @@ describe('UploadManager', () => {
         });
 
         it('should allow a confirmed 0-byte file nested in a folder structure', async () => {
-            const emptyFileResolver = jest.fn().mockResolvedValue(EmptyFileDecision.Allow);
+            const emptyFileResolver = vi.fn().mockResolvedValue(EmptyFileDecision.Allow);
             uploadManager.setEmptyFileResolver(emptyFileResolver);
 
             const files = [
@@ -202,7 +202,7 @@ describe('UploadManager', () => {
         });
 
         it('should not queue a genuine 0-byte file when the user cancels', async () => {
-            const emptyFileResolver = jest.fn().mockResolvedValue(EmptyFileDecision.Cancel);
+            const emptyFileResolver = vi.fn().mockResolvedValue(EmptyFileDecision.Cancel);
             uploadManager.setEmptyFileResolver(emptyFileResolver);
 
             const files = [createEmptyFileWithPath('empty.txt', 'empty.txt', 'text/plain')];

@@ -3,28 +3,28 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { getNotificationsManager, setNotificationsManager } from './notifications.singleton';
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    traceError: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
+    traceError: vi.fn(),
 }));
 
 const makeMockManager = (): NotificationsManager => ({
-    createNotification: jest.fn().mockReturnValue(1),
-    removeNotification: jest.fn(),
-    hideNotification: jest.fn(),
-    clearNotifications: jest.fn(),
-    setOffset: jest.fn(),
-    removeDuplicate: jest.fn(),
+    createNotification: vi.fn().mockReturnValue(1),
+    removeNotification: vi.fn(),
+    hideNotification: vi.fn(),
+    clearNotifications: vi.fn(),
+    setOffset: vi.fn(),
+    removeDuplicate: vi.fn(),
 });
 
 describe('notifications singleton', () => {
     beforeEach(() => {
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     afterEach(() => {
         setNotificationsManager(null);
-        jest.restoreAllMocks();
-        jest.clearAllMocks();
+        vi.restoreAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('when not initialized', () => {

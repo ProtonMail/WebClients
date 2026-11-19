@@ -1,19 +1,20 @@
 import type { NodeEntity, ProtonDriveClient } from '@protontech/drive-sdk';
 import { MemberRole, NodeType } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
+import type { Mock, Mocked } from 'vitest';
 
 import { sendErrorReport } from '../../../legacy/errorHandling';
 import { getHigherRole, getNodeEffectiveRole, getNodeEffectiveRoleFromHierarchy } from './getNodeEffectiveRole';
 
-jest.mock('../../../legacy/errorHandling', () => ({
-    ...jest.requireActual('../../../legacy/errorHandling'),
-    sendErrorReport: jest.fn(),
+vi.mock('../../../legacy/errorHandling', async () => ({
+    ...(await vi.importActual('../../../legacy/errorHandling')),
+    sendErrorReport: vi.fn(),
 }));
 
-const mockSendErrorReport = jest.mocked(sendErrorReport);
+const mockSendErrorReport = vi.mocked(sendErrorReport);
 
 describe('getNodeEffectiveRole', () => {
-    let mockDrive: jest.Mocked<Pick<ProtonDriveClient, 'getNode'>>;
+    let mockDrive: Mocked<Pick<ProtonDriveClient, 'getNode'>>;
 
     const createMockNode = (
         uid: string,
@@ -43,7 +44,7 @@ describe('getNodeEffectiveRole', () => {
 
     beforeEach(() => {
         mockDrive = {
-            getNode: jest.fn(),
+            getNode: vi.fn(),
         } as any;
         mockSendErrorReport.mockClear();
     });
@@ -112,10 +113,10 @@ describe('getNodeEffectiveRole', () => {
         });
 
         it('returns the highest role when node is photo in albums', async () => {
-            const mockPhotosDrive = Object.create(ProtonDrivePhotosClient.prototype) as jest.Mocked<
+            const mockPhotosDrive = Object.create(ProtonDrivePhotosClient.prototype) as Mocked<
                 Pick<ProtonDrivePhotosClient, 'getNode'>
-            > & { getNode: jest.Mock };
-            mockPhotosDrive.getNode = jest.fn();
+            > & { getNode: Mock<(...args: any[]) => any> };
+            mockPhotosDrive.getNode = vi.fn() as typeof mockPhotosDrive.getNode;
 
             const parentNode = createMockNode('parent', MemberRole.Viewer);
             const photoNode = createMockNode('photo-node', MemberRole.Inherited, 'parent', NodeType.Photo);
@@ -205,7 +206,7 @@ describe('getNodeEffectiveRoleFromHierarchy', () => {
     const createNode = (uid: string, directRole: MemberRole) => ({ uid, directRole }) as NodeEntity;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should return the highest role along a deep hierarchy', () => {

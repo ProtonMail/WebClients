@@ -2,14 +2,14 @@ import { sendErrorReport } from '../../../../modules/busDriver';
 import { NodeType, getDrive } from '../../../../sdk';
 import { iterateSharedWithMeNodes } from './iterateSharedWithMeNodes';
 
-jest.mock('../../../../sdk', () => ({
-    ...jest.requireActual('../../../../sdk'),
-    getDrive: jest.fn(),
+vi.mock('../../../../sdk', async () => ({
+    ...(await vi.importActual('../../../../sdk')),
+    getDrive: vi.fn(),
 }));
-jest.mock('../../../../modules/busDriver');
+vi.mock('../../../../modules/busDriver');
 
-const mockedGetDrive = jest.mocked(getDrive);
-const mockedSendErrorReport = jest.mocked(sendErrorReport);
+const mockedGetDrive = vi.mocked(getDrive);
+const mockedSendErrorReport = vi.mocked(sendErrorReport);
 
 const makeNode = (overrides = {}) => ({
     uid: 'node-1',
@@ -26,10 +26,10 @@ async function* makeIterator<T>(items: T[]) {
 }
 
 const makeDrive = (nodes: ReturnType<typeof makeNode>[], missingUids: string[] = []) => ({
-    iterateSharedWithMeNodeUids: jest
+    iterateSharedWithMeNodeUids: vi
         .fn()
         .mockReturnValue(makeIterator([...nodes.map((node) => node.uid), ...missingUids])),
-    iterateNodes: jest
+    iterateNodes: vi
         .fn()
         .mockImplementation((uids: string[]) =>
             makeIterator(uids.map((uid) => nodes.find((node) => node.uid === uid) ?? { missingUid: uid }))
@@ -37,7 +37,7 @@ const makeDrive = (nodes: ReturnType<typeof makeNode>[], missingUids: string[] =
 });
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     mockedGetDrive.mockReturnValue(makeDrive([]) as any);
 });
 
@@ -62,7 +62,7 @@ describe('iterateSharedWithMeNodes', () => {
 
     it('reports iterator errors and returns partial results without throwing', async () => {
         mockedGetDrive.mockReturnValue({
-            iterateSharedWithMeNodeUids: jest.fn().mockReturnValue(
+            iterateSharedWithMeNodeUids: vi.fn().mockReturnValue(
                 (async function* () {
                     throw new Error('network failure');
                 })()

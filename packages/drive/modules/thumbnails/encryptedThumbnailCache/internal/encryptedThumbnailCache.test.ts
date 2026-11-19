@@ -4,6 +4,7 @@ import { webcrypto } from 'node:crypto';
 
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
+import { sendErrorReport } from '../../../../legacy/errorHandling';
 import {
     getCachedThumbnail,
     initEncryptedThumbnailCache,
@@ -12,28 +13,28 @@ import {
 } from './encryptedThumbnailCache';
 import { ThumbnailCacheDb } from './thumbnailCacheDb';
 
-// @proton/jest-env provides crypto.getRandomValues but not crypto.subtle.
+// The test environment provides crypto.getRandomValues but not crypto.subtle.
 if (!globalThis.crypto.subtle) {
     Object.defineProperty(globalThis.crypto, 'subtle', { value: webcrypto.subtle, configurable: true });
 }
 
 // Mock OpenPGP wrap/unwrap with a reversible transform (real AES-GCM stays).
-const encryptMessage = jest.fn(async ({ binaryData }: { binaryData: Uint8Array<ArrayBuffer> }) => ({
+const encryptMessage = vi.fn(async ({ binaryData }: { binaryData: Uint8Array<ArrayBuffer> }) => ({
     message: `wrap:${JSON.stringify(Array.from(binaryData))}`,
 }));
-const decryptMessage = jest.fn(async ({ armoredMessage }: { armoredMessage: string }) => ({
+const decryptMessage = vi.fn(async ({ armoredMessage }: { armoredMessage: string }) => ({
     data: new Uint8Array(JSON.parse(armoredMessage.replace('wrap:', ''))),
 }));
 
-jest.mock('@protontech/crypto', () => ({
+vi.mock('@protontech/crypto', () => ({
     CryptoProxy: {
         encryptMessage: (args: unknown) => encryptMessage(args as { binaryData: Uint8Array<ArrayBuffer> }),
         decryptMessage: (args: unknown) => decryptMessage(args as { armoredMessage: string }),
     },
 }));
 
-jest.mock('../../../../legacy/errorHandling', () => ({
-    sendErrorReport: jest.fn(),
+vi.mock('../../../../legacy/errorHandling', () => ({
+    sendErrorReport: vi.fn(),
 }));
 
 const fakeUserKeys = [{ publicKey: 'pub', privateKey: 'priv' }] as unknown as DecryptedKey[];
@@ -44,7 +45,7 @@ describe('encryptedThumbnailCache', () => {
     beforeEach(() => {
         indexedDB = new IDBFactory();
         resetEncryptedThumbnailCacheForTest();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     afterEach(() => {
@@ -85,7 +86,6 @@ describe('encryptedThumbnailCache', () => {
     });
 
     it('disables silently (no error report) when IndexedDB is unavailable', async () => {
-        const { sendErrorReport } = jest.requireMock('../../../../legacy/errorHandling');
         const realIndexedDB = globalThis.indexedDB;
         (globalThis as { indexedDB?: unknown }).indexedDB = undefined;
 

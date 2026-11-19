@@ -1,5 +1,6 @@
 import type { NodeEntity } from '@protontech/drive-sdk';
 import { MemberRole, NodeType } from '@protontech/drive-sdk';
+import type { MockInstance } from 'vitest';
 
 import {
     NodeLocation,
@@ -48,7 +49,7 @@ const NO_PARENT_UID = undefined;
 
 const createDriveStub = (isPrivateDefaultClient: boolean, rootNode: NodeEntity) => {
     const baseStub = {
-        getNode: jest.fn(),
+        getNode: vi.fn(),
     };
 
     const extraMethods =
@@ -57,7 +58,7 @@ const createDriveStub = (isPrivateDefaultClient: boolean, rootNode: NodeEntity) 
                   getMyFilesRootFolder: () => {
                       return Promise.resolve(rootNode);
                   },
-                  iterateDevices: jest.fn(),
+                  iterateDevices: vi.fn(),
               }
             : {};
     return {
@@ -67,11 +68,11 @@ const createDriveStub = (isPrivateDefaultClient: boolean, rootNode: NodeEntity) 
 };
 
 describe('getNodeLocation', () => {
-    let consoleWarnSpy: jest.SpyInstance;
+    let consoleWarnSpy: MockInstance;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation();
+        vi.clearAllMocks();
+        consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     afterEach(() => {
@@ -308,7 +309,7 @@ describe('getFormattedNodeLocationUsingHierarchy', () => {
         const lastNode = createMockNode('uid3', 'uid2');
         const drive = {
             ...createDriveStub(true /* isPrivateDefaultClient */, rootNode),
-            getNodeHierarchy: jest.fn().mockResolvedValue([rootNode, childNode, lastNode]),
+            getNodeHierarchy: vi.fn().mockResolvedValue([rootNode, childNode, lastNode]),
         };
 
         expect(await getFormattedNodeLocationUsingHierarchy(drive, lastNode)).toBe('/My files/node-uid2');
@@ -320,7 +321,7 @@ describe('getFormattedNodeLocationUsingHierarchy', () => {
         const rootNode = createMockNode('uid1', NO_PARENT_UID);
         const drive = {
             ...createDriveStub(true /* isPrivateDefaultClient */, rootNode),
-            getNodeHierarchy: jest.fn().mockRejectedValue(new Error('Permission denied')),
+            getNodeHierarchy: vi.fn().mockRejectedValue(new Error('Permission denied')),
         };
 
         expect(await getFormattedNodeLocationUsingHierarchy(drive, createMockNode('uid2', 'uid1'))).toBe(

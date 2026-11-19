@@ -2,13 +2,13 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { RecentlyAccessedReporter } from './RecentlyAccessedReporter';
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    traceError: jest.fn(),
-    addSentryBreadcrumb: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
+    traceError: vi.fn(),
+    addSentryBreadcrumb: vi.fn(),
 }));
 
 function makeClient() {
-    return { reportRecentlyAccessed: jest.fn().mockResolvedValue(undefined) };
+    return { reportRecentlyAccessed: vi.fn().mockResolvedValue(undefined) };
 }
 
 function setOnline(online: boolean) {
@@ -21,7 +21,7 @@ describe('RecentlyAccessedReporter', () => {
     let reporter: RecentlyAccessedReporter;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         driveClient = makeClient();
         photosClient = makeClient();
         setOnline(true);

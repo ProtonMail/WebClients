@@ -6,8 +6,8 @@ import * as constants from '../constants';
 import { UnsupportedFormatError } from '../thumbnailError';
 import { VideoHandler } from './videoHandler';
 
-jest.mock('../constants', () => ({
-    ...jest.requireActual('../constants'),
+vi.mock('../constants', async () => ({
+    ...(await vi.importActual('../constants')),
     isIosDevice: false,
     MAX_VIDEO_SIZE_FOR_THUMBNAIL_IOS: 500 * 1024 * 1024,
 }));
@@ -30,6 +30,10 @@ describe('VideoHandler', () => {
     });
 
     beforeEach(() => {
+        // The DOM never loads media: report a loading error like a browser given undecodable data.
+        vi.spyOn(HTMLVideoElement.prototype, 'load').mockImplementation(function (this: HTMLVideoElement) {
+            queueMicrotask(() => this.dispatchEvent(new Event('error')));
+        });
         handler = new VideoHandler();
     });
 
@@ -121,10 +125,10 @@ describe('VideoHandler', () => {
 
         test('Throws UnsupportedFormatError when browser cannot play the video format', async () => {
             const originalCreateElement = document.createElement.bind(document);
-            jest.spyOn(document, 'createElement').mockImplementation((tagName: string) => {
+            vi.spyOn(document, 'createElement').mockImplementation((tagName: string) => {
                 const element = originalCreateElement(tagName);
                 if (tagName === 'video') {
-                    (element as HTMLVideoElement).canPlayType = jest.fn().mockReturnValue('');
+                    (element as HTMLVideoElement).canPlayType = vi.fn().mockReturnValue('');
                 }
                 return element;
             });
@@ -142,15 +146,15 @@ describe('VideoHandler', () => {
                 )
             ).rejects.toThrow(UnsupportedFormatError);
 
-            jest.restoreAllMocks();
+            vi.restoreAllMocks();
         });
 
         test('Falls back to video/mp4 canPlayType check for video/quicktime', async () => {
             const originalCreateElement = document.createElement.bind(document);
-            jest.spyOn(document, 'createElement').mockImplementation((tagName: string) => {
+            vi.spyOn(document, 'createElement').mockImplementation((tagName: string) => {
                 const element = originalCreateElement(tagName);
                 if (tagName === 'video') {
-                    (element as HTMLVideoElement).canPlayType = jest.fn().mockImplementation((mime: string) => {
+                    (element as HTMLVideoElement).canPlayType = vi.fn().mockImplementation((mime: string) => {
                         if (mime === 'video/quicktime') {
                             return '';
                         }
@@ -183,7 +187,7 @@ describe('VideoHandler', () => {
                 })
             );
 
-            jest.restoreAllMocks();
+            vi.restoreAllMocks();
         });
 
         test('Throws UnsupportedFormatError when video extraction fails', async () => {
@@ -213,7 +217,7 @@ describe('VideoHandler', () => {
                     [ThumbnailType.Type1],
                     'video/mp4'
                 );
-                fail('Should have thrown UnsupportedFormatError');
+                expect.unreachable('Should have thrown UnsupportedFormatError');
             } catch (error) {
                 expect(error).toBeInstanceOf(UnsupportedFormatError);
                 if (error instanceof UnsupportedFormatError) {
