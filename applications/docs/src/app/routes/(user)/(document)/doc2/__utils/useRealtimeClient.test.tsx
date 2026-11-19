@@ -6,7 +6,7 @@ import AuthenticationContext from '@proton/components/containers/authentication/
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
-import { cleanup, renderHook } from '@testing-library/react'
+import { cleanup, renderHook, waitFor } from '@testing-library/react'
 import type { ComponentProps, ReactNode } from 'react'
 
 import { ApplicationProvider } from '~/utils/application-context'
@@ -106,6 +106,21 @@ describe('useRealtimeClient', () => {
     expect(api).toHaveBeenCalledWith(
       expect.objectContaining({ url: 'docs/volumes/volume-1/documents/link-1/meta', method: 'GET', output: 'raw' }),
     )
+  })
+
+  test("prefetches a document's bootstrap reads with the client's Docs API config, through the app API", async () => {
+    api.mockImplementation(async () => Response.json({ Code: 1000, Document: { CommitIDs: [] } }))
+    const { result } = renderHook(() => useRealtimeClient(), { wrapper })
+
+    const prefetch = result.current.prefetchBootstrap(nodeMeta)
+
+    expect(prefetch.nodeMeta).toEqual(nodeMeta)
+    await waitFor(() =>
+      expect(api).toHaveBeenCalledWith(
+        expect.objectContaining({ url: 'docs/volumes/volume-1/documents/link-1/meta', method: 'GET' }),
+      ),
+    )
+    prefetch.end()
   })
 
   test('getDocumentKeys signs with the member address of the given node, not the primary one', async () => {

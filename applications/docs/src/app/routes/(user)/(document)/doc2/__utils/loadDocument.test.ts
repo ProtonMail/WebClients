@@ -96,7 +96,15 @@ function startLoad({
   const fake = createFakeSession()
   fake.mocks.getBaseState.mockReturnValue({ commitId: 'commit-1', updates: BASE_UPDATES.map(update) })
   const drive = { getNodeHierarchy: jest.fn((_uid: string) => readHierarchy()) }
-  const client = { createSession: jest.fn((_config: unknown) => fake.session) }
+  const prefetch = {
+    nodeMeta: { volumeId: 'VOLUME', linkId: 'LINK' },
+    confirm: jest.fn(),
+    end: jest.fn(() => ({ reads: 3, served: 3 })),
+  }
+  const client = {
+    createSession: jest.fn((_config: unknown) => fake.session),
+    prefetchBootstrap: jest.fn((_nodeMeta: unknown) => prefetch),
+  }
   const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn(), debug: jest.fn() }
   const sendEditorBasics = jest.fn(() => {
     mockEditorCalls.push('basics')
@@ -134,6 +142,7 @@ function startLoad({
     fake,
     drive,
     client,
+    prefetch,
     logger,
     deps,
     statuses,
@@ -218,6 +227,7 @@ describe('loadDocument', () => {
     expect(load.client.createSession).toHaveBeenCalledWith({
       documentType: 'doc',
       nodeMeta: { volumeId: 'VOLUME', linkId: 'LINK' },
+      prefetch: load.prefetch,
     })
     expect(mockBridgeBuilt).toHaveBeenCalledTimes(1)
     expect(mockEditor.broadcastPresenceState).toHaveBeenCalled()
@@ -233,6 +243,65 @@ describe('loadDocument', () => {
     expect(at('frame')).toMatchObject({ session: load.fake.session, editorInvoker: undefined })
     expect(at('baseState')).toMatchObject({ editorInvoker: undefined })
     expect(at('catchUp')).toMatchObject({ editorInvoker: mockEditor })
+  })
+
+  describe("the bootstrap's prefetch", () => {
+    test('are prefetched and confirmed from the start, beside the node step, and the prefetch ends when the bootstrap does', async () => {
+      let readNode: () => void = () => {}
+      let bootstrap: () => void = () => {}
+      const load = startLoad({
+        readHierarchy: () => new Promise((resolve) => (readNode = () => resolve(hierarchy('Editor')))),
+      })
+      load.fake.mocks.bootstrap.mockReturnValueOnce(
+        new Promise((resolve) => (bootstrap = () => resolve(load.fake.session))),
+      )
+
+      expect(load.client.prefetchBootstrap).toHaveBeenCalledWith({ volumeId: 'VOLUME', linkId: 'LINK' })
+      expect(load.drive.getNodeHierarchy).toHaveBeenCalled()
+      expect(load.prefetch.confirm).toHaveBeenCalledTimes(1)
+
+      readNode()
+      await waitFor(() => expect(load.client.createSession).toHaveBeenCalled())
+      expect(load.prefetch.end).not.toHaveBeenCalled()
+
+      bootstrap()
+      await waitFor(() => expect(load.steps()).toContain('frame'))
+      expect(load.prefetch.end).toHaveBeenCalledTimes(1)
+      expect(load.client.prefetchBootstrap).toHaveBeenCalledTimes(1)
+      expect(load.client.createSession).toHaveBeenCalledWith(expect.objectContaining({ prefetch: load.prefetch }))
+    })
+
+    test.each<[string, Parameters<typeof startLoad>[0]]>([
+      ['trashed', { readHierarchy: async () => hierarchy('Admin', { trashTime: new Date() }) }],
+      ['unsupported', { readHierarchy: async () => hierarchy('Editor', { mediaType: 'application/pdf' }) }],
+      ['unreadable by Drive', { readHierarchy: () => Promise.reject(new Error('Boom')) }],
+    ])('end with a node that is %s', async (_, options) => {
+      const load = startLoad(options)
+
+      await load.done
+
+      expect(load.prefetch.end).toHaveBeenCalledTimes(1)
+    })
+
+    test('end with a bootstrap that fails', async () => {
+      const load = startLoad()
+      load.fake.mocks.bootstrap.mockRejectedValueOnce(new Error('Boom'))
+
+      await load.done
+
+      expect(load.prefetch.end).toHaveBeenCalledTimes(1)
+    })
+
+    test.each<LoaderStep>(['node', 'bootstrap'])('end with an abort in the %s step', async (step) => {
+      const load = startLoad(step === 'node' ? { readHierarchy: () => new Promise(() => {}) } : {})
+      load.fake.mocks.bootstrap.mockReturnValueOnce(new Promise(() => {}))
+      await waitFor(() => expect(load.latest()).toMatchObject({ step }))
+
+      load.controller.abort()
+      await load.done
+
+      expect(load.prefetch.end).toHaveBeenCalledTimes(1)
+    })
   })
 
   test('squashes at 50 document updates on dev and black, as /doc does', async () => {
