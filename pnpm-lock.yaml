@@ -1807,8 +1807,8 @@ importers:
         specifier: catalog:docs
         version: 0.32.1
       '@proton-docs/realtime-sdk':
-        specifier: 0.11.18
-        version: 0.11.18(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(yjs@13.6.27)
+        specifier: 0.11.19
+        version: 0.11.19(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(yjs@13.6.27)
       '@proton/account':
         specifier: workspace:^
         version: link:../../packages/account
@@ -17042,8 +17042,8 @@ packages:
       y-protocols: ^1.0.6
       yjs: ^13.6.15
 
-  '@proton-docs/realtime-sdk@0.11.18':
-    resolution: {integrity: sha256-KGiObXigHuliM81j9RV7/GI5+gqSj4lkAc07x7BPtP8=}
+  '@proton-docs/realtime-sdk@0.11.19':
+    resolution: {integrity: sha256-MfC5TB4+10xBUQEdKkOZg08qM6RGdhhQ+96Bv8ipu6g=}
     peerDependencies:
       yjs: ^13.5.0
 
@@ -34977,7 +34977,7 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@proton-docs/realtime-sdk@0.11.18(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(yjs@13.6.27)':
+  '@proton-docs/realtime-sdk@0.11.19(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(yjs@13.6.27)':
     dependencies:
       '@protontech/crypto': 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       fflate: 0.8.3
