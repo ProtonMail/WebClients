@@ -4,8 +4,11 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { BRAND_NAME, LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import GenericError from '@proton/components/containers/error/GenericError';
+import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { SignInButton } from '../../components/Guest/SignInLink';
@@ -19,8 +22,6 @@ import {
     useDebugApiOrganizationMemberView,
     useDebugApiOrganizationView,
 } from '../../services/apiUsageDebugStore';
-import GetLumoPlusButton from '../../upsells/primitives/GetLumoPlusButton';
-import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
 import ApiKeysPanel from '../api-keys/ApiKeysPanel';
 import { ApiUsagePanel } from '../api-keys/ApiUsagePanel';
 import { ApiBaseUrlBar } from './ApiBaseUrlBar';
@@ -94,7 +95,27 @@ const ApiAccessDeniedNotice = () => (
     </div>
 );
 
-export const ApiDocsPage = () => {
+const ApiNotIncludedNotice = () => (
+    <div className="rounded-lg border border-weak p-6 bg-weak">
+        <p className="m-0 color-weak">{c('collider_2025: Info').t`Your plan doesn't include API access.`}</p>
+    </div>
+);
+
+const AskForSeatNotice = () => (
+    <div className="rounded-lg border border-weak p-6 bg-weak">
+        <p className="m-0 color-weak">
+            {c('collider_2025: Info')
+                .t`Ask your organization administrator to assign a ${LUMO_SHORT_APP_NAME} seat to your account to use the API.`}
+        </p>
+    </div>
+);
+
+interface ApiDocsPageContentProps {
+    hasLumoApi: boolean;
+    isEntitlementsLoading: boolean;
+}
+
+const ApiDocsPageContent = ({ hasLumoApi, isEntitlementsLoading }: ApiDocsPageContentProps) => {
     const history = useHistory();
     const location = useLocation();
     const { apiKeyManagement } = useLumoFlags();
@@ -102,20 +123,21 @@ export const ApiDocsPage = () => {
     const { hasLumoPlus, isLumoPlanLoading, canShowTalkToAdminLumoUpsell, isOrgAdmin, userIsMember } = useLumoPlan();
     const debugOrganizationView = useDebugApiOrganizationView();
     const debugOrganizationMemberView = useDebugApiOrganizationMemberView();
-    const lumoPlusUpsellConfig = useLumoPlusUpsellButtonConfig(LUMO_UPSELL_PATHS.SETTINGS_MODAL);
+    const isAccessLoading = isLumoPlanLoading || isEntitlementsLoading;
     const spec = LUMO_API_DOCS_SPEC;
 
     const effectiveOrgAdmin = isOrgAdmin || debugOrganizationView;
     const isOrgMember = debugOrganizationMemberView || (!effectiveOrgAdmin && userIsMember);
     const debugApiAccessDenied = useDebugApiAccessDenied();
     const apiAccessDenied = isOrgMember && debugApiAccessDenied;
-    const canManageApiKeys = !isGuest && apiKeyManagement && hasLumoPlus && !apiAccessDenied;
+    const hasApiAccess = hasLumoApi && (hasLumoPlus || isOrgAdmin);
+    const canManageApiKeys = !isGuest && apiKeyManagement && hasApiAccess && !apiAccessDenied;
     /** Organization preview only reveals mocked UI and does not grant backend permissions. */
     const canViewApiUsage =
         !apiAccessDenied &&
         !isGuest &&
         apiKeyManagement &&
-        (hasLumoPlus || effectiveOrgAdmin || debugOrganizationMemberView);
+        (hasApiAccess || debugOrganizationView || debugOrganizationMemberView);
 
     const [docsTab, setDocsTab] = useState<DocsTab>('api');
     const [activeNav, setActiveNav] = useState('overview');
@@ -727,36 +749,16 @@ export const ApiDocsPage = () => {
                                     </p>
                                     <SignInButton color="norm" shape="solid" />
                                 </div>
-                            ) : isLumoPlanLoading ? (
+                            ) : isAccessLoading ? (
                                 <p className="m-0 color-weak">{c('collider_2025: Info').t`Loading…`}</p>
                             ) : apiAccessDenied ? (
                                 <ApiAccessDeniedNotice />
                             ) : canViewApiUsage ? (
                                 <ApiUsagePanel />
+                            ) : !hasLumoApi ? (
+                                <ApiNotIncludedNotice />
                             ) : canShowTalkToAdminLumoUpsell && !hasLumoPlus ? (
-                                <div className="rounded-lg border border-weak p-6 bg-weak">
-                                    <p className="m-0 color-weak">
-                                        {c('collider_2025: Info')
-                                            .t`API usage is available with ${LUMO_SHORT_APP_NAME}+. Ask your organization administrator to assign a ${LUMO_SHORT_APP_NAME} seat to your account.`}
-                                    </p>
-                                </div>
-                            ) : !hasLumoPlus ? (
-                                <div
-                                    className="flex flex-column gap-4 items-start rounded-lg border border-weak p-6 bg-weak"
-                                    style={{ maxWidth: '36rem' }}
-                                >
-                                    <p className="m-0 color-weak">
-                                        {c('collider_2025: Info')
-                                            .t`API usage and balance are available for ${LUMO_SHORT_APP_NAME}+ subscribers.`}
-                                    </p>
-                                    {lumoPlusUpsellConfig ? (
-                                        <GetLumoPlusButton
-                                            path={lumoPlusUpsellConfig.path}
-                                            onClick={lumoPlusUpsellConfig.onUpgrade}
-                                            className={lumoPlusUpsellConfig.className}
-                                        />
-                                    ) : null}
-                                </div>
+                                <AskForSeatNotice />
                             ) : (
                                 <div className="rounded-lg border border-weak p-6 bg-weak">
                                     <p className="m-0 color-weak">
@@ -778,36 +780,16 @@ export const ApiDocsPage = () => {
                                     </p>
                                     <SignInButton color="norm" shape="solid" />
                                 </div>
-                            ) : isLumoPlanLoading ? (
+                            ) : isAccessLoading ? (
                                 <p className="m-0 color-weak">{c('collider_2025: Info').t`Loading…`}</p>
                             ) : apiAccessDenied ? (
                                 <ApiAccessDeniedNotice />
                             ) : canManageApiKeys ? (
                                 <ApiKeysPanel />
+                            ) : !hasLumoApi ? (
+                                <ApiNotIncludedNotice />
                             ) : canShowTalkToAdminLumoUpsell && !hasLumoPlus ? (
-                                <div className="rounded-lg border border-weak p-6 bg-weak">
-                                    <p className="m-0 color-weak">
-                                        {c('collider_2025: Info')
-                                            .t`API keys are included with ${LUMO_SHORT_APP_NAME}+. Ask your organization administrator to assign a ${LUMO_SHORT_APP_NAME} seat to your account.`}
-                                    </p>
-                                </div>
-                            ) : !hasLumoPlus ? (
-                                <div
-                                    className="flex flex-column gap-4 items-start rounded-lg border border-weak p-6 bg-weak"
-                                    style={{ maxWidth: '36rem' }}
-                                >
-                                    <p className="m-0 color-weak">
-                                        {c('collider_2025: Info')
-                                            .t`Upgrade to ${LUMO_SHORT_APP_NAME}+ to create API keys and use the API programmatically.`}
-                                    </p>
-                                    {lumoPlusUpsellConfig ? (
-                                        <GetLumoPlusButton
-                                            path={lumoPlusUpsellConfig.path}
-                                            onClick={lumoPlusUpsellConfig.onUpgrade}
-                                            className={lumoPlusUpsellConfig.className}
-                                        />
-                                    ) : null}
-                                </div>
+                                <AskForSeatNotice />
                             ) : (
                                 <div className="rounded-lg border border-weak p-6 bg-weak">
                                     <p className="m-0 color-weak">
@@ -829,3 +811,23 @@ export const ApiDocsPage = () => {
         </LumoLayoutWithDrawer>
     );
 };
+
+const SignedInApiDocsPage = () => {
+    const [entitlements, isEntitlementsLoading] = useEntitlementChecksForOrgAndUser();
+    return <ApiDocsPageContent hasLumoApi={entitlements.hasLumoApi} isEntitlementsLoading={isEntitlementsLoading} />;
+};
+
+export const ApiDocsPage = () =>
+    useIsGuest() ? (
+        <ApiDocsPageContent hasLumoApi={false} isEntitlementsLoading={false} />
+    ) : (
+        <ErrorBoundary
+            component={
+                <LumoLayoutWithDrawer drawer={{ disabled: true }}>
+                    <GenericError />
+                </LumoLayoutWithDrawer>
+            }
+        >
+            <SignedInApiDocsPage />
+        </ErrorBoundary>
+    );
