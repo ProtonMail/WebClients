@@ -11,8 +11,8 @@ describe('CategorySettingsItem', () => {
             <CategorySettingsItem
                 loading={false}
                 categoriesEnabled={false}
-                updateDisplay={jest.fn()}
-                updateNotify={jest.fn()}
+                updateDisplay={vi.fn()}
+                updateNotify={vi.fn()}
                 category={{
                     id: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     display: true,
@@ -34,8 +34,8 @@ describe('CategorySettingsItem', () => {
             <CategorySettingsItem
                 loading={false}
                 categoriesEnabled={true}
-                updateDisplay={jest.fn()}
-                updateNotify={jest.fn()}
+                updateDisplay={vi.fn()}
+                updateNotify={vi.fn()}
                 category={{
                     id: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                     display: true,
@@ -54,8 +54,8 @@ describe('CategorySettingsItem', () => {
             <CategorySettingsItem
                 loading={false}
                 categoriesEnabled={true}
-                updateDisplay={jest.fn()}
-                updateNotify={jest.fn()}
+                updateDisplay={vi.fn()}
+                updateNotify={vi.fn()}
                 category={{
                     id: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     display: false,
@@ -74,8 +74,8 @@ describe('CategorySettingsItem', () => {
             <CategorySettingsItem
                 loading={true}
                 categoriesEnabled={true}
-                updateDisplay={jest.fn()}
-                updateNotify={jest.fn()}
+                updateDisplay={vi.fn()}
+                updateNotify={vi.fn()}
                 category={{
                     id: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     display: true,

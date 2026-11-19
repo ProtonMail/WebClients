@@ -13,16 +13,16 @@ import { PREDEFINED_ROLE_NAME, ROLE_SOURCE } from '@proton/shared/lib/interfaces
 
 import SubUserEditModal from './SubUserEditModal';
 
-jest.mock('@proton/atoms/Portal/Portal');
+vi.mock('@proton/atoms/Portal/Portal', () => import('@proton/atoms/testing/vitest/Portal'));
 
-jest.mock('@proton/account/members/editMember', () => ({
-    ...jest.requireActual('@proton/account/members/editMember'),
-    editMember: jest.fn(() => ({ type: 'editMember' })),
+vi.mock('@proton/account/members/editMember', async () => ({
+    ...(await vi.importActual('@proton/account/members/editMember')),
+    editMember: vi.fn(() => ({ type: 'editMember' })),
 }));
 
-jest.mock('@proton/account/members', () => ({
-    ...jest.requireActual('@proton/account/members'),
-    getMemberAddresses: jest.fn(() => ({ type: 'getMemberAddresses' })),
+vi.mock('@proton/account/members', async () => ({
+    ...(await vi.importActual('@proton/account/members')),
+    getMemberAddresses: vi.fn(() => ({ type: 'getMemberAddresses' })),
 }));
 
 const mockDefaultDispatch = async ({ type }: { type: string }) => {
@@ -30,14 +30,18 @@ const mockDefaultDispatch = async ({ type }: { type: string }) => {
         return { member: undefined, diff: false };
     }
 };
-const mockDispatch = jest.fn(mockDefaultDispatch);
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
-    ...jest.requireActual('@proton/redux-shared-store/sharedProvider'),
+const { mockDispatch, mockCreateNotification } = vi.hoisted(() => ({
+    mockDispatch: vi.fn(),
+    mockCreateNotification: vi.fn(),
+}));
+mockDispatch.mockImplementation(mockDefaultDispatch);
+vi.mock('@proton/redux-shared-store/sharedProvider', async () => ({
+    ...(await vi.importActual('@proton/redux-shared-store/sharedProvider')),
     useDispatch: () => mockDispatch,
 }));
 
-jest.mock('@proton/account/userPermissions/hooks', () => {
-    const actual = jest.requireActual('@proton/account/userPermissions/hooks');
+vi.mock('@proton/account/userPermissions/hooks', async () => {
+    const actual: any = await vi.importActual('@proton/account/userPermissions/hooks');
     return {
         ...actual,
         useAdminRolesUI: () => [actual.AdminRolesUIState.Enabled, false],
@@ -59,17 +63,17 @@ const mockUserAdminRole: OrganizationRole = {
     OrganizationRoleID: 'user-admin-role',
     Name: PREDEFINED_ROLE_NAME.USER_ADMIN,
 };
-jest.mock('@proton/account/organizationRoles/hooks', () => ({
+vi.mock('@proton/account/organizationRoles/hooks', () => ({
     useOrganizationRoles: () => [[mockOwnerRole, mockUserAdminRole], false],
 }));
 
 const defaultOrganization = { MaxVPN: 0, MaxAI: 0, MaxLumo: 0 } as Organization;
 let mockOrganization = defaultOrganization;
-jest.mock('@proton/account/organization/hooks', () => ({
+vi.mock('@proton/account/organization/hooks', () => ({
     useOrganization: () => [mockOrganization],
 }));
 let mockOrganizationKey: CachedOrganizationKey | undefined;
-jest.mock('@proton/account/organizationKey/hooks', () => ({
+vi.mock('@proton/account/organizationKey/hooks', () => ({
     useOrganizationKey: () => [mockOrganizationKey],
 }));
 const passwordlessOrganizationKey = {
@@ -77,26 +81,25 @@ const passwordlessOrganizationKey = {
     privateKey: {},
     publicKey: {},
 } as CachedOrganizationKey;
-jest.mock('@proton/features/useFeature', () => ({
+vi.mock('@proton/features/useFeature', () => ({
     __esModule: true,
     default: () => ({ feature: undefined, loading: false }),
 }));
-jest.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
+vi.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
     default: () => [false],
 }));
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
-jest.mock('@proton/app-context/useSilentApi', () => ({
-    useSilentApi: () => jest.fn(),
+vi.mock('@proton/app-context/useSilentApi', () => ({
+    useSilentApi: () => vi.fn(),
 }));
-jest.mock('@proton/components/hooks/useSpotlightOnFeature', () => ({
+vi.mock('@proton/components/hooks/useSpotlightOnFeature', () => ({
     __esModule: true,
-    default: () => ({ show: false, onDisplayed: jest.fn(), onClose: jest.fn() }),
+    default: () => ({ show: false, onDisplayed: vi.fn(), onClose: vi.fn() }),
 }));
-jest.mock('@proton/components/containers/members/rolesAndPermissions/AdminRolesSpotlight', () => ({
+vi.mock('@proton/components/containers/members/rolesAndPermissions/AdminRolesSpotlight', () => ({
     __esModule: true,
     default: ({ children }: { children: JSX.Element }) => children,
 }));
@@ -132,7 +135,7 @@ const getMember = (member: Partial<EnhancedMember>) =>
         ...member,
     }) as EnhancedMember;
 
-const onClose = jest.fn();
+const onClose = vi.fn();
 
 const renderModal = (member: EnhancedMember) => {
     const getModal = (member: EnhancedMember) => (
@@ -156,7 +159,7 @@ const save = async () => {
 
 describe('SubUserEditModal', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockDispatch.mockImplementation(mockDefaultDispatch);
         mockOrganizationKey = undefined;
         mockOrganization = defaultOrganization;

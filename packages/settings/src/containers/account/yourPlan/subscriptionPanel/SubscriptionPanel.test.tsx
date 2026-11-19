@@ -1,6 +1,7 @@
 import { screen, within } from '@testing-library/react';
+import type { Mock, MockedFunction } from 'vitest';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
@@ -15,19 +16,19 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import SubscriptionPanel from './SubscriptionPanel';
 
-jest.mock('@proton/shared/lib/vpn/vpnServers', () => ({
+vi.mock('@proton/shared/lib/vpn/vpnServers', () => ({
     VPN_SERVERS: {
         free: { servers: 10, countries: 2000 },
         paid: { servers: 1700, countries: 63 },
     },
 }));
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 
-let mockUsePaymentMethods: jest.Mock;
+let mockUsePaymentMethods: Mock;
 
-jest.mock('@proton/account/paymentMethods/hooks', () => ({
+vi.mock('@proton/account/paymentMethods/hooks', () => ({
     usePaymentMethods: () => mockUsePaymentMethods(),
 }));
 
@@ -48,7 +49,7 @@ describe('SubscriptionPanel', () => {
     };
 
     beforeEach(() => {
-        mockUsePaymentMethods = jest.fn().mockReturnValue([[{}] as any, false]);
+        mockUsePaymentMethods = vi.fn().mockReturnValue([[{}] as any, false]);
     });
 
     it('should not render if user cannot pay', () => {
@@ -94,7 +95,7 @@ describe('SubscriptionPanel', () => {
     });
 
     it('should render Active until without Learn more for manual trial without payment method', () => {
-        mockUsePaymentMethods = jest.fn().mockReturnValue([undefined, false]);
+        mockUsePaymentMethods = vi.fn().mockReturnValue([undefined, false]);
 
         renderWithProviders(
             <SubscriptionPanel
@@ -111,7 +112,7 @@ describe('SubscriptionPanel', () => {
     });
 
     it('should render Active until without Learn more for cancelled trial', () => {
-        mockUsePaymentMethods = jest.fn().mockReturnValue([[{}] as any, false]);
+        mockUsePaymentMethods = vi.fn().mockReturnValue([[{}] as any, false]);
 
         renderWithProviders(
             <SubscriptionPanel
@@ -131,7 +132,7 @@ describe('SubscriptionPanel', () => {
     });
 
     it('should not render the trial date while payment methods are loading', () => {
-        mockUsePaymentMethods = jest.fn().mockReturnValue([undefined, true]);
+        mockUsePaymentMethods = vi.fn().mockReturnValue([undefined, true]);
 
         renderWithProviders(
             <SubscriptionPanel
@@ -162,7 +163,7 @@ describe('SubscriptionPanel', () => {
     });
 
     it('should render Active until without Learn more for B2B trial without payment method', () => {
-        mockUsePaymentMethods = jest.fn().mockReturnValue([undefined, false]);
+        mockUsePaymentMethods = vi.fn().mockReturnValue([undefined, false]);
 
         renderWithProviders(
             <SubscriptionPanel

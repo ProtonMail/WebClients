@@ -1,4 +1,5 @@
 import { fireEvent, screen, waitFor, within } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useAllEntitlements } from '@proton/account/entitlements/hooks';
@@ -10,7 +11,6 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { buildPreloadedState } from '@proton/components/testing/buildPreloadedState';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import {
     addresses,
     calendars,
@@ -19,6 +19,7 @@ import {
     subscriptionBundle,
     user,
 } from '@proton/components/testing/subscriptionData';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
@@ -26,60 +27,60 @@ import { EntitlementType } from '@proton/payments/core/entitlements/interface';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
-import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
 
 import YourPlanSection from './YourPlanSection';
 
-jest.mock('@proton/app-context/useConfig');
-const mockUseConfig = useConfig as jest.MockedFunction<any>;
+vi.mock('@proton/app-context/useConfig');
+const mockUseConfig = useConfig as MockedFunction<any>;
 mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = useUser as jest.MockedFunction<any>;
+vi.mock('@proton/account/user/hooks');
+const mockUseUser = useUser as MockedFunction<any>;
 
-jest.mock('@proton/account/addresses/hooks');
-const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
+vi.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as MockedFunction<any>;
 mockUseAddresses.mockReturnValue([addresses, false]);
 
-jest.mock('@proton/calendar/calendars/hooks');
-const mockUseCalendars = useCalendars as jest.MockedFunction<any>;
+vi.mock('@proton/calendar/calendars/hooks');
+const mockUseCalendars = useCalendars as MockedFunction<any>;
 mockUseCalendars.mockReturnValue([calendars, false]);
 
-jest.mock('@proton/account/organization/hooks');
-const mockUseOrganization = useOrganization as jest.MockedFunction<any>;
+vi.mock('@proton/account/organization/hooks');
+const mockUseOrganization = useOrganization as MockedFunction<any>;
 mockUseOrganization.mockReturnValue([[], false]);
 
-jest.mock('@proton/account/userInvitations/hooks');
-const mockUsePendingUserInvitations = useUserInvitations as jest.MockedFunction<any>;
+vi.mock('@proton/account/userInvitations/hooks');
+const mockUsePendingUserInvitations = useUserInvitations as MockedFunction<any>;
 mockUsePendingUserInvitations.mockReturnValue([[], false]);
-const mockUseGetPendingUserInvitations = useGetUserInvitations as jest.MockedFunction<any>;
+const mockUseGetPendingUserInvitations = useGetUserInvitations as MockedFunction<any>;
 mockUseGetPendingUserInvitations.mockReturnValue(async () => []);
 
-jest.mock('@proton/components/hooks/useLoad');
+vi.mock('@proton/components/hooks/useLoad');
 
-const mockOpenSubscriptionModal = jest.fn();
-jest.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
+const { mockOpenSubscriptionModal } = vi.hoisted(() => ({ mockOpenSubscriptionModal: vi.fn() }));
+vi.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
     __esModule: true,
     useSubscriptionModal: () => [mockOpenSubscriptionModal],
     useSubscriptionModalRaw: () => mockOpenSubscriptionModal,
 }));
 
-jest.mock('@proton/features/useFeature');
-const mockUseFeature = useFeature as jest.MockedFunction<any>;
+vi.mock('@proton/features/useFeature');
+const mockUseFeature = useFeature as MockedFunction<any>;
 mockUseFeature.mockReturnValue({ feature: { Value: true } });
 
-jest.mock('@proton/app-context/useCache');
-const mockUseCache = useCache as jest.MockedFunction<any>;
-mockUseCache.mockReturnValue({ get: jest.fn(), delete: jest.fn() });
+vi.mock('@proton/app-context/useCache');
+const mockUseCache = useCache as MockedFunction<any>;
+mockUseCache.mockReturnValue({ get: vi.fn(), delete: vi.fn() });
 
-jest.mock('@proton/account/entitlements/hooks', () => ({
-    useAllEntitlements: jest.fn(),
+vi.mock('@proton/account/entitlements/hooks', () => ({
+    useAllEntitlements: vi.fn(),
 }));
-const mockUseAllEntitlements = useAllEntitlements as jest.MockedFunction<any>;
+const mockUseAllEntitlements = useAllEntitlements as MockedFunction<any>;
 mockUseAllEntitlements.mockReturnValue([undefined, false]);
 
-jest.mock('@proton/components/hooks/useActiveBreakpoint');
-const mockUseActiveBreakpoint = useActiveBreakpoint as jest.MockedFunction<any>;
+vi.mock('@proton/components/hooks/useActiveBreakpoint');
+const mockUseActiveBreakpoint = useActiveBreakpoint as MockedFunction<any>;
 mockUseActiveBreakpoint.mockReturnValue({ viewportWidth: { '<=small': false } });
 
 // Mock duo flag to true
@@ -89,7 +90,7 @@ mockUseFlag().mockImplementation(() => {
 
 describe('YourPlanSection', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         mockUseUser.mockReturnValue([user, false]);
         mockUsePendingUserInvitations.mockReturnValue([[], false]);

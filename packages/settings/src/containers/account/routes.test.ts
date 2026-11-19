@@ -14,16 +14,16 @@ import type { AccountRecoveryRouterFlags, AccountRouterParams, Flags } from '../
 import { defaultFlags } from '../../testing/buildOrganizationRouterParams';
 import { getAccountAppRoutes } from './routes';
 
-jest.mock('@proton/payments/core/subscription/helpers', () => ({
-    ...jest.requireActual('@proton/payments/core/subscription/helpers'),
-    hasCancellablePlan: jest.fn(),
-    isCancellableOnlyViaSupport: jest.fn(),
-    getHasVpnB2BPlan: jest.fn().mockReturnValue(false),
-    isManagedExternally: jest.fn().mockReturnValue(false),
+vi.mock('@proton/payments/core/subscription/helpers', async () => ({
+    ...(await vi.importActual('@proton/payments/core/subscription/helpers')),
+    hasCancellablePlan: vi.fn(),
+    isCancellableOnlyViaSupport: vi.fn(),
+    getHasVpnB2BPlan: vi.fn().mockReturnValue(false),
+    isManagedExternally: vi.fn().mockReturnValue(false),
 }));
 
-const mockedHasCancellablePlan = jest.mocked(hasCancellablePlan);
-const mockedIsCancellableOnlyViaSupport = jest.mocked(isCancellableOnlyViaSupport);
+const mockedHasCancellablePlan = vi.mocked(hasCancellablePlan);
+const mockedIsCancellableOnlyViaSupport = vi.mocked(isCancellableOnlyViaSupport);
 
 const accountRecoveryRouterFlags: AccountRecoveryRouterFlags = {
     isAccountRecoveryAvailable: false,

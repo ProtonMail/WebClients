@@ -2,29 +2,31 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import MemberUsageColumnPrompt from './MemberUsageColumnPrompt';
 
-const openSubscriptionModal = jest.fn();
-jest.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
+const { openSubscriptionModal, apiMock } = vi.hoisted(() => ({
+    openSubscriptionModal: vi.fn(),
+    apiMock: vi.fn().mockResolvedValue({}),
+}));
+vi.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [openSubscriptionModal, false],
 }));
 
-const apiMock = jest.fn().mockResolvedValue({});
-jest.mock('@proton/app-context/useApi', () => ({
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
     useApi: () => apiMock,
 }));
 
-jest.mock('@proton/components/containers/b2bDashboard/VPN/api', () => ({
+vi.mock('@proton/components/containers/b2bDashboard/VPN/api', () => ({
     updateMonitoringSetting: (enabling: boolean) => ({ __updateMonitoring: enabling }),
 }));
 
-jest.mock('@proton/components/containers/b2bDashboard/VPN/TogglingMonitoringModal', () => ({
+vi.mock('@proton/components/containers/b2bDashboard/VPN/TogglingMonitoringModal', () => ({
     __esModule: true,
     default: () => <div>toggling-monitoring-modal</div>,
 }));
 
 // The upsell modal reads add-on prices from the plans catalogue; give it yearly totals whose
 // monthly-equivalent is €9.99 / €39.99 so we don't need the redux store the real hook depends on.
-jest.mock('@proton/payments-hooks/ui/hooks/usePreferredPlansMap', () => ({
+vi.mock('@proton/payments-hooks/ui/hooks/usePreferredPlansMap', () => ({
     usePreferredPlansMap: () => ({
         plansMapLoading: false,
         preferredCurrency: 'EUR',
@@ -35,14 +37,14 @@ jest.mock('@proton/payments-hooks/ui/hooks/usePreferredPlansMap', () => ({
     }),
 }));
 
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
-    ...jest.requireActual('@proton/redux-shared-store/sharedProvider'),
+vi.mock('@proton/redux-shared-store/sharedProvider', async () => ({
+    ...(await vi.importActual('@proton/redux-shared-store/sharedProvider')),
     useDispatch: () => () => Promise.resolve(undefined),
 }));
 
 describe('MemberUsageColumnPrompt', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('opens the gateway-monitor upsell modal and starts the upgrade from it', async () => {

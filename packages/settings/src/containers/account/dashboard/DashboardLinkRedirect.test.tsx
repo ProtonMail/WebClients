@@ -1,6 +1,7 @@
 import { MemoryRouter, Route } from 'react-router-dom';
 
 import { render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -9,18 +10,16 @@ import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 
 import { DashboardLinkRedirect } from './DashboardLinkRedirect';
 
-jest.mock('@proton/account/allSubscriptions/hooks', () => ({ useAllSubscriptions: jest.fn() }));
-jest.mock('@proton/account/organization/hooks', () => ({ useOrganization: jest.fn() }));
-jest.mock(
-    '@proton/components/containers/layout/PrivateMainAreaLoading',
-    () =>
-        function PrivateMainAreaLoading() {
-            return <div>Loading</div>;
-        }
-);
+vi.mock('@proton/account/allSubscriptions/hooks', () => ({ useAllSubscriptions: vi.fn() }));
+vi.mock('@proton/account/organization/hooks', () => ({ useOrganization: vi.fn() }));
+vi.mock('@proton/components/containers/layout/PrivateMainAreaLoading', () => ({
+    default: function PrivateMainAreaLoading() {
+        return <div>Loading</div>;
+    },
+}));
 
-const mockUseAllSubscriptions = useAllSubscriptions as jest.Mock;
-const mockUseOrganization = useOrganization as jest.Mock;
+const mockUseAllSubscriptions = useAllSubscriptions as Mock;
+const mockUseOrganization = useOrganization as Mock;
 
 const getSubscription = (available: boolean): SectionConfig => ({
     id: 'subscription',

@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useUpdateAccountRecovery } from '@proton/account-recovery/recovery/useUpdateAccountRecovery';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
@@ -7,26 +8,26 @@ import useMyCountry from '@proton/components/hooks/useMyCountry';
 
 import RecoveryPhoneSubpage from './RecoveryPhoneSubpage';
 
-jest.mock('@proton/account/recovery/sentinelHooks');
-jest.mock('@proton/account-recovery/recovery/useUpdateAccountRecovery');
-jest.mock('@proton/components/containers/themes/ThemeProvider');
-jest.mock('@proton/components/hooks/useMyCountry');
-jest.mock('@proton/components/containers/recovery/phone/RecoveryPhone', () => ({
+vi.mock('@proton/account/recovery/sentinelHooks');
+vi.mock('@proton/account-recovery/recovery/useUpdateAccountRecovery');
+vi.mock('@proton/components/containers/themes/ThemeProvider');
+vi.mock('@proton/components/hooks/useMyCountry');
+vi.mock('@proton/components/containers/recovery/phone/RecoveryPhone', () => ({
     __esModule: true,
     default: () => {
         return null;
     },
 }));
-jest.mock('@proton/components/containers/recovery/LastChanged', () => ({
+vi.mock('@proton/components/containers/recovery/LastChanged', () => ({
     LastChanged: () => {
         return null;
     },
 }));
 
-const mockUseIsSentinelUser = jest.mocked(useIsSentinelUser);
-const mockUseUpdateAccountRecovery = useUpdateAccountRecovery as jest.Mock;
-const mockUseTheme = useTheme as jest.Mock;
-const mockUseMyCountry = jest.mocked(useMyCountry);
+const mockUseIsSentinelUser = vi.mocked(useIsSentinelUser);
+const mockUseUpdateAccountRecovery = useUpdateAccountRecovery as Mock;
+const mockUseTheme = useTheme as Mock;
+const mockUseMyCountry = vi.mocked(useMyCountry);
 
 const DESCRIPTION = 'If disabled, Proton will still use your recovery phone to send security notifications.';
 const SENTINEL_DISABLE_WARNING = 'To ensure the highest possible security of your account, disable Recovery by phone.';
@@ -42,7 +43,7 @@ interface SetupOptions {
 }
 
 const setup = ({ isSentinelUser, hasReset }: SetupOptions) => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     mockUseIsSentinelUser.mockReturnValue([{ isSentinelUser } as ReturnType<typeof useIsSentinelUser>[0], false]);
     mockUseTheme.mockReturnValue({ information: { dark: false } });
     mockUseMyCountry.mockReturnValue('CH');
@@ -59,7 +60,7 @@ const setup = ({ isSentinelUser, hasReset }: SetupOptions) => {
             },
         },
         recoveryPhone: {
-            handleChangePhoneValue: jest.fn(),
+            handleChangePhoneValue: vi.fn(),
             toggleProps: { checked: hasReset, onChange, loading: false },
             props: {},
         },
@@ -72,7 +73,7 @@ const setup = ({ isSentinelUser, hasReset }: SetupOptions) => {
 
 describe('RecoveryPhoneSubpage', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('lets a Sentinel user enable recovery by phone', () => {

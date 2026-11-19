@@ -1,6 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
 import { fireEvent, render, within } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { orderAddresses } from '@proton/account/addresses/actions';
@@ -12,7 +13,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { SortableList } from '@proton/components/components/dnd/SortableList';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useAddressFlags from '@proton/components/hooks/useAddressFlags';
-import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
+import { mockUseFeature } from '@proton/features/testing/vitest/mockUseFeature';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_FLAGS, ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -26,85 +27,89 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import AddressesWithUser from './AddressesWithUser';
 
-jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
+vi.mock('@proton/components/hooks/useEventManager', () => ({ default: () => ({}) }));
 
-jest.mock('@proton/components/components/upsell/config/useUpsellConfig', () => ({
+vi.mock('@proton/components/components/upsell/config/useUpsellConfig', () => ({
     __esModule: true,
     default: () => ({}),
 }));
 
-jest.mock('@proton/components/hooks/mail/usePostSubscriptionTourTelemetry', () => ({
+vi.mock('@proton/components/hooks/mail/usePostSubscriptionTourTelemetry', () => ({
     __esModule: true,
     usePostSubscriptionTourTelemetry: () => {
         return () => undefined;
     },
 }));
 
-jest.mock('@proton/account/addresses/actions');
-const mockedOrderAddresses = orderAddresses as jest.MockedFunction<typeof orderAddresses>;
+vi.mock('@proton/account/addresses/actions');
+const mockedOrderAddresses = orderAddresses as MockedFunction<typeof orderAddresses>;
 
-jest.mock('@proton/redux-shared-store/sharedProvider');
-const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>;
+vi.mock('@proton/redux-shared-store/sharedProvider');
+const mockedUseDispatch = useDispatch as MockedFunction<typeof useDispatch>;
 
-jest.mock('@proton/shared/lib/helpers/ref', () => ({ __esModule: true, getUpsellRef: () => '' }));
+vi.mock('@proton/shared/lib/helpers/ref', () => ({ __esModule: true, getUpsellRef: () => '' }));
 
-jest.mock('@proton/components/components/dnd/SortableList');
-const ActualSortableList = jest.requireActual('@proton/components/components/dnd/SortableList').SortableList;
-const mockedSortableList = SortableList as jest.MockedFunction<typeof SortableList>;
+const { ActualSortableList } = vi.hoisted(() => ({ ActualSortableList: { current: undefined as any } }));
+vi.mock('@proton/components/components/dnd/SortableList', async () => {
+    const actual: any = await vi.importActual('@proton/components/components/dnd/SortableList');
+    ActualSortableList.current = actual.SortableList;
+    return { ...actual, SortableList: vi.fn() };
+});
+const mockedSortableList = SortableList as MockedFunction<typeof SortableList>;
 
-jest.mock('@proton/account/addresses/hooks');
-const mockedUseAddresses = useAddresses as jest.MockedFunction<typeof useAddresses>;
+vi.mock('@proton/account/addresses/hooks');
+const mockedUseAddresses = useAddresses as MockedFunction<typeof useAddresses>;
 
-jest.mock('@proton/components/hooks/useAddressFlags');
-const mockedUseAddressFlags = useAddressFlags as jest.MockedFunction<typeof useAddressFlags>;
+vi.mock('@proton/components/hooks/useAddressFlags');
+const mockedUseAddressFlags = useAddressFlags as MockedFunction<typeof useAddressFlags>;
 
-jest.mock('@proton/app-context/useNotifications');
-const mockedUseNotifications = useNotifications as jest.MockedFunction<typeof useNotifications>;
+vi.mock('@proton/app-context/useNotifications');
+const mockedUseNotifications = useNotifications as MockedFunction<typeof useNotifications>;
 
-jest.mock('@proton/account/user/hooks');
-const mockedUseUser = useUser as jest.MockedFunction<typeof useUser>;
+vi.mock('@proton/account/user/hooks');
+const mockedUseUser = useUser as MockedFunction<typeof useUser>;
 
-jest.mock('@proton/account/userSettings/hooks');
-const mockedUseUserSettings = useUserSettings as jest.MockedFunction<typeof useUserSettings>;
+vi.mock('@proton/account/userSettings/hooks');
+const mockedUseUserSettings = useUserSettings as MockedFunction<typeof useUserSettings>;
 const mockLoginIdentifierPolicy = (LoginIdentifierPolicy: number) => {
     mockedUseUserSettings.mockReturnValue([{ LoginIdentifierPolicy } as UserSettings, false, undefined]);
 };
 
-jest.mock('@proton/account/addressKeys/hooks');
-const mockedUseAddressesKeys = useAddressesKeys as jest.MockedFunction<typeof useAddressesKeys>;
+vi.mock('@proton/account/addressKeys/hooks');
+const mockedUseAddressesKeys = useAddressesKeys as MockedFunction<typeof useAddressesKeys>;
 
-jest.mock('@proton/components/containers/keyTransparency/useKTVerifier');
-const mockedUseKTVerifier = useKTVerifier as jest.MockedFunction<typeof useKTVerifier>;
+vi.mock('@proton/components/containers/keyTransparency/useKTVerifier');
+const mockedUseKTVerifier = useKTVerifier as MockedFunction<typeof useKTVerifier>;
 
-jest.mock('@proton/unleash/useFlag');
-const mockedUseFlag = useFlag as jest.MockedFunction<any>;
+vi.mock('@proton/unleash/useFlag');
+const mockedUseFlag = useFlag as MockedFunction<any>;
 
-jest.mock('@proton/account/organizationKey/hooks');
-const mockedUseOrganizationKey = useOrganizationKey as jest.MockedFunction<typeof useOrganizationKey>;
+vi.mock('@proton/account/organizationKey/hooks');
+const mockedUseOrganizationKey = useOrganizationKey as MockedFunction<typeof useOrganizationKey>;
 
-jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
+vi.mock('@proton/components/components/link/SettingsLink', () => ({ default: 'string' }));
 
-jest.mock('@proton/redux-shared-store/sharedProvider');
+vi.mock('@proton/redux-shared-store/sharedProvider');
 
-jest.mock('@proton/activation/src/hooks/useReconnectSync', () => ({
+vi.mock('@proton/activation/src/hooks/useReconnectSync', () => ({
     __esModule: true,
     default: () => {
         return {
             sync: undefined,
             loadingConfig: false,
-            handleReconnect: jest.fn(),
+            handleReconnect: vi.fn(),
         };
     },
 }));
 
-jest.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
+vi.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
     default: () => {
         return [false, false] as const;
     },
 }));
 
-jest.mock('@proton/activation/src/hooks/useBYOEAddressesCounts', () => ({
+vi.mock('@proton/activation/src/hooks/useBYOEAddressesCounts', () => ({
     __esModule: true,
     default: () => {
         return {
@@ -134,7 +139,7 @@ describe('addresses with user', () => {
     ] as Address[];
 
     mockedUseAddresses.mockReturnValue([addresses, false]);
-    mockedSortableList.mockImplementation(ActualSortableList);
+    mockedSortableList.mockImplementation(ActualSortableList.current);
     mockedUseNotifications.mockReturnValue({} as any);
     mockedUseUser.mockReturnValue([user] as any);
     mockedUseAddressesKeys.mockReturnValue([{}] as any);
@@ -155,7 +160,7 @@ describe('addresses with user', () => {
     };
 
     it('should be able to set an alias as default', async () => {
-        const mockDispatch = jest.fn();
+        const mockDispatch = vi.fn();
         mockedUseDispatch.mockReturnValue(mockDispatch);
 
         const { getByTestId, getByText, container } = render(
@@ -175,12 +180,12 @@ describe('addresses with user', () => {
 
     describe('set as default', () => {
         const setup = () => {
-            const createNotification = jest.fn();
+            const createNotification = vi.fn();
             mockedUseNotifications.mockReturnValue({ createNotification } as any);
             let onSortEnd: ComponentPropsWithoutRef<typeof SortableList>['onSortEnd'];
             mockedSortableList.mockImplementation((props) => {
                 onSortEnd = props.onSortEnd;
-                return <ActualSortableList {...props} />;
+                return <ActualSortableList.current {...props} />;
             });
             const handleSortEnd: typeof onSortEnd = (...args) => {
                 onSortEnd?.(...args);
