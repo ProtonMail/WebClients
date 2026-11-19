@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -33,6 +33,8 @@ import { usePassAliasesContext } from '../../PassAliasesProvider';
 import type { CreateModalFormState } from '../../interface';
 import useCreateModalForm from './useCreatePassAliasesForm';
 
+const FORM_ID = 'create-pass-alias-form';
+
 interface Props {
     onSubmit: () => void;
     modalProps: ModalProps;
@@ -40,8 +42,7 @@ interface Props {
 }
 
 const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) => {
-    const { formValues, setFormValues, blurred, setBlurred, hasErrors, errors, submitted, setSubmitted } =
-        useCreateModalForm();
+    const { formValues, setFormValues, blurred, setBlurred, errors, submitted, setSubmitted } = useCreateModalForm();
     const { submitNewAlias, getAliasOptions } = usePassAliasesContext();
     const { createNotification } = useNotifications();
     const [mailboxes, setMailboxes] = useState<AliasOptions['mailboxes']>([]);
@@ -49,6 +50,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
     const [loadingData, setLoadingData] = useState<boolean>(true);
     const [loadingSubmit, setLoadingSubmit] = useState<boolean>(false);
     const isMounted = useIsMounted();
+    const submittingRef = useRef(false);
 
     const getFieldError = (field: keyof CreateModalFormState) => {
         if (!submitted || !errors) {
@@ -58,18 +60,30 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
     };
 
     const handleSubmit = async () => {
-        setSubmitted(true);
-
-        if (hasErrors) {
+        if (submittingRef.current) {
             return;
         }
 
+        setSubmitted(true);
+
+        // Validate synchronously: the debounced validation flag can be stale right after typing
+        if (!formValues.name || !formValues.alias || !formValues.mailbox || !formValues.signedSuffix) {
+            return;
+        }
+
+        submittingRef.current = true;
         setLoadingSubmit(true);
 
-        await submitNewAlias(formValues);
+        try {
+            await submitNewAlias(formValues);
+        } finally {
+            submittingRef.current = false;
+            if (isMounted()) {
+                setLoadingSubmit(false);
+            }
+        }
 
         if (isMounted()) {
-            setLoadingSubmit(false);
             onSubmit();
         }
     };
@@ -136,9 +150,15 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
                 )}
                 {!loadingData && (
                     <Form
+                        id={FORM_ID}
                         onSubmit={(e) => {
                             e.stopPropagation();
-                            if (!hasErrors) {
+                            void handleSubmit();
+                        }}
+                        onKeyDown={(e) => {
+                            // Enter in a single-line input submits the form
+                            if (e.key === 'Enter' && e.target instanceof HTMLInputElement) {
+                                e.preventDefault();
                                 void handleSubmit();
                             }
                         }}
@@ -223,8 +243,9 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit, passAliasesURL }: Props) 
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button type="button" onClick={modalProps.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button type="submit" color="norm" loading={loadingSubmit} onClick={handleSubmit}>{c('Action')
-                    .t`Create and copy alias`}</Button>
+                <Button type="submit" form={FORM_ID} color="norm" loading={loadingSubmit} disabled={loadingData}>
+                    {c('Action').t`Create and copy alias`}
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

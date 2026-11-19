@@ -68,4 +68,15 @@ describe('CreatePassAliasesForm', () => {
 
         expect(submitNewAlias).toHaveBeenCalledWith(expect.objectContaining({ name: 'Ebay', alias: `ebay${SUFFIX}` }));
     });
+
+    it('submits the form when pressing Enter in the title field', async () => {
+        const { nameInput } = await renderForm();
+
+        // Let the debounced validation run once with the empty title
+        await new Promise((resolve) => setTimeout(resolve, 300));
+
+        await userEvent.type(nameInput, 'Amazon{Enter}');
+
+        expect(submitNewAlias).toHaveBeenCalledWith(expect.objectContaining({ name: 'Amazon' }));
+    });
 });
