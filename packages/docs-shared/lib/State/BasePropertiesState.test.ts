@@ -28,7 +28,7 @@ describe('BasePropertiesState', () => {
   let state: TestPropertiesState
 
   beforeEach(() => {
-    console.error = jest.fn()
+    vi.spyOn(console, 'error').mockImplementation(() => {})
     state = new TestPropertiesState()
   })
 
@@ -60,7 +60,7 @@ describe('BasePropertiesState', () => {
 
   describe('subscribeToAnyProperty', () => {
     it('should call subscriber immediately with all properties', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       state.subscribeToAnyProperty(callback)
 
       expect(callback).toHaveBeenCalledTimes(Object.keys(DEFAULT_VALUES).length)
@@ -70,7 +70,7 @@ describe('BasePropertiesState', () => {
     })
 
     it('should notify subscriber when any property changes', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       state.subscribeToAnyProperty(callback)
       callback.mockClear()
 
@@ -81,7 +81,7 @@ describe('BasePropertiesState', () => {
     })
 
     it('should not call subscriber after unsubscribe', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       const unsubscribe = state.subscribeToAnyProperty(callback)
       callback.mockClear()
 
@@ -92,8 +92,8 @@ describe('BasePropertiesState', () => {
     })
 
     it('should handle multiple any property subscribers', () => {
-      const callback1 = jest.fn()
-      const callback2 = jest.fn()
+      const callback1 = vi.fn()
+      const callback2 = vi.fn()
 
       state.subscribeToAnyProperty(callback1)
       state.subscribeToAnyProperty(callback2)
@@ -109,7 +109,7 @@ describe('BasePropertiesState', () => {
 
   describe('subscribeToAnyEvent', () => {
     it('should notify subscriber when any event is emitted', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       state.subscribeToAnyEvent(callback)
 
       const event = {
@@ -123,7 +123,7 @@ describe('BasePropertiesState', () => {
     })
 
     it('should not call subscriber after unsubscribe', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       const unsubscribe = state.subscribeToAnyEvent(callback)
 
       unsubscribe()
@@ -138,8 +138,8 @@ describe('BasePropertiesState', () => {
     })
 
     it('should handle multiple any event subscribers', () => {
-      const callback1 = jest.fn()
-      const callback2 = jest.fn()
+      const callback1 = vi.fn()
+      const callback2 = vi.fn()
 
       state.subscribeToAnyEvent(callback1)
       state.subscribeToAnyEvent(callback2)
@@ -157,7 +157,7 @@ describe('BasePropertiesState', () => {
     })
 
     it('should notify subscribers for different event types', () => {
-      const callback = jest.fn()
+      const callback = vi.fn()
       state.subscribeToAnyEvent(callback)
 
       const event1 = {
@@ -178,10 +178,10 @@ describe('BasePropertiesState', () => {
     })
 
     it('should handle errors in any event subscribers gracefully', () => {
-      const errorCallback = jest.fn().mockImplementation(() => {
+      const errorCallback = vi.fn().mockImplementation(() => {
         throw new Error('Subscriber error')
       })
-      const normalCallback = jest.fn()
+      const normalCallback = vi.fn()
 
       state.subscribeToAnyEvent(errorCallback)
       state.subscribeToAnyEvent(normalCallback)
@@ -201,8 +201,8 @@ describe('BasePropertiesState', () => {
     })
 
     it('should notify both specific and any event subscribers', () => {
-      const specificCallback = jest.fn()
-      const anyCallback = jest.fn()
+      const specificCallback = vi.fn()
+      const anyCallback = vi.fn()
 
       state.subscribeToEvent('testEvent', specificCallback)
       state.subscribeToAnyEvent(anyCallback)
