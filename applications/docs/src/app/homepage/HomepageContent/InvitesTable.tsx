@@ -1,8 +1,4 @@
 import { Avatar } from '../components/atoms'
-import { IcArrowToCenterHorizontal } from '@proton/icons/icons/IcArrowToCenterHorizontal'
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
-import { IcChevronDown } from '@proton/icons/icons/IcChevronDown'
-import { IcCross } from '@proton/icons/icons/IcCross'
 import type { DateFormatter } from '../utils/dateFormatter'
 import { ServerTime } from '../utils/serverTime'
 import { isProtonDocsDocument } from '../utils/mimetype'
@@ -14,6 +10,7 @@ import type { HomepageMessages } from '../messages/defaultHomepageMessages'
 import { useHomepageView } from '../homepageViewContext'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import { Icon } from '../components/Icon'
+import * as Icons from '../components/icons'
 import * as Table from './table'
 import type { AcceptInvitation, ExtendedInvitationDetails } from '../invitationTypes'
 import { useOpenInvitedDocument } from './useOpenInvitedDocument'
@@ -162,7 +159,7 @@ export function InvitesTable(props: InvitesTableProps) {
           onClick={() => setCollapsed(false)}
           className="flex h-[3.375rem] w-full items-center gap-3 px-6 text-[#0284C7]"
         >
-          <IcChevronDown size={4} className="shrink-0" />
+          <Icon data={Icons.chevronDown} className="shrink-0" />
           <span className="text-[.875rem]">{messages.viewInvitations(pendingCount)}</span>
         </button>
       )}
@@ -219,7 +216,7 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
         aria-label={messages.acceptLabel}
         data-testid="accept-invite-button"
       >
-        <IcCheckmark />
+        <Icon data={Icons.checkmark} />
       </IconButton>
       <IconButton
         label={messages.decline}
@@ -229,7 +226,7 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
         aria-label={messages.declineLabel}
         data-testid="reject-invite-button"
       >
-        <IcCross />
+        <Icon data={Icons.cross} />
       </IconButton>
     </div>
   )
@@ -247,7 +244,7 @@ function CollapseButton({ collapse }: CollapseButtonProps) {
       shape="ghost"
       className="ml-auto shrink-0 px-2"
     >
-      <IcArrowToCenterHorizontal className="shrink-0 rotate-90" />
+      <Icon data={Icons.arrowToCenterHorizontal} className="shrink-0 rotate-90" />
     </IconButton>
   )
 }
