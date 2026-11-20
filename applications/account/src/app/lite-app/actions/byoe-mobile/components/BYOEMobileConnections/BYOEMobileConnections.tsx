@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useUser } from '@proton/account/user/hooks';
 import { useBYOEAddresses } from '@proton/activation/src/hooks/useBYOEAddresses';
 import { loadDashboard } from '@proton/activation/src/logic/actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
+import { getIsBYOEAccount } from '@proton/shared/lib/keys/accountType';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { BYOEAddresses } from './BYOEAddresses';
 import { BYOEImports } from './BYOEImports';
@@ -21,6 +24,8 @@ export const BYOEMobileConnections = () => {
     const [dashboardStatus, setDashboardStatus] = useState<DashboardStatus>('loading');
 
     const dispatch = useEasySwitchDispatch();
+    const [user] = useUser();
+    const showReminder = useFlag('InboxByoeNewMessageReminderClient') && getIsBYOEAccount(user);
     const { loading: loadingAddresses } = useBYOEAddresses();
 
     // Latest request, used to ignore the outcome of a request that was aborted or replaced
@@ -70,7 +75,7 @@ export const BYOEMobileConnections = () => {
 
     return (
         <div className="byoe-mobile-connections-content">
-            <BYOEAddresses />
+            <BYOEAddresses showReminder={showReminder} />
             <BYOEImports />
         </div>
     );
