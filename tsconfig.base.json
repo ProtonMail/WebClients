@@ -18,21 +18,7 @@
         "target": "esnext",
         "useDefineForClassFields": false,
         "skipLibCheck": true,
-        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "jest", "node"],
-        "paths": {
-            "@proton/andromeda": ["./packages/wasm/andromeda/*"],
-            "@proton/i18n/*": ["./packages/i18n/*"],
-            "@proton/pack/*": ["./packages/pack/*"],
-            "@proton/polyfill/*": ["./packages/polyfill/*"],
-            "@proton/types/*": ["./packages/types/*"],
-            "@proton/stylelint-config-proton/*": ["./packages/stylelint-config-proton/*"],
-            "proton-pass-extension/*": ["./applications/pass-extension/src/*"],
-            "proton-pass-web/*": ["./applications/pass/src/*"],
-            "proton-pass-desktop/*": ["./applications/pass-desktop/src/*"],
-            "proton-pass-desktop-native": ["./applications/pass-desktop/native/"],
-            "proton-pass-desktop-native/*": ["./applications/pass-desktop/native/*"],
-            "proton-authenticator/*": ["./applications/authenticator/src/*"]
-        }
+        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "jest", "node"]
     },
     "include": ["${configDir}"],
     "exclude": ["**/node_modules/*", "**/dist/*", "**/.*/"]
