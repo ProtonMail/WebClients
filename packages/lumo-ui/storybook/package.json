@@ -1,0 +1,39 @@
+{
+    "name": "lumo-ui-storybook",
+    "private": true,
+    "scripts": {
+        "build": "storybook build --loglevel warn --quiet",
+        "check:types": "tsc --checkers 1",
+        "dev": "storybook dev -p 6007",
+        "lint": "oxlint --quiet"
+    },
+    "dependencies": {
+        "@proton/atoms": "workspace:^",
+        "@proton/colors": "workspace:^",
+        "@proton/components": "workspace:^",
+        "@proton/icons": "workspace:^",
+        "@proton/lumo-ui": "workspace:^",
+        "@proton/pack": "workspace:^",
+        "@proton/styles": "workspace:^",
+        "react": "catalog:",
+        "react-dom": "catalog:",
+        "webpack": "catalog:"
+    },
+    "devDependencies": {
+        "@proton/oxlint-config": "workspace:^",
+        "@proton/types": "workspace:^",
+        "@storybook/addon-docs": "^10.6.7",
+        "@storybook/react-webpack5": "^10.6.7",
+        "@types/node": "catalog:",
+        "@types/react": "catalog:",
+        "@types/react-dom": "catalog:",
+        "@types/webpack-env": "catalog:",
+        "@typescript/native": "catalog:",
+        "mini-css-extract-plugin": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
+        "storybook": "^10.6.7",
+        "terser-webpack-plugin": "^5.6.1",
+        "typescript": "catalog:"
+    }
+}

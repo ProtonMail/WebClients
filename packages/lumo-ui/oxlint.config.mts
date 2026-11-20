@@ -2,6 +2,7 @@ import { createOxlintConfig } from '@proton/oxlint-config/createOxlintConfig';
 import { refObjectNullOverride } from '@proton/oxlint-config/react19';
 
 export default createOxlintConfig({
+    ignorePatterns: ['storybook/**'],
     restrictedImports: {
         // The design library sits below @proton/components and must never reach up into the
         // framework UI, the engine, or any product code — that is what keeps it pure presentation

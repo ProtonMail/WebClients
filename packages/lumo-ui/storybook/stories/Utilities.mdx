@@ -1,0 +1,173 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+import { Page } from './Page';
+import { UtilityClassPattern } from './UtilityClassPattern';
+import { UtilityExamples } from './UtilityExamples';
+
+<Meta title="Foundations/Utility classes" />
+
+<Page
+    eyebrow="Foundations"
+    title="Utility classes"
+    description={
+        <>
+            Use Proton utility classes for layout and spacing, and Lumo utility classes for token-based colors,
+            typography, and visual effects. Lumo utility classes are prefixed with <code>lumo-</code> to avoid
+            collisions with existing utility classes. Explore examples and supported class names below.
+        </>
+    }
+>
+    <br />
+    <aside className="ds-page__callout" role="note">
+        Prefer existing Lumo or Proton utility classes over referencing token CSS variables directly. Use Proton utility
+        classes for layout and spacing, and Lumo utility classes for visual styles. Use token CSS variables in custom
+        SCSS when no suitable utility class exists.
+    </aside>
+    <section className="ds-section">
+        <h2>Utility class examples</h2>
+        <UtilityExamples />
+    </section>
+    <section className="ds-section">
+        <h2>Utility class reference</h2>
+        <div className="ds-table">
+            <table className="ds-utility-table">
+                <thead>
+                    <tr>
+                        <th>Family</th>
+                        <th>Classes / supported values</th>
+                        <th>Avoid in Lumo</th>
+                        <th>Behavior</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Foreground</td>
+                        <td>
+                            <code>lumo-color-glyph</code>, <code>lumo-color-glyph-mid</code>,{' '}
+                            <code>lumo-color-signal-danger</code>
+                        </td>
+                        <td>
+                            <code>color-norm</code>, <code>color-weak</code>, etc. Theme variables such as{' '}
+                            <code>--text-norm</code> and <code>--text-weak</code>.
+                        </td>
+                        <td>Text and icons inheriting currentColor.</td>
+                    </tr>
+                    <tr>
+                        <td>Background</td>
+                        <td>
+                            <code>lumo-bg-panel</code>, <code>lumo-bg-control-fill</code>,{' '}
+                            <code>lumo-bg-control-brand-fill</code>
+                        </td>
+                        <td>
+                            <code>bg-norm</code>, <code>bg-weak</code>, <code>bg-elevated</code>, etc.
+                        </td>
+                        <td>Background only; choose a compatible foreground.</td>
+                    </tr>
+                    <tr>
+                        <td>Border</td>
+                        <td>
+                            <code>lumo-border</code>, <code>lumo-border-mid</code>, <code>lumo-border-control</code>{' '}
+                            with translucent, mid, strong, focus variants;{' '}
+                            <UtilityClassPattern value="lumo-border-artifact-{doc,code,web}" />
+                        </td>
+                        <td>
+                            <code>border-norm</code>, <code>border-weak</code>, etc.
+                        </td>
+                        <td>Color only. Supply border width and style separately.</td>
+                    </tr>
+                    <tr>
+                        <td>Typography</td>
+                        <td>
+                            <UtilityClassPattern value="lumo-{headline,title,body,label}-{size}" />,{' '}
+                            <code>lumo-font-mono</code>
+                        </td>
+                        <td>
+                            <code>text-sm</code>, <code>text-lg</code>, <code>text-monospace</code>, etc.
+                        </td>
+                        <td>Use the typography roles in Tokens; not every size exists for every family.</td>
+                    </tr>
+                    <tr>
+                        <td>Radius</td>
+                        <td>
+                            <UtilityClassPattern value="lumo-radius-{4,8,12,16,28,full}" />
+                        </td>
+                        <td>
+                            <code>rounded</code>, <code>rounded-lg</code>, <code>rounded-xl</code>, etc.
+                        </td>
+                        <td>Rounds the border box; does not clip children.</td>
+                    </tr>
+                    <tr>
+                        <td>Elevation</td>
+                        <td>
+                            <UtilityClassPattern value="lumo-elevation-{1,2,3,4}" />
+                        </td>
+                        <td>
+                            <code>shadow-norm</code>, <code>shadow-raised</code>, <code>shadow-lifted</code>
+                        </td>
+                        <td>Shadow only; does not change background or z-index.</td>
+                    </tr>
+                    <tr>
+                        <td>Opacity</td>
+                        <td>
+                            <UtilityClassPattern value="lumo-opacity-{4,5,8,10,16,20,30,48}" />
+                        </td>
+                        <td>
+                            <code>opacity-30</code>, <code>opacity-50</code>, <code>opacity-70</code>, etc.
+                        </td>
+                        <td>Percentages; affects the entire element and its children.</td>
+                    </tr>
+                    <tr>
+                        <td>Icon size</td>
+                        <td>
+                            <UtilityClassPattern value="lumo-icon-size-{12,14,16,18,20,24}" />
+                        </td>
+                        <td>
+                            <code>icon-size-3</code>, <code>icon-size-4</code>, etc.
+                        </td>
+                        <td>Logical width and height; does not change stroke.</td>
+                    </tr>
+                    <tr>
+                        <td>Duration</td>
+                        <td>
+                            <UtilityClassPattern value="lumo-duration-{100,150,200,300}" />
+                        </td>
+                        <td>
+                            <code>--transition-duration</code>
+                        </td>
+                        <td>Transition and animation duration; zero for reduced motion.</td>
+                    </tr>
+                    <tr>
+                        <td>Easing</td>
+                        <td>
+                            <UtilityClassPattern value="lumo-easing-{standard,enter,linear,lottie}" />
+                        </td>
+                        <td>
+                            <code>--transition-easing</code>
+                        </td>
+                        <td>Timing only. Does not start an animation.</td>
+                    </tr>
+                    <tr>
+                        <td>Spacing</td>
+                        <td>
+                            <UtilityClassPattern value="p-{0,0.5,1,1.5,2,2.5,3,4,5,6,7,8,10,11,12,14,16,20}" />
+                            <br />
+                            Also <code>{'m-*'}</code>, <code>{'gap-*'}</code>, and directional forms{' '}
+                            <UtilityClassPattern value="p{x,y,t,r,b,l}-*" />,{' '}
+                            <UtilityClassPattern value="m{x,y,t,r,b,l}-*" />, and{' '}
+                            <UtilityClassPattern value="gap-{x,y}-*" />.
+                        </td>
+                        <td>—</td>
+                        <td>
+                            Lumo adds a <code>2.5</code> step (10 px) to Proton’s padding, margin, and gap utilities,
+                            including responsive variants.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <p className="ds-page__note">
+        Border utility classes set color only. State-named utility classes do not create interactions. Responsive
+        prefixes work across the spacing scale, for example <code>md:p-2</code> and <code>md:p-2.5</code>.
+    </p>
+</Page>

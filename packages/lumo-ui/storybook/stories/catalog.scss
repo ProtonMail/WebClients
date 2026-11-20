@@ -1,0 +1,413 @@
+@use '~@proton/colors/themes/dist/duotone.theme' as *;
+@use '~@proton/styles/scss/proton-ui-storybook' as *;
+@use '~@proton/lumo-ui/styles/lumo-design-system.scss' with (
+	$scope: '.lumo-ui'
+);
+
+@font-face {
+	font-family: Inter;
+	src: url(~@proton/styles/assets/fonts/InterVariable.woff2) format('woff2');
+	font-weight: 100 900;
+	font-display: swap;
+}
+
+body {
+	overflow: auto;
+}
+
+// Documentation chrome stays neutral; component previews retain their own theme scope.
+.sbdocs-wrapper {
+	padding: 0 !important;
+	background: #faf9fc !important;
+}
+
+.sbdocs-content {
+	max-inline-size: none !important;
+}
+
+.ds-page {
+	max-inline-size: 1320px;
+	margin-inline: auto;
+	padding: clamp(24px, 5vw, 72px);
+	color: #242032;
+	font:
+		normal 14px/1.65 Inter,
+		sans-serif;
+
+	// MDX generates these content elements without class hooks.
+	h1,
+	h2,
+	h3,
+	p {
+		margin: 0;
+	}
+
+	h2 {
+		border: 0;
+		padding: 0;
+		font:
+			600 22px/1.35 Inter,
+			sans-serif;
+		letter-spacing: -0.5px;
+	}
+
+	h3 {
+		font:
+			600 16px/1.4 Inter,
+			sans-serif;
+	}
+
+	p + p {
+		margin-block-start: 12px;
+	}
+
+	code {
+		overflow-wrap: anywhere;
+		font: 12px/1.6 monospace;
+	}
+
+	code:not(.sb-unstyled code) {
+		display: inline-block;
+		max-inline-size: 100%;
+		white-space: normal;
+		padding-block: 2px;
+		padding-inline: 4px;
+		border: 1px solid #e1d8ee;
+		border-radius: 4px;
+		background: #f1eef8;
+		color: #55446e;
+		box-decoration-break: clone;
+	}
+
+	// Documentation links must not override the theme or focus states of catalog links.
+	a:not(:where(.sb-unstyled a)) {
+		color: #6439ed;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:focus-visible {
+			outline: 2px solid #6439ed;
+			outline-offset: 4px;
+		}
+	}
+
+	table {
+		margin: 0;
+		inline-size: 100%;
+		border-collapse: collapse;
+		text-align: start;
+	}
+
+	th,
+	td {
+		text-align: start;
+		padding: 16px;
+		border-block-end: 1px solid #e9e5f0;
+		vertical-align: top;
+	}
+
+	th {
+		font-weight: 500;
+	}
+
+	thead {
+		background: #f1eef8;
+		color: #655b7a;
+		font-size: 12px;
+	}
+
+	tbody {
+		background: white;
+	}
+
+	// Override MDX's zebra rows while preserving each table's theme surface.
+	table tbody tr:nth-of-type(n) {
+		background: transparent;
+	}
+
+	& &__title {
+		max-inline-size: 820px;
+		margin-block: 20px;
+		font:
+			600 clamp(28px, 3vw, 40px)/1.1 Inter,
+			sans-serif;
+		letter-spacing: -1px;
+	}
+
+	&__eyebrow {
+		display: block;
+		padding-block-end: 16px;
+		color: #786496;
+		font:
+			600 11px/1.5 Inter,
+			sans-serif;
+		letter-spacing: 1.2px;
+		text-transform: uppercase;
+	}
+
+	&__description {
+		max-inline-size: 700px;
+		font-size: 17px;
+		color: #766c84;
+	}
+
+	&__callout {
+		padding-block: 16px;
+		padding-inline: 20px;
+		border-inline-start: 3px solid #6439ed;
+		border-radius: 4px;
+		background: #f1eef8;
+		color: #55446e;
+	}
+
+	&__note {
+		color: #766c84;
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 12px;
+		padding-block-start: 32px;
+		margin-block-start: 64px;
+		border-block-start: 1px solid #e9e5f0;
+		color: #8a8096;
+		font-size: 12px;
+	}
+}
+
+.ds-section {
+	margin-block: 48px;
+	scroll-margin-block-start: 24px;
+
+	h2 {
+		margin-block-end: 12px;
+	}
+
+	&__heading {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-block-end: 16px;
+	}
+
+	&__count {
+		color: #8a8096;
+		font-size: 12px;
+	}
+
+	&__description {
+		color: #766c84;
+		margin-block-end: 20px;
+	}
+
+	&__description + .ds-table {
+		margin-block-start: 12px;
+	}
+}
+
+.ds-table {
+	overflow: auto;
+	border: 1px solid #e9e5f0;
+	border-radius: 12px;
+
+	// One rounded outer border; cells draw only the internal grid.
+	.ds-page & {
+		table {
+			border: 0;
+			border-collapse: separate;
+			border-spacing: 0;
+		}
+
+		th,
+		td {
+			border: 0;
+			border-inline-end: 1px solid #e9e5f0;
+			border-block-end: 1px solid #e9e5f0;
+
+			&:last-child {
+				border-inline-end: 0;
+			}
+		}
+
+		tbody tr:last-child > td,
+		tbody tr:last-child > th {
+			border-block-end: 0;
+		}
+	}
+
+	h2 + & {
+		margin-block-start: 12px;
+	}
+}
+
+.ds-utility-table th:first-child {
+	inline-size: 7rem;
+}
+
+.ds-page .ds-utility-table td code {
+	display: inline;
+	margin: 0;
+	overflow-wrap: normal;
+	font: 12px/1.6 monospace;
+	white-space: nowrap;
+
+	&.ds-utility-table__pattern {
+		white-space: normal;
+
+		span {
+			font: inherit;
+			white-space: nowrap;
+		}
+	}
+}
+
+.ds-token-table {
+	min-inline-size: 680px;
+
+	th:first-child {
+		inline-size: 38%;
+	}
+
+	&__value {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	&__swatch {
+		flex-shrink: 0;
+		inline-size: 32px;
+		block-size: 32px;
+		border: 1px solid #00000014;
+		border-radius: 8px;
+	}
+}
+
+.ds-demo-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	gap: 24px;
+	padding-block: 28px;
+}
+
+.ds-demo {
+	display: grid;
+	justify-items: center;
+	gap: 20px;
+
+	&__shape,
+	&__elevation {
+		inline-size: 80px;
+		block-size: 80px;
+	}
+
+	&__elevation {
+		display: grid;
+		place-items: center;
+		color: #89759e;
+		font-size: 24px;
+	}
+}
+
+.lumo-catalog {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+	gap: 16px;
+	margin-block-end: 24px;
+
+	// State matrices follow the Figma board: variant/size rows, interaction-state columns.
+	&--matrix {
+		grid-template-columns: 1fr;
+	}
+
+	// The search example supplies its own clear button.
+	&__search-input::-webkit-search-cancel-button {
+		display: none;
+	}
+
+	// Button styles load after structural utilities; retain the trigger’s label/caret row.
+	&__menu-trigger.button {
+		display: inline-flex;
+	}
+
+	// Keep the real notification in the catalog flow instead of its floating app position.
+	&__toast .notifications-container,
+	&__toast .notification {
+		position: relative;
+		inset: auto;
+		max-inline-size: 100%;
+		transform: none;
+		animation: none;
+	}
+
+	&__mapping {
+		font-size: 12px;
+	}
+
+	&__code {
+		align-self: flex-start;
+		max-inline-size: 100%;
+		padding-block: 3px;
+		padding-inline: 6px 5px;
+	}
+
+	code#{&}__code {
+		font-weight: 600;
+	}
+}
+
+.ds-state-matrix {
+	&__scroll {
+		overflow-x: auto;
+	}
+
+	.ds-page & {
+		min-inline-size: 680px;
+		table-layout: fixed;
+
+		thead,
+		tbody {
+			background: transparent;
+			color: inherit;
+		}
+
+		th,
+		td {
+			border: 0;
+			padding-block: 16px;
+			padding-inline: 12px;
+			text-align: center;
+			vertical-align: middle;
+			background: transparent;
+		}
+
+		th:first-child {
+			inline-size: 130px;
+			text-align: start;
+		}
+
+		th {
+			color: var(--text-weak);
+			font:
+				500 12px/1.5 Inter,
+				sans-serif;
+		}
+
+		small {
+			display: block;
+			font-weight: normal;
+		}
+
+		&.ds-state-matrix--paired-rows tbody tr:nth-child(2n) td,
+		&.ds-state-matrix--paired-rows tbody tr:nth-child(2n) th {
+			padding-block-end: 28px;
+		}
+	}
+}

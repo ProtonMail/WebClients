@@ -1,0 +1,68 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+import { Page } from './Page';
+import { ThemeStyles, scopeClass } from './ThemeScope';
+
+<Meta title="Components/Introduction" />
+
+<Page
+    eyebrow="Components"
+    title="Components"
+    description="Browse the components used in Lumo, with light and dark previews and common interaction states. The two groups distinguish design-system coverage, not where the implementation lives."
+>
+    <section className="ds-section">
+        <h2>Two component groups</h2>
+        <ul>
+            <li>
+                <strong>Lumo components</strong> correspond to components in Lumo’s Figma design system, including both
+                Web and Desktop designs. Many reuse Proton components styled with Lumo tokens; being listed here does
+                not mean they have a separate Lumo implementation.
+            </li>
+            <li>
+                <strong>Other Proton components</strong> are shared Proton components used in the Lumo app that do not
+                have a corresponding entry in the Lumo Figma design system. They are shown with Lumo styling too.
+            </li>
+        </ul>
+    </section>
+    <section className="ds-section">
+        <h2>Reading a catalog label</h2>
+        <ThemeStyles />
+        <div className="sb-unstyled lumo-catalog">
+            <div
+                className={`lumo-catalog__panel min-w-0 p-6 border lumo-border lumo-radius-16 lumo-color-glyph lumo-bg-panel ${scopeClass('light')}`}
+            >
+                <div
+                    className="lumo-catalog__mapping flex flex-column gap-1 mb-6 lumo-color-glyph-mid"
+                    style={{ marginBlockEnd: 0 }}
+                >
+                    <span>Web/Search field · Web/Text input</span>
+                    <code className="lumo-catalog__code border lumo-border-mid lumo-radius-4 lumo-color-glyph-brand-text lumo-bg-control-fill-mid">
+                        Input
+                    </code>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li>
+                The first line lists the names in Figma. <code>Web/</code> and <code>Desktop/</code> identify the design
+                families; a middle dot separates designs represented by the same example.
+            </li>
+            <li>
+                The code badge names the implemented component. Here, both designs use <code>Input</code>. Multiple code
+                names mean the example combines several components.
+            </li>
+        </ul>
+        <p>
+            These labels connect designs to code; they are not import paths. A Desktop design label does not imply a
+            separate native desktop implementation in this catalog.
+        </p>
+    </section>
+    <section className="ds-section">
+        <h2>Reading the previews</h2>
+        <p>
+            Light and dark panels show the same component with each theme’s tokens. In state grids, rows identify
+            variants and columns show interaction states. Hover, pressed, and focus styling is held visible for
+            comparison; states can look identical when the implementation shares their styles.
+        </p>
+    </section>
+</Page>

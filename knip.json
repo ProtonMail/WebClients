@@ -336,6 +336,11 @@
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
+        "packages/lumo-ui/storybook": {
+            "entry": ["stories/**/*.mdx"],
+            "project": ["stories/**/*.{ts,tsx,mdx}"],
+            "ignoreDependencies": ["@proton/colors", "@proton/styles"]
+        },
         "packages/mail": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]

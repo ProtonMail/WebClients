@@ -2,6 +2,7 @@
 // The app uses html:root; embedded consumers keep the adapter inside .lumo-ui.
 @mixin overrides($scope) {
 	$component-scope: $scope;
+	$focus-fade: var(--lumo-duration-100);
 
 	// html:root is needed for theme variables, but controls need only one scope class.
 	@if $scope == 'html:root' {
@@ -230,8 +231,27 @@
 			border-color: var(--button-default-border-color, transparent);
 		}
 
-		// Keyboard focus uses the design's 2px ring and 2px offset. Retain Proton's
-		// explicit focus-visible class; loading/disabled controls keep their own behavior.
+		// Keep ring geometry fixed and fade only its color. In forced colors, draw the outline only on focus.
+		&:is(.button, .button-underline, .link, .tabs-list-link, .checkbox-fakecheck),
+		&.toggle-container::after,
+		&.tabs--underline > .tabs-nav .tabs-list-link > span[data-title] {
+			outline: 2px solid transparent;
+			outline-offset: 2px;
+
+			@media (forced-colors: active) {
+				outline: none;
+			}
+		}
+
+		&:is(.button, .button-underline, .link, .tabs-list-link, .checkbox-fakecheck),
+		&.toggle-container::after {
+			transition-property: background-color, border-color, color, opacity, outline-color;
+			transition-duration:
+				var(--lumo-duration-150), var(--lumo-duration-150), var(--lumo-duration-150), var(--lumo-duration-150),
+				$focus-fade;
+			transition-timing-function: var(--lumo-easing-standard);
+		}
+
 		&:is(.button, .button-underline, .link, .tabs-list-link):is(
 				:focus-visible,
 				:has(:focus-visible),
@@ -239,6 +259,11 @@
 			) {
 			outline: 2px solid var(--lumo-control-border-focus);
 			outline-offset: 2px;
+			box-shadow: none;
+		}
+
+		&:is(.button-underline, .tabs-list-link):is(:focus-visible, :has(:focus-visible), .display-focus-visible)::after {
+			border-color: transparent;
 			box-shadow: none;
 		}
 
@@ -303,14 +328,16 @@
 			}
 		}
 
-		// Preserve adornment layout, validation, and explicit compact size variants.
+		// Fade the field's inset focus stroke without changing its width.
 		&.input:not(.unstyled),
 		&.textarea:not(.unstyled),
 		&.field,
 		&.field-icon-container,
 		&.select {
 			border-radius: var(--lumo-radius-8);
-			transition-duration: var(--lumo-duration-150);
+			box-shadow: inset 0 0 0 1px transparent;
+			transition-property: background-color, border-color, box-shadow, color;
+			transition-duration: var(--lumo-duration-150), $focus-fade, $focus-fade, var(--lumo-duration-150);
 			transition-timing-function: var(--lumo-easing-standard);
 		}
 
@@ -376,6 +403,11 @@
 			box-shadow: none;
 		}
 
+		&.checkbox-input:focus-visible:not(:checked, [aria-invalid='true']) + .checkbox-fakecheck,
+		&.radio:focus-visible:not(:checked, [aria-invalid='true']) + .radio-fakeradio {
+			border-color: var(--lumo-control-border-strong);
+		}
+
 		&.checkbox-input[disabled] + .checkbox-fakecheck,
 		&.checkbox-input:checked[disabled] + .checkbox-fakecheck,
 		&.checkbox-input:checked:indeterminate[disabled] + .checkbox-fakecheck {
@@ -424,6 +456,7 @@
 			// Proton's hover/loading selectors also use these variables for the thumb.
 			--field-hover: var(--lumo-control-fill-contrast);
 			--interaction-norm-hover: var(--lumo-control-fill-contrast);
+			--lumo-toggle-track-border: var(--lumo-control-border-strong);
 
 			inline-size: var(--lumo-space-32);
 			min-block-size: var(--lumo-space-20);
@@ -433,7 +466,7 @@
 
 			&::after {
 				inline-size: 100%;
-				border: 1px solid var(--lumo-control-border-strong);
+				border: 1px solid var(--lumo-toggle-track-border);
 				border-radius: var(--lumo-radius-full);
 			}
 
@@ -447,11 +480,9 @@
 			}
 
 			&.toggle-container--checked {
-				background-color: var(--lumo-control-brand-fill);
+				--lumo-toggle-track-border: transparent;
 
-				&::after {
-					border-color: transparent;
-				}
+				background-color: var(--lumo-control-brand-fill);
 
 				&::before {
 					transform: translateX(var(--lumo-space-10));
@@ -486,6 +517,7 @@
 		}
 
 		&.toggle-container:not(.toggle-container--disabled):has(:focus-visible)::after {
+			border-color: var(--lumo-toggle-track-border);
 			outline: 2px solid var(--lumo-control-border-focus);
 			outline-offset: 2px;
 			box-shadow: none;
@@ -580,6 +612,9 @@
 			padding-block: var(--lumo-space-8);
 			padding-inline: var(--lumo-space-16) var(--lumo-space-8);
 			box-shadow: var(--lumo-elevation-3);
+
+			// Allow action rings to remain visible while fading out after blur.
+			overflow: visible;
 		}
 
 		&.notification .button {
@@ -686,6 +721,21 @@
 			padding-block: var(--lumo-space-10);
 			color: var(--lumo-glyph-mid);
 
+			&,
+			&:is(:focus-visible, :has(:focus-visible), .display-focus-visible) {
+				outline: none;
+			}
+
+			> span[data-title] {
+				border-radius: var(--lumo-radius-4);
+				transition: outline-color $focus-fade var(--lumo-easing-standard);
+			}
+
+			&:is(:focus-visible, :has(:focus-visible), .display-focus-visible) > span[data-title] {
+				outline: 2px solid var(--lumo-control-border-focus);
+				outline-offset: 2px;
+			}
+
 			&[aria-selected='true'] {
 				color: var(--lumo-glyph);
 				border-block-end-color: var(--lumo-glyph-brand-text);
@@ -717,11 +767,6 @@
 			> span::after {
 				font-weight: inherit;
 			}
-
-			&:focus-visible::after {
-				border-color: transparent;
-				box-shadow: none;
-			}
 		}
 
 		&.tabs--modern > .tabs-nav .tabs-list-item:not(.tabs-list-item--selected):hover::after {
@@ -739,11 +784,9 @@
 
 		&.dropdown-item-button,
 		&.dropdown-item-link,
-		&.checkbox-fakecheck,
 		&.checkbox-fakecheck-img,
 		&.radio-fakeradio::before,
-		&.toggle-container::before,
-		&.toggle-container::after {
+		&.toggle-container::before {
 			transition-duration: var(--lumo-duration-150);
 			transition-timing-function: var(--lumo-easing-standard);
 		}
@@ -769,9 +812,12 @@
 			&:is(
 				.button,
 				.button-underline,
+				.link,
 				.input,
 				.textarea,
 				.field,
+				.field-icon-container,
+				.select,
 				.toggle-container,
 				.tabs-list-link,
 				.panel-section--content
@@ -788,7 +834,8 @@
 			&.checkbox-fakecheck-img,
 			&.radio-fakeradio::before,
 			&.toggle-container::before,
-			&.toggle-container::after {
+			&.toggle-container::after,
+			&.tabs--underline > .tabs-nav .tabs-list-link > span[data-title] {
 				transition-duration: 0s;
 			}
 
