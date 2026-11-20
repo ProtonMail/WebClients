@@ -120,7 +120,9 @@ export function sendMessageWithRedux(
         let accumulatedContent = recoveryRecord?.message.content ?? '';
         let accumulatedTitle = '';
         let persistedTitle: string | undefined = undefined;
-        let sawToolActivity = false;
+        let sawToolActivity =
+            recoveryRecord?.checkpoint.phase === 'completed' &&
+            Boolean(recoveryRecord.message.toolCall || recoveryRecord.message.toolResult);
         // Filenames generated for images during this response. The Redux store may not yet
         // reflect just-added attachments when the next image_data chunk arrives, so we track
         // them locally to keep collision suffixes ((2), (3), …) correct within one response.

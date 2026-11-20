@@ -160,33 +160,6 @@ export class LumoApiClient {
 
         const parallelTasks: Promise<void>[] = [];
 
-        if (titleSourceText !== null && !resume) {
-            const titleTurns: Turn[] = [
-                { role: Role.User, content: titleSourceText },
-                { role: Role.Assistant, content: '' },
-            ];
-            parallelTasks.push(
-                this.runTargetedGeneration(
-                    api,
-                    titleTurns,
-                    'title',
-                    endpoint,
-                    signal,
-                    chunkCallback,
-                    encryption,
-                    enableU2LEncryption,
-                    modelTier === 'apertus-15' ? 'apertus-15' : 'lumo-lite',
-                    featureFlags,
-                    clientType
-                ).catch((error) => {
-                    if (error?.name === 'AbortError') {
-                        return;
-                    }
-                    console.warn('Title generation failed:', error);
-                })
-            );
-        }
-
         if (enableSuggestedQuestions && !resume) {
             parallelTasks.push(
                 this.runTargetedGeneration(
@@ -227,18 +200,85 @@ export class LumoApiClient {
         let recovery = requestedRecovery;
         let currentTurns = resume?.turns ?? turns;
         let recoveryState = resume;
+        let titleState = resume?.title;
+        let titleStarted = false;
+        let titleInterrupted = false;
+        let acceptingCheckpoints = true;
+        let checkpointQueue = Promise.resolve();
         const saveCheckpoint = async (allowDisable = false): Promise<void> => {
-            if (!recovery || !recoveryState) {
+            if (!acceptingCheckpoints || !recovery || !recoveryState) {
                 return;
             }
-            const result = await recovery.checkpoint(recoveryState, encryption);
+            const checkpoint: GenerationRecoveryState = {
+                ...recoveryState,
+                ...(titleState ? { title: titleState } : {}),
+            };
+            const activeRecovery = recovery;
+            const save = checkpointQueue.then(() => activeRecovery.checkpoint(checkpoint, encryption));
+            checkpointQueue = save.then(
+                () => undefined,
+                () => undefined
+            );
+            const result = await save;
             if (result === 'disabled') {
                 if (!allowDisable) {
                     throw new GenerationInterruptedError();
                 }
                 recovery = undefined;
                 recoveryState = undefined;
+                titleState = undefined;
             }
+        };
+        const runTitleGeneration = async (): Promise<void> => {
+            if (titleState?.phase === 'completed') {
+                const content = titleState.turns.at(-1)?.content;
+                if (content) {
+                    await chunkCallback?.({ type: 'token_data', target: 'title', content, count: 0 });
+                }
+                return;
+            }
+            let content = '';
+            try {
+                await this.runTargetedGeneration(
+                    api,
+                    titleState?.turns ?? [
+                        { role: Role.User, content: titleSourceText ?? '' },
+                        { role: Role.Assistant, content: '' },
+                    ],
+                    'title',
+                    endpoint,
+                    signal,
+                    async (message) => {
+                        if (message.type === 'token_data' && message.target === 'title') {
+                            content += message.content;
+                        }
+                        await chunkCallback?.(message);
+                    },
+                    encryption,
+                    enableU2LEncryption,
+                    modelTier === 'apertus-15' ? 'apertus-15' : 'lumo-lite',
+                    featureFlags,
+                    clientType,
+                    { recoveryState: titleState, resumeStream: Boolean(resume?.title) }
+                );
+            } catch (error) {
+                if (error instanceof GenerationInterruptedError) {
+                    titleInterrupted = true;
+                    return;
+                }
+                console.warn('Title generation failed', { name: error instanceof Error ? error.name : 'UnknownError' });
+            }
+            if (titleState) {
+                titleState = {
+                    ...titleState,
+                    phase: 'completed',
+                    turns: [...this.stripTrailingEmptyAssistant(titleState.turns), { role: Role.Assistant, content }],
+                };
+                await saveCheckpoint();
+            }
+        };
+        const interruptTitle = (): void => {
+            titleInterrupted = true;
         };
         let interrupted = false;
         let finalStatus: Status = 'failed';
@@ -252,14 +292,26 @@ export class LumoApiClient {
                 const target = resume?.target ?? 'message';
                 if (recovery && (!recoveryState || recoveryState.phase === 'ready')) {
                     const allowDisable = recoveryState === undefined && resume === undefined;
+                    if (!titleStarted && !resume && titleSourceText !== null) {
+                        titleState = newRecoveryState([{ role: Role.User, content: titleSourceText }], 'title');
+                    }
                     const previousJobs = recoveryState
                         ? [
                               ...(recoveryState.previousJobs ?? []),
                               { jobId: recoveryState.jobId, token: recoveryState.token },
                           ]
                         : [];
+                    if (!recoveryState && titleState) {
+                        previousJobs.push({ jobId: titleState.jobId, token: titleState.token });
+                    }
                     recoveryState = { ...newRecoveryState(currentTurns, target), previousJobs, round: rounds };
                     await saveCheckpoint(allowDisable);
+                }
+                if (!titleStarted) {
+                    titleStarted = true;
+                    if (titleState || (titleSourceText !== null && !resume)) {
+                        parallelTasks.push(runTitleGeneration().catch(interruptTitle));
+                    }
                 }
                 if (recoveryState?.phase === 'tool-running') {
                     const retryConfirmed = await recovery?.confirmToolRetry?.();
@@ -400,12 +452,17 @@ export class LumoApiClient {
             }
 
             await Promise.all(parallelTasks);
+            if (titleInterrupted && (!signal?.aborted || signal.reason instanceof GenerationInterruptedError)) {
+                throw new GenerationInterruptedError();
+            }
         } catch (error) {
             interrupted =
                 error instanceof GenerationInterruptedError || error instanceof ToolRetryConfirmationRequiredError;
             finalStatus = 'failed';
             throw error;
         } finally {
+            acceptingCheckpoints = false;
+            await checkpointQueue;
             if (finishCallback && !interrupted) {
                 await finishCallback(finalStatus);
             }
@@ -743,7 +800,8 @@ export class LumoApiClient {
         enableU2LEncryption: boolean,
         modelTier: AssistantCallOptions['modelTier'] = 'auto',
         featureFlags?: AssistantCallOptions['featureFlags'],
-        clientType?: LumoClientType
+        clientType?: LumoClientType,
+        recoveryOptions: { recoveryState?: GenerationRecoveryState; resumeStream?: boolean } = {}
     ): Promise<void> {
         const request = await this.prepareGenerationRequest(turns, encryption, {
             enableExternalTools: false,
@@ -781,6 +839,7 @@ export class LumoApiClient {
                 modelTier,
                 featureFlags,
                 clientType,
+                ...recoveryOptions,
             }
         );
     }

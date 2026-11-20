@@ -111,7 +111,17 @@ describe('returning to a running generation', () => {
         expect(sendMessageWithRedux).not.toHaveBeenCalled();
     });
 
-    const failures = ['none', 'read', 'restore', 'retrieval', 'ghost', 'completed-tool', 'ownership', 'busy'];
+    const failures = [
+        'none',
+        'read',
+        'restore',
+        'retrieval',
+        'ghost',
+        'completed-tool',
+        'pending-title',
+        'ownership',
+        'busy',
+    ];
     it.each(failures)('replays a checkpoint after a %s failure', async (failure) => {
         const timestamp = '2026-10-30T00:00:00Z';
         const record: RecoveryRecord = {
@@ -142,6 +152,11 @@ describe('returning to a running generation', () => {
             attachments: [],
         };
         record.conversation.ghost = failure === 'ghost';
+        if (failure === 'pending-title') {
+            record.checkpoint.phase = 'completed';
+            record.checkpoint.title = newRecoveryState([{ role: Role.User, content: 'Hello' }], 'title');
+            record.message.content = 'Completed answer';
+        }
         if (failure === 'completed-tool') {
             record.checkpoint.phase = 'completed';
             record.message.content = '';
