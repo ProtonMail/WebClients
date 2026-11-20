@@ -1895,6 +1895,15 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Continue with Bitcoin": [
+        "ビットコインで続ける"
+      ],
+      "Skip to main content": [
+        "メインコンテンツへスキップ"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "${ planTitle }にアップグレード"
       ]
     },
     "action": {
@@ -7505,6 +7514,24 @@
       ],
       "Zero keys reactivated": [
         "ゼロキーが再有効化されました"
+      ],
+      "Failed to get invitee keys": [
+        "招待者の暗号鍵の取得に失敗しました"
+      ],
+      "Failed to load the membership": [
+        "メンバーシップの読み込みに失敗しました"
+      ],
+      "Failed to load the membership data": [
+        "メンバーシップデータの読み込みに失敗しました"
+      ],
+      "Failed to verify membership": [
+        "メンバーシップの確認に失敗しました"
+      ],
+      "Some invitations could not be loaded": [
+        "一部の招待を読み込めませんでした"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "移行されたユーザーを読み込むことができませんでした。ページをリロードし、再度お試しください。"
       ]
     },
     "error": {
@@ -17609,6 +17636,18 @@
       ],
       "Recovery checklist": [
         "復旧チェックリスト"
+      ],
+      "1-4 emails per year": [
+        "年に 1-4通のメール"
+      ],
+      "Email subscriptions": [
+        "メール購読"
+      ],
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "最新のプライバシーニュースと${ BRAND_NAME }の世界での最新情報をお届けします。"
+      ],
+      "Reminders to keep your recovery methods up to date.": [
+        "復旧方法を最新の状態に保つためのリマインダー。"
       ]
     },
     "ngc_access_banner: action": {
@@ -27028,6 +27067,58 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet },${ lumo },Scribeが含まれます"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } ストレージ"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "12ヶ月で ${ yearlyTotal } を請求"
+      ],
+      "Early access to new features": [
+        "新機能への早期アクセス"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "${ unlimitedName } のすべての機能， さらに："
+      ],
+      "Exclusive to subscribers": [
+        "購読者限定"
+      ],
+      "Feature": [
+        "機能"
+      ],
+      "Included": [
+        "含まれる"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "専用の特別サーバーをあなたに"
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "追加料金なしで${ BRAND_NAME }を使用"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "追加料金なしで新しいサービスを利用でき、次の早期アクセスを入手します。"
+      ],
+      "Not included": [
+        "含まれません"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "プライバシースイートには、安全なメール、${ VPN_SHORT_APP_NAME } 、クラウドストレージ、そしてパスワードマネージャーが1つのバンドルに含まれています。"
+      ],
+      "Your plan": [
+        "あなたのプラン"
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "${ cycle } ヶ月"
+      ],
+      "Premium calendar features": [
+        "プレミアムカレンダー機能"
       ]
     }
   }

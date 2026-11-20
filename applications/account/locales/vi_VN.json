@@ -1859,6 +1859,21 @@
       ],
       "Zoom out": [
         "Thu nhỏ"
+      ],
+      "Go to today": [
+        "Đến ngày hôm nay"
+      ],
+      "Next contact": [
+        "Liên hệ tiếp theo"
+      ],
+      "Preview logs": [
+        "Xem trước nhật ký"
+      ],
+      "Previous contact": [
+        "Liên hệ trước đó"
+      ],
+      "Skip to main content": [
+        "Chuyển đến nội dung chính"
       ]
     },
     "action": {
@@ -1973,6 +1988,12 @@
       ],
       "Writing assistant seats": [
         "Chỗ trợ lý soạn thảo"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } chỗ trợ lý soạn thảo"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } chỗ ngồi cho trợ lý viết ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Address action": {
@@ -2079,6 +2100,9 @@
       ],
       "Permission revoked": [
         "Đã thu hồi quyền"
+      ],
+      "Sign-in": [
+        "Đăng nhập"
       ]
     },
     "Admin": {
@@ -7977,6 +8001,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Khóa xác thực hai yếu tố đã sẵn sàng để sử dụng."
+      ],
+      "Still waiting?": [
+        "Vẫn đang chờ?"
+      ],
+      "Touch your security key to continue.": [
+        "Hãy chạm khoá bảo mật của bạn để tiếp tục."
       ]
     },
     "fido2: Label": {
@@ -12500,6 +12530,12 @@
       ],
       "Zoom meeting": [
         "Cuộc họp Zoom"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Các tệp nhật ký giúp chúng ta hiểu được những gì đã xảy ra trước khi sự cố xuất hiện. Chúng bao gồm các thao tác trong ứng dụng và thông báo lỗi, nhưng không chứa nội dung tin nhắn."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Các suất sử dụng công cụ hỗ trợ viết không còn được bán nữa."
       ]
     },
     "info": {
@@ -12519,6 +12555,9 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Giúp viết, trả lời và soát lỗi email. Nếu bị vô hiệu hóa, chỉ quản trị viên mới có quyền truy cập. Quản lý cho từng người dùng trong ${ userAndAddresses } hoặc ${ addMoreSeats }"
+      ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses }.": [
+        "Hỗ trợ soạn thảo, phản hồi và hiệu đính email. Nếu tính năng này bị tắt, chỉ quản trị viên mới có quyền truy cập. Bạn có thể quản lý cài đặt cho từng người dùng tại ${ userAndAddresses }."
       ]
     },
     "Info (sub-heading)": {
@@ -14730,6 +14769,9 @@
       ],
       "ZIP code": [
         "Mã bưu chính"
+      ],
+      "Client version": [
+        "Phiên bản máy khách"
       ]
     },
     "label": {
@@ -14805,6 +14847,9 @@
       ],
       "Valid ${ group.name } record found": [
         "Tìm thấy bản ghi ${ group.name } hợp lệ"
+      ],
+      "Leave field blank": [
+        "Để trống trường này"
       ]
     },
     "Label for new member": {
@@ -26387,6 +26432,100 @@
       ],
       "Yearly, ${ untilString }": [
         "Hàng năm, ${ untilString }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "2x Basic usage": [
+        "2x Mức sử dụng cơ bản"
+      ],
+      "5x Plus usage": [
+        "5x Mức sử dụng Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Quyền truy cập API, kèm theo hạn mức ${ credit } mỗi tháng"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Quyền truy cập API, với hạn mức ${ credit } mỗi tháng cho mỗi người dùng"
+      ],
+      "Everything in Basic, and:": [
+        "Tất cả trong gói Cơ bản, và:"
+      ],
+      "Everything in Free, and:": [
+        "Mọi thứ trong gói Miễn phí, cùng với:"
+      ],
+      "Includes:": [
+        "Bao gồm:"
+      ],
+      "Limited messages and chat history": [
+        "Số lượng tin nhắn và lịch sử trò chuyện bị giới hạn"
+      ],
+      "Maximum image generation": [
+        "Tạo hình ảnh tối đa"
+      ],
+      "Maximum Skills and Projects": [
+        "Các kỹ năng và dự án tối đa"
+      ],
+      "More image generation": [
+        "Tạo thêm hình ảnh"
+      ],
+      "More usage": [
+        "Thêm hạn mức"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } mỗi người dùng"
+      ],
+      "10 years": [
+        "10 năm"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Cấp máy chủ ${ VPN_APP_NAME } có dung lượng cao hơn: có ít người chia sẻ từng máy chủ hơn và họ sử dụng địa chỉ IP do ${ BRAND_NAME } sở hữu. Kết nối nhanh sẽ tự động chọn chúng nếu có."
+      ],
+      "Calendars": [
+        "Lịch"
+      ],
+      "Custom email domains": [
+        "Miền email tùy chỉnh"
+      ],
+      "Email addresses": [
+        "Địa chỉ email"
+      ],
+      "Hide-my-email aliases": [
+        "Biệt danh hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Được đặt tên theo những người ủng hộ qua hình thức gây quỹ cộng đồng – những người đã góp phần hiện thực hóa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } vào năm 2014. Mọi dịch vụ cao cấp của ${ BRAND_NAME } đều gói gọn trong một gói duy nhất."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Các dịch vụ ${ BRAND_NAME } mới không phát sinh thêm chi phí"
+      ],
+      "Password vaults": [
+        "Kho lưu trữ mật khẩu"
+      ],
+      "Previous versions": [
+        "Phiên bản trước"
+      ],
+      "Storage": [
+        "Lưu trữ"
+      ],
+      "Ultra servers": [
+        "Các máy chủ Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Các máy chủ Ultra, dành riêng cho bạn"
+      ],
+      "Unlimited": [
+        "Không giới hạn"
+      ],
+      "Up to ${ limit }": [
+        "Lên đến ${ limit }"
+      ],
+      "Users": [
+        "Người dùng"
+      ],
+      "VPN devices at once": [
+        "Các thiết bị VPN cùng lúc"
       ]
     }
   }

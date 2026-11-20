@@ -2383,6 +2383,24 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Change plan": [
+        "Endre plan"
+      ],
+      "Continue with Bitcoin": [
+        "Fortsett med Bitcoin"
+      ],
+      "Hide plan details": [
+        "Skjul plandetaljer"
+      ],
+      "Show plan details": [
+        "Vis plandetaljer"
+      ],
+      "Skip to main content": [
+        "Hopp over til hovedinnhold"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Oppgrader til ${ planTitle }"
       ]
     },
     "action": {
@@ -8347,6 +8365,9 @@
       ],
       "Zero keys reactivated": [
         "Null nøkler aktivert på nytt"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "Vi kunne ikke laste inn de migrerte brukerne dine. Oppdater siden og prøv igjen"
       ]
     },
     "error": {
@@ -14613,6 +14634,12 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "Help an organization protect sensitive data from breaches and surveillance": [
+        "Hjelp en organisasjon med å beskytte sensitive data mot datainnbrudd og overvåking"
+      ],
+      "They get end-to-end encrypted email, storage, and collaboration tools": [
+        "De får ende-til-ende kryptert e-post, lagring og samarbeidsverktøy"
       ]
     },
     "info": {
@@ -17025,6 +17052,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Invited via": [
+        "Invitert via"
       ]
     },
     "label": {
@@ -28320,6 +28350,12 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Ta med ${ BRAND_NAME } på arbeid. Tjen kreditter."
+      ],
+      "Why recommend ${ BRAND_NAME } for Business?": [
+        "Hvorfor anbefale ${ BRAND_NAME } for Business"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30000,6 +30036,50 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet }, ${ lumo } og Scribe inkludert"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } lagringsplass"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } faktureres hver 12. måned."
+      ],
+      "Early access to new features": [
+        "Tidlig tilgang til nye funksjoner"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Alt i ${ unlimitedName }, pluss:"
+      ],
+      "Exclusive to subscribers": [
+        "Eksklusivt for abonnenter"
+      ],
+      "Feature": [
+        "Funksjon"
+      ],
+      "Group plans": [
+        "Gruppeplaner"
+      ],
+      "Included": [
+        "Inkludert"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Inkluderer Ultra-servere, reservert for deg"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Nye tjenester uten ekstra kostnad, og tidlig tilgang til det vi bygger videre."
+      ],
+      "Not included": [
+        "Ikke inkludert"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "Personvernpakke med sikker e-post, ${ VPN_SHORT_APP_NAME }, skylagring og passordbehandler i én pakke."
+      ],
+      "Your plan": [
+        "Din plan"
       ]
     }
   }

@@ -357,6 +357,9 @@
       ],
       "Zoom meeting links": [
         "Zoom invitationslinks"
+      ],
+      "Business referral link": [
+        "Henvisningslink til virksomheder"
       ]
     },
     "Accounts": {
@@ -2353,6 +2356,54 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Delete security key ${ keyName }": [
+        "Slet sikkerhedsnøglen ${ keyName }"
+      ],
+      "Delete server ${ serverLocation }": [
+        "Slet serveren ${ serverLocation }"
+      ],
+      "Dismiss notification": [
+        "Luk notifikation"
+      ],
+      "Download recovery kit": [
+        "Download gendannelsessæt"
+      ],
+      "Edit security key ${ keyName }": [
+        "Rediger sikkerhedsnøglen ${ keyName }"
+      ],
+      "Go to today": [
+        "Gå til i dag"
+      ],
+      "Next contact": [
+        "Næste kontakt"
+      ],
+      "Next plan": [
+        "Næste abonnement"
+      ],
+      "Previous contact": [
+        "Forrige kontakt"
+      ],
+      "Previous plan": [
+        "Forrige abonnement"
+      ],
+      "Remove logo": [
+        "Fjern logo"
+      ],
+      "Remove pending server ${ serverLocation }": [
+        "Fjern afventende server ${ serverLocation }"
+      ],
+      "Skip to main content": [
+        "Spring til hovedindholdet"
+      ],
+      "Toggle calendar list": [
+        "Skift kalenderliste"
+      ],
+      "Toggle substeps": [
+        "Skift undertrin"
+      ],
+      "Weak key: learn more": [
+        "Svag nøgle: få mere at vide"
       ]
     },
     "action": {
@@ -5799,6 +5850,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Refer ${ BRAND_NAME } for Business to your network. You earn credits, and they get ${ refereeRewardAmount } off a yearly subscription. Earn up to ${ maxRewardAmount } in total.": [
+        "Henvis ${ BRAND_NAME } for Business til dit netværk. Du optjener kredit, og de får ${ refereeRewardAmount } rabat på et årligt abonnement. Tjen op til ${ maxRewardAmount } i alt."
       ]
     },
     "description": {
@@ -9867,6 +9921,9 @@
       ],
       "Your plan": [
         "Dit abonnement"
+      ],
+      "Invited businesses": [
+        "Inviterede virksomheder"
       ]
     },
     "Hint": {
@@ -14588,6 +14645,24 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Expected ${ date }": [
+        "Forventet ${ date }"
+      ],
+      "Help an organization protect sensitive data from breaches and surveillance": [
+        "Hjælp en organisation med at beskytte følsom data fra databrud og overvågning"
+      ],
+      "Support a mission to create a safer internet for everyone": [
+        "Støt missionen om at skabe et mere sikkert internet for alle"
+      ],
+      "They get end-to-end encrypted email, storage, and collaboration tools": [
+        "De får end-to-end-krypteret e-mail, lagerplads og samarbejdsværktøjer"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Pladser til skriveassistenten sælges ikke længere."
+      ],
+      "You earn credits when they sign up": [
+        "Du optjener kredit når de tilmelder sig"
       ]
     },
     "info": {
@@ -17000,6 +17075,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Invited via": [
+        "Inviteret via"
+      ],
+      "Share your invite link": [
+        "Del dit invitationslink"
       ]
     },
     "label": {
@@ -21520,6 +21601,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter email address, name, or contact group": [
+        "Indtast e-mailadresse, navn eller kontaktgruppe"
       ]
     },
     "placeholder": {
@@ -22139,6 +22223,18 @@
       ],
       "your subscription": [
         "dit abonnement"
+      ],
+      "**Share your referral link** with the right person at the company": [
+        "**Del dit henvisningslink** med den rette person i virksomheden"
+      ],
+      "**They sign up for a yearly Pro plan** and get an additional ${ refereeRewardAmount } off their first year": [
+        "**De tegner et årligt Pro-abonnement** og får yderligere ${ refereeRewardAmount } rabat på det første år"
+      ],
+      "**You earn ${ referrerRewardAmount } for every seat** they add during sign-up.": [
+        "**Du optjener ${ referrerRewardAmount } for hver plads**, som de tilføjer når de tilmelder sig."
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Jeg har brugt ${ BRAND_NAME }, og jeg tænkte, at dit team måske vil kunne lide det. Det er en sikker e-mail, cloud-lagring, adgangskodeadministrator og VPN, der beskytter dit privatliv. Tilmeld dig med dette link for at få ${ refereeRewardAmount } rabat på første år med ${ BRAND_NAME } for Business: ${ referralLink }"
       ]
     },
     "Remark about a key type option": {
@@ -28272,6 +28368,26 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Flyt ${ BRAND_NAME } til din arbejdsplads. Optjen kredit."
+      ],
+      "Business invited": [
+        "Virksomhed inviteret",
+        "Virksomheder inviteret"
+      ],
+      "Business signed up": [
+        "Virksomhed tilmeldte sig",
+        "Virksomheder tilmeldte sig"
+      ],
+      "How it works": [
+        "Sådan fungerer det"
+      ],
+      "Refer businesses": [
+        "Henvis virksomhed"
+      ],
+      "Why recommend ${ BRAND_NAME } for Business?": [
+        "Hvorfor burde man anbefale ${ BRAND_NAME } for Business?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29952,6 +30068,73 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2x Basic forbrug"
+      ],
+      "5x Plus usage": [
+        "5x Plus forbrug"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "API-adgang med ${ credit } i kredit om måneden"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "API-adgang med ${ credit } i kredit om måneden per bruger"
+      ],
+      "Everything in Basic, and:": [
+        "Alt i Basic, og:"
+      ],
+      "Everything in Free, and:": [
+        "Alt i Free, og:"
+      ],
+      "Everything in Plus, and:": [
+        "Alt i Plus, og:"
+      ],
+      "Extended image generation": [
+        "Udvidet billedegenerering"
+      ],
+      "Includes:": [
+        "Inkluderer:"
+      ],
+      "Limited image generation": [
+        "Begrænset billedegenerering"
+      ],
+      "Limited messages and chat history": [
+        "Begrænset besked- og chathistorik"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Begrænsede skills, projekter og planlagte opgaver"
+      ],
+      "Maximum image generation": [
+        "Maksimal billedegenerering"
+      ],
+      "Maximum Skills and Projects": [
+        "Maksimale Skills og Projekter"
+      ],
+      "More image generation": [
+        "Mere billedegenerering"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Flere skills, projekter og planlagte opgaver"
+      ],
+      "More usage": [
+        "Mere forbrug"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Til at kode og bygge"
+      ],
+      "For everyday chats": [
+        "Til hverdagsbrug"
+      ],
+      "For getting more done": [
+        "For at få meget gjort"
       ]
     }
   }

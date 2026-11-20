@@ -2395,6 +2395,30 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Change plan": [
+        "Alterar plano"
+      ],
+      "Continue with Bitcoin": [
+        "Continuar com Bitcoin"
+      ],
+      "Hide plan details": [
+        "Ocultar detalhes do plano"
+      ],
+      "Show plan details": [
+        "Mostrar detalhes do plano"
+      ],
+      "Skip to main content": [
+        "Pular para o conteúdo principal"
+      ],
+      "Toggle substeps": [
+        "Expandir/recolher subetapas"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Faça upgrade para ${ planTitle }"
+      ],
+      "View keyboard shortcuts": [
+        "Visualizar atalhos do teclado"
       ]
     },
     "action": {
@@ -2535,6 +2559,9 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licenças de assistente de escrita"
       ]
     },
     "Address action": {
@@ -5841,6 +5868,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
+      ],
+      "Refer ${ BRAND_NAME } for Business to your network. You earn credits, and they get ${ refereeRewardAmount } off a yearly subscription. Earn up to ${ maxRewardAmount } in total.": [
+        "Indique ${ BRAND_NAME } para empresas à sua rede de contatos. Você ganha créditos, e eles recebem ${ refereeRewardAmount } de desconto em uma assinatura anual. Ganhe até ${ maxRewardAmount } no total."
       ]
     },
     "description": {
@@ -6614,6 +6644,9 @@
       ],
       "Set up email forwarding": [
         "Configurar encaminhamento de e-mail"
+      ],
+      "Edit": [
+        "Editar"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -8361,6 +8394,9 @@
       ],
       "Zero keys reactivated": [
         "Zero chaves reativadas"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "Não foi possível carregar seus usuários migrados. Favor atualizar a página e tentar novamente."
       ]
     },
     "error": {
@@ -14636,6 +14672,18 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Help an organization protect sensitive data from breaches and surveillance": [
+        "Ajude uma organização a proteger dados confidenciais contra vazamentos e vigilância"
+      ],
+      "Support a mission to create a safer internet for everyone": [
+        "Apoie a missão de criar uma internet mais segura para todos"
+      ],
+      "They get end-to-end encrypted email, storage, and collaboration tools": [
+        "Eles recebem e-mail, armazenamento e ferramentas de colaboração com criptografia de ponta a ponta"
+      ],
+      "You earn credits when they sign up": [
+        "Você ganha créditos quando eles se cadastram"
       ]
     },
     "info": {
@@ -17704,6 +17752,12 @@
       ],
       "More usage": [
         "Mais uso"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acesso à API com um crédito ${ credit } ao mês"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acesso à API com um crédito ${ credit } ao mês por usuário"
       ]
     },
     "lumo_2026: Info": {
@@ -19596,6 +19650,18 @@
       ],
       "Recovery checklist": [
         "Lista de verificação de recuperação"
+      ],
+      "1-4 emails per year": [
+        "1-4 e-mails por ano"
+      ],
+      "Email subscriptions": [
+        "Inscrições de e-mail"
+      ],
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Receba as notícias mais recentes sobre privacidade e o que está acontecendo no universo da ${ BRAND_NAME }."
+      ],
+      "Reminders to keep your recovery methods up to date.": [
+        "Lembretes para manter seus métodos de recuperação atualizados."
       ]
     },
     "ngc_access_banner: action": {
@@ -21638,6 +21704,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Enter email address, name, or contact group": [
+        "Digite o endereço de e-mail, nome ou grupo de contatos"
       ]
     },
     "placeholder": {
@@ -22257,6 +22326,18 @@
       ],
       "your subscription": [
         "sua assinatura"
+      ],
+      "**Share your referral link** with the right person at the company": [
+        "**Compartilhe seu link de indicação** com a pessoa certa na empresa"
+      ],
+      "**They sign up for a yearly Pro plan** and get an additional ${ refereeRewardAmount } off their first year": [
+        "**Eles assinam um plano Pro anual** e recebem mais ${ refereeRewardAmount } de desconto no primeiro ano"
+      ],
+      "**You earn ${ referrerRewardAmount } for every seat** they add during sign-up.": [
+        "**Você ganha ${ referrerRewardAmount } por cada licença** que eles adicionarem durante o cadastro."
+      ],
+      "I've been using ${ BRAND_NAME } and thought your team might like it. It's a secure email, cloud storage, password manager, and VPN that protects your privacy. Sign up with this link to get ${ refereeRewardAmount } off your first year of ${ BRAND_NAME } for Business: ${ referralLink }": [
+        "Tenho usado ${ BRAND_NAME } e achei que sua equipe poderia gostar. É uma solução segura de e-mail, armazenamento em nuvem, gerenciador de senhas e VPN que protege sua privacidade. Cadastre-se por este link para ganhar ${ refereeRewardAmount } de desconto no primeiro ano de ${ BRAND_NAME } para empresas: ${ referralLink }"
       ]
     },
     "Remark about a key type option": {
@@ -28412,6 +28493,19 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Add new company": [
+        "Adicionar nova empresa"
+      ],
+      "Bring ${ BRAND_NAME } to Work. Earn credits.": [
+        "Leve ${ BRAND_NAME } para o trabalho. Ganhe créditos."
+      ],
+      "Business signed up": [
+        "Empresa cadastrada",
+        "Empresas cadastradas"
+      ],
+      "Delete from list?": [
+        "Excluir da lista?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30092,6 +30186,116 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuário"
+      ],
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet }, ${ lumo } e Scribe incluídos"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartilhado"
+      ],
+      "${ visionaryStorage } storage": [
+        "Armazenamento de ${ visionaryStorage }"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } cobrado a cada 12 meses."
+      ],
+      "10 years": [
+        "10 anos"
+      ],
+      "Calendars": [
+        "Calendários"
+      ],
+      "Custom email domains": [
+        "Domínios personalizados de e-mail"
+      ],
+      "Early access to new features": [
+        "Acesso antecipado a novos recursos"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Tido no ${ unlimitedName }, plus:"
+      ],
+      "Exclusive to subscribers": [
+        "Exclusivo para assinantes"
+      ],
+      "Feature": [
+        "Recurso"
+      ],
+      "Group plans": [
+        "Planos de grupo"
+      ],
+      "Hide-my-email aliases": [
+        "Aliases do hide-my-email"
+      ],
+      "Included": [
+        "Incluído"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Inlcui servidores Ultra, reservado para você"
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Serviços novos da ${ BRAND_NAME } sem custo adicional"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Novos serviços sem custo adicional e acesso antecipado ao que desenvolvermos a seguir."
+      ],
+      "Not included": [
+        "Não incluído"
+      ],
+      "Password vaults": [
+        "Cofres de senhas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive e Pass premium"
+      ],
+      "Previous versions": [
+        "versões anteriores"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "Pacote de privacidade com e-mail seguro, ${ VPN_SHORT_APP_NAME }, armazenamento em nuvem e gerenciador de senhas em um só pacote."
+      ],
+      "Storage": [
+        "Armazenamento"
+      ],
+      "Subscribers only": [
+        "Somente assinantes"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra, reservado para você"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Até ${ limit }"
+      ],
+      "Users": [
+        "Usuários"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN ao mesmo tempo"
+      ],
+      "Your plan": [
+        "Seu plano"
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "por ${ cycle } mês",
+        "por ${ cycle } meses"
+      ],
+      "Premium calendar features": [
+        "Recursos premium de calendário"
       ]
     }
   }

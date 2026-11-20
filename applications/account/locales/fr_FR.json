@@ -2152,6 +2152,27 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Change plan": [
+        "Changer d’abonnement"
+      ],
+      "Continue with Bitcoin": [
+        "Continuer avec Bitcoin"
+      ],
+      "Hide plan details": [
+        "Masquer les informations de l'abonnement"
+      ],
+      "Show plan details": [
+        "Afficher les informations de l'abonnement"
+      ],
+      "Skip to main content": [
+        "Passer au contenu principal"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Passez à ${ planTitle }"
+      ],
+      "View keyboard shortcuts": [
+        "Afficher les raccourcis clavier"
       ]
     },
     "action": {
@@ -2289,6 +2310,13 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Address action": {
@@ -6316,6 +6344,9 @@
       ],
       "Set up email forwarding": [
         "Configurer le transfert des messages"
+      ],
+      "Edit": [
+        "Modifier"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -7945,6 +7976,9 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "File download failed due to empty response": [
+        "Impossible de télécharger le fichier : la réponse est vide"
       ]
     },
     "error": {
@@ -13976,6 +14010,9 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "With managed companies, you can add, edit, and disable access for organizations you oversee.": [
+        "Avec les entreprises gérées, vous pouvez ajouter, modifier et désactiver les droits d'accès des organisations dont vous avez la charge."
       ]
     },
     "info": {
@@ -13995,6 +14032,9 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Aide pour rédiger, répondre et relire les messages. Si désactivé, seuls les administrateurs y auront accès. Gérez les utilisateurs individuels dans ${ userAndAddresses } ou ${ addMoreSeats }"
+      ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses }.": [
+        "Aide pour rédiger, répondre et relire les messages. Si désactivé, seuls les administrateurs y auront accès. Gérez les utilisateurs individuels dans ${ userAndAddresses }."
       ]
     },
     "Info (sub-heading)": {
@@ -18825,6 +18865,15 @@
       ],
       "Recovery checklist": [
         "Liste de récupération"
+      ],
+      "1-4 emails per year": [
+        "1 à 4 messages par an"
+      ],
+      "Email subscriptions": [
+        "Abonnement e-mail"
+      ],
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Recevez les actualités sur la protection de la vie privée et découvrez ce qui se passe dans l'écosystème ${ BRAND_NAME }."
       ]
     },
     "ngc_access_banner: action": {
@@ -27307,6 +27356,12 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Add new company": [
+        "Ajouter une nouvelle entreprise"
+      ],
+      "Delete from list?": [
+        "Supprimer de la liste ?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28943,6 +28998,62 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "10 years": [
+        "10 ans"
+      ],
+      "Calendars": [
+        "Calendriers"
+      ],
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
+      "Feature": [
+        "Fonctionalité"
+      ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
+      ],
+      "Included": [
+        "Inclus"
+      ],
+      "Not included": [
+        "Non inclus"
+      ],
+      "Password vaults": [
+        "Coffre-fort de mot de passe"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive et Pass premium"
+      ],
+      "Previous versions": [
+        "Version précédente"
+      ],
+      "Storage": [
+        "Espace de stockage"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Jusqu'à ${ limit }"
+      ],
+      "Users": [
+        "Utilisateurs"
+      ],
+      "Your plan": [
+        "Votre abonnement"
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "pour ${ cycle } mois",
+        "pour ${ cycle } mois"
       ]
     }
   }

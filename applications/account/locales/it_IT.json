@@ -2401,6 +2401,24 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Change plan": [
+        "Cambia piano"
+      ],
+      "Hide plan details": [
+        "Nascondi i dettagli del piano"
+      ],
+      "Show plan details": [
+        "Mostra i dettagli del piano"
+      ],
+      "Skip to main content": [
+        "Passa direttamente al contenuto principale"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Effettua l'upgrade a ${ planTitle }"
+      ],
+      "View keyboard shortcuts": [
+        "Mostra scorciatoie da tastiera"
       ]
     },
     "action": {
@@ -2541,6 +2559,13 @@
       ],
       "Writing assistant seats": [
         "Posti dell'assistente alla scrittura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licenze per l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licenza per l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licenze per l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Address action": {
@@ -6623,6 +6648,9 @@
       ],
       "Set up email forwarding": [
         "Configura l’inoltro delle email"
+      ],
+      "Edit": [
+        "Modifica"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -8370,6 +8398,24 @@
       ],
       "Zero keys reactivated": [
         "Chiavi zero riattivate"
+      ],
+      "Failed to get invitee keys": [
+        "Impossibile ottenere le chiavi dell'invitato"
+      ],
+      "Failed to load the membership": [
+        "Impossibile caricare l'iscrizione"
+      ],
+      "Failed to load the membership data": [
+        "Impossibile caricare i dati dell'iscrizione"
+      ],
+      "Failed to verify membership": [
+        "Impossibile verificare l'iscrizione"
+      ],
+      "Some invitations could not be loaded": [
+        "Impossibile caricare alcuni inviti"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "Impossibile caricare gli utenti migrati. Ricarica la pagina e riprova"
       ]
     },
     "error": {
@@ -14657,6 +14703,27 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "${ nameElement } will be removed from your allow list.": [
+        "${ nameElement } verrà rimosso dalla tua lista dei consentiti."
+      ],
+      "${ nameElement } will be removed from your block list.": [
+        "${ nameElement } verrà rimosso dalla tua lista dei bloccati"
+      ],
+      "${ nameElement } will be removed from your spam list.": [
+        "${ nameElement } verrà rimosso dalla tua lista di spam."
+      ],
+      "Folders are where your messages are stored. A message can only be in one folder.": [
+        "Le cartelle sono il luogo in cui tuoi messaggi vengono archiviati. Un messaggio può trovarsi in una sola cartella."
+      ],
+      "Labels are tags that make your messages easier to search and filter. A message can have several labels.": [
+        "Le etichette sono tag che rendono i tuoi messaggi più facili da cercare e da filtrare. Un singolo messaggio può avere diverse etichette."
+      ],
+      "Set the name and allocated licenses": [
+        "Imposta il nome e le licenze assegnate"
+      ],
+      "With managed companies, you can add, edit, and disable access for organizations you oversee.": [
+        "Con le società gestite; puoi aggiungere, modificare e disabilitare l'accesso per le organizzazioni che supervisioni."
       ]
     },
     "info": {
@@ -14676,6 +14743,9 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Aiuta a scrivere, rispondere a e correggere le email. Se disabilitato, solo gli amministratori avranno accesso. Gestisci per i singoli utenti in ${ userAndAddresses } o ${ addMoreSeats }"
+      ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses }.": [
+        "Aiuta a scrivere, rispondere e correggere le email. Se disattivata, solo gli amministratori potranno accedere. Gestisci per utenti individuali in ${ userAndAddresses }."
       ]
     },
     "Info (sub-heading)": {
@@ -19626,6 +19696,18 @@
       ],
       "Recovery checklist": [
         "Lista di controllo per il recupero"
+      ],
+      "1-4 emails per year": [
+        "1-4 email all'anno"
+      ],
+      "Email subscriptions": [
+        "Iscrizioni email"
+      ],
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Ricevi le ultime notizie sulla privacy e cosa sta succedendo nell'universo di ${ BRAND_NAME }."
+      ],
+      "Reminders to keep your recovery methods up to date.": [
+        "Promemoria per tenere aggiornati i tuoi metodi di recupero."
       ]
     },
     "ngc_access_banner: action": {
@@ -28449,6 +28531,12 @@
       ],
       "Your subscriptions": [
         "I tuoi abbonamenti"
+      ],
+      "Add new company": [
+        "Aggiungi nuova azienda"
+      ],
+      "Delete from list?": [
+        "Eliminare dalla lista?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30129,6 +30217,122 @@
       ],
       "Yearly, ${ untilString }": [
         "Ogni anno, ${ untilString }"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per utente"
+      ],
+      "${ meet }, ${ lumo } and Scribe included": [
+        "${ meet }, ${ lumo } e Scribe inclusi"
+      ],
+      "${ storage } shared": [
+        "${ storage } condivisi"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } di spazio di archiviazione"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } fatturati ogni 12 mesi."
+      ],
+      "10 years": [
+        "10 anni"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Un livello di capacità superiore di server ${ VPN_APP_NAME }: un numero di utenti molto inferiore condivide ciascun server e utilizza indirizzi IP di proprietà di ${ BRAND_NAME }. Quick Connect li seleziona automaticamente quando disponibili."
+      ],
+      "Calendars": [
+        "Calendari"
+      ],
+      "Custom email domains": [
+        "Domini email personalizzati"
+      ],
+      "Early access to new features": [
+        "Accesso anticipato alle nuove funzionalità"
+      ],
+      "Email addresses": [
+        "Indirizzi email"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Tutte le funzionalità di ${ unlimitedName }, più:"
+      ],
+      "Exclusive to subscribers": [
+        "Esclusiva per gli abbonati"
+      ],
+      "Feature": [
+        "Funzionalità"
+      ],
+      "Group plans": [
+        "Piani di gruppo"
+      ],
+      "Hide-my-email aliases": [
+        "Alias Hide-my-email"
+      ],
+      "Included": [
+        "Incluso"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Include server Ultra riservati a te"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Prende il nome dai sostenitori del crowdfunding che hanno reso possibile ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } nel 2014. Tutti i servizi premium di ${ BRAND_NAME }, in un unico piano."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nuovi servizi ${ BRAND_NAME } senza costi aggiuntivi"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Nuovi servizi senza costi aggiuntivi e accesso anticipato alle nostre prossime novità."
+      ],
+      "Not included": [
+        "Non incluso"
+      ],
+      "Password vaults": [
+        "Casseforti digitali"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive e Pass Premium"
+      ],
+      "Previous versions": [
+        "Versioni precedenti"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "Suite di privacy con email sicura, ${ VPN_SHORT_APP_NAME }, archiviazione cloud e gestore di password, tutto in un unico pacchetto."
+      ],
+      "Storage": [
+        "Spazio di archiviazione"
+      ],
+      "Subscribers only": [
+        "Solo per abbonati"
+      ],
+      "Ultra servers": [
+        "Server Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Server Ultra riservati a te"
+      ],
+      "Unlimited": [
+        "Illimitati"
+      ],
+      "Up to ${ limit }": [
+        "Fino a ${ limit }"
+      ],
+      "Users": [
+        "Utenti"
+      ],
+      "VPN devices at once": [
+        "Dispositivi VPN contemporaneamente"
+      ],
+      "Your plan": [
+        "Il tuo piano"
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "per ${ cycle } mese",
+        "per ${ cycle } mesi"
+      ],
+      "Premium calendar features": [
+        "Funzionalità premium del calendario"
       ]
     }
   }

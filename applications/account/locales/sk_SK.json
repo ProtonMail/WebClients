@@ -2398,6 +2398,27 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Change plan": [
+        "Zmeniť plán"
+      ],
+      "Continue with Bitcoin": [
+        "Pokračovať s Bitcoinom"
+      ],
+      "Hide plan details": [
+        "Skryť detaily plánu"
+      ],
+      "Show plan details": [
+        "Zobraziť podrobnosti plánu"
+      ],
+      "Skip to main content": [
+        "Prejsť na hlavný obsah"
+      ],
+      "Upgrade to ${ planTitle }": [
+        "Zvýšiť úroveň na ${ planTitle }"
+      ],
+      "View keyboard shortcuts": [
+        "Zobraziť klávesové skratky"
       ]
     },
     "action": {
@@ -2560,6 +2581,15 @@
       ],
       "Writing assistant seats": [
         "Licencie pre asistenta písania"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licencií asistentov písania"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencia asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencie asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencií asistenta písania",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } – licencií asistenta písania"
       ]
     },
     "Address action": {
@@ -6696,6 +6726,9 @@
       ],
       "Set up email forwarding": [
         "Nastavenie preposielania emailov"
+      ],
+      "Edit": [
+        "Upraviť"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -8477,6 +8510,9 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
+      ],
+      "We couldn't load your migrated users. Please refresh the page and try again": [
+        "Nepodarilo sa nám načítať vašich presunutých používateľov. Obnovte stránku a skúste to znova, prosím."
       ]
     },
     "error": {
@@ -14957,6 +14993,30 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "${ nameElement } will be removed from your allow list.": [
+        "${ nameElement } bude odstránený z vášho zoznamu povolených položiek."
+      ],
+      "${ nameElement } will be removed from your block list.": [
+        "${ nameElement } bude odstránený z vášho zoznamu blokovaných položiek."
+      ],
+      "${ nameElement } will be removed from your spam list.": [
+        "${ nameElement } bude odstránený z vášho zoznamu spamových položiek."
+      ],
+      "Folders are where your messages are stored. A message can only be in one folder.": [
+        "V priečinkoch sú uložené vaše správy. Správa môže byť iba v jednom priečinku."
+      ],
+      "Labels are tags that make your messages easier to search and filter. A message can have several labels.": [
+        "Štítky sú označenia, vďaka ktorým sa dajú vaše správy ľahšie vyhľadávať a filtrovať. Jedna správa môže mať viacero štítkov."
+      ],
+      "Set the name and allocated licenses": [
+        "Nastavte názov a pridelené licencie"
+      ],
+      "With managed companies, you can add, edit, and disable access for organizations you oversee.": [
+        "V prípade spravovaných spoločností môžete pridávať, upravovať a deaktivovať prístupové práva organizáciám, ktoré spravujete."
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Licencie pre asistentov písania už nie sú v predaji."
       ]
     },
     "info": {
@@ -14976,6 +15036,9 @@
     "Info (Scribe)": {
       "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses } or ${ addMoreSeats }": [
         "Pomáha písať, odpovedať na e-maily a korigovať ich. Ak je táto funkcia vypnutá, prístup k nej majú len správcovia. Spravujte ju pre jednotlivých používateľov v časti ${ userAndAddresses } alebo ${ addMoreSeats }."
+      ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddresses }.": [
+        "Pomáha písať, odpovedať na e-maily a korigovať ich. Ak je táto funkcia vypnutá, prístup k nej majú len správcovia. Spravujte ju pre jednotlivých používateľov v časti ${ userAndAddresses }."
       ]
     },
     "Info (sub-heading)": {
@@ -29050,6 +29113,12 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Add new company": [
+        "Pridať novú spoločnosť"
+      ],
+      "Delete from list?": [
+        "Vymazať zo zoznamu?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30826,6 +30895,180 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } kód"
+      ],
+      "2x Basic usage": [
+        "2-násobné využitie Basic"
+      ],
+      "5x Plus usage": [
+        "5-násobné využitie Plus"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Prístup k API s kreditom ${ credit } na mesiac"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Prístup k API s kreditom ${ credit } na mesiac na používateľa"
+      ],
+      "Everything in Basic, and:": [
+        "Všetko z plánu Basic a navyše:"
+      ],
+      "Everything in Free, and:": [
+        "Všetko z plánu Free a:"
+      ],
+      "Everything in Plus, and:": [
+        "Všetko z Plus a navyše:"
+      ],
+      "Extended image generation": [
+        "Rozšírené vytváranie obrázkov"
+      ],
+      "Includes:": [
+        "Obsahuje:"
+      ],
+      "Limited image generation": [
+        "Obmedzené vytváranie obrázkov"
+      ],
+      "Limited messages and chat history": [
+        "Obmedzený počet správ a história chatu"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Obmedzené schopnosti, projekty a naplánované úlohy"
+      ],
+      "Maximum image generation": [
+        "Maximálne vytváranie obrázkov"
+      ],
+      "Maximum Skills and Projects": [
+        "Najlepšie schopnosti a projekty"
+      ],
+      "More image generation": [
+        "Viac vytváraní obrázkov"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Viac schopností, projektov a naplánovaných úloh"
+      ],
+      "More usage": [
+        "Ďalšie možnosti použitia"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Pre programovanie a tvorbu"
+      ],
+      "For everyday chats": [
+        "Na každodenné chatovanie"
+      ],
+      "For getting more done": [
+        "Aby ste stihli viac práce"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } za používateľa"
+      ],
+      "${ meet }, ${ lumo } and Scribe included": [
+        "Súčasťou sú ${ meet }, ${ lumo } a Scribe"
+      ],
+      "${ storage } shared": [
+        "${ storage } zdieľaného"
+      ],
+      "${ visionaryStorage } storage": [
+        "${ visionaryStorage } úložisko"
+      ],
+      "${ yearlyTotal } billed every 12 months.": [
+        "${ yearlyTotal } fakturované každých 12 mesiacov."
+      ],
+      "10 years": [
+        "10 rokov"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Vyššia kapacita ${ VPN_APP_NAME } serverov: každý z nich zdieľa oveľa menej používateľov a využívajú IP adresy vo vlastníctve spoločnosti ${ BRAND_NAME }. Funkcia Rýchle pripojenie ich automaticky vyberá, ak sú k dispozícii."
+      ],
+      "Calendars": [
+        "Kalendáre"
+      ],
+      "Custom email domains": [
+        "Vlastných emailových domén"
+      ],
+      "Early access to new features": [
+        "Predčasný prístup k novým funkciám"
+      ],
+      "Email addresses": [
+        "Emailových adries"
+      ],
+      "Everything in ${ unlimitedName }, plus:": [
+        "Všetko v ${ unlimitedName }, navyše:"
+      ],
+      "Exclusive to subscribers": [
+        "Exkluzívne pre predplatiteľov"
+      ],
+      "Feature": [
+        "Funkcia"
+      ],
+      "Group plans": [
+        "Skupinové plány"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email aliasov"
+      ],
+      "Included": [
+        "Zahrnuté"
+      ],
+      "Includes Ultra servers, reserved for you": [
+        "Zahŕňa servery Ultra, ktoré sú vyhradené pre vás"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Pomenované na počesť podporovateľov z crowdfundingu, vďaka ktorým vznikol v roku 2014 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }. Všetky prémiové služby ${ BRAND_NAME } v jednom balíku."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nové ${ BRAND_NAME } služby bez dodatočných nákladov"
+      ],
+      "New services at no extra cost, and early access to what we build next.": [
+        "Nové služby bez dodatočných nákladov a prednostný prístup k našim budúcim projektom."
+      ],
+      "Not included": [
+        "Nie je súčasťou"
+      ],
+      "Password vaults": [
+        "Trezorov na heslá"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive a Pass"
+      ],
+      "Previous versions": [
+        "Predchádzajúce verzie"
+      ],
+      "Privacy suite with secure email, ${ VPN_SHORT_APP_NAME }, cloud storage, and password manager in one bundle.": [
+        "Balík na ochranu súkromia s bezpečným emailom, ${ VPN_SHORT_APP_NAME }, cloudovým úložiskom a správcom hesiel v jednom produkte."
+      ],
+      "Storage": [
+        "Úložiska"
+      ],
+      "Subscribers only": [
+        "Len pre predplatiteľov"
+      ],
+      "Ultra servers": [
+        "Ultra serverov"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra serverov, vyhradených pre vás"
+      ],
+      "Unlimited": [
+        "Bez obmedzenia"
+      ],
+      "Up to ${ limit }": [
+        "Až do ${ limit }"
+      ],
+      "Users": [
+        "Používateľov"
+      ],
+      "VPN devices at once": [
+        "VPN zariadení súčasne"
+      ],
+      "Your plan": [
+        "Váš plán"
       ]
     }
   }
