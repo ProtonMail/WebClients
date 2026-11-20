@@ -1,10 +1,21 @@
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 function createBasicQuery(query: string): Expression {
     return Expression.attr('body', Func.Matches, TermValue.text(query))
         .or(Expression.attr('subject', Func.Matches, TermValue.text(query)))
         .or(Expression.attr('attachment', Func.Matches, TermValue.text(query)));
+}
+
+function anyLabel(labelIds: string[]): Expression | undefined {
+    return labelIds.reduce(
+        (previousExp, labelId) => {
+            const exp = Expression.attr('labelId', Func.Equals, TermValue.text(labelId));
+            return previousExp ? previousExp.or(exp) : exp;
+        },
+        undefined as Expression | undefined
+    );
 }
 
 function createExtentedQuery(params: {
@@ -46,15 +57,18 @@ function createExtentedQuery(params: {
         exp = and(Expression.attr('time', Func.LessThanOrEqual, TermValue.int(BigInt(params.beforeDate))));
     }
     if (params.labelIds !== undefined) {
-        const labelsExp = params.labelIds.reduce(
-            (previousExp, labelId) => {
-                const exp = Expression.attr('labelId', Func.Equals, TermValue.text(labelId));
-                return previousExp ? previousExp.or(exp) : exp;
-            },
-            undefined as Expression | undefined
-        );
-        if (labelsExp) {
-            exp = and(labelsExp);
+        // A category narrows the mailbox down rather than widening it: Primary means in the inbox AND in the
+        // Primary category, so a message moved out of the inbox, which keeps its category, must not match.
+        const mailboxLabelIds = params.labelIds.filter((id) => {
+            return !isCategoryLabel(id);
+        });
+        const categoryLabelIds = params.labelIds.filter((id) => {
+            return isCategoryLabel(id);
+        });
+        for (const labelsExp of [anyLabel(mailboxLabelIds), anyLabel(categoryLabelIds)]) {
+            if (labelsExp) {
+                exp = and(labelsExp);
+            }
         }
     }
     if (params.hasAttachments !== undefined) {
