@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import { unleashReady } from '@proton/account/bootstrap';
+import { createUnleash, unleashReady } from '@proton/account/bootstrap';
 import { serverEvent } from '@proton/account/eventLoop';
 import { userThunk } from '@proton/account/user';
 import type { OAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
@@ -42,8 +42,6 @@ import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLoca
 import { locales } from '@proton/shared/lib/i18n/locales';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { UnleashClient } from '@proton/unleash/UnleashClient';
-import { createCustomFetch, getUnleashConfig } from '@proton/unleash/UnleashFlagProvider';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 import getRandomString from '@proton/utils/getRandomString';
 
@@ -145,7 +143,7 @@ const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
         const setupApp = async (UID: string) => {
             api.UID = UID;
 
-            const unleashClient = new UnleashClient(getUnleashConfig({ fetch: createCustomFetch(api) }));
+            const unleashClient = createUnleash({ api });
 
             extendStore({ unleashClient });
 
