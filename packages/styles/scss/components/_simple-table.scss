@@ -289,6 +289,19 @@
 								padding-block-end: var(--table-padding);
 							}
 						}
+
+						// Pin the cell marked `.simple-table__action-cell` to the card's top-right corner
+						tr:has(> td.simple-table__action-cell) {
+							position: relative;
+							padding-inline-end: calc(var(--space-3) + #{rem(32)});
+						}
+
+						td.simple-table__action-cell {
+							position: absolute;
+							inset-block-start: var(--space-2);
+							inset-inline-end: var(--space-2);
+							padding: 0;
+						}
 					}
 
 					.simple-table__th-small {

@@ -18,6 +18,7 @@ import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcMonitor } from '@proton/icons/icons/IcMonitor';
 import { IcPassGroup } from '@proton/icons/icons/IcPassGroup';
+import { IcRobot } from '@proton/icons/icons/IcRobot';
 import { IcServers } from '@proton/icons/icons/IcServers';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcSliders } from '@proton/icons/icons/IcSliders';
@@ -69,6 +70,7 @@ export const getOrganizationAppRoutes = ({
         isSsoForPbsEnabled = false,
         isRetentionPoliciesEnabled = false,
         isLumoApiEnabled = false,
+        isServiceAccountsEnabled = false,
     } = flags;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
@@ -498,6 +500,23 @@ export const getOrganizationAppRoutes = ({
             icon: IcKey,
             available: singleSignOnPageAvailability.singleSignOn,
             upgradeRequired: singleSignOnPageAvailability.upgradeRequired,
+        },
+        serviceAccounts: {
+            id: 'service-accounts',
+            text: c('Title').t`Service accounts`,
+            to: '/service-accounts',
+            icon: IcRobot,
+            available:
+                isServiceAccountsEnabled &&
+                isOrgConfigured &&
+                entitlements.hasServiceAccounts &&
+                permissions['account.service_account.read'],
+            subsections: [
+                {
+                    id: 'service-accounts-list',
+                    keywords: [c('Action').t`Add service account`, c('Label').t`Managers`, c('Label').t`Access tokens`],
+                },
+            ],
         },
         accessControl: {
             id: 'accessControl',

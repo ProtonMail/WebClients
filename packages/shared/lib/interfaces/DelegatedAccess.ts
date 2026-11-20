@@ -11,6 +11,7 @@ export enum DelegatedAccessStateEnum {
 export enum DelegatedAccessTypeEnum {
     EmergencyAccess = 1,
     SocialRecovery = 2,
+    ServiceAccount = 4,
 }
 
 export interface IncomingDelegatedAccessOutput {

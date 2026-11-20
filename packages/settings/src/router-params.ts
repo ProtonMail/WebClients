@@ -52,6 +52,7 @@ export type Flags = {
     isCryptoPostQuantumOptInEnabled: boolean;
     isSsoForPbsEnabled: boolean;
     isRetentionPoliciesEnabled: boolean;
+    isServiceAccountsEnabled: boolean;
     isCategoryViewEnabled: boolean;
     isLumoApiEnabled: boolean;
     isReferralProgramEnabled: boolean;

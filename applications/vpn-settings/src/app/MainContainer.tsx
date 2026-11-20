@@ -184,6 +184,7 @@ const MainContainer: FunctionComponent = () => {
         isLumoApiEnabled: false,
         isCryptoPostQuantumOptInEnabled: false,
         isScribeEnabled: false,
+        isServiceAccountsEnabled: false,
         isZoomIntegrationEnabled,
         isProtonMeetIntegrationEnabled,
         isSsoForPbsEnabled,

@@ -47,6 +47,10 @@ export const PERMISSIONS = [
     'account.gateway.delete',
     'account.shared_server.read',
     'account.shared_server.update',
+    'account.service_account.create',
+    'account.service_account.read',
+    'account.service_account.update',
+    'account.service_account.delete',
     ...FE_PERMISSION_ONLY,
 ] as const;
 

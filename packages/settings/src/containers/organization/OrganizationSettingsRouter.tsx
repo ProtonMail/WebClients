@@ -23,6 +23,7 @@ import OrganizationRetentionPoliciesSection from '@proton/components/containers/
 import SsoPage from '@proton/components/containers/organization/sso/SsoPage';
 import { SentinelSection } from '@proton/components/containers/sentinel/SentinelSection';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
+import ServiceAccountsSection from '@proton/service-accounts/ServiceAccountsSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import { AlwaysOnVpnRoute } from '@proton/vpn/routes/organization/AlwaysOnVpnRoute';
@@ -72,6 +73,7 @@ const OrganizationSettingsRouter = ({
             activityMonitor,
             groups,
             accessControl,
+            serviceAccounts,
             sharedServers,
             alwaysOnVpn,
         },
@@ -85,6 +87,13 @@ const OrganizationSettingsRouter = ({
 
     return (
         <Switch>
+            {getIsSectionAvailable(serviceAccounts) && (
+                <Route path={getSectionPath(path, serviceAccounts)}>
+                    <PrivateMainSettingsArea config={serviceAccounts}>
+                        <ServiceAccountsSection />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
             {getIsSectionAvailable(gateways) && (
                 <Route path={getSectionPath(path, gateways)}>
                     <GatewaysRoute config={gateways} organization={organization} />

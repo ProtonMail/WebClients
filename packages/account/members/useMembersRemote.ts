@@ -91,6 +91,7 @@ export const useMembersRemote = ({
             const { signal } = abortControllerRef.current;
 
             setLoading(true);
+            setError(null);
             const fetcher = debouncedKeywords ? searchMembers : fetchMembers;
             try {
                 const { Members, Total, More } = await fetcher(signal);

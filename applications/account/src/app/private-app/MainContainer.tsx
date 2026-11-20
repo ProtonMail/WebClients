@@ -127,6 +127,7 @@ const MainContainer = () => {
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
     const isReferralB2C2BEnabled = useFlag('ReferralProgramB2C2B');
     const isLumoApiEnabled = useFlag('LumoAPIKeyManagement');
+    const isServiceAccountsEnabled = useFlag('ServiceAccounts');
     const isDriveEasySwitchEnabled = useFlag('EasySwitchB2CForDriveWeb');
     const isDriveEasySwitchNewUIEnabled = useFlag('EasySwitchB2CForDriveWebNewUI') && isDriveEasySwitchEnabled;
 
@@ -216,6 +217,7 @@ const MainContainer = () => {
         isCryptoPostQuantumOptInEnabled,
         isSsoForPbsEnabled,
         isRetentionPoliciesEnabled,
+        isServiceAccountsEnabled,
         isCategoryViewEnabled: canUseCategoryView,
         isLumoApiEnabled,
         isReferralProgramEnabled,
