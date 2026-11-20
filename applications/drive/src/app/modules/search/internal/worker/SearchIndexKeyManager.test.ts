@@ -9,9 +9,9 @@ import { SearchIndexKeyManager } from './SearchIndexKeyManager';
 const identityBuffer = async (d: ArrayBuffer) => d;
 const identityString = async (d: string) => d;
 
-jest.mock('../shared/errors', () => {
-    const actual = jest.requireActual('../shared/errors');
-    return { ...actual, sendErrorReportForSearch: jest.fn() };
+vi.mock('../shared/errors', async () => {
+    const actual = await vi.importActual('../shared/errors');
+    return { ...actual, sendErrorReportForSearch: vi.fn() };
 });
 
 function fakeBridge(): MainThreadBridge {
@@ -28,7 +28,7 @@ describe('SearchIndexKeyManager', () => {
     let bridge: MainThreadBridge;
 
     beforeEach(async () => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
         bridge = fakeBridge();
@@ -114,7 +114,7 @@ describe('SearchIndexKeyManager', () => {
         await db.putSearchCryptoKey('corrupted-data', identityString);
         await db.putEncryptedIndexBlob(['test', 'blob1'], new ArrayBuffer(8), identityBuffer);
 
-        jest.spyOn(SearchDB.prototype, 'clearIndex').mockRejectedValueOnce(new Error('worker terminated'));
+        vi.spyOn(SearchDB.prototype, 'clearIndex').mockRejectedValueOnce(new Error('worker terminated'));
 
         // The regeneration is interrupted partway through the wipe.
         await SearchIndexKeyManager.getOrCreateKey(db, bridge).catch(() => undefined);

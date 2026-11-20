@@ -22,8 +22,8 @@ import { CleanUpStaleIndexEntryTask } from './tasks/CleanUpTasks/CleanUpStaleInd
 
 setupRealSearchLibraryWasm();
 
-jest.mock('../../shared/errors', () => ({
-    sendErrorReportForSearch: jest.fn(),
+vi.mock('../../shared/errors', () => ({
+    sendErrorReportForSearch: vi.fn(),
 }));
 
 const SCOPE_A = 'scope-a' as TreeEventScopeId;

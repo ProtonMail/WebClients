@@ -12,7 +12,7 @@ import { InvalidIndexerState, classifyError } from './errors';
 // applications/drive/__mocks__/comlink.ts stubs the package for every drive test and exposes only
 // proxy/wrap/expose, so transferHandlers is missing and registerComlinkErrorTransferHandler()
 // silently no-ops. This suite needs the real registry to exercise the handler it installs.
-jest.unmock('comlink');
+vi.unmock('comlink');
 
 describe('comlinkErrorTransferHandler', () => {
     beforeAll(() => {

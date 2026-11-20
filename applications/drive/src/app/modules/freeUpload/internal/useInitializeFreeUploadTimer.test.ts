@@ -7,26 +7,26 @@ import { useFreeUploadApi } from './useFreeUploadApi';
 import { useFreeUploadFeature } from './useFreeUploadFeature';
 import { useInitializeFreeUploadTimer } from './useInitializeFreeUploadTimer';
 
-jest.mock('./useFreeUploadFeature');
-jest.mock('./useFreeUploadApi');
-jest.mock('@proton/drive/legacy/errorHandling');
+vi.mock('./useFreeUploadFeature');
+vi.mock('./useFreeUploadApi');
+vi.mock('@proton/drive/legacy/errorHandling');
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    useNotifications: jest.fn(() => ({ createNotification: mockCreateNotification })),
+    useNotifications: vi.fn(() => ({ createNotification: mockCreateNotification })),
 }));
 
-const mockUseFreeUploadFeature = jest.mocked(useFreeUploadFeature);
-const mockUseFreeUploadApi = jest.mocked(useFreeUploadApi);
-const mockSendErrorReport = jest.mocked(sendErrorReport);
+const mockUseFreeUploadFeature = vi.mocked(useFreeUploadFeature);
+const mockUseFreeUploadApi = vi.mocked(useFreeUploadApi);
+const mockSendErrorReport = vi.mocked(sendErrorReport);
 
 describe('useInitializeFreeUploadTimer - initializeTimer function', () => {
-    const mockStartFreeUploadTimer = jest.fn();
-    const mockCheckOnboardingStatus = jest.fn();
+    const mockStartFreeUploadTimer = vi.fn();
+    const mockCheckOnboardingStatus = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         // Reset store to initial state
         useFreeUploadStore.setState({
@@ -44,7 +44,7 @@ describe('useInitializeFreeUploadTimer - initializeTimer function', () => {
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('should successfully initialize timer when EndTime is not null', async () => {

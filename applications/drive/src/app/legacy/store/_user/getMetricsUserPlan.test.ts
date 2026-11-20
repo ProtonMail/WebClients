@@ -4,7 +4,7 @@ import { formatUser } from '@proton/shared/lib/user/helpers';
 import { MetricUserPlan } from '../../../utils/type/MetricTypes';
 import { getMetricsUserPlan } from './getMetricsUserPlan';
 
-jest.mock('@proton/shared/lib/user/helpers');
+vi.mock('@proton/shared/lib/user/helpers');
 
 const mockUser = {
     ID: 'test-user-id',
@@ -16,10 +16,10 @@ const mockPaidUser = {
 } as User;
 
 describe('getMetricsUserPlan', () => {
-    const mockFormatUser = jest.mocked(formatUser);
+    const mockFormatUser = vi.mocked(formatUser);
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('when in public context', () => {

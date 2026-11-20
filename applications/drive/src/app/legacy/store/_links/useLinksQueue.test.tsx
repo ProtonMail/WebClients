@@ -2,31 +2,33 @@ import { act, renderHook } from '@testing-library/react';
 
 import { useLinksQueue } from './useLinksQueue';
 
-const mockedLoadLinksMeta = jest.fn();
-jest.mock('./useLinksListing', () => ({
+const mockedLoadLinksMeta = vi.fn();
+vi.mock('./useLinksListing', () => ({
     useLinksListing: () => ({
         loadLinksMeta: mockedLoadLinksMeta,
     }),
 }));
 
-const mockedGetLink = jest.fn();
-jest.mock('./useLinksState', () => ({
+const mockedGetLink = vi.fn();
+vi.mock('./useLinksState', () => ({
     __esModule: true,
     default: () => ({
         getLink: mockedGetLink,
     }),
 }));
 
-jest.useFakeTimers();
-jest.spyOn(global, 'setTimeout');
+vi.useFakeTimers();
+vi.spyOn(global, 'setTimeout');
 
-const mockedAbort = jest.fn();
-const mockedAbortSignal = { aborted: false };
+const mockedAbort = vi.fn();
+const mockedAbortSignal = { aborted: false, addEventListener: vi.fn(), removeEventListener: vi.fn() };
 // @ts-ignore - not mocking the entire AbortSignal, sorry =)
-global.AbortController = jest.fn(() => ({
-    signal: mockedAbortSignal,
-    abort: mockedAbort,
-}));
+global.AbortController = vi.fn(function () {
+    return {
+        signal: mockedAbortSignal,
+        abort: mockedAbort,
+    };
+});
 
 const SHARE_ID = 'shareId';
 
@@ -45,8 +47,8 @@ describe('useLinksQueue', () => {
         hook = result;
         unmountHook = unmount;
 
-        jest.clearAllTimers();
-        jest.clearAllMocks();
+        vi.clearAllTimers();
+        vi.clearAllMocks();
         mockedGetLink.mockReset();
         mockedLoadLinksMeta.mockReset();
 
@@ -85,7 +87,7 @@ describe('useLinksQueue', () => {
             items.forEach((item) => hook.current.addToQueue(SHARE_ID, item));
         });
 
-        jest.runAllTimers();
+        vi.runAllTimers();
 
         expect(setTimeout).toHaveBeenCalledTimes(items.length);
         expect(mockedLoadLinksMeta).toHaveBeenCalledTimes(1);
@@ -96,7 +98,7 @@ describe('useLinksQueue', () => {
             hook.current.addToQueue(SHARE_ID, 'linkId', getFakeRef(null));
         });
 
-        jest.runAllTimers();
+        vi.runAllTimers();
 
         expect(setTimeout).toHaveBeenCalledTimes(1);
         expect(mockedLoadLinksMeta).not.toHaveBeenCalled();
@@ -107,7 +109,7 @@ describe('useLinksQueue', () => {
             hook.current.addToQueue(SHARE_ID, 'linkId');
         });
 
-        jest.runAllTimers();
+        vi.runAllTimers();
         unmountHook();
 
         expect(mockedAbort).toHaveBeenCalled();
@@ -120,7 +122,7 @@ describe('useLinksQueue', () => {
             hook.current.addToQueue(SHARE_ID, 'linkId');
         });
 
-        jest.runAllTimers();
+        vi.runAllTimers();
 
         expect(setTimeout).toHaveBeenCalledTimes(1);
         expect(mockedLoadLinksMeta).not.toHaveBeenCalled();
@@ -128,7 +130,7 @@ describe('useLinksQueue', () => {
 
     it('should not infinite loop if loadLinksMeta fails', async () => {
         // Silence console errors
-        const consoleErrorMock = jest.spyOn(console, 'error').mockImplementation(() => {});
+        const consoleErrorMock = vi.spyOn(console, 'error').mockImplementation(() => {});
 
         mockedLoadLinksMeta.mockRejectedValue(new Error('oh no'));
 
@@ -136,7 +138,7 @@ describe('useLinksQueue', () => {
             hook.current.addToQueue(SHARE_ID, 'linkId');
         });
 
-        await jest.runAllTimersAsync();
+        await vi.runAllTimersAsync();
 
         expect(setTimeout).toHaveBeenCalledTimes(1);
         expect(mockedLoadLinksMeta).toHaveBeenCalledTimes(1);

@@ -6,9 +6,9 @@ import { NodeType } from '@proton/drive/sdk';
 import { useUploadConflictModalState } from './useUploadConflictModalState';
 
 describe('useUploadConflictModalState', () => {
-    const mockOnResolve = jest.fn();
-    const mockOnClose = jest.fn();
-    const mockOnExit = jest.fn();
+    const mockOnResolve = vi.fn();
+    const mockOnClose = vi.fn();
+    const mockOnExit = vi.fn();
 
     const defaultProps = {
         name: 'test-file.txt',
@@ -21,7 +21,7 @@ describe('useUploadConflictModalState', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should pass through modal props', () => {

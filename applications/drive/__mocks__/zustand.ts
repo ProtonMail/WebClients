@@ -1,11 +1,11 @@
 // Taken from zustand doc: https://zustand.docs.pmnd.rs/guides/testing#jest
-import { act } from '@testing-library/react';
+import { vi } from 'vitest';
 import type * as ZustandExportedTypes from 'zustand';
 
 export * from 'zustand';
 
 const { create: actualCreate, createStore: actualCreateStore } =
-    jest.requireActual<typeof ZustandExportedTypes>('zustand');
+    await vi.importActual<typeof ZustandExportedTypes>('zustand');
 
 // a variable to hold reset functions for all stores declared in the app
 export const storeResetFns = new Set<() => void>();
@@ -39,12 +39,3 @@ export const createStore = (<T>(stateCreator: ZustandExportedTypes.StateCreator<
     // to support curried version of createStore
     return typeof stateCreator === 'function' ? createStoreUncurried(stateCreator) : createStoreUncurried;
 }) as typeof ZustandExportedTypes.createStore;
-
-// reset all stores after each test run
-afterEach(() => {
-    act(() => {
-        storeResetFns.forEach((resetFn) => {
-            resetFn();
-        });
-    });
-});

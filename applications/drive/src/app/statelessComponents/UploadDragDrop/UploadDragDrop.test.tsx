@@ -1,11 +1,18 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, createEvent, fireEvent, render, screen } from '@testing-library/react';
 
 import { UploadDragDrop } from './UploadDragDrop';
 import { DRAG_IDLE_TIMEOUT_MS } from './useUploadDragDropOverlay';
 
 const filesDataTransfer = { types: ['Files'] };
 
-const renderDragDrop = (onDrop = jest.fn()) => {
+// happy-dom builds its own DataTransfer from the event init, so the fake one is set on the event itself
+const fireDragEvent = (type: 'dragOver' | 'drop', element: Element, dataTransfer: unknown) => {
+    const event = createEvent[type](element);
+    Object.defineProperty(event, 'dataTransfer', { value: dataTransfer });
+    fireEvent(element, event);
+};
+
+const renderDragDrop = (onDrop = vi.fn()) => {
     render(
         <UploadDragDrop onDrop={onDrop}>
             <div data-testid="content">content</div>
@@ -18,17 +25,17 @@ const isOverlayVisible = () => screen.queryByText('Drop to upload') !== null;
 
 describe('UploadDragDrop', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('shows the overlay when files are dragged from outside the page', () => {
         const { content } = renderDragDrop();
 
-        fireEvent.dragOver(content, { dataTransfer: filesDataTransfer });
+        fireDragEvent('dragOver', content, filesDataTransfer);
 
         expect(isOverlayVisible()).toBe(true);
     });
@@ -36,7 +43,7 @@ describe('UploadDragDrop', () => {
     it('does not throw when dataTransfer is null', () => {
         const { content } = renderDragDrop();
 
-        expect(() => fireEvent.dragOver(content, { dataTransfer: null })).not.toThrow();
+        expect(() => fireDragEvent('dragOver', content, null)).not.toThrow();
         expect(isOverlayVisible()).toBe(false);
     });
 
@@ -44,17 +51,17 @@ describe('UploadDragDrop', () => {
         const { content } = renderDragDrop();
 
         fireEvent.dragStart(content);
-        fireEvent.dragOver(content, { dataTransfer: filesDataTransfer });
+        fireDragEvent('dragOver', content, filesDataTransfer);
 
         expect(isOverlayVisible()).toBe(false);
     });
 
     it('hides the overlay when dragover events stop without a drop', () => {
         const { content } = renderDragDrop();
-        fireEvent.dragOver(content, { dataTransfer: filesDataTransfer });
+        fireDragEvent('dragOver', content, filesDataTransfer);
 
         act(() => {
-            jest.advanceTimersByTime(DRAG_IDLE_TIMEOUT_MS);
+            vi.advanceTimersByTime(DRAG_IDLE_TIMEOUT_MS);
         });
 
         expect(isOverlayVisible()).toBe(false);
@@ -62,14 +69,14 @@ describe('UploadDragDrop', () => {
 
     it('keeps the overlay while dragover events keep coming', () => {
         const { content } = renderDragDrop();
-        fireEvent.dragOver(content, { dataTransfer: filesDataTransfer });
+        fireDragEvent('dragOver', content, filesDataTransfer);
 
         act(() => {
-            jest.advanceTimersByTime(DRAG_IDLE_TIMEOUT_MS - 100);
+            vi.advanceTimersByTime(DRAG_IDLE_TIMEOUT_MS - 100);
         });
-        fireEvent.dragOver(content, { dataTransfer: filesDataTransfer });
+        fireDragEvent('dragOver', content, filesDataTransfer);
         act(() => {
-            jest.advanceTimersByTime(DRAG_IDLE_TIMEOUT_MS - 100);
+            vi.advanceTimersByTime(DRAG_IDLE_TIMEOUT_MS - 100);
         });
 
         expect(isOverlayVisible()).toBe(true);
@@ -77,7 +84,7 @@ describe('UploadDragDrop', () => {
 
     it('hides the overlay when the drop happens outside of it', () => {
         const { content } = renderDragDrop();
-        fireEvent.dragOver(content, { dataTransfer: filesDataTransfer });
+        fireDragEvent('dragOver', content, filesDataTransfer);
 
         fireEvent.drop(content);
 
@@ -86,9 +93,9 @@ describe('UploadDragDrop', () => {
 
     it('uploads the dropped files and hides the overlay', () => {
         const { content, onDrop } = renderDragDrop();
-        fireEvent.dragOver(content, { dataTransfer: filesDataTransfer });
+        fireDragEvent('dragOver', content, filesDataTransfer);
 
-        fireEvent.drop(screen.getByText('Drop to upload'), { dataTransfer: filesDataTransfer });
+        fireDragEvent('drop', screen.getByText('Drop to upload'), filesDataTransfer);
 
         expect(onDrop).toHaveBeenCalledWith(filesDataTransfer);
         expect(isOverlayVisible()).toBe(false);

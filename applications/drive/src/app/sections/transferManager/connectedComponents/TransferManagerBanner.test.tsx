@@ -13,9 +13,9 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { TransferManagerBannerType } from '../transferManager.store';
 import { TransferManagerBanner } from './TransferManagerBanner';
 
-jest.mock('@proton/components/hooks/useDashboardPaymentFlow', () => () => 'upsell');
-jest.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
-    useSubscriptionModalRaw: () => jest.fn(),
+vi.mock('@proton/components/hooks/useDashboardPaymentFlow', () => ({ default: () => 'upsell' }));
+vi.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
+    useSubscriptionModalRaw: () => vi.fn(),
 }));
 
 const config = {
@@ -55,7 +55,7 @@ describe('TransferManagerBanner', () => {
             render(
                 <TransferManagerBanner
                     type={TransferManagerBannerType.StorageFull}
-                    onAction={jest.fn()}
+                    onAction={vi.fn()}
                     subscription={subscription}
                 />,
                 { wrapper: Providers }
@@ -68,7 +68,7 @@ describe('TransferManagerBanner', () => {
             render(
                 <TransferManagerBanner
                     type={TransferManagerBannerType.StorageFull}
-                    onAction={jest.fn()}
+                    onAction={vi.fn()}
                     subscription={subscription}
                 />,
                 { wrapper: Providers }
@@ -82,7 +82,7 @@ describe('TransferManagerBanner', () => {
         render(
             <TransferManagerBanner
                 type={TransferManagerBannerType.StorageFull}
-                onAction={jest.fn()}
+                onAction={vi.fn()}
                 subscription={FREE_SUBSCRIPTION}
             />,
             { wrapper: Providers }
@@ -94,7 +94,7 @@ describe('TransferManagerBanner', () => {
     });
 
     it('calls onAction when the button is clicked', () => {
-        const onAction = jest.fn();
+        const onAction = vi.fn();
         render(
             <TransferManagerBanner
                 type={TransferManagerBannerType.StorageFull}

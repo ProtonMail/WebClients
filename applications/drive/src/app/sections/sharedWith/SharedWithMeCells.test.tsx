@@ -9,12 +9,12 @@ import type { BookmarkItem, DirectShareItem, InvitationItem, SharedWithMeItem } 
 import { ItemType } from './types';
 import { getKeyUid, useSharedWithMeStore } from './useSharedWithMe.store';
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({ handleSdkError: jest.fn() }));
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({ getNodeEntity: jest.fn() }));
-jest.mock('@proton/drive/modules/busDriver', () => ({ BusDriverEventName: {}, getBusDriver: jest.fn() }));
+vi.mock('@proton/drive/legacy/errorHandling', () => ({ handleSdkError: vi.fn() }));
+vi.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({ getNodeEntity: vi.fn() }));
+vi.mock('@proton/drive/modules/busDriver', () => ({ BusDriverEventName: {}, getBusDriver: vi.fn() }));
 
-const mockShowSharingModal = jest.fn();
-jest.mock('@proton/drive/modals/sharingModal', () => ({
+const mockShowSharingModal = vi.fn();
+vi.mock('@proton/drive/modals/sharingModal', () => ({
     useSharingModal: () => ({
         sharingModal: null,
         showSharingModal: mockShowSharingModal,
@@ -58,8 +58,8 @@ function renderShareOptionsCell(item: SharedWithMeItem) {
 
     const cells = getSharedWithMeCells({
         viewportWidth: { '>=large': true } as Breakpoints['viewportWidth'],
-        onRenderItem: jest.fn(),
-        showConfirmModal: jest.fn(),
+        onRenderItem: vi.fn(),
+        showConfirmModal: vi.fn(),
     });
     const shareOptionsCell = cells.find((cell) => cell.id === 'share-options');
     if (!shareOptionsCell) {

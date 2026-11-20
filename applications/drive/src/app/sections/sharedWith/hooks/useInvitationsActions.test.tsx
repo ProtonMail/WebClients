@@ -4,45 +4,45 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
-import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
+import { MemberRole, type NodeEntity, NodeType, getDrivePerNodeType, splitNodeUid } from '@proton/drive/sdk';
 
 import { useInvitationsActions } from './useInvitationsActions';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(),
 }));
 
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
-    getDrivePerNodeType: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
+    getDrivePerNodeType: vi.fn(),
     NodeType: {
         Folder: 'folder',
         File: 'file',
         Album: 'album',
         Photo: 'photo',
     },
-    splitNodeUid: jest.fn(),
+    splitNodeUid: vi.fn(),
 }));
 
-jest.mock('@proton/drive/modules/busDriver', () => ({
-    ...jest.requireActual('@proton/drive/modules/busDriver'),
-    getBusDriver: jest.fn(),
+vi.mock('@proton/drive/modules/busDriver', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/busDriver')),
+    getBusDriver: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
-    getNodeEntity: jest.fn(),
+vi.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
+    getNodeEntity: vi.fn(),
 }));
 
-const mockCreateNotification = jest.fn();
-const mockHandleError = jest.mocked(handleSdkError);
-const mockAcceptInvitation = jest.fn();
-const mockRejectInvitation = jest.fn();
-const mockGetNode = jest.fn();
-const mockEventManagerEmit = jest.fn();
+const mockCreateNotification = vi.fn();
+const mockHandleError = vi.mocked(handleSdkError);
+const mockAcceptInvitation = vi.fn();
+const mockRejectInvitation = vi.fn();
+const mockGetNode = vi.fn();
+const mockEventManagerEmit = vi.fn();
 
 const mockEventManager = {
     emit: mockEventManagerEmit,
@@ -72,27 +72,26 @@ const mockDrive = {
 
 describe('useInvitationsActions', () => {
     beforeEach(() => {
-        jest.mocked(useNotifications).mockReturnValue({
+        vi.mocked(useNotifications).mockReturnValue({
             createNotification: mockCreateNotification,
         } as any);
 
-        jest.mocked(getDrivePerNodeType).mockReturnValue(mockDrive as any);
+        vi.mocked(getDrivePerNodeType).mockReturnValue(mockDrive as any);
 
-        jest.mocked(getBusDriver).mockReturnValue(mockEventManager as any);
+        vi.mocked(getBusDriver).mockReturnValue(mockEventManager as any);
 
-        jest.mocked(getNodeEntity).mockReturnValue({
+        vi.mocked(getNodeEntity).mockReturnValue({
             node: mockNode,
         } as any);
 
-        const { splitNodeUid } = require('@proton/drive/sdk');
-        jest.mocked(splitNodeUid).mockReturnValue({
+        vi.mocked(splitNodeUid).mockReturnValue({
             volumeId: 'volume-id-1',
             nodeId: 'node-id-1',
         });
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('acceptInvitation', () => {
@@ -143,7 +142,7 @@ describe('useInvitationsActions', () => {
     describe('rejectInvitation', () => {
         it('should show confirmation modal for folder rejection', async () => {
             const { result } = renderHook(() => useInvitationsActions());
-            const mockShowConfirmModal = jest.fn();
+            const mockShowConfirmModal = vi.fn();
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
             const name = 'Test Folder';
@@ -170,7 +169,7 @@ describe('useInvitationsActions', () => {
 
         it('should show confirmation modal for default item rejection', async () => {
             const { result } = renderHook(() => useInvitationsActions());
-            const mockShowConfirmModal = jest.fn();
+            const mockShowConfirmModal = vi.fn();
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
             const name = 'Test File';
@@ -195,7 +194,7 @@ describe('useInvitationsActions', () => {
 
         it('should reject invitation and emit success notification on confirm', async () => {
             const { result } = renderHook(() => useInvitationsActions());
-            const mockShowConfirmModal = jest.fn();
+            const mockShowConfirmModal = vi.fn();
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
             const name = 'Test Folder';
@@ -210,7 +209,7 @@ describe('useInvitationsActions', () => {
                 type,
             });
 
-            const { onSubmit } = mockShowConfirmModal.mock.lastCall[0];
+            const { onSubmit } = mockShowConfirmModal.mock.lastCall![0];
             await onSubmit();
 
             expect(getDrivePerNodeType).toHaveBeenCalled();
@@ -230,7 +229,7 @@ describe('useInvitationsActions', () => {
 
         it('should handle errors during invitation rejection', async () => {
             const { result } = renderHook(() => useInvitationsActions());
-            const mockShowConfirmModal = jest.fn();
+            const mockShowConfirmModal = vi.fn();
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
             const name = 'Test Folder';
@@ -246,7 +245,7 @@ describe('useInvitationsActions', () => {
                 type,
             });
 
-            const { onSubmit } = mockShowConfirmModal.mock.lastCall[0];
+            const { onSubmit } = mockShowConfirmModal.mock.lastCall![0];
             await onSubmit();
 
             expect(mockHandleError).toHaveBeenCalledWith(error, {
@@ -256,7 +255,7 @@ describe('useInvitationsActions', () => {
 
         it('should show correct message for Album type rejection', async () => {
             const { result } = renderHook(() => useInvitationsActions());
-            const mockShowConfirmModal = jest.fn();
+            const mockShowConfirmModal = vi.fn();
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
             const name = 'Test Album';

@@ -9,77 +9,77 @@ import { BaseTransferStatus } from '../../modules/download/downloadManager.store
 import { useTransferManagerActions } from './useTransferManagerActions';
 import type { TransferManagerEntry } from './useTransferManagerState';
 
-jest.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => {
+vi.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => {
     return {
-        useConfirmActionModal: jest.fn(),
+        useConfirmActionModal: vi.fn(),
     };
 });
 
-jest.mock('../../modules/download/DownloadManager', () => {
+vi.mock('../../modules/download/DownloadManager', () => {
     return {
         DownloadManager: {
-            getInstance: jest.fn(),
+            getInstance: vi.fn(),
         },
     };
 });
 
-jest.mock('@proton/drive/modules/upload', () => {
+vi.mock('@proton/drive/modules/upload', async () => {
     return {
-        ...jest.requireActual('@proton/drive/modules/upload'),
+        ...(await vi.importActual('@proton/drive/modules/upload')),
         uploadManager: {
-            cancel: jest.fn(),
-            retryUpload: jest.fn(),
+            cancel: vi.fn(),
+            retryUpload: vi.fn(),
         },
-        useUploadQueueStore: jest.fn((selector) => {
+        useUploadQueueStore: vi.fn((selector) => {
             return selector({
-                getItem: jest.fn(),
-                clearQueue: jest.fn(),
+                getItem: vi.fn(),
+                clearQueue: vi.fn(),
                 queue: new Map(),
             });
         }),
     };
 });
 
-jest.mock('@proton/drive/modals/sharingModal', () => {
+vi.mock('@proton/drive/modals/sharingModal', () => {
     return {
-        useSharingModal: jest.fn(),
+        useSharingModal: vi.fn(),
     };
 });
 
-jest.mock('../../legacy/components/modals/DownloadContainsDocumentsModal', () => {
+vi.mock('../../legacy/components/modals/DownloadContainsDocumentsModal', () => {
     return {
-        useDownloadContainsDocumentsModal: jest.fn().mockReturnValue([null, jest.fn()]),
+        useDownloadContainsDocumentsModal: vi.fn().mockReturnValue([null, vi.fn()]),
     };
 });
 
-jest.mock('../../modals/SignatureIssueModal', () => {
+vi.mock('../../modals/SignatureIssueModal', () => {
     return {
-        useSignatureIssueModal: jest
+        useSignatureIssueModal: vi
             .fn()
-            .mockReturnValue({ signatureIssueModal: null, showSignatureIssueModal: jest.fn() }),
+            .mockReturnValue({ signatureIssueModal: null, showSignatureIssueModal: vi.fn() }),
     };
 });
 
-jest.mock('../../modules/download/downloadManager.store', () => {
+vi.mock('../../modules/download/downloadManager.store', async () => {
     return {
-        ...jest.requireActual('../../modules/download/downloadManager.store'),
-        useDownloadManagerStore: jest.fn((selector) => {
+        ...(await vi.importActual('../../modules/download/downloadManager.store')),
+        useDownloadManagerStore: vi.fn((selector) => {
             return selector({
-                clearQueue: jest.fn(),
-                updateDownloadItem: jest.fn(),
-                getQueueItem: jest.fn(),
+                clearQueue: vi.fn(),
+                updateDownloadItem: vi.fn(),
+                getQueueItem: vi.fn(),
             });
         }),
     };
 });
 
-const mockShowConfirmModal = jest.fn();
+const mockShowConfirmModal = vi.fn();
 const mockConfirmModal = <div>Confirm Modal</div>;
 const mockSharingModal = <div>Sharing Modal</div>;
-const mockShowSharingModal = jest.fn();
+const mockShowSharingModal = vi.fn();
 const mockDownloadManager = {
-    cancel: jest.fn(),
-    retry: jest.fn(),
+    cancel: vi.fn(),
+    retry: vi.fn(),
 } as any;
 
 const createMockEntry = (
@@ -112,13 +112,13 @@ const createMockEntry = (
 
 describe('useTransferManagerActions', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(useConfirmActionModal).mockReturnValue([mockConfirmModal, mockShowConfirmModal]);
-        jest.mocked(useSharingModal).mockReturnValue({
+        vi.clearAllMocks();
+        vi.mocked(useConfirmActionModal).mockReturnValue([mockConfirmModal, mockShowConfirmModal]);
+        vi.mocked(useSharingModal).mockReturnValue({
             sharingModal: mockSharingModal,
             showSharingModal: mockShowSharingModal,
         });
-        jest.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager);
+        vi.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager);
     });
 
     describe('cancelAll', () => {
@@ -220,7 +220,9 @@ describe('useTransferManagerActions', () => {
         it('should cancel uploads in Preparing, Waiting, and ConflictFound states', async () => {
             const { result } = renderHook(() => useTransferManagerActions());
 
-            const { UploadStatus } = jest.requireActual('@proton/drive/modules/upload');
+            const { UploadStatus } = (await vi.importActual('@proton/drive/modules/upload')) as {
+                UploadStatus: Record<string, BaseTransferStatus>;
+            };
             const entries = [
                 createMockEntry('upload', UploadStatus.Preparing, 'upload-preparing'),
                 createMockEntry('upload', UploadStatus.Waiting, 'upload-waiting'),

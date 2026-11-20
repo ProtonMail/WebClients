@@ -38,7 +38,7 @@ export const waitForCondition = async (predicate: () => boolean, iterations = 10
 export const trackInstances = <Args extends unknown[], Instance>(factory: (...args: Args) => Instance) => {
     let currentFactory = factory;
     const instances: Instance[] = [];
-    const Mock = jest.fn((...args: Args) => {
+    const Mock = vi.fn(function (...args: Args) {
         const instance = currentFactory(...args);
         instances.push(instance);
         return instance;

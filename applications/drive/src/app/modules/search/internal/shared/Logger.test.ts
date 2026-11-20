@@ -4,7 +4,7 @@ describe('Logger never throws', () => {
     afterEach(() => {
         Reflect.set(globalThis, 'BroadcastChannel', originalBroadcastChannel);
         Reflect.deleteProperty(globalThis, 'SharedWorkerGlobalScope');
-        jest.resetModules();
+        vi.resetModules();
     });
 
     /**
@@ -24,7 +24,7 @@ describe('Logger never throws', () => {
 
         Reflect.set(globalThis, 'SharedWorkerGlobalScope', class {});
         Reflect.set(globalThis, 'BroadcastChannel', DeadBroadcastChannel);
-        jest.resetModules();
+        vi.resetModules();
         return import('./Logger');
     };
 

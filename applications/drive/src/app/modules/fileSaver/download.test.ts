@@ -42,7 +42,7 @@ const connectPageToServiceWorker = async () => {
                                 origin: '',
                                 lastEventId: '',
                                 source: null,
-                                waitUntil: jest.fn(),
+                                waitUntil: vi.fn(),
                             })
                         );
                     }
@@ -68,7 +68,7 @@ const openBrowserDownload = async (serviceWorker: Awaited<ReturnType<typeof conn
         resultingClientId: '',
         handled: Promise.resolve(undefined),
         preloadResponse: Promise.resolve(undefined),
-        waitUntil: jest.fn(),
+        waitUntil: vi.fn(),
         respondWith: (value: Response) => {
             response = value;
         },
@@ -93,7 +93,7 @@ describe('openDownloadStream backpressure', () => {
 
     it('stops accepting chunks while the browser is not reading the download', async () => {
         const serviceWorker = await connectPageToServiceWorker();
-        const writable = await openDownloadStream(META, { onCancel: jest.fn() });
+        const writable = await openDownloadStream(META, { onCancel: vi.fn() });
         const browserReader = await openBrowserDownload(serviceWorker);
 
         const writer = writable.getWriter();
@@ -124,7 +124,7 @@ describe('openDownloadStream backpressure', () => {
 
     it('lets the download be aborted while waiting for the browser to read', async () => {
         const serviceWorker = await connectPageToServiceWorker();
-        const writable = await openDownloadStream(META, { onCancel: jest.fn() });
+        const writable = await openDownloadStream(META, { onCancel: vi.fn() });
         await openBrowserDownload(serviceWorker);
 
         const writer = writable.getWriter();
@@ -139,7 +139,7 @@ describe('openDownloadStream backpressure', () => {
         const serviceWorker = await connectPageToServiceWorker();
         const abortController = new AbortController();
         const writable = await openDownloadStream(META, {
-            onCancel: jest.fn(),
+            onCancel: vi.fn(),
             abortSignal: abortController.signal,
         });
         await openBrowserDownload(serviceWorker);
@@ -175,7 +175,7 @@ describe('openDownloadStream backpressure', () => {
                 },
             },
         });
-        const writer = (await openDownloadStream(META, { onCancel: jest.fn() })).getWriter();
+        const writer = (await openDownloadStream(META, { onCancel: vi.fn() })).getWriter();
 
         await Promise.all(Array.from({ length: 5 }, () => writer.write(new Uint8Array(CHUNK_SIZE))));
         await waitForMessages();

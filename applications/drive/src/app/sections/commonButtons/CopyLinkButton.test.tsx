@@ -5,7 +5,7 @@ import { CopyLinkButton } from './CopyLinkButton';
 describe('CopyLinkButton', () => {
     describe('toolbar button', () => {
         it('should call onClick when clicked', async () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             render(<CopyLinkButton buttonType="toolbar" onClick={onClick} />);
 
             const button = screen.getByTestId('toolbar-copy-link');
@@ -17,7 +17,7 @@ describe('CopyLinkButton', () => {
         });
 
         it('should handle async onClick', async () => {
-            const onClick = jest.fn().mockImplementation(() => {
+            const onClick = vi.fn().mockImplementation(() => {
                 return new Promise((resolve) => {
                     setTimeout(resolve, 50);
                 });
@@ -33,7 +33,7 @@ describe('CopyLinkButton', () => {
         });
 
         it('should not throw when clicking multiple times', async () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             render(<CopyLinkButton buttonType="toolbar" onClick={onClick} />);
 
             const button = screen.getByTestId('toolbar-copy-link');
@@ -48,8 +48,8 @@ describe('CopyLinkButton', () => {
 
     describe('context menu button', () => {
         it('should call onClick when clicked', async () => {
-            const onClick = jest.fn();
-            const close = jest.fn();
+            const onClick = vi.fn();
+            const close = vi.fn();
             render(<CopyLinkButton buttonType="contextMenu" onClick={onClick} close={close} />);
 
             const button = screen.getByTestId('context-menu-copy-link');
@@ -61,12 +61,12 @@ describe('CopyLinkButton', () => {
         });
 
         it('should handle async onClick', async () => {
-            const onClick = jest.fn().mockImplementation(() => {
+            const onClick = vi.fn().mockImplementation(() => {
                 return new Promise((resolve) => {
                     setTimeout(resolve, 50);
                 });
             });
-            const close = jest.fn();
+            const close = vi.fn();
             render(<CopyLinkButton buttonType="contextMenu" onClick={onClick} close={close} />);
 
             const button = screen.getByTestId('context-menu-copy-link');

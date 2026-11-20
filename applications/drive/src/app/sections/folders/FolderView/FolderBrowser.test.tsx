@@ -1,6 +1,6 @@
 import { act, screen, waitFor } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { MemberRole, NodeType } from '@proton/drive/sdk';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
@@ -10,7 +10,7 @@ import type { FolderPermissions, FolderViewItem } from '../useFolder.store';
 import { useFolderStore } from '../useFolder.store';
 import { FolderBrowser } from './FolderBrowser';
 
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
+vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
     __esModule: true,
     default: () => ({
         viewportWidth: { '<=small': false, isSmall: false, isMedium: false, isLarge: true },
@@ -18,35 +18,35 @@ jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
     }),
 }));
 
-jest.mock('../../../legacy/hooks/drive/useNavigate', () => ({
+vi.mock('../../../legacy/hooks/drive/useNavigate', () => ({
     __esModule: true,
-    default: () => ({ navigateToLink: jest.fn(), navigateToRoot: jest.fn() }),
+    default: () => ({ navigateToLink: vi.fn(), navigateToRoot: vi.fn() }),
 }));
 
-jest.mock('../../../utils/docs/openInDocs', () => ({
+vi.mock('../../../utils/docs/openInDocs', () => ({
     getOpenInDocsInfo: () => undefined,
 }));
 
-jest.mock('../../../modules/userSettings', () => ({
+vi.mock('../../../modules/userSettings', () => ({
     useUserSettings: () => ({
         layout: 0,
-        changeLayout: jest.fn(),
+        changeLayout: vi.fn(),
     }),
 }));
 
-jest.mock('../../../legacy/components/sections/useIsEditEnabled', () => ({
+vi.mock('../../../legacy/components/sections/useIsEditEnabled', () => ({
     __esModule: true,
     default: () => false,
 }));
 
-jest.mock('../../../legacy/hooks/drive/useActiveShare', () => ({
+vi.mock('../../../legacy/hooks/drive/useActiveShare', () => ({
     useActiveShare: () => ({
         activeFolder: { shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' },
         defaultShareRoot: { shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' },
     }),
 }));
 
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
     useFlag: (flag: string) => flag === 'DriveWebReportAbuseDirectShare',
 }));
@@ -133,7 +133,7 @@ function renderFolderBrowser(role: MemberRole, buttonType: 'toolbar' | 'contextM
             activeFolder={{ shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' }}
             layout={LayoutSetting.List}
             sortedList={[item]}
-            onSortChange={jest.fn()}
+            onSortChange={vi.fn()}
         />
     );
 }
@@ -149,7 +149,7 @@ describe('FolderBrowser', () => {
                 activeFolder={{ shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' }}
                 layout={LayoutSetting.List}
                 sortedList={[]}
-                onSortChange={jest.fn()}
+                onSortChange={vi.fn()}
             />
         );
 

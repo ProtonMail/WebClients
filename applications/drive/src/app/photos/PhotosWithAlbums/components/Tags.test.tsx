@@ -9,13 +9,13 @@ describe('PhotosTags', () => {
     const defaultProps: PhotosTagsProps = {
         selectedTags: [PhotoTag.All],
         tags: [PhotoTag.All, PhotoTag.Favorites, PhotoTag.Screenshots, PhotoTag.Videos],
-        onTagSelect: jest.fn(),
+        onTagSelect: vi.fn(),
     };
 
     const user = userEvent.setup();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('renders all buttons correctly', () => {
@@ -28,7 +28,7 @@ describe('PhotosTags', () => {
     });
 
     it('handles tag selection correctly', async () => {
-        const onTagSelect = jest.fn();
+        const onTagSelect = vi.fn();
         render(<PhotosTags {...defaultProps} onTagSelect={onTagSelect} />);
 
         await user.click(screen.getByText('Favorites'));
@@ -39,7 +39,7 @@ describe('PhotosTags', () => {
     });
 
     it('handles "All" tag selection', async () => {
-        const onTagSelect = jest.fn();
+        const onTagSelect = vi.fn();
         render(<PhotosTags {...defaultProps} onTagSelect={onTagSelect} />);
 
         await user.click(screen.getByText('All'));
@@ -71,7 +71,7 @@ describe('PhotosTags', () => {
     });
 
     it('handles Live Photos selection correctly', async () => {
-        const onTagSelect = jest.fn();
+        const onTagSelect = vi.fn();
         const props = {
             ...defaultProps,
             tags: [PhotoTag.LivePhotos],
@@ -85,7 +85,7 @@ describe('PhotosTags', () => {
     });
 
     it('handles Motion Photos selection correctly', async () => {
-        const onTagSelect = jest.fn();
+        const onTagSelect = vi.fn();
         const props = {
             ...defaultProps,
             tags: [PhotoTag.MotionPhotos],

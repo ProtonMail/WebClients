@@ -6,12 +6,12 @@ import { MemberRole, type NodeEntity, NodeType, useDrive } from '@proton/drive/s
 import { useFolder } from './useFolder';
 import { useFolderStore } from './useFolder.store';
 
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
-    useDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
+    useDrive: vi.fn(),
 }));
-jest.mock('@proton/app-context/useNotifications', () => ({ useNotifications: jest.fn() }));
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }));
+vi.mock('@proton/app-context/useNotifications', () => ({ useNotifications: vi.fn() }));
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }));
 
 const createFolderNode = (uid: string, parentUid?: string) =>
     ({
@@ -37,10 +37,10 @@ let releaseChildren: (() => void) | undefined;
 beforeEach(() => {
     releaseChildren = undefined;
     useFolderStore.getState().reset();
-    jest.mocked(useNotifications).mockReturnValue({ createNotification: jest.fn() } as unknown as ReturnType<
+    vi.mocked(useNotifications).mockReturnValue({ createNotification: vi.fn() } as unknown as ReturnType<
         typeof useNotifications
     >);
-    jest.mocked(useDrive).mockReturnValue({
+    vi.mocked(useDrive).mockReturnValue({
         drive: {
             getNodeHierarchy: async (uid: string) => [nodes[uid]],
             iterateFolderChildrenNodeUids: async function* () {

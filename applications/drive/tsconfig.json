@@ -1,6 +1,7 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "lib": ["dom", "dom.iterable", "esnext", "webworker"]
+        "lib": ["dom", "dom.iterable", "esnext", "webworker"],
+        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "vitest/globals", "node"]
     }
 }

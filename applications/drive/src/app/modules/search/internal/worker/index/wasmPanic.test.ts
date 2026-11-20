@@ -6,7 +6,7 @@ import { takeLastWasmPanic } from './wasmPanic';
 // The panic capture forwards to whatever console.error is bound to at install time, so it must be
 // silenced before setupRealSearchLibraryWasm() installs it: the panic text is expected here and
 // asserted on directly via takeLastWasmPanic().
-jest.spyOn(console, 'error').mockImplementation(() => {});
+vi.spyOn(console, 'error').mockImplementation(() => {});
 
 // Installs the panic capture, like initWasm() does in the worker.
 setupRealSearchLibraryWasm();

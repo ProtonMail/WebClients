@@ -1,48 +1,51 @@
 import { act, renderHook } from '@testing-library/react';
 
+import { querySharedByMeLinks } from '@proton/shared/lib/api/drive/sharing';
+import { queryVolumeSharedLinks } from '@proton/shared/lib/api/drive/volume';
+
 import { VolumesStateProvider } from '../../_volumes/useVolumesState';
 import { LinksStateProvider } from '../useLinksState';
 import { PAGE_SIZE } from './useLinksListingHelpers';
 import { useSharedLinksListing } from './useSharedLinksListing';
 
-jest.mock('@proton/shared/lib/api/drive/volume', () => ({
-    queryVolumeSharedLinks: jest.fn(),
+vi.mock('@proton/shared/lib/api/drive/volume', () => ({
+    queryVolumeSharedLinks: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/api/drive/sharing', () => ({
-    querySharedByMeLinks: jest.fn(),
+vi.mock('@proton/shared/lib/api/drive/sharing', () => ({
+    querySharedByMeLinks: vi.fn(),
 }));
 
-const mockRequest = jest.fn();
-jest.mock('../../_api/useDebouncedRequest', () => {
+const mockRequest = vi.fn();
+vi.mock('../../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockRequest;
     };
-    return useDebouncedRequest;
+    return { __esModule: true, default: useDebouncedRequest };
 });
 
-jest.mock('../../_utils/errorHandler', () => {
+vi.mock('../../_utils/errorHandler', () => {
     return {
         useErrorHandler: () => ({
-            showErrorNotification: jest.fn(),
-            showAggregatedErrorNotification: jest.fn(),
+            showErrorNotification: vi.fn(),
+            showAggregatedErrorNotification: vi.fn(),
         }),
     };
 });
 
-jest.mock('../useLink', () => {
+vi.mock('../useLink', () => {
     const useLink = () => {
         return {
-            decryptLink: jest.fn(),
+            decryptLink: vi.fn(),
         };
     };
-    return useLink;
+    return { __esModule: true, default: useLink };
 });
 
-const queryVolumeSharedLinksMock = require('@proton/shared/lib/api/drive/volume').queryVolumeSharedLinks as jest.Mock;
-const querySharedByMeLinksMock = require('@proton/shared/lib/api/drive/sharing').querySharedByMeLinks as jest.Mock;
+const queryVolumeSharedLinksMock = vi.mocked(queryVolumeSharedLinks);
+const querySharedByMeLinksMock = vi.mocked(querySharedByMeLinks);
 const generateArrayOfRandomStrings = (size: number): string[] => {
-    return Array.from({ length: size }, () => Math.random().toString(36).substring(2));
+    return Array.from({ length: size }, (_, index) => `link-${index}`);
 };
 
 describe('useSharedLinksListing LEGACY', () => {
@@ -51,7 +54,7 @@ describe('useSharedLinksListing LEGACY', () => {
     };
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
         const wrapper = ({ children }: { children: React.ReactNode }) => (
             <VolumesStateProvider>
                 <LinksStateProvider>{children}</LinksStateProvider>
@@ -61,7 +64,7 @@ describe('useSharedLinksListing LEGACY', () => {
         const { result } = renderHook(() => useSharedLinksListing(), { wrapper });
         hook = result;
 
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     it('should fetch the first page of shared links for a given volume', async () => {
@@ -131,7 +134,7 @@ describe('useSharedLinksListing', () => {
     };
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
         const wrapper = ({ children }: { children: React.ReactNode }) => (
             <VolumesStateProvider>
                 <LinksStateProvider>{children}</LinksStateProvider>
@@ -141,7 +144,7 @@ describe('useSharedLinksListing', () => {
         const { result } = renderHook(() => useSharedLinksListing(), { wrapper });
         hook = result;
 
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     it('should fetch the first batch of shared by me links for a given volume', async () => {

@@ -61,7 +61,6 @@ catalog:
     '@types/chrome': ^0.3.7
     '@types/history': ^4.7.11
     '@types/jest': ^30.0.0
-    '@types/jest-when': ^3.5.5
     '@types/lodash': ^4.17.27
     '@types/node': ^24.19.2
     '@types/react': ^18.3.31
@@ -96,10 +95,7 @@ catalog:
     # Keep Lumo and its export tests on the version targeted by the patch below.
     html2canvas: 1.4.1
     idb: ^8.0.4
-    jest: ^30.5.2
     jest-environment-jsdom: ^30.5.2
-    jest-junit: ^16.0.0
-    jest-when: 3.7.0
     jsdom: ^31.0.0
     jszip: ^3.10.2
     lexical: 0.31.2

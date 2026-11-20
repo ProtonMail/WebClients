@@ -16,7 +16,7 @@ describe('useVolumesState', () => {
 
     beforeAll(() => {
         // Prevent warning to be shown in the console when running tests
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
     beforeEach(() => {
         hook = renderTestHook();
@@ -26,7 +26,7 @@ describe('useVolumesState', () => {
         hook.current.clear();
     });
     afterAll(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('sets share ids by volumeId', async () => {

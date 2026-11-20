@@ -23,18 +23,18 @@ import {
     sendMessageReportForSearch,
 } from './errors';
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
-    captureMessage: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sentry', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/sentry')),
+    captureMessage: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    ...jest.requireActual('@proton/drive/legacy/errorHandling'),
-    sendErrorReport: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', async () => ({
+    ...(await vi.importActual('@proton/drive/legacy/errorHandling')),
+    sendErrorReport: vi.fn(),
 }));
 
-const mockedCaptureMessage = jest.mocked(captureMessage);
-const mockedSendErrorReport = jest.mocked(sendErrorReport);
+const mockedCaptureMessage = vi.mocked(captureMessage);
+const mockedSendErrorReport = vi.mocked(sendErrorReport);
 
 describe('classifyError', () => {
     describe('permanent beats transient', () => {
@@ -285,14 +285,14 @@ describe('maybeWrapAsRepairableNodeError', () => {
 
 describe('sendErrorReportForSearch never throws', () => {
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     // Callers are catch/finally blocks (WriteSession.commit, IndexRegistry.dispose,
     // IndexBlobStore.freeCached, CleanUpStaleBlobsTask). A throw here masks the original error or
     // skips cleanup, so the reporter has to absorb its own failures.
     it('swallows a failing reporting backend', () => {
-        jest.spyOn(console, 'warn').mockImplementation(() => {
+        vi.spyOn(console, 'warn').mockImplementation(() => {
             throw new Error('reporting backend is down');
         });
 
@@ -370,7 +370,7 @@ describe('listenForWorkerErrors', () => {
         mockedSendErrorReport.mockClear();
 
         const RealBroadcastChannel = BroadcastChannel;
-        jest.spyOn(global, 'BroadcastChannel').mockImplementationOnce((name: string) => {
+        vi.spyOn(global, 'BroadcastChannel').mockImplementationOnce(function (name: string) {
             createdChannel = new RealBroadcastChannel(name);
             return createdChannel;
         });
@@ -379,7 +379,7 @@ describe('listenForWorkerErrors', () => {
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
         createdChannel?.close();
     });
 

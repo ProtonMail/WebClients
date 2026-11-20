@@ -5,10 +5,10 @@ import type { ModalStateReturnObj } from '@proton/components/components/modalTwo
 import { type AlbumItem, useAlbumsStore } from '../useAlbums.store';
 import { AddAlbumPhotosModal } from './AddAlbumPhotosModal';
 
-jest.mock('@proton/drive/sdk', () => ({ getDriveForPhotos: jest.fn() }));
-jest.mock('@proton/drive/modules/thumbnails', () => ({ useThumbnail: () => undefined, loadThumbnail: jest.fn() }));
-jest.mock('../PhotosWithAlbums/loaders/loadAdditionalInfo', () => ({ enqueueAdditionalInfo: jest.fn() }));
-jest.mock('../loaders/loadAlbums', () => ({ loadAllAlbums: jest.fn() }));
+vi.mock('@proton/drive/sdk', () => ({ getDriveForPhotos: vi.fn() }));
+vi.mock('@proton/drive/modules/thumbnails', () => ({ useThumbnail: () => undefined, loadThumbnail: vi.fn() }));
+vi.mock('../PhotosWithAlbums/loaders/loadAdditionalInfo', () => ({ enqueueAdditionalInfo: vi.fn() }));
+vi.mock('../loaders/loadAlbums', () => ({ loadAllAlbums: vi.fn() }));
 
 const album = (nodeUid: string, name: string, isShared: boolean) =>
     ({ nodeUid, name, isShared, photoCount: 3, coverNodeUid: undefined }) as unknown as AlbumItem;
@@ -23,16 +23,16 @@ const ALBUMS = [
 
 const renderModal = (share: boolean) => {
     const addAlbumPhotosModal: ModalStateReturnObj = {
-        modalProps: { open: true, onClose: jest.fn(), onExit: jest.fn() },
-        openModal: jest.fn(),
+        modalProps: { open: true, onClose: vi.fn(), onExit: vi.fn() },
+        openModal: vi.fn(),
         render: true,
     };
     return render(
         <AddAlbumPhotosModal
             addAlbumPhotosModal={addAlbumPhotosModal}
             photosNodeUids={['photo-1']}
-            onCreateAlbumWithPhotos={jest.fn()}
-            onAddAlbumPhotos={jest.fn()}
+            onCreateAlbumWithPhotos={vi.fn()}
+            onAddAlbumPhotos={vi.fn()}
             share={share}
         />
     );
@@ -48,7 +48,7 @@ describe('AddAlbumPhotosModal', () => {
     });
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         useAlbumsStore.setState({
             albums: new Map(ALBUMS.map((a) => [a.nodeUid, a])),
             albumsUids: ALBUMS.map((a) => a.nodeUid),

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { NodeType } from '@proton/drive/sdk';
 import type { MimeIconComponent } from '@proton/file-icons/component';
 import { MimeAlbum } from '@proton/file-icons/icons/MimeAlbum';
@@ -58,11 +58,11 @@ describe('GridItemContent', () => {
 
     it('applies grayscale filter to the icon for invitations', () => {
         const { container } = renderWithProviders(<GridItemContent {...defaultProps} isInvitation />);
-        expect(container.querySelector('svg')).toHaveStyle({ filter: 'grayscale(1)' });
+        expect(container.querySelector('svg')).toHaveStyle({ filter: 'grayscale(100%)' });
     });
 
     it('wraps content in a button when onClick is provided', () => {
-        renderWithProviders(<GridItemContent {...defaultProps} onClick={jest.fn()} />);
+        renderWithProviders(<GridItemContent {...defaultProps} onClick={vi.fn()} />);
         expect(screen.getByRole('button')).toBeInTheDocument();
     });
 

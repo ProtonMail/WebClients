@@ -103,7 +103,7 @@ describe('IndexReader integration', () => {
             await indexDocuments(writer, [
                 makeTestIndexEntry('doc-1', { filename: { kind: 'text', value: 'quarterly report' } }),
             ]);
-            jest.spyOn(engine, 'query').mockImplementation(() => {
+            vi.spyOn(engine, 'query').mockImplementation(() => {
                 throw new Error('null pointer passed to rust');
             });
 
@@ -112,7 +112,7 @@ describe('IndexReader integration', () => {
 
         it('lets an abort through untouched so a stopping queue is not mistaken for a broken engine', async () => {
             const abort = new DOMException('aborted', 'AbortError');
-            jest.spyOn(engine, 'query').mockImplementation(() => {
+            vi.spyOn(engine, 'query').mockImplementation(() => {
                 throw abort;
             });
 

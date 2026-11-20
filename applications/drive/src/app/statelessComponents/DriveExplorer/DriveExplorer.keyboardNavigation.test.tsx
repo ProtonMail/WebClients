@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { Mock } from 'vitest';
 
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
@@ -10,12 +11,12 @@ import type { CellDefinition, DriveExplorerEvents, DriveExplorerSelection, Selec
 function makeSelectionMethods(overrides: Partial<SelectionMethods> = {}): SelectionMethods {
     return {
         selectionState: SelectionState.NONE,
-        selectItem: jest.fn(),
-        toggleSelectItem: jest.fn(),
-        toggleRange: jest.fn(),
-        toggleAllSelected: jest.fn(),
-        clearSelections: jest.fn(),
-        isSelected: jest.fn(() => false),
+        selectItem: vi.fn(),
+        toggleSelectItem: vi.fn(),
+        toggleRange: vi.fn(),
+        toggleAllSelected: vi.fn(),
+        clearSelections: vi.fn(),
+        isSelected: vi.fn(() => false),
         ...overrides,
     };
 }
@@ -70,7 +71,7 @@ function getActivator(uid: string): HTMLElement {
 
 describe('DriveExplorer keyboard navigation', () => {
     beforeAll(() => {
-        Element.prototype.scrollIntoView = jest.fn();
+        Element.prototype.scrollIntoView = vi.fn();
         // @tanstack/virtual-core reads offsetWidth/offsetHeight to size the viewport;
         // jsdom returns 0 for both so without this the virtualizer renders no rows.
         Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 800 });
@@ -78,7 +79,7 @@ describe('DriveExplorer keyboard navigation', () => {
     });
 
     beforeEach(() => {
-        (Element.prototype.scrollIntoView as jest.Mock).mockClear();
+        (Element.prototype.scrollIntoView as Mock).mockClear();
     });
 
     it('ArrowDown moves focus to the next row activator', async () => {
@@ -134,7 +135,7 @@ describe('DriveExplorer keyboard navigation', () => {
         const user = userEvent.setup();
 
         getActivator('d').focus();
-        (Element.prototype.scrollIntoView as jest.Mock).mockClear();
+        (Element.prototype.scrollIntoView as Mock).mockClear();
         await user.keyboard('{Home}');
 
         expect(document.activeElement).toBe(getActivator('a'));
@@ -147,7 +148,7 @@ describe('DriveExplorer keyboard navigation', () => {
         const user = userEvent.setup();
 
         getActivator('a').focus();
-        (Element.prototype.scrollIntoView as jest.Mock).mockClear();
+        (Element.prototype.scrollIntoView as Mock).mockClear();
         await user.keyboard('{End}');
 
         expect(document.activeElement).toBe(getActivator('e'));
@@ -190,7 +191,7 @@ describe('DriveExplorer keyboard navigation', () => {
 
     it('Enter on a focused row triggers onItemDoubleClick', async () => {
         const ids = ['a', 'b', 'c'];
-        const onItemDoubleClick = jest.fn();
+        const onItemDoubleClick = vi.fn();
         renderExplorer({ itemIds: ids, events: { onItemDoubleClick } });
         const user = userEvent.setup();
 

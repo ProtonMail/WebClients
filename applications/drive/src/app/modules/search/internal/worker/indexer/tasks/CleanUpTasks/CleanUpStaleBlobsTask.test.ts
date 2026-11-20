@@ -18,11 +18,11 @@ setupRealSearchLibraryWasm();
 
 const identity = async (d: ArrayBuffer) => d;
 
-jest.mock('../../../../shared/errors', () => {
-    const actual = jest.requireActual('../../../../shared/errors');
+vi.mock('../../../../shared/errors', async () => {
+    const actual = await vi.importActual('../../../../shared/errors');
     return {
         ...actual,
-        sendErrorReportForSearch: jest.fn(),
+        sendErrorReportForSearch: vi.fn(),
     };
 });
 
@@ -68,7 +68,7 @@ describe('CleanUpStaleBlobsTask', () => {
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('completes without errors when no engines are registered', async () => {
@@ -141,7 +141,7 @@ describe('CleanUpStaleBlobsTask', () => {
         const instance = await indexRegistry.get(IndexKind.MAIN, db);
         await indexDocuments(instance.indexWriter, [makeTestIndexEntry('main-doc')]);
 
-        jest.spyOn(instance.engine, 'cleanup').mockImplementation(() => {
+        vi.spyOn(instance.engine, 'cleanup').mockImplementation(() => {
             throw new Error('simulated engine failure');
         });
 
@@ -157,7 +157,7 @@ describe('CleanUpStaleBlobsTask', () => {
             'Connection is closing because of: Force close delete origin',
             'UnknownError'
         );
-        jest.spyOn(db, 'getAllIndexBlobKeys').mockRejectedValueOnce(forceClosed);
+        vi.spyOn(db, 'getAllIndexBlobKeys').mockRejectedValueOnce(forceClosed);
 
         const ctx = makeTaskContext({ indexRegistry, db });
         await expect(new CleanUpStaleBlobsTask().execute(ctx)).rejects.toBe(forceClosed);
@@ -169,7 +169,7 @@ describe('CleanUpStaleBlobsTask', () => {
 
         // A transient IndexedDB hiccup while listing blobs: worth reporting, not worth stopping
         // the queue over.
-        jest.spyOn(db, 'getAllIndexBlobKeys').mockRejectedValueOnce(
+        vi.spyOn(db, 'getAllIndexBlobKeys').mockRejectedValueOnce(
             new DOMException('tx timed out', 'TransactionInactiveError')
         );
 
@@ -222,7 +222,7 @@ describe('CleanUpStaleBlobsTask', () => {
         session.remove('doc-1');
         await session.commit();
 
-        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        const freeSpy = vi.spyOn(Cached.prototype, 'free');
         const ctx = makeTaskContext({ indexRegistry, db });
         await new CleanUpStaleBlobsTask().execute(ctx);
 
@@ -243,7 +243,7 @@ describe('CleanUpStaleBlobsTask', () => {
         // bug_wasm_writer_free_masks_error_and_leaks_lock's "attempted to take ownership of Rust
         // value while it was borrowed" failure shape.
         const originalFree = Cached.prototype.free;
-        jest.spyOn(Cached.prototype, 'free').mockImplementation(function (this: Cached) {
+        vi.spyOn(Cached.prototype, 'free').mockImplementation(function (this: Cached) {
             originalFree.call(this);
             throw new Error('attempted to take ownership of Rust value while it was borrowed');
         });
@@ -273,12 +273,12 @@ describe('CleanUpStaleBlobsTask', () => {
 
         const callOrder: string[] = [];
         const originalCachedFree = Cached.prototype.free;
-        jest.spyOn(Cached.prototype, 'free').mockImplementation(function (this: Cached) {
+        vi.spyOn(Cached.prototype, 'free').mockImplementation(function (this: Cached) {
             callOrder.push('cached.free');
             originalCachedFree.call(this);
         });
         const originalCleanupFree = Cleanup.prototype.free;
-        jest.spyOn(Cleanup.prototype, 'free').mockImplementation(function (this: Cleanup) {
+        vi.spyOn(Cleanup.prototype, 'free').mockImplementation(function (this: Cleanup) {
             callOrder.push('cleanup.free');
             originalCleanupFree.call(this);
         });
@@ -304,7 +304,7 @@ describe('CleanUpStaleBlobsTask', () => {
         session.remove('doc-1');
         await session.commit();
 
-        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        const freeSpy = vi.spyOn(Cached.prototype, 'free');
         blobStore.beginWrite(); // stands in for the still-in-flight indexing write
         const ctx = makeTaskContext({ indexRegistry, db });
         await new CleanUpStaleBlobsTask().execute(ctx);
@@ -325,7 +325,7 @@ describe('CleanUpStaleBlobsTask', () => {
         await db.putEncryptedIndexBlob([IndexKind.MAIN, 'orphan-busy'], new ArrayBuffer(8), identity);
 
         // Simulate write lock being held.
-        jest.spyOn(instance.engine, 'cleanup').mockReturnValue(undefined);
+        vi.spyOn(instance.engine, 'cleanup').mockReturnValue(undefined);
 
         const ctx = makeTaskContext({ indexRegistry, db });
         await new CleanUpStaleBlobsTask().execute(ctx);
@@ -342,7 +342,7 @@ describe('CleanUpStaleBlobsTask', () => {
             await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
             await db.putEncryptedIndexBlob([IndexKind.MAIN, 'orphan-read'], new ArrayBuffer(8), identity);
 
-            const cleanupSpy = jest.spyOn(instance.engine, 'cleanup');
+            const cleanupSpy = vi.spyOn(instance.engine, 'cleanup');
             // Simulate an in-flight search/export holding the blob store open.
             instance.blobStore.beginRead();
 

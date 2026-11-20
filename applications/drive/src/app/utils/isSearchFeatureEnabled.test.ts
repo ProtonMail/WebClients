@@ -2,10 +2,10 @@ import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import isSearchFeatureEnabled from './isSearchFeatureEnabled';
 
-jest.mock('@proton/shared/lib/helpers/browser');
+vi.mock('@proton/shared/lib/helpers/browser');
 
-const mockIsMobile = jest.mocked(isMobile);
-const mockIsSafari = jest.mocked(isSafari);
+const mockIsMobile = vi.mocked(isMobile);
+const mockIsSafari = vi.mocked(isSafari);
 
 describe('isSearchFeatureEnabled', () => {
     test('should return false on Mobile regardless of browser', () => {

@@ -1,31 +1,29 @@
-import { describe, expect, it, jest } from '@jest/globals';
-
 import { getNavigation } from './navigation';
 
 describe('getNavigation', () => {
     it('should return undefined when previewableNodeUids is undefined', () => {
-        const onNodeChange = jest.fn();
+        const onNodeChange = vi.fn();
         const result = getNavigation('node1', undefined, onNodeChange);
 
         expect(result).toBeUndefined();
     });
 
     it('should return undefined when previewableNodeUids is an empty array', () => {
-        const onNodeChange = jest.fn();
+        const onNodeChange = vi.fn();
         const result = getNavigation('node1', [], onNodeChange);
 
         expect(result).toBeUndefined();
     });
 
     it('should return undefined when previewableNodeUids has only one element', () => {
-        const onNodeChange = jest.fn();
+        const onNodeChange = vi.fn();
         const result = getNavigation('node1', ['node1'], onNodeChange);
 
         expect(result).toBeUndefined();
     });
 
     it('should return undefined when nodeUid is not in previewableNodeUids', () => {
-        const onNodeChange = jest.fn();
+        const onNodeChange = vi.fn();
         const result = getNavigation('node3', ['node1', 'node2'], onNodeChange);
 
         expect(result).toBeUndefined();
@@ -33,7 +31,7 @@ describe('getNavigation', () => {
 
     describe('when navigation is supported', () => {
         it('should return navigation object with correct currentPosition and totalCount for first node', () => {
-            const onNodeChange = jest.fn();
+            const onNodeChange = vi.fn();
             const previewableNodeUids = ['node1', 'node2', 'node3'];
             const result = getNavigation('node1', previewableNodeUids, onNodeChange);
 
@@ -43,7 +41,7 @@ describe('getNavigation', () => {
         });
 
         it('should return navigation object with correct currentPosition and totalCount for middle node', () => {
-            const onNodeChange = jest.fn();
+            const onNodeChange = vi.fn();
             const previewableNodeUids = ['node1', 'node2', 'node3'];
             const result = getNavigation('node2', previewableNodeUids, onNodeChange);
 
@@ -53,7 +51,7 @@ describe('getNavigation', () => {
         });
 
         it('should return navigation object with correct currentPosition and totalCount for last node', () => {
-            const onNodeChange = jest.fn();
+            const onNodeChange = vi.fn();
             const previewableNodeUids = ['node1', 'node2', 'node3'];
             const result = getNavigation('node3', previewableNodeUids, onNodeChange);
 
@@ -64,7 +62,7 @@ describe('getNavigation', () => {
 
         describe('loadPrevious', () => {
             it('should call onNodeChange with previous node when not at first position', () => {
-                const onNodeChange = jest.fn();
+                const onNodeChange = vi.fn();
                 const previewableNodeUids = ['node1', 'node2', 'node3'];
                 const result = getNavigation('node2', previewableNodeUids, onNodeChange);
 
@@ -75,7 +73,7 @@ describe('getNavigation', () => {
             });
 
             it('should not call onNodeChange when at first position', () => {
-                const onNodeChange = jest.fn();
+                const onNodeChange = vi.fn();
                 const previewableNodeUids = ['node1', 'node2', 'node3'];
                 const result = getNavigation('node1', previewableNodeUids, onNodeChange);
 
@@ -87,7 +85,7 @@ describe('getNavigation', () => {
 
         describe('loadNext', () => {
             it('should call onNodeChange with next node when not at last position', () => {
-                const onNodeChange = jest.fn();
+                const onNodeChange = vi.fn();
                 const previewableNodeUids = ['node1', 'node2', 'node3'];
                 const result = getNavigation('node2', previewableNodeUids, onNodeChange);
 
@@ -98,7 +96,7 @@ describe('getNavigation', () => {
             });
 
             it('should not call onNodeChange when at last position', () => {
-                const onNodeChange = jest.fn();
+                const onNodeChange = vi.fn();
                 const previewableNodeUids = ['node1', 'node2', 'node3'];
                 const result = getNavigation('node3', previewableNodeUids, onNodeChange);
 

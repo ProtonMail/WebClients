@@ -7,36 +7,36 @@ import { getRootNode } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useSharedByMeStore } from '../useSharedByMe.store';
 import { loadSharedByMeNodes } from './loadSharedByMeNodes';
 
-jest.mock('@proton/drive/sdk');
-jest.mock('@proton/drive/legacy/errorHandling');
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
-jest.mock('../../../utils/sdk/getSignatureIssues');
-jest.mock('../../../utils/sdk/mapNodeToLegacyItem');
-jest.mock('../useSharedByMe.store');
-jest.mock('@proton/drive/modules/nodes', () => ({
-    ...jest.requireActual('@proton/drive/modules/nodes'),
-    getFormattedNodeLocation: jest.fn().mockResolvedValue('/location'),
-    getFormattedNodeLocationUsingHierarchy: jest.fn().mockResolvedValue('/location'),
+vi.mock('@proton/drive/sdk');
+vi.mock('@proton/drive/legacy/errorHandling');
+vi.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
+vi.mock('../../../utils/sdk/getSignatureIssues');
+vi.mock('../../../utils/sdk/mapNodeToLegacyItem');
+vi.mock('../useSharedByMe.store');
+vi.mock('@proton/drive/modules/nodes', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/nodes')),
+    getFormattedNodeLocation: vi.fn().mockResolvedValue('/location'),
+    getFormattedNodeLocationUsingHierarchy: vi.fn().mockResolvedValue('/location'),
 }));
 
-const mockHandleSdkErrorHandler = jest.mocked(handleSdkError);
-const mockGetDrive = jest.mocked(getDrive);
-const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
-const mockGetNodeEntity = jest.mocked(getNodeEntity);
-const mockGetSignatureIssues = jest.mocked(getSignatureIssues);
-const mockGetRootNode = jest.mocked(getRootNode);
-const mockUseSharedByMeStore = jest.mocked(useSharedByMeStore);
+const mockHandleSdkErrorHandler = vi.mocked(handleSdkError);
+const mockGetDrive = vi.mocked(getDrive);
+const mockGetDriveForPhotos = vi.mocked(getDriveForPhotos);
+const mockGetNodeEntity = vi.mocked(getNodeEntity);
+const mockGetSignatureIssues = vi.mocked(getSignatureIssues);
+const mockGetRootNode = vi.mocked(getRootNode);
+const mockUseSharedByMeStore = vi.mocked(useSharedByMeStore);
 
 const mockDrive = {
-    iterateSharedNodeUids: jest.fn(),
-    getSharingInfo: jest.fn(),
-    getNode: jest.fn(),
-    iterateNodes: jest.fn(),
+    iterateSharedNodeUids: vi.fn(),
+    getSharingInfo: vi.fn(),
+    getNode: vi.fn(),
+    iterateNodes: vi.fn(),
 };
 
-const mockSetLoading = jest.fn();
-const mockSetSharedByMeItem = jest.fn();
-const mockUpdateSharedByMeItem = jest.fn();
+const mockSetLoading = vi.fn();
+const mockSetSharedByMeItem = vi.fn();
+const mockUpdateSharedByMeItem = vi.fn();
 
 const createMockNode = (overrides = {}) =>
     ({
@@ -79,21 +79,21 @@ const createMockRootNode = () =>
 
 describe('useSharedByMeNodesLoader', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         mockGetDrive.mockReturnValue(mockDrive as any);
         mockGetDriveForPhotos.mockReturnValue(mockDrive as any);
 
-        mockUseSharedByMeStore.getState = jest.fn().mockReturnValue({
+        mockUseSharedByMeStore.getState = vi.fn().mockReturnValue({
             isLoading: false,
             setLoading: mockSetLoading,
             setSharedByMeItem: mockSetSharedByMeItem,
             updateSharedByMeItem: mockUpdateSharedByMeItem,
-            cleanupStaleItems: jest.fn(),
+            cleanupStaleItems: vi.fn(),
             sortConfig: undefined,
             sortField: 'name',
             direction: 'asc',
-            setSorting: jest.fn(),
+            setSorting: vi.fn(),
         });
 
         mockGetNodeEntity.mockReturnValue({ node: createMockNode(), errors: new Map() });
@@ -103,16 +103,16 @@ describe('useSharedByMeNodesLoader', () => {
 
     describe('loadSharedByMeNodes', () => {
         it('should not execute if already loading', async () => {
-            mockUseSharedByMeStore.getState = jest.fn().mockReturnValue({
+            mockUseSharedByMeStore.getState = vi.fn().mockReturnValue({
                 isLoading: true,
                 setLoading: mockSetLoading,
                 setSharedByMeItem: mockSetSharedByMeItem,
                 updateSharedByMeItem: mockUpdateSharedByMeItem,
-                cleanupStaleItems: jest.fn(),
+                cleanupStaleItems: vi.fn(),
                 sortConfig: undefined,
                 sortField: 'name',
                 direction: 'asc',
-                setSorting: jest.fn(),
+                setSorting: vi.fn(),
             });
 
             const abortSignal = new AbortController().signal;
@@ -157,11 +157,11 @@ describe('useSharedByMeNodesLoader', () => {
             mockDrive.getSharingInfo.mockResolvedValue(undefined);
             mockGetDrive.mockReturnValue({
                 ...mockDrive,
-                iterateSharedNodeUids: jest.fn(async function* () {
+                iterateSharedNodeUids: vi.fn(async function* () {
                     yield node.uid;
                     yield 'deleted-node';
                 }),
-                iterateNodes: jest.fn(async function* (uids: string[]) {
+                iterateNodes: vi.fn(async function* (uids: string[]) {
                     for (const uid of uids) {
                         yield uid === node.uid ? node : { missingUid: uid };
                     }
@@ -169,7 +169,7 @@ describe('useSharedByMeNodesLoader', () => {
             } as any);
             mockGetDriveForPhotos.mockReturnValue({
                 ...mockDrive,
-                iterateSharedNodeUids: jest.fn(async function* () {
+                iterateSharedNodeUids: vi.fn(async function* () {
                     yield* [];
                 }),
             } as any);

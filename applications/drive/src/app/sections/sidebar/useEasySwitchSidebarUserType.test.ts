@@ -11,16 +11,16 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { EasySwitchUserType, NO_USER_INFO } from './getEasySwitchSidebarUserType';
 import { useEasySwitchSidebarUserType } from './useEasySwitchSidebarUserType';
 
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
-    getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
+    getDrive: vi.fn(),
 }));
-jest.mock('@proton/account/user/hooks', () => ({ useGetUser: jest.fn() }));
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: jest.fn() }));
+vi.mock('@proton/account/user/hooks', () => ({ useGetUser: vi.fn() }));
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 
 const ROOT_UID = 'root-uid';
 
-const subscribeToTreeEvents = jest.fn(async () => ({ dispose: () => {} }));
+const subscribeToTreeEvents = vi.fn(async () => ({ dispose: () => {} }));
 
 const emitCreatedNode = (item: { parentUid: string; isTrashed?: boolean }) =>
     act(() =>
@@ -37,10 +37,10 @@ const renderWithEmptyRoot = async () => {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    jest.mocked(useFlag).mockReturnValue(true);
-    jest.mocked(useGetUser).mockReturnValue(async () => ({ CreateTime: getUnixTime(new Date()) }) as UserModel);
-    jest.mocked(getDrive).mockReturnValue({
+    vi.clearAllMocks();
+    vi.mocked(useFlag).mockReturnValue(true);
+    vi.mocked(useGetUser).mockReturnValue(async () => ({ CreateTime: getUnixTime(new Date()) }) as UserModel);
+    vi.mocked(getDrive).mockReturnValue({
         getMyFilesRootFolder: async () => ({ uid: ROOT_UID, creationTime: new Date(), treeEventScopeId: 'scope-id' }),
         // eslint-disable-next-line @typescript-eslint/no-empty-function
         iterateFolderChildrenNodeUids: async function* () {},
@@ -68,7 +68,7 @@ describe('useEasySwitchSidebarUserType', () => {
     });
 
     it('stops listening to events once the root is not empty anymore', async () => {
-        const unsubscribe = jest.spyOn(getBusDriver(), 'unsubscribeSdkEventsMyUpdates');
+        const unsubscribe = vi.spyOn(getBusDriver(), 'unsubscribeSdkEventsMyUpdates');
         await renderWithEmptyRoot();
 
         await emitCreatedNode({ parentUid: ROOT_UID });

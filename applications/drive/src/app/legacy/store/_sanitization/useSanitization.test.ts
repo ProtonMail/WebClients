@@ -1,5 +1,4 @@
 import { renderHook } from '@testing-library/react';
-import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import {
     queryListNodesWithMissingNodeHashKeys,
@@ -7,24 +6,25 @@ import {
 } from '@proton/shared/lib/api/drive/sanitization';
 import { generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
 
+import { verifyAllWhenMocksCalled, when } from '../../../utils/tests/when';
 import { useDebouncedRequest } from '../_api';
 import { useLink } from '../_links';
 import { useSanitization } from './useSanitization';
 
-jest.mock('../_api');
-const mockedDebounceRequest = jest.fn().mockResolvedValue(true);
-jest.mocked(useDebouncedRequest).mockReturnValue(mockedDebounceRequest);
+vi.mock('../_api');
+const mockedDebounceRequest = vi.fn().mockResolvedValue(true);
+vi.mocked(useDebouncedRequest).mockReturnValue(mockedDebounceRequest);
 
-jest.mock('@proton/shared/lib/api/drive/sanitization');
+vi.mock('@proton/shared/lib/api/drive/sanitization');
 
-jest.mock('../_links');
-const mockedGetPrivateKey = jest.fn();
-jest.mocked(useLink).mockReturnValue({
+vi.mock('../_links');
+const mockedGetPrivateKey = vi.fn();
+vi.mocked(useLink).mockReturnValue({
     getLinkPrivateKey: mockedGetPrivateKey,
 } as any);
 
-jest.mock('@proton/shared/lib/keys/driveKeys');
-const mockedGenerateNodeHashKey = jest.mocked(generateNodeHashKey);
+vi.mock('@proton/shared/lib/keys/driveKeys');
+const mockedGenerateNodeHashKey = vi.mocked(generateNodeHashKey);
 
 describe('useSanitization', () => {
     let originalConsoleWarn: Console['warn'];
@@ -34,7 +34,7 @@ describe('useSanitization', () => {
         originalConsoleWarn = console.warn;
 
         // Mock console.warn
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     afterAll(() => {
@@ -43,7 +43,7 @@ describe('useSanitization', () => {
         verifyAllWhenMocksCalled();
     });
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('restoreHashKey', () => {

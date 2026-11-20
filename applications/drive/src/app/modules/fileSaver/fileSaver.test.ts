@@ -1,5 +1,4 @@
 import 'web-streams-polyfill/polyfill/es5';
-
 import { featureFlagStore } from '@proton/drive/modules/flags';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
@@ -11,32 +10,37 @@ import { initDownloadSW, isOPFSSupported, isServiceWorkersSupported, openDownloa
 import { FileSaver } from './fileSaver';
 import { fileSaverLogDebug } from './fileSaverLogger';
 
-jest.mock('@proton/shared/lib/helpers/cookies', () => ({
-    getCookie: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/cookies', () => ({
+    getCookie: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/helpers/downloadFile', () => ({
+vi.mock('@proton/shared/lib/helpers/downloadFile', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('../../utils/stream', () => ({
-    streamToBuffer: jest.fn(),
+// The real metrics client posts to the network, and the open request keeps the test worker from exiting
+vi.mock('@proton/metrics/metricsInstance', () => ({
+    default: { drive_download_mechanism_success_rate_total: { increment: vi.fn() } },
 }));
 
-jest.mock('./download', () => ({
-    initDownloadSW: jest.fn(),
-    isServiceWorkersSupported: jest.fn(() => true),
-    openDownloadStream: jest.fn(),
-    isOPFSSupported: jest.fn(() => true),
+vi.mock('../../utils/stream', () => ({
+    streamToBuffer: vi.fn(),
 }));
 
-jest.mock('./fileSaverLogger.ts', () => ({
-    fileSaverLogDebug: jest.fn(),
+vi.mock('./download', () => ({
+    initDownloadSW: vi.fn(),
+    isServiceWorkersSupported: vi.fn(() => true),
+    openDownloadStream: vi.fn(),
+    isOPFSSupported: vi.fn(() => true),
 }));
 
-const mockStorageEstimate = jest.fn();
-const mockGetDirectory = jest.fn();
+vi.mock('./fileSaverLogger.ts', () => ({
+    fileSaverLogDebug: vi.fn(),
+}));
+
+const mockStorageEstimate = vi.fn();
+const mockGetDirectory = vi.fn();
 Object.defineProperty(global.navigator, 'storage', {
     value: {
         estimate: mockStorageEstimate,
@@ -46,39 +50,39 @@ Object.defineProperty(global.navigator, 'storage', {
 });
 
 const mockUnleashStore = {
-    isEnabled: jest.fn().mockReturnValue(false),
-    getVariant: jest.fn().mockReturnValue({
+    isEnabled: vi.fn().mockReturnValue(false),
+    getVariant: vi.fn().mockReturnValue({
         enabled: false,
         name: 'base-memory',
     }),
 };
 featureFlagStore.getState().setClient(mockUnleashStore as unknown as UnleashClient);
-const getCookieMock = jest.mocked(getCookie);
-const isServiceWorkersSupportedMock = jest.mocked(isServiceWorkersSupported);
-const isOPFSSupportedMock = jest.mocked(isOPFSSupported);
-const openDownloadStreamMock = jest.mocked(openDownloadStream);
-const initDownloadSWMock = jest.mocked(initDownloadSW);
-const streamToBufferMock = jest.mocked(streamToBuffer);
-const mockLog = jest.mocked(fileSaverLogDebug);
+const getCookieMock = vi.mocked(getCookie);
+const isServiceWorkersSupportedMock = vi.mocked(isServiceWorkersSupported);
+const isOPFSSupportedMock = vi.mocked(isOPFSSupported);
+const openDownloadStreamMock = vi.mocked(openDownloadStream);
+const initDownloadSWMock = vi.mocked(initDownloadSW);
+const streamToBufferMock = vi.mocked(streamToBuffer);
+const mockLog = vi.mocked(fileSaverLogDebug);
 const MB = 1024 * 1024;
 
 describe('FileSaver', () => {
     let fileSaver: FileSaver;
 
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.clearAllMocks();
+        vi.useFakeTimers();
+        vi.clearAllMocks();
         fileSaver = new FileSaver();
     });
 
     afterEach(() => {
-        jest.runOnlyPendingTimers();
-        jest.useRealTimers();
+        vi.runOnlyPendingTimers();
+        vi.useRealTimers();
     });
 
     describe('selectMechanismForDownload', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             fileSaver = new FileSaver();
 
             getCookieMock.mockReturnValue(undefined);
@@ -204,7 +208,7 @@ describe('FileSaver', () => {
         };
 
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             getCookieMock.mockReturnValue(undefined);
             streamToBufferMock.mockResolvedValue([new Uint8Array([1, 2, 3])]);
             openDownloadStreamMock.mockResolvedValue(new WritableStream());
@@ -234,17 +238,17 @@ describe('FileSaver', () => {
         it('should use saveViaOPFS for opfs mechanism', async () => {
             // Mock the read stream
             const mockStreamReader = {
-                read: jest
+                read: vi
                     .fn()
                     .mockResolvedValueOnce({ done: false, value: new Uint8Array([1]) })
                     .mockResolvedValueOnce({ done: false, value: new Uint8Array([2]) })
                     .mockResolvedValueOnce({ done: true }),
-                releaseLock: jest.fn(),
+                releaseLock: vi.fn(),
             };
             const mockWritable = {
-                write: jest.fn().mockResolvedValue(undefined),
-                close: jest.fn().mockResolvedValue(undefined),
-                truncate: jest.fn().mockResolvedValue(undefined),
+                write: vi.fn().mockResolvedValue(undefined),
+                close: vi.fn().mockResolvedValue(undefined),
+                truncate: vi.fn().mockResolvedValue(undefined),
             };
 
             const mockStream = new ReadableStream({
@@ -263,12 +267,12 @@ describe('FileSaver', () => {
 
             const mockFile = new File([], 'test.txt');
             const mockFileHandle = {
-                createWritable: jest.fn().mockResolvedValue(mockWritable),
-                getFile: jest.fn().mockResolvedValue(mockFile),
+                createWritable: vi.fn().mockResolvedValue(mockWritable),
+                getFile: vi.fn().mockResolvedValue(mockFile),
             };
             const mockRoot = {
-                getFileHandle: jest.fn().mockResolvedValue(mockFileHandle),
-                removeEntry: jest.fn().mockResolvedValue(undefined),
+                getFileHandle: vi.fn().mockResolvedValue(mockFileHandle),
+                removeEntry: vi.fn().mockResolvedValue(undefined),
             };
             mockGetDirectory.mockResolvedValue(mockRoot);
 
@@ -289,14 +293,14 @@ describe('FileSaver', () => {
         it('should surface the write error instead of closing an errored OPFS writable', async () => {
             const writeError = new DOMException('Quota exceeded', 'QuotaExceededError');
             const mockStreamReader = {
-                read: jest.fn().mockResolvedValueOnce({ done: false, value: new Uint8Array([1]) }),
-                releaseLock: jest.fn(),
+                read: vi.fn().mockResolvedValueOnce({ done: false, value: new Uint8Array([1]) }),
+                releaseLock: vi.fn(),
             };
             const mockWritable = {
-                write: jest.fn().mockRejectedValue(writeError),
-                close: jest.fn().mockRejectedValue(new TypeError('Cannot close a ERRORED writable stream')),
-                abort: jest.fn().mockResolvedValue(undefined),
-                truncate: jest.fn().mockResolvedValue(undefined),
+                write: vi.fn().mockRejectedValue(writeError),
+                close: vi.fn().mockRejectedValue(new TypeError('Cannot close a ERRORED writable stream')),
+                abort: vi.fn().mockResolvedValue(undefined),
+                truncate: vi.fn().mockResolvedValue(undefined),
             };
 
             const mockStream = new ReadableStream();
@@ -304,12 +308,12 @@ describe('FileSaver', () => {
 
             getCookieMock.mockReturnValue('opfs');
             const mockFileHandle = {
-                createWritable: jest.fn().mockResolvedValue(mockWritable),
-                getFile: jest.fn(),
+                createWritable: vi.fn().mockResolvedValue(mockWritable),
+                getFile: vi.fn(),
             };
             const mockRoot = {
-                getFileHandle: jest.fn().mockResolvedValue(mockFileHandle),
-                removeEntry: jest.fn().mockResolvedValue(undefined),
+                getFileHandle: vi.fn().mockResolvedValue(mockFileHandle),
+                removeEntry: vi.fn().mockResolvedValue(undefined),
             };
             mockGetDirectory.mockResolvedValue(mockRoot);
 
@@ -323,22 +327,20 @@ describe('FileSaver', () => {
 
         it('should fall back to SW before reading the stream when OPFS cannot reserve the size', async () => {
             const mockWritable = {
-                write: jest.fn(),
-                abort: jest.fn().mockResolvedValue(undefined),
-                truncate: jest.fn().mockRejectedValue(new DOMException('Quota exceeded', 'QuotaExceededError')),
+                write: vi.fn(),
+                abort: vi.fn().mockResolvedValue(undefined),
+                truncate: vi.fn().mockRejectedValue(new DOMException('Quota exceeded', 'QuotaExceededError')),
             };
             const mockSaveStream = new WritableStream();
             const mockStream = new ReadableStream();
-            (mockStream as any).pipeTo = jest.fn().mockResolvedValue(undefined);
+            (mockStream as any).pipeTo = vi.fn().mockResolvedValue(undefined);
 
             getCookieMock.mockReturnValue('opfs');
             initDownloadSWMock.mockResolvedValue(undefined);
             openDownloadStreamMock.mockResolvedValue(mockSaveStream);
             const mockRoot = {
-                getFileHandle: jest
-                    .fn()
-                    .mockResolvedValue({ createWritable: jest.fn().mockResolvedValue(mockWritable) }),
-                removeEntry: jest.fn().mockResolvedValue(undefined),
+                getFileHandle: vi.fn().mockResolvedValue({ createWritable: vi.fn().mockResolvedValue(mockWritable) }),
+                removeEntry: vi.fn().mockResolvedValue(undefined),
             };
             mockGetDirectory.mockResolvedValue(mockRoot);
 
@@ -355,22 +357,20 @@ describe('FileSaver', () => {
 
         it('should fall back to SW when the reservation fails with a non-quota error', async () => {
             const mockWritable = {
-                write: jest.fn(),
-                abort: jest.fn().mockResolvedValue(undefined),
-                truncate: jest.fn().mockRejectedValue(new DOMException('Invalid state', 'InvalidStateError')),
+                write: vi.fn(),
+                abort: vi.fn().mockResolvedValue(undefined),
+                truncate: vi.fn().mockRejectedValue(new DOMException('Invalid state', 'InvalidStateError')),
             };
             const mockSaveStream = new WritableStream();
             const mockStream = new ReadableStream();
-            (mockStream as any).pipeTo = jest.fn().mockResolvedValue(undefined);
+            (mockStream as any).pipeTo = vi.fn().mockResolvedValue(undefined);
 
             getCookieMock.mockReturnValue('opfs');
             initDownloadSWMock.mockResolvedValue(undefined);
             openDownloadStreamMock.mockResolvedValue(mockSaveStream);
             const mockRoot = {
-                getFileHandle: jest
-                    .fn()
-                    .mockResolvedValue({ createWritable: jest.fn().mockResolvedValue(mockWritable) }),
-                removeEntry: jest.fn().mockResolvedValue(undefined),
+                getFileHandle: vi.fn().mockResolvedValue({ createWritable: vi.fn().mockResolvedValue(mockWritable) }),
+                removeEntry: vi.fn().mockResolvedValue(undefined),
             };
             mockGetDirectory.mockResolvedValue(mockRoot);
 
@@ -384,22 +384,20 @@ describe('FileSaver', () => {
 
         it('should fall back to SW when aborting the writable fails', async () => {
             const mockWritable = {
-                write: jest.fn(),
-                abort: jest.fn().mockRejectedValue(new Error('abort failed')),
-                truncate: jest.fn().mockRejectedValue(new DOMException('Quota exceeded', 'QuotaExceededError')),
+                write: vi.fn(),
+                abort: vi.fn().mockRejectedValue(new Error('abort failed')),
+                truncate: vi.fn().mockRejectedValue(new DOMException('Quota exceeded', 'QuotaExceededError')),
             };
             const mockSaveStream = new WritableStream();
             const mockStream = new ReadableStream();
-            (mockStream as any).pipeTo = jest.fn().mockResolvedValue(undefined);
+            (mockStream as any).pipeTo = vi.fn().mockResolvedValue(undefined);
 
             getCookieMock.mockReturnValue('opfs');
             initDownloadSWMock.mockResolvedValue(undefined);
             openDownloadStreamMock.mockResolvedValue(mockSaveStream);
             const mockRoot = {
-                getFileHandle: jest
-                    .fn()
-                    .mockResolvedValue({ createWritable: jest.fn().mockResolvedValue(mockWritable) }),
-                removeEntry: jest.fn().mockResolvedValue(undefined),
+                getFileHandle: vi.fn().mockResolvedValue({ createWritable: vi.fn().mockResolvedValue(mockWritable) }),
+                removeEntry: vi.fn().mockResolvedValue(undefined),
             };
             mockGetDirectory.mockResolvedValue(mockRoot);
 
@@ -412,22 +410,20 @@ describe('FileSaver', () => {
 
         it('should fall back to SW when removing the OPFS entry fails', async () => {
             const mockWritable = {
-                write: jest.fn(),
-                abort: jest.fn().mockResolvedValue(undefined),
-                truncate: jest.fn().mockRejectedValue(new DOMException('Quota exceeded', 'QuotaExceededError')),
+                write: vi.fn(),
+                abort: vi.fn().mockResolvedValue(undefined),
+                truncate: vi.fn().mockRejectedValue(new DOMException('Quota exceeded', 'QuotaExceededError')),
             };
             const mockSaveStream = new WritableStream();
             const mockStream = new ReadableStream();
-            (mockStream as any).pipeTo = jest.fn().mockResolvedValue(undefined);
+            (mockStream as any).pipeTo = vi.fn().mockResolvedValue(undefined);
 
             getCookieMock.mockReturnValue('opfs');
             initDownloadSWMock.mockResolvedValue(undefined);
             openDownloadStreamMock.mockResolvedValue(mockSaveStream);
             const mockRoot = {
-                getFileHandle: jest
-                    .fn()
-                    .mockResolvedValue({ createWritable: jest.fn().mockResolvedValue(mockWritable) }),
-                removeEntry: jest.fn().mockRejectedValue(new Error('remove failed')),
+                getFileHandle: vi.fn().mockResolvedValue({ createWritable: vi.fn().mockResolvedValue(mockWritable) }),
+                removeEntry: vi.fn().mockRejectedValue(new Error('remove failed')),
             };
             mockGetDirectory.mockResolvedValue(mockRoot);
 
@@ -443,11 +439,13 @@ describe('FileSaver', () => {
 
             const mockAbortController = {
                 signal: {
-                    addEventListener: jest.fn(),
+                    addEventListener: vi.fn(),
                 },
-                abort: jest.fn(),
+                abort: vi.fn(),
             };
-            global.AbortController = jest.fn().mockImplementation(() => mockAbortController);
+            global.AbortController = vi.fn(function () {
+                return mockAbortController;
+            }) as unknown as typeof AbortController;
 
             const mockSaveStream = new WritableStream();
             const mockStream = new ReadableStream({
@@ -456,7 +454,7 @@ describe('FileSaver', () => {
                     controller.close();
                 },
             });
-            (mockStream as any).pipeTo = jest.fn().mockResolvedValue(undefined);
+            (mockStream as any).pipeTo = vi.fn().mockResolvedValue(undefined);
 
             mockUnleashStore.isEnabled.mockReturnValue(false);
             isServiceWorkersSupportedMock.mockReturnValue(true);

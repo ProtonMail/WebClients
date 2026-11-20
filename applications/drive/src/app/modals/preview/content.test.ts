@@ -4,12 +4,12 @@ import { isHEICSupported } from '@proton/shared/lib/helpers/mimetype';
 
 import { ContentPreviewMethod, getContentPreviewMethod } from './content';
 
-jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/mimetype'),
-    isHEICSupported: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/mimetype', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/mimetype')),
+    isHEICSupported: vi.fn(),
 }));
 
-const mockedIsHEICSupported = jest.mocked(isHEICSupported);
+const mockedIsHEICSupported = vi.mocked(isHEICSupported);
 
 describe('getContentPreviewMethod', () => {
     const baseDate = new Date();

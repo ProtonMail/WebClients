@@ -7,16 +7,16 @@ import isTruthy from '@proton/utils/isTruthy';
 import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import { useLinksActions } from './useLinksActions';
 
-jest.mock('@proton/components/hooks/usePreventLeave', () => {
+vi.mock('@proton/components/hooks/usePreventLeave', () => {
     const usePreventLeave = () => {
         return {
             preventLeave: (fn: any) => fn,
         };
     };
-    return usePreventLeave;
+    return { __esModule: true, default: usePreventLeave };
 });
 
-jest.mock('./useLinksState', () => {
+vi.mock('./useLinksState', () => {
     const useLinksState = () => {
         return {
             lockLinks: () => {},
@@ -25,10 +25,10 @@ jest.mock('./useLinksState', () => {
         };
     };
 
-    return useLinksState;
+    return { __esModule: true, default: useLinksState };
 });
 
-jest.mock('../_crypto/useDriveCrypto', () => {
+vi.mock('../_crypto/useDriveCrypto', () => {
     const useDriveCrypto = () => {
         return {
             getPrimaryAddressKey: () => {},
@@ -36,10 +36,10 @@ jest.mock('../_crypto/useDriveCrypto', () => {
         };
     };
 
-    return useDriveCrypto;
+    return { __esModule: true, default: useDriveCrypto };
 });
 
-jest.mock('./useLink', () => {
+vi.mock('./useLink', () => {
     const useLink = () => {
         return {
             getLink: () => {},
@@ -49,49 +49,49 @@ jest.mock('./useLink', () => {
         };
     };
 
-    return useLink;
+    return { __esModule: true, default: useLink };
 });
 
-const mockRequest = jest.fn();
-const mockGetLinks = jest.fn();
-const mockBatchHelper = jest.fn();
+const mockRequest = vi.fn();
+const mockGetLinks = vi.fn();
+const mockBatchHelper = vi.fn();
 
-const mockQueryTrashLinks = jest.fn();
-const mockQueryRestoreLinks = jest.fn();
-const mockQueryDeleteTrashedLinks = jest.fn();
-const mockGetShare = jest.fn();
-const mockGetDefaultShare = jest.fn();
-const mockGetDefaultPhotosShare = jest.fn();
-const mockGetShareCreatorKeys = jest.fn();
+const mockQueryTrashLinks = vi.fn();
+const mockQueryRestoreLinks = vi.fn();
+const mockQueryDeleteTrashedLinks = vi.fn();
+const mockGetShare = vi.fn();
+const mockGetDefaultShare = vi.fn();
+const mockGetDefaultPhotosShare = vi.fn();
+const mockGetShareCreatorKeys = vi.fn();
 
-jest.mock('./useLinks', () => {
+vi.mock('./useLinks', () => {
     const useLink = () => {
         return {
             getLinks: mockGetLinks,
         };
     };
 
-    return useLink;
+    return { __esModule: true, default: useLink };
 });
 
-jest.mock('../_api/useDebouncedRequest', () => {
+vi.mock('../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockRequest;
     };
-    return useDebouncedRequest;
+    return { __esModule: true, default: useDebouncedRequest };
 });
 
-jest.mock('../_shares/useShare', () => {
+vi.mock('../_shares/useShare', () => {
     const useShare = () => {
         return {
             getShare: mockGetShare,
             getShareCreatorKeys: mockGetShareCreatorKeys,
         };
     };
-    return useShare;
+    return { __esModule: true, default: useShare };
 });
 
-jest.mock('../_shares/useDefaultShare', () => {
+vi.mock('../_shares/useDefaultShare', () => {
     const useDefaultShare = () => {
         return {
             getDefaultShare: mockGetDefaultShare,
@@ -101,10 +101,10 @@ jest.mock('../_shares/useDefaultShare', () => {
     return { useDefaultShare };
 });
 
-jest.mock('../_utils/useBatchHelper', () => {
+vi.mock('../_utils/useBatchHelper', () => {
     const useBatchHelper = () => ({
         batchAPIHelper: mockBatchHelper,
-        batchPromiseHelper: jest.fn(),
+        batchPromiseHelper: vi.fn(),
     });
     return { useBatchHelper };
 });
@@ -123,14 +123,14 @@ describe('useLinksActions', () => {
 
     beforeAll(() => {
         // Prevent warning to be shown in the console when running tests
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
     afterAll(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
         mockRequest.mockImplementation((linkIds: string[]) => {
             return Promise.resolve({
                 Responses: linkIds.map(() => ({
@@ -192,7 +192,7 @@ describe('useLinksActions', () => {
                         queryTrashLinks: mockQueryTrashLinks,
                         queryRestoreLinks: mockQueryRestoreLinks,
                         queryDeleteTrashedLinks: mockQueryDeleteTrashedLinks,
-                        queryDeleteChildrenLinks: jest.fn(),
+                        queryDeleteChildrenLinks: vi.fn(),
                     },
                 }),
             { wrapper }

@@ -4,19 +4,19 @@ import { isMac, isWindows } from '@proton/shared/lib/helpers/browser';
 
 import { appPlatforms, fetchDesktopDownloads } from './appPlatforms';
 
-jest.mock('@proton/shared/lib/apps/desktopVersions');
-const mockFetchDesktopVersion = jest.mocked(fetchDesktopVersion);
+vi.mock('@proton/shared/lib/apps/desktopVersions');
+const mockFetchDesktopVersion = vi.mocked(fetchDesktopVersion);
 
-jest.mock('@proton/shared/lib/helpers/browser');
-const mockIsWindows = jest.mocked(isWindows);
-const mockIsMac = jest.mocked(isMac);
+vi.mock('@proton/shared/lib/helpers/browser');
+const mockIsWindows = vi.mocked(isWindows);
+const mockIsMac = vi.mocked(isMac);
 
 const originalConsoleWarn = console.warn;
-const mockConsoleWarn = jest.fn();
+const mockConsoleWarn = vi.fn();
 
 describe('appPlatforms', () => {
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
 
         // Some default values for mocks
         mockIsWindows.mockReturnValue(false);
@@ -24,13 +24,12 @@ describe('appPlatforms', () => {
     });
 
     const checkOrder = async (order: DESKTOP_PLATFORMS[]) => {
-        await jest.isolateModulesAsync(async () => {
-            const { appPlatforms } = await import('./appPlatforms');
+        vi.resetModules();
+        const { appPlatforms } = await import('./appPlatforms');
 
-            expect(appPlatforms.length === order.length);
-            appPlatforms.forEach(({ platform }, i) => {
-                expect(platform).toBe(order[i]);
-            });
+        expect(appPlatforms.length === order.length);
+        appPlatforms.forEach(({ platform }, i) => {
+            expect(platform).toBe(order[i]);
         });
     };
 
@@ -47,7 +46,7 @@ describe('appPlatforms', () => {
 
 describe('fetchDesktopDownloads', () => {
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
 
         console.warn = mockConsoleWarn;
 

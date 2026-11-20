@@ -10,10 +10,10 @@ import useDebouncedFunction from './useDebouncedFunction';
 describe('useDebouncedFunction', () => {
     let debouncedFunction: ReturnType<typeof useDebouncedFunction>;
 
-    const mockCallback = jest.fn();
+    const mockCallback = vi.fn();
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
         mockCallback.mockImplementation(() => Promise.resolve({ test: 'test' }));
 
         const cache = createCache();
@@ -74,7 +74,7 @@ describe('useDebouncedFunction', () => {
     });
 
     it('should return original error', async () => {
-        const mock = jest.fn();
+        const mock = vi.fn();
         mock.mockImplementation(async () => Promise.reject(new Error('failed')));
 
         const ac1 = new AbortController();
@@ -86,7 +86,7 @@ describe('useDebouncedFunction', () => {
     });
 
     it('should return original error when aborted', async () => {
-        const mock = jest.fn();
+        const mock = vi.fn();
         mock.mockImplementation(async () => Promise.reject(new Error('failed')));
 
         const ac1 = new AbortController();

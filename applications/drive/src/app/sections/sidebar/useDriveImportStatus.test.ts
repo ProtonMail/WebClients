@@ -11,18 +11,18 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 
 import { useDriveImportStatus } from './useDriveImportStatus';
 
-jest.mock('@proton/components/hooks/useEventManager', () => ({
+vi.mock('@proton/components/hooks/useEventManager', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/activation/src/logic/store', () => ({
-    useEasySwitchDispatch: jest.fn(),
-    useEasySwitchSelector: jest.fn(),
+vi.mock('@proton/activation/src/logic/store', () => ({
+    useEasySwitchDispatch: vi.fn(),
+    useEasySwitchSelector: vi.fn(),
 }));
 
 /** loadImporters() is an abortable thunk, the hook aborts it on unmount. */
-const dispatch = jest.fn(() => ({ abort: jest.fn() }));
+const dispatch = vi.fn(() => ({ abort: vi.fn() }));
 /** Set by the fake event manager so tests can push an event into the hook. */
 let emitEvent: (apiEvent: ApiEvent) => void;
 
@@ -63,7 +63,7 @@ const easySwitchState = ({
     }) as unknown as EasySwitchState;
 
 const renderWithState = (state: EasySwitchState) => {
-    jest.mocked(useEasySwitchSelector).mockImplementation((selector) => selector(state));
+    vi.mocked(useEasySwitchSelector).mockImplementation((selector) => selector(state));
     return renderHook(() => useDriveImportStatus());
 };
 
@@ -84,12 +84,12 @@ const IMPORT_FOLDER = { ImportFolderVolumeID: 'volume-id', ImportFolderLinkID: '
 
 describe('useDriveImportStatus', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(useEasySwitchDispatch).mockReturnValue(dispatch as any);
-        jest.mocked(useEventManager).mockReturnValue({
+        vi.clearAllMocks();
+        vi.mocked(useEasySwitchDispatch).mockReturnValue(dispatch as any);
+        vi.mocked(useEventManager).mockReturnValue({
             subscribe: (listener: (apiEvent: ApiEvent) => void) => {
                 emitEvent = listener;
-                return jest.fn();
+                return vi.fn();
             },
         } as any);
     });
@@ -150,7 +150,7 @@ describe('useDriveImportStatus', () => {
             expect(result.current.isPaused).toBe(true);
 
             const resumedState = easySwitchState({ importer: true, activeState: ApiImporterState.RUNNING });
-            jest.mocked(useEasySwitchSelector).mockImplementation((selector) => selector(resumedState));
+            vi.mocked(useEasySwitchSelector).mockImplementation((selector) => selector(resumedState));
             rerender();
 
             expect(result.current.isPaused).toBe(false);

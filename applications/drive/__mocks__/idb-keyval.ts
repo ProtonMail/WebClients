@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 const mockStorage = new Map<string, any>();
 
 const mockStore = {
@@ -5,37 +7,37 @@ const mockStore = {
     toString: () => 'mock-store',
 };
 
-const createStore = jest.fn(() => mockStore);
+const createStore = vi.fn(() => mockStore);
 
-const get = jest.fn((key) => {
+const get = vi.fn((key) => {
     return Promise.resolve(mockStorage.get(key));
 });
 
-const set = jest.fn((key, value) => {
+const set = vi.fn((key, value) => {
     mockStorage.set(key, value);
     return Promise.resolve();
 });
 
-const del = jest.fn((key) => {
+const del = vi.fn((key) => {
     mockStorage.delete(key);
     return Promise.resolve();
 });
 
-const clear = jest.fn(() => {
+const clear = vi.fn(() => {
     mockStorage.clear();
     return Promise.resolve();
 });
 
-const getMany = jest.fn((keys) => {
+const getMany = vi.fn((keys) => {
     return Promise.resolve(keys.map((key: string) => mockStorage.get(key)));
 });
 
-const setMany = jest.fn((entries) => {
+const setMany = vi.fn((entries) => {
     entries.forEach(([key, value]: [string, any]) => mockStorage.set(key, value));
     return Promise.resolve();
 });
 
-const delMany = jest.fn((keys) => {
+const delMany = vi.fn((keys) => {
     keys.forEach((key: string) => mockStorage.delete(key));
     return Promise.resolve();
 });
@@ -53,29 +55,16 @@ const __resetMockStorage = () => {
     createStore.mockClear();
 };
 
-const keys = jest.fn(() => {
+const keys = vi.fn(() => {
     return Promise.resolve(Array.from(mockStorage.keys()));
 });
 
-const values = jest.fn(() => {
+const values = vi.fn(() => {
     return Promise.resolve(Array.from(mockStorage.values()));
 });
 
-const entries = jest.fn(() => {
+const entries = vi.fn(() => {
     return Promise.resolve(Array.from(mockStorage.entries()));
 });
 
-module.exports = {
-    get,
-    set,
-    del,
-    clear,
-    getMany,
-    setMany,
-    delMany,
-    keys,
-    values,
-    entries,
-    createStore,
-    __resetMockStorage,
-};
+export { get, set, del, clear, getMany, setMany, delMany, keys, values, entries, createStore, __resetMockStorage };

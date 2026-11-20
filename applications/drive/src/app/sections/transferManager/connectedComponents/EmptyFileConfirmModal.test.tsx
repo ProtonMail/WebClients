@@ -10,16 +10,16 @@ describe('EmptyFileConfirmModal', () => {
 
     beforeEach(() => {
         capturedResolver = undefined;
-        jest.spyOn(uploadManager, 'setEmptyFileResolver').mockImplementation((callback) => {
+        vi.spyOn(uploadManager, 'setEmptyFileResolver').mockImplementation((callback) => {
             capturedResolver = callback;
         });
-        jest.spyOn(uploadManager, 'removeEmptyFileResolver').mockImplementation(() => {
+        vi.spyOn(uploadManager, 'removeEmptyFileResolver').mockImplementation(() => {
             capturedResolver = undefined;
         });
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     /** Lets pending state updates and the modal's mount/exit effects settle. */

@@ -5,9 +5,9 @@ import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { DownloadStatus, useDownloadManagerStore } from '../downloadManager.store';
 import { handleDownloadError } from './handleError';
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    ...jest.requireActual('@proton/drive/legacy/errorHandling'),
-    sendErrorReport: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', async () => ({
+    ...(await vi.importActual('@proton/drive/legacy/errorHandling')),
+    sendErrorReport: vi.fn(),
 }));
 
 describe('handleDownloadError', () => {
@@ -20,7 +20,7 @@ describe('handleDownloadError', () => {
             downloadedBytes: 0,
         });
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     const getError = (downloadId: string) => useDownloadManagerStore.getState().getQueueItem(downloadId)?.error;

@@ -1,16 +1,18 @@
+import type { MockedFunction } from 'vitest';
+
 import type { NodeEntity } from '@proton/drive/sdk';
 import { getDrive } from '@proton/drive/sdk';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import { hydrateAndCheckNodes } from './hydrateAndCheckNodes';
 
-jest.mock('@proton/drive/sdk', () => ({
-    getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', () => ({
+    getDrive: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
-    isProtonDocsDocument: jest.fn(),
-    isProtonDocsSpreadsheet: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/mimetype', () => ({
+    isProtonDocsDocument: vi.fn(),
+    isProtonDocsSpreadsheet: vi.fn(),
 }));
 
 const createAsyncIterable = <T>(items: T[]) =>
@@ -20,17 +22,17 @@ const createAsyncIterable = <T>(items: T[]) =>
         }
     })();
 
-const mockGetDrive = getDrive as jest.MockedFunction<typeof getDrive>;
-const mockIsProtonDocsDocument = isProtonDocsDocument as jest.MockedFunction<typeof isProtonDocsDocument>;
-const mockIsProtonDocsSpreadsheet = isProtonDocsSpreadsheet as jest.MockedFunction<typeof isProtonDocsSpreadsheet>;
+const mockGetDrive = getDrive as MockedFunction<typeof getDrive>;
+const mockIsProtonDocsDocument = isProtonDocsDocument as MockedFunction<typeof isProtonDocsDocument>;
+const mockIsProtonDocsSpreadsheet = isProtonDocsSpreadsheet as MockedFunction<typeof isProtonDocsSpreadsheet>;
 
 describe('hydrateAndCheckNodes', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('hydrates nodes from the sdk and reports no unsupported files', async () => {
-        const iterateNodes = jest.fn();
+        const iterateNodes = vi.fn();
         const drive = { iterateNodes };
         mockGetDrive.mockReturnValue(drive as unknown as ReturnType<typeof getDrive>);
 
@@ -48,7 +50,7 @@ describe('hydrateAndCheckNodes', () => {
     });
 
     it('flags when any hydrated node is unsupported', async () => {
-        const iterateNodes = jest.fn();
+        const iterateNodes = vi.fn();
         const drive = { iterateNodes };
         mockGetDrive.mockReturnValue(drive as unknown as ReturnType<typeof getDrive>);
 
@@ -68,7 +70,7 @@ describe('hydrateAndCheckNodes', () => {
     });
 
     it('throws when a requested node is missing', async () => {
-        const iterateNodes = jest.fn();
+        const iterateNodes = vi.fn();
         const drive = { iterateNodes };
         mockGetDrive.mockReturnValue(drive as unknown as ReturnType<typeof getDrive>);
 

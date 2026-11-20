@@ -9,8 +9,8 @@ import { SearchOptInManager } from './SearchOptInManager';
 
 global.BroadcastChannel = FakeBroadcastChannel as unknown as typeof BroadcastChannel;
 
-jest.mock('../shared/Logger', () => ({
-    Logger: { info: jest.fn(), error: jest.fn(), listenForWorkerLogs: jest.fn() },
+vi.mock('../shared/Logger', () => ({
+    Logger: { info: vi.fn(), error: vi.fn(), listenForWorkerLogs: vi.fn() },
 }));
 
 const USER_ID = 'test-user' as UserId;
@@ -85,7 +85,7 @@ describe('SearchOptInManager', () => {
             const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             await manager.optIn();
 
-            const databasesSpy = jest.spyOn(indexedDB, 'databases');
+            const databasesSpy = vi.spyOn(indexedDB, 'databases');
             expect(await manager.isOptedIn()).toBe(true);
             expect(databasesSpy).not.toHaveBeenCalled();
 
@@ -97,7 +97,7 @@ describe('SearchOptInManager', () => {
             await createLegacyESDB(USER_ID);
 
             const stateChannel = createSearchModuleStateUpdateChannel(USER_ID);
-            const listener = jest.fn();
+            const listener = vi.fn();
             stateChannel.onmessage = (ev) => listener(ev.data);
 
             const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
@@ -140,7 +140,7 @@ describe('SearchOptInManager', () => {
         it('optIn broadcasts { isUserOptIn: true } on the state update channel', async () => {
             const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             const stateChannel = createSearchModuleStateUpdateChannel(USER_ID);
-            const listener = jest.fn();
+            const listener = vi.fn();
             stateChannel.onmessage = (ev) => listener(ev.data);
 
             await manager.optIn();
@@ -154,7 +154,7 @@ describe('SearchOptInManager', () => {
         it('does not broadcast to channels for different users', async () => {
             const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             const otherChannel = createSearchModuleStateUpdateChannel('other-user' as UserId);
-            const listener = jest.fn();
+            const listener = vi.fn();
             otherChannel.onmessage = (ev) => listener(ev.data);
 
             await manager.optIn();

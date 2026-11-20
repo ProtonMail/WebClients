@@ -12,9 +12,9 @@ import {
 import type { TransferManagerEntry } from '../useTransferManagerState';
 import { TransferItem } from './TransferItem';
 
-jest.mock('../../../modules/download/DownloadManager', () => ({
+vi.mock('../../../modules/download/DownloadManager', () => ({
     DownloadManager: {
-        getInstance: jest.fn(),
+        getInstance: vi.fn(),
     },
 }));
 
@@ -22,7 +22,7 @@ const REPORT_BUTTON_TEST_ID = 'drive-transfers-manager:item-controls-report';
 const DOWNLOAD_ANYWAY_BUTTON_TEST_ID = 'drive-transfers-manager:item-controls-download-anyway';
 
 const mockDownloadManager = {
-    setMalawareDecision: jest.fn(),
+    setMalawareDecision: vi.fn(),
 };
 
 const malwareInfo = {
@@ -76,8 +76,8 @@ const createEntry = (overrides: Partial<TransferManagerEntry> = {}): TransferMan
 
 describe('TransferItem - malware report button', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
+        vi.clearAllMocks();
+        vi.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
         act(() => {
             useDownloadManagerStore.getState().clearQueue();
         });
@@ -85,13 +85,13 @@ describe('TransferItem - malware report button', () => {
 
     it('renders the report button when status is MalwareDetected and onReportAbuse is provided', () => {
         seedDownloadItem({ status: DownloadStatus.MalwareDetected });
-        const onReportAbuse = jest.fn();
+        const onReportAbuse = vi.fn();
 
         render(
             <TransferItem
                 entry={createEntry({ status: DownloadStatus.MalwareDetected })}
-                cancelTransfer={jest.fn()}
-                retryTransfer={jest.fn()}
+                cancelTransfer={vi.fn()}
+                retryTransfer={vi.fn()}
                 onReportAbuse={onReportAbuse}
             />
         );
@@ -102,13 +102,13 @@ describe('TransferItem - malware report button', () => {
 
     it('does not render the report button when status is MalwareScanUnavailable', () => {
         seedDownloadItem({ status: DownloadStatus.MalwareScanUnavailable });
-        const onReportAbuse = jest.fn();
+        const onReportAbuse = vi.fn();
 
         render(
             <TransferItem
                 entry={createEntry({ status: DownloadStatus.MalwareScanUnavailable })}
-                cancelTransfer={jest.fn()}
-                retryTransfer={jest.fn()}
+                cancelTransfer={vi.fn()}
+                retryTransfer={vi.fn()}
                 onReportAbuse={onReportAbuse}
             />
         );
@@ -124,8 +124,8 @@ describe('TransferItem - malware report button', () => {
         render(
             <TransferItem
                 entry={createEntry({ status: DownloadStatus.MalwareDetected })}
-                cancelTransfer={jest.fn()}
-                retryTransfer={jest.fn()}
+                cancelTransfer={vi.fn()}
+                retryTransfer={vi.fn()}
             />
         );
 
@@ -135,13 +135,13 @@ describe('TransferItem - malware report button', () => {
 
     it('does not render the report button for non-malware statuses', () => {
         seedDownloadItem({ status: DownloadStatus.Failed });
-        const onReportAbuse = jest.fn();
+        const onReportAbuse = vi.fn();
 
         render(
             <TransferItem
                 entry={createEntry({ status: DownloadStatus.Failed })}
-                cancelTransfer={jest.fn()}
-                retryTransfer={jest.fn()}
+                cancelTransfer={vi.fn()}
+                retryTransfer={vi.fn()}
                 onReportAbuse={onReportAbuse}
             />
         );
@@ -152,13 +152,13 @@ describe('TransferItem - malware report button', () => {
 
     it('calls onReportAbuse with malware info when the report button is clicked', () => {
         seedDownloadItem({ status: DownloadStatus.MalwareDetected });
-        const onReportAbuse = jest.fn();
+        const onReportAbuse = vi.fn();
 
         render(
             <TransferItem
                 entry={createEntry({ status: DownloadStatus.MalwareDetected })}
-                cancelTransfer={jest.fn()}
-                retryTransfer={jest.fn()}
+                cancelTransfer={vi.fn()}
+                retryTransfer={vi.fn()}
                 onReportAbuse={onReportAbuse}
             />
         );
@@ -174,8 +174,8 @@ describe('TransferItem - malware report button', () => {
 
 describe('TransferItem - integrity warning', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
+        vi.clearAllMocks();
+        vi.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
         act(() => {
             useDownloadManagerStore.getState().clearQueue();
         });
@@ -190,8 +190,8 @@ describe('TransferItem - integrity warning', () => {
                     status: DownloadStatus.Finished,
                     warningMessage: 'Data integrity check failed',
                 })}
-                cancelTransfer={jest.fn()}
-                retryTransfer={jest.fn()}
+                cancelTransfer={vi.fn()}
+                retryTransfer={vi.fn()}
             />
         );
 
@@ -205,8 +205,8 @@ describe('TransferItem - integrity warning', () => {
         render(
             <TransferItem
                 entry={createEntry({ status: DownloadStatus.Finished })}
-                cancelTransfer={jest.fn()}
-                retryTransfer={jest.fn()}
+                cancelTransfer={vi.fn()}
+                retryTransfer={vi.fn()}
             />
         );
 
@@ -216,8 +216,8 @@ describe('TransferItem - integrity warning', () => {
 
 describe('TransferItem - preparing state', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
+        vi.clearAllMocks();
+        vi.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
         act(() => {
             useDownloadManagerStore.getState().clearQueue();
         });
@@ -233,8 +233,8 @@ describe('TransferItem - preparing state', () => {
                     storageSize: undefined,
                     transferredBytes: 2048,
                 })}
-                cancelTransfer={jest.fn()}
-                retryTransfer={jest.fn()}
+                cancelTransfer={vi.fn()}
+                retryTransfer={vi.fn()}
             />
         );
 
@@ -244,8 +244,8 @@ describe('TransferItem - preparing state', () => {
 
 describe('TransferItem - cancelled state', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
+        vi.clearAllMocks();
+        vi.mocked(DownloadManager.getInstance).mockReturnValue(mockDownloadManager as unknown as DownloadManager);
         act(() => {
             useDownloadManagerStore.getState().clearQueue();
         });
@@ -262,8 +262,8 @@ describe('TransferItem - cancelled state', () => {
                     transferredBytes: 0,
                     clearTextSize: 396,
                 })}
-                cancelTransfer={jest.fn()}
-                retryTransfer={jest.fn()}
+                cancelTransfer={vi.fn()}
+                retryTransfer={vi.fn()}
             />
         );
 

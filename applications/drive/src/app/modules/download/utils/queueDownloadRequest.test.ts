@@ -10,8 +10,8 @@ describe('queueDownloadRequest', () => {
 
     const baseParams = {
         requestedDownloads: new Map(),
-        scheduleSingleFile: jest.fn(),
-        scheduleArchive: jest.fn(),
+        scheduleSingleFile: vi.fn(),
+        scheduleArchive: vi.fn(),
         getArchiveName: () => 'archive.zip',
     };
 
@@ -57,7 +57,7 @@ describe('queueAlbumDownloadRequest', () => {
 
     it('names the archive after the album when albumName is set', () => {
         const requestedDownloads = new Map();
-        const scheduleArchive = jest.fn();
+        const scheduleArchive = vi.fn();
 
         const downloadId = queueAlbumDownloadRequest({
             albumUid: 'album-1',
@@ -79,7 +79,7 @@ describe('queueAlbumDownloadRequest', () => {
             albumUid: 'album-1',
             albumName,
             requestedDownloads: new Map(),
-            scheduleArchive: jest.fn(),
+            scheduleArchive: vi.fn(),
         });
 
         const item = useDownloadManagerStore.getState().getQueueItem(downloadId);

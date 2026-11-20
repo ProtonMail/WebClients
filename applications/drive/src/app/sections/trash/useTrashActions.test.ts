@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
@@ -8,57 +9,57 @@ import { useTrashStore } from './useTrash.store';
 import { useTrashActions } from './useTrashActions';
 import { useTrashNotifications } from './useTrashNotifications';
 
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
-    useDrive: jest.fn(),
-    getDrive: jest.fn(),
-    getDriveForPhotos: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
+    useDrive: vi.fn(),
+    getDrive: vi.fn(),
+    getDriveForPhotos: vi.fn(),
 }));
 
-const mockGetDrive = jest.mocked(getDrive);
-const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
+const mockGetDrive = vi.mocked(getDrive);
+const mockGetDriveForPhotos = vi.mocked(getDriveForPhotos);
 
-jest.mock('@proton/drive/legacy/errorHandling');
+vi.mock('@proton/drive/legacy/errorHandling');
 
-jest.mock('./useTrash.store', () => {
-    const hook = jest.fn() as jest.Mock & { getState: jest.Mock };
-    hook.getState = jest.fn();
+vi.mock('./useTrash.store', () => {
+    const hook = vi.fn() as Mock & { getState: Mock };
+    hook.getState = vi.fn();
     return { useTrashStore: hook };
 });
 
-jest.mock('./useTrashNotifications', () => ({
-    useTrashNotifications: jest.fn(),
+vi.mock('./useTrashNotifications', () => ({
+    useTrashNotifications: vi.fn(),
 }));
 
-jest.mock('@proton/drive/modules/busDriver', () => ({
-    ...jest.requireActual('@proton/drive/modules/busDriver'),
-    getBusDriver: jest.fn(),
+vi.mock('@proton/drive/modules/busDriver', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/busDriver')),
+    getBusDriver: vi.fn(),
 }));
 
-jest.mock('../../modals/DetailsModal', () => ({
-    useDetailsModal: () => ({ detailsModal: null, showDetailsModal: jest.fn() }),
+vi.mock('../../modals/DetailsModal', () => ({
+    useDetailsModal: () => ({ detailsModal: null, showDetailsModal: vi.fn() }),
 }));
 
-jest.mock('../../modals/FilesDetailsModal', () => ({
-    useFilesDetailsModal: () => ({ filesDetailsModal: null, showFilesDetailsModal: jest.fn() }),
+vi.mock('../../modals/FilesDetailsModal', () => ({
+    useFilesDetailsModal: () => ({ filesDetailsModal: null, showFilesDetailsModal: vi.fn() }),
 }));
 
-jest.mock('../../modals/preview', () => ({
-    useDrivePreviewModal: () => ({ previewModal: null, showPreviewModal: jest.fn() }),
+vi.mock('../../modals/preview', () => ({
+    useDrivePreviewModal: () => ({ previewModal: null, showPreviewModal: vi.fn() }),
 }));
 
-const mockUseDrive = jest.mocked(useDrive);
-const mockUseTrashStore = useTrashStore as jest.MockedFunction<typeof useTrashStore> & { getState: jest.Mock };
-const mockUseTrashNotifications = jest.mocked(useTrashNotifications);
-const mockGetActionEventManager = jest.mocked(getBusDriver);
+const mockUseDrive = vi.mocked(useDrive);
+const mockUseTrashStore = useTrashStore as MockedFunction<typeof useTrashStore> & { getState: Mock };
+const mockUseTrashNotifications = vi.mocked(useTrashNotifications);
+const mockGetActionEventManager = vi.mocked(getBusDriver);
 
 describe('useTrashActions', () => {
     describe('handleEmptyTrash', () => {
-        const emptyTrashDrive = jest.fn();
-        const emptyTrashPhotos = jest.fn();
-        const handleError = jest.mocked(handleSdkError);
-        const createEmptyTrashNotificationSuccess = jest.fn();
-        const emit = jest.fn();
+        const emptyTrashDrive = vi.fn();
+        const emptyTrashPhotos = vi.fn();
+        const handleError = vi.mocked(handleSdkError);
+        const createEmptyTrashNotificationSuccess = vi.fn();
+        const emit = vi.fn();
 
         const allTrashNodes = new Map([
             ['drive-1', { uid: 'drive-1', name: 'File 1', type: NodeType.File }],
@@ -69,7 +70,7 @@ describe('useTrashActions', () => {
 
         // Capture the callback passed to createEmptyTrashConfirmModal so we can invoke it
         let capturedOnSubmit: (() => Promise<unknown>) | undefined;
-        const createEmptyTrashConfirmModal = jest.fn((onSubmit: () => Promise<unknown>) => {
+        const createEmptyTrashConfirmModal = vi.fn((onSubmit: () => Promise<unknown>) => {
             capturedOnSubmit = onSubmit;
         });
 
@@ -77,7 +78,7 @@ describe('useTrashActions', () => {
         const mockPhotosClient = { type: 'photos' } as any;
 
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             capturedOnSubmit = undefined;
 
             mockGetDrive.mockReturnValue(mockDriveClient);

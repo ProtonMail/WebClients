@@ -3,11 +3,11 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getDrive } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
-import { setLocation } from '@proton/jest-env/setLocation';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import { needPublicRedirectSpotlight, setPublicRedirectSpotlightToPending } from '../../utils/publicRedirectSpotlight';
 import { getBookmark } from '../../utils/sdk/getBookmark';
@@ -16,82 +16,84 @@ import { usePublicAuthStore } from './usePublicAuth.store';
 import { usePublicBookmark } from './usePublicBookmark';
 import { getPublicTokenAndPassword } from './utils/getPublicTokenAndPassword';
 
-jest.mock('@proton/drive/sdk', () => ({
-    getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', () => ({
+    getDrive: vi.fn(),
 }));
 
-jest.mock('@proton/hooks/useLoading', () => jest.fn(() => [false, jest.fn((fn: () => Promise<void>) => fn())]));
-
-jest.mock('@proton/shared/lib/apps/helper', () => ({
-    getAppHref: jest.fn(),
+vi.mock('@proton/hooks/useLoading', () => ({
+    default: vi.fn(() => [false, vi.fn((fn: () => Promise<void>) => fn())]),
 }));
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    openNewTab: jest.fn(),
+vi.mock('@proton/shared/lib/apps/helper', () => ({
+    getAppHref: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    openNewTab: vi.fn(),
 }));
 
-jest.mock('../../utils/publicRedirectSpotlight', () => ({
-    needPublicRedirectSpotlight: jest.fn(),
-    setPublicRedirectSpotlightToPending: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
-jest.mock('../../utils/sdk/getBookmark', () => ({
-    getBookmark: jest.fn(),
+vi.mock('../../utils/publicRedirectSpotlight', () => ({
+    needPublicRedirectSpotlight: vi.fn(),
+    setPublicRedirectSpotlightToPending: vi.fn(),
 }));
 
-jest.mock('../../utils/telemetry', () => ({
+vi.mock('../../utils/sdk/getBookmark', () => ({
+    getBookmark: vi.fn(),
+}));
+
+vi.mock('../../utils/telemetry', () => ({
     Actions: {
         AddToBookmark: 'AddToBookmark',
     },
-    countActionWithTelemetry: jest.fn(),
+    countActionWithTelemetry: vi.fn(),
 }));
 
-jest.mock('./utils/getPublicTokenAndPassword', () => ({
-    getPublicTokenAndPassword: jest.fn(),
+vi.mock('./utils/getPublicTokenAndPassword', () => ({
+    getPublicTokenAndPassword: vi.fn(),
 }));
 
-jest.mock('./usePublicAuth.store', () => ({
-    usePublicAuthStore: jest.fn(),
+vi.mock('./usePublicAuth.store', () => ({
+    usePublicAuthStore: vi.fn(),
 }));
 
-const mockIterateBookmarks = jest.fn();
-const mockCreateBookmark = jest.fn();
-const mockHandleError = jest.mocked(handleSdkError);
-const mockWithLoading = jest.fn((fn: () => Promise<void>) => fn());
+const mockIterateBookmarks = vi.fn();
+const mockCreateBookmark = vi.fn();
+const mockHandleError = vi.mocked(handleSdkError);
+const mockWithLoading = vi.fn((fn: () => Promise<void>) => fn());
 
 describe('usePublicBookmark', () => {
     const mockToken = 'test-token';
     const mockBookmarkUrl = 'https://drive.proton.me/urls/test-token';
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        jest.mocked(getDrive).mockReturnValue({
+        vi.mocked(getDrive).mockReturnValue({
             iterateBookmarks: mockIterateBookmarks,
             createBookmark: mockCreateBookmark,
         } as any);
 
-        jest.mocked(useLoading).mockReturnValue([false, mockWithLoading] as any);
+        vi.mocked(useLoading).mockReturnValue([false, mockWithLoading] as any);
 
-        jest.mocked(getPublicTokenAndPassword).mockReturnValue({
+        vi.mocked(getPublicTokenAndPassword).mockReturnValue({
             token: mockToken,
             password: '',
         } as any);
 
-        jest.mocked(needPublicRedirectSpotlight).mockReturnValue(false);
+        vi.mocked(needPublicRedirectSpotlight).mockReturnValue(false);
 
-        jest.mocked(getAppHref).mockReturnValue('/shared-with-me');
+        vi.mocked(getAppHref).mockReturnValue('/shared-with-me');
 
         setLocation(mockBookmarkUrl);
     });
 
     describe('when user is not logged in', () => {
         beforeEach(() => {
-            jest.mocked(usePublicAuthStore).mockReturnValue(false);
+            vi.mocked(usePublicAuthStore).mockReturnValue(false);
         });
 
         it('should not check bookmarks', async () => {
@@ -110,7 +112,7 @@ describe('usePublicBookmark', () => {
 
     describe('when user is logged in', () => {
         beforeEach(() => {
-            jest.mocked(usePublicAuthStore).mockReturnValue(true);
+            vi.mocked(usePublicAuthStore).mockReturnValue(true);
         });
 
         it('should check if link is already bookmarked', async () => {
@@ -118,7 +120,7 @@ describe('usePublicBookmark', () => {
             mockIterateBookmarks.mockImplementation(async function* () {
                 yield mockBookmark;
             });
-            jest.mocked(getBookmark).mockReturnValue({
+            vi.mocked(getBookmark).mockReturnValue({
                 bookmark: { uid: mockToken },
             } as any);
 
@@ -136,7 +138,7 @@ describe('usePublicBookmark', () => {
             mockIterateBookmarks.mockImplementation(async function* () {
                 yield mockBookmark;
             });
-            jest.mocked(getBookmark).mockReturnValue({
+            vi.mocked(getBookmark).mockReturnValue({
                 bookmark: { uid: 'different-token' },
             } as any);
 
@@ -169,7 +171,7 @@ describe('usePublicBookmark', () => {
             mockIterateBookmarks.mockImplementation(async function* () {
                 yield { uid: mockToken };
             });
-            jest.mocked(getBookmark).mockImplementation(() => {
+            vi.mocked(getBookmark).mockImplementation(() => {
                 throw error;
             });
 
@@ -186,7 +188,7 @@ describe('usePublicBookmark', () => {
             mockIterateBookmarks.mockImplementation(async function* () {
                 return;
             });
-            jest.mocked(needPublicRedirectSpotlight).mockReturnValue(true);
+            vi.mocked(needPublicRedirectSpotlight).mockReturnValue(true);
 
             const { result } = renderHook(() => usePublicBookmark());
 
@@ -198,8 +200,8 @@ describe('usePublicBookmark', () => {
 
     describe('addBookmark', () => {
         beforeEach(() => {
-            jest.mocked(usePublicAuthStore).mockReturnValue(true);
-            jest.mocked(useFlag).mockReturnValue(false);
+            vi.mocked(usePublicAuthStore).mockReturnValue(true);
+            vi.mocked(useFlag).mockReturnValue(false);
             mockIterateBookmarks.mockImplementation(async function* () {
                 return;
             });
@@ -255,8 +257,8 @@ describe('usePublicBookmark', () => {
 
     describe('openInDrive', () => {
         beforeEach(() => {
-            jest.mocked(usePublicAuthStore).mockReturnValue(true);
-            jest.mocked(useFlag).mockReturnValue(false);
+            vi.mocked(usePublicAuthStore).mockReturnValue(true);
+            vi.mocked(useFlag).mockReturnValue(false);
             mockIterateBookmarks.mockImplementation(async function* () {
                 return;
             });
@@ -264,7 +266,7 @@ describe('usePublicBookmark', () => {
 
         it('should open shared-with-me page in new tab', () => {
             const expectedUrl = '/shared-with-me';
-            jest.mocked(getAppHref).mockReturnValue(expectedUrl);
+            vi.mocked(getAppHref).mockReturnValue(expectedUrl);
 
             const { result } = renderHook(() => usePublicBookmark());
 
@@ -277,14 +279,14 @@ describe('usePublicBookmark', () => {
 
     describe('cleanup on unmount', () => {
         beforeEach(() => {
-            jest.mocked(usePublicAuthStore).mockReturnValue(true);
-            jest.mocked(useFlag).mockReturnValue(false);
+            vi.mocked(usePublicAuthStore).mockReturnValue(true);
+            vi.mocked(useFlag).mockReturnValue(false);
         });
 
         it('should abort bookmark iteration when unmounting', async () => {
             const abortController = new AbortController();
             const originalAbort = abortController.abort;
-            abortController.abort = jest.fn(originalAbort.bind(abortController));
+            abortController.abort = vi.fn(originalAbort.bind(abortController));
 
             mockIterateBookmarks.mockImplementation(async function* (signal) {
                 expect(signal).toBeInstanceOf(AbortSignal);

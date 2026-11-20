@@ -7,11 +7,11 @@ import { getCategorizedRevisions } from './getCategorizedRevisions';
 
 describe('getCategorizedRevisions', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(new Date('2023-03-17T12:00:00'));
+        vi.useFakeTimers().setSystemTime(new Date('2023-03-17T12:00:00'));
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('categorizes revisions correctly', () => {
@@ -48,7 +48,7 @@ describe('getCategorizedRevisions', () => {
     });
 
     it('puts a revision from late on last Saturday in last week', () => {
-        jest.setSystemTime(new Date('2023-03-20T12:00:00')); // Monday
+        vi.setSystemTime(new Date('2023-03-20T12:00:00')); // Monday
         const revisions = [
             { creationTime: new Date('2023-03-18T02:00:00') }, // Saturday, last week
             { creationTime: new Date('2023-03-13T02:00:00') }, // Monday, last week
@@ -64,7 +64,7 @@ describe('getCategorizedRevisions', () => {
     });
 
     it('splits groups exactly at day and week boundaries', () => {
-        jest.setSystemTime(new Date('2023-03-22T12:00:00')); // Wednesday
+        vi.setSystemTime(new Date('2023-03-22T12:00:00')); // Wednesday
         const revisions = [
             { creationTime: new Date('2023-03-22T00:00:00') }, // today, first minute
             { creationTime: new Date('2023-03-21T23:59:59') }, // yesterday, last second
@@ -88,7 +88,7 @@ describe('getCategorizedRevisions', () => {
     });
 
     it('shows Saturday as yesterday on a Sunday', () => {
-        jest.setSystemTime(new Date('2023-03-19T12:00:00')); // Sunday
+        vi.setSystemTime(new Date('2023-03-19T12:00:00')); // Sunday
         const revisions = [
             { creationTime: new Date('2023-03-18T23:00:00') }, // Saturday, yesterday
             { creationTime: new Date('2023-03-17T23:00:00') }, // Friday, last week
@@ -106,7 +106,7 @@ describe('getCategorizedRevisions', () => {
     });
 
     it('keeps last week together when it spans two months', () => {
-        jest.setSystemTime(new Date('2023-03-08T12:00:00')); // Wednesday, last week is Feb 26 - Mar 4
+        vi.setSystemTime(new Date('2023-03-08T12:00:00')); // Wednesday, last week is Feb 26 - Mar 4
         const revisions = [
             { creationTime: new Date('2023-03-04T23:00:00') }, // Saturday, March
             { creationTime: new Date('2023-02-28T23:00:00') }, // Tuesday, February
@@ -122,7 +122,7 @@ describe('getCategorizedRevisions', () => {
     });
 
     it('keeps last week together when it spans two years', () => {
-        jest.setSystemTime(new Date('2023-01-04T12:00:00')); // Wednesday, last week is Dec 25 - Dec 31
+        vi.setSystemTime(new Date('2023-01-04T12:00:00')); // Wednesday, last week is Dec 25 - Dec 31
         const revisions = [
             { creationTime: new Date('2023-01-01T10:00:00') }, // Sunday, this week
             { creationTime: new Date('2022-12-31T23:00:00') }, // Saturday, last week
@@ -140,7 +140,7 @@ describe('getCategorizedRevisions', () => {
     });
 
     it('keeps nightly revisions in chronological order across last week and months', () => {
-        jest.setSystemTime(new Date('2026-10-19T12:00:00')); // Monday
+        vi.setSystemTime(new Date('2026-10-19T12:00:00')); // Monday
         // Nightly uploads from Oct 17 back to Sep 18, newest first (Oct 18 is the current version)
         const revisions = Array.from({ length: 30 }, (_, i) => {
             const creationTime = new Date('2026-10-17T23:00:00');

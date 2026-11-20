@@ -10,7 +10,7 @@ import {
 describe('URL Password Functions', () => {
     afterEach(() => {
         deleteStoredUrlPassword();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('deleteStoredUrlPassword', () => {

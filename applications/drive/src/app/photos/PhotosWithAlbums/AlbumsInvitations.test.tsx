@@ -7,9 +7,9 @@ import { loadAlbumInvitations } from '../loaders/loadAlbumInvitations';
 import { useAlbumInvitationsStore } from '../useAlbumInvitations.store';
 import { AlbumsInvitations } from './AlbumsInvitations';
 
-jest.mock('../loaders/loadAlbumInvitations', () => ({ loadAlbumInvitations: jest.fn() }));
-jest.mock('../../sections/sharedWith/hooks/useInvitationsActions', () => ({
-    useInvitationsActions: () => ({ acceptInvitation: jest.fn(), rejectInvitation: jest.fn() }),
+vi.mock('../loaders/loadAlbumInvitations', () => ({ loadAlbumInvitations: vi.fn() }));
+vi.mock('../../sections/sharedWith/hooks/useInvitationsActions', () => ({
+    useInvitationsActions: () => ({ acceptInvitation: vi.fn(), rejectInvitation: vi.fn() }),
 }));
 
 const baseInvitation: ProtonInvitationWithNode = {
@@ -23,7 +23,7 @@ const baseInvitation: ProtonInvitationWithNode = {
 
 describe('AlbumsInvitations', () => {
     beforeEach(() => {
-        jest.mocked(loadAlbumInvitations).mockResolvedValue(undefined);
+        vi.mocked(loadAlbumInvitations).mockResolvedValue(undefined);
         useAlbumInvitationsStore.getState().setInvitations([]);
     });
 

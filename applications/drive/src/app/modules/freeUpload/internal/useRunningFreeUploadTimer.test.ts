@@ -8,34 +8,34 @@ import { useFreeUploadFeature } from './useFreeUploadFeature';
 import { useIsFreeUploadInProgress } from './useIsFreeUploadInProgress';
 import { useRunningFreeUploadTimer } from './useRunningFreeUploadTimer';
 
-jest.mock('./useFreeUploadFeature');
-jest.mock('./useFreeUploadApi');
-jest.mock('./useIsFreeUploadInProgress');
-jest.mock('@proton/drive/legacy/errorHandling');
-jest.mock('../../../modals/FreeUploadOverModal/useFreeUploadOverModal', () => ({
-    useFreeUploadOverModal: jest.fn(() => [null, jest.fn()]),
+vi.mock('./useFreeUploadFeature');
+vi.mock('./useFreeUploadApi');
+vi.mock('./useIsFreeUploadInProgress');
+vi.mock('@proton/drive/legacy/errorHandling');
+vi.mock('../../../modals/FreeUploadOverModal/useFreeUploadOverModal', () => ({
+    useFreeUploadOverModal: vi.fn(() => [null, vi.fn()]),
 }));
-jest.mock('@proton/components/hooks/useErrorHandler', () => ({
+vi.mock('@proton/components/hooks/useErrorHandler', () => ({
     __esModule: true,
-    default: jest.fn(() => jest.fn()),
+    default: vi.fn(() => vi.fn()),
 }));
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    useNotifications: jest.fn(() => ({ createNotification: mockCreateNotification })),
+    useNotifications: vi.fn(() => ({ createNotification: mockCreateNotification })),
 }));
 
-const mockUseFreeUploadFeature = jest.mocked(useFreeUploadFeature);
-const mockUseFreeUploadApi = jest.mocked(useFreeUploadApi);
-const mockUseIsFreeUploadInProgress = jest.mocked(useIsFreeUploadInProgress);
-const mockSendErrorReport = jest.mocked(sendErrorReport);
+const mockUseFreeUploadFeature = vi.mocked(useFreeUploadFeature);
+const mockUseFreeUploadApi = vi.mocked(useFreeUploadApi);
+const mockUseIsFreeUploadInProgress = vi.mocked(useIsFreeUploadInProgress);
+const mockSendErrorReport = vi.mocked(sendErrorReport);
 
 describe('useRunningFreeUploadTimer', () => {
-    const mockCheckFreeUploadTimer = jest.fn();
+    const mockCheckFreeUploadTimer = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         // Reset store to initial state
         useFreeUploadStore.setState({
@@ -50,13 +50,13 @@ describe('useRunningFreeUploadTimer', () => {
 
         mockUseFreeUploadApi.mockReturnValue({
             checkFreeUploadTimer: mockCheckFreeUploadTimer,
-            startFreeUploadTimer: jest.fn(),
-            checkOnboardingStatus: jest.fn(),
+            startFreeUploadTimer: vi.fn(),
+            checkOnboardingStatus: vi.fn(),
         } as any);
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('should successfully begin countdown when EndTime is not null', async () => {

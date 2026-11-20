@@ -11,55 +11,55 @@ import type { IntegrityMetrics } from '../_crypto';
 import { ShareType } from '../_shares';
 import { useLinkInner } from './useLink';
 
-jest.mock('@proton/shared/lib/keys/driveKeys');
+vi.mock('@proton/shared/lib/keys/driveKeys');
 
-jest.mock('@proton/shared/lib/keys/drivePassphrase');
+vi.mock('@proton/shared/lib/keys/drivePassphrase');
 
-jest.mock('../../../utils/url/token');
-const mockedTokenIsValid = jest.mocked(tokenIsValid).mockReturnValue(false);
+vi.mock('../../../utils/url/token');
+const mockedTokenIsValid = vi.mocked(tokenIsValid).mockReturnValue(false);
 
-const mockRequest = jest.fn();
-jest.mock('../_api/useDebouncedRequest', () => {
+const mockRequest = vi.fn();
+vi.mock('../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockRequest;
     };
-    return useDebouncedRequest;
+    return { __esModule: true, default: useDebouncedRequest };
 });
 
-jest.mock('../_utils/useDebouncedFunction', () => {
+vi.mock('../_utils/useDebouncedFunction', () => {
     const useDebouncedFunction = () => {
         return (wrapper: any) => wrapper();
     };
-    return useDebouncedFunction;
+    return { __esModule: true, default: useDebouncedFunction };
 });
 
 describe('useLink', () => {
-    const mockFetchLink = jest.fn();
+    const mockFetchLink = vi.fn();
     const mockLinksKeys = {
-        getPassphrase: jest.fn(),
-        setPassphrase: jest.fn(),
-        getPassphraseSessionKey: jest.fn(),
-        setPassphraseSessionKey: jest.fn(),
-        getPrivateKey: jest.fn(),
-        setPrivateKey: jest.fn(),
-        getSessionKey: jest.fn(),
-        setSessionKey: jest.fn(),
-        getHashKey: jest.fn(),
-        setHashKey: jest.fn(),
+        getPassphrase: vi.fn(),
+        setPassphrase: vi.fn(),
+        getPassphraseSessionKey: vi.fn(),
+        setPassphraseSessionKey: vi.fn(),
+        getPrivateKey: vi.fn(),
+        setPrivateKey: vi.fn(),
+        getSessionKey: vi.fn(),
+        setSessionKey: vi.fn(),
+        getHashKey: vi.fn(),
+        setHashKey: vi.fn(),
     };
     const mockLinksState = {
-        getLink: jest.fn(),
-        setLinks: jest.fn(),
-        setCachedThumbnail: jest.fn(),
+        getLink: vi.fn(),
+        setLinks: vi.fn(),
+        setCachedThumbnail: vi.fn(),
     };
-    const mockGetVerificationKey = jest.fn();
-    const mockGetSharePrivateKey = jest.fn();
-    const mockGetShare = jest.fn();
-    const mockGetDefaultShareAddressEmail = jest.fn();
-    const mockGetDirectSharingInfo = jest.fn();
-    const mockDecryptPrivateKey = jest.fn();
-    const mockIntegrityMetricsDecryptionError = jest.fn();
-    const mockIntegrityMetricsSignatureVerificationError = jest.fn();
+    const mockGetVerificationKey = vi.fn();
+    const mockGetSharePrivateKey = vi.fn();
+    const mockGetShare = vi.fn();
+    const mockGetDefaultShareAddressEmail = vi.fn();
+    const mockGetDirectSharingInfo = vi.fn();
+    const mockDecryptPrivateKey = vi.fn();
+    const mockIntegrityMetricsDecryptionError = vi.fn();
+    const mockIntegrityMetricsSignatureVerificationError = vi.fn();
 
     const plan = MetricUserPlan.Paid;
     const abortSignal = new AbortController().signal;
@@ -72,13 +72,13 @@ describe('useLink', () => {
         // Time relative function can have issue with test environments
         // To prevent hanging async function we use Timer Mocks from jest
         // https://jestjs.io/docs/timer-mocks
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
 
-        global.URL.createObjectURL = jest.fn(() => 'blob:objecturl');
+        global.URL.createObjectURL = vi.fn(() => 'blob:objecturl');
 
         // @ts-ignore
         decryptSigned.mockImplementation(({ armoredMessage }) =>
@@ -255,7 +255,7 @@ describe('useLink', () => {
     });
 
     it('skips load of already cached thumbnail', async () => {
-        const downloadCallbackMock = jest.fn();
+        const downloadCallbackMock = vi.fn();
         mockLinksState.getLink.mockReturnValue({
             decrypted: {
                 name: 'name',
@@ -271,7 +271,7 @@ describe('useLink', () => {
     });
 
     it('loads link thumbnail using cached link thumbnail info', async () => {
-        const downloadCallbackMock = jest.fn().mockReturnValue(
+        const downloadCallbackMock = vi.fn().mockReturnValue(
             Promise.resolve({
                 contents: Promise.resolve(undefined),
                 verificationStatusPromise: Promise.resolve(VERIFICATION_STATUS.SIGNED_AND_VALID),
@@ -302,7 +302,7 @@ describe('useLink', () => {
             ThumbnailBareURL: 'bareUrl',
             ThumbnailToken: 'token2', // Requested new non-expired token.
         });
-        const downloadCallbackMock = jest.fn().mockImplementation((url: string, token: string) =>
+        const downloadCallbackMock = vi.fn().mockImplementation((url: string, token: string) =>
             token === 'token'
                 ? Promise.reject('token expired')
                 : Promise.resolve({
@@ -336,7 +336,7 @@ describe('useLink', () => {
             ThumbnailBareURL: 'bareUrl',
             ThumbnailToken: 'token',
         });
-        const downloadCallbackMock = jest.fn().mockReturnValue(
+        const downloadCallbackMock = vi.fn().mockReturnValue(
             Promise.resolve({
                 contents: Promise.resolve(undefined),
                 verificationStatusPromise: Promise.resolve(VERIFICATION_STATUS.SIGNED_AND_VALID),
@@ -383,7 +383,7 @@ describe('useLink', () => {
             ThumbnailBareURL: 'bareUrl',
             ThumbnailToken: 'token',
         });
-        const downloadCallbackMock = jest.fn().mockReturnValue(
+        const downloadCallbackMock = vi.fn().mockReturnValue(
             Promise.resolve({
                 contents: Promise.resolve(undefined),
                 verificationStatusPromise: Promise.resolve(VERIFICATION_STATUS.SIGNED_AND_INVALID),

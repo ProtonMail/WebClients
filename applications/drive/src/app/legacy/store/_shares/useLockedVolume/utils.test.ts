@@ -1,3 +1,5 @@
+import { describe } from 'vitest';
+
 import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
@@ -8,9 +10,7 @@ import { getPossibleAddressPrivateKeys } from './utils';
 
 const DEFAULT_KEYPASSWORD = '1';
 
-jest.setTimeout(20000);
-
-describe('useLockedVolume -- utils', () => {
+describe('useLockedVolume -- utils', { timeout: 20000 }, () => {
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
     });

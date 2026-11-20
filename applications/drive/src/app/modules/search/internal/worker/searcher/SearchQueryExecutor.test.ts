@@ -1,6 +1,7 @@
 import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
+import { it } from 'vitest';
 
 import { SearchDB } from '../../shared/SearchDB';
 import { collectResults, indexDocuments, makeTestIndexEntry } from '../../testing/indexHelpers';
@@ -383,7 +384,7 @@ describe('filename querying', () => {
         // Known gap: fuzzy matching is case-sensitive (the text attribute keeps the original case
         // and the engine runs with case-insensitivity off), so capitals plus the digit change
         // drop below the similarity cutoff.
-        it.failing('finds the only matching document when a digit differs and the query is capitalized', async () => {
+        it.fails('finds the only matching document when a digit differs and the query is capitalized', async () => {
             expect(await searchIn(SINGLE_PHOTO_LIBRARY, 'Photo_Example_2_Downloaded.jpg')).toEqual(['document']);
         });
     });

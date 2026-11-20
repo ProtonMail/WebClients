@@ -1,3 +1,5 @@
+import type { Mock, MockedFunction } from 'vitest';
+
 import metrics from '@proton/metrics/metricsInstance';
 
 import {
@@ -11,33 +13,33 @@ import type { SearchDiagnostics } from './searchMetrics';
 import { resetTransientReportBurstsForTests, searchMetrics } from './searchMetrics';
 import type { IndexerTaskKind } from './types';
 
-jest.mock('./Logger');
+vi.mock('./Logger');
 
-jest.mock('@proton/metrics/metricsInstance', () => ({
+vi.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
-        drive_search_initial_indexing_total: { increment: jest.fn() },
-        drive_search_node_quarantined_total: { increment: jest.fn() },
-        drive_search_node_repaired_total: { increment: jest.fn() },
-        drive_search_other_error_total: { increment: jest.fn() },
-        drive_search_permanent_errors_total: { increment: jest.fn() },
-        drive_search_transient_errors_total: { increment: jest.fn() },
-        drive_search_query_total: { increment: jest.fn() },
-        drive_search_worker_health_total: { increment: jest.fn() },
+        drive_search_initial_indexing_total: { increment: vi.fn() },
+        drive_search_node_quarantined_total: { increment: vi.fn() },
+        drive_search_node_repaired_total: { increment: vi.fn() },
+        drive_search_other_error_total: { increment: vi.fn() },
+        drive_search_permanent_errors_total: { increment: vi.fn() },
+        drive_search_transient_errors_total: { increment: vi.fn() },
+        drive_search_query_total: { increment: vi.fn() },
+        drive_search_worker_health_total: { increment: vi.fn() },
     },
 }));
 
-jest.mock('./errors', () => ({
-    ...jest.requireActual('./errors'),
-    sendErrorReportForSearch: jest.fn(),
-    sendMessageReportForSearch: jest.fn(),
+vi.mock('./errors', async () => ({
+    ...(await vi.importActual('./errors')),
+    sendErrorReportForSearch: vi.fn(),
+    sendMessageReportForSearch: vi.fn(),
 }));
 
-const sendErrorReportMock = sendErrorReportForSearch as jest.MockedFunction<typeof sendErrorReportForSearch>;
-const sendMessageReportMock = sendMessageReportForSearch as jest.MockedFunction<typeof sendMessageReportForSearch>;
-const transientCounter = metrics.drive_search_transient_errors_total.increment as jest.Mock;
-const permanentCounter = metrics.drive_search_permanent_errors_total.increment as jest.Mock;
-const workerHealthCounter = metrics.drive_search_worker_health_total.increment as jest.Mock;
+const sendErrorReportMock = sendErrorReportForSearch as MockedFunction<typeof sendErrorReportForSearch>;
+const sendMessageReportMock = sendMessageReportForSearch as MockedFunction<typeof sendMessageReportForSearch>;
+const transientCounter = metrics.drive_search_transient_errors_total.increment as Mock;
+const permanentCounter = metrics.drive_search_permanent_errors_total.increment as Mock;
+const workerHealthCounter = metrics.drive_search_worker_health_total.increment as Mock;
 
 const TASK_KIND: IndexerTaskKind = 'index-populator-task';
 
@@ -68,15 +70,15 @@ const triggerTransient = (taskUid: string) =>
 
 describe('searchMetrics transient Sentry throttling', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date('2026-01-01T00:00:00Z'));
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('2026-01-01T00:00:00Z'));
         resetTransientReportBurstsForTests();
         sendErrorReportMock.mockClear();
         transientCounter.mockClear();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('reports the first transient failure for a task UID', () => {
@@ -120,12 +122,12 @@ describe('searchMetrics transient Sentry throttling', () => {
         expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
 
         // Advance just under the window: still throttled.
-        jest.advanceTimersByTime(SENTRY_REPORT_BURST_WINDOW_MS - 1);
+        vi.advanceTimersByTime(SENTRY_REPORT_BURST_WINDOW_MS - 1);
         triggerTransient('task-1');
         expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
 
         // Cross the boundary: a fresh burst opens.
-        jest.advanceTimersByTime(1);
+        vi.advanceTimersByTime(1);
         triggerTransient('task-1');
         expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
     });
@@ -184,7 +186,7 @@ describe('searchMetrics transient Sentry throttling', () => {
         triggerTransient('task-1');
 
         // Spread calls across most of the window; window must NOT slide.
-        jest.advanceTimersByTime(SENTRY_REPORT_BURST_WINDOW_MS - 1);
+        vi.advanceTimersByTime(SENTRY_REPORT_BURST_WINDOW_MS - 1);
         for (let i = 0; i < SENTRY_REPORT_BURST_MAX_ATTEMPTS + 5; i++) {
             triggerTransient('task-1');
         }
@@ -192,7 +194,7 @@ describe('searchMetrics transient Sentry throttling', () => {
 
         // Crossing the original window's end opens a new burst even though calls
         // were happening continuously — proving the window is anchored, not sliding.
-        jest.advanceTimersByTime(1);
+        vi.advanceTimersByTime(1);
         triggerTransient('task-1');
         expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
     });
@@ -203,14 +205,14 @@ const triggerQuarantine = (populatorUid: string) =>
 
 describe('searchMetrics node-quarantine Sentry throttling', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date('2026-01-01T00:00:00Z'));
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('2026-01-01T00:00:00Z'));
         resetTransientReportBurstsForTests();
         sendErrorReportMock.mockClear();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('reports the first quarantined node for a populator UID', () => {
@@ -255,7 +257,7 @@ describe('searchMetrics node-quarantine Sentry throttling', () => {
         }
         expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS);
 
-        jest.advanceTimersByTime(SENTRY_REPORT_BURST_WINDOW_MS);
+        vi.advanceTimersByTime(SENTRY_REPORT_BURST_WINDOW_MS);
         triggerQuarantine('pop-1');
         expect(sendErrorReportMock).toHaveBeenCalledTimes(SENTRY_REPORT_BURST_MAX_ATTEMPTS + 1);
     });

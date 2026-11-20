@@ -1,4 +1,5 @@
 import type { UnverifiedAuthorError } from '@protontech/drive-sdk';
+import type { MockedFunction } from 'vitest';
 
 import { type NodeEntity, NodeType } from '@proton/drive/sdk';
 
@@ -6,9 +7,9 @@ import { type DownloadItem, DownloadStatus, IssueStatus, useDownloadManagerStore
 import { addAndWaitForManifestIssueDecision, addAndWaitForMetadataIssueDecision } from './signatureIssues';
 import { waitForSignatureIssueDecision } from './waitForUserDecision';
 
-jest.mock('./waitForUserDecision');
+vi.mock('./waitForUserDecision');
 
-const mockWaitForSignatureIssueDecision = waitForSignatureIssueDecision as jest.MockedFunction<
+const mockWaitForSignatureIssueDecision = waitForSignatureIssueDecision as MockedFunction<
     typeof waitForSignatureIssueDecision
 >;
 

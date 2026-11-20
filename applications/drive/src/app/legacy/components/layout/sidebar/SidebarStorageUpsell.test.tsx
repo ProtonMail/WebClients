@@ -15,26 +15,26 @@ import {
 import { useSuggestBusinessModal } from '../../../../modals/SuggestBusinessModal/useSuggestBusinessModal';
 import SidebarStorageUpsell from './SidebarStorageUpsell';
 
-jest.mock('@proton/account/user/hooks');
-const mockedUseUser = jest.mocked(useUser);
+vi.mock('@proton/account/user/hooks');
+const mockedUseUser = vi.mocked(useUser);
 
-jest.mock('@proton/account/subscription/hooks');
-const mockedUseSubscription = jest.mocked(useSubscription);
+vi.mock('@proton/account/subscription/hooks');
+const mockedUseSubscription = vi.mocked(useSubscription);
 
-jest.mock('@proton/components/hooks/useLocalState');
-const mockedUseLocalState = jest.mocked(useLocalState);
+vi.mock('@proton/components/hooks/useLocalState');
+const mockedUseLocalState = vi.mocked(useLocalState);
 
-jest.mock('@proton/shared/lib/user/storage');
-const mockedGetCanAddStorage = jest.mocked(getCanAddStorage);
-const mockedGetSpace = jest.mocked(getSpace);
-const mockedGetAppSpace = jest.mocked(getAppSpace);
-const mockedGetCompleteSpaceDetails = jest.mocked(getCompleteSpaceDetails);
+vi.mock('@proton/shared/lib/user/storage');
+const mockedGetCanAddStorage = vi.mocked(getCanAddStorage);
+const mockedGetSpace = vi.mocked(getSpace);
+const mockedGetAppSpace = vi.mocked(getAppSpace);
+const mockedGetCompleteSpaceDetails = vi.mocked(getCompleteSpaceDetails);
 
-jest.mock('../../../../modals/SuggestBusinessModal/useSuggestBusinessModal');
-const mockedUseSuggestBusinessModal = jest.mocked(useSuggestBusinessModal);
+vi.mock('../../../../modals/SuggestBusinessModal/useSuggestBusinessModal');
+const mockedUseSuggestBusinessModal = vi.mocked(useSuggestBusinessModal);
 
-jest.mock('./SettingsLink', () => {
-    const React = require('react');
+vi.mock('./SettingsLink', async () => {
+    const React = await import('react');
     return {
         __esModule: true,
         // eslint-disable-next-line react/display-name
@@ -47,14 +47,14 @@ jest.mock('./SettingsLink', () => {
 });
 
 describe('SidebarStorageUpsell', () => {
-    const mockShowModal = jest.fn();
+    const mockShowModal = vi.fn();
     const mockModal = <div data-testid="suggest-business-modal">Modal</div>;
     const mockStorageRef = { current: null };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedUseSuggestBusinessModal.mockReturnValue([mockModal, mockShowModal]);
-        mockedUseLocalState.mockReturnValue([false, jest.fn()]);
+        mockedUseLocalState.mockReturnValue([false, vi.fn()]);
         mockedUseSubscription.mockReturnValue([{} as any, false]);
         mockedGetSpace.mockReturnValue({ splitStorage: true } as ReturnType<typeof getSpace>);
     });
@@ -64,12 +64,12 @@ describe('SidebarStorageUpsell', () => {
     };
 
     const mockDate = (day: number) => {
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date(2025, 0, day)); // January 2025
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date(2025, 0, day)); // January 2025
     };
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('suggestBusinessButton visibility', () => {

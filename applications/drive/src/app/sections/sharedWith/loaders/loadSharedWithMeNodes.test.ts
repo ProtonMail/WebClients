@@ -1,33 +1,36 @@
+import type { Mock } from 'vitest';
+
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
+import * as mod1 from '@proton/drive/sdk';
 
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 import { loadSharedWithMeNodes } from './loadSharedWithMeNodes';
 
-jest.mock('@proton/drive/sdk', () => ({
-    getDrive: jest.fn(),
-    getDriveForPhotos: jest.fn(),
-    splitNodeUid: jest.fn((uid: string) => ({ volumeId: `volume-${uid}` })),
+vi.mock('@proton/drive/sdk', () => ({
+    getDrive: vi.fn(),
+    getDriveForPhotos: vi.fn(),
+    splitNodeUid: vi.fn((uid: string) => ({ volumeId: `volume-${uid}` })),
 }));
 
-jest.mock('@proton/drive/modules/notifications', () => ({
-    getNotificationsManager: jest.fn(),
+vi.mock('@proton/drive/modules/notifications', () => ({
+    getNotificationsManager: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    ...jest.requireActual('@proton/drive/legacy/errorHandling'),
-    handleSdkError: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', async () => ({
+    ...(await vi.importActual('@proton/drive/legacy/errorHandling')),
+    handleSdkError: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
-    getNodeEntity: jest.fn((node: unknown) => ({ node })),
+vi.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
+    getNodeEntity: vi.fn((node: unknown) => ({ node })),
 }));
 
-jest.mock('../../../utils/sdk/getSignatureIssues', () => ({
-    getSignatureIssues: jest.fn(() => ({ ok: true })),
+vi.mock('../../../utils/sdk/getSignatureIssues', () => ({
+    getSignatureIssues: vi.fn(() => ({ ok: true })),
 }));
 
-const { getDrive, getDriveForPhotos } = jest.mocked(require('@proton/drive/sdk'));
+const { getDrive, getDriveForPhotos } = vi.mocked(mod1) as unknown as Record<'getDrive' | 'getDriveForPhotos', Mock>;
 
 function fakeSharedNode(uid: string, overrides = {}) {
     return {
@@ -55,28 +58,26 @@ async function* asyncIteratorFrom<T>(items: T[]): AsyncGenerator<T> {
 // Mocks the shared with me UID listing and the loading of those UIDs, like the SDK does.
 function fakeDrive(nodes: ReturnType<typeof fakeSharedNode>[], missingUids: string[] = []) {
     return {
-        iterateSharedWithMeNodeUids: jest.fn(() =>
-            asyncIteratorFrom([...nodes.map((node) => node.uid), ...missingUids])
-        ),
-        iterateNodes: jest.fn((uids: string[]) =>
+        iterateSharedWithMeNodeUids: vi.fn(() => asyncIteratorFrom([...nodes.map((node) => node.uid), ...missingUids])),
+        iterateNodes: vi.fn((uids: string[]) =>
             asyncIteratorFrom(uids.map((uid) => nodes.find((node) => node.uid === uid) ?? { missingUid: uid }))
         ),
     };
 }
 
-const mockCreateNotification = jest.fn();
+const mockCreateNotification = vi.fn();
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     useSharedWithMeStore.setState({ isLoadingNodes: false });
-    jest.mocked(getNotificationsManager).mockReturnValue({ createNotification: mockCreateNotification } as any);
+    vi.mocked(getNotificationsManager).mockReturnValue({ createNotification: mockCreateNotification } as any);
     getDriveForPhotos.mockReturnValue(fakeDrive([]));
 });
 
 describe('loadSharedWithMeNodes', () => {
     it('loads the shared with me nodes of Drive and Photos into the store', async () => {
-        const setSharedWithMeItem = jest.spyOn(useSharedWithMeStore.getState(), 'setSharedWithMeItem');
-        const cleanupStaleItems = jest.spyOn(useSharedWithMeStore.getState(), 'cleanupStaleItems');
+        const setSharedWithMeItem = vi.spyOn(useSharedWithMeStore.getState(), 'setSharedWithMeItem');
+        const cleanupStaleItems = vi.spyOn(useSharedWithMeStore.getState(), 'cleanupStaleItems');
         const drive = fakeDrive([fakeSharedNode('drive-1')]);
         getDrive.mockReturnValue(drive);
         getDriveForPhotos.mockReturnValue(fakeDrive([fakeSharedNode('photo-1')]));
@@ -101,7 +102,7 @@ describe('loadSharedWithMeNodes', () => {
     });
 
     it('skips nodes deleted between the listing and the loading without an error', async () => {
-        const setSharedWithMeItem = jest.spyOn(useSharedWithMeStore.getState(), 'setSharedWithMeItem');
+        const setSharedWithMeItem = vi.spyOn(useSharedWithMeStore.getState(), 'setSharedWithMeItem');
         getDrive.mockReturnValue(fakeDrive([fakeSharedNode('drive-1')], ['deleted-node']));
 
         await loadSharedWithMeNodes(new AbortController().signal);
@@ -113,7 +114,7 @@ describe('loadSharedWithMeNodes', () => {
     });
 
     it('skips nodes without a direct membership', async () => {
-        const setSharedWithMeItem = jest.spyOn(useSharedWithMeStore.getState(), 'setSharedWithMeItem');
+        const setSharedWithMeItem = vi.spyOn(useSharedWithMeStore.getState(), 'setSharedWithMeItem');
         getDrive.mockReturnValue(fakeDrive([fakeSharedNode('drive-1', { membership: undefined })]));
 
         await loadSharedWithMeNodes(new AbortController().signal);
@@ -124,10 +125,10 @@ describe('loadSharedWithMeNodes', () => {
     it('shows one error notification when the listing fails', async () => {
         const error = new Error('listing failed');
         getDrive.mockReturnValue({
-            iterateSharedWithMeNodeUids: jest.fn(async function* () {
+            iterateSharedWithMeNodeUids: vi.fn(async function* () {
                 throw error;
             }),
-            iterateNodes: jest.fn(),
+            iterateNodes: vi.fn(),
         });
 
         await loadSharedWithMeNodes(new AbortController().signal);

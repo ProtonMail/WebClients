@@ -1,12 +1,12 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { getStoreWrapper } from '@proton/components/testing/renderWithProviders';
+import { getStoreWrapper } from '@proton/components/testing/vitest/renderWithProviders';
 import { AbuseCategory, NodeType } from '@proton/drive/sdk';
 
 import { type UseReportAbuseModalProps, useReportAbuseModalState } from './useReportAbuseModalState';
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
 // A minimal NodeEntity that satisfies getNodeEntity and getNodeDisplaySize without mocking them.
@@ -23,12 +23,12 @@ const mockMaybeNode = {
 
 const buildProps = (overrides?: Partial<UseReportAbuseModalProps>): UseReportAbuseModalProps => ({
     nodeUid: 'node-uid',
-    onClose: jest.fn(),
-    onExit: jest.fn(),
+    onClose: vi.fn(),
+    onExit: vi.fn(),
     open: true,
     drive: {
-        getNode: jest.fn().mockResolvedValue(mockMaybeNode),
-        reportAbuse: jest.fn().mockResolvedValue(undefined),
+        getNode: vi.fn().mockResolvedValue(mockMaybeNode),
+        reportAbuse: vi.fn().mockResolvedValue(undefined),
     },
     ...overrides,
 });
@@ -36,7 +36,7 @@ const buildProps = (overrides?: Partial<UseReportAbuseModalProps>): UseReportAbu
 describe('useReportAbuseModalState', () => {
     const { Wrapper } = getStoreWrapper();
 
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     it('returns loaded: false until node data is fetched', () => {
         const props = buildProps();
@@ -57,12 +57,12 @@ describe('useReportAbuseModalState', () => {
     });
 
     it('calls onExit when node fetch fails', async () => {
-        const onExit = jest.fn();
+        const onExit = vi.fn();
         const props = buildProps({
             onExit,
             drive: {
-                getNode: jest.fn().mockRejectedValue(new Error('not found')),
-                reportAbuse: jest.fn(),
+                getNode: vi.fn().mockRejectedValue(new Error('not found')),
+                reportAbuse: vi.fn(),
             },
         });
 

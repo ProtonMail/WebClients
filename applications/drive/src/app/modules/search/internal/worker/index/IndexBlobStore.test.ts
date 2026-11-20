@@ -92,7 +92,7 @@ describe('IndexBlobStore read-through caching', () => {
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('serves a repeated query from cache instead of re-reading and re-decrypting', async () => {
@@ -112,7 +112,7 @@ describe('IndexBlobStore read-through caching', () => {
         const engine = Engine.builder().build();
         try {
             const reader = new IndexReader(engine, new IndexBlobStore(IndexKind.MAIN, db, cryptoKey));
-            const dbReads = jest.spyOn(db, 'getDecryptedIndexBlob');
+            const dbReads = vi.spyOn(db, 'getDecryptedIndexBlob');
 
             expect((await findTestIndexEntries(reader)).map((r) => r.identifier)).toContain('doc-1');
             expect(dbReads).toHaveBeenCalled();
@@ -132,7 +132,7 @@ describe('IndexBlobStore read-through caching', () => {
         const engine = Engine.builder().build();
         try {
             const reader = new IndexReader(engine, new IndexBlobStore(IndexKind.MAIN, db, cryptoKey));
-            const dbReads = jest.spyOn(db, 'getDecryptedIndexBlob');
+            const dbReads = vi.spyOn(db, 'getDecryptedIndexBlob');
 
             await findTestIndexEntries(reader);
             expect(dbReads).toHaveBeenCalled();
@@ -158,7 +158,7 @@ describe('IndexBlobStore read-through caching', () => {
 
             await indexDocuments(writer, [makeTestIndexEntry('doc-1')]);
 
-            const dbReads = jest.spyOn(db, 'getDecryptedIndexBlob');
+            const dbReads = vi.spyOn(db, 'getDecryptedIndexBlob');
             const reader = new IndexReader(engine, blobStore);
             expect((await findTestIndexEntries(reader)).map((r) => r.identifier)).toContain('doc-1');
             expect(dbReads).not.toHaveBeenCalled();
@@ -181,7 +181,7 @@ describe('IndexBlobStore read-through caching', () => {
         const engine = Engine.builder().build();
         try {
             const reader = new IndexReader(engine, new IndexBlobStore(IndexKind.MAIN, db, cryptoKey));
-            const dbReads = jest.spyOn(db, 'getDecryptedIndexBlob');
+            const dbReads = vi.spyOn(db, 'getDecryptedIndexBlob');
 
             const first = (await findTestIndexEntries(reader)).map((r) => r.identifier);
             expect(first).toEqual(expect.arrayContaining(['doc-1', 'doc-2', 'doc-3']));
@@ -204,11 +204,11 @@ describe('IndexBlobStore read-through caching', () => {
         // history exists, since only the current generation is live). So the cap is shrunk here via
         // module mocking + a fresh dynamic import, which is a fair test of the mechanism: the same
         // small, real working set now exceeds a smaller bound.
-        jest.doMock('../../shared/config', () => ({
-            ...jest.requireActual('../../shared/config'),
+        vi.doMock('../../shared/config', async () => ({
+            ...(await vi.importActual('../../shared/config')),
             SEARCH_BLOB_CACHE_MAX_ENTRIES: 2,
         }));
-        jest.resetModules();
+        vi.resetModules();
         const { IndexBlobStore: TinyCapIndexBlobStore } = await import('./IndexBlobStore');
 
         const writeEngine = Engine.builder().build();
@@ -230,15 +230,15 @@ describe('IndexBlobStore read-through caching', () => {
         const engine = Engine.builder().build();
         try {
             const reader = new IndexReader(engine, new TinyCapIndexBlobStore(IndexKind.MAIN, db, cryptoKey));
-            const freeSpy = jest.spyOn(Cached.prototype, 'free');
+            const freeSpy = vi.spyOn(Cached.prototype, 'free');
 
             const identifiers = (await findTestIndexEntries(reader)).map((r) => r.identifier);
             expect(identifiers).toEqual(expect.arrayContaining(['doc-1', 'doc-2', 'doc-3']));
             expect(freeSpy).toHaveBeenCalled();
         } finally {
             engine.free();
-            jest.dontMock('../../shared/config');
-            jest.resetModules();
+            vi.doUnmock('../../shared/config');
+            vi.resetModules();
         }
     });
 
@@ -259,7 +259,7 @@ describe('IndexBlobStore read-through caching', () => {
             const reader = new IndexReader(engine, blobStore);
             await findTestIndexEntries(reader);
 
-            const freeSpy = jest.spyOn(Cached.prototype, 'free');
+            const freeSpy = vi.spyOn(Cached.prototype, 'free');
             blobStore.disposeAll();
             expect(freeSpy).toHaveBeenCalled();
         } finally {
@@ -285,7 +285,7 @@ describe('IndexBlobStore concurrent reads and writes', () => {
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('defers an eviction from a write that lands while a query is still being consumed', async () => {
@@ -303,7 +303,7 @@ describe('IndexBlobStore concurrent reads and writes', () => {
             const firstResult = await generator.next();
             expect(firstResult.done).toBe(false);
 
-            const freeSpy = jest.spyOn(Cached.prototype, 'free');
+            const freeSpy = vi.spyOn(Cached.prototype, 'free');
             // A write lands on the same engine/store while the caller above hasn't finished
             // consuming the earlier query.
             await indexDocuments(writer, [makeTestIndexEntry('doc-3')]);
@@ -368,7 +368,7 @@ describe('IndexBlobStore concurrent reads and writes', () => {
                 await indexDocuments(writer, [makeTestIndexEntry(`doc-${i}`)]);
             }
 
-            const freeSpy = jest.spyOn(Cached.prototype, 'free');
+            const freeSpy = vi.spyOn(Cached.prototype, 'free');
             blobStore.beginWrite(); // outer window opens (e.g. CleanUpStaleBlobsTask)
             await indexDocuments(writer, [makeTestIndexEntry('overflow')]); // inner window opens+closes
             expect(freeSpy).not.toHaveBeenCalled(); // outer window still open
@@ -398,11 +398,11 @@ describe('IndexBlobStore cache bounds', () => {
 
     afterEach(() => {
         engine.free();
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('consults Cached.priority() when evicting past capacity, not just recency', async () => {
-        const prioritySpy = jest.spyOn(Cached.prototype, 'priority');
+        const prioritySpy = vi.spyOn(Cached.prototype, 'priority');
 
         for (let i = 0; i < SEARCH_BLOB_CACHE_MAX_ENTRIES + 5; i++) {
             await indexDocuments(writer, [makeTestIndexEntry(`doc-${i}`)]);
@@ -412,7 +412,7 @@ describe('IndexBlobStore cache bounds', () => {
     });
 
     it('stays within the configured bound across many commits, freeing evicted blobs', async () => {
-        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        const freeSpy = vi.spyOn(Cached.prototype, 'free');
 
         for (let i = 0; i < SEARCH_BLOB_CACHE_MAX_ENTRIES + 50; i++) {
             await indexDocuments(writer, [makeTestIndexEntry(`doc-${i}`)]);
@@ -431,7 +431,7 @@ describe('IndexBlobStore cache bounds', () => {
         // same-key-overwrite path in saveEvent, not LRU capacity eviction.
         await indexDocuments(writer, [makeTestIndexEntry('doc-1')]);
 
-        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        const freeSpy = vi.spyOn(Cached.prototype, 'free');
         await indexDocuments(writer, [makeTestIndexEntry('doc-2')]);
 
         expect(freeSpy).toHaveBeenCalled();
@@ -442,7 +442,7 @@ describe('IndexBlobStore cache bounds', () => {
             await indexDocuments(writer, [makeTestIndexEntry(`doc-${i}`)]);
         }
 
-        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        const freeSpy = vi.spyOn(Cached.prototype, 'free');
         blobStore.beginRead();
         for (let i = SEARCH_BLOB_CACHE_MAX_ENTRIES; i < SEARCH_BLOB_CACHE_MAX_ENTRIES + 50; i++) {
             await indexDocuments(writer, [makeTestIndexEntry(`doc-${i}`)]);
@@ -480,7 +480,7 @@ describe('IndexBlobStore cache bounds', () => {
             await indexDocuments(writer, [makeTestIndexEntry(`doc-${i}`)]);
         }
 
-        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        const freeSpy = vi.spyOn(Cached.prototype, 'free');
         await indexDocuments(writer, [makeTestIndexEntry('overflow')]);
 
         expect(freeSpy).toHaveBeenCalled();
@@ -517,8 +517,8 @@ describe('IndexBlobStore cache bounds', () => {
         // occurrences 42 - see Cached.priority() docs), so a single commit already gives us a mix.
         await indexDocuments(writer, [makeTestIndexEntry('doc-1')]);
 
-        const prioritySpy = jest.spyOn(Cached.prototype, 'priority');
-        const serializeSpy = jest.spyOn(Cached.prototype, 'serialize');
+        const prioritySpy = vi.spyOn(Cached.prototype, 'priority');
+        const serializeSpy = vi.spyOn(Cached.prototype, 'serialize');
 
         const stats = blobStore.getCacheStats();
 
@@ -552,7 +552,7 @@ describe('IndexBlobStore free() failures', () => {
     // operations in the same test aren't corrupted by a half-freed handle.
     const makeFreeThrow = () => {
         const originalFree = Cached.prototype.free;
-        return jest.spyOn(Cached.prototype, 'free').mockImplementation(function (this: Cached) {
+        return vi.spyOn(Cached.prototype, 'free').mockImplementation(function (this: Cached) {
             originalFree.call(this);
             throw new Error('attempted to take ownership of Rust value while it was borrowed');
         });
@@ -567,12 +567,12 @@ describe('IndexBlobStore free() failures', () => {
         writer = new IndexWriter(engine, blobStore, async () => {});
         // Every test here makes free() throw on purpose; sendErrorReportForSearch warning about it
         // is the expected behaviour under test, not noise to investigate.
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     afterEach(() => {
         engine.free();
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('keeps indexing correctly when freeing an evicted entry throws', async () => {
@@ -620,7 +620,7 @@ describe('IndexBlobStore free() failures', () => {
 
         // priority() is only an eviction hint. Letting it throw would fail a save whose blob is
         // already durably written, and the indexer treats that as permanent - it stops entirely.
-        jest.spyOn(Cached.prototype, 'priority').mockImplementation(() => {
+        vi.spyOn(Cached.prototype, 'priority').mockImplementation(() => {
             throw new Error('null pointer passed to rust');
         });
 
@@ -638,7 +638,7 @@ describe('IndexBlobStore free() failures', () => {
             await indexDocuments(writer, [makeTestIndexEntry(`deferred-${i}`)]);
         }
 
-        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        const freeSpy = vi.spyOn(Cached.prototype, 'free');
         blobStore.disposeAll();
         const freedByDispose = freeSpy.mock.calls.length;
 

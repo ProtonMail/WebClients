@@ -1,12 +1,14 @@
+import type { Mock, MockedFunction } from 'vitest';
+
 import type { DownloadController, NodeEntity } from '@proton/drive/sdk';
 
 import { validateDownloadSignatures } from './handleDownloadCompletion';
 import { checkMetadataSignature, handleManifestSignatureError } from './validateSignatures';
 
-jest.mock('./validateSignatures');
+vi.mock('./validateSignatures');
 
-const mockCheckMetadataSignature = checkMetadataSignature as jest.MockedFunction<typeof checkMetadataSignature>;
-const mockHandleManifestSignatureError = handleManifestSignatureError as jest.MockedFunction<
+const mockCheckMetadataSignature = checkMetadataSignature as MockedFunction<typeof checkMetadataSignature>;
+const mockHandleManifestSignatureError = handleManifestSignatureError as MockedFunction<
     typeof handleManifestSignatureError
 >;
 
@@ -16,13 +18,13 @@ describe('validateDownloadSignatures', () => {
 
     const setupMocks = () => {
         const mockController = {
-            completion: jest.fn().mockResolvedValue(undefined),
-            isDownloadCompleteWithSignatureIssues: jest.fn().mockReturnValue(false),
+            completion: vi.fn().mockResolvedValue(undefined),
+            isDownloadCompleteWithSignatureIssues: vi.fn().mockReturnValue(false),
         } as unknown as DownloadController;
 
-        const mockOnApproved = jest.fn();
-        const mockOnRejected = jest.fn();
-        const mockOnError = jest.fn();
+        const mockOnApproved = vi.fn();
+        const mockOnRejected = vi.fn();
+        const mockOnError = vi.fn();
 
         mockCheckMetadataSignature.mockImplementation(async (_id, _node, completionCallback) => {
             await completionCallback();
@@ -32,7 +34,7 @@ describe('validateDownloadSignatures', () => {
         return { mockController, mockOnApproved, mockOnRejected, mockOnError };
     };
 
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     it('should complete successfully with signature validation', async () => {
         const mocks = setupMocks();
@@ -58,7 +60,7 @@ describe('validateDownloadSignatures', () => {
     it('should handle manifest signature errors', async () => {
         const mocks = setupMocks();
         mockCheckMetadataSignature.mockRejectedValue(new Error('Signature failed'));
-        (mocks.mockController.isDownloadCompleteWithSignatureIssues as jest.Mock).mockReturnValue(true);
+        (mocks.mockController.isDownloadCompleteWithSignatureIssues as Mock).mockReturnValue(true);
 
         await validateDownloadSignatures({
             downloadId,

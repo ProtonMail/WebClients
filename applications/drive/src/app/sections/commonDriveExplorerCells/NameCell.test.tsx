@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { NodeType } from '@proton/drive/sdk';
 import type { MimeIconComponent } from '@proton/file-icons/component';
 import { MimeAlbum } from '@proton/file-icons/icons/MimeAlbum';
@@ -60,6 +60,6 @@ describe('NameCell', () => {
 
     it('applies grayscale filter to thumbnail for invitations', () => {
         renderWithProviders(<NameCell {...defaultProps} thumbnailUrl="blob:thumb" isInvitation />);
-        expect(screen.getByAltText('report.pdf')).toHaveStyle({ filter: 'grayscale(1)' });
+        expect(screen.getByAltText('report.pdf')).toHaveStyle({ filter: 'grayscale(100%)' });
     });
 });

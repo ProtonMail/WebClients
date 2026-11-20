@@ -5,28 +5,29 @@ import type { MainThreadBridge } from './MainThreadBridge';
 import { HEARTBEAT_INTERVAL, HEARTBEAT_TIMEOUT, WorkerClient } from './WorkerClient';
 
 const fakeApi = {
-    registerClient: jest.fn(),
-    heartbeatClient: jest.fn(),
-    disconnectClient: jest.fn(),
-    queryIndexerState: jest.fn(),
-    search: jest.fn(),
-    reset: jest.fn(),
+    registerClient: vi.fn(),
+    heartbeatClient: vi.fn(),
+    disconnectClient: vi.fn(),
+    queryIndexerState: vi.fn(),
+    search: vi.fn(),
+    reset: vi.fn(),
 };
 
-jest.mock('comlink', () => ({
+vi.mock('comlink', () => ({
     wrap: () => fakeApi,
     proxy: (x: unknown) => x,
+    transferHandlers: undefined,
 }));
 
-jest.mock('../shared/Logger', () => ({
-    Logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn(), listenForWorkerLogs: jest.fn() },
+vi.mock('../shared/Logger', () => ({
+    Logger: { info: vi.fn(), warn: vi.fn(), error: vi.fn(), listenForWorkerLogs: vi.fn() },
 }));
 
-jest.mock('../shared/errors', () => {
-    const actual = jest.requireActual('../shared/errors');
+vi.mock('../shared/errors', async () => {
+    const actual = await vi.importActual('../shared/errors');
     return {
         ...actual,
-        sendErrorReportForSearch: jest.fn(),
+        sendErrorReportForSearch: vi.fn(),
     };
 });
 
@@ -45,13 +46,13 @@ const BRIDGE = {} as MainThreadBridge;
 
 describe('WorkerClient', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.clearAllMocks();
+        vi.useFakeTimers();
+        vi.clearAllMocks();
         createdWorkers = [];
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('does not call registerClient on construction', () => {
@@ -94,12 +95,12 @@ describe('WorkerClient', () => {
 
             expect(fakeApi.heartbeatClient).not.toHaveBeenCalled();
 
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
             expect(fakeApi.heartbeatClient).toHaveBeenCalledTimes(1);
             // jsdom default visibilityState is 'visible'
             expect(fakeApi.heartbeatClient).toHaveBeenCalledWith(CLIENT_ID, true);
 
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
             expect(fakeApi.heartbeatClient).toHaveBeenCalledTimes(2);
         });
 
@@ -108,14 +109,14 @@ describe('WorkerClient', () => {
 
             const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
             client.start();
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             createdWorkers = [];
 
             // Trigger heartbeat + timeout in one step
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL + HEARTBEAT_TIMEOUT);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL + HEARTBEAT_TIMEOUT);
 
             // Reconnect spawns a new SharedWorker after a jitter delay (0–1s)
-            await jest.advanceTimersByTimeAsync(1000);
+            await vi.advanceTimersByTimeAsync(1000);
             expect(createdWorkers).toHaveLength(1);
 
             // Re-registers because it was running
@@ -126,14 +127,14 @@ describe('WorkerClient', () => {
             fakeApi.heartbeatClient.mockReturnValue(new Promise(() => {}));
 
             new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             createdWorkers = [];
 
             // Trigger heartbeat + timeout
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL + HEARTBEAT_TIMEOUT);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL + HEARTBEAT_TIMEOUT);
 
             // Reconnect after jitter
-            await jest.advanceTimersByTimeAsync(1000);
+            await vi.advanceTimersByTimeAsync(1000);
             expect(createdWorkers).toHaveLength(1);
             expect(fakeApi.registerClient).not.toHaveBeenCalled();
         });
@@ -159,7 +160,7 @@ describe('WorkerClient', () => {
             })();
 
             // Trigger heartbeat timeout → reconnect
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL + HEARTBEAT_TIMEOUT);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL + HEARTBEAT_TIMEOUT);
 
             const error = await done;
             expect(error).toBeInstanceOf(SearchWorkerDisconnectedError);
@@ -173,7 +174,7 @@ describe('WorkerClient', () => {
             client.start();
             expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
 
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
 
             expect(fakeApi.registerClient).toHaveBeenCalledTimes(2);
         });
@@ -185,7 +186,7 @@ describe('WorkerClient', () => {
             client.start();
             expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
 
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
 
             expect(fakeApi.registerClient).toHaveBeenCalledTimes(1);
         });
@@ -195,7 +196,7 @@ describe('WorkerClient', () => {
 
             new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
 
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
 
             expect(fakeApi.registerClient).not.toHaveBeenCalled();
         });
@@ -204,7 +205,7 @@ describe('WorkerClient', () => {
             const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
             client.dispose();
 
-            jest.advanceTimersByTime(10_000);
+            vi.advanceTimersByTime(10_000);
             expect(fakeApi.heartbeatClient).not.toHaveBeenCalled();
         });
 
@@ -214,10 +215,10 @@ describe('WorkerClient', () => {
             new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
             createdWorkers = [];
 
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL * 5);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL * 5);
             expect(fakeApi.heartbeatClient).toHaveBeenCalledTimes(1);
 
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_TIMEOUT + 1000);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_TIMEOUT + 1000);
             expect(createdWorkers).toHaveLength(1);
             expect(sendErrorReportForSearch).toHaveBeenCalledTimes(1);
         });
@@ -226,12 +227,12 @@ describe('WorkerClient', () => {
             fakeApi.heartbeatClient.mockReturnValue(new Promise(() => {}));
 
             const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
             client.dispose();
             createdWorkers = [];
-            jest.clearAllMocks();
+            vi.clearAllMocks();
 
-            await jest.advanceTimersByTimeAsync(HEARTBEAT_TIMEOUT + 1000);
+            await vi.advanceTimersByTimeAsync(HEARTBEAT_TIMEOUT + 1000);
             expect(createdWorkers).toHaveLength(0);
             expect(fakeApi.heartbeatClient).not.toHaveBeenCalled();
             expect(sendErrorReportForSearch).not.toHaveBeenCalled();

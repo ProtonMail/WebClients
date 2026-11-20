@@ -6,11 +6,11 @@ import { fetchDesktopVersion } from '@proton/shared/lib/apps/desktopVersions';
 import { appPlatforms } from '../../../utils/appPlatforms';
 import { useDesktopDownloads } from './useDesktopDownloads';
 
-jest.mock('@proton/shared/lib/apps/desktopVersions');
-const mockFetchDesktopVersion = jest.mocked(fetchDesktopVersion);
+vi.mock('@proton/shared/lib/apps/desktopVersions');
+const mockFetchDesktopVersion = vi.mocked(fetchDesktopVersion);
 
 const originalConsoleWarn = console.warn;
-const mockConsoleWarn = jest.fn();
+const mockConsoleWarn = vi.fn();
 
 describe('useDesktopDownloads', () => {
     let hook: RenderHookResult<ReturnType<typeof useDesktopDownloads>, unknown>;
@@ -43,7 +43,7 @@ describe('useDesktopDownloads', () => {
     };
 
     beforeEach(async () => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
 
         console.warn = mockConsoleWarn;
 

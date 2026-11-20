@@ -7,7 +7,7 @@ import { withHoc } from './withHoc';
 type HookProps = { input: string };
 type InjectedProps = { label: string };
 
-const mockHook = jest.fn<InjectedProps, [HookProps]>(({ input }) => ({
+const mockHook = vi.fn(({ input }: HookProps): InjectedProps => ({
     label: `Label: ${input}`,
 }));
 

@@ -6,31 +6,31 @@ import { EasySwitchSidebarSection } from './EasySwitchSidebarSection';
 import { type EasySwitchSidebarUserInfo, EasySwitchUserType, NO_USER_INFO } from './getEasySwitchSidebarUserType';
 import { useDriveImportStatus } from './useDriveImportStatus';
 
-jest.mock('@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit', () => ({
-    useProductSelectionSubmit: () => ({ handleSubmit: jest.fn() }),
+vi.mock('@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit', () => ({
+    useProductSelectionSubmit: () => ({ handleSubmit: vi.fn() }),
 }));
 let mockIsB2B = false;
 let mockLoadingEntitlements = false;
-jest.mock('@proton/activation/src/components/Modals/OAuth/Drive/useIsDriveImportRestricted', () => ({
+vi.mock('@proton/activation/src/components/Modals/OAuth/Drive/useIsDriveImportRestricted', () => ({
     useIsDriveImportRestricted: () => mockIsB2B || mockLoadingEntitlements,
 }));
-jest.mock('@proton/components/components/link/useSettingsLink', () => ({
+vi.mock('@proton/components/components/link/useSettingsLink', () => ({
     __esModule: true,
-    default: () => jest.fn(),
+    default: () => vi.fn(),
 }));
-jest.mock('@proton/features/useFeature', () => ({
+vi.mock('@proton/features/useFeature', () => ({
     __esModule: true,
-    default: () => ({ feature: undefined, update: jest.fn() }),
+    default: () => ({ feature: undefined, update: vi.fn() }),
 }));
-jest.mock('./useDriveImportStatus', () => ({ useDriveImportStatus: jest.fn() }));
+vi.mock('./useDriveImportStatus', () => ({ useDriveImportStatus: vi.fn() }));
 let mockUserInfo: EasySwitchSidebarUserInfo = NO_USER_INFO;
-jest.mock('./useEasySwitchSidebarUserType', () => ({
+vi.mock('./useEasySwitchSidebarUserType', () => ({
     useEasySwitchSidebarUserType: () => mockUserInfo,
 }));
 
 const IMPORT_FOLDER_UID = 'volume-id~link-id';
 
-const clearOutcome = jest.fn();
+const clearOutcome = vi.fn();
 
 const renderSection = () =>
     render(
@@ -43,7 +43,7 @@ const renderSection = () =>
     );
 
 const renderWithFinishedImport = (importFolderUid?: string) => {
-    jest.mocked(useDriveImportStatus).mockReturnValue({
+    vi.mocked(useDriveImportStatus).mockReturnValue({
         isLoaded: true,
         isImporting: false,
         isPaused: false,
@@ -57,7 +57,7 @@ const renderWithFinishedImport = (importFolderUid?: string) => {
 };
 
 const renderWithImport = (isImporting: boolean) => {
-    jest.mocked(useDriveImportStatus).mockReturnValue({
+    vi.mocked(useDriveImportStatus).mockReturnValue({
         isLoaded: true,
         isImporting,
         isPaused: false,
@@ -71,7 +71,7 @@ const renderWithImport = (isImporting: boolean) => {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     mockIsB2B = false;
     mockLoadingEntitlements = false;
     mockUserInfo = NO_USER_INFO;
