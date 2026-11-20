@@ -232,4 +232,5 @@ export const DEFAULT_MAIL_SETTINGS: MailSettings & { _isDefault: boolean } = {
     KT: KEY_TRANSPARENCY_SETTING.DISABLED,
     MailCategoryView: false,
     MailCategoryViewCountersEnabled: false,
+    ByoeNewMessageReminder: false,
 };

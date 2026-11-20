@@ -125,6 +125,7 @@ export enum CommonFeatureFlag {
     InboxBringYourOwnEmailCleanup = 'InboxBringYourOwnEmailCleanup',
     InboxBringYourOwnEmailImportPeriod = 'InboxBringYourOwnEmailImportPeriod',
     InboxBringYourOwnEmailImportPeriodExperiment = 'InboxBringYourOwnEmailImportPeriodExperiment',
+    InboxByoeNewMessageReminderClient = 'InboxByoeNewMessageReminderClient',
     InboxDesktopDefaultEmailSetupHelperDisabledV2 = 'InboxDesktopDefaultEmailSetupHelperDisabledV2',
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
     InboxDesktopMacSigningMigrationBanner = 'InboxDesktopMacSigningMigrationBanner',
