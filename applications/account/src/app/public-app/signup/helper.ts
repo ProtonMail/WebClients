@@ -97,6 +97,20 @@ export const isBusinessReferralSignup = (location: Location) => {
     return location.pathname.includes(SSO_PATHS.BUSINESS_REFERRAL);
 };
 
+const BUSINESS_REFERRAL_SIGNUP_PARAMS = ['plan', 'currency', 'coupon', 'referrer', 'invite', 'email'];
+
+export const getBusinessReferralRedirect = ({ pathname, search }: Pick<Location, 'pathname' | 'search'>) => {
+    const searchParams = new URLSearchParams(search);
+    if (!pathname.endsWith(SSO_PATHS.BUSINESS_SIGNUP_GENERIC) || !searchParams.has('referrer')) {
+        return undefined;
+    }
+
+    const businessReferralParams = new URLSearchParams(
+        [...searchParams].filter(([key]) => BUSINESS_REFERRAL_SIGNUP_PARAMS.includes(key))
+    );
+    return { pathname: SSO_PATHS.BUSINESS_REFERRAL_SIGNUP, search: businessReferralParams.toString() };
+};
+
 export const isPorkbunSignup = (location: Location) => {
     return (
         location.pathname.includes(SSO_PATHS.PORKBUN_SIGNUP) || location.pathname.includes(SSO_PATHS.PORKBUN_SIGN_IN)
