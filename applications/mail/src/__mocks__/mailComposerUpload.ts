@@ -11,8 +11,8 @@ export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<Re
 
     return {
         xhr: {} as XMLHttpRequest,
-        addProgressListener: jest.fn(),
-        abort: jest.fn(),
+        addProgressListener: vi.fn(),
+        abort: vi.fn(),
         resultPromise: asyncResolution() as Promise<T>,
     };
 };

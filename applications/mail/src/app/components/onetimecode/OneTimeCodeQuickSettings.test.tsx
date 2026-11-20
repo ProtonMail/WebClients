@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
+import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
@@ -9,11 +9,11 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import OneTimeCodeQuickSettings from './OneTimeCodeQuickSettings';
 
-jest.mock('@proton/account/user/hooks', () => {
-    return { useUser: jest.fn() };
+vi.mock('@proton/account/user/hooks', () => {
+    return { useUser: vi.fn() };
 });
-jest.mock('@proton/unleash/useFlag', () => {
-    return { useFlag: jest.fn() };
+vi.mock('@proton/unleash/useFlag', () => {
+    return { useFlag: vi.fn() };
 });
 
 let tracked: ReturnType<typeof mockTracker>;
@@ -38,10 +38,10 @@ const detectionKey = `one-time-code-detection-enabled-${user.ID}`;
 const moveToTrashKey = `one-time-code-move-to-trash-${user.ID}`;
 const detectionTestID = 'mail-quick-settings:one-time-codes-toggle';
 const moveToTrashTestID = 'mail-quick-settings:one-time-code-move-to-trash-toggle';
-const createNotification = jest.fn();
+const createNotification = vi.fn();
 
 const mockFlag = (isOn: boolean) => {
-    jest.mocked(useFlag).mockImplementation((flag) => {
+    vi.mocked(useFlag).mockImplementation((flag) => {
         return flag === MailFeatureFlag.OneTimePasscode ? isOn : false;
     });
 };
@@ -57,8 +57,8 @@ const getMoveToTrashToggle = () => {
 describe('OneTimeCodeQuickSettings', () => {
     beforeEach(() => {
         localStorage.clear();
-        jest.clearAllMocks();
-        jest.mocked(useUser).mockReturnValue([user, false]);
+        vi.clearAllMocks();
+        vi.mocked(useUser).mockReturnValue([user, false]);
         mockUseNotifications({ createNotification });
         mockFlag(true);
         tracked = mockTracker();

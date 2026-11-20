@@ -8,15 +8,15 @@ import { useVariant } from '@proton/unleash/useVariant';
 
 import { usePostSignupSurveyEligibility } from './usePostSignupSurveyEligibility';
 
-jest.mock('@proton/account/organization/hooks');
-jest.mock('@proton/account/welcomeFlags');
-jest.mock('@proton/unleash/useFlag');
-jest.mock('@proton/unleash/useVariant');
+vi.mock('@proton/account/organization/hooks');
+vi.mock('@proton/account/welcomeFlags');
+vi.mock('@proton/unleash/useFlag');
+vi.mock('@proton/unleash/useVariant');
 
-const mockUseOrganization = jest.mocked(useOrganization);
-const mockUseWelcomeFlags = jest.mocked(useWelcomeFlags);
-const mockUseFlag = jest.mocked(useFlag);
-const mockUseVariant = jest.mocked(useVariant);
+const mockUseOrganization = vi.mocked(useOrganization);
+const mockUseWelcomeFlags = vi.mocked(useWelcomeFlags);
+const mockUseFlag = vi.mocked(useFlag);
+const mockUseVariant = vi.mocked(useVariant);
 
 const setup = ({
     enabled = true,

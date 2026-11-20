@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the message content iframe needs iframe.contentDocument, which happy-dom lacks
 import { findByRole, findByText, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -73,7 +75,7 @@ describe('Encrypted Outside message images', () => {
         const body = `<div>${EOBody}<img src="cid:${embeddedCID}"/></div>`;
 
         // Need to mock this function to mock the blob url
-        window.URL.createObjectURL = jest.fn(() => blobURL);
+        window.URL.createObjectURL = vi.fn(() => blobURL);
 
         const { container } = await setup({ body, attachments: [embeddedAttachment] });
 

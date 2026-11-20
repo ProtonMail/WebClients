@@ -8,11 +8,11 @@ import { clearAll } from '../../../helpers/tests/helper';
 import { tick } from '../../../helpers/tests/render';
 import { expectElements, getElements, setup } from './Mailbox.test.helpers';
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
-jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+vi.mock('proton-mail/metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
-        return { stopELDTMetric: jest.fn() };
+        return { stopELDTMetric: vi.fn() };
     },
 }));
 
@@ -21,18 +21,18 @@ describe('Mailbox retries and waitings', () => {
         clearAll();
         // Retries are scheduled with setTimeout (2s on error, 10s on stale). `advanceTimers` keeps
         // zero-delay timers flowing during setup; the retry delays are then skipped explicitly.
-        jest.useFakeTimers({ advanceTimers: true });
+        vi.useFakeTimers({ shouldAdvanceTime: true });
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should retry when API call fails', async () => {
         const conversations = getElements(3);
 
         let callNumber = 0;
-        const conversationRequestSpy = jest.fn(() => {
+        const conversationRequestSpy = vi.fn(() => {
             callNumber++;
             if (callNumber === 1) {
                 throw new Error('Test error');
@@ -52,7 +52,7 @@ describe('Mailbox retries and waitings', () => {
         expectElements(getItems, conversations.length, true);
 
         await act(async () => {
-            await jest.advanceTimersByTimeAsync(2000);
+            await vi.advanceTimersByTimeAsync(2000);
         });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
@@ -63,7 +63,7 @@ describe('Mailbox retries and waitings', () => {
         const conversations = getElements(3);
 
         let callNumber = 0;
-        const conversationRequestSpy = jest.fn(() => {
+        const conversationRequestSpy = vi.fn(() => {
             callNumber++;
             return {
                 Total: conversations.length,
@@ -80,7 +80,7 @@ describe('Mailbox retries and waitings', () => {
         expect(conversationRequestSpy).toHaveBeenCalledTimes(1);
 
         await act(async () => {
-            await jest.advanceTimersByTimeAsync(10000);
+            await vi.advanceTimersByTimeAsync(10000);
         });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
@@ -93,13 +93,13 @@ describe('Mailbox retries and waitings', () => {
         const conversations = getElements(DEFAULT_MAIL_PAGE_SIZE * 2, MAILBOX_LABEL_IDS.INBOX);
         const totalConversations = DEFAULT_MAIL_PAGE_SIZE * 3;
 
-        const conversationRequestSpy = jest.fn(() => {
+        const conversationRequestSpy = vi.fn(() => {
             return { Total: totalConversations, Conversations: conversations };
         });
         addApiMock(`mail/v4/conversations`, conversationRequestSpy, 'get');
 
         const resolvers: ((value: any) => void)[] = [];
-        const labelRequestSpy = jest.fn(() => {
+        const labelRequestSpy = vi.fn(() => {
             return new Promise((resolver) => {
                 resolvers.push(resolver as any);
             });

@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the message content iframe needs iframe.contentDocument, which happy-dom lacks
 import { findByText } from '@testing-library/react';
 
 import type { PublicPrivateKey } from '@proton/mail-message/store/messages/messagesTypes';
@@ -12,11 +14,11 @@ import { clearAll } from '../../../helpers/tests/helper';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { addressID, getIframeRootDiv, messageID, setup } from './Message.test.helpers';
 
-jest.mock('../../../hooks/message/useGetMessageKeys');
+vi.mock('../../../hooks/message/useGetMessageKeys');
 const mockUseGetMessageKeys = () => {
     // empty return value since the result is not used in these tests; if this were to change,
     // this mock should be dropped a valid key setup should be put in place.
-    jest.mocked(useGetMessageKeys).mockReturnValue(async () => ({}) as PublicPrivateKey);
+    vi.mocked(useGetMessageKeys).mockReturnValue(async () => ({}) as PublicPrivateKey);
 };
 
 describe('message state', () => {
@@ -45,7 +47,7 @@ describe('message state', () => {
     });
 
     it('should returns message from the cache', async () => {
-        const apiMock = jest.fn();
+        const apiMock = vi.fn();
         addApiMock(`mail/v4/messages/${messageID}`, apiMock);
 
         await setup({});

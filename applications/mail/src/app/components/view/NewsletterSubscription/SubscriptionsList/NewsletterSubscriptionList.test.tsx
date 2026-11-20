@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { mailTestRender } from '../../../../helpers/tests/render';
 import { SortSubscriptionsValue, SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
@@ -7,21 +8,21 @@ import { newsletterSubscriptionsActions } from '../../../../store/newsletterSubs
 import { generateSubscriptionList } from '../testData';
 import { NewsletterSubscriptionList } from './NewsletterSubscriptionList';
 
-jest.mock('../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector', () => ({
-    ...jest.requireActual('../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector'),
-    selectedTab: jest.fn(),
-    selectSubscriptionsCount: jest.fn(),
-    selectTabSubscriptionsList: jest.fn(),
-    selectTabSubscriptionPaginationQueryString: jest.fn(),
-    selectedTabSubscriptionsCount: jest.fn(),
+vi.mock('../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector', async () => ({
+    ...(await vi.importActual('../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector')),
+    selectedTab: vi.fn(),
+    selectSubscriptionsCount: vi.fn(),
+    selectTabSubscriptionsList: vi.fn(),
+    selectTabSubscriptionPaginationQueryString: vi.fn(),
+    selectedTabSubscriptionsCount: vi.fn(),
 }));
 
-const mockedSelectedTab = mailboxSelectors.selectedTab as jest.Mock;
-const mockedSelectSubscriptionsCount = mailboxSelectors.selectSubscriptionsCount as jest.Mock;
-const mockedSelectTabSubscriptionsList = mailboxSelectors.selectTabSubscriptionsList as unknown as jest.Mock;
+const mockedSelectedTab = mailboxSelectors.selectedTab as Mock;
+const mockedSelectSubscriptionsCount = mailboxSelectors.selectSubscriptionsCount as Mock;
+const mockedSelectTabSubscriptionsList = mailboxSelectors.selectTabSubscriptionsList as unknown as Mock;
 const mockedSelectTabSubscriptionPaginationQueryString =
-    mailboxSelectors.selectTabSubscriptionPaginationQueryString as unknown as jest.Mock;
-const mockedSelectedTabSubscriptionsCount = mailboxSelectors.selectedTabSubscriptionsCount as unknown as jest.Mock;
+    mailboxSelectors.selectTabSubscriptionPaginationQueryString as unknown as Mock;
+const mockedSelectedTabSubscriptionsCount = mailboxSelectors.selectedTabSubscriptionsCount as unknown as Mock;
 
 describe('NewsletterSubscriptionList', () => {
     beforeEach(() => {
@@ -32,8 +33,8 @@ describe('NewsletterSubscriptionList', () => {
         });
         mockedSelectTabSubscriptionsList.mockReturnValue([]);
         mockedSelectedTabSubscriptionsCount.mockReturnValue(10);
-        jest.spyOn(newsletterSubscriptionsActions, 'setSelectedTab');
-        jest.spyOn(newsletterSubscriptionsActions, 'setSortingOrder');
+        vi.spyOn(newsletterSubscriptionsActions, 'setSelectedTab');
+        vi.spyOn(newsletterSubscriptionsActions, 'setSortingOrder');
     });
 
     describe('Placeholder', () => {

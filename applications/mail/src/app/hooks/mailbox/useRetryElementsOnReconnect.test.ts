@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import useOnline from '@proton/components/hooks/useOnline';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -9,26 +10,26 @@ import { selectPendingRequest, selectRetry } from '../../store/elements/elements
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import { useRetryElementsOnReconnect } from './useRetryElementsOnReconnect';
 
-jest.mock('@proton/components/hooks/useOnline');
-const mockUseOnline = useOnline as jest.Mock;
+vi.mock('@proton/components/hooks/useOnline');
+const mockUseOnline = useOnline as Mock;
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.Mock;
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as Mock;
 
-jest.mock('../../store/hooks', () => ({
-    useMailDispatch: jest.fn(),
-    useMailSelector: jest.fn(),
+vi.mock('../../store/hooks', () => ({
+    useMailDispatch: vi.fn(),
+    useMailSelector: vi.fn(),
 }));
-const mockUseMailDispatch = useMailDispatch as jest.Mock;
-const mockUseMailSelector = useMailSelector as jest.Mock;
+const mockUseMailDispatch = useMailDispatch as Mock;
+const mockUseMailSelector = useMailSelector as Mock;
 
 describe('useRetryElementsOnReconnect', () => {
-    let dispatch: jest.Mock;
+    let dispatch: Mock;
     let pendingRequest: boolean;
     let retryCount: number;
 
     beforeEach(() => {
-        dispatch = jest.fn();
+        dispatch = vi.fn();
         mockUseMailDispatch.mockReturnValue(dispatch);
         mockUseFlag.mockReturnValue(false);
         pendingRequest = false;

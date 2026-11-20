@@ -166,7 +166,7 @@ describe('Web Locks DatabaseLock across tabs', () => {
 
     it('logs that indexing was interrupted and when it resumes', async () => {
         const userId = `web-locks-database-lock-${userCounter++}`;
-        const info = jest.fn();
+        const info = vi.fn();
         const tab1 = new DatabaseLock(userId, { ...silentLogger, info }, lockManager);
         const tab2 = new DatabaseLock(userId, silentLogger, lockManager);
         const indexing = countingIndexing();

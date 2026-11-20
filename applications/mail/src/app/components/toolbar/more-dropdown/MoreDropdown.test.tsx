@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -9,22 +10,22 @@ import { useLabelActions } from '../../../hooks/useLabelActions';
 import { useMailSelector } from '../../../store/hooks';
 import { MoreDropdown } from './MoreDropdown';
 
-jest.mock('@proton/mail/store/mailSettings/hooks');
-jest.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
+vi.mock('@proton/mail/store/mailSettings/hooks');
+vi.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
 
-jest.mock('../../../store/hooks');
-jest.mocked(useMailSelector).mockReturnValue(MAILBOX_LABEL_IDS.INBOX);
+vi.mock('../../../store/hooks');
+vi.mocked(useMailSelector).mockReturnValue(MAILBOX_LABEL_IDS.INBOX);
 
-jest.mock('../../../hooks/useSelectAll', () => ({
+vi.mock('../../../hooks/useSelectAll', () => ({
     useSelectAll: () => ({ selectAll: false }),
 }));
 
-jest.mock('../../../hooks/useLabelActions');
-jest.mock('../../../hooks/actions/useSnooze');
-jest.mock('../../../hooks/actions/useEmptyLabel', () => ({
+vi.mock('../../../hooks/useLabelActions');
+vi.mock('../../../hooks/actions/useSnooze');
+vi.mock('../../../hooks/actions/useEmptyLabel', () => ({
     useEmptyLabel: () => ({ emptyLabel: '', modal: null }),
 }));
-jest.mock('../../../hooks/actions/move/useMoveAllToFolder', () => ({
+vi.mock('../../../hooks/actions/move/useMoveAllToFolder', () => ({
     useMoveAllToFolder: () => ({ moveAllToFolder: '', selectAllMoveModal: null, moveAllModal: null }),
 }));
 
@@ -35,8 +36,8 @@ const props = {
     isNarrow: false,
     isTiny: false,
     isExtraTiny: false,
-    onMove: jest.fn(),
-    onDelete: jest.fn(),
+    onMove: vi.fn(),
+    onDelete: vi.fn(),
     currentFolder: '0',
 };
 
@@ -56,14 +57,14 @@ const isNarrowProps = {
 };
 
 describe('MoreDropdown', () => {
-    const useSnoozeMock = useSnooze as jest.Mock;
-    const useLabelActionMock = useLabelActions as jest.Mock;
+    const useSnoozeMock = useSnooze as Mock;
+    const useLabelActionMock = useLabelActions as Mock;
 
     beforeAll(() => {
         useLabelActionMock.mockReturnValue([[''], ['']]);
         useSnoozeMock.mockReturnValue({
-            canSnooze: jest.fn(),
-            canUnsnooze: jest.fn(),
+            canSnooze: vi.fn(),
+            canUnsnooze: vi.fn(),
         });
     });
     afterAll(() => {

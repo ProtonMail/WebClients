@@ -56,7 +56,7 @@ describe('getRequest', () => {
     });
 
     it('should make an api request for a normal attachment', async () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
         addApiMock(`mail/v4/attachments/${attachmentID}`, spy, 'get');
 
         await getRequest({ ID: attachmentID }, api, messageKeys);
@@ -65,7 +65,7 @@ describe('getRequest', () => {
     });
 
     it('should make an api request for a EO attachment', async () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
         addApiMock(`mail/v4/eo/attachment/${attachmentID}`, spy, 'get');
 
         await getRequest({ ID: attachmentID }, api, outsideMessageKeys);
@@ -93,7 +93,7 @@ describe('getDecryptedAttachment', () => {
     // TODO Need to test case where we get the decrypted attachment, for normal and EO attachments
 
     it('should throw an error when the attachment is broken', async () => {
-        addApiMock(`mail/v4/attachments/${attachmentID}`, jest.fn(), 'get');
+        addApiMock(`mail/v4/attachments/${attachmentID}`, vi.fn(), 'get');
 
         const verificationWithError = {
             verificationErrors: [{ message: 'there is an issue' }],
@@ -109,8 +109,8 @@ describe('getAndVerifyAttachment', () => {
     let toKeys: GeneratedKey;
     let messageKeys: MessageKeys;
 
-    const getAttachment = jest.fn();
-    const onUpdateAttachment = jest.fn();
+    const getAttachment = vi.fn();
+    const onUpdateAttachment = vi.fn();
 
     beforeAll(async () => {
         await setupCryptoProxyForTesting();

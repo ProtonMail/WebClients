@@ -7,9 +7,9 @@ const setup = (mode: 'index' | 'refresh') => {
         {
             indexService: fakeIndexService(importRun.handle),
             initialV1Status: fakeV1Status(),
-            updateESStatus: jest.fn(),
-            updateESProgress: jest.fn(),
-            waitForV1Sync: jest.fn().mockResolvedValue(undefined),
+            updateESStatus: vi.fn(),
+            updateESProgress: vi.fn(),
+            waitForV1Sync: vi.fn().mockResolvedValue(undefined),
         },
         mode
     );

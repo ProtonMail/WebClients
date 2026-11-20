@@ -23,11 +23,11 @@ import {
     setup,
 } from './Mailbox.test.helpers';
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
-jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+vi.mock('proton-mail/metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
-        return { stopELDTMetric: jest.fn() };
+        return { stopELDTMetric: vi.fn() };
     },
 }));
 

@@ -8,18 +8,18 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { useOneTimeCodeDetection } from './useOneTimeCodeDetection';
 import { useOneTimeCodeSettings } from './useOneTimeCodeSettings';
 
-jest.mock('@proton/account/user/hooks', () => {
-    return { useUser: jest.fn() };
+vi.mock('@proton/account/user/hooks', () => {
+    return { useUser: vi.fn() };
 });
-jest.mock('@proton/unleash/useFlag', () => {
-    return { useFlag: jest.fn() };
+vi.mock('@proton/unleash/useFlag', () => {
+    return { useFlag: vi.fn() };
 });
 
 const user = buildUser();
 const detectionKey = `one-time-code-detection-enabled-${user.ID}`;
 
 const mockFlag = (isOn: boolean) => {
-    jest.mocked(useFlag).mockImplementation((flag) => {
+    vi.mocked(useFlag).mockImplementation((flag) => {
         return flag === MailFeatureFlag.OneTimePasscode ? isOn : false;
     });
 };
@@ -33,7 +33,7 @@ const renderDetection = () => {
 describe('useOneTimeCodeDetection', () => {
     beforeEach(() => {
         localStorage.clear();
-        jest.mocked(useUser).mockReturnValue([user, false]);
+        vi.mocked(useUser).mockReturnValue([user, false]);
     });
 
     it('is off when the flag is off, even with the preference on', () => {

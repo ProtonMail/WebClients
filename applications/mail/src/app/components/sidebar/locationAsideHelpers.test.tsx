@@ -6,7 +6,7 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getUnreadCount, getUnreadTitle } from './locationAsideHelpers';
 
 // Mock the helpers/text functions
-jest.mock('proton-mail/helpers/text', () => ({
+vi.mock('proton-mail/helpers/text', () => ({
     getNUnreadConversationsText: (count: number) => `${count} unread conversations`,
     getNUnreadMessagesText: (count: number) => `${count} unread messages`,
 }));

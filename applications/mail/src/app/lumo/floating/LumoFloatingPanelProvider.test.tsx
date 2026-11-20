@@ -21,20 +21,20 @@ import { useLumoHotkey } from './useLumoHotkey';
 
 const SURFACE_MODE_KEY = 'lumo-mail-surface-mode-user-a';
 
-const assistantOpened = jest.fn();
-const toggleDrawer = jest.fn();
-const toggleDrawerApp = jest.fn(() => toggleDrawer);
+const assistantOpened = vi.fn();
+const toggleDrawer = vi.fn();
+const toggleDrawerApp = vi.fn(() => toggleDrawer);
 
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/components/components/drawer/views/lumoAgent/useLumoInMail', () => {
-    return { __esModule: true, default: jest.fn() };
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/components/components/drawer/views/lumoAgent/useLumoInMail', () => {
+    return { __esModule: true, default: vi.fn() };
 });
-jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('@proton/components/hooks/useApiStatus', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('@proton/components/hooks/useOnline', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('../../store/hooks');
-jest.mock('./useLumoHotkey', () => ({ useLumoHotkey: jest.fn() }));
-jest.mock('../telemetry/useLumoMailTelemetry', () => ({
+vi.mock('@proton/components/hooks/drawer/useDrawer', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('@proton/components/hooks/useApiStatus', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('@proton/components/hooks/useOnline', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('../../store/hooks');
+vi.mock('./useLumoHotkey', () => ({ useLumoHotkey: vi.fn() }));
+vi.mock('../telemetry/useLumoMailTelemetry', () => ({
     useLumoMailTelemetry: () => ({ assistantOpened }),
 }));
 
@@ -61,20 +61,20 @@ const refresh = () => {
 };
 
 const setAppInView = (appInView: DrawerApp | undefined, showDrawerSidebar = true) => {
-    jest.mocked(useDrawer).mockImplementation(() => {
+    vi.mocked(useDrawer).mockImplementation(() => {
         useRefreshable();
         return { appInView, toggleDrawerApp, showDrawerSidebar } as unknown as ReturnType<typeof useDrawer>;
     });
 };
 const setUserID = (ID: string) => {
-    jest.mocked(useUser).mockReturnValue([buildUser({ ID }), false]);
+    vi.mocked(useUser).mockReturnValue([buildUser({ ID }), false]);
 };
 const setComposersCount = (count: number) => {
-    jest.mocked(useMailSelector).mockReturnValue(count);
+    vi.mocked(useMailSelector).mockReturnValue(count);
 };
 const setReachability = ({ isApiOffline, isOnline }: { isApiOffline: boolean; isOnline: boolean }) => {
-    jest.mocked(useApiStatus).mockReturnValue({ ...defaultApiStatus, offline: isApiOffline });
-    jest.mocked(useOnline).mockReturnValue(isOnline);
+    vi.mocked(useApiStatus).mockReturnValue({ ...defaultApiStatus, offline: isApiOffline });
+    vi.mocked(useOnline).mockReturnValue(isOnline);
 };
 
 interface Props {
@@ -108,7 +108,7 @@ const renderDetached = () => {
     act(() => rendered.result.current.detach());
     setAppInView(undefined);
     refresh();
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     return rendered;
 };
 
@@ -122,8 +122,8 @@ const expectDetachedClosedWithoutOpen = ({ result }: ReturnType<typeof renderPan
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    jest.mocked(useLumoInMail).mockReturnValue(true);
+    vi.clearAllMocks();
+    vi.mocked(useLumoInMail).mockReturnValue(true);
     window.localStorage.clear();
     setUserID('user-a');
     setAppInView(undefined);
@@ -221,10 +221,10 @@ describe('LumoFloatingPanelProvider', () => {
     it('hands the hotkey the current surface state and its opener', () => {
         const { result } = renderDetached();
         refresh();
-        expect(jest.mocked(useLumoHotkey).mock.lastCall![0].isCurrentSurfaceOpen).toBe(true);
+        expect(vi.mocked(useLumoHotkey).mock.lastCall![0].isCurrentSurfaceOpen).toBe(true);
         act(() => result.current.closePanel());
 
-        const { isCurrentSurfaceOpen, openLumo } = jest.mocked(useLumoHotkey).mock.lastCall![0];
+        const { isCurrentSurfaceOpen, openLumo } = vi.mocked(useLumoHotkey).mock.lastCall![0];
         expect(isCurrentSurfaceOpen).toBe(false);
 
         act(() => openLumo());
@@ -271,7 +271,7 @@ describe('LumoFloatingPanelProvider', () => {
         const { result } = renderDetached();
         act(() => result.current.hideCat());
 
-        const { openLumo } = jest.mocked(useLumoHotkey).mock.lastCall![0];
+        const { openLumo } = vi.mocked(useLumoHotkey).mock.lastCall![0];
         act(() => openLumo());
 
         expect(result.current.isPanelOpen).toBe(true);
@@ -305,11 +305,11 @@ describe('LumoFloatingPanelProvider', () => {
         expect(result.current.isDetached).toBe(true);
 
         seenDetached.length = 0;
-        jest.mocked(useLumoInMail).mockReturnValue(false);
+        vi.mocked(useLumoInMail).mockReturnValue(false);
         rerender();
         expect(seenDetached).toEqual([]);
 
-        jest.mocked(useLumoInMail).mockReturnValue(true);
+        vi.mocked(useLumoInMail).mockReturnValue(true);
         rerender();
         expect(result.current.isDetached).toBe(true);
         expect(result.current.isPanelOpen).toBe(false);

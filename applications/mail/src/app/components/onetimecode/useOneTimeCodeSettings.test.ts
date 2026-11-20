@@ -5,8 +5,8 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { useOneTimeCodeSettings } from './useOneTimeCodeSettings';
 
-jest.mock('@proton/account/user/hooks', () => {
-    return { useUser: jest.fn() };
+vi.mock('@proton/account/user/hooks', () => {
+    return { useUser: vi.fn() };
 });
 
 const user = buildUser();
@@ -15,7 +15,7 @@ const otherUser = buildUser({ ID: `${user.ID}-other` });
 describe('useOneTimeCodeSettings', () => {
     beforeEach(() => {
         localStorage.clear();
-        jest.mocked(useUser).mockReturnValue([user, false]);
+        vi.mocked(useUser).mockReturnValue([user, false]);
     });
 
     it('has both preferences on for a user who never set them', () => {
@@ -86,7 +86,7 @@ describe('useOneTimeCodeSettings', () => {
         act(() => {
             firstUser.current.setMoveToTrashEnabled(false);
         });
-        jest.mocked(useUser).mockReturnValue([otherUser, false]);
+        vi.mocked(useUser).mockReturnValue([otherUser, false]);
 
         const { result } = renderHook(() => {
             return useOneTimeCodeSettings();

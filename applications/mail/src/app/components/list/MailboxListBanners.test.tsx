@@ -1,9 +1,10 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { Mock } from 'vitest';
 
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
-import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
-import { mockUseHistory } from '@proton/components/testing/mockUseHistory';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
+import { mockUseHistory } from '@proton/components/testing/vitest/mockUseHistory';
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
@@ -13,14 +14,14 @@ import { useMailSelector } from '../../store/hooks';
 import MailboxListBanners from './MailboxListBanners';
 import { mockUseAutoDeleteBanner, mockUseShowUpsellBanner } from './MailboxListBanners.test.utils';
 
-jest.mock('../../hooks/useShowUpsellBanner', () => ({
+vi.mock('../../hooks/useShowUpsellBanner', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('./banners/auto-delete/useAutodeleteBanner', () => ({
+vi.mock('./banners/auto-delete/useAutodeleteBanner', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
 const baseProps = {
@@ -36,11 +37,11 @@ const baseProps = {
     canDisplayTaskRunningBanner: false,
 };
 
-jest.mock('../../store/hooks', () => ({
-    ...jest.requireActual('../../store/hooks'),
-    useMailSelector: jest.fn().mockReturnValue(jest.fn()),
+vi.mock('../../store/hooks', async () => ({
+    ...(await vi.importActual('../../store/hooks')),
+    useMailSelector: vi.fn().mockReturnValue(vi.fn()),
 }));
-const useMailSelectorMock = useMailSelector as jest.Mock;
+const useMailSelectorMock = useMailSelector as Mock;
 
 describe('ListBanners', () => {
     beforeEach(() => {
@@ -57,8 +58,8 @@ describe('ListBanners', () => {
     });
 
     describe('when showESSlowToolbar is true', () => {
-        const mockedOpenDropdown = jest.fn();
-        const mockedSetTemporaryToggleOff = jest.fn();
+        const mockedOpenDropdown = vi.fn();
+        const mockedSetTemporaryToggleOff = vi.fn();
 
         beforeEach(() => {
             mockUseEncryptedSearchContext({
@@ -98,7 +99,7 @@ describe('ListBanners', () => {
     });
 
     describe('when user is in almost all mail and using es', () => {
-        const mockedPush = jest.fn();
+        const mockedPush = vi.fn();
         beforeEach(() => {
             mockUseHistory({ push: mockedPush });
         });
@@ -130,7 +131,7 @@ describe('ListBanners', () => {
     describe('when canDisplayUpsellBanner is true', () => {
         beforeEach(() => {
             mockUseShowUpsellBanner({ canDisplayUpsellBanner: true });
-            jest.spyOn(global.Math, 'random').mockReturnValue(0.349);
+            vi.spyOn(global.Math, 'random').mockReturnValue(0.349);
         });
 
         it('should render upsell banner', async () => {
@@ -150,10 +151,10 @@ describe('ListBanners', () => {
     });
 
     describe('when condition for auto delete is true', () => {
-        let mockedApi: jest.Mock;
+        let mockedApi: Mock;
 
         beforeEach(() => {
-            mockedApi = jest.fn();
+            mockedApi = vi.fn();
             mockUseApi(mockedApi);
             mockUseAutoDeleteBanner('paid-banner');
         });

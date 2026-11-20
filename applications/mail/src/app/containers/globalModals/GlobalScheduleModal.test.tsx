@@ -6,11 +6,11 @@ describe('GlobalScheduleModal', () => {
     it('should open the modal when mounted', () => {
         render(
             <GlobalScheduleModal
-                value={{ isMessage: true, onConfirm: jest.fn() }}
+                value={{ isMessage: true, onConfirm: vi.fn() }}
                 modalProps={{
                     open: true,
-                    onClose: jest.fn(),
-                    onExit: jest.fn(),
+                    onClose: vi.fn(),
+                    onExit: vi.fn(),
                 }}
             />
         );

@@ -6,11 +6,11 @@ import { LoggerProxy } from '../utils/logger';
 import { MetricService } from './MetricService';
 import { SEARCH_VERSION_V2 } from './interface';
 
-jest.mock('@proton/shared/lib/helpers/metrics', () => ({
-    sendTelemetryReport: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/metrics', () => ({
+    sendTelemetryReport: vi.fn(),
 }));
 
-const mockedSendTelemetryReport = jest.mocked(sendTelemetryReport);
+const mockedSendTelemetryReport = vi.mocked(sendTelemetryReport);
 
 const reportedEvents = (event: TelemetryContentSearchEvents) =>
     mockedSendTelemetryReport.mock.calls.map(([report]) => report).filter((report) => report.event === event);
@@ -24,12 +24,12 @@ describe('MetricService', () => {
     beforeEach(() => {
         mockedSendTelemetryReport.mockClear();
         now = 1_000_000;
-        jest.spyOn(Date, 'now').mockImplementation(() => now);
+        vi.spyOn(Date, 'now').mockImplementation(() => now);
         metricService = new MetricService({} as Api, new LoggerProxy(undefined), SEARCH_VERSION_V2);
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     describe('query_completed', () => {

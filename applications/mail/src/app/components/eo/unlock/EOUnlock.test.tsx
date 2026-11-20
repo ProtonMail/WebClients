@@ -17,7 +17,7 @@ import type { EOMessage } from '../../../store/eo/eoType';
 import EOUnlock from './EOUnlock';
 
 const props = {
-    setSessionStorage: jest.fn(),
+    setSessionStorage: vi.fn(),
 };
 
 describe('Encrypted Outside Unlock', () => {

@@ -11,9 +11,9 @@ import { enUS } from 'date-fns/locale';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { mockPlansApi } from '@proton/components/hooks/helpers/tests/usePlans';
+import { mockPlansApi } from '@proton/components/hooks/helpers/tests/vitest/usePlans';
 import { FeatureCode } from '@proton/features/interface';
-import { getFeatureFlagsState } from '@proton/features/testing/features';
+import { getFeatureFlagsState } from '@proton/features/testing/vitest/features';
 import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -100,16 +100,16 @@ const helper = async (message: MessageStateWithData, preloadedState: Partial<Mai
 
 // These tests only check that the upsell modal opens. Its config is never fetched here, and
 // unmounting it mid-fetch throws from an abort listener, which jsdom reports as an uncaught error.
-jest.mock('@proton/components/components/upsell/UpsellModal/hooks/useUpsellModalConfig', () => () => null);
+vi.mock('@proton/components/components/upsell/UpsellModal/hooks/useUpsellModalConfig', () => ({ default: () => null }));
 
 describe('Composer scheduled messages', () => {
     beforeEach(() => {
         clearAll();
-        addApiMock('core/v4/features/SpotlightScheduledSend/value', jest.fn, 'put');
+        addApiMock('core/v4/features/SpotlightScheduledSend/value', vi.fn, 'put');
         mockPlansApi();
     });
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
     afterAll(() => {
         clearAll();
@@ -138,7 +138,7 @@ describe('Composer scheduled messages', () => {
         it('Should contain default fields', async () => {
             // Monday 2 2023
             const fakeNow = new Date(2023, 0, 2, 10, 0, 0);
-            jest.useFakeTimers().setSystemTime(fakeNow.getTime());
+            vi.useFakeTimers().setSystemTime(fakeNow.getTime());
 
             const message = setupMessage('Subject', [user as Recipient]);
             setupTest();
@@ -170,7 +170,7 @@ describe('Composer scheduled messages', () => {
         it('Should not contain "next monday" entry on "sunday"', async () => {
             // Sunday 1 2023
             const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
-            jest.useFakeTimers().setSystemTime(fakeNow.getTime());
+            vi.useFakeTimers().setSystemTime(fakeNow.getTime());
 
             const message = setupMessage('Subject', [user as Recipient]);
             setupTest();
@@ -205,7 +205,7 @@ describe('Composer scheduled messages', () => {
             ${'In the morning'} | ${new Date(2023, 0, 1, 2, 0, 0)}
             ${'In the morning'} | ${new Date(2023, 0, 1, 7, 30, 0)}
         `('Should display "$expected" on "$date"', async ({ expected, date }) => {
-            jest.useFakeTimers().setSystemTime(date.getTime());
+            vi.useFakeTimers().setSystemTime(date.getTime());
 
             const message = setupMessage('Subject', [user as Recipient]);
             setupTest();
@@ -227,7 +227,7 @@ describe('Composer scheduled messages', () => {
         it('Should contain "as scheduled" field when editing', async () => {
             // Sunday 1 2023
             const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
-            jest.useFakeTimers().setSystemTime(fakeNow.getTime());
+            vi.useFakeTimers().setSystemTime(fakeNow.getTime());
 
             const message = setupMessage('Subject', [user as Recipient], getUnixTime(new Date(2023, 0, 5, 10, 0, 0)));
             setupTest();
@@ -405,11 +405,11 @@ describe('Composer scheduled messages', () => {
         });
 
         beforeEach(() => {
-            jest.useFakeTimers({ now: mockedDate.getTime() });
+            vi.useFakeTimers({ now: mockedDate.getTime() });
         });
 
         afterEach(() => {
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         it('should open schedule time and see tomorrow as default value', async () => {

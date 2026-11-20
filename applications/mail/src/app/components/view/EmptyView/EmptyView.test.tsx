@@ -5,10 +5,10 @@ import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
 import EmptyView from './EmptyView';
 
-jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
+vi.mock('@proton/components/hooks/drawer/useDrawer', () => ({
     __esModule: true,
-    default: jest.fn(() => ({
-        toggleDrawerApp: jest.fn(),
+    default: vi.fn(() => ({
+        toggleDrawerApp: vi.fn(),
         appInView: '',
     })),
 }));

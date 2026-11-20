@@ -31,7 +31,7 @@ describe('createSetReadHandler', () => {
             references.referenceFor('email', conversation.ID, { title: 'Booking' })
         );
         const state = offListState(conversations);
-        const markAs = jest.fn().mockResolvedValue(undefined);
+        const markAs = vi.fn().mockResolvedValue(undefined);
         const deps = { store: { getState: () => state }, markAs, getFolders: () => [] } as unknown as MailToolDeps;
 
         return { references, emailReferences, conversations, markAs, deps };
@@ -83,7 +83,7 @@ describe('createSetReadHandler', () => {
     // silently skips the other kind.
     it('marks conversations and messages in separate calls', async () => {
         const { references, conversation, message, emailReferences, state } = mixedSelection();
-        const markAs = jest.fn().mockResolvedValue(undefined);
+        const markAs = vi.fn().mockResolvedValue(undefined);
         const deps = { store: { getState: () => state }, markAs, getFolders: () => [] } as unknown as MailToolDeps;
 
         await createSetReadHandler(deps)({ ids: emailReferences, read: true }, { references });

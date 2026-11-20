@@ -10,8 +10,8 @@ const renderRun = (canRun = true) =>
     renderHook((props) => useCatRun(props), { initialProps: { side: PanelSide.RIGHT, canRun, runMs: RUN_MS } });
 
 describe('useCatRun', () => {
-    beforeEach(() => jest.useFakeTimers());
-    afterEach(() => jest.useRealTimers());
+    beforeEach(() => vi.useFakeTimers());
+    afterEach(() => vi.useRealTimers());
 
     it('gallops, skids before arrival, then stops when the glide ends', () => {
         const { result, rerender } = renderRun();
@@ -19,9 +19,9 @@ describe('useCatRun', () => {
         rerender({ side: PanelSide.LEFT, canRun: true, runMs: RUN_MS });
         expect(result.current).toMatchObject({ shownSide: PanelSide.LEFT, run: CatRun.GALLOP });
 
-        act(() => jest.advanceTimersByTime(RUN_MS - SKID_LEAD_MS - 1));
+        act(() => vi.advanceTimersByTime(RUN_MS - SKID_LEAD_MS - 1));
         expect(result.current.run).toBe(CatRun.GALLOP);
-        act(() => jest.advanceTimersByTime(1));
+        act(() => vi.advanceTimersByTime(1));
         expect(result.current.run).toBe(CatRun.SKID);
 
         act(() => result.current.endGlide());
@@ -32,9 +32,9 @@ describe('useCatRun', () => {
         const { result, rerender } = renderRun();
         rerender({ side: PanelSide.LEFT, canRun: true, runMs: RUN_MS });
 
-        act(() => jest.advanceTimersByTime(RUN_MS - 1));
+        act(() => vi.advanceTimersByTime(RUN_MS - 1));
         expect(result.current.run).toBe(CatRun.SKID);
-        act(() => jest.advanceTimersByTime(1));
+        act(() => vi.advanceTimersByTime(1));
         expect(result.current.run).toBeNull();
     });
 
@@ -44,7 +44,7 @@ describe('useCatRun', () => {
         });
         rerender({ side: PanelSide.LEFT, canRun: true, runMs: 0 });
 
-        act(() => jest.advanceTimersByTime(0));
+        act(() => vi.advanceTimersByTime(0));
 
         expect(result.current.run).toBeNull();
     });
@@ -52,26 +52,26 @@ describe('useCatRun', () => {
     it('times the end afresh when the side flips back mid-run', () => {
         const { result, rerender } = renderRun();
         rerender({ side: PanelSide.LEFT, canRun: true, runMs: RUN_MS });
-        act(() => jest.advanceTimersByTime(RUN_MS - 1));
+        act(() => vi.advanceTimersByTime(RUN_MS - 1));
 
         rerender({ side: PanelSide.RIGHT, canRun: true, runMs: RUN_MS });
-        act(() => jest.advanceTimersByTime(1));
+        act(() => vi.advanceTimersByTime(1));
         expect(result.current.run).not.toBeNull();
 
-        act(() => jest.advanceTimersByTime(RUN_MS));
+        act(() => vi.advanceTimersByTime(RUN_MS));
         expect(result.current.run).toBeNull();
     });
 
     it('times the skid afresh when the side flips back mid-gallop', () => {
         const { result, rerender } = renderRun();
         rerender({ side: PanelSide.LEFT, canRun: true, runMs: RUN_MS });
-        act(() => jest.advanceTimersByTime(RUN_MS - SKID_LEAD_MS - 1));
+        act(() => vi.advanceTimersByTime(RUN_MS - SKID_LEAD_MS - 1));
 
         rerender({ side: PanelSide.RIGHT, canRun: true, runMs: RUN_MS });
-        act(() => jest.advanceTimersByTime(1));
+        act(() => vi.advanceTimersByTime(1));
         expect(result.current.run).toBe(CatRun.GALLOP);
 
-        act(() => jest.advanceTimersByTime(RUN_MS - SKID_LEAD_MS - 1));
+        act(() => vi.advanceTimersByTime(RUN_MS - SKID_LEAD_MS - 1));
         expect(result.current.run).toBe(CatRun.SKID);
     });
 

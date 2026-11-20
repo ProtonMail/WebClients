@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { addDays } from 'date-fns';
+import type { MockedFunction } from 'vitest';
 
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
@@ -11,43 +12,43 @@ import { useMailSelector } from '../../store/hooks';
 import { useChecklistTracking } from '../../telemetry/useChecklistTracking';
 import EmptyListPlaceholder from './EmptyListPlaceholder';
 
-jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
+vi.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
     __esModule: true,
-    useGetStartedChecklist: jest.fn(),
+    useGetStartedChecklist: vi.fn(),
     default: ({ children }: { children: any }) => <>{children}</>,
 }));
 
-jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider');
-const mockedReturn = useGetStartedChecklist as jest.MockedFunction<typeof useGetStartedChecklist>;
+vi.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider');
+const mockedReturn = useGetStartedChecklist as MockedFunction<typeof useGetStartedChecklist>;
 
-jest.mock('@proton/activation/src/components/SettingsArea/ProviderCards/ProviderCard', () => () => null);
+vi.mock('@proton/activation/src/components/SettingsArea/ProviderCards/ProviderCard', () => ({ default: () => null }));
 
-jest.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
+vi.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
     default: () => [false, false] as const,
 }));
 
-jest.mock('@proton/activation/src/logic/store', () => ({
-    useEasySwitchSelector: jest.fn(() => null),
+vi.mock('@proton/activation/src/logic/store', () => ({
+    useEasySwitchSelector: vi.fn(() => null),
 }));
 
-jest.mock('../../telemetry/useChecklistTracking');
-jest.mocked(useChecklistTracking).mockReturnValue({
-    trackStepLoaded: jest.fn(),
-    trackStepInteracted: jest.fn(),
-    trackProviderSelected: jest.fn(),
-    trackServiceSelected: jest.fn(),
-    trackChecklistReduced: jest.fn(),
-    trackStepCompleted: jest.fn(),
-    trackFlowFinished: jest.fn(),
-    trackFlowDismissed: jest.fn(),
+vi.mock('../../telemetry/useChecklistTracking');
+vi.mocked(useChecklistTracking).mockReturnValue({
+    trackStepLoaded: vi.fn(),
+    trackStepInteracted: vi.fn(),
+    trackProviderSelected: vi.fn(),
+    trackServiceSelected: vi.fn(),
+    trackChecklistReduced: vi.fn(),
+    trackStepCompleted: vi.fn(),
+    trackFlowFinished: vi.fn(),
+    trackFlowDismissed: vi.fn(),
 });
 
-jest.mock('../../store/hooks');
-jest.mocked(useMailSelector).mockReturnValue(undefined);
+vi.mock('../../store/hooks');
+vi.mocked(useMailSelector).mockReturnValue(undefined);
 
-jest.mock('@proton/mail/store/mailSettings/hooks');
-jest.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
+vi.mock('@proton/mail/store/mailSettings/hooks');
+vi.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
 
 describe('EmptyListPlaceholder', () => {
     it('Should display checklist when no mails are present', async () => {

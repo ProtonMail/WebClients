@@ -5,13 +5,13 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import { useLumoHotkey } from './useLumoHotkey';
 
-jest.mock('@proton/llm/lib/lumoAgent/ui/focusLumoPrompt', () => ({ focusLumoPrompt: jest.fn() }));
-jest.mock('@proton/mail/store/mailSettings/hooks', () => ({ useMailSettings: jest.fn() }));
+vi.mock('@proton/llm/lib/lumoAgent/ui/focusLumoPrompt', () => ({ focusLumoPrompt: vi.fn() }));
+vi.mock('@proton/mail/store/mailSettings/hooks', () => ({ useMailSettings: vi.fn() }));
 
-const openLumo = jest.fn();
+const openLumo = vi.fn();
 
 const setShortcuts = (Shortcuts: number) => {
-    jest.mocked(useMailSettings).mockReturnValue([{ Shortcuts }] as unknown as ReturnType<typeof useMailSettings>);
+    vi.mocked(useMailSettings).mockReturnValue([{ Shortcuts }] as unknown as ReturnType<typeof useMailSettings>);
 };
 
 const pressShiftL = (target: Element = document.body) => {
@@ -19,7 +19,7 @@ const pressShiftL = (target: Element = document.body) => {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     setShortcuts(1);
 });
 

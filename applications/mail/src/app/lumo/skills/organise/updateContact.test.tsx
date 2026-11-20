@@ -56,9 +56,9 @@ const setUp = (existingVCard = buildExistingVCard(), saved: ContactMetadata | un
         subtitle: 'ada@example.com',
     });
 
-    const saveVCardContact = jest.fn().mockResolvedValue(saved);
-    const getFullContact = jest.fn().mockResolvedValue(existingVCard);
-    const getContactEmails = jest.fn().mockReturnValue([ADA_CE]);
+    const saveVCardContact = vi.fn().mockResolvedValue(saved);
+    const getFullContact = vi.fn().mockResolvedValue(existingVCard);
+    const getContactEmails = vi.fn().mockReturnValue([ADA_CE]);
 
     const deps = { saveVCardContact, getFullContact, getContactEmails } as unknown as MailToolDeps;
 
@@ -229,11 +229,9 @@ describe('createUpdateContactHandler', () => {
             subtitle: 'ada.work@example.com',
         });
 
-        const saveVCardContact = jest
-            .fn()
-            .mockResolvedValue(buildSavedContact({ ContactEmails: [ADA_CE, secondaryCE] }));
-        const getFullContact = jest.fn().mockResolvedValue(vCard);
-        const getContactEmails = jest.fn().mockReturnValue([ADA_CE, secondaryCE]);
+        const saveVCardContact = vi.fn().mockResolvedValue(buildSavedContact({ ContactEmails: [ADA_CE, secondaryCE] }));
+        const getFullContact = vi.fn().mockResolvedValue(vCard);
+        const getContactEmails = vi.fn().mockReturnValue([ADA_CE, secondaryCE]);
         const deps = { saveVCardContact, getFullContact, getContactEmails } as unknown as MailToolDeps;
 
         await createUpdateContactHandler(deps)(

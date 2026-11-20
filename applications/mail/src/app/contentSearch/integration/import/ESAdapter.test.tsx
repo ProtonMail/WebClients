@@ -14,10 +14,10 @@ const esCallbacks = {
 /** A search that reports no error and ends normally, so `encryptedSearch` reports success. */
 const fakeSearchService = () =>
     ({
-        warmUp: jest.fn().mockResolvedValue(undefined),
-        search: jest.fn(() => ({
+        warmUp: vi.fn().mockResolvedValue(undefined),
+        search: vi.fn(() => ({
             update: () => false,
-            dispose: jest.fn(),
+            dispose: vi.fn(),
             results: undefined,
             onResults: { subscribe: () => () => {} },
             onError: { subscribe: () => () => {} },
@@ -35,8 +35,8 @@ const setup = ({ withImport = true }: { withImport?: boolean } = {}) => {
         metricService: fakeMetricService(),
         esCallbacks,
         esLibraryFunctionsV1: v1.functions,
-        updateESStatus: jest.fn(),
-        updateESProgress: jest.fn(),
+        updateESStatus: vi.fn(),
+        updateESProgress: vi.fn(),
     });
     adapter.isActive = true;
     return { adapter, v1, importRun };
@@ -102,7 +102,7 @@ describe('ESAdapter', () => {
             importRun.end('completed');
             await settled;
 
-            await expect(adapter.encryptedSearch(jest.fn())).resolves.toBe(true);
+            await expect(adapter.encryptedSearch(vi.fn())).resolves.toBe(true);
         });
 
         // A failed import leaves the v2 index partial. Searches have to be released anyway - waiting
@@ -117,7 +117,7 @@ describe('ESAdapter', () => {
             await settled;
 
             expect(state.resolved).toBe(true);
-            await expect(adapter.encryptedSearch(jest.fn())).resolves.toBe(false);
+            await expect(adapter.encryptedSearch(vi.fn())).resolves.toBe(false);
         });
 
         it('should report ready when the job is torn down before the import ends', async () => {

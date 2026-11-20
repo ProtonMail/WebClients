@@ -16,7 +16,7 @@ const sizeTo = (element: HTMLElement, width: number) => {
 };
 
 const lastResizeObserver = () => {
-    const { calls, results } = jest.mocked(window.ResizeObserver).mock;
+    const { calls, results } = vi.mocked(window.ResizeObserver).mock;
     return { onResize: calls.at(-1)![0] as () => void, observer: results.at(-1)!.value as ResizeObserver };
 };
 
@@ -60,7 +60,7 @@ describe('useMailboxBounds', () => {
         const { mainAreaRef, mailbox } = mountMainArea(true);
         const { unmount } = renderHook(() => useMailboxBounds(mainAreaRef));
         const { observer } = lastResizeObserver();
-        const measure = jest.fn(() => ({ width: 0 }) as DOMRect);
+        const measure = vi.fn(() => ({ width: 0 }) as DOMRect);
         mailbox.getBoundingClientRect = measure;
 
         unmount();

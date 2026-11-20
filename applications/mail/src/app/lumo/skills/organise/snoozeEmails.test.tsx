@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
@@ -70,7 +72,7 @@ describe('snoozeEmailsCardRenderer', () => {
 });
 
 describe('createSnoozeEmailsHandler', () => {
-    const fixture = (snooze: jest.Mock, element: Element = conversationIn(MAILBOX_LABEL_IDS.INBOX)) => {
+    const fixture = (snooze: Mock, element: Element = conversationIn(MAILBOX_LABEL_IDS.INBOX)) => {
         const references = createReferenceRegistry();
         const reference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         // Viewing Archive: the snooze is decided by where the email sits, not by where the user is.
@@ -80,7 +82,7 @@ describe('createSnoozeEmailsHandler', () => {
     };
 
     it('snoozes an Inbox conversation from any view, with a custom duration at the wake time', async () => {
-        const snooze = jest.fn().mockResolvedValue(undefined);
+        const snooze = vi.fn().mockResolvedValue(undefined);
         const { references, reference, element, mail } = fixture(snooze);
 
         await createSnoozeEmailsHandler(mail)({ ids: [reference], wake_at: '2099-07-11T09:00:00Z' }, { references });
@@ -92,7 +94,7 @@ describe('createSnoozeEmailsHandler', () => {
     });
 
     it('refuses a conversation outside the Inbox, before the snooze runs', async () => {
-        const snooze = jest.fn();
+        const snooze = vi.fn();
         const { references, reference, mail } = fixture(snooze, conversationIn(MAILBOX_LABEL_IDS.ARCHIVE));
 
         await expect(
@@ -102,7 +104,7 @@ describe('createSnoozeEmailsHandler', () => {
     });
 
     it('validates the wake time itself, so the card is not the only guard', async () => {
-        const snooze = jest.fn();
+        const snooze = vi.fn();
         const { references, reference, mail } = fixture(snooze);
 
         await expect(

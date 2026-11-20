@@ -8,7 +8,7 @@ import { waitForNoNotification, waitForNotification } from '../../../../helpers/
 import EOReply from '../EOReply';
 
 export const setup = async (options?: EOOriginalMessageOptions) => {
-    const renderResult = await EORender(<EOReply setSessionStorage={jest.fn()} />, {
+    const renderResult = await EORender(<EOReply setSessionStorage={vi.fn()} />, {
         routePath: '/eo/reply/:id',
         options,
         initialRoute: 'reply',
@@ -18,7 +18,7 @@ export const setup = async (options?: EOOriginalMessageOptions) => {
 };
 
 const clickSend = async (renderResult: RenderResult) => {
-    const sendSpy = jest.fn(() => Promise.resolve({ Reply: {} }));
+    const sendSpy = vi.fn(() => Promise.resolve({ Reply: {} }));
     addApiMock(`mail/v4/eo/reply`, sendSpy, 'post');
 
     const sendButton = await renderResult.findByTestId('send-eo');

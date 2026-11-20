@@ -6,11 +6,11 @@ describe('GlobalSnoozeModal', () => {
     it('should open the modal when mounted', () => {
         render(
             <GlobalSnoozeModal
-                value={{ onConfirm: jest.fn() }}
+                value={{ onConfirm: vi.fn() }}
                 modalProps={{
                     open: true,
-                    onClose: jest.fn(),
-                    onExit: jest.fn(),
+                    onClose: vi.fn(),
+                    onExit: vi.fn(),
                 }}
             />
         );

@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the message content iframe needs iframe.contentDocument, which happy-dom lacks
 import { findByText, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
@@ -28,7 +30,7 @@ import { clearAll } from '../../../helpers/tests/helper';
 import { encryptMessage } from '../../../helpers/tests/message';
 import { addressID, body, getIframeRootDiv, localID, messageID, setup, subject } from './Message.test.helpers';
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
 describe('MessageView encryption', () => {
     const toAddress = 'me@home.net';
@@ -139,8 +141,8 @@ describe('MessageView encryption', () => {
             const mimeBody = await constructMime(
                 { localID, data: message, messageDocument: { document: parseStringToDOM(body).body } },
                 publicPrivateKey,
-                jest.fn(),
-                jest.fn(),
+                vi.fn(),
+                vi.fn(),
                 api,
                 false
             );
@@ -181,8 +183,8 @@ describe('MessageView encryption', () => {
             const mimeBody = await constructMime(
                 { localID, data: { ...message, MIMEType: MIME_TYPES.PLAINTEXT }, messageDocument: { plainText: body } },
                 publicPrivateKey,
-                jest.fn(),
-                jest.fn(),
+                vi.fn(),
+                vi.fn(),
                 api,
                 false
             );
@@ -277,8 +279,8 @@ describe('MessageView encryption', () => {
             const mimeBody = await constructMime(
                 { localID, data: message, messageDocument: { document: parseStringToDOM(body).body } },
                 publicPrivateKey,
-                jest.fn(),
-                jest.fn(),
+                vi.fn(),
+                vi.fn(),
                 api,
                 false
             );

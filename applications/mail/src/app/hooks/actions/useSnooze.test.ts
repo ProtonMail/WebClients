@@ -5,10 +5,10 @@ import { renderHook } from '../../helpers/tests/render';
 import { elementsSliceActions } from '../../store/elements/elementsSlice';
 import useSnooze from './useSnooze';
 
-jest.mock('@proton/unleash/useFlag', () => {
+vi.mock('@proton/unleash/useFlag', () => {
     return {
-        useFlag: jest.fn().mockReturnValue(true),
-        useGetFlag: jest.fn().mockReturnValue(() => true),
+        useFlag: vi.fn().mockReturnValue(true),
+        useGetFlag: vi.fn().mockReturnValue(() => true),
     };
 });
 

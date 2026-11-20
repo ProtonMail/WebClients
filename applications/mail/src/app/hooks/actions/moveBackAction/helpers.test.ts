@@ -21,7 +21,7 @@ import {
  */
 
 describe('Move back action helpers tests', () => {
-    const onBack = jest.fn();
+    const onBack = vi.fn();
 
     const labels = [{ ID: 'LABEL_ID' } as Label, { ID: 'LABEL_ID_2' } as Label];
     const folders = [{ ID: 'FOLDER_ID' } as Folder, { ID: 'FOLDER_ID_2' } as Folder];

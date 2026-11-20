@@ -11,20 +11,20 @@ import {
 import { useMailSelector } from '../../../store/hooks';
 import ReadUnreadButtons from './ReadUnreadButtons';
 
-jest.mock('@proton/mail/store/mailSettings/hooks');
-jest.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
+vi.mock('@proton/mail/store/mailSettings/hooks');
+vi.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
 
-jest.mock('../../../store/hooks');
-const mockUseMailSelector = jest.mocked(useMailSelector);
+vi.mock('../../../store/hooks');
+const mockUseMailSelector = vi.mocked(useMailSelector);
 
-jest.mock('../../../hooks/useSelectAll', () => ({
-    useSelectAll: jest.fn(() => ({ selectAll: false })),
+vi.mock('../../../hooks/useSelectAll', () => ({
+    useSelectAll: vi.fn(() => ({ selectAll: false })),
 }));
-const mockUseSelectAll = jest.requireMock('../../../hooks/useSelectAll').useSelectAll;
+const mockUseSelectAll = (await vi.importMock<any>('../../../hooks/useSelectAll')).useSelectAll;
 
 const getProps = (selectedIDs: string[] = ['id1', 'id2']) => ({
     selectedIDs,
-    onMarkAs: jest.fn(),
+    onMarkAs: vi.fn(),
 });
 
 const mockSelectors = (elementsAreUnread: Record<string, boolean>) => {
@@ -40,7 +40,7 @@ const mockSelectors = (elementsAreUnread: Record<string, boolean>) => {
 
 describe('ReadUnreadButtons', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockUseSelectAll.mockReturnValue({ selectAll: false });
     });
 

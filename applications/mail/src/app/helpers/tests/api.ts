@@ -1,4 +1,4 @@
-import { addApiMock, addApiResolver, apiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, addApiResolver, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 /**
  * Export for backward compatibility in the tests. It can be gradually migrated to use @proton/test-api directly
@@ -30,13 +30,15 @@ export const parseFormData = (data: any) => {
 };
 
 export const mockDomApi = () => {
-    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    window.HTMLElement.prototype.scrollIntoView = vi.fn();
     // https://github.com/nickcolley/jest-axe/issues/147#issuecomment-758804533
     const { getComputedStyle } = window;
     window.getComputedStyle = (elt) => getComputedStyle(elt);
-    window.ResizeObserver = jest.fn(() => ({
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-        disconnect: jest.fn(),
-    }));
+    window.ResizeObserver = vi.fn(function () {
+        return {
+            observe: vi.fn(),
+            unobserve: vi.fn(),
+            disconnect: vi.fn(),
+        };
+    }) as unknown as typeof ResizeObserver;
 };

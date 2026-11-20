@@ -1,4 +1,5 @@
 import { act, fireEvent, waitFor, within } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
 import type { PendingUpload } from '@proton/mail-composer/attachments/uploadTypes';
@@ -15,7 +16,7 @@ describe('AttachmentItem', () => {
 
     it('should download only once when every control of the chip is clicked during a download', async () => {
         let resolveDownload: () => void = () => {};
-        const download = jest.fn(
+        const download = vi.fn(
             () =>
                 new Promise<void>((resolve) => {
                     resolveDownload = resolve;
@@ -50,7 +51,7 @@ describe('AttachmentItem', () => {
     });
 
     it('should keep the download loader visible for fast downloads', async () => {
-        const download = jest.fn(() => Promise.resolve());
+        const download = vi.fn(() => Promise.resolve());
 
         const { getByTestId } = await mailTestRender(
             <AttachmentItem
@@ -152,13 +153,13 @@ describe('AttachmentItem', () => {
         };
 
         const renderWithSave = async ({
-            onPrimary = jest.fn(noop),
-            onSecondary = jest.fn(noop),
-            onSaveToDrive = jest.fn(noop),
+            onPrimary = vi.fn(noop),
+            onSecondary = vi.fn(noop),
+            onSaveToDrive = vi.fn(noop),
         }: {
-            onPrimary?: jest.Mock;
-            onSecondary?: jest.Mock;
-            onSaveToDrive?: jest.Mock;
+            onPrimary?: Mock;
+            onSecondary?: Mock;
+            onSaveToDrive?: Mock;
         }) => {
             const view = await mailTestRender(
                 <AttachmentItem
@@ -186,7 +187,7 @@ describe('AttachmentItem', () => {
         it('shows the loader on Save to Drive, keeps the download arrow and disables download and the name while saving', async () => {
             const save = deferred();
             const { saveToDrive, download, primary, zone, chip } = await renderWithSave({
-                onSaveToDrive: jest.fn(() => save.promise),
+                onSaveToDrive: vi.fn(() => save.promise),
             });
 
             fireEvent.click(saveToDrive);
@@ -204,12 +205,12 @@ describe('AttachmentItem', () => {
 
         it('ignores download and preview clicks while saving', async () => {
             const save = deferred();
-            const onPrimary = jest.fn(noop);
-            const onSecondary = jest.fn(noop);
+            const onPrimary = vi.fn(noop);
+            const onSecondary = vi.fn(noop);
             const { saveToDrive, download, primary } = await renderWithSave({
                 onPrimary,
                 onSecondary,
-                onSaveToDrive: jest.fn(() => save.promise),
+                onSaveToDrive: vi.fn(() => save.promise),
             });
 
             fireEvent.click(saveToDrive);
@@ -228,9 +229,9 @@ describe('AttachmentItem', () => {
 
         it('ignores Save to Drive while a download runs', async () => {
             const downloading = deferred();
-            const onSaveToDrive = jest.fn(noop);
+            const onSaveToDrive = vi.fn(noop);
             const { saveToDrive, download, zone } = await renderWithSave({
-                onSecondary: jest.fn(() => downloading.promise),
+                onSecondary: vi.fn(() => downloading.promise),
                 onSaveToDrive,
             });
 

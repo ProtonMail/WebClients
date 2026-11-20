@@ -26,7 +26,7 @@ const primaryAddress = (Signature: string): Address =>
 const disabledAddress = (): Address => ({ ...primaryAddress(''), Status: ADDRESS_STATUS.STATUS_DISABLED });
 
 const setUp = (addresses: Address[]) => {
-    const updateAddress = jest.fn().mockResolvedValue(undefined);
+    const updateAddress = vi.fn().mockResolvedValue(undefined);
     const deps = { getAddresses: () => addresses, updateAddress } as unknown as MailToolDeps;
 
     return {

@@ -107,7 +107,7 @@ describe('Message attachments', () => {
     });
 
     it('should open preview when clicking', async () => {
-        window.URL.createObjectURL = jest.fn();
+        window.URL.createObjectURL = vi.fn();
 
         await setup({ data: { NumAttachments, Attachments } }, undefined, {
             preloadedState: {

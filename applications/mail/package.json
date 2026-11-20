@@ -16,10 +16,10 @@
         "lint": "oxlint --quiet",
         "pretty:fix": "oxfmt --write \"src/app/**/*.{ts,tsx,js,scss,css,json,md}\"",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
-        "test": "jest --logHeapUsage --forceExit",
-        "test:ci": "jest --ci --forceExit --logHeapUsage",
-        "test:coverage": "jest --coverage",
-        "test:watch": "jest --watch"
+        "test": "vitest",
+        "test:ci": "vitest --run",
+        "test:coverage": "vitest --run --coverage",
+        "test:watch": "vitest --watch"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
@@ -81,7 +81,6 @@
         "idb": "catalog:",
         "lodash": "catalog:",
         "loud-rejection": "^2.2.0",
-        "path-to-regexp": "^6.3.0",
         "react": "catalog:",
         "react-dom": "catalog:",
         "react-redux": "catalog:",
@@ -91,19 +90,16 @@
         "ttag": "catalog:"
     },
     "devDependencies": {
-        "@jest/globals": "catalog:",
         "@proton/i18n": "workspace:^",
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/test-api": "workspace:^",
         "@proton/types": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "catalog:",
         "@testing-library/user-event": "catalog:",
         "@types/history": "catalog:",
-        "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/react-router": "catalog:",
         "@types/tinycolor2": "catalog:",
@@ -111,16 +107,16 @@
         "@typescript/native": "catalog:",
         "@webgpu/types": "^0.1.74",
         "fake-indexeddb": "catalog:",
+        "happy-dom": "catalog:",
         "html-webpack-plugin": "catalog:",
         "immer": "11.2.10",
-        "jest": "catalog:",
-        "jest-junit": "catalog:",
-        "jest-mock": "^30.5.2",
+        "jsdom": "catalog:",
         "msw": "catalog:",
         "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "typescript": "catalog:",
+        "vitest": "catalog:",
         "webpack": "catalog:"
     }
 }

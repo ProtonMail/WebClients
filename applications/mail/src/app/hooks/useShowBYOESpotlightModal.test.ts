@@ -1,49 +1,58 @@
 import { renderHook } from '@testing-library/react';
 import { sub } from 'date-fns';
+import type { Mock } from 'vitest';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
+import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
+import { getAllSync, selectSyncListLoadingState } from '@proton/activation/src/logic/sync/sync.selectors';
+import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
+import useFeature from '@proton/features/useFeature';
 import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
+import { useMailGlobalModals } from '../containers/globalModals/globalModalContext';
 import useShowBYOESpotlightModal from './useShowBYOESpotlightModal';
 
-jest.mock('@proton/account/addresses/hooks', () => ({
-    useAddresses: jest.fn(),
+vi.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn(),
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn(),
 }));
 
-jest.mock('@proton/account/userSettings/hooks', () => ({
-    useUserSettings: jest.fn(),
+vi.mock('@proton/account/userSettings/hooks', () => ({
+    useUserSettings: vi.fn(),
 }));
 
-jest.mock('@proton/activation/src/logic/store', () => ({
-    useEasySwitchSelector: jest.fn(),
+vi.mock('@proton/activation/src/logic/store', () => ({
+    useEasySwitchSelector: vi.fn(),
 }));
 
-jest.mock('@proton/activation/src/logic/sync/sync.selectors', () => ({
-    getAllSync: jest.fn(),
-    selectSyncListLoadingState: jest.fn(),
+vi.mock('@proton/activation/src/logic/sync/sync.selectors', () => ({
+    getAllSync: vi.fn(),
+    selectSyncListLoadingState: vi.fn(),
 }));
 
-jest.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
+vi.mock('@proton/byoe/src/hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('../containers/globalModals/globalModalContext', () => ({
-    useMailGlobalModals: jest.fn(() => ({ notify: jest.fn() })),
+vi.mock('../containers/globalModals/globalModalContext', () => ({
+    useMailGlobalModals: vi.fn(() => ({ notify: vi.fn() })),
 }));
 
-jest.mock('@proton/features/useFeature');
+vi.mock('@proton/features/useFeature');
 
-jest.mock('./useShowBYOESpotlightModal', () => ({
+vi.mock('./useShowBYOESpotlightModal', async () => ({
     __esModule: true,
-    ...jest.requireActual('./useShowBYOESpotlightModal'),
+    ...(await vi.importActual('./useShowBYOESpotlightModal')),
 }));
 
 const enabledBYOEAddress = {
@@ -70,20 +79,19 @@ const sync1 = {
 };
 
 describe('useShowBYOESpotlightModal', () => {
-    const mockUseAddresses = require('@proton/account/addresses/hooks').useAddresses;
-    const mockUseUser = require('@proton/account/user/hooks').useUser;
-    const mockUseUserSettings = require('@proton/account/userSettings/hooks').useUserSettings;
-    const mockUseEasySwitchSelector = require('@proton/activation/src/logic/store').useEasySwitchSelector;
-    const mockGetAllSync = require('@proton/activation/src/logic/sync/sync.selectors').getAllSync;
-    const mockSelectSyncListLoadingState =
-        require('@proton/activation/src/logic/sync/sync.selectors').selectSyncListLoadingState;
-    const mockUseBYOEFeatureStatus = require('@proton/byoe/src/hooks/useBYOEFeatureStatus').default as jest.Mock;
-    const mockUseFeature = require('@proton/features/useFeature').default as jest.Mock;
-    const mockNotify = require('../containers/globalModals/globalModalContext').useMailGlobalModals;
-    const openModalSpy = jest.fn();
+    const mockUseAddresses = useAddresses as Mock;
+    const mockUseUser = useUser as Mock;
+    const mockUseUserSettings = useUserSettings as Mock;
+    const mockUseEasySwitchSelector = useEasySwitchSelector as Mock;
+    const mockGetAllSync = getAllSync as unknown as Mock;
+    const mockSelectSyncListLoadingState = selectSyncListLoadingState as unknown as Mock;
+    const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as Mock;
+    const mockUseFeature = useFeature as Mock;
+    const mockNotify = useMailGlobalModals as Mock;
+    const openModalSpy = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockNotify.mockReturnValue({ notify: openModalSpy });
 
         // Setup useEasySwitchSelector to return different values based on the selector passed
@@ -110,7 +118,7 @@ describe('useShowBYOESpotlightModal', () => {
         mockUseUserSettings.mockReturnValue([userSettings]);
         mockGetAllSync.mockReturnValue(syncs);
         mockSelectSyncListLoadingState.mockReturnValue('success');
-        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: jest.fn() });
+        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: vi.fn() });
 
         renderHook(() => useShowBYOESpotlightModal());
 
@@ -128,7 +136,7 @@ describe('useShowBYOESpotlightModal', () => {
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);
         mockSelectSyncListLoadingState.mockReturnValue('success');
-        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: jest.fn() });
+        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: vi.fn() });
 
         renderHook(() => useShowBYOESpotlightModal());
 
@@ -145,7 +153,7 @@ describe('useShowBYOESpotlightModal', () => {
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);
         mockSelectSyncListLoadingState.mockReturnValue('success');
-        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: jest.fn() });
+        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: vi.fn() });
 
         renderHook(() => useShowBYOESpotlightModal());
 
@@ -162,7 +170,7 @@ describe('useShowBYOESpotlightModal', () => {
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);
         mockSelectSyncListLoadingState.mockReturnValue('success');
-        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: jest.fn() });
+        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: vi.fn() });
 
         renderHook(() => useShowBYOESpotlightModal());
 
@@ -179,7 +187,7 @@ describe('useShowBYOESpotlightModal', () => {
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);
         mockSelectSyncListLoadingState.mockReturnValue('success');
-        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: jest.fn() });
+        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: vi.fn() });
 
         renderHook(() => useShowBYOESpotlightModal());
 
@@ -196,7 +204,7 @@ describe('useShowBYOESpotlightModal', () => {
         mockUseUser.mockReturnValue([user]);
         mockGetAllSync.mockReturnValue(syncs);
         mockSelectSyncListLoadingState.mockReturnValue('success');
-        mockUseFeature.mockReturnValue({ feature: { Value: false } as any, update: jest.fn() });
+        mockUseFeature.mockReturnValue({ feature: { Value: false } as any, update: vi.fn() });
 
         renderHook(() => useShowBYOESpotlightModal());
 
@@ -216,7 +224,7 @@ describe('useShowBYOESpotlightModal', () => {
         mockUseUserSettings.mockReturnValue([userSettings]);
         mockGetAllSync.mockReturnValue(syncs);
         mockSelectSyncListLoadingState.mockReturnValue('success');
-        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: jest.fn() });
+        mockUseFeature.mockReturnValue({ feature: { Value: true } as any, update: vi.fn() });
 
         renderHook(() => useShowBYOESpotlightModal());
 

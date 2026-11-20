@@ -1,8 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { mockUseCategoriesData } from '@proton/mail/testing/mockUseCategoriesData';
-import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
+import { mockUseCategoriesData } from '@proton/mail/testing/vitest/mockUseCategoriesData';
+import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { minimalCache } from '../../helpers/tests/cache';
@@ -10,35 +10,35 @@ import { clearAll } from '../../helpers/tests/helper';
 import { mailTestRender } from '../../helpers/tests/render';
 import SidebarItem from './SidebarItem';
 
-jest.mock('proton-mail/hooks/mailbox/useElements', () => ({
-    useGetElementsFromIDs: jest.fn(() => jest.fn()),
+vi.mock('proton-mail/hooks/mailbox/useElements', () => ({
+    useGetElementsFromIDs: vi.fn(() => vi.fn()),
 }));
 
-jest.mock('proton-mail/hooks/useSelectAll', () => ({
-    useSelectAll: jest.fn(() => ({ selectAll: false })),
+vi.mock('proton-mail/hooks/useSelectAll', () => ({
+    useSelectAll: vi.fn(() => ({ selectAll: false })),
 }));
 
-jest.mock('proton-mail/containers/CheckAllRefProvider', () => ({
-    ...jest.requireActual('proton-mail/containers/CheckAllRefProvider'),
-    useCheckAllRef: jest.fn(() => ({ checkAllRef: { current: null } })),
+vi.mock('proton-mail/containers/CheckAllRefProvider', async () => ({
+    ...(await vi.importActual('proton-mail/containers/CheckAllRefProvider')),
+    useCheckAllRef: vi.fn(() => ({ checkAllRef: { current: null } })),
 }));
 
-jest.mock('proton-mail/store/hooks', () => ({
-    ...jest.requireActual('proton-mail/store/hooks'),
-    useMailSelector: jest.fn(() => ({ labelID: '0', sort: {}, filter: {}, search: {}, page: 0 })),
+vi.mock('proton-mail/store/hooks', async () => ({
+    ...(await vi.importActual('proton-mail/store/hooks')),
+    useMailSelector: vi.fn(() => ({ labelID: '0', sort: {}, filter: {}, search: {}, page: 0 })),
 }));
 
-jest.mock('@proton/components/containers/items/useItemsDroppable', () => ({
+vi.mock('@proton/components/containers/items/useItemsDroppable', () => ({
     __esModule: true,
-    default: jest.fn(() => ({ dragOver: false, dragProps: {}, handleDrop: jest.fn() })),
+    default: vi.fn(() => ({ dragOver: false, dragProps: {}, handleDrop: vi.fn() })),
 }));
 
 const defaultProps = {
     labelID: MAILBOX_LABEL_IDS.INBOX,
     isFolder: true,
     text: 'Inbox',
-    moveToFolder: jest.fn(),
-    applyLabels: jest.fn(),
+    moveToFolder: vi.fn(),
+    applyLabels: vi.fn(),
 };
 
 describe('SidebarItem', () => {

@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { addDays, format, set } from 'date-fns';
 import { enUS } from 'date-fns/locale';
+import type { MockedFunction } from 'vitest';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -10,12 +11,12 @@ import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings
 import type { Element } from '../../../../models/element';
 import SnoozeCustomTime from './SnoozeCustomTime';
 
-jest.mock('@proton/account/userSettings/hooks');
-const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
+vi.mock('@proton/account/userSettings/hooks');
+const mockedUserSettings = useUserSettings as MockedFunction<any>;
 
 describe('SnoozeCustomTime', () => {
-    const mockedOnClose = jest.fn();
-    const mockedHandleSnooze = jest.fn();
+    const mockedOnClose = vi.fn();
+    const mockedHandleSnooze = vi.fn();
 
     beforeAll(() => {
         mockedUserSettings.mockReturnValue([{ Locale: 'en_US', TimeFormat: SETTINGS_TIME_FORMAT.H12 }]);

@@ -21,7 +21,7 @@ const label = (overrides: Partial<Label> = {}): Label => ({
 const setUp = (labels: Label[]) => {
     const references = createReferenceRegistry();
     const labelReference = references.referenceFor('label', 'LABEL_ID_1', { title: 'Work' });
-    const updateLabel = jest.fn().mockResolvedValue(undefined);
+    const updateLabel = vi.fn().mockResolvedValue(undefined);
     const deps = { getLabels: () => labels, updateLabel } as unknown as MailToolDeps;
 
     return { references, labelReference, updateLabel, deps };

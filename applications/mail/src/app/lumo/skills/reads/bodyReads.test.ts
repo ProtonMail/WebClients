@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: DOMPurify insertBefore fails on the happy-dom document
 /** The three body reads share the open-then-decrypt path, so they share one fake-store harness. */
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';

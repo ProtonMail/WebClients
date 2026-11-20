@@ -100,7 +100,7 @@ describe('createApplyLabelsHandler', () => {
         const labelReference = references.referenceFor('label', 'LABEL_ID_1', { title: 'Receipts' });
         const element = { ID: 'ELEMENT_ID_1', Subject: 'Booking' };
         const store = { getState: () => offListState([element]) };
-        const applyMultipleLocations = jest.fn().mockResolvedValue(undefined);
+        const applyMultipleLocations = vi.fn().mockResolvedValue(undefined);
         const deps = { store, applyMultipleLocations } as unknown as MailToolDeps;
 
         return { references, emailReference, labelReference, element, applyMultipleLocations, deps };
@@ -123,7 +123,7 @@ describe('createApplyLabelsHandler', () => {
     it('labels conversations and messages in separate calls', async () => {
         const { references, conversation, message, emailReferences, state } = mixedSelection();
         const labelReference = references.referenceFor('label', 'LABEL_ID_1', { title: 'Receipts' });
-        const applyMultipleLocations = jest.fn().mockResolvedValue(undefined);
+        const applyMultipleLocations = vi.fn().mockResolvedValue(undefined);
         const deps = { store: { getState: () => state }, applyMultipleLocations } as unknown as MailToolDeps;
 
         await createApplyLabelsHandler(deps)({ ids: emailReferences, labels: [labelReference] }, { references });

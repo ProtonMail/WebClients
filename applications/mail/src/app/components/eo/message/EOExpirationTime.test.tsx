@@ -11,20 +11,20 @@ describe('EOExpirationTime', () => {
     const seconds = 50;
 
     beforeAll(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     beforeEach(() => {
-        jest.clearAllTimers();
-        jest.setSystemTime(date);
+        vi.clearAllTimers();
+        vi.setSystemTime(date);
     });
 
     afterAll(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         clearAll();
     });
 

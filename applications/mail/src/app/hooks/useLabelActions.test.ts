@@ -1,19 +1,20 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useLabelActions } from './useLabelActions';
 
-jest.mock('@proton/mail/store/labels/hooks');
+vi.mock('@proton/mail/store/labels/hooks');
 
 describe('useLabelActions', () => {
-    const useFoldersMock = useFolders as jest.Mock;
-    const useLabelsMock = useLabels as jest.Mock;
+    const useFoldersMock = useFolders as Mock;
+    const useLabelsMock = useLabels as Mock;
 
     beforeEach(() => {
-        useFoldersMock.mockReturnValue([[], jest.fn()]);
-        useLabelsMock.mockReturnValue([[], jest.fn()]);
+        useFoldersMock.mockReturnValue([[], vi.fn()]);
+        useLabelsMock.mockReturnValue([[], vi.fn()]);
     });
 
     afterEach(() => {
@@ -82,8 +83,8 @@ describe('useLabelActions', () => {
         const customFolder = 'customFolder';
         const customLabel = 'customLabel';
 
-        useFoldersMock.mockReturnValue([[{ ID: customFolder }], jest.fn()]);
-        useLabelsMock.mockReturnValue([[{ ID: customLabel }], jest.fn()]);
+        useFoldersMock.mockReturnValue([[{ ID: customFolder }], vi.fn()]);
+        useLabelsMock.mockReturnValue([[{ ID: customLabel }], vi.fn()]);
 
         const resFolders = renderHook(() => useLabelActions(customFolder));
         expect(resFolders.result.current[0]).toEqual(['trash', 'archive', 'spam']);

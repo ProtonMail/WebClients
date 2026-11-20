@@ -8,8 +8,8 @@ import { layoutInitialState } from '../../../store/layout/layoutSlice';
 import { mockActiveCategoriesData } from '../testUtils/helpers';
 import { CategoryContextMenu } from './CategoryContextMenu';
 
-jest.mock('../useCategoriesView', () => ({
-    useCategoriesView: jest.fn(() => ({
+vi.mock('../useCategoriesView', () => ({
+    useCategoriesView: vi.fn(() => ({
         shouldShowTabs: true,
         activeCategoriesTabs: mockActiveCategoriesData,
     })),
@@ -17,7 +17,7 @@ jest.mock('../useCategoriesView', () => ({
 
 describe('CategoryContextMenu', () => {
     it('should offer the categories when a normal selection is checked', async () => {
-        await mailTestRender(<CategoryContextMenu onCategoryMove={jest.fn()} />, {
+        await mailTestRender(<CategoryContextMenu onCategoryMove={vi.fn()} />, {
             preloadedState: {
                 layout: { ...layoutInitialState, selectAll: false },
                 elements: newElementsState({ params: { categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] } }),
@@ -27,7 +27,7 @@ describe('CategoryContextMenu', () => {
     });
 
     it('should not offer the categories during a select all', async () => {
-        await mailTestRender(<CategoryContextMenu onCategoryMove={jest.fn()} />, {
+        await mailTestRender(<CategoryContextMenu onCategoryMove={vi.fn()} />, {
             preloadedState: {
                 layout: { ...layoutInitialState, selectAll: true },
                 elements: newElementsState({ params: { categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT] } }),

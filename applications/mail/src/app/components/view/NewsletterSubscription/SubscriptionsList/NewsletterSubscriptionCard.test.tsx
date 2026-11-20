@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { mailTestRender } from '../../../../helpers/tests/render';
 import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
@@ -7,20 +8,20 @@ import { newsletterSubscriptionsActions } from '../../../../store/newsletterSubs
 import { activeSubscription, unsubscribedSubscription } from '../testData';
 import { NewsletterSubscriptionCard } from './NewsletterSubscriptionCard';
 
-jest.mock('../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector', () => ({
-    ...jest.requireActual('../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector'),
-    selectedTab: jest.fn(),
+vi.mock('../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector', async () => ({
+    ...(await vi.importActual('../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector')),
+    selectedTab: vi.fn(),
 }));
-const mockedSelectedTab = mailboxSelectors.selectedTab as jest.Mock;
+const mockedSelectedTab = mailboxSelectors.selectedTab as Mock;
 
 describe('NewsletterSubscriptionCard', () => {
     beforeEach(() => {
         mockedSelectedTab.mockReturnValue(SubscriptionTabs.Active);
-        jest.spyOn(newsletterSubscriptionsActions, 'setSelectedSubscription');
+        vi.spyOn(newsletterSubscriptionsActions, 'setSelectedSubscription');
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('should show the active subscription data', async () => {

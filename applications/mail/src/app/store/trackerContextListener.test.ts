@@ -7,9 +7,9 @@ import { mailContext } from '../telemetry/context';
 import type { AppStartListening } from './store';
 import { startTrackerContextListener } from './trackerContextListener';
 
-jest.mock('@proton/account/allSubscriptions', () => ({
-    allSubscriptionsThunk: jest.fn(() => () => Promise.resolve()),
-    selectAllSubscriptions: jest.fn((state: { value?: Subscription[] }) => ({
+vi.mock('@proton/account/allSubscriptions', () => ({
+    allSubscriptionsThunk: vi.fn(() => () => Promise.resolve()),
+    selectAllSubscriptions: vi.fn((state: { value?: Subscription[] }) => ({
         value: state.value,
     })),
 }));
@@ -32,7 +32,7 @@ const setup = (preloaded?: { value?: Subscription[] }) => {
 describe('trackerContextListener', () => {
     afterEach(() => {
         mailContext.reset();
-        jest.mocked(selectAllSubscriptions).mockClear();
+        vi.mocked(selectAllSubscriptions).mockClear();
     });
 
     it('keeps the plan unknown until the subscriptions load', () => {
@@ -49,7 +49,7 @@ describe('trackerContextListener', () => {
 
     it('fetches the subscriptions once, on the first action', () => {
         const store = setup();
-        jest.mocked(allSubscriptionsThunk).mockClear();
+        vi.mocked(allSubscriptionsThunk).mockClear();
         store.dispatch({ type: 'other' });
         store.dispatch({ type: 'other' });
         expect(allSubscriptionsThunk).toHaveBeenCalledTimes(1);

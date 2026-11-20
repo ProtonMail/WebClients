@@ -6,8 +6,8 @@ import type { Element } from '../../models/element';
 import { useMailSelector } from '../../store/hooks';
 import ItemDate from './ItemDate';
 
-jest.mock('../../store/hooks');
-jest.mocked(useMailSelector).mockImplementation(() => ({ conversationMode: true }));
+vi.mock('../../store/hooks');
+vi.mocked(useMailSelector).mockImplementation(() => ({ conversationMode: true }));
 
 const element = {
     ID: 'elementID',

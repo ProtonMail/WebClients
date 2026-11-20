@@ -31,7 +31,7 @@ describe('ModalBlockSender', () => {
     });
 
     it('should close the modal when the cancel button is clicked', async () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         await mailTestRender(<ModalBlockSender subscription={activeSubscription} open={true} onClose={onClose} />);
 
         const cancelButton = screen.getByText('Cancel');

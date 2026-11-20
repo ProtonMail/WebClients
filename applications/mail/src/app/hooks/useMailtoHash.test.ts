@@ -1,20 +1,21 @@
 import { useLocation } from 'react-router';
 
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useOnMailTo } from '@proton/mail-composer/containers/ComposeProvider';
 
 import useMailtoHash from './useMailtoHash';
 
-jest.mock('react-router');
-jest.mock('@proton/mail-composer/containers/ComposeProvider');
+vi.mock('react-router');
+vi.mock('@proton/mail-composer/containers/ComposeProvider');
 
 describe('useMailtoHash', () => {
-    const mockReturn = jest.fn();
-    const useOnMailToMock = useOnMailTo as jest.Mock;
+    const mockReturn = vi.fn();
+    const useOnMailToMock = useOnMailTo as Mock;
 
     const mockHash = (hash: string) => {
-        jest.mocked(useLocation).mockReturnValue({ hash } as any);
+        vi.mocked(useLocation).mockReturnValue({ hash } as any);
     };
 
     beforeEach(() => {
@@ -23,7 +24,7 @@ describe('useMailtoHash', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('Should call the onMailTo function with the mailto link', () => {
@@ -235,7 +236,7 @@ describe('useMailtoHash', () => {
         const { rerender } = renderHook(() => useMailtoHash({ isSearch: false }));
         expect(mockReturn).toHaveBeenCalledTimes(1);
 
-        useOnMailToMock.mockReturnValue(jest.fn());
+        useOnMailToMock.mockReturnValue(vi.fn());
         rerender();
 
         expect(mockReturn).toHaveBeenCalledTimes(1);

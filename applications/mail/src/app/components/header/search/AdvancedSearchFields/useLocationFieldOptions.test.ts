@@ -1,8 +1,8 @@
 import { IcEnvelopes } from '@proton/icons/icons/IcEnvelopes';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
-import { mockUseFolders } from '@proton/mail/testing/mockUseFolders';
-import { mockUseLabels } from '@proton/mail/testing/mockUseLabels';
-import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
+import { mockUseFolders } from '@proton/mail/testing/vitest/mockUseFolders';
+import { mockUseLabels } from '@proton/mail/testing/vitest/mockUseLabels';
+import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 
 import { mockUseScheduleSendFeature } from '../../../../helpers/tests/mockUseScheduleSendFeature';
@@ -10,15 +10,15 @@ import { isCustomFolder, isDefaultFolder, isLabel } from './advancesSearchFieldH
 import { useLocationFieldOptions } from './useLocationFieldOptions';
 import { expectedAll, expectedGrouped } from './useLocationFieldOptions.test.data';
 
-jest.mock('../../../categoryView/useCategoriesView', () => ({
-    useCategoriesView: jest.fn(() => ({
+vi.mock('../../../categoryView/useCategoriesView', () => ({
+    useCategoriesView: vi.fn(() => ({
         categoriesStore: [],
         activeCategoriesTabs: [],
     })),
 }));
 
-const mockUseRetentionPolicies = jest.fn(() => [[], false]);
-jest.mock('@proton/account/retentionPolicies/hooks', () => ({
+const mockUseRetentionPolicies = vi.fn(() => [[], false]);
+vi.mock('@proton/account/retentionPolicies/hooks', () => ({
     useRetentionPolicies: () => mockUseRetentionPolicies(),
 }));
 

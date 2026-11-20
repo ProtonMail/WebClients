@@ -40,15 +40,15 @@ describe('getResizeGripPosition', () => {
 });
 
 describe('useCardResize', () => {
-    const pressHandle = (handlePosition: ResizeHandlePosition, fromX: number, onResize = jest.fn()) => {
-        const preventDefault = jest.fn();
+    const pressHandle = (handlePosition: ResizeHandlePosition, fromX: number, onResize = vi.fn()) => {
+        const preventDefault = vi.fn();
         const hook = renderHook(() => useCardResize({ startWidth: 400, handlePosition, onResize }));
         hook.result.current({ clientX: fromX, preventDefault } as unknown as ReactMouseEvent);
         return { ...hook, preventDefault };
     };
 
     const drag = (handlePosition: ResizeHandlePosition, fromX: number, toX: number) => {
-        const onResize = jest.fn();
+        const onResize = vi.fn();
         pressHandle(handlePosition, fromX, onResize);
         document.dispatchEvent(new MouseEvent('mousemove', { clientX: toX }));
         document.dispatchEvent(new MouseEvent('mouseup'));
@@ -74,7 +74,7 @@ describe('useCardResize', () => {
     });
 
     it('ends a held drag when the handle unmounts', () => {
-        const onResize = jest.fn();
+        const onResize = vi.fn();
         const { unmount } = pressHandle(ResizeHandlePosition.RIGHT, 500, onResize);
 
         unmount();

@@ -33,7 +33,7 @@ const buildSavedContact = (value?: Partial<ContactMetadata>): ContactMetadata =>
 
 const setUp = (saved: ContactMetadata | undefined = buildSavedContact()) => {
     const references = createReferenceRegistry();
-    const saveVCardContact = jest.fn().mockResolvedValue(saved);
+    const saveVCardContact = vi.fn().mockResolvedValue(saved);
 
     return { references, saveVCardContact, deps: { saveVCardContact } as unknown as MailToolDeps };
 };
@@ -214,7 +214,7 @@ describe('addContactCardRenderer', () => {
 // The hand-off to the app's own contact editor: the payload arm `DrawerContactModals` destructures.
 describe('openContactEditor', () => {
     it('posts the proposed contact as a vCard the editor opens prefilled', () => {
-        const postMessage = jest.spyOn(window, 'postMessage').mockImplementation(() => {});
+        const postMessage = vi.spyOn(window, 'postMessage').mockImplementation(() => {});
 
         openContactEditor({ name: 'Ada Lovelace', firstName: 'Ada', lastName: 'Lovelace', email: 'ada@example.com' });
 

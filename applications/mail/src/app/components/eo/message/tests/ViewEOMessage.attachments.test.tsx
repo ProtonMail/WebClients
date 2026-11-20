@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the message content iframe needs iframe.contentDocument, which happy-dom lacks
 import { fireEvent, waitFor, within } from '@testing-library/react';
 
 import { MimeImage } from '@proton/file-icons/icons/MimeImage';
@@ -90,7 +92,7 @@ describe('Encrypted Outside message attachments', () => {
     });
 
     it('should open preview when clicking', async () => {
-        window.URL.createObjectURL = jest.fn();
+        window.URL.createObjectURL = vi.fn();
 
         const { getAllByTestId } = await setup({ attachments: Attachments, numAttachments: NumAttachments });
 

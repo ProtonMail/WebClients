@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { ApiImportProvider, ApiImporterState, ApiReportState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
 import type { Report, ReportSummary } from '@proton/activation/src/logic/reports/reports.interface';
@@ -21,8 +23,8 @@ import {
     waitForFreeScreen,
 } from './byoeInboxCleanup';
 
-jest.mock('@proton/shared/lib/busy/busy', () => ({ domIsBusy: jest.fn() }));
-jest.mock('@proton/features/reducer', () => ({ fetchFeatures: jest.fn() }));
+vi.mock('@proton/shared/lib/busy/busy', () => ({ domIsBusy: vi.fn() }));
+vi.mock('@proton/features/reducer', () => ({ fetchFeatures: vi.fn() }));
 
 const withoutOneClick = (subscription: NewsletterSubscription): NewsletterSubscription => ({
     ...subscription,
@@ -30,7 +32,7 @@ const withoutOneClick = (subscription: NewsletterSubscription): NewsletterSubscr
 });
 
 const mockSubscriptionsResponse = (
-    mockedApi: jest.Mock,
+    mockedApi: Mock,
     subscriptions: NewsletterSubscription[],
     nextPage: string | null = null
 ) => {
@@ -45,7 +47,7 @@ const mockSubscriptionsResponse = (
 
 describe('getBYOEInboxCleanupSenders', () => {
     it('asks quietly for active, non-spam senders, never read first, then read longest ago, then most unread', async () => {
-        const mockedApi = jest.fn();
+        const mockedApi = vi.fn();
         mockSubscriptionsResponse(mockedApi, []);
 
         await getBYOEInboxCleanupSenders(mockedApi);
@@ -62,7 +64,7 @@ describe('getBYOEInboxCleanupSenders', () => {
     });
 
     it("keeps only one-click senders, in the server's order", async () => {
-        const mockedApi = jest.fn();
+        const mockedApi = vi.fn();
         const [first, second, third, fourth, fifth] = generateSubscriptionList(5);
         mockSubscriptionsResponse(mockedApi, [first, withoutOneClick(second), third, withoutOneClick(fourth), fifth]);
 
@@ -72,7 +74,7 @@ describe('getBYOEInboxCleanupSenders', () => {
     });
 
     it('keeps a sender that offers one-click alongside other ways to unsubscribe', async () => {
-        const mockedApi = jest.fn();
+        const mockedApi = vi.fn();
         const sender = {
             ...activeSubscription,
             UnsubscribeMethods: {
@@ -89,7 +91,7 @@ describe('getBYOEInboxCleanupSenders', () => {
     });
 
     it('offers at most ten', async () => {
-        const mockedApi = jest.fn();
+        const mockedApi = vi.fn();
         const subscriptions = generateSubscriptionList(25);
         mockSubscriptionsResponse(mockedApi, subscriptions);
 
@@ -100,7 +102,7 @@ describe('getBYOEInboxCleanupSenders', () => {
     });
 
     it('offers fewer when fewer qualify, without asking for another page', async () => {
-        const mockedApi = jest.fn();
+        const mockedApi = vi.fn();
         const subscriptions = generateSubscriptionList(100).map((subscription, index) =>
             index < 3 ? subscription : withoutOneClick(subscription)
         );
@@ -113,7 +115,7 @@ describe('getBYOEInboxCleanupSenders', () => {
     });
 
     it('returns an empty list, not an error, when none of the subscriptions support one-click', async () => {
-        const mockedApi = jest.fn();
+        const mockedApi = vi.fn();
         mockSubscriptionsResponse(mockedApi, generateSubscriptionList(100).map(withoutOneClick), 'PageSize=100');
 
         const senders = await getBYOEInboxCleanupSenders(mockedApi);
@@ -123,7 +125,7 @@ describe('getBYOEInboxCleanupSenders', () => {
     });
 
     it('returns an empty list when the person has no subscriptions', async () => {
-        const mockedApi = jest.fn();
+        const mockedApi = vi.fn();
         mockSubscriptionsResponse(mockedApi, []);
 
         const senders = await getBYOEInboxCleanupSenders(mockedApi);
@@ -133,7 +135,7 @@ describe('getBYOEInboxCleanupSenders', () => {
     });
 
     it('rejects when loading the subscriptions fails', async () => {
-        const mockedApi = jest.fn();
+        const mockedApi = vi.fn();
         mockedApi.mockRejectedValueOnce(new Error('Network error'));
 
         await expect(getBYOEInboxCleanupSenders(mockedApi)).rejects.toThrow('Network error');
@@ -169,7 +171,7 @@ describe('cleanUpBYOEInboxSenders', () => {
         ruleFails = [],
         archiveFails = [],
     }: FakeServerOptions = {}) => {
-        return jest.fn(async ({ url, data }: Request) => {
+        return vi.fn(async ({ url, data }: Request) => {
             const subscriptionID = getSubscriptionID(url);
             if (url.endsWith('/unsubscribe')) {
                 if (unsubscribeFails.includes(subscriptionID)) {
@@ -196,24 +198,24 @@ describe('cleanUpBYOEInboxSenders', () => {
         });
     };
 
-    const getRequests = (api: jest.Mock) => {
-        return api.mock.calls.map(([request]: [Request]) => request);
+    const getRequests = (api: Mock) => {
+        return (api.mock.calls as [Request][]).map(([request]) => request);
     };
 
-    const getUnsubscribedIDs = (api: jest.Mock) => {
+    const getUnsubscribedIDs = (api: Mock) => {
         return getRequests(api)
             .filter(({ url }) => url.endsWith('/unsubscribe'))
             .map(({ url }) => getSubscriptionID(url));
     };
 
-    const getFilterRequests = (api: jest.Mock) => {
+    const getFilterRequests = (api: Mock) => {
         return getRequests(api)
             .filter(({ url }) => url.endsWith('/filter'))
             .map(({ url, data }) => ({ subscriptionID: getSubscriptionID(url), applyTo: data?.ApplyTo }));
     };
 
     const run = (
-        api: jest.Mock,
+        api: Mock,
         subscriptions: NewsletterSubscription[],
         { archive = true, applyToFuture = false, progress = new Map() as BYOEInboxCleanupProgress } = {}
     ) => {
@@ -635,46 +637,46 @@ const createDeferred = <T>() => {
 
 describe('waitForFreeScreen', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.useFakeTimers();
+        vi.clearAllMocks();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('resolves straight away when the screen is free', async () => {
-        jest.mocked(domIsBusy).mockReturnValue(false);
+        vi.mocked(domIsBusy).mockReturnValue(false);
 
         const wait = trackSettled(waitForFreeScreen(new AbortController().signal));
-        await jest.advanceTimersByTimeAsync(0);
+        await vi.advanceTimersByTimeAsync(0);
 
         expect(wait.settled).toBe(true);
         expect(domIsBusy).toHaveBeenCalledTimes(1);
     });
 
     it('checks every second with no time limit while the screen is busy, and resolves once it is free', async () => {
-        jest.mocked(domIsBusy).mockReturnValue(true);
+        vi.mocked(domIsBusy).mockReturnValue(true);
 
         const wait = trackSettled(waitForFreeScreen(new AbortController().signal));
-        await jest.advanceTimersByTimeAsync(60 * SECOND);
+        await vi.advanceTimersByTimeAsync(60 * SECOND);
 
         expect(domIsBusy).toHaveBeenCalledTimes(61);
         expect(wait.settled).toBe(false);
 
-        jest.mocked(domIsBusy).mockReturnValue(false);
-        await jest.advanceTimersByTimeAsync(SECOND);
+        vi.mocked(domIsBusy).mockReturnValue(false);
+        await vi.advanceTimersByTimeAsync(SECOND);
 
         expect(wait.settled).toBe(true);
     });
 
     it('stops checking and resolves when aborted', async () => {
-        jest.mocked(domIsBusy).mockReturnValue(true);
+        vi.mocked(domIsBusy).mockReturnValue(true);
         const controller = new AbortController();
 
         const wait = trackSettled(waitForFreeScreen(controller.signal));
         controller.abort();
-        await jest.advanceTimersByTimeAsync(3 * SECOND);
+        await vi.advanceTimersByTimeAsync(3 * SECOND);
 
         expect(wait.settled).toBe(true);
         expect(domIsBusy).toHaveBeenCalledTimes(1);
@@ -686,37 +688,37 @@ describe('loadSendersWhenFree', () => {
     const due = { [FeatureCode.BYOEInboxCleanupModal]: { Value: true } };
     const notDue = { [FeatureCode.BYOEInboxCleanupModal]: { Value: false } };
 
-    const mockDispatch = jest.fn();
-    const mockApi = jest.fn();
+    const mockDispatch = vi.fn();
+    const mockApi = vi.fn();
 
     const load = (signal = new AbortController().signal) => {
         return loadSendersWhenFree({ dispatch: mockDispatch, api: mockApi, signal });
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.useFakeTimers();
-        jest.mocked(domIsBusy).mockReturnValue(false);
-        jest.mocked(fetchFeatures).mockImplementation(() => ({ type: 'fetchFeatures' }) as any);
+        vi.clearAllMocks();
+        vi.useFakeTimers();
+        vi.mocked(domIsBusy).mockReturnValue(false);
+        vi.mocked(fetchFeatures).mockImplementation(() => ({ type: 'fetchFeatures' }) as any);
         mockDispatch.mockResolvedValue(due);
         mockSubscriptionsResponse(mockApi, senders);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('reads the cleanup feature fresh from the server only once the screen is free, then returns the senders', async () => {
-        jest.mocked(domIsBusy).mockReturnValue(true);
+        vi.mocked(domIsBusy).mockReturnValue(true);
 
         const result = trackSettled(load());
-        await jest.advanceTimersByTimeAsync(SECOND);
+        await vi.advanceTimersByTimeAsync(SECOND);
 
         expect(mockDispatch).not.toHaveBeenCalled();
         expect(mockApi).not.toHaveBeenCalled();
 
-        jest.mocked(domIsBusy).mockReturnValue(false);
-        await jest.advanceTimersByTimeAsync(SECOND);
+        vi.mocked(domIsBusy).mockReturnValue(false);
+        await vi.advanceTimersByTimeAsync(SECOND);
 
         expect(fetchFeatures).toHaveBeenCalledWith([FeatureCode.BYOEInboxCleanupModal], { cache: CacheType.None });
         expect(mockDispatch).toHaveBeenCalledWith({ type: 'fetchFeatures' });
@@ -732,7 +734,7 @@ describe('loadSendersWhenFree', () => {
     });
 
     it('returns undefined and reads nothing when aborted while waiting for a free screen', async () => {
-        jest.mocked(domIsBusy).mockReturnValue(true);
+        vi.mocked(domIsBusy).mockReturnValue(true);
         const controller = new AbortController();
 
         const result = load(controller.signal);
@@ -748,7 +750,7 @@ describe('loadSendersWhenFree', () => {
         const controller = new AbortController();
 
         const result = load(controller.signal);
-        await jest.advanceTimersByTimeAsync(0);
+        await vi.advanceTimersByTimeAsync(0);
         controller.abort();
         read.resolve(due);
 
@@ -763,7 +765,7 @@ describe('loadSendersWhenFree', () => {
         const controller = new AbortController();
 
         const result = load(controller.signal);
-        await jest.advanceTimersByTimeAsync(0);
+        await vi.advanceTimersByTimeAsync(0);
         controller.abort();
         sendersResponse.resolve({ NewsletterSubscriptions: senders, PageInfo: { Total: 2, NextPage: null } });
 

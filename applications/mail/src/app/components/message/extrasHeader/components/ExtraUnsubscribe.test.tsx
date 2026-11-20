@@ -1,5 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
+import type { Mock } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
@@ -23,40 +24,40 @@ import ExtraUnsubscribe from './ExtraUnsubscribe';
 
 loudRejection();
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
     ua: { ua: 'UserAgent' },
-    detectStorageCapabilities: jest.fn(() =>
+    detectStorageCapabilities: vi.fn(() =>
         Promise.resolve({
             isAccessible: true,
             hasIndexedDB: true,
         })
     ),
-    isMac: jest.fn(() => false),
-    openNewTab: jest.fn(),
-    isMobile: jest.fn(),
-    isFirefoxLessThan55: jest.fn(),
-    getIsIframe: jest.fn(() => false),
-    isLinux: jest.fn(() => false),
+    isMac: vi.fn(() => false),
+    openNewTab: vi.fn(),
+    isMobile: vi.fn(),
+    isFirefoxLessThan55: vi.fn(),
+    getIsIframe: vi.fn(() => false),
+    isLinux: vi.fn(() => false),
 }));
 
 // Mock idb library
-jest.mock('idb', () => ({
-    openDB: jest.fn(() =>
+vi.mock('idb', () => ({
+    openDB: vi.fn(() =>
         Promise.resolve({
-            close: jest.fn(),
-            createObjectStore: jest.fn(),
-            transaction: jest.fn(),
-            objectStore: jest.fn(),
-            put: jest.fn(),
-            get: jest.fn(),
-            delete: jest.fn(),
+            close: vi.fn(),
+            createObjectStore: vi.fn(),
+            transaction: vi.fn(),
+            objectStore: vi.fn(),
+            put: vi.fn(),
+            get: vi.fn(),
+            delete: vi.fn(),
         })
     ),
-    deleteDB: jest.fn(() => Promise.resolve()),
+    deleteDB: vi.fn(() => Promise.resolve()),
 }));
 
-jest.mock('@proton/encrypted-search/esIDB/indexedDB', () => ({
-    hasESDB: jest.fn(() => false),
+vi.mock('@proton/encrypted-search/esIDB/indexedDB', () => ({
+    hasESDB: vi.fn(() => false),
 }));
 
 describe('Unsubscribe banner', () => {
@@ -82,8 +83,8 @@ describe('Unsubscribe banner', () => {
     afterEach(clearAll);
 
     it('should show the unsubscribe banner with one click method', async () => {
-        const unsubscribeCall = jest.fn();
-        const markUnsubscribedCall = jest.fn();
+        const unsubscribeCall = vi.fn();
+        const markUnsubscribedCall = vi.fn();
 
         minimalCache();
         addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
@@ -129,9 +130,9 @@ describe('Unsubscribe banner', () => {
         const keys = await generateKeys('me', toAddress);
         const address = getCompleteAddress({ ID: toAddressID, Email: toAddress });
 
-        const createCall = jest.fn(() => ({ Message: { ID: messageID, AddressID: address.ID, Attachments: [] } }));
-        const sendCall = jest.fn(() => ({ Sent: {} }));
-        const markUnsubscribedCall = jest.fn();
+        const createCall = vi.fn(() => ({ Message: { ID: messageID, AddressID: address.ID, Attachments: [] } }));
+        const sendCall = vi.fn(() => ({ Sent: {} }));
+        const markUnsubscribedCall = vi.fn();
 
         minimalCache();
         addApiKeys(false, mailto, []);
@@ -178,8 +179,8 @@ describe('Unsubscribe banner', () => {
     });
 
     it('should show the unsubscribe banner with http client method', async () => {
-        const markUnsubscribedCall = jest.fn();
-        const openNewTabMock = openNewTab as jest.Mock;
+        const markUnsubscribedCall = vi.fn();
+        const openNewTabMock = openNewTab as Mock;
 
         minimalCache();
         addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
@@ -220,8 +221,8 @@ describe('Unsubscribe banner', () => {
     });
 
     it('should show an extra modal on unsubscribe', async () => {
-        const unsubscribeCall = jest.fn();
-        const markUnsubscribedCall = jest.fn();
+        const unsubscribeCall = vi.fn();
+        const markUnsubscribedCall = vi.fn();
 
         minimalCache();
         addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
@@ -262,8 +263,8 @@ describe('Unsubscribe banner', () => {
     });
 
     it('should not show an extra modal when the message was coming from an official Proton address', async () => {
-        const unsubscribeCall = jest.fn();
-        const markUnsubscribedCall = jest.fn();
+        const unsubscribeCall = vi.fn();
+        const markUnsubscribedCall = vi.fn();
 
         minimalCache();
         addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
@@ -305,8 +306,8 @@ describe('Unsubscribe banner', () => {
     });
 
     it('should not show the unsubscribe button in the newsletter subscriptions view', async () => {
-        const unsubscribeCall = jest.fn();
-        const markUnsubscribedCall = jest.fn();
+        const unsubscribeCall = vi.fn();
+        const markUnsubscribedCall = vi.fn();
 
         minimalCache();
         addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);

@@ -13,8 +13,8 @@ const renderMotion = (props: Partial<typeof initialProps> = {}) => {
 };
 
 describe('useCatMotion', () => {
-    beforeEach(() => jest.useFakeTimers());
-    afterEach(() => jest.useRealTimers());
+    beforeEach(() => vi.useFakeTimers());
+    afterEach(() => vi.useRealTimers());
 
     it('jumps out when hidden and back in when revealed, holding each jump until it ends', () => {
         const { result, rerender } = renderMotion();

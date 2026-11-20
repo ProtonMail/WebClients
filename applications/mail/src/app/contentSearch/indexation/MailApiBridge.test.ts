@@ -6,11 +6,11 @@ import { type BatchMessageDecryptionFunction, MailApiBridge } from './MailApiBri
 type ApiConfig = { data?: { MessageIDs: string[] } };
 
 const makeLogger = () => {
-    return { trace: jest.fn(), debug: jest.fn(), info: jest.fn(), warn: jest.fn(), error: jest.fn(), log: jest.fn() };
+    return { trace: vi.fn(), debug: vi.fn(), info: vi.fn(), warn: vi.fn(), error: vi.fn(), log: vi.fn() };
 };
 
 const batchApi = (returnedIds?: string[]) => {
-    return jest.fn(async ({ data }: ApiConfig) => {
+    return vi.fn(async ({ data }: ApiConfig) => {
         return {
             Code: 1000,
             Messages: (returnedIds ?? data!.MessageIDs).map((ID) => {
@@ -109,7 +109,7 @@ describe('MailApiBridge', () => {
 
     describe('fetchEventUpdate', () => {
         const eventApi = (event: object) => {
-            return jest.fn(async () => {
+            return vi.fn(async () => {
                 return { Code: 1000, ...event };
             });
         };

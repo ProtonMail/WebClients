@@ -1,4 +1,5 @@
 import { logger } from '@protontech/logger';
+import type { Mock } from 'vitest';
 
 import { deleteAssistantCachedFiles } from '@proton/llm/lib/downloader';
 
@@ -7,19 +8,19 @@ import { cleanData, cleanDataLogout } from './cleanData';
 
 // These tests pin down cleanData's option gating: each option drives exactly its own cleanup and
 // nothing else, and the injected `esDelete` (not a raw DB drop) is what wipes the v1 ES database.
-jest.mock('@protontech/logger', () => ({
+vi.mock('@protontech/logger', () => ({
     logger: {
-        isInitialized: jest.fn().mockReturnValue(true),
-        clearLogs: jest.fn(),
+        isInitialized: vi.fn().mockReturnValue(true),
+        clearLogs: vi.fn(),
     },
 }));
 
-jest.mock('@proton/llm/lib/downloader', () => ({
-    deleteAssistantCachedFiles: jest.fn(),
+vi.mock('@proton/llm/lib/downloader', () => ({
+    deleteAssistantCachedFiles: vi.fn(),
 }));
 
-jest.mock('../contentSearch/indexation/IndexService', () => ({
-    getExistingIndexService: jest.fn().mockReturnValue({ deleteIndex: jest.fn() }),
+vi.mock('../contentSearch/indexation/IndexService', () => ({
+    getExistingIndexService: vi.fn().mockReturnValue({ deleteIndex: vi.fn() }),
 }));
 
 const userID = 'user-id';
@@ -27,8 +28,8 @@ const userID = 'user-id';
 describe('data cleaning helpers', () => {
     describe('cleanData', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
-            (getExistingIndexService as jest.Mock).mockReturnValue({ deleteIndex: jest.fn() });
+            vi.clearAllMocks();
+            (getExistingIndexService as Mock).mockReturnValue({ deleteIndex: vi.fn() });
         });
 
         it('clears logs when the logs option is set', async () => {
@@ -42,20 +43,20 @@ describe('data cleaning helpers', () => {
         });
 
         it('does not clear logs when the logger was never initialized', async () => {
-            (logger.isInitialized as jest.Mock).mockReturnValueOnce(false);
+            (logger.isInitialized as Mock).mockReturnValueOnce(false);
             await cleanData(userID, { logs: true });
             expect(logger.clearLogs).not.toHaveBeenCalled();
         });
 
         it('deletes the content search index through the index service', async () => {
-            const deleteIndex = jest.fn();
-            (getExistingIndexService as jest.Mock).mockReturnValue({ deleteIndex });
+            const deleteIndex = vi.fn();
+            (getExistingIndexService as Mock).mockReturnValue({ deleteIndex });
             await cleanData(userID, { contentSearch: true });
             expect(deleteIndex).toHaveBeenCalledTimes(1);
         });
 
         it('skips without error when no index service exists', async () => {
-            (getExistingIndexService as jest.Mock).mockReturnValue(undefined);
+            (getExistingIndexService as Mock).mockReturnValue(undefined);
             await expect(cleanData(userID, { contentSearch: true })).resolves.toBeUndefined();
         });
 
@@ -65,7 +66,7 @@ describe('data cleaning helpers', () => {
         });
 
         it('uses the injected esDelete to wipe the v1 ES database', async () => {
-            const esDelete = jest.fn();
+            const esDelete = vi.fn();
             await cleanData(userID, { esDelete });
             expect(esDelete).toHaveBeenCalledTimes(1);
         });
@@ -81,8 +82,8 @@ describe('data cleaning helpers', () => {
         });
 
         it('settles when a cleanup rejects', async () => {
-            (getExistingIndexService as jest.Mock).mockReturnValue({
-                deleteIndex: jest.fn().mockRejectedValue(new Error('boom')),
+            (getExistingIndexService as Mock).mockReturnValue({
+                deleteIndex: vi.fn().mockRejectedValue(new Error('boom')),
             });
             await expect(cleanData(userID, { contentSearch: true })).resolves.toBeUndefined();
         });

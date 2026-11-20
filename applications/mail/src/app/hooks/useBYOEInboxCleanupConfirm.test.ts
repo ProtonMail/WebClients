@@ -1,8 +1,9 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
-import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
-import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
+import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
 
 import { generateSubscriptionList } from '../components/view/NewsletterSubscription/testData';
@@ -18,7 +19,7 @@ const getSubscriptionID = (url: string) => {
 };
 
 const createFakeApi = (unsubscribeFails: string[] = []) => {
-    return jest.fn(async ({ url }: Request) => {
+    return vi.fn(async ({ url }: Request) => {
         if (url.endsWith('/unsubscribe') && unsubscribeFails.includes(getSubscriptionID(url))) {
             throw Object.assign(new Error('api error'), { status: 422, data: { Code: 2501, Error: 'api error' } });
         }
@@ -26,15 +27,15 @@ const createFakeApi = (unsubscribeFails: string[] = []) => {
     });
 };
 
-const getRequestedURLs = (api: jest.Mock) => {
-    return api.mock.calls.map(([{ url }]: [Request]) => url);
+const getRequestedURLs = (api: Mock) => {
+    return (api.mock.calls as [Request][]).map(([{ url }]) => url);
 };
 
 describe('useBYOEInboxCleanupConfirm', () => {
-    const createNotification = jest.fn();
+    const createNotification = vi.fn();
 
     interface SetupOptions {
-        api?: jest.Mock;
+        api?: Mock;
         hasPaidMail?: boolean;
     }
 
@@ -46,7 +47,7 @@ describe('useBYOEInboxCleanupConfirm', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it.each([
@@ -135,7 +136,7 @@ describe('useBYOEInboxCleanupConfirm', () => {
 
     it("still shows the message when the requests finish after the hook's component has gone", async () => {
         let finishRequest = () => {};
-        const api = jest.fn(() => {
+        const api = vi.fn(() => {
             return new Promise((resolve) => {
                 finishRequest = () => resolve({});
             });

@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the rooster editor iframe needs iframe.contentDocument, which happy-dom lacks
 import { fireEvent } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
@@ -22,7 +24,7 @@ import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Compose
 const orignalGetSelection = global.getSelection;
 
 beforeAll(() => {
-    global.getSelection = jest.fn();
+    global.getSelection = vi.fn();
 });
 
 afterAll(() => {
@@ -109,7 +111,7 @@ describe('Composer hotkeys', () => {
     it('should send on meta + enter', async () => {
         const { ctrlEnter } = await setup();
 
-        const sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
+        const sendSpy = vi.fn(() => Promise.resolve({ Sent: {} }));
         addApiMock(`mail/v4/messages/${ID}`, sendSpy, 'post');
 
         ctrlEnter();
@@ -120,7 +122,7 @@ describe('Composer hotkeys', () => {
     });
 
     it('should delete on meta + alt + enter', async () => {
-        const deleteSpy = jest.fn(() => Promise.resolve({}));
+        const deleteSpy = vi.fn(() => Promise.resolve({}));
         addApiMock(`mail/v4/messages/delete`, deleteSpy, 'put');
 
         const { ctrlAltBackspace } = await setup();
@@ -133,7 +135,7 @@ describe('Composer hotkeys', () => {
     });
 
     it('should save on meta + S', async () => {
-        const saveSpy = jest.fn(() => Promise.resolve({}));
+        const saveSpy = vi.fn(() => Promise.resolve({}));
         addApiMock(`mail/v4/messages/${ID}`, saveSpy, 'put');
 
         const { ctrlS } = await setup();
@@ -149,7 +151,7 @@ describe('Composer hotkeys', () => {
         const { getByTestId, ctrlShftA } = await setup();
 
         const attachmentsButton = getByTestId('composer:attachment-button');
-        const attachmentSpy = jest.fn();
+        const attachmentSpy = vi.fn();
         attachmentsButton.addEventListener('click', attachmentSpy);
 
         ctrlShftA();

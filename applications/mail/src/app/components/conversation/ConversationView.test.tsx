@@ -24,14 +24,14 @@ import {
 } from '../../store/conversations/conversationsActions';
 import ConversationView from './ConversationView';
 
-jest.mock('../../hooks/message/useGetMessageKeys');
+vi.mock('../../hooks/message/useGetMessageKeys');
 const mockUseGetMessageKeys = () => {
     // empty return value since the result is not used in these tests; if this were to change,
     // this mock should be dropped a valid key setup should be put in place.
-    jest.mocked(useGetMessageKeys).mockReturnValue(async () => ({}) as PublicPrivateKey);
+    vi.mocked(useGetMessageKeys).mockReturnValue(async () => ({}) as PublicPrivateKey);
 };
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
 describe('ConversationView', () => {
     const props = {
@@ -39,10 +39,10 @@ describe('ConversationView', () => {
         labelID: 'labelID',
         conversationID: 'conversationID',
         mailSettings: {} as MailSettings,
-        onBack: jest.fn(),
-        onCompose: jest.fn(),
+        onBack: vi.fn(),
+        onCompose: vi.fn(),
         breakpoints: mockDefaultBreakpoints,
-        onMessageReady: jest.fn(),
+        onMessageReady: vi.fn(),
         columnLayout: true,
         isComposerOpened: false,
         containerRef: { current: null },
@@ -115,7 +115,7 @@ describe('ConversationView', () => {
     beforeEach(clearAll);
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('Store / State management', () => {
@@ -226,11 +226,11 @@ describe('ConversationView', () => {
 
     describe('Auto reload', () => {
         it('should reload a conversation if first request failed', async () => {
-            jest.useFakeTimers({ advanceTimers: true });
+            vi.useFakeTimers({ shouldAdvanceTime: true });
             mockConsole();
 
             const response = { Conversation: conversation, Messages: [message] };
-            const getSpy = jest.fn(() => {
+            const getSpy = vi.fn(() => {
                 if (getSpy.mock.calls.length === 1) {
                     const error = new Error();
                     error.name = 'NetworkError';
@@ -246,7 +246,7 @@ describe('ConversationView', () => {
             expect(header.getAttribute('class')).toContain('is-loading');
 
             await act(async () => {
-                await jest.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
+                await vi.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
             });
             await waitFor(() => {
                 expect(getSpy).toHaveBeenCalledTimes(2);
@@ -261,10 +261,10 @@ describe('ConversationView', () => {
         });
 
         it('should show error banner after 4 attemps', async () => {
-            jest.useFakeTimers({ advanceTimers: true });
+            vi.useFakeTimers({ shouldAdvanceTime: true });
             mockConsole();
 
-            const getSpy = jest.fn(() => {
+            const getSpy = vi.fn(() => {
                 const error = new Error();
                 error.name = 'NetworkError';
                 throw error;
@@ -274,15 +274,15 @@ describe('ConversationView', () => {
             await setup({});
 
             await act(async () => {
-                await jest.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
+                await vi.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
             });
             await waitForSpyCall({ spy: getSpy, callTimes: 2 });
             await act(async () => {
-                await jest.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
+                await vi.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
             });
             await waitForSpyCall({ spy: getSpy, callTimes: 3 });
             await act(async () => {
-                await jest.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
+                await vi.advanceTimersByTimeAsync(LOAD_RETRY_DELAY);
             });
             await waitForSpyCall({ spy: getSpy, callTimes: 4 });
 
@@ -290,7 +290,7 @@ describe('ConversationView', () => {
             screen.getByText('Try again');
             expect(getSpy).toHaveBeenCalledTimes(4);
 
-            jest.runAllTimers();
+            vi.runAllTimers();
         });
 
         it('should retry when using the Try again button', async () => {
@@ -386,7 +386,7 @@ describe('ConversationView', () => {
             addApiKeys(false, senderEmail, []);
 
             mockUseGetMessageKeys(); // opening the conversation will trigger message initialization calls
-            const messageMock = jest.fn(() => ({
+            const messageMock = vi.fn(() => ({
                 Message: { ID: message.ID, Attachments: [], Sender: { Name: '', Address: senderEmail } },
             }));
             addApiMock(`mail/v4/messages/${message.ID}`, messageMock);

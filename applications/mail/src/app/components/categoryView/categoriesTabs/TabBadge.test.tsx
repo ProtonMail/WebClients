@@ -6,15 +6,15 @@ import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { TabBadge } from './TabBadge';
 import { TabState } from './tabsInterface';
 
-jest.mock('@proton/mail/store/mailSettings/hooks');
+vi.mock('@proton/mail/store/mailSettings/hooks');
 
 describe('TabBadge', () => {
     beforeEach(() => {
-        jest.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
+        vi.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('shows the count when shouldShowCounter is true', () => {

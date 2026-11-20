@@ -289,7 +289,7 @@ describe('Importer', () => {
             1
         );
 
-        // if this regresses it doesn't fail, it hangs until jest's timeout
+        // if this regresses it doesn't fail, it hangs until the test timeout
         await importer.run();
         srcReader.close();
 

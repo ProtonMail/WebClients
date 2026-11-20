@@ -63,7 +63,7 @@ export const props = {
     userSettings: {} as UserSettings,
     breakpoints: mockDefaultBreakpoints,
     elementID: undefined,
-    onCompose: jest.fn(),
+    onCompose: vi.fn(),
     isComposerOpened: false,
     drawerSidebarButtons: [] as ReactElement[],
     drawerSettingsButton: null as ReactNode,

@@ -10,17 +10,17 @@ import CatSprite from './CatSprite';
 import LumoPet from './LumoPet';
 import { CatJump, CatPose, CatRun, CatTrick } from './catPose';
 
-jest.mock('@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext', () => ({ useLumoAgentDrawer: jest.fn() }));
-jest.mock('./CatSprite', () => ({ __esModule: true, default: jest.fn(() => null) }));
+vi.mock('@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext', () => ({ useLumoAgentDrawer: vi.fn() }));
+vi.mock('./CatSprite', () => ({ __esModule: true, default: vi.fn(() => null) }));
 
-const onToggle = jest.fn();
-const onMove = jest.fn();
-const onDock = jest.fn();
-const onNewChat = jest.fn();
-const onHide = jest.fn();
-const onReveal = jest.fn();
-const onJumpEnd = jest.fn();
-const openDebugReport = jest.fn();
+const onToggle = vi.fn();
+const onMove = vi.fn();
+const onDock = vi.fn();
+const onNewChat = vi.fn();
+const onHide = vi.fn();
+const onReveal = vi.fn();
+const onJumpEnd = vi.fn();
+const openDebugReport = vi.fn();
 
 interface Setup {
     isPanelOpen?: boolean;
@@ -47,7 +47,7 @@ const pet = ({
     isBusy = false,
     lastChainEnd = null,
 }: Setup) => {
-    jest.mocked(useLumoAgentDrawer).mockReturnValue({
+    vi.mocked(useLumoAgentDrawer).mockReturnValue({
         items,
         isBusy,
         lastChainEnd,
@@ -87,18 +87,18 @@ const catButton = () => screen.getByRole('button', { name: 'Toggle Lumo' });
 const dock = (container: HTMLElement) => container.querySelector('.lumo-pet-dock');
 const catSlot = (container: HTMLElement) => container.querySelector('.lumo-pet-cat-slot')!;
 const menu = (container: HTMLElement) => container.querySelector('.lumo-pet-menu');
-const shownSprite = () => jest.mocked(CatSprite).mock.lastCall![0];
+const shownSprite = () => vi.mocked(CatSprite).mock.lastCall![0];
 const shownPose = () => shownSprite().pose;
 
 // Spied after lookup, because role queries call matches too
 const focusCat = (isFocusVisible: boolean) => {
     const button = catButton();
-    jest.spyOn(button, 'matches').mockReturnValue(isFocusVisible);
+    vi.spyOn(button, 'matches').mockReturnValue(isFocusVisible);
     fireEvent.focusIn(button);
     return button;
 };
 
-beforeEach(() => jest.clearAllMocks());
+beforeEach(() => vi.clearAllMocks());
 
 describe('LumoPet', () => {
     it('toggles the card on a click, never the menu', () => {
@@ -142,7 +142,7 @@ describe('LumoPet', () => {
     });
 
     it('closes only the menu on Escape, keeping the key from the page behind it', () => {
-        const pageKeyDown = jest.fn();
+        const pageKeyDown = vi.fn();
         document.addEventListener('keydown', pageKeyDown);
         const { container } = renderPet();
         const button = focusCat(true);
@@ -155,7 +155,7 @@ describe('LumoPet', () => {
     });
 
     it('lets Escape through to the page while the menu is shut', () => {
-        const pageKeyDown = jest.fn();
+        const pageKeyDown = vi.fn();
         document.addEventListener('keydown', pageKeyDown);
         renderPet();
 

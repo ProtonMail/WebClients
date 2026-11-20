@@ -28,12 +28,12 @@ type ApiConfig = {
 };
 
 const logger = {
-    trace: jest.fn(),
-    debug: jest.fn(),
-    info: jest.fn(),
-    warn: jest.fn(),
-    error: jest.fn(),
-    log: jest.fn(),
+    trace: vi.fn(),
+    debug: vi.fn(),
+    info: vi.fn(),
+    warn: vi.fn(),
+    error: vi.fn(),
+    log: vi.fn(),
 };
 
 type StoredMessage = { metadata: MessageMetadata; body: string };
@@ -166,12 +166,12 @@ const makeMailbox = (count: number, bodies: Record<number, string> = {}) =>
 
 const makeListener = () =>
     ({
-        reportHistoricProgress: jest.fn(),
-        reportIndexComplete: jest.fn(),
-        reportTaskStarted: jest.fn(),
-        reportTaskCompleted: jest.fn(),
-        reportError: jest.fn(),
-        log: jest.fn(),
+        reportHistoricProgress: vi.fn(),
+        reportIndexComplete: vi.fn(),
+        reportTaskStarted: vi.fn(),
+        reportTaskCompleted: vi.fn(),
+        reportError: vi.fn(),
+        log: vi.fn(),
     }) satisfies WorkerIndexListener;
 
 const searchKeyword = async (reader: IndexReader, keyword: string, labelIDs: string[] = []) => {
@@ -744,7 +744,7 @@ describe('IndexWorker', () => {
             await indexMailbox();
             fakeApi.addEvent('event-1');
             fakeApi.staleResponses.set('latest-event', 1);
-            const clearTimeout = jest.fn();
+            const clearTimeout = vi.fn();
             let backoff!: ExponentialBackoff;
             const waitStarted = new Promise<void>((resolve) => {
                 backoff = new ExponentialBackoff(1000, 30_000, {

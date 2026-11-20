@@ -3,9 +3,9 @@ import { fireEvent, screen } from '@testing-library/react';
 import { clearAll } from '../../../helpers/tests/helper';
 import { props, setup } from './Mailbox.test.helpers';
 
-jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+vi.mock('proton-mail/metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
-        return { stopELDTMetric: jest.fn() };
+        return { stopELDTMetric: vi.fn() };
     },
 }));
 

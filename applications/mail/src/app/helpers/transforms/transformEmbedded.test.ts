@@ -15,7 +15,7 @@ describe('transformEmbedded', () => {
         return transformEmbedded(
             message,
             mailSettings,
-            jest.fn(() => Promise.resolve([]))
+            vi.fn(() => Promise.resolve([]))
         );
     };
 

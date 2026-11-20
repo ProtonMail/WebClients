@@ -32,11 +32,11 @@ import { buildMailToolDeps } from './toolModule.test.helpers';
 import { LumoModelChoice } from './useLumoModelChoice';
 
 const buildTelemetry = (): LumoMailConfigTelemetry => ({
-    promptSent: jest.fn(),
-    chainEnded: jest.fn(),
-    confirmAnswered: jest.fn(),
-    toolSucceeded: jest.fn(),
-    toolFailed: jest.fn(),
+    promptSent: vi.fn(),
+    chainEnded: vi.fn(),
+    confirmAnswered: vi.fn(),
+    toolSucceeded: vi.fn(),
+    toolFailed: vi.fn(),
 });
 
 const getMaxModel = () => LumoModelChoice.MAX;
@@ -212,11 +212,11 @@ describe('the Mail config with the standalone prompt flag on', () => {
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('opens every user turn with the mail context of the moment it is sent', () => {
-        jest.useFakeTimers({ now: new Date(2026, 8, 30, 9, 5) });
+        vi.useFakeTimers({ now: new Date(2026, 8, 30, 9, 5) });
 
         const references = createReferenceRegistry();
 

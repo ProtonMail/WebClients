@@ -4,8 +4,8 @@ import type { MessageState } from '@proton/mail-message/store/messages/messagesT
 
 import ExtraErrors from './ExtraErrors';
 
-jest.mock('../../../../hooks/message/useLoadMessage', () => ({
-    useReloadMessage: () => jest.fn(),
+vi.mock('../../../../hooks/message/useLoadMessage', () => ({
+    useReloadMessage: () => vi.fn(),
 }));
 
 describe('Errors banner', () => {

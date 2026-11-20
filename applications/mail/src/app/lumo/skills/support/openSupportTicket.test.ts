@@ -23,7 +23,7 @@ describe('toBugModalPrefill', () => {
 
 describe('createOpenSupportTicketHandler', () => {
     it('posts the prefilled bug-modal event to this window at its own origin', async () => {
-        const postMessage = jest.spyOn(window, 'postMessage').mockImplementation(() => {});
+        const postMessage = vi.spyOn(window, 'postMessage').mockImplementation(() => {});
 
         await createOpenSupportTicketHandler()({ description: 'Unread count is wrong', category: null }, anyContext);
 

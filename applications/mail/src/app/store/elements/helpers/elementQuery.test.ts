@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
 import range from '@proton/utils/range';
 
@@ -23,7 +25,7 @@ const baseElementsStateParams: ElementsStateParams = {
 };
 
 const mockElementsApiCall = (
-    mockedApi: jest.Mock,
+    mockedApi: Mock,
     { start = 0, count = 50, total }: { start?: number; count?: number; total?: number } = {
         start: 0,
         count: 50,
@@ -57,7 +59,7 @@ describe('elementQuery.ts', () => {
         describe('when pageSize is 50 (matches `MAX_MESSAGES_FETCH_CHUNK_SIZE`)', () => {
             describe('when api returns empty Elements array', () => {
                 it('should return empty result', async () => {
-                    const mockedApi = jest.fn();
+                    const mockedApi = vi.fn();
 
                     const firstBatch = mockElementsApiCall(mockedApi, {
                         count: 0,
@@ -88,7 +90,7 @@ describe('elementQuery.ts', () => {
 
             describe('when there is less than 50 items to fetch', () => {
                 it('should perform only 1 call', async () => {
-                    const mockedApi = jest.fn();
+                    const mockedApi = vi.fn();
 
                     const firstBatch = mockElementsApiCall(mockedApi, {
                         count: 32,
@@ -119,7 +121,7 @@ describe('elementQuery.ts', () => {
 
             describe('when there are more than 50 items to fetch', () => {
                 it('should perform only 2 call, first + next', async () => {
-                    const mockedApi = jest.fn();
+                    const mockedApi = vi.fn();
 
                     mockElementsApiCall(mockedApi, {
                         total: 82,
@@ -158,7 +160,7 @@ describe('elementQuery.ts', () => {
 
             describe('when user is not on first page', () => {
                 it('should perform call accordingly', async () => {
-                    const mockedApi = jest.fn();
+                    const mockedApi = vi.fn();
 
                     const firstBatch = mockElementsApiCall(mockedApi, {
                         start: 150,
@@ -190,7 +192,7 @@ describe('elementQuery.ts', () => {
 
         describe('when pageSize is 100', () => {
             it('should perform 2 calls', async () => {
-                const mockedApi = jest.fn();
+                const mockedApi = vi.fn();
                 const clientPage = 0;
                 const settingsPageSize = 100;
 
@@ -221,7 +223,7 @@ describe('elementQuery.ts', () => {
 
         describe('when pageSize is 200', () => {
             it('should perform 2 calls', async () => {
-                const mockedApi = jest.fn();
+                const mockedApi = vi.fn();
 
                 mockElementsApiCall(mockedApi, { count: 200, total: 400 });
                 mockElementsApiCall(mockedApi, { start: 200, count: 200, total: 400 });
@@ -254,7 +256,7 @@ describe('elementQuery.ts', () => {
         describe('when user is in message view mode', () => {
             it('should call messages metadata call', async () => {
                 const conversationMode = false;
-                const mockedApi = jest.fn();
+                const mockedApi = vi.fn();
 
                 const firstBatch = mockElementsApiCall(mockedApi, { count: 32 }, 'Messages');
 

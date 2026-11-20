@@ -19,7 +19,7 @@ const message: MessageState = {
 
 describe('UTMTrackerModal', () => {
     it('should display the cleaned url and a copy button for it', async () => {
-        await mailTestRender(<UTMTrackerModal message={message} open onClose={jest.fn()} />);
+        await mailTestRender(<UTMTrackerModal message={message} open onClose={vi.fn()} />);
 
         const modal = await screen.findByTestId('utmTrackerModal:trackers');
 

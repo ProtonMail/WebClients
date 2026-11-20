@@ -1,4 +1,4 @@
-import { mockNotifications } from '@proton/components/testing/mockNotifications';
+import { mockNotifications } from '@proton/components/testing/vitest/mockNotifications';
 import type { ApiRateLimiter } from '@proton/shared/lib/api/apiRateLimiter';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -11,25 +11,25 @@ import { selectCurrentContextIdentifier } from './elementsSelectors';
 import { newElementsState } from './elementsSlice';
 import type { ElementsStateParams } from './elementsTypes';
 
-const mockApiFn = jest.fn();
+const mockApiFn = vi.fn();
 const mockApi = Object.assign(mockApiFn, {
     UID: undefined,
-    addEventListener: jest.fn(),
-    apiRateLimiter: jest.fn() as unknown as ApiRateLimiter,
-    removeEventListener: jest.fn(),
+    addEventListener: vi.fn(),
+    apiRateLimiter: vi.fn() as unknown as ApiRateLimiter,
+    removeEventListener: vi.fn(),
 });
 
-const mockDispatch = jest.fn();
+const mockDispatch = vi.fn();
 
 const mockExtra: MailThunkExtra['extra'] = {
     api: mockApi,
     calendarModelEventManager: {} as any,
     notificationManager: {} as any,
-    startSearchSession: jest.fn(),
-    endSearchSession: jest.fn(),
+    startSearchSession: vi.fn(),
+    endSearchSession: vi.fn(),
     eventManager: {} as any,
     history: {} as any,
-    unleashClient: { isEnabled: jest.fn().mockReturnValue(false) } as any,
+    unleashClient: { isEnabled: vi.fn().mockReturnValue(false) } as any,
     authentication: {} as any,
     config: {} as any,
 };
@@ -60,17 +60,17 @@ const mockFullPageApiResponse = (pageSize: number) => {
 describe('elementsActions.ts', () => {
     describe('load', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
-            jest.useFakeTimers();
+            vi.clearAllMocks();
+            vi.useFakeTimers();
         });
 
         afterEach(() => {
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         it('should schedule a fast retry when the response is Stale and the user is searching', async () => {
             mockStaleApiResponse();
-            const mockGetState = jest.fn().mockReturnValue(
+            const mockGetState = vi.fn().mockReturnValue(
                 buildMailState({
                     labelID: MAILBOX_LABEL_IDS.INBOX,
                     isSearching: true,
@@ -86,16 +86,16 @@ describe('elementsActions.ts', () => {
 
             // Default `count` is 1, so the first retry uses SEARCH_REFRESHES[1] = 2s.
             // No retry should be scheduled yet before that delay elapses.
-            jest.advanceTimersByTime(1999);
+            vi.advanceTimersByTime(1999);
             expect(mockDispatch).not.toHaveBeenCalled();
 
-            jest.advanceTimersByTime(1);
+            vi.advanceTimersByTime(1);
             expect(mockDispatch).toHaveBeenCalledTimes(1);
         });
 
         it('should schedule the slower default retry when the response is Stale outside of search', async () => {
             mockStaleApiResponse();
-            const mockGetState = jest.fn().mockReturnValue(
+            const mockGetState = vi.fn().mockReturnValue(
                 buildMailState({
                     labelID: MAILBOX_LABEL_IDS.INBOX,
                     isSearching: false,
@@ -111,10 +111,10 @@ describe('elementsActions.ts', () => {
 
             // Default `count` is 1, so the first retry uses REFRESHES[1] = 10s, well beyond the
             // 2s search backoff, confirming non-search retries are not sped up by this change.
-            jest.advanceTimersByTime(9999);
+            vi.advanceTimersByTime(9999);
             expect(mockDispatch).not.toHaveBeenCalled();
 
-            jest.advanceTimersByTime(1);
+            vi.advanceTimersByTime(1);
             expect(mockDispatch).toHaveBeenCalledTimes(1);
         });
 
@@ -127,16 +127,16 @@ describe('elementsActions.ts', () => {
             });
             // The search results are already on screen, e.g. the user just deleted some of them
             state.elements.total[selectCurrentContextIdentifier(state)] = 105;
-            const mockGetState = jest.fn().mockReturnValue(state);
+            const mockGetState = vi.fn().mockReturnValue(state);
 
             // A count past the end of SEARCH_REFRESHES, as after the first retries all came back Stale
             const thunk = load({ page: 0, pageSize: 50, abortController: undefined, count: 5 });
             await thunk(mockDispatch, mockGetState, mockExtra);
             mockDispatch.mockClear();
 
-            jest.advanceTimersByTime(3999);
+            vi.advanceTimersByTime(3999);
             expect(mockDispatch).not.toHaveBeenCalled();
-            jest.advanceTimersByTime(1);
+            vi.advanceTimersByTime(1);
             expect(mockDispatch).toHaveBeenCalledTimes(1);
 
             // The retry is itself Stale, so it schedules the next one with the same 4s delay
@@ -145,15 +145,15 @@ describe('elementsActions.ts', () => {
             await retry(mockDispatch, mockGetState, mockExtra);
             mockDispatch.mockClear();
 
-            jest.advanceTimersByTime(3999);
+            vi.advanceTimersByTime(3999);
             expect(mockDispatch).not.toHaveBeenCalled();
-            jest.advanceTimersByTime(1);
+            vi.advanceTimersByTime(1);
             expect(mockDispatch).toHaveBeenCalledTimes(1);
         });
 
         it('should stop retrying a Stale search once the retries run out when nothing is shown yet', async () => {
             mockStaleApiResponse();
-            const mockGetState = jest.fn().mockReturnValue(
+            const mockGetState = vi.fn().mockReturnValue(
                 buildMailState({
                     labelID: MAILBOX_LABEL_IDS.INBOX,
                     isSearching: true,
@@ -165,7 +165,7 @@ describe('elementsActions.ts', () => {
             await thunk(mockDispatch, mockGetState, mockExtra);
             mockDispatch.mockClear();
 
-            jest.advanceTimersByTime(60_000);
+            vi.advanceTimersByTime(60_000);
             expect(mockDispatch).not.toHaveBeenCalled();
         });
 
@@ -174,7 +174,7 @@ describe('elementsActions.ts', () => {
                 const pageSize = 50;
                 mockFullPageApiResponse(pageSize);
                 // 150 deleted elements at pageSize 50 => 3 pages to backfill, above the default of 2
-                const mockGetState = jest
+                const mockGetState = vi
                     .fn()
                     .mockReturnValue(
                         buildMailState(
@@ -193,7 +193,7 @@ describe('elementsActions.ts', () => {
                 const pageSize = 50;
                 mockFullPageApiResponse(pageSize);
                 // 1000 deleted elements would need 20 pages, but this should be capped
-                const mockGetState = jest
+                const mockGetState = vi
                     .fn()
                     .mockReturnValue(
                         buildMailState(
@@ -211,7 +211,7 @@ describe('elementsActions.ts', () => {
             it('should use the default page fetch count when nothing was deleted, even while searching', async () => {
                 const pageSize = 50;
                 mockFullPageApiResponse(pageSize);
-                const mockGetState = jest
+                const mockGetState = vi
                     .fn()
                     .mockReturnValue(
                         buildMailState(
@@ -229,7 +229,7 @@ describe('elementsActions.ts', () => {
             it('should use the default page fetch count outside of search, regardless of deletedSinceLastLoad', async () => {
                 const pageSize = 50;
                 mockFullPageApiResponse(pageSize);
-                const mockGetState = jest
+                const mockGetState = vi
                     .fn()
                     .mockReturnValue(
                         buildMailState({ labelID: MAILBOX_LABEL_IDS.INBOX, isSearching: false, search: {} }, 150)
@@ -245,21 +245,21 @@ describe('elementsActions.ts', () => {
 
     describe('markAll', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
-            jest.useFakeTimers();
+            vi.clearAllMocks();
+            vi.useFakeTimers();
             mockApiFn.mockResolvedValue({});
         });
 
         afterEach(() => {
-            jest.clearAllTimers();
-            jest.useRealTimers();
+            vi.clearAllTimers();
+            vi.useRealTimers();
         });
 
         const runMarkAll = async (
             listCategoryIDs: CategoryLabelID[],
             params: Omit<Parameters<typeof markAll>[0], 'SourceLabelID' | 'status'>
         ) => {
-            const mockGetState = jest
+            const mockGetState = vi
                 .fn()
                 .mockReturnValue(buildMailState({ labelID: MAILBOX_LABEL_IDS.INBOX, categoryIDs: listCategoryIDs }));
 
@@ -328,18 +328,18 @@ describe('elementsActions.ts', () => {
         ] as const;
 
         beforeEach(() => {
-            jest.clearAllMocks();
-            jest.useFakeTimers();
+            vi.clearAllMocks();
+            vi.useFakeTimers();
         });
 
         afterEach(() => {
-            jest.clearAllTimers();
-            jest.useRealTimers();
+            vi.clearAllTimers();
+            vi.useRealTimers();
         });
 
         describe.each(wholeLocationThunks)('%s', (_name, buildThunk) => {
             const run = () => {
-                const mockGetState = jest
+                const mockGetState = vi
                     .fn()
                     .mockReturnValue(buildMailState({ labelID: MAILBOX_LABEL_IDS.INBOX, categoryIDs: [] }));
 

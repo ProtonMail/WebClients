@@ -1,11 +1,12 @@
 import type { ReactNode } from 'react';
 
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
-import { mockUseCategoriesData } from '@proton/mail/testing/mockUseCategoriesData';
-import { mockUseFolders } from '@proton/mail/testing/mockUseFolders';
-import { mockUseLabels } from '@proton/mail/testing/mockUseLabels';
-import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
+import { mockUseCategoriesData } from '@proton/mail/testing/vitest/mockUseCategoriesData';
+import { mockUseFolders } from '@proton/mail/testing/vitest/mockUseFolders';
+import { mockUseLabels } from '@proton/mail/testing/vitest/mockUseLabels';
+import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
@@ -18,39 +19,39 @@ import { labelConversations, labelMessages, unlabelMessages } from '../../../sto
 import { APPLY_LOCATION_TYPES } from './interface';
 import { useApplyLocation } from './useApplyLocation';
 
-jest.mock('../../../containers/globalModals/GlobalSnoozeModal');
-jest.mock('../../../containers/globalModals/GlobalScheduleModal');
-jest.mock('../../../containers/globalModals/GlobalUnsubscribeModal');
+vi.mock('../../../containers/globalModals/GlobalSnoozeModal');
+vi.mock('../../../containers/globalModals/GlobalScheduleModal');
+vi.mock('../../../containers/globalModals/GlobalUnsubscribeModal');
 
-jest.mock('../../../store/mailbox/mailboxActions');
+vi.mock('../../../store/mailbox/mailboxActions');
 //@ts-ignore
-const mockedLabelMessages = labelMessages as jest.Mock;
+const mockedLabelMessages = labelMessages as Mock;
 //@ts-ignore
-const mockedUnlabelMessages = unlabelMessages as jest.Mock;
+const mockedUnlabelMessages = unlabelMessages as Mock;
 //@ts-ignore
-const mockedLabelConversations = labelConversations as jest.Mock;
+const mockedLabelConversations = labelConversations as Mock;
 
-const mockCaptureInitiativeMessage = jest.fn();
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+const mockCaptureInitiativeMessage = vi.fn();
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
     captureInitiativeMessage: (...args: any[]) => mockCaptureInitiativeMessage(...args),
     SentryMailInitiatives: { MAIL_REDUX_ERRORS: 'mail-redux-errors' },
 }));
 
-const mockUseGetConversation = jest.fn();
-const mockUseGetConversationsByIDs = jest.fn();
-jest.mock('../../conversation/useConversation', () => ({
+const mockUseGetConversation = vi.fn();
+const mockUseGetConversationsByIDs = vi.fn();
+vi.mock('../../conversation/useConversation', () => ({
     useGetConversation: () => mockUseGetConversation,
     useGetConversationsByIDs: () => mockUseGetConversationsByIDs,
 }));
 
-const mockUseGetElementByID = jest.fn();
-jest.mock('../../mailbox/useElements', () => ({
+const mockUseGetElementByID = vi.fn();
+vi.mock('../../mailbox/useElements', () => ({
     useGetElementByID: () => mockUseGetElementByID,
 }));
 
-const mockMessageValidateMove = jest.fn();
-const mockConversationValidateMove = jest.fn();
-jest.mock('../../../helpers/location/MoveEngine/useMoveEngine', () => ({
+const mockMessageValidateMove = vi.fn();
+const mockConversationValidateMove = vi.fn();
+vi.mock('../../../helpers/location/MoveEngine/useMoveEngine', () => ({
     useMoveEngine: () => ({
         messageMoveEngine: {
             validateMove: mockMessageValidateMove,
@@ -61,63 +62,63 @@ jest.mock('../../../helpers/location/MoveEngine/useMoveEngine', () => ({
     }),
 }));
 
-const mockDispatch = jest.fn();
-jest.mock('../../../store/hooks', () => ({
-    useMailDispatch: jest.fn(() => mockDispatch),
-    useMailSelector: jest.fn().mockReturnValue(undefined),
+const mockDispatch = vi.fn();
+vi.mock('../../../store/hooks', () => ({
+    useMailDispatch: vi.fn(() => mockDispatch),
+    useMailSelector: vi.fn().mockReturnValue(undefined),
 }));
 
-jest.mock('../moveBackAction/useMoveBackAction', () => ({
-    useMoveBackAction: jest.fn().mockReturnValue(jest.fn()),
+vi.mock('../moveBackAction/useMoveBackAction', () => ({
+    useMoveBackAction: vi.fn().mockReturnValue(vi.fn()),
 }));
-jest.mock('../useCreateFilters', () => ({
-    useCreateFilters: jest.fn(() => ({
-        getSendersToFilter: jest.fn(),
-        getFilterActions: jest.fn(() => ({
-            getSendersToFilter: jest.fn(),
-            doCreateFilters: jest.fn(),
-            undoCreateFilters: jest.fn(),
+vi.mock('../useCreateFilters', () => ({
+    useCreateFilters: vi.fn(() => ({
+        getSendersToFilter: vi.fn(),
+        getFilterActions: vi.fn(() => ({
+            getSendersToFilter: vi.fn(),
+            doCreateFilters: vi.fn(),
+            undoCreateFilters: vi.fn(),
         })),
     })),
 }));
 
-const mockedCreateNotification = jest.fn();
-const mockedRemoveNotification = jest.fn();
+const mockedCreateNotification = vi.fn();
+const mockedRemoveNotification = vi.fn();
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    useNotifications: jest.fn(() => ({
+    useNotifications: vi.fn(() => ({
         createNotification: mockedCreateNotification,
         removeNotification: mockedRemoveNotification,
     })),
 }));
 
-jest.mock('@proton/app-context/useApi', () => ({
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
-    useApi: jest.fn(() => jest.fn()),
+    useApi: vi.fn(() => vi.fn()),
 }));
 
-jest.mock('@proton/components/hooks/useEventManager', () => ({
+vi.mock('@proton/components/hooks/useEventManager', () => ({
     __esModule: true,
-    default: jest.fn(() => ({
-        call: jest.fn(),
-        subscribe: jest.fn(),
+    default: vi.fn(() => ({
+        call: vi.fn(),
+        subscribe: vi.fn(),
     })),
 }));
 
-jest.mock('@proton/hooks/useLoading', () => {
-    return jest.fn(() => [false, jest.fn()]);
+vi.mock('@proton/hooks/useLoading', () => {
+    return vi.fn(() => [false, vi.fn()]);
 });
 
-const mockSendSimpleActionReport = jest.fn();
-jest.mock('../../../components/list/list-telemetry/useListTelemetry', () => ({
+const mockSendSimpleActionReport = vi.fn();
+vi.mock('../../../components/list/list-telemetry/useListTelemetry', async () => ({
     __esModule: true,
     // Keep the real enums and range helper; only the reporting hook is stubbed.
-    ...jest.requireActual('../../../components/list/list-telemetry/useListTelemetry'),
+    ...(await vi.importActual('../../../components/list/list-telemetry/useListTelemetry')),
     default: () => ({ sendSimpleActionReport: mockSendSimpleActionReport }),
 }));
 
-const notifyMock = jest.fn();
+const notifyMock = vi.fn();
 
 const wrapper = ({ children }: { children: ReactNode }) => (
     <GlobalModalContext.Provider value={{ notify: notifyMock }}>{children}</GlobalModalContext.Provider>
@@ -145,7 +146,7 @@ describe('useApplyLocation', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('safety net', () => {
@@ -832,7 +833,7 @@ describe('useApplyLocation', () => {
         });
 
         // TODO
-        describe('dispatch tests', () => {});
+        describe.todo('dispatch tests');
     });
 
     describe('multiple changes tests (applyMultipleLocations)', () => {
@@ -965,7 +966,7 @@ describe('useApplyLocation', () => {
         });
 
         it('should set up automatic notification removal timeout', () => {
-            jest.useFakeTimers();
+            vi.useFakeTimers();
             const { result } = renderHook(() => useApplyLocation(), { wrapper });
 
             const elements = [{ ID: '1', ConversationID: '123', LabelIDs: [] }];
@@ -980,11 +981,11 @@ describe('useApplyLocation', () => {
             expect(mockedCreateNotification).toHaveBeenCalled();
 
             // Fast forward time to trigger timeout
-            jest.advanceTimersByTime(SUCCESS_NOTIFICATION_EXPIRATION);
+            vi.advanceTimersByTime(SUCCESS_NOTIFICATION_EXPIRATION);
 
             expect(mockedRemoveNotification).toHaveBeenCalled();
 
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
     });
 

@@ -42,12 +42,12 @@ describe('waitForListSettled', () => {
     const allMail = MAILBOX_LABEL_IDS.ALL_MAIL;
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.clearAllTimers();
-        jest.useRealTimers();
+        vi.clearAllTimers();
+        vi.useRealTimers();
     });
 
     it('resolves immediately when the list is already settled on the expected location', async () => {
@@ -166,7 +166,7 @@ describe('waitForListSettled', () => {
         const { store } = fakeStore({ usedEncryptedSearch: true });
         const wait = waitForListSettled(store, { labelID: allMail, location: locationFor(allMail, 'keyword=hotel') });
 
-        jest.advanceTimersByTime(20_000);
+        vi.advanceTimersByTime(20_000);
 
         await expect(wait).resolves.toEqual({ settled: false, usedEncryptedSearch: false });
     });
@@ -221,7 +221,7 @@ describe('waitForListSettled', () => {
 
         expect(await hasSettled(wait)).toBe(false);
 
-        jest.advanceTimersByTime(20_000);
+        vi.advanceTimersByTime(20_000);
 
         await expect(wait).resolves.toEqual({ settled: false, usedEncryptedSearch: false });
         expect(listenerCount()).toBe(0);

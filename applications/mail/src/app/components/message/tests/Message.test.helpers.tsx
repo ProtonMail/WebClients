@@ -17,9 +17,11 @@ import type { MailStore } from '../../../store/store';
 import type { MessageViewRef } from '../MessageView';
 import MessageView from '../MessageView';
 
-jest.mock('@proton/mail-message/helpers/message/messageDecrypt', () => ({
-    ...jest.requireActual('@proton/mail-message/helpers/message/messageDecrypt'),
-    decryptMessage: jest.fn(jest.requireActual('@proton/mail-message/helpers/message/messageDecrypt').decryptMessage),
+vi.mock('@proton/mail-message/helpers/message/messageDecrypt', async () => ({
+    ...(await vi.importActual('@proton/mail-message/helpers/message/messageDecrypt')),
+    decryptMessage: vi.fn(
+        (await vi.importActual<any>('@proton/mail-message/helpers/message/messageDecrypt')).decryptMessage
+    ),
 }));
 
 loudRejection();
@@ -40,7 +42,7 @@ export const defaultProps: MessageViewProps = {
     labels: [],
     message: { ID: messageID, AddressID: addressID } as Message,
     mailSettings: {} as MailSettings,
-    onBack: jest.fn(),
+    onBack: vi.fn(),
     onFocus: noop,
     isComposerOpened: false,
 };
@@ -88,7 +90,7 @@ export const setup = async (
     });
 
     const open = async () => {
-        jest.mocked(messageDecrypt.decryptMessage);
+        vi.mocked(messageDecrypt.decryptMessage);
 
         await act(async () => {
             ref.current?.expand();

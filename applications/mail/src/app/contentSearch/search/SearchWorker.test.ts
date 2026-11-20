@@ -1,21 +1,23 @@
+import type { Mock } from 'vitest';
+
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
 import { IndexReader } from './IndexReader';
 import SearchWorker from './SearchWorker';
 
-jest.mock('../init', () => ({ initWasm: jest.fn() }));
-jest.mock('../db/open', () => ({ openContentSearchDB: jest.fn() }));
-jest.mock('./query', () => ({ buildQuery: jest.fn() }));
-jest.mock('./IndexReader', () => ({ IndexReader: jest.fn() }));
+vi.mock('../init', () => ({ initWasm: vi.fn() }));
+vi.mock('../db/open', () => ({ openContentSearchDB: vi.fn() }));
+vi.mock('./query', () => ({ buildQuery: vi.fn() }));
+vi.mock('./IndexReader', () => ({ IndexReader: vi.fn() }));
 
-const IndexReaderMock = jest.mocked(IndexReader);
+const IndexReaderMock = vi.mocked(IndexReader);
 
-const startWorker = async (readerSearch: jest.Mock) => {
-    IndexReaderMock.mockImplementation(() => {
+const startWorker = async (readerSearch: Mock) => {
+    IndexReaderMock.mockImplementation(function () {
         return { search: readerSearch } as unknown as IndexReader;
     });
     const worker = new SearchWorker();
-    await worker.init('user1', {} as CryptoKey, jest.fn());
+    await worker.init('user1', {} as CryptoKey, vi.fn());
     return worker;
 };
 
@@ -26,13 +28,13 @@ const flush = () => {
 describe('SearchWorker.search', () => {
     it('resolves only once every result batch was delivered to the main thread', async () => {
         const worker = await startWorker(
-            jest.fn(async (_exp, resultCallback: (results: string[]) => void) => {
+            vi.fn(async (_exp, resultCallback: (results: string[]) => void) => {
                 resultCallback(['a']);
                 resultCallback(['b']);
             })
         );
         const deliveries: (() => void)[] = [];
-        const resultCallback = jest.fn((_results: string[]) => {
+        const resultCallback = vi.fn((_results: string[]) => {
             return new Promise<void>((resolve) => {
                 deliveries.push(resolve);
             });
@@ -57,7 +59,7 @@ describe('SearchWorker.search', () => {
     });
 
     it('waits for the batches it already sent when a newer search aborts it', async () => {
-        const readerSearch: jest.Mock = jest.fn(async () => {});
+        const readerSearch: Mock = vi.fn(async () => {});
         readerSearch.mockImplementationOnce(
             async (_exp: unknown, resultCallback: (results: string[]) => void, abortSignal: AbortSignal) => {
                 resultCallback(['a']);
@@ -72,7 +74,7 @@ describe('SearchWorker.search', () => {
         );
         const worker = await startWorker(readerSearch);
         let resolveDelivery: () => void = () => {};
-        const resultCallback = jest.fn((_results: string[]) => {
+        const resultCallback = vi.fn((_results: string[]) => {
             return new Promise<void>((resolve) => {
                 resolveDelivery = resolve;
             });
@@ -83,7 +85,7 @@ describe('SearchWorker.search', () => {
             isDone = true;
         });
         await flush();
-        await worker.search({} as NormalizedSearchParams, jest.fn());
+        await worker.search({} as NormalizedSearchParams, vi.fn());
         await flush();
 
         expect(resultCallback.mock.calls).toEqual([[['a']]]);

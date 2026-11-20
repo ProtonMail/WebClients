@@ -4,8 +4,8 @@ import { addApiMock } from '../../../helpers/tests/api';
 import { clearAll } from '../../../helpers/tests/helper';
 import { expectElements, getElements, props, setup } from './Mailbox.test.helpers';
 
-jest.mock('proton-mail/metrics/useMailELDTMetric', () => ({
-    useMailELDTMetric: () => ({ stopELDTMetric: jest.fn() }),
+vi.mock('proton-mail/metrics/useMailELDTMetric', () => ({
+    useMailELDTMetric: () => ({ stopELDTMetric: vi.fn() }),
 }));
 
 describe('Mailbox list rendering states', () => {
@@ -18,7 +18,7 @@ describe('Mailbox list rendering states', () => {
         const conversations = getElements(total, labelID);
         let resolveConversationsCall: (value: any) => void;
 
-        const conversationRequestSpy = jest.fn(() => {
+        const conversationRequestSpy = vi.fn(() => {
             return new Promise((resolve) => {
                 resolveConversationsCall = resolve;
             });

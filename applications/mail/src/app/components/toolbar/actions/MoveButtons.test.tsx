@@ -12,15 +12,15 @@ import MoveButtons from './MoveButtons';
 const labelID = 'labelID';
 const folderID = 'folderID';
 
-jest.mock('@proton/mail/store/mailSettings/hooks');
-jest.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
+vi.mock('@proton/mail/store/mailSettings/hooks');
+vi.mocked(useMailSettings).mockReturnValue([DEFAULT_MAIL_SETTINGS, false]);
 
-jest.mock('@proton/mail/store/labels/hooks');
-jest.mocked(useFolders).mockReturnValue([[], false]);
-jest.mocked(useLabels).mockReturnValue([[], false]);
+vi.mock('@proton/mail/store/labels/hooks');
+vi.mocked(useFolders).mockReturnValue([[], false]);
+vi.mocked(useLabels).mockReturnValue([[], false]);
 
-jest.mock('../../../store/hooks');
-const mockUseMailSelector = jest.mocked(useMailSelector);
+vi.mock('../../../store/hooks');
+const mockUseMailSelector = vi.mocked(useMailSelector);
 
 const getProps = (labelID: string) => {
     return {
@@ -29,14 +29,14 @@ const getProps = (labelID: string) => {
         isNarrow: false,
         isTiny: false,
         selectedIDs: ['randomID'],
-        onMove: jest.fn(),
-        onDelete: jest.fn(),
+        onMove: vi.fn(),
+        onDelete: vi.fn(),
     };
 };
 
 describe('MoveButtons', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     const assertTrashArchiveSpam = () => {
@@ -76,7 +76,7 @@ describe('MoveButtons', () => {
 
     it('should display trash, archive and spam actions in a custom folder', () => {
         mockUseMailSelector.mockReturnValue(folderID);
-        jest.mocked(useLabels).mockReturnValue([[{ ID: folderID, Type: LABEL_TYPE.MESSAGE_FOLDER } as Label], false]);
+        vi.mocked(useLabels).mockReturnValue([[{ ID: folderID, Type: LABEL_TYPE.MESSAGE_FOLDER } as Label], false]);
         render(<MoveButtons {...getProps(folderID)} />);
 
         assertTrashArchiveSpam();
@@ -84,7 +84,7 @@ describe('MoveButtons', () => {
 
     it('should display trash, archive and spam actions in a custom label', () => {
         mockUseMailSelector.mockReturnValue(labelID);
-        jest.mocked(useLabels).mockReturnValue([[{ ID: labelID, Type: LABEL_TYPE.MESSAGE_LABEL } as Label], false]);
+        vi.mocked(useLabels).mockReturnValue([[{ ID: labelID, Type: LABEL_TYPE.MESSAGE_LABEL } as Label], false]);
         render(<MoveButtons {...getProps(labelID)} />);
 
         assertTrashArchiveSpam();

@@ -1,4 +1,4 @@
-import { describe, expect, it } from '@jest/globals';
+import { describe, expect, it } from 'vitest';
 
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { UpdateEventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';

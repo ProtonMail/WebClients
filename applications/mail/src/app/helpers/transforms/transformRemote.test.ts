@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -8,14 +10,14 @@ import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSett
 import { transformRemote } from './transformRemote';
 
 describe('transformRemote', () => {
-    let onLoadRemoteImagesProxy: jest.Mock;
-    let onLoadFakeImagesProxy: jest.Mock;
-    let onLoadRemoteImagesDirect: jest.Mock;
+    let onLoadRemoteImagesProxy: Mock;
+    let onLoadFakeImagesProxy: Mock;
+    let onLoadRemoteImagesDirect: Mock;
 
     const setup = (message: MessageState, mailSettings: MailSettings) => {
-        onLoadRemoteImagesProxy = jest.fn();
-        onLoadFakeImagesProxy = jest.fn();
-        onLoadRemoteImagesDirect = jest.fn();
+        onLoadRemoteImagesProxy = vi.fn();
+        onLoadFakeImagesProxy = vi.fn();
+        onLoadRemoteImagesDirect = vi.fn();
         return transformRemote(
             message,
             mailSettings,

@@ -16,8 +16,8 @@ const sender = {
 } as Recipient;
 
 const modalsHandlers = {
-    onContactDetails: jest.fn(),
-    onContactEdit: jest.fn(),
+    onContactDetails: vi.fn(),
+    onContactEdit: vi.fn(),
 };
 
 describe('MailRecipientItemSingle trust public key item in dropdown', () => {

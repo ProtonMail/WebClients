@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { nextMonday } from 'date-fns';
+import type { Mock } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -10,29 +11,29 @@ import type { Element } from '../../../../models/element';
 import { useMailDispatch } from '../../../../store/hooks';
 import SnoozeDropdown from './SnoozeDropdown';
 
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/account/userSettings/hooks');
-jest.mock('@proton/components/components/link/useSettingsLink');
-jest.mock('../components/SnoozeUpsellModal', () => ({
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/account/userSettings/hooks');
+vi.mock('@proton/components/components/link/useSettingsLink');
+vi.mock('../components/SnoozeUpsellModal', () => ({
     __esModule: true,
     default: () => {
         const { createElement } = require('react');
         return createElement('div', { 'data-testid': 'composer:snooze-message:upsell-modal' });
     },
 }));
-jest.mock('../../../../store/hooks', () => ({
-    useMailDispatch: jest.fn().mockReturnValue(jest.fn()),
-    useMailSelector: jest.fn().mockReturnValue(jest.fn()),
+vi.mock('../../../../store/hooks', () => ({
+    useMailDispatch: vi.fn().mockReturnValue(vi.fn()),
+    useMailSelector: vi.fn().mockReturnValue(vi.fn()),
 }));
-jest.mock('../../../../hooks/actions/useSnooze', () => ({
+vi.mock('../../../../hooks/actions/useSnooze', () => ({
     __esModule: true,
-    default: jest.fn().mockReturnValue({
+    default: vi.fn().mockReturnValue({
         canSnooze: true,
         canUnsnooze: true,
-        snooze: jest.fn(),
-        unsnooze: jest.fn(),
-        handleClose: jest.fn(),
-        handleCustomClick: jest.fn(),
+        snooze: vi.fn(),
+        unsnooze: vi.fn(),
+        handleClose: vi.fn(),
+        handleCustomClick: vi.fn(),
         snoozeState: 'snooze-selection',
     }),
 }));
@@ -40,10 +41,10 @@ jest.mock('../../../../hooks/actions/useSnooze', () => ({
 const useSnoozeProps = {
     canSnooze: true,
     canUnsnooze: true,
-    snooze: jest.fn(),
-    unsnooze: jest.fn(),
-    handleClose: jest.fn(),
-    handleCustomClick: jest.fn(),
+    snooze: vi.fn(),
+    unsnooze: vi.fn(),
+    handleClose: vi.fn(),
+    handleCustomClick: vi.fn(),
     snoozeState: 'snooze-selection',
 };
 
@@ -55,14 +56,14 @@ const element: Element = {
 };
 
 describe('Snooze dropdown', () => {
-    const useUserMock = useUser as jest.Mock;
-    const useSnoozeMock = useSnooze as jest.Mock;
-    const useAppDispatchMock = useMailDispatch as jest.Mock;
-    const useUserSettingsMock = useUserSettings as jest.Mock;
+    const useUserMock = useUser as Mock;
+    const useSnoozeMock = useSnooze as Mock;
+    const useAppDispatchMock = useMailDispatch as Mock;
+    const useUserSettingsMock = useUserSettings as Mock;
 
     beforeAll(() => {
-        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, jest.fn]);
-        useUserSettingsMock.mockImplementation(() => [{ WeekStart: 1 }, jest.fn]);
+        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, vi.fn]);
+        useUserSettingsMock.mockImplementation(() => [{ WeekStart: 1 }, vi.fn]);
     });
 
     afterAll(() => {
@@ -73,7 +74,7 @@ describe('Snooze dropdown', () => {
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should not return anything when cannot snooze or unsnooze', async () => {
@@ -91,7 +92,7 @@ describe('Snooze dropdown', () => {
     });
 
     it('should open dropdown with all Monday options', async () => {
-        jest.useFakeTimers({ now: nextMonday(new Date()).getTime() });
+        vi.useFakeTimers({ now: nextMonday(new Date()).getTime() });
 
         render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
         const button = screen.getByTestId('dropdown-button');
@@ -105,7 +106,7 @@ describe('Snooze dropdown', () => {
     });
 
     it('should open dropdown with all Monday options and unsnooze', async () => {
-        jest.useFakeTimers({ now: nextMonday(new Date()).getTime() });
+        vi.useFakeTimers({ now: nextMonday(new Date()).getTime() });
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, canUnsnooze: true });
 
         render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
@@ -121,8 +122,8 @@ describe('Snooze dropdown', () => {
     });
 
     it('should call snooze method when pressing any option', async () => {
-        const spySnooze = jest.fn();
-        useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
+        const spySnooze = vi.fn();
+        useUserMock.mockImplementation(() => [{ hasPaidMail: true }, vi.fn]);
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, snooze: spySnooze });
 
         render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
@@ -138,8 +139,8 @@ describe('Snooze dropdown', () => {
     });
 
     it('should call unsnooze method when pressing the button', async () => {
-        const spySnooze = jest.fn();
-        useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
+        const spySnooze = vi.fn();
+        useUserMock.mockImplementation(() => [{ hasPaidMail: true }, vi.fn]);
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, unsnooze: spySnooze, canUnsnooze: true });
 
         render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
@@ -152,8 +153,8 @@ describe('Snooze dropdown', () => {
     });
 
     it('should call custom click method when pressing button', async () => {
-        const spyCustom = jest.fn();
-        useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
+        const spyCustom = vi.fn();
+        useUserMock.mockImplementation(() => [{ hasPaidMail: true }, vi.fn]);
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, handleCustomClick: spyCustom });
 
         render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
@@ -166,7 +167,7 @@ describe('Snooze dropdown', () => {
     });
 
     it('should open upsell modal when free user press the custom button', async () => {
-        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, jest.fn]);
+        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, vi.fn]);
 
         render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
         const button = screen.getByTestId('dropdown-button');

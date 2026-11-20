@@ -6,9 +6,9 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import OneTimeCodeCopyButton from './OneTimeCodeCopyButton';
 
-const mockCreateNotification = jest.fn();
+const mockCreateNotification = vi.fn();
 
-jest.mock('@proton/app-context/useNotifications', () => {
+vi.mock('@proton/app-context/useNotifications', () => {
     return {
         useNotifications: () => {
             return { createNotification: mockCreateNotification };
@@ -16,10 +16,10 @@ jest.mock('@proton/app-context/useNotifications', () => {
     };
 });
 
-jest.mock('@proton/shared/lib/helpers/browser', () => {
+vi.mock('@proton/shared/lib/helpers/browser', async () => {
     return {
-        ...jest.requireActual('@proton/shared/lib/helpers/browser'),
-        textToClipboard: jest.fn(),
+        ...(await vi.importActual('@proton/shared/lib/helpers/browser')),
+        textToClipboard: vi.fn(),
     };
 });
 
@@ -35,22 +35,22 @@ const clickButton = () => {
 
 const advance = (ms: number) => {
     act(() => {
-        jest.advanceTimersByTime(ms);
+        vi.advanceTimersByTime(ms);
     });
 };
 
 describe('OneTimeCodeCopyButton', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
-        jest.clearAllMocks();
+        vi.useRealTimers();
+        vi.clearAllMocks();
     });
 
     it('copies the code, notifies and swaps the copy icon for a checkmark', () => {
-        renderButton(jest.fn());
+        renderButton(vi.fn());
 
         clickButton();
 
@@ -69,7 +69,7 @@ describe('OneTimeCodeCopyButton', () => {
     });
 
     it('fires onCopy once, on the click', () => {
-        const onCopy = jest.fn();
+        const onCopy = vi.fn();
         renderButton(onCopy);
 
         clickButton();
@@ -80,7 +80,7 @@ describe('OneTimeCodeCopyButton', () => {
     });
 
     it('returns to the copy icon one second after the click', () => {
-        renderButton(jest.fn());
+        renderButton(vi.fn());
 
         clickButton();
         advance(999);
@@ -91,7 +91,7 @@ describe('OneTimeCodeCopyButton', () => {
     });
 
     it('ignores a second click while in the copied state', () => {
-        const onCopy = jest.fn();
+        const onCopy = vi.fn();
         renderButton(onCopy);
 
         clickButton();
@@ -104,7 +104,7 @@ describe('OneTimeCodeCopyButton', () => {
     });
 
     it('still forwards a click made while in the copied state to onClick', () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         render(<OneTimeCodeCopyButton code={CODE} onClick={onClick} />);
 
         clickButton();

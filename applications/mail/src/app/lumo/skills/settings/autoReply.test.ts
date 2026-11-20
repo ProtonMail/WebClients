@@ -47,7 +47,7 @@ const STORED_ON: AutoResponder = {
 };
 
 const setUp = ({ hasPaidMail = true, stored }: { hasPaidMail?: boolean; stored?: AutoResponder } = {}) => {
-    const setAutoResponder = jest.fn().mockResolvedValue(undefined);
+    const setAutoResponder = vi.fn().mockResolvedValue(undefined);
     const deps = {
         getUser: () => ({ hasPaidMail }),
         getMailSettings: () => ({ AutoResponder: stored }),
@@ -203,11 +203,11 @@ describe('read_auto_reply', () => {
 
 describe('set_auto_reply', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(NOW_MS);
+        vi.useFakeTimers().setSystemTime(NOW_MS);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('refuses a free user before touching the store', async () => {
@@ -299,11 +299,11 @@ describe('set_auto_reply', () => {
 
 describe('setAutoReplyCardRenderer', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(NOW_MS);
+        vi.useFakeTimers().setSystemTime(NOW_MS);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it.each([
@@ -328,7 +328,7 @@ describe('setAutoReplyCardRenderer', () => {
                 params,
                 action: { type: 'set_auto_reply', ...params },
                 labels: {},
-                onChange: jest.fn(),
+                onChange: vi.fn(),
             })
         ).toBeNull();
     });

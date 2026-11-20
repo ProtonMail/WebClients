@@ -4,8 +4,8 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import useUnreadNotifications from './useUnreadNotifications';
 
-jest.mock('@proton/shared/lib/mail/messages', () => ({
-    isReceived: jest.fn(() => true),
+vi.mock('@proton/shared/lib/mail/messages', () => ({
+    isReceived: vi.fn(() => true),
 }));
 
 const conversationID1 = 'conversationID1';

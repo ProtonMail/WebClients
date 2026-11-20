@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
@@ -37,11 +39,11 @@ const setUp = ({
     theme = 'Proton',
 }: Stored = {}) => {
     /** Keyed by setting, so a test can assert that the OTHER three settings were left alone. */
-    const writes: Record<CosmeticSetting, jest.Mock> = {
-        [CosmeticSetting.LAYOUT]: jest.fn().mockResolvedValue(undefined),
-        [CosmeticSetting.CONVERSATION_GROUPING]: jest.fn().mockResolvedValue(undefined),
-        [CosmeticSetting.DENSITY]: jest.fn().mockResolvedValue(undefined),
-        [CosmeticSetting.THEME]: jest.fn(),
+    const writes: Record<CosmeticSetting, Mock> = {
+        [CosmeticSetting.LAYOUT]: vi.fn().mockResolvedValue(undefined),
+        [CosmeticSetting.CONVERSATION_GROUPING]: vi.fn().mockResolvedValue(undefined),
+        [CosmeticSetting.DENSITY]: vi.fn().mockResolvedValue(undefined),
+        [CosmeticSetting.THEME]: vi.fn(),
     };
     const deps = {
         getMailSettings: () => ({ ViewLayout: viewLayout, ViewMode: viewMode }) as MailSettings,

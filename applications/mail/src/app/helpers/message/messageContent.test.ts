@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: happy-dom does not support the :not(:empty) quote selector
 import {
     fromFields,
     protonSignature,
@@ -86,7 +88,7 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
         });
 
         beforeEach(async () => {
-            jest.useFakeTimers().setSystemTime(getFakeNow.getTime());
+            vi.useFakeTimers().setSystemTime(getFakeNow.getTime());
 
             const toKeys = await generateKeys('user', fromFields.meAddress);
 
@@ -110,7 +112,7 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
 
         afterEach(() => {
             clearAll();
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         it('should remove blockquotes from plaintext message', async () => {
@@ -171,12 +173,12 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
         });
 
         beforeEach(async () => {
-            jest.useFakeTimers().setSystemTime(getFakeNow.getTime());
+            vi.useFakeTimers().setSystemTime(getFakeNow.getTime());
         });
 
         afterEach(() => {
             clearAll();
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         it('should generate content with blockquote string for a plaintext message', async () => {

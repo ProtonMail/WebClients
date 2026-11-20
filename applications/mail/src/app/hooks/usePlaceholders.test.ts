@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
+import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
 
 import { usePlaceholders } from './usePlaceholders';
 

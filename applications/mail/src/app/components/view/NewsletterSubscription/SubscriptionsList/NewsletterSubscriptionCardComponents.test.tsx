@@ -5,10 +5,10 @@ import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/inte
 import { unsubscribedSubscription } from '../testData';
 import { SubscriptionCardButtons } from './NewsletterSubscriptionCardComponents';
 
-jest.mock('../../../../store/hooks');
-jest.mocked(useMailSelector).mockReturnValue(SubscriptionTabs.Unsubscribe);
+vi.mock('../../../../store/hooks');
+vi.mocked(useMailSelector).mockReturnValue(SubscriptionTabs.Unsubscribe);
 
-const handleFilterClick = jest.fn();
+const handleFilterClick = vi.fn();
 
 describe('SubscriptionCardButtons', () => {
     it('should call handleFilterClick with the correct filter type when the unsubscribe button is clicked', async () => {

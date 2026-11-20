@@ -11,7 +11,7 @@ import {
     selectReportsLoading,
 } from '@proton/activation/src/logic/reports/reports.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
+import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
 import type { Feature } from '@proton/features/interface';
 import { FeatureCode } from '@proton/features/interface';
 import { updateFeature } from '@proton/features/reducer';
@@ -29,28 +29,28 @@ import { useMailDispatch } from '../store/hooks';
 import useBYOEInboxCleanupConfirm from './useBYOEInboxCleanupConfirm';
 import useShowBYOEInboxCleanupModal from './useShowBYOEInboxCleanupModal';
 
-jest.mock('./useShowBYOEInboxCleanupModal', () => ({
+vi.mock('./useShowBYOEInboxCleanupModal', async () => ({
     __esModule: true,
-    ...jest.requireActual('./useShowBYOEInboxCleanupModal'),
+    ...(await vi.importActual('./useShowBYOEInboxCleanupModal')),
 }));
-jest.mock('@proton/unleash/useFlag');
-jest.mock('@proton/account/addresses/hooks', () => ({ useAddresses: jest.fn() }));
-jest.mock('@proton/account/welcomeFlags', () => ({ useWelcomeFlags: jest.fn() }));
-jest.mock('@proton/activation/src/logic/store', () => ({
-    useEasySwitchDispatch: jest.fn(),
-    useEasySwitchSelector: jest.fn(),
+vi.mock('@proton/unleash/useFlag');
+vi.mock('@proton/account/addresses/hooks', () => ({ useAddresses: vi.fn() }));
+vi.mock('@proton/account/welcomeFlags', () => ({ useWelcomeFlags: vi.fn() }));
+vi.mock('@proton/activation/src/logic/store', () => ({
+    useEasySwitchDispatch: vi.fn(),
+    useEasySwitchSelector: vi.fn(),
 }));
-jest.mock('@proton/activation/src/logic/reports/reports.actions', () => ({
-    loadReports: jest.fn(() => ({ type: 'loadReports' })),
+vi.mock('@proton/activation/src/logic/reports/reports.actions', () => ({
+    loadReports: vi.fn(() => ({ type: 'loadReports' })),
 }));
-jest.mock('@proton/features/reducer', () => ({ updateFeature: jest.fn() }));
-jest.mock('@proton/features/useFeature', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('../store/hooks', () => ({ useMailDispatch: jest.fn() }));
-jest.mock('../containers/globalModals/globalModalContext', () => ({ useMailGlobalModals: jest.fn() }));
-jest.mock('./useBYOEInboxCleanupConfirm', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('../helpers/byoeInboxCleanup', () => ({
-    ...jest.requireActual('../helpers/byoeInboxCleanup'),
-    loadSendersWhenFree: jest.fn(),
+vi.mock('@proton/features/reducer', () => ({ updateFeature: vi.fn() }));
+vi.mock('@proton/features/useFeature', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('../store/hooks', () => ({ useMailDispatch: vi.fn() }));
+vi.mock('../containers/globalModals/globalModalContext', () => ({ useMailGlobalModals: vi.fn() }));
+vi.mock('./useBYOEInboxCleanupConfirm', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('../helpers/byoeInboxCleanup', async () => ({
+    ...(await vi.importActual('../helpers/byoeInboxCleanup')),
+    loadSendersWhenFree: vi.fn(),
 }));
 
 const CONNECTION_TIME_BYOE = 1_700_000_000;
@@ -95,18 +95,18 @@ const store: { feature: CleanupFeature | undefined } = { feature: undefined };
 const easySwitch: EasySwitchState = { loading: 'idle', entries: [] };
 const dueFeature: CleanupFeature = { Value: true, UpdateTime: CONNECTION_TIME_BYOE };
 
-const mockWriteFeature = jest.fn(async (value: boolean) => {
+const mockWriteFeature = vi.fn(async (value: boolean) => {
     store.feature = { ...store.feature, Value: value };
     return value;
 });
-const mockMailDispatch = jest.fn((action: { value: boolean }) => {
+const mockMailDispatch = vi.fn((action: { value: boolean }) => {
     return mockWriteFeature(action.value);
 });
-const mockEasySwitchDispatch = jest.fn();
-const mockNotify = jest.fn();
-const mockOnConfirm = jest.fn();
-const mockCreateConfirm = jest.fn(() => mockOnConfirm);
-const mockApi = jest.fn();
+const mockEasySwitchDispatch = vi.fn();
+const mockNotify = vi.fn();
+const mockOnConfirm = vi.fn();
+const mockCreateConfirm = vi.fn(() => mockOnConfirm);
+const mockApi = vi.fn();
 const senders = [{ ID: 'sender-1' }, { ID: 'sender-2' }] as NewsletterSubscription[];
 
 const getShownPayload = () => {
@@ -114,7 +114,7 @@ const getShownPayload = () => {
 };
 
 const getLoadSignal = (call = 0) => {
-    return jest.mocked(loadSendersWhenFree).mock.calls[call][0].signal;
+    return vi.mocked(loadSendersWhenFree).mock.calls[call][0].signal;
 };
 
 const settle = async () => {
@@ -132,7 +132,7 @@ interface SetupOptions {
 
 const setup = ({ enabled = true, feature = dueFeature }: SetupOptions = {}) => {
     store.feature = feature;
-    jest.mocked(useFlag).mockImplementation((name) => {
+    vi.mocked(useFlag).mockImplementation((name) => {
         return name === 'InboxBringYourOwnEmailCleanup' && enabled;
     });
 
@@ -141,7 +141,7 @@ const setup = ({ enabled = true, feature = dueFeature }: SetupOptions = {}) => {
 
 const holdNextLoad = () => {
     let resolveLoad = (_subscriptions: NewsletterSubscription[] | undefined) => {};
-    jest.mocked(loadSendersWhenFree).mockImplementationOnce(() => {
+    vi.mocked(loadSendersWhenFree).mockImplementationOnce(() => {
         return new Promise((resolve) => {
             resolveLoad = resolve;
         });
@@ -169,17 +169,17 @@ const putValueBack = async (rerender: () => void) => {
 
 describe('useShowBYOEInboxCleanupModal', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         easySwitch.loading = 'idle';
         easySwitch.entries = [];
 
-        jest.mocked(useFeature).mockImplementation(() => {
+        vi.mocked(useFeature).mockImplementation(() => {
             return { feature: store.feature } as any;
         });
-        jest.mocked(updateFeature).mockImplementation((_code, value) => ({ type: 'updateFeature', value }) as any);
-        jest.mocked(useMailDispatch).mockReturnValue(mockMailDispatch as any);
-        jest.mocked(useEasySwitchDispatch).mockReturnValue(mockEasySwitchDispatch as any);
-        jest.mocked(useEasySwitchSelector).mockImplementation((selector: unknown) => {
+        vi.mocked(updateFeature).mockImplementation((_code, value) => ({ type: 'updateFeature', value }) as any);
+        vi.mocked(useMailDispatch).mockReturnValue(mockMailDispatch as any);
+        vi.mocked(useEasySwitchDispatch).mockReturnValue(mockEasySwitchDispatch as any);
+        vi.mocked(useEasySwitchSelector).mockImplementation((selector: unknown) => {
             if (selector === selectReportsLoading) {
                 return easySwitch.loading;
             }
@@ -188,13 +188,13 @@ describe('useShowBYOEInboxCleanupModal', () => {
             }
             return undefined;
         });
-        jest.mocked(useAddresses).mockReturnValue([[byoeAddress], false] as any);
-        jest.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: true } } as any);
-        jest.mocked(useMailGlobalModals).mockImplementation(() => {
+        vi.mocked(useAddresses).mockReturnValue([[byoeAddress], false] as any);
+        vi.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: true } } as any);
+        vi.mocked(useMailGlobalModals).mockImplementation(() => {
             return { notify: mockNotify } as any;
         });
-        jest.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(mockCreateConfirm);
-        jest.mocked(loadSendersWhenFree).mockResolvedValue(senders);
+        vi.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(mockCreateConfirm);
+        vi.mocked(loadSendersWhenFree).mockResolvedValue(senders);
         mockUseApi(mockApi);
     });
 
@@ -246,7 +246,7 @@ describe('useShowBYOEInboxCleanupModal', () => {
     });
 
     it('clears the cleanup straight away when the import failed', async () => {
-        jest.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: false } } as any);
+        vi.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: false } } as any);
         easySwitch.loading = 'success';
         easySwitch.entries = [buildEntry(ApiImporterState.FAILED)];
         setup();
@@ -358,7 +358,7 @@ describe('useShowBYOEInboxCleanupModal', () => {
         });
 
         it('clears and opens nothing when there are no senders', async () => {
-            jest.mocked(loadSendersWhenFree).mockResolvedValue([]);
+            vi.mocked(loadSendersWhenFree).mockResolvedValue([]);
             setup();
             await settle();
 
@@ -367,7 +367,7 @@ describe('useShowBYOEInboxCleanupModal', () => {
         });
 
         it("opens nothing and leaves it due when the cleanup was cancelled or isn't due any more", async () => {
-            jest.mocked(loadSendersWhenFree).mockResolvedValue(undefined);
+            vi.mocked(loadSendersWhenFree).mockResolvedValue(undefined);
             setup();
             await settle();
 
@@ -376,7 +376,7 @@ describe('useShowBYOEInboxCleanupModal', () => {
         });
 
         it('opens nothing and leaves it due when a request fails', async () => {
-            jest.mocked(loadSendersWhenFree).mockRejectedValue(new Error('offline'));
+            vi.mocked(loadSendersWhenFree).mockRejectedValue(new Error('offline'));
             setup();
             await settle();
 
@@ -385,13 +385,13 @@ describe('useShowBYOEInboxCleanupModal', () => {
         });
 
         it("waits while onboarding isn't done, and opens once it's done with nothing else changing", async () => {
-            jest.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: false } } as any);
+            vi.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: false } } as any);
             const { rerender } = setup();
             await settle();
 
             expect(loadSendersWhenFree).not.toHaveBeenCalled();
 
-            jest.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: true } } as any);
+            vi.mocked(useWelcomeFlags).mockReturnValue({ welcomeFlags: { isDone: true } } as any);
             rerender();
             await settle();
 
@@ -413,12 +413,12 @@ describe('useShowBYOEInboxCleanupModal', () => {
             const { rerender } = setup();
             await settle();
 
-            const newNotify = jest.fn();
-            const newOnConfirm = jest.fn();
-            jest.mocked(useMailGlobalModals).mockImplementation(() => {
+            const newNotify = vi.fn();
+            const newOnConfirm = vi.fn();
+            vi.mocked(useMailGlobalModals).mockImplementation(() => {
                 return { notify: newNotify } as any;
             });
-            jest.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(() => newOnConfirm);
+            vi.mocked(useBYOEInboxCleanupConfirm).mockReturnValue(() => newOnConfirm);
             rerender();
             await settle();
             resolveLoad(senders);

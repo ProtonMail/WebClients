@@ -15,11 +15,11 @@ const mockStoreState = {
     categoryIDs: [] as CategoryLabelID[],
 };
 
-jest.mock('proton-mail/store/hooks', () => ({
-    useMailSelector: jest.fn((selector: (state: any) => any) => selector(mockStoreState)),
+vi.mock('proton-mail/store/hooks', () => ({
+    useMailSelector: vi.fn((selector: (state: any) => any) => selector(mockStoreState)),
 }));
 
-jest.mock('proton-mail/store/elements/elementsSelectors', () => ({
+vi.mock('proton-mail/store/elements/elementsSelectors', () => ({
     selectElementIDs: (state: any) => state.elementIDs,
     selectPage: (state: any) => state.page,
     selectFilter: (state: any) => state.filter,

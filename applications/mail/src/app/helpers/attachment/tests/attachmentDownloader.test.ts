@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: JSZip finds no Blob support in the happy-dom vm context
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import type { Download } from '@proton/mail-message/helpers/attachment/attachmentDownloader';
@@ -23,14 +25,14 @@ import {
     setupCryptoProxyForTesting,
 } from '../../tests/crypto';
 
-jest.mock('@proton/shared/lib/helpers/downloadFile', () => ({
+vi.mock('@proton/shared/lib/helpers/downloadFile', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/browser'),
-    isFirefox: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/browser')),
+    isFirefox: vi.fn(),
 }));
 
 const subject = 'Message subject';
@@ -46,8 +48,8 @@ const attachment1 = {
     KeyPackets: utf8StringToUint8Array('keypackets').toBase64(),
 } as Attachment;
 const verification = {} as MessageVerification;
-const getAttachment = jest.fn();
-const onUpdateAttachment = jest.fn();
+const getAttachment = vi.fn();
+const onUpdateAttachment = vi.fn();
 
 describe('formatDownload', () => {
     let toKeys: GeneratedKey;
@@ -107,11 +109,11 @@ describe('formatDownload', () => {
 
 describe('generateDownload', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should generate a download', async () => {
-        const downloadFileSpy = jest.mocked(downloadFile.default).mockReturnValue(undefined);
+        const downloadFileSpy = vi.mocked(downloadFile.default).mockReturnValue(undefined);
 
         const download = {
             attachment: {
@@ -130,8 +132,8 @@ describe('generateDownload', () => {
     });
 
     it('should generate a download with the correct mimeType for firefox', async () => {
-        const downloadFileSpy = jest.mocked(downloadFile.default).mockReturnValue(undefined);
-        jest.mocked(browser.isFirefox).mockReturnValue(true);
+        const downloadFileSpy = vi.mocked(downloadFile.default).mockReturnValue(undefined);
+        vi.mocked(browser.isFirefox).mockReturnValue(true);
 
         const download = {
             attachment: {
@@ -191,11 +193,11 @@ describe('getZipAttachmentName', () => {
 
 describe('generateDownloadAll', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should generate a download all', async () => {
-        const downloadFileSpy = jest.mocked(downloadFile.default).mockReturnValue(undefined);
+        const downloadFileSpy = vi.mocked(downloadFile.default).mockReturnValue(undefined);
 
         const downloads = [
             {

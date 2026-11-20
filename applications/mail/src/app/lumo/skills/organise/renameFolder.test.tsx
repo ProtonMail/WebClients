@@ -25,7 +25,7 @@ const folder = (overrides: Partial<Folder> = {}): Folder => ({
 const setUp = (folders: Folder[]) => {
     const references = createReferenceRegistry();
     const folderReference = references.referenceFor('folder', 'FOLDER_ID_1', { title: 'Travel' });
-    const updateLabel = jest.fn().mockResolvedValue(undefined);
+    const updateLabel = vi.fn().mockResolvedValue(undefined);
     const deps = { getFolders: () => folders, updateLabel } as unknown as MailToolDeps;
 
     return { references, folderReference, updateLabel, deps };

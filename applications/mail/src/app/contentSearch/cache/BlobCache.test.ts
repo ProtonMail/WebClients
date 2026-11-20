@@ -1,10 +1,12 @@
+import type { Mock } from 'vitest';
+
 import type { Cached } from '@proton/proton-foundation-search';
 
 import { BlobCache } from './BlobCache';
 
-// `Cached` is a wasm handle; the cache only ever calls `.free()` on it, so a jest.fn is enough.
-type FakeCached = { free: jest.Mock };
-const fakeCached = (): FakeCached => ({ free: jest.fn() });
+// `Cached` is a wasm handle; the cache only ever calls `.free()` on it, so a vi.fn is enough.
+type FakeCached = { free: Mock };
+const fakeCached = (): FakeCached => ({ free: vi.fn() });
 const asCached = (c: FakeCached) => c as unknown as Cached;
 
 describe('BlobCache', () => {

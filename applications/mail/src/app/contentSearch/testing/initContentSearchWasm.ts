@@ -11,7 +11,7 @@ let initPromise: Promise<unknown> | undefined;
  *
  * wasm-bindgen's default init `fetch`es the `.wasm` URL, which fails under Node, so we read the
  * bytes from the installed packages and hand them to the init functions directly. Idempotent: the
- * modules are instantiated at most once per test file (jest resets module state between files).
+ * modules are instantiated at most once per test file (Vitest resets module state between files).
  */
 export function initContentSearchWasm(): Promise<unknown> {
     if (!initPromise) {

@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -7,14 +8,15 @@ import { mailTestRender } from '../../../../helpers/tests/render';
 import { activeSubscription, unsubscribedSubscription } from '../testData';
 import { NewsletterSubscriptionCardActiveFilter } from './NewsletterSubscriptionCardActiveFilter';
 
-jest.mock('@proton/mail/store/labels/hooks', () => ({
+vi.mock('@proton/mail/store/labels/hooks', async () => ({
+    ...(await vi.importActual('@proton/mail/store/labels/hooks')),
     useFolders: () => [[{ ID: 'custom-folder-1', Name: 'Custom Folder 1' }], false],
     useLabels: () => [[], false],
     useSystemFolders: () => [[], false],
 }));
 
-jest.mock('@proton/mail/store/filters/hooks');
-const mockedUseFilters = useFilters as jest.Mock;
+vi.mock('@proton/mail/store/filters/hooks');
+const mockedUseFilters = useFilters as Mock;
 
 describe('NewsletterSubscriptionCardActiveFilter', () => {
     beforeEach(() => {

@@ -2,9 +2,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
-import { mocked } from 'jest-mock';
 import { HttpResponse, type RequestHandler, http } from 'msw';
 import { setupServer } from 'msw/node';
+import type { MockedFunction } from 'vitest';
 
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { getModelState } from '@proton/account/testing/getModelState';
@@ -16,8 +16,8 @@ import { getHandlers } from '@proton/calendar/testing/handlers';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
-import { mockNotifications } from '@proton/components/testing/mockNotifications';
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
+import { mockNotifications } from '@proton/components/testing/vitest/mockNotifications';
 import { refresh } from '@proton/mail-message/store/contacts/contactsActions';
 import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
@@ -36,7 +36,7 @@ import {
     messageBuilder,
     veventBuilder,
 } from '@proton/shared/testing/calendarBuilders';
-import { mockApiWithServer } from '@proton/test-api/mockApiWithServer';
+import { mockApiWithServer } from '@proton/test-api/vitest/mockApiWithServer';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { authentication, getStoreWrapper, tick } from '../../../../../helpers/tests/render';
@@ -44,42 +44,44 @@ import EmailReminderWidget from './EmailReminderWidget';
 
 const server = setupServer(...(getHandlers() as RequestHandler[]));
 
-jest.mock('@proton/app-context/useNotifications');
-jest.mock('@proton/components/hooks/useModals');
-jest.mock('@proton/app-context/useApi');
-jest.mock('@proton/calendar/calendarEvent/useGetCalendarEventRaw');
-jest.mock('@proton/account/userSettings/hooks');
+vi.mock('@proton/app-context/useNotifications');
+vi.mock('@proton/components/hooks/useModals');
+vi.mock('@proton/app-context/useApi');
+vi.mock('@proton/calendar/calendarEvent/useGetCalendarEventRaw');
+vi.mock('@proton/account/userSettings/hooks');
 
-jest.mock('@proton/account/addresses/hooks');
+vi.mock('@proton/account/addresses/hooks');
 
-jest.mock('./EventReminderText', () => ({
+vi.mock('./EventReminderText', () => ({
     __esModule: true,
-    default: jest.fn(() => <span>EventReminderText</span>),
+    default: vi.fn(() => <span>EventReminderText</span>),
 }));
-jest.mock('@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader', () => ({
+vi.mock('@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader', () => ({
     __esModule: true,
-    default: jest.fn(() => <span>DateHeader</span>),
+    default: vi.fn(() => <span>DateHeader</span>),
 }));
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }),
 }));
 
 // Force narrow mode for "renders the widget and the necessary information" so that we can see the link
 // With the drawer we do not have a AppLink anymore, we will open Calendar in the drawer directly
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => () => {
-    return mockDefaultBreakpoints;
-});
+vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
+    default: () => {
+        return mockDefaultBreakpoints;
+    },
+}));
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
-    useUser: jest.fn(() => [
+    useUser: vi.fn(() => [
         [
             {
                 ID: 'id',
             },
         ],
     ]),
-    useGetUser: jest.fn(() =>
+    useGetUser: vi.fn(() =>
         Promise.resolve([
             [
                 {
@@ -90,19 +92,20 @@ jest.mock('@proton/account/user/hooks', () => ({
     ),
 }));
 
-jest.mock('@proton/mail/store/mailSettings/hooks', () => ({
-    useMailSettings: jest.fn(() => [{}, false]),
+vi.mock('@proton/mail/store/mailSettings/hooks', async () => ({
+    ...(await vi.importActual('@proton/mail/store/mailSettings/hooks')),
+    useMailSettings: vi.fn(() => [{}, false]),
 }));
 
-jest.mock('@proton/unleash/useFlag');
+vi.mock('@proton/unleash/useFlag');
 
-const mockedUseApi = mocked(useApi);
-const mockedUseNotifications = mocked(useNotifications);
-const mockedUseGetCalendarEventRaw = mocked(useGetCalendarEventRaw);
-const mockedUseAddresses = mocked(useAddresses);
-const mockedUseGetAddresses = mocked(useGetAddresses);
-const mockedUserSettings = mocked(useUserSettings);
-const mockedUseFlag = useFlag as jest.MockedFunction<any>;
+const mockedUseApi = vi.mocked(useApi);
+const mockedUseNotifications = vi.mocked(useNotifications);
+const mockedUseGetCalendarEventRaw = vi.mocked(useGetCalendarEventRaw);
+const mockedUseAddresses = vi.mocked(useAddresses);
+const mockedUseGetAddresses = vi.mocked(useGetAddresses);
+const mockedUserSettings = vi.mocked(useUserSettings);
+const mockedUseFlag = useFlag as MockedFunction<any>;
 
 function renderComponent(overrides?: any, preloadedState?: Parameters<typeof getStoreWrapper>[0]['preloadedState']) {
     window.history.pushState({}, 'Calendar', '/');
@@ -150,7 +153,7 @@ describe('EmailReminderWidget', () => {
 
     afterEach(() => {
         server.resetHandlers();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     beforeEach(() => {

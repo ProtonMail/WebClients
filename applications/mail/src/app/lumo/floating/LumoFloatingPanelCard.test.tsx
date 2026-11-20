@@ -4,13 +4,13 @@ import ConnectedLumoAgentPanel from '@proton/llm/lib/lumoAgent/ui/ConnectedLumoA
 
 import LumoFloatingPanelCard from './LumoFloatingPanelCard';
 
-jest.mock('@proton/llm/lib/lumoAgent/ui/ConnectedLumoAgentPanel', () => ({
+vi.mock('@proton/llm/lib/lumoAgent/ui/ConnectedLumoAgentPanel', () => ({
     __esModule: true,
-    default: jest.fn(() => <button type="button">transcript</button>),
+    default: vi.fn(() => <button type="button">transcript</button>),
 }));
 
-const onClose = jest.fn();
-const onOuterKeyDown = jest.fn();
+const onClose = vi.fn();
+const onOuterKeyDown = vi.fn();
 
 const renderCard = () => {
     render(
@@ -22,13 +22,13 @@ const renderCard = () => {
     return screen.getByRole('button', { name: 'transcript' });
 };
 
-beforeEach(() => jest.clearAllMocks());
+beforeEach(() => vi.clearAllMocks());
 
 describe('LumoFloatingPanelCard', () => {
     it('renders the transcript without its own prompt, thinking row or idle mark, closing through the host', () => {
         renderCard();
 
-        expect(jest.mocked(ConnectedLumoAgentPanel).mock.lastCall![0]).toEqual({
+        expect(vi.mocked(ConnectedLumoAgentPanel).mock.lastCall![0]).toEqual({
             onClose,
             showPromptInput: false,
             showThinking: false,

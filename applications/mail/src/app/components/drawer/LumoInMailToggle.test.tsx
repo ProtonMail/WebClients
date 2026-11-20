@@ -4,8 +4,8 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { defaultApiStatus } from '@proton/account/apiStatus';
 import { useUser } from '@proton/account/user/hooks';
-import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
-import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
+import { mockUseConfig } from '@proton/app-context/testing/vitest/mockUseConfig';
+import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useOnline from '@proton/components/hooks/useOnline';
@@ -18,37 +18,37 @@ import { LumoFloatingPanelProvider } from '../../lumo/floating/LumoFloatingPanel
 import { useMailSelector } from '../../store/hooks';
 import LumoInMailToggle from './LumoInMailToggle';
 
-jest.mock('@proton/account/user/hooks', () => {
-    return { useUser: jest.fn() };
+vi.mock('@proton/account/user/hooks', () => {
+    return { useUser: vi.fn() };
 });
-jest.mock('@proton/unleash/useFlag', () => {
-    return { useFlag: jest.fn() };
+vi.mock('@proton/unleash/useFlag', () => {
+    return { useFlag: vi.fn() };
 });
-jest.mock('@proton/components/hooks/drawer/useDrawer', () => {
-    return { __esModule: true, default: jest.fn() };
+vi.mock('@proton/components/hooks/drawer/useDrawer', () => {
+    return { __esModule: true, default: vi.fn() };
 });
-jest.mock('@proton/components/hooks/useApiStatus', () => {
-    return { __esModule: true, default: jest.fn() };
+vi.mock('@proton/components/hooks/useApiStatus', () => {
+    return { __esModule: true, default: vi.fn() };
 });
-jest.mock('@proton/components/hooks/useOnline', () => {
-    return { __esModule: true, default: jest.fn() };
+vi.mock('@proton/components/hooks/useOnline', () => {
+    return { __esModule: true, default: vi.fn() };
 });
-jest.mock('../../store/hooks', () => {
-    return { useMailSelector: jest.fn() };
+vi.mock('../../store/hooks', () => {
+    return { useMailSelector: vi.fn() };
 });
-jest.mock('../../lumo/floating/useLumoHotkey', () => {
-    return { useLumoHotkey: jest.fn() };
+vi.mock('../../lumo/floating/useLumoHotkey', () => {
+    return { useLumoHotkey: vi.fn() };
 });
-jest.mock('@proton/app-context/useApi', () => {
-    return { useApi: jest.fn() };
+vi.mock('@proton/app-context/useApi', () => {
+    return { useApi: vi.fn() };
 });
-jest.mock('@proton/shared/lib/helpers/metrics', () => {
-    return { sendTelemetryReport: jest.fn() };
+vi.mock('@proton/shared/lib/helpers/metrics', () => {
+    return { sendTelemetryReport: vi.fn() };
 });
 
 const user = buildUser();
 const storageKey = `lumo-in-mail-enabled-${user.ID}`;
-const createNotification = jest.fn();
+const createNotification = vi.fn();
 
 const getToggle = () => {
     return screen.getByTestId<HTMLInputElement>('mail-quick-settings:lumo-toggle');
@@ -57,18 +57,18 @@ const getToggle = () => {
 describe('LumoInMailToggle', () => {
     beforeEach(() => {
         localStorage.clear();
-        jest.clearAllMocks();
-        jest.mocked(useUser).mockReturnValue([user, false]);
+        vi.clearAllMocks();
+        vi.mocked(useUser).mockReturnValue([user, false]);
         mockUseNotifications({ createNotification });
         mockUseConfig();
-        jest.mocked(useFlag).mockReturnValue(true);
-        jest.mocked(useDrawer).mockReturnValue({
+        vi.mocked(useFlag).mockReturnValue(true);
+        vi.mocked(useDrawer).mockReturnValue({
             appInView: undefined,
-            toggleDrawerApp: jest.fn(),
+            toggleDrawerApp: vi.fn(),
         } as unknown as ReturnType<typeof useDrawer>);
-        jest.mocked(useApiStatus).mockReturnValue(defaultApiStatus);
-        jest.mocked(useOnline).mockReturnValue(true);
-        jest.mocked(useMailSelector).mockReturnValue(0);
+        vi.mocked(useApiStatus).mockReturnValue(defaultApiStatus);
+        vi.mocked(useOnline).mockReturnValue(true);
+        vi.mocked(useMailSelector).mockReturnValue(0);
     });
 
     it('is on when nothing is stored', () => {
@@ -113,7 +113,7 @@ describe('LumoInMailToggle', () => {
     });
 
     it('keeps what the Lumo provider wraps mounted while Lumo is turned off and back on', () => {
-        const onMount = jest.fn();
+        const onMount = vi.fn();
         const MountProbe = () => {
             useEffect(onMount, []);
             return null;

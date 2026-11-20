@@ -3,7 +3,7 @@ import type { EOOriginalMessageOptions } from '../../../../helpers/tests/eo/help
 import ViewEOMessage from '../ViewEOMessage';
 
 export const setup = async (options?: EOOriginalMessageOptions) => {
-    const renderResult = await EORender(<ViewEOMessage setSessionStorage={jest.fn()} />, {
+    const renderResult = await EORender(<ViewEOMessage setSessionStorage={vi.fn()} />, {
         routePath: '/eo/message/:id',
         initialRoute: 'message',
         options,

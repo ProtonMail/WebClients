@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/react';
 import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
-import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
 
 import { clearAll } from '../../../../helpers/tests/helper';
 import { createEmbeddedImage, createMessageImages } from '../../../../helpers/tests/message';
@@ -26,14 +26,14 @@ const props = {
     primaryAction: AttachmentAction.Download,
     secondaryAction: AttachmentAction.Remove,
     collapsable: true,
-    onRemoveAttachment: jest.fn(),
-    onRemoveUpload: jest.fn(),
+    onRemoveAttachment: vi.fn(),
+    onRemoveUpload: vi.fn(),
 };
 
 describe('AttachmentsList', () => {
     afterEach(() => {
         clearAll();
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('should show attachments count', async () => {
@@ -100,7 +100,7 @@ describe('AttachmentsList', () => {
 
         it("hands a received attachment to the list's save handler when its Save to Drive is clicked", async () => {
             mockUseFlag().mockImplementation((flag) => flag === MailFeatureFlag.MailSaveToDrive);
-            const onSaveToDrive = jest.fn(() => Promise.resolve());
+            const onSaveToDrive = vi.fn(() => Promise.resolve());
             const { getByRole } = await renderWithSaveHandler(onSaveToDrive);
 
             fireEvent.click(getByRole('button', { name: 'Save archive.zip to Proton Drive' }));
@@ -110,7 +110,7 @@ describe('AttachmentsList', () => {
 
         it('shows no Save to Drive button when the flag is off, even with a save handler', async () => {
             mockUseFlag(false);
-            const { getByRole, queryByRole } = await renderWithSaveHandler(jest.fn(() => Promise.resolve()));
+            const { getByRole, queryByRole } = await renderWithSaveHandler(vi.fn(() => Promise.resolve()));
 
             expect(queryByRole('button', { name: 'Save archive.zip to Proton Drive' })).toBeNull();
             expect(getByRole('button', { name: 'Download archive.zip' })).toBeInTheDocument();

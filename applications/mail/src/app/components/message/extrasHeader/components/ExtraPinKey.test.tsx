@@ -163,7 +163,7 @@ describe('Extra pin key banner displayed', () => {
 
             // Test disable prompt button
             if (shouldDisablePrompt) {
-                const updateSpy = jest.fn(() => Promise.resolve({}));
+                const updateSpy = vi.fn(() => Promise.resolve({}));
                 addApiMock('mail/v4/settings/promptpin', updateSpy, 'put');
 
                 const disableAutopromtButton = screen.getByText('Never show');

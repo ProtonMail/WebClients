@@ -10,19 +10,19 @@ import type { Element } from '../../../models/element';
 import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
-jest.mock('../../../store/mailbox/mailboxActions', () => {
-    const actual = jest.requireActual('../../../store/mailbox/mailboxActions');
+vi.mock('../../../store/mailbox/mailboxActions', async () => {
+    const actual = await vi.importActual<any>('../../../store/mailbox/mailboxActions');
     return {
         ...actual,
-        labelConversations: Object.assign(jest.fn(actual.labelConversations), actual.labelConversations),
+        labelConversations: Object.assign(vi.fn(actual.labelConversations), actual.labelConversations),
     };
 });
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
-jest.mock('../../../metrics/useMailELDTMetric', () => ({
+vi.mock('../../../metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
-        return { stopELDTMetric: jest.fn() };
+        return { stopELDTMetric: vi.fn() };
     },
 }));
 
@@ -196,7 +196,7 @@ describe('Mailbox element list', () => {
                     PageSize: DEFAULT_MAIL_PAGE_SIZE,
                     Page: 0,
                 }),
-                signal: new AbortController().signal,
+                signal: expect.any(AbortSignal),
             };
 
             const { getItems } = await setup({
@@ -275,7 +275,7 @@ describe('Mailbox element list', () => {
         });
 
         it('should navigate on the previous one when the current one is emptied', async () => {
-            const labelConversationsSpy = jest.mocked(mailboxActions.labelConversations);
+            const labelConversationsSpy = vi.mocked(mailboxActions.labelConversations);
 
             const conversations = getElements(DEFAULT_MAIL_PAGE_SIZE * 1.5);
             addApiMock(

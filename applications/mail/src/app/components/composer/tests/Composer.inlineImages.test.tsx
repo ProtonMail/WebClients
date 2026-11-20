@@ -23,7 +23,7 @@ import { AddressID, fromAddress, renderComposer } from './Composer.test.helpers'
 
 loudRejection();
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
 const victimCID = 'victim@example.com';
 
@@ -40,7 +40,7 @@ const cachedAttachment = (cid: string, cloc: string): DecryptedAttachment => ({
 // The image deletion watcher is debounced (500ms). Leave it ample time to run, on the fake clock.
 const waitForImageDeletionWatcher = () =>
     act(async () => {
-        await jest.advanceTimersByTimeAsync(1500);
+        await vi.advanceTimersByTimeAsync(1500);
     });
 
 describe('Composer inline image re-upload', () => {
@@ -57,11 +57,11 @@ describe('Composer inline image re-upload', () => {
     });
 
     beforeEach(() => {
-        jest.useFakeTimers({ advanceTimers: true });
+        vi.useFakeTimers({ shouldAdvanceTime: true });
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         clearAll();
     });
 
@@ -72,7 +72,7 @@ describe('Composer inline image re-upload', () => {
     ])('should not upload cached attachments referenced by quoted content ($name)', async ({ marker }) => {
         minimalCache();
 
-        const uploadSpy = jest.fn(() => new Promise(() => {}));
+        const uploadSpy = vi.fn(() => new Promise(() => {}));
         addApiMock('mail/v4/attachments', uploadSpy, 'post');
 
         const content = `

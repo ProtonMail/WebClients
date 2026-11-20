@@ -6,12 +6,6 @@ import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 
 import * as useLocationFieldOptionsModule from './useLocationFieldOptions';
 
-jest.mock('./useLocationFieldOptions', () => ({
-    __esModule: true,
-    ...jest.requireActual('./useLocationFieldOptions'),
-    useLocationFieldOptions: jest.fn(),
-}));
-
 const defaultFolders: useLocationFieldOptionsModule.ItemDefaultFolder[] = [
     {
         value: '5',
@@ -92,7 +86,7 @@ const grouped: useLocationFieldOptionsModule.ItemsGroup = [
 export const mockUseLocationFieldOptions = (
     value?: Partial<ReturnType<typeof useLocationFieldOptionsModule.useLocationFieldOptions>>
 ) => {
-    const mockedUseLocationFieldOptions = jest.mocked(useLocationFieldOptionsModule.useLocationFieldOptions);
+    const mockedUseLocationFieldOptions = vi.mocked(useLocationFieldOptionsModule.useLocationFieldOptions);
 
     mockedUseLocationFieldOptions.mockReturnValue({
         all,

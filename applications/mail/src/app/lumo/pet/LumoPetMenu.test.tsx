@@ -5,18 +5,18 @@ import { getConversationActions } from '@proton/llm/lib/lumoAgent/ui/LumoConvers
 import { PanelSide } from '../floating/panelSide';
 import LumoPetMenu from './LumoPetMenu';
 
-jest.mock('@proton/icons/icons/IcArrowLeft', () => ({
+vi.mock('@proton/icons/icons/IcArrowLeft', () => ({
     IcArrowLeft: ({ alt }: { alt: string }) => <span data-testid="arrow-left">{alt}</span>,
 }));
-jest.mock('@proton/icons/icons/IcArrowRight', () => ({
+vi.mock('@proton/icons/icons/IcArrowRight', () => ({
     IcArrowRight: ({ alt }: { alt: string }) => <span data-testid="arrow-right">{alt}</span>,
 }));
 
-const onMove = jest.fn();
-const onDock = jest.fn();
-const onHide = jest.fn();
-const clear = jest.fn();
-const openDebugReport = jest.fn();
+const onMove = vi.fn();
+const onDock = vi.fn();
+const onHide = vi.fn();
+const clear = vi.fn();
+const openDebugReport = vi.fn();
 
 const renderMenu = (side: PanelSide, hasConversation: boolean) => {
     return render(
@@ -32,7 +32,7 @@ const renderMenu = (side: PanelSide, hasConversation: boolean) => {
 
 const buttonLabels = () => screen.getAllByRole('button').map((button) => button.textContent);
 
-beforeEach(() => jest.clearAllMocks());
+beforeEach(() => vi.clearAllMocks());
 
 describe('LumoPetMenu', () => {
     it.each([

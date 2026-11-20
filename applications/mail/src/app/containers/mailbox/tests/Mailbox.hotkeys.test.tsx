@@ -12,17 +12,17 @@ import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import type { SetupArgs } from './Mailbox.test.helpers';
 import { setup as generalSetup, getElements, props } from './Mailbox.test.helpers';
 
-jest.mock('../../../store/mailbox/mailboxActions', () => {
-    const actual = jest.requireActual('../../../store/mailbox/mailboxActions');
+vi.mock('../../../store/mailbox/mailboxActions', async () => {
+    const actual = await vi.importActual<any>('../../../store/mailbox/mailboxActions');
     return {
         ...actual,
-        labelConversations: Object.assign(jest.fn(actual.labelConversations), actual.labelConversations),
+        labelConversations: Object.assign(vi.fn(actual.labelConversations), actual.labelConversations),
     };
 });
 
-jest.mock('../../../metrics/useMailELDTMetric', () => ({
+vi.mock('../../../metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
-        return { stopELDTMetric: jest.fn() };
+        return { stopELDTMetric: vi.fn() };
     },
 }));
 
@@ -206,9 +206,9 @@ describe('Mailbox hotkeys', () => {
     });
 
     it('should allow to move elements with keyboard', async () => {
-        const labelConversationsSpy = jest.mocked(mailboxActions.labelConversations);
+        const labelConversationsSpy = vi.mocked(mailboxActions.labelConversations);
 
-        const deleteSpy = jest.fn();
+        const deleteSpy = vi.fn();
         addApiMock('mail/v4/conversations/delete', deleteSpy, 'put');
 
         const conversations = getElements(20, MAILBOX_LABEL_IDS.TRASH); // Firsts items are older than the last ones
