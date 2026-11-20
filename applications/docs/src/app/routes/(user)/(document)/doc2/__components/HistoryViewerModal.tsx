@@ -40,7 +40,8 @@ type HistoryViewerModalContentProps = {
   onClose: () => void
   /** The page's latest live props, read as a restore or its Undo runs: the Undo outlives the history */
   readLive: () => HistoryViewerLiveProps
-} & HistoryViewerLiveProps
+} & HistoryViewerLiveProps &
+  HistoryViewerCopyProps
 
 function HistoryViewerModalContent({
   versionHistory,
@@ -49,6 +50,8 @@ function HistoryViewerModalContent({
   liveEditorInvoker,
   locked,
   readLive,
+  makeACopyOfRevision,
+  isMakingACopy,
 }: HistoryViewerModalContentProps) {
   const { logger } = useApplication()
   const { isDebugMode } = useDebugMode()
@@ -190,6 +193,18 @@ function HistoryViewerModalContent({
     })
   }
 
+  /**
+   * Make a copy, on the revision's merged state as the timeline holds it, with no round trip through the view's editor:
+   * the page's Make a copy seeds and opens it, and shows its error modal on a failure. Disabled until the view's editor
+   * exists, as `/doc`'s does nothing before it, and busy while any Make a copy runs, as the page runs one at a time.
+   */
+  const makeACopy = () => {
+    if (!editorInvoker || !selectedYjsState) {
+      return
+    }
+    void makeACopyOfRevision(selectedYjsState)
+  }
+
   /** Runs one export of the selected version at a time; a failure is logged, as the title menu's Download does */
   const exportVersion = (run: (editorInvoker: EditorInvoker) => Promise<void>) => {
     if (!editorInvoker) {
@@ -276,16 +291,30 @@ function HistoryViewerModalContent({
               />
             </label>
           )}
-          {/* /doc's Make a copy comes first here; this view has no copy yet */}
           {selectedBatchIndex >= 0 && !isSelectedRevisionCurrentDocument && (
             <>
+              {/*
+               * Every role's, as on `/doc`, locked or not: a copy is a new document, and a viewer's goes to My files. Copied from
+               * `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryViewerModal.tsx`,
+               * its restore-revision-by-copy button, disabled until the view's editor exists
+               */}
+              <Button
+                className="w-full"
+                data-testid="restore-revision-by-copy"
+                color="norm"
+                loading={isMakingACopy}
+                disabled={!editorInvoker}
+                onClick={makeACopy}
+              >
+                {c('Action').t`Make a copy`}
+              </Button>
               {/*
                * Hidden while the live editor is locked, as for a viewer, whose restore couldn't be saved; disabled
                * until the view's editor exists
                */}
               {!locked && (
                 <Button
-                  className="w-full"
+                  className="mt-2 w-full"
                   data-testid="restore-revision-by-replace"
                   loading={isRestoring}
                   disabled={!editorInvoker || !liveEditorInvoker}
@@ -371,6 +400,14 @@ export type HistoryViewerLiveProps = {
   locked: boolean
 }
 
+/** The page's Make a copy, which the history runs on a revision, from every render */
+export type HistoryViewerCopyProps = {
+  /** The page's Make a copy, for the selected revision's state */
+  makeACopyOfRevision: (state: Uint8Array<ArrayBuffer>) => Promise<void>
+  /** Whether the page's Make a copy runs, from here or from the title menu */
+  isMakingACopy: boolean
+}
+
 /** A page gone, or not yet with an editor: nothing to restore into */
 const NOTHING_LIVE: HistoryViewerLiveProps = { liveEditorInvoker: undefined, locked: true }
 
@@ -384,14 +421,15 @@ export type HistoryViewerOpenProps = {
 export type HistoryViewerModalProps = ModalStateProps &
   HistoryViewerOpenProps &
   HistoryViewerLiveProps &
+  HistoryViewerCopyProps &
   Pick<HistoryViewerModalContentProps, 'readLive'>
 
 /**
- * The document's version history, read-only: the Revisions' timeline, a view of the selected one, and its exports.
+ * The document's version history: the Revisions' timeline, a read-only view of the selected one, its copy, its restore
+ * and its exports.
  * Copied from
  * `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryViewerModal.tsx`,
- * for text documents only, without its restore as a copy, which doc2 doesn't have yet. A revision's view, its restore and
- * its exports wait for its own editor; an empty History Log gets the small modal alone.
+ * for text documents only. A revision's view, its copy, its restore and its exports wait for its own editor; an empty History Log gets the small modal alone.
  */
 function HistoryViewerModal({
   versionHistory,
@@ -400,6 +438,8 @@ function HistoryViewerModal({
   liveEditorInvoker,
   locked,
   readLive,
+  makeACopyOfRevision,
+  isMakingACopy,
   ...rest
 }: HistoryViewerModalProps) {
   const isVersionHistoryAvailable = !!versionHistory
@@ -420,6 +460,8 @@ function HistoryViewerModal({
           liveEditorInvoker={liveEditorInvoker}
           locked={locked}
           readLive={readLive}
+          makeACopyOfRevision={makeACopyOfRevision}
+          isMakingACopy={isMakingACopy}
         />
       ) : (
         <>
@@ -437,7 +479,7 @@ function HistoryViewerModal({
  * every render: a lock that changes while the history is open hides or shows Restore this version at once. The hook
  * keeps the latest committed ones past the history's close, for the restore's Undo, and none once the page is gone.
  */
-export function useHistoryViewerModal(liveProps: HistoryViewerLiveProps) {
+export function useHistoryViewerModal(liveProps: HistoryViewerLiveProps & HistoryViewerCopyProps) {
   const [modalStateProps, setOpen, render] = useModalState()
   const [openProps, setOpenProps] = useState<HistoryViewerOpenProps>()
   const liveRef = useRef<HistoryViewerLiveProps>(NOTHING_LIVE)

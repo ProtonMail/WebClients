@@ -146,11 +146,13 @@ export function DocumentViewerV2({
 
   // Only once revealed does the editor hold the edits RTS replayed and its Lexical editor, which exports need
   const exportInvoker = revealed ? editorInvoker : undefined
+  const fileActions = useDocumentFileActions({ node, role, driveCompat, client, exportInvoker })
   const [historyModal, showHistoryModal] = useHistoryViewerModal({
     liveEditorInvoker: exportInvoker,
     locked: isEditorLocked,
+    makeACopyOfRevision: fileActions.makeACopyOfRevision,
+    isMakingACopy: fileActions.isMakingACopy,
   })
-  const fileActions = useDocumentFileActions({ node, role, driveCompat, client, exportInvoker })
   // Out of the trash, restored here or elsewhere: a document opened trashed opens now, and a session that stopped
   // while RTS refused the trashed document reconnects (one still trying reconnects by itself)
   const leaveTrash = useEvent(() => (openedTrashed ? onRetry() : retryConnection()))

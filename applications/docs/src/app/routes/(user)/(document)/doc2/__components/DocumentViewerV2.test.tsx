@@ -7,9 +7,10 @@ import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresCl
 import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { MemberRole, getDrive } from '@proton/drive/sdk'
+import { getNewWindow } from '@proton/shared/lib/helpers/window'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
-import { DocsApiError, decodeAwarenessUpdate, encodeAwarenessUpdate } from '@proton-docs/realtime-sdk'
+import { DocsApiError, SeedError, decodeAwarenessUpdate, encodeAwarenessUpdate } from '@proton-docs/realtime-sdk'
 import type { HistoryEntry, Participant, RecoveryCondition, SessionStatus } from '@proton-docs/realtime-sdk'
 import { type ReactNode, StrictMode } from 'react'
 import { MemoryRouter } from 'react-router-dom'
@@ -39,7 +40,15 @@ jest.mock('@proton/drive/sdk', () => ({
   getDrive: jest.fn(),
 }))
 const mockGetNodeHierarchy = jest.fn()
-jest.mock('@proton/components/hooks/useAuthentication', () => () => ({ UID: 'session-uid' }))
+const mockGetAvailableName = jest.fn(async (_parentUid: string, name: string) => name)
+jest.mock('@proton/components/hooks/useAuthentication', () => () => ({ UID: 'session-uid', getLocalID: () => 3 }))
+jest.mock('@proton/shared/lib/helpers/window', () => ({ getNewWindow: jest.fn() }))
+jest.mock('@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName', () => ({
+  getPlatformFriendlyDateForFileName: () => '2026-11-10 09.00.00',
+}))
+jest.mock('@proton/drive/public/moveItemsModal', () => ({
+  useMoveItemsModal: () => ({ moveItemsModal: null, showMoveItemsModal: jest.fn() }),
+}))
 const mockIsFlagEnabled = () => false
 jest.mock('@proton/unleash/useGetFlag', () => ({ useGetFlag: () => mockIsFlagEnabled }))
 /** The toasts shown, in order: each has its text, which may hold a button */
@@ -52,7 +61,11 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 }))
 
 let mockIsODTEnabled = false
-jest.mock('~/utils/flags', () => ({ useIsDarkThemeEnabled: () => false, useIsODTEnabled: () => mockIsODTEnabled }))
+jest.mock('~/utils/flags', () => ({
+  useIsDarkThemeEnabled: () => false,
+  useIsODTEnabled: () => mockIsODTEnabled,
+  useIsSheetsEnabled: () => false,
+}))
 jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }))
 jest.mock('~/drive-sdk/event-subscriber', () => ({
   getEventSubscriber: () => ({ initialize: async () => {}, reset: () => {} }),
@@ -80,7 +93,9 @@ jest.mock('./DocumentShell', () => ({
   ),
 }))
 jest.mock('./ErrorHeader', () => ({ ErrorHeader: () => null }))
-// The file actions have their own tests; here, that the viewer feeds them and routes the file menu to them
+// The file actions have their own tests; here, that the viewer feeds them and routes the file menu to them. The
+// history's Make a copy runs the real ones, on the fake seeding client and the fake Drive
+let mockRealFileActions = false
 const mockFileActions = {
   trashState: 'not_trashed',
   isCreatingSpreadsheet: false,
@@ -88,6 +103,7 @@ const mockFileActions = {
   newDocument: jest.fn(),
   newSpreadsheet: jest.fn(),
   makeACopy: jest.fn(),
+  makeACopyOfRevision: jest.fn(async (_state: Uint8Array<ArrayBuffer>) => {}),
   moveToFolder: jest.fn(),
   moveToTrash: jest.fn(),
   openProtonDrive: jest.fn(),
@@ -97,9 +113,18 @@ const mockUseDocumentFileActions = jest.fn(
   (_options: unknown): Omit<typeof mockFileActions, 'trashState'> & { trashState: string } => mockFileActions,
 )
 jest.mock('../__utils/useDocumentFileActions', () => ({
-  useDocumentFileActions: (options: unknown) => mockUseDocumentFileActions(options),
+  useDocumentFileActions: (options: unknown) =>
+    mockRealFileActions
+      ? jest.requireActual('../__utils/useDocumentFileActions').useDocumentFileActions(options)
+      : mockUseDocumentFileActions(options),
 }))
-const DRIVE_COMPAT = { name: 'driveCompat' } as unknown as DriveCompat
+const mockCreateDocumentNode = jest.fn()
+const mockGetMyFilesNodeMeta = jest.fn()
+const DRIVE_COMPAT = {
+  name: 'driveCompat',
+  createDocumentNode: mockCreateDocumentNode,
+  getMyFilesNodeMeta: mockGetMyFilesNodeMeta,
+} as unknown as DriveCompat
 const mockApi = jest.fn(async (_request: unknown): Promise<unknown> => ({}))
 jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }))
 jest.mock('./DocumentHeaderV2', () => ({
@@ -333,9 +358,10 @@ function renderViewer(
     strict?: boolean
   } = {},
 ) {
-  jest
-    .mocked(getDrive)
-    .mockReturnValue({ getNodeHierarchy: mockGetNodeHierarchy } as unknown as ReturnType<typeof getDrive>)
+  jest.mocked(getDrive).mockReturnValue({
+    getNodeHierarchy: mockGetNodeHierarchy,
+    getAvailableName: mockGetAvailableName,
+  } as unknown as ReturnType<typeof getDrive>)
   mockGetNodeHierarchy.mockImplementation(readHierarchy)
   mockRealtimeClient.createSession.mockReturnValue(fake.session)
   const application = {
@@ -1657,6 +1683,165 @@ describe('DocumentViewerV2', () => {
 
       // Gone once its exit animation ends, which jsdom never runs
       await waitFor(() => expect(modal().closest('.modal-two--out')).not.toBeNull())
+    })
+
+    describe('Make a copy', () => {
+      const newWindow = { handle: { location: { assign: jest.fn() } }, close: jest.fn() }
+
+      beforeEach(() => {
+        mockRealFileActions = true
+        jest.mocked(getNewWindow).mockReturnValue(newWindow as unknown as ReturnType<typeof getNewWindow>)
+        mockCreateDocumentNode.mockResolvedValue({ volumeId: 'VOLUME', linkId: 'COPY', keys: {} })
+        mockGetMyFilesNodeMeta.mockResolvedValue({ volumeId: 'MYVOLUME', linkId: 'MYFILES' })
+        mockRealtimeClient.seedInitialCommit.mockResolvedValue({ commitId: 'COMMIT' })
+      })
+
+      afterEach(() => {
+        mockRealFileActions = false
+        mockHeldRevisionFrames = undefined
+        mockRealtimeClient.seedInitialCommit.mockReset()
+        mockCreateDocumentNode.mockReset()
+      })
+
+      function copyButton() {
+        return within(modal()).queryByTestId('restore-revision-by-copy')
+      }
+
+      /** Opens the history as `role` on the older of two revisions, its view loaded, the document in folder PARENT */
+      async function openOlderRevision(role: DocumentRole = 'Editor') {
+        const fake = createSession()
+        fake.mocks.getHistory.mockReturnValue(historyLog(15))
+        const rendered = await renderRevealed(fake, {
+          role,
+          readHierarchy: async () => hierarchy(role, { parentUid: 'VOLUME~PARENT' }),
+        })
+        await userEvent.click(screen.getByRole('button', { name: 'See version history' }))
+        await userEvent.click(timeline()[1])
+        await waitFor(() => expect(mockRevisionStates).toHaveLength(2))
+        await waitFor(() => expect(copyButton()).toBeEnabled())
+        return { fake, ...rendered }
+      }
+
+      test.each<[DocumentRole, object]>([
+        ['Admin', { volumeId: 'VOLUME', linkId: 'PARENT' }],
+        ['Editor', { volumeId: 'VOLUME', linkId: 'PARENT' }],
+        ['Viewer', { volumeId: 'MYVOLUME', linkId: 'MYFILES' }],
+      ])(
+        "%s: seeds a new document with the revision's state and opens it in doc2 in a window opened on the click",
+        async (role, folder) => {
+          await openOlderRevision(role)
+          const revisionState = mockRevisionStates[1]
+          expect(textOf(revisionState)).toBe('abcdefghij')
+
+          await userEvent.click(copyButton()!)
+
+          expect(getNewWindow).toHaveBeenCalledWith()
+          await waitFor(() =>
+            expect(newWindow.handle.location.assign).toHaveBeenCalledWith(
+              'http://docs.localhost/u/3/doc2?mode=open&volumeId=VOLUME&linkId=COPY',
+            ),
+          )
+          // The revision's merged state as the timeline holds it, not a round trip through the view's editor
+          expect(mockRealtimeClient.seedInitialCommit).toHaveBeenCalledTimes(1)
+          expect(mockRealtimeClient.seedInitialCommit).toHaveBeenCalledWith({
+            nodeMeta: { volumeId: 'VOLUME', linkId: 'COPY' },
+            state: revisionState,
+          })
+          expect(mockRevisionInvoker.getDocumentState).not.toHaveBeenCalled()
+          // Next to the document, or in My files for a user who can't organize it, named as Make a copy names it
+          expect(mockCreateDocumentNode).toHaveBeenCalledWith(folder, 'Plans (copy 2026-11-10 09.00.00)', 'doc')
+          expect(newWindow.close).not.toHaveBeenCalled()
+          // The history stays open
+          expect(modal().closest('.modal-two--out')).toBeNull()
+        },
+      )
+
+      test('shows first, before the restore and the exports, and never on the current version', async () => {
+        const fake = createSession()
+        fake.mocks.getHistory.mockReturnValue(historyLog(15))
+        await openHistory(fake)
+        expect(copyButton()).not.toBeInTheDocument()
+
+        await userEvent.click(timeline()[1])
+
+        await waitFor(() => expect(copyButton()).toBeEnabled())
+        expect(copyButton()).toHaveTextContent('Make a copy')
+        const buttons = within(modal())
+          .getAllByRole('button')
+          .map((button) => button.dataset.testid)
+        expect(buttons.indexOf('restore-revision-by-copy')).toBeLessThan(buttons.indexOf('restore-revision-by-replace'))
+        expect(buttons.indexOf('restore-revision-by-copy')).toBeLessThan(buttons.indexOf('export-revision'))
+      })
+
+      test("is disabled until the view's editor exists", async () => {
+        mockHeldRevisionFrames = []
+        const fake = createSession()
+        fake.mocks.getHistory.mockReturnValue(historyLog(15))
+        await renderRevealed(fake, { role: 'Editor' })
+        await userEvent.click(screen.getByRole('button', { name: 'See version history' }))
+        await userEvent.click(timeline()[1])
+
+        expect(copyButton()).toBeDisabled()
+        await userEvent.click(copyButton()!)
+        expect(getNewWindow).not.toHaveBeenCalled()
+        expect(mockRealtimeClient.seedInitialCommit).not.toHaveBeenCalled()
+
+        act(() => mockHeldRevisionFrames?.forEach((ready) => ready()))
+
+        await waitFor(() => expect(copyButton()).toBeEnabled())
+      })
+
+      test('shows a loading state while copying, and copies once', async () => {
+        let finishSeed!: () => void
+        mockRealtimeClient.seedInitialCommit.mockReturnValue(
+          new Promise((resolve) => {
+            finishSeed = () => resolve({ commitId: 'COMMIT' })
+          }),
+        )
+        await openOlderRevision()
+
+        await userEvent.click(copyButton()!)
+
+        await waitFor(() => expect(copyButton()).toHaveAttribute('aria-busy', 'true'))
+        await userEvent.click(copyButton()!)
+        await waitFor(() => expect(mockRealtimeClient.seedInitialCommit).toHaveBeenCalledTimes(1))
+        await act(async () => finishSeed())
+        await waitFor(() => expect(copyButton()).not.toHaveAttribute('aria-busy', 'true'))
+        expect(getNewWindow).toHaveBeenCalledTimes(1)
+        expect(mockCreateDocumentNode).toHaveBeenCalledTimes(1)
+        expect(newWindow.handle.location.assign).toHaveBeenCalledTimes(1)
+      })
+
+      test.each([
+        [
+          'a state over the size limit',
+          new SeedError('stateTooLarge', { attemptedBytes: 26_000_000, limitBytes: 25_000_000 }),
+          'Document Size Limit Exceeded',
+          'This document is too large to copy. Download it to keep a copy of your work.',
+        ],
+        [
+          'a seed the Docs API refuses',
+          new DocsApiError('seedInitialCommit', 422, 250003),
+          'Something went wrong',
+          'An error occurred while attempting to duplicate the document. Please try again.',
+        ],
+      ])(
+        "%s closes the window and shows Make a copy's error modal over the history",
+        async (_case, error, title, message) => {
+          mockRealtimeClient.seedInitialCommit.mockRejectedValue(error)
+          const { logger } = await openOlderRevision()
+
+          await userEvent.click(copyButton()!)
+
+          const alert = await screen.findByRole('dialog', { name: title })
+          expect(alert).toHaveTextContent(message)
+          expect(newWindow.close).toHaveBeenCalled()
+          expect(newWindow.handle.location.assign).not.toHaveBeenCalled()
+          expect(logger.error).toHaveBeenCalledWith('Failed to make a copy of the document', error)
+          expect(copyButton()).not.toHaveAttribute('aria-busy', 'true')
+          expect(modal().closest('.modal-two--out')).toBeNull()
+        },
+      )
     })
 
     describe('Restore this version', () => {
