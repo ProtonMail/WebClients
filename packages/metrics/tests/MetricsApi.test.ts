@@ -186,14 +186,14 @@ describe('MetricsApi', () => {
             expect(getHeader(content?.headers, 'content-type')).toBe('application/json');
         });
 
-        it('sets priority header to u=6', async () => {
+        it('sets priority header to u=7', async () => {
             const metricsApi = new MetricsApi();
 
             await metricsApi.fetch('/route');
             const content = fetchMock.mock.lastCall?.[1];
 
             expect(fetchMock).toHaveBeenCalledTimes(1);
-            expect(getHeader(content?.headers, 'priority')).toBe('u=6');
+            expect(getHeader(content?.headers, 'priority')).toBe('u=7');
         });
 
         it('forwards request info', async () => {
