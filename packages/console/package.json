@@ -6,6 +6,7 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
+        "./billing/getBillingPageAvailability": "./src/billing/getBillingPageAvailability.ts",
         "./dashboard/widgetContract": "./src/dashboard/widgetContract.ts",
         "./dashboard/widgetStubs": "./src/dashboard/widgetStubs.ts",
         "./organization/getAccessControlPageAvailability": "./src/organization/getAccessControlPageAvailability.ts",

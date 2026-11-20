@@ -5,6 +5,7 @@ import type { ThemeColor } from '@proton/colors/types';
 import { filterNews, getEmailSubscriptions } from '@proton/components/containers/account/constants/email-subscriptions';
 import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 import type { SectionConfig, SubrouteGroup } from '@proton/components/containers/layout/interface';
+import { getBillingPageAvailability } from '@proton/console/billing/getBillingPageAvailability';
 import { IcArrowDownToSquare } from '@proton/icons/icons/IcArrowDownToSquare';
 import { IcArrowUpBigLine } from '@proton/icons/icons/IcArrowUpBigLine';
 import { IcBell } from '@proton/icons/icons/IcBell';
@@ -35,7 +36,6 @@ import {
     PROTON_SENTINEL_NAME,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { hasNoOrgPermissions } from '@proton/shared/lib/helpers/orgPermissions';
 import { UserType } from '@proton/shared/lib/interfaces/User';
 import {
     getIsBYOEAccount,
@@ -482,27 +482,7 @@ export const getAccountAppRoutes = ({
         // because they should have them on the dashboard or subscription pages
         (isVisionaryPlan && isMemberProton && isMember);
 
-    const canAccessBilling = (isFree || canPay) && !isMember;
-    // MSP subsidiary orgs have their subscription managed by the MSP manager, so no one in the
-    // subsidiary org can edit it: the dashboard and subscription pages should be hidden for everyone.
-    const isSubsidiaryOrg = !!organization?.IsSubsidiary;
-
-    // hasAccountDashboardReadPermission is obviously true when permissions['account.dashboard.read'] is set. We need
-    // isTransitionalState for the cases when user upgrades from free to paid. In this case there will be a brief moment
-    // when user.isAdmin == true while org permissions are still not set and have all false values. We know that paid
-    // users should have at least some permissions and by default we treat them as eligibile to see the dashboard. Once
-    // the actual permission object arrives, the routes are properly recomputed because isTransitionalState will be
-    // false.
-    const isTransitionalState = isAdmin && hasNoOrgPermissions(permissions);
-    const hasAccountDashboardReadPermission = permissions['account.dashboard.read'] || isTransitionalState;
-
-    // There are two paths where the dashboard is shown:
-    // 1. (!isAdmin && canAccessBilling): if user can access billing, they can see the dashboard. "!isAdmin" is added because
-    //  admin without `account.dashboard.read` permission should not see the dashboard (e.g. User Admin has isAdmin = true
-    //  but their responsiblity are CRUD members and groups only)
-    // 2. permissions['account.dashboard.read']: this path grants the dashboard to any org member who holds the permission
-    const shouldShowDashboard =
-        !isSubsidiaryOrg && ((!isAdmin && canAccessBilling) || hasAccountDashboardReadPermission);
+    const shouldShowDashboard = getBillingPageAvailability({ user, organization, permissions }).dashboard;
     // We do not have to check app names here as the hook responsible to populate these values will do it for us.
     const shouldShowV2Dashboard = showGenericDashboard || showVPNDashboard || showDashboard || showDriveDashboard;
 

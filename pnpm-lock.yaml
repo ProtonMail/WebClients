@@ -1625,6 +1625,9 @@ importers:
       '@proton/atoms':
         specifier: workspace:^
         version: link:../../packages/atoms
+      '@proton/calendar':
+        specifier: workspace:^
+        version: link:../../packages/calendar
       '@proton/charts':
         specifier: workspace:^
         version: link:../../packages/charts
