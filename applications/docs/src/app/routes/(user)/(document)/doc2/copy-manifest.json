@@ -109,7 +109,7 @@
     "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryViewerModal.tsx",
     "sourceCommit": "068a15c952ea72df34c8e663c6f72bfdb0a61ea8",
     "copiedIn": "507f49acd9912aecce8e172e5d3e0889878d9366",
-    "notes": "The fullscreen modal, its layout, timeline, view, exports and Debug Mode extras, for text documents only: no sheet branches, and no Make a copy yet; the restore in place has its own entry. Exports through doc2's exportAndDownload with the document's name; a failed export is logged. Another revision's exports wait for its own view's editor, and a new batch granularity always shows a new view. The Debug Mode exports get their own test ids."
+    "notes": "The fullscreen modal, its layout, timeline, view, exports and Debug Mode extras, for text documents only: no sheet branches; Make a copy and the restore in place have their own entries. Exports through doc2's exportAndDownload with the document's name; a failed export is logged. Another revision's exports wait for its own view's editor, and a new batch granularity always shows a new view. The Debug Mode exports get their own test ids."
   },
   {
     "doc2": "__components/HistoryViewerModal.tsx",
@@ -130,6 +130,16 @@
     "sourceCommit": "a9f236b5e491044fb0817628b61db659032e1076",
     "copiedIn": "f744b58abcde0642dffd165e8b7178f392c6d0b6",
     "notes": "Inlined as the calls to the live EditorInvoker they make; no check for a missing invoker, as the button needs it."
+  },
+  {
+    "doc2": "__components/HistoryViewerModal.tsx",
+    "doc2Symbol": "makeACopy, the Make a copy button",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/HistoryViewerModal/HistoryViewerModal.tsx",
+    "sourceSymbol": "onRestore('as-copy'), the restore-revision-by-copy button",
+    "sourceCommit": "a9f236b5e491044fb0817628b61db659032e1076",
+    "copiedIn": "c8b841f0e88f8858a7d10cc3b061e3a05f22f6f8",
+    "notes": "The button, for every role. It seeds the revision's merged state as the timeline holds it, not the view's getDocumentState, through the page's Make a copy (useDocumentFileActions' makeACopyOfRevision), which names the copy as Make a copy does, opens it in doc2 in a window opened on the click, and shows Make a copy's error modal on a failure, where /doc ignored it. Disabled until the view's editor exists, where /doc's did nothing. The restore button below it gets the top margin, so a viewer's copy and exports are evenly spaced."
   },
   {
     "doc2": "__components/LoadingScreen.tsx",
@@ -451,7 +461,7 @@
   },
   {
     "doc2": "__utils/useDocumentFileActions.tsx",
-    "doc2Symbol": "makeACopy",
+    "doc2Symbol": "copyIntoNewWindow",
     "kind": "mirror",
     "source": "packages/docs-core/lib/UseCase/DuplicateDocument.ts",
     "sourceSymbol": "executePrivate",

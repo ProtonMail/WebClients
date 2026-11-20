@@ -291,6 +291,23 @@ describe('useDocumentFileActions', () => {
       expect(screen.getByRole('dialog', { hidden: true })).toHaveTextContent('Something went wrong')
     })
 
+    test('an export that throws at once closes the window, shows the error modal and frees the next copy', async () => {
+      exportInvoker.exportData.mockImplementationOnce(() => {
+        throw new Error('Bridge destroyed')
+      })
+      const { result } = renderActions()
+
+      act(() => result.current.makeACopy())
+
+      await waitFor(() => expect(result.current.isMakingACopy).toBe(false))
+      expect(newWindow.close).toHaveBeenCalled()
+      renderModals(result.current)
+      expect(screen.getByRole('dialog', { hidden: true })).toHaveTextContent('Something went wrong')
+
+      act(() => result.current.makeACopy())
+      await waitFor(() => expect(newWindow.handle.location.assign).toHaveBeenCalledTimes(1))
+    })
+
     test('a second click while copying copies nothing more', async () => {
       const seed = deferred<{ commitId: string }>()
       client.seedInitialCommit.mockReturnValue(seed.promise)
@@ -328,6 +345,86 @@ describe('useDocumentFileActions', () => {
 
       expect(getNewWindow).not.toHaveBeenCalled()
       expect(exportInvoker.exportData).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('Make a copy of a revision', () => {
+    const REVISION_STATE = new Uint8Array([4, 5, 6])
+
+    beforeEach(() => driveCompat.createDocumentNode.mockResolvedValue({ volumeId: 'VOLUME', linkId: 'COPY', keys: {} }))
+
+    test('seeds a copy with the given state, as Make a copy names and places it, without the editor, then opens it in doc2', async () => {
+      const { result } = renderActions({ exportInvoker: undefined })
+
+      let done!: Promise<void>
+      act(() => {
+        done = result.current.makeACopyOfRevision(REVISION_STATE)
+      })
+
+      expect(getNewWindow).toHaveBeenCalledWith()
+      expect(result.current.isMakingACopy).toBe(true)
+      await act(() => done)
+      expect(result.current.isMakingACopy).toBe(false)
+      expect(exportInvoker.exportData).not.toHaveBeenCalled()
+      expect(driveCompat.createDocumentNode).toHaveBeenCalledWith(
+        { volumeId: 'VOLUME', linkId: 'PARENT' },
+        'Plans (copy 2026-11-10 09.00.00)',
+        'doc',
+      )
+      expect(client.seedInitialCommit).toHaveBeenCalledWith({
+        nodeMeta: { volumeId: 'VOLUME', linkId: 'COPY' },
+        state: REVISION_STATE,
+      })
+      expect(newWindow.handle.location.assign).toHaveBeenCalledWith(
+        'http://docs.localhost/u/3/doc2?mode=open&volumeId=VOLUME&linkId=COPY',
+      )
+    })
+
+    test('a failed seed settles without rejecting, closes the window and shows the error modal', async () => {
+      client.seedInitialCommit.mockRejectedValue(new DocsApiError('seedInitialCommit', 422, 250003))
+      const { result } = renderActions()
+
+      await act(() => result.current.makeACopyOfRevision(REVISION_STATE))
+
+      expect(newWindow.close).toHaveBeenCalled()
+      expect(newWindow.handle.location.assign).not.toHaveBeenCalled()
+      renderModals(result.current)
+      expect(screen.getByRole('dialog', { hidden: true })).toHaveTextContent('Something went wrong')
+    })
+
+    test('copies nothing while Make a copy runs', async () => {
+      const seed = deferred<{ commitId: string }>()
+      client.seedInitialCommit.mockReturnValue(seed.promise)
+      const { result } = renderActions()
+      act(() => result.current.makeACopy())
+
+      await act(() => result.current.makeACopyOfRevision(REVISION_STATE))
+      await act(async () => seed.resolve({ commitId: 'COMMIT' }))
+
+      expect(getNewWindow).toHaveBeenCalledTimes(1)
+      expect(client.seedInitialCommit).toHaveBeenCalledTimes(1)
+      expect(client.seedInitialCommit.mock.calls[0][0].state).toBe(STATE)
+    })
+
+    test("a window that refuses the copy's address is logged, and the promise still resolves", async () => {
+      const error = new Error('Blocked')
+      newWindow.handle.location.assign.mockImplementationOnce(() => {
+        throw error
+      })
+      const { result } = renderActions()
+
+      await act(() => result.current.makeACopyOfRevision(REVISION_STATE))
+
+      expect(application.logger.error).toHaveBeenCalledWith('Failed to open the copy of the document', error)
+      expect(result.current.isMakingACopy).toBe(false)
+    })
+
+    test('does nothing before the node is there', async () => {
+      const { result } = renderActions({ node: undefined })
+
+      await act(() => result.current.makeACopyOfRevision(REVISION_STATE))
+
+      expect(getNewWindow).not.toHaveBeenCalled()
     })
   })
 

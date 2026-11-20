@@ -40,6 +40,7 @@ export type TrashState = 'not_trashed' | 'trashing' | 'trashed' | 'restoring'
 export type DocumentFileActions = {
   trashState: TrashState
   isCreatingSpreadsheet: boolean
+  /** Make a copy runs, from the title menu or the version history: one at a time */
   isMakingACopy: boolean
   /** Opens a new window on doc2, which creates a text document next to this one, or in My files */
   newDocument: () => void
@@ -50,6 +51,12 @@ export type DocumentFileActions = {
    * otherwise, and opens that in doc2 in a new window
    */
   makeACopy: () => void
+  /**
+   * Make a copy of a version history revision: seeds a new document with `state`, the revision's whole yjs document,
+   * as Make a copy does, and opens it in doc2 in a window opened on the call. Settles once the copy has opened or its
+   * error modal shows, and never rejects
+   */
+  makeACopyOfRevision: (state: Uint8Array<ArrayBuffer>) => Promise<void>
   /** Editors and admins only, of a document not shared directly */
   moveToFolder: () => void
   /** Editors and admins only, of a document not shared directly */
@@ -70,7 +77,7 @@ type TrashStatus = {
  * The title menu's Drive actions on the document `node`, as /doc's `DocumentTitleDropdown.tsx` and docs-core's
  * `AuthenticatedDocController` run them. Each does nothing without a node, move and trash nothing for a user who may
  * not organize the document (`canOrganizeDocument`), restore nothing for anyone but its owner, and Make a copy nothing
- * until the editor shows the document (`exportInvoker`). The trash state follows the node, so a document trashed or
+ * until the editor shows the document (`exportInvoker`); a revision's copy needs only its state. The trash state follows the node, so a document trashed or
  * restored elsewhere shows or leaves the trashed modal.
  */
 export function useDocumentFileActions({
@@ -157,10 +164,15 @@ export function useDocumentFileActions({
       })
   }
 
-  const makeACopy = () => {
+  /**
+   * Make a copy's run, for what the editor holds and for a revision: one at a time, named as /doc names a copy, next to
+   * this document when the user may organize it and in My files otherwise. A failure closes the window and shows the
+   * error modal.
+   */
+  const copyIntoNewWindow = (getState: () => Promise<Uint8Array<ArrayBuffer>>): Promise<void> => {
     const name = node && getNodeName(node)
-    if (!node || !name || !exportInvoker || makingACopyRef.current) {
-      return
+    if (!node || !name || makingACopyRef.current) {
+      return Promise.resolve()
     }
     makingACopyRef.current = true
     setIsMakingACopy(true)
@@ -169,8 +181,9 @@ export function useDocumentFileActions({
     // The name /doc gives a copy, untranslated as there. Mirrors `packages/docs-core/lib/UseCase/DuplicateDocument.ts`,
     // its `executePrivate`
     const copyName = `${name} (copy ${getPlatformFriendlyDateForFileName()})`
-    exportInvoker
-      .exportData('yjs')
+    // Started in a promise, so a getState that throws at once still closes the window and frees the next copy
+    return Promise.resolve()
+      .then(getState)
       .then((state) => duplicateWithState(state, copyName, { node, canOrganize, driveCompat, client }))
       .then(
         (copy) => newWindow.handle.location.assign(getDocumentHref(copy, getLocalID())),
@@ -180,11 +193,20 @@ export function useDocumentFileActions({
           showCopyFailedModal(getCopyFailedAlert(error))
         },
       )
+      .catch((error) => logger.error('Failed to open the copy of the document', error))
       .finally(() => {
         makingACopyRef.current = false
         setIsMakingACopy(false)
       })
   }
+
+  const makeACopy = () => {
+    if (exportInvoker) {
+      void copyIntoNewWindow(() => exportInvoker.exportData('yjs'))
+    }
+  }
+
+  const makeACopyOfRevision = (state: Uint8Array<ArrayBuffer>) => copyIntoNewWindow(async () => state)
 
   const moveToFolder = () => {
     if (node && canOrganize) {
@@ -274,6 +296,7 @@ export function useDocumentFileActions({
     newDocument,
     newSpreadsheet,
     makeACopy,
+    makeACopyOfRevision,
     moveToFolder,
     moveToTrash,
     openProtonDrive,
