@@ -57,6 +57,9 @@ export type DocumentViewerV2Props = {
   /** Drive's Download: saves the document as docx once the editor shows it, then calls `onDownloadedOnOpen` */
   downloadOnOpen?: boolean
   onDownloadedOnOpen?: () => void
+  /** `mode=history`: opens the version history once the editor shows the document, then calls onHistoryOpenedOnOpen */
+  historyOnOpen?: boolean
+  onHistoryOpenedOnOpen?: () => void
 }
 
 /**
@@ -70,6 +73,8 @@ export function DocumentViewerV2({
   onRetry,
   downloadOnOpen,
   onDownloadedOnOpen,
+  historyOnOpen,
+  onHistoryOpenedOnOpen,
 }: DocumentViewerV2Props) {
   const { logger, isPublicMode } = useApplication()
   const { APP_VERSION, API_URL } = useConfig()
@@ -210,6 +215,16 @@ export function DocumentViewerV2({
       onFileMenuAction({ type: 'download', format: 'docx' })
     }
   }, [downloadOnOpen, exportInvoker, node, onDownloadedOnOpen, onFileMenuAction])
+  // `mode=history`: the history opens once, at the Reveal Point, through the menu's See version history. Adapted from
+  // `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/DocumentTitleDropdown.tsx`,
+  // its history action mode
+  // It waits for what See version history needs, so it never counts as opened when the history couldn't open
+  useEffect(() => {
+    if (historyOnOpen && exportInvoker && session && node && getNodeName(node)) {
+      onHistoryOpenedOnOpen?.()
+      onFileMenuAction({ type: 'see-version-history' })
+    }
+  }, [historyOnOpen, exportInvoker, node, session, onHistoryOpenedOnOpen, onFileMenuAction])
 
   if (status.name === 'failed') {
     const { reason } = status

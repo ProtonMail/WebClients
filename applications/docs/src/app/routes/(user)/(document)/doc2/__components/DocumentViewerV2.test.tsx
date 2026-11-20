@@ -347,6 +347,8 @@ function renderViewer(
     readHierarchy = async () => hierarchy(role),
     downloadOnOpen,
     onDownloadedOnOpen,
+    historyOnOpen,
+    onHistoryOpenedOnOpen,
     strict = false,
   }: {
     role?: DocumentRole
@@ -355,6 +357,8 @@ function renderViewer(
     readHierarchy?: () => Promise<unknown>
     downloadOnOpen?: boolean
     onDownloadedOnOpen?: () => void
+    historyOnOpen?: boolean
+    onHistoryOpenedOnOpen?: () => void
     strict?: boolean
   } = {},
 ) {
@@ -382,6 +386,8 @@ function renderViewer(
                   onRetry={onRetry}
                   downloadOnOpen={downloadOnOpen}
                   onDownloadedOnOpen={onDownloadedOnOpen}
+                  historyOnOpen={historyOnOpen}
+                  onHistoryOpenedOnOpen={onHistoryOpenedOnOpen}
                 />
               </DebugModeProvider>
             </ApplicationProvider>
@@ -1467,6 +1473,64 @@ describe('DocumentViewerV2', () => {
         expect(timeline()).toHaveLength(3)
       },
     )
+
+    test.each<DocumentRole>(['Admin', 'Editor', 'Viewer'])(
+      'mode history opens it as %s at the Reveal Point, says so, and only once',
+      async (role) => {
+        const fake = createSession()
+        fake.mocks.getHistory.mockReturnValue(historyLog(25))
+        const onHistoryOpenedOnOpen = jest.fn()
+        renderViewer(fake, { role, historyOnOpen: true, onHistoryOpenedOnOpen })
+        await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+
+        act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+        await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
+        await act(async () => {})
+        // The editor holds the document, but the Loading Screen still covers it
+        expect(screen.getByTestId('loading-screen')).toBeInTheDocument()
+        expect(screen.queryByTestId('history-modal')).not.toBeInTheDocument()
+        expect(onHistoryOpenedOnOpen).not.toHaveBeenCalled()
+
+        await act(async () => mockClientHandler.updateFrameSize(480))
+
+        await waitFor(() => expect(modal()).toBeInTheDocument())
+        expect(screen.queryByTestId('loading-screen')).not.toBeInTheDocument()
+        expect(timeline()).toHaveLength(3)
+        expect(onHistoryOpenedOnOpen).toHaveBeenCalledTimes(1)
+        expect(fake.mocks.getHistory).toHaveBeenCalledTimes(1)
+
+        // A reconnect catches up again, and the editor shows the document again
+        act(() =>
+          fake.setSnapshot({
+            status: { name: 'reconnecting', condition: 'transient', nextAttemptAt: 0, budgetExpiresAt: 0 },
+            caughtUp: false,
+          }),
+        )
+        act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+        await act(async () => {})
+        expect(onHistoryOpenedOnOpen).toHaveBeenCalledTimes(1)
+        expect(fake.mocks.getHistory).toHaveBeenCalledTimes(1)
+      },
+    )
+
+    test('mode history opens it once in StrictMode too', async () => {
+      const fake = createSession()
+      fake.mocks.getHistory.mockReturnValue(historyLog(3))
+      const onHistoryOpenedOnOpen = jest.fn()
+      await renderRevealed(fake, { historyOnOpen: true, onHistoryOpenedOnOpen, strict: true })
+
+      await waitFor(() => expect(modal()).toBeInTheDocument())
+      expect(onHistoryOpenedOnOpen).toHaveBeenCalledTimes(1)
+      expect(fake.mocks.getHistory).toHaveBeenCalledTimes(1)
+    })
+
+    test('opening a document without mode history does not open it', async () => {
+      const fake = createSession()
+      await renderRevealed(fake)
+
+      expect(screen.queryByTestId('history-modal')).not.toBeInTheDocument()
+      expect(fake.mocks.getHistory).not.toHaveBeenCalled()
+    })
 
     test("the editor's file menu opens it too", async () => {
       const fake = createSession()

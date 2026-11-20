@@ -13,8 +13,8 @@ import { DocsUrlContextProvider } from '~/utils/docs-url-bar'
 import type { DocumentViewerV2Props } from './__components/DocumentViewerV2'
 import DocumentPageV2 from './page'
 
-// The viewer has its own tests for downloading once it shows the document; here, what the page tells it, and across
-// a retry, which remounts it
+// The viewer has its own tests for downloading, or opening the history, once it shows the document; here, what the page
+// tells it, and across a retry, which remounts it
 const mockViewerMounts: DocumentViewerV2Props[] = []
 jest.mock('./__components/DocumentViewerV2', () => {
   const { useState } = jest.requireActual('react')
@@ -27,7 +27,9 @@ jest.mock('./__components/DocumentViewerV2', () => {
       return (
         <div>
           <span data-testid="viewer-download">{String(props.downloadOnOpen ?? false)}</span>
+          <span data-testid="viewer-history">{String(props.historyOnOpen ?? false)}</span>
           <button onClick={mountProps.onDownloadedOnOpen}>Downloaded</button>
+          <button onClick={mountProps.onHistoryOpenedOnOpen}>History opened</button>
           <button onClick={props.onRetry}>Retry</button>
         </div>
       )
@@ -36,7 +38,7 @@ jest.mock('./__components/DocumentViewerV2', () => {
 })
 jest.mock('@proton-docs/realtime-sdk', () => ({ ...jest.requireActual('@proton-docs/realtime-sdk'), version: '0.0.0' }))
 
-describe('DocumentPageV2 with Drive’s Download', () => {
+describe('DocumentPageV2 with Drive’s Download or mode history', () => {
   let replaceState: jest.SpyInstance
 
   beforeEach(() => {
@@ -75,11 +77,41 @@ describe('DocumentPageV2 with Drive’s Download', () => {
     expect(mockViewerMounts[1].downloadOnOpen).toBe(true)
   })
 
-  test('mode open does not download', () => {
+  test('mode open neither downloads nor opens the history', () => {
     renderAt('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
 
     expect(screen.getByTestId('viewer-download')).toHaveTextContent('false')
+    expect(screen.getByTestId('viewer-history')).toHaveTextContent('false')
     expect(replaceState).not.toHaveBeenCalled()
+  })
+
+  test('mode history has the viewer open the history, even once the address bar opens the document', () => {
+    renderAt('/doc2?mode=history&volumeId=VOLUME&linkId=LINK')
+
+    const addressBar = new URL(replaceState.mock.lastCall![2] as string)
+    expect(addressBar.search).toBe('?mode=open&volumeId=VOLUME&linkId=LINK')
+    expect(screen.getByTestId('viewer-history')).toHaveTextContent('true')
+    expect(screen.getByTestId('viewer-download')).toHaveTextContent('false')
+    expect(mockViewerMounts[0].nodeMeta).toEqual({ volumeId: 'VOLUME', linkId: 'LINK' })
+  })
+
+  test('a retry after the viewer opened the history does not open it again', async () => {
+    renderAt('/doc2?mode=history&volumeId=VOLUME&linkId=LINK')
+
+    await userEvent.click(screen.getByRole('button', { name: 'History opened' }))
+    await userEvent.click(screen.getByRole('button', { name: 'Retry' }))
+
+    expect(mockViewerMounts).toHaveLength(2)
+    expect(mockViewerMounts[1].historyOnOpen).toBe(false)
+  })
+
+  test('a retry before the viewer opened the history still opens it', async () => {
+    renderAt('/doc2?mode=history&volumeId=VOLUME&linkId=LINK')
+
+    await userEvent.click(screen.getByRole('button', { name: 'Retry' }))
+
+    expect(mockViewerMounts).toHaveLength(2)
+    expect(mockViewerMounts[1].historyOnOpen).toBe(true)
   })
 
   function renderAt(path: string) {

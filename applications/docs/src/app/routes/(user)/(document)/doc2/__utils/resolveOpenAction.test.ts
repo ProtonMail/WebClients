@@ -22,8 +22,26 @@ describe('resolveOpenAction', () => {
     })
   })
 
-  test('mode open does not download', () => {
-    expect(resolveUrl('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')).not.toHaveProperty('downloadOnOpen')
+  test('mode history resolves to the node to open, and its version history to open once it shows', () => {
+    expect(resolveUrl('/doc2?mode=history&volumeId=VOLUME&linkId=LINK')).toEqual({
+      kind: 'open',
+      nodeMeta: { volumeId: 'VOLUME', linkId: 'LINK' },
+      historyOnOpen: true,
+    })
+  })
+
+  test('mode open neither downloads nor opens the history', () => {
+    const resolution = resolveUrl('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
+    expect(resolution).not.toHaveProperty('downloadOnOpen')
+    expect(resolution).not.toHaveProperty('historyOnOpen')
+  })
+
+  test('mode download does not open the history', () => {
+    expect(resolveUrl('/doc2?mode=download&volumeId=VOLUME&linkId=LINK')).not.toHaveProperty('historyOnOpen')
+  })
+
+  test('mode history without a linkId is an invalid URL', () => {
+    expect(resolveUrl('/doc2?mode=history&volumeId=VOLUME')).toEqual({ kind: 'error', reason: 'invalidUrl' })
   })
 
   test('mode create resolves to creating in the parent folder', () => {
@@ -50,7 +68,6 @@ describe('resolveOpenAction', () => {
 
   test.each([
     '/doc2?mode=convert&volumeId=VOLUME&linkId=LINK',
-    '/doc2?mode=history&volumeId=VOLUME&linkId=LINK',
     '/doc2?mode=copy-public',
     '/doc2?mode=open-url&token=TOKEN&linkId=LINK',
     '/doc2?mode=open-url-download&token=TOKEN&linkId=LINK',
