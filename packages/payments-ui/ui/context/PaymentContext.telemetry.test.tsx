@@ -7,28 +7,17 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { PLANS } from '@proton/payments/core/constants';
-import type { PaymentsApi } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { telemetry } from '@proton/shared/lib/telemetry';
+import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 
 import { PaymentsContextProvider } from './PaymentContext';
 
 const checkSubscription = vi.fn();
-
-vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
-    const paymentsApi = {
-        checkSubscription: (...args: any[]) => checkSubscription(...args),
-        cacheMultiCheck: vi.fn(),
-        multiCheck: vi.fn().mockResolvedValue([]),
-        getFullBillingAddress: vi.fn().mockResolvedValue({}),
-    } as unknown as PaymentsApi;
-
-    return {
-        usePaymentsApi: () => ({ paymentsApi, getPaymentsApi: () => paymentsApi }),
-    };
-});
+// The checks go through the real payments api, to the mocked endpoint
+addApiMock('payments/v5/subscription/check', ({ data }) => checkSubscription(data));
 
 const createDeferred = <T,>() => {
     let resolve!: (value: T) => void;
@@ -85,7 +74,7 @@ const renderPaymentsContext = () => {
 
             void payments
                 .initialize({
-                    api: undefined as any,
+                    api: apiMock,
                     paymentFlow: 'signup',
                     onChargeable: async () => {},
                     paramCurrency: 'CHF',

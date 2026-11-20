@@ -60,7 +60,7 @@ export interface PaymentsContextType {
     selectPlanIDs: (planIDs: PlanIDs) => Promise<void>;
     selectCycle: (cycle: Cycle) => Promise<void>;
     selectCurrency: (currency: Currency) => Promise<void>;
-    selectFullBillingAddress: (fullBillingAddress: FullBillingAddressFlat) => Promise<void>;
+    selectFullBillingAddress: (fullBillingAddress: FullBillingAddressFlat) => void;
     checkMultiplePlans: (planToCheck: PlanToCheck[]) => Promise<SubscriptionEstimation[]>;
     /**
      * Returns the cached version of the subscription response. Returns null if the cache is missing.
@@ -110,7 +110,7 @@ export interface PaymentsContextType {
     getAvailableCurrencies: (selectedPlanName: PLANS) => ReturnType<typeof getAvailableCurrencies>;
     getPreferredCurrency: (selectedPlanName: PLANS) => ReturnType<typeof getPreferredCurrency>;
 
-    setVatNumber: (vatNumber: string) => Promise<void>;
+    setVatNumber: (vatNumber: string) => void;
     vatNumber: string | undefined;
 
     telemetryContext: PaymentTelemetryContext;

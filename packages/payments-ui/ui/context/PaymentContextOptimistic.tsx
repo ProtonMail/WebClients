@@ -43,6 +43,8 @@ export type PaymentsContextOptimisticType = PaymentsContextType & {
     selectPlan: (checkOptions: Partial<OptimisticOptions>) => void;
     checkoutUi: PaymentsContextType['checkoutUi'];
     options: OptimisticOptions;
+    /** A selection change waits for its check, but `options.checkResult` already holds its price, checked for the plan cards */
+    pricedBeforeCheck: boolean;
     /** The payment status, or a guess until it loads, so the payment methods don't pop in */
     optimisticPaymentStatus: PaymentStatus;
 };
@@ -222,11 +224,13 @@ const InnerPaymentsContextOptimisticProvider = ({
             }
         }
 
-        const optimisticCheckResult = paymentsContext.getOptimisticCheckResult({
-            planIDs: completeCheckOptions.planIDs,
-            cycle: completeCheckOptions.cycle,
-            currency: completeCheckOptions.currency,
-        });
+        const optimisticCheckResult =
+            paymentsContext.getPrice(completeCheckOptions)?.checkResult ??
+            paymentsContext.getOptimisticCheckResult({
+                planIDs: completeCheckOptions.planIDs,
+                cycle: completeCheckOptions.cycle,
+                currency: completeCheckOptions.currency,
+            });
 
         setOptimistic({
             ...mergedCheckOptions,
@@ -294,6 +298,7 @@ const InnerPaymentsContextOptimisticProvider = ({
                 loadingPaymentDetails: loadingPaymentDetails || paymentsContext.loading,
                 initializationStatus,
                 options,
+                pricedBeforeCheck: !!optimistic.checkResult && !optimistic.checkResult.optimistic,
                 optimisticPaymentStatus:
                     paymentsContext.paymentStatus ?? getOptimisticPaymentStatus(optimisticVendorStates),
                 checkoutUi: getCheckoutUi({
