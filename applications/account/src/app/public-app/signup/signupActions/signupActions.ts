@@ -26,14 +26,12 @@ import {
     updateOrganizationName,
 } from '@proton/shared/lib/api/organization';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
-import { queryUnlock } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { sendPasswordChangeMessageToTabs } from '@proton/shared/lib/authentication/passwordChangeMessage';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { APPS, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronMail, isElectronMeet } from '@proton/shared/lib/helpers/desktop';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
@@ -168,13 +166,11 @@ const handleSetupKeysHelper = async ({
     ktActivation,
     password,
     productParam,
-    setupKeys,
 }: {
     password: string;
     api: Api;
     ktActivation: KeyTransparencyActivation;
     productParam: ProductParam;
-    setupKeys: boolean;
 }) => {
     // NOTE: For VPN signup, the API doesn't automatically create an address, so this will simply return an empty
     // array, and keys won't be setup.
@@ -184,11 +180,6 @@ const handleSetupKeysHelper = async ({
         keyPassword: '',
         clearKeyPassword: '',
     };
-
-    if (!setupKeys) {
-        const user = await getUser(api);
-        return { keySetupData, user, addresses };
-    }
 
     const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation);
     if (addresses.length) {
@@ -208,62 +199,6 @@ const handleSetupKeysHelper = async ({
     const user = await getUser(api);
     await preAuthKTCommit(user.ID, api);
     return { keySetupData, user, addresses };
-};
-
-export const handleSetPassword = async ({
-    cache,
-    api,
-    newPassword,
-}: {
-    cache: SignupCacheResult;
-    api: Api;
-    newPassword: string;
-}): Promise<SignupActionResponse> => {
-    const { persistent, setupData, accountData, productParam, ktActivation } = cache;
-    const maybeUser = setupData?.user;
-    if (!setupData || !maybeUser) {
-        throw new Error('Missing user');
-    }
-
-    // In VPN signup, keys are setup with a user action and if users wait more than 10 minutes
-    // they lose locked scope. This ensures that locked scope is added before continuing. Even if it's not needed.
-    await srpAuth({ api, credentials: { password: accountData.password }, config: queryUnlock() });
-    const { keySetupData, user, addresses } = await handleSetupKeysHelper({
-        api,
-        ktActivation,
-        password: newPassword,
-        productParam,
-        setupKeys: true,
-    });
-
-    const sessionResult = await persistSession({
-        ...setupData.authResponse,
-        clearKeyPassword: keySetupData.clearKeyPassword,
-        keyPassword: keySetupData.keyPassword,
-        User: user,
-        api,
-        persistent,
-        trusted: false,
-        source: SessionSource.Proton,
-    });
-
-    sendPasswordChangeMessageToTabs({ localID: setupData.authResponse.LocalID, status: true });
-
-    return {
-        cache: {
-            ...cache,
-            accountData: {
-                ...accountData,
-                password: newPassword,
-            },
-            setupData: {
-                ...setupData,
-                addresses,
-                session: { ...sessionResult, User: user },
-                user: user,
-            },
-        },
-    };
 };
 
 const PASS_B2B_SEAT_STORAGE = 10 * sizeUnits.GB;
@@ -435,9 +370,7 @@ export class SubscriptionSetupError extends Error {
 export const handleSetupUser = async ({
     cache,
     api,
-    ignoreVPN,
     canGenerateMnemonic,
-    setupKeys = true,
     reportPaymentSuccess,
     reportPaymentFailure,
     telemetryContext,
@@ -445,9 +378,7 @@ export const handleSetupUser = async ({
 }: {
     cache: SignupCacheResult;
     api: Api;
-    ignoreVPN?: boolean;
     canGenerateMnemonic: boolean;
-    setupKeys?: boolean;
     reportPaymentSuccess: () => void;
     reportPaymentFailure: () => void;
     telemetryContext?: PaymentTelemetryContext;
@@ -459,7 +390,6 @@ export const handleSetupUser = async ({
         referralData,
         subscriptionData,
         persistent,
-        clientType,
         ktActivation,
         productParam,
         provisioningToken,
@@ -511,7 +441,6 @@ export const handleSetupUser = async ({
         ktActivation,
         password,
         productParam,
-        setupKeys,
     });
 
     const trusted = false;
@@ -552,11 +481,6 @@ export const handleSetupUser = async ({
             api,
         },
     };
-
-    // Ignore the rest of the steps for VPN because we don't create an address and ask for recovery email at the start
-    if (clientType === CLIENT_TYPES.VPN && !ignoreVPN) {
-        return handleDone({ cache: newCache, appIntent: cache.appIntent });
-    }
 
     // Start the easy switch import for pure BYOE accounts
     if (

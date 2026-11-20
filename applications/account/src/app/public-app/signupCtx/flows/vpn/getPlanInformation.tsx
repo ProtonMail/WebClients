@@ -47,8 +47,8 @@ import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import bundleVpnPass from '../single-signup-v2/bundle-vpn-pass.svg';
-import bundle from '../single-signup-v2/bundle.svg';
+import bundleVpnPass from '../../../single-signup-v2/bundle-vpn-pass.svg';
+import bundle from '../../../single-signup-v2/bundle.svg';
 import VpnProLogo from './VpnProLogo';
 
 export interface PlanInformation {

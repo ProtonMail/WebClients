@@ -975,33 +975,7 @@ export const getOptimisticPlanCardSubscriptionData = ({
     };
 };
 
-export const getOptimisticPlanCardsSubscriptionData = ({
-    planIDs,
-    plansMap,
-    cycles,
-    billingAddress,
-}: {
-    cycles: CYCLE[];
-    planIDs: PlanIDs[];
-    plansMap: PlansMap;
-    billingAddress: BillingAddress;
-}): SubscriptionDataCycleMapping => {
-    const result = planIDs.flatMap((planIDs) =>
-        cycles
-            .map((cycle) => [planIDs, cycle] as const)
-            .map(([planIDs, cycle]): SubscriptionData => {
-                // make sure that the plan and all its addons exist
-                const plansToCheck = Object.keys(planIDs) as (PLANS | ADDON_NAMES)[];
-                // we extract the currency of the currently selected plan in plansMap.
-                const currency = plansMap[plansToCheck[0]]?.Currency ?? getDefaultMainCurrency(billingAddress);
-                return getOptimisticPlanCardSubscriptionData({ billingAddress, planIDs, cycle, plansMap, currency });
-            })
-    );
-
-    return getPlanCardSubscriptionDataMapping({ result, plansMap });
-};
-
-export const getPlanCardSubscriptionData = async ({
+const getPlanCardSubscriptionData = async ({
     planIDs,
     plansMap,
     paymentsApi,

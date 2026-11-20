@@ -1,3 +1,4 @@
+import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from './billing-address/billing-address-from-payments-status';
 import type { PaymentStatus } from './interface';
 
@@ -23,3 +24,23 @@ export function normalizePaymentMethodStatus(status: PaymentStatus): PaymentStat
 
     return normalized;
 }
+
+/**
+ * What a payment form shows until the payment status loads: card, Google Pay and PayPal are usually active. A page
+ * that offers other methods can guess them active too, so they don't pop in.
+ */
+export const getOptimisticPaymentStatus = (vendorStates?: Partial<PaymentStatus['VendorStates']>): PaymentStatus => ({
+    VendorStates: {
+        Google: true,
+        Card: true,
+        Paypal: true,
+        Apple: false,
+        Cash: false,
+        Bitcoin: false,
+        Ideal: false,
+        ...vendorStates,
+    },
+    CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
+    State: DEFAULT_TAX_BILLING_ADDRESS.State,
+    ZipCode: DEFAULT_TAX_BILLING_ADDRESS.ZipCode,
+});

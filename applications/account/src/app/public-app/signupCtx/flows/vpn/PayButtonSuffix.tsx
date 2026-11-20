@@ -9,7 +9,7 @@ import type { SubscriptionEstimation } from '@proton/payments/core/subscription/
 import { APPS } from '@proton/shared/lib/constants';
 import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
-import { getLocaleTermsURL } from '../helper';
+import { getLocaleTermsURL } from '../../../helper';
 import Guarantee from './Guarantee';
 
 interface Props {

@@ -100,6 +100,8 @@ const DriveSignupInner = () => {
                                 setStep('recovery');
                             } catch (error) {
                                 notifyError(error);
+                                // Back to the form: submitting it again retries what failed
+                                setStep('account-details');
                             }
                         } else {
                             setStep('payment');
@@ -123,6 +125,8 @@ const DriveSignupInner = () => {
                             setStep('recovery');
                         } catch (error) {
                             notifyError(error);
+                            // Back to the form: submitting it again retries what failed
+                            setStep('payment');
                         }
                     }}
                 />
@@ -153,7 +157,12 @@ const DriveSignupInner = () => {
             {step === 'org-name' && (
                 <OrgNameStep
                     onSubmit={async (orgName) => {
-                        await signup.setOrgName(orgName);
+                        try {
+                            await signup.setOrgName(orgName);
+                        } catch (error) {
+                            notifyError(error);
+                            return;
+                        }
                         await signup.login();
                     }}
                 />

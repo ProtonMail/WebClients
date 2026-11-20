@@ -12,10 +12,11 @@ import { auth } from '@proton/shared/lib/api/auth';
 import type { ReferralRegistrationPlan } from '@proton/shared/lib/api/core/referrals';
 import { postReferralRegistration } from '@proton/shared/lib/api/core/referrals';
 import { updateLocale } from '@proton/shared/lib/api/settings';
-import { getUser } from '@proton/shared/lib/api/user';
+import { getUser, queryUnlock } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { sendPasswordChangeMessageToTabs } from '@proton/shared/lib/authentication/passwordChangeMessage';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -26,6 +27,7 @@ import type { ReferralData } from '@proton/shared/lib/interfaces/referral';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
 import { srpAuth } from '@proton/shared/lib/srp';
+import { isPaid } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import { type AccountData, SignupType } from '../../../signup/interfaces';
@@ -109,7 +111,10 @@ const setupKeys = async ({
     keyTransparencyActivation,
     password,
     productParam,
+    deferred = false,
 }: {
+    /** The flow sets the keys up later, with `handleSetPassword`. */
+    deferred?: boolean;
     password: string;
     api: Api;
     keyTransparencyActivation: KeyTransparencyActivation;
@@ -118,6 +123,11 @@ const setupKeys = async ({
     // NOTE: For VPN signup, the API doesn't automatically create an address, so this will simply return an empty
     // array, and keys won't be setup.
     const addresses = await getAllAddresses(api);
+
+    if (deferred) {
+        const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
+        return { keySetupData: { keyPassword: '', clearKeyPassword: '' }, user, addresses };
+    }
 
     const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(keyTransparencyActivation);
 
@@ -157,7 +167,16 @@ export const handleSetupUser = async ({
     referralRegistrationPlan,
     build,
     telemetryContext,
+    deferKeySetup,
+    onPaymentSuccess,
+    onPaymentFailure,
+    isRetry = false,
 }: {
+    deferKeySetup?: boolean;
+    onPaymentSuccess?: () => void;
+    onPaymentFailure?: () => void;
+    /** A previous attempt may have subscribed before failing, so the subscription is skipped if the user is paid. */
+    isRetry?: boolean;
     accountData: AccountData;
     api: Api;
     persistent: boolean;
@@ -192,6 +211,7 @@ export const handleSetupUser = async ({
         config: auth({ Username: userEmail }, persistent),
     }).then((response): Promise<AuthResponse> => response.json());
 
+    const alreadySubscribed = isRetry && isPaid(await api<{ User: User }>(getUser()).then(({ User }) => User));
     let subscription: Subscription | undefined;
     if (
         subscriptionData &&
@@ -199,7 +219,8 @@ export const handleSetupUser = async ({
          * No need to create subscription for referrals.
          * Referral registration will handle the subscription.
          */
-        !referralData
+        !referralData &&
+        !alreadySubscribed
     ) {
         // Perform the subscription first to prevent "locked user" while setting up keys.
         subscription = await handleSubscribeUser(api, subscriptionData, {
@@ -208,6 +229,8 @@ export const handleSetupUser = async ({
             telemetryContext,
             userCurrency: undefined,
             subscription: undefined,
+            onPaymentSuccess,
+            onPaymentFailure,
         });
     }
 
@@ -218,6 +241,7 @@ export const handleSetupUser = async ({
         keyTransparencyActivation,
         password,
         productParam,
+        deferred: deferKeySetup,
     });
 
     const session = await persistSession({
@@ -233,15 +257,18 @@ export const handleSetupUser = async ({
 
     let recoveryPhraseData;
     try {
-        recoveryPhraseData = await generateDeferredMnemonicData({
-            emailAddress: userEmail,
-            username: user.Name,
-            getUserKeys: async () => {
-                const userKeys = await getDecryptedUserKeysHelper(user, keySetupData.keyPassword);
-                return userKeys;
-            },
-            api,
-        });
+        // Without keys there is nothing to recover yet
+        recoveryPhraseData = deferKeySetup
+            ? undefined
+            : await generateDeferredMnemonicData({
+                  emailAddress: userEmail,
+                  username: user.Name,
+                  getUserKeys: async () => {
+                      const userKeys = await getDecryptedUserKeysHelper(user, keySetupData.keyPassword);
+                      return userKeys;
+                  },
+                  api,
+              });
     } catch (error) {
         /**
          * Silently error.
@@ -282,5 +309,57 @@ export const handleSetupUser = async ({
         authResponse,
         subscription,
         recoveryPhraseData,
+    };
+};
+
+/** Sets up the keys that `handleSetupUser` deferred, with the password the user chose. */
+export const handleSetPassword = async ({
+    api,
+    accountData,
+    setupResult,
+    newPassword,
+    persistent,
+    trusted,
+    productParam,
+    keyTransparencyActivation,
+}: {
+    api: Api;
+    accountData: AccountData;
+    setupResult: Awaited<ReturnType<typeof handleSetupUser>>;
+    newPassword: string;
+    persistent: boolean;
+    trusted: boolean;
+    productParam: ProductParam;
+    keyTransparencyActivation: KeyTransparencyActivation;
+}) => {
+    // The user can take more than 10 minutes to choose a password, which loses the locked scope: this adds it back
+    await srpAuth({ api, credentials: { password: accountData.password }, config: queryUnlock() });
+    const { keySetupData, user, addresses } = await setupKeys({
+        api,
+        keyTransparencyActivation,
+        password: newPassword,
+        productParam,
+    });
+
+    const session = await persistSession({
+        ...setupResult.authResponse,
+        keyPassword: keySetupData.keyPassword,
+        clearKeyPassword: keySetupData.clearKeyPassword,
+        User: user,
+        api,
+        persistent,
+        trusted,
+        source: SessionSource.Proton,
+    });
+
+    sendPasswordChangeMessageToTabs({ localID: setupResult.authResponse.LocalID, status: true });
+
+    return {
+        ...setupResult,
+        session,
+        user,
+        addresses,
+        keyPassword: keySetupData.keyPassword,
+        clearKeyPassword: keySetupData.clearKeyPassword,
     };
 };

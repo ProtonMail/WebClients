@@ -66,6 +66,8 @@ const ReferralSignupInner = () => {
                             setStep('recovery');
                         } catch (error) {
                             notifyError(error);
+                            // Back to the form: submitting it again retries what failed
+                            setStep('account-details');
                         }
                     }}
                 />
@@ -85,6 +87,8 @@ const ReferralSignupInner = () => {
                             setStep('recovery');
                         } catch (error) {
                             notifyError(error);
+                            // Back to the form: submitting it again retries what failed
+                            setStep('payment');
                         }
                     }}
                 />

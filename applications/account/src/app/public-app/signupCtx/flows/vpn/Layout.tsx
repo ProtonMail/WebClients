@@ -13,9 +13,9 @@ import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
-import LayoutLogosV2 from '../layout/LayoutLogosV2';
-import Box from '../single-signup-v2/Box';
-import LayoutHeader from '../single-signup-v2/LayoutHeader';
+import LayoutLogosV2 from '../../../layout/LayoutLogosV2';
+import Box from '../../../single-signup-v2/Box';
+import LayoutHeader from '../../../single-signup-v2/LayoutHeader';
 
 import './Layout.scss';
 

@@ -36,9 +36,9 @@ import lightningIcon from '@proton/components/containers/payments/subscription/Y
 import shieldIcon from '@proton/components/containers/payments/subscription/YourPlanSectionV2/icons/shield.svg';
 import streamingIcon from '@proton/components/containers/payments/subscription/YourPlanSectionV2/icons/streaming.svg';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers/getTotalBillingText';
-import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckout } from '@proton/payments/core/checkout';
+import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { Currency, Cycle } from '@proton/payments/core/interface';
+import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { FREE_VPN_CONNECTIONS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
@@ -48,9 +48,7 @@ import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features'
 import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 import clsx from '@proton/utils/clsx';
 
-import { getSecureStorageString } from '../signupCtx/flows/referral/helpers/i18n';
-import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
-import { getSubscriptionMapping } from '../single-signup-v2/helper';
+import { getSecureStorageString } from '../referral/helpers/i18n';
 import SaveLabel2 from './SaveLabel2';
 import { getPlanInformation } from './getPlanInformation';
 
@@ -62,32 +60,6 @@ type ThreePlansFeature = PlanCardFeatureDefinition & { logo?: ReactNode };
 const getCTA = (planName: string) => c('new_plans: action').t`Get ${planName}`;
 
 const appLogoProps = { variant: 'glyph-only', size: 7, hasTitle: false } as const;
-
-const getCheckout = ({
-    planName,
-    cycle,
-    currency,
-    plansMap,
-    subscriptionDataCycleMapping,
-}: {
-    planName: PLANS.VPN2024 | PLANS.BUNDLE;
-    cycle: Cycle;
-    currency: Currency;
-    plansMap: PlansMap;
-    subscriptionDataCycleMapping: SubscriptionDataCycleMapping;
-}): PaymentsCheckoutUI | undefined => {
-    const planIDs = { [planName]: 1 };
-    const checkResult = getSubscriptionMapping({ subscriptionDataCycleMapping, planName, planIDs })?.[cycle]
-        ?.checkResult;
-    if (checkResult) {
-        return getCheckoutUi({ planIDs, plansMap, checkResult });
-    }
-    // Prices without coupon don't need a check call
-    if (plansMap[planName]?.Pricing?.[cycle] === undefined) {
-        return;
-    }
-    return getOptimisticCheckout({ planIDs, plansMap, cycle, currency });
-};
 
 const getFeatures = (planName: ThreePlansPlan, plansMap: PlansMap): ThreePlansFeature[] => {
     if (planName === PLANS.FREE) {
@@ -297,7 +269,8 @@ interface Props {
     currencySelector: ReactNode;
     footer: ReactNode;
     plansMap: PlansMap;
-    subscriptionDataCycleMapping: SubscriptionDataCycleMapping;
+    /** The checked price of a plan and cycle, or its optimistic price until it's checked */
+    getCheckout: (planIDs: PlanIDs, cycle: Cycle) => PaymentsCheckoutUI;
     selectedPlanName: string;
     cycle: Cycle;
     cycles: Cycle[];
@@ -319,7 +292,7 @@ const ThreePlansSelector = ({
     currencySelector,
     footer,
     plansMap,
-    subscriptionDataCycleMapping,
+    getCheckout,
     selectedPlanName,
     cycle,
     cycles,
@@ -332,11 +305,11 @@ const ThreePlansSelector = ({
     onSelectFree,
 }: Props) => {
     const getPlanCheckout = (planName: PLANS.VPN2024 | PLANS.BUNDLE, planCycle: Cycle) =>
-        getCheckout({ planName, cycle: planCycle, currency, plansMap, subscriptionDataCycleMapping });
+        getCheckout({ [planName]: 1 }, planCycle);
 
     const cycleOptions = cycles.map((value) => {
         const text = getShortBillingText(value, {});
-        const discountPercent = getPlanCheckout(PLANS.VPN2024, value)?.discountPercent ?? 0;
+        const discountPercent = getPlanCheckout(PLANS.VPN2024, value).discountPercent;
         return {
             text,
             value,

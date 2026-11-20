@@ -48,7 +48,11 @@ const accountData = {
     signupType: SignupType.Proton,
 } as any;
 
-const runLegacy = (subscriptionData: Partial<SubscriptionData>, cache: Partial<SignupCacheResult> = {}) =>
+const runLegacy = (
+    subscriptionData: Partial<SubscriptionData>,
+    cache: Partial<SignupCacheResult> = {},
+    isRetry = false
+) =>
     handleSetupUserLegacy({
         cache: {
             accountData,
@@ -60,12 +64,12 @@ const runLegacy = (subscriptionData: Partial<SubscriptionData>, cache: Partial<S
         } as any,
         api: apiMock,
         canGenerateMnemonic: false,
-        setupKeys: false,
         reportPaymentSuccess: vi.fn(),
         reportPaymentFailure: vi.fn(),
+        isRetry,
     });
 
-const runSignupCtx = (subscriptionData: Partial<SignupContextSubscriptionData>, referralData?: any) =>
+const runSignupCtx = (subscriptionData: Partial<SignupContextSubscriptionData>, referralData?: any, isRetry = false) =>
     handleSetupUserSignupCtx({
         accountData,
         api: apiMock,
@@ -79,6 +83,7 @@ const runSignupCtx = (subscriptionData: Partial<SignupContextSubscriptionData>, 
         referralRegistrationPlan: undefined,
         build: 'proton-account',
         telemetryContext: 'other',
+        isRetry,
     });
 
 const getSubscribeCalls = () =>
@@ -129,6 +134,20 @@ describe('signup subscription creation', () => {
 
         it('does not create a subscription for free plan IDs', async () => {
             await run({ planIDs: {}, checkResult: checkResult({ AmountDue: 0 }) });
+
+            expect(getSubscribeCalls()).toHaveLength(0);
+        });
+
+        it('creates the subscription on a retry when the user does not pay yet', async () => {
+            await run({ checkResult: checkResult() }, undefined, true);
+
+            expect(getSubscribeCalls()).toHaveLength(1);
+        });
+
+        it('does not charge again on a retry when the previous attempt already subscribed the user', async () => {
+            addApiMock('core/v4/users', () => ({ User: { ID: 'user-id', Name: 'user', Subscribed: 1 } }));
+
+            await run({ checkResult: checkResult() }, undefined, true);
 
             expect(getSubscribeCalls()).toHaveLength(0);
         });

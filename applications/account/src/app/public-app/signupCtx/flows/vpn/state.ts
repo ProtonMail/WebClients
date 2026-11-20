@@ -6,7 +6,14 @@ import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import type { CycleData } from './interface';
 
-export const getCycleData = ({ coupon, currency }: { plan: PLANS; coupon?: string; currency: Currency }) => {
+export const getCycleData = ({
+    coupon,
+    currency,
+}: {
+    plan: PLANS;
+    coupon?: string;
+    currency: Currency | undefined;
+}) => {
     if (getIsVPNPassPromotion(coupon, currency)) {
         return {
             upsellCycle: CYCLE.YEARLY,

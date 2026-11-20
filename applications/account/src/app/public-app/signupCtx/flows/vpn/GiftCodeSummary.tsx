@@ -9,10 +9,8 @@ import { Input } from '@proton/atoms/Input/Input';
 import Info from '@proton/components/components/link/Info';
 import Price from '@proton/components/components/price/Price';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
-import type { Currency, PlanIDs } from '@proton/payments/core/interface';
-import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import type { PaymentsContextOptimisticType } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
+import type { Currency } from '@proton/payments/core/interface';
 
 interface Props {
     coupon?: {
@@ -23,13 +21,10 @@ interface Props {
     };
     onApplyCode: (code: string) => Promise<void>;
     onRemoveCode: () => Promise<void>;
-
-    planIDs: PlanIDs;
-    plansMap: PlansMap;
-    checkResult: SubscriptionEstimation;
+    couponConfig: PaymentsContextOptimisticType['couponConfig'];
 }
 
-const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode, planIDs, plansMap, checkResult }: Props) => {
+const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode, couponConfig }: Props) => {
     const [showInput, setShowInput] = useState(false);
     const [inputValue, setInputValue] = useState('');
     const [applyingCode, setApplyingCode] = useState(false);
@@ -37,8 +32,6 @@ const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode, planIDs, plansMap,
     const [removingCode, setRemovingCode] = useState(false);
 
     const { createNotification } = useNotifications();
-
-    const couponConfig = useCouponConfig({ planIDs, plansMap, checkResult });
 
     if (coupon) {
         const { code, description, discount, currency } = coupon;

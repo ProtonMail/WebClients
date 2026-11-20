@@ -23,12 +23,15 @@ export type SignupEvent =
     | { type: 'account.submitted'; accountData: AccountData }
     | { type: 'payment.submitted'; subscriptionData: SignupContextSubscriptionData }
     | { type: 'user.create' }
-    | { type: 'user.setup' }
+    | { type: 'user.setup'; reservation?: boolean }
     | { type: 'subscription.setup' }
     | { type: 'orgName.set'; orgName: string }
     | { type: 'displayName.set'; displayName: string }
+    | { type: 'password.set'; password: string }
     | { type: 'recoveryPhrase.send' }
-    | { type: 'login' };
+    | { type: 'login' }
+    /** From `watchSession`: the unauthenticated session expired, taking the requests sent on it. */
+    | { type: 'session.expired' };
 
 export type SignupEmitted = { type: 'error'; error: unknown };
 
@@ -39,16 +42,56 @@ interface SignupContext {
     referralData: ReferralData | undefined;
     initializationFailed: boolean;
     accountData: AccountData | undefined;
+    /** What the user was created with: submitting the same account again only retries its setup. */
+    createdAccountData: AccountData | undefined;
     subscriptionData: SignupContextSubscriptionData | undefined;
     setupResult: SetupUserResult | undefined;
+    /** Set up on the free plan to pay once signed in: its account creation is reported with the subscription. */
+    reservation: boolean;
+    /** A setup failed, maybe after its payment went through: the next one checks before subscribing. */
+    setupFailed: boolean;
+    /**
+     * The session expired while the user was created or set up. Any request on the session can expire it, so the
+     * operation is only sent again once its own attempt fails: two attempts never run at the same time.
+     */
+    sessionExpired: boolean;
     /** Why the last operation failed. A new object per failure, so `createSignupOperations` can tell them apart. */
     failure: { error: unknown } | undefined;
 }
+
+/** The same account: the challenge payload changes with every submit, the rest is what the user typed. */
+const isSameAccount = (a: AccountData | undefined, b: AccountData | undefined) =>
+    !!a &&
+    !!b &&
+    a.signupType === b.signupType &&
+    a.email === b.email &&
+    a.username === b.username &&
+    a.domain === b.domain &&
+    a.password === b.password;
 
 /** Keeps why an operation failed, for `createSignupOperations` to hand to the flow. */
 const assignFailure = {
     type: 'assignFailure' as const,
     params: ({ event }: { event: { error: unknown } }) => ({ error: event.error }),
+};
+
+/** Once the user is set up, or once a reservation pays: with the plan the user signs up for. */
+const reportAccountCreation = {
+    type: 'reportAccountCreation' as const,
+    params: ({ context }: { context: SignupContext }) => ({
+        accountData: context.accountData,
+        subscriptionData: context.subscriptionData,
+    }),
+};
+
+/** A subscription paid after the setup. */
+const reportLaterSubscription = {
+    type: 'reportSubscription' as const,
+    params: ({ context, event }: { context: SignupContext; event: { output: SetupUserResult['subscription'] } }) => ({
+        subscriptionData: context.subscriptionData,
+        subscription: event.output,
+        user: context.setupResult?.user,
+    }),
 };
 
 /** One request of the initialization: a failure doesn't stop the others, and the first one is reported. */
@@ -89,6 +132,7 @@ export const signupStateMachine = setup({
         tags: {} as 'busy',
     },
     actors: unprovidedActors<SignupActors>({
+        watchSession: true,
         startAuth: true,
         loadDomains: true,
         checkReferral: true,
@@ -96,6 +140,7 @@ export const signupStateMachine = setup({
         createUser: true,
         setupUser: true,
         setupSubscription: true,
+        setPassword: true,
         setOrgName: true,
         setDisplayName: true,
         sendRecoveryPhrase: true,
@@ -103,6 +148,7 @@ export const signupStateMachine = setup({
     }),
     actions: {
         assignAccountData: assign((_, { accountData }: { accountData: AccountData }) => ({ accountData })),
+        assignCreatedAccountData: assign(({ context }) => ({ createdAccountData: context.accountData })),
         assignPaymentData: assign((_, { subscriptionData }: { subscriptionData: SignupContextSubscriptionData }) => ({
             subscriptionData,
         })),
@@ -112,8 +158,12 @@ export const signupStateMachine = setup({
             referralData,
         })),
         assignSetupResult: assign((_, { setupResult }: { setupResult: SetupUserResult }) => ({ setupResult })),
+        assignReservation: assign((_, { reservation }: { reservation: boolean }) => ({ reservation })),
         assignFailure: assign((_, { error }: { error: unknown }) => ({ failure: { error } })),
         markInitializationFailed: assign({ initializationFailed: true }),
+        markSetupFailed: assign({ setupFailed: true }),
+        markSessionExpired: assign({ sessionExpired: true }),
+        clearSessionExpired: assign({ sessionExpired: false }),
         /** Hands the error to the page to show. */
         reportError: emit((_, { error }: { error: unknown }) => ({ type: 'error' as const, error })),
         onReferralCheckError: () => unprovidedAction('onReferralCheckError'),
@@ -123,11 +173,29 @@ export const signupStateMachine = setup({
         reportMissingData: (_, _params: { operation: SignupEvent['type']; message: string }) =>
             unprovidedAction('reportMissingData'),
         reportErrorPage: () => unprovidedAction('reportErrorPage'),
+        reportAccountCreation: (
+            _,
+            _params: {
+                accountData: AccountData | undefined;
+                subscriptionData: SignupContextSubscriptionData | undefined;
+            }
+        ) => unprovidedAction('reportAccountCreation'),
+        reportSubscription: (
+            _,
+            _params: {
+                subscriptionData: SignupContextSubscriptionData | undefined;
+                subscription: SetupUserResult['subscription'];
+                user: SetupUserResult['user'] | undefined;
+            }
+        ) => unprovidedAction('reportSubscription'),
     },
     guards: {
         isErrorOf,
+        isReservation: ({ context }) => context.reservation,
         hasInitializationFailed: ({ context }) => context.initializationFailed,
         hasAccountData: ({ context }) => !!context.accountData,
+        hasSessionExpired: ({ context }) => context.sessionExpired,
+        isCreatedAccount: ({ context }) => isSameAccount(context.accountData, context.createdAccountData),
         hasRecoveryPhrase: ({ context }) => !!context.setupResult?.recoveryPhraseData,
         isLeavingForApp: (_, { state }: { state: string | undefined }) => state === 'complete',
     },
@@ -140,8 +208,12 @@ export const signupStateMachine = setup({
         referralData: undefined,
         initializationFailed: false,
         accountData: undefined,
+        createdAccountData: undefined,
         subscriptionData: undefined,
         setupResult: undefined,
+        reservation: false,
+        setupFailed: false,
+        sessionExpired: false,
         failure: undefined,
     }),
     on: {
@@ -159,14 +231,14 @@ export const signupStateMachine = setup({
         'subscription.setup': invalidStage,
         'orgName.set': invalidStage,
         'displayName.set': invalidStage,
+        'password.set': invalidStage,
         'recoveryPhrase.send': invalidStage,
         login: invalidStage,
     },
+    invoke: { src: 'watchSession' },
     states: {
         initializing: {
             initial: 'startingAuth',
-            // Submitting the form before the signup is ready does nothing
-            on: { 'user.create': {} },
             states: {
                 // The requests need the auth session, but a failure here surfaces through them
                 startingAuth: { invoke: { src: 'startAuth', onDone: 'loading', onError: 'loading' } },
@@ -247,34 +319,77 @@ export const signupStateMachine = setup({
         },
         creatingUser: {
             tags: 'busy',
+            entry: 'clearSessionExpired',
             invoke: {
                 src: 'createUser',
                 input: ({ context }) => ({
                     accountData: context.accountData,
                     subscriptionData: context.subscriptionData,
                 }),
-                onDone: 'userCreated',
-                onError: { target: 'ready', actions: assignFailure },
+                onDone: { target: 'userCreated', actions: 'assignCreatedAccountData' },
+                onError: [
+                    // A refused creation created nothing: it has all it needs to be sent again on the new session
+                    { guard: 'hasSessionExpired', target: 'creatingUser', reenter: true },
+                    { target: 'ready', actions: assignFailure },
+                ],
             },
+            on: { 'session.expired': { actions: 'markSessionExpired' } },
         },
         userCreated: {
-            on: { 'user.setup': 'settingUpUser' },
+            on: {
+                'user.setup': {
+                    target: 'settingUpUser',
+                    actions: {
+                        type: 'assignReservation',
+                        params: ({ event }) => ({ reservation: !!event.reservation }),
+                    },
+                },
+                // The setup failed and the user submitted the form again: the same account is already created and
+                // the flow's setupUser() retries its setup, another one is created
+                'user.create': [{ guard: 'isCreatedAccount' }, { target: 'creatingUser' }],
+            },
         },
         settingUpUser: {
             tags: 'busy',
+            entry: 'clearSessionExpired',
             invoke: {
                 src: 'setupUser',
                 input: ({ context }) => ({
                     accountData: context.accountData,
                     subscriptionData: context.subscriptionData,
                     referralData: context.referralData,
+                    isRetry: context.setupFailed,
                 }),
-                onDone: {
-                    target: 'userSetup',
-                    actions: { type: 'assignSetupResult', params: ({ event }) => ({ setupResult: event.output }) },
-                },
-                onError: { target: 'userCreated', actions: assignFailure },
+                onDone: [
+                    // A reservation is set up on the free plan: its account creation is reported once it pays
+                    {
+                        guard: 'isReservation',
+                        target: 'userSetup',
+                        actions: { type: 'assignSetupResult', params: ({ event }) => ({ setupResult: event.output }) },
+                    },
+                    {
+                        target: 'userSetup',
+                        actions: [
+                            { type: 'assignSetupResult', params: ({ event }) => ({ setupResult: event.output }) },
+                            reportAccountCreation,
+                            {
+                                type: 'reportSubscription',
+                                params: ({ context, event }) => ({
+                                    subscriptionData: context.subscriptionData,
+                                    subscription: event.output.subscription,
+                                    user: event.output.user,
+                                }),
+                            },
+                        ],
+                    },
+                ],
+                onError: [
+                    // The setup signs in again with the account's credentials, and checks a payment didn't already go through
+                    { guard: 'hasSessionExpired', target: 'settingUpUser', reenter: true, actions: 'markSetupFailed' },
+                    { target: 'userCreated', actions: [assignFailure, 'markSetupFailed'] },
+                ],
             },
+            on: { 'session.expired': { actions: 'markSessionExpired' } },
         },
         userSetup: {
             initial: 'idle',
@@ -284,6 +399,7 @@ export const signupStateMachine = setup({
                         'subscription.setup': 'settingUpSubscription',
                         'orgName.set': 'settingOrgName',
                         'displayName.set': 'settingDisplayName',
+                        'password.set': 'settingPassword',
                         'recoveryPhrase.send': [
                             { guard: 'hasRecoveryPhrase', target: 'sendingRecoveryPhrase' },
                             {
@@ -307,7 +423,14 @@ export const signupStateMachine = setup({
                             subscriptionData: context.subscriptionData,
                             setupResult: context.setupResult,
                         }),
-                        onDone: 'idle',
+                        onDone: [
+                            {
+                                guard: 'isReservation',
+                                target: 'idle',
+                                actions: [reportAccountCreation, reportLaterSubscription],
+                            },
+                            { target: 'idle', actions: reportLaterSubscription },
+                        ],
                         onError: { target: 'idle', actions: assignFailure },
                     },
                 },
@@ -339,6 +462,34 @@ export const signupStateMachine = setup({
                         onError: { target: 'idle', actions: assignFailure },
                     },
                 },
+                settingPassword: {
+                    tags: 'busy',
+                    invoke: {
+                        src: 'setPassword',
+                        input: ({ context, event }) => {
+                            assertEvent(event, 'password.set');
+                            return {
+                                password: event.password,
+                                accountData: context.accountData,
+                                setupResult: context.setupResult,
+                            };
+                        },
+                        onDone: {
+                            target: 'idle',
+                            actions: [
+                                {
+                                    type: 'assignAccountData',
+                                    params: ({ event }) => ({ accountData: event.output.accountData }),
+                                },
+                                {
+                                    type: 'assignSetupResult',
+                                    params: ({ event }) => ({ setupResult: event.output.setupResult }),
+                                },
+                            ],
+                        },
+                        onError: { target: 'idle', actions: assignFailure },
+                    },
+                },
                 sendingRecoveryPhrase: {
                     tags: 'busy',
                     invoke: {
@@ -355,7 +506,10 @@ export const signupStateMachine = setup({
                     tags: 'busy',
                     invoke: {
                         src: 'login',
-                        input: ({ context }) => ({ setupResult: context.setupResult }),
+                        input: ({ context }) => ({
+                            accountData: context.accountData,
+                            setupResult: context.setupResult,
+                        }),
                         onDone: [
                             {
                                 guard: {

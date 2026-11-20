@@ -6,7 +6,8 @@ import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { CYCLE } from '@proton/payments/core/constants';
-import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
+import type { Currency, Cycle, PaymentStatus, PlanIDs } from '@proton/payments/core/interface';
+import { getOptimisticPaymentStatus } from '@proton/payments/core/payment-status';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
@@ -15,7 +16,7 @@ import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/const
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { PaymentsContextProvider } from './PaymentContext';
+import { PaymentsContextProvider, type PaymentsContextProviderProps } from './PaymentContext';
 
 interface InitializationStatus {
     /**
@@ -25,6 +26,8 @@ interface InitializationStatus {
     triggered: boolean;
     cacheInitialized: boolean;
     pricingInitialized: boolean;
+    /** Why the initialization failed, when the plans or the prices couldn't be loaded */
+    error?: unknown;
 }
 
 type OptimisticOptions = PlanToCheck & {
@@ -40,6 +43,8 @@ export type PaymentsContextOptimisticType = PaymentsContextType & {
     selectPlan: (checkOptions: Partial<OptimisticOptions>) => void;
     checkoutUi: PaymentsContextType['checkoutUi'];
     options: OptimisticOptions;
+    /** The payment status, or a guess until it loads, so the payment methods don't pop in */
+    optimisticPaymentStatus: PaymentStatus;
 };
 
 const PaymentsContextOptimistic = createContext<PaymentsContextOptimisticType | null>(null);
@@ -49,13 +54,18 @@ interface PaymentsContextOptimisticProviderProps {
     preload?: boolean;
     authenticated?: boolean;
     cachedPlans?: Plan[];
+    /** Payment methods the page offers beyond the usual ones, guessed active until the payment status loads */
+    optimisticVendorStates?: Partial<PaymentStatus['VendorStates']>;
+    billingDetails?: PaymentsContextProviderProps['billingDetails'];
 }
 
-const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsContextOptimisticProviderProps) => {
+const InnerPaymentsContextOptimisticProvider = ({
+    children,
+    optimisticVendorStates,
+}: PaymentsContextOptimisticProviderProps) => {
     const paymentsContext = usePayments();
 
     const cacheRef = useRef<{ availablePlans?: InitializeProps['availablePlans'] }>(undefined);
-    const [, rerender] = useState<any>();
 
     const latestOptimisticRef = useRef<any>(undefined);
     const [optimistic, setOptimistic] = useState<Partial<OptimisticOptions>>({});
@@ -72,6 +82,7 @@ const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsContextOpt
         planToCheck: planToCheckParam,
         availablePlans,
         paymentFlow,
+        vatNumber,
         telemetryContext,
         product,
     }) => {
@@ -92,28 +103,32 @@ const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsContextOpt
                 CountryCode: '',
                 State: '',
             },
-            vatNumber: undefined,
+            vatNumber,
             trial: planToCheckParam?.trial,
             coupon: planToCheckParam?.coupon,
         };
         const checkResult = paymentsContext.getOptimisticCheckResult(optimistic);
         setOptimistic({ ...optimistic, checkResult });
 
-        setInitializationStatus((prev) => ({ ...prev, triggered: true }));
+        setInitializationStatus((prev) => ({ ...prev, triggered: true, error: undefined }));
         setLoadingPaymentDetails(true);
 
-        await Promise.all([
-            paymentsContext.initialize({
+        try {
+            await paymentsContext.initialize({
                 api,
                 paymentFlow,
                 onChargeable: async () => {},
                 planToCheck: planToCheckParam,
                 availablePlans,
                 paramCurrency,
+                vatNumber,
                 telemetryContext,
                 product,
-            }),
-        ]);
+            });
+        } catch (error) {
+            setInitializationStatus((prev) => ({ ...prev, error }));
+            throw error;
+        }
 
         // Only clear optimistic state if this initialization is still the latest operation
         // This prevents race conditions where user actions during initialization would be overridden
@@ -255,8 +270,6 @@ const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsContextOpt
             return;
         }
         await paymentsContext.checkMultiplePlans(plansWithCouponAndCurrency);
-        // The multiple plans check doesn't trigger a rerender, so we need to force it to get the updated plan cards with the coupon
-        rerender({});
     };
 
     const selectCurrency: PaymentsContextType['selectCurrency'] = async (currency) => {
@@ -281,6 +294,8 @@ const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsContextOpt
                 loadingPaymentDetails: loadingPaymentDetails || paymentsContext.loading,
                 initializationStatus,
                 options,
+                optimisticPaymentStatus:
+                    paymentsContext.paymentStatus ?? getOptimisticPaymentStatus(optimisticVendorStates),
                 checkoutUi: getCheckoutUi({
                     planIDs: options.planIDs,
                     plansMap: paymentsContext.plansMap,
@@ -298,10 +313,19 @@ export const PaymentsContextOptimisticProvider = ({
     preload,
     authenticated,
     cachedPlans,
+    optimisticVendorStates,
+    billingDetails,
 }: PaymentsContextOptimisticProviderProps) => {
     return (
-        <PaymentsContextProvider preload={preload} authenticated={authenticated} cachedPlans={cachedPlans}>
-            <InnerPaymentsContextOptimisticProvider>{children}</InnerPaymentsContextOptimisticProvider>
+        <PaymentsContextProvider
+            preload={preload}
+            authenticated={authenticated}
+            cachedPlans={cachedPlans}
+            billingDetails={billingDetails}
+        >
+            <InnerPaymentsContextOptimisticProvider optimisticVendorStates={optimisticVendorStates}>
+                {children}
+            </InnerPaymentsContextOptimisticProvider>
         </PaymentsContextProvider>
     );
 };

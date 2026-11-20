@@ -71,13 +71,19 @@ interface SignupContextType {
         data: Parameters<OnChargeable>[1]
     ) => void;
     /**
+     * Sets the subscription data the flow built itself, for example a free plan or a payment made outside the
+     * payments form.
+     */
+    submitSubscriptionData: (subscriptionData: SignupContextSubscriptionData) => void;
+    /**
      * Creates a new user account based on the provided account data
      */
     createUser: () => Promise<void>;
     /**
-     * Sets up the newly created user account and creates the subscription
+     * Sets up the newly created user account and creates the subscription.
+     * A `reservation` is set up on the free plan to pay once signed in: `setupSubscription` reports its account creation
      */
-    setupUser: () => Promise<void>;
+    setupUser: (options?: { reservation?: boolean }) => Promise<void>;
     /**
      * Setup the subsciption when it has been made after `setupUser`
      * If subscription is done before `setupUser`, it will be done automatically
@@ -85,6 +91,10 @@ interface SignupContextType {
     setupSubscription: () => Promise<void>;
     setOrgName: (orgName: string) => Promise<void>;
     setDisplayName: (displayName: string) => Promise<void>;
+    /**
+     * Sets up the keys of a user set up with `deferKeySetup`, with the password they chose
+     */
+    setPassword: (password: string) => Promise<void>;
     login: () => Promise<void>;
     flowId: string;
     loading: { init: boolean };
@@ -93,6 +103,10 @@ interface SignupContextType {
      * Recovery phrase data generated during user setup
      */
     recoveryPhraseData?: DeferredMnemonicData;
+    /**
+     * The session of the user once it is set up, for flows that keep the user on the page as a signed-in user
+     */
+    session?: ResumedSessionResult;
     /**
      * Sends recovery phrase payload to backend when user downloads/copies recovery phrase
      */
@@ -109,6 +123,8 @@ const SignupContext = createContext<SignupContextType | null>(null);
 export interface BaseSignupContextProps {
     onPreSubmit?: () => Promise<void>;
     onStartAuth: () => Promise<void>;
+    /** Calls the listener when the unauthenticated session expired and the API made a new one */
+    onSessionExpired?: (listener: () => void) => () => void;
     onGetActiveSessions?: () => Promise<GetActiveSessionsResult>;
     handleLogin: OnLoginCallback;
     loginUrl: string;
@@ -129,7 +145,7 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
 
     paymentsDataConfig?: SignupPaymentsDataConfig;
 
-    onLogin: (session: ResumedSessionResult) => Promise<OnLoginCallbackResult | void>;
+    onLogin: (session: ResumedSessionResult, loginPassword: string) => Promise<OnLoginCallbackResult | void>;
 
     /**
      * Configuration for the account form (username/email and password input form)
@@ -142,6 +158,20 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
     hvMode?: SignupHumanVerification;
 
     invite?: SignupInviteParameters;
+
+    visitorId?: string;
+
+    /**
+     * Whether the session outlives the browser session. Signups persist it unless a flow opts out.
+     */
+    persistent?: boolean;
+
+    /**
+     * Sets the user up without keys. The flow then asks for a password and calls `setPassword`, which sets them up.
+     */
+    deferKeySetup?: boolean;
+
+    onSubscriptionPayment?: SignupServices['onSubscriptionPayment'];
 }
 
 const getSubscriptionDataFromChargeableCallback = (
@@ -191,12 +221,17 @@ const InnerSignupContextProvider = (props: SignupContextProviderProps) => {
         unverifiedReferralData: props.unverifiedReferralData,
         hvMode: props.hvMode,
         invite: props.invite,
+        visitorId: props.visitorId,
+        persistent: props.persistent ?? true,
+        deferKeySetup: props.deferKeySetup ?? false,
+        onSubscriptionPayment: props.onSubscriptionPayment,
         payments: paymentsContext,
         // Set with the payments context's own state, so the page renders both together
         onPaymentsInitialized: () => setPaymentsInitialized(true),
         getKtActivation,
         onPreSubmit: props.onPreSubmit,
         onStartAuth: props.onStartAuth,
+        onSessionExpired: props.onSessionExpired,
         onLogin: props.onLogin,
         onReferralCheckError: props.onReferralCheckError,
     };
@@ -214,6 +249,7 @@ const InnerSignupContextProvider = (props: SignupContextProviderProps) => {
     const domains = useSelector(actorRef, (snapshot) => snapshot.context.domains);
     const domainsLoaded = useSelector(actorRef, (snapshot) => snapshot.context.domainsLoaded);
     const recoveryPhraseData = useSelector(actorRef, (snapshot) => snapshot.context.setupResult?.recoveryPhraseData);
+    const session = useSelector(actorRef, (snapshot) => snapshot.context.setupResult?.session);
 
     useEffect(() => {
         const subscription = actorRef.on('error', ({ error }) => notifyError(error));
@@ -263,10 +299,12 @@ const InnerSignupContextProvider = (props: SignupContextProviderProps) => {
                 type: 'payment.submitted',
                 subscriptionData: getSubscriptionDataFromChargeableCallback(options, data),
             }),
+        submitSubscriptionData: (subscriptionData) => actorRef.send({ type: 'payment.submitted', subscriptionData }),
         flowId,
         loading: { init: initializing },
         loginUrl,
         recoveryPhraseData,
+        session,
         captureSignupSentryMessage: createSignupReporting({ flowId }).captureMessage,
     };
 

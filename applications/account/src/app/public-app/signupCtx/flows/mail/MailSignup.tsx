@@ -41,6 +41,8 @@ const MailSignupInner = () => {
                             setStep('recovery');
                         } catch (error) {
                             notifyError(error);
+                            // Back to the form: submitting it again retries what failed
+                            setStep('account-details');
                         }
                     }}
                 />

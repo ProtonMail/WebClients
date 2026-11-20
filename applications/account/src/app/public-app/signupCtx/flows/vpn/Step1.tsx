@@ -1,7 +1,6 @@
-import type { ComponentProps, Dispatch, ReactElement, ReactNode, SetStateAction } from 'react';
+import type { ComponentProps, ReactElement, ReactNode } from 'react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 
-import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
@@ -16,7 +15,6 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import { useVpn2024SignupExperiment } from '@proton/components/containers/payments/subscription/helpers/useVpn2024SignupExperiment';
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
-import { useHandler } from '@proton/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
@@ -24,17 +22,18 @@ import { IcServers } from '@proton/icons/icons/IcServers';
 import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
-import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { sortMethodsBasedOnDevice } from '@proton/payments-ui/client-extensions/useMethods';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import PaymentWrapper from '@proton/payments-ui/containers/payments/PaymentWrapper';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
+import {
+    type PaymentsContextOptimisticType,
+    usePaymentOptimistic,
+} from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
-import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
-import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PAYMENT_METHOD_TYPES, PLANS, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
-import { getAvailableCurrencies } from '@proton/payments/core/currencies';
 import type {
     Currency,
     Cycle,
@@ -45,30 +44,18 @@ import type {
     TokenPayment,
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
-import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import { getHas2025OfferCoupon, getIsVPNPassPromotion } from '@proton/payments/core/subscription/helpers';
+import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { isV5PaymentToken } from '@proton/payments/core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
-import type {
-    EstimationChangeAction,
-    EstimationChangePayload,
-} from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { reportVpn2024SignupAddPass } from '@proton/payments/telemetry/signup-experiment-telemetry';
-import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import {
-    APPS,
-    type APP_NAMES,
-    PASS_SHORT_APP_NAME,
-    VPN_APP_NAME,
-    VPN_SHORT_APP_NAME,
-} from '@proton/shared/lib/constants';
+import { APPS, PASS_SHORT_APP_NAME, VPN_APP_NAME, VPN_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { generatePassword } from '@proton/shared/lib/password';
-import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { Plan, StrictPlan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { getVpnServers } from '@proton/shared/lib/vpn/features';
@@ -78,21 +65,19 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { useFlowRef } from '../hooks/useFlowRef';
-import SignupSupportDropdown from '../signup/SignupSupportDropdown';
-import { getSubscriptionPrices } from '../signup/helper';
-import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
-import { SignupType } from '../signup/interfaces';
-import type { getSignupSearchParams } from '../signup/searchParams';
-import { usePaypalFirstSort } from '../signup/usePaypalFirstSort';
-import { AccountFormDataContextProvider } from '../signupCtx/context/accountData/AccountFormDataContext';
-import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
-import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
-import DiscountBanner from '../single-signup-v2/DiscountBanner';
-import { getFreeSubscriptionData, getSubscriptionMapping } from '../single-signup-v2/helper';
-import type { OptimisticOptions } from '../single-signup-v2/interface';
-import { getPaymentMethod } from '../single-signup-v2/measure';
-import { type CheckTrialPriceResult, checkTrialPriceCommon } from '../single-signup-v2/modals/Trial2024UpsellModal';
+import SignupSupportDropdown from '../../../signup/SignupSupportDropdown';
+import type { SignupCacheResult, SubscriptionData } from '../../../signup/interfaces';
+import type { getSignupSearchParams } from '../../../signup/searchParams';
+import { usePaypalFirstSort } from '../../../signup/usePaypalFirstSort';
+import type { AccountStepDetailsRef } from '../../../single-signup-v2/AccountStepDetails';
+import AccountStepDetails from '../../../single-signup-v2/AccountStepDetails';
+import DiscountBanner from '../../../single-signup-v2/DiscountBanner';
+import { getFreeSubscriptionData } from '../../../single-signup-v2/helper';
+import { getPaymentMethod } from '../../../single-signup-v2/measure';
+import {
+    type CheckTrialPriceResult,
+    checkTrialPriceCommon,
+} from '../../../single-signup-v2/modals/Trial2024UpsellModal';
 import Box from './Box';
 import CycleSelector from './CycleSelector';
 import DollarOfferModal from './DollarOfferModal';
@@ -112,10 +97,11 @@ import { VpnPassBundleUpsell } from './VpnPassBundleUpsell';
 import swissFlag from './flag.svg';
 import { getPlanInformation } from './getPlanInformation';
 import type { getUpsellShortPlan } from './helper';
-import { getBillingCycleText, getOffText, getVpnPassBundleUpsellMonthlyPrice } from './helper';
+import { getBillingCycleText, getOffText } from './helper';
 import type { Measure, VPNSignupModel } from './interface';
 import type { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
+import { getVpnPlanToCheck, getVpnPlansToCheck } from './pricing';
 import RatingsSection from './ratings/RatingsSection';
 import { useIsMobileCheckout } from './useIsMobileCheckout';
 
@@ -172,26 +158,30 @@ type HasBeenCountedState = {
 const Step1 = ({
     activeBreakpoint,
     mode,
+    options: selection,
     selectedPlan,
+    linkPlanIDs,
     cycleData,
     isB2bPlan,
     showThreePlans,
     background,
     onComplete,
-    onCurrencyChange,
     model,
-    setModel,
+    sessionUID,
     upsellImg,
     measure,
     className,
     toAppName,
-    toApp,
     telemetryContext,
     signupParameters,
 }: {
     activeBreakpoint: Breakpoints;
     mode: 'signup' | 'pricing' | 'vpn-pass-promotion';
+    /** The selection, with its prices */
+    options: PaymentsContextOptimisticType['options'];
     selectedPlan: StrictPlan;
+    /** The plan of the link, which a currency without the VPN+Pass promotion goes back to */
+    linkPlanIDs: PlanIDs;
     cycleData: { cycles: Cycle[]; upsellCycle: Cycle };
     isB2bPlan: boolean;
     showThreePlans: boolean;
@@ -209,14 +199,13 @@ const Step1 = ({
                   type: 'existing';
               }
     ) => void;
-    onCurrencyChange: (currency: Currency) => Promise<unknown>;
     model: VPNSignupModel;
-    setModel: Dispatch<SetStateAction<VPNSignupModel>>;
+    /** The reserved Bitcoin account's session: the checkout requests the deposit address with it */
+    sessionUID: string | undefined;
     upsellImg: ComponentProps<typeof DollarOfferModal>['img'];
     measure: Measure;
     className?: string;
     toAppName: string;
-    toApp: APP_NAMES;
     telemetryContext: PaymentTelemetryContext;
     signupParameters: ReturnType<typeof getSignupSearchParams>;
 }) => {
@@ -224,8 +213,7 @@ const Step1 = ({
         coupon: couponUrlParam,
         trial: signupTrial,
         hideFreePlan,
-        currency: currencyUrlParam,
-        email: emailUrlParam,
+        email: defaultEmail,
         vpn2024SignupExperimentVariant,
     } = signupParameters;
 
@@ -233,26 +221,23 @@ const Step1 = ({
     const [checkTrialResult, setCheckTrialResult] = useState<CheckTrialPriceResult | undefined>();
     const [checkingTrial, withCheckingTrial] = useLoading();
     const silentApi = useSilentApi();
-    const { getPaymentsApi } = usePaymentsApi();
+    const payments = usePaymentOptimistic();
     const [toggleUpsell, setToggleUpsell] = useState<{ from: CYCLE; to: CYCLE } | undefined>(undefined);
     const accountDetailsRef = useRef<AccountStepDetailsRef>(undefined);
-    const [couponCode, setCouponCode] = useState(model.subscriptionData.checkResult.Coupon?.Code);
-    // Whether couponCode was entered by the user, rather than the coupon of the first check
-    const hasChangedCouponRef = useRef(false);
+    /** The code the user applied, which later selections keep */
+    const [couponCode, setCouponCode] = useState<string>();
     const { viewportWidth } = activeBreakpoint;
     const { APP_NAME } = useConfig();
 
     const [isFormValid, setIsFormValid] = useState(false);
 
-    const createFlow = useFlowRef();
-
     const [loadingSignup, withLoadingSignup] = useLoading();
-    const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
-    const [changingCurrency, withChangingCurrency] = useLoading();
+    const loadingPaymentDetails = payments.loadingPaymentDetails;
 
-    const { plansMap } = model;
-    const isLoadingModelDeps = model.loadingDependencies;
+    const { plansMap } = payments;
+    const isLoadingModelDeps = !payments.initializationStatus.pricingInitialized;
     const isLoading = loadingSignup || loadingPaymentDetails;
+    const paymentStatus = payments.optimisticPaymentStatus;
 
     useEffect(() => {
         if (isLoadingModelDeps) {
@@ -271,15 +256,61 @@ const Step1 = ({
         payment: false,
     });
 
-    const options: OptimisticOptions & { plan: Plan } = {
-        currency: model.optimistic.currency || model.subscriptionData.currency,
-        cycle: model.optimistic.cycle || model.subscriptionData.cycle,
-        plan: getPlanFromPlanIDs(model.plansMap, model.optimistic.planIDs) || selectedPlan,
-        planIDs: model.optimistic.planIDs || model.subscriptionData.planIDs,
-        checkResult: model.optimistic.checkResult || model.subscriptionData.checkResult,
-        billingAddress: model.optimistic.billingAddress || model.subscriptionData.billingAddress,
-        vatNumber: model.optimistic.vatNumber ?? model.subscriptionData.vatNumber,
+    const options = { ...selection, plan: selectedPlan as Plan };
+
+    /** What the user signs up with, for the current selection */
+    const getSubscriptionData = (): SubscriptionData => ({
+        currency: options.currency,
+        cycle: options.cycle,
+        planIDs: options.planIDs,
+        checkResult: options.checkResult,
+        billingAddress: options.billingAddress,
+        vatNumber: options.vatNumber,
+    });
+
+    /** Selects a plan, cycle or currency with the code that applies to it */
+    const select = (selection: Partial<Pick<PlanToCheck, 'planIDs' | 'cycle' | 'currency'>>) => {
+        if (isLoadingModelDeps) {
+            return;
+        }
+        payments.selectPlan(
+            getVpnPlanToCheck({
+                planIDs: selection.planIDs ?? options.planIDs,
+                cycle: selection.cycle ?? options.cycle,
+                currency: selection.currency ?? options.currency,
+                coupon: couponCode || couponUrlParam,
+                trial: signupTrial,
+            })
+        );
     };
+
+    /** The prices of a plan and cycle that isn't selected, for the cycle selector and the upsells */
+    const getCheckout = (planIDs: PlanIDs, cycle: Cycle) =>
+        payments.getPriceOrFallback(
+            getVpnPlanToCheck({ planIDs, cycle, currency: options.currency, coupon: couponUrlParam })
+        );
+
+    const plansToCheck = getVpnPlansToCheck({
+        withProtonUnlimited: showThreePlans,
+        planIDs: options.planIDs,
+        cycles: cycleData.cycles,
+        currency: options.currency,
+        coupon: couponUrlParam,
+        // Prices without a coupon come from the plans, and the signup's initialization checked the others already
+    }).filter((planToCheck) => !!planToCheck.coupon && !payments.getPrice(planToCheck));
+
+    useEffect(() => {
+        if (isLoadingModelDeps || !plansToCheck.length) {
+            return;
+        }
+        payments.checkMultiplePlans(plansToCheck).catch(noop);
+    }, [
+        isLoadingModelDeps,
+        options.currency,
+        getPlanNameFromIDs(options.planIDs),
+        options.billingAddress.CountryCode,
+        options.billingAddress.State,
+    ]);
 
     const handleUpdate = (step: StepId) => {
         if (!hasBeenCountedRef.current[step]) {
@@ -295,11 +326,8 @@ const Step1 = ({
         }
     };
 
-    // The Bitcoin flow created the account, its details can't change anymore
-    const hasReservedUser = !!model.signupTokenMode || (model.cache?.type === 'signup' && !!model.cache.userData);
-    // Keep showing the account's email when coming back from the password step
-    const defaultEmail =
-        (hasReservedUser && model.cache?.type === 'signup' && model.cache.accountData.email) || emailUrlParam;
+    // The account is created, its details can't change anymore
+    const hasReservedUser = !!model.signupTokenMode || !!model.reservedUser;
 
     const handleCompletion = async (subscriptionData: SubscriptionData, type?: 'signup-token') => {
         // The account was already created to receive the Bitcoin payment, only the subscription is left
@@ -322,7 +350,7 @@ const Step1 = ({
 
     const onPay = async (payment: ExtendedTokenPayment, type: 'cc' | 'pp' | 'btc' | undefined) => {
         const subscriptionData: SubscriptionData = {
-            ...model.subscriptionData,
+            ...getSubscriptionData(),
             payment,
             type,
         };
@@ -367,7 +395,7 @@ const Step1 = ({
         return measurePay(type, TelemetryAccountSignupEvents.checkoutError);
     };
 
-    const disablePayButton = Object.keys(model.optimistic).length > 0 || loadingPaymentDetails;
+    const disablePayButton = loadingPaymentDetails;
 
     const validatePayment = () => {
         if (isLoading || disablePayButton) {
@@ -381,7 +409,6 @@ const Step1 = ({
     // Apple Pay on iOS, Google Pay on Android
     const sortNewMethods = paypalFirstSort ?? (isMobileCheckout ? sortMethodsBasedOnDevice : undefined);
     const isBitcoinEnabled = useFlag('VpnBitcoinPaymentMethod');
-    const sessionUID = model.session?.resumedSessionResult.UID;
     const paymentFacade = usePaymentFacade({
         sortNewMethods,
         checkResult: options.checkResult,
@@ -389,12 +416,12 @@ const Step1 = ({
         currency: options.currency,
         api: sessionUID ? getUIDApi(sessionUID, silentApi) : silentApi,
         billingAddress: options.billingAddress,
-        selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
+        selectedPlanName: selectedPlan.Name as PLANS,
         paymentStatus: isBitcoinEnabled
-            ? model.paymentStatus
+            ? paymentStatus
             : {
-                  ...model.paymentStatus,
-                  VendorStates: { ...model.paymentStatus.VendorStates, Bitcoin: false },
+                  ...paymentStatus,
+                  VendorStates: { ...paymentStatus.VendorStates, Bitcoin: false },
               },
         onChargeable: (_, { chargeablePaymentParameters, sourceType, source, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
@@ -452,152 +479,6 @@ const Step1 = ({
         telemetryContext,
     });
 
-    const reportEstimationChange = (action: EstimationChangeAction, overrides: Partial<EstimationChangePayload>) => {
-        const nonEmptyOverrides = Object.fromEntries(
-            Object.entries(overrides).filter(([_, value]) => value !== undefined)
-        );
-        checkoutTelemetry.reportSubscriptionEstimationChange({
-            action,
-            context: telemetryContext,
-            userCurrency: undefined,
-            subscription: undefined,
-            selectedPlanIDs: options.planIDs,
-            selectedCurrency: options.currency,
-            selectedCycle: options.cycle,
-            selectedCoupon: options.checkResult.Coupon?.Code,
-            paymentMethodType: paymentFacade.selectedMethodType,
-            paymentMethodValue: paymentFacade.selectedMethodValue,
-            build: APP_NAME,
-            product: toApp,
-            isTrial: signupTrial,
-            ...nonEmptyOverrides,
-        });
-    };
-
-    const setOptimisticDiff = (diff: Partial<OptimisticOptions>) => {
-        setModel((old) => ({
-            ...old,
-            optimistic: {
-                ...old.optimistic,
-                ...diff,
-            },
-        }));
-    };
-
-    const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
-        if (isLoadingModelDeps) {
-            return;
-        }
-
-        if (optimistic.planIDs && !isDeepEqual(options.planIDs, optimistic.planIDs)) {
-            const currentlySelectedPlanName = getPlanNameFromIDs(options.planIDs);
-            const newlySelectedPlanName = getPlanNameFromIDs(optimistic.planIDs);
-            const action = currentlySelectedPlanName === newlySelectedPlanName ? 'addon_changed' : 'plan_changed';
-            reportEstimationChange(action, {
-                selectedPlanIDs: optimistic.planIDs,
-            });
-        }
-
-        if (optimistic.cycle) {
-            reportEstimationChange('cycle_changed', {
-                selectedCycle: optimistic.cycle,
-            });
-        }
-
-        const newCurrency = optimistic.currency || options.currency;
-        const newPlanIDs = optimistic.planIDs || options.planIDs;
-        const newCycle = optimistic.cycle || options.cycle;
-        const newPlan = getPlanFromPlanIDs(model.plansMap, newPlanIDs);
-        const newBillingAddress = optimistic.billingAddress || options.billingAddress;
-        // It's important to allow empty strings here, hence ?? instead of ||
-        const newVatNumber = optimistic.vatNumber ?? options.vatNumber;
-
-        // Try a pre-saved check first. If it's not available, then use the default optimistic one.
-        // With the regular cycles, it should be available.
-        let subscriptionMapping = model.subscriptionDataCycleMapping?.[newPlan?.Name as PLANS]?.[newCycle];
-        if (!isDeepEqual(newPlanIDs, subscriptionMapping?.planIDs)) {
-            subscriptionMapping = undefined;
-        }
-
-        const optimisticCheckResult =
-            subscriptionMapping?.checkResult ??
-            getOptimisticCheckResult({
-                plansMap: model.plansMap,
-                planIDs: newPlanIDs,
-                cycle: newCycle,
-                currency: newCurrency,
-            });
-
-        // Taxes shouldn't be part of optimistic updated because it can be misleading.
-        const optimisticCheckResultWithoutTaxes = {
-            ...optimisticCheckResult,
-            Taxes: [],
-        } satisfies SubscriptionEstimation;
-
-        const newOptimistic = {
-            ...optimistic,
-            checkResult: optimisticCheckResultWithoutTaxes,
-        };
-
-        try {
-            const validateFlow = createFlow();
-
-            setOptimisticDiff(newOptimistic);
-
-            const coupon = (() => {
-                // The plan cards show the prefetched price, so charge its coupon too. Otherwise the automatic
-                // coupon of VPN Plus would be sent for Proton Unlimited. Without a prefetched price,
-                // getSubscriptionPrices still adds the automatic coupon of the new selection.
-                if (showThreePlans) {
-                    if (hasChangedCouponRef.current) {
-                        return couponCode;
-                    }
-                    return subscriptionMapping?.checkResult.Coupon?.Code;
-                }
-                return couponCode || subscriptionMapping?.checkResult.Coupon?.Code || options.checkResult.Coupon?.Code;
-            })();
-
-            const checkResult = await getSubscriptionPrices({
-                paymentsApi: getPaymentsApi(silentApi),
-                planIDs: newPlanIDs,
-                currency: newCurrency,
-                cycle: newCycle,
-                billingAddress: newBillingAddress,
-                coupon: coupon,
-                trial: signupTrial,
-                ValidateBillingAddress: true,
-                VatId: newVatNumber,
-                previousEstimation: model.subscriptionData.checkResult,
-            });
-
-            if (!validateFlow()) {
-                return;
-            }
-
-            setModel((old) => ({
-                ...old,
-                subscriptionData: {
-                    ...model.subscriptionData,
-                    currency: newCurrency,
-                    cycle: newCycle,
-                    planIDs: newPlanIDs,
-                    checkResult,
-                    billingAddress: newBillingAddress,
-                    vatNumber: newVatNumber,
-                },
-                optimistic: {},
-            }));
-        } catch (e) {
-            // Reset any optimistic state on failures
-            setModel((old) => ({
-                ...old,
-                optimistic: {},
-            }));
-        }
-    };
-
-    const debouncedHandleOptimistic = useHandler(handleOptimistic, { debounce: 1000 });
-
     const handleChangeCurrency = (currency: Currency) => {
         handleUpdate('plan');
         void measure({
@@ -605,37 +486,26 @@ const Step1 = ({
             dimensions: { currency: currency },
         });
 
-        void withChangingCurrency(
-            onCurrencyChange(currency)
-                .then(() => {
-                    metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
-                        status: 'success',
-                        flow: isB2bPlan ? 'b2b' : 'b2c',
-                    });
-                })
-                .catch((error) => {
-                    observeApiError(error, (status) =>
-                        metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
-                            status,
-                            flow: isB2bPlan ? 'b2b' : 'b2c',
-                        })
-                    );
-                })
-        );
+        // The VPN+Pass promotion picked the bundle, but the new currency has no promotion
+        const isPromotionBundle = mode === 'vpn-pass-promotion' && !!options.planIDs[PLANS.VPN_PASS_BUNDLE];
+        const planIDs =
+            isPromotionBundle && !getIsVPNPassPromotion(couponUrlParam, currency) ? linkPlanIDs : options.planIDs;
+        select({ currency, planIDs });
 
-        reportEstimationChange('currency_changed', {
-            selectedCurrency: currency,
+        metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
+            status: 'success',
+            flow: isB2bPlan ? 'b2b' : 'b2c',
         });
     };
 
-    const handleChangePlanIds = async (planIDs: PlanIDs, planName: PLANS) => {
+    const handleChangePlanIds = (planIDs: PlanIDs, planName: PLANS) => {
         handleUpdate('plan');
         void measure({
             event: TelemetryAccountSignupEvents.planSelect,
             dimensions: { plan: planName },
         });
 
-        void handleOptimistic({ planIDs });
+        select({ planIDs });
     };
 
     const handleChangeCycle = ({ cycle, mode, planIDs }: { cycle: Cycle; mode?: 'upsell'; planIDs?: PlanIDs }) => {
@@ -651,36 +521,18 @@ const Step1 = ({
             void measure({ event: TelemetryAccountSignupEvents.cycleSelect, dimensions: { cycle: `${cycle}` } });
         }
 
-        handleOptimistic({ cycle, planIDs })
-            .then((result) => {
-                metrics.core_vpn_single_signup_step1_cycleChange_2_total.increment({
-                    status: 'success',
-                    flow: isB2bPlan ? 'b2b' : 'b2c',
-                });
-                return result;
-            })
-            .catch((error) => {
-                observeApiError(error, (status) =>
-                    metrics.core_vpn_single_signup_step1_cycleChange_2_total.increment({
-                        status,
-                        flow: isB2bPlan ? 'b2b' : 'b2c',
-                    })
-                );
-            });
-    };
+        select({ cycle, planIDs });
 
-    const handleChangeCoupon = (coupon: string | undefined) => {
-        hasChangedCouponRef.current = true;
-        setCouponCode(coupon);
-        reportEstimationChange('coupon_changed', {
-            selectedCoupon: coupon,
+        metrics.core_vpn_single_signup_step1_cycleChange_2_total.increment({
+            status: 'success',
+            flow: isB2bPlan ? 'b2b' : 'b2c',
         });
     };
 
     const fetchTrialPrice = async () => {
         const resultPromise = checkTrialPriceCommon({
-            paymentsApi: getPaymentsApi(silentApi),
-            plansMap: model.plansMap,
+            paymentsApi: payments.paymentsApi,
+            plansMap,
             currency: options.currency,
             planName: PLANS.VPN2024,
             cycle: CYCLE.MONTHLY,
@@ -707,99 +559,50 @@ const Step1 = ({
     };
 
     const billingAddressHook = useBillingAddress({
+        // The form reports its initial address while the prices load: a check then would be of the context's
+        // default plan, and would cancel the check of the selected one
         onBillingAddressChange: (billingAddress: FullBillingAddressFlat) => {
-            void debouncedHandleOptimistic({
-                billingAddress: {
-                    ...options.billingAddress,
-                    ...billingAddress,
-                },
-                vatNumber: billingAddress.VatId ?? undefined,
-            });
+            if (!isLoadingModelDeps) {
+                void payments.selectFullBillingAddress(billingAddress);
+            }
         },
-        initialBillingAddress: {
-            ...getBillingAddressFromPaymentStatus(model.paymentStatus, { shouldRestoreZipCode: true }),
-            Company: signupParameters.orgName ?? '',
-            City: signupParameters.city ?? '',
-            Address: signupParameters.streetAddress ?? '',
-            FirstName: signupParameters.firstName ?? '',
-            LastName: signupParameters.lastName ?? '',
-        },
+        initialBillingAddress: payments.billingAddress,
         initialVatNumber: signupParameters.vatNumber ?? '',
         paymentFacade,
         telemetryContext,
         selectedPlanName: selectedPlan?.Name,
-        onVatChange: (vatNumber) => debouncedHandleOptimistic({ vatNumber }),
+        onVatChange: (vatNumber) => {
+            if (!isLoadingModelDeps) {
+                void payments.setVatNumber(vatNumber);
+            }
+        },
     });
 
-    const getCheckoutForCycle = (
-        planIDs: PlanIDs,
-        subscriptionMapping: CycleMapping<SubscriptionData>,
-        cycle: Cycle
-    ) => {
-        const checkResult = subscriptionMapping?.[cycle]?.checkResult;
-        if (!checkResult) {
-            return;
-        }
-        return getCheckoutUi({
-            planIDs,
-            plansMap,
-            checkResult,
-        });
-    };
-
-    const checkoutMappingPlanIDs = ((): CycleMapping<PaymentsCheckoutUI> | undefined => {
+    const checkoutMappingPlanIDs = ((): CycleMapping<PaymentsCheckoutUI> => {
         if (mode === 'vpn-pass-promotion') {
             const vpnPassBundlePlanIDs = { [PLANS.VPN_PASS_BUNDLE]: 1 };
-            const vpnPassBundleSubscriptionMapping = getSubscriptionMapping({
-                subscriptionDataCycleMapping: model.subscriptionDataCycleMapping,
-                planName: PLANS.VPN_PASS_BUNDLE,
-                planIDs: vpnPassBundlePlanIDs,
-            });
             const vpnPlanIDs = { [PLANS.VPN2024]: 1 };
-            const vpnSubscriptionMapping = getSubscriptionMapping({
-                subscriptionDataCycleMapping: model.subscriptionDataCycleMapping,
-                planName: PLANS.VPN2024,
-                planIDs: vpnPlanIDs,
-            });
-            if (!vpnPassBundleSubscriptionMapping || !vpnSubscriptionMapping) {
-                return;
-            }
             return {
-                [CYCLE.MONTHLY]: getCheckoutForCycle(vpnPlanIDs, vpnSubscriptionMapping, CYCLE.MONTHLY),
-                [CYCLE.YEARLY]: getCheckoutForCycle(
-                    vpnPassBundlePlanIDs,
-                    vpnPassBundleSubscriptionMapping,
-                    CYCLE.YEARLY
-                ),
-                [CYCLE.TWO_YEARS]: getCheckoutForCycle(vpnPlanIDs, vpnSubscriptionMapping, CYCLE.TWO_YEARS),
+                [CYCLE.MONTHLY]: getCheckout(vpnPlanIDs, CYCLE.MONTHLY).checkoutUi,
+                [CYCLE.YEARLY]: getCheckout(vpnPassBundlePlanIDs, CYCLE.YEARLY).checkoutUi,
+                [CYCLE.TWO_YEARS]: getCheckout(vpnPlanIDs, CYCLE.TWO_YEARS).checkoutUi,
             };
         }
-        const planIDs = options.planIDs;
         // Want to show prices for VPN and VPNBIZ
-        const subscriptionMapping = getSubscriptionMapping({
-            subscriptionDataCycleMapping: model.subscriptionDataCycleMapping,
-            planName: options.plan.Name,
-            planIDs,
-        });
-        if (!subscriptionMapping) {
-            return;
-        }
-        return {
-            [CYCLE.MONTHLY]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.MONTHLY),
-            [CYCLE.THREE]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.THREE),
-            [CYCLE.YEARLY]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.YEARLY),
-            [CYCLE.EIGHTEEN]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.EIGHTEEN),
-            [CYCLE.TWO_YEARS]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.TWO_YEARS),
-            [CYCLE.FIFTEEN]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.FIFTEEN),
-            [CYCLE.THIRTY]: getCheckoutForCycle(planIDs, subscriptionMapping, CYCLE.THIRTY),
-        };
+        return Object.fromEntries(
+            [
+                CYCLE.MONTHLY,
+                CYCLE.THREE,
+                CYCLE.YEARLY,
+                CYCLE.EIGHTEEN,
+                CYCLE.TWO_YEARS,
+                CYCLE.FIFTEEN,
+                CYCLE.THIRTY,
+            ].map((cycle) => [cycle, getCheckout(options.planIDs, cycle).checkoutUi])
+        );
     })();
 
-    const actualCheckout = getCheckoutUi({
-        planIDs: options.planIDs,
-        plansMap,
-        checkResult: options.checkResult,
-    });
+    const actualCheckout = payments.checkoutUi;
 
     const iconColorClassName = background === 'bf2025' ? 'color-norm' : 'color-primary';
     const features = [
@@ -872,10 +675,8 @@ const Step1 = ({
     const upsellToVPNPassBundle = mode === 'vpn-pass-promotion';
 
     const coupon = (() => {
-        const {
-            currency,
-            checkResult: { Coupon, CouponDiscount },
-        } = model.subscriptionData;
+        const { Coupon, CouponDiscount } = payments.checkResult;
+        const { currency } = options;
 
         if (!Coupon || !CouponDiscount) {
             return;
@@ -901,25 +702,21 @@ const Step1 = ({
                 from: options.cycle,
                 to: upsellToCycle,
             });
-            return withLoadingPaymentDetails(
-                handleOptimistic({
-                    planIDs: {
-                        [PLANS.VPN_PASS_BUNDLE]: 1,
-                    },
-                    cycle: upsellToCycle,
-                })
-            ).catch(noop);
+            return select({
+                planIDs: {
+                    [PLANS.VPN_PASS_BUNDLE]: 1,
+                },
+                cycle: upsellToCycle,
+            });
         } else {
             const previousCycle = toggleUpsell?.from;
             setToggleUpsell(undefined);
-            return withLoadingPaymentDetails(
-                handleOptimistic({
-                    planIDs: {
-                        [PLANS.VPN2024]: 1,
-                    },
-                    ...(previousCycle ? { cycle: previousCycle } : {}),
-                })
-            ).catch(noop);
+            return select({
+                planIDs: {
+                    [PLANS.VPN2024]: 1,
+                },
+                ...(previousCycle ? { cycle: previousCycle } : {}),
+            });
         }
     };
 
@@ -986,7 +783,7 @@ const Step1 = ({
                         processorType: paymentFacade.selectedProcessor?.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
-                        subscriptionDataType: model.subscriptionData.type,
+                        subscriptionDataType: model.subscriptionData?.type,
                     },
                 });
             }
@@ -1019,31 +816,21 @@ const Step1 = ({
             return null;
         }
         const toCycle = toggleUpsell?.to || upsellToCycle;
-        if (!toCycle) {
+        // Only a cycle the plan has a price for
+        if (!toCycle || !cycleData.cycles.includes(toCycle)) {
             return null;
         }
-        const subscriptionMapping = getSubscriptionMapping({
-            subscriptionDataCycleMapping: model.subscriptionDataCycleMapping,
-            planName: options.plan.Name,
-            planIDs: options.planIDs,
-        });
-        if (!subscriptionMapping) {
-            if (isLoadingModelDeps) {
-                return (
-                    <div className="p-2 flex gap-1 items-center">
-                        <Toggle checked={false} id="toggle-upsell-plan" className="mx-1" />
-                        <label htmlFor="toggle-upsell-plan" className="flex-1 text-sm">
-                            <SkeletonLoader width="100%" height="2em" index={0} />
-                        </label>
-                    </div>
-                );
-            }
-            return null;
+        if (isLoadingModelDeps) {
+            return (
+                <div className="p-2 flex gap-1 items-center">
+                    <Toggle checked={false} id="toggle-upsell-plan" className="mx-1" />
+                    <label htmlFor="toggle-upsell-plan" className="flex-1 text-sm">
+                        <SkeletonLoader width="100%" height="2em" index={0} />
+                    </label>
+                </div>
+            );
         }
-        const toCycleCheckout = getCheckoutForCycle(options.planIDs, subscriptionMapping, toCycle);
-        if (!toCycleCheckout) {
-            return null;
-        }
+        const toCycleCheckout = getCheckout(options.planIDs, toCycle).checkoutUi;
         const billingCycle = getBillingCycleText(toCycle);
         if (!billingCycle) {
             return null;
@@ -1090,16 +877,10 @@ const Step1 = ({
 
     const currencySelector = isLoadingModelDeps ? null : (
         <CurrencySelector
-            currencies={getAvailableCurrencies({
-                paymentStatus: model.paymentStatus,
-                plans: model.plans,
-                selectedPlanName: selectedPlan.Name,
-                paramCurrency: currencyUrlParam,
-                multiSubscriptionContext: noSubscriptionContext,
-            })}
+            currencies={payments.getAvailableCurrencies(selectedPlan.Name as PLANS)}
             mode="select-two"
             currency={options.currency}
-            loading={changingCurrency}
+            loading={loadingPaymentDetails}
             onSelect={(currency) => handleChangeCurrency(currency)}
         />
     );
@@ -1171,20 +952,16 @@ const Step1 = ({
     ) : null;
 
     const checkSelectionWithCoupon = (coupon: string | undefined) =>
-        getSubscriptionPrices({
-            paymentsApi: getPaymentsApi(silentApi),
+        payments.selectNewPlan({
             planIDs: options.planIDs,
             currency: options.currency,
             cycle: options.cycle,
-            billingAddress: model.subscriptionData.billingAddress,
             coupon,
             trial: signupTrial,
-            ValidateBillingAddress: true,
-            VatId: model.subscriptionData.vatNumber,
         });
 
     const summaryPlanInformation =
-        model.mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
+        mode === 'vpn-pass-promotion' && plansMap[PLANS.VPN2024]
             ? getPlanInformation({
                   selectedPlan: plansMap[PLANS.VPN2024],
                   loading: isLoadingModelDeps,
@@ -1193,7 +970,9 @@ const Step1 = ({
 
     const paymentSummary = (
         <PaymentSummary
-            model={model}
+            plansMap={plansMap}
+            initialLoading={isLoadingModelDeps}
+            couponConfig={payments.couponConfig}
             options={options}
             loadingPaymentDetails={disablePayButton}
             upsellToggle={getUpsellToggle()}
@@ -1201,38 +980,18 @@ const Step1 = ({
             giftCode={
                 <GiftCodeSummary
                     coupon={coupon}
-                    checkResult={model.subscriptionData.checkResult}
-                    planIDs={options.planIDs}
-                    plansMap={model.plansMap}
+                    couponConfig={payments.couponConfig}
                     onApplyCode={async (code) => {
                         const checkResult = await checkSelectionWithCoupon(code);
-
-                        setModel((old) => ({
-                            ...old,
-                            subscriptionData: {
-                                ...model.subscriptionData,
-                                checkResult,
-                            },
-                        }));
-
-                        handleChangeCoupon(code);
+                        setCouponCode(code);
 
                         if (!checkResult.Coupon) {
                             throw new Error(c('Notification').t`Invalid code`);
                         }
                     }}
                     onRemoveCode={async () => {
-                        const checkResult = await checkSelectionWithCoupon(undefined);
-
-                        setModel((old) => ({
-                            ...old,
-                            subscriptionData: {
-                                ...model.subscriptionData,
-                                checkResult,
-                            },
-                        }));
-
-                        handleChangeCoupon(undefined);
+                        await checkSelectionWithCoupon(undefined);
+                        setCouponCode(undefined);
                     }}
                 />
             }
@@ -1247,18 +1006,16 @@ const Step1 = ({
     );
 
     // Avoid collision with another offer targeting VPN_PASS_BUNDLE using specific coupons
-    const canDisplayVpnPassBundle = displayPassAsFakeAddon && model.mode !== 'vpn-pass-promotion';
+    const canDisplayVpnPassBundle = displayPassAsFakeAddon && mode !== 'vpn-pass-promotion';
 
     const checkoutHeaderText = isVpnPassBundleBusinessPlan
         ? c('Header').t`Checkout`
         : c('Header').t`Select your payment method:`;
 
-    const bundlePlanPrice = getVpnPassBundleUpsellMonthlyPrice({
-        cycle: options.cycle,
-        currency: options.currency,
-        plansMap,
-        subscriptionDataCycleMapping: model.subscriptionDataCycleMapping,
-    });
+    // Adding Proton Pass on top of VPN Plus: the VPN+Pass bundle's price per month minus VPN Plus's
+    const bundlePlanPrice =
+        getCheckout({ [PLANS.VPN_PASS_BUNDLE]: 1 }, options.cycle).checkoutUi.withDiscountPerMonth -
+        getCheckout({ [PLANS.VPN2024]: 1 }, options.cycle).checkoutUi.withDiscountPerMonth;
 
     const bundlePlanPriceInline: ReactElement = (
         <Price
@@ -1320,7 +1077,7 @@ const Step1 = ({
                                 </div>
                             }
                             plansMap={plansMap}
-                            subscriptionDataCycleMapping={model.subscriptionDataCycleMapping}
+                            getCheckout={(planIDs, cycle) => getCheckout(planIDs, cycle).checkoutUi}
                             selectedPlanName={options.plan.Name}
                             cycle={options.cycle}
                             cycles={cycleData.cycles}
@@ -1427,79 +1184,72 @@ const Step1 = ({
                             />
                             <BoxContent>
                                 <div className="relative">
-                                    <AccountFormDataContextProvider
-                                        availableSignupTypes={new Set([SignupType.External])}
-                                        domains={model.domains}
-                                        domainsLoaded={!model.loadingDependencies}
-                                        defaultEmail={defaultEmail}
-                                    >
-                                        <AccountStepDetails
-                                            passwordFields={false}
-                                            model={model}
-                                            measure={measure}
-                                            accountStepDetailsRef={accountDetailsRef}
-                                            disableChange={loadingSignup || hasReservedUser}
-                                            hideEmailLabel={!isVpnPassBundleBusinessPlan}
-                                            onSubmit={
-                                                hasSelectedFree
-                                                    ? () => {
-                                                          withLoadingSignup(
-                                                              handleCompletion(
-                                                                  getFreeSubscriptionData(model.subscriptionData)
-                                                              )
-                                                          ).catch(noop);
-                                                      }
-                                                    : undefined
-                                            }
-                                            onFormValidChange={setIsFormValid}
-                                            footer={() => {
-                                                return (
-                                                    <>
-                                                        {hasSelectedFree && (
-                                                            <div className="mb-4">
-                                                                <Button
-                                                                    type="submit"
-                                                                    size="large"
-                                                                    loading={loadingSignup}
-                                                                    color="norm"
-                                                                    fullWidth
-                                                                >
-                                                                    {c('pass_signup_2023: Action')
-                                                                        .t`Start using ${appName}`}
-                                                                </Button>
-                                                            </div>
-                                                        )}
-                                                        {isVpnPassBundleBusinessPlan &&
-                                                            !(signupTrial || checkTrial) && (
-                                                                <span>
-                                                                    {
-                                                                        // translator: Full sentence "Already have an account? Sign in"
-                                                                        c('Go to sign in')
-                                                                            .jt`Already have an account? ${signIn}`
-                                                                    }
-                                                                </span>
-                                                            )}
-                                                        {!isB2bPlan && (
-                                                            <>
-                                                                <span className="mt-4 color-weak text-sm">
-                                                                    {
-                                                                        // translator: Full sentance "Use an existing email or create a free @proton.me address."
-                                                                        c('Info')
-                                                                            .t`Use an existing email or create a free ${protonDomain} address.`
-                                                                    }
-                                                                    <br />
-                                                                    {c('Info')
-                                                                        .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
-                                                                </span>
-                                                            </>
-                                                        )}
-                                                    </>
-                                                );
-                                            }}
-                                            defaultEmail={defaultEmail}
-                                            currentPlan={selectedPlan}
-                                        />
-                                    </AccountFormDataContextProvider>
+                                    <AccountStepDetails
+                                        passwordFields={false}
+                                        model={{ subscriptionData: options }}
+                                        measure={measure}
+                                        accountStepDetailsRef={accountDetailsRef}
+                                        disableChange={loadingSignup || hasReservedUser}
+                                        hideEmailLabel={!isVpnPassBundleBusinessPlan}
+                                        onSubmit={
+                                            hasSelectedFree
+                                                ? () => {
+                                                      withLoadingSignup(
+                                                          handleCompletion(
+                                                              getFreeSubscriptionData(getSubscriptionData())
+                                                          )
+                                                      ).catch(noop);
+                                                  }
+                                                : undefined
+                                        }
+                                        onFormValidChange={setIsFormValid}
+                                        footer={() => {
+                                            return (
+                                                <>
+                                                    {hasSelectedFree && (
+                                                        <div className="mb-4">
+                                                            <Button
+                                                                type="submit"
+                                                                size="large"
+                                                                loading={loadingSignup}
+                                                                color="norm"
+                                                                fullWidth
+                                                            >
+                                                                {c('pass_signup_2023: Action')
+                                                                    .t`Start using ${appName}`}
+                                                            </Button>
+                                                        </div>
+                                                    )}
+                                                    {isVpnPassBundleBusinessPlan && !(signupTrial || checkTrial) && (
+                                                        <span>
+                                                            {
+                                                                // translator: Full sentence "Already have an account? Sign in"
+                                                                c('Go to sign in')
+                                                                    .jt`Already have an account? ${signIn}`
+                                                            }
+                                                        </span>
+                                                    )}
+                                                    {!isB2bPlan && (
+                                                        <>
+                                                            <span className="mt-4 color-weak text-sm">
+                                                                {
+                                                                    // translator: Full sentance "Use an existing email or create a free @proton.me address."
+                                                                    c('Info')
+                                                                        .t`Use an existing email or create a free ${protonDomain} address.`
+                                                                }
+                                                                <br />
+                                                                {c('Info')
+                                                                    .t`Your information is safe with us. We'll only contact you when it's required to provide our services.`}
+                                                            </span>
+                                                        </>
+                                                    )}
+                                                </>
+                                            );
+                                        }}
+                                        // Submits by itself only before the account exists: a failing setup would loop
+                                        defaultEmail={hasReservedUser ? undefined : defaultEmail}
+                                        currentPlan={selectedPlan}
+                                    />
                                 </div>
                             </BoxContent>
                         </div>
@@ -1541,7 +1291,7 @@ const Step1 = ({
                             if (!isVpnPassBundle) {
                                 reportVpn2024SignupAddPass();
                             }
-                            void handleOptimistic({
+                            select({
                                 planIDs: { [isVpnPassBundle ? PLANS.VPN2024 : PLANS.VPN_PASS_BUNDLE]: 1 },
                             });
                         }}
@@ -1599,14 +1349,10 @@ const Step1 = ({
                                                 <PlanCustomizer
                                                     currency={options.currency}
                                                     cycle={options.cycle}
-                                                    plansMap={model.plansMap}
+                                                    plansMap={plansMap}
                                                     planIDs={options.planIDs}
                                                     currentPlan={selectedPlan}
-                                                    onChangePlanIDs={(planIDs: PlanIDs) =>
-                                                        withLoadingPaymentDetails(handleOptimistic({ planIDs })).catch(
-                                                            noop
-                                                        )
-                                                    }
+                                                    onChangePlanIDs={(planIDs: PlanIDs) => select({ planIDs })}
                                                     isTrialMode={checkTrial}
                                                 />
                                                 <div className="border-bottom border-weak my-6" />
@@ -1617,7 +1363,9 @@ const Step1 = ({
                                             // Remount once the account exists so the Bitcoin method is re-selected
                                             // and the deposit address can be requested
                                             key={sessionUID || 'unauthenticated'}
-                                            defaultMethod={model.session?.defaultPaymentMethod}
+                                            defaultMethod={
+                                                sessionUID ? PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN : undefined
+                                            }
                                             isAuthenticated={!!sessionUID}
                                             loadingBitcoin={loadingPaymentDetails}
                                             hideFirstLabel
@@ -1678,7 +1426,7 @@ const Step1 = ({
                                                     hasSelectedFree={hasSelectedFree}
                                                     checkTrial={checkTrial}
                                                     checkResult={options.checkResult}
-                                                    plansMap={model.plansMap}
+                                                    plansMap={plansMap}
                                                     planIDs={options.planIDs}
                                                 />
                                             );
@@ -1700,7 +1448,7 @@ const Step1 = ({
                                                             }
                                                             measurePaySubmit('pay_btc');
                                                             await handleCompletion(
-                                                                model.subscriptionData,
+                                                                getSubscriptionData(),
                                                                 'signup-token'
                                                             ).catch(() => {
                                                                 measurePayError('pay_btc');

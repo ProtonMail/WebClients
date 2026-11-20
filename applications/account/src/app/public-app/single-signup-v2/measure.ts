@@ -7,7 +7,7 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
-import type { SessionData, SignupCacheResult } from '../signup/interfaces';
+import type { SessionData, SubscriptionData } from '../signup/interfaces';
 
 type InteractFields = 'username' | 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';
 
@@ -190,17 +190,17 @@ export const getPaymentMethodsAvailable = (
     };
 };
 
-export const getSignupTelemetryData = (plansMap: PlansMap, cache: SignupCacheResult): SignupFinishEvents => {
-    const plan = getPlanFromPlanIDs(plansMap, cache.subscriptionData.planIDs)?.Name as PLANS | undefined;
+export const getSignupTelemetryData = (plansMap: PlansMap, subscriptionData: SubscriptionData): SignupFinishEvents => {
+    const plan = getPlanFromPlanIDs(plansMap, subscriptionData.planIDs)?.Name as PLANS | undefined;
 
-    if (!plan || !hasPlanIDs(cache.subscriptionData.planIDs)) {
+    if (!plan || !hasPlanIDs(subscriptionData.planIDs)) {
         return {
             event: TelemetryAccountSignupEvents.signupFinish,
             dimensions: {
                 type: 'free',
                 plan: PLANS.FREE,
-                cycle: `${cache.subscriptionData.cycle}`,
-                currency: cache.subscriptionData.currency,
+                cycle: `${subscriptionData.cycle}`,
+                currency: subscriptionData.currency,
             },
             values: {
                 amount_charged: 0,
@@ -208,17 +208,17 @@ export const getSignupTelemetryData = (plansMap: PlansMap, cache: SignupCacheRes
         };
     }
 
-    const type = getPaymentMethodType(cache.subscriptionData.payment?.Type);
+    const type = getPaymentMethodType(subscriptionData.payment?.Type);
     return {
         event: TelemetryAccountSignupEvents.signupFinish,
         dimensions: {
             type: type || 'pay_cc',
             plan,
-            cycle: `${cache.subscriptionData.cycle}`,
-            currency: cache.subscriptionData.currency,
+            cycle: `${subscriptionData.cycle}`,
+            currency: subscriptionData.currency,
         },
         values: {
-            amount_charged: cache.subscriptionData.checkResult.AmountDue,
+            amount_charged: subscriptionData.checkResult.AmountDue,
         },
     };
 };

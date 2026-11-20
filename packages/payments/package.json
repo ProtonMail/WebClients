@@ -65,6 +65,7 @@
         "./core/payment-processors/interface": "./core/payment-processors/interface.ts",
         "./core/payment-processors/paymentProcessor": "./core/payment-processors/paymentProcessor.ts",
         "./core/payment-processors/savedChargebeePayment": "./core/payment-processors/savedChargebeePayment.ts",
+        "./core/payment-status": "./core/payment-status.ts",
         "./core/plan/addons": "./core/plan/addons.ts",
         "./core/plan/feature-limits": "./core/plan/feature-limits.ts",
         "./core/plan/lumo-limits": "./core/plan/lumo-limits.ts",
@@ -117,8 +118,7 @@
         "./testing/redux-state": "./testing/redux-state.ts",
         "./testing/regularAdmin": "./testing/regularAdmin.ts",
         "./testing/signup": "./testing/signup.ts",
-        "./testing/usersWhoCannotReadSubscriptions": "./testing/usersWhoCannotReadSubscriptions.ts",
-        "./testing/vitest/api-endpoints": "./testing/vitest/api-endpoints.ts"
+        "./testing/usersWhoCannotReadSubscriptions": "./testing/usersWhoCannotReadSubscriptions.ts"
     },
     "scripts": {
         "check:entitlement-names": "node --env-file-if-exists=core/entitlements/scripts/.env core/entitlements/scripts/generate-entitlement-names.mjs --check",
