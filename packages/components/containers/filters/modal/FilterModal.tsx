@@ -196,17 +196,14 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
     };
 
     const createFilter = async (filter: CreateFilter) => {
-        try {
-            const Filter = await dispatch(addFilter({ filter }));
-            createNotification({
-                text: c('Notification').t`${Filter.Name} created`,
-            });
-            return Filter;
-        } finally {
-            // Some failed request will add the filter but in disabled mode
-            // So we have to refresh the list in both cases
-            handleCloseModal();
-        }
+        // On failure, keep the modal open so the user's input isn't lost.
+        // If the API still added the filter (in disabled mode), the event loop updates the list.
+        const Filter = await dispatch(addFilter({ filter }));
+        createNotification({
+            text: c('Notification').t`${Filter.Name} created`,
+        });
+        handleCloseModal();
+        return Filter;
     };
 
     const editFilter = async (filter: CreateFilter) => {

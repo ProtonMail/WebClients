@@ -23,7 +23,10 @@ const SieveForm = ({ model, onChange }: Props) => {
                 value={model.sieve}
                 issues={model.issues}
                 theme={theme}
-                onChange={(editor, data, sieve) => onChange({ ...model, sieve })}
+                // Issues belong to the script that was checked, so drop them once it changes
+                onChange={(editor, data, sieve) =>
+                    onChange({ ...model, sieve, issues: model.issues.length ? [] : model.issues })
+                }
             />
         </Suspense>
     );

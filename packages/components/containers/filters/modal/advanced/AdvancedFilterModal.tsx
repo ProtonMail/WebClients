@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
-import useDebounceInput from '@proton/hooks/useDebounceInput';
 import useLoading from '@proton/hooks/useLoading';
 import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
@@ -71,7 +70,6 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
     };
 
     const [model, setModel] = useState<AdvancedSimpleFilterModalModel>(initialModel);
-    const sieve = useDebounceInput(model.sieve);
 
     const errors = useMemo<ErrorsSieve>(() => {
         return {
@@ -81,16 +79,13 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
     }, [model.name, model.sieve, model.issues]);
 
     const createFilter = async (filter: CreateFilter) => {
-        try {
-            const Filter = await dispatch(addFilter({ filter }));
-            createNotification({
-                text: c('Notification').t`${Filter.Name} created`,
-            });
-        } finally {
-            // Some failed request will add the filter but in disabled mode
-            // So we have to refresh the list in both cases
-            onClose?.();
-        }
+        // On failure, keep the modal open so the typed script isn't lost.
+        // If the API still added the filter (in disabled mode), the event loop updates the list.
+        const Filter = await dispatch(addFilter({ filter }));
+        createNotification({
+            text: c('Notification').t`${Filter.Name} created`,
+        });
+        onClose?.();
     };
 
     const editFilter = async (filter: CreateFilter) => {
@@ -102,7 +97,7 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
     };
 
     const checkSieve = async () => {
-        const { Issues = [] } = await api(checkSieveFilter({ Version: FILTER_VERSION, Sieve: sieve }));
+        const { Issues = [] } = await api(checkSieveFilter({ Version: FILTER_VERSION, Sieve: model.sieve }));
 
         const issues = Issues.length ? Issues : [];
 
