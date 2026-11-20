@@ -6,7 +6,7 @@ import {
     ScoringMethod,
 } from '@proton/proton-foundation-search';
 
-import { FOUNDATION_DEFAULT_MAXIMUM_DISTANCE, LOCAL_SEARCH_MINIMUM_SIMILARITY } from '../engine/config';
+import { LOCAL_SEARCH_MAXIMUM_DISTANCE, LOCAL_SEARCH_MINIMUM_SIMILARITY } from '../engine/config';
 
 /**
  * Query options for local mail search — aligned with
@@ -18,7 +18,7 @@ import { FOUNDATION_DEFAULT_MAXIMUM_DISTANCE, LOCAL_SEARCH_MINIMUM_SIMILARITY } 
 export function createLocalSearchQueryOptions(): QueryOptions {
     const options = new QueryOptions();
     options.setMinimumSimilarity(LOCAL_SEARCH_MINIMUM_SIMILARITY);
-    options.setMaximumDistance(FOUNDATION_DEFAULT_MAXIMUM_DISTANCE);
+    options.setMaximumDistance(LOCAL_SEARCH_MAXIMUM_DISTANCE);
     options.setScoringMethod(ScoringMethod.TrigramSimilarity);
     options.setImplicitTermFunction(ImplicitTermFunction.Matches);
     options.setRanking(Ranking.Off);
