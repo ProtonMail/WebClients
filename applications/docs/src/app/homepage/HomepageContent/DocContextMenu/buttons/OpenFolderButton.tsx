@@ -1,4 +1,5 @@
-import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen'
+import { Icon } from '../../../components/Icon'
+import * as Icons from '../../../components/icons'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../documentActionsContext'
@@ -16,7 +17,7 @@ export function OpenFolderButton({ currentDocument, close }: OpenFolderButtonPro
   return (
     <ContextMenuButton
       name={messages.openFolder}
-      icon={<IcFolderOpen className="mr-2" />}
+      icon={<Icon data={Icons.folderOpen} className="mr-2" />}
       action={() => documentActions.openParent(currentDocument)}
       close={close}
     />

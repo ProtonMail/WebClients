@@ -1,4 +1,6 @@
-import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
+import { Icon } from '../../../components/Icon'
+import * as Icons from '../../../components/icons'
+import { clsx } from '../../../utils/clsx'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../documentActionsContext'
@@ -18,7 +20,7 @@ export function RestoreFromTrashButton({ currentDocument }: RestoreFromTrashButt
     <ContextMenuButton
       disabled={isLoading}
       name={!isLoading ? messages.restoreFromTrash : messages.restoring}
-      icon={!isLoading ? <IcArrowRotateRight className="mr-2" /> : <IcArrowRotateRight className="mr-2 animate-spin" />}
+      icon={<Icon data={Icons.arrowRotateRight} className={clsx('mr-2', isLoading && 'animate-spin')} />}
       action={async () => {
         if (isLoading) {
           return

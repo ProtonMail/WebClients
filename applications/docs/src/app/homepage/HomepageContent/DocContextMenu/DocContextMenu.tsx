@@ -16,8 +16,8 @@ import { useHomepageView } from '../../homepageViewContext'
 import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
 import { DeletePermanentlyButton } from './buttons/DeletePermanently'
 import type { MemberRole } from '@protontech/drive-sdk'
-import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
-import { IcTrash } from '@proton/icons/icons/IcTrash'
+import { Icon } from '../../components/Icon'
+import * as Icons from '../../components/icons'
 import { useHomepageMessages } from '../../messages/HomepageMessagesProvider'
 import { ContextMenuButton } from './ContextMenuButton'
 import type { MenuPosition } from './context'
@@ -193,7 +193,7 @@ function SelectionMenuItems({ actions: { move, trash, disabled }, close }: Selec
         <>
           <ContextMenuButton
             name={messages.move}
-            icon={<IcArrowsCross className="mr-2" />}
+            icon={<Icon data={Icons.arrowsCross} className="mr-2" />}
             action={move}
             close={close}
             disabled={disabled}
@@ -203,7 +203,7 @@ function SelectionMenuItems({ actions: { move, trash, disabled }, close }: Selec
       ) : null}
       <ContextMenuButton
         name={messages.moveToTrash}
-        icon={<IcTrash className="mr-2" />}
+        icon={<Icon data={Icons.trash} className="mr-2" />}
         action={trash}
         close={close}
         disabled={disabled}

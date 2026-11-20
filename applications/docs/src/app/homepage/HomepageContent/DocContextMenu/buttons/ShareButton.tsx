@@ -1,4 +1,5 @@
-import { IcUserPlus } from '@proton/icons/icons/IcUserPlus'
+import { Icon } from '../../../components/Icon'
+import * as Icons from '../../../components/icons'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../documentActionsContext'
@@ -16,7 +17,7 @@ export function ShareButton({ currentDocument, close }: ShareButtonProps) {
   return (
     <ContextMenuButton
       name={messages.share}
-      icon={<IcUserPlus className="mr-2" />}
+      icon={<Icon data={Icons.userPlus} className="mr-2" />}
       action={() => documentActions.share(currentDocument)}
       close={close}
     />

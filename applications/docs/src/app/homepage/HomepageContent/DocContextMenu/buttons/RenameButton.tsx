@@ -1,4 +1,5 @@
-import { IcPenSquare } from '@proton/icons/icons/IcPenSquare'
+import { Icon } from '../../../components/Icon'
+import * as Icons from '../../../components/icons'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../documentActionsContext'
@@ -16,7 +17,7 @@ export function RenameButton({ currentDocument, close }: RenameButtonProps) {
   return (
     <ContextMenuButton
       name={messages.rename}
-      icon={<IcPenSquare className="mr-2" />}
+      icon={<Icon data={Icons.penSquare} className="mr-2" />}
       action={() => documentActions.startRename(currentDocument)}
       close={close}
     />
