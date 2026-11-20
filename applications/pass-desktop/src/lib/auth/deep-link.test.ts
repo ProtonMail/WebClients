@@ -1,8 +1,9 @@
-import noop from '@proton/utils/noop';
-
 import type * as DeepLink from './deep-link';
 
-jest.mock('../../utils/logger', () => ({ log: noop, debug: noop, info: noop, warn: noop, error: noop }));
+vi.mock('../../utils/logger', () => {
+    const noop = () => {};
+    return { default: { log: noop, debug: noop, info: noop, warn: noop, error: noop } };
+});
 
 const WEBPACK_ENTRY = 'file:///app/index.html';
 
@@ -10,19 +11,19 @@ const getMockCtx = () => ({
     session: null,
     quitting: false,
     window: {
-        loadURL: jest.fn(() => Promise.resolve()),
-        reload: jest.fn(),
-        show: jest.fn(),
+        loadURL: vi.fn(() => Promise.resolve()),
+        reload: vi.fn(),
+        show: vi.fn(),
     },
 });
 
 describe('deep-link', () => {
     let deepLink: typeof DeepLink;
 
-    beforeEach(() => {
-        jest.resetModules();
+    beforeEach(async () => {
+        vi.resetModules();
         (globalThis as any).MAIN_WINDOW_WEBPACK_ENTRY = WEBPACK_ENTRY;
-        deepLink = require('./deep-link');
+        deepLink = await import('./deep-link');
     });
 
     describe('handleDeepLink', () => {
