@@ -1,6 +1,6 @@
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
-import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 import type { SignupContextSubscriptionData } from '../../signupCtx/context/helpers/handleSetupUser';
 import { handleSetupUser as handleSetupUserSignupCtx } from '../../signupCtx/context/helpers/handleSetupUser';
@@ -8,14 +8,14 @@ import type { SignupCacheResult, SubscriptionData } from '../interfaces';
 import { SignupType } from '../interfaces';
 import { handleSetupUser as handleSetupUserLegacy } from './signupActions';
 
-jest.mock('@proton/shared/lib/srp', () => ({
-    srpAuth: jest.fn(async () => ({ json: async () => ({ UID: 'uid', AccessToken: 'token' }) })),
+vi.mock('@proton/shared/lib/srp', () => ({
+    srpAuth: vi.fn(async () => ({ json: async () => ({ UID: 'uid', AccessToken: 'token' }) })),
 }));
-jest.mock('@proton/shared/lib/authentication/persistedSessionHelper', () => ({
-    persistSession: jest.fn(async () => ({})),
+vi.mock('@proton/shared/lib/authentication/persistedSessionHelper', () => ({
+    persistSession: vi.fn(async () => ({})),
 }));
-jest.mock('@proton/key-transparency/shared/createPreAuthKTVerifier', () => ({
-    createPreAuthKTVerifier: () => ({ preAuthKTVerify: jest.fn(), preAuthKTCommit: jest.fn(async () => {}) }),
+vi.mock('@proton/key-transparency/shared/createPreAuthKTVerifier', () => ({
+    createPreAuthKTVerifier: () => ({ preAuthKTVerify: vi.fn(), preAuthKTCommit: vi.fn(async () => {}) }),
 }));
 
 const subscribeUrl = 'payments/v5/subscription';
@@ -61,8 +61,8 @@ const runLegacy = (subscriptionData: Partial<SubscriptionData>, cache: Partial<S
         api: apiMock,
         canGenerateMnemonic: false,
         setupKeys: false,
-        reportPaymentSuccess: jest.fn(),
-        reportPaymentFailure: jest.fn(),
+        reportPaymentSuccess: vi.fn(),
+        reportPaymentFailure: vi.fn(),
     });
 
 const runSignupCtx = (subscriptionData: Partial<SignupContextSubscriptionData>, referralData?: any) =>
@@ -74,7 +74,7 @@ const runSignupCtx = (subscriptionData: Partial<SignupContextSubscriptionData>, 
         subscriptionData: { ...baseSubscriptionData, paymentToken, ...subscriptionData } as any,
         productParam: 'generic',
         keyTransparencyActivation: {} as any,
-        traceSignupSentryError: jest.fn(),
+        traceSignupSentryError: vi.fn(),
         referralData,
         referralRegistrationPlan: undefined,
         build: 'proton-account',
@@ -85,7 +85,7 @@ const getSubscribeCalls = () =>
     apiMock.mock.calls.map(([config]) => config).filter((config) => config.url === subscribeUrl);
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     clearApiMocks();
     addApiMock('core/v4/addresses', () => ({ Addresses: [], Total: 0 }));
     addApiMock('core/v4/users', () => ({ User: { ID: 'user-id', Name: 'user' } }));

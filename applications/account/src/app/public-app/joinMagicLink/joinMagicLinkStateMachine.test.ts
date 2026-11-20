@@ -9,7 +9,7 @@ import { type JoinMagicLinkEmitted, MissingTokenError, joinMagicLinkStateMachine
 const apiError = (data: { Code?: number; Error?: string }, status = 422) =>
     Object.assign(new Error(data.Error), { status, data });
 
-const cleanup = jest.fn();
+const cleanup = vi.fn();
 const data = { organizationData: { logo: { url: 'blob:logo', cleanup } } } as unknown as JoinMagicLinkData;
 
 const start = ({
@@ -21,7 +21,7 @@ const start = ({
     validate?: () => Promise<void>;
     setUp?: (input: { password: string }) => Promise<void>;
 }) => {
-    const redirectToSignIn = jest.fn();
+    const redirectToSignIn = vi.fn();
     const emitted: JoinMagicLinkEmitted[] = [];
     const actor = createActor(
         joinMagicLinkStateMachine.provide({
@@ -47,7 +47,7 @@ describe('joinMagicLinkStateMachine', () => {
     beforeEach(() => cleanup.mockClear());
 
     it('asks for a password once the link is read, and sets up the member with it', async () => {
-        const setUp = jest.fn(() => new Promise<void>(() => {}));
+        const setUp = vi.fn(() => new Promise<void>(() => {}));
         const { actor } = start({ setUp });
         await waitFor(actor, (state) => state.matches({ joining: 'awaitingPassword' }));
         actor.send({ type: 'password.submitted', password: 'password' });
@@ -79,8 +79,8 @@ describe('joinMagicLinkStateMachine', () => {
     });
 
     it('reads the link again on retry', async () => {
-        const prepare = jest
-            .fn<Promise<JoinMagicLinkData>, []>()
+        const prepare = vi
+            .fn<() => Promise<JoinMagicLinkData>>()
             .mockRejectedValueOnce(Object.assign(new Error(), { name: 'TimeoutError' }))
             .mockResolvedValueOnce(data);
         const { actor } = start({ prepare });
@@ -105,8 +105,8 @@ describe('joinMagicLinkStateMachine', () => {
     );
 
     it('releases the logo of an invitation that does not verify, once, before reading the link again', async () => {
-        const validate = jest
-            .fn<Promise<void>, []>()
+        const validate = vi
+            .fn<() => Promise<void>>()
             .mockRejectedValueOnce(new UnprivatizationIdentityError('Signature verification failed'))
             .mockResolvedValueOnce();
         const { actor } = start({ validate });

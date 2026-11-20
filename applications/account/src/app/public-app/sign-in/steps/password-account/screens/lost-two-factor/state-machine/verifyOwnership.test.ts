@@ -1,3 +1,4 @@
+import type { Mock } from 'vitest';
 import { type ActorRefFrom, createActor, fromPromise, setup, waitFor } from 'xstate';
 
 import { InvalidCodeError, InvalidRecoveryPhraseError } from '@proton/shared/lib/authentication/error';
@@ -20,10 +21,10 @@ const verificationResult = {
 } as unknown as VerificationResult;
 
 // The recovery phrase check's crypto; these tests only look at its requests
-jest.mock('@proton/shared/lib/mnemonic/bip39Wrapper', () => ({
+vi.mock('@proton/shared/lib/mnemonic/bip39Wrapper', () => ({
     mnemonicToBase64RandomBytes: () => Promise.resolve('random-bytes'),
 }));
-jest.mock('@proton/shared/lib/srp', () => ({
+vi.mock('@proton/shared/lib/srp', () => ({
     srpAuth: ({ api, config }: { api: Api; config: object }) => api(config),
 }));
 
@@ -73,7 +74,9 @@ const runFlow = (logic: typeof lost2FAStateMachine, recoveryMethods: Partial<Los
 
 /** A state of the email or phone code screen, as `snapshot.matches` takes it under the screen's state. */
 type CodeState =
-    'readyToSend' | 'sendingCodeFailed' | { awaitingCode: 'editing' | 'verifying' | 'newCodeDialog' | 'resending' };
+    | 'readyToSend'
+    | 'sendingCodeFailed'
+    | { awaitingCode: 'editing' | 'verifying' | 'newCodeDialog' | 'resending' };
 
 const isAt = (flow: Flow, method: VerificationMethod, state: CodeState) =>
     method === 'email'
@@ -102,9 +105,9 @@ const startCode = (
     } = {}
 ) => {
     const spies = {
-        sendVerificationCode: jest.fn(sendVerificationCode),
-        resendVerificationCode: jest.fn(resendVerificationCode),
-        verifyCodeAndDisable2FA: jest.fn(verifyCodeAndDisable2FA),
+        sendVerificationCode: vi.fn(sendVerificationCode),
+        resendVerificationCode: vi.fn(resendVerificationCode),
+        verifyCodeAndDisable2FA: vi.fn(verifyCodeAndDisable2FA),
     };
     const logic = lost2FAStateMachine.provide({
         actors: {
@@ -337,7 +340,7 @@ describe('lost-2FA code verification', () => {
 
 describe('lost-2FA phrase verification', () => {
     const startPhrase = (verifyPhraseAndDisable2FA: (input: { username: string; phrase: string }) => Promise<void>) => {
-        const spy = jest.fn(verifyPhraseAndDisable2FA);
+        const spy = vi.fn(verifyPhraseAndDisable2FA);
         const logic = lost2FAStateMachine.provide({
             actors: { verifyPhraseAndDisable2FA: fromPromise(({ input }) => spy(input)) },
         });
@@ -390,7 +393,7 @@ describe('createVerificationActors', () => {
     const DISABLE_2FA = 'core/v4/settings/2fa';
 
     const startWithApi = (answer: (config: { url: string }) => Promise<unknown>) => {
-        const api = jest.fn(answer) as unknown as jest.Mock & Api;
+        const api = vi.fn(answer) as unknown as Mock & Api;
         const called = (url: string) => api.mock.calls.some(([config]) => config.url === url);
         const logic = lost2FAStateMachine.provide({
             actors: {
@@ -452,9 +455,9 @@ describe('createVerificationActors', () => {
         const invalidPhrase = {
             data: { Code: API_CUSTOM_ERROR_CODES.INVALID_LOGIN, Error: 'Invalid recovery phrase. Please try again' },
         };
-        const api = jest.fn((config: { url: string }) =>
+        const api = vi.fn((config: { url: string }) =>
             config.url === 'auth/v4/mnemonic/reauth' ? Promise.reject(invalidPhrase) : Promise.resolve({})
-        ) as unknown as jest.Mock & Api;
+        ) as unknown as Mock & Api;
         const logic = lost2FAStateMachine.provide({ actors: createVerificationActors({ api }) });
         const { flow, errors } = runFlow(logic, { phrase: true });
         flow.send({ type: 'verification.phraseSubmitted', payload: { phrase: 'wrong' } });

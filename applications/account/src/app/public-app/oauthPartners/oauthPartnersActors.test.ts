@@ -5,15 +5,15 @@ import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenti
 import type { OAuthPartnersCallbackState } from './oauthPartners';
 import { createOAuthPartnersActors } from './oauthPartnersActors';
 
-const mockHandleOAuthPartners = jest.fn();
-jest.mock('./oauthPartners', () => ({
+const mockHandleOAuthPartners = vi.fn();
+vi.mock('./oauthPartners', () => ({
     handleOAuthPartners: (...args: unknown[]) => mockHandleOAuthPartners(...args),
 }));
 
 const state: OAuthPartnersCallbackState = { type: 'callback', payload: { token: 'token', uid: 'uid' } };
 
 const signIn = () => {
-    const login = jest.fn(async () => {});
+    const login = vi.fn(async () => {});
     const actors = createOAuthPartnersActors({ unauthenticatedApi: {} as UnauthenticatedApi, login });
     return { output: toPromise(createActor(actors.signIn, { input: state }).start()), login };
 };

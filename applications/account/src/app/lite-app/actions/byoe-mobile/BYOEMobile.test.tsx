@@ -4,30 +4,30 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { BYOEMobile } from './BYOEMobile';
 
-const mockStartOAuthFlowIfAllowed = jest.fn();
+const mockStartOAuthFlowIfAllowed = vi.fn();
 let mockContext: any;
-jest.mock('./context/BYOEMobileProvider', () => ({
+vi.mock('./context/BYOEMobileProvider', () => ({
     BYOEMobileProvider: ({ children }: { children: ReactNode }) => <>{children}</>,
     useBYOEMobile: () => mockContext,
 }));
 
-jest.mock('@proton/activation/src/logic/EasySwitchStoreInitializer', () => ({
+vi.mock('@proton/activation/src/logic/EasySwitchStoreInitializer', () => ({
     __esModule: true,
     default: ({ children }: { children: ReactNode }) => <>{children}</>,
 }));
-jest.mock('@proton/activation/src/logic/StoreProvider', () => ({
+vi.mock('@proton/activation/src/logic/StoreProvider', () => ({
     __esModule: true,
     default: ({ children }: { children: ReactNode }) => <>{children}</>,
 }));
-jest.mock('@proton/byoe/src/components/ReachedLimitForwardingModal/ReachedLimitForwardingModal', () => ({
+vi.mock('@proton/byoe/src/components/ReachedLimitForwardingModal/ReachedLimitForwardingModal', () => ({
     __esModule: true,
     default: () => <div>paid limit prompt</div>,
 }));
-jest.mock('./components/BYOEMobileConnections/BYOEMobileConnections', () => ({ BYOEMobileConnections: () => null }));
-jest.mock('./components/BYOEMobileGate', () => ({
+vi.mock('./components/BYOEMobileConnections/BYOEMobileConnections', () => ({ BYOEMobileConnections: () => null }));
+vi.mock('./components/BYOEMobileGate', () => ({
     BYOEMobileGate: ({ children }: { children: ReactNode }) => <>{children}</>,
 }));
-jest.mock('./components/ErrorPrompt', () => ({ ErrorPrompt: () => null }));
+vi.mock('./components/ErrorPrompt', () => ({ ErrorPrompt: () => null }));
 
 const renderBYOEMobile = () =>
     render(
@@ -47,7 +47,7 @@ describe('BYOEMobile', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('Should start the OAuth flow when no limit is reached', () => {

@@ -9,54 +9,54 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import SubscriptionCheckoutPaymentSection from './SubscriptionCheckoutPaymentSection';
 
-jest.mock('@proton/account/appName', () => ({ useAppName: () => 'proton-account' }));
-jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ isFree: false }] }));
-jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-account' }) }));
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/account/appName', () => ({ useAppName: () => 'proton-account' }));
+vi.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ isFree: false }] }));
+vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-account' }) }));
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('@proton/payments-ui/ui/billing-address/hooks/useBillingAddress', () => ({
+vi.mock('@proton/payments-ui/ui/billing-address/hooks/useBillingAddress', () => ({
     useBillingAddress: () => ({ taxCountry: undefined, vatNumber: undefined }),
 }));
-jest.mock('@proton/payments-ui/ui/components/RenewalNotice', () => ({
+vi.mock('@proton/payments-ui/ui/components/RenewalNotice', () => ({
     getCheckoutRenewNoticeTextFromCheckResult: () => 'renew notice',
 }));
-jest.mock('@proton/payments-hooks/ui/context/paymentsContext', () => ({ usePayments: jest.fn() }));
-jest.mock('@proton/payments-ui/containers/payments/subscription/confirm-button/SubscriptionConfirmButton', () => ({
+vi.mock('@proton/payments-hooks/ui/context/paymentsContext', () => ({ usePayments: vi.fn() }));
+vi.mock('@proton/payments-ui/containers/payments/subscription/confirm-button/SubscriptionConfirmButton', () => ({
     SubscriptionConfirmButton: ({ disabled }: { disabled: boolean }) => (
         <button type="submit" data-testid="confirm" disabled={disabled}>
             Confirm
         </button>
     ),
 }));
-jest.mock('./payment-section/PaymentMethodForm', () => ({
+vi.mock('./payment-section/PaymentMethodForm', () => ({
     __esModule: true,
     default: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }));
-jest.mock('./payment-section/PaymentMethodSelector', () => ({ __esModule: true, default: () => null }));
+vi.mock('./payment-section/PaymentMethodSelector', () => ({ __esModule: true, default: () => null }));
 
 const paymentFacade = {
     amount: 1200,
     selectedMethodValue: undefined,
-    methods: { allMethods: [], savedMethods: [], selectMethod: jest.fn() },
+    methods: { allMethods: [], savedMethods: [], selectMethod: vi.fn() },
     bitcoinChargebee: { bitcoinLoading: false },
 } as any;
 
 type PaymentsValue = ReturnType<typeof usePayments>;
 
 const mockPayments = (GuardResult?: GuardError[] | null) =>
-    jest.mocked(usePayments).mockReturnValue({
+    vi.mocked(usePayments).mockReturnValue({
         subscription: buildSubscription({ planName: PLANS.BUNDLE, cycle: CYCLE.YEARLY, currency: 'USD' }),
         checkoutUi: { planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.YEARLY, planName: PLANS.VPN2024, currency: 'USD' },
         billingAddress: {},
-        selectFullBillingAddress: jest.fn(),
+        selectFullBillingAddress: vi.fn(),
         plansMap: {},
         checkResult: { AmountDue: 1200, Coupon: null, requestData: {}, GuardResult },
         telemetryContext: 'subscription-modification',
         loading: false,
-        setVatNumber: jest.fn(),
+        setVatNumber: vi.fn(),
         coupon: '',
-        selectCurrency: jest.fn(),
+        selectCurrency: vi.fn(),
         couponConfig: undefined,
         multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(
             buildSubscription({ planName: PLANS.BUNDLE, cycle: CYCLE.YEARLY, currency: 'USD' })
@@ -71,7 +71,7 @@ const section = () => (
     <SubscriptionCheckoutPaymentSection
         paymentFacade={paymentFacade}
         subscribing={false}
-        onClose={jest.fn()}
+        onClose={vi.fn()}
         renderVisionaryDowngradeWarningText={false}
     />
 );
@@ -154,8 +154,8 @@ describe('SubscriptionCheckoutPaymentSection subscription codes', () => {
             checkResult: { ...value.checkResult, Coupon: Coupon as SubscriptionEstimation['Coupon'], Gift },
         });
 
-        const setSubscriptionData = jest.fn();
-        const processPaymentToken = jest.fn(async () => {});
+        const setSubscriptionData = vi.fn();
+        const processPaymentToken = vi.fn(async () => {});
         render(
             <SubscriptionCheckoutPaymentSection
                 paymentFacade={{
@@ -164,7 +164,7 @@ describe('SubscriptionCheckoutPaymentSection subscription codes', () => {
                     selectedProcessor: { processPaymentToken },
                 }}
                 subscribing={false}
-                onClose={jest.fn()}
+                onClose={vi.fn()}
                 renderVisionaryDowngradeWarningText={false}
             />
         );

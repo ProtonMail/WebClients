@@ -10,51 +10,51 @@ import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import CalendarAccountSettings from './CalendarAccountSettings';
 
-const mockEmailToggle = jest.fn();
+const mockEmailToggle = vi.fn();
 
-jest.mock('@proton/account/addresses/hooks', () => ({ useAddresses: jest.fn() }));
-jest.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: jest.fn() }));
-jest.mock('@proton/account-recovery/recovery/useUpdateAccountRecovery', () => ({
-    useUpdateAccountRecovery: jest.fn(),
+vi.mock('@proton/account/addresses/hooks', () => ({ useAddresses: vi.fn() }));
+vi.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: vi.fn() }));
+vi.mock('@proton/account-recovery/recovery/useUpdateAccountRecovery', () => ({
+    useUpdateAccountRecovery: vi.fn(),
 }));
-jest.mock('@proton/components/hooks/useMyCountry', () => ({ __esModule: true, default: () => 'CH' }));
-jest.mock('@proton/shared/lib/helpers/address', () => ({ getIsBYOEOnlyAccount: jest.fn() }));
-jest.mock('../../components/Address/useDefaultAddress', () => ({
-    useDefaultAddress: () => ({ defaultAddress: undefined, options: [], saving: false, setDefaultAddress: jest.fn() }),
+vi.mock('@proton/components/hooks/useMyCountry', () => ({ __esModule: true, default: () => 'CH' }));
+vi.mock('@proton/shared/lib/helpers/address', () => ({ getIsBYOEOnlyAccount: vi.fn() }));
+vi.mock('../../components/Address/useDefaultAddress', () => ({
+    useDefaultAddress: () => ({ defaultAddress: undefined, options: [], saving: false, setDefaultAddress: vi.fn() }),
 }));
-jest.mock('@proton/components/containers/recovery/useQrCodeSignInToggle', () => ({
-    useQrCodeSignInToggle: () => ({ checked: true, loading: false, onChange: jest.fn() }),
+vi.mock('@proton/components/containers/recovery/useQrCodeSignInToggle', () => ({
+    useQrCodeSignInToggle: () => ({ checked: true, loading: false, onChange: vi.fn() }),
 }));
 
 // Controls that save on their own are covered by their own tests; only their presence matters here
-jest.mock('@proton/components/components/selectTwo/SelectTwo', () => ({
+vi.mock('@proton/components/components/selectTwo/SelectTwo', () => ({
     __esModule: true,
     default: ({ id }: { id: string }) => <div id={id} />,
 }));
-jest.mock('@proton/components/containers/privacy/CrashReportsToggle', () => ({
+vi.mock('@proton/components/containers/privacy/CrashReportsToggle', () => ({
     __esModule: true,
     default: ({ id }: { id: string }) => <div id={id} />,
 }));
-jest.mock('@proton/components/containers/privacy/TelemetryToggle', () => ({
+vi.mock('@proton/components/containers/privacy/TelemetryToggle', () => ({
     __esModule: true,
     default: ({ id }: { id: string }) => <div id={id} />,
 }));
-jest.mock('@proton/components/containers/recovery/email/RecoveryEmail', () => ({
+vi.mock('@proton/components/containers/recovery/email/RecoveryEmail', () => ({
     __esModule: true,
     default: () => <div id="recovery-email-input" />,
 }));
-jest.mock('@proton/components/containers/recovery/phone/RecoveryPhone', () => ({
+vi.mock('@proton/components/containers/recovery/phone/RecoveryPhone', () => ({
     __esModule: true,
     default: () => <div id="phoneInput" />,
 }));
 
-const mockedUseAddresses = jest.mocked(useAddresses);
-const mockedUseUserSettings = jest.mocked(useUserSettings);
-const mockedUseUpdateAccountRecovery = jest.mocked(useUpdateAccountRecovery);
-const mockedGetIsBYOEOnlyAccount = jest.mocked(getIsBYOEOnlyAccount);
+const mockedUseAddresses = vi.mocked(useAddresses);
+const mockedUseUserSettings = vi.mocked(useUserSettings);
+const mockedUseUpdateAccountRecovery = vi.mocked(useUpdateAccountRecovery);
+const mockedGetIsBYOEOnlyAccount = vi.mocked(getIsBYOEOnlyAccount);
 
 const mockRecovery = (loading = false) => {
-    const toggleProps = { checked: false, loading: false, onChange: jest.fn() };
+    const toggleProps = { checked: false, loading: false, onChange: vi.fn() };
     mockedUseUpdateAccountRecovery.mockReturnValue({
         el: <div>recovery modals</div>,
         data: { loading },
@@ -83,7 +83,7 @@ const controlIds = [
 
 describe('CalendarAccountSettings', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedUseAddresses.mockReturnValue([[], false]);
         mockedUseUserSettings.mockReturnValue([{} as any, false, undefined]);
         mockedGetIsBYOEOnlyAccount.mockReturnValue(false);

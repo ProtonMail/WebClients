@@ -9,13 +9,13 @@ import type { AuthSession } from '../authSession';
 import { createReAuthActors } from './reAuthActors';
 import type { ReAuthState } from './reauthContainerState';
 
-const mockSrpAuth = jest.fn();
-jest.mock('@proton/shared/lib/srp', () => ({
+const mockSrpAuth = vi.fn();
+vi.mock('@proton/shared/lib/srp', () => ({
     srpAuth: (...args: unknown[]) => mockSrpAuth(...args),
 }));
 
-const mockHandleReAuthKeyPassword = jest.fn();
-jest.mock('./reAuthKeyPassword', () => ({
+const mockHandleReAuthKeyPassword = vi.fn();
+vi.mock('./reAuthKeyPassword', () => ({
     handleReAuthKeyPassword: (...args: unknown[]) => mockHandleReAuthKeyPassword(...args),
 }));
 
@@ -36,8 +36,8 @@ const getState = ({
 
 /** Runs the password step against an API whose settings say whether the keys share the password. */
 const submitPassword = (state: ReAuthState, passwordMode = SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE) => {
-    const login = jest.fn(async () => {});
-    const api = jest.fn(async ({ url }: { url: string }) =>
+    const login = vi.fn(async () => {});
+    const api = vi.fn(async ({ url }: { url: string }) =>
         url === getSettings().url ? { UserSettings: { Password: { Mode: passwordMode } } } : { KeySalts: salts }
     );
     const actors = createReAuthActors({ api: api as unknown as Api, preSubmit: async () => {}, login });

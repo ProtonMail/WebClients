@@ -84,7 +84,7 @@ describe('provisioning signup link', () => {
 
 describe('resolveProvisioning', () => {
     it('returns the negotiated configuration', async () => {
-        const api = jest.fn().mockResolvedValue({ Provisioning: provisioning });
+        const api = vi.fn().mockResolvedValue({ Provisioning: provisioning });
 
         await expect(resolveProvisioning(api, TOKEN)).resolves.toBe(provisioning);
         expect(api).toHaveBeenCalledWith(
@@ -93,7 +93,7 @@ describe('resolveProvisioning', () => {
     });
 
     it('keeps a crafted token inside the lookup path', async () => {
-        const api = jest.fn().mockResolvedValue({ Provisioning: provisioning });
+        const api = vi.fn().mockResolvedValue({ Provisioning: provisioning });
 
         await resolveProvisioning(api, '../../some/endpoint?x=');
 
@@ -103,13 +103,13 @@ describe('resolveProvisioning', () => {
     });
 
     it.each([404, 422])('reports an unusable link on %s', async (status) => {
-        const api = jest.fn().mockRejectedValue({ status, data: { Code: 2501, Error: 'Not found' } });
+        const api = vi.fn().mockRejectedValue({ status, data: { Code: 2501, Error: 'Not found' } });
 
         await expect(resolveProvisioning(api, TOKEN)).rejects.toBeInstanceOf(InvalidProvisioningLinkError);
     });
 
     it('passes other failures through, so they are not shown as an expired link', async () => {
-        const api = jest.fn().mockRejectedValue({ status: 500 });
+        const api = vi.fn().mockRejectedValue({ status: 500 });
 
         await expect(resolveProvisioning(api, TOKEN)).rejects.not.toBeInstanceOf(InvalidProvisioningLinkError);
     });

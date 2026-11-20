@@ -1,3 +1,4 @@
+// @vitest-environment jsdom
 import { createActor, fromCallback, fromPromise, waitFor } from 'xstate';
 
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
@@ -53,9 +54,9 @@ const start = ({
     loadCrypto?: () => Promise<void>;
     startFlags?: () => Promise<void>;
 }) => {
-    const followLoginResult = jest.fn();
-    const replaceLocation = jest.fn();
-    const pushLocation = jest.fn();
+    const followLoginResult = vi.fn();
+    const replaceLocation = vi.fn();
+    const pushLocation = vi.fn();
     const actor = createActor(
         publicAppStateMachine.provide({
             actors: {
@@ -138,7 +139,7 @@ describe('publicAppStateMachine', () => {
     });
 
     it('updates the sessions, and signs out of the ones the user picks', () => {
-        const signOut = jest.fn(async () => {});
+        const signOut = vi.fn(async () => {});
         const { actor, replaceLocation } = start({ pathname: SSO_PATHS.SIGNUP, initialSessionsLength: 0, signOut });
         const sessions = [1, 2].map((LocalID) => ({ remote: { LocalID } }) as unknown as ActiveSession);
         actor.send({ type: 'sessions.updated', sessions });
@@ -151,7 +152,7 @@ describe('publicAppStateMachine', () => {
 
     it('reads the sessions the account switcher asks for, and lets it retry after a failure', async () => {
         const sessions = [{ remote: { LocalID: 1 } }] as unknown as ActiveSession[];
-        const fetchSessions = jest
+        const fetchSessions = vi
             .fn()
             .mockRejectedValueOnce(new Error('Servers are unreachable'))
             .mockResolvedValueOnce({ sessions });
@@ -292,7 +293,7 @@ describe('publicAppStateMachine', () => {
 
     describe('flows that end on the sign-in page', () => {
         const startReplacing = () => {
-            const replaceLocation = jest.fn();
+            const replaceLocation = vi.fn();
             const actor = createActor(
                 publicAppStateMachine.provide({
                     actors: { watchLanguage: fromCallback(() => {}) },
@@ -379,7 +380,7 @@ describe('publicAppStateMachine', () => {
         };
 
         it('continues the login past a confirmed consent', async () => {
-            const login = jest.fn(async () => doneResult);
+            const login = vi.fn(async () => doneResult);
             const { actor, followLoginResult } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0, login });
             actor.send({ type: 'login.resulted', result: consent });
             actor.send({ type: 'consent.confirmed', consent });
@@ -398,7 +399,7 @@ describe('publicAppStateMachine', () => {
                 initialSessionsLength: 0,
                 login: () => Promise.reject(error),
             });
-            const onFailed = jest.fn();
+            const onFailed = vi.fn();
             actor.on('login.failed', onFailed);
             actor.send({ type: 'login.resulted', result: consent });
             actor.send({ type: 'consent.confirmed', consent });
@@ -407,7 +408,7 @@ describe('publicAppStateMachine', () => {
         });
 
         it('ignores a confirmation for a consent the page does not show', () => {
-            const login = jest.fn(async () => doneResult);
+            const login = vi.fn(async () => doneResult);
             const { actor } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0, login });
             actor.send({ type: 'consent.confirmed', consent });
             expect(actor.getSnapshot().matches({ page: 'ready' })).toBe(true);
@@ -435,7 +436,7 @@ describe('publicAppStateMachine', () => {
             'stops the fork on $name the user cancels, so an account picked next does not continue it',
             async ({ forkState, cancelled }) => {
                 const resumed = { localID: 2 } as unknown as ResumedSessionResult;
-                const login = jest.fn(async () => inputResult);
+                const login = vi.fn(async () => inputResult);
                 const { actor, replaceLocation } = start({
                     pathname: SSO_PATHS.SIGNUP,
                     forkState,
@@ -494,7 +495,7 @@ describe('publicAppStateMachine', () => {
     describe('login', () => {
         it('continues the fork saved before the page reloaded', async () => {
             const forkState = { type: SSOType.Proton, payload: { forkParameters: {} } } as unknown as ProduceForkData;
-            const login = jest.fn(async () => doneResult);
+            const login = vi.fn(async () => doneResult);
             const { actor } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0, forkState, login });
             actor.send({ type: 'login.requested', session });
             await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
@@ -504,7 +505,7 @@ describe('publicAppStateMachine', () => {
         });
 
         it('keeps the screen loading while a finished login leaves the page, and takes no other login', async () => {
-            const login = jest.fn(async () => doneResult);
+            const login = vi.fn(async () => doneResult);
             const { actor } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, login });
             actor.send({ type: 'login.requested', session });
             await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
@@ -513,7 +514,7 @@ describe('publicAppStateMachine', () => {
         });
 
         it('takes a login again once the browser restores the page it left from the back/forward cache', async () => {
-            const login = jest.fn(async () => doneResult);
+            const login = vi.fn(async () => doneResult);
             const { actor } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, login });
             actor.send({ type: 'login.requested', session });
             await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
@@ -528,7 +529,7 @@ describe('publicAppStateMachine', () => {
         });
 
         it('takes a login again when a history move cancels the redirect of a finished login', async () => {
-            const login = jest.fn(async () => doneResult);
+            const login = vi.fn(async () => doneResult);
             const { actor } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, login });
             actor.send({ type: 'login.requested', session });
             await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
@@ -544,7 +545,7 @@ describe('publicAppStateMachine', () => {
                 initialSessionsLength: 0,
                 login: async () => inputResult,
             });
-            const onCompleted = jest.fn();
+            const onCompleted = vi.fn();
             actor.on('login.completed', onCompleted);
             actor.send({ type: 'login.requested', session, requestId: 'a' });
             await waitFor(actor, (state) => state.matches({ page: 'ready' }));
@@ -581,7 +582,7 @@ describe('publicAppStateMachine', () => {
         const resumed = { localID: 2 } as unknown as ResumedSessionResult;
 
         it('signs in with the picked session, keeping it loading', async () => {
-            const login = jest.fn(async () => doneResult);
+            const login = vi.fn(async () => doneResult);
             const { actor } = start({
                 pathname: SSO_PATHS.SWITCH,
                 initialSessionsLength: 0,
@@ -605,7 +606,7 @@ describe('publicAppStateMachine', () => {
                 initialSessionsLength: 0,
                 resumeSession: () => Promise.reject(new InvalidPersistentSessionError('Session invalid')),
             });
-            const onExpired = jest.fn();
+            const onExpired = vi.fn();
             actor.on('session.expired', onExpired);
             actor.send({ type: 'sessions.updated', sessions });
             actor.send({ type: 'session.picked', localID: 2 });
@@ -621,7 +622,7 @@ describe('publicAppStateMachine', () => {
                 initialSessionsLength: 0,
                 resumeSession: () => Promise.reject(error),
             });
-            const onFailed = jest.fn();
+            const onFailed = vi.fn();
             actor.on('login.failed', onFailed);
             actor.send({ type: 'session.picked', localID: 2 });
             await waitFor(actor, (state) => state.matches({ page: 'ready' }));
@@ -669,7 +670,7 @@ describe('publicAppStateMachine', () => {
 
     describe('crypto worker', () => {
         it('loads it once, however many pages ask', async () => {
-            const loadCrypto = jest.fn(() => Promise.resolve());
+            const loadCrypto = vi.fn(() => Promise.resolve());
             const { actor } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0, loadCrypto });
             actor.send({ type: 'crypto.requested' });
             actor.send({ type: 'crypto.requested' });
@@ -681,7 +682,7 @@ describe('publicAppStateMachine', () => {
 
         it('rejects a submit when it fails to load, and loads it again on the next one', async () => {
             const error = new Error('Worker failed');
-            const loadCrypto = jest.fn().mockRejectedValueOnce(error).mockResolvedValueOnce(undefined);
+            const loadCrypto = vi.fn().mockRejectedValueOnce(error).mockResolvedValueOnce(undefined);
             const { actor } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0, loadCrypto });
             await expect(requireCrypto(actor)).rejects.toBe(error);
             await expect(requireCrypto(actor)).resolves.toBeUndefined();
@@ -690,7 +691,7 @@ describe('publicAppStateMachine', () => {
     });
 
     it('starts the feature flags once', () => {
-        const startFlags = jest.fn(() => Promise.resolve());
+        const startFlags = vi.fn(() => Promise.resolve());
         const { actor } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0, startFlags });
         actor.send({ type: 'flags.requested' });
         actor.send({ type: 'flags.requested' });

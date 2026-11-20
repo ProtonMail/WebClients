@@ -6,7 +6,7 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionPrices } from './helper';
 
 const getPaymentsApiMock = () => {
-    const checkSubscription = jest.fn(async (data: CheckSubscriptionData) => ({ requestData: data }) as any);
+    const checkSubscription = vi.fn(async (data: CheckSubscriptionData) => ({ requestData: data }) as any);
     return { paymentsApi: { checkSubscription } as unknown as PaymentsApi, checkSubscription };
 };
 

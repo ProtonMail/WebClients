@@ -32,9 +32,7 @@ const visionaryPlan: Plan = {
 };
 
 const renderModal = (plan: Plan) =>
-    render(
-        <VisionaryUpsellModal open plan={plan} appName="Proton Mail" onUpgrade={jest.fn()} onContinue={jest.fn()} />
-    );
+    render(<VisionaryUpsellModal open plan={plan} appName="Proton Mail" onUpgrade={vi.fn()} onContinue={vi.fn()} />);
 
 describe('VisionaryUpsellModal', () => {
     it('shows the storage and users of the plan', () => {

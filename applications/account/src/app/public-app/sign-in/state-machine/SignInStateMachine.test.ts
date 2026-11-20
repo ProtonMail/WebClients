@@ -53,9 +53,9 @@ import { type SignInMachineEmitted, type SignInMachineInput, SignInStateMachine 
 import type { CreatedAuth } from './signInActors';
 import type { SignInAuthState } from './signInAuthState';
 
-jest.mock('@proton/shared/lib/keys/accountType', () => ({
-    ...jest.requireActual('@proton/shared/lib/keys/accountType'),
-    getRequiresPasswordSetup: jest.fn(() => false),
+vi.mock('@proton/shared/lib/keys/accountType', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/keys/accountType')),
+    getRequiresPasswordSetup: vi.fn(() => false),
 }));
 
 const form: CredentialsFormValues = {
@@ -117,7 +117,7 @@ const makeSSOData = (sso: NonNullable<AuthOptions['sso']>) =>
     ({
         type: 'unlock',
         intent: { step: sso.step, capabilities: new Set([sso.step, ...(sso.capabilities ?? [])]) },
-        organizationData: { logo: { cleanup: jest.fn() } },
+        organizationData: { logo: { cleanup: vi.fn() } },
     }) as unknown as SSODataTypes;
 
 const apiError = (code: number) => ({ data: { Code: code, Error: `error ${code}` } });
@@ -165,23 +165,23 @@ function startActor(overrides: Overrides = {}, input: Partial<SignInMachineInput
     const { auth } = created;
     const { ssoData } = overrides;
     const spies = {
-        completeSignIn: jest.fn(overrides.completeSignIn ?? (() => Promise.resolve())),
-        prepareSignIn: jest.fn(overrides.prepareSignIn ?? (() => Promise.resolve())),
-        startAuthSession: jest.fn(overrides.startAuthSession ?? (() => Promise.resolve())),
-        authenticateWithClaimedAddress: jest.fn(
+        completeSignIn: vi.fn(overrides.completeSignIn ?? (() => Promise.resolve())),
+        prepareSignIn: vi.fn(overrides.prepareSignIn ?? (() => Promise.resolve())),
+        startAuthSession: vi.fn(overrides.startAuthSession ?? (() => Promise.resolve())),
+        authenticateWithClaimedAddress: vi.fn(
             overrides.authenticateWithClaimedAddress ?? ((_input: unknown) => Promise.resolve(primaryAuth))
         ),
-        authenticateWithPassword: jest.fn(
+        authenticateWithPassword: vi.fn(
             overrides.authenticateWithPassword ?? ((_values: PasswordLoginInput) => Promise.resolve(primaryAuth))
         ),
-        navigateBack: jest.fn(),
-        redirectToAccountSSO: jest.fn(),
-        verifyTwoFactor: jest.fn(overrides.verifyTwoFactor ?? ((_input: unknown) => Promise.resolve())),
-        goToResetPassword: jest.fn(),
-        finalize: jest.fn(() => Promise.resolve(session)),
-        setupPassword: jest.fn(() => Promise.resolve(session)),
-        unlockKeys: jest.fn(overrides.unlockKeys ?? (() => Promise.resolve(session))),
-        loadClaimedAddressSetup: jest.fn(
+        navigateBack: vi.fn(),
+        redirectToAccountSSO: vi.fn(),
+        verifyTwoFactor: vi.fn(overrides.verifyTwoFactor ?? ((_input: unknown) => Promise.resolve())),
+        goToResetPassword: vi.fn(),
+        finalize: vi.fn(() => Promise.resolve(session)),
+        setupPassword: vi.fn(() => Promise.resolve(session)),
+        unlockKeys: vi.fn(overrides.unlockKeys ?? (() => Promise.resolve(session))),
+        loadClaimedAddressSetup: vi.fn(
             overrides.loadClaimedAddressSetup ??
                 (() =>
                     Promise.resolve<ClaimedAddressSetup>({
@@ -189,7 +189,7 @@ function startActor(overrides: Overrides = {}, input: Partial<SignInMachineInput
                         generation: { availableDomains: ['proton.me'], claimableAddress: undefined },
                     }))
         ),
-        unlockKeyPassword: jest.fn((input: { password: string; isOnePasswordMode: boolean }) =>
+        unlockKeyPassword: vi.fn((input: { password: string; isOnePasswordMode: boolean }) =>
             input.password === 'wrong'
                 ? Promise.reject(new PasswordError('Wrong password'))
                 : Promise.resolve({
@@ -198,19 +198,19 @@ function startActor(overrides: Overrides = {}, input: Partial<SignInMachineInput
                       isOnePasswordMode: input.isOnePasswordMode,
                   })
         ),
-        createClaimedAddress: jest.fn(
+        createClaimedAddress: vi.fn(
             overrides.createClaimedAddress ??
                 ((input: unknown) => {
                     const { username, domain } = input as { username: string; domain: string };
                     return Promise.resolve({ session, address: `${username}@${domain}` });
                 })
         ),
-        setupSSOKeys: jest.fn((_input: unknown) => (overrides.setupSSOKeys ?? (() => Promise.resolve(session)))()),
-        changeBackupPassword: jest.fn((_input: unknown) => Promise.resolve(session)),
-        unlockWithBackupPassword: jest.fn(
+        setupSSOKeys: vi.fn((_input: unknown) => (overrides.setupSSOKeys ?? (() => Promise.resolve(session)))()),
+        changeBackupPassword: vi.fn((_input: unknown) => Promise.resolve(session)),
+        unlockWithBackupPassword: vi.fn(
             overrides.unlockWithBackupPassword ?? (() => Promise.resolve<SSOSignInResult>({ type: 'session', session }))
         ),
-        authenticateWithSSOToken: jest.fn(
+        authenticateWithSSOToken: vi.fn(
             overrides.authenticateWithSSOToken ?? ((_input: unknown) => Promise.resolve(primaryAuth))
         ),
     };
@@ -728,7 +728,7 @@ describe('SignInStateMachine', () => {
             /** The first window opens with the token the choice was reached with; the user closes it, and reopens. */
             const openTwice = async (overrides: Overrides = {}) => {
                 const tokens: (string | undefined)[] = [];
-                const fetchSSOInfo = jest.fn(() =>
+                const fetchSSOInfo = vi.fn(() =>
                     Promise.resolve({ SSOChallengeToken: 'fresh', ClaimedAddresses: [] } as unknown as SSOInfoResponse)
                 );
                 const started = startWith(
@@ -1004,7 +1004,7 @@ describe('SignInStateMachine', () => {
             await submitUsername(actor);
             // The clock moves on without any timer firing, like after the device slept
             const now = Date.now;
-            const later = jest.spyOn(Date, 'now').mockImplementation(() => now() + 2 * 60 * 1000);
+            const later = vi.spyOn(Date, 'now').mockImplementation(() => now() + 2 * 60 * 1000);
             await submitCredentials(actor);
             later.mockRestore();
             expect(spies.authenticateWithPassword.mock.calls[0][0].info).toBeUndefined();
@@ -1153,7 +1153,7 @@ describe('SignInStateMachine', () => {
         });
 
         it('checks the account type again on the new session when the session expires under it', async () => {
-            const fetchAccountType = jest.fn(() => Promise.resolve<AccountType>({ type: 'srp', info: authInfo }));
+            const fetchAccountType = vi.fn(() => Promise.resolve<AccountType>({ type: 'srp', info: authInfo }));
             fetchAccountType.mockReturnValueOnce(new Promise<AccountType>(() => {}));
             const { actor, expireSession } = startWith({ type: AuthType.Auto }, { fetchAccountType });
             credentialsFlow(actor).send({ type: 'credentials.usernameSubmitted', payload: usernameForm });
@@ -1171,7 +1171,7 @@ describe('SignInStateMachine', () => {
         });
 
         it('loads the SSO info again on the new session when the session expires under it', async () => {
-            const fetchSSOInfo = jest.fn(() => Promise.resolve({ SSOChallengeToken: 'challenge' } as SSOInfoResponse));
+            const fetchSSOInfo = vi.fn(() => Promise.resolve({ SSOChallengeToken: 'challenge' } as SSOInfoResponse));
             fetchSSOInfo.mockReturnValueOnce(new Promise<SSOInfoResponse>(() => {}));
             const { actor, expireSession } = startWith(
                 { type: AuthType.ExternalSSO },
@@ -1958,7 +1958,7 @@ describe('SignInStateMachine', () => {
         });
 
         it('creates keys with the sign-in password when the account needs them', async () => {
-            jest.mocked(getRequiresPasswordSetup).mockReturnValueOnce(true);
+            vi.mocked(getRequiresPasswordSetup).mockReturnValueOnce(true);
             const { actor, spies } = startActor({ created: makeCreatedAuth({ keys: 0 }) });
             await submitCredentials(actor);
             expect(isSignedIn(actor)).toBe(true);
@@ -2068,7 +2068,7 @@ describe('SignInStateMachine', () => {
 
         it('reuses the addresses loaded while preparing when the device is approved', async () => {
             const addresses = [{ ID: 'address' }] as unknown as Address[];
-            const confirmSSODevice = jest.fn((_args?: { input: { auth: SignInAuthState } }) =>
+            const confirmSSODevice = vi.fn((_args?: { input: { auth: SignInAuthState } }) =>
                 Promise.resolve<SSOSignInResult>({ type: 'session', session })
             );
             const sso = { step: SSOLoginCapabilites.OTHER_DEVICES };
@@ -2186,7 +2186,7 @@ describe('SignInStateMachine', () => {
         });
 
         it('asks the administrator once; asking again waits for their approval', async () => {
-            const requestAdminApproval = jest.fn(() => Promise.resolve());
+            const requestAdminApproval = vi.fn(() => Promise.resolve());
             const { actor } = await startOnSSO(
                 {
                     step: SSOLoginCapabilites.OTHER_DEVICES,
@@ -2207,7 +2207,7 @@ describe('SignInStateMachine', () => {
 
         it('ignores the ways out while the administrator is asked, so the request is sent once', async () => {
             const request = deferred<void>();
-            const requestAdminApproval = jest.fn(() => request.promise);
+            const requestAdminApproval = vi.fn(() => request.promise);
             const { actor } = await startOnSSO(
                 { step: SSOLoginCapabilites.ASK_ADMIN, capabilities: [SSOLoginCapabilites.ENTER_BACKUP_PASSWORD] },
                 { requestAdminApproval }
@@ -2360,7 +2360,7 @@ describe('SignInStateMachine', () => {
                 type: 'set-password',
                 keyPassword: 'key',
                 intent: { step: SSOLoginCapabilites.NEW_BACKUP_PASSWORD, capabilities: new Set() },
-                organizationData: { logo: { cleanup: jest.fn() } },
+                organizationData: { logo: { cleanup: vi.fn() } },
             } as unknown as SSOSetPasswordData;
             const { actor, spies } = await startOnSSO(
                 { step: SSOLoginCapabilites.ENTER_BACKUP_PASSWORD },
@@ -2393,7 +2393,7 @@ describe('SignInStateMachine', () => {
                 type: 'set-password',
                 keyPassword: 'key',
                 intent: { step: SSOLoginCapabilites.NEW_BACKUP_PASSWORD, capabilities: new Set() },
-                organizationData: { logo: { cleanup: jest.fn() } },
+                organizationData: { logo: { cleanup: vi.fn() } },
             } as unknown as SSOSetPasswordData;
             const approvedUser = { Flags: { 'has-temporary-password': true } } as unknown as User;
             const { actor, polls, spies } = await startOnSSO(

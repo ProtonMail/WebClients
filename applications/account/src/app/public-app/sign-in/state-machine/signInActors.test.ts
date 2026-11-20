@@ -4,7 +4,7 @@ import { type SignInActorServices, createSignInActors } from './signInActors';
 
 describe('createSignInActors', () => {
     it('tells the machine when the unauthenticated session expires, until it stops', () => {
-        const unsubscribe = jest.fn();
+        const unsubscribe = vi.fn();
         let expire = () => {};
         const services = {
             onSessionExpired: (listener: () => void) => {

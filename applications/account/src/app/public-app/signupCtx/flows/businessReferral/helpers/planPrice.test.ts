@@ -33,7 +33,7 @@ const buildCheckResult = (overrides: Partial<SubscriptionEstimation>) =>
     }) as SubscriptionEstimation;
 
 const buildPayments = (checkResult: SubscriptionEstimation) => {
-    const getPriceOrFallback = jest.fn((planToCheck: PlanToCheck) => ({
+    const getPriceOrFallback = vi.fn((planToCheck: PlanToCheck) => ({
         checkResult,
         checkoutUi: getCheckoutUi({ planIDs: planToCheck.planIDs, plansMap, checkResult }),
     }));

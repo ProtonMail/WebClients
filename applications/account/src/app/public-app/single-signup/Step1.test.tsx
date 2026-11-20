@@ -4,20 +4,20 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 import { createMockModel, createMockSignupParameters } from '@proton/payments/testing/signup';
-import { addApiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 import Step1 from './Step1';
 
-jest.mock('./PaymentSummary', () => ({
+vi.mock('./PaymentSummary', () => ({
     __esModule: true,
     default: ({ giftCode }: any) => <div>{giftCode}</div>,
 }));
 
-jest.mock('./GiftCodeSummary', () => ({
+vi.mock('./GiftCodeSummary', () => ({
     __esModule: true,
     default: ({ onApplyCode, onRemoveCode }: any) => (
         <>
@@ -27,19 +27,19 @@ jest.mock('./GiftCodeSummary', () => ({
     ),
 }));
 
-jest.mock('./CycleSelector', () => ({
+vi.mock('./CycleSelector', () => ({
     __esModule: true,
     default: ({ onGetTheDeal }: any) => (
         <button onClick={() => onGetTheDeal({ cycle: 12, planIDs: undefined })}>change cycle</button>
     ),
 }));
 
-jest.mock('@proton/payments-ui/containers/payments/PaymentWrapper', () => ({
+vi.mock('@proton/payments-ui/containers/payments/PaymentWrapper', () => ({
     __esModule: true,
     default: () => null,
 }));
 
-jest.mock('../single-signup-v2/AccountStepDetails', () => ({
+vi.mock('../single-signup-v2/AccountStepDetails', () => ({
     __esModule: true,
     default: () => null,
 }));
@@ -123,12 +123,12 @@ const Harness = ({ showThreePlans = false, coupon }: { showThreePlans?: boolean;
                 isB2bPlan={false}
                 showThreePlans={showThreePlans}
                 upsellShortPlan={undefined}
-                onComplete={jest.fn()}
+                onComplete={vi.fn()}
                 onCurrencyChange={async () => {}}
                 model={model}
                 setModel={setModel as any}
                 upsellImg={<div />}
-                measure={jest.fn()}
+                measure={vi.fn()}
                 toAppName="Proton VPN"
                 toApp={'proton-vpn' as any}
                 telemetryContext={{} as any}

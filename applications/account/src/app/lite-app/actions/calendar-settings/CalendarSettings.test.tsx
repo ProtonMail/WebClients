@@ -10,47 +10,47 @@ import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calenda
 
 import CalendarSettings from './CalendarSettings';
 
-const mockApi = jest.fn();
-const mockDispatch = jest.fn();
-const mockCreateNotification = jest.fn();
+const mockApi = vi.fn();
+const mockDispatch = vi.fn();
+const mockCreateNotification = vi.fn();
 
-jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({ useCalendarUserSettings: jest.fn() }));
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/calendar/calendarUserSettings/hooks', () => ({ useCalendarUserSettings: vi.fn() }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
-jest.mock('../../../private-app/store/hooks', () => ({ useAccountDispatch: () => mockDispatch }));
-jest.mock('@proton/components/containers/calendar/settings/useIsMeetVideoConferenceEnabled', () => ({
-    useIsMeetVideoConferenceEnabled: jest.fn(),
+vi.mock('../../../private-app/store/hooks', () => ({ useAccountDispatch: () => mockDispatch }));
+vi.mock('@proton/components/containers/calendar/settings/useIsMeetVideoConferenceEnabled', () => ({
+    useIsMeetVideoConferenceEnabled: vi.fn(),
 }));
-jest.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: jest.fn() }));
+vi.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: vi.fn() }));
 
 // Selectors that save on their own are covered by their own tests; only their presence matters here
-jest.mock('@proton/components/containers/calendar/settings/PrimaryTimezoneSelector', () => ({
+vi.mock('@proton/components/containers/calendar/settings/PrimaryTimezoneSelector', () => ({
     __esModule: true,
     default: ({ id }: { id: string }) => <div id={id} />,
 }));
-jest.mock('@proton/components/containers/calendar/settings/WeekStartSelector', () => ({
+vi.mock('@proton/components/containers/calendar/settings/WeekStartSelector', () => ({
     __esModule: true,
     default: () => <div id="week-start-select" />,
 }));
-jest.mock('@proton/components/containers/general/LanguageSelector', () => ({
+vi.mock('@proton/components/containers/general/LanguageSelector', () => ({
     __esModule: true,
     default: ({ id }: { id: string }) => <div id={id} />,
 }));
-jest.mock('@proton/components/containers/general/TimeFormatSelector', () => ({
+vi.mock('@proton/components/containers/general/TimeFormatSelector', () => ({
     __esModule: true,
     default: ({ id }: { id: string }) => <div id={id} />,
 }));
-jest.mock('@proton/components/containers/calendar/settings/InviteLocaleSelector', () => ({
+vi.mock('@proton/components/containers/calendar/settings/InviteLocaleSelector', () => ({
     __esModule: true,
     default: ({ id, locale }: { id: string; locale: string | null }) => <div id={id} data-locale={locale} />,
 }));
-jest.mock('@proton/shared/lib/i18n/locales', () => ({ locales: { en_US: jest.fn(), fr_FR: jest.fn() } }));
+vi.mock('@proton/shared/lib/i18n/locales', () => ({ locales: { en_US: vi.fn(), fr_FR: vi.fn() } }));
 
-const mockedUseCalendarUserSettings = jest.mocked(useCalendarUserSettings);
-const mockedUseUserSettings = jest.mocked(useUserSettings);
-const mockedUseIsMeetVideoConferenceEnabled = jest.mocked(useIsMeetVideoConferenceEnabled);
+const mockedUseCalendarUserSettings = vi.mocked(useCalendarUserSettings);
+const mockedUseUserSettings = vi.mocked(useUserSettings);
+const mockedUseIsMeetVideoConferenceEnabled = vi.mocked(useIsMeetVideoConferenceEnabled);
 
 const settings: CalendarUserSettings = { ...DEFAULT_CALENDAR_USER_SETTINGS, DisplayWeekNumber: 0, InviteLocale: null };
 
@@ -61,7 +61,7 @@ const renderCalendarSettings = (calendarUserSettings: CalendarUserSettings | und
 
 describe('CalendarSettings', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedUseUserSettings.mockReturnValue([{ WeekStart: 1 } as any, false, undefined]);
         mockedUseIsMeetVideoConferenceEnabled.mockReturnValue(true);
     });

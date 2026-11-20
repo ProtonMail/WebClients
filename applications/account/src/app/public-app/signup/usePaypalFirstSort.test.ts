@@ -6,7 +6,7 @@ import type { AvailablePaymentMethod } from '@proton/payments/core/interface';
 
 import { sortPaypalFirst, usePaypalFirstSort } from './usePaypalFirstSort';
 
-jest.mock('@proton/account/staticExperiments/useStaticExperiment', () => ({ useStaticExperiment: jest.fn() }));
+vi.mock('@proton/account/staticExperiments/useStaticExperiment', () => ({ useStaticExperiment: vi.fn() }));
 
 const method = (type: PAYMENT_METHOD_TYPES): AvailablePaymentMethod => ({
     type,
@@ -31,7 +31,7 @@ describe('sortPaypalFirst', () => {
 
 describe('usePaypalFirstSort', () => {
     it('returns the PayPal first sort in the "with" variant', () => {
-        jest.mocked(useStaticExperiment).mockReturnValue('with');
+        vi.mocked(useStaticExperiment).mockReturnValue('with');
 
         const { result } = renderHook(() => usePaypalFirstSort());
 
@@ -39,7 +39,7 @@ describe('usePaypalFirstSort', () => {
     });
 
     it.each(['without', 'disabled'] as const)('keeps the default order in the "%s" variant', (variant) => {
-        jest.mocked(useStaticExperiment).mockReturnValue(variant);
+        vi.mocked(useStaticExperiment).mockReturnValue(variant);
 
         const { result } = renderHook(() => usePaypalFirstSort());
 

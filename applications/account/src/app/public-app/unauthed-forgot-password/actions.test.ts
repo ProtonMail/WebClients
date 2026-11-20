@@ -14,51 +14,51 @@ import {
     SignInAfterResetError,
 } from './state-machine/forgotPasswordErrors';
 
-jest.mock('@proton/shared/lib/srp', () => ({
-    ...jest.requireActual('@proton/shared/lib/srp'),
-    srpVerify: jest.fn(),
-    srpAuth: jest.fn(),
+vi.mock('@proton/shared/lib/srp', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/srp')),
+    srpVerify: vi.fn(),
+    srpAuth: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/authentication/getUser', () => ({
-    ...jest.requireActual('@proton/shared/lib/authentication/getUser'),
-    getUser: jest.fn(),
+vi.mock('@proton/shared/lib/authentication/getUser', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/authentication/getUser')),
+    getUser: vi.fn(),
 }));
 
 // Key passwords come from bcrypt, which is slow; their values don't matter here
-jest.mock('@proton/shared/lib/keys/keys', () => ({
-    ...jest.requireActual('@proton/shared/lib/keys/keys'),
-    generateKeySaltAndPassphrase: jest.fn(async () => ({ salt: 'salt', passphrase: 'passphrase' })),
+vi.mock('@proton/shared/lib/keys/keys', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/keys/keys')),
+    generateKeySaltAndPassphrase: vi.fn(async () => ({ salt: 'salt', passphrase: 'passphrase' })),
 }));
-jest.mock('@protontech/crypto/srp', () => ({
-    ...jest.requireActual('@protontech/crypto/srp'),
-    generateKeySalt: jest.fn(() => 'key-salt'),
-    computeKeyPassword: jest.fn(async () => 'key-password'),
+vi.mock('@protontech/crypto/srp', async () => ({
+    ...(await vi.importActual<any>('@protontech/crypto/srp')),
+    generateKeySalt: vi.fn(() => 'key-salt'),
+    computeKeyPassword: vi.fn(async () => 'key-password'),
 }));
 
 // The phrase's words aren't what these tests are about
-jest.mock('@proton/shared/lib/mnemonic/bip39Wrapper', () => ({
-    ...jest.requireActual('@proton/shared/lib/mnemonic/bip39Wrapper'),
-    mnemonicToBase64RandomBytes: jest.fn(async () => 'random-bytes'),
+vi.mock('@proton/shared/lib/mnemonic/bip39Wrapper', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/mnemonic/bip39Wrapper')),
+    mnemonicToBase64RandomBytes: vi.fn(async () => 'random-bytes'),
 }));
 
-const api = jest.fn() as unknown as Api;
+const api = vi.fn() as unknown as Api;
 const apiError = (code: number, status: number) => ({ status, data: { Code: code, Error: `error ${code}` } });
 
 /** How the reset refuses the token. */
 const tokenRefused = () => apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE, HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY);
 
 beforeEach(() => {
-    jest.mocked(srpVerify).mockReset().mockResolvedValue(undefined);
-    jest.mocked(srpAuth).mockReset();
-    jest.mocked(getUser).mockReset();
+    vi.mocked(srpVerify).mockReset().mockResolvedValue(undefined);
+    vi.mocked(srpAuth).mockReset();
+    vi.mocked(getUser).mockReset();
 });
 
 describe('authMnemonicAndGetKeys', () => {
     it('fails with a `NoKeysDecryptedUsingPhraseError` when the phrase signs in but decrypts no keys', async () => {
-        jest.mocked(srpAuth).mockResolvedValue({ json: async () => ({}) } as Response);
+        vi.mocked(srpAuth).mockResolvedValue({ json: async () => ({}) } as Response);
         // The phrase signs in, but none of the account's keys are encrypted with it
-        const accountApi = jest.fn(async () => ({ MnemonicUserKeys: [] })) as unknown as Api;
+        const accountApi = vi.fn(async () => ({ MnemonicUserKeys: [] })) as unknown as Api;
 
         const checking = authMnemonicAndGetKeys({
             username: 'user@example.com',
@@ -88,7 +88,7 @@ describe('performPasswordReset', () => {
 
     it('fails with a `ResetTokenRejectedError`, not traced, when the reset refuses the token, without signing in', async () => {
         const error = tokenRefused();
-        jest.mocked(srpVerify).mockRejectedValue(error);
+        vi.mocked(srpVerify).mockRejectedValue(error);
 
         const resetting = resetPassword();
 
@@ -112,7 +112,7 @@ describe('performPasswordReset', () => {
         async ({ code, status }) => {
             // The API takes the token before checking anything but the token itself, so it's used up
             const error = apiError(code, status);
-            jest.mocked(srpVerify).mockRejectedValue(error);
+            vi.mocked(srpVerify).mockRejectedValue(error);
 
             const resetting = resetPassword();
 
@@ -137,7 +137,7 @@ describe('performPasswordReset', () => {
         // Whether the token was taken is unknown: a retry tells
         { failure: 'a server error', error: apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE, 500) },
     ])('fails with any other error of the reset as it is ($failure)', async ({ error }) => {
-        jest.mocked(srpVerify).mockRejectedValue(error);
+        vi.mocked(srpVerify).mockRejectedValue(error);
 
         await expect(resetPassword()).rejects.toBe(error);
     });
@@ -145,7 +145,7 @@ describe('performPasswordReset', () => {
     it('fails with a `SignInAfterResetError` once the password is changed, even failing like a refused token', async () => {
         // Signing in with the new password failing says nothing about the token, and the user can still sign in
         const error = tokenRefused();
-        jest.mocked(srpAuth).mockRejectedValue(error);
+        vi.mocked(srpAuth).mockRejectedValue(error);
 
         const resetting = resetPassword();
 
@@ -167,7 +167,7 @@ describe('performPasswordChangeViaMnemonic', () => {
 
     it('fails with any error of the reset as it is, without signing in', async () => {
         const error = new Error('network');
-        jest.mocked(srpVerify).mockRejectedValue(error);
+        vi.mocked(srpVerify).mockRejectedValue(error);
 
         await expect(changePassword()).rejects.toBe(error);
         expect(getUser).not.toHaveBeenCalled();
@@ -175,7 +175,7 @@ describe('performPasswordChangeViaMnemonic', () => {
 
     it('fails with a `SignInAfterResetError` once the password is changed', async () => {
         const error = new Error('network');
-        jest.mocked(getUser).mockRejectedValue(error);
+        vi.mocked(getUser).mockRejectedValue(error);
 
         const changing = changePassword();
 

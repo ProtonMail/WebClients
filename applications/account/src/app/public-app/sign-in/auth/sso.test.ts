@@ -26,27 +26,27 @@ import { prepareSSOSignIn, unlockSSO } from './sso';
 
 // The crypto, the session and the device requests are out of scope: these tests only look at what the sign-in does
 // with their results
-jest.mock('@proton/shared/lib/helpers/promise', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/promise'),
+vi.mock('@proton/shared/lib/helpers/promise', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/helpers/promise')),
     wait: () => Promise.resolve(),
 }));
-jest.mock('@proton/shared/lib/authentication/unlockKey', () => ({
-    ...jest.requireActual('@proton/shared/lib/authentication/unlockKey'),
-    handleUnlockKey: jest.fn(() => Promise.resolve({ keyPassword: 'key password' })),
+vi.mock('@proton/shared/lib/authentication/unlockKey', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/authentication/unlockKey')),
+    handleUnlockKey: vi.fn(() => Promise.resolve({ keyPassword: 'key password' })),
 }));
-jest.mock('@proton/shared/lib/keys/device', () => ({
-    ...jest.requireActual('@proton/shared/lib/keys/device'),
+vi.mock('@proton/shared/lib/keys/device', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/keys/device')),
     encryptAuthDeviceSecret: () => Promise.resolve('encrypted secret'),
-    getAuthDeviceDataByUser: jest.fn(),
-    deleteAuthDevice: jest.fn(),
-    createAuthDeviceToActivate: jest.fn(),
-    setPersistedAuthDeviceDataByUser: jest.fn(),
+    getAuthDeviceDataByUser: vi.fn(),
+    deleteAuthDevice: vi.fn(),
+    createAuthDeviceToActivate: vi.fn(),
+    setPersistedAuthDeviceDataByUser: vi.fn(),
 }));
-jest.mock('@proton/shared/lib/keys/unprivatization/helper', () => ({
-    ...jest.requireActual('@proton/shared/lib/keys/unprivatization/helper'),
-    getOrganizationData: jest.fn(),
+vi.mock('@proton/shared/lib/keys/unprivatization/helper', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/keys/unprivatization/helper')),
+    getOrganizationData: vi.fn(),
 }));
-jest.mock('./finalizeSignIn', () => ({ finalizeSignIn: jest.fn() }));
+vi.mock('./finalizeSignIn', () => ({ finalizeSignIn: vi.fn() }));
 
 const session = { data: {} } as unknown as AuthSession;
 const deviceSecretData = { secret: 'device secret' };
@@ -58,7 +58,7 @@ const ssoData = {
 } as unknown as SSOUnlockData;
 
 const unlock = (user: User, authResponse: Partial<AuthResponse> = {}) => {
-    const api = jest.fn(() => Promise.resolve({}));
+    const api = vi.fn(() => Promise.resolve({}));
     const context = { api, authResponse } as unknown as LoginFlowContext;
     const result = unlockSSO(context, { user, salts: [], addresses: undefined, ssoData, clearKeyPassword: 'backup' });
     return { api, result };
@@ -66,7 +66,7 @@ const unlock = (user: User, authResponse: Partial<AuthResponse> = {}) => {
 
 describe('unlockSSO', () => {
     beforeEach(() => {
-        jest.mocked(finalizeSignIn).mockReset().mockResolvedValue(session);
+        vi.mocked(finalizeSignIn).mockReset().mockResolvedValue(session);
     });
 
     it('activates the device and signs in', async () => {
@@ -97,14 +97,14 @@ describe('unlockSSO', () => {
     });
 
     it('rejects a wrong backup password', async () => {
-        jest.mocked(handleUnlockKey).mockRejectedValueOnce(new Error('wrong password'));
+        vi.mocked(handleUnlockKey).mockRejectedValueOnce(new Error('wrong password'));
         const { api, result } = unlock({ Flags: {} } as unknown as User);
         await expect(result).rejects.toBeInstanceOf(BackupPasswordError);
         expect(api).not.toHaveBeenCalled();
     });
 
     it('does not call the password a backup password on the first sign-in after a conversion', async () => {
-        jest.mocked(handleUnlockKey).mockRejectedValueOnce(new Error('wrong password'));
+        vi.mocked(handleUnlockKey).mockRejectedValueOnce(new Error('wrong password'));
         const { result } = unlock({ Flags: {} } as unknown as User, { FirstLoginAfterConversion: true });
         await expect(result).rejects.toBeInstanceOf(ConversionPasswordError);
         await expect(result).rejects.toThrow('Incorrect password. Please try again.');
@@ -138,7 +138,7 @@ describe('prepareSSOSignIn', () => {
     const newDevice = { deviceOutput: { ID: 'new device' }, deviceSecretData } as unknown as DeviceData;
 
     /** The member's devices, as the API lists them to `getAllAuthDevices`. */
-    const listDevices = jest.fn((): Promise<AuthDeviceOutput[]> => Promise.resolve([]));
+    const listDevices = vi.fn((): Promise<AuthDeviceOutput[]> => Promise.resolve([]));
 
     const prepare = () => {
         const api = async ({ url }: { url: string }) => {
@@ -162,14 +162,12 @@ describe('prepareSSOSignIn', () => {
     };
 
     beforeEach(() => {
-        jest.mocked(getAuthDeviceDataByUser)
-            .mockReset()
-            .mockRejectedValue(new AuthDeviceInactiveError(persistedDevice));
+        vi.mocked(getAuthDeviceDataByUser).mockReset().mockRejectedValue(new AuthDeviceInactiveError(persistedDevice));
         listDevices.mockReset().mockResolvedValue([]);
-        jest.mocked(deleteAuthDevice).mockReset().mockResolvedValue(undefined);
-        jest.mocked(createAuthDeviceToActivate).mockReset().mockResolvedValue(newDevice);
-        jest.mocked(setPersistedAuthDeviceDataByUser).mockReset().mockResolvedValue(undefined);
-        jest.mocked(getOrganizationData)
+        vi.mocked(deleteAuthDevice).mockReset().mockResolvedValue(undefined);
+        vi.mocked(createAuthDeviceToActivate).mockReset().mockResolvedValue(newDevice);
+        vi.mocked(setPersistedAuthDeviceDataByUser).mockReset().mockResolvedValue(undefined);
+        vi.mocked(getOrganizationData)
             .mockReset()
             .mockResolvedValue(organizationData as unknown as OrganizationData);
     });
@@ -207,12 +205,12 @@ describe('prepareSSOSignIn', () => {
     });
 
     it('replaces a device that can no longer be used', async () => {
-        jest.mocked(getAuthDeviceDataByUser).mockRejectedValue(new AuthDeviceInvalidError('device', 'API invalid'));
+        vi.mocked(getAuthDeviceDataByUser).mockRejectedValue(new AuthDeviceInvalidError('device', 'API invalid'));
         await expectReplacedDevice(prepare());
     });
 
     it('creates a device when none is persisted', async () => {
-        jest.mocked(getAuthDeviceDataByUser).mockRejectedValue(new AuthDeviceNonExistingError());
+        vi.mocked(getAuthDeviceDataByUser).mockRejectedValue(new AuthDeviceNonExistingError());
         await expect(prepare()).resolves.toEqual({
             type: 'sso',
             ssoData: expect.objectContaining({ type: 'unlock', deviceData: newDevice }),
@@ -222,7 +220,7 @@ describe('prepareSSOSignIn', () => {
 
     // Listing none would hide the approval from another device; signing in again continues with the persisted one
     it('keeps a new device when the devices fail to load', async () => {
-        jest.mocked(getAuthDeviceDataByUser).mockRejectedValue(new AuthDeviceNonExistingError());
+        vi.mocked(getAuthDeviceDataByUser).mockRejectedValue(new AuthDeviceNonExistingError());
         const error = { status: 503 };
         listDevices.mockRejectedValue(error);
         await expect(prepare()).rejects.toBe(error);

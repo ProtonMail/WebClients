@@ -7,9 +7,9 @@ import { AccountFormDataContextProvider, useAccountFormDataContext } from './Acc
 import { defaultAsyncValidationState } from './asyncValidator/createAsyncValidator';
 import { validateEmailAvailability, validateUsernameAvailability } from './asyncValidator/validateEmail';
 
-jest.mock('@proton/app-context/useSilentApi');
-jest.mock('./asyncValidator/validateEmail');
-jest.mock('../../../signup/PasswordStrengthIndicatorSpotlight', () => ({
+vi.mock('@proton/app-context/useSilentApi');
+vi.mock('./asyncValidator/validateEmail');
+vi.mock('../../../signup/PasswordStrengthIndicatorSpotlight', () => ({
     usePasswordStrengthIndicatorSpotlight: () => ({ supported: false, spotlight: false }),
 }));
 
@@ -62,12 +62,12 @@ const getProvider = (domainsLoaded: boolean) => (
     </AccountFormDataContextProvider>
 );
 
-const flushAsyncValidator = () => act(async () => jest.advanceTimersByTime(ASYNC_VALIDATOR_DEBOUNCE_MS));
+const flushAsyncValidator = () => act(async () => vi.advanceTimersByTime(ASYNC_VALIDATOR_DEBOUNCE_MS));
 
 const setup = () => {
-    jest.useFakeTimers();
-    jest.mocked(useSilentApi).mockReturnValue(jest.fn());
-    const mockValidateEmail = jest.mocked(validateEmailAvailability);
+    vi.useFakeTimers();
+    vi.mocked(useSilentApi).mockReturnValue(vi.fn());
+    const mockValidateEmail = vi.mocked(validateEmailAvailability);
     mockValidateEmail.mockClear();
     mockValidateEmail.mockResolvedValue(defaultAsyncValidationState);
 
@@ -109,9 +109,9 @@ describe('AccountFormDataContextProvider', () => {
     });
 
     it('defers the username availability check until the signup domains have loaded', async () => {
-        jest.useFakeTimers();
-        jest.mocked(useSilentApi).mockReturnValue(jest.fn());
-        const mockValidateUsername = jest.mocked(validateUsernameAvailability);
+        vi.useFakeTimers();
+        vi.mocked(useSilentApi).mockReturnValue(vi.fn());
+        const mockValidateUsername = vi.mocked(validateUsernameAvailability);
         mockValidateUsername.mockClear();
         mockValidateUsername.mockResolvedValue(defaultAsyncValidationState);
         const { rerender } = render(getUsernameProvider(false));

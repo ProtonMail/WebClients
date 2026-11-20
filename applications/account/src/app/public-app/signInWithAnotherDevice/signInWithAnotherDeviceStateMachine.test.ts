@@ -9,7 +9,7 @@ const session = { localID: 1 } as unknown as ResumedSessionResult;
 
 const start = ({ signIn = () => Promise.resolve() }: { signIn?: () => Promise<void> } = {}) => {
     const pulls: { send: (event: PullEvent) => void; stopped: boolean }[] = [];
-    const traced = jest.fn();
+    const traced = vi.fn();
     const actor = createActor(
         signInWithAnotherDeviceStateMachine.provide({
             actors: {
@@ -38,7 +38,7 @@ describe('signInWithAnotherDeviceStateMachine', () => {
     });
 
     it('signs in with the session the other device hands over, and stops polling', () => {
-        const signIn = jest.fn(() => new Promise<void>(() => {}));
+        const signIn = vi.fn(() => new Promise<void>(() => {}));
         const { actor, pulls } = start({ signIn });
         pulls[0].send({ type: 'pull.qrCodeCreated', qrCode: 'qr' });
         pulls[0].send({ type: 'pull.signedIn', session, forkDurationTime: 1000 });

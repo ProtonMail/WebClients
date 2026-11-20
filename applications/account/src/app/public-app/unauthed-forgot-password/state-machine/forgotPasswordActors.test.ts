@@ -1,3 +1,4 @@
+import type { Mock } from 'vitest';
 import {
     type AnyActorLogic,
     type EventObject,
@@ -32,13 +33,13 @@ import {
 } from './forgotPasswordActors';
 import { InvalidResetCodeError, ResetMethodNotAllowedError, SignInAfterResetError } from './forgotPasswordErrors';
 
-jest.mock('../actions', () => ({
-    ...jest.requireActual('../actions'),
-    handleRequestRecoveryMethods: jest.fn(),
-    authMnemonicAndGetKeys: jest.fn(),
-    getDeviceRecoveryLevel: jest.fn(),
-    performPasswordReset: jest.fn(),
-    performPasswordChangeViaMnemonic: jest.fn(),
+vi.mock('../actions', async () => ({
+    ...(await vi.importActual<any>('../actions')),
+    handleRequestRecoveryMethods: vi.fn(),
+    authMnemonicAndGetKeys: vi.fn(),
+    getDeviceRecoveryLevel: vi.fn(),
+    performPasswordReset: vi.fn(),
+    performPasswordChangeViaMnemonic: vi.fn(),
 }));
 
 const resetResponse = { UserID: 'user-id', UserKeys: [] } as unknown as ValidateResetTokenResponse;
@@ -54,29 +55,29 @@ function makeServices() {
         calls.push(name);
     };
     const telemetry = {
-        sendResetPasswordPageLoad: jest.fn(),
-        sendResetPasswordPageExit: jest.fn(),
-        sendResetPasswordStepLoad: jest.fn(),
-        sendResetPasswordRecoveryMethodsRequested: jest.fn(record('telemetry')),
-        sendResetPasswordCodeSent: jest.fn(record('telemetry')),
-        sendResetPasswordMethodValidated: jest.fn(record('telemetry')),
-        sendResetPasswordSuccess: jest.fn(record('telemetry')),
-        sendResetPasswordFailure: jest.fn(record('telemetry')),
+        sendResetPasswordPageLoad: vi.fn(),
+        sendResetPasswordPageExit: vi.fn(),
+        sendResetPasswordStepLoad: vi.fn(),
+        sendResetPasswordRecoveryMethodsRequested: vi.fn(record('telemetry')),
+        sendResetPasswordCodeSent: vi.fn(record('telemetry')),
+        sendResetPasswordMethodValidated: vi.fn(record('telemetry')),
+        sendResetPasswordSuccess: vi.fn(record('telemetry')),
+        sendResetPasswordFailure: vi.fn(record('telemetry')),
     };
     const services = {
-        api: jest.fn(async () => {
+        api: vi.fn(async () => {
             calls.push('api');
             return resetResponse;
-        }) as unknown as Api & jest.Mock,
-        prepareAttempt: jest.fn(async () => {
+        }) as unknown as Api & Mock,
+        prepareAttempt: vi.fn(async () => {
             calls.push('prepareAttempt');
         }),
-        onSessionExpired: jest.fn(() => () => {}),
-        getPersistent: jest.fn(() => true),
-        getKtActivation: jest.fn(async () => ktActivation),
+        onSessionExpired: vi.fn(() => () => {}),
+        getPersistent: vi.fn(() => true),
+        getKtActivation: vi.fn(async () => ktActivation),
         productParam: 'business' as const,
         setupVPN: true,
-        onLogin: jest.fn(async () => {
+        onLogin: vi.fn(async () => {
             calls.push('onLogin');
             return { state: 'complete' as const };
         }),
@@ -102,16 +103,16 @@ const resetInput = (overrides: Partial<ResetPasswordInput> = {}): ResetPasswordI
 });
 
 beforeEach(() => {
-    jest.mocked(handleRequestRecoveryMethods).mockReset();
-    jest.mocked(authMnemonicAndGetKeys).mockReset().mockResolvedValue(mnemonicData);
-    jest.mocked(getDeviceRecoveryLevel).mockReset().mockResolvedValue(DeviceRecoveryLevel.PARTIAL);
-    jest.mocked(performPasswordReset).mockReset().mockResolvedValue(session);
-    jest.mocked(performPasswordChangeViaMnemonic).mockReset().mockResolvedValue(session);
+    vi.mocked(handleRequestRecoveryMethods).mockReset();
+    vi.mocked(authMnemonicAndGetKeys).mockReset().mockResolvedValue(mnemonicData);
+    vi.mocked(getDeviceRecoveryLevel).mockReset().mockResolvedValue(DeviceRecoveryLevel.PARTIAL);
+    vi.mocked(performPasswordReset).mockReset().mockResolvedValue(session);
+    vi.mocked(performPasswordChangeViaMnemonic).mockReset().mockResolvedValue(session);
 });
 
 describe('createForgotPasswordActors', () => {
     it('tells the machine when the unauthenticated session expires, until it stops', () => {
-        const unsubscribe = jest.fn();
+        const unsubscribe = vi.fn();
         let expire = () => {};
         const services = {
             ...makeServices().services,
@@ -146,7 +147,7 @@ describe('createForgotPasswordActors', () => {
 
         it('prepares the attempt, then requests the methods, then reports what the account has', async () => {
             const { services, telemetry, calls } = makeServices();
-            jest.mocked(handleRequestRecoveryMethods).mockImplementation(async () => {
+            vi.mocked(handleRequestRecoveryMethods).mockImplementation(async () => {
                 calls.push('request');
                 return { ...methods, methods: ['email', 'mnemonic'] };
             });
@@ -175,7 +176,7 @@ describe('createForgotPasswordActors', () => {
             'reports $found as a password reset method: $hasPasswordResetMethod, a data recovery method: $hasDataRecoveryMethod',
             async ({ found, hasPasswordResetMethod, hasDataRecoveryMethod }) => {
                 const { services, telemetry } = makeServices();
-                jest.mocked(handleRequestRecoveryMethods).mockResolvedValue({ ...methods, methods: [...found] });
+                vi.mocked(handleRequestRecoveryMethods).mockResolvedValue({ ...methods, methods: [...found] });
                 await run(createForgotPasswordActors(services).requestRecoveryMethods, {
                     username: 'user@example.com',
                 });
@@ -188,7 +189,7 @@ describe('createForgotPasswordActors', () => {
 
         it('treats an account without any method as having none, not as a failure', async () => {
             const { services, telemetry } = makeServices();
-            jest.mocked(handleRequestRecoveryMethods).mockRejectedValue(new NoResetMethodsError());
+            vi.mocked(handleRequestRecoveryMethods).mockRejectedValue(new NoResetMethodsError());
 
             const output = await run(createForgotPasswordActors(services).requestRecoveryMethods, {
                 username: 'user@example.com',
@@ -210,7 +211,7 @@ describe('createForgotPasswordActors', () => {
         it('fails on any other error, without reporting methods', async () => {
             const { services, telemetry } = makeServices();
             const error = new Error('network');
-            jest.mocked(handleRequestRecoveryMethods).mockRejectedValue(error);
+            vi.mocked(handleRequestRecoveryMethods).mockRejectedValue(error);
 
             await expect(
                 run(createForgotPasswordActors(services).requestRecoveryMethods, { username: 'user@example.com' })
@@ -272,7 +273,7 @@ describe('createForgotPasswordActors', () => {
     describe('validateRecoveryLink', () => {
         it('prepares the attempt, then decrypts the keys with the phrase, in the session the user chose', async () => {
             const { services, telemetry, calls } = makeServices();
-            jest.mocked(authMnemonicAndGetKeys).mockImplementation(async () => {
+            vi.mocked(authMnemonicAndGetKeys).mockImplementation(async () => {
                 calls.push('authMnemonic');
                 return mnemonicData;
             });
@@ -299,7 +300,7 @@ describe('createForgotPasswordActors', () => {
         it('fails when the phrase is refused, without reporting it as validated', async () => {
             const { services, telemetry } = makeServices();
             const error = new Error('wrong phrase');
-            jest.mocked(authMnemonicAndGetKeys).mockRejectedValue(error);
+            vi.mocked(authMnemonicAndGetKeys).mockRejectedValue(error);
 
             await expect(
                 run(createForgotPasswordActors(services).validateRecoveryLink, {
@@ -367,7 +368,7 @@ describe('createForgotPasswordActors', () => {
     describe('validateResetCode', () => {
         it('checks the code, then the device recovery file, then reports it validated', async () => {
             const { services, telemetry, calls } = makeServices();
-            jest.mocked(getDeviceRecoveryLevel).mockImplementation(async () => {
+            vi.mocked(getDeviceRecoveryLevel).mockImplementation(async () => {
                 calls.push('deviceRecovery');
                 return DeviceRecoveryLevel.FULL;
             });
@@ -538,7 +539,7 @@ describe('createForgotPasswordActors', () => {
         ])('reports a failed reset with $recovered, without signing in', async ({ input, method, reset }) => {
             const { services, telemetry } = makeServices();
             const error = new Error('reset failed');
-            jest.mocked(reset).mockRejectedValue(error);
+            vi.mocked(reset).mockRejectedValue(error);
 
             await expect(run(createForgotPasswordActors(services).resetPassword, input)).rejects.toBe(error);
             expect(telemetry.sendResetPasswordSuccess).not.toHaveBeenCalled();

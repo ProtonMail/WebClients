@@ -34,7 +34,7 @@ describe('LiteSettingsRow', () => {
     });
 
     it('is a button when it navigates', () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         render(<LiteSettingsRow label="Calendars" onClick={onClick} />);
 
         fireEvent.click(screen.getByRole('button', { name: /Calendars/ }));

@@ -1,7 +1,7 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import { fromCallback, fromPromise } from 'xstate';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { TelemetryUnauthLost2FAEvents } from '@proton/shared/lib/api/telemetry';
 import {
     BackupPasswordError,
@@ -35,37 +35,37 @@ import { type SSODeviceEvent, ssoStateMachine } from './steps/sso/state-machine/
 import { SignInContext } from './wizard/SignInContext';
 import { SignInProvider } from './wizard/SignInProvider';
 
-jest.mock('./steps/credentials/useLoginChallenge', () => ({
+vi.mock('./steps/credentials/useLoginChallenge', () => ({
     useLoginChallenge: () => ({ element: null, getPayload: () => Promise.resolve(undefined) }),
 }));
 
-jest.mock('../../locales', () => jest.requireActual('../../locales'));
-jest.mock('../localePrefix', () => jest.requireActual('../localePrefix'));
+vi.mock('../../locales', () => vi.importActual('../../locales'));
+vi.mock('../localePrefix', () => vi.importActual('../localePrefix'));
 
-const mockSendTelemetryReport = jest.fn();
-jest.mock('@proton/shared/lib/helpers/metrics', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/metrics'),
+const mockSendTelemetryReport = vi.fn();
+vi.mock('@proton/shared/lib/helpers/metrics', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/helpers/metrics')),
     sendTelemetryReport: (...args: unknown[]) => mockSendTelemetryReport(...args),
     telemetryReportsBatchQueue: { flush: () => Promise.resolve() },
 }));
 
 // The email verification sends a code when it opens; it stays pending here
-const mockInitiateVerification = jest.fn(() => new Promise<never>(() => {}));
-const mockSendNewCode = jest.fn(() => new Promise<never>(() => {}));
-jest.mock('@proton/account/safetyReview/verification/verification', () => ({
-    ...jest.requireActual('@proton/account/safetyReview/verification/verification'),
+const mockInitiateVerification = vi.fn(() => new Promise<never>(() => {}));
+const mockSendNewCode = vi.fn(() => new Promise<never>(() => {}));
+vi.mock('@proton/account/safetyReview/verification/verification', async () => ({
+    ...(await vi.importActual<any>('@proton/account/safetyReview/verification/verification')),
     initiateVerification: (...args: unknown[]) => mockInitiateVerification(...(args as [])),
     sendNewCode: () => mockSendNewCode(),
 }));
 
 // The recovery phrase form checks the words against the wordlist; the tests leave refusing a phrase to the API
-jest.mock('@proton/shared/lib/mnemonic/bip39Wrapper', () => ({
-    ...jest.requireActual('@proton/shared/lib/mnemonic/bip39Wrapper'),
+vi.mock('@proton/shared/lib/mnemonic/bip39Wrapper', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/mnemonic/bip39Wrapper')),
     validateMnemonic: () => Promise.resolve(true),
 }));
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
@@ -76,7 +76,7 @@ const ssoData = {
         capabilities: new Set([SSOLoginCapabilites.ENTER_BACKUP_PASSWORD]),
     },
     organizationData: {
-        logo: { cleanup: jest.fn() },
+        logo: { cleanup: vi.fn() },
         passwordPolicies: [],
         identity: { FingerprintSignatureAddress: 'admin@example.com' },
         organization: { Name: 'Example' },
@@ -129,7 +129,7 @@ const renderWizard = (
                 showRememberCheckbox
                 testflight={undefined}
                 isPorkbun={false}
-                onError={jest.fn()}
+                onError={vi.fn()}
             >
                 <SignInWizard />
             </SignInProvider>
@@ -200,7 +200,7 @@ const TWO_FACTOR_AUTH_TYPES: CreatedAuth['authTypes'] = {
 };
 
 /** Leaves the page for the password reset, which the app provides (`useSignInMachine`). */
-const goToResetPassword = jest.fn();
+const goToResetPassword = vi.fn();
 
 /** Signs in with a password account with these auth types (by default TOTP two-factor) and recovery methods. */
 const renderPasswordSignIn = (
@@ -337,7 +337,7 @@ describe('SignInWizard', () => {
 
         it('shows a wrong password under the field, without a notification, and takes another', async () => {
             mockCreateNotification.mockClear();
-            const unlock = jest.fn(({ password }: { password: string }) =>
+            const unlock = vi.fn(({ password }: { password: string }) =>
                 password === 'wrong'
                     ? Promise.reject(new ConversionPasswordError())
                     : new Promise<SSOSignInResult>(() => {})
@@ -414,7 +414,7 @@ describe('SignInWizard', () => {
 
     it('shows a wrong backup password under the field, without a notification, and takes another', async () => {
         mockCreateNotification.mockClear();
-        const unlock = jest.fn(({ password }: { password: string }) =>
+        const unlock = vi.fn(({ password }: { password: string }) =>
             password === 'wrong' ? Promise.reject(new BackupPasswordError()) : new Promise<SSOSignInResult>(() => {})
         );
         renderSignInOnSSO({
@@ -436,7 +436,7 @@ describe('SignInWizard', () => {
     });
 
     it('keeps the back button on the auto password step once the password is accepted, and ignores it', async () => {
-        const createAuthState = jest.fn(() => new Promise<CreatedAuth>(() => {}));
+        const createAuthState = vi.fn(() => new Promise<CreatedAuth>(() => {}));
         const machine = SignInStateMachine.provide({
             actors: {
                 credentialsFlow: credentialsStateMachine.provide({
@@ -467,7 +467,7 @@ describe('SignInWizard', () => {
     });
 
     it('keeps the backup password button while the administrator is asked, and ignores it', async () => {
-        const requestAdminApproval = jest.fn(() => new Promise<void>(() => {}));
+        const requestAdminApproval = vi.fn(() => new Promise<void>(() => {}));
         renderSignInOnSSO({
             data: {
                 ...ssoData,
@@ -602,7 +602,7 @@ describe('SignInWizard', () => {
         it('shows a wrong recovery phrase under the field, without a notification, and takes another', async () => {
             mockCreateNotification.mockClear();
             const message = 'Wrong recovery phrase. Try again or use another recovery method.';
-            const verify = jest.fn(({ phrase }: { phrase: string }) =>
+            const verify = vi.fn(({ phrase }: { phrase: string }) =>
                 phrase.endsWith('about') ? Promise.reject(new InvalidRecoveryPhraseError()) : Promise.resolve()
             );
             renderPasswordSignIn(
@@ -705,7 +705,7 @@ describe('SignInWizard', () => {
         });
 
         it('keeps the backup code form up, loading, while a valid code signs in', async () => {
-            const completeSignIn = jest.fn(() => new Promise<void>(() => {}));
+            const completeSignIn = vi.fn(() => new Promise<void>(() => {}));
             renderPasswordSignIn(
                 {},
                 {
@@ -816,7 +816,7 @@ describe('SignInWizard', () => {
         });
 
         it('keeps the two-factor screen up, loading, once the session is handed to the app', async () => {
-            const completeSignIn = jest.fn(() => Promise.resolve());
+            const completeSignIn = vi.fn(() => Promise.resolve());
             renderPasswordSignIn(
                 {},
                 {

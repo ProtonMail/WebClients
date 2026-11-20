@@ -5,21 +5,21 @@ import { ApiImportProvider, ApiImporterError, ApiImporterState } from '@proton/a
 
 import { ImporterActions } from './ImporterActions';
 
-const mockDispatch = jest.fn();
-const mockTrackEvent = jest.fn();
-const mockApi = jest.fn();
-const mockCall = jest.fn();
+const mockDispatch = vi.fn();
+const mockTrackEvent = vi.fn();
+const mockApi = vi.fn();
+const mockCall = vi.fn();
 
-jest.mock('@proton/activation/src/logic/importers/importers.actions', () => ({
+vi.mock('@proton/activation/src/logic/importers/importers.actions', () => ({
     cancelImporter: (payload: unknown) => ({ type: 'cancel', payload }),
 }));
-jest.mock('@proton/activation/src/logic/store', () => ({ useEasySwitchDispatch: () => mockDispatch }));
-jest.mock('@proton/activation/src/hooks/useTrackImportAction', () => ({ useTrackImportAction: () => mockTrackEvent }));
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/activation/src/logic/store', () => ({ useEasySwitchDispatch: () => mockDispatch }));
+vi.mock('@proton/activation/src/hooks/useTrackImportAction', () => ({ useTrackImportAction: () => mockTrackEvent }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('@proton/components/hooks/useEventManager', () => ({
+vi.mock('@proton/components/hooks/useEventManager', () => ({
     __esModule: true,
     default: () => ({ call: mockCall }),
 }));
@@ -41,7 +41,7 @@ const renderActions = (activeImporter: Record<string, unknown> = {}) =>
 
 describe('ImporterActions', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockDispatch.mockResolvedValue(undefined);
         mockApi.mockResolvedValue({});
     });
