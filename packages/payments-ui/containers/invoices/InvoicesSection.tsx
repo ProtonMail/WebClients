@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
@@ -10,7 +9,6 @@ import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
@@ -24,15 +22,12 @@ import { InvoiceOwner, InvoiceState } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
-import noop from '@proton/utils/noop';
 
-import { useEditBillingAddressModal } from '../../ui/billing-address/containers/useEditBillingAddressModal';
 import { useEditInvoiceModal } from './EditBillingAddress/useEditInvoiceModal';
 import InvoiceGroup from './InvoiceGroup';
-import InvoiceTextModal from './InvoiceTextModal';
 import { InvoiceEmailBouncedBanner } from './SetInvoiceEmail/InvoiceEmailBouncedBanner';
-import { useSetInvoiceEmailModal } from './SetInvoiceEmail/useSetInvoiceEmailModal';
 import TransactionGroup from './TransactionGroup';
+import { useInvoiceOptions } from './useInvoiceOptions';
 import useInvoices, { ELEMENTS_PER_PAGE, type InvoicesHook } from './useInvoices';
 
 enum DocumentType {
@@ -44,22 +39,10 @@ enum DocumentType {
 
 const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
-    const [subscription] = useSubscription();
 
     const [owner, setOwner] = useState(InvoiceOwner.User);
 
-    const [invoiceModalProps, setInvoiceModalOpen, renderInvoiceModal] = useModalState();
-    const { openEditInvoiceModal, editInvoiceModal, loading: loadingEditInvoiceModal } = useEditInvoiceModal();
-    const { openBillingAddressModal, editBillingAddressModal, loadingByKey } = useEditBillingAddressModal();
-
-    const {
-        openSetInvoiceEmailModal,
-        setInvoiceEmailModal,
-        canSetInvoiceEmail,
-        sendEmailInvoice,
-        invoiceEmailBounced,
-        loading: loadingSetInvoiceEmailModal,
-    } = useSetInvoiceEmailModal();
+    const { openEditInvoiceModal, editInvoiceModal } = useEditInvoiceModal();
 
     const invoicesHook = useInvoices({ owner, Document: InvoiceDocument.Invoice });
     const creditNotesHook = useInvoices({ owner, Document: InvoiceDocument.CreditNote });
@@ -74,6 +57,12 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
         [DocumentType.CurrencyConversion]: currencyConversionsHook,
         [DocumentType.Transactions]: transactionsHook,
     }[document];
+
+    const {
+        options: invoiceOptions,
+        invoiceEmail,
+        modals: invoiceOptionsModals,
+    } = useInvoiceOptions({ showInvoiceNote: hook.type === 'invoices' && hook.invoices.length > 0 });
 
     const handleOwner = (own = InvoiceOwner.User) => {
         setOwner(own);
@@ -121,8 +110,6 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
         void hook.request();
     }, [document, owner]);
 
-    const editBillingAddressLoadingKey = 'editBillingAddress';
-
     const invoiceEditButtons = (
         <SimpleDropdown
             as={Button}
@@ -134,49 +121,20 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
             data-testid="invoiceOptions"
         >
             <DropdownMenu>
-                {[
-                    {
-                        text: c('Action').t`Edit billing address`,
-                        'data-testid': 'editBillingAddress',
-                        key: 'editBillingAddress',
-                        onClick: () =>
-                            openBillingAddressModal({
-                                source: 'invoices',
-                                loadingKey: editBillingAddressLoadingKey,
-                                subscription,
-                            }).catch(noop),
-                        loading: loadingByKey[editBillingAddressLoadingKey],
-                    },
-                    hook.type === 'invoices' &&
-                        hook.invoices.length > 0 && {
-                            text: c('Action').t`Edit invoice note`,
-                            'data-testid': 'editInvoiceNote',
-                            key: 'editInvoiceNote',
-                            onClick: () => setInvoiceModalOpen(true),
-                            loading: loadingEditInvoiceModal,
-                        },
-                    canSetInvoiceEmail && {
-                        text: c('Action').t`Set invoice email`,
-                        'data-testid': 'setInvoiceEmail',
-                        key: 'setInvoiceEmail',
-                        onClick: () => openSetInvoiceEmailModal(),
-                        loading: loadingSetInvoiceEmailModal,
-                        isSelected: sendEmailInvoice,
-                    },
-                ]
-                    .filter(isTruthy)
-                    .map(({ text, key, isSelected, ...rest }) => (
-                        <DropdownMenuButton
-                            className="flex items-center flex-nowrap justify-space-between gap-2 text-left"
-                            key={key}
-                            {...rest}
-                        >
-                            <span>{text}</span>
-                            {isSelected && (
-                                <IcCheckmark className="shrink-0 color-primary ml-2" data-testid={`${key}Selected`} />
-                            )}
-                        </DropdownMenuButton>
-                    ))}
+                {invoiceOptions.map(({ text, key, isSelected, onClick, loading }) => (
+                    <DropdownMenuButton
+                        className="flex items-center flex-nowrap justify-space-between gap-2 text-left"
+                        key={key}
+                        data-testid={key}
+                        onClick={onClick}
+                        loading={loading}
+                    >
+                        <span>{text}</span>
+                        {isSelected && (
+                            <IcCheckmark className="shrink-0 color-primary ml-2" data-testid={`${key}Selected`} />
+                        )}
+                    </DropdownMenuButton>
+                ))}
             </DropdownMenu>
         </SimpleDropdown>
     );
@@ -185,11 +143,11 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
         <>
             <SettingsSectionWide>
                 <SettingsParagraph>{c('Info').t`View, download, and manage your invoices.`}</SettingsParagraph>
-                {canSetInvoiceEmail && invoiceEmailBounced ? (
+                {invoiceEmail.canSetInvoiceEmail && invoiceEmail.invoiceEmailBounced ? (
                     <InvoiceEmailBouncedBanner
                         className="mb-4 p-1"
-                        onUpdateEmail={() => openSetInvoiceEmailModal()}
-                        loading={loadingSetInvoiceEmailModal}
+                        onUpdateEmail={() => invoiceEmail.openSetInvoiceEmailModal()}
+                        loading={invoiceEmail.loading}
                     />
                 ) : null}
                 {hasUnpaid ? (
@@ -260,11 +218,8 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                 )}
             </SettingsSectionWide>
 
-            {renderInvoiceModal && <InvoiceTextModal {...invoiceModalProps} />}
-
             {editInvoiceModal}
-            {editBillingAddressModal}
-            {setInvoiceEmailModal}
+            {invoiceOptionsModals}
         </>
     );
 };
