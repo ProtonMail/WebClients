@@ -6404,8 +6404,8 @@ importers:
         specifier: 'catalog:'
         version: 18.3.1
       react-codemirror2:
-        specifier: ^7.3.0
-        version: 7.3.0(codemirror@5.65.21)(react@18.3.1)
+        specifier: ^9.0.1
+        version: 9.0.1(codemirror@5.65.21)(react@18.3.1)
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -26225,11 +26225,11 @@ packages:
       chart.js: ^4.1.1
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  react-codemirror2@7.3.0:
-    resolution: {integrity: sha512-gCgJPXDX+5iaPolkHAu1YbJ92a2yL7Je4TuyO3QEqOtI/d6mbEk08l0oIm18R4ctuT/Sl87X63xIMBnRQBXYXA==}
+  react-codemirror2@9.0.1:
+    resolution: {integrity: sha512-JqTQg8NxTyU1RgJdPNIHqSg5loIp2Y4KEocKVJBzhRrWzVX7At3wWGUUCfulSe3f4bSbRmDIv9iwzQ31r/ny3w==}
     peerDependencies:
       codemirror: 5.x
-      react: '>=15.5 <=17.x'
+      react: '>=15.5 <=19.x'
 
   react-css-styled@1.1.9:
     resolution: {integrity: sha512-M7fJZ3IWFaIHcZEkoFOnkjdiUFmwd8d+gTh2bpqMOcnxy/0Gsykw4dsL4QBiKsxcGow6tETUa4NAUcmJF+/nfw==}
@@ -46032,7 +46032,7 @@ snapshots:
       chart.js: 4.6.1
       react: 18.3.1
 
-  react-codemirror2@7.3.0(codemirror@5.65.21)(react@18.3.1):
+  react-codemirror2@9.0.1(codemirror@5.65.21)(react@18.3.1):
     dependencies:
       codemirror: 5.65.21
       react: 18.3.1
