@@ -30,7 +30,10 @@ import {
     selectParticipantsMap,
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
-import { setParticipantCountMismatchSince } from '@proton/meet/store/slices/uiStateSlice';
+import {
+    selectParticipantCountMismatchSince,
+    setParticipantCountMismatchSince,
+} from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetState } from '@proton/meet/store/store';
 import { ParticipantCapabilityPermission, ParticipantEvent } from '@proton/meet/types/types';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -109,6 +112,7 @@ interface MeetEventSimOptions {
     dispatch: Dispatch<UnknownAction>;
     sendMessage: (content: string) => Promise<boolean>;
     getState: () => MeetState;
+    subscribe: (listener: () => void) => () => void;
     room: Room;
     meetCoreClient: MeetCoreClient;
 }
@@ -117,10 +121,42 @@ export const initMeetEventSim = ({
     dispatch,
     sendMessage,
     getState,
+    subscribe,
     room,
     meetCoreClient,
 }: MeetEventSimOptions): (() => void) => {
     const captions = createCaptionsSim(dispatch);
+
+    const keepHiddenParticipants = (count: number) => {
+        const warningSince = Date.now() - MISMATCH_WARNING_DELAY;
+
+        const keepWarningSince = () => {
+            const state = getState();
+            const mismatchSince = selectParticipantCountMismatchSince(state);
+            if (selectMlsGroupState(state) && (mismatchSince === null || mismatchSince > warningSince)) {
+                dispatch(setParticipantCountMismatchSince(warningSince));
+            }
+        };
+
+        const keepMemberCount = () => {
+            const state = getState();
+            const mlsGroupState = selectMlsGroupState(state);
+            const memberCount = selectConnectedMemberCount(state) + count;
+            if (mlsGroupState && mlsGroupState.memberCount !== memberCount) {
+                dispatch(setMlsGroupState({ ...mlsGroupState, memberCount }));
+            }
+        };
+
+        const reapplyHiddenParticipants = () => {
+            keepWarningSince();
+            keepMemberCount();
+        };
+
+        reapplyHiddenParticipants();
+        return subscribe(reapplyHiddenParticipants);
+    };
+
+    let stopKeepingHiddenParticipants = () => {};
 
     const sim: MeetEventSim = {
         captions,
@@ -233,10 +269,12 @@ export const initMeetEventSim = ({
             if (!mlsGroupState) {
                 return false;
             }
+            stopKeepingHiddenParticipants();
             if (count > 0) {
-                dispatch(setParticipantCountMismatchSince(Date.now() - MISMATCH_WARNING_DELAY));
+                stopKeepingHiddenParticipants = keepHiddenParticipants(count);
+                return true;
             }
-            dispatch(setMlsGroupState({ ...mlsGroupState, memberCount: selectConnectedMemberCount(state) + count }));
+            dispatch(setMlsGroupState({ ...mlsGroupState, memberCount: selectConnectedMemberCount(state) }));
             return true;
         },
     };
@@ -245,6 +283,7 @@ export const initMeetEventSim = ({
 
     return () => {
         captions.stop();
+        stopKeepingHiddenParticipants();
         delete window.meetEventSim;
     };
 };
