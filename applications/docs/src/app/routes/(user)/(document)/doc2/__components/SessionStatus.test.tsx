@@ -27,6 +27,7 @@ function snapshotOf(change: Partial<SessionSnapshot> = {}): SessionSnapshot {
     baseCommitId: 'commit-1',
     caughtUp: true,
     participants: [],
+    tokenPreferences: {},
     ...change,
   }
 }

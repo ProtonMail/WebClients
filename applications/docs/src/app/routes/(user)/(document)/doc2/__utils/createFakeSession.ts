@@ -14,6 +14,7 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
     baseCommitId: 'commit-1',
     caughtUp: false,
     participants: [],
+    tokenPreferences: {},
     ...snapshot,
   }
 
