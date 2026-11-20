@@ -1575,6 +1575,14 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Organizațiile care dispun de modulul „Furnizor de servicii gestionate” pot crea și gestiona organizații subsidiare."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }"
       ]
     },
     "Alert": {
@@ -4654,6 +4662,21 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frază de recuperare greșită. Încercați din nou sau utilizați o altă metodă de recuperare."
+      ],
+      "Failed to get invitee keys": [
+        "Nu s-au putut obține cheile persoanei invitate."
+      ],
+      "Failed to load the membership": [
+        "Încărcarea calității de membru a eșuat."
+      ],
+      "Failed to load the membership data": [
+        "Încărcarea datelor de membru a eșuat."
+      ],
+      "Failed to verify membership": [
+        "Verificarea calității de membru a eșuat."
+      ],
+      "Some invitations could not be loaded": [
+        "Unele invitații nu au putut fi încărcate."
       ]
     },
     "error": {
@@ -8355,6 +8378,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Licențele pentru asistentul de scriere nu se mai vând."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Puteți deschide acest folder când importarea s-a finalizat. Veți primi un e-mail când va fi gata."
       ]
     },
     "info": {

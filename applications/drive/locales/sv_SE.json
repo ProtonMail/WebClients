@@ -1554,6 +1554,13 @@
       ],
       "Managed Service Provider": [
         "Hanterad tjänsteleverantör"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplats",
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
       ]
     },
     "Alert": {
@@ -8071,6 +8078,9 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Din import är blockerad. Uppgradera nu för att föra över resten av dina filer."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Du kan öppna den här mappen är importen är klar. Vi skickar e-post till dig när det är klart."
       ]
     },
     "info": {

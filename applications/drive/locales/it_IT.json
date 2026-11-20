@@ -1545,6 +1545,13 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Le organizzazioni che dispongono dell'estensione “Managed Service Provider” possono creare e gestire organizzazioni affiliate."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licenze per l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licenza per l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licenze per l'assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -4586,6 +4593,21 @@
       ],
       "You can only upload a new version to a file": [
         "È possibile caricare solo nuove versioni ad un file"
+      ],
+      "Failed to get invitee keys": [
+        "Impossibile ottenere le chiavi dell'invitato"
+      ],
+      "Failed to load the membership": [
+        "Impossibile caricare l'iscrizione"
+      ],
+      "Failed to load the membership data": [
+        "Impossibile caricare i dati dell'iscrizione"
+      ],
+      "Failed to verify membership": [
+        "Impossibile verificare l'iscrizione"
+      ],
+      "Some invitations could not be loaded": [
+        "Impossibile caricare alcuni inviti"
       ]
     },
     "error": {
@@ -8112,6 +8134,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Le licenze per assistenti alla scrittura non sono più in vendita."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "È possibile aprire questa cartella al termine dell'importazione. Verrà inviata un'email al termine dell'operazione."
       ]
     },
     "info": {

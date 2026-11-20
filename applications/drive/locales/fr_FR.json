@@ -1539,6 +1539,13 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Les organisations avec l'extension Fournisseur de services gérés peuvent créer et gérer des organisations filiales."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -8076,6 +8083,9 @@
       ],
       "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
         "Vous pourrez ouvrir ce dossier une fois l'import terminé. Pour le moment, ${ importedSize } fichiers ont été importés. Vous recevrez un e-mail une fois l'opération finalisée."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Vous pourrez ouvrir ce dossier une fois l'import terminé. Vous recevrez un e-mail une fois l'opération finalisée."
       ]
     },
     "info": {

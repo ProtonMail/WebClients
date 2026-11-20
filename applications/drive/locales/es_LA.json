@@ -1557,6 +1557,13 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Las organizaciones con el complemento de Proveedor de Servicios Gestionados pueden crear y administrar organizaciones subsidiarias."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licencias del asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } licencia de asistente de escritura de ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } licencias de asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -4615,6 +4622,21 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperación incorrecta. Vuelva a intentarlo o use otro método de recuperación."
+      ],
+      "Failed to get invitee keys": [
+        "Error al obtener las claves de los invitados"
+      ],
+      "Failed to load the membership": [
+        "Error al cargar la membresía"
+      ],
+      "Failed to load the membership data": [
+        "Error al cargar los datos de la membresía"
+      ],
+      "Failed to verify membership": [
+        "Error al verificar la membresía"
+      ],
+      "Some invitations could not be loaded": [
+        "No se pudieron cargar algunas invitaciones"
       ]
     },
     "error": {
@@ -8219,6 +8241,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Ya no se venden licencias del asistente de escritura."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Puede abrir esta carpeta cuando la importación finalice. Le enviaremos un correo cuando se complete."
       ]
     },
     "info": {

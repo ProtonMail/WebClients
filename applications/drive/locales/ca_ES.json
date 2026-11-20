@@ -1557,6 +1557,13 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Les organitzacions amb el complement de proveïdor de serveis gestionats poden crear i gestionar organitzacions filials."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } llicència d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } llicències d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -4615,6 +4622,21 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
+      ],
+      "Failed to get invitee keys": [
+        "No s'han pogut obtenir les claus del convidat"
+      ],
+      "Failed to load the membership": [
+        "No s'ha pogut carregar l'afiliació"
+      ],
+      "Failed to load the membership data": [
+        "No s'han pogut carregar les dades d'afiliació"
+      ],
+      "Failed to verify membership": [
+        "No s'ha pogut verificar l'afiliació"
+      ],
+      "Some invitations could not be loaded": [
+        "No s'han pogut carregar algunes invitacions"
       ]
     },
     "error": {
@@ -8231,6 +8253,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Les llicències d'assistent d'escriptura ja no es venen."
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "Podreu obrir aquesta carpeta quan acabi la importació. Us enviarem un correu electrònic quan hagi finalitzat"
       ]
     },
     "info": {

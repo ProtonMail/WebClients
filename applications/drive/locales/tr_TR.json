@@ -1557,6 +1557,13 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Yönetilen hizmet sağlayıcı eklentisini kullanan kuruluşlar, yan kuruluşlar oluşturabilir ve yönetebilir."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
       ]
     },
     "Alert": {
@@ -4615,6 +4622,21 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Kurtarma ifadesi yanlış. Yeniden deneyin ya da başka bir kurtarma yöntemi kullanın."
+      ],
+      "Failed to get invitee keys": [
+        "Davetli anahtarları alınamadı"
+      ],
+      "Failed to load the membership": [
+        "Üyelik yüklenemedi"
+      ],
+      "Failed to load the membership data": [
+        "Üyelik verileri yüklenemedi"
+      ],
+      "Failed to verify membership": [
+        "Üyelik doğrulanamadı"
+      ],
+      "Some invitations could not be loaded": [
+        "Bazı davetler yüklenemedi"
       ]
     },
     "error": {
@@ -8231,6 +8253,9 @@
       ],
       "Writing assistant seats are no longer sold.": [
         "Yazma yardımcısı koltukları artık satılmıyor"
+      ],
+      "You can open this folder when the import is finished. We'll email you when it's done.": [
+        "İçe aktarma tamamlandığında bu klasörü açabilirsiniz. İşlem bittiğinde size e-posta göndereceğiz."
       ]
     },
     "info": {
