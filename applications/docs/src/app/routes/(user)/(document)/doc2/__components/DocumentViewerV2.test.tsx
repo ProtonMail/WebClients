@@ -764,12 +764,11 @@ describe('DocumentViewerV2', () => {
     expect(screen.queryByText('Debug menu')).not.toBeInTheDocument()
   })
 
-  test("records the base state, received updates and the editor's own, which it sends, for the debug menu", async () => {
+  test("gives the debug menu the session, and sends the editor's own updates to it", async () => {
     localStorage.setItem('proton-docs-debug', 'true')
     const fake = createSession()
     await renderShown(fake, { role: 'Editor' })
 
-    act(() => fake.emit('update', update(REPLAYED_UPDATE)))
     await act(() =>
       mockClientHandler.editorRequestsPropagationOfUpdate(
         { type: { wrapper: 'du' }, content: new Uint8Array([3]) },
@@ -779,11 +778,6 @@ describe('DocumentViewerV2', () => {
 
     expect(fake.mocks.sendUpdate).toHaveBeenCalledWith(new Uint8Array([3]))
     expect(mockDebugMenuProps?.session).toBe(fake.session)
-    expect(mockDebugMenuProps?.recorder.getUpdates().map(({ origin, content }) => [origin, content[0]])).toEqual([
-      ['baseState', BASE_UPDATE],
-      ['received', REPLAYED_UPDATE],
-      ['sent', 3],
-    ])
     localStorage.removeItem('proton-docs-debug')
   })
 

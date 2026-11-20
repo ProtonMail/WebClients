@@ -1,18 +1,17 @@
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 import { CryptoProxy } from '@protontech/crypto'
-import type { DebugArtifacts } from '@proton-docs/realtime-sdk'
+import type { DebugArtifacts, HistoryEntry } from '@proton-docs/realtime-sdk'
 
 import type { EditorInvoker } from './EditorInvoker'
-import type { RecordedUpdate } from './UpdateRecorder'
 
 // The debug menu's downloads, in /doc's file formats. They hold document content: build them only on a click, and
 // never log them.
 
 /**
- * Every update the recorder holds, named as /doc names them. Adapted from
+ * One file per History Log entry, oldest first, named as /doc names them. Adapted from
  * `packages/docs-core/lib/AuthenticatedDocController/AuthenticatedDocController.ts`, its `getAllUpdatesAsZip`.
  */
-export async function getAllUpdatesZip(updates: RecordedUpdate[]): Promise<Blob> {
+export async function getAllUpdatesZip(updates: Pick<HistoryEntry, 'timestamp' | 'content'>[]): Promise<Blob> {
   const zip = await createZip()
   for (const { timestamp, content } of updates) {
     zip.file(`${timestamp}-${await getSha1Hex(content)}.bin`, content)

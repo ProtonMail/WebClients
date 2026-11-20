@@ -122,7 +122,6 @@ function startLoad({
       showModal: jest.fn(),
       onFileMenuAction: jest.fn(),
       onPresenceUpdate: jest.fn(),
-      onUpdateSent: jest.fn(),
       fetchExternalImageAsBase64: jest.fn(),
       logger,
     },
@@ -509,7 +508,7 @@ describe('loadDocument', () => {
       ])
     })
 
-    test("the user's edits go to the session and to the page", async () => {
+    test("the user's edits go to the session", async () => {
       const load = await startRevealed()
       const edit = new Uint8Array([9])
 
@@ -519,7 +518,6 @@ describe('loadDocument', () => {
       )
 
       expect(load.fake.mocks.sendUpdate).toHaveBeenCalledWith(edit)
-      expect(load.deps.bridgeHandlers.onUpdateSent).toHaveBeenCalledWith(edit)
     })
 
     test('an update the editor fails to take fails the editor, and clears the user from peers', async () => {
