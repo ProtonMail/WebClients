@@ -1616,7 +1616,6 @@ const SingleSignupContainerV2 = ({
                     isLargeViewport={viewportWidth['>=large']}
                     api={normalApi}
                     measure={measure}
-                    currentPlan={model.upsell.currentPlan}
                     onTriggerModals={triggerModals}
                     onOpenSwitch={() => {
                         if (model.loadingDependencies) {

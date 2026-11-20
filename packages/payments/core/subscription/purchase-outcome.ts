@@ -14,7 +14,7 @@ export type PurchaseOutcome =
 
 const refused: PurchaseOutcome = { type: 'refused' };
 
-const getGrantedProductFlags = (
+export const getGrantedProductFlags = (
     entitlementCatalog: EntitlementCatalog | undefined,
     selection: Subscription | PlanIDs
 ): ProductFlag[] => {

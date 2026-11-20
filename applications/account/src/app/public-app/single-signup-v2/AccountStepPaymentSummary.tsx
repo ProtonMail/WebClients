@@ -29,6 +29,7 @@ import clsx from '@proton/utils/clsx';
 import RightSummary from './RightSummary';
 import SaveLabel from './SaveLabel';
 import { getSummaryPlan } from './configuration';
+import { getChangedSubscriptionTerm } from './helper';
 import type { OptimisticOptions, SignupModelV2 } from './interface';
 import { getPaymentlessTrialRenewalNotice } from './paymentlessTrial';
 
@@ -131,15 +132,17 @@ const AccountStepPaymentSummary = ({
         existingUser: !!model.session?.resumedSessionResult.UID,
     });
 
+    const checkoutPlanIDs = hasCouponCode ? model.subscriptionData.planIDs : options.planIDs;
     const checkoutView = createCheckoutView(
         {
-            planIDs: hasCouponCode ? model.subscriptionData.planIDs : options.planIDs,
+            planIDs: checkoutPlanIDs,
             plansMap: model.plansMap,
             checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
             isTrial,
             couponConfig,
             app,
-            subscription: model.session?.subscription,
+            subscription:
+                model.session && getChangedSubscriptionTerm(model.session.multiSubscriptionContext, checkoutPlanIDs),
             scribeToLumo,
         },
         ({

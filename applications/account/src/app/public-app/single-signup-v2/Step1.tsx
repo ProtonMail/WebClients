@@ -51,7 +51,6 @@ import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
-import type { SubscriptionPlan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import simpleLoginLogo from '@proton/styles/assets/img/illustrations/simplelogin-logo.svg';
@@ -86,7 +85,13 @@ import { ProvisioningDetails } from './ProvisioningDetails';
 import RightSummary from './RightSummary';
 import { useSignupV2Theme } from './SignupV2ThemeProvider';
 import { Step1OfferBanner } from './components/Step1OfferBanner';
-import { getAccessiblePlans, getFreeSubscriptionData, getSubscriptionMapping, getUpdatedPlanIDs } from './helper';
+import {
+    getAccessiblePlans,
+    getFreeSubscriptionData,
+    getChangedSubscriptionTerm,
+    getSubscriptionMapping,
+    getUpdatedPlanIDs,
+} from './helper';
 import {
     type Measure,
     type OnOpenLogin,
@@ -137,7 +142,6 @@ const Step1 = ({
     initialSessionsLength,
     signInPath,
     signupParameters,
-    currentPlan,
     onComplete,
     model,
     setModel,
@@ -176,7 +180,6 @@ const Step1 = ({
     onSignOut: () => Promise<void>;
     model: SignupModelV2;
     setModel: Dispatch<SetStateAction<SignupModelV2>>;
-    currentPlan: SubscriptionPlan | undefined;
     mode: SignupMode;
     api: Api;
     onTriggerModals: OnTriggerModals;
@@ -302,7 +305,8 @@ const Step1 = ({
             ValidateBillingAddress: true,
             VatId: values.vatNumber,
             previousEstimation: model.subscriptionData.checkResult,
-            subscription: model.session?.subscription,
+            subscription:
+                model.session && getChangedSubscriptionTerm(model.session.multiSubscriptionContext, values.planIDs),
             provisioningToken: model.provisionedDeal?.token,
         });
     };
@@ -537,8 +541,9 @@ const Step1 = ({
         }
 
         if (model.session?.subscription && model.session.organization && model.plansMap[planName]) {
+            const changedSubscription = getChangedSubscriptionTerm(model.session.multiSubscriptionContext, planIDs);
             const switchedPlanIds = switchPlan({
-                subscription: model.session.subscription,
+                subscription: changedSubscription,
                 newPlan: planName,
                 organization: model.session.organization,
                 plans: model.plans,
@@ -548,11 +553,10 @@ const Step1 = ({
             checkOptions.planIDs = switchedPlanIds;
 
             const result = getUpdatedPlanIDs({
-                subscription: model.session.subscription,
+                subscription: changedSubscription,
                 organization: model.session.organization,
                 plans: model.plans,
                 toApp: app,
-                currentPlan,
                 options: { cycle: options.cycle, planIDs: checkOptions.planIDs },
                 plansMap: model.plansMap,
                 multiSubscriptionContext: model.session.multiSubscriptionContext,
@@ -710,7 +714,8 @@ const Step1 = ({
             isTrial: checkTrial,
             couponConfig,
             app,
-            subscription: model.session?.subscription,
+            subscription:
+                model.session && getChangedSubscriptionTerm(model.session.multiSubscriptionContext, options.planIDs),
             scribeToLumo,
         },
         {

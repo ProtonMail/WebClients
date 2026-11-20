@@ -1,9 +1,10 @@
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
-import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import {
+    buildLumoSubscription,
     buildMultiSubscriptionContextFromSubscription,
     multiSubscriptionTestCatalog,
 } from '@proton/payments/testing/buildMultiSubscriptionContext';
@@ -18,7 +19,7 @@ import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface'
 import { SubscriptionMode, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { getAccessiblePlans, getOtherUserSessions, getSessionCycle, getSubscriptionData, getUserInfo } from './helper';
-import type { PlanCard, SignupParameters2 } from './interface';
+import { type PlanCard, type SignupParameters2, UpsellTypes } from './interface';
 
 vi.mock('@proton/payments/core/api/api', async () => ({
     ...(await vi.importActual<any>('@proton/payments/core/api/api')),
@@ -261,7 +262,7 @@ describe('getSessionCycle', () => {
     it('should keep a requested cycle offered by the signup configuration', () => {
         const cycle = getSessionCycle({
             signupParameters: { cycle: CYCLE.MONTHLY },
-            subscription: FREE_SUBSCRIPTION,
+            subscription: undefined,
             options: { cycle: CYCLE.MONTHLY, planIDs: bundlePlanIDs },
             availableCycles,
             plansMap,
@@ -275,7 +276,7 @@ describe('getSessionCycle', () => {
 
         const cycle = getSessionCycle({
             signupParameters: { cycle: CYCLE.SIX },
-            subscription: FREE_SUBSCRIPTION,
+            subscription: undefined,
             options: { cycle: CYCLE.SIX, planIDs: bundlePlanIDs },
             availableCycles,
             plansMap,
@@ -287,7 +288,7 @@ describe('getSessionCycle', () => {
     it('should fall back to the highest offered cycle when the plan has no pricing for the requested cycle', () => {
         const cycle = getSessionCycle({
             signupParameters: { cycle: CYCLE.SIX },
-            subscription: FREE_SUBSCRIPTION,
+            subscription: undefined,
             options: { cycle: CYCLE.SIX, planIDs: bundlePlanIDs },
             availableCycles,
             plansMap: { ...plansMap, [PLANS.BUNDLE]: withoutSixMonthPricing(plansMap[PLANS.BUNDLE] as Plan) },
@@ -703,5 +704,296 @@ describe('getUserInfo with the Lumo purchase rules', () => {
         const { subscriptionData } = await runGetUserInfo(subscription, false);
 
         expect(subscriptionData.currency).toBe('EUR');
+    });
+});
+
+describe('getUserInfo for a signed-in user with several subscriptions', () => {
+    const plansMap = getTestPlansMap('EUR');
+    const lumoUltra = { ...plansMap[PLANS.LUMO], ID: 'lumo-ultra', Name: PLANS.LUMO_ULTRA } as Plan;
+    const plansMapWithLumoUltra = { ...plansMap, [PLANS.LUMO_ULTRA]: lumoUltra };
+    const user = {
+        ID: 'user-id',
+        Role: USER_ROLES.ADMIN_ROLE,
+        Subscribed: 1,
+        HasMultipleSubscriptions: 1,
+    } as unknown as User;
+    const MAIL_PLUS_COUPON = 'MAILPLUSCOUPON';
+    const LUMO_PLUS_COUPON = 'LUMOPLUSCOUPON';
+
+    const webMailPlus = buildSubscription(
+        { planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'EUR' },
+        { ID: 'mail-plus', CouponCode: MAIL_PLUS_COUPON }
+    );
+    const webLumoPlus = buildLumoSubscription(PLANS.LUMO, {
+        ID: 'lumo-plus',
+        Cycle: CYCLE.MONTHLY,
+        CouponCode: LUMO_PLUS_COUPON,
+    });
+    const iosLumoPlus = buildLumoSubscription(PLANS.LUMO, { ID: 'ios-lumo-plus', External: SubscriptionPlatform.iOS });
+
+    const toV5Subscription = (subscription: Subscription) => ({ ...subscription, Name: subscription.Plans[0].Name });
+
+    const getApi = (primary: Subscription, secondaries: Subscription[], upcomingSecondaries: Subscription[] = []) =>
+        vi.fn(async ({ url }: { url: string }) => {
+            if (url === 'payments/v4/subscription') {
+                return { Subscription: primary, UpcomingSubscription: undefined };
+            }
+            if (url.startsWith('payments/v5/subscription')) {
+                return {
+                    Subscriptions: [primary, ...secondaries].map(toV5Subscription),
+                    UpcomingSubscriptions: upcomingSecondaries.map(toV5Subscription),
+                };
+            }
+            if (url.includes('organizations')) {
+                return { Organization: { MaxMembers: 1, UsedLumo: 0, MaxLumo: 0 } };
+            }
+            return { PaymentMethods: [] };
+        }) as unknown as Api;
+
+    const runGetUserInfo = async ({
+        api,
+        selectedPlanName,
+        planDefined,
+        lumoMultiSubscriptions = true,
+    }: {
+        api: Api;
+        selectedPlanName: PLANS;
+        planDefined: boolean;
+        lumoMultiSubscriptions?: boolean;
+    }) => {
+        const selectedPlanIDs = { [selectedPlanName]: 1 };
+        const checkSubscription = vi.fn(async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => ({
+            Amount: 0,
+            AmountDue: 0,
+            CouponDiscount: 0,
+            Cycle: data.Cycle,
+            Coupon: null,
+            Currency: data.Currency,
+            SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
+            PeriodEnd: 0,
+            requestData: data,
+        }));
+
+        const result = await getUserInfo({
+            api,
+            audience: Audience.B2C,
+            paymentsApi: { checkSubscription } as unknown as PaymentsApi,
+            user,
+            options: {
+                plansMap: plansMapWithLumoUltra,
+                planIDs: selectedPlanIDs,
+                cycle: CYCLE.TWO_YEARS,
+                currency: 'EUR',
+                billingAddress: { CountryCode: 'CH', State: null },
+                VatId: undefined,
+            },
+            plansMap: plansMapWithLumoUltra,
+            plans: Object.values(plansMapWithLumoUltra) as Plan[],
+            planParameters: {
+                defined: planDefined,
+                planIDs: selectedPlanIDs,
+                plan: plansMapWithLumoUltra[selectedPlanName] as Plan,
+            },
+            signupParameters: {} as SignupParameters2,
+            toApp: APPS.PROTONLUMO,
+            availableCycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
+            lumoMultiSubscriptions,
+            getEntitlementCatalog: vi.fn().mockResolvedValue(multiSubscriptionTestCatalog),
+            paymentStatus: undefined,
+        });
+
+        return { ...result, checkSubscription };
+    };
+
+    it('buys Lumo Plus next to Mail Plus yearly without the Mail Plus cycle, coupon or guards', async () => {
+        const { subscriptionData, upsell, checkSubscription } = await runGetUserInfo({
+            api: getApi(webMailPlus, []),
+            selectedPlanName: PLANS.LUMO,
+            planDefined: true,
+        });
+
+        expect(subscriptionData.cycle).toBe(CYCLE.TWO_YEARS);
+        expect(upsell.currentPlan).toBeUndefined();
+        expect(checkSubscription).toHaveBeenCalledTimes(1);
+        const checkData = checkSubscription.mock.calls[0][0];
+        expect(checkData).toMatchObject({ Plans: { [PLANS.LUMO]: 1 }, Cycle: CYCLE.TWO_YEARS });
+        expect(checkData.CouponCode).toBeUndefined();
+        expect(checkData).not.toHaveProperty('ValidateGuards');
+    });
+
+    it('takes the cycle and coupon of Lumo Plus monthly when the selection changes it, not those of Mail Plus yearly', async () => {
+        const { subscriptionData, checkSubscription } = await runGetUserInfo({
+            api: getApi(webMailPlus, [webLumoPlus]),
+            selectedPlanName: PLANS.LUMO_ULTRA,
+            planDefined: false,
+        });
+
+        expect(subscriptionData.cycle).toBe(CYCLE.MONTHLY);
+        expect(checkSubscription).toHaveBeenCalledTimes(1);
+        expect(checkSubscription.mock.calls[0][0]).toMatchObject({
+            Plans: { [PLANS.LUMO_ULTRA]: 1 },
+            Cycle: CYCLE.MONTHLY,
+            CouponCode: LUMO_PLUS_COUPON,
+            ValidateGuards: true,
+        });
+    });
+
+    it('takes the cycle and coupon of the upcoming Lumo Plus term when it has one', async () => {
+        const UPCOMING_LUMO_PLUS_COUPON = 'LUMOPLUSUPCOMING';
+        const upcomingLumoPlus = {
+            ...buildLumoSubscription(PLANS.LUMO, {
+                ID: 'lumo-plus-upcoming',
+                Cycle: CYCLE.TWO_YEARS,
+                CouponCode: UPCOMING_LUMO_PLUS_COUPON,
+            }),
+            ParentSubscriptionID: webLumoPlus.ID,
+        };
+
+        const { subscriptionData, checkSubscription } = await runGetUserInfo({
+            api: getApi(webMailPlus, [webLumoPlus], [upcomingLumoPlus]),
+            selectedPlanName: PLANS.LUMO_ULTRA,
+            planDefined: false,
+        });
+
+        expect(subscriptionData.cycle).toBe(CYCLE.TWO_YEARS);
+        expect(checkSubscription.mock.calls[0][0]).toMatchObject({
+            Cycle: CYCLE.TWO_YEARS,
+            CouponCode: UPCOMING_LUMO_PLUS_COUPON,
+        });
+    });
+
+    it('checks out Lumo Ultra in place of Lumo Plus without the Unlimited upsell', async () => {
+        const { subscriptionData, upsell, checkSubscription } = await runGetUserInfo({
+            api: getApi(webMailPlus, [webLumoPlus]),
+            selectedPlanName: PLANS.LUMO_ULTRA,
+            planDefined: true,
+        });
+
+        expect(upsell.mode).toBe(UpsellTypes.PLANS);
+        expect(upsell.plan).toBeUndefined();
+        expect(subscriptionData.cycle).toBe(CYCLE.MONTHLY);
+        expect(checkSubscription.mock.calls[0][0]).toMatchObject({
+            Plans: { [PLANS.LUMO_ULTRA]: 1 },
+            Cycle: CYCLE.MONTHLY,
+            CouponCode: LUMO_PLUS_COUPON,
+        });
+    });
+
+    it('offers no Unlimited upsell to a single Lumo Plus subscriber who picks Lumo Plus again', async () => {
+        const { upsell } = await runGetUserInfo({
+            api: getApi(webLumoPlus, []),
+            selectedPlanName: PLANS.LUMO,
+            planDefined: true,
+        });
+
+        expect(upsell.mode).toBe(UpsellTypes.PLANS);
+        expect(upsell.plan).toBeUndefined();
+    });
+
+    it('shows Lumo Plus as the current plan when the selected Lumo Plus changes it', async () => {
+        const { subscriptionData, upsell } = await runGetUserInfo({
+            api: getApi(webMailPlus, [webLumoPlus]),
+            selectedPlanName: PLANS.LUMO,
+            planDefined: true,
+        });
+
+        expect(upsell.currentPlan?.Name).toBe(PLANS.LUMO);
+        expect(subscriptionData.cycle).toBe(CYCLE.MONTHLY);
+    });
+
+    it('lets a Lumo Plus subscriber change the Lumo Plus cycle without the Unlimited upsell', async () => {
+        const { upsell } = await runGetUserInfo({
+            api: getApi(webMailPlus, [webLumoPlus]),
+            selectedPlanName: PLANS.LUMO,
+            planDefined: true,
+        });
+
+        expect(upsell.mode).toBe(UpsellTypes.PLANS);
+        expect(upsell.plan).toBeUndefined();
+    });
+
+    it('keeps the Unlimited upsell for a single Mail Plus subscriber who picks Mail Plus again', async () => {
+        const { upsell } = await runGetUserInfo({
+            api: getApi(webMailPlus, []),
+            selectedPlanName: PLANS.MAIL,
+            planDefined: true,
+        });
+
+        expect(upsell.mode).toBe(UpsellTypes.UPSELL);
+        expect(upsell.plan?.Name).toBe(PLANS.BUNDLE);
+        expect(upsell.currentPlan?.Name).toBe(PLANS.MAIL);
+    });
+
+    it('treats a refused Drive Plus purchase next to Mail Plus and Lumo Plus like a purchase without subscription', async () => {
+        const { state, subscriptionData, upsell } = await runGetUserInfo({
+            api: getApi(webMailPlus, [webLumoPlus]),
+            selectedPlanName: PLANS.DRIVE,
+            planDefined: true,
+        });
+
+        expect(state.unavailable).toBe(true);
+        expect(subscriptionData.cycle).toBe(CYCLE.TWO_YEARS);
+        expect(upsell.currentPlan).toBeUndefined();
+    });
+
+    it('shows Drive Plus as unavailable next to two web subscriptions with the flag off', async () => {
+        const { state, upsell } = await runGetUserInfo({
+            api: getApi(webMailPlus, [webLumoPlus]),
+            selectedPlanName: PLANS.DRIVE,
+            planDefined: true,
+            lumoMultiSubscriptions: false,
+        });
+
+        expect(state.unavailable).toBe(true);
+        expect(state.access).toBe(false);
+        expect(upsell.currentPlan).toBeUndefined();
+    });
+
+    it('lets a store Lumo Plus subscriber without a web subscription buy Mail Plus with the flag off', async () => {
+        const { state, checkSubscription } = await runGetUserInfo({
+            api: getApi(iosLumoPlus, []),
+            selectedPlanName: PLANS.MAIL,
+            planDefined: true,
+            lumoMultiSubscriptions: false,
+        });
+
+        expect(state.unavailable).toBe(false);
+        expect(checkSubscription.mock.calls[0][0]).toMatchObject({ Plans: { [PLANS.MAIL]: 1 } });
+    });
+
+    it('lets a single web Mail Plus subscriber next to a store Lumo Plus subscription buy Drive Plus with the flag off', async () => {
+        const { state, checkSubscription } = await runGetUserInfo({
+            api: getApi(webMailPlus, [iosLumoPlus]),
+            selectedPlanName: PLANS.DRIVE,
+            planDefined: true,
+            lumoMultiSubscriptions: false,
+        });
+
+        expect(state.unavailable).toBe(false);
+        expect(checkSubscription.mock.calls[0][0]).toMatchObject({
+            Plans: { [PLANS.BUNDLE]: 1 },
+            Cycle: CYCLE.YEARLY,
+            CouponCode: MAIL_PLUS_COUPON,
+            ValidateGuards: true,
+        });
+    });
+
+    it('keeps the cycle, coupon, guards and current plan of a single Mail Plus subscription it changes', async () => {
+        const { subscriptionData, upsell, checkSubscription } = await runGetUserInfo({
+            api: getApi(webMailPlus, []),
+            selectedPlanName: PLANS.DUO,
+            planDefined: true,
+        });
+
+        expect(upsell.currentPlan?.Name).toBe(PLANS.MAIL);
+        expect(subscriptionData.cycle).toBe(CYCLE.YEARLY);
+        expect(checkSubscription.mock.calls[0][0]).toMatchObject({
+            Plans: { [PLANS.DUO]: 1 },
+            Cycle: CYCLE.YEARLY,
+            CouponCode: MAIL_PLUS_COUPON,
+            ValidateGuards: true,
+        });
     });
 });

@@ -39,6 +39,7 @@ import {
     isForbiddenModification,
     isSubscriptionCheckForbidden,
 } from '@proton/payments/core/subscription/helpers';
+import { getWebSubscriptions } from '@proton/payments/core/subscription/helpers/external-management';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import {
     type MultiSubscriptionContext,
@@ -46,7 +47,11 @@ import {
     noSubscriptionContext,
 } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap, hasCycle } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { getPurchaseOutcome } from '@proton/payments/core/subscription/purchase-outcome';
+import {
+    getChangedSubscription,
+    getGrantedProductFlags,
+    getPurchaseOutcome,
+} from '@proton/payments/core/subscription/purchase-outcome';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
@@ -108,7 +113,7 @@ export const getSubscriptionData = async (
     options: Options & {
         info?: boolean;
         trial?: boolean;
-        subscription?: Subscription | FreeSubscription;
+        subscription?: Subscription;
         multiSubscriptionContext: MultiSubscriptionContext;
     }
 ): Promise<SubscriptionData> => {
@@ -252,12 +257,53 @@ const getUpsellDataHelper = (
     };
 };
 
+export const getChangedSubscriptionTerm = (
+    multiSubscriptionContext: MultiSubscriptionContext,
+    planIDs: PlanIDs
+): Subscription | undefined => {
+    const changedSubscription = getChangedSubscription(multiSubscriptionContext, planIDs);
+    return changedSubscription?.UpcomingSubscription ?? changedSubscription;
+};
+
+const isPlusPlanIncludedInUnlimited = (
+    multiSubscriptionContext: MultiSubscriptionContext,
+    planName: PLANS | ADDON_NAMES | undefined
+): boolean => {
+    if (!planName || !getHasPlusPlan(planName)) {
+        return false;
+    }
+    const { entitlementCatalog } = multiSubscriptionContext;
+    const unlimitedProducts = getGrantedProductFlags(entitlementCatalog, { [PLANS.BUNDLE]: 1 });
+    const planProducts = getGrantedProductFlags(entitlementCatalog, { [planName]: 1 });
+    return planProducts.length > 0 && planProducts.every((product) => unlimitedProducts.includes(product));
+};
+
 const needsPlusToPlusUpsell = (
     multiSubscriptionContext: MultiSubscriptionContext,
     selectedPlanName: PLANS | ADDON_NAMES
 ): boolean => {
     const outcome = getPurchaseOutcome(multiSubscriptionContext, { [selectedPlanName]: 1 });
-    return outcome.type === 'replaces' && !!getHasPlusPlan(getPlan(outcome.subscription)?.Name);
+    if (outcome.type !== 'replaces') {
+        return false;
+    }
+    const replacedPlanName = getPlan(outcome.subscription)?.Name;
+    const changesTheSamePlanNextToOtherSubscriptions =
+        replacedPlanName === selectedPlanName && multiSubscriptionContext.subscriptions.length > 1;
+    return (
+        !changesTheSamePlanNextToOtherSubscriptions &&
+        isPlusPlanIncludedInUnlimited(multiSubscriptionContext, replacedPlanName) &&
+        isPlusPlanIncludedInUnlimited(multiSubscriptionContext, selectedPlanName)
+    );
+};
+
+const isRefusedNextToSeveralWebSubscriptions = (
+    multiSubscriptionContext: MultiSubscriptionContext,
+    planIDs: PlanIDs
+): boolean => {
+    return (
+        getWebSubscriptions(multiSubscriptionContext.subscriptions).length > 1 &&
+        getPurchaseOutcome(multiSubscriptionContext, planIDs).type === 'refused'
+    );
 };
 
 const getUpsell = ({
@@ -274,7 +320,7 @@ const getUpsell = ({
     audience: Audience;
     currentPlan?: SubscriptionPlan | undefined;
     upsellPlanCard?: PlanCard;
-    subscription?: Subscription | FreeSubscription;
+    subscription?: Subscription;
     plansMap: PlansMap;
     options: Options;
     planParameters: PlanParameters;
@@ -499,7 +545,6 @@ export const getUpdatedPlanIDs = ({
     options,
     subscription,
     plansMap,
-    currentPlan,
     toApp,
     plans,
     organization,
@@ -513,13 +558,13 @@ export const getUpdatedPlanIDs = ({
     plansMap: PlansMap;
     plans: Plan[];
     toApp: APP_NAMES | undefined;
-    subscription: Subscription | FreeSubscription;
-    currentPlan: SubscriptionPlan | undefined;
+    subscription: Subscription | undefined;
     organization: Organization | undefined;
 }) => {
     if (!subscription || !organization || !options.planIDs) {
         return;
     }
+    const currentPlan = getPlan(subscription);
     const planTransitionForbidden = getIsPlanTransitionForbidden({
         subscription,
         plansMap,
@@ -629,12 +674,12 @@ export const getSessionCycle = ({
     plansMap,
 }: {
     signupParameters: Pick<SignupParameters2, 'cycle'>;
-    subscription: Subscription | FreeSubscription;
+    subscription: Subscription | undefined;
     options: Pick<Options, 'cycle' | 'planIDs'>;
     availableCycles: CYCLE[];
     plansMap: PlansMap;
 }): CYCLE => {
-    const preferredCycle = signupParameters.cycle || subscription.Cycle || options.cycle;
+    const preferredCycle = signupParameters.cycle || subscription?.Cycle || options.cycle;
     if (availableCycles.includes(preferredCycle)) {
         return preferredCycle;
     }
@@ -759,13 +804,14 @@ export const getUserInfo = async ({
     });
 
     const subscription: Subscription | FreeSubscription = rawSubscription.UpcomingSubscription ?? rawSubscription;
+    const changedSubscription = getChangedSubscriptionTerm(multiSubscriptionContext, options.planIDs ?? {});
 
     const currentPlan = (() => {
-        const plan = getPlan(subscription);
+        const plan = getPlan(changedSubscription);
         if (plan) {
             return plan;
         }
-        if (organization) {
+        if (organization && multiSubscriptionContext.subscriptions.length === 0) {
             return plansMap[organization.PlanName];
         }
     })();
@@ -773,7 +819,7 @@ export const getUserInfo = async ({
     let upsell = getUpsell({
         audience,
         currentPlan,
-        subscription,
+        subscription: changedSubscription,
         upsellPlanCard,
         plansMap,
         options,
@@ -794,7 +840,7 @@ export const getUserInfo = async ({
 
     const cycle = getSessionCycle({
         signupParameters,
-        subscription,
+        subscription: changedSubscription,
         options,
         availableCycles,
         plansMap,
@@ -802,10 +848,10 @@ export const getUserInfo = async ({
 
     let optionsWithSubscriptionDefaults = {
         ...options,
-        subscription,
+        subscription: changedSubscription,
         cycle,
         currency: options.currency,
-        coupon: options.coupon || subscription.CouponCode || undefined,
+        coupon: options.coupon || changedSubscription?.CouponCode || undefined,
     };
 
     if (upsell.plan) {
@@ -813,7 +859,7 @@ export const getUserInfo = async ({
             ...optionsWithSubscriptionDefaults,
             ...upsell.subscriptionOptions,
             planIDs: switchPlan({
-                subscription,
+                subscription: changedSubscription,
                 newPlanIDs: {
                     [upsell.plan.Name]: 1,
                     ...upsell.addons,
@@ -836,11 +882,10 @@ export const getUserInfo = async ({
     });
 
     const replacePlanIfChangeIsForbidden = getUpdatedPlanIDs({
-        subscription,
+        subscription: changedSubscription,
         organization,
         plans,
         toApp,
-        currentPlan,
         options: optionsWithSubscriptionDefaults,
         plansMap,
         multiSubscriptionContext,
@@ -865,9 +910,11 @@ export const getUserInfo = async ({
         optionsWithSubscriptionDefaults.plansMap = getPlansMap(plans, currency, false);
     }
 
+    const finalPlanIDs = optionsWithSubscriptionDefaults.planIDs ?? {};
     if (
         state.payable &&
-        isForbiddenModification(multiSubscriptionContext, optionsWithSubscriptionDefaults.planIDs ?? {})
+        (isForbiddenModification(multiSubscriptionContext, finalPlanIDs) ||
+            isRefusedNextToSeveralWebSubscriptions(multiSubscriptionContext, finalPlanIDs))
     ) {
         state.access = false;
         state.unavailable = true;
