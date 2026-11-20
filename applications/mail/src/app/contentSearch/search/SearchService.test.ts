@@ -1,6 +1,6 @@
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
-import { DatabaseLock } from '../db/DatabaseLock';
+import { TabLocalDatabaseLock } from '../coordination/TabLocalDatabaseLock';
 import { deferred, flushPromises } from '../integration/import/testFakes';
 import type { MetricService } from '../metrics/MetricService';
 import { LoggerProxy } from '../utils/logger';
@@ -39,7 +39,7 @@ describe('SearchService metrics', () => {
         searchService = new SearchService(
             'user',
             async () => [],
-            new DatabaseLock(),
+            new TabLocalDatabaseLock(),
             new LoggerProxy(undefined),
             metricService,
             true,
@@ -116,7 +116,7 @@ describe('SearchService worker connection', () => {
         searchService = new SearchService(
             'user',
             async () => [],
-            new DatabaseLock(),
+            new TabLocalDatabaseLock(),
             new LoggerProxy(undefined),
             fakeMetricService(),
             true,

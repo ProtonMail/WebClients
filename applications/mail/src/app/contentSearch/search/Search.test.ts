@@ -2,7 +2,7 @@ import type * as Comlink from 'comlink';
 
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
-import { DatabaseLock } from '../db/DatabaseLock';
+import { TabLocalDatabaseLock } from '../coordination/TabLocalDatabaseLock';
 import { openContentSearchDB } from '../db/open';
 import type { MessageCacheEntry } from '../indexation/MessageCache';
 import { LoggerProxy } from '../utils/logger';
@@ -58,7 +58,7 @@ const startedSearch = async (initial: NormalizedSearchParams, messages: SearchRe
         userKeys: undefined,
     });
 
-    const search = new Search(initial, new DatabaseLock(), deps, userId, new LoggerProxy(undefined));
+    const search = new Search(initial, new TabLocalDatabaseLock(), deps, userId, new LoggerProxy(undefined));
     const onResults = jest.fn();
 
     search.onResults.subscribe(onResults);
@@ -130,7 +130,7 @@ describe('Search.update', () => {
         // worker promise never resolves, so execute() never populates unfilteredResults
         const search = new Search(
             params({ filter: { Unread: 1 } }),
-            new DatabaseLock(),
+            new TabLocalDatabaseLock(),
             new Promise(() => {}),
             userId,
             new LoggerProxy(undefined)

@@ -70,11 +70,15 @@ export async function dropImportedIndex(userId: string, logger: Logger) {
     }
 }
 
-/** For the import path: drops an index built by the indexer, so the next import rebuilds it from v1. */
-export async function dropIndexationIndex(userId: string, logger: Logger) {
+/**
+ * For the import path: drops an index built by the indexer, so the next import rebuilds it from v1.
+ * `beforeDelete` lets a tab still on the indexation path stop indexing first.
+ */
+export async function dropIndexationIndex(userId: string, logger: Logger, beforeDelete: () => void) {
     if ((await readIndexOrigin(userId)) !== 'indexation') {
         return;
     }
     logger.info('dropping the index built by the indexer');
+    beforeDelete();
     await deleteContentSearchDB(userId);
 }

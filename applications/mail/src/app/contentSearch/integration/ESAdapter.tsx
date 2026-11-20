@@ -248,17 +248,18 @@ export class ESAdapter implements FunctionsV2 {
         let timeEstimation: TimeEstimation | undefined;
         this.unsubscribeFromIndexService = this.indexService.subscribe({
             reportHistoricProgress: (processed: number, total: number) => {
-                this.logger.info(`historic progress: ${processed}/${total}`);
-                timeEstimation?.setInitialAmountIfNotSet(processed);
+                // A tab that follows the leader doesn't see the historic pass start, or joins after it started:
+                // it estimates from the first progress it gets.
+                timeEstimation ??= new TimeEstimation(performance.now());
+                timeEstimation.setInitialAmountIfNotSet(processed);
                 this.updateESProgress([processed, total], {
                     esProgress: processed,
-                    estimatedMinutes: timeEstimation?.remainingMinutes(performance.now(), processed, total) ?? 0,
+                    estimatedMinutes: timeEstimation.remainingMinutes(performance.now(), processed, total),
                     totalIndexingItems: total,
                     currentProgressValue: total === 0 ? 0 : Math.ceil((processed / total) * 100),
                 });
             },
             reportIndexComplete: () => {
-                this.logger.info('index complete');
                 this.updateESStatus(finishedIndexingStatus());
             },
             reportTaskStarted: (taskName: TaskName) => {

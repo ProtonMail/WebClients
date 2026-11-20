@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 
 import { useGetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { getSharedIndexService } from '../indexation/IndexService';
@@ -33,11 +34,12 @@ const getRemainingMinutesFromImporter = (importer: ImportHandle | undefined) =>
  */
 export function useImporter(): ImporterState {
     const [user] = useUser();
+    const { APP_VERSION } = useConfig();
     const api = useApi();
     const getUserKeys = useGetUserKeys();
     const getMessageKeys = useGetMessageKeys();
     const [importer, setImporter] = useState<ImportHandle | undefined>(
-        getSharedIndexService(user.ID, api, getUserKeys, getMessageKeys, logger).currentImport
+        getSharedIndexService(user.ID, APP_VERSION, api, getUserKeys, getMessageKeys, logger).currentImport
     );
     const [running, setRunning] = useState(importer?.running ?? false);
     const [progress, setProgress] = useState((importer?.progress ?? 0) * 100);
@@ -85,7 +87,7 @@ export function useImporter(): ImporterState {
         setIssues([]);
         setProgress(0);
         setRunning(true);
-        const indexService = getSharedIndexService(user.ID, api, getUserKeys, getMessageKeys, logger);
+        const indexService = getSharedIndexService(user.ID, APP_VERSION, api, getUserKeys, getMessageKeys, logger);
         const importer = await indexService.importFromEncryptedSearch();
         setImporter(importer); // triggers the effect above, which subscribes to the new importer
     };

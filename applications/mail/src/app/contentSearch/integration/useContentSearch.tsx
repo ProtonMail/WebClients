@@ -6,6 +6,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { defaultESIndexingState, defaultESStatus } from '@proton/encrypted-search/constants';
 import type { IndexingMetrics } from '@proton/encrypted-search/esHelpers/esProgress';
@@ -19,10 +20,10 @@ import { useGetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import { esSearching, selectSearch } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-import { getSharedIndexService } from '../indexation/IndexService';
+import { getSharedIndexService, retainSharedIndexService } from '../indexation/IndexService';
 import type { MetricService } from '../metrics/MetricService';
 import { SearchService } from '../search/SearchService';
-import { logger } from '../utils/logger';
+import { createTabLogger } from '../utils/logger';
 import { ESAdapter as IndexESAdapter } from './ESAdapter';
 import { ESAdapter as ImportESAdapter, type ESStatusConcrete as ImportESStatusConcrete } from './import/ESAdapter';
 
@@ -116,6 +117,7 @@ export const useContentSearch = ({
     metricService,
 }: Props): ContentSearchFunctions => {
     const api = useApi();
+    const { APP_VERSION } = useConfig();
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
     const [addresses] = useAddresses();
@@ -126,6 +128,8 @@ export const useContentSearch = ({
     // passed at construction (see below). progressRecorderRef stays a ref like in V1 — it's the raw
     // [indexed, total] counter — but it's paired with the esIndexingProgressState state update so a
     // progress tick still triggers a re-render (a ref write alone wouldn't).
+    // Created once per tab, so the lines of each tab carry an id of their own.
+    const [logger] = useState(createTabLogger);
     const [esStatus, setESStatus] = useState<ImportESStatusConcrete>(defaultESStatus);
     const [esIndexingProgressState, setESIndexingProgressState] = useState<ESIndexingState>(defaultESIndexingState);
     const progressRecorderRef = useRef<ESTimepoint>([0, 0]);
@@ -138,8 +142,9 @@ export const useContentSearch = ({
     // onto it below — rather than recreating it, which is what encoding them as memo deps would do.
     // It only depends on the userID which doesn't change within the lifetime of the app.
     const adapterRef = useRef<ImportESAdapter | IndexESAdapter>(undefined);
+    // A singleton, so the same instance on every render.
+    const indexService = getSharedIndexService(user.ID, APP_VERSION, api, getUserKeys, getMessageKeys, logger);
     if (!adapterRef.current) {
-        const indexService = getSharedIndexService(user.ID, api, getUserKeys, getMessageKeys, logger);
         // Without `ContentSearch` the database is left alone: neither path uses it.
         if (isContentSearchEnabled) {
             indexService.resetDbBetweenFeatureFlagSwitches(isIndexationPath);
@@ -198,6 +203,11 @@ export const useContentSearch = ({
         adapter.esLibraryFunctionsV1 = esLibraryFunctionsV1;
         adapter.isActive = isActive;
     }
+
+    // The index service takes part in electing the tab that indexes once initialized: it leaves when the app goes.
+    useEffect(() => {
+        return retainSharedIndexService();
+    }, []);
 
     // Observe V1's status and progress and forward them into the adapter, which decides what to push
     // back out through the setters above. Kept as two channels so the import-on-completion side effect

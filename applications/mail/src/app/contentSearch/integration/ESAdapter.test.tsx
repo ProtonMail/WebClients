@@ -39,6 +39,7 @@ const fakeIndexService = (historicalFinished: boolean) => {
 const setup = async (historicalFinished: boolean) => {
     const { indexService, listener } = fakeIndexService(historicalFinished);
     const updateESStatus = jest.fn();
+    const updateESProgress = jest.fn();
     const notifyIndexingFailed = jest.fn();
     const adapter = new ESAdapter({
         searchService: {} as SearchService,
@@ -46,7 +47,7 @@ const setup = async (historicalFinished: boolean) => {
         metricService: {} as MetricService,
         esCallbacks: {} as ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>,
         updateESStatus,
-        updateESProgress: jest.fn(),
+        updateESProgress,
         notifyIndexingFailed,
         logger,
     });
@@ -55,7 +56,7 @@ const setup = async (historicalFinished: boolean) => {
         listener().reportIndexComplete();
     }
     updateESStatus.mockClear();
-    return { listener: listener(), updateESStatus, notifyIndexingFailed };
+    return { listener: listener(), updateESStatus, updateESProgress, notifyIndexingFailed };
 };
 
 const flushPromises = () => {
@@ -82,6 +83,25 @@ describe('ESAdapter', () => {
 
             expect(updateESStatus).not.toHaveBeenCalled();
             expect(notifyIndexingFailed).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('historic progress', () => {
+        it('estimates the time remaining in a tab that only gets the progress, as one following the leader', async () => {
+            const now = jest.spyOn(performance, 'now');
+            const { listener, updateESProgress } = await setup(false);
+
+            now.mockReturnValue(1_000);
+            listener.reportHistoricProgress(100, 1000);
+            now.mockReturnValue(61_000);
+            listener.reportHistoricProgress(200, 1000);
+
+            // 100 messages a minute, 800 to go
+            expect(updateESProgress).toHaveBeenLastCalledWith(
+                [200, 1000],
+                expect.objectContaining({ esProgress: 200, totalIndexingItems: 1000, estimatedMinutes: 8 })
+            );
+            now.mockRestore();
         });
     });
 });
