@@ -180,7 +180,7 @@ function EmptyState({ variant }: EmptyStateProps) {
           className={clsx(variant === 'recents' ? 'w-[38.3125rem] scale-110 xsmall:scale-100' : 'w-[8.125rem]')}
           aria-hidden="true"
           src={variant === 'recents' ? emptyStateRecentsImage : emptyStateImage}
-          alt="Empty state illustration"
+          alt=""
         />
         <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">{getEmptyStateText(variant, messages)}</p>
         {variant === 'recents' ? <RecentsEmptyStateButtons /> : null}

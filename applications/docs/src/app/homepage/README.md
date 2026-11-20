@@ -6,9 +6,9 @@ Files inside this path import each other with relative paths, never through the 
 
 Drive SDK: the `ProtonDriveClient` instance (from `getDrive`) is injected by the host. Everything else (functions, enums, error classes, types) is imported from `@protontech/drive-sdk`, never from `@proton/drive`.
 
-The host injects values and functions, never hooks.
+The host injects values and functions, never hooks. It passes them all as one `HomepageDependencies` object to `HomepageDependenciesProvider`, which wraps the module's header, sidebar and content; the host's `HomepageAdapter` (`routes/(user)/(homepage)/__components/`) builds it, as `DocsAdapter` does for the Docs editor.
 
-Strings: nothing here imports ttag. `messages/` holds the English defaults, one group per area, and components read them with `useHomepageMessages()`; a helper outside React takes its group as a parameter. The host translates them with ttag in `routes/(user)/(homepage)/__utils/homepageMessages/`, one `create<Area>Messages()` per group, and passes them to `HomepageMessagesProvider`; without it, the homepage shows the defaults. A string with a parameter or plural is a function with the same signature in both. Keep the host's context, msgid and parameter names, which existing translations match.
+Strings: nothing here imports ttag. `messages/` holds the English defaults, one group per area, and components read them with `useHomepageMessages()`; a helper outside React takes its group as a parameter. The host translates them with ttag in `routes/(user)/(homepage)/__utils/homepageMessages/`, one `create<Area>Messages()` per group, and passes them as `HomepageDependencies.messages`. A string with a parameter or plural is a function with the same signature in both. Keep the host's context, msgid and parameter names, which existing translations match.
 
 It reads no feature flags itself (no `~/utils/flags` or `@proton/unleash`): the host resolves the ones it needs into `featureFlags`.
 

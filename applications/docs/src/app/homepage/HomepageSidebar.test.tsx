@@ -75,7 +75,7 @@ function renderSidebar({
     reportTelemetry: jest.fn(),
     createNotification: jest.fn(),
     getAppHref: (path: string) => path,
-    dateFormatter: new DateFormatter('en-US'),
+    dateFormatter: new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' }),
   } as unknown as HomepageViewValue
 
   render(

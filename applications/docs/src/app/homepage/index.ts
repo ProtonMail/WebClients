@@ -17,8 +17,10 @@ export {
 export { SidebarStateProvider, type SidebarStateProviderProps } from './sidebarState'
 export { HomepageContent } from './HomepageContent/HomepageContent'
 export { HomepageStyleScope, type HomepageStyleScopeProps } from './HomepageStyleScope'
-export { HomepageViewProvider } from './HomepageViewProvider'
-export type { HomepageViewProviderProps } from './homepageViewUtils'
-export { DocumentActionsProvider, type DocumentActionsProviderProps } from './DocumentActionsProvider'
-export { HomepageMessagesProvider, type HomepageMessagesProviderProps } from './messages/HomepageMessagesProvider'
+export {
+  HomepageDependenciesProvider,
+  type HomepageDependencies,
+  type HomepageDependenciesProviderProps,
+} from './HomepageDependenciesProvider'
 export type { HomepageMessages } from './messages/defaultHomepageMessages'
+export type { HomepageDateFormat } from './utils/dateFormatter'

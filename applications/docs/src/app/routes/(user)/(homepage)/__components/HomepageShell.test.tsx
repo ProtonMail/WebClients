@@ -99,16 +99,17 @@ jest.mock('@proton/components/helpers/appVersion', () => ({
   getAppVersion: (appVersion: string) => `${appVersion}+commit`,
 }))
 jest.mock('@proton/components/hooks/useAppTitle', () => ({ __esModule: true, default: jest.fn() }))
-
+jest.mock('@proton/app-context/useConfig', () => ({
+  useConfig: () => ({ APP_VERSION: '1.0.0', CLIENT_TYPE: 1 }),
+}))
 describe('HomepageShell', () => {
   test('places the homepage parts in the Proton app frame', () => {
-    render(
-      <HomepageShell reportDescriptionContext={['Report context']} appVersion="1.0.0">
-        Content
-      </HomepageShell>,
-    )
+    render(<HomepageShell>Content</HomepageShell>)
 
-    expect(screen.getByRole('banner')).toHaveTextContent('Header Report contextPrivate headerUser dropdown')
+    const banner = screen.getByRole('banner')
+    expect(banner).toHaveTextContent(/^Header Automatically collected information:/)
+    expect(banner).toHaveTextContent('Client version: 1.0.0+commit Client type: 1')
+    expect(banner).toHaveTextContent(/Private headerUser dropdown$/)
     expect(screen.getByRole('complementary')).toHaveTextContent(
       'Sidebar 1.0.0Proton sidebarApps dropdownLogo proton-docsApp version 1.0.0 1.0.0+commitSidebar item link',
     )

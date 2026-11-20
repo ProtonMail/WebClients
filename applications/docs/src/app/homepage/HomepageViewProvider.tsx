@@ -52,7 +52,7 @@ export function HomepageViewProvider({
   reportTelemetry,
   createNotification,
   getAppHref,
-  dateLocaleCode,
+  dateFormat: { localeCode: dateLocaleCode, hourCycle },
   errorTracking,
   featureFlags,
   addresses,
@@ -184,7 +184,10 @@ export function HomepageViewProvider({
     messages.names,
   ])
 
-  const dateFormatter = useMemo(() => new DateFormatter(dateLocaleCode), [dateLocaleCode])
+  const dateFormatter = useMemo(
+    () => new DateFormatter({ localeCode: dateLocaleCode, hourCycle }),
+    [dateLocaleCode, hourCycle],
+  )
 
   const value = useMemo(
     (): HomepageViewValue => ({

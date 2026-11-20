@@ -348,7 +348,7 @@ function renderProvider(path: string, { myFilesRootFolder = new Promise<never>((
             reportTelemetry={jest.fn()}
             createNotification={createNotification}
             getAppHref={(path) => path}
-            dateLocaleCode="en-US"
+            dateFormat={{ localeCode: 'en-US', hourCycle: 'h12' }}
             errorTracking={ERROR_TRACKING}
             featureFlags={FEATURE_FLAGS}
             addresses={[]}

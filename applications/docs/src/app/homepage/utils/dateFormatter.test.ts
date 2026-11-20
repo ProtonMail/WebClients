@@ -10,7 +10,7 @@ describe('DateFormatter', () => {
       [new Date('2023-07-06'), 'Thursday'],
       [new Date('2023-06-05'), 'Jun 5'],
     ])('format %s to %s', (date, formatted) => {
-      const dateFormatter = new DateFormatter('en-US')
+      const dateFormatter = new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' })
       expect(dateFormatter.formatDate(date)).toBe(formatted)
     })
   })
@@ -21,7 +21,16 @@ describe('DateFormatter', () => {
       [new Date('2023T13:00'), '1:00 PM'],
       [new Date('2023T00:00'), '12:00 AM'],
     ])('format %s to %s', (date, formatted) => {
-      const dateFormatter = new DateFormatter('en-US')
+      const dateFormatter = new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' })
+      expect(dateFormatter.formatTime(date)).toBe(formatted)
+    })
+
+    it.each([
+      [new Date('2023T04:25'), '04:25'],
+      [new Date('2023T13:00'), '13:00'],
+      [new Date('2023T00:00'), '00:00'],
+    ])('format %s to %s on a 24-hour clock', (date, formatted) => {
+      const dateFormatter = new DateFormatter({ localeCode: 'en-US', hourCycle: 'h23' })
       expect(dateFormatter.formatTime(date)).toBe(formatted)
     })
   })
@@ -36,7 +45,7 @@ describe('DateFormatter', () => {
       [new Date('2023-07-07T12:00:00'), new Date('2023-07-08T13:00:00'), 'yesterday'],
     ])('format %s at %s to %s', (date, now, formatted) => {
       jest.setSystemTime(now)
-      const dateFormatter = new DateFormatter('en-US')
+      const dateFormatter = new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' })
       expect(dateFormatter.formatDateOrTimeIfToday(date, 'Just now')).toBe(formatted)
     })
   })

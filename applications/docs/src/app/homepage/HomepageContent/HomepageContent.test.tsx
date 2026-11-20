@@ -1178,7 +1178,7 @@ describe('HomepageContent', () => {
           logger: mockLogger,
           createNotification: jest.fn(),
           getAppHref: (path) => path,
-          dateFormatter: new DateFormatter('en-US'),
+          dateFormatter: new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' }),
           errorTracking: { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true },
           featureFlags: { bulkTrash: bulkTrashEnabled, bulkMove: bulkMoveEnabled },
           addresses: mockAddresses,

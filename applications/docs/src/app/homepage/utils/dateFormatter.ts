@@ -1,6 +1,12 @@
-// Copy of packages/docs-core/lib/VersionHistory/DateFormatter.ts, taking the locale it formats for
+// Copy of packages/docs-core/lib/VersionHistory/DateFormatter.ts, taking the locale and the clock it formats for
 
 const MILLISECONDS_IN_DAY = 86400000
+
+/** How the host formats dates: the locale, such as `en-US`, and whether times use a 12-hour or a 24-hour clock. */
+export type HomepageDateFormat = {
+  localeCode: string
+  hourCycle: 'h12' | 'h23'
+}
 
 export class DateFormatter {
   private relativeDayFormatter: Intl.RelativeTimeFormat
@@ -8,17 +14,17 @@ export class DateFormatter {
   private dateFormatter: Intl.DateTimeFormat
   private timeFormatter: Intl.DateTimeFormat
 
-  constructor(locale: string | undefined) {
-    this.relativeDayFormatter = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' })
-    this.weekdayFormatter = new Intl.DateTimeFormat(locale, { weekday: 'long' })
-    this.dateFormatter = new Intl.DateTimeFormat(locale, {
+  constructor({ localeCode, hourCycle }: HomepageDateFormat) {
+    this.relativeDayFormatter = new Intl.RelativeTimeFormat(localeCode, { numeric: 'auto' })
+    this.weekdayFormatter = new Intl.DateTimeFormat(localeCode, { weekday: 'long' })
+    this.dateFormatter = new Intl.DateTimeFormat(localeCode, {
       day: 'numeric',
       month: 'short',
     })
-    this.timeFormatter = new Intl.DateTimeFormat(locale, {
+    this.timeFormatter = new Intl.DateTimeFormat(localeCode, {
       hour: 'numeric',
       minute: 'numeric',
-      hour12: true,
+      hourCycle,
     })
   }
 

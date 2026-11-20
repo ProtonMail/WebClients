@@ -4,7 +4,6 @@ import LocationErrorBoundary from '@proton/components/containers/app/LocationErr
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { DriveStoreProvider } from '@proton/drive-store/lib/DriveStoreProvider'
 import { useDriveCompat } from '@proton/drive-store/lib/useDriveCompat'
-import type { Application } from '@proton/docs-core/Application/Application'
 import { Suspense, lazy } from 'react'
 import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-compat'
 
@@ -21,7 +20,6 @@ import { useInitializeApplication } from './useInitializeApplication'
 import { useCoreEventSubscription } from '~/drive-sdk/core-event-subscriber'
 import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import { HOMEPAGE_PATHS, HOMEPAGE_RECENTS_PATH } from '../__utils/homepage-paths'
-import { HomepageHost } from './HomepageHost'
 
 // container
 // ---------
@@ -54,7 +52,7 @@ function Content() {
   return (
     <ApplicationProvider application={application}>
       <DocsNotificationsProvider>
-        <AppRoutes driveCompat={driveCompat} application={application} />
+        <AppRoutes driveCompat={driveCompat} />
       </DocsNotificationsProvider>
     </ApplicationProvider>
   )
@@ -65,10 +63,11 @@ function Content() {
 
 const DocumentPage = lazy(() => import('../(document)/doc/page'))
 const DocumentPageV2 = lazy(() => import('../(document)/doc2/page'))
+const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 
-type AppRoutesProps = { driveCompat: DriveCompat; application: Application }
+type AppRoutesProps = { driveCompat: DriveCompat }
 
-function AppRoutes({ driveCompat, application }: AppRoutesProps) {
+function AppRoutes({ driveCompat }: AppRoutesProps) {
   const isRealtimeSdkEnabled = useRealtimeSdkEnabled()
 
   const documentPage = (
@@ -83,7 +82,11 @@ function AppRoutes({ driveCompat, application }: AppRoutesProps) {
     </Suspense>
   )
 
-  const homepagePage = <HomepageHost application={application} />
+  const homepagePage = (
+    <Suspense>
+      <HomepagePage />
+    </Suspense>
+  )
 
   return (
     <Routes>
