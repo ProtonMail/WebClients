@@ -563,7 +563,7 @@ const Step1 = ({
         // default plan, and would cancel the check of the selected one
         onBillingAddressChange: (billingAddress: FullBillingAddressFlat) => {
             if (!isLoadingModelDeps) {
-                void payments.selectFullBillingAddress(billingAddress);
+                payments.selectFullBillingAddress(billingAddress);
             }
         },
         initialBillingAddress: payments.billingAddress,
@@ -573,7 +573,7 @@ const Step1 = ({
         selectedPlanName: selectedPlan?.Name,
         onVatChange: (vatNumber) => {
             if (!isLoadingModelDeps) {
-                void payments.setVatNumber(vatNumber);
+                payments.setVatNumber(vatNumber);
             }
         },
     });
@@ -880,7 +880,8 @@ const Step1 = ({
             currencies={payments.getAvailableCurrencies(selectedPlan.Name as PLANS)}
             mode="select-two"
             currency={options.currency}
-            loading={loadingPaymentDetails}
+            // Only while a currency change is checked
+            loading={loadingPaymentDetails && options.currency !== payments.checkResult.Currency}
             onSelect={(currency) => handleChangeCurrency(currency)}
         />
     );
@@ -974,7 +975,7 @@ const Step1 = ({
             initialLoading={isLoadingModelDeps}
             couponConfig={payments.couponConfig}
             options={options}
-            loadingPaymentDetails={disablePayButton}
+            loadingPaymentDetails={disablePayButton && !payments.pricedBeforeCheck}
             upsellToggle={getUpsellToggle()}
             planInformation={summaryPlanInformation}
             giftCode={

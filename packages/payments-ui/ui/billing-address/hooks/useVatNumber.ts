@@ -149,13 +149,16 @@ export const useVatNumber = ({
         }
     };
 
-    const handleBillingAddressChange = (billingAddressExtraProperties: BillingAddressExtraProperties) => {
+    const handleBillingAddressChange = (
+        billingAddressExtraProperties: BillingAddressExtraProperties,
+        newVatNumber = vatNumber
+    ) => {
         const fullBillingAddress: FullBillingAddressFlat = {
             CountryCode: taxCountry.selectedCountryCode,
             State: taxCountry.federalStateCode,
             ZipCode: taxCountry.zipCode,
             ...billingAddressExtraProperties,
-            VatId: cleanVatNumber(vatNumber, taxCountry.selectedCountryCode),
+            VatId: cleanVatNumber(newVatNumber, taxCountry.selectedCountryCode),
         };
 
         const vatFormErrors = getVatFormErrors(fullBillingAddress);
@@ -265,9 +268,17 @@ export const useVatNumber = ({
         setUnauthenticatedCollapsed: (isCollapsed: boolean) => {
             setUnauthenticatedCollapsed(isCollapsed);
             if (isCollapsed) {
+                const hasBusinessDetails =
+                    !!cleanVatNumber(vatNumber, taxCountry.selectedCountryCode) ||
+                    Object.values(billingAddressExtraRef.current).some(isTruthy);
                 resetPristine();
                 setVatNumber('');
                 setBillingAddressExtra(INITIAL_BILLING_ADDRESS_EXTRA);
+                // The parent keeps the details it was given until it hears they're gone
+                if (hasBusinessDetails) {
+                    handleBillingAddressChange(INITIAL_BILLING_ADDRESS_EXTRA, '');
+                    onVatChange?.('');
+                }
             } else {
                 resetPristine();
                 // onVatChange intentionally not called — prefix alone is not a valid VAT number.

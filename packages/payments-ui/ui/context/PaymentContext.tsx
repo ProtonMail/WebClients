@@ -110,6 +110,8 @@ interface PaymentsContextProviderState {
     loading: boolean;
 }
 
+type CheckInputs = Pick<PaymentsContextProviderState, 'planToCheck' | 'billingAddress' | 'vatNumber'>;
+
 const toMultiSubscriptionContext = (
     lumoMultiSubscriptions: boolean,
     { subscription, entitlementCatalog }: Pick<PaymentsContextProviderState, 'subscription' | 'entitlementCatalog'>
@@ -174,98 +176,96 @@ export const PaymentsContextProvider = ({
 
     const { createNotification } = useNotifications();
 
-    // The details only fill in what the address doesn't have, so what the user typed in the form wins. A missing
-    // detail isn't added as an empty field, which the subscription rejects
-    const withBillingDetails = (billingAddress: BillingAddressExtended): BillingAddressExtended =>
-        ({
-            ...Object.fromEntries(Object.entries(billingDetails ?? {}).filter(([, value]) => value)),
-            ...Object.fromEntries(Object.entries(billingAddress).filter(([, value]) => value !== undefined)),
-        }) as BillingAddressExtended;
+    // The details only fill in the fields the address doesn't have, so what the user typed in the form wins, even a
+    // field they cleared. A missing detail isn't added as an empty field, which the subscription rejects
+    const withBillingDetails = (billingAddress: BillingAddressExtended): BillingAddressExtended => ({
+        ...Object.fromEntries(Object.entries(billingDetails ?? {}).filter(([, value]) => value)),
+        ...billingAddress,
+    });
 
     const [, rerender] = useState<{}>({});
-    const stateRef = useRef<PaymentsContextProviderState>(
-        (() => {
-            const subscription = subscriptionInitial ?? FREE_SUBSCRIPTION;
-            const plansData = plansInitial ?? {
-                plans: cachedPlans ?? [],
-                freePlan: FREE_PLAN,
-            };
-            const paymentStatus = paymentStatusInitial;
-            const entitlementCatalog = entitlementCatalogInitial ?? emptyEntitlementCatalog;
-            const billingAddress = paymentStatus
-                ? getBillingAddressFromPaymentStatus(paymentStatus, { shouldRestoreZipCode: !authenticated })
-                : DEFAULT_TAX_BILLING_ADDRESS;
+    const [initialState] = useState((): PaymentsContextProviderState => {
+        const subscription = subscriptionInitial ?? FREE_SUBSCRIPTION;
+        const plansData = plansInitial ?? {
+            plans: cachedPlans ?? [],
+            freePlan: FREE_PLAN,
+        };
+        const paymentStatus = paymentStatusInitial;
+        const entitlementCatalog = entitlementCatalogInitial ?? emptyEntitlementCatalog;
+        const billingAddress = paymentStatus
+            ? getBillingAddressFromPaymentStatus(paymentStatus, { shouldRestoreZipCode: !authenticated })
+            : DEFAULT_TAX_BILLING_ADDRESS;
 
-            const initialMultiSubscriptionContext = toMultiSubscriptionContext(lumoMultiSubscriptions, {
-                subscription,
-                entitlementCatalog,
-            });
-            const autoCurrency = getPreferredCurrency({
-                user,
-                multiSubscriptionContext: initialMultiSubscriptionContext,
-                plans: plansData.plans,
-                paymentStatus,
-            });
-            const plansMap = getLocalizedPlansMapParametrized({
-                paramCurrency: autoCurrency,
-                paymentStatus,
-                multiSubscriptionContext: initialMultiSubscriptionContext,
-                plans: plansData.plans,
-            });
+        const initialMultiSubscriptionContext = toMultiSubscriptionContext(lumoMultiSubscriptions, {
+            subscription,
+            entitlementCatalog,
+        });
+        const autoCurrency = getPreferredCurrency({
+            user,
+            multiSubscriptionContext: initialMultiSubscriptionContext,
+            plans: plansData.plans,
+            paymentStatus,
+        });
+        const plansMap = getLocalizedPlansMapParametrized({
+            paramCurrency: autoCurrency,
+            paymentStatus,
+            multiSubscriptionContext: initialMultiSubscriptionContext,
+            plans: plansData.plans,
+        });
 
-            const initialPlanIDs =
-                subscription && !isFreeSubscription(subscription) ? getPlanIDs(subscription) : { [PLANS.MAIL]: 1 };
+        const initialPlanIDs =
+            subscription && !isFreeSubscription(subscription) ? getPlanIDs(subscription) : { [PLANS.MAIL]: 1 };
 
-            /** The `trial` property here does not refer to the current trail status of the subscription.
-             * Use this value if you want to start a new trial as part of the transaction.
-             * As PaymentContext does not have any use-case where we need to start a trial, it is set to `undefined`
-             * In the future iterations, if it still remains unused, we will eventually remove it
-             **/
+        /** The `trial` property here does not refer to the current trail status of the subscription.
+         * Use this value if you want to start a new trial as part of the transaction.
+         * As PaymentContext does not have any use-case where we need to start a trial, it is set to `undefined`
+         * In the future iterations, if it still remains unused, we will eventually remove it
+         **/
 
-            const cycle = CYCLE.MONTHLY;
-            const trial = shouldPassIsTrial({
-                plansMap,
-                newPlanIDs: initialPlanIDs,
-                newCycle: cycle,
-                downgradeIsTrial: true,
-                subscription,
-                entitlementCatalog,
-            });
-            const planToCheck = {
-                cycle,
-                currency: autoCurrency,
-                planIDs: initialPlanIDs,
-                coupon: undefined,
-                trial,
-            };
-            const checkResult = computeOptimisticCheckResult(
-                {
-                    cycle: planToCheck.cycle,
-                    planIDs: planToCheck.planIDs,
-                    plansMap: plansMap,
-                    currency: planToCheck.currency,
-                },
-                subscription,
-                { isTrial: trial }
-            );
+        const cycle = CYCLE.MONTHLY;
+        const trial = shouldPassIsTrial({
+            plansMap,
+            newPlanIDs: initialPlanIDs,
+            newCycle: cycle,
+            downgradeIsTrial: true,
+            subscription,
+            entitlementCatalog,
+        });
+        const planToCheck = {
+            cycle,
+            currency: autoCurrency,
+            planIDs: initialPlanIDs,
+            coupon: undefined,
+            trial,
+        };
+        const checkResult = computeOptimisticCheckResult(
+            {
+                cycle: planToCheck.cycle,
+                planIDs: planToCheck.planIDs,
+                plansMap: plansMap,
+                currency: planToCheck.currency,
+            },
+            subscription,
+            { isTrial: trial }
+        );
 
-            return {
-                telemetryContext: 'other',
-                product: 'generic',
-                billingAddress,
-                subscription,
-                plansData,
-                paymentStatus,
-                initialized: false,
-                availableCurrencies: mainCurrencies,
-                planToCheck,
-                checkResult,
-                vatNumber: undefined,
-                loading: false,
-                entitlementCatalog,
-            };
-        })()
-    );
+        return {
+            telemetryContext: 'other',
+            product: 'generic',
+            billingAddress,
+            subscription,
+            plansData,
+            paymentStatus,
+            initialized: false,
+            availableCurrencies: mainCurrencies,
+            planToCheck,
+            checkResult,
+            vatNumber: undefined,
+            loading: false,
+            entitlementCatalog,
+        };
+    });
+    const stateRef = useRef<PaymentsContextProviderState>(initialState);
 
     const getMultiSubscriptionContext = (): MultiSubscriptionContext =>
         toMultiSubscriptionContext(lumoMultiSubscriptions, stateRef.current);
@@ -277,6 +277,14 @@ export const PaymentsContextProvider = ({
 
     const abortControllerRef = useRef<AbortController | undefined>(undefined);
     const guardedSelectionRef = useRef<SubscriptionSelection | undefined>(undefined);
+    // The changes asked for since the last check settled. A check started meanwhile builds on them rather than on the
+    // checked state, so it doesn't drop the change it aborts
+    const requestedRef = useRef<Partial<CheckInputs>>({});
+    const getRequested = (): CheckInputs => ({
+        planToCheck: requestedRef.current.planToCheck ?? stateRef.current.planToCheck,
+        billingAddress: requestedRef.current.billingAddress ?? stateRef.current.billingAddress,
+        vatNumber: requestedRef.current.vatNumber ?? stateRef.current.vatNumber,
+    });
 
     const getLocalizedPlansMap = (params: { paramCurrency?: Currency }) => {
         return getLocalizedPlansMapParametrized({
@@ -341,9 +349,17 @@ export const PaymentsContextProvider = ({
     const calculateSubscriptionEstimation = async (
         diff: Partial<PaymentsContextProviderState>
     ): Promise<SubscriptionEstimation> => {
-        const newPlanToCheck = diff.planToCheck ?? stateRef.current.planToCheck;
-        const newBillingAddress = diff.billingAddress ?? stateRef.current.billingAddress;
-        const newVatNumber = diff.vatNumber ?? stateRef.current.vatNumber;
+        const requested = getRequested();
+        const newPlanToCheck = diff.planToCheck ?? requested.planToCheck;
+        // Each part of the billing form sends only its own fields, e.g. the country, state and ZIP code
+        const newBillingAddress = { ...requested.billingAddress, ...diff.billingAddress };
+        const newVatNumber = diff.vatNumber ?? requested.vatNumber;
+        // Only the changes, so what loads meanwhile, e.g. the billing address of the payment status, still applies
+        requestedRef.current = {
+            planToCheck: diff.planToCheck ?? requestedRef.current.planToCheck,
+            billingAddress: diff.billingAddress ? newBillingAddress : requestedRef.current.billingAddress,
+            vatNumber: diff.vatNumber ?? requestedRef.current.vatNumber,
+        };
 
         const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(getMultiSubscriptionContext(), {
             planIDs: newPlanToCheck.planIDs,
@@ -376,10 +392,11 @@ export const PaymentsContextProvider = ({
             return newCheckResult;
         }
 
-        try {
-            abortControllerRef.current?.abort();
-            abortControllerRef.current = new AbortController();
+        abortControllerRef.current?.abort();
+        const abortController = new AbortController();
+        abortControllerRef.current = abortController;
 
+        try {
             const selection = { planIDs: newPlanToCheck.planIDs, cycle: newPlanToCheck.cycle };
             const shouldValidateGuards =
                 withGuards &&
@@ -411,7 +428,7 @@ export const PaymentsContextProvider = ({
             }
 
             const newCheckResult = await paymentsApiRef.current.checkSubscription(subscriptionData, {
-                signal: abortControllerRef.current.signal,
+                signal: abortController.signal,
                 previousEstimation: stateRef.current.checkResult,
             });
             // An optimistic result is built by the frontend after a recoverable error and carries no guard verdict.
@@ -431,10 +448,15 @@ export const PaymentsContextProvider = ({
             paymentsApiRef.current.cacheMultiCheck(subscriptionData, newCheckResult);
 
             return displayedCheckResult;
-        } catch (error) {
-            throw error;
         } finally {
-            setState({ loading: false });
+            // Unless a newer change aborted it, this check settled what was asked for: checked now, or failed and dropped
+            if (!abortController.signal.aborted) {
+                requestedRef.current = {};
+            }
+            // Unless a newer check replaced it, whose price is still loading
+            if (abortControllerRef.current === abortController) {
+                setState({ loading: false });
+            }
         }
     };
 
@@ -516,6 +538,8 @@ export const PaymentsContextProvider = ({
             guardedSelectionRef.current = undefined;
             const newCheckResult = getOptimisticCheckResult(newPlanToCheck);
             setState({ planToCheck: newPlanToCheck, checkResult: newCheckResult });
+            // The aborted check's other changes are still asked for
+            requestedRef.current = { ...requestedRef.current, planToCheck: newPlanToCheck };
             return newCheckResult;
         }
 
@@ -651,8 +675,10 @@ export const PaymentsContextProvider = ({
                  * This will fallback to an available currency for the plan
                  */
                 const plan = getPlanFromPlanIDs(localizedPlansMap, planToCheckParam?.planIDs);
+                // A newer selection aborted the check and carries its own currency, the retry would abort it in turn
+                const aborted = error instanceof Error && error.name === 'AbortError';
 
-                if (plan) {
+                if (plan && !aborted) {
                     preferredCurrency = plan.Currency;
                     await selectNewPlan({
                         ...getPlanToCheck({
@@ -687,21 +713,21 @@ export const PaymentsContextProvider = ({
 
     const selectPlanIDs = async (planIDs: PlanIDs) => {
         await selectNewPlan({
-            ...stateRef.current.planToCheck,
+            ...getRequested().planToCheck,
             planIDs,
         });
     };
 
     const selectCycle = async (cycle: Cycle) => {
         await selectNewPlan({
-            ...stateRef.current.planToCheck,
+            ...getRequested().planToCheck,
             cycle,
         });
     };
 
     const selectCurrency = async (currency: Currency) => {
         await selectNewPlan({
-            ...stateRef.current.planToCheck,
+            ...getRequested().planToCheck,
             currency,
         });
     };
@@ -716,7 +742,7 @@ export const PaymentsContextProvider = ({
         }
 
         const checkResult = await selectNewPlan({
-            ...stateRef.current.planToCheck,
+            ...getRequested().planToCheck,
             coupon,
         });
 
@@ -731,15 +757,17 @@ export const PaymentsContextProvider = ({
         }
     };
 
-    const instantSelectBillingAddress = async (billingAddress: BillingAddressExtended, vatNumber?: string) => {
-        try {
-            await calculateSubscriptionEstimation({ billingAddress, vatNumber });
-        } catch (error: any) {
-            if (error?.name === 'AbortError') {
-                return;
-            }
-            throw error;
-        }
+    // The billing change waiting for the debounce. Each part of the form sends the whole address as it rendered it, so
+    // the later ones are merged into it: a waiting change must neither undo nor drop a newer one
+    const pendingBillingRef = useRef<{ billingAddress: BillingAddressExtended; vatNumber?: string } | undefined>(
+        undefined
+    );
+
+    // The billing changes are debounced, so no caller can await their check. A failed one is dropped: where the API
+    // isn't silenced, it already shows the error
+    const instantSelectBillingAddress = (billingAddress: BillingAddressExtended, vatNumber?: string) => {
+        pendingBillingRef.current = undefined;
+        calculateSubscriptionEstimation({ billingAddress, vatNumber }).catch(noop);
     };
 
     const userInputDebounceDelay = 500;
@@ -747,25 +775,32 @@ export const PaymentsContextProvider = ({
     const debouncedSelectBillingAddress = useHandler(instantSelectBillingAddress, { debounce: userInputDebounceDelay });
 
     const selectFullBillingAddress = (fullBillingAddress: FullBillingAddressFlat) => {
-        const { VatId, ...billingAddress } = fullBillingAddress;
-        const vatNumber = VatId ?? undefined;
+        const { VatId, ...billingAddressUpdate } = fullBillingAddress;
+        const pending = pendingBillingRef.current;
+        const billingAddress = { ...pending?.billingAddress, ...billingAddressUpdate };
+        const vatNumber = VatId ?? pending?.vatNumber;
+        const requestedBillingAddress = getRequested().billingAddress;
 
         // Only a few props can trigger the subscription estimation to be re-run instantly. For example, CountryCode and
         // State are using dropdowns, so users can't change them rapidly, and it makes sense to disable any debouncing
         // delay. Many other fields are simple text fields, so we should avoid re-calculation on every keystroke.
         const instantProps: (keyof BillingAddressExtended)[] = ['CountryCode', 'State'];
-        const isDeboucingPropChanged = Object.keys(billingAddress).some((key) => {
+        const isDeboucingPropChanged = Object.keys(billingAddressUpdate).some((key) => {
             const propertyName = key as keyof BillingAddressExtended;
             return (
                 !instantProps.includes(propertyName) &&
-                billingAddress[propertyName] !== stateRef.current.billingAddress[propertyName]
+                billingAddressUpdate[propertyName] !== requestedBillingAddress[propertyName]
             );
         });
         if (isDeboucingPropChanged) {
-            return debouncedSelectBillingAddress(billingAddress, vatNumber);
+            pendingBillingRef.current = { billingAddress, vatNumber };
+            debouncedSelectBillingAddress(billingAddress, vatNumber);
+            return;
         }
 
-        return instantSelectBillingAddress(billingAddress, vatNumber);
+        // The waiting change goes in this check, instead of undoing it once its debounce ends
+        debouncedSelectBillingAddress.cancel?.();
+        instantSelectBillingAddress(billingAddress, vatNumber);
     };
 
     const getFallbackPrice: PaymentsContextType['getFallbackPrice'] = (planToCheck): PricesResult => {
@@ -829,30 +864,24 @@ export const PaymentsContextProvider = ({
     const isGroupLoading = multiCheckGroups.isGroupLoading;
     const isGroupChecked = multiCheckGroups.isGroupChecked;
 
-    const setVatNumberInner = async (vatNumber: string) => {
+    const setVatNumberInner = (vatNumber: string) => {
+        const requestedVatNumber = getRequested().vatNumber;
         if (
-            vatNumber === stateRef.current.vatNumber ||
+            vatNumber === requestedVatNumber ||
             // both are falsy is a subcase of equality in this case. If both are falsy, then they are already equal, and
             // no calculation is needed.
-            (!vatNumber && !stateRef.current.vatNumber)
+            (!vatNumber && !requestedVatNumber)
         ) {
             return;
         }
 
-        try {
-            await calculateSubscriptionEstimation({ vatNumber });
-        } catch (error: any) {
-            if (error?.name === 'AbortError') {
-                return;
-            }
-            throw error;
-        }
+        calculateSubscriptionEstimation({ vatNumber }).catch(noop);
     };
 
     const setVatNumber = useHandler(setVatNumberInner, { debounce: userInputDebounceDelay });
 
     const reRunPaymentChecks = async () => {
-        return selectNewPlan(stateRef.current.planToCheck);
+        return selectNewPlan(getRequested().planToCheck);
     };
 
     const value: PaymentsContextType = {

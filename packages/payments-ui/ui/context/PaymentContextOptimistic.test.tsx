@@ -3,10 +3,11 @@ import { act, render } from '@testing-library/react';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { PaymentStatus, PaymentsApi } from '@proton/payments/core/interface';
+import type { PaymentStatus } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
+import { addApiMock, apiMock } from '@proton/test-api/vitest/api';
 
 import {
     PaymentsContextOptimisticProvider,
@@ -27,19 +28,8 @@ const checkResult = {
 } as unknown as SubscriptionEstimation;
 
 const checkSubscription = vi.fn();
-
-vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
-    const paymentsApi = {
-        checkSubscription: (...args: any[]) => checkSubscription(...args),
-        cacheMultiCheck: vi.fn(),
-        multiCheck: vi.fn().mockResolvedValue([]),
-        getFullBillingAddress: vi.fn().mockResolvedValue({}),
-    } as unknown as PaymentsApi;
-
-    return {
-        usePaymentsApi: () => ({ paymentsApi, getPaymentsApi: () => paymentsApi }),
-    };
-});
+// The checks go through the real payments api, to the mocked endpoint
+addApiMock('payments/v5/subscription/check', ({ data }) => checkSubscription(data));
 
 const paymentStatus = {
     CountryCode: 'CH',
@@ -88,7 +78,7 @@ const initialize = (getContext: () => PaymentsContextOptimisticType) =>
     act(() =>
         getContext()
             .initialize({
-                api: vi.fn() as any,
+                api: apiMock,
                 planToCheck: { planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.YEARLY },
                 paramCurrency: 'CHF',
                 paymentFlow: 'signup',
@@ -123,6 +113,41 @@ describe('PaymentsContextOptimisticProvider initialization status', () => {
         expect(getContext().initializationStatus).toEqual(
             expect.objectContaining({ pricingInitialized: false, error })
         );
+    });
+});
+
+describe('PaymentsContextOptimisticProvider selection', () => {
+    beforeEach(() => {
+        vi.clearAllMocks();
+        checkSubscription.mockImplementation((data) => ({
+            ...checkResult,
+            Cycle: data.Cycle,
+            Coupon: data.Codes?.length ? { Code: data.Codes[0], Description: '' } : null,
+            AmountDue: data.Cycle === CYCLE.TWO_YEARS ? 7176 : 11988,
+            requestData: data,
+        }));
+    });
+
+    it.each([
+        ['shows the price the plan cards checked', true, 7176],
+        ['shows a guess', false, undefined],
+    ])('%s for a cycle picked before its check returns', async (_, cardsChecked, amountDue) => {
+        const getContext = renderProvider();
+        await initialize(getContext);
+        if (cardsChecked) {
+            const card = { planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.TWO_YEARS, currency: 'CHF' as const };
+            await act(() => getContext().checkMultiplePlans([{ ...card, coupon: 'CARDS' }]));
+        }
+        const checks = checkSubscription.mock.calls.length;
+
+        act(() => getContext().selectPlan({ cycle: CYCLE.TWO_YEARS }));
+
+        expect(checkSubscription).toHaveBeenCalledTimes(checks);
+        expect(getContext().loadingPaymentDetails).toBe(true);
+        expect(getContext().pricedBeforeCheck).toBe(cardsChecked);
+        if (amountDue) {
+            expect(getContext().options.checkResult.AmountDue).toBe(amountDue);
+        }
     });
 });
 
