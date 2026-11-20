@@ -211,7 +211,7 @@ async function observeCheckpoint(attempt: RecoveryAttempt): Promise<void> {
     if (!localMessage || localMessage.placeholder) {
         attempt.store.dispatch(addMessage(record.message));
     }
-    if (record.checkpoint.phase !== 'completed') {
+    if (record.checkpoint.phase !== 'completed' || record.checkpoint.title?.phase === 'streaming') {
         attempt.store.dispatch(updateConversationStatus({ id: attempt.id, status: ConversationStatus.GENERATING }));
     }
 }
@@ -251,7 +251,7 @@ async function recoverCheckpoint(attempt: RecoveryAttempt): Promise<void> {
         if (!(await restoreCheckpoint(store, record)) || !isActive()) {
             return;
         }
-        if (record.checkpoint.phase === 'completed') {
+        if (record.checkpoint.phase === 'completed' && record.checkpoint.title?.phase !== 'streaming') {
             await saveCompletion(record);
             return;
         }

@@ -12,6 +12,7 @@ export interface GenerationRecoveryState {
     pendingCalls?: PendingClientToolCall[];
     previousJobs?: { jobId: string; token: string }[];
     round?: number;
+    title?: GenerationRecoveryState;
 }
 
 export interface GenerationRecovery {

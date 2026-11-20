@@ -12,7 +12,7 @@ import { RequestEncryptionParams } from './encryptionParams';
 import { callChatEndpoint, resumeChatEndpoint } from './network';
 import { GenerationInterruptedError, ToolRetryConfirmationRequiredError, newRecoveryState } from './recovery';
 import type { GenerationRecoveryState } from './recovery';
-import { type EncryptedTurn, Role, type Turn } from './types';
+import { type AssistantCallOptions, type EncryptedTurn, Role, type Turn } from './types';
 
 vi.mock('uuid', () => ({ v4: () => 'request-id' }));
 vi.mock('./encryption', () => ({ DEFAULT_LUMO_PUB_KEY: 'pub-key', encryptTurns: vi.fn() }));
@@ -712,6 +712,287 @@ describe('auxiliary generation isolation', () => {
             );
         }
     );
+});
+
+describe('title generation recovery', () => {
+    afterEach(() => {
+        vi.mocked(resumeChatEndpoint).mockReset();
+    });
+
+    it('checkpoints both jobs before posting and keeps the title in cleanup credentials', async () => {
+        const checkpoints: GenerationRecoveryState[] = [];
+        mockedCallChatEndpoint.mockImplementation(async (_api, payload, options) => {
+            const target = (payload as ChatCompletionsRequest).lumo?.target;
+            const checkpoint = checkpoints[0];
+            const job = target === 'title' ? checkpoint.title : checkpoint;
+            expect(options?.recovery).toMatchObject({ jobId: job?.jobId, token: job?.token, target });
+            return proseResponse(target === 'title' ? 'Festival tickets' : 'Found your tickets');
+        });
+
+        await newClient().callAssistant(api, userTurns, {
+            generateTitle: true,
+            recovery: {
+                checkpoint: async (state) => {
+                    checkpoints.push(structuredClone(state));
+                },
+            },
+        });
+
+        const first = checkpoints[0];
+        expect(first.title?.target).toBe('title');
+        expect(first.title?.jobId).not.toBe(first.jobId);
+        expect(first.title?.token).not.toBe(first.token);
+        expect(first.previousJobs).toContainEqual({ jobId: first.title?.jobId, token: first.title?.token });
+        expect(checkpoints.at(-1)).toMatchObject({
+            phase: 'completed',
+            title: {
+                phase: 'completed',
+                turns: [
+                    { role: Role.User, content: userTurns[0].content },
+                    { role: Role.Assistant, content: 'Festival tickets' },
+                ],
+            },
+        });
+    });
+
+    it('resumes an interrupted title even when the answer already completed', async () => {
+        const checkpoints: GenerationRecoveryState[] = [];
+        mockedCallChatEndpoint.mockImplementation(async (_api, payload) => {
+            if ((payload as ChatCompletionsRequest).lumo?.target === 'title') {
+                throw new TypeError('Connection lost');
+            }
+            return proseResponse('Found your tickets');
+        });
+        const recovery = {
+            checkpoint: async (state: GenerationRecoveryState) => {
+                checkpoints.push(structuredClone(state));
+            },
+        };
+        const finishCallback = vi.fn();
+        await expect(
+            newClient().callAssistant(api, userTurns, { generateTitle: true, recovery, finishCallback })
+        ).rejects.toBeInstanceOf(GenerationInterruptedError);
+
+        const resume = checkpoints.at(-1)!;
+        expect(resume.phase).toBe('completed');
+        expect(resume.title?.phase).toBe('streaming');
+        expect(resume.turns.at(-1)?.content).toBe('Found your tickets');
+        expect(finishCallback).not.toHaveBeenCalled();
+        const chunks = vi.fn();
+        vi.mocked(resumeChatEndpoint).mockImplementation(async (_api, job) =>
+            proseResponse(job.target === 'title' ? 'Festival tickets' : 'Found your tickets')
+        );
+
+        const result = await newClient().callAssistant(api, userTurns, { resume, recovery, chunkCallback: chunks });
+
+        expect(resumeChatEndpoint).toHaveBeenCalledWith(api, resume.title, undefined);
+        expect(resumeChatEndpoint).toHaveBeenCalledTimes(1);
+        expect(mockedCallChatEndpoint).toHaveBeenCalledTimes(2);
+        expect(chunks.mock.calls.map(([chunk]) => chunk)).toContainEqual(
+            expect.objectContaining({
+                type: 'token_data',
+                target: 'title',
+                content: 'Festival tickets',
+            })
+        );
+        expect(checkpoints.at(-1)).toMatchObject({ phase: 'completed', title: { phase: 'completed' } });
+        expect(result.turns).toEqual(resume.turns);
+    });
+
+    it('restores a completed title without generating or replaying it again', async () => {
+        const title = {
+            ...newRecoveryState(userTurns, 'title'),
+            phase: 'completed' as const,
+            turns: [...userTurns, { role: Role.Assistant, content: 'Festival tickets' }],
+        };
+        const resume = { ...newRecoveryState(userTurns, 'message'), title };
+        const chunks = vi.fn();
+        vi.mocked(resumeChatEndpoint).mockResolvedValue(proseResponse('Found your tickets'));
+
+        await newClient().callAssistant(api, userTurns, {
+            resume,
+            recovery: { checkpoint: async () => {} },
+            chunkCallback: chunks,
+        });
+
+        expect(mockedCallChatEndpoint).not.toHaveBeenCalled();
+        expect(resumeChatEndpoint).toHaveBeenCalledTimes(1);
+        expect(resumeChatEndpoint).toHaveBeenCalledWith(api, resume, undefined);
+        expect(chunks.mock.calls.map(([chunk]) => chunk)).toContainEqual({
+            type: 'token_data',
+            target: 'title',
+            content: 'Festival tickets',
+            count: 0,
+        });
+    });
+
+    it('reconnects both unfinished jobs using the original encryption parameters', async () => {
+        enableFakeEncryption();
+        const requestKey = { type: 'AesGcmCryptoKey', encryptKey: {} } as AssistantCallOptions['requestKey'];
+        const resume = { ...newRecoveryState(userTurns, 'message'), title: newRecoveryState(userTurns, 'title') };
+        const checkpoints: GenerationRecoveryState[] = [];
+        const chunks = vi.fn();
+        vi.mocked(resumeChatEndpoint).mockImplementation(async (_api, job) =>
+            proseResponse(job.target === 'title' ? 'Festival tickets' : 'Found your tickets')
+        );
+
+        const result = await newClient().callAssistant(api, userTurns, {
+            resume,
+            requestId: 'original-request',
+            requestKey,
+            generateTitle: true,
+            chunkCallback: chunks,
+            recovery: {
+                checkpoint: async (state) => {
+                    checkpoints.push(structuredClone(state));
+                },
+            },
+        });
+
+        expect(mockedCreateEncryption).toHaveBeenLastCalledWith(requestKey, 'original-request', expect.any(Object));
+        expect(mockedCallChatEndpoint).not.toHaveBeenCalled();
+        expect(resumeChatEndpoint).toHaveBeenCalledTimes(2);
+        expect(resumeChatEndpoint).toHaveBeenCalledWith(api, resume, undefined);
+        expect(resumeChatEndpoint).toHaveBeenCalledWith(api, resume.title, undefined);
+        expect(result.turns.at(-1)?.content).toBe('Found your tickets');
+        expect(checkpoints.at(-1)?.title?.turns.at(-1)?.content).toBe('Festival tickets');
+        expect(chunks.mock.calls.map(([chunk]) => chunk)).toContainEqual(
+            expect.objectContaining({
+                type: 'token_data',
+                target: 'title',
+                content: 'Festival tickets',
+            })
+        );
+    });
+
+    it('keeps title failures best effort when the original recording is no longer available', async () => {
+        const resume = { ...newRecoveryState(userTurns, 'message'), title: newRecoveryState(userTurns, 'title') };
+        const checkpoints: GenerationRecoveryState[] = [];
+        vi.mocked(resumeChatEndpoint).mockImplementation(async (_api, job) => {
+            if (job.target === 'title') {
+                throw { status: 404 };
+            }
+            return proseResponse('Found your tickets');
+        });
+
+        const result = await newClient().callAssistant(api, userTurns, {
+            resume,
+            recovery: {
+                checkpoint: async (state) => {
+                    checkpoints.push(structuredClone(state));
+                },
+            },
+        });
+
+        expect(result.status).toBe('succeeded');
+        expect(result.turns.at(-1)?.content).toBe('Found your tickets');
+        expect(checkpoints.at(-1)).toMatchObject({ phase: 'completed', title: { phase: 'completed' } });
+        expect(mockedCallChatEndpoint).not.toHaveBeenCalled();
+    });
+
+    it('does not repeat completed tools while recovering only their title', async () => {
+        const execute = vi.fn();
+        const completedTurns: Turn[] = [...userTurns, { role: Role.ToolResult, content: 'Schedule created' }];
+        const resume: GenerationRecoveryState = {
+            ...newRecoveryState(completedTurns, 'message'),
+            phase: 'completed',
+            title: newRecoveryState(userTurns, 'title'),
+        };
+        vi.mocked(resumeChatEndpoint).mockResolvedValue(proseResponse('My new schedule'));
+
+        const result = await newClient().callAssistant(api, completedTurns, {
+            resume,
+            clientToolExecutor: { canExecute: () => true, execute },
+            recovery: { checkpoint: async () => {} },
+        });
+
+        expect(execute).not.toHaveBeenCalled();
+        expect(mockedCallChatEndpoint).not.toHaveBeenCalled();
+        expect(resumeChatEndpoint).toHaveBeenCalledTimes(1);
+        expect(resumeChatEndpoint).toHaveBeenCalledWith(api, resume.title, undefined);
+        expect(result.turns).toEqual(completedTurns);
+    });
+
+    it('keeps the pending title alongside a completed answer until the slower title finishes', async () => {
+        const titleResponse = Promise.withResolvers<ReadableStream>();
+        const answerCheckpointed = Promise.withResolvers<void>();
+        const checkpoints: GenerationRecoveryState[] = [];
+        let saving = false;
+        mockedCallChatEndpoint.mockImplementation(async (_api, payload) => {
+            return (payload as ChatCompletionsRequest).lumo?.target === 'title'
+                ? titleResponse.promise
+                : proseResponse('Found your tickets');
+        });
+        const request = newClient().callAssistant(api, userTurns, {
+            generateTitle: true,
+            recovery: {
+                checkpoint: async (state) => {
+                    expect(saving).toBe(false);
+                    saving = true;
+                    checkpoints.push(structuredClone(state));
+                    if (state.turns.at(-1)?.content === 'Found your tickets') {
+                        answerCheckpointed.resolve();
+                    }
+                    await Promise.resolve();
+                    saving = false;
+                },
+            },
+        });
+
+        await answerCheckpointed.promise;
+        expect(checkpoints.at(-1)).toMatchObject({ phase: 'completed', title: { phase: 'streaming' } });
+        titleResponse.resolve(proseResponse('Festival tickets'));
+        await request;
+
+        expect(checkpoints.at(-1)).toMatchObject({ phase: 'completed', title: { phase: 'completed' } });
+        expect(checkpoints.at(-1)?.title?.turns.at(-1)?.content).toBe('Festival tickets');
+    });
+
+    it('retains the original title job across tool rounds', async () => {
+        let mainRequests = 0;
+        const checkpoints: GenerationRecoveryState[] = [];
+        mockedCallChatEndpoint.mockImplementation(async (_api, payload) => {
+            if ((payload as ChatCompletionsRequest).lumo?.target === 'title') {
+                return proseResponse('Festival tickets');
+            }
+            mainRequests += 1;
+            return mainRequests === 1 ? toolCallResponse('search') : proseResponse('Found your tickets');
+        });
+
+        await newClient().callAssistant(api, userTurns, {
+            generateTitle: true,
+            clientTools: [searchTool],
+            clientToolExecutor: executor,
+            recovery: {
+                checkpoint: async (state) => {
+                    checkpoints.push(structuredClone(state));
+                },
+            },
+        });
+
+        const title = checkpoints[0].title!;
+        expect(checkpoints.every((state) => state.title?.jobId === title.jobId)).toBe(true);
+        expect(checkpoints.at(-1)?.previousJobs).toEqual([
+            { jobId: title.jobId, token: title.token },
+            { jobId: checkpoints[0].jobId, token: checkpoints[0].token },
+        ]);
+        expect(checkpoints.at(-1)).toMatchObject({ round: 1, phase: 'completed', title: { phase: 'completed' } });
+    });
+
+    it('does not opt the title into recording when checkpoint storage disables recovery', async () => {
+        mockedCallChatEndpoint.mockImplementation(async (_api, payload, options) => {
+            expect(options?.recovery).toBeUndefined();
+            return proseResponse((payload as ChatCompletionsRequest).lumo?.target === 'title' ? 'Title' : 'Answer');
+        });
+
+        const result = await newClient().callAssistant(api, userTurns, {
+            generateTitle: true,
+            recovery: { checkpoint: async () => 'disabled' },
+        });
+
+        expect(result.status).toBe('succeeded');
+        expect(mockedCallChatEndpoint).toHaveBeenCalledTimes(2);
+    });
 });
 
 describe('generation recovery', () => {

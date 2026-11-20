@@ -17,6 +17,7 @@ import { GenerationRecoveryDb } from '../indexedDb/generationRecoveryDb';
 import { useLumoSelector, useLumoStore } from '../redux/hooks';
 import { pushMessage } from '../redux/sagas/messages';
 import attachmentsReducer, { pushAttachmentFailure, pushAttachmentRequest } from '../redux/slices/core/attachments';
+import conversationsReducer from '../redux/slices/core/conversations';
 import idmapReducer, { addIdMapEntry } from '../redux/slices/core/idmap';
 import messagesReducer, { addMessage, pushMessageRequest } from '../redux/slices/core/messages';
 import type { LumoDispatch, LumoState } from '../redux/store';
@@ -40,6 +41,8 @@ Object.assign(globalThis, { TransformStream });
 it.each([
     { mode: 'normal', image: 'none', stopAt: 'never' },
     { mode: 'resumed', image: 'none', stopAt: 'never' },
+    { mode: 'resumed-title', image: 'none', stopAt: 'never' },
+    { mode: 'resumed-title-tool', image: 'none', stopAt: 'never' },
     { mode: 'normal', image: 'pending', stopAt: 'never' },
     { mode: 'resumed', image: 'pending', stopAt: 'never' },
     { mode: 'normal', image: 'uploaded', stopAt: 'never' },
@@ -53,6 +56,9 @@ it.each([
 ])('acknowledges $mode generation, image upload $image, stop $stopAt', async ({ mode, image, stopAt }) => {
     jest.spyOn(generationRegistry, 'canRecover').mockReturnValue(true);
     const withImage = image !== 'none';
+    const resuming = mode !== 'normal';
+    const titleOnly = mode.startsWith('resumed-title');
+    const toolOnly = mode === 'resumed-title-tool';
     const originalDb = extraThunkArguments.dbApi;
     const originalApi = extraThunkArguments.api;
     const checkpointGate = Promise.withResolvers<void>();
@@ -87,6 +93,17 @@ it.each([
         ancestors: [],
         attachments: [],
     };
+    if (titleOnly) {
+        record.checkpoint.phase = 'completed';
+        record.checkpoint.title = newRecoveryState(record.checkpoint.turns, 'title');
+        record.checkpoint.previousJobs = [record.checkpoint.title];
+        record.message.content = 'Recovered answer';
+        if (toolOnly) {
+            record.message.content = '';
+            record.message.toolCall = '{"id":"question","name":"ask_user_questions","arguments":{}}';
+            record.message.toolResult = '{"ok":true}';
+        }
+    }
     const state = {
         messages: {},
         conversations: { conversation: record.conversation },
@@ -126,6 +143,7 @@ it.each([
             return action(dispatch, () => state);
         }
         state.messages = messagesReducer(state.messages, action);
+        state.conversations = conversationsReducer(state.conversations, action);
         state.attachments = attachmentsReducer(state.attachments, action);
         state.idmap = idmapReducer(state.idmap, action);
         channel.put(action);
@@ -149,7 +167,7 @@ it.each([
                 start(controller) {
                     controller.enqueue(
                         new TextEncoder().encode(
-                            'data: {"choices":[{"index":0,"delta":{"content":"Recovered answer"}}]}\n\n' +
+                            `data: {"choices":[{"index":0,"delta":{"content":"${titleOnly ? 'Recovered title' : 'Recovered answer'}"}}]}\n\n` +
                                 (withImage
                                     ? 'data: {"object":"lumo.image_data","image":{"id":"image","data":"aW1hZ2UtYnl0ZXM=","encrypted":false}}\n\n'
                                     : '') +
@@ -198,7 +216,7 @@ it.each([
             );
         }
         let generation: Promise<unknown> | undefined;
-        if (mode === 'resumed') {
+        if (resuming) {
             await recovery.save(
                 'conversation',
                 record,
@@ -242,18 +260,23 @@ it.each([
             await waitFor(() => expect(api).toHaveBeenCalledTimes(2));
             expect(api.mock.calls[1][0]).toMatchObject({ method: 'delete' });
         }
-        expect(state.messages.assistant.content).toContain('Recovered answer');
+        if (toolOnly) {
+            expect(state.messages.assistant.content).toBe('');
+            expect(state.messages.assistant.toolResult).toBe('{"ok":true}');
+        } else {
+            expect(state.messages.assistant.content).toContain('Recovered answer');
+        }
         expect(state.messages.assistant).toMatchObject({ status: 'succeeded', placeholder: false });
         const request = api.mock.calls[0][0];
-        const jobId =
-            mode === 'resumed' ? record.checkpoint.jobId : (request.data as ChatCompletionsRequest).lumo!.job_id;
-        const token =
-            mode === 'resumed'
-                ? record.checkpoint.token
-                : (request.headers as Record<string, string>)['x-lumo-resume-token'];
+        const jobId = resuming ? record.checkpoint.jobId : (request.data as ChatCompletionsRequest).lumo!.job_id;
+        const token = resuming
+            ? record.checkpoint.token
+            : (request.headers as Record<string, string>)['x-lumo-resume-token'];
         expect(request).toMatchObject({
-            url: mode === 'resumed' ? `ai/v1/jobs/${jobId}/resume` : 'ai/v1/chat/completions',
-            method: mode === 'resumed' ? 'get' : 'post',
+            url: resuming
+                ? `ai/v1/jobs/${titleOnly ? record.checkpoint.title!.jobId : jobId}/resume`
+                : 'ai/v1/chat/completions',
+            method: resuming ? 'get' : 'post',
         });
         if (image === 'pending') {
             await waitFor(() => expect(uploads).toEqual(['image', 'image']));
@@ -275,10 +298,21 @@ it.each([
         await Promise.all(pushes);
         await waitFor(() => expect(generationRegistry.isInProgress('conversation')).toBe(false));
         expect(postMessage).toHaveBeenCalledWith(
-            expect.objectContaining({ GenerationJobs: [{ JobID: jobId, Token: token }] }),
+            expect.objectContaining({
+                GenerationJobs: [
+                    ...(titleOnly
+                        ? [{ JobID: record.checkpoint.title!.jobId, Token: record.checkpoint.title!.token }]
+                        : []),
+                    { JobID: jobId, Token: token },
+                ],
+            }),
             'urgent'
         );
         expect(await recovery.get('conversation')).toBeUndefined();
+        if (titleOnly) {
+            expect(state.conversations.conversation.title).toBe('Recovered title');
+            expect(api.mock.calls.filter(([request]) => request.method === 'get')).toHaveLength(1);
+        }
         cancellationGate.resolve(
             new ReadableStream({
                 start: (controller) => {
