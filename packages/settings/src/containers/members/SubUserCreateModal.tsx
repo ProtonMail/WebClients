@@ -192,8 +192,15 @@ const SubUserCreateModal = ({
         return setModelDiff({ [key]: value });
     };
 
+    // Admin invitations are only possible in passwordless organizations
+    const getCanAssignRoles = (mode: CreateMemberMode) => mode === CreateMemberMode.Password || passwordlessMode;
+
     const setMode = (mode: CreateMemberMode) => {
-        setModelDiff({ mode });
+        if (getCanAssignRoles(mode)) {
+            setModelDiff({ mode });
+            return;
+        }
+        setModelDiff({ mode, admin: false });
         setSelectedRoles(new Set());
     };
 
@@ -218,8 +225,7 @@ const SubUserCreateModal = ({
     const emailAddressParts = getNormalizedAddress();
     const emailAddress = `${emailAddressParts.Local}@${emailAddressParts.Domain}`;
 
-    // Admin invitations are only possible in passwordless organizations
-    const canAssignRoles = model.mode === CreateMemberMode.Password || passwordlessMode;
+    const canAssignRoles = getCanAssignRoles(model.mode);
     const isAdminRolesUIEnabled = adminRolesUIState === AdminRolesUIState.Enabled;
 
     const save = async () => {
