@@ -7,10 +7,10 @@ import { NodeType } from '@proton/drive/sdk';
 import { UploadConflictModalView } from './UploadConflictModalView';
 
 describe('UploadConflictModalView', () => {
-    const mockOnResolve = jest.fn();
-    const mockOnCancelAll = jest.fn();
-    const mockOnClose = jest.fn();
-    const mockOnExit = jest.fn();
+    const mockOnResolve = vi.fn();
+    const mockOnCancelAll = vi.fn();
+    const mockOnClose = vi.fn();
+    const mockOnExit = vi.fn();
 
     const defaultProps = {
         name: 'test-file.txt',
@@ -24,7 +24,7 @@ describe('UploadConflictModalView', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should render complete file conflict UI with normal conflict message', () => {

@@ -1,6 +1,6 @@
 import { OnlineMonitor } from './OnlineMonitor';
 
-jest.mock('../../shared/Logger');
+vi.mock('../../shared/Logger');
 
 const setNavigatorOnLine = (value: boolean) => {
     Object.defineProperty(navigator, 'onLine', { value, configurable: true });

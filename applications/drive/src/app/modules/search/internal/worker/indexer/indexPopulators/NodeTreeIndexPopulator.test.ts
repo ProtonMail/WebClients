@@ -484,7 +484,7 @@ describe('NodeTreeIndexPopulator descendant removal', () => {
         const { populator, ctx } = await indexTree('root');
 
         const { blobStore } = await indexRegistry.get(IndexKind.MAIN, db);
-        jest.spyOn(blobStore, 'saveEvent').mockRejectedValue(new DOMException('', 'QuotaExceededError'));
+        vi.spyOn(blobStore, 'saveEvent').mockRejectedValue(new DOMException('', 'QuotaExceededError'));
 
         const error = await populator.processNodeMutation(nodeDeleted(folderUid, 'e1'), ctx).catch((e: unknown) => e);
 
@@ -671,7 +671,7 @@ describe('NodeTreeIndexPopulator document cap', () => {
             fileUids.map((uid, i) => makeMaybeNode({ uid, name: `file-${i}.txt`, type: 'file' as any }))
         );
 
-        const markIndexCapped = jest.fn();
+        const markIndexCapped = vi.fn();
         const populator = new TestNodeTreePopulator('root', 10);
         const ctx = makeTaskContext({
             bridge: bridge.asBridge(),
@@ -693,7 +693,7 @@ describe('NodeTreeIndexPopulator document cap', () => {
     it('does not report markIndexCapped when the populator finishes under the limit', async () => {
         bridge.setChildren('root', [makeMaybeNode({ uid: 'vol1~file0', name: 'file-0.txt', type: 'file' as any })]);
 
-        const markIndexCapped = jest.fn();
+        const markIndexCapped = vi.fn();
         const populator = new TestNodeTreePopulator('root', 1_000);
         const ctx = makeTaskContext({
             bridge: bridge.asBridge(),

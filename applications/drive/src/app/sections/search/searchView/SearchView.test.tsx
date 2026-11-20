@@ -5,63 +5,63 @@ import { useSearchResultItems } from './hooks/useSearchResultItems';
 import { useSearchViewModel } from './hooks/useSearchViewModel';
 import { SearchView } from './index';
 
-jest.mock('./hooks/useSearchViewModel');
+vi.mock('./hooks/useSearchViewModel');
 
-jest.mock('./hooks/useSearchResultItems', () => ({
-    useSearchResultItems: jest.fn(() => ({
+vi.mock('./hooks/useSearchResultItems', () => ({
+    useSearchResultItems: vi.fn(() => ({
         sortedItemUids: [],
         loading: false,
         sortParams: { sortField: 'name', sortOrder: 'ASC' },
-        handleOpenItem: jest.fn(),
-        handleSorting: jest.fn(),
-        handleRenderItem: jest.fn(),
+        handleOpenItem: vi.fn(),
+        handleSorting: vi.fn(),
+        handleRenderItem: vi.fn(),
         layout: 0,
         previewModal: null,
     })),
 }));
 
-jest.mock('./subscribeSearchStoreToEvents', () => ({
-    subscribeSearchStoreToEvents: jest.fn(() => jest.fn()),
+vi.mock('./subscribeSearchStoreToEvents', () => ({
+    subscribeSearchStoreToEvents: vi.fn(() => vi.fn()),
 }));
 
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
+vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
     __esModule: true,
-    default: jest.fn(() => ({ viewportWidth: { isMedium: false, isLarge: true, isSmall: false } })),
+    default: vi.fn(() => ({ viewportWidth: { isMedium: false, isLarge: true, isSmall: false } })),
 }));
 
-jest.mock('../../../statelessComponents/ToolbarRow/ToolbarRow', () => {
-    const React = require('react');
+vi.mock('../../../statelessComponents/ToolbarRow/ToolbarRow', async () => {
+    const React = await import('react');
     return {
         ToolbarRow: () => React.createElement('div', { 'data-testid': 'toolbar-row' }),
     };
 });
 
-jest.mock('../../../statelessComponents/DriveExplorer/DriveExplorer', () => {
-    const React = require('react');
+vi.mock('../../../statelessComponents/DriveExplorer/DriveExplorer', async () => {
+    const React = await import('react');
     return {
         DriveExplorer: () => React.createElement('div', { 'data-testid': 'drive-explorer' }),
     };
 });
 
-jest.mock('./Toolbar', () => ({
+vi.mock('./Toolbar', () => ({
     SearchResultViewToolbar: () => null,
 }));
 
-jest.mock('./SearchContextMenu', () => ({
+vi.mock('./SearchContextMenu', () => ({
     SearchContextMenu: () => null,
 }));
 
-const mockedUseFoundationSearchAdapter = jest.mocked(useSearchViewModel);
-const mockedUseSearchResultItems = jest.mocked(useSearchResultItems);
+const mockedUseFoundationSearchAdapter = vi.mocked(useSearchViewModel);
+const mockedUseSearchResultItems = vi.mocked(useSearchResultItems);
 
 const defaultAdapter: ReturnType<typeof useSearchViewModel> = {
     isSearchAvailable: true,
     isSearchEnabled: true,
     isSearchable: true,
     isRunningOutdatedVersion: false,
-    startIndexing: jest.fn(),
+    startIndexing: vi.fn(),
     isSearching: false,
-    refreshResults: jest.fn(),
+    refreshResults: vi.fn(),
     indexingProgress: { files: 0, folders: 0, albums: 0, photos: 0 },
     isIndexPartial: false,
 };
@@ -77,9 +77,9 @@ describe('SearchView', () => {
             sortedItemUids: [],
             loading: false,
             sortParams: { sortField: 'name', sortOrder: 'ASC' },
-            handleOpenItem: jest.fn(),
-            handleSorting: jest.fn(),
-            handleRenderItem: jest.fn(),
+            handleOpenItem: vi.fn(),
+            handleSorting: vi.fn(),
+            handleRenderItem: vi.fn(),
             layout: 0,
             previewModal: null,
         } as any);
@@ -108,7 +108,7 @@ describe('SearchView', () => {
     });
 
     it('calls startIndexing when enable button is clicked', async () => {
-        const startIndexing = jest.fn();
+        const startIndexing = vi.fn();
         withAdapter({ isSearchEnabled: false, isSearchable: false, startIndexing });
         render(<SearchView />);
         await userEvent.click(screen.getByRole('button', { name: /enable drive search/i }));
@@ -149,9 +149,9 @@ describe('SearchView', () => {
             sortedItemUids: ['uid-1', 'uid-2'],
             loading: false,
             sortParams: { sortField: 'name', sortOrder: 'ASC' },
-            handleOpenItem: jest.fn(),
-            handleSorting: jest.fn(),
-            handleRenderItem: jest.fn(),
+            handleOpenItem: vi.fn(),
+            handleSorting: vi.fn(),
+            handleRenderItem: vi.fn(),
             layout: 0,
             previewModal: null,
         } as any);
@@ -165,9 +165,9 @@ describe('SearchView', () => {
             sortedItemUids: ['uid-1', 'uid-2'],
             loading: false,
             sortParams: { sortField: 'name', sortOrder: 'ASC' },
-            handleOpenItem: jest.fn(),
-            handleSorting: jest.fn(),
-            handleRenderItem: jest.fn(),
+            handleOpenItem: vi.fn(),
+            handleSorting: vi.fn(),
+            handleRenderItem: vi.fn(),
             layout: 0,
             previewModal: null,
         } as any);

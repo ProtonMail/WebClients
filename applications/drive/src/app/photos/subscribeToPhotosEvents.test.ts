@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type { BusDriverClient, BusDriverEvent } from '@proton/drive/modules/busDriver';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { NodeType, type ProtonDrivePhotosClient, getDriveForPhotos } from '@proton/drive/sdk';
@@ -7,14 +9,14 @@ import { useAlbumsStore } from './useAlbums.store';
 import type { PhotoItem } from './usePhotos.store';
 import { usePhotosStore } from './usePhotos.store';
 
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
-    getDriveForPhotos: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
+    getDriveForPhotos: vi.fn(),
 }));
 
-jest.mock('./loaders/loadAlbum', () => ({
-    ...jest.requireActual('./loaders/loadAlbum'),
-    loadCurrentAlbum: jest.fn(),
+vi.mock('./loaders/loadAlbum', async () => ({
+    ...(await vi.importActual('./loaders/loadAlbum')),
+    loadCurrentAlbum: vi.fn(),
 }));
 
 // --- Constants ---
@@ -126,20 +128,20 @@ const makeDrive = (nodes: CachedNode[] = [], rootUid = PHOTOS_ROOT_UID) => {
 let unsubscribe: (() => void) | undefined;
 
 beforeEach(async () => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
     resetStores();
-    (getDriveForPhotos as jest.Mock).mockReturnValue(makeDrive(KNOWN_NODES));
+    (getDriveForPhotos as Mock).mockReturnValue(makeDrive(KNOWN_NODES));
     unsubscribe = await subscribeToPhotosEvents(usePhotosStore.getState);
 });
 
 afterEach(() => {
     unsubscribe?.();
-    jest.useRealTimers();
+    vi.useRealTimers();
 });
 
 const emit = async (event: BusDriverEvent, drive = makeDrive(KNOWN_NODES)) => {
     const emitPromise = getBusDriver().emit(event, drive);
-    await jest.advanceTimersByTimeAsync(500);
+    await vi.advanceTimersByTimeAsync(500);
     await emitPromise;
 };
 

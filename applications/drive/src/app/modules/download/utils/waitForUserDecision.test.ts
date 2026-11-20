@@ -52,18 +52,18 @@ const updateDownloadItem = (downloadId: string, updater: (item: DownloadItem) =>
 };
 
 const advanceTimers = async () => {
-    jest.advanceTimersByTime(DECISION_TIMEOUT);
+    vi.advanceTimersByTime(DECISION_TIMEOUT);
     await Promise.resolve();
 };
 
 describe('waitForUserDecision', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         useDownloadManagerStore.getState().clearQueue();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('resolves waitForUnsupportedDecision when download is approved', async () => {
@@ -75,7 +75,7 @@ describe('waitForUserDecision', () => {
             })
         );
 
-        const onSuccess = jest.fn();
+        const onSuccess = vi.fn();
         const decisionPromise = waitForUnsupportedFileDecision(downloadId, onSuccess);
 
         updateDownloadItem(downloadId, (item) => ({
@@ -157,7 +157,7 @@ describe('waitForUserDecision', () => {
             })
         );
 
-        const unsupportedPromise = waitForUnsupportedFileDecision(downloadId, jest.fn());
+        const unsupportedPromise = waitForUnsupportedFileDecision(downloadId, vi.fn());
         const signaturePromise = waitForSignatureIssueDecision(downloadId, issueName);
 
         updateDownloadItem(downloadId, (item) => ({ ...item, status: DownloadStatus.Cancelled }));

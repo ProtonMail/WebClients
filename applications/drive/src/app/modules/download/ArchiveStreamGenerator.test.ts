@@ -1,34 +1,24 @@
-import { jest } from '@jest/globals';
-
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 import { NodeType } from '@proton/drive/sdk';
 
-import type { ArchiveStreamGenerator as ArchiveStreamGeneratorClass } from './ArchiveStreamGenerator';
+import { ArchiveStreamGenerator } from './ArchiveStreamGenerator';
 import { DownloadStatus, IssueStatus, useDownloadManagerStore } from './downloadManager.store';
 import type { DownloadQueueTask } from './downloadTypes';
 import type { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createDeferred, flushAsync, trackInstances, waitForCondition } from './testUtils';
 
-const getDownloadSdkMock = jest.fn();
-const handleDownloadErrorMock = jest.fn();
+const { getDownloadSdkMock, handleDownloadErrorMock } = vi.hoisted(() => ({
+    getDownloadSdkMock: vi.fn(),
+    handleDownloadErrorMock: vi.fn(),
+}));
 
-jest.mock('./utils/getDownloadSdk', () => ({
+vi.mock('./utils/getDownloadSdk', () => ({
     getDownloadSdk: getDownloadSdkMock,
 }));
 
-jest.mock('./utils/handleError', () => ({
+vi.mock('./utils/handleError', () => ({
     handleDownloadError: handleDownloadErrorMock,
 }));
-
-const { ArchiveStreamGenerator } = require('./ArchiveStreamGenerator') as {
-    ArchiveStreamGenerator: typeof ArchiveStreamGeneratorClass;
-};
-
-const ensureTransformStream = () => {
-    if (typeof globalThis.TransformStream === 'undefined') {
-        require('web-streams-polyfill/polyfill/es6');
-    }
-};
 
 const seedDownloadItem = (downloadId: string) => {
     useDownloadManagerStore.setState((state) => {
@@ -53,33 +43,29 @@ const schedulerTracker = trackInstances(() => {
     const tasks: DownloadQueueTask[] = [];
     let counter = 0;
     return {
-        scheduleDownload: jest.fn((task: DownloadQueueTask) => {
+        scheduleDownload: vi.fn((task: DownloadQueueTask) => {
             tasks.push(task);
             return `task-${tasks.length}`;
         }),
-        cancelTask: jest.fn(),
-        cancelDownloadsById: jest.fn(),
-        clearDownloads: jest.fn(),
-        generateTaskId: jest.fn(() => `task-${++counter}`),
-        updateDownloadProgress: jest.fn(),
+        cancelTask: vi.fn(),
+        cancelDownloadsById: vi.fn(),
+        clearDownloads: vi.fn(),
+        generateTaskId: vi.fn(() => `task-${++counter}`),
+        updateDownloadProgress: vi.fn(),
         _tasks: tasks,
     };
 });
 
 const createMalwareDetectionMock = () =>
     ({
-        wrapStream: jest.fn((_, __, stream) => stream),
-        resolveDecision: jest.fn(),
-        rejectPending: jest.fn(),
+        wrapStream: vi.fn((_, __, stream) => stream),
+        resolveDecision: vi.fn(),
+        rejectPending: vi.fn(),
     }) as unknown as MalwareDetection;
 
 describe('ArchiveStreamGenerator', () => {
-    beforeAll(() => {
-        ensureTransformStream();
-    });
-
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         schedulerTracker.reset();
         getDownloadSdkMock.mockReset();
         handleDownloadErrorMock.mockReset();
@@ -89,23 +75,23 @@ describe('ArchiveStreamGenerator', () => {
 
     it('should schedule file entries and expose generator/controller', async () => {
         const abortController = new AbortController();
-        const progressSpy = jest.fn();
+        const progressSpy = vi.fn();
         const downloadControllerDeferred = createDeferred<void>();
         const downloadController = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => downloadControllerDeferred.promise),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => downloadControllerDeferred.promise),
         };
 
         let progressCallback: ((bytes: number) => void) | undefined;
-        const downloadToStream = jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
+        const downloadToStream = vi.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
             progressCallback = onProgress;
             return downloadController;
         });
 
-        const getFileDownloader = jest.fn(async (_uid: string, _signal: AbortSignal) => ({
+        const getFileDownloader = vi.fn(async (_uid: string, _signal: AbortSignal) => ({
             downloadToStream,
-            getClaimedSizeInBytes: jest.fn(() => 1024),
+            getClaimedSizeInBytes: vi.fn(() => 1024),
         }));
 
         getDownloadSdkMock.mockImplementation(() => ({
@@ -175,16 +161,16 @@ describe('ArchiveStreamGenerator', () => {
         const abortController = new AbortController();
         const downloadControllerDeferred = createDeferred<void>();
         const downloadController = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => downloadControllerDeferred.promise),
-            isDownloadCompleteWithSignatureIssues: jest.fn(() => true),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => downloadControllerDeferred.promise),
+            isDownloadCompleteWithSignatureIssues: vi.fn(() => true),
         };
 
-        const downloadToStream = jest.fn(() => downloadController);
-        const getFileDownloader = jest.fn(async () => ({
+        const downloadToStream = vi.fn(() => downloadController);
+        const getFileDownloader = vi.fn(async () => ({
             downloadToStream,
-            getClaimedSizeInBytes: jest.fn(() => 1024),
+            getClaimedSizeInBytes: vi.fn(() => 1024),
         }));
         getDownloadSdkMock.mockImplementation(() => ({ getFileDownloader }));
 
@@ -212,7 +198,7 @@ describe('ArchiveStreamGenerator', () => {
 
         const generatorInstance = new ArchiveStreamGenerator({
             entries: entries(),
-            onProgress: jest.fn(),
+            onProgress: vi.fn(),
             scheduler: schedulerInstance,
             abortController,
             parentPathByUid: new Map<string, string[]>([['file-signature', []]]),
@@ -236,7 +222,7 @@ describe('ArchiveStreamGenerator', () => {
     it('should enqueue folder entries without accessing downloader', async () => {
         const schedulerInstance = schedulerTracker.Mock();
         getDownloadSdkMock.mockImplementation(() => ({
-            getFileDownloader: jest.fn(async () => undefined),
+            getFileDownloader: vi.fn(async () => undefined),
         }));
 
         const folderNode = createMockNodeEntity({
@@ -249,7 +235,7 @@ describe('ArchiveStreamGenerator', () => {
             yield folderNode;
         }
 
-        const progressSpy = jest.fn();
+        const progressSpy = vi.fn();
         const folderAbortController = new AbortController();
         const generatorInstance = new ArchiveStreamGenerator({
             entries: entries(),
@@ -290,7 +276,7 @@ describe('ArchiveStreamGenerator', () => {
             }
             new ArchiveStreamGenerator({
                 entries: entries(),
-                onProgress: jest.fn(),
+                onProgress: vi.fn(),
                 scheduler: schedulerInstance,
                 abortController: new AbortController(),
                 parentPathByUid: new Map<string, string[]>(),
@@ -327,18 +313,18 @@ describe('ArchiveStreamGenerator', () => {
         const abortController = new AbortController();
         const schedulerInstance = schedulerTracker.Mock();
         const downloadController = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(async () => undefined),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(async () => undefined),
         };
 
-        const downloadToStream = jest.fn(
+        const downloadToStream = vi.fn(
             (_writable: unknown, _onProgress: (bytes: number) => void) => downloadController
         );
         getDownloadSdkMock.mockImplementation(() => ({
-            getFileDownloader: jest.fn(async () => ({
+            getFileDownloader: vi.fn(async () => ({
                 downloadToStream,
-                getClaimedSizeInBytes: jest.fn(() => 1024),
+                getClaimedSizeInBytes: vi.fn(() => 1024),
             })),
         }));
 
@@ -349,7 +335,7 @@ describe('ArchiveStreamGenerator', () => {
 
         const generatorInstance = new ArchiveStreamGenerator({
             entries: entries(),
-            onProgress: jest.fn(),
+            onProgress: vi.fn(),
             scheduler: schedulerInstance,
             abortController,
             parentPathByUid: new Map<string, string[]>([['file-wait', [] as string[]]]),
@@ -378,7 +364,7 @@ describe('ArchiveStreamGenerator', () => {
 
         const generatorInstance = new ArchiveStreamGenerator({
             entries: entries(),
-            onProgress: jest.fn(),
+            onProgress: vi.fn(),
             scheduler: schedulerInstance,
             abortController,
             parentPathByUid: new Map<string, string[]>(),
@@ -399,17 +385,17 @@ describe('ArchiveStreamGenerator', () => {
         const schedulerInstance = schedulerTracker.Mock();
         const downloadControllerDeferred = createDeferred<void>();
         const downloadController = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => downloadControllerDeferred.promise),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => downloadControllerDeferred.promise),
         };
 
-        const downloadToStream = jest.fn(
+        const downloadToStream = vi.fn(
             (_writable: unknown, _onProgress: (bytes: number) => void) => downloadController
         );
-        const getFileDownloader = jest.fn(async () => ({
+        const getFileDownloader = vi.fn(async () => ({
             downloadToStream,
-            getClaimedSizeInBytes: jest.fn(() => 1024),
+            getClaimedSizeInBytes: vi.fn(() => 1024),
         }));
         getDownloadSdkMock.mockImplementation(() => ({
             getFileDownloader,
@@ -422,7 +408,7 @@ describe('ArchiveStreamGenerator', () => {
 
         const generatorInstance = new ArchiveStreamGenerator({
             entries: entries(),
-            onProgress: jest.fn(),
+            onProgress: vi.fn(),
             scheduler: schedulerInstance,
             abortController,
             parentPathByUid: new Map<string, string[]>([['file-error', [] as string[]]]),

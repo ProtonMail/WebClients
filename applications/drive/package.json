@@ -17,9 +17,9 @@
         "lint": "oxlint --quiet",
         "pretty": "oxfmt --write \"src/app/**/*.{js,ts,tsx}\"",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --handleSupportAndErrors --optimizeAssets --noLogicalScss",
-        "test": "jest",
-        "test:ci": "jest --ci --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "vitest",
+        "test:ci": "vitest run",
+        "test:watch": "vitest"
     },
     "resolutions": {
         "@xmldom/xmldom": "0.9.12"
@@ -85,18 +85,15 @@
         "zustand": "^4.5.7"
     },
     "devDependencies": {
-        "@jest/globals": "catalog:",
         "@proton/i18n": "workspace:^",
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
+        "@vitejs/plugin-react": "catalog:",
         "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "catalog:",
         "@testing-library/user-event": "catalog:",
         "@types/history": "catalog:",
-        "@types/jest": "catalog:",
-        "@types/jest-when": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
@@ -108,14 +105,13 @@
         "copy-webpack-plugin": "catalog:",
         "cross-env": "catalog:",
         "fake-indexeddb": "catalog:",
+        "happy-dom": "catalog:",
         "html-webpack-plugin": "catalog:",
-        "jest": "catalog:",
-        "jest-junit": "catalog:",
-        "jest-when": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "path-browserify": "^1.0.1",
         "typescript": "catalog:",
+        "vitest": "catalog:",
         "webpack": "catalog:"
     }
 }

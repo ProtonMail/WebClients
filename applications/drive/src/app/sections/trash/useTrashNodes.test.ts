@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Mock, MockedFunction } from 'vitest';
 
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
@@ -8,30 +9,30 @@ import { type NodeEntity, getDrive, getDriveForPhotos } from '@proton/drive/sdk'
 import { useTrashStore } from './useTrash.store';
 import { useTrashNodes } from './useTrashNodes';
 
-jest.mock('@proton/drive/sdk', () => ({
-    getDrive: jest.fn(),
-    getDriveForPhotos: jest.fn(),
+vi.mock('@proton/drive/sdk', () => ({
+    getDrive: vi.fn(),
+    getDriveForPhotos: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling');
+vi.mock('@proton/drive/legacy/errorHandling');
 
-jest.mock('@proton/drive/modules/nodes', () => ({
-    ...jest.requireActual('@proton/drive/modules/nodes'),
-    getFormattedNodeLocation: jest.fn(),
-    getFormattedNodeLocationFromHierarchy: jest.fn(),
+vi.mock('@proton/drive/modules/nodes', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/nodes')),
+    getFormattedNodeLocation: vi.fn(),
+    getFormattedNodeLocationFromHierarchy: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
-    getNodeEntity: jest.fn(),
+vi.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
+    getNodeEntity: vi.fn(),
 }));
 
-jest.mock('../../utils/sdk/getSignatureIssues', () => ({
-    getSignatureIssues: jest.fn(() => ({ ok: true })),
+vi.mock('../../utils/sdk/getSignatureIssues', () => ({
+    getSignatureIssues: vi.fn(() => ({ ok: true })),
 }));
 
-jest.mock('./useTrash.store', () => {
-    const hook = jest.fn() as jest.Mock & { getState: jest.Mock };
-    hook.getState = jest.fn();
+vi.mock('./useTrash.store', () => {
+    const hook = vi.fn() as Mock & { getState: Mock };
+    hook.getState = vi.fn();
     return {
         useTrashStore: hook,
         createTrashItem: (rawNode: any, node: any, location: string, rootNode: NodeEntity) => ({
@@ -42,12 +43,12 @@ jest.mock('./useTrash.store', () => {
     };
 });
 
-const mockGetDrive = jest.mocked(getDrive);
-const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
-const mockGetNodeEntity = jest.mocked(getNodeEntity);
-const mockGetFormattedNodeLocation = jest.mocked(getFormattedNodeLocation);
-const mockGetFormattedNodeLocationFromHierarchy = jest.mocked(getFormattedNodeLocationFromHierarchy);
-const mockUseTrashStore = useTrashStore as jest.MockedFunction<typeof useTrashStore> & { getState: jest.Mock };
+const mockGetDrive = vi.mocked(getDrive);
+const mockGetDriveForPhotos = vi.mocked(getDriveForPhotos);
+const mockGetNodeEntity = vi.mocked(getNodeEntity);
+const mockGetFormattedNodeLocation = vi.mocked(getFormattedNodeLocation);
+const mockGetFormattedNodeLocationFromHierarchy = vi.mocked(getFormattedNodeLocationFromHierarchy);
+const mockUseTrashStore = useTrashStore as MockedFunction<typeof useTrashStore> & { getState: Mock };
 
 const createNode = (uid: string, name: string): NodeEntity =>
     ({
@@ -63,12 +64,7 @@ const createAsyncIterable = <T>(items: T[]) =>
     })();
 
 // Mocks the trash UID listing and the loading of those UIDs, like the SDK does.
-const mockTrashListing = (
-    listUids: jest.Mock,
-    loadNodes: jest.Mock,
-    nodes: { uid: string }[],
-    missingUids: string[] = []
-) => {
+const mockTrashListing = (listUids: Mock, loadNodes: Mock, nodes: { uid: string }[], missingUids: string[] = []) => {
     listUids.mockReturnValue(createAsyncIterable([...nodes.map((node) => node.uid), ...missingUids]));
     loadNodes.mockImplementation((uids: string[]) =>
         createAsyncIterable(uids.map((uid) => nodes.find((node) => node.uid === uid) ?? { missingUid: uid }))
@@ -76,18 +72,18 @@ const mockTrashListing = (
 };
 
 describe('useTrashNodes', () => {
-    const setItem = jest.fn();
-    const setLoading = jest.fn();
-    const setSorting = jest.fn();
-    const iterateTrashedNodeUids = jest.fn();
-    const iterateNodes = jest.fn();
-    const getNodeHierarchy = jest.fn();
-    const iterateTrashedPhotoNodeUids = jest.fn();
-    const iteratePhotoNodes = jest.fn();
-    const handleError = jest.fn();
+    const setItem = vi.fn();
+    const setLoading = vi.fn();
+    const setSorting = vi.fn();
+    const iterateTrashedNodeUids = vi.fn();
+    const iterateNodes = vi.fn();
+    const getNodeHierarchy = vi.fn();
+    const iterateTrashedPhotoNodeUids = vi.fn();
+    const iteratePhotoNodes = vi.fn();
+    const handleError = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockGetFormattedNodeLocation.mockResolvedValue('/location');
 
         mockUseTrashStore.mockImplementation((selector: (state: any) => any) =>

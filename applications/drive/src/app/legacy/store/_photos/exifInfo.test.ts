@@ -58,7 +58,7 @@ describe('sortWithCategories', () => {
     // FIXME `toISOString()` return timezone releated output.
     // for example if machine is in timezone +02 for dateTime value `2024:01:07 09:00:53` it returns `2024-01-07T07:00:53.000Z`
     // pay attention to hours
-    xdescribe('getCaptureDateTimeString', () => {
+    describe.skip('getCaptureDateTimeString', () => {
         it('should return `DateTimeOriginal` when all params present', () => {
             const value = getCaptureDateTimeString(mockExif);
             expect(value).toBe('2024-01-07T07:00:53.000Z');

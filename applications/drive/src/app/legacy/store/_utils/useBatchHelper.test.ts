@@ -1,5 +1,4 @@
 import { renderHook } from '@testing-library/react';
-import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import usePreventLeave from '@proton/components/hooks/usePreventLeave';
 import { API_CODES } from '@proton/shared/lib/constants';
@@ -7,40 +6,41 @@ import { BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import chunk from '@proton/utils/chunk';
 
+import { verifyAllWhenMocksCalled, when } from '../../../utils/tests/when';
 import { useDebouncedRequest } from '../_api';
 import { useBatchHelper } from './useBatchHelper';
 
-jest.mock('@proton/components/hooks/usePreventLeave', () => ({
+vi.mock('@proton/components/hooks/usePreventLeave', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-const preventLeaveMock = jest.fn((fn) => fn);
-jest.mocked(usePreventLeave).mockReturnValue({ preventLeave: preventLeaveMock } as any);
+const preventLeaveMock = vi.fn((fn) => fn);
+vi.mocked(usePreventLeave).mockReturnValue({ preventLeave: preventLeaveMock } as any);
 
-jest.mock('@proton/shared/lib/helpers/runInQueue', () => ({
+vi.mock('@proton/shared/lib/helpers/runInQueue', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-const mockedRunInQueue = jest.mocked(runInQueue).mockImplementation(async (queue) => {
+const mockedRunInQueue = vi.mocked(runInQueue).mockImplementation(async (queue) => {
     for (const task of queue) {
         await task();
     }
     return [];
 });
 
-jest.mock('@proton/utils/chunk', () => ({
+vi.mock('@proton/utils/chunk', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-const mockedChunk = jest.mocked(chunk);
+const mockedChunk = vi.mocked(chunk);
 
-jest.mock('../_api', () => ({
-    useDebouncedRequest: jest.fn(),
+vi.mock('../_api', () => ({
+    useDebouncedRequest: vi.fn(),
 }));
-const debouncedRequestMock = jest.fn();
-jest.mocked(useDebouncedRequest).mockReturnValue(debouncedRequestMock);
+const debouncedRequestMock = vi.fn();
+vi.mocked(useDebouncedRequest).mockReturnValue(debouncedRequestMock);
 
-const queryMock = jest.fn((batchLinkIds) => {
+const queryMock = vi.fn((batchLinkIds) => {
     return { batchLinkIds };
 });
 
@@ -49,7 +49,7 @@ describe('useBatchHelper', () => {
     const linkIds = ['link1', 'link2', 'link3', 'link4'];
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         when(mockedChunk)
             .calledWith(linkIds, BATCH_REQUEST_SIZE)
@@ -185,7 +185,7 @@ describe('useBatchHelper', () => {
         const { result } = renderHook(() => useBatchHelper());
         const { batchAPIHelper } = result.current;
 
-        const customRequestMock = jest.fn();
+        const customRequestMock = vi.fn();
 
         customRequestMock.mockImplementationOnce(async () => {
             return Promise.resolve({

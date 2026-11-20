@@ -24,34 +24,34 @@ export function makeSearchMetricsSpies(spies: Partial<SearchMetrics>): SearchMet
 }
 
 /**
- * Creates a TaskContext with all fields pre-populated as jest mocks/stubs.
+ * Creates a TaskContext with all fields pre-populated as vi mocks/stubs.
  * Callers override specific fields as needed.
  */
 export function makeTaskContext(overrides?: Partial<TaskContext>): TaskContext {
     return {
         bridge: {} as MainThreadBridge,
         db: {
-            getPopulatorState: jest.fn().mockResolvedValue({ generation: 1, version: 1, done: false }),
-            putPopulatorState: jest.fn().mockResolvedValue(undefined),
-            getBFSVisitorState: jest.fn().mockResolvedValue(undefined),
-            putBFSVisitorState: jest.fn().mockResolvedValue(undefined),
-            deleteBFSVisitorState: jest.fn().mockResolvedValue(undefined),
+            getPopulatorState: vi.fn().mockResolvedValue({ generation: 1, version: 1, done: false }),
+            putPopulatorState: vi.fn().mockResolvedValue(undefined),
+            getBFSVisitorState: vi.fn().mockResolvedValue(undefined),
+            putBFSVisitorState: vi.fn().mockResolvedValue(undefined),
+            deleteBFSVisitorState: vi.fn().mockResolvedValue(undefined),
         } as unknown as SearchDB,
-        indexRegistry: { getAll: jest.fn().mockReturnValue([].values()) } as unknown as IndexRegistry,
+        indexRegistry: { getAll: vi.fn().mockReturnValue([].values()) } as unknown as IndexRegistry,
         treeSubscriptionRegistry: {
-            getAllRegistrations: jest.fn().mockReturnValue([]),
-            getRegistration: jest.fn().mockReturnValue(undefined),
-            markIncrementalUpdateComplete: jest.fn(),
-            startIncrementalUpdateScheduling: jest.fn(),
+            getAllRegistrations: vi.fn().mockReturnValue([]),
+            getRegistration: vi.fn().mockReturnValue(undefined),
+            markIncrementalUpdateComplete: vi.fn(),
+            startIncrementalUpdateScheduling: vi.fn(),
         } as unknown as TreeSubscriptionRegistry,
         signal: new AbortController().signal,
         searchMetrics: noopSearchMetrics,
-        markIndexing: jest.fn(),
-        enqueueOnce: jest.fn(),
-        enqueueDelayed: jest.fn(),
-        notifyIndexingProgress: jest.fn(),
+        markIndexing: vi.fn(),
+        enqueueOnce: vi.fn(),
+        enqueueDelayed: vi.fn(),
+        notifyIndexingProgress: vi.fn(),
         activeIndexPopulators: [],
-        getIndexPopulator: jest.fn().mockReturnValue(undefined),
+        getIndexPopulator: vi.fn().mockReturnValue(undefined),
         ...overrides,
     };
 }

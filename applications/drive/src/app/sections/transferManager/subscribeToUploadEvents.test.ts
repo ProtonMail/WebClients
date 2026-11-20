@@ -4,21 +4,21 @@ import { uploadManager } from '@proton/drive/modules/upload';
 import { subscribeToUploadEvents } from './subscribeToUploadEvents';
 import { useTransferManagerStore } from './transferManager.store';
 
-jest.mock('@proton/drive/modules/busDriver', () => ({
-    ...jest.requireActual('@proton/drive/modules/busDriver'),
-    getBusDriver: jest.fn(),
+vi.mock('@proton/drive/modules/busDriver', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/busDriver')),
+    getBusDriver: vi.fn(),
 }));
-jest.mock('@proton/drive/modules/upload', () => ({
-    uploadManager: { subscribeToEvents: jest.fn(), unsubscribeFromEvents: jest.fn() },
+vi.mock('@proton/drive/modules/upload', () => ({
+    uploadManager: { subscribeToEvents: vi.fn(), unsubscribeFromEvents: vi.fn() },
 }));
 
 describe('subscribeToUploadEvents', () => {
     it('should still emit created nodes when the uploaded node cannot be loaded', async () => {
-        const emit = jest.fn();
-        jest.mocked(getBusDriver).mockReturnValue({ emit } as any);
+        const emit = vi.fn();
+        vi.mocked(getBusDriver).mockReturnValue({ emit } as any);
         subscribeToUploadEvents();
-        const callback = jest.mocked(uploadManager.subscribeToEvents).mock.calls[0][1];
-        const driveClient = { getNode: jest.fn().mockRejectedValue(new Error('Item not found')) };
+        const callback = vi.mocked(uploadManager.subscribeToEvents).mock.calls[0][1];
+        const driveClient = { getNode: vi.fn().mockRejectedValue(new Error('Item not found')) };
 
         await callback(
             {

@@ -9,9 +9,9 @@ import { NodeType, RevisionState } from '@proton/drive/sdk';
 import { useFileDetailsModalState } from './useFileDetailsModalState';
 
 // The real handler logs and reports to Sentry, which under CI load can block long enough for waitFor to time out.
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    ...jest.requireActual('@proton/drive/legacy/errorHandling'),
-    handleSdkError: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', async () => ({
+    ...(await vi.importActual('@proton/drive/legacy/errorHandling')),
+    handleSdkError: vi.fn(),
 }));
 
 const noop = () => {};
@@ -93,11 +93,11 @@ describe('useFileDetailsModalState - isImported', () => {
 
 describe('useFileDetailsModalState - recently accessed reporting', () => {
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('reports the node as recently accessed once details load', async () => {
-        const reportSpy = jest.spyOn(recentlyAccessed, 'report');
+        const reportSpy = vi.spyOn(recentlyAccessed, 'report');
         const node = createMockNodeEntity({ type: NodeType.File });
         const drive = { getNode: async () => node };
 
@@ -108,7 +108,7 @@ describe('useFileDetailsModalState - recently accessed reporting', () => {
     });
 
     it('does not report when loading the node fails', async () => {
-        const reportSpy = jest.spyOn(recentlyAccessed, 'report');
+        const reportSpy = vi.spyOn(recentlyAccessed, 'report');
         const node = createMockNodeEntity({ type: NodeType.File });
         const error = new Error('load error');
         const drive = {

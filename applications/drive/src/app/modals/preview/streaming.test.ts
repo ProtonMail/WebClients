@@ -6,18 +6,18 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { initDownloadSW } from '../../modules/fileSaver/download';
 import { useVideoStreaming } from './streaming';
 
-jest.mock('../../modules/fileSaver/download');
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
-    traceError: jest.fn(),
+vi.mock('../../modules/fileSaver/download');
+vi.mock('@proton/shared/lib/helpers/sentry', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/sentry')),
+    traceError: vi.fn(),
 }));
-const mockedInitDownloadSW = jest.mocked(initDownloadSW);
+const mockedInitDownloadSW = vi.mocked(initDownloadSW);
 
 // Force the Service Worker path: MSE detection is irrelevant to this test, and stubbing it
 // out avoids having to fabricate a byte-accurate fragmented-mp4 header just to sniff past it.
-jest.mock('./mseStreaming', () => ({
-    ...jest.requireActual('./mseStreaming'),
-    isFragmentedMp4: jest.fn().mockReturnValue(false),
+vi.mock('./mseStreaming', async () => ({
+    ...(await vi.importActual('./mseStreaming')),
+    isFragmentedMp4: vi.fn().mockReturnValue(false),
 }));
 
 function createFakeSeekableStream(): SeekableReadableStream {
@@ -59,14 +59,14 @@ async function waitForUrl(getUrl: () => string | undefined, expected: string) {
 
 describe('useVideoStreaming', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedInitDownloadSW.mockResolvedValue(undefined);
 
         Object.defineProperty(navigator, 'serviceWorker', {
             value: {
                 ready: Promise.resolve(),
-                addEventListener: jest.fn(),
-                removeEventListener: jest.fn(),
+                addEventListener: vi.fn(),
+                removeEventListener: vi.fn(),
             },
             configurable: true,
         });
@@ -93,7 +93,7 @@ describe('useVideoStreaming', () => {
     });
 
     it('reports playback errors with the mimeType and media error code as tags', async () => {
-        jest.spyOn(HTMLMediaElement.prototype, 'canPlayType').mockReturnValue('probably');
+        vi.spyOn(HTMLMediaElement.prototype, 'canPlayType').mockReturnValue('probably');
         const { result, unmount } = renderHook(() =>
             useVideoStreaming({ drive: createFakeDrive(), nodeUid: 'node-1', mimeType: 'video/mp4' })
         );
@@ -116,7 +116,7 @@ describe('useVideoStreaming', () => {
     });
 
     it('does not report playback errors for containers the browser cannot decode', async () => {
-        jest.spyOn(HTMLMediaElement.prototype, 'canPlayType').mockReturnValue('');
+        vi.spyOn(HTMLMediaElement.prototype, 'canPlayType').mockReturnValue('');
         const { result, unmount } = renderHook(() =>
             useVideoStreaming({ drive: createFakeDrive(), nodeUid: 'node-1', mimeType: 'video/x-msvideo' })
         );

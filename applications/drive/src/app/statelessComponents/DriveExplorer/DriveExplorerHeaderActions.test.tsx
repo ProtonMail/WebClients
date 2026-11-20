@@ -10,12 +10,12 @@ import type { CellDefinition, DriveExplorerSelection, SelectionMethods } from '.
 function makeSelectionMethods(overrides: Partial<SelectionMethods> = {}): SelectionMethods {
     return {
         selectionState: SelectionState.NONE,
-        selectItem: jest.fn(),
-        toggleSelectItem: jest.fn(),
-        toggleRange: jest.fn(),
-        toggleAllSelected: jest.fn(),
-        clearSelections: jest.fn(),
-        isSelected: jest.fn(() => false),
+        selectItem: vi.fn(),
+        toggleSelectItem: vi.fn(),
+        toggleRange: vi.fn(),
+        toggleAllSelected: vi.fn(),
+        clearSelections: vi.fn(),
+        isSelected: vi.fn(() => false),
         ...overrides,
     };
 }
@@ -44,7 +44,7 @@ function renderExplorer(opts: { layout?: LayoutSetting; selection?: DriveExplore
             layout={opts.layout ?? LayoutSetting.List}
             cells={[nameCell]}
             selection={opts.selection ?? makeSelection()}
-            sort={{ sortBy: SortField.name, onSort: jest.fn() }}
+            sort={{ sortBy: SortField.name, onSort: vi.fn() }}
             caption="test"
             headerActions={headerActions}
         />

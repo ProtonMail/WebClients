@@ -401,7 +401,7 @@ describe('Promise cache operations', () => {
 
     describe('Subscribe to cache changes', () => {
         it('should notify subscribers when isLoadingShares changes', () => {
-            const mockFn = jest.fn();
+            const mockFn = vi.fn();
 
             const unsubscribe = useSharesStore.subscribe((state) => {
                 mockFn(state.isLoadingShares);

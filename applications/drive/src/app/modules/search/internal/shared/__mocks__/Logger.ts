@@ -1,6 +1,6 @@
 export class Logger {
-    static info = jest.fn();
-    static warn = jest.fn();
-    static error = jest.fn();
-    static debug = jest.fn();
+    static info = vi.fn();
+    static warn = vi.fn();
+    static error = vi.fn();
+    static debug = vi.fn();
 }

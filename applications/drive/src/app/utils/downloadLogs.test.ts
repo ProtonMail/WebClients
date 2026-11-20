@@ -1,37 +1,39 @@
+import type { Mock } from 'vitest';
+
 import format from '@proton/shared/lib/date-fns-utc/format';
 
 import { downloadLogs } from './downloadLogs';
 
-jest.mock('@proton/shared/lib/date-fns-utc/format', () => ({
+vi.mock('@proton/shared/lib/date-fns-utc/format', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
 describe('downloadLogs', () => {
     let mockElement: Partial<HTMLAnchorElement>;
-    let mockSetAttribute: jest.Mock;
+    let mockSetAttribute: Mock;
 
-    const mockedFormat = jest.mocked(format);
+    const mockedFormat = vi.mocked(format);
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        mockSetAttribute = jest.fn();
+        mockSetAttribute = vi.fn();
         mockElement = {
             setAttribute: mockSetAttribute,
-            click: jest.fn(),
+            click: vi.fn(),
             style: {} as any,
         };
 
-        jest.spyOn(document, 'createElement').mockReturnValue(mockElement as HTMLAnchorElement);
-        jest.spyOn(document.body, 'appendChild').mockImplementation();
-        jest.spyOn(document.body, 'removeChild').mockImplementation();
+        vi.spyOn(document, 'createElement').mockReturnValue(mockElement as HTMLAnchorElement);
+        vi.spyOn(document.body, 'appendChild').mockImplementation((node) => node);
+        vi.spyOn(document.body, 'removeChild').mockImplementation((node) => node);
 
         mockedFormat.mockReturnValue('2023-12-25_14-30-45');
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('should join logs with newlines and set correct href', () => {

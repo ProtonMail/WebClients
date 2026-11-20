@@ -7,44 +7,46 @@ import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { initDownloadSW } from '../../../modules/fileSaver/download';
 import { useVideoStreaming } from './useVideoStreaming';
 
-jest.mock('@proton/shared/lib/helpers/mimetype');
-const mockedIsVideo = jest.mocked(isVideo);
+vi.mock('@proton/shared/lib/helpers/mimetype');
+const mockedIsVideo = vi.mocked(isVideo);
 
-jest.mock('../../../modules/fileSaver/download');
-const mockedInitDownloadSW = jest.mocked(initDownloadSW);
+vi.mock('../../../modules/fileSaver/download');
+const mockedInitDownloadSW = vi.mocked(initDownloadSW);
 
-jest.mock('@proton/drive/legacy/errorHandling');
-const mockedSendErrorReport = jest.mocked(sendErrorReport);
+vi.mock('@proton/drive/legacy/errorHandling');
+const mockedSendErrorReport = vi.mocked(sendErrorReport);
 
-jest.mock('uuid', () => ({
-    v4: jest.fn(() => 'test-uuid-123'),
+vi.mock('uuid', () => ({
+    v4: vi.fn(() => 'test-uuid-123'),
 }));
 
-jest.mock('@proton/metrics/metricsInstance', () => ({
-    drive_warnings_total: {
-        increment: jest.fn(),
+vi.mock('@proton/metrics/metricsInstance', () => ({
+    default: {
+        drive_warnings_total: {
+            increment: vi.fn(),
+        },
     },
 }));
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 describe('useVideoStreaming', () => {
     const mockVideoData = { blockSizes: [1024, 2048, 1536] };
     const mockMimeType = 'video/mp4';
-    const mockDownloadSlice = jest.fn();
-    const mockServiceWorkerController = { postMessage: jest.fn() };
+    const mockDownloadSlice = vi.fn();
+    const mockServiceWorkerController = { postMessage: vi.fn() };
     let mockServiceWorkerReady = Promise.resolve();
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.clearAllTimers();
+        vi.clearAllMocks();
+        vi.clearAllTimers();
 
         Object.defineProperty(navigator, 'serviceWorker', {
             value: {
                 ready: mockServiceWorkerReady,
                 controller: mockServiceWorkerController,
-                addEventListener: jest.fn(),
-                removeEventListener: jest.fn(),
+                addEventListener: vi.fn(),
+                removeEventListener: vi.fn(),
             },
             writable: true,
         });
@@ -55,9 +57,9 @@ describe('useVideoStreaming', () => {
     });
 
     afterEach(() => {
-        jest.runOnlyPendingTimers();
-        jest.useRealTimers();
-        jest.useFakeTimers();
+        vi.runOnlyPendingTimers();
+        vi.useRealTimers();
+        vi.useFakeTimers();
     });
 
     it('should return undefined when required conditions are not met', () => {
@@ -111,7 +113,7 @@ describe('useVideoStreaming', () => {
         );
 
         act(() => {
-            jest.advanceTimersByTime(15000);
+            vi.advanceTimersByTime(15000);
         });
 
         expect(mockedSendErrorReport).not.toHaveBeenCalled();
@@ -120,13 +122,13 @@ describe('useVideoStreaming', () => {
     });
 
     it('should handle message events and block data requests', async () => {
-        const addEventListenerSpy = jest.fn();
+        const addEventListenerSpy = vi.fn();
         Object.defineProperty(navigator, 'serviceWorker', {
             value: {
                 ready: mockServiceWorkerReady,
                 controller: mockServiceWorkerController,
                 addEventListener: addEventListenerSpy,
-                removeEventListener: jest.fn(),
+                removeEventListener: vi.fn(),
             },
             writable: true,
         });
@@ -142,7 +144,7 @@ describe('useVideoStreaming', () => {
         const messageHandler = addEventListenerSpy.mock.calls.find((call) => call[0] === 'message')?.[1];
         const mockEvent = {
             data: { type: 'get_block_data', indices: [0, 1] },
-            ports: [{ postMessage: jest.fn() }],
+            ports: [{ postMessage: vi.fn() }],
         };
 
         await act(async () => {
@@ -156,13 +158,13 @@ describe('useVideoStreaming', () => {
         const testError = new Error('Download failed');
         mockDownloadSlice.mockRejectedValue(testError);
 
-        const addEventListenerSpy = jest.fn();
+        const addEventListenerSpy = vi.fn();
         Object.defineProperty(navigator, 'serviceWorker', {
             value: {
                 ready: mockServiceWorkerReady,
                 controller: mockServiceWorkerController,
                 addEventListener: addEventListenerSpy,
-                removeEventListener: jest.fn(),
+                removeEventListener: vi.fn(),
             },
             writable: true,
         });
@@ -178,7 +180,7 @@ describe('useVideoStreaming', () => {
         const messageHandler = addEventListenerSpy.mock.calls.find((call) => call[0] === 'message')?.[1];
         const mockEvent = {
             data: { type: 'get_block_data', indices: [0] },
-            ports: [{ postMessage: jest.fn() }],
+            ports: [{ postMessage: vi.fn() }],
         };
 
         await act(async () => {
@@ -221,7 +223,7 @@ describe('useVideoStreaming', () => {
             result.current?.onVideoPlaybackError(new Error('Test error'));
         });
 
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         rerender({
             mimeType: mockMimeType,
             videoData: mockVideoData,

@@ -1,42 +1,42 @@
 import { useLocation } from 'react-router-dom-v5-compat';
 
 import { act, renderHook } from '@testing-library/react';
-import { when } from 'jest-when';
 
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
 import { getSharedLink } from '../../../legacy/store/_shares';
+import { when } from '../../../utils/tests/when';
 import { getUrlPassword } from '../../../utils/url/password';
 import { drivePublicRedirectionReasonKey, useRedirectToPublicPage } from './useRedirectToPublicPage';
 
-const mockHistoryReplace = jest.fn();
+const mockHistoryReplace = vi.fn();
 
-jest.mock('react-router-dom-v5-compat', () => {
-    const actual = jest.requireActual('react-router-dom-v5-compat');
+vi.mock('react-router-dom-v5-compat', async () => {
+    const actual = await vi.importActual('react-router-dom-v5-compat');
     return {
         ...actual,
-        useNavigate: jest.fn().mockImplementation(() => mockHistoryReplace),
-        useLocation: jest.fn(),
+        useNavigate: vi.fn().mockImplementation(() => mockHistoryReplace),
+        useLocation: vi.fn(),
     };
 });
 
-const mockedUseLocation = jest.mocked(useLocation);
+const mockedUseLocation = vi.mocked(useLocation);
 
-jest.mock('@proton/shared/lib/helpers/browser');
-const mockedReplaceUrl = jest.mocked(replaceUrl);
+vi.mock('@proton/shared/lib/helpers/browser');
+const mockedReplaceUrl = vi.mocked(replaceUrl);
 
-jest.mock('../../../legacy/store/_shares');
-const mockedGetSharedLink = jest.mocked(getSharedLink);
+vi.mock('../../../legacy/store/_shares');
+const mockedGetSharedLink = vi.mocked(getSharedLink);
 
-jest.mock('../../../utils/url/password');
-const mockedGetUrlPassword = jest.mocked(getUrlPassword);
+vi.mock('../../../utils/url/password');
+const mockedGetUrlPassword = vi.mocked(getUrlPassword);
 
 describe('useRedirectToPublicPage', () => {
     const mockToken = 'mockToken';
     const mockPassword = 'mockPassword';
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should redirect if account switch redirection reason is passed and is signin or accountSwitch', () => {

@@ -3,24 +3,24 @@ import { render, screen } from '@testing-library/react';
 import { PublicHeader } from './PublicHeader';
 
 let mockIsDesktop = true;
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
+vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
     __esModule: true,
     default: () => ({
         viewportWidth: { '<=small': !mockIsDesktop, '>=xlarge': mockIsDesktop },
     }),
 }));
-jest.mock('@proton/components/components/logo/MainLogo', () => ({ __esModule: true, default: () => null }));
-jest.mock('./BookmarkButton', () => ({ BookmarkButton: () => null }));
-jest.mock('./CreateAccountButton', () => ({ CreateAccountButton: () => null }));
-jest.mock('./DownloadDropdown', () => ({ DownloadDropdown: () => null }));
-jest.mock('./GoBackButton', () => ({ GoBackButton: () => null }));
-jest.mock('./UserInfo', () => ({ UserInfo: () => null }));
+vi.mock('@proton/components/components/logo/MainLogo', () => ({ __esModule: true, default: () => null }));
+vi.mock('./BookmarkButton', () => ({ BookmarkButton: () => null }));
+vi.mock('./CreateAccountButton', () => ({ CreateAccountButton: () => null }));
+vi.mock('./DownloadDropdown', () => ({ DownloadDropdown: () => null }));
+vi.mock('./GoBackButton', () => ({ GoBackButton: () => null }));
+vi.mock('./UserInfo', () => ({ UserInfo: () => null }));
 
 const defaultProps = {
     breadcrumbOrName: 'Shared folder',
-    onDownload: jest.fn(),
-    onScanAndDownload: jest.fn(),
-    onCopyLink: jest.fn(),
+    onDownload: vi.fn(),
+    onScanAndDownload: vi.fn(),
+    onCopyLink: vi.fn(),
 };
 
 describe('PublicHeader', () => {

@@ -7,25 +7,25 @@ import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import { useSuggestBusinessModal } from '../../../../modals/SuggestBusinessModal/useSuggestBusinessModal';
 import { SuggestBusinessButton } from './SuggestBusinessButton';
 
-jest.mock('@proton/account/user/hooks');
-const mockedUseUser = jest.mocked(useUser);
+vi.mock('@proton/account/user/hooks');
+const mockedUseUser = vi.mocked(useUser);
 
-jest.mock('@proton/shared/lib/user/storage');
-const mockedGetSpace = jest.mocked(getSpace);
-const mockedGetAppSpace = jest.mocked(getAppSpace);
+vi.mock('@proton/shared/lib/user/storage');
+const mockedGetSpace = vi.mocked(getSpace);
+const mockedGetAppSpace = vi.mocked(getAppSpace);
 
-jest.mock('../../../../modals/SuggestBusinessModal/useSuggestBusinessModal');
-const mockedUseSuggestBusinessModal = jest.mocked(useSuggestBusinessModal);
+vi.mock('../../../../modals/SuggestBusinessModal/useSuggestBusinessModal');
+const mockedUseSuggestBusinessModal = vi.mocked(useSuggestBusinessModal);
 
-jest.mock('@proton/components/containers/offers/operations/blackFriday2026configs');
-const mockedUseBlackFriday2026 = jest.mocked(useBlackFriday2026);
+vi.mock('@proton/components/containers/offers/operations/blackFriday2026configs');
+const mockedUseBlackFriday2026 = vi.mocked(useBlackFriday2026);
 
 describe('SuggestBusinessButton', () => {
-    const mockShowModal = jest.fn();
+    const mockShowModal = vi.fn();
     const mockModal = <div data-testid="suggest-business-modal">Modal</div>;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedUseSuggestBusinessModal.mockReturnValue([mockModal, mockShowModal]);
         mockedGetSpace.mockReturnValue({ usedSpace: 100, maxSpace: 1000 } as ReturnType<typeof getSpace>);
         mockedGetAppSpace.mockReturnValue({ usedSpace: 100, maxSpace: 1000 });
@@ -39,12 +39,12 @@ describe('SuggestBusinessButton', () => {
     };
 
     const mockDate = (day: number) => {
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date(2025, 0, day)); // January 2025
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date(2025, 0, day)); // January 2025
     };
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('when all conditions are met', () => {

@@ -26,9 +26,9 @@ import {
 
 setupRealSearchLibraryWasm();
 
-jest.mock('../../../../shared/errors', () => {
-    const actual = jest.requireActual('../../../../shared/errors');
-    return { ...actual, sendErrorReportForSearch: jest.fn() };
+vi.mock('../../../../shared/errors', async () => {
+    const actual = await vi.importActual('../../../../shared/errors');
+    return { ...actual, sendErrorReportForSearch: vi.fn() };
 });
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
@@ -79,7 +79,7 @@ describe('drainResumableTreeVisitorEvents', () => {
 
         await drainResumableTreeVisitorEvents(fromArray(events), IndexKind.MAIN, ctx, {
             toEntry,
-            persistCheckpoint: jest.fn(async () => {}),
+            persistCheckpoint: vi.fn(async () => {}),
         });
 
         const instance = await indexRegistry.get(IndexKind.MAIN, db);
@@ -90,7 +90,7 @@ describe('drainResumableTreeVisitorEvents', () => {
 
     it('quarantines a node-scoped mapping failure via onNodeError and keeps indexing the rest', async () => {
         const ctx = buildCtx();
-        const onNodeError = jest.fn(async (_node: NodeEntity, _error: unknown) => {});
+        const onNodeError = vi.fn(async (_node: NodeEntity, _error: unknown) => {});
         // toEntry throws a node-scoped error for 'b' only.
         const failingToEntry: ResumableWalkHandlers['toEntry'] = (node, parentPath, generation) => {
             if (node.uid === 'b') {
@@ -105,7 +105,7 @@ describe('drainResumableTreeVisitorEvents', () => {
             ctx,
             {
                 toEntry: failingToEntry,
-                persistCheckpoint: jest.fn(async () => {}),
+                persistCheckpoint: vi.fn(async () => {}),
                 onNodeError,
             }
         );
@@ -121,7 +121,7 @@ describe('drainResumableTreeVisitorEvents', () => {
 
     it('propagates a systemic (SearchLibraryError) mapping failure instead of quarantining', async () => {
         const ctx = buildCtx();
-        const onNodeError = jest.fn(async (_node: NodeEntity, _error: unknown) => {});
+        const onNodeError = vi.fn(async (_node: NodeEntity, _error: unknown) => {});
         const failingToEntry: ResumableWalkHandlers['toEntry'] = () => {
             throw new SearchLibraryError('wasm exploded', null);
         };
@@ -129,7 +129,7 @@ describe('drainResumableTreeVisitorEvents', () => {
         await expect(
             drainResumableTreeVisitorEvents(fromArray([nodeEvent('a')]), IndexKind.MAIN, ctx, {
                 toEntry: failingToEntry,
-                persistCheckpoint: jest.fn(async () => {}),
+                persistCheckpoint: vi.fn(async () => {}),
                 onNodeError,
             })
         ).rejects.toThrow('wasm exploded');
@@ -140,7 +140,7 @@ describe('drainResumableTreeVisitorEvents', () => {
         const ctx = buildCtx();
         const persistOrder: string[] = [];
         // Mid-folder boundaries are forced, so persistCheckpoint fires immediately.
-        const persistCheckpoint = jest.fn(async () => {
+        const persistCheckpoint = vi.fn(async () => {
             // At persist time the node must already be durable in the index.
             const instance = await indexRegistry.get(IndexKind.MAIN, db);
             const found = await findDocumentsByTag(instance.indexReader, 'nodeUid', 'a');
@@ -163,7 +163,7 @@ describe('drainResumableTreeVisitorEvents', () => {
 
     it('forces persist on every mid-folder boundary but throttles folder boundaries to CHECKPOINT_EVERY_N_FOLDERS', async () => {
         const ctx = buildCtx();
-        const persistCheckpoint = jest.fn(async () => {});
+        const persistCheckpoint = vi.fn(async () => {});
 
         const events: BFSNodeEvent[] = [
             { type: 'mid-folder-boundary', checkpoint },
@@ -192,7 +192,7 @@ describe('drainResumableTreeVisitorEvents', () => {
         await expect(
             drainResumableTreeVisitorEvents(fromArray([nodeEvent('a')]), IndexKind.MAIN, ctx, {
                 toEntry,
-                persistCheckpoint: jest.fn(async () => {}),
+                persistCheckpoint: vi.fn(async () => {}),
             })
         ).rejects.toThrow();
     });
@@ -219,8 +219,8 @@ describe('drainResumableTreeVisitorEvents', () => {
         it('stops after the commit that crosses the cap and calls onCapReached exactly once', async () => {
             const ctx = buildCtx();
             await db.putPopulatorState(populatorState);
-            const onCapReached = jest.fn(async (_count: number) => {});
-            const persistCheckpoint = jest.fn(async () => {});
+            const onCapReached = vi.fn(async (_count: number) => {});
+            const persistCheckpoint = vi.fn(async () => {});
 
             // Fewer nodes than COMMIT_EVERY_N_ENTRIES, so this exercises the trailing commit at
             // the end of the event stream, not the mid-stream commit-every-N-entries path.
@@ -256,7 +256,7 @@ describe('drainResumableTreeVisitorEvents', () => {
                 fromArray([nodeEvent('a'), nodeEvent('b'), nodeEvent('c')]),
                 IndexKind.MAIN,
                 ctx,
-                { toEntry, persistCheckpoint: jest.fn(async () => {}) },
+                { toEntry, persistCheckpoint: vi.fn(async () => {}) },
                 2
             );
 
@@ -269,13 +269,13 @@ describe('drainResumableTreeVisitorEvents', () => {
         it('disposes the write session cleanly after capping (a later write session can start)', async () => {
             const ctx = buildCtx();
             await db.putPopulatorState(populatorState);
-            const onCapReached = jest.fn(async (_count: number) => {});
+            const onCapReached = vi.fn(async (_count: number) => {});
 
             await drainResumableTreeVisitorEvents(
                 fromArray([nodeEvent('a')]),
                 IndexKind.MAIN,
                 ctx,
-                { toEntry, persistCheckpoint: jest.fn(async () => {}), onCapReached },
+                { toEntry, persistCheckpoint: vi.fn(async () => {}), onCapReached },
                 1
             );
 
@@ -289,8 +289,8 @@ describe('drainResumableTreeVisitorEvents', () => {
         it('skips the checkpoint at a folder boundary once the cap is reached', async () => {
             const ctx = buildCtx();
             await db.putPopulatorState(populatorState);
-            const onCapReached = jest.fn(async (_count: number) => {});
-            const persistCheckpoint = jest.fn(async () => {});
+            const onCapReached = vi.fn(async (_count: number) => {});
+            const persistCheckpoint = vi.fn(async () => {});
 
             const events: BFSNodeEvent[] = [nodeEvent('a'), { type: 'mid-folder-boundary', checkpoint }];
 

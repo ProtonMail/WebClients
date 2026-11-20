@@ -1,3 +1,4 @@
+import type * as GetNodeEntityModule from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import type { Author, NodeEntity, Revision } from '@proton/drive/sdk';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive/sdk';
@@ -6,12 +7,12 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareState, ShareType, type ShareWithKey } from '../../legacy/store';
 import { mapNodeToLegacyItem } from './mapNodeToLegacyItem';
 
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
+vi.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
 
-const mockGetNodeEntity = jest.mocked(getNodeEntity);
+const mockGetNodeEntity = vi.mocked(getNodeEntity);
 
 const mockDrive = {
-    getNode: jest.fn(),
+    getNode: vi.fn(),
 } as any;
 
 const linkId = 'nodeLinkId';
@@ -93,11 +94,12 @@ describe('mapNodeToLegacyItem', () => {
         linkType: LinkType.FILE,
     };
 
-    beforeEach(() => {
-        jest.clearAllMocks();
-        mockGetNodeEntity.mockImplementation(
-            jest.requireActual('@proton/drive/legacy/sdkUtils/getNodeEntity').getNodeEntity
+    beforeEach(async () => {
+        vi.clearAllMocks();
+        const actualGetNodeEntity = await vi.importActual<typeof GetNodeEntityModule>(
+            '@proton/drive/legacy/sdkUtils/getNodeEntity'
         );
+        mockGetNodeEntity.mockImplementation(actualGetNodeEntity.getNodeEntity);
         mockDrive.getNode.mockResolvedValue({
             uid: 'root-uid',
             deprecatedShareId: 'share-id-1',

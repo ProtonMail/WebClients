@@ -4,13 +4,13 @@ import { EmptyRootFolder } from './EmptyRootFolder';
 
 let mockIsB2B = false;
 let mockLoadingEntitlements = false;
-jest.mock('@proton/activation/src/components/Modals/OAuth/Drive/useIsDriveImportRestricted', () => ({
+vi.mock('@proton/activation/src/components/Modals/OAuth/Drive/useIsDriveImportRestricted', () => ({
     useIsDriveImportRestricted: () => mockIsB2B || mockLoadingEntitlements,
 }));
-jest.mock('@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit', () => ({
-    useProductSelectionSubmit: () => ({ handleSubmit: jest.fn() }),
+vi.mock('@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit', () => ({
+    useProductSelectionSubmit: () => ({ handleSubmit: vi.fn() }),
 }));
-jest.mock('./EmptyFolderIllustration', () => ({ EmptyFolderIllustration: () => null }));
+vi.mock('./EmptyFolderIllustration', () => ({ EmptyFolderIllustration: () => null }));
 
 describe('EmptyRootFolder', () => {
     beforeEach(() => {

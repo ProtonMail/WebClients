@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { MemberRole, NodeType } from '@proton/drive/sdk';
 
 import { ActionsDropdown } from '../buttons/ActionsDropdown';
@@ -9,18 +9,18 @@ import type { FolderPermissions, FolderViewItem } from '../useFolder.store';
 import { useFolderStore } from '../useFolder.store';
 import type { FolderActions } from '../useFolderActions';
 
-jest.mock('../../../utils/docs/openInDocs', () => ({
+vi.mock('../../../utils/docs/openInDocs', () => ({
     getOpenInDocsInfo: () => undefined,
-    downloadDocument: jest.fn(),
+    downloadDocument: vi.fn(),
 }));
 
-jest.mock('../../../legacy/components/sections/useIsEditEnabled', () => ({
+vi.mock('../../../legacy/components/sections/useIsEditEnabled', () => ({
     __esModule: true,
     default: () => false,
 }));
 
 // Report abuse is behind a flag; turn it on so its (in)visibility is actually exercised.
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
     useFlag: (flag: string) => flag === 'DriveWebReportAbuseDirectShare',
 }));
@@ -94,21 +94,21 @@ const buildItem = (role: MemberRole): FolderViewItem => ({
 
 const buildActions = (): FolderActions =>
     ({
-        showPreviewModal: jest.fn(),
-        showPreviewForNode: jest.fn(),
-        showRenameModal: jest.fn(),
-        showMoveModal: jest.fn(),
-        showCopyModal: jest.fn(),
-        showCreateFileModal: jest.fn(),
-        showCreateFolderModal: jest.fn(),
-        showDetailsModal: jest.fn(),
-        showRevisionsModal: jest.fn(),
-        showSharingModal: jest.fn(),
-        showFileSharingModal: jest.fn(),
-        showReportAbuseModal: jest.fn(),
-        createNewDocument: jest.fn(),
-        createNewSheet: jest.fn(),
-        getPublicLinkInfo: jest.fn().mockResolvedValue(undefined),
+        showPreviewModal: vi.fn(),
+        showPreviewForNode: vi.fn(),
+        showRenameModal: vi.fn(),
+        showMoveModal: vi.fn(),
+        showCopyModal: vi.fn(),
+        showCreateFileModal: vi.fn(),
+        showCreateFolderModal: vi.fn(),
+        showDetailsModal: vi.fn(),
+        showRevisionsModal: vi.fn(),
+        showSharingModal: vi.fn(),
+        showFileSharingModal: vi.fn(),
+        showReportAbuseModal: vi.fn(),
+        createNewDocument: vi.fn(),
+        createNewSheet: vi.fn(),
+        getPublicLinkInfo: vi.fn().mockResolvedValue(undefined),
     }) as unknown as FolderActions;
 
 const setPermissions = (permissions: FolderPermissions) => {

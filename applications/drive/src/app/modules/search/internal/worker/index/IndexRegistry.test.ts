@@ -23,7 +23,7 @@ describe('IndexRegistry integration', () => {
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('get() creates an instance for a kind', async () => {
@@ -76,7 +76,7 @@ describe('IndexRegistry integration', () => {
         const instance = await registry.get(IndexKind.MAIN, db);
         await indexDocuments(instance.indexWriter, [makeTestIndexEntry('doc-1')]);
 
-        const freeSpy = jest.spyOn(Cached.prototype, 'free');
+        const freeSpy = vi.spyOn(Cached.prototype, 'free');
         registry.dispose(IndexKind.MAIN);
 
         expect(freeSpy).toHaveBeenCalled();
@@ -86,13 +86,13 @@ describe('IndexRegistry integration', () => {
         await registry.get(IndexKind.MAIN, db);
         // Free for real and then throw, mirroring a free-during-live-iterator panic.
         const realFree = Engine.prototype.free;
-        jest.spyOn(Engine.prototype, 'free').mockImplementationOnce(function (this: Engine) {
+        vi.spyOn(Engine.prototype, 'free').mockImplementationOnce(function (this: Engine) {
             realFree.call(this);
             throw new Error('null pointer passed to rust');
         });
         // The failure is reported through sendErrorReportForSearch, which warns on purpose; that's
         // the expected behaviour under test, not noise to investigate.
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
 
         // rebuild() and reset() call disposeAll() *before* clearing the index, and
         // disposeInternals() calls it while re-initialising the worker for a new client. A throw

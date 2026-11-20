@@ -1,5 +1,6 @@
 import type { DriveEvent } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
+import type { Mock } from 'vitest';
 import 'fake-indexeddb/auto';
 
 import { SearchDB } from '../../../../shared/SearchDB';
@@ -12,9 +13,9 @@ import type { IndexPopulatorRegistration } from '../../TreeSubscriptionRegistry'
 import { TreeSubscriptionRegistry } from '../../TreeSubscriptionRegistry';
 import { IncrementalUpdateTask } from './IncrementalUpdateTask';
 
-jest.mock('../../../../shared/errors', () => ({
-    ...jest.requireActual('../../../../shared/errors'),
-    sendErrorReportForSearch: jest.fn(),
+vi.mock('../../../../shared/errors', async () => ({
+    ...(await vi.importActual('../../../../shared/errors')),
+    sendErrorReportForSearch: vi.fn(),
 }));
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;
@@ -72,14 +73,14 @@ describe('IncrementalUpdateTask', () => {
         bridge.emitEvent(SCOPE_ID, makeEvent('e1'));
         bridge.emitEvent(SCOPE_ID, makeEvent('e2'));
 
-        jest.useFakeTimers();
-        jest.setSystemTime(12345);
+        vi.useFakeTimers();
+        vi.setSystemTime(12345);
         const ctx = makeTaskContext({ treeSubscriptionRegistry: registry });
         await new IncrementalUpdateTask(registration).execute(ctx);
 
         expect(registration.lastEventId).toBe('e2');
         expect(registration.subscriptionTime).toBe(12345);
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('calls markIncrementalUpdateComplete after successful processing', async () => {
@@ -95,7 +96,7 @@ describe('IncrementalUpdateTask', () => {
 
     it('propagates transient errors, leaves events in collector, calls markIncrementalUpdateComplete', async () => {
         const { populator, registration } = await registerAndGet(registry);
-        (populator.processIncrementalUpdates as jest.Mock).mockRejectedValue(new Error('boom'));
+        (populator.processIncrementalUpdates as Mock).mockRejectedValue(new Error('boom'));
 
         bridge.emitEvent(SCOPE_ID, makeEvent('e1'));
 
@@ -112,7 +113,7 @@ describe('IncrementalUpdateTask', () => {
 
     it('commits only processed events on partial success', async () => {
         const { populator, registration } = await registerAndGet(registry);
-        (populator.processIncrementalUpdates as jest.Mock).mockResolvedValue(1);
+        (populator.processIncrementalUpdates as Mock).mockResolvedValue(1);
 
         bridge.emitEvent(SCOPE_ID, makeEvent('e1'));
         bridge.emitEvent(SCOPE_ID, makeEvent('e2'));
@@ -128,7 +129,7 @@ describe('IncrementalUpdateTask', () => {
 
     it('re-throws permanent errors (InvalidIndexerState)', async () => {
         const { populator, registration } = await registerAndGet(registry);
-        (populator.processIncrementalUpdates as jest.Mock).mockRejectedValue(
+        (populator.processIncrementalUpdates as Mock).mockRejectedValue(
             new InvalidIndexerState('session already released')
         );
 
@@ -141,9 +142,7 @@ describe('IncrementalUpdateTask', () => {
 
     it('re-throws permanent errors (QuotaExceededError)', async () => {
         const { populator, registration } = await registerAndGet(registry);
-        (populator.processIncrementalUpdates as jest.Mock).mockRejectedValue(
-            new DOMException('', 'QuotaExceededError')
-        );
+        (populator.processIncrementalUpdates as Mock).mockRejectedValue(new DOMException('', 'QuotaExceededError'));
 
         bridge.emitEvent(SCOPE_ID, makeEvent('e1'));
 
@@ -154,7 +153,7 @@ describe('IncrementalUpdateTask', () => {
 
     it('re-throws permanent errors (SearchLibraryError)', async () => {
         const { populator, registration } = await registerAndGet(registry);
-        (populator.processIncrementalUpdates as jest.Mock).mockRejectedValue(
+        (populator.processIncrementalUpdates as Mock).mockRejectedValue(
             new SearchLibraryError('WASM failed', new Error('cause'))
         );
 

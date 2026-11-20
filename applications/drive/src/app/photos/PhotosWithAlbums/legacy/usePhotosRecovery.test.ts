@@ -48,54 +48,52 @@ function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
     };
 }
 
-jest.mock('../../../legacy/store/_links', () => {
-    const useLinksActions = jest.fn();
-    const useLinksListing = jest.fn();
+vi.mock('../../../legacy/store/_links', () => {
+    const useLinksActions = vi.fn();
+    const useLinksListing = vi.fn();
     return { useLinksActions, useLinksListing };
 });
 
-jest.mock('@proton/app-context/useApi', () => ({
-    useApi: jest.fn(),
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: vi.fn(),
 }));
 
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
-    getDriveForPhotos: jest.fn(() => ({
-        getMyPhotosRootFolder: jest
-            .fn()
-            .mockResolvedValue({ uid: 'volumeId~rootLinkId', deprecatedShareId: 'shareId' }),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
+    getDriveForPhotos: vi.fn(() => ({
+        getMyPhotosRootFolder: vi.fn().mockResolvedValue({ uid: 'volumeId~rootLinkId', deprecatedShareId: 'shareId' }),
     })),
 }));
 
-jest.mock('@proton/drive/modules/busDriver', () => ({
-    ...jest.requireActual('@proton/drive/modules/busDriver'),
-    getBusDriver: jest.fn(() => ({ emit: jest.fn().mockResolvedValue(undefined) })),
+vi.mock('@proton/drive/modules/busDriver', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/busDriver')),
+    getBusDriver: vi.fn(() => ({ emit: vi.fn().mockResolvedValue(undefined) })),
 }));
 
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
-    getNodeEntity: jest.fn(() => ({
+vi.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
+    getNodeEntity: vi.fn(() => ({
         node: { uid: 'volumeId~rootLinkId', deprecatedShareId: 'shareId' },
         errors: new Map(),
     })),
 }));
 
-jest.mock('../../../legacy/store/_utils', () => ({
-    waitFor: jest.fn().mockImplementation(async (callback) => {
+vi.mock('../../../legacy/store/_utils', () => ({
+    waitFor: vi.fn().mockImplementation(async (callback) => {
         callback();
     }),
 }));
 
-jest.mock('@proton/shared/lib/helpers/storage', () => ({
-    getItem: jest.fn(),
-    removeItem: jest.fn(),
-    setItem: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/storage', () => ({
+    getItem: vi.fn(),
+    removeItem: vi.fn(),
+    setItem: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling');
+vi.mock('@proton/drive/legacy/errorHandling');
 
-const mockedRemoveItem = jest.mocked(removeItem);
-const mockedGetItem = jest.mocked(getItem);
-const mockedSetItem = jest.mocked(setItem);
+const mockedRemoveItem = vi.mocked(removeItem);
+const mockedGetItem = vi.mocked(getItem);
+const mockedSetItem = vi.mocked(setItem);
 
 const RESTORED_SHARE = {
     addressId: 'addressId',
@@ -116,17 +114,17 @@ describe('usePhotosRecovery', () => {
     const links = [generateDecryptedLink('linkId1'), generateDecryptedLink('linkId2')];
     const trashedLinks = [generateDecryptedLink('linkId3'), generateDecryptedLink('linkId4')];
 
-    const mockedUseLinksListing = jest.mocked(useLinksListing);
-    const mockedUseLinksActions = jest.mocked(useLinksActions);
-    const mockedUseApi = jest.mocked(useApi);
-    const mockedApi = jest.fn();
-    const mockedGetCachedChildren = jest.fn();
-    const mockedGetCachedTrashed = jest.fn();
-    const mockedLoadChildren = jest.fn();
-    const mockedRecoverPhotoLinks = jest.fn();
+    const mockedUseLinksListing = vi.mocked(useLinksListing);
+    const mockedUseLinksActions = vi.mocked(useLinksActions);
+    const mockedUseApi = vi.mocked(useApi);
+    const mockedApi = vi.fn();
+    const mockedGetCachedChildren = vi.fn();
+    const mockedGetCachedTrashed = vi.fn();
+    const mockedLoadChildren = vi.fn();
+    const mockedRecoverPhotoLinks = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         mockedLoadChildren.mockResolvedValue(undefined);
         mockedApi.mockResolvedValue(undefined);

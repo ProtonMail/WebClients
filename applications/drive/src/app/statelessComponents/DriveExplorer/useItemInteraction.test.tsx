@@ -10,11 +10,11 @@ const buildSelection = (): DriveExplorerSelection => ({
     selectedItems: new Set<string>(),
     selectionMethods: {
         selectionState: SelectionState.NONE,
-        selectItem: jest.fn(),
-        toggleSelectItem: jest.fn(),
-        toggleRange: jest.fn(),
-        toggleAllSelected: jest.fn(),
-        clearSelections: jest.fn(),
+        selectItem: vi.fn(),
+        toggleSelectItem: vi.fn(),
+        toggleRange: vi.fn(),
+        toggleAllSelected: vi.fn(),
+        clearSelections: vi.fn(),
         isSelected: () => false,
     },
 });
@@ -53,7 +53,7 @@ const renderActivator = (
         hasContextMenu: () => true,
     }
 ) => {
-    const onItemDoubleClick = jest.fn();
+    const onItemDoubleClick = vi.fn();
     render(<Activator events={{ onItemDoubleClick }} conditions={conditions} />);
     return { onItemDoubleClick, activator: screen.getByTestId('activator') };
 };
@@ -73,11 +73,11 @@ const tap = (
 
 describe('useItemInteraction touch handling', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('opens the item on a double tap', () => {
@@ -94,7 +94,7 @@ describe('useItemInteraction touch handling', () => {
         const { onItemDoubleClick, activator } = renderActivator();
 
         tap(activator);
-        jest.advanceTimersByTime(1000);
+        vi.advanceTimersByTime(1000);
 
         expect(onItemDoubleClick).not.toHaveBeenCalled();
     });
@@ -103,7 +103,7 @@ describe('useItemInteraction touch handling', () => {
         const { onItemDoubleClick, activator } = renderActivator();
 
         tap(activator);
-        jest.advanceTimersByTime(600);
+        vi.advanceTimersByTime(600);
         tap(activator);
 
         expect(onItemDoubleClick).not.toHaveBeenCalled();
@@ -163,7 +163,7 @@ describe('useItemInteraction touch handling', () => {
 
         tap(activator);
         tap(activator);
-        jest.advanceTimersByTime(500);
+        vi.advanceTimersByTime(500);
         fireEvent.doubleClick(activator);
 
         expect(onItemDoubleClick).toHaveBeenCalledTimes(2);

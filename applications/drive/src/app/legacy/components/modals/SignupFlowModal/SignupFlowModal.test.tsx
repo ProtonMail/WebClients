@@ -1,40 +1,47 @@
 import React from 'react';
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import { useApi } from '@proton/app-context/useApi';
-import { setLocation } from '@proton/jest-env/setLocation';
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
-import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
+import { DRIVE_SIGNIN } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import { assignUrl } from '@proton/shared/lib/helpers/location';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import usePublicToken from '../../../../legacy/hooks/drive/usePublicToken';
+import type * as TelemetryModule from '../../../../utils/telemetry';
 import { PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY } from '../../../../utils/url/password';
 import { SignupFlowModal } from './SignupFlowModal';
 
-jest.mock('@proton/app-context/useApi');
-const mockedUseApi = jest.mocked(useApi);
+vi.mock('@proton/app-context/useApi');
+const mockedUseApi = vi.mocked(useApi);
 
-jest.mock('@proton/shared/lib/helpers/browser');
-jest.mock('@proton/shared/lib/helpers/location');
-const mockedReplaceUrl = jest.mocked(replaceUrl);
+vi.mock('@proton/shared/lib/helpers/browser');
+vi.mock('@proton/shared/lib/helpers/location');
 
-jest.mock('../../../../legacy/hooks/drive/usePublicToken');
+vi.mock('../../../../utils/telemetry', async (importOriginal) => ({
+    ...(await importOriginal<typeof TelemetryModule>()),
+    countActionWithTelemetry: vi.fn().mockResolvedValue(undefined),
+    traceTelemetry: vi.fn(() => ({ start: vi.fn().mockResolvedValue(undefined), end: vi.fn() })),
+}));
+
+vi.mock('../../../../legacy/hooks/drive/usePublicToken');
 const mockUrlPassword = 'mockUrlPassword';
 const mockToken = 'mockToken';
 
-jest.mocked(usePublicToken).mockReturnValue({
+vi.mocked(usePublicToken).mockReturnValue({
     token: mockToken,
     urlPassword: mockUrlPassword,
 });
 
-const ResizeObserverMock = jest.fn(() => ({
-    disconnect: jest.fn(),
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-}));
+const ResizeObserverMock = vi.fn(function () {
+    return {
+        disconnect: vi.fn(),
+        observe: vi.fn(),
+        unobserve: vi.fn(),
+    };
+});
 
 describe('SignupFlowModal', () => {
     const originalResizeObserver = window.ResizeObserver;
@@ -52,7 +59,6 @@ describe('SignupFlowModal', () => {
     });
 
     afterAll(() => {
-        verifyAllWhenMocksCalled();
         Object.defineProperty(window, 'ResizeObserver', {
             value: originalResizeObserver,
             writable: true,
@@ -75,14 +81,9 @@ describe('SignupFlowModal', () => {
     });
 
     it('should handle form submission and API responses correctly', async () => {
-        const mockApi = jest.fn();
+        const mockApi = vi.fn();
         mockedUseApi.mockReturnValue(mockApi);
         mockApi.mockResolvedValue({ Code: 1000 });
-        const expectedReplaceUrl = DRIVE_SIGNUP.concat(
-            '?username=test@example.com%40returnUrl=%2Furls%2Fmockpath%23mockhash&returnUrlContext=public'
-        );
-        when(mockedReplaceUrl).expectCalledWith(expectedReplaceUrl);
-
         render(<SignupFlowModal open onClose={() => {}} onExit={() => {}} />);
         const emailInput = screen.getByTestId('public-share-signup-modal-email');
         const submitButton = screen.getByText('Continue');
@@ -93,17 +94,15 @@ describe('SignupFlowModal', () => {
         await waitFor(() => {
             expect(localStorageWithExpiry.getData(PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY)).toEqual(mockUrlPassword);
         });
+        await waitFor(() => {
+            expect(vi.mocked(assignUrl)).toHaveBeenCalledWith(expect.stringContaining('email=test%40example.com'));
+        });
     });
 
     it('should redirect to SIGN_IN if email is already used', async () => {
-        const mockApi = jest.fn();
+        const mockApi = vi.fn();
         mockedUseApi.mockReturnValue(mockApi);
         mockApi.mockRejectedValue({ data: { Code: API_CUSTOM_ERROR_CODES.ALREADY_USED, Error: 'test message' } });
-        const expectedReplaceUrl = DRIVE_SIGNIN.concat(
-            '?email=used@example.com%40returnUrl=%2Furls%2Fmockpath%23mockhash&returnUrlContext=public'
-        );
-        when(mockedReplaceUrl).expectCalledWith(expectedReplaceUrl);
-
         render(<SignupFlowModal open onClose={() => {}} onExit={() => {}} />);
         const emailInput = screen.getByTestId('public-share-signup-modal-email');
         const submitButton = screen.getByText('Continue');
@@ -114,10 +113,15 @@ describe('SignupFlowModal', () => {
         await waitFor(() => {
             expect(localStorageWithExpiry.getData(PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY)).toEqual(mockUrlPassword);
         });
+        await waitFor(() => {
+            expect(vi.mocked(assignUrl)).toHaveBeenCalledWith(
+                `${DRIVE_SIGNIN}?username=used%40example.com&product=drive&returnUrl=%252F%253Ftoken%253DmockToken%2526drivePublicRedirectionReason%253Dsignin&returnUrlContext=private`
+            );
+        });
     });
 
     it('should display an error message for other API errors', async () => {
-        const mockApi = jest.fn();
+        const mockApi = vi.fn();
         mockedUseApi.mockReturnValue(mockApi);
 
         mockApi.mockRejectedValue({ data: { Code: '123456', Error: 'Some error occurred' } });

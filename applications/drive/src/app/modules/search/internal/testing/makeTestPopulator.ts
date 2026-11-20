@@ -11,7 +11,7 @@ export const makeTestPopulator = (
         treeEventScopeId: scopeId,
         indexKind: 'main',
         indexPopulatorKind: id,
-        processIncrementalUpdates: jest.fn(async (events: unknown[]) => events.length),
-        repairNode: jest.fn(async () => {}),
+        processIncrementalUpdates: vi.fn(async (events: unknown[]) => events.length),
+        repairNode: vi.fn(async () => {}),
         ...overrides,
     }) as unknown as IndexPopulator;

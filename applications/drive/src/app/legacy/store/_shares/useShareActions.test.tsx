@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react';
-import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import { queryMigrateLegacyShares } from '@proton/shared/lib/api/drive/share';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
+import { verifyAllWhenMocksCalled, when } from '../../../utils/tests/when';
 import useDebouncedRequest from '../_api/useDebouncedRequest';
 import useLink from '../_links/useLink';
 import useLinksState from '../_links/useLinksState';
@@ -13,63 +13,63 @@ import { useDefaultShare } from './useDefaultShare';
 import useShare from './useShare';
 import useShareActions from './useShareActions';
 
-jest.mock('@proton/components/hooks/usePreventLeave', () => ({
+vi.mock('@proton/components/hooks/usePreventLeave', () => ({
     __esModule: true,
-    default: jest.fn().mockReturnValue({ preventLeave: jest.fn() }),
+    default: vi.fn().mockReturnValue({ preventLeave: vi.fn() }),
 }));
 
-jest.mock('../_api/useDebouncedRequest');
-const mockedDebounceRequest = jest.fn().mockResolvedValue(true);
-jest.mocked(useDebouncedRequest).mockReturnValue(mockedDebounceRequest);
+vi.mock('../_api/useDebouncedRequest');
+const mockedDebounceRequest = vi.fn().mockResolvedValue(true);
+vi.mocked(useDebouncedRequest).mockReturnValue(mockedDebounceRequest);
 
-jest.mock('./useShare');
-const mockedGetShareSessionKey = jest.fn().mockResolvedValue('sessionKey');
-jest.mocked(useShare).mockReturnValue({
-    ...jest.requireActual('./useShare'),
-    getShare: jest.fn().mockImplementation((_, shareId) => ({
+vi.mock('./useShare');
+const mockedGetShareSessionKey = vi.fn().mockResolvedValue('sessionKey');
+vi.mocked(useShare).mockReturnValue({
+    ...(await vi.importActual('./useShare')),
+    getShare: vi.fn().mockImplementation((_, shareId) => ({
         rootLinkId: 'rootLinkId',
         shareId,
     })),
-    getShareCreatorKeys: jest.fn().mockResolvedValue({
+    getShareCreatorKeys: vi.fn().mockResolvedValue({
         privateKey: 'privateKey',
     }),
     getShareSessionKey: mockedGetShareSessionKey,
 });
 
-jest.mock('./useDefaultShare');
-const mockedGetDefaultPhotosShare = jest.fn();
-jest.mocked(useDefaultShare).mockReturnValue({
+vi.mock('./useDefaultShare');
+const mockedGetDefaultPhotosShare = vi.fn();
+vi.mocked(useDefaultShare).mockReturnValue({
     getDefaultPhotosShare: mockedGetDefaultPhotosShare,
 } as any);
 
-jest.mock('../_volumes/useVolumesState');
-const mockSetVolumeShareIds = jest.fn();
-jest.mocked(useVolumesState).mockReturnValue({
+vi.mock('../_volumes/useVolumesState');
+const mockSetVolumeShareIds = vi.fn();
+vi.mocked(useVolumesState).mockReturnValue({
     setVolumeShareIds: mockSetVolumeShareIds,
 } as any);
 
-jest.mock('../_links/useLink');
-const mockedGetLink = jest.fn().mockImplementation(() => ({
+vi.mock('../_links/useLink');
+const mockedGetLink = vi.fn().mockImplementation(() => ({
     parentLinkId: 'parentLinkId',
     encryptedName: 'encryptedName',
     corruptedLink: false,
 }));
-const mockedGetPrivateKey = jest.fn().mockResolvedValue('privateKey');
-jest.mocked(useLink).mockReturnValue({
+const mockedGetPrivateKey = vi.fn().mockResolvedValue('privateKey');
+vi.mocked(useLink).mockReturnValue({
     getLink: mockedGetLink,
     getLinkPrivateKey: mockedGetPrivateKey,
 } as any);
 
-jest.mock('@proton/shared/lib/api/drive/share');
-const mockedQueryLegacyShares = jest.mocked(queryMigrateLegacyShares);
+vi.mock('@proton/shared/lib/api/drive/share');
+const mockedQueryLegacyShares = vi.mocked(queryMigrateLegacyShares);
 
-jest.mock('@proton/shared/lib/calendar/crypto/encrypt');
-const mockedGetEncryptedSessionKey = jest.mocked(getEncryptedSessionKey);
+vi.mock('@proton/shared/lib/calendar/crypto/encrypt');
+const mockedGetEncryptedSessionKey = vi.mocked(getEncryptedSessionKey);
 
-const mockedRemoveLinkForMigration = jest.fn();
-jest.mock('../_links/useLinksState');
+const mockedRemoveLinkForMigration = vi.fn();
+vi.mock('../_links/useLinksState');
 
-jest.mocked(useLinksState).mockImplementation(
+vi.mocked(useLinksState).mockImplementation(
     () =>
         ({
             removeLinkForMigration: mockedRemoveLinkForMigration,
@@ -83,11 +83,11 @@ describe('useShareActions', () => {
         originalConsoleWarn = console.warn;
 
         // Mock console.warn
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedGetDefaultPhotosShare.mockResolvedValue({
             volumeId: 'photos-volume-id',
         });

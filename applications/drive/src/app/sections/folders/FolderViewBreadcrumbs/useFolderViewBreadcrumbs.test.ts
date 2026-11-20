@@ -12,30 +12,30 @@ import {
     useFolderViewBreadcrumbs,
 } from './useFolderViewBreadcrumbs';
 
-jest.mock('@proton/drive/modules/nodes', () => ({
-    ...jest.requireActual('@proton/drive/modules/nodes'),
-    getNodeLocation: jest.fn(),
+vi.mock('@proton/drive/modules/nodes', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/nodes')),
+    getNodeLocation: vi.fn(),
 }));
-const mockGetNodeLocation = jest.mocked(getNodeLocation);
-const mockGetNodeHierarchy = jest.fn();
+const mockGetNodeLocation = vi.mocked(getNodeLocation);
+const mockGetNodeHierarchy = vi.fn();
 
-jest.mock('@proton/drive/legacy/errorHandling');
-const mockedSendErrorReport = jest.mocked(sendErrorReport);
+vi.mock('@proton/drive/legacy/errorHandling');
+const mockedSendErrorReport = vi.mocked(sendErrorReport);
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(() => ({
-        createNotification: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(() => ({
+        createNotification: vi.fn(),
     })),
 }));
 
-jest.mock('../../../legacy/hooks/drive/useNavigate', () => {
-    return jest.fn().mockImplementation(() => ({
-        navigateToLink: jest.fn(),
-    }));
-});
+vi.mock('../../../legacy/hooks/drive/useNavigate', () => ({
+    default: vi.fn().mockImplementation(() => ({
+        navigateToLink: vi.fn(),
+    })),
+}));
 
 const mockDrive = {
-    getNode: jest.fn(),
+    getNode: vi.fn(),
     getNodeHierarchy: mockGetNodeHierarchy,
 } as any;
 
@@ -128,7 +128,7 @@ const createCrumbWithCustomClick = (name: string, uid: string) => createCrumb(na
 
 describe('useFolderViewBreadcrumbs', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should compute "My files" crumbs properly', async () => {

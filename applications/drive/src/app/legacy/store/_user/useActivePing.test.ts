@@ -4,30 +4,30 @@ import { ACTIVE_PING_INTERVAL } from '@proton/shared/lib/drive/constants';
 
 import { LAST_ACTIVE_PING, useActivePing } from './useActivePing';
 
-const mockedApi = jest.fn();
+const mockedApi = vi.fn();
 const mockedUser = { ID: 123 };
 
-jest.mock('@proton/app-context/useApi', () => ({
-    useApi: () => jest.fn().mockImplementation(mockedApi.mockResolvedValue('')),
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: () => vi.fn().mockImplementation(mockedApi.mockResolvedValue('')),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     useUser: () => [mockedUser],
 }));
 
 describe('useActivePing', () => {
     beforeAll(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
-        jest.clearAllTimers();
+        vi.clearAllMocks();
+        vi.clearAllTimers();
         window.localStorage.clear();
     });
 
     afterAll(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('call the api immediately', async () => {
@@ -39,7 +39,7 @@ describe('useActivePing', () => {
         const interval = 1000;
         renderHook(() => useActivePing(interval));
 
-        jest.advanceTimersByTime(interval);
+        vi.advanceTimersByTime(interval);
 
         await waitFor(() => expect(mockedApi).toHaveBeenCalledTimes(2));
     });
@@ -49,7 +49,7 @@ describe('useActivePing', () => {
 
         const { rerender } = renderHook(() => useActivePing(interval));
 
-        jest.advanceTimersByTime(interval / 2);
+        vi.advanceTimersByTime(interval / 2);
 
         rerender();
 
@@ -60,12 +60,12 @@ describe('useActivePing', () => {
         const interval = 10000;
 
         const { rerender } = renderHook(() => useActivePing(interval));
-        jest.advanceTimersByTime(interval / 2);
+        vi.advanceTimersByTime(interval / 2);
         rerender(interval);
 
         expect(mockedApi).toHaveBeenCalledTimes(1);
 
-        jest.advanceTimersByTime(interval / 2);
+        vi.advanceTimersByTime(interval / 2);
         rerender(interval);
 
         expect(mockedApi).toHaveBeenCalledTimes(2);
@@ -95,7 +95,7 @@ describe('useActivePing', () => {
         mockedUser.ID = 456;
         // Expired
         const originalDateNow = Date.now();
-        Date.now = jest.fn(() => originalDateNow + ACTIVE_PING_INTERVAL + 1);
+        Date.now = vi.fn(() => originalDateNow + ACTIVE_PING_INTERVAL + 1);
         rerender();
         expect(Object.keys(localStorage).filter((k) => k.startsWith(LAST_ACTIVE_PING)).length).toEqual(1);
     });

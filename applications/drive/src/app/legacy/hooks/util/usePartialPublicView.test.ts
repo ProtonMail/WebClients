@@ -1,16 +1,16 @@
 import { renderHook } from '@testing-library/react';
 
-import { setLocation } from '@proton/jest-env/setLocation';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import { partialPublicViewKey, usePartialPublicView } from './usePartialPublicView';
 
 describe('usePartialPublicView', () => {
     beforeEach(() => {
-        jest.spyOn(window.history, 'replaceState').mockImplementation(() => {});
+        vi.spyOn(window.history, 'replaceState').mockImplementation(() => {});
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('should return true when partialPublicView=true is in the URL', () => {

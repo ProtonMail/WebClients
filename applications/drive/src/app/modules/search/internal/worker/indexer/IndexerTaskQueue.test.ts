@@ -1,6 +1,7 @@
 import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import type { NodeEntity, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
+import type { Mock } from 'vitest';
 import 'fake-indexeddb/auto';
 
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
@@ -30,20 +31,31 @@ import { NodeTreeIndexPopulator } from './indexPopulators/NodeTreeIndexPopulator
 import type { BaseTask } from './tasks/BaseTask';
 import { IndexPopulatorTask } from './tasks/CoreTasks/IndexPopulatorTask';
 
+// fake-indexeddb schedules its operations with setImmediate, which must keep running for real
+const FAKE_TIMERS = {
+    toFake: [
+        'setTimeout' as const,
+        'clearTimeout' as const,
+        'setInterval' as const,
+        'clearInterval' as const,
+        'Date' as const,
+    ],
+};
+
 setupRealSearchLibraryWasm();
 
-jest.mock('../../shared/errors', () => {
-    const actual = jest.requireActual('../../shared/errors');
+vi.mock('../../shared/errors', async () => {
+    const actual = await vi.importActual('../../shared/errors');
     return {
         ...actual,
-        sendErrorReportForSearch: jest.fn(),
+        sendErrorReportForSearch: vi.fn(),
     };
 });
 
 // SEARCH_MAX_INDEXED_DOCUMENTS is 50_000 in production; shrink it so the eviction-trigger tests
 // don't need a 57k+-document fake tree just to cross the trigger (round(20 * 1.15) = 23).
-jest.mock('../../shared/config', () => {
-    const actual = jest.requireActual('../../shared/config');
+vi.mock('../../shared/config', async () => {
+    const actual = await vi.importActual('../../shared/config');
     return { ...actual, SEARCH_MAX_INDEXED_DOCUMENTS: 20 };
 });
 
@@ -119,7 +131,7 @@ class IndexerStateStream {
 }
 
 /**
- * Advance jest fake timers in 1s chunks so:
+ * Advance vitest fake timers in 1s chunks so:
  * - Multi-await microtask chains (bootstrap → run → IndexedDB ops → throw → catch) drain.
  * - Nested timers (a retry timer firing schedules the next retry timer) actually run.
  * `advanceTimersByTimeAsync(N)` in one big call only fires timers that exist at call time.
@@ -127,14 +139,14 @@ class IndexerStateStream {
 async function fakeAdvance(totalMs: number): Promise<void> {
     if (totalMs === 0) {
         for (let i = 0; i < 30; i++) {
-            await jest.advanceTimersByTimeAsync(0);
+            await vi.advanceTimersByTimeAsync(0);
         }
         return;
     }
     let elapsed = 0;
     while (elapsed < totalMs) {
         const step = Math.min(1000, totalMs - elapsed);
-        await jest.advanceTimersByTimeAsync(step);
+        await vi.advanceTimersByTimeAsync(step);
         elapsed += step;
     }
 }
@@ -165,7 +177,7 @@ describe('IndexerTaskQueue', () => {
         // gatherSearchDiagnostics reads this on every permanent/transient error; jsdom has no
         // built-in StorageManager.
         Object.defineProperty(navigator, 'storage', {
-            value: { estimate: jest.fn().mockResolvedValue({ usage: 0, quota: 0 }) },
+            value: { estimate: vi.fn().mockResolvedValue({ usage: 0, quota: 0 }) },
             configurable: true,
         });
         db = await SearchDB.open('test-user');
@@ -284,7 +296,7 @@ describe('IndexerTaskQueue', () => {
         // unchanged, so it returns before notifying any listener.)
         let stopPromise: Promise<void> | undefined;
         const realMarkSearchable = db.markSearchableIndex.bind(db);
-        jest.spyOn(db, 'markSearchableIndex').mockImplementation(async () => {
+        vi.spyOn(db, 'markSearchableIndex').mockImplementation(async () => {
             const key = await realMarkSearchable();
             stopPromise ??= queue.stop();
             return key;
@@ -355,8 +367,8 @@ describe('IndexerTaskQueue', () => {
 
     it('onStateChange notifies multiple listeners', async () => {
         const queue = createQueue();
-        const listener1 = jest.fn();
-        const listener2 = jest.fn();
+        const listener1 = vi.fn();
+        const listener2 = vi.fn();
         queue.onStateChange(listener1);
         queue.onStateChange(listener2);
 
@@ -376,16 +388,16 @@ describe('IndexerTaskQueue', () => {
 
         await state.waitForSearchable();
 
-        jest.useFakeTimers();
+        vi.useFakeTimers(FAKE_TIMERS);
 
         // Registry should now be wired — emitting an event should enqueue an IncrementalUpdateTask
         // after the 5s cooldown. Use fast_forward which just advances the cursor.
         bridge.emitEvent(SCOPE_ID, { type: 'fast_forward', eventId: 'evt-2' } as any);
 
         // Advance past the cooldown so the debounced enqueueOnce fires.
-        await jest.advanceTimersByTimeAsync(5_000);
+        await vi.advanceTimersByTimeAsync(5_000);
 
-        jest.useRealTimers();
+        vi.useRealTimers();
 
         // Wait for the processLoop to execute the enqueued IncrementalUpdateTask.
         const reg = treeSubRegistry.getAllRegistrations()[0];
@@ -423,10 +435,10 @@ describe('IndexerTaskQueue', () => {
         await indexDocuments(instance.indexWriter, entries);
         expect(await db.getIndexEntryCount(IndexKind.MAIN)).toBe(25);
 
-        jest.useFakeTimers();
+        vi.useFakeTimers(FAKE_TIMERS);
         bridge.emitEvent(SCOPE_ID, { type: 'fast_forward', eventId: 'evt-2' } as any);
-        await jest.advanceTimersByTimeAsync(5_000);
-        jest.useRealTimers();
+        await vi.advanceTimersByTimeAsync(5_000);
+        vi.useRealTimers();
 
         await waitForCondition(async () => {
             const populatorState = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
@@ -539,10 +551,10 @@ describe('IndexerTaskQueue', () => {
         expect(populatorBefore?.generation).toBe(1);
 
         // Emit a tree_refresh event to trigger generation bump.
-        jest.useFakeTimers();
+        vi.useFakeTimers(FAKE_TIMERS);
         bridge.emitEvent(SCOPE_ID, { type: 'tree_refresh', eventId: 'evt-2' } as any);
-        await jest.advanceTimersByTimeAsync(5_000);
-        jest.useRealTimers();
+        await vi.advanceTimersByTimeAsync(5_000);
+        vi.useRealTimers();
 
         // Wait for re-indexing to complete (state goes back to not-indexing after the re-index).
         await waitForCondition(async () => {
@@ -637,10 +649,10 @@ describe('IndexerTaskQueue', () => {
         expect(gen1Before).toHaveLength(2);
 
         // Trigger tree_refresh to bump generation.
-        jest.useFakeTimers();
+        vi.useFakeTimers(FAKE_TIMERS);
         bridge.emitEvent(SCOPE_ID, { type: 'tree_refresh', eventId: 'evt-2' } as any);
-        await jest.advanceTimersByTimeAsync(5_000);
-        jest.useRealTimers();
+        await vi.advanceTimersByTimeAsync(5_000);
+        vi.useRealTimers();
 
         await waitForCondition(async () => {
             const s = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
@@ -756,7 +768,7 @@ describe('IndexerTaskQueue', () => {
         );
         // The retry waits on a real `setTimeout(computeBackoff(1))` (800-1200ms), which leaves no
         // margin under a loaded CI run. Drive it off the fake clock instead.
-        jest.useFakeTimers();
+        vi.useFakeTimers(FAKE_TIMERS);
         try {
             queue.start().catch(() => {});
 
@@ -765,14 +777,19 @@ describe('IndexerTaskQueue', () => {
             // more microtask turns, which fakeAdvance(0) drains.
             await fakeAdvance(0);
             await fakeAdvance(1_200);
-            await fakeAdvance(0);
+            // IndexedDB answers on real macrotasks: under load the drain above can end before it is done
+            let populatorState = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+            for (let i = 0; i < 50 && !populatorState?.done; i++) {
+                await fakeAdvance(0);
+                await new Promise<void>((resolve) => setImmediate(resolve));
+                populatorState = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+            }
 
             expect(callCount).toBe(2);
-            const populatorState = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
             expect(populatorState?.done).toBe(true);
         } finally {
             await queue.stop();
-            jest.useRealTimers();
+            vi.useRealTimers();
         }
     });
 
@@ -809,7 +826,7 @@ describe('IndexerTaskQueue', () => {
         const readFlag = async () => (await db.getPopulatorState(`myfiles:${SCOPE_ID}`))?.initialIndexingFailed;
 
         it('is false on a retry in a NEW worker session, because the flag is persisted', async () => {
-            const counter = jest.spyOn(metrics.drive_search_initial_indexing_total, 'increment');
+            const counter = vi.spyOn(metrics.drive_search_initial_indexing_total, 'increment');
 
             // Session 1: fail once, then tear the worker down (e.g. the last tab closes). The
             // in-memory taskAttempts map is lost with it.
@@ -832,14 +849,14 @@ describe('IndexerTaskQueue', () => {
         });
 
         it('writes the flag at most once per campaign, however many times it retries', async () => {
-            const counter = jest.spyOn(metrics.drive_search_initial_indexing_total, 'increment');
+            const counter = vi.spyOn(metrics.drive_search_initial_indexing_total, 'increment');
             const { queue, populator } = makeFailingQueue();
-            const markSpy = jest.spyOn(populator, 'markInitialIndexingFailed');
+            const markSpy = vi.spyOn(populator, 'markInitialIndexingFailed');
 
             // The retry is driven by a real `setTimeout(computeBackoff(1))`, i.e. 800-1200ms of
             // wall clock. Sleeping through it leaves no margin under a loaded CI run, so advance
             // fake timers past the backoff instead and keep the whole test off the clock.
-            jest.useFakeTimers();
+            vi.useFakeTimers(FAKE_TIMERS);
             try {
                 queue.start().catch(() => {});
 
@@ -854,7 +871,7 @@ describe('IndexerTaskQueue', () => {
                 expect(markSpy).toHaveBeenCalledTimes(1);
             } finally {
                 await queue.stop();
-                jest.useRealTimers();
+                vi.useRealTimers();
             }
 
             markSpy.mockRestore();
@@ -865,7 +882,7 @@ describe('IndexerTaskQueue', () => {
             // Seed the flag through the real API, on the row the default queue's populator uses.
             await new AlwaysFailingPopulator().markInitialIndexingFailed(db);
             expect(await readFlag()).toBe(true);
-            const counter = jest.spyOn(metrics.drive_search_initial_indexing_total, 'increment');
+            const counter = vi.spyOn(metrics.drive_search_initial_indexing_total, 'increment');
 
             // A healthy populator (default createTasks) completes on its first try.
             const queue = createQueue();
@@ -1015,11 +1032,11 @@ describe('IndexerTaskQueue', () => {
     });
 
     it('connection force-closed by the browser stops the queue without reporting or a permanent error', async () => {
-        jest.mocked(sendErrorReportForSearch).mockClear();
+        vi.mocked(sendErrorReportForSearch).mockClear();
         const queue = makeQueueWithFailingPopulator(
             new DOMException('Connection is closing because of: Force close delete origin', 'UnknownError')
         );
-        const stop = jest.spyOn(queue, 'stop');
+        const stop = vi.spyOn(queue, 'stop');
         let lastState: IndexerState | undefined;
         queue.onStateChange((s) => {
             lastState = s;
@@ -1058,8 +1075,8 @@ describe('IndexerTaskQueue', () => {
     // is reported through the bridged metrics proxy, which structured-clones its arguments and
     // strips the Error subclass - so it must be asserted separately.
     it('permanent error: reports search_library_error across the bridge, not transient/unknown', async () => {
-        const permanentCounter = jest.spyOn(metrics.drive_search_permanent_errors_total, 'increment');
-        const transientCounter = jest.spyOn(metrics.drive_search_transient_errors_total, 'increment');
+        const permanentCounter = vi.spyOn(metrics.drive_search_permanent_errors_total, 'increment');
+        const transientCounter = vi.spyOn(metrics.drive_search_transient_errors_total, 'increment');
 
         const queue = makeQueueWithFailingPopulator(new SearchLibraryError('Unable to upsert node', null));
         const state = new IndexerStateStream(queue);
@@ -1099,8 +1116,8 @@ describe('IndexerTaskQueue', () => {
             }
         }
 
-        (sendErrorReportForSearch as jest.Mock).mockClear();
-        jest.useFakeTimers();
+        (sendErrorReportForSearch as Mock).mockClear();
+        vi.useFakeTimers(FAKE_TIMERS);
         let queue: IndexerTaskQueue | null = null;
         try {
             queue = new TestableQueue(
@@ -1129,12 +1146,12 @@ describe('IndexerTaskQueue', () => {
             expect(callCount).toBe(2);
         } finally {
             await queue?.stop();
-            jest.useRealTimers();
+            vi.useRealTimers();
         }
     });
 
     it('Sentry reports a burst of MAX_REPORTED_ATTEMPTS per task UID, then a fresh burst after the throttle window', async () => {
-        const errorReportMock = sendErrorReportForSearch as jest.Mock;
+        const errorReportMock = sendErrorReportForSearch as Mock;
         errorReportMock.mockClear();
 
         class AlwaysFailingPopulator extends NodeTreeIndexPopulator {
@@ -1156,8 +1173,8 @@ describe('IndexerTaskQueue', () => {
         }
 
         // Neutralize jitter so the backoff schedule advances deterministically.
-        const randomSpy = jest.spyOn(Math, 'random').mockReturnValue(0.5);
-        jest.useFakeTimers();
+        const randomSpy = vi.spyOn(Math, 'random').mockReturnValue(0.5);
+        vi.useFakeTimers(FAKE_TIMERS);
         let queue: IndexerTaskQueue | null = null;
         try {
             queue = new TestableQueue(
@@ -1193,7 +1210,7 @@ describe('IndexerTaskQueue', () => {
             expect(reportsAfterWindow.every(([msg]) => msg === 'Search transient error (unknown)')).toBe(true);
         } finally {
             await queue?.stop();
-            jest.useRealTimers();
+            vi.useRealTimers();
             randomSpy.mockRestore();
         }
     }, 10_000);

@@ -40,7 +40,7 @@ describe('RepairFailedNodesTask', () => {
         makeTestPopulator('test-pop', SCOPE_ID, { repairNode });
 
     it('replays a due entry and deletes it on success', async () => {
-        const repairNode = jest.fn(async (_entry: RepairNodeEntry, _ctx: TaskContext) => {});
+        const repairNode = vi.fn(async (_entry: RepairNodeEntry, _ctx: TaskContext) => {});
         const populator = populatorWith(repairNode);
         await db.putRepairEntry(seedEntry({ nodeUid: 'node-1' }));
 
@@ -52,7 +52,7 @@ describe('RepairFailedNodesTask', () => {
     });
 
     it('keeps the entry and backs off on a node-scoped repair failure', async () => {
-        const repairNode = jest.fn(async () => {
+        const repairNode = vi.fn(async () => {
             throw new RepairableNodeError('still broken', null);
         });
         const populator = populatorWith(repairNode);
@@ -67,7 +67,7 @@ describe('RepairFailedNodesTask', () => {
     });
 
     it('skips entries that are not yet due', async () => {
-        const repairNode = jest.fn(async (_entry: RepairNodeEntry, _ctx: TaskContext) => {});
+        const repairNode = vi.fn(async (_entry: RepairNodeEntry, _ctx: TaskContext) => {});
         const populator = populatorWith(repairNode);
         await db.putRepairEntry(seedEntry({ nodeUid: 'node-1', nextAttemptAt: Date.now() + 1_000_000 }));
 
@@ -78,7 +78,7 @@ describe('RepairFailedNodesTask', () => {
     });
 
     it('dispatches each entry to its owning populator and skips entries with no registered populator', async () => {
-        const repairNode = jest.fn(async (_entry: RepairNodeEntry, _ctx: TaskContext) => {});
+        const repairNode = vi.fn(async (_entry: RepairNodeEntry, _ctx: TaskContext) => {});
         const populator = populatorWith(repairNode);
         await db.putRepairEntry(seedEntry({ nodeUid: 'mine', indexPopulatorKind: 'test-pop' }));
         await db.putRepairEntry(seedEntry({ nodeUid: 'other', indexPopulatorKind: 'unknown-pop' }));
@@ -93,7 +93,7 @@ describe('RepairFailedNodesTask', () => {
     });
 
     it('re-throws a systemic repair failure without touching the entry', async () => {
-        const repairNode = jest.fn(async () => {
+        const repairNode = vi.fn(async () => {
             throw new SearchLibraryError('wasm exploded', null);
         });
         const populator = populatorWith(repairNode);
@@ -108,7 +108,7 @@ describe('RepairFailedNodesTask', () => {
     });
 
     it('re-enqueues itself after REPAIR_RETRY_INTERVAL_MS, whether or not there was anything to repair', async () => {
-        const enqueueDelayed = jest.fn();
+        const enqueueDelayed = vi.fn();
         await new RepairFailedNodesTask().execute(makeTaskContext({ db, enqueueDelayed }));
 
         expect(enqueueDelayed).toHaveBeenCalledTimes(1);
@@ -117,11 +117,11 @@ describe('RepairFailedNodesTask', () => {
     });
 
     it('re-enqueues itself even when the run throws a systemic failure', async () => {
-        const repairNode = jest.fn(async () => {
+        const repairNode = vi.fn(async () => {
             throw new SearchLibraryError('wasm exploded', null);
         });
         const populator = populatorWith(repairNode);
-        const enqueueDelayed = jest.fn();
+        const enqueueDelayed = vi.fn();
         await db.putRepairEntry(seedEntry({ nodeUid: 'node-1' }));
 
         await expect(

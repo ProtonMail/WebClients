@@ -7,54 +7,54 @@ import { VolumesStateProvider } from '../_volumes/useVolumesState';
 import { ShareType } from './interface';
 import { useDefaultShare } from './useDefaultShare';
 
-const mockRequest = jest.fn();
-const mockCreateVolume = jest.fn();
-const mockListVolumes = jest.fn();
-const mockGetShare = jest.fn();
-const mockGetShareWithKey = jest.fn();
+const mockRequest = vi.fn();
+const mockCreateVolume = vi.fn();
+const mockListVolumes = vi.fn();
+const mockGetShare = vi.fn();
+const mockGetShareWithKey = vi.fn();
 
-jest.mock('../_api/useDebouncedRequest', () => {
+vi.mock('../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockRequest;
     };
-    return useDebouncedRequest;
+    return { __esModule: true, default: useDebouncedRequest };
 });
 
-jest.mock('../_crypto/useDriveCrypto', () => {
+vi.mock('../_crypto/useDriveCrypto', () => {
     const useDriveCrypto = () => {
         return {
             getOwnAddressAndPrimaryKeys: () => {},
         };
     };
 
-    return useDriveCrypto;
+    return { __esModule: true, default: useDriveCrypto };
 });
 
-jest.mock('../_utils/useDebouncedFunction', () => {
+vi.mock('../_utils/useDebouncedFunction', () => {
     const useDebouncedFunction = () => {
         return (wrapper: any) => wrapper();
     };
-    return useDebouncedFunction;
+    return { __esModule: true, default: useDebouncedFunction };
 });
 
-jest.mock('../_shares/useShare', () => {
+vi.mock('../_shares/useShare', () => {
     const useLink = () => {
         return {
             getShare: mockGetShare,
             getShareWithKey: mockGetShareWithKey,
         };
     };
-    return useLink;
+    return { __esModule: true, default: useLink };
 });
 
-jest.mock('./useVolume', () => {
+vi.mock('./useVolume', () => {
     const useVolume = () => {
         return {
             createVolume: mockCreateVolume,
             listVolumes: mockListVolumes,
         };
     };
-    return useVolume;
+    return { __esModule: true, default: useVolume };
 });
 
 describe('useDefaultShare', () => {
@@ -67,7 +67,7 @@ describe('useDefaultShare', () => {
     const ac = new AbortController();
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
 
         // Reset the Zustand store state
         useSharesStore.setState({

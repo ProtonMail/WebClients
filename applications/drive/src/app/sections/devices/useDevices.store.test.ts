@@ -2,7 +2,7 @@ import type { Device } from '@proton/drive/sdk';
 
 import { useDevicesStore } from './useDevices.store';
 
-jest.mock('@proton/drive/modules/nodes', () => ({
+vi.mock('@proton/drive/modules/nodes', () => ({
     getDeviceName: (device: Device) => device.name as unknown as string,
 }));
 

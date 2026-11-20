@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { ApiImportProvider, ApiImporterError } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { featureFlagStore } from '@proton/drive/modules/flags';
 import { MemberRole, NodeType } from '@proton/drive/sdk';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -20,7 +20,7 @@ import { FolderBrowser } from './FolderBrowser';
 // real navigation wiring. Generic arrow-key behavior is covered by
 // DriveExplorer.keyboardNavigation.test.tsx at the stateless layer.
 
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
+vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
     __esModule: true,
     default: () => ({
         viewportWidth: {
@@ -34,39 +34,39 @@ jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
     }),
 }));
 
-const mockNavigateToLink = jest.fn();
-const mockNavigateToRoot = jest.fn();
-jest.mock('../../../legacy/hooks/drive/useNavigate', () => ({
+const mockNavigateToLink = vi.fn();
+const mockNavigateToRoot = vi.fn();
+vi.mock('../../../legacy/hooks/drive/useNavigate', () => ({
     __esModule: true,
     default: () => ({ navigateToLink: mockNavigateToLink, navigateToRoot: mockNavigateToRoot }),
 }));
 
-jest.mock('../../../utils/docs/openInDocs', () => ({
+vi.mock('../../../utils/docs/openInDocs', () => ({
     getOpenInDocsInfo: () => undefined,
 }));
 
-jest.mock('../../../modules/userSettings', () => ({
+vi.mock('../../../modules/userSettings', () => ({
     useUserSettings: () => ({
         layout: 0,
-        changeLayout: jest.fn(),
+        changeLayout: vi.fn(),
     }),
 }));
 
-jest.mock('../../../legacy/components/sections/useIsEditEnabled', () => ({
+vi.mock('../../../legacy/components/sections/useIsEditEnabled', () => ({
     __esModule: true,
     default: () => false,
 }));
 
 const mockDefaultShareRoot = { shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' };
-jest.mock('../../../legacy/hooks/drive/useActiveShare', () => ({
+vi.mock('../../../legacy/hooks/drive/useActiveShare', () => ({
     useActiveShare: () => ({
         activeFolder: { shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' },
         defaultShareRoot: mockDefaultShareRoot,
     }),
 }));
 
-const mockShowSharingModal = jest.fn();
-jest.mock('@proton/drive/modals/sharingModal', () => ({
+const mockShowSharingModal = vi.fn();
+vi.mock('@proton/drive/modals/sharingModal', () => ({
     useSharingModal: () => ({
         sharingModal: null,
         showSharingModal: mockShowSharingModal,
@@ -160,7 +160,7 @@ function renderBrowser(
             activeFolder={{ shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' }}
             layout={layout}
             sortedList={items}
-            onSortChange={jest.fn()}
+            onSortChange={vi.fn()}
         />
     );
 }
@@ -176,7 +176,7 @@ const resetStores = () => {
 
 describe('FolderBrowser keyboard a11y (cell content)', () => {
     beforeAll(() => {
-        Element.prototype.scrollIntoView = jest.fn();
+        Element.prototype.scrollIntoView = vi.fn();
         featureFlagStore.setState({ isEnabled: () => false });
         Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 800 });
         Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 1024 });

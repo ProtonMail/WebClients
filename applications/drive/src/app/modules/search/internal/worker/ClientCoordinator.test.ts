@@ -4,8 +4,8 @@ import { searchMetrics } from '../shared/searchMetrics';
 import type { ClientId, UserId } from '../shared/types';
 import { ClientCoordinator } from './ClientCoordinator';
 
-jest.mock('../shared/errors', () => ({
-    sendErrorReportForSearch: jest.fn(),
+vi.mock('../shared/errors', () => ({
+    sendErrorReportForSearch: vi.fn(),
 }));
 
 const HEARTBEAT_TIMEOUT = 300_000;
@@ -20,14 +20,14 @@ describe('ClientCoordinator', () => {
     let coordinator: ClientCoordinator;
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         coordinator = new ClientCoordinator(() => searchMetrics);
     });
 
     afterEach(() => {
         coordinator.dispose();
-        jest.clearAllTimers();
-        jest.useRealTimers();
+        vi.clearAllTimers();
+        vi.useRealTimers();
     });
 
     describe('register', () => {
@@ -43,7 +43,7 @@ describe('ClientCoordinator', () => {
         });
 
         it('notifies subscribers on first registration', () => {
-            const listener = jest.fn();
+            const listener = vi.fn();
             coordinator.subscribeClientChanged(listener);
             coordinator.register(USER_1, CLIENT_1, BRIDGE);
 
@@ -52,7 +52,7 @@ describe('ClientCoordinator', () => {
         });
 
         it('re-registering the same clientId does not notify subscribers again', () => {
-            const listener = jest.fn();
+            const listener = vi.fn();
             coordinator.subscribeClientChanged(listener);
             coordinator.register(USER_1, CLIENT_1, BRIDGE);
             expect(listener).toHaveBeenCalledTimes(1);
@@ -68,11 +68,11 @@ describe('ClientCoordinator', () => {
             coordinator.register(USER_1, CLIENT_1, BRIDGE);
 
             // Heartbeat just before timeout
-            jest.advanceTimersByTime(HEARTBEAT_TIMEOUT - 1000);
+            vi.advanceTimersByTime(HEARTBEAT_TIMEOUT - 1000);
             coordinator.heartbeat(CLIENT_1, false);
 
             // Advance past original timeout
-            jest.advanceTimersByTime(CLEANUP_PERIOD_MS + 1000);
+            vi.advanceTimersByTime(CLEANUP_PERIOD_MS + 1000);
             expect(coordinator.getActiveClientId()).toBe(CLIENT_1);
         });
 
@@ -106,7 +106,7 @@ describe('ClientCoordinator', () => {
             coordinator.register(USER_1, CLIENT_1, BRIDGE);
             coordinator.register(USER_1, CLIENT_2, BRIDGE);
 
-            const listener = jest.fn();
+            const listener = vi.fn();
             coordinator.subscribeClientChanged(listener);
             coordinator.disconnect(CLIENT_1);
 
@@ -124,7 +124,7 @@ describe('ClientCoordinator', () => {
 
             // CLIENT_2 was focused at some point; CLIENT_3 keeps heartbeating but in background.
             coordinator.heartbeat(CLIENT_2, true);
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
             coordinator.heartbeat(CLIENT_3, false);
 
             coordinator.disconnect(CLIENT_1);
@@ -138,9 +138,9 @@ describe('ClientCoordinator', () => {
             coordinator.register(USER_1, CLIENT_3, BRIDGE);
 
             // No isForeground=true heartbeat ever. CLIENT_3 is the most recent to ping.
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
             coordinator.heartbeat(CLIENT_2, false);
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
             coordinator.heartbeat(CLIENT_3, false);
 
             coordinator.disconnect(CLIENT_1);
@@ -155,7 +155,7 @@ describe('ClientCoordinator', () => {
 
             // CLIENT_2 was the foreground, but it leaves before the active does.
             coordinator.heartbeat(CLIENT_2, true);
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
             coordinator.heartbeat(CLIENT_3, false);
             coordinator.disconnect(CLIENT_2);
 
@@ -172,9 +172,9 @@ describe('ClientCoordinator', () => {
 
             // CLIENT_2 was focused, then user tabbed away — but it remains our best guess.
             coordinator.heartbeat(CLIENT_2, true);
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
             coordinator.heartbeat(CLIENT_2, false);
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
             coordinator.heartbeat(CLIENT_3, false);
 
             coordinator.disconnect(CLIENT_1);
@@ -185,7 +185,7 @@ describe('ClientCoordinator', () => {
 
     describe('subscribeClientChanged', () => {
         it('unsubscribe stops notifications', () => {
-            const listener = jest.fn();
+            const listener = vi.fn();
             const unsubscribe = coordinator.subscribeClientChanged(listener);
             unsubscribe();
 
@@ -199,7 +199,7 @@ describe('ClientCoordinator', () => {
             // The active client owns the searcher and is exempt from cleanup.
             coordinator.register(USER_1, CLIENT_1, BRIDGE);
 
-            jest.advanceTimersByTime(HEARTBEAT_TIMEOUT + CLEANUP_PERIOD_MS + 1);
+            vi.advanceTimersByTime(HEARTBEAT_TIMEOUT + CLEANUP_PERIOD_MS + 1);
 
             expect(coordinator.getActiveClientId()).toBe(CLIENT_1);
             expect(sendErrorReportForSearch).not.toHaveBeenCalled();
@@ -210,10 +210,10 @@ describe('ClientCoordinator', () => {
             coordinator.register(USER_1, CLIENT_2, BRIDGE); // passive
 
             // Keep the active client fresh; let CLIENT_2 fall stale.
-            jest.advanceTimersByTime(HEARTBEAT_TIMEOUT - 1000);
+            vi.advanceTimersByTime(HEARTBEAT_TIMEOUT - 1000);
             coordinator.heartbeat(CLIENT_1, false);
 
-            jest.advanceTimersByTime(CLEANUP_PERIOD_MS + 1000);
+            vi.advanceTimersByTime(CLEANUP_PERIOD_MS + 1000);
 
             expect(coordinator.getActiveClientId()).toBe(CLIENT_1);
             expect(sendErrorReportForSearch).toHaveBeenCalled();

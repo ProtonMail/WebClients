@@ -1,32 +1,36 @@
+import type { Mock, MockInstance } from 'vitest';
+
 import { getNodeName } from '@proton/drive/modules/nodes';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 import type { NodeEntity, ProtonDrivePhotosClient } from '@proton/drive/sdk';
 import { AbortError, NodeType } from '@proton/drive/sdk';
 
+import type * as DownloadManagerModule from './DownloadManager';
+import type * as DownloadStoreModule from './downloadManager.store';
 import { createDeferred, createEmptyAsyncGenerator, flushAsync, trackInstances, waitForCondition } from './testUtils';
 
 const schedulerTracker = trackInstances((...args: unknown[]) => {
     let counter = 0;
     return {
         constructorArgs: args,
-        scheduleDownload: jest.fn(),
-        cancelDownloadsById: jest.fn(),
-        cancelDownload: jest.fn(),
-        clearDownloads: jest.fn(),
-        generateTaskId: jest.fn(() => `scheduler-task-${++counter}`),
-        updateDownloadProgress: jest.fn(),
+        scheduleDownload: vi.fn(),
+        cancelDownloadsById: vi.fn(),
+        cancelDownload: vi.fn(),
+        clearDownloads: vi.fn(),
+        generateTaskId: vi.fn(() => `scheduler-task-${++counter}`),
+        updateDownloadProgress: vi.fn(),
     };
 });
 
 const archiveStreamGeneratorTracker = trackInstances((...args: unknown[]) => ({
     constructorArgs: args,
     controller: {
-        pause: jest.fn(),
-        resume: jest.fn(),
-        completion: jest.fn().mockResolvedValue(undefined),
+        pause: vi.fn(),
+        resume: vi.fn(),
+        completion: vi.fn().mockResolvedValue(undefined),
     },
     generator: createEmptyAsyncGenerator<unknown>(),
-    waitForFirstItem: jest.fn().mockResolvedValue(undefined),
+    waitForFirstItem: vi.fn().mockResolvedValue(undefined),
 }));
 
 const createClosedReadableStream = () =>
@@ -38,41 +42,41 @@ const createClosedReadableStream = () =>
 
 const archiveGeneratorTracker = trackInstances(() => ({
     stream: createClosedReadableStream(),
-    writeLinks: jest.fn().mockResolvedValue(undefined),
-    cancel: jest.fn(),
+    writeLinks: vi.fn().mockResolvedValue(undefined),
+    cancel: vi.fn(),
 }));
 
-const fileSaverSaveAsFileMock = jest.fn();
-const loadCreateReadableStreamWrapperMock = jest.fn();
-const traverseNodeStructureMock = jest.fn();
-const traverseAlbumMock = jest.fn();
-const hydrateAndCheckNodesMock = jest.fn();
-const hydrateAndCheckPhotosMock = jest.fn();
-const getDownloadSdkMock = jest.fn();
+const fileSaverSaveAsFileMock = vi.fn();
+const loadCreateReadableStreamWrapperMock = vi.fn();
+const traverseNodeStructureMock = vi.fn();
+const traverseAlbumMock = vi.fn();
+const hydrateAndCheckNodesMock = vi.fn();
+const hydrateAndCheckPhotosMock = vi.fn();
+const getDownloadSdkMock = vi.fn();
 
-jest.mock('../../modules/fileSaver/fileSaver', () => ({
+vi.mock('../../modules/fileSaver/fileSaver', () => ({
     __esModule: true,
     fileSaver: {
         saveAsFile: fileSaverSaveAsFileMock,
     },
 }));
 
-jest.mock('../../utils/webStreamsPolyfill', () => ({
+vi.mock('../../utils/webStreamsPolyfill', () => ({
     loadCreateReadableStreamWrapper: loadCreateReadableStreamWrapperMock,
 }));
 
-jest.mock('./downloadManager.store', () => {
-    const actual = jest.requireActual('./downloadManager.store');
+vi.mock('./downloadManager.store', async () => {
+    const actual = await vi.importActual('./downloadManager.store');
     const mockState = {
-        addDownloadItem: jest.fn(),
-        updateDownloadItem: jest.fn(),
-        getQueueItem: jest.fn(),
-        clearQueue: jest.fn(),
-        removeDownloadItems: jest.fn(),
-        getQueue: jest.fn(),
+        addDownloadItem: vi.fn(),
+        updateDownloadItem: vi.fn(),
+        getQueueItem: vi.fn(),
+        clearQueue: vi.fn(),
+        removeDownloadItems: vi.fn(),
+        getQueue: vi.fn(),
         queue: new Map<string, unknown>(),
     };
-    const getState = jest.fn(() => mockState);
+    const getState = vi.fn(() => mockState);
     return {
         ...actual,
         useDownloadManagerStore: {
@@ -82,65 +86,65 @@ jest.mock('./downloadManager.store', () => {
     };
 });
 
-jest.mock('./DownloadScheduler', () => ({
+vi.mock('./DownloadScheduler', () => ({
     DownloadScheduler: schedulerTracker.Mock,
 }));
 
-jest.mock('./ArchiveStreamGenerator', () => ({
+vi.mock('./ArchiveStreamGenerator', () => ({
     ArchiveStreamGenerator: archiveStreamGeneratorTracker.Mock,
 }));
 
-jest.mock('./ArchiveGenerator', () => ({
+vi.mock('./ArchiveGenerator', () => ({
     __esModule: true,
     default: archiveGeneratorTracker.Mock,
 }));
 
-const isIosMock = jest.fn(() => false);
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/browser'),
+const isIosMock = vi.fn(() => false);
+vi.mock('@proton/shared/lib/helpers/browser', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/browser')),
     isIos: () => isIosMock(),
 }));
 
-jest.mock('./utils/traverseNodeStructure', () => ({
+vi.mock('./utils/traverseNodeStructure', () => ({
     traverseNodeStructure: traverseNodeStructureMock,
     traverseAlbum: traverseAlbumMock,
 }));
 
-jest.mock('./utils/hydrateAndCheckNodes', () => ({
+vi.mock('./utils/hydrateAndCheckNodes', () => ({
     hydrateAndCheckNodes: hydrateAndCheckNodesMock,
     hydratePhotos: hydrateAndCheckPhotosMock,
 }));
 
-const detectMetadataSignatureIssueMock = jest.fn();
-const addAndWaitForManifestIssueDecisionMock = jest.fn();
-const addAndWaitForMetadataIssueDecisionMock = jest.fn();
-jest.mock('./utils/signatureIssues', () => ({
+const detectMetadataSignatureIssueMock = vi.fn();
+const addAndWaitForManifestIssueDecisionMock = vi.fn();
+const addAndWaitForMetadataIssueDecisionMock = vi.fn();
+vi.mock('./utils/signatureIssues', () => ({
     detectMetadataSignatureIssue: detectMetadataSignatureIssueMock,
     addAndWaitForManifestIssueDecision: addAndWaitForManifestIssueDecisionMock,
     addAndWaitForMetadataIssueDecision: addAndWaitForMetadataIssueDecisionMock,
 }));
 
-jest.mock('./utils/getDownloadSdk', () => ({
+vi.mock('./utils/getDownloadSdk', () => ({
     getDownloadSdk: getDownloadSdkMock,
 }));
 
-jest.mock('@proton/drive/sdk', () => {
+vi.mock('@proton/drive/sdk', async () => {
     const listeners: Record<string, ((...args: unknown[]) => void)[]> = {};
     const driveMock = {
-        onMessage: jest.fn((event: string, callback: (...args: unknown[]) => void) => {
+        onMessage: vi.fn((event: string, callback: (...args: unknown[]) => void) => {
             listeners[event] = listeners[event] || [];
             listeners[event].push(callback);
             return () => {
                 listeners[event] = listeners[event].filter((fn) => fn !== callback);
             };
         }),
-        getFileDownloader: jest.fn(),
+        getFileDownloader: vi.fn(),
     };
     class AbortError extends Error {
         name = 'AbortError';
     }
-    const getDrive = jest.fn(() => driveMock);
-    const getDriveForPhotos = jest.fn(() => driveMock);
+    const getDrive = vi.fn(() => driveMock);
+    const getDriveForPhotos = vi.fn(() => driveMock);
     const emitSDKEvent = (event: string, ...args: unknown[]) => {
         (listeners[event] || []).forEach((listener) => listener(...args));
     };
@@ -149,7 +153,7 @@ jest.mock('@proton/drive/sdk', () => {
             listeners[key] = [];
         });
     };
-    const actual = jest.requireActual('@proton/drive/sdk');
+    const actual = await vi.importActual('@proton/drive/sdk');
     return {
         ...actual,
         AbortError,
@@ -165,26 +169,25 @@ jest.mock('@proton/drive/sdk', () => {
     };
 });
 
-jest.mock('./DownloadDriveClientRegistry', () => {
+vi.mock('./DownloadDriveClientRegistry', async () => {
+    const sdkMock = (await import('@proton/drive/sdk')) as unknown as { driveMock: unknown };
     let customDriveClient: unknown;
     let customDrivePhotosClient: unknown;
     return {
         DownloadDriveClientRegistry: {
-            getDriveClient: jest.fn(() => {
-                const sdkMock = require('@proton/drive/sdk');
+            getDriveClient: vi.fn(() => {
                 return customDriveClient || sdkMock.driveMock;
             }),
-            getDrivePhotosClient: jest.fn(() => {
-                const sdkMock = require('@proton/drive/sdk');
+            getDrivePhotosClient: vi.fn(() => {
                 return customDrivePhotosClient || sdkMock.driveMock;
             }),
-            setDriveClient: jest.fn((client) => {
+            setDriveClient: vi.fn((client) => {
                 customDriveClient = client;
             }),
-            setDrivePhotosClient: jest.fn((client) => {
+            setDrivePhotosClient: vi.fn((client) => {
                 customDrivePhotosClient = client;
             }),
-            reset: jest.fn(() => {
+            reset: vi.fn(() => {
                 customDriveClient = undefined;
                 customDrivePhotosClient = undefined;
             }),
@@ -192,21 +195,23 @@ jest.mock('./DownloadDriveClientRegistry', () => {
     };
 });
 
-const { DownloadManager } = jest.requireActual('./DownloadManager');
-const { DownloadStatus, MalwareDownloadResolution, IssueStatus } = jest.requireActual('./downloadManager.store');
-const { useDownloadManagerStore, mockStoreState: storeMockState } = require('./downloadManager.store');
-const sdkMock = require('@proton/drive/sdk') as {
+const { DownloadManager } = await vi.importActual<typeof DownloadManagerModule>('./DownloadManager');
+const { DownloadStatus, MalwareDownloadResolution, IssueStatus } =
+    await vi.importActual<typeof DownloadStoreModule>('./downloadManager.store');
+const { useDownloadManagerStore, mockStoreState: storeMockState } = (await import('./downloadManager.store')) as any;
+const sdkMock = (await import('@proton/drive/sdk')) as unknown as {
     AbortError: typeof Error;
     SDKEvent: { TransfersPaused: string; TransfersResumed: string };
-    getDrive: jest.Mock;
-    getDriveForPhotos: jest.Mock;
+    getDrive: Mock;
+    getDriveForPhotos: Mock;
     driveMock: {
-        onMessage: jest.Mock;
-        getFileDownloader: jest.Mock;
+        onMessage: Mock;
+        getFileDownloader: Mock;
     };
     emitSDKEvent: (event: string, ...args: unknown[]) => void;
     resetSDKListeners: () => void;
 };
+const { DownloadDriveClientRegistry } = await import('./DownloadDriveClientRegistry');
 
 const getSchedulerInstance = () => {
     const instance = schedulerTracker.instances[schedulerTracker.instances.length - 1];
@@ -236,13 +241,13 @@ const resetSingleton = () => {
     Reflect.set(DownloadManager, 'instance', undefined);
 };
 
-let consoleWarnSpy: jest.SpyInstance;
+let consoleWarnSpy: MockInstance;
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    vi.clearAllMocks();
+    consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
 
-    const getStateMock = jest.mocked(useDownloadManagerStore.getState);
+    const getStateMock = vi.mocked(useDownloadManagerStore.getState);
     getStateMock.mockReset();
     getStateMock.mockReturnValue(storeMockState);
 
@@ -256,7 +261,7 @@ beforeEach(() => {
 
     loadCreateReadableStreamWrapperMock.mockReset();
     loadCreateReadableStreamWrapperMock.mockImplementation(async () => ({
-        cancel: jest.fn().mockResolvedValue(undefined),
+        cancel: vi.fn().mockResolvedValue(undefined),
         locked: false,
     }));
     fileSaverSaveAsFileMock.mockReset();
@@ -282,7 +287,6 @@ beforeEach(() => {
     sdkMock.driveMock.onMessage.mockClear();
     sdkMock.resetSDKListeners();
 
-    const { DownloadDriveClientRegistry } = require('./DownloadDriveClientRegistry');
     DownloadDriveClientRegistry.reset();
 
     resetSingleton();
@@ -325,14 +329,14 @@ describe('DownloadManager', () => {
 
         const controllerCompletion = createDeferred<void>();
         const controller = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => controllerCompletion.promise),
-            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: vi.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => nodeSize),
-            downloadToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
+            getClaimedSizeInBytes: vi.fn(() => nodeSize),
+            downloadToStream: vi.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
                 onProgress(64);
                 return controller;
             }),
@@ -341,7 +345,7 @@ describe('DownloadManager', () => {
         sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
 
         const readableStream = {
-            cancel: jest.fn(),
+            cancel: vi.fn(),
             locked: false,
         } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
         loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
@@ -421,14 +425,14 @@ describe('DownloadManager', () => {
 
         const controllerCompletion = createDeferred<void>();
         const controller = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => controllerCompletion.promise),
-            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: vi.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
-            downloadToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
+            getClaimedSizeInBytes: vi.fn(() => node.activeRevision?.storageSize ?? 0),
+            downloadToStream: vi.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
                 onProgress(32);
                 return controller;
             }),
@@ -438,7 +442,7 @@ describe('DownloadManager', () => {
 
         const cancelDeferred = createDeferred<void>();
         const readableStream = {
-            cancel: jest.fn(() => {
+            cancel: vi.fn(() => {
                 cancelDeferred.resolve();
                 return Promise.resolve();
             }),
@@ -481,17 +485,17 @@ describe('DownloadManager', () => {
 
         const controllerCompletion = createDeferred<void>();
         const controller = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => controllerCompletion.promise),
-            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: vi.fn(() => false),
         };
         sdkMock.driveMock.getFileDownloader.mockResolvedValue({
-            getClaimedSizeInBytes: jest.fn(() => 0),
-            downloadToStream: jest.fn(() => controller),
+            getClaimedSizeInBytes: vi.fn(() => 0),
+            downloadToStream: vi.fn(() => controller),
         });
         loadCreateReadableStreamWrapperMock.mockResolvedValue({
-            cancel: jest.fn().mockResolvedValue(undefined),
+            cancel: vi.fn().mockResolvedValue(undefined),
             locked: true,
         } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>);
         fileSaverSaveAsFileMock.mockRejectedValue(new AbortError('Transfer canceled'));
@@ -581,7 +585,7 @@ describe('DownloadManager', () => {
         storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Failed });
         storeMockState.getQueueItem.mockReturnValueOnce(undefined);
 
-        const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
+        const iteratorMock = vi.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
         traverseNodeStructureMock.mockReturnValue({
             nodesQueue: { iterator: iteratorMock },
             traversalCompletedPromise: Promise.resolve({
@@ -594,8 +598,8 @@ describe('DownloadManager', () => {
         fileSaverSaveAsFileMock.mockResolvedValue(undefined);
         archiveGeneratorTracker.setFactory(() => ({
             stream: createClosedReadableStream(),
-            writeLinks: jest.fn().mockResolvedValue(undefined),
-            cancel: jest.fn(),
+            writeLinks: vi.fn().mockResolvedValue(undefined),
+            cancel: vi.fn(),
         }));
 
         await manager.download(nodes.map((node) => node.uid));
@@ -626,7 +630,7 @@ describe('DownloadManager', () => {
             }),
             createMockNodeEntity({ uid: 'file', name: { ok: true as const, value: 'a.txt' } }),
         ];
-        const planEntriesMock = jest.fn().mockReturnValue(4321);
+        const planEntriesMock = vi.fn().mockReturnValue(4321);
 
         const startArchiveDownload = async () => {
             const manager = DownloadManager.getInstance();
@@ -634,7 +638,7 @@ describe('DownloadManager', () => {
             storeMockState.getQueueItem.mockReturnValue(undefined);
             hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
             traverseNodeStructureMock.mockReturnValue({
-                nodesQueue: { iterator: jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>()) },
+                nodesQueue: { iterator: vi.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>()) },
                 traversalCompletedPromise: Promise.resolve({
                     totalEncryptedSize: 5000,
                     containsUnsupportedFile: false,
@@ -648,8 +652,8 @@ describe('DownloadManager', () => {
             fileSaverSaveAsFileMock.mockResolvedValue(undefined);
             archiveGeneratorTracker.setFactory(() => ({
                 stream: createClosedReadableStream(),
-                writeLinks: jest.fn().mockResolvedValue(undefined),
-                cancel: jest.fn(),
+                writeLinks: vi.fn().mockResolvedValue(undefined),
+                cancel: vi.fn(),
                 planEntries: planEntriesMock,
             }));
 
@@ -713,7 +717,7 @@ describe('DownloadManager', () => {
         ];
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
 
-        const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
+        const iteratorMock = vi.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
         const traversalDeferred = createDeferred<{
             totalSize: number;
             containsUnsupportedFile: boolean;
@@ -731,8 +735,8 @@ describe('DownloadManager', () => {
         const writeLinksDeferred = createDeferred<void>();
         archiveGeneratorTracker.setFactory(() => ({
             stream: createClosedReadableStream(),
-            writeLinks: jest.fn().mockReturnValue(writeLinksDeferred.promise),
-            cancel: jest.fn(),
+            writeLinks: vi.fn().mockReturnValue(writeLinksDeferred.promise),
+            cancel: vi.fn(),
         }));
 
         const saveDeferred = createDeferred<void>();
@@ -804,7 +808,7 @@ describe('DownloadManager', () => {
         ];
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
 
-        const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
+        const iteratorMock = vi.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
         traverseNodeStructureMock.mockReturnValue({
             nodesQueue: { iterator: iteratorMock },
             traversalCompletedPromise: Promise.resolve({
@@ -818,18 +822,18 @@ describe('DownloadManager', () => {
         archiveStreamGeneratorTracker.setFactory((...args: unknown[]) => ({
             constructorArgs: args,
             controller: {
-                pause: jest.fn(),
-                resume: jest.fn(),
-                completion: jest.fn().mockResolvedValue(undefined),
+                pause: vi.fn(),
+                resume: vi.fn(),
+                completion: vi.fn().mockResolvedValue(undefined),
             },
             generator: createEmptyAsyncGenerator<unknown>(),
-            waitForFirstItem: jest.fn(() => waitDeferred.promise),
+            waitForFirstItem: vi.fn(() => waitDeferred.promise),
         }));
 
         archiveGeneratorTracker.setFactory(() => ({
             stream: createClosedReadableStream(),
-            writeLinks: jest.fn().mockResolvedValue(undefined),
-            cancel: jest.fn(),
+            writeLinks: vi.fn().mockResolvedValue(undefined),
+            cancel: vi.fn(),
         }));
 
         fileSaverSaveAsFileMock.mockResolvedValue(undefined);
@@ -852,8 +856,8 @@ describe('DownloadManager', () => {
     it('should pause active downloads and update their status', () => {
         const manager = DownloadManager.getInstance();
         const activeDownload = {
-            controller: { pause: jest.fn(), resume: jest.fn(), completion: jest.fn() },
-            abortController: { abort: jest.fn() },
+            controller: { pause: vi.fn(), resume: vi.fn(), completion: vi.fn() },
+            abortController: { abort: vi.fn() },
         };
         Reflect.set(manager, 'activeDownloads', new Map([['job-1', activeDownload]]));
         storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.InProgress });
@@ -867,8 +871,8 @@ describe('DownloadManager', () => {
     it('should resume paused downloads and update their status', () => {
         const manager = DownloadManager.getInstance();
         const activeDownload = {
-            controller: { pause: jest.fn(), resume: jest.fn(), completion: jest.fn() },
-            abortController: { abort: jest.fn() },
+            controller: { pause: vi.fn(), resume: vi.fn(), completion: vi.fn() },
+            abortController: { abort: vi.fn() },
         };
         Reflect.set(manager, 'activeDownloads', new Map([['job-2', activeDownload]]));
         storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Paused });
@@ -897,14 +901,14 @@ describe('DownloadManager', () => {
         hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
         const traversalDeferred = createDeferred<{ totalEncryptedSize: number; containsUnsupportedFile: boolean }>();
         traverseNodeStructureMock.mockReturnValue({
-            nodesQueue: { iterator: jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>()) },
+            nodesQueue: { iterator: vi.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>()) },
             traversalCompletedPromise: traversalDeferred.promise,
             parentPathByUid: new Map(),
         });
         archiveGeneratorTracker.setFactory(() => ({
             stream: createClosedReadableStream(),
-            writeLinks: jest.fn().mockReturnValue(createDeferred<void>().promise),
-            cancel: jest.fn(),
+            writeLinks: vi.fn().mockReturnValue(createDeferred<void>().promise),
+            cancel: vi.fn(),
         }));
         fileSaverSaveAsFileMock.mockReturnValue(createDeferred<void>().promise);
 
@@ -927,9 +931,9 @@ describe('DownloadManager', () => {
 
     it('should cancel downloads by aborting controllers and marking them cancelled', async () => {
         const manager = DownloadManager.getInstance();
-        const abortMock = jest.fn();
+        const abortMock = vi.fn();
         const activeDownload = {
-            controller: { pause: jest.fn(), resume: jest.fn(), completion: jest.fn() },
+            controller: { pause: vi.fn(), resume: vi.fn(), completion: vi.fn() },
             abortController: { abort: abortMock },
         };
         Reflect.set(manager, 'activeDownloads', new Map([['job-3', activeDownload]]));
@@ -958,19 +962,19 @@ describe('DownloadManager', () => {
 
         const controllerCompletion = createDeferred<void>();
         const controller = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => controllerCompletion.promise),
-            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: vi.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
-            downloadToStream: jest.fn(() => controller),
+            getClaimedSizeInBytes: vi.fn(() => node.activeRevision?.storageSize ?? 0),
+            downloadToStream: vi.fn(() => controller),
         };
         sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
 
         const readableStream = {
-            cancel: jest.fn().mockResolvedValue(undefined),
+            cancel: vi.fn().mockResolvedValue(undefined),
             locked: false,
         } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
         loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
@@ -1014,19 +1018,19 @@ describe('DownloadManager', () => {
 
         const controllerCompletion = createDeferred<void>();
         const controller = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => controllerCompletion.promise),
-            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: vi.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
-            downloadToStream: jest.fn(() => controller),
+            getClaimedSizeInBytes: vi.fn(() => node.activeRevision?.storageSize ?? 0),
+            downloadToStream: vi.fn(() => controller),
         };
         sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
 
         const readableStream = {
-            cancel: jest.fn().mockResolvedValue(undefined),
+            cancel: vi.fn().mockResolvedValue(undefined),
             locked: false,
         } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
         loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
@@ -1072,9 +1076,9 @@ describe('DownloadManager', () => {
     it('should clear active downloads, scheduler, and queue', async () => {
         const manager = DownloadManager.getInstance();
         const schedulerInstance = getSchedulerInstance();
-        const abortMock = jest.fn();
+        const abortMock = vi.fn();
         const activeDownload = {
-            controller: { pause: jest.fn(), resume: jest.fn(), completion: jest.fn() },
+            controller: { pause: vi.fn(), resume: vi.fn(), completion: vi.fn() },
             abortController: { abort: abortMock },
         };
         Reflect.set(manager, 'activeDownloads', new Map([['job-4', activeDownload]]));
@@ -1092,8 +1096,8 @@ describe('DownloadManager', () => {
 
     it('should delegate malware resolution to cancel or resume', () => {
         const manager = DownloadManager.getInstance();
-        const cancelSpy = jest.spyOn(manager, 'cancel').mockImplementation(() => undefined);
-        const resumeSpy = jest.spyOn(manager, 'resume').mockImplementation(() => undefined);
+        const cancelSpy = vi.spyOn(manager, 'cancel').mockImplementation(async () => undefined);
+        const resumeSpy = vi.spyOn(manager, 'resume').mockImplementation(async () => undefined);
 
         manager.resolveMalwareDetection('job-6', MalwareDownloadResolution.CancelDownload);
         expect(cancelSpy).toHaveBeenCalledWith(['job-6']);
@@ -1139,8 +1143,8 @@ describe('DownloadManager', () => {
     it('should subscribe to SDK events once and update status on pause/resume', () => {
         const manager = DownloadManager.getInstance();
         const activeDownload = {
-            controller: { pause: jest.fn(), resume: jest.fn(), completion: jest.fn() },
-            abortController: { abort: jest.fn() },
+            controller: { pause: vi.fn(), resume: vi.fn(), completion: vi.fn() },
+            abortController: { abort: vi.fn() },
         };
         Reflect.set(manager, 'activeDownloads', new Map([['job-7', activeDownload]]));
 
@@ -1182,22 +1186,21 @@ describe('DownloadManager', () => {
 
         const controllerCompletion = createDeferred<void>();
         const controller = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => controllerCompletion.promise),
-            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: vi.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => nodeSize),
-            downloadToStream: jest.fn(() => controller),
+            getClaimedSizeInBytes: vi.fn(() => nodeSize),
+            downloadToStream: vi.fn(() => controller),
         };
 
         const mockDrivePhotosClient = {
             ...sdkMock.driveMock,
-            getFileDownloader: jest.fn().mockResolvedValue(fileDownloader),
-            onMessage: jest.fn(),
+            getFileDownloader: vi.fn().mockResolvedValue(fileDownloader),
+            onMessage: vi.fn(),
         };
-        const { DownloadDriveClientRegistry } = require('./DownloadDriveClientRegistry');
         DownloadDriveClientRegistry.setDrivePhotosClient(mockDrivePhotosClient as unknown as ProtonDrivePhotosClient);
 
         getDownloadSdkMock.mockReturnValue(mockDrivePhotosClient);
@@ -1249,14 +1252,14 @@ describe('DownloadManager', () => {
 
         const controllerCompletion = createDeferred<void>();
         const controller = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => controllerCompletion.promise),
-            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: vi.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => nodeSize),
-            downloadToStream: jest.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
+            getClaimedSizeInBytes: vi.fn(() => nodeSize),
+            downloadToStream: vi.fn((_writable: unknown, onProgress: (bytes: number) => void) => {
                 onProgress(64);
                 return controller;
             }),
@@ -1264,14 +1267,14 @@ describe('DownloadManager', () => {
 
         const mockDriveClient = {
             ...sdkMock.driveMock,
-            getFileRevisionDownloader: jest.fn().mockResolvedValue(fileDownloader),
+            getFileRevisionDownloader: vi.fn().mockResolvedValue(fileDownloader),
         };
         getDownloadSdkMock.mockReturnValue(mockDriveClient);
 
         storeMockState.getQueueItem.mockReturnValue({ revisionUid });
 
         const readableStream = {
-            cancel: jest.fn(),
+            cancel: vi.fn(),
             locked: false,
         } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
         loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
@@ -1323,26 +1326,26 @@ describe('DownloadManager', () => {
 
         const controllerCompletion = createDeferred<void>();
         const controller = {
-            pause: jest.fn(),
-            resume: jest.fn(),
-            completion: jest.fn(() => controllerCompletion.promise),
-            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+            pause: vi.fn(),
+            resume: vi.fn(),
+            completion: vi.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: vi.fn(() => false),
         };
         const fileDownloader = {
-            getClaimedSizeInBytes: jest.fn(() => nodeSize),
-            downloadToStream: jest.fn(() => controller),
+            getClaimedSizeInBytes: vi.fn(() => nodeSize),
+            downloadToStream: vi.fn(() => controller),
         };
 
         const mockPublicClient = {
             ...sdkMock.driveMock,
-            getFileDownloader: jest.fn().mockResolvedValue(fileDownloader),
+            getFileDownloader: vi.fn().mockResolvedValue(fileDownloader),
         };
         getDownloadSdkMock.mockReturnValue(mockPublicClient);
 
         storeMockState.getQueueItem.mockReturnValue({ revisionUid });
 
         const readableStream = {
-            cancel: jest.fn(),
+            cancel: vi.fn(),
             locked: false,
         } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
         loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
@@ -1414,10 +1417,10 @@ describe('DownloadManager', () => {
 
             const controllerCompletion = createDeferred<void>();
             sdkMock.driveMock.getFileDownloader.mockResolvedValue({
-                getClaimedSizeInBytes: jest.fn(),
-                downloadToStream: jest.fn(() => ({
-                    completion: jest.fn(() => controllerCompletion.promise),
-                    isDownloadCompleteWithSignatureIssues: jest.fn(() => true),
+                getClaimedSizeInBytes: vi.fn(),
+                downloadToStream: vi.fn(() => ({
+                    completion: vi.fn(() => controllerCompletion.promise),
+                    isDownloadCompleteWithSignatureIssues: vi.fn(() => true),
                 })),
             });
 
@@ -1537,7 +1540,7 @@ describe('DownloadManager', () => {
             storeMockState.addDownloadItem.mockReturnValue('album-download-1');
             storeMockState.getQueueItem.mockReturnValue(undefined);
 
-            const iteratorMock = jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
+            const iteratorMock = vi.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>());
             traverseAlbumMock.mockReturnValue({
                 nodesQueue: { iterator: iteratorMock },
                 traversalCompletedPromise: Promise.resolve({
@@ -1587,7 +1590,7 @@ describe('DownloadManager', () => {
             storeMockState.getQueueItem.mockReturnValue(undefined);
 
             traverseAlbumMock.mockReturnValue({
-                nodesQueue: { iterator: jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>()) },
+                nodesQueue: { iterator: vi.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>()) },
                 traversalCompletedPromise: Promise.resolve({
                     totalEncryptedSize: 0,
                     containsUnsupportedFile: false,

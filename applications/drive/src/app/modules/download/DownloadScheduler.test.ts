@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
@@ -26,7 +28,7 @@ function createDeferred<T = void>(): Deferred<T> {
 
 let taskCounter = 0;
 
-function makeTask(start: jest.Mock<Promise<void>>, overrides: Partial<DownloadQueueTask> = {}): DownloadQueueTask {
+function makeTask(start: Mock<() => Promise<void>>, overrides: Partial<DownloadQueueTask> = {}): DownloadQueueTask {
     const { taskId, node, storageSizeEstimate, downloadId, ...rest } = overrides;
 
     taskCounter += 1;
@@ -49,26 +51,26 @@ function makeTask(start: jest.Mock<Promise<void>>, overrides: Partial<DownloadQu
     };
 }
 
-const createScheduler = () => new DownloadScheduler(jest.fn());
+const createScheduler = () => new DownloadScheduler(vi.fn());
 
 const saturateConcurrency = (scheduler: DownloadScheduler, count = MAX_DOWNLOADING_FILES_LOAD) =>
     Array.from({ length: count }, () => {
         const completion = createDeferred<void>();
-        const start = jest.fn(async () => completion.promise);
+        const start = vi.fn(async () => completion.promise);
         scheduler.scheduleDownload(makeTask(start));
         return { completion, start };
     });
 
 describe('DownloadScheduler', () => {
     beforeEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         taskCounter = 0;
     });
 
     it('should respect the maximum number of concurrent downloads', async () => {
         const scheduler = createScheduler();
         const blockingTasks = saturateConcurrency(scheduler);
-        const pendingStart = jest.fn(async () => Promise.resolve());
+        const pendingStart = vi.fn(async () => Promise.resolve());
         scheduler.scheduleDownload(makeTask(pendingStart));
 
         await flushAsync();
@@ -85,7 +87,7 @@ describe('DownloadScheduler', () => {
     it('should not start a task that was cancelled while pending', async () => {
         const scheduler = createScheduler();
         const blockingTasks = saturateConcurrency(scheduler);
-        const secondStart = jest.fn(async () => Promise.resolve());
+        const secondStart = vi.fn(async () => Promise.resolve());
 
         const secondId = scheduler.scheduleDownload(makeTask(secondStart));
 
@@ -104,7 +106,7 @@ describe('DownloadScheduler', () => {
     it('should clear pending and active downloads', async () => {
         const scheduler = createScheduler();
         const blockingTasks = saturateConcurrency(scheduler);
-        const pendingStart = jest.fn(async () => Promise.resolve());
+        const pendingStart = vi.fn(async () => Promise.resolve());
 
         scheduler.scheduleDownload(makeTask(pendingStart));
         scheduler.clearDownloads();
@@ -128,8 +130,8 @@ describe('DownloadScheduler', () => {
         const scheduler = createScheduler();
 
         const firstCompletion = createDeferred<void>();
-        const firstStart = jest.fn(async () => firstCompletion.promise);
-        const secondStart = jest.fn(async () => Promise.resolve());
+        const firstStart = vi.fn(async () => firstCompletion.promise);
+        const secondStart = vi.fn(async () => Promise.resolve());
 
         scheduler.scheduleDownload(
             makeTask(firstStart, { storageSizeEstimate: FILE_CHUNK_SIZE * (MAX_DOWNLOADING_BLOCKS + 5) })
@@ -152,7 +154,7 @@ describe('DownloadScheduler', () => {
 
         // Schedule a task that starts immediately (becomes active, leaves pendingTasks)
         const firstCompletion = createDeferred<void>();
-        const firstStart = jest.fn(async () => firstCompletion.promise);
+        const firstStart = vi.fn(async () => firstCompletion.promise);
         const downloadId = 'download-1';
         scheduler.scheduleDownload(
             makeTask(firstStart, { downloadId, storageSizeEstimate: FILE_CHUNK_SIZE * MAX_DOWNLOADING_BLOCKS })
@@ -165,7 +167,7 @@ describe('DownloadScheduler', () => {
         scheduler.cancelDownloadsById(downloadId);
 
         // A new task for the same (retried) download should now be able to start
-        const retryStart = jest.fn(async () => Promise.resolve());
+        const retryStart = vi.fn(async () => Promise.resolve());
         scheduler.scheduleDownload(
             makeTask(retryStart, { downloadId, storageSizeEstimate: FILE_CHUNK_SIZE * MAX_DOWNLOADING_BLOCKS })
         );
@@ -181,8 +183,8 @@ describe('DownloadScheduler', () => {
         const scheduler = createScheduler();
 
         const firstCompletion = createDeferred<void>();
-        const firstStart = jest.fn(async () => firstCompletion.promise);
-        const secondStart = jest.fn(async () => Promise.resolve());
+        const firstStart = vi.fn(async () => firstCompletion.promise);
+        const secondStart = vi.fn(async () => Promise.resolve());
 
         scheduler.scheduleDownload(
             makeTask(firstStart, {

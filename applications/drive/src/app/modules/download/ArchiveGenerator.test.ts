@@ -36,7 +36,7 @@ async function* generateLinks(links: TestLink[]) {
 
 describe('ArchiveGenerator', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     const checkWritingLinks = async (links: TestLink[]) => {

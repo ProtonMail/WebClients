@@ -1,5 +1,6 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { IDBFactory } from 'fake-indexeddb';
+import type { Mock } from 'vitest';
 import 'fake-indexeddb/auto';
 
 import { SearchModule } from '../mainThread/SearchModule';
@@ -10,68 +11,70 @@ import { useSearchModule } from './useSearchModule';
 
 global.BroadcastChannel = FakeBroadcastChannel as unknown as typeof BroadcastChannel;
 
-const mockWorkerStart = jest.fn();
+const mockWorkerStart = vi.fn();
 
-const mockQueryIndexerState = jest.fn().mockResolvedValue({});
-const mockIsPartialIndexNoticeDismissed = jest.fn().mockResolvedValue(false);
-const mockDismissPartialIndexNotice = jest.fn().mockResolvedValue(undefined);
-const mockReset = jest.fn().mockResolvedValue(undefined);
-const mockRebuild = jest.fn().mockResolvedValue(undefined);
+const mockQueryIndexerState = vi.fn().mockResolvedValue({});
+const mockIsPartialIndexNoticeDismissed = vi.fn().mockResolvedValue(false);
+const mockDismissPartialIndexNotice = vi.fn().mockResolvedValue(undefined);
+const mockReset = vi.fn().mockResolvedValue(undefined);
+const mockRebuild = vi.fn().mockResolvedValue(undefined);
 
-jest.mock('../mainThread/WorkerClient', () => ({
-    WorkerClient: jest.fn().mockImplementation(() => ({
-        start: mockWorkerStart,
-        queryIndexerState: mockQueryIndexerState,
-        isPartialIndexNoticeDismissed: mockIsPartialIndexNoticeDismissed,
-        dismissPartialIndexNotice: mockDismissPartialIndexNotice,
-        reset: mockReset,
-        rebuild: mockRebuild,
-        search: jest.fn(),
-        dispose: jest.fn(),
-    })),
+vi.mock('../mainThread/WorkerClient', () => ({
+    WorkerClient: vi.fn().mockImplementation(function () {
+        return {
+            start: mockWorkerStart,
+            queryIndexerState: mockQueryIndexerState,
+            isPartialIndexNoticeDismissed: mockIsPartialIndexNoticeDismissed,
+            dismissPartialIndexNotice: mockDismissPartialIndexNotice,
+            reset: mockReset,
+            rebuild: mockRebuild,
+            search: vi.fn(),
+            dispose: vi.fn(),
+        };
+    }),
 }));
 
-jest.mock('../mainThread/ClientAppVersionGuard', () => ({
-    ClientAppVersionGuard: jest.fn(),
+vi.mock('../mainThread/ClientAppVersionGuard', () => ({
+    ClientAppVersionGuard: vi.fn(),
 }));
 
-jest.mock('../shared/errors', () => {
-    const actual = jest.requireActual('../shared/errors');
-    return { ...actual, sendErrorReportForSearch: jest.fn(), listenForWorkerErrors: jest.fn() };
+vi.mock('../shared/errors', async () => {
+    const actual = await vi.importActual('../shared/errors');
+    return { ...actual, sendErrorReportForSearch: vi.fn(), listenForWorkerErrors: vi.fn() };
 });
 
-jest.mock('../shared/Logger', () => ({
-    Logger: { debug: jest.fn(), info: jest.fn(), warn: jest.fn(), error: jest.fn(), listenForWorkerLogs: jest.fn() },
+vi.mock('../shared/Logger', () => ({
+    Logger: { debug: vi.fn(), info: vi.fn(), warn: vi.fn(), error: vi.fn(), listenForWorkerLogs: vi.fn() },
 }));
 
 // --- Stub external hooks ---
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     useUser: () => [{ ID: 'test-user' }],
 }));
 
-jest.mock('@proton/account/userKeys/hooks', () => ({
-    useGetUserKeys: () => jest.fn().mockResolvedValue([]),
+vi.mock('@proton/account/userKeys/hooks', () => ({
+    useGetUserKeys: () => vi.fn().mockResolvedValue([]),
 }));
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ APP_VERSION: '1.0.0' }),
 }));
 
-jest.mock('@proton/app-context/useApi', () => ({
-    useApi: () => jest.fn(),
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: () => vi.fn(),
 }));
 
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
     useDrive: () => ({
-        drive: { onMessage: jest.fn().mockReturnValue(jest.fn()) },
-        internal: { createSearchDriveInstance: jest.fn().mockReturnValue({}) },
+        drive: { onMessage: vi.fn().mockReturnValue(vi.fn()) },
+        internal: { createSearchDriveInstance: vi.fn().mockReturnValue({}) },
     }),
 }));
 
-jest.mock('@proton/shared/lib/api/drive/volume', () => ({
-    queryLatestVolumeEvent: jest.fn(),
+vi.mock('@proton/shared/lib/api/drive/volume', () => ({
+    queryLatestVolumeEvent: vi.fn(),
 }));
 
 function resetSingleton() {
@@ -89,17 +92,17 @@ function expectAvailable(result: { current: ReturnType<typeof useSearchModule> }
 // --- Tests ---
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     globalThis.indexedDB = new IDBFactory();
     FakeBroadcastChannel.reset();
     resetSingleton();
-    jest.spyOn(SearchModule, 'isEnvironmentCompatible').mockResolvedValue(true);
+    vi.spyOn(SearchModule, 'isEnvironmentCompatible').mockResolvedValue(true);
 });
 
 describe('useSearchModule', () => {
     describe('availability', () => {
         it('returns isAvailable: false when environment is incompatible', () => {
-            (SearchModule.isEnvironmentCompatible as jest.Mock).mockResolvedValue(false);
+            (SearchModule.isEnvironmentCompatible as Mock).mockResolvedValue(false);
             const { result } = renderHook(() => useSearchModule());
             expect(result.current.isAvailable).toBe(false);
         });

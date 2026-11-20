@@ -6,16 +6,16 @@ import type { ListDrivePendingExternalInvitationsPayload } from '@proton/shared/
 import useChecklist from './useChecklist';
 import { useOnboarding } from './useOnboarding';
 
-jest.mock('./useChecklist');
-const mockedUseCheckList = jest.mocked(useChecklist);
-const mockedDebouncedRequest = jest.fn();
-jest.mock('../../../legacy/store/_api/useDebouncedRequest', () => {
+vi.mock('./useChecklist');
+const mockedUseCheckList = vi.mocked(useChecklist);
+const mockedDebouncedRequest = vi.fn();
+vi.mock('../../../legacy/store/_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockedDebouncedRequest;
     };
-    return useDebouncedRequest;
+    return { __esModule: true, default: useDebouncedRequest };
 });
-jest.mock('@proton/shared/lib/api/drive/invitation');
+vi.mock('@proton/shared/lib/api/drive/invitation');
 
 describe('useOnboarding', () => {
     let checklistMock: { isLoading: boolean };
@@ -40,7 +40,7 @@ describe('useOnboarding', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should initialize with default values and fetch pending invitations', async () => {

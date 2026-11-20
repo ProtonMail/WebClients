@@ -4,25 +4,25 @@ import { showAggregatedErrorNotification } from '@proton/drive/legacy/errorHandl
 
 import { useTrashNotifications } from './useTrashNotifications';
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    showAggregatedErrorNotification: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    showAggregatedErrorNotification: vi.fn(),
 }));
 
-jest.mock('@proton/drive/modules/listNotifications', () => ({
-    useListNotifications: () => ({ createSuccessMessage: jest.fn() }),
+vi.mock('@proton/drive/modules/listNotifications', () => ({
+    useListNotifications: () => ({ createSuccessMessage: vi.fn() }),
 }));
 
-jest.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => ({
-    useConfirmActionModal: () => [null, jest.fn()],
+vi.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => ({
+    useConfirmActionModal: () => [null, vi.fn()],
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
 
 describe('useTrashNotifications', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('passes the failure errors themselves, so they are reported with their message', () => {
@@ -31,7 +31,7 @@ describe('useTrashNotifications', () => {
 
         result.current.createTrashedItemsNotifications([], [{ uid: 'uid-1', error }]);
 
-        const [errors, getMessage] = jest.mocked(showAggregatedErrorNotification).mock.calls[0];
+        const [errors, getMessage] = vi.mocked(showAggregatedErrorNotification).mock.calls[0];
         expect(errors).toEqual([error]);
         expect(getMessage(error)).toBe('Node is locked');
     });

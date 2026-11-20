@@ -1,5 +1,6 @@
 import { sha1 } from '@noble/hashes/sha1';
 import { bytesToHex } from '@noble/hashes/utils';
+import type { MockedFunction } from 'vitest';
 
 import type { DownloadController, NodeEntity } from '@proton/drive/sdk';
 
@@ -8,45 +9,45 @@ import type { MalwareDetection } from '../malwareDetection/malwareDetection';
 import { createFileDownloadStream } from './createFileDownloadStream';
 import { getDownloadSdk } from './getDownloadSdk';
 
-jest.mock('../downloadManager.store', () => ({
-    useDownloadManagerStore: { getState: jest.fn() },
+vi.mock('../downloadManager.store', () => ({
+    useDownloadManagerStore: { getState: vi.fn() },
 }));
-jest.mock('./getDownloadSdk', () => ({ getDownloadSdk: jest.fn() }));
+vi.mock('./getDownloadSdk', () => ({ getDownloadSdk: vi.fn() }));
 
-const mockGetDownloadSdk = getDownloadSdk as jest.MockedFunction<typeof getDownloadSdk>;
-const mockGetState = useDownloadManagerStore.getState as jest.MockedFunction<typeof useDownloadManagerStore.getState>;
+const mockGetDownloadSdk = getDownloadSdk as MockedFunction<typeof getDownloadSdk>;
+const mockGetState = useDownloadManagerStore.getState as MockedFunction<typeof useDownloadManagerStore.getState>;
 
 describe('createFileDownloadStream', () => {
     const downloadId = 'test-id';
     const node = { uid: 'node-uid', name: { ok: true as const, value: 'test.txt' } } as unknown as NodeEntity;
     const abortSignal = new AbortController().signal;
-    const onProgress = jest.fn();
+    const onProgress = vi.fn();
     const malwareDetection = {
-        wrapStream: jest.fn((_, __, stream) => stream),
+        wrapStream: vi.fn((_, __, stream) => stream),
     } as unknown as MalwareDetection;
 
     const setupMocks = (revisionUid?: string) => {
         const mockController = {
-            completion: jest.fn().mockResolvedValue(undefined),
+            completion: vi.fn().mockResolvedValue(undefined),
         } as unknown as DownloadController;
 
         const mockDownloader = {
-            getClaimedSizeInBytes: jest.fn().mockReturnValue(1024),
-            downloadToStream: jest.fn().mockReturnValue(mockController),
+            getClaimedSizeInBytes: vi.fn().mockReturnValue(1024),
+            downloadToStream: vi.fn().mockReturnValue(mockController),
         };
 
         mockGetState.mockReturnValue({
-            getQueueItem: jest.fn().mockReturnValue({ revisionUid }),
+            getQueueItem: vi.fn().mockReturnValue({ revisionUid }),
         } as any);
 
         return { mockDownloader, mockController };
     };
 
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     it('should use getFileDownloader for regular files', async () => {
         const { mockDownloader } = setupMocks();
-        const mockDrive = { getFileDownloader: jest.fn().mockResolvedValue(mockDownloader) };
+        const mockDrive = { getFileDownloader: vi.fn().mockResolvedValue(mockDownloader) };
         mockGetDownloadSdk.mockReturnValue(mockDrive as any);
 
         const result = await createFileDownloadStream({ downloadId, node, abortSignal, onProgress, malwareDetection });
@@ -58,7 +59,7 @@ describe('createFileDownloadStream', () => {
 
     it('should use getFileRevisionDownloader when revisionUid exists', async () => {
         const { mockDownloader } = setupMocks('revision-123');
-        const mockDrive = { getFileRevisionDownloader: jest.fn().mockResolvedValue(mockDownloader) };
+        const mockDrive = { getFileRevisionDownloader: vi.fn().mockResolvedValue(mockDownloader) };
         mockGetDownloadSdk.mockReturnValue(mockDrive as any);
 
         await createFileDownloadStream({ downloadId, node, abortSignal, onProgress, malwareDetection });
@@ -68,7 +69,7 @@ describe('createFileDownloadStream', () => {
 
     it('should fall back to getFileDownloader when getFileRevisionDownloader unavailable', async () => {
         const { mockDownloader } = setupMocks('revision-123');
-        const mockDrive = { getFileDownloader: jest.fn().mockResolvedValue(mockDownloader) };
+        const mockDrive = { getFileDownloader: vi.fn().mockResolvedValue(mockDownloader) };
         mockGetDownloadSdk.mockReturnValue(mockDrive as any);
 
         await createFileDownloadStream({ downloadId, node, abortSignal, onProgress, malwareDetection });
@@ -78,7 +79,7 @@ describe('createFileDownloadStream', () => {
 
     it('should forward progress callbacks', async () => {
         const { mockDownloader } = setupMocks();
-        mockGetDownloadSdk.mockReturnValue({ getFileDownloader: jest.fn().mockResolvedValue(mockDownloader) } as any);
+        mockGetDownloadSdk.mockReturnValue({ getFileDownloader: vi.fn().mockResolvedValue(mockDownloader) } as any);
 
         await createFileDownloadStream({ downloadId, node, abortSignal, onProgress, malwareDetection });
 
@@ -90,7 +91,7 @@ describe('createFileDownloadStream', () => {
 
     it('should track writer closed state', async () => {
         const { mockDownloader } = setupMocks();
-        mockGetDownloadSdk.mockReturnValue({ getFileDownloader: jest.fn().mockResolvedValue(mockDownloader) } as any);
+        mockGetDownloadSdk.mockReturnValue({ getFileDownloader: vi.fn().mockResolvedValue(mockDownloader) } as any);
 
         const result = await createFileDownloadStream({ downloadId, node, abortSignal, onProgress, malwareDetection });
         const writableStream = mockDownloader.downloadToStream.mock.calls[0][0];
@@ -102,7 +103,7 @@ describe('createFileDownloadStream', () => {
 
     it('should not close writer twice', async () => {
         const { mockDownloader } = setupMocks();
-        mockGetDownloadSdk.mockReturnValue({ getFileDownloader: jest.fn().mockResolvedValue(mockDownloader) } as any);
+        mockGetDownloadSdk.mockReturnValue({ getFileDownloader: vi.fn().mockResolvedValue(mockDownloader) } as any);
 
         const result = await createFileDownloadStream({ downloadId, node, abortSignal, onProgress, malwareDetection });
         const writableStream = mockDownloader.downloadToStream.mock.calls[0][0];
@@ -117,7 +118,7 @@ describe('createFileDownloadStream', () => {
 
     it('should allow aborting writer', async () => {
         const { mockDownloader } = setupMocks();
-        mockGetDownloadSdk.mockReturnValue({ getFileDownloader: jest.fn().mockResolvedValue(mockDownloader) } as any);
+        mockGetDownloadSdk.mockReturnValue({ getFileDownloader: vi.fn().mockResolvedValue(mockDownloader) } as any);
 
         const result = await createFileDownloadStream({ downloadId, node, abortSignal, onProgress, malwareDetection });
 
@@ -128,7 +129,7 @@ describe('createFileDownloadStream', () => {
 
     it('should compute hash incrementally and cache final result', async () => {
         const { mockDownloader } = setupMocks();
-        mockGetDownloadSdk.mockReturnValue({ getFileDownloader: jest.fn().mockResolvedValue(mockDownloader) } as any);
+        mockGetDownloadSdk.mockReturnValue({ getFileDownloader: vi.fn().mockResolvedValue(mockDownloader) } as any);
 
         const result = await createFileDownloadStream({ downloadId, node, abortSignal, onProgress, malwareDetection });
 

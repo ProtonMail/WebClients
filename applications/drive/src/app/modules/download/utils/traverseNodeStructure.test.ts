@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { NodeType, ValidationError } from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
@@ -5,14 +7,14 @@ import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimety
 import { DownloadDriveClientRegistry } from '../DownloadDriveClientRegistry';
 import { MAX_CONCURRENT_FOLDER_TRAVERSALS, traverseAlbum, traverseNodeStructure } from './traverseNodeStructure';
 
-jest.mock('../DownloadDriveClientRegistry', () => ({
+vi.mock('../DownloadDriveClientRegistry', () => ({
     DownloadDriveClientRegistry: {
-        getDriveClient: jest.fn(),
-        getDrivePhotosClient: jest.fn(),
+        getDriveClient: vi.fn(),
+        getDrivePhotosClient: vi.fn(),
     },
 }));
 
-jest.mock('../../../utils/sdk/getNodeStorageSize', () => ({
+vi.mock('../../../utils/sdk/getNodeStorageSize', () => ({
     getNodeStorageSize: (node: { uid: string }) => {
         const sizes: Record<string, number> = {
             file1: 1000,
@@ -32,13 +34,13 @@ const CHILDREN_DELAY_MS = 181;
 const NODES_DELAY_MS = 131;
 
 type MockDriveClient = {
-    iterateFolderChildrenNodeUids: jest.Mock;
-    iterateNodes: jest.Mock;
+    iterateFolderChildrenNodeUids: Mock;
+    iterateNodes: Mock;
 };
 
 type MockPhotosClient = {
-    iterateNodes: jest.Mock;
-    iterateAlbum: jest.Mock;
+    iterateNodes: Mock;
+    iterateAlbum: Mock;
 };
 
 const makeNode = (uid: string, type: NodeType, mediaType = 'text/plain') =>
@@ -61,10 +63,10 @@ describe('traverseNodeStructure', () => {
 
     beforeEach(() => {
         mockClient = {
-            iterateFolderChildrenNodeUids: jest.fn(),
-            iterateNodes: jest.fn(),
+            iterateFolderChildrenNodeUids: vi.fn(),
+            iterateNodes: vi.fn(),
         };
-        (DownloadDriveClientRegistry.getDriveClient as jest.Mock).mockReturnValue(mockClient);
+        (DownloadDriveClientRegistry.getDriveClient as Mock).mockReturnValue(mockClient);
     });
 
     it('skips unsupported nodes and reports containsUnsupportedFile', async () => {
@@ -437,10 +439,10 @@ describe('traverseAlbum', () => {
 
     beforeEach(() => {
         mockPhotosClient = {
-            iterateNodes: jest.fn(),
-            iterateAlbum: jest.fn(),
+            iterateNodes: vi.fn(),
+            iterateAlbum: vi.fn(),
         };
-        (DownloadDriveClientRegistry.getDrivePhotosClient as jest.Mock).mockReturnValue(mockPhotosClient);
+        (DownloadDriveClientRegistry.getDrivePhotosClient as Mock).mockReturnValue(mockPhotosClient);
     });
 
     it('traverses every album item and never pushes the album node itself', async () => {

@@ -6,29 +6,29 @@ import useDriveNavigation from '../../../legacy/hooks/drive/useNavigate';
 import { useSearchModule, useUrlSearchParams } from '../../../modules/search';
 import { SearchField } from './index';
 
-jest.mock('../../../modules/search', () => ({
-    useSearchModule: jest.fn(),
-    useUrlSearchParams: jest.fn(),
-    tryCatchWithNotification: jest.fn((fn: () => unknown) => fn),
+vi.mock('../../../modules/search', () => ({
+    useSearchModule: vi.fn(),
+    useUrlSearchParams: vi.fn(),
+    tryCatchWithNotification: vi.fn((fn: () => unknown) => fn),
 }));
 
-jest.mock('../../../modules/search/internal/shared/errors', () => ({
-    sendErrorReportForSearch: jest.fn(),
+vi.mock('../../../modules/search/internal/shared/errors', () => ({
+    sendErrorReportForSearch: vi.fn(),
 }));
 
-jest.mock('../../../legacy/components/useSpotlight', () => ({
-    useSpotlight: jest.fn(),
+vi.mock('../../../legacy/components/useSpotlight', () => ({
+    useSpotlight: vi.fn(),
 }));
 
-jest.mock('../../../legacy/hooks/drive/useNavigate', () => ({
+vi.mock('../../../legacy/hooks/drive/useNavigate', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-const mockedUseSearchModule = jest.mocked(useSearchModule);
-const mockedUseUrlSearchParams = jest.mocked(useUrlSearchParams);
-const mockedUseSpotlight = jest.mocked(useSpotlight);
-const mockedUseDriveNavigation = jest.mocked(useDriveNavigation);
+const mockedUseSearchModule = vi.mocked(useSearchModule);
+const mockedUseUrlSearchParams = vi.mocked(useUrlSearchParams);
+const mockedUseSpotlight = vi.mocked(useSpotlight);
+const mockedUseDriveNavigation = vi.mocked(useDriveNavigation);
 
 const makeModule = (overrides: Record<string, unknown> = {}) => ({
     isAvailable: true,
@@ -40,25 +40,25 @@ const makeModule = (overrides: Record<string, unknown> = {}) => ({
     isIndexPartial: false,
     isPartialIndexNoticeDismissed: false,
     indexingProgress: { files: 0, folders: 0, albums: 0, photos: 0 },
-    optIn: jest.fn(),
-    start: jest.fn(),
-    reset: jest.fn(),
-    rebuild: jest.fn(),
-    reindexPopulator: jest.fn(),
-    dismissPartialIndexNotice: jest.fn().mockResolvedValue(undefined),
-    search: jest.fn(),
-    exportIndexEntries: jest.fn(),
-    getIndexByteSize: jest.fn(),
-    removeIndexEntry: jest.fn(),
+    optIn: vi.fn(),
+    start: vi.fn(),
+    reset: vi.fn(),
+    rebuild: vi.fn(),
+    reindexPopulator: vi.fn(),
+    dismissPartialIndexNotice: vi.fn().mockResolvedValue(undefined),
+    search: vi.fn(),
+    exportIndexEntries: vi.fn(),
+    getIndexByteSize: vi.fn(),
+    removeIndexEntry: vi.fn(),
     ...overrides,
 });
 
 describe('SearchField', () => {
     beforeEach(() => {
         mockedUseSearchModule.mockReturnValue(makeModule() as any);
-        mockedUseUrlSearchParams.mockReturnValue(['', jest.fn()] as any);
-        mockedUseSpotlight.mockReturnValue({ searchSpotlight: { close: jest.fn() } } as any);
-        mockedUseDriveNavigation.mockReturnValue({ navigateToSearch: jest.fn(), navigateToRoot: jest.fn() } as any);
+        mockedUseUrlSearchParams.mockReturnValue(['', vi.fn()] as any);
+        mockedUseSpotlight.mockReturnValue({ searchSpotlight: { close: vi.fn() } } as any);
+        mockedUseDriveNavigation.mockReturnValue({ navigateToSearch: vi.fn(), navigateToRoot: vi.fn() } as any);
     });
 
     it('shows "Search drive" placeholder when the index is complete', () => {
@@ -97,7 +97,7 @@ describe('SearchField', () => {
     });
 
     it('calls dismissPartialIndexNotice when "Got it" is clicked on the partial-index notice', async () => {
-        const dismissPartialIndexNotice = jest.fn().mockResolvedValue(undefined);
+        const dismissPartialIndexNotice = vi.fn().mockResolvedValue(undefined);
         mockedUseSearchModule.mockReturnValue(makeModule({ isIndexPartial: true, dismissPartialIndexNotice }) as any);
         render(<SearchField />);
         await userEvent.click(screen.getByPlaceholderText('Search recent items'));

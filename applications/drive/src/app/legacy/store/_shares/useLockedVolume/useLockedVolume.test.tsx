@@ -13,28 +13,28 @@ import type { LockedVolumeForRestore } from '../interface';
 import { ShareState, ShareType } from '../interface';
 import { useLockedVolumeInner } from './useLockedVolume';
 
-const mockRequest = jest.fn();
-jest.mock('../../_api/useDebouncedRequest', () => {
+const mockRequest = vi.fn();
+vi.mock('../../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockRequest;
     };
-    return useDebouncedRequest;
+    return { __esModule: true, default: useDebouncedRequest };
 });
 
-jest.mock('../../_utils/useDebouncedFunction', () => {
+vi.mock('../../_utils/useDebouncedFunction', () => {
     const useDebouncedFunction = () => {
         return (wrapper: any) => wrapper();
     };
-    return useDebouncedFunction;
+    return { __esModule: true, default: useDebouncedFunction };
 });
 
-jest.mock('@proton/components/hooks/usePreventLeave', () => {
+vi.mock('@proton/components/hooks/usePreventLeave', () => {
     const usePreventLeave = () => {
         return {
             preventLeave: (wrapper: any) => (typeof wrapper === 'function' ? wrapper() : Promise.resolve(wrapper)),
         };
     };
-    return usePreventLeave;
+    return { __esModule: true, default: usePreventLeave };
 });
 
 const SHARE_MOCK_1 = {
@@ -63,8 +63,8 @@ const LOCKED_VOLUME_MOCK_2 = {
     photos: [],
 };
 
-const mockGetLockedShares = jest.fn();
-const mockGetShareWithKey = jest.fn();
+const mockGetLockedShares = vi.fn();
+const mockGetShareWithKey = vi.fn();
 
 const generateAddressKeys = async () => {
     const keyPassword = 'password';
@@ -87,15 +87,15 @@ const generateAddressKeys = async () => {
 
 const useHook = (props: any = {}) => {
     return useLockedVolumeInner({
-        getShareWithKey: jest.fn(),
+        getShareWithKey: vi.fn(),
         addressesKeys: [],
-        getDefaultShare: jest.fn(),
-        getDefaultPhotosShare: jest.fn(),
-        getOwnAddressAndPrimaryKeys: jest.fn(),
-        prepareVolumeForRestore: jest.fn(),
-        getLinkPrivateKey: jest.fn(),
-        getLinkHashKey: jest.fn(),
-        createPhotosWithAlbumsShare: jest.fn(),
+        getDefaultShare: vi.fn(),
+        getDefaultPhotosShare: vi.fn(),
+        getOwnAddressAndPrimaryKeys: vi.fn(),
+        prepareVolumeForRestore: vi.fn(),
+        getLinkPrivateKey: vi.fn(),
+        getLinkHashKey: vi.fn(),
+        createPhotosWithAlbumsShare: vi.fn(),
         ...props,
     });
 };
@@ -115,7 +115,7 @@ describe('useLockedVolume', () => {
     });
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
         mockGetLockedShares.mockImplementation(() => {
             return [];
         });
@@ -411,8 +411,8 @@ describe('useLockedVolume', () => {
 
         describe('restoreVolumes', () => {
             it('should handle restore operation with no volumes to restore', async () => {
-                const mockPrepareVolumeForRestore = jest.fn().mockResolvedValue(LOCKED_VOLUME_MOCK_1);
-                const mockCreatePhotosWithAlbumsShare = jest.fn().mockResolvedValue({ shareId: 'photosShare' });
+                const mockPrepareVolumeForRestore = vi.fn().mockResolvedValue(LOCKED_VOLUME_MOCK_1);
+                const mockCreatePhotosWithAlbumsShare = vi.fn().mockResolvedValue({ shareId: 'photosShare' });
                 const addressesKeys = await generateAddressKeys();
 
                 const { result } = renderHook(
@@ -438,8 +438,8 @@ describe('useLockedVolume', () => {
 
             it('should handle API errors during restore operation', async () => {
                 mockRequest.mockRejectedValue(new Error('API Error'));
-                const mockPrepareVolumeForRestore = jest.fn().mockResolvedValue(LOCKED_VOLUME_MOCK_1);
-                const mockCreatePhotosWithAlbumsShare = jest.fn().mockResolvedValue({ shareId: 'photosShare' });
+                const mockPrepareVolumeForRestore = vi.fn().mockResolvedValue(LOCKED_VOLUME_MOCK_1);
+                const mockCreatePhotosWithAlbumsShare = vi.fn().mockResolvedValue({ shareId: 'photosShare' });
                 const addressesKeys = await generateAddressKeys();
 
                 const { result: storeResult } = renderHook(() => useSharesStore());
@@ -467,7 +467,7 @@ describe('useLockedVolume', () => {
 
         describe('error handling', () => {
             it('should handle errors in prepareVolumesForRestore gracefully', async () => {
-                const mockGetShareWithKey = jest.fn().mockRejectedValue(new Error('Network error'));
+                const mockGetShareWithKey = vi.fn().mockRejectedValue(new Error('Network error'));
                 const addressesKeys = await generateAddressKeys();
                 const { result } = renderHook(
                     () =>

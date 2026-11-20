@@ -1,9 +1,11 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { NodeType, ValidationError, generateInvitationUid, generateNodeUid } from '@proton/drive/sdk';
+import * as mod1 from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
@@ -15,48 +17,51 @@ import { useRedirectOrAcceptInvitation } from './useRedirectOrAcceptInvitation';
 // navigation / docs) are mocked - those need a configured app. The pure UID helpers, NodeType, the
 // real ValidationError and isNativeProtonDocsAppFile are kept so the test exercises the actual
 // matching, not-found and docs-routing logic.
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
-    getDrive: jest.fn(),
-    getDriveForPhotos: jest.fn(),
-    getDrivePerNodeType: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
+    getDrive: vi.fn(),
+    getDriveForPhotos: vi.fn(),
+    getDrivePerNodeType: vi.fn(),
 }));
 
-jest.mock('@proton/drive/modules/busDriver', () => ({
-    ...jest.requireActual('@proton/drive/modules/busDriver'),
-    getBusDriver: jest.fn(),
+vi.mock('@proton/drive/modules/busDriver', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/busDriver')),
+    getBusDriver: vi.fn(),
 }));
 
-jest.mock('@proton/drive/modules/notifications', () => ({
-    getNotificationsManager: jest.fn(),
+vi.mock('@proton/drive/modules/notifications', () => ({
+    getNotificationsManager: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
-jest.mock('../legacy/hooks/drive/useNavigate', () => ({
+vi.mock('../legacy/hooks/drive/useNavigate', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('../utils/docs/openInDocs', () => ({
-    getOpenInDocsInfo: jest.fn(),
-    openDocsOrSheetsDocument: jest.fn(),
+vi.mock('../utils/docs/openInDocs', () => ({
+    getOpenInDocsInfo: vi.fn(),
+    openDocsOrSheetsDocument: vi.fn(),
 }));
 
-const { getDrive, getDriveForPhotos, getDrivePerNodeType } = jest.mocked(require('@proton/drive/sdk'));
+const { getDrive, getDriveForPhotos, getDrivePerNodeType } = vi.mocked(mod1) as unknown as Record<
+    'getDrive' | 'getDriveForPhotos' | 'getDrivePerNodeType',
+    Mock
+>;
 
 const VOLUME_ID = 'volume-1';
 const LINK_ID = 'link-1';
 const NODE_UID = generateNodeUid(VOLUME_ID, LINK_ID);
 const INVITATION_ID = 'invitation-1';
 
-const mockEmit = jest.fn().mockResolvedValue(undefined);
-const mockCreateNotification = jest.fn();
-const navigateToSharedWithMe = jest.fn();
-const navigateToNoAccess = jest.fn();
-const navigateToNodeUid = jest.fn().mockResolvedValue(undefined);
+const mockEmit = vi.fn().mockResolvedValue(undefined);
+const mockCreateNotification = vi.fn();
+const navigateToSharedWithMe = vi.fn();
+const navigateToNoAccess = vi.fn();
+const navigateToNodeUid = vi.fn().mockResolvedValue(undefined);
 
 async function* asyncIteratorFrom<T>(items: T[]): AsyncGenerator<T> {
     for (const item of items) {
@@ -98,15 +103,15 @@ function fakeNode({ type = NodeType.File, mediaType }: { type?: NodeType; mediaT
 function fakeDriveClient({
     invitations = [],
     iterateInvitations,
-    getNode = jest.fn().mockRejectedValue(notFoundError()),
+    getNode = vi.fn().mockRejectedValue(notFoundError()),
 }: {
     invitations?: ReturnType<typeof fakeInvitation>[];
-    iterateInvitations?: jest.Mock;
-    getNode?: jest.Mock;
+    iterateInvitations?: Mock;
+    getNode?: Mock;
 } = {}) {
     return {
-        iterateInvitations: iterateInvitations ?? jest.fn(() => asyncIteratorFrom(invitations)),
-        acceptInvitation: jest.fn().mockResolvedValue(undefined),
+        iterateInvitations: iterateInvitations ?? vi.fn(() => asyncIteratorFrom(invitations)),
+        acceptInvitation: vi.fn().mockResolvedValue(undefined),
         getNode,
     };
 }
@@ -114,16 +119,16 @@ function fakeDriveClient({
 const params = { invitationId: INVITATION_ID, volumeId: VOLUME_ID, linkId: LINK_ID };
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    jest.mocked(getBusDriver).mockReturnValue({ emit: mockEmit } as any);
-    jest.mocked(getNotificationsManager).mockReturnValue({ createNotification: mockCreateNotification } as any);
-    jest.mocked(useDriveNavigation).mockReturnValue({
+    vi.clearAllMocks();
+    vi.mocked(getBusDriver).mockReturnValue({ emit: mockEmit } as any);
+    vi.mocked(getNotificationsManager).mockReturnValue({ createNotification: mockCreateNotification } as any);
+    vi.mocked(useDriveNavigation).mockReturnValue({
         navigateToSharedWithMe,
         navigateToNoAccess,
         navigateToNodeUid,
     } as any);
     // getDrivePerNodeType returns a recognizable client per node type for navigation assertions.
-    jest.mocked(getDrivePerNodeType).mockImplementation((type: NodeType) => ({ type }) as any);
+    vi.mocked(getDrivePerNodeType).mockImplementation((type: NodeType) => ({ type }) as any);
 });
 
 describe('useRedirectOrAcceptInvitation', () => {
@@ -170,7 +175,7 @@ describe('useRedirectOrAcceptInvitation', () => {
                 fakeDriveClient({ invitations: [fakeInvitation({ mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE })] })
             );
             getDriveForPhotos.mockReturnValue(fakeDriveClient());
-            jest.mocked(getOpenInDocsInfo).mockReturnValue({ type: 'document', isNative: true });
+            vi.mocked(getOpenInDocsInfo).mockReturnValue({ type: 'document', isNative: true });
 
             const { result } = renderHook(() => useRedirectOrAcceptInvitation());
             await act(async () => {
@@ -207,7 +212,7 @@ describe('useRedirectOrAcceptInvitation', () => {
         it('resolves the node from the regular drive when no invitation matches', async () => {
             const drive = fakeDriveClient({
                 invitations: [fakeInvitation({ invitationId: 'other-invitation' })],
-                getNode: jest.fn().mockResolvedValue(fakeNode({ type: NodeType.Folder })),
+                getNode: vi.fn().mockResolvedValue(fakeNode({ type: NodeType.Folder })),
             });
             getDrive.mockReturnValue(drive);
             getDriveForPhotos.mockReturnValue(fakeDriveClient());
@@ -225,7 +230,7 @@ describe('useRedirectOrAcceptInvitation', () => {
         it('falls back to the photos drive when the regular drive returns not-found', async () => {
             const drive = fakeDriveClient(); // getNode rejects with not-found by default
             const photos = fakeDriveClient({
-                getNode: jest.fn().mockResolvedValue(fakeNode({ type: NodeType.Album })),
+                getNode: vi.fn().mockResolvedValue(fakeNode({ type: NodeType.Album })),
             });
             getDrive.mockReturnValue(drive);
             getDriveForPhotos.mockReturnValue(photos);
@@ -241,9 +246,9 @@ describe('useRedirectOrAcceptInvitation', () => {
 
         it('falls back to the photos drive when the regular drive getNode fails with any error', async () => {
             const realError = new Error('boom');
-            const drive = fakeDriveClient({ getNode: jest.fn().mockRejectedValue(realError) });
+            const drive = fakeDriveClient({ getNode: vi.fn().mockRejectedValue(realError) });
             const photos = fakeDriveClient({
-                getNode: jest.fn().mockResolvedValue(fakeNode({ type: NodeType.Album })),
+                getNode: vi.fn().mockResolvedValue(fakeNode({ type: NodeType.Album })),
             });
             getDrive.mockReturnValue(drive);
             getDriveForPhotos.mockReturnValue(photos);
@@ -280,7 +285,7 @@ describe('useRedirectOrAcceptInvitation', () => {
         it('reports the error and redirects to shared-with-me when iterating invitations throws', async () => {
             const iterateError = new Error('iterate failed');
             getDrive.mockReturnValue(
-                fakeDriveClient({ iterateInvitations: jest.fn(() => throwingIterator(iterateError)) })
+                fakeDriveClient({ iterateInvitations: vi.fn(() => throwingIterator(iterateError)) })
             );
             getDriveForPhotos.mockReturnValue(fakeDriveClient());
 

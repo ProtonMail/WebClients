@@ -6,9 +6,9 @@ import { defaultSharedWithMeSortConfig } from './sharedWithMe.sorting';
 import { type DirectShareItem, type InvitationItem, ItemType } from './types';
 import { useSharedWithMeStore } from './useSharedWithMe.store';
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({ handleSdkError: jest.fn() }));
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({ getNodeEntity: jest.fn() }));
-jest.mock('@proton/drive/modules/busDriver', () => ({ BusDriverEventName: {}, getBusDriver: jest.fn() }));
+vi.mock('@proton/drive/legacy/errorHandling', () => ({ handleSdkError: vi.fn() }));
+vi.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({ getNodeEntity: vi.fn() }));
+vi.mock('@proton/drive/modules/busDriver', () => ({ BusDriverEventName: {}, getBusDriver: vi.fn() }));
 
 const makeDirectShare = (nodeUid: string, name: string, sharedOn: Date): DirectShareItem => ({
     nodeUid,

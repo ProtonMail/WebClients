@@ -1,4 +1,4 @@
-import { when } from 'jest-when';
+import type { Mock } from 'vitest';
 
 import {
     type EffectiveRole,
@@ -11,12 +11,13 @@ import type { ProtonDriveClient } from '@proton/drive/sdk';
 import { getDrive } from '@proton/drive/sdk';
 
 import { createDebouncedBuffer } from '../../../../utils/createDebouncedBuffer';
+import { when } from '../../../../utils/tests/when';
 import { useSearchViewStore } from '../../searchView/store';
 import { loadNodesForSearchView } from './loadNodesForSearchView';
 
 // Use a synchronous pass-through buffer so tests don't need fake timers.
-jest.mock('../../../../utils/createDebouncedBuffer', () => ({
-    createDebouncedBuffer: jest.fn((flush: (items: unknown[]) => void) => {
+vi.mock('../../../../utils/createDebouncedBuffer', () => ({
+    createDebouncedBuffer: vi.fn((flush: (items: unknown[]) => void) => {
         const buffer: unknown[] = [];
         return {
             push: (item: unknown) => buffer.push(item),
@@ -29,45 +30,45 @@ jest.mock('../../../../utils/createDebouncedBuffer', () => ({
     }),
 }));
 
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
-    getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
+    getDrive: vi.fn(),
 }));
 
-jest.mock('@proton/drive/modules/notifications', () => ({
-    getNotificationsManager: jest.fn(),
+vi.mock('@proton/drive/modules/notifications', () => ({
+    getNotificationsManager: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling');
+vi.mock('@proton/drive/legacy/errorHandling');
 
-jest.mock('@proton/drive/modules/nodes', () => ({
-    ...jest.requireActual('@proton/drive/modules/nodes'),
-    getNodeEffectiveRoleFromHierarchy: jest.fn(),
-    getFormattedNodeLocationFromHierarchy: jest.fn(),
+vi.mock('@proton/drive/modules/nodes', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/nodes')),
+    getNodeEffectiveRoleFromHierarchy: vi.fn(),
+    getFormattedNodeLocationFromHierarchy: vi.fn(),
 }));
 
-const mockedGetDrive = jest.mocked(getDrive);
-const mockedGetNotificationsManager = jest.mocked(getNotificationsManager);
-const mockedGetFormattedNodeLocationFromHierarchy = jest.mocked(getFormattedNodeLocationFromHierarchy);
-const mockedGetNodeEffectiveRoleFromHierarchy = jest.mocked(getNodeEffectiveRoleFromHierarchy);
+const mockedGetDrive = vi.mocked(getDrive);
+const mockedGetNotificationsManager = vi.mocked(getNotificationsManager);
+const mockedGetFormattedNodeLocationFromHierarchy = vi.mocked(getFormattedNodeLocationFromHierarchy);
+const mockedGetNodeEffectiveRoleFromHierarchy = vi.mocked(getNodeEffectiveRoleFromHierarchy);
 
 describe('loadNodesForSearchView', () => {
     let mockDrive: Partial<ProtonDriveClient>;
-    let mockCreateNotification: jest.Mock;
-    let mockAddSearchResultItems: jest.Mock;
+    let mockCreateNotification: Mock;
+    let mockAddSearchResultItems: Mock;
     let mockAbortSignal: AbortSignal;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        mockCreateNotification = jest.fn();
-        mockAddSearchResultItems = jest.fn();
+        mockCreateNotification = vi.fn();
+        mockAddSearchResultItems = vi.fn();
         mockAbortSignal = new AbortController().signal;
 
         mockDrive = {
-            iterateNodes: jest.fn(),
+            iterateNodes: vi.fn(),
             // By default, every node is a root node.
-            getNodeHierarchy: jest.fn().mockImplementation(async (uid: string) => [createMockNodeEntity({ uid })]),
+            getNodeHierarchy: vi.fn().mockImplementation(async (uid: string) => [createMockNodeEntity({ uid })]),
         };
 
         mockedGetDrive.mockReturnValue(mockDrive as ProtonDriveClient);
@@ -76,7 +77,7 @@ describe('loadNodesForSearchView', () => {
             createNotification: mockCreateNotification,
         } as any);
 
-        jest.spyOn(useSearchViewStore, 'getState').mockReturnValue({
+        vi.spyOn(useSearchViewStore, 'getState').mockReturnValue({
             addSearchResultItems: mockAddSearchResultItems,
         } as any);
 
@@ -87,7 +88,7 @@ describe('loadNodesForSearchView', () => {
     it('should successfully load nodes and add them to the store', async () => {
         const mockNode = createMockNodeEntity({ uid: 'node-1' });
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield mockNode;
         });
 
@@ -114,7 +115,7 @@ describe('loadNodesForSearchView', () => {
     it('should filter out nodes that are trashed', async () => {
         const trashedNode = createMockNodeEntity({ uid: 'node-1', trashTime: new Date() });
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield trashedNode;
         });
 
@@ -127,11 +128,11 @@ describe('loadNodesForSearchView', () => {
         const childNode = createMockNodeEntity({ uid: 'child-1', parentUid: 'parent-1' });
         const parentNode = createMockNodeEntity({ uid: 'parent-1', trashTime: new Date() });
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield childNode;
         });
 
-        when(mockDrive.getNodeHierarchy as jest.Mock)
+        when(mockDrive.getNodeHierarchy as Mock)
             .calledWith('child-1')
             .mockResolvedValue([parentNode, childNode]);
 
@@ -145,11 +146,11 @@ describe('loadNodesForSearchView', () => {
         const parentNode = createMockNodeEntity({ uid: 'parent-1', parentUid: 'grandparent-1' });
         const grandparentNode = createMockNodeEntity({ uid: 'grandparent-1', trashTime: new Date() });
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield childNode;
         });
 
-        when(mockDrive.getNodeHierarchy as jest.Mock)
+        when(mockDrive.getNodeHierarchy as Mock)
             .calledWith('child-1')
             .mockResolvedValue([grandparentNode, parentNode, childNode]);
 
@@ -164,10 +165,10 @@ describe('loadNodesForSearchView', () => {
         );
         const deepNode = hierarchy[hierarchy.length - 1];
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield deepNode;
         });
-        when(mockDrive.getNodeHierarchy as jest.Mock)
+        when(mockDrive.getNodeHierarchy as Mock)
             .calledWith(deepNode.uid)
             .mockResolvedValue(hierarchy);
 
@@ -182,10 +183,10 @@ describe('loadNodesForSearchView', () => {
     it('should skip the node and report a partial error when its ancestry cannot be loaded', async () => {
         const childNode = createMockNodeEntity({ uid: 'child-1', parentUid: 'parent-1' });
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield childNode;
         });
-        when(mockDrive.getNodeHierarchy as jest.Mock)
+        when(mockDrive.getNodeHierarchy as Mock)
             .calledWith('child-1')
             .mockRejectedValue(new Error('Parent not accessible'));
 
@@ -198,7 +199,7 @@ describe('loadNodesForSearchView', () => {
     it('should handle missing nodes and skip them', async () => {
         const missingNode = { missingUid: 'missing-1' };
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield missingNode;
         });
 
@@ -213,7 +214,7 @@ describe('loadNodesForSearchView', () => {
         const trashedNode = createMockNodeEntity({ uid: 'node-2', trashTime: new Date() });
         const missingNode = { missingUid: 'node-3' };
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield validNode;
             yield trashedNode;
             yield missingNode;
@@ -228,7 +229,7 @@ describe('loadNodesForSearchView', () => {
     });
 
     it('propagates fatal errors from iterateNodes to the caller', async () => {
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             throw new Error('fatal error');
         });
 
@@ -245,7 +246,7 @@ describe('loadNodesForSearchView', () => {
             },
         });
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield mockNode;
         });
 
@@ -258,7 +259,7 @@ describe('loadNodesForSearchView', () => {
     it('should use modificationTime or fallback to creationTime', async () => {
         const mockNode = createMockNodeEntity({ uid: 'node-1', modificationTime: undefined });
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield mockNode;
         });
 
@@ -271,7 +272,7 @@ describe('loadNodesForSearchView', () => {
     it('should include admin role when node has admin role', async () => {
         const mockNode = createMockNodeEntity({ uid: 'node-1' });
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield mockNode;
         });
 
@@ -286,7 +287,7 @@ describe('loadNodesForSearchView', () => {
     it('should include editor role when node has editor role', async () => {
         const mockNode = createMockNodeEntity({ uid: 'node-1' });
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             yield mockNode;
         });
 
@@ -301,7 +302,7 @@ describe('loadNodesForSearchView', () => {
     it('uses createDebouncedBuffer and drains it after all nodes are resolved', async () => {
         const nodes = Array.from({ length: 3 }, (_, i) => createMockNodeEntity({ uid: `node-${i + 1}` }));
 
-        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+        mockDrive.iterateNodes = vi.fn().mockImplementation(async function* () {
             for (const node of nodes) {
                 yield node;
             }

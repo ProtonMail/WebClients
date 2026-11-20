@@ -23,9 +23,9 @@ import { NodeTreeIndexPopulator } from './NodeTreeIndexPopulator';
 
 setupRealSearchLibraryWasm();
 
-jest.mock('../../../shared/errors', () => {
-    const actual = jest.requireActual('../../../shared/errors');
-    return { ...actual, sendErrorReportForSearch: jest.fn() };
+vi.mock('../../../shared/errors', async () => {
+    const actual = await vi.importActual('../../../shared/errors');
+    return { ...actual, sendErrorReportForSearch: vi.fn() };
 });
 
 const SCOPE_ID = 'scope-1' as TreeEventScopeId;

@@ -3,7 +3,7 @@ import React from 'react';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { AbuseCategory, NodeType } from '@proton/drive/sdk';
 
 import { ReportAbuseModalView } from './ReportAbuseModalView';
@@ -11,9 +11,9 @@ import { ReportAbuseModalView } from './ReportAbuseModalView';
 const baseLoadedProps = {
     loaded: true as const,
     open: true,
-    onClose: jest.fn(),
-    onExit: jest.fn(),
-    handleSubmit: jest.fn().mockResolvedValue(undefined),
+    onClose: vi.fn(),
+    onExit: vi.fn(),
+    handleSubmit: vi.fn().mockResolvedValue(undefined),
     name: 'file.pdf',
     size: 1024,
     mediaType: 'application/pdf',
@@ -27,7 +27,7 @@ const getButton = (name: string) => screen.getByRole('button', { name, hidden: t
 const getForm = () => getButton('Submit').closest('form')!;
 
 describe('ReportAbuseModalView', () => {
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     it('shows a loading state when not loaded', () => {
         renderWithProviders(<ReportAbuseModalView loaded={false} />);

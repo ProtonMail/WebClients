@@ -9,68 +9,68 @@ import useLoading from '@proton/hooks/useLoading';
 import { getDeviceByUid } from '../../utils/sdk/getDeviceByUid';
 import { type UseRemoveDeviceModalProps, useRemoveDeviceModalState } from './useRemoveDeviceModalState';
 
-jest.mock('@proton/components/components/v2/useFormErrors', () => ({
+vi.mock('@proton/components/components/v2/useFormErrors', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(),
 }));
 
-jest.mock('@proton/hooks/useLoading', () => ({
+vi.mock('@proton/hooks/useLoading', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling');
+vi.mock('@proton/drive/legacy/errorHandling');
 
-jest.mock('../../utils/sdk/getDeviceByUid', () => ({
-    getDeviceByUid: jest.fn(),
+vi.mock('../../utils/sdk/getDeviceByUid', () => ({
+    getDeviceByUid: vi.fn(),
 }));
 
-jest.mock('@proton/drive/modules/nodes', () => ({
-    getDeviceName: jest.fn(),
+vi.mock('@proton/drive/modules/nodes', () => ({
+    getDeviceName: vi.fn(),
 }));
 
-jest.mock('@proton/drive/modules/busDriver', () => ({
-    ...jest.requireActual('@proton/drive/modules/busDriver'),
-    getBusDriver: jest.fn(),
+vi.mock('@proton/drive/modules/busDriver', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/busDriver')),
+    getBusDriver: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/helpers/formValidators', () => ({
-    requiredValidator: jest.fn((value: string) => ({ type: 'required', value })),
+vi.mock('@proton/shared/lib/helpers/formValidators', () => ({
+    requiredValidator: vi.fn((value: string) => ({ type: 'required', value })),
 }));
 
-const mockValidator = jest.fn();
-const mockOnFormSubmit = jest.fn();
-const mockCreateNotification = jest.fn();
-const mockHandleError = jest.fn();
-const mockWithSubmitting = jest.fn();
-const mockEmit = jest.fn();
+const mockValidator = vi.fn();
+const mockOnFormSubmit = vi.fn();
+const mockCreateNotification = vi.fn();
+const mockHandleError = vi.fn();
+const mockWithSubmitting = vi.fn();
+const mockEmit = vi.fn();
 const mockDevice = { uid: 'device-uid' } as any;
 const DEVICE_UID = 'device-uid';
 
 describe('useRemoveDeviceModalState', () => {
     beforeEach(() => {
-        jest.mocked(useFormErrors).mockReturnValue({
+        vi.mocked(useFormErrors).mockReturnValue({
             validator: mockValidator,
             onFormSubmit: mockOnFormSubmit,
         } as any);
 
-        jest.mocked(useNotifications).mockReturnValue({
+        vi.mocked(useNotifications).mockReturnValue({
             createNotification: mockCreateNotification,
         } as any);
 
-        jest.mocked(useLoading).mockReturnValue([false, mockWithSubmitting] as any);
+        vi.mocked(useLoading).mockReturnValue([false, mockWithSubmitting] as any);
         mockWithSubmitting.mockImplementation((promise: Promise<unknown>) => promise);
 
-        jest.mocked(getBusDriver).mockReturnValue({
+        vi.mocked(getBusDriver).mockReturnValue({
             emit: mockEmit,
         } as any);
 
-        jest.mocked(getDeviceByUid).mockResolvedValue(mockDevice);
-        jest.mocked(getDeviceName).mockReturnValue('My device');
+        vi.mocked(getDeviceByUid).mockResolvedValue(mockDevice);
+        vi.mocked(getDeviceName).mockReturnValue('My device');
 
         mockValidator.mockReturnValue(null);
         mockOnFormSubmit.mockReturnValue(true);
@@ -80,20 +80,20 @@ describe('useRemoveDeviceModalState', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     const renderRemoveDeviceModal = () => {
         const mockDrive = {
-            deleteDevice: jest.fn().mockResolvedValue(undefined),
+            deleteDevice: vi.fn().mockResolvedValue(undefined),
         };
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         const hookProps: UseRemoveDeviceModalProps = {
             deviceUid: DEVICE_UID,
             drive: mockDrive as any,
             onClose,
             open: true,
-            onExit: jest.fn(),
+            onExit: vi.fn(),
         };
 
         const hook = renderHook(() => useRemoveDeviceModalState(hookProps));

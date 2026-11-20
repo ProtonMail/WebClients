@@ -13,29 +13,29 @@ import {
 } from './telemetry';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from './tests/crypto';
 
-jest.mock('@proton/shared/lib/api/telemetry');
-jest.mock('@proton/app-context/useApi');
-jest.mock('@proton/shared/lib/helpers/metrics');
+vi.mock('@proton/shared/lib/api/telemetry');
+vi.mock('@proton/app-context/useApi');
+vi.mock('@proton/shared/lib/helpers/metrics');
 
 describe('Performance Telemetry', () => {
     beforeEach(() => {
         setMetricsEnabled(true);
-        jest.useFakeTimers();
-        window.performance.mark = jest.fn();
-        window.performance.measure = jest.fn().mockImplementation(() => ({ duration: 100 }));
-        window.performance.clearMarks = jest.fn();
-        window.performance.clearMeasures = jest.fn();
+        vi.useFakeTimers();
+        window.performance.mark = vi.fn();
+        window.performance.measure = vi.fn().mockImplementation(() => ({ duration: 100 }));
+        window.performance.clearMarks = vi.fn();
+        window.performance.clearMeasures = vi.fn();
     });
 
     afterEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     it('measureExperimentalPerformance: executes the control function when flag is false', async () => {
         const feature = 'testFeature' as Features;
         const flag = false;
-        const controlFunction = jest.fn(() => Promise.resolve('control result'));
-        const treatmentFunction = jest.fn(() => Promise.resolve('treatment result'));
+        const controlFunction = vi.fn(() => Promise.resolve('control result'));
+        const treatmentFunction = vi.fn(() => Promise.resolve('treatment result'));
         const api = useApi();
 
         await measureExperimentalPerformance(api, feature, flag, controlFunction, treatmentFunction);
@@ -64,8 +64,8 @@ describe('Performance Telemetry', () => {
     it('measureExperimentalPerformance: executes the treatment function when flag is true', async () => {
         const feature = 'testFeature' as Features;
         const flag = true;
-        const controlFunction = jest.fn(() => Promise.resolve('control result'));
-        const treatmentFunction = jest.fn(() => Promise.resolve('treatment result'));
+        const controlFunction = vi.fn(() => Promise.resolve('control result'));
+        const treatmentFunction = vi.fn(() => Promise.resolve('treatment result'));
         const api = useApi();
 
         await measureExperimentalPerformance(api, feature, flag, controlFunction, treatmentFunction);
@@ -123,7 +123,7 @@ describe('countActionWithTelemetry', () => {
     });
 
     afterEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     it('countActionWithTelemetry: should send telemetry report with a count', async () => {
@@ -176,12 +176,12 @@ describe('getTimeBasedHash', () => {
     });
 
     beforeEach(() => {
-        Date.now = jest.fn(() => now); // 2021-07-01T00:00:00.000Z
+        Date.now = vi.fn(() => now); // 2021-07-01T00:00:00.000Z
     });
 
     it('should return the same hash for inputs within the same interval', async () => {
         const hash1 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 5 * 60 * 1000); // 5 minutes later
+        Date.now = vi.fn(() => now + 5 * 60 * 1000); // 5 minutes later
         const hash2 = await getTimeBasedHash();
 
         expect(hash1).toBe(hash2);
@@ -189,7 +189,7 @@ describe('getTimeBasedHash', () => {
 
     it('should return different hashes for inputs in different intervals', async () => {
         const hash1 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 15 * 60 * 1000); // 15 minutes later
+        Date.now = vi.fn(() => now + 15 * 60 * 1000); // 15 minutes later
         const hash2 = await getTimeBasedHash();
 
         expect(hash1).not.toBe(hash2);
@@ -197,9 +197,9 @@ describe('getTimeBasedHash', () => {
 
     it('should use the default interval of 10 minutes when not specified', async () => {
         const hash1 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 9 * 60 * 1000); // 9 minutes later
+        Date.now = vi.fn(() => now + 9 * 60 * 1000); // 9 minutes later
         const hash2 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 11 * 60 * 1000); // 11 minutes later
+        Date.now = vi.fn(() => now + 11 * 60 * 1000); // 11 minutes later
         const hash3 = await getTimeBasedHash();
 
         expect(hash1).toBe(hash2);
@@ -210,9 +210,9 @@ describe('getTimeBasedHash', () => {
         const customInterval = 5 * 60 * 1000; // 5 minutes
 
         const hash1 = await getTimeBasedHash(customInterval);
-        Date.now = jest.fn(() => now + 4 * 60 * 1000); // 4 minutes later
+        Date.now = vi.fn(() => now + 4 * 60 * 1000); // 4 minutes later
         const hash2 = await getTimeBasedHash(customInterval);
-        Date.now = jest.fn(() => now + 6 * 60 * 1000); // 6 minutes later
+        Date.now = vi.fn(() => now + 6 * 60 * 1000); // 6 minutes later
         const hash3 = await getTimeBasedHash(customInterval);
 
         expect(hash1).toBe(hash2);
@@ -221,9 +221,9 @@ describe('getTimeBasedHash', () => {
 
     it('should handle edge cases around interval boundaries', async () => {
         const hash1 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 10 * 60 * 1000 - 1); // 1ms before next interval
+        Date.now = vi.fn(() => now + 10 * 60 * 1000 - 1); // 1ms before next interval
         const hash2 = await getTimeBasedHash();
-        Date.now = jest.fn(() => now + 10 * 60 * 1000); // Exactly at next interval
+        Date.now = vi.fn(() => now + 10 * 60 * 1000); // Exactly at next interval
         const hash3 = await getTimeBasedHash();
 
         expect(hash1).toBe(hash2);

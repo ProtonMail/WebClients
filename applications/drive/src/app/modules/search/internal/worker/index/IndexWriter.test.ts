@@ -1,5 +1,6 @@
 import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { IDBFactory } from 'fake-indexeddb';
+import type { Mock } from 'vitest';
 import 'fake-indexeddb/auto';
 
 import { Engine, Execution, Write, WriteEvent } from '@proton/proton-foundation-search';
@@ -20,7 +21,7 @@ describe('IndexWriter integration', () => {
     let engine: ReturnType<typeof Engine.builder.prototype.build>;
     let blobStore: IndexBlobStore;
     let writer: IndexWriter;
-    let onIndexEntryCountUpdate: jest.Mock<Promise<void>, [number]>;
+    let onIndexEntryCountUpdate: Mock<(count: number) => Promise<void>>;
 
     beforeEach(async () => {
         indexedDB = new IDBFactory();
@@ -28,12 +29,12 @@ describe('IndexWriter integration', () => {
         engine = Engine.builder().build();
         const cryptoKey = await generateAndImportKey();
         blobStore = new IndexBlobStore(IndexKind.MAIN, db, cryptoKey);
-        onIndexEntryCountUpdate = jest.fn().mockResolvedValue(undefined);
+        onIndexEntryCountUpdate = vi.fn().mockResolvedValue(undefined);
         writer = new IndexWriter(engine, blobStore, onIndexEntryCountUpdate);
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
         engine.free();
     });
 
@@ -158,7 +159,7 @@ describe('IndexWriter integration', () => {
 
     describe('WASM resource cleanup', () => {
         it('commit calls blobStore.saveEvent for each Save event', async () => {
-            const saveSpy = jest.spyOn(blobStore, 'saveEvent');
+            const saveSpy = vi.spyOn(blobStore, 'saveEvent');
 
             const session = writer.startWriteSession();
             session.insert(makeTestIndexEntry('doc-1'));
@@ -173,7 +174,7 @@ describe('IndexWriter integration', () => {
             session1.insert(makeTestIndexEntry('doc-1'));
             await session1.commit();
 
-            const loadSpy = jest.spyOn(blobStore, 'loadEvent');
+            const loadSpy = vi.spyOn(blobStore, 'loadEvent');
 
             // Second commit may trigger Load events to read existing blobs
             const session2 = writer.startWriteSession();
@@ -184,7 +185,7 @@ describe('IndexWriter integration', () => {
         });
 
         it('commit releases session lock even when blobStore.saveEvent throws', async () => {
-            jest.spyOn(blobStore, 'saveEvent').mockRejectedValueOnce(new Error('disk full'));
+            vi.spyOn(blobStore, 'saveEvent').mockRejectedValueOnce(new Error('disk full'));
 
             const session = writer.startWriteSession();
             session.insert(makeTestIndexEntry('doc-1'));
@@ -202,7 +203,7 @@ describe('IndexWriter integration', () => {
             session1.insert(makeTestIndexEntry('doc-1'));
             await session1.commit();
 
-            jest.spyOn(blobStore, 'loadEvent').mockRejectedValueOnce(new Error('read error'));
+            vi.spyOn(blobStore, 'loadEvent').mockRejectedValueOnce(new Error('read error'));
 
             const session2 = writer.startWriteSession();
             session2.insert(makeTestIndexEntry('doc-2'));
@@ -247,7 +248,7 @@ describe('IndexWriter integration', () => {
         });
 
         it('commit calls Execution.free()', async () => {
-            const freeSpy = jest.spyOn(Execution.prototype, 'free');
+            const freeSpy = vi.spyOn(Execution.prototype, 'free');
 
             const session = writer.startWriteSession();
             session.insert(makeTestIndexEntry('doc-1'));
@@ -257,8 +258,8 @@ describe('IndexWriter integration', () => {
         });
 
         it('commit never calls WriteEvent.free() — every event kind is consumed', async () => {
-            const writeEventFreeSpy = jest.spyOn(WriteEvent.prototype, 'free');
-            const saveSpy = jest.spyOn(blobStore, 'saveEvent');
+            const writeEventFreeSpy = vi.spyOn(WriteEvent.prototype, 'free');
+            const saveSpy = vi.spyOn(blobStore, 'saveEvent');
 
             const session = writer.startWriteSession();
             session.insert(makeTestIndexEntry('doc-1'));
@@ -271,7 +272,7 @@ describe('IndexWriter integration', () => {
         });
 
         it('dispose calls Write.free()', () => {
-            const freeSpy = jest.spyOn(Write.prototype, 'free');
+            const freeSpy = vi.spyOn(Write.prototype, 'free');
 
             const session = writer.startWriteSession();
             session.insert(makeTestIndexEntry('doc-1'));
@@ -281,8 +282,8 @@ describe('IndexWriter integration', () => {
         });
 
         it('commit calls Execution.free() even when blobStore throws', async () => {
-            const freeSpy = jest.spyOn(Execution.prototype, 'free');
-            jest.spyOn(blobStore, 'saveEvent').mockRejectedValueOnce(new Error('boom'));
+            const freeSpy = vi.spyOn(Execution.prototype, 'free');
+            vi.spyOn(blobStore, 'saveEvent').mockRejectedValueOnce(new Error('boom'));
 
             const session = writer.startWriteSession();
             session.insert(makeTestIndexEntry('doc-1'));
@@ -292,9 +293,9 @@ describe('IndexWriter integration', () => {
         });
 
         it('when writer.commit() throws, Write.free() is called and session lock is released', async () => {
-            const writeFreeSpy = jest.spyOn(Write.prototype, 'free');
+            const writeFreeSpy = vi.spyOn(Write.prototype, 'free');
             // Make the WASM commit() throw after the session is created
-            jest.spyOn(Write.prototype, 'commit').mockImplementationOnce(() => {
+            vi.spyOn(Write.prototype, 'commit').mockImplementationOnce(() => {
                 throw new Error('WASM commit failed');
             });
 
@@ -312,8 +313,8 @@ describe('IndexWriter integration', () => {
         });
 
         it('when writer.commit() throws, Execution.free() is not called (no execution created)', async () => {
-            const executionFreeSpy = jest.spyOn(Execution.prototype, 'free');
-            jest.spyOn(Write.prototype, 'commit').mockImplementationOnce(() => {
+            const executionFreeSpy = vi.spyOn(Execution.prototype, 'free');
+            vi.spyOn(Write.prototype, 'commit').mockImplementationOnce(() => {
                 throw new Error('WASM commit failed');
             });
 
@@ -374,7 +375,7 @@ describe('IndexWriter integration', () => {
         });
 
         it('is not set when commit throws', async () => {
-            jest.spyOn(Write.prototype, 'commit').mockImplementationOnce(() => {
+            vi.spyOn(Write.prototype, 'commit').mockImplementationOnce(() => {
                 throw new Error('WASM commit failed');
             });
 
@@ -388,7 +389,7 @@ describe('IndexWriter integration', () => {
 
     describe('engine faults classify as permanent, never as repairable', () => {
         it('a raw throw from engine.write() surfaces as a SearchLibraryError', () => {
-            jest.spyOn(Engine.prototype, 'write').mockImplementationOnce(() => {
+            vi.spyOn(Engine.prototype, 'write').mockImplementationOnce(() => {
                 throw new Error('null pointer passed to rust');
             });
 

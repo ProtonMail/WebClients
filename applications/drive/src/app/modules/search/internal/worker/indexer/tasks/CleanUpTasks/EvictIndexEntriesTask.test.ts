@@ -15,16 +15,16 @@ import { EvictIndexEntriesTask } from './EvictIndexEntriesTask';
 
 setupRealSearchLibraryWasm();
 
-jest.mock('../../../../shared/errors', () => {
-    const actual = jest.requireActual('../../../../shared/errors');
-    return { ...actual, sendErrorReportForSearch: jest.fn() };
+vi.mock('../../../../shared/errors', async () => {
+    const actual = await vi.importActual('../../../../shared/errors');
+    return { ...actual, sendErrorReportForSearch: vi.fn() };
 });
 
 // SEARCH_MAX_INDEXED_DOCUMENTS is 50_000 in production, which would make every test below build a
 // 50k-plus-document fake index just to exercise the trigger/removal math. Shrink it so the derived
 // trigger (23) and removal (3) are realistic against small test fixtures.
-jest.mock('../../../../shared/config', () => {
-    const actual = jest.requireActual('../../../../shared/config');
+vi.mock('../../../../shared/config', async () => {
+    const actual = await vi.importActual('../../../../shared/config');
     return { ...actual, SEARCH_MAX_INDEXED_DOCUMENTS: 20 };
 });
 
@@ -156,7 +156,7 @@ describe('EvictIndexEntriesTask', () => {
         await indexDocuments(instance.indexWriter, entries);
         await putPopulatorState({ documentCount: 24 });
 
-        const markIndexEvicted = jest.fn();
+        const markIndexEvicted = vi.fn();
         const ctx = buildCtx({ searchMetrics: makeSearchMetricsSpies({ markIndexEvicted }) });
         await new EvictIndexEntriesTask(IndexKind.MAIN).execute(ctx);
 
@@ -170,7 +170,7 @@ describe('EvictIndexEntriesTask', () => {
         await indexRegistry.get(IndexKind.MAIN, db);
         await putPopulatorState({ documentCount: 100 });
 
-        const markIndexEvicted = jest.fn();
+        const markIndexEvicted = vi.fn();
         const ctx = buildCtx({ searchMetrics: makeSearchMetricsSpies({ markIndexEvicted }) });
         await new EvictIndexEntriesTask(IndexKind.MAIN).execute(ctx);
 
@@ -249,7 +249,7 @@ describe('EvictIndexEntriesTask', () => {
         await indexRegistry.get(IndexKind.MAIN, db);
         await putPopulatorState({ documentCount: 100 });
 
-        const enqueueDelayed = jest.fn();
+        const enqueueDelayed = vi.fn();
         const ctx = buildCtx({ enqueueDelayed });
         await new EvictIndexEntriesTask(IndexKind.MAIN).execute(ctx);
 
@@ -274,7 +274,7 @@ describe('EvictIndexEntriesTask', () => {
         await indexDocuments(instance.indexWriter, entries);
         await putPopulatorState({ documentCount: 100 });
 
-        const enqueueDelayed = jest.fn();
+        const enqueueDelayed = vi.fn();
         const ctx = buildCtx({ enqueueDelayed });
         await new EvictIndexEntriesTask(IndexKind.MAIN).execute(ctx);
 
@@ -298,7 +298,7 @@ describe('EvictIndexEntriesTask', () => {
         await indexDocuments(instance.indexWriter, entries);
         await putPopulatorState({ documentCount: 30 });
 
-        const enqueueDelayed = jest.fn();
+        const enqueueDelayed = vi.fn();
         const ctx = buildCtx({ enqueueDelayed });
         await new EvictIndexEntriesTask(IndexKind.MAIN).execute(ctx);
 
@@ -321,7 +321,7 @@ describe('EvictIndexEntriesTask', () => {
         await indexDocuments(instance.indexWriter, entries);
         await putPopulatorState({ documentCount: 25 });
 
-        const enqueueDelayed = jest.fn();
+        const enqueueDelayed = vi.fn();
         const ctx = buildCtx({ enqueueDelayed });
         await new EvictIndexEntriesTask(IndexKind.MAIN).execute(ctx);
 
@@ -337,7 +337,7 @@ describe('EvictIndexEntriesTask', () => {
 
         instance.blobStore.beginRead();
         try {
-            const enqueueDelayed = jest.fn();
+            const enqueueDelayed = vi.fn();
             const ctx = buildCtx({ enqueueDelayed });
             await new EvictIndexEntriesTask(IndexKind.MAIN).execute(ctx);
 

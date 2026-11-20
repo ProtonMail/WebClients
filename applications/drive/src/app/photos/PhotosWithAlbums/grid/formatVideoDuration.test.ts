@@ -1,10 +1,10 @@
 import { formatVideoDuration } from './formatVideoDuration';
 
-jest.mock('@proton/shared/lib/i18n', () => ({
+vi.mock('@proton/shared/lib/i18n', () => ({
     dateLocale: {
         code: 'en-US',
         formatLong: {
-            time: jest.fn(),
+            time: vi.fn(),
         },
     },
 }));

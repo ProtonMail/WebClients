@@ -14,11 +14,11 @@ import { CleanUpStaleIndexEntryTask } from './CleanUpStaleIndexEntryTask';
 
 setupRealSearchLibraryWasm();
 
-jest.mock('../../../../shared/errors', () => {
-    const actual = jest.requireActual('../../../../shared/errors');
+vi.mock('../../../../shared/errors', async () => {
+    const actual = await vi.importActual('../../../../shared/errors');
     return {
         ...actual,
-        sendErrorReportForSearch: jest.fn(),
+        sendErrorReportForSearch: vi.fn(),
     };
 });
 
@@ -281,7 +281,7 @@ describe('CleanUpStaleIndexEntryTask', () => {
         });
 
         // Break the engine's export iterator.
-        jest.spyOn(instance.engine, 'export').mockImplementation(() => {
+        vi.spyOn(instance.engine, 'export').mockImplementation(() => {
             throw new Error('simulated engine failure');
         });
 
@@ -305,7 +305,7 @@ describe('CleanUpStaleIndexEntryTask', () => {
             'Connection is closing because of: Force close delete origin',
             'UnknownError'
         );
-        jest.spyOn(instance.engine, 'export').mockImplementation(() => {
+        vi.spyOn(instance.engine, 'export').mockImplementation(() => {
             throw forceClosed;
         });
 
@@ -335,7 +335,7 @@ describe('CleanUpStaleIndexEntryTask', () => {
             progress: { files: 0, folders: 0, albums: 0, photos: 0 },
         });
 
-        const startSpy = jest.spyOn(instance.indexWriter, 'startWriteSession');
+        const startSpy = vi.spyOn(instance.indexWriter, 'startWriteSession');
 
         const ctx = makeTaskContext({
             indexRegistry,
@@ -374,16 +374,16 @@ describe('CleanUpStaleIndexEntryTask', () => {
         let readDepth = 0;
         const events: string[] = [];
         const realStartWriteSession = instance.indexWriter.startWriteSession.bind(instance.indexWriter);
-        jest.spyOn(instance.blobStore, 'beginRead').mockImplementation(() => {
+        vi.spyOn(instance.blobStore, 'beginRead').mockImplementation(() => {
             readDepth++;
             events.push(`beginRead(${readDepth})`);
         });
-        jest.spyOn(instance.blobStore, 'endRead').mockImplementation(() => {
+        vi.spyOn(instance.blobStore, 'endRead').mockImplementation(() => {
             events.push(`endRead(${readDepth})`);
             readDepth--;
         });
         const violations: number[] = [];
-        jest.spyOn(instance.indexWriter, 'startWriteSession').mockImplementation(() => {
+        vi.spyOn(instance.indexWriter, 'startWriteSession').mockImplementation(() => {
             events.push(`startWriteSession(readDepth=${readDepth})`);
             if (readDepth !== 0) {
                 violations.push(readDepth);

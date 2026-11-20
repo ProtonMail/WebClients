@@ -1,4 +1,5 @@
 import { VERIFICATION_STATUS } from '@protontech/crypto/constants';
+
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 
@@ -8,11 +9,11 @@ import { hasValidAnonymousSignature } from './hasValidAnonymousSignature';
 describe('hasValidAnonymousSignature', () => {
     beforeEach(() => {
         // Spy on console.warn
-        jest.spyOn(console, 'warn').mockImplementation(() => {});
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should return true when thumbnail and blocks are NOT signed and others are valid', () => {

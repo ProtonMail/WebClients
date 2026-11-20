@@ -40,30 +40,30 @@ const DEVICE_2: Device = {
 
 const mockDevicesPayload = [DEVICE_0, DEVICE_1];
 
-jest.mock('@proton/drive/legacy/errorHandling');
-const mockedSendErrorReport = jest.mocked(sendErrorReport);
+vi.mock('@proton/drive/legacy/errorHandling');
+const mockedSendErrorReport = vi.mocked(sendErrorReport);
 
-const mockedCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => {
+const mockedCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => {
     return {
-        useNotifications: jest.fn(() => ({ createNotification: mockedCreateNotification })),
+        useNotifications: vi.fn(() => ({ createNotification: mockedCreateNotification })),
     };
 });
 
-const mockedLoadDevices = jest.fn().mockResolvedValue(mockDevicesPayload);
-jest.mock('./useDevicesApi', () => {
+const mockedLoadDevices = vi.fn().mockResolvedValue(mockDevicesPayload);
+vi.mock('./useDevicesApi', () => {
     const useDeviceApi = () => {
         return {
             loadDevices: mockedLoadDevices,
         };
     };
 
-    return useDeviceApi;
+    return { __esModule: true, default: useDeviceApi };
 });
 
-const mockedGetLink = jest.fn();
-jest.mock('../_links', () => {
-    const useLink = jest.fn(() => ({
+const mockedGetLink = vi.fn();
+vi.mock('../_links', () => {
+    const useLink = vi.fn(() => ({
         getLink: mockedGetLink,
     }));
     return { useLink };

@@ -4,73 +4,73 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getDrive, useDrive } from '@proton/drive/sdk';
-import { setLocation } from '@proton/jest-env/setLocation';
 import { assignUrl } from '@proton/shared/lib/helpers/location';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useBookmarksActions } from './useBookmarksActions';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(),
 }));
 
-jest.mock('@proton/drive/sdk', () => ({
-    useDrive: jest.fn(),
-    getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', () => ({
+    useDrive: vi.fn(),
+    getDrive: vi.fn(),
 }));
 
 const mockDriveClient = { type: 'drive' } as any;
 
-jest.mock('@proton/drive/modules/busDriver', () => ({
-    ...jest.requireActual('@proton/drive/modules/busDriver'),
-    getBusDriver: jest.fn(),
+vi.mock('@proton/drive/modules/busDriver', async () => ({
+    ...(await vi.importActual('@proton/drive/modules/busDriver')),
+    getBusDriver: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    sendErrorReport: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    sendErrorReport: vi.fn(),
 }));
 
-jest.mock('../../../utils/telemetry', () => ({
+vi.mock('../../../utils/telemetry', () => ({
     Actions: {
         OpenPublicLinkFromSharedWithMe: 'OpenPublicLinkFromSharedWithMe',
         DeleteBookmarkFromSharedWithMe: 'DeleteBookmarkFromSharedWithMe',
     },
-    countActionWithTelemetry: jest.fn(),
+    countActionWithTelemetry: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/helpers/location');
+vi.mock('@proton/shared/lib/helpers/location');
 
-jest.mock('../../../utils/replaceLocalURL', () => ({
-    replaceLocalURL: jest.fn((url) => url),
+vi.mock('../../../utils/replaceLocalURL', () => ({
+    replaceLocalURL: vi.fn((url) => url),
 }));
 
-const mockCreateNotification = jest.fn();
-const mockRemoveBookmark = jest.fn();
-const mockEventManagerEmit = jest.fn();
+const mockCreateNotification = vi.fn();
+const mockRemoveBookmark = vi.fn();
+const mockEventManagerEmit = vi.fn();
 const mockEventManager = {
     emit: mockEventManagerEmit,
 };
 
 describe('useBookmarksActions', () => {
     beforeEach(() => {
-        jest.mocked(useNotifications).mockReturnValue({
+        vi.mocked(useNotifications).mockReturnValue({
             createNotification: mockCreateNotification,
         } as any);
 
-        jest.mocked(useDrive).mockReturnValue({
+        vi.mocked(useDrive).mockReturnValue({
             drive: {
                 removeBookmark: mockRemoveBookmark,
             },
         } as any);
 
-        jest.mocked(getDrive).mockReturnValue(mockDriveClient);
-        jest.mocked(getBusDriver).mockReturnValue(mockEventManager as any);
+        vi.mocked(getDrive).mockReturnValue(mockDriveClient);
+        vi.mocked(getBusDriver).mockReturnValue(mockEventManager as any);
 
         setLocation('https://proton.dev');
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('openBookmark', () => {
@@ -88,7 +88,7 @@ describe('useBookmarksActions', () => {
     describe('deleteBookmark', () => {
         it('should show confirmation modal and delete single bookmark on confirm', async () => {
             const { result } = renderHook(() => useBookmarksActions());
-            const mockShowConfirmModal = jest.fn();
+            const mockShowConfirmModal = vi.fn();
             const uid = 'bookmark-uid-1';
 
             mockRemoveBookmark.mockResolvedValue(undefined);
@@ -103,7 +103,7 @@ describe('useBookmarksActions', () => {
                 canUndo: true,
             });
 
-            const { onSubmit } = mockShowConfirmModal.mock.lastCall[0];
+            const { onSubmit } = mockShowConfirmModal.mock.lastCall![0];
             await onSubmit();
 
             expect(mockRemoveBookmark).toHaveBeenCalledWith(uid);
@@ -125,7 +125,7 @@ describe('useBookmarksActions', () => {
     describe('deleteBookmarks', () => {
         it('should show confirmation modal and delete multiple bookmarks on confirm', async () => {
             const { result } = renderHook(() => useBookmarksActions());
-            const mockShowConfirmModal = jest.fn();
+            const mockShowConfirmModal = vi.fn();
             const uids = ['bookmark-uid-1', 'bookmark-uid-2'];
 
             mockRemoveBookmark.mockResolvedValue(undefined);
@@ -140,7 +140,7 @@ describe('useBookmarksActions', () => {
                 canUndo: true,
             });
 
-            const { onSubmit } = mockShowConfirmModal.mock.lastCall[0];
+            const { onSubmit } = mockShowConfirmModal.mock.lastCall![0];
             await onSubmit();
 
             expect(mockRemoveBookmark).toHaveBeenCalledTimes(2);
@@ -162,7 +162,7 @@ describe('useBookmarksActions', () => {
 
         it('should handle partial failures when deleting bookmarks', async () => {
             const { result } = renderHook(() => useBookmarksActions());
-            const mockShowConfirmModal = jest.fn();
+            const mockShowConfirmModal = vi.fn();
             const uids = ['bookmark-uid-1', 'bookmark-uid-2', 'bookmark-uid-3'];
 
             mockRemoveBookmark
@@ -172,7 +172,7 @@ describe('useBookmarksActions', () => {
 
             await result.current.deleteBookmarks(mockShowConfirmModal, uids);
 
-            const { onSubmit } = mockShowConfirmModal.mock.lastCall[0];
+            const { onSubmit } = mockShowConfirmModal.mock.lastCall![0];
             await onSubmit();
 
             expect(mockEventManagerEmit).toHaveBeenCalledWith(
@@ -192,7 +192,7 @@ describe('useBookmarksActions', () => {
 
         it('should handle complete failure when deleting bookmarks', async () => {
             const { result } = renderHook(() => useBookmarksActions());
-            const mockShowConfirmModal = jest.fn();
+            const mockShowConfirmModal = vi.fn();
             const uids = ['bookmark-uid-1'];
             const error = new Error('API Error');
 
@@ -200,7 +200,7 @@ describe('useBookmarksActions', () => {
 
             await result.current.deleteBookmarks(mockShowConfirmModal, uids);
 
-            const { onSubmit } = mockShowConfirmModal.mock.lastCall[0];
+            const { onSubmit } = mockShowConfirmModal.mock.lastCall![0];
             await onSubmit();
 
             expect(mockEventManagerEmit).not.toHaveBeenCalled();

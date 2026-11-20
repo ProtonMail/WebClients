@@ -10,7 +10,7 @@ describe('ClientAppVersionGuard', () => {
     });
 
     it('does not fire onMismatch when the same version is posted', () => {
-        const onMismatch = jest.fn();
+        const onMismatch = vi.fn();
         new ClientAppVersionGuard('user-1', OUR_VERSION, onMismatch, FakeBroadcastChannel);
 
         // Simulate the search SharedWorker announcing its (matching) version
@@ -21,7 +21,7 @@ describe('ClientAppVersionGuard', () => {
     });
 
     it('fires onMismatch when a different version is posted', () => {
-        const onMismatch = jest.fn();
+        const onMismatch = vi.fn();
         new ClientAppVersionGuard('user-1', OUR_VERSION, onMismatch, FakeBroadcastChannel);
 
         // Simulate the search SharedWorker announcing a different version
@@ -32,7 +32,7 @@ describe('ClientAppVersionGuard', () => {
     });
 
     it('scopes by userId — different users do not interfere', () => {
-        const onMismatch = jest.fn();
+        const onMismatch = vi.fn();
         new ClientAppVersionGuard('user-1', OUR_VERSION, onMismatch, FakeBroadcastChannel);
 
         // Different user posts a different version
@@ -43,7 +43,7 @@ describe('ClientAppVersionGuard', () => {
     });
 
     it('stops receiving after dispose', () => {
-        const onMismatch = jest.fn();
+        const onMismatch = vi.fn();
         const guard = new ClientAppVersionGuard('user-1', OUR_VERSION, onMismatch, FakeBroadcastChannel);
         guard.dispose();
 

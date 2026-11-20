@@ -5,8 +5,8 @@ import userEvent from '@testing-library/user-event';
 
 import { Breadcrumbs } from './Breadcrumbs';
 
-jest.mock('@proton/components/components/collapsingBreadcrumbs/CollapsingBreadcrumbs', () => {
-    const ReactMock = require('react');
+vi.mock('@proton/components/components/collapsingBreadcrumbs/CollapsingBreadcrumbs', async () => {
+    const ReactMock = await import('react');
     return {
         __esModule: true,
         default: ({ breadcrumbs }: { breadcrumbs: any[] }) =>
@@ -20,19 +20,19 @@ jest.mock('@proton/components/components/collapsingBreadcrumbs/CollapsingBreadcr
     };
 });
 
-jest.mock('@proton/components/components/loader/Loader', () => {
-    const ReactMock = require('react');
+vi.mock('@proton/components/components/loader/Loader', async () => {
+    const ReactMock = await import('react');
     return {
         __esModule: true,
         default: () => ReactMock.createElement('div', null, 'Loading'),
     };
 });
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
 
-jest.mock('../../legacy/components/SignatureIcon', () => ({
+vi.mock('../../legacy/components/SignatureIcon', () => ({
     SignatureIcon: () => null,
 }));
 
@@ -44,12 +44,12 @@ const makeCrumb = (uid: string, name: string) => ({
 });
 
 describe('Breadcrumbs', () => {
-    const onBreadcrumbItemClick = jest.fn();
+    const onBreadcrumbItemClick = vi.fn();
     const events = { onBreadcrumbItemClick };
     const user = userEvent.setup();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('does not call onBreadcrumbItemClick when the last crumb is clicked', async () => {

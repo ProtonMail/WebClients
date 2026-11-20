@@ -4,101 +4,101 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { NodeType, getDrive } from '@proton/drive/sdk';
-import { setLocation } from '@proton/jest-env/setLocation';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import { setPublicLinkClient } from './publicLinkClient';
 import { usePublicLink } from './usePublicLink';
 import { shouldRedirectToPrivateApp } from './utils/shouldRedirectToPrivateApp';
 
-jest.mock('@proton/components/hooks/useAuthentication', () => ({
+vi.mock('@proton/components/hooks/useAuthentication', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(),
 }));
 
-jest.mock('@proton/drive/sdk', () => ({
-    getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', () => ({
+    getDrive: vi.fn(),
     NodeType: { File: 'file', Folder: 'folder', Photo: 'photo' },
     DecryptionError: class DecryptionError extends Error {},
     ServerError: class ServerError extends Error {},
     ValidationError: class ValidationError extends Error {},
-    splitNodeUid: jest.fn(() => ({ nodeId: 'node-id' })),
+    splitNodeUid: vi.fn(() => ({ nodeId: 'node-id' })),
 }));
 
-jest.mock('@proton/drive/modules/upload', () => ({
-    uploadManager: { setDriveClient: jest.fn() },
+vi.mock('@proton/drive/modules/upload', () => ({
+    uploadManager: { setDriveClient: vi.fn() },
 }));
 
-jest.mock('@proton/metrics/metricsInstance', () => ({
+vi.mock('@proton/metrics/metricsInstance', () => ({
     __esModule: true,
     default: {
-        setAuthHeaders: jest.fn(),
-        drive_public_share_load_success_total: { increment: jest.fn() },
-        drive_public_share_load_error_total: { increment: jest.fn() },
+        setAuthHeaders: vi.fn(),
+        drive_public_share_load_success_total: { increment: vi.fn() },
+        drive_public_share_load_error_total: { increment: vi.fn() },
     },
 }));
 
-jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
-    isNativeProtonDocsAppFile: jest.fn(() => false),
+vi.mock('@proton/shared/lib/helpers/mimetype', () => ({
+    isNativeProtonDocsAppFile: vi.fn(() => false),
 }));
 
-jest.mock('../../modules/download/DownloadManager', () => ({
-    downloadManager: { setDriveClient: jest.fn() },
+vi.mock('../../modules/download/DownloadManager', () => ({
+    downloadManager: { setDriveClient: vi.fn() },
 }));
 
-jest.mock('../../legacy/store/_user/getMetricsUserPlan', () => ({
-    getMetricsUserPlan: jest.fn(() => 'anonymous'),
+vi.mock('../../legacy/store/_user/getMetricsUserPlan', () => ({
+    getMetricsUserPlan: vi.fn(() => 'anonymous'),
 }));
 
-jest.mock('../../utils/docs/openInDocs', () => ({
-    getOpenInDocsInfo: jest.fn(),
-    openDocsOrSheetsDocument: jest.fn(),
-    openPublicDocsOrSheetsDocument: jest.fn(),
+vi.mock('../../utils/docs/openInDocs', () => ({
+    getOpenInDocsInfo: vi.fn(),
+    openDocsOrSheetsDocument: vi.fn(),
+    openPublicDocsOrSheetsDocument: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    sendErrorReport: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    sendErrorReport: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    is4xx: jest.fn(),
-    is5xx: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    is4xx: vi.fn(),
+    is5xx: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
-    getNodeEntity: jest.fn(),
+vi.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
+    getNodeEntity: vi.fn(),
 }));
 
-jest.mock('../../utils/telemetry', () => ({
+vi.mock('../../utils/telemetry', () => ({
     Actions: { PublicLinkVisit: 'PublicLinkVisit' },
-    countActionWithTelemetry: jest.fn(),
+    countActionWithTelemetry: vi.fn(),
 }));
 
-jest.mock('./publicLinkClient', () => ({
-    setPublicLinkClient: jest.fn(),
+vi.mock('./publicLinkClient', () => ({
+    setPublicLinkClient: vi.fn(),
 }));
 
-jest.mock('./usePublicAuth.store', () => ({
-    usePublicAuthStore: { getState: jest.fn(() => ({ setPublicRole: jest.fn() })) },
+vi.mock('./usePublicAuth.store', () => ({
+    usePublicAuthStore: { getState: vi.fn(() => ({ setPublicRole: vi.fn() })) },
 }));
 
-jest.mock('./utils/getPublicTokenAndPassword', () => ({
-    getPublicTokenAndPassword: jest.fn(() => ({ token: 'test-token', urlPassword: '' })),
+vi.mock('./utils/getPublicTokenAndPassword', () => ({
+    getPublicTokenAndPassword: vi.fn(() => ({ token: 'test-token', urlPassword: '' })),
 }));
 
-jest.mock('./utils/shouldRedirectToPrivateApp', () => ({
-    shouldRedirectToPrivateApp: jest.fn(() => false),
+vi.mock('./utils/shouldRedirectToPrivateApp', () => ({
+    shouldRedirectToPrivateApp: vi.fn(() => false),
 }));
 
 describe('usePublicLink', () => {
-    const mockGetURLAccessInfo = jest.fn();
-    const mockAuthURLAccess = jest.fn();
-    const mockGetRootNode = jest.fn();
-    const mockGetSessionInfo = jest.fn(() => ({ accessToken: 'token', uid: 'uid' }));
+    const mockGetURLAccessInfo = vi.fn();
+    const mockAuthURLAccess = vi.fn();
+    const mockGetRootNode = vi.fn();
+    const mockGetSessionInfo = vi.fn(() => ({ accessToken: 'token', uid: 'uid' }));
 
     const fakeNode = {
         uid: 'volume~node',
@@ -111,13 +111,13 @@ describe('usePublicLink', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        jest.mocked(useAuthentication).mockReturnValue({ getUID: () => undefined } as any);
-        jest.mocked(useNotifications).mockReturnValue({ createNotification: jest.fn() } as any);
-        jest.mocked(getNodeEntity).mockReturnValue({ node: fakeNode } as any);
-        jest.mocked(shouldRedirectToPrivateApp).mockReturnValue(false);
-        jest.mocked(isNativeProtonDocsAppFile).mockReturnValue(false);
+        vi.mocked(useAuthentication).mockReturnValue({ getUID: () => undefined } as any);
+        vi.mocked(useNotifications).mockReturnValue({ createNotification: vi.fn() } as any);
+        vi.mocked(getNodeEntity).mockReturnValue({ node: fakeNode } as any);
+        vi.mocked(shouldRedirectToPrivateApp).mockReturnValue(false);
+        vi.mocked(isNativeProtonDocsAppFile).mockReturnValue(false);
 
         mockGetURLAccessInfo.mockResolvedValue({
             isCustomPasswordProtected: false,
@@ -130,7 +130,7 @@ describe('usePublicLink', () => {
         });
         mockGetRootNode.mockResolvedValue(fakeNode);
 
-        jest.mocked(getDrive).mockReturnValue({
+        vi.mocked(getDrive).mockReturnValue({
             experimental: {
                 getURLAccessInfo: mockGetURLAccessInfo,
                 authURLAccess: mockAuthURLAccess,

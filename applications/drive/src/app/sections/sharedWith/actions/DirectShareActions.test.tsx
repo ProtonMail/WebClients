@@ -7,41 +7,41 @@ import useShare from '../../../legacy/store/_shares/useShare';
 import { ItemType } from '../types';
 import { DirectShareActions } from './DirectShareActions';
 
-const mockGetNode = jest.fn();
+const mockGetNode = vi.fn();
 
-jest.mock('@proton/account/user/hooks');
+vi.mock('@proton/account/user/hooks');
 
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
-    getDrivePerNodeType: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
+    getDrivePerNodeType: vi.fn(),
 }));
 
-jest.mock('../../../legacy/store/_volumes/useVolumesState', () => ({
+vi.mock('../../../legacy/store/_volumes/useVolumesState', () => ({
     __esModule: true,
-    default: jest.fn(() => ({
-        findVolumeId: jest.fn(),
-        setVolumeShareIds: jest.fn(),
-        getVolumeShareIds: jest.fn(),
-        clear: jest.fn(),
+    default: vi.fn(() => ({
+        findVolumeId: vi.fn(),
+        setVolumeShareIds: vi.fn(),
+        getVolumeShareIds: vi.fn(),
+        clear: vi.fn(),
     })),
 }));
 
-jest.mock('../../../legacy/store/_shares/useShare');
+vi.mock('../../../legacy/store/_shares/useShare');
 
-jest.mock('../../../utils/docs/openInDocs', () => ({
+vi.mock('../../../utils/docs/openInDocs', () => ({
     getOpenInDocsInfo: () => undefined,
-    downloadDocument: jest.fn(),
-    openDocsOrSheetsDocument: jest.fn(),
+    downloadDocument: vi.fn(),
+    openDocsOrSheetsDocument: vi.fn(),
 }));
 
-jest.mocked(useUser).mockReturnValue([{ Email: 'test@proton.me' } as any, false]);
+vi.mocked(useUser).mockReturnValue([{ Email: 'test@proton.me' } as any, false]);
 
-jest.mocked(useShare).mockReturnValue({
-    getSharePrivateKey: jest.fn(),
-    getShareWithKey: jest.fn(),
-    getShare: jest.fn(),
-    getShareCreatorKeys: jest.fn(),
-    getShareSessionKey: jest.fn(),
+vi.mocked(useShare).mockReturnValue({
+    getSharePrivateKey: vi.fn(),
+    getShareWithKey: vi.fn(),
+    getShare: vi.fn(),
+    getShareCreatorKeys: vi.fn(),
+    getShareSessionKey: vi.fn(),
 });
 
 function renderDirectShareActions(role: string, buttonType: 'toolbar' | 'contextMenu') {
@@ -66,22 +66,22 @@ function renderDirectShareActions(role: string, buttonType: 'toolbar' | 'context
                     haveSignatureIssues: false,
                 },
             ]}
-            showPreviewModal={jest.fn()}
-            showConfirmModal={jest.fn()}
-            showDetailsModal={jest.fn()}
-            showFilesDetailsModal={jest.fn()}
-            showCopyModal={jest.fn()}
-            showSharingModal={jest.fn()}
-            showReportAbuseModal={jest.fn()}
+            showPreviewModal={vi.fn()}
+            showConfirmModal={vi.fn()}
+            showDetailsModal={vi.fn()}
+            showFilesDetailsModal={vi.fn()}
+            showCopyModal={vi.fn()}
+            showSharingModal={vi.fn()}
+            showReportAbuseModal={vi.fn()}
             buttonType={buttonType}
-            close={buttonType === 'toolbar' ? undefined : jest.fn()}
+            close={buttonType === 'toolbar' ? undefined : vi.fn()}
         />
     );
 }
 
 describe('DirectShareActions', () => {
     it('item can be re-shared if user has admin rights (context menu)', async () => {
-        jest.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
+        vi.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
         mockGetNode.mockResolvedValue({
             directRole: 'admin',
             name: { ok: true, value: 'test-node' },
@@ -98,7 +98,7 @@ describe('DirectShareActions', () => {
     });
 
     it('item can be re-shared if user has admin rights (toolbar)', async () => {
-        jest.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
+        vi.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
         mockGetNode.mockResolvedValue({
             directRole: 'admin',
             name: { ok: true, value: 'test-node' },
@@ -115,7 +115,7 @@ describe('DirectShareActions', () => {
     });
 
     it('item cannot be re-shared if user has admin rights (contextMenu)', async () => {
-        jest.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
+        vi.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
         mockGetNode.mockResolvedValue({
             directRole: 'viewer',
             name: { ok: true, value: 'test-node' },
@@ -132,7 +132,7 @@ describe('DirectShareActions', () => {
     });
 
     it('item cannot be re-shared if user has admin rights (toolbar)', async () => {
-        jest.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
+        vi.mocked(getDrivePerNodeType).mockReturnValue({ getNode: mockGetNode } as any);
         mockGetNode.mockResolvedValue({
             directRole: 'viewer',
             name: { ok: true, value: 'test-node' },

@@ -16,15 +16,15 @@ class IntegrityMetricsForTesting extends IntegrityMetrics {
 }
 
 describe('IntegrityMetrics::', () => {
-    const mockMetricsDecryptionErrors = jest.fn();
-    const mockMetricsVerificationErrors = jest.fn();
-    const mockMetricsBlockVerificationErrors = jest.fn();
-    const mockMetricsErroringUsers = jest.fn();
+    const mockMetricsDecryptionErrors = vi.fn();
+    const mockMetricsVerificationErrors = vi.fn();
+    const mockMetricsBlockVerificationErrors = vi.fn();
+    const mockMetricsErroringUsers = vi.fn();
 
     let integrityMetrics: IntegrityMetricsForTesting;
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
         integrityMetrics = new IntegrityMetricsForTesting();
         integrityMetrics.setMetricsModule({
             drive_integrity_decryption_errors_total: { increment: mockMetricsDecryptionErrors },

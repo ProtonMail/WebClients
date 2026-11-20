@@ -8,10 +8,10 @@ import { MetricUserPlan } from '../../../utils/type/MetricTypes';
 import { getMetricsUserPlan } from './getMetricsUserPlan';
 import { useGetMetricsUserPlan } from './useGetMetricsUserPlan';
 
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/components/hooks/useAuthentication');
-jest.mock('../../../utils/getIsPublicContext');
-jest.mock('./getMetricsUserPlan');
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/components/hooks/useAuthentication');
+vi.mock('../../../utils/getIsPublicContext');
+vi.mock('./getMetricsUserPlan');
 
 const mockUser = {
     ID: 'test-user-id',
@@ -22,15 +22,15 @@ const mockPaidUser = {
 };
 const mockedUID = 'uid';
 
-const mockGetUser = jest.fn();
-const mockedUseGetUser = jest.mocked(useGetUser);
-const mockedGetIsPublicContext = jest.mocked(getIsPublicContext);
-const mockedUseAuthentication = jest.mocked(useAuthentication);
-const mockedGetMetricsUserPlan = jest.mocked(getMetricsUserPlan);
+const mockGetUser = vi.fn();
+const mockedUseGetUser = vi.mocked(useGetUser);
+const mockedGetIsPublicContext = vi.mocked(getIsPublicContext);
+const mockedUseAuthentication = vi.mocked(useAuthentication);
+const mockedGetMetricsUserPlan = vi.mocked(getMetricsUserPlan);
 
 describe('useGetMetricsUserPlan', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockGetUser.mockResolvedValue(mockUser);
         mockedUseGetUser.mockReturnValue(mockGetUser);
         mockedUseAuthentication.mockReturnValue({ UID: mockedUID } as any);
@@ -78,8 +78,8 @@ describe('useGetMetricsUserPlan', () => {
         });
 
         it('should handle error in getUser', async () => {
-            const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
-            const warnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+            const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+            const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
 
             const error = new Error('Failed to get user');
             mockGetUser.mockRejectedValue(error);

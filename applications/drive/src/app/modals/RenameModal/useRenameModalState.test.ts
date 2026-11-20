@@ -8,22 +8,22 @@ import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from 
 import type { RenameModalViewProps } from './RenameModalView';
 import { useRenameModalState } from './useRenameModalState';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: jest.fn(() => ({
-        createNotification: jest.fn(),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: vi.fn(() => ({
+        createNotification: vi.fn(),
     })),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
-const mockHandleError = jest.mocked(handleSdkError);
+const mockHandleError = vi.mocked(handleSdkError);
 
-const mockedGetNode = jest.fn();
+const mockedGetNode = vi.fn();
 const mockDrive = {
     getNode: mockedGetNode,
-    renameNode: jest.fn(),
+    renameNode: vi.fn(),
 };
 
 const createMockNode = (param: { uid: string; name: string; type: NodeType; mediaType: string }): NodeEntity =>
@@ -69,11 +69,11 @@ const expectNameAndNameToFocus = (props: RenameModalViewProps, name: string, nam
 
 describe('useRenameModalState', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('Degraded node handling behavior', () => {
@@ -363,7 +363,7 @@ describe('useRenameModalState', () => {
 
     describe('Error handling', () => {
         it('should call handleError and exit the modal when getNode throws', async () => {
-            const onExit = jest.fn();
+            const onExit = vi.fn();
             const error = new Error('fetch error');
             mockedGetNode.mockRejectedValueOnce(error);
 

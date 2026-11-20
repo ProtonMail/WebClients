@@ -4,12 +4,12 @@ import { getOpenInDocsInfo } from '../../../../utils/docs/openInDocs';
 import type { SearchResultItemUI } from '../store';
 import { createActionsItemChecker } from './actionsItemChecker';
 
-jest.mock('../../../../utils/docs/openInDocs', () => ({
-    ...jest.requireActual('../../../../utils/docs/openInDocs'),
-    getOpenInDocsInfo: jest.fn(),
+vi.mock('../../../../utils/docs/openInDocs', async () => ({
+    ...(await vi.importActual('../../../../utils/docs/openInDocs')),
+    getOpenInDocsInfo: vi.fn(),
 }));
 
-const mockedGetOpenInDocsInfo = jest.mocked(getOpenInDocsInfo);
+const mockedGetOpenInDocsInfo = vi.mocked(getOpenInDocsInfo);
 
 const createItem = (overrides: Partial<SearchResultItemUI> = {}): SearchResultItemUI => ({
     nodeUid: 'uid-1',
@@ -28,7 +28,7 @@ const createItem = (overrides: Partial<SearchResultItemUI> = {}): SearchResultIt
 
 describe('createActionsItemChecker', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedGetOpenInDocsInfo.mockReturnValue(undefined);
     });
 

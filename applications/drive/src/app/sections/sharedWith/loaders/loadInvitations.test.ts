@@ -1,23 +1,26 @@
+import type { Mock } from 'vitest';
+
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
+import * as mod1 from '@proton/drive/sdk';
 
 import { useSharedWithMeStore } from '../useSharedWithMe.store';
 import { loadInvitations } from './loadInvitations';
 
-jest.mock('@proton/drive/sdk', () => ({
-    getDrive: jest.fn(),
-    getDriveForPhotos: jest.fn(),
-    splitInvitationUid: jest.fn((uid: string) => ({ shareId: `share-${uid}` })),
+vi.mock('@proton/drive/sdk', () => ({
+    getDrive: vi.fn(),
+    getDriveForPhotos: vi.fn(),
+    splitInvitationUid: vi.fn((uid: string) => ({ shareId: `share-${uid}` })),
 }));
 
-jest.mock('@proton/drive/modules/notifications', () => ({
-    getNotificationsManager: jest.fn(),
+vi.mock('@proton/drive/modules/notifications', () => ({
+    getNotificationsManager: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
-const { getDrive, getDriveForPhotos } = jest.mocked(require('@proton/drive/sdk'));
+const { getDrive, getDriveForPhotos } = vi.mocked(mod1) as unknown as Record<'getDrive' | 'getDriveForPhotos', Mock>;
 
 function fakeInvitation(uid: string) {
     return {
@@ -54,12 +57,12 @@ function setupDriveMocks(
     });
 }
 
-const mockCreateNotification = jest.fn();
+const mockCreateNotification = vi.fn();
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     useSharedWithMeStore.getState().clearAll();
-    jest.mocked(getNotificationsManager).mockReturnValue({
+    vi.mocked(getNotificationsManager).mockReturnValue({
         createNotification: mockCreateNotification,
     } as any);
 });

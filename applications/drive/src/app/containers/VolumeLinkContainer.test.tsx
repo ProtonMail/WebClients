@@ -1,46 +1,50 @@
 import { MemoryRouter, Route, Routes } from 'react-router-dom-v5-compat';
 
 import { render, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
+import * as mod2 from '@proton/drive/legacy/errorHandling';
 import { NodeType, generateNodeUid } from '@proton/drive/sdk';
+import * as mod1 from '@proton/drive/sdk';
 
+import useDriveNavigationModule from '../legacy/hooks/drive/useNavigate';
 import { VolumeLinkContainer } from './VolumeLinkContainer';
 
 // Only the client singletons and the app-wired helpers are mocked. getNodeAncestry runs for real on a fake client.
-jest.mock('@proton/drive/sdk', () => ({
-    ...jest.requireActual('@proton/drive/sdk'),
-    getDrive: jest.fn(),
-    getDriveForPhotos: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+    ...(await vi.importActual('@proton/drive/sdk')),
+    getDrive: vi.fn(),
+    getDriveForPhotos: vi.fn(),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    handleSdkError: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    handleSdkError: vi.fn(),
 }));
 
-jest.mock('../legacy/hooks/drive/useNavigate', () => ({
+vi.mock('../legacy/hooks/drive/useNavigate', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-const mockRedirectOrAcceptInvitation = jest.fn();
-jest.mock('./useRedirectOrAcceptInvitation', () => ({
+const mockRedirectOrAcceptInvitation = vi.fn();
+vi.mock('./useRedirectOrAcceptInvitation', () => ({
     useRedirectOrAcceptInvitation: () => mockRedirectOrAcceptInvitation,
 }));
 
-const { getDrive, getDriveForPhotos } = jest.mocked(require('@proton/drive/sdk'));
-const useDriveNavigation = jest.mocked(require('../legacy/hooks/drive/useNavigate').default);
-const { handleSdkError } = jest.mocked(require('@proton/drive/legacy/errorHandling'));
+const { getDrive, getDriveForPhotos } = vi.mocked(mod1) as unknown as Record<'getDrive' | 'getDriveForPhotos', Mock>;
+const useDriveNavigation = vi.mocked(useDriveNavigationModule) as unknown as Mock;
+const { handleSdkError } = vi.mocked(mod2);
 
 const VOLUME_ID = 'volume-id';
 const LINK_ID = 'link-id';
 const ROOT_UID = generateNodeUid(VOLUME_ID, 'root-id');
 const NODE_UID = generateNodeUid(VOLUME_ID, LINK_ID);
 
-const redirectToLink = jest.fn();
-const redirectToAlbum = jest.fn();
-const navigateToNoAccess = jest.fn();
-const navigateToSharedByMe = jest.fn();
-const getNode = jest.fn();
+const redirectToLink = vi.fn();
+const redirectToAlbum = vi.fn();
+const navigateToNoAccess = vi.fn();
+const navigateToSharedByMe = vi.fn();
+const getNode = vi.fn();
 
 const mockNodes = ({ type, rootShareId = 'share-id' }: { type: NodeType; rootShareId?: string }) => {
     const nodes: Record<string, object> = {
@@ -61,10 +65,10 @@ const renderAt = (path: string) =>
 
 describe('VolumeLinkContainer', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         getDrive.mockReturnValue({ getNode });
         getDriveForPhotos.mockReturnValue({
-            getMyPhotosRootFolder: jest.fn().mockRejectedValue(new Error('not needed')),
+            getMyPhotosRootFolder: vi.fn().mockRejectedValue(new Error('not needed')),
         });
         useDriveNavigation.mockReturnValue({
             redirectToLink,
@@ -92,12 +96,12 @@ describe('VolumeLinkContainer', () => {
     });
 
     describe('in the photos volume', () => {
-        const getDriveNode = jest.fn();
+        const getDriveNode = vi.fn();
 
         beforeEach(() => {
             getDrive.mockReturnValue({ getNode: getDriveNode });
             getDriveForPhotos.mockReturnValue({
-                getMyPhotosRootFolder: jest.fn().mockResolvedValue({ uid: ROOT_UID, name: { ok: true, value: '' } }),
+                getMyPhotosRootFolder: vi.fn().mockResolvedValue({ uid: ROOT_UID, name: { ok: true, value: '' } }),
                 getNode,
             });
         });

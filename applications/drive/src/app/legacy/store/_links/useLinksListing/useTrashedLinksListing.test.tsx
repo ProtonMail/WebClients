@@ -1,43 +1,45 @@
 import { act, renderHook } from '@testing-library/react';
 
+import { queryVolumeTrash } from '@proton/shared/lib/api/drive/volume';
+
 import { VolumesStateProvider } from '../../_volumes/useVolumesState';
 import { LinksStateProvider } from '../useLinksState';
 import { PAGE_SIZE } from './useLinksListingHelpers';
 import { useTrashedLinksListing } from './useTrashedLinksListing';
 
-jest.mock('@proton/shared/lib/api/drive/volume', () => ({
-    queryVolumeTrash: jest.fn(),
+vi.mock('@proton/shared/lib/api/drive/volume', () => ({
+    queryVolumeTrash: vi.fn(),
 }));
 
-const mockRequest = jest.fn();
-jest.mock('../../_api/useDebouncedRequest', () => {
+const mockRequest = vi.fn();
+vi.mock('../../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockRequest;
     };
-    return useDebouncedRequest;
+    return { __esModule: true, default: useDebouncedRequest };
 });
 
-jest.mock('../../_utils/errorHandler', () => {
+vi.mock('../../_utils/errorHandler', () => {
     return {
         useErrorHandler: () => ({
-            showErrorNotification: jest.fn(),
-            showAggregatedErrorNotification: jest.fn(),
+            showErrorNotification: vi.fn(),
+            showAggregatedErrorNotification: vi.fn(),
         }),
     };
 });
 
-jest.mock('../useLink', () => {
+vi.mock('../useLink', () => {
     const useLink = () => {
         return {
-            decryptLink: jest.fn(),
+            decryptLink: vi.fn(),
         };
     };
-    return useLink;
+    return { __esModule: true, default: useLink };
 });
 
-const queryVolumeTrashMock = require('@proton/shared/lib/api/drive/volume').queryVolumeTrash as jest.Mock;
+const queryVolumeTrashMock = vi.mocked(queryVolumeTrash);
 const generateArrayOfRandomStrings = (size: number): string[] => {
-    return Array.from({ length: size }, () => Math.random().toString(36).substring(2));
+    return Array.from({ length: size }, (_, index) => `link-${index}`);
 };
 
 describe('useTrashedLinksListing', () => {
@@ -46,7 +48,7 @@ describe('useTrashedLinksListing', () => {
     };
 
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
         const wrapper = ({ children }: { children: React.ReactNode }) => (
             <VolumesStateProvider>
                 <LinksStateProvider>{children}</LinksStateProvider>
@@ -56,7 +58,7 @@ describe('useTrashedLinksListing', () => {
         const { result } = renderHook(() => useTrashedLinksListing(), { wrapper });
         hook = result;
 
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     it('should fetch the first page of trashed links for a given volume', async () => {

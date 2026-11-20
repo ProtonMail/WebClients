@@ -5,31 +5,31 @@ import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 
 import { useThumbnailCacheStore } from './thumbnail.store';
 
-jest.mock('idb-keyval', () => ({
-    get: jest.fn(),
-    set: jest.fn(),
-    del: jest.fn(),
-    createStore: jest.fn(() => 'mock-store'),
+vi.mock('idb-keyval', () => ({
+    get: vi.fn(),
+    set: vi.fn(),
+    del: vi.fn(),
+    createStore: vi.fn(() => 'mock-store'),
 }));
 
-jest.mock('@proton/drive/legacy/errorHandling', () => ({
-    sendErrorReport: jest.fn(),
+vi.mock('@proton/drive/legacy/errorHandling', () => ({
+    sendErrorReport: vi.fn(),
 }));
 
 // Mock console.error to avoid polluting test output
 const originalConsoleError = console.error;
 beforeAll(() => {
-    console.error = jest.fn();
+    console.error = vi.fn();
 });
 afterAll(() => {
     console.error = originalConsoleError;
 });
 
-const idbGetMocked = jest.mocked(idbKeyval.get);
+const idbGetMocked = vi.mocked(idbKeyval.get);
 
 describe('useThumbnailCacheStore', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('getThumbnail', () => {

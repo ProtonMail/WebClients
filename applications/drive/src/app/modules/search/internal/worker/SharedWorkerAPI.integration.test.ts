@@ -27,9 +27,9 @@ import { IndexReader } from './index/IndexReader';
 
 setupRealSearchLibraryWasm();
 
-jest.mock('../shared/errors', () => {
-    const actual = jest.requireActual('../shared/errors');
-    return { ...actual, sendErrorReportForSearch: jest.fn() };
+vi.mock('../shared/errors', async () => {
+    const actual = await vi.importActual('../shared/errors');
+    return { ...actual, sendErrorReportForSearch: vi.fn() };
 });
 
 global.BroadcastChannel = FakeBroadcastChannel as unknown as typeof BroadcastChannel;
@@ -197,7 +197,7 @@ class SearchModuleStateStream {
         }
 
         for (let i = 0; i < maxIterations; i++) {
-            await jest.advanceTimersByTimeAsync(200);
+            await vi.advanceTimersByTimeAsync(200);
             const found = this.buffer.findIndex(predicate);
             if (found !== -1) {
                 const match = this.buffer[found];
@@ -309,7 +309,7 @@ async function advanceUntilSearch(
                 throw e;
             }
         }
-        await jest.advanceTimersByTimeAsync(200);
+        await vi.advanceTimersByTimeAsync(200);
     }
     throw new Error(`advanceUntilSearch('${query}') timed out`);
 }
@@ -348,7 +348,7 @@ async function advanceUntilExport(
                 throw e;
             }
         }
-        await jest.advanceTimersByTimeAsync(200);
+        await vi.advanceTimersByTimeAsync(200);
     }
     throw new Error('advanceUntilExport timed out');
 }
@@ -364,7 +364,7 @@ async function retryWhileWriterBusy(fn: () => Promise<void>, maxIterations = 50)
             if (!(e instanceof Error) || !/write session|write handle/.test(e.message)) {
                 throw e;
             }
-            await jest.advanceTimersByTimeAsync(100);
+            await vi.advanceTimersByTimeAsync(100);
         }
     }
     throw new Error('retryWhileWriterBusy: timed out');
@@ -379,7 +379,7 @@ async function advanceUntilRepairEntry(nodeUid: string, maxIterations = 1000): P
             if (entries.some((e) => e.nodeUid === nodeUid)) {
                 return;
             }
-            await jest.advanceTimersByTimeAsync(200);
+            await vi.advanceTimersByTimeAsync(200);
         }
     } finally {
         db.close();
@@ -395,7 +395,7 @@ async function advanceUntilRepairTableEmpty(maxIterations = 100): Promise<void> 
             if ((await db.getAllRepairEntries()).length === 0) {
                 return;
             }
-            await jest.advanceTimersByTimeAsync(100);
+            await vi.advanceTimersByTimeAsync(100);
         }
     } finally {
         db.close();
@@ -478,19 +478,14 @@ describe('SharedWorkerAPI integration', () => {
     let state: SearchModuleStateStream;
 
     beforeEach(() => {
-        jest.restoreAllMocks();
-        jest.useFakeTimers({
-            doNotFake: [
-                'setImmediate', // fake-indexeddb uses setImmediate to resolve IDB operations
-                'nextTick', // fake-indexeddb uses nextTick for transaction callbacks
-                'queueMicrotask', // Promises/await chains need real microtask scheduling
-            ],
-        });
+        vi.restoreAllMocks();
+        // fake-indexeddb schedules its operations with setImmediate and nextTick, and the awaits need real microtasks
+        vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout', 'setInterval', 'clearInterval', 'Date'] });
         // In memory indexedDB
         indexedDB = new IDBFactory();
         FakeBroadcastChannel.reset();
         fakeLockManager.reset();
-        api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
+        api = new SharedWorkerAPI(APP_VERSION, USER_ID, vi.fn());
         bridge = createBridge();
         state = new SearchModuleStateStream();
     });
@@ -499,7 +494,7 @@ describe('SharedWorkerAPI integration', () => {
         state.close();
         api.disconnectClient(CLIENT_A);
         api.disconnectClient(CLIENT_B);
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('Scenario: full bootstrap + search for MyFiles', () => {
@@ -529,7 +524,7 @@ describe('SharedWorkerAPI integration', () => {
             // First, forget about past states.
             state.checkpoint();
 
-            api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
+            api = new SharedWorkerAPI(APP_VERSION, USER_ID, vi.fn());
             const freshBridge = createBridge();
 
             // Second boot: DB already has populator state (done=true), so no initial indexing
@@ -641,7 +636,7 @@ describe('SharedWorkerAPI integration', () => {
             // Simulate reload: fresh API + bridge, same IndexedDB.
             api.disconnectClient(CLIENT_A);
             state.checkpoint();
-            api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
+            api = new SharedWorkerAPI(APP_VERSION, USER_ID, vi.fn());
             const freshBridge = createBridge();
             await api.registerClient(USER_ID, CLIENT_A, freshBridge.asBridge());
 
@@ -671,7 +666,7 @@ describe('SharedWorkerAPI integration', () => {
             // Simulate reload where the SDK now reports the MyFiles root under a DIFFERENT scope id.
             api.disconnectClient(CLIENT_A);
             state.checkpoint();
-            api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
+            api = new SharedWorkerAPI(APP_VERSION, USER_ID, vi.fn());
             const freshBridge = createBridge();
             freshBridge.setMyFilesRootNode(
                 createMockNodeEntity({
@@ -784,7 +779,7 @@ describe('SharedWorkerAPI integration', () => {
                 if (genOne.length === 0) {
                     break;
                 }
-                await jest.advanceTimersByTimeAsync(100);
+                await vi.advanceTimersByTimeAsync(100);
             }
             expect(genOne).toHaveLength(0);
 
@@ -822,7 +817,7 @@ describe('SharedWorkerAPI integration', () => {
             // uids so session.insert doesn't replace the old entries.
             api.disconnectClient(CLIENT_A);
             state.checkpoint();
-            api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
+            api = new SharedWorkerAPI(APP_VERSION, USER_ID, vi.fn());
 
             const bridge2 = new FakeMainThreadBridge();
             bridge2.setMyFilesRootNode(
@@ -846,7 +841,9 @@ describe('SharedWorkerAPI integration', () => {
                 if (oldScopeResults.length === 0) {
                     break;
                 }
-                await jest.advanceTimersByTimeAsync(100);
+                await vi.advanceTimersByTimeAsync(100);
+                // Let the real (setImmediate based) IndexedDB work of the cleanup progress
+                await new Promise((resolve) => setImmediate(resolve));
             }
             expect(oldScopeResults).toHaveLength(0);
 
@@ -879,12 +876,12 @@ describe('SharedWorkerAPI integration', () => {
     describe('Scenario: permanent error', () => {
         it('quota exceeded stops the indexer', async () => {
             // Simulate IDB quota exceeded when writing index blobs
-            jest.spyOn(SearchDB.prototype, 'putEncryptedIndexBlob').mockRejectedValue(
+            vi.spyOn(SearchDB.prototype, 'putEncryptedIndexBlob').mockRejectedValue(
                 new DOMException('', 'QuotaExceededError')
             );
             // navigator.storage.estimate is called in the error handler for logging
             Object.defineProperty(navigator, 'storage', {
-                value: { estimate: jest.fn().mockResolvedValue({ usage: 4_999, quota: 5_000 }) },
+                value: { estimate: vi.fn().mockResolvedValue({ usage: 4_999, quota: 5_000 }) },
                 configurable: true,
             });
 
@@ -906,7 +903,7 @@ describe('SharedWorkerAPI integration', () => {
             // Indexing already succeeded; simulate a permanent WASM failure specific to the query
             // path, which - per SearchQueryExecutor's own doc comment - bypasses the task queue
             // entirely, so the indexer's own permanent-error handling never runs for it.
-            jest.spyOn(IndexReader.prototype, 'execute').mockImplementation(async function* () {
+            vi.spyOn(IndexReader.prototype, 'execute').mockImplementation(async function* () {
                 throw new SearchLibraryError('Search library WASM failed: query execute', new Error('boom'));
             });
 
@@ -1070,7 +1067,7 @@ describe('SharedWorkerAPI integration', () => {
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
 
             // Give it a moment — if re-indexing were triggered we'd see isIndexing: true.
-            await jest.advanceTimersByTimeAsync(1_000);
+            await vi.advanceTimersByTimeAsync(1_000);
             state.expectNoUpdatesSinceCheckpoint();
 
             // Search still works with the existing index.
@@ -1329,7 +1326,7 @@ describe('SharedWorkerAPI integration', () => {
                         throw e;
                     }
                 }
-                await jest.advanceTimersByTimeAsync(200);
+                await vi.advanceTimersByTimeAsync(200);
             }
 
             const burstResults = (await search(api, 'burst')).map((r) => r.nodeUid).sort();
@@ -1366,7 +1363,7 @@ describe('SharedWorkerAPI integration', () => {
             bridge.clearIterateNodesError('report-q3');
             api.disconnectClient(CLIENT_A);
             state.checkpoint();
-            api = new SharedWorkerAPI(APP_VERSION, USER_ID, jest.fn());
+            api = new SharedWorkerAPI(APP_VERSION, USER_ID, vi.fn());
 
             await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
             await state.waitForSearchable();

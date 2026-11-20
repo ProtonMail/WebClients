@@ -12,7 +12,7 @@ import { gatherSearchDiagnostics } from './searchDiagnostics';
 
 setupRealSearchLibraryWasm();
 
-jest.mock('../shared/Logger');
+vi.mock('../shared/Logger');
 
 const identity = async <T>(d: T) => d;
 
@@ -23,7 +23,7 @@ describe('gatherSearchDiagnostics', () => {
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
         Object.defineProperty(navigator, 'storage', {
-            value: { estimate: jest.fn().mockResolvedValue({ usage: 10 * 1024 * 1024, quota: 100 * 1024 * 1024 }) },
+            value: { estimate: vi.fn().mockResolvedValue({ usage: 10 * 1024 * 1024, quota: 100 * 1024 * 1024 }) },
             configurable: true,
         });
     });
@@ -85,14 +85,14 @@ describe('gatherSearchDiagnostics', () => {
     });
 
     it('returns undefined, without throwing, when a lookup fails', async () => {
-        jest.spyOn(db, 'countIndexBlobs').mockRejectedValueOnce(new Error('IDB unavailable'));
+        vi.spyOn(db, 'countIndexBlobs').mockRejectedValueOnce(new Error('IDB unavailable'));
 
         await expect(gatherSearchDiagnostics(db, null)).resolves.toBeUndefined();
     });
 
     it('returns undefined, without throwing, when navigator.storage.estimate fails', async () => {
         Object.defineProperty(navigator, 'storage', {
-            value: { estimate: jest.fn().mockRejectedValue(new Error('unsupported')) },
+            value: { estimate: vi.fn().mockRejectedValue(new Error('unsupported')) },
             configurable: true,
         });
 
