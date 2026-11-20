@@ -266,15 +266,16 @@ export const initMeetEventSim = ({
         setHiddenParticipants(count) {
             const state = getState();
             const mlsGroupState = selectMlsGroupState(state);
-            if (!mlsGroupState) {
+            const connectedMemberCount = selectConnectedMemberCount(state);
+            if (!mlsGroupState || connectedMemberCount + count < 1) {
                 return false;
             }
             stopKeepingHiddenParticipants();
-            if (count > 0) {
+            if (count !== 0) {
                 stopKeepingHiddenParticipants = keepHiddenParticipants(count);
                 return true;
             }
-            dispatch(setMlsGroupState({ ...mlsGroupState, memberCount: selectConnectedMemberCount(state) }));
+            dispatch(setMlsGroupState({ ...mlsGroupState, memberCount: connectedMemberCount }));
             return true;
         },
     };

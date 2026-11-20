@@ -6,7 +6,10 @@ import { EventEmitter } from 'node:events';
 import { setIsWebsocketReconnecting } from '@proton/meet/store/slices/connectionSlice';
 import { currentMeetingReducer, selectMlsGroupState, setMlsGroupState } from '@proton/meet/store/slices/currentMeeting';
 import { participantCountMismatchListener } from '@proton/meet/store/slices/participantCountMismatchListener';
-import { agentParticipantsReducer } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
+import {
+    agentParticipantsReducer,
+    setAgentIdentities,
+} from '@proton/meet/store/slices/participants/agentParticipantsSlice';
 import { mergeParticipantsMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import {
     setSortedParticipantIdentities,
@@ -231,6 +234,35 @@ describe('meetEventSim.setHiddenParticipants', () => {
 
         expect(memberCount()).toBe(4);
         expect(mismatchSince()).toBe(NOW - MINUTE);
+    });
+
+    it('keeps fewer members than connected participants through an MLS refresh when called with a negative count', () => {
+        const { dispatch, memberCount, mismatchSince } = createMeetingStore();
+
+        expect(window.meetEventSim?.setHiddenParticipants(-1)).toBe(true);
+
+        vi.advanceTimersByTime(MINUTE);
+        dispatch(setMlsGroupState({ ...mlsGroupState, epoch: 4 }));
+
+        expect(memberCount()).toBe(1);
+        expect(mismatchSince()).toBe(NOW - MINUTE);
+    });
+
+    it('refuses a negative count that would leave no member', () => {
+        const { memberCount, mismatchSince } = createMeetingStore();
+
+        expect(window.meetEventSim?.setHiddenParticipants(-2)).toBe(false);
+        expect(memberCount()).toBe(2);
+        expect(mismatchSince()).toBeNull();
+    });
+
+    it('counts a connected agent among the members', () => {
+        const { dispatch, memberCount } = createMeetingStore();
+        dispatch(setAgentIdentities(['captions-agent']));
+
+        window.meetEventSim?.setHiddenParticipants(2);
+
+        expect(memberCount()).toBe(5);
     });
 
     it('adds the hidden people to a participant who joins', () => {
