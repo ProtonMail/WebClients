@@ -1,6 +1,7 @@
 import type { MeetState } from '../rootReducer';
 import type { MeetAppStartListening } from '../store';
 import { selectMlsGroupState } from './currentMeeting';
+import { selectAgentIdentities } from './participants/agentParticipantsSlice';
 import { selectTotalParticipantCount } from './participants/sortedParticipantsSlice';
 import { selectParticipantCountMismatchSince, setParticipantCountMismatchSince } from './uiStateSlice';
 
@@ -11,7 +12,13 @@ import { selectParticipantCountMismatchSince, setParticipantCountMismatchSince }
 const selectHasParticipantCountMismatch = (state: MeetState) => {
     const memberCount = selectMlsGroupState(state)?.memberCount ?? 0;
 
-    return !!memberCount && memberCount !== selectTotalParticipantCount(state);
+    // `selectTotalParticipantCount` only counts humans because `SortedParticipantsProvider` splits
+    // agents out into `agentParticipantsSlice`, while the MLS group counts agents as members too.
+    // Add the agents back on the LiveKit side so a present agent does not read as a false mismatch.
+    // The UI counts stay as they are; this only affects the mismatch check.
+    const connectedCount = selectTotalParticipantCount(state) + selectAgentIdentities(state).length;
+
+    return !!memberCount && memberCount !== connectedCount;
 };
 
 export const participantCountMismatchListener = (startListening: MeetAppStartListening) => {
