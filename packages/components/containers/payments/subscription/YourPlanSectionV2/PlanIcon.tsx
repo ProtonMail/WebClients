@@ -17,7 +17,9 @@ import {
     hasFamily,
     hasFree,
     hasLumo,
+    hasLumoBasic,
     hasLumoBusiness,
+    hasLumoUltra,
     hasMail,
     hasMailBusiness,
     hasMailPro,
@@ -98,7 +100,14 @@ export const PlanIcon = ({
             </LogoIconShape>
         );
     }
-    if (hasLumo(subscription) || planName === PLANS.LUMO) {
+    if (
+        hasLumoBasic(subscription) ||
+        hasLumo(subscription) ||
+        hasLumoUltra(subscription) ||
+        planName === PLANS.LUMO_BASIC ||
+        planName === PLANS.LUMO ||
+        planName === PLANS.LUMO_ULTRA
+    ) {
         return (
             <LogoIconShape size={size}>
                 <CustomLogo planName={PLANS.LUMO} app={app} size={size} />

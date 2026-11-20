@@ -60,6 +60,8 @@ export const hasVPNPassProfessional = (subscription: MaybeFreeSubscription) =>
 export const hasPassPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_PRO);
 export const hasPassFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_FAMILY);
 export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.PASS_BUSINESS);
+export const hasLumoBasic = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.LUMO_BASIC);
+export const hasLumoUltra = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.LUMO_ULTRA);
 export const hasLumoBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.LUMO_BUSINESS);
 export const hasMeetBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MEET_BUSINESS);
 export const hasMeet = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLANS.MEET);
