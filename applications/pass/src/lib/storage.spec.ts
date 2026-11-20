@@ -8,21 +8,22 @@ import {
     getTelemetryStorageKey,
     localGarbageCollect,
 } from 'proton-pass-web/lib/storage';
+import type { Mock } from 'vitest';
 
 import type { EncryptedAuthSession } from '@proton/pass/lib/auth/session';
 
 import { clearUserLocalData } from './storage';
 
-jest.mock('proton-pass-web/lib/database', () => ({
-    ...jest.requireActual('proton-pass-web/lib/database'),
-    deletePassDB: jest.fn(),
-    getPassDBs: jest.fn(),
+vi.mock(import('proton-pass-web/lib/database'), async (importOriginal) => ({
+    ...(await importOriginal()),
+    deletePassDB: vi.fn(),
+    getPassDBs: vi.fn(),
 }));
 
 describe('storage', () => {
-    const removeItem = jest.spyOn(Storage.prototype, 'removeItem').mockImplementation();
-    const deletePassDB = (db.deletePassDB as jest.Mock).mockImplementation(async () => {});
-    const getPassDBs = (db.getPassDBs as jest.Mock).mockImplementation(async () => []);
+    const removeItem = vi.spyOn(Storage.prototype, 'removeItem').mockImplementation(() => {});
+    const deletePassDB = (db.deletePassDB as Mock).mockImplementation(async () => {});
+    const getPassDBs = (db.getPassDBs as Mock).mockImplementation(async () => []);
 
     beforeEach(() => {
         removeItem.mockClear();

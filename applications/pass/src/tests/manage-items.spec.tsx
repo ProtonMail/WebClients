@@ -16,7 +16,10 @@ import { createTestVault } from '@proton/pass/utils/tests/fixtures/shares';
 
 import { renderPrivateApp } from './render';
 
-jest.mock('@proton/pass/lib/items/item.requests');
+vi.mock(import('@proton/pass/lib/items/item.requests'), async (importOriginal) => ({
+    ...(await importOriginal()),
+    ...(await import('@proton/pass/testing/vitest/item.requests.mock')),
+}));
 
 describe('Manage items', () => {
     const personal = createTestVault({ name: 'Personal' });
@@ -29,7 +32,7 @@ describe('Manage items', () => {
 
     const state = { shares: [personal], items: [bank] };
 
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     test('create a login', async () => {
         const { writeToClipboard } = renderPrivateApp({ state });

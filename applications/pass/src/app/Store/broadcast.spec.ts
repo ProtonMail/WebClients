@@ -7,7 +7,7 @@ import { AppStatus } from '@proton/pass/types/worker/state';
 
 import { broadcastMiddleware, resolveBroadcast } from './broadcast';
 
-jest.mock('proton-pass-web/app/ServiceWorker/client/constants', () => ({
+vi.mock('proton-pass-web/app/ServiceWorker/client/constants', () => ({
     ServiceWorkerEnabled: true,
     ServiceWorkerClientID: 'test-client',
 }));
@@ -32,7 +32,7 @@ describe('resolveBroadcast', () => {
 });
 
 describe('broadcastMiddleware', () => {
-    const postMessage = jest.fn();
+    const postMessage = vi.fn();
 
     beforeAll(() => {
         exposeAuthStore({ getLocalID: () => 42 } as AuthStore);
@@ -45,7 +45,7 @@ describe('broadcastMiddleware', () => {
     beforeEach(() => postMessage.mockClear());
 
     const dispatch = (action: any) => {
-        const next = jest.fn((a) => a);
+        const next = vi.fn((a) => a);
         broadcastMiddleware({} as Store)(next)(action);
         return next;
     };

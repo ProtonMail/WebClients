@@ -14,7 +14,7 @@ type RenderAppOptions = {
     desktop?: boolean;
 };
 
-/** `DESKTOP_BUILD` is a build-time constant: the jest globals make it a writable global */
+/** `DESKTOP_BUILD` is a build-time constant: the test setup makes it a writable global */
 const setDesktopBuild = (value: boolean) => ((globalThis as { DESKTOP_BUILD?: boolean }).DESKTOP_BUILD = value);
 
 let unmount: () => void = noop;
@@ -26,6 +26,7 @@ export const unmountApp = () => {
     unmount = noop;
     setDesktopBuild(false);
     delete window.ctxBridge;
+    vi.resetModules();
 };
 
 /** Desktop bridge exposed by the Electron preload script. Methods the tests do not drive
@@ -75,19 +76,18 @@ export const renderApp = async ({ persisted, cache, desktop = false }: RenderApp
     localStorage.setItem('ps-0', persisted.encrypted);
     window.history.pushState({}, '', '/u/0');
 
-    await jest.isolateModulesAsync(async () => {
-        const { setupCryptoProxyForTesting } = await import('@proton/pass/utils/tests/fixtures/crypto');
-        const { loadCryptoWorker } = await import('@proton/shared/lib/helpers/setupCryptoWorker');
-        const { writeDBCache } = await import('proton-pass-web/lib/database');
-        const { render } = await import('@testing-library/react');
+    vi.resetModules();
+    const { setupCryptoProxyForTesting } = await import('@proton/pass/utils/tests/fixtures/crypto');
+    const { loadCryptoWorker } = await import('@proton/shared/lib/helpers/setupCryptoWorker');
+    const { writeDBCache } = await import('proton-pass-web/lib/database');
+    const { render } = await import('@testing-library/react');
 
-        await setupCryptoProxyForTesting();
-        jest.mocked(loadCryptoWorker).mockResolvedValue(undefined);
-        await writeDBCache(persisted.session.UserID, cache.encrypted, '1.0.0');
+    await setupCryptoProxyForTesting();
+    vi.mocked(loadCryptoWorker).mockResolvedValue(undefined);
+    await writeDBCache(persisted.session.UserID, cache.encrypted, '1.0.0');
 
-        const { App } = await import('proton-pass-web/app/App');
-        unmount = render(<App />).unmount;
-    });
+    const { App } = await import('proton-pass-web/app/App');
+    unmount = render(<App />).unmount;
 
     /** What the Electron main process sends when the system resumes or the screen unlocks */
     return { systemWake: () => wake() };

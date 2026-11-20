@@ -9,15 +9,15 @@ import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper
 
 const createTestAuthService = () =>
     ({
-        checkLock: jest.fn().mockResolvedValue(undefined),
-        lock: jest.fn(),
-        logout: jest.fn(),
-        requestFork: jest.fn(),
+        checkLock: vi.fn().mockResolvedValue(undefined),
+        lock: vi.fn(),
+        logout: vi.fn(),
+        requestFork: vi.fn(),
     }) as unknown as AuthService;
 
 export const renderPrivateApp = ({ core, ...options }: TestRenderOptions = {}) => {
     const auth = createTestAuthService();
-    const writeToClipboard = jest.fn().mockResolvedValue(true);
+    const writeToClipboard = vi.fn().mockResolvedValue(true);
 
     const result = render(
         <AuthServiceContext.Provider value={auth}>

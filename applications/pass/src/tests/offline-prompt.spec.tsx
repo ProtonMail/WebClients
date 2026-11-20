@@ -1,6 +1,3 @@
-/**
- * @jest-environment-options {"abortSignal": true}
- */
 import { screen, waitFor } from '@testing-library/react';
 import 'fake-indexeddb/auto';
 
@@ -17,7 +14,21 @@ import {
 
 import { renderApp, unmountApp } from './render.app';
 
-jest.setTimeout(90_000);
+vi.setConfig({ testTimeout: 90_000 });
+
+/** Everything but `nextTick`, `setImmediate` and `queueMicrotask`, which Node's streams and MSW rely on */
+const FAKE_TIMERS: NonNullable<NonNullable<Parameters<typeof vi.useFakeTimers>[0]>['toFake']> = [
+    'setTimeout',
+    'clearTimeout',
+    'setInterval',
+    'clearInterval',
+    'Date',
+    'performance',
+    'requestAnimationFrame',
+    'cancelAnimationFrame',
+    'requestIdleCallback',
+    'cancelIdleCallback',
+];
 
 const UNLOCK_PROMPT = /Unlock .* with your .* password/;
 
@@ -68,8 +79,8 @@ describe('Backend outage at start', () => {
     });
 
     describe('desktop', () => {
-        beforeEach(() => jest.useFakeTimers({ doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] }));
-        afterEach(() => jest.useRealTimers());
+        beforeEach(() => vi.useFakeTimers({ toFake: FAKE_TIMERS }));
+        afterEach(() => vi.useRealTimers());
 
         /** Fake timers are never advanced: the connectivity retry loop cannot resume the app
          * by itself, only the system wake can */
@@ -96,8 +107,8 @@ describe('Backend outage at start', () => {
     });
 
     describe('while the app is open', () => {
-        beforeEach(() => jest.useFakeTimers({ doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] }));
-        afterEach(() => jest.useRealTimers());
+        beforeEach(() => vi.useFakeTimers({ toFake: FAKE_TIMERS }));
+        afterEach(() => vi.useRealTimers());
 
         const expectSessionKept = () => {
             expect(localStorage.getItem('ps-0')).not.toBeNull();
