@@ -39,9 +39,14 @@ export default createOxlintConfig({
                     ],
                     patterns: [
                         {
-                            group: ['@proton/icons', '@proton/icons/*', '@proton/file-icons', '@proton/file-icons/*'],
+                            group: ['@proton/*', '@proton/**'],
                             message:
-                                'The homepage draws its own icons with components/Icon.tsx, icons.tsx and FileTypeIcon.tsx: see src/app/homepage/README.md.',
+                                'The homepage is host-independent: get host values from HomepageDependencies (useHomepageView() / useDocumentActions()), strings from useHomepageMessages(), icons from components/Icon.tsx, and Drive from @protontech/drive-sdk. See src/app/homepage/README.md.',
+                        },
+                        {
+                            group: ['~/*', '~/**'],
+                            message:
+                                'The homepage imports no code from outside its folder: copy what it needs into it, or have the host inject it through HomepageDependencies. See src/app/homepage/README.md.',
                         },
                     ],
                 }),
