@@ -2,10 +2,11 @@
 // Proton's ConfirmActionModal: its large size, close button, backdrop and buttons at both ends of the footer.
 
 import * as Ariakit from '@ariakit/react'
-import { IcCrossBig } from '@proton/icons/icons/IcCrossBig'
 import { type FormEvent, useState } from 'react'
 import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import { Button, IconButton } from './components/ui'
+import { Icon } from './components/Icon'
+import * as Icons from './components/icons'
 
 export type DeletePermanentlyDialogProps = {
   documentName: string
@@ -49,7 +50,7 @@ export function DeletePermanentlyDialog({ documentName, onDelete, onClose }: Del
             <IconButton shape="ghost" label={messages.close} className="-mr-[calc(10em/14)] -mt-[calc(9.5em/14)]" />
           }
         >
-          <IcCrossBig />
+          <Icon data={Icons.crossBig} />
         </Ariakit.DialogDismiss>
       </div>
       <Ariakit.DialogDescription className="mb-4 mt-2">

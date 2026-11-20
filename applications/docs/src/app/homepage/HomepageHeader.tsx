@@ -3,9 +3,9 @@ import { useHistory, useRouteMatch } from 'react-router'
 import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import type { HomepageMessages } from './messages/defaultHomepageMessages'
 
-import { IcMagnifier } from '@proton/icons/icons/IcMagnifier'
-
 import { Input } from './components/atoms'
+import { Icon } from './components/Icon'
+import * as Icons from './components/icons'
 import { IconButton } from './components/ui'
 import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
 import { useHomepageView } from './homepageViewContext'
@@ -126,7 +126,7 @@ function Search({ value, onChange, type, className }: SearchProps) {
         }}
         prefix={
           <span>
-            <IcMagnifier size={5} color="weak" alt={messages.search} />
+            <Icon data={Icons.magnifier} size={5} alt={messages.search} />
           </span>
         }
         value={value ?? ''}
@@ -171,7 +171,7 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
           inputClassName="h-[32px] small:h-auto"
           prefix={
             <span>
-              <IcMagnifier size={5} color="weak" alt={messages.search} />
+              <Icon data={Icons.magnifier} size={5} alt={messages.search} />
             </span>
           }
           value={value ?? ''}
@@ -182,7 +182,7 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
         <>
           <div className="grow font-[.875rem] font-semibold">{isRecentsRoute ? messages.recents : messages.trash}</div>
           <IconButton label={placeholder} shape="outline" onClick={() => setActive(true)}>
-            <IcMagnifier size={4} />
+            <Icon data={Icons.magnifier} />
           </IconButton>
         </>
       )}

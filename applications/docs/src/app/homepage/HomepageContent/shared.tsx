@@ -1,11 +1,7 @@
 import type { ProtonDocumentType } from '../utils/mimetype'
 import { clsx } from '../utils/clsx'
-import type { IconComponent } from '@proton/icons/component'
-import type { MimeIconComponent } from '@proton/file-icons/component'
-import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc'
-import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet'
-import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
-import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
+import type { IconData } from '../components/Icon'
+import * as Icons from '../components/icons'
 import type { ComponentPropsWithoutRef } from 'react'
 
 export type ContentSheetProps = ComponentPropsWithoutRef<'div'> & {
@@ -28,14 +24,9 @@ export function ContentSheet({ isBottom, ...props }: ContentSheetProps) {
 export const REFRESH_AFTER_NEW_DOCUMENT = 5000 // ms
 
 export const ICON_BY_TYPE = {
-  document: IcBrandProtonDocs,
-  spreadsheet: IcBrandProtonSheets,
-} satisfies Record<ProtonDocumentType, IconComponent>
-
-export const MIME_ICON_BY_TYPE = {
-  document: MimeProtonDoc,
-  spreadsheet: MimeProtonSheet,
-} satisfies Record<ProtonDocumentType, MimeIconComponent>
+  document: Icons.brandProtonDocs,
+  spreadsheet: Icons.brandProtonSheets,
+} satisfies Record<ProtonDocumentType, IconData>
 
 export const COLOR_BY_TYPE = {
   document: '#4695F3',

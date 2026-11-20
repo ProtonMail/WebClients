@@ -13,6 +13,7 @@ import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
 import type { HomepageMessages } from '../messages/defaultHomepageMessages'
 import { useHomepageView } from '../homepageViewContext'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
+import { Icon } from '../components/Icon'
 import * as Table from './table'
 import type { AcceptInvitation, ExtendedInvitationDetails } from '../invitationTypes'
 import { useOpenInvitedDocument } from './useOpenInvitedDocument'
@@ -92,7 +93,6 @@ export function InvitesTable(props: InvitesTableProps) {
         <Table.Body className="divide-weak divide-y">
           {visibleInvites.map((invite) => {
             const type = isProtonDocsDocument(invite.link.mimeType) ? 'document' : 'spreadsheet'
-            const DocumentTypeIcon = ICON_BY_TYPE[type]
 
             return (
               <Table.Row key={invite.invitation.invitationId} data-testid="invite-row">
@@ -102,7 +102,8 @@ export function InvitesTable(props: InvitesTableProps) {
                     title={invite.decryptedLinkName}
                   >
                     <span className="flex flex-nowrap items-center gap-3">
-                      <DocumentTypeIcon
+                      <Icon
+                        data={ICON_BY_TYPE[type]}
                         size={5}
                         className="shrink-0 text-[--icon-color]"
                         style={{ '--icon-color': COLOR_BY_TYPE[type] }}
