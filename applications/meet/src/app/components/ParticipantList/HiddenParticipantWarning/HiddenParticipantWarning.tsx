@@ -6,12 +6,12 @@ import { MeetingSideBars, openSideBar } from '@proton/meet/store/slices/uiStateS
 
 import {
     getHiddenParticipantWarningTitle,
-    useHiddenParticipantWarning,
+    useHiddenParticipantWarningCount,
 } from '../../../hooks/useHiddenParticipantWarning';
 
 export const HiddenParticipantWarning = () => {
     const dispatch = useMeetDispatch();
-    const hiddenParticipantCount = useHiddenParticipantWarning();
+    const hiddenParticipantCount = useHiddenParticipantWarningCount();
 
     if (hiddenParticipantCount === 0) {
         return null;

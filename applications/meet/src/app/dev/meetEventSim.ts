@@ -33,8 +33,9 @@ import { addParticipantRecording, removeParticipantRecording } from '@proton/mee
 import { setParticipantCountMismatchSince } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetState } from '@proton/meet/store/store';
 import { ParticipantCapabilityPermission, ParticipantEvent } from '@proton/meet/types/types';
-import { MINUTE, SECOND } from '@proton/shared/lib/constants';
+import { SECOND } from '@proton/shared/lib/constants';
 
+import { MISMATCH_WARNING_DELAY } from '../hooks/useMismatchStage';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import type { CaptionsSim } from './captionsSim';
 import { createCaptionsSim } from './captionsSim';
@@ -226,8 +227,6 @@ export const initMeetEventSim = ({
             dispatch(setIsWebsocketReconnecting(isReconnecting));
         },
 
-        // Backdates the mismatch so the warning shows at once, and only overrides the member count in the store:
-        // the next MLS group state refresh restores the real value.
         setHiddenParticipants(count) {
             const state = getState();
             const mlsGroupState = selectMlsGroupState(state);
@@ -235,7 +234,7 @@ export const initMeetEventSim = ({
                 return false;
             }
             if (count > 0) {
-                dispatch(setParticipantCountMismatchSince(Date.now() - MINUTE));
+                dispatch(setParticipantCountMismatchSince(Date.now() - MISMATCH_WARNING_DELAY));
             }
             dispatch(setMlsGroupState({ ...mlsGroupState, memberCount: selectConnectedMemberCount(state) + count }));
             return true;

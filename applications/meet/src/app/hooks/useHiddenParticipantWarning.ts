@@ -15,8 +15,7 @@ export const getHiddenParticipantWarningTitle = (count: number) => {
     );
 };
 
-/** The number of people who have access to the call but are not in it, or 0 while the warning is off. */
-export const useHiddenParticipantWarning = (): number => {
+export const useHiddenParticipantWarningCount = (): number => {
     const isHiddenParticipantWarningEnabled = useFlag('MeetHiddenParticipantWarning');
     const mismatchStage = useMismatchStage();
     const hiddenParticipantCount = useMeetSelector(selectHiddenParticipantCount);
@@ -25,5 +24,5 @@ export const useHiddenParticipantWarning = (): number => {
         return 0;
     }
 
-    return Math.max(hiddenParticipantCount, 0);
+    return hiddenParticipantCount;
 };

@@ -39,8 +39,8 @@ describe('selectHiddenParticipantCount', () => {
         expect(selectHiddenParticipantCount(createState({ memberCount: 3, humanCount: 2, agentCount: 1 }))).toBe(0);
     });
 
-    it('is negative when more participants are connected than MLS members', () => {
-        expect(selectHiddenParticipantCount(createState({ memberCount: 2, humanCount: 3 }))).toBe(-1);
+    it('is 0 when more participants are connected than MLS members', () => {
+        expect(selectHiddenParticipantCount(createState({ memberCount: 2, humanCount: 3 }))).toBe(0);
     });
 
     it('is 0 while the MLS member count is unknown', () => {
@@ -81,6 +81,14 @@ describe('participantCountMismatchListener', () => {
 
         dispatch(setSortedParticipantIdentities(['alice', 'bob']));
         expect(mismatchSince()).toBeNull();
+    });
+
+    it('also tracks a mismatch when more participants are connected than MLS members', () => {
+        const { dispatch, mismatchSince } = createStore();
+        dispatch(setSortedParticipantIdentities(['alice', 'bob']));
+
+        dispatch(setMemberCount(1));
+        expect(mismatchSince()).not.toBeNull();
     });
 
     it('does not track a mismatch while the MLS member count is unknown', () => {

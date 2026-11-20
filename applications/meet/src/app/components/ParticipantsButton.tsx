@@ -10,7 +10,10 @@ import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slic
 import isTruthy from '@proton/utils/isTruthy';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
-import { getHiddenParticipantWarningTitle, useHiddenParticipantWarning } from '../hooks/useHiddenParticipantWarning';
+import {
+    getHiddenParticipantWarningTitle,
+    useHiddenParticipantWarningCount,
+} from '../hooks/useHiddenParticipantWarning';
 
 type ParticipantCountIndicatorStatus = 'default' | 'warning' | 'danger';
 
@@ -31,7 +34,7 @@ export const useParticipantCountIndicator = () => {
     const maxParticipants = useMeetSelector(selectMaxParticipants);
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
-    const hiddenParticipantCount = useHiddenParticipantWarning();
+    const hiddenParticipantCount = useHiddenParticipantWarningCount();
 
     const getCapacityStatus = (): ParticipantCountIndicatorStatus => {
         if (!isLocalParticipantAdminOrHost && !(isGuest && instantMeeting)) {

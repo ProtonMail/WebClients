@@ -7,7 +7,7 @@ import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 const MISMATCH_INFO_DELAY = 30 * SECOND;
-const MISMATCH_WARNING_DELAY = MINUTE;
+export const MISMATCH_WARNING_DELAY = MINUTE;
 
 export enum MismatchStage {
     Hidden = 0,
