@@ -2,7 +2,6 @@ import { autoUpdater } from 'electron';
 
 import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/features';
 import { UpdateStatus } from '@proton/pass/types/desktop';
-import noop from '@proton/utils/noop';
 
 import { msix_updater } from 'proton-pass-desktop-native';
 
@@ -14,22 +13,44 @@ import { UPDATE_SOURCE_URL, getUpdateStore, setUpdateStore } from './store';
 import type { RemoteManifestResponse } from './updater';
 import { checkForUpdates } from './updater';
 
-jest.mock('electron', () => ({
+vi.mock('electron', () => ({
     app: { isPackaged: true, isReady: () => true },
-    autoUpdater: { setFeedURL: jest.fn(), on: jest.fn(), checkForUpdates: jest.fn() },
+    autoUpdater: { setFeedURL: vi.fn(), on: vi.fn(), checkForUpdates: vi.fn() },
 }));
 
-jest.mock('../../utils/logger', () => ({ log: noop, debug: noop, info: noop, warn: noop, error: noop }));
+vi.mock('../../utils/logger', () => {
+    const noop = () => {};
+    return { default: { log: noop, debug: noop, info: noop, warn: noop, error: noop } };
+});
 
-jest.mock('../../utils/platform', () => ({
-    isMac: jest.fn(() => false),
-    isWindows: jest.fn(() => false),
-    isLinux: jest.fn(() => false),
-    isProdEnv: jest.fn(() => true),
+vi.mock('../../store', () => {
+    const data = new Map<string, unknown>();
+    return {
+        store: {
+            get: (key: string) => data.get(key),
+            set: (key: string, value: unknown) => {
+                data.set(key, value);
+            },
+            delete: (key: string) => {
+                data.delete(key);
+            },
+            clear: () => data.clear(),
+            onDidChange: () => () => {},
+        },
+    };
+});
+
+vi.mock('../env', () => ({ ARCH: 'universal' }));
+
+vi.mock('../../utils/platform', () => ({
+    isMac: vi.fn(() => false),
+    isWindows: vi.fn(() => false),
+    isLinux: vi.fn(() => false),
+    isProdEnv: vi.fn(() => true),
 }));
 
-jest.mock('proton-pass-desktop-native', () => ({
-    msix_updater: { installUpdate: jest.fn() },
+vi.mock('proton-pass-desktop-native', () => ({
+    msix_updater: { installUpdate: vi.fn() },
 }));
 
 const getMockSession = (version: RemoteManifestResponse, flags: FeatureFlagsResponse): any => ({
@@ -42,9 +63,9 @@ const getMockSession = (version: RemoteManifestResponse, flags: FeatureFlagsResp
 });
 
 const setOs = (os: 'windows' | 'macos' | 'linux') => {
-    (isMac as jest.Mock).mockImplementation(() => os === 'macos');
-    (isWindows as jest.Mock).mockImplementation(() => os === 'windows');
-    (isLinux as jest.Mock).mockImplementation(() => os === 'linux');
+    vi.mocked(isMac).mockImplementation(() => os === 'macos');
+    vi.mocked(isWindows).mockImplementation(() => os === 'windows');
+    vi.mocked(isLinux).mockImplementation(() => os === 'linux');
 };
 
 const check = async (versions: RemoteManifestResponse['Releases'], featureFlag = true) => {
@@ -64,8 +85,8 @@ const check = async (versions: RemoteManifestResponse['Releases'], featureFlag =
 describe('Electron updater', () => {
     beforeEach(() => {
         store.set('update', { beta: false, distribution: 0, status: UpdateStatus.Idle, newVersion: null });
-        (isProdEnv as jest.Mock).mockImplementation(() => true);
-        jest.clearAllMocks();
+        vi.mocked(isProdEnv).mockImplementation(() => true);
+        vi.clearAllMocks();
 
         // Default to macos version
         setOs('macos');
@@ -256,7 +277,7 @@ describe('Electron updater', () => {
             url: `${UPDATE_SOURCE_URL}/RELEASES.json`,
         });
 
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         // running in the same test to ensure it changes dynamically
         store.set('update', { beta: true });
@@ -314,7 +335,7 @@ describe('Electron updater', () => {
         });
 
         it('should set status to UpdateReady when update is available', async () => {
-            (autoUpdater.checkForUpdates as jest.Mock).mockImplementation(() => {
+            vi.mocked(autoUpdater.checkForUpdates).mockImplementation(() => {
                 setUpdateStore({ status: UpdateStatus.UpdateReady });
             });
             await check([{ Version: '1.1.0', RolloutPercentage: 1.0, CategoryName: 'Stable', File: [] }]);
@@ -330,7 +351,7 @@ describe('Electron updater', () => {
         it('should re-check and supersede a staged update when a newer one is available', async () => {
             // Download staged but not yet installed: a re-check (eg. after toggling beta) must still run
             store.set('update', { status: UpdateStatus.UpdateReady });
-            (autoUpdater.checkForUpdates as jest.Mock).mockImplementation(() => {
+            vi.mocked(autoUpdater.checkForUpdates).mockImplementation(() => {
                 setUpdateStore({ status: UpdateStatus.UpdateReady });
             });
 

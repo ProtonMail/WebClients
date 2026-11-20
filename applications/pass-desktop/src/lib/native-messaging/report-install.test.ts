@@ -2,10 +2,10 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { reportNativeMessagingInstall } from './report-install';
 
-jest.mock('@proton/pass/utils/logger', () => ({ logger: { info: jest.fn(), warn: jest.fn() } }));
+vi.mock('@proton/pass/utils/logger', () => ({ logger: { info: vi.fn(), warn: vi.fn() } }));
 
 describe('reportNativeMessagingInstall', () => {
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     test('logs each browser outcome in the app logs', () => {
         reportNativeMessagingInstall([
