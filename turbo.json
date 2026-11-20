@@ -1,6 +1,7 @@
 {
     "agentGuidance": false,
     "$schema": "https://turbo.build/schema.json",
+    "globalDependencies": ["tsconfig.base.json", ".browserslistrc"],
     "globalEnv": ["APPLICATION", "CI_COMMIT_TAG"],
     "globalPassThroughEnv": [
         "CI_COMMIT_REF_NAME",
@@ -37,6 +38,7 @@
             "outputs": ["coverage/**"]
         },
         "lint": {
+            "dependsOn": ["transit"],
             "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/oxlint.local.mts"]
         },
         "i18n:validate": {},
