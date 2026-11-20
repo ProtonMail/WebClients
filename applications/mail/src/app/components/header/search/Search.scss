@@ -98,10 +98,7 @@ im.$media-expressions: $media-expressions;
 
 	/* Scrollable insides of the dropdown */
 	&-content {
-		block-size: calc(
-			var(--height) * 1px
-		); // The min size can't be greater than the remaining space when the dropdown is positioned
-
+		block-size: calc(var(--height) * 1px); // The min size can't be greater than the remaining space when the dropdown is positioned
 		min-inline-size: min(var(--min-width, 1.5em), var(--max-width-bounds));
 		min-block-size: min(var(--min-height, 1em), var(--max-height-bounds));
 		overflow: auto;
@@ -139,6 +136,18 @@ im.$media-expressions: $media-expressions;
 			block-size: rem(3);
 			flex: 0 0 rem(3);
 			background: var(--background-norm);
+		}
+	}
+}
+
+// override the composer addresses container to have the same height as the field ONLY if it's empty
+[name='advanced-search'] {
+	.advanced-search-field > .field:not(:has([placeholder=''])) {
+		padding-inline-start: em(12);
+		block-size: rem($default-height-fields) !important;
+
+		& > .h-auto {
+			margin-block: 0;
 		}
 	}
 }

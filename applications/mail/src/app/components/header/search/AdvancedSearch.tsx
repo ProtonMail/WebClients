@@ -355,7 +355,7 @@ const AdvancedSearch = ({
                                 onChange={(to) => updateModel({ ...model, to })}
                                 placeholder={c('Placeholder').t`Name or email address`}
                                 anchorRef={toListAnchorRef}
-                                classname="flex-1"
+                                classname="flex-1 advanced-search-field"
                             />
                         </div>
                         <div className="mb-2">
