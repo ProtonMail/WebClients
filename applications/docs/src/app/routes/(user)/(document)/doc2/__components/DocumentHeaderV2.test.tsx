@@ -10,24 +10,24 @@ import type { DocumentRole } from '../__utils/getDocumentRole'
 import { DocumentHeaderV2 } from './DocumentHeaderV2'
 
 // The user menu and the promo banner need the account store; the title menu has its own tests
-jest.mock('@proton/components/containers/heading/UserDropdown', () => () => <div>User menu</div>)
-jest.mock('~/components/document/DocumentViewer/WorkspacePromoBanner', () => ({ WorkspacePromoBanner: () => null }))
-jest.mock('./DocumentTitleMenu', () => ({ DocumentTitleMenu: () => <div>Title menu</div> }))
-const mockShowSharingModal = jest.fn()
-jest.mock('@proton/drive/public/sharingModal', () => ({
+vi.mock('@proton/components/containers/heading/UserDropdown', () => ({ default: () => <div>User menu</div> }))
+vi.mock('~/components/document/DocumentViewer/WorkspacePromoBanner', () => ({ WorkspacePromoBanner: () => null }))
+vi.mock('./DocumentTitleMenu', () => ({ DocumentTitleMenu: () => <div>Title menu</div> }))
+const mockShowSharingModal = vi.fn()
+vi.mock('@proton/drive/public/sharingModal', () => ({
   useSharingModal: () => ({ sharingModal: <div>Sharing modal</div>, showSharingModal: mockShowSharingModal }),
 }))
 const mockDrive = { name: 'drive' }
-jest.mock('@proton/drive/sdk', () => ({ getDrive: () => mockDrive }))
-jest.mock('~/utils/application-context', () => ({ useApplication: () => ({ logger: { warn: jest.fn() } }) }))
+vi.mock('@proton/drive/sdk', () => ({ getDrive: () => mockDrive }))
+vi.mock('~/utils/application-context', () => ({ useApplication: () => ({ logger: { warn: vi.fn() } }) }))
 
 // The atoms Tooltip's default open delay
 const TOOLTIP_OPEN_DELAY_MS = 1000
 
 describe('DocumentHeaderV2', () => {
   afterEach(() => {
-    jest.useRealTimers()
-    jest.clearAllMocks()
+    vi.useRealTimers()
+    vi.clearAllMocks()
   })
 
   test('links to Docs home, and holds the title menu and the user menu', () => {
@@ -59,11 +59,9 @@ describe('DocumentHeaderV2', () => {
       expect(screen.getByTestId('status-container')).not.toHaveTextContent('View only')
       expect(screen.getByTestId('comments-button')).toBeDisabled()
 
-      jest.useFakeTimers()
-      await userEvent
-        .setup({ advanceTimers: jest.advanceTimersByTime })
-        .hover(screen.getByTestId('comments-button-stub'))
-      act(() => jest.advanceTimersByTime(TOOLTIP_OPEN_DELAY_MS))
+      vi.useFakeTimers()
+      await userEvent.setup({ advanceTimers: vi.advanceTimersByTime }).hover(screen.getByTestId('comments-button-stub'))
+      act(() => vi.advanceTimersByTime(TOOLTIP_OPEN_DELAY_MS))
       expect(screen.getByRole('tooltip')).toHaveTextContent('Comments are not available yet')
     },
   )
@@ -85,10 +83,10 @@ describe('DocumentHeaderV2', () => {
 
   test("shows the users' avatars, and clicking one has the editor scroll to that user's cursor", async () => {
     const editorInvoker = {
-      setTableOfContentsVisible: jest.fn(),
-      getYDocAsJSON: jest.fn(),
-      getCurrentEditorState: jest.fn(),
-      syncEvent: jest.fn(async () => {}),
+      setTableOfContentsVisible: vi.fn(),
+      getYDocAsJSON: vi.fn(),
+      getCurrentEditorState: vi.fn(),
+      syncEvent: vi.fn(async () => {}),
     }
     const users = participants(2)
     render(headerWithParticipants('Editor', users, editorInvoker))
@@ -103,7 +101,7 @@ describe('DocumentHeaderV2', () => {
 })
 
 describe('DocumentHeaderV2 sharing', () => {
-  afterEach(() => jest.clearAllMocks())
+  afterEach(() => vi.clearAllMocks())
 
   test('an Admin gets the Share button, which opens the Drive sharing modal on the document', async () => {
     renderHeader('Admin')
@@ -150,11 +148,11 @@ function headerElement(role: DocumentRole, status?: ReactNode) {
         participants={[]}
         editorInvoker={undefined}
         exportInvoker={undefined}
-        wordCount={{ isShown: false, setIsShown: jest.fn() }}
+        wordCount={{ isShown: false, setIsShown: vi.fn() }}
         trashState="not_trashed"
         isCreatingSpreadsheet={false}
         isMakingACopy={false}
-        onFileMenuAction={jest.fn()}
+        onFileMenuAction={vi.fn()}
         status={status}
       />
     </ConfigContext.Provider>
@@ -191,11 +189,11 @@ function headerWithParticipants(
         participants={activeParticipants}
         editorInvoker={editorInvoker}
         exportInvoker={undefined}
-        wordCount={{ isShown: false, setIsShown: jest.fn() }}
+        wordCount={{ isShown: false, setIsShown: vi.fn() }}
         trashState="not_trashed"
         isCreatingSpreadsheet={false}
         isMakingACopy={false}
-        onFileMenuAction={jest.fn()}
+        onFileMenuAction={vi.fn()}
       />
     </ConfigContext.Provider>
   )

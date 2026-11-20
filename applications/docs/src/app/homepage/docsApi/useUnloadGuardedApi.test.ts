@@ -12,7 +12,7 @@ function dispatchBeforeUnload() {
 
 describe('useUnloadGuardedApi', () => {
   test('passes the request to the injected api and resolves with its response', async () => {
-    const api = jest.fn().mockResolvedValue({ RecentDocuments: [] })
+    const api = vi.fn().mockResolvedValue({ RecentDocuments: [] })
     const { result } = renderHook(() => useUnloadGuardedApi(api))
 
     await expect(result.current(request)).resolves.toEqual({ RecentDocuments: [] })
@@ -21,7 +21,7 @@ describe('useUnloadGuardedApi', () => {
 
   test('blocks unload while a request is pending', async () => {
     let resolve!: (value: unknown) => void
-    const api = jest.fn().mockReturnValue(new Promise((r) => (resolve = r)))
+    const api = vi.fn().mockReturnValue(new Promise((r) => (resolve = r)))
     const { result } = renderHook(() => useUnloadGuardedApi(api))
 
     const pending = result.current(request)
@@ -35,7 +35,7 @@ describe('useUnloadGuardedApi', () => {
   })
 
   test('stops blocking unload when a request fails', async () => {
-    const api = jest.fn().mockRejectedValue(new Error('Network error'))
+    const api = vi.fn().mockRejectedValue(new Error('Network error'))
     const { result } = renderHook(() => useUnloadGuardedApi(api))
 
     await expect(result.current(request)).rejects.toThrow('Network error')
@@ -43,7 +43,7 @@ describe('useUnloadGuardedApi', () => {
   })
 
   test('removes the unload listener on unmount', () => {
-    const api = jest.fn().mockReturnValue(new Promise(() => {}))
+    const api = vi.fn().mockReturnValue(new Promise(() => {}))
     const { result, unmount } = renderHook(() => useUnloadGuardedApi(api))
 
     void result.current(request)

@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/vitest'
 import * as Ariakit from '@ariakit/react'
 import { RecentDocumentsItem } from '../../../recentDocumentsItem'
 import { ServerTime } from '../../../utils/serverTime'
@@ -26,9 +26,9 @@ const recentDocument = RecentDocumentsItem.create({
 
 function renderWithActions(node: ReactNode, actions: Partial<DocumentActionsContextValue>) {
   const value = {
-    trash: jest.fn(),
-    restore: jest.fn(),
-    deletePermanently: jest.fn(),
+    trash: vi.fn(),
+    restore: vi.fn(),
+    deletePermanently: vi.fn(),
     ...actions,
   } as unknown as DocumentActionsContextValue
   render(
@@ -64,7 +64,7 @@ describe.each([
 ] as const)('$name', ({ button, action, label, loadingLabel }) => {
   test('shows the loading label and disables the button while the action runs', async () => {
     const running = deferred()
-    const run = jest.fn().mockReturnValue(running.promise)
+    const run = vi.fn().mockReturnValue(running.promise)
     renderWithActions(button, { [action]: run })
 
     await userEvent.click(screen.getByRole('menuitem', { name: label }))
@@ -80,8 +80,8 @@ describe.each([
 
 describe('DeletePermanentlyButton', () => {
   test('closes the menu before calling deletePermanently', async () => {
-    const close = jest.fn()
-    const deletePermanently = jest.fn().mockResolvedValue(undefined)
+    const close = vi.fn()
+    const deletePermanently = vi.fn().mockResolvedValue(undefined)
     renderWithActions(<DeletePermanentlyButton currentDocument={recentDocument} close={close} />, {
       deletePermanently,
     })

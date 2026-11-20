@@ -42,7 +42,7 @@ describe('DocumentSizeLimitModal', () => {
 
   test('offers to download a copy as docx once the editor shows the document', async () => {
     const fake = createFakeSession()
-    const onDownloadCopy = jest.fn()
+    const onDownloadCopy = vi.fn()
     render(<DocumentSizeLimitModal session={fake.session} onDownloadCopy={onDownloadCopy} />)
 
     act(() => fake.emit('refusal', sizeLimitReached))

@@ -13,21 +13,21 @@ import { ApplicationProvider } from '~/utils/application-context'
 
 import { useRealtimeClient } from './useRealtimeClient'
 
-jest.mock('@proton/account/addresses/hooks')
-jest.mock('@proton/account/addressKeys/hooks')
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+vi.mock('@proton/account/addresses/hooks')
+vi.mock('@proton/account/addressKeys/hooks')
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
 
-const api = jest.fn()
-const getNodeHierarchy = jest.fn()
-const getDocsKey = jest.fn()
-const getAddresses = jest.fn()
-const getAddressKeys = jest.fn()
+const api = vi.fn()
+const getNodeHierarchy = vi.fn()
+const getDocsKey = vi.fn()
+const getAddresses = vi.fn()
+const getAddressKeys = vi.fn()
 
 const config = { API_URL: '/api', APP_NAME: 'proton-docs', APP_VERSION: '0.0.2.89' } as ProtonConfig
-const application = { logger: { info: jest.fn() } } as unknown as ComponentProps<
+const application = { logger: { info: vi.fn() } } as unknown as ComponentProps<
   typeof ApplicationProvider
 >['application']
 
@@ -45,12 +45,12 @@ const nodeMeta = { volumeId: 'volume-1', linkId: 'link-1' }
 const memberPrivateKey = { getFingerprint: () => 'member-key' }
 
 beforeEach(() => {
-  jest.mocked(getDrive).mockReturnValue({
+  vi.mocked(getDrive).mockReturnValue({
     getNodeHierarchy,
     experimental: { getDocsKey },
   } as unknown as ReturnType<typeof getDrive>)
-  jest.mocked(useGetAddresses).mockReturnValue(getAddresses)
-  jest.mocked(useGetAddressKeys).mockReturnValue(getAddressKeys)
+  vi.mocked(useGetAddresses).mockReturnValue(getAddresses)
+  vi.mocked(useGetAddressKeys).mockReturnValue(getAddressKeys)
   getNodeHierarchy.mockResolvedValue([
     { uid: generateNodeUid('volume-1', 'shared-folder'), deprecatedShareId: 'root-share-id' },
     { uid: generateNodeUid('volume-1', 'link-1') },
@@ -65,7 +65,7 @@ beforeEach(() => {
 
 afterEach(() => {
   cleanup()
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 })
 
 describe('useRealtimeClient', () => {

@@ -6,19 +6,19 @@ import { type DriveEvent, type NodeEntity, getDrive } from '@proton/drive/sdk'
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 import { useLiveDocumentNode } from './useLiveDocumentNode'
 
-const mockInitialize = jest.fn()
-const mockReset = jest.fn()
-jest.mock('~/drive-sdk/event-subscriber', () => ({
+const mockInitialize = vi.fn()
+const mockReset = vi.fn()
+vi.mock('~/drive-sdk/event-subscriber', () => ({
   getEventSubscriber: () => ({ initialize: mockInitialize, reset: mockReset }),
 }))
-jest.mock('@proton/drive/sdk', () => ({ ...jest.requireActual('@proton/drive/sdk'), getDrive: jest.fn() }))
+vi.mock('@proton/drive/sdk', async () => ({ ...(await vi.importActual('@proton/drive/sdk')), getDrive: vi.fn() }))
 
-const getNode = jest.fn()
+const getNode = vi.fn()
 const NODE = { uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT', treeEventScopeId: 'SCOPE' } as NodeEntity
 const MOVED_NODE = { ...NODE, parentUid: 'VOLUME~OTHER' } as NodeEntity
 
 const application = {
-  logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
+  logger: { info: vi.fn(), warn: vi.fn(), error: vi.fn() },
 } as unknown as ApplicationProviderProps['application']
 const wrapper = ({ children }: { children: ReactNode }) => (
   <ApplicationProvider application={application}>{children}</ApplicationProvider>
@@ -27,8 +27,8 @@ const wrapper = ({ children }: { children: ReactNode }) => (
 describe('useLiveDocumentNode', () => {
   // Not in afterEach: the testing library unmounts the previous test's hook after it, which resets the subscriber
   beforeEach(() => {
-    jest.clearAllMocks()
-    jest.mocked(getDrive).mockReturnValue({ getNode } as unknown as ReturnType<typeof getDrive>)
+    vi.clearAllMocks()
+    vi.mocked(getDrive).mockReturnValue({ getNode } as unknown as ReturnType<typeof getDrive>)
     mockInitialize.mockResolvedValue(undefined)
     getNode.mockResolvedValue(MOVED_NODE)
   })

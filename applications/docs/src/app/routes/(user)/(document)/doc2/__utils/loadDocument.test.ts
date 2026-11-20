@@ -19,33 +19,33 @@ import {
 import { DocsLoadMark } from './loadMarks'
 import { docsLoadMarks, withNodePerformance } from './loadMarksTesting'
 
-jest.mock('@proton/shared/lib/env', () => ({
-  ...jest.requireActual('@proton/shared/lib/env'),
-  isDevOrBlack: jest.fn(() => false),
+vi.mock('@proton/shared/lib/env', async () => ({
+  ...(await vi.importActual('@proton/shared/lib/env')),
+  isDevOrBlack: vi.fn(() => false),
 }))
 
 /** Every call doc2 makes to the editor, in order */
 const mockEditorCalls: string[] = []
 let mockClientHandler: ClientHandler
-const mockDestroyBridge = jest.fn()
-const mockBridgeBuilt = jest.fn()
+const mockDestroyBridge = vi.fn()
+const mockBridgeBuilt = vi.fn()
 const mockEditor = {
-  receiveMessage: jest.fn(async ({ content, origin }: { content: Uint8Array<ArrayBuffer>; origin?: unknown }) => {
+  receiveMessage: vi.fn(async ({ content, origin }: { content: Uint8Array<ArrayBuffer>; origin?: unknown }) => {
     mockEditorCalls.push(`receiveMessage:${content[0]}${origin === undefined ? '' : ':base'}`)
   }),
-  initializeEditor: jest.fn(async (_id: string, _address: string, role: string) => {
+  initializeEditor: vi.fn(async (_id: string, _address: string, role: string) => {
     mockEditorCalls.push(`initializeEditor:${role}`)
   }),
-  showEditor: jest.fn(async () => {
+  showEditor: vi.fn(async () => {
     mockEditorCalls.push('showEditor')
   }),
-  changeLockedState: jest.fn(async (locked: boolean) => {
+  changeLockedState: vi.fn(async (locked: boolean) => {
     mockEditorCalls.push(locked ? 'lock' : 'unlock')
   }),
-  broadcastPresenceState: jest.fn(async () => {}),
+  broadcastPresenceState: vi.fn(async () => {}),
 }
-jest.mock('./ClientEditorBridge', () => ({
-  ClientEditorBridge: jest.fn().mockImplementation((_frame, clientHandler: ClientHandler) => {
+vi.mock('./ClientEditorBridge', () => ({
+  ClientEditorBridge: vi.fn().mockImplementation(function (_frame: unknown, clientHandler: ClientHandler) {
     mockBridgeBuilt()
     mockClientHandler = clientHandler
     return { editorInvoker: mockEditor, destroy: mockDestroyBridge }
@@ -95,18 +95,18 @@ function startLoad({
 }: { role?: keyof typeof ROLES; frameReady?: boolean; readHierarchy?: () => Promise<unknown> } = {}) {
   const fake = createFakeSession()
   fake.mocks.getBaseState.mockReturnValue({ commitId: 'commit-1', updates: BASE_UPDATES.map(update) })
-  const drive = { getNodeHierarchy: jest.fn((_uid: string) => readHierarchy()) }
+  const drive = { getNodeHierarchy: vi.fn((_uid: string) => readHierarchy()) }
   const prefetch = {
     nodeMeta: { volumeId: 'VOLUME', linkId: 'LINK' },
-    confirm: jest.fn(),
-    end: jest.fn(() => ({ reads: 3, served: 3 })),
+    confirm: vi.fn(),
+    end: vi.fn(() => ({ reads: 3, served: 3 })),
   }
   const client = {
-    createSession: jest.fn((_config: unknown) => fake.session),
-    prefetchBootstrap: jest.fn((_nodeMeta: unknown) => prefetch),
+    createSession: vi.fn((_config: unknown) => fake.session),
+    prefetchBootstrap: vi.fn((_nodeMeta: unknown) => prefetch),
   }
-  const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn(), debug: jest.fn() }
-  const sendEditorBasics = jest.fn(() => {
+  const logger = { info: vi.fn(), warn: vi.fn(), error: vi.fn(), debug: vi.fn() }
+  const sendEditorBasics = vi.fn(() => {
     mockEditorCalls.push('basics')
   })
   const deps = {
@@ -118,11 +118,11 @@ function startLoad({
     sendEditorBasics,
     bridgeHandlers: {
       isFlagEnabled: () => false,
-      onWordCount: jest.fn(),
-      showModal: jest.fn(),
-      onFileMenuAction: jest.fn(),
-      onPresenceUpdate: jest.fn(),
-      fetchExternalImageAsBase64: jest.fn(),
+      onWordCount: vi.fn(),
+      showModal: vi.fn(),
+      onFileMenuAction: vi.fn(),
+      onPresenceUpdate: vi.fn(),
+      fetchExternalImageAsBase64: vi.fn(),
       logger,
     },
   } as unknown as LoaderDeps
@@ -182,14 +182,14 @@ const flush = () => new Promise((resolve) => setTimeout(resolve, 0))
 describe('loadDocument', () => {
   afterEach(() => {
     mockEditorCalls.length = 0
-    jest.clearAllMocks()
+    vi.clearAllMocks()
     mockEditor.changeLockedState.mockImplementation(async (locked: boolean) => {
       mockEditorCalls.push(locked ? 'lock' : 'unlock')
     })
     mockEditor.receiveMessage.mockImplementation(async ({ content, origin }) => {
       mockEditorCalls.push(`receiveMessage:${content[0]}${origin === undefined ? '' : ':base'}`)
     })
-    jest.useRealTimers()
+    vi.useRealTimers()
   })
 
   test('runs the steps in order, each once, and reveals the document', async () => {
@@ -305,7 +305,7 @@ describe('loadDocument', () => {
   })
 
   test('squashes at 50 document updates on dev and black, as /doc does', async () => {
-    jest.mocked(isDevOrBlack).mockReturnValueOnce(true)
+    vi.mocked(isDevOrBlack).mockReturnValueOnce(true)
     const load = startLoad()
 
     await waitFor(() =>
@@ -359,12 +359,12 @@ describe('loadDocument', () => {
     })
 
     test(`fails the editor when it is not there within ${EDITOR_FRAME_READY_TIMEOUT_MS} ms of its step`, async () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
       const load = startLoad({ frameReady: false })
-      await jest.advanceTimersByTimeAsync(0)
+      await vi.advanceTimersByTimeAsync(0)
       expect(load.steps()).toContain('frame')
 
-      await jest.advanceTimersByTimeAsync(EDITOR_FRAME_READY_TIMEOUT_MS)
+      await vi.advanceTimersByTimeAsync(EDITOR_FRAME_READY_TIMEOUT_MS)
 
       expect(load.latest()).toEqual({ name: 'failed', reason: 'editorFailed', session: load.fake.session })
       expect(load.logger.error).toHaveBeenCalledWith(
@@ -456,7 +456,7 @@ describe('loadDocument', () => {
   })
 
   test('opens in a browser that places no marks', async () => {
-    const spy = jest.spyOn(globalThis, 'performance', 'get').mockReturnValue(undefined as unknown as Performance)
+    const spy = vi.spyOn(globalThis, 'performance', 'get').mockReturnValue(undefined as unknown as Performance)
 
     const load = await startRevealed()
 

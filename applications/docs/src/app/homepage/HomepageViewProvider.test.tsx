@@ -292,12 +292,12 @@ function createDocumentItem(name: string, overrides: Partial<RecentDocumentsItem
 }
 
 function renderProvider(path: string, { myFilesRootFolder = new Promise<never>(() => {}) } = {}) {
-  const api = jest.fn().mockResolvedValue({ RecentDocuments: [], Code: '1000' })
+  const api = vi.fn().mockResolvedValue({ RecentDocuments: [], Code: '1000' })
   // No nodes: the recents and the trash are empty.
   const iterateNodes = async function* () {
     yield* []
   }
-  const iterateTrashedNodes = jest.fn(iterateNodes)
+  const iterateTrashedNodes = vi.fn(iterateNodes)
   const drive = {
     getMyFilesRootFolder: () => myFilesRootFolder,
     iterateNodes,
@@ -310,8 +310,8 @@ function renderProvider(path: string, { myFilesRootFolder = new Promise<never>((
       return () => {}
     },
   }
-  const reportTitle = jest.fn()
-  const createNotification = jest.fn()
+  const reportTitle = vi.fn()
+  const createNotification = vi.fn()
   let history: ReturnType<typeof useHistory>
   function CaptureHistory() {
     history = useHistory()
@@ -336,16 +336,16 @@ function renderProvider(path: string, { myFilesRootFolder = new Promise<never>((
         <HostMessages>
           <HomepageViewProvider
             drive={drive}
-            eventSubscriber={{ initialize: jest.fn(), reset: jest.fn(), subscribeToSharedDocument: jest.fn() }}
+            eventSubscriber={{ initialize: vi.fn(), reset: vi.fn(), subscribeToSharedDocument: vi.fn() }}
             coreEventSubscriber={coreEventSubscriber}
             pendingInvitations={[]}
             recentlyAcceptedInvitations={[]}
-            acceptInvitation={jest.fn()}
-            declineInvitation={jest.fn()}
-            reloadInvitations={jest.fn()}
+            acceptInvitation={vi.fn()}
+            declineInvitation={vi.fn()}
+            reloadInvitations={vi.fn()}
             api={api}
-            logger={{ debug: jest.fn(), error: jest.fn() }}
-            reportTelemetry={jest.fn()}
+            logger={{ debug: vi.fn(), error: vi.fn() }}
+            reportTelemetry={vi.fn()}
             createNotification={createNotification}
             getAppHref={(path) => path}
             dateFormat={{ localeCode: 'en-US', hourCycle: 'h12' }}
@@ -376,7 +376,7 @@ function renderProvider(path: string, { myFilesRootFolder = new Promise<never>((
 }
 
 // Kept the same objects across renders, as the provider asks.
-const ERROR_TRACKING = { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true }
+const ERROR_TRACKING = { traceError: vi.fn(), addBreadcrumb: vi.fn(), isReportable: () => true }
 const FEATURE_FLAGS = { bulkTrash: false, bulkMove: false }
 
 describe('HomepageViewProvider', () => {

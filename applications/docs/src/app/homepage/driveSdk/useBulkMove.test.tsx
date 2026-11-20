@@ -8,10 +8,10 @@ import { HomepageViewContext, type HomepageViewValue } from '../homepageViewCont
 import { useBulkMove } from './useBulkMove'
 import { TelemetryEvent } from '../utils/telemetry'
 
-const openMoveItemsModal = jest.fn()
+const openMoveItemsModal = vi.fn()
 
-const reportTelemetry = jest.fn()
-const updateMovedDocuments = jest.fn()
+const reportTelemetry = vi.fn()
+const updateMovedDocuments = vi.fn()
 
 function Wrapper({ children }: { children: ReactNode }) {
   return (
@@ -44,7 +44,7 @@ const renderBulkMove = () => renderHook(() => useBulkMove({ openMoveItemsModal }
 
 describe('useBulkMove', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('opens one move modal for every document and reports telemetry per document', () => {
@@ -62,7 +62,7 @@ describe('useBulkMove', () => {
   })
 
   it('moves only the documents the move modal reports as moved', () => {
-    const onMoved = jest.fn()
+    const onMoved = vi.fn()
     const { result } = renderBulkMove()
     act(() => result.current.move([d1, d2], onMoved))
     const [{ onMoved: onModalMoved }] = openMoveItemsModal.mock.calls[0]

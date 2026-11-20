@@ -2,7 +2,7 @@ import { DateFormatter } from './dateFormatter'
 
 describe('DateFormatter', () => {
   beforeAll(() => {
-    jest.useFakeTimers().setSystemTime(new Date('2023-07-08'))
+    vi.useFakeTimers().setSystemTime(new Date('2023-07-08'))
   })
   describe('formatDate', () => {
     it.each([
@@ -44,7 +44,7 @@ describe('DateFormatter', () => {
       [new Date('2023-07-08T00:00:00'), new Date('2023-07-08T13:00:00'), '12:00 AM'],
       [new Date('2023-07-07T12:00:00'), new Date('2023-07-08T13:00:00'), 'yesterday'],
     ])('format %s at %s to %s', (date, now, formatted) => {
-      jest.setSystemTime(now)
+      vi.setSystemTime(now)
       const dateFormatter = new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' })
       expect(dateFormatter.formatDateOrTimeIfToday(date, 'Just now')).toBe(formatted)
     })

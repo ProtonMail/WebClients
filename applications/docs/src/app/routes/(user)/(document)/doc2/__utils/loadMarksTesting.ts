@@ -1,13 +1,14 @@
+import type { MockInstance } from 'vitest'
 import { performance as nodePerformance } from 'node:perf_hooks'
 
 /**
  * For tests: in each test of the calling `describe`, `performance` is Node's, cleared, since jsdom's has no User Timing
  * marks or measures. Returns a getter for the spy, so that a test can swap in another `performance`.
  */
-export function withNodePerformance(): () => jest.SpyInstance {
-  let performanceSpy: jest.SpyInstance
+export function withNodePerformance(): () => MockInstance {
+  let performanceSpy: MockInstance
   beforeEach(() => {
-    performanceSpy = jest
+    performanceSpy = vi
       .spyOn(globalThis, 'performance', 'get')
       .mockReturnValue(nodePerformance as unknown as Performance)
     nodePerformance.clearMarks()

@@ -11,7 +11,7 @@ import { createFakeSession } from './createFakeSession'
 import type { EditorInvoker } from './EditorInvoker'
 import { usePresenceBridge } from './usePresenceBridge'
 
-const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn() }
+const logger = { info: vi.fn(), warn: vi.fn(), error: vi.fn() }
 const application = { logger } as unknown as ApplicationProviderProps['application']
 const wrapper = ({ children }: { children: ReactNode }) => (
   <ApplicationProvider application={application}>{children}</ApplicationProvider>
@@ -22,7 +22,7 @@ const ALICE = { name: 'Alice', color: '#f00', anchorPos: null, focusPos: null, a
 const BOB = { name: 'Bob', color: '#00f', anchorPos: null, focusPos: null, awarenessData: { userId: 'bob' } }
 
 function createInvoker(getClientId: () => Promise<number> = async () => EDITOR_ID) {
-  return { getClientId: jest.fn(getClientId), receiveMessage: jest.fn(async (_message: RtsMessagePayload) => {}) }
+  return { getClientId: vi.fn(getClientId), receiveMessage: vi.fn(async (_message: RtsMessagePayload) => {}) }
 }
 
 function renderBridge(session: Session | undefined, invoker: ReturnType<typeof createInvoker> | undefined) {
@@ -44,7 +44,7 @@ function fedToEditor(invoker: ReturnType<typeof createInvoker>) {
 }
 
 describe('usePresenceBridge', () => {
-  afterEach(() => jest.clearAllMocks())
+  afterEach(() => vi.clearAllMocks())
 
   test("sets the editor's own entry as the session's presence, only when it changes", async () => {
     const fake = createFakeSession()

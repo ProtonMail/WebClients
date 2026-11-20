@@ -5,7 +5,7 @@ import { withNotificationAction } from './withNotificationAction'
 
 describe('withNotificationAction', () => {
   test('passes a notification without an action through unchanged', () => {
-    const createNotification = jest.fn()
+    const createNotification = vi.fn()
 
     withNotificationAction(createNotification)({ type: 'error', text: 'Failed to trash document' })
 
@@ -13,8 +13,8 @@ describe('withNotificationAction', () => {
   })
 
   test("renders the action as Proton's notification button after the text", async () => {
-    const createNotification = jest.fn()
-    const onClick = jest.fn()
+    const createNotification = vi.fn()
+    const onClick = vi.fn()
 
     withNotificationAction(createNotification)({
       type: 'success',

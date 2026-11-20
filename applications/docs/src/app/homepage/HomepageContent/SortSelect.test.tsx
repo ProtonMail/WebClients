@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/vitest'
 import { act, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { HomepageViewContext, type HomepageViewValue, type RecentsSort } from '../homepageViewContext'
@@ -6,8 +6,8 @@ import { SortSelect } from './SortSelect'
 import { TelemetryEvent } from '../utils/telemetry'
 import type { ReactNode } from 'react'
 
-const setRecentsSort = jest.fn()
-const reportTelemetry = jest.fn()
+const setRecentsSort = vi.fn()
+const reportTelemetry = vi.fn()
 
 function renderSortSelect(sort: RecentsSort = 'viewed') {
   const value = {
@@ -22,7 +22,7 @@ function renderSortSelect(sort: RecentsSort = 'viewed') {
   })
   const trigger = screen.getByRole('button', { name: 'Change sort order' })
   // JSDOM has no layout; Ariakit checks that what it focuses is visible, including the menu it mounts on open.
-  jest.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(1)
+  vi.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(1)
   return trigger
 }
 
@@ -30,9 +30,9 @@ const option = (name: string) => screen.getByRole('menuitem', { name })
 
 describe('SortSelect', () => {
   afterEach(() => {
-    jest.restoreAllMocks()
-    jest.clearAllMocks()
-    jest.useRealTimers()
+    vi.restoreAllMocks()
+    vi.clearAllMocks()
+    vi.useRealTimers()
   })
 
   it('Opens a menu of the sort options on click, with a checkmark on the current one', async () => {
@@ -114,7 +114,7 @@ describe('SortSelect', () => {
   })
 
   it('Jumps to the ends with Cmd+arrows on macOS, as Proton did', async () => {
-    jest.spyOn(window.navigator, 'userAgent', 'get').mockReturnValue('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)')
+    vi.spyOn(window.navigator, 'userAgent', 'get').mockReturnValue('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)')
     const trigger = renderSortSelect()
     act(() => trigger.focus())
     await userEvent.keyboard('{ArrowDown}')
@@ -145,11 +145,11 @@ describe('SortSelect', () => {
   })
 
   it('Closes on Escape when opened while its tooltip shows', async () => {
-    jest.useFakeTimers()
-    const user = userEvent.setup({ advanceTimers: jest.advanceTimersByTime })
+    vi.useFakeTimers()
+    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime })
     const trigger = renderSortSelect()
     await user.hover(trigger)
-    act(() => jest.advanceTimersByTime(1000))
+    act(() => vi.advanceTimersByTime(1000))
     expect(screen.getByText('Sort by')).toBeVisible()
 
     await user.click(trigger)

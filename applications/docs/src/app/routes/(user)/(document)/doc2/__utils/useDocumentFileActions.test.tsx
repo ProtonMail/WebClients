@@ -13,20 +13,20 @@ import type { DocumentRole } from './getDocumentRole'
 import { type DocumentFileActions, useDocumentFileActions } from './useDocumentFileActions'
 
 let mockIsSheetsEnabled = true
-jest.mock('~/utils/flags', () => ({ useIsSheetsEnabled: () => mockIsSheetsEnabled }))
-const mockCreateNotification = jest.fn()
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('~/utils/flags', () => ({ useIsSheetsEnabled: () => mockIsSheetsEnabled }))
+const mockCreateNotification = vi.fn()
+vi.mock('@proton/app-context/useNotifications', () => ({
   useNotifications: () => ({ createNotification: mockCreateNotification }),
 }))
-jest.mock('@proton/components/hooks/useAuthentication', () => () => ({ getLocalID: () => 3 }))
-const mockShowMoveItemsModal = jest.fn()
-jest.mock('@proton/drive/public/moveItemsModal', () => ({
+vi.mock('@proton/components/hooks/useAuthentication', () => ({ default: () => ({ getLocalID: () => 3 }) }))
+const mockShowMoveItemsModal = vi.fn()
+vi.mock('@proton/drive/public/moveItemsModal', () => ({
   useMoveItemsModal: () => ({ moveItemsModal: <div>Move modal</div>, showMoveItemsModal: mockShowMoveItemsModal }),
 }))
-jest.mock('@proton/drive/sdk', () => ({ ...jest.requireActual('@proton/drive/sdk'), getDrive: jest.fn() }))
-jest.mock('@proton/shared/lib/helpers/location')
-jest.mock('@proton/shared/lib/helpers/window', () => ({ getNewWindow: jest.fn() }))
-jest.mock('@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName', () => ({
+vi.mock('@proton/drive/sdk', async () => ({ ...(await vi.importActual('@proton/drive/sdk')), getDrive: vi.fn() }))
+vi.mock('@proton/shared/lib/helpers/location')
+vi.mock('@proton/shared/lib/helpers/window', () => ({ getNewWindow: vi.fn() }))
+vi.mock('@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName', () => ({
   getPlatformFriendlyDateForFileName: () => '2026-11-10 09.00.00',
 }))
 
@@ -39,16 +39,16 @@ const TRASHED_NODE = { ...NODE, trashTime: new Date() } as NodeEntity
 const SHARED_DIRECTLY_NODE = { ...NODE, membership: {} } as NodeEntity
 
 const drive = {
-  trashNodes: jest.fn(),
-  restoreNodes: jest.fn(),
-  getNodeHierarchy: jest.fn(),
-  getAvailableName: jest.fn(),
+  trashNodes: vi.fn(),
+  restoreNodes: vi.fn(),
+  getNodeHierarchy: vi.fn(),
+  getAvailableName: vi.fn(),
 }
-const driveCompat = { getMyFilesNodeMeta: jest.fn(), createDocumentNode: jest.fn() }
+const driveCompat = { getMyFilesNodeMeta: vi.fn(), createDocumentNode: vi.fn() }
 const STATE = new Uint8Array([1, 2, 3])
-const client = { seedInitialCommit: jest.fn() }
-const exportInvoker = { exportData: jest.fn() }
-const newWindow = { handle: { location: { assign: jest.fn() } }, close: jest.fn() }
+const client = { seedInitialCommit: vi.fn() }
+const exportInvoker = { exportData: vi.fn() }
+const newWindow = { handle: { location: { assign: vi.fn() } }, close: vi.fn() }
 
 /** A promise to settle from the test, for an action in flight */
 function deferred<T = void>() {
@@ -75,8 +75,8 @@ async function* waitThen(gate: Promise<void>, ...items: ({ ok: true } | { ok: fa
 describe('useDocumentFileActions', () => {
   beforeEach(() => {
     mockIsSheetsEnabled = true
-    jest.mocked(getDrive).mockReturnValue(drive as unknown as ReturnType<typeof getDrive>)
-    jest.mocked(getNewWindow).mockReturnValue(newWindow as unknown as ReturnType<typeof getNewWindow>)
+    vi.mocked(getDrive).mockReturnValue(drive as unknown as ReturnType<typeof getDrive>)
+    vi.mocked(getNewWindow).mockReturnValue(newWindow as unknown as ReturnType<typeof getNewWindow>)
     drive.trashNodes.mockImplementation(() => results({ ok: true }))
     drive.restoreNodes.mockImplementation(() => results({ ok: true }))
     drive.getAvailableName.mockImplementation(async (_parentUid: string, name: string) => name)
@@ -86,7 +86,7 @@ describe('useDocumentFileActions', () => {
     exportInvoker.exportData.mockResolvedValue(STATE)
   })
 
-  afterEach(() => jest.clearAllMocks())
+  afterEach(() => vi.clearAllMocks())
 
   describe('New document', () => {
     test('opens a new window on doc2, creating the document in the same folder', () => {
@@ -799,7 +799,7 @@ describe('useDocumentFileActions', () => {
 })
 
 const application = {
-  logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
+  logger: { info: vi.fn(), warn: vi.fn(), error: vi.fn() },
 } as unknown as ApplicationProviderProps['application']
 
 function renderActions(

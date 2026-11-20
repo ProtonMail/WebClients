@@ -1,8 +1,8 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { restoreDocuments, trashDocuments } from './trashMany'
 
-const mockTrashNodes = jest.fn()
-const mockRestoreNodes = jest.fn()
+const mockTrashNodes = vi.fn()
+const mockRestoreNodes = vi.fn()
 const drive = { trashNodes: mockTrashNodes, restoreNodes: mockRestoreNodes } as unknown as ProtonDriveClient
 
 async function* yieldThenThrow(items: unknown[], error?: Error) {
@@ -14,7 +14,7 @@ async function* yieldThenThrow(items: unknown[], error?: Error) {
 
 describe('trashDocuments', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('returns all uids as succeeded when every node is trashed', async () => {
@@ -70,7 +70,7 @@ describe('trashDocuments', () => {
 
 describe('restoreDocuments', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('uses restoreNodes and collects results', async () => {

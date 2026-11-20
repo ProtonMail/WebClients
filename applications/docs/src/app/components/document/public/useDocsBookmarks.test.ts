@@ -8,18 +8,18 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User'
 import { act, renderHook, waitFor } from '@testing-library/react'
 import { useDocsBookmarks } from './useDocsBookmarks'
 
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
-jest.mock('@proton/app-context/useApi')
-jest.mock('@proton/app-context/useNotifications')
-jest.mock('@proton/docs-core/DriveSDK/traceErrorSDK')
-jest.mock('@proton/shared/lib/helpers/metrics')
+vi.mock('@proton/app-context/useApi')
+vi.mock('@proton/app-context/useNotifications')
+vi.mock('@proton/docs-core/DriveSDK/traceErrorSDK')
+vi.mock('@proton/shared/lib/helpers/metrics')
 
-const api = jest.fn()
-const createBookmark = jest.fn()
-const createNotification = jest.fn()
+const api = vi.fn()
+const createBookmark = vi.fn()
+const createNotification = vi.fn()
 const user = {} as UserModel
 
 async function* asyncIteratorFrom<T>(items: T[]): AsyncGenerator<T> {
@@ -29,16 +29,16 @@ async function* asyncIteratorFrom<T>(items: T[]): AsyncGenerator<T> {
 }
 
 function mockBookmarks(bookmarks: unknown[]) {
-  const iterateBookmarks = jest.fn(() => asyncIteratorFrom(bookmarks))
-  jest.mocked(getDrive).mockReturnValue({ createBookmark, iterateBookmarks } as any)
+  const iterateBookmarks = vi.fn(() => asyncIteratorFrom(bookmarks))
+  vi.mocked(getDrive).mockReturnValue({ createBookmark, iterateBookmarks } as any)
   return iterateBookmarks
 }
 
 describe('useDocsBookmarks', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
-    jest.mocked(useApi).mockReturnValue(api as any)
-    jest.mocked(useNotifications).mockReturnValue({ createNotification } as any)
+    vi.clearAllMocks()
+    vi.mocked(useApi).mockReturnValue(api as any)
+    vi.mocked(useNotifications).mockReturnValue({ createNotification } as any)
     mockBookmarks([])
   })
 
@@ -92,8 +92,8 @@ describe('useDocsBookmarks', () => {
   })
 
   it('does not load bookmarks without user', () => {
-    const iterateBookmarks = jest.fn()
-    jest.mocked(getDrive).mockReturnValue({ iterateBookmarks } as any)
+    const iterateBookmarks = vi.fn()
+    vi.mocked(getDrive).mockReturnValue({ iterateBookmarks } as any)
 
     renderHook(() => useDocsBookmarks({ token: 'token', urlPassword: 'pass' }))
 
@@ -131,10 +131,10 @@ describe('useDocsBookmarks', () => {
     const pendingLoad = new Promise((_, reject) => {
       rejectLoad = reject
     })
-    const iterateBookmarks = jest.fn(async function* () {
+    const iterateBookmarks = vi.fn(async function* () {
       await pendingLoad
     })
-    jest.mocked(getDrive).mockReturnValue({ iterateBookmarks } as any)
+    vi.mocked(getDrive).mockReturnValue({ iterateBookmarks } as any)
 
     const { unmount } = renderHook(() => useDocsBookmarks({ token: 'token', urlPassword: 'pass', user }))
     expect(iterateBookmarks).toHaveBeenCalled()
@@ -155,7 +155,7 @@ describe('useDocsBookmarks', () => {
 
   it('reports and notifies when loading bookmarks fails', async () => {
     const error = new Error('load failed')
-    jest.mocked(getDrive).mockReturnValue({
+    vi.mocked(getDrive).mockReturnValue({
       iterateBookmarks: async function* () {
         throw error
       },

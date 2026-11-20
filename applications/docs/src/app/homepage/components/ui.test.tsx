@@ -1,22 +1,22 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/vitest'
 import { act, fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Button, Checkbox, IconButton } from './ui'
 
 describe('IconButton', () => {
-  beforeEach(() => jest.useFakeTimers())
-  afterEach(() => jest.useRealTimers())
+  beforeEach(() => vi.useFakeTimers())
+  afterEach(() => vi.useRealTimers())
 
-  const user = () => userEvent.setup({ advanceTimers: jest.advanceTimersByTime })
+  const user = () => userEvent.setup({ advanceTimers: vi.advanceTimersByTime })
 
   it('Is named by its label and shows it as a tooltip after a second of hover', async () => {
     render(<IconButton label="Move" />)
 
     const button = screen.getByRole('button', { name: 'Move' })
     await user().hover(button)
-    act(() => jest.advanceTimersByTime(900))
+    act(() => vi.advanceTimersByTime(900))
     expect(screen.queryByText('Move')).toBeNull()
-    act(() => jest.advanceTimersByTime(100))
+    act(() => vi.advanceTimersByTime(100))
 
     expect(screen.getByText('Move')).toBeVisible()
   })
@@ -25,7 +25,7 @@ describe('IconButton', () => {
     render(<IconButton label="Sort by" aria-label="Change sort order" />)
 
     await user().hover(screen.getByRole('button', { name: 'Change sort order' }))
-    act(() => jest.advanceTimersByTime(1000))
+    act(() => vi.advanceTimersByTime(1000))
 
     expect(screen.getByText('Sort by')).toBeVisible()
   })
@@ -39,11 +39,11 @@ describe('IconButton', () => {
     )
 
     await user().tab()
-    act(() => jest.advanceTimersByTime(1000))
+    act(() => vi.advanceTimersByTime(1000))
     expect(screen.getByText('Move')).toBeVisible()
 
     await user().tab()
-    act(() => jest.advanceTimersByTime(1000))
+    act(() => vi.advanceTimersByTime(1000))
 
     expect(screen.queryByText('Move')).toBeNull()
   })
@@ -69,7 +69,7 @@ describe('Checkbox', () => {
   })
 
   it('Calls onChange when clicked and keeps the checked state it is given', async () => {
-    const onChange = jest.fn()
+    const onChange = vi.fn()
     render(<Checkbox checked={false} onChange={onChange} aria-label="Select Doc" data-testid="row-checkbox" />)
 
     await userEvent.click(screen.getByTestId('row-checkbox'))
@@ -79,7 +79,7 @@ describe('Checkbox', () => {
   })
 
   it('Passes a shift-click on its label to labelOnClick', () => {
-    const labelOnClick = jest.fn()
+    const labelOnClick = vi.fn()
     const { container } = render(
       <Checkbox checked={false} expandClickArea labelOnClick={labelOnClick} aria-label="Select Doc" />,
     )

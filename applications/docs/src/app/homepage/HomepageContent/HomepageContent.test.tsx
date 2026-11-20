@@ -1,4 +1,5 @@
-import '@testing-library/jest-dom'
+import type { Mock } from 'vitest'
+import '@testing-library/jest-dom/vitest'
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
 import { RecentDocumentsItem } from '../recentDocumentsItem'
@@ -21,28 +22,28 @@ let bulkTrashEnabled = false
 let bulkMoveEnabled = false
 
 let mockIsNarrow = false
-jest.mock('../utils/useIsNarrow', () => ({
+vi.mock('../utils/useIsNarrow', () => ({
   __esModule: true,
   useIsNarrow: () => mockIsNarrow,
 }))
 
-const mockBulkTrash = jest.fn()
+const mockBulkTrash = vi.fn()
 let mockIsTrashing = false
-const mockBulkMove = jest.fn()
+const mockBulkMove = vi.fn()
 
 let mockInvitations: ExtendedInvitationDetails[] = []
 let mockRecentlyAcceptedInvitations: ExtendedInvitationDetails[] = []
-const mockAcceptInvitation = jest.fn()
-const mockDeclineInvitation = jest.fn()
-const mockReloadInvitations = jest.fn()
+const mockAcceptInvitation = vi.fn()
+const mockDeclineInvitation = vi.fn()
+const mockReloadInvitations = vi.fn()
 
-const mockOpenInvitedDocument = jest.fn()
-jest.mock('./useOpenInvitedDocument', () => ({
+const mockOpenInvitedDocument = vi.fn()
+vi.mock('./useOpenInvitedDocument', () => ({
   useOpenInvitedDocument: () => mockOpenInvitedDocument,
 }))
 
-const mockReportTelemetry = jest.fn()
-const mockLogger = { debug: jest.fn(), error: jest.fn() }
+const mockReportTelemetry = vi.fn()
+const mockLogger = { debug: vi.fn(), error: vi.fn() }
 
 function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
   return RecentDocumentsItem.create({
@@ -365,7 +366,7 @@ describe('HomepageContent', () => {
   })
 
   test("In the trash, a document's location opens Drive's trash, not the folder it left", async () => {
-    const open = jest.spyOn(window, 'open').mockReturnValue(null)
+    const open = vi.spyOn(window, 'open').mockReturnValue(null)
     const { mockOpenParent } = renderWithProviders(<HomepageContent />, 'trash')
 
     await userEvent.click((await screen.findAllByRole('button', { name: 'Trash' }))[0])
@@ -384,8 +385,8 @@ describe('HomepageContent', () => {
 
   describe('row menu', () => {
     // JSDOM has no layout; Ariakit checks visibility before it moves focus.
-    beforeEach(() => jest.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(1))
-    afterEach(() => jest.restoreAllMocks())
+    beforeEach(() => vi.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(1))
+    afterEach(() => vi.restoreAllMocks())
 
     const openMenuWithActions = async () => {
       const actions = (await screen.findAllByRole('button', { name: /Actions/ }))[0]
@@ -414,10 +415,10 @@ describe('HomepageContent', () => {
     test('opens below the Actions button when a key presses it', async () => {
       renderWithProviders(<HomepageContent />)
       const actions = (await screen.findAllByRole('button', { name: /Actions/ }))[0]
-      jest.spyOn(actions, 'getBoundingClientRect').mockReturnValue(new DOMRect(500, 200, 32, 32))
+      vi.spyOn(actions, 'getBoundingClientRect').mockReturnValue(new DOMRect(500, 200, 32, 32))
       // The viewport the menu is placed in, which JSDOM leaves empty.
-      jest.spyOn(document.documentElement, 'clientWidth', 'get').mockReturnValue(1024)
-      jest.spyOn(document.documentElement, 'clientHeight', 'get').mockReturnValue(768)
+      vi.spyOn(document.documentElement, 'clientWidth', 'get').mockReturnValue(1024)
+      vi.spyOn(document.documentElement, 'clientHeight', 'get').mockReturnValue(768)
 
       const { menu } = await openMenuWithActions()
 
@@ -1087,14 +1088,14 @@ describe('HomepageContent', () => {
 
   function DocumentActionsMockProvider({
     children,
-    mockOpen: open = jest.fn(),
-    mockOpenParent: openParent = jest.fn(),
-    mockTrash: trash = jest.fn(),
+    mockOpen: open = vi.fn(),
+    mockOpenParent: openParent = vi.fn(),
+    mockTrash: trash = vi.fn(),
   }: {
     children: ReactNode
-    mockOpen?: jest.Mock
-    mockOpenParent?: jest.Mock
-    mockTrash?: jest.Mock
+    mockOpen?: Mock
+    mockOpenParent?: Mock
+    mockTrash?: Mock
   }) {
     return (
       <DocumentActionsContext.Provider
@@ -1102,19 +1103,19 @@ describe('HomepageContent', () => {
           open,
           openParent,
           trash,
-          startRename: jest.fn(),
-          cancelRename: jest.fn(),
-          rename: jest.fn(),
-          isRenaming: jest.fn(),
+          startRename: vi.fn(),
+          cancelRename: vi.fn(),
+          rename: vi.fn(),
+          isRenaming: vi.fn(),
           isRenameSaving: false,
-          move: jest.fn(),
-          share: jest.fn(),
-          subscribeToTrashed: jest.fn(),
+          move: vi.fn(),
+          share: vi.fn(),
+          subscribeToTrashed: vi.fn(),
           currentlyTrashingId: undefined,
-          restore: jest.fn(),
-          subscribeToRestored: jest.fn(),
+          restore: vi.fn(),
+          subscribeToRestored: vi.fn(),
           currentlyRestoringId: undefined,
-          deletePermanently: jest.fn(),
+          deletePermanently: vi.fn(),
           bulkTrash: mockBulkTrash,
           // Read when the table renders, so that tests can change it after rendering.
           get isBulkTrashing() {
@@ -1161,10 +1162,10 @@ describe('HomepageContent', () => {
     return (
       <HomepageViewContext.Provider
         value={{
-          setRecentsSort: jest.fn,
-          setSearch: jest.fn,
-          updateRecentDocuments: jest.fn as any,
-          updateRenamedDocumentInCache: jest.fn as any,
+          setRecentsSort: vi.fn(),
+          setSearch: vi.fn(),
+          updateRecentDocuments: vi.fn as any,
+          updateRenamedDocumentInCache: vi.fn as any,
           isRecentsUpdating: false,
           state,
           type: undefined,
@@ -1176,10 +1177,10 @@ describe('HomepageContent', () => {
           reloadInvitations: mockReloadInvitations,
           reportTelemetry: mockReportTelemetry,
           logger: mockLogger,
-          createNotification: jest.fn(),
+          createNotification: vi.fn(),
           getAppHref: (path) => path,
           dateFormatter: new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' }),
-          errorTracking: { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true },
+          errorTracking: { traceError: vi.fn(), addBreadcrumb: vi.fn(), isReportable: () => true },
           featureFlags: { bulkTrash: bulkTrashEnabled, bulkMove: bulkMoveEnabled },
           addresses: mockAddresses,
           contactEmails: mockContactEmails,
@@ -1191,9 +1192,9 @@ describe('HomepageContent', () => {
   }
 
   function renderWithProviders(node: ReactNode, flow: Flow = 'one_document') {
-    const mockOpen = jest.fn()
-    const mockOpenParent = jest.fn()
-    const mockTrash = jest.fn()
+    const mockOpen = vi.fn()
+    const mockOpenParent = vi.fn()
+    const mockTrash = vi.fn()
 
     const withProviders = (withFlow: typeof flow) => (
       <HomepageViewMockProvider flow={withFlow}>

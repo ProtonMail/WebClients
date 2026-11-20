@@ -5,7 +5,7 @@ function mockViewport(width: number) {
   const listeners = new Set<() => void>()
   // At the default 16px font size.
   const matches = (query: string) => width <= 16 * Number(/max-width: ([\d.]+)em/.exec(query)?.[1])
-  window.matchMedia = jest.fn((query: string) => ({
+  window.matchMedia = vi.fn((query: string) => ({
     get matches() {
       return matches(query)
     },

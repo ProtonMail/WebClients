@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "types": ["@proton/types", "global-types-monorepo", "webpack-env", "vitest/globals"],
     "paths": {
       // We need to copy and extend the base paths manually because tsconfig's "extends" doesn't
       // actually merge them, it overrides them instead which would remove them.
@@ -22,5 +23,6 @@
       "~/config": ["./src/app/config"]
     }
   },
-  "exclude": ["**/node_modules", "**/.*/", "dist", "**/*.spec.ts"]
+  // vitest.config.ts is left out: it pulls in vitest's browser-mode matcher types, which clash with jest-dom's (toHaveTextContent(RegExp))
+  "exclude": ["vitest.config.ts", "**/node_modules", "**/.*/", "dist", "**/*.spec.ts"]
 }

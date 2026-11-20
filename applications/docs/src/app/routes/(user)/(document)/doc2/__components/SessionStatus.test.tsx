@@ -33,7 +33,7 @@ function snapshotOf(change: Partial<SessionSnapshot> = {}): SessionSnapshot {
 }
 
 function renderStatus(change: Partial<SessionSnapshot> = {}) {
-  const onRetry = jest.fn()
+  const onRetry = vi.fn()
   const view = render(<SessionStatus snapshot={snapshotOf(change)} onRetry={onRetry} />)
   return {
     onRetry,
@@ -46,7 +46,7 @@ function renderStatus(change: Partial<SessionSnapshot> = {}) {
 const status = () => screen.getByRole('status')
 
 describe('SessionStatus', () => {
-  afterEach(() => jest.useRealTimers())
+  afterEach(() => vi.useRealTimers())
 
   test.each<[string, Partial<SessionSnapshot>, string[]]>([
     ['connected and synced', {}, ['End-to-end encrypted']],
@@ -71,34 +71,34 @@ describe('SessionStatus', () => {
   test.each<SDKSessionStatus['name']>(['idle', 'ready', 'opening', 'connecting'])(
     'while %s before catching up, shows Opening… only after 1s',
     (name) => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
       renderStatus({ status: { name } as SDKSessionStatus, caughtUp: false })
       expect(status().textContent).toBe('')
 
-      act(() => jest.advanceTimersByTime(999))
+      act(() => vi.advanceTimersByTime(999))
       expect(status().textContent).toBe('')
 
-      act(() => jest.advanceTimersByTime(1))
+      act(() => vi.advanceTimersByTime(1))
       expect(status()).toHaveTextContent('Opening…')
     },
   )
 
   test('a session that connects within 1s never shows Opening…, and a later connection attempt is a reconnection', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const { update } = renderStatus({ status: { name: 'connecting' }, caughtUp: false })
 
-    act(() => jest.advanceTimersByTime(900))
+    act(() => vi.advanceTimersByTime(900))
     update({ status: CONNECTED })
-    act(() => jest.advanceTimersByTime(500))
+    act(() => vi.advanceTimersByTime(500))
     expect(status()).toHaveTextContent('End-to-end encrypted')
 
-    act(() => jest.advanceTimersByTime(2000))
+    act(() => vi.advanceTimersByTime(2000))
     update({ status: { name: 'connecting' } })
     expect(status()).toHaveTextContent(/^Reconnecting…$/)
   })
 
   test('a session that loses its first connection before catching up shows Reconnecting… through each attempt', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const { update } = renderStatus({ status: { name: 'connecting' }, caughtUp: false })
 
     update({ status: RECONNECTING })
@@ -109,23 +109,23 @@ describe('SessionStatus', () => {
   })
 
   test('shows Saving… for at least 1s, however fast the edits are acknowledged', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const { update } = renderStatus()
 
     update({ delivery: 'pending' })
-    act(() => jest.advanceTimersByTime(100))
+    act(() => vi.advanceTimersByTime(100))
     update({ delivery: 'synced' })
     expect(status()).toHaveTextContent('Saving…')
 
-    act(() => jest.advanceTimersByTime(899))
+    act(() => vi.advanceTimersByTime(899))
     expect(status()).toHaveTextContent('Saving…')
 
-    act(() => jest.advanceTimersByTime(1))
+    act(() => vi.advanceTimersByTime(1))
     expect(status()).toHaveTextContent('End-to-end encrypted')
   })
 
   test('delivery flapping between pending and synced holds Saving… without a flicker, until 1s after the last save began', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const { update } = renderStatus()
     const seen = new Set<string>()
     const look = () => seen.add(status().textContent ?? '')
@@ -134,23 +134,23 @@ describe('SessionStatus', () => {
     for (let elapsed = 0; elapsed < 3000; elapsed += 300) {
       update({ delivery: 'pending' })
       look()
-      act(() => jest.advanceTimersByTime(100))
+      act(() => vi.advanceTimersByTime(100))
       update({ delivery: 'synced' })
       look()
-      act(() => jest.advanceTimersByTime(200))
+      act(() => vi.advanceTimersByTime(200))
       look()
     }
     expect([...seen]).toEqual(['Saving…'])
 
     // The last save began 300ms ago
-    act(() => jest.advanceTimersByTime(699))
+    act(() => vi.advanceTimersByTime(699))
     expect(status()).toHaveTextContent('Saving…')
-    act(() => jest.advanceTimersByTime(1))
+    act(() => vi.advanceTimersByTime(1))
     expect(status()).toHaveTextContent('End-to-end encrypted')
   })
 
   test('a save that runs late shows Error syncing at once, not the held Saving…', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     const { update } = renderStatus({ delivery: 'pending' })
 
     update({ delivery: 'degraded' })
@@ -159,19 +159,19 @@ describe('SessionStatus', () => {
   })
 
   test('leaves no timer of its own running once unmounted', () => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
     // The popover pills' hovercard leaves a timer of its own
     renderStatus().unmount()
-    const popoverTimers = jest.getTimerCount()
-    jest.clearAllTimers()
+    const popoverTimers = vi.getTimerCount()
+    vi.clearAllTimers()
     const { update, unmount } = renderStatus({ status: { name: 'connecting' }, caughtUp: false })
     update({ delivery: 'pending' })
     update({ delivery: 'synced' })
-    expect(jest.getTimerCount()).toBeGreaterThan(popoverTimers)
+    expect(vi.getTimerCount()).toBeGreaterThan(popoverTimers)
 
     unmount()
 
-    expect(jest.getTimerCount()).toBe(popoverTimers)
+    expect(vi.getTimerCount()).toBe(popoverTimers)
   })
 
   test.each<[SDKSessionStatus, DeliveryState]>([

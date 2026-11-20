@@ -6,21 +6,21 @@ describe('exportAndDownload', () => {
   beforeEach(() => {
     saved = []
     const blobs = new Map<string, Blob>()
-    URL.createObjectURL = jest.fn((blob: Blob) => {
+    URL.createObjectURL = vi.fn((blob: Blob) => {
       const url = `blob:https://docs.proton.dev/${blobs.size}`
       blobs.set(url, blob)
       return url
     })
-    jest.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
+    vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
       saved.push({ name: this.download, blob: blobs.get(this.href)! })
     })
   })
 
-  afterEach(() => jest.restoreAllMocks())
+  afterEach(() => vi.restoreAllMocks())
 
   test('saves what the editor exports as <name>.docx, with the Word type', async () => {
     const docx = new Uint8Array([80, 75, 3, 4])
-    const editorInvoker = { exportData: jest.fn().mockResolvedValue(docx) }
+    const editorInvoker = { exportData: vi.fn().mockResolvedValue(docx) }
 
     await exportAndDownload(editorInvoker, 'Meeting notes', 'docx')
 
@@ -37,7 +37,7 @@ describe('exportAndDownload', () => {
     ['txt', 'text/plain'],
     ['md', 'text/markdown'],
   ] as const)('saves a %s export as <name>.%s, with type %s', async (format, type) => {
-    const editorInvoker = { exportData: jest.fn().mockResolvedValue(new TextEncoder().encode('Hello')) }
+    const editorInvoker = { exportData: vi.fn().mockResolvedValue(new TextEncoder().encode('Hello')) }
 
     await exportAndDownload(editorInvoker, 'Notes', format)
 
@@ -46,14 +46,14 @@ describe('exportAndDownload', () => {
   })
 
   test('saves nothing when the export fails', async () => {
-    const editorInvoker = { exportData: jest.fn().mockRejectedValue(new Error('Editor did not answer exportData')) }
+    const editorInvoker = { exportData: vi.fn().mockRejectedValue(new Error('Editor did not answer exportData')) }
 
     await expect(exportAndDownload(editorInvoker, 'Notes', 'docx')).rejects.toThrow('Editor did not answer exportData')
     expect(saved).toEqual([])
   })
 
   test('leaves no link in the page', async () => {
-    const editorInvoker = { exportData: jest.fn().mockResolvedValue(new Uint8Array([1])) }
+    const editorInvoker = { exportData: vi.fn().mockResolvedValue(new Uint8Array([1])) }
 
     await exportAndDownload(editorInvoker, 'Notes', 'txt')
 

@@ -1,3 +1,4 @@
+import type { MockInstance } from 'vitest'
 import { deleteDocument, reportTrashError, restoreDocument, trashDocument } from './driveSdk/trash'
 import { RecentDocumentsItem } from './recentDocumentsItem'
 import { ServerTime } from './utils/serverTime'
@@ -11,15 +12,15 @@ import type { ErrorTracking } from './utils/errorTracking'
 import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
 import { TelemetryEvent } from './utils/telemetry'
 
-jest.mock('./driveSdk/trash', () => ({
-  trashDocument: jest.fn(),
-  restoreDocument: jest.fn(),
-  deleteDocument: jest.fn(),
-  reportTrashError: jest.fn(),
+vi.mock('./driveSdk/trash', () => ({
+  trashDocument: vi.fn(),
+  restoreDocument: vi.fn(),
+  deleteDocument: vi.fn(),
+  reportTrashError: vi.fn(),
 }))
 
-const openShareModal = jest.fn()
-const openMoveItemsModal = jest.fn()
+const openShareModal = vi.fn()
+const openMoveItemsModal = vi.fn()
 
 const recentDocument = RecentDocumentsItem.create({
   type: 'document',
@@ -39,9 +40,9 @@ const drive = {} as ProtonDriveClient
 const errorTracking = {} as ErrorTracking
 
 function renderDocumentActions() {
-  const createNotification = jest.fn()
-  const reportTelemetry = jest.fn()
-  const updateMovedDocuments = jest.fn()
+  const createNotification = vi.fn()
+  const reportTelemetry = vi.fn()
+  const updateMovedDocuments = vi.fn()
   // As the host's, an app's address on its own subdomain.
   const getAppHref = (path: string, app: string) => `https://${app.replace('proton-', '')}.proton.me${path}`
 
@@ -77,14 +78,14 @@ function deferred() {
 const unsubscribers: (() => void)[] = []
 
 function subscribe(subscribeTo: (listener: (id: string) => void) => () => void) {
-  const listener = jest.fn()
+  const listener = vi.fn()
   unsubscribers.push(subscribeTo(listener))
   return listener
 }
 
 afterEach(() => {
   unsubscribers.splice(0).forEach((unsubscribe) => unsubscribe())
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 })
 
 describe('DocumentActionsProvider', () => {
@@ -109,7 +110,7 @@ describe('DocumentActionsProvider', () => {
   test('trash sets and clears currentlyTrashingId, notifies listeners and sends telemetry', async () => {
     const { result, reportTelemetry } = renderDocumentActions()
     const trashing = deferred()
-    jest.mocked(trashDocument).mockReturnValue(trashing.promise)
+    vi.mocked(trashDocument).mockReturnValue(trashing.promise)
     const listener = subscribe(result.current.subscribeToTrashed)
 
     let promise!: Promise<void>
@@ -130,7 +131,7 @@ describe('DocumentActionsProvider', () => {
   test('restore sets and clears currentlyRestoringId, notifies listeners and sends telemetry', async () => {
     const { result, reportTelemetry } = renderDocumentActions()
     const restoring = deferred()
-    jest.mocked(restoreDocument).mockReturnValue(restoring.promise)
+    vi.mocked(restoreDocument).mockReturnValue(restoring.promise)
     const listener = subscribe(result.current.subscribeToRestored)
 
     let promise!: Promise<void>
@@ -149,11 +150,11 @@ describe('DocumentActionsProvider', () => {
   })
 
   test('the unsubscribe function returned by subscribeTo* removes the listener', async () => {
-    jest.mocked(trashDocument).mockResolvedValue(undefined)
-    jest.mocked(restoreDocument).mockResolvedValue(undefined)
+    vi.mocked(trashDocument).mockResolvedValue(undefined)
+    vi.mocked(restoreDocument).mockResolvedValue(undefined)
     const { result } = renderDocumentActions()
-    const trashedListener = jest.fn()
-    const restoredListener = jest.fn()
+    const trashedListener = vi.fn()
+    const restoredListener = vi.fn()
     result.current.subscribeToTrashed(trashedListener)()
     result.current.subscribeToRestored(restoredListener)()
 
@@ -185,7 +186,7 @@ describe('DocumentActionsProvider', () => {
 
   test('trash failure shows an error toast, sends no telemetry and notifies no listeners', async () => {
     const error = new Error('e1')
-    jest.mocked(trashDocument).mockRejectedValue(error)
+    vi.mocked(trashDocument).mockRejectedValue(error)
     const { result, createNotification, reportTelemetry } = renderDocumentActions()
     const listener = subscribe(result.current.subscribeToTrashed)
 
@@ -200,7 +201,7 @@ describe('DocumentActionsProvider', () => {
 
   test('restore failure shows an error toast, sends no telemetry and notifies no listeners', async () => {
     const error = new Error('e1')
-    jest.mocked(restoreDocument).mockRejectedValue(error)
+    vi.mocked(restoreDocument).mockRejectedValue(error)
     const { result, createNotification, reportTelemetry } = renderDocumentActions()
     const listener = subscribe(result.current.subscribeToRestored)
 
@@ -214,7 +215,7 @@ describe('DocumentActionsProvider', () => {
   })
 
   test('deletePermanently deletes once confirmed, shows a success toast and sends telemetry', async () => {
-    jest.mocked(deleteDocument).mockResolvedValue(undefined)
+    vi.mocked(deleteDocument).mockResolvedValue(undefined)
     const { result, createNotification, reportTelemetry } = renderDocumentActions()
 
     await act(() => result.current.deletePermanently(recentDocument))
@@ -263,7 +264,7 @@ describe('DocumentActionsProvider', () => {
 
   test('deletePermanently keeps the dialog open and busy until the deletion finishes', async () => {
     const deletion = deferred()
-    jest.mocked(deleteDocument).mockReturnValue(deletion.promise)
+    vi.mocked(deleteDocument).mockReturnValue(deletion.promise)
     const { result } = renderDocumentActions()
 
     await act(() => result.current.deletePermanently(recentDocument))
@@ -282,7 +283,7 @@ describe('DocumentActionsProvider', () => {
 
   test('deletePermanently failure shows an error toast and sends no telemetry', async () => {
     const error = new Error('e1')
-    jest.mocked(deleteDocument).mockRejectedValue(error)
+    vi.mocked(deleteDocument).mockRejectedValue(error)
     const { result, createNotification, reportTelemetry } = renderDocumentActions()
 
     await act(() => result.current.deletePermanently(recentDocument))
@@ -296,8 +297,8 @@ describe('DocumentActionsProvider', () => {
   })
 
   describe('open', () => {
-    let open: jest.SpyInstance
-    beforeEach(() => (open = jest.spyOn(window, 'open').mockReturnValue(null)))
+    let open: MockInstance
+    beforeEach(() => (open = vi.spyOn(window, 'open').mockReturnValue(null)))
     afterEach(() => open.mockRestore())
 
     test('opens a spreadsheet in the spreadsheet editor, in a new tab', () => {

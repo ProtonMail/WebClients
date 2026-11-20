@@ -3,7 +3,7 @@ import { traceErrorSDK } from './traceErrorSDK'
 import type { ErrorTracking } from '../utils/errorTracking'
 
 function createErrorTracking(isReportable: boolean): ErrorTracking {
-  return { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => isReportable }
+  return { traceError: vi.fn(), addBreadcrumb: vi.fn(), isReportable: () => isReportable }
 }
 
 describe('traceErrorSDK', () => {

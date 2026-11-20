@@ -16,15 +16,15 @@ import type { ErrorTracking } from './utils/errorTracking'
 // Stands in for ApiError from packages/shared/lib/fetch/ApiError.ts
 class ApiError extends Error {}
 
-const mockTraceError = jest.fn()
-const errorTracking: ErrorTracking = { traceError: mockTraceError, addBreadcrumb: jest.fn(), isReportable: () => true }
+const mockTraceError = vi.fn()
+const errorTracking: ErrorTracking = { traceError: mockTraceError, addBreadcrumb: vi.fn(), isReportable: () => true }
 
 const DOC_MIMETYPE = 'application/vnd.proton.doc'
 
 describe('useRecents', () => {
   afterEach(() => {
     cleanup()
-    jest.restoreAllMocks()
+    vi.restoreAllMocks()
     useRecentsStore.setState({ recentDocuments: {}, recentDocumentsInitialized: false })
   })
 
@@ -473,15 +473,15 @@ function locationsOf(recentDocuments: { [nodeUid: string]: RecentDocumentsItemVa
 }
 
 function renderRecents({ documents, nodes }: { documents: ApiDocument[]; nodes: Map<string, NodeEntity> }) {
-  const api = jest.fn().mockResolvedValue({ RecentDocuments: documents })
+  const api = vi.fn().mockResolvedValue({ RecentDocuments: documents })
   const drive = createFakeDrive(nodes)
 
-  const createNotification = jest.fn()
-  const logger = { debug: jest.fn(), error: jest.fn() }
+  const createNotification = vi.fn()
+  const logger = { debug: vi.fn(), error: vi.fn() }
   const eventSubscriber: EventSubscriber = {
-    initialize: jest.fn(),
-    reset: jest.fn(),
-    subscribeToSharedDocument: jest.fn(),
+    initialize: vi.fn(),
+    reset: vi.fn(),
+    subscribeToSharedDocument: vi.fn(),
   }
 
   const { result } = renderHook(() =>
@@ -543,13 +543,13 @@ async function deleteWhileUpdateIsLoading({
 
 function createFakeDrive(nodes: Map<string, NodeEntity>) {
   return {
-    iterateNodes: jest.fn(async function* (nodeUids: string[]) {
+    iterateNodes: vi.fn(async function* (nodeUids: string[]) {
       for (const nodeUid of nodeUids) {
         yield nodes.get(nodeUid) ?? { missingUid: nodeUid }
       }
     }),
-    getNode: jest.fn(async (nodeUid: string) => nodes.get(nodeUid)),
-    getNodeHierarchy: jest.fn(async (nodeUid: string) => {
+    getNode: vi.fn(async (nodeUid: string) => nodes.get(nodeUid)),
+    getNodeHierarchy: vi.fn(async (nodeUid: string) => {
       const node = nodes.get(nodeUid) as NodeEntity
       return [...getAncestors(nodes, node).toReversed(), node]
     }),

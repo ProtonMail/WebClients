@@ -10,7 +10,7 @@ const image = createNode('volume1~image', 'Image', 'image/png')
 
 describe('useTrashed', () => {
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   describe('fetchTrashed', () => {
@@ -110,9 +110,9 @@ describe('useTrashed', () => {
 })
 
 function renderTrashed() {
-  const drive = { iterateTrashedNodes: jest.fn(), getNode: jest.fn() }
-  const createNotification = jest.fn()
-  const errorTracking: ErrorTracking = { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true }
+  const drive = { iterateTrashedNodes: vi.fn(), getNode: vi.fn() }
+  const createNotification = vi.fn()
+  const errorTracking: ErrorTracking = { traceError: vi.fn(), addBreadcrumb: vi.fn(), isReportable: () => true }
 
   const { result } = renderHook(() =>
     useTrashed(drive as unknown as ProtonDriveClient, createNotification, errorTracking),

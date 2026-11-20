@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/vitest'
 import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
@@ -19,7 +19,7 @@ describe('HomepageHeader', () => {
     let headerProps: HomepageHeaderComponentProps | undefined
     const value = {
       state: { view: 'recents-empty' },
-      setSearch: jest.fn(),
+      setSearch: vi.fn(),
       type: undefined,
     } as unknown as HomepageViewValue
 

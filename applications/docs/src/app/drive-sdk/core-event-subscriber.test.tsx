@@ -3,20 +3,20 @@ import { renderHook } from '@testing-library/react'
 import type { ReactNode } from 'react'
 import { useCoreEventSubscription } from './core-event-subscriber'
 
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
 
-const unsubscribe = jest.fn()
-const eventManager = { subscribe: jest.fn(() => unsubscribe) }
+const unsubscribe = vi.fn()
+const eventManager = { subscribe: vi.fn(() => unsubscribe) }
 
 const wrapper = ({ children }: { children: ReactNode }) => (
   <EventManagerContext.Provider value={eventManager as any}>{children}</EventManagerContext.Provider>
 )
 
 afterEach(() => {
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 })
 
 describe('useCoreEventSubscription', () => {

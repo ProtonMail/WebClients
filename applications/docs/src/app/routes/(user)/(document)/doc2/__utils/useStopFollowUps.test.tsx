@@ -6,7 +6,7 @@ import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/appl
 import { createFakeSession } from './createFakeSession'
 import { useStopFollowUps } from './useStopFollowUps'
 
-const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn() }
+const logger = { info: vi.fn(), warn: vi.fn(), error: vi.fn() }
 const application = { logger } as unknown as ApplicationProviderProps['application']
 const wrapper = ({ children }: { children: ReactNode }) => (
   <ApplicationProvider application={application}>{children}</ApplicationProvider>
@@ -17,14 +17,14 @@ const authExpired = { name: 'stopped', condition: 'authExpired', retryable: fals
 function renderFollowUps() {
   const fake = createFakeSession({ status: { name: 'connected' } })
   fake.mocks.retry.mockImplementation(async () => fake.setSnapshot({ status: { name: 'connecting' } }))
-  const showAlert = jest.fn()
+  const showAlert = vi.fn()
   const rendered = renderHook(() => useStopFollowUps(fake.session, showAlert), { wrapper })
   return { fake, showAlert, ...rendered }
 }
 
 describe('useStopFollowUps', () => {
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   test("an encryption failure shows /doc's alert, once per stop", () => {

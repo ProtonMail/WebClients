@@ -1,3 +1,5 @@
+import type * as ReactModule from 'react'
+import type { MockInstance } from 'vitest'
 import { act, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
@@ -8,7 +10,7 @@ import { ConfigContext } from '@proton/app-context/configContext'
 import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { MemberRole, getDrive } from '@proton/drive/sdk'
-import { setLocation } from '@proton/jest-env/setLocation'
+import { setLocation } from '@proton/vitest-config/setLocation'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 
@@ -20,25 +22,25 @@ import DocumentPageV2 from './page'
 
 // mode=history through the page and the viewer, on a fake session and a fake Drive: the page's address bar and the
 // viewer's Reveal Point. The viewer's own tests cover the history itself; the page's mocked-viewer tests, a retry.
-jest.mock('~/utils/flags', () => ({
+vi.mock('~/utils/flags', () => ({
   useIsSheetsEnabled: () => false,
   useDriveCompatSDK: () => false,
   useIsDarkThemeEnabled: () => false,
   useIsODTEnabled: () => false,
 }))
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }))
-jest.mock('@proton/unleash/useGetFlag', () => ({ useGetFlag: () => () => false }))
-jest.mock('~/drive-sdk/event-subscriber', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }))
+vi.mock('@proton/unleash/useGetFlag', () => ({ useGetFlag: () => () => false }))
+vi.mock('~/drive-sdk/event-subscriber', () => ({
   getEventSubscriber: () => ({ initialize: async () => {}, reset: () => {} }),
 }))
-jest.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({}) }))
-jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ DisplayName: '', Name: 'member', Email: '' }] }))
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => jest.fn(async () => ({})) }))
-jest.mock('@proton/drive/public/moveItemsModal', () => ({
-  useMoveItemsModal: () => ({ moveItemsModal: null, showMoveItemsModal: jest.fn() }),
+vi.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({}) }))
+vi.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ DisplayName: '', Name: 'member', Email: '' }] }))
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => vi.fn(async () => ({})) }))
+vi.mock('@proton/drive/public/moveItemsModal', () => ({
+  useMoveItemsModal: () => ({ moveItemsModal: null, showMoveItemsModal: vi.fn() }),
 }))
 // The app shell and its headers need the whole app around them
-jest.mock('./__components/DocumentShell', () => ({
+vi.mock('./__components/DocumentShell', () => ({
   DocumentShell: ({
     header,
     children,
@@ -55,51 +57,54 @@ jest.mock('./__components/DocumentShell', () => ({
     </>
   ),
 }))
-jest.mock('./__components/ErrorHeader', () => ({ ErrorHeader: () => <div>Error header</div> }))
-jest.mock('./__components/DocumentHeaderV2', () => ({ DocumentHeaderV2: () => <div>Document header</div> }))
-jest.mock('./__components/BootstrapErrorPage', () => ({
+vi.mock('./__components/ErrorHeader', () => ({ ErrorHeader: () => <div>Error header</div> }))
+vi.mock('./__components/DocumentHeaderV2', () => ({ DocumentHeaderV2: () => <div>Document header</div> }))
+vi.mock('./__components/BootstrapErrorPage', () => ({
   BootstrapErrorPage: ({ onRetry }: { onRetry: () => void }) => <button onClick={onRetry}>Reload</button>,
 }))
-jest.mock('@proton-docs/realtime-sdk', () => ({ ...jest.requireActual('@proton-docs/realtime-sdk'), version: '0.0.0' }))
-const mockCreateSession = jest.fn()
-const mockClient = { createSession: mockCreateSession, prefetchBootstrap: () => ({ confirm: () => {}, end: () => {} }) }
-jest.mock('./__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockClient }))
-jest.mock('@proton/app-context/useNotifications', () => ({
-  useNotifications: () => ({ createNotification: jest.fn(), hideNotification: jest.fn() }),
+vi.mock('@proton-docs/realtime-sdk', async () => ({
+  ...(await vi.importActual('@proton-docs/realtime-sdk')),
+  version: '0.0.0',
 }))
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+const mockCreateSession = vi.fn()
+const mockClient = { createSession: mockCreateSession, prefetchBootstrap: () => ({ confirm: () => {}, end: () => {} }) }
+vi.mock('./__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockClient }))
+vi.mock('@proton/app-context/useNotifications', () => ({
+  useNotifications: () => ({ createNotification: vi.fn(), hideNotification: vi.fn() }),
+}))
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
 
 // The editors in their frames: the live one, and the history's revision view
 let mockClientHandler: ClientHandler | undefined
-const mockShowEditor = jest.fn(async () => {})
-jest.mock('./__utils/ClientEditorBridge', () => ({
-  ClientEditorBridge: jest.fn().mockImplementation((frame: HTMLIFrameElement, clientHandler: ClientHandler) => {
+const mockShowEditor = vi.fn(async () => {})
+vi.mock('./__utils/ClientEditorBridge', () => ({
+  ClientEditorBridge: vi.fn().mockImplementation(function (frame: HTMLIFrameElement, clientHandler: ClientHandler) {
     const editorInvoker = {
-      initializeEditor: jest.fn(async () => {}),
-      receiveMessage: jest.fn(async () => {}),
+      initializeEditor: vi.fn(async () => {}),
+      receiveMessage: vi.fn(async () => {}),
       showEditor: mockShowEditor,
-      changeLockedState: jest.fn(async () => {}),
-      setDarkMode: jest.fn(async () => {}),
-      loadUserSettings: jest.fn(async () => {}),
-      syncProperty: jest.fn(async () => {}),
-      setTableOfContentsVisible: jest.fn(async () => {}),
-      getClientId: jest.fn(async () => 7),
-      broadcastPresenceState: jest.fn(async () => {}),
-      getCurrentEditorState: jest.fn(async () => ({ root: { children: [], type: 'root' } })),
-      getDocumentState: jest.fn(async () => new Uint8Array()),
-      replaceEditorState: jest.fn(async () => {}),
+      changeLockedState: vi.fn(async () => {}),
+      setDarkMode: vi.fn(async () => {}),
+      loadUserSettings: vi.fn(async () => {}),
+      syncProperty: vi.fn(async () => {}),
+      setTableOfContentsVisible: vi.fn(async () => {}),
+      getClientId: vi.fn(async () => 7),
+      broadcastPresenceState: vi.fn(async () => {}),
+      getCurrentEditorState: vi.fn(async () => ({ root: { children: [], type: 'root' } })),
+      getDocumentState: vi.fn(async () => new Uint8Array()),
+      replaceEditorState: vi.fn(async () => {}),
     }
     if (frame.dataset.systemMode !== 'revision') {
       mockClientHandler = clientHandler
     }
-    return { editorInvoker, destroy: jest.fn() }
+    return { editorInvoker, destroy: vi.fn() }
   }),
 }))
-jest.mock('~/components/document/EditorFrame', () => {
-  const { useEffect } = jest.requireActual('react')
+vi.mock('~/components/document/EditorFrame', async () => {
+  const { useEffect } = await vi.importActual<typeof ReactModule>('react')
   return {
     EditorFrame: ({
       onFrameReady,
@@ -119,20 +124,20 @@ jest.mock('~/components/document/EditorFrame', () => {
 })
 
 const ORIGIN = 'https://docs.proton.dev'
-const getNodeHierarchy = jest.fn()
+const getNodeHierarchy = vi.fn()
 
 describe('DocumentPageV2 with mode history', () => {
-  let replaceState: jest.SpyInstance
+  let replaceState: MockInstance
 
   beforeEach(() => {
-    replaceState = jest.spyOn(window.history, 'replaceState').mockImplementation(() => {})
-    jest.mocked(getDrive).mockReturnValue({ getNodeHierarchy } as unknown as ReturnType<typeof getDrive>)
+    replaceState = vi.spyOn(window.history, 'replaceState').mockImplementation(() => {})
+    vi.mocked(getDrive).mockReturnValue({ getNodeHierarchy } as unknown as ReturnType<typeof getDrive>)
   })
 
   afterEach(() => {
     mockClientHandler = undefined
-    jest.clearAllMocks()
-    jest.restoreAllMocks()
+    vi.clearAllMocks()
+    vi.restoreAllMocks()
   })
 
   test.each(['Admin', 'Editor', 'Viewer'] as const)(
@@ -176,7 +181,7 @@ describe('DocumentPageV2 with mode history', () => {
     readsAs('Editor')
     const fake = createFakeSession()
     mockCreateSession
-      .mockReturnValueOnce({ on: jest.fn(() => jest.fn()), bootstrap: () => Promise.reject(new Error('Failed')) })
+      .mockReturnValueOnce({ on: vi.fn(() => vi.fn()), bootstrap: () => Promise.reject(new Error('Failed')) })
       .mockReturnValue(fake.session)
     renderAt('/doc2?mode=history&volumeId=VOLUME&linkId=LINK')
 
@@ -226,7 +231,7 @@ describe('DocumentPageV2 with mode history', () => {
   function renderAt(path: string) {
     setLocation(`${ORIGIN}${path}`)
     const application = {
-      logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
+      logger: { info: vi.fn(), warn: vi.fn(), error: vi.fn() },
     } as unknown as ApplicationProviderProps['application']
     render(
       <ConfigContext.Provider value={{ APP_VERSION: '0.0.0', API_URL: `${ORIGIN}/api` } as ProtonConfig}>

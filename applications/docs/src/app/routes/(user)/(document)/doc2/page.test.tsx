@@ -8,7 +8,7 @@ import { ConfigContext } from '@proton/app-context/configContext'
 import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { getDrive } from '@proton/drive/sdk'
-import { setLocation } from '@proton/jest-env/setLocation'
+import { setLocation } from '@proton/vitest-config/setLocation'
 import { assignUrl } from '@proton/shared/lib/helpers/location'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
@@ -22,16 +22,16 @@ import { docsLoadMarks, withNodePerformance } from './__utils/loadMarksTesting'
 import DocumentPageV2 from './page'
 
 let mockIsDriveCompatSDK = false
-jest.mock('~/utils/flags', () => ({
+vi.mock('~/utils/flags', () => ({
   useIsSheetsEnabled: () => true,
   useDriveCompatSDK: () => mockIsDriveCompatSDK,
   useIsDarkThemeEnabled: () => false,
 }))
-jest.mock('@proton/shared/lib/helpers/location')
-jest.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({}) }))
-jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ DisplayName: '', Name: 'member', Email: '' }] }))
+vi.mock('@proton/shared/lib/helpers/location')
+vi.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({}) }))
+vi.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ DisplayName: '', Name: 'member', Email: '' }] }))
 // The app shell and its headers need the whole app around them
-jest.mock('./__components/DocumentShell', () => ({
+vi.mock('./__components/DocumentShell', () => ({
   DocumentShell: ({
     header,
     children,
@@ -48,32 +48,35 @@ jest.mock('./__components/DocumentShell', () => ({
     </>
   ),
 }))
-jest.mock('./__components/ErrorHeader', () => ({ ErrorHeader: () => <div>Error header</div> }))
-jest.mock('./__components/DocumentHeaderV2', () => ({ DocumentHeaderV2: () => <div>Document header</div> }))
+vi.mock('./__components/ErrorHeader', () => ({ ErrorHeader: () => <div>Error header</div> }))
+vi.mock('./__components/DocumentHeaderV2', () => ({ DocumentHeaderV2: () => <div>Document header</div> }))
 // A fixed version for the page's log line; the rest of the SDK, such as DocsApiError, stays real.
-jest.mock('@proton-docs/realtime-sdk', () => ({ ...jest.requireActual('@proton-docs/realtime-sdk'), version: '0.0.0' }))
-const mockCreateSession = jest.fn()
-const mockClient = { createSession: mockCreateSession, prefetchBootstrap: () => ({ confirm: () => {}, end: () => {} }) }
-jest.mock('./__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockClient }))
-jest.mock('@proton/app-context/useNotifications', () => ({
-  useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton-docs/realtime-sdk', async () => ({
+  ...(await vi.importActual('@proton-docs/realtime-sdk')),
+  version: '0.0.0',
 }))
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
+const mockCreateSession = vi.fn()
+const mockClient = { createSession: mockCreateSession, prefetchBootstrap: () => ({ confirm: () => {}, end: () => {} }) }
+vi.mock('./__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockClient }))
+vi.mock('@proton/app-context/useNotifications', () => ({
+  useNotifications: () => ({ createNotification: vi.fn() }),
+}))
+vi.mock('@proton/drive/sdk', async () => ({
+  ...(await vi.importActual('@proton/drive/sdk')),
+  getDrive: vi.fn(),
 }))
 
 const ORIGIN = 'https://docs.proton.dev'
 
-const driveCompat = { getMyFilesNodeMeta: jest.fn(), createDocumentNode: jest.fn() }
-const getNode = jest.fn()
-const getNodeHierarchy = jest.fn()
-const getMyFilesRootFolder = jest.fn()
+const driveCompat = { getMyFilesNodeMeta: vi.fn(), createDocumentNode: vi.fn() }
+const getNode = vi.fn()
+const getNodeHierarchy = vi.fn()
+const getMyFilesRootFolder = vi.fn()
 
 describe('DocumentPageV2', () => {
   beforeEach(() => {
     mockIsDriveCompatSDK = false
-    jest.mocked(getDrive).mockReturnValue({
+    vi.mocked(getDrive).mockReturnValue({
       getNode,
       getNodeHierarchy,
       getMyFilesRootFolder,
@@ -88,8 +91,8 @@ describe('DocumentPageV2', () => {
   })
 
   afterEach(() => {
-    jest.clearAllMocks()
-    jest.useRealTimers()
+    vi.clearAllMocks()
+    vi.useRealTimers()
   })
 
   test('a bare /doc2 creates a document', async () => {
@@ -135,7 +138,7 @@ describe('DocumentPageV2', () => {
     renderAt('/u/1/doc2?mode=open-url-reauth&token=TOKEN&linkId=LINK', '#urlPassword')
 
     expect(screen.getByRole('status')).toHaveTextContent('Redirecting…')
-    const url = new URL(jest.mocked(assignUrl).mock.lastCall![0])
+    const url = new URL(vi.mocked(assignUrl).mock.lastCall![0])
     expect(url.pathname).toBe('/doc')
     expect(url.searchParams.get('mode')).toBe('open-url')
     expect(url.searchParams.get('token')).toBe('TOKEN')
@@ -223,7 +226,7 @@ describe('DocumentPageV2', () => {
 
   describe('opening a document', () => {
     test("mode download, Drive's Download, opens the document, and the address bar opens it from then on", async () => {
-      const replaceState = jest.spyOn(window.history, 'replaceState').mockImplementation(() => {})
+      const replaceState = vi.spyOn(window.history, 'replaceState').mockImplementation(() => {})
       renderAt('/doc2?mode=download&volumeId=VOLUME&linkId=LINK')
 
       await waitFor(() =>
@@ -253,13 +256,13 @@ describe('DocumentPageV2', () => {
     test('a base state with an unreadable update shows the error page, and retry bootstraps again', async () => {
       let onUnreadable: (event: { uuid: string; origin: string }) => void = () => {}
       mockCreateSession.mockReturnValueOnce({
-        on: jest.fn((_event, listener) => {
+        on: vi.fn((_event, listener) => {
           onUnreadable = listener
-          return jest.fn()
+          return vi.fn()
         }),
         bootstrap: async () => {
           onUnreadable({ uuid: 'update-1', origin: 'baseState' })
-          return { disconnect: jest.fn(async () => {}) }
+          return { disconnect: vi.fn(async () => {}) }
         },
       })
       renderAt('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
@@ -275,12 +278,12 @@ describe('DocumentPageV2', () => {
     })
 
     test('an editor that never gets ready shows the error page, and retry loads the document again', async () => {
-      jest.useFakeTimers()
+      vi.useFakeTimers()
       mockCreateSession.mockReturnValueOnce(createFakeSession().session)
       renderAt('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
       await waitFor(() => expect(mockCreateSession).toHaveBeenCalledTimes(1))
 
-      await act(() => jest.advanceTimersByTimeAsync(EDITOR_FRAME_READY_TIMEOUT_MS))
+      await act(() => vi.advanceTimersByTimeAsync(EDITOR_FRAME_READY_TIMEOUT_MS))
 
       expect(screen.getByTestId('invalid-openaction-error')).toHaveTextContent('The editor could not be loaded.')
 
@@ -315,7 +318,7 @@ describe('DocumentPageV2', () => {
   })
 
   function pendingSession(bootstrap: () => Promise<unknown>) {
-    return { on: jest.fn(() => jest.fn()), bootstrap }
+    return { on: vi.fn(() => vi.fn()), bootstrap }
   }
 
   function currentUrl() {
@@ -325,7 +328,7 @@ describe('DocumentPageV2', () => {
   function renderAt(path: string, hash = '') {
     setLocation(`${ORIGIN}${path}${hash}`)
     const application = {
-      logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
+      logger: { info: vi.fn(), warn: vi.fn(), error: vi.fn() },
     } as unknown as ApplicationProviderProps['application']
     const page = <DocumentPageV2 driveCompat={driveCompat as unknown as DriveCompat} />
 

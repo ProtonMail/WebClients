@@ -8,7 +8,7 @@ function touchEvent(clientX = 0, clientY = 0): TouchEvent {
 }
 
 function setup() {
-  const onDoubleClick = jest.fn()
+  const onDoubleClick = vi.fn()
   const { result, unmount } = renderHook(() => useDoubleClick(onDoubleClick))
 
   const tap = (x = 0, y = 0) => {
@@ -21,11 +21,11 @@ function setup() {
 
 describe('useDoubleClick', () => {
   beforeEach(() => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
   })
 
   afterEach(() => {
-    jest.useRealTimers()
+    vi.useRealTimers()
   })
 
   describe('mouse', () => {
@@ -43,7 +43,7 @@ describe('useDoubleClick', () => {
       const { onDoubleClick, tap } = setup()
 
       tap()
-      jest.runAllTimers()
+      vi.runAllTimers()
 
       expect(onDoubleClick).not.toHaveBeenCalled()
     })
@@ -52,7 +52,7 @@ describe('useDoubleClick', () => {
       const { onDoubleClick, tap } = setup()
 
       tap()
-      jest.advanceTimersByTime(499)
+      vi.advanceTimersByTime(499)
       tap()
 
       expect(onDoubleClick).toHaveBeenCalledTimes(1)
@@ -62,7 +62,7 @@ describe('useDoubleClick', () => {
       const { onDoubleClick, tap } = setup()
 
       tap()
-      jest.advanceTimersByTime(500)
+      vi.advanceTimersByTime(500)
       tap()
 
       expect(onDoubleClick).not.toHaveBeenCalled()
@@ -72,9 +72,9 @@ describe('useDoubleClick', () => {
       const { onDoubleClick, tap } = setup()
 
       tap()
-      jest.advanceTimersByTime(500)
+      vi.advanceTimersByTime(500)
       tap()
-      jest.advanceTimersByTime(100)
+      vi.advanceTimersByTime(100)
       tap()
 
       expect(onDoubleClick).toHaveBeenCalledTimes(1)
@@ -197,7 +197,7 @@ describe('useDoubleClick', () => {
 
       tap()
       tap()
-      jest.advanceTimersByTime(500)
+      vi.advanceTimersByTime(500)
       result.current.onDoubleClick()
 
       expect(onDoubleClick).toHaveBeenCalledTimes(2)
@@ -210,10 +210,10 @@ describe('useDoubleClick', () => {
     tap()
     tap()
     tap()
-    expect(jest.getTimerCount()).toBeGreaterThan(0)
+    expect(vi.getTimerCount()).toBeGreaterThan(0)
 
     unmount()
 
-    expect(jest.getTimerCount()).toBe(0)
+    expect(vi.getTimerCount()).toBe(0)
   })
 })

@@ -1,3 +1,4 @@
+import type { MockInstance } from 'vitest'
 import type { ShareResult } from '@proton/drive/sdk'
 
 import { replaceAddress } from './useChangeAddressWhenPubliclyShared'
@@ -6,10 +7,10 @@ const urlAccess = { url: 'https://drive.proton.dev/urls/TOKEN#urlPassword' } as 
 const getLocalID = () => undefined
 
 describe('replaceAddress', () => {
-  let replaceState: jest.SpyInstance
+  let replaceState: MockInstance
 
   beforeEach(() => {
-    replaceState = jest.spyOn(window.history, 'replaceState')
+    replaceState = vi.spyOn(window.history, 'replaceState')
   })
 
   afterEach(() => replaceState.mockRestore())
@@ -49,7 +50,7 @@ describe('replaceAddress', () => {
   })
 
   function getReplacedUrl() {
-    const { pathname, search, hash } = new URL(replaceState.mock.lastCall[2])
+    const { pathname, search, hash } = new URL(replaceState.mock.lastCall![2])
     return { pathname, search, hash }
   }
 })

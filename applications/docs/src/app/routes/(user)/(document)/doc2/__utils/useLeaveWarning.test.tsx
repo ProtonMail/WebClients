@@ -49,8 +49,8 @@ describe('useLeaveWarning', () => {
   })
 
   test('registers one listener per session, and removes it on unmount or when the session changes', () => {
-    const add = jest.spyOn(window, 'addEventListener')
-    const remove = jest.spyOn(window, 'removeEventListener')
+    const add = vi.spyOn(window, 'addEventListener')
+    const remove = vi.spyOn(window, 'removeEventListener')
     const first = createFakeSession({ delivery: 'pending' })
     const second = createFakeSession({ delivery: 'synced' })
     const { rerender, unmount } = renderHook(({ session }) => useLeaveWarning(session), {

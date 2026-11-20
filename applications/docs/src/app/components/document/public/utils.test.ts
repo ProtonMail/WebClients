@@ -2,25 +2,25 @@ import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
 
 import { redirectToAccountSwitcher, redirectToSignIn, redirectToSignUp } from './utils'
 
-jest.mock('@proton/shared/lib/helpers/url', () => ({
-  ...jest.requireActual('@proton/shared/lib/helpers/url'),
-  getUrlWithReturnUrl: jest.fn(() => 'https://account.proton.dev/'),
+vi.mock('@proton/shared/lib/helpers/url', async () => ({
+  ...(await vi.importActual('@proton/shared/lib/helpers/url')),
+  getUrlWithReturnUrl: vi.fn(() => 'https://account.proton.dev/'),
 }))
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-  ...jest.requireActual('@proton/shared/lib/helpers/browser'),
-  replaceUrl: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', async () => ({
+  ...(await vi.importActual('@proton/shared/lib/helpers/browser')),
+  replaceUrl: vi.fn(),
 }))
-jest.mock('@proton/shared/lib/helpers/window', () => {
-  const tab = { handle: { location: { assign: jest.fn() } } }
+vi.mock('@proton/shared/lib/helpers/window', () => {
+  const tab = { handle: { location: { assign: vi.fn() } } }
   return { getCurrentTab: () => tab, getNewWindow: () => tab }
 })
-jest.mock('./telemetry', () => ({
-  ...jest.requireActual('./telemetry'),
-  countActionWithTelemetry: jest.fn(),
-  traceTelemetry: () => ({ start: jest.fn() }),
+vi.mock('./telemetry', async () => ({
+  ...(await vi.importActual('./telemetry')),
+  countActionWithTelemetry: vi.fn(),
+  traceTelemetry: () => ({ start: vi.fn() }),
 }))
-jest.mock('@proton/docs-shared/URL/saveUrlPasswordForRedirection', () => ({
-  saveUrlPasswordForRedirection: jest.fn(),
+vi.mock('@proton/docs-shared/URL/saveUrlPasswordForRedirection', () => ({
+  saveUrlPasswordForRedirection: vi.fn(),
 }))
 
 const params = { action: undefined, token: 'TOKEN', email: 'user@proton.me', linkId: 'LINK', urlPassword: 'pw' }
@@ -32,7 +32,7 @@ const redirects = [
 ]
 
 describe('public redirect return urls', () => {
-  beforeEach(() => jest.mocked(getUrlWithReturnUrl).mockClear())
+  beforeEach(() => vi.mocked(getUrlWithReturnUrl).mockClear())
 
   describe.each(redirects)('$name', ({ redirect }) => {
     it.each(['/doc', '/sheet'])('returns to %s', async (typePathname) => {
@@ -65,6 +65,6 @@ describe('public redirect return urls', () => {
 })
 
 function getReturnUrl() {
-  const [, options] = jest.mocked(getUrlWithReturnUrl).mock.lastCall!
+  const [, options] = vi.mocked(getUrlWithReturnUrl).mock.lastCall!
   return new URL(options!.returnUrl!, 'https://docs.proton.dev')
 }

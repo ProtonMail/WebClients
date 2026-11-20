@@ -3,8 +3,8 @@ import { createApiError, createOfflineError, createTimeoutError } from '@proton/
 
 import { createDocsApiFetch } from './createDocsApiFetch'
 
-const api = jest.fn()
-const logger = { warn: jest.fn() }
+const api = vi.fn()
+const logger = { warn: vi.fn() }
 const docsApiFetch = createDocsApiFetch(api, '/api', logger)
 const commitUrl = '/api/docs/volumes/volume-1/documents/link-1/commits/commit-1'
 
@@ -13,7 +13,7 @@ function statusCodeError(status: number, data: unknown) {
 }
 
 afterEach(() => {
-  jest.clearAllMocks()
+  vi.clearAllMocks()
 })
 
 describe('createDocsApiFetch', () => {

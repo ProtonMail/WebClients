@@ -5,7 +5,7 @@ import useAppTitle from '@proton/components/hooks/useAppTitle'
 
 import { HomepageShell } from './HomepageShell'
 
-jest.mock('~/homepage', () => ({
+vi.mock('~/homepage', () => ({
   HomepageHeader: ({
     protonHeader: ProtonHeader,
     userDropdown: UserDropdown,
@@ -49,57 +49,50 @@ jest.mock('~/homepage', () => ({
   SidebarStateProvider: ({ children }: { children: ReactNode }) => children,
   useHomepageTitle: () => 'Recents',
 }))
-jest.mock(
-  '@proton/components/containers/app/PrivateAppContainer',
-  () =>
-    ({
-      containerRef,
-      header,
-      sidebar,
-      children,
-    }: {
-      containerRef: (element: HTMLDivElement | null) => void
-      header: ReactNode
-      sidebar: ReactNode
-      children: ReactNode
-    }) => (
-      <div ref={containerRef} data-testid="shell-container">
-        <header>{header}</header>
-        <aside>{sidebar}</aside>
-        {children}
-      </div>
-    ),
-)
-jest.mock('@proton/components/containers/layout/PrivateMainArea', () => ({ children }: { children: ReactNode }) => (
-  <main>{children}</main>
-))
-jest.mock('@proton/components/containers/topBanners/TopBanners', () => () => null)
-jest.mock('@proton/components/components/drawer/DrawerApp', () => () => null)
-jest.mock(
-  '@proton/components/components/logo/Logo',
-  () =>
-    ({ appName }: { appName: string }) =>
-      `Logo ${appName}`,
-)
-jest.mock('@proton/components/components/sidebar/Sidebar', () => () => 'Proton sidebar')
-jest.mock('@proton/components/components/sidebar/SidebarListItemLink', () => ({
+vi.mock('@proton/components/containers/app/PrivateAppContainer', () => ({
+  default: ({
+    containerRef,
+    header,
+    sidebar,
+    children,
+  }: {
+    containerRef: (element: HTMLDivElement | null) => void
+    header: ReactNode
+    sidebar: ReactNode
+    children: ReactNode
+  }) => (
+    <div ref={containerRef} data-testid="shell-container">
+      <header>{header}</header>
+      <aside>{sidebar}</aside>
+      {children}
+    </div>
+  ),
+}))
+vi.mock('@proton/components/containers/layout/PrivateMainArea', () => ({
+  default: ({ children }: { children: ReactNode }) => <main>{children}</main>,
+}))
+vi.mock('@proton/components/containers/topBanners/TopBanners', () => ({ default: () => null }))
+vi.mock('@proton/components/components/drawer/DrawerApp', () => ({ default: () => null }))
+vi.mock('@proton/components/components/logo/Logo', () => ({
+  default: ({ appName }: { appName: string }) => `Logo ${appName}`,
+}))
+vi.mock('@proton/components/components/sidebar/Sidebar', () => ({ default: () => 'Proton sidebar' }))
+vi.mock('@proton/components/components/sidebar/SidebarListItemLink', () => ({
   __esModule: true,
   default: ({ children }: { children: ReactNode }) => children,
 }))
-jest.mock(
-  '@proton/components/components/version/AppVersion',
-  () =>
-    ({ appVersion, fullVersion }: { appVersion: string; fullVersion: string }) =>
-      `App version ${appVersion} ${fullVersion}`,
-)
-jest.mock('@proton/components/containers/app/AppsDropdown', () => () => 'Apps dropdown')
-jest.mock('@proton/components/containers/heading/PrivateHeader', () => () => 'Private header')
-jest.mock('@proton/components/containers/heading/UserDropdown', () => () => 'User dropdown')
-jest.mock('@proton/components/helpers/appVersion', () => ({
+vi.mock('@proton/components/components/version/AppVersion', () => ({
+  default: ({ appVersion, fullVersion }: { appVersion: string; fullVersion: string }) =>
+    `App version ${appVersion} ${fullVersion}`,
+}))
+vi.mock('@proton/components/containers/app/AppsDropdown', () => ({ default: () => 'Apps dropdown' }))
+vi.mock('@proton/components/containers/heading/PrivateHeader', () => ({ default: () => 'Private header' }))
+vi.mock('@proton/components/containers/heading/UserDropdown', () => ({ default: () => 'User dropdown' }))
+vi.mock('@proton/components/helpers/appVersion', () => ({
   getAppVersion: (appVersion: string) => `${appVersion}+commit`,
 }))
-jest.mock('@proton/components/hooks/useAppTitle', () => ({ __esModule: true, default: jest.fn() }))
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/components/hooks/useAppTitle', () => ({ __esModule: true, default: vi.fn() }))
+vi.mock('@proton/app-context/useConfig', () => ({
   useConfig: () => ({ APP_VERSION: '1.0.0', CLIENT_TYPE: 1 }),
 }))
 describe('HomepageShell', () => {

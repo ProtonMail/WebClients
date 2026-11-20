@@ -7,17 +7,17 @@ import { useReloadRecents } from './useReloadRecents'
 function renderReloadRecents() {
   const calls: string[] = []
   let finishUpdate = () => {}
-  const updateRecentDocuments = jest.fn(
+  const updateRecentDocuments = vi.fn(
     () =>
       new Promise<void>((resolve) => {
         calls.push('updateRecentDocuments')
         finishUpdate = resolve
       }),
   )
-  const reloadInvitations = jest.fn(() => {
+  const reloadInvitations = vi.fn(() => {
     calls.push('reloadInvitations')
   })
-  const createNotification = jest.fn(() => {
+  const createNotification = vi.fn(() => {
     calls.push('createNotification')
   })
 

@@ -4,21 +4,21 @@ import { type FileMenuHandlers, handleFileMenuAction } from './handleFileMenuAct
 
 describe('handleFileMenuAction', () => {
   const handlers = {
-    openHelp: jest.fn(),
-    toggleDebugMode: jest.fn(),
-    newDocument: jest.fn(),
-    newSpreadsheet: jest.fn(),
-    makeACopy: jest.fn(),
-    moveToFolder: jest.fn(),
-    moveToTrash: jest.fn(),
-    openProtonDrive: jest.fn(),
-    print: jest.fn(),
-    download: jest.fn(),
-    seeVersionHistory: jest.fn(),
+    openHelp: vi.fn(),
+    toggleDebugMode: vi.fn(),
+    newDocument: vi.fn(),
+    newSpreadsheet: vi.fn(),
+    makeACopy: vi.fn(),
+    moveToFolder: vi.fn(),
+    moveToTrash: vi.fn(),
+    openProtonDrive: vi.fn(),
+    print: vi.fn(),
+    download: vi.fn(),
+    seeVersionHistory: vi.fn(),
   } satisfies FileMenuHandlers
-  const logger = { debug: jest.fn() } as unknown as Parameters<typeof handleFileMenuAction>[2]
+  const logger = { debug: vi.fn() } as unknown as Parameters<typeof handleFileMenuAction>[2]
 
-  afterEach(() => jest.clearAllMocks())
+  afterEach(() => vi.clearAllMocks())
 
   test.each<[FileMenuAction, keyof FileMenuHandlers]>([
     [{ type: 'help' }, 'openHelp'],

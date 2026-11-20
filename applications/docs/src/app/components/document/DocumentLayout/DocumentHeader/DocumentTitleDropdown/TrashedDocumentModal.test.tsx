@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom/vitest'
 import type { AuthenticatedDocControllerInterface } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerInterface'
 import { DocumentState, type DocumentStateValues } from '@proton/docs-core/State/DocumentState'
 import { render, screen } from '@testing-library/react'
@@ -14,7 +14,7 @@ function renderModal({
   canRestore?: boolean
   onRetryRestoreCheck?: () => void
 }) {
-  const controller = { didTrashDocInCurrentSession, restoreDocument: jest.fn() }
+  const controller = { didTrashDocInCurrentSession, restoreDocument: vi.fn() }
   const documentState = new DocumentState({
     ...DocumentState.defaults,
     documentTrashState: 'trashed',
@@ -25,7 +25,7 @@ function renderModal({
       controller={controller as unknown as AuthenticatedDocControllerInterface}
       documentState={documentState}
       documentTitle="Document1"
-      onOpenProtonDrive={jest.fn()}
+      onOpenProtonDrive={vi.fn()}
       canRestore={canRestore}
       onRetryRestoreCheck={onRetryRestoreCheck}
     />,
@@ -72,7 +72,7 @@ describe('TrashedDocumentModal', () => {
   test.each([true, false])(
     'says when Drive could not tell whether the user may restore, and offers to ask again (didTrashDocInCurrentSession %s)',
     async (didTrashDocInCurrentSession) => {
-      const onRetryRestoreCheck = jest.fn()
+      const onRetryRestoreCheck = vi.fn()
       renderModal({ didTrashDocInCurrentSession, canRestore: false, onRetryRestoreCheck })
 
       expect(screen.getByText("We couldn't check whether you can take it out of trash.")).toBeInTheDocument()

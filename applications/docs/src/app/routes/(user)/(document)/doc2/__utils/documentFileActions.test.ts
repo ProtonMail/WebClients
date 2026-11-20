@@ -12,16 +12,16 @@ import {
   trashNode,
 } from './documentFileActions'
 
-jest.mock('@proton/drive/sdk', () => ({ ...jest.requireActual('@proton/drive/sdk'), getDrive: jest.fn() }))
+vi.mock('@proton/drive/sdk', async () => ({ ...(await vi.importActual('@proton/drive/sdk')), getDrive: vi.fn() }))
 
 const drive = {
-  trashNodes: jest.fn(),
-  restoreNodes: jest.fn(),
-  getNodeHierarchy: jest.fn(),
-  getAvailableName: jest.fn(),
+  trashNodes: vi.fn(),
+  restoreNodes: vi.fn(),
+  getNodeHierarchy: vi.fn(),
+  getAvailableName: vi.fn(),
 }
-const driveCompat = { getMyFilesNodeMeta: jest.fn(), createDocumentNode: jest.fn() }
-const client = { seedInitialCommit: jest.fn() }
+const driveCompat = { getMyFilesNodeMeta: vi.fn(), createDocumentNode: vi.fn() }
+const client = { seedInitialCommit: vi.fn() }
 const STATE = new Uint8Array([1, 2, 3])
 
 function duplicate(node: { uid: string; parentUid?: string }, canOrganize = true) {
@@ -41,13 +41,13 @@ async function* results(...items: ({ ok: true } | { ok: false; error: Error })[]
 
 describe('documentFileActions', () => {
   beforeEach(() => {
-    jest.mocked(getDrive).mockReturnValue(drive as unknown as ReturnType<typeof getDrive>)
+    vi.mocked(getDrive).mockReturnValue(drive as unknown as ReturnType<typeof getDrive>)
     drive.getAvailableName.mockImplementation(async (_parentUid: string, name: string) => `${name} (1)`)
     driveCompat.getMyFilesNodeMeta.mockResolvedValue({ volumeId: 'MYVOLUME', linkId: 'MYFILES' })
     driveCompat.createDocumentNode.mockResolvedValue({ volumeId: 'VOLUME', linkId: 'COPY', keys: {} })
     client.seedInitialCommit.mockResolvedValue({ commitId: 'COMMIT' })
   })
-  afterEach(() => jest.clearAllMocks())
+  afterEach(() => vi.clearAllMocks())
 
   test('getNewDocumentHref creates in the sibling folder, without a local ID too', () => {
     expect(getNewDocumentHref({ uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT' }, true, undefined)).toBe(
