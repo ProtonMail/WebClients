@@ -62,6 +62,7 @@ type Props = {
     initialCurrency?: Currency;
     flow?: Extract<PaymentMethodFlow, 'credit' | 'lumo-credit'>;
     minAmount?: number;
+    presetUsdAmounts?: number[];
     checkTopUp?: (amount: number, currency: Currency) => Promise<ProductCheckResponse>;
     onTopUpFromAccountCredit?: (credits: number, currency: Currency) => Promise<void>;
 } & TopUpModalProps;
@@ -121,6 +122,7 @@ export const TopUpModal = ({
     initialCurrency,
     flow = 'credit',
     minAmount: minAmountProp,
+    presetUsdAmounts,
     checkTopUp,
     onTopUpFromAccountCredit,
     ...props
@@ -373,6 +375,7 @@ export const TopUpModal = ({
                     currency={currency}
                     onChangeCurrency={setCurrency}
                     disableCurrencySelector={disableCurrencySelector}
+                    presetUsdAmounts={presetUsdAmounts}
                 />
                 {currentCheck && <TopUpSummary check={currentCheck} />}
                 {checkFailed && (

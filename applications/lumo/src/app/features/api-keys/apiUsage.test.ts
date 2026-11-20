@@ -13,6 +13,7 @@ import {
     filterMembersByName,
     filterRowsBySource,
     getPeriodDates,
+    isChatHiddenByModelFilter,
     getSourceUsageDays,
     getUsageRows,
     sumUsage,
@@ -81,6 +82,28 @@ describe('filterRowsBySource', () => {
         ['chat', ['frontend', 'lumo_desktop', 'lumo_mail', 'scribe']],
     ] as const)('%s keeps %j', (source, clientTypes) => {
         expect(filterRowsBySource(rows, source).map(({ ClientType }) => ClientType)).toEqual(clientTypes);
+    });
+});
+
+describe('isChatHiddenByModelFilter', () => {
+    const rows = [row({}), row({ ClientType: 'frontend', Model: 'bff6c543' })];
+
+    it('is true when a model is selected and chat usage is recorded under another model', () => {
+        expect(isChatHiddenByModelFilter(rows, 'lumo-lite', 'all')).toBe(true);
+        expect(isChatHiddenByModelFilter(rows, 'lumo-max', 'chat')).toBe(true);
+    });
+
+    it('is false for all models, the API source, or without chat usage', () => {
+        expect(isChatHiddenByModelFilter(rows, 'all', 'all')).toBe(false);
+        expect(isChatHiddenByModelFilter(rows, 'lumo-lite', 'api')).toBe(false);
+        expect(isChatHiddenByModelFilter([row({})], 'lumo-lite', 'all')).toBe(false);
+    });
+
+    it('is false when chat usage is recorded under public model IDs', () => {
+        expect(isChatHiddenByModelFilter([row({ ClientType: 'frontend' })], 'lumo-lite', 'all')).toBe(false);
+        expect(
+            isChatHiddenByModelFilter([row({ ClientType: 'frontend', Model: 'lumo-max' })], 'lumo-lite', 'all')
+        ).toBe(false);
     });
 });
 

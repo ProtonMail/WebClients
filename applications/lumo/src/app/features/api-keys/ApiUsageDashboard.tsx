@@ -39,6 +39,7 @@ import {
     getCostLabel,
     getPeriodDates,
     getSourceUsageDays,
+    isChatHiddenByModelFilter,
     sumUsage,
 } from './apiUsage';
 import { useApiUsageSummary } from './useApiUsageSummary';
@@ -180,6 +181,12 @@ const ApiUsageOverviewContent = ({
                             </fieldset>
                         </div>
                         <ApiTokenUsageLegend source={selectedSource} />
+                        {isChatHiddenByModelFilter(rows, selectedModel, selectedSource) && (
+                            <p className="text-xs color-weak m-0">
+                                {c('collider_2025: Info')
+                                    .t`Chat usage isn't broken down by model. Select All models to include it.`}
+                            </p>
+                        )}
                     </div>
                 </div>
                 <div className="api-usage-main-chart">
@@ -454,6 +461,7 @@ const ApiBalanceCard = ({
                     {...settingsModalProps}
                     settings={settings}
                     currency={currency}
+                    balance={balance}
                     spent={spent}
                     canChargeAutoTopUp={canChargeAutoTopUp}
                     onSave={credits.saveSettings}

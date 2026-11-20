@@ -5,7 +5,7 @@ import { LUMO_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 import type { BilledClientType, UsageDay, UsageEntry, UsageMemberRow } from '../../remote/usage';
-import type { ApiTokenPricingModelId } from '../api-docs/apiTokenPricingUsd';
+import { API_TOKEN_PRICING_USD_PER_MILLION, type ApiTokenPricingModelId } from '../api-docs/apiTokenPricingUsd';
 import { formatApiCurrency } from './apiKeysHelpers';
 
 export type UsageRow = UsageEntry & { Date: string };
@@ -22,6 +22,12 @@ const getUsageSource = (clientType: string): UsageSource => (clientType === 'api
 
 export const filterRowsBySource = (rows: UsageRow[], source: 'all' | UsageSource) =>
     source === 'all' ? rows : rows.filter((row) => getUsageSource(row.ClientType) === source);
+
+/** Chat usage is recorded under internal model IDs, so a model filter hides it. */
+export const isChatHiddenByModelFilter = (rows: UsageRow[], model: string, source: 'all' | UsageSource) =>
+    model !== 'all' &&
+    source !== 'api' &&
+    filterRowsBySource(rows, 'chat').some((row) => !(row.Model in API_TOKEN_PRICING_USD_PER_MILLION));
 
 export type ApiUsageDay = ApiUsageTotals & { date: string };
 

@@ -20,6 +20,7 @@ const MAX_AUTO_TOP_UP_AMOUNT = 100;
 const MIN_AUTO_TOP_UP_THRESHOLD = 1;
 const NOT_PRIMARY_ADMIN_CODE = 2011;
 const MISSING_SCOPE_CODE = 9100;
+const ACTIVE_OPERATION_CODE = 2502;
 
 const getAmountRangeMessage = (currency: Currency) => {
     const formattedMinAmount = formatApiCurrency(MIN_AUTO_TOP_UP_AMOUNT, currency);
@@ -64,6 +65,31 @@ export const getAutoTopUpSummary = (
     const formattedAmount = formatApiCurrency(amount, currency);
     const formattedThreshold = formatApiCurrency(threshold, currency);
     return c('collider_2025: Info').t`Adding ${formattedAmount} when your balance falls below ${formattedThreshold}`;
+};
+
+/** Mirrors the backend: it tops up at or below the threshold unless the monthly spending limit would be exceeded. */
+export const getImmediateTopUpWarning = ({
+    balance,
+    amount,
+    threshold,
+    spent,
+    spendingLimit,
+    currency,
+}: {
+    balance: number;
+    amount: number;
+    threshold: number;
+    spent: number;
+    spendingLimit: number | undefined;
+    currency: Currency;
+}) => {
+    if (balance > threshold || (spendingLimit !== undefined && spent + amount > spendingLimit)) {
+        return;
+    }
+    const formattedBalance = formatApiCurrency(balance, currency);
+    const formattedAmount = formatApiCurrency(amount, currency);
+    return c('collider_2025: Warning')
+        .t`Your balance of ${formattedBalance} has reached the threshold, so saving will top up ${formattedAmount} right away.`;
 };
 
 const SettingSection = ({
@@ -133,12 +159,16 @@ const getSaveErrorMessage = (error: unknown) => {
     if (code === NOT_PRIMARY_ADMIN_CODE || (status === 403 && code === MISSING_SCOPE_CODE)) {
         return c('collider_2025: Error').t`Only the organization's primary admin can change these settings.`;
     }
+    if (code === ACTIVE_OPERATION_CODE) {
+        return c('collider_2025: Error').t`A top-up is already in progress. Try again in a minute.`;
+    }
     return c('collider_2025: Error').t`Automatic top-up could not be saved. Please try again.`;
 };
 
 interface Props extends ModalStateProps {
     settings: ApiBalanceSettings;
     currency: Currency;
+    balance?: number;
     spent: number;
     canChargeAutoTopUp: boolean;
     onSave: (settings: ApiBalanceSettings) => Promise<void>;
@@ -147,6 +177,7 @@ interface Props extends ModalStateProps {
 export const ApiBalanceSettingsModal = ({
     settings,
     currency,
+    balance,
     spent,
     canChargeAutoTopUp,
     onSave,
@@ -183,6 +214,21 @@ export const ApiBalanceSettingsModal = ({
     const formattedSpent = formatApiCurrency(spent, currency);
     const formattedLimit = isLimitValid ? formatApiCurrency(parsedLimit, currency) : '';
     const formattedSavedAmount = formatApiCurrency(savedAmount, currency);
+    const savesAutoTopUpChange =
+        !openedSettings.autoTopUp.enabled ||
+        savedAmount !== openedSettings.autoTopUp.amount ||
+        savedThreshold !== openedSettings.autoTopUp.threshold;
+    const immediateTopUpWarning =
+        autoTopUpEnabled && isAutoTopUpValid && canChargeAutoTopUp && savesAutoTopUpChange && balance !== undefined
+            ? getImmediateTopUpWarning({
+                  balance,
+                  amount: savedAmount,
+                  threshold: savedThreshold,
+                  spent,
+                  spendingLimit: limitEnabled && parsedLimit !== null ? parsedLimit : undefined,
+                  currency,
+              })
+            : undefined;
 
     const handleSave = async () => {
         if (!isAutoTopUpValid) {
@@ -289,6 +335,7 @@ export const ApiBalanceSettingsModal = ({
                         )}
                     </SettingSection>
                 </SettingSection>
+                {immediateTopUpWarning && <p className="m-0 mt-4 text-sm color-warning">{immediateTopUpWarning}</p>}
                 {saveError !== undefined && (
                     <p className="m-0 mt-4 text-sm color-danger">{getSaveErrorMessage(saveError)}</p>
                 )}

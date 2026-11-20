@@ -5,7 +5,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import Loader from '@proton/components/components/loader/Loader';
-import { MIN_LUMO_CREDIT_AMOUNT } from '@proton/payments/core/amount-limits';
+import { LUMO_CREDIT_PRESET_USD_AMOUNTS, MIN_LUMO_CREDIT_AMOUNT } from '@proton/payments/core/amount-limits';
 import {
     type ProductCheckResponse,
     getBuyLumoCreditConfig,
@@ -40,6 +40,7 @@ export const LumoCreditsModal = ({ onSuccess, ...props }: TopUpModalProps & { on
             flow="lumo-credit"
             initialCurrency={subscription?.Currency}
             minAmount={MIN_LUMO_CREDIT_AMOUNT}
+            presetUsdAmounts={LUMO_CREDIT_PRESET_USD_AMOUNTS}
             checkTopUp={(amount, currency) =>
                 api<ProductCheckResponse>(
                     getCheckLumoCreditConfig({
