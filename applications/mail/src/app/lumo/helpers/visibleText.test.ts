@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: DOMPurify insertBefore fails on the happy-dom document
 /** Each concealment technique driven through the real DOMPurify + turndown path the model's body text comes from. */
 import tinycolor from 'tinycolor2';
 
@@ -196,7 +198,7 @@ describe('toVisibleText — side effects', () => {
 
     it('removes its iframe when the walk throws', () => {
         const before = document.querySelectorAll('iframe').length;
-        const readability = jest.spyOn(tinycolor, 'readability').mockImplementation(() => {
+        const readability = vi.spyOn(tinycolor, 'readability').mockImplementation(() => {
             throw new Error('boom');
         });
 
@@ -233,9 +235,9 @@ describe('toVisibleText — concealment the contrast check has to see through', 
 
     it("strips an uncoloured link on a background of the theme's link colour, which the reader cannot see", () => {
         const classicThemeLinkColor = '#657ee4';
-        // jsdom computes no custom properties, so jest.setup's stub stands in for Mail's themed root. The
+        // jsdom computes no custom properties, so the stub in vitest.setup.ts stands in for Mail's themed root. The
         // frame has its own window, so its cascade stays real.
-        jest.mocked(window.getComputedStyle).mockReturnValueOnce({
+        vi.mocked(window.getComputedStyle).mockReturnValueOnce({
             getPropertyValue: (property: string) => (property === '--interaction-norm' ? classicThemeLinkColor : ''),
         } as CSSStyleDeclaration);
 
@@ -314,7 +316,7 @@ describe('toVisibleText — visible content inside concealment', () => {
 const resolvedIn = (read: () => unknown): string => {
     const assigned: string[] = [];
     const contentWindow = Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype, 'contentWindow')!.get!;
-    const createElement = jest.spyOn(document, 'createElement').mockImplementation((tag: string) => {
+    const createElement = vi.spyOn(document, 'createElement').mockImplementation((tag: string) => {
         const element = Document.prototype.createElement.call(document, tag);
         if (tag !== 'iframe') {
             return element;
@@ -349,7 +351,7 @@ const resolvedIn = (read: () => unknown): string => {
 
 describe('toVisibleText — the isolated document', () => {
     it('fails closed when no isolated document is available, rather than passing the raw HTML through', () => {
-        const appendChild = jest.spyOn(document.body, 'appendChild').mockImplementation((node) => node);
+        const appendChild = vi.spyOn(document.body, 'appendChild').mockImplementation((node) => node);
 
         try {
             expect(() => toVisibleText(concealed(`<span style="display:none">${INJECTION}</span>`))).toThrow(

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { act, render } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useReducedMotion } from '@proton/components/hooks/useReducedMotion';
 
@@ -8,19 +9,19 @@ import CatSprite, { CAT_PIXEL_REM } from './CatSprite';
 import { CatPose } from './catPose';
 import { CAT_SPRITE_MANIFEST, getPoseAnimation } from './catSpriteManifest';
 
-jest.mock('@proton/components/hooks/useReducedMotion', () => ({ useReducedMotion: jest.fn() }));
+vi.mock('@proton/components/hooks/useReducedMotion', () => ({ useReducedMotion: vi.fn() }));
 
-const mockUseReducedMotion = jest.mocked(useReducedMotion);
+const mockUseReducedMotion = vi.mocked(useReducedMotion);
 
 describe('CatSprite', () => {
-    let animate: jest.Mock;
-    let cancels: jest.Mock[];
+    let animate: Mock;
+    let cancels: Mock[];
 
     beforeEach(() => {
         mockUseReducedMotion.mockReturnValue(false);
         cancels = [];
-        animate = jest.fn(() => {
-            const cancel = jest.fn();
+        animate = vi.fn(() => {
+            const cancel = vi.fn();
             cancels.push(cancel);
             return { cancel };
         });

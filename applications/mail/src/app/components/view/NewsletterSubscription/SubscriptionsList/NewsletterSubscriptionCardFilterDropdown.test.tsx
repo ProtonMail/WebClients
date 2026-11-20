@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { FILTER_STATUS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -7,10 +8,10 @@ import { mailTestRender } from '../../../../helpers/tests/render';
 import { activeSubscription } from '../testData';
 import { NewsletterSubscriptionCardFilterDropdown } from './NewsletterSubscriptionCardFilterDropdown';
 
-jest.mock('@proton/mail/store/filters/hooks');
-const mockedUseFilters = useFilters as jest.Mock;
+vi.mock('@proton/mail/store/filters/hooks');
+const mockedUseFilters = useFilters as Mock;
 
-const handleSubscriptionFilter = jest.fn();
+const handleSubscriptionFilter = vi.fn();
 
 describe('NewsletterSubscriptionCardFilterDropdown', () => {
     beforeEach(() => {

@@ -74,7 +74,7 @@ describe('createSetStarredHandler', () => {
         const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const element = { ID: 'ELEMENT_ID_1', Subject: 'Booking' };
         const store = { getState: () => offListState([element]) };
-        const applyLocation = jest.fn().mockResolvedValue([]);
+        const applyLocation = vi.fn().mockResolvedValue([]);
         const deps = { store, applyLocation } as unknown as MailToolDeps;
 
         return { references, emailReference, element, applyLocation, deps };
@@ -103,7 +103,7 @@ describe('createSetStarredHandler', () => {
     // Starring runs through the same first-element rules as a move, so a mixed call throws.
     it('stars conversations and messages in separate calls', async () => {
         const { references, conversation, message, emailReferences, state } = mixedSelection();
-        const applyLocation = jest.fn().mockResolvedValue([]);
+        const applyLocation = vi.fn().mockResolvedValue([]);
         const deps = { store: { getState: () => state }, applyLocation } as unknown as MailToolDeps;
 
         await createSetStarredHandler(deps)({ ids: emailReferences, starred: true }, { references });
@@ -114,7 +114,7 @@ describe('createSetStarredHandler', () => {
     it('rejects a hallucinated reference before touching apply-location', async () => {
         const references = createReferenceRegistry();
         const store = { getState: () => ({ elements: { elements: {} } }) };
-        const applyLocation = jest.fn();
+        const applyLocation = vi.fn();
         const deps = { store, applyLocation } as unknown as MailToolDeps;
 
         await expect(

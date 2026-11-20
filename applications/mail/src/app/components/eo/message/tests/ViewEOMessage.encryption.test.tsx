@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the message content iframe needs iframe.contentDocument, which happy-dom lacks
 import { findByText, waitFor } from '@testing-library/react';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';

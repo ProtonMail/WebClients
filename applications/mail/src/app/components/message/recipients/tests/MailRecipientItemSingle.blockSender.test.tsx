@@ -28,8 +28,8 @@ const inboxSenderAddress = 'inboxSender@protonmail.com';
 const spamSenderID = 'spamSender';
 
 const modalsHandlers = {
-    onContactDetails: jest.fn(),
-    onContactEdit: jest.fn(),
+    onContactDetails: vi.fn(),
+    onContactEdit: vi.fn(),
 };
 
 const getTestMessageToBlock = (sender: Recipient) => {
@@ -221,7 +221,7 @@ describe('MailRecipientItemSingle blocking a sender', () => {
     };
 
     it('should block a sender', async () => {
-        const createSpy = jest.fn(() => ({
+        const createSpy = vi.fn(() => ({
             IncomingDefault: {
                 ID: 'normalSender',
                 Email: normalSenderAddress,
@@ -246,7 +246,7 @@ describe('MailRecipientItemSingle blocking a sender', () => {
     });
 
     it('should block a sender already in incoming defaults', async () => {
-        const createSpy = jest.fn(() => ({
+        const createSpy = vi.fn(() => ({
             IncomingDefault: {
                 Email: spamSenderAddress,
                 Location: INCOMING_DEFAULTS_LOCATION.BLOCKED,
@@ -269,7 +269,7 @@ describe('MailRecipientItemSingle blocking a sender', () => {
     });
 
     it('should block a sender and apply do not ask', async () => {
-        const createSpy = jest.fn(() => ({
+        const createSpy = vi.fn(() => ({
             IncomingDefault: {
                 ID: 'normalSender',
                 Email: normalSenderAddress,
@@ -279,7 +279,7 @@ describe('MailRecipientItemSingle blocking a sender', () => {
 
         addApiMock('mail/v4/incomingdefaults?Overwrite=1', createSpy, 'post');
 
-        const doNotAskSpy = jest.fn(() => ({
+        const doNotAskSpy = vi.fn(() => ({
             MailSettings: { BlockSenderConfirmation: BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK },
         }));
         addApiMock('mail/v4/settings/block-sender-confirmation', doNotAskSpy, 'put');
@@ -300,7 +300,7 @@ describe('MailRecipientItemSingle blocking a sender', () => {
     });
 
     it('should block a sender and not open the modal', async () => {
-        const createSpy = jest.fn(() => ({
+        const createSpy = vi.fn(() => ({
             IncomingDefault: {
                 ID: 'normalSender',
                 Email: normalSenderAddress,

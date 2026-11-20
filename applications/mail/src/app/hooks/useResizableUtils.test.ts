@@ -3,24 +3,24 @@ import { act, renderHook } from '@testing-library/react';
 import { ResizeHandlePosition } from '../components/list/ResizeHandle';
 import { resetMemoryCacheForTesting, useResizableUtils } from './useResizableUtils';
 
-jest.mock('@proton/hooks/useHandler', () => ({
-    useHandler: jest.fn((fn) => {
+vi.mock('@proton/hooks/useHandler', () => ({
+    useHandler: vi.fn((fn) => {
         const handler = (...args: any[]) => fn(...args);
-        handler.cancel = jest.fn();
+        handler.cancel = vi.fn();
         return handler;
     }),
 }));
 
-jest.mock('@proton/components/hooks/useWindowSize', () => ({
+vi.mock('@proton/components/hooks/useWindowSize', () => ({
     __esModule: true,
-    default: jest.fn(() => [1000, 1000]),
+    default: vi.fn(() => [1000, 1000]),
 }));
 
 const localStorageMock = {
-    getItem: jest.fn(),
-    setItem: jest.fn(),
-    removeItem: jest.fn(),
-    clear: jest.fn(),
+    getItem: vi.fn(),
+    setItem: vi.fn(),
+    removeItem: vi.fn(),
+    clear: vi.fn(),
 };
 
 beforeAll(() => {
@@ -31,7 +31,7 @@ beforeAll(() => {
 
 // Reset before each test
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     window.localStorage.clear();
     resetMemoryCacheForTesting();
 });
@@ -39,7 +39,7 @@ beforeEach(() => {
 describe('useResizable', () => {
     const createMockContainerRef = () => {
         const mockElement = {
-            getBoundingClientRect: jest.fn().mockReturnValue({ width: 1000 }),
+            getBoundingClientRect: vi.fn().mockReturnValue({ width: 1000 }),
         };
         return { current: mockElement as unknown as HTMLElement };
     };
@@ -73,7 +73,7 @@ describe('useResizable', () => {
         const containerRef2 = createMockContainerRef();
 
         // Setup mock implementation for this test
-        window.localStorage.getItem = jest.fn().mockReturnValue('0.4'); // Testing with ratio
+        window.localStorage.getItem = vi.fn().mockReturnValue('0.4'); // Testing with ratio
 
         const { result } = renderHook(() =>
             useResizableUtils({
@@ -97,7 +97,7 @@ describe('useResizable', () => {
         const containerRef2 = createMockContainerRef();
 
         // Return null for localStorage.getItem
-        window.localStorage.getItem = jest.fn().mockReturnValue(null);
+        window.localStorage.getItem = vi.fn().mockReturnValue(null);
 
         const { result } = renderHook(() =>
             useResizableUtils({
@@ -121,7 +121,7 @@ describe('useResizable', () => {
         const containerRef2 = createMockContainerRef();
 
         // Mock localStorage to return a large value
-        window.localStorage.getItem = jest.fn().mockReturnValue('0.7');
+        window.localStorage.getItem = vi.fn().mockReturnValue('0.7');
 
         const { result } = renderHook(() =>
             useResizableUtils({
@@ -143,7 +143,7 @@ describe('useResizable', () => {
         const contentRef = { current: document.createElement('div') };
         const containerRef2 = createMockContainerRef();
 
-        window.localStorage.getItem = jest.fn().mockReturnValue('0.1'); // 0.1 * 1000 = 100 < minWidth
+        window.localStorage.getItem = vi.fn().mockReturnValue('0.1'); // 0.1 * 1000 = 100 < minWidth
 
         const { result } = renderHook(() =>
             useResizableUtils({
@@ -165,18 +165,18 @@ describe('useResizable', () => {
         // Create a properly mocked div with classList
         const mockDiv = {
             classList: {
-                add: jest.fn(),
-                remove: jest.fn(),
-                contains: jest.fn(),
+                add: vi.fn(),
+                remove: vi.fn(),
+                contains: vi.fn(),
             },
-            getBoundingClientRect: jest.fn().mockReturnValue({ width: 100 }),
+            getBoundingClientRect: vi.fn().mockReturnValue({ width: 100 }),
         };
         const containerRef = { current: mockDiv as unknown as HTMLDivElement };
         const contentRef = { current: mockDiv as unknown as HTMLDivElement };
         const containerRef2 = createMockContainerRef();
 
         const mockEvent = {
-            preventDefault: jest.fn(),
+            preventDefault: vi.fn(),
             clientX: 500,
         } as unknown as React.MouseEvent;
 
@@ -204,11 +204,11 @@ describe('useResizable', () => {
     it('should handle resize correctly with LEFT direction', () => {
         const mockDiv = {
             classList: {
-                add: jest.fn(),
-                remove: jest.fn(),
-                contains: jest.fn(),
+                add: vi.fn(),
+                remove: vi.fn(),
+                contains: vi.fn(),
             },
-            getBoundingClientRect: jest.fn().mockReturnValue({ width: 100 }),
+            getBoundingClientRect: vi.fn().mockReturnValue({ width: 100 }),
         };
         const containerRef = { current: mockDiv as unknown as HTMLDivElement };
         const contentRef = { current: mockDiv as unknown as HTMLDivElement };
@@ -246,7 +246,7 @@ describe('useResizable', () => {
         const containerRef2 = createMockContainerRef();
 
         // Start with a 0.6 ratio
-        window.localStorage.getItem = jest.fn().mockReturnValue('0.6');
+        window.localStorage.getItem = vi.fn().mockReturnValue('0.6');
 
         const { result, rerender } = renderHook(() =>
             useResizableUtils({
@@ -265,7 +265,7 @@ describe('useResizable', () => {
         expect(result.current.width).toBe(600);
 
         // Mock the localStorage for after reset
-        window.localStorage.getItem = jest.fn().mockReturnValue('0.35');
+        window.localStorage.getItem = vi.fn().mockReturnValue('0.35');
 
         act(() => {
             result.current.resetWidth();

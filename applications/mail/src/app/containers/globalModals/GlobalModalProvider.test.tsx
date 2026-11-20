@@ -5,21 +5,21 @@ import { useMailGlobalModals } from './globalModalContext';
 import type { ModalPayload } from './inteface';
 import { ModalType } from './inteface';
 
-jest.mock('@proton/mail/hooks/useUpdateMailSetting', () => ({
-    useUpdateMailSetting: () => ({ update: jest.fn() }),
+vi.mock('@proton/mail/hooks/useUpdateMailSetting', () => ({
+    useUpdateMailSetting: () => ({ update: vi.fn() }),
 }));
 
 // Simulates a chunk that can't be downloaded
-jest.mock('./GlobalScheduleModal', () => {
+vi.mock('./GlobalScheduleModal', () => {
     throw new Error('Loading chunk failed');
 });
 
 const payloads = {
-    snooze: { type: ModalType.Snooze, value: { onConfirm: jest.fn() } },
-    schedule: { type: ModalType.Schedule, value: { isMessage: true, onConfirm: jest.fn() } },
+    snooze: { type: ModalType.Snooze, value: { onConfirm: vi.fn() } },
+    schedule: { type: ModalType.Schedule, value: { isMessage: true, onConfirm: vi.fn() } },
     unsubscribe: {
         type: ModalType.Unsubscribe,
-        value: { isMessage: true, elementLength: 1, onConfirm: jest.fn() },
+        value: { isMessage: true, elementLength: 1, onConfirm: vi.fn() },
     },
 } satisfies Record<string, ModalPayload>;
 
@@ -111,7 +111,7 @@ describe('GlobalModalProvider', () => {
     });
 
     it('should drop a modal that fails to load and keep working', async () => {
-        const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+        const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
         renderProvider();
 
         fireEvent.click(screen.getByText('open schedule'));

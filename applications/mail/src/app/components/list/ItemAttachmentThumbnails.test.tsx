@@ -1,4 +1,7 @@
+// @vitest-environment jsdom
+// jsdom kept: happy-dom compares Blobs differently, so the download assertion fails
 import { act, fireEvent, screen, waitFor, within } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { MimeImage } from '@proton/file-icons/icons/MimeImage';
@@ -30,8 +33,8 @@ import { createAttachment } from '../../helpers/tests/message';
 import { mailTestRender } from '../../helpers/tests/render';
 import ItemColumnLayout from './ItemColumnLayout';
 
-jest.mock('@proton/shared/lib/helpers/downloadFile'); // mocking left to individual tests
-const mockDownloadFile = downloadFile as jest.MockedFunction<typeof downloadFile>;
+vi.mock('@proton/shared/lib/helpers/downloadFile'); // mocking left to individual tests
+const mockDownloadFile = downloadFile as MockedFunction<typeof downloadFile>;
 
 const fileContent = `test-content`;
 
@@ -77,7 +80,7 @@ const setup = async (
             showIcon={true}
             senders={<>Sender</>}
             unread={false}
-            onBack={jest.fn()}
+            onBack={vi.fn()}
             isSelected={false}
             attachmentsMetadata={filterAttachmentToPreview(attachmentsMetadata)}
             showHoverButtons={false}
@@ -280,8 +283,8 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 const attachmentPackets = await encryptAttachment(fileContent, file, false, keys.publicKeys[0], []);
                 // Trigger a fail during decrypt (when necessary) to test some scenarios (e.g. decryption failed)
                 const attachmentKeyPackets = decryptShouldFail ? new Uint8Array() : attachmentPackets.keys;
-                const attachmentSpy = jest.fn(() => attachmentPackets.data);
-                const attachmentMetadataSpy = jest.fn(() => ({
+                const attachmentSpy = vi.fn(() => attachmentPackets.data);
+                const attachmentMetadataSpy = vi.fn(() => ({
                     Attachment: {
                         KeyPackets: attachmentKeyPackets.toBase64(),
                         Sender: { Address: fromAddress },
@@ -310,7 +313,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
     };
 
     it('should preview an attachment that was already in Redux state', async () => {
-        window.URL.createObjectURL = jest.fn();
+        window.URL.createObjectURL = vi.fn();
         const numAttachments = 1;
 
         const attachmentsMetadata = generateAttachmentsMetadata(numAttachments, 'txt', 'text/plain');
@@ -350,7 +353,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
     });
 
     it('should preview an attachment that was not in Redux state', async () => {
-        window.URL.createObjectURL = jest.fn();
+        window.URL.createObjectURL = vi.fn();
         const numAttachments = 1;
 
         const attachmentsMetadata = generateAttachmentsMetadata(numAttachments, 'txt', 'text/plain');
@@ -369,7 +372,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
     });
 
     it('should be possible to switch between attachments when Redux state is filled', async () => {
-        window.URL.createObjectURL = jest.fn();
+        window.URL.createObjectURL = vi.fn();
         const numAttachments = 2;
 
         const attachmentsMetadata = generateAttachmentsMetadata(numAttachments, 'txt', 'text/plain');
@@ -430,7 +433,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
     });
 
     it('should show a message instead of preview when attachment decryption failed', async () => {
-        window.URL.createObjectURL = jest.fn();
+        window.URL.createObjectURL = vi.fn();
         const numAttachments = 1;
 
         const attachmentsMetadata = generateAttachmentsMetadata(numAttachments, 'txt', 'text/plain');
@@ -454,7 +457,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
     });
 
     it('should be possible to switch between attachments when not present in Redux state', async () => {
-        window.URL.createObjectURL = jest.fn();
+        window.URL.createObjectURL = vi.fn();
         const numAttachments = 2;
 
         const attachmentsMetadata = generateAttachmentsMetadata(numAttachments, 'txt', 'text/plain');
@@ -489,7 +492,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         const downloadFileCalled = new Promise<void>((resolve) => {
             mockDownloadFile.mockImplementation(() => resolve());
         });
-        window.URL.createObjectURL = jest.fn();
+        window.URL.createObjectURL = vi.fn();
         const numAttachments = 1;
         const attachmentsMetadata = generateAttachmentsMetadata(numAttachments, 'txt', 'text/plain');
 
@@ -534,7 +537,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
             mockDownloadFile.mockImplementation(() => resolve());
         });
 
-        window.URL.createObjectURL = jest.fn();
+        window.URL.createObjectURL = vi.fn();
         const numAttachments = 1;
 
         const attachmentsMetadata = generateAttachmentsMetadata(numAttachments, 'txt', 'text/plain');
@@ -569,7 +572,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
     });
 
     it('should show the download in progress and download only once when download buttons are clicked again', async () => {
-        window.URL.createObjectURL = jest.fn();
+        window.URL.createObjectURL = vi.fn();
         const attachmentsMetadata = generateAttachmentsMetadata(1, 'txt', 'text/plain');
         const attachmentURL = `mail/v4/attachments/${attachmentsMetadata[0].ID}`;
 

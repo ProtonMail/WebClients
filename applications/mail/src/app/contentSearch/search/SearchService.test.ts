@@ -1,3 +1,5 @@
+import type { Mock, MockInstance, Mocked } from 'vitest';
+
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
 import { TabLocalDatabaseLock } from '../coordination/TabLocalDatabaseLock';
@@ -10,10 +12,10 @@ import { SearchService } from './SearchService';
 /** Each `new Search(...)` gets an outcome the test resolves. */
 const searches: { end: (outcome: SearchOutcome) => void; instance: { results: unknown[] | undefined } }[] = [];
 
-jest.mock('./Search', () => ({
-    Search: jest.fn().mockImplementation(() => {
+vi.mock('./Search', () => ({
+    Search: vi.fn().mockImplementation(function () {
         const done = deferred<SearchOutcome>();
-        const instance = { done: done.promise, start: jest.fn(), results: undefined as unknown[] | undefined };
+        const instance = { done: done.promise, start: vi.fn(), results: undefined as unknown[] | undefined };
         searches.push({ end: done.resolve, instance });
         return instance;
     }),
@@ -21,16 +23,16 @@ jest.mock('./Search', () => ({
 
 const fakeMetricService = () =>
     ({
-        startSearchSession: jest.fn(),
-        searchStarted: jest.fn(),
-        searchCompleted: jest.fn(),
-        searchCancelled: jest.fn(),
-    }) as unknown as jest.Mocked<MetricService>;
+        startSearchSession: vi.fn(),
+        searchStarted: vi.fn(),
+        searchCompleted: vi.fn(),
+        searchCancelled: vi.fn(),
+    }) as unknown as Mocked<MetricService>;
 
 const params = {} as NormalizedSearchParams;
 
 describe('SearchService metrics', () => {
-    let metricService: jest.Mocked<MetricService>;
+    let metricService: Mocked<MetricService>;
     let searchService: SearchService;
 
     beforeEach(() => {
@@ -46,7 +48,7 @@ describe('SearchService metrics', () => {
             async () => {}
         );
         // The worker is only handed to `Search`, which is faked here.
-        jest.spyOn(searchService as any, 'getWorkerAndMessageCacheDeps').mockResolvedValue(undefined);
+        vi.spyOn(searchService as any, 'getWorkerAndMessageCacheDeps').mockResolvedValue(undefined);
     });
 
     it('starts a session and a search for each new search', () => {
@@ -107,8 +109,8 @@ describe('SearchService metrics', () => {
 
 describe('SearchService worker connection', () => {
     let searchService: SearchService;
-    let createWorker: jest.SpyInstance;
-    let rawWorkers: { terminate: jest.Mock }[];
+    let createWorker: MockInstance;
+    let rawWorkers: { terminate: Mock }[];
 
     beforeEach(() => {
         searches.length = 0;
@@ -122,16 +124,14 @@ describe('SearchService worker connection', () => {
             true,
             async () => {}
         );
-        createWorker = jest
-            .spyOn(searchService as any, 'createAndInitNewWorkerInstance')
-            .mockImplementation(async () => {
-                const rawWorker = { terminate: jest.fn() };
-                rawWorkers.push(rawWorker);
-                return { worker: {}, indexKey: {}, rawWorker };
-            });
+        createWorker = vi.spyOn(searchService as any, 'createAndInitNewWorkerInstance').mockImplementation(async () => {
+            const rawWorker = { terminate: vi.fn() };
+            rawWorkers.push(rawWorker);
+            return { worker: {}, indexKey: {}, rawWorker };
+        });
     });
 
-    const closeConnection = (rawWorker: { terminate: jest.Mock }) => {
+    const closeConnection = (rawWorker: { terminate: Mock }) => {
         (searchService as any).onWorkerConnectionClosed(rawWorker);
     };
 

@@ -10,8 +10,8 @@ const renderCelebration = (isBusy: boolean) =>
     });
 
 describe('useCelebration', () => {
-    beforeEach(() => jest.useFakeTimers());
-    afterEach(() => jest.useRealTimers());
+    beforeEach(() => vi.useFakeTimers());
+    afterEach(() => vi.useRealTimers());
 
     it('celebrates for 2s once Lumo finishes with a reply, then stops', () => {
         const { result, rerender } = renderCelebration(true);
@@ -20,9 +20,9 @@ describe('useCelebration', () => {
         rerender({ isBusy: false, lastChainEnd: LumoChainEnd.SUCCEEDED });
         expect(result.current).toBe(true);
 
-        act(() => jest.advanceTimersByTime(1999));
+        act(() => vi.advanceTimersByTime(1999));
         expect(result.current).toBe(true);
-        act(() => jest.advanceTimersByTime(1));
+        act(() => vi.advanceTimersByTime(1));
         expect(result.current).toBe(false);
     });
 

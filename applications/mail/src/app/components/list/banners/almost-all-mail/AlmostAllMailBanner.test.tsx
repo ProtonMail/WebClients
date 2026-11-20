@@ -1,7 +1,8 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { Mock } from 'vitest';
 
-import { mockUseHistory } from '@proton/components/testing/mockUseHistory';
+import { mockUseHistory } from '@proton/components/testing/vitest/mockUseHistory';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -20,10 +21,10 @@ describe('AlmostAllMailBanner', () => {
     });
 
     describe('when use is in AlmostAllMail location', () => {
-        let mockedPush: jest.Mock;
+        let mockedPush: Mock;
 
         beforeEach(() => {
-            mockedPush = jest.fn();
+            mockedPush = vi.fn();
             mockUseHistory({
                 push: mockedPush,
             });

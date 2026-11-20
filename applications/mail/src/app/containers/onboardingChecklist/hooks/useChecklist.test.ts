@@ -1,3 +1,5 @@
+import type { MockedFunction } from 'vitest';
+
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { ChecklistType } from '@proton/shared/lib/interfaces/Checklist';
 
@@ -5,21 +7,21 @@ import { addApiMock } from '../../../helpers/tests/api';
 import { renderHook } from '../../../helpers/tests/render';
 import useChecklist from './useChecklist';
 
-const getChecklist = jest.fn(() => {
+const getChecklist = vi.fn(() => {
     return {
         Code: 10,
         Items: [],
     };
 });
 
-const paidChecklist = jest.fn(() => {
+const paidChecklist = vi.fn(() => {
     return {
         Code: 20,
         Items: [],
     };
 });
 
-const byoeChecklist = jest.fn(() => {
+const byoeChecklist = vi.fn(() => {
     return {
         Code: 20,
         Items: [],
@@ -36,8 +38,8 @@ const defaultReturnValue = {
     Display: 'Hidden',
 };
 
-jest.mock('@proton/account/userSettings/hooks');
-const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
+vi.mock('@proton/account/userSettings/hooks');
+const mockedUserSettings = useUserSettings as MockedFunction<any>;
 
 describe('useChecklist', () => {
     beforeAll(() => {

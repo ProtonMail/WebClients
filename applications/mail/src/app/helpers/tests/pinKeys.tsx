@@ -58,7 +58,7 @@ const getProperties = async (senderKeys: GeneratedKey, hasFingerprint = true) =>
 };
 
 export const setupContactsForPinKeys = async (hasFingerprint = true) => {
-    const updateSpy = jest.fn(() => Promise.resolve({}));
+    const updateSpy = vi.fn(() => Promise.resolve({}));
     addApiMock(`contacts/v4/contacts/${contactID}`, updateSpy, 'put');
 
     const receiverKeys = await generateKeys('me', receiver.Address);

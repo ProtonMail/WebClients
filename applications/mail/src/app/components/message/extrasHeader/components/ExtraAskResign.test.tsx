@@ -11,21 +11,21 @@ import { message } from '../../../../helpers/tests/pinKeys';
 import { tick } from '../../../../helpers/tests/render';
 import ExtraAskResign from './ExtraAskResign';
 
-jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
+vi.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
     __esModule: true,
     default: () => async () => ({ pinnedKeys: [] }),
 }));
-jest.mock('@proton/app-context/useApi', () => ({
-    useApi: jest.fn().mockReturnValue(jest.fn().mockResolvedValue({ Contact: { Cards: [], ContactEmails: [] } })),
+vi.mock('@proton/app-context/useApi', () => ({
+    useApi: vi.fn().mockReturnValue(vi.fn().mockResolvedValue({ Contact: { Cards: [], ContactEmails: [] } })),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('@proton/account/userKeys/hooks', () => ({ useGetUserKeys: () => jest.fn() }));
+vi.mock('@proton/account/userKeys/hooks', () => ({ useGetUserKeys: () => vi.fn() }));
 
-jest.mock('@proton/mail-message/hooks/contact/useContacts');
-const mockUseContactsMap = jest.mocked(useContactsMap);
+vi.mock('@proton/mail-message/hooks/contact/useContacts');
+const mockUseContactsMap = vi.mocked(useContactsMap);
 
 const getMessageVerification = (pinnedKeysVerified: boolean, pinnedKeys?: PublicKeyReference[]) => {
     return {
@@ -40,7 +40,7 @@ describe('Extra ask resign banner', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should not display the extra ask resign banner when sender is verified and keys are pinned', () => {
@@ -48,7 +48,7 @@ describe('Extra ask resign banner', () => {
             <ExtraAskResign
                 message={message}
                 messageVerification={getMessageVerification(true, [{} as PublicKeyReference])}
-                onResignContact={jest.fn()}
+                onResignContact={vi.fn()}
             />
         );
 
@@ -60,7 +60,7 @@ describe('Extra ask resign banner', () => {
             <ExtraAskResign
                 message={message}
                 messageVerification={getMessageVerification(true)}
-                onResignContact={jest.fn()}
+                onResignContact={vi.fn()}
             />
         );
 
@@ -72,7 +72,7 @@ describe('Extra ask resign banner', () => {
             <ExtraAskResign
                 message={message}
                 messageVerification={getMessageVerification(false)}
-                onResignContact={jest.fn()}
+                onResignContact={vi.fn()}
             />
         );
 
@@ -88,7 +88,7 @@ describe('Extra ask resign banner', () => {
             <ExtraAskResign
                 message={message}
                 messageVerification={getMessageVerification(false, [{} as PublicKeyReference])}
-                onResignContact={jest.fn()}
+                onResignContact={vi.fn()}
             />
         );
 

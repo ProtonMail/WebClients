@@ -25,18 +25,18 @@ import {
 } from './IndexService';
 import type { WorkerIndexListener } from './worker/IndexWorker';
 
-const mockCreateWorker = jest.fn();
+const mockCreateWorker = vi.fn();
 
-jest.mock('@proton/encrypted-search/esIDB/configObjectStore', () => {
-    return { readEnabled: jest.fn() };
+vi.mock('@proton/encrypted-search/esIDB/configObjectStore', () => {
+    return { readEnabled: vi.fn() };
 });
-jest.mock('@proton/encrypted-search/esIDB/indexedDB', () => {
-    return { hasESDB: jest.fn() };
+vi.mock('@proton/encrypted-search/esIDB/indexedDB', () => {
+    return { hasESDB: vi.fn() };
 });
 
-jest.mock('comlink', () => {
+vi.mock('comlink', async () => {
     return {
-        ...jest.requireActual('comlink'),
+        ...(await vi.importActual('comlink')),
         wrap: () => {
             return async (...args: unknown[]) => {
                 return mockCreateWorker(...args);
@@ -49,7 +49,7 @@ jest.mock('comlink', () => {
 });
 
 class FakeRawWorker {
-    terminate = jest.fn();
+    terminate = vi.fn();
 }
 
 type WorkerRun = (listener: WorkerIndexListener) => Promise<void>;
@@ -58,7 +58,7 @@ type WorkerRun = (listener: WorkerIndexListener) => Promise<void>;
 const fakeWorker = (run: WorkerRun) => {
     const calls: string[] = [];
     const accept = (name: string) => {
-        return jest.fn(async () => {
+        return vi.fn(async () => {
             calls.push(name);
             return true;
         });
@@ -68,10 +68,10 @@ const fakeWorker = (run: WorkerRun) => {
             pushStartupAction: accept('startup'),
             pushCatchup: accept('catchup'),
             pushIncrementalUpdate: accept('incremental'),
-            start: jest.fn(() => {
+            start: vi.fn(() => {
                 return run(listener);
             }),
-            stop: jest.fn(async () => {}),
+            stop: vi.fn(async () => {}),
         };
     };
     return { create, calls };
@@ -101,12 +101,12 @@ const appliesLiveUpdate: WorkerRun = async (listener) => {
 };
 
 const logger: Logger = {
-    trace: jest.fn(),
-    debug: jest.fn(),
-    info: jest.fn(),
-    warn: jest.fn(),
-    error: jest.fn(),
-    log: jest.fn(),
+    trace: vi.fn(),
+    debug: vi.fn(),
+    info: vi.fn(),
+    warn: vi.fn(),
+    error: vi.fn(),
+    log: vi.fn(),
 };
 
 const liveEvent = (eventID: string): ESEvent<ESBaseMessage> => {
@@ -168,12 +168,12 @@ class FakeLeaderLock implements LeaderLock {
 
 const makeListener = () => {
     return {
-        reportHistoricProgress: jest.fn(),
-        reportIndexComplete: jest.fn(),
-        reportTaskStarted: jest.fn(),
-        reportTaskCompleted: jest.fn(),
-        reportError: jest.fn(),
-        reportStatusUpdate: jest.fn(),
+        reportHistoricProgress: vi.fn(),
+        reportIndexComplete: vi.fn(),
+        reportTaskStarted: vi.fn(),
+        reportTaskCompleted: vi.fn(),
+        reportError: vi.fn(),
+        reportStatusUpdate: vi.fn(),
     } satisfies IndexListener;
 };
 
@@ -211,7 +211,7 @@ describe('IndexService', () => {
     beforeEach(async () => {
         mockCreateWorker.mockReset();
         (globalThis as any).Worker = FakeRawWorker;
-        jest.spyOn(IndexService.prototype as any, 'getKeyAndDropIndexIfNeeded').mockResolvedValue({});
+        vi.spyOn(IndexService.prototype as any, 'getKeyAndDropIndexIfNeeded').mockResolvedValue({});
         const userId = `index-service-user-${userCounter++}`;
         leaderLock = new FakeLeaderLock();
         otherTab = new TabChannel(new BroadcastChannel(`content-search:${userId}`));
@@ -221,11 +221,11 @@ describe('IndexService', () => {
         });
         service = new IndexService(
             userId,
-            jest.fn() as unknown as Api,
+            vi.fn() as unknown as Api,
             async () => {
                 return [];
             },
-            jest.fn(),
+            vi.fn(),
             logger,
             {
                 leaderLock,
@@ -243,7 +243,7 @@ describe('IndexService', () => {
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
         service.dispose();
         otherTab.close();
     });
@@ -278,14 +278,14 @@ describe('IndexService', () => {
     describe('taking part in the election', () => {
         it('asks for leadership only once initialized', async () => {
             const lock = new FakeLeaderLock();
-            const acquire = jest.spyOn(lock, 'acquire');
+            const acquire = vi.spyOn(lock, 'acquire');
             const other = new IndexService(
                 `index-service-user-${userCounter++}`,
-                jest.fn() as unknown as Api,
+                vi.fn() as unknown as Api,
                 async () => {
                     return [];
                 },
-                jest.fn(),
+                vi.fn(),
                 logger,
                 {
                     leaderLock: lock,
@@ -313,7 +313,7 @@ describe('IndexService', () => {
             await service.enable();
             await flush();
             const run = track(workerRun()!);
-            const release = jest.spyOn(leaderLock, 'release');
+            const release = vi.spyOn(leaderLock, 'release');
 
             service.dispose();
             await flush();
@@ -560,14 +560,14 @@ describe('IndexService', () => {
 
         it('leaves a service that was never initialized out of the election when another tab enables the index', async () => {
             const lock = new FakeLeaderLock();
-            const acquire = jest.spyOn(lock, 'acquire');
+            const acquire = vi.spyOn(lock, 'acquire');
             const uninitialized = new IndexService(
                 service.userId,
-                jest.fn() as unknown as Api,
+                vi.fn() as unknown as Api,
                 async () => {
                     return [];
                 },
-                jest.fn(),
+                vi.fn(),
                 logger,
                 {
                     leaderLock: lock,
@@ -610,11 +610,11 @@ describe('IndexService', () => {
     const openFollower = () => {
         const follower = new IndexService(
             service.userId,
-            jest.fn() as unknown as Api,
+            vi.fn() as unknown as Api,
             async () => {
                 return [];
             },
-            jest.fn(),
+            vi.fn(),
             logger,
             {
                 leaderLock: new FakeLeaderLock(),
@@ -741,8 +741,8 @@ describe('IndexService', () => {
         };
 
         it('rebuilds an imported index from scratch on the indexation path when v1 search is enabled', async () => {
-            jest.mocked(hasESDB).mockResolvedValue(true);
-            jest.mocked(readEnabled).mockResolvedValue(true);
+            vi.mocked(hasESDB).mockResolvedValue(true);
+            vi.mocked(readEnabled).mockResolvedValue(true);
             await seedConfig({ indexKey: 'imported-key' });
             const worker = fakeWorker(completesCatchup);
             mockCreateWorker.mockImplementationOnce(worker.create);
@@ -757,7 +757,7 @@ describe('IndexService', () => {
         });
 
         it('drops the index built by the indexer on the import path before importing', async () => {
-            jest.mocked(hasESDB).mockResolvedValue(false);
+            vi.mocked(hasESDB).mockResolvedValue(false);
             await seedConfig({ indexKey: 'indexer-key', status: 'enabled' });
 
             service.resetDbBetweenFeatureFlagSwitches(false);
@@ -777,8 +777,8 @@ describe('IndexService', () => {
         });
 
         it('does not let the reset recreate the database when it is deleted during the reset', async () => {
-            jest.mocked(hasESDB).mockResolvedValue(true);
-            jest.mocked(readEnabled).mockResolvedValue(true);
+            vi.mocked(hasESDB).mockResolvedValue(true);
+            vi.mocked(readEnabled).mockResolvedValue(true);
             await seedConfig({ indexKey: 'imported-key' });
 
             service.resetDbBetweenFeatureFlagSwitches(true);
@@ -789,7 +789,7 @@ describe('IndexService', () => {
         });
 
         it('still deletes the database when the reset failed', async () => {
-            jest.mocked(hasESDB).mockRejectedValue(new Error('v1 unavailable'));
+            vi.mocked(hasESDB).mockRejectedValue(new Error('v1 unavailable'));
             await seedConfig({ indexKey: 'imported-key' });
 
             service.resetDbBetweenFeatureFlagSwitches(true);
@@ -807,11 +807,11 @@ describe('the shared IndexService', () => {
         return getSharedIndexService(
             userId,
             '5.0.1.0',
-            jest.fn() as unknown as Api,
+            vi.fn() as unknown as Api,
             async () => {
                 return [];
             },
-            jest.fn(),
+            vi.fn(),
             logger
         );
     };
@@ -819,7 +819,7 @@ describe('the shared IndexService', () => {
     it('is disposed and forgotten once the last component using it releases it', async () => {
         const userId = `shared-index-service-${userCounter++}`;
         const first = getShared(userId);
-        const dispose = jest.spyOn(first, 'dispose');
+        const dispose = vi.spyOn(first, 'dispose');
         const release = retainSharedIndexService();
 
         release();
@@ -836,7 +836,7 @@ describe('the shared IndexService', () => {
     it('survives a remount, which releases it and retains it again in the same commit', async () => {
         const userId = `shared-index-service-${userCounter++}`;
         const shared = getShared(userId);
-        const dispose = jest.spyOn(shared, 'dispose');
+        const dispose = vi.spyOn(shared, 'dispose');
         const release = retainSharedIndexService();
 
         // the new component rendered with the same instance, then the old one unmounts and the new one mounts

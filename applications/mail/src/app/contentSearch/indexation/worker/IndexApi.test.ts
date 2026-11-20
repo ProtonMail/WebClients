@@ -1,4 +1,5 @@
 import type * as Comlink from 'comlink';
+import type { Mock } from 'vitest';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 
@@ -16,25 +17,25 @@ type ApiConfig = {
 };
 
 const logger = {
-    trace: jest.fn(),
-    debug: jest.fn(),
-    info: jest.fn(),
-    warn: jest.fn(),
-    error: jest.fn(),
-    log: jest.fn(),
+    trace: vi.fn(),
+    debug: vi.fn(),
+    info: vi.fn(),
+    warn: vi.fn(),
+    error: vi.fn(),
+    log: vi.fn(),
 };
 
 const decryptBody: BatchMessageDecryptionFunction = async (message) => {
     return { decryptedBody: `decrypted: ${message.ID}`, mimeType: MIME_TYPES.PLAINTEXT };
 };
 
-const setup = (api: jest.Mock) => {
+const setup = (api: Mock) => {
     const bridge = new MailApiBridge(api, decryptBody, logger);
     return new IndexApi(bridge as unknown as Comlink.Remote<MailApiBridge>);
 };
 
 const batchApi = () => {
-    return jest.fn(async ({ data }: ApiConfig) => {
+    return vi.fn(async ({ data }: ApiConfig) => {
         return {
             Code: 1000,
             Messages: data!.MessageIDs.map((ID) => {
@@ -114,7 +115,7 @@ describe('IndexApi', () => {
         it('should keep the batches completed before an abort in the cache', async () => {
             const controller = new AbortController();
             const bodyCache = new Map<string, MessageCacheContent>();
-            const api = jest.fn(async (config: ApiConfig) => {
+            const api = vi.fn(async (config: ApiConfig) => {
                 if (api.mock.calls.length > 1) {
                     controller.abort();
                     throw config.signal.reason;
@@ -135,7 +136,7 @@ describe('IndexApi', () => {
     describe('fetchMetadataPage', () => {
         it('should mark the anchor as eof and keep its position when the page is empty', async () => {
             const anchor: Anchor = { position: { time: 100, remoteId: 'message-3', processed: 3 } };
-            const api = jest.fn().mockResolvedValue({ Messages: [], Total: 0 });
+            const api = vi.fn().mockResolvedValue({ Messages: [], Total: 0 });
             const indexApi = setup(api);
 
             const page = await indexApi.fetchMetadataPage(anchor, new AbortController().signal);
@@ -145,7 +146,7 @@ describe('IndexApi', () => {
         });
 
         it('should mark an empty mailbox as eof', async () => {
-            const api = jest.fn().mockResolvedValue({ Messages: [], Total: 0 });
+            const api = vi.fn().mockResolvedValue({ Messages: [], Total: 0 });
             const indexApi = setup(api);
 
             const page = await indexApi.fetchMetadataPage(undefined, new AbortController().signal);
@@ -158,7 +159,7 @@ describe('IndexApi', () => {
                 buildMessageMetadata({ ID: 'message-1', Time: 300 }),
                 buildMessageMetadata({ ID: 'message-2', Time: 200 }),
             ];
-            const api = jest.fn().mockResolvedValue({ Messages: messages, Total: 10 });
+            const api = vi.fn().mockResolvedValue({ Messages: messages, Total: 10 });
             const indexApi = setup(api);
 
             const page = await indexApi.fetchMetadataPage(undefined, new AbortController().signal);

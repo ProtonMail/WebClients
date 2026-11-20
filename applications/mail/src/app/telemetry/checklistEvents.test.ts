@@ -16,16 +16,16 @@ import {
     useChecklistTracker,
 } from './checklistEvents';
 
-jest.mock('@proton/account/allSubscriptions/hooks');
+vi.mock('@proton/account/allSubscriptions/hooks');
 
-jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
-    tracker: { emit: jest.fn() },
+vi.mock('@proton/telemetry-tracker/lib/tracker', () => ({
+    tracker: { emit: vi.fn() },
 }));
 
 const NOW = new Date('2026-10-25T12:00:00Z');
 
 const getLastEmit = () => {
-    const [event, payload] = jest.mocked(tracker.emit).mock.calls.at(-1) ?? [];
+    const [event, payload] = vi.mocked(tracker.emit).mock.calls.at(-1) ?? [];
 
     return { name: event?.event, dimensions: payload?.dimensions, values: payload?.values };
 };
@@ -43,14 +43,14 @@ const renderTracker = (overrides: Partial<ChecklistTrackingContext> = {}) =>
 
 describe('checklist tracking', () => {
     beforeEach(() => {
-        jest.useFakeTimers({ now: NOW });
-        jest.clearAllMocks();
+        vi.useFakeTimers({ now: NOW });
+        vi.clearAllMocks();
         sessionStorage.clear();
-        jest.mocked(useAllSubscriptions).mockReturnValue([[], false]);
+        vi.mocked(useAllSubscriptions).mockReturnValue([[], false]);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('sends the provider the user selects on the importers screen', () => {
@@ -130,7 +130,7 @@ describe('checklist tracking', () => {
     });
 
     it('reports the plan as unknown while the subscriptions load', () => {
-        jest.mocked(useAllSubscriptions).mockReturnValue([undefined, true]);
+        vi.mocked(useAllSubscriptions).mockReturnValue([undefined, true]);
         renderTracker().trackFlowFinished();
 
         expect(getLastEmit().dimensions).toMatchObject({ plan: 'unknown' });

@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -14,22 +15,20 @@ import { mailTestRender } from '../helpers/tests/render';
 import { newElementsState } from '../store/elements/elementsSlice';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+vi.mock('@proton/unleash/useFlag');
+const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 
-jest.mock('../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
+vi.mock('../containers/onboardingChecklist/provider/GetStartedChecklistProvider', async () => ({
     __esModule: true,
-    ...jest.requireActual('../containers/onboardingChecklist/provider/GetStartedChecklistProvider'),
-    useGetStartedChecklist: jest.fn(),
+    ...(await vi.importActual('../containers/onboardingChecklist/provider/GetStartedChecklistProvider')),
+    useGetStartedChecklist: vi.fn(),
 }));
 
 describe('RouterElementContainer - Conversation View Mode', () => {
-    let mockedUseGetStartedChecklist: jest.MockedFunction<
-        typeof GetStartedChecklistProviderModule.useGetStartedChecklist
-    >;
+    let mockedUseGetStartedChecklist: MockedFunction<typeof GetStartedChecklistProviderModule.useGetStartedChecklist>;
 
     beforeEach(() => {
-        mockedUseGetStartedChecklist = jest.mocked(GetStartedChecklistProviderModule.useGetStartedChecklist);
+        mockedUseGetStartedChecklist = vi.mocked(GetStartedChecklistProviderModule.useGetStartedChecklist);
         mockedUseGetStartedChecklist.mockReturnValue({
             displayState: CHECKLIST_DISPLAY_TYPE.FULL,
             items: new Set(),
@@ -37,7 +36,7 @@ describe('RouterElementContainer - Conversation View Mode', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should force message view for Deleted folder regardless of ViewMode setting', async () => {

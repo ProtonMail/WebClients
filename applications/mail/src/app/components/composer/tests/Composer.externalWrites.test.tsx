@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the rooster editor iframe needs iframe.contentDocument, which happy-dom lacks
 import { act } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
@@ -18,7 +20,7 @@ import { clearAll } from '../../../helpers/tests/helper';
 import { tick } from '../../../helpers/tests/render';
 import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
 const QUOTE = '<blockquote class="protonmail_quote">The original message</blockquote>';
 
@@ -41,12 +43,12 @@ describe('Composer writes reachable from outside it', () => {
 
     beforeEach(() => {
         clearAll();
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         addApiKeys(false, toAddress, []);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const setup = async () => {
@@ -75,7 +77,7 @@ describe('Composer writes reachable from outside it', () => {
     const settle = async (work: () => void) => {
         await act(async () => {
             work();
-            jest.advanceTimersByTime(CONTENT_DEBOUNCE);
+            vi.advanceTimersByTime(CONTENT_DEBOUNCE);
             await tick();
         });
     };

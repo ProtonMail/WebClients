@@ -117,7 +117,7 @@ describe('createMoveEmailsHandler', () => {
         const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const element = { ID: 'ELEMENT_ID_1', Subject: 'Booking' };
         const store = { getState: () => offListState([element]) };
-        const applyLocation = jest.fn().mockResolvedValue([]);
+        const applyLocation = vi.fn().mockResolvedValue([]);
         const deps = { store, applyLocation, validateMove: moveRulesAnswering('allowed') } as unknown as MailToolDeps;
 
         await createMoveEmailsHandler(deps)(
@@ -136,7 +136,7 @@ describe('createMoveEmailsHandler', () => {
     // other kind, so one call over both fails before any request.
     it('moves conversations and messages in separate calls', async () => {
         const { references, conversation, message, emailReferences, state } = mixedSelection();
-        const applyLocation = jest.fn().mockResolvedValue([]);
+        const applyLocation = vi.fn().mockResolvedValue([]);
         const validateMove = moveRulesAnswering('allowed');
         const deps = { store: { getState: () => state }, applyLocation, validateMove } as unknown as MailToolDeps;
 
@@ -155,7 +155,7 @@ describe('createMoveEmailsHandler', () => {
         ['the emails are already there', 'notApplicable', /already in Archive/],
     ] as const)('fails without moving when %s', async (_case, answer, message) => {
         const { references, emailReferences, state } = mixedSelection();
-        const applyLocation = jest.fn().mockResolvedValue([]);
+        const applyLocation = vi.fn().mockResolvedValue([]);
         const deps = {
             store: { getState: () => state },
             applyLocation,
@@ -176,7 +176,7 @@ describe('createMoveEmailsHandler', () => {
         const folderReference = references.referenceFor('folder', 'FOLDER_ID_1', { title: 'Travel' });
         const deps = {
             store: { getState: () => state },
-            applyLocation: jest.fn(),
+            applyLocation: vi.fn(),
             validateMove: moveRulesAnswering('notApplicable'),
         } as unknown as MailToolDeps;
 
@@ -190,8 +190,8 @@ describe('createMoveEmailsHandler', () => {
 
     it('moves only the type group the rules allow', async () => {
         const { references, message, emailReferences, state } = mixedSelection();
-        const applyLocation = jest.fn().mockResolvedValue([]);
-        const validateMove = jest.fn((elements: unknown[]) => {
+        const applyLocation = vi.fn().mockResolvedValue([]);
+        const validateMove = vi.fn((elements: unknown[]) => {
             const allowed = elements.includes(message);
             return {
                 allowedElements: allowed ? elements : [],
@@ -213,7 +213,7 @@ describe('createMoveEmailsHandler', () => {
     it('rejects a hallucinated reference before touching apply-location', async () => {
         const references = createReferenceRegistry(buildFixedReferences());
         const store = { getState: () => ({ elements: { elements: {} } }) };
-        const applyLocation = jest.fn();
+        const applyLocation = vi.fn();
         const deps = { store, applyLocation } as unknown as MailToolDeps;
 
         await expect(
@@ -230,7 +230,7 @@ describe('createMoveEmailsHandler', () => {
         const emailReference = references.referenceFor('email', 'ELEMENT_ID_1', { title: 'Booking' });
         const element = { ID: 'ELEMENT_ID_1', Subject: 'Booking' };
         const store = { getState: () => offListState([element], MAILBOX_LABEL_IDS.ARCHIVE) };
-        const applyLocation = jest.fn().mockResolvedValue([]);
+        const applyLocation = vi.fn().mockResolvedValue([]);
         const deps = { store, applyLocation, validateMove: moveRulesAnswering('allowed') } as unknown as MailToolDeps;
 
         await createMoveEmailsHandler(deps)(
@@ -262,8 +262,8 @@ describe('createMoveEmailsHandler into a category tab', () => {
             Labels: labelIDs.map((ID) => ({ ID })),
         }));
         const ids = elements.map(({ ID }) => references.referenceFor('email', ID, { title: ID }));
-        const applyLocation = jest.fn().mockResolvedValue([]);
-        const reportRecategorize = jest.fn();
+        const applyLocation = vi.fn().mockResolvedValue([]);
+        const reportRecategorize = vi.fn();
         const deps = buildMailToolDeps({
             store: { getState: () => offListState(elements) } as unknown as MailToolDeps['store'],
             applyLocation,

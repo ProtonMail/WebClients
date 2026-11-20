@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { nextFriday, nextMonday, nextSaturday, nextSunday, nextThursday, nextTuesday, nextWednesday } from 'date-fns';
+import type { Mock } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -7,25 +8,25 @@ import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces/UserSettings'
 
 import SnoozeDurationSelection from './SnoozeDurationSelection';
 
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/account/userSettings/hooks');
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/account/userSettings/hooks');
 
 const renderComponent = (canUnsnooze: boolean) => {
     render(
         <SnoozeDurationSelection
             canUnsnooze={canUnsnooze}
-            handleCustomClick={jest.fn}
-            handleSnooze={jest.fn}
-            handleUnsnoozeClick={jest.fn}
+            handleCustomClick={vi.fn()}
+            handleSnooze={vi.fn()}
+            handleUnsnoozeClick={vi.fn()}
         />
     );
 };
 
 describe('SnoozeDurationSelection when start of week is Monday', () => {
-    const useUserMock = useUser as jest.Mock;
-    const useUserSettingsMock = useUserSettings as jest.Mock;
+    const useUserMock = useUser as Mock;
+    const useUserSettingsMock = useUserSettings as Mock;
     beforeAll(() => {
-        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, jest.fn]);
+        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, vi.fn]);
         useUserSettingsMock.mockImplementation(() => [{ WeekStart: 1 }]);
     });
     afterAll(() => {
@@ -33,12 +34,12 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
         useUserSettingsMock.mockReset();
     });
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should render all Monday options', () => {
         const date = nextMonday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -50,7 +51,7 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
 
     it('should render all Tuesday options', () => {
         const date = nextTuesday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -62,7 +63,7 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
 
     it('should render all Wednesday options', () => {
         const date = nextWednesday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -74,7 +75,7 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
 
     it('should render all Thursday options', () => {
         const date = nextThursday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -86,7 +87,7 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
 
     it('should render all Friday options', () => {
         const date = nextFriday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -98,7 +99,7 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
 
     it('should render all Saturday options', () => {
         const date = nextSaturday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -110,7 +111,7 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
 
     it('should render all Sunday options', () => {
         const date = nextSunday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -131,7 +132,7 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
     });
 
     it('should not render the upsell button for free users', () => {
-        useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
+        useUserMock.mockImplementation(() => [{ hasPaidMail: true }, vi.fn]);
 
         renderComponent(false);
         expect(screen.queryByAltText(`Upgrade to Mail Plus to unlock`)).toBeNull();
@@ -139,10 +140,10 @@ describe('SnoozeDurationSelection when start of week is Monday', () => {
 });
 
 describe('SnoozeDurationSelection when start of week is Saturday', () => {
-    const useUserMock = useUser as jest.Mock;
-    const useUserSettingsMock = useUserSettings as jest.Mock;
+    const useUserMock = useUser as Mock;
+    const useUserSettingsMock = useUserSettings as Mock;
     beforeAll(() => {
-        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, jest.fn]);
+        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, vi.fn]);
         useUserSettingsMock.mockImplementation(() => [{ WeekStart: SETTINGS_WEEK_START.SATURDAY }]);
     });
     afterAll(() => {
@@ -150,12 +151,12 @@ describe('SnoozeDurationSelection when start of week is Saturday', () => {
         useUserSettingsMock.mockReset();
     });
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should render all Monday options', () => {
         const date = nextMonday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -166,7 +167,7 @@ describe('SnoozeDurationSelection when start of week is Saturday', () => {
 
     it('should render all Tuesday options', () => {
         const date = nextTuesday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -177,7 +178,7 @@ describe('SnoozeDurationSelection when start of week is Saturday', () => {
 
     it('should render all Wednesday options', () => {
         const date = nextWednesday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -189,7 +190,7 @@ describe('SnoozeDurationSelection when start of week is Saturday', () => {
 
     it('should render all Thursday options', () => {
         const date = nextThursday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -201,7 +202,7 @@ describe('SnoozeDurationSelection when start of week is Saturday', () => {
 
     it('should render all Friday options', () => {
         const date = nextFriday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -213,7 +214,7 @@ describe('SnoozeDurationSelection when start of week is Saturday', () => {
 
     it('should render all Saturday options', () => {
         const date = nextSaturday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -225,7 +226,7 @@ describe('SnoozeDurationSelection when start of week is Saturday', () => {
 
     it('should render all Sunday options', () => {
         const date = nextSunday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -237,10 +238,10 @@ describe('SnoozeDurationSelection when start of week is Saturday', () => {
 });
 
 describe('SnoozeDurationSelection when start of week is Sunday', () => {
-    const useUserMock = useUser as jest.Mock;
-    const useUserSettingsMock = useUserSettings as jest.Mock;
+    const useUserMock = useUser as Mock;
+    const useUserSettingsMock = useUserSettings as Mock;
     beforeAll(() => {
-        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, jest.fn]);
+        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, vi.fn]);
         useUserSettingsMock.mockImplementation(() => [{ WeekStart: SETTINGS_WEEK_START.SUNDAY }]);
     });
     afterAll(() => {
@@ -248,12 +249,12 @@ describe('SnoozeDurationSelection when start of week is Sunday', () => {
         useUserSettingsMock.mockReset();
     });
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should render all Monday options', () => {
         const date = nextMonday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -264,7 +265,7 @@ describe('SnoozeDurationSelection when start of week is Sunday', () => {
 
     it('should render all Tuesday options', () => {
         const date = nextTuesday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -275,7 +276,7 @@ describe('SnoozeDurationSelection when start of week is Sunday', () => {
 
     it('should render all Wednesday options', () => {
         const date = nextWednesday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -287,7 +288,7 @@ describe('SnoozeDurationSelection when start of week is Sunday', () => {
 
     it('should render all Thursday options', () => {
         const date = nextThursday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -299,7 +300,7 @@ describe('SnoozeDurationSelection when start of week is Sunday', () => {
 
     it('should render all Friday options', () => {
         const date = nextFriday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -311,7 +312,7 @@ describe('SnoozeDurationSelection when start of week is Sunday', () => {
 
     it('should render all Saturday options', () => {
         const date = nextSaturday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));
@@ -323,7 +324,7 @@ describe('SnoozeDurationSelection when start of week is Sunday', () => {
 
     it('should render all Sunday options', () => {
         const date = nextSunday(new Date());
-        jest.useFakeTimers({ now: date.getTime() });
+        vi.useFakeTimers({ now: date.getTime() });
 
         renderComponent(false);
         expect(screen.getByTestId('snooze-duration-tomorrow'));

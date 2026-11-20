@@ -8,7 +8,7 @@ describe('openContentSearchDB', () => {
     it('closes an open connection instead of blocking a delete of the database', async () => {
         const db = await openContentSearchDB('blocking-user');
         await db.put('config', 'enabled', 'status');
-        const blocked = jest.fn();
+        const blocked = vi.fn();
 
         // Without the fix, this never resolves and the test times out.
         await deleteDB(getDBName('blocking-user'), { blocked });
@@ -24,7 +24,7 @@ describe('openContentSearchDB', () => {
     });
 
     it('tells the holder when another connection closes it', async () => {
-        const onClosed = jest.fn();
+        const onClosed = vi.fn();
         await openContentSearchDB('closed-user', onClosed);
 
         await deleteDB(getDBName('closed-user'));

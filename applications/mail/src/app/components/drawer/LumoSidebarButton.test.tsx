@@ -4,10 +4,10 @@ import { useLumoFloatingPanel } from '../../lumo/floating/LumoFloatingPanelProvi
 import { buildLumoFloatingPanelValue } from '../../lumo/floating/LumoFloatingPanelProvider.testing';
 import LumoSidebarButton from './LumoSidebarButton';
 
-jest.mock('../../lumo/floating/LumoFloatingPanelProvider', () => ({ useLumoFloatingPanel: jest.fn() }));
+vi.mock('../../lumo/floating/LumoFloatingPanelProvider', () => ({ useLumoFloatingPanel: vi.fn() }));
 
-const toggleLumo = jest.fn();
-const dismissCat = jest.fn();
+const toggleLumo = vi.fn();
+const dismissCat = vi.fn();
 
 interface Setup {
     isDetached?: boolean;
@@ -22,7 +22,7 @@ const mockPanel = ({
     isCatHidden = false,
     isCatDismissed = false,
 }: Setup) => {
-    jest.mocked(useLumoFloatingPanel).mockReturnValue(
+    vi.mocked(useLumoFloatingPanel).mockReturnValue(
         buildLumoFloatingPanelValue({
             isDetached,
             isPanelOpen: isDetached && isCurrentSurfaceOpen,
@@ -43,7 +43,7 @@ const renderButton = (setup: Setup) => {
 
 describe('LumoSidebarButton', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it.each([true, false])('toggles the drawer tab while docked, reporting it open: %s', (isCurrentSurfaceOpen) => {

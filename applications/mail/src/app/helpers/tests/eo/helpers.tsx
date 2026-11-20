@@ -19,7 +19,7 @@ export const reply = {
 } as EOMessageReply;
 
 export const EOClearAll = () => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     api.mockClear();
     clearApiMocks();
     clearCache();
@@ -28,7 +28,7 @@ export const EOClearAll = () => {
 };
 
 export const mockConsole = (level: keyof Console = 'error') => {
-    console[level] = jest.fn();
+    (console as any)[level] = vi.fn();
 };
 
 export const getEOEncryptedMessage = async (decryptedToken: string, password: string) => {
@@ -89,8 +89,8 @@ export const EOInitStore = async ({ options, store }: { options?: EOOriginalMess
         PublicKey: publicKey.publicKeyArmored,
     }));
 
-    await store.dispatch(loadEOToken({ api, id: validID, set: jest.fn() }));
+    await store.dispatch(loadEOToken({ api, id: validID, set: vi.fn() }));
     await store.dispatch(
-        loadEOMessage({ api, id: validID, set: jest.fn(), token: EOEncryptedToken, password: EOPassword })
+        loadEOMessage({ api, id: validID, set: vi.fn(), token: EOEncryptedToken, password: EOPassword })
     );
 };

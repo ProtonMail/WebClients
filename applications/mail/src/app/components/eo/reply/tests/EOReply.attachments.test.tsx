@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the rooster editor iframe needs iframe.contentDocument, which happy-dom lacks
 import { fireEvent, screen } from '@testing-library/react';
 
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';

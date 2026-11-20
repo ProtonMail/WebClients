@@ -4,18 +4,18 @@ import { useApi } from '@proton/app-context/useApi';
 
 import { PostSignupSurvey } from './PostSignupSurvey';
 
-jest.mock('@proton/app-context/useApi');
+vi.mock('@proton/app-context/useApi');
 
-const mockApi = jest.fn();
-const onClose = jest.fn();
+const mockApi = vi.fn();
+const onClose = vi.fn();
 
 const renderSurvey = () => render(<PostSignupSurvey onClose={onClose} />);
 
 describe('PostSignupSurvey', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockApi.mockResolvedValue({});
-        jest.mocked(useApi).mockReturnValue(mockApi as any);
+        vi.mocked(useApi).mockReturnValue(mockApi as any);
     });
 
     it('dismisses and closes once', () => {

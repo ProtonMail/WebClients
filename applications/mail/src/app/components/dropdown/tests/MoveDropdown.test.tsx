@@ -16,23 +16,23 @@ import { mockActiveCategoriesData } from '../../categoryView/testUtils/helpers';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import MoveDropdown from '../MoveDropdown';
 
-jest.mock('../../../store/mailbox/mailboxActions', () => {
-    const actual = jest.requireActual('../../../store/mailbox/mailboxActions');
+vi.mock('../../../store/mailbox/mailboxActions', async () => {
+    const actual = await vi.importActual<any>('../../../store/mailbox/mailboxActions');
     return {
         ...actual,
-        labelMessages: Object.assign(jest.fn(actual.labelMessages), actual.labelMessages),
+        labelMessages: Object.assign(vi.fn(actual.labelMessages), actual.labelMessages),
     };
 });
 
-jest.mock('../../categoryView/useCategoriesView', () => ({
-    useCategoriesView: jest.fn(() => ({
+vi.mock('../../categoryView/useCategoriesView', () => ({
+    useCategoriesView: vi.fn(() => ({
         shouldShowTabs: false,
         canMoveToCategories: false,
         activeCategoriesTabs: [],
     })),
 }));
 
-const mockedUseCategoriesView = jest.requireMock('../../categoryView/useCategoriesView').useCategoriesView;
+const mockedUseCategoriesView = (await vi.importMock<any>('../../categoryView/useCategoriesView')).useCategoriesView;
 
 const folder1Name = 'Folder1';
 const folder1ID = 'folder-1-id';
@@ -44,8 +44,8 @@ const search = 'This label does not exists';
 const props = {
     selectedIDs: [messageID],
     labelID: MAILBOX_LABEL_IDS.INBOX,
-    onClose: jest.fn(),
-    onLock: jest.fn(),
+    onClose: vi.fn(),
+    onLock: vi.fn(),
 };
 
 const getMessage = (labelIDs: string[] = []) => {
@@ -112,7 +112,7 @@ describe('MoveDropdown', () => {
     });
 
     it('should move to a folder', async () => {
-        const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
+        const labelMessagesSpy = vi.mocked(mailboxActions.labelMessages);
 
         await setup();
 
@@ -146,7 +146,7 @@ describe('MoveDropdown', () => {
 
     describe('one-click folder move', () => {
         it('should move to a folder immediately when clicking the folder name without pressing Apply', async () => {
-            const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
+            const labelMessagesSpy = vi.mocked(mailboxActions.labelMessages);
 
             await setup();
 
@@ -291,7 +291,7 @@ describe('MoveDropdown', () => {
         });
 
         it('should create filters when applying a ticked checkbox to a regular folder', async () => {
-            const filterApiMock = jest.fn(() => ({ Filter: {} }));
+            const filterApiMock = vi.fn(() => ({ Filter: {} }));
             addApiMock('mail/v4/filters', filterApiMock);
 
             await setup();
@@ -318,7 +318,7 @@ describe('MoveDropdown', () => {
          * so a filter would actually be built for it if `always` was not overridden on submit.
          */
         it('should not create filters when applying a ticked checkbox to Spam', async () => {
-            const filterApiMock = jest.fn(() => ({ Filter: {} }));
+            const filterApiMock = vi.fn(() => ({ Filter: {} }));
             addApiMock('mail/v4/filters', filterApiMock);
 
             await setup();

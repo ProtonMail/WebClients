@@ -32,8 +32,8 @@ const NESTED_FOLDERS = [
 
 const setUp = (created: Label, folders: Folder[] = []) => {
     const references = createReferenceRegistry();
-    const createLabel = jest.fn().mockResolvedValue(created);
-    const getFolders = jest.fn().mockReturnValue(folders);
+    const createLabel = vi.fn().mockResolvedValue(created);
+    const getFolders = vi.fn().mockReturnValue(folders);
 
     return { references, createLabel, deps: { createLabel, getFolders } as unknown as MailToolDeps };
 };
@@ -153,7 +153,7 @@ describe('the create-folder card body', () => {
     const renderBody = async (parentFolderID?: string, renderer: CardRenderer = createFolderCardRenderer) => {
         const references = createReferenceRegistry();
         const parentId = parentFolderID ? references.referenceFor('folder', parentFolderID) : null;
-        const onChange = jest.fn();
+        const onChange = vi.fn();
         const params = { name: 'Hotels', parentId };
         const action: ActionRequest = { type: 'create_folder', ...params };
 
@@ -192,7 +192,7 @@ describe('the create-folder card body', () => {
 
         await pick('Work');
 
-        const { parentId } = onChange.mock.lastCall[0];
+        const { parentId } = onChange.mock.lastCall![0];
         expect(onChange).toHaveBeenLastCalledWith({ name: 'Hotels', parentId });
         expect(references.idFor(parentId)).toBe('WORK');
         expect(references.labelFor(parentId)?.title).toBe('Work');
@@ -242,7 +242,7 @@ describe('the create-folder card body', () => {
             action: { type: 'create_folder', ...params },
             labels: {},
             params,
-            onChange: jest.fn(),
+            onChange: vi.fn(),
         });
 
         await mailTestRender(<>{body}</>, { preloadedState: { categories: getModelState(FOLDERS) } });

@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import { LumoChainEnd, LumoConfirmAnswer } from '@proton/llm/lib/lumoAgent/ui/types';
@@ -8,29 +9,29 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 import { LumoModelChoice } from '../useLumoModelChoice';
 import { useLumoMailTelemetry } from './useLumoMailTelemetry';
 
-const api = jest.fn();
+const api = vi.fn();
 
-jest.mock('@proton/app-context/useApi', () => ({
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
     useApi: () => api,
 }));
 
-jest.mock('@proton/shared/lib/helpers/metrics', () => ({
+vi.mock('@proton/shared/lib/helpers/metrics', () => ({
     __esModule: true,
-    sendTelemetryReport: jest.fn(),
+    sendTelemetryReport: vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => {
-    return { useUser: jest.fn() };
+vi.mock('@proton/account/user/hooks', () => {
+    return { useUser: vi.fn() };
 });
 
-const sent = sendTelemetryReport as jest.Mock;
+const sent = sendTelemetryReport as Mock;
 const user = buildUser();
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     localStorage.clear();
-    jest.mocked(useUser).mockReturnValue([user, false]);
+    vi.mocked(useUser).mockReturnValue([user, false]);
 });
 
 /**

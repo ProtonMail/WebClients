@@ -6,13 +6,14 @@ import { mailTestRender } from '../../../../../helpers/tests/render';
 import { activeSubscription } from '../../testData';
 import { ModalMoveToFolder } from './ModalMoveToFolder';
 
-jest.mock('@proton/mail/store/labels/hooks', () => ({
-    useFolders: jest.fn(),
-    useLabels: jest.fn(() => [[], false]),
-    useSystemFolders: jest.fn(() => [[], false]),
+vi.mock('@proton/mail/store/labels/hooks', async () => ({
+    ...(await vi.importActual('@proton/mail/store/labels/hooks')),
+    useFolders: vi.fn(),
+    useLabels: vi.fn(() => [[], false]),
+    useSystemFolders: vi.fn(() => [[], false]),
 }));
 
-const mockUseFolders = jest.requireMock('@proton/mail/store/labels/hooks').useFolders;
+const mockUseFolders = (await vi.importMock<any>('@proton/mail/store/labels/hooks')).useFolders;
 
 describe('ModalBlockSender', () => {
     beforeEach(() => {
@@ -21,7 +22,7 @@ describe('ModalBlockSender', () => {
 
     it('should render the modal', async () => {
         await mailTestRender(
-            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
+            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={vi.fn()} open={true} />
         );
 
         const title = screen.getByText('Move messages to');
@@ -30,7 +31,7 @@ describe('ModalBlockSender', () => {
 
     it('should contain a button to create custom folder from the modal', async () => {
         await mailTestRender(
-            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
+            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={vi.fn()} open={true} />
         );
 
         const createFolderButton = screen.getByTestId('create-folder-button');
@@ -40,7 +41,7 @@ describe('ModalBlockSender', () => {
 
     it('should disable the move button if no folder is selected', async () => {
         await mailTestRender(
-            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
+            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={vi.fn()} open={true} />
         );
 
         const moveButton = screen.getByTestId('move-button');
@@ -49,7 +50,7 @@ describe('ModalBlockSender', () => {
 
     it('should enable the button after selecting a folder', async () => {
         await mailTestRender(
-            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
+            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={vi.fn()} open={true} />
         );
 
         const moveButton = screen.getByTestId('move-button');
@@ -63,7 +64,7 @@ describe('ModalBlockSender', () => {
 
     it('should filter the list of folders when the search input is used', async () => {
         await mailTestRender(
-            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
+            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={vi.fn()} open={true} />
         );
 
         const searchInput = screen.getByPlaceholderText('Filter folders');
@@ -96,7 +97,7 @@ describe('ModalBlockSender', () => {
         ]);
 
         await mailTestRender(
-            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={jest.fn} open={true} />
+            <ModalMoveToFolder subscription={activeSubscription} handleUpsellModalDisplay={vi.fn()} open={true} />
         );
 
         const createFolderButton = screen.queryByTestId('create-folder-button');

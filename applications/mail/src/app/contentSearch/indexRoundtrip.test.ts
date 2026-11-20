@@ -1,9 +1,10 @@
+import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import type { IDBPDatabase } from 'idb';
+import 'fake-indexeddb/auto';
 // End-to-end test across the content-search subsystem: write documents with EngineWrapper, then
 // find them with IndexReader. Exercises the real wasm engine, blob encryption and IndexedDB,
 // wired together the way production does (a shared DB + index key).
-import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import 'fake-indexeddb/auto';
-import type { IDBPDatabase } from 'idb';
+import type { MockInstance } from 'vitest';
 
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
@@ -149,10 +150,10 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
             });
         };
 
-        let bucketedSearchSpy: jest.SpyInstance;
+        let bucketedSearchSpy: MockInstance;
 
         beforeEach(() => {
-            bucketedSearchSpy = jest.spyOn(SearchLoop.prototype, 'runBucketedSearch');
+            bucketedSearchSpy = vi.spyOn(SearchLoop.prototype, 'runBucketedSearch');
         });
 
         afterEach(() => {

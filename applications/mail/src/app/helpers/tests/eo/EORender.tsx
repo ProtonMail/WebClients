@@ -12,7 +12,7 @@ import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
+import { registerFeatureFlagsApiMock } from '@proton/features/testing/vitest/features';
 import { ComposerMessageHostProvider } from '@proton/mail-composer/host/composerMessageHost';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 
@@ -95,7 +95,7 @@ export const EORender = async (
     if (initialRoute) {
         initialEntries = [`/eo/${initialRoute}/${validID}`];
     }
-    await store.dispatch(init({ get: jest.fn() }));
+    await store.dispatch(init({ get: vi.fn() }));
     if (!invalid) {
         await EOInitStore({ options, store });
     }

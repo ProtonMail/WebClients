@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: happy-dom does not support the :not(:empty) quote selector
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { cleanText, getBaseMessage } from './esBuild';

@@ -11,13 +11,13 @@ import { mailTestRender } from '../../../../../helpers/tests/render';
 import { activeSubscription } from '../../testData';
 import ModalUnsubscribe from './ModalUnsubscribe';
 
-jest.mock('@proton/shared/lib/helpers/browser');
+vi.mock('@proton/shared/lib/helpers/browser');
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
-const mockedOpenNewTab = jest.mocked(openNewTab);
+const mockedOpenNewTab = vi.mocked(openNewTab);
 
 describe('ModalUnsubscribe', () => {
     it('should render the modal', async () => {
@@ -71,7 +71,7 @@ describe('ModalUnsubscribe', () => {
     });
 
     it('should close the modal when the cancel button is clicked', async () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         await mailTestRender(<ModalUnsubscribe subscription={activeSubscription} open={true} onClose={onClose} />);
 
         const cancelButton = screen.getByText('Cancel');

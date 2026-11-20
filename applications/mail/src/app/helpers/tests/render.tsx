@@ -20,7 +20,7 @@ import CalendarModelEventManagerProvider from '@proton/components/containers/eve
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
-import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
+import { registerFeatureFlagsApiMock } from '@proton/features/testing/vitest/features';
 import { ComposerAssistantProvider } from '@proton/mail-composer/components/assistant/provider/ComposerAssistantProvider';
 import { ComposeProvider } from '@proton/mail-composer/containers/ComposeProvider';
 import { MailContentRefProvider } from '@proton/mail-composer/hooks/useClickMailContent';
@@ -71,10 +71,10 @@ interface RenderResult extends OriginalRenderResult {
 }
 
 export const authentication = {
-    getUID: jest.fn(() => 'uid'),
-    getLocalID: jest.fn(),
-    getPassword: jest.fn(),
-    onLogout: jest.fn(),
+    getUID: vi.fn(() => 'uid'),
+    getLocalID: vi.fn(),
+    getPassword: vi.fn(),
+    onLogout: vi.fn(),
     mode: '',
 } as unknown as PrivateAuthenticationStore;
 
@@ -84,7 +84,7 @@ export const config = {
     DATE_VERSION: 'test-date-version',
 } as ProtonConfig;
 
-const onCompose = jest.fn();
+const onCompose = vi.fn();
 
 interface Props {
     children: ReactNode;
@@ -231,10 +231,10 @@ export const getStoreWrapper = ({
         } as ProtonConfig,
         authentication: {
             getPassword: () => '',
-            getPersistent: jest.fn(() => false),
+            getPersistent: vi.fn(() => false),
         } as any,
         api: api as any,
-        eventManager: { getEventID: jest.fn() } as any,
+        eventManager: { getEventID: vi.fn() } as any,
         history,
         unleashClient: {
             isEnabled: () => false,

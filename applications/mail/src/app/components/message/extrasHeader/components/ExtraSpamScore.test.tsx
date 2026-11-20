@@ -7,11 +7,11 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { mailTestRender } from '../../../../helpers/tests/render';
 import ExtraSpamScore from './ExtraSpamScore';
 
-const mockDispatch = jest.fn();
-jest.mock('../../../../store/hooks', () => ({
+const mockDispatch = vi.fn();
+vi.mock('../../../../store/hooks', () => ({
     useMailDispatch: () => mockDispatch,
-    useMailSelector: jest.fn().mockReturnValue(jest.fn()),
-    useMailStore: jest.fn().mockReturnValue({ getState: jest.fn() }),
+    useMailSelector: vi.fn().mockReturnValue(vi.fn()),
+    useMailStore: vi.fn().mockReturnValue({ getState: vi.fn() }),
 }));
 
 describe('ExtraSpamScore', () => {

@@ -11,7 +11,7 @@ import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSuppor
 import { isESEnabledUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
-import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
+import { mockUseFlag } from '@proton/unleash/testing/vitest/mockUseFlag';
 
 import { deferred } from '../contentSearch/integration/import/testFakes';
 import { getESFreeBlobKey } from '../helpers/encryptedSearch/esUtils';
@@ -19,30 +19,30 @@ import { api } from '../helpers/tests/api';
 import { getStoreWrapper } from '../helpers/tests/render';
 import EncryptedSearchProvider, { useEncryptedSearchContext } from './EncryptedSearchProvider';
 
-jest.mock('@proton/encrypted-search/useIndexedDBSupport', () => ({
-    useIndexedDBSupport: jest.fn(),
+vi.mock('@proton/encrypted-search/useIndexedDBSupport', () => ({
+    useIndexedDBSupport: vi.fn(),
 }));
 
-jest.mock('@proton/encrypted-search/esIDB/indexedDB', () => ({
-    ...jest.requireActual('@proton/encrypted-search/esIDB/indexedDB'),
-    hasESDB: jest.fn(),
+vi.mock('@proton/encrypted-search/esIDB/indexedDB', async () => ({
+    ...(await vi.importActual('@proton/encrypted-search/esIDB/indexedDB')),
+    hasESDB: vi.fn(),
 }));
 
-jest.mock('@proton/encrypted-search/esIDB/metadata', () => ({
-    ...jest.requireActual('@proton/encrypted-search/esIDB/metadata'),
-    wrappedGetOldestInfo: jest.fn().mockResolvedValue(undefined),
+vi.mock('@proton/encrypted-search/esIDB/metadata', async () => ({
+    ...(await vi.importActual('@proton/encrypted-search/esIDB/metadata')),
+    wrappedGetOldestInfo: vi.fn().mockResolvedValue(undefined),
 }));
 
 // Read lazily by the mocks below, so each test can set them.
 let mockIsWelcomeFlow = false;
 let mockIsESEnabledInbox = false;
 
-jest.mock('@proton/account/welcomeFlags', () => ({
-    ...jest.requireActual('@proton/account/welcomeFlags'),
+vi.mock('@proton/account/welcomeFlags', async () => ({
+    ...(await vi.importActual('@proton/account/welcomeFlags')),
     useWelcomeFlags: () => ({ welcomeFlags: { isWelcomeFlow: mockIsWelcomeFlow } }),
 }));
 
-jest.mock('../hooks/useISESEnabledElectron', () => ({
+vi.mock('../hooks/useISESEnabledElectron', () => ({
     __esModule: true,
     default: () => ({ isESEnabledInbox: mockIsESEnabledInbox }),
 }));
@@ -50,10 +50,10 @@ jest.mock('../hooks/useISESEnabledElectron', () => ({
 // `isElectronMail` is a constant computed from the user agent at import time, so it's swapped through a getter.
 // Its value lives inside the factory: other modules read it while the imports are still being evaluated,
 // before any `let` in this file is initialised.
-jest.mock('@proton/shared/lib/helpers/desktop', () => {
+vi.mock('@proton/shared/lib/helpers/desktop', async () => {
     const state = { isElectronMail: false };
     return {
-        ...jest.requireActual('@proton/shared/lib/helpers/desktop'),
+        ...(await vi.importActual('@proton/shared/lib/helpers/desktop')),
         get isElectronMail() {
             return state.isElectronMail;
         },
@@ -63,23 +63,23 @@ jest.mock('@proton/shared/lib/helpers/desktop', () => {
     };
 });
 
-const { setMockIsElectronMail } = jest.requireMock<{ setMockIsElectronMail: (value: boolean) => void }>(
-    '@proton/shared/lib/helpers/desktop'
-);
+const { setMockIsElectronMail } = (await vi.importMock('@proton/shared/lib/helpers/desktop')) as unknown as {
+    setMockIsElectronMail: (value: boolean) => void;
+};
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/browser'),
-    isMobile: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/browser')),
+    isMobile: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/desktop/encryptedSearch', () => ({
-    ...jest.requireActual('@proton/shared/lib/desktop/encryptedSearch'),
-    isESEnabledUserChoiceInboxDesktop: jest.fn(),
+vi.mock('@proton/shared/lib/desktop/encryptedSearch', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/desktop/encryptedSearch')),
+    isESEnabledUserChoiceInboxDesktop: vi.fn(),
 }));
 
-const initializeES = jest.fn();
-const enableEncryptedSearch = jest.fn();
-const enableContentSearch = jest.fn();
+const initializeES = vi.fn();
+const enableEncryptedSearch = vi.fn();
+const enableContentSearch = vi.fn();
 
 // Both engines are stubbed: what is under test is when the provider decides searches may run, not
 // what either engine does to get there.
@@ -90,20 +90,20 @@ const esLibraryFunctions = {
     initializeES: (...args: any[]) => initializeES(...args),
     enableEncryptedSearch: (...args: any[]) => enableEncryptedSearch(...args),
     enableContentSearch: (...args: any[]) => enableContentSearch(...args),
-    handleEvent: jest.fn(),
-    esDelete: jest.fn().mockResolvedValue(undefined),
-    toggleEncryptedSearch: jest.fn(),
+    handleEvent: vi.fn(),
+    esDelete: vi.fn().mockResolvedValue(undefined),
+    toggleEncryptedSearch: vi.fn(),
 };
 
-jest.mock('@proton/encrypted-search/useEncryptedSearch', () => ({
+vi.mock('@proton/encrypted-search/useEncryptedSearch', () => ({
     useEncryptedSearch: () => esLibraryFunctions,
 }));
 
-jest.mock('../contentSearch/integration/useContentSearch', () => ({
+vi.mock('../contentSearch/integration/useContentSearch', () => ({
     useContentSearch: () => esLibraryFunctions,
 }));
 
-jest.mock('../hooks/useContentSearchReadyNotification', () => ({
+vi.mock('../hooks/useContentSearchReadyNotification', () => ({
     useContentSearchReadyNotification: (_status: unknown, enableContentSearch: unknown) => enableContentSearch,
 }));
 
@@ -140,16 +140,16 @@ describe('EncryptedSearchProvider', () => {
     // startup that fails, and not one that runs for as long as an index takes to build.
     describe('isStartupSettled', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             mockUseFlag(false);
-            jest.mocked(useIndexedDBSupport).mockReturnValue({ isSupported: true, error: null });
-            jest.mocked(hasESDB).mockResolvedValue(true);
+            vi.mocked(useIndexedDBSupport).mockReturnValue({ isSupported: true, error: null });
+            vi.mocked(hasESDB).mockResolvedValue(true);
             initializeES.mockResolvedValue(undefined);
             enableEncryptedSearch.mockResolvedValue(false);
         });
 
         it('should wait while IndexedDB support is still being probed', async () => {
-            jest.mocked(useIndexedDBSupport).mockReturnValue({ isSupported: null, error: null });
+            vi.mocked(useIndexedDBSupport).mockReturnValue({ isSupported: null, error: null });
 
             await renderProvider();
 
@@ -158,7 +158,7 @@ describe('EncryptedSearchProvider', () => {
         });
 
         it('should settle without initialising when IndexedDB is unavailable', async () => {
-            jest.mocked(useIndexedDBSupport).mockReturnValue({ isSupported: false, error: 'nope' });
+            vi.mocked(useIndexedDBSupport).mockReturnValue({ isSupported: false, error: 'nope' });
 
             await renderProvider();
 
@@ -167,7 +167,7 @@ describe('EncryptedSearchProvider', () => {
         });
 
         it('should settle when there is no database to initialise', async () => {
-            jest.mocked(hasESDB).mockResolvedValue(false);
+            vi.mocked(hasESDB).mockResolvedValue(false);
 
             await renderProvider();
 
@@ -184,7 +184,7 @@ describe('EncryptedSearchProvider', () => {
         it('should settle when startup fails', async () => {
             initializeES.mockRejectedValue(new Error('startup blew up'));
             // The failure is expected here, so keep it out of the test output.
-            const logError = jest.spyOn(logger, 'error').mockImplementation(() => {});
+            const logError = vi.spyOn(logger, 'error').mockImplementation(() => {});
 
             await renderProvider();
 
@@ -218,16 +218,16 @@ describe('EncryptedSearchProvider', () => {
             renderProvider({ preloadedState: { user: getModelState({ ID: userID, Flags: {} } as UserModel) } });
 
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             window.localStorage.clear();
             mockUseFlag(false);
             mockIsWelcomeFlow = false;
             mockIsESEnabledInbox = false;
             setMockIsElectronMail(false);
-            jest.mocked(isMobile).mockReturnValue(false);
-            jest.mocked(isESEnabledUserChoiceInboxDesktop).mockReturnValue(false);
-            jest.mocked(useIndexedDBSupport).mockReturnValue({ isSupported: true, error: null });
-            jest.mocked(hasESDB).mockResolvedValue(true);
+            vi.mocked(isMobile).mockReturnValue(false);
+            vi.mocked(isESEnabledUserChoiceInboxDesktop).mockReturnValue(false);
+            vi.mocked(useIndexedDBSupport).mockReturnValue({ isSupported: true, error: null });
+            vi.mocked(hasESDB).mockResolvedValue(true);
             initializeES.mockResolvedValue(undefined);
             enableEncryptedSearch.mockResolvedValue(true);
             enableContentSearch.mockResolvedValue(undefined);
@@ -257,7 +257,7 @@ describe('EncryptedSearchProvider', () => {
             it('should enable search on the inbox desktop app when the user has opted in', async () => {
                 setMockIsElectronMail(true);
                 mockIsESEnabledInbox = true;
-                jest.mocked(isESEnabledUserChoiceInboxDesktop).mockReturnValue(true);
+                vi.mocked(isESEnabledUserChoiceInboxDesktop).mockReturnValue(true);
 
                 await renderWithUser();
 
@@ -270,7 +270,7 @@ describe('EncryptedSearchProvider', () => {
 
         describe('without a database', () => {
             beforeEach(() => {
-                jest.mocked(hasESDB).mockResolvedValue(false);
+                vi.mocked(hasESDB).mockResolvedValue(false);
             });
 
             it('should leave it to the engine when nothing calls for auto-enabling', async () => {
@@ -331,7 +331,7 @@ describe('EncryptedSearchProvider', () => {
 
             it('should not enable search for a new user on mobile', async () => {
                 mockIsWelcomeFlow = true;
-                jest.mocked(isMobile).mockReturnValue(true);
+                vi.mocked(isMobile).mockReturnValue(true);
 
                 await renderWithUser();
 

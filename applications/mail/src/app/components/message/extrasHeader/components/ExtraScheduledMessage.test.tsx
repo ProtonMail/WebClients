@@ -55,7 +55,7 @@ describe('Scheduled messages banner', () => {
 
     it('should have text will be sent in the morning', async () => {
         const aDayInTheMorningDate = new Date(2020, 0, 1, 8, 0, 0);
-        const dateSpy = jest.spyOn(Date, 'now').mockImplementation(() => aDayInTheMorningDate.setHours(8).valueOf());
+        const dateSpy = vi.spyOn(Date, 'now').mockImplementation(() => aDayInTheMorningDate.setHours(8).valueOf());
 
         const sendingDate = addHours(aDayInTheMorningDate, 3);
         const message = getMessage(sendingDate);
@@ -73,7 +73,7 @@ describe('Scheduled messages banner', () => {
     });
 
     it('should have text will be sent today', async () => {
-        const dateSpy = jest.spyOn(Date, 'now').mockImplementation(() => new Date().setHours(12).valueOf());
+        const dateSpy = vi.spyOn(Date, 'now').mockImplementation(() => new Date().setHours(12).valueOf());
 
         const sendingDate = addHours(new Date(Date.now()), 3);
         const message = getMessage(sendingDate);
@@ -105,7 +105,7 @@ describe('Scheduled messages banner', () => {
         const sendingDate = addDays(new Date(), 1);
         const message = getMessage(sendingDate);
 
-        const unscheduleCall = jest.fn();
+        const unscheduleCall = vi.fn();
         addApiMock(`mail/v4/messages/${message.data?.ID}/cancel_send`, unscheduleCall);
 
         await mailTestRender(<ExtraScheduledMessage message={message} />);

@@ -42,7 +42,7 @@ describe('Contact resign modal', () => {
             'get'
         );
 
-        const onResignSpy = jest.fn();
+        const onResignSpy = vi.fn();
 
         await mailTestRender(
             <ContactResignModal

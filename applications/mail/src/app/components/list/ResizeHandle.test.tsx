@@ -3,12 +3,12 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { ResizeHandle, ResizeHandlePosition } from './ResizeHandle';
 
 describe('ResizeHandle', () => {
-    const mockEnableResize = jest.fn();
-    const mockResetWidth = jest.fn();
+    const mockEnableResize = vi.fn();
+    const mockResetWidth = vi.fn();
     const mockResizeAreaRef = { current: null };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('renders correctly with right position', () => {

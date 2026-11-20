@@ -41,20 +41,20 @@ import { clearAll } from '../../../../helpers/tests/helper';
 import { mailTestRender } from '../../../../helpers/tests/render';
 import ExtraEvents from './ExtraEvents';
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
-jest.mock('@proton/components/hooks/useSendIcs', () => {
+vi.mock('@proton/components/hooks/useSendIcs', () => {
     return {
         __esModule: true,
-        default: jest.fn(() => () => Promise.resolve(undefined)),
+        default: vi.fn(() => () => Promise.resolve(undefined)),
     };
 });
-jest.mock('@proton/components/hooks/useGetVtimezonesMap');
+vi.mock('@proton/components/hooks/useGetVtimezonesMap');
 
-jest.mock('../../../../helpers/calendar/inviteApi', () => ({
-    ...jest.requireActual('../../../../helpers/calendar/inviteApi'),
-    createCalendarEventFromInvitation: jest.fn(
-        jest.requireActual('../../../../helpers/calendar/inviteApi').createCalendarEventFromInvitation
+vi.mock('../../../../helpers/calendar/inviteApi', async () => ({
+    ...(await vi.importActual('../../../../helpers/calendar/inviteApi')),
+    createCalendarEventFromInvitation: vi.fn(
+        (await vi.importActual<any>('../../../../helpers/calendar/inviteApi')).createCalendarEventFromInvitation
     ),
 }));
 
@@ -340,7 +340,7 @@ describe('ICS widget', () => {
     });
 
     beforeEach(() => {
-        jest.mocked(inviteApi.createCalendarEventFromInvitation);
+        vi.mocked(inviteApi.createCalendarEventFromInvitation);
     });
 
     afterEach(clearAll);
@@ -1039,7 +1039,7 @@ END:VCALENDAR`;
                 calendarID: dummyCalendarID,
             });
 
-            jest.mocked(inviteApi.createCalendarEventFromInvitation).mockReturnValueOnce(
+            vi.mocked(inviteApi.createCalendarEventFromInvitation).mockReturnValueOnce(
                 // @ts-ignore test fixture uses a looser VcalVeventComponent shape than VcalPmVeventComponent
                 Promise.resolve({ savedEvent, savedVevent, savedVcalAttendee: savedAttendee })
             );

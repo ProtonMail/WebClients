@@ -1,14 +1,14 @@
 import { getFilteredUndoTokens, runParallelChunkedActions } from './chunk';
 import { clearAll } from './tests/helper';
 
-const api = jest.fn((any) => any);
+const api = vi.fn((any) => any);
 const items: number[] = [...Array(50).keys()];
 
 describe('chunk', () => {
     beforeEach(() => clearAll());
 
     describe('runParallelChunkedActions', () => {
-        const action = jest.fn(() => ({ UndoToken: { Token: 'fake' } }));
+        const action = vi.fn(() => ({ UndoToken: { Token: 'fake' } }));
 
         it('should chunk actions with default size', async () => {
             const tokens = await runParallelChunkedActions({ api, items, action });
@@ -25,10 +25,10 @@ describe('chunk', () => {
         });
 
         it('should rollback changes when a request on a chunk has failed', async () => {
-            const action = jest.fn(() => {
+            const action = vi.fn(() => {
                 throw new Error('FAILS');
             });
-            const handleChunkFailed = jest.fn();
+            const handleChunkFailed = vi.fn();
 
             try {
                 await runParallelChunkedActions({ api, items, action, optimisticAction: handleChunkFailed });

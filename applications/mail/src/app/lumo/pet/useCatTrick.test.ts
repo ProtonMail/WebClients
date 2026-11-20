@@ -8,8 +8,8 @@ const renderTrick = (canPlay = true) =>
     renderHook(({ canPlay }) => useCatTrick(canPlay), { initialProps: { canPlay } });
 
 describe('useCatTrick', () => {
-    beforeEach(() => jest.useFakeTimers());
-    afterEach(() => jest.useRealTimers());
+    beforeEach(() => vi.useFakeTimers());
+    afterEach(() => vi.useRealTimers());
 
     it('plays the trick for its length, then stops', () => {
         const { result } = renderTrick();
@@ -17,9 +17,9 @@ describe('useCatTrick', () => {
         act(() => result.current.playTrick(CatTrick.NINE_LIVES));
         expect(result.current.trick).toBe(CatTrick.NINE_LIVES);
 
-        act(() => jest.advanceTimersByTime(CAT_TRICK_MS[CatTrick.NINE_LIVES] - 1));
+        act(() => vi.advanceTimersByTime(CAT_TRICK_MS[CatTrick.NINE_LIVES] - 1));
         expect(result.current.trick).toBe(CatTrick.NINE_LIVES);
-        act(() => jest.advanceTimersByTime(1));
+        act(() => vi.advanceTimersByTime(1));
         expect(result.current.trick).toBeNull();
     });
 

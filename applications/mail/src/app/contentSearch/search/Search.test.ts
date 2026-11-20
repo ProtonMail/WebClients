@@ -15,11 +15,13 @@ const userId = 'user1';
 
 // Search opens the DB itself and builds a MessageCache on it to resolve the hit ids, so both are
 // stubbed here: no IndexedDB, no crypto.
-const openDBMock = jest.mocked(openContentSearchDB);
-const messageCacheMock = { readMessages: jest.fn() };
-jest.mock('../db/open', () => ({ openContentSearchDB: jest.fn() }));
-jest.mock('../indexation/MessageCache', () => ({
-    MessageCache: jest.fn().mockImplementation(() => messageCacheMock),
+const openDBMock = vi.mocked(openContentSearchDB);
+const messageCacheMock = { readMessages: vi.fn() };
+vi.mock('../db/open', () => ({ openContentSearchDB: vi.fn() }));
+vi.mock('../indexation/MessageCache', () => ({
+    MessageCache: vi.fn().mockImplementation(function () {
+        return messageCacheMock;
+    }),
 }));
 
 const params = (over: Partial<NormalizedSearchParams> = {}): NormalizedSearchParams =>
@@ -40,7 +42,7 @@ const message = (ID: string, Unread: number): SearchResult => ({ ID, Unread }) a
  * resolves.
  */
 const startedSearch = async (initial: NormalizedSearchParams, messages: SearchResult[]) => {
-    const workerSearch = jest.fn(async (params, callback) => {
+    const workerSearch = vi.fn(async (params, callback) => {
         const ids = messages.map((m) => m.ID);
         await callback(ids);
     });
@@ -48,7 +50,7 @@ const startedSearch = async (initial: NormalizedSearchParams, messages: SearchRe
     messageCacheMock.readMessages.mockImplementation(
         async (ids: string[]) => new Map(ids.map((id) => [id, messages.find((m) => m.ID === id)]))
     );
-    const close = jest.fn();
+    const close = vi.fn();
     openDBMock.mockResolvedValue({ close } as unknown as Awaited<ReturnType<typeof openContentSearchDB>>);
 
     const deps = Promise.resolve({
@@ -59,7 +61,7 @@ const startedSearch = async (initial: NormalizedSearchParams, messages: SearchRe
     });
 
     const search = new Search(initial, new TabLocalDatabaseLock(), deps, userId, new LoggerProxy(undefined));
-    const onResults = jest.fn();
+    const onResults = vi.fn();
 
     search.onResults.subscribe(onResults);
 
@@ -86,7 +88,7 @@ describe('Search.update', () => {
     const read = message('read', 0);
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('returns true and does not re-run the search when the new params are identical', async () => {
@@ -135,7 +137,7 @@ describe('Search.update', () => {
             userId,
             new LoggerProxy(undefined)
         );
-        const onResults = jest.fn();
+        const onResults = vi.fn();
         search.onResults.subscribe(onResults);
 
         expect(search.update(params({ filter: { Unread: 0 } }))).toBe(true);

@@ -2,9 +2,9 @@ import { CatTrick } from './catPose';
 import { matchCatTrick } from './catTricks';
 
 describe('matchCatTrick', () => {
-    const pinRandom = (value: number) => jest.spyOn(Math, 'random').mockReturnValue(value);
+    const pinRandom = (value: number) => vi.spyOn(Math, 'random').mockReturnValue(value);
 
-    afterEach(() => jest.restoreAllMocks());
+    afterEach(() => vi.restoreAllMocks());
 
     it.each([
         ["Schrödinger's cat!", CatTrick.SCHRODINGER_IN_BOX],

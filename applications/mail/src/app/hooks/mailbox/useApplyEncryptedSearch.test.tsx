@@ -1,4 +1,5 @@
 import { act } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -14,17 +15,11 @@ const props = {
     sort: { sort: 'Time', desc: true } as const,
     filter: {},
     search: { keyword: 'hello' },
-    onPage: jest.fn(),
+    onPage: vi.fn(),
 };
 
 /** An index that can answer searches, with ES startup settled or still running. */
-const mockESContext = ({
-    isStartupSettled,
-    encryptedSearch,
-}: {
-    isStartupSettled: boolean;
-    encryptedSearch: jest.Mock;
-}) =>
+const mockESContext = ({ isStartupSettled, encryptedSearch }: { isStartupSettled: boolean; encryptedSearch: Mock }) =>
     mockUseEncryptedSearchContext({
         encryptedSearch,
         esStatus: {
@@ -38,7 +33,7 @@ const mockESContext = ({
 
 describe('useApplyEncryptedSearch', () => {
     it('should search the index once ES startup has settled', async () => {
-        const encryptedSearch = jest.fn().mockResolvedValue(true);
+        const encryptedSearch = vi.fn().mockResolvedValue(true);
         mockESContext({ isStartupSettled: true, encryptedSearch });
 
         await renderHook({ useCallback: () => useApplyEncryptedSearch(props) });
@@ -49,7 +44,7 @@ describe('useApplyEncryptedSearch', () => {
     // Landing on a search URL - a reload while searching - runs this hook before ES startup has
     // settled. Searching then would show server results for a beat before the index answers.
     it('should not search at all while ES startup is still running', async () => {
-        const encryptedSearch = jest.fn().mockResolvedValue(true);
+        const encryptedSearch = vi.fn().mockResolvedValue(true);
         mockESContext({ isStartupSettled: false, encryptedSearch });
 
         const { store } = await renderHook({ useCallback: () => useApplyEncryptedSearch(props) });
@@ -61,7 +56,7 @@ describe('useApplyEncryptedSearch', () => {
     });
 
     it('should search the index as soon as ES startup settles', async () => {
-        const encryptedSearch = jest.fn().mockResolvedValue(true);
+        const encryptedSearch = vi.fn().mockResolvedValue(true);
         mockESContext({ isStartupSettled: false, encryptedSearch });
 
         const { rerender } = await renderHook({ useCallback: () => useApplyEncryptedSearch(props) });

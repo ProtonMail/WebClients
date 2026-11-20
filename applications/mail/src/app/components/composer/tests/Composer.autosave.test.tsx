@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the rooster editor iframe needs iframe.contentDocument, which happy-dom lacks
 import { act, fireEvent, getByTestId } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
@@ -20,7 +22,7 @@ import { clearAll, waitForSpyCall } from '../../../helpers/tests/helper';
 import { tick } from '../../../helpers/tests/render';
 import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
 describe('Composer autosave', () => {
     let fromKeys: GeneratedKey;
@@ -38,18 +40,18 @@ describe('Composer autosave', () => {
 
     beforeEach(() => {
         clearAll();
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         addApiKeys(false, toAddress, []);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const asyncSpy = (resolved = true) => {
         let resolve: (value: unknown) => void = noop;
         let reject: (value: unknown) => void = noop;
-        const spy = jest.fn(() => {
+        const spy = vi.fn(() => {
             if (resolved) {
                 return Promise.resolve({ Message: { ID } });
             }
@@ -103,13 +105,13 @@ describe('Composer autosave', () => {
         });
 
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
 
         expect(createSpy).not.toHaveBeenCalled();
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
@@ -120,17 +122,17 @@ describe('Composer autosave', () => {
 
         triggerRoosterInput(container);
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         triggerRoosterInput(container);
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         expect(createSpy).not.toHaveBeenCalled();
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
 
@@ -142,34 +144,34 @@ describe('Composer autosave', () => {
 
         triggerRoosterInput(container);
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         expect(createSpy).not.toHaveBeenCalled();
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
         triggerRoosterInput(container);
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         expect(updateSpy).not.toHaveBeenCalled();
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         expect(updateSpy).not.toHaveBeenCalled();
         createResolve({ Message: { ID } });
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         expect(updateSpy).not.toHaveBeenCalled();
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         await waitForSpyCall({ spy: updateSpy, disableFakeTimers: true });
@@ -180,13 +182,13 @@ describe('Composer autosave', () => {
 
         triggerRoosterInput(container);
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         const sendButton = await renderResult.findByTestId('composer:send-button');
         fireEvent.click(sendButton);
         await act(async () => {
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             await tick();
         });
         await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });

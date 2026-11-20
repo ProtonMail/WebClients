@@ -9,11 +9,11 @@ import MailUpsellBanner from './MailUpsellBanner';
 const props = {
     columnMode: true,
     needToShowUpsellBanner: { current: true },
-    onClose: jest.fn(),
+    onClose: vi.fn(),
 };
 
-jest.mock('@proton/components/components/upsell/config/useUpsellConfig');
-jest.mocked(useUpsellConfig).mockReturnValue({ onUpgrade: jest.fn() } as any);
+vi.mock('@proton/components/components/upsell/config/useUpsellConfig');
+vi.mocked(useUpsellConfig).mockReturnValue({ onUpgrade: vi.fn() } as any);
 
 describe('Mail upsell banner', () => {
     afterAll(() => {

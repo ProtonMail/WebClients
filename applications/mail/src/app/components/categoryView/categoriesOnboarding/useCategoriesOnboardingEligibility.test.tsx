@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
-import { mockUseOrganization } from '@proton/account/testing/mockUseOrganization';
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
+import { mockUseOrganization } from '@proton/account/testing/vitest/mockUseOrganization';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
@@ -10,7 +10,7 @@ import {
     CategoriesOnboardingFlags,
     FeatureValueDefault,
 } from '@proton/mail/features/categoriesView/categoriesOnboarding';
-import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
+import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
 import { PLANS } from '@proton/payments/core/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
@@ -22,12 +22,12 @@ import { useCategoriesView } from '../useCategoriesView';
 import { OnboardingFlow } from './onboardingInterface';
 import { useCategoriesOnboardingEligibility } from './useCategoriesOnboardingEligibility';
 
-jest.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider');
-jest.mock('../../../hooks/mailboxCounter/useMailboxCounter');
-jest.mock('@proton/account/welcomeFlags');
-jest.mock('@proton/features/useFeature');
-jest.mock('../../../store/hooks');
-jest.mock('../useCategoriesView');
+vi.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider');
+vi.mock('../../../hooks/mailboxCounter/useMailboxCounter');
+vi.mock('@proton/account/welcomeFlags');
+vi.mock('@proton/features/useFeature');
+vi.mock('../../../store/hooks');
+vi.mock('../useCategoriesView');
 
 const ONBOARDING_ACCOUNT_THRESHOLD = 1738371600; // 2025-02-01
 const EXISTING_ACCOUNT_CREATE_TIME = 1735693200; // 2025-01-01, before the threshold
@@ -57,15 +57,15 @@ const defaultCategoriesView: ReturnType<typeof useCategoriesView> = {
 };
 
 const defaultWelcomeFlags: ReturnType<typeof useWelcomeFlags> = {
-    endReplay: jest.fn(),
-    setDone: jest.fn(),
-    startReplay: jest.fn(),
+    endReplay: vi.fn(),
+    setDone: vi.fn(),
+    startReplay: vi.fn(),
     welcomeFlags: { isWelcomeFlow: false, hasGenericWelcomeStep: false, isDone: false, isReplay: false },
 };
 
 const defaultGetStartedChecklist: ReturnType<typeof useGetStartedChecklist> = {
     canDisplayChecklist: false,
-    changeChecklistDisplay: jest.fn(),
+    changeChecklistDisplay: vi.fn(),
     createdAt: new Date(),
     displayState: CHECKLIST_DISPLAY_TYPE.REDUCED,
     expiresAt: undefined,
@@ -73,11 +73,11 @@ const defaultGetStartedChecklist: ReturnType<typeof useGetStartedChecklist> = {
     isUserPaid: false,
     items: new Set([]),
     loading: false,
-    markItemsAsDone: jest.fn(),
+    markItemsAsDone: vi.fn(),
     userWasRewarded: false,
     itemsToComplete: [],
     byoeFlowInProgress: false,
-    setByoeFlowInProgress: jest.fn(),
+    setByoeFlowInProgress: vi.fn(),
     checklistType: undefined,
 };
 
@@ -95,8 +95,8 @@ const buildFeature = (code: FeatureCode, value: number): FeatureContextValue => 
         UpdateTime: 0,
     },
     loading: false,
-    get: jest.fn(),
-    update: jest.fn(),
+    get: vi.fn(),
+    update: vi.fn(),
     code,
 });
 
@@ -117,7 +117,7 @@ const mockFeatures = ({
         [FeatureCode.CategoryViewOnboardingAccountDateThreshold]: accountThreshold,
     };
 
-    jest.mocked(useFeature).mockImplementation((code) => buildFeature(code, valueByCode[code] ?? 0));
+    vi.mocked(useFeature).mockImplementation((code) => buildFeature(code, valueByCode[code] ?? 0));
 };
 
 const mockAccountCreatedAt = (createTime: number) => mockUseUser([{ CreateTime: createTime }]);
@@ -126,27 +126,27 @@ const mockMailCategoryView = (mailCategoryView: boolean) =>
     mockUseMailSettings([{ MailCategoryView: mailCategoryView }]);
 
 const mockAllMailCount = (total: number) => {
-    jest.mocked(useMailboxCounter).mockReturnValue({
+    vi.mocked(useMailboxCounter).mockReturnValue({
         loading: false,
-        getLocationCount: jest.fn().mockReturnValue({ Total: total, Unread: 0 }),
-        getCurrentLocationCount: jest.fn(),
+        getLocationCount: vi.fn().mockReturnValue({ Total: total, Unread: 0 }),
+        getCurrentLocationCount: vi.fn(),
     });
 };
 
 const mockCategoriesView = (overrides: Partial<ReturnType<typeof useCategoriesView>> = {}) => {
-    jest.mocked(useCategoriesView).mockReturnValue({ ...defaultCategoriesView, ...overrides });
+    vi.mocked(useCategoriesView).mockReturnValue({ ...defaultCategoriesView, ...overrides });
 };
 
 const mockChecklistDisplay = (displayState: CHECKLIST_DISPLAY_TYPE) => {
-    jest.mocked(useGetStartedChecklist).mockReturnValue({ ...defaultGetStartedChecklist, displayState });
+    vi.mocked(useGetStartedChecklist).mockReturnValue({ ...defaultGetStartedChecklist, displayState });
 };
 
 const renderEligibility = () => renderHook(() => useCategoriesOnboardingEligibility()).result.current;
 
 describe('useCategoriesOnboardingEligibility', () => {
     beforeAll(() => {
-        jest.mocked(useWelcomeFlags).mockReturnValue(defaultWelcomeFlags);
-        jest.mocked(useMailSelector).mockReturnValue(false);
+        vi.mocked(useWelcomeFlags).mockReturnValue(defaultWelcomeFlags);
+        vi.mocked(useMailSelector).mockReturnValue(false);
     });
 
     // Reset every per-test mock to its default so a test cannot leak state into the next one.
@@ -158,7 +158,7 @@ describe('useCategoriesOnboardingEligibility', () => {
     });
 
     afterAll(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('b2b users', () => {
@@ -361,7 +361,7 @@ describe('useCategoriesOnboardingEligibility', () => {
         describe('new users', () => {
             it('are eligible to free prompt if enough emails received and is free', () => {
                 mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
-                jest.mocked(useMailSelector).mockReturnValue(true);
+                vi.mocked(useMailSelector).mockReturnValue(true);
                 mockAllMailCount(100);
 
                 expect(renderEligibility()).toStrictEqual({
@@ -374,7 +374,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
             it('are not eligible to free prompt if enough emails received and is not free', () => {
                 mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: true }]);
-                jest.mocked(useMailSelector).mockReturnValue(true);
+                vi.mocked(useMailSelector).mockReturnValue(true);
                 mockAllMailCount(100);
 
                 expect(renderEligibility()).toStrictEqual({
@@ -387,7 +387,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
             it('are not eligible to free prompt if not enough emails received', () => {
                 mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
-                jest.mocked(useMailSelector).mockReturnValue(true);
+                vi.mocked(useMailSelector).mockReturnValue(true);
                 mockAllMailCount(40);
 
                 expect(renderEligibility()).toStrictEqual({
@@ -400,7 +400,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
             it('are not eligible to free prompt if already seen the spotlight', () => {
                 mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
-                jest.mocked(useMailSelector).mockReturnValue(true);
+                vi.mocked(useMailSelector).mockReturnValue(true);
                 mockAllMailCount(100);
                 mockFeatures({ b2cOnboardingFlag: CategoriesOnboardingFlags.SPOTLIGHT_FREE_USERS });
 
@@ -414,7 +414,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
             it('are not eligible if no category view access', () => {
                 mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
-                jest.mocked(useMailSelector).mockReturnValue(true);
+                vi.mocked(useMailSelector).mockReturnValue(true);
                 mockAllMailCount(100);
                 mockCategoriesView({ isCategoryViewEnabled: false });
 
@@ -428,7 +428,7 @@ describe('useCategoriesOnboardingEligibility', () => {
 
             it('are not eligible to free prompt if not default category configuration', () => {
                 mockUseUser([{ CreateTime: NEW_ACCOUNT_CREATE_TIME, hasPaidMail: false }]);
-                jest.mocked(useMailSelector).mockReturnValue(false);
+                vi.mocked(useMailSelector).mockReturnValue(false);
                 mockAllMailCount(100);
 
                 expect(renderEligibility()).toStrictEqual({

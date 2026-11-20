@@ -1,4 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
@@ -10,21 +11,21 @@ import type { Element } from '../../../models/element';
 import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import { folders, labels, sendEvent, setup } from './Mailbox.test.helpers';
 
-jest.mock('../../../store/mailbox/mailboxActions', () => {
-    const actual = jest.requireActual('../../../store/mailbox/mailboxActions');
+vi.mock('../../../store/mailbox/mailboxActions', async () => {
+    const actual = await vi.importActual<any>('../../../store/mailbox/mailboxActions');
     return {
         ...actual,
-        labelConversations: Object.assign(jest.fn(actual.labelConversations), actual.labelConversations),
-        unlabelConversations: Object.assign(jest.fn(actual.unlabelConversations), actual.unlabelConversations),
+        labelConversations: Object.assign(vi.fn(actual.labelConversations), actual.labelConversations),
+        unlabelConversations: Object.assign(vi.fn(actual.unlabelConversations), actual.unlabelConversations),
     };
 });
 
 const [label1, label2, label3, label4] = labels;
 const [folder1, folder2] = folders;
 
-jest.mock('../../../metrics/useMailELDTMetric', () => ({
+vi.mock('../../../metrics/useMailELDTMetric', () => ({
     useMailELDTMetric: () => {
-        return { stopELDTMetric: jest.fn() };
+        return { stopELDTMetric: vi.fn() };
     },
 }));
 
@@ -102,7 +103,7 @@ describe('Mailbox labels actions', () => {
         };
 
         it('should add a label to two conversations', async () => {
-            const labelConversationsSpy = jest.mocked(mailboxActions.labelConversations);
+            const labelConversationsSpy = vi.mocked(mailboxActions.labelConversations);
 
             const { getItems } = await setup({ conversations, labelID: label1.ID });
 
@@ -132,7 +133,7 @@ describe('Mailbox labels actions', () => {
         });
 
         it('should remove a label to two conversations', async () => {
-            const unlabelConversationsSpy = jest.mocked(mailboxActions.unlabelConversations);
+            const unlabelConversationsSpy = vi.mocked(mailboxActions.unlabelConversations);
 
             const { getItems } = await setup({ conversations, labelID: label1.ID });
 
@@ -162,8 +163,8 @@ describe('Mailbox labels actions', () => {
         });
 
         it('should add and remove a label of a conversation', async () => {
-            const labelConversationsSpy = jest.mocked(mailboxActions.labelConversations);
-            const unlabelConversationsSpy = jest.mocked(mailboxActions.unlabelConversations);
+            const labelConversationsSpy = vi.mocked(mailboxActions.labelConversations);
+            const unlabelConversationsSpy = vi.mocked(mailboxActions.unlabelConversations);
 
             const { getItems } = await setup({ conversations, labelID: label1.ID });
 
@@ -214,7 +215,7 @@ describe('Mailbox labels actions', () => {
         };
 
         it('should move two conversations in a another folder', async () => {
-            const labelConversationsSpy = jest.mocked(mailboxActions.labelConversations);
+            const labelConversationsSpy = vi.mocked(mailboxActions.labelConversations);
 
             const { getItems, store } = await setup({
                 conversations,
@@ -248,7 +249,7 @@ describe('Mailbox labels actions', () => {
 
     describe('empty folder', () => {
         it('should empty a folder', async () => {
-            const emptyRequestSpy = jest.fn();
+            const emptyRequestSpy = vi.fn();
             addApiMock(`mail/v4/messages/empty`, emptyRequestSpy, 'delete');
 
             const { getItems } = await setup({
@@ -278,7 +279,7 @@ describe('Mailbox labels actions', () => {
     });
 
     describe('delete elements', () => {
-        const deleteFirstTwo = async ({ deleteRequestSpy }: { deleteRequestSpy: jest.Mock }) => {
+        const deleteFirstTwo = async ({ deleteRequestSpy }: { deleteRequestSpy: Mock }) => {
             const checkboxes = screen.getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[0]);
             fireEvent.click(checkboxes[1]);
@@ -293,7 +294,7 @@ describe('Mailbox labels actions', () => {
         };
 
         it('should delete permanently conversations', async () => {
-            const deleteRequestSpy = jest.fn(() => {});
+            const deleteRequestSpy = vi.fn(() => {});
             addApiMock(`mail/v4/conversations/delete`, deleteRequestSpy, 'put');
 
             const trashedConversations = conversations.map((conversation) => {
@@ -317,7 +318,7 @@ describe('Mailbox labels actions', () => {
         });
 
         it('should delete permanently messages', async () => {
-            const deleteRequestSpy = jest.fn(() => {});
+            const deleteRequestSpy = vi.fn(() => {});
             addApiMock(`mail/v4/messages/delete`, deleteRequestSpy, 'put');
 
             const trashedMessages = conversations.map((conversation) => {
@@ -339,7 +340,7 @@ describe('Mailbox labels actions', () => {
         });
 
         it('should delete permanently conversations and rollback', async () => {
-            const deleteRequestSpy = jest.fn(() => {
+            const deleteRequestSpy = vi.fn(() => {
                 throw new Error('failed');
             });
             addApiMock(`mail/v4/conversations/delete`, deleteRequestSpy, 'put');

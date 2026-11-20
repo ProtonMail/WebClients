@@ -23,7 +23,7 @@ const action: ActionRequest = {
 const labels = { 'email-a1b2c3': { title: 'Booking confirmation' }, 'email-d4e5f6': { title: 'Receipt' } };
 
 const renderBody = (selectedIds: string[]) => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     render(
         <>
             {renderEmailSelectionBody({
@@ -82,7 +82,7 @@ describe('renderEmailSelectionBody', () => {
 
     // A row leads with the sender, not the subject — the reference records them the other way round.
     it('leads a row with the sender, puts the subject beneath it and shows the date for a human', () => {
-        const onChange = jest.fn();
+        const onChange = vi.fn();
         render(
             <>
                 {renderEmailSelectionBody({

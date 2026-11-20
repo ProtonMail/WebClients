@@ -13,11 +13,11 @@ import { OneTimeCodeLocation } from './oneTimeCodeEvents';
 import { useOneTimeCodeCopy } from './useOneTimeCodeCopy';
 import { useOneTimeCodeSettings } from './useOneTimeCodeSettings';
 
-jest.mock('@proton/account/user/hooks', () => {
-    return { useUser: jest.fn() };
+vi.mock('@proton/account/user/hooks', () => {
+    return { useUser: vi.fn() };
 });
-jest.mock('../../hooks/actions/applyLocation/useApplyLocation', () => {
-    return { useApplyLocation: jest.fn() };
+vi.mock('../../hooks/actions/applyLocation/useApplyLocation', () => {
+    return { useApplyLocation: vi.fn() };
 });
 
 let tracked: ReturnType<typeof mockTracker>;
@@ -39,7 +39,7 @@ const copyReport = (location: string, gateSource: string, isMovedToTrash: string
 
 const user = buildUser();
 const moveToTrashKey = `one-time-code-move-to-trash-${user.ID}`;
-const applyLocation = jest.fn();
+const applyLocation = vi.fn();
 const elements: Element[] = [];
 
 const renderCopy = () => {
@@ -50,25 +50,25 @@ const renderCopy = () => {
 
 const advance = (ms: number) => {
     act(() => {
-        jest.advanceTimersByTime(ms);
+        vi.advanceTimersByTime(ms);
     });
 };
 
 describe('useOneTimeCodeCopy', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         localStorage.clear();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         tracked = mockTracker();
-        jest.mocked(useUser).mockReturnValue([user, false]);
-        jest.mocked(useApplyLocation).mockReturnValue({
+        vi.mocked(useUser).mockReturnValue([user, false]);
+        vi.mocked(useApplyLocation).mockReturnValue({
             applyLocation,
-            applyMultipleLocations: jest.fn(),
+            applyMultipleLocations: vi.fn(),
         });
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         tracked.restore();
     });
 

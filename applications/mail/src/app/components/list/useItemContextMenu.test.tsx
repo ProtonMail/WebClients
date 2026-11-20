@@ -9,22 +9,22 @@ import { useFlag } from '@proton/unleash/useFlag';
 import type { Element } from '../../models/element';
 import { useItemContextMenu } from './useItemContextMenu';
 
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: jest.fn() }));
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 
-jest.mock('../../hooks/mailbox/useElements', () => ({
-    useGetElementsFromIDs: () => jest.fn(() => []),
+vi.mock('../../hooks/mailbox/useElements', () => ({
+    useGetElementsFromIDs: () => vi.fn(() => []),
 }));
 
-jest.mock('../../hooks/useBlockSender', () => ({
+vi.mock('../../hooks/useBlockSender', () => ({
     __esModule: true,
     default: () => ({
         canShowBlockSender: false,
-        handleClickBlockSender: jest.fn(),
+        handleClickBlockSender: vi.fn(),
         blockSenderModal: null,
     }),
 }));
 
-jest.mock('./ItemContextMenu', () => ({
+vi.mock('./ItemContextMenu', () => ({
     __esModule: true,
     default: () => null,
 }));
@@ -35,11 +35,11 @@ const createMouseEvent = () =>
     ({
         clientX: 10,
         clientY: 20,
-        stopPropagation: jest.fn(),
-        preventDefault: jest.fn(),
+        stopPropagation: vi.fn(),
+        preventDefault: vi.fn(),
     }) as unknown as React.MouseEvent<HTMLDivElement>;
 
-const setup = (labelID: string, onCheck = jest.fn()) =>
+const setup = (labelID: string, onCheck = vi.fn()) =>
     renderHook(
         ({ labelID }) =>
             useItemContextMenu({
@@ -47,9 +47,9 @@ const setup = (labelID: string, onCheck = jest.fn()) =>
                 anchorRef: createRef<HTMLElement>(),
                 checkedIDs: [],
                 onCheck,
-                onMarkAs: jest.fn(),
-                onMove: jest.fn(),
-                onDelete: jest.fn(),
+                onMarkAs: vi.fn(),
+                onMove: vi.fn(),
+                onDelete: vi.fn(),
                 conversationMode: false,
             }),
         { initialProps: { labelID } }
@@ -59,15 +59,15 @@ const isMenuOpen = (contextMenu: JSX.Element) => contextMenu.props.isOpen;
 
 describe('useItemContextMenu', () => {
     beforeEach(() => {
-        jest.mocked(useFlag).mockReturnValue(true);
+        vi.mocked(useFlag).mockReturnValue(true);
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should open the context menu on right click outside of the soft deleted folder', () => {
-        const onCheck = jest.fn();
+        const onCheck = vi.fn();
         const { result } = setup(MAILBOX_LABEL_IDS.INBOX, onCheck);
         const event = createMouseEvent();
 
@@ -81,7 +81,7 @@ describe('useItemContextMenu', () => {
     });
 
     it('should not open the context menu on right click in the soft deleted folder', () => {
-        const onCheck = jest.fn();
+        const onCheck = vi.fn();
         const { result } = setup(MAILBOX_LABEL_IDS.SOFT_DELETED, onCheck);
         const event = createMouseEvent();
 
@@ -107,7 +107,7 @@ describe('useItemContextMenu', () => {
     });
 
     it('should open the context menu in the soft deleted folder when retention policies are disabled', () => {
-        jest.mocked(useFlag).mockReturnValue(false);
+        vi.mocked(useFlag).mockReturnValue(false);
         const { result } = setup(MAILBOX_LABEL_IDS.SOFT_DELETED);
 
         act(() => {

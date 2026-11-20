@@ -7,16 +7,16 @@ import { SortSubscriptionsValue, SubscriptionTabs } from './interface';
 import { deleteNewsletterSubscription, sortSubscriptionList } from './newsletterSubscriptionsActions';
 import { newsletterSubscriptionName } from './newsletterSubscriptionsSlice';
 
-const mockApiFn = jest.fn();
+const mockApiFn = vi.fn();
 const mockApi = Object.assign(mockApiFn, {
     UID: undefined,
-    addEventListener: jest.fn(),
-    apiRateLimiter: jest.fn() as unknown as ApiRateLimiter,
-    removeEventListener: jest.fn(),
+    addEventListener: vi.fn(),
+    apiRateLimiter: vi.fn() as unknown as ApiRateLimiter,
+    removeEventListener: vi.fn(),
 });
 
-const mockGetState = jest.fn();
-const mockDispatch = jest.fn();
+const mockGetState = vi.fn();
+const mockDispatch = vi.fn();
 
 const mockExtra: MailThunkExtra = {
     state: {} as MailState,
@@ -25,8 +25,8 @@ const mockExtra: MailThunkExtra = {
         api: mockApi,
         calendarModelEventManager: {} as any,
         notificationManager: {} as any,
-        startSearchSession: jest.fn(),
-        endSearchSession: jest.fn(),
+        startSearchSession: vi.fn(),
+        endSearchSession: vi.fn(),
         eventManager: {} as any,
         history: {} as any,
         unleashClient: {} as any,
@@ -38,7 +38,7 @@ const mockExtra: MailThunkExtra = {
 describe('newsletterSubscriptions actions', () => {
     describe('sortSubscriptionList', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
         });
 
         it('should call API with correct parameters when sorting active subscriptions and most frequent', async () => {

@@ -29,7 +29,7 @@ export const fakeImportHandle = () => {
     const handle = {
         done: done.promise,
         onProgress: { subscribe: () => () => {} },
-        stop: jest.fn(),
+        stop: vi.fn(),
         total: 10,
         completed: 0,
         progress: 0,
@@ -40,21 +40,21 @@ export const fakeImportHandle = () => {
 
 export const fakeMetricService = () =>
     ({
-        searchCompleted: jest.fn(),
-        startIndexing: jest.fn(),
-        mailboxIndexCompleted: jest.fn(),
-        startSearchSession: jest.fn(),
-        endSearchSession: jest.fn(),
-        resultOpened: jest.fn(),
-        resultActionPerformed: jest.fn(),
+        searchCompleted: vi.fn(),
+        startIndexing: vi.fn(),
+        mailboxIndexCompleted: vi.fn(),
+        startSearchSession: vi.fn(),
+        endSearchSession: vi.fn(),
+        resultOpened: vi.fn(),
+        resultActionPerformed: vi.fn(),
     }) as unknown as MetricService;
 
 /** An {@link IndexService} that hands out one controllable import. */
 export const fakeIndexService = (importHandle?: ImportHandle) =>
     ({
-        handleEvent: jest.fn().mockResolvedValue(false),
-        importFromEncryptedSearch: jest.fn().mockResolvedValue(importHandle),
-        deleteIndex: jest.fn().mockResolvedValue(undefined),
+        handleEvent: vi.fn().mockResolvedValue(false),
+        importFromEncryptedSearch: vi.fn().mockResolvedValue(importHandle),
+        deleteIndex: vi.fn().mockResolvedValue(undefined),
     }) as unknown as IndexService;
 
 export const fakeV1Status = (overrides: Partial<ESStatusConcrete> = {}): ESStatusConcrete =>
@@ -76,13 +76,13 @@ export const fakeV1Functions = () => {
     let report: ((state: ESSettledState) => void) | undefined;
 
     const functions = {
-        initializeES: jest.fn((options?: { onStateSettled?: (state: ESSettledState) => void }) => {
+        initializeES: vi.fn((options?: { onStateSettled?: (state: ESSettledState) => void }) => {
             report = options?.onStateSettled;
             return startup.promise;
         }),
-        esDelete: jest.fn().mockResolvedValue(undefined),
-        handleEvent: jest.fn().mockResolvedValue(undefined),
-        waitForSyncing: jest.fn().mockResolvedValue(undefined),
+        esDelete: vi.fn().mockResolvedValue(undefined),
+        handleEvent: vi.fn().mockResolvedValue(undefined),
+        waitForSyncing: vi.fn().mockResolvedValue(undefined),
         esStatus: fakeV1Status(),
     } as unknown as FunctionsV1;
 

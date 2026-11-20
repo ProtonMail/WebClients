@@ -18,8 +18,8 @@ const message = {
 
 const props = {
     message: message,
-    onClose: jest.fn(),
-    onLock: jest.fn(),
+    onClose: vi.fn(),
+    onLock: vi.fn(),
 };
 
 describe('CustomFilterDropdown', () => {

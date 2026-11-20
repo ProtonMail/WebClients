@@ -17,12 +17,12 @@ describe('EventReminderText', () => {
     const fakeNow = new Date(1969, 11, 31, 7, 58, 10);
 
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
+        vi.useFakeTimers().setSystemTime(fakeNow.getTime());
     });
 
     afterEach(() => {
-        jest.clearAllTimers();
-        jest.useRealTimers();
+        vi.clearAllTimers();
+        vi.useRealTimers();
     });
 
     it('displays the time remaining until event', () => {

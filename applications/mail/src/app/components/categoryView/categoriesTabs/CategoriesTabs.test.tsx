@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
 import { screen } from '@testing-library/react';
+import type { MockInstance } from 'vitest';
 
 import { CATEGORIES_COLOR_SHADES } from '@proton/mail/features/categoriesView/categoriesConstants';
 import * as helpers from '@proton/mail/features/categoriesView/categoriesStringHelpers';
@@ -8,42 +9,44 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { mailTestRender } from '../../../helpers/tests/render';
 import { newElementsState } from '../../../store/elements/elementsSlice';
+import { useCategoriesImproveSpotlight } from '../categoriesImproveSpotlight/useCategoriesImproveSpotlight';
 import { mockActiveCategoriesData } from '../testUtils/helpers';
 import { CategoriesTabs } from './CategoriesTabs';
 
-jest.mock('../useCategoriesView', () => ({
-    useCategoriesView: jest.fn(() => ({
+vi.mock('../useCategoriesView', () => ({
+    useCategoriesView: vi.fn(() => ({
         categoriesStore: [],
         activeCategoriesTabs: mockActiveCategoriesData,
     })),
 }));
 
-jest.mock('./useCategoriesBadge', () => ({
-    useCategoriesBadge: jest.fn(() => ({
+vi.mock('./useCategoriesBadge', () => ({
+    useCategoriesBadge: vi.fn(() => ({
         shouldShowCounter: false,
         shouldShowNewBadge: false,
     })),
 }));
 
-jest.mock('../categoriesOnboarding/CategoriesOnboardingSpotlights', () => ({
+vi.mock('../categoriesOnboarding/CategoriesOnboardingSpotlights', () => ({
     CategoriesOnboardingSpotlight: ({ children }: PropsWithChildren) => <>{children}</>,
 }));
 
-jest.mock('../categoriesImproveSpotlight/useCategoriesImproveSpotlight', () => ({
-    useCategoriesImproveSpotlight: jest.fn(() => ({ isEligible: false })),
+vi.mock('../categoriesImproveSpotlight/useCategoriesImproveSpotlight', () => ({
+    useCategoriesImproveSpotlight: vi.fn(() => ({ isEligible: false })),
 }));
 
-jest.mock('../categoriesOnboarding/CategoriesOnboardingContext', () => ({
-    useCategoriesOnboarding: jest.fn(() => ({
+vi.mock('../categoriesOnboarding/CategoriesOnboardingContext', () => ({
+    useCategoriesOnboarding: vi.fn(() => ({
         activeStep: 6, // OnboardingStep.DONE
         userIsInB2COnboardingFlow: false,
     })),
 }));
 
-jest.mock('@proton/mail/features/categoriesView/categoriesStringHelpers', () => ({
-    ...jest.requireActual('@proton/mail/features/categoriesView/categoriesStringHelpers'),
-    getLabelFromCategoryId: jest.fn(
-        jest.requireActual('@proton/mail/features/categoriesView/categoriesStringHelpers').getLabelFromCategoryId
+vi.mock('@proton/mail/features/categoriesView/categoriesStringHelpers', async () => ({
+    ...(await vi.importActual('@proton/mail/features/categoriesView/categoriesStringHelpers')),
+    getLabelFromCategoryId: vi.fn(
+        (await vi.importActual<any>('@proton/mail/features/categoriesView/categoriesStringHelpers'))
+            .getLabelFromCategoryId
     ),
 }));
 
@@ -119,31 +122,25 @@ describe('CategoriesTabs', () => {
 
     describe('error boundaries test', () => {
         // This is used to mock the console.error and avoid spamming logs
-        let consoleErrorSpy: jest.SpyInstance;
+        let consoleErrorSpy: MockInstance;
 
         afterEach(() => {
-            jest.resetModules();
-            jest.clearAllMocks();
+            vi.clearAllMocks();
+            vi.mocked(useCategoriesImproveSpotlight).mockReset();
 
             consoleErrorSpy.mockRestore();
         });
 
         beforeAll(() => {
-            consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+            consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
         });
 
         it('shows refresh when whole list crashes', async () => {
-            jest.isolateModules(() => {
-                jest.mock('./Tab', () => ({
-                    Tab: () => {
-                        throw new Error('Tab crashed');
-                    },
-                }));
-                // Import AFTER mock is set up inside isolateModules
-                const { CategoriesTabs } = require('./CategoriesTabs');
-
-                return mailTestRender(<CategoriesTabs labelID={MAILBOX_LABEL_IDS.CATEGORY_DEFAULT} />);
+            vi.mocked(useCategoriesImproveSpotlight).mockImplementation(() => {
+                throw new Error('Categories crashed');
             });
+
+            await mailTestRender(<CategoriesTabs />);
 
             const errorMessage = await screen.findByText('An error occurred with the categories');
             expect(errorMessage).toBeInTheDocument();
@@ -153,7 +150,7 @@ describe('CategoriesTabs', () => {
         });
 
         it('shows error on the tab when it crashes', async () => {
-            jest.mocked(helpers.getLabelFromCategoryId).mockImplementation((id: any) => {
+            vi.mocked(helpers.getLabelFromCategoryId).mockImplementation((id: any) => {
                 if (id === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS) {
                     throw new Error('forced crash');
                 }

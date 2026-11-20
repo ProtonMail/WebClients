@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
@@ -14,59 +15,59 @@ import useMailtoHash from '../../hooks/useMailtoHash';
 import useShowBYOEInboxCleanupModal from '../../hooks/useShowBYOEInboxCleanupModal';
 import { useMailboxContainerSideEffects } from './useMailboxContainerSideEffects';
 
-jest.mock('../../hooks/useMailtoHash', () => ({
+vi.mock('../../hooks/useMailtoHash', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-jest.mock('../../hooks/useInboxDesktopElementId', () => ({
+vi.mock('../../hooks/useInboxDesktopElementId', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-jest.mock('../../hooks/mailbox/useApplyEncryptedSearch', () => ({
-    useApplyEncryptedSearch: jest.fn(),
+vi.mock('../../hooks/mailbox/useApplyEncryptedSearch', () => ({
+    useApplyEncryptedSearch: vi.fn(),
 }));
-jest.mock('../../hooks/mailbox/mailboxPageTitle/useMailboxPageTitle', () => ({
-    useMailboxPageTitle: jest.fn(),
+vi.mock('../../hooks/mailbox/mailboxPageTitle/useMailboxPageTitle', () => ({
+    useMailboxPageTitle: vi.fn(),
 }));
-jest.mock('../../hooks/mailbox/useMailboxFavicon', () => ({
-    useMailboxFavicon: jest.fn(),
+vi.mock('../../hooks/mailbox/useMailboxFavicon', () => ({
+    useMailboxFavicon: vi.fn(),
 }));
-jest.mock('../../hooks/useInboxBadgeCount', () => ({
+vi.mock('../../hooks/useInboxBadgeCount', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-jest.mock('../../hooks/mailbox/notifications/useNewEmailNotification', () => ({
+vi.mock('../../hooks/mailbox/notifications/useNewEmailNotification', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-jest.mock('@proton/calendar/calendars/hooks', () => ({
-    useCalendars: jest.fn(),
+vi.mock('@proton/calendar/calendars/hooks', () => ({
+    useCalendars: vi.fn(),
 }));
-jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
-    useCalendarUserSettings: jest.fn(),
+vi.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
+    useCalendarUserSettings: vi.fn(),
 }));
-jest.mock('../../hooks/mailbox/usePreLoadElements', () => ({
+vi.mock('../../hooks/mailbox/usePreLoadElements', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('../../hooks/drawer/useAutoOpenContactsDrawer', () => ({
+vi.mock('../../hooks/drawer/useAutoOpenContactsDrawer', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
 const props = {
     labelID: 'inbox',
     isSearch: false,
     elementsParams: { something: 'value' } as any,
-    handleCheckAll: jest.fn(),
+    handleCheckAll: vi.fn(),
     elements: [{ ID: '1' }] as any,
     loading: false,
 };
 
 describe('useMailboxContainerSideEffects', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should call all hooks with the correct parameters', () => {
@@ -87,17 +88,17 @@ describe('useMailboxContainerSideEffects', () => {
             loading: props.loading,
         });
 
-        const mockCallback = (useNewEmailNotification as jest.Mock).mock.calls[0][0];
+        const mockCallback = (useNewEmailNotification as Mock).mock.calls[0][0];
         mockCallback();
 
         expect(props.handleCheckAll).toHaveBeenCalledWith(false);
     });
 
     it('should call useNewEmailNotification with a callback that calls handleCheckAll(false)', () => {
-        const handleCheckAll = jest.fn();
+        const handleCheckAll = vi.fn();
         renderHook(() => useMailboxContainerSideEffects({ ...props, handleCheckAll }));
 
-        const callback = (useNewEmailNotification as jest.Mock).mock.calls[0][0];
+        const callback = (useNewEmailNotification as Mock).mock.calls[0][0];
         callback();
 
         expect(handleCheckAll).toHaveBeenCalledWith(false);

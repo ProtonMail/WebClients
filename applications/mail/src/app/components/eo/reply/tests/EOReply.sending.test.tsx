@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the rooster editor iframe needs iframe.contentDocument, which happy-dom lacks
 import { CryptoProxy } from '@protontech/crypto';
 import { fireEvent, waitFor } from '@testing-library/react';
 
@@ -9,12 +11,12 @@ import { EOClearAll, EOPassword, validID } from '../../../../helpers/tests/eo/he
 import { waitForNotification } from '../../../../helpers/tests/helper';
 import { send, setup } from './EOReply.test.helpers';
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
 // The "Message sent" notification is kept for at least 2.5s, which the test would otherwise wait out.
 // Fake timers are not an option here: the EO message is decrypted with real crypto while rendering.
-jest.mock('@proton/mail-composer/constants', () => ({
-    ...jest.requireActual('@proton/mail-composer/constants'),
+vi.mock('@proton/mail-composer/constants', async () => ({
+    ...(await vi.importActual('@proton/mail-composer/constants')),
     MIN_DELAY_SENT_NOTIFICATION: 0,
 }));
 
@@ -75,7 +77,7 @@ describe('EO Reply send', () => {
         pastedNode.textContent = pastedText;
         editorElement.insertBefore(pastedNode, editorElement.firstChild);
 
-        const sendSpy = jest.fn(() => Promise.resolve({ Reply: {} }));
+        const sendSpy = vi.fn(() => Promise.resolve({ Reply: {} }));
         addApiMock('mail/v4/eo/reply', sendSpy, 'post');
 
         fireEvent.click(await renderResult.findByTestId('send-eo'));

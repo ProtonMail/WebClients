@@ -22,8 +22,8 @@ const SIEVE = 'require ["fileinto"];\nfileinto "News";';
 
 const setUp = (filters: Filter[] = [NEWSLETTERS]) => {
     const references = createReferenceRegistry();
-    const updateFilter = jest.fn().mockResolvedValue(undefined);
-    const validateSieve = jest.fn().mockResolvedValue(undefined);
+    const updateFilter = vi.fn().mockResolvedValue(undefined);
+    const validateSieve = vi.fn().mockResolvedValue(undefined);
     const deps = { getFilters: () => filters, updateFilter, validateSieve } as unknown as MailToolDeps;
 
     const update = (filter: string) =>

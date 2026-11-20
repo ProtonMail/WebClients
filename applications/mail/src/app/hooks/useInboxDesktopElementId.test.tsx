@@ -7,17 +7,17 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import useInboxDesktopElementId from './useInboxDesktopElementId';
 
 // Only the hooks are mocked, `generatePath` is needed to build the pathname
-jest.mock('react-router', () => ({
-    ...jest.requireActual('react-router'),
-    useHistory: jest.fn(),
-    useLocation: jest.fn(),
+vi.mock('react-router', async () => ({
+    ...(await vi.importActual('react-router')),
+    useHistory: vi.fn(),
+    useLocation: vi.fn(),
 }));
 
-const mockPush = jest.fn();
+const mockPush = vi.fn();
 
 const setup = ({ hash, isSearch = false }: { hash: string; isSearch?: boolean }) => {
-    jest.mocked(useLocation).mockReturnValue({ hash } as any);
-    jest.mocked(useHistory).mockReturnValue({
+    vi.mocked(useLocation).mockReturnValue({ hash } as any);
+    vi.mocked(useHistory).mockReturnValue({
         push: mockPush,
         // The category redirect runs before this hook and can already have rewritten the location
         location: { pathname: '/inbox', search: '', hash: '#category=primary' },
@@ -28,7 +28,7 @@ const setup = ({ hash, isSearch = false }: { hash: string; isSearch?: boolean })
 
 describe('useInboxDesktopElementId', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should open the element on a regular label', () => {

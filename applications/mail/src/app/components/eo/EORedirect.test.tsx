@@ -20,7 +20,7 @@ describe('Encrypted Outside Redirection', () => {
             id: id ? id : undefined,
             isStoreInitialized: true,
             messageState: {} as MessageState,
-            setSessionStorage: jest.fn(),
+            setSessionStorage: vi.fn(),
         };
     };
 

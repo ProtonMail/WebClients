@@ -12,16 +12,16 @@ import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import { useCategoriesView } from './useCategoriesView';
 import { useCategoryFlagWatcher } from './useCategoryFlagWatcher';
 
-jest.mock('react-router');
-jest.mock('../../helpers/mailboxUrl');
-jest.mock('../../store/hooks');
-jest.mock('./useCategoriesView');
+vi.mock('react-router');
+vi.mock('../../helpers/mailboxUrl');
+vi.mock('../../store/hooks');
+vi.mock('./useCategoriesView');
 
 const INBOX_URL = `/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`;
 const CATEGORY_DEFAULT_URL = '/inbox#category=primary';
 
-const mockReplace = jest.fn();
-const mockDispatch = jest.fn();
+const mockReplace = vi.fn();
+const mockDispatch = vi.fn();
 
 const hasCategoryAccess = {
     isCategoryViewEnabled: true,
@@ -34,38 +34,38 @@ const noCategoryAccess = {
 
 describe('useCategoryFlagWatcher', () => {
     beforeEach(() => {
-        jest.mocked(useHistory).mockReturnValue({ replace: mockReplace } as any);
-        jest.mocked(useLocation).mockReturnValue({ pathname: '/inbox', hash: '' } as any);
-        jest.mocked(useMailSelector).mockImplementation((selector) => {
+        vi.mocked(useHistory).mockReturnValue({ replace: mockReplace } as any);
+        vi.mocked(useLocation).mockReturnValue({ pathname: '/inbox', hash: '' } as any);
+        vi.mocked(useMailSelector).mockImplementation((selector) => {
             if (selector === selectLabelID) {
                 return MAILBOX_LABEL_IDS.INBOX;
             }
             return undefined;
         });
-        jest.mocked(useMailDispatch).mockReturnValue(mockDispatch);
-        jest.mocked(useCategoriesView).mockReturnValue(noCategoryAccess);
-        jest.mocked(categoryIDFromUrl).mockReturnValue(undefined);
-        jest.mocked(setCategoryInCurrentUrl).mockReturnValue(CATEGORY_DEFAULT_URL);
-        jest.mocked(removeCategoryFromCurrentUrl).mockReturnValue(INBOX_URL);
+        vi.mocked(useMailDispatch).mockReturnValue(mockDispatch);
+        vi.mocked(useCategoriesView).mockReturnValue(noCategoryAccess);
+        vi.mocked(categoryIDFromUrl).mockReturnValue(undefined);
+        vi.mocked(setCategoryInCurrentUrl).mockReturnValue(CATEGORY_DEFAULT_URL);
+        vi.mocked(removeCategoryFromCurrentUrl).mockReturnValue(INBOX_URL);
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('when not on inbox', () => {
         beforeEach(() => {
-            jest.mocked(useMailSelector).mockImplementation((selector) => {
+            vi.mocked(useMailSelector).mockImplementation((selector) => {
                 if (selector === selectLabelID) {
                     return MAILBOX_LABEL_IDS.SENT;
                 }
                 return undefined;
             });
-            jest.mocked(useLocation).mockReturnValue({ pathname: '/sent', hash: '' } as any);
+            vi.mocked(useLocation).mockReturnValue({ pathname: '/sent', hash: '' } as any);
         });
 
         it('does not redirect when category view is enabled', () => {
-            jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
+            vi.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
             renderHook(() => useCategoryFlagWatcher());
             expect(mockReplace).not.toHaveBeenCalled();
         });
@@ -78,7 +78,7 @@ describe('useCategoryFlagWatcher', () => {
 
     describe('when on inbox without a category in the URL', () => {
         it('redirects to the default category when category view is enabled', () => {
-            jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
+            vi.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
             renderHook(() => useCategoryFlagWatcher());
             expect(setCategoryInCurrentUrl).toHaveBeenCalledWith(
                 { pathname: '/inbox', hash: '' },
@@ -96,11 +96,11 @@ describe('useCategoryFlagWatcher', () => {
 
     describe('when on inbox with a category in the URL', () => {
         beforeEach(() => {
-            jest.mocked(categoryIDFromUrl).mockReturnValue(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+            vi.mocked(categoryIDFromUrl).mockReturnValue(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
         });
 
         it('does not redirect when category view is enabled', () => {
-            jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
+            vi.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
             renderHook(() => useCategoryFlagWatcher());
             expect(mockReplace).not.toHaveBeenCalled();
         });
@@ -118,7 +118,7 @@ describe('useCategoryFlagWatcher', () => {
             const { rerender } = renderHook(() => useCategoryFlagWatcher());
             expect(mockReplace).not.toHaveBeenCalled();
 
-            jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
+            vi.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
             rerender();
 
             expect(mockDispatch).toHaveBeenCalled();
@@ -126,13 +126,13 @@ describe('useCategoryFlagWatcher', () => {
         });
 
         it('redirects to inbox when access becomes disabled with a category in the URL', () => {
-            jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
-            jest.mocked(categoryIDFromUrl).mockReturnValue(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+            vi.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
+            vi.mocked(categoryIDFromUrl).mockReturnValue(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
 
             const { rerender } = renderHook(() => useCategoryFlagWatcher());
             expect(mockReplace).not.toHaveBeenCalled();
 
-            jest.mocked(useCategoriesView).mockReturnValue(noCategoryAccess);
+            vi.mocked(useCategoriesView).mockReturnValue(noCategoryAccess);
             rerender();
 
             expect(mockDispatch).toHaveBeenCalled();
@@ -142,9 +142,9 @@ describe('useCategoryFlagWatcher', () => {
 
     describe('when redirecting disabled categories', () => {
         it('redirects to inbox when access becomes enabled on inbox without a category', () => {
-            jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
-            jest.mocked(categoryIDFromUrl).mockReturnValue(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
-            jest.mocked(useMailSelector).mockImplementation((selector) => {
+            vi.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
+            vi.mocked(categoryIDFromUrl).mockReturnValue(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
+            vi.mocked(useMailSelector).mockImplementation((selector) => {
                 if (selector === selectLabelID) {
                     return MAILBOX_LABEL_IDS.INBOX;
                 }
@@ -162,9 +162,9 @@ describe('useCategoryFlagWatcher', () => {
         });
 
         it('does not redirect if the category is not disabled', () => {
-            jest.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
-            jest.mocked(categoryIDFromUrl).mockReturnValue(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
-            jest.mocked(useMailSelector).mockImplementation((selector) => {
+            vi.mocked(useCategoriesView).mockReturnValue(hasCategoryAccess);
+            vi.mocked(categoryIDFromUrl).mockReturnValue(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
+            vi.mocked(useMailSelector).mockImplementation((selector) => {
                 if (selector === selectLabelID) {
                     return MAILBOX_LABEL_IDS.INBOX;
                 }

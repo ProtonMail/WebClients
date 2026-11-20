@@ -23,8 +23,8 @@ const SIEVE = 'require ["fileinto"];\nfileinto "Travel";';
 const setUp = ({ hasPaidMail = true, filters = [] as Filter[] } = {}) => {
     const references = createReferenceRegistry();
     // The server normalises the name, so it deliberately differs from the requested one.
-    const addFilter = jest.fn().mockResolvedValue({ ID: 'SERVER_ID', Name: 'Travel' } as Filter);
-    const validateSieve = jest.fn().mockResolvedValue(undefined);
+    const addFilter = vi.fn().mockResolvedValue({ ID: 'SERVER_ID', Name: 'Travel' } as Filter);
+    const validateSieve = vi.fn().mockResolvedValue(undefined);
     const deps = {
         getUser: () => ({ hasPaidMail }) as UserModel,
         getFilters: () => filters,

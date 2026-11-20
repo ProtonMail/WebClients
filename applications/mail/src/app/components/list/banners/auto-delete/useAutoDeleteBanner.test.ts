@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react';
 
-import { mockUseUser } from '@proton/account/testing/mockUseUser';
-import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
-import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { mockUseFeature } from '@proton/features/testing/vitest/mockUseFeature';
+import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
 import { MAILBOX_LABEL_IDS as IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN as TO_HUMAN } from '@proton/shared/lib/mail/constants';
 

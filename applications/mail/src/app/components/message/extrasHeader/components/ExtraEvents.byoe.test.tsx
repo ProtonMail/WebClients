@@ -10,7 +10,7 @@ import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { ADDRESS_FLAGS, ADDRESS_STATUS, ADDRESS_TYPE, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
-import { type ApiMockHandler, addApiMock } from '@proton/test-api/api';
+import { type ApiMockHandler, addApiMock } from '@proton/test-api/vitest/api';
 
 import { getCompleteAddress, minimalCache } from '../../../../helpers/tests/cache';
 import {
@@ -23,7 +23,7 @@ import {
 import { mailTestRender } from '../../../../helpers/tests/render';
 import ExtraEvents from './ExtraEvents';
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
 const userName = 'byoeAddress';
 const userEmailAddress = 'byoeAddress@gmail.com';
@@ -125,9 +125,9 @@ describe('Event widget for pure BYOE account', () => {
     });
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
-        createCalendarSpy = jest.fn(() => Promise.resolve({}));
+        createCalendarSpy = vi.fn(() => Promise.resolve({}));
         addApiMock(CALENDAR_V1, createCalendarSpy, 'post');
     });
 

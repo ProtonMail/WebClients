@@ -1,28 +1,29 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock, MockedObject } from 'vitest';
 
 import * as desktopHelpers from '@proton/shared/lib/helpers/desktop';
 
 import { useMailboxCounter } from './mailboxCounter/useMailboxCounter';
 import useInboxBadgeCount from './useInboxBadgeCount';
 
-jest.mock('@proton/shared/lib/helpers/desktop');
-const desktopHelpersMock = desktopHelpers as jest.MockedObject<typeof desktopHelpers>;
+vi.mock('@proton/shared/lib/helpers/desktop');
+const desktopHelpersMock = desktopHelpers as MockedObject<typeof desktopHelpers>;
 
-jest.mock('./mailboxCounter/useMailboxCounter');
-const mockUseMailboxCounter = useMailboxCounter as jest.Mock;
+vi.mock('./mailboxCounter/useMailboxCounter');
+const mockUseMailboxCounter = useMailboxCounter as Mock;
 
 const mockInboxUnread = (unread: number | undefined) => {
     mockUseMailboxCounter.mockReturnValue({
         loading: false,
         counterMap: {},
-        getLocationCount: jest.fn().mockReturnValue({ Unread: unread, Total: unread ?? 0 }),
-        getCurrentLocationCount: jest.fn(),
+        getLocationCount: vi.fn().mockReturnValue({ Unread: unread, Total: unread ?? 0 }),
+        getCurrentLocationCount: vi.fn(),
     });
 };
 
 describe('useInboxBadgeCount', () => {
     const ipcInboxMessageBrokerMock = {
-        send: jest.fn(),
+        send: vi.fn(),
     };
 
     beforeEach(() => {
@@ -30,7 +31,7 @@ describe('useInboxBadgeCount', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should not call when not on desktop', () => {

@@ -37,9 +37,9 @@ const NotifyOnMount = ({ payload }: { payload: ModalPayload }) => {
 
 const renderModal = async ({
     subscriptions = defaultSubscriptions,
-    onConfirm = jest.fn(() => Promise.resolve()),
+    onConfirm = vi.fn(() => Promise.resolve()),
 }: RenderModalOptions = {}) => {
-    const onDisplayed = jest.fn();
+    const onDisplayed = vi.fn();
     const payload: ModalPayload = {
         type: ModalType.BYOEInboxCleanup,
         value: { subscriptions, onConfirm, onDisplayed },
@@ -404,7 +404,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
 
         it('Unsubscribe shows a spinner until the answer comes', async () => {
             const deferred = createDeferred();
-            await renderModal({ onConfirm: jest.fn(() => deferred.promise) });
+            await renderModal({ onConfirm: vi.fn(() => deferred.promise) });
 
             expect(getUnsubscribeButton()).toHaveAttribute('aria-busy', 'false');
 
@@ -431,7 +431,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
         });
 
         it('stays open with the same choices when the answer fails, and Unsubscribe can be pressed again with the current selection', async () => {
-            const onConfirm = jest.fn(() => Promise.reject(new Error('Cleanup failed')));
+            const onConfirm = vi.fn(() => Promise.reject(new Error('Cleanup failed')));
             await renderModal({ onConfirm });
 
             fireEvent.click(getSenderCheckbox(defaultSubscriptions[1]));
@@ -462,7 +462,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
 
         it('tick boxes, select all and the archive tick box are disabled while waiting', async () => {
             const deferred = createDeferred();
-            await renderModal({ onConfirm: jest.fn(() => deferred.promise) });
+            await renderModal({ onConfirm: vi.fn(() => deferred.promise) });
 
             fireEvent.click(getUnsubscribeButton());
 
@@ -486,7 +486,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
         });
 
         describe.each(Object.keys(closeWith))('closing with %s while waiting', (closeMethod) => {
-            const unhandledRejection = jest.fn();
+            const unhandledRejection = vi.fn();
 
             beforeEach(() => {
                 unhandledRejection.mockClear();
@@ -502,7 +502,7 @@ describe('GlobalBYOEInboxCleanupModal', () => {
                 async (outcome) => {
                     const deferred = createDeferred();
                     const { onConfirm } = await renderModal({
-                        onConfirm: jest.fn(() => deferred.promise),
+                        onConfirm: vi.fn(() => deferred.promise),
                     });
 
                     fireEvent.click(getUnsubscribeButton());

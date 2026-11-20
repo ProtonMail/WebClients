@@ -1,7 +1,7 @@
 import type { MutableRefObject } from 'react';
 
 import type { RenderResult } from '@testing-library/react';
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
 import Composer from '@proton/mail-composer/components/composer/Composer';
@@ -22,9 +22,9 @@ import type { MailStore } from '../../../store/store';
 
 // Fake timers fails for the complexe send action
 // These more manual trick is used to skip undo timing
-jest.mock('@proton/shared/lib/helpers/promise', () => {
+vi.mock('@proton/shared/lib/helpers/promise', () => {
     return {
-        wait: jest.fn(() => {
+        wait: vi.fn(() => {
             return Promise.resolve();
         }),
     };
@@ -40,12 +40,12 @@ export const props = {
     messageID: ID,
     composerFrameRef: { current: document.body as HTMLDivElement },
     breakpoints: mockDefaultBreakpoints,
-    onFocus: jest.fn(),
-    onClose: jest.fn(),
-    onCompose: jest.fn(),
-    toggleMinimized: jest.fn(),
-    toggleMaximized: jest.fn(),
-    onSubject: jest.fn(),
+    onFocus: vi.fn(),
+    onClose: vi.fn(),
+    onCompose: vi.fn(),
+    toggleMinimized: vi.fn(),
+    toggleMaximized: vi.fn(),
+    onSubject: vi.fn(),
     isFocused: true,
     minimizeButtonRef: { current: null },
 };
@@ -120,16 +120,23 @@ export const renderComposer = async (
     // onClose will most likely unmount the component, it has to continue working
     props.onClose.mockImplementation(renderResult.unmount);
 
+    if (renderOptions.message.messageDocument?.document) {
+        // Sending before the editor iframe is mounted does nothing
+        await renderResult.findByTestId('rooster-iframe');
+    }
+
     return { ...renderResult, composerID, writers: writersRef.current! };
 };
 
 export const clickSend = async (renderResult: RenderResult) => {
-    const sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
+    const sendSpy = vi.fn(() => Promise.resolve({ Sent: {} }));
     addApiMock(`mail/v4/messages/${ID}`, sendSpy, 'post');
     addApiMock(`mail/v4/messages/${ID}`, () => {}, 'get');
     addApiMock(`mail/v4/messages/${ID}`, ({ data: { Message } }) => ({ Message }), 'put');
 
     const sendButton = await renderResult.findByTestId('composer:send-button');
+    // The button stays disabled while the composer opens, and a click on it does nothing
+    await waitFor(() => expect(sendButton).toBeEnabled());
     fireEvent.click(sendButton);
 
     await waitForNotification('Message sent');

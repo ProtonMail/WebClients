@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { API_CODES } from '@proton/shared/lib/constants';
@@ -32,7 +34,7 @@ describe('forEachElementType', () => {
         const conversation = { ID: 'CONVERSATION_1' } as Element;
         const message = { ID: 'MESSAGE_1', ConversationID: 'CONVERSATION_2' } as Element;
         const calls: string[] = [];
-        const action = jest.fn(async (group: Element[]) => {
+        const action = vi.fn(async (group: Element[]) => {
             calls.push(`start ${group[0].ID}`);
             await Promise.resolve();
             calls.push(`end ${group[0].ID}`);
@@ -91,9 +93,9 @@ const mailWith = ({
 } = {}) => {
     return {
         store: { getState: () => ({ elements: { elements }, conversations, messages }) },
-        fetchConversation: jest.fn().mockResolvedValue(conversation),
-        fetchMessage: jest.fn().mockResolvedValue(message),
-    } as unknown as ElementFetchDeps & { fetchConversation: jest.Mock; fetchMessage: jest.Mock };
+        fetchConversation: vi.fn().mockResolvedValue(conversation),
+        fetchMessage: vi.fn().mockResolvedValue(message),
+    } as unknown as ElementFetchDeps & { fetchConversation: Mock; fetchMessage: Mock };
 };
 
 describe('resolveFreshElements', () => {

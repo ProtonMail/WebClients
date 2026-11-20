@@ -1,4 +1,7 @@
+// @vitest-environment jsdom
+// jsdom kept: the rooster editor iframe needs iframe.contentDocument, which happy-dom lacks
 import { fireEvent, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import Composer from '@proton/mail-composer/components/composer/Composer';
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
@@ -12,15 +15,15 @@ import { mailTestRender } from '../../../helpers/tests/render';
 import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
 import { ID, prepareMessage, props } from './Composer.test.helpers';
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
-jest.mock('@proton/mail-composer/hooks/usePromise', () => ({
+vi.mock('@proton/mail-composer/hooks/usePromise', () => ({
     usePromise: () => {
         return {
             promise: Promise.resolve(),
-            resolver: jest.fn(),
-            rejecter: jest.fn(),
-            renew: jest.fn(),
+            resolver: vi.fn(),
+            rejecter: vi.fn(),
+            renew: vi.fn(),
             isPending: false,
         };
     },
@@ -28,8 +31,8 @@ jest.mock('@proton/mail-composer/hooks/usePromise', () => ({
 
 // In this test, switching from plaintext to html will trigger autosave
 // But encryption and save requests are not the point of this test so it's easier and faster to mock that logic
-jest.mock('../../../hooks/message/useSaveDraft', () => {
-    const saveSpy = jest.fn(() => Promise.resolve());
+vi.mock('../../../hooks/message/useSaveDraft', () => {
+    const saveSpy = vi.fn(() => Promise.resolve());
     return {
         saveSpy,
         useCreateDraft: () => () => Promise.resolve(),
@@ -38,23 +41,25 @@ jest.mock('../../../hooks/message/useSaveDraft', () => {
     };
 });
 
-const saveSpy = (useSaveDraft as any).saveSpy as jest.Mock;
+const saveSpy = (useSaveDraft as any).saveSpy as Mock;
 
-const mockSetContent = jest.fn();
-jest.mock('@proton/mail-composer/components/editor/rooster/helpers/getRoosterEditorActions', () => {
+const mockSetContent = vi.fn();
+vi.mock('@proton/mail-composer/components/editor/rooster/helpers/getRoosterEditorActions', () => {
     let content = '';
-    return function () {
-        return {
-            getContent: () => {
-                return content;
-            },
-            setContent: (nextContent: string) => {
-                content = nextContent;
-                mockSetContent(nextContent);
-            },
-            focus: () => {},
-            isDisposed: () => false,
-        };
+    return {
+        default: function () {
+            return {
+                getContent: () => {
+                    return content;
+                },
+                setContent: (nextContent: string) => {
+                    content = nextContent;
+                    mockSetContent(nextContent);
+                },
+                focus: () => {},
+                isDisposed: () => false,
+            };
+        },
     };
 });
 
@@ -63,11 +68,11 @@ describe('Composer switch plaintext <-> html', () => {
         clearAll();
         // Switching the editor mode triggers the autosave, which is debounced for 2s.
         // Fake timers let `waitForSpyCall` skip that delay instead of waiting it out.
-        jest.useFakeTimers({ advanceTimers: true });
+        vi.useFakeTimers({ shouldAdvanceTime: true });
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     afterAll(clearAll);
@@ -199,7 +204,7 @@ describe('Composer switch plaintext <-> html', () => {
     };
 
     it('should remove the embedded images from the attachments when switching to plaintext', async () => {
-        const removeSpy = jest.fn(() => ({}));
+        const removeSpy = vi.fn(() => ({}));
         addApiMock(`mail/v4/attachments/${logo.ID}`, removeSpy, 'delete');
 
         await renderWithEmbeddedImage();
@@ -219,7 +224,7 @@ describe('Composer switch plaintext <-> html', () => {
     });
 
     it('should stay in html and keep the embedded images when deleting them fails', async () => {
-        const removeSpy = jest.fn(() => Promise.reject(new Error('Delete failed')));
+        const removeSpy = vi.fn(() => Promise.reject(new Error('Delete failed')));
         addApiMock(`mail/v4/attachments/${logo.ID}`, removeSpy, 'delete');
 
         await renderWithEmbeddedImage();

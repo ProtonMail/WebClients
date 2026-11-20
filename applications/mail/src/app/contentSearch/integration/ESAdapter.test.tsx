@@ -9,24 +9,24 @@ import type { Logger } from '../utils/logger';
 import { ESAdapter } from './ESAdapter';
 
 const logger: Logger = {
-    trace: jest.fn(),
-    debug: jest.fn(),
-    info: jest.fn(),
-    warn: jest.fn(),
-    error: jest.fn(),
-    log: jest.fn(),
+    trace: vi.fn(),
+    debug: vi.fn(),
+    info: vi.fn(),
+    warn: vi.fn(),
+    error: vi.fn(),
+    log: vi.fn(),
 };
 
 /** An index service whose listener the test drives, with the historic pass finished or not. */
 const fakeIndexService = (historicalFinished: boolean) => {
     let listener: IndexListener | undefined;
     const indexService = {
-        subscribe: jest.fn((l: IndexListener) => {
+        subscribe: vi.fn((l: IndexListener) => {
             listener = l;
             return () => {};
         }),
-        initialize: jest.fn().mockResolvedValue(undefined),
-        isHistoricalFinished: jest.fn().mockResolvedValue(historicalFinished),
+        initialize: vi.fn().mockResolvedValue(undefined),
+        isHistoricalFinished: vi.fn().mockResolvedValue(historicalFinished),
     } as unknown as IndexService;
     return {
         indexService,
@@ -38,9 +38,9 @@ const fakeIndexService = (historicalFinished: boolean) => {
 
 const setup = async (historicalFinished: boolean) => {
     const { indexService, listener } = fakeIndexService(historicalFinished);
-    const updateESStatus = jest.fn();
-    const updateESProgress = jest.fn();
-    const notifyIndexingFailed = jest.fn();
+    const updateESStatus = vi.fn();
+    const updateESProgress = vi.fn();
+    const notifyIndexingFailed = vi.fn();
     const adapter = new ESAdapter({
         searchService: {} as SearchService,
         indexService,
@@ -88,7 +88,7 @@ describe('ESAdapter', () => {
 
     describe('historic progress', () => {
         it('estimates the time remaining in a tab that only gets the progress, as one following the leader', async () => {
-            const now = jest.spyOn(performance, 'now');
+            const now = vi.spyOn(performance, 'now');
             const { listener, updateESProgress } = await setup(false);
 
             now.mockReturnValue(1_000);

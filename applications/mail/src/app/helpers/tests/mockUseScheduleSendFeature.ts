@@ -1,12 +1,12 @@
 import useScheduleSendFeature from '@proton/mail-composer/components/composer/actions/scheduleSend/useScheduleSendFeature';
 
-jest.mock('@proton/mail-composer/components/composer/actions/scheduleSend/useScheduleSendFeature', () => ({
+vi.mock('@proton/mail-composer/components/composer/actions/scheduleSend/useScheduleSendFeature', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
 export const mockUseScheduleSendFeature = (value?: Partial<ReturnType<typeof useScheduleSendFeature>>) => {
-    const mockedUseScheduleSendFeature = jest.mocked(useScheduleSendFeature);
+    const mockedUseScheduleSendFeature = vi.mocked(useScheduleSendFeature);
 
     mockedUseScheduleSendFeature.mockReturnValue({
         canScheduleSend: false,

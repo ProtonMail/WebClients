@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: happy-dom does not support the :not(:empty) quote selector
 import { hasNothingBeforeBlockquote } from './replyContent';
 
 // Shapes taken from what the EO composer actually exports for a reply draft

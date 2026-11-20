@@ -13,25 +13,25 @@ import ChooseViewLayoutStep, { isChooseViewLayoutStepEligible } from './ChooseVi
 const VIEW_LAYOUT_URL = 'mail/v4/settings/viewlayout';
 
 const mockTracking = {
-    trackStepLoaded: jest.fn(),
-    trackStepInteracted: jest.fn(),
-    trackViewLayoutStepCompleted: jest.fn(),
+    trackStepLoaded: vi.fn(),
+    trackStepInteracted: vi.fn(),
+    trackViewLayoutStepCompleted: vi.fn(),
 };
-jest.mock('../../../../telemetry/onboardingEvents', () => ({
-    ...jest.requireActual('../../../../telemetry/onboardingEvents'),
+vi.mock('../../../../telemetry/onboardingEvents', async () => ({
+    ...(await vi.importActual('../../../../telemetry/onboardingEvents')),
     useOnboardingTracking: () => mockTracking,
 }));
 
-jest.mock('@proton/account/welcomeFlags', () => ({
-    ...jest.requireActual('@proton/account/welcomeFlags'),
-    useWelcomeFlags: jest.fn(),
+vi.mock('@proton/account/welcomeFlags', async () => ({
+    ...(await vi.importActual('@proton/account/welcomeFlags')),
+    useWelcomeFlags: vi.fn(),
 }));
 
 const setReplay = (isReplay: boolean) => {
-    jest.mocked(useWelcomeFlags).mockReturnValue({
-        endReplay: jest.fn(),
-        setDone: jest.fn(),
-        startReplay: jest.fn(),
+    vi.mocked(useWelcomeFlags).mockReturnValue({
+        endReplay: vi.fn(),
+        setDone: vi.fn(),
+        startReplay: vi.fn(),
         welcomeFlags: { isWelcomeFlow: true, hasGenericWelcomeStep: false, isDone: false, isReplay },
     });
 };
@@ -41,7 +41,7 @@ const seededState = (ViewLayout: VIEW_LAYOUT) => ({
 });
 
 const mockViewLayoutResponse = () =>
-    jest.fn(({ data }: { data: { ViewLayout: VIEW_LAYOUT } }) => ({
+    vi.fn(({ data }: { data: { ViewLayout: VIEW_LAYOUT } }) => ({
         MailSettings: { ...DEFAULT_MAIL_SETTINGS, ViewLayout: data.ViewLayout },
     }));
 
@@ -64,17 +64,17 @@ describe('ChooseViewLayoutStep', () => {
 
     afterEach(() => {
         clearApiMocks();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('isChooseViewLayoutStepEligible', () => {
         const makeDispatch =
             (unleashClient: unknown) =>
             (thunk: any): any =>
-                thunk(jest.fn(), jest.fn(), { unleashClient });
+                thunk(vi.fn(), vi.fn(), { unleashClient });
 
         it('should be gated on the experiment flag the API uses', async () => {
-            const isEnabled = jest.fn(() => true);
+            const isEnabled = vi.fn(() => true);
             const dispatch = makeDispatch({ isEnabled }) as any;
 
             const { canDisplay, preload } = await isChooseViewLayoutStepEligible(dispatch);
@@ -105,7 +105,7 @@ describe('ChooseViewLayoutStep', () => {
 
     describe('component', () => {
         it('should pre-select the current layout (ROW)', async () => {
-            await mailTestRender(<ChooseViewLayoutStep onNext={jest.fn()} />, {
+            await mailTestRender(<ChooseViewLayoutStep onNext={vi.fn()} />, {
                 preloadedState: seededState(VIEW_LAYOUT.ROW),
             });
 
@@ -115,7 +115,7 @@ describe('ChooseViewLayoutStep', () => {
         });
 
         it('should pre-select the current layout (COLUMN) for a replay user', async () => {
-            await mailTestRender(<ChooseViewLayoutStep onNext={jest.fn()} />, {
+            await mailTestRender(<ChooseViewLayoutStep onNext={vi.fn()} />, {
                 preloadedState: seededState(VIEW_LAYOUT.COLUMN),
             });
 
@@ -127,7 +127,7 @@ describe('ChooseViewLayoutStep', () => {
             const apiSpy = mockViewLayoutResponse();
             addApiMock(VIEW_LAYOUT_URL, apiSpy);
 
-            await mailTestRender(<ChooseViewLayoutStep onNext={jest.fn()} />, {
+            await mailTestRender(<ChooseViewLayoutStep onNext={vi.fn()} />, {
                 preloadedState: seededState(VIEW_LAYOUT.ROW),
             });
 
@@ -144,7 +144,7 @@ describe('ChooseViewLayoutStep', () => {
         it('should save the final layout once, with the onboarding source, on Next', async () => {
             const apiSpy = mockViewLayoutResponse();
             addApiMock(VIEW_LAYOUT_URL, apiSpy);
-            const onNext = jest.fn();
+            const onNext = vi.fn();
 
             const { store } = await mailTestRender(<ChooseViewLayoutStep onNext={onNext} />, {
                 preloadedState: seededState(VIEW_LAYOUT.ROW),
@@ -170,7 +170,7 @@ describe('ChooseViewLayoutStep', () => {
             const apiSpy = mockViewLayoutResponse();
             addApiMock(VIEW_LAYOUT_URL, apiSpy);
 
-            await mailTestRender(<ChooseViewLayoutStep onNext={jest.fn()} />, {
+            await mailTestRender(<ChooseViewLayoutStep onNext={vi.fn()} />, {
                 preloadedState: seededState(VIEW_LAYOUT.ROW),
             });
 
@@ -188,7 +188,7 @@ describe('ChooseViewLayoutStep', () => {
             const apiSpy = mockViewLayoutResponse();
             addApiMock(VIEW_LAYOUT_URL, apiSpy);
 
-            await mailTestRender(<ChooseViewLayoutStep onNext={jest.fn()} />, {
+            await mailTestRender(<ChooseViewLayoutStep onNext={vi.fn()} />, {
                 preloadedState: seededState(VIEW_LAYOUT.COLUMN),
             });
 
@@ -199,11 +199,11 @@ describe('ChooseViewLayoutStep', () => {
         });
 
         it('should not block the flow when the save fails', async () => {
-            const apiSpy = jest.fn(() => {
+            const apiSpy = vi.fn(() => {
                 throw new Error('save failed');
             });
             addApiMock(VIEW_LAYOUT_URL, apiSpy);
-            const onNext = jest.fn();
+            const onNext = vi.fn();
 
             const { store } = await mailTestRender(<ChooseViewLayoutStep onNext={onNext} />, {
                 preloadedState: seededState(VIEW_LAYOUT.ROW),
@@ -221,7 +221,7 @@ describe('ChooseViewLayoutStep', () => {
         it('should send the step_completed telemetry with the chosen layout on Next', async () => {
             addApiMock(VIEW_LAYOUT_URL, mockViewLayoutResponse());
 
-            await mailTestRender(<ChooseViewLayoutStep onNext={jest.fn()} />, {
+            await mailTestRender(<ChooseViewLayoutStep onNext={vi.fn()} />, {
                 preloadedState: seededState(VIEW_LAYOUT.COLUMN),
             });
 

@@ -25,7 +25,7 @@ export const offListState = (conversations: { ID: string }[], viewLabelID: strin
 
 /** A `validateMove` whose rules answer every element the same way. */
 export const moveRulesAnswering = (answer: 'allowed' | 'denied' | 'notApplicable') => {
-    return jest.fn((elements: Element[]) => {
+    return vi.fn((elements: Element[]) => {
         return {
             allowedElements: answer === 'allowed' ? elements : [],
             deniedElements: answer === 'denied' ? elements : [],

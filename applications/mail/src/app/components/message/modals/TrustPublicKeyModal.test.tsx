@@ -75,7 +75,7 @@ describe('Trust public key modal', () => {
         const senderKeys = await generateKeys('sender', sender.Address);
         const receiverKeys = await generateKeys('me', receiver.Address);
 
-        const createSpy = jest.fn(() => {
+        const createSpy = vi.fn(() => {
             return {
                 Responses: [
                     {
@@ -107,7 +107,7 @@ describe('Trust public key modal', () => {
         const senderKeys = await generateKeys('sender', sender.Address);
         const receiverKeys = await generateKeys('me', receiver.Address);
 
-        const createSpy = jest.fn(() => {
+        const createSpy = vi.fn(() => {
             return {
                 Responses: [
                     {

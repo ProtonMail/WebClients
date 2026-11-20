@@ -1,4 +1,4 @@
-import { describe } from '@jest/globals';
+import { describe } from 'vitest';
 
 import type { Conversation } from '@proton/mail-message/models/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

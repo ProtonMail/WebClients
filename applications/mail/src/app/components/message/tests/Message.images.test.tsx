@@ -1,8 +1,9 @@
+// @vitest-environment jsdom
+// jsdom kept: the message content iframe needs iframe.contentDocument, which happy-dom lacks
 import { findByTestId, fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
-import { setLocation } from '@proton/jest-env/setLocation';
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
@@ -51,11 +52,16 @@ const content = `<div>
   </div>
 </div>`;
 
-jest.mock('@proton/mail-message/helpers/dom', () => ({
-    ...jest.requireActual('@proton/mail-message/helpers/dom'),
+vi.mock('@proton/mail-message/helpers/dom', async () => ({
+    ...(await vi.importActual('@proton/mail-message/helpers/dom')),
 }));
 
 const windowHostname = 'https://mail.proton.pink';
+
+// jsdom only changes the URL, cross-origin included, through reconfigure()
+const setLocation = (url: string) => {
+    (globalThis as any).jsdom.reconfigure({ url: new URL(url, window.location.href).href });
+};
 
 describe('Message images', () => {
     beforeEach(() => {
@@ -177,7 +183,7 @@ describe('Message images', () => {
         const iframe = await getIframeRootDiv(container);
 
         // Need to mock this function to mock the blob url
-        window.URL.createObjectURL = jest.fn(() => blobURL);
+        window.URL.createObjectURL = vi.fn(() => blobURL);
 
         // Check that all elements are displayed in their proton attributes before loading them
         const elementBackground = await findByTestId(iframe, 'image-background');

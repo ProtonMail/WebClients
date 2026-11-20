@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 
 import AutoDeleteBanner from './AutoDeleteBanner';
 
-jest.mock('@proton/mail/hooks/useUpdateMailSetting', () => ({
-    useUpdateMailSetting: () => ({ update: jest.fn(), isLoading: () => false }),
+vi.mock('@proton/mail/hooks/useUpdateMailSetting', () => ({
+    useUpdateMailSetting: () => ({ update: vi.fn(), isLoading: () => false }),
 }));
 
 describe('AutoDeleteBanner', () => {

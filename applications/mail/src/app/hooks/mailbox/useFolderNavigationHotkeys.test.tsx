@@ -1,27 +1,27 @@
-import { mockUseHistory } from '@proton/components/testing/mockUseHistory';
-import { mockUseMailSettings } from '@proton/mail/testing/mockUseMailSettings';
+import { mockUseHistory } from '@proton/components/testing/vitest/mockUseHistory';
+import { mockUseMailSettings } from '@proton/mail/testing/vitest/mockUseMailSettings';
 import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import { ALMOST_ALL_MAIL, SHORTCUTS, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 
-jest.mock('@proton/shared/lib/shortcuts/helpers', () => ({ __esModule: true, isBusy: jest.fn(() => false) }));
+vi.mock('@proton/shared/lib/shortcuts/helpers', () => ({ __esModule: true, isBusy: vi.fn(() => false) }));
 
-const mockHookPush = jest.fn();
-jest.mock('proton-mail/components/categoryView/useCategoriesShortcuts', () => ({
+const mockHookPush = vi.fn();
+vi.mock('proton-mail/components/categoryView/useCategoriesShortcuts', () => ({
     __esModule: true,
-    useCategoriesShortcuts: jest.fn().mockReturnValue({
+    useCategoriesShortcuts: vi.fn().mockReturnValue({
         categoriesAndInboxShortcuts: [['G', 'I', (e: KeyboardEvent) => mockHookPush(e)]],
     }),
 }));
 
 const event = {
-    stopPropagation: jest.fn(),
-    preventDefault: jest.fn(),
+    stopPropagation: vi.fn(),
+    preventDefault: vi.fn(),
 } as unknown as KeyboardEvent;
 
 describe('useFolderNavigationHotkeys', () => {
-    const mockedPush = jest.fn();
+    const mockedPush = vi.fn();
     beforeEach(() => {
         mockUseHistory({ push: mockedPush });
         mockUseMailSettings([{ Shortcuts: 1 }]);

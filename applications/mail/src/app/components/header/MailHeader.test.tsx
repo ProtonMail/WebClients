@@ -46,17 +46,17 @@ const user = {
 } as UserModel;
 
 // Mock offer config file because it is supposed to change a lot
-jest.mock('@proton/components/containers/offers/hooks/useOfferConfig', () => ({
+vi.mock('@proton/components/containers/offers/hooks/useOfferConfig', () => ({
     __esModule: true,
-    default: jest.fn(() => [undefined, false]),
+    default: vi.fn(() => [undefined, false]),
 }));
 
-jest.mock('@proton/account/retentionPolicies/hooks', () => ({
-    useRetentionPolicies: jest.fn(() => [[], false]),
+vi.mock('@proton/account/retentionPolicies/hooks', () => ({
+    useRetentionPolicies: vi.fn(() => [[], false]),
 }));
 
-jest.mock('../categoryView/categoriesOnboarding/CategoriesOnboardingContext', () => ({
-    useCategoriesOnboarding: jest.fn(() => ({
+vi.mock('../categoryView/categoriesOnboarding/CategoriesOnboardingContext', () => ({
+    useCategoriesOnboarding: vi.fn(() => ({
         userIsInB2COnboardingFlow: false,
     })),
 }));

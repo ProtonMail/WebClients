@@ -7,12 +7,12 @@ import type { Logger } from '../utils/logger';
 import { EventUpdateMapper } from './EventUpdateMapper';
 
 class FakeLogger implements Logger {
-    trace = jest.fn();
-    debug = jest.fn();
-    info = jest.fn();
-    warn = jest.fn();
-    error = jest.fn();
-    log = jest.fn();
+    trace = vi.fn();
+    debug = vi.fn();
+    info = vi.fn();
+    warn = vi.fn();
+    error = vi.fn();
+    log = vi.fn();
 }
 
 const getESEvent = (items: any[] | undefined, eventID: string, Refresh = 0): ESEvent<ESBaseMessage> => {

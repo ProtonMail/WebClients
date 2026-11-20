@@ -6,8 +6,8 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 import { LumoModelChoice } from '../../lumo/useLumoModelChoice';
 import LumoModelSetting from './LumoModelSetting';
 
-jest.mock('@proton/account/user/hooks', () => {
-    return { useUser: jest.fn() };
+vi.mock('@proton/account/user/hooks', () => {
+    return { useUser: vi.fn() };
 });
 
 const user = buildUser();
@@ -26,7 +26,7 @@ const openSelect = () => {
 describe('LumoModelSetting', () => {
     beforeEach(() => {
         localStorage.clear();
-        jest.mocked(useUser).mockReturnValue([user, false]);
+        vi.mocked(useUser).mockReturnValue([user, false]);
     });
 
     it('shows Lumo Max when nothing is stored', () => {

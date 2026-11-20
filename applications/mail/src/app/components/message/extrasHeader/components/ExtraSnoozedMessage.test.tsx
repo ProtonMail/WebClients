@@ -1,5 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { addHours, set } from 'date-fns';
+import type { Mock } from 'vitest';
 
 import { formatDateToHuman } from '@proton/mail-message/helpers/date';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
@@ -11,20 +12,20 @@ import { mailTestRender } from '../../../../helpers/tests/render';
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import ExtraSnoozedMessage from './ExtraSnoozedMessage';
 
-const mockUseGetElementsFromIDs = jest.fn();
-jest.mock('../../../../hooks/mailbox/useElements', () => ({
+const mockUseGetElementsFromIDs = vi.fn();
+vi.mock('../../../../hooks/mailbox/useElements', () => ({
     useGetElementsFromIDs: () => mockUseGetElementsFromIDs,
 }));
 
-jest.mock('../../../../hooks/actions/useSnooze', () => ({
+vi.mock('../../../../hooks/actions/useSnooze', () => ({
     __esModule: true,
-    default: jest.fn().mockReturnValue({
+    default: vi.fn().mockReturnValue({
         canSnooze: true,
         canUnsnooze: true,
-        snooze: jest.fn(),
-        unsnooze: jest.fn(),
-        handleClose: jest.fn(),
-        handleCustomClick: jest.fn(),
+        snooze: vi.fn(),
+        unsnooze: vi.fn(),
+        handleClose: vi.fn(),
+        handleCustomClick: vi.fn(),
         snoozeState: 'snooze-selection',
     }),
 }));
@@ -45,15 +46,15 @@ const getMessage = (sendingDate: Date) => {
 const todayAtNine = set(new Date(), { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
 
 describe('Scheduled messages banner', () => {
-    const useSnoozeMock = useSnooze as jest.Mock;
-    const useGetElementsFromIDsMock = jest.fn();
+    const useSnoozeMock = useSnooze as Mock;
+    const useGetElementsFromIDsMock = vi.fn();
 
     beforeAll(() => {
-        jest.useFakeTimers({ now: todayAtNine.getTime() });
+        vi.useFakeTimers({ now: todayAtNine.getTime() });
     });
 
     afterAll(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     afterEach(clearAll);
@@ -116,7 +117,7 @@ describe('Scheduled messages banner', () => {
         const message = getMessage(sendingDate);
 
         mockUseGetElementsFromIDs.mockReturnValue([{ ID: '1' }]);
-        const unsnoozeCall = jest.fn();
+        const unsnoozeCall = vi.fn();
         useSnoozeMock.mockReturnValue({
             unsnooze: unsnoozeCall,
             canUnsnooze: true,
@@ -143,7 +144,7 @@ describe('Scheduled messages banner', () => {
 
         mockUseGetElementsFromIDs.mockReturnValue(undefined);
         useGetElementsFromIDsMock.mockReturnValue(undefined);
-        const unsnoozeCall = jest.fn();
+        const unsnoozeCall = vi.fn();
         useSnoozeMock.mockReturnValue({
             unsnooze: unsnoozeCall,
             canUnsnooze: true,

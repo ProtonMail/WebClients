@@ -6,19 +6,19 @@ import { createRestrictedImportRule } from '@proton/oxlint-config/restrictedImpo
 
 /**
  * Tests must not wait in real time: a `wait(2000)` costs two seconds on every run, for every engineer and CI job.
- * Use fake timers (`jest.useFakeTimers({ advanceTimers: true })` and `jest.advanceTimersByTimeAsync`), or `waitFor` on the expected outcome.
+ * Use fake timers (`vi.useFakeTimers({ shouldAdvanceTime: true })` and `vi.advanceTimersByTimeAsync`), or `waitFor` on the expected outcome.
  */
 const noRealTimeWaitInTests = [
     {
         selector: "CallExpression[callee.name='wait']:not([arguments.0.value=0])",
         message:
-            'Do not wait in real time in tests. Use fake timers (jest.advanceTimersByTimeAsync) or waitFor on the expected outcome.',
+            'Do not wait in real time in tests. Use fake timers (vi.advanceTimersByTimeAsync) or waitFor on the expected outcome.',
     },
     {
         selector:
             "NewExpression[callee.name='Promise'] CallExpression[callee.name='setTimeout'][arguments.length>1]:not([arguments.1.value=0])",
         message:
-            'Do not wait in real time in tests. Use fake timers (jest.advanceTimersByTimeAsync) or waitFor on the expected outcome.',
+            'Do not wait in real time in tests. Use fake timers (vi.advanceTimersByTimeAsync) or waitFor on the expected outcome.',
     },
 ];
 

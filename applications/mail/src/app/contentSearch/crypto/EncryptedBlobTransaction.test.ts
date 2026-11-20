@@ -1,9 +1,10 @@
+import { encryptData, generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import type { IDBPDatabase } from 'idb';
+import 'fake-indexeddb/auto';
 // idb reads the ambient global `indexedDB` (there is no way to inject a factory), so we install
 // fake-indexeddb once here as an import side-effect rather than reassigning the global per test.
 // Tests stay isolated by opening a fresh, uniquely-named database each time (see `freshDb`).
-import { encryptData, generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
-import 'fake-indexeddb/auto';
-import type { IDBPDatabase } from 'idb';
+import type { Mock } from 'vitest';
 
 import { BlobCache } from '../cache/BlobCache';
 import { openContentSearchDB } from '../db/open';
@@ -14,22 +15,22 @@ import { EncryptedBlobTransaction, getBlobEncryptionContext } from './EncryptedB
  * The foundation-search events are wasm objects; the transaction only ever calls a
  * handful of methods on them, so we duck-type minimal fakes and cast at the call site.
  */
-type FakeCached = { serialize: jest.Mock; free: jest.Mock };
+type FakeCached = { serialize: Mock; free: Mock };
 const fakeCached = (payload: Uint8Array<ArrayBuffer>): FakeCached => ({
-    serialize: jest.fn(() => payload),
-    free: jest.fn(),
+    serialize: vi.fn(() => payload),
+    free: vi.fn(),
 });
 
 const loadEvent = (id: string) => ({
     id: () => id,
-    sendCached: jest.fn(),
-    send: jest.fn((_serdes: unknown, _blob: Uint8Array<ArrayBuffer>) => fakeCached(new Uint8Array([]))),
-    sendEmpty: jest.fn(),
+    sendCached: vi.fn(),
+    send: vi.fn((_serdes: unknown, _blob: Uint8Array<ArrayBuffer>) => fakeCached(new Uint8Array([]))),
+    sendEmpty: vi.fn(),
 });
 
 const saveEvent = (id: string, cached: FakeCached) => ({
     id: () => id,
-    recv: jest.fn(() => cached),
+    recv: vi.fn(() => cached),
 });
 
 const releaseEvent = (id: string) => ({

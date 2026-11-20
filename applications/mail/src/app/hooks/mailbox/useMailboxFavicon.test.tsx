@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useDynamicFavicon } from '@proton/components/hooks/useDynamicFavicon';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -10,15 +11,15 @@ import { DEFAULT_MAIL_SETTINGS, UNREAD_FAVICON } from '@proton/shared/lib/mail/m
 import { useMailboxCounter } from '../mailboxCounter/useMailboxCounter';
 import { useMailboxFavicon } from './useMailboxFavicon';
 
-jest.mock('@proton/components/hooks/useDynamicFavicon', () => ({
-    useDynamicFavicon: jest.fn(),
+vi.mock('@proton/components/hooks/useDynamicFavicon', () => ({
+    useDynamicFavicon: vi.fn(),
 }));
 
-jest.mock('@proton/mail/store/mailSettings/hooks');
-const mockUseMailSettings = useMailSettings as jest.Mock;
+vi.mock('@proton/mail/store/mailSettings/hooks');
+const mockUseMailSettings = useMailSettings as Mock;
 
-jest.mock('../mailboxCounter/useMailboxCounter');
-const mockUseMailboxCounter = useMailboxCounter as jest.Mock;
+vi.mock('../mailboxCounter/useMailboxCounter');
+const mockUseMailboxCounter = useMailboxCounter as Mock;
 
 const mockBaseFavicon = 'mock-base-favicon';
 const mockFavicons = {
@@ -30,7 +31,7 @@ const mockFavicons = {
     100: 'favicon-100+',
 };
 
-jest.mock('../../../assets/favicons', () => {
+vi.mock('../../../assets/favicons', () => {
     return {
         __esModule: true,
         default: {
@@ -49,8 +50,8 @@ const mockUnreadCount = (unread: number) => {
     mockUseMailboxCounter.mockReturnValue({
         loading: false,
         counterMap: {},
-        getLocationCount: jest.fn(),
-        getCurrentLocationCount: jest.fn().mockReturnValue({ Unread: unread, Total: unread }),
+        getLocationCount: vi.fn(),
+        getCurrentLocationCount: vi.fn().mockReturnValue({ Unread: unread, Total: unread }),
     });
 };
 
@@ -58,7 +59,7 @@ const wrapper = ({ children }: { children: ReactNode }) => <MemoryRouter>{childr
 
 describe('useMailboxFavicon', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should use baseFavicon when there are no unread messages', () => {

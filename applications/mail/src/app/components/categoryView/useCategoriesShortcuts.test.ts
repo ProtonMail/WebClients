@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { IcInbox } from '@proton/icons/icons/IcInbox';
 
@@ -6,18 +7,18 @@ import { mockActiveCategoriesData, mockCategoriesStore } from './testUtils/helpe
 import { useCategoriesShortcuts } from './useCategoriesShortcuts';
 import { useCategoriesView } from './useCategoriesView';
 
-jest.mock('./useCategoriesView');
-const mockUseCategoriesView = useCategoriesView as jest.Mock<ReturnType<typeof useCategoriesView>>;
+vi.mock('./useCategoriesView');
+const mockUseCategoriesView = useCategoriesView as Mock<typeof useCategoriesView>;
 
-jest.mock('@proton/mail/features/categoriesView/useCategoriesTelemetry', () => ({
+vi.mock('@proton/mail/features/categoriesView/useCategoriesTelemetry', () => ({
     useCategoriesTelemetry: () => ({
-        sendReportCategoriesNav: jest.fn(),
+        sendReportCategoriesNav: vi.fn(),
     }),
 }));
 
 describe('useCategoriesShortcuts', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('Category view disabled tests', () => {

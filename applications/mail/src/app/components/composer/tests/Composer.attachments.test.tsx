@@ -1,6 +1,9 @@
+// @vitest-environment jsdom
+// jsdom kept: the rooster editor iframe needs iframe.contentDocument, which happy-dom lacks
 import { screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import loudRejection from 'loud-rejection';
+import type { Mock } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import Composer from '@proton/mail-composer/components/composer/Composer';
@@ -63,7 +66,7 @@ const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
 
     const { resolve } = addApiResolver('mail/v4/attachments');
 
-    const updateSpy = jest.fn(({ data: { Message, AttachmentKeyPackets } }) => {
+    const updateSpy = vi.fn(({ data: { Message, AttachmentKeyPackets } }) => {
         Message.Attachments = Message.Attachments.map((Attachment: AttachmentFullMetadata) =>
             AttachmentKeyPackets?.[Attachment.ID]
                 ? { ...Attachment, KeyPackets: AttachmentKeyPackets[Attachment.ID] }
@@ -73,7 +76,7 @@ const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
     });
     addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
 
-    const sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
+    const sendSpy = vi.fn(() => Promise.resolve({ Sent: {} }));
     addApiMock(`mail/v4/messages/${ID}`, sendSpy, 'post');
 
     minimalCache();
@@ -116,7 +119,7 @@ const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
     return { attachmentId, container, generatedSessionKey, resolveAttachment, sendSpy, updateSpy };
 };
 
-const waitForAutoSave = async (spy: jest.Mock) => {
+const waitForAutoSave = async (spy: Mock) => {
     await waitForSpyCall({ spy });
 };
 
@@ -131,7 +134,7 @@ const switchAddress = async () => {
 
 interface VerifyAttachmentProps {
     resolveAttachment: () => void;
-    updateSpy: jest.Mock;
+    updateSpy: Mock;
 }
 
 const verifyAttachment = async ({ resolveAttachment, updateSpy }: VerifyAttachmentProps) => {
@@ -162,11 +165,11 @@ describe('Composer attachments', () => {
         clearAll();
         // The autosave debounce (2s) and the minimum "Message sent" notification delay (2.5s) are
         // skipped on the fake clock; `advanceTimers` keeps the crypto and short timers running as usual.
-        jest.useFakeTimers({ advanceTimers: true });
+        vi.useFakeTimers({ shouldAdvanceTime: true });
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should not show embedded modal when plaintext mode', async () => {
@@ -181,7 +184,7 @@ describe('Composer attachments', () => {
     it('should show embedded modal when html mode', async () => {
         const setupProps = await setup(MIME_TYPES.DEFAULT);
 
-        const embeddedModalMatch = screen.getAllByText('Insert image');
+        const embeddedModalMatch = await screen.findAllByText('Insert image');
         expect(embeddedModalMatch.length).toBeGreaterThanOrEqual(1);
 
         const attachmentButton = screen.getByTestId('composer:insert-image-attachment');

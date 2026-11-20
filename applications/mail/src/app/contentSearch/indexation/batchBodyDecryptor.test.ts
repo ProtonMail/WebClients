@@ -42,16 +42,16 @@ describe('batch body decryption through the api bridge', () => {
             },
             'post'
         );
-        const getMessageKeys = jest.fn(async () => {
+        const getMessageKeys = vi.fn(async () => {
             return fromGeneratedKeysToMessageKeys(addressKeys);
         });
         const logger = {
-            trace: jest.fn(),
-            debug: jest.fn(),
-            info: jest.fn(),
-            warn: jest.fn(),
-            error: jest.fn(),
-            log: jest.fn(),
+            trace: vi.fn(),
+            debug: vi.fn(),
+            info: vi.fn(),
+            warn: vi.fn(),
+            error: vi.fn(),
+            log: vi.fn(),
         };
         const bridge = new MailApiBridge(api, createBatchBodyDecryptor(getMessageKeys), logger);
         const bodies = await bridge.fetchAndDecryptBodies(1, [buildMessageMetadata({ ID: 'a' })]);

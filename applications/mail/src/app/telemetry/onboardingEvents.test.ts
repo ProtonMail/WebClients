@@ -6,30 +6,30 @@ import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { ONBOARDING_STEPS, useOnboardingTracking } from './onboardingEvents';
 
-jest.mock('@proton/account/welcomeFlags');
+vi.mock('@proton/account/welcomeFlags');
 
-jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
-    tracker: { emit: jest.fn(), startTimer: jest.fn() },
+vi.mock('@proton/telemetry-tracker/lib/tracker', () => ({
+    tracker: { emit: vi.fn(), startTimer: vi.fn() },
 }));
 
 const setReplay = (isReplay: boolean) => {
-    jest.mocked(useWelcomeFlags).mockReturnValue({
-        endReplay: jest.fn(),
-        setDone: jest.fn(),
-        startReplay: jest.fn(),
+    vi.mocked(useWelcomeFlags).mockReturnValue({
+        endReplay: vi.fn(),
+        setDone: vi.fn(),
+        startReplay: vi.fn(),
         welcomeFlags: { isWelcomeFlow: false, hasGenericWelcomeStep: false, isDone: false, isReplay },
     });
 };
 
 const getEmittedEvents = () =>
-    jest
+    vi
         .mocked(tracker.emit)
         .mock.calls.filter(([event]) => event.group === TelemetryMeasurementGroups.mailOnboarding)
         .map(([event]) => event.event);
 
 describe('onboarding flow dismissal', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         sessionStorage.clear();
         setReplay(false);
     });
@@ -41,7 +41,7 @@ describe('onboarding flow dismissal', () => {
         result.current.trackStepLoaded(ONBOARDING_STEPS.themeSelection);
         result.current.trackFlowDismissed();
 
-        const [event, payload] = jest.mocked(tracker.emit).mock.calls.at(-1) ?? [];
+        const [event, payload] = vi.mocked(tracker.emit).mock.calls.at(-1) ?? [];
         expect(event?.event).toBe(TelemetryMailOnboardingEvents.flowDismissed);
         expect(payload?.dimensions).toMatchObject({ flow: 'onboarding', step: ONBOARDING_STEPS.themeSelection });
     });
@@ -92,13 +92,13 @@ describe('onboarding flow dismissal', () => {
 
 describe('signup proof of concept', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         sessionStorage.clear();
         setReplay(false);
     });
 
     const getPocEvents = () =>
-        jest
+        vi
             .mocked(tracker.emit)
             .mock.calls.filter(([event]) => event.group === TelemetryMeasurementGroups.mailSignupOnboardingPoc);
 
@@ -132,7 +132,7 @@ describe('signup proof of concept', () => {
 
 describe('view layout step', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         sessionStorage.clear();
         setReplay(false);
     });
@@ -142,7 +142,7 @@ describe('view layout step', () => {
 
         result.current.trackViewLayoutStepCompleted('column');
 
-        const [event, payload] = jest.mocked(tracker.emit).mock.calls.at(-1) ?? [];
+        const [event, payload] = vi.mocked(tracker.emit).mock.calls.at(-1) ?? [];
         expect(event?.event).toBe(TelemetryMailOnboardingEvents.stepCompleted);
         expect(event?.group).toBe(TelemetryMeasurementGroups.mailOnboarding);
         expect(payload?.dimensions).toEqual({

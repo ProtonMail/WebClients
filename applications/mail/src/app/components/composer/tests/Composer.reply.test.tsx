@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the rooster editor iframe needs iframe.contentDocument, which happy-dom lacks
 import { fireEvent } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
@@ -23,7 +25,7 @@ import { ID, clickSend, renderComposer, send } from './Composer.test.helpers';
 
 loudRejection();
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
 const bodyContent = 'body content';
 const blockquoteContent = 'blockquoteContent';
@@ -56,7 +58,7 @@ describe('Composer reply and forward', () => {
 
     afterEach(() => {
         clearAll();
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('send content with blockquote collapsed', async () => {
@@ -64,7 +66,7 @@ describe('Composer reply and forward', () => {
         addApiKeys(true, toAddress, [toKeys]);
 
         // Will use update only on the wrong path, but it allows to have a "nice failure"
-        const updateSpy = jest.fn(() => Promise.reject(new Error('Should not update here')));
+        const updateSpy = vi.fn(() => Promise.reject(new Error('Should not update here')));
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
         const view = await renderComposer({
             preloadedState: {
@@ -112,7 +114,7 @@ describe('Composer reply and forward', () => {
         fireEvent.click(button);
 
         // Will use update only on the wrong path, but it allows to have a "nice failure"
-        const updateSpy = jest.fn(() => Promise.reject(new Error('Should not update here')));
+        const updateSpy = vi.fn(() => Promise.reject(new Error('Should not update here')));
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
 
         const sendRequest = await clickSend(view);

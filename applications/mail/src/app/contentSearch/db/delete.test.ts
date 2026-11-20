@@ -8,20 +8,20 @@ import { deleteContentSearchDB } from './delete';
 import { openContentSearchDB } from './open';
 import { getDBName } from './schema';
 
-jest.mock('@proton/encrypted-search/esHelpers/esReporting', () => {
-    return { esSentryReport: jest.fn() };
+vi.mock('@proton/encrypted-search/esHelpers/esReporting', () => {
+    return { esSentryReport: vi.fn() };
 });
-jest.mock('@proton/shared/lib/helpers/sentry', () => {
-    return { ...jest.requireActual('@proton/shared/lib/helpers/sentry'), traceInitiativeError: jest.fn() };
+vi.mock('@proton/shared/lib/helpers/sentry', async () => {
+    return { ...(await vi.importActual('@proton/shared/lib/helpers/sentry')), traceInitiativeError: vi.fn() };
 });
-jest.mock('idb', () => {
-    const actual = jest.requireActual('idb');
-    return { ...actual, deleteDB: jest.fn(actual.deleteDB) };
+vi.mock('idb', async () => {
+    const actual = await vi.importActual<any>('idb');
+    return { ...actual, deleteDB: vi.fn(actual.deleteDB) };
 });
 
 describe('deleteContentSearchDB', () => {
     beforeEach(() => {
-        jest.mocked(esSentryReport).mockReset();
+        vi.mocked(esSentryReport).mockReset();
     });
 
     it('deletes the database without reporting when its connections close themselves', async () => {
@@ -46,7 +46,7 @@ describe('deleteContentSearchDB', () => {
         // Like a tab running a build whose connections don't close themselves.
         const blocker = await openDB(getDBName('blocked-user'));
         const reported = new Promise<void>((resolve) => {
-            jest.mocked(esSentryReport).mockImplementation(() => {
+            vi.mocked(esSentryReport).mockImplementation(() => {
                 resolve();
             });
         });
@@ -66,7 +66,7 @@ describe('deleteContentSearchDB', () => {
 
     it('reports and rethrows a failed delete', async () => {
         const error = new Error('delete failed');
-        jest.mocked(deleteDB).mockRejectedValueOnce(error);
+        vi.mocked(deleteDB).mockRejectedValueOnce(error);
 
         await expect(deleteContentSearchDB('failing-user')).rejects.toBe(error);
 

@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import useOpenDrawerOnLoad from '@proton/components/hooks/drawer/useOpenDrawerOnLoad';
 
@@ -11,43 +12,43 @@ import useComposerEvent from '../../hooks/useComposerEvent';
 import { useMailPTTMetric } from '../../metrics/useMailPTTMetric';
 import { useAppShellSideEffects } from './useAppShellSideEffects';
 
-jest.mock('@proton/components/hooks/drawer/useOpenDrawerOnLoad', () => ({
+vi.mock('@proton/components/hooks/drawer/useOpenDrawerOnLoad', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-jest.mock('../../hooks/contact/useContactsListener', () => ({
-    useContactsListener: jest.fn(),
+vi.mock('../../hooks/contact/useContactsListener', () => ({
+    useContactsListener: vi.fn(),
 }));
-jest.mock('../../hooks/events/useConversationsEvents', () => ({
-    useConversationsEvent: jest.fn(),
+vi.mock('../../hooks/events/useConversationsEvents', () => ({
+    useConversationsEvent: vi.fn(),
 }));
-jest.mock('../../hooks/events/useMessagesEvents', () => ({
-    useMessagesEvents: jest.fn(),
+vi.mock('../../hooks/events/useMessagesEvents', () => ({
+    useMessagesEvents: vi.fn(),
 }));
-jest.mock('../../hooks/incomingDefaults/useIncomingDefaultsEvents', () => ({
+vi.mock('../../hooks/incomingDefaults/useIncomingDefaultsEvents', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-jest.mock('../../hooks/mailbox/usePageHotkeys', () => ({
-    usePageHotkeys: jest.fn(),
+vi.mock('../../hooks/mailbox/usePageHotkeys', () => ({
+    usePageHotkeys: vi.fn(),
 }));
-jest.mock('../../hooks/useComposerEvent', () => ({
+vi.mock('../../hooks/useComposerEvent', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-jest.mock('../../metrics/useMailPTTMetric', () => ({
-    useMailPTTMetric: jest.fn(),
+vi.mock('../../metrics/useMailPTTMetric', () => ({
+    useMailPTTMetric: vi.fn(),
 }));
 // Needs a router; @testing-library/react-hooks used to swallow its error into result.error
-jest.mock('./useMailNavigationLogger', () => ({
-    useMailNavigationLogger: jest.fn(),
+vi.mock('./useMailNavigationLogger', () => ({
+    useMailNavigationLogger: vi.fn(),
 }));
 
-const openShortcutsModal = jest.fn();
+const openShortcutsModal = vi.fn();
 
 describe('useAppShellSideEffects', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should call all hooks with the correct parameters', () => {
@@ -68,23 +69,23 @@ describe('useAppShellSideEffects', () => {
     it('should pass a callback to usePageHotkeys that calls openShortcutsModal with true', () => {
         renderHook(() => useAppShellSideEffects({ openShortcutsModal }));
 
-        const callback = (usePageHotkeys as jest.Mock).mock.calls[0][0].onOpenShortcutsModal;
+        const callback = (usePageHotkeys as Mock).mock.calls[0][0].onOpenShortcutsModal;
         callback();
 
         expect(openShortcutsModal).toHaveBeenCalledWith(true);
     });
 
     it('should update callback references when props change', () => {
-        const initialOpenShortcutsModal = jest.fn();
+        const initialOpenShortcutsModal = vi.fn();
 
         const { rerender } = renderHook((props) => useAppShellSideEffects(props), {
             initialProps: { openShortcutsModal: initialOpenShortcutsModal },
         });
 
-        const updatedOpenShortcutsModal = jest.fn();
+        const updatedOpenShortcutsModal = vi.fn();
         rerender({ openShortcutsModal: updatedOpenShortcutsModal });
 
-        const latestCallback = (usePageHotkeys as jest.Mock).mock.calls[1][0].onOpenShortcutsModal;
+        const latestCallback = (usePageHotkeys as Mock).mock.calls[1][0].onOpenShortcutsModal;
 
         latestCallback();
 

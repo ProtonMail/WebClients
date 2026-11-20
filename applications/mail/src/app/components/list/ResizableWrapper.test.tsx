@@ -1,15 +1,17 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
+import { useResizableUtils } from '../../hooks/useResizableUtils';
 import { ResizableWrapper } from './ResizableWrapper';
 import { ResizeHandlePosition } from './ResizeHandle';
 
-jest.mock('../../hooks/useResizableUtils', () => ({
-    ...jest.requireActual('../../hooks/useResizableUtils'),
-    useResizableUtils: jest.fn(() => ({
+vi.mock('../../hooks/useResizableUtils', async () => ({
+    ...(await vi.importActual('../../hooks/useResizableUtils')),
+    useResizableUtils: vi.fn(() => ({
         width: 400,
         isResizing: false,
-        enableResize: jest.fn(),
-        resetWidth: jest.fn(),
+        enableResize: vi.fn(),
+        resetWidth: vi.fn(),
         scrollBarWidth: 10,
     })),
 }));
@@ -19,23 +21,23 @@ describe('ResizableWrapper', () => {
 
     const createMockContainerRef = () => {
         const mockElement = {
-            getBoundingClientRect: jest.fn().mockReturnValue({ width: 1000 }),
+            getBoundingClientRect: vi.fn().mockReturnValue({ width: 1000 }),
         };
         return { current: mockElement as unknown as HTMLElement };
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         Object.defineProperty(window, 'localStorage', {
             value: {
-                getItem: jest.fn(),
-                setItem: jest.fn(),
+                getItem: vi.fn(),
+                setItem: vi.fn(),
             },
             writable: true,
         });
 
-        Element.prototype.getBoundingClientRect = jest.fn(() => ({
+        Element.prototype.getBoundingClientRect = vi.fn(() => ({
             width: 400,
             height: 400,
             top: 0,
@@ -76,12 +78,11 @@ describe('ResizableWrapper', () => {
 
     it('applies correct className and style to wrapper', () => {
         const containerRef = createMockContainerRef();
-        const { useResizableUtils } = require('../../hooks/useResizableUtils');
-        useResizableUtils.mockReturnValue({
+        (useResizableUtils as Mock).mockReturnValue({
             width: 500,
             isResizing: true,
-            enableResize: jest.fn(),
-            resetWidth: jest.fn(),
+            enableResize: vi.fn(),
+            resetWidth: vi.fn(),
             scrollBarWidth: 10,
         });
 
@@ -125,13 +126,12 @@ describe('ResizableWrapper', () => {
 
     it('calls enableResize when resize handle is clicked', () => {
         const containerRef = createMockContainerRef();
-        const mockEnableResize = jest.fn();
-        const { useResizableUtils } = require('../../hooks/useResizableUtils');
-        useResizableUtils.mockReturnValue({
+        const mockEnableResize = vi.fn();
+        (useResizableUtils as Mock).mockReturnValue({
             width: 400,
             isResizing: false,
             enableResize: mockEnableResize,
-            resetWidth: jest.fn(),
+            resetWidth: vi.fn(),
             scrollBarWidth: 10,
         });
 
@@ -149,12 +149,11 @@ describe('ResizableWrapper', () => {
 
     it('calls resetWidth when resize handle is double-clicked', () => {
         const containerRef = createMockContainerRef();
-        const mockResetWidth = jest.fn();
-        const { useResizableUtils } = require('../../hooks/useResizableUtils');
-        useResizableUtils.mockReturnValue({
+        const mockResetWidth = vi.fn();
+        (useResizableUtils as Mock).mockReturnValue({
             width: 400,
             isResizing: false,
-            enableResize: jest.fn(),
+            enableResize: vi.fn(),
             resetWidth: mockResetWidth,
             scrollBarWidth: 10,
         });
@@ -173,7 +172,7 @@ describe('ResizableWrapper', () => {
 
     it('calls onWidthChange when width changes', () => {
         const containerRef = createMockContainerRef();
-        const mockOnWidthChange = jest.fn();
+        const mockOnWidthChange = vi.fn();
 
         const { rerender } = render(
             <ResizableWrapper containerRef={containerRef} onWidthChange={mockOnWidthChange}>
@@ -183,12 +182,11 @@ describe('ResizableWrapper', () => {
 
         expect(mockOnWidthChange).toHaveBeenCalledWith(400);
 
-        const { useResizableUtils } = require('../../hooks/useResizableUtils');
-        useResizableUtils.mockReturnValue({
+        (useResizableUtils as Mock).mockReturnValue({
             width: 500,
             isResizing: false,
-            enableResize: jest.fn(),
-            resetWidth: jest.fn(),
+            enableResize: vi.fn(),
+            resetWidth: vi.fn(),
             scrollBarWidth: 10,
         });
 
@@ -203,7 +201,6 @@ describe('ResizableWrapper', () => {
 
     it('integrates with useResizable hook with correct parameters', () => {
         const containerRef = createMockContainerRef();
-        const { useResizableUtils } = require('../../hooks/useResizableUtils');
 
         render(
             <ResizableWrapper

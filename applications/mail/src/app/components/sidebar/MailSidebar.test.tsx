@@ -1,6 +1,9 @@
+// @vitest-environment jsdom
+// jsdom kept: happy-dom returns hex colours where the test expects rgb()
 import { act, fireEvent, getAllByText, screen } from '@testing-library/react';
 import { addDays, subDays } from 'date-fns';
 import loudRejection from 'loud-rejection';
+import type { MockedFunction } from 'vitest';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import { getModelState } from '@proton/account/testing/getModelState';
@@ -30,23 +33,23 @@ import { mailTestRender } from '../../helpers/tests/render';
 import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';
 
-jest.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
+vi.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
 
-jest.mock('@proton/account/userSettings/hooks');
-const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
+vi.mock('@proton/account/userSettings/hooks');
+const mockedUserSettings = useUserSettings as MockedFunction<any>;
 
-jest.mock('@proton/account/retentionPolicies/hooks');
-const mockedUseRetentionPolicies = useRetentionPolicies as jest.MockedFunction<any>;
+vi.mock('@proton/account/retentionPolicies/hooks');
+const mockedUseRetentionPolicies = useRetentionPolicies as MockedFunction<any>;
 
-jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
+vi.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', async () => ({
     __esModule: true,
-    ...jest.requireActual('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider'),
-    useGetStartedChecklist: jest.fn(),
+    ...(await vi.importActual('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider')),
+    useGetStartedChecklist: vi.fn(),
 }));
 
 loudRejection();
 
-const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 
 const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' } as Folder;
 const subfolder = { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2', ParentID: folder.ID } as Folder;
@@ -108,18 +111,16 @@ const folderMessages = { LabelID: folder.ID, Unread: 1, Total: 2 };
 const labelMessages = { LabelID: label.ID, Unread: 2, Total: 3 };
 
 describe('MailSidebar', () => {
-    let mockedUseGetStartedChecklist: jest.MockedFunction<
-        typeof GetStartedChecklistProviderModule.useGetStartedChecklist
-    >;
+    let mockedUseGetStartedChecklist: MockedFunction<typeof GetStartedChecklistProviderModule.useGetStartedChecklist>;
 
     beforeEach(() => {
-        mockedUseGetStartedChecklist = jest.mocked(GetStartedChecklistProviderModule.useGetStartedChecklist);
+        mockedUseGetStartedChecklist = vi.mocked(GetStartedChecklistProviderModule.useGetStartedChecklist);
         mockedUserSettings.mockReturnValue([{}]);
         mockedUseRetentionPolicies.mockReturnValue([[], false]);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const setupTest = () => {
@@ -561,13 +562,11 @@ describe('MailSidebar', () => {
 });
 
 describe('Sidebar checklist display', () => {
-    let mockedUseGetStartedChecklist: jest.MockedFunction<
-        typeof GetStartedChecklistProviderModule.useGetStartedChecklist
-    >;
+    let mockedUseGetStartedChecklist: MockedFunction<typeof GetStartedChecklistProviderModule.useGetStartedChecklist>;
 
     beforeEach(() => {
         minimalCache();
-        mockedUseGetStartedChecklist = jest.mocked(GetStartedChecklistProviderModule.useGetStartedChecklist);
+        mockedUseGetStartedChecklist = vi.mocked(GetStartedChecklistProviderModule.useGetStartedChecklist);
         mockedUserSettings.mockReturnValue([{ Checklists: ['get-started-checklist'] }]);
         mockedUseRetentionPolicies.mockReturnValue([[], false]);
     });
@@ -632,9 +631,9 @@ describe('Sidebar checklist display', () => {
     });
 
     it('Should hide the checklist when pressing the cross button in the sidebar', async () => {
-        jest.useFakeTimers().setSystemTime(new Date('2024-12-01'));
+        vi.useFakeTimers().setSystemTime(new Date('2024-12-01'));
 
-        const mockedChangeDisplay = jest.fn();
+        const mockedChangeDisplay = vi.fn();
         const nowDate = new Date();
 
         mockedUseGetStartedChecklist.mockReturnValue({
@@ -648,7 +647,7 @@ describe('Sidebar checklist display', () => {
             isChecklistFinished: false,
             isUserPaid: false,
             loading: false,
-            markItemsAsDone: jest.fn(),
+            markItemsAsDone: vi.fn(),
             userWasRewarded: false,
             daysBeforeExpire: 0,
             hasExpired: true,
@@ -669,6 +668,6 @@ describe('Sidebar checklist display', () => {
         fireEvent.click(closeButton);
         expect(mockedChangeDisplay).toHaveBeenCalledWith(CHECKLIST_DISPLAY_TYPE.HIDDEN);
 
-        jest.clearAllTimers();
+        vi.clearAllTimers();
     });
 });

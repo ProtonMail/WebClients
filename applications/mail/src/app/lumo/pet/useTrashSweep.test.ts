@@ -19,8 +19,8 @@ const renderSweep = (items: LumoAgentItem[]) =>
     renderHook(({ items }) => useTrashSweep(items), { initialProps: { items } });
 
 describe('useTrashSweep', () => {
-    beforeEach(() => jest.useFakeTimers());
-    afterEach(() => jest.useRealTimers());
+    beforeEach(() => vi.useFakeTimers());
+    afterEach(() => vi.useRealTimers());
 
     it('sweeps once when a trash is applied, then stops', () => {
         const { result, rerender } = renderSweep([trashCard(1, ConfirmStatus.APPLYING)]);
@@ -29,7 +29,7 @@ describe('useTrashSweep', () => {
         rerender({ items: [trashCard(1, ConfirmStatus.APPLIED)] });
         expect(result.current).toBe(true);
 
-        act(() => jest.advanceTimersByTime(SWEEP_MS));
+        act(() => vi.advanceTimersByTime(SWEEP_MS));
         expect(result.current).toBe(false);
     });
 

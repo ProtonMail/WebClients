@@ -1,4 +1,5 @@
 import { act, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
 
@@ -11,7 +12,7 @@ import { eventManagerListeners } from './event-manager';
 const savedConsole = { ...console };
 
 export const clearAll = () => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     api.mockClear();
     //store.dispatch(globalReset());
     clearApiMocks();
@@ -24,7 +25,7 @@ export const clearAll = () => {
 };
 
 export const mockConsole = (level: keyof Console = 'error') => {
-    console[level] = jest.fn();
+    (console as any)[level] = vi.fn();
 };
 
 export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>({
@@ -32,7 +33,7 @@ export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>
     callTimes,
     disableFakeTimers = false,
 }: {
-    spy: jest.Mock<T, Y>;
+    spy: Mock<(...args: Y) => T>;
     /** Expected number of calls (defaults to >= 1) */
     callTimes?: number;
     /**
@@ -47,8 +48,8 @@ export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>
 }) => {
     if (disableFakeTimers) {
         act(() => {
-            jest.runOnlyPendingTimers();
-            jest.useRealTimers();
+            vi.runOnlyPendingTimers();
+            vi.useRealTimers();
         });
     }
 
@@ -59,14 +60,14 @@ export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>
         );
     } finally {
         if (disableFakeTimers) {
-            jest.useFakeTimers();
+            vi.useFakeTimers();
         }
     }
 };
 
 export const waitForEventManagerCall = async () => {
     // Hard override of the typing as event manager is mocked
-    const { call } = (useEventManager as any as () => { call: jest.Mock })();
+    const { call } = (useEventManager as any as () => { call: Mock })();
     await waitForSpyCall({ spy: call });
 };
 

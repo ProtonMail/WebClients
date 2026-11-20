@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: the rooster editor iframe needs iframe.contentDocument, which happy-dom lacks
 import { fireEvent, getByTestId } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
@@ -39,7 +41,7 @@ import { ID, clickSend, getMessage, renderComposer, send } from './Composer.test
 
 loudRejection();
 
-jest.setTimeout(20000);
+vi.setConfig({ testTimeout: 20000 });
 
 describe('Composer sending', () => {
     const AddressID = 'AddressID';
@@ -633,7 +635,7 @@ describe('Composer sending', () => {
 
         const view = await renderComposer({ preloadedState: getPreloadedState(message.data.AddressID), message });
 
-        const sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
+        const sendSpy = vi.fn(() => Promise.resolve({ Sent: {} }));
         addApiMock(`mail/v4/messages/${ID}`, sendSpy, 'post');
         addApiMock(`mail/v4/messages/${ID}`, () => {}, 'get');
         addApiMock(`mail/v4/messages/${ID}`, ({ data: { Message } }) => ({ Message }), 'put');

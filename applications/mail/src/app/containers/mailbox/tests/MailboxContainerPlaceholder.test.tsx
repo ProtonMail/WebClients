@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import { addDays } from 'date-fns';
+import type { MockedFunction } from 'vitest';
 
 import EasySwitchProvider from '@proton/activation/src/logic/StoreProvider';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
@@ -9,14 +10,13 @@ import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/
 import { mailTestRender } from '../../../helpers/tests/render';
 import MailboxContainerPlaceholder from '../MailboxContainerPlaceholder';
 
-jest.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
+vi.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
     __esModule: true,
-    useGetStartedChecklist: jest.fn(),
+    useGetStartedChecklist: vi.fn(),
     default: ({ children }: { children: any }) => <>{children}</>,
 }));
 
-jest.mock('../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider');
-const mockedReturn = useGetStartedChecklist as jest.MockedFunction<typeof useGetStartedChecklist>;
+const mockedReturn = useGetStartedChecklist as MockedFunction<typeof useGetStartedChecklist>;
 
 describe('MailboxContainerPlaceholder', () => {
     it('Should display checklist when no mails are present', async () => {
@@ -34,7 +34,7 @@ describe('MailboxContainerPlaceholder', () => {
                     showPlaceholder={true}
                     welcomeFlag={false}
                     checkedIDs={[]}
-                    handleCheckAll={jest.fn()}
+                    handleCheckAll={vi.fn() as any}
                 />
             </EasySwitchProvider>
         );
@@ -54,7 +54,7 @@ describe('MailboxContainerPlaceholder', () => {
                 showPlaceholder={true}
                 welcomeFlag={false}
                 checkedIDs={[]}
-                handleCheckAll={jest.fn()}
+                handleCheckAll={vi.fn() as any}
             />
         );
         screen.getByTestId('section-pane--wrapper');
@@ -73,7 +73,7 @@ describe('MailboxContainerPlaceholder', () => {
                 showPlaceholder={true}
                 welcomeFlag={false}
                 checkedIDs={[]}
-                handleCheckAll={jest.fn()}
+                handleCheckAll={vi.fn() as any}
             />
         );
         screen.getByTestId('section-pane--wrapper');

@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// jsdom kept: toHaveBeenCalledWith assertion fails under happy-dom
 import { act, fireEvent, getByTestId as getByTestIdDefault, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
@@ -16,12 +18,12 @@ import * as mailboxActions from '../../../store/mailbox/mailboxActions';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import LabelDropdown, { getInitialState } from '../LabelDropdown';
 
-jest.mock('../../../store/mailbox/mailboxActions', () => {
-    const actual = jest.requireActual('../../../store/mailbox/mailboxActions');
+vi.mock('../../../store/mailbox/mailboxActions', async () => {
+    const actual = await vi.importActual<any>('../../../store/mailbox/mailboxActions');
     return {
         ...actual,
-        labelMessages: Object.assign(jest.fn(actual.labelMessages), actual.labelMessages),
-        unlabelMessages: Object.assign(jest.fn(actual.unlabelMessages), actual.unlabelMessages),
+        labelMessages: Object.assign(vi.fn(actual.labelMessages), actual.labelMessages),
+        unlabelMessages: Object.assign(vi.fn(actual.unlabelMessages), actual.unlabelMessages),
     };
 });
 
@@ -37,8 +39,8 @@ const search = 'This label does not exists';
 const getProps = (labelID: string | undefined = undefined, selectAll = false) => ({
     selectedIDs: [messageID],
     labelID: labelID ? labelID : MAILBOX_LABEL_IDS.INBOX,
-    onClose: jest.fn(),
-    onLock: jest.fn(),
+    onClose: vi.fn(),
+    onLock: vi.fn(),
     selectAll: selectAll,
 });
 
@@ -115,7 +117,7 @@ describe('LabelDropdown', () => {
     });
 
     it('should label a message', async () => {
-        const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
+        const labelMessagesSpy = vi.mocked(mailboxActions.labelMessages);
 
         await setup();
 
@@ -147,7 +149,7 @@ describe('LabelDropdown', () => {
     });
 
     it('should unlabel a message', async () => {
-        const unLabelMessagesSpy = jest.mocked(mailboxActions.unlabelMessages);
+        const unLabelMessagesSpy = vi.mocked(mailboxActions.unlabelMessages);
 
         await setup([label1ID]);
 
@@ -179,7 +181,7 @@ describe('LabelDropdown', () => {
     });
 
     it('should add the "also archive" option', async () => {
-        const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
+        const labelMessagesSpy = vi.mocked(mailboxActions.labelMessages);
         await setup();
 
         const checkbox1 = screen.getByTestId(`label-dropdown:label-checkbox-${label1Name}`) as HTMLInputElement;
@@ -227,9 +229,9 @@ describe('LabelDropdown', () => {
 
     // Something is not right with the "always label sender email" (filterApiMock not called). Will be fixed separately
     it('should add the "always label sender email" option', async () => {
-        const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
+        const labelMessagesSpy = vi.mocked(mailboxActions.labelMessages);
 
-        const filterApiMock = jest.fn(() => ({ Filter: {} }));
+        const filterApiMock = vi.fn(() => ({ Filter: {} }));
         addApiMock('mail/v4/filters', filterApiMock);
 
         await setup();
@@ -375,7 +377,7 @@ describe('LabelDropdown', () => {
 
     describe('one-click label application', () => {
         it('should apply a label immediately when clicking the label name without pressing Apply', async () => {
-            const labelMessagesSpy = jest.mocked(mailboxActions.labelMessages);
+            const labelMessagesSpy = vi.mocked(mailboxActions.labelMessages);
             await setup();
 
             const labelName = screen.getByTestId(`label-dropdown:label-${label1Name}`);
@@ -406,7 +408,7 @@ describe('LabelDropdown', () => {
         });
 
         it('should remove a label immediately when clicking an active label name', async () => {
-            const unlabelMessagesSpy = jest.mocked(mailboxActions.unlabelMessages);
+            const unlabelMessagesSpy = vi.mocked(mailboxActions.unlabelMessages);
             await setup([label1ID]);
 
             const labelName = screen.getByTestId(`label-dropdown:label-${label1Name}`);

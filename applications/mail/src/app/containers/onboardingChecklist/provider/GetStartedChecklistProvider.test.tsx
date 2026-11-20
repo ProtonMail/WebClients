@@ -1,4 +1,4 @@
-import { describe } from '@jest/globals';
+import { type MockedFunction, describe } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import useLoading from '@proton/hooks/useLoading';
@@ -11,14 +11,14 @@ import useChecklist from '../hooks/useChecklist';
 import { getMailChecklistItemsToComplete, useGetStartedChecklist } from './GetStartedChecklistProvider';
 
 // Only the default export is mocked, the others (e.g. useLoadingByKey) are used by other hooks of the tree
-jest.mock('@proton/hooks/useLoading', () => ({
+vi.mock('@proton/hooks/useLoading', async () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/hooks/useLoading'),
-    default: jest.fn(),
+    ...(await vi.importActual('@proton/hooks/useLoading')),
+    default: vi.fn(),
 }));
-const mockLoading = useLoading as jest.MockedFunction<any>;
-jest.mock('../hooks/useChecklist');
-const mockChecklist = useChecklist as jest.MockedFunction<any>;
+const mockLoading = useLoading as MockedFunction<any>;
+vi.mock('../hooks/useChecklist');
+const mockChecklist = useChecklist as MockedFunction<any>;
 
 interface ChecklistBuilderProps {
     checklistId: ChecklistId;
@@ -71,7 +71,7 @@ describe('GetStartedChecklistProvider', () => {
             ChecklistKey.AccountLogin,
         ];
 
-        mockLoading.mockReturnValue([false, jest.fn()]);
+        mockLoading.mockReturnValue([false, vi.fn()]);
 
         const checklist = checklistBuilder({
             checklistId: 'get-started',
@@ -114,7 +114,7 @@ describe('GetStartedChecklistProvider', () => {
             ChecklistKey.AccountLogin,
         ];
 
-        mockLoading.mockReturnValue([false, jest.fn()]);
+        mockLoading.mockReturnValue([false, vi.fn()]);
 
         const checklist = checklistBuilder({
             checklistId: 'paying-user',
@@ -150,7 +150,7 @@ describe('GetStartedChecklistProvider', () => {
     it('should return correct default values for free BYOE users', async () => {
         const itemsList = [ChecklistKey.MobileApp, ChecklistKey.SendMessage, ChecklistKey.ClaimAddress];
 
-        mockLoading.mockReturnValue([false, jest.fn()]);
+        mockLoading.mockReturnValue([false, vi.fn()]);
 
         const checklist = checklistBuilder({
             checklistId: 'byoe-user',
@@ -191,7 +191,7 @@ describe('GetStartedChecklistProvider', () => {
             ChecklistKey.ProtectInbox,
         ];
 
-        mockLoading.mockReturnValue([false, jest.fn()]);
+        mockLoading.mockReturnValue([false, vi.fn()]);
 
         const checklist = checklistBuilder({
             checklistId: 'get-started',

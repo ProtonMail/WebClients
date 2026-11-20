@@ -10,7 +10,7 @@ import { newElementsState } from '../../store/elements/elementsSlice';
 import SelectionPane from './SelectionPane';
 
 describe('SelectionPane', () => {
-    const onCheckAll = jest.fn();
+    const onCheckAll = vi.fn();
 
     const getContextKey = (labelID: string, search: SearchParameters = {}) => {
         const elementsState = newElementsState({ params: { labelID, search } });

@@ -153,7 +153,7 @@ const searchParams = (overrides = {}) => ({
 
 describe('search handler', () => {
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('searches all mail and returns the rows that landed, with no follow-up view_emails needed', async () => {
@@ -343,11 +343,11 @@ describe('search handler', () => {
     // The timeout projects a view that has not loaded, so without this the model is handed zero rows and a
     // note vouching for the whole mailbox — and tells the user the email does not exist.
     it('reports an unfinished search rather than an empty mailbox when the list never settles', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         const { deps, references } = harness({ settles: false });
 
         const pending = createSearchHandler(deps)(searchParams({ keyword: 'hotel' }), { references });
-        await jest.advanceTimersByTimeAsync(20_000);
+        await vi.advanceTimersByTimeAsync(20_000);
         const result = await pending;
 
         expect(result.rows).toEqual([]);
@@ -444,14 +444,14 @@ describe('open_folder handler', () => {
     // unsaid, the model reports the location as empty; and without the wait's short-circuit it would first
     // sit out the full settle timeout waiting for a page that cannot arrive.
     it('reports a location a bulk action is still emptying, rather than calling it empty', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         const { deps, references } = harness({ blockedLabelIDs: [MAILBOX_LABEL_IDS.INBOX] });
 
         const result = await createOpenFolderHandler(deps)(openParams(), { references });
 
         expect(result.rows).toEqual([]);
         expect(result.bulkActionRunning).toBe(true);
-        expect(jest.getTimerCount()).toBe(0);
+        expect(vi.getTimerCount()).toBe(0);
     });
 
     it('opens a custom folder by reference, under its own name', async () => {

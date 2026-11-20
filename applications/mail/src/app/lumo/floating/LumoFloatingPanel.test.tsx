@@ -20,32 +20,32 @@ import { PanelSide } from './panelSide';
 import { useMailboxBounds } from './useMailboxBounds';
 import { PANEL_DRAGGING_CLASS } from './usePanelDrag';
 
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('@proton/components/hooks/useReducedMotion', () => ({ useReducedMotion: jest.fn() }));
-jest.mock('@proton/hooks/useRightToLeft', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext', () => ({ useLumoAgentDrawer: jest.fn() }));
-jest.mock('@proton/llm/lib/lumoAgent/ui/ConnectedLumoPromptBar', () => ({
+vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('@proton/components/hooks/useReducedMotion', () => ({ useReducedMotion: vi.fn() }));
+vi.mock('@proton/hooks/useRightToLeft', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext', () => ({ useLumoAgentDrawer: vi.fn() }));
+vi.mock('@proton/llm/lib/lumoAgent/ui/ConnectedLumoPromptBar', () => ({
     __esModule: true,
-    default: jest.fn(() => null),
+    default: vi.fn(() => null),
 }));
-jest.mock('@proton/shared/lib/helpers/dom', () => ({ rootFontSize: jest.fn() }));
-jest.mock('../pet/CatSprite', () => ({ __esModule: true, default: jest.fn(() => null) }));
-jest.mock('./LumoFloatingPanelCard', () => ({ __esModule: true, default: () => null }));
-jest.mock('./LumoFloatingPanelProvider', () => ({ useLumoFloatingPanel: jest.fn() }));
-jest.mock('./useMailboxBounds', () => ({ useMailboxBounds: jest.fn() }));
+vi.mock('@proton/shared/lib/helpers/dom', () => ({ rootFontSize: vi.fn() }));
+vi.mock('../pet/CatSprite', () => ({ __esModule: true, default: vi.fn(() => null) }));
+vi.mock('./LumoFloatingPanelCard', () => ({ __esModule: true, default: () => null }));
+vi.mock('./LumoFloatingPanelProvider', () => ({ useLumoFloatingPanel: vi.fn() }));
+vi.mock('./useMailboxBounds', () => ({ useMailboxBounds: vi.fn() }));
 
 const MAILBOX_WIDTH = 1000;
 const WIDEST_CARD = MAILBOX_WIDTH * 0.6;
 
-const setCardWidth = jest.fn();
-const toggleLumo = jest.fn();
-const closePanel = jest.fn();
-const switchSides = jest.fn();
-const dock = jest.fn();
-const hideCat = jest.fn();
-const revealCat = jest.fn();
-const clear = jest.fn();
-const openDebugReport = jest.fn();
+const setCardWidth = vi.fn();
+const toggleLumo = vi.fn();
+const closePanel = vi.fn();
+const switchSides = vi.fn();
+const dock = vi.fn();
+const hideCat = vi.fn();
+const revealCat = vi.fn();
+const clear = vi.fn();
+const openDebugReport = vi.fn();
 
 interface Setup {
     isDetached?: boolean;
@@ -75,7 +75,7 @@ const mockPanel = ({
     mailboxWidth = MAILBOX_WIDTH,
     isRTL = false,
 }: Setup) => {
-    jest.mocked(useLumoFloatingPanel).mockReturnValue(
+    vi.mocked(useLumoFloatingPanel).mockReturnValue(
         buildLumoFloatingPanelValue({
             isDetached,
             isPanelOpen,
@@ -93,21 +93,21 @@ const mockPanel = ({
             isCatDismissed,
         })
     );
-    jest.mocked(useLumoAgentDrawer).mockReturnValue({
+    vi.mocked(useLumoAgentDrawer).mockReturnValue({
         items: [],
         isBusy: false,
         hasConversation: true,
         clear,
         openDebugReport,
     } as unknown as ReturnType<typeof useLumoAgentDrawer>);
-    jest.mocked(useActiveBreakpoint).mockReturnValue({
+    vi.mocked(useActiveBreakpoint).mockReturnValue({
         viewportWidth: { '<=small': isSmallViewport },
     } as unknown as ReturnType<typeof useActiveBreakpoint>);
-    jest.mocked(useMailboxBounds).mockReturnValue(
+    vi.mocked(useMailboxBounds).mockReturnValue(
         hasBounds ? ({ top: 0, left: 0, width: mailboxWidth, height: 800 } as DOMRect) : null
     );
-    jest.mocked(useReducedMotion).mockReturnValue(isReducedMotion);
-    jest.mocked(useRightToLeft).mockReturnValue([isRTL, jest.fn()]);
+    vi.mocked(useReducedMotion).mockReturnValue(isReducedMotion);
+    vi.mocked(useRightToLeft).mockReturnValue([isRTL, vi.fn()]);
 };
 
 const renderPanel = async (setup: Setup = {}) => {
@@ -131,7 +131,7 @@ const chat = () => document.getElementById('drawer-app-lumo');
 const overlay = (container: HTMLElement) => container.firstChild as HTMLElement;
 const panelDock = (container: HTMLElement) => container.querySelector('.lumo-floating-panel-dock')!;
 const catSlot = (container: HTMLElement) => container.querySelector('.lumo-pet-cat-slot')!;
-const shownSprite = () => jest.mocked(CatSprite).mock.lastCall![0];
+const shownSprite = () => vi.mocked(CatSprite).mock.lastCall![0];
 const isCatMirrored = () => shownSprite().isMirrored;
 const RUNNING_CLASS = 'lumo-floating-panel--running';
 const dragHandle = () => screen.queryByTestId('lumo-floating-panel-drag-handle');
@@ -147,8 +147,8 @@ const endTransition = (element: Element, propertyName: string) => {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    jest.mocked(rootFontSize).mockReturnValue(16);
+    vi.clearAllMocks();
+    vi.mocked(rootFontSize).mockReturnValue(16);
 });
 
 describe('LumoFloatingPanel', () => {
@@ -234,7 +234,7 @@ describe('LumoFloatingPanel', () => {
     });
 
     it('measures the run in rem, so a larger font size shortens it', async () => {
-        jest.mocked(rootFontSize).mockReturnValue(20);
+        vi.mocked(rootFontSize).mockReturnValue(20);
 
         const { container } = await renderPanel({ hasFloatingDrawerButton: true });
 
@@ -286,14 +286,14 @@ describe('LumoFloatingPanel', () => {
         await renderPanel({ shownSide: PanelSide.RIGHT });
         expect(shownSprite().pose).toBe(CatPose.SIT);
 
-        act(() => jest.mocked(ConnectedLumoPromptBar).mock.lastCall![0].onDraftChange!('archive the'));
+        act(() => vi.mocked(ConnectedLumoPromptBar).mock.lastCall![0].onDraftChange!('archive the'));
 
         expect(shownSprite().pose).toBe(CatPose.WATCH_LEFT);
     });
 
     it('plays a trick phrase instead of sending it, mirrored to face the card on the left', async () => {
         await renderPanel({ shownSide: PanelSide.LEFT });
-        const { interceptSend } = jest.mocked(ConnectedLumoPromptBar).mock.lastCall![0];
+        const { interceptSend } = vi.mocked(ConnectedLumoPromptBar).mock.lastCall![0];
 
         let isIntercepted = false;
         act(() => {
@@ -307,7 +307,7 @@ describe('LumoFloatingPanel', () => {
 
     it('lets any other message through to Lumo', async () => {
         await renderPanel();
-        const { interceptSend } = jest.mocked(ConnectedLumoPromptBar).mock.lastCall![0];
+        const { interceptSend } = vi.mocked(ConnectedLumoPromptBar).mock.lastCall![0];
 
         let isIntercepted = true;
         act(() => {
@@ -379,8 +379,8 @@ describe('LumoFloatingPanel', () => {
         const { rerender } = await renderPanel();
         fireEvent.mouseDown(resizeGrip(), { clientX: 0 });
 
-        jest.mocked(useLumoFloatingPanel).mockReturnValue({
-            ...jest.mocked(useLumoFloatingPanel).mock.results[0].value,
+        vi.mocked(useLumoFloatingPanel).mockReturnValue({
+            ...vi.mocked(useLumoFloatingPanel).mock.results[0].value,
             isPanelOpen: false,
         });
         rerender(<LumoFloatingPanel mainAreaRef={createRef()} hasFloatingDrawerButton={false} />);

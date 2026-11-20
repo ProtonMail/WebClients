@@ -8,29 +8,29 @@ import type { IndexStatus } from '../db/schema';
 import type { Logger } from '../utils/logger';
 import { dropImportedIndex, dropIndexationIndex } from './switchIndexPath';
 
-jest.mock('@proton/encrypted-search/esIDB/configObjectStore', () => {
-    return { readEnabled: jest.fn() };
+vi.mock('@proton/encrypted-search/esIDB/configObjectStore', () => {
+    return { readEnabled: vi.fn() };
 });
-jest.mock('@proton/encrypted-search/esIDB/indexedDB', () => {
-    return { hasESDB: jest.fn() };
+vi.mock('@proton/encrypted-search/esIDB/indexedDB', () => {
+    return { hasESDB: vi.fn() };
 });
-jest.mock('../db/delete', () => {
-    const actual = jest.requireActual('../db/delete');
-    return { deleteContentSearchDB: jest.fn(actual.deleteContentSearchDB) };
+vi.mock('../db/delete', async () => {
+    const actual = await vi.importActual<any>('../db/delete');
+    return { deleteContentSearchDB: vi.fn(actual.deleteContentSearchDB) };
 });
 
 const logger: Logger = {
-    trace: jest.fn(),
-    debug: jest.fn(),
-    info: jest.fn(),
-    warn: jest.fn(),
-    error: jest.fn(),
-    log: jest.fn(),
+    trace: vi.fn(),
+    debug: vi.fn(),
+    info: vi.fn(),
+    warn: vi.fn(),
+    error: vi.fn(),
+    log: vi.fn(),
 };
 
 const mockV1 = ({ exists, enabled }: { exists: boolean; enabled?: boolean }) => {
-    jest.mocked(hasESDB).mockResolvedValue(exists);
-    jest.mocked(readEnabled).mockResolvedValue(enabled);
+    vi.mocked(hasESDB).mockResolvedValue(exists);
+    vi.mocked(readEnabled).mockResolvedValue(enabled);
 };
 
 /** What the import path leaves behind: a key, blobs and recorded changes, but no status. */
@@ -76,7 +76,7 @@ describe('switchIndexPath', () => {
 
     beforeEach(() => {
         userId = `switch-index-path-user-${userCounter++}`;
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('dropImportedIndex', () => {
@@ -141,7 +141,7 @@ describe('switchIndexPath', () => {
         it('leaves an imported index without a status when the delete fails', async () => {
             mockV1({ exists: true, enabled: true });
             await seedImportedIndex(userId);
-            jest.mocked(deleteContentSearchDB).mockRejectedValueOnce(new Error('delete failed'));
+            vi.mocked(deleteContentSearchDB).mockRejectedValueOnce(new Error('delete failed'));
 
             await expect(dropImportedIndex(userId, logger)).rejects.toThrow('delete failed');
 
@@ -166,7 +166,7 @@ describe('switchIndexPath', () => {
     describe('dropIndexationIndex', () => {
         it('drops an index built by the indexer, and tells the other tabs', async () => {
             await seedIndexedIndex(userId, 'enabled');
-            const beforeDelete = jest.fn();
+            const beforeDelete = vi.fn();
 
             await dropIndexationIndex(userId, logger, beforeDelete);
 
@@ -182,7 +182,7 @@ describe('switchIndexPath', () => {
 
         it('keeps an imported index', async () => {
             await seedImportedIndex(userId);
-            const beforeDelete = jest.fn();
+            const beforeDelete = vi.fn();
 
             await dropIndexationIndex(userId, logger, beforeDelete);
 

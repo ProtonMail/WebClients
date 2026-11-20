@@ -3,27 +3,27 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { canLoadRunner } from './shouldLoadMigrationWorker';
 
-jest.mock('@proton/encrypted-search/esIDB/indexedDB', () => ({
-    hasESDB: jest.fn(),
-    openESDB: jest.fn(),
+vi.mock('@proton/encrypted-search/esIDB/indexedDB', () => ({
+    hasESDB: vi.fn(),
+    openESDB: vi.fn(),
 }));
-jest.mock('./contentVersionHelpers', () => ({ isAllContentUpToDate: jest.fn() }));
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    detectStorageCapabilities: jest.fn(),
+vi.mock('./contentVersionHelpers', () => ({ isAllContentUpToDate: vi.fn() }));
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    detectStorageCapabilities: vi.fn(),
 }));
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({
     SentryMailInitiatives: { MIGRATION_TOOL: 'migration-tool' },
-    traceInitiativeError: jest.fn(),
+    traceInitiativeError: vi.fn(),
 }));
 
-const mockDetect = jest.mocked(detectStorageCapabilities);
+const mockDetect = vi.mocked(detectStorageCapabilities);
 
 describe('canLoadRunner', () => {
     const originalWorker = global.Worker;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        (global as any).Worker = jest.fn();
+        vi.clearAllMocks();
+        (global as any).Worker = vi.fn();
     });
 
     afterAll(() => {
