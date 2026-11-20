@@ -18,26 +18,18 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { IcCreditCards } from '@proton/icons/icons/IcCreditCards';
 import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { CheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
-import type { FreeSubscription } from '@proton/payments/core/interface';
 import { isTrial } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionCheckForbiddenReason } from '@proton/payments/core/subscription/interface';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { isOrganization } from '@proton/shared/lib/organization/helper';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { getDisplayName, getTrialPeriodText } from '../../helpers';
+import { useChangedSubscription } from '../../useChangedSubscription';
 import WithLoadingIndicator from '../shared/WithLoadingIndicator';
 
 import './SubscriptionCheckoutPlanDetails.scss';
 
-const getSubscriptionStartDate = (
-    subscription: Subscription | FreeSubscription,
-    isTrial: boolean,
-    isScheduled: boolean
-) => {
-    if (isFreeSubscription(subscription)) {
-        return c('Checkout row').t`Starting today`;
-    }
+const getSubscriptionStartDate = (subscription: Subscription, isTrial: boolean, isScheduled: boolean) => {
     const startDateUnixTime = !isTrial && isScheduled ? subscription.PeriodEnd : subscription.PeriodStart;
     const startDate = fromUnixTime(startDateUnixTime);
 
@@ -222,7 +214,7 @@ function SubscriptionCheckoutInfoBanners(props: {
 }
 
 interface BillingDetailsProps extends CheckoutViewProps {
-    subscription: Subscription | FreeSubscription;
+    subscription: Subscription | undefined;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason | undefined;
     hasSavedPaymentMethods: boolean;
 }
@@ -248,14 +240,14 @@ const SubscriptionCheckoutBillingDate = ({
 
     const periodEnd = (
         <Time key="period-end-text" sameDayFormat="PPP">
-            {subscription.PeriodEnd}
+            {subscription?.PeriodEnd}
         </Time>
     );
 
-    const isPeriodEndToday = !isFreeSubscription(subscription) && isToday(fromUnixTime(subscription.PeriodEnd));
+    const isPeriodEndToday = !!subscription && isToday(fromUnixTime(subscription.PeriodEnd));
     const formattedPeriodEnd = (
         <Time sameDayFormat="PPP" key="period-end-text">
-            {subscription.PeriodEnd}
+            {subscription?.PeriodEnd}
         </Time>
     );
 
@@ -284,7 +276,7 @@ const SubscriptionCheckoutBillingDate = ({
                 />
             </div>
         );
-    } else if (trial && subscription && !isFreeSubscription(subscription)) {
+    } else if (trial && subscription) {
         const trialCycleText = getTrialPeriodText(subscription);
         const amountDueToday =
             isPeriodEndToday || checkoutData.checkResult?.SubscriptionMode === SubscriptionMode.Regular;
@@ -335,7 +327,7 @@ const SubscriptionCheckoutBillingDate = ({
                         <div className="inline-flex items-center">
                             <div className="flex flex-column">
                                 <span>
-                                    {isFreeSubscription(subscription) && !hasValidCoupon
+                                    {!subscription && !hasValidCoupon
                                         ? planAmountItem.label
                                         : c('Subscription').jt`Total due today`}
                                 </span>
@@ -411,6 +403,7 @@ const SubscriptionCheckoutPlanDetails = ({
     const planSectionRef = useRef<HTMLDivElement>(null);
     const [showFixedHeader, setShowFixedHeader] = useState(false);
     const { subscription, loading } = usePayments();
+    const changedSubscription = useChangedSubscription();
 
     useEffect(() => {
         if (!planSectionRef.current) {
@@ -470,7 +463,7 @@ const SubscriptionCheckoutPlanDetails = ({
                 <SubscriptionCheckoutBillingDate
                     checkoutView={checkoutView}
                     loading={loading}
-                    subscription={subscription}
+                    subscription={changedSubscription}
                     paymentForbiddenReason={paymentForbiddenReason}
                     hasSavedPaymentMethods={hasSavedPaymentMethods}
                 />

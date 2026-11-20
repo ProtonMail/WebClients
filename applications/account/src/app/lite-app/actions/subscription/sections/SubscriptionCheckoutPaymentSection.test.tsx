@@ -3,8 +3,13 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { GUARD_ERROR_CODES, type GuardError } from '@proton/payments/core/subscription/guard';
-import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
+import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import {
+    buildLumoSubscription,
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import SubscriptionCheckoutPaymentSection from './SubscriptionCheckoutPaymentSection';
@@ -19,7 +24,8 @@ vi.mock('@proton/payments-ui/ui/billing-address/hooks/useBillingAddress', () => 
     useBillingAddress: () => ({ taxCountry: undefined, vatNumber: undefined }),
 }));
 vi.mock('@proton/payments-ui/ui/components/RenewalNotice', () => ({
-    getCheckoutRenewNoticeTextFromCheckResult: () => 'renew notice',
+    getCheckoutRenewNoticeTextFromCheckResult: ({ subscription }: { subscription?: Subscription }) =>
+        `renew notice for ${subscription?.ID ?? 'no subscription'}`,
 }));
 vi.mock('@proton/payments-hooks/ui/context/paymentsContext', () => ({ usePayments: vi.fn() }));
 vi.mock('@proton/payments-ui/containers/payments/subscription/confirm-button/SubscriptionConfirmButton', () => ({
@@ -194,5 +200,81 @@ describe('SubscriptionCheckoutPaymentSection subscription codes', () => {
         const { setSubscriptionData } = submitWith({ coupon: '', Coupon: null });
 
         await waitFor(() => expect(setSubscriptionData).toHaveBeenCalledWith(expect.objectContaining({ Codes: [] })));
+    });
+});
+
+describe('SubscriptionCheckoutPaymentSection renew notice', () => {
+    const webMailPlus = buildSubscription(
+        { planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'CHF' },
+        { ID: 'mail-plus', PeriodEnd: 1825000000 }
+    );
+    const webLumoPlus = buildLumoSubscription(PLANS.LUMO, {
+        ID: 'lumo-plus',
+        Cycle: CYCLE.MONTHLY,
+        Currency: 'CHF',
+        PeriodEnd: 1796000000,
+    });
+
+    const renderFor = ({
+        subscription,
+        multiSubscriptionContext,
+        planName,
+        cycle = CYCLE.YEARLY,
+    }: {
+        subscription: Subscription;
+        multiSubscriptionContext: MultiSubscriptionContext;
+        planName: PLANS;
+        cycle?: CYCLE;
+    }) => {
+        const value = mockPayments([]).getMockImplementation()!();
+        vi.mocked(usePayments).mockReturnValue({
+            ...value,
+            subscription,
+            multiSubscriptionContext,
+            checkoutUi: { planIDs: { [planName]: 1 }, cycle, planName, currency: 'CHF' },
+        } as PaymentsValue);
+        render(section());
+        return screen.getByTestId('checkout:renew-notice');
+    };
+
+    it('takes the renewal from the Lumo Plus subscription a Lumo Plus purchase changes', () => {
+        const renewNotice = renderFor({
+            subscription: { ...webMailPlus, SecondarySubscriptions: [webLumoPlus] },
+            multiSubscriptionContext: buildMultiSubscriptionContext([webMailPlus, webLumoPlus]),
+            planName: PLANS.LUMO,
+        });
+
+        expect(renewNotice).toHaveTextContent('renew notice for lumo-plus');
+    });
+
+    it('takes the renewal from the Mail Plus subscription a Mail Plus purchase changes', () => {
+        const renewNotice = renderFor({
+            subscription: { ...webMailPlus, SecondarySubscriptions: [webLumoPlus] },
+            multiSubscriptionContext: buildMultiSubscriptionContext([webMailPlus, webLumoPlus]),
+            planName: PLANS.MAIL,
+            cycle: CYCLE.TWO_YEARS,
+        });
+
+        expect(renewNotice).toHaveTextContent('renew notice for mail-plus');
+    });
+
+    it('renews like a user without a subscription when the purchase starts a new subscription', () => {
+        const renewNotice = renderFor({
+            subscription: webLumoPlus,
+            multiSubscriptionContext: buildMultiSubscriptionContext([webLumoPlus]),
+            planName: PLANS.MAIL,
+        });
+
+        expect(renewNotice).toHaveTextContent('renew notice for no subscription');
+    });
+
+    it('keeps the renewal of the only subscription', () => {
+        const renewNotice = renderFor({
+            subscription: webMailPlus,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(webMailPlus),
+            planName: PLANS.LUMO,
+        });
+
+        expect(renewNotice).toHaveTextContent('renew notice for mail-plus');
     });
 });

@@ -21,6 +21,7 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { useChangedSubscription } from '../useChangedSubscription';
 import SubscriptionCheckoutPlanDetails from './plan-section/SubscriptionCheckoutPlanDetails';
 import SubscriptionCheckoutPlanMoreInformation from './plan-section/SubscriptionCheckoutPlanMoreInformation';
 import WithLoadingIndicator from './shared/WithLoadingIndicator';
@@ -46,7 +47,6 @@ const SubscriptionCheckoutPlanSection = ({
         checkoutUi,
         checkResult,
         plansMap,
-        subscription,
         couponConfig,
         getShouldPassTrial,
         loading,
@@ -55,6 +55,7 @@ const SubscriptionCheckoutPlanSection = ({
         selectCurrency,
         multiSubscriptionContext,
     } = usePayments();
+    const changedSubscription = useChangedSubscription();
     const { currency, planIDs, cycle } = checkoutUi;
     const { APP_NAME } = useConfig();
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
@@ -73,7 +74,7 @@ const SubscriptionCheckoutPlanSection = ({
             isTrial: getShouldPassTrial(planIDs, cycle, false),
             couponConfig,
             app: APP_NAME,
-            subscription,
+            subscription: changedSubscription,
             paymentForbiddenReason,
             scribeToLumo,
         },

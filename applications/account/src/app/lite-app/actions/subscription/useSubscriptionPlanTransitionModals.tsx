@@ -8,8 +8,11 @@ import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payment
 import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import { getChangedSubscription } from '@proton/payments/core/subscription/purchase-outcome';
 import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import noop from '@proton/utils/noop';
+
+type PlanTransition = { proceed: false } | { proceed: true; planIDs: PlanIDs; cycle: Cycle };
 
 interface Props {
     subscription: Subscription | FreeSubscription;
@@ -30,8 +33,7 @@ const useSubscriptionPlanTransitionModals = ({
     onPlusUpgrade,
     multiSubscriptionContext,
 }: Props) => {
-    const [updatedPlanIds, setUpdatedPlanIds] = useState<PlanIDs>();
-    const [updatedCycle, setUpdatedCycle] = useState<Cycle>();
+    const changedSubscription = getChangedSubscription(multiSubscriptionContext, planIDs);
     const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
     const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
     const {
@@ -41,9 +43,9 @@ const useSubscriptionPlanTransitionModals = ({
         renderVisionaryDowngradeWarningText,
     } = useVisionaryDowngradeWarningModal({ subscription });
 
-    const initializePlanTransition = async () => {
+    const initializePlanTransition = async (): Promise<PlanTransition> => {
         const planTransitionForbidden = getIsPlanTransitionForbidden({
-            subscription,
+            subscription: changedSubscription,
             plansMap,
             planIDs,
             multiSubscriptionContext,
@@ -52,7 +54,7 @@ const useSubscriptionPlanTransitionModals = ({
         hideVisionaryDowngradeWarning();
         if (planTransitionForbidden?.type === 'visionary-downgrade') {
             await showVisionaryDowngradeWarning().catch(noop);
-            return true;
+            return { proceed: true, planIDs, cycle };
         } else if (planTransitionForbidden?.type === 'plus-to-plus') {
             setPlusToPlusUpsell({
                 unlockPlan: planTransitionForbidden.newPlanName
@@ -60,22 +62,20 @@ const useSubscriptionPlanTransitionModals = ({
                     : undefined,
             });
             setUpsellModal(true);
-            return false;
+            return { proceed: false };
         } else if (planTransitionForbidden?.type === 'lumo-plus') {
             const allowedCycles = getAllowedCycles({
-                subscription,
+                subscription: changedSubscription,
                 planIDs,
                 plansMap,
                 currency,
             });
-            const preferredCycle = subscription?.Cycle ?? cycle;
+            const preferredCycle = changedSubscription?.Cycle ?? cycle;
             const newCycle = allowedCycles.includes(preferredCycle) ? preferredCycle : allowedCycles[0];
 
-            setUpdatedPlanIds(planTransitionForbidden.newPlanIDs);
-            setUpdatedCycle(newCycle);
-            return true;
+            return { proceed: true, planIDs: planTransitionForbidden.newPlanIDs, cycle: newCycle };
         }
-        return true;
+        return { proceed: true, planIDs, cycle };
     };
 
     const plusToPlusUpsellModal = renderUpsellModal && plusToPlusUpsell && (
@@ -96,8 +96,6 @@ const useSubscriptionPlanTransitionModals = ({
         plusToPlusUpsellModal,
         visionaryDowngradeModal,
         renderVisionaryDowngradeWarningText,
-        overridePlanIds: updatedPlanIds,
-        overrideCycle: updatedCycle,
         initializePlanTransition,
     };
 };
