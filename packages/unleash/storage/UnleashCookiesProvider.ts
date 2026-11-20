@@ -1,6 +1,7 @@
 import { addDays, endOfDay } from 'date-fns';
 
-import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
+import { deleteCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import type { FeatureFlagToggle } from '../interface';
 
@@ -17,10 +18,18 @@ const NAME_VARIANT_SEPARATOR = ':';
  */
 const UNLEASH_FLAG_INVALID_CHARS = [',', ':', ' '];
 
+/**
+ * Each writer of the `Features` cookie owns one part, stored in localStorage and replaced in full on
+ * every save. The cookie is rebuilt from all parts on each save, so names a writer stops writing disappear.
+ */
+const FEATURES_COOKIE_PARTS = ['unleash', 'static-experiments'] as const;
+
+type FeaturesCookiePart = (typeof FEATURES_COOKIE_PARTS)[number];
+
 export const isValidFeatureFlagCookieString = (value: string) =>
     UNLEASH_FLAG_INVALID_CHARS.every((char) => !value.includes(char));
 
-const parseFeatureFlagCookieEntries = (rawValue: string | undefined): Map<string, string> => {
+const parseFeatureFlagCookieEntries = (rawValue: string | null | undefined): Map<string, string> => {
     const entries = new Map<string, string>();
 
     for (const pair of rawValue ? rawValue.split(ENTRY_SEPARATOR) : []) {
@@ -37,20 +46,14 @@ const serializeFeatureFlagCookieEntries = (entries: Map<string, string>): string
     return [...entries].map(([name, variant]) => `${name}${NAME_VARIANT_SEPARATOR}${variant}`).join(ENTRY_SEPARATOR);
 };
 
-/**
- * @description Reads the current entries of the shared `Features` cookie, regardless of which
- * consumer wrote them (Unleash allowlisted flags, or anything else merging into this cookie).
- */
-export const readFeatureFlagCookieEntries = (): Map<string, string> => {
-    return parseFeatureFlagCookieEntries(getCookie(UNLEASH_FLAG_COOKIE_NAME));
+const getPartStorageKey = (part: FeaturesCookiePart) => `features-cookie:${part}`;
+
+const readFeaturesCookiePart = (part: FeaturesCookiePart): Map<string, string> | undefined => {
+    const stored = getItem(getPartStorageKey(part));
+    return typeof stored === 'string' ? parseFeatureFlagCookieEntries(stored) : undefined;
 };
 
-/**
- * @description Writes the given entries back to the shared `Features` cookie in full -
- * callers are responsible for merging with `readFeatureFlagCookieEntries()` first if they
- * only want to touch a subset of entries.
- */
-export const writeFeatureFlagCookieEntries = (entries: Map<string, string>) => {
+const writeFeaturesCookie = (entries: Map<string, string>) => {
     if (entries.size === 0) {
         deleteCookie(UNLEASH_FLAG_COOKIE_NAME);
         return;
@@ -65,10 +68,28 @@ export const writeFeatureFlagCookieEntries = (entries: Map<string, string>) => {
     });
 };
 
+const saveFeaturesCookiePart = (part: FeaturesCookiePart, entries: Map<string, string>) => {
+    setItem(getPartStorageKey(part), serializeFeatureFlagCookieEntries(entries));
+
+    const cookieEntries = new Map<string, string>();
+    for (const otherPart of FEATURES_COOKIE_PARTS) {
+        const partEntries = otherPart === part ? entries : readFeaturesCookiePart(otherPart);
+        partEntries?.forEach((variant, name) => cookieEntries.set(name, variant));
+    }
+
+    writeFeaturesCookie(cookieEntries);
+};
+
+export const readStaticExperimentVariants = (): Map<string, string> => {
+    return readFeaturesCookiePart('static-experiments') ?? new Map();
+};
+
+export const saveStaticExperimentVariants = (variants: Map<string, string>) => {
+    saveFeaturesCookiePart('static-experiments', variants);
+};
+
 /**
  * @description Stores allowlisted feature flags in a cookie for the data team.
- * Only entries whose name is in `allowlistedFlags` are touched; anything else already present
- * in the cookie (e.g. other consumers merging into the same cookie) is left untouched.
  *
  * @param data - List of flags fetched by the Unleash client
  * @param allowlistedFlags - List of allowlisted flags defined in the app
@@ -79,15 +100,11 @@ const saveAllowlistedFlagInCookies = (data: FeatureFlagToggle[], allowlistedFlag
         return;
     }
 
-    const entries = readFeatureFlagCookieEntries();
+    const entries = new Map<string, string>();
 
     for (const flagName of allowlistedFlags) {
-        entries.delete(flagName);
-
-        // Map allowlisted flags to valid cookie entries
         const flagData = data.find((flag) => flag.name === flagName);
 
-        // If variant is enabled, save flag name + variant
         if (
             flagData?.enabled &&
             flagData?.variant?.enabled &&
@@ -98,7 +115,7 @@ const saveAllowlistedFlagInCookies = (data: FeatureFlagToggle[], allowlistedFlag
         }
     }
 
-    writeFeatureFlagCookieEntries(entries);
+    saveFeaturesCookiePart('unleash', entries);
 };
 
 export default saveAllowlistedFlagInCookies;

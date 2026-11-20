@@ -4,7 +4,10 @@ import { vi } from 'vitest';
 import * as cookiesModule from '@proton/shared/lib/helpers/cookies';
 
 import type { FeatureFlagToggle } from '../interface';
-import saveAllowlistedFlagInCookies, { UNLEASH_FLAG_COOKIE_NAME } from './UnleashCookiesProvider';
+import saveAllowlistedFlagInCookies, {
+    UNLEASH_FLAG_COOKIE_NAME,
+    saveStaticExperimentVariants,
+} from './UnleashCookiesProvider';
 
 // ------------------------------
 // Mocks
@@ -13,6 +16,12 @@ vi.mock('@proton/shared/lib/helpers/cookies', () => ({
     getCookie: vi.fn(),
     setCookie: vi.fn(),
     deleteCookie: vi.fn(),
+}));
+
+const localStorageItems = new Map<string, string>();
+vi.mock('@proton/shared/lib/helpers/storage', () => ({
+    getItem: (key: string) => localStorageItems.get(key) ?? null,
+    setItem: (key: string, value: string) => localStorageItems.set(key, value),
 }));
 
 // ------------------------------
@@ -52,7 +61,8 @@ describe('UnleashCookiesProvider', () => {
     });
 
     beforeEach(() => {
-        vi.clearAllMocks();
+        vi.resetAllMocks();
+        localStorageItems.clear();
     });
 
     describe('Whitelisted flag with variant', () => {
@@ -132,6 +142,41 @@ describe('UnleashCookiesProvider', () => {
 
             saveAllowlistedFlagInCookies(unleashFlagsList, whitelistedFlags);
             expect(setCookie).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('Features cookie parts', () => {
+        it('rebuilds the Unleash part from scratch and keeps the static experiments part', () => {
+            const { setCookie } = getCookieSpys();
+            localStorageItems.set('features-cookie:unleash', 'RetiredFlag:v5,ValidFlag:VariantB');
+            localStorageItems.set('features-cookie:static-experiments', 'PaypalFirst:with');
+
+            saveAllowlistedFlagInCookies([generateFlag('ValidFlag', 'VariantA')], ['ValidFlag']);
+
+            expect(setCookie).toHaveBeenCalledWith(
+                expect.objectContaining({ cookieValue: 'ValidFlag:VariantA,PaypalFirst:with' })
+            );
+        });
+
+        it('rebuilds the static experiments part from scratch and keeps the Unleash part', () => {
+            const { setCookie } = getCookieSpys();
+            localStorageItems.set('features-cookie:unleash', 'ValidFlag:VariantA');
+            localStorageItems.set('features-cookie:static-experiments', 'ChallengeV5:v5');
+
+            saveStaticExperimentVariants(new Map([['PaypalFirst', 'with']]));
+
+            expect(setCookie).toHaveBeenCalledWith(
+                expect.objectContaining({ cookieValue: 'ValidFlag:VariantA,PaypalFirst:with' })
+            );
+        });
+
+        it('drops cookie entries left over from before the parts existed', () => {
+            const { getCookie, setCookie } = getCookieSpys();
+            getCookie.mockReturnValueOnce('RetiredFlag:v5');
+
+            saveAllowlistedFlagInCookies([generateFlag('ValidFlag', 'VariantA')], ['ValidFlag']);
+
+            expect(setCookie).toHaveBeenCalledWith(expect.objectContaining({ cookieValue: 'ValidFlag:VariantA' }));
         });
     });
 });

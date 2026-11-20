@@ -1,18 +1,18 @@
 import type { Mock } from 'vitest';
 
-import { readFeatureFlagCookieEntries, writeFeatureFlagCookieEntries } from '@proton/unleash/UnleashCookiesProvider';
+import { readStaticExperimentVariants, saveStaticExperimentVariants } from '@proton/unleash/UnleashCookiesProvider';
 
 import { resolveStaticExperiments } from './resolve';
 import type { StaticExperimentConfig } from './types';
 
 vi.mock('@proton/unleash/UnleashCookiesProvider', async () => ({
     ...(await vi.importActual('@proton/unleash/UnleashCookiesProvider')),
-    readFeatureFlagCookieEntries: vi.fn(),
-    writeFeatureFlagCookieEntries: vi.fn(),
+    readStaticExperimentVariants: vi.fn(),
+    saveStaticExperimentVariants: vi.fn(),
 }));
 
-const mockedReadEntries = readFeatureFlagCookieEntries as Mock;
-const mockedWriteEntries = writeFeatureFlagCookieEntries as Mock;
+const mockedReadEntries = readStaticExperimentVariants as Mock;
+const mockedWriteEntries = saveStaticExperimentVariants as Mock;
 
 const buildConfig = (overrides: Partial<StaticExperimentConfig> = {}): StaticExperimentConfig => ({
     enabled: true,
@@ -39,7 +39,7 @@ describe('resolveStaticExperiments', () => {
         vi.restoreAllMocks();
     });
 
-    it('returns disabled and clears any existing cookie entry when the experiment is disabled', () => {
+    it('returns disabled and drops any stored variant when the experiment is disabled', () => {
         mockedReadEntries.mockReturnValue(new Map([['MyExperiment', 'A']]));
 
         const result = resolveStaticExperiments({
@@ -62,7 +62,7 @@ describe('resolveStaticExperiments', () => {
         expect(result).toEqual({ MyExperiment: 'disabled' });
     });
 
-    it('returns disabled and clears the cookie entry when enabled is a function returning false', () => {
+    it('returns disabled and drops the stored variant when enabled is a function returning false', () => {
         mockedReadEntries.mockReturnValue(new Map([['MyExperiment', 'A']]));
 
         const result = resolveStaticExperiments({
@@ -81,7 +81,7 @@ describe('resolveStaticExperiments', () => {
         expect(result).toEqual({ MyExperiment: 'A' });
     });
 
-    it('reuses an existing cookie value if it is still a valid variant', () => {
+    it('reuses the stored variant if it is still a valid variant', () => {
         mockedReadEntries.mockReturnValue(new Map([['MyExperiment', 'B']]));
 
         const result = resolveStaticExperiments({
@@ -92,7 +92,7 @@ describe('resolveStaticExperiments', () => {
         expect(mockedWriteEntries).toHaveBeenCalledWith(new Map([['MyExperiment', 'B']]));
     });
 
-    it('re-rolls when the existing cookie value is not a valid variant for the active weights', () => {
+    it('re-rolls when the stored variant is not a valid variant for the active weights', () => {
         mockedReadEntries.mockReturnValue(new Map([['MyExperiment', 'C']]));
         mockRoll(10);
 
@@ -172,20 +172,15 @@ describe('resolveStaticExperiments', () => {
         expect(result).toEqual({ MyExperiment: 'disabled' });
     });
 
-    it('preserves unrelated cookie entries when writing back', () => {
-        mockedReadEntries.mockReturnValue(new Map([['OtherFlag', 'X']]));
+    it('drops stored variants of experiments that are no longer in the config', () => {
+        mockedReadEntries.mockReturnValue(new Map([['RetiredExperiment', 'X']]));
         vi.spyOn(Date, 'now').mockReturnValue(0);
 
         resolveStaticExperiments({
             MyExperiment: buildConfig({ schedule: [{ startsAt: '1970-01-01T00:00:00Z', weights: { A: 100 } }] }),
         });
 
-        expect(mockedWriteEntries).toHaveBeenCalledWith(
-            new Map([
-                ['OtherFlag', 'X'],
-                ['MyExperiment', 'A'],
-            ])
-        );
+        expect(mockedWriteEntries).toHaveBeenCalledWith(new Map([['MyExperiment', 'A']]));
     });
 
     it('resolves multiple experiments in a single read/write pass', () => {

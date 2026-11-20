@@ -1,7 +1,7 @@
 import {
     isValidFeatureFlagCookieString,
-    readFeatureFlagCookieEntries,
-    writeFeatureFlagCookieEntries,
+    readStaticExperimentVariants,
+    saveStaticExperimentVariants,
 } from '@proton/unleash/UnleashCookiesProvider';
 
 import type { StaticExperimentConfig, StaticExperimentsState } from './types';
@@ -43,13 +43,13 @@ const resolveVariant = (weights: Record<string, number>): string | undefined => 
 
 export const resolveStaticExperiments = (config: Record<string, StaticExperimentConfig>): StaticExperimentsState => {
     const result: StaticExperimentsState = {};
-    const cookieEntries = readFeatureFlagCookieEntries();
+    const storedVariants = readStaticExperimentVariants();
+    const variants = new Map<string, string>();
 
     for (const name of Object.keys(config)) {
         const experimentConfig = config[name];
 
         if (!isValidFeatureFlagCookieString(name)) {
-            cookieEntries.delete(name);
             result[name] = 'disabled';
             continue;
         }
@@ -59,20 +59,19 @@ export const resolveStaticExperiments = (config: Record<string, StaticExperiment
         const activeWeights = isEnabled ? getActiveWeights(experimentConfig, Date.now()) : undefined;
 
         if (!activeWeights) {
-            cookieEntries.delete(name);
             result[name] = 'disabled';
             continue;
         }
 
         if (!Object.keys(activeWeights).every(isValidFeatureFlagCookieString)) {
-            cookieEntries.delete(name);
             result[name] = 'disabled';
             continue;
         }
 
-        const existing = cookieEntries.get(name);
+        const existing = storedVariants.get(name);
 
         if (existing !== undefined && existing in activeWeights) {
+            variants.set(name, existing);
             result[name] = existing;
             continue;
         }
@@ -80,16 +79,15 @@ export const resolveStaticExperiments = (config: Record<string, StaticExperiment
         const variant = resolveVariant(activeWeights);
 
         if (variant === undefined) {
-            cookieEntries.delete(name);
             result[name] = 'disabled';
             continue;
         }
 
-        cookieEntries.set(name, variant);
+        variants.set(name, variant);
         result[name] = variant;
     }
 
-    writeFeatureFlagCookieEntries(cookieEntries);
+    saveStaticExperimentVariants(variants);
 
     return result;
 };
