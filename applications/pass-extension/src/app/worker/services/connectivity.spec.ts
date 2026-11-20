@@ -4,7 +4,7 @@ import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 
 import { isNavigatorSource } from './connectivity';
 
-jest.mock('../channel');
+vi.mock('../channel');
 
 describe('isNavigatorSource', () => {
     test.each<[ClientEndpoint, Runtime.MessageSender, boolean]>([

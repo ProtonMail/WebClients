@@ -13,9 +13,9 @@ import { WorkerContext } from '../context/inject';
 import { createAutoSaveService } from './autosave';
 import { createFormTrackerService } from './form.tracker';
 
-jest.mock('../channel');
-jest.mock('./main-frame.tracker', () => ({ createMainFrameRequestTracker: jest.fn() }));
-jest.mock('./xmlhttp-request.tracker', () => ({ createXMLHTTPRequestTracker: () => ({ reset: jest.fn() }) }));
+vi.mock('../channel');
+vi.mock('./main-frame.tracker', () => ({ createMainFrameRequestTracker: vi.fn() }));
+vi.mock('./xmlhttp-request.tracker', () => ({ createXMLHTTPRequestTracker: () => ({ reset: vi.fn() }) }));
 
 const TAB_ID = 1;
 const credentials: FormCredentials = { userIdentifier: 'test@proton.me', password: 'p4ssw0rd' };

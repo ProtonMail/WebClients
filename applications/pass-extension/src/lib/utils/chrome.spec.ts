@@ -8,7 +8,7 @@ type MockVersionModule = typeof versionModule & {
     setManifestVersion: (version: string) => void;
 };
 
-jest.mock('./version', (): MockVersionModule => {
+vi.mock('./version', (): MockVersionModule => {
     const module = {
         get EXTENSION_BUILD_VERSION() {
             return module._MOCK_EXTENSION_BUILD_VERSION_;
@@ -37,7 +37,7 @@ const setBuildTarget = (value: string) => ((global as any).BUILD_TARGET = value)
 
 describe('isChromeExtensionRollback', () => {
     beforeEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     test('should return `false` when `BUILD_TARGET` is not "chrome"', () => {

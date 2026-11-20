@@ -1,14 +1,16 @@
+import type { Mock } from 'vitest';
+
 import browser from '@proton/pass/lib/globals/browser';
 
 import type { AutofillableFrames } from './frames';
 import { getAutofillableFrames, getFramePath, getTabFrames, validateFramePath } from './frames';
 
-const getAllFrames = browser.webNavigation.getAllFrames as jest.Mock;
+const getAllFrames = browser.webNavigation.getAllFrames as Mock;
 const tabId = 42;
 
 describe('inline service', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('getTabFrames', () => {

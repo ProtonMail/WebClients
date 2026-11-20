@@ -51,13 +51,13 @@ export const setupWorker = ({ url, state: init, storage = {} }: TestWorkerInit) 
     const formTracker = createFormTrackerService();
 
     WorkerContext.set({
-        ensureReady: jest.fn().mockResolvedValue(undefined),
-        getState: jest.fn(() => ({ authorized: true })),
+        ensureReady: vi.fn().mockResolvedValue(undefined),
+        getState: vi.fn(() => ({ authorized: true })),
         service: {
             autosave,
             formTracker,
-            storage: { local: { getItems: jest.fn().mockResolvedValue(storage), setItem: jest.fn() } },
-            store: { dispatch: jest.fn(), getState: jest.fn(() => state) },
+            storage: { local: { getItems: vi.fn().mockResolvedValue(storage), setItem: vi.fn() } },
+            store: { dispatch: vi.fn(), getState: vi.fn(() => state) },
         },
     } as any);
 

@@ -1,4 +1,5 @@
 import type { WasmGeneratePasskeyResponse } from '@protontech/pass-rust-core/worker';
+import type { Mock, MockInstance } from 'vitest';
 
 import { createPassCoreProxy } from '@proton/pass/lib/core/core.proxy';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
@@ -14,15 +15,15 @@ import type * as ChannelMock from '../__mocks__/channel';
 import { WorkerContext } from '../context/inject';
 import { assertValidPasskeyRequest, createPasskeyService } from './passkey';
 
-jest.mock('../channel');
-jest.mock('@proton/pass/lib/core/core.proxy');
-jest.mock('@proton/pass/store/selectors/organization', () => ({
-    ...jest.requireActual('@proton/pass/store/selectors/organization'),
-    selectOrgPasskeyDisabled: jest.fn(),
+vi.mock('../channel');
+vi.mock('@proton/pass/lib/core/core.proxy');
+vi.mock('@proton/pass/store/selectors/organization', async () => ({
+    ...(await vi.importActual('@proton/pass/store/selectors/organization')),
+    selectOrgPasskeyDisabled: vi.fn(),
 }));
 
-const { mockHandlers } = jest.requireMock('../channel') as typeof ChannelMock;
-const mockSelectOrgPasskeyDisabled = jest.mocked(selectOrgPasskeyDisabled);
+const { mockHandlers } = (await import('../channel')) as typeof ChannelMock;
+const mockSelectOrgPasskeyDisabled = vi.mocked(selectOrgPasskeyDisabled);
 
 const TEST_RP_ID = 'proton.test';
 const TEST_CONFIG = { APP_NAME: 'proton-pass-extension', APP_VERSION: '0.0.1' } as any;
@@ -175,14 +176,15 @@ describe('assertValidPasskeyRequest', () => {
 
 describe('PasskeyService [WASM]', () => {
     let core: PassCoreProxy;
-    let registerWebAuthnFetcher: jest.Mock;
-    let fetchSpy: jest.SpyInstance;
+    let registerWebAuthnFetcher: Mock;
+    let initCalls: unknown[][];
+    let fetchSpy: MockInstance;
 
     beforeAll(async () => {
-        /** The wasm namespace export is frozen: `jest.spyOn` cannot redefine its
+        /** The wasm namespace export is frozen: `vi.spyOn` cannot redefine its
          * properties. Wrap it in a Proxy in order to register the spy. */
         const coreProxy = createPassCoreProxy({} as any);
-        registerWebAuthnFetcher = jest.fn((fn) => coreProxy.register_webauthn_fetcher(fn));
+        registerWebAuthnFetcher = vi.fn((fn) => coreProxy.register_webauthn_fetcher(fn));
 
         core = new Proxy(coreProxy, {
             get: (target, prop) => {
@@ -193,10 +195,11 @@ describe('PasskeyService [WASM]', () => {
 
         WorkerContext.set({ service: { core } } as any);
         await createPasskeyService().init();
+        initCalls = [...registerWebAuthnFetcher.mock.calls];
 
         /** One spy for the whole suite. `afterEach` resets implementation +
          * call history; `afterAll` restores the original `fetch`. */
-        fetchSpy = jest.spyOn(globalThis, 'fetch');
+        fetchSpy = vi.spyOn(globalThis, 'fetch');
     });
 
     afterAll(() => {
@@ -209,8 +212,8 @@ describe('PasskeyService [WASM]', () => {
     });
 
     test('`init` registers the webauthn fetcher with the rust core', () => {
-        expect(registerWebAuthnFetcher).toHaveBeenCalledTimes(1);
-        expect(registerWebAuthnFetcher).toHaveBeenCalledWith(expect.any(Function));
+        expect(initCalls).toHaveLength(1);
+        expect(initCalls[0]).toEqual([expect.any(Function)]);
     });
 
     test('`generate_passkey` returns a valid response', async () => {
@@ -470,14 +473,14 @@ describe('PasskeyService [WASM]', () => {
 describe('PasskeyService handlers - organization passkey policy', () => {
     const domain = TEST_RP_ID;
     const sender = { tab: { id: 1 } };
-    const core = { generate_passkey: jest.fn(), resolve_passkey_challenge: jest.fn() };
+    const core = { generate_passkey: vi.fn(), resolve_passkey_challenge: vi.fn() };
     const passkey = { credentialId: 'credential', itemId: 'item', shareId: 'share', name: domain, username: 'alice' };
 
     const call = <T extends WorkerMessageType>(type: T, payload: unknown) =>
         mockHandlers.get(type)?.({ type, payload }, sender);
 
     beforeEach(() => {
-        (browser.tabs.get as jest.Mock).mockResolvedValue({ url: `https://${domain}/login` });
+        (browser.tabs.get as Mock).mockResolvedValue({ url: `https://${domain}/login` });
         mockSelectOrgPasskeyDisabled.mockReturnValue(true);
         WorkerContext.set({ service: { core, store: { getState: () => ({}) } } } as any);
         createPasskeyService();
@@ -485,7 +488,7 @@ describe('PasskeyService handlers - organization passkey policy', () => {
 
     afterEach(() => {
         WorkerContext.clear();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     test('`PASSKEY_QUERY` suggests no passkeys', async () => {

@@ -1,3 +1,5 @@
+import type { Mock, MockedObject } from 'vitest';
+
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
@@ -20,14 +22,14 @@ import type { WorkerContextInterface } from '../../context/types';
 import type { ExtensionAuthService } from './auth.service';
 import { createAuthService } from './auth.service';
 
-jest.mock('../../channel');
-jest.mock('../../../../lib/utils/permissions');
-jest.mock('@proton/pass/lib/extension/utils/pinned', () => ({
-    getToolbarPinState: jest.fn().mockResolvedValue('unpinned'),
+vi.mock('../../channel');
+vi.mock('../../../../lib/utils/permissions');
+vi.mock('@proton/pass/lib/extension/utils/pinned', () => ({
+    getToolbarPinState: vi.fn().mockResolvedValue('unpinned'),
 }));
 
-const { default: WorkerMessageBroker, mockHandlers } = jest.requireMock('../../channel') as typeof ChannelMock;
-const permissions = permissionUtils as jest.MockedObject<typeof permissionUtils>;
+const { default: WorkerMessageBroker, mockHandlers } = (await import('../../channel')) as typeof ChannelMock;
+const permissions = permissionUtils as MockedObject<typeof permissionUtils>;
 
 describe('Extension AuthService', () => {
     let api: Api;
@@ -36,56 +38,56 @@ describe('Extension AuthService', () => {
     let ctx: WorkerContextInterface;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         clearBrowserMocks();
 
-        api = jest.fn() as unknown as Api;
-        api.subscribe = jest.fn();
-        api.idle = jest.fn().mockResolvedValue(undefined);
+        api = vi.fn() as unknown as Api;
+        api.subscribe = vi.fn();
+        api.idle = vi.fn().mockResolvedValue(undefined);
         authStore = createAuthStore(createMemoryStore());
 
         connectivity = {
             online: true,
             status: ConnectivityStatus.ONLINE,
-            check: jest.fn().mockResolvedValue(undefined),
-            subscribe: jest.fn(),
+            check: vi.fn().mockResolvedValue(undefined),
+            subscribe: vi.fn(),
         } as any;
 
         ctx = {
             booted: false,
             status: AppStatus.IDLE,
-            getState: jest.fn(() => ({ status: ctx.status, booted: ctx.booted })),
-            setBooted: jest.fn((value: boolean) => (ctx.booted = value)),
-            setStatus: jest.fn((value: AppStatus) => (ctx.status = value)),
+            getState: vi.fn(() => ({ status: ctx.status, booted: ctx.booted })),
+            setBooted: vi.fn((value: boolean) => (ctx.booted = value)),
+            setStatus: vi.fn((value: AppStatus) => (ctx.status = value)),
             service: {
-                activation: { boot: jest.fn() },
-                apiProxy: { clear: jest.fn().mockResolvedValue(undefined) },
-                autofill: { clear: jest.fn() },
+                activation: { boot: vi.fn() },
+                apiProxy: { clear: vi.fn().mockResolvedValue(undefined) },
+                autofill: { clear: vi.fn() },
                 connectivity,
-                featureFlags: { resolve: jest.fn().mockResolvedValue({ features: {} }) },
-                formTracker: { clear: jest.fn() },
-                logger: { clear: jest.fn().mockResolvedValue(undefined) },
-                nativeMessaging: { disconnect: jest.fn() },
-                settings: { clear: jest.fn().mockResolvedValue(undefined) },
-                spotlight: { reset: jest.fn() },
+                featureFlags: { resolve: vi.fn().mockResolvedValue({ features: {} }) },
+                formTracker: { clear: vi.fn() },
+                logger: { clear: vi.fn().mockResolvedValue(undefined) },
+                nativeMessaging: { disconnect: vi.fn() },
+                settings: { clear: vi.fn().mockResolvedValue(undefined) },
+                spotlight: { reset: vi.fn() },
                 storage: {
                     local: {
-                        clear: jest.fn().mockResolvedValue(undefined),
-                        getItem: jest.fn().mockResolvedValue(undefined),
-                        removeItem: jest.fn(),
-                        setItem: jest.fn(),
-                        setItems: jest.fn(),
+                        clear: vi.fn().mockResolvedValue(undefined),
+                        getItem: vi.fn().mockResolvedValue(undefined),
+                        removeItem: vi.fn(),
+                        setItem: vi.fn(),
+                        setItems: vi.fn(),
                     },
                     session: {
-                        clear: jest.fn().mockResolvedValue(undefined),
-                        getItems: jest.fn().mockResolvedValue({}),
-                        removeItem: jest.fn(),
-                        removeItems: jest.fn(),
-                        setItems: jest.fn(),
+                        clear: vi.fn().mockResolvedValue(undefined),
+                        getItems: vi.fn().mockResolvedValue({}),
+                        removeItem: vi.fn(),
+                        removeItems: vi.fn(),
+                        setItems: vi.fn(),
                     },
                 },
-                store: { dispatch: jest.fn() },
-                telemetry: { stop: jest.fn() },
+                store: { dispatch: vi.fn() },
+                telemetry: { stop: vi.fn() },
             },
         } as any;
 
@@ -101,12 +103,12 @@ describe('Extension AuthService', () => {
 
         beforeEach(() => {
             auth = createAuthService(api, authStore);
-            jest.spyOn(auth.alarms, 'clearAutoResume').mockResolvedValue(undefined);
-            jest.spyOn(auth.alarms, 'clearAutoLock').mockResolvedValue(undefined);
-            jest.spyOn(auth.alarms, 'scheduleAutoResume').mockResolvedValue(undefined);
-            jest.spyOn(auth.alarms, 'registerResumeFailure').mockResolvedValue(undefined);
-            jest.spyOn(auth.alarms, 'resetAutoResume');
-            auth.resumeSession = jest.fn().mockResolvedValue(false);
+            vi.spyOn(auth.alarms, 'clearAutoResume').mockResolvedValue(undefined);
+            vi.spyOn(auth.alarms, 'clearAutoLock').mockResolvedValue(undefined);
+            vi.spyOn(auth.alarms, 'scheduleAutoResume').mockResolvedValue(undefined);
+            vi.spyOn(auth.alarms, 'registerResumeFailure').mockResolvedValue(undefined);
+            vi.spyOn(auth.alarms, 'resetAutoResume');
+            auth.resumeSession = vi.fn().mockResolvedValue(false);
             ctx.service.auth = auth;
         });
 
@@ -159,7 +161,7 @@ describe('Extension AuthService', () => {
             });
 
             test('should reset the resume-scheduler state so post-unlock resumes are not throttled', async () => {
-                const resetAutoResume = jest.spyOn(auth.alarms, 'resetAutoResume').mockResolvedValue(undefined);
+                const resetAutoResume = vi.spyOn(auth.alarms, 'resetAutoResume').mockResolvedValue(undefined);
                 await auth.config.onLocked?.(LockMode.SESSION, undefined, false);
                 expect(resetAutoResume).toHaveBeenCalled();
             });
@@ -167,7 +169,7 @@ describe('Extension AuthService', () => {
 
         describe('`onLockUpdate`', () => {
             beforeEach(() => {
-                jest.spyOn(auth.alarms, 'setAutoLock').mockResolvedValue(undefined);
+                vi.spyOn(auth.alarms, 'setAutoLock').mockResolvedValue(undefined);
             });
 
             test('should clear the auto-lock alarm before any rearm', async () => {
@@ -244,7 +246,7 @@ describe('Extension AuthService', () => {
                 await auth.config.onLoginComplete?.('userId', undefined);
                 expect(auth.alarms.resetAutoResume).toHaveBeenCalled();
 
-                jest.clearAllMocks();
+                vi.clearAllMocks();
 
                 ctx.booted = true;
                 await auth.config.onLoginComplete?.('userId', undefined);
@@ -270,9 +272,9 @@ describe('Extension AuthService', () => {
 
         describe('`onResumeStart`', () => {
             beforeEach(() => {
-                auth.config.onSessionEmpty = jest.fn();
-                auth.config.onSessionFailure = jest.fn();
-                auth.config.onNotification = jest.fn();
+                auth.config.onSessionEmpty = vi.fn();
+                auth.config.onSessionFailure = vi.fn();
+                auth.config.onNotification = vi.fn();
             });
 
             test('should proceed when permissions are available', async () => {
@@ -362,7 +364,7 @@ describe('Extension AuthService', () => {
                 permissions.hasHostPermissions.mockResolvedValueOnce(true);
                 connectivity.online = false;
                 ctx.booted = false;
-                (ctx.service.storage.local.getItem as jest.Mock).mockImplementation(async (key: string) =>
+                (ctx.service.storage.local.getItem as Mock).mockImplementation(async (key: string) =>
                     key === 'forceLock' ? true : undefined
                 );
 
@@ -390,8 +392,8 @@ describe('Extension AuthService', () => {
 
         describe('`onUnlocked`', () => {
             beforeEach(() => {
-                auth.resumeSession = jest.fn() as any;
-                auth.login = jest.fn();
+                auth.resumeSession = vi.fn() as any;
+                auth.login = vi.fn();
             });
 
             test('should handle SESSION lock mode with valid session', async () => {
@@ -561,7 +563,7 @@ describe('Extension AuthService', () => {
                 await auth.config.onSessionFailure?.({ retryable: true }, genericError);
 
                 /** Each call schedules WITHOUT the `extend` flag (real attempt). */
-                const calls = (auth.alarms.scheduleAutoResume as jest.Mock).mock.calls;
+                const calls = (auth.alarms.scheduleAutoResume as Mock).mock.calls;
                 expect(calls).toHaveLength(3);
                 calls.forEach(([arg]) => expect(arg).toStrictEqual({ extend: false }));
             });
@@ -645,10 +647,10 @@ describe('Extension AuthService', () => {
             let subscriber: (event: ConnectivityEvent) => void;
 
             beforeEach(() => {
-                jest.spyOn(auth.alarms, 'scheduleAutoResume').mockResolvedValue(undefined);
-                auth.init = jest.fn().mockResolvedValue(true);
+                vi.spyOn(auth.alarms, 'scheduleAutoResume').mockResolvedValue(undefined);
+                auth.init = vi.fn().mockResolvedValue(true);
                 authStore.setLocalID(123);
-                subscriber = (connectivity.subscribe as jest.Mock).mock.calls[0][0];
+                subscriber = (connectivity.subscribe as Mock).mock.calls[0][0];
             });
 
             test('should bootstrap auto-resume alarm when coming online from offline-booted client', () => {
@@ -709,13 +711,13 @@ describe('Extension AuthService', () => {
 
             beforeEach(() => {
                 auth = createAuthService(api, authStore);
-                jest.spyOn(auth.alarms.autoResumeAlarm, 'listen').mockImplementation((cb) => {
+                vi.spyOn(auth.alarms.autoResumeAlarm, 'listen').mockImplementation((cb) => {
                     /** Capture the listener registered inside `auth.listen()` */
                     alarmListener = cb as () => Promise<void>;
-                    return jest.fn();
+                    return vi.fn();
                 });
-                jest.spyOn(auth.alarms, 'scheduleAutoResume').mockResolvedValue(undefined);
-                auth.init = jest.fn().mockResolvedValue(true);
+                vi.spyOn(auth.alarms, 'scheduleAutoResume').mockResolvedValue(undefined);
+                auth.init = vi.fn().mockResolvedValue(true);
                 authStore.setLocalID(123);
                 auth.listen();
                 WorkerMessageBroker.ports.query.mockReturnValue([]);
@@ -754,7 +756,7 @@ describe('Extension AuthService', () => {
 
             test('should extend the auto-resume alarm when password-locked with popup open', async () => {
                 ctx.status = AppStatus.PASSWORD_LOCKED;
-                (WorkerMessageBroker.ports.query as jest.Mock).mockReturnValue([{}]);
+                (WorkerMessageBroker.ports.query as Mock).mockReturnValue([{}]);
                 await alarmListener();
                 expect(auth.alarms.scheduleAutoResume).toHaveBeenCalledWith({ extend: true });
                 expect(auth.init).not.toHaveBeenCalled();
@@ -817,7 +819,7 @@ describe('Extension AuthService', () => {
                 ctx.status = AppStatus.PASSWORD_LOCKED;
                 connectivity.online = false;
                 connectivity.status = ConnectivityStatus.OFFLINE;
-                (connectivity.check as jest.Mock).mockImplementationOnce(async () => {
+                (connectivity.check as Mock).mockImplementationOnce(async () => {
                     connectivity.online = true;
                     connectivity.status = ConnectivityStatus.ONLINE;
                 });

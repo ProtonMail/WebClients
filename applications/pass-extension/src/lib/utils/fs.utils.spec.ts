@@ -14,10 +14,10 @@ describe('file-storage/utils', () => {
     describe('portTransferWriter', () => {
         const fileRef = 'test.txt';
         const chunks = [createMockChunk(), createMockChunk()];
-        const port = { postMessage: jest.fn() } as unknown as Runtime.Port;
+        const port = { postMessage: vi.fn() } as unknown as Runtime.Port;
 
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
         });
 
         test('sends data via port when the writer receives chunks', async () => {

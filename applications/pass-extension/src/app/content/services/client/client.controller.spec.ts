@@ -1,3 +1,5 @@
+import type { Mock, MockedFunction } from 'vitest';
+
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { createActivityProbe } from '@proton/pass/utils/time/probe';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -13,34 +15,34 @@ import { createClientObserver } from './client.observer';
 
 const TEST_SCRIPT_ID = 'test-script-id';
 
-jest.mock('./client.observer');
-jest.mock('../../../../lib/message/send-message');
-jest.mock('../../utils/frame');
-jest.mock('@proton/pass/utils/time/probe');
+vi.mock('./client.observer');
+vi.mock('../../../../lib/message/send-message');
+vi.mock('../../utils/frame');
+vi.mock('@proton/pass/utils/time/probe');
 
-const mockCreateClientObserver = createClientObserver as jest.MockedFunction<typeof createClientObserver>;
-const mockCreateActivityProbe = createActivityProbe as jest.MockedFunction<typeof createActivityProbe>;
+const mockCreateClientObserver = createClientObserver as MockedFunction<typeof createClientObserver>;
+const mockCreateActivityProbe = createActivityProbe as MockedFunction<typeof createActivityProbe>;
 
 const mockObserver = {
-    observe: jest.fn(),
-    destroy: jest.fn(),
-    subscribe: jest.fn((_: Subscriber<ClientObserverEvent>) => () => {}),
+    observe: vi.fn(),
+    destroy: vi.fn(),
+    subscribe: vi.fn((_: Subscriber<ClientObserverEvent>) => () => {}),
 };
 
 const mockClient = {
     context: {} as any,
-    start: jest.fn(() => Promise.resolve()),
-    destroy: jest.fn(),
+    start: vi.fn(() => Promise.resolve()),
+    destroy: vi.fn(),
 };
 
 const mockProbe = {
-    start: jest.fn(),
-    cancel: jest.fn(),
+    start: vi.fn(),
+    cancel: vi.fn(),
 };
 
-const mockClientFactory = jest.fn((_: ContentScriptClientFactoryOptions) => mockClient as ContentScriptClient);
+const mockClientFactory = vi.fn((_: ContentScriptClientFactoryOptions) => mockClient as ContentScriptClient);
 const elements = { root: 'pass-root-test', control: 'pass-control-test' };
-const assertFrameVisible = frameUtils.assertFrameVisible as jest.Mock;
+const assertFrameVisible = frameUtils.assertFrameVisible as Mock;
 
 const setFrameVisibility = (state: DocumentVisibilityState) => {
     assertFrameVisible.mockReset();
@@ -59,7 +61,7 @@ const createMockClientController = (mainFrame: boolean) => {
         mainFrame,
     });
 
-    jest.spyOn(ctrl, 'registerElements').mockResolvedValue(elements);
+    vi.spyOn(ctrl, 'registerElements').mockResolvedValue(elements);
     return ctrl;
 };
 
@@ -67,7 +69,7 @@ describe('Client controller', () => {
     let ctrl: ClientController;
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         assertFrameVisible.mockReset();
         assertFrameVisible.mockResolvedValue(true);
@@ -92,7 +94,7 @@ describe('Client controller', () => {
         mockCreateActivityProbe.mockReturnValue(mockProbe);
     });
 
-    afterEach(() => jest.useRealTimers());
+    afterEach(() => vi.useRealTimers());
 
     describe('initialization', () => {
         test('should register `UNLOAD_CONTENT_SCRIPT handler`', async () => {
@@ -100,14 +102,14 @@ describe('Client controller', () => {
             setFrameVisibility('visible');
 
             ctrl = createMockClientController(true);
-            jest.spyOn(ctrl, 'destroy');
-            const register = jest.spyOn(ctrl.channel, 'register');
+            vi.spyOn(ctrl, 'destroy');
+            const register = vi.spyOn(ctrl.channel, 'register');
 
             await ctrl.init();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
 
             const listener = register.mock.calls.find(([m]) => m === type)?.[1];
-            listener?.(backgroundMessage({ type }), jest.fn());
+            listener?.(backgroundMessage({ type }), vi.fn());
 
             expect(ctrl.destroy).toHaveBeenCalled();
             expect(mockClient.destroy).toHaveBeenCalled();
@@ -116,7 +118,7 @@ describe('Client controller', () => {
 
         test('should register `FRAME_DEFERRED_INIT` handler', async () => {
             ctrl = createMockClientController(true);
-            const register = jest.spyOn(ctrl.channel, 'register');
+            const register = vi.spyOn(ctrl.channel, 'register');
 
             setFrameVisibility('visible');
             await ctrl.init();
@@ -127,7 +129,7 @@ describe('Client controller', () => {
 
         test('should register `FRAME_QUERY` handler', async () => {
             ctrl = createMockClientController(true);
-            const register = jest.spyOn(ctrl.channel, 'register');
+            const register = vi.spyOn(ctrl.channel, 'register');
 
             setFrameVisibility('visible');
             await ctrl.init();
@@ -180,7 +182,7 @@ describe('Client controller', () => {
             setFrameVisibility('visible');
             document.dispatchEvent(new Event('visibilitychange'));
 
-            await jest.advanceTimersByTimeAsync(CLIENT_START_TIMEOUT_MS);
+            await vi.advanceTimersByTimeAsync(CLIENT_START_TIMEOUT_MS);
 
             expect(mockClientFactory).toHaveBeenCalled();
             ctrl.destroy();
@@ -198,7 +200,7 @@ describe('Client controller', () => {
                     document.dispatchEvent(new Event('visibilitychange'));
                 });
 
-                await jest.advanceTimersByTimeAsync(25);
+                await vi.advanceTimersByTimeAsync(25);
                 await hide;
 
                 const show = wait(25).then(() => {
@@ -206,11 +208,11 @@ describe('Client controller', () => {
                     document.dispatchEvent(new Event('visibilitychange'));
                 });
 
-                await jest.advanceTimersByTimeAsync(25);
+                await vi.advanceTimersByTimeAsync(25);
                 await show;
             }
 
-            await jest.advanceTimersByTimeAsync(350);
+            await vi.advanceTimersByTimeAsync(350);
 
             expect(mockClient.destroy).toHaveBeenCalledTimes(1);
             expect(mockClientFactory).toHaveBeenCalledTimes(2);
@@ -222,7 +224,7 @@ describe('Client controller', () => {
                 throw new Error('Client creation failed');
             });
 
-            jest.spyOn(ctrl, 'destroy');
+            vi.spyOn(ctrl, 'destroy');
             setFrameVisibility('visible');
             await ctrl.init();
 
@@ -237,7 +239,7 @@ describe('Client controller', () => {
             expect(mockClientFactory).toHaveBeenCalled();
             expect(mockClient.start).toHaveBeenCalled();
 
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
 
             expect(mockProbe.start).toHaveBeenCalled();
             ctrl.destroy();
@@ -269,7 +271,7 @@ describe('Client controller', () => {
 
         test('should not defer initialization when loading in visible sub-frame', async () => {
             setFrameVisibility('visible');
-            jest.spyOn(ctrl, 'defer');
+            vi.spyOn(ctrl, 'defer');
 
             await ctrl.init();
 
@@ -284,7 +286,7 @@ describe('Client controller', () => {
 
         test('should defer initialization when loading in non-visible sub-frame', async () => {
             setFrameVisibility('hidden');
-            jest.spyOn(ctrl, 'defer');
+            vi.spyOn(ctrl, 'defer');
 
             await ctrl.init();
 
@@ -320,12 +322,12 @@ describe('Client controller', () => {
 
             setFrameVisibility('visible');
             document.dispatchEvent(new Event('visibilitychange'));
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             expect(mockObserver.observe).toHaveBeenCalledTimes(2);
 
             setFrameVisibility('hidden');
             document.dispatchEvent(new Event('visibilitychange'));
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             expect(mockClient.destroy).toHaveBeenCalled();
 
             ctrl.destroy();
@@ -335,18 +337,18 @@ describe('Client controller', () => {
             setFrameVisibility('hidden');
             const type = WorkerMessageType.FRAME_DEFERRED_INIT;
 
-            const register = jest.spyOn(ctrl.channel, 'register');
-            jest.spyOn(ctrl, 'defer');
+            const register = vi.spyOn(ctrl.channel, 'register');
+            vi.spyOn(ctrl, 'defer');
 
             await ctrl.init();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             expect(ctrl.deferred).toBe(true);
 
             setFrameVisibility('visible');
 
             const listener = register.mock.calls.find(([m]) => m === type)?.[1];
-            listener?.(backgroundMessage({ type }), jest.fn());
-            await jest.runAllTimersAsync();
+            listener?.(backgroundMessage({ type }), vi.fn());
+            await vi.runAllTimersAsync();
 
             expect(ctrl.defer).toHaveBeenCalled();
             ctrl.destroy();
@@ -355,18 +357,18 @@ describe('Client controller', () => {
         test('should ignore `FRAME_DEFERRED_INIT` when already initialized', async () => {
             setFrameVisibility('visible');
             await ctrl.init();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
 
             expect(ctrl.instance).toBeTruthy();
             expect(ctrl.deferred).toBe(false);
 
             const type = WorkerMessageType.FRAME_DEFERRED_INIT;
-            const register = jest.spyOn(ctrl.channel, 'register');
+            const register = vi.spyOn(ctrl.channel, 'register');
             const listener = register.mock.calls.find(([m]) => m === type)?.[1];
-            listener?.(backgroundMessage({ type }), jest.fn());
+            listener?.(backgroundMessage({ type }), vi.fn());
 
-            jest.spyOn(ctrl, 'startImmediate');
-            await jest.runAllTimersAsync();
+            vi.spyOn(ctrl, 'startImmediate');
+            await vi.runAllTimersAsync();
 
             expect(ctrl.startImmediate).not.toHaveBeenCalled();
             ctrl.destroy();
@@ -380,7 +382,7 @@ describe('Client controller', () => {
             expect(ctrl.deferredUnsubscribe).toBeDefined();
 
             const ctrlWithUnsub = ctrl as ClientController & { deferredUnsubscribe: () => void };
-            const unsubscribeSpy = jest.spyOn(ctrlWithUnsub, 'deferredUnsubscribe');
+            const unsubscribeSpy = vi.spyOn(ctrlWithUnsub, 'deferredUnsubscribe');
 
             ctrl.destroy();
 
@@ -398,7 +400,7 @@ describe('Client controller', () => {
 
             const subscribe = mockObserver.subscribe.mock.calls[0][0];
             await subscribe({ type: 'mutation', reason: 'dom-change' });
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
 
             expect(mockClientFactory).toHaveBeenCalled();
             expect(mockClient.start).toHaveBeenCalled();
@@ -417,7 +419,7 @@ describe('Client controller', () => {
             setFrameVisibility('visible');
             const subscribe = mockObserver.subscribe.mock.calls[0][0];
             await subscribe({ type: 'event', event: { type: 'resize' } as any });
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
 
             expect(mockClientFactory).toHaveBeenCalled();
             expect(mockClient.start).toHaveBeenCalled();
@@ -435,7 +437,7 @@ describe('Client controller', () => {
 
             const subscribe = mockObserver.subscribe.mock.calls[0][0];
             await subscribe({ type: 'event', event: { type: 'resize' } as any });
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
 
             expect(mockClientFactory).not.toHaveBeenCalled();
             expect(mockClient.start).not.toHaveBeenCalled();
@@ -447,7 +449,7 @@ describe('Client controller', () => {
     describe('cleanup', () => {
         test('should clean up all resources on destroy', async () => {
             ctrl = createMockClientController(true);
-            const channelDestroy = jest.spyOn(ctrl.channel, 'destroy');
+            const channelDestroy = vi.spyOn(ctrl.channel, 'destroy');
 
             setFrameVisibility('visible');
             await ctrl.init();

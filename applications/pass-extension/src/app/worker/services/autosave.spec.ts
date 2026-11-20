@@ -23,12 +23,13 @@ import store from '../__mocks__/store';
 import { WorkerContext } from '../context/inject';
 import { createAutoSaveService } from './autosave';
 
-jest.mock('../channel');
+vi.mock('../channel');
 
-const { default: WorkerMessageBroker } = jest.requireMock('../channel') as typeof ChannelMock;
+const { default: WorkerMessageBroker } = (await import('../channel')) as typeof ChannelMock;
 
 describe('AutosaveService [worker]', () => {
     const autosave = createAutoSaveService();
+    const registeredMessages = [...WorkerMessageBroker.registerMessage.mock.calls];
 
     beforeEach(() => {
         WorkerContext.set({ service: { store } } as any);
@@ -399,7 +400,7 @@ describe('AutosaveService [worker]', () => {
         beforeEach(() => setMockMessageSender('https://proton.me'));
 
         test('should setup message handler', () => {
-            const [type] = WorkerMessageBroker.registerMessage.mock.calls[0];
+            const [type] = registeredMessages[0];
             expect(type).toEqual(WorkerMessageType.AUTOSAVE_REQUEST);
         });
 
@@ -421,7 +422,7 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
+            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall!;
 
             expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
@@ -449,7 +450,7 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
+            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall!;
 
             expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
@@ -479,7 +480,7 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
+            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall!;
 
             expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);
@@ -552,7 +553,7 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const [actions, updated] = store.dispatchAsyncRequest.mock.lastCall;
+            const [actions, updated] = store.dispatchAsyncRequest.mock.lastCall!;
 
             expectMessageSuccess(response);
             expect(actions).toEqual(itemEdit);
@@ -599,7 +600,7 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const [actions, updated] = store.dispatchAsyncRequest.mock.lastCall;
+            const [actions, updated] = store.dispatchAsyncRequest.mock.lastCall!;
 
             expectMessageSuccess(response);
             expect(actions).toEqual(itemEdit);
@@ -629,7 +630,7 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall;
+            const [actions, created] = store.dispatchAsyncRequest.mock.lastCall!;
 
             expectMessageSuccess(response);
             expect(actions).toEqual(itemCreate);

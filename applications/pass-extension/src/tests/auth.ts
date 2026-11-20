@@ -27,7 +27,7 @@ import store, { runSagas } from '../app/worker/store';
 import { EXTENSION_MANIFEST_VERSION } from '../lib/utils/version';
 
 /** The worker store only loads the devtools enhancer in development, but imports it unconditionally */
-jest.mock('@redux-devtools/remote', () => ({ devToolsEnhancer: jest.fn() }));
+vi.mock('@redux-devtools/remote', () => ({ devToolsEnhancer: vi.fn() }));
 
 const config = { APP_NAME: 'proton-pass-extension', APP_VERSION: '1.0.0', API_URL: TEST_API_URL } as ProtonConfig;
 
@@ -58,15 +58,23 @@ const createTestStorage = (init: StorageData = {}) => {
  * while timers advance is still returned to the caller, not reported unhandled. */
 const settle = async <T>(promise: Promise<T>): Promise<T> => {
     promise.catch(noop);
-    await jest.advanceTimersByTimeAsync(120_000);
+    await vi.advanceTimersByTimeAsync(120_000);
     return promise;
 };
 
+/** Real time `bootSettled` grants to the async work of the sagas (crypto): a loaded
+ * CI runner needs far more than a fixed number of ticks to finish a boot. */
+const BOOT_REAL_TIMEOUT = 20_000;
+
 /** Runs the clock until `done`, letting the real async work of the sagas (crypto)
- * finish between ticks: advancing fake timers alone never waits for it. */
-const settleUntil = async (done: () => boolean) => {
-    for (let tick = 0; tick < 120 && !done(); tick++) {
-        await jest.advanceTimersByTimeAsync(1_000);
+ * finish between ticks: advancing fake timers alone never waits for it.
+ * The fake clock only moves for the first 120 ticks (it covers waits and timeouts).
+ * With `realTimeout`, the loop then keeps yielding to the real work until that deadline. */
+const settleUntil = async (done: () => boolean, realTimeout = 0) => {
+    const deadline = vi.getRealSystemTime() + realTimeout;
+
+    for (let tick = 0; !done() && (tick < 120 || vi.getRealSystemTime() < deadline); tick++) {
+        if (tick < 120) await vi.advanceTimersByTimeAsync(1_000);
         await new Promise((resolve) => nextMacrotask(resolve));
     }
 };
@@ -105,7 +113,7 @@ afterEach(() => {
 
 /** Marks the worker booted the way a successful boot saga does */
 const createStandInStore = (ctx: any) => ({
-    dispatch: jest.fn((action) => {
+    dispatch: vi.fn((action) => {
         if (bootIntent.match(action)) {
             ctx.setStatus(action.payload?.offline ? AppStatus.OFFLINE : AppStatus.READY);
             ctx.setBooted(true);
@@ -139,11 +147,11 @@ type TestWorkerOptions = { cache?: EncryptedPassCache; state?: TestWorkerState }
  * in the worker storage) the real worker store and boot saga run: an offline
  * boot hydrates the state from it. */
 export const setupAuthWorker = (persisted: TestPersistedSession, { cache, state }: TestWorkerOptions = {}) => {
-    jest.mocked(loadCryptoWorker).mockResolvedValue(undefined);
+    vi.mocked(loadCryptoWorker).mockResolvedValue(undefined);
 
     const api = exposeApi(createApi({ config }));
     const alarms = wireTestAlarms(state?.alarms);
-    jest.mocked(WorkerMessageBroker.ports.query).mockReturnValue([]);
+    vi.mocked(WorkerMessageBroker.ports.query).mockReturnValue([]);
     const authStore = exposeAuthStore(createAuthStore(createMemoryStore()));
     const local = createTestStorage(
         state?.local ?? { ps: persisted.encrypted, ...cache, ...(cache && { version: EXTENSION_MANIFEST_VERSION }) }
@@ -158,24 +166,24 @@ export const setupAuthWorker = (persisted: TestPersistedSession, { cache, state 
         setStatus: (status: AppStatus) => (ctx.status = status),
         setBooted: (booted: boolean) => (ctx.booted = booted),
         service: {
-            activation: { boot: jest.fn() },
-            apiProxy: { clear: jest.fn().mockResolvedValue(undefined) },
+            activation: { boot: vi.fn() },
+            apiProxy: { clear: vi.fn().mockResolvedValue(undefined) },
             autofill: {
-                basicAuth: { destroy: jest.fn(), listen: jest.fn() },
-                clear: jest.fn(),
-                refreshAssignedModelId: jest.fn(),
-                sync: jest.fn(),
+                basicAuth: { destroy: vi.fn(), listen: vi.fn() },
+                clear: vi.fn(),
+                refreshAssignedModelId: vi.fn(),
+                sync: vi.fn(),
             },
             connectivity: createConnectivityService(),
-            featureFlags: { resolve: jest.fn().mockResolvedValue({ features: {}, variants: {} }), sync: jest.fn() },
-            formTracker: { clear: jest.fn() },
-            i18n: { setLocale: jest.fn().mockResolvedValue(undefined) },
-            logger: { clear: jest.fn().mockResolvedValue(undefined) },
-            nativeMessaging: { disconnect: jest.fn() },
-            settings: { clear: jest.fn(), resolve: jest.fn().mockResolvedValue({}), sync: jest.fn() },
-            spotlight: { reset: jest.fn() },
+            featureFlags: { resolve: vi.fn().mockResolvedValue({ features: {}, variants: {} }), sync: vi.fn() },
+            formTracker: { clear: vi.fn() },
+            i18n: { setLocale: vi.fn().mockResolvedValue(undefined) },
+            logger: { clear: vi.fn().mockResolvedValue(undefined) },
+            nativeMessaging: { disconnect: vi.fn() },
+            settings: { clear: vi.fn(), resolve: vi.fn().mockResolvedValue({}), sync: vi.fn() },
+            spotlight: { reset: vi.fn() },
             storage: { local, session },
-            telemetry: { start: jest.fn().mockResolvedValue(undefined), stop: jest.fn() },
+            telemetry: { start: vi.fn().mockResolvedValue(undefined), stop: vi.fn() },
         },
     };
 
@@ -216,7 +224,7 @@ export const setupAuthWorker = (persisted: TestPersistedSession, { cache, state 
          * are swallowed: assertions read the worker state, not the request outcome */
         request: (method: 'get' | 'post', url: string) => settle(api({ method, url }).catch(noop)),
         settleUntil,
-        bootSettled: () => settleUntil(() => ctx.status !== AppStatus.BOOTING),
+        bootSettled: () => settleUntil(() => ctx.status !== AppStatus.BOOTING, BOOT_REAL_TIMEOUT),
         /** Service worker start, as `activation.ts` resumes the session */
         start: () => settle(auth.init({ forceLock: false, retryable: true })),
         unlock: (password: string) => settle(auth.unlock({ mode: LockMode.PASSWORD, password: obfuscate(password) })),

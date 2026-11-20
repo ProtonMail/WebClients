@@ -4,7 +4,7 @@ import { FormType } from '@protontech/autofill/types';
 import { waitFor } from '@testing-library/react';
 import type { Runtime } from 'webextension-polyfill';
 
-import '@proton/components/testing/mockMatchMedia';
+import '@proton/components/testing/vitest/mockMatchMedia';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull } from '@proton/pass/types/utils';
@@ -29,10 +29,10 @@ import { WorkerMessageType } from '../types/messages';
 const createPort = (name: string) =>
     ({
         name,
-        onMessage: { addListener: jest.fn(), removeListener: jest.fn() },
-        onDisconnect: { addListener: jest.fn(), removeListener: jest.fn() },
-        postMessage: jest.fn(),
-        disconnect: jest.fn(),
+        onMessage: { addListener: vi.fn(), removeListener: vi.fn() },
+        onDisconnect: { addListener: vi.fn(), removeListener: vi.fn() },
+        postMessage: vi.fn(),
+        disconnect: vi.fn(),
     }) as unknown as Runtime.Port;
 
 /** The custom elements registry outlives each test: a random
@@ -62,12 +62,12 @@ const registerBootHandlers = () => {
     }));
 
     (browser.runtime as any).id = 'test-extension';
-    (browser.runtime as any).connect = jest.fn((_id: string, { name }: { name: string }) => createPort(name));
+    (browser.runtime as any).connect = vi.fn((_id: string, { name }: { name: string }) => createPort(name));
 };
 
-/** jsdom lacks constructable stylesheets, used by the inline UI shadow roots */
+/** The inline UI shadow roots adopt stylesheets built from the `.raw.scss` stub, which is not CSS text */
 const mockConstructableStylesheets = () => {
-    CSSStyleSheet.prototype.replaceSync ??= function () {};
+    CSSStyleSheet.prototype.replaceSync = function () {};
     if (!('adoptedStyleSheets' in ShadowRoot.prototype)) {
         const sheets = new WeakMap<ShadowRoot, CSSStyleSheet[]>();
         Object.defineProperty(ShadowRoot.prototype, 'adoptedStyleSheets', {
@@ -91,7 +91,7 @@ const mockIdleCallback = () => {
  * logs each failure. The parsable rules still apply, so only mute that. */
 const withoutCssParseErrors = (fn: () => void) => {
     const consoleError = console.error;
-    const spy = jest.spyOn(console, 'error').mockImplementation((...args: unknown[]) => {
+    const spy = vi.spyOn(console, 'error').mockImplementation((...args: unknown[]) => {
         const [error] = args as [{ message?: string }];
         if (error?.message === 'Could not parse CSS stylesheet') return;
         consoleError(...args);
@@ -104,9 +104,21 @@ const withoutCssParseErrors = (fn: () => void) => {
     }
 };
 
+/** happy-dom measures the viewport 0x0 through its own getters, where the visibility walk expects a box */
+const mockHappyDomLayout = () => {
+    const { innerWidth: width, innerHeight: height } = window;
+    [HTMLElement.prototype, Element.prototype].forEach((proto) => {
+        Object.defineProperty(proto, 'clientWidth', { configurable: true, get: () => width });
+        Object.defineProperty(proto, 'clientHeight', { configurable: true, get: () => height });
+        Object.defineProperty(proto, 'scrollWidth', { configurable: true, get: () => width });
+        Object.defineProperty(proto, 'scrollHeight', { configurable: true, get: () => height });
+    });
+};
+
 /** Loads `html` as the document of a visible tab */
 export const loadPage = (html: string) => {
     mockLayout();
+    mockHappyDomLayout();
     mockConstructableStylesheets();
     mockIdleCallback();
     Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => 'visible' });

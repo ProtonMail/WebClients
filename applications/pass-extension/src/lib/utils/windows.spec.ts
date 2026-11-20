@@ -6,13 +6,13 @@ const emitFocusChanged = (windowId: number) => onFocusChanged.addListener.mock.c
 
 describe('waitForWindowFocus', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         getLastFocused.mockResolvedValue({ focused: false });
         onFocusChanged.addListener.mockClear();
         onFocusChanged.removeListener.mockClear();
     });
 
-    afterEach(() => jest.useRealTimers());
+    afterEach(() => vi.useRealTimers());
 
     test('resolves `true` when the last focused window is already focused', async () => {
         getLastFocused.mockResolvedValue({ focused: true });
@@ -29,13 +29,13 @@ describe('waitForWindowFocus', () => {
     test('ignores focus leaving every window', async () => {
         const result = waitForWindowFocus(2_000);
         emitFocusChanged(browser.windows.WINDOW_ID_NONE);
-        jest.advanceTimersByTime(2_000);
+        vi.advanceTimersByTime(2_000);
         await expect(result).resolves.toBe(false);
     });
 
     test('resolves `false` and stops listening after the timeout', async () => {
         const result = waitForWindowFocus(2_000);
-        jest.advanceTimersByTime(2_000);
+        vi.advanceTimersByTime(2_000);
         await expect(result).resolves.toBe(false);
         expect(onFocusChanged.removeListener).toHaveBeenCalledWith(onFocusChanged.addListener.mock.calls[0][0]);
     });

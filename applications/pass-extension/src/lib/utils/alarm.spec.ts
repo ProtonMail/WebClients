@@ -8,20 +8,20 @@ const { createExtensionAlarm, setupBrowserAlarm } = extensionAlarms;
 
 const TEST_ALARM_NAME = 'test-alarm';
 
-jest.mock('@proton/pass/utils/time/alarm', () => ({
+vi.mock('@proton/pass/utils/time/alarm', async () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/pass/utils/time/alarm'),
+    ...(await vi.importActual('@proton/pass/utils/time/alarm')),
 }));
 
 describe('Alarm utilities', () => {
-    const onAlarm = jest.fn();
+    const onAlarm = vi.fn();
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         onAlarm.mockClear();
         clearBrowserMocks();
     });
@@ -94,7 +94,7 @@ describe('Alarm utilities', () => {
     });
 
     describe('createExtensionAlarm', () => {
-        const createTimeoutAlarm = jest.spyOn(coreAlarms, 'createTimeoutAlarm');
+        const createTimeoutAlarm = vi.spyOn(coreAlarms, 'createTimeoutAlarm');
         const getTimeoutAlarm = () => createTimeoutAlarm.mock.results[0].value;
 
         afterEach(() => {
@@ -110,7 +110,7 @@ describe('Alarm utilities', () => {
         test('should use timeout alarm for delays under 1 minute', async () => {
             const alarm = createExtensionAlarm(TEST_ALARM_NAME, onAlarm);
             const timeoutAlarm = getTimeoutAlarm();
-            const timeoutAlarmSet = jest.spyOn(timeoutAlarm, 'set');
+            const timeoutAlarmSet = vi.spyOn(timeoutAlarm, 'set');
             const when = Date.now() + MINUTE - 1;
 
             await alarm.set(when);
@@ -121,7 +121,7 @@ describe('Alarm utilities', () => {
         test('should use browser alarm for delays of 1 minute or more', async () => {
             const alarm = createExtensionAlarm(TEST_ALARM_NAME, onAlarm);
             const timeoutAlarm = getTimeoutAlarm();
-            const timeoutAlarmSet = jest.spyOn(timeoutAlarm, 'set');
+            const timeoutAlarmSet = vi.spyOn(timeoutAlarm, 'set');
             const when = Date.now() + MINUTE + 1;
 
             await alarm.set(when);
@@ -132,7 +132,7 @@ describe('Alarm utilities', () => {
         test('should reset both alarms when reset is called', async () => {
             const alarm = createExtensionAlarm(TEST_ALARM_NAME, onAlarm);
             const timeoutAlarm = getTimeoutAlarm();
-            const timeoutAlarmReset = jest.spyOn(timeoutAlarm, 'reset');
+            const timeoutAlarmReset = vi.spyOn(timeoutAlarm, 'reset');
 
             await alarm.reset();
             expect(timeoutAlarmReset).toHaveBeenCalledWith();
@@ -142,7 +142,7 @@ describe('Alarm utilities', () => {
         test('should reset both alarms before setting new alarm', async () => {
             const alarm = createExtensionAlarm(TEST_ALARM_NAME, onAlarm);
             const timeoutAlarm = getTimeoutAlarm();
-            const timeoutAlarmReset = jest.spyOn(timeoutAlarm, 'reset');
+            const timeoutAlarmReset = vi.spyOn(timeoutAlarm, 'reset');
 
             await alarm.set(Date.now() + MINUTE);
             expect(timeoutAlarmReset).toHaveBeenCalled();
@@ -154,7 +154,7 @@ describe('Alarm utilities', () => {
             const timeoutAlarm = getTimeoutAlarm();
             const when = Date.now() + (MINUTE - 1000);
 
-            jest.spyOn(timeoutAlarm, 'when').mockResolvedValue(when);
+            vi.spyOn(timeoutAlarm, 'when').mockResolvedValue(when);
 
             const result = await alarm.when();
             expect(result).toBe(when);
@@ -165,7 +165,7 @@ describe('Alarm utilities', () => {
             const timeoutAlarm = getTimeoutAlarm();
             const scheduledTime = Date.now() + MINUTE + 1;
 
-            jest.spyOn(timeoutAlarm, 'when').mockResolvedValue(undefined);
+            vi.spyOn(timeoutAlarm, 'when').mockResolvedValue(undefined);
             browser.alarms.get.mockResolvedValue({ scheduledTime });
 
             const result = await alarm.when();
@@ -176,7 +176,7 @@ describe('Alarm utilities', () => {
             const alarm = createExtensionAlarm(TEST_ALARM_NAME, onAlarm);
             const timeoutAlarm = getTimeoutAlarm();
 
-            jest.spyOn(timeoutAlarm, 'when').mockResolvedValue(undefined);
+            vi.spyOn(timeoutAlarm, 'when').mockResolvedValue(undefined);
             browser.alarms.get.mockResolvedValue(undefined);
             const result = await alarm.when();
 
@@ -186,7 +186,7 @@ describe('Alarm utilities', () => {
         test('should handle errors during reset gracefully', async () => {
             const alarm = createExtensionAlarm(TEST_ALARM_NAME, onAlarm);
             const timeoutAlarm = getTimeoutAlarm();
-            const timeoutAlarmReset = jest.spyOn(timeoutAlarm, 'reset');
+            const timeoutAlarmReset = vi.spyOn(timeoutAlarm, 'reset');
 
             browser.alarms.clear.mockRejectedValueOnce(new Error());
 

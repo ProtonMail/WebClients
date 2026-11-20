@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type { ModelArtifact } from '@proton/pass/lib/extension/model-artifact/model-artifact';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { assignedModelIdUpdated } from '@proton/pass/store/actions/creators/assigned-model-id';
@@ -24,9 +26,9 @@ import type * as ChannelMock from '../__mocks__/channel';
 import { WorkerContext } from '../context/inject';
 import { createAutoFillService } from './autofill';
 
-jest.mock('../channel');
+vi.mock('../channel');
 
-const { mockHandlers } = jest.requireMock('../channel') as typeof ChannelMock;
+const { mockHandlers } = (await import('../channel')) as typeof ChannelMock;
 
 describe('AutofillService', () => {
     const topLevelURL = 'https://bank.example/login';
@@ -38,9 +40,9 @@ describe('AutofillService', () => {
 
     let state: State;
     let authorized: boolean;
-    let dispatch: jest.Mock;
-    let getItems: jest.Mock;
-    let setItem: jest.Mock;
+    let dispatch: Mock;
+    let getItems: Mock;
+    let setItem: Mock;
     let service: ReturnType<typeof createAutoFillService>;
 
     const setLoginItem = (urls: string[]) => {
@@ -68,7 +70,7 @@ describe('AutofillService', () => {
         );
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         clearBrowserMocks();
         mockHandlers.clear();
 
@@ -76,18 +78,18 @@ describe('AutofillService', () => {
         state = getMockState();
         setLoginItem([topLevelURL]);
         browser.tabs.get.mockResolvedValue({ id: 1, url: topLevelURL });
-        dispatch = jest.fn();
-        getItems = jest.fn().mockResolvedValue({});
-        setItem = jest.fn();
+        dispatch = vi.fn();
+        getItems = vi.fn().mockResolvedValue({});
+        setItem = vi.fn();
 
         WorkerContext.set({
-            ensureReady: jest.fn().mockResolvedValue(undefined),
-            getState: jest.fn(() => ({ authorized })),
+            ensureReady: vi.fn().mockResolvedValue(undefined),
+            getState: vi.fn(() => ({ authorized })),
             service: {
                 storage: { local: { getItems, setItem } },
                 store: {
                     dispatch,
-                    getState: jest.fn(() => state),
+                    getState: vi.fn(() => state),
                 },
             },
         } as any);

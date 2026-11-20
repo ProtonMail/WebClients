@@ -1,17 +1,17 @@
 import { mockHandlers } from './channel.handlers';
 
 const channel = {
-    registerMessage: jest.fn().mockImplementation((type, handler) => mockHandlers.set(type, handler)),
-    onMessage: jest.fn(),
+    registerMessage: vi.fn().mockImplementation((type, handler) => mockHandlers.set(type, handler)),
+    onMessage: vi.fn(),
     buffer: {
-        push: jest.fn(),
-        flush: jest.fn(),
+        push: vi.fn(),
+        flush: vi.fn(),
     },
     ports: {
-        broadcast: jest.fn(),
-        onConnect: jest.fn(),
-        disconnect: jest.fn(),
-        query: jest.fn(),
+        broadcast: vi.fn(),
+        onConnect: vi.fn(),
+        disconnect: vi.fn(),
+        query: vi.fn(),
     },
 };
 

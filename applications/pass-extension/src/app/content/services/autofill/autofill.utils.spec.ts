@@ -1,37 +1,56 @@
+import type { MockInstance } from 'vitest';
+
 import { createAutofill, validateInputAutofill } from './autofill.utils';
 
-const DTSetData = jest.fn();
+const DTSetData = vi.fn();
 
-global.DataTransfer = jest.fn().mockImplementation(() => ({ setData: DTSetData }));
-global.ClipboardEvent = jest.fn().mockImplementation((type, options) => ({
-    type,
-    bubbles: options?.bubbles || false,
-    cancelable: options?.cancelable || false,
-    clipboardData: options?.clipboardData,
-}));
+global.DataTransfer = vi.fn().mockImplementation(function () {
+    return { setData: DTSetData };
+});
+global.ClipboardEvent = vi.fn().mockImplementation(function (type, options) {
+    return {
+        type,
+        bubbles: options?.bubbles || false,
+        cancelable: options?.cancelable || false,
+        clipboardData: options?.clipboardData,
+    };
+});
+
+/** Autofilling waits for a blur that never comes here: let the timers run instead of sleeping */
+const fill = async (
+    autofill: ReturnType<typeof createAutofill>,
+    ...args: Parameters<ReturnType<typeof createAutofill>>
+) => {
+    const filled = autofill(...args);
+    await vi.runAllTimersAsync();
+    return filled;
+};
 
 describe('Autofill utils', () => {
     let input: HTMLInputElement;
-    let dispatchEvent: jest.SpyInstance;
-    let inputClick: jest.SpyInstance;
-    let inputFocus: jest.SpyInstance;
-    let inputBlur: jest.SpyInstance;
+    let dispatchEvent: MockInstance;
+    let inputClick: MockInstance;
+    let inputFocus: MockInstance;
+    let inputBlur: MockInstance;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout'] });
+        vi.clearAllMocks();
         input = document.createElement('input');
-        dispatchEvent = jest.spyOn(input, 'dispatchEvent').mockReturnValue(true);
-        inputClick = jest.spyOn(input, 'click').mockImplementation();
-        inputFocus = jest.spyOn(input, 'focus').mockImplementation();
-        inputBlur = jest.spyOn(input, 'blur').mockImplementation();
+        dispatchEvent = vi.spyOn(input, 'dispatchEvent').mockReturnValue(true);
+        inputClick = vi.spyOn(input, 'click').mockImplementation(() => {});
+        inputFocus = vi.spyOn(input, 'focus').mockImplementation(() => {});
+        inputBlur = vi.spyOn(input, 'blur').mockImplementation(() => {});
         Object.defineProperty(document, 'activeElement', { value: null, writable: true });
         Object.defineProperty(document, 'hasFocus', { value: () => true, writable: true });
     });
 
+    afterEach(() => vi.useRealTimers());
+
     describe('Event sequence: unfocused input', () => {
         test('should dispatch events in correct order', async () => {
             const autofill = createAutofill(input);
-            await autofill('test-value');
+            await fill(autofill, 'test-value');
 
             expect(inputClick).toHaveBeenCalled();
             expect(inputFocus).toHaveBeenCalled();
@@ -47,7 +66,7 @@ describe('Autofill utils', () => {
             Object.defineProperty(document, 'activeElement', { value: input, writable: true });
 
             const autofill = createAutofill(input);
-            await autofill('test-value');
+            await fill(autofill, 'test-value');
 
             expect(inputClick).toHaveBeenCalled();
             expect(inputFocus).not.toHaveBeenCalled();
@@ -61,7 +80,7 @@ describe('Autofill utils', () => {
     describe('Event sequence: paste mode', () => {
         test('should only dispatch paste event, no keyboard events', async () => {
             const autofill = createAutofill(input);
-            await autofill('paste-data', { paste: true });
+            await fill(autofill, 'paste-data', { paste: true });
 
             const eventTypes = dispatchEvent.mock.calls.map((call) => call[0].type);
             expect(eventTypes).toContain('paste');
@@ -74,7 +93,7 @@ describe('Autofill utils', () => {
 
         test('should set clipboard data correctly for paste event', async () => {
             const autofill = createAutofill(input);
-            await autofill('clipboard-content', { paste: true });
+            await fill(autofill, 'clipboard-content', { paste: true });
 
             expect(DTSetData).toHaveBeenCalledWith('text/plain', 'clipboard-content');
 
@@ -87,7 +106,7 @@ describe('Autofill utils', () => {
     describe('Event bubbling', () => {
         test('should ensure all events bubble', async () => {
             const autofill = createAutofill(input);
-            await autofill('test');
+            await fill(autofill, 'test');
 
             const events = dispatchEvent.mock.calls.map((call) => call[0]);
             events.forEach((event) => {
@@ -105,8 +124,8 @@ describe('Autofill utils', () => {
             });
 
             const autofill = createAutofill(input);
-            await expect(autofill('test-value')).resolves.toBeUndefined();
-            await expect(autofill('paste-data', { paste: true })).resolves.toBeUndefined();
+            await expect(fill(autofill, 'test-value')).resolves.toBeUndefined();
+            await expect(fill(autofill, 'paste-data', { paste: true })).resolves.toBeUndefined();
         });
     });
 

@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { WorkerContext } from '../../context/inject';
@@ -10,18 +12,18 @@ describe('auth.utils', () => {
     afterEach(() => WorkerContext.clear());
 
     describe('`shouldForceLock`', () => {
-        let getLocal: jest.Mock;
-        let setLocal: jest.Mock;
-        let getLockLastExtendTime: jest.Mock;
-        let getLockTTL: jest.Mock;
-        let alarmWhen: jest.Mock;
+        let getLocal: Mock;
+        let setLocal: Mock;
+        let getLockLastExtendTime: Mock;
+        let getLockTTL: Mock;
+        let alarmWhen: Mock;
 
         beforeEach(() => {
-            getLocal = jest.fn().mockResolvedValue(undefined);
-            setLocal = jest.fn().mockResolvedValue(undefined);
-            getLockLastExtendTime = jest.fn().mockReturnValue(undefined);
-            getLockTTL = jest.fn().mockReturnValue(undefined);
-            alarmWhen = jest.fn().mockResolvedValue(undefined);
+            getLocal = vi.fn().mockResolvedValue(undefined);
+            setLocal = vi.fn().mockResolvedValue(undefined);
+            getLockLastExtendTime = vi.fn().mockReturnValue(undefined);
+            getLockTTL = vi.fn().mockReturnValue(undefined);
+            alarmWhen = vi.fn().mockResolvedValue(undefined);
 
             ctx = {
                 authStore: { getLockLastExtendTime, getLockTTL },

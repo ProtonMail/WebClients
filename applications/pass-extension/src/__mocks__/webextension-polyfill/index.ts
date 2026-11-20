@@ -1,12 +1,12 @@
 import { mockHandlers } from '../../app/worker/__mocks__/channel.handlers';
 import { errorMessage, resolveMessageResponse } from '../../lib/message/response';
-import { sender } from '../mocks';
+import { sender } from '../sender';
 
 const browser = {
     runtime: {
-        getVersion: jest.fn(() => '0.0.1'),
-        getURL: jest.fn((asset: string) => `test://${asset}`),
-        sendMessage: jest.fn(async (_, message) => {
+        getVersion: vi.fn(() => '0.0.1'),
+        getURL: vi.fn((asset: string) => `test://${asset}`),
+        sendMessage: vi.fn(async (_, message) => {
             const handler = mockHandlers.get(message.type);
             if (handler) {
                 try {
@@ -17,58 +17,58 @@ const browser = {
             }
         }),
         getManifest: () => ({ version: '1.0.0' }),
-        requestUpdateCheck: jest.fn().mockResolvedValue(['no_update']),
+        requestUpdateCheck: vi.fn().mockResolvedValue(['no_update']),
         onMessage: {
-            addListener: jest.fn(),
-            removeListener: jest.fn(),
+            addListener: vi.fn(),
+            removeListener: vi.fn(),
         },
     },
     permissions: {
-        request: jest.fn().mockResolvedValue(true),
-        contains: jest.fn().mockResolvedValue(true),
-        onAdded: { addListener: jest.fn() },
-        onRemoved: { addListener: jest.fn() },
+        request: vi.fn().mockResolvedValue(true),
+        contains: vi.fn().mockResolvedValue(true),
+        onAdded: { addListener: vi.fn() },
+        onRemoved: { addListener: vi.fn() },
     },
     action: {
-        setBadgeBackgroundColor: jest.fn().mockResolvedValue(undefined),
-        setBadgeText: jest.fn().mockResolvedValue(undefined),
+        setBadgeBackgroundColor: vi.fn().mockResolvedValue(undefined),
+        setBadgeText: vi.fn().mockResolvedValue(undefined),
     },
     privacy: {
         services: {
-            autofillAddressEnabled: { get: jest.fn(), set: jest.fn() },
-            passwordSavingEnabled: { get: jest.fn(), set: jest.fn() },
+            autofillAddressEnabled: { get: vi.fn(), set: vi.fn() },
+            passwordSavingEnabled: { get: vi.fn(), set: vi.fn() },
         },
     },
     alarms: {
-        create: jest.fn().mockResolvedValue({}),
-        clear: jest.fn().mockResolvedValue(undefined),
-        get: jest.fn(),
-        onAlarm: { addListener: jest.fn() },
+        create: vi.fn().mockResolvedValue({}),
+        clear: vi.fn().mockResolvedValue(undefined),
+        get: vi.fn(),
+        onAlarm: { addListener: vi.fn() },
     },
     webNavigation: {
-        getAllFrames: jest.fn().mockResolvedValue([]),
-        getFrame: jest.fn().mockResolvedValue({}),
+        getAllFrames: vi.fn().mockResolvedValue([]),
+        getFrame: vi.fn().mockResolvedValue({}),
     },
     tabs: {
-        sendMessage: jest.fn().mockResolvedValue({}),
-        query: jest.fn().mockResolvedValue([]),
-        get: jest.fn().mockResolvedValue({}),
+        sendMessage: vi.fn().mockResolvedValue({}),
+        query: vi.fn().mockResolvedValue([]),
+        get: vi.fn().mockResolvedValue({}),
         onUpdated: {
-            addListener: jest.fn(),
+            addListener: vi.fn(),
         },
-        onRemoved: { addListener: jest.fn() },
+        onRemoved: { addListener: vi.fn() },
     },
     webRequest: {
-        onBeforeRequest: { addListener: jest.fn() },
-        onCompleted: { addListener: jest.fn() },
-        onErrorOccurred: { addListener: jest.fn() },
+        onBeforeRequest: { addListener: vi.fn() },
+        onCompleted: { addListener: vi.fn() },
+        onErrorOccurred: { addListener: vi.fn() },
     },
     windows: {
         WINDOW_ID_NONE: -1,
-        getLastFocused: jest.fn().mockResolvedValue({ focused: false }),
+        getLastFocused: vi.fn().mockResolvedValue({ focused: false }),
         onFocusChanged: {
-            addListener: jest.fn(),
-            removeListener: jest.fn(),
+            addListener: vi.fn(),
+            removeListener: vi.fn(),
         },
     },
 };

@@ -1,11 +1,13 @@
+import type { Mock } from 'vitest';
+
 import browser from '@proton/pass/lib/globals/browser';
 
 import { WorkerMessageType } from '../../../types/messages';
 import { createInlineService } from './inline';
 
-jest.mock('../channel');
+vi.mock('../channel');
 
-const tabsSendMessage = browser.tabs.sendMessage as jest.Mock;
+const tabsSendMessage = browser.tabs.sendMessage as Mock;
 
 const tabId = 42;
 const frameAttributes = { src: 'https://example.com/iframe', width: 400, height: 300 };
@@ -14,7 +16,7 @@ describe('inline service', () => {
     const service = createInlineService();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('queryFrame', () => {

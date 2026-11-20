@@ -153,8 +153,8 @@ describe('shouldCreateStackingContext', () => {
 });
 
 describe('isInvisible', () => {
-    /** JSDOM can't resolve `getComputedStyle(el, '::before')` and reports
-     * an unset `background-image` as '' rather than the 'none'. */
+    /** happy-dom can't resolve `getComputedStyle(el, '::before')` and reports an unset
+     * `background-image` as '' rather than 'none' (and an unset color as '', not transparent). */
     const pseudos: Map<HTMLElement, { before?: string; after?: string }> = new Map();
     const getComputedStyle = window.getComputedStyle.bind(window);
 
@@ -162,7 +162,7 @@ describe('isInvisible', () => {
         document.body.innerHTML = '';
         pseudos.clear();
 
-        jest.spyOn(window, 'getComputedStyle').mockImplementation((el: Element, pseudo?: MaybeNull<string>) => {
+        vi.spyOn(window, 'getComputedStyle').mockImplementation((el: Element, pseudo?: MaybeNull<string>) => {
             if (pseudo === '::before' || pseudo === '::after') {
                 const key = pseudo === '::before' ? 'before' : 'after';
                 return { content: pseudos.get(el as HTMLElement)?.[key] ?? 'none' } as CSSStyleDeclaration;
@@ -173,15 +173,16 @@ describe('isInvisible', () => {
                 display: styles.display,
                 visibility: styles.visibility,
                 opacity: styles.opacity,
-                backgroundColor: styles.backgroundColor,
+                backgroundColor: styles.backgroundColor || 'rgba(0, 0, 0, 0)',
                 backgroundImage: styles.backgroundImage || 'none',
             } as CSSStyleDeclaration;
         });
     });
 
-    afterEach(() => jest.restoreAllMocks());
+    afterEach(() => vi.restoreAllMocks());
 
     const render = (html: string): HTMLElement => {
+        // nosemgrep: insecure-innerhtml -- test only, `html` is a literal fixture of the spec
         document.body.innerHTML = html;
         return document.getElementById('el')!;
     };

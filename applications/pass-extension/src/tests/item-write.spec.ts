@@ -1,6 +1,3 @@
-/**
- * @jest-environment-options {"abortSignal": true}
- */
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { itemCreate } from '@proton/pass/store/actions/creators/item';
@@ -26,7 +23,7 @@ import { RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';
 
 import { setupAuthWorker } from './auth';
 
-jest.mock('../app/worker/channel');
+vi.mock('../app/worker/channel');
 
 const OPTIMISTIC_ID = 'optimistic-login';
 
@@ -103,11 +100,16 @@ describe('Item writes on a booted worker', () => {
 
     let clock = Date.now();
 
-    beforeEach(() => jest.useFakeTimers({ now: clock, doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] }));
+    beforeEach(() =>
+        vi.useFakeTimers({
+            now: clock,
+            toFake: ['setTimeout', 'clearTimeout', 'setInterval', 'clearInterval', 'Date', 'performance'],
+        })
+    );
 
     afterEach(() => {
         clock = Date.now();
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     test.each(BACKEND_FAILURES)(

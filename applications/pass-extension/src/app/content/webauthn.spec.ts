@@ -1,27 +1,29 @@
+import type { MockInstance } from 'vitest';
+
 import type { PasskeyCreateResponse, PasskeyGetResponse } from '@proton/pass/lib/passkeys/types';
 
 import * as bridge from './bridge/message';
 
-const create = jest.fn();
-const get = jest.fn();
+const create = vi.fn();
+const get = vi.fn();
 const credentials = { create, get };
 class PublicKeyCredential {}
 class AuthenticatorAttestationResponse {}
 class AuthenticatorAssertionResponse {}
 
-jest.mock('./bridge/message', () => ({ __esModule: true, ...jest.requireActual('./bridge/message') }));
+vi.mock('./bridge/message', async () => ({ __esModule: true, ...(await vi.importActual('./bridge/message')) }));
 
 const mockBridge = {
-    init: jest.fn(),
-    sendMessage: jest.fn(),
-    getState: jest.fn(() => ({ connected: true, ready: Promise.resolve() })),
+    init: vi.fn(),
+    sendMessage: vi.fn(),
+    getState: vi.fn(() => ({ connected: true, ready: Promise.resolve() })),
 };
 
 describe('webauthn [supported]', () => {
-    let createMessageBridge: jest.SpyInstance;
+    let createMessageBridge: MockInstance;
 
     beforeEach(async () => {
-        createMessageBridge = jest.spyOn(bridge, 'createMessageBridge').mockImplementation(() => mockBridge as any);
+        createMessageBridge = vi.spyOn(bridge, 'createMessageBridge').mockImplementation(() => mockBridge as any);
         Object.defineProperty(window.navigator, 'credentials', { value: credentials });
         Object.defineProperty(global, 'PublicKeyCredential', { value: PublicKeyCredential });
         Object.defineProperty(global, 'AuthenticatorAttestationResponse', { value: AuthenticatorAttestationResponse });

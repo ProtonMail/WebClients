@@ -1,3 +1,5 @@
+import type { Mock, MockInstance } from 'vitest';
+
 import * as domUtils from '@proton/pass/utils/dom/state';
 import * as stringUtils from '@proton/pass/utils/string/unique-id';
 
@@ -16,22 +18,22 @@ import {
     messageValidator,
 } from './message';
 
-jest.mock('@proton/pass/utils/string/unique-id', () => ({ uniqueId: jest.fn() }));
-jest.mock('@proton/pass/utils/dom/state', () => ({ waitForPageReady: jest.fn() }));
+vi.mock('@proton/pass/utils/string/unique-id', () => ({ uniqueId: vi.fn() }));
+vi.mock('@proton/pass/utils/dom/state', () => ({ waitForPageReady: vi.fn() }));
 
-const uniqueId = stringUtils.uniqueId as jest.Mock;
-const waitForPageReady = domUtils.waitForPageReady as jest.Mock;
+const uniqueId = stringUtils.uniqueId as Mock;
+const waitForPageReady = domUtils.waitForPageReady as Mock;
 
 describe('Bridge', () => {
-    let removeEventListenerSpy: jest.SpyInstance, addEventListenerSpy: jest.SpyInstance;
+    let removeEventListenerSpy: MockInstance, addEventListenerSpy: MockInstance;
     let counter = 0;
 
     beforeEach(() => {
         counter = 0;
-        removeEventListenerSpy = jest.spyOn(window, 'removeEventListener');
-        addEventListenerSpy = jest.spyOn(window, 'addEventListener');
+        removeEventListenerSpy = vi.spyOn(window, 'removeEventListener');
+        addEventListenerSpy = vi.spyOn(window, 'addEventListener');
         uniqueId.mockImplementation(() => `token-${counter++}`);
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
@@ -39,7 +41,7 @@ describe('Bridge', () => {
         removeEventListenerSpy.mockRestore();
         uniqueId.mockClear();
         waitForPageReady.mockReset();
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     afterAll(() => {
@@ -136,7 +138,7 @@ describe('Bridge', () => {
                 const bridge = createMessageBridge();
                 bridge.init();
 
-                await jest.advanceTimersByTimeAsync(BRIDGE_INIT_TIMEOUT + 1);
+                await vi.advanceTimersByTimeAsync(BRIDGE_INIT_TIMEOUT + 1);
                 await expect(bridge.getState().ready).rejects.toHaveProperty('name', 'BridgeTimeout');
             });
         });
@@ -160,7 +162,7 @@ describe('Bridge', () => {
                 removeEventListenerSpy.mockClear();
 
                 const job = bridge.sendMessage({ type: 'bridge-message' } as any);
-                await jest.advanceTimersByTimeAsync(0);
+                await vi.advanceTimersByTimeAsync(0);
 
                 expect(addEventListenerSpy).toHaveBeenCalledTimes(1);
                 const params = addEventListenerSpy.mock.lastCall!;
@@ -176,7 +178,7 @@ describe('Bridge', () => {
                 removeEventListenerSpy.mockClear();
 
                 const job = bridge.sendMessage({ type: 'bridge-message' } as any);
-                await jest.advanceTimersByTimeAsync(0);
+                await vi.advanceTimersByTimeAsync(0);
 
                 expect(addEventListenerSpy).toHaveBeenCalledTimes(1);
                 const params = addEventListenerSpy.mock.lastCall!;
@@ -190,7 +192,7 @@ describe('Bridge', () => {
                 const bridge = await setupBridge();
                 const ctrl = new AbortController();
                 const job = bridge.sendMessage({ type: 'bridge-message' } as any, { signal: ctrl.signal });
-                await jest.advanceTimersByTimeAsync(0);
+                await vi.advanceTimersByTimeAsync(0);
 
                 ctrl.abort();
                 await expect(job).resolves.toEqual({ error: 'BridgeAbort', message: '', type: 'error' });
@@ -199,7 +201,7 @@ describe('Bridge', () => {
             test('should allow aborting via timeout', async () => {
                 const bridge = await setupBridge();
                 const job = bridge.sendMessage({ type: 'bridge-message' } as any, { timeout: 500 });
-                await jest.advanceTimersByTimeAsync(501);
+                await vi.advanceTimersByTimeAsync(501);
 
                 await expect(job).resolves.toEqual({ error: 'BridgeAbort', message: '', type: 'error' });
             });
@@ -222,7 +224,7 @@ describe('Bridge', () => {
                 bridge.getState().ready.reject({ not: 'an-error' });
 
                 const job = bridge.sendMessage({ type: 'bridge-message' } as any);
-                await jest.advanceTimersByTimeAsync(0);
+                await vi.advanceTimersByTimeAsync(0);
                 await expect(job).resolves.toEqual({ error: 'UnknownError', type: 'error' });
             });
         });

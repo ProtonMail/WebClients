@@ -8,7 +8,7 @@
             "@proton/types",
             "global-types-monorepo",
             "webpack-env",
-            "jest",
+            "vitest/globals",
             "chrome",
             "webextension-polyfill",
             "./globals.d.ts"

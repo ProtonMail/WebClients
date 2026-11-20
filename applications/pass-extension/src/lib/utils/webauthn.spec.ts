@@ -1,10 +1,12 @@
+import type { MockInstance, MockedFunction } from 'vitest';
+
 import { sendSafariMessage as sendSafari } from './safari';
 import { webauthnFetcher } from './webauthn';
 
-jest.mock('./safari');
+vi.mock('./safari');
 
 const setBuildTarget = (value: string) => ((global as any).BUILD_TARGET = value);
-const sendSafariMessage = sendSafari as jest.MockedFn<typeof sendSafari>;
+const sendSafariMessage = sendSafari as MockedFunction<typeof sendSafari>;
 
 const WELL_KNOWN = 'https://sub.proton.test/.well-known/webauthn';
 const ORIGINS = ['https://www.proton.test', 'https://proton.test'];
@@ -25,10 +27,10 @@ const nativeResponse = (body: unknown, finalUrl = WELL_KNOWN, status = 200) =>
     });
 
 describe('webauthnFetcher', () => {
-    let fetchSpy: jest.SpyInstance;
+    let fetchSpy: MockInstance;
 
     beforeAll(() => {
-        fetchSpy = jest.spyOn(globalThis, 'fetch');
+        fetchSpy = vi.spyOn(globalThis, 'fetch');
     });
 
     afterAll(() => fetchSpy.mockRestore());
