@@ -1778,6 +1778,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Skip to main content": [
+        "Passer au contenu principal"
+      ],
+      "Use “${ label }” setting": [
+        "Utiliser le paramètre \"${ label }\""
       ]
     },
     "action": {
@@ -1939,6 +1945,13 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } accès à l'assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -9756,6 +9769,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "${ n } unread message": [
+        "${ n } message non lu",
+        "${ n } messages non lus"
       ]
     },
     "info": {
@@ -13152,6 +13169,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Votre domaine et votre abonnement sont prêts à être utilisés."
+      ],
+      "Choose your inbox layout": [
+        "Choisissez la disposition de votre boite de réception"
+      ],
+      "You can change this anytime in settings.": [
+        "Vous pouvez modifier cela à tout moment dans les paramètres."
       ]
     },
     "Onboarding Proton": {
@@ -17850,6 +17873,52 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Colonne"
+      ],
+      "Row": [
+        "Ligne"
+      ]
+    },
+    "Visionary upsell": {
+      "10 years": [
+        "10 ans"
+      ],
+      "Calendars": [
+        "Calendriers"
+      ],
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Email addresses": [
+        "Adresses e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
+      ],
+      "Password vaults": [
+        "Coffre-fort de mot de passe"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive et Pass premium"
+      ],
+      "Previous versions": [
+        "Version précédente"
+      ],
+      "Storage": [
+        "Espace de stockage"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Jusqu'à ${ limit }"
+      ],
+      "Users": [
+        "Utilisateurs"
       ]
     }
   }

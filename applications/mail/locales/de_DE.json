@@ -1578,7 +1578,7 @@
       ],
       "Trust key": [
         "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1781,6 +1781,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Skip to main content": [
+        "Zum Hauptinhalt springen"
+      ],
+      "Use “${ label }” setting": [
+        "Einstellung \"${ label }\" verwenden"
       ]
     },
     "action": {
@@ -1942,6 +1948,9 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Plätze für den ${ LUMO_SHORT_APP_NAME }-Schreibassistenten"
       ]
     },
     "Alert": {
@@ -5466,6 +5475,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Bei einigen Mailinglisten war das Abmelden nicht möglich. Versuche es erneut, um das Abmelden abzuschließen."
       ]
     },
     "error": {
@@ -9782,6 +9794,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "${ n } unread message": [
+        "${ n } ungelesene Nachricht",
+        "${ n } ungelesene Nachrichten"
       ]
     },
     "info": {
@@ -12839,7 +12855,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "Du hast nun Zugriff auf die neue ${ CALENDAR_APP_NAME }. ${ link }"
+        "Du hast nun Zugriff auf den neuen ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Notification": {
@@ -13187,6 +13203,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Deine Domain und dein Abonnement sind jetzt bereit."
+      ],
+      "Choose your inbox layout": [
+        "Wähle das Layout deines Posteingangs"
+      ],
+      "You can change this anytime in settings.": [
+        "Du kannst das jederzeit in den Einstellungen ändern."
       ]
     },
     "Onboarding Proton": {
@@ -15904,6 +15926,14 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du hast dein Abonnement erfolgreich gekündigt."
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "${ count } Mailingliste wurde gekündigt und deren Nachrichten wurden ins Archiv verschoben.",
+        "${ count } Mailinglisten wurde gekündigt und deren Nachrichten wurden ins Archiv verschoben."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Von ${ count } Mailingliste abgemeldet",
+        "Von ${ count } Mailinglisten abgemeldet"
       ]
     },
     "Success notification": {
@@ -17888,6 +17918,79 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Spalte"
+      ],
+      "Row": [
+        "Zeile"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } pro Benutzer"
+      ],
+      "${ storage } shared": [
+        "${ storage } gemeinsam genutzt"
+      ],
+      "10 years": [
+        "10 Jahre"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Eine Serverkategorie von ${ VPN_APP_NAME }-Servern mit höherer Kapazität: Jeder Server wird von weitaus weniger Nutzern gemeinsam genutzt, und sie verwenden IP-Adressen, die ${ BRAND_NAME } gehören. Quick Connect wählt diese automatisch aus, sofern sie verfügbar sind."
+      ],
+      "Calendars": [
+        "Kalender"
+      ],
+      "Custom email domains": [
+        "Eigene E-Mail-Domains"
+      ],
+      "Email addresses": [
+        "E-Mail-Adressen"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-Aliasse"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Benannt nach den Crowdfunding-Unterstützern, die ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } im Jahr 2014 möglich gemacht haben. Alle Premium-Dienste von ${ BRAND_NAME } in einem Paket."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Neue ${ BRAND_NAME }-Dienste ohne zusätzliche Kosten"
+      ],
+      "Password vaults": [
+        "Passwort-Tresore"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Kalender, Drive und Pass"
+      ],
+      "Previous versions": [
+        "Vorherige Versionen"
+      ],
+      "Storage": [
+        "Speicher"
+      ],
+      "Subscribers only": [
+        "Nur Abonnenten"
+      ],
+      "Ultra servers": [
+        "Ultra-Server"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra-Server, die für dich reserviert sind"
+      ],
+      "Unlimited": [
+        "Unbegrenzt"
+      ],
+      "Up to ${ limit }": [
+        "Bis zu ${ limit }"
+      ],
+      "Users": [
+        "Benutzer"
+      ],
+      "VPN devices at once": [
+        "VPN-Geräte gleichzeitig"
       ]
     }
   }

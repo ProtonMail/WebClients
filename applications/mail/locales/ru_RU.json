@@ -1712,6 +1712,12 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ],
+      "Skip to main content": [
+        "Перейти к основному содержимому"
+      ],
+      "Use “${ label }” setting": [
+        "Использовать настройку «${ label }»"
       ]
     },
     "action": {
@@ -17464,6 +17470,19 @@
       ],
       "Passcode:": [
         "Код доступа:"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Приложение ${ appName } для ПК"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Колонка"
+      ],
+      "Row": [
+        "Строка"
       ]
     }
   }

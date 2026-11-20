@@ -1736,6 +1736,12 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Skip to main content": [
+        "본문으로 건너뛰기"
+      ],
+      "Use “${ label }” setting": [
+        "\"${ label }\" 설정값 사용"
       ]
     },
     "action": {
@@ -9331,6 +9337,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (구성원 ${ numberOfContacts }명)"
+      ],
+      "${ n } unread message": [
+        "읽지 않은 메시지 ${ n }개"
+      ],
+      "1 vault per user": [
+        "사용자 당 금고 1개"
+      ],
+      "No ads": [
+        "광고 없음"
+      ],
+      "No booking pages yet": [
+        "아직 설정된 예약 페이지가 없습니다"
+      ],
+      "Other (tell us)": [
+        "기타 (저희에게 알려주세요)"
       ]
     },
     "info": {
@@ -17173,6 +17197,14 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "열"
+      ],
+      "Row": [
+        "행"
       ]
     }
   }

@@ -1793,6 +1793,12 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Skip to main content": [
+        "Μετάβαση στο κύριο περιεχόμενο"
+      ],
+      "Use “${ label }” setting": [
+        "Χρησιμοποιήστε τη ρύθμιση “${ label }”"
       ]
     },
     "action": {
@@ -1954,6 +1960,13 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέση βοηθού γραφής",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
       ]
     },
     "Alert": {
@@ -5478,6 +5491,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Δεν ήταν δυνατή η κατάργηση της εγγραφής από ορισμένες λίστες αλληλογραφίας. Προσπαθήστε ξανά για να ολοκληρώσετε την κατάργηση της εγγραφής."
       ]
     },
     "error": {
@@ -13273,6 +13289,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Ο τομέας και η συνδρομή σας είναι έτοιμα για χρήση."
+      ],
+      "Choose your inbox layout": [
+        "Επιλογή διάταξης εισερχομένων"
+      ],
+      "You can change this anytime in settings.": [
+        "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις."
       ]
     },
     "Onboarding Proton": {
@@ -15990,6 +16012,14 @@
       ],
       "You have successfully canceled your subscription.": [
         "Ακυρώσατε επιτυχώς τη συνδρομή σας."
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Έγινε απεγγραφή από ${ count } λίστα αλληλογραφίας και τα μηνύματά της μετακινήθηκαν στο Αρχείο.",
+        "Έγινε απεγγραφή από ${ count } λίστες αλληλογραφίας και τα μηνύματά της μετακινήθηκαν στο Αρχείο."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Έγινε απεγγραφή από ${ count } λίστα αλληλογραφίας.",
+        "Έγινε απεγγραφή από ${ count } λίστες αλληλογραφίας."
       ]
     },
     "Success notification": {
@@ -17974,6 +18004,79 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Στήλη"
+      ],
+      "Row": [
+        "Σειρά"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } ανά χρήστη"
+      ],
+      "${ storage } shared": [
+        "${ storage } κοινόχρηστος"
+      ],
+      "10 years": [
+        "10 χρόνια"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Μια κατηγορία διακομιστών του ${ VPN_APP_NAME } με μεγαλύτερη χωρητικότητα: κάθε διακομιστής χρησιμοποιείται από πολύ λιγότερους χρήστες και αξιοποιεί διευθύνσεις IP που ανήκουν στην ${ BRAND_NAME }. Η λειτουργία Quick Connect τους επιλέγει αυτόματα, όπου είναι διαθέσιμοι."
+      ],
+      "Calendars": [
+        "Ημερολόγια"
+      ],
+      "Custom email domains": [
+        "Προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email ψευδώνυμα"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Ονομάστηκε προς τιμήν των υποστηρικτών από τη διαδικασία συλλογικής χρηματοδότησης που κατέστησαν δυνατή την υλοποίηση του ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } το 2014. Όλες οι premium υπηρεσίες του ${ BRAND_NAME }, σε ένα ενιαίο πρόγραμμα."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Νέες υπηρεσίες ${ BRAND_NAME } χωρίς επιπλέον κόστος"
+      ],
+      "Password vaults": [
+        "Κρύπτες κωδικών πρόσβασης"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive και Pass"
+      ],
+      "Previous versions": [
+        "Προηγούμενες εκδόσεις"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
+      ],
+      "Subscribers only": [
+        "Μόνο συνδρομητές"
+      ],
+      "Ultra servers": [
+        "Διακομιστές Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Διακομιστές Ultra, δεσμευμένοι για εσάς"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Έως ${ limit }"
+      ],
+      "Users": [
+        "Χρήστες"
+      ],
+      "VPN devices at once": [
+        "Συσκευές VPN ταυτόχρονα"
       ]
     }
   }

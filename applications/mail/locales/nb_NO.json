@@ -1577,8 +1577,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
+        "Stol på nøkkel",
+        "Stol på nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1781,6 +1781,12 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Skip to main content": [
+        "Hopp over til hovedinnhold"
+      ],
+      "Use “${ label }” setting": [
+        "Bruk “${ label }”-innstilling"
       ]
     },
     "action": {
@@ -5461,6 +5467,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Abonnementet på noen e-postlister kunne ikke avsluttes. Prøv igjen for å avslutte resten."
       ]
     },
     "error": {
@@ -9771,6 +9780,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "${ n } unread message": [
+        "${ n } ulest melding",
+        "${ n } uleste meldinger"
       ]
     },
     "info": {
@@ -13173,6 +13186,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domenet og abonnementet ditt er klart til bruk."
+      ],
+      "Choose your inbox layout": [
+        "Velg oppsett for innboksen"
+      ],
+      "You can change this anytime in settings.": [
+        "Du kan endre dette når som helst i innstillinger."
       ]
     },
     "Onboarding Proton": {
@@ -15890,6 +15909,14 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har sagt opp abonnementet."
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Avsluttet abonnementet på ${ count } e-postliste og flyttet meldingene fra den til Arkiv.",
+        "Avsluttet abonnementet på ${ count } e-postlister og flyttet meldingene fra dem til Arkiv."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Avsluttet abonnementet på ${ count } e-postliste",
+        "Avsluttet abonnementet på ${ count } e-postlister"
       ]
     },
     "Success notification": {
@@ -17874,6 +17901,14 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolonne"
+      ],
+      "Row": [
+        "Rad"
       ]
     }
   }

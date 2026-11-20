@@ -1787,6 +1787,24 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Dismiss notification": [
+        "Închidere notificare"
+      ],
+      "Go to today": [
+        "Salt la astăzi"
+      ],
+      "Next contact": [
+        "Contact următor"
+      ],
+      "Previous contact": [
+        "Contact anterior"
+      ],
+      "Skip to main content": [
+        "Salt la conținutul principal"
+      ],
+      "Use “${ label }” setting": [
+        "Utilizare setarea „${ label }”"
       ]
     },
     "action": {
@@ -1959,6 +1977,14 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }"
       ]
     },
     "Alert": {
@@ -2891,7 +2917,7 @@
         "Conversații rapide și funcții avansate de inteligență artificială."
       ],
       "Private video calls for the conversations that matter.": [
-        "Apeluri video private pentru conversațiile importante."
+        "Videoconferințe private pentru conversațiile importante."
       ]
     },
     "color": {
@@ -5514,6 +5540,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Dezabonarea de la unele liste de corespondență nu a putut fi efectuată. Reîncercați pentru a finaliza dezabonarea."
       ]
     },
     "error": {
@@ -9954,6 +9983,14 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "${ n } unread message": [
+        "Mesaje necitite: ${ n }",
+        "Mesaje necitite: ${ n }",
+        "Mesaje necitite: ${ n }"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Licențele pentru asistentul de scriere nu se mai vând."
       ]
     },
     "info": {
@@ -13411,6 +13448,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Domeniul și abonamentul sunt pregătite de utilizare."
+      ],
+      "Choose your inbox layout": [
+        "Alegeți aspectul interfeței"
+      ],
+      "You can change this anytime in settings.": [
+        "Puteți modifica oricând aceasta în setări."
       ]
     },
     "Onboarding Proton": {
@@ -16206,6 +16249,16 @@
       ],
       "You have successfully canceled your subscription.": [
         "V-ați anulat abonamentul."
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "V-ați dezabonat de la ${ count } listă de corespondență și ați mutat mesajele acesteia în Arhivă.",
+        "V-ați dezabonat de la ${ count } liste de corespondență și ați mutat mesajele acestora în Arhivă.",
+        "V-ați dezabonat de la ${ count } de liste de corespondență și ați mutat mesajele acestora în Arhivă."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "V-ați dezabonat de la ${ count } listă de corespondență.",
+        "V-ați dezabonat de la ${ count } liste de corespondență.",
+        "V-ați dezabonat de la ${ count } de liste de corespondență."
       ]
     },
     "Success notification": {
@@ -18258,6 +18311,146 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coloane"
+      ],
+      "Row": [
+        "Rânduri"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2X Utilizare de bază"
+      ],
+      "5x Plus usage": [
+        "Utilizare Plus 5X"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acces la API, cu ${ credit } credit pe lună"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acces la API, cu ${ credit } credit pe lună per utilizator"
+      ],
+      "Everything in Basic, and:": [
+        "Torul din Basic și:"
+      ],
+      "Everything in Free, and:": [
+        "Totul din Free și:"
+      ],
+      "Everything in Plus, and:": [
+        "Totul din Plus și:"
+      ],
+      "Extended image generation": [
+        "Generare de imagini extinsă"
+      ],
+      "Includes:": [
+        "Include:"
+      ],
+      "Limited image generation": [
+        "Generare de imagini limitată"
+      ],
+      "Limited messages and chat history": [
+        "Mesaje si istoric conversații limitate"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Aptitudini, proiecte și sarcini planificate limitate"
+      ],
+      "Maximum image generation": [
+        "Maximum generări de imagini"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximum de proiecte și aptitudini"
+      ],
+      "More image generation": [
+        "Mai multe generări de imagini"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mai multe aptitudini, proiecte și sarcini planificate"
+      ],
+      "More usage": [
+        "Mai multă utilizare"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Pentru programare și construire"
+      ],
+      "For everyday chats": [
+        "Pentru conversațiile zilnice"
+      ],
+      "For getting more done": [
+        "Pentru a realiza mai multe"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per utilizator"
+      ],
+      "${ storage } shared": [
+        "${ storage } partajat"
+      ],
+      "10 years": [
+        "10 ani"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "O categorie de servere ${ VPN_APP_NAME } cu capacitate mai mare: fiecare server este utilizat de un număr mult mai mic de persoane și folosește adrese IP deținute de către ${ BRAND_NAME }. Funcția „Conectare rapidă” le selectează automat, acolo unde sunt disponibile."
+      ],
+      "Calendars": [
+        "Calendare"
+      ],
+      "Custom email domains": [
+        "Domenii personale de e-mail"
+      ],
+      "Email addresses": [
+        "Adrese de e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Numit astfel în onoarea susținătorilor de pe platformele de finanțare comunitară care au făcut posibilă existența ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } în 2014. Toate serviciile premium ${ BRAND_NAME }, într-un singur abonament."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Servicii ${ BRAND_NAME } noi fără extra costuri"
+      ],
+      "Password vaults": [
+        "Seifuri de parole"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive și Pass premium"
+      ],
+      "Previous versions": [
+        "Versiuni anterioare"
+      ],
+      "Storage": [
+        "Spațiu de stocare"
+      ],
+      "Subscribers only": [
+        "Doar pentru abonați"
+      ],
+      "Ultra servers": [
+        "Servere ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servere ultra, rezervate pentru dvs."
+      ],
+      "Unlimited": [
+        "Nelimitat"
+      ],
+      "Up to ${ limit }": [
+        "Până la ${ limit }"
+      ],
+      "Users": [
+        "Utilizatori"
+      ],
+      "VPN devices at once": [
+        "Dispozitive VPN simultane"
       ]
     }
   }

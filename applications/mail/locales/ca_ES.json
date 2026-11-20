@@ -646,7 +646,7 @@
         "Obtén ${ planOrAppName }"
       ],
       "Get a free ${ BRAND_NAME } address": [
-        "Aconseguiu una adreça gratuïta de ${ BRAND_NAME }"
+        "Aconsegueix una adreça gratuïta de ${ BRAND_NAME }"
       ],
       "Get index size on disk": [
         "Obté la mida de l'índex al disc"
@@ -697,7 +697,7 @@
         "Ves a les preferències"
       ],
       "Go to today": [
-        "Vés a avui"
+        "Va a avui"
       ],
       "Google": [
         "Google"
@@ -1154,7 +1154,7 @@
         "Imprimeix"
       ],
       "Proofread": [
-        "Reviseu-ho"
+        "Revisa"
       ],
       "Quit": [
         "Surt"
@@ -1589,8 +1589,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Confia en aquesta clau",
-        "Confia en aquestes claus"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1793,6 +1793,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Skip to main content": [
+        "Ves al contingut principal"
+      ],
+      "Use “${ label }” setting": [
+        "Utilitza la preferència \"${ label }\""
       ]
     },
     "action": {
@@ -1954,6 +1960,13 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Llicències de l'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } llicència d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }",
+        "${ seats } llicències d'assistent d'escriptura de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Alert": {
@@ -2518,7 +2531,7 @@
         "${ participantName } ha acceptat una invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment. La resposta i la proposta no estan actualitzades."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } ha acceptat una invitació i ha proposat una nova hora per a aquest esdeveniment. La resposta i la proposta no estan actualitzades."
+        "${ participantName } havia acceptat una invitació i proposat una altra hora per a aquest esdeveniment. La resposta i la proposta no estan actualitzades."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
         "${ participantName } ha acceptat una invitació a una ocurrència de l'esdeveniment."
@@ -2671,7 +2684,7 @@
         "Aquesta nova proposta horària no coincideix amb els detalls de la vostra invitació. Verifiqueu-ho al vostre calendari."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Aquesta resposta no coincideix amb els detalls de la vostra invitació. Verifiqueu-ne els detalls al vostre calendari."
+        "Aquesta resposta no coincideix amb els detalls de la invitació. Verifiqueu-ne els detalls al vostre calendari."
       ],
       "This response is out of date.": [
         "Aquesta resposta està desactualitzada."
@@ -4361,7 +4374,7 @@
         "Per a continuar utilitzant l'assistent d'escriptura, afegiu-lo a la subscripció."
       ],
       "To continue to use the writing assistant, request access from your admin.": [
-        "Per continuar utilitzant l'assistent d'escriptura, sol·liciteu accés al vostre administrador."
+        "Per a continuar utilitzant l'assistent d'escriptura, sol·liciteu accés al vostre administrador."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per a garantir-vos la màxima seguretat possible del compte, configureu una frase de recuperació."
@@ -4717,7 +4730,7 @@
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        "Els detalls de l'esdeveniment estan xifrats. Torneu a iniciar sessió per restaurar el Calendari i desxifrar les vostres dades. ${ learnMoreLink }"
+        "Els detalls de l'esdeveniment estan xifrats. Torneu a iniciar la sessió per a restaurar el Calendari i desxifrar les vostres dades. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
         "Els detalls de l'esdeveniment no es poden desxifrar. ${ whyNotLink }"
@@ -4730,7 +4743,7 @@
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
-        "L'esdeveniment s'ha cancel·lat"
+        "S'ha cancel·lat l'esdeveniment"
       ],
       "Event was updated. This reminder is out-of-date.": [
         "L'esdeveniment s'ha actualitzat. Aquest recordatori està caducat."
@@ -4776,7 +4789,7 @@
         "${ BRAND_NAME } no es pot connectar al vostre compte extern"
       ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } per a <${ email }>. Podeu afegir una altra clau o desactivar el xifratge per aquest contacte per resoldre el problema."
+        "${ error.message } per a <${ email }>. Podeu afegir una altra clau o desactivar el xifratge per a aquest contacte per a resoldre el problema."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
@@ -5300,7 +5313,7 @@
         "Pestanya tancada"
       ],
       "Text is too long to refine": [
-        "El text és massa llarg per ser optimitzat"
+        "El text és massa llarg per a ser optimitzat"
       ],
       "Thanks for the feedback!": [
         "Gràcies pels vostres comentaris!"
@@ -5478,6 +5491,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La vostra cerca coincideix amb massa resultats. Limiteu-la i torneu-ho a provar."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "No s'ha pogut anul·lar la subscripció d'algunes llistes de correu. Torneu-ho a provar per a acabar d'anul·lar-les."
       ]
     },
     "error": {
@@ -5654,7 +5670,7 @@
         "No s'ha trobat cap resultat."
       ],
       "No results found for \"${ query }\"": [
-        "No s'ha trobat cap resultat per \"${ query }\""
+        "No s'ha trobat cap resultat per a «${ query }»"
       ],
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
@@ -6696,7 +6712,7 @@
         "${ boldQuicklySpot } quines subscripcions ja no són rellevants."
       ],
       "${ boldUnsubscribe } from them with one click.": [
-        "${ boldUnsubscribe } d'aquesta llista amb un sol clic."
+        "${ boldUnsubscribe } d'aquestes llistes amb un sol clic."
       ],
       "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
         "${ BRAND_NAME } Scribe us ajuda a crear millors correus electrònics de manera ràpida i sense esforç."
@@ -7193,7 +7209,7 @@
         "Aplica-hi les etiquetes"
       ],
       "Apply to future messages": [
-        "S'aplicarà als missatges futurs"
+        "Aplica als missatges futurs"
       ],
       "Applying actions to conversations": [
         "S'estan aplicant les accions a les converses"
@@ -7397,7 +7413,7 @@
         "Editor:"
       ],
       "Confirm phishing report": [
-        "Confirmeu l'informe de suplantació d'identitat"
+        "Confirma l'informe de suplantació d'identitat"
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connecteu-vos a ${ VPN_APP_NAME } per navegar en privat."
@@ -7795,7 +7811,7 @@
         "Per a missatges posteriors al ${ oldestDate }"
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
-        "Per obtenir més resultats, proveu de cercar aquesta paraula clau al contingut dels vostres missatges de correu electrònic."
+        "Per a obtenir més resultats, proveu de cercar aquesta paraula clau al contingut dels vostres missatges de correu electrònic."
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
@@ -8133,7 +8149,7 @@
         "Estat de la descàrrega de missatges:"
       ],
       "Message headers": [
-        "Capçalera del missatge"
+        "Capçaleres de missatge"
       ],
       "Message list": [
         "Llista de missatges"
@@ -8500,13 +8516,13 @@
         "Privat per disseny."
       ],
       "Proofread selection": [
-        "Reviseu la selecció"
+        "Revisa la selecció"
       ],
       "Proofread text": [
         "Revisa el text"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
-        "Protegeix el vostre correu de filtracions a llistes de correu o generadors de correu brossa amb ${ hideMyEmailAliasesLink }."
+        "Protegiu el correu electrònic de filtracions a llistes de correu o generadors de correu brossa amb ${ hideMyEmailAliasesLink }."
       ],
       "Protection from hackers and leaks": [
         "Protecció contra pirates informàtics i fuites"
@@ -8537,7 +8553,7 @@
         "Llegeix ${ count } esborranys oberts"
       ],
       "Read draft \"${ subject }\"": [
-        "Llegir l'esborrany \"${ subject }\""
+        "Llegeix l'esborrany «${ subject }»"
       ],
       "Read open email “${ subject }”": [
         "Llegeix el correu electrònic obert «${ subject }»"
@@ -9006,7 +9022,7 @@
         "Aquestes converses es marcaran com a correu brossa. Voleu també anul·lar la subscripció per a futurs correus?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
-        "Aquest correu no ha superat els requeriments d'autentificació del domini. Pot ser que estigui falsejat o reenviat indegudament."
+        "Aquest correu electrònic no ha superat els requeriments d'autentificació del domini. Pot ser que estigui falsejat o reenviat indegudament."
       ],
       "This file is too large to preview": [
         "Aquest fitxer és massa gran per a previsualitzar-lo."
@@ -9286,7 +9302,7 @@
         "Actualitzeu el pla per a conservar els vostres avantatges de ${ planTitle }."
       ],
       "Upgrade to level up your privacy.": [
-        "Milloreu el vostre pla per augmentar la privacitat."
+        "Milloreu el pla per a augmentar la privacitat."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Milloreu el pla per a enviar correus des d'adreces @pm.me."
@@ -9469,7 +9485,7 @@
         "Escriu ${ REALISTIC_ENTRIES } línies de registre realistes que van entrant a poc a poc al llarg d'un minut, com en una sessió real, en lloc de fer-ho tot de cop. Triga al voltant d'un minut a executar-se. Manteniu aquesta pestanya en primer pla: les mesures de fotogrames s'aturen en segon pla."
       ],
       "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
-        "Escriu línies de registre realistes una darrere l'altra i després les torna a llegir totes. Mostra com el cost d'escriptura i de lectura/exportació varia segons el nombre d'entrades emmagatzemades."
+        "Escriu línies de registre realistes una darrere l'altra i després les torna a llegir totes. Mostra com el cost d'escriptura i de lectura/exportació escala segons el nombre d'entrades emmagatzemades."
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
@@ -9520,7 +9536,7 @@
         "Mentrestant, podeu tancar la pestanya o el navegador."
       ],
       "You can either update your search query or ${ button }": [
-        "Podeu actualitzar la cerca de consulta o ${ button }"
+        "Podeu actualitzar la consulta de cerca o bé ${ button }"
       ],
       "You can either update your search query or clear it": [
         "Podeu actualitzar la vostra cerca o esborrar-la."
@@ -10920,7 +10936,7 @@
         "Expressió regular"
       ],
       "Remember my choice": [
-        "Recordar la meva selecció"
+        "Recorda la meva selecció"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
         "Esborra la videoconferència de ${ MEET_APP_NAME }"
@@ -11442,7 +11458,7 @@
         "Obriu l'esdeveniment actualitzat a ${ CALENDAR_APP_NAME }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "O bé podeu suprimir un dels vostres calendaris i crear-ne un de nou enllaçat a una adreça de correu electrònic activa."
+        "O bé podeu eliminar un dels vostres calendaris i crear-ne un de nou vinculat a una adreça de correu electrònic activa."
       ],
       "Outbox": [
         "Safata de sortida"
@@ -11460,7 +11476,7 @@
         "Reactiveu l'adreça enllaçada a aquest calendari per gestionar la vostra invitació."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
-        "Reactiveu l'adreça enllaçada a aquest calendari per actualitzar la vostra invitació."
+        "Reactiveu l'adreça vinculada a aquest calendari per a actualitzar la invitació."
       ],
       "Reactivate now": [
         "Reactiva ara"
@@ -12353,7 +12369,7 @@
         "Múltiples rols d'administració"
       ],
       "No streaming support": [
-        "No hi ha suport per la reproducció en continu"
+        "Sense suport d'estríming"
       ],
       "Online document editor": [
         "Editor de documents en línia"
@@ -13263,7 +13279,7 @@
         "Us donem la benvinguda a ${ MAIL_APP_NAME }"
       ],
       "Where privacy is default.": [
-        "On la privadesa és per defecte."
+        "On la privacitat és per defecte."
       ],
       "You are all set!": [
         "Ja està tot a punt!"
@@ -13273,6 +13289,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "El vostre domini i la subscripció ja es poden utilitzar."
+      ],
+      "Choose your inbox layout": [
+        "Trieu el disseny de la safata d'entrada"
+      ],
+      "You can change this anytime in settings.": [
+        "Ho podeu canviar en qualsevol moment a les preferències."
       ]
     },
     "Onboarding Proton": {
@@ -14546,7 +14568,7 @@
         "S'han detectat errors. No es pot enviar aquest correu electrònic a cap de les adreces introduïdes pels següents motius:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "S'han detectat alguns errors. El vostre correu electrònic no es pot enviar a una o més de les adreces introduïdes a causa dels següents motius:"
+        "S'han detectat alguns errors. El correu electrònic no es pot enviar a una o més de les adreces introduïdes a causa dels següents motius:"
       ]
     },
     "Send email with warnings": {
@@ -14584,7 +14606,7 @@
         "Xifrat d'extrem a extrem"
       ],
       "End-to-end encrypted to PGP recipient": [
-        "Xifrat d'extrem a extrem a un destinatari PGP"
+        "Xifrat d'extrem a extrem per a un destinatari PGP"
       ],
       "End-to-end encrypted to verified PGP recipient": [
         "Xifrat d'extrem a extrem per al destinatari PGP verificat"
@@ -15124,7 +15146,7 @@
         "S'ha desactivat l'àlies"
       ],
       "Unsubscribed": [
-        "S'ha cancel·lat la subscripció"
+        "S'ha anul·lat subscripció"
       ]
     },
     "Step": {
@@ -15822,7 +15844,7 @@
         "La conversa s'ha mogut a ${ labelName }."
       ],
       "Conversation moved to spam and sender added to your spam list.": [
-        "La conversa s'ha mogut al correu brossa i el remitent s'ha afegit a la vostra llista de correus brossa."
+        "La conversa s'ha mogut al correu brossa i el remitent s'ha afegit a la llista de correu brossa."
       ],
       "Conversation removed from ${ labelName }.": [
         "S'ha esborrat la conversa de ${ labelName }."
@@ -15990,6 +16012,14 @@
       ],
       "You have successfully canceled your subscription.": [
         "Heu cancel·lat la subscripció."
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "S'ha anul·lat la subscripció a ${ count } llista de correu i s'han mogut els seus missatges a l'Arxiu.",
+        "S'ha anul·lat la subscripció a ${ count } llistes de correu i s'han mogut els seus missatges a l'Arxiu."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "S'ha anul·lat la subscripció a ${ count } llista de correu.",
+        "S'ha anul·lat la subscripció a ${ count } llistes de correu."
       ]
     },
     "Success notification": {
@@ -17185,7 +17215,7 @@
         "Voleu anul·lar la subscripció a ${ subscription.Name }?"
       ],
       "Unsubscribe not available for this sender": [
-        "L'anul·lació de la subscripció no està disponible per aquest remitent"
+        "L'anul·lació de la subscripció no està disponible per a aquest remitent"
       ],
       "Unsubscribe request sent": [
         "S'ha enviat la sol·licitud per cancel·lar la subscripció"
@@ -17636,7 +17666,7 @@
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de pesca de credencials."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
@@ -17715,7 +17745,7 @@
         "Ds. a les ${ formatTime }"
       ],
       "Sun, ${ formatTime }": [
-        "Diumenge a les ${ formatTime }"
+        "Dg. a les ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
@@ -17974,6 +18004,79 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per usuari"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartit"
+      ],
+      "10 years": [
+        "10 anys"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Una categoria de servidors de ${ VPN_APP_NAME } de més capacitat: molts menys usuaris en comparteixen cadascun i utilitzen adreces IP pròpies de ${ BRAND_NAME }. Quick Connect els selecciona automàticament quan estan disponibles."
+      ],
+      "Calendars": [
+        "Calendaris"
+      ],
+      "Custom email domains": [
+        "Dominis de correu electrònic personalitzats"
+      ],
+      "Email addresses": [
+        "Adreces de correu electrònic"
+      ],
+      "Hide-my-email aliases": [
+        "Àlies de hide-my-email"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Anomenat així en honor als mecenes de micromecenatge que van fer possible ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME } el 2014. Tots els serveis prèmium de ${ BRAND_NAME }, en un sol pla."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Nous serveis de ${ BRAND_NAME } sense cost addicional"
+      ],
+      "Password vaults": [
+        "Caixes fortes de contrasenyes"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive i Pass prèmium"
+      ],
+      "Previous versions": [
+        "Versions anteriors"
+      ],
+      "Storage": [
+        "Emmagatzematge"
+      ],
+      "Subscribers only": [
+        "Només per a subscriptors"
+      ],
+      "Ultra servers": [
+        "Servidors Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidors Ultra, reservats per a vós"
+      ],
+      "Unlimited": [
+        "Sense límit"
+      ],
+      "Up to ${ limit }": [
+        "Fins a ${ limit }"
+      ],
+      "Users": [
+        "Usuaris"
+      ],
+      "VPN devices at once": [
+        "Dispositius VPN alhora"
       ]
     }
   }

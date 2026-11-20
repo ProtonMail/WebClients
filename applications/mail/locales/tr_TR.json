@@ -1793,6 +1793,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Skip to main content": [
+        "Ana içeriğe git"
+      ],
+      "Use “${ label }” setting": [
+        "\"${ label }\" ayarı kullanılsın"
       ]
     },
     "action": {
@@ -1954,6 +1960,13 @@
       ],
       "Writing assistant seats": [
         "Yazma asistanı koltuk sayısı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } yazma yardımcısı koltuğu"
       ]
     },
     "Alert": {
@@ -5478,6 +5491,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Bazı e-posta listelerinin aboneliği iptal edilemedi. Abonelikten ayrılmak için yeniden deneyin."
       ]
     },
     "error": {
@@ -9478,7 +9494,7 @@
         "yazma yardımcısı iFrame"
       ],
       "Writing assistant seats are no longer sold.": [
-        "Yazma yardımcısı koltukları artık satılmamaktadır."
+        "Yazma yardımcısı koltukları artık satılmıyor"
       ],
       "Yearly": [
         "Yıllık"
@@ -11632,40 +11648,40 @@
         "Kullanıcı başına aylık ${ credit } krediyle API erişimi"
       ],
       "Everything in Basic, and:": [
-        "Basic'teki her şey ve:"
+        "Basic tarifesindeki her şey ve:"
       ],
       "Everything in Free, and:": [
-        "Her şey Free ve:"
+        "Free tarifesindeki herşey ve:"
       ],
       "Everything in Plus, and:": [
-        "Plus'taki her şey ve:"
+        "Plus tarifesindeki her şey ve:"
       ],
       "Extended image generation": [
-        "Genişletilmiş görüntü oluşturma"
+        "Genişletilmiş görsel oluşturma"
       ],
       "Includes:": [
-        "Şunları içerir:"
+        "İçindekiler:"
       ],
       "Limited image generation": [
-        "Sınırlı görüntü oluşturma"
+        "Sınırlı görsel oluşturma"
       ],
       "Limited messages and chat history": [
-        "Sınırlı mesajlar ve sohbet geçmişi"
+        "Sınırlı sayıda ileti ve sohbet geçmişi"
       ],
       "Limited Skills, Projects, and scheduled tasks": [
-        "Sınırlı Beceriler, Projeler ve planlanmış görevler"
+        "Sınırlı sayıda yetenek, proje ve zamanlanmış görev"
       ],
       "Maximum image generation": [
-        "Maksimum resim oluşturma"
+        "En fazla görsel oluşturma"
       ],
       "Maximum Skills and Projects": [
-        "Maksimum Beceri ve Projeler"
+        "En fazla yetenek ve projeler"
       ],
       "More image generation": [
-        "Daha fazla görüntü oluşturma"
+        "Daha fazla görsel oluşturma"
       ],
       "More Skills, Projects, and scheduled tasks": [
-        "Daha fazla beceri, proje ve planlanmış görevler"
+        "Daha fazla yetenek, proje ve zamanlanmış görev"
       ],
       "More usage": [
         "Daha fazla kullanım"
@@ -13273,6 +13289,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Etki alanınız ve aboneliğiniz kullanılmaya hazır."
+      ],
+      "Choose your inbox layout": [
+        "Gelen kutusu yerleşiminizi seçin"
+      ],
+      "You can change this anytime in settings.": [
+        "Bunu istediğiniz zaman ayarlar bölümünden değiştirebilirsiniz."
       ]
     },
     "Onboarding Proton": {
@@ -15990,6 +16012,14 @@
       ],
       "You have successfully canceled your subscription.": [
         "Aboneliğinizi iptal ettiniz."
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "${ count } e-posta listesinin aboneliği iptal edildi ve bu listeye ait iletiler Arşive taşındı.",
+        "${ count } e-posta listesinin aboneliği iptal edildi ve bu listeye ait iletiler Arşive taşındı."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "${ count } e-posta listesinin aboneliği iptal edildi.",
+        "${ count } e-posta listesinin aboneliği iptal edildi."
       ]
     },
     "Success notification": {
@@ -17974,6 +18004,79 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Sütun"
+      ],
+      "Row": [
+        "Satır"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "Her kullanıcı için ${ devicesPerUser }"
+      ],
+      "${ storage } shared": [
+        "${ storage } paylaşımlı"
+      ],
+      "10 years": [
+        "10 yıl"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "${ VPN_APP_NAME } sunucularının daha yüksek kapasiteli bir düzeyi: Her bir sunucuyu paylaşan kullanıcı sayısı çok daha azdır ve bu sunucular ${ BRAND_NAME } IP adreslerini kullanır. Hızlı bağlan seçeneği bu sunucular var olduğunda otomatik olarak onları seçer."
+      ],
+      "Calendars": [
+        "Takvimler"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Email addresses": [
+        "E-posta adresleri"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email takma adları"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Adını 2014 yılında ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } hizmetinin hayata geçmesini sağlayan kitle fonlaması destekçilerinden almıştır. Tüm ücretli ${ BRAND_NAME } hizmetleri tek tarifede."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Ek ücret ödemeden yararlanabileceğiniz yeni ${ BRAND_NAME } hizmetleri"
+      ],
+      "Password vaults": [
+        "Parola kasaları"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Ücretli Mail, Calendar, Drive ve Pass"
+      ],
+      "Previous versions": [
+        "Önceki sürümler"
+      ],
+      "Storage": [
+        "Depolama alanı"
+      ],
+      "Subscribers only": [
+        "Yalnızca aboneler"
+      ],
+      "Ultra servers": [
+        "Ultra sunucuları"
+      ],
+      "Ultra servers, reserved for you": [
+        "Size özel Ultra sunucuları"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "${ limit } taneye kadar"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "VPN devices at once": [
+        "Aynı anda bağlanabilecek VPN aygıtı"
       ]
     }
   }

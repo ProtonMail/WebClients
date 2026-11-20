@@ -1790,6 +1790,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Skip to main content": [
+        "Hoppa över till huvudinnehåll"
+      ],
+      "Use “${ label }” setting": [
+        "Använd “${ label }”-inställning"
       ]
     },
     "action": {
@@ -1951,6 +1957,13 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplats",
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
       ]
     },
     "Alert": {
@@ -2114,6 +2127,9 @@
       ],
       "You have reached the trial limit.": [
         "Du har nått provperiodsgränsen."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS }${ LUMO_SHORT_APP_NAME } \nplatser för skrivassistenter under provperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -5456,6 +5472,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Inbäddade bilder kunde inte tas bort. Meddelandet ändrades inte till oformaterad text."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "\nDet gick inte att avsluta prenumerationen på vissa e-postlistor. Försök igen för att slutföra avregistreringen."
       ]
     },
     "error": {
@@ -8474,7 +8496,7 @@
       ],
       "Read your ${ count } filter": [
         "Läs ditt ${ count } filter",
-        "Läs ditt ${ count } filter"
+        "Läs dina ${ count } filter"
       ],
       "Read your ${ count } folder": [
         "Läs din ${ count } mapp",
@@ -9701,6 +9723,45 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } märke"
+      ],
+      "Checked Proton support": [
+        "Kollad Proton-support"
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Välj en. Det hjälper oss förbättra ${ MAIL_APP_NAME }."
+      ],
+      "Document lookup failed": [
+        "Sökning efter dokument misslyckades"
+      ],
+      "Draft a ${ kind }": [
+        "Gör ett utkast ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Gör ett utkast ${ kind } till ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "Gjorde ett utkast till ${ kind }"
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Hej Lumo, sök igenom mina mejl från de senaste 7 dagarna och berätta vilka av dem som faktiskt kräver ett svar från mig. Ge mig en kort sammanfattning av vad varje mejl handlar om, och utelämna allt som jag kan ignorera."
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Markera hela ${ place } som läst"
+      ],
+      "Readdressed the draft": [
+        "Omarbetade utkastet"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Skrev om och omarbetade utkastet"
+      ],
+      "UnionPay logo": [
+        "UnionPay-logga"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra.\n"
       ]
     },
     "info": {
@@ -11436,6 +11497,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du måste återaktivera dina nycklar för att se den uppdaterade inbjudan"
+      ],
+      "Add formatting, links or images": [
+        "Lägg till formattering, länkar eller bilder"
       ]
     },
     "Link to calendar event": {
@@ -13164,6 +13228,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Din domän och din prenumeration är redo att användas."
+      ],
+      "Choose your inbox layout": [
+        "Ändra din mejlboxs layout"
+      ],
+      "You can change this anytime in settings.": [
+        "Du kan ändra detta när som helst i Inställningar."
       ]
     },
     "Onboarding Proton": {
@@ -13243,6 +13313,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**När din fullständiga prenumeration startar...** Du kan fortfarande avbryta inom 30 dagar och få en proportionerlig återbetalning."
       ]
     },
     "Option": {
@@ -15867,6 +15940,14 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Avprenumererade från ${ count } e-postlista och flyttade meddelandena till Arkiv.",
+        "Avprenumererade från ${ count } e-postlistor och flyttade meddelandena till Arkiv."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Avprenumererade från ${ count } e-postlista.",
+        "Avprenumererade från ${ count } e-postlistor."
       ]
     },
     "Success notification": {
@@ -17848,6 +17929,63 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagars pengarna-tillbaka-garanti: avbryt inom 30 dagar efter ditt köp och kontakta vår ${ customerSupportLink } för att få en återbetalning."
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolumn"
+      ],
+      "Row": [
+        "Rad"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per användare"
+      ],
+      "${ storage } shared": [
+        "${ storage } delat"
+      ],
+      "10 years": [
+        "10 år"
+      ],
+      "Calendars": [
+        "Kalendrar"
+      ],
+      "Custom email domains": [
+        "Anpassade e-postdomäner"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-alias"
+      ],
+      "Password vaults": [
+        "Lösenords-valv"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive och Pass"
+      ],
+      "Previous versions": [
+        "Tidigare versioner"
+      ],
+      "Storage": [
+        "Lagring"
+      ],
+      "Subscribers only": [
+        "Endast prenumeranter"
+      ],
+      "Ultra servers": [
+        "Ultraservrar"
+      ],
+      "Users": [
+        "Användare"
       ]
     }
   }

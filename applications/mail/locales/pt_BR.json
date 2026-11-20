@@ -1793,6 +1793,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Skip to main content": [
+        "Pular para o conteúdo principal"
+      ],
+      "Use “${ label }” setting": [
+        "Usar configuração “${ label }”"
       ]
     },
     "action": {
@@ -1954,6 +1960,9 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licenças de assistente de escrita"
       ]
     },
     "Alert": {
@@ -5478,6 +5487,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Não foi possível se desvincular de algumas correspondências. Tente novamente."
       ]
     },
     "error": {
@@ -9794,6 +9806,10 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "${ n } unread message": [
+        "${ n } mensagem não lida",
+        "${ n } mensagens não lidas"
       ]
     },
     "info": {
@@ -11656,6 +11672,12 @@
       ],
       "More usage": [
         "Mais uso"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acesso à API com um crédito ${ credit } ao mês"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acesso à API com um crédito ${ credit } ao mês por usuário"
       ]
     },
     "lumo_2026: Info": {
@@ -13257,6 +13279,12 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Seu domínio e assinatura estão prontos para uso."
+      ],
+      "Choose your inbox layout": [
+        "Escolha o layout da sua caixa de entrada"
+      ],
+      "You can change this anytime in settings.": [
+        "Você pode alterar isso a qualquer momento em configurações."
       ]
     },
     "Onboarding Proton": {
@@ -15980,6 +16008,14 @@
       ],
       "You have successfully canceled your subscription.": [
         "Você cancelou sua assinatura com sucesso."
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Removido da correspondência de ${ count } e mensagens movidas para Arquivo.",
+        "Removido das correspondências de ${ count } e mensagens movidas para Arquivo."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Removido da correspondência de ${ count }.",
+        "Removido das correspondências de ${ count }."
       ]
     },
     "Success notification": {
@@ -17964,6 +18000,73 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coluna"
+      ],
+      "Row": [
+        "Linha"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuário"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartilhado"
+      ],
+      "10 years": [
+        "10 anos"
+      ],
+      "Calendars": [
+        "Calendários"
+      ],
+      "Custom email domains": [
+        "Domínios personalizados de e-mail"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Aliases do hide-my-email"
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Serviços novos da ${ BRAND_NAME } sem custo adicional"
+      ],
+      "Password vaults": [
+        "Cofres de senhas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive e Pass premium"
+      ],
+      "Previous versions": [
+        "versões anteriores"
+      ],
+      "Storage": [
+        "Armazenamento"
+      ],
+      "Subscribers only": [
+        "Somente assinantes"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra, reservado para você"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Até ${ limit }"
+      ],
+      "Users": [
+        "Usuários"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN ao mesmo tempo"
       ]
     }
   }

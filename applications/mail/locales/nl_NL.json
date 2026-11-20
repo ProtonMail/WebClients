@@ -1736,6 +1736,33 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "About ${ name }": [
+        "Over ${ name }"
+      ],
+      "Add ${ name }": [
+        "${ name } toevoegen"
+      ],
+      "Cancel trial": [
+        "Proefperiode annuleren"
+      ],
+      "Dismiss notification": [
+        "Melding sluiten"
+      ],
+      "Learn how this works": [
+        "Leer hoe dit werkt"
+      ],
+      "Next contact": [
+        "Volgend contact"
+      ],
+      "Previous contact": [
+        "Vorig contact"
+      ],
+      "Skip to main content": [
+        "Direct naar hoofdinhoud"
+      ],
+      "Use “${ label }” setting": [
+        "Gebruik \"${ label }\"-instelling"
       ]
     },
     "action": {
@@ -4380,6 +4407,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Om ${ LUMO_SHORT_APP_NAME } te gebruiken in ${ MAIL_APP_NAME }, voeg het toe aan je abonnementen."
       ]
     },
     "description": {
@@ -5365,6 +5395,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "Some mailing lists couldn't be unsubscribed. Try again to finish unsubscribing.": [
+        "Van sommige mailinglijsten kon niet worden afgemeld. Probeer opnieuw om het afmelden te voltooien."
       ]
     },
     "error": {
@@ -6199,6 +6232,9 @@
       ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Wat is de belangrijkste reden dat je ${ MAIL_APP_NAME } gebruikt?"
       ]
     },
     "Hint": {
@@ -9348,6 +9384,82 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } lid)",
+        "${ contactGroupName } (${ numberOfContacts } leden)"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } van ${ steps }"
+      ],
+      "1 vault per user": [
+        "1 kluis per gebruiker"
+      ],
+      "A specific feature (tell us)": [
+        "Een specifieke functie (vertel het ons)"
+      ],
+      "Add a contact": [
+        "Contact toevoegen"
+      ],
+      "Change a display setting": [
+        "Wijzig een weergave-instelling"
+      ],
+      "Change your mailbox layout": [
+        "Pas je mailbox lay-out aan"
+      ],
+      "Create a filter": [
+        "Maak een filter"
+      ],
+      "Create a label": [
+        "Label aanmaken"
+      ],
+      "forward": [
+        "Doorsturen"
+      ],
+      "Here is my availability:": [
+        "Hier is mijn beschikbaarheid:"
+      ],
+      "Mark ${ emails } as read": [
+        "Markeer ${ emails } als gelezen"
+      ],
+      "Next": [
+        "Volgende"
+      ],
+      "One last step": [
+        "Een laatste stap"
+      ],
+      "Remove signature": [
+        "Handtekening verwijderen"
+      ],
+      "Rename label": [
+        "Label hernoemen"
+      ],
+      "Set my out of office": [
+        "Stel mijn out-of-office in"
+      ],
+      "Set signature": [
+        "Zet handtekening"
+      ],
+      "Set your signature": [
+        "Maak uw handtekening"
+      ],
+      "Someone recommended it": [
+        "Iemand raadde dit aan"
+      ],
+      "Update the filter ${ filter }": [
+        "Pas filter aan ${ filter }"
+      ],
+      "Update this filter": [
+        "Update filter"
+      ],
+      "Which provider?": [
+        "Welke provider?"
+      ],
+      "You'll choose a new username": [
+        "Je kiest een nieuwe gebruikersnaam"
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Uw Gmail verbind met dit ${ MAIL_APP_NAME } adres"
       ]
     },
     "info": {
@@ -10666,6 +10778,22 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tekens"
+      ],
+      "From time": [
+        "Vanaf tijd"
+      ],
+      "Model": [
+        "Model"
+      ],
+      "Move to Trash": [
+        "Verplaats naar prullenbak"
+      ],
+      "Select all ${ count } unused sender": [
+        "Selecteer alle ${ count } ongebruikte afzenders",
+        "Selecteer alle ${ count } ongebruikte afzenders"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12666,6 +12794,9 @@
       ],
       "Your domain and subscription are ready to use.": [
         "Uw domein en abonnement zijn klaar voor gebruik."
+      ],
+      "Choose your inbox layout": [
+        "Kies jouw inbox indeling"
       ]
     },
     "Onboarding Proton": {
@@ -13756,6 +13887,9 @@
       ],
       "User Admin": [
         "Gebruiker Beheerder"
+      ],
+      "Organization Admin": [
+        "Organisatie Beheerder"
       ]
     },
     "Safety review": {
@@ -14206,6 +14340,9 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-mail → ${ wakeTime }",
         "${ count } e-mails → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "${ emails } snoozen"
       ]
     },
     "Snooze message": {
@@ -15319,6 +15456,14 @@
       ],
       "You have successfully canceled your subscription.": [
         "U heeft uw abonnement succesvol geannuleerd."
+      ],
+      "Unsubscribed from ${ count } mailing list and moved its messages to Archive.": [
+        "Afgemeld van ${ count } mailinglijst en de berichten verplaatst naar het archief.",
+        "Afgemeld van ${ count } mailinglijsten en de berichten verplaatst naar het archief."
+      ],
+      "Unsubscribed from ${ count } mailing list.": [
+        "Afgemeld van ${ count } mailinglijst.",
+        "Afgemeld van ${ count } mailinglijsten."
       ]
     },
     "Success notification": {
@@ -16615,6 +16760,9 @@
       ],
       "Your shorter address is now ready": [
         "Uw kortere adres is nu klaar"
+      ],
+      "Filter on": [
+        "Filteren op"
       ]
     },
     "Title header for keys table": {
@@ -16825,6 +16973,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Deze gebruiker krijgt beheerdersrechten bij de volgende aanmelding."
       ]
     },
     "Validation": {
@@ -17285,6 +17436,44 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "${ folder } hernoemen naar..."
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Rij"
+      ]
+    },
+    "lumo_2026: feature": {
+      "5x Plus usage": [
+        "5 × Plus gebruik"
+      ],
+      "Everything in Free, and:": [
+        "Alles in het Free Plan, en:"
+      ],
+      "Everything in Plus, and:": [
+        "Alles in het Plus Plan, en:"
+      ],
+      "Includes:": [
+        "Omvat:"
+      ],
+      "Limited messages and chat history": [
+        "Gelimiteerde berichten en gespreksgechiedenis"
+      ],
+      "More usage": [
+        "Meer gebruik"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Voor coderen en bouwen"
       ]
     }
   }

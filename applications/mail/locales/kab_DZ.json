@@ -1230,6 +1230,15 @@
       ],
       "Zoom out": [
         "Semẓi"
+      ],
+      "Add another account": [
+        "Rnu amiḍan nniḍen"
+      ],
+      "Create and copy alias": [
+        "Snulfu-d sakin nɣel azunisem"
+      ],
+      "Help and feedback": [
+        "Tallalt d iwenniten"
       ]
     },
     "action": {
@@ -1515,6 +1524,10 @@
       ],
       "Yearly": [
         "S useggas"
+      ],
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
       ]
     },
     "Bug category": {
@@ -1882,6 +1895,10 @@
       ],
       "Try ${ planName }": [
         "Ɛreḍ ${ planName }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } n useqdac",
+        "Alamma d ${ numberOfUsers } yiseqdacen"
       ]
     },
     "Checkout row": {
@@ -3600,6 +3617,19 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ddeqs n igmaḍ i d-yerra unadi-ik. Ma ulac aɣilif, err talast i unadi-inek sakin ɛreḍ tikelt- nniḍen."
+      ],
+      "Alias is not valid": [
+        "Azunisem d arameɣtu"
+      ],
+      "An error occurred while saving your alias": [
+        "Teḍra-d tuccḍa deg usekles n wazunisem-ik"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Fren azemz deg ${ n } n wass i d-itteddun.",
+        "Fren azemz deg ${ n } n wussan i d-itteddun."
+      ],
+      "Name is required": [
+        "Isem yettwasra"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3835,6 +3865,10 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Tettwanecdeḍ ad ternuḍ i${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "View the invitation": [
+        "Wali tinnubga",
+        "Wali tinnubgiwin"
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -5701,6 +5735,18 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Important note": [
+        "Tamawt taxatart"
+      ],
+      "Not connected": [
+        "Ur iqqin ara"
+      ],
+      "When working remotely": [
+        "Mi ara txeddmeḍ s wudem anmeggag"
+      ],
+      "Your online activity is protected": [
+        "Armud-ik deg internet yettummesten"
       ]
     },
     "info": {
@@ -6575,6 +6621,14 @@
       ],
       "ZIP code": [
         "Tangalt Zip"
+      ],
+      "${ count } unread conversation": [
+        "${ count } n udiwenni ur yettwaɣran ara",
+        "${ count } idiwenniyen ur nettwaɣra ara"
+      ],
+      "${ count } unread message": [
+        "${ count } n yizen ur yettwaɣran ara",
+        "${ count } n yiznan ur nettwaɣri ara"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -6822,6 +6876,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Ilaq ad talseḍ armad n tsura-inek·inem iwakken ad twaliḍ tinubga yettwaleqqmen"
+      ],
+      "Views": [
+        "Timeẓriyin"
       ]
     },
     "Link to calendar event": {
@@ -7915,6 +7972,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Ɛreḍ ${ PASS_APP_NAME }"
+      ],
+      "Create an alias": [
+        "Snulfu-d azunisem"
       ]
     },
     "Select files": {
@@ -8628,6 +8688,9 @@
       ],
       "Verification successful": [
         "Asenqed yedda akken iwata"
+      ],
+      "Alias saved and copied": [
+        "Azunisem yettwasekles yerna yettwanɣel"
       ]
     },
     "Success notification": {
@@ -9447,6 +9510,21 @@
       ],
       "Your plan": [
         "Aɣawas-ik·im"
+      ],
+      "Download the app": [
+        "Sider asnas"
+      ],
+      "Enable 2FA": [
+        "Sermed 2FA"
+      ],
+      "Help and feedback": [
+        "Tallalt d iwenniten"
+      ],
+      "Security center": [
+        "Ammas n tɣellist"
+      ],
+      "Your account is protected": [
+        "Amiḍan-ik yettummesten"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9946,6 +10024,23 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Drawer tab, Action": {
+      "Download for Windows": [
+        "Sider i Windows"
+      ]
+    },
+    "meet_2025: Feature": {
+      "${ n } participant": [
+        "${ n } yimtteki",
+        "${ n } yimttekkiyen"
+      ]
+    },
+    "Referral": {
+      "Friend joined": [
+        "Yerna-d umeddakel",
+        "Rnan-d imeddukal"
       ]
     }
   }
