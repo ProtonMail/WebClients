@@ -13,3 +13,5 @@ Strings: nothing here imports ttag. `messages/` holds the English defaults, one 
 It reads no feature flags itself (no `~/utils/flags` or `@proton/unleash`): the host resolves the ones it needs into `featureFlags`.
 
 UI components are built with Ariakit and Tailwind in `components/`, copied from the realtime repo's editors or, where they have none, from Proton.
+
+Icons: nothing here imports `@proton/icons` or `@proton/file-icons`. `components/icons.tsx` holds the SVG geometry of the icons it uses, copied from `@proton/icons` (camelCase names, alphabetical order), drawn with `<Icon data={Icons.x} />` from `components/Icon.tsx`; `components/FileTypeIcon.tsx` draws the Docs and Sheets file icons. To add an icon, copy its paths from `@proton/icons` into `icons.tsx`.

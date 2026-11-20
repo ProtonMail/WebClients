@@ -37,6 +37,13 @@ export default createOxlintConfig({
                     paths: [
                         { name: 'ttag', message: 'The host translates the homepage strings: see src/app/homepage/README.md.' },
                     ],
+                    patterns: [
+                        {
+                            group: ['@proton/icons', '@proton/icons/*', '@proton/file-icons', '@proton/file-icons/*'],
+                            message:
+                                'The homepage draws its own icons with components/Icon.tsx, icons.tsx and FileTypeIcon.tsx: see src/app/homepage/README.md.',
+                        },
+                    ],
                 }),
             },
         },
