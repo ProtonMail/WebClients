@@ -3,16 +3,28 @@ import React from 'react';
 import { screen, waitFor } from '@testing-library/react';
 
 import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
+import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
 import type { Coupon } from '@proton/payments/core/subscription/interface';
+import {
+    buildLumoSubscription,
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { createMockModel, mockPlans } from '@proton/payments/testing/signup';
 import { APPS } from '@proton/shared/lib/constants';
 import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import AccountStepPaymentSummary from './AccountStepPaymentSummary';
 import type { SignupModelV2 } from './interface';
+
+vi.mock('@proton/payments-ui/ui/headless-checkout/checkout-view', async () => {
+    const actual = await vi.importActual<any>('@proton/payments-ui/ui/headless-checkout/checkout-view');
+    return { ...actual, createCheckoutView: vi.fn(actual.createCheckoutView) };
+});
 
 const porkbunCouponConfig = { coupons: [COUPON_CODES.PORKBUN], hidden: true };
 
@@ -981,9 +993,11 @@ describe('AccountStepPaymentSummary - Regression Tests', () => {
             b2bModel.subscriptionData.checkResult.Proration = 613;
             b2bModel.subscriptionData.checkResult.TaxMode = TaxMode.REVERSE_CHARGE;
             b2bModel.subscriptionData.checkResult.Taxes = [];
+            const passPlus = buildSubscription(PLANS.PASS);
             b2bModel.session = {
                 resumedSessionResult: { UID: 'existing-user' },
-                subscription: { Plans: [{ Name: PLANS.PASS }] },
+                subscription: passPlus,
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(passPlus),
             };
 
             renderAccountStepPaymentSummary(b2bModel, {}, b2bPlan());
@@ -1034,6 +1048,28 @@ describe('AccountStepPaymentSummary - Regression Tests', () => {
 
             expect(screen.getByText(/Total for 1 month/i)).toBeInTheDocument();
             expect(screen.queryByText('*')).not.toBeInTheDocument();
+        });
+
+        it('builds the checkout from the Lumo Plus subscription the selection changes, not from Mail Plus', async () => {
+            const webMailPlus = buildSubscription(
+                { planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'CHF' },
+                { ID: 'mail-plus' }
+            );
+            const webLumoPlus = buildLumoSubscription(PLANS.LUMO, { ID: 'lumo-plus', Cycle: CYCLE.MONTHLY });
+            const model = cleanRegularModel();
+            model.subscriptionData.planIDs = { [PLANS.LUMO]: 1 };
+            model.session = {
+                resumedSessionResult: { UID: 'existing-user' },
+                subscription: { ...webMailPlus, SecondarySubscriptions: [webLumoPlus] },
+                multiSubscriptionContext: buildMultiSubscriptionContext([webMailPlus, webLumoPlus]),
+            };
+
+            renderAccountStepPaymentSummary(model);
+
+            await waitFor(() => {
+                expect(screen.getByText(/Summary/i)).toBeInTheDocument();
+            });
+            expect(vi.mocked(createCheckoutView).mock.lastCall?.[0].subscription).toBe(webLumoPlus);
         });
     });
 

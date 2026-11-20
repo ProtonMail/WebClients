@@ -3,10 +3,16 @@ import React, { useState } from 'react';
 import { act, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { getReadableTime } from '@proton/components/components/time/Time';
 import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
 import type { Coupon } from '@proton/payments/core/subscription/interface';
+import {
+    buildLumoSubscription,
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import {
     createMockModel,
@@ -32,6 +38,9 @@ vi.mock('./PlanCardSelector', () => ({
             <span>Currency: {currency}</span>
             <button data-testid="select-vpn" onClick={() => onSelect({ [PLANS.VPN2024]: 1 }, PLANS.VPN2024)}>
                 select vpn
+            </button>
+            <button data-testid="select-lumo" onClick={() => onSelect({ [PLANS.LUMO]: 1 }, PLANS.LUMO)}>
+                select lumo
             </button>
         </div>
     ),
@@ -76,7 +85,6 @@ const renderStep1 = (overrides?: Partial<React.ComponentProps<typeof Step1>>) =>
         onComplete: vi.fn(),
         model: createMockModel(),
         setModel: vi.fn(),
-        currentPlan: undefined,
         mode: SignupMode.Default,
         api: vi.fn(<T = any,>() => Promise.resolve({} as T)) as any,
         onTriggerModals: vi.fn(),
@@ -239,6 +247,42 @@ describe('Step1 - Basic Mounting', () => {
 
         const renewalNotice = screen.getByText(/Your subscription will automatically renew /);
         expect(renewalNotice).toBeInTheDocument();
+    });
+
+    it('dates the scheduled plan from the Lumo Plus subscription the selection changes, not from Mail Plus', async () => {
+        const mailPlusPeriodEnd = 1825000000;
+        const lumoPlusPeriodEnd = 1796000000;
+        const webMailPlus = buildSubscription(
+            { planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'CHF' },
+            { ID: 'mail-plus', PeriodEnd: mailPlusPeriodEnd }
+        );
+        const webLumoPlus = buildLumoSubscription(PLANS.LUMO, {
+            ID: 'lumo-plus',
+            Cycle: CYCLE.MONTHLY,
+            PeriodEnd: lumoPlusPeriodEnd,
+        });
+        const model = createMockModel();
+        model.subscriptionData.planIDs = { [PLANS.LUMO]: 1 };
+        model.subscriptionData.checkResult.SubscriptionMode = SubscriptionMode.ScheduledChargedLater;
+        model.session = {
+            subscription: { ...webMailPlus, SecondarySubscriptions: [webLumoPlus] },
+            multiSubscriptionContext: buildMultiSubscriptionContext([webMailPlus, webLumoPlus]),
+            state: { payable: true },
+            resumedSessionResult: { UID: 'uid', User: { ID: 'user', Currency: 'CHF' } },
+        };
+
+        renderStep1({ model });
+
+        expect(
+            await screen.findByText(
+                new RegExp(
+                    `Your scheduled plan starts on ${getReadableTime({ value: lumoPlusPeriodEnd, format: 'PPP' })}`
+                )
+            )
+        ).toBeInTheDocument();
+        expect(
+            screen.queryByText(new RegExp(getReadableTime({ value: mailPlusPeriodEnd, format: 'PPP' })))
+        ).not.toBeInTheDocument();
     });
 
     it('should hide renewal notice for free plans', async () => {
@@ -478,7 +522,10 @@ describe('Step1 - subscription guards', () => {
         reject: (error: unknown) => void;
     };
 
-    const renderSignedInStep1 = () => {
+    const renderSignedInStep1 = (
+        subscription = buildSubscription(PLANS.BUNDLE),
+        multiSubscriptionContext = buildMultiSubscriptionContextFromSubscription(subscription)
+    ) => {
         const requests: CheckRequest[] = [];
         const api = vi.fn((query: any) => {
             if (query.url !== CHECK_URL) {
@@ -515,7 +562,8 @@ describe('Step1 - subscription guards', () => {
             const [model, setModel] = useState(() => ({
                 ...createMockModel(),
                 session: {
-                    subscription: buildSubscription(PLANS.BUNDLE),
+                    subscription,
+                    multiSubscriptionContext,
                     state: { payable: true },
                     resumedSessionResult: { UID: 'uid', User: { ID: 'user', Currency: 'USD' } },
                 },
@@ -531,7 +579,6 @@ describe('Step1 - subscription guards', () => {
                     onComplete={vi.fn()}
                     model={model}
                     setModel={setModel as any}
-                    currentPlan={undefined}
                     mode={SignupMode.Default}
                     api={api as any}
                     onTriggerModals={vi.fn()}
@@ -593,6 +640,17 @@ describe('Step1 - subscription guards', () => {
             CouponCode: COUPON_CODES.VPN_INTRO_2025,
             Codes: [COUPON_CODES.VPN_INTRO_2025],
         });
+    });
+
+    it('does not ask to validate guards when the selected Lumo Plus runs next to Mail Plus yearly', async () => {
+        const webMailPlus = buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'CHF' });
+        const { nextRequest } = renderSignedInStep1(webMailPlus, buildMultiSubscriptionContext([webMailPlus]));
+
+        await userEvent.click(await screen.findByTestId('select-lumo'));
+
+        const { data } = await nextRequest(0);
+        expect(data).toMatchObject({ Plans: { [PLANS.LUMO]: 1 }, Cycle: CYCLE.MONTHLY });
+        expect(data).not.toHaveProperty('ValidateGuards');
     });
 
     it('sends no check request while the user has not selected anything', async () => {
