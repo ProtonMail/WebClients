@@ -118,12 +118,9 @@ jest.mock('../../../components/list/list-telemetry/useListTelemetry', () => ({
 }));
 
 const notifyMock = jest.fn();
-const subscribeMock = jest.fn();
 
 const wrapper = ({ children }: { children: ReactNode }) => (
-    <GlobalModalContext.Provider value={{ notify: notifyMock, subscribe: subscribeMock }}>
-        {children}
-    </GlobalModalContext.Provider>
+    <GlobalModalContext.Provider value={{ notify: notifyMock }}>{children}</GlobalModalContext.Provider>
 );
 
 describe('useApplyLocation', () => {

@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { act, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -5,9 +7,8 @@ import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/Newsl
 
 import { generateSubscriptionList } from '../../components/view/NewsletterSubscription/testData';
 import { mailTestRender } from '../../helpers/tests/render';
-import { GlobalBYOEInboxCleanupModal } from './GlobalBYOEInboxCleanupModal';
-import { GlobalModalContext } from './globalModalContext';
-import type { BYOEInboxCleanupChoice, ModalListener, ModalPayload } from './inteface';
+import { useMailGlobalModals } from './globalModalContext';
+import type { BYOEInboxCleanupChoice, ModalPayload } from './inteface';
 import { ModalType } from './inteface';
 
 const TITLE = 'Start with a cleaner Inbox';
@@ -20,29 +21,32 @@ const defaultSubscriptions = generateSubscriptionList(3).map((subscription, inde
 }));
 
 interface RenderModalOptions {
-    type?: ModalType;
     subscriptions?: NewsletterSubscription[];
     onConfirm?: (choice: BYOEInboxCleanupChoice) => Promise<void>;
 }
 
+const NotifyOnMount = ({ payload }: { payload: ModalPayload }) => {
+    const { notify } = useMailGlobalModals();
+
+    useEffect(() => {
+        notify(payload);
+    }, [notify, payload]);
+
+    return null;
+};
+
 const renderModal = async ({
-    type = ModalType.BYOEInboxCleanup,
     subscriptions = defaultSubscriptions,
     onConfirm = jest.fn(() => Promise.resolve()),
 }: RenderModalOptions = {}) => {
     const onDisplayed = jest.fn();
-    const payload = { type, value: { subscriptions, onConfirm, onDisplayed } } as ModalPayload;
+    const payload: ModalPayload = {
+        type: ModalType.BYOEInboxCleanup,
+        value: { subscriptions, onConfirm, onDisplayed },
+    };
 
-    const subscribe = jest.fn((callback: ModalListener) => {
-        callback(payload);
-        return () => {};
-    });
-
-    await mailTestRender(
-        <GlobalModalContext.Provider value={{ notify: jest.fn(), subscribe }}>
-            <GlobalBYOEInboxCleanupModal />
-        </GlobalModalContext.Provider>
-    );
+    await mailTestRender(<NotifyOnMount payload={payload} />);
+    await screen.findByRole('heading', { name: TITLE });
 
     return { onDisplayed, onConfirm };
 };
@@ -62,7 +66,9 @@ const getSenderCheckbox = ({ Name, SenderAddress }: Pick<NewsletterSubscription,
 };
 
 const getSelectAllCheckbox = (count = defaultSubscriptions.length) => {
-    return screen.getByRole('checkbox', { name: `Select all ${count} unused senders` }) as HTMLInputElement;
+    return screen.getByRole('checkbox', {
+        name: `Select all ${count} unused senders`,
+    }) as HTMLInputElement;
 };
 
 const expectEverySenderChecked = (checked: boolean) => {
@@ -111,25 +117,21 @@ const closeWith: Record<string, () => void> = {
         fireEvent.click(screen.getByTestId('modal:close'));
     },
     Escape: () => {
-        fireEvent.keyDown(screen.getByRole('button', { name: 'Skip' }), { key: 'Escape' });
+        fireEvent.keyDown(screen.getByRole('button', { name: 'Skip' }), {
+            key: 'Escape',
+        });
     },
 };
 
 describe('GlobalBYOEInboxCleanupModal', () => {
     describe('opening and closing', () => {
-        it('opens with the title and description when notified with its type', async () => {
+        it('opens with the title and description when notified', async () => {
             await renderModal();
 
             const title = screen.getByRole('heading', { name: TITLE });
             expect(getDialog()).toHaveAttribute('aria-labelledby', title.id);
             expect(screen.getByText(DESCRIPTION)).toBeInTheDocument();
             expect(screen.getByTestId('byoe-inbox-cleanup-icon')).toBeInTheDocument();
-        });
-
-        it('does not open for another modal type', async () => {
-            await renderModal({ type: ModalType.Snooze });
-
-            expect(screen.queryByText(TITLE)).not.toBeInTheDocument();
         });
 
         it('reports it was shown once when it opens', async () => {
@@ -160,7 +162,9 @@ describe('GlobalBYOEInboxCleanupModal', () => {
         it('Escape closes without confirming', async () => {
             const { onConfirm } = await renderModal();
 
-            fireEvent.keyDown(screen.getByRole('button', { name: 'Skip' }), { key: 'Escape' });
+            fireEvent.keyDown(screen.getByRole('button', { name: 'Skip' }), {
+                key: 'Escape',
+            });
 
             expect(isClosing()).toBe(true);
             expect(onConfirm).not.toHaveBeenCalled();
@@ -182,7 +186,11 @@ describe('GlobalBYOEInboxCleanupModal', () => {
                 expect(screen.getByText(subscription.Name)).toBeInTheDocument();
                 expect(screen.getByText(subscription.SenderAddress)).toBeInTheDocument();
             });
-            expect(screen.getAllByRole('checkbox', { name: /sender-\d@example\.com/ })).toHaveLength(3);
+            expect(
+                screen.getAllByRole('checkbox', {
+                    name: /sender-\d@example\.com/,
+                })
+            ).toHaveLength(3);
         });
 
         it("shows the sender's logo, or the initials when there is no logo", async () => {
@@ -220,9 +228,15 @@ describe('GlobalBYOEInboxCleanupModal', () => {
         });
 
         it('reads the singular for one sender', async () => {
-            await renderModal({ subscriptions: defaultSubscriptions.slice(0, 1) });
+            await renderModal({
+                subscriptions: defaultSubscriptions.slice(0, 1),
+            });
 
-            expect(screen.getByRole('checkbox', { name: 'Select all 1 unused sender' })).toBeInTheDocument();
+            expect(
+                screen.getByRole('checkbox', {
+                    name: 'Select all 1 unused sender',
+                })
+            ).toBeInTheDocument();
         });
 
         it('every sender starts selected', async () => {
@@ -372,7 +386,10 @@ describe('GlobalBYOEInboxCleanupModal', () => {
 
             fireEvent.click(getUnsubscribeButton());
 
-            expect(onConfirm).toHaveBeenCalledWith({ subscriptions: defaultSubscriptions, archive: true });
+            expect(onConfirm).toHaveBeenCalledWith({
+                subscriptions: defaultSubscriptions,
+                archive: true,
+            });
         });
 
         it('Unsubscribe is disabled when no sender is selected', async () => {
@@ -437,7 +454,10 @@ describe('GlobalBYOEInboxCleanupModal', () => {
             });
 
             expect(onConfirm).toHaveBeenCalledTimes(2);
-            expect(onConfirm).toHaveBeenLastCalledWith({ subscriptions: [defaultSubscriptions[2]], archive: false });
+            expect(onConfirm).toHaveBeenLastCalledWith({
+                subscriptions: [defaultSubscriptions[2]],
+                archive: false,
+            });
         });
 
         it('tick boxes, select all and the archive tick box are disabled while waiting', async () => {
@@ -481,7 +501,9 @@ describe('GlobalBYOEInboxCleanupModal', () => {
                 'closes the window, and a late answer that %s leaves it closed, with the choice passed on once and no unhandled rejection',
                 async (outcome) => {
                     const deferred = createDeferred();
-                    const { onConfirm } = await renderModal({ onConfirm: jest.fn(() => deferred.promise) });
+                    const { onConfirm } = await renderModal({
+                        onConfirm: jest.fn(() => deferred.promise),
+                    });
 
                     fireEvent.click(getUnsubscribeButton());
                     closeWith[closeMethod]();

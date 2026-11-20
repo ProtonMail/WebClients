@@ -1,61 +1,42 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 
-import { useMailGlobalModals } from './globalModalContext';
-import { ModalType, type ScheduleModalPayload } from './inteface';
+import type { ScheduleModalPayload } from './inteface';
 
-export const GlobalScheduleModal = () => {
-    const { subscribe } = useMailGlobalModals();
+interface GlobalScheduleModalProps {
+    value: ScheduleModalPayload['value'];
+    modalProps: ModalStateProps;
+}
 
-    const [modalProps, setOpen, shouldRender] = useModalState();
-    const [scheduleModalProps, setScheduleModalProps] = useState<ScheduleModalPayload['value'] | null>(null);
-
-    useEffect(() => {
-        const unsubscribe = subscribe((payload) => {
-            if (payload.type === ModalType.Schedule) {
-                setOpen(true);
-                setScheduleModalProps(payload.value);
-            }
-        });
-        return unsubscribe;
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C9C0E4
-    }, [subscribe]);
-
+export const GlobalScheduleModal = ({ value: scheduleModalProps, modalProps }: GlobalScheduleModalProps) => {
     const handleConfirm = () => {
-        setOpen(false);
-        setScheduleModalProps(null);
+        modalProps.onClose();
 
         scheduleModalProps?.onConfirm();
     };
 
     return (
-        <>
-            {shouldRender && scheduleModalProps && (
-                <Prompt
-                    title={c('Title').t`Moving a scheduled message`}
-                    buttons={[
-                        <Button color="norm" onClick={() => handleConfirm()} data-testid="confirm-button">{c('Action')
-                            .t`OK`}</Button>,
-                        <Button
-                            data-testid="cancel-button"
-                            onClick={() => {
-                                setOpen(false);
-                            }}
-                        >{c('Action').t`Cancel`}</Button>,
-                    ]}
-                    {...modalProps}
-                >
-                    {scheduleModalProps.isMessage
-                        ? c('Info').t`Scheduled send of this message will be canceled.`
-                        : c('Info')
-                              .t`This conversation contains a scheduled message. Sending of this message will be canceled.`}
-                </Prompt>
-            )}
-        </>
+        <Prompt
+            title={c('Title').t`Moving a scheduled message`}
+            buttons={[
+                <Button color="norm" onClick={() => handleConfirm()} data-testid="confirm-button">{c('Action')
+                    .t`OK`}</Button>,
+                <Button
+                    data-testid="cancel-button"
+                    onClick={() => {
+                        modalProps.onClose();
+                    }}
+                >{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...modalProps}
+        >
+            {scheduleModalProps.isMessage
+                ? c('Info').t`Scheduled send of this message will be canceled.`
+                : c('Info')
+                      .t`This conversation contains a scheduled message. Sending of this message will be canceled.`}
+        </Prompt>
     );
 };

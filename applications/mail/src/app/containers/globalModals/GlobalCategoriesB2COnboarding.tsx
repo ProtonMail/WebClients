@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -8,7 +6,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
@@ -20,33 +18,25 @@ import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import onboardingImage from '../../components/categoryView/categoriesOnboarding/onboardingCategories.svg';
-import { useMailGlobalModals } from './globalModalContext';
-import { type CategoriesViewB2COnboardingModalPayload, ModalType } from './inteface';
+import type { CategoriesViewB2COnboardingModalPayload } from './inteface';
 
 import './GlobalCategoriesOnboarding.scss';
 
-export const GlobalCategoriesB2COnboarding = () => {
-    const { subscribe } = useMailGlobalModals();
+interface GlobalCategoriesB2COnboardingProps {
+    value: CategoriesViewB2COnboardingModalPayload['value'];
+    modalProps: ModalStateProps;
+}
 
-    const [modalProps, setOpen, shouldRender] = useModalState();
-    const [b2cModalProps, setB2CModalProps] = useState<CategoriesViewB2COnboardingModalPayload['value'] | null>(null);
-
+export const GlobalCategoriesB2COnboarding = ({
+    value: b2cModalProps,
+    modalProps,
+}: GlobalCategoriesB2COnboardingProps) => {
     const { sendEventOnboardingAccept, sendEventOnboardingDismiss } = useCategoriesTelemetry();
 
     const { handleChange } = useCategoriesToggle();
     const { update } = useFeature(FeatureCode.CategoryViewB2COnboardingViewFlags);
 
     const [loading, withLoading] = useLoading();
-
-    useEffect(() => {
-        const unsubscribe = subscribe((payload) => {
-            if (payload.type === ModalType.CategoriesViewB2COnboarding) {
-                setOpen(true);
-                setB2CModalProps(payload.value);
-            }
-        });
-        return unsubscribe;
-    }, [subscribe, setOpen]);
 
     const handleClick = async (enableCategories: boolean) => {
         if (!b2cModalProps) {
@@ -64,7 +54,7 @@ export const GlobalCategoriesB2COnboarding = () => {
         await handleChange({ checked: enableCategories, notification: false });
         void update(updatedFlagValue);
 
-        modalProps.onClose?.();
+        modalProps.onClose();
         if (enableCategories) {
             sendEventOnboardingAccept();
         } else {
@@ -73,47 +63,37 @@ export const GlobalCategoriesB2COnboarding = () => {
     };
 
     return (
-        <>
-            {shouldRender && b2cModalProps && (
-                <ModalTwo {...modalProps} size="small" disableCloseOnEscape>
-                    <ModalTwoHeader
-                        className="mt-2 mx-2"
-                        hasClose={false}
-                        titleClassName="text-center"
-                        title={c('Title').t`Your inbox, automatically organized`}
-                    />
-                    <ModalTwoContent className="m-6 lg:m-8 b2b-modal-content">
-                        <div className="h-custom" style={{ '--h-custom': '10rem' }}>
-                            <img src={onboardingImage} className="categories-img w-custom h-custom" alt="" />
-                        </div>
-                        <p className="text-center color-weak mt-4 mb-0">
-                            {c('Info')
-                                .t`${MAIL_APP_NAME} now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.`}
-                        </p>
-                        <div className="text-center color-weak mb-12 mt-2">
-                            <span>{c('Info').t`Private by design.`}</span>{' '}
-                            <Href
-                                key="learn"
-                                className="color-weak inline-block"
-                                href={getKnowledgeBaseUrl('/mail-categories')}
-                            >{c('Link').t`Learn more.`}</Href>
-                        </div>
-                    </ModalTwoContent>
-                    <ModalTwoFooter className="flex-column">
-                        <Button
-                            disabled={loading}
-                            color="norm"
-                            fullWidth
-                            onClick={() => withLoading(handleClick(true))}
-                        >
-                            {c('Action').t`Yes, organize it`}
-                        </Button>
-                        <Button disabled={loading} fullWidth onClick={() => withLoading(handleClick(false))}>{c(
-                            'Action'
-                        ).t`Keep inbox as before`}</Button>
-                    </ModalTwoFooter>
-                </ModalTwo>
-            )}
-        </>
+        <ModalTwo {...modalProps} size="small" disableCloseOnEscape>
+            <ModalTwoHeader
+                className="mt-2 mx-2"
+                hasClose={false}
+                titleClassName="text-center"
+                title={c('Title').t`Your inbox, automatically organized`}
+            />
+            <ModalTwoContent className="m-6 lg:m-8 b2b-modal-content">
+                <div className="h-custom" style={{ '--h-custom': '10rem' }}>
+                    <img src={onboardingImage} className="categories-img w-custom h-custom" alt="" />
+                </div>
+                <p className="text-center color-weak mt-4 mb-0">
+                    {c('Info')
+                        .t`${MAIL_APP_NAME} now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.`}
+                </p>
+                <div className="text-center color-weak mb-12 mt-2">
+                    <span>{c('Info').t`Private by design.`}</span>{' '}
+                    <Href
+                        key="learn"
+                        className="color-weak inline-block"
+                        href={getKnowledgeBaseUrl('/mail-categories')}
+                    >{c('Link').t`Learn more.`}</Href>
+                </div>
+            </ModalTwoContent>
+            <ModalTwoFooter className="flex-column">
+                <Button disabled={loading} color="norm" fullWidth onClick={() => withLoading(handleClick(true))}>
+                    {c('Action').t`Yes, organize it`}
+                </Button>
+                <Button disabled={loading} fullWidth onClick={() => withLoading(handleClick(false))}>{c('Action')
+                    .t`Keep inbox as before`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
