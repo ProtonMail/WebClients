@@ -101,7 +101,7 @@ describe('DocumentPageV2', () => {
   })
 
   test('an unsupported mode shows its error and a way home', async () => {
-    renderAt('/doc2?mode=history&volumeId=VOLUME&linkId=LINK')
+    renderAt('/doc2?mode=convert&volumeId=VOLUME&linkId=LINK')
 
     expect(screen.getByTestId('invalid-openaction-error')).toHaveTextContent('This link is not supported on this page.')
     expect(screen.getByText('Error header')).toBeInTheDocument()
@@ -126,7 +126,7 @@ describe('DocumentPageV2', () => {
   test('resolves the URL it is on, not the one the app loaded', async () => {
     renderAt('/recents')
 
-    await userEvent.click(screen.getByRole('link', { name: 'Open history' }))
+    await userEvent.click(screen.getByRole('link', { name: 'Convert' }))
 
     expect(screen.getByTestId('invalid-openaction-error')).toHaveTextContent('This link is not supported on this page.')
   })
@@ -347,7 +347,7 @@ describe('DocumentPageV2', () => {
                       element={
                         <>
                           Recents page
-                          <Link to="/doc2?mode=history&volumeId=VOLUME&linkId=LINK">Open history</Link>
+                          <Link to="/doc2?mode=convert&volumeId=VOLUME&linkId=LINK">Convert</Link>
                         </>
                       }
                     />

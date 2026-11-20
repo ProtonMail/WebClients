@@ -77,6 +77,15 @@
     "notes": "The menu, its test ids, the version and debug key chords and the word-count submenu, extended in later doc2 commits with the source unchanged. Sheets items dropped. See version history opens doc2's history, disabled until the editor shows the document, as Make a copy."
   },
   {
+    "doc2": "__components/DocumentViewerV2.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/DocumentTitleDropdown.tsx",
+    "sourceSymbol": "the history action mode's effect",
+    "sourceCommit": "72e87593350d92420b86613631fd2ed9ae3af54a",
+    "copiedIn": "76e211c1a359b73f1a1903f5af5ffe01f7b736e5",
+    "notes": "Opens the history once, at the Reveal Point, through the title menu's See version history, which reads the session's History Log; the page, not the viewer, remembers it opened, so a retry doesn't open it again."
+  },
+  {
     "doc2": "__components/ErrorHeader.tsx",
     "doc2Symbol": "ErrorHeader",
     "kind": "copy",
@@ -532,5 +541,14 @@
     "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
     "copiedIn": "6802af2d1ceaf734e4ef4b260ae210ed05d04e54",
     "notes": "The download mode's updateParameters call, so a reload opens the document instead of downloading it again."
+  },
+  {
+    "doc2": "page.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/page.tsx",
+    "sourceSymbol": "shouldOpenHistory",
+    "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
+    "copiedIn": "76e211c1a359b73f1a1903f5af5ffe01f7b736e5",
+    "notes": "The history mode's updateParameters call, so a reload opens the document instead of its history again."
   }
 ]

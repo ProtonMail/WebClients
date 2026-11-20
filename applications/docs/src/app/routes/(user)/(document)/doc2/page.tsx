@@ -58,6 +58,17 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
     }
   }, [downloadOnOpen, openAction, updateParameters])
 
+  // As for the download: once the history opened, a retry doesn't open it again
+  const [historyOpenedOnOpen, setHistoryOpenedOnOpen] = useState<string>()
+  // Copied from `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its history mode: the address bar
+  // opens the document from now on, so a reload doesn't open the history again
+  const historyOnOpen = resolution.kind === 'open' && resolution.historyOnOpen === true
+  useEffect(() => {
+    if (historyOnOpen && openAction?.mode === 'history') {
+      updateParameters({ newVolumeId: openAction.volumeId, newLinkId: openAction.linkId })
+    }
+  }, [historyOnOpen, openAction, updateParameters])
+
   return <DebugModeProvider>{renderResolution()}</DebugModeProvider>
 
   function renderResolution() {
@@ -77,6 +88,8 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
             onRetry={retry}
             downloadOnOpen={resolution.downloadOnOpen && downloadedOnOpen !== documentKey}
             onDownloadedOnOpen={() => setDownloadedOnOpen(documentKey)}
+            historyOnOpen={resolution.historyOnOpen && historyOpenedOnOpen !== documentKey}
+            onHistoryOpenedOnOpen={() => setHistoryOpenedOnOpen(documentKey)}
           />
         )
       }
