@@ -3,6 +3,7 @@ packages:
     - ci/bin/update-chargebee-iframe
     - applications/pass-desktop/native
     - packages/*
+    - packages/lumo-ui/storybook
     - packages/wasm/*
     - packages/pass/docs/starlight
     - tests

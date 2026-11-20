@@ -1,5 +1,5 @@
 import type { ReactElement, ReactNode } from 'react';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 
 import debounce from 'lodash/debounce';
 
@@ -9,8 +9,6 @@ import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 
 import './Tabs.scss';
-
-const toKey = (index: number, prefix = '') => `${prefix}${index}`;
 
 export type Tab = {
     title: string;
@@ -70,6 +68,7 @@ export const Tabs = ({
     const tabList = tabs || children || [];
     const value = clamp(unsafeValue, 0, tabList.length - 1);
     const content = tabList[value]?.content;
+    const tabsId = useId();
     const rootRef = useRef<HTMLDivElement>(null);
     const indicatortRef = useRef<HTMLLIElement>(null);
     const containerRef = useRef<HTMLUListElement>(null);
@@ -139,8 +138,8 @@ export const Tabs = ({
         return null;
     }
 
-    const key = toKey(value, 'key_');
-    const label = toKey(value, 'label_');
+    const panelId = `${tabsId}-panel`;
+    const activeTabId = `${tabsId}-tab-${value}`;
 
     return (
         <div ref={rootRef} className={clsx('tabs', 'tabs--' + variant, className)}>
@@ -169,14 +168,13 @@ export const Tabs = ({
                         }
                     >
                         {tabList.map(({ title, titleNode, icon, iconPosition = 'trailing' }, index) => {
-                            const key = toKey(index, 'key_');
-                            const label = toKey(index, 'label_');
+                            const tabId = `${tabsId}-tab-${index}`;
                             const selected = value === index;
 
                             return (
                                 /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
                                 <li
-                                    key={key}
+                                    key={tabId}
                                     className={clsx(
                                         'tabs-list-item',
                                         selected && 'tabs-list-item--selected',
@@ -202,9 +200,9 @@ export const Tabs = ({
                                             variant === 'modern' && 'justify-center interactive-pseudo rounded',
                                             variant === 'radio' && 'p-1 interactive-pseudo rounded'
                                         )}
-                                        id={label}
+                                        id={tabId}
                                         role="tab"
-                                        aria-controls={key}
+                                        aria-controls={panelId}
                                         tabIndex={0}
                                         aria-selected={selected}
                                         data-testid={`tab-header-${title.replace(/\s+/, '-').toLowerCase()}-button`}
@@ -251,10 +249,10 @@ export const Tabs = ({
             </div>
             {gap}
             <div
-                id={key}
+                id={panelId}
                 className={clsx('tabs-tabcontent', content ? 'pt-4' : '', contentClassName)}
                 role="tabpanel"
-                aria-labelledby={label}
+                aria-labelledby={activeTabId}
             >
                 {content}
             </div>

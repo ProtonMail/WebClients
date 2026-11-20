@@ -3,8 +3,11 @@
 @use './lumo-spacing';
 @use './lumo-proton-overrides';
 
-// Document-wide scope covers portals; html:root also outranks dynamic Proton :root themes.
-@include lumo-proton-overrides.overrides('html:root');
+// Document-wide scope covers portals and outranks dynamic Proton :root themes.
+// Embedded consumers can configure their own scope.
+$scope: 'html:root' !default;
+
+@include lumo-proton-overrides.overrides($scope);
 
 :root {
 	@include lumo-tokens.stable;
