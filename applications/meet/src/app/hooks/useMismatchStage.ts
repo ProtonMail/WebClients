@@ -15,6 +15,18 @@ export enum MismatchStage {
     Warning = 2,
 }
 
+const getMismatchStage = (elapsed: number): MismatchStage => {
+    if (elapsed >= MISMATCH_WARNING_DELAY) {
+        return MismatchStage.Warning;
+    }
+
+    if (elapsed >= MISMATCH_INFO_DELAY) {
+        return MismatchStage.Info;
+    }
+
+    return MismatchStage.Hidden;
+};
+
 /**
  * The start of the mismatch lives in the store because the details sidebar unmounts whenever it is
  * closed, which would otherwise restart the clock. Only the remaining time is timed locally.
@@ -23,37 +35,26 @@ export const useMismatchStage = (): MismatchStage => {
     const isParticipantCountMismatchEnabled = useFlag('MeetParticipantCountMismatch');
     const isGuest = useMeetSelector(selectIsGuest);
     const mismatchSince = useMeetSelector(selectParticipantCountMismatchSince);
-    const [stage, setStage] = useState<MismatchStage>(MismatchStage.Hidden);
+    const trackedMismatchSince = isParticipantCountMismatchEnabled && !isGuest ? mismatchSince : null;
+    const [stage, setStage] = useState(() =>
+        trackedMismatchSince === null ? MismatchStage.Hidden : getMismatchStage(Date.now() - trackedMismatchSince)
+    );
 
     useEffect(() => {
-        if (!isParticipantCountMismatchEnabled || isGuest || mismatchSince === null) {
+        if (trackedMismatchSince === null) {
             setStage(MismatchStage.Hidden);
             return;
         }
 
-        const elapsed = Date.now() - mismatchSince;
+        const elapsed = Date.now() - trackedMismatchSince;
+        setStage(getMismatchStage(elapsed));
 
-        if (elapsed >= MISMATCH_WARNING_DELAY) {
-            setStage(MismatchStage.Warning);
-            return;
-        }
+        const timeouts = [MISMATCH_INFO_DELAY, MISMATCH_WARNING_DELAY]
+            .filter((delay) => delay > elapsed)
+            .map((delay) => setTimeout(() => setStage(getMismatchStage(delay)), delay - elapsed));
 
-        const warningTimeout = setTimeout(() => setStage(MismatchStage.Warning), MISMATCH_WARNING_DELAY - elapsed);
-
-        if (elapsed >= MISMATCH_INFO_DELAY) {
-            setStage(MismatchStage.Info);
-            return () => clearTimeout(warningTimeout);
-        }
-
-        setStage(MismatchStage.Hidden);
-
-        const infoTimeout = setTimeout(() => setStage(MismatchStage.Info), MISMATCH_INFO_DELAY - elapsed);
-
-        return () => {
-            clearTimeout(infoTimeout);
-            clearTimeout(warningTimeout);
-        };
-    }, [isParticipantCountMismatchEnabled, isGuest, mismatchSince]);
+        return () => timeouts.forEach(clearTimeout);
+    }, [trackedMismatchSince]);
 
     return stage;
 };
