@@ -11,10 +11,15 @@ import type { Attachment, Message } from '../../types';
 interface ContextProgressIndicatorProps {
     attachments: Attachment[];
     messageChain: Message[];
+    spaceId?: string;
 }
 
-export const ContextProgressIndicator = ({ attachments, messageChain }: ContextProgressIndicatorProps) => {
-    const { usedTokens, fileTokens } = useEffectiveContextUsage(messageChain, attachments);
+export const ContextProgressIndicator = ({ attachments, messageChain, spaceId }: ContextProgressIndicatorProps) => {
+    const { usedTokens, fileTokens, isPending, isUnavailable, isStale } = useEffectiveContextUsage(
+        messageChain,
+        attachments,
+        spaceId
+    );
     const contextLimits = useContextLimits(messageChain[0]?.conversationId);
 
     const { totalPercentage, warningLevel } = React.useMemo(() => {
@@ -24,7 +29,10 @@ export const ContextProgressIndicator = ({ attachments, messageChain }: ContextP
         };
     }, [usedTokens, contextLimits]);
 
-    if (warningLevel === 'none') {
+    if (isUnavailable) {
+        return <p className="text-xs color-weak mx-2">{c('collider_2025: Info').t`Context estimate unavailable.`}</p>;
+    }
+    if (isPending || warningLevel === 'none') {
         return null;
     }
 
@@ -36,6 +44,10 @@ export const ContextProgressIndicator = ({ attachments, messageChain }: ContextP
             <div className="flex flex-row flex-nowrap justify-space-between items-center">
                 <span className={clsx('text-sm')}>{baseLabel}</span>
             </div>
+            {isStale && (
+                <span className="text-xs color-weak">{c('collider_2025: Info')
+                    .t`Showing the last context estimate.`}</span>
+            )}
             <div className="w-full bg-weak rounded-full border border-weak" style={{ height: '6px' }}>
                 <div
                     className="h-full rounded-full transition-all duration-300 ease-in-out"

@@ -4,13 +4,17 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { RetrievalContext } from '../../features/client-tools/retrievalTool/retrievalTool';
 import { SEARCH_KNOWLEDGE_TOOL_NAME } from '../../features/client-tools/retrievalTool/schema';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
+import { type PreparedRequest, prepareRequest } from '../../llm';
 import { compactConversation } from '../../llm/compaction';
 import { NotEnoughToCompactError } from '../../llm/compaction/partition';
+import { resolveRequestBudget } from '../../llm/requestBudget';
+import { SERVER_SYSTEM_PROMPT_TOKEN_ESTIMATE, estimateRequestContextUsage } from '../../llm/requestContextUsage';
 import { addMessage, deleteMessage, pushMessageRequest } from '../../redux/slices/core/messages';
 import type { LumoDispatch } from '../../redux/store';
 import { markModelsUnavailable } from '../../services/modelsStore';
 import { type Message, Role, type Turn } from '../../types';
 import { sendRetrievalReplyEvent } from '../../util/telemetry';
+import type { GenerationWithCompactionParams } from './compactionFlow';
 import { runGenerationWithCompaction } from './compactionFlow';
 
 /*
@@ -24,8 +28,7 @@ jest.mock('../../util/telemetry', () => ({
     sendRetrievalReplyEvent: jest.fn(),
 }));
 jest.mock('../../llm/compaction', () => ({
-    // buildTurns returns one turn per compaction boundary: each boundary shrinks the request.
-    estimateTurnsTokens: (turns: unknown[]) => [10_000_000, 100_000][turns.length] ?? 1_000,
+    ...jest.requireActual('../../llm/compaction'),
     compactConversation: jest.fn(),
 }));
 
@@ -48,7 +51,17 @@ function run(
         buildTurns = compactionBoundaryTurns,
         signal,
         retrievalTools,
-    }: { buildTurns?: (chain: Message[]) => Turn[]; signal?: AbortSignal; retrievalTools?: RetrievalContext } = {}
+        buildRequest,
+        messageChain = chain,
+        clientToolExecutor,
+    }: {
+        buildTurns?: (chain: Message[]) => Turn[];
+        signal?: AbortSignal;
+        retrievalTools?: RetrievalContext;
+        buildRequest?: GenerationWithCompactionParams['buildRequest'];
+        messageChain?: Message[];
+        clientToolExecutor?: NonNullable<GenerationWithCompactionParams['sendOptions']>['clientToolExecutor'];
+    } = {}
 ) {
     const actions: { type: string; payload?: any }[] = [];
     const dispatch = ((action: any) => {
@@ -65,10 +78,29 @@ function run(
             spaceId: 'space',
             assistantMessageId: 'assistant',
             parentMessageId: 'prompt',
-            chain,
-            buildTurns,
+            chain: messageChain,
+            buildRequest:
+                buildRequest ??
+                ((candidate) => {
+                    const turns = buildTurns(candidate);
+                    return {
+                        turns,
+                        usage: {
+                            conversationTokens: [10_000_000, 100_000][turns.length] ?? 1_000,
+                            toolCallTokens: 0,
+                            instructionTokens: 0,
+                            fileTokens: 0,
+                            usedTokens: [10_000_000, 100_000][turns.length] ?? 1_000,
+                            hasCompaction: turns.length > 0,
+                            activeFiles: [],
+                            droppedForBudget: [],
+                            excerptedForBudget: new Map(),
+                            cardedFiles: new Map(),
+                        },
+                    } satisfies PreparedRequest;
+                }),
             enableProactiveCompaction,
-            sendOptions: { signal, retrievalTools },
+            sendOptions: { signal, retrievalTools, clientToolExecutor },
         })
     );
     return { result, actions };
@@ -158,7 +190,7 @@ it('keeps a reply when a retry without compaction also overflows', async () => {
     let builds = 0;
     const shrinkingOnce = (): Turn[] => {
         builds += 1;
-        return Array.from({ length: builds < 3 ? 0 : 2 }, () => ({ role: Role.User, content: 'turn' }));
+        return Array.from({ length: builds < 2 ? 0 : 2 }, () => ({ role: Role.User, content: 'turn' }));
     };
 
     const { result, actions } = run(false, { buildTurns: shrinkingOnce });
@@ -231,3 +263,49 @@ it('lets the lookup tools find what a compaction in the same send summarized awa
         })
     );
 });
+
+it.each([
+    { overhead: 'tool definitions', historyChars: 45_000, toolDescriptionChars: 350_000 },
+    { overhead: 'the server system prompt', historyChars: 200_000, toolDescriptionChars: 0 },
+])(
+    'compacts when $overhead puts the displayed request over budget and forwards that same estimate',
+    async ({ historyChars, toolDescriptionChars }) => {
+        const tools = toolDescriptionChars
+            ? [
+                  {
+                      type: 'function' as const,
+                      function: { name: 'lookup', description: 'x'.repeat(toolDescriptionChars), parameters: {} },
+                  },
+              ]
+            : [];
+        const messageChain = chain.map((message, index) => ({
+            ...message,
+            blocks: [{ type: 'text' as const, content: index < 2 ? 'h'.repeat(historyChars) : 'question' }],
+        }));
+        const budget = resolveRequestBudget({ conversationId: 'conversation' });
+        const preview = prepareRequest({ messageChain, clientTools: tools, budget });
+        expect(preview.usage.usedTokens).toBeGreaterThan(budget.inputBudget);
+        const withoutOverhead = tools.length
+            ? prepareRequest({ messageChain, budget }).usage.usedTokens
+            : preview.usage.usedTokens - SERVER_SYSTEM_PROMPT_TOKEN_ESTIMATE;
+        expect(withoutOverhead).toBeLessThan(budget.inputBudget);
+        const getClientTools = jest.fn(async () => tools);
+        jest.mocked(sendMessageWithRedux).mockImplementation(
+            (_api, turns, options) =>
+                (async () => {
+                    expect(turns.map((turn) => turn.content)).toEqual([expect.stringContaining('summary'), 'question']);
+                    expect(options?.estimatedPromptTokens).toBe(estimateRequestContextUsage(turns, tools).usedTokens);
+                    expect(options?.estimatedPromptTokens).toBeLessThan(budget.inputBudget);
+                    expect(await options?.clientToolExecutor?.getClientTools?.()).toEqual(tools);
+                    return { status: 'succeeded', turns: [], producedTurns: [] };
+                }) as ReturnType<typeof sendMessageWithRedux>
+        );
+        const { result } = run(true, {
+            messageChain,
+            buildRequest: (candidate, clientTools) => prepareRequest({ messageChain: candidate, clientTools, budget }),
+            clientToolExecutor: { getClientTools, canExecute: () => false, execute: async () => [] },
+        });
+        await expect(result).resolves.toEqual({ assistantMessageId: expect.any(String), status: 'succeeded' });
+        expect(compactConversation).toHaveBeenCalledTimes(1);
+    }
+);

@@ -20,8 +20,8 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { buildArtifactRegistry } from '../components/Conversation/artifact/artifactRegistry';
 import type { ForwardedSendOptions } from '../components/Conversation/compactionFlow';
 import { cryptoKeyToBase64 } from '../crypto';
-import { estimateTurnsTokens } from '../llm/compaction/tokens';
 import { recordOverflow, recordPromptUsage } from '../llm/requestCalibration';
+import { estimateRequestContextUsage } from '../llm/requestContextUsage';
 import { selectAttachmentsBySpaceId } from '../redux/selectors';
 import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
 import {
@@ -103,6 +103,7 @@ export function sendMessageWithRedux(
             config,
             recoveryRecord,
             enableGenerationRecovery = false,
+            estimatedPromptTokens,
             confirmToolRetry,
             messageId,
             conversationId,
@@ -126,7 +127,8 @@ export function sendMessageWithRedux(
         const generatedImageFilenames = new Set<string>();
         let servingModelID: string | undefined;
         // Local estimate of the first request, compared with the backend's real prompt size.
-        const estimatedTokens = estimateTurnsTokens(turns);
+        const estimatedTokens =
+            estimatedPromptTokens ?? estimateRequestContextUsage(turns, options.clientTools).usedTokens;
         let failedPushPending = false;
         const pushPendingFailure = () => {
             if (failedPushPending && messageId) {

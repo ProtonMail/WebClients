@@ -680,6 +680,7 @@ export const KnowledgeBasePanel = ({
 
                             <div className="px-3 pb-3">
                                 <ContextUsageBreakdown
+                                    spaceId={spaceId}
                                     messageChain={messageChain}
                                     contextFilters={contextFilters}
                                     currentAttachments={currentAttachments}

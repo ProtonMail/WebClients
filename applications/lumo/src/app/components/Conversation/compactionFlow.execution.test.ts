@@ -4,12 +4,16 @@ import { createDesktopClientToolExecutor } from '@proton/lumo-api-client/core/de
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
+import { prepareRequest } from '../../llm';
 import type { LumoDispatch } from '../../redux/store';
 import { markModelsUnavailable } from '../../services/modelsStore';
 import { runGenerationWithCompaction } from './compactionFlow';
 
 jest.mock('../../lib/lumoApiClientRedux', () => ({ sendMessageWithRedux: jest.fn() }));
-jest.mock('../../llm/compaction', () => ({ estimateTurnsTokens: () => 0, compactConversation: jest.fn() }));
+jest.mock('../../llm/compaction', () => ({
+    ...jest.requireActual('../../llm/compaction'),
+    compactConversation: jest.fn(),
+}));
 jest.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
     isDesktopEnvironment: () => true,
     createDesktopClientToolExecutor: jest.fn(),
@@ -33,7 +37,7 @@ function run(executor?: ClientToolExecutor, artifacts = true, retryAfterToolExec
             assistantMessageId: 'assistant',
             parentMessageId: 'prompt',
             chain: [],
-            buildTurns: () => [],
+            buildRequest: (messageChain, clientTools) => prepareRequest({ messageChain, clientTools }),
             enableProactiveCompaction: false,
             retryAfterToolExecution,
             sendOptions: { clientToolExecutor: executor, artifactToolMode: artifacts ? 'auto' : 'off' },
@@ -98,4 +102,41 @@ it('does not compact and retry a background generation after a tool may have act
     );
     await expect(run(restricted, false, false)).rejects.toBeInstanceOf(ContextLengthExceededError);
     expect(sendMessageWithRedux).toHaveBeenCalledTimes(1);
+});
+
+it('refreshes connector schemas on later tool rounds', async () => {
+    const getClientTools = jest
+        .fn()
+        .mockResolvedValueOnce([{ type: 'function', function: { name: 'first', parameters: {} } }])
+        .mockResolvedValueOnce([{ type: 'function', function: { name: 'first', parameters: {} } }])
+        .mockResolvedValueOnce([{ type: 'function', function: { name: 'second', parameters: {} } }]);
+    const executor: ClientToolExecutor = { getClientTools, canExecute: () => true, execute: async () => [] };
+    jest.mocked(sendMessageWithRedux).mockImplementation(
+        (_api, _turns, options) =>
+            (async () => {
+                const tools = options?.clientToolExecutor!;
+                expect((await tools.getClientTools!()).map((tool) => tool.function.name)).toEqual(['first']);
+                expect((await tools.getClientTools!()).map((tool) => tool.function.name)).toEqual(['second']);
+                return { status: 'succeeded', turns: [], producedTurns: [] };
+            }) as ReturnType<typeof sendMessageWithRedux>
+    );
+
+    expect(await run(executor, false)).toEqual({ assistantMessageId: 'assistant', status: 'succeeded' });
+    expect(getClientTools).toHaveBeenCalledTimes(3);
+});
+
+it('leaves schema-discovery failures to the send path and its cleanup', async () => {
+    const failure = new Error('Desktop bridge unavailable');
+    const getClientTools = jest.fn().mockRejectedValue(failure);
+    const executor: ClientToolExecutor = { getClientTools, canExecute: () => true, execute: async () => [] };
+    jest.mocked(sendMessageWithRedux).mockImplementation(
+        (_api, _turns, options) =>
+            (async () => {
+                await expect(options?.clientToolExecutor?.getClientTools?.()).rejects.toBe(failure);
+                return { status: 'failed', turns: [], producedTurns: [] };
+            }) as ReturnType<typeof sendMessageWithRedux>
+    );
+
+    expect(await run(executor, false)).toEqual({ assistantMessageId: 'assistant', status: 'failed' });
+    expect(getClientTools).toHaveBeenCalledTimes(2);
 });

@@ -3,7 +3,7 @@ import { ContextLengthExceededError } from '@proton/lumo-api-client/core/context
 import { analyzeError } from '../../services/errors/errorAnalyzer';
 import { type Attachment, LUMO_API_ERRORS, type Message, Role } from '../../types';
 import { DEFAULT_CONTEXT_LIMITS } from '../contextLimits';
-import { REQUEST_OVERHEAD_TOKEN_ALLOWANCE, getFileTokenBudget, getRequestBudget } from '../requestBudget';
+import { getFileTokenBudget, getRequestBudget } from '../requestBudget';
 import { resolveRequestContextFiles } from '../requestContextFiles';
 import { calculateAttachmentContextSize } from '../utils';
 import { compactConversation } from './engine';
@@ -38,11 +38,11 @@ describe('file budget', () => {
     it.each([false, true])('never plans a request larger than the input budget (reasoning: %s)', (reasoning) => {
         const budget = getRequestBudget({ limits: DEFAULT_CONTEXT_LIMITS, reasoning });
         // History that still fits on its own, but leaves little room for files.
-        const historyTokens = budget.inputBudget - REQUEST_OVERHEAD_TOKEN_ALLOWANCE - 2_000;
+        const historyTokens = budget.inputBudget - 2_000;
 
         const fileBudget = getFileTokenBudget(budget, historyTokens);
 
-        expect(historyTokens + REQUEST_OVERHEAD_TOKEN_ALLOWANCE + fileBudget).toBeLessThanOrEqual(budget.inputBudget);
+        expect(historyTokens + fileBudget).toBeLessThanOrEqual(budget.inputBudget);
     });
 
     it('does not send a single document larger than the file budget in full', () => {

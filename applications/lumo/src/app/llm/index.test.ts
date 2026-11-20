@@ -1,11 +1,10 @@
-import type { ConversationContext } from '../components/Conversation/helper';
 import type { PersonalizationSettings } from '../redux/slices/personalization';
 import { attachmentDataCache } from '../services/attachmentDataCache';
 import type { Attachment, Message } from '../types';
 import { Role } from '../types';
 import { MAX_IMAGES_PER_REQUEST, OMITTED_IMAGE_PLACEHOLDER } from './attachments';
 import { ENABLE_U2L_ENCRYPTION } from './config';
-import { prepareTurns } from './index';
+import { type PrepareRequestOptions, prepareRequest } from './index';
 
 describe('llm encryption configuration', () => {
     it('enables U2L encryption', () => {
@@ -13,7 +12,7 @@ describe('llm encryption configuration', () => {
     });
 });
 
-describe('prepareTurns — artifact tool nudge', () => {
+describe('prepareRequest — artifact tool nudge', () => {
     const personalization = {} as PersonalizationSettings;
     const message = {
         id: 'msg-1',
@@ -23,38 +22,30 @@ describe('prepareTurns — artifact tool nudge', () => {
     } as unknown as Message;
 
     it('injects no nudge turn when artifactToolMode is "off" (the default)', () => {
-        const turns = prepareTurns([message], personalization);
+        const turns = prepareRequest({ messageChain: [message], personalization }).turns;
         expect(turns.some((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'))).toBe(
             false
         );
     });
 
     it('injects the create-mode nudge when artifactToolMode is "create"', () => {
-        const turns = prepareTurns(
-            [message],
+        const turns = prepareRequest({
+            messageChain: [message],
             personalization,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            false,
-            'create'
-        );
+            includeVisualizationInstructions: false,
+            artifactToolMode: 'create',
+        }).turns;
         const nudge = turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
         expect(nudge?.content).toContain('answered as a creation in the canvas');
     });
 
     it('injects the judgment-based nudge (not the forced one) when artifactToolMode is "auto"', () => {
-        const turns = prepareTurns(
-            [message],
+        const turns = prepareRequest({
+            messageChain: [message],
             personalization,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            false,
-            'auto'
-        );
+            includeVisualizationInstructions: false,
+            artifactToolMode: 'auto',
+        }).turns;
         const nudge = turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
         expect(nudge?.content).toContain('most messages should be answered normally in the chat');
         expect(nudge?.content).not.toContain('answered as a creation in the canvas');
@@ -63,19 +54,14 @@ describe('prepareTurns — artifact tool nudge', () => {
     // D20: slide decks are only suggested when the tool offers `presentation` (LumoArtifactSlides).
     it('lists slide decks in the auto nudge only with the slides flag', () => {
         const findNudge = (artifactPresentationEnabled: boolean) => {
-            const turns = prepareTurns(
-                [message],
+            const turns = prepareRequest({
+                messageChain: [message],
                 personalization,
-                undefined,
-                undefined,
-                undefined,
-                undefined,
-                false,
-                'auto',
-                false,
-                undefined,
-                artifactPresentationEnabled
-            );
+                includeVisualizationInstructions: false,
+                artifactToolMode: 'auto',
+                isFromQueryParam: false,
+                artifactPresentationEnabled,
+            }).turns;
             return turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
         };
 
@@ -85,23 +71,19 @@ describe('prepareTurns — artifact tool nudge', () => {
     });
 
     it('injects the revise-only nudge when artifactToolMode is "revise"', () => {
-        const turns = prepareTurns(
-            [message],
+        const turns = prepareRequest({
+            messageChain: [message],
             personalization,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            false,
-            'revise'
-        );
+            includeVisualizationInstructions: false,
+            artifactToolMode: 'revise',
+        }).turns;
         const nudge = turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
         expect(nudge?.content).toContain('only to revise');
         expect(nudge?.content).not.toContain('answered as a creation in the canvas');
     });
 });
 
-describe('prepareTurns — attachment content blocks', () => {
+describe('prepareRequest — attachment content blocks', () => {
     const personalization = {} as PersonalizationSettings;
 
     it('prepends visualization instructions when enabled', () => {
@@ -112,7 +94,11 @@ describe('prepareTurns — attachment content blocks', () => {
             conversationId: 'conv-1',
         } as unknown as Message;
 
-        const turns = prepareTurns([message], personalization, undefined, undefined, undefined, undefined, true);
+        const turns = prepareRequest({
+            messageChain: [message],
+            personalization,
+            includeVisualizationInstructions: true,
+        }).turns;
         expect(turns[0]?.role).toBe(Role.System);
         expect(turns[0]?.content).toContain('[Visualization]');
         expect(turns[0]?.content).toContain('vega-lite');
@@ -126,7 +112,11 @@ describe('prepareTurns — attachment content blocks', () => {
             conversationId: 'conv-1',
         } as unknown as Message;
 
-        const turns = prepareTurns([message], personalization, undefined, undefined, undefined, undefined, false);
+        const turns = prepareRequest({
+            messageChain: [message],
+            personalization,
+            includeVisualizationInstructions: false,
+        }).turns;
         expect(turns.some((turn) => turn.content?.includes('[Visualization]'))).toBe(false);
     });
 
@@ -138,20 +128,16 @@ describe('prepareTurns — attachment content blocks', () => {
             conversationId: 'conv-1',
         } as unknown as Message;
 
-        const turns = prepareTurns(
-            [message],
+        const turns = prepareRequest({
+            messageChain: [message],
             personalization,
-            undefined,
-            undefined,
-            undefined,
-            'Be terse',
-            false,
-            'off',
-            false,
-            undefined,
-            false,
-            '[Skill /ux-copy: Write clearly]'
-        );
+            agentInstructions: 'Be terse',
+            includeVisualizationInstructions: false,
+            artifactToolMode: 'off',
+            isFromQueryParam: false,
+            artifactPresentationEnabled: false,
+            skillInstructions: '[Skill /ux-copy: Write clearly]',
+        }).turns;
         expect(turns[0]?.role).toBe(Role.System);
         expect(turns[0]?.content).toBe('[Agent instructions: Be terse]\n\n[Skill /ux-copy: Write clearly]');
     });
@@ -164,17 +150,13 @@ describe('prepareTurns — attachment content blocks', () => {
             conversationId: 'conv-1',
         } as unknown as Message;
 
-        const turns = prepareTurns(
-            [message],
+        const turns = prepareRequest({
+            messageChain: [message],
             personalization,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            false,
-            'off',
-            true
-        );
+            includeVisualizationInstructions: false,
+            artifactToolMode: 'off',
+            isFromQueryParam: true,
+        }).turns;
         expect(turns[0]?.role).toBe(Role.System);
         expect(turns[0]?.content).toContain('hyperlink');
         expect(turns[0]?.content).toContain('web_extract is disabled');
@@ -189,14 +171,13 @@ describe('prepareTurns — attachment content blocks', () => {
             attachments: attachmentIds.map((id) => ({ id, filename: `${id}.pdf`, mimeType: 'application/pdf' })),
         }) as unknown as Message;
 
-    const makeContext = (allConversationAttachments: Attachment[]): ConversationContext =>
+    const makeContext = (
+        allConversationAttachments: Attachment[]
+    ): Pick<PrepareRequestOptions, 'attachments' | 'contextFilters'> =>
         ({
-            spaceId: 'space-1',
-            conversationId: 'conv-1',
-            allConversationAttachments,
-            messageChain: [],
+            attachments: allConversationAttachments,
             contextFilters: [],
-        }) as unknown as ConversationContext;
+        }) as Pick<PrepareRequestOptions, 'attachments' | 'contextFilters'>;
 
     it('emits a BEGIN/END FILE CONTENTS block when the attachment has markdown', () => {
         const message = makeUserMessage(['receipt']);
@@ -207,7 +188,11 @@ describe('prepareTurns — attachment content blocks', () => {
             markdown: 'Total: £40.50',
         } as unknown as Attachment;
 
-        const turns = prepareTurns([message], personalization, undefined, makeContext([attachment]));
+        const turns = prepareRequest({
+            messageChain: [message],
+            personalization,
+            ...makeContext([attachment]),
+        }).turns;
 
         const joined = turns.map((t) => t.content).join('\n');
         expect(joined).toContain('----- BEGIN FILE CONTENTS -----');
@@ -224,7 +209,11 @@ describe('prepareTurns — attachment content blocks', () => {
             // No markdown — content lives in the RAG index, not on the attachment.
         } as unknown as Attachment;
 
-        const turns = prepareTurns([message], personalization, undefined, makeContext([attachment]));
+        const turns = prepareRequest({
+            messageChain: [message],
+            personalization,
+            ...makeContext([attachment]),
+        }).turns;
 
         const joined = turns.map((t) => t.content).join('\n');
         expect(joined).not.toContain('BEGIN FILE CONTENTS');
@@ -240,7 +229,11 @@ describe('prepareTurns — attachment content blocks', () => {
             error: true,
         } as unknown as Attachment;
 
-        const turns = prepareTurns([message], personalization, undefined, makeContext([attachment]));
+        const turns = prepareRequest({
+            messageChain: [message],
+            personalization,
+            ...makeContext([attachment]),
+        }).turns;
 
         const joined = turns.map((t) => t.content).join('\n');
         expect(joined).toContain('[Contents not available');
@@ -277,7 +270,11 @@ describe('prepareTurns — attachment content blocks', () => {
             },
         ] as unknown as Attachment[];
 
-        const turns = prepareTurns([manualMessage, autoMessage], personalization, undefined, makeContext(attachments));
+        const turns = prepareRequest({
+            messageChain: [manualMessage, autoMessage],
+            personalization,
+            ...makeContext(attachments),
+        }).turns;
 
         const joined = turns.map((t) => t.content).join('\n');
         expect(joined.match(/----- BEGIN FILE CONTENTS -----/g)).toHaveLength(1);
@@ -293,22 +290,17 @@ describe('prepareTurns — attachment content blocks', () => {
             markdown: `# Chapter one\n${'lorem ipsum dolor sit amet '.repeat(60_000)}`,
         } as unknown as Attachment;
         const send = (retrievalInstructions?: string) =>
-            prepareTurns(
-                [makeUserMessage(['huge'])],
+            prepareRequest({
+                messageChain: [makeUserMessage(['huge'])],
                 personalization,
-                undefined,
-                makeContext([huge]),
-                undefined,
-                undefined,
-                false,
-                'off',
-                false,
-                undefined,
-                false,
-                undefined,
-                retrievalInstructions
-            )
-                .map((t) => t.content)
+                ...makeContext([huge]),
+                includeVisualizationInstructions: false,
+                artifactToolMode: 'off',
+                isFromQueryParam: false,
+                artifactPresentationEnabled: false,
+                retrievalInstructions,
+            })
+                .turns.map((t) => t.content)
                 .join('\n');
 
         it('is excerpted when the lookup tools are off', () => {
@@ -337,22 +329,17 @@ describe('prepareTurns — attachment content blocks', () => {
             markdown: 'lorem ipsum dolor sit amet '.repeat(3_000),
         } as unknown as Attachment;
         const send = (retrievalInstructions?: string) =>
-            prepareTurns(
-                [makeUserMessage(['medium'])],
+            prepareRequest({
+                messageChain: [makeUserMessage(['medium'])],
                 personalization,
-                undefined,
-                makeContext([medium]),
-                undefined,
-                undefined,
-                false,
-                'off',
-                false,
-                undefined,
-                false,
-                undefined,
-                retrievalInstructions
-            )
-                .map((t) => t.content)
+                ...makeContext([medium]),
+                includeVisualizationInstructions: false,
+                artifactToolMode: 'off',
+                isFromQueryParam: false,
+                artifactPresentationEnabled: false,
+                retrievalInstructions,
+            })
+                .turns.map((t) => t.content)
                 .join('\n');
 
         expect(send()).toContain(medium.markdown!.trim());
@@ -361,20 +348,17 @@ describe('prepareTurns — attachment content blocks', () => {
     });
 });
 
-describe('prepareTurns — image attachments', () => {
+describe('prepareRequest — image attachments', () => {
     const personalization = {} as PersonalizationSettings;
 
     const makeContext = (
         allConversationAttachments: Attachment[],
-        contextFilters: ConversationContext['contextFilters'] = []
-    ): ConversationContext =>
+        contextFilters: NonNullable<PrepareRequestOptions['contextFilters']> = []
+    ): Pick<PrepareRequestOptions, 'attachments' | 'contextFilters'> =>
         ({
-            spaceId: 'space-1',
-            conversationId: 'conv-1',
-            allConversationAttachments,
-            messageChain: [],
+            attachments: allConversationAttachments,
             contextFilters,
-        }) as unknown as ConversationContext;
+        }) as Pick<PrepareRequestOptions, 'attachments' | 'contextFilters'>;
 
     const makeImageMessage = (id: string, messageId = 'msg-1'): Message =>
         ({
@@ -406,7 +390,11 @@ describe('prepareTurns — image attachments', () => {
             attachments: ids.map((id) => ({ id, filename: `${id}.png`, mimeType: 'image/png' })),
         } as unknown as Message;
 
-        const turns = prepareTurns([message], personalization, undefined, makeContext(ids.map(makeImageAttachment)));
+        const turns = prepareRequest({
+            messageChain: [message],
+            personalization,
+            ...makeContext(ids.map(makeImageAttachment)),
+        }).turns;
 
         const imageTurns = turns.filter((t) => Array.isArray(t.images) && t.images.length > 0);
         expect(imageTurns).toHaveLength(1);
@@ -429,12 +417,11 @@ describe('prepareTurns — image attachments', () => {
             attachments: ids.map((id) => ({ id, filename: `${id}.png`, mimeType: 'image/png' })),
         } as unknown as Message;
 
-        const turns = prepareTurns(
-            [message],
+        const turns = prepareRequest({
+            messageChain: [message],
             personalization,
-            undefined,
-            makeContext(ids.map(makeImageAttachment), [{ messageId: 'msg-1', excludedFiles: ['b.png'] }])
-        );
+            ...makeContext(ids.map(makeImageAttachment), [{ messageId: 'msg-1', excludedFiles: ['b.png'] }]),
+        }).turns;
 
         const imageTurns = turns.filter((t) => Array.isArray(t.images) && t.images.length > 0);
         expect(imageTurns).toHaveLength(1);
@@ -457,12 +444,11 @@ describe('prepareTurns — image attachments', () => {
             attachments: ids.map((id) => ({ id, filename: `${id}.png`, mimeType: 'image/png' })),
         } as unknown as Message;
 
-        const turns = prepareTurns(
-            [message],
+        const turns = prepareRequest({
+            messageChain: [message],
             personalization,
-            undefined,
-            makeContext(ids.map(makeImageAttachment), [{ messageId: 'msg-1', excludedFiles: ['a.png', 'b.png'] }])
-        );
+            ...makeContext(ids.map(makeImageAttachment), [{ messageId: 'msg-1', excludedFiles: ['a.png', 'b.png'] }]),
+        }).turns;
 
         const userTurns = turns.filter((t) => t.role === Role.User);
         expect(userTurns).toHaveLength(1);
@@ -475,7 +461,11 @@ describe('prepareTurns — image attachments', () => {
         const messages = ids.map((id, index) => makeImageMessage(id, `msg-${index}`));
         const attachments = ids.map(makeImageAttachment);
 
-        const turns = prepareTurns(messages, personalization, undefined, makeContext(attachments));
+        const turns = prepareRequest({
+            messageChain: messages,
+            personalization,
+            ...makeContext(attachments),
+        }).turns;
 
         const imageTurns = turns.filter((t) => Array.isArray(t.images) && t.images.length > 0);
         const sentImageIds = imageTurns.flatMap((t) => t.images?.map((img) => img.image_id) ?? []);

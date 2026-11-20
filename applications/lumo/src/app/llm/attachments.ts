@@ -4,8 +4,8 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { DbApi } from '../indexedDb/db';
-import type { AttachmentMap } from '../redux/slices/core/attachments';
 import { MAX_PDF_PAGE_IMAGES_PER_REQUEST } from '../lib/attachments/pdfPageLimits';
+import type { AttachmentMap } from '../redux/slices/core/attachments';
 import { deserializeAttachment } from '../serialization';
 import { attachmentDataCache } from '../services/attachmentDataCache';
 import { SearchService } from '../services/search/searchService';
@@ -22,7 +22,7 @@ import { collapseCompactedChain } from './compaction/collapse';
 
 // Maximum number of images sent to the backend per request. When a conversation
 // contains more images than this, only the most recent ones are sent (older images
-// are dropped). Kept in one place so the request-building logic (prepareTurns) and
+// are dropped). Kept in one place so the request-building logic (prepareRequest) and
 // the UI warning use the exact same boundary.
 export const MAX_IMAGES_PER_REQUEST = 10;
 
@@ -147,7 +147,7 @@ export function getImageLimitInfo(
     maxImages: number = MAX_IMAGES_PER_REQUEST
 ): ImageLimitInfo {
     // Count images over the same post-compaction view that the request uses
-    // (prepareTurns -> computeKeptImageIds). Summarized messages are dropped from the
+    // (prepareRequest -> computeKeptImageIds). Summarized messages are dropped from the
     // chain before sending, so their images must not count toward the limit/warning.
     const { chain: effectiveChain } = collapseCompactedChain(messageChain);
     const uploadedImageIds: AttachmentId[] = [];
@@ -178,9 +178,7 @@ export function getImageLimitInfo(
     const exceedsPageLimit = pageImageIds.length > MAX_PDF_PAGE_IMAGES_PER_REQUEST;
     const keptImageIds = selectKeptImageIds(uploadedImageIds, pageImageIds, maxImages);
     const excludedImageIds = new Set(orderedImageIds.filter((id) => !keptImageIds.has(id)));
-    const boundaryImageId = exceedsLimit
-        ? uploadedImageIds.slice(uploadedImageIds.length - maxImages)[0]
-        : undefined;
+    const boundaryImageId = exceedsLimit ? uploadedImageIds.slice(uploadedImageIds.length - maxImages)[0] : undefined;
 
     return { totalImages, exceedsLimit, exceedsPageLimit, keptImageIds, excludedImageIds, boundaryImageId };
 }

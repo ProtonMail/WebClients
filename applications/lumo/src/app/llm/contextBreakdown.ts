@@ -1,7 +1,7 @@
 import { DEFAULT_CONTEXT_LIMITS } from './contextLimits';
 import { getReservedOutputTokens } from './requestBudget';
 
-export type ContextSegmentId = 'conversation' | 'tool_calls' | 'files' | 'buffer' | 'free';
+export type ContextSegmentId = 'conversation' | 'tool_calls' | 'files' | 'instructions' | 'buffer' | 'free';
 
 type ContextSegment = {
     id: ContextSegmentId;
@@ -23,9 +23,11 @@ export type ContextBreakdown = {
 };
 
 export type ContextBreakdownInput = {
+    usedTokens: number;
     conversationTokens: number;
     toolCallTokens?: number;
     fileTokens: number;
+    instructionTokens?: number;
     /** Model window, in the same units as the token counts. */
     maxTokens?: number;
     /** Room reserved for the reply; defaults to the non-reasoning reservation for `maxTokens`. */
@@ -41,8 +43,10 @@ export type ContextBreakdownInput = {
  * the bar (buffer/free collapse to zero).
  */
 export function buildContextBreakdown({
+    usedTokens,
     conversationTokens,
     toolCallTokens = 0,
+    instructionTokens = 0,
     fileTokens,
     maxTokens = DEFAULT_CONTEXT_LIMITS.MAX_CONTEXT,
     bufferTokens,
@@ -54,7 +58,8 @@ export function buildContextBreakdown({
     const conversation = Math.max(0, conversationTokens);
     const toolCalls = Math.max(0, toolCallTokens);
     const files = Math.max(0, fileTokens);
-    const used = conversation + toolCalls + files;
+    const instructions = Math.max(0, instructionTokens);
+    const used = Math.max(0, usedTokens);
     const overWindow = used > max;
 
     // Over the whole window: scale the real segments to fill the bar; otherwise lay them
@@ -66,6 +71,7 @@ export function buildContextBreakdown({
     const free = overWindow ? 0 : Math.max(0, max - used - effectiveBuffer);
 
     const segments: ContextSegment[] = [
+        { id: 'instructions', tokens: instructions, percentage: toPercentage(instructions) },
         { id: 'conversation', tokens: conversation, percentage: toPercentage(conversation) },
         { id: 'tool_calls', tokens: toolCalls, percentage: toPercentage(toolCalls) },
         { id: 'files', tokens: files, percentage: toPercentage(files) },
