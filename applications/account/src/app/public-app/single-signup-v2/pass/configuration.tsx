@@ -309,11 +309,15 @@ const getAdvancedSecurityFeaturesBenefit = (): BenefitItem => {
     };
 };
 
-const getPassBenefits = (
-    plan: PLANS | undefined,
-    audience: Audience | undefined,
-    isPaidPass: boolean
-): BenefitItem[] => {
+const getPassBenefits = ({
+    plan,
+    isPaidPass,
+    hideIncludedProducts,
+}: {
+    plan: PLANS | undefined;
+    isPaidPass: boolean;
+    hideIncludedProducts: boolean;
+}): BenefitItem[] => {
     if (plan === PLANS.BUNDLE || plan === PLANS.VISIONARY) {
         return getBundleVisionaryBenefits();
     }
@@ -365,9 +369,9 @@ const getPassBenefits = (
             getAdvancedAliasBenefit(),
             getSecureVaultSharingBenefit(),
             getSwissPrivacyLawsBenefit(),
-            getAppsPassIncludedBenefit(),
+            !hideIncludedProducts && getAppsPassIncludedBenefit(),
             getAdvancedSecurityFeaturesBenefit(),
-        ];
+        ].filter(isTruthy);
     }
 
     return [
@@ -460,7 +464,7 @@ export const getPassConfiguration = ({
     isPaidPassVPNBundle: boolean;
     plansMap?: PlansMap;
     plan: Plan | undefined;
-    signupParameters?: { trial?: boolean; invite?: SignupInviteParameters };
+    signupParameters?: { trial?: boolean; invite?: SignupInviteParameters; hideIncludedProducts?: boolean };
 }): SignupConfiguration => {
     const logo = <PassLogo />;
 
@@ -620,7 +624,11 @@ export const getPassConfiguration = ({
             );
         }
 
-        const benefitItems = getPassBenefits(plan?.Name as PLANS, audience, isPaidPass);
+        const benefitItems = getPassBenefits({
+            plan: plan?.Name as PLANS,
+            isPaidPass,
+            hideIncludedProducts: Boolean(signupParameters?.hideIncludedProducts),
+        });
         const benefitTitle = getPassBenefitsTitle(plan?.Name as PLANS);
 
         return (
