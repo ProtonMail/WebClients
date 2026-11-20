@@ -1,6 +1,6 @@
 import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
 import { getAddonLimit } from '@proton/payments/core/addon/addons';
-import { type ADDON_NAMES, ADDON_PREFIXES, CURRENCIES, PLANS } from '@proton/payments/core/constants';
+import { type ADDON_NAMES, ADDON_PREFIXES, COUPON_CODES, CURRENCIES, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import { getSupportedAddons, isAddonType } from '@proton/payments/core/plan/addons';
 import { getPlanMaxIPs } from '@proton/payments/core/plan/feature-limits';
@@ -132,7 +132,10 @@ export const getSignupSearchParams = (
 
     const referrer = searchParams.get('referrer') || undefined; // referral ID
     const invite = searchParams.get('invite') || undefined;
-    const coupon = searchParams.get('coupon')?.toUpperCase() || undefined;
+    const maybeCoupon = searchParams.get('coupon')?.toUpperCase() || undefined;
+    // The business referral coupon is whitelist-only and the whitelist entry needs a referrer: `/check` doesn't
+    // enforce it but subscribing does, so without one it's dropped rather than failing at payment.
+    const coupon = maybeCoupon === COUPON_CODES.BUSINESS_REFERRAL_2026 && !referrer ? undefined : maybeCoupon;
     const type = searchParams.get('type') || undefined;
     const maybeHfp = searchParams.get('hfp');
     const hideFreePlan = ['true', '1'].includes(maybeHfp as any) || getCookie('offer') === 'bestdeal' || false;

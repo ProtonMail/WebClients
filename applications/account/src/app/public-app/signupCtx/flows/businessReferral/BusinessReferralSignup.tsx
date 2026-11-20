@@ -68,7 +68,12 @@ const BusinessReferralSignup = (props: BaseSignupContextProps) => {
                     planIDs: { [plan]: 1 },
                     currency: signupSearchParams.getCurrency(searchParams),
                     cycle: BUSINESS_SIGNUP_CYCLE,
-                    coupon: signupSearchParams.getCoupon(searchParams) ?? COUPON_CODES.BUSINESS_REFERRAL_2026,
+                    // Referral coupons are whitelist-only and the whitelist entry needs a referrer: `/check` doesn't
+                    // enforce it but subscribing does, so without one no coupon is sent rather than showing a
+                    // discount that fails at payment.
+                    coupon: referralIdentifier
+                        ? (signupSearchParams.getCoupon(searchParams) ?? COUPON_CODES.BUSINESS_REFERRAL_2026)
+                        : undefined,
                 },
                 telemetryContext: 'ctx-signup-business-referral',
             }}
