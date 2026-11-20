@@ -1,7 +1,6 @@
 import { type MutableRefObject, useEffect, useRef } from 'react';
 
 import { MeetCoreErrorEnum, MlsSyncStateInfo, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
-import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -9,6 +8,7 @@ import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting'
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setMlsRetrying } from '@proton/meet/store/slices/connectionSlice';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { CAPTIONS_AGENT_RETRY_DELAYS_MS } from '../../constants';
@@ -223,7 +223,7 @@ export const useMlsSession = ({
         try {
             const sessionId = authentication.hasSession() ? authentication.getUID() : null;
             if (isMeetNewJoinFunctionsEnabled) {
-                logger.info('Joining meeting with join function v2');
+                meetingLogger.info('Joining meeting with join function v2');
                 await meetCoreClient.joinMeeting2(
                     accessToken,
                     meetingLinkName,
@@ -232,7 +232,7 @@ export const useMlsSession = ({
                     isWaitingRoom
                 );
             } else {
-                logger.info('Joining meeting with join function v1');
+                meetingLogger.info('Joining meeting with join function v1');
                 await meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType(
                     accessToken,
                     meetingLinkName,
@@ -286,7 +286,7 @@ export const useMlsSession = ({
                 case MeetCoreErrorEnum.MaxRetriesReached:
                 case MeetCoreErrorEnum.HttpClientError:
                 default:
-                    logger.error('Failed to join the MLS session', error);
+                    meetingLogger.error('Failed to join the MLS session', error);
                     if (notifyErrors === 'all') {
                         message = c('Error').t`Failed to join meeting. Please try again later.`;
                     }

@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import { RoomEvent } from 'livekit-client';
 import type { Participant, RemoteParticipant } from 'livekit-client';
 
@@ -9,6 +8,7 @@ import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting'
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import { selectParticipantsMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -47,7 +47,7 @@ export const useIsRecordingInProgressReceiver = () => {
             try {
                 decoded = JSON.parse(new TextDecoder().decode(payload));
             } catch (error) {
-                logger.error('Error decoding payload', error);
+                meetingLogger.error('Error decoding payload', error);
                 return;
             }
 
@@ -107,7 +107,7 @@ export const useIsRecordingInProgressReceiver = () => {
                     dispatch(removeParticipantRecording(mlsSenderId));
                 }
             } catch (error) {
-                logger.error('Error handling recording status message', error);
+                meetingLogger.error('Error handling recording status message', error);
             }
         },
         [dispatch, meetCoreClient, reportMeetError, store]

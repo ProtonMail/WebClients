@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import { RemoteTrackPublication } from 'livekit-client';
 import { c } from 'ttag';
 
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -52,7 +52,7 @@ export const ScreenShareView = ({ isCompact = false }: { isCompact?: boolean }) 
             publication.setEnabled(wasEnabled);
             await wait(isSafari() ? 200 : 50);
         } catch (error) {
-            logger.error('Failed to refresh screen share track', error);
+            meetingLogger.error('Failed to refresh screen share track', error);
         } finally {
             setIsRefreshingScreenShare(false);
         }

@@ -1,4 +1,4 @@
-import { logger } from '@protontech/logger';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 
 import type { ChunkWatchdog, ChunkWatchdogOptions, RecordingStallCause } from './types';
 
@@ -88,7 +88,7 @@ export const createChunkWatchdog = ({
                 recordStallDuration(snapshot.lastChunkAt - currentStall.startedAt, currentStall.cause);
                 currentStall = null;
             }
-            logger.info('[MeetingRecorder] watchdog: chunks resumed');
+            meetingLogger.info('[MeetingRecorder] watchdog: chunks resumed');
         }
     };
 

@@ -1,4 +1,3 @@
-import { logger } from '@protontech/logger';
 import type { Participant, TrackPublication } from 'livekit-client';
 import {
     ConnectionState,
@@ -9,6 +8,7 @@ import {
     Track,
 } from 'livekit-client';
 
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isWebKit } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -320,12 +320,12 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
         const trackKey = trackKeyOf(participant, publication);
 
         if (this.activeRecoveries.has(trackKey)) {
-            logger.warn('AudioTrackSubscriptionManager: recovery already in progress', { trackKey, reason });
+            meetingLogger.warn('AudioTrackSubscriptionManager: recovery already in progress', { trackKey, reason });
             return;
         }
 
         this.activeRecoveries.add(trackKey);
-        logger.info('AudioTrackSubscriptionManager: recoverTrack starting', { trackKey, reason });
+        meetingLogger.info('AudioTrackSubscriptionManager: recoverTrack starting', { trackKey, reason });
 
         try {
             if (publication.isEnabled) {
@@ -345,13 +345,16 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
             }
 
             if (!this.subscribedMicrophoneTrackPublications.has(publication.trackSid)) {
-                logger.info('AudioTrackSubscriptionManager: publication left cache mid-recovery, aborting', trackKey);
+                meetingLogger.info(
+                    'AudioTrackSubscriptionManager: publication left cache mid-recovery, aborting',
+                    trackKey
+                );
                 this.cleanupRecoveryState(trackKey);
                 return;
             }
 
             if (publication.isSubscribed) {
-                logger.warn(
+                meetingLogger.warn(
                     'AudioTrackSubscriptionManager: still subscribed after setSubscribed(false), retrying',
                     trackKey
                 );
@@ -364,7 +367,7 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
                 await wait(isWebKit() ? 500 : 100);
             }
             if (!publication.isSubscribed) {
-                logger.error('AudioTrackSubscriptionManager: failed to resubscribe', trackKey);
+                meetingLogger.error('AudioTrackSubscriptionManager: failed to resubscribe', trackKey);
                 this.cleanupRecoveryState(trackKey);
                 return;
             }
@@ -374,7 +377,7 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
                 await wait(isWebKit() ? 200 : 50);
             }
 
-            logger.info('AudioTrackSubscriptionManager: recoverTrack completed', {
+            meetingLogger.info('AudioTrackSubscriptionManager: recoverTrack completed', {
                 trackKey,
                 reason,
                 cooldownMs: this.RECOVERY_COOLDOWN,

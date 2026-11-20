@@ -1,11 +1,10 @@
-import { logger } from '@protontech/logger';
-
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import type { JoinStats, ParticipantQualityStats, RecordingStats } from './types';
 
 const sendCustomEventAndLog = (eventName: string, payload: Record<string, unknown>) => {
-    logger.info(`[telemetry] ${eventName}`, payload);
+    meetingLogger.info(`[telemetry] ${eventName}`, payload);
     telemetry.sendCustomEvent(eventName, payload);
 };
 

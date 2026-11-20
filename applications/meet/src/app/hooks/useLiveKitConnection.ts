@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -10,6 +9,7 @@ import {
     selectCameraPermission,
     selectMicrophonePermission,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import { checkIfUsingTurnRelay } from '../utils/checkIfUsingTurnRelay';
@@ -109,7 +109,7 @@ export const useLiveKitConnection = ({ reportMeetError }: UseLiveKitConnectionPa
     };
 
     const connectViaTurnRelay = async (url: string, token: string, timeout: number): Promise<void> => {
-        logger.info('Connecting via TURN relay');
+        meetingLogger.info('Connecting via TURN relay');
 
         try {
             await connectWithTimeout(url, token, timeout, {
@@ -126,7 +126,7 @@ export const useLiveKitConnection = ({ reportMeetError }: UseLiveKitConnectionPa
     };
 
     const connectDirect = async (url: string, token: string, timeout: number): Promise<void> => {
-        logger.info('Connecting directly');
+        meetingLogger.info('Connecting directly');
 
         await connectWithTimeout(
             url,

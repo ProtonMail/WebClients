@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useConnectionState, useRoomContext } from '@livekit/components-react';
-import { logger } from '@protontech/logger';
 import { ConnectionState } from 'livekit-client';
 import type { Room, TextStreamReader } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectCaptionsAgentPresent } from '@proton/meet/store/slices/participants/agentParticipantsSlice';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
@@ -111,7 +111,9 @@ export const useTranscriptions = (): Transcriptions => {
         }
 
         if (roomsWithConsumer.has(room)) {
-            logger.error('useTranscriptions is mounted more than once; only a single consumer is supported per room.');
+            meetingLogger.error(
+                'useTranscriptions is mounted more than once; only a single consumer is supported per room.'
+            );
             return;
         }
 
@@ -185,7 +187,7 @@ export const useTranscriptions = (): Transcriptions => {
         try {
             room.registerTextStreamHandler(TRANSCRIPTION_TOPIC, handler);
         } catch (error) {
-            logger.error('Failed to register the transcription handler', error);
+            meetingLogger.error('Failed to register the transcription handler', error);
             return;
         }
         roomsWithConsumer.add(room);

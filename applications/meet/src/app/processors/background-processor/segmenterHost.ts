@@ -1,5 +1,4 @@
-import { logger } from '@protontech/logger';
-
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 
 import { DEFAULT_ASSET_PATH, DEFAULT_MODEL_PATH } from './constants';
@@ -155,7 +154,9 @@ export const startSegmenter = async ({
             onCrash(new Error(`Background segmenter worker error: ${event.message}`));
         };
 
-        logger.info(`[bg-processor] worker ready delegate=${activeDelegate} model=${modelPath.split('/').pop()}`);
+        meetingLogger.info(
+            `[bg-processor] worker ready delegate=${activeDelegate} model=${modelPath.split('/').pop()}`
+        );
 
         return {
             delegate: activeDelegate,

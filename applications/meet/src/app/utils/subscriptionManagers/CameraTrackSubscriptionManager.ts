@@ -1,8 +1,8 @@
-import { logger } from '@protontech/logger';
 import type { Room, TrackPublication } from 'livekit-client';
 import { ConnectionState, RemoteTrackPublication, Track, VideoQuality } from 'livekit-client';
 import debounce from 'lodash/debounce';
 
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -229,7 +229,7 @@ export class CameraTrackSubscriptionManager {
             try {
                 publication.setEnabled(false);
             } catch (error) {
-                logger.error('Error disabling publication', error);
+                meetingLogger.error('Error disabling publication', error);
             }
         });
 
@@ -356,7 +356,7 @@ export class CameraTrackSubscriptionManager {
                 }
 
                 if (this.trackSidsFailingToUpdate.delete(trackSid)) {
-                    logger.info('CameraTrackSubscriptionManager: publication recovered', {
+                    meetingLogger.info('CameraTrackSubscriptionManager: publication recovered', {
                         trackSid,
                         participantIdentity,
                     });
@@ -416,7 +416,7 @@ export class CameraTrackSubscriptionManager {
                             publication.setSubscribed(false);
                         }
                     } catch (error) {
-                        logger.error('Error disabling publication', publication.trackSid, error);
+                        meetingLogger.error('Error disabling publication', publication.trackSid, error);
                     }
                 }
             });
@@ -529,7 +529,7 @@ export class CameraTrackSubscriptionManager {
         this.frozenTrackResetsByTrackSid.set(trackSid, resets + 1);
         this.lastFramesDecodedByTrackSid.delete(trackSid);
         this.checksWithoutFramesDecodedByTrackSid.delete(trackSid);
-        logger.warn('Resetting frozen camera track', trackSid);
+        meetingLogger.warn('Resetting frozen camera track', trackSid);
         void this.resetQueueManagedVideoTrack(publication);
     }
 
@@ -564,7 +564,7 @@ export class CameraTrackSubscriptionManager {
                 try {
                     entry.publication.setEnabled(false);
                 } catch (error) {
-                    logger.error('Error pausing video', entry.publication.trackSid, error);
+                    meetingLogger.error('Error pausing video', entry.publication.trackSid, error);
                 }
             }
         });
@@ -592,7 +592,7 @@ export class CameraTrackSubscriptionManager {
                 try {
                     entry.publication.setEnabled(true);
                 } catch (error) {
-                    logger.error('Error resuming video', entry.publication.trackSid, error);
+                    meetingLogger.error('Error resuming video', entry.publication.trackSid, error);
                 }
             }
         });
@@ -627,7 +627,7 @@ export class CameraTrackSubscriptionManager {
                     entry.publication.setEnabled(false);
                     entry.publication.setSubscribed(false);
                 } catch (error) {
-                    logger.error('Error disabling publication', entry.publication.trackSid, error);
+                    meetingLogger.error('Error disabling publication', entry.publication.trackSid, error);
                 }
             }
         });

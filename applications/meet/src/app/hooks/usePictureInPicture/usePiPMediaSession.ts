@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
-import { logger } from '@protontech/logger';
-
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import type { ToggleAudioType, ToggleVideoType } from '../../types';
@@ -54,7 +53,7 @@ export function usePiPMediaSession({
                 });
             }
         } catch (error) {
-            logger.error('Failed to set up the PiP media session', error);
+            meetingLogger.error('Failed to set up the PiP media session', error);
         }
     };
 

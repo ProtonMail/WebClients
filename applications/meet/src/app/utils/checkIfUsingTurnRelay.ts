@@ -1,5 +1,6 @@
-import { logger } from '@protontech/logger';
 import type { Room } from 'livekit-client';
+
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 
 interface RTCIceCandidate {
     id: string;
@@ -71,9 +72,9 @@ export const checkIfUsingTurnRelay = async (room: Room): Promise<boolean> => {
     const isRelayCandidate = local?.candidateType === 'relay' || remote?.candidateType === 'relay';
 
     if (isRelayCandidate) {
-        logger.info('Using TURN relay');
+        meetingLogger.info('Using TURN relay');
     } else {
-        logger.info('Using STUN UDP');
+        meetingLogger.info('Using STUN UDP');
     }
 
     return isRelayCandidate;

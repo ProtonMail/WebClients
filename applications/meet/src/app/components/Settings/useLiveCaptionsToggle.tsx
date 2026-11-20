@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -8,6 +7,7 @@ import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnno
 import useLoading from '@proton/hooks/useLoading';
 import { toToggleState } from '@proton/meet/telemetry/dimensions';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 
 import { useCaptionsAvailability } from '../../hooks/captions/useCaptionsAvailability';
 import { useCaptionsConsentSkipped } from '../../hooks/captions/useCaptionsConsentSkipped';
@@ -39,7 +39,7 @@ export const useLiveCaptionsToggle = () => {
                 });
             })
         ).catch((error) => {
-            logger.error('Failed to update live captions', error);
+            meetingLogger.error('Failed to update live captions', error);
             createNotification({
                 type: 'error',
                 text: c('Error').t`Live captions not updated. Try again.`,

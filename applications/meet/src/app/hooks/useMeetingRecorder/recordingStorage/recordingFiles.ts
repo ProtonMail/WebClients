@@ -1,8 +1,8 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
-import { logger } from '@protontech/logger';
 
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { isChromiumBased } from '@proton/shared/lib/helpers/browser';
 
 import { isServiceWorkerDownloadSupported, openDownloadStream } from './download/client';
@@ -222,7 +222,7 @@ export const downloadOpfsRecording = async (
             { fileName, mimeType },
             { onCancel: () => abortController.abort() }
         ).catch((error) => {
-            logger.warn('[MeetingRecorder] service worker download unavailable, buffering in memory:', error);
+            meetingLogger.warn('[MeetingRecorder] service worker download unavailable, buffering in memory:', error);
             return null;
         });
 

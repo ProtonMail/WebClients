@@ -2,7 +2,6 @@ import { useCallback, useEffect } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 import { ChatEventKind } from '@proton-meet/proton-meet-core';
-import { logger } from '@protontech/logger';
 import type { RemoteParticipant } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
@@ -16,6 +15,7 @@ import {
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import { isChatThreadExpanded } from '@proton/meet/utils/isChatThreadExpanded';
+import { meetingLogger } from '@proton/meet/utils/meetingLogger';
 import { escape } from '@proton/sanitize/escape';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -168,7 +168,7 @@ export const useChat = () => {
 
                 dispatch(addChatMessages(messagesToAdd));
             } catch (error) {
-                logger.error('Error handling chat event:', error);
+                meetingLogger.error('Error handling chat event:', error);
             }
         },
         [dispatch, isChatOpen, meetCoreClient, reportMeetError, store]
@@ -245,7 +245,7 @@ export const useChat = () => {
 
                 dispatch(addChatMessages([newMessage]));
             } catch (error) {
-                logger.error('Error handling chat message:', error);
+                meetingLogger.error('Error handling chat message:', error);
             }
         },
         [dispatch, isChatOpen, meetCoreClient, reportMeetError]
