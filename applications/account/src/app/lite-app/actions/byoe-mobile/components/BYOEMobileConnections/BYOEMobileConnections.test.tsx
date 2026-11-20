@@ -16,7 +16,21 @@ vi.mock('@proton/activation/src/hooks/useBYOEAddresses', () => ({
     useBYOEAddresses: () => ({ addresses: [], loading: false }),
 }));
 
-vi.mock('./BYOEAddresses', () => ({ BYOEAddresses: () => <div>addresses</div> }));
+let mockFlag = true;
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => mockFlag }));
+
+let mockIsBYOEAccount = true;
+vi.mock('@proton/account/user/hooks', () => ({ useUser: () => [{}] }));
+vi.mock('@proton/shared/lib/keys/accountType', () => ({ getIsBYOEAccount: () => mockIsBYOEAccount }));
+
+vi.mock('./BYOEAddresses', () => ({
+    BYOEAddresses: ({ showReminder }: { showReminder?: boolean }) => (
+        <div>
+            addresses
+            {showReminder ? <span>reminder</span> : null}
+        </div>
+    ),
+}));
 vi.mock('./BYOEImports', () => ({ BYOEImports: () => <div>imports</div> }));
 
 const buildRequest = (promise: Promise<void>) => Object.assign(promise, { unwrap: () => promise, abort: vi.fn() });
@@ -26,6 +40,8 @@ const flush = () => act(() => vi.advanceTimersByTimeAsync(1000));
 describe('BYOEMobileConnections', () => {
     beforeEach(() => {
         vi.useFakeTimers();
+        mockFlag = true;
+        mockIsBYOEAccount = true;
         mockDispatch.mockImplementation((request) => request);
     });
 
@@ -40,8 +56,31 @@ describe('BYOEMobileConnections', () => {
 
         await flush();
 
-        screen.getByText('addresses');
+        screen.getByText('addresses', { exact: false });
         screen.getByText('imports');
+        screen.getByText('reminder');
+    });
+
+    it('Should hide the reminder when the flag is off', async () => {
+        mockFlag = false;
+        mockLoadDashboard.mockReturnValue(buildRequest(Promise.resolve()));
+        render(<BYOEMobileConnections />);
+
+        await flush();
+
+        screen.getByText('imports');
+        expect(screen.queryByText('reminder')).toBeNull();
+    });
+
+    it('Should hide the reminder when the account is not a BYOE account', async () => {
+        mockIsBYOEAccount = false;
+        mockLoadDashboard.mockReturnValue(buildRequest(Promise.resolve()));
+        render(<BYOEMobileConnections />);
+
+        await flush();
+
+        screen.getByText('imports');
+        expect(screen.queryByText('reminder')).toBeNull();
     });
 
     it('Should display the error state when loading fails', async () => {
@@ -64,7 +103,7 @@ describe('BYOEMobileConnections', () => {
         await flush();
 
         expect(mockLoadDashboard).toHaveBeenCalledTimes(2);
-        screen.getByText('addresses');
+        screen.getByText('addresses', { exact: false });
         expect(screen.queryByText("Couldn't load your connections")).toBeNull();
     });
 });

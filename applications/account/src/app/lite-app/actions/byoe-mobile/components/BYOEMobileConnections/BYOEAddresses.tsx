@@ -10,11 +10,16 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { useBYOEMobile } from '../../context/BYOEMobileProvider';
+import { BYOEReminder } from './BYOEReminder';
 import { ConfirmBYOEDisconnectionPrompt } from './ConfirmBYOEDisconnectionPrompt';
 import { ConnectionsSection } from './ConnectionsSection';
 import { ConnectionSectionStringContent, ConnectionsSectionRow } from './ConnectionsSectionRow';
 
-export const BYOEAddresses = () => {
+interface Props {
+    showReminder?: boolean;
+}
+
+export const BYOEAddresses = ({ showReminder }: Props) => {
     const { addresses } = useBYOEAddresses();
     const { status, isLoading, connectingEmail, reconnectAddress } = useBYOEMobile();
 
@@ -37,6 +42,7 @@ export const BYOEAddresses = () => {
 
     return (
         <ConnectionsSection title={c('Title').t`Addresses`}>
+            {showReminder ? <BYOEReminder /> : null}
             {addresses.map((item) => {
                 const isConnected = getIsActiveBYOEAddress(item);
                 // Both statuses leave the toggle in place: the page is either reconnecting or about to go to Google
