@@ -34,7 +34,7 @@ import {
     planRagAttachmentStorage,
     retrieveDocumentContextForProject,
 } from '../../lib/rag';
-import { prepareTurns } from '../../llm';
+import { type PrepareRequestOptions, prepareRequest } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { collapseCompactedChain } from '../../llm/compaction';
 import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
@@ -105,6 +105,7 @@ import { buildArtifactRegistry } from './artifact/artifactRegistry';
 import {
     type ConversationGenerationResult,
     type SkillToolHandles,
+    type ForwardedSendOptions,
     runGenerationWithCompaction,
 } from './compactionFlow';
 import type { ConversationContext } from './conversationContext';
@@ -371,7 +372,7 @@ export type NewMessageData = {
 export type { ConversationContext } from './conversationContext';
 
 /**
- * Merge send-time resolved attachments into the conversation context for prepareTurns.
+ * Merge send-time resolved attachments into the conversation context for prepareRequest.
  * Resolved entries win over stale copies with the same id (e.g. shallow @mention provisionals
  * that were filled from the search index after the composer snapshot was taken).
  */
@@ -389,7 +390,7 @@ export function mergeConversationAttachmentsForTurns(existing: Attachment[], res
 // An attacker could embed instructions to call web_extract with exfiltration URLs, or to create a
 // live webpage artifact the user did not opt into. We mitigate the immediate auto-send by:
 //   1. Excluding web_extract from the external-tool allowlist (see below).
-//   2. Injecting a one-shot system notice in prepareTurns (isFromQueryParam).
+//   2. Injecting a one-shot system notice in prepareRequest (isFromQueryParam).
 //   3. Not registering create_artifact on that turn (resolveArtifactToolMode + isFromQueryParam).
 //      Outbound requests from artifact previews depend on CSP on /lumo/v1/artifact-shell (server).
 //
@@ -723,6 +724,113 @@ async function resolveChainSkills(
     }
 }
 
+export function resolveConversationRequest({
+    conversationContext: context,
+    settingsContext: settings,
+    uiContext: ui,
+    applicationContext: app,
+    prefetch,
+    retryInstructions,
+}: {
+    conversationContext: ConversationContext;
+    settingsContext: SettingsContext;
+    uiContext: Pick<
+        UiContext,
+        | 'enableRetrievalTools'
+        | 'canvasModeActive'
+        | 'isFromQueryParam'
+        | 'modelTier'
+        | 'enableReasoning'
+        | 'enableAskUserQuestionsTool'
+        | 'enableCreateScheduleTool'
+    >;
+    applicationContext: ApplicationContext;
+    prefetch?: { assistantMessageId: MessageId; dispatch: LumoDispatch };
+    retryInstructions?: string;
+}) {
+    return async (dispatch: LumoDispatch, getState: () => LumoState) => {
+        const state = getState();
+        const space = state.spaces[context.spaceId];
+        const isProject = space?.spaceType === SpaceType.Project;
+        const conversation = state.conversations[context.conversationId];
+        const agentId = conversation ? conversation.agentId : state.composerActions?.pendingAgentId;
+        const agentInstructions = agentId
+            ? findAgentById(agentId, state.lumoUserSettings?.customAgents ?? [])?.instructions?.trim()
+            : undefined;
+        const chainSkills = await resolveChainSkills(dispatch, context.messageChain, {
+            enabled: isSkillsEnabledForRequest(settings),
+            offerSkillTools: !ui.isFromQueryParam,
+            state,
+            spaceId: context.spaceId,
+        });
+        const artifactToolMode = resolveArtifactToolMode(
+            ui.canvasModeActive,
+            context.messageChain,
+            settings.isArtifactsViewFeatureEnabled,
+            isArtifactCreationEnabledForRequest(state, context.conversationId, settings),
+            ui.isFromQueryParam,
+            settings.isGuestUser
+        );
+        const retrieval = await resolveRetrieval({
+            enabled: !!ui.enableRetrievalTools && !ui.isFromQueryParam,
+            getState,
+            conversationId: context.conversationId,
+            spaceId: context.spaceId,
+            isProject,
+            userId: app.userId ?? state.user?.value?.ID,
+            chain: context.messageChain,
+            messageMap: context.messageMap,
+            chatAttachments: context.allConversationAttachments,
+            contextFilters: context.contextFilters,
+            hasLumoPlus: !!settings.hasLumoPlus,
+            api: app.api,
+            signal: app.signal,
+            prefetch,
+            modelTier: ui.modelTier,
+        });
+        const options: Omit<PrepareRequestOptions, 'messageChain' | 'budget' | 'clientTools'> = {
+            personalization: settings.personalization ?? DEFAULT_PERSONALIZATION,
+            projectInstructions: isProject ? space.projectInstructions : undefined,
+            contextFilters: context.contextFilters,
+            attachments: context.allConversationAttachments,
+            messageMap: context.messageMap,
+            memories:
+                !isProject && state.lumoUserSettings?.isMemoryEnabled
+                    ? formatMemories(state.lumoUserSettings.memories)
+                    : '',
+            agentInstructions,
+            includeVisualizationInstructions: shouldIncludeVisualizationInstructions(settings, state.lumoUserSettings),
+            artifactToolMode,
+            isFromQueryParam: ui.isFromQueryParam,
+            artifactPresentationEnabled: !!settings.isArtifactSlidesFeatureEnabled,
+            skillInstructions: chainSkills.instructions,
+            retrievalInstructions: retrieval.instructions,
+            retryInstructions,
+        };
+        const toolOptions: ForwardedSendOptions = {
+            artifactToolMode,
+            artifactPresentationEnabled: !!settings.isArtifactSlidesFeatureEnabled,
+            enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
+            enableCreateScheduleTool: ui.enableCreateScheduleTool,
+            skillTools: chainSkills.tools,
+            retrievalTools: retrieval.tools,
+        };
+        const buildRequest = (messageChain: Message[], clientTools: PrepareRequestOptions['clientTools'] = []) => {
+            return prepareRequest({
+                ...options,
+                messageChain,
+                clientTools,
+                budget: resolveRequestBudget({
+                    modelTier: ui.modelTier,
+                    reasoning: ui.enableReasoning,
+                    conversationId: context.conversationId,
+                }),
+            });
+        };
+        return { buildRequest, toolOptions, options };
+    };
+}
+
 function populateMessageContext(message: Message, messageChain: Message[], c: ConversationContext) {
     // Calculate which files will actually be used for the assistant response
     // Note: Project files are retrieved via RAG, so only message attachments are tracked here
@@ -905,28 +1013,18 @@ export function executeConversationTurn({
         updateUi(userMessage, conversationId, ui);
 
         // Get project instructions from space if this is a project conversation
-        let projectInstructions: string | undefined;
         let isProject = false;
         if (spaceId) {
             const space = state.spaces[spaceId];
             if (space?.spaceType === SpaceType.Project) {
                 isProject = true;
-                if (space?.projectInstructions) {
-                    projectInstructions = space.projectInstructions;
-                }
             }
         }
 
         // Resolve the active custom agent (conversation-scoped persona). An existing
         // conversation stores its agent id; a brand-new conversation consumes the agent
         // selected in the composer (pendingAgentId) and stamps it onto the conversation.
-        const agentInstructions = dispatch(resolveAgentInstructions(conversationId, !execution?.background));
-        const chainSkills = await resolveChainSkills(dispatch, newMessageChain, {
-            enabled: isSkillsEnabledForRequest(s),
-            offerSkillTools: !ui.isFromQueryParam,
-            state,
-            spaceId: conversationContext.spaceId,
-        });
+        dispatch(resolveAgentInstructions(conversationId, !execution?.background));
 
         const allAttachments = state.attachments;
 
@@ -1033,7 +1131,7 @@ export function executeConversationTurn({
             }
 
             // Merge RAG attachments (full data with markdown) into allConversationAttachments so
-            // prepareTurns can expand them into proper file-content turns that the API reads.
+            // prepareRequest can expand them into proper file-content turns that the API reads.
             // On the first message c.allConversationAttachments only contains provisional composer
             // files; the RAG results are not yet loaded from Redux, so without this they are dropped.
             const updatedC: ConversationContext = (() => {
@@ -1049,64 +1147,22 @@ export function executeConversationTurn({
                 return { ...conversationContext, allConversationAttachments: merged };
             })();
 
-            // Memories are user-level personalization for general chats only; project chats
-            // get their own explicit instructions and should not be influenced by global memory.
-            const memories =
-                !isProject && state.lumoUserSettings?.isMemoryEnabled
-                    ? formatMemories(state.lumoUserSettings?.memories)
-                    : '';
-
-            const artifactToolMode = resolveArtifactToolMode(
-                ui.canvasModeActive,
-                updatedLinearChain,
-                s.isArtifactsViewFeatureEnabled,
-                // Fresh state: `state` predates the conversation this send may have just created.
-                isArtifactCreationEnabledForRequest(getState(), conversationId, s),
-                ui.isFromQueryParam,
-                s.isGuestUser
+            const { buildRequest, toolOptions } = await dispatch(
+                resolveConversationRequest({
+                    conversationContext: { ...updatedC, messageChain: updatedLinearChain },
+                    settingsContext: s,
+                    uiContext: ui,
+                    applicationContext: a,
+                    prefetch: { assistantMessageId: assistantMessage.id, dispatch },
+                })
             );
             sendArtifactTurnTelemetry(
                 'new',
-                artifactToolMode,
+                toolOptions.artifactToolMode ?? 'off',
                 updatedLinearChain,
                 s.isArtifactsViewFeatureEnabled,
                 artifactCreationSettingForRequest(getState(), conversationId, s)
             );
-
-            const retrieval = await resolveRetrieval({
-                enabled: offerRetrieval,
-                getState,
-                conversationId,
-                spaceId,
-                isProject,
-                userId,
-                chain: updatedLinearChain,
-                messageMap: updatedC.messageMap,
-                chatAttachments: updatedC.allConversationAttachments,
-                contextFilters: updatedC.contextFilters,
-                hasLumoPlus: !!s.hasLumoPlus,
-                api: a.api,
-                signal: a.signal,
-                prefetch: { assistantMessageId: assistantMessage.id, dispatch },
-                modelTier: ui.modelTier,
-            });
-
-            const buildTurns = (chain: Message[]) =>
-                prepareTurns(
-                    chain,
-                    s.personalization ?? DEFAULT_PERSONALIZATION,
-                    projectInstructions,
-                    updatedC,
-                    memories,
-                    agentInstructions,
-                    shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
-                    artifactToolMode,
-                    ui.isFromQueryParam,
-                    resolveRequestBudget({ modelTier: ui.modelTier, reasoning: ui.enableReasoning, conversationId }),
-                    !!s.isArtifactSlidesFeatureEnabled,
-                    chainSkills.instructions,
-                    retrieval.instructions
-                );
 
             generation = await dispatch(
                 runGenerationWithCompaction({
@@ -1116,7 +1172,7 @@ export function executeConversationTurn({
                     assistantMessageId: assistantMessage.id,
                     parentMessageId: userMessage.id,
                     chain: updatedLinearChain,
-                    buildTurns,
+                    buildRequest,
                     attachments: updatedC.allConversationAttachments,
                     contextFilters: updatedC.contextFilters,
                     messageMap: updatedC.messageMap,
@@ -1134,12 +1190,7 @@ export function executeConversationTurn({
                         enableSuggestedQuestions: false,
                         generateTitle,
                         imageAspectRatio: ui.imageAspectRatio,
-                        artifactToolMode,
-                        artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
-                        enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
-                        enableCreateScheduleTool: ui.enableCreateScheduleTool,
-                        skillTools: chainSkills.tools,
-                        retrievalTools: retrieval.tools,
+                        ...toolOptions,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -1213,14 +1264,10 @@ export function regenerateMessage({
         try {
             const messagesWithContext = c.messageChain;
             // Get project instructions from space if this is a project conversation
-            let projectInstructions: string | undefined;
             let isProject = false;
             const space = state.spaces[c.spaceId];
             if (space?.spaceType === SpaceType.Project) {
                 isProject = true;
-                if (space?.projectInstructions) {
-                    projectInstructions = space.projectInstructions;
-                }
             }
 
             // Retrieve document context for RAG (only for projects)
@@ -1292,7 +1339,7 @@ export function regenerateMessage({
             }
 
             // Build conversation context. Include RAG attachments (full data with markdown) so
-            // prepareTurns can expand them into proper file-content turns for the API.
+            // prepareRequest can expand them into proper file-content turns for the API.
             c = {
                 ...c,
                 messageChain: updatedMessagesWithContext,
@@ -1301,85 +1348,29 @@ export function regenerateMessage({
                     : c.allConversationAttachments,
             };
 
-            const memories =
-                !isProject && state.lumoUserSettings?.isMemoryEnabled
-                    ? formatMemories(state.lumoUserSettings?.memories)
-                    : '';
-
-            const agentInstructions = dispatch(resolveAgentInstructions(c.conversationId));
-            const chainSkills = await resolveChainSkills(dispatch, c.messageChain, {
-                enabled: isSkillsEnabledForRequest(s),
-                offerSkillTools: true,
-                state,
-                spaceId: c.spaceId,
-            });
-
-            const artifactToolMode = resolveArtifactToolMode(
-                ui.canvasModeActive,
-                c.messageChain,
-                s.isArtifactsViewFeatureEnabled,
-                isArtifactCreationEnabledForRequest(state, c.conversationId, s),
-                undefined,
-                s.isGuestUser
+            dispatch(resolveAgentInstructions(c.conversationId));
+            const { buildRequest, toolOptions } = await dispatch(
+                resolveConversationRequest({
+                    conversationContext: {
+                        ...c,
+                        messageChain: updatedMessagesWithContext.filter(
+                            (message) => message.id !== r.assistantMessageId
+                        ),
+                        messageMap: conversationMessageMap,
+                    },
+                    settingsContext: s,
+                    uiContext: ui,
+                    applicationContext: a,
+                    retryInstructions: r.retryInstructions,
+                })
             );
             sendArtifactTurnTelemetry(
                 'regenerate',
-                artifactToolMode,
+                toolOptions.artifactToolMode ?? 'off',
                 c.messageChain,
                 s.isArtifactsViewFeatureEnabled,
                 artifactCreationSettingForRequest(state, c.conversationId, s)
             );
-
-            const retrieval = await resolveRetrieval({
-                enabled: offerRetrieval,
-                getState,
-                conversationId: c.conversationId!,
-                spaceId: c.spaceId!,
-                isProject,
-                userId,
-                chain: c.messageChain,
-                messageMap: conversationMessageMap,
-                chatAttachments: c.allConversationAttachments,
-                contextFilters: c.contextFilters,
-                hasLumoPlus: !!s.hasLumoPlus,
-                modelTier: ui.modelTier,
-                api: a.api,
-                signal: a.signal,
-            });
-
-            const buildTurns = (chain: Message[]) => {
-                const builtTurns = prepareTurns(
-                    chain,
-                    s.personalization ?? DEFAULT_PERSONALIZATION,
-                    projectInstructions,
-                    c,
-                    memories,
-                    agentInstructions,
-                    shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
-                    artifactToolMode,
-                    false,
-                    resolveRequestBudget({
-                        modelTier: ui.modelTier,
-                        reasoning: ui.enableReasoning,
-                        conversationId: c.conversationId,
-                    }),
-                    !!s.isArtifactSlidesFeatureEnabled,
-                    chainSkills.instructions,
-                    retrieval.instructions
-                );
-
-                // Add retry instructions if provided
-                if (r.retryInstructions) {
-                    // Insert a system message with retry instructions before the final assistant turn
-                    const systemTurn = {
-                        role: Role.System,
-                        content: r.retryInstructions,
-                    };
-                    // Insert the system turn before the last turn (which should be the empty assistant turn)
-                    builtTurns.splice(-1, 0, systemTurn);
-                }
-                return builtTurns;
-            };
 
             // The regenerated assistant answers its parent user message; the
             // compaction branch (if any) attaches there.
@@ -1394,7 +1385,7 @@ export function regenerateMessage({
                     assistantMessageId: r.assistantMessageId,
                     parentMessageId: parentMessageId!,
                     chain: updatedMessagesWithContext.filter((m) => m.id !== r.assistantMessageId),
-                    buildTurns,
+                    buildRequest,
                     attachments: c.allConversationAttachments,
                     contextFilters: c.contextFilters,
                     messageMap: conversationMessageMap,
@@ -1408,12 +1399,7 @@ export function regenerateMessage({
                         enableAnswerNow: ui.enableAnswerNow,
                         modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
-                        artifactToolMode,
-                        artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
-                        enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
-                        enableCreateScheduleTool: ui.enableCreateScheduleTool,
-                        skillTools: chainSkills.tools,
-                        retrievalTools: retrieval.tools,
+                        ...toolOptions,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -1570,7 +1556,7 @@ export function retrySendMessage({
         }
 
         // Build conversation context for turn preparation. Include RAG attachments (full data with
-        // markdown) so prepareTurns can expand them into proper file-content turns for the API.
+        // markdown) so prepareRequest can expand them into proper file-content turns for the API.
         const c2: ConversationContext = {
             ...c,
             messageMap: conversationMessageMap,
@@ -1580,72 +1566,24 @@ export function retrySendMessage({
                 : c.allConversationAttachments,
         };
 
-        const memories =
-            !p.isProject && state.lumoUserSettings?.isMemoryEnabled
-                ? formatMemories(state.lumoUserSettings?.memories)
-                : '';
-
-        const agentInstructions = c.conversationId ? dispatch(resolveAgentInstructions(c.conversationId)) : undefined;
-        const chainSkills = await resolveChainSkills(dispatch, updatedLinearChain, {
-            enabled: isSkillsEnabledForRequest(s),
-            offerSkillTools: true,
-            state,
-            spaceId: c.spaceId,
-        });
-
-        const artifactToolMode = resolveArtifactToolMode(
-            ui.canvasModeActive,
-            updatedLinearChain,
-            s.isArtifactsViewFeatureEnabled,
-            isArtifactCreationEnabledForRequest(state, c.conversationId, s),
-            undefined,
-            s.isGuestUser
+        if (c.conversationId) {
+            dispatch(resolveAgentInstructions(c.conversationId));
+        }
+        const { buildRequest, toolOptions } = await dispatch(
+            resolveConversationRequest({
+                conversationContext: c2,
+                settingsContext: s,
+                uiContext: ui,
+                applicationContext: a,
+            })
         );
         sendArtifactTurnTelemetry(
             'retry',
-            artifactToolMode,
+            toolOptions.artifactToolMode ?? 'off',
             updatedLinearChain,
             s.isArtifactsViewFeatureEnabled,
             artifactCreationSettingForRequest(state, c.conversationId, s)
         );
-
-        const retrieval = await resolveRetrieval({
-            enabled: offerRetrieval,
-            getState,
-            conversationId: c.conversationId,
-            spaceId: c.spaceId,
-            isProject: p.isProject,
-            userId: a.userId,
-            chain: updatedLinearChain,
-            messageMap: conversationMessageMap,
-            chatAttachments: c2.allConversationAttachments,
-            contextFilters: c2.contextFilters,
-            hasLumoPlus: !!s.hasLumoPlus,
-            modelTier: ui.modelTier,
-            api: a.api,
-            signal: a.signal,
-        });
-
-        const buildTurns = (chain: Message[]) =>
-            prepareTurns(
-                chain,
-                s.personalization ?? DEFAULT_PERSONALIZATION,
-                p.projectInstructions,
-                c2,
-                memories,
-                agentInstructions,
-                shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
-                artifactToolMode,
-                false,
-                resolveRequestBudget({
-                    modelTier: ui.modelTier,
-                    reasoning: ui.enableReasoning,
-                    conversationId: c.conversationId,
-                }),
-                !!s.isArtifactSlidesFeatureEnabled,
-                chainSkills.instructions,
-                retrieval.instructions
-            );
 
         // Call the LLM
         try {
@@ -1657,7 +1595,7 @@ export function retrySendMessage({
                     assistantMessageId,
                     parentMessageId: r.lastUserMessage.id,
                     chain: updatedLinearChain,
-                    buildTurns,
+                    buildRequest,
                     attachments: c2.allConversationAttachments,
                     contextFilters: c2.contextFilters,
                     messageMap: c2.messageMap,
@@ -1672,12 +1610,7 @@ export function retrySendMessage({
                         modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         generateTitle: requestTitle,
-                        artifactToolMode,
-                        artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
-                        enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
-                        enableCreateScheduleTool: ui.enableCreateScheduleTool,
-                        skillTools: chainSkills.tools,
-                        retrievalTools: retrieval.tools,
+                        ...toolOptions,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,

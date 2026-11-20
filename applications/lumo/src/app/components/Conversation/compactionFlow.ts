@@ -1,7 +1,12 @@
 import { composeClientToolExecutors } from '@proton/lumo-api-client/core/client-tools';
 import { isContextLengthExceededError } from '@proton/lumo-api-client/core/context-length';
 import { createDesktopClientToolExecutor, isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
-import type { AssistantCallOptions, ClientToolExecutor, LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
+import type {
+    AssistantCallOptions,
+    ChatCompletionsFunctionTool,
+    ClientToolExecutor,
+    LumoApiClientConfig,
+} from '@proton/lumo-api-client/core/types';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { askUserQuestionsToolExecutor } from '../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
@@ -17,14 +22,12 @@ import { getSkillLookupPool } from '../../features/skills/skillSelection';
 import { createSkillToolExecutor } from '../../features/skills/skillTool';
 import { executeSkillScript, loadSkillInstructions, readSkillFile } from '../../features/skills/skillsThunks';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
-import type { ContextFilter } from '../../llm';
-import { compactConversation, estimateTurnsTokens } from '../../llm/compaction';
+import type { ContextFilter, PreparedRequest } from '../../llm';
+import { compactConversation } from '../../llm/compaction';
 import { collapseCompactedChain } from '../../llm/compaction/collapse';
 import { MIN_COMPACTION_TOKENS_RECLAIMED } from '../../llm/compaction/constants';
 import { NotEnoughToCompactError } from '../../llm/compaction/partition';
-import { estimateEffectiveContextUsage } from '../../llm/effectiveContextUsage';
 import { type RequestBudget, resolveRequestBudget } from '../../llm/requestBudget';
-import { countTokens } from '../../llm/tokenizer';
 import { updateConversationStatus } from '../../redux/slices/core/conversations';
 import {
     addMessage,
@@ -47,7 +50,6 @@ import {
     Role,
     type SpaceId,
     SpaceType,
-    type Turn,
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
 import { sendRetrievalReplyEvent } from '../../util/telemetry';
@@ -58,6 +60,7 @@ import type { ArtifactToolMode } from './helper';
 /** Options forwarded to sendMessageWithRedux, minus the per-attempt identifiers we manage here. */
 export type ForwardedSendOptions = AssistantCallOptions & {
     enableGenerationRecovery?: boolean;
+    estimatedPromptTokens?: number;
     config?: Partial<LumoApiClientConfig>;
     generateTitle?: boolean;
     errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
@@ -102,10 +105,10 @@ export type GenerationWithCompactionParams = {
     /** Linear chain up to and including the user question (excludes the assistant placeholder). */
     chain: Message[];
     /**
-     * Rebuilds turns for a (possibly compacted) chain. Must call prepareTurns under the hood,
+     * Rebuilds turns for a (possibly compacted) chain. Uses the shared request preparation,
      * resolving the request budget at call time so recalibration after an overflow applies.
      */
-    buildTurns: (chain: Message[]) => Turn[];
+    buildRequest: (chain: Message[], clientTools: ChatCompletionsFunctionTool[]) => PreparedRequest;
     /** Full conversation attachments, so compaction can account for real attachment token cost. */
     attachments?: Attachment[];
     /** Per-message attachment exclusions, so excluded files aren't counted as reclaimed. */
@@ -237,14 +240,8 @@ function reportRetrievalUsage(retrieval: RetrievalToolExecutor | undefined, send
     });
 }
 
-/** Client tool definitions travel with every request but are not part of the turns. */
-async function estimateClientToolSchemaTokens(executor: ClientToolExecutor | undefined): Promise<number> {
-    try {
-        const tools = (await executor?.getClientTools?.()) ?? [];
-        return tools.length > 0 ? countTokens(JSON.stringify(tools)) : 0;
-    } catch {
-        return 0;
-    }
+export async function resolveClientToolDefinitions(executor: ClientToolExecutor | undefined) {
+    return (await executor?.getClientTools?.()) ?? [];
 }
 
 function newAssistantPlaceholder(conversationId: ConversationId, parentId: MessageId): Message {
@@ -282,7 +279,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             assistantMessageId,
             parentMessageId,
             chain,
-            buildTurns,
+            buildRequest,
             attachments,
             contextFilters,
             messageMap,
@@ -336,50 +333,29 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
 
         try {
             await waitForModels(MODELS_WAIT_MS);
-            const toolSchemaTokens = await estimateClientToolSchemaTokens(resolvedExecutor);
+            // Schema discovery for sizing must not bypass the send path's error handling.
+            const executorTools = await resolveClientToolDefinitions(resolvedExecutor).catch(() => []);
+            const clientTools = [...executorTools, ...(sendOptions.clientTools ?? [])];
             const getBudget = (): RequestBudget =>
                 resolveRequestBudget({
                     modelTier: sendOptions.modelTier,
                     reasoning: sendOptions.enableReasoning,
                     conversationId,
                 });
-            const attachmentLookup = Object.fromEntries((attachments ?? []).map((a) => [a.id, a]));
-
-            /** Estimated size of the request `buildTurns` produces for a chain, tool definitions included. */
             const estimateRequest = (candidate: Message[]): number => {
-                try {
-                    return estimateTurnsTokens(buildTurns(candidate)) + toolSchemaTokens;
-                } catch {
-                    return 0;
-                }
+                return buildRequest(candidate, clientTools).usage.usedTokens;
             };
-
-            /**
-             * Compact when the planned request is over budget, or when it only fits by shedding or
-             * excerpting files while there is enough history to make room for them.
-             */
             const shouldCompact = (candidate: Message[]): boolean => {
                 const budget = getBudget();
-                if (estimateRequest(candidate) > budget.inputBudget) {
-                    return true;
-                }
-                try {
-                    const usage = estimateEffectiveContextUsage({
-                        messageChain: candidate,
-                        contextFilters: contextFilters ?? [],
-                        allAttachments: attachmentLookup,
-                        messageMap,
-                        budget,
-                        fileCards: !!sendOptions.retrievalTools,
-                    });
-                    const shedsFiles =
-                        usage.droppedForBudget.length > 0 ||
-                        usage.excerptedForBudget.size > 0 ||
-                        [...usage.cardedFiles.values()].includes('budget');
-                    return shedsFiles && usage.conversationTokens + usage.toolCallTokens > budget.keepRecentTokens;
-                } catch {
-                    return false;
-                }
+                const usage = buildRequest(candidate, clientTools).usage;
+                const shedsFiles =
+                    usage.droppedForBudget.length > 0 ||
+                    usage.excerptedForBudget.size > 0 ||
+                    [...usage.cardedFiles.values()].includes('budget');
+                return (
+                    usage.usedTokens > budget.inputBudget ||
+                    (shedsFiles && usage.conversationTokens + usage.toolCallTokens > budget.keepRecentTokens)
+                );
             };
 
             /** Run compaction, materialize the branch, and advance the local cursors. */
@@ -475,12 +451,13 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                         artifactToolMode: sendOptions.artifactToolMode,
                     });
                 }
-                const attemptEstimate = estimateRequest(currentChain);
+                const request = buildRequest(currentChain, clientTools);
+                const attemptEstimate = request.usage.usedTokens;
                 try {
-                    const turns = buildTurns(currentChain);
                     const result = await dispatch(
-                        sendMessageWithRedux(api, turns, {
+                        sendMessageWithRedux(api, request.turns, {
                             ...sendOptions,
+                            estimatedPromptTokens: attemptEstimate,
                             retrievalTools: sendOptions.retrievalTools && {
                                 ...sendOptions.retrievalTools,
                                 getVisibleMessageIds,

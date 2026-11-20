@@ -1,5 +1,6 @@
 import { type Message, Role } from '../../types';
 import type { Attachment } from '../../types';
+import { SERVER_SYSTEM_PROMPT_TOKEN_ESTIMATE, estimateRequestContextUsage } from '../requestContextUsage';
 import { collectClearedToolNames, collectDroppedToolNames, collectRemovedFiles } from './audit';
 import { SUMMARY_TURN_PREFIX, collapseCompactedChain } from './collapse';
 import { CLEARED_TOOL_RESULT_PLACEHOLDER, IMAGE_TOKEN_ESTIMATE } from './constants';
@@ -7,7 +8,7 @@ import { compactConversation } from './engine';
 import { NotEnoughToCompactError, partitionChain } from './partition';
 import { clearOldToolResults, dropToolPairs, stripContext } from './strategies';
 import { getLatestCompactionBoundary } from './summarizedMessages';
-import { estimateChainAttachmentTokens, estimateTurnsTokens } from './tokens';
+import { estimateChainAttachmentTokens } from './tokens';
 import { buildTranscript } from './transcript';
 
 let seq = 0;
@@ -389,16 +390,14 @@ describe('compaction audit helpers', () => {
     });
 });
 
-describe('estimateTurnsTokens', () => {
+describe('estimateRequestContextUsage', () => {
     it('counts text content and adds a flat estimate per image', () => {
         const turns = [
             { role: Role.User, content: 'a'.repeat(40) }, // ~10 tokens
             { role: Role.User, content: 'image turn', images: [{ encrypted: false, image_id: 'i', data: 'x' }] },
         ];
-        const tokens = estimateTurnsTokens(turns as any);
-        // 10 (text) + ~3 (image turn text) + IMAGE_TOKEN_ESTIMATE for the one image
-        expect(tokens).toBeGreaterThanOrEqual(IMAGE_TOKEN_ESTIMATE);
-        expect(tokens).toBeGreaterThan(IMAGE_TOKEN_ESTIMATE + 10);
+        const tokens = estimateRequestContextUsage(turns).usedTokens;
+        expect(tokens).toBe(SERVER_SYSTEM_PROMPT_TOKEN_ESTIMATE + 13 + IMAGE_TOKEN_ESTIMATE);
     });
 });
 

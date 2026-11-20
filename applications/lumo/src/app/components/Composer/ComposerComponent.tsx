@@ -592,6 +592,7 @@ const ComposerComponentInner = ({
                                     )}
                                     {hasAttachments && (
                                         <ComposerAttachmentArea
+                                            spaceId={spaceId}
                                             provisionalAttachments={provisionalAttachments}
                                             allRelevantAttachments={allRelevantAttachments}
                                             messageChain={messageChain}

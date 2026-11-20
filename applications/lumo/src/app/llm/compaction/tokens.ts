@@ -1,9 +1,8 @@
 import { getMessageBlocks } from '../../messageHelpers';
-import type { Attachment, Message, Turn } from '../../types';
+import type { Attachment, Message } from '../../types';
 import { getAttachmentDocumentKey } from '../../util/resolveProjectFiles';
 import { countTokens } from '../tokenizer';
 import { countAttachmentToken } from '../utils';
-import { IMAGE_TOKEN_ESTIMATE } from './constants';
 
 /** Minimal shape of a per-message attachment exclusion (mirrors `ContextFilter`). */
 export type AttachmentExclusion = { messageId: string; excludedFiles: string[] };
@@ -29,9 +28,7 @@ export function estimateChainTokens(messages: Message[]): number {
 
 /**
  * Estimate a message's visible content tokens (blocks only), excluding the
- * pre-flattened `context` field. This mirrors the conversation context
- * indicator (`calculateMessageContentTokens`), which counts attachments
- * separately to avoid double-counting baked-in context.
+ * pre-flattened `context` field, so compaction can account for attachments separately.
  */
 export function estimateMessageContentTokens(message: Message): number {
     return getMessageBlocks(message).reduce((sum, block) => sum + countTokens(block.content), 0);
@@ -132,19 +129,4 @@ export function estimateReclaimableAttachmentTokens(
 /** Estimate token cost of a raw string. */
 export function estimateTextTokens(text: string | undefined): number {
     return countTokens(text);
-}
-
-/**
- * Estimate the token cost of the actual request payload (the prepared turns).
- *
- * Unlike {@link estimateChainTokens}, this reflects what is really sent to the
- * backend — most importantly the expanded attachment/file-content turns, which
- * are the dominant token sink in attachment-heavy conversations and are not
- * visible at the message-content level.
- */
-export function estimateTurnsTokens(turns: Turn[]): number {
-    return turns.reduce((sum, turn) => {
-        const imageTokens = (turn.images?.length ?? 0) * IMAGE_TOKEN_ESTIMATE;
-        return sum + estimateTextTokens(turn.content) + imageTokens;
-    }, 0);
 }

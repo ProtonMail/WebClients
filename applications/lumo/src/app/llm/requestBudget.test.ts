@@ -1,6 +1,7 @@
+import { type Message, Role } from '../types';
 import { DEFAULT_CONTEXT_LIMITS, deriveContextLimits } from './contextLimits';
+import { prepareRequest } from './index';
 import {
-    REQUEST_OVERHEAD_TOKEN_ALLOWANCE,
     getDisplayContextLimits,
     getFileTokenBudget,
     getRequestBudget,
@@ -24,6 +25,24 @@ describe('getReservedOutputTokens', () => {
 });
 
 describe('getRequestBudget', () => {
+    it('includes the server prompt once when preparing a request and allocating room for files', () => {
+        const budget = getRequestBudget({ limits: deriveContextLimits(20_000), calibration: 1 });
+        const message: Message = {
+            id: 'question',
+            conversationId: 'conversation',
+            createdAt: '',
+            role: Role.User,
+            content: 'Question',
+        };
+        const request = prepareRequest({ messageChain: [message], budget });
+
+        expect(request.turns).toEqual([{ role: Role.User, content: 'Question' }]);
+        expect(request.usage.instructionTokens).toBe(4_000);
+        expect(request.usage.usedTokens).toBe(4_002);
+        expect(budget.inputBudget).toBe(15_000);
+        expect(getFileTokenBudget(budget, request.usage.usedTokens)).toBe(10_998);
+    });
+
     it('derives every size from the window minus the reply, in estimate units', () => {
         const limits = deriveContextLimits(131_072);
         const budget = getRequestBudget({ limits, reasoning: false, calibration: 1.25 });
@@ -38,7 +57,7 @@ describe('getRequestBudget', () => {
         const budget = getRequestBudget({ limits: DEFAULT_CONTEXT_LIMITS });
 
         expect(getFileTokenBudget(budget, budget.inputBudget)).toBe(0);
-        expect(getFileTokenBudget(budget, 0)).toBe(budget.inputBudget - REQUEST_OVERHEAD_TOKEN_ALLOWANCE);
+        expect(getFileTokenBudget(budget, 0)).toBe(budget.inputBudget);
     });
 
     it('shows the window minus the reply reservation on the indicator', () => {

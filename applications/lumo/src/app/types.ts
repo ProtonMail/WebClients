@@ -293,7 +293,7 @@ export type TextBlock = {
 
 export type ToolCallBlock = {
     type: 'tool_call';
-    content: string; // JSON string (for serialization/prepareTurns)
+    content: string; // JSON string (for serialization/prepareRequest)
     toolCall?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
     sequence?: number; // Optional sequence number for ordering
 };
@@ -301,7 +301,7 @@ export type ToolCallBlock = {
 export type ToolResultBlock = {
     type: 'tool_result';
     toolImages?: ToolImage[];
-    content: string; // JSON string (for serialization/prepareTurns)
+    content: string; // JSON string (for serialization/prepareRequest)
     toolResult?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
     tool_call_id?: string; // OpenAI tool_call id linking result to its call
     meta?: {

@@ -18,12 +18,6 @@ const KEEP_RECENT_RATIO = 0.2;
 const COMPACTION_TARGET_RATIO = 0.5;
 
 /**
- * Turns the file budget does not see when it is computed: system prompt, personalization,
- * memories, project and skill instructions, tool definitions.
- */
-export const REQUEST_OVERHEAD_TOKEN_ALLOWANCE = 4_000;
-
-/**
  * Token budget for one request against one model window. Every size decision on the send
  * path (when to compact, how far, how much file content fits) and the context indicator
  * derive from the same value, so they cannot disagree.
@@ -91,12 +85,12 @@ export function resolveRequestBudget({
 }
 
 /**
- * File content allowed on a request whose history (summary, messages, tool blocks) is
- * `historyTokens`. Never floored above what is left: a floor here would plan an over-window
+ * File content allowed after counting messages, instructions and tool definitions.
+ * `historyTokens` includes every non-file contribution. Never floored above what is left: a floor here would plan an over-window
  * request whenever history is large. When nothing is left, compaction makes room instead.
  */
 export function getFileTokenBudget(budget: RequestBudget, historyTokens: number): number {
-    return Math.max(0, budget.inputBudget - REQUEST_OVERHEAD_TOKEN_ALLOWANCE - Math.max(0, historyTokens));
+    return Math.max(0, budget.inputBudget - Math.max(0, historyTokens));
 }
 
 /**

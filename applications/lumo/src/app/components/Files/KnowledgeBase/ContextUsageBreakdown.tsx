@@ -15,6 +15,7 @@ import './ContextUsageBreakdown.scss';
 
 interface ContextUsageBreakdownProps {
     messageChain: Message[];
+    spaceId?: string;
     contextFilters: ContextFilter[];
     currentAttachments?: Attachment[];
     /** Show the per-category legend in addition to the bar. */
@@ -31,7 +32,9 @@ function segmentLabel(id: ContextSegmentId): string {
         case 'conversation':
             return c('collider_2025: Info').t`Conversation`;
         case 'tool_calls':
-            return c('collider_2025: Info').t`Tool calls`;
+            return c('collider_2025: Info').t`Tools`;
+        case 'instructions':
+            return c('collider_2025: Info').t`Instructions`;
         case 'files':
             return c('collider_2025: Info').t`Files`;
         case 'buffer':
@@ -52,26 +55,55 @@ function segmentLabel(id: ContextSegmentId): string {
  */
 export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
     messageChain,
+    spaceId,
     contextFilters,
     currentAttachments = [],
     showDetails = false,
 }) => {
     const { window: windowTokens, reservedOutput } = useRequestBudget(messageChain[0]?.conversationId);
-    const { conversationTokens, toolCallTokens, fileTokens, hasCompaction, droppedForBudget, cardedFiles } =
-        useEffectiveContextUsageWithFilters(messageChain, contextFilters, currentAttachments);
+    const {
+        usedTokens: estimatedUsedTokens,
+        conversationTokens,
+        toolCallTokens,
+        instructionTokens,
+        fileTokens,
+        isPending,
+        isUnavailable,
+        isStale,
+        hasCompaction,
+        droppedForBudget,
+        cardedFiles,
+    } = useEffectiveContextUsageWithFilters(messageChain, contextFilters, currentAttachments, spaceId);
     const onDemandCount = cardedFiles.size;
 
     const breakdown = React.useMemo(
         () =>
             buildContextBreakdown({
+                usedTokens: estimatedUsedTokens,
                 conversationTokens,
                 toolCallTokens,
+                instructionTokens,
                 fileTokens,
                 maxTokens: windowTokens,
                 bufferTokens: reservedOutput,
             }),
-        [conversationTokens, toolCallTokens, fileTokens, windowTokens, reservedOutput]
+        [
+            estimatedUsedTokens,
+            conversationTokens,
+            toolCallTokens,
+            instructionTokens,
+            fileTokens,
+            windowTokens,
+            reservedOutput,
+        ]
     );
+
+    if (isUnavailable) {
+        return <p className="text-xs color-weak">{c('collider_2025: Info').t`Context estimate unavailable.`}</p>;
+    }
+    if (isPending) {
+        return null;
+    }
 
     const { segments, usedTokens, maxTokens, percentageUsed, overCapacity } = breakdown;
 
@@ -83,6 +115,10 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
 
     return (
         <div className="context-usage w-full">
+            {isStale && (
+                <p className="text-xs color-weak m-0 mb-1">{c('collider_2025: Info')
+                    .t`Showing the last context estimate.`}</p>
+            )}
             <div className="context-usage-summary flex items-center justify-space-between gap-2 mb-1">
                 <span className={clsx('text-xs', overCapacity ? 'color-danger text-bold' : 'color-weak')}>
                     {usageLabel}

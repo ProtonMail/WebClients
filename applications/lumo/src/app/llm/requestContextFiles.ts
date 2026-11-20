@@ -1,9 +1,9 @@
 import { isGeneratedImageAttachment } from '../lib/imageAttachment';
-import type { ContextFilter } from './contextFilter';
-import { getImageLimitInfo, getPdfPageImageRefs, isImageAttachment } from './attachments';
-import { getAttachmentDocumentKey } from '../util/resolveProjectFiles';
-import { calculateAttachmentContextSize, countAttachmentToken } from './utils';
 import type { Attachment, Message, ShallowAttachment } from '../types';
+import { getAttachmentDocumentKey } from '../util/resolveProjectFiles';
+import { getImageLimitInfo, getPdfPageImageRefs, isImageAttachment } from './attachments';
+import type { ContextFilter } from './contextFilter';
+import { calculateAttachmentContextSize, countAttachmentToken } from './utils';
 
 function filterMessageAttachments(
     attachments: ShallowAttachment[] | undefined,
@@ -98,7 +98,7 @@ export type RequestContextFileSelection = {
      * appear with `tokenCount` set to their excerpt size.
      */
     files: Attachment[];
-    /** Ids of the non-image files above; `prepareTurns` sends exactly these. */
+    /** Ids of the non-image files above; `prepareRequest` sends exactly these. */
     sentDocumentIds: Set<string>;
     /** Files left out only because the file budget ran out, in the order they were shed. */
     droppedForBudget: Attachment[];
@@ -206,7 +206,7 @@ export function resolveRequestContextFiles(
 
 /**
  * Collect attachments that would be expanded into the next request, mirroring
- * `prepareTurns` document deduplication, context filters, image limits, and
+ * `prepareRequest` document deduplication, context filters, image limits, and
  * non-sendable attachment skipping.
  */
 function collectRequestContextFiles(

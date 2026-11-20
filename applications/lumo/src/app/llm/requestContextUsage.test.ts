@@ -1,9 +1,17 @@
 import { type Message, Role } from '../types';
-import { estimateEffectiveContextUsage } from './effectiveContextUsage';
-import { SUMMARY_TURN_PREFIX } from './compaction/collapse';
-import { countTokens } from './tokenizer';
-import { DEFAULT_CONTEXT_LIMITS } from './contextLimits';
+import { type PrepareRequestOptions, prepareRequest } from './index';
+import { SERVER_SYSTEM_PROMPT_TOKEN_ESTIMATE, estimateRequestContextUsage } from './requestContextUsage';
+
+function prepareContextUsage({
+    allAttachments,
+    ...options
+}: Omit<PrepareRequestOptions, 'attachments'> & { allAttachments: Record<string, Attachment> }) {
+    return prepareRequest({ ...options, attachments: Object.values(allAttachments) }).usage;
+}
 import type { Attachment } from '../types';
+import { SUMMARY_TURN_PREFIX } from './compaction/collapse';
+import { DEFAULT_CONTEXT_LIMITS } from './contextLimits';
+import { countTokens } from './tokenizer';
 
 let seq = 0;
 function textMsg(role: Role, content: string, overrides: Partial<Message> = {}): Message {
@@ -19,16 +27,22 @@ function textMsg(role: Role, content: string, overrides: Partial<Message> = {}):
 }
 
 const fullAttachment = (id: string, filename: string, tokens: number): Attachment =>
-    ({ id, filename, tokenCount: tokens, markdown: 'x', processing: false }) as unknown as Attachment;
+    ({
+        id,
+        filename,
+        tokenCount: tokens,
+        markdown: 'x'.repeat(tokens * 4),
+        processing: false,
+    }) as unknown as Attachment;
 
 beforeEach(() => {
     seq = 0;
 });
 
-describe('estimateEffectiveContextUsage', () => {
+describe('prepareContextUsage', () => {
     it('counts the full chain when there is no compaction boundary', () => {
         const chain = [textMsg(Role.User, 'a'.repeat(40)), textMsg(Role.Assistant, 'b'.repeat(40))];
-        const usage = estimateEffectiveContextUsage({
+        const usage = prepareContextUsage({
             messageChain: chain,
             contextFilters: [],
             allAttachments: {},
@@ -52,7 +66,7 @@ describe('estimateEffectiveContextUsage', () => {
                 ],
             }),
         ];
-        const usage = estimateEffectiveContextUsage({
+        const usage = prepareContextUsage({
             messageChain: chain,
             contextFilters: [],
             allAttachments: {},
@@ -60,7 +74,9 @@ describe('estimateEffectiveContextUsage', () => {
 
         expect(usage.conversationTokens).toBe(countTokens('question') + countTokens('thinking'));
         expect(usage.toolCallTokens).toBe(countTokens(toolPayload) + countTokens('search results here'));
-        expect(usage.usedTokens).toBe(usage.conversationTokens + usage.toolCallTokens);
+        expect(usage.usedTokens).toBe(
+            usage.conversationTokens + usage.toolCallTokens + SERVER_SYSTEM_PROMPT_TOKEN_ESTIMATE
+        );
     });
 
     it('excludes summarized messages and counts only the latest summary', () => {
@@ -104,16 +120,14 @@ describe('estimateEffectiveContextUsage', () => {
         });
         const chain = [old, kept, firstBoundary, latestBoundary];
 
-        const usage = estimateEffectiveContextUsage({
+        const usage = prepareContextUsage({
             messageChain: chain,
             contextFilters: [],
             allAttachments: {},
         });
 
         expect(usage.hasCompaction).toBe(true);
-        expect(usage.conversationTokens).toBe(
-            countTokens(`${SUMMARY_TURN_PREFIX}\n\nLATEST SUMMARY`)
-        );
+        expect(usage.conversationTokens).toBe(countTokens(`${SUMMARY_TURN_PREFIX}\n\nLATEST SUMMARY`));
         expect(usage.conversationTokens).not.toBe(
             countTokens('FIRST SUMMARY') + countTokens('LATEST SUMMARY') + countTokens('kept')
         );
@@ -149,13 +163,19 @@ describe('estimateEffectiveContextUsage', () => {
             a2: fullAttachment('a2', 'kept.pdf', 100),
         };
 
-        const usage = estimateEffectiveContextUsage({
+        const usage = prepareContextUsage({
             messageChain: [old, kept, boundary],
             contextFilters: [],
             allAttachments,
         });
 
-        expect(usage.fileTokens).toBe(100);
+        expect(usage.fileTokens).toBe(
+            countTokens(
+                'Filename: kept.pdf\nFile contents:\n----- BEGIN FILE CONTENTS -----\n' +
+                    'x'.repeat(400) +
+                    '\n----- END FILE CONTENTS -----'
+            )
+        );
         expect(usage.activeFiles.map((f) => f.filename)).toEqual(['kept.pdf']);
     });
 
@@ -171,13 +191,19 @@ describe('estimateEffectiveContextUsage', () => {
             a2: fullAttachment('a2', 'drop.pdf', 900),
         };
 
-        const usage = estimateEffectiveContextUsage({
+        const usage = prepareContextUsage({
             messageChain: [msg],
             contextFilters: [{ messageId: msg.id, excludedFiles: ['drop.pdf'] }],
             allAttachments,
         });
 
-        expect(usage.fileTokens).toBe(100);
+        expect(usage.fileTokens).toBe(
+            countTokens(
+                'Filename: keep.pdf\nFile contents:\n----- BEGIN FILE CONTENTS -----\n' +
+                    'x'.repeat(400) +
+                    '\n----- END FILE CONTENTS -----'
+            )
+        );
     });
 
     it('drops after compaction instead of adding summary on top of summarized content', () => {
@@ -203,12 +229,12 @@ describe('estimateEffectiveContextUsage', () => {
         });
         const allAttachments = {};
 
-        const before = estimateEffectiveContextUsage({
+        const before = prepareContextUsage({
             messageChain: [head, tail],
             contextFilters: [],
             allAttachments,
         });
-        const after = estimateEffectiveContextUsage({
+        const after = prepareContextUsage({
             messageChain: [head, tail, boundary],
             contextFilters: [],
             allAttachments,
@@ -247,7 +273,7 @@ describe('estimateEffectiveContextUsage', () => {
             a1: fullAttachment('a1', 'old.pdf', 50_000),
         };
 
-        const usage = estimateEffectiveContextUsage({
+        const usage = prepareContextUsage({
             messageChain: [old, tail, boundary],
             contextFilters: [],
             currentAttachments: [allAttachments.a1],
@@ -291,19 +317,19 @@ describe('estimateEffectiveContextUsage', () => {
             [boundary.id]: boundary,
         };
 
-        const originalBranchUsage = estimateEffectiveContextUsage({
+        const originalBranchUsage = prepareContextUsage({
             messageChain: [old, originalQuestion, boundary],
             contextFilters: [],
             allAttachments: {},
             messageMap,
         });
-        const editedForkUsage = estimateEffectiveContextUsage({
+        const editedForkUsage = prepareContextUsage({
             messageChain: [old, editedQuestion],
             contextFilters: [],
             allAttachments: {},
             messageMap,
         });
-        const withoutSharedHistory = estimateEffectiveContextUsage({
+        const withoutSharedHistory = prepareContextUsage({
             messageChain: [old, editedQuestion],
             contextFilters: [],
             allAttachments: {},
@@ -352,11 +378,11 @@ describe('estimateEffectiveContextUsage', () => {
         };
         const common = { contextFilters: [], allAttachments, messageMap };
 
-        const originalFork = estimateEffectiveContextUsage({
+        const originalFork = prepareContextUsage({
             ...common,
             messageChain: [history, originalQuestion, boundary],
         });
-        const editedFork = estimateEffectiveContextUsage({
+        const editedFork = prepareContextUsage({
             ...common,
             messageChain: [history, editedQuestion],
         });
@@ -390,7 +416,7 @@ describe('estimateEffectiveContextUsage', () => {
             weaker: autoRetrieved('weaker', 'weaker.pdf', 0.2),
         };
 
-        const usage = estimateEffectiveContextUsage({
+        const usage = prepareContextUsage({
             messageChain: [message],
             contextFilters: [],
             allAttachments,
@@ -406,7 +432,7 @@ describe('estimateEffectiveContextUsage', () => {
             attachments: [{ id: 'huge', filename: 'huge.pdf' }] as any,
         });
 
-        const usage = estimateEffectiveContextUsage({
+        const usage = prepareContextUsage({
             messageChain: [message],
             contextFilters: [],
             allAttachments: { huge: fullAttachment('huge', 'huge.pdf', 500_000) },
@@ -450,7 +476,7 @@ describe('estimateEffectiveContextUsage', () => {
             [boundary.id]: boundary,
         };
 
-        const usage = estimateEffectiveContextUsage({
+        const usage = prepareContextUsage({
             messageChain: [old, originalQuestion],
             contextFilters: [],
             allAttachments: {},
@@ -459,5 +485,107 @@ describe('estimateEffectiveContextUsage', () => {
 
         expect(usage.hasCompaction).toBe(false);
         expect(usage.conversationTokens).toBeGreaterThan(countTokens('OTHER FORK SUMMARY'));
+    });
+});
+
+describe('prepared request accounting', () => {
+    const clientTools = [
+        {
+            type: 'function' as const,
+            function: {
+                name: 'lookup',
+                description: 'Find project information',
+                parameters: { type: 'object', properties: {} },
+            },
+        },
+    ];
+
+    it('keeps regenerate instructions immediately before the final user turn and counts them once', () => {
+        const retryInstructions = 'Make the answer shorter.';
+        const request = prepareRequest({
+            messageChain: [
+                textMsg(Role.User, 'Earlier question'),
+                textMsg(Role.Assistant, 'Earlier answer'),
+                textMsg(Role.User, 'Latest question'),
+                textMsg(Role.Assistant, ''),
+            ],
+            retryInstructions,
+        });
+
+        expect(request.turns).toEqual([
+            { role: Role.User, content: 'Earlier question' },
+            { role: Role.Assistant, content: 'Earlier answer' },
+            { role: Role.System, content: retryInstructions },
+            { role: Role.User, content: 'Latest question' },
+        ]);
+        expect(request.usage.instructionTokens).toBe(
+            SERVER_SYSTEM_PROMPT_TOKEN_ESTIMATE + countTokens(retryInstructions)
+        );
+        expect(request.usage.usedTokens).toBe(estimateRequestContextUsage(request.turns).usedTokens);
+    });
+
+    it('counts instructions, tool schemas and tool-result images in the same total as the outgoing turns', () => {
+        const toolCall = '{"name":"lookup","arguments":{}}';
+        const resultText = 'The project launches in March.';
+        const request = prepareRequest({
+            messageChain: [
+                textMsg(Role.User, 'When?'),
+                textMsg(Role.Assistant, '', {
+                    blocks: [
+                        { type: 'text', content: 'Checking.' },
+                        { type: 'tool_call', content: toolCall },
+                        {
+                            type: 'tool_result',
+                            content: resultText,
+                            toolImages: [
+                                { mime_type: 'image/png', data: 'aW1hZ2U=', image_id: 'figure', path: '/figure.png' },
+                            ],
+                        },
+                    ],
+                }),
+            ],
+            projectInstructions: 'Use the project schedule.',
+            clientTools,
+        });
+        const instructions = '[Project instructions: Use the project schedule.]';
+        expect(request.turns.map((turn) => turn.content)).toEqual([
+            instructions,
+            'When?',
+            'Checking.',
+            toolCall,
+            resultText,
+        ]);
+        expect(request.usage.instructionTokens).toBe(SERVER_SYSTEM_PROMPT_TOKEN_ESTIMATE + countTokens(instructions));
+        expect(request.usage.toolCallTokens).toBe(
+            countTokens(JSON.stringify(clientTools)) + countTokens(toolCall) + countTokens(resultText) + 2_000
+        );
+        expect(request.usage.usedTokens).toBe(estimateRequestContextUsage(request.turns, clientTools).usedTokens);
+        expect(request.usage.usedTokens).toBe(
+            request.usage.conversationTokens +
+                request.usage.instructionTokens +
+                request.usage.toolCallTokens +
+                request.usage.fileTokens
+        );
+    });
+
+    it('previews provisional files using exactly the same turns and token totals as a send', () => {
+        const history = textMsg(Role.User, 'Earlier question');
+        const attachment = fullAttachment('file', 'notes.txt', 100);
+        const common = { messageChain: [history], clientTools, projectInstructions: 'Answer briefly.' };
+        const preview = prepareRequest({ ...common, currentAttachments: [attachment] });
+        const send = prepareRequest({
+            ...common,
+            messageChain: [history, textMsg(Role.User, '', { attachments: [attachment] })],
+            attachments: [attachment],
+        });
+        expect(preview.turns).toEqual(send.turns);
+        expect(preview.usage).toEqual(send.usage);
+        expect(preview.usage.fileTokens).toBe(
+            countTokens(
+                'Filename: notes.txt\nFile contents:\n----- BEGIN FILE CONTENTS -----\n' +
+                    'x'.repeat(400) +
+                    '\n----- END FILE CONTENTS -----'
+            )
+        );
     });
 });

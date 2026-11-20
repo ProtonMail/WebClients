@@ -6,7 +6,12 @@ const tokensOf = (b: ReturnType<typeof buildContextBreakdown>, id: string) =>
 
 describe('buildContextBreakdown', () => {
     it('lays out conversation, files, reserved reply and free space within the window', () => {
-        const b = buildContextBreakdown({ conversationTokens: 20_000, fileTokens: 20_000, maxTokens: 128_000 });
+        const b = buildContextBreakdown({
+            usedTokens: 40_000,
+            conversationTokens: 20_000,
+            fileTokens: 20_000,
+            maxTokens: 128_000,
+        });
 
         const expectedBuffer = getReservedOutputTokens(128_000, false);
         expect(b.overCapacity).toBe(false);
@@ -22,6 +27,7 @@ describe('buildContextBreakdown', () => {
 
     it('is over capacity once usage eats into the reserved reply', () => {
         const b = buildContextBreakdown({
+            usedTokens: 90_000,
             conversationTokens: 90_000,
             fileTokens: 0,
             maxTokens: 100_000,
@@ -34,7 +40,12 @@ describe('buildContextBreakdown', () => {
     });
 
     it('scales segments to fill the bar and zeroes buffer/free when over the whole window', () => {
-        const b = buildContextBreakdown({ conversationTokens: 120_000, fileTokens: 80_000, maxTokens: 128_000 });
+        const b = buildContextBreakdown({
+            usedTokens: 200_000,
+            conversationTokens: 120_000,
+            fileTokens: 80_000,
+            maxTokens: 128_000,
+        });
 
         expect(b.overCapacity).toBe(true);
         expect(tokensOf(b, 'buffer')).toBe(0);
@@ -48,6 +59,7 @@ describe('buildContextBreakdown', () => {
 
     it('includes tool calls in measured usage and the stacked bar', () => {
         const b = buildContextBreakdown({
+            usedTokens: 20_000,
             conversationTokens: 10_000,
             toolCallTokens: 5_000,
             fileTokens: 5_000,
@@ -60,6 +72,7 @@ describe('buildContextBreakdown', () => {
 
     it('respects an explicit buffer override', () => {
         const b = buildContextBreakdown({
+            usedTokens: 10_000,
             conversationTokens: 10_000,
             fileTokens: 0,
             maxTokens: 100_000,

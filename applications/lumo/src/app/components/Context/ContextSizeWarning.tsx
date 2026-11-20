@@ -14,16 +14,21 @@ import type { Attachment, Message } from '../../types';
 interface ContextSizeWarningProps {
     attachments: Attachment[];
     messageChain: Message[];
+    spaceId?: string;
     onOpenFiles?: () => void;
 }
 
-export const ContextSizeWarning = ({ attachments, messageChain, onOpenFiles }: ContextSizeWarningProps) => {
-    const { usedTokens, fileTokens } = useEffectiveContextUsage(messageChain, attachments);
+export const ContextSizeWarning = ({ attachments, messageChain, spaceId, onOpenFiles }: ContextSizeWarningProps) => {
+    const { usedTokens, fileTokens, isPending, isUnavailable } = useEffectiveContextUsage(
+        messageChain,
+        attachments,
+        spaceId
+    );
     const contextLimits = useContextLimits(messageChain[0]?.conversationId);
 
     const warningLevel = getContextSizeWarning(usedTokens, contextLimits) === 'critical' ? 'critical' : 'none';
 
-    if (warningLevel === 'none') {
+    if (isPending || isUnavailable || warningLevel === 'none') {
         return null;
     }
 

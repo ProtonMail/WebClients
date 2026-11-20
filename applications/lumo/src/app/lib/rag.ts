@@ -2,7 +2,14 @@ import type { ContextFilter } from '../llm';
 import { collapseCompactedChain, getSummarizedMessageIds } from '../llm/compaction';
 import { type AttachmentMap, newAttachmentId } from '../redux/slices/core/attachments';
 import { SearchService } from '../services/search/searchService';
-import { type Attachment, type AttachmentId, type Message, type MessageId, Role, type ShallowAttachment } from '../types';
+import {
+    type Attachment,
+    type AttachmentId,
+    type Message,
+    type MessageId,
+    Role,
+    type ShallowAttachment,
+} from '../types';
 import { getMimeTypeFromName, isFileTypeSupported } from '../util/filetypes';
 import { formatPercent } from '../util/formatting';
 
@@ -10,7 +17,7 @@ import { formatPercent } from '../util/formatting';
  * Collect all attachment IDs that will be in the LLM context for this generation.
  *
  * This includes attachments from ALL messages in the chain (unless filtered) because
- * when we call prepareTurns(), the LLM sees the entire conversation history with each
+ * when we call prepareRequest(), the LLM sees the entire conversation history with each
  * message's file content embedded. For example:
  * - Message 1 with file A → Turn 1 includes A's content
  * - Response 1
@@ -207,7 +214,11 @@ function ragDocsToAttachments(
 
 /** Normalize a user query so minor punctuation edits do not change RAG retrieval. */
 export function normalizeRagQuery(query: string): string {
-    return query.trim().replace(/\s+/g, ' ').replace(/[^\w\s]+$/g, '').trim();
+    return query
+        .trim()
+        .replace(/\s+/g, ' ')
+        .replace(/[^\w\s]+$/g, '')
+        .trim();
 }
 
 function trackRetrievedDocumentId(
@@ -336,11 +347,7 @@ export async function retrieveDocumentContextForProject(
     }
     const searchService = SearchService.get(userId);
     const normalizedQuery = normalizeRagQuery(query);
-    const alreadyRetrievedDocIds = collectAlreadyRetrievedDocIds(
-        messageChain,
-        allAttachments,
-        allConversationMessages
-    );
+    const alreadyRetrievedDocIds = collectAlreadyRetrievedDocIds(messageChain, allAttachments, allConversationMessages);
 
     try {
         const { nRetrieved, candidateDocs } = await retrieveRelevantRagFiles(
