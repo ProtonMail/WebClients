@@ -378,6 +378,27 @@ describe('amount rules', () => {
 
         expect(await screen.findByText(minimumBannerText)).toHaveTextContent('5');
     });
+
+    const presetLabels = () =>
+        screen
+            .getAllByRole('button', { hidden: true, description: /^Amount/ })
+            .map((button) => Number(button.textContent?.replace(/\D/g, '')));
+
+    it('should offer the US$50 and US$100 presets', async () => {
+        mockPaymentMethods().noSaved();
+
+        render(<ContextLumoCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONLUMO} />);
+
+        await waitFor(() => expect(presetLabels()).toEqual([50, 100]));
+    });
+
+    it('should keep the regular preset amounts in the regular credits modal', async () => {
+        mockPaymentMethods().noSaved();
+
+        render(<ContextCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONMAIL} />);
+
+        await waitFor(() => expect(presetLabels()).toEqual([5, 10, 50, 100]));
+    });
 });
 
 describe('tax', () => {

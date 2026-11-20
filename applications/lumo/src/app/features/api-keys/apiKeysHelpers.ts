@@ -56,6 +56,8 @@ export const formatApiCurrency = (value: number, currency: Currency) =>
 export const toCurrencyBaseUnits = (amount: number, currency: Currency) =>
     amount * getCurrencyFormattingConfig(currency).divisor;
 
+const DAYS_IN_A_YEAR = 365;
+
 export const getBalanceEstimate = (balance: number, averageDailySpend: number) => {
     if (averageDailySpend <= 0) {
         return c('collider_2025: Info').t`Usage estimate unavailable`;
@@ -63,6 +65,9 @@ export const getBalanceEstimate = (balance: number, averageDailySpend: number) =
     const estimatedDays = Math.floor(balance / averageDailySpend);
     if (estimatedDays === 0) {
         return c('collider_2025: Info').t`Less than one day left at current usage`;
+    }
+    if (estimatedDays > DAYS_IN_A_YEAR) {
+        return c('collider_2025: Info').t`More than a year left at current usage`;
     }
     return c('collider_2025: Info').t`About ${estimatedDays} days left at current usage`;
 };

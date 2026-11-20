@@ -24,6 +24,7 @@ interface Props {
     onChangeAmount: (amount: number) => void;
     disableCurrencySelector: boolean;
     paymentStatus: PaymentStatus;
+    presetUsdAmounts?: number[];
 }
 
 const PaymentSelector = ({
@@ -33,6 +34,7 @@ const PaymentSelector = ({
     onChangeAmount,
     disableCurrencySelector,
     paymentStatus,
+    presetUsdAmounts = [500, 1000, 5000, 10000],
 }: Props) => {
     const multiSubscriptionContext = useMultiSubscriptionContext();
     const [user] = useUser();
@@ -42,9 +44,8 @@ const PaymentSelector = ({
     const { divisor } = getCurrencyFormattingConfig(currency);
 
     const getAmounts = (currency: Currency) => {
-        const defaultUsdAmounts = [500, 1000, 5000, 10000];
         const rate = getNaiveCurrencyRate(currency);
-        return defaultUsdAmounts.map((value) => Math.floor(value * rate));
+        return presetUsdAmounts.map((value) => Math.floor(value * rate));
     };
 
     const handleChangeAmount = (value: number) => {

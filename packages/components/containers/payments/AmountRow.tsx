@@ -15,6 +15,7 @@ interface Props {
     onChangeCurrency: (currency: Currency) => void;
     disableCurrencySelector: boolean;
     paymentStatus: PaymentStatus;
+    presetUsdAmounts?: number[];
 }
 
 const AmountRow = ({
@@ -25,6 +26,7 @@ const AmountRow = ({
     onChangeCurrency,
     disableCurrencySelector,
     paymentStatus,
+    presetUsdAmounts,
 }: Props) => {
     if (paymentMethodType === PAYMENT_METHOD_TYPES.CASH) {
         return null;
@@ -41,6 +43,7 @@ const AmountRow = ({
                     currency={currency}
                     onChangeCurrency={onChangeCurrency}
                     disableCurrencySelector={disableCurrencySelector}
+                    presetUsdAmounts={presetUsdAmounts}
                 />
             </Field>
         </div>

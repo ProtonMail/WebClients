@@ -24,6 +24,12 @@ describe('getBalanceEstimate', () => {
         expect(getBalanceEstimate(4, 5)).toBe('Less than one day left at current usage');
     });
 
+    it('caps the estimate at a year', () => {
+        expect(getBalanceEstimate(365, 1)).toBe('About 365 days left at current usage');
+        expect(getBalanceEstimate(366, 1)).toBe('More than a year left at current usage');
+        expect(getBalanceEstimate(5, 0.0000011)).toBe('More than a year left at current usage');
+    });
+
     it('has no estimate without spend', () => {
         expect(getBalanceEstimate(25, 0)).toBe('Usage estimate unavailable');
     });

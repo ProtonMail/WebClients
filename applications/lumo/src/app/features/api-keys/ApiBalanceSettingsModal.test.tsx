@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
-import { type ApiBalanceSettings, ApiBalanceSettingsModal } from './ApiBalanceSettingsModal';
+import { type ApiBalanceSettings, ApiBalanceSettingsModal, getImmediateTopUpWarning } from './ApiBalanceSettingsModal';
 
 const settings: ApiBalanceSettings = {
     autoTopUp: { enabled: true, amount: 50, threshold: 20 },
@@ -260,5 +260,34 @@ describe('ApiBalanceSettingsModal', () => {
         setup();
 
         expect(screen.queryByText(/Automatic top-up needs/)).not.toBeInTheDocument();
+    });
+});
+
+describe('getImmediateTopUpWarning', () => {
+    const warning = (overrides: Partial<Parameters<typeof getImmediateTopUpWarning>[0]> = {}) =>
+        getImmediateTopUpWarning({
+            balance: 20,
+            amount: 50,
+            threshold: 20,
+            spent: 0,
+            spendingLimit: undefined,
+            currency: 'USD',
+            ...overrides,
+        });
+
+    it('warns when the balance is at or below the threshold', () => {
+        expect(warning()).toBe(
+            'Your balance of $20.00 has reached the threshold, so saving will top up $50.00 right away.'
+        );
+        expect(warning({ balance: 19.99 })).toBeDefined();
+    });
+
+    it('does not warn when the balance is above the threshold', () => {
+        expect(warning({ balance: 20.01 })).toBeUndefined();
+    });
+
+    it('does not warn when the top-up would exceed the monthly spending limit', () => {
+        expect(warning({ spent: 200, spendingLimit: 250 })).toBeDefined();
+        expect(warning({ spent: 201, spendingLimit: 250 })).toBeUndefined();
     });
 });

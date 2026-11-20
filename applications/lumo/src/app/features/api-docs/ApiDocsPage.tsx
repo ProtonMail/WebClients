@@ -13,6 +13,7 @@ import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { SignInButton } from '../../components/Guest/SignInLink';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
+import config from '../../config';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
@@ -71,8 +72,8 @@ type ApiModelsState =
     | { status: 'success'; models: ApiModel[] }
     | { status: 'error'; models: ApiModel[] };
 
-// Keep browser requests on the existing host until CSP allows the public API host.
-const API_DOCS_MODELS_BASE_URL = 'https://lumo.proton.me/api/ai/v1';
+// Same origin until CSP allows the public API host.
+const API_DOCS_MODELS_BASE_URL = `${config.API_URL}/ai/v1`;
 
 const StatusBadge = ({ status }: { status: 'ga' | 'beta' }) =>
     status === 'ga' ? (

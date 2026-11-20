@@ -9,6 +9,7 @@ import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { ApiDocsPage } from './ApiDocsPage';
+import { fetchApiModels } from './apiModels';
 
 vi.mock('@proton/account/entitlementCatalog/hooks');
 vi.mock('../../hooks/useLumoFlags');
@@ -26,7 +27,7 @@ vi.mock('../../components/Composer/hooks/useNativeComposerVisibilityApi', () => 
     useNativeComposerVisibilityApi: () => undefined,
 }));
 vi.mock('../../components/Guest/SignInLink', () => ({ SignInButton: () => <button>Sign in</button> }));
-vi.mock('./apiModels', () => ({ fetchApiModels: () => new Promise(() => {}) }));
+vi.mock('./apiModels', () => ({ fetchApiModels: vi.fn(() => new Promise(() => {})) }));
 vi.mock('../api-keys/ApiKeysPanel', () => ({ __esModule: true, default: () => <div>API keys panel</div> }));
 vi.mock('../api-keys/ApiUsagePanel', () => ({ ApiUsagePanel: () => <div>API usage panel</div> }));
 
@@ -68,6 +69,13 @@ const renderTab = (
         </MemoryRouter>
     );
 };
+
+describe('ApiDocsPage models catalog', () => {
+    it('loads the models from the API of the current environment', () => {
+        renderTab('#api-keys', {});
+        expect(fetchApiModels).toHaveBeenCalledWith('/api/ai/v1', expect.any(AbortSignal));
+    });
+});
 
 describe('ApiDocsPage access', () => {
     beforeEach(() => {

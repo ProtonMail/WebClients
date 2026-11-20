@@ -162,6 +162,80 @@ describe('ApiUsageDashboard balance settings', () => {
         expect(settingsRow()).not.toHaveTextContent('Monthly spending limit');
     });
 
+    const enableAutoTopUp = () => fireEvent.click(screen.getByLabelText(/^Automatic top-up/));
+    const queryImmediateTopUpWarning = () => screen.queryByText(/so saving will top up .* right away/);
+
+    it('warns that turning automatic top-up on tops up right away when the balance has reached the threshold', async () => {
+        setup();
+        await waitForBalance();
+        openManage();
+
+        enableAutoTopUp();
+
+        expect(queryImmediateTopUpWarning()).toHaveTextContent(
+            'Your balance of $15.00 has reached the threshold, so saving will top up $50.00 right away.'
+        );
+    });
+
+    it('quotes the edited top-up amount in the warning', async () => {
+        setup();
+        await waitForBalance();
+        openManage();
+
+        enableAutoTopUp();
+        fireEvent.change(screen.getByLabelText('Top up by'), { target: { value: '75' } });
+
+        expect(queryImmediateTopUpWarning()).toHaveTextContent('so saving will top up $75.00 right away.');
+    });
+
+    it('warns when an enabled automatic top-up gets a threshold the balance has reached', async () => {
+        setup({ credits: { ...autoTopUpOn, Threshold: 10 } });
+        await waitForBalance();
+        openManage();
+        expect(queryImmediateTopUpWarning()).not.toBeInTheDocument();
+
+        fireEvent.change(screen.getByLabelText('When balance falls below'), { target: { value: '15' } });
+
+        expect(queryImmediateTopUpWarning()).toBeInTheDocument();
+    });
+
+    it('does not warn when saving would not change an enabled automatic top-up', async () => {
+        setup({ credits: autoTopUpOn });
+        await waitForBalance();
+        openManage();
+
+        expect(queryImmediateTopUpWarning()).not.toBeInTheDocument();
+    });
+
+    it('does not warn while automatic top-up is off', async () => {
+        setup();
+        await waitForBalance();
+        openManage();
+
+        expect(queryImmediateTopUpWarning()).not.toBeInTheDocument();
+    });
+
+    it('does not warn without a payment method that can be charged automatically', async () => {
+        setup({ canChargeAutoTopUp: false });
+        await waitForBalance();
+        openManage();
+
+        enableAutoTopUp();
+
+        expect(queryImmediateTopUpWarning()).not.toBeInTheDocument();
+    });
+
+    it('does not warn while the top-up amount is invalid', async () => {
+        setup();
+        await waitForBalance();
+        openManage();
+
+        enableAutoTopUp();
+        fireEvent.change(screen.getByLabelText('Top up by'), { target: { value: '5' } });
+
+        expect(queryImmediateTopUpWarning()).not.toBeInTheDocument();
+    });
+
     it('saves the automatic top-up with its spending limit, closes and shows the refetched values', async () => {
         const api = setup();
         await waitForBalance();
@@ -215,6 +289,11 @@ describe('ApiUsageDashboard balance settings', () => {
             'a refused purchase guard',
             apiError(2000, 'Lumo credits cannot be purchased yet.', 400),
             'Automatic top-up could not be saved. Please try again.',
+        ],
+        [
+            'a top-up already in progress',
+            apiError(2502, 'There is already an active operation', 409),
+            'A top-up is already in progress. Try again in a minute.',
         ],
     ])('keeps the settings open after %s and explains the error in the modal only', async (_, error, message) => {
         const api = setup({ failures: { [autoTopUpUrl]: error } });
