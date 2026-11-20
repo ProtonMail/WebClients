@@ -90,7 +90,6 @@
         "@reduxjs/toolkit": "catalog:",
         "@unleash/proxy-client-react": "^5.1.0",
         "history": "catalog:",
-        "react": "catalog:",
         "react-redux": "catalog:",
         "ttag": "catalog:"
     },
@@ -110,8 +109,12 @@
         "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "react-dom": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

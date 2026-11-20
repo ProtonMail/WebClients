@@ -23,7 +23,6 @@
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
         "@reduxjs/toolkit": "catalog:",
-        "react": "catalog:",
         "redux-thunk": "catalog:"
     },
     "devDependencies": {
@@ -36,7 +35,11 @@
         "@typescript/native": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

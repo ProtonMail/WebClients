@@ -50,7 +50,6 @@
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "fast-xml-parser": "^5.12.0",
-        "react": "catalog:",
         "react-router-dom": "catalog:",
         "ttag": "catalog:"
     },
@@ -72,8 +71,12 @@
         "happy-dom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "react-dom": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

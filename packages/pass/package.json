@@ -496,8 +496,6 @@
         "loglevel": "^1.9.2",
         "otpauth": "^9.6.0",
         "papaparse": "^5.7.1",
-        "react": "catalog:",
-        "react-dom": "catalog:",
         "react-redux": "catalog:",
         "react-router": "catalog:",
         "react-router-dom": "catalog:",
@@ -521,7 +519,6 @@
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "catalog:",
         "@testing-library/user-event": "catalog:",
-        "@vitejs/plugin-react": "catalog:",
         "@types/chrome": "catalog:",
         "@types/history": "catalog:",
         "@types/lodash": "catalog:",
@@ -534,6 +531,7 @@
         "@types/webextension-polyfill": "^0.12.6",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
+        "@vitejs/plugin-react": "catalog:",
         "core-js": "catalog:",
         "fake-indexeddb": "catalog:",
         "happy-dom": "catalog:",
@@ -543,9 +541,15 @@
         "openapi-types": "^12.1.3",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
+        "react-dom": "catalog:",
         "tsx": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:",
         "webpack": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0",
+        "react-dom": "^18.3.1 || ^19.0.0"
     }
 }

@@ -1029,9 +1029,7 @@
         "lottie-react": "^2.4.2",
         "punycode.js": "^2.3.1",
         "qrcode.react": "^4.2.0",
-        "react": "catalog:",
         "react-codemirror2": "^9.0.1",
-        "react-dom": "catalog:",
         "react-router": "catalog:",
         "react-router-dom": "catalog:",
         "react-virtualized": "^9.22.6",
@@ -1066,8 +1064,14 @@
         "msw": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
+        "react-dom": "catalog:",
         "react-redux": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0",
+        "react-dom": "^18.3.1 || ^19.0.0"
     }
 }

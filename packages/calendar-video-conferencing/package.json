@@ -46,7 +46,6 @@
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "catalog:",
         "lodash": "catalog:",
-        "react": "catalog:",
         "react-router-dom": "catalog:",
         "ttag": "catalog:"
     },
@@ -69,8 +68,12 @@
         "jsdom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "react-dom": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

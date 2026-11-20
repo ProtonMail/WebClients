@@ -4958,12 +4958,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -5031,6 +5025,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -5067,9 +5067,6 @@ importers:
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -5095,6 +5092,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -5143,9 +5143,6 @@ importers:
       date-fns:
         specifier: 'catalog:'
         version: 4.4.0
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -5201,6 +5198,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -5297,12 +5297,6 @@ importers:
       lottie-react:
         specifier: ^2.4.2
         version: 2.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -5370,6 +5364,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       react-router:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -5434,9 +5434,6 @@ importers:
       dompurify:
         specifier: 'catalog:'
         version: 3.4.17
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
     devDependencies:
       '@proton/oxlint-config':
         specifier: workspace:^
@@ -5474,6 +5471,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -5513,12 +5513,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       tinycolor2:
         specifier: 'catalog:'
         version: 1.6.0
@@ -5595,6 +5589,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       ts-node:
         specifier: 'catalog:'
         version: 10.9.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
@@ -5643,9 +5643,6 @@ importers:
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -5698,6 +5695,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -5749,9 +5749,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
     devDependencies:
       '@proton/app-context':
         specifier: workspace:^
@@ -5804,6 +5801,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -5867,9 +5867,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -5931,6 +5928,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -6077,9 +6077,6 @@ importers:
       chart.js:
         specifier: ^4.6.1
         version: 4.6.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-chartjs-2:
         specifier: ^5.3.1
         version: 5.3.1(chart.js@4.6.1)(react@18.3.1)
@@ -6132,6 +6129,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -6373,15 +6373,9 @@ importers:
       qrcode.react:
         specifier: ^4.2.0
         version: 4.2.0(react@18.3.1)
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-codemirror2:
         specifier: ^9.0.1
         version: 9.0.1(codemirror@5.65.21)(react@18.3.1)
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       react-router:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -6479,6 +6473,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -6601,9 +6601,6 @@ importers:
       date-fns:
         specifier: 'catalog:'
         version: 4.4.0
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -6659,6 +6656,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -7255,9 +7255,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -7307,6 +7304,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -7334,9 +7334,6 @@ importers:
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       redux-thunk:
         specifier: 'catalog:'
         version: 3.1.0(redux@5.0.1)
@@ -7368,6 +7365,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -7386,9 +7386,6 @@ importers:
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
     devDependencies:
       '@proton/oxfmt-config':
         specifier: workspace:^
@@ -7423,6 +7420,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       tsx:
         specifier: 'catalog:'
         version: 4.23.15
@@ -7455,12 +7455,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -7504,6 +7498,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -7547,9 +7547,6 @@ importers:
       mustache:
         specifier: ^4.2.0
         version: 4.2.0
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
     devDependencies:
       '@proton/oxlint-config':
         specifier: workspace:^
@@ -7566,6 +7563,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       tsx:
         specifier: 'catalog:'
         version: 4.23.15
@@ -7722,9 +7722,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -7786,6 +7783,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -7859,12 +7859,6 @@ importers:
       markdown-it:
         specifier: ^14.3.3
         version: 14.3.3
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -7917,6 +7911,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -8062,9 +8062,6 @@ importers:
       history:
         specifier: 'catalog:'
         version: 4.10.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -8117,6 +8114,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -8219,12 +8219,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       roosterjs:
         specifier: 8.47.0
         version: 8.47.0
@@ -8325,6 +8319,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -8382,9 +8382,6 @@ importers:
       markdown-it:
         specifier: ^14.3.3
         version: 14.3.3
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -8440,6 +8437,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -8485,12 +8485,6 @@ importers:
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -8531,6 +8525,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -8597,9 +8597,6 @@ importers:
       livekit-client:
         specifier: 2.24.1
         version: 2.24.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -8652,6 +8649,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -9168,12 +9168,6 @@ importers:
       papaparse:
         specifier: ^5.7.1
         version: 5.7.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -9304,6 +9298,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       tsx:
         specifier: 'catalog:'
         version: 4.23.15
@@ -9461,9 +9461,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -9525,6 +9522,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -9600,12 +9600,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -9679,6 +9673,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -9749,9 +9749,6 @@ importers:
 
   packages/react-redux-store:
     dependencies:
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -9768,6 +9765,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
 
   packages/recovery-kit:
     dependencies:
@@ -9856,9 +9856,6 @@ importers:
       date-fns:
         specifier: 'catalog:'
         version: 4.4.0
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -9887,6 +9884,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -9911,9 +9911,6 @@ importers:
       history:
         specifier: 'catalog:'
         version: 4.10.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -9933,6 +9930,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
 
   packages/redux-utilities:
     dependencies:
@@ -9945,9 +9945,6 @@ importers:
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -9997,6 +9994,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -10048,12 +10048,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -10091,6 +10085,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -10248,9 +10248,6 @@ importers:
       papaparse:
         specifier: ^5.7.1
         version: 5.7.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -10309,6 +10306,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -10414,9 +10414,6 @@ importers:
       papaparse:
         specifier: ^5.7.1
         version: 5.7.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       tinycolor2:
         specifier: 'catalog:'
         version: 1.6.0
@@ -10496,6 +10493,9 @@ importers:
       playwright:
         specifier: ^1.65.0
         version: 1.65.0
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -10683,9 +10683,6 @@ importers:
       date-fns:
         specifier: 'catalog:'
         version: 4.4.0
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       unleash-proxy-client:
         specifier: ^3.8.0
         version: 3.8.0
@@ -10717,6 +10714,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -10835,9 +10835,6 @@ importers:
       fast-xml-parser:
         specifier: ^5.12.0
         version: 5.12.0
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -10896,6 +10893,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -10953,12 +10953,6 @@ importers:
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      react:
-        specifier: 'catalog:'
-        version: 18.3.1
-      react-dom:
-        specifier: 'catalog:'
-        version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -11017,6 +11011,12 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'

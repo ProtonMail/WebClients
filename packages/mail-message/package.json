@@ -110,7 +110,6 @@
         "immer": "11.2.10",
         "jszip": "catalog:",
         "markdown-it": "^14.3.3",
-        "react": "catalog:",
         "ttag": "catalog:",
         "turndown": "^7.2.5"
     },
@@ -131,8 +130,12 @@
         "jsdom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "react-dom": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

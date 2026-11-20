@@ -103,8 +103,6 @@
         "date-fns": "catalog:",
         "lodash": "catalog:",
         "lottie-react": "^2.4.2",
-        "react": "catalog:",
-        "react-dom": "catalog:",
         "react-redux": "catalog:",
         "ttag": "catalog:"
     },
@@ -129,6 +127,8 @@
         "msw": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
+        "react-dom": "catalog:",
         "react-router": "catalog:",
         "react-router-dom": "catalog:",
         "typescript": "catalog:",
@@ -136,6 +136,8 @@
     },
     "peerDependencies": {
         "@types/react-router-dom": "^5.3.3",
+        "react": "^18.3.1 || ^19.0.0",
+        "react-dom": "^18.3.1 || ^19.0.0",
         "react-router-dom": "^5.3.4"
     },
     "devDependenciesComments": {

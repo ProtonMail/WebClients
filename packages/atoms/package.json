@@ -80,8 +80,6 @@
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
         "lodash": "catalog:",
-        "react": "catalog:",
-        "react-dom": "catalog:",
         "tinycolor2": "catalog:",
         "ttag": "catalog:"
     },
@@ -109,8 +107,14 @@
         "mustache": "^4.2.0",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
+        "react-dom": "catalog:",
         "ts-node": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0",
+        "react-dom": "^18.3.1 || ^19.0.0"
     }
 }
