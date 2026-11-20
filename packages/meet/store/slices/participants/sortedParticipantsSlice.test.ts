@@ -6,18 +6,21 @@ import { describe, expect, it } from 'vitest';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 import type { MeetState } from '../../rootReducer';
-import { chatAndReactionsReducer, raiseHand } from '../chatAndReactionsSlice';
+import { chatAndReactionsReducer, lowerHand, raiseHand } from '../chatAndReactionsSlice';
 import { setSelfView, initialState as settingsInitialState, settingsReducer } from '../settings';
 import {
     removeSortedParticipant,
     resetSortedParticipants,
     selectPageCount,
     selectPagedIdentities,
+    selectParticipantListIdentities,
+    selectSortedParticipantIdentities,
     setPage,
     setPageSize,
     setSortedParticipantIdentities,
     sortedParticipantsReducer,
     updateSortedParticipants,
+    updateSortedParticipantsWithoutRaisedHands,
 } from './sortedParticipantsSlice';
 
 const reducer = sortedParticipantsReducer.sortedParticipants;
@@ -60,6 +63,33 @@ const createStore = ({ selfView = true }: { selfView?: boolean } = {}) => {
         getState: () => MeetState;
     };
 };
+
+const createMockLocal = (overrides: Partial<LocalParticipant> = {}): LocalParticipant =>
+    ({
+        identity: 'local',
+        isLocal: true,
+        isSpeaking: false,
+        audioLevel: 0,
+        lastSpokeAt: undefined,
+        isCameraEnabled: false,
+        joinedAt: undefined,
+        ...overrides,
+    }) as unknown as LocalParticipant;
+
+const createMockRemote = (identity: string, overrides: Partial<RemoteParticipant> = {}): RemoteParticipant =>
+    ({
+        identity,
+        isLocal: false,
+        isSpeaking: false,
+        audioLevel: 0,
+        lastSpokeAt: undefined,
+        isCameraEnabled: false,
+        joinedAt: undefined,
+        ...overrides,
+    }) as unknown as RemoteParticipant;
+
+/** Single shared local participant mock (identity always `"local"`). */
+const local = createMockLocal();
 
 describe('sortedParticipantsSlice', () => {
     describe('actions', () => {
@@ -358,33 +388,6 @@ describe('sortedParticipantsSlice', () => {
     });
 
     describe('updateSortedParticipants', () => {
-        const createMockLocal = (overrides: Partial<LocalParticipant> = {}): LocalParticipant =>
-            ({
-                identity: 'local',
-                isLocal: true,
-                isSpeaking: false,
-                audioLevel: 0,
-                lastSpokeAt: undefined,
-                isCameraEnabled: false,
-                joinedAt: undefined,
-                ...overrides,
-            }) as unknown as LocalParticipant;
-
-        const createMockRemote = (identity: string, overrides: Partial<RemoteParticipant> = {}): RemoteParticipant =>
-            ({
-                identity,
-                isLocal: false,
-                isSpeaking: false,
-                audioLevel: 0,
-                lastSpokeAt: undefined,
-                isCameraEnabled: false,
-                joinedAt: undefined,
-                ...overrides,
-            }) as unknown as RemoteParticipant;
-
-        /** Single shared local participant mock (identity always `"local"`). */
-        const local = createMockLocal();
-
         const runThunk = ({
             selfView = true,
             pageSize = 4,
@@ -670,5 +673,134 @@ describe('sortedParticipantsSlice', () => {
                 ).toEqual(expectedIdentities);
             }
         );
+    });
+
+    describe('selectParticipantListIdentities', () => {
+        const participants = [
+            local,
+            createMockRemote('A'),
+            createMockRemote('B'),
+            createMockRemote('C'),
+            createMockRemote('D'),
+            createMockRemote('E'),
+        ];
+        const orderWithoutRaisedHands = ['local', 'A', 'B', 'C', 'D', 'E'];
+
+        const createMeetingStore = () => {
+            const store = createStore({ selfView: true });
+            store.dispatch(setPageSize(4));
+            return store;
+        };
+
+        const updateOrders = (store: ReturnType<typeof createStore>) => {
+            store.dispatch(updateSortedParticipants(participants));
+            store.dispatch(updateSortedParticipantsWithoutRaisedHands(participants));
+        };
+
+        it('matches the grid order when no hand is raised', () => {
+            const store = createMeetingStore();
+            updateOrders(store);
+
+            expect(selectParticipantListIdentities(store.getState())).toEqual(orderWithoutRaisedHands);
+            expect(selectParticipantListIdentities(store.getState())).toEqual(
+                selectSortedParticipantIdentities(store.getState())
+            );
+        });
+
+        it('puts raised hands first, earliest raise first', () => {
+            const store = createMeetingStore();
+            updateOrders(store);
+
+            store.dispatch(raiseHand('D'));
+            store.dispatch(raiseHand('B'));
+            updateOrders(store);
+
+            expect(selectParticipantListIdentities(store.getState())).toEqual(['D', 'B', 'local', 'A', 'C', 'E']);
+        });
+
+        it('places a new raise after everyone who raised earlier', () => {
+            const store = createMeetingStore();
+            updateOrders(store);
+            store.dispatch(raiseHand('D'));
+            updateOrders(store);
+
+            store.dispatch(raiseHand('A'));
+            updateOrders(store);
+
+            expect(selectParticipantListIdentities(store.getState())).toEqual(['D', 'A', 'local', 'B', 'C', 'E']);
+        });
+
+        it('returns a participant who lowers their hand to their position without a raised hand', () => {
+            const store = createMeetingStore();
+            updateOrders(store);
+            store.dispatch(raiseHand('C'));
+            store.dispatch(raiseHand('E'));
+            updateOrders(store);
+
+            store.dispatch(lowerHand('E'));
+            updateOrders(store);
+
+            expect(selectParticipantListIdentities(store.getState())).toEqual(['C', 'local', 'A', 'B', 'D', 'E']);
+        });
+
+        it('returns to the order without raised hands once every hand is lowered', () => {
+            const store = createMeetingStore();
+            updateOrders(store);
+            ['C', 'A', 'E'].forEach((identity) => store.dispatch(raiseHand(identity)));
+            updateOrders(store);
+
+            ['C', 'A', 'E'].forEach((identity) => store.dispatch(lowerHand(identity)));
+            updateOrders(store);
+
+            expect(selectParticipantListIdentities(store.getState())).toEqual(orderWithoutRaisedHands);
+        });
+
+        it('does not change the grid order', () => {
+            const gridOnlyStore = createMeetingStore();
+            const store = createMeetingStore();
+            const handChanges = [raiseHand('E'), raiseHand('B'), lowerHand('E'), lowerHand('B')];
+
+            gridOnlyStore.dispatch(updateSortedParticipants(participants));
+            updateOrders(store);
+            handChanges.forEach((handChange) => {
+                gridOnlyStore.dispatch(handChange);
+                gridOnlyStore.dispatch(updateSortedParticipants(participants));
+                store.dispatch(handChange);
+                updateOrders(store);
+            });
+
+            expect(selectSortedParticipantIdentities(store.getState())).toEqual(
+                selectSortedParticipantIdentities(gridOnlyStore.getState())
+            );
+        });
+
+        it('keeps the same list when an update does not change the order', () => {
+            const store = createMeetingStore();
+            updateOrders(store);
+            const listBeforeUpdate = selectParticipantListIdentities(store.getState());
+
+            updateOrders(store);
+
+            expect(selectParticipantListIdentities(store.getState())).toBe(listBeforeUpdate);
+        });
+
+        it('removes a participant who leaves', () => {
+            const store = createMeetingStore();
+            updateOrders(store);
+            store.dispatch(raiseHand('B'));
+
+            store.dispatch(removeSortedParticipant('B'));
+
+            expect(selectParticipantListIdentities(store.getState())).toEqual(['local', 'A', 'C', 'D', 'E']);
+        });
+
+        it('is empty after a reset', () => {
+            const store = createMeetingStore();
+            updateOrders(store);
+
+            store.dispatch(resetSortedParticipants());
+
+            expect(selectParticipantListIdentities(store.getState())).toEqual([]);
+        });
     });
 });

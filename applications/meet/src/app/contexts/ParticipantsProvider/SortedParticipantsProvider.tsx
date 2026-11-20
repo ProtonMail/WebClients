@@ -15,6 +15,7 @@ import {
     selectSidebarPagedIdentities,
     selectSortedParticipantIdentities,
     updateSortedParticipants,
+    updateSortedParticipantsWithoutRaisedHands,
 } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 
 import { PARTICIPANT_SET_EVENTS } from '../../constants';
@@ -58,6 +59,7 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
 
     const handleUpdateSortedParticipants = useCallback(() => {
         dispatch(updateSortedParticipants(participants));
+        dispatch(updateSortedParticipantsWithoutRaisedHands(participants));
     }, [participants, dispatch]);
 
     // We avoid spamming participants sorting updates,

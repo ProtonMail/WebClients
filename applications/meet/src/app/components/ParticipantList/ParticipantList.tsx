@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
-import { selectSortedParticipantIdentities } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
+import { selectParticipantListIdentities } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice';
 import isTruthy from '@proton/utils/isTruthy';
@@ -46,7 +46,7 @@ export const ParticipantList = () => {
     const [searchExpression, setSearchExpression] = useState('');
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const sortedParticipantIdentities = useMeetSelector(selectSortedParticipantIdentities);
+    const sortedParticipantIdentities = useMeetSelector(selectParticipantListIdentities);
     const sideBarState = useMeetSelector(selectSideBarState);
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const isWaitingRoomHost = useMeetSelector(selectIsWaitingRoomHost);

@@ -7,20 +7,24 @@ import shallowEqual from '@proton/utils/shallowEqual';
 
 import { PAGE_SIZE } from '../../../constants';
 import { getIdealSortedParticipants } from '../../../utils/participants/getIdealSortedParticipants';
+import { getRaisedHandsFirstOrder } from '../../../utils/participants/getRaisedHandsFirstOrder';
 import { getVisuallyStableSortedParticipants } from '../../../utils/participants/getVisuallyStableSortedParticipants';
 import type { MeetState } from '../../rootReducer';
+import { selectRaisedHands } from '../chatAndReactionsSlice';
 import { SpotlightSources, selectIsSpotlightLayout, selectSpotlightSource } from '../layoutSlice';
 import { selectSelfView } from '../settings';
 import { selectActiveSpeakerIdentity, selectLocalParticipantIdentity } from './participantsSlice';
 
 export interface SortedParticipantsState {
     sortedParticipantIdentities: string[];
+    sortedParticipantIdentitiesWithoutRaisedHands: string[];
     page: number;
     pageSize: number;
 }
 
 export const initialState: SortedParticipantsState = {
     sortedParticipantIdentities: [],
+    sortedParticipantIdentitiesWithoutRaisedHands: [],
     page: 0,
     pageSize: PAGE_SIZE,
 };
@@ -57,8 +61,17 @@ const slice = createSlice({
 
             state.sortedParticipantIdentities = action.payload;
         },
+        setSortedParticipantIdentitiesWithoutRaisedHands: (state, action: PayloadAction<string[]>) => {
+            if (shallowEqual(action.payload, state.sortedParticipantIdentitiesWithoutRaisedHands)) {
+                return;
+            }
+
+            state.sortedParticipantIdentitiesWithoutRaisedHands = action.payload;
+        },
         resetSortedParticipants: (state) => {
             state.sortedParticipantIdentities = initialState.sortedParticipantIdentities;
+            state.sortedParticipantIdentitiesWithoutRaisedHands =
+                initialState.sortedParticipantIdentitiesWithoutRaisedHands;
             state.page = initialState.page;
             state.pageSize = initialState.pageSize;
         },
@@ -75,6 +88,8 @@ const slice = createSlice({
             state.sortedParticipantIdentities = state.sortedParticipantIdentities.filter(
                 (id) => id !== participantIdentity
             );
+            state.sortedParticipantIdentitiesWithoutRaisedHands =
+                state.sortedParticipantIdentitiesWithoutRaisedHands.filter((id) => id !== participantIdentity);
 
             if (state.page > lastPage) {
                 state.page = lastPage;
@@ -140,9 +155,41 @@ export const updateSortedParticipants =
         dispatch(slice.actions.setSortedParticipantIdentities(stableOrderWithRaisedHandsFirst));
     };
 
+/** The participants list returns a lowered hand to its position in this order. The grid order cannot serve: it stores raised hands first and reuses that as its previous order. */
+export const updateSortedParticipantsWithoutRaisedHands =
+    (participants: Participant[]): ThunkAction<void, MeetState, ProtonThunkArguments, UnknownAction> =>
+    (dispatch, getState) => {
+        const idealOrder = getIdealSortedParticipants({ participants, raisedHandsSet: new Set() });
+
+        if (idealOrder.length === 0) {
+            return;
+        }
+
+        const { sortedParticipantIdentitiesWithoutRaisedHands, pageSize } = getState().sortedParticipants;
+        const { selfView } = getState().meetSettings;
+
+        const stableOrder = getVisuallyStableSortedParticipants({
+            idealOrder,
+            previousOrder: sortedParticipantIdentitiesWithoutRaisedHands,
+            pageSize,
+            selfView,
+        });
+
+        dispatch(slice.actions.setSortedParticipantIdentitiesWithoutRaisedHands(stableOrder));
+    };
+
 export const selectSortedParticipantIdentities = (state: MeetState) => {
     return state.sortedParticipants.sortedParticipantIdentities;
 };
+
+const selectSortedParticipantIdentitiesWithoutRaisedHands = (state: MeetState) => {
+    return state.sortedParticipants.sortedParticipantIdentitiesWithoutRaisedHands;
+};
+
+export const selectParticipantListIdentities = createSelector(
+    [selectSortedParticipantIdentitiesWithoutRaisedHands, selectRaisedHands],
+    (order, raisedHands) => getRaisedHandsFirstOrder({ order, raisedHands })
+);
 
 export const selectTotalParticipantCount = (state: MeetState) => {
     return state.sortedParticipants.sortedParticipantIdentities.length;
