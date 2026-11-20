@@ -3,17 +3,17 @@ import * as fs from '@tauri-apps/plugin-fs';
 
 import { BACKUP_MAX_AMOUNT, pruneExcessBackups, readCurrentBackups, sortBackupsByDate } from './writer';
 
-jest.mock('@tauri-apps/plugin-fs');
-jest.mock('@tauri-apps/api/path');
+vi.mock('@tauri-apps/plugin-fs');
+vi.mock('@tauri-apps/api/path');
 
-const readDir = jest.spyOn(fs, 'readDir');
-const remove = jest.spyOn(fs, 'remove');
+const readDir = vi.spyOn(fs, 'readDir');
+const remove = vi.spyOn(fs, 'remove');
 
-jest.spyOn(path, 'join').mockImplementation(async (dir, file) => `${dir}/${file}`);
+vi.spyOn(path, 'join').mockImplementation(async (dir, file) => `${dir}/${file}`);
 
 describe('Backup writer utilities', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('readCurrentBackups', () => {

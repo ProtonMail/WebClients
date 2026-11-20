@@ -1,13 +1,15 @@
+import type { Mock, Mocked } from 'vitest';
+
 import { STORAGE_KEY_IDB_ID } from './constants';
 import { createStorageKeyService } from './service';
 import type { StorageKeyAdapter, StorageKeyRef, StorageKeyResult } from './types';
 import { StorageKeyError, StorageKeySource } from './types';
 import { formatGenerateError, formatReadError, formatResetKeyWarning, formatUnsafeStorageKeyWarning } from './utils';
 
-const createMockAdapter = (type: StorageKeySource): jest.Mocked<StorageKeyAdapter> => ({
+const createMockAdapter = (type: StorageKeySource): Mocked<StorageKeyAdapter> => ({
     type,
-    read: jest.fn(),
-    generate: jest.fn(),
+    read: vi.fn(),
+    generate: vi.fn(),
 });
 
 const keyringAdapter = createMockAdapter(StorageKeySource.KEYRING);
@@ -26,7 +28,7 @@ const success = (key: Uint8Array<ArrayBuffer> = new Uint8Array(32).fill(2)): Sto
 const error = (error: StorageKeyError = StorageKeyError.UNKNOWN): StorageKeyResult => ({ ok: false, error });
 
 const config = {
-    onStorageKey: jest.fn(),
+    onStorageKey: vi.fn(),
     default: StorageKeySource.KEYRING,
     adapters: {
         [StorageKeySource.FALLBACK]: fallbackAdapter,
@@ -36,10 +38,10 @@ const config = {
 };
 
 describe('StorageKeyService', () => {
-    let confirm: jest.Mock;
+    let confirm: Mock;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         keyringAdapter.read.mockResolvedValue(success());
         keyringAdapter.generate.mockResolvedValue(success());
@@ -53,17 +55,17 @@ describe('StorageKeyService', () => {
         delete fallbackAdapter.downgrade;
 
         config.onStorageKey.mockImplementation(async (_, options) => options.onSaved());
-        confirm = jest.fn().mockResolvedValue(false);
+        confirm = vi.fn().mockResolvedValue(false);
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('StorageKeyService::init', () => {
         test('should call `generate` when `keyRef` is missing', async () => {
             const service = createStorageKeyService(config);
-            const generate = jest.spyOn(service, 'generate').mockResolvedValue();
+            const generate = vi.spyOn(service, 'generate').mockResolvedValue();
             await service.init({ confirm });
 
             expect(generate).toHaveBeenCalledWith({ source: StorageKeySource.KEYRING, confirm });
@@ -71,7 +73,7 @@ describe('StorageKeyService', () => {
 
         test('should use default source when `keyRef` is missing', async () => {
             const service = createStorageKeyService({ ...config, default: StorageKeySource.PASSWORD });
-            const generate = jest.spyOn(service, 'generate').mockResolvedValue();
+            const generate = vi.spyOn(service, 'generate').mockResolvedValue();
             await service.init({ confirm });
 
             expect(generate).toHaveBeenCalledWith({ source: StorageKeySource.PASSWORD, confirm });
@@ -95,7 +97,7 @@ describe('StorageKeyService', () => {
 
             const service = createStorageKeyService(config);
             const keyRef = createStorageKeyRef();
-            const generate = jest.spyOn(service, 'generate').mockResolvedValue();
+            const generate = vi.spyOn(service, 'generate').mockResolvedValue();
             await service.init({ keyRef, confirm });
 
             expect(generate).not.toHaveBeenCalled();
@@ -113,7 +115,7 @@ describe('StorageKeyService', () => {
 
             const service = createStorageKeyService(config);
             const keyRef = createStorageKeyRef();
-            const generate = jest.spyOn(service, 'generate').mockResolvedValue();
+            const generate = vi.spyOn(service, 'generate').mockResolvedValue();
             await service.init({ keyRef, confirm });
 
             expect(confirm).toHaveBeenCalled();
@@ -124,7 +126,7 @@ describe('StorageKeyService', () => {
             const service = createStorageKeyService(config);
             await service.generate({ source: StorageKeySource.KEYRING, confirm });
 
-            const generate = jest.spyOn(service, 'generate');
+            const generate = vi.spyOn(service, 'generate');
             await service.init({ confirm });
 
             expect(generate).not.toHaveBeenCalled();
@@ -135,7 +137,7 @@ describe('StorageKeyService', () => {
 
             const service = createStorageKeyService(config);
             const keyRef = createStorageKeyRef({ salt: new Uint8Array(16).fill(1) });
-            const generate = jest.spyOn(service, 'generate').mockResolvedValue();
+            const generate = vi.spyOn(service, 'generate').mockResolvedValue();
             await service.init({ keyRef, confirm });
 
             expect(generate).toHaveBeenCalledWith({ source: StorageKeySource.KEYRING, confirm });
@@ -147,7 +149,7 @@ describe('StorageKeyService', () => {
 
             const service = createStorageKeyService(config);
             const keyRef = createStorageKeyRef();
-            const generate = jest.spyOn(service, 'generate').mockResolvedValue();
+            const generate = vi.spyOn(service, 'generate').mockResolvedValue();
             await service.init({ keyRef, confirm });
 
             expect(generate).toHaveBeenCalled();
@@ -323,7 +325,7 @@ describe('StorageKeyService', () => {
 
         test('should publish events when state changes', async () => {
             const service = createStorageKeyService(config);
-            const listener = jest.fn();
+            const listener = vi.fn();
             service.listen(listener);
 
             await service.generate({ source: StorageKeySource.KEYRING, confirm });

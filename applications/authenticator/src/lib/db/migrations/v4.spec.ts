@@ -6,20 +6,20 @@ import { V4_MIGRATION_BACK_UP_ID, backupForV4, migrateLegacyKeys, upgradeV4 } fr
 
 const createMockTransaction = (returns: { items: any; keys: any }) => {
     const tables = {
-        items: { toArray: jest.fn().mockResolvedValue(returns.items), clear: jest.fn() },
-        keys: { toArray: jest.fn().mockResolvedValue(returns.keys), clear: jest.fn() },
-        backup: { add: jest.fn() },
+        items: { toArray: vi.fn().mockResolvedValue(returns.items), clear: vi.fn() },
+        keys: { toArray: vi.fn().mockResolvedValue(returns.keys), clear: vi.fn() },
+        backup: { add: vi.fn() },
     };
 
     return {
         db: { verno: 3 },
-        table: jest.fn((name: keyof typeof tables) => tables[name]),
+        table: vi.fn((name: keyof typeof tables) => tables[name]),
     } as unknown as Transaction;
 };
 
 const createLegacyKey = (key: Uint8Array<ArrayBuffer>) => importAesGcmKey(key, { extractable: true });
 
-const waitFor = jest.spyOn(Dexie, 'waitFor').mockImplementation((val) => Promise.resolve(val));
+const waitFor = vi.spyOn(Dexie, 'waitFor').mockImplementation((val) => Promise.resolve(val));
 
 describe('v4 migration', () => {
     afterAll(() => {
@@ -28,7 +28,7 @@ describe('v4 migration', () => {
 
     describe('migrateLegacyKeys', () => {
         afterEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
         });
 
         test('migrates legacy keys successfully', async () => {
@@ -59,7 +59,7 @@ describe('v4 migration', () => {
 
         test('handles export key errors', async () => {
             // eslint-disable-next-line no-restricted-properties
-            const mockExportKey = jest.spyOn(crypto.subtle, 'exportKey');
+            const mockExportKey = vi.spyOn(crypto.subtle, 'exportKey');
             mockExportKey.mockRejectedValueOnce(new Error('Export failed'));
 
             const key1 = generateAesGcmKey();
@@ -78,12 +78,12 @@ describe('v4 migration', () => {
 
     describe('backupForV4', () => {
         beforeEach(() => {
-            jest.useFakeTimers();
-            jest.setSystemTime(new Date(1234567890));
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date(1234567890));
         });
 
         afterEach(() => {
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         test('creates backup with migrated data', async () => {
@@ -105,12 +105,12 @@ describe('v4 migration', () => {
 
     describe('upgradeV4', () => {
         beforeEach(() => {
-            jest.useFakeTimers();
-            jest.setSystemTime(new Date(1234567890));
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date(1234567890));
         });
 
         afterEach(() => {
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         test('performs complete upgrade', async () => {

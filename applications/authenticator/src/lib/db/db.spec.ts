@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { db as appDB, setupDB } from './db';
 import * as encryption from './middlewares/encryption';
 import * as dbMigrations from './migrations';
@@ -5,31 +7,31 @@ import * as utils from './utils';
 
 const db = appDB as unknown as any;
 
-jest.mock('dexie', () => ({
+vi.mock('dexie', () => ({
     __esModule: true,
     default: class MockDexie {
-        use: jest.Mock<any, any, any>;
+        use: Mock;
         verno: number;
         constructor() {
-            this.use = jest.fn();
+            this.use = vi.fn();
             this.verno = 4;
         }
     },
 }));
 
-jest.mock('../storage-key/service', () => ({
-    createStorageKeyService: jest.fn(() => ({ read: jest.fn() })),
+vi.mock('../storage-key/service', () => ({
+    createStorageKeyService: vi.fn(() => ({ read: vi.fn() })),
 }));
 
-jest.mock('./middlewares/encryption');
-jest.mock('./migrations');
-jest.mock('./utils');
+vi.mock('./middlewares/encryption');
+vi.mock('./migrations');
+vi.mock('./utils');
 
-const createEncryptionMiddleware = encryption.createEncryptionMiddleware as jest.Mock;
-const getCurrentDBVersion = utils.getCurrentDBVersion as jest.Mock;
-const openDB = utils.openDB as jest.Mock;
-const closeDB = utils.closeDB as jest.Mock;
-const migrations = dbMigrations.default as jest.Mock;
+const createEncryptionMiddleware = encryption.createEncryptionMiddleware as Mock;
+const getCurrentDBVersion = utils.getCurrentDBVersion as Mock;
+const openDB = utils.openDB as Mock;
+const closeDB = utils.closeDB as Mock;
+const migrations = dbMigrations.default as Mock;
 const mockMiddleware = Symbol('middleware');
 
 describe('setupDB', () => {
@@ -42,7 +44,7 @@ describe('setupDB', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     test('configures encryption middleware', async () => {
