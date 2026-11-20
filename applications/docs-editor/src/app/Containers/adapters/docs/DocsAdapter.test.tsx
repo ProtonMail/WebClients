@@ -25,19 +25,21 @@ import { reportErrorToSentry } from '../../../Utils/errorMessage'
 import { createClientInvokerFixture } from './create-client-invoker-fixture'
 import { DocsAdapter } from './DocsAdapter'
 
-const mockCreateNotification = jest.fn()
-const mockShowAlert = jest.fn()
+const { mockCreateNotification, mockShowAlert } = vi.hoisted(() => ({
+  mockCreateNotification: vi.fn(),
+  mockShowAlert: vi.fn(),
+}))
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
   useNotifications: () => ({ createNotification: mockCreateNotification }),
 }))
-jest.mock('@proton/docs-shared/components/GenericAlert', () => ({
+vi.mock('@proton/docs-shared/components/GenericAlert', () => ({
   useGenericAlertModal: () => [<div key="alert" data-testid="host-alert" />, mockShowAlert],
 }))
-jest.mock('../../../Utils/errorMessage', () => ({ reportErrorToSentry: jest.fn() }))
-jest.mock('@proton/shared/lib/env', () => ({
-  ...jest.requireActual('@proton/shared/lib/env'),
-  isDevOrBlack: jest.fn(() => false),
+vi.mock('../../../Utils/errorMessage', () => ({ reportErrorToSentry: vi.fn() }))
+vi.mock('@proton/shared/lib/env', async (importOriginal) => ({
+  ...(await importOriginal()),
+  isDevOrBlack: vi.fn(() => false),
 }))
 
 function setup({
@@ -61,7 +63,7 @@ function setup({
   application.syncedState.setProperty('userName', 'First user')
   application.syncedState.setProperty('suggestionsEnabled', true)
   const clientInvoker = createClientInvokerFixture()
-  clientInvoker.checkIfFeatureFlagIsEnabled = jest.fn(async (flag: FeatureFlag) => enabledFlags.includes(flag))
+  clientInvoker.checkIfFeatureFlagIsEnabled = vi.fn(async (flag: FeatureFlag) => enabledFlags.includes(flag))
   let dependencies: DocsDependencies
   function Consumer() {
     dependencies = useDocsDependencies()
@@ -127,10 +129,10 @@ const contact: ContactEmail = {
 
 describe('DocsAdapter runtime services', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
-    jest.mocked(isDevOrBlack).mockReturnValue(false)
+    vi.clearAllMocks()
+    vi.mocked(isDevOrBlack).mockReturnValue(false)
   })
-  afterEach(() => jest.restoreAllMocks())
+  afterEach(() => vi.restoreAllMocks())
 
   it('updates reactive session inputs while keeping service callbacks stable', () => {
     const host = setup()
@@ -156,7 +158,7 @@ describe('DocsAdapter runtime services', () => {
     host.application.environment = 'beta'
     host.rerender()
     expect(host.dependencies.isAlpha).toBe(false)
-    jest.mocked(isDevOrBlack).mockReturnValue(true)
+    vi.mocked(isDevOrBlack).mockReturnValue(true)
     host.rerender()
     expect(host.dependencies.isAlpha).toBe(true)
   })
@@ -206,8 +208,8 @@ describe('DocsAdapter runtime services', () => {
 
   it('updates locale without a parent render and rebinds and cleans up its locale subscription', () => {
     const subscribeToLocale = Application.prototype.subscribeToLocale
-    const onCleanup = jest.fn()
-    const subscriptions = jest.spyOn(Application.prototype, 'subscribeToLocale').mockImplementation(function (
+    const onCleanup = vi.fn()
+    const subscriptions = vi.spyOn(Application.prototype, 'subscribeToLocale').mockImplementation(function (
       this: Application,
       callback,
     ) {
@@ -295,8 +297,8 @@ describe('DocsAdapter runtime services', () => {
   })
 
   it('rebinds comments and awareness subscriptions on dependency replacement and removes them on unmount', () => {
-    const onComments = jest.fn()
-    const onAwareness = jest.fn()
+    const onComments = vi.fn()
+    const onAwareness = vi.fn()
     const host = setup({ onComments, onAwareness })
     const publish = (application: Application) => {
       act(() => {
@@ -336,7 +338,7 @@ describe('DocsAdapter runtime services', () => {
   })
 
   it('rebinds cursor subscriptions to a replacement session and cleans up on unmount', () => {
-    const onCursor = jest.fn()
+    const onCursor = vi.fn()
     const host = setup({ onCursor })
     act(() =>
       host.application.syncedState.emitEvent({ name: 'ScrollToUserCursorData', payload: { state: cursorState } }),
@@ -357,8 +359,8 @@ describe('DocsAdapter runtime services', () => {
 
   it('forwards notifications, alerts, toolbar interactions, and word counts to the host', () => {
     const host = setup()
-    host.clientInvoker.editorReportingEvent = jest.fn(async () => {})
-    host.clientInvoker.reportWordCount = jest.fn(async () => {})
+    host.clientInvoker.editorReportingEvent = vi.fn(async () => {})
+    host.clientInvoker.reportWordCount = vi.fn(async () => {})
     const count = { document: { wordCount: 3, characterCount: 12, nonWhitespaceCharacterCount: 10 } }
     host.dependencies.createWarningNotification('Warning message')
     host.dependencies.createInfoNotification('Info message')
@@ -376,10 +378,10 @@ describe('DocsAdapter runtime services', () => {
   it('reports rejected host effects and forwards explicit error metadata', async () => {
     const host = setup()
     const error = new Error('Host effect failed')
-    host.clientInvoker.openLink = jest.fn().mockRejectedValue(error)
-    host.clientInvoker.editorReportingEvent = jest.fn().mockRejectedValue(error)
-    host.clientInvoker.editorReportingTelemetry = jest.fn().mockRejectedValue(error)
-    host.clientInvoker.reportWordCount = jest.fn().mockRejectedValue(error)
+    host.clientInvoker.openLink = vi.fn().mockRejectedValue(error)
+    host.clientInvoker.editorReportingEvent = vi.fn().mockRejectedValue(error)
+    host.clientInvoker.editorReportingTelemetry = vi.fn().mockRejectedValue(error)
+    host.clientInvoker.reportWordCount = vi.fn().mockRejectedValue(error)
     host.dependencies.openLink('https://example.test')
     host.dependencies.reportToolbarInteraction()
     host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_available)
@@ -392,7 +394,7 @@ describe('DocsAdapter runtime services', () => {
 
   it('maps each Docs telemetry event to the unchanged host event', () => {
     const host = setup()
-    host.clientInvoker.editorReportingTelemetry = jest.fn(async () => {})
+    host.clientInvoker.editorReportingTelemetry = vi.fn(async () => {})
     host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_available)
     host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_opened)
     host.dependencies.reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_heading_clicked)

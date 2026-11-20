@@ -13,64 +13,68 @@ import { EditorSystemMode, StandaloneDocsEditor } from '@proton-docs/docs-editor
 import { StandaloneSheetsEditor } from '@proton-docs/sheets-editor'
 import { EditorStateProvider } from './EditorStateProvider'
 
-jest.mock('@proton/docs-shared/Bridge/BridgeOriginProvider', () => ({
+vi.mock('@proton/docs-shared/Bridge/BridgeOriginProvider', () => ({
   BridgeOriginProvider: { GetClientOrigin: () => 'http://localhost' },
 }))
-jest.mock('@proton/docs-shared/Bridge/EditorReadyEvent', () => ({
+vi.mock('@proton/docs-shared/Bridge/EditorReadyEvent', () => ({
   EDITOR_READY_POST_MESSAGE_EVENT: 'editor-ready',
 }))
-jest.mock('@proton/hooks/useEffectOnce', () => ({ __esModule: true, default: jest.fn() }))
-jest.mock('@proton/account/bootstrap', () => ({ loadLocales: jest.fn() }))
-jest.mock('../Lib/Bootstrap', () => ({ bootstrapEditorApp: jest.fn() }))
-jest.mock('../config', () => ({ __esModule: true, default: {} }))
-jest.mock('../locales', () => ({ __esModule: true, default: [] }))
-jest.mock('../Hooks/useSyncedState', () => ({
+vi.mock('@proton/hooks/useEffectOnce', () => ({ __esModule: true, default: vi.fn() }))
+vi.mock('@proton/account/bootstrap', () => ({ loadLocales: vi.fn() }))
+vi.mock('../Lib/Bootstrap', () => ({ bootstrapEditorApp: vi.fn() }))
+vi.mock('../config', () => ({ __esModule: true, default: {} }))
+vi.mock('../locales', () => ({ __esModule: true, default: [] }))
+vi.mock('../Hooks/useSyncedState', () => ({
   useSyncedState: () => ({ suggestionsEnabled: false, receivedEverythingFromRTS: false }),
 }))
-jest.mock('../Utils/errorMessage', () => ({ reportErrorToSentry: jest.fn() }))
-jest.mock('../Theme/EditorThemeProvider', () => {
-  const setTheme = jest.fn()
+vi.mock('../Utils/errorMessage', () => ({ reportErrorToSentry: vi.fn() }))
+vi.mock('../Theme/EditorThemeProvider', () => {
+  const setTheme = vi.fn()
   return { useEditorTheme: () => ({ setTheme }) }
 })
-jest.mock('@proton-docs/docs-editor', () => ({
-  ...jest.requireActual('@proton-docs/docs-editor'),
-  exportDataFromEditorState: jest.fn(),
+vi.mock('@proton-docs/docs-editor', async (importOriginal) => ({
+  ...(await importOriginal()),
+  exportDataFromEditorState: vi.fn(),
   PreviewModeEditor: () => null,
-  StandaloneDocsEditor: jest.fn(() => null),
+  StandaloneDocsEditor: vi.fn(() => null),
   DocsLayoutContainer: ({ children }: { children: ReactNode }) => children,
   getDocsLayoutScrollContainer: () => null,
 }))
-jest.mock('@proton-docs/sheets-editor', () => ({ StandaloneSheetsEditor: jest.fn(() => null) }))
-jest.mock('./adapters/docs/DocsAdapter', () => ({ DocsAdapter: ({ children }: { children: ReactNode }) => children }))
-jest.mock('./adapters/sheets/SheetsAdapter', () => ({
+vi.mock('@proton-docs/sheets-editor', () => ({
+  StandaloneSheetsEditor: vi.fn(() => null),
+  SheetsDependenciesProvider: vi.fn(),
+  resolveDefaultWorkbookLocale: vi.fn(),
+}))
+vi.mock('./adapters/docs/DocsAdapter', () => ({ DocsAdapter: ({ children }: { children: ReactNode }) => children }))
+vi.mock('./adapters/sheets/SheetsAdapter', () => ({
   SheetsAdapter: ({ children }: { children: ReactNode }) => children,
 }))
-jest.mock('./SheetsLayout', () => ({ __esModule: true, default: ({ children }: { children: ReactNode }) => children }))
+vi.mock('./SheetsLayout', () => ({ __esModule: true, default: ({ children }: { children: ReactNode }) => children }))
 
 function setup(documentType: DocumentType = 'doc', isFeatureFlagEnabled = async (_flag: string) => true) {
-  const reportUserInterfaceError = jest.fn().mockResolvedValue(undefined)
+  const reportUserInterfaceError = vi.fn().mockResolvedValue(undefined)
   const clientInvoker = {
     reportUserInterfaceError,
-    checkIfFeatureFlagIsEnabled: jest.fn(isFeatureFlagEnabled),
+    checkIfFeatureFlagIsEnabled: vi.fn(isFeatureFlagEnabled),
   }
   const bridgeState = {
     application: {
-      logger: { info: jest.fn(), debug: jest.fn() },
-      setRole: jest.fn(),
-      setLocale: jest.fn(),
-      setDateLocale: jest.fn(),
-      setAppVersion: jest.fn(),
+      logger: { info: vi.fn(), debug: vi.fn() },
+      setRole: vi.fn(),
+      setLocale: vi.fn(),
+      setDateLocale: vi.fn(),
+      setAppVersion: vi.fn(),
       getRole: () => ({ canEdit: () => true }),
     },
     bridge: {
       getClientInvoker: () => clientInvoker,
-      setClientRequestHandler: jest.fn((_handler: ClientRequiresEditorMethods) => {}),
+      setClientRequestHandler: vi.fn((_handler: ClientRequiresEditorMethods) => {}),
     },
-    docState: { getDoc: jest.fn(() => ({})), setIsInConversionFromOtherFormat: jest.fn() },
+    docState: { getDoc: vi.fn(() => ({})), setIsInConversionFromOtherFormat: vi.fn() },
     docMap: new Map(),
     editorConfig: { current: null as EditorConfig | null },
     didSetInitialConfig: false,
-    setEditorConfig: jest.fn((config: EditorConfig) => {
+    setEditorConfig: vi.fn((config: EditorConfig) => {
       bridgeState.editorConfig.current = config
       bridgeState.didSetInitialConfig = true
     }),
@@ -96,15 +100,18 @@ function setup(documentType: DocumentType = 'doc', isFeatureFlagEnabled = async 
   return { bridgeState, handler, reportUserInterfaceError, initialize, rerender: () => view.rerender(element()) }
 }
 
+// Vitest wraps an error thrown by a mock factory and keeps the original as `cause`.
+const thrownBy = (error: Error) => expect.objectContaining({ cause: error })
+
 describe('App bridge initialization', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
   afterEach(() => {
     setDateLocales({ dateLocale: enUSLocale })
-    // `jest.doMock` factories outlive `jest.resetModules()`: drop the stylesheet tests' ones.
-    jest.dontMock('@proton-docs/docs-editor/style.css')
-    jest.dontMock('@proton-docs/sheets-editor/style.css')
+    // `vi.doMock` factories outlive `vi.resetModules()`: drop the stylesheet tests' ones.
+    vi.doUnmock('@proton-docs/docs-editor/style.css')
+    vi.doUnmock('@proton-docs/sheets-editor/style.css')
   })
 
   it.each([
@@ -141,8 +148,9 @@ describe('App bridge initialization', () => {
     const config = { mode: 'conversion', data, type: { docType: 'doc', dataType: 'txt' } } as const
 
     await initialize(config)
+    await waitFor(() => expect(StandaloneDocsEditor).toHaveBeenCalled())
 
-    const initialization = jest.mocked(StandaloneDocsEditor).mock.calls.at(-1)?.[0].editorInitializationConfig
+    const initialization = vi.mocked(StandaloneDocsEditor).mock.calls.at(-1)?.[0].editorInitializationConfig
     expect(initialization).toEqual(config)
     expect(initialization?.mode === 'conversion' && initialization.data).toBe(data)
     expect(bridgeState.setEditorConfig).toHaveBeenCalledWith({
@@ -153,19 +161,21 @@ describe('App bridge initialization', () => {
     expect(bridgeState.docState.setIsInConversionFromOtherFormat).toHaveBeenCalledTimes(1)
     expect(reportUserInterfaceError).not.toHaveBeenCalled()
 
-    const renderCount = jest.mocked(StandaloneDocsEditor).mock.calls.length
+    const renderCount = vi.mocked(StandaloneDocsEditor).mock.calls.length
     rerender()
-    expect(jest.mocked(StandaloneDocsEditor).mock.calls.length).toBeGreaterThan(renderCount)
-    expect(jest.mocked(StandaloneDocsEditor).mock.calls.at(-1)?.[0].editorInitializationConfig).toBe(initialization)
+    expect(vi.mocked(StandaloneDocsEditor).mock.calls.length).toBeGreaterThan(renderCount)
+    expect(vi.mocked(StandaloneDocsEditor).mock.calls.at(-1)?.[0].editorInitializationConfig).toBe(initialization)
   })
 
   it.each([undefined, { mode: 'creation' } as const])(
     'initializes an existing or newly created document',
     async (config) => {
-      const { bridgeState, reportUserInterfaceError, initialize } = setup()
+      const { bridgeState, reportUserInterfaceError, initialize, rerender } = setup()
       await initialize(config)
+      rerender()
+      await waitFor(() => expect(StandaloneDocsEditor).toHaveBeenCalled())
 
-      expect(jest.mocked(StandaloneDocsEditor).mock.calls.at(-1)?.[0].editorInitializationConfig).toEqual(config)
+      expect(vi.mocked(StandaloneDocsEditor).mock.calls.at(-1)?.[0].editorInitializationConfig).toEqual(config)
       expect(bridgeState.didSetInitialConfig).toBe(true)
       expect(bridgeState.docState.setIsInConversionFromOtherFormat).not.toHaveBeenCalled()
       expect(reportUserInterfaceError).not.toHaveBeenCalled()
@@ -175,7 +185,7 @@ describe('App bridge initialization', () => {
   it("hands the account's date locale to the editor once the user settings have loaded it", async () => {
     const { bridgeState, handler } = setup()
     const settings = { Locale: 'en_GB' } as Parameters<ClientRequiresEditorMethods['loadUserSettings']>[0]
-    jest.mocked(loadLocales).mockImplementation(async () => {
+    vi.mocked(loadLocales).mockImplementation(async () => {
       setDateLocales({ dateLocale: enGBLocale })
       return { update: true, localeCode: 'en_GB' }
     })
@@ -193,7 +203,7 @@ describe('App bridge initialization', () => {
     const { bridgeState, handler } = setup()
     const settings = { Locale: 'en_GB' } as Parameters<ClientRequiresEditorMethods['loadUserSettings']>[0]
     const error = new Error('No locale data for requested localeCode')
-    jest.mocked(loadLocales).mockImplementation(async () => {
+    vi.mocked(loadLocales).mockImplementation(async () => {
       setDateLocales({ dateLocale: enGBLocale })
       throw error
     })
@@ -207,9 +217,9 @@ describe('App bridge initialization', () => {
   })
 
   it('loads the Docs editor stylesheet for a Doc only', async () => {
-    const loadStylesheet = jest.fn(() => ({}))
-    jest.resetModules()
-    jest.doMock('@proton-docs/docs-editor/style.css', loadStylesheet)
+    const loadStylesheet = vi.fn(() => ({}))
+    vi.resetModules()
+    vi.doMock('@proton-docs/docs-editor/style.css', loadStylesheet)
 
     const sheet = setup('sheet')
     await sheet.initialize()
@@ -225,8 +235,8 @@ describe('App bridge initialization', () => {
 
   it('reports a failed Docs stylesheet load as irrecoverable and does not mount the Doc', async () => {
     const error = new Error('Loading CSS chunk failed')
-    jest.resetModules()
-    jest.doMock('@proton-docs/docs-editor/style.css', () => {
+    vi.resetModules()
+    vi.doMock('@proton-docs/docs-editor/style.css', () => {
       throw error
     })
     const { reportUserInterfaceError, initialize, rerender } = setup('doc')
@@ -234,15 +244,15 @@ describe('App bridge initialization', () => {
     await initialize()
     rerender()
 
-    await waitFor(() => expect(reportUserInterfaceError).toHaveBeenCalledWith(error, { irrecoverable: true }))
-    expect(reportErrorToSentry).toHaveBeenCalledWith(error)
+    await waitFor(() => expect(reportUserInterfaceError).toHaveBeenCalledWith(thrownBy(error), { irrecoverable: true }))
+    expect(reportErrorToSentry).toHaveBeenCalledWith(thrownBy(error))
     expect(StandaloneDocsEditor).not.toHaveBeenCalled()
   })
 
   it('loads the Sheets editor stylesheet for a sheet only', async () => {
-    const loadStylesheet = jest.fn(() => ({}))
-    jest.resetModules()
-    jest.doMock('@proton-docs/sheets-editor/style.css', loadStylesheet)
+    const loadStylesheet = vi.fn(() => ({}))
+    vi.resetModules()
+    vi.doMock('@proton-docs/sheets-editor/style.css', loadStylesheet)
 
     const doc = setup('doc')
     await doc.initialize()
@@ -254,15 +264,15 @@ describe('App bridge initialization', () => {
     await sheet.initialize()
     sheet.rerender()
     // The reset registry gives the lazily loaded editor a fresh mock.
-    const loadedSheetsEditor = jest.requireMock<{ StandaloneSheetsEditor: jest.Mock }>('@proton-docs/sheets-editor')
+    const loadedSheetsEditor = await import('@proton-docs/sheets-editor')
     await waitFor(() => expect(loadedSheetsEditor.StandaloneSheetsEditor).toHaveBeenCalled())
     expect(loadStylesheet).toHaveBeenCalledTimes(1)
   })
 
   it('reports a failed Sheets stylesheet load as irrecoverable and does not mount the sheet', async () => {
     const error = new Error('Loading CSS chunk failed')
-    jest.resetModules()
-    jest.doMock('@proton-docs/sheets-editor/style.css', () => {
+    vi.resetModules()
+    vi.doMock('@proton-docs/sheets-editor/style.css', () => {
       throw error
     })
     const { reportUserInterfaceError, initialize, rerender } = setup('sheet')
@@ -270,8 +280,8 @@ describe('App bridge initialization', () => {
     await initialize()
     rerender()
 
-    await waitFor(() => expect(reportUserInterfaceError).toHaveBeenCalledWith(error, { irrecoverable: true }))
-    expect(reportErrorToSentry).toHaveBeenCalledWith(error)
+    await waitFor(() => expect(reportUserInterfaceError).toHaveBeenCalledWith(thrownBy(error), { irrecoverable: true }))
+    expect(reportErrorToSentry).toHaveBeenCalledWith(thrownBy(error))
     expect(StandaloneSheetsEditor).not.toHaveBeenCalled()
   })
 

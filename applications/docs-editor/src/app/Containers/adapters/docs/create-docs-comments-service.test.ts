@@ -25,7 +25,7 @@ describe('Docs comments host adapter', () => {
   it('maps host comment and typing events to editor events and removes all subscriptions together', () => {
     const eventBus = new InternalEventBus()
     const service = createDocsCommentsService(createClientInvokerFixture(), eventBus)
-    const onEvent = jest.fn()
+    const onEvent = vi.fn()
     const unsubscribe = service.subscribeToEvents(onEvent)
     const publishEvents = () => {
       eventBus.publish({ type: CommentsEvent.CommentsChanged, payload: { hasUnreadThreads: true } })
@@ -52,7 +52,7 @@ describe('Docs comments host adapter', () => {
   it('passes awareness snapshots through unchanged and stops delivering them after cleanup', () => {
     const eventBus = new InternalEventBus()
     const service = createDocsCommentsService(createClientInvokerFixture(), eventBus)
-    const onAwareness = jest.fn()
+    const onAwareness = vi.fn()
     const unsubscribe = service.subscribeToAwarenessStates(onAwareness)
     const states = [awarenessState]
     eventBus.publish({ type: DocAwarenessEvent.AwarenessStateChange, payload: { states } })
@@ -86,7 +86,7 @@ describe('Docs comments host adapter', () => {
     ['getTypersExcludingSelf', ['thread']],
   ] as const)('forwards %s arguments with the host receiver', async (method, args) => {
     const client = createClientInvokerFixture()
-    const spy = jest.spyOn(client, method)
+    const spy = vi.spyOn(client, method)
     const service = createDocsCommentsService(client, new InternalEventBus())
     await Reflect.apply(service[method], undefined, args)
     expect(spy).toHaveBeenCalledTimes(1)
@@ -97,8 +97,8 @@ describe('Docs comments host adapter', () => {
   it('returns host results without copying them', async () => {
     const client = createClientInvokerFixture()
     const threads: CommentThreadInterface[] = []
-    jest.spyOn(client, 'getAllThreads').mockResolvedValue(threads)
-    jest.spyOn(client, 'editComment').mockResolvedValue(true)
+    vi.spyOn(client, 'getAllThreads').mockResolvedValue(threads)
+    vi.spyOn(client, 'editComment').mockResolvedValue(true)
     const service = createDocsCommentsService(client, new InternalEventBus())
     expect(await service.getAllThreads()).toBe(threads)
     expect(await service.editComment('thread', 'comment', 'content')).toBe(true)
@@ -124,8 +124,8 @@ describe('Docs comments host adapter', () => {
   it('preserves rejected host promises for the editor to handle', async () => {
     const client = createClientInvokerFixture()
     const error = new Error('Comment mutation failed')
-    jest.spyOn(client, 'createCommentThread').mockRejectedValue(error)
-    jest.spyOn(client, 'getTypersExcludingSelf').mockRejectedValue(error)
+    vi.spyOn(client, 'createCommentThread').mockRejectedValue(error)
+    vi.spyOn(client, 'getTypersExcludingSelf').mockRejectedValue(error)
     const service = createDocsCommentsService(client, new InternalEventBus())
     await expect(service.createCommentThread('comment')).rejects.toBe(error)
     await expect(service.getTypersExcludingSelf('thread')).rejects.toBe(error)

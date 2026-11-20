@@ -5,25 +5,28 @@ import * as packageSheetsEditor from '@proton-docs/sheets-editor'
 import { reportErrorToSentry } from '../../../../Utils/errorMessage'
 import { useSheetsEditorSource } from './use-sheets-editor-source'
 
-jest.mock('@proton-docs/sheets-editor', () => ({
-  SheetsDependenciesProvider: jest.fn(),
-  StandaloneSheetsEditor: jest.fn(),
-  resolveDefaultWorkbookLocale: jest.fn(),
+vi.mock('@proton-docs/sheets-editor', () => ({
+  SheetsDependenciesProvider: vi.fn(),
+  StandaloneSheetsEditor: vi.fn(),
+  resolveDefaultWorkbookLocale: vi.fn(),
 }))
-jest.mock('@proton-docs/sheets-editor/style.css', () => ({}))
-jest.mock('../../../../Utils/errorMessage', () => ({ reportErrorToSentry: jest.fn() }))
+vi.mock('@proton-docs/sheets-editor/style.css', () => ({}))
+vi.mock('../../../../Utils/errorMessage', () => ({ reportErrorToSentry: vi.fn() }))
 
 function createClientInvoker() {
-  const reportUserInterfaceError = jest.fn().mockResolvedValue(undefined)
+  const reportUserInterfaceError = vi.fn().mockResolvedValue(undefined)
   return {
     clientInvoker: { reportUserInterfaceError } as unknown as EditorRequiresClientMethods,
     reportUserInterfaceError,
   }
 }
 
+// Vitest wraps an error thrown by a mock factory and keeps the original as `cause`.
+const thrownBy = (error: Error) => expect.objectContaining({ cause: error })
+
 describe('useSheetsEditorSource', () => {
   afterEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('does not load the editor until enabled', async () => {
@@ -47,15 +50,15 @@ describe('useSheetsEditorSource', () => {
 
   it('reports a failed load as irrecoverable and resolves no editor', async () => {
     const error = new Error('Loading chunk failed')
-    jest.resetModules()
-    jest.doMock('@proton-docs/sheets-editor/style.css', () => {
+    vi.resetModules()
+    vi.doMock('@proton-docs/sheets-editor/style.css', () => {
       throw error
     })
     const { clientInvoker, reportUserInterfaceError } = createClientInvoker()
     const { result } = renderHook(() => useSheetsEditorSource(clientInvoker, true))
 
-    await waitFor(() => expect(reportUserInterfaceError).toHaveBeenCalledWith(error, { irrecoverable: true }))
-    expect(reportErrorToSentry).toHaveBeenCalledWith(error)
+    await waitFor(() => expect(reportUserInterfaceError).toHaveBeenCalledWith(thrownBy(error), { irrecoverable: true }))
+    expect(reportErrorToSentry).toHaveBeenCalledWith(thrownBy(error))
     expect(result.current).toBeUndefined()
   })
 })
