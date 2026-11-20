@@ -19,6 +19,7 @@ import { type OpfsRecording, selectRecordings, setRecordings } from '@proton/mee
 import { selectUserId } from '@proton/meet/store/slices/userSlice';
 import { getRecordingSizeBucket } from '@proton/meet/telemetry/buckets';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { formatIntlInTimeZone, getDeviceTimeZone } from '@proton/shared/lib/date/zonedTime';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -33,7 +34,6 @@ import {
     listOpfsRecordings,
 } from '../../hooks/useMeetingRecorder/recordingStorage/recordingFiles';
 import { useSendOnce } from '../../telemetry/useSendOnce';
-import { formatIntlInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 
 const formatDate = (timestamp: number) =>
     formatIntlInTimeZone(timestamp, getDeviceTimeZone(), { dateStyle: 'medium', timeStyle: 'short' });

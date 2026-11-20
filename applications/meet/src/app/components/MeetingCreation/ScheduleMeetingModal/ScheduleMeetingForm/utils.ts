@@ -9,10 +9,10 @@ import {
     getTimeZoneOptions,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
+import { isTimeZoneKnown } from '@proton/shared/lib/date/zonedTime';
 import { type Meeting, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
 import { getNextOccurrence } from '../../../../utils/getNextOccurrence';
-import { isTimeZoneKnown } from '../../../../utils/zonedTime';
 import type { FormErrors, FormValues } from './types';
 
 const timeZoneOptions = getTimeZoneOptions();

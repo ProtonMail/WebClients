@@ -49,12 +49,11 @@ export interface TxDataWithExchangeRateListItemProps extends TxDataListItemProps
 export const ConfirmationTimeDataListItem = ({ tx, loadingLabel, loading }: TxDataListItemProps) => {
     const theme = useWalletTheme();
     const { isNarrow } = useResponsiveContainerContext();
-    const now = useMemo(() => new Date(), []);
     const value = getTransactionValue(tx);
 
     const confirmedDate =
         tx?.networkData.time.confirmation_time &&
-        getFormattedPeriodSinceConfirmation(now, new Date(tx.networkData.time.confirmation_time * SECOND));
+        getFormattedPeriodSinceConfirmation(new Date(tx.networkData.time.confirmation_time * SECOND));
 
     const imgClassName = clsx('shrink-0', isNarrow ? 'mr-2' : 'mr-4');
     const imgStyle: CSSProperties = isNarrow
@@ -139,7 +138,7 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
     const message = tx && getTransactionMessage(tx);
 
     const senderOrRecipientName = (
-        <span className="text-ellipsis" key="eslint-autofix-D42C72">
+        <span className="text-ellipsis" key="sender-or-recipient-name">
             {transactionRecipientsHumanReadableNameList}
         </span>
     );

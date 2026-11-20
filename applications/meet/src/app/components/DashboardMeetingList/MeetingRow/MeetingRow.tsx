@@ -20,13 +20,13 @@ import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
+import { getDeviceTimeZone } from '@proton/shared/lib/date/zonedTime';
 import { type Meeting, MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 import clsx from '@proton/utils/clsx';
 
 import type { JoinLocationState } from '../../../types';
 import { getNextOccurrence } from '../../../utils/getNextOccurrence';
-import { getDeviceTimeZone } from '../../../utils/zonedTime';
 import { getMeetingVariantFromId } from '../../MeetingCreation/shared/getMeetingVariantFromId';
 import { DeleteMeetingModal } from '../DeleteMeetingModal';
 import { PersonalMeetingRotationButton } from './PersonalMeetingRotationButton';

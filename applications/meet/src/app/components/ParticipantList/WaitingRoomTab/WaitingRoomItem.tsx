@@ -7,10 +7,10 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantName } from '@proton/meet/store/slices/participants/participantsSlice';
 import { type WaitingRoomJoinRequest, selectIsMeetingFull } from '@proton/meet/store/slices/waitingRoomSlice';
+import { formatIntlInTimeZone, getDeviceTimeZone } from '@proton/shared/lib/date/zonedTime';
 
 import { ConditionalTooltip } from '../../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { useWaitingRoomContext } from '../../../contexts/WaitingRoomContext';
-import { formatIntlInTimeZone, getDeviceTimeZone } from '../../../utils/zonedTime';
 import { ParticipantNameWithInitials } from '../shared/ParticipantNameWithInitials';
 
 import './WaitingRoomItem.scss';

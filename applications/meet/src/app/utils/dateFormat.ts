@@ -1,7 +1,6 @@
+import { formatInTimeZone, formatIntlInTimeZone } from '@proton/shared/lib/date/zonedTime';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
-
-import { formatInTimeZone, formatIntlInTimeZone } from './zonedTime';
 
 interface DateFormatOptions {
     month: 'short' | 'long';

@@ -1,6 +1,5 @@
-import { getTimezone } from '@proton/shared/lib/date/timezone';
-
-import { formatInTimeZone, formatIntlInTimeZone, getDeviceTimeZone, isTimeZoneKnown } from './zonedTime';
+import { getTimezone } from '../../lib/date/timezone';
+import { formatInTimeZone, formatIntlInTimeZone, getDeviceTimeZone, isTimeZoneKnown } from '../../lib/date/zonedTime';
 
 const vancouverTimes = [
     {
@@ -36,13 +35,7 @@ describe('formatInTimeZone', () => {
 });
 
 describe('formatIntlInTimeZone', () => {
-    afterEach(() => {
-        vi.unstubAllEnvs();
-    });
-
-    it('formats the Vancouver wall clock after the move to permanent time when the browser has the old rules', () => {
-        vi.stubEnv('TZ', 'America/Los_Angeles');
-
+    it('formats the Vancouver wall clock after the move to permanent time', () => {
         expect(
             formatIntlInTimeZone(
                 Date.parse('2026-11-12T17:00:00Z'),
@@ -66,12 +59,15 @@ describe('isTimeZoneKnown', () => {
 
 describe('getDeviceTimeZone', () => {
     afterEach(() => {
-        vi.unstubAllEnvs();
         vi.restoreAllMocks();
     });
 
     it('returns the device zone when the backend list links it to a zone with another offset', () => {
-        vi.stubEnv('TZ', 'America/Ciudad_Juarez');
+        const deviceOptions = Intl.DateTimeFormat().resolvedOptions();
+        vi.spyOn(Intl.DateTimeFormat.prototype, 'resolvedOptions').mockReturnValue({
+            ...deviceOptions,
+            timeZone: 'America/Ciudad_Juarez',
+        });
 
         expect(getDeviceTimeZone()).toBe('America/Ciudad_Juarez');
     });
