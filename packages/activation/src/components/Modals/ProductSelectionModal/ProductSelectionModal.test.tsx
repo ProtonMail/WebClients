@@ -143,6 +143,22 @@ describe('ProductSelectionModal - product selection', () => {
         expect(products).toContain(ImportType.MAIL);
     });
 
+    it('disables Continue when no product is selected', () => {
+        renderModal(ImportProvider.GOOGLE);
+
+        fireEvent.click(screen.getByTestId('productCheckbox:Mail'));
+        fireEvent.click(screen.getByTestId('productCheckbox:Contacts'));
+
+        const continueButton = screen.getByText('Continue');
+        expect(continueButton).toBeDisabled();
+
+        fireEvent.click(continueButton);
+        expect(mockHandleSubmit).not.toHaveBeenCalled();
+
+        fireEvent.click(screen.getByTestId('productCheckbox:Contacts'));
+        expect(continueButton).toBeEnabled();
+    });
+
     it('renders single-select radios defaulting to Mail for Yahoo', () => {
         renderModal(ImportProvider.YAHOO);
 
