@@ -1,11 +1,8 @@
-/**
- * @jest-environment-options {"abortSignal": true}
- */
 import { screen } from '@testing-library/react';
 
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
+import { findOfflinePasswordPrompt } from '@proton/pass/testing/vitest/actions';
 import { AppStatus } from '@proton/pass/types/worker/state';
-import { findOfflinePasswordPrompt } from '@proton/pass/utils/tests/actions';
 import { createTestBackend, getSessionResumeHandlers, respond } from '@proton/pass/utils/tests/backend';
 import { createTestCache, hydrateTestPassCrypto } from '@proton/pass/utils/tests/fixtures/cache';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
@@ -19,9 +16,9 @@ import { render } from '@proton/pass/utils/tests/render';
 import { Lobby } from '../app/popup/Views/Lobby/Lobby';
 import { setupAuthWorker } from './auth';
 
-jest.mock('../app/worker/channel');
-jest.mock('../lib/components/Extension/ExtensionClient', () => ({ useExtensionClient: () => ({ logout: jest.fn() }) }));
-jest.mock('../lib/hooks/useRequestFork', () => ({ useRequestForkWithPermissions: () => jest.fn() }));
+vi.mock('../app/worker/channel');
+vi.mock('../lib/components/Extension/ExtensionClient', () => ({ useExtensionClient: () => ({ logout: vi.fn() }) }));
+vi.mock('../lib/hooks/useRequestFork', () => ({ useRequestForkWithPermissions: () => vi.fn() }));
 
 describe('Popup during a backend outage', () => {
     const backend = createTestBackend();
@@ -31,11 +28,16 @@ describe('Popup during a backend outage', () => {
 
     let clock = Date.now();
 
-    beforeEach(() => jest.useFakeTimers({ now: clock, doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] }));
+    beforeEach(() =>
+        vi.useFakeTimers({
+            now: clock,
+            toFake: ['setTimeout', 'clearTimeout', 'setInterval', 'clearInterval', 'Date', 'performance'],
+        })
+    );
 
     afterEach(() => {
         clock = Date.now();
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     test('shows the offline password prompt when the worker starts during an outage', async () => {

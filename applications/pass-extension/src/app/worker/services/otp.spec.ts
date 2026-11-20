@@ -6,15 +6,15 @@ import type * as ChannelMock from '../__mocks__/channel';
 import { WorkerContext } from '../context/inject';
 import { createOTPService } from './otp';
 
-jest.mock('../channel');
-jest.mock('@proton/pass/lib/core/core.proxy');
-jest.mock('@proton/pass/store/selectors/organization', () => ({
-    ...jest.requireActual('@proton/pass/store/selectors/organization'),
-    selectOrgTOTPDisabled: jest.fn(),
+vi.mock('../channel');
+vi.mock('@proton/pass/lib/core/core.proxy');
+vi.mock('@proton/pass/store/selectors/organization', async () => ({
+    ...(await vi.importActual('@proton/pass/store/selectors/organization')),
+    selectOrgTOTPDisabled: vi.fn(),
 }));
 
-const { mockHandlers } = jest.requireMock('../channel') as typeof ChannelMock;
-const mockSelectOrgTOTPDisabled = jest.mocked(selectOrgTOTPDisabled);
+const { mockHandlers } = (await import('../channel')) as typeof ChannelMock;
+const mockSelectOrgTOTPDisabled = vi.mocked(selectOrgTOTPDisabled);
 
 const TOTP_URI = 'otpauth://totp/test?secret=JBSWY3DPEHPK3PXP&algorithm=SHA1&digits=6&period=30';
 
@@ -27,14 +27,14 @@ describe('OTP service - `OTP_CODE_GENERATE`', () => {
 
     beforeEach(() => {
         WorkerContext.set({
-            service: { core: createPassCoreProxy({} as any), store: { getState: jest.fn(() => ({})) } },
+            service: { core: createPassCoreProxy({} as any), store: { getState: vi.fn(() => ({})) } },
         } as any);
         createOTPService();
     });
 
     afterEach(() => {
         WorkerContext.clear();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     test('generates a 6-digit code when the organization allows TOTP', async () => {

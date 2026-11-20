@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
@@ -15,9 +17,9 @@ import { WorkerContext } from '../context/inject';
 import type { WorkerContextInterface } from '../context/types';
 import { createActivationService } from './activation';
 
-jest.mock('../channel');
+vi.mock('../channel');
 
-const { default: WorkerMessageBroker, mockHandlers } = jest.requireMock('../channel') as typeof ChannelMock;
+const { default: WorkerMessageBroker, mockHandlers } = (await import('../channel')) as typeof ChannelMock;
 
 describe('Activation service - `CLIENT_INIT`', () => {
     let authStore: AuthStore;
@@ -32,7 +34,7 @@ describe('Activation service - `CLIENT_INIT`', () => {
     });
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         clearBrowserMocks();
 
         authStore = createAuthStore(createMemoryStore());
@@ -42,39 +44,39 @@ describe('Activation service - `CLIENT_INIT`', () => {
         connectivity = {
             online: true,
             status: ConnectivityStatus.ONLINE,
-            check: jest.fn().mockResolvedValue(undefined),
-            subscribe: jest.fn(),
-            syncNavigatorOnline: jest.fn(),
+            check: vi.fn().mockResolvedValue(undefined),
+            subscribe: vi.fn(),
+            syncNavigatorOnline: vi.fn(),
         } as any;
 
         ctx = {
             booted: false,
             status: AppStatus.IDLE,
-            getState: jest.fn(() => ({ status: ctx.status })),
-            setStatus: jest.fn((value: AppStatus) => (ctx.status = value)),
-            setBooted: jest.fn(),
+            getState: vi.fn(() => ({ status: ctx.status })),
+            setStatus: vi.fn((value: AppStatus) => (ctx.status = value)),
+            setBooted: vi.fn(),
             service: {
                 auth: {
-                    init: jest.fn().mockResolvedValue(true),
-                    alarms: { isResumeThrottled: jest.fn().mockResolvedValue(false) },
+                    init: vi.fn().mockResolvedValue(true),
+                    alarms: { isResumeThrottled: vi.fn().mockResolvedValue(false) },
                     config: { authStore },
                 },
-                autofill: { getLoginCandidates: jest.fn(() => []) },
+                autofill: { getLoginCandidates: vi.fn(() => []) },
                 connectivity,
-                featureFlags: { resolve: jest.fn().mockResolvedValue({ features: {} }) },
-                settings: { resolve: jest.fn().mockResolvedValue({}) },
-                storage: { local: { getItem: jest.fn() } },
+                featureFlags: { resolve: vi.fn().mockResolvedValue({ features: {} }) },
+                settings: { resolve: vi.fn().mockResolvedValue({}) },
+                storage: { local: { getItem: vi.fn() } },
                 store: {
-                    dispatch: jest.fn(),
-                    dispatchAsyncRequest: jest.fn().mockResolvedValue(undefined),
-                    getState: jest.fn(() => getMockState()),
+                    dispatch: vi.fn(),
+                    dispatchAsyncRequest: vi.fn().mockResolvedValue(undefined),
+                    getState: vi.fn(() => getMockState()),
                 },
             },
         } as any;
 
         WorkerContext.set(ctx);
-        (WorkerMessageBroker.buffer.flush as jest.Mock).mockReturnValue([]);
-        (WorkerMessageBroker.ports.query as jest.Mock).mockReturnValue([]);
+        (WorkerMessageBroker.buffer.flush as Mock).mockReturnValue([]);
+        (WorkerMessageBroker.ports.query as Mock).mockReturnValue([]);
 
         createActivationService();
         handler = mockHandlers.get(WorkerMessageType.CLIENT_INIT);
@@ -105,14 +107,14 @@ describe('Activation service - `CLIENT_INIT`', () => {
 
         test('should not resume on PASSWORD_LOCKED + non-popup when throttled', async () => {
             ctx.status = AppStatus.PASSWORD_LOCKED;
-            (ctx.service.auth.alarms.isResumeThrottled as jest.Mock).mockResolvedValueOnce(true);
+            (ctx.service.auth.alarms.isResumeThrottled as Mock).mockResolvedValueOnce(true);
             await handler(initMessage('contentscript'), {});
             expect(ctx.service.auth.init).not.toHaveBeenCalled();
         });
 
         test('should resume on PASSWORD_LOCKED + non-popup when not throttled', async () => {
             ctx.status = AppStatus.PASSWORD_LOCKED;
-            (ctx.service.auth.alarms.isResumeThrottled as jest.Mock).mockResolvedValueOnce(false);
+            (ctx.service.auth.alarms.isResumeThrottled as Mock).mockResolvedValueOnce(false);
             await handler(initMessage('contentscript'), {});
             expect(ctx.service.auth.init).toHaveBeenCalled();
         });
@@ -126,7 +128,7 @@ describe('Activation service - `CLIENT_INIT`', () => {
 
         test('should defer to `isResumeThrottled` on PASSWORD_LOCKED + non-popup', async () => {
             ctx.status = AppStatus.PASSWORD_LOCKED;
-            (ctx.service.auth.alarms.isResumeThrottled as jest.Mock).mockResolvedValueOnce(true);
+            (ctx.service.auth.alarms.isResumeThrottled as Mock).mockResolvedValueOnce(true);
             await handler(initMessage('contentscript'), {});
             expect(ctx.service.auth.alarms.isResumeThrottled).toHaveBeenCalled();
             expect(ctx.service.auth.init).not.toHaveBeenCalled();
@@ -134,7 +136,7 @@ describe('Activation service - `CLIENT_INIT`', () => {
 
         test('should defer to `isResumeThrottled` on ERROR + non-popup', async () => {
             ctx.status = AppStatus.ERROR;
-            (ctx.service.auth.alarms.isResumeThrottled as jest.Mock).mockResolvedValueOnce(true);
+            (ctx.service.auth.alarms.isResumeThrottled as Mock).mockResolvedValueOnce(true);
             await handler(initMessage('contentscript'), {});
             expect(ctx.service.auth.alarms.isResumeThrottled).toHaveBeenCalled();
             expect(ctx.service.auth.init).not.toHaveBeenCalled();
@@ -142,7 +144,7 @@ describe('Activation service - `CLIENT_INIT`', () => {
 
         test('should resume on ERROR + non-popup when not throttled', async () => {
             ctx.status = AppStatus.ERROR;
-            (ctx.service.auth.alarms.isResumeThrottled as jest.Mock).mockResolvedValueOnce(false);
+            (ctx.service.auth.alarms.isResumeThrottled as Mock).mockResolvedValueOnce(false);
             await handler(initMessage('contentscript'), {});
             expect(ctx.service.auth.init).toHaveBeenCalled();
         });
@@ -249,7 +251,7 @@ describe('Activation service - `CLIENT_INIT`', () => {
         test('post-probe online state drives the offline-resume gate', async () => {
             ctx.status = AppStatus.OFFLINE;
             connectivity.online = false;
-            (connectivity.check as jest.Mock).mockImplementationOnce(async () => {
+            (connectivity.check as Mock).mockImplementationOnce(async () => {
                 connectivity.online = true;
                 connectivity.status = ConnectivityStatus.ONLINE;
             });

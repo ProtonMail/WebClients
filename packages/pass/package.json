@@ -332,6 +332,8 @@
         "./styles/common": "./styles/common.scss",
         "./styles/extension": "./styles/_extension.scss",
         "./styles/lobby": "./styles/_lobby.scss",
+        "./testing/vitest/actions": "./testing/vitest/actions.ts",
+        "./testing/vitest/loglevel.mock": "./testing/vitest/loglevel.mock.ts",
         "./types/api/api": "./types/api/api.ts",
         "./types/api/features": "./types/api/features.ts",
         "./types/api/pass": "./types/api/pass.ts",

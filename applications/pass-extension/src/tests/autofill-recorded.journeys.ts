@@ -109,7 +109,7 @@ export const defineRecordedPageJourneys = ({ model, startWorker }: ModelWorker) 
         );
 
         if (gaps.length) {
-            test.failing.each(gaps)(`misses the login form on $page (known ${model} model gap)`, fillLogin);
+            test.fails.each(gaps)(`misses the login form on $page (known ${model} model gap)`, fillLogin);
         }
     });
 };

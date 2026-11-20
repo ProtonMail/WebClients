@@ -4,14 +4,14 @@ import { DROPDOWN_FOCUS_TRAP_TIMEOUT, createDropdownFocusController } from './dr
 describe('DropdownFocusController', () => {
     const iframe = {
         state: { visible: true },
-        sendPortMessage: jest.fn(() => Promise.resolve()),
-        registerMessageHandler: jest.fn(),
+        sendPortMessage: vi.fn(() => Promise.resolve()),
+        registerMessageHandler: vi.fn(),
     };
 
     const fieldElement = document.createElement('input');
     const field = {
         element: fieldElement,
-        preventAction: jest.fn(),
+        preventAction: vi.fn(),
         getFormHandle: () => ({ getFields: () => [] }),
     };
 
@@ -31,7 +31,7 @@ describe('DropdownFocusController', () => {
 
     const simulateFocusTrap = (maxRetries: number) => {
         const originalBlur = fieldElement.blur.bind(fieldElement);
-        const blur = jest.spyOn(fieldElement, 'blur');
+        const blur = vi.spyOn(fieldElement, 'blur');
 
         let callCount = 0;
         blur.mockImplementation(() => {
@@ -44,7 +44,7 @@ describe('DropdownFocusController', () => {
             try {
                 /** 25ms matches `waitUntil` retry timeout  */
                 for (let i = 0; i <= callCount; i++) {
-                    await jest.advanceTimersByTimeAsync(25);
+                    await vi.advanceTimersByTimeAsync(25);
                 }
             } finally {
                 blur.mockRestore();
@@ -53,10 +53,10 @@ describe('DropdownFocusController', () => {
     };
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         iframe.state.visible = true;
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         document.body.innerHTML = '';
         document.body.appendChild(fieldElement);
@@ -64,7 +64,7 @@ describe('DropdownFocusController', () => {
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('initialization', () => {
@@ -110,7 +110,7 @@ describe('DropdownFocusController', () => {
             onFocused?.();
             expect(controller.willFocus).toBe(true);
 
-            jest.advanceTimersByTime(DROPDOWN_FOCUS_TRAP_TIMEOUT);
+            vi.advanceTimersByTime(DROPDOWN_FOCUS_TRAP_TIMEOUT);
             expect(controller.willFocus).toBe(false);
         });
     });
@@ -136,7 +136,7 @@ describe('DropdownFocusController', () => {
 
             const onRequest = getHandler(InlinePortMessageType.DROPDOWN_FOCUS_REQUEST);
             const req = onRequest?.();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             await req;
 
             expect(iframe.sendPortMessage).toHaveBeenCalledWith({ type: InlinePortMessageType.DROPDOWN_FOCUS });
@@ -149,7 +149,7 @@ describe('DropdownFocusController', () => {
 
             const onRequest = getHandler(InlinePortMessageType.DROPDOWN_FOCUS_REQUEST);
             const req = onRequest?.();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             await req;
 
             expect(iframe.sendPortMessage).toHaveBeenCalledWith({ type: InlinePortMessageType.DROPDOWN_FOCUS });
@@ -158,13 +158,13 @@ describe('DropdownFocusController', () => {
         test('should blur field when it is active element', async () => {
             anchor.current = { type: 'field', field: field };
             fieldElement.focus();
-            const blur = jest.spyOn(fieldElement, 'blur');
+            const blur = vi.spyOn(fieldElement, 'blur');
 
             createController();
 
             const onRequest = getHandler(InlinePortMessageType.DROPDOWN_FOCUS_REQUEST);
             const req = onRequest?.();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             await req;
 
             expect(blur).toHaveBeenCalled();
@@ -173,7 +173,7 @@ describe('DropdownFocusController', () => {
 
         test('should blur document active element when field is not active', async () => {
             const btn = document.createElement('button');
-            const blur = jest.spyOn(btn, 'blur');
+            const blur = vi.spyOn(btn, 'blur');
             anchor.current = { type: 'field', field: field };
 
             createController();
@@ -182,7 +182,7 @@ describe('DropdownFocusController', () => {
 
             const onRequest = getHandler(InlinePortMessageType.DROPDOWN_FOCUS_REQUEST);
             const req = onRequest?.();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             await req;
 
             expect(blur).toHaveBeenCalled();
@@ -203,7 +203,7 @@ describe('DropdownFocusController', () => {
 
             const onRequest = getHandler(InlinePortMessageType.DROPDOWN_FOCUS_REQUEST);
             const req = onRequest?.();
-            await jest.runAllTimersAsync();
+            await vi.runAllTimersAsync();
             await req;
 
             expect(iframe.sendPortMessage).not.toHaveBeenCalled();
@@ -248,12 +248,12 @@ describe('DropdownFocusController', () => {
 
             /** Advance just enough to release focus and dispatch `DROPDOWN_FOCUS`,
              * but short of the `DROPDOWN_FOCUS_TRAP_TIMEOUT` grace period. */
-            await jest.advanceTimersByTimeAsync(DROPDOWN_FOCUS_TRAP_TIMEOUT / 2);
+            await vi.advanceTimersByTimeAsync(DROPDOWN_FOCUS_TRAP_TIMEOUT / 2);
             expect(iframe.sendPortMessage).toHaveBeenCalledWith({ type: InlinePortMessageType.DROPDOWN_FOCUS });
             expect(ctrl.willFocus).toBe(true);
 
             /** Without a `DROPDOWN_FOCUSED`, the grace period clears via its timer. */
-            await jest.advanceTimersByTimeAsync(DROPDOWN_FOCUS_TRAP_TIMEOUT);
+            await vi.advanceTimersByTimeAsync(DROPDOWN_FOCUS_TRAP_TIMEOUT);
             expect(ctrl.willFocus).toBe(false);
 
             await req;

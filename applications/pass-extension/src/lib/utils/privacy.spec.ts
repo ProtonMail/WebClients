@@ -4,7 +4,7 @@ import noop from '@proton/utils/noop';
 import browser, { clearBrowserMocks } from '../../__mocks__/webextension-polyfill';
 import * as privacy from './privacy';
 
-jest.mock('@proton/shared/lib/helpers/location');
+vi.mock('@proton/shared/lib/helpers/location');
 
 const setBuildTarget = (value: string) => ((global as any).BUILD_TARGET = value);
 
@@ -111,7 +111,7 @@ describe('Privacy', () => {
         const privacyAPI = browser.privacy;
 
         afterEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
         });
 
         test('should set all settings and return the input value', async () => {
@@ -149,7 +149,7 @@ describe('Privacy', () => {
             privacy.BROWSER_AUTOFILL_SETTINGS.push(...privacy.getBrowserAutofillSettings());
             browser.permissions.contains.mockResolvedValueOnce(false);
             browser.permissions.request.mockResolvedValueOnce(true);
-            const setPending = jest.fn();
+            const setPending = vi.fn();
             const result = await privacy.setBrowserAutofillCapabilities(true, setPending);
 
             expect(result).toBe(false);

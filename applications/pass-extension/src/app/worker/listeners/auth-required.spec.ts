@@ -13,7 +13,7 @@ const createMockLoginItem = (username: string, password: string): ItemRevision<'
 
 describe('Basic auth listener', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('BASIC_AUTH_URL_RE', () => {

@@ -1,4 +1,5 @@
 import type { MiddlewareAPI } from 'redux';
+import type { Mock } from 'vitest';
 
 import { actionStream } from '@proton/pass/store/actions/creators/client';
 import type { Chunk } from '@proton/pass/utils/object/chunk';
@@ -7,8 +8,8 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { chunkMiddleware, createChunkController } from './chunk.middleware';
 
-jest.mock('@proton/pass/utils/object/chunk', () => ({ fromChunks: jest.fn() }));
-const fromChunks = chunkUtils.fromChunks as jest.Mock;
+vi.mock('@proton/pass/utils/object/chunk', () => ({ fromChunks: vi.fn() }));
+const fromChunks = chunkUtils.fromChunks as Mock;
 
 const createChunk = (options: { streamID?: string; index: number; total: number }): Chunk => ({
     ...options,
@@ -18,22 +19,22 @@ const createChunk = (options: { streamID?: string; index: number; total: number 
 });
 
 describe('chunk middleware', () => {
-    let next: jest.Mock;
+    let next: Mock;
     let middleware: (action: unknown) => unknown;
     let controller: ReturnType<typeof createChunkController>;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.useFakeTimers();
+        vi.clearAllMocks();
+        vi.useFakeTimers();
         fromChunks.mockReturnValue({ type: 'RECONSTRUCTED_ACTION' });
-        next = jest.fn();
+        next = vi.fn();
 
         middleware = chunkMiddleware()({} as MiddlewareAPI)(next);
         controller = createChunkController(next);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('createChunkController', () => {
@@ -105,7 +106,7 @@ describe('chunk middleware', () => {
         });
 
         test('should clear timeout when resetting', () => {
-            const clearTimeoutSpy = jest.spyOn(global, 'clearTimeout');
+            const clearTimeoutSpy = vi.spyOn(global, 'clearTimeout');
 
             controller.processChunk(createChunk({ index: 1, total: 2 }));
             const timerID = controller.state.timer;
@@ -116,12 +117,12 @@ describe('chunk middleware', () => {
         });
 
         test('should auto-reset when timer expires', () => {
-            const reset = jest.spyOn(controller, 'reset');
+            const reset = vi.spyOn(controller, 'reset');
             controller.processChunk(createChunk({ index: 1, total: 2 }));
 
             expect(controller.active).toBe(true);
 
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
             expect(reset).toHaveBeenCalled();
             expect(controller.active).toBe(false);
         });
@@ -210,7 +211,7 @@ describe('chunk middleware', () => {
             middleware(actionStream(createChunk({ index: 0, total: 2 })));
 
             expect(next).not.toHaveBeenCalled();
-            jest.advanceTimersByTime(1500);
+            vi.advanceTimersByTime(1500);
 
             const action = { type: 'AFTER_TIMEOUT' };
 

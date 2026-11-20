@@ -11,7 +11,7 @@ import type { FormHandle } from '../app/content/services/form/form';
 import { loadPage, navigatePage, startContentScript, waitForLoginForm, waitForRegisterForm } from './content-script';
 import { getTabSubmission, navigateTab, setupWorker } from './worker';
 
-jest.mock('../app/worker/channel');
+vi.mock('../app/worker/channel');
 
 /** Same origin as the Playwright suite serves the fixtures on */
 const ORIGIN = 'https://autofill.pass.test';

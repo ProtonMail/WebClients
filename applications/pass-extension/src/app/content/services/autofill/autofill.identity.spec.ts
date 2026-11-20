@@ -20,7 +20,7 @@ const createField = (
         fieldType,
         fieldSubType,
         sectionIndex,
-        autofill: jest.fn(),
+        autofill: vi.fn(),
     }) as any as FieldHandle;
 
 describe('Identity', () => {

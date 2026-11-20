@@ -1,5 +1,6 @@
 import type * as Autofill from '@protontech/autofill';
 import type { ModelProvider } from '@protontech/autofill/types';
+import type { Mock } from 'vitest';
 
 import { createModelProvider } from '@proton/pass/lib/extension/model-artifact/model-artifact';
 import type { ModelArtifact } from '@proton/pass/lib/extension/model-artifact/model-artifact';
@@ -9,21 +10,21 @@ import { sendMessage } from '../../../../lib/message/send-message';
 import { BUNDLED_MODEL_ID } from '../../../../lib/utils/version';
 import type * as DetectorService from './detector.service';
 
-jest.mock('@protontech/autofill', () => ({
-    ...jest.requireActual('@protontech/autofill'),
-    createRulesetRegistry: jest.fn(() => ({ make: jest.fn(() => ({ against: jest.fn() })) })),
+vi.mock('@protontech/autofill', async () => ({
+    ...(await vi.importActual('@protontech/autofill')),
+    createRulesetRegistry: vi.fn(() => ({ make: vi.fn(() => ({ against: vi.fn() })) })),
 }));
 
-jest.mock('../../../../lib/message/send-message', () => ({
-    contentScriptMessage: jest.fn((message) => message),
-    sendMessage: Object.assign(jest.fn(), {
-        on: jest.fn(),
-        onSuccess: jest.fn().mockResolvedValue(undefined),
+vi.mock('../../../../lib/message/send-message', async () => ({
+    contentScriptMessage: vi.fn((message) => message),
+    sendMessage: Object.assign(vi.fn(), {
+        on: vi.fn(),
+        onSuccess: vi.fn().mockResolvedValue(undefined),
     }),
 }));
 
-jest.mock('@proton/pass/lib/extension/model-artifact/model-artifact', () => ({
-    createModelProvider: jest.fn(),
+vi.mock('@proton/pass/lib/extension/model-artifact/model-artifact', async () => ({
+    createModelProvider: vi.fn(),
 }));
 
 describe('DetectorService: runtime model resolution', () => {
@@ -34,23 +35,20 @@ describe('DetectorService: runtime model resolution', () => {
 
     /** Each test needs a fresh module instance : `ruleset`/`modelId` are locked-once module state. */
     const load = async () => {
-        let service: typeof DetectorService;
-        let autofill: typeof Autofill;
-        await jest.isolateModulesAsync(async () => {
-            service = await import('./detector.service');
-            autofill = await import('@protontech/autofill');
-        });
+        vi.resetModules();
+        const service: typeof DetectorService = await import('./detector.service');
+        const autofill: typeof Autofill = await import('@protontech/autofill');
         return {
-            createDetectorService: service!.createDetectorService,
-            createRulesetRegistry: jest.mocked(autofill!.createRulesetRegistry),
+            createDetectorService: service.createDetectorService,
+            createRulesetRegistry: vi.mocked(autofill.createRulesetRegistry),
         };
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         workerResponse = { type: 'error', error: 'not configured' };
-        (sendMessage.on as jest.Mock).mockImplementation((_message, onResponse) => onResponse(workerResponse));
-        (sendMessage.onSuccess as jest.Mock).mockResolvedValue(undefined);
+        (sendMessage.on as Mock).mockImplementation((_message, onResponse) => onResponse(workerResponse));
+        (sendMessage.onSuccess as Mock).mockResolvedValue(undefined);
     });
 
     test('Falls back to the bundled model when the worker has no cached artifact', async () => {
@@ -77,7 +75,7 @@ describe('DetectorService: runtime model resolution', () => {
 
     test('Falls back to the bundled model when the artifact fails feature-store validation', async () => {
         workerResponse = { type: 'success', artifact: artifact('2026.8.2475-lr') };
-        jest.mocked(createModelProvider).mockReturnValue({ ok: false, error: 'unknown feature "foo"' });
+        vi.mocked(createModelProvider).mockReturnValue({ ok: false, error: 'unknown feature "foo"' });
         const { createDetectorService, createRulesetRegistry } = await load();
 
         const detector = createDetectorService({ root: document });
@@ -89,7 +87,7 @@ describe('DetectorService: runtime model resolution', () => {
 
     test('Uses the runtime model once resolved and validated, without ever building the bundled ruleset', async () => {
         workerResponse = { type: 'success', artifact: artifact('2026.8.2475-lr') };
-        jest.mocked(createModelProvider).mockReturnValue({ ok: true, provider });
+        vi.mocked(createModelProvider).mockReturnValue({ ok: true, provider });
         const { createDetectorService, createRulesetRegistry } = await load();
 
         const detector = createDetectorService({ root: document });
@@ -101,12 +99,12 @@ describe('DetectorService: runtime model resolution', () => {
     });
 
     test('A detector recreated while the first resolution is still in flight awaits the same resolution', async () => {
-        jest.mocked(createModelProvider).mockReturnValue({ ok: true, provider });
+        vi.mocked(createModelProvider).mockReturnValue({ ok: true, provider });
         const { createDetectorService } = await load();
 
         let releaseResponse: () => void;
         const responseGate = new Promise<void>((resolve) => (releaseResponse = resolve));
-        (sendMessage.on as jest.Mock).mockImplementation(async (_message, onResponse) => {
+        (sendMessage.on as Mock).mockImplementation(async (_message, onResponse) => {
             await responseGate;
             return onResponse({ type: 'success', artifact: artifact('2026.8.2475-lr') });
         });
@@ -129,7 +127,7 @@ describe('DetectorService: runtime model resolution', () => {
 
     test('A detector recreated within the same JS realm keeps the first-resolved model', async () => {
         workerResponse = { type: 'success', artifact: artifact('2026.8.2475-lr') };
-        jest.mocked(createModelProvider).mockReturnValue({ ok: true, provider });
+        vi.mocked(createModelProvider).mockReturnValue({ ok: true, provider });
         const { createDetectorService, createRulesetRegistry } = await load();
 
         const first = createDetectorService({ root: document });

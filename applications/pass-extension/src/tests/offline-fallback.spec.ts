@@ -1,6 +1,5 @@
-/**
- * @jest-environment-options {"abortSignal": true}
- */
+import type { MockInstance } from 'vitest';
+
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { ConnectivityStatus } from '@proton/pass/lib/network/connectivity.utils';
 import { bootIntent, offlineResume } from '@proton/pass/store/actions/creators/client';
@@ -26,7 +25,7 @@ import browser from '../__mocks__/webextension-polyfill';
 import { SESSION_RESUME_ALARM } from '../app/worker/services/auth/auth.alarms';
 import { setupAuthWorker } from './auth';
 
-jest.mock('../app/worker/channel');
+vi.mock('../app/worker/channel');
 
 const SESSION_RESUME_ROUTES = ['auth/v4/sessions/local/key', 'core/v4/users'];
 
@@ -57,11 +56,16 @@ describe('Offline fallback on backend errors', () => {
      * go back between tests, or every response looks older than the last one and is ignored */
     let clock = Date.now();
 
-    beforeEach(() => jest.useFakeTimers({ now: clock, doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] }));
+    beforeEach(() =>
+        vi.useFakeTimers({
+            now: clock,
+            toFake: ['setTimeout', 'clearTimeout', 'setInterval', 'clearInterval', 'Date', 'performance'],
+        })
+    );
 
     afterEach(() => {
         clock = Date.now();
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('Service worker start', () => {
@@ -140,10 +144,10 @@ describe('Offline fallback on backend errors', () => {
             );
 
             const init = auth.init({ forceLock: false, retryable: true });
-            await jest.advanceTimersByTimeAsync(4_900);
+            await vi.advanceTimersByTimeAsync(4_900);
             expect(userRequests).toBe(1);
 
-            await jest.advanceTimersByTimeAsync(200);
+            await vi.advanceTimersByTimeAsync(200);
             await init;
             expect(userRequests).toBe(2);
             expect(ctx.status).toBe(AppStatus.READY);
@@ -253,7 +257,7 @@ describe('Offline fallback on backend errors', () => {
     });
 
     describe('Service worker wake-up after an offline unlock', () => {
-        let navigatorOnline: Maybe<jest.SpyInstance>;
+        let navigatorOnline: Maybe<MockInstance>;
         afterEach(() => navigatorOnline?.mockRestore());
 
         const setupOfflineUnlocked = async () => {
@@ -266,7 +270,7 @@ describe('Offline fallback on backend errors', () => {
 
         test('device offline: boots offline right away without resuming the session', async () => {
             const worker = await setupOfflineUnlocked();
-            navigatorOnline = jest.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+            navigatorOnline = vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
             const { ctx, local, start } = worker.restart();
             backend.requests.length = 0;
             await start();
@@ -354,7 +358,7 @@ describe('Offline fallback on backend errors', () => {
 
             backend.reset();
             backend.use(...getSessionResumeHandlers(persisted));
-            await jest.advanceTimersByTimeAsync(120_000);
+            await vi.advanceTimersByTimeAsync(120_000);
 
             const getResumes = () =>
                 ctx.service.store.dispatch.mock.calls.filter(([action]: any) => offlineResume.intent.match(action));

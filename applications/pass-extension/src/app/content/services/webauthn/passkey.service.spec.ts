@@ -1,3 +1,5 @@
+import type { MockInstance, MockedObject } from 'vitest';
+
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types/worker/state';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -17,7 +19,7 @@ import { type PasskeyService, createPasskeyService } from './passkey.service';
 const expectPasskeyError = async (fn: () => Promise<void>, allowNativeWebAuthn: boolean) => {
     try {
         await fn();
-        fail('Expected PasskeyError to be thrown');
+        throw new Error('Expected PasskeyError to be thrown');
     } catch (error) {
         expect(error).toBeInstanceOf(PasskeyServiceError);
         expect(error).toMatchObject({ allowNativeWebAuthn });
@@ -26,25 +28,25 @@ const expectPasskeyError = async (fn: () => Promise<void>, allowNativeWebAuthn: 
 
 describe('PasskeyService', () => {
     let service: PasskeyService;
-    let postMessage: jest.SpyInstance;
-    let context: jest.MockedObject<ContentScriptContext>;
+    let postMessage: MockInstance;
+    let context: MockedObject<ContentScriptContext>;
     let notification: NotificationHandler;
     let settings: ProxiedSettings;
     let features: Record<CSFeatures, boolean>;
     let state: CSContextState;
 
     beforeEach(() => {
-        postMessage = jest.spyOn(window, 'postMessage').mockImplementation();
+        postMessage = vi.spyOn(window, 'postMessage').mockImplementation(() => {});
         service = createPasskeyService();
 
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         browser.runtime.sendMessage.mockImplementation(async () => ({
             type: 'success',
             passkeys: [{ id: 'test-passkey' }],
         }));
 
-        notification = { open: jest.fn(), close: jest.fn() } as any;
+        notification = { open: vi.fn(), close: vi.fn() } as any;
         settings = { passkeys: { get: true, create: true } } as any;
         features = { Passkeys: true } as any;
 
@@ -62,9 +64,9 @@ describe('PasskeyService', () => {
     afterEach(() => {
         postMessage.mockRestore();
         CSContext.clear();
-        jest.clearAllTimers();
-        jest.useRealTimers();
-        jest.clearAllMocks();
+        vi.clearAllTimers();
+        vi.useRealTimers();
+        vi.clearAllMocks();
         clearBrowserMocks();
     });
 
@@ -101,17 +103,17 @@ describe('PasskeyService', () => {
             expect(postMessage).toHaveBeenCalledWith(createBridgeAbortSignal(prevToken));
             expect(service.state.get('requestToken')).toBe(nextToken);
 
-            await jest.advanceTimersByTimeAsync(50);
+            await vi.advanceTimersByTimeAsync(50);
             await expect(approval).resolves.toBeUndefined();
         });
 
         test('should wait for context ready', async () => {
             state.ready = false;
             const approval = service.approve(uniqueId(), () => true);
-            await jest.advanceTimersByTimeAsync(50);
+            await vi.advanceTimersByTimeAsync(50);
 
             state.ready = true;
-            await jest.advanceTimersByTimeAsync(50);
+            await vi.advanceTimersByTimeAsync(50);
             await expect(approval).resolves.toBeUndefined();
         });
 
@@ -145,7 +147,7 @@ describe('PasskeyService', () => {
                     new Promise(async (_, rej) => {
                         service.approve(uniqueId(), () => true).catch(rej);
                         service.state.set('requestToken', uniqueId());
-                        await jest.advanceTimersByTimeAsync(50);
+                        await vi.advanceTimersByTimeAsync(50);
                     }),
                 false
             );
@@ -247,7 +249,7 @@ describe('PasskeyService', () => {
                 const token2 = uniqueId();
 
                 await service.handler(createPasskeyCreateRequest(token1));
-                jest.advanceTimersByTime(500);
+                vi.advanceTimersByTime(500);
 
                 await service.handler(createPasskeyCreateRequest(token2));
                 expect(service.state.get('requestToken')).toBe(token2);

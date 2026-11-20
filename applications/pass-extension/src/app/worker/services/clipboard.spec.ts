@@ -1,23 +1,25 @@
+import type { MockedFunction } from 'vitest';
+
 import { sendSafariMessage as sendSafari } from '../../../lib/utils/safari';
 import { withOffscreenDocument as withOffscreen } from '../offscreen/offscreen.utils';
 import { extensionClipboardApi } from './clipboard';
 
-jest.mock('../channel');
+vi.mock('../channel');
 
 const setBuildTarget = (value: string) => ((global as any).BUILD_TARGET = value);
 
-jest.mock('../offscreen/offscreen.utils');
-jest.mock('../../../lib/message/send-message');
-jest.mock('../../../lib/utils/safari');
+vi.mock('../offscreen/offscreen.utils');
+vi.mock('../../../lib/message/send-message');
+vi.mock('../../../lib/utils/safari');
 
-const navigatorClipboard = { readText: jest.fn(), writeText: jest.fn() };
+const navigatorClipboard = { readText: vi.fn(), writeText: vi.fn() };
 
-const withOffscreenDocument = withOffscreen as jest.MockedFn<typeof withOffscreen>;
-const sendSafariMessage = sendSafari as jest.MockedFn<typeof sendSafari>;
+const withOffscreenDocument = withOffscreen as MockedFunction<typeof withOffscreen>;
+const sendSafariMessage = sendSafari as MockedFunction<typeof sendSafari>;
 
 describe('extensionClipboardApi', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         delete (global as any).navigator;
         setBuildTarget('firefox');
     });

@@ -20,9 +20,9 @@ import { SESSION_RESUME_ALARM } from './auth.alarms';
 import type { ExtensionAuthService } from './auth.service';
 import { createAuthService } from './auth.service';
 
-jest.mock('../../channel');
+vi.mock('../../channel');
 
-const { default: WorkerMessageBroker } = jest.requireMock('../../channel') as typeof ChannelMock;
+const { default: WorkerMessageBroker } = (await import('../../channel')) as typeof ChannelMock;
 
 /** Drive `browser.alarms.get` based on the most recent `create`/`clear` calls so
  * the real `AuthAlarms` instance behaves like a stateful scheduler. This is the
@@ -85,20 +85,20 @@ describe('Auth integration', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         clearBrowserMocks();
         alarmState = wireTestAlarm();
 
-        api = jest.fn() as unknown as Api;
-        api.subscribe = jest.fn();
-        api.idle = jest.fn().mockResolvedValue(undefined);
+        api = vi.fn() as unknown as Api;
+        api.subscribe = vi.fn();
+        api.idle = vi.fn().mockResolvedValue(undefined);
         authStore = createAuthStore(createMemoryStore());
 
         connectivity = {
             online: true,
             status: ConnectivityStatus.ONLINE,
-            check: jest.fn().mockResolvedValue(undefined),
-            subscribe: jest.fn((sub) => {
+            check: vi.fn().mockResolvedValue(undefined),
+            subscribe: vi.fn((sub) => {
                 connectivitySubscriber = sub;
                 return () => {};
             }),
@@ -107,31 +107,31 @@ describe('Auth integration', () => {
         ctx = {
             booted: false,
             status: AppStatus.IDLE,
-            getState: jest.fn(() => ({ status: ctx.status, booted: ctx.booted })),
-            setStatus: jest.fn((value: AppStatus) => (ctx.status = value)),
-            setBooted: jest.fn((value: boolean) => (ctx.booted = value)),
+            getState: vi.fn(() => ({ status: ctx.status, booted: ctx.booted })),
+            setStatus: vi.fn((value: AppStatus) => (ctx.status = value)),
+            setBooted: vi.fn((value: boolean) => (ctx.booted = value)),
             service: {
-                activation: { boot: jest.fn() },
-                apiProxy: { clear: jest.fn() },
-                autofill: { clear: jest.fn() },
+                activation: { boot: vi.fn() },
+                apiProxy: { clear: vi.fn() },
+                autofill: { clear: vi.fn() },
                 connectivity,
-                featureFlags: { resolve: jest.fn().mockResolvedValue({ features: {}, variants: {} }) },
-                formTracker: { clear: jest.fn() },
-                logger: { clear: jest.fn() },
-                nativeMessaging: { disconnect: jest.fn() },
-                settings: { clear: jest.fn() },
-                spotlight: { reset: jest.fn() },
+                featureFlags: { resolve: vi.fn().mockResolvedValue({ features: {}, variants: {} }) },
+                formTracker: { clear: vi.fn() },
+                logger: { clear: vi.fn() },
+                nativeMessaging: { disconnect: vi.fn() },
+                settings: { clear: vi.fn() },
+                spotlight: { reset: vi.fn() },
                 storage: {
-                    local: { setItem: jest.fn(), removeItem: jest.fn(), clear: jest.fn() },
+                    local: { setItem: vi.fn(), removeItem: vi.fn(), clear: vi.fn() },
                     session: {
-                        getItems: jest.fn().mockResolvedValue({}),
-                        setItems: jest.fn(),
-                        removeItems: jest.fn(),
-                        clear: jest.fn(),
+                        getItems: vi.fn().mockResolvedValue({}),
+                        setItems: vi.fn(),
+                        removeItems: vi.fn(),
+                        clear: vi.fn(),
                     },
                 },
-                store: { dispatch: jest.fn() },
-                telemetry: { stop: jest.fn() },
+                store: { dispatch: vi.fn() },
+                telemetry: { stop: vi.fn() },
             },
         } as any;
         WorkerContext.set(ctx);

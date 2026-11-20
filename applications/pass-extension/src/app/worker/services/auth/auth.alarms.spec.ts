@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import {
     SESSION_RESUME_MAX_RETRIES,
     SESSION_RESUME_TIMEOUT_MIN,
@@ -19,7 +21,7 @@ const setPendingAlarm = (pending: boolean) => {
 };
 
 const expectScheduledAt = (callIndex: number, retryIdx: number) => {
-    const calls = (browser.alarms.create as jest.Mock).mock.calls;
+    const calls = (browser.alarms.create as Mock).mock.calls;
     expect(calls[callIndex]).toEqual([SESSION_RESUME_ALARM, { when: (NOW_S + getAutoResumeDelay(retryIdx)) * 1_000 }]);
 };
 
@@ -28,8 +30,8 @@ describe('AuthAlarms', () => {
     let store: Record<string, any>;
 
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(NOW_MS);
+        vi.useFakeTimers();
+        vi.setSystemTime(NOW_MS);
         clearBrowserMocks();
 
         setPendingAlarm(false);
@@ -37,15 +39,15 @@ describe('AuthAlarms', () => {
         store = {};
 
         const sessionStorage = {
-            getItems: jest.fn(async (keys: string[]) => Object.fromEntries(keys.map((k) => [k, store[k]]))),
-            setItems: jest.fn(async (items) => Object.assign(store, items)),
+            getItems: vi.fn(async (keys: string[]) => Object.fromEntries(keys.map((k) => [k, store[k]]))),
+            setItems: vi.fn(async (items) => Object.assign(store, items)),
         };
 
         WorkerContext.set({ service: { storage: { session: sessionStorage } } } as any);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         WorkerContext.clear();
     });
 
@@ -109,7 +111,7 @@ describe('AuthAlarms', () => {
             for (let i = 0; i < SESSION_RESUME_MAX_RETRIES + 2; i++) await alarms.scheduleAutoResume({ extend: false });
 
             /** Past the max throttle window: gate would be false unless the next call refreshes `lastSetAt`. */
-            jest.setSystemTime(epochToMs(NOW_S + getAutoResumeDelay(SESSION_RESUME_MAX_RETRIES) + 10));
+            vi.setSystemTime(epochToMs(NOW_S + getAutoResumeDelay(SESSION_RESUME_MAX_RETRIES) + 10));
             expect(await alarms.isResumeThrottled()).toBe(false);
 
             await alarms.scheduleAutoResume({ extend: false });
@@ -125,7 +127,7 @@ describe('AuthAlarms', () => {
                 }
 
                 /** Now drive real attempts: the full MAX budget must still be available. */
-                (browser.alarms.create as jest.Mock).mockClear();
+                (browser.alarms.create as Mock).mockClear();
                 for (let i = 0; i < SESSION_RESUME_MAX_RETRIES + 3; i++) {
                     setPendingAlarm(false);
                     await alarms.scheduleAutoResume({ extend: false });
@@ -145,7 +147,7 @@ describe('AuthAlarms', () => {
                     await alarms.scheduleAutoResume({ extend: true });
                 }
 
-                const calls = (browser.alarms.create as jest.Mock).mock.calls;
+                const calls = (browser.alarms.create as Mock).mock.calls;
                 expect(calls).toHaveLength(6);
                 /** First schedule at delay(0), the rest at delay(1). */
                 expectScheduledAt(0, 0);
@@ -231,13 +233,13 @@ describe('AuthAlarms', () => {
         test('should return true within the current backoff slot after `scheduleAutoResume`', async () => {
             /** One `extend: false` advances count to 1 → window is getAutoResumeDelay(1). */
             await alarms.scheduleAutoResume({ extend: false });
-            jest.setSystemTime(epochToMs(NOW_S + getAutoResumeDelay(1) - 1));
+            vi.setSystemTime(epochToMs(NOW_S + getAutoResumeDelay(1) - 1));
             expect(await alarms.isResumeThrottled()).toBe(true);
         });
 
         test('should return false past the current backoff slot when no alarm pending', async () => {
             await alarms.scheduleAutoResume({ extend: false });
-            jest.setSystemTime(epochToMs(NOW_S + getAutoResumeDelay(1) + 1));
+            vi.setSystemTime(epochToMs(NOW_S + getAutoResumeDelay(1) + 1));
             expect(await alarms.isResumeThrottled()).toBe(false);
         });
 
@@ -245,9 +247,9 @@ describe('AuthAlarms', () => {
             for (let i = 0; i < SESSION_RESUME_MAX_RETRIES; i++) await alarms.scheduleAutoResume({ extend: false });
             /** At MAX retries the slot delay clamps to its terminal value. */
             const maxWindow = getAutoResumeDelay(SESSION_RESUME_MAX_RETRIES);
-            jest.setSystemTime(epochToMs(NOW_S + maxWindow - 1));
+            vi.setSystemTime(epochToMs(NOW_S + maxWindow - 1));
             expect(await alarms.isResumeThrottled()).toBe(true);
-            jest.setSystemTime(epochToMs(NOW_S + maxWindow + 1));
+            vi.setSystemTime(epochToMs(NOW_S + maxWindow + 1));
             expect(await alarms.isResumeThrottled()).toBe(false);
         });
     });

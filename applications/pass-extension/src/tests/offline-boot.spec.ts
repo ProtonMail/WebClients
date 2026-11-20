@@ -1,6 +1,3 @@
-/**
- * @jest-environment-options {"abortSignal": true}
- */
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
@@ -19,7 +16,7 @@ import {
 import { SESSION_RESUME_ALARM } from '../app/worker/services/auth/auth.alarms';
 import { setupAuthWorker } from './auth';
 
-jest.mock('../app/worker/channel');
+vi.mock('../app/worker/channel');
 
 describe('Offline boot on the real worker store', () => {
     const backend = createTestBackend();
@@ -58,11 +55,16 @@ describe('Offline boot on the real worker store', () => {
 
     let clock = Date.now();
 
-    beforeEach(() => jest.useFakeTimers({ now: clock, doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] }));
+    beforeEach(() =>
+        vi.useFakeTimers({
+            now: clock,
+            toFake: ['setTimeout', 'clearTimeout', 'setInterval', 'clearInterval', 'Date', 'performance'],
+        })
+    );
 
     afterEach(() => {
         clock = Date.now();
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     test('the offline password boots offline with the cached vault and items', async () => {
@@ -100,7 +102,7 @@ describe('Offline boot on the real worker store', () => {
 
         backend.reset();
         backend.use(...getSessionResumeHandlers(persisted));
-        await jest.advanceTimersByTimeAsync(120_000);
+        await vi.advanceTimersByTimeAsync(120_000);
         await alarms.fire(SESSION_RESUME_ALARM);
         await settleUntil(() => PassCrypto.ready);
 
