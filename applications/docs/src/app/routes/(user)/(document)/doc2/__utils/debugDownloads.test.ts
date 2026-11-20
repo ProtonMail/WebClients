@@ -1,5 +1,5 @@
 import { CryptoProxy } from '@protontech/crypto'
-import type { DebugArtifacts, DecryptedDocumentUpdate } from '@proton-docs/realtime-sdk'
+import type { DebugArtifacts, DecryptedDocumentUpdate, HistoryEntry } from '@proton-docs/realtime-sdk'
 import JSZip from 'jszip'
 
 import { getAllUpdatesZip, getBaseCommitZip, getLogsZip } from './debugDownloads'
@@ -18,10 +18,10 @@ beforeAll(async () => {
 afterAll(() => CryptoProxy.releaseEndpoint())
 
 describe('debug downloads', () => {
-  test('all updates: one `${timestamp}-${sha1}.bin` file per recorded update, in order', async () => {
+  test('all updates: one `${timestamp}-${sha1}.bin` file per History Log entry, in order', async () => {
     const zip = await getAllUpdatesZip([
-      { origin: 'baseState', timestamp: 100, content: new Uint8Array([1, 2, 3]) },
-      { origin: 'sent', timestamp: 200, content: new Uint8Array([4]) },
+      historyEntry('u-1', 'baseState', 100, new Uint8Array([1, 2, 3])),
+      historyEntry('u-2', 'sent', 200, new Uint8Array([4])),
     ])
 
     expect(await filesOf(zip)).toEqual([
@@ -70,4 +70,13 @@ describe('debug downloads', () => {
 
 function decrypted(content: Uint8Array<ArrayBuffer>, timestamp: number) {
   return { content, timestamp, authorAddress: 'author@example.com' } as DecryptedDocumentUpdate
+}
+
+function historyEntry(
+  uuid: string,
+  origin: HistoryEntry['origin'],
+  timestamp: number,
+  content: Uint8Array<ArrayBuffer>,
+): HistoryEntry {
+  return { uuid, origin, timestamp, authorAddress: 'author@example.com', content }
 }

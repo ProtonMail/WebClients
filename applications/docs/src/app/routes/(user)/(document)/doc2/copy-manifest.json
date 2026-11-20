@@ -22,7 +22,7 @@
     "source": "applications/docs/src/app/components/document/DocumentViewer/DebugMenu.tsx",
     "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
     "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
-    "notes": "The menu's layout, items and downloads, on the SDK session and the UpdateRecorder. Commit with RTS, Close Connection and Create Initial Commit left out: the SDK has no API for them."
+    "notes": "The menu's layout, items and downloads, on the SDK session and its History Log. Commit with RTS, Close Connection and Create Initial Commit left out: the SDK has no API for them."
   },
   {
     "doc2": "__components/DocumentErrorFallback.tsx",
@@ -294,16 +294,6 @@
     "notes": "No version history for an empty log; the entries come from the session's History Log instead of the base commit and the controller's own list."
   },
   {
-    "doc2": "__utils/UpdateRecorder.ts",
-    "doc2Symbol": "OWN_UPDATES_WINDOW_MS",
-    "kind": "mirror",
-    "source": "packages/docs-core/lib/Services/Websockets/Debouncer/UpdateDebouncer.ts",
-    "sourceSymbol": "SINGLE_PLAYER_DEBOUNCE_PERIOD",
-    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
-    "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
-    "notes": "The 2.5 s window doc2's own updates are merged into, so the recorded timeline has /doc's granularity."
-  },
-  {
     "doc2": "__utils/VersionHistoryBatch.ts",
     "kind": "adaptation",
     "source": "packages/docs-core/lib/VersionHistory/VersionHistoryBatch.ts",
@@ -346,7 +336,7 @@
     "sourceSymbol": "getAllUpdatesAsZip",
     "sourceCommit": "2022294005602363e784246bae18c436aaf14a6e",
     "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
-    "notes": "The zip of every update and its file names, from the UpdateRecorder's plaintext updates; no download of its own."
+    "notes": "The zip of every update and its file names, from the session's History Log, one file per document update; no download of its own."
   },
   {
     "doc2": "__utils/debugDownloads.ts",

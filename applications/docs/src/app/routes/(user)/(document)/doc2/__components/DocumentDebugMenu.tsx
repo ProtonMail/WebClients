@@ -15,20 +15,16 @@ import { useApplication } from '~/utils/application-context'
 
 import type { EditorInvoker } from '../__utils/EditorInvoker'
 import { downloadLogs, getAllUpdatesZip, getBaseCommitZip } from '../__utils/debugDownloads'
-import type { UpdateRecorder } from '../__utils/UpdateRecorder'
 
 const UpdateReplayTool = lazy(() => import('./UpdateReplayTool'))
 
 export type DocumentDebugMenuProps = {
-  session: Pick<Session, 'config' | 'squash' | 'exportDebugArtifacts' | 'getBaseState'>
+  session: Pick<Session, 'config' | 'squash' | 'exportDebugArtifacts' | 'getBaseState' | 'getHistory' | 'sendUpdate'>
   snapshot: SessionSnapshot
   editorInvoker: Pick<
     EditorInvoker,
     'getClientId' | 'getYDocAsJSON' | 'getCurrentEditorState' | 'toggleDebugTreeView' | 'receiveMessage'
   >
-  recorder: UpdateRecorder
-  /** Sends an update as the user's edit, recording it as the editor's own are */
-  sendUpdate: (update: Uint8Array<ArrayBuffer>) => void
 }
 
 type SquashState = 'squashing' | 'squashed' | { nothingToMerge: number } | { failed: string }
@@ -44,7 +40,7 @@ function isWorthSquashing(updateCount: number) {
  * the engineers who turn debug mode on. It reads the document only on a click, and logs none of it. /doc's Commit with
  * RTS, Close Connection and Create Initial Commit are left out: the SDK has no API for them.
  */
-export function DocumentDebugMenu({ session, snapshot, editorInvoker, recorder, sendUpdate }: DocumentDebugMenuProps) {
+export function DocumentDebugMenu({ session, snapshot, editorInvoker }: DocumentDebugMenuProps) {
   const { logger } = useApplication()
   const [isOpen, setIsOpen] = useState(false)
   const [editorClientId, setEditorClientId] = useState<number>()
@@ -101,7 +97,7 @@ export function DocumentDebugMenu({ session, snapshot, editorInvoker, recorder, 
           <UpdateReplayTool
             onClose={() => setShowUpdateReplayTool(false)}
             editorInvoker={editorInvoker}
-            persistUpdate={sendUpdate}
+            persistUpdate={(update) => session.sendUpdate(update)}
           />
         </Suspense>
       )}
@@ -159,7 +155,7 @@ export function DocumentDebugMenu({ session, snapshot, editorInvoker, recorder, 
           <Button
             size="small"
             onClick={logFailure(async () =>
-              downloadFile(await getAllUpdatesZip(recorder.getUpdates()), 'all-updates.zip'),
+              downloadFile(await getAllUpdatesZip(session.getHistory()), 'all-updates.zip'),
             )}
           >
             Download All Updates as ZIP

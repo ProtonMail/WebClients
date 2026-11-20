@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 
 import { useConfig } from '@proton/app-context/useConfig'
 import { useGetUserSettings } from '@proton/account/userSettings/hooks'
@@ -35,7 +35,6 @@ import { useRealtimeClient } from '../__utils/useRealtimeClient'
 import { useRetryOnActivity } from '../__utils/useRetryOnActivity'
 import { useSessionNotices } from '../__utils/useSessionNotices'
 import { useStopFollowUps } from '../__utils/useStopFollowUps'
-import { useUpdateRecorder } from '../__utils/useUpdateRecorder'
 import { BootstrapErrorPage } from './BootstrapErrorPage'
 import { DocumentDebugMenu } from './DocumentDebugMenu'
 import { DocumentHeaderV2 } from './DocumentHeaderV2'
@@ -107,7 +106,6 @@ export function DocumentViewerV2({
   )
   const fetchImage = useEvent((url: string) => fetchExternalImageAsBase64(url, { apiUrl: API_URL, uid: UID }))
   const onPresenceUpdate = useEvent((update: Uint8Array<ArrayBuffer>) => receivePresenceFromEditor(update))
-  const onUpdateSent = useEvent((update: Uint8Array<ArrayBuffer>) => recorder?.recordSent(update))
   // The viewer is keyed by the document, so these never change for it
   const [loaderDeps] = useState<LoaderDeps>(() => ({
     client,
@@ -123,7 +121,6 @@ export function DocumentViewerV2({
       showModal: onShowModal,
       onFileMenuAction,
       onPresenceUpdate,
-      onUpdateSent,
       fetchExternalImageAsBase64: fetchImage,
       logger,
     },
@@ -200,14 +197,6 @@ export function DocumentViewerV2({
   useLeaveWarning(session)
   useEditorBasicsInSync(exportInvoker, { isDarkMode, userName })
   const receivePresenceFromEditor = usePresenceBridge(session, editorInvoker)
-  const recorder = useUpdateRecorder(session)
-  const sendAndRecordUpdate = useCallback(
-    (update: Uint8Array<ArrayBuffer>) => {
-      session?.sendUpdate(update)
-      recorder?.recordSent(update)
-    },
-    [recorder, session],
-  )
 
   useEffect(() => {
     if (downloadOnOpen && exportInvoker && node) {
@@ -274,14 +263,8 @@ export function DocumentViewerV2({
           {waitingForActivity && <IdleActivityCatcher />}
         </div>
         {revealed && <WordCountOverlay wordCount={wordCount} />}
-        {isDebugMode && session && snapshot && exportInvoker && recorder && (
-          <DocumentDebugMenu
-            session={session}
-            snapshot={snapshot}
-            editorInvoker={exportInvoker}
-            recorder={recorder}
-            sendUpdate={sendAndRecordUpdate}
-          />
+        {isDebugMode && session && snapshot && exportInvoker && (
+          <DocumentDebugMenu session={session} snapshot={snapshot} editorInvoker={exportInvoker} />
         )}
         {modal}
         {historyModal}

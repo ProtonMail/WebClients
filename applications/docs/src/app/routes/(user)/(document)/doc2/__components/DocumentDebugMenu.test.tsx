@@ -3,13 +3,12 @@ import userEvent from '@testing-library/user-event'
 
 import { CryptoProxy } from '@protontech/crypto'
 import { SquashError, version } from '@proton-docs/realtime-sdk'
-import type { DebugArtifacts, SquashErrorReason } from '@proton-docs/realtime-sdk'
+import type { DebugArtifacts, HistoryEntry, SquashErrorReason } from '@proton-docs/realtime-sdk'
 import JSZip from 'jszip'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 
 import { createFakeSession } from '../__utils/createFakeSession'
-import { UpdateRecorder } from '../__utils/UpdateRecorder'
 import { DocumentDebugMenu, type DocumentDebugMenuProps } from './DocumentDebugMenu'
 
 const mockDownloadFile = jest.fn()
@@ -30,6 +29,11 @@ const BASE_COMMIT: DebugArtifacts['baseCommit'] = {
     },
   ],
 }
+const HISTORY: HistoryEntry[] = [
+  { uuid: 'u-1', origin: 'baseState', timestamp: 100, authorAddress: 'a@example.com', content: new Uint8Array([1]) },
+  { uuid: 'u-2', origin: 'sent', timestamp: 500, authorAddress: 'a@example.com', content: new Uint8Array([4]) },
+  { uuid: 'u-3', origin: 'sent', timestamp: 600, authorAddress: 'a@example.com', content: new Uint8Array([5]) },
+]
 
 function renderMenu({ baseUpdateCount = 3 } = {}) {
   const fake = createFakeSession({ status: { name: 'connected' }, delivery: 'pending', baseCommitId: 'commit-1' })
@@ -37,6 +41,7 @@ function renderMenu({ baseUpdateCount = 3 } = {}) {
     commitId: 'commit-1',
     updates: Array.from({ length: baseUpdateCount }, () => BASE_COMMIT.updates[0].decrypted!),
   })
+  fake.mocks.getHistory.mockReturnValue(HISTORY)
   const session = Object.assign(fake.session, {
     config: { clientId: SESSION_CLIENT_ID },
     squash: jest.fn(async () => {}),
@@ -49,14 +54,10 @@ function renderMenu({ baseUpdateCount = 3 } = {}) {
     toggleDebugTreeView: jest.fn(async () => {}),
     receiveMessage: jest.fn(async () => {}),
   }
-  const recorder = new UpdateRecorder({ commitId: 'commit-1', updates: [] }, () => 500)
-  recorder.recordSent(new Uint8Array([4]))
   const props: DocumentDebugMenuProps = {
     session,
     snapshot: session.getSnapshot(),
     editorInvoker,
-    recorder,
-    sendUpdate: jest.fn(),
   }
   const application = {
     logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
@@ -64,7 +65,7 @@ function renderMenu({ baseUpdateCount = 3 } = {}) {
   render(<DocumentDebugMenu {...props} />, {
     wrapper: ({ children }) => <ApplicationProvider application={application}>{children}</ApplicationProvider>,
   })
-  return { session, editorInvoker, props, logger: application.logger }
+  return { session, mocks: fake.mocks, editorInvoker, logger: application.logger }
 }
 
 async function open() {
@@ -104,6 +105,7 @@ describe('DocumentDebugMenu', () => {
     expect(diagnostics).toHaveTextContent('Delivery: pending')
     expect(diagnostics).toHaveTextContent(`SDK version: ${version}`)
     expect(session.exportDebugArtifacts).not.toHaveBeenCalled()
+    expect(session.getHistory).not.toHaveBeenCalled()
   })
 
   test.each([
@@ -140,15 +142,20 @@ describe('DocumentDebugMenu', () => {
     expect(await filesOf(mockDownloadFile.mock.lastCall[0])).toEqual(['100.bin'])
   })
 
-  test('Download All Updates as ZIP downloads what the recorder holds', async () => {
-    renderMenu()
+  test("Download All Updates as ZIP reads the session's History Log only then, one file per entry", async () => {
+    const { session } = renderMenu()
     await open()
+    expect(session.getHistory).not.toHaveBeenCalled()
 
     await userEvent.click(screen.getByRole('button', { name: /Download All Updates as ZIP/ }))
 
     await waitFor(() => expect(mockDownloadFile).toHaveBeenCalledWith(expect.any(Blob), 'all-updates.zip'))
+    expect(session.getHistory).toHaveBeenCalledTimes(1)
+    // `sha1sum` of the bytes 01, 04 and 05
     expect(await filesOf(mockDownloadFile.mock.lastCall[0])).toEqual([
+      '100-bf8b4530d8d246dd74ac53a13471bba17941dff7.bin',
       '500-a42c6cf1de3abfdea9b95f34687cbbe92b9a7383.bin',
+      '600-8dc00598417d4eb788a77ac6ccef3cb484905d8b.bin',
     ])
   })
 
@@ -227,8 +234,8 @@ describe('DocumentDebugMenu', () => {
     expect(logger.error).toHaveBeenCalledWith('Debug menu squash failed', error)
   })
 
-  test('the Update Replay Tool applies the updates of a downloaded zip to the editor, and persists them when asked', async () => {
-    const { editorInvoker, props } = renderMenu()
+  test('the Update Replay Tool applies the updates of a downloaded zip to the editor, and sends them through the session when asked', async () => {
+    const { editorInvoker, mocks } = renderMenu()
     await open()
     await userEvent.click(screen.getByRole('button', { name: 'Open Update Replay Tool' }))
     const zip = new JSZip()
@@ -248,13 +255,13 @@ describe('DocumentDebugMenu', () => {
       [{ type: { wrapper: 'du' }, content: new Uint8Array([1]) }],
       [{ type: { wrapper: 'du' }, content: new Uint8Array([2]) }],
     ])
-    expect(props.sendUpdate).toHaveBeenCalledTimes(1)
-    expect(props.sendUpdate).toHaveBeenCalledWith(new Uint8Array([2]))
+    expect(mocks.sendUpdate).toHaveBeenCalledTimes(1)
+    expect(mocks.sendUpdate).toHaveBeenCalledWith(new Uint8Array([2]))
     expect(screen.getByRole('button', { name: 'Apply next update' })).toBeDisabled()
   })
 
   test('the Update Replay Tool counts and persists only what it applied before a failure, and logs the failure', async () => {
-    const { editorInvoker, props, logger } = renderMenu()
+    const { editorInvoker, mocks, logger } = renderMenu()
     const failure = new Error('Editor did not answer receiveMessage')
     editorInvoker.receiveMessage.mockResolvedValueOnce(undefined).mockRejectedValueOnce(failure)
     await open()
@@ -269,8 +276,8 @@ describe('DocumentDebugMenu', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Apply 3 updates' }))
 
     await screen.findByText('Applied: 1 / 3')
-    expect(props.sendUpdate).toHaveBeenCalledTimes(1)
-    expect(props.sendUpdate).toHaveBeenCalledWith(new Uint8Array([1]))
+    expect(mocks.sendUpdate).toHaveBeenCalledTimes(1)
+    expect(mocks.sendUpdate).toHaveBeenCalledWith(new Uint8Array([1]))
     expect(logger.error).toHaveBeenCalledWith('Update Replay Tool failed to apply an update', failure)
     expect(screen.getByRole('button', { name: 'Apply next update' })).toBeEnabled()
   })

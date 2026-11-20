@@ -61,13 +61,7 @@ export type LoaderDeps = {
   /** Gives the editor the theme, the user's settings and name, sent before it is initialized; never throws */
   sendEditorBasics: (editorInvoker: EditorInvoker) => void
   /** Stable, so that the bridge built with them is built once */
-  bridgeHandlers: Omit<
-    ClientHandlerDependencies,
-    'editorFrame' | 'sendUpdate' | 'onEditorError' | 'onEditorRendered'
-  > & {
-    /** An edit of the user's, once the session has it */
-    onUpdateSent: (update: Uint8Array<ArrayBuffer>) => void
-  }
+  bridgeHandlers: Omit<ClientHandlerDependencies, 'editorFrame' | 'sendUpdate' | 'onEditorError' | 'onEditorRendered'>
 }
 
 export type LoaderIO = {
@@ -280,16 +274,12 @@ class LoaderRun {
   async buildBridge(frame: Promise<HTMLIFrameElement>): Promise<EditorInvoker> {
     const editorFrame = await within(frame, EDITOR_FRAME_READY_TIMEOUT_MS, this.io.signal)
     const session = this.requireSession()
-    const { onUpdateSent, ...handlers } = this.deps.bridgeHandlers
     const bridge = new ClientEditorBridge(
       editorFrame,
       createClientHandler({
-        ...handlers,
+        ...this.deps.bridgeHandlers,
         editorFrame,
-        sendUpdate: (update) => {
-          session.sendUpdate(update)
-          onUpdateSent(update)
-        },
+        sendUpdate: (update) => session.sendUpdate(update),
         onEditorError: (error) => this.failEditor(error),
         onEditorRendered: () => {
           this.editorRendered = true
