@@ -382,4 +382,40 @@ describe('getAccountAppRoutes', () => {
             expect(getPasswordReminderKeywords(false)).toHaveLength(0);
         });
     });
+
+    describe('easy switch section', () => {
+        const defaultEntitlements = buildDefaultParams().entitlements;
+        const getAvailability = (overrides: Overrides) =>
+            getAccountAppRoutes(buildDefaultParams(overrides)).routes.easySwitch.available;
+
+        it('is hidden in Drive for a B2B user when the Drive import UI is on', () => {
+            expect(
+                getAvailability({
+                    app: APPS.PROTONDRIVE,
+                    entitlements: { ...defaultEntitlements, isB2B: true },
+                    flags: { isDriveEasySwitchNewUIEnabled: true },
+                })
+            ).toBe(false);
+        });
+
+        it('is shown in Drive for a non B2B user when the Drive import UI is on', () => {
+            expect(
+                getAvailability({
+                    app: APPS.PROTONDRIVE,
+                    entitlements: { ...defaultEntitlements, isB2B: false },
+                    flags: { isDriveEasySwitchNewUIEnabled: true },
+                })
+            ).toBe(true);
+        });
+
+        it('is shown in Mail for a B2B user', () => {
+            expect(
+                getAvailability({
+                    app: APPS.PROTONMAIL,
+                    entitlements: { ...defaultEntitlements, isB2B: true },
+                    flags: { isDriveEasySwitchNewUIEnabled: true },
+                })
+            ).toBe(true);
+        });
+    });
 });
