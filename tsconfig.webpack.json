@@ -7,6 +7,9 @@
         "types": ["node"]
     },
     "ts-node": {
-        "ignore": ["node_modules/(?!@proton)"]
+        "ignore": ["node_modules/(?!@proton|\\.pnpm/@protontech\\+proton-apps)"],
+        "moduleTypes": {
+            "**/@protontech/proton-apps/src/**": "cjs"
+        }
     }
 }

@@ -1,4 +1,5 @@
 import type { enums } from '@protontech/crypto';
+import { PROTON_APPS } from '@protontech/proton-apps/apps';
 
 import { Product } from './ProductEnum';
 import type { KeyGenConfig, KeyGenConfigV6 } from './interfaces/KeyGenConfig';
@@ -24,42 +25,40 @@ export const USERNAME_PLACEHOLDER = 'john.doe';
 export const NAME_PLACEHOLDER = 'Thomas A. Anderson';
 
 export const BRAND_NAME = 'Proton';
-export const MAIL_SHORT_APP_NAME = 'Mail';
-export const MAIL_APP_NAME = `${BRAND_NAME} ${MAIL_SHORT_APP_NAME}`;
+export const MAIL_SHORT_APP_NAME = PROTON_APPS.Mail.shortName;
+export const MAIL_APP_NAME = PROTON_APPS.Mail.name;
 export const CONTACTS_SHORT_APP_NAME = 'Contacts';
 export const CONTACTS_APP_NAME = `${BRAND_NAME} ${CONTACTS_SHORT_APP_NAME}`;
-export const CALENDAR_SHORT_APP_NAME = 'Calendar';
-export const CALENDAR_APP_NAME = `${BRAND_NAME} ${CALENDAR_SHORT_APP_NAME}`;
-export const DRIVE_SHORT_APP_NAME = 'Drive';
-export const DRIVE_APP_NAME = `${BRAND_NAME} ${DRIVE_SHORT_APP_NAME}`;
-export const PASS_SHORT_APP_NAME = 'Pass';
-export const PASS_APP_NAME = `${BRAND_NAME} ${PASS_SHORT_APP_NAME}`;
-export const VPN_SHORT_APP_NAME = 'VPN';
-export const VPN_APP_NAME = `${BRAND_NAME} ${VPN_SHORT_APP_NAME}`;
-export const DOCS_SHORT_APP_NAME = 'Docs';
-export const DOCS_APP_NAME = `${BRAND_NAME} ${DOCS_SHORT_APP_NAME}`;
+export const CALENDAR_SHORT_APP_NAME = PROTON_APPS.Calendar.shortName;
+export const CALENDAR_APP_NAME = PROTON_APPS.Calendar.name;
+export const DRIVE_SHORT_APP_NAME = PROTON_APPS.Drive.shortName;
+export const DRIVE_APP_NAME = PROTON_APPS.Drive.name;
+export const PASS_SHORT_APP_NAME = PROTON_APPS.Pass.shortName;
+export const PASS_APP_NAME = PROTON_APPS.Pass.name;
+export const VPN_SHORT_APP_NAME = PROTON_APPS.VPN.shortName;
+export const VPN_APP_NAME = PROTON_APPS.VPN.name;
+export const DOCS_SHORT_APP_NAME = PROTON_APPS.Docs.shortName;
+export const DOCS_APP_NAME = PROTON_APPS.Docs.name;
 const DOCS_EDITOR_SHORT_APP_NAME = `${DOCS_SHORT_APP_NAME} Editor`;
 const DOCS_EDITOR_APP_NAME = `${BRAND_NAME} ${DOCS_EDITOR_SHORT_APP_NAME}`;
-export const SHEETS_SHORT_APP_NAME = 'Sheets';
-export const SHEETS_APP_NAME = `${BRAND_NAME} ${SHEETS_SHORT_APP_NAME}`;
+export const SHEETS_SHORT_APP_NAME = PROTON_APPS.Sheets.shortName;
+export const SHEETS_APP_NAME = PROTON_APPS.Sheets.name;
 const SHEETS_EDITOR_SHORT_APP_NAME = `${SHEETS_SHORT_APP_NAME} Editor`;
 const SHEETS_EDITOR_APP_NAME = `${BRAND_NAME} ${SHEETS_EDITOR_SHORT_APP_NAME}`;
 const VERIFY_APP_NAME = 'Proton Verify';
-export const WALLET_SHORT_APP_NAME = 'Wallet';
-export const WALLET_APP_NAME = `${BRAND_NAME} ${WALLET_SHORT_APP_NAME}`;
-export const LUMO_SHORT_APP_NAME = 'Lumo';
-// Avoid knip warning of duplicated LUMO_SHORT_APP_NAME value
-export const LUMO_APP_NAME = `${LUMO_SHORT_APP_NAME}`;
+export const WALLET_SHORT_APP_NAME = PROTON_APPS.Wallet.shortName;
+export const WALLET_APP_NAME = PROTON_APPS.Wallet.name;
+export const LUMO_SHORT_APP_NAME = PROTON_APPS.Lumo.shortName;
+export const LUMO_APP_NAME = PROTON_APPS.Lumo.name;
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
-export const AUTHENTICATOR_SHORT_APP_NAME = 'Authenticator';
-export const AUTHENTICATOR_APP_NAME = `${BRAND_NAME} ${AUTHENTICATOR_SHORT_APP_NAME}`;
-export const MEET_SHORT_APP_NAME = 'Meet';
-export const MEET_APP_NAME = `${BRAND_NAME} ${MEET_SHORT_APP_NAME}`;
+export const AUTHENTICATOR_SHORT_APP_NAME = PROTON_APPS.Authenticator.shortName;
+export const AUTHENTICATOR_APP_NAME = PROTON_APPS.Authenticator.name;
+export const MEET_SHORT_APP_NAME = PROTON_APPS.Meet.shortName;
+export const MEET_APP_NAME = PROTON_APPS.Meet.name;
 const ACCOUNT_SHORT_APP_NAME = 'Account';
 export const ACCOUNT_APP_NAME = `${BRAND_NAME} ${ACCOUNT_SHORT_APP_NAME}`;
-const SPACES_SHORT_APP_NAME = 'Spaces';
-export const SPACES_APP_NAME = `${BRAND_NAME} ${SPACES_SHORT_APP_NAME}`;
+export const SPACES_APP_NAME = PROTON_APPS.Spaces.name;
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -92,6 +91,8 @@ interface AppConfiguration {
     subdomain: string;
     name: string;
     bareName: string;
+    altName?: string;
+    isNew?: boolean;
     clientID: string;
     windowsClientID?: string;
     macosClientID?: string;
@@ -137,9 +138,10 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONMAIL]: {
         publicPath: '',
-        subdomain: 'mail',
+        subdomain: PROTON_APPS.Mail.subdomain,
         name: MAIL_APP_NAME,
         bareName: MAIL_SHORT_APP_NAME,
+        isNew: PROTON_APPS.Mail.isNew,
         clientID: 'web-mail',
         windowsClientID: 'windows-mail',
         macosClientID: 'macos-mail',
@@ -160,9 +162,10 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONDRIVE]: {
         publicPath: '/drive',
-        subdomain: 'drive',
+        subdomain: PROTON_APPS.Drive.subdomain,
         name: DRIVE_APP_NAME,
         bareName: DRIVE_SHORT_APP_NAME,
+        isNew: PROTON_APPS.Drive.isNew,
         clientID: 'web-drive',
         icon: 'brand-proton-drive',
         settingsSlug: 'drive',
@@ -170,9 +173,10 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONCALENDAR]: {
         publicPath: '/calendar',
-        subdomain: 'calendar',
+        subdomain: PROTON_APPS.Calendar.subdomain,
         name: CALENDAR_APP_NAME,
         bareName: CALENDAR_SHORT_APP_NAME,
+        isNew: PROTON_APPS.Calendar.isNew,
         clientID: 'web-calendar',
         windowsClientID: 'windows-mail',
         macosClientID: 'macos-mail',
@@ -183,9 +187,10 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONPASS]: {
         publicPath: '/pass',
-        subdomain: 'pass',
+        subdomain: PROTON_APPS.Pass.subdomain,
         name: PASS_APP_NAME,
         bareName: PASS_SHORT_APP_NAME,
+        isNew: PROTON_APPS.Pass.isNew,
         clientID: 'web-pass',
         windowsClientID: 'windows-pass',
         macosClientID: 'macos-pass',
@@ -219,6 +224,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: '',
         name: VPN_APP_NAME,
         bareName: VPN_SHORT_APP_NAME,
+        isNew: PROTON_APPS.VPN.isNew,
         clientID: 'web-vpn-settings',
         icon: 'brand-proton-vpn',
         settingsSlug: 'vpn',
@@ -246,9 +252,10 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONWALLET]: {
         publicPath: '',
-        subdomain: 'wallet',
+        subdomain: PROTON_APPS.Wallet.subdomain,
         name: WALLET_APP_NAME,
-        bareName: 'Wallet',
+        bareName: PROTON_APPS.Wallet.shortName,
+        isNew: PROTON_APPS.Wallet.isNew,
         clientID: 'web-wallet',
         icon: 'brand-proton',
         settingsSlug: 'wallet',
@@ -256,9 +263,10 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONDOCS]: {
         publicPath: '',
-        subdomain: 'docs',
+        subdomain: PROTON_APPS.Docs.subdomain,
         name: DOCS_APP_NAME,
         bareName: DOCS_SHORT_APP_NAME,
+        isNew: PROTON_APPS.Docs.isNew,
         clientID: 'web-docs',
         icon: 'brand-proton', // TODO: brand icon for Docs
         settingsSlug: 'docs',
@@ -276,9 +284,10 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONSHEETS]: {
         publicPath: '',
-        subdomain: 'sheets',
+        subdomain: PROTON_APPS.Sheets.subdomain,
         name: SHEETS_APP_NAME,
         bareName: SHEETS_SHORT_APP_NAME,
+        isNew: PROTON_APPS.Sheets.isNew,
         clientID: 'web-sheets',
         icon: 'brand-proton', // TODO: brand icon for Sheets
         settingsSlug: 'docs', // Sheets doesn't have its own settings
@@ -296,9 +305,11 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONLUMO]: {
         publicPath: '',
-        subdomain: 'lumo',
+        subdomain: PROTON_APPS.Lumo.subdomain,
         name: LUMO_APP_NAME,
         bareName: LUMO_SHORT_APP_NAME,
+        altName: PROTON_APPS.Lumo.altName,
+        isNew: PROTON_APPS.Lumo.isNew,
         clientID: 'web-lumo',
         windowsClientID: 'windows-lumo',
         macosClientID: 'macos-lumo',
@@ -312,6 +323,8 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: 'authenticator',
         name: AUTHENTICATOR_APP_NAME,
         bareName: AUTHENTICATOR_SHORT_APP_NAME,
+        altName: PROTON_APPS.Authenticator.altName,
+        isNew: PROTON_APPS.Authenticator.isNew,
         clientID: 'web-authenticator',
         windowsClientID: 'windows-authenticator',
         macosClientID: 'macos-authenticator',
@@ -322,9 +335,10 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONMEET]: {
         publicPath: '',
-        subdomain: 'meet',
+        subdomain: PROTON_APPS.Meet.subdomain,
         name: MEET_APP_NAME,
-        bareName: 'Meet',
+        bareName: PROTON_APPS.Meet.shortName,
+        isNew: PROTON_APPS.Meet.isNew,
         clientID: 'web-meet',
         windowsClientID: 'windows-meet',
         macosClientID: 'macos-meet',
@@ -335,9 +349,10 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONSPACES]: {
         publicPath: '',
-        subdomain: 'spaces',
+        subdomain: PROTON_APPS.Spaces.subdomain,
         name: SPACES_APP_NAME,
-        bareName: 'Spaces',
+        bareName: PROTON_APPS.Spaces.shortName,
+        isNew: PROTON_APPS.Spaces.isNew,
         clientID: 'web-spaces',
         windowsClientID: 'windows-spaces',
         macosClientID: 'macos-spaces',

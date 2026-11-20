@@ -13,6 +13,7 @@ const BASE_TRANSFORMED_MODULES = [
     '@proton/components',
     '@protontech/telemetry',
     '@protontech/logger',
+    '@protontech/proton-apps',
     '@protontech/mutex-browser',
     '@protontech/crypto',
     'openpgp',

@@ -245,6 +245,9 @@ catalogs:
     '@protontech/pass-rust-core':
       specifier: 2.3.4
       version: 2.3.4
+    '@protontech/proton-apps':
+      specifier: ^1.1.0
+      version: 1.1.0
     '@protontech/timezone-support':
       specifier: 2.2.0
       version: 2.2.0
@@ -4940,6 +4943,9 @@ importers:
       '@protontech/crypto':
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
+      '@protontech/proton-apps':
+        specifier: 'catalog:'
+        version: 1.1.0
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -10354,6 +10360,9 @@ importers:
       '@protontech/mutex-browser':
         specifier: ^1.0.5
         version: 1.0.5
+      '@protontech/proton-apps':
+        specifier: 'catalog:'
+        version: 1.1.0
       '@protontech/telemetry':
         specifier: ^2.4.0
         version: 2.4.0
@@ -17034,6 +17043,9 @@ packages:
 
   '@protontech/pass-rust-core@2.3.4':
     resolution: {integrity: sha512-mUWDTvBgds88n+jX/sVWdHABrFkzoGFjAEeaoOaJyhBaP3fo7S0FQ0ZqIzrfZxzJiyYkdPeiHF9sttypeaPDig==}
+
+  '@protontech/proton-apps@1.1.0':
+    resolution: {integrity: sha512-0cv4qcNAlthkoYEGTlXc3xSrVLkPrrq4pUZJIHBOsOvqdI13RgKtgdXbRAsF0iBgn4MmcBSj1h+qLmxSV4iV9g==}
 
   '@protontech/telemetry@2.4.0':
     resolution: {integrity: sha512-Tn9W5tMrTLXG8R9c+FRI0xRm+hI3AtQSCJW0JwCbZYmIF9cnSw0qB6BHiO3LhsP2mPoWbqSBGqyEiDIuddusBA==}
@@ -34916,6 +34928,8 @@ snapshots:
       '@openpgp/web-stream-tools': 0.3.1(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
 
   '@protontech/pass-rust-core@2.3.4': {}
+
+  '@protontech/proton-apps@1.1.0': {}
 
   '@protontech/telemetry@2.4.0': {}
 

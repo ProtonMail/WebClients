@@ -1,17 +1,8 @@
-import { getAppShortName } from '@proton/shared/lib/apps/helper';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS_CONFIGURATION, type APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import Logo from '../../components/logo/Logo';
 import NewBadge from '../../components/newBadge/NewBadge';
-
-const NEW_BADGE_APPS: APP_NAMES[] = [
-    APPS.PROTONLUMO,
-    APPS.PROTONMEET,
-    APPS.PROTONSHEETS,
-    APPS.PROTONAUTHENTICATOR,
-    APPS.PROTONSPACES,
-];
 
 interface ProductIconProps {
     appToLinkTo: APP_NAMES;
@@ -20,15 +11,8 @@ interface ProductIconProps {
 }
 
 const ProductIcon = ({ appToLinkTo, current, hideName }: ProductIconProps) => {
-    let appToLinkToName = getAppShortName(appToLinkTo);
-
-    if (appToLinkTo === APPS.PROTONLUMO) {
-        appToLinkToName = `${appToLinkToName} AI`;
-    }
-
-    if (appToLinkTo === APPS.PROTONAUTHENTICATOR) {
-        appToLinkToName = 'Auth';
-    }
+    const { altName, bareName, isNew } = APPS_CONFIGURATION[appToLinkTo];
+    const appToLinkToName = altName ?? bareName;
 
     return (
         <>
@@ -37,7 +21,7 @@ const ProductIcon = ({ appToLinkTo, current, hideName }: ProductIconProps) => {
                 style={{ '--w-custom': '3.25rem', '--h-custom': '3.25rem' }}
             >
                 <Logo appName={appToLinkTo} variant="glyph-only" className="shrink-0" size={9} />
-                {NEW_BADGE_APPS.includes(appToLinkTo) ? (
+                {isNew ? (
                     <span className="apps-dropdown-new-badge absolute">
                         <NewBadge />
                     </span>

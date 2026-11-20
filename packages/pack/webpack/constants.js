@@ -1,6 +1,7 @@
 const TRANSPILE_NODE_MODULES = [
     '@protontech/crypto',
     '@protontech/logger',
+    '@protontech/proton-apps',
     'proton-mail',
     '@proton/pack',
     '@proton/shared',
