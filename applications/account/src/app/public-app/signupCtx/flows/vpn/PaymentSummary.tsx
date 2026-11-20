@@ -7,22 +7,21 @@ import Price from '@proton/components/components/price/Price';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Time from '@proton/components/components/time/Time';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers/getTotalBillingText';
-import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
+import type { PaymentsContextOptimisticType } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { APPS } from '@proton/shared/lib/constants';
-import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import type { OptimisticOptions } from '../single-signup-v2/interface';
+import type { OptimisticOptions } from '../../../single-signup-v2/interface';
 import AddonSummary from './AddonSummary';
 import SaveLabel2 from './SaveLabel2';
 import type { PlanInformation } from './getPlanInformation';
-import type { VPNSignupModel } from './interface';
 
 const TrialSummary = ({ loading, options }: { loading: boolean; options: OptimisticOptions }) => {
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
@@ -49,7 +48,10 @@ const TrialSummary = ({ loading, options }: { loading: boolean; options: Optimis
     );
 };
 interface Props {
-    model: VPNSignupModel;
+    plansMap: PlansMap;
+    /** The prices aren't loaded yet */
+    initialLoading: boolean;
+    couponConfig: PaymentsContextOptimisticType['couponConfig'];
     options: OptimisticOptions & { plan: Plan };
     loadingPaymentDetails: boolean;
     giftCode: ReactNode;
@@ -57,16 +59,18 @@ interface Props {
     upsellToggle: ReactNode;
 }
 
-const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planInformation, upsellToggle }: Props) => {
-    const initialLoading = model.loadingDependencies;
+const PaymentSummary = ({
+    plansMap,
+    initialLoading,
+    couponConfig,
+    options,
+    loadingPaymentDetails,
+    giftCode,
+    planInformation,
+    upsellToggle,
+}: Props) => {
     const loading = loadingPaymentDetails || initialLoading;
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
-
-    const couponConfig = useCouponConfig({
-        planIDs: options.planIDs,
-        plansMap: model.plansMap,
-        checkResult: model.subscriptionData.checkResult,
-    });
 
     const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
@@ -74,7 +78,7 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
     const checkoutView = createCheckoutView(
         {
             planIDs: options.planIDs,
-            plansMap: model.plansMap,
+            plansMap,
             checkResult: options.checkResult,
             isTrial,
             couponConfig,

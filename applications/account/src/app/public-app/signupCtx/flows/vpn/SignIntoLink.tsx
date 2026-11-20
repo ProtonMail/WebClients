@@ -12,7 +12,7 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
-import type { OptimisticOptions } from '../single-signup-v2/interface';
+import type { OptimisticOptions } from '../../../single-signup-v2/interface';
 import type { Measure } from './interface';
 
 const SignInToLink = ({

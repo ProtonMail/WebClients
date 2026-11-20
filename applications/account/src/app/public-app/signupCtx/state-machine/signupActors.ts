@@ -1,4 +1,4 @@
-import { fromPromise } from 'xstate';
+import { fromCallback, fromPromise } from 'xstate';
 
 import { shouldTraceError } from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics/metricsInstance';
@@ -36,6 +36,7 @@ import { getClientType } from '../context/helpers/getClientType';
 import { handleCreateUser } from '../context/helpers/handleCreateUser';
 import {
     type SignupContextSubscriptionData,
+    handleSetPassword,
     handleSetupUser,
     handleSubscribeUser,
 } from '../context/helpers/handleSetupUser';
@@ -45,6 +46,8 @@ import type { SignupEvent } from './signupStateMachine';
 export interface AvailablePlan {
     planIDs: PlanIDs;
     cycle: Cycle;
+    /** Checked with this coupon (its automatic one when undefined) instead of the selected plan's */
+    coupon?: string;
 }
 
 export interface SignupPaymentsDataConfig {
@@ -57,6 +60,8 @@ export interface SignupPaymentsDataConfig {
      * Initially selected plan
      */
     plan: Optional<PlanToCheck, 'currency'>;
+    /** A VAT number from the signup link, which the first price check includes */
+    vatNumber?: string;
     telemetryContext: PaymentTelemetryContext;
 }
 
@@ -73,19 +78,23 @@ export interface SignupServices {
     unverifiedReferralData: ReferralData | undefined;
     hvMode: SignupHumanVerification | undefined;
     invite: SignupInviteParameters | undefined;
+    visitorId: string | undefined;
+    persistent: boolean;
+    /** The user is set up without keys: the flow sets them up with the password the user then chooses. */
+    deferKeySetup: boolean;
+    onSubscriptionPayment:
+        | ((status: 'success' | 'failure', subscriptionData: SignupContextSubscriptionData) => void)
+        | undefined;
     payments: PaymentsContextOptimisticType;
     onPaymentsInitialized: () => void;
     getKtActivation: () => Promise<KeyTransparencyActivation>;
     onPreSubmit: (() => Promise<void>) | undefined;
     onStartAuth: () => Promise<void>;
-    onLogin: (session: ResumedSessionResult) => Promise<OnLoginCallbackResult | void>;
+    /** Calls `listener` when the unauthenticated session expires; returns the unsubscribe. */
+    onSessionExpired: ((listener: () => void) => () => void) | undefined;
+    onLogin: (session: ResumedSessionResult, loginPassword: string) => Promise<OnLoginCallbackResult | void>;
     onReferralCheckError: (() => void) | undefined;
 }
-
-/**
- * Always persist new signups
- */
-const persistent = true;
 
 /**
  * Never trust new signups. This will prevent any trusted device data being stored on the device
@@ -137,6 +146,49 @@ export const createSignupActions = (services: SignupServices) => {
             operationMetrics[operation]?.increment({ status: 'failure' });
         },
         reportErrorPage: () => metrics.core_signup_ctx_errorPage_total.increment({}),
+        reportAccountCreation: (
+            _: unknown,
+            {
+                accountData,
+                subscriptionData,
+            }: { accountData: AccountData | undefined; subscriptionData: SignupContextSubscriptionData | undefined }
+        ) =>
+            sendSignupAccountCreationTelemetry({
+                flowId: services.flowId,
+                productIntent: services.app,
+                planIDs: subscriptionData?.planIDs || {},
+                currency: subscriptionData?.currency,
+                cycle: subscriptionData?.cycle,
+                signupType: accountData?.signupType,
+                // After discounts, like single-signup-v2, so this event's amount means the same in every flow
+                amount: subscriptionData?.checkResult.AmountDue,
+            }),
+        reportSubscription: (
+            _: unknown,
+            {
+                subscriptionData,
+                subscription,
+                user,
+            }: {
+                subscriptionData: SignupContextSubscriptionData | undefined;
+                subscription: SetupUserResult['subscription'];
+                user: SetupUserResult['user'] | undefined;
+            }
+        ) => {
+            if (!subscriptionData || !subscription || !user) {
+                return;
+            }
+            sendSignupSubscriptionTelemetryEvent({
+                flowId: services.flowId,
+                planIDs: subscriptionData.planIDs,
+                currency: subscription.Currency,
+                cycle: subscription.Cycle,
+                userCreateTime: user.CreateTime,
+                invoiceID: subscription.InvoiceID,
+                coupon: subscription.CouponCode,
+                amount: subscription.Amount,
+            });
+        },
     };
 };
 
@@ -155,8 +207,12 @@ const getPaymentToken = (subscriptionData: SignupContextSubscriptionData | undef
 export const createSignupActors = (services: SignupServices) => {
     const reporting = createSignupReporting(services);
     const { app, flowId, api, silentApi } = services;
+    const getTelemetryContext = () => services.paymentsDataConfig?.telemetryContext ?? 'other';
 
     return {
+        watchSession: fromCallback(({ sendBack }) =>
+            services.onSessionExpired?.(() => sendBack({ type: 'session.expired' }))
+        ),
         startAuth: fromPromise(() => services.onStartAuth()),
         loadDomains: fromPromise(async () => {
             const { Domains } = await silentApi<{ Domains: string[] }>(queryAvailableDomains('signup'));
@@ -179,11 +235,37 @@ export const createSignupActors = (services: SignupServices) => {
                 planToCheck: paymentsDataConfig?.plan,
                 paramCurrency: paymentsDataConfig?.plan?.currency,
                 availablePlans: paymentsDataConfig?.availablePlans,
+                vatNumber: paymentsDataConfig?.vatNumber,
                 telemetryContext: paymentsDataConfig?.telemetryContext ?? 'other',
                 product: app,
                 onChargeable: async () => {},
             });
             services.onPaymentsInitialized();
+        }),
+        /** Sets up the keys of a user set up with `deferKeySetup`, with the password they chose. */
+        setPassword: fromPromise<
+            { accountData: AccountData; setupResult: SetupUserResult },
+            { password: string; accountData: AccountData | undefined; setupResult: SetupUserResult | undefined }
+        >(async ({ input: { password, accountData, setupResult } }) => {
+            if (!accountData || !setupResult) {
+                throw new Error('Missing accountData or setup user data');
+            }
+            try {
+                const newSetupResult = await handleSetPassword({
+                    api: silentApi,
+                    accountData,
+                    setupResult,
+                    newPassword: password,
+                    persistent: services.persistent,
+                    trusted,
+                    productParam: app,
+                    keyTransparencyActivation: await services.getKtActivation(),
+                });
+                return { accountData: { ...accountData, password }, setupResult: newSetupResult };
+            } catch (error) {
+                reporting.traceError(error);
+                throw error;
+            }
         }),
         createUser: fromPromise<
             void,
@@ -206,7 +288,7 @@ export const createSignupActors = (services: SignupServices) => {
                     humanVerificationResult: undefined,
                     inviteData: undefined,
                     invite: services.invite,
-                    visitorId: undefined,
+                    visitorId: services.visitorId,
                     hvMode: services.hvMode,
                 });
 
@@ -223,8 +305,9 @@ export const createSignupActors = (services: SignupServices) => {
                 accountData: AccountData | undefined;
                 subscriptionData: SignupContextSubscriptionData | undefined;
                 referralData: ReferralData | undefined;
+                isRetry: boolean;
             }
-        >(async ({ input: { accountData, subscriptionData, referralData } }) => {
+        >(async ({ input: { accountData, subscriptionData, referralData, isRetry } }) => {
             if (!accountData) {
                 throw new Error('Missing accountData');
             }
@@ -239,8 +322,13 @@ export const createSignupActors = (services: SignupServices) => {
                 const planName = payments.selectedPlan.getPlanName();
                 const setupResult = await handleSetupUser({
                     accountData,
-                    persistent,
+                    persistent: services.persistent,
                     trusted,
+                    deferKeySetup: services.deferKeySetup,
+                    onPaymentSuccess: () =>
+                        subscriptionData && services.onSubscriptionPayment?.('success', subscriptionData),
+                    onPaymentFailure: () =>
+                        subscriptionData && services.onSubscriptionPayment?.('failure', subscriptionData),
                     api: silentApi,
                     keyTransparencyActivation: await services.getKtActivation(),
                     subscriptionData,
@@ -250,37 +338,14 @@ export const createSignupActors = (services: SignupServices) => {
                     referralRegistrationPlan:
                         planName === PLANS.FREE ? undefined : { name: planName, cycle: payments.selectedPlan.cycle },
                     build: services.build,
-                    telemetryContext: payments.telemetryContext,
+                    telemetryContext: getTelemetryContext(),
+                    isRetry,
                 });
 
                 /**
                  * Batch process can now resume since the auth cookie will have been set
                  */
                 metrics.startBatchingProcess();
-
-                sendSignupAccountCreationTelemetry({
-                    flowId,
-                    productIntent: app,
-                    planIDs: subscriptionData?.planIDs || {},
-                    currency: subscriptionData?.currency,
-                    cycle: subscriptionData?.cycle,
-                    signupType: accountData.signupType,
-                    amount: subscriptionData?.checkResult.Amount,
-                });
-
-                const { user, subscription } = setupResult;
-                if (subscriptionData && subscription) {
-                    sendSignupSubscriptionTelemetryEvent({
-                        flowId,
-                        planIDs: subscriptionData.planIDs,
-                        currency: subscription.Currency,
-                        cycle: subscription.Cycle,
-                        userCreateTime: user.CreateTime,
-                        invoiceID: subscription.InvoiceID,
-                        coupon: subscription.CouponCode,
-                        amount: subscription.Amount,
-                    });
-                }
 
                 metrics.core_signup_ctx_setupUser_total.increment({ status: 'success' });
 
@@ -301,22 +366,26 @@ export const createSignupActors = (services: SignupServices) => {
         }),
         /** Subscribes a user whose payment came after the setup. Before it, `setupUser` subscribes. */
         setupSubscription: fromPromise<
-            void,
+            SetupUserResult['subscription'],
             { subscriptionData: SignupContextSubscriptionData | undefined; setupResult: SetupUserResult | undefined }
         >(async ({ input: { subscriptionData, setupResult } }) => {
-            if (subscriptionData) {
-                await handleSubscribeUser(api, subscriptionData, {
-                    productParam: app,
-                    build: services.build,
-                    telemetryContext: services.payments.telemetryContext,
-                    userCurrency: undefined,
-                    subscription: undefined,
-                });
-            }
+            const subscription = subscriptionData
+                ? await handleSubscribeUser(silentApi, subscriptionData, {
+                      productParam: app,
+                      build: services.build,
+                      telemetryContext: getTelemetryContext(),
+                      userCurrency: undefined,
+                      subscription: undefined,
+                      onPaymentSuccess: () => services.onSubscriptionPayment?.('success', subscriptionData),
+                      onPaymentFailure: () => services.onSubscriptionPayment?.('failure', subscriptionData),
+                  })
+                : undefined;
 
             if (setupResult) {
                 await extendPersistedSessionOfflineBypass(setupResult.session.localID);
             }
+
+            return subscription;
         }),
         setOrgName: fromPromise<
             void,
@@ -326,8 +395,9 @@ export const createSignupActors = (services: SignupServices) => {
                 throw new Error('Missing accountData or setup user data');
             }
             try {
+                // Silent: each flow shows or ignores the failure
                 await handleSetupOrg({
-                    api,
+                    api: silentApi,
                     user: setupResult.user,
                     password: accountData.password,
                     keyPassword: setupResult.keyPassword,
@@ -387,37 +457,38 @@ export const createSignupActors = (services: SignupServices) => {
                 throw error;
             }
         }),
-        login: fromPromise<OnLoginCallbackResult | void, { setupResult: SetupUserResult | undefined }>(
-            async ({ input: { setupResult } }) => {
-                if (!setupResult) {
-                    throw new Error('Missing session');
-                }
-                try {
-                    /**
-                     * Ensure all metrics have been sent before login.
-                     * Gracefully handle error, but report to sentry
-                     */
-                    await metrics.processAllRequests().catch(reporting.traceError);
-
-                    const loginResult = await services.onLogin(setupResult.session);
-
-                    /**
-                     * TODO: [CP-10334]
-                     * This is only sent if a redirect to the applications does not occur.
-                     * ie for drive signup, the user is redirected to drive.proton.me and this metric is never sent
-                     *
-                     * For generic signup, we redirect to account.proton.me/apps, and so the metric is sent
-                     */
-                    metrics.core_signup_ctx_login_total.increment({ status: 'success' });
-
-                    return loginResult;
-                } catch (error) {
-                    reporting.traceError(error);
-                    observeError(error, (status) => metrics.core_signup_ctx_login_total.increment({ status }));
-                    throw error;
-                }
+        login: fromPromise<
+            OnLoginCallbackResult | void,
+            { accountData: AccountData | undefined; setupResult: SetupUserResult | undefined }
+        >(async ({ input: { accountData, setupResult } }) => {
+            if (!accountData || !setupResult) {
+                throw new Error('Missing session');
             }
-        ),
+            try {
+                /**
+                 * Ensure all metrics have been sent before login.
+                 * Gracefully handle error, but report to sentry
+                 */
+                await metrics.processAllRequests().catch(reporting.traceError);
+
+                const loginResult = await services.onLogin(setupResult.session, accountData.password);
+
+                /**
+                 * TODO: [CP-10334]
+                 * This is only sent if a redirect to the applications does not occur.
+                 * ie for drive signup, the user is redirected to drive.proton.me and this metric is never sent
+                 *
+                 * For generic signup, we redirect to account.proton.me/apps, and so the metric is sent
+                 */
+                metrics.core_signup_ctx_login_total.increment({ status: 'success' });
+
+                return loginResult;
+            } catch (error) {
+                reporting.traceError(error);
+                observeError(error, (status) => metrics.core_signup_ctx_login_total.increment({ status }));
+                throw error;
+            }
+        }),
     };
 };
 

@@ -1,11 +1,12 @@
-import { act, render } from '@testing-library/react';
+import { act, render, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getStoreWrapper } from '@proton/payments-hooks/testing/vitest/renderWithProviders';
 import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
+import type { BillingAddressExtraProperties } from '@proton/payments/core/billing-address/billing-address';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
-import type { PaymentsApi } from '@proton/payments/core/interface';
+import type { PaymentStatus, PaymentsApi } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { GUARD_ERROR_CODES, type GuardError } from '@proton/payments/core/subscription/guard';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -95,8 +96,12 @@ const renderContext = ({
     subscriptionState = currentSubscriptionState,
     plans = getLongTestPlans('CHF'),
     entitlementCatalog,
+    paymentStatus,
+    billingDetails,
 }: {
     withGuards?: boolean;
+    paymentStatus?: PaymentStatus;
+    billingDetails?: BillingAddressExtraProperties;
     subscriptionState?: ReturnType<typeof getSubscriptionState>;
     plans?: Plan[];
     entitlementCatalog?: EntitlementCatalog;
@@ -113,12 +118,13 @@ const renderContext = ({
             plans: getModelState({ plans, freePlan: FREE_PLAN }),
             subscription: subscriptionState,
             ...(entitlementCatalog && { entitlementCatalog: getModelState(entitlementCatalog) }),
+            ...(paymentStatus && { paymentStatus: getModelState(paymentStatus) }),
         },
     });
 
     render(
         <Wrapper>
-            <PaymentsContextProvider preload={false} withGuards={withGuards}>
+            <PaymentsContextProvider preload={false} withGuards={withGuards} billingDetails={billingDetails}>
                 <Probe />
             </PaymentsContextProvider>
         </Wrapper>
@@ -445,5 +451,147 @@ describe('PaymentsContext currency for the selection', () => {
         await select(lumoMonthlyInChf);
 
         expect(sentData()[0]).toEqual(expect.objectContaining({ Plans: { [PLANS.LUMO]: 1 }, Currency: 'CHF' }));
+    });
+});
+
+describe('PaymentsContext VAT number', () => {
+    const paymentStatus = {
+        CountryCode: 'DE',
+        State: null,
+        VendorStates: { Card: true, Paypal: true, Apple: true, Cash: true, Bitcoin: true, Google: true },
+    } as unknown as PaymentStatus;
+
+    beforeEach(() => {
+        vi.clearAllMocks();
+        checkSubscription.mockImplementation((data, { signal } = {}) =>
+            respondWith(signal, Promise.resolve(buildCheckResult({ Currency: data.Currency })))
+        );
+    });
+
+    const initialize = (getContext: () => PaymentsContextType, vatNumber?: string) =>
+        act(() =>
+            getContext().initialize({
+                api: vi.fn() as any,
+                planToCheck: { planIDs: vpnYearly.planIDs, cycle: vpnYearly.cycle },
+                paramCurrency: 'CHF',
+                vatNumber,
+                paymentFlow: 'signup',
+                onChargeable: async () => {},
+                telemetryContext: 'other',
+                product: 'proton-vpn-settings',
+            })
+        );
+
+    it('includes the VAT number given on initialization in the first check', async () => {
+        const { getContext } = renderContext({ paymentStatus });
+
+        await initialize(getContext, 'DE123456789');
+
+        expect(sentData()[0]).toEqual(expect.objectContaining({ VatId: 'DE123456789' }));
+        expect(getContext().vatNumber).toBe('DE123456789');
+    });
+
+    it('fills in the billing address with the details given, from the first render on, without sending them in checks', async () => {
+        const { getContext } = renderContext({
+            paymentStatus,
+            billingDetails: { Company: 'Acme', FirstName: 'Ada', City: undefined },
+        });
+        // A billing form reads its initial address once, before the prices load
+        expect(getContext().billingAddress).toEqual(expect.objectContaining({ Company: 'Acme', FirstName: 'Ada' }));
+
+        await initialize(getContext);
+
+        expect(getContext().billingAddress).toEqual(
+            expect.objectContaining({ CountryCode: 'DE', Company: 'Acme', FirstName: 'Ada' })
+        );
+        // A price check only needs where the user pays from
+        expect(sentData()[0].BillingAddress).not.toHaveProperty('Company');
+        expect(sentData()[0].BillingAddress).not.toHaveProperty('FirstName');
+        // A missing detail isn't added as an empty field, which the subscription rejects
+        expect(getContext().billingAddress).not.toHaveProperty('City');
+
+        // What the user types in the billing form wins over the link's details
+        act(() => {
+            getContext().selectFullBillingAddress({ CountryCode: 'DE', State: null, Company: 'Typed' });
+        });
+        await waitFor(() =>
+            expect(getContext().billingAddress).toEqual(expect.objectContaining({ Company: 'Typed', FirstName: 'Ada' }))
+        );
+    });
+
+    it('checks the available plans along with the selection, each with its own coupon', async () => {
+        const pending = createDeferred<SubscriptionEstimation>();
+        checkSubscription.mockImplementationOnce((_data, { signal } = {}) => respondWith(signal, pending.promise));
+        const { getContext } = renderContext({ paymentStatus });
+        const { multiCheck } = getContext().paymentsApi;
+
+        let initialized = false;
+        const initializing = getContext()
+            .initialize({
+                api: vi.fn() as any,
+                planToCheck: { planIDs: vpnYearly.planIDs, cycle: vpnYearly.cycle, coupon: 'SELECTION' },
+                availablePlans: [
+                    { planIDs: vpnTwoYears.planIDs, cycle: vpnTwoYears.cycle },
+                    { planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 }, cycle: CYCLE.YEARLY, coupon: 'OWN' },
+                    { planIDs: { [PLANS.VPN_PASS_BUNDLE]: 1 }, cycle: CYCLE.TWO_YEARS, coupon: undefined },
+                ],
+                paramCurrency: 'CHF',
+                paymentFlow: 'signup',
+                onChargeable: async () => {},
+                telemetryContext: 'other',
+                product: 'proton-vpn-settings',
+            })
+            .then(() => {
+                initialized = true;
+            });
+
+        await waitFor(() => expect(multiCheck).toHaveBeenCalled());
+        // The selection's check is still pending
+        expect(initialized).toBe(false);
+        // Without a coupon of its own, a plan gets the selection's; with one, that one; with none, its automatic one
+        expect(vi.mocked(multiCheck).mock.calls[0][0].map((data) => data.Codes)).toEqual([
+            ['SELECTION'],
+            ['OWN'],
+            ['VPNPASSINTRO2026'],
+        ]);
+
+        await act(async () => {
+            pending.resolve(buildCheckResult());
+            await initializing;
+        });
+        expect(initialized).toBe(true);
+    });
+
+    it('leaves the selection out of the available plans, as its own check caches its price', async () => {
+        const { getContext } = renderContext({ paymentStatus });
+        const { multiCheck } = getContext().paymentsApi;
+
+        await act(() =>
+            getContext().initialize({
+                api: vi.fn() as any,
+                planToCheck: { planIDs: vpnYearly.planIDs, cycle: vpnYearly.cycle, coupon: 'SELECTION' },
+                availablePlans: [
+                    { planIDs: vpnYearly.planIDs, cycle: vpnYearly.cycle },
+                    { planIDs: vpnTwoYears.planIDs, cycle: vpnTwoYears.cycle },
+                ],
+                paramCurrency: 'CHF',
+                paymentFlow: 'signup',
+                onChargeable: async () => {},
+                telemetryContext: 'other',
+                product: 'proton-vpn-settings',
+            })
+        );
+
+        expect(vi.mocked(multiCheck).mock.calls[0][0].map((data) => data.Cycle)).toEqual([CYCLE.TWO_YEARS]);
+    });
+
+    it('renders again once multiple plans are checked, so the prices found in the cache show', async () => {
+        const { getContext } = renderContext({ paymentStatus });
+        await initialize(getContext);
+        const before = getContext();
+
+        await act(() => getContext().checkMultiplePlans([{ ...vpnTwoYears, coupon: 'COUPON' }]));
+
+        expect(getContext()).not.toBe(before);
     });
 });

@@ -1,9 +1,11 @@
-import { createActor, fromPromise, waitFor } from 'xstate';
+import { createActor, fromCallback, fromPromise, waitFor } from 'xstate';
 
+import { createPromise } from '@proton/shared/lib/helpers/promise';
 import type { ReferralData } from '@proton/shared/lib/interfaces/referral';
 
 import type { OnLoginCallbackResult } from '../../authSession';
 import type { AccountData } from '../../signup/interfaces';
+import type { SignupContextSubscriptionData } from '../context/helpers/handleSetupUser';
 import { InvalidReferrerError } from '../helpers/validateReferrer';
 import type { SetupUserResult } from './signupActors';
 import { createSignupOperations } from './signupOperations';
@@ -12,14 +14,13 @@ import { type SignupEmitted, signupStateMachine } from './signupStateMachine';
 const accountData = { password: 'password' } as AccountData;
 const setupResult = { session: { localID: 1 }, recoveryPhraseData: { payload: {} } } as unknown as SetupUserResult;
 
-const pending = <T>() => new Promise<T>(() => {});
-
 const start = ({
     loadDomains = async () => ['proton.me'],
     checkReferral = async () => undefined,
     initializePayments = async () => {},
     createUser = async () => {},
     setupUser = async () => setupResult,
+    setupSubscription = async () => undefined,
     sendRecoveryPhrase = async () => {},
     login = async () => {},
 }: {
@@ -27,7 +28,8 @@ const start = ({
     checkReferral?: () => Promise<ReferralData | undefined>;
     initializePayments?: () => Promise<void>;
     createUser?: () => Promise<void>;
-    setupUser?: () => Promise<SetupUserResult>;
+    setupUser?: (input: { isRetry: boolean }) => Promise<SetupUserResult>;
+    setupSubscription?: (input: { subscriptionData: unknown }) => Promise<SetupUserResult['subscription']>;
     sendRecoveryPhrase?: () => Promise<void>;
     login?: () => Promise<OnLoginCallbackResult | void>;
 } = {}) => {
@@ -38,20 +40,27 @@ const start = ({
         reportInvalidStage: vi.fn(),
         reportMissingData: vi.fn(),
         reportErrorPage: vi.fn(),
+        reportAccountCreation: vi.fn(),
+        reportSubscription: vi.fn(),
     };
     const emitted: SignupEmitted[] = [];
     const actor = createActor(
         signupStateMachine.provide({
             actors: {
+                watchSession: fromCallback(() => {}),
                 startAuth: fromPromise(async () => {}),
                 loadDomains: fromPromise(loadDomains),
                 checkReferral: fromPromise(checkReferral),
                 initializePayments: fromPromise(initializePayments),
                 createUser: fromPromise(createUser),
-                setupUser: fromPromise(setupUser),
-                setupSubscription: fromPromise(async () => {}),
+                setupUser: fromPromise(({ input }) => setupUser(input)),
+                setupSubscription: fromPromise(({ input }) => setupSubscription(input)),
                 setOrgName: fromPromise(async () => {}),
                 setDisplayName: fromPromise(async () => {}),
+                setPassword: fromPromise(async ({ input }) => ({
+                    accountData: { ...accountData, password: input.password },
+                    setupResult: { ...setupResult, keyPassword: 'key-password' },
+                })),
                 sendRecoveryPhrase: fromPromise(sendRecoveryPhrase),
                 login: fromPromise(login),
             },
@@ -93,13 +102,22 @@ describe('signupStateMachine', () => {
         expect(actions.reportInitialized).not.toHaveBeenCalled();
     });
 
-    it('does not create a user before the signup is ready or without account data', async () => {
+    it('creates a user submitted while the signup loads once it is ready', async () => {
+        const domains = createPromise<string[]>();
         const createUser = vi.fn(async () => {});
-        const initializing = start({ loadDomains: () => pending<string[]>(), createUser });
-        initializing.actor.send({ type: 'account.submitted', accountData });
-        await initializing.signup.createUser();
-        expect(initializing.actor.getSnapshot().matches('initializing')).toBe(true);
+        const { actor, signup } = start({ loadDomains: () => domains.promise, createUser });
+        actor.send({ type: 'account.submitted', accountData });
+        const creating = signup.createUser();
+        await waitFor(actor, (state) => state.matches({ initializing: 'loading' }));
+        expect(createUser).not.toHaveBeenCalled();
+        domains.resolve(['proton.me']);
+        await creating;
+        expect(createUser).toHaveBeenCalledTimes(1);
+        expect(actor.getSnapshot().matches('userCreated')).toBe(true);
+    });
 
+    it('does not create a user without account data', async () => {
+        const createUser = vi.fn(async () => {});
         const { actions, ready, signup } = start({ createUser });
         await ready();
         await signup.createUser();
@@ -134,6 +152,204 @@ describe('signupStateMachine', () => {
         expect(actor.getSnapshot().matches('ready')).toBe(true);
         await signup.createUser();
         expect(actor.getSnapshot().matches('userCreated')).toBe(true);
+    });
+
+    it('only retries the setup when the same account is submitted again after a failed setup', async () => {
+        const createUser = vi.fn(async () => {});
+        const setupUser = vi
+            .fn<(options: { isRetry: boolean }) => Promise<SetupUserResult>>()
+            .mockRejectedValueOnce(new Error('declined'))
+            .mockResolvedValueOnce(setupResult);
+        const { actor, ready, signup } = start({ createUser, setupUser });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        await expect(signup.setupUser()).rejects.toThrow('declined');
+
+        // The form submits again: the account data is new, with a new challenge payload, but the same account
+        actor.send({
+            type: 'account.submitted',
+            accountData: { ...accountData, payload: {} as AccountData['payload'] },
+        });
+        await signup.createUser();
+        await signup.setupUser();
+
+        expect(createUser).toHaveBeenCalledTimes(1);
+        expect(setupUser.mock.calls.map(([input]) => input.isRetry)).toEqual([false, true]);
+        expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
+    });
+
+    it('creates another account when a different one is submitted after a failed setup', async () => {
+        const createUser = vi.fn(async () => {});
+        const setupUser = vi.fn<() => Promise<SetupUserResult>>().mockRejectedValueOnce(new Error('declined'));
+        const { actor, ready, signup } = start({ createUser, setupUser });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        await expect(signup.setupUser()).rejects.toThrow('declined');
+
+        actor.send({ type: 'account.submitted', accountData: { ...accountData, email: 'other@example.com' } });
+        await signup.createUser();
+
+        expect(createUser).toHaveBeenCalledTimes(2);
+        expect(actor.getSnapshot().matches('userCreated')).toBe(true);
+    });
+
+    it('signs in with the password the user chose after the setup', async () => {
+        const login = vi.fn(async (_: unknown) => {});
+        const { actor, ready, signup } = start({ login: () => login(actor.getSnapshot().context) });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        await signup.setupUser();
+        await signup.setPassword('chosen');
+        await signup.login();
+        expect(login).toHaveBeenCalledWith(
+            expect.objectContaining({
+                accountData: expect.objectContaining({ password: 'chosen' }),
+                setupResult: expect.objectContaining({ keyPassword: 'key-password' }),
+            })
+        );
+    });
+
+    it('subscribes a set-up user with a payment submitted after the setup, and can retry it', async () => {
+        const subscriptionData = { planIDs: { vpn2024: 1 } } as unknown as SignupContextSubscriptionData;
+        const subscription = { ID: 'subscription' } as SetupUserResult['subscription'];
+        const setupSubscription = vi
+            .fn<(options: { subscriptionData: unknown }) => Promise<SetupUserResult['subscription']>>()
+            .mockRejectedValueOnce(new Error('declined'))
+            .mockResolvedValueOnce(subscription);
+        const { actor, actions, ready, signup } = start({ setupSubscription });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        await signup.setupUser();
+        actor.send({ type: 'payment.submitted', subscriptionData });
+        await expect(signup.setupSubscription()).rejects.toThrow('declined');
+        await signup.setupSubscription();
+        expect(setupSubscription).toHaveBeenLastCalledWith(expect.objectContaining({ subscriptionData }));
+        expect(actions.reportSubscription).toHaveBeenLastCalledWith(
+            expect.anything(),
+            expect.objectContaining({ subscriptionData, subscription })
+        );
+        expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
+    });
+
+    it('reports the account creation once the user is set up, or once a reservation pays', async () => {
+        const subscriptionData = { planIDs: { vpn2024: 1 } } as unknown as SignupContextSubscriptionData;
+        const setUp = start();
+        await setUp.ready();
+        setUp.actor.send({ type: 'account.submitted', accountData });
+        await setUp.signup.createUser();
+        await setUp.signup.setupUser();
+        expect(setUp.actions.reportAccountCreation).toHaveBeenCalledTimes(1);
+
+        const reserved = start();
+        await reserved.ready();
+        reserved.actor.send({ type: 'account.submitted', accountData });
+        await reserved.signup.createUser();
+        await reserved.signup.setupUser({ reservation: true });
+        expect(reserved.actions.reportAccountCreation).not.toHaveBeenCalled();
+        reserved.actor.send({ type: 'payment.submitted', subscriptionData });
+        await reserved.signup.setupSubscription();
+        expect(reserved.actions.reportAccountCreation).toHaveBeenCalledWith(expect.anything(), {
+            accountData,
+            subscriptionData,
+        });
+    });
+
+    it('retries a failed setup, which checks whether its payment went through', async () => {
+        const setupUser = vi
+            .fn<(options: { isRetry: boolean }) => Promise<SetupUserResult>>()
+            .mockRejectedValueOnce(new Error('offline'))
+            .mockResolvedValueOnce(setupResult);
+        const { actor, ready, signup } = start({ setupUser });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        await expect(signup.setupUser()).rejects.toThrow('offline');
+        await signup.setupUser();
+        expect(setupUser.mock.calls.map(([input]) => input.isRetry)).toEqual([false, true]);
+        expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
+    });
+
+    it('sends the creation again when the session expires under it', async () => {
+        const expired = createPromise<void>();
+        const createUser = vi.fn<() => Promise<void>>().mockReturnValueOnce(expired.promise).mockResolvedValueOnce();
+        const { actor, ready, signup } = start({ createUser });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        const creating = signup.createUser();
+        await waitFor(actor, (state) => state.matches('creatingUser'));
+
+        // The API makes a new session, then rejects the request sent on the expired one
+        actor.send({ type: 'session.expired' });
+        expired.reject(new Error('Session expired'));
+        await creating;
+
+        expect(createUser).toHaveBeenCalledTimes(2);
+        expect(actor.getSnapshot().matches('userCreated')).toBe(true);
+    });
+
+    it('sends the setup again when the session expires under it, checking whether its payment went through', async () => {
+        const expired = createPromise<SetupUserResult>();
+        const setupUser = vi
+            .fn<(options: { isRetry: boolean }) => Promise<SetupUserResult>>()
+            .mockReturnValueOnce(expired.promise)
+            .mockResolvedValueOnce(setupResult);
+        const { actor, ready, signup } = start({ setupUser });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        const settingUp = signup.setupUser();
+        await waitFor(actor, (state) => state.matches('settingUpUser'));
+
+        actor.send({ type: 'session.expired' });
+        expired.reject(new Error('Session expired'));
+        await settingUp;
+
+        expect(setupUser.mock.calls.map(([input]) => input.isRetry)).toEqual([false, true]);
+        expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
+    });
+
+    it('does not send the creation again when the session expires but the creation went through', async () => {
+        const created = createPromise<void>();
+        const createUser = vi.fn<() => Promise<void>>().mockReturnValueOnce(created.promise);
+        const { actor, ready, signup } = start({ createUser });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        const creating = signup.createUser();
+        await waitFor(actor, (state) => state.matches('creatingUser'));
+
+        // Another request on the session expired it, while this one still went through
+        actor.send({ type: 'session.expired' });
+        expect(createUser).toHaveBeenCalledTimes(1);
+        created.resolve();
+        await creating;
+
+        expect(createUser).toHaveBeenCalledTimes(1);
+        expect(actor.getSnapshot().matches('userCreated')).toBe(true);
+    });
+
+    it('does not send the setup again when the session expires but the setup went through', async () => {
+        const setUp = createPromise<SetupUserResult>();
+        const setupUser = vi
+            .fn<(options: { isRetry: boolean }) => Promise<SetupUserResult>>()
+            .mockReturnValueOnce(setUp.promise);
+        const { actor, ready, signup } = start({ setupUser });
+        await ready();
+        actor.send({ type: 'account.submitted', accountData });
+        await signup.createUser();
+        const settingUp = signup.setupUser();
+        await waitFor(actor, (state) => state.matches('settingUpUser'));
+
+        actor.send({ type: 'session.expired' });
+        expect(setupUser).toHaveBeenCalledTimes(1);
+        setUp.resolve(setupResult);
+        await settingUp;
+
+        expect(setupUser).toHaveBeenCalledTimes(1);
+        expect(actor.getSnapshot().matches({ userSetup: 'idle' })).toBe(true);
     });
 
     it('fails the signup when an operation runs out of order', async () => {

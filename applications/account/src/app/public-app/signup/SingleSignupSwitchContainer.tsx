@@ -78,6 +78,7 @@ const SingleSignupSwitchContainer = () => {
             <SignupCtxRouter
                 onPreSubmit={onPreSubmit}
                 onStartAuth={onStartAuth}
+                onSessionExpired={onSessionExpired}
                 onGetActiveSessions={onGetActiveSessions}
                 handleLogin={handleLogin}
                 loginUrl={paths.login}

@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/helpers';
+import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
@@ -35,6 +36,7 @@ const getMonths = (n: number) => c('Pass signup: info').ngettext(msgid`${n} mont
 
 export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
     const signup = useSignup();
+    const notifyError = useNotifyErrorHandler();
     const payments = usePaymentOptimistic();
     const [loading, setLoading] = useState(false);
     const { options } = payments;
@@ -54,6 +56,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                 signup.submitPaymentData(options, data);
                 await onContinue();
             } catch (error) {
+                notifyError(error);
                 setLoading(false);
             }
         },

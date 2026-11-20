@@ -25,6 +25,7 @@ import { useMultiCheckGroups } from '@proton/payments-hooks/ui/context/useMultiC
 import { getPreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import {
     type BillingAddressExtended,
+    type BillingAddressExtraProperties,
     DEFAULT_TAX_BILLING_ADDRESS,
     type FullBillingAddressFlat,
 } from '@proton/payments/core/billing-address/billing-address';
@@ -76,12 +77,18 @@ import noop from '@proton/utils/noop';
 import { useCouponConfig } from '../coupon-config/useCouponConfig';
 import { checkMultiplePlans, getPlanToCheck, getSubscriptionDataFromPlanToCheck } from './helpers';
 
-interface PaymentsContextProviderProps {
+export interface PaymentsContextProviderProps {
     children: ReactNode;
     preload?: boolean;
     authenticated?: boolean;
     cachedPlans?: Plan[];
     withGuards?: boolean;
+    /**
+     * Billing details the user already gave, for example in the signup link. They fill in the gaps of the exposed
+     * `billingAddress`, for the billing form and the subscription, from the first render on, as a billing form reads
+     * its initial address once. The price checks don't send them
+     */
+    billingDetails?: BillingAddressExtraProperties;
 }
 
 interface PaymentsContextProviderState {
@@ -133,6 +140,7 @@ export const PaymentsContextProvider = ({
     authenticated = true,
     cachedPlans,
     withGuards = false,
+    billingDetails,
 }: PaymentsContextProviderProps) => {
     const { APP_NAME } = useConfig();
 
@@ -165,6 +173,14 @@ export const PaymentsContextProvider = ({
     };
 
     const { createNotification } = useNotifications();
+
+    // The details only fill in what the address doesn't have, so what the user typed in the form wins. A missing
+    // detail isn't added as an empty field, which the subscription rejects
+    const withBillingDetails = (billingAddress: BillingAddressExtended): BillingAddressExtended =>
+        ({
+            ...Object.fromEntries(Object.entries(billingDetails ?? {}).filter(([, value]) => value)),
+            ...Object.fromEntries(Object.entries(billingAddress).filter(([, value]) => value !== undefined)),
+        }) as BillingAddressExtended;
 
     const [, rerender] = useState<{}>({});
     const stateRef = useRef<PaymentsContextProviderState>(
@@ -537,6 +553,7 @@ export const PaymentsContextProvider = ({
         paramCurrency,
         planToCheck: planToCheckParam,
         availablePlans,
+        vatNumber,
         telemetryContext,
         product,
         // paymentFlow,
@@ -564,6 +581,7 @@ export const PaymentsContextProvider = ({
 
         setState({
             availableCurrencies,
+            ...(vatNumber ? { vatNumber } : {}),
         });
 
         const paymentsApi = getPaymentsApi(api);
@@ -579,6 +597,45 @@ export const PaymentsContextProvider = ({
             multiSubscriptionContext: getMultiSubscriptionContext(),
             plans: stateRef.current.plansData.plans,
         }).plansMap;
+
+        // The selection's own check caches its price, so the batch leaves it out
+        const selection = planToCheckParam && getPlanToCheck({ ...planToCheckParam, currency: preferredCurrency });
+
+        const availablePlansWithCurrencyAndAutomaticCoupon = availablePlans
+            ?.map((plan) => ({
+                ...getPlanToCheck({
+                    ...plan,
+                    currency: preferredCurrency,
+                    coupon: 'coupon' in plan ? plan.coupon : planToCheckParam?.coupon,
+                }),
+                billingAddress: stateRef.current.billingAddress,
+            }))
+            .filter((plan) => {
+                // There needs to be a coupon for it to be worth to ask the API.
+                const hasCoupon = !!plan.coupon;
+                // With regional currencies, the currency might not exist for that plan. So ignore asking the API in that case.
+                const strictPlan = getPlanFromPlanIDs(localizedPlansMap, plan.planIDs);
+                const hasCurrency = plan.currency === strictPlan?.Currency;
+                const isSelection =
+                    !!selection &&
+                    isSubscriptionSelectionEqual(plan, selection) &&
+                    plan.coupon === selection.coupon &&
+                    !!plan.trial === !!selection.trial;
+                return hasCoupon && hasCurrency && !isSelection;
+            });
+
+        // Checked along with the selection, so their prices show as soon as the selection's
+        const availablePlansCheck = availablePlansWithCurrencyAndAutomaticCoupon?.length
+            ? checkMultiplePlans({
+                  getLocalizedPlansMap,
+                  multiCheckGroups,
+                  paymentsApi,
+                  subscription,
+                  plansToCheck: availablePlansWithCurrencyAndAutomaticCoupon,
+                  billingAddress: stateRef.current.billingAddress,
+                  multiSubscriptionContext: getMultiSubscriptionContext(),
+              }).catch(noop)
+            : undefined;
 
         if (planToCheckParam) {
             try {
@@ -607,35 +664,7 @@ export const PaymentsContextProvider = ({
             }
         }
 
-        const availablePlansWithCurrencyAndAutomaticCoupon = availablePlans
-            ?.map((plan) => ({
-                ...getPlanToCheck({
-                    ...plan,
-                    currency: preferredCurrency,
-                    coupon: planToCheckParam?.coupon,
-                }),
-                billingAddress: stateRef.current.billingAddress,
-            }))
-            .filter((plan) => {
-                // There needs to be a coupon for it to be worth to ask the API.
-                const hasCoupon = !!plan.coupon;
-                // With regional currencies, the currency might not exist for that plan. So ignore asking the API in that case.
-                const strictPlan = getPlanFromPlanIDs(localizedPlansMap, plan.planIDs);
-                const hasCurrency = plan.currency === strictPlan?.Currency;
-                return hasCoupon && hasCurrency;
-            });
-
-        if (availablePlansWithCurrencyAndAutomaticCoupon?.length) {
-            await checkMultiplePlans({
-                getLocalizedPlansMap,
-                multiCheckGroups,
-                paymentsApi,
-                subscription,
-                plansToCheck: availablePlansWithCurrencyAndAutomaticCoupon,
-                billingAddress: stateRef.current.billingAddress,
-                multiSubscriptionContext: getMultiSubscriptionContext(),
-            }).catch(noop);
-        }
+        await availablePlansCheck;
 
         setState({ telemetryContext, product, initialized: true });
     };
@@ -856,8 +885,8 @@ export const PaymentsContextProvider = ({
         selectNewPlan,
         selectCurrency,
         selectFullBillingAddress,
-        checkMultiplePlans: (plansToCheck) => {
-            return checkMultiplePlans({
+        checkMultiplePlans: async (plansToCheck) => {
+            const results = await checkMultiplePlans({
                 getLocalizedPlansMap,
                 multiCheckGroups,
                 paymentsApi: paymentsApiRef.current,
@@ -866,6 +895,9 @@ export const PaymentsContextProvider = ({
                 billingAddress: stateRef.current.billingAddress,
                 multiSubscriptionContext: getMultiSubscriptionContext(),
             });
+            // The results land in the price cache that getPrice reads: render them
+            rerender({});
+            return results;
         },
         plans: stateRef.current.plansData.plans,
         freePlan: stateRef.current.plansData.freePlan,
@@ -879,7 +911,7 @@ export const PaymentsContextProvider = ({
         isTrial: getIsTrial(stateRef.current.planToCheck),
         setIsTrialResolver,
         // paymentFacade,
-        billingAddress: stateRef.current.billingAddress,
+        billingAddress: withBillingDetails(stateRef.current.billingAddress),
         checkoutUi: getCheckoutUi({
             planIDs: stateRef.current.checkResult.requestData.Plans,
             plansMap: getPlansMap(),

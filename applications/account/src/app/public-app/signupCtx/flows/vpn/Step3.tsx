@@ -31,10 +31,10 @@ import { telemetry } from '@proton/shared/lib/telemetry';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { getContinueToString } from '../helper';
-import Content from '../layout/Content';
-import Header from '../layout/Header';
-import Main from '../layout/Main';
+import { getContinueToString } from '../../../helper';
+import Content from '../../../layout/Content';
+import Header from '../../../layout/Header';
+import Main from '../../../layout/Main';
 import type { Background } from './Layout';
 import Layout from './Layout';
 import type { Measure } from './interface';

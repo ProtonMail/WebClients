@@ -11,7 +11,7 @@ import useLocationWithoutLocale, {
 import { getLocaleMapping } from 'proton-account/src/app/public-app/localePrefix';
 import { AuthType } from 'proton-account/src/app/public-app/sign-in/auth/interface';
 import AccountSignupInviteContainer from 'proton-account/src/app/public-app/signup/SignupInviteContainer';
-import AccountSingleSignupContainer from 'proton-account/src/app/public-app/single-signup/SingleSignupContainer';
+import AccountVpnSignup from 'proton-account/src/app/public-app/signupCtx/flows/vpn/VpnSignup';
 import { ResetPasswordPage } from 'proton-account/src/app/public-app/unauthed-forgot-password/ResetPasswordPage';
 
 import { createUnauthenticatedApi, createUnleash, loadCrypto } from '@proton/account/bootstrap';
@@ -207,13 +207,11 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                     />
                                 </Route>
                                 <Route path={[publicRoutes.pricing, publicRoutes.signup]}>
-                                    <AccountSingleSignupContainer
+                                    <AccountVpnSignup
                                         metaTags={signupPage()}
                                         toApp={APPS.PROTONVPN_SETTINGS}
                                         toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
-                                        loader={loader}
                                         productParam={APPS.PROTONVPN_SETTINGS}
-                                        clientType={CLIENT_TYPES.VPN}
                                         onPreSubmit={handlePreSubmit}
                                         onLogin={async (args) => {
                                             if (
@@ -231,6 +229,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                             }
                                         }}
                                         onStartAuth={handleStartAuth}
+                                        onSessionExpired={unauthenticatedApi.onSessionExpired}
                                     />
                                 </Route>
                                 <Route path={[publicRoutes.sso, publicRoutes.ssoReauth]}>

@@ -9,9 +9,9 @@ import { telemetry } from '@proton/shared/lib/telemetry';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import Content from '../layout/Content';
-import Main from '../layout/Main';
-import { FakeLoadingTextStepper } from '../signup/FakeLoadingTextStepper';
+import Content from '../../../layout/Content';
+import Main from '../../../layout/Main';
+import { FakeLoadingTextStepper } from '../../../signup/FakeLoadingTextStepper';
 import type { Background } from './Layout';
 import Layout from './Layout';
 

@@ -1,7 +1,8 @@
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
-import type { Cycle, PaymentStatus } from '@proton/payments/core/interface';
+import type { Cycle } from '@proton/payments/core/interface';
+import { getOptimisticPaymentStatus } from '@proton/payments/core/payment-status';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
@@ -16,23 +17,6 @@ const getDefaultSubscriptionData = (cycle: Cycle): SubscriptionData => {
         planIDs: {},
         checkResult: getFreeCheckResult(),
         billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
-    };
-};
-
-const getOptimisticPaymentMethods = (): PaymentStatus => {
-    return {
-        VendorStates: {
-            Google: true,
-            Card: true,
-            Paypal: true, // We guess that card, Google and PayPal are active by default
-            Apple: false,
-            Cash: false,
-            Bitcoin: false,
-            Ideal: false,
-        },
-        CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
-        State: DEFAULT_TAX_BILLING_ADDRESS.State,
-        ZipCode: DEFAULT_TAX_BILLING_ADDRESS.ZipCode,
     };
 };
 
@@ -60,7 +44,7 @@ export const defaultSignupModel: SignupModelV2 = {
     subscriptionData: subscriptionDataCycleMapping[PLANS.FREE][CYCLE.YEARLY],
     subscriptionDataCycleMapping,
     subscriptionDataCycleMappingByCurrency: [],
-    paymentStatus: getOptimisticPaymentMethods(),
+    paymentStatus: getOptimisticPaymentStatus(),
     humanVerificationMethods: [],
     humanVerificationToken: '',
     selectedProductPlans: {

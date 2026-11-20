@@ -1349,7 +1349,6 @@ const SingleSignupContainerV2 = ({
             handleSetupUser({
                 cache,
                 api: silentApi,
-                ignoreVPN: true,
                 canGenerateMnemonic,
                 telemetryContext: getTelemetryContext(model.session),
                 reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
@@ -1375,7 +1374,7 @@ const SingleSignupContainerV2 = ({
             });
         }
 
-        void measure(getSignupTelemetryData(model.plansMap, cache));
+        void measure(getSignupTelemetryData(model.plansMap, cache.subscriptionData));
 
         return result.cache;
     };

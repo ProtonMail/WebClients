@@ -13,7 +13,7 @@ import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import noop from '@proton/utils/noop';
 
-import type { CheckTrialPriceResult } from '../single-signup-v2/modals/Trial2024UpsellModal';
+import type { CheckTrialPriceResult } from '../../../single-signup-v2/modals/Trial2024UpsellModal';
 import swissFlag from './flag.svg';
 import type { Measure } from './interface';
 import RatingsSection from './ratings/RatingsSection';

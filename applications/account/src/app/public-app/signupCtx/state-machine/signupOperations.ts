@@ -12,12 +12,15 @@ import type { SignupEvent, signupStateMachine } from './signupStateMachine';
 export const createSignupOperations = (actor: ActorRefFrom<typeof signupStateMachine>) => {
     // Never settles once the page closes the signup: useActorRef mutes the observers before stopping the actor
     const settled = () => waitFor(actor, (snapshot) => !snapshot.hasTag('busy'));
+    // A form submitted while the signup loads waits for it
+    const initialized = () => waitFor(actor, (snapshot) => !snapshot.matches('initializing'));
 
     // Operations run one at a time: the machine takes the next one once the previous is over
     let previous: Promise<unknown> = Promise.resolve();
 
     const run = (event: SignupEvent) => {
         const operation = previous.then(async () => {
+            await initialized();
             const previousFailure = actor.getSnapshot().context.failure;
             actor.send(event);
             const { failure } = (await settled()).context;
@@ -31,10 +34,11 @@ export const createSignupOperations = (actor: ActorRefFrom<typeof signupStateMac
 
     return {
         createUser: () => run({ type: 'user.create' }),
-        setupUser: () => run({ type: 'user.setup' }),
+        setupUser: (options?: { reservation?: boolean }) => run({ type: 'user.setup', ...options }),
         setupSubscription: () => run({ type: 'subscription.setup' }),
         setOrgName: (orgName: string) => run({ type: 'orgName.set', orgName }),
         setDisplayName: (displayName: string) => run({ type: 'displayName.set', displayName }),
+        setPassword: (password: string) => run({ type: 'password.set', password }),
         sendRecoveryPhrasePayload: () => run({ type: 'recoveryPhrase.send' }),
         login: () => run({ type: 'login' }),
     };

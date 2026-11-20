@@ -35,7 +35,13 @@ export interface InitializeProps {
     paymentFlow: PaymentMethodFlow;
     planToCheck?: Omit<PlanToCheck, 'currency'>;
     onChargeable: OnChargeable;
-    availablePlans?: { planIDs: PlanIDs; cycle: Cycle }[];
+    /**
+     * Plans whose prices the page shows next to the selection, checked while it initializes. A plan with its own
+     * `coupon` key is checked with that coupon (its automatic one when undefined), the others with the selection's.
+     */
+    availablePlans?: { planIDs: PlanIDs; cycle: Cycle; coupon?: string }[];
+    /** A VAT number the user already gave, for example in the signup link, which the first check includes */
+    vatNumber?: string;
     telemetryContext: PaymentTelemetryContext;
     product: ProductParam;
 }

@@ -49,7 +49,7 @@ interface Props {
     emailDisabled?: boolean;
     emailReadOnly?: boolean;
     onSubmit?: () => void;
-    model: SignupModelV2;
+    model: { subscriptionData: Pick<SignupModelV2['subscriptionData'], 'cycle' | 'currency'> };
     measure: BaseMeasure<InteractCreateEvents | UserCheckoutEvents | AvailableExternalEvents>;
     passwordFields: boolean;
     footer: (data: { emailAlreadyUsed: boolean; email: string }) => ReactNode;
@@ -100,6 +100,9 @@ const AccountStepDetails = ({
     const [loadingChallenge, setLoadingChallenge] = useState(true);
     const [isRTL] = useRightToLeft();
 
+    // The email can be checked again, for example once the signup domains replace the optimistic ones: the form
+    // submits itself only the first time
+    const autoSubmittedRef = useRef(false);
     useEffect(() => {
         if (
             currentPlan?.Name === PLANS.FREE &&
@@ -107,9 +110,10 @@ const AccountStepDetails = ({
             asyncStates.email.state === AsyncValidationStateValue.Success
         ) {
             // No submit handler provided
-            if (!onSubmit) {
+            if (!onSubmit || autoSubmittedRef.current) {
                 return;
             }
+            autoSubmittedRef.current = true;
             onSubmit();
         }
     }, [asyncStates.email.state]);
