@@ -24,7 +24,7 @@ $field-container: rem(260) !default;
 .field {
 	block-size: rem($default-height-fields);
 	min-block-size: rem($default-height-fields); // To ensure minimum size when overriding block-size to 'auto'
-	padding-inline: em(16);
+	padding-inline: em(12);
 	padding-block: em(6); // design want 34px height (actually 35 to avoid .5px)
 	border-radius: var(--border-radius-md);
 	border: 1px solid var(--field-norm);
