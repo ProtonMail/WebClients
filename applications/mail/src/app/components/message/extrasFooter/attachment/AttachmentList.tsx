@@ -16,6 +16,8 @@ import { getAttachmentCounts } from '@proton/mail-message/helpers/message/messag
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useDownload, useDownloadAll } from '../../../../hooks/attachments/useDownload';
@@ -32,6 +34,7 @@ const AttachmentList = ({
     collapsable,
     onRemoveAttachment,
     onRemoveUpload,
+    onSaveToDrive,
     className,
     outsideKey,
     noPaddingTop = false,
@@ -49,6 +52,7 @@ const AttachmentList = ({
     const previewRef = useRef<AttachmentPreviewControls>(undefined);
 
     const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
+    const isSaveToDriveEnabled = useFlag(MailFeatureFlag.MailSaveToDrive);
 
     const { size, sizeLabel, pureAttachments, pureAttachmentsCount, embeddedAttachmentsCount, attachmentsCount } =
         getAttachmentCounts(attachments, message.messageImages);
@@ -254,6 +258,7 @@ const AttachmentList = ({
                                 secondaryAction={secondaryAction}
                                 onPrimary={actions[itemPrimaryAction]}
                                 onSecondary={actions[secondaryAction]}
+                                onSaveToDrive={isSaveToDriveEnabled ? onSaveToDrive : undefined}
                             />
                         );
                     })}

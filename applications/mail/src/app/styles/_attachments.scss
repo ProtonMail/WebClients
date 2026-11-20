@@ -69,6 +69,47 @@
 	}
 }
 
+// Save to Drive and the secondary action as two buttons in the same right-hand zone
+.message-attachmentSecondaryAction--with-save {
+	min-inline-size: rem(72);
+
+	.message-attachmentSecondaryAction-buttons {
+		position: absolute;
+		inset-block: 0;
+		inset-inline-end: 0;
+	}
+
+	.message-attachmentSecondaryAction-button {
+		inline-size: rem(36);
+		background-color: transparent;
+
+		&::after {
+			background-color: transparent !important;
+		}
+
+		&:not(:last-child) .message-attachmentSecondaryAction-download {
+			border-radius: 0;
+		}
+	}
+
+	// The zone reveals both icons, but only the hovered, focused or busy button gets the grey square
+	&:hover,
+	&:focus-within,
+	&[aria-busy='true'] {
+		.message-attachmentSecondaryAction-download {
+			background-color: transparent;
+		}
+	}
+
+	.message-attachmentSecondaryAction-button:hover,
+	.message-attachmentSecondaryAction-button:focus-visible,
+	.message-attachmentSecondaryAction-button[aria-busy='true'] {
+		.message-attachmentSecondaryAction-download {
+			background-color: var(--interaction-default-hover);
+		}
+	}
+}
+
 .message-attachment {
 	line-height: 1.3;
 	padding: 0;

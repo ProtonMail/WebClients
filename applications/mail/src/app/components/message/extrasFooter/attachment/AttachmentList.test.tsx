@@ -1,5 +1,9 @@
+import { fireEvent } from '@testing-library/react';
+
 import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import { clearAll } from '../../../../helpers/tests/helper';
 import { createEmbeddedImage, createMessageImages } from '../../../../helpers/tests/message';
@@ -27,7 +31,10 @@ const props = {
 };
 
 describe('AttachmentsList', () => {
-    afterEach(() => clearAll());
+    afterEach(() => {
+        clearAll();
+        jest.restoreAllMocks();
+    });
 
     it('should show attachments count', async () => {
         const messageImages = createMessageImages([]);
@@ -72,5 +79,41 @@ describe('AttachmentsList', () => {
             'title',
             'Download archive.zip'
         );
+    });
+
+    describe('Save to Drive', () => {
+        const archive = { ID: 'ID3', Name: 'archive.zip', MIMEType: 'application/zip' } as Attachment;
+
+        const renderWithSaveHandler = (onSaveToDrive: (attachment: Attachment) => Promise<void>) => {
+            return mailTestRender(
+                <AttachmentList
+                    {...props}
+                    message={{ ...props.message, messageImages: createMessageImages([]) }}
+                    attachments={[archive]}
+                    primaryAction={AttachmentAction.Preview}
+                    secondaryAction={AttachmentAction.Download}
+                    collapsable={false}
+                    onSaveToDrive={onSaveToDrive}
+                />
+            );
+        };
+
+        it("hands a received attachment to the list's save handler when its Save to Drive is clicked", async () => {
+            mockUseFlag().mockImplementation((flag) => flag === MailFeatureFlag.MailSaveToDrive);
+            const onSaveToDrive = jest.fn(() => Promise.resolve());
+            const { getByRole } = await renderWithSaveHandler(onSaveToDrive);
+
+            fireEvent.click(getByRole('button', { name: 'Save archive.zip to Proton Drive' }));
+
+            expect(onSaveToDrive).toHaveBeenCalledWith(archive);
+        });
+
+        it('shows no Save to Drive button when the flag is off, even with a save handler', async () => {
+            mockUseFlag(false);
+            const { getByRole, queryByRole } = await renderWithSaveHandler(jest.fn(() => Promise.resolve()));
+
+            expect(queryByRole('button', { name: 'Save archive.zip to Proton Drive' })).toBeNull();
+            expect(getByRole('button', { name: 'Download archive.zip' })).toBeInTheDocument();
+        });
     });
 });

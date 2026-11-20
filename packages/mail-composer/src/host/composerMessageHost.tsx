@@ -32,6 +32,12 @@ export interface AttachmentListProps {
     collapsable: boolean;
     onRemoveAttachment?: (attachment: Attachment) => Promise<void>;
     onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
+    /**
+     * Opt-in: when set and the MailSaveToDrive flag is on, each received attachment shows a Save to Drive button.
+     * The chip shows its busy state until the promise settles but doesn't catch a rejection, so the handler reports
+     * its own errors.
+     */
+    onSaveToDrive?: (attachment: Attachment) => Promise<void>;
     className?: string;
     outsideKey?: OutsideKey;
     noPaddingTop?: boolean;
