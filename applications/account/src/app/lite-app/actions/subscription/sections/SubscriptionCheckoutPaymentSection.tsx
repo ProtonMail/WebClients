@@ -27,6 +27,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
+import { useChangedSubscription } from '../useChangedSubscription';
 import PaymentMethodForm from './payment-section/PaymentMethodForm';
 import PaymentMethodSelector from './payment-section/PaymentMethodSelector';
 
@@ -61,6 +62,7 @@ const SubscriptionCheckoutPaymentSection = ({
         couponConfig,
         multiSubscriptionContext,
     } = usePayments();
+    const changedSubscription = useChangedSubscription();
     const guardErrors = checkResult.GuardResult ?? [];
     const { planIDs, cycle, planName, currency } = checkoutUi;
     const { amount, selectedMethodValue, methods } = paymentFacade;
@@ -247,7 +249,7 @@ const SubscriptionCheckoutPaymentSection = ({
                             checkResult,
                             plansMap,
                             planIDs,
-                            subscription,
+                            subscription: changedSubscription,
                             app: appName as APP_NAMES,
                         })}
                     </p>

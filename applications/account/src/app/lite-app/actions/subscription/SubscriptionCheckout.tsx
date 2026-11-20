@@ -77,8 +77,6 @@ const SubscriptionCheckoutWithPayments = ({
     };
     const {
         plusToPlusUpsellModal,
-        overrideCycle,
-        overridePlanIds,
         renderVisionaryDowngradeWarningText,
         visionaryDowngradeModal,
         initializePlanTransition,
@@ -95,8 +93,8 @@ const SubscriptionCheckoutWithPayments = ({
 
     useEffect(() => {
         void (async () => {
-            const shouldInitializePayments = await initializePlanTransition();
-            if (shouldInitializePayments) {
+            const transition = await initializePlanTransition();
+            if (transition.proceed) {
                 setPaymentInitialized(false);
                 await initialize({
                     api,
@@ -107,8 +105,8 @@ const SubscriptionCheckoutWithPayments = ({
                     onChargeable: async () => undefined,
                     planToCheck: {
                         coupon: checkoutModel.coupon,
-                        cycle: overrideCycle ?? checkoutModel.cycle,
-                        planIDs: overridePlanIds ?? checkoutModel.planIDs,
+                        cycle: transition.cycle,
+                        planIDs: transition.planIDs,
                     },
                 }).finally(() => setPaymentInitialized(true));
             }

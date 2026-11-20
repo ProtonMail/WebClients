@@ -31,7 +31,6 @@ import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     canStartPurchase,
     getHas2025OfferCoupon,
-    getPlan,
     getUpgradedPlan,
     getValidCycle,
 } from '@proton/payments/core/subscription/helpers';
@@ -61,6 +60,7 @@ import LiteBox from '../components/LiteBox';
 import PromotionAlreadyApplied from '../components/PromotionAlreadyApplied';
 import SubscribeAccountDone from '../components/SubscribeAccountDone';
 import { SubscribeType } from '../types/SubscribeType';
+import { getIsPromotionAlreadyApplied } from './getIsPromotionAlreadyApplied';
 import SubscriptionCheckout from './subscription/SubscriptionCheckout';
 
 import './SubscribeAccount.scss';
@@ -76,8 +76,6 @@ interface Props {
     childOverride?: ReactNode;
     protonLogoScale: number;
 }
-
-const plusPlans = [PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE, PLANS.LUMO];
 
 const SubscribeAccountHeader = ({
     title,
@@ -292,36 +290,17 @@ const SubscribeAccount = ({
         onSubscribed?.();
     };
 
-    const activeSubscription = subscription?.UpcomingSubscription ?? subscription;
-    const activeSubscriptionPlan = getPlan(activeSubscription);
-    const activeSubscriptionSameCoupon = !!coupon && activeSubscription?.CouponCode === coupon;
-    const takingSameOffer =
-        !!activeSubscription &&
-        !!activeSubscriptionPlan &&
-        activeSubscriptionPlan.Name === plan &&
-        activeSubscription.Cycle === parsedCycle &&
-        activeSubscriptionSameCoupon;
-
-    const isOfferPlusPlan = !!maybePlanName && plusPlans.some((planName) => planName === plan);
-    const isOfferBundlePlan = !!maybePlanName && plan === PLANS.BUNDLE;
-
-    const isBundleDowngrade =
-        activeSubscriptionPlan?.Name === PLANS.BUNDLE && isOfferPlusPlan && activeSubscriptionSameCoupon;
-
-    const isFamilyDowngrade =
-        activeSubscriptionPlan?.Name === PLANS.FAMILY &&
-        (isOfferPlusPlan || isOfferBundlePlan) &&
-        activeSubscriptionSameCoupon;
-
-    const isVisionaryDowngrade =
-        activeSubscriptionPlan?.Name === PLANS.VISIONARY &&
-        !!maybePlanName &&
-        plan !== PLANS.VISIONARY &&
-        activeSubscriptionSameCoupon;
-
     const showMobileCheckoutV2 = showCheckoutV2 && viewportWidth['<=small'];
 
-    if (takingSameOffer || isBundleDowngrade || isFamilyDowngrade || isVisionaryDowngrade) {
+    if (
+        getIsPromotionAlreadyApplied({
+            multiSubscriptionContext,
+            plan,
+            requestedPlanName: maybePlanName,
+            cycle: parsedCycle,
+            coupon,
+        })
+    ) {
         return <PromotionAlreadyApplied />;
     }
 

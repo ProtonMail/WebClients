@@ -2,7 +2,7 @@ import { differenceInDays, differenceInMonths, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import type { CYCLE } from '@proton/payments/core/constants';
-import type { Currency, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -36,7 +36,7 @@ export function getDisplayName(organization: OrganizationExtended | undefined, u
 export async function runAdditionalCycleChecks(
     allowedCycles: CYCLE[],
     checkResult: SubscriptionEstimation,
-    subscription: Subscription | FreeSubscription | undefined,
+    subscription: Subscription | undefined,
     planIDs: PlanIDs,
     plansMap: PlansMap,
     currency: Currency,
