@@ -326,9 +326,6 @@ catalogs:
     '@vitest/ui':
       specifier: ^5.1.0
       version: 5.1.0
-    babel-jest:
-      specifier: ^30.4.1
-      version: 30.5.2
     browserslist:
       specifier: ^4.29.5
       version: 4.29.5
@@ -2099,18 +2096,9 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0(@types/react@18.3.31)(immer@11.2.10)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))
     devDependencies:
-      '@babel/preset-typescript':
-        specifier: ^7.29.7
-        version: 7.29.7(@babel/core@7.29.7(supports-color@11.0.0))(supports-color@11.0.0)
       '@proton/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
-      '@proton/jest-env':
-        specifier: workspace:^
-        version: link:../../packages/jest-env
-      '@proton/jest-swc-preset':
-        specifier: workspace:^
-        version: link:../../packages/jest-swc-preset
       '@proton/metrics':
         specifier: workspace:^
         version: link:../../packages/metrics
@@ -2120,6 +2108,9 @@ importers:
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
+      '@proton/vitest-config':
+        specifier: workspace:^
+        version: link:../../packages/vitest-config
       '@testing-library/dom':
         specifier: 'catalog:'
         version: 10.4.2
@@ -2129,9 +2120,6 @@ importers:
       '@testing-library/react':
         specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@types/jest':
-        specifier: 'catalog:'
-        version: 30.0.0
       '@types/lodash':
         specifier: 'catalog:'
         version: 4.17.27
@@ -2150,30 +2138,21 @@ importers:
       '@typescript/native':
         specifier: 'catalog:'
         version: typescript@7.0.2
-      babel-jest:
+      '@vitejs/plugin-react':
         specifier: 'catalog:'
-        version: 30.5.2(@babel/core@7.29.7(supports-color@11.0.0))(supports-color@11.0.0)
-      babel-plugin-transform-require-context:
-        specifier: ^0.1.1
-        version: 0.1.1
-      browserslist:
+        version: 6.3.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      '@vitest/coverage-v8':
         specifier: 'catalog:'
-        version: 4.29.5
-      core-js:
-        specifier: 'catalog:'
-        version: 3.51.0
+        version: 5.1.0(@vitest/browser@5.1.0)(vitest@5.1.0)
       cross-env:
         specifier: 'catalog:'
         version: 10.1.0
       dotenv:
         specifier: ^17.4.2
         version: 17.4.2
-      jest:
+      happy-dom:
         specifier: 'catalog:'
-        version: 30.5.2(@types/node@24.19.2)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
-      jest-junit:
-        specifier: 'catalog:'
-        version: 16.0.0
+        version: 21.0.4
       oxlint:
         specifier: 'catalog:'
         version: 1.93.0(oxlint-tsgolint@7.0.2006)
@@ -2189,6 +2168,12 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
+      vite:
+        specifier: 'catalog:'
+        version: 8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
+      vitest:
+        specifier: 'catalog:'
+        version: 5.1.0(@opentelemetry/api@1.9.1)(@types/node@24.19.2)(@vitest/browser-playwright@5.1.0)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(happy-dom@21.0.4)(jsdom@31.0.0(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       webpack:
         specifier: 'catalog:'
         version: 5.112.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(webpack-cli@7.3.1)
@@ -19924,9 +19909,6 @@ packages:
     resolution: {integrity: sha512-M762rNHfSF1EV3SLtnCJXFoQbbIIz0OyRwnCmV0KPC7qosSfCO0QLTSuJX3ayAebubhE6oYBAYPrBA5ljowaZg==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
-
-  babel-plugin-transform-require-context@0.1.1:
-    resolution: {integrity: sha512-4ceqYOtzgmq4/QsB8dP7pUrUOCjY/jrRYdt7YkIOWHxtGDQbcf6YZDyLCiPQf6KsEIcIbSQiTRXOsbLiuJfgNQ==}
 
   babel-plugin-ttag@1.8.16:
     resolution: {integrity: sha512-UmA4KAvg3K1nzTBaqWox945CS3C1zjJu6lGZjmbOYW3NO2ps6mlIm8fnj9wjzNm2Y2nzUuD73aiAK9Rd3vTZgQ==}
@@ -38283,10 +38265,6 @@ snapshots:
       '@babel/helper-define-polyfill-provider': 0.6.8(@babel/core@7.29.7(supports-color@11.0.0))(supports-color@11.0.0)
     transitivePeerDependencies:
       - supports-color
-
-  babel-plugin-transform-require-context@0.1.1:
-    dependencies:
-      '@babel/template': 7.29.7
 
   babel-plugin-ttag@1.8.16:
     dependencies:

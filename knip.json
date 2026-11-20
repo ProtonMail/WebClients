@@ -76,7 +76,7 @@
         "applications/docs-editor": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
             "project": ["src/**/*.{ts,tsx,scss,sass,css}"],
-            "ignoreDependencies": ["@babel/preset-typescript", "babel-plugin-transform-require-context"]
+            "ignoreDependencies": ["@proton/metrics"]
         },
         "applications/drive": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/urls.tsx", "webpack.config.{js,ts}"],

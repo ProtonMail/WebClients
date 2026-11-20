@@ -3,14 +3,14 @@ import { Application } from './Application'
 describe('Application locale subscriptions', () => {
   it('immediately delivers the current locale, including one set before subscription', () => {
     const application = new Application()
-    jest.spyOn(application.logger, 'info').mockImplementation(() => {})
-    const onDefaultLocale = jest.fn()
+    vi.spyOn(application.logger, 'info').mockImplementation(() => {})
+    const onDefaultLocale = vi.fn()
     application.subscribeToLocale(onDefaultLocale)
     expect(onDefaultLocale).toHaveBeenCalledTimes(1)
     expect(onDefaultLocale).toHaveBeenCalledWith('en')
 
     application.setLocale('fr_FR')
-    const onCurrentLocale = jest.fn()
+    const onCurrentLocale = vi.fn()
     application.subscribeToLocale(onCurrentLocale)
     expect(onCurrentLocale).toHaveBeenCalledTimes(1)
     expect(onCurrentLocale).toHaveBeenCalledWith('fr')
@@ -18,8 +18,8 @@ describe('Application locale subscriptions', () => {
 
   it('delivers normalized locale updates while preserving the public field and logging', () => {
     const application = new Application()
-    const log = jest.spyOn(application.logger, 'info').mockImplementation(() => {})
-    const onLocale = jest.fn()
+    const log = vi.spyOn(application.logger, 'info').mockImplementation(() => {})
+    const onLocale = vi.fn()
     application.subscribeToLocale(onLocale)
     onLocale.mockClear()
 
@@ -34,9 +34,9 @@ describe('Application locale subscriptions', () => {
 
   it('stops delivering updates after cleanup, tolerates repeated cleanup, and retains other subscribers', () => {
     const application = new Application()
-    jest.spyOn(application.logger, 'info').mockImplementation(() => {})
-    const first = jest.fn()
-    const second = jest.fn()
+    vi.spyOn(application.logger, 'info').mockImplementation(() => {})
+    const first = vi.fn()
+    const second = vi.fn()
     const unsubscribeFirst = application.subscribeToLocale(first)
     const unsubscribeSecond = application.subscribeToLocale(second)
     application.setLocale('fr_FR')
