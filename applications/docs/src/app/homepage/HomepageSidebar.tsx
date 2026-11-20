@@ -4,14 +4,8 @@ import type { NavLinkProps } from 'react-router-dom'
 import { useHomepageMessages } from './messages/HomepageMessagesProvider'
 import * as Ariakit from '@ariakit/react'
 
-import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
-import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive'
-import { IcHouse } from '@proton/icons/icons/IcHouse'
-import { IcPlus } from '@proton/icons/icons/IcPlus'
-import { IcTrash } from '@proton/icons/icons/IcTrash'
-import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
-import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
-
+import { Icon } from './components/Icon'
+import * as Icons from './components/icons'
 import { SidebarList, SidebarListItem, SidebarListItemDiv, SidebarNav } from './components/sidebar'
 import { IconButton } from './components/ui'
 import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
@@ -124,7 +118,7 @@ function Sidebar({
   const newDocumentButton = (
     <Ariakit.MenuProvider>
       <Ariakit.MenuButton className="flex w-full items-center justify-center gap-2 rounded-[0.5rem] !bg-[--docs-blue-color] px-4 py-2.5 text-[#fff]">
-        <IcPlus />
+        <Icon data={Icons.plus} />
         {messages.new}
       </Ariakit.MenuButton>
       <NewDocumentMenu sameWidth />
@@ -167,7 +161,8 @@ function Sidebar({
               setExpanded(false)
             }}
           >
-            <IcArrowRotateRight
+            <Icon
+              data={Icons.arrowRotateRight}
               data-updating={isRecentsUpdating ? '' : undefined}
               className="data-[updating]:animate-spin"
             />
@@ -188,7 +183,7 @@ function Sidebar({
               isActive={(match) => Boolean(match?.isExact && !type)}
             >
               <span className="flex items-center gap-2">
-                <IcHouse />
+                <Icon data={Icons.house} />
                 <span>{messages.all}</span>
               </span>
             </SidebarListItemLink>
@@ -207,7 +202,8 @@ function Sidebar({
               isActive={(match) => Boolean(match?.isExact && type === 'document')}
             >
               <span className="flex items-center gap-2">
-                <IcBrandProtonDocs
+                <Icon
+                  data={Icons.brandProtonDocs}
                   className="shrink-0 text-[--icon-color]"
                   style={{ '--icon-color': COLOR_BY_TYPE.document }}
                 />
@@ -229,7 +225,8 @@ function Sidebar({
               isActive={(match) => Boolean(match?.isExact && type === 'spreadsheet')}
             >
               <span className="flex items-center gap-2">
-                <IcBrandProtonSheets
+                <Icon
+                  data={Icons.brandProtonSheets}
                   className="shrink-0 text-[--icon-color]"
                   style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
                 />
@@ -244,7 +241,7 @@ function Sidebar({
           <SidebarListItem onClick={() => setExpanded(false)}>
             <SidebarListItemLink to="/trash" exact={true} activeClassName="!font-semibold">
               <span className="flex items-center gap-2">
-                <IcTrash />
+                <Icon data={Icons.trash} />
                 <span>{messages.trash}</span>
               </span>
             </SidebarListItemLink>
@@ -260,7 +257,7 @@ function Sidebar({
               }}
             >
               <SidebarListItemDiv className="flex items-center gap-2">
-                <IcBrandProtonDrive /> {messages.goTo(DRIVE_APP_NAME)}
+                <Icon data={Icons.brandProtonDrive} /> {messages.goTo(DRIVE_APP_NAME)}
               </SidebarListItemDiv>
             </a>
           </SidebarListItem>

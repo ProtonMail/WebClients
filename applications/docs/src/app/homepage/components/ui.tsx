@@ -2,11 +2,11 @@
 // with a TooltipProvider that keeps Proton's tooltip delays, and a Checkbox with Proton's look.
 
 import * as Ariakit from '@ariakit/react'
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
-import { IcMinus } from '@proton/icons/icons/IcMinus'
 import { forwardRef, type MouseEventHandler } from 'react'
 import { clsx } from '../utils/clsx'
 import * as Atoms from './atoms'
+import { Icon } from './Icon'
+import * as Icons from './icons'
 
 export interface TooltipProps extends Ariakit.TooltipProps, Atoms.TooltipProps {}
 /** Mounted only while shown, as Proton's `Tooltip` is, so a table row adds none to the page. */
@@ -114,9 +114,9 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
         )}
       >
         {checked === 'mixed' ? (
-          <IcMinus size={4} className={clsx(iconClassName, 'text-[--text-disabled]')} />
+          <Icon data={Icons.minus} className={clsx(iconClassName, 'text-[--text-disabled]')} />
         ) : (
-          <IcCheckmark size={4} className={iconClassName} />
+          <Icon data={Icons.checkmark} className={iconClassName} />
         )}
       </span>
     </label>

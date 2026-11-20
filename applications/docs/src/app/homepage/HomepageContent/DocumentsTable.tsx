@@ -32,6 +32,7 @@ import { SortSelect } from './SortSelect'
 import { DocContextMenu, canOrganize } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
+import { Icon } from '../components/Icon'
 import * as Table from './table'
 
 import { getOwnerName } from '../get-owner-name'
@@ -496,7 +497,6 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
   const showActionsOnHover = featureFlags.bulkMove && !isMenuOpen
 
   const isRenaming = documentActions.isRenaming(document)
-  const DocumentTypeIcon = ICON_BY_TYPE[document.type]
 
   const isSelected = !!selection?.isSelected(document.uniqueId())
   const selectable = isSelectable && !isTrashing ? selection : undefined
@@ -565,7 +565,8 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
               )}
             </span>
           )}
-          <DocumentTypeIcon
+          <Icon
+            data={ICON_BY_TYPE[document.type]}
             size={5}
             className="shrink-0 text-[--icon-color]"
             style={{ '--icon-color': COLOR_BY_TYPE[document.type] }}
