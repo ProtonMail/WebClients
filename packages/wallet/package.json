@@ -89,8 +89,6 @@
         "@protontech/crypto": "catalog:",
         "@reduxjs/toolkit": "catalog:",
         "lodash": "catalog:",
-        "react": "catalog:",
-        "react-dom": "catalog:",
         "react-redux": "catalog:",
         "ttag": "catalog:"
     },
@@ -112,8 +110,14 @@
         "@vitest/ui": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
+        "react-dom": "catalog:",
         "typescript": "catalog:",
         "vite-plugin-wasm": "^3.6.0",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0",
+        "react-dom": "^18.3.1 || ^19.0.0"
     }
 }

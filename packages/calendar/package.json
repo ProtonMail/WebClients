@@ -62,14 +62,13 @@
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "catalog:",
         "@reduxjs/toolkit": "catalog:",
-        "lodash": "catalog:",
-        "react": "catalog:"
+        "lodash": "catalog:"
     },
     "devDependencies": {
         "@proton/app-context": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
-        "@proton/vitest-config": "workspace:^",
         "@proton/unleash": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "catalog:",
@@ -83,9 +82,13 @@
         "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "react-dom": "catalog:",
         "react-redux": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

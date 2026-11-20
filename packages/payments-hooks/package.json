@@ -63,7 +63,6 @@
         "date-fns": "catalog:",
         "ibantools": "4.5.4",
         "lodash": "catalog:",
-        "react": "catalog:",
         "ttag": "catalog:"
     },
     "devDependencies": {
@@ -80,15 +79,19 @@
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
         "@types/webpack-env": "catalog:",
+        "@typescript/native": "catalog:",
         "@vitejs/plugin-react": "catalog:",
         "@vitest/coverage-v8": "catalog:",
-        "@typescript/native": "catalog:",
         "history": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "react-dom": "catalog:",
         "react-router": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

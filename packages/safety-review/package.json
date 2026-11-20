@@ -24,8 +24,6 @@
         "@proton/styles": "workspace:^",
         "@proton/utils": "workspace:^",
         "lodash": "catalog:",
-        "react": "catalog:",
-        "react-dom": "catalog:",
         "react-router-dom": "catalog:",
         "ttag": "catalog:"
     },
@@ -40,6 +38,12 @@
         "@typescript/native": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
+        "react-dom": "catalog:",
         "typescript": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0",
+        "react-dom": "^18.3.1 || ^19.0.0"
     }
 }

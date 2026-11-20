@@ -39,7 +39,6 @@
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
         "date-fns": "catalog:",
-        "react": "catalog:",
         "ttag": "catalog:"
     },
     "devDependencies": {
@@ -60,8 +59,12 @@
         "happy-dom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "react-dom": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

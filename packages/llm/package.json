@@ -51,7 +51,6 @@
         "@proton/utils": "workspace:^",
         "date-fns": "catalog:",
         "lodash": "catalog:",
-        "react": "catalog:",
         "ttag": "catalog:"
     },
     "devDependencies": {
@@ -74,8 +73,12 @@
         "@webgpu/types": "^0.1.74",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "react-dom": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

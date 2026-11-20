@@ -27,7 +27,6 @@
         "@proton/icons": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
-        "react": "catalog:",
         "ttag": "catalog:"
     },
     "devDependencies": {
@@ -38,6 +37,10 @@
         "@typescript/native": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "typescript": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

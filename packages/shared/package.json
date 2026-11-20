@@ -713,7 +713,6 @@
         "lodash": "catalog:",
         "minimist": "^1.2.8",
         "papaparse": "^5.7.1",
-        "react": "catalog:",
         "tinycolor2": "catalog:",
         "tldts": "^7.4.22",
         "ttag": "catalog:",
@@ -742,10 +741,12 @@
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "playwright": "^1.65.0",
+        "react": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
     },
     "peerDependencies": {
-        "electron": "*"
+        "electron": "*",
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

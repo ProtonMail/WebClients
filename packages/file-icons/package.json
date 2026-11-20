@@ -39,8 +39,7 @@
     "dependencies": {
         "@proton/icons": "workspace:^",
         "@proton/shared": "workspace:^",
-        "@proton/utils": "workspace:^",
-        "react": "catalog:"
+        "@proton/utils": "workspace:^"
     },
     "devDependencies": {
         "@proton/oxfmt-config": "workspace:^",
@@ -54,8 +53,12 @@
         "mustache": "^4.2.0",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "tsx": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }

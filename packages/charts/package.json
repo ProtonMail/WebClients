@@ -26,7 +26,6 @@
         "@proton/components": "workspace:^",
         "@proton/utils": "workspace:^",
         "chart.js": "^4.6.1",
-        "react": "catalog:",
         "react-chartjs-2": "^5.3.1"
     },
     "devDependencies": {
@@ -46,8 +45,12 @@
         "happy-dom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react": "catalog:",
         "react-dom": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1 || ^19.0.0"
     }
 }
