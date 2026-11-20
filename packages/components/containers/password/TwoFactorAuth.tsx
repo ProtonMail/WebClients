@@ -104,12 +104,16 @@ const Fido2Form = ({ formId, onSubmit, twoFactorAuthRef, fido2, loading }: Fido2
                 }
 
                 const getPayload = () =>
-                    runFido2Action((signal) => {
-                        if (!fido2) {
-                            throw new Error('Missing fido2 data');
-                        }
-                        return getAuthentication(fido2.AuthenticationOptions, signal);
-                    }, 'auth');
+                    runFido2Action(
+                        (signal) => {
+                            if (!fido2) {
+                                throw new Error('Missing fido2 data');
+                            }
+                            return getAuthentication(fido2.AuthenticationOptions, signal);
+                        },
+                        'auth',
+                        { registeredKeys: fido2?.RegisteredKeys ?? [] }
+                    );
 
                 // NOTE: The promise is resolved by the consumer outside of this component so that they can show a
                 // loading spinner for example on the submit button.

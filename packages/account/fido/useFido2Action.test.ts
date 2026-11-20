@@ -4,17 +4,23 @@ import { act, renderHook } from '@testing-library/react';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
-import type { Fido2ActionContext } from './useFido2Action';
+import type { Fido2ActionContext, Fido2ReportDetails } from './useFido2Action';
 import { useFido2Action } from './useFido2Action';
 
 vi.mock('@proton/shared/lib/helpers/sentry', () => ({ captureMessage: vi.fn() }));
 
-const fail = async (error: Error, afterMs: number, context: Fido2ActionContext = 'auth') => {
+const fail = async (
+    error: Error,
+    afterMs: number,
+    context: Fido2ActionContext = 'auth',
+    details: Fido2ReportDetails = { registeredKeys: [] }
+) => {
     const { result } = renderHook(() => useFido2Action());
     await act(async () => {
         const run = result.current.runFido2Action(
             () => new Promise((_, reject) => setTimeout(() => reject(error), afterMs)),
-            context
+            context,
+            details
         );
         vi.advanceTimersByTime(afterMs);
         await expect(run).rejects.toBe(error);
@@ -84,6 +90,25 @@ describe('useFido2Action', () => {
         expect(await fail(error, 100, 'registration')).toMatchObject({
             fingerprint: ['Security key registration', 'NotAllowedError', 'instant'],
         });
+    });
+
+    it('reports the number and kinds of registered keys, and whether platform keys were allowed', async () => {
+        const error = new DOMException('Already registered', 'InvalidStateError');
+        const registeredKeys = [
+            { AttestationFormat: 'none' },
+            { AttestationFormat: 'apple' },
+            { AttestationFormat: 'none' },
+        ];
+
+        expect(await fail(error, 3000, 'registration', { registeredKeys, allowPlatformKeys: true })).toMatchObject({
+            tags: { fido2KeyCount: 3, fido2KeyFormats: 'apple,none', fido2AllowPlatformKeys: true },
+        });
+
+        vi.mocked(captureMessage).mockClear();
+
+        const report = await fail(error, 3000, 'auth', { registeredKeys: [] });
+        expect(report).toMatchObject({ tags: { fido2KeyCount: 0, fido2KeyFormats: '-' } });
+        expect(report).not.toMatchObject({ tags: { fido2AllowPlatformKeys: expect.anything() } });
     });
 
     it('reads the focus before the security key prompt opens', async () => {

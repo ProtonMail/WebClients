@@ -209,7 +209,8 @@ const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
                         const run = async () => {
                             const authenticationCredentialsPayload = await runFido2Action(
                                 (signal) => getAuthentication(fido2.AuthenticationOptions, signal),
-                                'auth'
+                                'auth',
+                                { registeredKeys: fido2.RegisteredKeys }
                             );
                             await onSubmit(authenticationCredentialsPayload);
                         };

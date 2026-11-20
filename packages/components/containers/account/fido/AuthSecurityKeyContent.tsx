@@ -24,11 +24,24 @@ const AuthSecurityKeyContent = ({ awaitingTouch, error }: { awaitingTouch: boole
             {error && (
                 <div className="mt-4">
                     <Banner className="mb-3" variant="norm" icon={<IcExclamationCircle />}>
-                        {error === 'NotSupportedError'
-                            ? c('fido2: Error')
-                                  .t`This browser doesn't support security keys. Please try a different browser.`
-                            : c('fido2: Error')
-                                  .t`Something went wrong authenticating with your security key. Please try again.`}
+                        {(() => {
+                            if (error === 'NotSupportedError') {
+                                return c('fido2: Error')
+                                    .t`This browser doesn't support security keys. Please try a different browser.`;
+                            }
+                            // Chrome on Android, when the device's credential manager fails; retrying alone rarely helps
+                            if (error === 'NotReadableError') {
+                                return c('fido2: Error')
+                                    .t`Your device couldn't complete the security key request. Try again, or use another sign-in method.`;
+                            }
+                            // Browsers report a cancel and a timeout with the same name
+                            if (error === 'NotAllowedError') {
+                                return c('fido2: Error')
+                                    .t`The security key request was cancelled or timed out. Please try again.`;
+                            }
+                            return c('fido2: Error')
+                                .t`Something went wrong authenticating with your security key. Please try again.`;
+                        })()}
                     </Banner>
                 </div>
             )}

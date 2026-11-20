@@ -74,7 +74,8 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             try {
                 registrationPayloadRef.current = await runFido2Action(
                     (signal) => getCreatePayload(response, signal),
-                    'registration'
+                    'registration',
+                    { registeredKeys: response.RegisteredKeys, allowPlatformKeys }
                 );
             } catch {
                 return;

@@ -48,6 +48,16 @@ const RegisterSecurityKeyContent = ({ loading, awaitingTouch, error, checkbox }:
                                 return c('fido2: Error')
                                     .t`This browser doesn't support security keys. Please try a different browser.`;
                             }
+                            // Chrome on Android, when the device's credential manager fails; retrying alone rarely helps
+                            if (error === 'NotReadableError') {
+                                return c('fido2: Error')
+                                    .t`Your device couldn't complete the security key request. Try again, or register the key from another device.`;
+                            }
+                            // Browsers report a cancel and a timeout with the same name
+                            if (error === 'NotAllowedError') {
+                                return c('fido2: Error')
+                                    .t`The security key request was cancelled or timed out. Please try again.`;
+                            }
                             return c('fido2: Error')
                                 .t`Something went wrong registering your security key. Please try again.`;
                         })()}
