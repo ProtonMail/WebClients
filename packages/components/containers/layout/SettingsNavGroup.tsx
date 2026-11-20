@@ -43,7 +43,7 @@ const SettingsNavGroup = ({ title, description, subsections, header, children, v
             {description && <p className="color-weak m-0 mb-4">{description}</p>}
             <div
                 className={clsx(
-                    'flex flex-column overflow-hidden rounded-lg',
+                    'flex flex-column overflow-hidden rounded-xl',
                     variant !== SettingsLayoutVariant.Mobile && 'shadow-norm'
                 )}
             >
