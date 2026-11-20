@@ -80,9 +80,6 @@ export type ModalPayload =
     | CategoriesViewB2COnboardingModalPayload
     | BYOESpotlightModalPayload
     | BYOEInboxCleanupModalPayload;
-export type ModalListener = (payload: ModalPayload) => void;
-
 export interface GlobalModal {
-    subscribe: (cb: ModalListener) => void;
     notify: (payload: ModalPayload) => void;
 }

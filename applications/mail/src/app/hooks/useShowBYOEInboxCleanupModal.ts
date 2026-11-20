@@ -46,7 +46,7 @@ const useShowBYOEInboxCleanupModal = () => {
     const { notify } = useMailGlobalModals();
     const createBYOEInboxCleanupConfirm = useBYOEInboxCleanupConfirm();
 
-    // GlobalModalProvider gives a new notify on every render, so a change mustn't restart loading the senders
+    // A change of these mustn't restart loading the senders
     const openWindowRef = useRef({ notify, createBYOEInboxCleanupConfirm });
     openWindowRef.current = { notify, createBYOEInboxCleanupConfirm };
 

@@ -9,7 +9,6 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import ContactImage from '@proton/components/containers/contacts/ContactImage';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
@@ -17,9 +16,7 @@ import type { NewsletterSubscription } from '@proton/shared/lib/interfaces/Newsl
 import noop from '@proton/utils/noop';
 
 import { ModalCheckboxWithLabel } from '../../components/view/NewsletterSubscription/SubscriptionsList/ModalBlockSender/ModalSharedComponents';
-import { useMailGlobalModals } from './globalModalContext';
 import type { BYOEInboxCleanupModalPayload } from './inteface';
-import { ModalType } from './inteface';
 
 const InboxCleanupHeader = () => {
     const { id } = useContext(ModalContext);
@@ -177,32 +174,16 @@ const InboxCleanupModal = ({ modalProps, subscriptions, onConfirm }: InboxCleanu
     );
 };
 
-export const GlobalBYOEInboxCleanupModal = () => {
-    const { subscribe } = useMailGlobalModals();
+interface GlobalBYOEInboxCleanupModalProps {
+    value: BYOEInboxCleanupModalPayload['value'];
+    modalProps: ModalStateProps;
+}
 
-    const [modalProps, setOpen, shouldRender] = useModalState();
-    const [modalValue, setModalValue] = useState<BYOEInboxCleanupModalPayload['value'] | null>(null);
-
+export const GlobalBYOEInboxCleanupModal = ({ value: modalValue, modalProps }: GlobalBYOEInboxCleanupModalProps) => {
+    const { onDisplayed } = modalValue;
     useEffect(() => {
-        const unsubscribe = subscribe((payload) => {
-            if (payload.type === ModalType.BYOEInboxCleanup) {
-                setModalValue(payload.value);
-                setOpen(true);
-            }
-        });
-        return unsubscribe;
-    }, [subscribe, setOpen]);
-
-    const onDisplayed = modalValue?.onDisplayed;
-    useEffect(() => {
-        if (shouldRender) {
-            onDisplayed?.();
-        }
-    }, [shouldRender, onDisplayed]);
-
-    if (!shouldRender || !modalValue) {
-        return null;
-    }
+        onDisplayed();
+    }, [onDisplayed]);
 
     return (
         <InboxCleanupModal
