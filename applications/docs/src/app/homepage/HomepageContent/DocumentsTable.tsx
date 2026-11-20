@@ -169,6 +169,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
             ? { move: canBulkMove ? moveSelection : undefined, trash: trashSelection, disabled: isTrashing }
             : undefined
         }
+        onMoved={deselect}
         close={contextMenu.close}
         isOpen={contextMenu.isOpen}
         open={contextMenu.open}

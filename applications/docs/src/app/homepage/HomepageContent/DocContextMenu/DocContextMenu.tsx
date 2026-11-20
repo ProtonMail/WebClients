@@ -32,6 +32,8 @@ export type DocContextMenuProps = {
   currentDocument: RecentDocumentsItem | undefined
   /** Replaces the document's actions when the menu acts on the whole selection. */
   selectionActions?: SelectionActions
+  /** Gets the document once its Move has moved it, as bulk move hands over the documents it moved. */
+  onMoved?: (moved: RecentDocumentsItem[]) => void
   // NOTE: copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx, for the
   // effect below that reopens the menu at a new position.
   open: () => void
@@ -44,6 +46,7 @@ export function DocContextMenu({
   close,
   currentDocument,
   selectionActions,
+  onMoved,
 }: DocContextMenuProps) {
   // NOTE: this effect was copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
   // I'm not actually sure it's necessary here, but I'm leaving it in for now just in case.
@@ -126,7 +129,7 @@ export function DocContextMenu({
   } else if (isTrash) {
     menuItems = <TrashedDocumentMenuItems currentDocument={currentDocument} close={close} />
   } else {
-    menuItems = <DocumentMenuItems currentDocument={currentDocument} close={close} />
+    menuItems = <DocumentMenuItems currentDocument={currentDocument} close={close} onMoved={onMoved} />
   }
 
   return (
@@ -152,7 +155,11 @@ export function DocContextMenu({
 
 type DocumentMenuItemsProps = { currentDocument: RecentDocumentsItem; close: () => void }
 
-function DocumentMenuItems({ currentDocument, close }: DocumentMenuItemsProps) {
+function DocumentMenuItems({
+  currentDocument,
+  close,
+  onMoved,
+}: DocumentMenuItemsProps & Pick<DocContextMenuProps, 'onMoved'>) {
   const separator = <DropdownMenuSeparator />
   const mayOrganize = canOrganize(currentDocument)
 
@@ -161,7 +168,7 @@ function DocumentMenuItems({ currentDocument, close }: DocumentMenuItemsProps) {
       <OpenButton currentDocument={currentDocument} close={close} />
       {canShare(currentDocument) ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
       {separator}
-      {mayOrganize ? <MoveButton currentDocument={currentDocument} close={close} /> : null}
+      {mayOrganize ? <MoveButton currentDocument={currentDocument} close={close} onMoved={onMoved} /> : null}
       <OpenFolderButton currentDocument={currentDocument} close={close} />
       {mayOrganize ? <RenameButton currentDocument={currentDocument} close={close} /> : null}
       {mayOrganize ? (
