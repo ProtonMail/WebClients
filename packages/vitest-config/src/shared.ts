@@ -16,7 +16,9 @@ export const sharedVitestConfig = defineConfig({
         },
         environment: 'happy-dom',
         globals: true,
-        maxWorkers: isCI ? parseInt(process.env.VITEST_MAX_WORKERS || '1', 10) : undefined,
+        // Workers per vitest task in CI, where turbo runs several tasks at once on one pod. A
+        // package sets its own maxWorkers to run fewer. Locally, vitest's default applies.
+        maxWorkers: isCI ? 4 : undefined,
         reporters: isCI
             ? [
                   ['default', { summary: false }],

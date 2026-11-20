@@ -8,6 +8,8 @@ const shared = {
     resolve: sharedVitestConfig.resolve,
     test: {
         globals: true,
+        // The projects use `extends: false`, so they would not inherit the shared worker count
+        maxWorkers: sharedVitestConfig.test?.maxWorkers,
         server: {
             deps: {
                 inline: ['@protontech/crypto', '@scure/base'],
