@@ -1,16 +1,17 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useStaticExperiment } from '@proton/account/staticExperiments/useStaticExperiment';
 import { PLANS } from '@proton/payments/core/constants';
 
 import { useVpnSignupThreePlans } from './useVpnSignupThreePlans';
 
-jest.mock('@proton/account/staticExperiments/useStaticExperiment', () => ({
+vi.mock('@proton/account/staticExperiments/useStaticExperiment', () => ({
     __esModule: true,
-    useStaticExperiment: jest.fn(),
+    useStaticExperiment: vi.fn(),
 }));
 
-const mockUseStaticExperiment = useStaticExperiment as jest.Mock;
+const mockUseStaticExperiment = useStaticExperiment as Mock;
 
 const eligibleOptions = {
     mode: 'pricing' as const,

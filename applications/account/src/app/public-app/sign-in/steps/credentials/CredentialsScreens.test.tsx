@@ -1,8 +1,9 @@
 import { act, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { Mock } from 'vitest';
 import { fromCallback, fromPromise } from 'xstate';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import type { InfoResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -24,14 +25,14 @@ import type {
 import { InvalidLoginError, SSOSignInRejectedError } from './state-machine/credentialsErrors';
 import { credentialsStateMachine } from './state-machine/credentialsStateMachine';
 
-jest.mock('./useLoginChallenge', () => ({
+vi.mock('./useLoginChallenge', () => ({
     useLoginChallenge: () => ({ element: null, getPayload: () => Promise.resolve(undefined) }),
 }));
 
-jest.mock('../../../../locales', () => jest.requireActual('../../../../locales'));
-jest.mock('../../../localePrefix', () => jest.requireActual('../../../localePrefix'));
+vi.mock('../../../../locales', () => vi.importActual('../../../../locales'));
+vi.mock('../../../localePrefix', () => vi.importActual('../../../localePrefix'));
 
-jest.mock('@proton/unleash/useFlag');
+vi.mock('@proton/unleash/useFlag');
 
 const paths = {
     signup: '/signup',
@@ -46,7 +47,7 @@ const renderForm = ({
     compactForm = false,
     showSignUpPrompt,
     testflight,
-    authenticateWithPassword = jest.fn((_values: CredentialsFormValues) => new Promise<PrimaryAuthResult>(() => {})),
+    authenticateWithPassword = vi.fn((_values: CredentialsFormValues) => new Promise<PrimaryAuthResult>(() => {})),
     authenticateWithSSOToken,
     ssoAccount = false,
     holdAfterSignIn = false,
@@ -55,9 +56,9 @@ const renderForm = ({
     compactForm?: boolean;
     showSignUpPrompt?: boolean;
     testflight?: 'vpn';
-    authenticateWithPassword?: jest.Mock;
+    authenticateWithPassword?: Mock;
     /** Also signs in with the identity provider right away, without its window. */
-    authenticateWithSSOToken?: jest.Mock;
+    authenticateWithSSOToken?: Mock;
     /** The username step finds an SSO account, and the identity provider's window stays open. */
     ssoAccount?: boolean;
     /** Once the password is accepted, the sign-in stays on its next step, as when it asks for a second factor. */
@@ -129,7 +130,7 @@ const renderForm = ({
                 testflight={testflight}
                 isPorkbun={false}
                 showSignUpPrompt={showSignUpPrompt}
-                onError={jest.fn()}
+                onError={vi.fn()}
             >
                 <SignInWizard />
             </SignInProvider>
@@ -147,7 +148,7 @@ const continueToPassword = async (user: ReturnType<typeof userEvent.setup>, user
 
 describe('the credentials screens', () => {
     afterEach(() => {
-        jest.mocked(useFlag).mockReset();
+        vi.mocked(useFlag).mockReset();
     });
 
     it('asks for the username, then the password, and submits them defaulting remember to true', async () => {
@@ -199,7 +200,7 @@ describe('the credentials screens', () => {
 
     it('shows a wrong password inline and clears it when the user edits it', async () => {
         renderForm({
-            authenticateWithPassword: jest.fn(() =>
+            authenticateWithPassword: vi.fn(() =>
                 Promise.reject(
                     new InvalidLoginError({
                         data: { Code: API_CUSTOM_ERROR_CODES.INVALID_LOGIN, Error: 'Wrong password' },
@@ -275,7 +276,7 @@ describe('the credentials screens', () => {
         const message = 'There is an error in the configuration of single sign-on';
         renderForm({
             authTypeData: { type: AuthType.ExternalSSO },
-            authenticateWithSSOToken: jest.fn(() =>
+            authenticateWithSSOToken: vi.fn(() =>
                 Promise.reject(new SSOSignInRejectedError({ status: 422, data: { Code: 2011, Error: message } }))
             ),
         });
@@ -291,7 +292,7 @@ describe('the credentials screens', () => {
 
     it('says on the password step that the session expired after the password was accepted, without marking it', async () => {
         const { expireSession } = renderForm({
-            authenticateWithPassword: jest.fn(() => Promise.resolve({} as PrimaryAuthResult)),
+            authenticateWithPassword: vi.fn(() => Promise.resolve({} as PrimaryAuthResult)),
             holdAfterSignIn: true,
         });
         const user = userEvent.setup();
@@ -327,7 +328,7 @@ describe('the credentials screens', () => {
     });
 
     it('says inline that the session expired, without marking the email, and clears it when the user edits it', async () => {
-        const authenticateWithSSOToken = jest.fn(() => new Promise<PrimaryAuthResult>(() => {}));
+        const authenticateWithSSOToken = vi.fn(() => new Promise<PrimaryAuthResult>(() => {}));
         const { expireSession } = renderForm({
             authTypeData: { type: AuthType.ExternalSSO },
             authenticateWithSSOToken,
@@ -372,7 +373,7 @@ describe('the credentials screens', () => {
     });
 
     it('keeps the Lumo help open, with its conversation, across a mode switch', async () => {
-        jest.mocked(useFlag).mockImplementation((flag) => flag === 'LumoSignInHelp');
+        vi.mocked(useFlag).mockImplementation((flag) => flag === 'LumoSignInHelp');
         renderForm({ authTypeData: { type: AuthType.ExternalSSO } });
         const user = userEvent.setup();
         const launcher = () => screen.getByRole('button', { name: 'Get help from Lumo' });

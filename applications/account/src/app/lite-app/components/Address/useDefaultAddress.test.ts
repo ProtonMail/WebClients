@@ -7,10 +7,10 @@ import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '@pr
 
 import { useDefaultAddress } from './useDefaultAddress';
 
-const mockDispatch = jest.fn();
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => mockDispatch }));
-jest.mock('@proton/account/addresses/hooks', () => ({ useAddresses: jest.fn() }));
-jest.mock('@proton/account/addresses/actions', () => ({ orderAddresses: jest.fn((payload) => payload) }));
+const mockDispatch = vi.fn();
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => mockDispatch }));
+vi.mock('@proton/account/addresses/hooks', () => ({ useAddresses: vi.fn() }));
+vi.mock('@proton/account/addresses/actions', () => ({ orderAddresses: vi.fn((payload) => payload) }));
 
 const enabled = {
     Status: ADDRESS_STATUS.STATUS_ENABLED,
@@ -24,9 +24,9 @@ const disabled = buildAddress({ ...enabled, ID: 'disabled', Order: 3, Status: AD
 
 describe('useDefaultAddress', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         // Unsorted on purpose: the hook sorts them
-        jest.mocked(useAddresses).mockReturnValue([[disabled, second, first], false]);
+        vi.mocked(useAddresses).mockReturnValue([[disabled, second, first], false]);
     });
 
     it('returns the first sorted address as default and only usable addresses as options', () => {

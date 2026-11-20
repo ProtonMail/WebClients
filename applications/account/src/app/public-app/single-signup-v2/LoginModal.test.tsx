@@ -1,19 +1,19 @@
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 
 import type { Paths } from '../helper';
 import SignInContainer from '../sign-in/SignInContainer';
 import LoginModal from './LoginModal';
 
-jest.mock('../sign-in/SignInContainer', () => ({ __esModule: true, default: jest.fn(() => null) }));
+vi.mock('../sign-in/SignInContainer', () => ({ __esModule: true, default: vi.fn(() => null) }));
 
 describe('LoginModal', () => {
     it("starts its sign-in over when the page's unauthenticated session expires", () => {
-        const onSessionExpired = jest.fn(() => () => {});
+        const onSessionExpired = vi.fn(() => () => {});
 
         renderWithProviders(
             <LoginModal
                 open
-                onLogin={jest.fn()}
+                onLogin={vi.fn()}
                 paths={{} as Paths}
                 productParam="generic"
                 onStartAuth={() => Promise.resolve()}
@@ -21,7 +21,7 @@ describe('LoginModal', () => {
             />
         );
 
-        expect(jest.mocked(SignInContainer).mock.calls.map(([props]) => props)).toContainEqual(
+        expect(vi.mocked(SignInContainer).mock.calls.map(([props]) => props)).toContainEqual(
             expect.objectContaining({ onSessionExpired })
         );
     });

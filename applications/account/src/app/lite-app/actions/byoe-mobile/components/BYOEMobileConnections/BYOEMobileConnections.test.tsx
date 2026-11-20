@@ -2,36 +2,36 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 
 import { BYOEMobileConnections } from './BYOEMobileConnections';
 
-const mockLoadDashboard = jest.fn();
-jest.mock('@proton/activation/src/logic/actions', () => ({
+const mockLoadDashboard = vi.fn();
+vi.mock('@proton/activation/src/logic/actions', () => ({
     loadDashboard: () => mockLoadDashboard(),
 }));
 
-const mockDispatch = jest.fn();
-jest.mock('@proton/activation/src/logic/store', () => ({
+const mockDispatch = vi.fn();
+vi.mock('@proton/activation/src/logic/store', () => ({
     useEasySwitchDispatch: () => mockDispatch,
 }));
 
-jest.mock('@proton/activation/src/hooks/useBYOEAddresses', () => ({
+vi.mock('@proton/activation/src/hooks/useBYOEAddresses', () => ({
     useBYOEAddresses: () => ({ addresses: [], loading: false }),
 }));
 
-jest.mock('./BYOEAddresses', () => ({ BYOEAddresses: () => <div>addresses</div> }));
-jest.mock('./BYOEImports', () => ({ BYOEImports: () => <div>imports</div> }));
+vi.mock('./BYOEAddresses', () => ({ BYOEAddresses: () => <div>addresses</div> }));
+vi.mock('./BYOEImports', () => ({ BYOEImports: () => <div>imports</div> }));
 
-const buildRequest = (promise: Promise<void>) => Object.assign(promise, { unwrap: () => promise, abort: jest.fn() });
+const buildRequest = (promise: Promise<void>) => Object.assign(promise, { unwrap: () => promise, abort: vi.fn() });
 
-const flush = () => act(() => jest.advanceTimersByTimeAsync(1000));
+const flush = () => act(() => vi.advanceTimersByTimeAsync(1000));
 
 describe('BYOEMobileConnections', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         mockDispatch.mockImplementation((request) => request);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
-        jest.clearAllMocks();
+        vi.useRealTimers();
+        vi.clearAllMocks();
     });
 
     it('Should display the content once loaded', async () => {

@@ -11,7 +11,7 @@ import { getPaths } from '../helper';
 import { type ProduceForkData, SSOType } from './forkInterface';
 import { getActiveSessionLoginResult } from './getActiveSessionLoginResult';
 
-const api = jest.fn() as unknown as Api;
+const api = vi.fn() as unknown as Api;
 const session = { remote: { LocalID: 1 } } as unknown as ActiveSession;
 
 const getSessionsResult = (sessions: ActiveSession[]): GetActiveSessionsResult => ({

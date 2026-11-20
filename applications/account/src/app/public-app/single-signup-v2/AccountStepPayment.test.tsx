@@ -1,9 +1,9 @@
 import { screen, waitFor } from '@testing-library/react';
 
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { createMockModel, createMockSignupParameters } from '@proton/payments/testing/signup';
-import { apiMock } from '@proton/test-api/api';
+import { apiMock } from '@proton/test-api/vitest/api';
 
 import AccountStepPayment from './AccountStepPayment';
 
@@ -34,21 +34,21 @@ const renderAccountStepPayment = (variant: 'with' | 'without' | 'disabled') => {
                 selectedPlan={model.plans[0]}
                 loadingPaymentDetails={false}
                 loadingSignup={false}
-                onPay={jest.fn()}
-                onValidate={jest.fn()}
+                onPay={vi.fn()}
+                onValidate={vi.fn()}
                 isFormValid
-                withLoadingSignup={jest.fn()}
-                measure={jest.fn()}
+                withLoadingSignup={vi.fn()}
+                measure={vi.fn()}
                 defaultMethod={undefined}
-                handleOptimistic={jest.fn()}
-                onBillingAddressChange={jest.fn()}
+                handleOptimistic={vi.fn()}
+                onBillingAddressChange={vi.fn()}
                 signupParameters={createMockSignupParameters()}
                 showRenewalNotice={false}
                 app={undefined}
                 paymentsApi={{} as any}
-                onVatNumberChange={jest.fn()}
+                onVatNumberChange={vi.fn()}
                 telemetryContext={{} as any}
-                onMethodChanged={jest.fn()}
+                onMethodChanged={vi.fn()}
                 couponConfig={undefined}
                 renewalNotice={null}
             />

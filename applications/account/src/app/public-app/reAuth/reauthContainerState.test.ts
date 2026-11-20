@@ -15,7 +15,7 @@ const globalSSOUser: Partial<UserModel> = {
 };
 
 const getApi = (SSOBackupPasswordDisabled: boolean) =>
-    jest.fn(async () => ({ SSOBackupPasswordDisabled })) as unknown as Api;
+    vi.fn(async () => ({ SSOBackupPasswordDisabled })) as unknown as Api;
 
 describe('getReAuthState', () => {
     it('signs a global SSO member in with the identity provider when the organization disabled the backup password', async () => {

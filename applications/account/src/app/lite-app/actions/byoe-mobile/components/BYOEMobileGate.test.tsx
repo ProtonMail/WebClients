@@ -5,21 +5,21 @@ import { BYOEMobileGate } from './BYOEMobileGate';
 let mockIsLoadingGating = true;
 let mockFlagsReady = false;
 let mockFlagsError: unknown;
-const mockDispatch = jest.fn();
+const mockDispatch = vi.fn();
 let mockSyncListState = 'pending';
 
-jest.mock('@proton/activation/src/byoe/useBYOEGating', () => ({
+vi.mock('@proton/activation/src/byoe/useBYOEGating', () => ({
     useBYOEGating: () => ({ isLoadingGating: mockIsLoadingGating }),
 }));
-jest.mock('@unleash/proxy-client-react', () => ({
+vi.mock('@unleash/proxy-client-react', () => ({
     useFlagsStatus: () => ({ flagsReady: mockFlagsReady, flagsError: mockFlagsError }),
 }));
-jest.mock('@proton/activation/src/logic/store', () => ({
+vi.mock('@proton/activation/src/logic/store', () => ({
     useEasySwitchDispatch: () => mockDispatch,
     useEasySwitchSelector: () => mockSyncListState,
 }));
-jest.mock('@proton/activation/src/logic/sync/sync.actions', () => ({ loadSyncList: () => ({ type: 'loadSyncList' }) }));
-jest.mock('@proton/activation/src/logic/sync/sync.selectors', () => ({ selectSyncListLoadingState: jest.fn() }));
+vi.mock('@proton/activation/src/logic/sync/sync.actions', () => ({ loadSyncList: () => ({ type: 'loadSyncList' }) }));
+vi.mock('@proton/activation/src/logic/sync/sync.selectors', () => ({ selectSyncListLoadingState: vi.fn() }));
 
 const renderGate = () =>
     render(

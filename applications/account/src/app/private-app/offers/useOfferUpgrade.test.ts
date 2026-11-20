@@ -7,9 +7,9 @@ import { CYCLE, PLANS } from '@proton/shared/lib/payments/constants';
 
 import { useOfferUpgrade } from './useOfferUpgrade';
 
-jest.mock('@proton/components/containers/payments/subscription/subscriptionModalContext');
+vi.mock('@proton/components/containers/payments/subscription/subscriptionModalContext');
 
-const mockUseSubscriptionModalRaw = jest.mocked(useSubscriptionModalRaw);
+const mockUseSubscriptionModalRaw = vi.mocked(useSubscriptionModalRaw);
 
 const upgradeParams = (overrides: Partial<CtaUpgradeParams> = {}): CtaUpgradeParams => ({
     plan: PLANS.MAIL,
@@ -21,7 +21,7 @@ const upgradeParams = (overrides: Partial<CtaUpgradeParams> = {}): CtaUpgradePar
 });
 
 describe('useOfferUpgrade', () => {
-    const openSubscriptionModal = jest.fn();
+    const openSubscriptionModal = vi.fn();
 
     beforeEach(() => {
         openSubscriptionModal.mockReset();

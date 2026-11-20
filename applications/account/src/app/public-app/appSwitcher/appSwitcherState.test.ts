@@ -1,3 +1,5 @@
+import type { MockedFunction } from 'vitest';
+
 import { queryAvailableAppsWithTiers, unauthenticatedApps } from '@proton/account/availableApps/apps';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
@@ -8,11 +10,11 @@ import { buildUser } from '@proton/shared/testing/buildUser';
 import type { AuthSession } from '../authSession';
 import { getAppSwitcherState } from './appSwitcherState';
 
-jest.mock('@proton/account/availableApps/apps', () => ({
-    ...jest.requireActual('@proton/account/availableApps/apps'),
-    queryAvailableAppsWithTiers: jest.fn(),
+vi.mock('@proton/account/availableApps/apps', async () => ({
+    ...(await vi.importActual<any>('@proton/account/availableApps/apps')),
+    queryAvailableAppsWithTiers: vi.fn(),
 }));
-const mockQueryAvailableAppsWithTiers = queryAvailableAppsWithTiers as jest.MockedFunction<
+const mockQueryAvailableAppsWithTiers = queryAvailableAppsWithTiers as MockedFunction<
     typeof queryAvailableAppsWithTiers
 >;
 
@@ -23,7 +25,7 @@ describe('getAppSwitcherState', () => {
     it('lists the apps anyone sees when the available apps request fails', async () => {
         mockQueryAvailableAppsWithTiers.mockRejectedValue(new Error('Offline'));
 
-        const { availableApps } = await getAppSwitcherState({ session: getSession(), api: jest.fn() as Api });
+        const { availableApps } = await getAppSwitcherState({ session: getSession(), api: vi.fn() as Api });
 
         expect(availableApps.map(({ app }) => app)).toEqual(unauthenticatedApps);
     });
@@ -33,7 +35,7 @@ describe('getAppSwitcherState', () => {
 
         const { availableApps } = await getAppSwitcherState({
             session: getSession([Product.Drive]),
-            api: jest.fn() as Api,
+            api: vi.fn() as Api,
         });
 
         const apps = availableApps.map(({ app }) => app);

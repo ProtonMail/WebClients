@@ -6,7 +6,7 @@ import { createTokenRedemptionActors } from './tokenRedemptionActors';
 
 describe('createTokenRedemptionActors', () => {
     it('tells the machine when the unauthenticated session expires, until it stops', () => {
-        const unsubscribe = jest.fn();
+        const unsubscribe = vi.fn();
         let expire = () => {};
         const unauthenticatedApi = {
             onSessionExpired: (listener: () => void) => {

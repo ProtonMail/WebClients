@@ -5,15 +5,15 @@ import { ApiImportProvider, ApiReportRollbackState } from '@proton/activation/sr
 
 import { ReportActions } from './ReportActions';
 
-const mockDispatch = jest.fn();
-const mockTrackEvent = jest.fn();
+const mockDispatch = vi.fn();
+const mockTrackEvent = vi.fn();
 
-jest.mock('@proton/activation/src/logic/reports/reports.actions', () => ({
+vi.mock('@proton/activation/src/logic/reports/reports.actions', () => ({
     deleteReportSummary: (payload: unknown) => ({ type: 'delete', payload }),
     rollbackReportSummary: (payload: unknown) => ({ type: 'rollback', payload }),
 }));
-jest.mock('@proton/activation/src/logic/store', () => ({ useEasySwitchDispatch: () => mockDispatch }));
-jest.mock('@proton/activation/src/hooks/useTrackImportAction', () => ({ useTrackImportAction: () => mockTrackEvent }));
+vi.mock('@proton/activation/src/logic/store', () => ({ useEasySwitchDispatch: () => mockDispatch }));
+vi.mock('@proton/activation/src/hooks/useTrackImportAction', () => ({ useTrackImportAction: () => mockTrackEvent }));
 
 const renderActions = (rollbackState?: ApiReportRollbackState) =>
     render(
@@ -27,7 +27,7 @@ const openMenu = () => userEvent.click(screen.getByRole('button', { name: 'Impor
 
 describe('ReportActions', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockDispatch.mockResolvedValue(undefined);
     });
 

@@ -31,7 +31,7 @@ const start = (
         loginWithIdP: () => Promise<void>;
     }> = {}
 ) => {
-    const onError = jest.fn();
+    const onError = vi.fn();
     const never = () => new Promise<never>(() => {});
     const actor = createActor(
         reAuthStateMachine.provide({
@@ -52,7 +52,7 @@ const start = (
 
 describe('reAuthStateMachine', () => {
     it('asks for the key password when the keys have their own password', async () => {
-        const unlockKeys = jest.fn(() => new Promise<void>(() => {}));
+        const unlockKeys = vi.fn(() => new Promise<void>(() => {}));
         const { actor } = start(getState({}), {
             submitPassword: async () => ({ unlockWithSalts: salts }),
             unlockKeys,
@@ -74,7 +74,7 @@ describe('reAuthStateMachine', () => {
     });
 
     it('starts with the identity provider for an SSO account, and offers it again when cancelled', async () => {
-        const loginWithIdP = jest.fn(() => new Promise<void>(() => {}));
+        const loginWithIdP = vi.fn(() => new Promise<void>(() => {}));
         const { actor } = start(getState(ssoUser, 'default'), { loginWithIdP });
         await waitFor(actor, selectAwaitingProvider);
         actor.send({ type: 'idp.cancelled' });
@@ -88,8 +88,8 @@ describe('reAuthStateMachine', () => {
     });
 
     it('unlocks the session with the identity provider before reading the salts for the backup password', async () => {
-        const fetchSSOSalts = jest.fn().mockResolvedValueOnce(undefined).mockResolvedValueOnce(salts);
-        const unlockKeys = jest.fn(() => new Promise<void>(() => {}));
+        const fetchSSOSalts = vi.fn().mockResolvedValueOnce(undefined).mockResolvedValueOnce(salts);
+        const unlockKeys = vi.fn(() => new Promise<void>(() => {}));
         const { actor } = start(getState(ssoUser), { fetchSSOSalts, unlockKeys });
         expect(actor.getSnapshot().value).toBe('awaitingPassword');
         actor.send({ type: 'backupPassword.submitted', keyPassword: 'backup password' });

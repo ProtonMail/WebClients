@@ -11,16 +11,16 @@ import PaymentMethodForm from './PaymentMethodForm';
 const mockUser = { Billed: false };
 let mockUID: string | undefined = 'uid';
 
-jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [mockUser] }));
-jest.mock('@proton/components/hooks/useAuthentication', () => ({
+vi.mock('@proton/account/user/hooks', () => ({ useUser: () => [mockUser] }));
+vi.mock('@proton/components/hooks/useAuthentication', () => ({
     __esModule: true,
     default: () => ({ UID: mockUID }),
 }));
-jest.mock('@proton/payments-hooks/ui/context/paymentsContext', () => ({ usePayments: jest.fn() }));
-jest.mock('@proton/payments-ui/ui/billing-address/components/TaxFields', () => ({
+vi.mock('@proton/payments-hooks/ui/context/paymentsContext', () => ({ usePayments: vi.fn() }));
+vi.mock('@proton/payments-ui/ui/billing-address/components/TaxFields', () => ({
     TaxFields: () => <div data-testid="tax-fields" />,
 }));
-jest.mock('@proton/payments-ui/ui/components/ChargebeeWrapper', () => ({
+vi.mock('@proton/payments-ui/ui/components/ChargebeeWrapper', () => ({
     ChargebeeCreditCardWrapper: ({ suffix, showCountry }: { suffix: React.ReactNode; showCountry: boolean }) => (
         <div data-testid="card-form" data-show-country={showCountry}>
             {suffix}
@@ -28,29 +28,29 @@ jest.mock('@proton/payments-ui/ui/components/ChargebeeWrapper', () => ({
     ),
     ChargebeeSavedCardWrapper: () => <div data-testid="saved-card-3ds" />,
 }));
-jest.mock('@proton/payments-ui/ui/components/SepaDirectDebit', () => ({
+vi.mock('@proton/payments-ui/ui/components/SepaDirectDebit', () => ({
     SepaDirectDebit: () => <div data-testid="sepa-form" />,
 }));
-jest.mock('@proton/payments-ui/ui/components/IdealAccountHolderInput', () => ({
+vi.mock('@proton/payments-ui/ui/components/IdealAccountHolderInput', () => ({
     IdealAccountHolderInput: () => <div data-testid="ideal-form" />,
 }));
-jest.mock('@proton/payments-ui/payment-methods/bitcoin/BitcoinView', () => ({
+vi.mock('@proton/payments-ui/payment-methods/bitcoin/BitcoinView', () => ({
     BitcoinView: ({ loading }: { loading: boolean }) => <div data-testid="bitcoin-view" data-loading={loading} />,
 }));
-jest.mock('@proton/payments-hooks/payment-methods/bitcoin/BitcoinInfoMessage', () => ({
+vi.mock('@proton/payments-hooks/payment-methods/bitcoin/BitcoinInfoMessage', () => ({
     BitcoinInfoMessage: () => <div data-testid="bitcoin-info-message" />,
 }));
-jest.mock('@proton/payments-hooks/client-extensions/billed-user/BilledUserInlineMessage', () => ({
+vi.mock('@proton/payments-hooks/client-extensions/billed-user/BilledUserInlineMessage', () => ({
     BilledUserInlineMessage: () => <div data-testid="billed-user-message" />,
 }));
-jest.mock('@proton/payments-hooks/payment-methods/paypal/PayPalInfoMessage', () => ({
+vi.mock('@proton/payments-hooks/payment-methods/paypal/PayPalInfoMessage', () => ({
     PayPalInfoMessage: () => <div data-testid="paypal-info-message" />,
 }));
-jest.mock('@proton/components/containers/payments/DefaultPaymentMethodMessage', () => ({
+vi.mock('@proton/components/containers/payments/DefaultPaymentMethodMessage', () => ({
     __esModule: true,
     default: () => <div data-testid="default-payment-method-message" />,
 }));
-jest.mock('@proton/components/containers/payments/subscription/modal-components/NoPaymentRequiredNote', () => ({
+vi.mock('@proton/components/containers/payments/subscription/modal-components/NoPaymentRequiredNote', () => ({
     NoPaymentRequiredNote: () => <div data-testid="no-payment-required" />,
 }));
 
@@ -105,7 +105,7 @@ const form = ({
     discount?: number;
     taxCountry?: { billingAddressValid: boolean };
 }) => {
-    jest.mocked(usePayments).mockReturnValue({
+    vi.mocked(usePayments).mockReturnValue({
         checkoutUi: { couponDiscount: discount, discountPerCycle: 0, checkResult: { AmountDue: 1200 } },
         subscription: undefined,
     } as unknown as ReturnType<typeof usePayments>);
@@ -163,7 +163,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-    jest.useRealTimers();
+    vi.useRealTimers();
 });
 
 describe('lite PaymentMethodForm new methods', () => {
@@ -223,9 +223,9 @@ describe('lite PaymentMethodForm new methods', () => {
         [{ billingAddressValid: true }, 'false'],
         [{ billingAddressValid: false }, 'true'],
     ])('passes the bitcoin loading state for tax country %p', (taxCountry, loading) => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         renderForm({ selectedMethodValue: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, taxCountry });
-        act(() => jest.advanceTimersByTime(300));
+        act(() => vi.advanceTimersByTime(300));
 
         expect(screen.getByTestId('bitcoin-view')).toHaveAttribute('data-loading', loading);
     });

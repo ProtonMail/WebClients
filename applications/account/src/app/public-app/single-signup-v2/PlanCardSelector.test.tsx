@@ -6,10 +6,10 @@ import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface'
 import { PlanCardSelector } from './PlanCardSelector';
 import type { PlanCard } from './interface';
 
-const onSelect = jest.fn();
+const onSelect = vi.fn();
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 const passPlan: Plan = {

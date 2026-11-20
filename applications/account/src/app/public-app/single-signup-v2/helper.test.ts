@@ -20,13 +20,13 @@ import { SubscriptionMode, SubscriptionPlatform } from '@proton/shared/lib/payme
 import { getAccessiblePlans, getOtherUserSessions, getSessionCycle, getSubscriptionData, getUserInfo } from './helper';
 import type { PlanCard, SignupParameters2 } from './interface';
 
-jest.mock('@proton/payments/core/api/api', () => ({
-    ...jest.requireActual('@proton/payments/core/api/api'),
-    getPaymentMethods: jest.fn().mockResolvedValue([]),
+vi.mock('@proton/payments/core/api/api', async () => ({
+    ...(await vi.importActual<any>('@proton/payments/core/api/api')),
+    getPaymentMethods: vi.fn().mockResolvedValue([]),
 }));
 
-jest.mock('@proton/payments/sentry/capture', () => ({
-    tracePaymentError: jest.fn(),
+vi.mock('@proton/payments/sentry/capture', () => ({
+    tracePaymentError: vi.fn(),
 }));
 
 describe('getOtherUserSessions', () => {
@@ -317,7 +317,7 @@ describe('getUserInfo entitlement catalog for a signed-in user', () => {
     const user = { ID: 'user-id', Role: USER_ROLES.ADMIN_ROLE, Subscribed: 1 } as User;
     const mailPlus = buildSubscription(PLANS.MAIL);
 
-    const signedInApi = jest.fn(async ({ url }: { url: string }) => {
+    const signedInApi = vi.fn(async ({ url }: { url: string }) => {
         if (url === 'payments/v4/subscription') {
             return { Subscription: mailPlus, UpcomingSubscription: undefined };
         }
@@ -327,7 +327,7 @@ describe('getUserInfo entitlement catalog for a signed-in user', () => {
         return { PaymentMethods: [] };
     }) as unknown as Api;
 
-    const checkSubscription = jest.fn(async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => ({
+    const checkSubscription = vi.fn(async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => ({
         Amount: 0,
         AmountDue: 0,
         CouponDiscount: 0,
@@ -370,11 +370,11 @@ describe('getUserInfo entitlement catalog for a signed-in user', () => {
         });
 
     beforeEach(() => {
-        jest.mocked(tracePaymentError).mockClear();
+        vi.mocked(tracePaymentError).mockClear();
     });
 
     it('loads the catalog with the signed-in api and turns the Lumo rules on', async () => {
-        const getEntitlementCatalog = jest.fn().mockResolvedValue(multiSubscriptionTestCatalog);
+        const getEntitlementCatalog = vi.fn().mockResolvedValue(multiSubscriptionTestCatalog);
 
         const { multiSubscriptionContext } = await callGetUserInfo(getEntitlementCatalog);
 
@@ -385,7 +385,7 @@ describe('getUserInfo entitlement catalog for a signed-in user', () => {
 
     it('reports a failed catalog request and falls back to the rules without the flag', async () => {
         const unauthorized = new Error('Invalid access token');
-        const getEntitlementCatalog = jest.fn().mockRejectedValue(unauthorized);
+        const getEntitlementCatalog = vi.fn().mockRejectedValue(unauthorized);
 
         const { multiSubscriptionContext } = await callGetUserInfo(getEntitlementCatalog);
 
@@ -395,7 +395,7 @@ describe('getUserInfo entitlement catalog for a signed-in user', () => {
     });
 
     it('does not load the catalog with the flag off', async () => {
-        const getEntitlementCatalog = jest.fn();
+        const getEntitlementCatalog = vi.fn();
 
         const { multiSubscriptionContext } = await callGetUserInfo(getEntitlementCatalog, false);
 
@@ -410,7 +410,7 @@ describe('getUserInfo cycle for a signed-in user', () => {
     const user = { ID: 'user-id', Role: USER_ROLES.FREE_ROLE, Subscribed: 0 } as User;
 
     const getMockPaymentsApi = () => {
-        const checkSubscription = jest.fn(async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => ({
+        const checkSubscription = vi.fn(async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => ({
             Amount: 5994,
             AmountDue: 5000,
             CouponDiscount: -994,
@@ -429,9 +429,9 @@ describe('getUserInfo cycle for a signed-in user', () => {
     const callGetUserInfo = (paymentsApi: PaymentsApi, plansMap: PlansMap) =>
         getUserInfo({
             lumoMultiSubscriptions: false,
-            getEntitlementCatalog: jest.fn(),
+            getEntitlementCatalog: vi.fn(),
             paymentStatus: undefined,
-            api: jest.fn() as unknown as Api,
+            api: vi.fn() as unknown as Api,
             audience: Audience.B2C,
             paymentsApi,
             user,
@@ -487,7 +487,7 @@ describe('getUserInfo cycle for a signed-in user', () => {
 describe('getSubscriptionData guards', () => {
     const plansMap = getTestPlansMap('USD');
     const getPaymentsApiMock = () => {
-        const checkSubscription = jest.fn(async (data: CheckSubscriptionData) => ({ requestData: data }) as any);
+        const checkSubscription = vi.fn(async (data: CheckSubscriptionData) => ({ requestData: data }) as any);
         return { paymentsApi: { checkSubscription } as unknown as PaymentsApi, checkSubscription };
     };
     const options = {
@@ -534,7 +534,7 @@ describe('getSubscriptionData for a subscriber with a prepaid upcoming term', ()
     );
 
     const getMailPlusData = (cycle: CYCLE) => {
-        const checkSubscription = jest.fn(async (data: CheckSubscriptionData) => ({ requestData: data }) as any);
+        const checkSubscription = vi.fn(async (data: CheckSubscriptionData) => ({ requestData: data }) as any);
         const subscriptionData = getSubscriptionData({ checkSubscription } as unknown as PaymentsApi, {
             plansMap,
             planIDs: { [PLANS.MAIL]: 1 },
@@ -585,7 +585,7 @@ describe('getUserInfo with the Lumo purchase rules', () => {
     const user = { ID: 'user-id', Role: USER_ROLES.ADMIN_ROLE, Subscribed: 1 } as User;
 
     const getApi = (subscription: Subscription) => {
-        return jest.fn(async ({ url }: { url: string }) => {
+        return vi.fn(async ({ url }: { url: string }) => {
             if (url === 'payments/v4/subscription') {
                 return { Subscription: subscription, UpcomingSubscription: undefined };
             }
@@ -602,7 +602,7 @@ describe('getUserInfo with the Lumo purchase rules', () => {
         selectedPlanName: PLANS = PLANS.LUMO
     ) => {
         const selectedPlanIDs = { [selectedPlanName]: 1 };
-        const checkSubscription = jest.fn(async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => ({
+        const checkSubscription = vi.fn(async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => ({
             Amount: 0,
             AmountDue: 0,
             CouponDiscount: 0,
@@ -636,7 +636,7 @@ describe('getUserInfo with the Lumo purchase rules', () => {
             toApp: APPS.PROTONLUMO,
             availableCycles: [CYCLE.MONTHLY, CYCLE.YEARLY],
             lumoMultiSubscriptions,
-            getEntitlementCatalog: jest.fn().mockResolvedValue(multiSubscriptionTestCatalog),
+            getEntitlementCatalog: vi.fn().mockResolvedValue(multiSubscriptionTestCatalog),
             paymentStatus: undefined,
         });
 

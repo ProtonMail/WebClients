@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { act, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
 import type { Coupon } from '@proton/payments/core/subscription/interface';
@@ -23,7 +23,7 @@ import Step1 from './Step1';
 import { SignupMode, UpsellTypes } from './interface';
 
 // Mock PlanCardSelector to simplify testing and provide stable test IDs
-jest.mock('./PlanCardSelector', () => ({
+vi.mock('./PlanCardSelector', () => ({
     __esModule: true,
     PlanCardSelector: ({ cycle, currency, _plansMap, selectedPlanName, onSelect }: any) => (
         <div data-testid="plan-card-selector">
@@ -39,8 +39,8 @@ jest.mock('./PlanCardSelector', () => ({
 
 // Mock AccountStepPayment to avoid act() warnings from useMethods hook.
 // The banner reads the guard like the real component does: from the optimistic-aware options.checkResult.
-jest.mock('./AccountStepPayment', () => {
-    const { GuardBanner } = jest.requireActual('@proton/payments-hooks/ui/components/GuardBanner');
+vi.mock('./AccountStepPayment', async () => {
+    const { GuardBanner } = await vi.importActual<any>('@proton/payments-hooks/ui/components/GuardBanner');
     return {
         __esModule: true,
         default: ({ handleOptimistic, options, renewalNotice }: any) => {
@@ -72,16 +72,16 @@ const renderStep1 = (overrides?: Partial<React.ComponentProps<typeof Step1>>) =>
         signupConfiguration: createMockSignupConfiguration(),
         signupParameters: createMockSignupParameters(),
         isLargeViewport: true,
-        measure: jest.fn(),
-        onComplete: jest.fn(),
+        measure: vi.fn(),
+        onComplete: vi.fn(),
         model: createMockModel(),
-        setModel: jest.fn(),
+        setModel: vi.fn(),
         currentPlan: undefined,
         mode: SignupMode.Default,
-        api: jest.fn(<T = any,>() => Promise.resolve({} as T)),
-        onTriggerModals: jest.fn(),
-        onOpenLogin: jest.fn(),
-        onOpenSwitch: jest.fn(),
+        api: vi.fn(<T = any,>() => Promise.resolve({} as T)) as any,
+        onTriggerModals: vi.fn(),
+        onOpenLogin: vi.fn(),
+        onOpenSwitch: vi.fn(),
         onSignOut: async () => {},
         step1Ref: { current: null } as any,
         onChangeCurrency: async () => ({}) as any,
@@ -365,7 +365,7 @@ describe('Step1 - paymentless B2B trial', () => {
         expect(screen.getByTestId('amount-due')).toHaveTextContent('CHF 0');
         expect(screen.getByTestId('base-renew-amount')).toHaveTextContent('Amount due after trial');
         expect(screen.getByTestId('base-renew-amount')).toHaveTextContent('CHF 107.88');
-        expect(screen.getByTestId('renewal-notice')).toHaveTextContent(
+        expect(screen.getByTestId('renewal-notice').textContent).toMatch(
             /Your trial ends on .+\. Add a payment method whenever you.re ready to keep using all Pass Essentials features\./
         );
 
@@ -448,7 +448,7 @@ describe('Step1 - paymentless B2B trial', () => {
     });
 
     it('should keep the trial mode on the optimistic check result when the organization size changes', async () => {
-        const setModel = jest.fn();
+        const setModel = vi.fn();
         renderPaymentlessTrial({ setModel });
 
         await waitFor(() => {
@@ -480,7 +480,7 @@ describe('Step1 - subscription guards', () => {
 
     const renderSignedInStep1 = () => {
         const requests: CheckRequest[] = [];
-        const api = jest.fn((query: any) => {
+        const api = vi.fn((query: any) => {
             if (query.url !== CHECK_URL) {
                 return Promise.resolve({});
             }
@@ -527,16 +527,16 @@ describe('Step1 - subscription guards', () => {
                     signupConfiguration={createMockSignupConfiguration()}
                     signupParameters={createMockSignupParameters()}
                     isLargeViewport
-                    measure={jest.fn()}
-                    onComplete={jest.fn()}
+                    measure={vi.fn()}
+                    onComplete={vi.fn()}
                     model={model}
                     setModel={setModel as any}
                     currentPlan={undefined}
                     mode={SignupMode.Default}
                     api={api as any}
-                    onTriggerModals={jest.fn()}
-                    onOpenLogin={jest.fn()}
-                    onOpenSwitch={jest.fn()}
+                    onTriggerModals={vi.fn()}
+                    onOpenLogin={vi.fn()}
+                    onOpenSwitch={vi.fn()}
                     onSignOut={async () => {}}
                     step1Ref={{ current: null } as any}
                     onChangeCurrency={async () => ({}) as any}

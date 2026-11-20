@@ -1,9 +1,10 @@
 import { type ReactNode, useEffect } from 'react';
 
 import { render, waitFor } from '@testing-library/react';
+import type { MockInstance } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { getStoreWrapper } from '@proton/components/testing/renderWithProviders';
+import { getStoreWrapper } from '@proton/components/testing/vitest/renderWithProviders';
 import {
     PaymentsContextOptimisticProvider,
     usePaymentOptimistic,
@@ -14,19 +15,19 @@ import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { addApiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 import { SignupType } from '../../signup/interfaces';
 import { SignupContextProvider } from './SignupContext';
 
-const checkSubscription = jest.fn();
+const checkSubscription = vi.fn();
 
-jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
+vi.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
     const paymentsApi = {
         checkSubscription: (...args: any[]) => checkSubscription(...args),
-        cacheMultiCheck: jest.fn(),
-        multiCheck: jest.fn().mockResolvedValue([]),
-        getFullBillingAddress: jest.fn().mockResolvedValue({}),
+        cacheMultiCheck: vi.fn(),
+        multiCheck: vi.fn().mockResolvedValue([]),
+        getFullBillingAddress: vi.fn().mockResolvedValue({}),
     } as unknown as PaymentsApi;
 
     return {
@@ -110,13 +111,13 @@ const renderReferralSignupContext = ({ isTrial }: { isTrial?: boolean } = {}) =>
 };
 
 describe('signup context telemetry', () => {
-    let sendCustomEvent: jest.SpyInstance;
+    let sendCustomEvent: MockInstance;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         addApiMock('domains/available', () => ({ Domains: ['proton.me'] }));
         checkSubscription.mockResolvedValue(buildCheckResult());
-        sendCustomEvent = jest.spyOn(telemetry, 'sendCustomEvent').mockImplementation(() => {});
+        sendCustomEvent = vi.spyOn(telemetry, 'sendCustomEvent').mockImplementation(() => {});
     });
 
     afterEach(() => {

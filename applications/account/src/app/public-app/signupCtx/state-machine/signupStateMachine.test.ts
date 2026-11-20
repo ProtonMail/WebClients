@@ -32,12 +32,12 @@ const start = ({
     login?: () => Promise<OnLoginCallbackResult | void>;
 } = {}) => {
     const actions = {
-        onReferralCheckError: jest.fn(),
-        reportInitialized: jest.fn(),
-        reportInitializationError: jest.fn(),
-        reportInvalidStage: jest.fn(),
-        reportMissingData: jest.fn(),
-        reportErrorPage: jest.fn(),
+        onReferralCheckError: vi.fn(),
+        reportInitialized: vi.fn(),
+        reportInitializationError: vi.fn(),
+        reportInvalidStage: vi.fn(),
+        reportMissingData: vi.fn(),
+        reportErrorPage: vi.fn(),
     };
     const emitted: SignupEmitted[] = [];
     const actor = createActor(
@@ -94,7 +94,7 @@ describe('signupStateMachine', () => {
     });
 
     it('does not create a user before the signup is ready or without account data', async () => {
-        const createUser = jest.fn(async () => {});
+        const createUser = vi.fn(async () => {});
         const initializing = start({ loadDomains: () => pending<string[]>(), createUser });
         initializing.actor.send({ type: 'account.submitted', accountData });
         await initializing.signup.createUser();
@@ -111,7 +111,7 @@ describe('signupStateMachine', () => {
     });
 
     it('creates the user, sets it up and signs it in', async () => {
-        const login = jest.fn(async () => {});
+        const login = vi.fn(async () => {});
         const { actor, ready, signup } = start({ login });
         await ready();
         actor.send({ type: 'account.submitted', accountData });
@@ -126,7 +126,7 @@ describe('signupStateMachine', () => {
 
     it('rejects with the error of a failed operation, which can be retried', async () => {
         const error = new Error('taken');
-        const createUser = jest.fn<Promise<void>, []>().mockRejectedValueOnce(error).mockResolvedValueOnce();
+        const createUser = vi.fn<() => Promise<void>>().mockRejectedValueOnce(error).mockResolvedValueOnce();
         const { actor, ready, signup } = start({ createUser });
         await ready();
         actor.send({ type: 'account.submitted', accountData });
@@ -148,7 +148,7 @@ describe('signupStateMachine', () => {
     it('runs an operation started during another one after it', async () => {
         let finishSending = () => {};
         const sendRecoveryPhrase = () => new Promise<void>((resolve) => (finishSending = resolve));
-        const login = jest.fn(async () => {});
+        const login = vi.fn(async () => {});
         const { actor, ready, signup } = start({ sendRecoveryPhrase, login });
         await ready();
         actor.send({ type: 'account.submitted', accountData });
@@ -169,7 +169,7 @@ describe('signupStateMachine', () => {
         actor.send({ type: 'account.submitted', accountData });
         await signup.createUser();
         await signup.setupUser();
-        const settled = jest.fn();
+        const settled = vi.fn();
         void signup.login().then(settled, settled);
         await waitFor(actor, (state) => state.matches({ userSetup: 'leaving' }));
         await new Promise((resolve) => setTimeout(resolve));

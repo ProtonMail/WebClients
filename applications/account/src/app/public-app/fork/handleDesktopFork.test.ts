@@ -1,18 +1,20 @@
+import type { MockedFunction } from 'vitest';
+
 import { getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { Paths } from '../helper';
 import { handleDesktopFork } from './handleDesktopFork';
 
-jest.mock('@proton/shared/lib/authentication/persistedSessionHelper', () => ({
-    ...jest.requireActual('@proton/shared/lib/authentication/persistedSessionHelper'),
-    getActiveSessions: jest.fn(),
+vi.mock('@proton/shared/lib/authentication/persistedSessionHelper', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/authentication/persistedSessionHelper')),
+    getActiveSessions: vi.fn(),
 }));
-const mockGetActiveSessions = getActiveSessions as jest.MockedFunction<typeof getActiveSessions>;
+const mockGetActiveSessions = getActiveSessions as MockedFunction<typeof getActiveSessions>;
 
 const setup = (search: string, childClientId: string) => {
     window.history.replaceState(null, '', `/desktop/login?${search}#payload=0:ABCD2345::${childClientId}`);
-    return handleDesktopFork({ api: jest.fn() as unknown as Api, paths: {} as Paths });
+    return handleDesktopFork({ api: vi.fn() as unknown as Api, paths: {} as Paths });
 };
 
 const getForkParameters = async (search: string, childClientId: string) => {

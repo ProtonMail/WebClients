@@ -8,35 +8,35 @@ import { trackAccountImportBYOEError } from '@proton/activation/src/telemetry/ac
 
 import { useBYOEMobileConnection } from './useBYOEMobileConnection';
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
-const mockReplaceUrl = jest.fn();
-jest.mock('@proton/shared/lib/helpers/browser', () => ({ replaceUrl: (url: string) => mockReplaceUrl(url) }));
+const mockReplaceUrl = vi.fn();
+vi.mock('@proton/shared/lib/helpers/browser', () => ({ replaceUrl: (url: string) => mockReplaceUrl(url) }));
 
-const mockTrackConnectSucceeded = jest.fn();
-const mockTrackConnectFailed = jest.fn();
-jest.mock('../telemetry/useBYOEMobileTelemetry', () => ({
+const mockTrackConnectSucceeded = vi.fn();
+const mockTrackConnectFailed = vi.fn();
+vi.mock('../telemetry/useBYOEMobileTelemetry', () => ({
     useBYOEMobileTelemetry: () => ({
         trackConnectSucceeded: mockTrackConnectSucceeded,
         trackConnectFailed: mockTrackConnectFailed,
     }),
 }));
 
-const mockConnectBYOEAddressWithCode = jest.fn();
-jest.mock('@proton/activation/src/byoe/useConnectBYOEAddress', () => ({
+const mockConnectBYOEAddressWithCode = vi.fn();
+vi.mock('@proton/activation/src/byoe/useConnectBYOEAddress', () => ({
     useConnectBYOEAddress: () => ({
         connectBYOEAddressWithCode: mockConnectBYOEAddressWithCode,
-        claimBYOEAddress: jest.fn(),
+        claimBYOEAddress: vi.fn(),
     }),
 }));
 
-const mockGetExistingToken = jest.fn();
-const mockReconnectWithToken = jest.fn();
-const mockReconnectWithCode = jest.fn();
-jest.mock('@proton/activation/src/byoe/useReconnectBYOEAddress', () => ({
+const mockGetExistingToken = vi.fn();
+const mockReconnectWithToken = vi.fn();
+const mockReconnectWithCode = vi.fn();
+vi.mock('@proton/activation/src/byoe/useReconnectBYOEAddress', () => ({
     useReconnectBYOEAddress: () => ({
         getExistingToken: mockGetExistingToken,
         reconnectWithToken: mockReconnectWithToken,
@@ -45,18 +45,18 @@ jest.mock('@proton/activation/src/byoe/useReconnectBYOEAddress', () => ({
 }));
 
 const disconnectedAddress = buildAddress({ ID: 'address-id', Email: 'Jane@gmail.com' });
-jest.mock('@proton/activation/src/hooks/useBYOEAddresses', () => ({
+vi.mock('@proton/activation/src/hooks/useBYOEAddresses', () => ({
     useBYOEAddresses: () => ({ addresses: [disconnectedAddress], loading: false }),
 }));
 
-jest.mock('@proton/activation/src/telemetry/accountImportFlow', () => ({ trackAccountImportBYOEError: jest.fn() }));
+vi.mock('@proton/activation/src/telemetry/accountImportFlow', () => ({ trackAccountImportBYOEError: vi.fn() }));
 
 const redirectUri = 'https://account.proton.me/oauth/callback';
 const token = { ID: 'token-id', Account: 'jane@gmail.com' } as ImportToken;
 const success: ReconnectBYOEAddressResult = { status: 'success', address: disconnectedAddress };
 
 const setup = () => {
-    const setStatus = jest.fn();
+    const setStatus = vi.fn();
     const { result } = renderHook(() => useBYOEMobileConnection({ redirectUri, defaultImportEmails: true, setStatus }));
     return { result, setStatus };
 };
@@ -71,7 +71,7 @@ const getReconnectCallback = (
 
 describe('useBYOEMobileConnection reconnection', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockReconnectWithToken.mockResolvedValue(success);
         mockReconnectWithCode.mockResolvedValue(success);
     });

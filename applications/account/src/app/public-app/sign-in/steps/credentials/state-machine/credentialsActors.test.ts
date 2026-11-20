@@ -15,19 +15,19 @@ import {
     SwitchToSSOError,
 } from './credentialsErrors';
 
-jest.mock('../../../auth/passwordLogin', () => ({
-    ...jest.requireActual('../../../auth/passwordLogin'),
-    loginWithPassword: jest.fn(),
-    loginWithClaimedAddress: jest.fn(),
+vi.mock('../../../auth/passwordLogin', async () => ({
+    ...(await vi.importActual<any>('../../../auth/passwordLogin')),
+    loginWithPassword: vi.fn(),
+    loginWithClaimedAddress: vi.fn(),
 }));
-const mockLoginWithPassword = jest.mocked(loginWithPassword);
-const mockLoginWithClaimedAddress = jest.mocked(loginWithClaimedAddress);
+const mockLoginWithPassword = vi.mocked(loginWithPassword);
+const mockLoginWithClaimedAddress = vi.mocked(loginWithClaimedAddress);
 
-jest.mock('@proton/shared/lib/authentication/ssoExternalLogin', () => ({
-    ...jest.requireActual('@proton/shared/lib/authentication/ssoExternalLogin'),
-    handleExternalSSOLogin: jest.fn(),
+vi.mock('@proton/shared/lib/authentication/ssoExternalLogin', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/authentication/ssoExternalLogin')),
+    handleExternalSSOLogin: vi.fn(),
 }));
-const mockHandleExternalSSOLogin = jest.mocked(handleExternalSSOLogin);
+const mockHandleExternalSSOLogin = vi.mocked(handleExternalSSOLogin);
 
 /** A promise the test settles by hand, to control when the preparation finishes. */
 const deferred = () => {
@@ -40,8 +40,8 @@ const deferred = () => {
 
 const makeServices = (preparePage: () => Promise<void>) => {
     const services = {
-        api: jest.fn((): Promise<unknown> => Promise.resolve({ Modulus: 'm' })),
-        prepareAttempt: jest.fn(() => Promise.resolve()),
+        api: vi.fn((): Promise<unknown> => Promise.resolve({ Modulus: 'm' })),
+        prepareAttempt: vi.fn(() => Promise.resolve()),
         preparePage,
     };
     return services;

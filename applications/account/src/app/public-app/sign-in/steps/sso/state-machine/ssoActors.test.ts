@@ -8,9 +8,9 @@ import { createSSOActors } from './ssoActors';
 import type { SSODeviceEvent } from './ssoStateMachine';
 
 // Each poll asks whether another device or an administrator approved this one
-const mockGetAuthDeviceDataByUser = jest.fn();
-jest.mock('@proton/shared/lib/keys/device', () => ({
-    ...jest.requireActual('@proton/shared/lib/keys/device'),
+const mockGetAuthDeviceDataByUser = vi.fn();
+vi.mock('@proton/shared/lib/keys/device', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/keys/device')),
     getAuthDeviceDataByUser: () => mockGetAuthDeviceDataByUser(),
     deleteAuthDevice: () => Promise.resolve(),
 }));
@@ -23,7 +23,7 @@ const POLL_INTERVAL = 10_000;
  */
 const startPolling = () => {
     const received: SSODeviceEvent[] = [];
-    const { waitForDeviceApproval } = createSSOActors({ api: jest.fn() } as unknown as SignInActorServices);
+    const { waitForDeviceApproval } = createSSOActors({ api: vi.fn() } as unknown as SignInActorServices);
     const parent = createMachine({
         initial: 'waiting',
         states: {
@@ -50,12 +50,12 @@ const failPolls = (...errors: unknown[]) => {
 
 describe('waitForDeviceApproval', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         mockGetAuthDeviceDataByUser.mockReset();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     // A session that can't read the device any more; an expired one has started the sign-in over before this
@@ -65,13 +65,13 @@ describe('waitForDeviceApproval', () => {
         failPolls(pending, pending, error);
         const { received } = startPolling();
 
-        await jest.advanceTimersByTimeAsync(POLL_INTERVAL * 2);
+        await vi.advanceTimersByTimeAsync(POLL_INTERVAL * 2);
         expect(received).toEqual([]);
 
-        await jest.advanceTimersByTimeAsync(POLL_INTERVAL);
+        await vi.advanceTimersByTimeAsync(POLL_INTERVAL);
         expect(received).toEqual([{ type: 'sso.device.failed', payload: { error } }]);
 
-        await jest.advanceTimersByTimeAsync(POLL_INTERVAL * 3);
+        await vi.advanceTimersByTimeAsync(POLL_INTERVAL * 3);
         expect(mockGetAuthDeviceDataByUser).toHaveBeenCalledTimes(3);
     });
 
@@ -79,7 +79,7 @@ describe('waitForDeviceApproval', () => {
         failPolls(new AuthDeviceInvalidError('device', 'Missing device'));
         const { received } = startPolling();
 
-        await jest.advanceTimersByTimeAsync(POLL_INTERVAL);
+        await vi.advanceTimersByTimeAsync(POLL_INTERVAL);
         expect(received).toEqual([{ type: 'sso.device.rejected' }]);
     });
 
@@ -87,7 +87,7 @@ describe('waitForDeviceApproval', () => {
         failPolls({ status: 422 }, new Error('offline'), { status: 500 });
         const { received } = startPolling();
 
-        await jest.advanceTimersByTimeAsync(POLL_INTERVAL * 3);
+        await vi.advanceTimersByTimeAsync(POLL_INTERVAL * 3);
         expect(received).toEqual([]);
         expect(mockGetAuthDeviceDataByUser).toHaveBeenCalledTimes(3);
     });

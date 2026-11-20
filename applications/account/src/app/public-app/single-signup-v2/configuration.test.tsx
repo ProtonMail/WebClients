@@ -4,8 +4,8 @@ import { getTestPlans } from '@proton/payments/testing/data-plans';
 
 import { getSummaryPlan } from './configuration';
 
-const mockIsEnabled = jest.fn();
-jest.mock('@proton/unleash/standaloneClient', () => ({
+const mockIsEnabled = vi.fn();
+vi.mock('@proton/unleash/standaloneClient', () => ({
     getStandaloneUnleashClient: () => ({ isEnabled: mockIsEnabled }),
 }));
 

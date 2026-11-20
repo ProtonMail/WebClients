@@ -9,11 +9,11 @@ import {
     useIsVPNReferralWithoutTrialVariantB,
 } from './useIsVPNPlanWithoutTrialVariant';
 
-jest.mock('@proton/unleash/useVariant');
-jest.mock('@proton/account/eligibleTrials/hooks');
+vi.mock('@proton/unleash/useVariant');
+vi.mock('@proton/account/eligibleTrials/hooks');
 
-const mockUseVariant = jest.mocked(useVariant);
-const mockUseEligibleTrials = jest.mocked(useEligibleTrials);
+const mockUseVariant = vi.mocked(useVariant);
+const mockUseEligibleTrials = vi.mocked(useEligibleTrials);
 
 const createEligibleTrialsMock = (
     overrides: Partial<{ trialPlans: string[]; creditCardRequiredPlans: string[] }> = {}
@@ -24,11 +24,11 @@ const createEligibleTrialsMock = (
         ...overrides,
     },
     loading: false,
-    fetchEligibleTrials: jest.fn(),
+    fetchEligibleTrials: vi.fn(),
 });
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     mockUseEligibleTrials.mockReturnValue(createEligibleTrialsMock());
 });
 

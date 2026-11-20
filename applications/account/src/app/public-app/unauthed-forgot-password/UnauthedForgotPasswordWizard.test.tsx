@@ -3,48 +3,48 @@ import { useLocation } from 'react-router-dom';
 import { act, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import { renderWithProviders } from '@proton/components/testing/vitest/renderWithProviders';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { addApiMock, addApiResolver, apiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, addApiResolver, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 import type { SignInLocationState } from '../sign-in/SignInContainer';
 import { ResetPasswordPage } from './ResetPasswordPage';
 import { authMnemonicAndGetKeys, handleRequestRecoveryMethods, performPasswordReset } from './actions';
 import { NoKeysDecryptedUsingPhraseError, ResetTokenRejectedError } from './state-machine/forgotPasswordErrors';
 
-jest.mock('./actions', () => ({
-    ...jest.requireActual('./actions'),
-    handleRequestRecoveryMethods: jest.fn(),
-    authMnemonicAndGetKeys: jest.fn(),
-    performPasswordReset: jest.fn(),
-    performPasswordChangeViaMnemonic: jest.fn(),
-    getDeviceRecoveryLevel: jest.fn(),
+vi.mock('./actions', async () => ({
+    ...(await vi.importActual<any>('./actions')),
+    handleRequestRecoveryMethods: vi.fn(),
+    authMnemonicAndGetKeys: vi.fn(),
+    performPasswordReset: vi.fn(),
+    performPasswordChangeViaMnemonic: vi.fn(),
+    getDeviceRecoveryLevel: vi.fn(),
 }));
 
-jest.mock('../reset/resetPasswordTelemetry', () => ({
+vi.mock('../reset/resetPasswordTelemetry', () => ({
     useResetPasswordTelemetry: () => ({
-        sendResetPasswordPageLoad: jest.fn(),
-        sendResetPasswordPageExit: jest.fn(),
-        sendResetPasswordStepLoad: jest.fn(),
-        sendResetPasswordCodeSent: jest.fn(),
-        sendResetPasswordRecoveryMethodsRequested: jest.fn(),
-        sendResetPasswordMethodValidated: jest.fn(),
-        sendResetPasswordSuccess: jest.fn(),
-        sendResetPasswordFailure: jest.fn(),
+        sendResetPasswordPageLoad: vi.fn(),
+        sendResetPasswordPageExit: vi.fn(),
+        sendResetPasswordStepLoad: vi.fn(),
+        sendResetPasswordCodeSent: vi.fn(),
+        sendResetPasswordRecoveryMethodsRequested: vi.fn(),
+        sendResetPasswordMethodValidated: vi.fn(),
+        sendResetPasswordSuccess: vi.fn(),
+        sendResetPasswordFailure: vi.fn(),
     }),
 }));
 
-jest.mock('../../locales', () => jest.requireActual('../../locales'));
-jest.mock('../localePrefix', () => jest.requireActual('../localePrefix'));
+vi.mock('../../locales', () => vi.importActual('../../locales'));
+vi.mock('../localePrefix', () => vi.importActual('../localePrefix'));
 
 // The phrase's checksum isn't what these tests are about
-jest.mock('@proton/shared/lib/mnemonic/bip39Wrapper', () => ({
-    ...jest.requireActual('@proton/shared/lib/mnemonic/bip39Wrapper'),
+vi.mock('@proton/shared/lib/mnemonic/bip39Wrapper', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/mnemonic/bip39Wrapper')),
     validateMnemonic: () => Promise.resolve(true),
 }));
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
@@ -54,7 +54,7 @@ let expireSession = () => {};
 function ForgotPasswordHarness() {
     return (
         <ResetPasswordPage
-            onLogin={jest.fn()}
+            onLogin={vi.fn()}
             onPreSubmit={() => Promise.resolve()}
             onStartAuth={() => Promise.resolve()}
             onSessionExpired={(listener) => {
@@ -88,14 +88,14 @@ describe('UnauthedForgotPasswordWizard', () => {
     beforeEach(() => {
         user = userEvent.setup();
         // The answers a test queues on these don't reach the next, even when it fails before using them
-        jest.mocked(handleRequestRecoveryMethods).mockReset();
-        jest.mocked(authMnemonicAndGetKeys).mockReset();
-        jest.mocked(performPasswordReset).mockReset();
+        vi.mocked(handleRequestRecoveryMethods).mockReset();
+        vi.mocked(authMnemonicAndGetKeys).mockReset();
+        vi.mocked(performPasswordReset).mockReset();
         mockCreateNotification.mockClear();
     });
 
     async function startRecovery(methods: ('email' | 'sms' | 'mnemonic')[]) {
-        jest.mocked(handleRequestRecoveryMethods).mockResolvedValueOnce({
+        vi.mocked(handleRequestRecoveryMethods).mockResolvedValueOnce({
             methods,
             accountType: 'internal' as const,
             username: 'user@example.com',
@@ -429,7 +429,7 @@ describe('UnauthedForgotPasswordWizard', () => {
         });
 
         it('starts over, saying why, when the phrase signs in but decrypts no keys', async () => {
-            jest.mocked(authMnemonicAndGetKeys).mockRejectedValueOnce(new NoKeysDecryptedUsingPhraseError());
+            vi.mocked(authMnemonicAndGetKeys).mockRejectedValueOnce(new NoKeysDecryptedUsingPhraseError());
             renderWithProviders(<ForgotPasswordHarness />);
             await waitFor(() => expect(screen.getByRole('heading', { name: 'Recover account' })).toBeInTheDocument());
 
@@ -456,7 +456,7 @@ describe('UnauthedForgotPasswordWizard', () => {
         const stepBackButton = () => within(screen.getByRole('main')).queryByRole('button', { name: 'Back' });
 
         it('show only where the step has somewhere to go back to', async () => {
-            jest.mocked(authMnemonicAndGetKeys).mockResolvedValueOnce({
+            vi.mocked(authMnemonicAndGetKeys).mockResolvedValueOnce({
                 authResponse: {} as AuthResponse,
                 decryptedUserKeys: [],
             });
@@ -485,7 +485,7 @@ describe('UnauthedForgotPasswordWizard', () => {
 
         it('stay while the phrase is checked, and wait for it', async () => {
             let settle: (keys: Awaited<ReturnType<typeof authMnemonicAndGetKeys>>) => void = () => {};
-            jest.mocked(authMnemonicAndGetKeys).mockReturnValueOnce(new Promise((resolve) => (settle = resolve)));
+            vi.mocked(authMnemonicAndGetKeys).mockReturnValueOnce(new Promise((resolve) => (settle = resolve)));
             renderWithProviders(<ForgotPasswordHarness />);
             await waitFor(() => expect(screen.getByRole('heading', { name: 'Recover account' })).toBeInTheDocument());
 
@@ -555,7 +555,7 @@ describe('UnauthedForgotPasswordWizard', () => {
 
         it('starts over, with the username filled in, when the reset refuses the code', async () => {
             addApiMock('core/v4/reset/user@example.com/123456', () => ({ Sessions: [], DelegatedAccesses: [] }));
-            jest.mocked(performPasswordReset).mockRejectedValueOnce(new ResetTokenRejectedError(new Error('expired')));
+            vi.mocked(performPasswordReset).mockRejectedValueOnce(new ResetTokenRejectedError(new Error('expired')));
             renderWithProviders(<ForgotPasswordHarness />);
             await waitFor(() => expect(screen.getByRole('heading', { name: 'Recover account' })).toBeInTheDocument());
 

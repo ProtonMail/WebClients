@@ -5,11 +5,11 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { ClaimedAddressNoMatchError, loginWithClaimedAddress, loginWithPassword } from './passwordLogin';
 
-jest.mock('@proton/shared/lib/authentication/loginWithFallback', () => ({
+vi.mock('@proton/shared/lib/authentication/loginWithFallback', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-const mockLoginWithFallback = jest.mocked(loginWithFallback);
+const mockLoginWithFallback = vi.mocked(loginWithFallback);
 
 const apiError = (status: number, code: number) => ({ status, data: { Code: code, Error: `error ${code}` } });
 const wrongPassword = apiError(422, API_CUSTOM_ERROR_CODES.INVALID_LOGIN);
@@ -18,7 +18,7 @@ const EMAIL = 'eric@domain.com';
 
 /** The auth info for each username, or each candidate sent with it: its own, or the error it fails with. */
 const makeApi = (failures: Record<string, unknown> = {}, claimedAddresses?: string[]) =>
-    jest.fn(async ({ data }: { data: { Username: string; ClaimedAddressID?: string } }) => {
+    vi.fn(async ({ data }: { data: { Username: string; ClaimedAddressID?: string } }) => {
         const key = data.ClaimedAddressID ?? data.Username;
         if (failures[key]) {
             throw failures[key];
@@ -165,7 +165,7 @@ describe('loginWithClaimedAddress', () => {
 
     it('stops a stopped sign-in without AbortSignal.throwIfAborted, which our oldest targets lack', async () => {
         // Safari before 15.4 and Chrome before 100 have neither throwIfAborted nor reason
-        const signal = { aborted: true, addEventListener: jest.fn(), removeEventListener: jest.fn() };
+        const signal = { aborted: true, addEventListener: vi.fn(), removeEventListener: vi.fn() };
         const api = makeApi();
 
         const error = await login(api, signal as unknown as AbortSignal).catch((reason: unknown) => reason);

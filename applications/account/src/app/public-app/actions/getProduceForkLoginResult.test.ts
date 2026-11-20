@@ -1,4 +1,5 @@
-/** @jest-environment-options {"url": "https://account.proton.me"} */
+import type { MockedFunction } from 'vitest';
+
 import { queryAvailableAppsWithTiers } from '@proton/account/availableApps/apps';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import {
@@ -11,6 +12,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { type UserModel, UserType } from '@proton/shared/lib/interfaces/User';
 import { buildUser } from '@proton/shared/testing/buildUser';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
@@ -18,24 +20,24 @@ import { withInterruption } from '../interruptions';
 import { type ProduceForkData, SSOType } from './forkInterface';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
 
-jest.mock('@proton/account/availableApps/apps', () => ({
-    ...jest.requireActual('@proton/account/availableApps/apps'),
-    queryAvailableAppsWithTiers: jest.fn(),
+vi.mock('@proton/account/availableApps/apps', async () => ({
+    ...(await vi.importActual<any>('@proton/account/availableApps/apps')),
+    queryAvailableAppsWithTiers: vi.fn(),
 }));
-const mockQueryAvailableAppsWithTiers = queryAvailableAppsWithTiers as jest.MockedFunction<
+const mockQueryAvailableAppsWithTiers = queryAvailableAppsWithTiers as MockedFunction<
     typeof queryAvailableAppsWithTiers
 >;
 
-jest.mock('@proton/shared/lib/authentication/fork/produce', () => ({
-    ...jest.requireActual('@proton/shared/lib/authentication/fork/produce'),
-    produceFork: jest.fn(),
+vi.mock('@proton/shared/lib/authentication/fork/produce', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/authentication/fork/produce')),
+    produceFork: vi.fn(),
     getProduceForkUrl: () => new URL('https://drive.proton.me/login#selector=fork'),
 }));
-jest.mock('@proton/shared/lib/authentication/fork/extension', () => ({
-    ...jest.requireActual('@proton/shared/lib/authentication/fork/extension'),
-    produceExtensionFork: jest.fn(async () => ({ type: 'success' })),
+vi.mock('@proton/shared/lib/authentication/fork/extension', async () => ({
+    ...(await vi.importActual<any>('@proton/shared/lib/authentication/fork/extension')),
+    produceExtensionFork: vi.fn(async () => ({ type: 'success' })),
 }));
-const mockProduceFork = produceFork as jest.MockedFunction<typeof produceFork>;
+const mockProduceFork = produceFork as MockedFunction<typeof produceFork>;
 
 const paths = { appSwitcher: '/apps' } as Paths;
 // Only the available apps read it, and they're mocked
@@ -87,7 +89,7 @@ const setup = ({
 }) =>
     getProduceForkLoginResult({
         // Answers the extension's push fork
-        api: jest.fn(async () => ({ Selector: 'selector' })) as unknown as Api,
+        api: vi.fn(async () => ({ Selector: 'selector' })) as unknown as Api,
         data: getForkData(app),
         session: getSession(source, user),
         paths,
@@ -95,7 +97,8 @@ const setup = ({
 
 describe('getProduceForkLoginResult', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        setLocation('https://account.proton.me');
+        vi.clearAllMocks();
         // For the app switcher shown when a fork is refused
         mockQueryAvailableAppsWithTiers.mockResolvedValue([
             { app: APPS.PROTONMAIL, tier: null },
@@ -188,7 +191,7 @@ describe('getProduceForkLoginResult', () => {
                 } as ProduceForkParametersFull,
             },
         };
-        const api = jest.fn() as unknown as Api;
+        const api = vi.fn() as unknown as Api;
         const session = getSession(SessionSource.Proton, {});
 
         const result = await getProduceForkLoginResult({ api, data, session, paths });
@@ -222,7 +225,7 @@ describe('getProduceForkLoginResult', () => {
         };
 
         const result = await getProduceForkLoginResult({
-            api: jest.fn() as unknown as Api,
+            api: vi.fn() as unknown as Api,
             data,
             session: getSession(SessionSource.Proton, {}),
             paths,
@@ -247,7 +250,7 @@ describe('getProduceForkLoginResult', () => {
         };
 
         it('shows where the device with the code is on the desktop consent', async () => {
-            const api = jest.fn(async () => ({ Code: 1000, IP: '1.2.3.4', CountryCode: 'CH' }));
+            const api = vi.fn(async () => ({ Code: 1000, IP: '1.2.3.4', CountryCode: 'CH' }));
 
             const result = await getProduceForkLoginResult({
                 api: api as unknown as Api,
@@ -271,7 +274,7 @@ describe('getProduceForkLoginResult', () => {
 
         it('still asks for the desktop consent when the location cannot be loaded', async () => {
             const result = await getProduceForkLoginResult({
-                api: jest.fn(async () => Promise.reject(new Error('offline'))) as unknown as Api,
+                api: vi.fn(async () => Promise.reject(new Error('offline'))) as unknown as Api,
                 data,
                 session: getSession(SessionSource.Proton, {}),
                 paths,
@@ -290,7 +293,7 @@ describe('getProduceForkLoginResult', () => {
         };
         const run = (flow: AuthSession['flow']) =>
             getProduceForkLoginResult({
-                api: jest.fn() as unknown as Api,
+                api: vi.fn() as unknown as Api,
                 data,
                 session: { ...getSession(SessionSource.Proton, {}), flow },
                 paths,

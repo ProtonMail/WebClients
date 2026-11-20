@@ -1,14 +1,14 @@
 import { renderHook } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { getStoreWrapper } from '@proton/components/testing/renderWithProviders';
+import { getStoreWrapper } from '@proton/components/testing/vitest/renderWithProviders';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { buildUser } from '@proton/shared/testing/buildUser';
-import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
+import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 import { checkTrialPrice } from './Trial2024UpsellModal';
 
@@ -27,7 +27,7 @@ const getPaymentsApi = () => {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     clearApiMocks();
 });
 

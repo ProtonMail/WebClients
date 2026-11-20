@@ -34,7 +34,7 @@ const start = ({
     }) => Promise<{ session: TokenRedemptionSession; passwordPolicies: [] }>;
     changePassword?: (input: { session: TokenRedemptionSession | undefined; password: string }) => Promise<void>;
 }) => {
-    const actions = { clearLinkFromUrl: jest.fn() };
+    const actions = { clearLinkFromUrl: vi.fn() };
     const emitted: TokenRedemptionEmitted[] = [];
     // Set while a step listens for the session expiring
     let expireSession = () => {};
@@ -67,9 +67,9 @@ describe('tokenRedemptionStateMachine', () => {
     });
 
     it('goes from email to code to password, then signs in', async () => {
-        const redeemToken = jest.fn(async () => {});
-        const verifyCode = jest.fn(async () => ({ session, passwordPolicies: [] as [] }));
-        const changePassword = jest.fn(async () => {});
+        const redeemToken = vi.fn(async () => {});
+        const verifyCode = vi.fn(async () => ({ session, passwordPolicies: [] as [] }));
+        const changePassword = vi.fn(async () => {});
         const { actor, actions } = start({ redeemToken, verifyCode, changePassword });
         expect(actions.clearLinkFromUrl).toHaveBeenCalled();
 
@@ -91,7 +91,7 @@ describe('tokenRedemptionStateMachine', () => {
     });
 
     it('resends the code to the submitted email', async () => {
-        const redeemToken = jest.fn(async () => {});
+        const redeemToken = vi.fn(async () => {});
         const { actor, emitted } = start({ redeemToken });
         actor.send({ type: 'email.submitted', email: 'jane@example.com' });
         await waitFor(actor, (state) => state.matches({ otp: 'idle' }));

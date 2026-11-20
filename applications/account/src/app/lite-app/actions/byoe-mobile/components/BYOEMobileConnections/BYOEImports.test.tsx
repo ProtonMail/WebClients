@@ -7,21 +7,21 @@ import { BYOEImports } from './BYOEImports';
 let mockActiveImporterEntries: any[] = [];
 let mockReportEntries: any[] = [];
 
-jest.mock('./ImporterActions', () => ({ ImporterActions: () => null }));
-jest.mock('./ReportActions', () => ({ ReportActions: () => null }));
-jest.mock('@proton/activation/src/logic/store', () => ({
+vi.mock('./ImporterActions', () => ({ ImporterActions: () => null }));
+vi.mock('./ReportActions', () => ({ ReportActions: () => null }));
+vi.mock('@proton/activation/src/logic/store', () => ({
     useEasySwitchSelector: (selector: () => unknown) => selector(),
 }));
-jest.mock('@proton/activation/src/logic/importers/importers.selectors', () => ({
+vi.mock('@proton/activation/src/logic/importers/importers.selectors', () => ({
     selectActiveImporterEntriesByDate: () => mockActiveImporterEntries,
 }));
-jest.mock('@proton/activation/src/logic/reports/reports.selectors', () => ({
+vi.mock('@proton/activation/src/logic/reports/reports.selectors', () => ({
     selectReportEntriesByDate: () => mockReportEntries,
 }));
-jest.mock('@proton/activation/src/components/ReportsTable/formatReportDate', () => ({
+vi.mock('@proton/activation/src/components/ReportsTable/formatReportDate', () => ({
     formatReportDate: (timestamp?: number) => (timestamp ? 'Jan 1, 2025' : null),
 }));
-jest.mock('@proton/shared/lib/helpers/humanSize', () => ({
+vi.mock('@proton/shared/lib/helpers/humanSize', () => ({
     __esModule: true,
     default: () => '1 MB',
 }));

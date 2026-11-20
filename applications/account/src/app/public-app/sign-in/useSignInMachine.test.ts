@@ -5,15 +5,15 @@ import type { Paths } from '../helper';
 import { AuthType } from './auth/interface';
 import { useSignInMachine } from './useSignInMachine';
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
     useConfig: () => ({ APP_NAME: 'proton-account' }),
 }));
-jest.mock('@proton/app-context/useSilentApi', () => ({
+vi.mock('@proton/app-context/useSilentApi', () => ({
     __esModule: true,
     useSilentApi: () => () => new Promise(() => {}),
 }));
-jest.mock('../hooks/useGetAccountKTActivation', () => ({ useGetAccountKTActivation: () => jest.fn() }));
+vi.mock('../hooks/useGetAccountKTActivation', () => ({ useGetAccountKTActivation: () => vi.fn() }));
 
 const options = {
     productParam: undefined,
@@ -21,14 +21,14 @@ const options = {
     onPreSubmit: undefined,
     onStartAuth: () => Promise.resolve(),
     onSessionExpired: () => () => {},
-    onLogin: jest.fn(),
+    onLogin: vi.fn(),
     paths: {} as Paths,
 };
 
 describe('useSignInMachine', () => {
     it('keeps the machine, and running children call the latest callbacks', () => {
-        const firstOnBack = jest.fn();
-        const latestOnBack = jest.fn();
+        const firstOnBack = vi.fn();
+        const latestOnBack = vi.fn();
         const { result, rerender } = renderHook((onBack: () => void) => useSignInMachine({ ...options, onBack }), {
             initialProps: firstOnBack,
         });

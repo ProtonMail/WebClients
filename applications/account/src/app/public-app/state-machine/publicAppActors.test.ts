@@ -8,7 +8,7 @@ import type { UnleashClient } from '@proton/unleash/UnleashClient';
 import { createPublicAppActors } from './publicAppActors';
 import { InvalidForkError, publicAppStateMachine } from './publicAppStateMachine';
 
-jest.mock('../localePrefix', () => ({
+vi.mock('../localePrefix', () => ({
     stripLocaleTagPrefix: (pathname: string) => ({ localePrefix: pathname.match(/^\/(de|fr)\//)?.[1] ?? '' }),
     getLocaleMapping: (localeCode: string) => localeCode,
 }));
@@ -17,7 +17,7 @@ describe('watchLanguage', () => {
     it('tells the machine when the user picks another language, until it stops', () => {
         const history = createMemoryHistory({ initialEntries: ['/de/login'] });
         const { watchLanguage } = createPublicAppActors({
-            api: jest.fn() as unknown as Api,
+            api: vi.fn() as unknown as Api,
             history,
             unleashClient: {} as UnleashClient,
         });
@@ -42,7 +42,7 @@ describe('watchLanguage', () => {
 
 describe('resolve', () => {
     const { resolve } = createPublicAppActors({
-        api: jest.fn() as unknown as Api,
+        api: vi.fn() as unknown as Api,
         history: createMemoryHistory(),
         unleashClient: {} as UnleashClient,
     });

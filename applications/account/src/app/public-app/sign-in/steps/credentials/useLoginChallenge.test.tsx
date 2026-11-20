@@ -1,3 +1,4 @@
+// @vitest-environment jsdom
 import type { Ref } from 'react';
 import { useState } from 'react';
 
@@ -22,13 +23,13 @@ const LoginChallengeForm = ({ mode }: { mode: string }) => {
 };
 
 describe('useLoginChallenge', () => {
-    beforeEach(() => jest.useFakeTimers());
-    afterEach(() => jest.useRealTimers());
+    beforeEach(() => vi.useFakeTimers());
+    afterEach(() => vi.useRealTimers());
 
     const setup = () => {
         const result = render(<LoginChallengeForm mode="srp" />);
         const iframe = result.container.querySelector('iframe')!;
-        const postMessage = jest.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
+        const postMessage = vi.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
 
         act(() => {
             [{ type: 'init' }, { type: 'onload' }].forEach((data) => {
@@ -48,7 +49,7 @@ describe('useLoginChallenge', () => {
                 result.container
                     .querySelector('#username')!
                     .dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true }));
-                jest.advanceTimersByTime(0);
+                vi.advanceTimersByTime(0);
             });
         };
 
