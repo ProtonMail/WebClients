@@ -101,7 +101,7 @@
         "Bloqueja el contacte"
       ],
       "Bulk delete items from trash": [
-        "Suprimeix en massa els elements de la paperera"
+        "Elimina en massa els elements de la paperera"
       ],
       "Bulk move items to another vault": [
         "Mou els elements en massa a una altra caixa forta"
@@ -110,7 +110,7 @@
         "Mou diversos elements a la paperera"
       ],
       "Bulk restore items from trash": [
-        "Restaura un grup d'elements des de la paperera"
+        "Restaura en massa els elements de la paperera"
       ],
       "Bulk select items": [
         "Selecciona elements en massa"
@@ -230,7 +230,7 @@
         "Crear"
       ],
       "Create a ${ BRAND_NAME } account": [
-        "Crear un compte de ${ BRAND_NAME }"
+        "Crea un compte de ${ BRAND_NAME }"
       ],
       "Create a new vault": [
         "Crea una caixa forta nova"
@@ -311,7 +311,7 @@
         "Desactiva en lloc"
       ],
       "Disable this alias to stop receiving emails sent to this alias": [
-        "Desactiveu aquest àlies per deixar de rebre correus electrònics enviats a aquest àlies"
+        "Desactiveu-lo per a deixar de rebre correus electrònics enviats a aquest àlies"
       ],
       "Discard": [
         "Descarta"
@@ -323,7 +323,7 @@
         "Descarta la notificació"
       ],
       "Do not show again": [
-        "No ho torneu a mostrar"
+        "No ho tornis a mostrar"
       ],
       "Do not show again when I press": [
         "No ho tornis a mostrar quan premi"
@@ -332,7 +332,7 @@
         "No m'ho torneu a mostrar"
       ],
       "Download for Linux": [
-        "Descarregar-ho per a Linux"
+        "Descarrega per a Linux"
       ],
       "Download for macOS": [
         "Descarrega per a macOS"
@@ -359,7 +359,7 @@
         "Activeu ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Enable this alias to receive emails sent to this alias": [
-        "Activeu aquest àlies per rebre correus electrònics enviats a aquest àlies"
+        "Activeu-lo per a rebre correus electrònics enviats a aquest àlies"
       ],
       "Exclude from monitoring": [
         "Exclou del monitoratge"
@@ -395,7 +395,7 @@
         "Obteniu ${ PASS_APP_NAME }"
       ],
       "Get mobile and desktop apps": [
-        "Obtingueu les aplicacions mòbils i d'escriptori"
+        "Obtén les aplicacions mòbils i d'escriptori"
       ],
       "Get mobile apps": [
         "Baixeu l'aplicació mòbil"
@@ -473,7 +473,7 @@
         "Carrega'n més"
       ],
       "Lock ${ PASS_APP_NAME }": [
-        "Bloca ${ PASS_APP_NAME }"
+        "Bloqueja ${ PASS_APP_NAME }"
       ],
       "Lock extension": [
         "Bloqueja l'extensió"
@@ -566,7 +566,7 @@
         "Obriu el menú desplegable de selecció de plataformes"
       ],
       "Open the browser again": [
-        "Obriu el navegador de nou"
+        "Torneu a obrir el navegador"
       ],
       "Organize vaults": [
         "Organitza les caixes fortes"
@@ -737,7 +737,7 @@
         "Mostrar més"
       ],
       "Sign in in the app instead": [
-        "Inicieu sessió a l'aplicació en lloc d'això"
+        "Feu servir l'aplicació per iniciar sessió"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
@@ -761,7 +761,7 @@
         "S'està enviant l'informe..."
       ],
       "Switch vault": [
-        "Canviar de caixa forta"
+        "Canvia de caixa forta"
       ],
       "Sync alias": [
         "Sincronitza l'àlies",
@@ -780,7 +780,7 @@
         "Transfereix els àlies"
       ],
       "Transfer and delete mailbox": [
-        "Transferirà i elimina la bústia de correu"
+        "Transfereix i elimina la bústia de correu"
       ],
       "Transfer ownership": [
         "Transfereix la propietat"
@@ -954,7 +954,7 @@
         "El protocol DKIM ${ WIKIPEDIA_LINK_DKIM } és un mètode d'autenticació de correu electrònic dissenyat per evitar la falsificació de correu electrònic. Es recomana configurar DKIM per reduir la possibilitat que els vostres correus electrònics acabin a la carpeta de correu brossa del destinatari."
       ],
       "DMARC ${ WIKIPEDIA_LINK_DMARC } is designed to protect the domain from unauthorized use, commonly known as email spoofing. Built around SPF and DKIM, a DMARC policy tells the receiving mail server what to do if neither of those authentication methods passes.": [
-        "La política DMARC ${ WIKIPEDIA_LINK_DMARC } està dissenyat per protegir el domini de l'ús no autoritzat, comunament conegut com a falsificació de correu electrònic. Creada al voltant de SPF i DKIM, una política DMARC indica al servidor de correu receptor què ha de fer si cap d'aquests mètodes d'autenticació passa."
+        "La política DMARC ${ WIKIPEDIA_LINK_DMARC } està dissenyada per a protegir el domini de l'ús no autoritzat, comunament conegut com a falsificació de correu electrònic. Creada al voltant d'SPF i DKIM, una política DMARC indica al servidor de correu receptor què ha de fer si cap d'aquests mètodes d'autenticació no passa."
       ],
       "Get notified if your email, password or other personal data was leaked.": [
         "Rebi una notificació si s'han filtrat el seu correu electrònic, contrasenya o altres dades personals."
@@ -963,7 +963,7 @@
         "Si utilitzeu un subdomini, per exemple ${ subdomainExample }, heu d'utilitzar ${ dmarcExampleSubdomain } com a domini."
       ],
       "If you are using a subdomain, e.g. subdomain.domain.com, you need to use ${ domainKeyExampleSubdomain } as the domain instead. That means, if your domain is mail.domain.com you should enter ${ domainKeyExampleMail } as the Domain.": [
-        "Si utilitzeu un subdomini, per exemple subdomini.domini.cat, heu d'utilitzar ${ domainKeyExampleSubdomain } com a domini. Això vol dir que si el vostre domini és correu.domini.cat, heu d'introduir ${ domainKeyExampleMail } com a domini."
+        "Si utilitzeu un subdomini, p. ex. subdomini.domini.cat, heu d'utilitzar ${ domainKeyExampleSubdomain } com a domini. Això vol dir que si el vostre domini és correu.domini.cat, heu d'introduir ${ domainKeyExampleMail } com a domini."
       ],
       "If you are using Cloudflare, please make sure to not select the Proxy option.": [
         "Si utilitzeu Cloudflare, assegureu-vos de no seleccionar l'opció Proxy."
@@ -1011,7 +1011,7 @@
         "Aquest servei ofereix A2F. Habiliteu-lo per a augmentar la seguretat del compte."
       ],
       "To verify ownership of the domain, please add the following TXT record. Some domain registrars (Namecheap, Cloudflare, etc.) might use @ for the root domain.": [
-        "Per verificar la propietat del domini, afegiu el registre TXT següent. Alguns registradors de dominis (Namecheap, Cloudflare, etc.) poden utilitzar @ per al domini arrel."
+        "Per a verificar la propietat del domini, afegiu el registre TXT següent. Alguns registradors de dominis (Namecheap, Cloudflare, etc.) poden utilitzar @ per al domini arrel."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloquegeu característiques de seguretat avançades i registres detallats per a protegir la vostra presència en línia."
@@ -1028,7 +1028,7 @@
     },
     "Email": {
       "anything@${ domainDisplay }": [
-        "element@${ domainDisplay }"
+        "qualsevolcosa@${ domainDisplay }"
       ]
     },
     "Error": {
@@ -1063,10 +1063,10 @@
         "Ha fallat l'autenticació. Confirmeu la contrasenya de recuperació per a continuar amb l'exportació."
       ],
       "Authentication failed. Confirm your extra password in order to proceed with the export": [
-        "Ha fallat l'autenticació. Confirmeu la contrasenya addicional per a continuar amb l'exportació."
+        "L'autenticació ha fallat. Confirmeu la contrasenya addicional per a continuar amb l'exportació."
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
-        "S'ha produït un error amb l'autenticació. Confirmeu la segona contrasenya per continuar amb l'exportació."
+        "L'autenticació ha fallat. Confirmeu la segona contrasenya per a continuar amb l'exportació."
       ],
       "Biometric authentication cancelled.": [
         "S'ha cancel·lat l'autenticació biomètrica."
@@ -1218,7 +1218,7 @@
         "No s'ha pogut eliminar el domini."
       ],
       "Failed to delete email address from monitoring": [
-        "No s'ha pogut suprimir l'adreça de correu electrònic del monitoratge"
+        "No s'ha pogut eliminar l'adreça de correu electrònic del monitoratge"
       ],
       "Failed to delete folder": [
         "No s'ha pogut eliminar la carpeta",
@@ -1285,7 +1285,7 @@
         "No s'han pogut restaurar els elements de la paperera"
       ],
       "Failed to set default mailbox": [
-        "No s'ha pogut establir la bústia de correu per defecte."
+        "No s'ha pogut establir la bústia de correu predeterminada."
       ],
       "Failed to start SSH agent: ${ errorMessage }": [
         "No s'ha pogut iniciar l'agent SSH: ${ errorMessage }"
@@ -1303,7 +1303,7 @@
         "No s'ha pogut desancorar l'element."
       ],
       "Failed to update catch-all setting.": [
-        "No s'ha pogut actualitzar la preferència catch-all."
+        "No s'ha pogut actualitzar la preferència d'adreça d'arreplega."
       ],
       "Failed to update default domain": [
         "No s'ha pogut actualitzar el domini per defecte."
@@ -1357,7 +1357,7 @@
         "No s'ha pogut importar els elements."
       ],
       "Inactive secure links could not be removed.": [
-        "Els enllaços segurs inactius no es van poder esborrar."
+        "No s'han pogut esborrar els enllaços segurs inactius."
       ],
       "Incorrect backup password. Please try again.": [
         "La contrasenya de recuperació no és correcta. Torneu-ho a intentar."
@@ -1444,7 +1444,7 @@
         "No s'ha pogut verificar la signatura."
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Algunes caixes fortes ja no són accessibles a causa d'un restabliment de contrasenya. Reactiveu les claus del vostre compte per recuperar-hi l'accés. ${ reactivateLink }"
+        "Algunes caixes fortes ja no són accessibles a causa d'un restabliment de contrasenya. Reactiveu les claus del compte per a recuperar-hi l'accés. ${ reactivateLink }"
       ],
       "Something went wrong": [
         "S'ha produït un error."
@@ -1465,7 +1465,7 @@
         "L'aplicació d'escriptori ${ PASS_APP_NAME } no respon, s'està executant?"
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
-        "S'ha iniciat sessió a l'aplicació d'escriptori ${ PASS_APP_NAME }amb un compte diferent."
+        "S'ha iniciat la sessió a l'aplicació d'escriptori ${ PASS_APP_NAME }amb un compte diferent."
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
         "L'aplicació d'escriptori ${ PASS_APP_NAME } hauria de tenir la sessió iniciada."
@@ -1555,7 +1555,7 @@
         "Hem trobat un problema en iniciar ${ PASS_SHORT_APP_NAME }. Si aquest problema continua, poseu-vos en contacte amb el nostre servei d'atenció al client per obtenir ajuda."
       ],
       "Wrong backup password": [
-        "Contrasenya de recuperació incorrecta"
+        "La contrasenya de recuperació no és correcta"
       ],
       "Wrong extra password": [
         "La contrasenya addicional no és correcta."
@@ -1695,7 +1695,7 @@
         "${ inviterEmail } vol compartir un element amb el grup ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
-        "${ inviterEmail } vol compartir un element amb vosaltres."
+        "${ inviterEmail } us vol compartir un element."
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1709,7 +1709,7 @@
         "${ PASS_APP_NAME } sempre serà accessible"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
-        "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
+        "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del servidor intermediari d'imatges anonimitzat de ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } aplicarà el mateix tema que el vostre sistema."
@@ -1755,19 +1755,19 @@
         "(Buit)"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "7 dies per a provar característiques prèmium de forma gratuïta. Només durant la primera setmana de ${ BRAND_NAME }."
+        "7 dies per a provar característiques prèmium de forma gratuïta. Només durant la vostra primera setmana de ${ BRAND_NAME }."
       ],
       "A contact is created for every email address that sends emails to or receives emails from ${ aliasEmail }.": [
         "Es crea un contacte per a cada adreça de correu electrònic que enviï correus electrònics a o rebi correus electrònics de ${ aliasEmail }."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
-        "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
+        "Hi ha disponible una versió nova de ${ PASS_APP_NAME }. Actualitzeu-lo per a gaudir de les últimes característiques i correccions d'errors."
       ],
       "Access successfully confirmed": [
         "S'ha confirmat l'accés."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
+        "L'accés a ${ PASS_APP_NAME } sempre requerirà la contrasenya de ${ BRAND_NAME }."
       ],
       "Access to ${ PASS_APP_NAME } will always require your backup password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la contrasenya de recuperació."
@@ -1782,7 +1782,7 @@
         "Per accedir a ${ PASS_APP_NAME } caldrà la vostra empremta digital o el codi PIN del dispositiu."
       ],
       "Access token \"${ action.token.Name }\" is already expired. If deleted, it will no longer be shown.": [
-        "El testimoni d'accés \"${ action.token.Name }\" ja ha caducat. Si l'elimineu, no es tornarà a mostrar."
+        "El testimoni d'accés «${ action.token.Name }» ja ha caducat. Si l'elimineu, no es tornarà a mostrar."
       ],
       "Access token \"${ action.token.Name }\" will stop working immediately. This action cannot be undone.": [
         "L'identificador d'accés \"${ action.token.Name }\" deixarà de funcionar immediatament. Aquesta acció no es podrà desfer."
@@ -1803,7 +1803,7 @@
         "Un cop ho hagueu confirmat, haureu d'acceptar una petició de permís per a ${ PASS_APP_NAME }."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
+        "Per seguretat, podeu eliminar el fitxer CSV que conté les contrasenyes després d'importar les dades."
       ],
       "Alert restored": [
         "S'ha restaurat l'alerta"
@@ -1827,7 +1827,7 @@
         "Els àlies amb dominis personalitzats no se supervisen; afegeixi'ls com a correu electrònic personalitzat per al seguiment."
       ],
       "All aliases using the mailbox ${ emailJSX } will be also deleted.": [
-        "També se suprimiran tots els àlies que utilitzin la bústia ${ emailJSX }."
+        "També s'eliminaran tots els àlies que utilitzin la bústia ${ emailJSX }."
       ],
       "All breaches for this address were resolved": [
         "S'han resolt totes les infraccions d'aquesta adreça"
@@ -1854,10 +1854,10 @@
         "S'ha eliminat un element que s'havia compartit prèviament amb vós."
       ],
       "Are you sure you want to remove ${ emailJSX } from your mailboxes?": [
-        "Esteu segur que voleu eliminar ${ emailJSX } de les vostres bústies de correu?"
+        "Segur que voleu esborrar ${ emailJSX } de les vostres bústies de correu?"
       ],
       "Are you sure you want to remove the link?": [
-        "Esteu segur que voleu esborrar l'enllaç?"
+        "Segur que voleu esborrar l'enllaç?"
       ],
       "Auto-created aliases are automatically owned by the following mailbox(es):": [
         "Els àlies creats automàticament són propietat de les bústies de correu següents:"
@@ -1893,7 +1893,7 @@
         "Autenticador 2FA integrat"
       ],
       "By adding your domain, you can create aliases like hi@my-domain.com.": [
-        "Afegint el vostre domini, podeu crear àlies com hola@el-meu-domini.cat."
+        "En afegir el vostre domini, podreu crear àlies com hola@el-meu-domini.cat."
       ],
       "Can be viewed": [
         "Es pot veure"
@@ -1914,10 +1914,10 @@
         "Permet concedir i revocar accés a aquesta caixa forta i eliminarla."
       ],
       "Can grant and revoke access to this vault.": [
-        "Permet concedir i revocar accés a aquesta caixa forta."
+        "Pot concedir i revocar accés a aquesta caixa forta."
       ],
       "Can view items in this vault.": [
-        "Permet veure els elements d'aquesta caixa forte."
+        "Pot veure els elements d'aquesta caixa forta."
       ],
       "Can view this item.": [
         "Pot veure aquest element."
@@ -2022,7 +2022,7 @@
         "Editor"
       ],
       "Email address successfully deleted from monitoring": [
-        "L'adreça de correu electrònic s'ha suprimit del monitoratge."
+        "L'adreça de correu electrònic s'ha eliminat del monitoratge."
       ],
       "Email address successfully excluded from monitoring": [
         "L'adreça de correu electrònic s'ha exclòs del monitoratge."
@@ -2034,10 +2034,10 @@
         "Il·lustració de les capçaleres de correu electrònic"
       ],
       "Email this address and it will appear to be sent from ${ exampleEmail } for example.": [
-        "Per exmple, envieu un correu electrònic a aquesta adreça i apareixerà com a enviat des de ${ exampleEmail }."
+        "Envieu un correu electrònic a aquesta adreça i pareixerà que s'ha enviat des de ${ exampleEmail }, per exemple."
       ],
       "Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.": [
-        "Els correus electrònics enviats als vostres àlies es reenvien a les vostres bústies de correu. Un àlies pot tenir més d'una bústia de correu: útil per compartir un àlies entre vosaltres i els vostres amics."
+        "Els correus electrònics enviats als vostres àlies es reenvien a les bústies de correu. Un àlies pot tenir més d'una bústia de correu: útil per a compartir un àlies amb els vostres amics."
       ],
       "Emptying trash...": [
         "Buidant la paperera..."
@@ -2052,7 +2052,7 @@
         "Habiliteu el mode fora de línia per a accedir a les vostres dades de ${ PASS_SHORT_APP_NAME } si perdeu la connexió a internet o si no es pot accedir als servidors de ${ BRAND_NAME }."
       ],
       "Enabling biometrics auto-lock": [
-        "Activant el bloqueig automàtic biomètric"
+        "S'està activant el bloqueig automàtic biomètric"
       ],
       "Enabling biometrics lock failed": [
         "No s'ha pogut activar el bloqueig amb biometria."
@@ -2112,7 +2112,7 @@
         "S'ha esborrat la contrasenya addicional."
       ],
       "Failed updating your vault organization": [
-        "No s'ha pogut actualitzar l'organització de la vostra caixa forta"
+        "No s'ha pogut actualitzar l'organització de la caixa forta"
       ],
       "Field hidden. You can still autofill it.": [
         "Camp ocult. Encara el podeu emplenar automàticament."
@@ -2153,7 +2153,7 @@
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Les contrasenyes generades s'emmagatzemaran durant un període d'${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana.",
-        "Les contrasenyes generades s'emmagatzemaran durant un període de: ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes."
+        "Les contrasenyes generades s'emmagatzemaran durant un període de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes."
       ],
       "Get the most out of ${ PASS_APP_NAME } by creating a vault for each team or project.": [
         "Traieu el màxim partit de ${ PASS_APP_NAME } creant una caixa forta per a cada equip o projecte."
@@ -2207,7 +2207,7 @@
         "S'ha reenviat la invitació."
       ],
       "invites the group ${ name } to access items in": [
-        "convidar el grup ${ name } a accedir a elements de"
+        "convida el grup ${ name } a accedir a elements de"
       ],
       "invites you to access items in": [
         "us convida a accedir a elements a"
@@ -2295,7 +2295,7 @@
         "Prioritat mitjana"
       ],
       "Monitoring settings successfully updated": [
-        "S'han actualitzat les preferències de seguiment."
+        "S'han actualitzat les preferències de monitoratge."
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
@@ -2311,7 +2311,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Moure un element a una altra caixa forta farà que s'esborrin els seus enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2482,25 +2482,25 @@
         "Confirmeu la vostra contrasenya addicional per desregistrar el vostre bloqueig."
       ],
       "Please confirm your extra password in order to update the auto-lock time.": [
-        "Confirmeu la vostra contrasenya addicional per actualitzar l'hora del bloqueig automàtic."
+        "Confirmeu la contrasenya addicional per a actualitzar l'hora del bloqueig automàtic."
       ],
       "Please confirm your password": [
-        "Confirmeu la vostra contrasenya"
+        "Confirmeu la contrasenya"
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Confirmeu la vostra contrasenya per tal de bloquejar automàticament amb dades biomètriques."
+        "Confirmeu la contrasenya per a bloquejar automàticament amb dades biomètriques."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
-        "Confirmeu la vostra contrasenya per tal de bloquejar automàticament amb la vostra contrasenya."
+        "Confirmeu la contrasenya per a bloquejar automàticament amb la contrasenya."
       ],
       "Please confirm your password in order to unregister your current lock.": [
-        "Confirmeu la vostra contrasenya per desregistrar el vostre bloqueig."
+        "Confirmeu la contrasenya per a cancel·lar el registre del bloqueig."
       ],
       "Please confirm your password in order to update the auto-lock time.": [
-        "Confirmeu la vostra contrasenya per actualitzar l'hora del bloqueig automàtic."
+        "Confirmeu la contrasenya per a actualitzar l'hora del bloqueig automàtic."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
-        "Confirmeu el vostre codi PIN per tal d'anul·lar el registre del vostre bloqueig actual."
+        "Confirmeu el codi PIN per a anul·lar el registre del bloqueig actual."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Confirmeu el codi PIN per a editar aquesta preferència."
@@ -2512,19 +2512,19 @@
         "Confirmeu la segona contrasenya per tal de bloquejar automàticament amb dades biomètriques."
       ],
       "Please confirm your second password in order to auto-lock with your password.": [
-        "Confirmeu la segona contrasenya per tal de bloquejar-la automàticament amb la vostra contrasenya."
+        "Confirmeu la segona contrasenya per a bloquejar automàticament amb la vostra contrasenya."
       ],
       "Please confirm your second password in order to enable offline mode": [
         "Confirmeu la segona contrasenya per a activar el mode fora de línia."
       ],
       "Please confirm your second password in order to export your ${ PASS_APP_NAME } data": [
-        "Confirmeu la segona contrasenya per a exportar les vostres dades de ${ PASS_APP_NAME }."
+        "Confirmeu la segona contrasenya per a exportar les dades de ${ PASS_APP_NAME }."
       ],
       "Please confirm your second password in order to unregister your current lock.": [
-        "Confirmeu la segona contrasenya per desregistrar el bloqueig actual."
+        "Confirmeu la segona contrasenya per a cancel·lar el registre del bloqueig actual."
       ],
       "Please confirm your second password in order to update the auto-lock time.": [
-        "Confirmeu la segona contrasenya per actualitzar l'hora del bloqueig automàtic."
+        "Confirmeu la segona contrasenya per a actualitzar l'hora del bloqueig automàtic."
       ],
       "Please consider leaving a review.": [
         "Considereu deixar una ressenya."
@@ -2539,7 +2539,7 @@
         "Introduïu el codi PIN actual per a continuar."
       ],
       "Please follow the steps below to set up your domain.": [
-        "Seguiu els passos següents per configurar el vostre domini."
+        "Seguiu els passos següents per a configurar el vostre domini."
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Manteniu aquesta finestra oberta mentre s'importen les vostres dades. Aquest procés pot trigar uns minuts."
@@ -2554,7 +2554,7 @@
         "Tingueu en compte que, un cop suprimit, l'àlies no es pot restaurar. L'àlies ja està desactivat i no reenviarà correus electrònics a la vostra bústia de correu."
       ],
       "Please use full path domain, for example my-domain.com or my-subdomain.my-domain.com if you are using a subdomain.": [
-        "Utilitzeu el domini del camí complet, per exemple el- meu-domini.cat o el-meu-subdomini.el-meu-domini.cat si feu servir un subdomini."
+        "Utilitzeu la ruta completa del domini, per exemple el- meu-domini.cat o el-meu-subdomini.el-meu-domini.cat si feu servir un subdomini."
       ],
       "Press Enter to copy": [
         "Premeu Retorn per a copiar"
@@ -2584,7 +2584,7 @@
         "Registre: TXT"
       ],
       "Registering extra password...": [
-        "Registrant la contrasenya addicional..."
+        "S'està registrant la contrasenya addicional..."
       ],
       "Registering PIN lock failed": [
         "No s'ha pogut registrar el bloqueig del PIN"
@@ -2593,7 +2593,7 @@
         "Esborrant tots els enllaços segurs inactius..."
       ],
       "Removing extra password...": [
-        "Esborrant la contrasenya addicional..."
+        "S'està esborrant la contrasenya addicional..."
       ],
       "Removing secure link...": [
         "S'està eliminant l'enllaç segur..."
@@ -2668,7 +2668,7 @@
         "Invitació a un element compartit"
       ],
       "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Inicieu sessió i confirmeu-ho a la finestra del navegador que s'obrirà. ${ PASS_APP_NAME } s'activarà automàticament un cop hàgiu acabat."
+        "Inicieu sessió a la finestra del navegador que s'acaba d'obrir. ${ PASS_APP_NAME } s'activarà automàticament un cop hàgiu acabat."
       ],
       "Sign in to your account": [
         "Inicieu sessió al compte"
@@ -2680,19 +2680,19 @@
         "Les notes de SimpleLogin s'emmagatzemen al mateix lloc que les adreces d'àlies i, tot i que estan protegides per xifratge en repòs, no estan xifrades d'extrem a extrem, és a dir, qualsevol persona amb accés a la base de dades SimpleLogin pot llegir-les."
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
-        "Només cal que utilitzeu ${ emailBold } la pròxima vegada que necessiteu un àlies: es crearà ${ automaticallyBold } la primera vegada que rebi un correu electrònic. Per tenir un control més detallat, també podeu definir ${ rulesHyperLink }."
+        "Només cal que utilitzeu ${ emailBold } la pròxima vegada que necessiteu un àlies: es crearà ${ automaticallyBold } la primera vegada que rebi un correu electrònic. Per a tenir un control més detallat, també podeu definir ${ rulesHyperLink }."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
-        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de ${ BRAND_NAME }."
+        "Per a iniciar ${ PASS_APP_NAME } fora de línia, us caldrà la contrasenya de ${ BRAND_NAME }."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
-        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de còpia de seguretat."
+        "Per a iniciar ${ PASS_APP_NAME } fora de línia, us caldrà la contrasenya de recuperació."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
         "Per a iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya addicional."
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
-        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la segona contrasenya."
+        "Per a iniciar ${ PASS_APP_NAME } fora de línia, us caldrà la segona contrasenya."
       ],
       "Successfully exported all your items": [
         "S'han exportat tots els elements"
@@ -2743,7 +2743,7 @@
         "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
-        "Es requerirà la contrasenya addicional per utilitzar ${ PASS_APP_NAME }. Actua com una contrasenya addicional a la contrasenya de ${ BRAND_NAME }."
+        "Es requerirà la contrasenya addicional per a utilitzar ${ PASS_APP_NAME }. Actua com una contrasenya addicional a la contrasenya de ${ BRAND_NAME }."
       ],
       "The folder is already here": [
         "La carpeta ja hi és present"
@@ -2780,10 +2780,10 @@
         "Aquesta funció requereix que l'aplicació d'escriptori ${ PASS_APP_NAME } estigui instal·lada i en execució durant la configuració."
       ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
-        "Aquest element no està compartit actualment amb ningú. Inviteu persones a compartir-la amb altres."
+        "Aquest element no està compartit actualment amb ningú. Inviteu persones a compartir-lo amb altres."
       ],
       "This mailbox will use your previous email.": [
-        "Aquesta bústia de correu utilitzarà el vostre correu-e anterior."
+        "Aquesta bústia de correu utilitzarà el vostre correu electrònic anterior."
       ],
       "This operation is irreversible.": [
         "Aquesta operació és irreversible."
@@ -2798,7 +2798,7 @@
         "Aquesta opció no està disponible actualment al vostre dispositiu."
       ],
       "This setting is disabled on the organization level": [
-        "Aquesta opció està desactivada en l'àmbit d'organització"
+        "Aquesta preferència està desactivada a nivell d'organització"
       ],
       "This setting is enforced by your organization": [
         "L'organització aplica aquesta configuració."
@@ -2819,13 +2819,13 @@
         "Això tornarà a carregar l'aplicació."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
-        "Per continuar rebent correus electrònics, transferiu aquests àlies a una bústia de correu diferent:"
+        "Per a continuar rebent correus electrònics, transferiu aquests àlies a una bústia de correu diferent:"
       ],
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
-        "Per mantenir la vostra adreça electrònica personal oculta, podeu crear un contacte d'àlies que emmascari la vostra adreça."
+        "Per a mantenir l'adreça electrònica personal oculta, podeu crear un contacte d'àlies que emmascari la vostra adreça."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Per migrar dades des d'un altre gestor de contrasenyes, aneu al gestor de contrasenyes, exporteu les dades i carregueu-les a ${ PASS_APP_NAME }. Un cop les dades s'hagin importat, suprimiu el fitxer exportat."
+        "Per a migrar dades des d'un altre gestor de contrasenyes, aneu al gestor de contrasenyes, exporteu les dades i carregueu-les a ${ PASS_APP_NAME }. Un cop les dades s'hagin importat, elimineu el fitxer exportat."
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Per revisar les dades importades, feu clic a la icona del ${ PASS_APP_NAME } de la barra d'eines del navegador."
@@ -2840,7 +2840,7 @@
         "Més de 50.000 usuaris empresarials i 100 milions de comptes a tot el món confien en nosaltres."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public.": [
-        "Prova les noves funcionalitats, actualitzacions i productes de ${ BRAND_NAME } abans que es publiquin al públic."
+        "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que s'alliberin al públic."
       ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
@@ -2849,13 +2849,13 @@
         "Sense configurar"
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
-        "Número il·limitat d'àlies hide-my-email i administració avançada d'àlies"
+        "Número il·limitat d'àlies hide-my-email i gestió avançada d'àlies"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloqueja ${ PASS_SHORT_APP_NAME } amb dades biomètriques"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya de ${ BRAND_NAME }."
+        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la contrasenya de ${ BRAND_NAME }."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your backup password": [
         "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya de recuperació."
@@ -2879,7 +2879,7 @@
         "S'està actualitzant l'organització de la caixa forta..."
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Milloreu el vostre pla ara per a desbloquejar característiques prèmium"
+        "Milloreu el pla ara per a desbloquejar característiques prèmium"
       ],
       "Upgrade to ${ PASS_APP_NAME } Plus to create access tokens and use ${ PASS_APP_NAME } programmatically.": [
         "Milloreu a ${ PASS_APP_NAME } Plus per crear identificadors d'accés i utilitzar ${ PASS_APP_NAME } de manera programàtica."
@@ -2909,7 +2909,7 @@
         "S'ha permès l'accés a la caixa forta"
       ],
       "Vault organization successfully updated": [
-        "S'ha actualitzat correctament l'organització de la caixa forta"
+        "S'ha actualitzat l'organització de la caixa forta"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Caixes fortes compartides: ${ vaultMembersCount } membre",
@@ -2934,14 +2934,14 @@
         "Estem tenint problemes per sincronitzar les dades amb el vostre emmagatzematge local. Assegureu-vos que teniu prou espai al disc perquè ${ PASS_SHORT_APP_NAME } funcioni correctament."
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareix en ${ PASS_APP_NAME }. Voleu importar-lo?",
-        "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareixen en ${ PASS_APP_NAME }. Voleu importar-los?"
+        "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin, però no apareix en ${ PASS_APP_NAME }. Voleu importar-lo?",
+        "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin, però no apareixen en ${ PASS_APP_NAME }. Voleu importar-los?"
       ],
       "Week": [
         "Setmana"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
-        "Hem enviat un codi de verificació a ${ email }. Si us plau, introdueixi'l a continuació:"
+        "Hem enviat un codi de verificació a ${ email }. Introduïu-lo a continuació:"
       ],
       "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
         "Quan creeu o editeu un inici de sessió a ${ PASS_APP_NAME }, l'entrada «nom d'usuari» sempre serà visible."
@@ -2959,7 +2959,7 @@
         "Esteu a punt de crear:"
       ],
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
-        "També podeu definir un codi PIN per desbloquejar ${ PASS_APP_NAME }."
+        "També podeu definir un codi PIN per a desbloquejar ${ PASS_APP_NAME }."
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ara podeu usar la contrasenya de ${ BRAND_NAME } per a accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
@@ -2985,7 +2985,7 @@
         "Us queden ${ daysRemaining } dies per provar aquestes i altres característiques prèmium."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Heu excedit el nombre de caixes fortes incloses a la vostra subscripció. Els elements només es poden moure a les vostres dues primeres caixes fortes. Per moure elements entre totes les caixes fortes milloreu la vostra subscripció."
+        "Heu excedit el nombre de caixes fortes incloses a la subscripció. Els elements només es poden moure a les dues primeres caixes fortes. Per a moure elements entre totes les caixes fortes milloreu la vostra subscripció."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Heu excedit el nombre de caixes fortes incloses a la vostra subscripció. Només es poden crear elements nous a les vostres dues primeres caixes fortes. Per a crear elements nous a totes les caixes fortes, milloreu la vostra subscripció."
@@ -3089,8 +3089,8 @@
         "${ aliasCount } àlies"
       ],
       "${ blockedCount } block": [
-        "${ blockedCount } blocat",
-        "${ blockedCount } blocats"
+        "${ blockedCount } bloquejat",
+        "${ blockedCount } bloquejats"
       ],
       "${ config.options.length } character": [
         "${ config.options.length } caràcter",
@@ -3113,7 +3113,7 @@
         "${ forwardCount } reenviaments"
       ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
-        "${ forwardedEmails },${ repliedEmails } e ${ blockedEmails } en els darrers 14 dies."
+        "${ forwardedEmails }, ${ repliedEmails } i ${ blockedEmails } en els darrers 14 dies."
       ],
       "${ hours } hour": [
         "${ hours } hora",
@@ -3228,7 +3228,7 @@
         "Afegir un mètode de pagament"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
-        "Afegiu un prefix aleatori per a aquest domini en crear un àlies."
+        "Afegeix un prefix aleatori per a aquest domini en crear un àlies."
       ],
       "Add section": [
         "Afegeix una secció"
@@ -3843,7 +3843,7 @@
         "De més recent a més antic"
       ],
       "No Activity in the last 14 days.": [
-        "Cap activitat en els darrers 14 dies."
+        "No hi ha hagut cap activitat en els darrers 14 dies."
       ],
       "No history": [
         "Sense historial"
@@ -4167,7 +4167,7 @@
         "Tema"
       ],
       "This item is accessible until ${ date } or until the view limit is reached.": [
-        "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
+        "Aquest element serà accessible fins al ${ date } o fins que s'arribi al límit de visualitzacions."
       ],
       "Tier/Level": [
         "Nivell"
@@ -4801,13 +4801,13 @@
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "La sincronització d'àlies s'ha activat. Els àlies de SimpleLogin poden trigar una mica a sincronitzar-se"
+        "S'ha activat la sincronització d'àlies. Els àlies de SimpleLogin poden trigar una mica a sincronitzar-se"
       ],
       "Catch-all setting successfully disabled": [
-        "S'ha desactivat la preferència catch-call."
+        "S'ha desactivat la preferència d'adreça d'arreplega."
       ],
       "Catch-all setting successfully enabled": [
-        "S'ha activat la preferència catch-call."
+        "S'ha activat la preferència d'adreça d'arreplega."
       ],
       "Contact successfully blocked": [
         "S'ha bloquejat el contacte."
@@ -4822,10 +4822,10 @@
         "S'ha desbloquejat el contacte."
       ],
       "Default domain successfully updated": [
-        "S'ha actualitzat el domini per defecte."
+        "S'ha actualitzat el domini predeterminat."
       ],
       "Default mailbox successfully updated": [
-        "S'ha actualitzat la bústia de correu per defecte."
+        "S'ha actualitzat la bústia de correu predeterminada."
       ],
       "Display name successfully updated": [
         "S'ha actualitzat el nom per a mostrar."
@@ -4837,14 +4837,14 @@
         "S'ha eliminat el domini."
       ],
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
-        "S'ha verificat el domini. El vostre domini pot començar a rebre correus electrònics i crear àlies."
+        "S'ha verificat el domini. Ja pot començar a rebre correus electrònics i a crear àlies."
       ],
       "Items can’t contain more than ${ share.targetMaxMembers } user.": [
         "Els elements no poden contenir més d'${ share.targetMaxMembers } usuari.",
-        "Els elements no poden contenir més d'${ share.targetMaxMembers } usuaris."
+        "Els elements no poden contenir més de ${ share.targetMaxMembers } usuaris."
       ],
       "Mailbox change successfully cancelled": [
-        "S'ha cancel·lat el canvi de bústia."
+        "S'ha cancel·lat el canvi de bústia de correu."
       ],
       "Mailbox successfully deleted": [
         "S'ha eliminat la bústia de correu."
@@ -4909,7 +4909,7 @@
         "Activitat de \"${ token.Name }\""
       ],
       "Add an account": [
-        "Afegir un compte"
+        "Afegeix un compte"
       ],
       "Add custom domain": [
         "Afegeix un domini personalitzat"
@@ -4930,7 +4930,7 @@
         "Àlies"
       ],
       "Auto create/on the fly alias": [
-        "Crear automàticament un àlies sobre la marxa"
+        "Creació automàtica d'àlies sobre la marxa"
       ],
       "Auto-lock update": [
         "Actualització del bloqueig automàtic"
@@ -4966,7 +4966,7 @@
         "Contrasenya en risc"
       ],
       "Compromised passwords": [
-        "Contrasenyes en risc"
+        "Contrasenyes compromeses"
       ],
       "Confirm extra password": [
         "Confirmeu la contrasenya addicional"
@@ -5075,7 +5075,7 @@
         "Importació xifrada"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
-        "Gaudint ${ PASS_APP_NAME }?"
+        "Esteu gaudint de ${ PASS_APP_NAME }?"
       ],
       "Enter coupon code": [
         "Introduïu el codi de cupó"
@@ -5242,7 +5242,7 @@
         "No hi ha contrasenyes reutilitzades"
       ],
       "No shared items": [
-        "Sense element compartit"
+        "No hi ha elements compartits"
       ],
       "No shared secure links": [
         "Sense enllaços segurs compartits"
@@ -5272,13 +5272,13 @@
         "Únic pagament, accés per sempre"
       ],
       "Pending access confirmation": [
-        "Confirmació d'accés pendent"
+        "La confirmació d'accés està pendent"
       ],
       "Pending access to the shared data": [
-        "Accés a les dades compartides pendent"
+        "L'accés a les dades compartides està pendent"
       ],
       "Perform autotype?": [
-        "Voleu emplenament automàtic?"
+        "Voleu dur a terme l'emplenament automàtic?"
       ],
       "Permanently remove all items?": [
         "Voleu esborrar els elements de manera permanent?"
@@ -5424,7 +5424,7 @@
         "Hi ha una actualització disponible"
       ],
       "Upgrade to check for compromised passwords": [
-        "Milloreu el pla per comprovar les contrasenyes en risc"
+        "Milloreu el pla per comprovar les contrasenyes compromeses"
       ],
       "Upgrade to check for reused passwords": [
         "Actualitza per comprovar si hi ha contrasenyes reutilitzades"
@@ -5436,7 +5436,7 @@
         "Caixa forta"
       ],
       "Vault shared with a group you administer": [
-        "S'ha compartit una caixa forta amb un grup que administreu"
+        "Caixa forta compartida amb un grup que administreu"
       ],
       "Vault shared with you": [
         "Caixa forta compartida amb vosaltres"
@@ -5487,8 +5487,8 @@
         "El vostre regal de benvinguda"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
-        "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+        "Esteu a punt d'eliminar permanentment ${ aliasCount } àlies.",
+        "Esteu a punt d'eliminar permanentment ${ aliasCount } àlies."
       ]
     },
     "Title_cloned_item": {
@@ -5532,7 +5532,7 @@
         "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
       ],
       "Section name cannot be empty": [
-        "El nom de la selecció no pot estar buit."
+        "El nom de la secció no pot estar buit."
       ],
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
@@ -5587,10 +5587,10 @@
         "Es requereix una descripció del problema"
       ],
       "Addresses already invited.": [
-        "Les adreces ja han estat invitades."
+        "Les adreces ja han estat convidades."
       ],
       "Aliases in trash will continue forwarding emails.": [
-        "Els àlies a la paperera continuaran redirigint els correus electrònics."
+        "Els àlies a la paperera continuaran redirigint correus electrònics."
       ],
       "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
         "Tots els elements d'aquesta carpeta, incloses les subcarpetes, s'eliminaran. No podreu desfer aquesta acció."
@@ -5605,15 +5605,15 @@
         "S'ha produït un error en importar les dades."
       ],
       "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Esteu segur que voleu moure ${ trashedItemsCount } element a la paperera?",
-        "Esteu segur que voleu moure ${ trashedItemsCount } elements a la paperera?"
+        "Segur que voleu moure ${ trashedItemsCount } element a la paperera?",
+        "Segur que voleu moure ${ trashedItemsCount } elements a la paperera?"
       ],
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
         "Segur que voleu eliminar ${ deletedItemsCount } element definitivament?",
         "Segur que voleu eliminar ${ deletedItemsCount } elements definitivament?"
       ],
       "Are you sure you want to permanently delete this item?": [
-        "Esteu segur que voleu suprimir permanentment aquest element?"
+        "Segur que voleu eliminar permanentment aquest element?"
       ],
       "At least one email address is required": [
         "Es requereix almenys una adreça de correu electrònic"
@@ -5649,7 +5649,7 @@
         "El domini no pot estar buit."
       ],
       "Duplicate email addresses.": [
-        "Duplicitat d'adreces de correu electrònic."
+        "Hi ha adreces de correu electrònic duplicades"
       ],
       "Email cannot be empty": [
         "El correu electrònic no pot estar buit."
@@ -5740,7 +5740,7 @@
         "Fora de línia"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Un cop sincronitzats, suprimir els àlies a ${ PASS_SHORT_APP_NAME } també els suprimirà a SimpleLogin."
+        "Un cop sincronitzats, eliminar els àlies a ${ PASS_SHORT_APP_NAME } també els eliminarà a SimpleLogin."
       ],
       "Only alphanumeric lowercase characters, dots, hyphens and underscores are allowed": [
         "Només es permeten caràcters alfanumèrics en minúscula, punts, guions i guions baixos"
@@ -5764,16 +5764,16 @@
         "Actualitzeu l'extensió a la seva darrera versió"
       ],
       "Please verify your email address in order to use email aliases": [
-        "Verifiqueu la vostra adreça de correu electrònic per poder utilitzar la compartició d'àlies de correu electrònic."
+        "Verifiqueu l'adreça de correu electrònic per a poder utilitzar àlies de correu electrònic."
       ],
       "Removing your extra password will log you out from all devices and end all active sessions.": [
-        "Eliminar la vostra contrasenya extra us desconnectarà de tots els dispositius i finalitzarà totes les sessions actives."
+        "Eliminar la contrasenya addicional us tancarà la sessió a tots els dispositius i finalitzarà totes les sessions actives."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
       ],
       "Some items are currently shared. Deleting them will remove access for all other users.": [
-        "Alguns elements estan actualment compartits. Eliminar-ho eliminarà l'accés per a tots els altres usuaris."
+        "Alguns elements estan actualment compartits. Eliminar-los suprimirà l'accés per a tots els altres usuaris."
       ],
       "Some items are currently shared. Moving them to another vault will remove access for all other users.": [
         "Alguns elements estan actualment compartits. Moure'ls a una altra caixa forta suposarà la supressió de l'accés per a la resta d'usuaris.\""
@@ -5797,10 +5797,10 @@
         "Aquest element no es pot suggerir per a l'emplenament automàtic a causa de «${ neverModeDescriptionStrong }». Afegiu un altre URL si voleu que aquest element s'empleni automàticament."
       ],
       "This item is currently shared. Deleting it will remove access for all other users.": [
-        "Aquest element està compartit actualment. Eliminar-ho eliminarà l'accés per a tots els altres usuaris."
+        "Aquest element està compartit actualment. Eliminar-lo suprimirà l'accés per a tots els altres usuaris."
       ],
       "This item is currently shared. Moving it to another vault will remove access for all other users.": [
-        "Aquest element està compartit actualment. Moure-ho a una altra caixa forta suposarà la supressió de l'accés per a la resta d'usuaris."
+        "Aquest element està compartit actualment. Moure'l a una altra caixa forta hi suprimirà l'accés per a la resta d'usuaris."
       ],
       "Title is required": [
         "El títol és obligatori"
@@ -5848,7 +5848,7 @@
         "Heu de seleccionar almenys una bústia de correu"
       ],
       "You will lose access to this item and its details. Do you want to continue?": [
-        "Perdéreu l'accés a aquest element i als seus detalls. Voleu continuar?"
+        "Perdreu l'accés a aquest element i als seus detalls. Voleu continuar?"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ja no tindreu accés a aquesta caixa forta. Per tornar-hi a entrar, necessitareu una nova invitació."

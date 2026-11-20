@@ -798,6 +798,30 @@
       ],
       "Your password manager is not here? Request it.": [
         "Trình quản lý mật khẩu không có ở đây? Hãy yêu cầu."
+      ],
+      "Bulk select items": [
+        "Chọn nhiều mục"
+      ],
+      "Download for Linux": [
+        "Tải xuống cho Linux"
+      ],
+      "Go to today": [
+        "Đến ngày hôm nay"
+      ],
+      "Move folder": [
+        "Di chuyển thư mục"
+      ],
+      "Multiple select": [
+        "Chọn nhiều"
+      ],
+      "Open platform selection dropdown": [
+        "Mở menu thả xuống chọn nền tảng"
+      ],
+      "Open the browser again": [
+        "Mở lại trình duyệt"
+      ],
+      "Sign in in the app instead": [
+        "Đăng nhập vào ứng dụng thay vào đó"
       ]
     },
     "Activity": {
@@ -934,6 +958,18 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Thông tin cá nhân đã bị rò rỉ trong một vụ vi phạm dữ liệu của dịch vụ bên thứ ba."
+      ],
+      "Change these passwords immediately": [
+        "Hãy thay đổi các mật khẩu này ngay lập tức"
+      ],
+      "Check if your passwords have been exposed": [
+        "Kiểm tra xem mật khẩu của bạn có bị lộ hay không"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Đang kiểm tra ${ compromised.progress.completed } trên tổng số ${ compromised.progress.total }"
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Mật khẩu đăng nhập này đã xuất hiện trong một vụ rò rỉ dữ liệu. Vui lòng truy cập dịch vụ đó và thay đổi mật khẩu."
       ]
     },
     "Email": {
@@ -1460,6 +1496,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Mã PIN đã bị gỡ bỏ bởi một người dùng ${ PASS_APP_NAME } khác"
+      ],
+      "Failed to move folder": [
+        "Di chuyển thư mục thất bại"
       ]
     },
     "Error message": {
@@ -2783,6 +2822,39 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tổ chức yêu cầu phải bảo mật truy cập tới ${ PASS_APP_NAME }"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Hãy thêm phương thức thanh toán để gói đăng ký của bạn được tiếp tục khi thời gian dùng thử kết thúc."
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Đang kiểm tra ${ compromised.progress.completed } trong tổng số ${ compromised.progress.total } mật khẩu"
+      ],
+      "Choose how you want to sign in": [
+        "Chọn cách bạn muốn đăng nhập"
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Thư mục \"${ payload.folder.name }\" đã được di chuyển"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Việc di chuyển một mục sang kho lưu trữ khác sẽ xóa các liên kết bảo mật của mục đó."
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Quét để tải xuống ${ PASS_APP_NAME } cho iOS và Android"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Hãy đăng nhập và xác nhận trong cửa sổ trình duyệt vừa mở. ${ PASS_APP_NAME } sẽ tự động nhận diện ngay khi bạn hoàn tất."
+      ],
+      "The folder is already here": [
+        "Thư mục đã có ở đây rồi"
+      ],
+      "The sign in was not confirmed in time.": [
+        "Việc đăng nhập đã không được xác nhận kịp thời."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Khi di chuyển các mục giữa các kho lưu trữ, chúng tôi sẽ bảo lưu tối đa 50 thay đổi gần nhất đã thực hiện trên mỗi mục đó."
+      ],
+      "Your session could not be authorized.": [
+        "Không thể xác thực phiên."
       ]
     },
     "Keyboard key": {
@@ -4011,6 +4083,18 @@
       ],
       "ZIP or Postal code": [
         "Mã bưu chính"
+      ],
+      "Add a payment method": [
+        "Thêm phương thức thanh toán"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5045,6 +5129,39 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Bạn sắp xóa vĩnh viễn ${ aliasCount } biệt danh."
+      ],
+      "Add an account": [
+        "Thêm tài khoản"
+      ],
+      "Compromised password": [
+        "Mật khẩu bị lộ"
+      ],
+      "Compromised passwords": [
+        "Mật khẩu bị lộ"
+      ],
+      "Continue in your browser": [
+        "Tiếp tục trong trình duyệt"
+      ],
+      "Get mobile apps": [
+        "Tải ứng dụng di động"
+      ],
+      "Keep your subscription active": [
+        "Duy trì trạng thái đăng ký của bạn"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Di chuyển \"${ folderName }\" đến"
+      ],
+      "No compromised passwords": [
+        "Không có mật khẩu nào bị lộ"
+      ],
+      "Sign in timed out": [
+        "Phiên đăng nhập đã hết thời gian"
+      ],
+      "Signing you in": [
+        "Đang đăng nhập cho bạn"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Nâng cấp để kiểm tra xem mật khẩu có bị xâm phạm hay không"
       ]
     },
     "Title_cloned_item": {
@@ -5398,6 +5515,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Gói đăng ký không cho phép tạo nhiều kho. Tất cả mục sẽ được nhập vào kho chính. Hãy nâng cấp gói đăng ký để nhập vào nhiều kho."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Việc di chuyển thư mục vào đây sẽ vượt quá cấp độ lồng thư mục tối đa"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Bạn không thể di chuyển một thư mục vào chính nó hoặc vào các thư mục con của nó."
       ]
     }
   }
