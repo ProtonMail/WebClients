@@ -41,14 +41,18 @@ export const queryMembers = (params?: PaginationParams) => ({
 });
 
 export const getAllMembers = (api: Api) => {
-    return queryPages((Page, PageSize) => {
-        return api<{ Members: Member[]; Total: number }>(
-            queryMembers({
-                Page,
-                PageSize,
-            })
-        );
-    }).then((pages) => {
+    return queryPages(
+        (Page, PageSize) => {
+            return api<{ Members: Member[]; Total: number }>(
+                queryMembers({
+                    Page,
+                    PageSize,
+                })
+            );
+        },
+        // Matches what the browser ran at once for a 10k-member org, so total time stays the same
+        { maxConcurrency: 25 }
+    ).then((pages) => {
         return pages.flatMap(({ Members }) => Members);
     });
 };
