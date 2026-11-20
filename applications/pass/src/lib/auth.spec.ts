@@ -1,5 +1,6 @@
 import { ARGON2_PARAMS } from '@protontech/crypto';
 import { store as appStore } from 'proton-pass-web/app/Store/store';
+import type { Mock } from 'vitest';
 
 import { getInitialAppState } from '@proton/pass/components/Core/AppStateManager';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -20,20 +21,20 @@ import * as auth from './auth';
 import * as sessions from './sessions';
 import * as storage from './storage';
 
-jest.mock('proton-pass-web/app/Store/store', () => ({ store: { dispatch: jest.fn() } }));
-jest.mock('proton-pass-web/lib/telemetry', () => ({ telemetry: { stop: jest.fn() } }));
-jest.mock('proton-pass-web/lib/settings', () => ({ settings: { clear: jest.fn() } }));
-jest.mock('proton-pass-web/lib/theme', () => ({ getThemeForLocalID: jest.fn(() => Promise.resolve()) }));
+vi.mock('proton-pass-web/app/Store/store', () => ({ store: { dispatch: vi.fn() } }));
+vi.mock('proton-pass-web/lib/telemetry', () => ({ telemetry: { stop: vi.fn() } }));
+vi.mock('proton-pass-web/lib/settings', () => ({ settings: { clear: vi.fn() } }));
+vi.mock('proton-pass-web/lib/theme', () => ({ getThemeForLocalID: vi.fn(() => Promise.resolve()) }));
 
-jest.mock('./sessions', () => ({
-    ...jest.requireActual('./sessions'),
-    getDefaultLocalID: jest.fn(),
-    getPersistedLocalIDsForUserID: jest.fn(),
+vi.mock(import('./sessions'), async (importOriginal) => ({
+    ...(await importOriginal()),
+    getDefaultLocalID: vi.fn(),
+    getPersistedLocalIDsForUserID: vi.fn(),
 }));
-jest.mock('./storage', () => ({
-    ...jest.requireActual('./storage'),
-    clearUserLocalData: jest.fn(),
-    localGarbageCollect: jest.fn(),
+vi.mock(import('./storage'), async (importOriginal) => ({
+    ...(await importOriginal()),
+    clearUserLocalData: vi.fn(),
+    localGarbageCollect: vi.fn(),
 }));
 
 const MOCK_PERSISTED_SESSION = {
@@ -51,10 +52,10 @@ const MOCK_PERSISTED_SESSION = {
     blob: '',
 };
 exposeAuthStore(createAuthStore(createMemoryStore()));
-exposeApi({ subscribe: jest.fn(), idle: jest.fn(() => Promise.resolve()) } as any);
+exposeApi({ subscribe: vi.fn(), idle: vi.fn(() => Promise.resolve()) } as any);
 
 const config = { SSO_URL: 'test://' } as PassConfig;
-const settings = { clear: jest.fn(), resolve: jest.fn() };
+const settings = { clear: vi.fn(), resolve: vi.fn() };
 
 let appState: AppState = getInitialAppState();
 const setAppState = (next: Partial<AppState>) => (appState = { ...appState, ...next });
@@ -65,22 +66,22 @@ const rateLimitedError = new ApiError('Too many requests', 429, 'StatusCodeError
 const inactiveSessionError = InactiveSessionError();
 
 const app = {
-    getState: jest.fn(() => appState),
-    reset: jest.fn(),
-    setAuthorized: jest.fn(),
-    setBooted: jest.fn((booted: boolean) => setAppState({ booted })),
-    setLocalID: jest.fn(),
-    setState: jest.fn(),
-    setStatus: jest.fn((status: AppStatus) => setAppState({ status })),
-    setUID: jest.fn(),
-    subscribe: jest.fn(),
+    getState: vi.fn(() => appState),
+    reset: vi.fn(),
+    setAuthorized: vi.fn(),
+    setBooted: vi.fn((booted: boolean) => setAppState({ booted })),
+    setLocalID: vi.fn(),
+    setState: vi.fn(),
+    setStatus: vi.fn((status: AppStatus) => setAppState({ status })),
+    setUID: vi.fn(),
+    subscribe: vi.fn(),
 };
 
-const history = { replace: jest.fn(), location: { pathname: '/', search: '', state: null, hash: '' } } as any;
-const sw = { on: jest.fn(), off: jest.fn() } as any;
+const history = { replace: vi.fn(), location: { pathname: '/', search: '', state: null, hash: '' } } as any;
+const sw = { on: vi.fn(), off: vi.fn() } as any;
 /** Mirrors the web app config: WebAuthn PRF keys are app-bound. */
-const core = { settings, i18n: { setLocale: jest.fn() }, biometricsKeyAppBound: true } as any;
-const authSwitch = { sync: jest.fn() } as any;
+const core = { settings, i18n: { setLocale: vi.fn() }, biometricsKeyAppBound: true } as any;
+const authSwitch = { sync: vi.fn() } as any;
 
 /** Connectivity */
 const connectivitySubscribers: ((event: ConnectivityEvent) => void)[] = [];
@@ -90,9 +91,9 @@ const fireNavigatorOnline = () => fireConnectivity({ type: 'navigator-online' })
 const connectivity = {
     online: true,
     status: ConnectivityStatus.ONLINE,
-    check: jest.fn().mockResolvedValue(undefined),
-    syncNavigatorOnline: jest.fn(),
-    subscribe: jest.fn((cb) => {
+    check: vi.fn().mockResolvedValue(undefined),
+    syncNavigatorOnline: vi.fn(),
+    subscribe: vi.fn((cb) => {
         connectivitySubscribers.push(cb);
         return () => connectivitySubscribers.splice(connectivitySubscribers.indexOf(cb), 1);
     }),
@@ -102,8 +103,8 @@ const connectivity = {
 const evtListeners: Map<string, EventListener> = new Map();
 let visibility: DocumentVisibilityState = 'visible';
 const fireVisibility = async () => evtListeners.get('visibilitychange')?.(new Event('visibilitychange'));
-document.addEventListener = jest.fn((type: string, handler: EventListener) => evtListeners.set(type, handler));
-document.removeEventListener = jest.fn((type: string) => evtListeners.delete(type));
+document.addEventListener = vi.fn((type: string, handler: EventListener) => evtListeners.set(type, handler));
+document.removeEventListener = vi.fn((type: string) => evtListeners.delete(type));
 Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => visibility });
 
 const authService = auth.createAuthService({
@@ -114,27 +115,27 @@ const authService = auth.createAuthService({
     connectivity,
     history,
     sw,
-    onNotification: jest.fn(),
+    onNotification: vi.fn(),
 } as any);
 
-const resumeSession = jest.spyOn(authService, 'resumeSession');
-const requestFork = jest.spyOn(authService, 'requestFork').mockImplementation();
-const getPersistedSession = jest.spyOn(authService.config, 'getPersistedSession');
-const clear = jest.spyOn(authStore, 'clear');
-const validSession = jest.spyOn(authStore, 'validSession');
-const hasSession = jest.spyOn(authStore, 'hasSession');
+const resumeSession = vi.spyOn(authService, 'resumeSession');
+const requestFork = vi.spyOn(authService, 'requestFork').mockImplementation(async () => ({ state: '', url: '' }));
+const getPersistedSession = vi.spyOn(authService.config, 'getPersistedSession');
+const clear = vi.spyOn(authStore, 'clear');
+const validSession = vi.spyOn(authStore, 'validSession');
+const hasSession = vi.spyOn(authStore, 'hasSession');
 
-(sessions.getDefaultLocalID as jest.Mock).mockImplementation(() => undefined);
-(sessions.getPersistedLocalIDsForUserID as jest.Mock).mockImplementation(() => []);
-(storage.clearUserLocalData as jest.Mock).mockImplementation(() => []);
-(storage.localGarbageCollect as jest.Mock).mockImplementation(() => Promise.resolve([]));
+(sessions.getDefaultLocalID as Mock).mockImplementation(() => undefined);
+(sessions.getPersistedLocalIDsForUserID as Mock).mockImplementation(() => []);
+(storage.clearUserLocalData as Mock).mockImplementation(() => []);
+(storage.localGarbageCollect as Mock).mockImplementation(() => Promise.resolve([]));
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 describe('AuthService', () => {
     beforeEach(() => {
         authStore.clear();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
 
         history.location = { pathname: '/', search: '', state: null, hash: '' };
         connectivity.online = true;
@@ -305,6 +306,18 @@ describe('AuthService', () => {
     });
 
     describe('getPersistedSession', () => {
+        /** `mockClear` keeps the queued `mockImplementationOnce` of earlier tests: restore the spied implementation */
+        beforeEach(() => getPersistedSession.mockReset());
+        afterEach(() => vi.unstubAllGlobals());
+
+        /** happy-dom binds the `Storage` methods when `localStorage` is first read: spying on the prototype
+         * afterwards is not seen, so the whole storage is replaced */
+        const stubGetItem = (impl: () => string | null) => {
+            const getItem = vi.fn(impl);
+            vi.stubGlobal('localStorage', { getItem });
+            return getItem;
+        };
+
         const cases = [
             { desc: 'not persisted', value: null },
             { desc: 'invalid', value: '//invalid//' },
@@ -312,7 +325,7 @@ describe('AuthService', () => {
         ];
 
         test.each(cases)('should return null if session is $desc', ({ value }) => {
-            const getItem = jest.spyOn(Storage.prototype, 'getItem').mockReturnValue(value);
+            const getItem = stubGetItem(() => value);
             const result = authService.config.getPersistedSession(0);
             expect(getItem).toHaveBeenCalledWith(storage.getSessionKey(0));
             expect(result).toBe(null);
@@ -320,7 +333,7 @@ describe('AuthService', () => {
 
         test('should return session if parsed and valid', () => {
             const session = { UID: '42', UserID: '42', blob: 'encrypted-blob', cookies: true };
-            const getItem = jest.spyOn(Storage.prototype, 'getItem').mockImplementation(() => JSON.stringify(session));
+            const getItem = stubGetItem(() => JSON.stringify(session));
             const result = authService.config.getPersistedSession(0);
             expect(getItem).toHaveBeenCalledWith(storage.getSessionKey(0));
             expect(result).toEqual(session);
@@ -332,7 +345,7 @@ describe('AuthService', () => {
             authStore.setUID('uid');
             authStore.setUserID('user-id');
             authStore.setLocalID(MOCK_PERSISTED_SESSION.LocalID);
-            jest.spyOn(authService, 'syncPersistedSession').mockResolvedValue(undefined);
+            vi.spyOn(authService, 'syncPersistedSession').mockResolvedValue(undefined);
         });
 
         test('should set `READY` status and skip `bootIntent` dispatch when already booted', async () => {
@@ -356,8 +369,8 @@ describe('AuthService', () => {
 
         beforeEach(() => {
             core.biometricsKeyAppBound = false;
-            core.removeBiometricsKey = jest.fn().mockResolvedValue(undefined);
-            jest.spyOn(authService, 'syncPersistedSession').mockResolvedValue(undefined);
+            core.removeBiometricsKey = vi.fn().mockResolvedValue(undefined);
+            vi.spyOn(authService, 'syncPersistedSession').mockResolvedValue(undefined);
 
             authStore.setUID('uid');
             authStore.setUserID('user-id');
@@ -674,7 +687,7 @@ describe('AuthService', () => {
         });
 
         test('detach unwires document and connectivity listeners', () => {
-            const removeListeners = document.removeEventListener as jest.Mock;
+            const removeListeners = document.removeEventListener as Mock;
             const subscribersBefore = connectivitySubscribers.length;
             detach();
             expect(removeListeners).toHaveBeenCalledWith('visibilitychange', expect.any(Function));
@@ -683,15 +696,15 @@ describe('AuthService', () => {
 
         describe('Desktop `system:wake`', () => {
             let onSystemWakeHandler: MaybeNull<() => void>;
-            let onSystemWake: jest.Mock;
-            let onSystemWakeUnsub: jest.Mock;
+            let onSystemWake: Mock;
+            let onSystemWakeUnsub: Mock;
 
             beforeEach(() => {
                 (global as any).DESKTOP_BUILD = true;
 
                 onSystemWakeHandler = null;
-                onSystemWakeUnsub = jest.fn();
-                onSystemWake = jest.fn((cb: () => void) => {
+                onSystemWakeUnsub = vi.fn();
+                onSystemWake = vi.fn((cb: () => void) => {
                     onSystemWakeHandler = cb;
                     return onSystemWakeUnsub;
                 });

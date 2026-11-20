@@ -1,15 +1,17 @@
+import type { Mock } from 'vitest';
+
 import { SESSION_RESUME_MAX_RETRIES, getAutoResumeDelay } from '@proton/pass/lib/auth/scheduler';
 import * as epoch from '@proton/pass/utils/time/epoch';
 
 import { createAuthScheduler } from './auth.scheduler';
 
-jest.mock('@proton/pass/utils/time/epoch', () => ({
-    ...jest.requireActual('@proton/pass/utils/time/epoch'),
-    getEpoch: jest.fn(),
+vi.mock(import('@proton/pass/utils/time/epoch'), async (importOriginal) => ({
+    ...(await importOriginal()),
+    getEpoch: vi.fn(),
 }));
 
 describe('createAuthScheduler', () => {
-    const getEpoch = epoch.getEpoch as jest.Mock;
+    const getEpoch = epoch.getEpoch as Mock;
 
     beforeEach(() => {
         getEpoch.mockReturnValue(0);

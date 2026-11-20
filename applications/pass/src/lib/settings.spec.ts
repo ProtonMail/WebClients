@@ -1,4 +1,5 @@
 import { SETTINGS_STORAGE_KEY, getSettingsStorageKey } from 'proton-pass-web/lib/storage';
+import type { MockInstance } from 'vitest';
 
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 
@@ -7,9 +8,9 @@ import { resolveSettings, settings } from './settings';
 const setDesktopBuild = (value: boolean) => ((global as any).DESKTOP_BUILD = value);
 
 describe('settings', () => {
-    const getItem: jest.SpyInstance = jest.spyOn(Storage.prototype, 'getItem');
-    const setItem: jest.SpyInstance = jest.spyOn(Storage.prototype, 'setItem');
-    const removeItem: jest.SpyInstance = jest.spyOn(Storage.prototype, 'removeItem');
+    const getItem: MockInstance = vi.spyOn(Storage.prototype, 'getItem');
+    const setItem: MockInstance = vi.spyOn(Storage.prototype, 'setItem');
+    const removeItem: MockInstance = vi.spyOn(Storage.prototype, 'removeItem');
 
     beforeEach(() => {
         setDesktopBuild(false);

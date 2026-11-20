@@ -55,7 +55,7 @@ export const BACKEND_FAILURES: BackendFailure[] = [
     },
     { label: 'network error', status: null, respond: () => HttpResponse.error() },
     /** Never settles, so the request hits the client timeout. Not MSW's `delay('infinite')`:
-     * it throws under jest fake timers and MSW answers with a 500 instead. */
+     * it throws under fake timers and MSW answers with a 500 instead. */
     { label: 'timeout', status: null, respond: () => new Promise<never>(noop) },
 ];
 
@@ -66,8 +66,8 @@ export const getSessionResumeHandlers = ({ clientKey, session }: TestPersistedSe
 
 /** MSW server answering every API route with a success by default. Handlers
  * registered through `use`/`on` win over earlier ones and reset after each test.
- * Node's `fetch` rejects jsdom's `AbortSignal`: specs need the
- * `@jest-environment-options {"abortSignal": true}` docblock. */
+ * Node's `fetch` rejects jsdom's `AbortSignal`: specs on jsdom need Node's `AbortSignal`
+ * restored; happy-dom's one is accepted. */
 export const createTestBackend = () => {
     const requests: string[] = [];
     const server = setupServer(http.all(`${TEST_API_URL}/*`, () => respond.ok()));

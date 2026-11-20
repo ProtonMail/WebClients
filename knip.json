@@ -117,7 +117,7 @@
         "applications/pass": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
             "project": ["src/**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@proton/styles"]
+            "ignoreDependencies": ["@proton/styles", "webextension-polyfill"]
         },
         "applications/pass-desktop": {
             "entry": [
