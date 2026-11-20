@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import differenceInCalendarDays from '@proton/shared/lib/date-fns-utc/differenceInCalendarDays';
 import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
+import { formatInTimeZone, getDeviceTimeZone } from '@proton/shared/lib/date/zonedTime';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { formatDateForSetting } from '../../utils/dateFormat';
-import { formatInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 
 export interface MeetingsByDay {
     [date: string]: Meeting[];

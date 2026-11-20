@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { formatInTimeZone, getDeviceTimeZone } from '@proton/shared/lib/date/zonedTime';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import clsx from '@proton/utils/clsx';
 
-import { formatInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 import { MeetingRow } from './MeetingRow/MeetingRow';
 import { SortOption } from './types';
 import { formatMeetingDate } from './utils';

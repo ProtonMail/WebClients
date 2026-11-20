@@ -1,4 +1,4 @@
-import { formatInTimeZone } from '../../../../../utils/zonedTime';
+import { formatInTimeZone } from '@proton/shared/lib/date/zonedTime';
 
 export const calendarDateFormats = (date: Date, timezone?: string) => {
     let localCompactWithTimezone: string | undefined = undefined;

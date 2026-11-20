@@ -27,6 +27,7 @@ import { Button, CoreButton, Modal, Select } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { ExportFormat } from '../../utils';
+import { getDeviceStartOfDay } from '../../utils/statement';
 import DateInput from '../DateInput';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
 
@@ -54,11 +55,13 @@ export const ExportStatementButton = ({ apiWalletData, apiAccount, ...rest }: Pr
     const { createNotification } = useNotifications();
 
     const currentDate = new Date();
-    const [date, setDate] = useState<Date>(currentDate);
+    const [defaultExportDate] = useState<Date>(currentDate);
+    const [pickedDay, setPickedDay] = useState<Date>();
+    const exportDate = pickedDay ? getDeviceStartOfDay(pickedDay) : defaultExportDate;
 
     const handleDateChange = (change: Date | undefined) => {
         if (change) {
-            setDate(change);
+            setPickedDay(change);
         }
     };
 
@@ -81,7 +84,7 @@ export const ExportStatementButton = ({ apiWalletData, apiAccount, ...rest }: Pr
         generator: WasmAccountStatementGenerator,
         format: ExportFormat
     ): Promise<Uint8Array<ArrayBuffer>> => {
-        const time = BigInt(Math.floor(date.getTime() / SECOND).toString());
+        const time = BigInt(Math.floor(exportDate.getTime() / SECOND).toString());
 
         if (format === ExportFormat.CSV) {
             return generator.toCsv(time) as Promise<Uint8Array<ArrayBuffer>>;
@@ -102,7 +105,7 @@ export const ExportStatementButton = ({ apiWalletData, apiAccount, ...rest }: Pr
     };
 
     const getFilename = (format: ExportFormat): string => {
-        const dateString = date.toISOString().split('T')[0];
+        const dateString = exportDate.toISOString().split('T')[0];
         return `account_statement_${dateString}.${format.toLowerCase()}`;
     };
 
@@ -171,7 +174,7 @@ export const ExportStatementButton = ({ apiWalletData, apiAccount, ...rest }: Pr
                     <div className="flex flex-col">
                         <div className="mb-5 w-full">
                             <DateInput
-                                value={date}
+                                value={pickedDay ?? defaultExportDate}
                                 onChange={handleDateChange}
                                 max={currentDate}
                                 className={'export-statement-button-date-input'}

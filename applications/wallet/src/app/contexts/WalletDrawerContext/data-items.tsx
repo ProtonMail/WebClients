@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 import isUndefined from 'lodash/isUndefined';
 import { c } from 'ttag';
 
@@ -164,16 +162,11 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
 };
 
 export const DateDataItem = ({ tx }: TxDataListItemProps) => {
-    const now = useMemo(() => new Date(), []);
-
     if (!tx?.networkData.time.confirmation_time) {
         return null;
     }
 
-    const confirmedDate = getFormattedPeriodSinceConfirmation(
-        now,
-        new Date(tx.networkData.time.confirmation_time * SECOND)
-    );
+    const confirmedDate = getFormattedPeriodSinceConfirmation(new Date(tx.networkData.time.confirmation_time * SECOND));
 
     return (
         <>

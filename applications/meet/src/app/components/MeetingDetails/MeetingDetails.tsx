@@ -26,6 +26,12 @@ import { selectTotalParticipantCount } from '@proton/meet/store/slices/participa
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import type { KeyRotationLog } from '@proton/meet/types/types';
+import {
+    formatInTimeZone,
+    formatIntlInTimeZone,
+    getDeviceTimeZone,
+    isTimeZoneKnown,
+} from '@proton/shared/lib/date/zonedTime';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { parseMeetingLink } from '@proton/shared/lib/meet/parseMeetingLink';
@@ -37,7 +43,6 @@ import { SideBarTitle } from '../../atoms/SideBar/SideBarTitle';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
 import { MismatchStage, useMismatchStage } from '../../hooks/useMismatchStage';
-import { formatInTimeZone, formatIntlInTimeZone, getDeviceTimeZone, isTimeZoneKnown } from '../../utils/zonedTime';
 import type { ActivityEventRow } from './getActivityEventRows';
 import { getActivityEventRows } from './getActivityEventRows';
 

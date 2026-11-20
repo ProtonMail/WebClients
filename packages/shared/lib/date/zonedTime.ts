@@ -1,7 +1,7 @@
 import type { Locale } from 'date-fns';
 
-import formatUTC from '@proton/shared/lib/date-fns-utc/format';
-import { fromUTCDateToTimezone, getTimezone, getTimezoneOffset } from '@proton/shared/lib/date/timezone';
+import formatUTC from '../date-fns-utc/format';
+import { fromUTCDateToTimezone, getTimezone, getTimezoneOffset } from './timezone';
 
 export const formatInTimeZone = (
     date: Date | number,

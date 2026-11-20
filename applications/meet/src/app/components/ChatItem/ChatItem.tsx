@@ -21,6 +21,7 @@ import {
     ParticipantEvent,
     type ParticipantEventRecord,
 } from '@proton/meet/types/types';
+import { formatIntlInTimeZone, getDeviceTimeZone } from '@proton/shared/lib/date/zonedTime';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ParticipantAvatar } from '../../atoms/ParticipantAvatar/ParticipantAvatar';
@@ -29,7 +30,6 @@ import { useChatMessageReaction } from '../../hooks/bridges/useChatMessageReacti
 import { useMessagePlainText } from '../../hooks/useMessagePlainText';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { getAgentDisplayInfo } from '../../utils/getAgentDisplayInfo';
-import { formatIntlInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 import { ChatMessageContent } from '../ChatMessageContent';
 import { announcementMessages } from '../MeetingAnnouncer/messages';
 import { ChatMessageFailedActions } from './ChatMessageFailedActions';

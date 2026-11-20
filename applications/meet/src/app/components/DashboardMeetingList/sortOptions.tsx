@@ -4,10 +4,10 @@ import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp';
 import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
 import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
 import { IcClock } from '@proton/icons/icons/IcClock';
+import { formatInTimeZone, getDeviceTimeZone } from '@proton/shared/lib/date/zonedTime';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
-import { formatInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 import type { SortOptionObject } from './types';
 import { DashboardMeetingListTab, SortOption } from './types';
 import { formatMeetingDate } from './utils';

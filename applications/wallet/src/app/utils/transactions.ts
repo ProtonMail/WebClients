@@ -1,5 +1,4 @@
 import type { PublicKeyReference } from '@protontech/crypto';
-import { format, isSameWeek, isToday } from 'date-fns';
 import compact from 'lodash/compact';
 import { c } from 'ttag';
 
@@ -12,6 +11,11 @@ import type {
     WasmTxOut,
 } from '@proton/andromeda';
 import { SECOND } from '@proton/shared/lib/constants';
+import differenceInCalendarDays from '@proton/shared/lib/date-fns-utc/differenceInCalendarDays';
+import formatUTC from '@proton/shared/lib/date-fns-utc/format';
+import startOfWeek from '@proton/shared/lib/date-fns-utc/startOfWeek';
+import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
+import { getDeviceTimeZone } from '@proton/shared/lib/date/zonedTime';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
@@ -39,21 +43,26 @@ export const isSentTransaction = (transaction?: TransactionData) => {
     return getTransactionValue(transaction) < 0;
 };
 
-export const getFormattedPeriodSinceConfirmation = (now: Date, confirmation: Date) => {
+export const getFormattedPeriodSinceConfirmation = (confirmation: Date) => {
     const options = { locale: dateLocale };
     if (!confirmation) {
         return;
     }
 
-    if (isToday(confirmation)) {
-        return format(confirmation, 'p', options);
+    const timeZone = getDeviceTimeZone();
+    const zonedNow = fromUTCDateToTimezone(new Date(), timeZone);
+    const zonedConfirmation = fromUTCDateToTimezone(confirmation, timeZone);
+
+    if (differenceInCalendarDays(zonedConfirmation, zonedNow) === 0) {
+        return formatUTC(zonedConfirmation, 'p', options);
     }
 
-    if (isSameWeek(confirmation, now, options)) {
-        return format(confirmation, 'EEEE, p', options);
+    const weekOptions = { weekStartsOn: dateLocale.options?.weekStartsOn ?? 0 };
+    if (+startOfWeek(zonedConfirmation, weekOptions) === +startOfWeek(zonedNow, weekOptions)) {
+        return formatUTC(zonedConfirmation, 'EEEE, p', options);
     }
 
-    return format(confirmation, 'MMM d, y, p', options);
+    return formatUTC(zonedConfirmation, 'MMM d, y, p', options);
 };
 
 const getWalletAndAccountFromTransaction = (transaction: TransactionData, walletMap: WalletMap) => {
