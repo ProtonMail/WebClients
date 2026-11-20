@@ -164,11 +164,13 @@ describe('switchIndexPath', () => {
     });
 
     describe('dropIndexationIndex', () => {
-        it('drops an index built by the indexer', async () => {
+        it('drops an index built by the indexer, and tells the other tabs', async () => {
             await seedIndexedIndex(userId, 'enabled');
+            const beforeDelete = jest.fn();
 
-            await dropIndexationIndex(userId, logger);
+            await dropIndexationIndex(userId, logger, beforeDelete);
 
+            expect(beforeDelete).toHaveBeenCalledTimes(1);
             expect(await readDB(userId)).toEqual({
                 status: undefined,
                 indexKey: undefined,
@@ -180,9 +182,11 @@ describe('switchIndexPath', () => {
 
         it('keeps an imported index', async () => {
             await seedImportedIndex(userId);
+            const beforeDelete = jest.fn();
 
-            await dropIndexationIndex(userId, logger);
+            await dropIndexationIndex(userId, logger, beforeDelete);
 
+            expect(beforeDelete).not.toHaveBeenCalled();
             expect(await readDB(userId)).toEqual({
                 status: undefined,
                 indexKey: 'imported-key',

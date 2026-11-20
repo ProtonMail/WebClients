@@ -2,59 +2,41 @@
 // search (short, must not wait for a full index run). These tests drive both sides by hand and
 // never block on a promise that may not settle: everything is asserted through a settlement
 // tracker after flushing the event loop, so a lock-up shows up as a failed expectation
-// rather than a hanging test.
-import { DatabaseLock } from './DatabaseLock';
+// rather than a hanging test. They are the contract every implementation passes within one tab.
+import { locks } from 'node:worker_threads';
 
-const deferred = <T = void>() => {
-    let resolve!: (value: T) => void;
-    let reject!: (reason?: unknown) => void;
-    const promise = new Promise<T>((res, rej) => {
-        resolve = res;
-        reject = rej;
-    });
-    return { promise, resolve, reject };
-};
+import { TabLocalDatabaseLock } from '../coordination/TabLocalDatabaseLock';
+import { DatabaseLock as WebLocksDatabaseLock } from '../coordination/weblock/DatabaseLock';
+import { silentLogger } from '../testing/logger';
+import { abortableIndexing, deferred, flush, track } from '../testing/settlement';
+import type { DatabaseLock } from './DatabaseLock';
 
-/** what an aborted idb/worker operation throws, and what runIndexing keys off of: the error
- * must be the signal's own reason, as that is how AsyncAbort rejects and how runIndexing
- * recognizes its own abort rather than a genuine failure */
+let userCounter = 0;
 
-/** let pending microtasks _and_ timers run, so anything that can settle has settled */
-const flush = async (turns = 5) => {
-    for (let i = 0; i < turns; i++) {
-        await new Promise((resolve) => setTimeout(resolve, 0));
-    }
-};
-
-/** observe a promise without awaiting it, so a promise that never settles fails an assertion instead of hanging the test */
-const track = <T>(promise: Promise<T>) => {
-    const state = { settled: false, rejected: false, error: undefined as unknown };
-    const tracked = promise.then(
-        (value) => {
-            state.settled = true;
-            return value;
+const lockFactories: [string, () => DatabaseLock][] = [
+    [
+        'TabLocalDatabaseLock',
+        () => {
+            return new TabLocalDatabaseLock();
         },
-        (error) => {
-            state.settled = true;
-            state.rejected = true;
-            state.error = error;
-        }
-    );
-    return { state, done: tracked };
-};
+    ],
+    [
+        'WebLocksDatabaseLock',
+        () => {
+            // a user of its own per test, so a lock left held by one test never reaches another
+            return new WebLocksDatabaseLock(
+                `database-lock-contract-${userCounter++}`,
+                silentLogger,
+                locks as unknown as LockManager
+            );
+        },
+    ],
+];
 
-/** indexing callback that hangs until aborted, then reports the abort the way a real worker would */
-const abortableIndexing = (onStart?: () => void) => async (signal: AbortSignal) => {
-    onStart?.();
-    await new Promise<void>((_, reject) => {
-        signal.addEventListener('abort', () => reject(signal.reason));
-    });
-};
-
-describe('DatabaseLock', () => {
+describe.each(lockFactories)('DatabaseLock contract: %s', (_name, createLock) => {
     describe('with nothing else running', () => {
         it('runs indexing once with a live signal', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             const signals: AbortSignal[] = [];
 
             await lock.runIndexing(async (signal) => {
@@ -66,7 +48,7 @@ describe('DatabaseLock', () => {
         });
 
         it('runs search immediately when no indexing has ever started', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             let ran = false;
 
             const search = track(
@@ -81,7 +63,7 @@ describe('DatabaseLock', () => {
         });
 
         it('runs search immediately once a previous indexing run has completed', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             await lock.runIndexing(async () => {});
             let ran = false;
 
@@ -99,7 +81,7 @@ describe('DatabaseLock', () => {
 
     describe('search interrupting indexing', () => {
         it('aborts the in-flight indexing run and lets the search through', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             const started = deferred();
             let runs = 0;
             const signals: AbortSignal[] = [];
@@ -133,7 +115,7 @@ describe('DatabaseLock', () => {
         });
 
         it('waits for indexing to acknowledge the abort before touching the db', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             const started = deferred();
             const letIndexingFinishAborting = deferred();
             let runs = 0;
@@ -172,7 +154,7 @@ describe('DatabaseLock', () => {
         });
 
         it('keeps indexing paused until the search callback is done', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             const started = deferred();
             const finishSearch = deferred();
             let runs = 0;
@@ -196,7 +178,7 @@ describe('DatabaseLock', () => {
         });
 
         it('lets the search through when the aborted indexing run completes instead of throwing', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             const started = deferred();
             const finishIndexing = deferred();
             let runs = 0;
@@ -233,7 +215,7 @@ describe('DatabaseLock', () => {
         });
 
         it('serializes back-to-back searches and only resumes indexing after the last one', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             const started = deferred();
             const finishFirstSearch = deferred();
             const finishSecondSearch = deferred();
@@ -281,7 +263,7 @@ describe('DatabaseLock', () => {
 
     describe('serializing searches', () => {
         it('runs overlapping searches one after the other', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             const finishFirst = deferred();
             const order: string[] = [];
 
@@ -310,7 +292,7 @@ describe('DatabaseLock', () => {
         });
 
         it('still runs a queued search after the one before it throws', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             const finishFirst = deferred();
             let secondRan = false;
 
@@ -337,7 +319,7 @@ describe('DatabaseLock', () => {
 
     describe('error handling', () => {
         it('propagates a non-abort indexing failure without retrying', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             let runs = 0;
 
             await expect(
@@ -351,7 +333,7 @@ describe('DatabaseLock', () => {
         });
 
         it('releases a waiting search when indexing fails outright', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             const started = deferred();
             const failIndexing = deferred();
             const indexing = track(
@@ -381,7 +363,7 @@ describe('DatabaseLock', () => {
         });
 
         it('releases the lock when the search callback throws', async () => {
-            const lock = new DatabaseLock();
+            const lock = createLock();
             const started = deferred();
             let runs = 0;
             const indexing = track(

@@ -4,64 +4,9 @@
  * Search operations can interrupt indexing operations, as they are higher priority
  * for the user. If indexing is interrupted by search, it will be automatically
  * retried by running the runIndexing callback again */
-import { isAbortedFrom } from '../utils/AsyncAbort';
-
-export class DatabaseLock {
-    private indexingAbortController: AbortController | undefined;
-    private searchPromise: Promise<void> | undefined;
-    private resolveIndexingFinished: (() => void) | undefined;
-
-    async runSearch(callback: () => Promise<void>) {
-        let resolve: () => void | undefined;
-        // promise needs to be present when indexing receives abort signal,
-        // so we create one ourselves
-        const previousSearchPromise = this.searchPromise;
-        const searchPromise = new Promise<void>((r) => (resolve = r));
-        this.searchPromise = searchPromise;
-        await previousSearchPromise;
-        try {
-            if (this.indexingAbortController) {
-                // wait until the indexing confirms the abort,
-                // as it might be awaiting something async
-                await new Promise<void>((r) => {
-                    this.resolveIndexingFinished = r;
-                    this.indexingAbortController?.abort();
-                });
-                this.resolveIndexingFinished = undefined;
-            }
-            await callback();
-        } finally {
-            if (this.searchPromise === searchPromise) {
-                this.searchPromise = undefined;
-            }
-            resolve!();
-        }
-    }
-
+export interface DatabaseLock {
+    /** runs once indexing has unwound, searches run one after the other */
+    runSearch(callback: () => Promise<void>): Promise<void>;
     /** can be interrupted by search so might run several times before it can complete */
-    async runIndexing(callback: (signal: AbortSignal) => Promise<void>) {
-        let interrupted = false;
-        do {
-            // search promise could be replaced for consecutive searches
-            while (this.searchPromise) {
-                await this.searchPromise;
-            }
-            interrupted = false;
-            this.indexingAbortController = new AbortController();
-            try {
-                await callback(this.indexingAbortController.signal);
-            } catch (err) {
-                if (isAbortedFrom(err, this.indexingAbortController.signal)) {
-                    interrupted = true;
-                } else {
-                    throw err;
-                }
-            } finally {
-                this.indexingAbortController = undefined;
-                // let the search know we've received the abort
-                // and are not touching the db anymore
-                this.resolveIndexingFinished?.();
-            }
-        } while (interrupted);
-    }
+    runIndexing(callback: (signal: AbortSignal) => Promise<void>): Promise<void>;
 }

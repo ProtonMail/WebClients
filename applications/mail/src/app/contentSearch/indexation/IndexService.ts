@@ -13,8 +13,11 @@ import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import noop from '@proton/utils/noop';
 
 import type { ESBaseMessage } from '../../models/encryptedSearch';
+import { LeaderElection } from '../coordination/LeaderElection';
+import { TabChannel, type TabMessage } from '../coordination/TabChannel';
+import { type TabCoordination, createTabCoordination } from '../coordination/createTabCoordination';
 import { getOrGenerateIndexKey as getOrGenerateIndexKeyV2 } from '../crypto/indexKey';
-import { DatabaseLock } from '../db/DatabaseLock';
+import type { DatabaseLock } from '../db/DatabaseLock';
 import { deleteContentSearchDB } from '../db/delete';
 import { openContentSearchDB } from '../db/open';
 import type { IndexStatus } from '../db/schema';
@@ -41,7 +44,6 @@ export class IndexService {
     /** Promise to drop the database when `ContentSearchIndexation` switches. */
     private dbReset: Promise<void> = Promise.resolve();
     private indexationPromise?: Promise<void>;
-    public readonly dbLock = new DatabaseLock();
     /**
      * The Metric service is intialized once in the `useContentSearch` hook.
      * But the `getSharedIndexService` singleton could be called at different times by different callers.
@@ -60,17 +62,113 @@ export class IndexService {
     private readonly apiBridge: MailApiBridge;
     private status?: IndexStatus;
     private readonly listeners: IndexListener[] = [];
+    /** whether the app initialized the service, which it only does when this tab may index */
+    private initialized = false;
     private readonly eventUpdateMapper: EventUpdateMapper;
+    /** shared with the other tabs, so a search in any tab interrupts indexing */
+    public readonly dbLock: DatabaseLock;
+    private readonly channel: TabChannel;
+    /** only the leader runs the index worker */
+    private readonly election: LeaderElection;
 
     constructor(
         public readonly userId: string,
         api: Api,
         private readonly getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>,
         getMessageKeys: GetMessageKeys,
-        private readonly logger: Logger
+        private readonly logger: Logger,
+        /** what this tab shares the index with the other tabs of the user with */
+        { leaderLock, dbLock, transport }: TabCoordination,
+        appVersion: string
     ) {
+        this.dbLock = dbLock;
+        this.channel = new TabChannel(transport);
+        this.election = new LeaderElection(leaderLock, this.channel, appVersion, logger);
         this.apiBridge = new MailApiBridge(api, createBatchBodyDecryptor(getMessageKeys), logger);
         this.eventUpdateMapper = new EventUpdateMapper(logger);
+        this.channel.subscribe((message) => {
+            this.handleTabMessage(message);
+        });
+        this.election.onLeadershipChanged((isLeader) => {
+            if (isLeader) {
+                this.startLeading().catch((err) => {
+                    this.logger.error('failed to start indexing as the new leader', err);
+                });
+            } else {
+                this.stopLeading();
+            }
+        });
+    }
+
+    /** stops the worker the way pausing does: the next leader runs its own startup */
+    private stopLeading() {
+        if (this.indexationPromise || this.workerQueue.length) {
+            this.logger.info('stopping indexing, as this tab no longer leads');
+        }
+        this.workerQueue = [];
+        this.catchupCompleted = false;
+        this.pauseController?.abort();
+    }
+
+    /** what the other tabs tell this one */
+    private handleTabMessage(message: TabMessage) {
+        switch (message.type) {
+            case 'status':
+                this.applyStatusFromOtherTab(message.status).catch((err) => {
+                    this.logger.error('failed to apply the status set in another tab', err);
+                });
+                break;
+            case 'progress':
+                // the leader reports its own progress
+                if (!this.election.isLeader) {
+                    this.listeners.forEach((l) => {
+                        l.reportHistoricProgress(message.processed, message.total);
+                    });
+                }
+                break;
+            case 'indexComplete':
+                if (!this.election.isLeader) {
+                    this.logger.info('the leader reports the index complete');
+                    this.listeners.forEach((l) => {
+                        l.reportIndexComplete();
+                    });
+                }
+                break;
+        }
+    }
+
+    /** another tab wrote the status before posting it */
+    private async applyStatusFromOtherTab(status: IndexStatus | undefined) {
+        this.logger.info(`another tab set the index ${status ?? 'deleted'}`);
+        if (status === 'enabled') {
+            // Reads it back with whether the index is complete, and has the leader start its worker. Only in a tab
+            // that initialized its index service: initializing joins the election, which a tab on the import path,
+            // or answering searches with v1, must stay out of.
+            if (this.initialized) {
+                await this.initialize();
+            }
+            return;
+        }
+        this.status = status;
+        this.listeners.forEach((l) => {
+            l.reportStatusUpdate(status);
+        });
+        this.workerQueue = [];
+        this.pauseController?.abort();
+    }
+
+    /** the leader startup: a tab only takes part in the election once `initialize()` read the status */
+    private async startLeading() {
+        await this.dbReset;
+        // the previous leader may have changed it since this tab read it
+        const statusAndHistoricalFinished = await this.readStatus();
+        this.status = statusAndHistoricalFinished?.status;
+        if (this.status === 'enabled') {
+            this.logger.info('starting to index as the leader');
+            this.runWithWorker((worker) => {
+                return worker.pushStartupAction();
+            });
+        }
     }
 
     public subscribe(listener: IndexListener) {
@@ -85,7 +183,8 @@ export class IndexService {
 
     /** should only be called after initialize is called? */
     async handleEvent(event: ESEvent<ESBaseMessage> | undefined) {
-        if (this.status !== 'enabled') {
+        // the leader indexes what the events change, in every tab
+        if (this.status !== 'enabled' || !this.election.isLeader) {
             return;
         }
         const batchUpdate = this.eventUpdateMapper.map(event);
@@ -105,11 +204,25 @@ export class IndexService {
         });
     }
 
+    /** Takes the service down for good: stops indexing and the import, and leaves the other tabs to it. */
+    dispose() {
+        this.logger.info('disposing the index service');
+        this.importHandle?.value?.stop();
+        this.workerQueue = [];
+        this.pauseController?.abort();
+        this.election.stop();
+        this.channel.close();
+    }
+
     /**
      * Fire and forget: never throws, a callback that fails is logged.
      * You should not await long running tasks inside the callback, just enqueue work with the pushXXX methods!
      */
     private runWithWorker(callback: WorkerCallback): void {
+        // only the leader runs a worker, and it runs its own startup when it takes over
+        if (!this.election.isLeader) {
+            return;
+        }
         if (this.worker) {
             this.pushToRunningWorker(this.worker, callback).catch((err) => {
                 this.logger.error('index worker failed to accept work', err);
@@ -142,7 +255,11 @@ export class IndexService {
     resetDbBetweenFeatureFlagSwitches(isIndexationPath: boolean) {
         this.dbReset = isIndexationPath
             ? dropImportedIndex(this.userId, this.logger)
-            : dropIndexationIndex(this.userId, this.logger);
+            : dropIndexationIndex(this.userId, this.logger, () => {
+                  // a tab still on the indexation path stops indexing, as when the data is cleared
+                  this.logger.info('dropping the index built by the indexer, telling the other tabs first');
+                  this.channel.post({ type: 'status', status: undefined });
+              });
         this.dbReset.catch((err) => {
             this.logger.error('failed to reset the database between feature flag switches', err);
         });
@@ -211,6 +328,8 @@ export class IndexService {
                 void txn.store.put(newStatus, 'status');
                 await txn.done;
                 this.listeners.forEach((l) => l.reportStatusUpdate(newStatus));
+                this.logger.info(`index ${newStatus}, telling the other tabs`);
+                this.channel.post({ type: 'status', status: newStatus });
                 return true;
             }
             return false;
@@ -231,8 +350,11 @@ export class IndexService {
 
     /** emits reportStatusUpdate and reportIndexComplete if the index is usable as is */
     public async initialize() {
+        this.initialized = true;
         await this.dbReset;
         const statusAndHistoricalFinished = await this.readStatus();
+        // Initialized, this tab takes part in electing the one that indexes. Does nothing when it already does.
+        this.election.start();
         this.listeners.forEach((l) => l.reportStatusUpdate(statusAndHistoricalFinished?.status));
         if (!statusAndHistoricalFinished) {
             return;
@@ -244,6 +366,7 @@ export class IndexService {
             // It doesn't change readiness: search waits for the historic pass only, as v1 doesn't wait for catch-up.
             this.runWithWorker((worker) => worker.pushStartupAction());
             if (historicalFinished) {
+                this.logger.info('index complete');
                 this.listeners.forEach((l) => l.reportIndexComplete());
             }
         }
@@ -357,13 +480,18 @@ export class IndexService {
             Comlink.proxy(this.apiBridge),
             Comlink.proxy<WorkerIndexListener>({
                 reportHistoricProgress: (processed: number, total: number) => {
+                    // logged by the leader only, as every tab reports it
+                    this.logger.info(`historic progress: ${processed}/${total}`);
                     this.listeners.forEach((l) => l.reportHistoricProgress(processed, total));
+                    this.channel.post({ type: 'progress', processed, total });
                 },
                 reportError: (err) => {
                     this.listeners.forEach((l) => l.reportError(err));
                 },
                 reportIndexComplete: () => {
                     this.listeners.forEach((l) => l.reportIndexComplete());
+                    this.logger.info('index complete, telling the other tabs');
+                    this.channel.post({ type: 'indexComplete' });
                 },
                 reportTaskStarted: (taskName: TaskName) => {
                     this.listeners.forEach((l) => l.reportTaskStarted(taskName));
@@ -485,6 +613,10 @@ export class IndexService {
         this.workerQueue = [];
         this.pauseController?.abort();
         await this.indexationPromise;
+        // Before deleting: the leader stops its worker as it would on pause, rather than have it fail once its
+        // connection is closed under it, still believing indexing is enabled.
+        this.logger.info('deleting the index, telling the other tabs first');
+        this.channel.post({ type: 'status', status: undefined });
 
         await deleteContentSearchDB(this.userId);
         // The in-memory status mirrors the DB we just deleted. Keeping it would make `enable()` believe
@@ -496,16 +628,47 @@ export class IndexService {
 let sharedIndexService: IndexService | undefined;
 export function getSharedIndexService(
     userId: string,
+    appVersion: string,
     api: Api,
     getUserKeys: () => Promise<DecryptedKey<PrivateKeyReference>[]>,
     getMessageKeys: GetMessageKeys,
     logger: Logger
 ) {
     if (!sharedIndexService) {
-        sharedIndexService = new IndexService(userId, api, getUserKeys, getMessageKeys, logger);
+        sharedIndexService = new IndexService(
+            userId,
+            api,
+            getUserKeys,
+            getMessageKeys,
+            logger,
+            createTabCoordination({ userId, logger }),
+            appVersion
+        );
     }
     return sharedIndexService;
 }
+
+let sharedIndexServiceUsers = 0;
+
+/**
+ * Keeps the shared index service alive while a component uses it. Returns the release: once the last user released
+ * it, it's disposed and forgotten, so the next `getSharedIndexService` creates a new one. A remount renders the new
+ * component with the same instance before the old one releases it, then retains it again in the same commit, so the
+ * release waits a microtask before disposing.
+ */
+export function retainSharedIndexService(): () => void {
+    sharedIndexServiceUsers++;
+    return () => {
+        sharedIndexServiceUsers--;
+        queueMicrotask(() => {
+            if (sharedIndexServiceUsers === 0 && sharedIndexService) {
+                sharedIndexService.dispose();
+                sharedIndexService = undefined;
+            }
+        });
+    };
+}
+
 /**
  * Gets the sharedIndexService for the given user, if it exists.
  */
