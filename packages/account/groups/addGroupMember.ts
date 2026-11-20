@@ -33,7 +33,13 @@ import { getGroupKey } from '../groups/getGroupKey';
 import { type GroupsState, getGroupRoles } from '../groups/index';
 import { disableGroupAddressEncryption } from '../groups/setGroupAddressFlags';
 import type { KtState } from '../kt';
-import { type MembersState, getMemberAddresses, invalidateMemberRoles, membersThunk } from '../members';
+import {
+    type MembersState,
+    canFetchMembers,
+    getMemberAddresses,
+    invalidateMemberRoles,
+    membersThunk,
+} from '../members';
 import { provideOrgKeyAccessToMember } from '../members/actions';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import type { OrganizationRolesState } from '../organizationRoles';
@@ -289,7 +295,10 @@ export const addGroupMembersThunk = ({
             await dispatch(disableGroupAddressEncryption({ groupAddress, forwarderKey }));
         }
 
-        const groupRoles = await dispatch(getGroupRoles({ group: { ID: groupId } }));
+        // Group roles need the permission to read users, which a group owner lacks
+        const groupRoles = (await canFetchMembers(dispatch))
+            ? await dispatch(getGroupRoles({ group: { ID: groupId } }))
+            : [];
         const shouldPromote = groupRoles.some(({ Role }) => isOrgKeyRequired(Role));
         const hasGroupRoles = groupRoles.length > 0;
         const members = hasGroupRoles ? await dispatch(membersThunk()) : [];
