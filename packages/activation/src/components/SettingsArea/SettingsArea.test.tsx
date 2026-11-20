@@ -35,6 +35,18 @@ const subsections = [
 vi.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as MockedFunction<any>;
 
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn(),
+}));
+const mockUseFlag = useFlag as MockedFunction<any>;
+
+const mockFlags = (enabledFlags: string[]) => {
+    mockUseFlag.mockImplementation((flag: string) => enabledFlags.includes(flag));
+};
+
+const byoeUser = { Flags: { 'has-a-byoe-address': true } };
+const nonByoeUser = { Flags: { 'has-a-byoe-address': false } };
+
 vi.mock('../../oles/useOLESFeatureStatus', () => ({
     __esModule: true,
     default: () => ({
@@ -50,12 +62,11 @@ const { restriction } = vi.hoisted(() => ({ restriction: { isRestricted: false }
 vi.mock('../Modals/OAuth/Drive/useIsDriveImportRestricted', () => ({
     useIsDriveImportRestricted: () => restriction.isRestricted,
 }));
-vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 
 describe('SettingsArea', () => {
     beforeEach(() => {
         restriction.isRestricted = false;
-        vi.mocked(useFlag).mockReturnValue(false);
+        mockFlags([]);
     });
 
     it('Should render the forward section if feature is enabled', async () => {
@@ -87,6 +98,57 @@ describe('SettingsArea', () => {
             renderDriveSettings();
 
             expect(screen.queryByTestId('SettingsArea:forwardSection')).not.toBeInTheDocument();
+        });
+    });
+
+    describe('BYOE new message reminder', () => {
+        const renderArea = () => {
+            easySwitchRender(<SettingsArea config={{ ...settingsAreaConfig, subsections }} app={APPS.PROTONMAIL} />);
+        };
+
+        it('shows the reminder toggle in the connected emails section, above the mailbox list, for a BYOE user when the flag is on', () => {
+            mockUseUser.mockReturnValue([byoeUser, false]);
+            mockFlags(['InboxByoeNewMessageReminderClient']);
+
+            renderArea();
+
+            const reminder = screen.getByTestId('SettingsArea:byoeReminderSection');
+            expect(screen.getByRole('checkbox', { name: 'Private email reminders in Gmail' })).toBeInTheDocument();
+
+            const connectedEmailsSection = document.getElementById('section-forwarding-list');
+            expect(connectedEmailsSection).toContainElement(reminder);
+
+            const syncsInfo = screen.getByText(/Connect and manage your external mailboxes/);
+            expect(connectedEmailsSection).toContainElement(syncsInfo);
+            expect(reminder.compareDocumentPosition(syncsInfo) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+        });
+
+        it('hides the reminder toggle when the flag is off', () => {
+            mockUseUser.mockReturnValue([byoeUser, false]);
+            mockFlags([]);
+
+            renderArea();
+
+            expect(screen.queryByTestId('SettingsArea:byoeReminderSection')).not.toBeInTheDocument();
+        });
+
+        it('hides the reminder toggle for a non-BYOE user even when the flag is on', () => {
+            mockUseUser.mockReturnValue([nonByoeUser, false]);
+            mockFlags(['InboxByoeNewMessageReminderClient']);
+
+            renderArea();
+
+            expect(screen.queryByTestId('SettingsArea:byoeReminderSection')).not.toBeInTheDocument();
+        });
+
+        it('keeps the existing sections when the reminder is shown', () => {
+            mockUseUser.mockReturnValue([byoeUser, false]);
+            mockFlags(['InboxByoeNewMessageReminderClient']);
+
+            renderArea();
+
+            screen.getByTestId('SettingsArea:forwardSection');
+            expect(screen.getByTestId('ProviderButton:googleCardForward')).toBeVisible();
         });
     });
 });

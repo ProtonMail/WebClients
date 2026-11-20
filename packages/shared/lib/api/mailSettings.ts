@@ -254,3 +254,9 @@ export const updateRemoveImageMetadata = (RemoveImageMetadata: boolean) => ({
     method: 'put',
     data: { RemoveImageMetadata },
 });
+
+export const updateByoeNewMessageReminder = (ByoeNewMessageReminder: boolean) => ({
+    url: 'mail/v4/settings/byoe-new-message-reminder',
+    method: 'put',
+    data: { ByoeNewMessageReminder },
+});

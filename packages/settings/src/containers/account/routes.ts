@@ -1096,6 +1096,7 @@ export const getAccountAppRoutes = ({
                         keywords: [
                             c('account_search_index').t`External mailbox`,
                             c('account_search_index').t`Connected addresses`,
+                            c('account_search_index').t`Reminder`,
                         ],
                     },
                 ],

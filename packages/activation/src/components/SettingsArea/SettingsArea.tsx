@@ -3,11 +3,13 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import type { ProtonDriveClient } from '@protontech/drive-sdk';
 
+import { useUser } from '@proton/account/user/hooks';
 import useBYOEFeatureStatus from '@proton/byoe/src/hooks/useBYOEFeatureStatus';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import type { SettingsAreaConfig } from '@proton/components/containers/layout/interface';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { getIsBYOEAccount } from '@proton/shared/lib/keys/accountType';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
@@ -23,6 +25,7 @@ import { driveOAuthViewsOverride } from '../Modals/OAuth/Drive/driveOAuthViews';
 import { useIsDriveImportRestricted } from '../Modals/OAuth/Drive/useIsDriveImportRestricted';
 import ImportsTable from '../ReportsTable/ImportsTable';
 import { SyncsTable } from '../ReportsTable/SyncsTable';
+import ByoeReminderToggle from './ByoeReminderToggle';
 import ProviderCard from './ProviderCards/ProviderCard';
 
 import './EasySwitchTables.scss';
@@ -34,6 +37,8 @@ interface Props {
 
 const SettingsArea = ({ config, app }: Props) => {
     const [hasAccessToBYOE] = useBYOEFeatureStatus();
+    const [user] = useUser();
+    const showByoeReminder = useFlag('InboxByoeNewMessageReminderClient') && getIsBYOEAccount(user);
     const isDriveEnabled = useFlag('EasySwitchB2CForDriveWeb');
     // Also needs the base Drive flag, which loads the Drive SDK provider this flow depends on.
     const isDriveNewUIEnabled = useFlag('EasySwitchB2CForDriveWebNewUI') && isDriveEnabled && app === APPS.PROTONDRIVE;
@@ -86,6 +91,14 @@ const SettingsArea = ({ config, app }: Props) => {
                         )}
                     </SettingsSectionWide>
                     <SettingsSectionWide>
+                        {showByoeReminder ? (
+                            <div
+                                className="border border-weak rounded-xl p-4 mb-8"
+                                data-testid="SettingsArea:byoeReminderSection"
+                            >
+                                <ByoeReminderToggle />
+                            </div>
+                        ) : null}
                         <SyncsTable />
                     </SettingsSectionWide>
                 </PrivateMainSettingsArea>

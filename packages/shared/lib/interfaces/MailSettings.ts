@@ -95,4 +95,5 @@ export interface MailSettings {
     KT: KEY_TRANSPARENCY_SETTING;
     MailCategoryView: boolean;
     MailCategoryViewCountersEnabled: boolean;
+    ByoeNewMessageReminder: boolean;
 }
