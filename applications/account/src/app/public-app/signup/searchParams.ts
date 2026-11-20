@@ -142,6 +142,7 @@ export const getSignupSearchParams = (
     const noPromo = searchParams.get('noPromo');
     const trial = searchParams.get('trial') === 'true';
     const cardless = searchParams.get('cardless') === 'true';
+    const hideIncludedProducts = searchParams.get('hideIncludedProducts') === 'true';
 
     const firstName = searchParams.get('firstName') || undefined;
     const lastName = searchParams.get('lastName') || undefined;
@@ -175,6 +176,7 @@ export const getSignupSearchParams = (
         source,
         trial,
         cardless,
+        hideIncludedProducts,
         firstName,
         lastName,
         vatNumber,
