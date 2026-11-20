@@ -936,6 +936,27 @@
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
+      ],
+      "Dismiss notification": [
+        "Închidere notificare"
+      ],
+      "Go to today": [
+        "Salt la astăzi"
+      ],
+      "New": [
+        "Nou"
+      ],
+      "Next contact": [
+        "Contact următor"
+      ],
+      "Previous contact": [
+        "Contact anterior"
+      ],
+      "Skip to main content": [
+        "Salt la conținutul principal"
+      ],
+      "Toggle subfolders of ${ itemName }": [
+        "Comutare subfoldere din ${ itemName }"
       ]
     },
     "Actions message": {
@@ -1055,6 +1076,14 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }",
+        "Licențe asistent de scriere ${ LUMO_SHORT_APP_NAME }: ${ seats }"
       ]
     },
     "Alert": {
@@ -1505,7 +1534,7 @@
         "Conversații rapide și funcții avansate de inteligență artificială."
       ],
       "Private video calls for the conversations that matter.": [
-        "Apeluri video private pentru conversațiile importante."
+        "Videoconferințe private pentru conversațiile importante."
       ]
     },
     "color": {
@@ -3625,6 +3654,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
+      ],
+      "Failed to get invitee keys": [
+        "Nu s-au putut obține cheile persoanei invitate."
+      ],
+      "Failed to load the membership": [
+        "Încărcarea calității de membru a eșuat."
+      ],
+      "Failed to load the membership data": [
+        "Încărcarea datelor de membru a eșuat."
+      ],
+      "Failed to verify membership": [
+        "Verificarea calității de membru a eșuat."
+      ],
+      "Some invitations could not be loaded": [
+        "Unele invitații nu au putut fi încărcate."
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Nu s-a putut verifica dacă îl puteți scoate din coșul de gunoi."
       ]
     },
     "error": {
@@ -5736,6 +5783,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Can't connect": [
+        "Nu se poate conecta"
+      ],
+      "Creating new document…": [
+        "Se creează documentul…"
+      ],
+      "Decrypting document…": [
+        "Se decriptează document-ul…"
+      ],
+      "Opening document…": [
+        "Se deschide documentul…"
+      ],
+      "Preparing editor…": [
+        "Se pregătește editorul…"
+      ],
+      "Redirecting…": [
+        "Se redirecționează…"
+      ],
+      "Syncing latest changes…": [
+        "Se sincronizează ultimele modificări…"
+      ],
+      "Writing assistant seats are no longer sold.": [
+        "Licențele pentru asistentul de scriere nu se mai vând."
+      ],
+      "Your current document will be replaced with this version.": [
+        "Documentul actual va fi înlocuit cu această versiune."
       ]
     },
     "info": {
@@ -6230,6 +6304,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil"
+      ],
+      "Loading": [
+        "Se încarcă"
       ]
     },
     "Label for contact group color": {
@@ -10354,6 +10431,73 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ]
+    },
+    "lumo_2026: feature": {
+      "${ LUMO_SHORT_APP_NAME } Code": [
+        "${ LUMO_SHORT_APP_NAME } Code"
+      ],
+      "2x Basic usage": [
+        "2X Utilizare de bază"
+      ],
+      "5x Plus usage": [
+        "Utilizare Plus 5X"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acces la API, cu ${ credit } credit pe lună"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acces la API, cu ${ credit } credit pe lună per utilizator"
+      ],
+      "Everything in Basic, and:": [
+        "Torul din Basic și:"
+      ],
+      "Everything in Free, and:": [
+        "Totul din Free și:"
+      ],
+      "Everything in Plus, and:": [
+        "Totul din Plus și:"
+      ],
+      "Extended image generation": [
+        "Generare de imagini extinsă"
+      ],
+      "Includes:": [
+        "Include:"
+      ],
+      "Limited image generation": [
+        "Generare de imagini limitată"
+      ],
+      "Limited messages and chat history": [
+        "Mesaje si istoric conversații limitate"
+      ],
+      "Limited Skills, Projects, and scheduled tasks": [
+        "Aptitudini, proiecte și sarcini planificate limitate"
+      ],
+      "Maximum image generation": [
+        "Maximum generări de imagini"
+      ],
+      "Maximum Skills and Projects": [
+        "Maximum de proiecte și aptitudini"
+      ],
+      "More image generation": [
+        "Mai multe generări de imagini"
+      ],
+      "More Skills, Projects, and scheduled tasks": [
+        "Mai multe aptitudini, proiecte și sarcini planificate"
+      ],
+      "More usage": [
+        "Mai multă utilizare"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Pentru programare și construire"
+      ],
+      "For everyday chats": [
+        "Pentru conversațiile zilnice"
+      ],
+      "For getting more done": [
+        "Pentru a realiza mai multe"
       ]
     }
   }

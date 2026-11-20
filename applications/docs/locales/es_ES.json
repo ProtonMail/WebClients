@@ -949,6 +949,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "New": [
+        "Nuevo"
+      ],
+      "Skip to main content": [
+        "Omitir al contenido principal"
       ]
     },
     "Actions message": {
@@ -3614,6 +3620,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "No pudimos verificar si puede usted sacarlo de la papelera o no."
       ]
     },
     "error": {
@@ -4657,7 +4666,7 @@
         "Cierra esta pantalla para salir."
       ],
       "Comments are not available yet": [
-        "/fe-docs/source-file-full.xliff\n4c44c717ae4338647f573cedb6161b082fac2d81\ncontexto. info\nSociedad:\n-drive\nArchivos:\n- /src/app/routes/(user)/(document)/doc2/__components/DocumentHeaderV2.tsx:68\nArchivo: docs-webapp.xliff"
+        "Los comentarios aún no están disponibles"
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conéctate a ${ VPN_APP_NAME } para navegar de forma privada."

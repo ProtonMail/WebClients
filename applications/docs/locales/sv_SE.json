@@ -937,6 +937,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "Export this version (as odt) (Beta)": [
+        "Exportera denna version (som odt) (Beta)"
+      ],
+      "New": [
+        "Nytt"
+      ],
+      "Skip to main content": [
+        "Hoppa över till huvudinnehåll"
       ]
     },
     "Actions message": {
@@ -1045,6 +1054,13 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplats",
+        "${ seats }${ LUMO_SHORT_APP_NAME } skrivassistentplatser"
       ]
     },
     "Alert": {
@@ -1115,6 +1131,9 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Du kan ha upp till ${ TRIAL_MAX_SCRIBE_SEATS }${ LUMO_SHORT_APP_NAME } \nplatser för skrivassistenter under provperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -3564,6 +3583,21 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Odekrypterbart namn"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Ett meddelande krävs för att rapportera brott mot upphovsrätt eller stulen data"
+      ],
+      "Bookmark password is not available": [
+        "Lösenord för bokmärke är inte tillgängligt"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Upprättande av dokument utanför mappar är inte tillåtet"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Misslyckades avkryptera nodnyckel: ${ message }"
+      ],
+      "We couldn't check whether you can take it out of trash.": [
+        "Vi kunde inte kolla om du kan ta ut den ur papperskorgen."
       ]
     },
     "error": {
@@ -5629,6 +5663,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "Some of the document's content could not be read.": [
+        "En del av dokumentets innehåll kunde inte läsas."
+      ],
+      "The document could not be created.": [
+        "Dokumentet kunde inte skapas."
+      ],
+      "The document could not be loaded.": [
+        "Dokumentet kunde inte laddas."
+      ],
+      "This link is not supported on this page.": [
+        "Denna länk stöds inte på denna sida."
       ]
     },
     "info": {
@@ -6118,6 +6164,12 @@
       ],
       "Your password (trusted contact)": [
         "Ditt lösenord (betrodd kontakt)"
+      ],
+      "Spreadsheet": [
+        "Kalkylblad"
+      ],
+      "⚠️ Undecryptable name": [
+        "⚠️ Namn som inte går att dekryptera"
       ]
     },
     "Label for contact group color": {
@@ -7611,6 +7663,9 @@
       ],
       "Your settings have been changed successfully": [
         "Dina inställningar har ändrats"
+      ],
+      "Failed to apply file. Check the file and try again.": [
+        "Misslyckades med att tillämpa fil. Kontrollera filen och försök igen."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7810,6 +7865,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Din fullständiga ${ planTitle }-prenumeration börjar den ${ boldEndDate }."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**När din fullständiga prenumeration startar...** Du kan fortfarande avbryta inom 30 dagar och få en proportionerlig återbetalning."
       ]
     },
     "Option": {
@@ -10165,6 +10223,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "En del av dokumentet kunde inte läsas så redigering är inaktiverad."
       ]
     }
   }
