@@ -1,6 +1,4 @@
 import type { JSX } from 'react'
-import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
-import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
 import { CircleLoader } from '../components/CircleLoader'
 import type { TableVariant } from './DocumentsTable'
 import { DocumentsTable } from './DocumentsTable'
@@ -17,6 +15,8 @@ import { clsx } from '../utils/clsx'
 import * as Ariakit from '@ariakit/react'
 import { APPS } from '../utils/apps'
 import { TelemetryEvent } from '../utils/telemetry'
+import { Icon } from '../components/Icon'
+import * as Icons from '../components/icons'
 
 export function HomepageContent() {
   return (
@@ -137,8 +137,8 @@ function RecentsEmptyStateButtons() {
           setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
         }}
       >
-        <IcBrandProtonDocs
-          size={4}
+        <Icon
+          data={Icons.brandProtonDocs}
           className="shrink-0 text-[--icon-color]"
           style={{ '--icon-color': COLOR_BY_TYPE.document }}
         />
@@ -150,8 +150,8 @@ function RecentsEmptyStateButtons() {
         render={<Ariakit.Role.a href={getAppHref('/sheet', APPS.PROTONDOCS)} target="_blank" />}
         onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
       >
-        <IcBrandProtonSheets
-          size={4}
+        <Icon
+          data={Icons.brandProtonSheets}
           className="shrink-0 text-[--icon-color]"
           style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
         />

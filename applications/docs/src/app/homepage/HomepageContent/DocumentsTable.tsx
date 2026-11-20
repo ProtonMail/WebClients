@@ -5,16 +5,6 @@ import { useIsNarrow } from '../utils/useIsNarrow'
 import type { RecentDocumentsItem } from '../recentDocumentsItem'
 import type { DateFormatter } from '../utils/dateFormatter'
 import { SDK_SWITCH_INITIATIVE } from '../utils/errorTracking'
-import type { IconComponent } from '@proton/icons/component'
-import { IcArrowDown } from '@proton/icons/icons/IcArrowDown'
-import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
-import { IcFolder } from '@proton/icons/icons/IcFolder'
-import { IcInbox } from '@proton/icons/icons/IcInbox'
-import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
-import { IcTrash } from '@proton/icons/icons/IcTrash'
-import { IcUser } from '@proton/icons/icons/IcUser'
-import { IcUserFilled } from '@proton/icons/icons/IcUserFilled'
-import { IcUsers } from '@proton/icons/icons/IcUsers'
 import { APPS } from '../utils/apps'
 import type { ProtonDocumentType } from '../utils/mimetype'
 import { getInitials } from './getInitials'
@@ -32,7 +22,8 @@ import { SortSelect } from './SortSelect'
 import { DocContextMenu, canOrganize } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
-import { Icon } from '../components/Icon'
+import { Icon, type IconData } from '../components/Icon'
+import * as Icons from '../components/icons'
 import * as Table from './table'
 
 import { getOwnerName } from '../get-owner-name'
@@ -238,7 +229,7 @@ function BulkMoveButton({ onMove, disabled }: BulkMoveButtonProps) {
       onClick={onMove}
       data-testid="bulk-move-button"
     >
-      <IcArrowsCross className="shrink-0" />
+      <Icon data={Icons.arrowsCross} className="shrink-0" />
     </IconButton>
   )
 }
@@ -256,7 +247,7 @@ function BulkTrashButton({ onTrash, isTrashing }: BulkTrashButtonProps) {
       onClick={onTrash}
       data-testid="bulk-trash-button"
     >
-      <IcTrash className="shrink-0" />
+      <Icon data={Icons.trash} className="shrink-0" />
     </IconButton>
   )
 }
@@ -345,7 +336,7 @@ function MaybeSorted({ sorted, ...props }: MaybeSortedProps) {
   return (
     <span {...props} className={clsx('flex flex-nowrap items-center gap-[.375rem]', props.className)}>
       <span>{props.children}</span>
-      {sorted ? <IcArrowDown size={4} className="text-[--icon-norm]" /> : null}
+      {sorted ? <Icon data={Icons.arrowDown} className="text-[--icon-norm]" /> : null}
     </span>
   )
 }
@@ -448,19 +439,19 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
     throw new Error('Unexpected missing location')
   }
 
-  let LocationIcon: IconComponent
+  let locationIcon: IconData
   let locationLabel: string
   if (variant === 'trash') {
-    LocationIcon = IcTrash
+    locationIcon = Icons.trash
     locationLabel = messages.location.trash
   } else if (location?.type === 'shared-with-me') {
-    LocationIcon = IcUsers
+    locationIcon = Icons.users
     locationLabel = messages.location.sharedWithMe
   } else if (location?.type === 'root') {
-    LocationIcon = IcInbox
+    locationIcon = Icons.inbox
     locationLabel = messages.location.myFiles
   } else {
-    LocationIcon = IcFolder
+    locationIcon = Icons.folder
     locationLabel = location?.path.at(-1)!
   }
   const isLocationPath = location?.type === 'path'
@@ -479,7 +470,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
       title={!isLocationPath ? locationLabel : undefined}
       data-testid="document-location-button"
     >
-      <LocationIcon className="mr-2 shrink-0" />
+      <Icon data={locationIcon} className="mr-2 shrink-0" />
       <span className="overflow-hidden text-ellipsis">{locationLabel}</span>
     </Button>
   )
@@ -657,7 +648,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
             shape="ghost"
             className={clsx('ml-auto shrink-0 px-2', RAISED, showActionsOnHover && 'mouse:group-hover:opacity-100')}
           >
-            <IcThreeDotsVertical />
+            <Icon data={Icons.threeDotsVertical} />
           </IconButton>
         </div>
       </Table.DataCell>
@@ -792,10 +783,10 @@ function useNameAndAvatar(document: RecentDocumentsItem) {
   const isMine = isMyDocument(document, addresses)
   const displayName = getOwnerName(document, isMine, contactEmails, names)
 
-  let avatarContent: ReactNode = <IcUserFilled className="shrink-0" />
+  let avatarContent: ReactNode = <Icon data={Icons.userFilled} className="shrink-0" />
   if (!isMine) {
     if (!document.createdBy) {
-      avatarContent = <IcUser className="shrink-0" />
+      avatarContent = <Icon data={Icons.user} className="shrink-0" />
     } else {
       avatarContent = getInitials(document.createdBy)
     }

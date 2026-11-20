@@ -1,12 +1,12 @@
 import * as Ariakit from '@ariakit/react'
-import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp'
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
 import { type KeyboardEvent, useRef, useState } from 'react'
 import { IconButton } from '../components/ui'
 import { useHomepageView, type RecentsSort } from '../homepageViewContext'
 import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
 import { TelemetryEvent } from '../utils/telemetry'
 import { DropdownMenu, DropdownMenuItem } from './menu'
+import { Icon } from '../components/Icon'
+import * as Icons from '../components/icons'
 
 // TODO: add 'modified' once "last modified" is supported.
 const SORT_SELECT_OPTIONS = ['viewed', 'name', 'owner', 'location'] satisfies RecentsSort[]
@@ -42,7 +42,7 @@ export function SortSelect() {
           />
         }
       >
-        <IcArrowDownArrowUp className="shrink-0" />
+        <Icon data={Icons.arrowDownArrowUp} className="shrink-0" />
       </Ariakit.MenuButton>
       <DropdownMenu
         ref={menuRef}
@@ -61,7 +61,7 @@ export function SortSelect() {
             }}
           >
             <span>{messages.options[value]}</span>
-            {sortValue === value ? <IcCheckmark /> : null}
+            {sortValue === value ? <Icon data={Icons.checkmark} /> : null}
           </DropdownMenuItem>
         ))}
       </DropdownMenu>

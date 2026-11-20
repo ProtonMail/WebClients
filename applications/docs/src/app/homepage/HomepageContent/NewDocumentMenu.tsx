@@ -1,5 +1,3 @@
-import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
-import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
 import { APPS } from '../utils/apps'
 import { Menu, MenuItem } from './menu'
 import { useHomepageMessages } from '../messages/HomepageMessagesProvider'
@@ -8,6 +6,8 @@ import { useHomepageView } from '../homepageViewContext'
 import { clsx } from '../utils/clsx'
 import type * as Ariakit from '@ariakit/react'
 import { TelemetryEvent } from '../utils/telemetry'
+import { Icon } from '../components/Icon'
+import * as Icons from '../components/icons'
 
 interface Props extends Ariakit.MenuProps {}
 
@@ -19,7 +19,8 @@ export function NewDocumentMenu({ className, ...rest }: Props) {
       <MenuItem
         className="no-underline"
         leadingIconSlot={
-          <IcBrandProtonDocs
+          <Icon
+            data={Icons.brandProtonDocs}
             size={5}
             className="shrink-0 text-[--icon-color]"
             style={{ '--icon-color': COLOR_BY_TYPE.document }}
@@ -37,7 +38,8 @@ export function NewDocumentMenu({ className, ...rest }: Props) {
       <MenuItem
         className="no-underline"
         leadingIconSlot={
-          <IcBrandProtonSheets
+          <Icon
+            data={Icons.brandProtonSheets}
             size={5}
             className="shrink-0 text-[--icon-color]"
             style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
