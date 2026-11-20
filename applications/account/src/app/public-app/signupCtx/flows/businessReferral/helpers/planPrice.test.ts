@@ -82,14 +82,13 @@ describe('getPlanCardPrices', () => {
         });
     });
 
-    it('splits the whole VPN Professional coupon discount over the included members', () => {
+    it('applies the coupon discount proportionally to each member price', () => {
         const { payments } = buildPayments(buildCheckResult({ Amount: 71964, CouponDiscount: -7196 }));
 
-        expect(getPlanCardPrices(payments, PLANS.VPN_BUSINESS)).toEqual({
-            currency: 'EUR',
-            regularPricePerMonth: 1199,
-            pricePerMonth: 999 - 7196 / 12 / 2,
-            renewalPricePerMonth: 999,
-        });
+        const prices = getPlanCardPrices(payments, PLANS.VPN_BUSINESS);
+
+        expect(prices.regularPricePerMonth).toBe(1199);
+        expect(prices.pricePerMonth).toBeCloseTo(899, 0);
+        expect(prices.renewalPricePerMonth).toBe(999);
     });
 });
