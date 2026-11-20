@@ -336,6 +336,18 @@
       ],
       "Gateway logs": [
         "Gatewayloggar"
+      ],
+      "Data breach alerts": [
+        "Varningar om dataintrång"
+      ],
+      "Encryption backup in this browser": [
+        "Krypterad säkerhetskopia i den här webbläsaren"
+      ],
+      "Group plan invitation": [
+        "Inbjudan till gruppabonnemang"
+      ],
+      "Inbox tabs": [
+        "Flikar i inkorgen"
       ]
     },
     "Accounts": {
@@ -2685,6 +2697,9 @@
       ],
       "User admin:": [
         "Användaradministratör:"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Tilldela administratörsroller till grupper. Hantera åtkomst för många användare samtidigt och uppdatera den automatiskt när personer ansluter eller lämnar."
       ]
     },
     "Alert": {
@@ -14348,6 +14363,9 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Din kostnadsfria provperiod har avslutats. Teckna en prenumeration nu för att säkerställa att ditt team behåller sin åtkomst utan avbrott och att kontona förblir säkra.\n"
+      ],
+      "UnionPay logo": [
+        "UnionPay-logga"
       ]
     },
     "info": {
@@ -24466,6 +24484,9 @@
       ],
       "Verify your domain": [
         "Verifiera din domän"
+      ],
+      "Onboard your team": [
+        "Introducera ditt team"
       ]
     },
     "Step in filter modal": {
@@ -27988,6 +28009,12 @@
       ],
       "This Gmail is linked to another ${ BRAND_NAME } account": [
         "Denna Gmail är länkad med ett annat ${ BRAND_NAME } konto"
+      ],
+      "${ planTitle } breakdown": [
+        "${ planTitle } haveri"
+      ],
+      "Over 95% of users love our extension": [
+        "Över 95% av användare älskar vårt tillägg"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29669,6 +29696,48 @@
       ],
       "Your plan": [
         "Ditt paket"
+      ],
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } per användare"
+      ],
+      "${ storage } shared": [
+        "${ storage } delat"
+      ],
+      "10 years": [
+        "10 år"
+      ],
+      "Calendars": [
+        "Kalendrar"
+      ],
+      "Custom email domains": [
+        "Anpassade e-postdomäner"
+      ],
+      "Email addresses": [
+        "E-postadresser"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-alias"
+      ],
+      "Password vaults": [
+        "Lösenords-valv"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive och Pass"
+      ],
+      "Previous versions": [
+        "Tidigare versioner"
+      ],
+      "Storage": [
+        "Lagring"
+      ],
+      "Subscribers only": [
+        "Endast prenumeranter"
+      ],
+      "Ultra servers": [
+        "Ultraservrar"
+      ],
+      "Users": [
+        "Användare"
       ]
     },
     "vpn_signup_three_plans: Info": {
@@ -29678,6 +29747,11 @@
       ],
       "Premium calendar features": [
         "Premium kalenderfunktioner"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 dagars pengarna-tillbaka-garanti: avbryt inom 30 dagar efter ditt köp och kontakta vår ${ customerSupportLink } för att få en återbetalning."
       ]
     }
   }

@@ -651,7 +651,7 @@
         "Criar uma conta gratuita agora"
       ],
       "Create Gateway": [
-        "Criar uma porta de entrada"
+        "Criar Porta de Entrada"
       ],
       "Create label": [
         "Crie uma etiqueta"
@@ -717,7 +717,7 @@
         "Eliminar o reencaminhamento"
       ],
       "Delete Gateway": [
-        "Eliminar a porta de entrada"
+        "Eliminar Porta de Entrada"
       ],
       "Delete gateway": [
         "Eliminar porta de entrada"
@@ -7245,13 +7245,13 @@
         "Servidor IMAP é necessário."
       ],
       "Impossible to create the gateway": [
-        "Foi impossível criar a porta de entrada."
+        "Impossível criar a porta de entrada"
       ],
       "Impossible to edit the gateway": [
-        "Foi impossível editar a porta de entrada."
+        "Impossível editar a porta de entrada"
       ],
       "Impossible to rename the gateway": [
-        "Foi impossível renomear a porta de entrada."
+        "Impossível renomear a porta de entrada"
       ],
       "Incorrect backup password. Please try again.": [
         "A palavra-passe de backup não é correta. Tente novamente."
@@ -10730,7 +10730,7 @@
         "Criar em"
       ],
       "Create your first Gateway": [
-        "Criar a sua primeira porta de entrada"
+        "Crie a sua primeira 'Porta de Entrada'"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
         "A criar um servidor de porta de entrada: ${ serverNumber } / ${ total }",
@@ -10795,7 +10795,7 @@
         "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
-        "Servidores dedicados com endereços IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado."
+        "OS servidores dedicados com endereços de IP dedicados podem ser adicionados às portas de entrada privadas para ativar um controlo de acesso personalizado."
       ],
       "Dedicated VPN servers": [
         "Servidores VPN dedicados"
@@ -11196,7 +11196,7 @@
         "A partir daí, eles podem pedir acesso de emergência à sua conta clicando em **Pedir acesso.**"
       ],
       "Gateway couldn't be deleted. Please try again": [
-        "Não foi possível eliminar a porta de entrada. Tente novamente"
+        "Não foi possível eliminar a porta de entrada. Por favor, tente novamente"
       ],
       "Gateway deleted": [
         "Porta de entrada eliminada"
@@ -11610,7 +11610,7 @@
         "A carregar dados do eduGAIN..."
       ],
       "Loading gateways monitoring current status.": [
-        "A carregar o estado atual de monitorização das portas de entrada"
+        "A carregar o estado atual de monitorização das portas de entrada."
       ],
       "Loading preview": [
         "A carregar a pré-visualização"
@@ -11757,7 +11757,7 @@
         "Sem porta de entrada"
       ],
       "No Gateways yet": [
-        "Sem porta de entrada ainda"
+        "Ainda sem portas de entrada"
       ],
       "No import history.": [
         "Sem histórico de importação."
@@ -11864,7 +11864,7 @@
         "Tamanho da organização"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
-        "Organize os seus servidores dedicados em portas de entrada e decida que membros os podem aceder."
+        "Organize os seus servidores dedicados em 'Portas de Entrada' e decida que membros podem aceder aos mesmos."
       ],
       "Other": [
         "Outro"
@@ -12040,7 +12040,7 @@
         "Avaliações, classificações ou guias de produtos"
       ],
       "Professional": [
-        "Professional"
+        "Profissional"
       ],
       "Protect this device too?": [
         "Proteger também este dispositivo?"
@@ -12979,7 +12979,7 @@
         "Precisamos autenticar o seu pagamento com o seu banco."
       ],
       "We recommend adding servers in different locations (one per city) to maximize redundancy.": [
-        "Recomendamos adicionar servidores em localizações diferentes (um por cidade) para maximizar a redundância."
+        "Nós recomendamos que adicione servidores em localizações diferentes (um por cidade) para maximizar a redundância."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Recomendamos ter no mínimo 2 servidores de modo a fornecer redundância."
@@ -13057,7 +13057,7 @@
         "Quando clica numa ligação, a funcionalidade anti-phishing pede-lhe a confirmação do URL da página web."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
-        "Quando remove um servidor de uma porta de entrada ela entra num período de desativação de 10 dias. Este servidor pode ser adicionado a uma nova porta de entrada, mas o seu país não pode ser alterado."
+        "Quando remove um servidor de uma 'Porta de Entrada', esta entra num período de desativação de 10 dias. Este servidor pode ser adicionado a uma nova 'Porta de Entrada', mas o seu país não pode ser alterado."
       ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
         "Quando quiser ativar o endereço, digitalize o código QR ou utilize a ligação no voucher."
@@ -13075,7 +13075,7 @@
         "Com o ${ AUTHENTICATOR_APP_NAME }, pode:"
       ],
       "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Com um plano ${ boldProfessionalPlan }, pode obter ${ boldDedicatedServers } para a sua organização e configurar ${ boldGateways } para controlar quais os utilizadores que lhes podem aceder."
+        "Com um plano ${ boldProfessionalPlan }, pode comprar ${ boldDedicatedServers } para a sua organização, e configurar ${ boldGateways } para controlar quais os utilizadores que lhes podem aceder."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Com um endereço da ${ BRAND_NAME } encriptado, pode utilizar todos os serviços da ${ BRAND_NAME }."
@@ -14641,7 +14641,7 @@
         "Copiar impressão digital"
       ],
       "Copy IP address to clipboard": [
-        "Copiar o endereço IP para a área de transferência"
+        "Copiar o endereço de IP para a área de transferência"
       ],
       "Cost per license": [
         "Custo por licença"
@@ -18079,7 +18079,7 @@
         "Domínios personalizados para aliases, caixas de correio adicionais, a capacidade de enviar e-mails de aliases, e mais"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Servidores dedicados com endereços IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado."
+        "Os servidores dedicados com endereços de IP dedicados podem ser adicionados a portas de entrada privadas para ativar um controlo de acesso personalizado"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
@@ -20296,7 +20296,7 @@
         "E-mail seguro que protege a sua privacidade"
       ],
       "Your gateway to online freedom": [
-        "A sua porta de entrada para a liberdade online"
+        "A sua porta de entrada para a liberdade ''on-line''"
       ]
     },
     "Plan description": {
@@ -25148,16 +25148,16 @@
         "Criar os utilizadores ${ selectedUserIds.length }"
       ],
       "Create a new Gateway": [
-        "Criar uma porta de entrada"
+        "Criar uma nova 'Porta de Entrada'"
       ],
       "Create a new gateway": [
-        "Criar uma porta de entrada"
+        "Criar uma nova porta de entrada"
       ],
       "Create a new password": [
         "Criar uma nova palavra-passe"
       ],
       "Create Gateway": [
-        "Criar uma porta de entrada"
+        "Criar Porta de Entrada"
       ],
       "Create group": [
         "Criar grupo"
@@ -25594,7 +25594,7 @@
         "Monitor de portas de entrada"
       ],
       "Gateway monitor disabled": [
-        "O monitor de portas de entrada foi desativado."
+        "Monitor de portas de entrada desativado"
       ],
       "Gateway monitor enabled": [
         "O monitor de portas de entrada foi ativado."
