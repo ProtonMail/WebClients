@@ -10,6 +10,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { Popper } from '../Popper/Popper';
 import type { PopperPlacement } from '../Popper/interface';
 import { usePopper } from '../Popper/usePopper';
+import { getElementRef } from '../helpers/getElementRef';
 import { useTooltipHandlers } from './useTooltipHandlers';
 
 import './Tooltip.scss';
@@ -155,9 +156,7 @@ const TooltipBase = (
     });
 
     const child = Children.only(children);
-    // Types are wrong? Not sure why ref doesn't exist on a ReactElement
-    // @ts-ignore
-    const mergedRef = useCombinedRefs(child?.ref, reference, ref);
+    const mergedRef = useCombinedRefs(getElementRef(child), reference, ref);
 
     if (!title) {
         return cloneElement(child, {

@@ -19,6 +19,7 @@ import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { usePopperState } from '@proton/atoms/Popper/usePopperState';
 import { shouldShowSideRadius } from '@proton/atoms/Popper/utils';
 import { Portal } from '@proton/atoms/Portal/Portal';
+import { getElementRef } from '@proton/atoms/helpers/getElementRef';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import useIsClosing from '@proton/hooks/useIsClosing';
 import { IcCross } from '@proton/icons/icons/IcCross';
@@ -102,9 +103,7 @@ const Spotlight = ({
     const [isClosing, isClosed, setIsClosed] = useIsClosing(isOpen);
 
     const child = Children.only(children) as ReactElement<HTMLAttributes<HTMLElement> & RefAttributes<HTMLElement>>;
-    // Types are wrong? Not sure why ref doesn't exist on a ReactElement
-    // @ts-ignore
-    const mergedRef = useCombinedRefs(popperAnchorRef, child?.ref);
+    const mergedRef = useCombinedRefs(popperAnchorRef, getElementRef(child));
 
     useEffect(() => {
         if (show) {
