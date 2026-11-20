@@ -1,4 +1,5 @@
-import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
+import { Icon } from '../../../components/Icon'
+import * as Icons from '../../../components/icons'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../documentActionsContext'
@@ -16,7 +17,7 @@ export function MoveButton({ currentDocument, close }: MoveButtonProps) {
   return (
     <ContextMenuButton
       name={messages.move}
-      icon={<IcArrowsCross className="mr-2" />}
+      icon={<Icon data={Icons.arrowsCross} className="mr-2" />}
       action={() => documentActions.move(currentDocument)}
       close={close}
     />
