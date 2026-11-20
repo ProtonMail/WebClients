@@ -29840,7 +29840,7 @@
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
       ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
-        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de suplantació de credencials."
+        "${ modeLabelStong } proporciona un control potent, però un sol error pot fer que l'emplenament automàtic coincideixi i empleni dades a llocs web fraudulents o de pesca de credencials."
       ],
       "Are you sure you want to remove your notification email?": [
         "Segur que voleu esborrar el correu electrònic de notificacions?"
@@ -30331,8 +30331,8 @@
     },
     "vpn_signup_three_plans: Info": {
       "for ${ cycle } month": [
-        "per ${ cycle } mes",
-        "per ${ cycle } mesos"
+        "durant ${ cycle } mes",
+        "durant ${ cycle } mesos"
       ],
       "Premium calendar features": [
         "Característiques prèmium del calendari"

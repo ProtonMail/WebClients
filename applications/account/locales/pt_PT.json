@@ -519,10 +519,10 @@
         "Cor"
       ],
       "Compare all plans": [
-        "Compare todos os planos"
+        "Comparar todos os planos"
       ],
       "Compare plans": [
-        "Comparar os planos"
+        "Comparar planos"
       ],
       "Configure SAML": [
         "Configurar SAML"
@@ -981,7 +981,7 @@
         "Explorar planos empresariais"
       ],
       "Explore group plans": [
-        "Explore os planos de grupo"
+        "Explorar planos de grupo"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explorar outros planos ${ BRAND_NAME }"
@@ -3683,6 +3683,10 @@
       ],
       "Amount due now": [
         "Montante devido agora"
+      ],
+      "Total for ${ cycle } month": [
+        "Total para ${ cycle } mês",
+        "Total para ${ cycle } meses"
       ]
     },
     "claimed address": {
@@ -7202,7 +7206,7 @@
         "Erro ao carregar a pré-visualização STL"
       ],
       "Failed to lookup server. Please try again": [
-        "Falha ao procurar o servidor. Tente novamente"
+        "Não foi possível procurar o servidor. Por favor, tente novamente"
       ],
       "Failed to process the logo": [
         "Erro ao processar o logo"
@@ -9346,7 +9350,7 @@
     },
     "Headline": {
       "Compare plans": [
-        "Comparar os planos"
+        "Comparar planos"
       ],
       "Contact us": [
         "Contacte-nos"
@@ -13562,6 +13566,12 @@
       ],
       "With managed companies, you can add, edit, and disable access for organizations you oversee.": [
         "Com as empresas geridas, pode adicionar, editar, e desativar o acesso para as organizações que supervisiona."
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** também é utilizado para iniciar a sessão numa conta separada ${ BRAND_NAME }, fora do ${ MAIL_APP_NAME }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "O seu Gmail liga a este endereço ${ MAIL_APP_NAME }"
       ]
     },
     "info": {
@@ -13993,7 +14003,7 @@
         "Guardar o rascunho"
       ],
       "Search": [
-        "Procurar"
+        "Pesquisar"
       ],
       "Search events": [
         "Procurar eventos"
@@ -14024,6 +14034,9 @@
       ],
       "Week view": [
         "Vista da semana"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Fechar ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -16576,7 +16589,7 @@
         "por ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
-        "Oferta por tempo limitado: **Obtenha até 35% de desconto nos planos** anuais."
+        "Oferta por tempo limitado: **Obtenha até 35% de desconto** nos planos anuais."
       ],
       "Set up your account with your Porkbun domain.": [
         "Configure a sua conta com o seu domínio Porkbun."
@@ -18734,6 +18747,9 @@
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "pode cancelar no prazo de 30 dias e receber um reembolso proporcional."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adicione um método de pagamento** para continuar a utilizar todas as funcionalidades depois de acabar o período de testes."
       ]
     },
     "Option": {
@@ -20201,7 +20217,7 @@
         "Pesquisar por um utilizador ou endereço"
       ],
       "Search for an email or IP address": [
-        "Procurar por um e-mail ou endereço IP"
+        "Pesquisar por um ''e-mail'' ou endereço de IP"
       ],
       "Search for users or addresses": [
         "Pesquisar por utilizadores ou endereços"
@@ -22255,7 +22271,7 @@
         "Documentos e folhas de cálculo colaborativos"
       ],
       "Compare plans": [
-        "Comparar os planos"
+        "Comparar planos"
       ],
       "Confirm payment": [
         "Confirmar pagamento"
@@ -22348,7 +22364,7 @@
         "Necessita de mais espaço?"
       ],
       "Need more storage? You can upgrade anytime with plans from 200GB to 3TB. 5Gb is enough for 2,500 photos from a modern phone (at ~2MB each).": [
-        "Precisa de mais armazenamento? Pode atualizar a qualquer momento com planos de 200 GB a 3 TB. 5 GB é suficiente para 2.500 fotografias de um telemóvel moderno (a ~2 MB cada)."
+        "Precisa de mais armazenamento? Pode atualizar a qualquer momento com planos de 200 GB até 3 TB. 5 GB é suficiente para 2.500 fotografias de um telemóvel moderno (a ~2 MB cada)."
       ],
       "Online document editor": [
         "Editor de documentos online"
@@ -27668,6 +27684,9 @@
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Atualizar para um plano suportado para utilizar funções de administrador."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Não pode alterar as suas próprias funções. Peça a outro administrador para as alterar."
       ]
     },
     "Users table: badge": {
@@ -28343,6 +28362,16 @@
       ],
       "Include document name in email notifications": [
         "Incluir o nome do documento nas notificações por correio eletrónico"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } Aplicação de PC"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }

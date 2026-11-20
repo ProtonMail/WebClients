@@ -8273,6 +8273,21 @@
       ],
       "We couldn't load your migrated users. Please refresh the page and try again": [
         "Vi kunde inte ladda dina migrerade användare. Uppdatera sidan och försök igen"
+      ],
+      "Failed to get invitee keys": [
+        "Misslyckades med att hämta nycklar för den inbjudne"
+      ],
+      "Failed to load the membership": [
+        "Misslyckades med att ladda medlemsskapet"
+      ],
+      "Failed to load the membership data": [
+        "Misslyckades med att ladda medlemskapsdatan"
+      ],
+      "Failed to verify membership": [
+        "Misslyckades med att bekräfta medlemsskapet"
+      ],
+      "Some invitations could not be loaded": [
+        "Några inbjudningar kunde inte laddas"
       ]
     },
     "error": {
@@ -19279,6 +19294,18 @@
       ],
       "Recovery checklist": [
         "Checklista för återställning"
+      ],
+      "1-4 emails per year": [
+        "1-4 e-postmeddelanden per år"
+      ],
+      "Email subscriptions": [
+        "E-postprenumerationer"
+      ],
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Få de senaste integritetsnyheterna och vad som händer i ${ BRAND_NAME }-universumet."
+      ],
+      "Reminders to keep your recovery methods up to date.": [
+        "Påminnelser om att hålla dina återställningsmetoder uppdaterade."
       ]
     },
     "ngc_access_banner: action": {
@@ -29642,6 +29669,15 @@
       ],
       "Your plan": [
         "Ditt paket"
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "för ${ cycle } månad",
+        "för ${ cycle } månader"
+      ],
+      "Premium calendar features": [
+        "Premium kalenderfunktioner"
       ]
     }
   }
