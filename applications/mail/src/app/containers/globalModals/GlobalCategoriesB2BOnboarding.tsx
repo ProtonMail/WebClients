@@ -10,7 +10,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import useLoading from '@proton/hooks/useLoading';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 import { CategoriesOnboardingFlags } from '@proton/mail/features/categoriesView/categoriesOnboarding';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
@@ -35,8 +34,6 @@ export const GlobalCategoriesB2BOnboarding = () => {
     const { handleChange } = useCategoriesToggle();
     const { update } = useFeature(FeatureCode.CategoryViewB2BOnboardingViewFlags);
 
-    const [loading, withLoading] = useLoading();
-
     useEffect(() => {
         const unsubscribe = subscribe((payload) => {
             if (payload.type === ModalType.CategoriesViewB2BOnboarding) {
@@ -47,12 +44,12 @@ export const GlobalCategoriesB2BOnboarding = () => {
         return unsubscribe;
     }, [subscribe, setOpen]);
 
-    const handleClick = async (enableCategories: boolean) => {
+    const handleClick = (enableCategories: boolean) => {
         if (!b2bModalProps) {
             return;
         }
 
-        await handleChange({ checked: enableCategories, notification: false });
+        handleChange({ checked: enableCategories, notification: false });
         void update(setBit(b2bModalProps.flagValue, CategoriesOnboardingFlags.INITIAL_MODAL));
 
         modalProps.onClose?.();
@@ -88,17 +85,11 @@ export const GlobalCategoriesB2BOnboarding = () => {
                         </div>
                     </ModalTwoContent>
                     <ModalTwoFooter className="flex-column">
-                        <Button
-                            disabled={loading}
-                            color="norm"
-                            fullWidth
-                            onClick={() => withLoading(handleClick(true))}
-                        >
+                        <Button color="norm" fullWidth onClick={() => handleClick(true)}>
                             {c('Action').t`Try categories`}
                         </Button>
-                        <Button disabled={loading} fullWidth onClick={() => withLoading(handleClick(false))}>{c(
-                            'Action'
-                        ).t`Continue without categories`}</Button>
+                        <Button fullWidth onClick={() => handleClick(false)}>{c('Action')
+                            .t`Continue without categories`}</Button>
                     </ModalTwoFooter>
                 </ModalTwo>
             )}

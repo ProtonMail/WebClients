@@ -1,30 +1,18 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateImageProxy } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
 import Select from '../../components/select/Select';
 
 interface Props {
     id: string;
-    defaultProtectionMode: number;
 }
 
-const ProtectionModeSelect = ({ id, defaultProtectionMode, ...rest }: Props) => {
-    const [protectionMode, setProtectionMode] = useState(defaultProtectionMode);
-
-    const { createNotification } = useNotifications();
-    const [loading, withLoading] = useLoading();
-    const api = useApi();
-    const dispatch = useDispatch();
+const ProtectionModeSelect = ({ id, ...rest }: Props) => {
+    const [{ ImageProxy }] = useMailSettings();
+    const { update, isLoading } = useUpdateMailSetting();
 
     const options = [
         { text: c('Option protection mode').t`Load content via proxy (recommended)`, value: IMAGE_PROXY_FLAGS.PROXY },
@@ -34,30 +22,20 @@ const ProtectionModeSelect = ({ id, defaultProtectionMode, ...rest }: Props) => 
         },
     ];
 
-    const handleChange = async (protectionMode: number) => {
-        let response: { MailSettings: MailSettings };
-
-        if (protectionMode === IMAGE_PROXY_FLAGS.PROXY) {
-            response = await api<{ MailSettings: MailSettings }>(
-                updateImageProxy(IMAGE_PROXY_FLAGS.INCORPORATOR, 'remove')
-            );
-        } else {
-            response = await api<{ MailSettings: MailSettings }>(
-                updateImageProxy(IMAGE_PROXY_FLAGS.INCORPORATOR, 'add')
-            );
-        }
-        dispatch(mailSettingsActions.updateMailSettings(response.MailSettings));
-        setProtectionMode(protectionMode);
-        createNotification({ text: c('Success').t`Preference saved` });
+    const handleChange = (mode: number) => {
+        update('ImageProxy', {
+            value: IMAGE_PROXY_FLAGS.INCORPORATOR,
+            action: mode === IMAGE_PROXY_FLAGS.PROXY ? 'remove' : 'add',
+        });
     };
 
     return (
         <Select
             id={id}
-            value={protectionMode}
+            value={ImageProxy}
             options={options}
-            onChange={({ target }) => withLoading(handleChange(+target.value))}
-            loading={loading}
+            onChange={({ target }) => handleChange(+target.value)}
+            loading={isLoading('ImageProxy')}
             {...rest}
         />
     );

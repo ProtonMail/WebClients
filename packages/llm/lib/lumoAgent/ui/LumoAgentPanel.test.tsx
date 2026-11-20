@@ -93,6 +93,10 @@ vi.mock('@proton/app-context/useNotifications', () => ({
 }));
 vi.mock('@proton/app-context/useApi', () => ({ useApi: () => vi.fn() }));
 vi.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => vi.fn() }));
+// Mocked by file path: @proton/mail is not a dependency of this package, so its package name does not resolve here
+vi.mock('../../../../mail/hooks/useUpdateMailSetting', () => ({
+    useUpdateMailSetting: () => ({ update: vi.fn() }),
+}));
 
 describe('LumoAgentPanel', () => {
     it('shows the idle mark and no activity indicator once a turn has finished', () => {

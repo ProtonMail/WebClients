@@ -9,7 +9,7 @@ import { categoriesReducer } from '@proton/mail/store/labels';
 import { mailSettingsReducer } from '@proton/mail/store/mailSettings';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
-const extraThunkArguments = {} as ProtonThunkArguments;
+export const extraThunkArguments = {} as ProtonThunkArguments;
 
 const listenerMiddleware = createListenerMiddleware();
 

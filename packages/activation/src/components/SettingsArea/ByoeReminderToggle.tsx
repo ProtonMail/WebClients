@@ -1,34 +1,18 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateByoeNewMessageReminder } from '@proton/shared/lib/api/mailSettings';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
-import noop from '@proton/utils/noop';
 
 const TOGGLE_ID = 'byoe-new-message-reminder-toggle';
 
 const ByoeReminderToggle = () => {
-    const api = useApi();
-    const dispatch = useDispatch();
-    const { createNotification } = useNotifications();
     const [mailSettings, mailSettingsLoading] = useMailSettings();
-    const [loading, withLoading] = useLoading();
-
-    const handleChange = async (checked: boolean) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateByoeNewMessageReminder(checked));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({ text: c('Success').t`Preference saved` });
-    };
+    const { update, loading } = useUpdateMailSetting();
 
     return (
         <>
@@ -44,8 +28,7 @@ const ByoeReminderToggle = () => {
                         checked={!!mailSettings?.ByoeNewMessageReminder}
                         loading={loading || mailSettingsLoading}
                         onChange={({ target }) => {
-                            // The api layer already notifies the user on failure, and the store keeps the previous value.
-                            withLoading(handleChange(target.checked)).catch(noop);
+                            update('ByoeNewMessageReminder', target.checked);
                         }}
                     />
                 </SettingsLayoutRight>

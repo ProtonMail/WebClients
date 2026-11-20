@@ -2,14 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
 import Checkbox from '../../input/Checkbox';
@@ -37,8 +33,7 @@ const LinkConfirmationModal = ({
     onConfirm,
     ...rest
 }: Props) => {
-    const api = useApi();
-    const dispatch = useDispatch();
+    const { update } = useUpdateMailSetting();
     const [dontAskAgain, setDontAskAgain] = useState(false);
     const [understandRisk, setUnderstandRisk] = useState(false);
 
@@ -48,17 +43,14 @@ const LinkConfirmationModal = ({
     // Both are not able to open the link
     const isPunnyCodeLink = /:\/\/xn--/.test(link);
 
-    const handleConfirm = async () => {
+    const handleConfirm = () => {
         rest.onClose?.();
         onConfirm?.();
 
         openNewTab(link);
 
         if (dontAskAgain && !isOutside) {
-            const { MailSettings } = await api<{ MailSettings: MailSettings }>(
-                updateConfirmLink(CONFIRM_LINK.DISABLED)
-            );
-            dispatch(mailSettingsActions.updateMailSettings(MailSettings));
+            update('ConfirmLink', CONFIRM_LINK.DISABLED, { notify: false });
         }
     };
 

@@ -2,8 +2,6 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -12,7 +10,6 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import FontFaceSelect from '@proton/components/containers/layouts/FontFaceSelect';
 import FontSizeSelect from '@proton/components/containers/layouts/FontSizeSelect';
-import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import {
     DEFAULT_FONT_FACE,
@@ -21,59 +18,33 @@ import {
     getFontFaceValueFromId,
 } from '@proton/shared/lib/mail/fontFace';
 
+import { useComposerMessageHost } from '../../../host/composerMessageHost';
+
 interface Props {
     mailSettings?: MailSettings;
-    /** Receives the mail settings the API returns after saving the font */
-    onMailSettingsChange?: (mailSettings: MailSettings) => void;
     onClose?: () => void;
     onChange?: (nextFontFace: string, nextFontSize: number) => void;
 }
 
-const DefaultFontModal = ({ mailSettings, onMailSettingsChange, onChange, onClose, ...rest }: Props) => {
-    const api = useApi();
+const DefaultFontModal = ({ mailSettings, onChange, onClose, ...rest }: Props) => {
+    const { useUpdateDefaultFont } = useComposerMessageHost();
+    const updateDefaultFont = useUpdateDefaultFont();
 
     const [fontFace, setFontFace] = useState(getFontFaceValueFromId(mailSettings?.FontFace) || DEFAULT_FONT_FACE);
     const [fontSize, setFontSize] = useState(mailSettings?.FontSize || DEFAULT_FONT_SIZE);
-    const [loading, setLoading] = useState(false);
-    const { createNotification } = useNotifications();
 
-    const changedFontFace = fontFace !== mailSettings?.FontFace;
-    const changedFontSize = fontSize !== mailSettings?.FontSize;
+    const changedFontFace = fontFace !== (getFontFaceValueFromId(mailSettings?.FontFace) || DEFAULT_FONT_FACE);
+    const changedFontSize = fontSize !== (mailSettings?.FontSize || DEFAULT_FONT_SIZE);
     const somethingChanged = changedFontFace || changedFontSize;
 
-    const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
-
-    const onSubmit = async () => {
-        setLoading(true);
-
-        let updatedMailSettings: MailSettings | undefined;
-
-        if (changedFontFace) {
-            const fontFaceId = getFontFaceIdFromValue(fontFace);
-            if (fontFaceId) {
-                ({ MailSettings: updatedMailSettings } = await api<{ MailSettings: MailSettings }>(
-                    updateFontFace(fontFaceId)
-                ));
-            }
-        }
-
-        if (changedFontSize) {
-            ({ MailSettings: updatedMailSettings } = await api<{ MailSettings: MailSettings }>(
-                updateFontSize(fontSize)
-            ));
-        }
-
-        if (updatedMailSettings) {
-            onMailSettingsChange?.(updatedMailSettings);
-        }
-
-        if (somethingChanged) {
-            notifyPreferenceSaved();
-        }
-
-        onChange?.(fontFace, fontSize);
-
-        setLoading(false);
+    const onSubmit = () => {
+        updateDefaultFont(
+            {
+                fontFaceId: changedFontFace ? getFontFaceIdFromValue(fontFace) : undefined,
+                fontSize: changedFontSize ? fontSize : undefined,
+            },
+            () => onChange?.(fontFace, fontSize)
+        );
         onClose?.();
     };
 
@@ -89,7 +60,6 @@ const DefaultFontModal = ({ mailSettings, onMailSettingsChange, onChange, onClos
                                 id="fontFace"
                                 fontFace={fontFace}
                                 onChange={setFontFace}
-                                loading={loading}
                             />
                         </div>
                         <div>
@@ -98,7 +68,6 @@ const DefaultFontModal = ({ mailSettings, onMailSettingsChange, onChange, onClos
                                 id="fontSize"
                                 fontSize={fontSize}
                                 onChange={setFontSize}
-                                loading={loading}
                             />
                         </div>
                     </div>

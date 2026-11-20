@@ -7,7 +7,7 @@ interface Props {
     id: string;
     fontFace: string;
     onChange: (value: string) => void;
-    loading: boolean;
+    loading?: boolean;
 }
 
 const options = Object.values(FONT_FACES).map(({ label: text, value }) => ({ text, value: value.toLowerCase() }));

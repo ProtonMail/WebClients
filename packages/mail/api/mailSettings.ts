@@ -1,5 +1,9 @@
-import type { AutoResponder as tsAutoResponder } from '../interfaces/AutoResponder';
-import type { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
+/**
+ * Requests of the mail settings endpoints.
+ * Not exported from the package on purpose: update settings with `useUpdateMailSetting`.
+ */
+import type { AutoResponder as tsAutoResponder } from '@proton/shared/lib/interfaces/AutoResponder';
+import type { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 import type {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     DIRECTION,
@@ -8,7 +12,7 @@ import type {
     PM_SIGNATURE_REFERRAL,
     SPAM_ACTION,
     SWIPE_ACTION,
-} from '../mail/mailSettings';
+} from '@proton/shared/lib/mail/mailSettings';
 
 export const getMailSettings = () => ({
     url: 'mail/v4/settings',
@@ -99,16 +103,10 @@ export const updateRightToLeft = (RightToLeft: DIRECTION) => ({
     data: { RightToLeft },
 });
 
-/**
- * Where the layout change comes from. `onboarding` makes the API also record the choice for the
- * onboarding layout experiment (`WebMailOnboardingViewExperiment`), so only send it from the onboarding.
- */
-export type ViewLayoutSource = 'onboarding';
-
-export const updateViewLayout = (ViewLayout: number, Source?: ViewLayoutSource) => ({
+export const updateViewLayout = (ViewLayout: number) => ({
     url: 'mail/v4/settings/viewlayout',
     method: 'put',
-    data: Source ? { ViewLayout, Source } : { ViewLayout },
+    data: { ViewLayout },
 });
 
 export const updatePromptPin = (PromptPin: number) => ({

@@ -14,7 +14,6 @@ import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFi
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { loadFakeTrackers } from '@proton/mail-message/store/messages/images/messagesImagesActions';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import noTrackersImage from '@proton/styles/assets/img/illustrations/no-trackers-found.svg';
@@ -62,7 +61,6 @@ interface Props {
 const PrivacyDropdown = ({ message }: Props) => {
     const api = useApi();
     const dispatch = useMailDispatch();
-    const [mailSettings] = useMailSettings();
     const [spyTrackerModalProps, setSpyTrackerModalOpen, renderSpyTrackerModal] = useModalState();
     const [utmTrackerModalProps, setUTMTrackerModalOpen, renderUTMTrackerModal] = useModalState();
 
@@ -183,7 +181,6 @@ const PrivacyDropdown = ({ message }: Props) => {
                                 <div className="inline-flex flex-nowrap items-center justify-center">
                                     <PreventTrackingToggle
                                         id="preventTrackingToggle"
-                                        preventTracking={mailSettings.ImageProxy}
                                         data-testid="privacy:prevent-tracking-toggle"
                                         onEnable={handleEnableProxy}
                                     />

@@ -4,22 +4,17 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { getContactEmail } from '@proton/mail-message/helpers/message/messageRecipients';
 import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { canonicalizeInternalEmail, extractEmailFromUserID } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -175,12 +170,9 @@ interface Props {
 }
 
 const ExtraPinKey = ({ message, messageVerification }: Props) => {
-    const api = useApi();
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
-    const [loadingDisablePromptPin, withLoadingDisablePromptPin] = useLoading();
-    const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const { update, isLoading } = useUpdateMailSetting();
     const contactsMap = useContactsMap();
 
     const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen, renderTrustPublicKeyModal] = useModalState();
@@ -211,7 +203,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
         messageVerification?.attachedPublicKeys ?? []
     );
     const bePinnedPublicKey = messageVerification?.signingPublicKey || firstAttachedPublicKeyMatchingSender;
-    const loading = loadingDisablePromptPin || !senderAddress || (isPinUnseen && !contactID) || !bePinnedPublicKey;
+    const loading = isLoading('PromptPin') || !senderAddress || (isPinUnseen && !contactID) || !bePinnedPublicKey;
 
     // Prevent to propose an already pinned key even if for a strange reason,
     // the suggested key is already pinned yet the verification still fails
@@ -233,10 +225,8 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
         return null;
     }
 
-    const handleDisablePromptPin = async () => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePromptPin(PROMPT_PIN.DISABLED));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({ text: c('Success').t`Address verification disabled` });
+    const handleDisablePromptPin = () => {
+        update('PromptPin', PROMPT_PIN.DISABLED, { notify: c('Success').t`Address verification disabled` });
     };
     const handleTrustKey = () => {
         if (loading || !bePinnedPublicKey || !senderAddress) {
@@ -251,10 +241,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
             icon={<IcInfoCircleFilled className="color-info" />}
             link={
                 promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
-                    <InlineLinkButton
-                        disabled={loadingDisablePromptPin}
-                        onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
-                    >
+                    <InlineLinkButton disabled={isLoading('PromptPin')} onClick={handleDisablePromptPin}>
                         {c('Action').t`Never show`}
                     </InlineLinkButton>
                 ) : (

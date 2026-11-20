@@ -1,25 +1,16 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 const AutoDeletePaidBanner = () => {
-    const api = useApi();
-    const dispatch = useDispatch();
+    const { update, isLoading } = useUpdateMailSetting();
+    const loading = isLoading('AutoDeleteSpamAndTrashDays');
 
-    const [loadingEnable, withLoadingEnable] = useLoading();
-    const [loadingDisable, withLoadingDisable] = useLoading();
-
-    const handleChangeAutoDelete = async (autoDelete: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateAutoDelete(autoDelete));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
+    const handleChangeAutoDelete = (autoDelete: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
+        update('AutoDeleteSpamAndTrashDays', autoDelete, { notify: false });
     };
 
     return (
@@ -30,20 +21,19 @@ const AutoDeletePaidBanner = () => {
             data-testid="auto-delete:banner:paid"
             hasDismissAction
             onClose={() => {
-                if (!loadingDisable) {
-                    void withLoadingDisable(handleChangeAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED));
+                if (!loading) {
+                    handleChangeAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED);
                 }
             }}
             cta={
                 <Button
-                    loading={loadingEnable}
-                    disabled={loadingDisable}
+                    loading={loading}
                     type="button"
                     color="norm"
                     className="text-bold"
                     shape="underline"
                     onClick={() => {
-                        void withLoadingEnable(handleChangeAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE));
+                        handleChangeAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE);
                     }}
                 >
                     {c('Action').t`Enable`}

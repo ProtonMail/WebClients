@@ -2,13 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
@@ -21,9 +17,8 @@ import {
 
 const MailAutoDeletePostSubscriptionModal = (props: PostSubscriptionModalComponentProps) => {
     const { modalProps, step, onDisplayFeatureTour, onRemindMeLater } = props;
-    const dispatch = useDispatch();
+    const { update } = useUpdateMailSetting();
     const [displayLoadingModal, setDisplayLoadingModal] = useState(true);
-    const api = useApi();
     const [mailSettings] = useMailSettings();
     const isPremiumFeatureEnabled = mailSettings.AutoDeleteSpamAndTrashDays === AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE;
 
@@ -31,22 +26,13 @@ const MailAutoDeletePostSubscriptionModal = (props: PostSubscriptionModalCompone
 
     useEffect(() => {
         if (step === SUBSCRIPTION_STEPS.THANKS && !isSetupActionDoneRef.current) {
-            const setupAction = async () => {
-                if (!isPremiumFeatureEnabled) {
-                    const { MailSettings } = await api<{ MailSettings: MailSettings }>(
-                        updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)
-                    );
-                    dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-                } else {
-                    return Promise.resolve();
-                }
-            };
+            if (!isPremiumFeatureEnabled) {
+                update('AutoDeleteSpamAndTrashDays', AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE, {
+                    notify: false,
+                });
+            }
 
-            const hideLoadingModal = () => {
-                setDisplayLoadingModal(false);
-            };
-
-            setupAction().then(hideLoadingModal, hideLoadingModal);
+            setDisplayLoadingModal(false);
         }
     }, [step]);
 

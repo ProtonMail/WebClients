@@ -6,6 +6,10 @@ import { GlobalUnsubscribeModal } from './GlobalUnsubscribeModal';
 import { GlobalModalContext } from './globalModalContext';
 import { ModalType } from './inteface';
 
+jest.mock('@proton/mail/hooks/useUpdateMailSetting', () => ({
+    useUpdateMailSetting: () => ({ update: jest.fn() }),
+}));
+
 const notifyMock = jest.fn();
 const subscribeMock = jest.fn();
 

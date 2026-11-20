@@ -4,11 +4,10 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
@@ -24,7 +23,7 @@ interface Props {
 }
 
 const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
-    const api = useApi();
+    const { update } = useUpdateMailSetting();
     const dispatch = useMailDispatch();
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();
@@ -72,7 +71,9 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
         const confirmHasChanged = checked !== isSettingChecked;
 
         if (confirmHasChanged) {
-            await api(updateBlockSenderConfirmation(checked ? BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK : null));
+            update('BlockSenderConfirmation', checked ? BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK : null, {
+                notify: false,
+            });
         }
 
         await handleBlockSender();

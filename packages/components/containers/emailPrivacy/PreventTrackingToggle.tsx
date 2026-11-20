@@ -1,54 +1,43 @@
-import { c } from 'ttag';
-
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
-import useToggle from '@proton/hooks/useToggle';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateImageProxy } from '@proton/shared/lib/api/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
 import Toggle from '../../components/toggle/Toggle';
 
 interface Props {
     id: string;
-    preventTracking: number;
     onEnable?: () => void;
 }
 
-const PreventTrackingToggle = ({ id, preventTracking, onEnable, ...rest }: Props) => {
-    const [loading, withLoading] = useLoading();
-    const { createNotification } = useNotifications();
-    const api = useApi();
-    const dispatch = useDispatch();
-    const { state, toggle } = useToggle(hasBit(preventTracking, IMAGE_PROXY_FLAGS.PROXY));
+const PreventTrackingToggle = ({ id, onEnable, ...rest }: Props) => {
+    const [{ ImageProxy }] = useMailSettings();
+    const { update, isLoading } = useUpdateMailSetting();
+    const state = hasBit(ImageProxy, IMAGE_PROXY_FLAGS.PROXY);
 
-    const handleChange = async (checked: boolean) => {
-        if (!checked) {
-            await api(updateImageProxy(IMAGE_PROXY_FLAGS.INCORPORATOR, 'remove'));
-        }
-
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(
-            updateImageProxy(IMAGE_PROXY_FLAGS.PROXY, checked ? 'add' : 'remove')
-        );
+    const handleChange = (checked: boolean) => {
         if (checked) {
-            onEnable?.();
+            update('ImageProxy', { value: IMAGE_PROXY_FLAGS.PROXY, action: 'add' }, { onSuccess: onEnable });
+            return;
         }
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        toggle();
 
-        createNotification({ text: c('Success').t`Preference saved` });
+        // Both requests change ImageProxy and the response holds its whole new value: send them one after the other
+        update(
+            'ImageProxy',
+            { value: IMAGE_PROXY_FLAGS.INCORPORATOR, action: 'remove' },
+            {
+                notify: false,
+                onSuccess: () => update('ImageProxy', { value: IMAGE_PROXY_FLAGS.PROXY, action: 'remove' }),
+            }
+        );
     };
 
     return (
         <Toggle
             id={id}
             checked={state}
-            onChange={({ target }) => withLoading(handleChange(target.checked))}
-            loading={loading}
+            onChange={({ target }) => handleChange(target.checked)}
+            loading={isLoading('ImageProxy')}
             {...rest}
         />
     );

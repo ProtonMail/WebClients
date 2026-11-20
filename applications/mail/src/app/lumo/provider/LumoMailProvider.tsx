@@ -35,17 +35,15 @@ import { addFilter as addFilterAction, updateFilter as updateFilterAction } from
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { createLabel as createLabelAction, updateLabel as updateLabelAction } from '@proton/mail/store/labels/actions';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { updateMailSetting } from '@proton/mail/store/mailSettings/updateMailSetting';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { getConversation } from '@proton/shared/lib/api/conversations';
 import { checkSieveFilter } from '@proton/shared/lib/api/filters';
-import { updateAutoresponder, updateViewLayout, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 import { getMessage } from '@proton/shared/lib/api/messages';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -170,11 +168,6 @@ const LumoMailBody = memo(function LumoMailBody({ onValue }: PublisherProps<Lumo
     // Built once: deps read through getters/methods off `latest`, so config identity never changes and
     // useLumoAgent keeps the same executor/session across renders.
     const config = useMemo(() => {
-        const writeMailSettings = async (request: object) => {
-            const { MailSettings } = await latest.current.api<{ MailSettings: MailSettings }>(request);
-            latest.current.dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        };
-
         const deps: MailToolDeps = {
             get store() {
                 return latest.current.store;
@@ -211,15 +204,17 @@ const LumoMailBody = memo(function LumoMailBody({ onValue }: PublisherProps<Lumo
             getAddresses: () => latest.current.addresses,
             getThemeInformation: () => latest.current.themeInformation,
             setTheme: (theme, mode) => latest.current.setTheme(theme, mode),
-            setViewLayout: (viewLayout) => writeMailSettings(updateViewLayout(viewLayout)),
-            setViewMode: (viewMode) => writeMailSettings(updateViewMode(viewMode)),
+            setViewLayout: (viewLayout) =>
+                discardResult(latest.current.dispatch(updateMailSetting('ViewLayout', viewLayout))),
+            setViewMode: (viewMode) => discardResult(latest.current.dispatch(updateMailSetting('ViewMode', viewMode))),
             setDensity: async (density) => {
                 const { UserSettings } = await latest.current.api<{ UserSettings: UserSettings }>(
                     updateDensity(density)
                 );
                 latest.current.dispatch(userSettingsActions.set({ UserSettings }));
             },
-            setAutoResponder: (autoResponder) => writeMailSettings(updateAutoresponder(autoResponder)),
+            setAutoResponder: (autoResponder) =>
+                discardResult(latest.current.dispatch(updateMailSetting('AutoResponder', autoResponder))),
             updateAddress: (params) => latest.current.dispatch(updateAddressThunk(params)),
             applyLocation: (params) => latest.current.applyLocation(params),
             // async so applyMultipleLocations' synchronous validation throws surface as a rejection.

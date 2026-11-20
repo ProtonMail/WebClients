@@ -8,14 +8,12 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import type { DENSITY } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 
@@ -24,7 +22,6 @@ import { SettingsCardRows } from '../account/SettingsCardRows';
 import ComposerModeCards from './ComposerModeCards';
 import DensityRadiosCards from './DensityRadiosCards';
 import ViewLayoutCards from './ViewLayoutCards';
-import useUpdateViewLayout from './useUpdateViewLayout';
 
 const LayoutRow = ({
     id,
@@ -51,25 +48,20 @@ const LayoutRow = ({
 const LayoutsSection = () => {
     const [{ ComposerMode, ViewLayout }, loadingMailSettings] = useMailSettings();
     const [{ Density }, loadingUserSettings] = useUserSettings();
+    const { update, isLoading } = useUpdateMailSetting();
     const { createNotification } = useNotifications();
     const api = useApi();
     const dispatch = useDispatch();
-    const updateViewLayout = useUpdateViewLayout();
-    const [loadingComposerMode, withLoadingComposerMode] = useLoading();
-    const [loadingViewLayout, withLoadingViewLayout] = useLoading();
     const [loadingDensity, withLoadingDensity] = useLoading();
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
-    const handleChangeComposerMode = async (mode: COMPOSER_MODE) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateComposerMode(mode));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
+    const handleChangeComposerMode = (mode: COMPOSER_MODE) => {
+        update('ComposerMode', mode);
     };
 
-    const handleChangeViewLayout = async (layout: VIEW_LAYOUT) => {
-        await updateViewLayout(layout);
-        notifyPreferenceSaved();
+    const handleChangeViewLayout = (layout: VIEW_LAYOUT) => {
+        update('ViewLayout', layout);
     };
 
     const handleChangeDensity = async (density: DENSITY) => {
@@ -98,8 +90,8 @@ const LayoutsSection = () => {
                 <ViewLayoutCards
                     describedByID="layoutMode_desc"
                     viewLayout={ViewLayout}
-                    onChange={(value) => withLoadingViewLayout(handleChangeViewLayout(value))}
-                    loading={loadingViewLayout}
+                    onChange={(value) => handleChangeViewLayout(value)}
+                    loading={isLoading('ViewLayout')}
                 />
             </LayoutRow>
             <LayoutRow
@@ -115,8 +107,8 @@ const LayoutsSection = () => {
                 <ComposerModeCards
                     describedByID="composerMode_desc"
                     composerMode={ComposerMode}
-                    onChange={(value) => withLoadingComposerMode(handleChangeComposerMode(value))}
-                    loading={loadingComposerMode}
+                    onChange={(value) => handleChangeComposerMode(value)}
+                    loading={isLoading('ComposerMode')}
                 />
             </LayoutRow>
             <LayoutRow

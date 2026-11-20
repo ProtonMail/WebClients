@@ -1,12 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useApi } from '@proton/app-context/useApi';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import useModalState from '../../components/modalTwo/useModalState';
@@ -16,22 +11,17 @@ import { SettingsToggleRow } from '../account/SettingsToggleRow';
 import AutoDeleteSpamAndTrashDaysToggle from './AutoDeleteSpamAndTrashDaysToggle';
 
 interface Props {
-    onSaved: () => void;
     settingValue: AUTO_DELETE_SPAM_AND_TRASH_DAYS | null;
 }
 
-const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED, onSaved }: Props) => {
-    const api = useApi();
+const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED }: Props) => {
     const [{ hasPaidMail }, userLoading] = useUser();
-    const dispatch = useDispatch();
+    const { update, isLoading } = useUpdateMailSetting();
 
-    const [loadingAutoDelete, withLoadingAutoDelete] = useLoading();
     const [upsellModalProps, toggleUpsellModal, renderUpsellModal] = useModalState();
 
-    const handleChangeAutoDelete = async (autoDelete: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateAutoDelete(autoDelete));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        onSaved();
+    const handleChangeAutoDelete = (autoDelete: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
+        update('AutoDeleteSpamAndTrashDays', autoDelete);
     };
 
     const disabled = userLoading || !hasPaidMail;
@@ -57,7 +47,7 @@ const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISA
                 toggle={
                     <AutoDeleteSpamAndTrashDaysToggle
                         id="autoDelete"
-                        loading={loadingAutoDelete}
+                        loading={isLoading('AutoDeleteSpamAndTrashDays')}
                         autoDeleteSpamAndTrashDays={settingValue}
                         onToggle={(newValue: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
                             /* Didn't used disabled attr because need to catch label and input click */
@@ -65,7 +55,7 @@ const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISA
                                 toggleUpsellModal(true);
                                 return;
                             }
-                            void withLoadingAutoDelete(handleChangeAutoDelete(newValue));
+                            handleChangeAutoDelete(newValue);
                         }}
                         dataTestID="message-setting:auto-delete-toggle"
                     />

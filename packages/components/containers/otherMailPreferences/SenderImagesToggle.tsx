@@ -1,14 +1,5 @@
-import { c } from 'ttag';
-
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
-import useToggle from '@proton/hooks/useToggle';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateHideSenderImages } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 import Toggle from '../../components/toggle/Toggle';
 
@@ -19,17 +10,11 @@ interface Props {
 
 const SenderImagesToggle = ({ id, className }: Props) => {
     const [mailSettings] = useMailSettings();
-    const dispatch = useDispatch();
-    const { state, toggle } = useToggle(!mailSettings.HideSenderImages);
-    const { createNotification } = useNotifications();
-    const api = useApi();
-    const [loading, withLoading] = useLoading();
+    const { update, isLoading } = useUpdateMailSetting();
+    const state = !mailSettings.HideSenderImages;
 
-    const handleChange = async (checked: boolean) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateHideSenderImages(+!checked));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        toggle();
-        createNotification({ text: c('Success').t`Preference saved` });
+    const handleChange = (checked: boolean) => {
+        update('HideSenderImages', +!checked);
     };
 
     return (
@@ -37,8 +22,8 @@ const SenderImagesToggle = ({ id, className }: Props) => {
             id={id}
             className={className}
             checked={state}
-            onChange={({ target }) => withLoading(handleChange(target.checked))}
-            loading={loading}
+            onChange={({ target }) => handleChange(target.checked)}
+            loading={isLoading('HideSenderImages')}
         />
     );
 };

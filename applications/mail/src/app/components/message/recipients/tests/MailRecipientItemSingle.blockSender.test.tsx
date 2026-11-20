@@ -1,5 +1,5 @@
 import type { RenderResult } from '@testing-library/react';
-import { act, fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
@@ -280,7 +280,7 @@ describe('MailRecipientItemSingle blocking a sender', () => {
         addApiMock('mail/v4/incomingdefaults?Overwrite=1', createSpy, 'post');
 
         const doNotAskSpy = jest.fn(() => ({
-            BlockSenderConfirmation: BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK,
+            MailSettings: { BlockSenderConfirmation: BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK },
         }));
         addApiMock('mail/v4/settings/block-sender-confirmation', doNotAskSpy, 'put');
 
@@ -293,7 +293,7 @@ describe('MailRecipientItemSingle blocking a sender', () => {
 
         await blockSender(container, normalSenderAddress, blockSenderOption, true);
 
-        expect(createSpy).toHaveBeenCalled();
+        await waitFor(() => expect(createSpy).toHaveBeenCalled());
         expect(doNotAskSpy).toHaveBeenCalled();
 
         await waitForNotification(`Sender ${normalSenderAddress} blocked`);

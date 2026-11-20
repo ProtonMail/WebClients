@@ -10,7 +10,12 @@ import { renderHook } from '../../../helpers/tests/render';
 import useChecklist from '../hooks/useChecklist';
 import { getMailChecklistItemsToComplete, useGetStartedChecklist } from './GetStartedChecklistProvider';
 
-jest.mock('@proton/hooks/useLoading');
+// Only the default export is mocked, the others (e.g. useLoadingByKey) are used by other hooks of the tree
+jest.mock('@proton/hooks/useLoading', () => ({
+    __esModule: true,
+    ...jest.requireActual('@proton/hooks/useLoading'),
+    default: jest.fn(),
+}));
 const mockLoading = useLoading as jest.MockedFunction<any>;
 jest.mock('../hooks/useChecklist');
 const mockChecklist = useChecklist as jest.MockedFunction<any>;

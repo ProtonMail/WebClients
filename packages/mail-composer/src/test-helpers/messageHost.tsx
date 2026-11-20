@@ -32,7 +32,7 @@ export const composerTestMessageHost: ComposerMessageHost = {
         const mailSettings = useTestMailSettings();
         return async () => mailSettings;
     },
-    useUpdateMailSettings: () => noop,
+    useUpdateDefaultFont: () => noop,
     useContactGroups: () => {
         const groups = useComposerSelector(
             (state) => (state as unknown as ComposerTestState).categories?.value as ContactGroup[] | undefined

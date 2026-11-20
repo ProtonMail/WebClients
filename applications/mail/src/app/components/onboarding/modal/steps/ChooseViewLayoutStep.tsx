@@ -5,12 +5,10 @@ import { c } from 'ttag';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { Button } from '@proton/atoms/Button/Button';
 import ViewLayoutCards from '@proton/components/containers/layouts/ViewLayoutCards';
-import useUpdateViewLayout from '@proton/components/containers/layouts/useUpdateViewLayout';
 import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
 import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
-import useLoading from '@proton/hooks/useLoading';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import inboxColumnSvg from '@proton/styles/assets/img/layout/layout-thumb-inbox-column.svg';
 import inboxRowSvg from '@proton/styles/assets/img/layout/layout-thumb-inbox-row.svg';
@@ -39,12 +37,11 @@ export const isChooseViewLayoutStepEligible: OnboardingStepEligibleCallback = as
 
 const ChooseViewLayoutStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const [{ ViewLayout }, loadingMailSettings] = useMailSettings();
-    const updateViewLayout = useUpdateViewLayout();
+    const { updateWithRequest, loading: saving } = useUpdateMailSetting();
     const { trackStepInteracted, trackViewLayoutStepCompleted } = useOnboardingTracking();
     const { welcomeFlags } = useWelcomeFlags();
     // Read once: the flag flips back when the modal closes
     const [isReplay] = useState(welcomeFlags.isReplay);
-    const [saving, withSaving] = useLoading();
 
     // Kept locally until Next: pre-selects the user's current layout (ROW for new users, their own choice on replay)
     const [selected, setSelected] = useState<VIEW_LAYOUT>();
@@ -60,15 +57,18 @@ const ChooseViewLayoutStep = ({ onNext }: OnboardingStepRenderCallback) => {
 
     // The choice is always saved on Next, even when it is the default, so the API records one
     // `layout_choice` per user. Replays are not part of the experiment, so they save without the source.
-    const handleNext = async () => {
+    const handleNext = () => {
         trackViewLayoutStepCompleted(viewLayout === VIEW_LAYOUT.COLUMN ? 'column' : 'row');
 
-        try {
-            await updateViewLayout(viewLayout, isReplay ? undefined : 'onboarding');
-        } catch (error) {
-            // Never block onboarding on a failed preference save.
-            traceInitiativeError(SentryMailInitiatives.MAIL_ONBOARDING, error);
-        }
+        // The hook handles a failed save itself, onboarding is never blocked by it.
+        updateWithRequest(
+            {
+                url: 'mail/v4/settings/viewlayout',
+                method: 'put',
+                data: isReplay ? { ViewLayout: viewLayout } : { ViewLayout: viewLayout, Source: 'onboarding' },
+            },
+            { notify: false }
+        );
 
         onNext();
     };
@@ -100,7 +100,7 @@ const ChooseViewLayoutStep = ({ onNext }: OnboardingStepRenderCallback) => {
                         fullWidth
                         loading={saving}
                         disabled={loadingMailSettings}
-                        onClick={() => withSaving(handleNext())}
+                        onClick={handleNext}
                     >
                         {c('Onboarding modal').t`Next`}
                     </Button>

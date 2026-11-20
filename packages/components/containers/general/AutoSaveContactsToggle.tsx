@@ -1,14 +1,6 @@
 import type { ChangeEvent } from 'react';
 
-import { c } from 'ttag';
-
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateAutoSaveContacts } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 
 import Toggle from '../../components/toggle/Toggle';
 
@@ -19,26 +11,19 @@ interface Props {
 }
 
 const AutoSaveContactsToggle = ({ autoSaveContacts, id, className }: Props) => {
-    const api = useApi();
-    const [loading, withLoading] = useLoading();
-    const { createNotification } = useNotifications();
-    const dispatch = useDispatch();
+    const { update, isLoading } = useUpdateMailSetting();
 
-    const handleChange = async (event: ChangeEvent<HTMLInputElement>) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(
-            updateAutoSaveContacts(+event.target.checked)
-        );
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({ text: c('Success').t`Preference saved` });
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        update('AutoSaveContacts', +event.target.checked);
     };
 
     return (
         <Toggle
             id={id}
             className={className}
-            loading={loading}
+            loading={isLoading('AutoSaveContacts')}
             checked={autoSaveContacts}
-            onChange={(event) => withLoading(handleChange(event))}
+            onChange={(event) => handleChange(event)}
         />
     );
 };

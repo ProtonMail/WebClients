@@ -1,13 +1,4 @@
-import { c } from 'ttag';
-
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
-import useToggle from '@proton/hooks/useToggle';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 
 import Toggle from '../../components/toggle/Toggle';
 
@@ -17,25 +8,19 @@ interface Props {
 }
 
 const RequestLinkConfirmationToggle = ({ id, confirmLink }: Props) => {
-    const { createNotification } = useNotifications();
-    const [loading, withLoading] = useLoading();
-    const api = useApi();
-    const dispatch = useDispatch();
-    const { state, toggle } = useToggle(!!confirmLink);
+    const { update, isLoading } = useUpdateMailSetting();
+    const state = !!confirmLink;
 
-    const handleChange = async (checked: boolean) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateConfirmLink(+checked));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        toggle();
-        createNotification({ text: c('Success').t`Preference saved` });
+    const handleChange = (checked: boolean) => {
+        update('ConfirmLink', +checked);
     };
 
     return (
         <Toggle
             id={id}
             checked={state}
-            onChange={({ target }) => withLoading(handleChange(target.checked))}
-            loading={loading}
+            onChange={({ target }) => handleChange(target.checked)}
+            loading={isLoading('ConfirmLink')}
         />
     );
 };

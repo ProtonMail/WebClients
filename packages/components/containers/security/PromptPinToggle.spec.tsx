@@ -1,9 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
-import type { Mock } from 'vitest';
 
-import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
-import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
+import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 import { applyHOCs } from '../../testing/hocs/helpers';
 import { mockUseMailSettings } from '../../testing/vitest/mockUseMailSettings';
@@ -21,15 +19,16 @@ const PromptPinToggleContext = applyHOCs(
 )(PromptPinToggle);
 
 describe('PromptPinToggle', () => {
-    let mockedApi: Mock;
-
     beforeEach(() => {
-        mockedApi = vi.fn();
-
-        mockUseApi(mockedApi);
+        apiMock.mockClear();
+        addApiMock('mail/v4/settings/promptpin', () => ({ MailSettings: { PromptPin: 1 } }), 'put');
 
         mockUseMailSettings();
         mockUseNotifications();
+    });
+
+    afterEach(() => {
+        clearApiMocks();
     });
 
     const setup = () => {
@@ -43,13 +42,12 @@ describe('PromptPinToggle', () => {
         it('should call the API', () => {
             const { getByRole } = setup();
             const toggle = getByRole('checkbox');
-            mockedApi.mockResolvedValue({
-                MailSettings: {
-                    PromptPin: 1,
-                },
-            });
             fireEvent.click(toggle);
-            expect(mockedApi).toHaveBeenCalledWith(updatePromptPin(1));
+            expect(apiMock).toHaveBeenCalledWith({
+                url: 'mail/v4/settings/promptpin',
+                method: 'put',
+                data: { PromptPin: 1 },
+            });
         });
     });
 });

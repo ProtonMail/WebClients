@@ -4,13 +4,11 @@ import { vi } from 'vitest';
 import { getModelState } from '@proton/account/testing/getModelState';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
+import { extraThunkArguments } from '../../tests/protonStore';
 import { easySwitchRender } from '../../tests/render';
 import ByoeReminderToggle from './ByoeReminderToggle';
 
 const mockApi = vi.fn();
-vi.mock('@proton/app-context/useApi', () => ({
-    useApi: () => mockApi,
-}));
 
 const mockCreateNotification = vi.fn();
 vi.mock('@proton/app-context/useNotifications', () => ({
@@ -29,6 +27,7 @@ const getToggle = () => {
 
 describe('ByoeReminderToggle', () => {
     beforeEach(() => {
+        extraThunkArguments.api = mockApi as unknown as typeof extraThunkArguments.api;
         mockApi.mockReset();
         mockCreateNotification.mockReset();
     });
