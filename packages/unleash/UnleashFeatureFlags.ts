@@ -332,6 +332,8 @@ export enum MailFeatureFlag {
     BookingsInComposerEnabled = 'BookingsInComposerEnabled',
     // Runs the composer editor on roosterjs 9, through its roosterjs 8 compatible adapter
     MailComposerRoosterV9 = 'MailComposerRoosterV9',
+    // Save to Drive in Mail: the button on received attachments, and loading Drive's code for it
+    MailSaveToDrive = 'MailSaveToDrive',
 }
 
 enum MailKillSwitchFlag {
