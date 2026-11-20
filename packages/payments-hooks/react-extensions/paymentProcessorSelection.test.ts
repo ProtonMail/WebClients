@@ -71,21 +71,7 @@ describe('selectPaymentProcessor', () => {
         }
     );
 
-    it.each([
-        PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
-        PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
-        PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
-        PAYMENT_METHOD_TYPES.APPLE_PAY,
-        PAYMENT_METHOD_TYPES.GOOGLE_PAY,
-        PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
-    ])('returns the saved Chargebee processor for a saved %s method', (type) => {
+    it.each(Object.values(PAYMENT_METHOD_TYPES))('returns the saved processor for a saved %s method', (type) => {
         expect(selectPaymentProcessor(savedMethod(type), savedProcessor, newMethodProcessors)).toBe(savedProcessor);
     });
-
-    it.each([PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.TOKEN])(
-        'returns undefined for a saved %s method',
-        (type) => {
-            expect(selectPaymentProcessor(savedMethod(type), savedProcessor, newMethodProcessors)).toBeUndefined();
-        }
-    );
 });
