@@ -242,7 +242,7 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
                             await onComplete?.();
                         }}
                         color="norm"
-                        disabled={loadingConfig}
+                        disabled={loadingConfig || selectedProducts.length === 0}
                     >
                         {c('Action').t`Continue`}
                     </Button>
