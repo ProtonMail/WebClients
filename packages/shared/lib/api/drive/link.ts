@@ -72,7 +72,7 @@ export const queryUserLinkAccess = ({
     linkId,
 }: {
     volumeId?: string;
-    shareId: string;
+    shareId?: string;
     linkId: string;
 }) => ({
     method: 'get',
