@@ -6,7 +6,6 @@ import { Popper } from '@proton/atoms/Popper/Popper';
 import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { IcBug } from '@proton/icons/icons/IcBug';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcMeetLiveCaptions } from '@proton/icons/icons/IcMeetLiveCaptions';
 import { IcMeetRecord } from '@proton/icons/icons/IcMeetRecord';
@@ -30,7 +29,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { CircleButton } from '../../../atoms/CircleButton/CircleButton';
-import { useDebugOverlayContext } from '../../../contexts/DebugOverlayContext';
 import { useLiveCaptionsFeatureEnabled } from '../../../hooks/captions/useLiveCaptionsFeatureEnabled';
 import { useHelpAndFeedback } from '../../../hooks/useHelpAndFeedback';
 import { MeetingReadyPopup } from '../../MeetingReadyPopup/MeetingReadyPopup';
@@ -46,18 +44,17 @@ import './MoreMenu.scss';
 
 interface Props {
     variant: 'popup' | 'sheet';
-    onOpenMeetingDebug: () => void;
     showMeetingActions?: boolean;
+    debugActions?: MoreMenuAction[];
 }
 
-export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Props) => {
+export const MoreMenu = ({ variant, showMeetingActions, debugActions = [] }: Props) => {
     const dispatch = useMeetDispatch();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { viewportWidth } = useActiveBreakpoint();
 
     const isTranscriptionFeatureEnabled = useFlag('MeetTranscription');
     const isLiveCaptionsFeatureEnabled = useLiveCaptionsFeatureEnabled();
-    const { isEnabled: isDebugEnabled, open: openDebugOverlay } = useDebugOverlayContext();
 
     const transcriptionEnabled = useMeetSelector(selectTranscriptionEnabled);
     const meetingReadyPopupOpen = useMeetSelector(selectMeetingReadyPopupOpen);
@@ -137,19 +134,8 @@ export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Pr
             label: c('Action').t`Help and feedback`,
             onClick: helpAndFeedback.openHelpAndFeedback,
         },
-        isDebugEnabled && {
-            id: 'debug-overlay',
-            Icon: IcBug,
-            label: c('Action').t`Debug overlay`,
-            onClick: openDebugOverlay,
-        },
-        isDebugEnabled && {
-            id: 'meeting-debug',
-            Icon: IcBug,
-            label: c('Action').t`Meeting debug`,
-            onClick: onOpenMeetingDebug,
-        },
-    ].filter(isTruthy);
+        ...debugActions,
+    ];
 
     const getVariant = () => {
         if (isOpen) {

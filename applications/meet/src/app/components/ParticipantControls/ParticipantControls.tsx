@@ -50,6 +50,8 @@ import { ParticipantsButton } from '../ParticipantsButton';
 import { ScreenShareButton } from '../ScreenShareButton';
 import { ToggleButton } from '../ToggleButton/ToggleButton';
 import { VideoSettings } from '../VideoSettings/VideoSettings';
+import { DebugMenu } from './DebugMenu/DebugMenu';
+import { useDebugMenuActions } from './DebugMenu/useDebugMenuActions';
 import { MoreMenu } from './MoreMenu/MoreMenu';
 
 import './ParticipantControls.scss';
@@ -69,6 +71,8 @@ export const ParticipantControls = () => {
     const { viewportWidth } = useActiveBreakpoint();
     const isSmallScreen = viewportWidth['<=small'];
     const isLargeDesktop = viewportWidth['>=xlarge'];
+    const isCollapsed = isSmallScreen || isLowerMediumWidth;
+    const debugActions = useDebugMenuActions(openMeetingDebugWindow);
 
     const popupState = useMeetSelector(selectPopupState);
 
@@ -250,7 +254,7 @@ export const ParticipantControls = () => {
                         </>
                     )}
 
-                    {isSmallScreen || isLowerMediumWidth ? (
+                    {isCollapsed ? (
                         <ChatButton />
                     ) : (
                         <>
@@ -258,12 +262,13 @@ export const ParticipantControls = () => {
                             <ParticipantsButton />
                             <ChatButton />
                             <EmojiReactionButton />
+                            <DebugMenu actions={debugActions} />
                         </>
                     )}
                     <MoreMenu
                         variant={isSmallScreen ? 'sheet' : 'popup'}
-                        onOpenMeetingDebug={openMeetingDebugWindow}
                         showMeetingActions={isLowerMediumWidth}
+                        debugActions={isCollapsed ? debugActions : undefined}
                     />
                     <LeaveMeetingPopup />
                 </div>
