@@ -58,8 +58,11 @@ export interface ComposerMessageHost {
     useDeleteDraft: () => (message: MessageState) => Promise<void>;
     useMailSettings: () => [MailSettings, boolean];
     useGetMailSettings: () => () => Promise<MailSettings>;
-    /** Puts mail settings returned by the API in the store, without refetching them */
-    useUpdateMailSettings: () => (mailSettings: MailSettings) => void;
+    /**
+     * Saves the default font. The host stores the new settings, notifies and shows API errors.
+     * `onSuccess` runs once everything asked is saved, never when a request fails.
+     */
+    useUpdateDefaultFont: () => (font: { fontFaceId?: string; fontSize?: number }, onSuccess?: () => void) => void;
     useContactGroups: () => [ContactGroup[] | undefined, boolean];
     EncryptionStatusIcon: ComponentType<EncryptionStatusIconProps>;
     AttachmentList: ComponentType<AttachmentListProps>;

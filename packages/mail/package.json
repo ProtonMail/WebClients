@@ -20,6 +20,8 @@
         "./store/categoriesView/categoriesViewSelector": "./store/categoriesView/categoriesViewSelector.ts",
         "./hooks/autoOpenContacts/helper": "./hooks/autoOpenContacts/helper.ts",
         "./features/categoriesView/CategoryIcon": "./features/categoriesView/CategoryIcon.tsx",
+        "./hooks/useUpdateMailSetting": "./hooks/useUpdateMailSetting.ts",
+        "./store/mailSettings/updateMailSetting": "./store/mailSettings/updateMailSetting.ts",
         "./store/contacts": "./store/contacts/index.ts",
         "./store/contacts/contactSlice": "./store/contacts/contactSlice.ts",
         "./store/filters": "./store/filters/index.ts",

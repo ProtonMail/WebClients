@@ -7,7 +7,7 @@ interface Props {
     id: string;
     fontSize: number;
     onChange: (value: number) => void;
-    loading: boolean;
+    loading?: boolean;
 }
 
 const options = Object.entries(FONT_SIZES).map(([valueInPx]) => {

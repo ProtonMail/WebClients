@@ -4,12 +4,8 @@ import { c } from 'ttag';
 
 import { useAvailableApps } from '@proton/account/availableApps/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { useApi } from '@proton/app-context/useApi';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updatePMSignatureReferralLink } from '@proton/shared/lib/api/mailSettings';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { PM_SIGNATURE_REFERRAL } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
@@ -21,10 +17,7 @@ import Toggle from '../../../../components/toggle/Toggle';
 const ReferralSignatureToggle = () => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const api = useApi();
-
-    const dispatch = useDispatch();
-    const [togglingSignature, withTogglingSignature] = useLoading();
+    const { update, isLoading } = useUpdateMailSetting();
 
     const availableApps = useAvailableApps();
 
@@ -41,19 +34,14 @@ const ReferralSignatureToggle = () => {
         return null;
     }
 
-    const toggleReferralSignature = async (checked: boolean) => {
+    const toggleReferralSignature = (checked: boolean) => {
         const nextValue = (() => {
             if (checked) {
                 return PM_SIGNATURE_REFERRAL.ENABLED;
             }
             return PM_SIGNATURE_REFERRAL.DISABLED;
         })();
-        await api(updatePMSignatureReferralLink(nextValue));
-        dispatch(mailSettingsActions.updateMailSettings({ ...mailSettings, PMSignatureReferralLink: nextValue }));
-    };
-
-    const handleReferralSignatureClick = async (checked: boolean) => {
-        await toggleReferralSignature(checked);
+        update('PMSignatureReferralLink', nextValue, { notify: false });
     };
 
     const signature = (
@@ -74,8 +62,8 @@ const ReferralSignatureToggle = () => {
             <Toggle
                 id="toggleSharedFooterLink"
                 checked={!!mailSettings.PMSignatureReferralLink}
-                onChange={({ target: { checked } }) => withTogglingSignature(handleReferralSignatureClick(checked))}
-                loading={togglingSignature}
+                onChange={({ target: { checked } }) => toggleReferralSignature(checked)}
+                loading={isLoading('PMSignatureReferralLink')}
                 className="shrink-0"
             />
 

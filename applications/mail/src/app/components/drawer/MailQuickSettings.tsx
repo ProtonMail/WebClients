@@ -29,7 +29,6 @@ import { useElectronDefaultApp } from '@proton/components/containers/desktop/def
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import ToggleAssistant from '@proton/components/containers/general/ToggleAssistant/ToggleAssistant';
 import ToggleAssistantEnvironment from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantEnvironment';
-import useUpdateViewLayout from '@proton/components/containers/layouts/useUpdateViewLayout';
 import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
@@ -43,10 +42,9 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { IcWindowMaximised } from '@proton/icons/icons/IcWindowMaximised';
 import { IcWindowSmall } from '@proton/icons/icons/IcWindowSmall';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { DENSITY, LUMO_SHORT_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -55,7 +53,6 @@ import { isChromiumBased, isFirefox, openNewTab } from '@proton/shared/lib/helpe
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
@@ -78,9 +75,9 @@ interface QuickSettingsSelectOption {
 }
 
 const MailQuickSettings = () => {
+    const { update, isLoading } = useUpdateMailSetting();
     const api = useApi();
     const dispatch = useDispatch();
-    const updateViewLayout = useUpdateViewLayout();
     const { createNotification } = useNotifications();
 
     const [{ Density, AIAssistantFlags }] = useUserSettings();
@@ -99,9 +96,7 @@ const MailQuickSettings = () => {
     const ktActivation = useKTActivation();
     const showKT = ktActivation === KeyTransparencyActivation.SHOW_UI;
 
-    const [loadingViewLayout, withLoadingViewLayout] = useLoading();
     const [loadingDensity, withLoadingDensity] = useLoading();
-    const [loadingComposerSize, withLoadingComposerSize] = useLoading();
     const [loadingDownloadLogs, withLoadingDownloadLogs] = useLoading();
     const collectLogs = useFlag('CollectLogs');
     const scribeToLumo = useFlag('ScribeToLumo');
@@ -163,9 +158,8 @@ const MailQuickSettings = () => {
     const defaultComposerModeOption =
         composerSizeOptions.find((option) => option.value === ComposerMode) || composerSizeOptions[0];
 
-    const handleChangeViewLayout = async (layout: VIEW_LAYOUT) => {
-        await updateViewLayout(layout);
-        createNotification({ text: c('Success').t`Preference saved` });
+    const handleChangeViewLayout = (layout: VIEW_LAYOUT) => {
+        update('ViewLayout', layout);
     };
 
     const handleChangeDensity = async (density: number) => {
@@ -174,10 +168,8 @@ const MailQuickSettings = () => {
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
-    const handleChangeComposerMode = async (mode: number) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateComposerMode(mode));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({ text: c('Success').t`Preference saved` });
+    const handleChangeComposerMode = (mode: number) => {
+        update('ComposerMode', mode);
     };
 
     const handleShowKeyTransparencyModal = () => {
@@ -255,13 +247,13 @@ const MailQuickSettings = () => {
                             unstyled
                             originalPlacement="bottom-end"
                             value={defaultViewLayoutOption.value}
-                            onValue={(value: VIEW_LAYOUT) => withLoadingViewLayout(handleChangeViewLayout(value))}
+                            onValue={(value: VIEW_LAYOUT) => handleChangeViewLayout(value)}
                             renderSelected={(selected) => {
                                 const value = viewLayoutOptions.find((option) => option.value === selected);
                                 return <>{value?.text}</>;
                             }}
-                            disabled={loadingViewLayout}
-                            loading={loadingViewLayout}
+                            disabled={isLoading('ViewLayout')}
+                            loading={isLoading('ViewLayout')}
                             data-testid="mail-quick-settings:mailbox-layout-select"
                         >
                             {viewLayoutOptions.map((option) => {
@@ -327,13 +319,13 @@ const MailQuickSettings = () => {
                             unstyled
                             originalPlacement="bottom-end"
                             value={defaultComposerModeOption.value}
-                            onValue={(value: number) => withLoadingComposerSize(handleChangeComposerMode(value))}
+                            onValue={(value: number) => handleChangeComposerMode(value)}
                             renderSelected={(selected) => {
                                 const value = composerSizeOptions.find((option) => option.value === selected);
                                 return <>{value?.text}</>;
                             }}
-                            disabled={loadingComposerSize}
-                            loading={loadingComposerSize}
+                            disabled={isLoading('ComposerMode')}
+                            loading={isLoading('ComposerMode')}
                             data-testid="mail-quick-settings:composer-size-select"
                         >
                             {composerSizeOptions.map((option) => {

@@ -1,32 +1,29 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import type { Mock } from 'vitest';
 
 import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
-import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { FeatureCode } from '@proton/features/interface';
 import { mockUseFeature } from '@proton/features/testing/vitest/mockUseFeature';
 import { ALMOST_ALL_MAIL, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { addApiMock, clearApiMocks } from '@proton/test-api/vitest/api';
 
 import { mockUseMailSettings } from '../../testing/vitest/mockUseMailSettings';
 import { renderWithProviders } from '../../testing/vitest/renderWithProviders';
 import MessagesSection from './MessagesSection';
 
 describe('MessagesSection', () => {
-    let mockedApi: Mock;
-
     const renderComponent = (props = {}) => renderWithProviders(<MessagesSection {...props} />);
 
     beforeEach(() => {
-        mockedApi = vi.fn();
-
-        mockUseApi(mockedApi);
-
         mockUseNotifications();
 
         mockUseUser();
         mockUseMailSettings();
+    });
+
+    afterEach(() => {
+        clearApiMocks();
     });
 
     describe('AlmostAllMail', () => {
@@ -58,40 +55,42 @@ describe('MessagesSection', () => {
             });
 
             it('should toggle setting on click', async () => {
-                renderComponent();
+                const updateAlmostAllMail = vi.fn();
+                addApiMock('mail/v4/settings/almost-all-mail', updateAlmostAllMail, 'put');
+                const { rerender } = renderComponent();
 
                 const setting = screen.getByText('Exclude Spam/Trash from All mail');
-                mockedApi.mockResolvedValue({
-                    MailSettings: {
-                        AlmostAllMail: ALMOST_ALL_MAIL.ENABLED,
-                    },
-                });
+                updateAlmostAllMail.mockReturnValue({ MailSettings: { AlmostAllMail: ALMOST_ALL_MAIL.ENABLED } });
 
                 await userEvent.click(setting);
                 await waitFor(() => {
-                    expect(mockedApi).toHaveBeenCalledTimes(1);
+                    expect(updateAlmostAllMail).toHaveBeenCalledTimes(1);
                 });
-                expect(mockedApi).toHaveBeenCalledWith({
-                    data: { AlmostAllMail: ALMOST_ALL_MAIL.ENABLED },
-                    method: 'put',
-                    url: 'mail/v4/settings/almost-all-mail',
-                });
+                expect(updateAlmostAllMail).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        data: { AlmostAllMail: ALMOST_ALL_MAIL.ENABLED },
+                        method: 'put',
+                        url: 'mail/v4/settings/almost-all-mail',
+                    })
+                );
 
-                mockedApi.mockResolvedValue({
-                    MailSettings: {
-                        AlmostAllMail: ALMOST_ALL_MAIL.DISABLED,
-                    },
-                });
+                // The settings are mocked: render again with the value the store would hold after the update
+                mockUseMailSettings([{ AlmostAllMail: ALMOST_ALL_MAIL.ENABLED }]);
+                rerender(<MessagesSection />);
+
+                updateAlmostAllMail.mockReturnValue({ MailSettings: { AlmostAllMail: ALMOST_ALL_MAIL.DISABLED } });
 
                 await userEvent.click(setting);
                 await waitFor(() => {
-                    expect(mockedApi).toHaveBeenCalledTimes(2);
+                    expect(updateAlmostAllMail).toHaveBeenCalledTimes(2);
                 });
-                expect(mockedApi).toHaveBeenLastCalledWith({
-                    data: { AlmostAllMail: ALMOST_ALL_MAIL.DISABLED },
-                    method: 'put',
-                    url: 'mail/v4/settings/almost-all-mail',
-                });
+                expect(updateAlmostAllMail).toHaveBeenLastCalledWith(
+                    expect.objectContaining({
+                        data: { AlmostAllMail: ALMOST_ALL_MAIL.DISABLED },
+                        method: 'put',
+                        url: 'mail/v4/settings/almost-all-mail',
+                    })
+                );
             });
         });
     });

@@ -1,14 +1,5 @@
-import { c } from 'ttag';
-
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
-import useToggle from '@proton/hooks/useToggle';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateHideRemoteImages } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 import Toggle from '../../components/toggle/Toggle';
@@ -19,26 +10,20 @@ interface Props {
 
 const RemoteToggle = ({ id, ...rest }: Props) => {
     const [mailSettings] = useMailSettings();
-    const [loading, withLoading] = useLoading();
-    const { createNotification } = useNotifications();
-    const api = useApi();
-    const dispatch = useDispatch();
-    const { state, toggle } = useToggle(mailSettings.HideRemoteImages === SHOW_IMAGES.SHOW);
+    const { update, isLoading } = useUpdateMailSetting();
+    const state = mailSettings.HideRemoteImages === SHOW_IMAGES.SHOW;
 
-    const handleChange = async (checked: boolean) => {
+    const handleChange = (checked: boolean) => {
         const bit = checked ? SHOW_IMAGES.SHOW : SHOW_IMAGES.HIDE;
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateHideRemoteImages(bit));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        toggle();
-        createNotification({ text: c('Success').t`Preference saved` });
+        update('HideRemoteImages', bit);
     };
 
     return (
         <Toggle
             id={id}
             checked={state}
-            onChange={({ target }) => withLoading(handleChange(target.checked))}
-            loading={loading}
+            onChange={({ target }) => handleChange(target.checked)}
+            loading={isLoading('HideRemoteImages')}
             {...rest}
         />
     );

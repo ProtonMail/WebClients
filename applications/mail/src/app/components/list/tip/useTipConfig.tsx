@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import AutoDeleteUpsellModal from '@proton/components/components/upsell/modals/AutoDeleteUpsellModal';
@@ -14,10 +13,8 @@ import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainA
 import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
 import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import {
     APP_UPSELL_REF_PATH,
@@ -26,7 +23,6 @@ import {
     ROOT_FOLDER,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import { TipActionType } from '../../../models/tip';
@@ -50,13 +46,12 @@ const hasSettingsUrlTypes = new Set([
 ]);
 
 const useTipConfig = ({ actionType }: Props) => {
-    const api = useApi();
     const [user] = useUser();
     const [folders] = useFolders();
     const [labels] = useLabels();
     const { createNotification } = useNotifications();
     const onCompose = useOnCompose();
-    const dispatch = useDispatch();
+    const { update } = useUpdateMailSetting();
     const dispatchMail = useMailDispatch();
     const mailboxElements = useMailSelector(elements);
     const { sendCTAButtonClickedReport } = useProtonTipsTelemetry();
@@ -227,13 +222,9 @@ const useTipConfig = ({ actionType }: Props) => {
         void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
     };
 
-    const activateAutoDeleteSpamAndTrash = async () => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(
-            updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)
-        );
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({
-            text: `Messages in Spam/Trash will automatically be deleted after 30 days.`,
+    const activateAutoDeleteSpamAndTrash = () => {
+        update('AutoDeleteSpamAndTrashDays', AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE, {
+            notify: c('Info').t`Messages in Spam/Trash will automatically be deleted after 30 days.`,
         });
     };
 

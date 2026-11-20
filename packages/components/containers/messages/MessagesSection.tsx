@@ -1,17 +1,11 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
@@ -31,37 +25,23 @@ import SpamActionSelect from './SpamActionSelect';
 const MessagesSection = () => {
     const [{ ViewMode, StickyLabels, ConfirmLink, SpamAction, AutoDeleteSpamAndTrashDays, AlmostAllMail }] =
         useMailSettings();
-    const { createNotification } = useNotifications();
     const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
     const isAutoDeleteEnabled = useFeature(FeatureCode.AutoDelete).feature?.Value === true;
-    const dispatch = useDispatch();
-    const api = useApi();
+    const { update, isLoading } = useUpdateMailSetting();
 
-    const [loadingViewMode, withLoadingViewMode] = useLoading();
-    const [loadingStickyLabels, withLoadingStickyLabels] = useLoading();
-    const [loadingSpamAction, withLoadingSpamAction] = useLoading();
-
-    const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
-
-    const handleToggleStickyLabels = async (value: number) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateStickyLabels(value));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
+    const handleToggleStickyLabels = (value: number) => {
+        update('StickyLabels', value);
     };
 
-    const handleChangeViewMode = async (mode: VIEW_MODE) => {
+    const handleChangeViewMode = (mode: VIEW_MODE) => {
         if (mode === VIEW_MODE.SINGLE) {
-            await api(updateStickyLabels(STICKY_LABELS.DISABLED));
+            update('StickyLabels', STICKY_LABELS.DISABLED, { notify: false });
         }
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateViewMode(mode));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
+        update('ViewMode', mode);
     };
 
-    const handleChangeSpamAction = async (spamAction: SPAM_ACTION | null) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateSpamAction(spamAction));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
+    const handleChangeSpamAction = (spamAction: SPAM_ACTION | null) => {
+        update('SpamAction', spamAction);
     };
 
     return (
@@ -131,14 +111,14 @@ const MessagesSection = () => {
                     <ViewModeToggle
                         id="viewMode"
                         viewMode={ViewMode}
-                        loading={loadingViewMode}
-                        onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
+                        loading={isLoading('ViewMode')}
+                        onToggle={(value) => handleChangeViewMode(value)}
                         data-testid="appearance:conversation-group-toggle"
                     />
                 }
             />
             {isAutoDeleteEnabled && (
-                <AutoDeleteSetting settingValue={AutoDeleteSpamAndTrashDays} onSaved={notifyPreferenceSaved} />
+                <AutoDeleteSetting settingValue={AutoDeleteSpamAndTrashDays} />
             )}
             <SettingsToggleRow
                 id="stickyLabelsToggle"
@@ -155,8 +135,8 @@ const MessagesSection = () => {
                     <StickyLabelsToggle
                         id="stickyLabelsToggle"
                         stickyLabels={StickyLabels}
-                        loading={loadingStickyLabels}
-                        onToggle={(value) => withLoadingStickyLabels(handleToggleStickyLabels(value))}
+                        loading={isLoading('StickyLabels')}
+                        onToggle={(value) => handleToggleStickyLabels(value)}
                         data-testid="appearance:sticky-labels-toggle"
                         disabled={ViewMode !== VIEW_MODE.GROUP}
                     />
@@ -177,8 +157,8 @@ const MessagesSection = () => {
                     <SpamActionSelect
                         id="spamActionLabelSelect"
                         value={SpamAction}
-                        onChange={(value) => withLoadingSpamAction(handleChangeSpamAction(value))}
-                        loading={loadingSpamAction}
+                        onChange={(value) => handleChangeSpamAction(value)}
+                        loading={isLoading('SpamAction')}
                     />
                 }
             />

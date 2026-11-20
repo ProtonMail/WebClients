@@ -1,14 +1,7 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
-import useToggle from '@proton/hooks/useToggle';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateShortcuts } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 import Toggle from '../../components/toggle/Toggle';
 
@@ -18,18 +11,12 @@ interface Props {
 }
 
 const ShortcutsToggle = ({ id, className, ...rest }: Props) => {
-    const dispatch = useDispatch();
+    const { update, isLoading } = useUpdateMailSetting();
     const [mailSettings] = useMailSettings();
-    const { createNotification } = useNotifications();
-    const api = useApi();
-    const [loading, withLoading] = useLoading();
-    const { state, toggle } = useToggle(!!mailSettings.Shortcuts);
+    const state = !!mailSettings.Shortcuts;
 
-    const handleChange = async (value: number) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateShortcuts(value));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        toggle();
-        createNotification({ text: c('Success').t`Keyboard shortcuts preferences updated` });
+    const handleChange = (value: number) => {
+        update('Shortcuts', value, { notify: c('Success').t`Keyboard shortcuts preferences updated` });
     };
 
     return (
@@ -38,9 +25,9 @@ const ShortcutsToggle = ({ id, className, ...rest }: Props) => {
             className={className}
             checked={state}
             onChange={({ target }) => {
-                void withLoading(handleChange(+target.checked));
+                handleChange(+target.checked);
             }}
-            loading={loading}
+            loading={isLoading('Shortcuts')}
             {...rest}
         />
     );

@@ -5,10 +5,11 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/inte
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
-import { getMailSettings } from '@proton/shared/lib/api/mailSettings';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
+
+import { getMailSettings } from '../../api/mailSettings';
 
 const name = 'mailSettings' as const;
 

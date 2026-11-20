@@ -64,7 +64,6 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     onAddAttachments: (files: File[]) => void;
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     mailSettings?: MailSettings;
-    onMailSettingsChange?: (mailSettings: MailSettings) => void;
     userSettings?: UserSettings;
     editorMetadata: EditorMetadata;
     hasAttachments?: boolean;
@@ -89,7 +88,6 @@ const EditorWrapper = ({
     onRemoveAttachment,
     onFocus,
     mailSettings,
-    onMailSettingsChange,
     userSettings,
     editorMetadata,
     toolbarCustomRender,
@@ -449,7 +447,6 @@ const EditorWrapper = ({
             onBlockquoteToggleClick={handleBlockquoteToggleClick}
             onReady={handleEditorReady}
             mailSettings={mailSettings}
-            onMailSettingsChange={onMailSettingsChange}
             onAddAttachments={onAddAttachments}
             isPastedImageAllowed={handleIsPastedImageAllowed}
             isPlainText={isPlainText}

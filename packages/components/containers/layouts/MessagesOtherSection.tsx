@@ -1,20 +1,8 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import {
-    updateDraftType,
-    updateFontFace,
-    updateFontSize,
-    updateRemoveImageMetadata,
-    updateRightToLeft,
-} from '@proton/shared/lib/api/mailSettings';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import {
     DEFAULT_FONT_FACE,
     DEFAULT_FONT_SIZE,
@@ -34,52 +22,32 @@ import FontSizeSelect from './FontSizeSelect';
 import TextDirectionSelect from './TextDirectionSelect';
 
 const MessagesOtherSection = () => {
-    const api = useApi();
-    const dispatch = useDispatch();
+    const { update, isLoading } = useUpdateMailSetting();
     const [{ DraftMIMEType, RightToLeft, FontFace, FontSize, DelaySendSeconds, RemoveImageMetadata }] =
         useMailSettings();
     const fontFaceValue = getFontFaceValueFromId(FontFace) || DEFAULT_FONT_FACE;
-    const { createNotification } = useNotifications();
 
-    const [loadingDraftType, withLoadingDraftType] = useLoading();
-    const [loadingRightToLeft, withLoadingRightToLeft] = useLoading();
-    const [loadingFontFace, withLoadingFontFace] = useLoading();
-    const [loadingFontSize, withLoadingFontSize] = useLoading();
-    const [loadingRemoveImageMetadata, withLoadingRemoveImageMetadata] = useLoading();
-
-    const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
-
-    const handleChangeDraftType = async (value: MIME_TYPES) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateDraftType(value));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
+    const handleChangeDraftType = (value: MIME_TYPES) => {
+        update('DraftMIMEType', value);
     };
 
-    const handleChangeRightToLeft = async (value: DIRECTION) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateRightToLeft(value));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
+    const handleChangeRightToLeft = (value: DIRECTION) => {
+        update('RightToLeft', value);
     };
 
-    const handleChangeFontFace = async (value: string) => {
+    const handleChangeFontFace = (value: string) => {
         const fontFaceId = getFontFaceIdFromValue(value);
         if (fontFaceId) {
-            const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateFontFace(fontFaceId));
-            dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-            notifyPreferenceSaved();
+            update('FontFace', fontFaceId);
         }
     };
 
-    const handleChangeFontSize = async (value: number) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateFontSize(value));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
+    const handleChangeFontSize = (value: number) => {
+        update('FontSize', value);
     };
 
-    const handleRemoveImageMetadata = async (value: boolean) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateRemoveImageMetadata(value));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
+    const handleRemoveImageMetadata = (value: boolean) => {
+        update('RemoveImageMetadata', value);
     };
 
     return (
@@ -91,8 +59,8 @@ const MessagesOtherSection = () => {
                     <DraftTypeSelect
                         id="draftType"
                         draftType={DraftMIMEType}
-                        onChange={(value) => withLoadingDraftType(handleChangeDraftType(value))}
-                        loading={loadingDraftType}
+                        onChange={(value) => handleChangeDraftType(value)}
+                        loading={isLoading('DraftMIMEType')}
                         data-testid="appearance:draft-type-select"
                     />
                 }
@@ -104,8 +72,8 @@ const MessagesOtherSection = () => {
                     <TextDirectionSelect
                         id="textDirection"
                         rightToLeft={RightToLeft}
-                        onChange={(value) => withLoadingRightToLeft(handleChangeRightToLeft(value))}
-                        loading={loadingRightToLeft}
+                        onChange={(value) => handleChangeRightToLeft(value)}
+                        loading={isLoading('RightToLeft')}
                         data-testid="appearance:text-direction-select"
                     />
                 }
@@ -124,8 +92,8 @@ const MessagesOtherSection = () => {
                                 id="fontFace"
                                 aria-labelledby="label-composer-default-font-size"
                                 fontFace={fontFaceValue}
-                                onChange={(value) => withLoadingFontFace(handleChangeFontFace(value))}
-                                loading={loadingFontFace}
+                                onChange={(value) => handleChangeFontFace(value)}
+                                loading={isLoading('FontFace')}
                             />
                         </div>
                         <div className="shrink-0">
@@ -133,8 +101,8 @@ const MessagesOtherSection = () => {
                                 id="fontSize"
                                 aria-labelledby="label-composer-default-font-size"
                                 fontSize={FontSize || DEFAULT_FONT_SIZE}
-                                onChange={(value) => withLoadingFontSize(handleChangeFontSize(value))}
-                                loading={loadingFontSize}
+                                onChange={(value) => handleChangeFontSize(value)}
+                                loading={isLoading('FontSize')}
                             />
                         </div>
                     </div>
@@ -167,8 +135,8 @@ const MessagesOtherSection = () => {
                     <RemoveImageMetadataToggle
                         id="removeImageMetadata"
                         removeImageMetadata={RemoveImageMetadata}
-                        loading={loadingRemoveImageMetadata}
-                        onChange={(newValue) => withLoadingRemoveImageMetadata(handleRemoveImageMetadata(newValue))}
+                        loading={isLoading('RemoveImageMetadata')}
+                        onChange={(newValue) => handleRemoveImageMetadata(newValue)}
                     />
                 }
             />

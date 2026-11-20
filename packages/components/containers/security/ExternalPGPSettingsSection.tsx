@@ -1,19 +1,13 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shared/lib/api/mailSettings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { ATTACH_PUBLIC_KEY, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import useModalState from '../../components/modalTwo/useModalState';
@@ -58,42 +52,27 @@ const AutomaticallySignModal = ({ onConfirm, ...rest }: AutomaticallySignModalPr
 
 export const ExternalPGPSettingsSection = () => {
     const [{ Sign, AttachPublicKey, PGPScheme }] = useMailSettings();
-    const { createNotification } = useNotifications();
-    const api = useApi();
-    const dispatch = useDispatch();
-    const [loadingSign, withLoadingSign] = useLoading();
-    const [loadingAttach, withLoadingAttach] = useLoading();
-    const [loadingScheme, withLoadingScheme] = useLoading();
+    const { update, isLoading } = useUpdateMailSetting();
 
     const [automaticallySignModalProps, setAutomaticallySignModalOpen, renderAutomaticallySign] = useModalState();
 
-    const handleChangeSign = async (value: number) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateSign(value));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({ text: c('Info').t`Encryption setting updated` });
+    const handleChangeSign = (value: number) => {
+        update('Sign', value, { notify: c('Info').t`Encryption setting updated` });
     };
 
-    const handleAttachPublicKey = async (value: number) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateAttachPublicKey(value));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({ text: c('Info').t`Encryption setting updated` });
+    const handleAttachPublicKey = (value: number) => {
+        update('AttachPublicKey', value, { notify: c('Info').t`Encryption setting updated` });
     };
 
-    const handleChangeScheme = async (value: number) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updatePGPScheme(value));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({ text: c('Info').t`Encryption setting updated` });
+    const handleChangeScheme = (value: number) => {
+        update('PGPScheme', value, { notify: c('Info').t`Encryption setting updated` });
     };
 
-    const handleAutomaticallySign = async (shouldSign: boolean) => {
+    const handleAutomaticallySign = (shouldSign: boolean) => {
         if (shouldSign) {
-            await api<{ MailSettings: MailSettings }>(updateSign(SIGN.ENABLED));
+            update('Sign', SIGN.ENABLED, { notify: false });
         }
-        const { MailSettings: MailSettings } = await api<{ MailSettings: MailSettings }>(
-            updateAttachPublicKey(ATTACH_PUBLIC_KEY.ENABLED)
-        );
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({ text: c('Info').t`Encryption setting updated` });
+        update('AttachPublicKey', ATTACH_PUBLIC_KEY.ENABLED, { notify: c('Info').t`Encryption setting updated` });
     };
 
     return (
@@ -101,11 +80,7 @@ export const ExternalPGPSettingsSection = () => {
             {renderAutomaticallySign && (
                 <AutomaticallySignModal
                     onConfirm={(shouldSign) => {
-                        const promise = handleAutomaticallySign(shouldSign);
-                        if (shouldSign) {
-                            withLoadingSign(promise);
-                        }
-                        withLoadingAttach(promise);
+                        handleAutomaticallySign(shouldSign);
                     }}
                     {...automaticallySignModalProps}
                 />
@@ -142,9 +117,9 @@ export const ExternalPGPSettingsSection = () => {
                                 <SettingsToggleRow.Toggle
                                     checked={!!Sign}
                                     onChange={(e) => {
-                                        withLoadingSign(handleChangeSign(+e.target.checked));
+                                        handleChangeSign(+e.target.checked);
                                     }}
-                                    loading={loadingSign}
+                                    loading={isLoading('Sign')}
                                 />
                             }
                         />
@@ -167,10 +142,10 @@ export const ExternalPGPSettingsSection = () => {
                                         if (newValue && !Sign) {
                                             setAutomaticallySignModalOpen(true);
                                         } else {
-                                            withLoadingAttach(handleAttachPublicKey(newValue));
+                                            handleAttachPublicKey(newValue);
                                         }
                                     }}
-                                    loading={loadingAttach}
+                                    loading={isLoading('AttachPublicKey')}
                                 />
                             }
                         />
@@ -194,9 +169,9 @@ export const ExternalPGPSettingsSection = () => {
                                     id="PGPSchemeSelect"
                                     pgpScheme={PGPScheme}
                                     onChange={(e) => {
-                                        withLoadingScheme(handleChangeScheme(+e.target.value));
+                                        handleChangeScheme(+e.target.value);
                                     }}
-                                    disabled={loadingScheme}
+                                    disabled={isLoading('PGPScheme')}
                                 />
                             }
                         />

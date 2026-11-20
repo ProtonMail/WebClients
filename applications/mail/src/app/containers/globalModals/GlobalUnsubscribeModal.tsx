@@ -2,20 +2,19 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
 import { useMailGlobalModals } from './globalModalContext';
 import { ModalType, type UnsubscribeModalPayload } from './inteface';
 
 export const GlobalUnsubscribeModal = () => {
-    const api = useApi();
+    const { update } = useUpdateMailSetting();
     const { subscribe } = useMailGlobalModals();
 
     const [modalProps, setOpen, shouldRender] = useModalState();
@@ -35,7 +34,7 @@ export const GlobalUnsubscribeModal = () => {
 
     const handleConfirm = (spamAction: SPAM_ACTION) => {
         if (checked) {
-            void api(updateSpamAction(spamAction));
+            update('SpamAction', spamAction, { notify: false });
         }
 
         setOpen(false);

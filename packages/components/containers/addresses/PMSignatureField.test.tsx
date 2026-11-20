@@ -3,7 +3,6 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { mockUseOrganization } from '@proton/account/testing/vitest/mockUseOrganization';
 import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
 import { mockUseUserSettings } from '@proton/account/testing/vitest/mockUseUserSettings';
-import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -32,10 +31,16 @@ vi.mock('@proton/account/userSettings/hooks');
 vi.mock('@proton/account/user/hooks');
 vi.mock('@proton/mail/store/mailSettings/hooks');
 vi.mock('@proton/account/organization/hooks');
-vi.mock('@proton/app-context/useApi');
-vi.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => vi.fn() }));
+// Runs the thunks of the mail settings update with the api of the test, the store itself is not needed
+const mockApi = vi.hoisted(() => vi.fn());
+vi.mock('@proton/react-redux-store/ProtonStoreContext', () => {
+    const dispatch = (action: any): any =>
+        typeof action === 'function'
+            ? action(dispatch, () => ({ mailSettings: { value: {} } }), { api: mockApi })
+            : action;
+    return { baseUseDispatch: () => dispatch };
+});
 vi.mock('@proton/hooks/useToggle', () => ({ __esModule: true, default: () => ({ state: false, toggle: vi.fn() }) }));
-vi.mock('@proton/hooks/useLoading', () => ({ __esModule: true, default: () => [false, (fn: any) => fn] }));
 vi.mock('../../components/modalTwo/useModalState', () => ({ __esModule: true, default: () => [{}, vi.fn(), true] }));
 
 describe('PMSignatureField', () => {
@@ -74,8 +79,7 @@ describe('PMSignatureField', () => {
 
     it('calls API and notification when paid user toggles', () => {
         mockUseUser([{ hasPaidMail: true }]);
-        const mockApi = vi.fn().mockResolvedValue({ MailSettings: {} });
-        mockUseApi(mockApi);
+        mockApi.mockResolvedValue({ MailSettings: {} });
         render(<PMSignatureField id={id} enabled={true} locked={false} />);
         const toggle = screen.getByRole('checkbox');
         fireEvent.click(toggle!);

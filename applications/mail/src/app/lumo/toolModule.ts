@@ -14,9 +14,9 @@ import type {
     createLabel as createLabelAction,
     updateLabel as updateLabelAction,
 } from '@proton/mail/store/labels/actions';
-import type { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import type { CategoryLabelID, DENSITY } from '@proton/shared/lib/constants';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { AutoResponder } from '@proton/shared/lib/interfaces/AutoResponder';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
@@ -86,7 +86,7 @@ export interface MailToolDeps {
     setViewLayout: (viewLayout: VIEW_LAYOUT) => Promise<void>;
     setViewMode: (viewMode: VIEW_MODE) => Promise<void>;
     setDensity: (density: DENSITY) => Promise<void>;
-    setAutoResponder: (autoResponder: Parameters<typeof updateAutoresponder>[0]) => Promise<void>;
+    setAutoResponder: (autoResponder: AutoResponder) => Promise<void>;
     updateAddress: (params: Parameters<typeof updateAddressThunk>[0]) => Promise<void>;
     applyLocation: ApplyLocation;
     applyMultipleLocations: (params: ApplyMultipleLocationsParams) => Promise<void>;

@@ -1,14 +1,5 @@
-import { c } from 'ttag';
-
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
-import useToggle from '@proton/hooks/useToggle';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateShowMoved } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import Toggle from '../../components/toggle/Toggle';
@@ -20,28 +11,20 @@ interface Props {
 }
 
 const ShowMovedToggle = ({ id }: Props) => {
-    const [loading, withLoading] = useLoading();
-    const { createNotification } = useNotifications();
-    const api = useApi();
-    const dispatch = useDispatch();
+    const { update, isLoading } = useUpdateMailSetting();
     const [mailSettings] = useMailSettings();
-    const { state, toggle } = useToggle(!!mailSettings.ShowMoved);
+    const state = !!mailSettings.ShowMoved;
 
-    const handleChange = async (checked: boolean) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(
-            updateShowMoved(checked ? DRAFTS_AND_SENT : NONE)
-        );
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        toggle();
-        createNotification({ text: c('Success').t`Preference saved` });
+    const handleChange = (checked: boolean) => {
+        update('ShowMoved', checked ? DRAFTS_AND_SENT : NONE);
     };
 
     return (
         <Toggle
             id={id}
             checked={state}
-            onChange={({ target }) => withLoading(handleChange(target.checked))}
-            loading={loading}
+            onChange={({ target }) => handleChange(target.checked)}
+            loading={isLoading('ShowMoved')}
         />
     );
 };

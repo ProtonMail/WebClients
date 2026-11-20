@@ -167,6 +167,16 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
         ],
     },
     {
+        name: 'mail settings are updated with useUpdateMailSetting, not with their requests',
+        patterns: [
+            {
+                group: ['@proton/mail/api/*'],
+                message:
+                    'Update mail settings with `useUpdateMailSetting` from `@proton/mail/hooks/useUpdateMailSetting`.',
+            },
+        ],
+    },
+    {
         name: '@proton/atoms is imported by full path, never through its barrel',
         ...createBarrelRestrictions('@proton/atoms'),
     },

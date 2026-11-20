@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
@@ -18,15 +16,9 @@ import RemoteToggle from './RemoteToggle';
 
 const EmailPrivacySection = () => {
     const [{ ImageProxy }] = useMailSettings();
-    const [, setImageProxy] = useState(ImageProxy);
     const { getFeature } = useFeatures([FeatureCode.SpyTrackerProtectionIncorporator]);
 
     const { feature: featureSpyTrackerIncorporator } = getFeature(FeatureCode.SpyTrackerProtectionIncorporator);
-
-    // Handle updates from the Event Manager.
-    useEffect(() => {
-        setImageProxy(ImageProxy);
-    }, [ImageProxy]);
 
     const showProtectionMode = ImageProxy !== IMAGE_PROXY_FLAGS.NONE && featureSpyTrackerIncorporator?.Value;
 
@@ -64,7 +56,6 @@ const EmailPrivacySection = () => {
                 toggle={
                     <PreventTrackingToggle
                         id="preventTrackingToggle"
-                        preventTracking={ImageProxy}
                         data-testid="privacy:prevent-tracking-toggle"
                     />
                 }
@@ -85,7 +76,6 @@ const EmailPrivacySection = () => {
                     select={
                         <ProtectionModeSelect
                             id="protectiontModeToggle"
-                            defaultProtectionMode={ImageProxy}
                             data-testid="privacy:protect-mode-select"
                         />
                     }

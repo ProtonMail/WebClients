@@ -3,19 +3,15 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { useHotkeys } from '@proton/hooks/useHotkeys';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { removeImagesFromContent } from '@proton/sanitize/purify';
-import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import {
     APP_UPSELL_REF_PATH,
     AutoReplyDuration,
@@ -24,7 +20,6 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
 import useErrorHandler from '../../hooks/useErrorHandler';
 import { SettingsToggleRow } from '../account/SettingsToggleRow';
@@ -45,10 +40,7 @@ export const AutoReplySection = () => {
     const [{ hasPaidMail }] = useUser();
     const [mailSettings] = useMailSettings();
     const AutoResponder = mailSettings.AutoResponder || getDefaultAutoResponder();
-    const api = useApi();
-    const dispatch = useDispatch();
-    const [enablingLoading, withEnablingLoading] = useLoading();
-    const [updatingLoading, withUpdatingLoading] = useLoading();
+    const { update, isLoading } = useUpdateMailSetting();
     const [isEnabled, setIsEnabled] = useState(AutoResponder.IsEnabled);
     const { createNotification } = useNotifications();
     const { model, updateModel, toAutoResponder } = useAutoReplyForm(AutoResponder);
@@ -68,26 +60,23 @@ export const AutoReplySection = () => {
             throw error;
         }
 
-        setIsEnabled(enable);
-
         const isDisablingExistingAutoResponder =
             !enable && mailSettings.AutoResponder && mailSettings.AutoResponder.IsEnabled;
 
-        if (enable || !isDisablingExistingAutoResponder) {
+        if (!isDisablingExistingAutoResponder) {
+            setIsEnabled(enable);
             return;
         }
 
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>({
-            ...updateAutoresponder({ ...AutoResponder, IsEnabled: enable }),
-            silence: true,
-        });
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({
-            text: c('Success').t`Auto-reply disabled`,
-        });
+        // The toggle only moves once the request succeeded, so a failure leaves it on, like the server
+        update(
+            'AutoResponder',
+            { ...AutoResponder, IsEnabled: false },
+            { notify: c('Success').t`Auto-reply disabled`, onSuccess: () => setIsEnabled(false) }
+        );
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = () => {
         // Remove images from the composer in autoreply
         const { message, containsImages } = removeImagesFromContent(model.message);
         if (containsImages) {
@@ -103,11 +92,7 @@ export const AutoReplySection = () => {
             }
         }
 
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(
-            updateAutoresponder(toAutoResponder({ ...model, message }))
-        );
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        createNotification({ text: c('Success').t`Auto-reply updated` });
+        update('AutoResponder', toAutoResponder({ ...model, message }), { notify: c('Success').t`Auto-reply updated` });
     };
 
     const handleEditorReady = (actions: SimpleEditorActions) => {
@@ -133,9 +118,9 @@ export const AutoReplySection = () => {
     useHotkeys(composerRef, [
         [
             ['Meta', 'Enter'],
-            async () => {
+            () => {
                 if (mailSettings.Shortcuts) {
-                    await withUpdatingLoading(handleSubmit());
+                    handleSubmit();
                 }
             },
         ],
@@ -164,20 +149,20 @@ export const AutoReplySection = () => {
                         label={<SettingsToggleRow.Label>{c('Label').t`Auto-reply`}</SettingsToggleRow.Label>}
                         toggle={
                             <SettingsToggleRow.Toggle
-                                loading={enablingLoading}
+                                loading={isLoading('AutoResponder')}
                                 checked={isEnabled}
-                                onChange={({ target: { checked } }) =>
-                                    withEnablingLoading(handleToggle(checked).catch(errorHandler))
-                                }
+                                onChange={({ target: { checked } }) => {
+                                    handleToggle(checked).catch(errorHandler);
+                                }}
                             />
                         }
                     />
 
                     {hasPaidMail && isEnabled && (
                         <form
-                            onSubmit={async (e) => {
+                            onSubmit={(e) => {
                                 e.preventDefault();
-                                await withUpdatingLoading(handleSubmit());
+                                handleSubmit();
                             }}
                         >
                             <DashboardCardDivider />
@@ -215,8 +200,8 @@ export const AutoReplySection = () => {
                                     <Button
                                         color="norm"
                                         type="submit"
-                                        disabled={updatingLoading || messageLimitReached}
-                                        loading={updatingLoading}
+                                        disabled={isLoading('AutoResponder') || messageLimitReached}
+                                        loading={isLoading('AutoResponder')}
                                     >
                                         {c('Action').t`Save`}
                                     </Button>

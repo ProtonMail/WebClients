@@ -1,8 +1,6 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
 import ViewModeToggle from '@proton/components/containers/layouts/ViewModeToggle';
 import AlmostAllMailToggle from '@proton/components/containers/messages/AlmostAllMailToggle';
 import AutoDeleteSpamAndTrashDaysToggle from '@proton/components/containers/messages/AutoDeleteSpamAndTrashDaysToggle';
@@ -10,27 +8,12 @@ import DelaySendSecondsSelect from '@proton/components/containers/messages/Delay
 import NextMessageOnMoveToggle from '@proton/components/containers/messages/NextMessageOnMoveToggle';
 import ShowMovedToggle from '@proton/components/containers/messages/ShowMovedToggle';
 import SwipeActionSelect from '@proton/components/containers/messages/SwipeActionSelect';
-import useLoading from '@proton/hooks/useLoading';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useFolders } from '@proton/mail/store/labels/hooks';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import {
-    updateAutoDelete,
-    updateNextMessageOnMove,
-    updateStickyLabels,
-    updateSwipeLeft,
-    updateSwipeRight,
-    updateViewMode,
-} from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
-import type {
-    AUTO_DELETE_SPAM_AND_TRASH_DAYS,
-    NEXT_MESSAGE_ON_MOVE,
-    SWIPE_ACTION,
-} from '@proton/shared/lib/mail/mailSettings';
+import type { SWIPE_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { useAccountDispatch } from '../../private-app/store/hooks';
 import { CategoriesSettings } from '../components/CategoryView/CategoriesSettings';
 import { CategoriesToggle } from '../components/CategoryView/CategoriesToggle';
 import MobileSection from '../components/MobileSection';
@@ -46,55 +29,18 @@ const EmailSettings = ({
     layout: (children: React.ReactNode, props?: any) => React.ReactNode;
     loader: React.ReactNode;
 }) => {
-    const api = useApi();
-    const dispatch = useAccountDispatch();
-
-    const [loadingAutoDeleteSpamAndTrashDays, withLoadingAutoDeleteSpamAndTrashDays] = useLoading();
-    const [loadingSwipeLeft, withLoadingSwipeLeft] = useLoading();
-    const [loadingSwipeRight, withLoadingSwipeRight] = useLoading();
-    const [loadingNextMessageOnMoveToggle, withLoadingNextMessageOnMoveToggle] = useLoading();
-    const [loadingViewMode, withLoadingViewMode] = useLoading();
-
     const [user, loadingUser] = useUser();
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [, foldersLoading] = useFolders();
     const loading = loadingMailSettings || loadingUser || foldersLoading || '_isDefault' in mailSettings;
 
-    const { createNotification } = useNotifications();
+    const { update, isLoading } = useUpdateMailSetting();
 
-    const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
-
-    const handleChangeSwipeLeft = async (swipeAction: SWIPE_ACTION) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateSwipeLeft(swipeAction));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
-    };
-
-    const handleChangeSwipeRight = async (swipeAction: SWIPE_ACTION) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateSwipeRight(swipeAction));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
-    };
-
-    const handleChangeNextMessageOnMove = async (nextMessageOnMove: NEXT_MESSAGE_ON_MOVE) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateNextMessageOnMove(nextMessageOnMove));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
-    };
-
-    const handleAutoDeleteSpamAndTrashDays = async (autoDelete: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateAutoDelete(autoDelete));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
-    };
-
-    const handleChangeViewMode = async (mode: VIEW_MODE) => {
+    const handleChangeViewMode = (mode: VIEW_MODE) => {
         if (mode === VIEW_MODE.SINGLE) {
-            await api(updateStickyLabels(STICKY_LABELS.DISABLED));
+            update('StickyLabels', STICKY_LABELS.DISABLED, { notify: false });
         }
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateViewMode(mode));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
+        update('ViewMode', mode);
     };
 
     if (loading) {
@@ -120,8 +66,8 @@ const EmailSettings = ({
                     <ViewModeToggle
                         id="viewMode"
                         viewMode={mailSettings.ViewMode}
-                        loading={loadingViewMode}
-                        onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
+                        loading={isLoading('ViewMode') || isLoading('StickyLabels')}
+                        onToggle={handleChangeViewMode}
                         data-testid="appearance:conversation-group-toggle"
                     />
                 </MobileSectionRow>
@@ -146,9 +92,9 @@ const EmailSettings = ({
                     >{c('Label').t`Auto-advance`}</MobileSectionLabel>
                     <NextMessageOnMoveToggle
                         id="auto-advance"
-                        loading={loadingNextMessageOnMoveToggle}
+                        loading={isLoading('NextMessageOnMove')}
                         nextMessageOnMove={mailSettings.NextMessageOnMove}
-                        onToggle={(value) => withLoadingNextMessageOnMoveToggle(handleChangeNextMessageOnMove(value))}
+                        onToggle={(value) => update('NextMessageOnMove', value)}
                     />
                 </MobileSectionRow>
                 <MobileSectionRow>
@@ -157,10 +103,8 @@ const EmailSettings = ({
                         <SwipeActionSelect
                             id="swipeLeftAction"
                             value={mailSettings.SwipeLeft}
-                            onChange={(swipeAction: SWIPE_ACTION) =>
-                                withLoadingSwipeLeft(handleChangeSwipeLeft(swipeAction))
-                            }
-                            loading={loadingSwipeLeft}
+                            onChange={(swipeAction: SWIPE_ACTION) => update('SwipeLeft', swipeAction)}
+                            loading={isLoading('SwipeLeft')}
                         />
                     </div>
                 </MobileSectionRow>
@@ -171,10 +115,8 @@ const EmailSettings = ({
                         <SwipeActionSelect
                             id="swipeRightAction"
                             value={mailSettings.SwipeRight}
-                            onChange={(swipeAction: SWIPE_ACTION) =>
-                                withLoadingSwipeRight(handleChangeSwipeRight(swipeAction))
-                            }
-                            loading={loadingSwipeRight}
+                            onChange={(swipeAction: SWIPE_ACTION) => update('SwipeRight', swipeAction)}
+                            loading={isLoading('SwipeRight')}
                         />
                     </div>
                 </MobileSectionRow>
@@ -205,11 +147,9 @@ const EmailSettings = ({
                         >{c('Label').t`Auto-delete trash and spam`}</MobileSectionLabel>
                         <AutoDeleteSpamAndTrashDaysToggle
                             id="autoDelete"
-                            loading={loadingAutoDeleteSpamAndTrashDays}
+                            loading={isLoading('AutoDeleteSpamAndTrashDays')}
                             autoDeleteSpamAndTrashDays={mailSettings.AutoDeleteSpamAndTrashDays}
-                            onToggle={(newValue) =>
-                                withLoadingAutoDeleteSpamAndTrashDays(handleAutoDeleteSpamAndTrashDays(newValue))
-                            }
+                            onToggle={(newValue) => update('AutoDeleteSpamAndTrashDays', newValue)}
                         />
                     </MobileSectionRow>
                 ) : null}

@@ -10,7 +10,7 @@ export const CategoryViewToggle = () => {
     const { handleChange, state, loading } = useCategoriesToggle();
 
     const handleToggle = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        void handleChange({ checked: target.checked, notification: true });
+        handleChange({ checked: target.checked, notification: true });
     };
 
     return (

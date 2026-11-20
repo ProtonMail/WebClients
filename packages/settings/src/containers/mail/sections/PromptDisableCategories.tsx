@@ -4,13 +4,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useCategoriesToggle } from '@proton/mail/features/categoriesView/useCategoriesToggle';
-import noop from '@proton/utils/noop';
 
 export const PromptDisableCategories = (props: ModalProps) => {
     const { handleChange, loading } = useCategoriesToggle();
 
     const handleClick = () => {
-        handleChange({ checked: false, notification: false }).catch(noop);
+        handleChange({ checked: false, notification: false });
         props.onClose?.();
     };
 

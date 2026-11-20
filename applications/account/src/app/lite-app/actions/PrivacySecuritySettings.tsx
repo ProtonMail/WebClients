@@ -1,20 +1,14 @@
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
-import { useNotifications } from '@proton/app-context/useNotifications';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import RemoteToggle from '@proton/components/containers/emailPrivacy/RemoteToggle';
 import EmbeddedToggle from '@proton/components/containers/messages/EmbeddedToggle';
 import RemoveImageMetadataToggle from '@proton/components/containers/messages/RemoveImageMetadataToggle';
 import RequestLinkConfirmationToggle from '@proton/components/containers/messages/RequestLinkConfirmationToggle';
 import SenderImagesToggle from '@proton/components/containers/messages/SenderImagesToggle';
-import useLoading from '@proton/hooks/useLoading';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { updateRemoveImageMetadata } from '@proton/shared/lib/api/mailSettings';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
-import { useAccountDispatch } from '../../private-app/store/hooks';
 import MobileSection from '../components/MobileSection';
 import MobileSectionLabel from '../components/MobileSectionLabel';
 import MobileSectionRow from '../components/MobileSectionRow';
@@ -28,18 +22,11 @@ const PrivacySecuritySettings = ({
     layout: (children: React.ReactNode, props?: any) => React.ReactNode;
     loader: React.ReactNode;
 }) => {
-    const api = useApi();
-    const dispatch = useAccountDispatch();
-    const [loadingRemoveImageMetadata, withLoadingRemoveImageMetadata] = useLoading();
-    const { createNotification } = useNotifications();
+    const { update, isLoading } = useUpdateMailSetting();
     const [mailSettings, loadingMailSettings] = useMailSettings();
-    const { ImageProxy, ConfirmLink, RemoveImageMetadata } = mailSettings;
-    const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
-
-    const handleRemoveImageMetadata = async (value: boolean) => {
-        const { MailSettings } = await api<{ MailSettings: MailSettings }>(updateRemoveImageMetadata(value));
-        dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-        notifyPreferenceSaved();
+    const { ConfirmLink, RemoveImageMetadata } = mailSettings;
+    const handleRemoveImageMetadata = (value: boolean) => {
+        update('RemoveImageMetadata', value);
     };
 
     const loading = loadingMailSettings || '_isDefault' in mailSettings;
@@ -55,7 +42,7 @@ const PrivacySecuritySettings = ({
                         description={c('Info').t`Blocks senders from seeing if and when you opened a message.`}
                         htmlFor="preventTrackingToggle"
                     >{c('Label').t`Block email tracking`}</MobileSectionLabel>
-                    <PreventTrackingToggle id="preventTrackingToggle" preventTracking={ImageProxy} />
+                    <PreventTrackingToggle id="preventTrackingToggle" />
                 </MobileSectionRow>
                 <MobileSectionRow>
                     <MobileSectionLabel
@@ -75,8 +62,8 @@ const PrivacySecuritySettings = ({
                     <RemoveImageMetadataToggle
                         id="removeImageMetadata"
                         removeImageMetadata={RemoveImageMetadata}
-                        loading={loadingRemoveImageMetadata}
-                        onChange={(newValue) => withLoadingRemoveImageMetadata(handleRemoveImageMetadata(newValue))}
+                        loading={isLoading('RemoveImageMetadata')}
+                        onChange={(newValue) => handleRemoveImageMetadata(newValue)}
                     />
                 </MobileSectionRow>
                 <MobileSectionRow>

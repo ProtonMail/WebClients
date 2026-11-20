@@ -79,8 +79,7 @@ const ComposerContent = (
     }: Props,
     ref: Ref<HTMLElement>
 ) => {
-    const { AttachmentList, useUpdateMailSettings } = useComposerMessageHost();
-    const updateMailSettings = useUpdateMailSettings();
+    const { AttachmentList } = useComposerMessageHost();
     const attachments = getAttachments(message.data);
     const showAttachments = attachments.length + (pendingUploads?.length || 0) > 0;
 
@@ -124,7 +123,6 @@ const ComposerContent = (
                     onAddAttachments={onAddAttachments}
                     onRemoveAttachment={onRemoveAttachment}
                     mailSettings={mailSettings}
-                    onMailSettingsChange={updateMailSettings}
                     userSettings={userSettings}
                     editorMetadata={editorMetadata}
                     toolbarCustomRender={toolbarCustomRender}

@@ -1,14 +1,10 @@
 import { c } from 'ttag';
 
 import { featureTourActions } from '@proton/account/featuresTour';
-import { useApi } from '@proton/app-context/useApi';
 import useToggle from '@proton/hooks/useToggle';
-import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
-import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import autoDeleteIllustration from '@proton/styles/assets/img/illustrations/new-upsells-img/auto-delete.svg';
 
@@ -23,23 +19,18 @@ export const shouldDisplayAutoDeleteTourStep: ShouldDisplayTourStep = async () =
 });
 
 const AutoDeleteTourStep = (props: FeatureTourStepProps) => {
-    const api = useApi();
+    const { update } = useUpdateMailSetting();
     const dispatch = useDispatch();
     const [mailSettings] = useMailSettings();
     const { state: isToggleChecked, toggle } = useToggle(true);
     const isFeatureEnabled = mailSettings.AutoDeleteSpamAndTrashDays === AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE;
 
-    const handleEnableFeature = async () => {
+    const handleEnableFeature = () => {
         if (isToggleChecked && !isFeatureEnabled) {
-            try {
-                const { MailSettings } = await api<{ MailSettings: MailSettings }>(
-                    updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)
-                );
-                dispatch(mailSettingsActions.updateMailSettings(MailSettings));
-                dispatch(featureTourActions.activateFeature({ feature: 'auto-delete' }));
-            } catch (error) {
-                traceError(error, { tags: { initiative: SentryMailInitiatives.MAIL_ONBOARDING } });
-            }
+            update('AutoDeleteSpamAndTrashDays', AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE, {
+                notify: false,
+                onSuccess: () => dispatch(featureTourActions.activateFeature({ feature: 'auto-delete' })),
+            });
         }
     };
 

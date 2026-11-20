@@ -19,10 +19,10 @@ import type { OnboardingStepRenderCallback } from '@proton/components/containers
 import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { useUpdateMailSetting } from '@proton/mail/hooks/useUpdateMailSetting';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PLANS } from '@proton/payments/core/constants';
 import { getIsB2BAudienceFromSubscription, hasVisionary, isTrial } from '@proton/payments/core/subscription/helpers';
-import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
@@ -154,6 +154,7 @@ export const isActivatePremiumFeaturesStepEligible: OnboardingStepEligibleCallba
 
 const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const api = useApi();
+    const { update } = useUpdateMailSetting();
     const { trackSettingToggled, trackStepCompleted } = useOnboardingTracking();
     const [addresses, addressesLoading] = useAddresses();
     const [userSettings, userSettingsLoading] = useUserSettings();
@@ -196,7 +197,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
             promises.push(createShortDomainAddress({ setDefault: true }));
         }
         if (checkedFeatures.autoDelete && !activeFeatures.autoDelete) {
-            promises.push(api(updateAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE)));
+            update('AutoDeleteSpamAndTrashDays', AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE, { notify: false });
         }
         if (checkedFeatures.monitoring && !activeFeatures.monitoring) {
             promises.push(api(enableBreachAlert()));
