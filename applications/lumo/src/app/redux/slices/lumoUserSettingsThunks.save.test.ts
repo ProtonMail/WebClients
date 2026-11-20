@@ -1,11 +1,8 @@
-import { jest } from '@jest/globals';
-
 import type { LumoState } from '../store';
 import type { LumoUserSettings, Memory } from './lumoUserSettingsTypes';
 
-// This project runs Jest in ESM mode, where static imports resolve before a hoisted `jest.mock`
-// would take effect. Mocks are therefore registered with `jest.doMock` + a fresh dynamic
-// `import()` inside each test — see `lumoUserSettingsThunks.remoteUndecryptable.test.ts`.
+// Mocks are registered with `vi.doMock` + `vi.resetModules()` + a fresh dynamic
+// `import()` inside each test so every test gets its own module graph — see `lumoUserSettingsThunks.remoteUndecryptable.test.ts`.
 
 const memory = (id: string): Memory => ({ id, content: `memory ${id}`, createdAt: 1, source: 'user' });
 
@@ -45,7 +42,7 @@ const REMOTE_BLOB = { userSettingsTag: 'tag', encrypted: 'blob', createTime: '',
 /** Mocks crypto with a decrypted server copy, and returns the settings passed to the serializer. */
 const setUp = async (remoteUserSettings: LumoUserSettings | null) => {
     const serialized: LumoUserSettings[] = [];
-    jest.doMock('../../serialization', () => ({
+    vi.doMock('../../serialization', () => ({
         serializeUserSettings: (userSettings: LumoUserSettings) => {
             serialized.push(userSettings);
             return Promise.resolve({ UserSettingsTag: 'new-tag', Encrypted: 'enc' });
@@ -53,7 +50,7 @@ const setUp = async (remoteUserSettings: LumoUserSettings | null) => {
         deserializeUserSettingsWithMasterKeys: () =>
             Promise.resolve({ userSettings: remoteUserSettings, needsMasterKeyMigration: false }),
     }));
-    jest.doMock('../../util/masterKeys', () => ({
+    vi.doMock('../../util/masterKeys', () => ({
         buildMasterKeyContext: () => Promise.resolve({ primary: { id: 'primary' }, legacy: [] }),
     }));
 
@@ -63,16 +60,16 @@ const setUp = async (remoteUserSettings: LumoUserSettings | null) => {
 };
 
 const makeApi = (getUserSettings: () => Promise<unknown>) => ({
-    getUserSettings: jest.fn(getUserSettings),
-    putUserSettings: jest.fn(() => Promise.resolve('ok')),
-    postUserSettings: jest.fn(() => Promise.resolve('ok')),
+    getUserSettings: vi.fn(getUserSettings),
+    putUserSettings: vi.fn(() => Promise.resolve('ok')),
+    postUserSettings: vi.fn(() => Promise.resolve('ok')),
 });
 
-const run = (thunk: any, state: LumoState, lumoApi: unknown, dispatch = jest.fn((action: unknown) => action)) =>
+const run = (thunk: any, state: LumoState, lumoApi: unknown, dispatch = vi.fn((action: unknown) => action)) =>
     thunk(dispatch as never, () => state, { lumoApi } as never);
 
 describe('saveLumoUserSettingsToRemote', () => {
-    afterEach(() => jest.resetModules());
+    afterEach(() => vi.resetModules());
 
     it('applies the changes to the server copy instead of sending local state', async () => {
         const remote = settings({ theme: 'dark', isMemoryEnabled: true, memories: [memory('1')] });

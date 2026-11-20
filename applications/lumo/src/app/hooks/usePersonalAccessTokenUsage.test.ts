@@ -1,11 +1,12 @@
 import { renderHook, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useApi } from '@proton/app-context/useApi';
 
 import type { UsageEntry } from '../remote/usage';
 import { getLastUtcDates, getTokenUsageDays, useAllPersonalAccessTokensUsage } from './usePersonalAccessTokenUsage';
 
-jest.mock('@proton/app-context/useApi');
+vi.mock('@proton/app-context/useApi');
 
 const entry = (overrides: Partial<UsageEntry>): UsageEntry => ({
     ClientType: 'api',
@@ -39,21 +40,21 @@ describe('useAllPersonalAccessTokensUsage', () => {
     const tokenIds = ['key-a', 'key-b'];
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('requests each key over the last days and keeps a failing key to its own card', async () => {
-        jest.useFakeTimers({ now: new Date('2026-11-09T12:00:00Z') });
+        vi.useFakeTimers({ now: new Date('2026-11-09T12:00:00Z') });
         const days = [
             { Date: '2026-11-08', Usage: [] },
             { Date: '2026-11-09', Usage: [entry({ InputTokens: 5, OutputTokens: 2, Calls: 3 })] },
         ];
-        const api = jest.fn(({ params }) =>
+        const api = vi.fn(({ params }) =>
             params.PersonalAccessTokenID === 'key-a'
                 ? Promise.resolve({ Code: 1000, Days: days })
                 : Promise.reject(new Error('404'))
         );
-        (useApi as jest.Mock).mockReturnValue(api);
+        (useApi as Mock).mockReturnValue(api);
 
         const { result } = renderHook(() => useAllPersonalAccessTokensUsage(tokenIds, 2));
 

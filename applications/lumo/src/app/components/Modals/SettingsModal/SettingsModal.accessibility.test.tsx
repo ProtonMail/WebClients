@@ -6,21 +6,21 @@ import { ModalPositionsProvider } from '@proton/components/components/modalTwo/m
 
 import SettingsModal from './SettingsModal';
 
-jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ DATE_VERSION: '' }) }));
-jest.mock('../../../hooks', () => ({ useLumoUserSettings: () => ({ lumoUserSettings: {} }) }));
-jest.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ memory: false }) }));
-jest.mock('../../../hooks/useGuestChatHandler', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ DATE_VERSION: '' }) }));
+vi.mock('../../../hooks', () => ({ useLumoUserSettings: () => ({ lumoUserSettings: {} }) }));
+vi.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ memory: false }) }));
+vi.mock('../../../hooks/useGuestChatHandler', () => ({
     useGuestChatHandler: () => ({ isGuest: true, disclaimerModalProps: { render: false } }),
 }));
-jest.mock('../../../providers/IsGuestProvider', () => ({ useIsGuest: () => true }));
-jest.mock('../../../providers/LumoPlanProvider', () => ({
+vi.mock('../../../providers/IsGuestProvider', () => ({ useIsGuest: () => true }));
+vi.mock('../../../providers/LumoPlanProvider', () => ({
     useLumoPlan: () => ({ isLumoPlanLoading: true }),
 }));
-jest.mock('../../../providers/LumoThemeProvider', () => ({
-    ...jest.requireActual('../../../providers/LumoThemeProvider'),
+vi.mock('../../../providers/LumoThemeProvider', async () => ({
+    ...(await vi.importActual('../../../providers/LumoThemeProvider')),
     useLumoTheme: () => ({ theme: 'light' }),
 }));
-jest.mock('../../Composer/hooks/useNativeComposerVisibilityApi', () => ({
+vi.mock('../../Composer/hooks/useNativeComposerVisibilityApi', () => ({
     useNativeComposerVisibilityApi: () => {},
 }));
 

@@ -456,7 +456,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 dispatch(addSpace(space));
                 dispatch(pushSpaceRequest({ id: spaceId }));
 
-                const spy = jest.spyOn(LumoApi.prototype, 'postSpace');
+                const spy = vi.spyOn(LumoApi.prototype, 'postSpace');
                 expect(spy).not.toHaveBeenCalled();
 
                 // Wait for persistence to IndexedDB and server

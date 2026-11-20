@@ -9,13 +9,13 @@ describe('ArtifactRichTextEditor', () => {
     it('loads the markdown as rich text and saves it back unchanged', async () => {
         const markdown = '# Ham party\n\nBring **drinks**.\n\n- [ ] RSVP\n\n| a | b |\n| - | - |\n| 1 | 2 |';
         const ref = createRef<ArtifactRichTextEditorHandle>();
-        const onUnavailable = jest.fn();
+        const onUnavailable = vi.fn();
 
         render(
             <ArtifactRichTextEditor
                 ref={ref}
                 initialMarkdown={markdown}
-                onChange={jest.fn()}
+                onChange={vi.fn()}
                 onUnavailable={onUnavailable}
             />
         );

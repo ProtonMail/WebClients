@@ -8,9 +8,9 @@ import type { Skill } from '../../skills/types';
 import { useSkills } from '../../skills/useSkills';
 import { SkillList } from './SkillList';
 
-jest.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: jest.fn() }));
-jest.mock('../../../redux/hooks', () => ({ useLumoDispatch: jest.fn() }));
-jest.mock('../../skills/useSkills', () => ({ useSkills: jest.fn() }));
+vi.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: vi.fn() }));
+vi.mock('../../../redux/hooks', () => ({ useLumoDispatch: vi.fn() }));
+vi.mock('../../skills/useSkills', () => ({ useSkills: vi.fn() }));
 
 const skill = {
     id: 'brief',
@@ -21,15 +21,15 @@ const skill = {
 } as Skill;
 
 beforeEach(() => {
-    jest.mocked(useLumoFlags).mockReturnValue({ customAgents: true, customize: true, skills: true } as ReturnType<
+    vi.mocked(useLumoFlags).mockReturnValue({ customAgents: true, customize: true, skills: true } as ReturnType<
         typeof useLumoFlags
     >);
-    jest.mocked(useLumoDispatch).mockReturnValue(jest.fn());
-    jest.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [skill] });
+    vi.mocked(useLumoDispatch).mockReturnValue(vi.fn());
+    vi.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [skill] });
 });
 
 it('keeps deleted skills visible and removable, passing only IDs', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     render(
         <MemoryRouter>
             <SkillList value={['brief', 'deleted']} onChange={onChange} />
@@ -53,10 +53,10 @@ it.each(['hover', 'focus'])('shows descriptions on %s', async (interaction) => {
 });
 
 it('shows a retry action for loading errors without losing selections', () => {
-    jest.mocked(useSkills).mockReturnValue({ status: 'error', skills: [skill] });
+    vi.mocked(useSkills).mockReturnValue({ status: 'error', skills: [skill] });
     render(
         <MemoryRouter>
-            <SkillList value={['brief']} onChange={jest.fn()} />
+            <SkillList value={['brief']} onChange={vi.fn()} />
         </MemoryRouter>
     );
     expect(screen.getByRole('alert')).toHaveTextContent('Could not load skills');
@@ -66,7 +66,7 @@ it('shows a retry action for loading errors without losing selections', () => {
 });
 
 it('groups sub-skills, searches their descriptions, and saves only the selected reference', () => {
-    HTMLElement.prototype.scrollIntoView = jest.fn();
+    HTMLElement.prototype.scrollIntoView = vi.fn();
     const plugin = {
         ...skill,
         id: 'writing',
@@ -78,8 +78,8 @@ it('groups sub-skills, searches their descriptions, and saves only the selected 
             { path: 'skills/edit', name: 'Edit', description: 'Edit a document', enabled: true },
         ],
     };
-    jest.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [plugin, { ...skill, id: 'brief' }] });
-    const onChange = jest.fn();
+    vi.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [plugin, { ...skill, id: 'brief' }] });
+    const onChange = vi.fn();
     render(
         <MemoryRouter>
             <SkillList value={[]} onChange={onChange} />
@@ -105,8 +105,8 @@ it('keeps disabled sub-skills visible and removable using current bundle metadat
         instructions: '',
         subSkills: [{ path: 'skills/draft', name: 'Draft', description: 'Draft documents', enabled: false }],
     };
-    jest.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [plugin] });
-    const onChange = jest.fn();
+    vi.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [plugin] });
+    const onChange = vi.fn();
     render(
         <MemoryRouter>
             <SkillList value={['writing/skills/draft']} onChange={onChange} />
@@ -118,8 +118,8 @@ it('keeps disabled sub-skills visible and removable using current bundle metadat
 });
 
 it.each(['idle', 'loading'] as const)('keeps saved selections removable while skills are %s', (status) => {
-    jest.mocked(useSkills).mockReturnValue({ status, skills: [skill] });
-    const onChange = jest.fn();
+    vi.mocked(useSkills).mockReturnValue({ status, skills: [skill] });
+    const onChange = vi.fn();
     render(
         <MemoryRouter>
             <SkillList value={['brief']} onChange={onChange} />
@@ -135,10 +135,10 @@ it.each(['idle', 'loading'] as const)('keeps saved selections removable while sk
 it('uses the same handle winner as runtime for the name-sorted skills list', () => {
     const canonical = { ...skill, id: 'canonical', name: 'Weekly Report' };
     const other = { ...skill, id: 'other', name: 'Weekly-Report' };
-    jest.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [canonical, other] });
+    vi.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [canonical, other] });
     render(
         <MemoryRouter>
-            <SkillList value={[]} onChange={jest.fn()} />
+            <SkillList value={[]} onChange={vi.fn()} />
         </MemoryRouter>
     );
     fireEvent.click(screen.getByRole('button', { name: 'Add skill' }));
@@ -149,7 +149,7 @@ it('uses the same handle winner as runtime for the name-sorted skills list', () 
 it('distinguishes all-selected skills from an empty skills store', () => {
     render(
         <MemoryRouter>
-            <SkillList value={['brief']} onChange={jest.fn()} />
+            <SkillList value={['brief']} onChange={vi.fn()} />
         </MemoryRouter>
     );
     fireEvent.click(screen.getByRole('button', { name: 'Add skill' }));
@@ -158,10 +158,10 @@ it('distinguishes all-selected skills from an empty skills store', () => {
 });
 
 it('keeps the setup hint for an empty skills store', () => {
-    jest.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [] });
+    vi.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [] });
     render(
         <MemoryRouter>
-            <SkillList value={[]} onChange={jest.fn()} />
+            <SkillList value={[]} onChange={vi.fn()} />
         </MemoryRouter>
     );
     fireEvent.click(screen.getByRole('button', { name: 'Add skill' }));

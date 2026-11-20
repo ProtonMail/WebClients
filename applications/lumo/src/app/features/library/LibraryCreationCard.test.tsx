@@ -3,19 +3,19 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { LibraryCreationCard } from './LibraryCreationCard';
 import type { LibraryCreationEntry } from './libraryCreations';
 
-const navigate = jest.fn();
-const downloadSource = jest.fn();
+const navigate = vi.fn();
+const downloadSource = vi.fn();
 
-jest.mock('../../hooks/useLumoNavigate', () => {
+vi.mock('../../hooks/useLumoNavigate', () => {
     return { useLumoNavigate: () => navigate };
 });
-jest.mock('../../hooks/useIsLumoSmallScreen', () => {
+vi.mock('../../hooks/useIsLumoSmallScreen', () => {
     return { useIsLumoSmallScreen: () => ({ isSmallScreen: false }) };
 });
-jest.mock('../../hooks/useIsTouchDevice', () => {
+vi.mock('../../hooks/useIsTouchDevice', () => {
     return { useIsTouchDevice: () => false };
 });
-jest.mock('../../redux/hooks', () => {
+vi.mock('../../redux/hooks', () => {
     return {
         useLumoSelector: () => ({
             id: 'asset-1',
@@ -31,14 +31,14 @@ jest.mock('../../redux/hooks', () => {
         }),
     };
 });
-jest.mock('./LibraryCreationThumbnail', () => {
+vi.mock('./LibraryCreationThumbnail', () => {
     return { LibraryCreationThumbnail: () => null };
 });
 // The real exporters pull in ESM-only libraries Jest can't load; the menu wiring is what's tested.
-jest.mock('../../components/Conversation/artifact/artifactSourceDownload', () => {
+vi.mock('../../components/Conversation/artifact/artifactSourceDownload', () => {
     return { getArtifactSourceDownloadMimeType: () => 'text/plain;charset=utf-8' };
 });
-jest.mock('../../components/Conversation/artifact/useArtifactFileActions', () => {
+vi.mock('../../components/Conversation/artifact/useArtifactFileActions', () => {
     return {
         useArtifactFileActions: () => ({
             downloadOptions: [

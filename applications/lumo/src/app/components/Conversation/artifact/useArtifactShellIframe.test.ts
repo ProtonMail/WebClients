@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { setLocation } from '@proton/jest-env/setLocation';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import { getArtifactShellUrl } from './artifactShell';
 import { useArtifactShellIframe } from './useArtifactShellIframe';
@@ -9,6 +9,8 @@ const CROSS_ORIGIN_APP = 'https://lumo.proton.dev:4443';
 
 function createAttachedIframe(): HTMLIFrameElement {
     const iframe = document.createElement('iframe');
+    // happy-dom only creates a content window for an iframe with a document to load
+    iframe.srcdoc = '<!doctype html>';
     document.body.appendChild(iframe);
     return iframe;
 }
@@ -32,7 +34,7 @@ describe('useArtifactShellIframe', () => {
 
         const iframe = createAttachedIframe();
         Object.defineProperty(result.current.iframeRef, 'current', { value: iframe, writable: true });
-        const postMessage = jest.spyOn(iframe.contentWindow as Window, 'postMessage');
+        const postMessage = vi.spyOn(iframe.contentWindow as Window, 'postMessage');
 
         expect(result.current.ready).toBe(false);
         expect(postMessage).not.toHaveBeenCalled();
@@ -43,7 +45,7 @@ describe('useArtifactShellIframe', () => {
 
         const iframe = createAttachedIframe();
         Object.defineProperty(result.current.iframeRef, 'current', { value: iframe, writable: true });
-        const postMessage = jest.spyOn(iframe.contentWindow as Window, 'postMessage');
+        const postMessage = vi.spyOn(iframe.contentWindow as Window, 'postMessage');
 
         const shellOrigin = getArtifactShellUrl().origin;
 
@@ -62,7 +64,7 @@ describe('useArtifactShellIframe', () => {
 
         const iframe = createAttachedIframe();
         Object.defineProperty(result.current.iframeRef, 'current', { value: iframe, writable: true });
-        const postMessage = jest.spyOn(iframe.contentWindow as Window, 'postMessage');
+        const postMessage = vi.spyOn(iframe.contentWindow as Window, 'postMessage');
         const shellOrigin = getArtifactShellUrl().origin;
 
         act(() => {
@@ -100,7 +102,7 @@ describe('useArtifactShellIframe', () => {
 
         const iframe = createAttachedIframe();
         Object.defineProperty(result.current.iframeRef, 'current', { value: iframe, writable: true });
-        const postMessage = jest.spyOn(iframe.contentWindow as Window, 'postMessage');
+        const postMessage = vi.spyOn(iframe.contentWindow as Window, 'postMessage');
 
         act(() => {
             result.current.onIframeLoad();

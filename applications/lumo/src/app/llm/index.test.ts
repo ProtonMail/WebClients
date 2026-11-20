@@ -373,11 +373,11 @@ describe('prepareRequest — image attachments', () => {
         ({ id, filename: `${id}.png`, mimeType: 'image/png' }) as unknown as Attachment;
 
     beforeEach(() => {
-        jest.spyOn(attachmentDataCache, 'getData').mockImplementation(() => new Uint8Array([1, 2, 3]));
+        vi.spyOn(attachmentDataCache, 'getData').mockImplementation(() => new Uint8Array([1, 2, 3]));
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('groups multiple images into a single turn instead of one turn per image', () => {

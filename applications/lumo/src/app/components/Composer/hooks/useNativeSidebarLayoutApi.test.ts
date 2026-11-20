@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
 import { useSidebar } from '../../../providers/SidebarProvider';
@@ -11,17 +12,17 @@ import { useNativeSidebarLayoutApi } from './useNativeSidebarLayoutApi';
 // derive its shape. That module pulls in the full `@proton/components` barrel (drawer, Pass
 // integration, dnd-kit, ...), which isn't safe to execute under jsdom. Stub it out so automocking
 // stays cheap and doesn't depend on unrelated parts of that barrel loading cleanly.
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('../../../hooks/useIsLumoSmallScreen');
-jest.mock('../../../providers/SidebarProvider');
-jest.mock('../../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../../layouts/sidebar/sidebarMetrics', () => ({
-    ...jest.requireActual('../../../layouts/sidebar/sidebarMetrics'),
+vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('../../../hooks/useIsLumoSmallScreen');
+vi.mock('../../../providers/SidebarProvider');
+vi.mock('../../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../../layouts/sidebar/sidebarMetrics', async () => ({
+    ...(await vi.importActual('../../../layouts/sidebar/sidebarMetrics')),
     readSidebarMetrics: () => ({ expandedWidth: 300, transitionMs: 300 }),
 }));
 
-const mockedUseIsLumoSmallScreen = useIsLumoSmallScreen as jest.Mock;
-const mockedUseSidebar = useSidebar as jest.Mock;
+const mockedUseIsLumoSmallScreen = useIsLumoSmallScreen as Mock;
+const mockedUseSidebar = useSidebar as Mock;
 
 const setScreen = ({ isSmallScreen, isVisible }: { isSmallScreen: boolean; isVisible: boolean }) => {
     mockedUseIsLumoSmallScreen.mockReturnValue({ isSmallScreen, isMediumScreen: false });
@@ -30,7 +31,7 @@ const setScreen = ({ isSmallScreen, isVisible }: { isSmallScreen: boolean; isVis
 
 describe('useNativeSidebarLayoutApi', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('snaps to the expanded width on the first report', () => {
@@ -91,7 +92,7 @@ describe('useNativeSidebarLayoutApi', () => {
 
         // Every push made during mount (including the phantom cleanup/re-setup cycle) must be a
         // snap, never an animated one.
-        for (const call of (setNativeSidebarLayout as jest.Mock).mock.calls) {
+        for (const call of (setNativeSidebarLayout as Mock).mock.calls) {
             const [payload] = call;
             expect(payload?.animationDurationMs ?? 0).toBe(0);
         }

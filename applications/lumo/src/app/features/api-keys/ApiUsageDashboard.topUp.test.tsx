@@ -1,4 +1,5 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -8,19 +9,19 @@ import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit'
 
 import { ApiUsageDashboard } from './ApiUsageDashboard';
 
-jest.mock('@proton/account/paymentStatus/hooks');
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/app-context/useApi');
-jest.mock('./useApiUsageSummary', () => ({
+vi.mock('@proton/account/paymentStatus/hooks');
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/app-context/useApi');
+vi.mock('./useApiUsageSummary', () => ({
     useApiUsageSummary: () => ({ dates: [], rows: [], isLoading: false, error: false }),
 }));
-jest.mock('@proton/account/bootstrap', () => ({
+vi.mock('@proton/account/bootstrap', () => ({
     coreEventManagerV6: () => ({ subscribe: () => () => {}, start: () => {}, reset: () => {} }),
 }));
-jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
-jest.mock('./ApiTokenUsageChart', () => ({ ApiTokenUsageChart: () => null }));
-jest.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
+vi.mock('./ApiTokenUsageChart', () => ({ ApiTokenUsageChart: () => null }));
+vi.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
     LumoCreditsModal: ({ open, onClose, onSuccess }: { open: boolean; onClose: () => void; onSuccess: () => void }) =>
         open ? (
             <div>
@@ -40,31 +41,31 @@ jest.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
 
 const setup = (balances: string[], { canTopUp }: { canTopUp?: boolean } = {}) => {
     const remainingBalances = [...balances];
-    const api = jest.fn(() =>
+    const api = vi.fn(() =>
         Promise.resolve({
             ...MOCK_LUMO_CREDIT_RESPONSE,
             Balance: remainingBalances.length > 1 ? remainingBalances.shift() : remainingBalances[0],
         })
     );
-    (useApi as jest.Mock).mockReturnValue(api);
-    (useUser as jest.Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
-    (useSubscription as jest.Mock).mockReturnValue([{ Currency: 'USD' }]);
-    (usePaymentStatus as jest.Mock).mockReturnValue([{ CountryCode: 'CH', VendorStates: {} }, false]);
+    (useApi as Mock).mockReturnValue(api);
+    (useUser as Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
+    (useSubscription as Mock).mockReturnValue([{ Currency: 'USD' }]);
+    (usePaymentStatus as Mock).mockReturnValue([{ CountryCode: 'CH', VendorStates: {} }, false]);
     render(<ApiUsageDashboard isOrgAdmin={false} isOrgMember={false} canTopUp={canTopUp} />);
     return api;
 };
 
 const getBalanceAmount = () => document.querySelector('.api-usage-balance-amount')?.textContent;
-const advance = (ms: number) => act(() => jest.advanceTimersByTimeAsync(ms));
+const advance = (ms: number) => act(() => vi.advanceTimersByTimeAsync(ms));
 const openTopUp = () => fireEvent.click(screen.getByRole('button', { name: 'Top up balance' }));
 
 describe('ApiUsageDashboard top-up', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('opens the Lumo credits modal from Top up balance', async () => {

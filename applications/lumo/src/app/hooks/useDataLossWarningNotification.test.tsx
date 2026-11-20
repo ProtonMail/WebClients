@@ -1,28 +1,29 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import { dismissDataLossWarning } from '../redux/slices/meta/errors';
 import { acknowledgeLumoDataLossWarning } from '../redux/slices/meta/initialization';
 import { useDataLossWarningNotification } from './useDataLossWarningNotification';
 
-jest.mock('../redux/hooks', () => ({
-    useLumoDispatch: jest.fn(),
-    useLumoSelector: jest.fn(),
+vi.mock('../redux/hooks', () => ({
+    useLumoDispatch: vi.fn(),
+    useLumoSelector: vi.fn(),
 }));
 
-const createNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const createNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification }),
 }));
 
-const mockedUseLumoDispatch = useLumoDispatch as jest.Mock;
-const mockedUseLumoSelector = useLumoSelector as jest.Mock;
+const mockedUseLumoDispatch = useLumoDispatch as Mock;
+const mockedUseLumoSelector = useLumoSelector as Mock;
 
 describe('useDataLossWarningNotification', () => {
-    const dispatch = jest.fn();
+    const dispatch = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedUseLumoDispatch.mockReturnValue(dispatch);
     });
 

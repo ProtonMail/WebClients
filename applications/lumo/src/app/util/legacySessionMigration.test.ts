@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import { clearSession } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import { getPersistedSessions } from '@proton/shared/lib/authentication/persistedSessionStorage';
@@ -14,16 +16,16 @@ import {
 } from './legacySessionMigration';
 import { canUseNativeAuth, isNativeAuthFlagEnabled, isNativeMobileApp } from './userAgent';
 
-jest.mock('../remote/externalSession', () => ({ buildExternalSessionsViaFork: jest.fn() }));
-jest.mock('../remote/nativeAuthBridge', () => ({ sendSessionMigrationToNative: jest.fn() }));
-jest.mock('./userAgent', () => ({
-    isNativeMobileApp: jest.fn(),
-    canUseNativeAuth: jest.fn(),
-    isNativeAuthFlagEnabled: jest.fn(),
+vi.mock('../remote/externalSession', () => ({ buildExternalSessionsViaFork: vi.fn() }));
+vi.mock('../remote/nativeAuthBridge', () => ({ sendSessionMigrationToNative: vi.fn() }));
+vi.mock('./userAgent', () => ({
+    isNativeMobileApp: vi.fn(),
+    canUseNativeAuth: vi.fn(),
+    isNativeAuthFlagEnabled: vi.fn(),
 }));
-jest.mock('@proton/shared/lib/authentication/persistedSessionStorage', () => ({ getPersistedSessions: jest.fn() }));
-jest.mock('@proton/shared/lib/authentication/handleLogoutFromURL', () => ({ clearSession: jest.fn() }));
-jest.mock('@proton/shared/lib/helpers/browser', () => ({ replaceUrl: jest.fn() }));
+vi.mock('@proton/shared/lib/authentication/persistedSessionStorage', () => ({ getPersistedSessions: vi.fn() }));
+vi.mock('@proton/shared/lib/authentication/handleLogoutFromURL', () => ({ clearSession: vi.fn() }));
+vi.mock('@proton/shared/lib/helpers/browser', () => ({ replaceUrl: vi.fn() }));
 
 const migratedKey = (userId: string) => `lumo:native-session-migrated:${userId}`;
 
@@ -32,8 +34,8 @@ describe('registerNativeMigrationOutcomeHandler', () => {
 
     beforeEach(() => {
         localStorage.clear();
-        jest.clearAllMocks();
-        (getPersistedSessions as jest.Mock).mockReturnValue([]);
+        vi.clearAllMocks();
+        (getPersistedSessions as Mock).mockReturnValue([]);
         registerNativeMigrationOutcomeHandler({ api });
     });
 
@@ -64,7 +66,7 @@ describe('registerNativeMigrationOutcomeHandler', () => {
 
     it('drops the signalled account and clears its flag on a terminal outcome', () => {
         const session = { localID: 1, UserID: 'user-a', UID: 'uid-a' };
-        (getPersistedSessions as jest.Mock).mockReturnValue([session, { localID: 2, UserID: 'user-b', UID: 'uid-b' }]);
+        (getPersistedSessions as Mock).mockReturnValue([session, { localID: 2, UserID: 'user-b', UID: 'uid-b' }]);
         localStorage.setItem(migratedKey('user-a'), '1');
         localStorage.setItem(migratedKey('user-b'), '1');
 
@@ -79,7 +81,7 @@ describe('registerNativeMigrationOutcomeHandler', () => {
     });
 
     it('still clears the flag on terminal when no persisted session matches', () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([]);
+        (getPersistedSessions as Mock).mockReturnValue([]);
         localStorage.setItem(migratedKey('user-a'), '1');
 
         invokeOutcome('user-a', 'terminal');
@@ -90,7 +92,7 @@ describe('registerNativeMigrationOutcomeHandler', () => {
 
     it('does not redirect on terminal when the dropped account is not the active session', () => {
         const session = { localID: 1, UserID: 'user-a', UID: 'uid-a' };
-        (getPersistedSessions as jest.Mock).mockReturnValue([session]);
+        (getPersistedSessions as Mock).mockReturnValue([session]);
         const authentication = { getUID: () => 'uid-other' } as unknown as AuthenticationStore;
         registerNativeMigrationOutcomeHandler({ api, authentication });
 
@@ -102,7 +104,7 @@ describe('registerNativeMigrationOutcomeHandler', () => {
 
     it('redirects to /guest on terminal when the dropped account is the active session', () => {
         const session = { localID: 1, UserID: 'user-a', UID: 'uid-a' };
-        (getPersistedSessions as jest.Mock).mockReturnValue([session]);
+        (getPersistedSessions as Mock).mockReturnValue([session]);
         const authentication = { getUID: () => 'uid-a' } as unknown as AuthenticationStore;
         registerNativeMigrationOutcomeHandler({ api, authentication });
 
@@ -121,21 +123,21 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
 
     beforeEach(() => {
         localStorage.clear();
-        jest.clearAllMocks();
-        (isNativeMobileApp as jest.Mock).mockReturnValue(true);
-        (canUseNativeAuth as jest.Mock).mockReturnValue(true);
-        (isNativeAuthFlagEnabled as jest.Mock).mockReturnValue(true);
+        vi.clearAllMocks();
+        (isNativeMobileApp as Mock).mockReturnValue(true);
+        (canUseNativeAuth as Mock).mockReturnValue(true);
+        (isNativeAuthFlagEnabled as Mock).mockReturnValue(true);
         authentication = { hasSession: () => true } as unknown as AuthenticationStore;
     });
 
     it.each([
-        ['not running inside the native app', () => (isNativeMobileApp as jest.Mock).mockReturnValue(false)],
-        ['the native app is too old for native auth', () => (canUseNativeAuth as jest.Mock).mockReturnValue(false)],
+        ['not running inside the native app', () => (isNativeMobileApp as Mock).mockReturnValue(false)],
+        ['the native app is too old for native auth', () => (canUseNativeAuth as Mock).mockReturnValue(false)],
         [
             // Pushing to a platform whose rollout is still off would strand the account: marked
             // migrated on our side, never adopted on theirs.
             'the native-auth flag is off for this platform',
-            () => (isNativeAuthFlagEnabled as jest.Mock).mockReturnValue(false),
+            () => (isNativeAuthFlagEnabled as Mock).mockReturnValue(false),
         ],
         [
             'there is no logged-in web session',
@@ -144,7 +146,7 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
             },
         ],
     ])('does not fork, push or mark when %s', async (_, disableGuard) => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
         disableGuard();
 
         await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
@@ -155,9 +157,9 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
     });
 
     it('resolves the platform gate from the flags it is given', async () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
-        (buildExternalSessionsViaFork as jest.Mock).mockResolvedValue([{ userId: 'user-a' }]);
-        (sendSessionMigrationToNative as jest.Mock).mockReturnValue(true);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
+        (buildExternalSessionsViaFork as Mock).mockResolvedValue([{ userId: 'user-a' }]);
+        (sendSessionMigrationToNative as Mock).mockReturnValue(true);
 
         await maybeMigrateLegacySessionToNative({
             api: {} as Api,
@@ -171,17 +173,17 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
     });
 
     it('re-pushes once the flag is turned on for the platform', async () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
-        (buildExternalSessionsViaFork as jest.Mock).mockResolvedValue([{ userId: 'user-a' }]);
-        (sendSessionMigrationToNative as jest.Mock).mockReturnValue(true);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
+        (buildExternalSessionsViaFork as Mock).mockResolvedValue([{ userId: 'user-a' }]);
+        (sendSessionMigrationToNative as Mock).mockReturnValue(true);
 
         // Flag off: nothing goes out and, crucially, nothing is marked...
-        (isNativeAuthFlagEnabled as jest.Mock).mockReturnValue(false);
+        (isNativeAuthFlagEnabled as Mock).mockReturnValue(false);
         await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
         expect(localStorage.getItem(migratedKey('user-a'))).toBeNull();
 
         // ...so the account is still eligible on the boot after the rollout reaches it.
-        (isNativeAuthFlagEnabled as jest.Mock).mockReturnValue(true);
+        (isNativeAuthFlagEnabled as Mock).mockReturnValue(true);
         await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
 
         expect(sendSessionMigrationToNative).toHaveBeenCalledTimes(1);
@@ -189,13 +191,13 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
     });
 
     it('forks and marks only accounts not already migrated', async () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([
+        (getPersistedSessions as Mock).mockReturnValue([
             { localID: 1, UserID: 'user-a', UID: 'uid-a' },
             { localID: 2, UserID: 'user-b', UID: 'uid-b' },
         ]);
         localStorage.setItem(migratedKey('user-a'), '1'); // already migrated
-        (buildExternalSessionsViaFork as jest.Mock).mockResolvedValue([{ userId: 'user-b' }]);
-        (sendSessionMigrationToNative as jest.Mock).mockReturnValue(true);
+        (buildExternalSessionsViaFork as Mock).mockResolvedValue([{ userId: 'user-b' }]);
+        (sendSessionMigrationToNative as Mock).mockReturnValue(true);
 
         await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
 
@@ -208,7 +210,7 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
     });
 
     it('does nothing when every account is already migrated', async () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
         localStorage.setItem(migratedKey('user-a'), '1');
 
         await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
@@ -218,10 +220,10 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
     });
 
     it('does not mark accounts migrated when the payloads were not delivered to a native bridge', async () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
-        (buildExternalSessionsViaFork as jest.Mock).mockResolvedValue([{ userId: 'user-a' }]);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 1, UserID: 'user-a', UID: 'uid-a' }]);
+        (buildExternalSessionsViaFork as Mock).mockResolvedValue([{ userId: 'user-a' }]);
         // Bridge not detected / posting failed -> not delivered.
-        (sendSessionMigrationToNative as jest.Mock).mockReturnValue(false);
+        (sendSessionMigrationToNative as Mock).mockReturnValue(false);
 
         await maybeMigrateLegacySessionToNative({ api: {} as Api, authentication, nativeAuthFlags, pathname: '/' });
 
@@ -231,7 +233,7 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
     });
 
     it('reports nothing on the fork path and leaves the account unmarked', async () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 2, UserID: 'user-b', UID: 'uid-b' }]);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 2, UserID: 'user-b', UID: 'uid-b' }]);
 
         await maybeMigrateLegacySessionToNative({
             api: {} as Api,
@@ -248,9 +250,9 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
     });
 
     it('pushes a fork-path account on the next bootstrap', async () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 2, UserID: 'user-b', UID: 'uid-b' }]);
-        (buildExternalSessionsViaFork as jest.Mock).mockResolvedValue([{ userId: 'user-b' }]);
-        (sendSessionMigrationToNative as jest.Mock).mockReturnValue(true);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 2, UserID: 'user-b', UID: 'uid-b' }]);
+        (buildExternalSessionsViaFork as Mock).mockResolvedValue([{ userId: 'user-b' }]);
+        (sendSessionMigrationToNative as Mock).mockReturnValue(true);
 
         // Fork-consume bootstrap: pushes nothing.
         await maybeMigrateLegacySessionToNative({
@@ -273,7 +275,7 @@ describe('maybeMigrateLegacySessionToNative (per-account push)', () => {
 
 describe('consumeNativeSwitchLocalID', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         window.history.replaceState(null, '', '/');
     });
 
@@ -282,7 +284,7 @@ describe('consumeNativeSwitchLocalID', () => {
     });
 
     it("resolves the switch userId (from the URL fragment) to that account's persisted localID", () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([
+        (getPersistedSessions as Mock).mockReturnValue([
             { localID: 3, UserID: 'user-a', UID: 'uid-a' },
             { localID: 7, UserID: 'user-b', UID: 'uid-b' },
         ]);
@@ -292,21 +294,21 @@ describe('consumeNativeSwitchLocalID', () => {
     });
 
     it('returns undefined when the fragment param is absent', () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 3, UserID: 'user-a', UID: 'uid-a' }]);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 3, UserID: 'user-a', UID: 'uid-a' }]);
         window.location.hash = '#foo=bar';
 
         expect(consumeNativeSwitchLocalID('/')).toBeUndefined();
     });
 
     it('returns undefined when no persisted session matches the userId', () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 3, UserID: 'user-a', UID: 'uid-a' }]);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 3, UserID: 'user-a', UID: 'uid-a' }]);
         window.location.hash = `#${NATIVE_SWITCH_USER_ID_PARAM}=user-x`;
 
         expect(consumeNativeSwitchLocalID('/')).toBeUndefined();
     });
 
     it('returns undefined on the fork path even when the param resolves, so fork consumption still runs', () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 3, UserID: 'user-a', UID: 'uid-a' }]);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 3, UserID: 'user-a', UID: 'uid-a' }]);
         window.location.hash = `#${NATIVE_SWITCH_USER_ID_PARAM}=user-a`;
 
         // A defined localID makes loadSession skip maybeConsumeFork, which would silently drop the
@@ -317,7 +319,7 @@ describe('consumeNativeSwitchLocalID', () => {
     });
 
     it('strips the param from the URL so a later reload is no longer pinned to that account', () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 7, UserID: 'user-b', UID: 'uid-b' }]);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 7, UserID: 'user-b', UID: 'uid-b' }]);
         window.location.hash = `#${NATIVE_SWITCH_USER_ID_PARAM}=user-b`;
 
         expect(consumeNativeSwitchLocalID('/')).toBe(7);
@@ -327,7 +329,7 @@ describe('consumeNativeSwitchLocalID', () => {
     });
 
     it('strips the param even when it resolved to nothing, so a stale request cannot linger', () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 3, UserID: 'user-a', UID: 'uid-a' }]);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 3, UserID: 'user-a', UID: 'uid-a' }]);
         window.location.hash = `#${NATIVE_SWITCH_USER_ID_PARAM}=user-x`;
 
         expect(consumeNativeSwitchLocalID('/')).toBeUndefined();
@@ -335,7 +337,7 @@ describe('consumeNativeSwitchLocalID', () => {
     });
 
     it('keeps the rest of the fragment and the search intact', () => {
-        (getPersistedSessions as jest.Mock).mockReturnValue([{ localID: 7, UserID: 'user-b', UID: 'uid-b' }]);
+        (getPersistedSessions as Mock).mockReturnValue([{ localID: 7, UserID: 'user-b', UID: 'uid-b' }]);
         window.history.replaceState(null, '', `/c/123?ref=x#foo=bar&${NATIVE_SWITCH_USER_ID_PARAM}=user-b`);
 
         expect(consumeNativeSwitchLocalID('/c/123')).toBe(7);

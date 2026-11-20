@@ -1,4 +1,3 @@
-import { describe, expect, it } from '@jest/globals';
 import * as XLSX from 'xlsx';
 
 import { convertXlsxToMarkdown, getExcelSheetsFromFile } from './excelSheets';

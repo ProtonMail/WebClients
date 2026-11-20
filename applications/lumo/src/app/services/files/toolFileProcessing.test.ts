@@ -12,7 +12,7 @@ const source = (name: string, binary = false): ToolFile => ({
 });
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 test.each([
@@ -22,7 +22,7 @@ test.each([
     ['document.docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
 ])('uses the upload processor for %s with the existing MIME configuration', async (name, mimeType) => {
     const metadata = { rowCount: { original: 100, processed: 50 }, truncated: true };
-    const processFile = jest.fn(async () => ({
+    const processFile = vi.fn(async () => ({
         id: 'processed',
         type: 'text' as const,
         content: 'converted content',
@@ -48,7 +48,7 @@ test('uses upload image conversion, including HEIC, and sends the processed thum
         atob('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jRZkAAAAASUVORK5CYII='),
         (char) => char.charCodeAt(0)
     );
-    const processFile = jest.fn(async () => ({
+    const processFile = vi.fn(async () => ({
         id: 'processed',
         type: 'image' as const,
         hdImage,
@@ -67,7 +67,7 @@ test('uses upload image conversion, including HEIC, and sends the processed thum
 });
 
 test('rejects unsupported binaries and blocked file types without initializing the worker', async () => {
-    const load = jest.fn();
+    const load = vi.fn();
     for (const file of [source('file.unknown', true), source('design.ai')]) {
         expect((await createToolFileProcessor(true, load)(file)).is_error).toBe(true);
     }
@@ -75,7 +75,7 @@ test('rejects unsupported binaries and blocked file types without initializing t
 });
 
 test('preserves reads of unknown text files and propagates conversion errors', async () => {
-    const processFile = jest.fn(async () => ({
+    const processFile = vi.fn(async () => ({
         id: 'processed',
         type: 'error' as const,
         message: 'No extractable PDF text',

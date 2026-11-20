@@ -1,8 +1,8 @@
 import type { MasterKeysBundle } from '../types';
 import { GenerationRecoveryDb, deleteGuestGenerationRecovery } from './generationRecoveryDb';
 
-jest.mock('../crypto', () => ({
-    ...jest.requireActual('../crypto'),
+vi.mock('../crypto', async () => ({
+    ...(await vi.importActual('../crypto')),
     computeSha256AsBase64: async (input: string) => Buffer.from(input).toString('base64'),
 }));
 
@@ -151,7 +151,7 @@ it('discards checkpoints and usable device keys from the unprotected schema', as
 });
 
 it('rejects guest storage even if account key material is accidentally supplied', async () => {
-    const open = jest.spyOn(indexedDB, 'open');
+    const open = vi.spyOn(indexedDB, 'open');
     try {
         const db = new GenerationRecoveryDb(undefined, () => masterKeys);
         await expect(db.save('chat', { answer: 'private guest answer' }, Date.now() + 60_000)).rejects.toThrow(
@@ -188,7 +188,7 @@ it('deletes legacy guest records and device keys while preserving account checkp
     await deleteGuestGenerationRecovery();
     expect((await indexedDB.databases()).map((database) => database.name)).not.toContain(name);
     expect(await account.get('chat')).toEqual({ answer: 'account answer' });
-    const open = jest.spyOn(indexedDB, 'open');
+    const open = vi.spyOn(indexedDB, 'open');
     try {
         await deleteGuestGenerationRecovery();
         expect(open).not.toHaveBeenCalled();

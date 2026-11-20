@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
@@ -14,39 +15,39 @@ import { useFeatureFlags } from './useFeatureFlags';
 import { useIsLumoSmallScreen } from './useIsLumoSmallScreen';
 import { useLumoFlags } from './useLumoFlags';
 
-jest.mock('../providers/IsGuestProvider', () => ({
-    useIsGuest: jest.fn(),
+vi.mock('../providers/IsGuestProvider', () => ({
+    useIsGuest: vi.fn(),
 }));
-jest.mock('../redux/hooks', () => ({
-    useLumoSelector: jest.fn(),
+vi.mock('../redux/hooks', () => ({
+    useLumoSelector: vi.fn(),
 }));
-jest.mock('../util/artifactCreateSpotlightStorage', () => ({
-    hasSeenArtifactCreateSpotlightLocally: jest.fn(),
-    markArtifactCreateSpotlightSeenLocally: jest.fn(),
+vi.mock('../util/artifactCreateSpotlightStorage', () => ({
+    hasSeenArtifactCreateSpotlightLocally: vi.fn(),
+    markArtifactCreateSpotlightSeenLocally: vi.fn(),
 }));
-jest.mock('./useFeatureFlags', () => ({
-    useFeatureFlags: jest.fn(),
+vi.mock('./useFeatureFlags', () => ({
+    useFeatureFlags: vi.fn(),
 }));
-jest.mock('./useIsLumoSmallScreen', () => ({
-    useIsLumoSmallScreen: jest.fn(),
+vi.mock('./useIsLumoSmallScreen', () => ({
+    useIsLumoSmallScreen: vi.fn(),
 }));
-jest.mock('./useLumoFlags', () => ({
-    useLumoFlags: jest.fn(),
+vi.mock('./useLumoFlags', () => ({
+    useLumoFlags: vi.fn(),
 }));
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    isMobile: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    isMobile: vi.fn(),
 }));
 
-const mockedIsMobile = isMobile as jest.Mock;
-const mockedUseIsGuest = useIsGuest as jest.Mock;
-const mockedUseLumoSelector = useLumoSelector as jest.Mock;
-const mockedUseFeatureFlags = useFeatureFlags as jest.Mock;
-const mockedUseLumoFlags = useLumoFlags as jest.Mock;
-const mockedUseIsLumoSmallScreen = useIsLumoSmallScreen as jest.Mock;
-const mockedHasSeenLocally = hasSeenArtifactCreateSpotlightLocally as jest.Mock;
-const mockedMarkSeenLocally = markArtifactCreateSpotlightSeenLocally as jest.Mock;
+const mockedIsMobile = isMobile as Mock;
+const mockedUseIsGuest = useIsGuest as Mock;
+const mockedUseLumoSelector = useLumoSelector as Mock;
+const mockedUseFeatureFlags = useFeatureFlags as Mock;
+const mockedUseLumoFlags = useLumoFlags as Mock;
+const mockedUseIsLumoSmallScreen = useIsLumoSmallScreen as Mock;
+const mockedHasSeenLocally = hasSeenArtifactCreateSpotlightLocally as Mock;
+const mockedMarkSeenLocally = markArtifactCreateSpotlightSeenLocally as Mock;
 
-const dismissFlag = jest.fn();
+const dismissFlag = vi.fn();
 
 const setup = ({
     artifactsView = true,
@@ -83,17 +84,17 @@ const setup = ({
 
 describe('useArtifactCreateSpotlight', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         // Pin the clock before the New label end date so the tests don't depend on the real date.
-        jest.useFakeTimers({ now: ARTIFACT_NEW_LABEL_END_DATE - 24 * 60 * 60 * 1000 });
+        vi.useFakeTimers({ now: ARTIFACT_NEW_LABEL_END_DATE - 24 * 60 * 60 * 1000 });
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('hides the spotlight and the New label once the end date has passed', () => {
-        jest.setSystemTime(ARTIFACT_NEW_LABEL_END_DATE);
+        vi.setSystemTime(ARTIFACT_NEW_LABEL_END_DATE);
         setup();
 
         const { result } = renderHook(() => useArtifactCreateSpotlight(true));

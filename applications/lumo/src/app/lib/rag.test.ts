@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { SearchService } from '../services/search/searchService';
 import type { Attachment, Message } from '../types';
 import { Role } from '../types';
@@ -8,7 +10,7 @@ import {
     retrieveDocumentContextForProject,
 } from './rag';
 
-jest.mock('../services/search/searchService');
+vi.mock('../services/search/searchService');
 
 const testMessage = (overrides: Partial<Message> & Pick<Message, 'id' | 'role'>): Message => ({
     createdAt: new Date().toISOString(),
@@ -85,20 +87,18 @@ describe('collectContextAttachmentIds', () => {
             }),
         ];
 
-        const ids = collectContextAttachmentIds(chain, [
-            { messageId: 'msg-1', excludedFiles: ['skip.txt'] },
-        ]);
+        const ids = collectContextAttachmentIds(chain, [{ messageId: 'msg-1', excludedFiles: ['skip.txt'] }]);
 
         expect(ids).toEqual(['att-1']);
     });
 });
 
 describe('retrieveDocumentContextForProject', () => {
-    const mockRetrieveForRAG = jest.fn();
+    const mockRetrieveForRAG = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        (SearchService.get as jest.Mock).mockReturnValue({
+        vi.clearAllMocks();
+        (SearchService.get as Mock).mockReturnValue({
             retrieveForRAG: mockRetrieveForRAG,
             formatRAGContext: SearchService.formatRAGContext,
         });
@@ -120,22 +120,15 @@ describe('retrieveDocumentContextForProject', () => {
             },
         ]);
 
-        const result = await retrieveDocumentContextForProject(
-            'summarize project',
-            'space-1',
-            'user-1',
-            true,
-            [],
-            {
-                'upload-1': {
-                    id: 'upload-1',
-                    filename: 'project.txt',
-                    uploadedAt: new Date().toISOString(),
-                    spaceId: 'space-1',
-                    markdown: 'full original content',
-                },
-            }
-        );
+        const result = await retrieveDocumentContextForProject('summarize project', 'space-1', 'user-1', true, [], {
+            'upload-1': {
+                id: 'upload-1',
+                filename: 'project.txt',
+                uploadedAt: new Date().toISOString(),
+                spaceId: 'space-1',
+                markdown: 'full original content',
+            },
+        });
 
         expect(result?.attachments).toHaveLength(1);
         expect(result?.attachments[0]?.id).toBe('upload-1');
@@ -265,9 +258,7 @@ describe('retrieveDocumentContextForProject', () => {
     });
 
     it('skips documents already retrieved from shallow attachments without Redux entries', async () => {
-        mockRetrieveForRAG.mockResolvedValue([
-            { id: 'upload-1', name: 'project.txt', content: 'chunk', score: 10 },
-        ]);
+        mockRetrieveForRAG.mockResolvedValue([{ id: 'upload-1', name: 'project.txt', content: 'chunk', score: 10 }]);
 
         const messageChain: Message[] = [
             testMessage({

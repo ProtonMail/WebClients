@@ -9,7 +9,7 @@ import {
 
 describe('nativeComposerBridgeHelpers - custom lumos', () => {
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('is a no-op when the bridge is unavailable', () => {
@@ -24,7 +24,7 @@ describe('nativeComposerBridgeHelpers - custom lumos', () => {
 
     it('forwards the list to the bridge instance when available', () => {
         const list = [{ id: 'a1', name: 'Writer', icon: 'robot', source: 'personal' as const }];
-        const spy = jest.spyOn((window as any).nativeComposerApiInstance, 'setCustomLumos');
+        const spy = vi.spyOn((window as any).nativeComposerApiInstance, 'setCustomLumos');
 
         setNativeCustomLumos(list);
 
@@ -32,7 +32,7 @@ describe('nativeComposerBridgeHelpers - custom lumos', () => {
     });
 
     it('forwards the selected lumo to the bridge instance when available', () => {
-        const spy = jest.spyOn((window as any).nativeComposerApiInstance, 'setSelectedCustomLumo');
+        const spy = vi.spyOn((window as any).nativeComposerApiInstance, 'setSelectedCustomLumo');
         const lumo = { id: 'a1', name: 'Writer', icon: 'robot', source: 'personal' as const };
 
         setNativeSelectedCustomLumo(lumo);
@@ -43,7 +43,7 @@ describe('nativeComposerBridgeHelpers - custom lumos', () => {
     });
 
     it('onNativeSelectCustomLumo subscribes and unsubscribes from lumo:selectCustomLumo', () => {
-        const handler = jest.fn();
+        const handler = vi.fn();
         const unsubscribe = onNativeSelectCustomLumo(handler);
 
         window.dispatchEvent(new CustomEvent('lumo:selectCustomLumo', { detail: { id: 'a1' } }));
@@ -56,7 +56,7 @@ describe('nativeComposerBridgeHelpers - custom lumos', () => {
     });
 
     it('onNativeClearCustomLumo subscribes and unsubscribes from lumo:clearCustomLumo', () => {
-        const handler = jest.fn();
+        const handler = vi.fn();
         const unsubscribe = onNativeClearCustomLumo(handler);
 
         window.dispatchEvent(new CustomEvent('lumo:clearCustomLumo'));
@@ -70,11 +70,11 @@ describe('nativeComposerBridgeHelpers - custom lumos', () => {
 
 describe('nativeComposerBridgeHelpers - sidebar layout', () => {
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('forwards the layout to the bridge instance when available', () => {
-        const spy = jest.spyOn((window as any).nativeComposerApiInstance, 'setSidebarLayout');
+        const spy = vi.spyOn((window as any).nativeComposerApiInstance, 'setSidebarLayout');
 
         setNativeSidebarLayout({ width: 300, animationDurationMs: 300 });
         expect(spy).toHaveBeenCalledWith({ width: 300, animationDurationMs: 300 });

@@ -4,7 +4,7 @@ import { SLIDES_EVAL_FIXTURES } from '../../../util/slides/eval/slidesEvalFixtur
 import { DeckPreview } from './DeckPreview';
 import type { ParsedArtifact } from './parseArtifacts';
 
-jest.mock('../../../redux/hooks', () => {
+vi.mock('../../../redux/hooks', () => {
     return {
         useLumoSelector: () => {
             return {};
@@ -12,10 +12,10 @@ jest.mock('../../../redux/hooks', () => {
     };
 });
 
-jest.mock('../../../providers/ConversationActionsProvider', () => {
+vi.mock('../../../providers/ConversationActionsProvider', () => {
     return {
         useConversationActions: () => {
-            return { handleSendArtifactAction: jest.fn() };
+            return { handleSendArtifactAction: vi.fn() };
         },
     };
 });
@@ -33,14 +33,14 @@ describe('DeckPreview', () => {
 
     beforeEach(() => {
         // The global mock never reports a size; this one reports the element once it is observed.
-        window.ResizeObserver = jest.fn().mockImplementation((callback: ResizeObserverCallback) => {
+        window.ResizeObserver = vi.fn().mockImplementation(function (callback: ResizeObserverCallback) {
             return {
                 observe: (element: HTMLElement) => {
                     Object.defineProperty(element, 'clientWidth', { configurable: true, value: 800 });
                     callback([], {} as ResizeObserver);
                 },
-                unobserve: jest.fn(),
-                disconnect: jest.fn(),
+                unobserve: vi.fn(),
+                disconnect: vi.fn(),
             };
         });
     });

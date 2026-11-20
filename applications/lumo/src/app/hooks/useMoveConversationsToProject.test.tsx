@@ -12,19 +12,19 @@ import {
 import { movingConversations } from './useMoveConversationToProject';
 import { useMoveConversationsToProject } from './useMoveConversationsToProject';
 
-const createNotification = jest.fn((_options: { text: React.ReactNode; type?: string }) => {
+const createNotification = vi.fn((_options: { text: React.ReactNode; type?: string }) => {
     return 1;
 });
-const hideNotification = jest.fn();
+const hideNotification = vi.fn();
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification, hideNotification }),
 }));
-jest.mock('./useLumoNavigate', () => ({ useLumoNavigate: () => jest.fn() }));
-jest.mock('../util/telemetry', () => ({ sendConversationMoveToProjectEvent: jest.fn() }));
+vi.mock('./useLumoNavigate', () => ({ useLumoNavigate: () => vi.fn() }));
+vi.mock('../util/telemetry', () => ({ sendConversationMoveToProjectEvent: vi.fn() }));
 
 let store: ReturnType<typeof makeStore>;
-jest.mock('../redux/hooks', () => ({
+vi.mock('../redux/hooks', () => ({
     useLumoDispatch: () => store.dispatch,
 }));
 

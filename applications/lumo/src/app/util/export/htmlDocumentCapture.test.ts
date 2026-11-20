@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// happy-dom never fires `load` on an iframe without a URL, which the export code waits for.
 import { captureElementToCanvas, fitCanvasToFrame, mountExportDocument } from './htmlDocumentCapture';
 
 describe('mountExportDocument', () => {
@@ -46,7 +48,7 @@ describe('captureElementToCanvas', () => {
             clonedFrame.setAttribute('data-capture-clone', 'true');
             clonedFrame.setAttribute('sandbox', mounted.iframe.getAttribute('sandbox')!);
             document.body.appendChild(clonedFrame);
-            const render = jest.fn(async (_target: HTMLElement, options: Record<string, unknown>) => {
+            const render = vi.fn(async (_target: HTMLElement, options: Record<string, unknown>) => {
                 const onclone = options.onclone as
                     | ((document: Document, target: HTMLElement) => Promise<void>)
                     | undefined;
@@ -96,13 +98,13 @@ describe('fitCanvasToFrame', () => {
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('letterboxes a slide taller than 16:9 into the exact frame instead of stretching it', () => {
         // jsdom has no canvas backend, so stand in a 2D context that records the draw.
-        const context = { fillStyle: '', fillRect: jest.fn(), drawImage: jest.fn() };
-        jest.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(
+        const context = { fillStyle: '', fillRect: vi.fn(), drawImage: vi.fn() };
+        vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(
             context as unknown as CanvasRenderingContext2D
         );
         const tallSlide = createCanvas(1920, 1600);

@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { SearchService } from '../services/search/searchService';
 import type { Attachment } from '../types';
 import {
@@ -9,15 +11,15 @@ import {
     shouldSkipRagForExplicitFiles,
 } from './resolveProjectFiles';
 
-jest.mock('../services/search/searchService');
+vi.mock('../services/search/searchService');
 
 describe('resolveProjectFiles', () => {
-    const mockEnsureManifestReady = jest.fn().mockResolvedValue(undefined);
-    const mockRetrieveDocumentForMention = jest.fn();
+    const mockEnsureManifestReady = vi.fn().mockResolvedValue(undefined);
+    const mockRetrieveDocumentForMention = vi.fn();
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        (SearchService.get as jest.Mock).mockReturnValue({
+        vi.clearAllMocks();
+        (SearchService.get as Mock).mockReturnValue({
             ensureManifestReady: mockEnsureManifestReady,
             retrieveDocumentForMention: mockRetrieveDocumentForMention,
         });
@@ -193,12 +195,7 @@ describe('resolveProjectFiles', () => {
                 isDriveDocument: true,
             });
 
-            const resolved = await resolveReferencedFilesForSend(
-                'what is in @colours.txt ?',
-                [],
-                'user-1',
-                'space-1'
-            );
+            const resolved = await resolveReferencedFilesForSend('what is in @colours.txt ?', [], 'user-1', 'space-1');
 
             expect(mockEnsureManifestReady).toHaveBeenCalled();
             expect(resolved).toHaveLength(1);

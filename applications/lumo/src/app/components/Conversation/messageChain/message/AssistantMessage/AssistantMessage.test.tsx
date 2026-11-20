@@ -15,12 +15,12 @@ import type { Message } from '../../../../../types';
 import { Role } from '../../../../../types-api';
 import AssistantMessage from './AssistantMessage';
 
-jest.mock('vega-embed', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('vega-embed', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }));
-jest.mock('../../../../../providers/WebSearchProvider', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => false }));
+vi.mock('../../../../../providers/WebSearchProvider', () => ({
     useWebSearch: () => ({ isWebSearchButtonToggled: false }),
 }));
 
@@ -44,7 +44,7 @@ function renderResponse(message: Message, isGenerating = false) {
             contextFilters: () => ({ filters: [] }),
         },
     });
-    const onRetryPanelToggle = jest.fn();
+    const onRetryPanelToggle = vi.fn();
     render(
         <Provider store={store} context={ProtonStoreContext}>
             <IsGuestProvider isGuest>
@@ -52,11 +52,11 @@ function renderResponse(message: Message, isGenerating = false) {
                     <ModelTierContext.Provider
                         value={{
                             modelTier: 'lumo-lite',
-                            setModelTier: jest.fn(),
-                            setModelTierWithoutPersist: jest.fn(),
+                            setModelTier: vi.fn(),
+                            setModelTierWithoutPersist: vi.fn(),
                             responseMode: 'fast',
-                            setResponseMode: jest.fn(),
-                            setResponseModeWithoutPersist: jest.fn(),
+                            setResponseMode: vi.fn(),
+                            setResponseModeWithoutPersist: vi.fn(),
                             isThinkingEnabled: false,
                         }}
                     >
@@ -64,15 +64,15 @@ function renderResponse(message: Message, isGenerating = false) {
                             message={message}
                             isRunning={isGenerating}
                             isGenerating={isGenerating}
-                            siblingInfo={{ idx: 0, count: 1, onPrev: jest.fn(), onNext: jest.fn() }}
+                            siblingInfo={{ idx: 0, count: 1, onPrev: vi.fn(), onNext: vi.fn() }}
                             messageChainRef={{ current: null }}
                             sourcesContainerRef={{ current: null }}
-                            handleRegenerateMessage={jest.fn()}
-                            handleOpenSources={jest.fn()}
-                            handleOpenFiles={jest.fn()}
+                            handleRegenerateMessage={vi.fn()}
+                            handleOpenSources={vi.fn()}
+                            handleOpenFiles={vi.fn()}
                             messageChain={[message]}
-                            onToggleMessageSource={jest.fn()}
-                            onToggleFilesManagement={jest.fn()}
+                            onToggleMessageSource={vi.fn()}
+                            onToggleFilesManagement={vi.fn()}
                             onRetryPanelToggle={onRetryPanelToggle}
                         />
                     </ModelTierContext.Provider>

@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useSkills } from '../../../features/skills/useSkills';
 import useComposerInput from '../../../hooks/useComposerInput';
@@ -8,9 +9,9 @@ import '../../../remote/nativeComposerBridge';
 import { useNativeComposerPromptApi } from './useNativeComposerPromptApi';
 import { useNativeComposerSkillsApi } from './useNativeComposerSkillsApi';
 
-jest.mock('../../../features/skills/useSkills');
-jest.mock('../../../hooks/useLumoFlags');
-jest.mock('../../../redux/hooks');
+vi.mock('../../../features/skills/useSkills');
+vi.mock('../../../hooks/useLumoFlags');
+vi.mock('../../../redux/hooks');
 
 const initialSkill = { id: 'draft', name: 'draft', description: '', instructions: 'Write a draft', enabled: true };
 
@@ -24,20 +25,20 @@ describe('composer Skills integration without a mounted editor', () => {
         Object.defineProperty(navigator, 'userAgent', { configurable: true, value: 'ProtonLumo/2.2.0 (Android 16)' });
         state = { user: { value: { ID: 'account' } }, skills: { status: 'ready', skills: { draft: initialSkill } } };
         listeners = new Set();
-        (useLumoStore as jest.Mock).mockReturnValue({
+        (useLumoStore as Mock).mockReturnValue({
             getState: () => state,
             subscribe: (listener: () => void) => {
                 listeners.add(listener);
                 return () => listeners.delete(listener);
             },
         });
-        (useSkills as jest.Mock).mockReturnValue({ status: 'ready', skills: [initialSkill] });
-        (useLumoFlags as jest.Mock).mockReturnValue({ customAgents: true, externalTools: true });
+        (useSkills as Mock).mockReturnValue({ status: 'ready', skills: [initialSkill] });
+        (useLumoFlags as Mock).mockReturnValue({ customAgents: true, externalTools: true });
     });
     const mount = () =>
         renderHook(
             ({ account, context, enabled }) => {
-                const input = useComposerInput({ onSubmitCallback: jest.fn() });
+                const input = useComposerInput({ onSubmitCallback: vi.fn() });
                 useNativeComposerSkillsApi({ accountId: account, context, enabled, setDraft: input.setValue });
                 return input;
             },
@@ -136,9 +137,9 @@ describe('composer Skills integration without a mounted editor', () => {
         unmount();
     });
     it('sends the applied draft through the existing native send callback', async () => {
-        const send = jest.fn();
+        const send = vi.fn();
         const composer = mount();
-        const prompt = renderHook(() => useNativeComposerPromptApi(send, jest.fn()));
+        const prompt = renderHook(() => useNativeComposerPromptApi(send, vi.fn()));
         let text = '';
         act(() => {
             text = api.invokeSkill(request()).text;

@@ -1,4 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -9,11 +10,11 @@ import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit'
 import { setDebugApiCreditBalance } from '../../services/apiUsageDebugStore';
 import { ApiUsageDashboard } from './ApiUsageDashboard';
 
-jest.mock('@proton/account/paymentStatus/hooks');
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/app-context/useApi');
-jest.mock('./useApiUsageSummary', () => {
+vi.mock('@proton/account/paymentStatus/hooks');
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/app-context/useApi');
+vi.mock('./useApiUsageSummary', () => {
     const dates = Array.from({ length: 90 }, (_, index) => `day-${index}`);
     const fiveCreditsPerDay = dates.slice(-30).map((date) => ({
         Date: date,
@@ -26,12 +27,12 @@ jest.mock('./useApiUsageSummary', () => {
     }));
     return { useApiUsageSummary: () => ({ dates, rows: fiveCreditsPerDay, isLoading: false, error: false }) };
 });
-jest.mock('@proton/account/bootstrap', () => ({
+vi.mock('@proton/account/bootstrap', () => ({
     coreEventManagerV6: () => ({ subscribe: () => () => {}, start: () => {}, reset: () => {} }),
 }));
-jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
-jest.mock('./ApiTokenUsageChart', () => ({ ApiTokenUsageChart: () => null }));
-jest.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
+vi.mock('./ApiTokenUsageChart', () => ({ ApiTokenUsageChart: () => null }));
+vi.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
     LumoCreditsModal: ({ open, onClose }: { open: boolean; onClose: () => void }) =>
         open ? <button onClick={onClose}>Close top-up</button> : null,
 }));
@@ -42,11 +43,11 @@ const setup = (
     response: () => Promise<unknown>,
     { hasSubscription = true, isOrgMember = false }: { hasSubscription?: boolean; isOrgMember?: boolean } = {}
 ) => {
-    const api = jest.fn().mockImplementation(response);
-    (useApi as jest.Mock).mockReturnValue(api);
-    (useUser as jest.Mock).mockReturnValue([{ Credit: 987_654, Currency: 'EUR' }]);
-    (useSubscription as jest.Mock).mockReturnValue([hasSubscription ? { Currency: 'USD' } : undefined]);
-    (usePaymentStatus as jest.Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
+    const api = vi.fn().mockImplementation(response);
+    (useApi as Mock).mockReturnValue(api);
+    (useUser as Mock).mockReturnValue([{ Credit: 987_654, Currency: 'EUR' }]);
+    (useSubscription as Mock).mockReturnValue([hasSubscription ? { Currency: 'USD' } : undefined]);
+    (usePaymentStatus as Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
     render(<ApiUsageDashboard isOrgAdmin={false} isOrgMember={isOrgMember} />);
     return api;
 };

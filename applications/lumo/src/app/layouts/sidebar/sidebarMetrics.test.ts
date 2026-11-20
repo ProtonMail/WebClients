@@ -1,7 +1,7 @@
 import { getNativeSidebarLayout, readSidebarMetrics } from './sidebarMetrics';
 
 const stubCustomProperties = (values: Record<string, string>) => {
-    jest.spyOn(window, 'getComputedStyle').mockReturnValue({
+    vi.spyOn(window, 'getComputedStyle').mockReturnValue({
         getPropertyValue: (name: string) => values[name] ?? '',
     } as unknown as CSSStyleDeclaration);
 };
@@ -10,7 +10,7 @@ const metrics = { expandedWidth: 300, transitionMs: 300 };
 
 describe('readSidebarMetrics', () => {
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('reads the declared width and duration', () => {

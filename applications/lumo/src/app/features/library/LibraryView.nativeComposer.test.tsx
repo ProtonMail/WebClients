@@ -2,34 +2,33 @@ import type { ReactNode } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { fireEvent, render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
+import { useNativeComposerHostVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import { LibraryView } from './LibraryView';
 
-jest.mock('../../providers/IsGuestProvider');
-jest.mock('../../hooks/useLumoFlags', () => ({
+vi.mock('../../providers/IsGuestProvider');
+vi.mock('../../hooks/useLumoFlags', () => ({
     useLumoFlags: () => ({ nativeComposer: true, artifactsView: true, imageTools: true }),
 }));
-jest.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
-jest.mock('../../providers/SidebarProvider', () => ({ useOptionalSidebar: () => ({ isVisible: false }) }));
-jest.mock('../../providers/RightPanelProvider', () => ({ useOptionalRightPanel: () => ({ isOverlay: false }) }));
-jest.mock('../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../layouts/LumoLayout', () => ({
+vi.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
+vi.mock('../../providers/SidebarProvider', () => ({ useOptionalSidebar: () => ({ isVisible: false }) }));
+vi.mock('../../providers/RightPanelProvider', () => ({ useOptionalRightPanel: () => ({ isOverlay: false }) }));
+vi.mock('../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../layouts/LumoLayout', () => ({
     LumoLayoutWithDrawer: ({ children }: { children: ReactNode }) => children,
 }));
-jest.mock('../../util/telemetry', () => ({ sendLibraryOpenedEvent: jest.fn() }));
-jest.mock('../creations/hooks/useGeneratedGalleryCreations', () => ({
+vi.mock('../../util/telemetry', () => ({ sendLibraryOpenedEvent: vi.fn() }));
+vi.mock('../creations/hooks/useGeneratedGalleryCreations', () => ({
     useGeneratedGalleryCreations: () => ({ items: [], status: 'loaded' }),
 }));
-jest.mock('./useLibraryCreationEntries', () => ({ useLibraryCreationEntries: () => [] }));
-jest.mock('./LibraryCreationsTab', () => ({ LibraryCreationsTab: () => null }));
-jest.mock('./LibraryGuestSignInState', () => ({ LibraryGuestSignInState: () => null }));
-jest.mock('../gallery/GalleryView', () => ({
+vi.mock('./useLibraryCreationEntries', () => ({ useLibraryCreationEntries: () => [] }));
+vi.mock('./LibraryCreationsTab', () => ({ LibraryCreationsTab: () => null }));
+vi.mock('./LibraryGuestSignInState', () => ({ LibraryGuestSignInState: () => null }));
+vi.mock('../gallery/GalleryView', () => ({
     GalleryView: () => {
-        const {
-            useNativeComposerHostVisibilityApi,
-        } = require('../../components/Composer/hooks/useNativeComposerVisibilityApi');
         useNativeComposerHostVisibilityApi();
         return null;
     },
@@ -37,7 +36,7 @@ jest.mock('../gallery/GalleryView', () => ({
 
 describe('Library native composer visibility', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         Object.defineProperty(navigator, 'userAgent', {
             configurable: true,
             value: 'ProtonLumo/2.2.0 (iPadOS 27.2; Apple iPad)',
@@ -45,7 +44,7 @@ describe('Library native composer visibility', () => {
     });
 
     it.each([true, false])('hides chat input over the Library landing page (guest: %s)', (isGuest) => {
-        (useIsGuest as jest.Mock).mockReturnValue(isGuest);
+        (useIsGuest as Mock).mockReturnValue(isGuest);
 
         const { unmount } = render(
             <MemoryRouter>
@@ -59,7 +58,7 @@ describe('Library native composer visibility', () => {
     });
 
     it.each([true, false])('only allows image input for a signed-in Images tab (guest: %s)', (isGuest) => {
-        (useIsGuest as jest.Mock).mockReturnValue(isGuest);
+        (useIsGuest as Mock).mockReturnValue(isGuest);
         render(
             <MemoryRouter>
                 <LibraryView isProcessingAttachment={false} />

@@ -1,10 +1,14 @@
-/** @jest-environment-options {"url":"https://lumo.proton.me"} */
 import { render } from '@testing-library/react';
+import type { Mock } from 'vitest';
+
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { ComposerNotificationCard } from './ComposerNotificationCard';
 
-jest.mock('../../hooks/useLumoFlags');
+setLocation('https://lumo.proton.me');
+
+vi.mock('../../hooks/useLumoFlags');
 
 describe('native composer cards', () => {
     it.each([
@@ -16,7 +20,7 @@ describe('native composer cards', () => {
         ['browser', 'Mozilla/5.0', true, 'flex-row', 'flex-1'],
     ])('lays out the %s card for the selected composer', (_name, userAgent, enabled, direction, bodySize) => {
         Object.defineProperty(navigator, 'userAgent', { configurable: true, value: userAgent });
-        (useLumoFlags as jest.Mock).mockReturnValue({ nativeComposer: enabled });
+        (useLumoFlags as Mock).mockReturnValue({ nativeComposer: enabled });
         const { container } = render(
             <ComposerNotificationCard
                 title="Liking Lumo?"

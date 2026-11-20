@@ -8,28 +8,28 @@ import {
 
 import { ConnectorList } from './ConnectorList';
 
-jest.mock('@proton/app-context/useNotifications', () => ({
-    useNotifications: () => ({ createNotification: jest.fn() }),
+vi.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
 
-jest.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
-    getDesktopConnectorCatalog: jest.fn(),
-    supportsDesktopScheduleReadOnly: jest.fn(),
-    useDesktopManifests: jest.fn(),
-    openDesktopSettings: jest.fn(),
+vi.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
+    getDesktopConnectorCatalog: vi.fn(),
+    supportsDesktopScheduleReadOnly: vi.fn(),
+    useDesktopManifests: vi.fn(),
+    openDesktopSettings: vi.fn(),
 }));
 
 beforeEach(() => {
-    jest.mocked(getDesktopConnectorCatalog).mockReturnValue({ categories: [], connectors: [] });
-    jest.mocked(supportsDesktopScheduleReadOnly).mockReturnValue(true);
-    jest.mocked(useDesktopManifests).mockReturnValue({
+    vi.mocked(getDesktopConnectorCatalog).mockReturnValue({ categories: [], connectors: [] });
+    vi.mocked(supportsDesktopScheduleReadOnly).mockReturnValue(true);
+    vi.mocked(useDesktopManifests).mockReturnValue({
         status: 'ready',
         manifests: [{ id: 'mail', display_name: 'Mail', status: { state: 'ready' }, tools: [] }],
     });
 });
 
 test('editing legacy access starts unrestricted and lets the user select read-only access', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     render(<ConnectorList editMode value={[{ id: 'mail', label: 'Mail' }]} onChange={onChange} />);
     expect(screen.queryByRole('button', { name: 'Read only' })).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Add connector' }).closest('fieldset')).toHaveTextContent('Mail');
@@ -41,7 +41,7 @@ test('editing legacy access starts unrestricted and lets the user select read-on
 });
 
 test('the user can allow write tools without removing the connector', () => {
-    const onChange = jest.fn();
+    const onChange = vi.fn();
     render(<ConnectorList editMode value={[{ id: 'mail', label: 'Mail', readOnly: true }]} onChange={onChange} />);
     fireEvent.click(screen.getByRole('button', { name: 'Permissions' }));
     fireEvent.click(screen.getByRole('button', { name: 'Read and write' }));
@@ -49,8 +49,8 @@ test('the user can allow write tools without removing the connector', () => {
 });
 
 test('older desktops disable read-only access but allow an explicit change to read and write', () => {
-    jest.mocked(supportsDesktopScheduleReadOnly).mockReturnValue(false);
-    const onChange = jest.fn();
+    vi.mocked(supportsDesktopScheduleReadOnly).mockReturnValue(false);
+    const onChange = vi.fn();
     render(<ConnectorList editMode value={[{ id: 'mail', label: 'Mail', readOnly: true }]} onChange={onChange} />);
     fireEvent.click(screen.getByRole('button', { name: 'Permissions' }));
     const readOnly = screen.getByRole('button', { name: 'Read only' });
@@ -63,8 +63,8 @@ test('older desktops disable read-only access but allow an explicit change to re
 });
 
 test.each([true, false])('new connector selections stay unrestricted when read-only support is %s', (supported) => {
-    jest.mocked(supportsDesktopScheduleReadOnly).mockReturnValue(supported);
-    const onChange = jest.fn();
+    vi.mocked(supportsDesktopScheduleReadOnly).mockReturnValue(supported);
+    const onChange = vi.fn();
     render(<ConnectorList editMode value={[]} onChange={onChange} />);
     fireEvent.click(screen.getByRole('button', { name: 'Add connector' }));
     fireEvent.click(screen.getByRole('button', { name: 'Mail' }));

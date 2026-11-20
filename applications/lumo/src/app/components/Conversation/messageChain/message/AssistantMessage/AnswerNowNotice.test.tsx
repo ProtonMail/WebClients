@@ -25,18 +25,18 @@ const createStore = () => {
     });
 };
 let store = createStore();
-jest.mock('../../../../../redux/hooks', () => ({ useLumoDispatch: () => store.dispatch }));
-const api = jest.fn();
-const createNotification = jest.fn();
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => api }));
-jest.mock('@proton/app-context/useNotifications', () => ({ useNotifications: () => ({ createNotification }) }));
+vi.mock('../../../../../redux/hooks', () => ({ useLumoDispatch: () => store.dispatch }));
+const api = vi.fn();
+const createNotification = vi.fn();
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => api }));
+vi.mock('@proton/app-context/useNotifications', () => ({ useNotifications: () => ({ createNotification }) }));
 const prompt: AnswerNowPrompt = {
     object: 'lumo.answer_now',
     job_id: 'job-1',
     wait: 4000,
 };
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     store = createStore();
 });
 it('switches in place, accepts an empty 204 response, and disables duplicate clicks', async () => {

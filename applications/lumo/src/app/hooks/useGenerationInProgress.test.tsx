@@ -6,14 +6,14 @@ import { generationRegistry } from '../services/generation/generationRegistry';
 import useComposerInput from './useComposerInput';
 import { useGenerationInProgress } from './useGenerationInProgress';
 
-jest.mock('@proton/shared/lib/helpers/browser', () => ({ isMobile: () => false }));
+vi.mock('@proton/shared/lib/helpers/browser', () => ({ isMobile: () => false }));
 
 afterEach(() => {
     act(() => generationRegistry.abortAll());
 });
 
 it('preserves the follow-up draft until Stop finalization releases the generation', () => {
-    const send = jest.fn();
+    const send = vi.fn();
     const { result } = renderHook(() => {
         const isGenerating = useGenerationInProgress('chat');
         const input = useComposerInput({ isGenerating, onSubmitCallback: send, content: 'Follow-up question' });

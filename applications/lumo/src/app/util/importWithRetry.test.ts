@@ -25,14 +25,14 @@ describe('isChunkLoadError', () => {
 
 describe('importWithRetry', () => {
     it('should return the module when the first load succeeds', async () => {
-        const load = jest.fn().mockResolvedValue('module');
+        const load = vi.fn().mockResolvedValue('module');
 
         await expect(importWithRetry(load, { delayMs: 0 })).resolves.toBe('module');
         expect(load).toHaveBeenCalledTimes(1);
     });
 
     it('should retry chunk load failures until the load succeeds', async () => {
-        const load = jest
+        const load = vi
             .fn()
             .mockRejectedValueOnce(networkError())
             .mockRejectedValueOnce(chunkLoadError())
@@ -43,7 +43,7 @@ describe('importWithRetry', () => {
     });
 
     it('should retry a load that throws synchronously, like importScripts', async () => {
-        const load = jest
+        const load = vi
             .fn()
             .mockImplementationOnce(() => {
                 throw networkError();
@@ -56,7 +56,7 @@ describe('importWithRetry', () => {
 
     it('should throw the last error once the retries are used up', async () => {
         const error = networkError();
-        const load = jest.fn().mockRejectedValue(error);
+        const load = vi.fn().mockRejectedValue(error);
 
         await expect(importWithRetry(load, { retries: 2, delayMs: 0 })).rejects.toBe(error);
         expect(load).toHaveBeenCalledTimes(3);
@@ -64,7 +64,7 @@ describe('importWithRetry', () => {
 
     it('should not retry errors other than chunk load failures', async () => {
         const error = new Error('Module failed to start');
-        const load = jest.fn().mockRejectedValue(error);
+        const load = vi.fn().mockRejectedValue(error);
 
         await expect(importWithRetry(load, { delayMs: 0 })).rejects.toBe(error);
         expect(load).toHaveBeenCalledTimes(1);

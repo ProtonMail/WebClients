@@ -38,7 +38,7 @@ describe('native file download bridge', () => {
     describe('saveFileViaNativeBridge', () => {
         it('forwards prefix-stripped base64, mime type and name to saveBase64File', async () => {
             stubFileReader('data:text/markdown;base64,QUJD');
-            const saveBase64File = jest.fn();
+            const saveBase64File = vi.fn();
             (window as any).Android = { saveBase64File };
 
             const blob = new Blob(['ABC'], { type: 'text/markdown' });
@@ -50,7 +50,7 @@ describe('native file download bridge', () => {
 
         it('falls back to application/octet-stream when the blob has no type', async () => {
             stubFileReader('data:application/octet-stream;base64,QUJD');
-            const saveBase64File = jest.fn();
+            const saveBase64File = vi.fn();
             (window as any).Android = { saveBase64File };
 
             const blob = new Blob(['ABC']); // no type
@@ -62,14 +62,14 @@ describe('native file download bridge', () => {
 
         it('returns false on an old Android shell that only has saveBase64Image', async () => {
             stubFileReader('data:text/markdown;base64,QUJD');
-            (window as any).Android = { saveBase64Image: jest.fn() };
+            (window as any).Android = { saveBase64Image: vi.fn() };
 
             expect(await saveFileViaNativeBridge(new Blob(['ABC'], { type: 'text/markdown' }), 'chat.md')).toBe(false);
         });
 
         it('never routes a file to the iOS saveImage handler', async () => {
             stubFileReader('data:text/markdown;base64,QUJD');
-            const postMessage = jest.fn();
+            const postMessage = vi.fn();
             (window as any).webkit = { messageHandlers: { saveImage: { postMessage } } };
 
             expect(await saveFileViaNativeBridge(new Blob(['ABC'], { type: 'text/markdown' }), 'chat.md')).toBe(false);
@@ -84,11 +84,11 @@ describe('native file download bridge', () => {
         it('returns false instead of throwing when the native method blows up', async () => {
             stubFileReader('data:text/markdown;base64,QUJD');
             (window as any).Android = {
-                saveBase64File: jest.fn(() => {
+                saveBase64File: vi.fn(() => {
                     throw new Error('native boom');
                 }),
             };
-            jest.spyOn(console, 'error').mockImplementation(() => {});
+            vi.spyOn(console, 'error').mockImplementation(() => {});
 
             expect(await saveFileViaNativeBridge(new Blob(['ABC'], { type: 'text/markdown' }), 'chat.md')).toBe(false);
         });
@@ -97,8 +97,8 @@ describe('native file download bridge', () => {
     describe('image bridge is unaffected by the file bridge', () => {
         it('still uses saveBase64Image when both methods exist', async () => {
             stubFileReader('data:image/png;base64,QUJD');
-            const saveBase64Image = jest.fn();
-            const saveBase64File = jest.fn();
+            const saveBase64Image = vi.fn();
+            const saveBase64File = vi.fn();
             (window as any).Android = { saveBase64Image, saveBase64File };
 
             expect(await saveImageViaNativeBridge(new Blob(['ABC'], { type: 'image/png' }), 'x.png')).toBe(true);

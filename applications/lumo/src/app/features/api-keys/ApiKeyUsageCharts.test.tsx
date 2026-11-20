@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { ApiKeyUsageExpanded } from './ApiKeyUsageCharts';
 
-jest.mock('./ApiTokenUsageChart', () => ({
+vi.mock('./ApiTokenUsageChart', () => ({
     ApiTokenUsageChart: ({ days }: { days: unknown[] }) => (
         <div data-testid="token-usage-chart">{JSON.stringify(days)}</div>
     ),

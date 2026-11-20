@@ -7,10 +7,10 @@ import { STOPPED_SCHEDULE_SNAPSHOT, type ScheduleServiceSnapshot } from '../../s
 import { SpaceType } from '../../types';
 import { useScheduleRunState } from './useScheduleRunState';
 
-jest.mock('../../providers/ScheduleServiceContext', () => ({ useScheduleService: jest.fn() }));
-jest.mock('../../redux/hooks', () => ({ useLumoSelector: jest.fn() }));
-jest.mock('../../redux/selectors', () => ({
-    selectLatestRunsByScheduleId: jest.fn(),
+vi.mock('../../providers/ScheduleServiceContext', () => ({ useScheduleService: vi.fn() }));
+vi.mock('../../redux/hooks', () => ({ useLumoSelector: vi.fn() }));
+vi.mock('../../redux/selectors', () => ({
+    selectLatestRunsByScheduleId: vi.fn(),
     selectSpaceById: (id: string) => (state: { spaces: Record<string, unknown> }) => state.spaces[id],
 }));
 
@@ -25,8 +25,8 @@ const run = {
 
 describe('useScheduleRunState', () => {
     beforeEach(() => {
-        jest.mocked(useScheduleService).mockReturnValue(null);
-        jest.mocked(useLumoSelector).mockImplementation((selector) => {
+        vi.mocked(useScheduleService).mockReturnValue(null);
+        vi.mocked(useLumoSelector).mockImplementation((selector) => {
             if (selector === selectLatestRunsByScheduleId) return {};
             return selector({ spaces: {} } as never);
         });
@@ -35,7 +35,7 @@ describe('useScheduleRunState', () => {
     it('allows a task behind the queue head to request an extra run, then disables it when it becomes next', () => {
         const other = { ...run, runId: 'other-run', scheduleId: 'other' };
         let snapshot: ScheduleServiceSnapshot = { ...STOPPED_SCHEDULE_SNAPSHOT, pendingRuns: [other, run] };
-        jest.mocked(useScheduleService).mockReturnValue({
+        vi.mocked(useScheduleService).mockReturnValue({
             subscribe: () => () => {},
             getSnapshot: () => snapshot,
         } as never);
@@ -65,8 +65,8 @@ describe('useScheduleRunState', () => {
     it('reacts to queued, running, and finished snapshots and ignores other schedules', () => {
         let snapshot: ScheduleServiceSnapshot = { ...STOPPED_SCHEDULE_SNAPSHOT, pendingRuns: [run] };
         let notify = () => {};
-        const unsubscribe = jest.fn();
-        jest.mocked(useScheduleService).mockReturnValue({
+        const unsubscribe = vi.fn();
+        vi.mocked(useScheduleService).mockReturnValue({
             subscribe: (listener: () => void) => {
                 notify = listener;
                 return unsubscribe;
@@ -120,7 +120,7 @@ describe('useScheduleRunState', () => {
     });
 
     it('reads paused state without treating a persisted conversation as active', () => {
-        jest.mocked(useLumoSelector).mockImplementation((selector) => {
+        vi.mocked(useLumoSelector).mockImplementation((selector) => {
             if (selector === selectLatestRunsByScheduleId) {
                 return {
                     schedule: {
@@ -154,7 +154,7 @@ describe('useScheduleRunState', () => {
             activeRunId: run.runId,
             unsettledRuns: [{ ...run, status: 'running' }],
         };
-        jest.mocked(useScheduleService).mockReturnValue({
+        vi.mocked(useScheduleService).mockReturnValue({
             subscribe: () => () => {},
             getSnapshot: () => snapshot,
         } as never);

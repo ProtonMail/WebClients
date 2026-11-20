@@ -1,4 +1,5 @@
 import { act, render } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useQueryParam } from '../../../hooks/useQueryParam';
 import { sendArtifactFullscreenToggledEvent, sendArtifactPanelOpenedEvent } from '../../../util/telemetry';
@@ -6,11 +7,11 @@ import { ArtifactProvider, useArtifactContext } from './ArtifactContext';
 import type { ArtifactRegistry } from './artifactRegistry';
 import { useArtifactRegistry } from './useArtifactRegistry';
 
-jest.mock('../../../hooks/useQueryParam', () => {
-    return { useQueryParam: jest.fn() };
+vi.mock('../../../hooks/useQueryParam', () => {
+    return { useQueryParam: vi.fn() };
 });
 
-jest.mock('../../../hooks/useLumoFlags', () => {
+vi.mock('../../../hooks/useLumoFlags', () => {
     return {
         useLumoFlags: () => {
             return { artifactsView: false };
@@ -18,15 +19,15 @@ jest.mock('../../../hooks/useLumoFlags', () => {
     };
 });
 
-jest.mock('../../../redux/hooks', () => {
+vi.mock('../../../redux/hooks', () => {
     return {
         useLumoDispatch: () => {
-            return jest.fn();
+            return vi.fn();
         },
     };
 });
 
-jest.mock('../../../providers/RightPanelProvider', () => {
+vi.mock('../../../providers/RightPanelProvider', () => {
     return {
         useOptionalRightPanel: () => {
             return undefined;
@@ -34,7 +35,7 @@ jest.mock('../../../providers/RightPanelProvider', () => {
     };
 });
 
-jest.mock('../../../providers/ArtifactPanelHostProvider', () => {
+vi.mock('../../../providers/ArtifactPanelHostProvider', () => {
     return {
         useOptionalArtifactPanelHostActions: () => {
             return undefined;
@@ -42,7 +43,7 @@ jest.mock('../../../providers/ArtifactPanelHostProvider', () => {
     };
 });
 
-jest.mock('../../../util/telemetry', () => {
+vi.mock('../../../util/telemetry', () => {
     return {
         bucketArtifactPanelOpenDuration: () => {
             return 'lt_10s';
@@ -50,28 +51,28 @@ jest.mock('../../../util/telemetry', () => {
         capArtifactPosition: (position: number) => {
             return position;
         },
-        sendArtifactCreatedEvent: jest.fn(),
-        sendArtifactFullscreenToggledEvent: jest.fn(),
-        sendArtifactPanelClosedEvent: jest.fn(),
-        sendArtifactPanelOpenedEvent: jest.fn(),
-        sendArtifactRevisedEvent: jest.fn(),
-        sendArtifactToolCallInvalidEvent: jest.fn(),
+        sendArtifactCreatedEvent: vi.fn(),
+        sendArtifactFullscreenToggledEvent: vi.fn(),
+        sendArtifactPanelClosedEvent: vi.fn(),
+        sendArtifactPanelOpenedEvent: vi.fn(),
+        sendArtifactRevisedEvent: vi.fn(),
+        sendArtifactToolCallInvalidEvent: vi.fn(),
     };
 });
 
-jest.mock('./artifactVersionTelemetry', () => {
+vi.mock('./artifactVersionTelemetry', () => {
     return {
         collectArtifactVersionTelemetry: () => {
             return { events: [], consumedMessageIds: [] };
         },
-        consumeArtifactTelemetryLiveMessages: jest.fn(),
+        consumeArtifactTelemetryLiveMessages: vi.fn(),
         getArtifactTelemetryLiveMessages: () => {
             return [];
         },
     };
 });
 
-jest.mock('./artifactAssetSyncSupport', () => {
+vi.mock('./artifactAssetSyncSupport', () => {
     return {
         artifactTypeSupportsAssetSync: () => {
             return false;
@@ -79,13 +80,13 @@ jest.mock('./artifactAssetSyncSupport', () => {
     };
 });
 
-jest.mock('./useArtifactRegistry', () => {
-    return { useArtifactRegistry: jest.fn() };
+vi.mock('./useArtifactRegistry', () => {
+    return { useArtifactRegistry: vi.fn() };
 });
 
-const useQueryParamMock = useQueryParam as jest.Mock;
-const useArtifactRegistryMock = useArtifactRegistry as jest.Mock;
-const sendPanelOpenedMock = sendArtifactPanelOpenedEvent as jest.Mock;
+const useQueryParamMock = useQueryParam as Mock;
+const useArtifactRegistryMock = useArtifactRegistry as Mock;
+const sendPanelOpenedMock = sendArtifactPanelOpenedEvent as Mock;
 
 const createEntry = (id: string) => {
     return {
@@ -224,7 +225,7 @@ describe('ArtifactProvider ?artifact= deep link', () => {
 });
 
 describe('ArtifactProvider fullscreen telemetry', () => {
-    const sendFullscreenToggledMock = sendArtifactFullscreenToggledEvent as jest.Mock;
+    const sendFullscreenToggledMock = sendArtifactFullscreenToggledEvent as Mock;
 
     beforeEach(() => {
         sendFullscreenToggledMock.mockClear();

@@ -32,9 +32,9 @@ import { Role, SpaceType } from '../types';
 import type { SerializedAttachment, SerializedMessage } from '../types';
 import { sendMessageWithRedux } from './lumoApiClientRedux';
 
-jest.mock('@proton/app-context/useApi');
-jest.mock('../hooks/useLumoFlags');
-jest.mock('../redux/hooks');
+vi.mock('@proton/app-context/useApi');
+vi.mock('../hooks/useLumoFlags');
+vi.mock('../redux/hooks');
 
 Object.assign(globalThis, { TransformStream });
 
@@ -54,7 +54,7 @@ it.each([
     { mode: 'resumed', image: 'none', stopAt: 'before-save' },
     { mode: 'resumed', image: 'none', stopAt: 'after-save' },
 ])('acknowledges $mode generation, image upload $image, stop $stopAt', async ({ mode, image, stopAt }) => {
-    jest.spyOn(generationRegistry, 'canRecover').mockReturnValue(true);
+    vi.spyOn(generationRegistry, 'canRecover').mockReturnValue(true);
     const withImage = image !== 'none';
     const resuming = mode !== 'normal';
     const titleOnly = mode.startsWith('resumed-title');
@@ -135,7 +135,9 @@ it.each([
     } as unknown as DbApi;
     extraThunkArguments.dbApi = dbApi;
     const channel = stdChannel();
-    const postMessage = jest.fn<Promise<string>, [NewMessageToApi, Priority]>(async () => 'remote-assistant');
+    const postMessage = vi.fn<(...args: [NewMessageToApi, Priority]) => Promise<string>>(
+        async () => 'remote-assistant'
+    );
     const pushes: Promise<unknown>[] = [];
     const uploads: string[] = [];
     const dispatch = ((action: UnknownAction | ReturnType<typeof sendMessageWithRedux>) => {
@@ -161,7 +163,7 @@ it.each([
         }
         return action;
     }) as LumoDispatch;
-    const api = jest.fn<Promise<ReadableStream>, [FetchConfig]>(
+    const api = vi.fn<(...args: [FetchConfig]) => Promise<ReadableStream>>(
         async () =>
             new ReadableStream({
                 start(controller) {
@@ -187,8 +189,8 @@ it.each([
         return streamApi(request);
     });
     const writeCheckpoint = recovery.save.bind(recovery);
-    const removeCheckpoint = jest.spyOn(recovery, 'remove');
-    jest.spyOn(recovery, 'save').mockImplementation(async (id, value, expiresAt, jobId) => {
+    const removeCheckpoint = vi.spyOn(recovery, 'remove');
+    vi.spyOn(recovery, 'save').mockImplementation(async (id, value, expiresAt, jobId) => {
         if (stopAt !== 'never' && !stopped && (value as RecoveryRecord).checkpoint.phase === 'completed') {
             if (stopAt === 'after-save') {
                 await writeCheckpoint(id, value, expiresAt, jobId);
@@ -204,11 +206,11 @@ it.each([
         await writeCheckpoint(id, value, expiresAt, jobId);
     });
     let unmount: (() => void) | undefined;
-    jest.mocked(useApi).mockReturnValue(api as unknown as Api);
-    jest.mocked(useLumoStore).mockReturnValue({ dispatch, getState: () => state } as ReturnType<typeof useLumoStore>);
-    jest.mocked(useLumoSelector).mockReturnValue(masterKey);
-    jest.mocked(useLumoFlags).mockReturnValue({ resumableGeneration: true } as ReturnType<typeof useLumoFlags>);
-    jest.spyOn(document, 'visibilityState', 'get').mockReturnValue('visible');
+    vi.mocked(useApi).mockReturnValue(api as unknown as Api);
+    vi.mocked(useLumoStore).mockReturnValue({ dispatch, getState: () => state } as ReturnType<typeof useLumoStore>);
+    vi.mocked(useLumoSelector).mockReturnValue(masterKey);
+    vi.mocked(useLumoFlags).mockReturnValue({ resumableGeneration: true } as ReturnType<typeof useLumoFlags>);
+    vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('visible');
     try {
         if (image === 'uploaded') {
             dispatch(
@@ -334,7 +336,7 @@ it.each([
         attachmentDataCache.delete('image');
         channel.close();
         generationRegistry.abortAll();
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
         extraThunkArguments.dbApi = originalDb;
         extraThunkArguments.api = originalApi;
         await recovery.dispose();

@@ -15,7 +15,7 @@ import { READ_KNOWLEDGE_TOOL_NAME, SEARCH_KNOWLEDGE_TOOL_NAME } from './schema';
  * files. A case passes when every file the answer needs was reached. The old pre-send search
  * (RAG) runs on the same questions for comparison.
  *
- * Known gaps use `it.failing`: when ranking improves enough to find them, Jest reports the
+ * Known gaps use `it.failing`: when ranking improves enough to find them, Vitest reports the
  * unexpected pass, and the case should become a regular one.
  *
  * Set RETRIEVAL_REPORT=1 to print a per-question table of both paths, including the tools
@@ -27,11 +27,11 @@ const index = SearchService.get();
 beforeAll(async () => {
     await index.clearDriveDocuments();
     await index.indexDocuments(toDriveDocuments());
-    jest.spyOn(SearchService, 'get').mockReturnValue(index);
+    vi.spyOn(SearchService, 'get').mockReturnValue(index);
 });
 
 afterAll(async () => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
     await index.clearDriveDocuments();
 });
 
@@ -106,7 +106,7 @@ describe('lookup tools', () => {
         }
     );
 
-    it.failing.each(gaps.map((testCase) => [testCase.question, testCase.knownGap] as const))(
+    it.fails.each(gaps.map((testCase) => [testCase.question, testCase.knownGap] as const))(
         'known gap: "%s" (%s)',
         async (question) => {
             const testCase = gaps.find((gap) => gap.question === question)!;

@@ -13,18 +13,18 @@ import {
 import { normalizeDocumentCardFences } from './artifactVizCards';
 import { renderChartsInSlideContent, slideContentNeedsChartPass } from './presentationCharts';
 
-jest.mock('vega-embed', () => ({
+vi.mock('vega-embed', () => ({
     __esModule: true,
-    default: jest.fn().mockResolvedValue({
+    default: vi.fn().mockResolvedValue({
         view: {
-            run: jest.fn(),
-            resize: jest.fn(),
-            toSVG: jest.fn().mockResolvedValue('<svg>fixture-chart</svg>'),
-            finalize: jest.fn(),
+            run: vi.fn(),
+            resize: vi.fn(),
+            toSVG: vi.fn().mockResolvedValue('<svg>fixture-chart</svg>'),
+            finalize: vi.fn(),
         },
     }),
 }));
-jest.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
+vi.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
 
 /**
  * Format-boundary regression tests: chat viz fences vs artifact renderers.

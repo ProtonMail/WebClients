@@ -1,9 +1,11 @@
+import type { Mock } from 'vitest';
+
 import { artifactTypeSupportsAssetSync } from './artifactAssetSyncSupport';
 import { buildArtifactAssetFile } from './buildArtifactAssetFile';
 
-jest.mock('./artifactSourceDownload', () => {
+vi.mock('./artifactSourceDownload', () => {
     return {
-        buildArtifactSourceDownloadFile: jest.fn(async () => {
+        buildArtifactSourceDownloadFile: vi.fn(async () => {
             return {
                 data: '# Title',
                 fileName: 'My Doc.md',
@@ -24,7 +26,8 @@ describe('artifactTypeSupportsAssetSync', () => {
 
 describe('buildArtifactAssetFile', () => {
     it('delegates to buildArtifactSourceDownloadFile', async () => {
-        const { buildArtifactSourceDownloadFile } = jest.requireMock('./artifactSourceDownload');
+        const { buildArtifactSourceDownloadFile } =
+            await vi.importMock<Record<string, Mock>>('./artifactSourceDownload');
         const artifact = {
             id: 'a',
             type: 'document' as const,

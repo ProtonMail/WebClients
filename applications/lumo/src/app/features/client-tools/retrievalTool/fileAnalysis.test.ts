@@ -135,7 +135,7 @@ describe('analyzeFile', () => {
         };
 
         const allowed = makeAsk(reply);
-        const allowedReserve = jest.fn(() => {
+        const allowedReserve = vi.fn(() => {
             return true;
         });
         const merged = await analyzeFile({

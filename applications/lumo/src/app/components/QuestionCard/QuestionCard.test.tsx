@@ -28,7 +28,7 @@ const questions: QuestionCardChoiceQuestion[] = [
 ];
 
 const renderCard = (questionSet = questions) => {
-    const onSubmit = jest.fn();
+    const onSubmit = vi.fn();
     return {
         ...render(<QuestionCard questions={questionSet} onSubmit={onSubmit} />),
         onSubmit,

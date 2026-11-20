@@ -9,16 +9,17 @@ import type { LumoDispatch } from '../../redux/store';
 import { markModelsUnavailable } from '../../services/modelsStore';
 import { runGenerationWithCompaction } from './compactionFlow';
 
-jest.mock('../../lib/lumoApiClientRedux', () => ({ sendMessageWithRedux: jest.fn() }));
-jest.mock('../../llm/compaction', () => ({
-    ...jest.requireActual('../../llm/compaction'),
-    compactConversation: jest.fn(),
+vi.mock('../../lib/lumoApiClientRedux', () => ({ sendMessageWithRedux: vi.fn() }));
+vi.mock('../../llm/compaction', async () => ({
+    ...(await vi.importActual<Record<string, unknown>>('../../llm/compaction')),
+    compactConversation: vi.fn(),
 }));
-jest.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
+vi.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
     isDesktopEnvironment: () => true,
-    createDesktopClientToolExecutor: jest.fn(),
+    createDesktopClientToolExecutor: vi.fn(),
 }));
-jest.mock('./artifact/createArtifactTool', () => ({
+vi.mock('./artifact/createArtifactTool', async (importOriginal) => ({
+    ...(await importOriginal<Record<string, unknown>>()),
     createArtifactToolExecutor: () => ({
         getClientTools: async () => [{ type: 'function', function: { name: 'create_artifact', parameters: {} } }],
         canExecute: (name: string) => name === 'create_artifact',
@@ -31,7 +32,7 @@ function run(executor?: ClientToolExecutor, artifacts = true, retryAfterToolExec
         typeof action === 'function' ? action(dispatch, () => ({})) : action) as LumoDispatch;
     return dispatch(
         runGenerationWithCompaction({
-            api: jest.fn() as Api,
+            api: vi.fn() as Api,
             conversationId: 'conversation',
             spaceId: 'space',
             assistantMessageId: 'assistant',
@@ -46,7 +47,7 @@ function run(executor?: ClientToolExecutor, artifacts = true, retryAfterToolExec
 }
 
 beforeAll(() => markModelsUnavailable());
-beforeEach(() => jest.clearAllMocks());
+beforeEach(() => vi.clearAllMocks());
 
 it('composes artifacts with supplied connector permissions without creating a default desktop executor', async () => {
     const restricted: ClientToolExecutor = {
@@ -54,9 +55,9 @@ it('composes artifacts with supplied connector permissions without creating a de
             { type: 'function', function: { name: 'calendar__read', description: '', parameters: {} } },
         ],
         canExecute: (name) => name === 'calendar__read',
-        execute: jest.fn(async () => [{ content: 'calendar' }]),
+        execute: vi.fn(async () => [{ content: 'calendar' }]),
     };
-    jest.mocked(sendMessageWithRedux).mockImplementation(
+    vi.mocked(sendMessageWithRedux).mockImplementation(
         (_api, _turns, options) =>
             (async () => {
                 const tools = options?.clientToolExecutor!;
@@ -80,7 +81,7 @@ it('composes artifacts with supplied connector permissions without creating a de
 
 it('keeps selected connectors when artifacts are disabled and returns failed generation status', async () => {
     const restricted: ClientToolExecutor = { canExecute: (name) => name === 'calendar__read', execute: async () => [] };
-    jest.mocked(sendMessageWithRedux).mockImplementation(
+    vi.mocked(sendMessageWithRedux).mockImplementation(
         (_api, _turns, options) =>
             (async () => {
                 expect(options?.clientToolExecutor?.canExecute('calendar__read')).toBe(true);
@@ -93,7 +94,7 @@ it('keeps selected connectors when artifacts are disabled and returns failed gen
 
 it('does not compact and retry a background generation after a tool may have acted', async () => {
     const restricted: ClientToolExecutor = { canExecute: () => true, execute: async () => [{ content: 'email sent' }] };
-    jest.mocked(sendMessageWithRedux).mockImplementation(
+    vi.mocked(sendMessageWithRedux).mockImplementation(
         (_api, _turns, options) =>
             (async () => {
                 await options?.clientToolExecutor?.execute([{ id: 'call', name: 'mail__send', arguments: '{}' }]);
@@ -105,13 +106,13 @@ it('does not compact and retry a background generation after a tool may have act
 });
 
 it('refreshes connector schemas on later tool rounds', async () => {
-    const getClientTools = jest
+    const getClientTools = vi
         .fn()
         .mockResolvedValueOnce([{ type: 'function', function: { name: 'first', parameters: {} } }])
         .mockResolvedValueOnce([{ type: 'function', function: { name: 'first', parameters: {} } }])
         .mockResolvedValueOnce([{ type: 'function', function: { name: 'second', parameters: {} } }]);
     const executor: ClientToolExecutor = { getClientTools, canExecute: () => true, execute: async () => [] };
-    jest.mocked(sendMessageWithRedux).mockImplementation(
+    vi.mocked(sendMessageWithRedux).mockImplementation(
         (_api, _turns, options) =>
             (async () => {
                 const tools = options?.clientToolExecutor!;
@@ -127,9 +128,9 @@ it('refreshes connector schemas on later tool rounds', async () => {
 
 it('leaves schema-discovery failures to the send path and its cleanup', async () => {
     const failure = new Error('Desktop bridge unavailable');
-    const getClientTools = jest.fn().mockRejectedValue(failure);
+    const getClientTools = vi.fn().mockRejectedValue(failure);
     const executor: ClientToolExecutor = { getClientTools, canExecute: () => true, execute: async () => [] };
-    jest.mocked(sendMessageWithRedux).mockImplementation(
+    vi.mocked(sendMessageWithRedux).mockImplementation(
         (_api, _turns, options) =>
             (async () => {
                 await expect(options?.clientToolExecutor?.getClientTools?.()).rejects.toBe(failure);

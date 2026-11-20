@@ -27,10 +27,10 @@ afterEach(() => {
 function setup() {
     let current = true;
     const snapshot: ScheduleServiceSnapshot = { status: 'ready', pendingRuns: [], unsettledRuns: [] };
-    const service = { getSnapshot: () => snapshot, refresh: jest.fn(async () => {}) };
+    const service = { getSnapshot: () => snapshot, refresh: vi.fn(async () => {}) };
     const results = {
-        getResult: jest.fn(async (_id: string) => result),
-        listResults: jest.fn(async () => [result]),
+        getResult: vi.fn(async (_id: string) => result),
+        listResults: vi.fn(async () => [result]),
     };
     const detach = attachScheduleDebug({ service, results, isCurrentAccount: () => current });
     return {

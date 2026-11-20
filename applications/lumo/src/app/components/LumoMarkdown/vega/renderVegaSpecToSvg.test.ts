@@ -1,11 +1,11 @@
 import { renderVegaSpecToPng } from './renderVegaSpecToSvg';
 
-const mockEmbed = jest.fn();
-jest.mock('vega-embed', () => ({
+const mockEmbed = vi.fn();
+vi.mock('vega-embed', () => ({
     __esModule: true,
     default: (...args: unknown[]) => mockEmbed(...args),
 }));
-jest.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
+vi.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
 
 // A PNG header for a 1300 × 760 image: signature, then IHDR with big-endian width and height.
 function pngDataUrl(width: number, height: number): string {
@@ -19,9 +19,9 @@ function pngDataUrl(width: number, height: number): string {
 
 describe('renderVegaSpecToPng', () => {
     it('returns the PNG bytes and its CSS-pixel size measured from the image at the given scale', async () => {
-        const toImageURL = jest.fn().mockResolvedValue(pngDataUrl(1300, 760));
-        const finalize = jest.fn();
-        mockEmbed.mockResolvedValue({ view: { run: jest.fn(), resize: jest.fn(), toImageURL, finalize } });
+        const toImageURL = vi.fn().mockResolvedValue(pngDataUrl(1300, 760));
+        const finalize = vi.fn();
+        mockEmbed.mockResolvedValue({ view: { run: vi.fn(), resize: vi.fn(), toImageURL, finalize } });
 
         const png = await renderVegaSpecToPng('{"mark":"bar","data":{"values":[{"a":1}]}}');
 

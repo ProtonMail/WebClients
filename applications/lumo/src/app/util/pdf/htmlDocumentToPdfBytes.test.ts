@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+// happy-dom never fires `load` on an iframe without a URL, which the export code waits for.
 import type * as HtmlDocumentCaptureModule from '../export/htmlDocumentCapture';
 import {
     computeDocumentPageStarts,
@@ -9,8 +11,8 @@ const measureMocks = {
     captureTargetHeight: undefined as number | undefined,
 };
 
-jest.mock('../export/htmlDocumentCapture', () => {
-    const actual = jest.requireActual('../export/htmlDocumentCapture') as typeof HtmlDocumentCaptureModule;
+vi.mock('../export/htmlDocumentCapture', async () => {
+    const actual = (await vi.importActual('../export/htmlDocumentCapture')) as typeof HtmlDocumentCaptureModule;
 
     return {
         ...actual,
@@ -24,19 +26,19 @@ jest.mock('../export/htmlDocumentCapture', () => {
     };
 });
 
-const mockAddImage = jest.fn();
-const mockAddPage = jest.fn();
-const mockOutput = jest.fn(() => {
+const mockAddImage = vi.fn();
+const mockAddPage = vi.fn();
+const mockOutput = vi.fn(() => {
     return new ArrayBuffer(8);
 });
-const mockGetWidth = jest.fn(() => {
+const mockGetWidth = vi.fn(() => {
     return 595;
 });
-const mockGetHeight = jest.fn(() => {
+const mockGetHeight = vi.fn(() => {
     return 842;
 });
 
-const mockJsPDF = jest.fn(() => {
+const mockJsPDF = vi.fn(function () {
     return {
         internal: {
             pageSize: {
@@ -57,17 +59,17 @@ const createCanvas = (width: number, height: number): HTMLCanvasElement => {
     return canvas;
 };
 
-const mockHtml2canvas = jest.fn(async (element: HTMLElement, options?: { height?: number }) => {
+const mockHtml2canvas = vi.fn(async (element: HTMLElement, options?: { height?: number }) => {
     return createCanvas(element.offsetWidth || 794, options?.height ?? (element.offsetHeight || 400));
 });
 
-jest.mock('jspdf', () => {
+vi.mock('jspdf', () => {
     return {
         jsPDF: mockJsPDF,
     };
 });
 
-jest.mock('html2canvas', () => {
+vi.mock('html2canvas', () => {
     return {
         __esModule: true,
         default: mockHtml2canvas,
@@ -76,7 +78,7 @@ jest.mock('html2canvas', () => {
 
 describe('htmlDocumentToPdfBytes', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         measureMocks.captureTargetHeight = undefined;
         mockGetWidth.mockReturnValue(595);
         mockGetHeight.mockReturnValue(842);
@@ -116,7 +118,7 @@ describe('htmlDocumentToPdfBytes', () => {
         measureMocks.captureTargetHeight = 10000;
 
         const html = `<!DOCTYPE html><html><head><style>.pdf-export-body { margin: 0; }</style></head><body><article class="artifact-markdown"><p>Tall document</p></article></body></html>`;
-        const onProgress = jest.fn();
+        const onProgress = vi.fn();
 
         await htmlDocumentToPdfBytes(html, { pageMarginPt: 54, onProgress });
 
@@ -201,13 +203,13 @@ describe('htmlDocumentToPdfBytes', () => {
 
 describe('htmlSlideDocumentsToPdfBytes', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockGetWidth.mockReturnValue(595);
         mockGetHeight.mockReturnValue(842);
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
         document.querySelectorAll('[data-pdf-export-root]').forEach((node) => {
             node.remove();
         });
@@ -237,7 +239,7 @@ describe('htmlSlideDocumentsToPdfBytes', () => {
             return createCanvas(1920, 1080);
         });
         // jsdom has no canvas backend, so toDataURL would otherwise return null.
-        jest.spyOn(HTMLCanvasElement.prototype, 'toDataURL').mockReturnValue('data:image/png;base64,AA==');
+        vi.spyOn(HTMLCanvasElement.prototype, 'toDataURL').mockReturnValue('data:image/png;base64,AA==');
 
         await htmlSlideDocumentsToPdfBytes(
             [`<!DOCTYPE html><html><body><section class="artifact-slide-page"><h2>One</h2></section></body></html>`],
@@ -254,7 +256,7 @@ describe('htmlSlideDocumentsToPdfBytes', () => {
     });
 
     it('reports progress while rendering slide documents', async () => {
-        const onProgress = jest.fn();
+        const onProgress = vi.fn();
         const slideDocuments = [
             `<!DOCTYPE html><html><body><section><h2>One</h2></section></body></html>`,
             `<!DOCTYPE html><html><body><section><h2>Two</h2></section></body></html>`,

@@ -23,8 +23,8 @@ const setup = () => {
         markdown: 'Private document contents',
     };
     const records = new Map<string, SerializedAttachment>();
-    const getAttachmentById = jest.fn(async (id: string) => records.get(id));
-    const updateAttachment = jest.fn(async (value: SerializedAttachment, flags: { dirty: boolean }) => {
+    const getAttachmentById = vi.fn(async (id: string) => records.get(id));
+    const updateAttachment = vi.fn(async (value: SerializedAttachment, flags: { dirty: boolean }) => {
         records.set(value.id, { ...value, ...flags });
     });
     const dbApi = { getAttachmentById, updateAttachment } as unknown as DbApi;
@@ -33,7 +33,7 @@ const setup = () => {
 
 afterEach(() => {
     attachmentDataCache.clear();
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
 });
 
 it('writes a large attachment once, keeps bytes out of repeated checkpoints, and restores offline', async () => {

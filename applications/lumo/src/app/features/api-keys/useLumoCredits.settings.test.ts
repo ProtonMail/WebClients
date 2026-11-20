@@ -1,4 +1,5 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useApi } from '@proton/app-context/useApi';
 import type { LumoCreditResponse } from '@proton/payments/core/api/lumoCredit';
@@ -6,8 +7,8 @@ import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit'
 
 import { useLumoCredits } from './useLumoCredits';
 
-jest.mock('@proton/app-context/useApi');
-jest.mock('@proton/account/bootstrap', () => ({
+vi.mock('@proton/app-context/useApi');
+vi.mock('@proton/account/bootstrap', () => ({
     coreEventManagerV6: () => ({ subscribe: () => () => {}, start: () => {}, reset: () => {} }),
 }));
 
@@ -20,15 +21,15 @@ const credits = (autoTopUp: Partial<LumoCreditResponse['AutoTopUp']> = {}): Lumo
 });
 
 const setup = (response: LumoCreditResponse, failingUrls: string[] = []) => {
-    const api = jest.fn(({ url }: { url: string }) =>
+    const api = vi.fn(({ url }: { url: string }) =>
         failingUrls.includes(url) ? Promise.reject(new Error(url)) : Promise.resolve(response)
     );
-    (useApi as jest.Mock).mockReturnValue(api);
+    (useApi as Mock).mockReturnValue(api);
     const { result } = renderHook(() => useLumoCredits());
     return { api, result };
 };
 
-const callsTo = (api: jest.Mock, url: string) => api.mock.calls.filter(([config]) => config.url === url);
+const callsTo = (api: Mock, url: string) => api.mock.calls.filter(([config]) => config.url === url);
 
 const savedSettings = {
     autoTopUp: { enabled: true, amount: 40, threshold: 15 },
@@ -85,7 +86,13 @@ describe('useLumoCredits balance settings', () => {
                 {
                     url: autoTopUpUrl,
                     method: 'put',
-                    data: { Enabled: true, Quantity: 40, Threshold: 15, SpendingLimitEnabled: true, SpendingLimit: 300 },
+                    data: {
+                        Enabled: true,
+                        Quantity: 40,
+                        Threshold: 15,
+                        SpendingLimitEnabled: true,
+                        SpendingLimit: 300,
+                    },
                     silence: true,
                 },
             ],
@@ -105,12 +112,12 @@ describe('useLumoCredits balance settings', () => {
 
     it('keeps the balance when the refetch after a save fails', async () => {
         const response = credits({ Enabled: true, Threshold: 20, Quantity: 75 });
-        const api = jest
+        const api = vi
             .fn()
             .mockResolvedValueOnce(response)
             .mockResolvedValueOnce(response)
             .mockRejectedValueOnce(new Error('offline'));
-        (useApi as jest.Mock).mockReturnValue(api);
+        (useApi as Mock).mockReturnValue(api);
         const { result } = renderHook(() => useLumoCredits());
         await waitFor(() => expect(result.current.loading).toBe(false));
 

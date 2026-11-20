@@ -4,8 +4,8 @@ import { useIsLumoSmallScreen } from '../hooks/useIsLumoSmallScreen';
 import { RightPanelProvider, useRightPanel } from '../providers/RightPanelProvider';
 import { LumoLayoutWithDrawer } from './LumoLayout';
 
-jest.mock('../hooks/useIsLumoSmallScreen');
-jest.mock('../components/Conversation/Header', () => ({ Header: () => null }));
+vi.mock('../hooks/useIsLumoSmallScreen');
+vi.mock('../components/Conversation/Header', () => ({ Header: () => null }));
 
 // Like ProjectDetailView, subscribe to panel state and recreate drawer content on render.
 const ProjectLayout = ({ revision }: { revision: number }) => {
@@ -19,7 +19,7 @@ const ProjectLayout = ({ revision }: { revision: number }) => {
 };
 
 it.each([true, false])('preserves the user panel choice across rerenders (small screen: %s)', (isSmallScreen) => {
-    jest.mocked(useIsLumoSmallScreen).mockReturnValue({ isSmallScreen, isMediumScreen: false });
+    vi.mocked(useIsLumoSmallScreen).mockReturnValue({ isSmallScreen, isMediumScreen: false });
     const view = (revision: number) => (
         <RightPanelProvider>
             <ProjectLayout revision={revision} />

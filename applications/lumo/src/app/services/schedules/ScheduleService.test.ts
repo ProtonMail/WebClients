@@ -1,3 +1,5 @@
+import type { Mocked } from 'vitest';
+
 import type {
     DesktopSchedulesApi,
     ScheduleDefinition,
@@ -37,7 +39,7 @@ function deferred<T>() {
 function mockMethod<T extends (...args: never[]) => unknown>(
     implementation: (...args: Parameters<T>) => ReturnType<T>
 ) {
-    return jest.fn<ReturnType<T>, Parameters<T>>(implementation);
+    return vi.fn<(...args: Parameters<T>) => ReturnType<T>>(implementation);
 }
 
 const services: ScheduleService[] = [];
@@ -52,10 +54,10 @@ function harness({
 } = {}) {
     const records = new Map(runs.map((run) => [run.runId, { ...run }]));
     const listeners = new Set<(event: ScheduleWorkAvailable) => void>();
-    const unsubscribed = jest.fn();
+    const unsubscribed = vi.fn();
     let current = true;
     let connections = 0;
-    const bridge: jest.Mocked<DesktopSchedulesApi> = {
+    const bridge: Mocked<DesktopSchedulesApi> = {
         connect: mockMethod<DesktopSchedulesApi['connect']>(async () => ({
             connectionId: `connection-${++connections}`,
             protocolVersion: 1 as const,
@@ -85,10 +87,10 @@ function harness({
             };
         }),
     };
-    const taskSource: jest.Mocked<ScheduleSource> = {
+    const taskSource: Mocked<ScheduleSource> = {
         list: mockMethod<ScheduleSource['list']>(async () => [{ ...definition }]),
     };
-    const runExecutor: jest.Mocked<ScheduleExecutor> = {
+    const runExecutor: Mocked<ScheduleExecutor> = {
         execute: mockMethod<ScheduleExecutor['execute']>(async () => 'succeeded' as const),
         claim: mockMethod<ScheduleExecutor['claim']>(async () => true),
         reconcile: mockMethod<ScheduleExecutor['reconcile']>(async () => undefined),
@@ -118,10 +120,10 @@ function harness({
     };
 }
 
-beforeEach(() => jest.useFakeTimers());
+beforeEach(() => vi.useFakeTimers());
 afterEach(() => {
     for (const service of services.splice(0)) service.stop();
-    jest.useRealTimers();
+    vi.useRealTimers();
 });
 
 it('connects and observes cached work without mutating it until dependencies are supplied', async () => {
@@ -177,7 +179,7 @@ it('reconnects after a connection error and polls for a missed work notification
     await h.service.start();
     expect(h.service.getSnapshot().status).toBe('error');
     h.records.set(pendingRun.runId, { ...pendingRun });
-    await jest.advanceTimersByTimeAsync(1_000);
+    await vi.advanceTimersByTimeAsync(1_000);
     expect(h.bridge.connect).toHaveBeenCalledTimes(2);
     expect(h.runExecutor.execute).toHaveBeenCalledTimes(1);
     expect(h.bridge.reportRunStatus.mock.calls.every(([call]) => call.connectionId === 'connection-2')).toBe(true);
@@ -306,7 +308,7 @@ it('an account change while source loading prevents subsequent bridge writes', a
     await started;
     expect(h.bridge.replaceSchedules).not.toHaveBeenCalled();
     expect(h.bridge.reportRunStatus).not.toHaveBeenCalled();
-    await jest.advanceTimersByTimeAsync(1_000);
+    await vi.advanceTimersByTimeAsync(1_000);
     expect(h.service.getSnapshot().status).toBe('stopped');
 });
 
@@ -323,7 +325,7 @@ it('reserves before acknowledging a pending run', async () => {
     const reservation = deferred<boolean>();
     h.runExecutor.claim.mockReturnValue(reservation.promise);
     const started = h.service.start();
-    await jest.advanceTimersByTimeAsync(0);
+    await vi.advanceTimersByTimeAsync(0);
     expect(h.runExecutor.claim).toHaveBeenCalledTimes(1);
     expect(h.bridge.reportRunStatus).not.toHaveBeenCalled();
     expect(h.runExecutor.execute).not.toHaveBeenCalled();
@@ -370,13 +372,13 @@ it('continues processing other schedules when one claim repeatedly fails', async
         if (run.runId === pendingRun.runId) throw new SchedulePersistenceError('Space has not synced');
         return true;
     });
-    const log = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const log = vi.spyOn(console, 'error').mockImplementation(() => {});
     try {
         await h.service.start();
         expect(h.records.get(pendingRun.runId)?.status).toBe('pending');
         expect(h.records.get(second.runId)?.status).toBe('succeeded');
         expect(h.service.getSnapshot()).toMatchObject({ status: 'ready', pendingRuns: [pendingRun] });
-        await jest.advanceTimersByTimeAsync(1_000);
+        await vi.advanceTimersByTimeAsync(1_000);
         expect(h.runExecutor.execute).toHaveBeenCalledTimes(1);
         expect(h.runExecutor.claim.mock.calls.filter(([run]) => run.runId === pendingRun.runId)).toHaveLength(2);
         expect(h.bridge.connect).toHaveBeenCalledTimes(1);

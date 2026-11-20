@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import './paymentBridge';
 
 const UID = 'test-uid';
@@ -18,20 +20,20 @@ const mockResponse = (status: number, text: string) => ({ status, text: async ()
 const getApi = () => (window as any).paymentApiInstance;
 
 const lastFetchCall = () => {
-    const fetchMock = global.fetch as jest.Mock;
+    const fetchMock = global.fetch as Mock;
     return fetchMock.mock.calls[fetchMock.mock.calls.length - 1] as [string, RequestInit];
 };
 
 describe('paymentApiInstance.apiRequest', () => {
     beforeEach(() => {
-        global.fetch = jest.fn();
+        global.fetch = vi.fn();
         setUserAgent(ANDROID_UA);
         getApi().setUid(UID);
     });
 
     it('resolves 200 with the parsed body', async () => {
         const plans = { Code: 1000, Plans: [{ Name: 'lumo2024' }] };
-        (global.fetch as jest.Mock).mockResolvedValue(mockResponse(200, JSON.stringify(plans)));
+        (global.fetch as Mock).mockResolvedValue(mockResponse(200, JSON.stringify(plans)));
 
         const result = await getApi().apiRequest({ method: 'GET', endpoint: '/payments/v5/plans', body: null });
 
@@ -39,7 +41,7 @@ describe('paymentApiInstance.apiRequest', () => {
     });
 
     it('prefixes the endpoint with /api and sends the session UID', async () => {
-        (global.fetch as jest.Mock).mockResolvedValue(mockResponse(200, '{}'));
+        (global.fetch as Mock).mockResolvedValue(mockResponse(200, '{}'));
 
         await getApi().apiRequest({ method: 'GET', endpoint: '/payments/v6/status/google', body: null });
 
@@ -50,7 +52,7 @@ describe('paymentApiInstance.apiRequest', () => {
     });
 
     it('sends the body byte-identical to the string it was given', async () => {
-        (global.fetch as jest.Mock).mockResolvedValue(mockResponse(200, '{"Code":1000,"Token":"abc"}'));
+        (global.fetch as Mock).mockResolvedValue(mockResponse(200, '{"Code":1000,"Token":"abc"}'));
         const body = '{"Amount":499,"Currency":"CHF","Payment":{"InAppGooglePayload":{"orderID":"GPA.1"}}}';
 
         const result = await getApi().apiRequest({ method: 'POST', endpoint: '/payments/v5/tokens', body });
@@ -62,7 +64,7 @@ describe('paymentApiInstance.apiRequest', () => {
     });
 
     it('omits the body for GET', async () => {
-        (global.fetch as jest.Mock).mockResolvedValue(mockResponse(200, '{}'));
+        (global.fetch as Mock).mockResolvedValue(mockResponse(200, '{}'));
 
         await getApi().apiRequest({ method: 'GET', endpoint: '/payments/v5/subscription', body: null });
 
@@ -72,7 +74,7 @@ describe('paymentApiInstance.apiRequest', () => {
     // The inversion of normal HTTP client behaviour: the SDK reads Status to decide whether a
     // call is retryable, so a non-2xx must never surface as a rejection.
     it.each([400, 401, 422, 500])('resolves rather than rejects on %i', async (status) => {
-        (global.fetch as jest.Mock).mockResolvedValue(mockResponse(status, '{"Code":2001,"Error":"nope"}'));
+        (global.fetch as Mock).mockResolvedValue(mockResponse(status, '{"Code":2001,"Error":"nope"}'));
 
         await expect(
             getApi().apiRequest({ method: 'POST', endpoint: '/payments/v5/subscription', body: '{}' })
@@ -80,7 +82,7 @@ describe('paymentApiInstance.apiRequest', () => {
     });
 
     it('resolves with a null body when the response has no body', async () => {
-        (global.fetch as jest.Mock).mockResolvedValue(mockResponse(500, ''));
+        (global.fetch as Mock).mockResolvedValue(mockResponse(500, ''));
 
         await expect(
             getApi().apiRequest({ method: 'GET', endpoint: '/payments/v5/plans', body: null })
@@ -88,7 +90,7 @@ describe('paymentApiInstance.apiRequest', () => {
     });
 
     it('resolves with a null body when the response is not JSON', async () => {
-        (global.fetch as jest.Mock).mockResolvedValue(mockResponse(502, '<html>Bad Gateway</html>'));
+        (global.fetch as Mock).mockResolvedValue(mockResponse(502, '<html>Bad Gateway</html>'));
 
         await expect(
             getApi().apiRequest({ method: 'GET', endpoint: '/payments/v5/plans', body: null })
@@ -96,7 +98,7 @@ describe('paymentApiInstance.apiRequest', () => {
     });
 
     it('does not apply the getSubscriptions 422 special case', async () => {
-        (global.fetch as jest.Mock).mockResolvedValue(mockResponse(422, '{"Code":22110}'));
+        (global.fetch as Mock).mockResolvedValue(mockResponse(422, '{"Code":22110}'));
 
         const result = await getApi().apiRequest({ method: 'GET', endpoint: '/payments/v5/subscription', body: null });
 
@@ -104,7 +106,7 @@ describe('paymentApiInstance.apiRequest', () => {
     });
 
     it('rejects when no HTTP response was received', async () => {
-        (global.fetch as jest.Mock).mockRejectedValue(new TypeError('Failed to fetch'));
+        (global.fetch as Mock).mockRejectedValue(new TypeError('Failed to fetch'));
 
         await expect(
             getApi().apiRequest({ method: 'GET', endpoint: '/payments/v5/plans', body: null })
@@ -122,7 +124,7 @@ describe('paymentApiInstance.apiRequest', () => {
 
     describe('x-pm-appversion', () => {
         const appVersion = async () => {
-            (global.fetch as jest.Mock).mockResolvedValue(mockResponse(200, '{}'));
+            (global.fetch as Mock).mockResolvedValue(mockResponse(200, '{}'));
             await getApi().apiRequest({ method: 'GET', endpoint: '/payments/v5/plans', body: null });
             return (lastFetchCall()[1].headers as Record<string, string>)['x-pm-appversion'];
         };

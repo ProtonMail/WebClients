@@ -1,13 +1,14 @@
 import { renderHook } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import '../../../remote/nativeComposerBridge';
 import { useNativeComposerHostVisibilityApi, useNativeComposerVisibilityApi } from './useNativeComposerVisibilityApi';
 
-jest.mock('../../../hooks/useLumoFlags');
-jest.mock('../../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: true }) }));
-jest.mock('../../../providers/SidebarProvider', () => ({ useOptionalSidebar: () => ({ isVisible: false }) }));
-jest.mock('../../../providers/RightPanelProvider', () => ({ useOptionalRightPanel: () => ({ isOverlay: false }) }));
+vi.mock('../../../hooks/useLumoFlags');
+vi.mock('../../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: true }) }));
+vi.mock('../../../providers/SidebarProvider', () => ({ useOptionalSidebar: () => ({ isVisible: false }) }));
+vi.mock('../../../providers/RightPanelProvider', () => ({ useOptionalRightPanel: () => ({ isOverlay: false }) }));
 
 const api = () => (window as any).nativeComposerApiInstance;
 
@@ -17,12 +18,12 @@ describe('native composer selection sent by its host', () => {
             configurable: true,
             value: 'ProtonLumo/2.2.0 (iPadOS 27.2; Apple iPad)',
         });
-        (useLumoFlags as jest.Mock).mockReturnValue({ nativeComposer: true });
+        (useLumoFlags as Mock).mockReturnValue({ nativeComposer: true });
         const host = renderHook(() => useNativeComposerHostVisibilityApi());
         const modal = renderHook(() => useNativeComposerVisibilityApi({ hideComposer: true }));
         expect(api().getState().isVisible).toBe(false);
 
-        (useLumoFlags as jest.Mock).mockReturnValue({ nativeComposer: false });
+        (useLumoFlags as Mock).mockReturnValue({ nativeComposer: false });
         host.rerender();
         modal.rerender();
         modal.unmount();
@@ -41,7 +42,7 @@ describe('native composer selection sent by its host', () => {
         ['browser', 'Mozilla/5.0', true, false],
     ])('uses one composer for %s', (_name, userAgent, enabled, native) => {
         Object.defineProperty(navigator, 'userAgent', { configurable: true, value: userAgent });
-        (useLumoFlags as jest.Mock).mockReturnValue({ nativeComposer: enabled });
+        (useLumoFlags as Mock).mockReturnValue({ nativeComposer: enabled });
         api().toggleComposerVisibility(false);
 
         const { result } = renderHook(() => useNativeComposerHostVisibilityApi());

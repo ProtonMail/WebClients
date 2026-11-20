@@ -26,11 +26,11 @@ import {
     useConversationAttention,
 } from './ConversationAttentionProvider';
 
-jest.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
-    ...jest.requireActual('@proton/lumo-api-client/core/desktop-tools'),
-    getPendingToolApprovals: jest.fn(),
-    isDesktopEnvironment: jest.fn(),
-    subscribeToolApprovals: jest.fn(),
+vi.mock('@proton/lumo-api-client/core/desktop-tools', async () => ({
+    ...(await vi.importActual('@proton/lumo-api-client/core/desktop-tools')),
+    getPendingToolApprovals: vi.fn(),
+    isDesktopEnvironment: vi.fn(),
+    subscribeToolApprovals: vi.fn(),
 }));
 
 const createdAt = '2026-01-01T09:00:00Z';
@@ -85,9 +85,9 @@ interface SetupOptions {
 function setup({ conversations = [chat], messages = [], desktop = false, path = '/' }: SetupOptions = {}) {
     let approvals: DesktopToolApprovalRequest[] = [];
     const listeners = new Set<() => void>();
-    jest.mocked(isDesktopEnvironment).mockReturnValue(desktop);
-    jest.mocked(getPendingToolApprovals).mockImplementation(() => approvals);
-    jest.mocked(subscribeToolApprovals).mockImplementation((listener) => {
+    vi.mocked(isDesktopEnvironment).mockReturnValue(desktop);
+    vi.mocked(getPendingToolApprovals).mockImplementation(() => approvals);
+    vi.mocked(subscribeToolApprovals).mockImplementation((listener) => {
         listeners.add(listener);
         return () => {
             listeners.delete(listener);
@@ -148,7 +148,7 @@ it('keeps the attention context stable for text chunks and updates it as soon as
     const { result, store } = setup({ messages: [{ ...message, blocks: [...message.blocks, nextCall] }] });
     const beforeChunk = result.current;
     expect(beforeChunk.chatAttention).toBe('card:reply:first-question');
-    const onStoreUpdate = jest.fn();
+    const onStoreUpdate = vi.fn();
     const unsubscribe = store.subscribe(onStoreUpdate);
 
     act(() => {

@@ -14,16 +14,16 @@ let mockHasLumoPlus = false;
 let mockIsSmallScreen = false;
 let mockShowSchedules = false;
 
-jest.mock('../../providers/ConversationAttentionProvider', () => ({
-    ...jest.requireActual('../../providers/ConversationAttentionProvider'),
-    useAttentionKeys: jest.fn(),
+vi.mock('../../providers/ConversationAttentionProvider', async () => ({
+    ...(await vi.importActual('../../providers/ConversationAttentionProvider')),
+    useAttentionKeys: vi.fn(),
 }));
 
-jest.mock('../../providers/SidebarProvider', () => ({ useSidebar: jest.fn() }));
-jest.mock('../../providers/LumoPlanProvider', () => ({
+vi.mock('../../providers/SidebarProvider', () => ({ useSidebar: vi.fn() }));
+vi.mock('../../providers/LumoPlanProvider', () => ({
     useLumoPlan: () => ({ hasLumoPlus: mockHasLumoPlus }),
 }));
-jest.mock('../../layouts/sidebar/hooks/useSidebarVisibility', () => ({
+vi.mock('../../layouts/sidebar/hooks/useSidebarVisibility', () => ({
     useSidebarVisibility: () => ({
         isGuest: false,
         isSmallScreen: mockIsSmallScreen,
@@ -87,21 +87,21 @@ it.each([
         showProjectConversationsInHistory,
         spaceType,
     }) => {
-        const toggle = jest.fn();
+        const toggle = vi.fn();
         mockHasLumoPlus = hasLumoPlus;
         mockIsSmallScreen = isSmallScreen;
         mockShowSchedules = showSchedules;
-        jest.mocked(useSidebar).mockReturnValue({
+        vi.mocked(useSidebar).mockReturnValue({
             isVisible,
             toggle,
             isSmallScreen,
             smallScreenMode: 'hidden',
             largeScreenMode: isVisible ? 'expanded' : 'hidden',
             animateTransitions: false,
-            closeOverlay: jest.fn(),
-            closeOnItemClick: jest.fn(),
+            closeOverlay: vi.fn(),
+            closeOnItemClick: vi.fn(),
         });
-        jest.mocked(useAttentionKeys).mockReturnValue({
+        vi.mocked(useAttentionKeys).mockReturnValue({
             byConversation: new Map([['chat', attention]]),
             bySpace: new Map(),
         });

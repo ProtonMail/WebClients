@@ -16,7 +16,7 @@ const makeState = (memories: Memory[]) =>
 
 describe('appendGeneratedMemoriesThunk', () => {
     it('advances the cursor when a generated memory is persisted', () => {
-        const dispatch = jest.fn();
+        const dispatch = vi.fn();
         const generated: Memory = {
             id: 'new',
             content: 'Uses Rust for command line applications',
@@ -24,9 +24,8 @@ describe('appendGeneratedMemoriesThunk', () => {
             source: 'generated',
         };
 
-        const added = appendGeneratedMemoriesThunk([generated], '2026-08-14T12:00:00.000Z')(
-            dispatch,
-            () => makeState([existing])
+        const added = appendGeneratedMemoriesThunk([generated], '2026-08-14T12:00:00.000Z')(dispatch, () =>
+            makeState([existing])
         );
 
         expect(added).toBe(1);
@@ -36,12 +35,12 @@ describe('appendGeneratedMemoriesThunk', () => {
     });
 
     it('does not advance the cursor when no generated memory is persisted', () => {
-        const dispatch = jest.fn();
+        const dispatch = vi.fn();
 
-        const added = appendGeneratedMemoriesThunk(
-            [{ ...existing, id: 'duplicate' }],
-            '2026-08-14T12:00:00.000Z'
-        )(dispatch, () => makeState([existing]));
+        const added = appendGeneratedMemoriesThunk([{ ...existing, id: 'duplicate' }], '2026-08-14T12:00:00.000Z')(
+            dispatch,
+            () => makeState([existing])
+        );
 
         expect(added).toBe(0);
         expect(dispatch.mock.calls[0]?.[0].payload).not.toHaveProperty('memoryLastProcessedMessageAt');

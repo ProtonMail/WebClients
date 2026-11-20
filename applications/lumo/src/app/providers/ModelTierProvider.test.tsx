@@ -14,32 +14,32 @@ import { ModelTierProvider, useModelTier } from './ModelTierProvider';
 import type { ModelTier } from './modelTierConstants';
 
 let preferredModelTier: ModelTier = 'lumo-max';
-const updateSettings = jest.fn((settings: { preferredModelTier?: ModelTier }) => {
+const updateSettings = vi.fn((settings: { preferredModelTier?: ModelTier }) => {
     if (settings.preferredModelTier !== undefined) {
         preferredModelTier = settings.preferredModelTier;
     }
 });
-const api = jest.fn();
-jest.mock('../redux/hooks', () => {
-    const { useDispatch, useSelector } = jest.requireActual('react-redux');
+const api = vi.fn();
+vi.mock('../redux/hooks', async () => {
+    const { useDispatch, useSelector } = await vi.importActual('react-redux');
     return { useLumoDispatch: useDispatch, useLumoSelector: useSelector };
 });
-jest.mock('../hooks/useLumoUserSettings', () => ({
+vi.mock('../hooks/useLumoUserSettings', () => ({
     useLumoUserSettings: () => ({
         lumoUserSettings: { preferredModelTier, preferredResponseMode: 'thinking' },
         updateSettings,
     }),
 }));
-jest.mock('../hooks/useLumoFlags', () => ({
+vi.mock('../hooks/useLumoFlags', () => ({
     useLumoFlags: () => ({ apertusModelAvailable: true, previewModelAvailable: true }),
 }));
-jest.mock('../hooks/useMaxModelAvailability', () => ({
+vi.mock('../hooks/useMaxModelAvailability', () => ({
     useMaxModelAvailability: () => ({ isMaxAvailableByFlag: true }),
 }));
-jest.mock('./IsGuestProvider', () => ({ useIsGuest: () => false }));
-jest.mock('./LumoPlanProvider', () => ({ useLumoPlan: () => ({ hasLumoPlus: false }) }));
-jest.mock('../components/Modals/ApertusOnboardingModal', () => ({ __esModule: true, default: () => null }));
-jest.mock('../util/userAgent', () => ({ canUseNewModel: () => true, canUsePreviewModel: () => true }));
+vi.mock('./IsGuestProvider', () => ({ useIsGuest: () => false }));
+vi.mock('./LumoPlanProvider', () => ({ useLumoPlan: () => ({ hasLumoPlus: false }) }));
+vi.mock('../components/Modals/ApertusOnboardingModal', () => ({ __esModule: true, default: () => null }));
+vi.mock('../util/userAgent', () => ({ canUseNewModel: () => true, canUsePreviewModel: () => true }));
 
 const conversation: Conversation = {
     id: 'conversation-1',
@@ -94,7 +94,7 @@ const setup = (modelTier?: ModelTier) => {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     preferredModelTier = 'lumo-max';
     api.mockImplementation(
         async () =>

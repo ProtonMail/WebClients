@@ -1,25 +1,29 @@
+import type ReactType from 'react';
+import { useContext } from 'react';
+
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { UserDropdownContext } from '@proton/components/containers/heading/UserDropdownContext';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import LumoUserDropdown from './LumoUserDropdown';
 
-jest.mock('../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../providers/SidebarProvider', () => ({
+vi.mock('../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../providers/SidebarProvider', () => ({
     useOptionalSidebar: () => ({ isVisible: true, isSmallScreen: false }),
 }));
-jest.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
-jest.mock('../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
-jest.mock('../../util/userAgent', () => ({
+vi.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
+vi.mock('../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
+vi.mock('../../util/userAgent', () => ({
     canUseNativeSidebarLayout: () => true,
     canShowWebComposer: (enabled: boolean) => !enabled,
 }));
-jest.mock('../../hooks/useLumoAuthAction', () => ({ useLumoAuthAction: () => ({ trigger: jest.fn() }) }));
+vi.mock('../../hooks/useLumoAuthAction', () => ({ useLumoAuthAction: () => ({ trigger: vi.fn() }) }));
 
 // The dropdown's own chrome and the support modals come from @proton/components
 // and need the full account context; none of it matters here.
-jest.mock('@proton/components/containers/heading/useUserDropdownInfo', () => ({
+vi.mock('@proton/components/containers/heading/useUserDropdownInfo', () => ({
     useUserDropdownInfo: () => ({
         APP_NAME: 'proton-lumo',
         user: {},
@@ -29,35 +33,30 @@ jest.mock('@proton/components/containers/heading/useUserDropdownInfo', () => ({
         accountSessions: {},
     }),
 }));
-jest.mock('@proton/components/containers/heading/UserDropdownButton', () => require('react').forwardRef(() => null));
-jest.mock(
-    '@proton/components/containers/support/AuthenticatedBugModal',
-    () =>
-        function BugModal() {
-            return <div>Report a problem</div>;
-        }
-);
-jest.mock(
-    '@proton/components/containers/support/HelpModal',
-    () =>
-        function Help() {
-            return null;
-        }
-);
-jest.mock(
-    './LumoUserDropdownContent',
-    () =>
-        function DropdownContent() {
-            const { useContext } = require('react');
-            const { UserDropdownContext } = require('@proton/components/containers/heading/UserDropdownContext');
-            const { onOpenBugReportModal } = useContext(UserDropdownContext);
-            return <button onClick={onOpenBugReportModal}>Report a problem trigger</button>;
-        }
-);
+vi.mock('@proton/components/containers/heading/UserDropdownButton', async () => {
+    const { forwardRef } = await vi.importActual<typeof ReactType>('react');
+    return { default: forwardRef(() => null) };
+});
+vi.mock('@proton/components/containers/support/AuthenticatedBugModal', () => ({
+    default: function BugModal() {
+        return <div>Report a problem</div>;
+    },
+}));
+vi.mock('@proton/components/containers/support/HelpModal', () => ({
+    default: function Help() {
+        return null;
+    },
+}));
+vi.mock('./LumoUserDropdownContent', () => ({
+    default: function DropdownContent() {
+        const { onOpenBugReportModal } = useContext(UserDropdownContext);
+        return <button onClick={onOpenBugReportModal}>Report a problem trigger</button>;
+    },
+}));
 
 describe('LumoUserDropdown', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('hides the native composer, which would otherwise cover the report modal', () => {

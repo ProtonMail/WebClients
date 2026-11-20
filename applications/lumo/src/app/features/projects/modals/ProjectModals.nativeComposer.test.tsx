@@ -7,20 +7,20 @@ import { type ProjectSpace, type SpaceKeyClear, SpaceType } from '../../../types
 import { ProjectLimitModal } from './ProjectLimitModal';
 import { ProjectSearchModal } from './ProjectSearchModal';
 
-jest.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
-    useSubscriptionModal: () => [jest.fn(), false],
+vi.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
+    useSubscriptionModal: () => [vi.fn(), false],
 }));
-jest.mock('@proton/payments-hooks/ui/hooks/usePreferredPlansMap', () => ({
+vi.mock('@proton/payments-hooks/ui/hooks/usePreferredPlansMap', () => ({
     usePreferredPlansMap: () => ({ plansMapLoading: false }),
 }));
-jest.mock('../../../hooks', () => ({ useLumoUserSettings: () => ({ lumoUserSettings: {} }) }));
-jest.mock('../../../redux/hooks', () => ({ useLumoDispatch: () => jest.fn() }));
-jest.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
-jest.mock('../../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
-jest.mock('../../../providers/RightPanelProvider', () => ({ useOptionalRightPanel: jest.fn() }));
-jest.mock('../../../providers/SidebarProvider', () => ({ useOptionalSidebar: jest.fn() }));
-jest.mock('../../../remote/nativeComposerBridgeHelpers');
-jest.mock('../../../util/userAgent', () => ({
+vi.mock('../../../hooks', () => ({ useLumoUserSettings: () => ({ lumoUserSettings: {} }) }));
+vi.mock('../../../redux/hooks', () => ({ useLumoDispatch: () => vi.fn() }));
+vi.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
+vi.mock('../../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
+vi.mock('../../../providers/RightPanelProvider', () => ({ useOptionalRightPanel: vi.fn() }));
+vi.mock('../../../providers/SidebarProvider', () => ({ useOptionalSidebar: vi.fn() }));
+vi.mock('../../../remote/nativeComposerBridgeHelpers');
+vi.mock('../../../util/userAgent', () => ({
     canShowWebComposer: () => false,
     canUseNativeSidebarLayout: () => true,
     canUseNativeRightPanelLayout: () => true,
@@ -35,16 +35,16 @@ const space: ProjectSpace & SpaceKeyClear = {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
-    jest.mocked(useOptionalSidebar).mockReturnValue({ isVisible: false } as ReturnType<typeof useOptionalSidebar>);
-    jest.mocked(useOptionalRightPanel).mockReturnValue({
+    vi.clearAllMocks();
+    vi.mocked(useOptionalSidebar).mockReturnValue({ isVisible: false } as ReturnType<typeof useOptionalSidebar>);
+    vi.mocked(useOptionalRightPanel).mockReturnValue({
         isOpen: true,
         isOverlay: false,
     } as ReturnType<typeof useOptionalRightPanel>);
 });
 
 it('hides the fitted composer for project access settings and restores it when the dialog closes', () => {
-    const props = { space, onClose: jest.fn(), onExit: jest.fn() };
+    const props = { space, onClose: vi.fn(), onExit: vi.fn() };
     const { rerender } = render(<ProjectSearchModal {...props} open />);
     expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
 
@@ -54,10 +54,10 @@ it('hides the fitted composer for project access settings and restores it when t
 });
 
 it('keeps the composer hidden when access settings close between two open sidebars', () => {
-    jest.mocked(useOptionalSidebar).mockReturnValue({ isVisible: true } as ReturnType<typeof useOptionalSidebar>);
-    const { unmount } = render(<ProjectSearchModal space={space} open onClose={jest.fn()} onExit={jest.fn()} />);
+    vi.mocked(useOptionalSidebar).mockReturnValue({ isVisible: true } as ReturnType<typeof useOptionalSidebar>);
+    const { unmount } = render(<ProjectSearchModal space={space} open onClose={vi.fn()} onExit={vi.fn()} />);
     expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
-    jest.mocked(setNativeComposerVisibility).mockClear();
+    vi.mocked(setNativeComposerVisibility).mockClear();
 
     unmount();
 
@@ -65,12 +65,12 @@ it('keeps the composer hidden when access settings close between two open sideba
 });
 
 it('hides the composer behind the project-limit upsell and restores it on close', () => {
-    jest.mocked(useOptionalRightPanel).mockReturnValue({
+    vi.mocked(useOptionalRightPanel).mockReturnValue({
         isOpen: false,
         isOverlay: false,
     } as ReturnType<typeof useOptionalRightPanel>);
-    jest.mocked(useOptionalSidebar).mockReturnValue({ isVisible: true } as ReturnType<typeof useOptionalSidebar>);
-    const props = { onClose: jest.fn(), onExit: jest.fn() };
+    vi.mocked(useOptionalSidebar).mockReturnValue({ isVisible: true } as ReturnType<typeof useOptionalSidebar>);
+    const props = { onClose: vi.fn(), onExit: vi.fn() };
     const { rerender } = render(<ProjectLimitModal {...props} open />);
     expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
 

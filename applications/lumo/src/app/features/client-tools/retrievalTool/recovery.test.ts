@@ -72,7 +72,7 @@ async function execute(
     return JSON.parse((result as ClientToolResult).content);
 }
 
-afterEach(() => jest.restoreAllMocks());
+afterEach(() => vi.restoreAllMocks());
 
 it('restores lookup text, sets, callbacks and budgets through encrypted checkpoint storage', async () => {
     const state = makeState();
@@ -118,7 +118,7 @@ it.each([
     { userId: undefined, ghost: false },
     { userId: 'account', ghost: true },
 ])('keeps guest and ghost recovery inside the current chat (%j)', async ({ userId, ghost }) => {
-    const get = jest.spyOn(SearchService, 'get');
+    const get = vi.spyOn(SearchService, 'get');
     const state = makeState();
     state.conversations.chat.ghost = ghost;
     const context = restoreRetrievalContext({
@@ -138,8 +138,8 @@ it.each([
 });
 
 it('rebuilds the account index and enforces tighter current search settings and file exclusions', async () => {
-    const index = { getIndexedDocument: jest.fn() } as unknown as SearchService;
-    jest.spyOn(SearchService, 'get').mockReturnValue(index);
+    const index = { getIndexedDocument: vi.fn() } as unknown as SearchService;
+    vi.spyOn(SearchService, 'get').mockReturnValue(index);
     const state = makeState();
     const snapshot = captureRetrievalRecovery(makeContext(() => state));
     state.lumoUserSettings.conversationSearch = 'none';
@@ -203,11 +203,11 @@ it.each([
 
 it('restores file analysis with a fresh callback and retains the new reply budgets', async () => {
     const state = makeState();
-    const oldAnalysis = jest.fn();
+    const oldAnalysis = vi.fn();
     const snapshot = captureRetrievalRecovery({ ...makeContext(() => state), analyze: oldAnalysis });
     expect(snapshot.analyzeEnabled).toBe(true);
     expect(snapshot).not.toHaveProperty('analyze');
-    const analyze = jest.fn(async () => 'The budget is 42 euros.');
+    const analyze = vi.fn(async () => 'The budget is 42 euros.');
     const controller = new AbortController();
     const context = restoreRetrievalContext({
         recovery: snapshot,
@@ -245,7 +245,7 @@ it('keeps analysis disabled when the saved generation did not offer it', () => {
         conversationId: 'chat',
         spaceId: 'space',
         getState: () => state,
-        analysis: { analyze: jest.fn() },
+        analysis: { analyze: vi.fn() },
     });
     expect(createRetrievalToolExecutor(context).canExecute(ANALYZE_FILE_TOOL_NAME)).toBe(false);
 });

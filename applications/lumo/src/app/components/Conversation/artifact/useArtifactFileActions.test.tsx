@@ -7,40 +7,40 @@ import { triggerFileDownload } from '../../../util/triggerFileDownload';
 import type { ParsedArtifact } from './parseArtifacts';
 import { useArtifactFileActions } from './useArtifactFileActions';
 
-jest.mock('@proton/app-context/useNotifications', () => {
-    return { useNotifications: () => ({ createNotification: jest.fn() }) };
+vi.mock('@proton/app-context/useNotifications', () => {
+    return { useNotifications: () => ({ createNotification: vi.fn() }) };
 });
-jest.mock('../../../util/triggerFileDownload', () => {
-    return { triggerFileDownload: jest.fn() };
+vi.mock('../../../util/triggerFileDownload', () => {
+    return { triggerFileDownload: vi.fn() };
 });
-jest.mock('../../../util/telemetry', () => {
-    return { ...jest.requireActual('../../../util/telemetry'), sendArtifactDownloadedEvent: jest.fn() };
+vi.mock('../../../util/telemetry', async () => {
+    return { ...(await vi.importActual('../../../util/telemetry')), sendArtifactDownloadedEvent: vi.fn() };
 });
 // The exporters pull in ESM-only markdown and chart libraries Jest can't load; they aren't run here.
 // Support rules mirror artifactHtmlDocument.
-jest.mock('./artifactFileBytes', () => {
-    return { buildArtifactFileForSave: jest.fn() };
+vi.mock('./artifactFileBytes', () => {
+    return { buildArtifactFileForSave: vi.fn() };
 });
-jest.mock('./artifactSourceDownload', () => {
-    return { buildArtifactSourceDownloadFile: jest.fn() };
+vi.mock('./artifactSourceDownload', () => {
+    return { buildArtifactSourceDownloadFile: vi.fn() };
 });
-jest.mock('./artifactPdfExport', () => {
+vi.mock('./artifactPdfExport', () => {
     return {
-        exportArtifactPdf: jest.fn(),
+        exportArtifactPdf: vi.fn(),
         artifactSupportsPdfExport: (type: string) => {
             return type === 'document' || type === 'presentation';
         },
     };
 });
-jest.mock('./artifactPptxExport', () => {
+vi.mock('./artifactPptxExport', () => {
     return {
-        downloadArtifactPptx: jest.fn(),
+        downloadArtifactPptx: vi.fn(),
         artifactSupportsPptxExport: (type: string) => {
             return type === 'presentation';
         },
     };
 });
-jest.mock('./SaveArtifactToDriveModal', () => {
+vi.mock('./SaveArtifactToDriveModal', () => {
     return { __esModule: true, default: () => null };
 });
 

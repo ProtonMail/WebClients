@@ -3,7 +3,7 @@ import type { NewMessageToApi } from './types';
 import { RoleInt, StatusInt } from './types';
 
 afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
 });
 
 it('sends generation acknowledgements without logging their resume tokens', async () => {
@@ -17,10 +17,10 @@ it('sends generation acknowledgements without logging their resume tokens', asyn
         MessageTag: 'answer',
         GenerationJobs: [{ JobID: 'generation', Token: 'secret-resume-token' }],
     };
-    const fetch = jest
+    const fetch = vi
         .spyOn(globalThis, 'fetch')
         .mockResolvedValue(new Response(JSON.stringify({ Message: { ID: 'remote-answer' } }), { status: 200 }));
-    const log = jest.spyOn(console, 'log').mockImplementation(() => {});
+    const log = vi.spyOn(console, 'log').mockImplementation(() => {});
 
     await expect(new LumoApi('test-session').postMessage(message, 'urgent')).resolves.toBe('remote-answer');
 

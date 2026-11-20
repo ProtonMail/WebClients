@@ -1,4 +1,5 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 
@@ -15,49 +16,49 @@ import { fetchLumoDesktopInstallerUrl, getLumoDesktopTarget, startInstallerDownl
 import { getDesktopOnboardingRecord } from './desktopOnboardingStorage';
 import { getDesktopOnboardingSurface } from './desktopOnboardingSurface';
 
-const mockCreateNotification = jest.fn(() => {
+const mockCreateNotification = vi.fn(() => {
     return 1;
 });
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => {
-        return { createNotification: mockCreateNotification, hideNotification: jest.fn() };
+        return { createNotification: mockCreateNotification, hideNotification: vi.fn() };
     },
 }));
-jest.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
-    isDesktopEnvironment: jest.fn(),
+vi.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
+    isDesktopEnvironment: vi.fn(),
 }));
-jest.mock('../../components/Composer/hooks/useNativeComposerVisibilityApi', () => ({
-    useNativeComposerVisibilityApi: jest.fn(),
+vi.mock('../../components/Composer/hooks/useNativeComposerVisibilityApi', () => ({
+    useNativeComposerVisibilityApi: vi.fn(),
 }));
-jest.mock('../../hooks/useLumoFlags', () => ({
-    useLumoFlags: jest.fn(),
+vi.mock('../../hooks/useLumoFlags', () => ({
+    useLumoFlags: vi.fn(),
 }));
-jest.mock('../../providers/IsGuestProvider', () => ({
-    useIsGuest: jest.fn(),
+vi.mock('../../providers/IsGuestProvider', () => ({
+    useIsGuest: vi.fn(),
 }));
-jest.mock('../../redux/hooks', () => ({
-    useLumoSelector: jest.fn(),
+vi.mock('../../redux/hooks', () => ({
+    useLumoSelector: vi.fn(),
 }));
-jest.mock('../../redux/selectors', () => ({
+vi.mock('../../redux/selectors', () => ({
     selectMasterKeyState: (state: { masterKey: unknown }) => {
         return state.masterKey;
     },
 }));
-jest.mock('../../util/telemetry', () => ({
-    sendDesktopOnboardingShownEvent: jest.fn(),
-    sendDesktopOnboardingDismissedEvent: jest.fn(),
-    sendDesktopOnboardingDownloadEvent: jest.fn(),
+vi.mock('../../util/telemetry', () => ({
+    sendDesktopOnboardingShownEvent: vi.fn(),
+    sendDesktopOnboardingDismissedEvent: vi.fn(),
+    sendDesktopOnboardingDownloadEvent: vi.fn(),
 }));
-jest.mock('./desktopDownloads', () => ({
-    ...jest.requireActual('./desktopDownloads'),
-    getLumoDesktopTarget: jest.fn(),
-    fetchLumoDesktopInstallerUrl: jest.fn(),
-    startInstallerDownload: jest.fn(),
+vi.mock('./desktopDownloads', async () => ({
+    ...(await vi.importActual('./desktopDownloads')),
+    getLumoDesktopTarget: vi.fn(),
+    fetchLumoDesktopInstallerUrl: vi.fn(),
+    startInstallerDownload: vi.fn(),
 }));
-jest.mock('./desktopOnboardingSurface', () => ({
-    ...jest.requireActual('./desktopOnboardingSurface'),
-    getDesktopOnboardingSurface: jest.fn(),
+vi.mock('./desktopOnboardingSurface', async () => ({
+    ...(await vi.importActual('./desktopOnboardingSurface')),
+    getDesktopOnboardingSurface: vi.fn(),
 }));
 
 const BlockingProbe = () => {
@@ -78,11 +79,11 @@ const setup = ({
     surface?: string;
     masterKeyReady?: boolean;
 } = {}) => {
-    (useLumoFlags as jest.Mock).mockReturnValue({ desktopOnboardingModal: flag });
-    (useIsGuest as jest.Mock).mockReturnValue(isGuest);
-    (isDesktopEnvironment as jest.Mock).mockReturnValue(isDesktopApp);
-    (getDesktopOnboardingSurface as jest.Mock).mockReturnValue(surface);
-    (useLumoSelector as jest.Mock).mockImplementation((selector) => {
+    (useLumoFlags as Mock).mockReturnValue({ desktopOnboardingModal: flag });
+    (useIsGuest as Mock).mockReturnValue(isGuest);
+    (isDesktopEnvironment as Mock).mockReturnValue(isDesktopApp);
+    (getDesktopOnboardingSurface as Mock).mockReturnValue(surface);
+    (useLumoSelector as Mock).mockImplementation((selector) => {
         return selector({ masterKey: { status: masterKeyReady ? 'ready' : 'loading' } });
     });
     return render(
@@ -94,7 +95,7 @@ const setup = ({
 
 const advancePastDelay = () => {
     act(() => {
-        jest.advanceTimersByTime(500);
+        vi.advanceTimersByTime(500);
     });
 };
 
@@ -104,15 +105,15 @@ const title = () => {
 
 describe('DesktopOnboardingProvider', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.clearAllMocks();
+        vi.useFakeTimers();
+        vi.clearAllMocks();
         localStorage.clear();
-        (getLumoDesktopTarget as jest.Mock).mockReturnValue({ platform: 'macos' });
-        (fetchLumoDesktopInstallerUrl as jest.Mock).mockResolvedValue('https://x/Lumo.dmg');
+        (getLumoDesktopTarget as Mock).mockReturnValue({ platform: 'macos' });
+        (fetchLumoDesktopInstallerUrl as Mock).mockResolvedValue('https://x/Lumo.dmg');
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('opens 500ms after load when the flag is on, and blocks other onboarding', () => {
@@ -194,8 +195,8 @@ describe('DesktopOnboardingProvider', () => {
     });
 
     it('opens the download page when no installer fits this computer', async () => {
-        (getLumoDesktopTarget as jest.Mock).mockReturnValue(null);
-        const open = jest.spyOn(window, 'open').mockImplementation(() => {
+        (getLumoDesktopTarget as Mock).mockReturnValue(null);
+        const open = vi.spyOn(window, 'open').mockImplementation(() => {
             return null;
         });
 

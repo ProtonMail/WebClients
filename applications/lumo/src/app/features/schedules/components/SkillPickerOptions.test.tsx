@@ -2,21 +2,21 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { SkillPickerOptions } from './SkillPickerOptions';
 
-afterEach(() => jest.restoreAllMocks());
+afterEach(() => vi.restoreAllMocks());
 
 it('selects the clicked skill option', () => {
     const commands = [
         { skillId: 'one', handle: 'one', name: 'One', description: 'First description' },
         { skillId: 'two', handle: 'two', name: 'Two', description: 'Second description' },
     ];
-    const onSelect = jest.fn();
+    const onSelect = vi.fn();
     render(<SkillPickerOptions id="skills" commands={commands} onSelect={onSelect} />);
     fireEvent.click(screen.getByRole('option', { name: 'Two' }));
     expect(onSelect).toHaveBeenCalledWith(commands[1]);
 });
 
 it('shows the dark panel only while hovering a row and keeps descriptions accessible without it', () => {
-    const reactErrors = jest.spyOn(console, 'error');
+    const reactErrors = vi.spyOn(console, 'error');
     const commands = [
         {
             skillId: 'writing',
@@ -35,7 +35,7 @@ it('shows the dark panel only while hovering a row and keeps descriptions access
             group: 'Writing',
         },
     ];
-    render(<SkillPickerOptions id="choices" commands={commands} onSelect={jest.fn()} />);
+    render(<SkillPickerOptions id="choices" commands={commands} onSelect={vi.fn()} />);
     const draft = screen.getByRole('option', { name: 'Draft' });
     expect(draft).not.toHaveAttribute('title');
     expect(draft).toHaveAttribute('aria-describedby', 'choices-description-0');

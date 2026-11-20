@@ -247,7 +247,7 @@ export type ConversationMoveFailureReason = 'limit' | 'busy' | 'unsupported' | '
 
 export type ConversationMoveDurationBucket = '0-2s' | '2s-10s' | '10s-30s' | '30s+';
 
-export const bucketConversationMoveDuration = (durationMs: number): ConversationMoveDurationBucket => {
+const bucketConversationMoveDuration = (durationMs: number): ConversationMoveDurationBucket => {
     if (durationMs < 2_000) {
         return '0-2s';
     }

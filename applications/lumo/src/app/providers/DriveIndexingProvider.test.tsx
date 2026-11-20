@@ -2,43 +2,43 @@ import { render } from '@testing-library/react';
 
 import { DriveIndexingProvider, useDriveIndexing } from './DriveIndexingProvider';
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     useUser: () => [{ ID: 'user-1' }],
 }));
 
-jest.mock('./IsGuestProvider', () => ({
+vi.mock('./IsGuestProvider', () => ({
     useIsGuest: () => false,
 }));
 
-jest.mock('../hooks/useFileProcessing', () => ({
-    useFileProcessing: () => ({ processFile: jest.fn() }),
+vi.mock('../hooks/useFileProcessing', () => ({
+    useFileProcessing: () => ({ processFile: vi.fn() }),
 }));
 
 const driveSdk = {
-    browseFolderChildren: jest.fn(),
-    getNode: jest.fn(),
-    downloadFile: jest.fn(),
-    subscribeToTreeEvents: jest.fn(),
+    browseFolderChildren: vi.fn(),
+    getNode: vi.fn(),
+    downloadFile: vi.fn(),
+    subscribeToTreeEvents: vi.fn(),
     isInitialized: true,
 };
-jest.mock('../hooks/useDriveSDK', () => ({
+vi.mock('../hooks/useDriveSDK', () => ({
     useDriveSDK: () => driveSdk,
 }));
 
 const lumoUserSettings: { indexedDriveFolders?: unknown[] } = {};
-const updateSettings = jest.fn();
-jest.mock('../hooks', () => ({
+const updateSettings = vi.fn();
+vi.mock('../hooks', () => ({
     useLumoUserSettings: () => ({ lumoUserSettings, updateSettings }),
 }));
 
-jest.mock('../redux/hooks', () => ({
+vi.mock('../redux/hooks', () => ({
     useLumoSelector: (selector: (state: unknown) => unknown) =>
         selector({ initialization: { spacesPullSettled: true } }),
 }));
 
 describe('DriveIndexingProvider', () => {
     it('settles when Drive is ready and the user has no indexed folders', () => {
-        const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+        const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
         let renders = 0;
         const Consumer = () => {
             renders += 1;

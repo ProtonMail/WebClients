@@ -4,9 +4,9 @@ import type { LumoDispatch, LumoState } from '../../redux/store';
 import type { FileProcessingResponse, FileProcessingService } from '../fileProcessingService';
 import { handleFileAsync } from './fileAsync';
 
-jest.mock('../../util/telemetry', () => ({
-    ...jest.requireActual('../../util/telemetry'),
-    sendFileUploadFinishEvent: jest.fn(),
+vi.mock('../../util/telemetry', async () => ({
+    ...(await vi.importActual('../../util/telemetry')),
+    sendFileUploadFinishEvent: vi.fn(),
 }));
 
 /**
@@ -49,7 +49,7 @@ describe('handleFileAsync vs. a concurrent deleteAttachment', () => {
             resolve = r;
         });
         const fakeFileProcessingService = {
-            processFile: jest.fn().mockReturnValue(promise),
+            processFile: vi.fn().mockReturnValue(promise),
         } as unknown as FileProcessingService;
         return { resolve, fakeFileProcessingService };
     };

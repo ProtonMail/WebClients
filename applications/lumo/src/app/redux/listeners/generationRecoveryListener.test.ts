@@ -7,7 +7,7 @@ import { clearGenerationRecoveryOnLogout } from '../../services/generation/recov
 import type { AppStartListening } from '../store';
 import { startGenerationRecoveryListener } from './generationRecoveryListener';
 
-jest.mock('../../services/generation/recovery');
+vi.mock('../../services/generation/recovery');
 
 it('clears recovery when account signout is requested', async () => {
     const listener = createListenerMiddleware();

@@ -23,7 +23,7 @@ const versions: ArtifactVersion[] = [
 
 describe('ArtifactOlderVersionBanner', () => {
     it('says which version is shown and returns to the latest', () => {
-        const onViewLatest = jest.fn();
+        const onViewLatest = vi.fn();
         render(
             <ArtifactOlderVersionBanner
                 version={versions[0]}

@@ -7,24 +7,24 @@ import { cancelConversationGeneration, isAbortError, throwIfAborted } from './ab
 import { generationRegistry } from './generationRegistry';
 import { discardGenerationRecovery } from './recovery';
 
-jest.mock('./recovery');
+vi.mock('./recovery');
 
 describe('abortGeneration', () => {
     const originalApi = extraThunkArguments.api;
     beforeEach(() => {
-        extraThunkArguments.api = jest.fn() as unknown as typeof originalApi;
-        jest.mocked(discardGenerationRecovery).mockResolvedValue(undefined);
+        extraThunkArguments.api = vi.fn() as unknown as typeof originalApi;
+        vi.mocked(discardGenerationRecovery).mockResolvedValue(undefined);
     });
     afterEach(() => {
         generationRegistry.abortAll();
         extraThunkArguments.api = originalApi;
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('leaves active cleanup to the finisher and prevents recovery until it settles', () => {
         const controller = generationRegistry.start('conversation');
         const state = { conversations: {} } as LumoState;
-        cancelConversationGeneration(jest.fn(), () => state, 'conversation');
+        cancelConversationGeneration(vi.fn(), () => state, 'conversation');
         expect(controller.signal.aborted).toBe(true);
         expect(generationRegistry.isInProgress('conversation')).toBe(true);
         expect(() => generationRegistry.start('conversation')).toThrow('Another operation is already in progress');
@@ -35,7 +35,7 @@ describe('abortGeneration', () => {
 
     it('discards a paused checkpoint when no generation is writing it', () => {
         const state = { conversations: {} } as LumoState;
-        cancelConversationGeneration(jest.fn(), () => state, 'conversation');
+        cancelConversationGeneration(vi.fn(), () => state, 'conversation');
         expect(discardGenerationRecovery).toHaveBeenCalledWith(extraThunkArguments.api, 'conversation');
     });
     it('detects abort errors', () => {

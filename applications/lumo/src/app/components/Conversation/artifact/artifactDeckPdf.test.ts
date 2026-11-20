@@ -10,10 +10,10 @@ interface Capture {
 }
 
 const mockCaptures: Capture[] = [];
-const mockAddPage = jest.fn();
-const mockAddImage = jest.fn();
+const mockAddPage = vi.fn();
+const mockAddImage = vi.fn();
 
-const mockHtml2canvas = jest.fn(async (element: HTMLElement) => {
+const mockHtml2canvas = vi.fn(async (element: HTMLElement) => {
     // Read what html2canvas would see at the moment it is called.
     mockCaptures.push({
         className: element.getAttribute('class'),
@@ -30,18 +30,18 @@ const mockHtml2canvas = jest.fn(async (element: HTMLElement) => {
     };
 });
 
-jest.mock('html2canvas', () => {
+vi.mock('html2canvas', () => {
     return {
         __esModule: true,
         default: mockHtml2canvas,
     };
 });
 
-jest.mock('jspdf', () => {
+vi.mock('jspdf', () => {
     return {
-        jsPDF: jest.fn().mockImplementation(() => {
+        jsPDF: vi.fn().mockImplementation(function () {
             return {
-                setProperties: jest.fn(),
+                setProperties: vi.fn(),
                 addPage: mockAddPage,
                 addImage: mockAddImage,
                 output: () => {
@@ -52,7 +52,7 @@ jest.mock('jspdf', () => {
     };
 });
 
-jest.mock('../../../util/export/exportUiHelpers', () => {
+vi.mock('../../../util/export/exportUiHelpers', () => {
     return {
         yieldToMainThread: () => {
             return Promise.resolve();
@@ -73,7 +73,7 @@ const deckArtifact = (deck: unknown): ParsedArtifact => {
 
 describe('buildDeckPdfBytes image fallback', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockCaptures.length = 0;
     });
 

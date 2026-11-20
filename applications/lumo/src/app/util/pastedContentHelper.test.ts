@@ -1,11 +1,10 @@
-import { describe, expect, it } from '@jest/globals';
+import { parseFileReferences } from './fileReferences';
 import {
     createAttachmentFromPastedContent,
     getPasteConversionMessage,
     PASTE_TO_ATTACHMENT_CONFIG,
     shouldConvertPasteToAttachment,
 } from './pastedContentHelper';
-import { parseFileReferences } from './fileReferences';
 
 describe('pastedContentHelper', () => {
     describe('shouldConvertPasteToAttachment', () => {

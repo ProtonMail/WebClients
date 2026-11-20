@@ -1,10 +1,10 @@
+import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
+
 import { getLumoFeatureFlagsForChatCompletions, serializeUnleashToggle } from './unleashFeatureFlags';
 
-jest.mock('@proton/unleash/standaloneClient', () => ({
-    getStandaloneUnleashClient: jest.fn(),
+vi.mock('@proton/unleash/standaloneClient', () => ({
+    getStandaloneUnleashClient: vi.fn(),
 }));
-
-const { getStandaloneUnleashClient } = jest.requireMock('@proton/unleash/standaloneClient');
 
 describe('serializeUnleashToggle', () => {
     it('serialises a disabled toggle as false', () => {
@@ -80,17 +80,17 @@ describe('serializeUnleashToggle', () => {
 
 describe('getLumoFeatureFlagsForChatCompletions', () => {
     beforeEach(() => {
-        getStandaloneUnleashClient.mockReset();
+        vi.mocked(getStandaloneUnleashClient).mockReset();
     });
 
     it('returns only Lumo-prefixed toggles', () => {
-        getStandaloneUnleashClient.mockReturnValue({
+        vi.mocked(getStandaloneUnleashClient).mockReturnValue({
             getAllToggles: () => [
                 { name: 'LumoTooling', enabled: true, variant: { name: 'default' } },
                 { name: 'MailFeature', enabled: true, variant: { name: 'default' } },
                 { name: 'LumoHighLoad', enabled: false, variant: { name: 'disabled' } },
             ],
-        });
+        } as never);
 
         expect(getLumoFeatureFlagsForChatCompletions()).toEqual({
             LumoTooling: 'true',
@@ -99,7 +99,7 @@ describe('getLumoFeatureFlagsForChatCompletions', () => {
     });
 
     it('returns an empty object when Unleash is not initialised', () => {
-        getStandaloneUnleashClient.mockReturnValue(undefined);
+        vi.mocked(getStandaloneUnleashClient).mockReturnValue(undefined);
         expect(getLumoFeatureFlagsForChatCompletions()).toEqual({});
     });
 });

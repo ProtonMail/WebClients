@@ -7,8 +7,8 @@ import { createExportPreComponent } from './artifactMarkdownHtml';
 
 // react-markdown and remark-gfm are ESM-only and not in this package's Jest transform allowlist;
 // these tests only exercise the `pre` override, so stub them out.
-jest.mock('react-markdown', () => ({ __esModule: true, default: () => null }));
-jest.mock('remark-gfm', () => ({ __esModule: true, default: () => undefined }));
+vi.mock('react-markdown', () => ({ __esModule: true, default: () => null }));
+vi.mock('remark-gfm', () => ({ __esModule: true, default: () => undefined }));
 
 function preNode(language: string, code: string): Element {
     return {

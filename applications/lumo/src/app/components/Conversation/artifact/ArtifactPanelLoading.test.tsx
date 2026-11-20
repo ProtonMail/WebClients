@@ -4,11 +4,11 @@ import { useReducedMotion } from '@proton/components/hooks/useReducedMotion';
 
 import { ArtifactPanelLoading } from './ArtifactPanelLoading';
 
-jest.mock('@proton/components/hooks/useReducedMotion', () => {
-    return { useReducedMotion: jest.fn() };
+vi.mock('@proton/components/hooks/useReducedMotion', () => {
+    return { useReducedMotion: vi.fn() };
 });
 
-const mockUseReducedMotion = jest.mocked(useReducedMotion);
+const mockUseReducedMotion = vi.mocked(useReducedMotion);
 
 const getIconMarkup = (container: HTMLElement) => {
     return container.querySelector('.artifact-panel-loading-icon')?.outerHTML;
@@ -16,11 +16,11 @@ const getIconMarkup = (container: HTMLElement) => {
 
 describe('ArtifactPanelLoading', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('rotates the icon and label when motion is allowed', () => {
@@ -32,10 +32,10 @@ describe('ArtifactPanelLoading', () => {
         expect(screen.getByText('Creating…')).toBeInTheDocument();
 
         act(() => {
-            jest.advanceTimersByTime(4000);
+            vi.advanceTimersByTime(4000);
         });
         act(() => {
-            jest.runOnlyPendingTimers();
+            vi.runOnlyPendingTimers();
         });
 
         expect(getIconMarkup(container)).not.toBe(initialIcon);
@@ -48,10 +48,10 @@ describe('ArtifactPanelLoading', () => {
         const { container } = render(<ArtifactPanelLoading />);
         const initialIcon = getIconMarkup(container);
 
-        expect(jest.getTimerCount()).toBe(0);
+        expect(vi.getTimerCount()).toBe(0);
 
         act(() => {
-            jest.advanceTimersByTime(20000);
+            vi.advanceTimersByTime(20000);
         });
 
         expect(getIconMarkup(container)).toBe(initialIcon);

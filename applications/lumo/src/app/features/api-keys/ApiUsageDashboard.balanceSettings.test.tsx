@@ -1,4 +1,5 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -9,16 +10,16 @@ import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit'
 
 import { ApiUsageDashboard } from './ApiUsageDashboard';
 
-jest.mock('@proton/account/paymentStatus/hooks');
-jest.mock('@proton/account/subscription/hooks');
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/app-context/useApi');
-jest.mock('./useApiUsageSummary', () => ({
+vi.mock('@proton/account/paymentStatus/hooks');
+vi.mock('@proton/account/subscription/hooks');
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/app-context/useApi');
+vi.mock('./useApiUsageSummary', () => ({
     useApiUsageSummary: () => ({ dates: [], rows: [], isLoading: false, error: false }),
 }));
-jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
-jest.mock('./ApiTokenUsageChart', () => ({ ApiTokenUsageChart: () => null }));
-jest.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({ LumoCreditsModal: () => null }));
+vi.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
+vi.mock('./ApiTokenUsageChart', () => ({ ApiTokenUsageChart: () => null }));
+vi.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({ LumoCreditsModal: () => null }));
 
 const getUrl = 'payments/v5/products/lumo-credit';
 const autoTopUpUrl = 'payments/v5/products/lumo-credit/auto-top-up';
@@ -47,7 +48,7 @@ const setup = ({
         ...MOCK_LUMO_CREDIT_RESPONSE,
         AutoTopUp: { ...MOCK_LUMO_CREDIT_RESPONSE.AutoTopUp, ...credits },
     };
-    const api = jest.fn(
+    const api = vi.fn(
         ({
             url,
             data,
@@ -76,10 +77,10 @@ const setup = ({
             return Promise.resolve(response);
         }
     );
-    (useApi as jest.Mock).mockReturnValue(api);
-    (useUser as jest.Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
-    (useSubscription as jest.Mock).mockReturnValue([{ Currency: 'USD' }]);
-    (usePaymentStatus as jest.Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
+    (useApi as Mock).mockReturnValue(api);
+    (useUser as Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
+    (useSubscription as Mock).mockReturnValue([{ Currency: 'USD' }]);
+    (usePaymentStatus as Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
     render(
         <ApiUsageDashboard
             isOrgAdmin={false}
@@ -92,7 +93,7 @@ const setup = ({
     return api;
 };
 
-const callsTo = (api: jest.Mock, url: string) => api.mock.calls.filter(([config]) => config.url === url);
+const callsTo = (api: Mock, url: string) => api.mock.calls.filter(([config]) => config.url === url);
 const settingsRow = () => document.querySelector('.api-usage-balance-card__settings') as HTMLElement;
 const balanceCard = () => document.querySelector('.api-usage-balance-card') as HTMLElement;
 const openManage = () =>
@@ -294,7 +295,7 @@ describe('ApiUsageDashboard balance settings', () => {
         setup({ credits: failedAutoTopUp('card_declined: insufficient funds') });
 
         await waitFor(() =>
-            expect(statusBanner()).toHaveTextContent(
+            expect(statusBanner()?.textContent?.replace(/\s+/g, ' ')).toMatch(
                 /^Automatic top-up failed. Update your payment method to resume automatic top-ups.$/
             )
         );

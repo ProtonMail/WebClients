@@ -273,7 +273,7 @@ describe('search_knowledge', () => {
             const messages = Object.fromEntries(
                 ids.map((id) => [`${id}-msg`, message(`${id}-msg`, id, `Budget notes from chat ${id}`)])
             );
-            const rankConversations = jest.fn(async () => ranked);
+            const rankConversations = vi.fn(async () => ranked);
             const context = makeContext({
                 getState: () => ({ conversations, messages }) as unknown as ReturnType<RetrievalContext['getState']>,
                 index: {
@@ -367,17 +367,17 @@ describe('search_knowledge', () => {
 
     it('ranks pages of indexed project files, scoped to the project', async () => {
         const index: RetrievalIndex = {
-            rankDocumentsInScope: jest.fn(async () => [
+            rankDocumentsInScope: vi.fn(async () => [
                 { id: 'drive-1', name: 'plan.pdf', content: '', score: 1, coverage: 1 },
             ]),
-            getIndexedDocument: jest.fn(async (id: string) => ({
+            getIndexedDocument: vi.fn(async (id: string) => ({
                 id,
                 name: 'plan.pdf',
                 spaceId: 'space',
                 text: 'Hiring plan: two engineers join in April.',
             })),
-            listDocuments: jest.fn(async () => []),
-            rankConversations: jest.fn(async () => []),
+            listDocuments: vi.fn(async () => []),
+            rankConversations: vi.fn(async () => []),
         };
         const { body } = await call(
             makeContext({ isProject: true, index, chatAttachments: [] }),

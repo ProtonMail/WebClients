@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { getSkillCommands, groupSkillCommands } from '../features/skills/skillInvocation';
 import { getSkillSelectionId } from '../features/skills/skillSelection';
 import type { Skill } from '../features/skills/types';
@@ -26,13 +28,13 @@ const plugin = skill('plugin', {
 
 describe('native Skills controller', () => {
     let source: { owner: string; status: 'ready' | 'idle' | 'loading' | 'error'; skills: Skill[] };
-    let setDraft: jest.Mock;
-    let publish: jest.Mock;
+    let setDraft: Mock;
+    let publish: Mock;
     let controller: ReturnType<typeof createNativeSkillsController>;
     beforeEach(() => {
         source = { owner: 'account', status: 'ready', skills: [skill('draft'), plugin] };
-        setDraft = jest.fn();
-        publish = jest.fn();
+        setDraft = vi.fn();
+        publish = vi.fn();
         controller = createNativeSkillsController({ owner: 'account', getSource: () => source, setDraft, publish });
     });
     const request = () => ({

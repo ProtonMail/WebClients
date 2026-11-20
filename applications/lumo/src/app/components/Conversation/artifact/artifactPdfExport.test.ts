@@ -1,33 +1,35 @@
+// @vitest-environment jsdom
+// DOMPurify drops block elements such as <h1> when it runs on happy-dom.
 import { downloadHtmlAsPdf, downloadHtmlSlidesAsPdf } from '../../../util/pdf/downloadHtmlAsPdf';
 import { printHtmlDocument } from '../../../util/pdf/printHtmlDocument';
 import { buildDeckPdfBytes } from './artifactDeckPdf';
 import { exportArtifactPdf, getArtifactPdfExportMode } from './artifactPdfExport';
 import type { ParsedArtifact } from './parseArtifacts';
 
-jest.mock('../../../util/pdf/downloadHtmlAsPdf', () => ({
-    downloadHtmlAsPdf: jest.fn(async () => {}),
-    downloadHtmlSlidesAsPdf: jest.fn(async () => {}),
+vi.mock('../../../util/pdf/downloadHtmlAsPdf', () => ({
+    downloadHtmlAsPdf: vi.fn(async () => {}),
+    downloadHtmlSlidesAsPdf: vi.fn(async () => {}),
 }));
-jest.mock('../../../util/pdf/printHtmlDocument', () => ({
-    printHtmlDocument: jest.fn(async () => {
+vi.mock('../../../util/pdf/printHtmlDocument', () => ({
+    printHtmlDocument: vi.fn(async () => {
         return true;
     }),
 }));
-jest.mock('./artifactMarkdownHtml', () => ({
-    markdownToHtmlBody: jest.fn(() => {
+vi.mock('./artifactMarkdownHtml', () => ({
+    markdownToHtmlBody: vi.fn(() => {
         return '<h1>Summary</h1>';
     }),
 }));
-jest.mock('./artifactDeckPdf', () => ({
-    buildDeckPdfBytes: jest.fn(async () => {
+vi.mock('./artifactDeckPdf', () => ({
+    buildDeckPdfBytes: vi.fn(async () => {
         return new Uint8Array();
     }),
 }));
-jest.mock('../../../util/triggerFileDownload', () => ({
-    triggerFileDownload: jest.fn(async () => {}),
+vi.mock('../../../util/triggerFileDownload', () => ({
+    triggerFileDownload: vi.fn(async () => {}),
 }));
-jest.mock('vega-embed', () => ({ __esModule: true, default: jest.fn() }));
-jest.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
+vi.mock('vega-embed', () => ({ __esModule: true, default: vi.fn() }));
+vi.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
 
 const documentArtifact: ParsedArtifact = {
     id: 'doc-1',
@@ -61,7 +63,7 @@ describe('getArtifactPdfExportMode', () => {
 
 describe('exportArtifactPdf', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('opens the print dialog for documents, titled after the artifact, without building a file', async () => {
@@ -74,7 +76,7 @@ describe('exportArtifactPdf', () => {
     });
 
     it('downloads an image-page PDF when the print dialog cannot be opened', async () => {
-        jest.mocked(printHtmlDocument).mockResolvedValueOnce(false);
+        vi.mocked(printHtmlDocument).mockResolvedValueOnce(false);
 
         await expect(exportArtifactPdf(documentArtifact)).resolves.toBe('image_fallback');
         expect(downloadHtmlAsPdf).toHaveBeenCalledWith(expect.any(String), 'Meeting notes.pdf', expect.any(Object));
@@ -86,7 +88,7 @@ describe('exportArtifactPdf', () => {
         });
 
         it('saves through the native export and skips print and image paths', async () => {
-            const exportPdf = jest.fn(async () => {
+            const exportPdf = vi.fn(async () => {
                 return { status: 'saved' as const };
             });
             window.LumoConnectors = { exportPdf };
@@ -103,7 +105,7 @@ describe('exportArtifactPdf', () => {
 
         it('reports cancelled without downloading anything', async () => {
             window.LumoConnectors = {
-                exportPdf: jest.fn(async () => {
+                exportPdf: vi.fn(async () => {
                     return { status: 'cancelled' as const };
                 }),
             };
@@ -117,8 +119,8 @@ describe('exportArtifactPdf', () => {
             ['returns failed', () => Promise.resolve({ status: 'failed' as const })],
             ['throws', () => Promise.reject(new Error('bridge error'))],
         ])('downloads an image-page PDF when the native export %s', async (_name, impl) => {
-            window.LumoConnectors = { exportPdf: jest.fn(impl) };
-            jest.mocked(printHtmlDocument).mockResolvedValueOnce(false);
+            window.LumoConnectors = { exportPdf: vi.fn(impl) };
+            vi.mocked(printHtmlDocument).mockResolvedValueOnce(false);
 
             await expect(exportArtifactPdf(documentArtifact)).resolves.toBe('image_fallback');
             expect(downloadHtmlAsPdf).toHaveBeenCalledWith(expect.any(String), 'Meeting notes.pdf', expect.any(Object));
@@ -126,7 +128,7 @@ describe('exportArtifactPdf', () => {
 
         it('downloads an image-page PDF when the shell has no native export', async () => {
             window.LumoConnectors = {};
-            jest.mocked(printHtmlDocument).mockResolvedValueOnce(false);
+            vi.mocked(printHtmlDocument).mockResolvedValueOnce(false);
 
             await expect(exportArtifactPdf(documentArtifact)).resolves.toBe('image_fallback');
             expect(downloadHtmlAsPdf).toHaveBeenCalled();
@@ -134,8 +136,8 @@ describe('exportArtifactPdf', () => {
     });
 
     it('fails when neither the print dialog nor the image fallback works', async () => {
-        jest.mocked(printHtmlDocument).mockResolvedValueOnce(false);
-        jest.mocked(downloadHtmlAsPdf).mockRejectedValueOnce(new Error('capture failed'));
+        vi.mocked(printHtmlDocument).mockResolvedValueOnce(false);
+        vi.mocked(downloadHtmlAsPdf).mockRejectedValueOnce(new Error('capture failed'));
 
         await expect(exportArtifactPdf(documentArtifact)).resolves.toBe('failed');
     });
@@ -148,14 +150,14 @@ describe('exportArtifactPdf', () => {
     });
 
     it('opens the print dialog when presentation capture fails', async () => {
-        jest.mocked(downloadHtmlSlidesAsPdf).mockRejectedValueOnce(new Error('capture failed'));
+        vi.mocked(downloadHtmlSlidesAsPdf).mockRejectedValueOnce(new Error('capture failed'));
 
         await expect(exportArtifactPdf(presentationArtifact)).resolves.toBe('print_fallback');
         expect(printHtmlDocument).toHaveBeenCalledWith(expect.any(String), { title: 'Deck' });
     });
 
     it('fails rather than printing the raw JSON when a JSON deck PDF cannot be built', async () => {
-        jest.mocked(buildDeckPdfBytes).mockRejectedValueOnce(new Error('layout failed'));
+        vi.mocked(buildDeckPdfBytes).mockRejectedValueOnce(new Error('layout failed'));
 
         await expect(exportArtifactPdf(jsonDeckArtifact)).resolves.toBe('failed');
         expect(printHtmlDocument).not.toHaveBeenCalled();

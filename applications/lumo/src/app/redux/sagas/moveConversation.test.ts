@@ -32,9 +32,9 @@ const mockDevice = {
     failDeletion: undefined as 'conversation' | 'space' | 'attachment' | undefined,
 };
 // The deletion workers run inline (not through their takeEvery watchers), so a failure reaches the saga.
-jest.mock('./conversations', () => {
-    const { put } = jest.requireActual('redux-saga/effects');
-    const slice = jest.requireActual('../slices/core/conversations');
+vi.mock('./conversations', async () => {
+    const { put } = await vi.importActual<Record<string, any>>('redux-saga/effects');
+    const slice = await vi.importActual<Record<string, any>>('../slices/core/conversations');
     return {
         // What `GET conversation` brought in: `payload.fresh` is the newer metadata to merge into Redux.
         refreshConversationFromRemote: function* ({ payload }: any) {
@@ -49,9 +49,9 @@ jest.mock('./conversations', () => {
         },
     };
 });
-jest.mock('./spaces', () => {
-    const { put } = jest.requireActual('redux-saga/effects');
-    const slice = jest.requireActual('../slices/core/spaces');
+vi.mock('./spaces', async () => {
+    const { put } = await vi.importActual<Record<string, any>>('redux-saga/effects');
+    const slice = await vi.importActual<Record<string, any>>('../slices/core/spaces');
     return {
         softDeleteSpaceFromLocal: function* ({ payload }: any) {
             yield put(slice.locallyDeleteSpaceFromLocalRequest(payload));
@@ -61,27 +61,35 @@ jest.mock('./spaces', () => {
         },
     };
 });
-jest.mock('./attachments', () => ({
-    softDeleteAttachmentFromLocal: function* ({ payload }: any) {
-        const { put } = jest.requireActual('redux-saga/effects');
-        const slice = jest.requireActual('../slices/core/attachments');
-        yield put(slice.locallyDeleteAttachmentFromLocalRequest(payload));
-        if (mockDevice.failDeletion === 'attachment') {
-            throw new Error('attachment deletion failed');
-        }
-    },
-    deserializeAttachmentSaga: function* (serialized: any) {
-        return mockDevice.fullAttachments.get(serialized.id);
-    },
-    refreshFilledAttachmentFromRemote: function* ({ payload }: any) {
-        const full = { id: payload.id, spaceId: payload.spaceId, filename: 'remote.png', uploadedAt: 'now', data: new Uint8Array([7]) };
-        mockDevice.attachmentIdb.set(payload.id, { id: payload.id, spaceId: payload.spaceId, encrypted: 'enc' });
-        mockDevice.fullAttachments.set(payload.id, full);
-        mockDevice.state.attachments[payload.id] = full;
-        attachmentDataCache.setData(payload.id, full.data);
-    },
-}));
-jest.mock('./messages', () => ({
+vi.mock('./attachments', async () => {
+    const { put } = await vi.importActual<Record<string, any>>('redux-saga/effects');
+    const slice = await vi.importActual<Record<string, any>>('../slices/core/attachments');
+    return {
+        softDeleteAttachmentFromLocal: function* ({ payload }: any) {
+            yield put(slice.locallyDeleteAttachmentFromLocalRequest(payload));
+            if (mockDevice.failDeletion === 'attachment') {
+                throw new Error('attachment deletion failed');
+            }
+        },
+        deserializeAttachmentSaga: function* (serialized: any) {
+            return mockDevice.fullAttachments.get(serialized.id);
+        },
+        refreshFilledAttachmentFromRemote: function* ({ payload }: any) {
+            const full = {
+                id: payload.id,
+                spaceId: payload.spaceId,
+                filename: 'remote.png',
+                uploadedAt: 'now',
+                data: new Uint8Array([7]),
+            };
+            mockDevice.attachmentIdb.set(payload.id, { id: payload.id, spaceId: payload.spaceId, encrypted: 'enc' });
+            mockDevice.fullAttachments.set(payload.id, full);
+            mockDevice.state.attachments[payload.id] = full;
+            attachmentDataCache.setData(payload.id, full.data);
+        },
+    };
+});
+vi.mock('./messages', () => ({
     refreshMessageFromRemote: function* ({ payload }: any) {
         mockDevice.idb.set(payload.id, payload);
         mockDevice.state.messages[payload.id] = {
@@ -148,9 +156,9 @@ const createState = ({
 
 /** Runs the saga, answering every push request like a server would (or failing conversation pushes). */
 const dbApi = {
-    softDeleteMessage: jest.fn(),
-    getMessageById: jest.fn(async (id: string) => mockDevice.idb.get(id)),
-    getAttachmentById: jest.fn(async (id: string) => mockDevice.attachmentIdb.get(id)),
+    softDeleteMessage: vi.fn(),
+    getMessageById: vi.fn(async (id: string) => mockDevice.idb.get(id)),
+    getAttachmentById: vi.fn(async (id: string) => mockDevice.attachmentIdb.get(id)),
 };
 
 const run = async (
@@ -237,8 +245,8 @@ describe('moveConversationToSpace saga', () => {
 
         it('fetches the full messages and copies them before deleting the original', async () => {
             const lumoApi = {
-                getConversation: jest.fn().mockResolvedValue({ conversation: { id: 'conv-1' }, messages: shallowList }),
-                getMessage: jest.fn(async (remoteId: string) => {
+                getConversation: vi.fn().mockResolvedValue({ conversation: { id: 'conv-1' }, messages: shallowList }),
+                getMessage: vi.fn(async (remoteId: string) => {
                     const id = remoteId.replace('remote-', '');
                     return { ...shallowList.find((m) => m.id === id)!, encrypted: `enc-${id}` };
                 }),
@@ -258,8 +266,8 @@ describe('moveConversationToSpace saga', () => {
             const state = neverOpenedState();
             (state as any).messages.m1 = message('m1', '2026-01-01T00:00:01.000Z');
             const lumoApi = {
-                getConversation: jest.fn().mockResolvedValue({ conversation: { id: 'conv-1' }, messages: shallowList }),
-                getMessage: jest.fn(async () => ({ ...shallowList[1], encrypted: 'enc-m2' })),
+                getConversation: vi.fn().mockResolvedValue({ conversation: { id: 'conv-1' }, messages: shallowList }),
+                getMessage: vi.fn(async () => ({ ...shallowList[1], encrypted: 'enc-m2' })),
             };
 
             await run(state, { lumoApi });
@@ -269,11 +277,11 @@ describe('moveConversationToSpace saga', () => {
         });
 
         it.each([
-            ['the message cannot be fetched', () => jest.fn().mockResolvedValue(null)],
-            ['the request fails', () => jest.fn().mockRejectedValue(new Error('offline'))],
+            ['the message cannot be fetched', () => vi.fn().mockResolvedValue(null)],
+            ['the request fails', () => vi.fn().mockRejectedValue(new Error('offline'))],
         ])('aborts without copying or deleting anything when %s', async (_name, getMessage) => {
             const lumoApi = {
-                getConversation: jest.fn().mockResolvedValue({ conversation: { id: 'conv-1' }, messages: shallowList }),
+                getConversation: vi.fn().mockResolvedValue({ conversation: { id: 'conv-1' }, messages: shallowList }),
                 getMessage: getMessage(),
             };
 
@@ -291,7 +299,7 @@ describe('moveConversationToSpace saga', () => {
         });
 
         it('aborts when the conversation cannot be fetched', async () => {
-            const lumoApi = { getConversation: jest.fn().mockRejectedValue(new Error('offline')), getMessage: jest.fn() };
+            const lumoApi = { getConversation: vi.fn().mockRejectedValue(new Error('offline')), getMessage: vi.fn() };
 
             const dispatched = await run(neverOpenedState(), { lumoApi });
 
@@ -373,9 +381,12 @@ describe('moveConversationToSpace saga', () => {
 
             it('downloads it and copies it instead of skipping it', async () => {
                 const lumoApi = {
-                    getAttachment: jest
-                        .fn()
-                        .mockResolvedValue({ id: 'remote-file', spaceId: SOURCE, encrypted: 'enc', deleted: undefined }),
+                    getAttachment: vi.fn().mockResolvedValue({
+                        id: 'remote-file',
+                        spaceId: SOURCE,
+                        encrypted: 'enc',
+                        deleted: undefined,
+                    }),
                 };
 
                 const dispatched = await run(remoteFileState(), { lumoApi });
@@ -389,8 +400,8 @@ describe('moveConversationToSpace saga', () => {
             });
 
             it.each([
-                ['the server has no such file', () => jest.fn().mockResolvedValue(null)],
-                ['the download fails', () => jest.fn().mockRejectedValue(new Error('offline'))],
+                ['the server has no such file', () => vi.fn().mockResolvedValue(null)],
+                ['the download fails', () => vi.fn().mockRejectedValue(new Error('offline'))],
             ])('aborts without deleting anything when %s', async (_name, getAttachment) => {
                 const dispatched = await run(remoteFileState(), { lumoApi: { getAttachment: getAttachment() } });
 
@@ -403,7 +414,7 @@ describe('moveConversationToSpace saga', () => {
             });
 
             it('leaves out a file that was deleted on the server', async () => {
-                const lumoApi = { getAttachment: jest.fn().mockResolvedValue({ id: 'remote-file', deleted: true }) };
+                const lumoApi = { getAttachment: vi.fn().mockResolvedValue({ id: 'remote-file', deleted: true }) };
 
                 const dispatched = await run(remoteFileState(), { lumoApi });
 
@@ -466,7 +477,10 @@ describe('moveConversationToSpace saga', () => {
 
             const dispatched = await run(state, {
                 duringSync: () => {
-                    (state.conversations as any)['conv-1'] = { ...state.conversations['conv-1'], artifactAssets: artifactPointers };
+                    (state.conversations as any)['conv-1'] = {
+                        ...state.conversations['conv-1'],
+                        artifactAssets: artifactPointers,
+                    };
                 },
             });
 
@@ -495,7 +509,12 @@ describe('moveConversationToSpace saga', () => {
             const state = createState({
                 conv: conversation({ artifactAssets: artifactPointers }),
                 attachments: [
-                    { id: 'late-file', spaceId: SOURCE, filename: 'doc.pdf', uploadedAt: 'now' } as unknown as Attachment,
+                    {
+                        id: 'late-file',
+                        spaceId: SOURCE,
+                        filename: 'doc.pdf',
+                        uploadedAt: 'now',
+                    } as unknown as Attachment,
                 ],
             });
 
@@ -515,17 +534,17 @@ describe('moveConversationToSpace saga', () => {
             };
             const pointers = { a1: { attachmentId: 'fresh-file', syncedMessageId: 'm9' } };
             const lumoApi = {
-                getConversation: jest.fn().mockResolvedValue({
+                getConversation: vi.fn().mockResolvedValue({
                     conversation: { id: 'conv-1', fresh: { artifactAssets: pointers, title: 'Renamed elsewhere' } },
                     messages: [],
                 }),
-                getMessage: jest.fn(),
+                getMessage: vi.fn(),
                 // The file was created on another device: only the space (not the conversation) lists it.
-                getSpace: jest.fn().mockResolvedValue({
+                getSpace: vi.fn().mockResolvedValue({
                     assets: [{ id: 'fresh-file', remoteId: 'remote-fresh', spaceId: SOURCE }],
                     deletedAssets: [],
                 }),
-                getAttachment: jest
+                getAttachment: vi
                     .fn()
                     .mockResolvedValue({ id: 'fresh-file', spaceId: SOURCE, encrypted: 'enc', deleted: undefined }),
             };
@@ -548,16 +567,16 @@ describe('moveConversationToSpace saga', () => {
                 local2remote: { conversation: { 'conv-1': 'remote-conv-1' }, space: { [SOURCE]: 'remote-space' } },
             };
             const lumoApi = {
-                getConversation: jest.fn().mockResolvedValue({
+                getConversation: vi.fn().mockResolvedValue({
                     conversation: {
                         id: 'conv-1',
                         fresh: { artifactAssets: { a1: { attachmentId: 'ghost', syncedMessageId: 'm9' } } },
                     },
                     messages: [],
                 }),
-                getMessage: jest.fn(),
-                getSpace: jest.fn().mockResolvedValue({ assets: [], deletedAssets: [] }),
-                getAttachment: jest.fn(),
+                getMessage: vi.fn(),
+                getSpace: vi.fn().mockResolvedValue({ assets: [], deletedAssets: [] }),
+                getAttachment: vi.fn(),
             };
 
             const dispatched = await run(state, { lumoApi });
@@ -577,16 +596,16 @@ describe('moveConversationToSpace saga', () => {
                 local2remote: { conversation: { 'conv-1': 'remote-conv-1' }, space: { [SOURCE]: 'remote-space' } },
             };
             const lumoApi = {
-                getConversation: jest.fn().mockResolvedValue({
+                getConversation: vi.fn().mockResolvedValue({
                     conversation: {
                         id: 'conv-1',
                         fresh: { artifactAssets: { a1: { attachmentId: 'old-file', syncedMessageId: 'm9' } } },
                     },
                     messages: [],
                 }),
-                getMessage: jest.fn(),
-                getSpace: jest.fn().mockResolvedValue({ assets: [], deletedAssets: [{ id: 'old-file' }] }),
-                getAttachment: jest.fn(),
+                getMessage: vi.fn(),
+                getSpace: vi.fn().mockResolvedValue({ assets: [], deletedAssets: [{ id: 'old-file' }] }),
+                getAttachment: vi.fn(),
             };
 
             const dispatched = await run(state, { lumoApi });
@@ -634,7 +653,9 @@ describe('moveConversationToSpace saga', () => {
 
     describe('attempts', () => {
         it('reports the attempt id on a refusal, so a duplicate request cannot be mistaken for the first one', async () => {
-            const dispatched = await run(createState({ conv: conversation({ status: ConversationStatus.GENERATING }) }));
+            const dispatched = await run(
+                createState({ conv: conversation({ status: ConversationStatus.GENERATING }) })
+            );
 
             expect(dispatched.at(-1)).toMatchObject({
                 type: moveConversationToSpaceFailure.type,
@@ -683,8 +704,8 @@ describe('moveConversationToSpace saga', () => {
             const state = createState({ messages: [] }) as any;
             state.idmap = { local2remote: { conversation: { 'conv-1': 'remote-conv-1' } } };
             const lumoApi = {
-                getConversation: jest.fn().mockResolvedValue({ conversation: { id: 'conv-1' }, messages: [] }),
-                getMessage: jest.fn(),
+                getConversation: vi.fn().mockResolvedValue({ conversation: { id: 'conv-1' }, messages: [] }),
+                getMessage: vi.fn(),
             };
 
             const dispatched = await run(state, { lumoApi });
@@ -693,7 +714,9 @@ describe('moveConversationToSpace saga', () => {
         });
 
         it('does not report finishing when the move is refused', async () => {
-            const dispatched = await run(createState({ conv: conversation({ status: ConversationStatus.GENERATING }) }));
+            const dispatched = await run(
+                createState({ conv: conversation({ status: ConversationStatus.GENERATING }) })
+            );
 
             expect(stages(dispatched)).toEqual([]);
         });

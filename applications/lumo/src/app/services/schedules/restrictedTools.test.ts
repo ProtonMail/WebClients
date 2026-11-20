@@ -20,9 +20,9 @@ function setup(readOnlyConnectorIds: string[] = []) {
             tools: [{ name: 'write' }],
         },
     ];
-    const execute = jest.fn<ReturnType<ClientToolExecutor['execute']>, Parameters<ClientToolExecutor['execute']>>(
-        async () => [{ content: 'ok' }]
-    );
+    const execute = vi.fn<
+        (...args: Parameters<ClientToolExecutor['execute']>) => ReturnType<ClientToolExecutor['execute']>
+    >(async () => [{ content: 'ok' }]);
     const base: ClientToolExecutor = {
         getClientTools: async () =>
             manifests.flatMap((item) =>
@@ -36,7 +36,7 @@ function setup(readOnlyConnectorIds: string[] = []) {
             calls.map((call) => ({ ...call, name: call.name === 'alias' ? 'calendar__other__write' : call.name })),
         execute,
     };
-    const guard = jest.fn();
+    const guard = vi.fn();
     return {
         manifests,
         execute,

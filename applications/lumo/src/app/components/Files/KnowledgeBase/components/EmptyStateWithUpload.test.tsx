@@ -2,21 +2,21 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { EmptyStateWithUpload } from './EmptyStateWithUpload';
 
-const handleFilesSelected = jest.fn();
+const handleFilesSelected = vi.fn();
 const mockFlags = { artifactsView: true };
 
-jest.mock('../../../../hooks/useLumoFlags', () => {
+vi.mock('../../../../hooks/useLumoFlags', () => {
     return { useLumoFlags: () => mockFlags };
 });
-jest.mock('../../../Composer/hooks/useFileHandling', () => {
+vi.mock('../../../Composer/hooks/useFileHandling', () => {
     return { useFileHandling: () => ({ handleFilesSelected }) };
 });
-jest.mock('../../../../util/telemetry', () => {
-    return { sendFileUploadEvent: jest.fn() };
+vi.mock('../../../../util/telemetry', () => {
+    return { sendFileUploadEvent: vi.fn() };
 });
 
 const renderEmptyState = () => {
-    const onShowDriveBrowser = jest.fn();
+    const onShowDriveBrowser = vi.fn();
     const { container } = render(
         <EmptyStateWithUpload messageChain={[]} onShowDriveBrowser={onShowDriveBrowser} spaceId="space" />
     );
@@ -58,7 +58,7 @@ describe('EmptyStateWithUpload', () => {
     it('opens the file picker from "Upload" and passes chosen files on', () => {
         const { container } = renderEmptyState();
         const input = container.querySelector('input[type="file"]') as HTMLInputElement;
-        const clickSpy = jest.spyOn(input, 'click');
+        const clickSpy = vi.spyOn(input, 'click');
 
         fireEvent.click(screen.getByRole('button', { name: 'Upload' }));
         expect(clickSpy).toHaveBeenCalledTimes(1);

@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import { notifyMobileAppLoaded, resetMobileAppNotificationFlag } from './mobileAppNotification';
 
 // Locks the web→native readiness contract: iOS dismisses its loading placeholder when it
@@ -5,17 +7,17 @@ import { notifyMobileAppLoaded, resetMobileAppNotificationFlag } from './mobileA
 // handler or the message `type` here would silently break the iOS app (it would fall back to
 // the safety timeout and show a blank web view on slow networks), so this guards both names.
 describe('notifyMobileAppLoaded', () => {
-    let postMessage: jest.Mock;
+    let postMessage: Mock;
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         resetMobileAppNotificationFlag();
-        postMessage = jest.fn();
+        postMessage = vi.fn();
         (window as any).webkit = { messageHandlers: { lumoApp: { postMessage } } };
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         delete (window as any).webkit;
     });
 
@@ -24,7 +26,7 @@ describe('notifyMobileAppLoaded', () => {
 
         expect(postMessage).not.toHaveBeenCalled();
 
-        jest.advanceTimersByTime(150);
+        vi.advanceTimersByTime(150);
 
         expect(postMessage).toHaveBeenCalledTimes(1);
         expect(postMessage).toHaveBeenCalledWith(expect.objectContaining({ type: 'LUMO_APP_LOADED' }));
@@ -34,7 +36,7 @@ describe('notifyMobileAppLoaded', () => {
         notifyMobileAppLoaded(0);
         notifyMobileAppLoaded(0);
 
-        jest.advanceTimersByTime(0);
+        vi.advanceTimersByTime(0);
 
         expect(postMessage).toHaveBeenCalledTimes(1);
     });

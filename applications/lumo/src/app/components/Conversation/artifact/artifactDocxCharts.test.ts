@@ -5,8 +5,8 @@ import { renderVegaSpecToPng } from '../../LumoMarkdown/vega/renderVegaSpecToSvg
 import { prepareDocxCharts } from './artifactDocxCharts';
 
 // jsdom has no canvas, so the PNG renderer itself is mocked; renderVegaSpecToSvg.test covers it.
-jest.mock('../../LumoMarkdown/vega/renderVegaSpecToSvg', () => ({
-    renderVegaSpecToPng: jest.fn(),
+vi.mock('../../LumoMarkdown/vega/renderVegaSpecToSvg', () => ({
+    renderVegaSpecToPng: vi.fn(),
 }));
 
 const ONE_PIXEL_PNG = Uint8Array.from(
@@ -20,8 +20,8 @@ const CHART = `\`\`\`vega-lite\n${SPEC}\n\`\`\``;
 
 describe('prepareDocxCharts (D12)', () => {
     beforeEach(() => {
-        jest.mocked(renderVegaSpecToPng).mockReset();
-        jest.mocked(renderVegaSpecToPng).mockResolvedValue({ data: ONE_PIXEL_PNG, width: 640, height: 360 });
+        vi.mocked(renderVegaSpecToPng).mockReset();
+        vi.mocked(renderVegaSpecToPng).mockResolvedValue({ data: ONE_PIXEL_PNG, width: 640, height: 360 });
     });
 
     it('replaces each chart fence with an image keyed into localImages, with the title as alt text', async () => {
@@ -45,7 +45,7 @@ describe('prepareDocxCharts (D12)', () => {
     });
 
     it('falls back to the title and data table when a chart fails to render', async () => {
-        jest.mocked(renderVegaSpecToPng).mockRejectedValueOnce(new Error('rejected spec'));
+        vi.mocked(renderVegaSpecToPng).mockRejectedValueOnce(new Error('rejected spec'));
 
         const { markdown, localImages } = await prepareDocxCharts(CHART);
 

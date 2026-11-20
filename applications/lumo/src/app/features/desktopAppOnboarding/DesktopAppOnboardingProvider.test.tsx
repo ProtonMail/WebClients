@@ -1,6 +1,7 @@
 import { MemoryRouter, Route } from 'react-router-dom';
 
 import { act, fireEvent, render, screen } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import {
     getDesktopConnectorsApi,
@@ -24,53 +25,53 @@ import { useIsDesktopOnboardingBlocking } from '../desktopOnboarding/DesktopOnbo
 import { DesktopAppOnboardingProvider } from './DesktopAppOnboardingProvider';
 import { getDesktopAppOnboardingRecord } from './desktopAppOnboardingStorage';
 
-jest.mock('@proton/shared/lib/helpers/desktop', () => ({
+vi.mock('@proton/shared/lib/helpers/desktop', () => ({
     isTauriOnMac: true,
 }));
-jest.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
-    isDesktopEnvironment: jest.fn(),
-    getDesktopConnectorsApi: jest.fn(),
-    openDesktopSettings: jest.fn(),
+vi.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
+    isDesktopEnvironment: vi.fn(),
+    getDesktopConnectorsApi: vi.fn(),
+    openDesktopSettings: vi.fn(),
 }));
-jest.mock('../../hooks/useLumoFlags', () => ({
-    useLumoFlags: jest.fn(),
+vi.mock('../../hooks/useLumoFlags', () => ({
+    useLumoFlags: vi.fn(),
 }));
-jest.mock('../../hooks/useLumoPlan', () => ({
-    useLumoPlan: jest.fn(),
+vi.mock('../../hooks/useLumoPlan', () => ({
+    useLumoPlan: vi.fn(),
 }));
-jest.mock('../../providers/DeviceSettingsProvider', () => ({
-    useDeviceSettings: jest.fn(),
+vi.mock('../../providers/DeviceSettingsProvider', () => ({
+    useDeviceSettings: vi.fn(),
 }));
-jest.mock('../../providers/IsGuestProvider', () => ({
-    useIsGuest: jest.fn(),
+vi.mock('../../providers/IsGuestProvider', () => ({
+    useIsGuest: vi.fn(),
 }));
-jest.mock('../../redux/hooks', () => ({
-    useLumoSelector: jest.fn(),
+vi.mock('../../redux/hooks', () => ({
+    useLumoSelector: vi.fn(),
 }));
-jest.mock('../../redux/selectors', () => ({
+vi.mock('../../redux/selectors', () => ({
     selectMasterKeyState: (state: { masterKey: unknown }) => {
         return state.masterKey;
     },
 }));
-jest.mock('../../upsells/providers/LumoUpsellModalProvider', () => ({
+vi.mock('../../upsells/providers/LumoUpsellModalProvider', () => ({
     useOfferFlags: () => {
         return { loadingOffer: false };
     },
 }));
-jest.mock('../../upsells/useLumoPlusUpsellButtonConfig', () => ({
+vi.mock('../../upsells/useLumoPlusUpsellButtonConfig', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
-jest.mock('../../util/telemetry', () => ({
-    sendDesktopAppOnboardingShownEvent: jest.fn(),
-    sendDesktopAppOnboardingStepViewedEvent: jest.fn(),
-    sendDesktopAppOnboardingNotificationsEvent: jest.fn(),
-    sendDesktopAppOnboardingEndedEvent: jest.fn(),
+vi.mock('../../util/telemetry', () => ({
+    sendDesktopAppOnboardingShownEvent: vi.fn(),
+    sendDesktopAppOnboardingStepViewedEvent: vi.fn(),
+    sendDesktopAppOnboardingNotificationsEvent: vi.fn(),
+    sendDesktopAppOnboardingEndedEvent: vi.fn(),
 }));
 
-const mockRequestPermission = jest.fn();
-const mockOpenSettings = jest.fn();
-const mockOnUpgrade = jest.fn();
+const mockRequestPermission = vi.fn();
+const mockOpenSettings = vi.fn();
+const mockOnUpgrade = vi.fn();
 
 const BlockingProbe = () => {
     const isBlocking = useIsDesktopOnboardingBlocking();
@@ -106,15 +107,15 @@ const setup = ({
     isFree = true,
     planLoading = false,
 }: SetupOptions = {}) => {
-    (useLumoFlags as jest.Mock).mockReturnValue({ desktopAppOnboarding: flag, skills: true });
-    (isDesktopEnvironment as jest.Mock).mockReturnValue(isDesktopApp);
-    (useIsGuest as jest.Mock).mockReturnValue(isGuest);
-    (useLumoPlan as jest.Mock).mockReturnValue({ isLumoPlanLoading: planLoading });
-    (useLumoPlusUpsellButtonConfig as jest.Mock).mockReturnValue(isFree ? { onUpgrade: mockOnUpgrade } : null);
-    (useDeviceSettings as jest.Mock).mockReturnValue({
+    (useLumoFlags as Mock).mockReturnValue({ desktopAppOnboarding: flag, skills: true });
+    (isDesktopEnvironment as Mock).mockReturnValue(isDesktopApp);
+    (useIsGuest as Mock).mockReturnValue(isGuest);
+    (useLumoPlan as Mock).mockReturnValue({ isLumoPlanLoading: planLoading });
+    (useLumoPlusUpsellButtonConfig as Mock).mockReturnValue(isFree ? { onUpgrade: mockOnUpgrade } : null);
+    (useDeviceSettings as Mock).mockReturnValue({
         notificationSettings: { permission, requestPermission: mockRequestPermission, openSettings: mockOpenSettings },
     });
-    (useLumoSelector as jest.Mock).mockImplementation((selector) => {
+    (useLumoSelector as Mock).mockImplementation((selector) => {
         return selector({ masterKey: { status: 'ready' } });
     });
     if (hasNotificationsApi) {
@@ -134,7 +135,7 @@ const setup = ({
 
 const advancePastDelay = () => {
     act(() => {
-        jest.advanceTimersByTime(500);
+        vi.advanceTimersByTime(500);
     });
 };
 
@@ -148,13 +149,13 @@ const click = (name: string) => {
 
 describe('DesktopAppOnboardingProvider', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.clearAllMocks();
+        vi.useFakeTimers();
+        vi.clearAllMocks();
         localStorage.clear();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         delete (window as { LumoNotifications?: unknown }).LumoNotifications;
     });
 
@@ -311,7 +312,7 @@ describe('DesktopAppOnboardingProvider', () => {
         goToNotifications();
         click('Turn on notifications');
         click('Close');
-        (sendDesktopAppOnboardingStepViewedEvent as jest.Mock).mockClear();
+        (sendDesktopAppOnboardingStepViewedEvent as Mock).mockClear();
         await act(async () => {
             settings.resolve();
         });
@@ -346,8 +347,8 @@ describe('DesktopAppOnboardingProvider', () => {
     };
 
     it('paid users: the last step opens the desktop settings on Connectors', async () => {
-        (getDesktopConnectorsApi as jest.Mock).mockReturnValue({ openSettings: jest.fn() });
-        (openDesktopSettings as jest.Mock).mockResolvedValue(undefined);
+        (getDesktopConnectorsApi as Mock).mockReturnValue({ openSettings: vi.fn() });
+        (openDesktopSettings as Mock).mockResolvedValue(undefined);
         goToConnectorStep();
         expect(heading()).toHaveTextContent('Connect your first app');
         expect(screen.queryByRole('button', { name: 'Get Lumo Plus' })).toBeNull();
@@ -360,7 +361,7 @@ describe('DesktopAppOnboardingProvider', () => {
     });
 
     it('paid users: desktop builds without the settings bridge go to Customize › Connectors', async () => {
-        (getDesktopConnectorsApi as jest.Mock).mockReturnValue({});
+        (getDesktopConnectorsApi as Mock).mockReturnValue({});
         goToConnectorStep();
         await act(async () => {
             fireEvent.click(screen.getByRole('button', { name: 'Set up a connector' }));
@@ -370,9 +371,9 @@ describe('DesktopAppOnboardingProvider', () => {
     });
 
     it('paid users: falls back to Customize › Connectors if the desktop settings fail to open', async () => {
-        (getDesktopConnectorsApi as jest.Mock).mockReturnValue({ openSettings: jest.fn() });
-        (openDesktopSettings as jest.Mock).mockRejectedValue(new Error('no window'));
-        const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+        (getDesktopConnectorsApi as Mock).mockReturnValue({ openSettings: vi.fn() });
+        (openDesktopSettings as Mock).mockRejectedValue(new Error('no window'));
+        const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
         goToConnectorStep();
         await act(async () => {
             fireEvent.click(screen.getByRole('button', { name: 'Set up a connector' }));

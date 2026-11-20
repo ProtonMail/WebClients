@@ -1,5 +1,6 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 import { runSaga } from 'redux-saga';
+import type { Mock } from 'vitest';
 
 import type { SyncArtifactAssetRequest } from '../slices/artifactAssetSync';
 import { addAttachment, locallyDeleteAttachmentFromLocalRequest } from '../slices/core/attachments';
@@ -8,11 +9,11 @@ import type { LumoState } from '../store';
 import { syncArtifactAssetSerialized } from './artifactAssets';
 import { pushAttachment } from './attachments';
 
-jest.mock('./attachments', () => {
-    return { pushAttachment: jest.fn() };
+vi.mock('./attachments', () => {
+    return { pushAttachment: vi.fn() };
 });
 
-jest.mock('../../components/Conversation/artifact/buildArtifactAssetFile', () => {
+vi.mock('../../components/Conversation/artifact/buildArtifactAssetFile', () => {
     return {
         artifactTypeSupportsAssetSync: () => {
             return true;
@@ -106,7 +107,7 @@ const createHarness = () => {
 };
 
 describe('syncArtifactAssetSerialized', () => {
-    const pushAttachmentMock = pushAttachment as unknown as jest.Mock;
+    const pushAttachmentMock = pushAttachment as unknown as Mock;
     let pushes: Deferred[];
 
     beforeEach(() => {
@@ -184,7 +185,7 @@ describe('syncArtifactAssetSerialized', () => {
 
     it('keeps syncing a creation after a failed upload', async () => {
         const harness = createHarness();
-        const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+        const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
         pushAttachmentMock.mockImplementationOnce(() => {
             return Promise.reject(new Error('network'));
         });

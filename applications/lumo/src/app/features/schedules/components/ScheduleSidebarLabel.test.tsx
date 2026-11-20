@@ -4,7 +4,7 @@ import type { RecurrenceRule } from '../../../components/RecurrenceRuleFieldset/
 import { useScheduleRunState } from '../useScheduleRunState';
 import { ScheduleSidebarLabel } from './ScheduleSidebarLabel';
 
-jest.mock('../useScheduleRunState', () => ({ useScheduleRunState: jest.fn() }));
+vi.mock('../useScheduleRunState', () => ({ useScheduleRunState: vi.fn() }));
 
 describe('ScheduleSidebarLabel', () => {
     it('keeps the cadence while queued and updates as the task runs, pauses, and resumes', () => {
@@ -16,20 +16,20 @@ describe('ScheduleSidebarLabel', () => {
             timezone: 'UTC',
         };
         const state = { isRunning: false, isPaused: false, isQueued: true };
-        jest.mocked(useScheduleRunState).mockReturnValue(state as never);
+        vi.mocked(useScheduleRunState).mockReturnValue(state as never);
         const label = <ScheduleSidebarLabel rule={rule} scheduleId="schedule" />;
         const { rerender } = render(label);
         expect(screen.getByText('Weekdays')).not.toHaveAttribute('data-schedule-running');
 
-        jest.mocked(useScheduleRunState).mockReturnValue({ ...state, isRunning: true, isPaused: true } as never);
+        vi.mocked(useScheduleRunState).mockReturnValue({ ...state, isRunning: true, isPaused: true } as never);
         rerender(<ScheduleSidebarLabel rule={rule} scheduleId="schedule" />);
         expect(screen.getByText('Running')).toHaveAttribute('data-schedule-running', 'true');
 
-        jest.mocked(useScheduleRunState).mockReturnValue({ ...state, isPaused: true } as never);
+        vi.mocked(useScheduleRunState).mockReturnValue({ ...state, isPaused: true } as never);
         rerender(<ScheduleSidebarLabel rule={rule} scheduleId="schedule" />);
         expect(screen.getByText('Paused')).not.toHaveAttribute('data-schedule-running');
 
-        jest.mocked(useScheduleRunState).mockReturnValue(state as never);
+        vi.mocked(useScheduleRunState).mockReturnValue(state as never);
         rerender(<ScheduleSidebarLabel rule={rule} scheduleId="schedule" />);
         expect(screen.getByText('Weekdays')).toBeInTheDocument();
     });

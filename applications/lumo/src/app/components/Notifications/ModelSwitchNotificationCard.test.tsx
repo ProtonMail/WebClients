@@ -10,23 +10,23 @@ import { type Conversation, type Message, Role } from '../../types';
 import { markModelSwitchNotificationDismissed } from '../../util/modelSwitchNotificationStorage';
 import { ModelSwitchNotificationCard } from './ModelSwitchNotificationCard';
 
-jest.mock('../../redux/hooks', () => {
-    const { useSelector } = jest.requireActual('react-redux');
+vi.mock('../../redux/hooks', async () => {
+    const { useSelector } = await vi.importActual('react-redux');
     return { useLumoSelector: useSelector };
 });
-jest.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
-jest.mock('../../hooks/useLumoPlan', () => ({ useLumoPlan: () => ({ hasLumoPlus: false }) }));
-jest.mock('../../hooks/useMaxModelAvailability', () => ({
+vi.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
+vi.mock('../../hooks/useLumoPlan', () => ({ useLumoPlan: () => ({ hasLumoPlus: false }) }));
+vi.mock('../../hooks/useMaxModelAvailability', () => ({
     useMaxModelAvailability: () => ({ isMaxAvailableByFlag: true }),
 }));
-jest.mock('../../hooks/useTierErrors', () => ({ useTierErrors: () => ({ hasTierErrors: false }) }));
-jest.mock('../../providers/ModelTierProvider', () => ({
+vi.mock('../../hooks/useTierErrors', () => ({ useTierErrors: () => ({ hasTierErrors: false }) }));
+vi.mock('../../providers/ModelTierProvider', () => ({
     getSelectedModelTier: (modelTier: string) => modelTier,
-    useModelTier: () => ({ modelTier: 'lumo-lite', setModelTier: jest.fn() }),
+    useModelTier: () => ({ modelTier: 'lumo-lite', setModelTier: vi.fn() }),
 }));
-jest.mock('../../util/modelSwitchNotificationStorage', () => ({
+vi.mock('../../util/modelSwitchNotificationStorage', () => ({
     hasDismissedModelSwitchNotification: () => false,
-    markModelSwitchNotificationDismissed: jest.fn(),
+    markModelSwitchNotificationDismissed: vi.fn(),
 }));
 
 const conversation: Conversation = {

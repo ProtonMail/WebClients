@@ -30,8 +30,8 @@ const createState = (): LumoState =>
 const runPushMessage = async (idbMessage: SerializedMessage | undefined, state = createState()) => {
     const dispatched: UnknownAction[] = [];
     const dbApi = {
-        getMessageById: jest.fn(async () => idbMessage),
-        updateMessage: jest.fn(async (_message: SerializedMessage, { dirty }: { dirty: boolean }) => {
+        getMessageById: vi.fn(async () => idbMessage),
+        updateMessage: vi.fn(async (_message: SerializedMessage, { dirty }: { dirty: boolean }) => {
             if (idbMessage) {
                 idbMessage.dirty = dirty;
             }

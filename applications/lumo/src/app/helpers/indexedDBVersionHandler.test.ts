@@ -1,21 +1,17 @@
-import {
-    deleteIndexedDB,
-    getIndexedDBVersion,
-    handleIndexedDBVersionDowngrade,
-} from './indexedDBVersionHandler';
+import { deleteIndexedDB, getIndexedDBVersion, handleIndexedDBVersionDowngrade } from './indexedDBVersionHandler';
 
 describe('indexedDBVersionHandler', () => {
     const TEST_DB_NAME = 'test-version-handler-db';
 
     // Suppress console output during tests for cleaner output
     beforeAll(() => {
-        jest.spyOn(console, 'log').mockImplementation();
-        jest.spyOn(console, 'warn').mockImplementation();
-        jest.spyOn(console, 'error').mockImplementation();
+        vi.spyOn(console, 'log').mockImplementation(() => {});
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
+        vi.spyOn(console, 'error').mockImplementation(() => {});
     });
 
     afterAll(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     // Clean up any test databases after each test

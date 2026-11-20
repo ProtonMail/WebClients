@@ -2,7 +2,7 @@ import { type Conversation, ConversationStatus, type Message, Role } from '../..
 import type { IndexableConversation } from '../../workers/search/SearchEngine';
 import { SearchService } from './searchService';
 
-jest.mock('../../config/search', () => ({ ENABLE_FOUNDATION_SEARCH: true }));
+vi.mock('../../config/search', () => ({ ENABLE_FOUNDATION_SEARCH: true }));
 
 const conversation = (id: string, extra: Partial<Conversation> = {}): Conversation =>
     ({
@@ -32,7 +32,7 @@ const setup = (indexed: Record<string, string> = {}) => {
     userCount += 1;
     const service = SearchService.get(`sync-user-${userCount}`);
     const requests: IndexRequest[] = [];
-    jest.spyOn(
+    vi.spyOn(
         service as unknown as { postToWorker: (m: IndexRequest) => Promise<unknown> },
         'postToWorker'
     ).mockImplementation(async (request) => {
@@ -44,7 +44,7 @@ const setup = (indexed: Record<string, string> = {}) => {
 };
 
 describe('SearchService.syncConversations', () => {
-    afterEach(() => jest.restoreAllMocks());
+    afterEach(() => vi.restoreAllMocks());
 
     it('indexes chat text from blocks or content, leaving out ghost, scheduled and generating chats', async () => {
         const { service, writes } = setup();

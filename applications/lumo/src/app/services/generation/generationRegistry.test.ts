@@ -37,7 +37,7 @@ afterEach(() => {
 it('allows only one tab to execute a conversation and retains ownership through Stop cleanup', async () => {
     const firstTab = new GenerationRegistry();
     const secondTab = new GenerationRegistry();
-    const execute = jest.fn();
+    const execute = vi.fn();
     const first = await firstTab.startExclusive('conversation');
     execute('first action');
     firstTab.abort('conversation');
@@ -72,7 +72,7 @@ it('keeps ownership during logout until uninterruptible client tools settle', as
 it('releases local registration if the browser rejects a lock request', async () => {
     const registry = new GenerationRegistry();
     const error = new Error('Lock request failed');
-    jest.spyOn(navigator.locks, 'request').mockRejectedValueOnce(error);
+    vi.spyOn(navigator.locks, 'request').mockRejectedValueOnce(error);
     await expect(registry.startExclusive('conversation')).rejects.toBe(error);
     expect(registry.isInProgress('conversation')).toBe(false);
     const controller = await registry.startExclusive('conversation');
@@ -94,8 +94,8 @@ it('executes a recovered pending tool only once when two tabs try to resume it',
     const firstTab = new GenerationRegistry();
     const secondTab = new GenerationRegistry();
     const result = Promise.withResolvers<ClientToolResult[]>();
-    const execute = jest.fn(() => result.promise);
-    const api = jest.fn();
+    const execute = vi.fn(() => result.promise);
+    const api = vi.fn();
     const checkpoint = {
         ...newRecoveryState([], 'message'),
         phase: 'tool-pending' as const,

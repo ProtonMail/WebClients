@@ -16,7 +16,7 @@ describe('Mock Server Tests', () => {
         mockErrorHandler = new MockErrorHandler();
         server = setupServer(...createHandlers(mockDb, mockErrorHandler));
         server.listen();
-        baseUrl = 'http://localhost';
+        baseUrl = window.location.origin;
     });
 
     afterEach(async () => {
