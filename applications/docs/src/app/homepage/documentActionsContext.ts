@@ -4,7 +4,7 @@ import type { RecentDocumentsItem } from './recentDocumentsItem'
 export type DocumentActionsContextValue = {
   open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
   share: (document: RecentDocumentsItem) => void
-  move: (document: RecentDocumentsItem) => void
+  move: (document: RecentDocumentsItem, onMoved?: (moved: RecentDocumentsItem[]) => void) => void
   openParent: (document: RecentDocumentsItem) => void
   startRename: (document: RecentDocumentsItem) => void
   cancelRename: (force?: boolean) => void

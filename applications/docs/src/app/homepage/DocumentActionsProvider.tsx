@@ -39,7 +39,7 @@ export function DocumentActionsProvider({
   const [currentlyTrashingId, setCurrentlyTrashingId] = useState<string | undefined>(undefined)
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
 
-  const { updateMovedDocuments, reportTelemetry, createNotification, getAppHref, errorTracking } = useHomepageView()
+  const { reportTelemetry, createNotification, getAppHref, errorTracking } = useHomepageView()
   const { documentActions: messages, trash: trashMessages } = useHomepageMessages()
   const [documentToDelete, setDocumentToDelete] = useState<RecentDocumentsItem>()
   const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash({ drive })
@@ -60,15 +60,9 @@ export function DocumentActionsProvider({
     reportTelemetry(TelemetryEvent.document_shared)
   })
 
-  const move = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
-    openMoveItemsModal({
-      nodeUids: [generateNodeUid(volumeId, linkId)],
-      onMoved: ({ movedUids }) => {
-        void updateMovedDocuments?.(movedUids)
-      },
-    })
-    reportTelemetry(TelemetryEvent.document_moved)
-  })
+  const move = useEvent((document: RecentDocumentsItem, onMoved?: (moved: RecentDocumentsItem[]) => void) =>
+    bulkMove([document], onMoved),
+  )
 
   const startRename = useEvent((document: RecentDocumentsItem) => {
     if (isRenameSaving) {

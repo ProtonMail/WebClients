@@ -30,6 +30,7 @@ vi.mock('../utils/useIsNarrow', () => ({
 const mockBulkTrash = vi.fn()
 let mockIsTrashing = false
 const mockBulkMove = vi.fn()
+const mockMove = vi.fn()
 
 let mockInvitations: ExtendedInvitationDetails[] = []
 let mockRecentlyAcceptedInvitations: ExtendedInvitationDetails[] = []
@@ -871,6 +872,20 @@ describe('HomepageContent', () => {
         expect(screen.getByRole('checkbox', { name: `Select ${second.name}` })).toBeChecked()
       })
 
+      test('drops a document moved from its row menu from the selection once the move finishes, as after a bulk move', async () => {
+        mockMove.mockReset()
+        renderWithProviders(<HomepageContent />)
+        fireEvent.contextMenu(await findRow('Document1'))
+        await userEvent.click(within(await screen.findByRole('menu')).getByRole('menuitem', { name: 'Move' }))
+        expect(mockMove).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]), expect.any(Function))
+        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('1 selected')
+        const [, onMoved] = mockMove.mock.calls[0]
+
+        await act(async () => onMoved([MOCK_DATA[0]]))
+
+        expect(screen.queryByTestId('bulk-selected-count')).toBeNull()
+      })
+
       test('hides the move button when the selection includes a document shared with the user', async () => {
         mockItems = [...MOCK_DATA, SHARED_ADMIN_DOCUMENT]
         renderWithProviders(<HomepageContent />)
@@ -1108,7 +1123,7 @@ describe('HomepageContent', () => {
           rename: vi.fn(),
           isRenaming: vi.fn(),
           isRenameSaving: false,
-          move: vi.fn(),
+          move: mockMove,
           share: vi.fn(),
           subscribeToTrashed: vi.fn(),
           currentlyTrashingId: undefined,

@@ -176,6 +176,20 @@ describe('DocumentActionsProvider', () => {
     expect(updateMovedDocuments).toHaveBeenCalledWith([nodeUid])
   })
 
+  test('move hands onMoved the document only once the move modal reports it moved', () => {
+    const { result } = renderDocumentActions()
+    const handleMoved = vi.fn()
+    const targetFolderUid = generateNodeUid('volume1', 'folder')
+
+    act(() => result.current.move(recentDocument, handleMoved))
+    const [{ onMoved }] = openMoveItemsModal.mock.calls[0]
+    onMoved({ movedUids: [], failedItems: [{ uid: nodeUid, error: new Error('Name conflict') }], targetFolderUid })
+    expect(handleMoved).toHaveBeenLastCalledWith([])
+
+    onMoved({ movedUids: [nodeUid], failedItems: [], targetFolderUid })
+    expect(handleMoved).toHaveBeenLastCalledWith([recentDocument])
+  })
+
   test('bulkMove opens the same move modal for the documents', () => {
     const { result } = renderDocumentActions()
 
