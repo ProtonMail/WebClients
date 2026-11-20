@@ -6,9 +6,9 @@ import {
     selectParticipantCountMismatchBannerDismissed,
 } from '@proton/meet/store/slices/uiStateSlice';
 import { selectWaitingParticipantsCount } from '@proton/meet/store/slices/waitingRoomSlice';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { useHiddenParticipantWarningCount } from '../../hooks/useHiddenParticipantWarning';
 import { MismatchStage, useMismatchStage } from '../../hooks/useMismatchStage';
 import { ParticipantCountMismatchTopBanner } from './ParticipantCountMismatchTopBanner';
 import { RecordingTopBanner } from './RecordingTopBanner';
@@ -19,9 +19,9 @@ export const MeetingTopBanner = () => {
     const isRecordingInProgress = useMeetSelector(selectIsRecordingInProgress);
     const waitingRoomParticipantsCount = useMeetSelector(selectWaitingParticipantsCount);
     const isCountMismatchDismissed = useMeetSelector(selectParticipantCountMismatchBannerDismissed);
-    const isHiddenParticipantWarningEnabled = useFlag('MeetHiddenParticipantWarning');
+    const isHiddenParticipantWarningShown = useHiddenParticipantWarningCount() > 0;
     const isCountMismatchWarning =
-        useMismatchStage() === MismatchStage.Warning && !isCountMismatchDismissed && !isHiddenParticipantWarningEnabled;
+        useMismatchStage() === MismatchStage.Warning && !isCountMismatchDismissed && !isHiddenParticipantWarningShown;
 
     if (!isRecordingInProgress && !waitingRoomParticipantsCount && !isCountMismatchWarning) {
         return null;

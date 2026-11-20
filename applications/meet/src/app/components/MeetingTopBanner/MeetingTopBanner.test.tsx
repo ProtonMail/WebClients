@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectHiddenParticipantCount } from '@proton/meet/store/slices/participantCountMismatchListener';
 import {
     selectIsRecordingInProgress,
     selectRecordingParticipantNames,
@@ -27,9 +28,11 @@ vi.mock('@proton/unleash/useFlag', () => ({
 
 const renderDuringMismatchWarning = ({
     isHiddenParticipantWarningEnabled,
+    hiddenParticipantCount = 2,
     isRecordingInProgress = false,
 }: {
     isHiddenParticipantWarningEnabled: boolean;
+    hiddenParticipantCount?: number;
     isRecordingInProgress?: boolean;
 }) => {
     const selectedValues = new Map<unknown, unknown>([
@@ -39,6 +42,7 @@ const renderDuringMismatchWarning = ({
         [selectWaitingParticipantsCount, 0],
         [selectParticipantCountMismatchBannerDismissed, false],
         [selectParticipantCountMismatchSince, Date.now() - MINUTE],
+        [selectHiddenParticipantCount, hiddenParticipantCount],
     ]);
     vi.mocked(useMeetSelector).mockImplementation((selector) => selectedValues.get(selector));
     vi.mocked(useFlag).mockImplementation(
@@ -59,7 +63,7 @@ describe('MeetingTopBanner', () => {
         expect(screen.getByRole('button', { name: 'Close this banner' })).toBeVisible();
     });
 
-    it('shows no banner for the mismatch when the hidden participant warning flag is on', () => {
+    it('shows no banner for the mismatch while the hidden participant warning shows', () => {
         renderDuringMismatchWarning({ isHiddenParticipantWarningEnabled: true });
 
         expect(screen.queryByText('Participant counts don’t match')).not.toBeInTheDocument();
@@ -67,7 +71,15 @@ describe('MeetingTopBanner', () => {
         expect(screen.queryByRole('button', { name: 'Close this banner' })).not.toBeInTheDocument();
     });
 
-    it('keeps the recording banner, without the mismatch, when the hidden participant warning flag is on', () => {
+    it('keeps the banner when more participants are connected than MLS members, with the hidden participant warning flag on', () => {
+        renderDuringMismatchWarning({ isHiddenParticipantWarningEnabled: true, hiddenParticipantCount: 0 });
+
+        expect(screen.getByText('Participant counts don’t match')).toBeVisible();
+        expect(screen.getByRole('button', { name: 'View security details' })).toBeVisible();
+        expect(screen.getByRole('button', { name: 'Close this banner' })).toBeVisible();
+    });
+
+    it('keeps the recording banner, without the mismatch, while the hidden participant warning shows', () => {
         renderDuringMismatchWarning({ isHiddenParticipantWarningEnabled: true, isRecordingInProgress: true });
 
         expect(screen.getByText('Recording in progress · Alice is recording')).toBeVisible();
