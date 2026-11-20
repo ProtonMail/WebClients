@@ -92,6 +92,7 @@ export interface OrganizationSettings {
     VideoConferencingEnabled: boolean;
     MailCategoryViewEnabled: boolean;
     SSOBackupPasswordDisabled: boolean;
+    PersonalAccessTokenCreationDisabled?: boolean;
     PasswordReminderEnforced: boolean;
     LumoApiEnabled: boolean;
     AllowedProducts: SerializedOrganizationSettingsAllowedProduct[];
@@ -110,7 +111,7 @@ export interface OrganizationSettings {
 export type InvoiceEmailSettings = Pick<OrganizationSettings, 'InvoiceEmail' | 'InvoiceEmailState'>;
 
 export type OrganizationSettingsBooleanProperties = {
-    [K in keyof OrganizationSettings]: OrganizationSettings[K] extends boolean ? K : never;
+    [K in keyof OrganizationSettings]-?: NonNullable<OrganizationSettings[K]> extends boolean ? K : never;
 }[keyof OrganizationSettings];
 
 export interface OrganizationExtended extends Organization {

@@ -95,6 +95,8 @@ export const entitlementChecksForSelection = {
 
     hasGroups: (r) => r.hasEntitlement(EntitlementName.Groups),
 
+    hasServiceAccounts: (r) => r.hasEntitlement(EntitlementName.MaxServiceAccounts),
+
     /**
      * Should be `r.hasMatchingSubscription({ includes: [EntitlementName.Groups, EntitlementName.FlagsInbox] })`:
      * group mail needs one subscription that grants both. It checks the organization instead because non-admin

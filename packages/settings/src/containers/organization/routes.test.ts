@@ -1,3 +1,4 @@
+import { getOrgPermissions } from '@proton/account/userPermissions';
 import type { SubSectionConfig } from '@proton/components/containers/layout/interface';
 import { PLANS } from '@proton/payments/core/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -302,6 +303,7 @@ describe('external members', () => {
         expect(getExternalMemberRoutes({ plan: PLANS.MAIL_PRO, organization }).multiUserCreation).toBe(false);
     });
 });
+
 describe('getOrganizationAppRoutes gateways', () => {
     const isGatewaysAvailable = (input: OrganizationRoutesInput) =>
         getOrganizationAppRoutes(buildOrganizationRouterParams(input)).routes.gateways.available;
@@ -406,5 +408,44 @@ describe('getOrganizationAppRoutes single sign-on', () => {
             getSsoRoute({ plan: PLANS.PASS_BUSINESS, permissions: permissionsWithout('account.sso_config.read') })
                 .available
         ).toBe(false);
+    });
+});
+
+describe('service accounts route', () => {
+    const baseParams = buildOrganizationRouterParams({
+        flags: { ...defaultFlags, isServiceAccountsEnabled: true },
+        permissions: getOrgPermissions(['account.service_account.read'], false),
+    });
+    // The default fixture has no max-service-accounts entitlement.
+    const params = { ...baseParams, entitlements: { ...baseParams.entitlements, hasServiceAccounts: true } };
+
+    it('is available to an assigned manager with read permission', () => {
+        expect(getOrganizationAppRoutes(params).routes.serviceAccounts.available).toBe(true);
+    });
+
+    it('is hidden when its rollout flag is off', () => {
+        expect(
+            getOrganizationAppRoutes({
+                ...params,
+                flags: { ...params.flags, isServiceAccountsEnabled: false },
+            }).routes.serviceAccounts.available
+        ).toBe(false);
+    });
+
+    it('is hidden without read permission', () => {
+        expect(
+            getOrganizationAppRoutes({ ...params, permissions: getOrgPermissions([], false) }).routes.serviceAccounts
+                .available
+        ).toBe(false);
+    });
+
+    it('is hidden without the max-service-accounts entitlement', () => {
+        expect(getOrganizationAppRoutes(baseParams).routes.serviceAccounts.available).toBe(false);
+    });
+
+    it('is hidden before organization setup', () => {
+        expect(getOrganizationAppRoutes({ ...params, organization: undefined }).routes.serviceAccounts.available).toBe(
+            false
+        );
     });
 });

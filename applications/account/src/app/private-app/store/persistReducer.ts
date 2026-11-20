@@ -10,6 +10,7 @@ const persistReducer: Partial<{ [key in keyof AccountState]: any }> = {
     passwordPolicies: selectPersistModel,
     paymentMethods: selectPersistModel,
     members: selectPersistModel,
+    serviceAccounts: selectPersistModel,
     filters: selectPersistModel,
     incomingAddressForwarding: selectPersistModel,
     outgoingAddressForwarding: selectPersistModel,

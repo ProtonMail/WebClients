@@ -22,6 +22,7 @@ import { incomingAddressForwardingsReducer } from '@proton/mail/store/forwarding
 import { outgoingAddressForwardingsReducer } from '@proton/mail/store/forwarding/outgoing';
 import { offersDeliveryReducer } from '@proton/offers-delivery/store/slice';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
+import { serviceAccountsReducer } from '@proton/service-accounts/slice';
 
 export const rootReducer = combineReducers({
     ...sharedReducers,
@@ -42,6 +43,7 @@ export const rootReducer = combineReducers({
     ...memberAuthDevicesReducer,
     ...oauthTokenReducer,
     ...retentionPoliciesReducer,
+    ...serviceAccountsReducer,
     ...mspSubsidiariesReducer,
     ...userOrganizationsReducer,
     ...appNameReducer,

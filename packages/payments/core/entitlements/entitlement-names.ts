@@ -84,6 +84,7 @@ export enum EntitlementName {
     MaxRevisionDays = 'max-revision-days',
     /** Max scribe */
     MaxScribe = 'max-scribe',
+    MaxServiceAccounts = 'max-service-accounts',
     /** Max space */
     MaxSpace = 'max-space',
     /** Max sub-wallets */
