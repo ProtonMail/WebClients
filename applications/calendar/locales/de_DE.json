@@ -1046,6 +1046,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Skip to main content": [
+        "Zum Hauptinhalt springen"
       ]
     },
     "action": {
@@ -1175,6 +1178,9 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "Plätze für den ${ LUMO_SHORT_APP_NAME }-Schreibassistenten"
       ]
     },
     "Alarm notification": {
@@ -8839,7 +8845,7 @@
     },
     "ngc_access_banner: info": {
       "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
-        "Du hast nun Zugriff auf die neue ${ CALENDAR_APP_NAME }. ${ link }"
+        "Du hast nun Zugriff auf den neuen ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     },
     "Note": {
@@ -12972,6 +12978,71 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } pro Benutzer"
+      ],
+      "${ storage } shared": [
+        "${ storage } gemeinsam genutzt"
+      ],
+      "10 years": [
+        "10 Jahre"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Eine Serverkategorie von ${ VPN_APP_NAME }-Servern mit höherer Kapazität: Jeder Server wird von weitaus weniger Nutzern gemeinsam genutzt, und sie verwenden IP-Adressen, die ${ BRAND_NAME } gehören. Quick Connect wählt diese automatisch aus, sofern sie verfügbar sind."
+      ],
+      "Calendars": [
+        "Kalender"
+      ],
+      "Custom email domains": [
+        "Eigene E-Mail-Domains"
+      ],
+      "Email addresses": [
+        "E-Mail-Adressen"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-Aliasse"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Benannt nach den Crowdfunding-Unterstützern, die ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } im Jahr 2014 möglich gemacht haben. Alle Premium-Dienste von ${ BRAND_NAME } in einem Paket."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Neue ${ BRAND_NAME }-Dienste ohne zusätzliche Kosten"
+      ],
+      "Password vaults": [
+        "Passwort-Tresore"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Kalender, Drive und Pass"
+      ],
+      "Previous versions": [
+        "Vorherige Versionen"
+      ],
+      "Storage": [
+        "Speicher"
+      ],
+      "Subscribers only": [
+        "Nur Abonnenten"
+      ],
+      "Ultra servers": [
+        "Ultra-Server"
+      ],
+      "Ultra servers, reserved for you": [
+        "Ultra-Server, die für dich reserviert sind"
+      ],
+      "Unlimited": [
+        "Unbegrenzt"
+      ],
+      "Up to ${ limit }": [
+        "Bis zu ${ limit }"
+      ],
+      "Users": [
+        "Benutzer"
+      ],
+      "VPN devices at once": [
+        "VPN-Geräte gleichzeitig"
       ]
     }
   }

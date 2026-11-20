@@ -1058,6 +1058,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Skip to main content": [
+        "Μετάβαση στο κύριο περιεχόμενο"
       ]
     },
     "action": {
@@ -1187,6 +1190,13 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
+      ],
+      "${ seats } ${ LUMO_SHORT_APP_NAME } writing assistant seat": [
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέση βοηθού γραφής",
+        "${ seats } ${ LUMO_SHORT_APP_NAME } θέσεις βοηθού γραφής"
       ]
     },
     "Alarm notification": {
@@ -4135,6 +4145,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Η σύνδεσή σας στο Zoom έχει λήξει. Παρακαλούμε επανασυνδεθείτε για να συνεχίσετε."
+      ],
+      "Meeting not created. Try again.": [
+        "Η σύσκεψη δεν δημιουργήθηκε. Δοκιμάστε ξανά."
       ]
     },
     "error": {
@@ -13054,6 +13067,71 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } ανά χρήστη"
+      ],
+      "${ storage } shared": [
+        "${ storage } κοινόχρηστος"
+      ],
+      "10 years": [
+        "10 χρόνια"
+      ],
+      "A higher-capacity tier of ${ VPN_APP_NAME } servers: far fewer people share each one, and they use ${ BRAND_NAME }-owned IP addresses. Quick Connect picks them automatically where available.": [
+        "Μια κατηγορία διακομιστών του ${ VPN_APP_NAME } με μεγαλύτερη χωρητικότητα: κάθε διακομιστής χρησιμοποιείται από πολύ λιγότερους χρήστες και αξιοποιεί διευθύνσεις IP που ανήκουν στην ${ BRAND_NAME }. Η λειτουργία Quick Connect τους επιλέγει αυτόματα, όπου είναι διαθέσιμοι."
+      ],
+      "Calendars": [
+        "Ημερολόγια"
+      ],
+      "Custom email domains": [
+        "Προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Email addresses": [
+        "Διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email ψευδώνυμα"
+      ],
+      "Named after the crowdfunding supporters who made ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } possible in 2014. Every premium ${ BRAND_NAME } service, in one plan.": [
+        "Ονομάστηκε προς τιμήν των υποστηρικτών από τη διαδικασία συλλογικής χρηματοδότησης που κατέστησαν δυνατή την υλοποίηση του ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } το 2014. Όλες οι premium υπηρεσίες του ${ BRAND_NAME }, σε ένα ενιαίο πρόγραμμα."
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Νέες υπηρεσίες ${ BRAND_NAME } χωρίς επιπλέον κόστος"
+      ],
+      "Password vaults": [
+        "Κρύπτες κωδικών πρόσβασης"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Premium Mail, Calendar, Drive και Pass"
+      ],
+      "Previous versions": [
+        "Προηγούμενες εκδόσεις"
+      ],
+      "Storage": [
+        "Αποθηκευτικός χώρος"
+      ],
+      "Subscribers only": [
+        "Μόνο συνδρομητές"
+      ],
+      "Ultra servers": [
+        "Διακομιστές Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Διακομιστές Ultra, δεσμευμένοι για εσάς"
+      ],
+      "Unlimited": [
+        "Unlimited"
+      ],
+      "Up to ${ limit }": [
+        "Έως ${ limit }"
+      ],
+      "Users": [
+        "Χρήστες"
+      ],
+      "VPN devices at once": [
+        "Συσκευές VPN ταυτόχρονα"
       ]
     }
   }

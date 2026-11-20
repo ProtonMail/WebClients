@@ -941,6 +941,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Next contact": [
+        "Következő névjegy"
+      ],
+      "Previous contact": [
+        "Előző névjegy"
       ]
     },
     "action": {
@@ -1028,6 +1034,9 @@
       ],
       "Writing assistant seats": [
         "Írási segéd licencek"
+      ],
+      "Users": [
+        "Felhasználók"
       ]
     },
     "Alarm notification": {
@@ -5967,6 +5976,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "1 vault per user": [
+        "Felhasználónként 1 széf"
       ]
     },
     "info": {
@@ -6807,6 +6819,9 @@
       ],
       "What’s this?": [
         "Mi ez?"
+      ],
+      "Customer Support": [
+        "Ügyfélszolgálat"
       ]
     },
     "Link label (optional)": {
@@ -6912,12 +6927,18 @@
       ],
       "for ${ price }": [
         "${ price } áron"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } írássegéd"
       ]
     },
     "meet_2025: Addon": {
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } ${ MEET_APP_NAME } licenc",
         "${ seats } ${ MEET_APP_NAME } licenc"
+      ],
+      "${ price } per seat": [
+        "${ price } felhasználónként"
       ]
     },
     "meet_2025: Feature": {
@@ -8697,6 +8718,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Az Ön előfizetése jelenleg kedvezménnyel rendelkezik. Az új promócióra való áttérés esetén, a meglévő kedvezmény a továbbiakban nem kerül alkalmazásra."
+      ],
+      "Including ${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% adót tartalmaz: ${ taxAmountElement }"
       ]
     },
     "Payments.Error": {
@@ -11748,6 +11772,21 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Event popover close button": {
+      "Close": [
+        "Bezár"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "A megerősítéssel felhatalmazza a ${ BRAND_NAME } és a Stripe-ot - a fizetési szolgáltatónkat -, hogy az előfizetéshez kapcsolódó jövőbeli fizetéseket csoportos beszedési megbízás (SEPA) útján levonják erről a bankszámláról, és a bankját hogy ezeket az összegeket levonja a számlájáról. Az első fizetést most a(z) ${ IDEAL_WERO_BRAND_NAME } szolgáltatáson keresztül történik. Előfizetése automatikusan megújul, amíg le nem mondja; minden terhelés előtt értesítést küldünk. A csoportos beszedési megbízással teljesített fizetések esetén – a bankjával kötött megállapodás feltételei szerint – a terhelés napjától számított 8 héten belül kérheti a levont összeg visszatérítését. Ez nem vonatkozik a mostani ${ IDEAL_WERO_BRAND_NAME } befizetésre."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - kártya, a következő végződéssel: ${ Last4 }"
       ]
     }
   }

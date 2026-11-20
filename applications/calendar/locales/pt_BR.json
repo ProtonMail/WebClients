@@ -1058,6 +1058,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Skip to main content": [
+        "Pular para o conteúdo principal"
       ]
     },
     "action": {
@@ -1187,6 +1190,9 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant seats": [
+        "${ LUMO_SHORT_APP_NAME } licenças de assistente de escrita"
       ]
     },
     "Alarm notification": {
@@ -4135,6 +4141,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Sua conexão do Zoom expirou. Reconecte-se para continuar."
+      ],
+      "Meeting not created. Try again.": [
+        "Reunião não criada. Tente novamente."
       ]
     },
     "error": {
@@ -7671,6 +7680,12 @@
       ],
       "More usage": [
         "Mais uso"
+      ],
+      "API access, with ${ credit } a month credit": [
+        "Acesso à API com um crédito ${ credit } ao mês"
+      ],
+      "API access, with ${ credit } a month credit per user": [
+        "Acesso à API com um crédito ${ credit } ao mês por usuário"
       ]
     },
     "lumo_2026: Info": {
@@ -13048,6 +13063,65 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "Visionary upsell": {
+      "${ devicesPerUser } per user": [
+        "${ devicesPerUser } por usuário"
+      ],
+      "${ storage } shared": [
+        "${ storage } compartilhado"
+      ],
+      "10 years": [
+        "10 anos"
+      ],
+      "Calendars": [
+        "Calendários"
+      ],
+      "Custom email domains": [
+        "Domínios personalizados de e-mail"
+      ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
+      "Hide-my-email aliases": [
+        "Aliases do hide-my-email"
+      ],
+      "New ${ BRAND_NAME } services at no extra cost": [
+        "Serviços novos da ${ BRAND_NAME } sem custo adicional"
+      ],
+      "Password vaults": [
+        "Cofres de senhas"
+      ],
+      "Premium Mail, Calendar, Drive and Pass": [
+        "Mail, Calendar, Drive e Pass premium"
+      ],
+      "Previous versions": [
+        "versões anteriores"
+      ],
+      "Storage": [
+        "Armazenamento"
+      ],
+      "Subscribers only": [
+        "Somente assinantes"
+      ],
+      "Ultra servers": [
+        "Servidores Ultra"
+      ],
+      "Ultra servers, reserved for you": [
+        "Servidores Ultra, reservado para você"
+      ],
+      "Unlimited": [
+        "Ilimitado"
+      ],
+      "Up to ${ limit }": [
+        "Até ${ limit }"
+      ],
+      "Users": [
+        "Usuários"
+      ],
+      "VPN devices at once": [
+        "Dispositivos VPN ao mesmo tempo"
       ]
     }
   }

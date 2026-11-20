@@ -1022,6 +1022,27 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt af op ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "Over ${ name }"
+      ],
+      "Add ${ name }": [
+        "${ name } toevoegen"
+      ],
+      "Cancel trial": [
+        "Proefperiode annuleren"
+      ],
+      "Dismiss notification": [
+        "Melding sluiten"
+      ],
+      "Next contact": [
+        "Volgend contact"
+      ],
+      "Previous contact": [
+        "Vorig contact"
+      ],
+      "Skip to main content": [
+        "Direct naar hoofdinhoud"
       ]
     },
     "action": {
@@ -6522,6 +6543,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "1 vault per user": [
+        "1 kluis per gebruiker"
       ]
     },
     "info": {
@@ -7277,6 +7301,9 @@
       ],
       "Zoom meeting": [
         "Zoom-vergadering"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } tekens"
       ]
     },
     "label": {
@@ -10015,6 +10042,9 @@
       ],
       "User Admin": [
         "Gebruiker Beheerder"
+      ],
+      "Organization Admin": [
+        "Organisatie Beheerder"
       ]
     },
     "RSVP Note": {
@@ -12377,6 +12407,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "U kunt functies toewijzen zodra de gebruiker de uitnodiging heeft geaccepteerd."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Deze gebruiker krijgt beheerdersrechten bij de volgende aanmelding."
       ]
     },
     "Validation": {
@@ -12835,6 +12868,31 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "lumo_2026: feature": {
+      "5x Plus usage": [
+        "5 × Plus gebruik"
+      ],
+      "Everything in Free, and:": [
+        "Alles in het Free Plan, en:"
+      ],
+      "Everything in Plus, and:": [
+        "Alles in het Plus Plan, en:"
+      ],
+      "Includes:": [
+        "Omvat:"
+      ],
+      "Limited messages and chat history": [
+        "Gelimiteerde berichten en gespreksgechiedenis"
+      ],
+      "More usage": [
+        "Meer gebruik"
+      ]
+    },
+    "lumo_2026: Info": {
+      "For coding and building": [
+        "Voor coderen en bouwen"
       ]
     }
   }
