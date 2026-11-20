@@ -130,10 +130,17 @@ export const initMeetEventSim = ({
     const keepHiddenParticipants = (count: number) => {
         const warningSince = Date.now() - MISMATCH_WARNING_DELAY;
 
+        const getKeptMemberCount = (state: MeetState) => Math.max(selectConnectedMemberCount(state) + count, 1);
+
         const keepWarningSince = () => {
             const state = getState();
             const mismatchSince = selectParticipantCountMismatchSince(state);
-            if (selectMlsGroupState(state) && (mismatchSince === null || mismatchSince > warningSince)) {
+            const isMismatchKept = getKeptMemberCount(state) !== selectConnectedMemberCount(state);
+            if (
+                selectMlsGroupState(state) &&
+                isMismatchKept &&
+                (mismatchSince === null || mismatchSince > warningSince)
+            ) {
                 dispatch(setParticipantCountMismatchSince(warningSince));
             }
         };
@@ -141,7 +148,7 @@ export const initMeetEventSim = ({
         const keepMemberCount = () => {
             const state = getState();
             const mlsGroupState = selectMlsGroupState(state);
-            const memberCount = selectConnectedMemberCount(state) + count;
+            const memberCount = getKeptMemberCount(state);
             if (mlsGroupState && mlsGroupState.memberCount !== memberCount) {
                 dispatch(setMlsGroupState({ ...mlsGroupState, memberCount }));
             }

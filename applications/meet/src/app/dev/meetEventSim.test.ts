@@ -248,6 +248,16 @@ describe('meetEventSim.setHiddenParticipants', () => {
         expect(mismatchSince()).toBe(NOW - MINUTE);
     });
 
+    it('keeps at least one member and no mismatch when a participant leaves after a negative count', () => {
+        const { dispatch, memberCount, mismatchSince } = createMeetingStore();
+        window.meetEventSim?.setHiddenParticipants(-1);
+
+        dispatch(setSortedParticipantIdentities(['alice']));
+
+        expect(memberCount()).toBe(1);
+        expect(mismatchSince()).toBeNull();
+    });
+
     it('refuses a negative count that would leave no member', () => {
         const { memberCount, mismatchSince } = createMeetingStore();
 
