@@ -7,22 +7,22 @@ import {
 
 describe('Backup filename utilities', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('createAutomaticBackupFilename', () => {
         test('should create filename with current date', () => {
-            jest.setSystemTime(new Date('2023-12-15T10:30:45.123Z'));
+            vi.setSystemTime(new Date('2023-12-15T10:30:45.123Z'));
             const result = createAutomaticBackupFilename();
             expect(result).toBe('Proton Authenticator_export_2023-12-15.json');
         });
 
         test('should pad single digit months and days', () => {
-            jest.setSystemTime(new Date('2023-01-05T10:30:45.123Z'));
+            vi.setSystemTime(new Date('2023-01-05T10:30:45.123Z'));
             const result = createAutomaticBackupFilename();
             expect(result).toBe('Proton Authenticator_export_2023-01-05.json');
         });
@@ -31,7 +31,7 @@ describe('Backup filename utilities', () => {
     describe('createBackupFilename', () => {
         test('should suffix the automatic filename with the current epoch', () => {
             const now = new Date('2023-12-15T10:30:45.123Z');
-            jest.setSystemTime(now);
+            vi.setSystemTime(now);
 
             const epoch = Math.round(+now / 1_000);
             const result = createBackupFilename();
@@ -40,7 +40,7 @@ describe('Backup filename utilities', () => {
         });
 
         test('should not match the automatic backup filename format', () => {
-            jest.setSystemTime(new Date('2023-12-15T10:30:45.123Z'));
+            vi.setSystemTime(new Date('2023-12-15T10:30:45.123Z'));
             expect(getBackupFilenameRegex().test(createBackupFilename())).toBe(false);
         });
     });
@@ -52,7 +52,7 @@ describe('Backup filename utilities', () => {
         });
 
         test('should parse the date of the filename it creates', () => {
-            jest.setSystemTime(new Date('2023-01-05T10:30:45.123Z'));
+            vi.setSystemTime(new Date('2023-01-05T10:30:45.123Z'));
             const result = parseDateFromFilename(createAutomaticBackupFilename());
             expect(result).toEqual(new Date(2023, 0, 5));
         });

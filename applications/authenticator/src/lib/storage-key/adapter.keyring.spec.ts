@@ -1,17 +1,19 @@
+import type { Mocked } from 'vitest';
+
 import * as TauriCommands from '../tauri/commands';
 import { createKeyringAdapter } from './adapter.keyring';
 import { STORAGE_KEY_IDB_ID } from './constants';
 import type { StorageKeyRef } from './types';
 import { StorageKeySource } from './types';
 
-jest.mock('../tauri/commands', () => ({
+vi.mock('../tauri/commands', () => ({
     commands: {
-        getStorageKey: jest.fn(),
-        generateStorageKey: jest.fn(),
+        getStorageKey: vi.fn(),
+        generateStorageKey: vi.fn(),
     },
 }));
 
-const commands = TauriCommands.commands as jest.Mocked<typeof TauriCommands.commands>;
+const commands = TauriCommands.commands as Mocked<typeof TauriCommands.commands>;
 
 const createKeyRef = (overrides: Partial<StorageKeyRef> = {}): StorageKeyRef => ({
     id: STORAGE_KEY_IDB_ID,
@@ -25,7 +27,7 @@ describe('KeyringAdapter', () => {
     let adapter: ReturnType<typeof createKeyringAdapter>;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         adapter = createKeyringAdapter();
         commands.getStorageKey.mockResolvedValue({ status: 'ok', data: 'base64-encoded-key' });
         commands.generateStorageKey.mockResolvedValue({ status: 'ok', data: 'base64-encoded-key' });

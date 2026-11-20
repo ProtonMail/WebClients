@@ -4,7 +4,21 @@ import { serialize } from '@proton/pass/utils/object/serialize';
 import { LOCK_MAX_FAILURES, LOCK_STATE_KEY, getFailedAttemptCount } from './utils';
 
 describe('lock utils', () => {
-    beforeEach(() => localStorage.clear());
+    beforeEach(() => {
+        const store = new Map<string, string>();
+        vi.stubGlobal('localStorage', {
+            clear: () => store.clear(),
+            getItem: (key: string) => store.get(key) ?? null,
+            setItem: (key: string, value: string) => {
+                store.set(key, value);
+            },
+            removeItem: (key: string) => {
+                store.delete(key);
+            },
+        });
+    });
+
+    afterEach(() => vi.unstubAllGlobals());
 
     describe('getFailedAttemptCount', () => {
         test('returns null when nothing is stored', () => {
