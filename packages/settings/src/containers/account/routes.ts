@@ -417,6 +417,7 @@ export const getAccountAppRoutes = ({
     permissions,
     flags,
     accountRecoveryRouterFlags,
+    entitlements,
 }: AccountRouterParams) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Type, hasPaidMail } = user;
     const credits = referralInfo.maxRewardAmount;
@@ -462,7 +463,8 @@ export const getAccountAppRoutes = ({
             app === APPS.PROTONACCOUNT ||
             app === APPS.PROTONLUMO
         ) &&
-        !isSSOUser;
+        !isSSOUser &&
+        !(app === APPS.PROTONDRIVE && flags.isDriveEasySwitchNewUIEnabled && entitlements.isB2B);
 
     const showVideoConferenceSection =
         (flags.isZoomIntegrationEnabled || flags.isProtonMeetIntegrationEnabled) &&
