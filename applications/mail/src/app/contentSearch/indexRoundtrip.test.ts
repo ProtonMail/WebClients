@@ -34,6 +34,7 @@ const makeMessage = (
         Sender: { Address: 'sender@proton.me', Name: 'Sender' },
         ToList: [{ Address: 'to@proton.me', Name: 'To' }],
         CCList: [],
+        BCCList: [],
         LabelIDs: ['0'],
         AddressID: 'address-1',
     } as any as MessageMetadata,
@@ -208,5 +209,93 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
         expect(await search(reader, { keyword: 'attachment~invoice' })).toEqual(['msg-invoice']);
         // non-listable attachments are not indexed
         expect(await search(reader, { keyword: 'publickey' })).toEqual([]);
+    });
+
+    describe('addresses', () => {
+        const makeAddressedMessage = (
+            id: string,
+            addresses: Pick<MessageMetadata, 'Sender' | 'ToList' | 'CCList' | 'BCCList'>
+        ) => {
+            const message = makeMessage(id, 'Hello', 'nothing here');
+            Object.assign(message.metadata, addresses);
+            return message;
+        };
+
+        beforeEach(async () => {
+            await writeMessages([
+                makeAddressedMessage('msg-alice', {
+                    Sender: { Address: ' Alice.Smith@Proton.me ', Name: ' Alice Smith ' },
+                    ToList: [
+                        { Address: 'bob@example.com', Name: '' },
+                        { Address: ' ', Name: 'Mystery Guest' },
+                        { Address: 'carol@example.com', Name: 'Carol Jones' },
+                    ],
+                    CCList: [{ Address: 'dave@example.com', Name: 'Dave' }],
+                    BCCList: [{ Address: 'erin@example.com', Name: 'Erin' }],
+                }),
+                makeAddressedMessage('msg-other', {
+                    Sender: { Address: 'frank@example.com', Name: 'Frank' },
+                    ToList: [{ Address: 'grace@example.com', Name: 'Grace' }],
+                    CCList: [],
+                    BCCList: [],
+                }),
+            ]);
+        });
+
+        it('lays out each address as email tag, email text and display name, keeping empty names and emails', async () => {
+            const doc: any = await new IndexReader(db, key).getDocumentById('msg-alice');
+            const tokens = (value: [number, string][] | null) => (value ?? []).map(([, token]) => token);
+
+            expect(doc.attributes.from[0]).toBe('alice.smith@proton.me');
+            expect(tokens(doc.attributes.from[2])).toEqual(['alice', 'smith']);
+            expect(doc.attributes.to[0]).toBe('bob@example.com');
+            expect(tokens(doc.attributes.to[2])).toEqual([]);
+            // the address without an email keeps its slots, with its name still indexed
+            expect(doc.attributes.to[3] ?? null).toBeNull();
+            expect(doc.attributes.to[4] ?? null).toBeNull();
+            expect(tokens(doc.attributes.to[5])).toEqual(['mystery', 'guest']);
+            expect(doc.attributes.to[6]).toBe('carol@example.com');
+            expect(tokens(doc.attributes.to[8])).toEqual(['carol', 'jones']);
+            expect(doc.attributes.to).not.toContain('');
+        });
+
+        it('finds the sender by full address regardless of case, by email token and by name', async () => {
+            const reader = new IndexReader(db, key);
+
+            expect(await search(reader, { from: 'ALICE.SMITH@proton.me' })).toEqual(['msg-alice']);
+            expect(await search(reader, { from: 'alice' })).toEqual(['msg-alice']);
+            expect(await search(reader, { from: 'smith' })).toEqual(['msg-alice']);
+            expect(await search(reader, { from: 'bob@example.com' })).toEqual([]);
+            expect(await search(reader, { from: 'alice smith' })).toEqual(['msg-alice']);
+            // whole tokens in the order typed: the element list would drop such a hit but still count it (see `createAddressQuery`)
+            expect(await search(reader, { from: 'smtih' })).toEqual([]);
+            expect(await search(reader, { from: 'smith alice' })).toEqual([]);
+        });
+
+        it('matches a phrase across separators, which the element list still drops (see `createAddressQuery`)', async () => {
+            await writeMessages([
+                makeAddressedMessage('msg-john', {
+                    Sender: { Address: 'john.doe@example.com', Name: 'JD' },
+                    ToList: [],
+                    CCList: [],
+                    BCCList: [],
+                }),
+            ]);
+
+            expect(await search(new IndexReader(db, key), { from: 'john doe' })).toEqual(['msg-john']);
+        });
+
+        it('finds recipients in to, cc and bcc', async () => {
+            const reader = new IndexReader(db, key);
+
+            expect(await search(reader, { to: 'bob@example.com' })).toEqual(['msg-alice']);
+            expect(await search(reader, { to: 'jones' })).toEqual(['msg-alice']);
+            expect(await search(reader, { to: 'mystery' })).toEqual(['msg-alice']);
+            // a full address doesn't fuzzily match another one at the same domain (grace@example.com)
+            expect(await search(reader, { to: 'dave@example.com' })).toEqual(['msg-alice']);
+            expect(await search(reader, { to: 'erin' })).toEqual(['msg-alice']);
+            expect(await search(reader, { to: 'grace' })).toEqual(['msg-other']);
+            expect(await search(reader, { to: 'alice.smith@proton.me' })).toEqual([]);
+        });
     });
 });
