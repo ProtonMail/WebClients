@@ -8513,6 +8513,21 @@
       ],
       "We couldn't load your migrated users. Please refresh the page and try again": [
         "Nepodarilo sa nám načítať vašich presunutých používateľov. Obnovte stránku a skúste to znova, prosím."
+      ],
+      "Failed to get invitee keys": [
+        "Nepodarilo sa získať kľúče pozvaných osôb"
+      ],
+      "Failed to load the membership": [
+        "Načítanie členstva zlyhalo"
+      ],
+      "Failed to load the membership data": [
+        "Načítanie údajov o členstve zlyhalo"
+      ],
+      "Failed to verify membership": [
+        "Overenie členstva zlyhalo"
+      ],
+      "Some invitations could not be loaded": [
+        "Niektoré pozvánky sa nepodarilo načítať"
       ]
     },
     "error": {
@@ -20034,6 +20049,18 @@
       ],
       "Recovery checklist": [
         "Kontrolný zoznam pre obnovu"
+      ],
+      "1-4 emails per year": [
+        "1-4 emaily za rok"
+      ],
+      "Email subscriptions": [
+        "Emailové odbery"
+      ],
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Získajte najnovšie správy o ochrane osobných údajov a dianí vo svete ${ BRAND_NAME }."
+      ],
+      "Reminders to keep your recovery methods up to date.": [
+        "Upozornenia, aby ste si pravidelne aktualizovali svoje metódy obnovy."
       ]
     },
     "ngc_access_banner: action": {
@@ -31069,6 +31096,17 @@
       ],
       "Your plan": [
         "Váš plán"
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "na ${ cycle } mesiac",
+        "na ${ cycle } mesiace",
+        "na ${ cycle } mesiacov",
+        "na ${ cycle } mesiacov"
+      ],
+      "Premium calendar features": [
+        "Funkcie prémiového kalendára"
       ]
     }
   }

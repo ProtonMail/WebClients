@@ -2401,6 +2401,9 @@
       ],
       "Upgrade to ${ planTitle }": [
         "Oppgrader til ${ planTitle }"
+      ],
+      "View keyboard shortcuts": [
+        "Vis tastatursnarveier"
       ]
     },
     "action": {
@@ -6618,6 +6621,9 @@
       ],
       "Set up email forwarding": [
         "Konfigurer videresending av e-post"
+      ],
+      "Edit": [
+        "Rediger"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -14640,6 +14646,27 @@
       ],
       "They get end-to-end encrypted email, storage, and collaboration tools": [
         "De får ende-til-ende kryptert e-post, lagring og samarbeidsverktøy"
+      ],
+      "${ nameElement } will be removed from your allow list.": [
+        "${ nameElement } vil bli fjernet fra tillatelseslisten."
+      ],
+      "${ nameElement } will be removed from your block list.": [
+        "${ nameElement } vil bli fjernet fra blokkeringslisten din."
+      ],
+      "${ nameElement } will be removed from your spam list.": [
+        "${ nameElement } vil bli fjernet fra søppelpostlisten."
+      ],
+      "Folders are where your messages are stored. A message can only be in one folder.": [
+        "Mapper er der meldingene dine lagres. En melding kan bare være i én mappe."
+      ],
+      "Labels are tags that make your messages easier to search and filter. A message can have several labels.": [
+        "Etiketter er tagger som gjør meldingene dine enklere å søke etter og filtrere. En melding kan ha flere etiketter."
+      ],
+      "Set the name and allocated licenses": [
+        "Angi navn og tildelte lisenser"
+      ],
+      "With managed companies, you can add, edit, and disable access for organizations you oversee.": [
+        "Med administrerte bedrifter kan du legge til, redigere og fjerne tilgang for organisasjoner du fører tilsyn med."
       ]
     },
     "info": {
@@ -19533,6 +19560,18 @@
       ],
       "Recovery checklist": [
         "Sjekkliste for gjenoppretting"
+      ],
+      "1-4 emails per year": [
+        "1-4 e-poster per år"
+      ],
+      "Email subscriptions": [
+        "E-postabonnementer"
+      ],
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Få de siste personvernnyhetene og hva som skjer i ${ BRAND_NAME }-universet."
+      ],
+      "Reminders to keep your recovery methods up to date.": [
+        "Påminnelser om å holde gjenopprettingsmetoder oppdatert."
       ]
     },
     "ngc_access_banner: action": {
@@ -28356,6 +28395,12 @@
       ],
       "Why recommend ${ BRAND_NAME } for Business?": [
         "Hvorfor anbefale ${ BRAND_NAME } for Business"
+      ],
+      "Add new company": [
+        "Legg til ny bedrift"
+      ],
+      "Delete from list?": [
+        "Slette fra listen?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30080,6 +30125,15 @@
       ],
       "Your plan": [
         "Din plan"
+      ]
+    },
+    "vpn_signup_three_plans: Info": {
+      "for ${ cycle } month": [
+        "for ${ cycle } måned",
+        "for ${ cycle } måneder"
+      ],
+      "Premium calendar features": [
+        "Premium kalenderfunksjoner"
       ]
     }
   }
