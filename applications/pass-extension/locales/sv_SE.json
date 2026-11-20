@@ -3378,6 +3378,15 @@
       ],
       "Use biometrics to unlock": [
         "Använd biometri för att låsa upp"
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Mapp “${ payload.folder.name }“ skapad"
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Mapp “${ payload.folder.name }“ flyttad"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Skanna för att ladda ner ${ PASS_APP_NAME } för iOS och Android"
       ]
     },
     "Keyboard key": {
@@ -4970,6 +4979,9 @@
       ],
       "Used on ${ url }": [
         "Används på ${ url }"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Skriv ”${ name }” igen för att bekräfta borttagning"
       ]
     },
     "Result": {
