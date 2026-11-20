@@ -20,6 +20,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 
 - **Docs homepage**: the page listing documents (recents, owned by me, shared with me, trash).
 - **`HomepageMessages`**: the typed catalogue of homepage UI strings (`typeof defaultHomepageMessages`), translated by the host and read with `useHomepageMessages()`. `app/homepage/messages/`, translated in `app/routes/(user)/(homepage)/__utils/homepageMessages/`.
+- **`HomepageDependencies`**: everything the host supplies to the homepage module (Drive client, API, invitations, flags, messages...), passed to `HomepageDependenciesProvider` (`app/homepage/`). The homepage's counterpart of `DocsDependencies`, built by its adapter, `HomepageAdapter` (`app/routes/(user)/(homepage)/__components/`).
 - **Document viewer** (`DocumentViewer`): the shell UI around one document. Hosts the editor iframe and the header (title, sharing, history). `app/components/document/DocumentViewer/`.
 - **User app / public app**: the two root components. `PublicApp` renders when the URL `mode` is `open-url` or `open-url-download`, otherwise `UserApp`. `app/index.tsx`, `app/routes/(user)/`, `app/routes/(public)/`.
 - **Public vs private**: whether the document was opened through a public share link. Three splits exist in code:

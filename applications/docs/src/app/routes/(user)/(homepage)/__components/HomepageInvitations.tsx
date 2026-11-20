@@ -1,10 +1,10 @@
 import type { DocInvitesHook } from '@proton/drive-store/lib/_invites/useDocInvites'
 import { memo, useCallback, useLayoutEffect, useRef, useState } from 'react'
 
-import type { HomepageViewProviderProps } from '~/homepage'
+import type { HomepageDependencies } from '~/homepage'
 
 export type HomepageInvitations = Pick<
-  HomepageViewProviderProps,
+  HomepageDependencies,
   'pendingInvitations' | 'recentlyAcceptedInvitations' | 'acceptInvitation' | 'declineInvitation'
 >
 

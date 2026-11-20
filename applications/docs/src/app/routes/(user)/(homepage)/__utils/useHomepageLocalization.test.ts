@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react'
+import { createElement, Fragment, type ReactNode } from 'react'
 import { addLocale, useLocale } from 'ttag'
 
 import { setLocales } from '@proton/shared/lib/i18n'
@@ -24,6 +25,20 @@ it('translates the messages again once the account locale activates', () => {
     useLocale('fr')
     setLocales({ localeCode: 'fr_FR', languageCode: 'fr' })
   })
+
+  expect(result.current.pageTitle.recents).toBe('Récents')
+})
+
+it('catches a locale that activates after render but before the subscription is installed', () => {
+  function ActivateFrenchDuringRender() {
+    useLocale('fr')
+    setLocales({ localeCode: 'fr_FR', languageCode: 'fr' })
+    return null
+  }
+  const wrapper = ({ children }: { children: ReactNode }) =>
+    createElement(Fragment, null, children, createElement(ActivateFrenchDuringRender))
+
+  const { result } = renderHook(() => useHomepageLocalization(), { wrapper })
 
   expect(result.current.pageTitle.recents).toBe('Récents')
 })

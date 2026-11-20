@@ -51,7 +51,7 @@ export function SortSelect() {
         {...(openedByArrow ? {} : { initialFocus: menuRef })}
         gutter={8}
       >
-        <p className="m-0 px-4 py-2 text-[.875rem] font-bold">Sort by</p>
+        <p className="m-0 px-4 py-2 text-[.875rem] font-bold">{messages.sortBy}</p>
         {SORT_SELECT_OPTIONS.map((value) => (
           <DropdownMenuItem
             key={value}

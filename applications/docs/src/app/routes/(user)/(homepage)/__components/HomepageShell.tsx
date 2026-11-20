@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 
+import { useConfig } from '@proton/app-context/useConfig'
 import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner'
 import DrawerApp from '@proton/components/components/drawer/DrawerApp'
 import Logo from '@proton/components/components/logo/Logo'
@@ -25,12 +26,10 @@ import {
   SidebarStateProvider,
   useHomepageTitle,
 } from '~/homepage'
+import { getDocsReportContextLines } from '~/utils/report-context'
 
 export type HomepageShellProps = {
   children: ReactNode
-  reportDescriptionContext: string[]
-  /** The host's `APP_VERSION`. */
-  appVersion: string
 }
 
 function HomepageAppVersion({ appVersion: hostAppVersion }: HomepageAppVersionComponentProps) {
@@ -40,8 +39,10 @@ function HomepageAppVersion({ appVersion: hostAppVersion }: HomepageAppVersionCo
 }
 
 /** The Proton app frame around the dependency-light homepage module. */
-export function HomepageShell({ children, reportDescriptionContext, appVersion }: HomepageShellProps) {
+export function HomepageShell({ children }: HomepageShellProps) {
   useAppTitle(useHomepageTitle())
+  const { APP_VERSION, CLIENT_TYPE } = useConfig()
+  const reportDescriptionContext = getDocsReportContextLines({ appVersion: APP_VERSION, clientType: CLIENT_TYPE })
 
   return (
     <HomepageStyleScope>
@@ -67,7 +68,7 @@ export function HomepageShell({ children, reportDescriptionContext, appVersion }
               logo={Logo}
               protonSidebar={ProtonSidebar}
               sidebarListItemLink={SidebarListItemLink}
-              appVersion={appVersion}
+              appVersion={APP_VERSION}
             />
           }
           drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}

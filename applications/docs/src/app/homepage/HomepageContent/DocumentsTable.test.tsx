@@ -43,7 +43,7 @@ function renderTable(documents: RecentDocumentsItem[], { bulkTrash = false } = {
     logger: { debug: jest.fn(), error: jest.fn() },
     createNotification: jest.fn(),
     getAppHref: (path: string) => path,
-    dateFormatter: new DateFormatter('en-US'),
+    dateFormatter: new DateFormatter({ localeCode: 'en-US', hourCycle: 'h12' }),
     errorTracking: { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true },
     featureFlags: { bulkTrash, bulkMove: false },
     addresses: [],

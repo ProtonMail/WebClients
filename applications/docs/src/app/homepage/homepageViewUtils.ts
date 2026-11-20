@@ -23,6 +23,7 @@ import type { GetAppHref } from './utils/apps'
 import type { ErrorTracking } from './utils/errorTracking'
 import type { FeatureFlags } from './utils/featureFlags'
 import type { CreateNotification } from './utils/notifications'
+import type { HomepageDateFormat } from './utils/dateFormatter'
 import type { ReportTelemetry } from './utils/telemetry'
 
 const ALLOWED_SORT_VALUES = [
@@ -80,8 +81,7 @@ export type HomepageViewProviderProps = {
   reportTelemetry: ReportTelemetry
   createNotification: CreateNotification
   getAppHref: GetAppHref
-  /** The code of the host's date locale, such as `en-US`; undefined formats dates in the browser's locale. */
-  dateLocaleCode: string | undefined
+  dateFormat: HomepageDateFormat
   /** Keep it the same object across renders: the event subscription and the recents loading depend on it. */
   errorTracking: ErrorTracking
   /** Keep it the same object while the flags don't change: the context value depends on it. */
