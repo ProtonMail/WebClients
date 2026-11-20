@@ -38,6 +38,7 @@
         "./store/slices/meetingInfoModel": "./store/slices/meetingInfoModel.ts",
         "./store/slices/meetings": "./store/slices/meetings.ts",
         "./store/slices/meetingSnackbarsSlice": "./store/slices/meetingSnackbarsSlice.ts",
+        "./store/slices/participantCountMismatchListener": "./store/slices/participantCountMismatchListener.ts",
         "./store/slices/participants/agentParticipantsSlice": "./store/slices/participants/agentParticipantsSlice.ts",
         "./store/slices/participants/participantsSlice": "./store/slices/participants/participantsSlice.ts",
         "./store/slices/participants/sortedParticipantsSlice": "./store/slices/participants/sortedParticipantsSlice.ts",

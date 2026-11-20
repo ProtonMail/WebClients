@@ -386,6 +386,7 @@ enum MeetFeatureFlag {
     MeetFixedAudioContextSampleRate = 'MeetFixedAudioContextSampleRate',
     MeetForceDisableNoiseCancellationOnEdge = 'MeetForceDisableNoiseCancellationOnEdge',
     MeetH264 = 'MeetH264',
+    MeetHiddenParticipantWarning = 'MeetHiddenParticipantWarning',
     MeetHigherBitrate = 'MeetHigherBitrate',
     MeetJoinTelemetry = 'MeetJoinTelemetry',
     MeetLiveCaptions = 'MeetLiveCaptions',

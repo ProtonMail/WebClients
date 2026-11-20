@@ -3,9 +3,12 @@ import { ConnectionQuality, ConnectionState, type Room } from 'livekit-client';
 import { EventEmitter } from 'node:events';
 
 import { setIsWebsocketReconnecting } from '@proton/meet/store/slices/connectionSlice';
+import { setMlsGroupState } from '@proton/meet/store/slices/currentMeeting';
 import { mergeParticipantsMap } from '@proton/meet/store/slices/participants/participantsSlice';
+import { setParticipantCountMismatchSince } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetState } from '@proton/meet/store/store';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
+import { MINUTE } from '@proton/shared/lib/constants';
 
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import { initMeetEventSim } from './meetEventSim';
@@ -157,6 +160,56 @@ describe('meetEventSim.connection', () => {
         await expect(window.meetEventSim?.connection.state()).resolves.toMatchObject({
             meetCoreWebSocket: 'no answer',
         });
+    });
+});
+
+describe('meetEventSim.setHiddenParticipants', () => {
+    let cleanup: () => void;
+
+    const NOW = new Date('2026-11-20T12:00:00Z').getTime();
+    const mlsGroupState = { displayCode: '1234', epoch: 3, memberCount: 3 };
+
+    const getMeetingState = (groupState: typeof mlsGroupState | null) => () =>
+        ({
+            currentMeeting: { mlsGroupState: groupState },
+            sortedParticipants: { sortedParticipantIdentities: ['alice', 'bob'] },
+            agentParticipants: { agentIdentities: ['captions-agent'] },
+        }) as unknown as MeetState;
+
+    beforeEach(() => {
+        vi.useFakeTimers({ now: NOW });
+    });
+
+    afterEach(() => {
+        cleanup?.();
+        vi.useRealTimers();
+    });
+
+    it('starts a mismatch old enough for the warning and adds the hidden people to the connected humans and agents', () => {
+        const dispatch = vi.fn();
+        cleanup = init({ dispatch, getState: getMeetingState(mlsGroupState) });
+
+        expect(window.meetEventSim?.setHiddenParticipants(3)).toBe(true);
+        expect(dispatch.mock.calls).toEqual([
+            [setParticipantCountMismatchSince(NOW - MINUTE)],
+            [setMlsGroupState({ ...mlsGroupState, memberCount: 6 })],
+        ]);
+    });
+
+    it('matches the member count to the connected humans and agents when called with 0', () => {
+        const dispatch = vi.fn();
+        cleanup = init({ dispatch, getState: getMeetingState({ ...mlsGroupState, memberCount: 6 }) });
+
+        expect(window.meetEventSim?.setHiddenParticipants(0)).toBe(true);
+        expect(dispatch.mock.calls).toEqual([[setMlsGroupState({ ...mlsGroupState, memberCount: 3 })]]);
+    });
+
+    it('does nothing before the MLS group state is known', () => {
+        const dispatch = vi.fn();
+        cleanup = init({ dispatch, getState: getMeetingState(null) });
+
+        expect(window.meetEventSim?.setHiddenParticipants(1)).toBe(false);
+        expect(dispatch).not.toHaveBeenCalled();
     });
 });
 

@@ -7,8 +7,10 @@ import { selectIsLocalParticipantAdminOrHost } from '@proton/meet/store/slices/p
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slices/userSlice';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
+import { getHiddenParticipantWarningTitle, useHiddenParticipantWarning } from '../hooks/useHiddenParticipantWarning';
 
 type ParticipantCountIndicatorStatus = 'default' | 'warning' | 'danger';
 
@@ -29,8 +31,9 @@ export const useParticipantCountIndicator = () => {
     const maxParticipants = useMeetSelector(selectMaxParticipants);
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
+    const hiddenParticipantCount = useHiddenParticipantWarning();
 
-    const getParticipantCountIndicatorVariant = (): ParticipantCountIndicatorStatus => {
+    const getCapacityStatus = (): ParticipantCountIndicatorStatus => {
         if (!isLocalParticipantAdminOrHost && !(isGuest && instantMeeting)) {
             return 'default';
         }
@@ -50,19 +53,39 @@ export const useParticipantCountIndicator = () => {
         return 'default';
     };
 
-    const indicatorStatus = getParticipantCountIndicatorVariant();
+    const capacityStatus = getCapacityStatus();
+    const capacityLabel = getCapacityLabel(capacityStatus);
+
+    if (hiddenParticipantCount > 0) {
+        return {
+            totalParticipantCount,
+            maxParticipants,
+            indicatorContent: (
+                <span className="text-nowrap">
+                    {totalParticipantCount}
+                    <span aria-hidden="true">{' !'}</span>
+                </span>
+            ),
+            indicatorStatus: 'warning' as const,
+            indicatorDescription: [getHiddenParticipantWarningTitle(hiddenParticipantCount), capacityLabel]
+                .filter(isTruthy)
+                .join('. '),
+        };
+    }
 
     return {
         totalParticipantCount,
         maxParticipants,
-        indicatorStatus,
-        capacityLabel: getCapacityLabel(indicatorStatus),
+        indicatorContent: totalParticipantCount.toString(),
+        indicatorStatus: capacityStatus,
+        indicatorDescription: capacityLabel,
     };
 };
 
 export const ParticipantsButton = () => {
     const dispatch = useMeetDispatch();
-    const { totalParticipantCount, maxParticipants, indicatorStatus, capacityLabel } = useParticipantCountIndicator();
+    const { totalParticipantCount, maxParticipants, indicatorContent, indicatorStatus, indicatorDescription } =
+        useParticipantCountIndicator();
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
 
     const sideBarState = useMeetSelector(selectSideBarState);
@@ -94,9 +117,9 @@ export const ParticipantsButton = () => {
             onClick={() => {
                 dispatch(toggleSideBarState(MeetingSideBars.Participants));
             }}
-            indicatorContent={totalParticipantCount.toString()}
+            indicatorContent={indicatorContent}
             indicatorStatus={indicatorStatus}
-            indicatorDescription={capacityLabel}
+            indicatorDescription={indicatorDescription}
             ariaLabel={c('Alt').t`Toggle participants`}
             ariaPressed={sideBarState[MeetingSideBars.Participants]}
             tooltipTitle={getParticipantButtonTooltipTitle()}

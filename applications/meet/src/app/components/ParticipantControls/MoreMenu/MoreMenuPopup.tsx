@@ -28,7 +28,7 @@ export const MoreMenuPopup = ({ isOpen, anchorRef, onClose, toggles, actions, la
     const menuRef = useRef<HTMLDivElement>(null);
     const [isLayoutSubmenuOpen, setIsLayoutSubmenuOpen] = useState(false);
     const { participants, raiseHand, screenShare } = useMeetingActions();
-    const { totalParticipantCount, indicatorStatus, capacityLabel } = useParticipantCountIndicator();
+    const { indicatorContent, indicatorStatus, indicatorDescription } = useParticipantCountIndicator();
 
     const participantsWithCount: MoreMenuAction = {
         ...participants,
@@ -40,8 +40,8 @@ export const MoreMenuPopup = ({ isOpen, anchorRef, onClose, toggles, actions, la
                 )}
                 style={{ '--w-custom': '1.5rem', '--h-custom': '1.5rem' }}
             >
-                {totalParticipantCount}
-                {capacityLabel && <span className="sr-only">{` ${capacityLabel}`}</span>}
+                {indicatorContent}
+                {indicatorDescription && <span className="sr-only">{` ${indicatorDescription}`}</span>}
             </span>
         ),
     };

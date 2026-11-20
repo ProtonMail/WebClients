@@ -14,13 +14,15 @@ import {
     raiseHand,
     setActiveReaction,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { setIsWebsocketReconnecting } from '@proton/meet/store/slices/connectionSlice';
 import {
     selectIsReconnecting,
     selectJoinedRoom,
     selectMlsRetrying,
     selectReconnectionFailed,
+    setIsWebsocketReconnecting,
 } from '@proton/meet/store/slices/connectionSlice';
+import { selectMlsGroupState, setMlsGroupState } from '@proton/meet/store/slices/currentMeeting';
+import { selectConnectedMemberCount } from '@proton/meet/store/slices/participantCountMismatchListener';
 import {
     mergeParticipantDecryptedNameMap,
     mergeParticipantsMap,
@@ -28,9 +30,10 @@ import {
     selectParticipantsMap,
 } from '@proton/meet/store/slices/participants/participantsSlice';
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
+import { setParticipantCountMismatchSince } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetState } from '@proton/meet/store/store';
 import { ParticipantCapabilityPermission, ParticipantEvent } from '@proton/meet/types/types';
-import { SECOND } from '@proton/shared/lib/constants';
+import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import type { CaptionsSim } from './captionsSim';
@@ -66,6 +69,7 @@ interface MeetEventSim {
     sendChatMessage(message?: string): Promise<boolean>;
     setLocalParticipantHost(isHost?: boolean): boolean;
     setWebsocketReconnecting(isReconnecting?: boolean): void;
+    setHiddenParticipants(count: number): boolean;
 }
 
 declare global {
@@ -220,6 +224,21 @@ export const initMeetEventSim = ({
         // Stays set while the real state is unchanged: the health check only dispatches when the polled state changes.
         setWebsocketReconnecting(isReconnecting = true) {
             dispatch(setIsWebsocketReconnecting(isReconnecting));
+        },
+
+        // Backdates the mismatch so the warning shows at once, and only overrides the member count in the store:
+        // the next MLS group state refresh restores the real value.
+        setHiddenParticipants(count) {
+            const state = getState();
+            const mlsGroupState = selectMlsGroupState(state);
+            if (!mlsGroupState) {
+                return false;
+            }
+            if (count > 0) {
+                dispatch(setParticipantCountMismatchSince(Date.now() - MINUTE));
+            }
+            dispatch(setMlsGroupState({ ...mlsGroupState, memberCount: selectConnectedMemberCount(state) + count }));
+            return true;
         },
     };
 
