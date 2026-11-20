@@ -37,7 +37,8 @@ export const Fido2Form = ({ fido2 }: { fido2: Fido2Response }) => {
                     const run = async () => {
                         const payload = await runFido2Action(
                             (signal) => getAuthentication(fido2.AuthenticationOptions, signal),
-                            'auth'
+                            'auth',
+                            { registeredKeys: fido2.RegisteredKeys }
                         );
                         actorRef.send({
                             type: 'twoFactor.submitted',

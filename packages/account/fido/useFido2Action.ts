@@ -6,6 +6,12 @@ import { useAwaitingTouch } from './useAwaitingTouch';
 
 export type Fido2ActionContext = 'auth' | 'registration';
 
+/** What a report may say about the account's keys, never their IDs or names */
+export interface Fido2ReportDetails {
+    registeredKeys: { AttestationFormat: string }[];
+    allowPlatformKeys?: boolean;
+}
+
 const SENTRY_MESSAGE: Record<Fido2ActionContext, string> = {
     auth: 'Security key auth',
     registration: 'Security key registration',
@@ -16,6 +22,7 @@ const getFido2ErrorName = (error: unknown) => (error instanceof Error ? error.na
 const reportFido2Error = (
     error: unknown,
     context: Fido2ActionContext,
+    details: Fido2ReportDetails,
     durationMs: number,
     hasFocusAtStart: boolean
 ) => {
@@ -34,7 +41,16 @@ const reportFido2Error = (
             level: 'error',
             // Password manager extensions throw plain errors too, keep them apart from ours
             fingerprint: [SENTRY_MESSAGE[context], extension ? 'extension' : name, timing],
-            tags: { fido2Error: name, fido2Timing: timing, fido2Extension: extension },
+            tags: {
+                fido2Error: name,
+                fido2Timing: timing,
+                fido2Extension: extension,
+                fido2KeyCount: details.registeredKeys.length,
+                // The attestation format hints at the kind of key (apple, android-key, tpm, fido-u2f…)
+                fido2KeyFormats:
+                    [...new Set(details.registeredKeys.map((key) => key.AttestationFormat))].sort().join(',') || '-',
+                ...(details.allowPlatformKeys !== undefined && { fido2AllowPlatformKeys: details.allowPlatformKeys }),
+            },
             extra: { error, durationMs, hasFocusAtStart, visibility: document.visibilityState },
         });
     }
@@ -63,7 +79,11 @@ export const useFido2Action = () => {
     }, []);
 
     const runFido2Action = useCallback(
-        async <T>(fn: (signal: AbortSignal) => Promise<T>, context: Fido2ActionContext): Promise<T> => {
+        async <T>(
+            fn: (signal: AbortSignal) => Promise<T>,
+            context: Fido2ActionContext,
+            details: Fido2ReportDetails
+        ): Promise<T> => {
             abort();
             const abortController = new AbortController();
             abortControllerRef.current = abortController;
@@ -79,7 +99,7 @@ export const useFido2Action = () => {
             } catch (error) {
                 if (isCurrent()) {
                     setFidoError(getFido2ErrorName(error));
-                    reportFido2Error(error, context, Date.now() - start, hasFocusAtStart);
+                    reportFido2Error(error, context, details, Date.now() - start, hasFocusAtStart);
                 }
                 throw error;
             } finally {
