@@ -4597,6 +4597,21 @@
       ],
       "Failed to decrypt node key: ${ message }": [
         "Misslyckades avkryptera nodnyckel: ${ message }"
+      ],
+      "Failed to get invitee keys": [
+        "Misslyckades med att hämta nycklar för den inbjudne"
+      ],
+      "Failed to load the membership": [
+        "Misslyckades med att ladda medlemsskapet"
+      ],
+      "Failed to load the membership data": [
+        "Misslyckades med att ladda medlemskapsdatan"
+      ],
+      "Failed to verify membership": [
+        "Misslyckades med att bekräfta medlemsskapet"
+      ],
+      "Some invitations could not be loaded": [
+        "Några inbjudningar kunde inte laddas"
       ]
     },
     "error": {

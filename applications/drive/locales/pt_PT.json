@@ -867,7 +867,7 @@
         "Pesquisar países"
       ],
       "Search drive": [
-        "Procurar unidade"
+        "Pesquisar unidade"
       ],
       "See how": [
         "Ver como"
@@ -1690,6 +1690,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicação para desktop do ${ MAIL_APP_NAME }"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } Aplicação de PC"
       ]
     },
     "Bug category": {
@@ -1905,6 +1908,10 @@
       ],
       "Amount due now": [
         "Montante devido agora"
+      ],
+      "Total for ${ cycle } month": [
+        "Total para ${ cycle } mês",
+        "Total para ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -7161,7 +7168,7 @@
         "Limpa os dados do navegador relacionados com a pesquisa."
       ],
       "Could not scan file for malware": [
-        "Não foi possível digitalizar o ficheiro para procurar malware"
+        "Não foi possível pesquisar o ficheiro para programas maliciosos"
       ],
       "Do you still want to upload it?": [
         "Ainda o pretende carregar?",
@@ -10632,6 +10639,9 @@
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "pode cancelar no prazo de 30 dias e receber um reembolso proporcional."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adicione um método de pagamento** para continuar a utilizar todas as funcionalidades depois de acabar o período de testes."
       ]
     },
     "Option": {
@@ -12961,7 +12971,7 @@
         "Alterar a palavra-passe"
       ],
       "Check for malicious files": [
-        "Procurar ficheiros maliciosos"
+        "Pesquisar por ficheiros maliciosos"
       ],
       "Clearing data": [
         "A limpar os dados"
@@ -13470,7 +13480,7 @@
         "Resultados da procura"
       ],
       "Searching…": [
-        "A procurar…"
+        "A pesquisar…"
       ],
       "Security center": [
         "Centro de segurança"
@@ -13870,7 +13880,7 @@
         "Remover o seu acesso?"
       ],
       "Search": [
-        "Procurar"
+        "Pesquisar"
       ],
       "Settings for ${ sharedFileName }": [
         "Definições para ${ sharedFileName }"
@@ -14933,6 +14943,9 @@
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Atualizar para um plano suportado para utilizar funções de administrador."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Não pode alterar as suas próprias funções. Peça a outro administrador para as alterar."
       ]
     },
     "Role": {
@@ -15131,6 +15144,11 @@
     "Payment Method": {
       "Bank Account": [
         "Conta Bancária"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Agora tem acesso ao novo ${ CALENDAR_APP_NAME }. ${ link }"
       ]
     }
   }
