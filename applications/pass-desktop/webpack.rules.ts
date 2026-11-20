@@ -21,7 +21,7 @@ export default [
     },
     {
         test: /\.tsx?$/,
-        exclude: /(node_modules\/(?!.*(@protontech\/crypto))|\.webpack)/,
+        exclude: /(node_modules\/(?!.*(@protontech\/crypto|@protontech\/proton-apps))|\.webpack)/,
         use: {
             loader: 'ts-loader',
             options: {
