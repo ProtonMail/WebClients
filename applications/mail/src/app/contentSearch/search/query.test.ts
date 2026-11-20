@@ -62,6 +62,23 @@ describe('buildQuery', () => {
             expect(q({ labelIDs: ['L1', 'L2'], search: { keyword: 'x' } })).toBe('x AND (labelId=L1 OR labelId=L2)');
         });
 
+        it('requires both the mailbox and the category when a category is searched', () => {
+            // the engine escapes terms starting with a digit when printing them, hence the backslashes
+            expect(q({ labelIDs: ['0', '24'], search: { keyword: 'x' } })).toBe('x AND labelId=\\0 AND labelId=\\24');
+        });
+
+        it('matches any of the searched categories within the mailbox', () => {
+            expect(q({ labelIDs: ['0', '20', '21'], search: { keyword: 'x' } })).toBe(
+                'x AND labelId=\\0 AND (labelId=\\20 OR labelId=\\21)'
+            );
+        });
+
+        it('treats the legacy forum category as a category, not a mailbox', () => {
+            expect(q({ labelIDs: ['0', '24', '23'], search: { keyword: 'x' } })).toBe(
+                'x AND labelId=\\0 AND (labelId=\\24 OR labelId=\\23)'
+            );
+        });
+
         it('adds no label clause for an empty label list', () => {
             expect(q({ labelIDs: [], search: { keyword: 'x' } })).toBe('x');
         });
