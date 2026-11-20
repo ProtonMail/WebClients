@@ -15,14 +15,20 @@ export const getHiddenParticipantWarningTitle = (count: number) => {
     );
 };
 
+export const getHiddenParticipantWarningCount = ({
+    isEnabled,
+    stage,
+    hiddenParticipantCount,
+}: {
+    isEnabled: boolean;
+    stage: MismatchStage;
+    hiddenParticipantCount: number;
+}): number => (isEnabled && stage === MismatchStage.Warning ? hiddenParticipantCount : 0);
+
 export const useHiddenParticipantWarningCount = (): number => {
-    const isHiddenParticipantWarningEnabled = useFlag('MeetHiddenParticipantWarning');
-    const mismatchStage = useMismatchStage();
+    const isEnabled = useFlag('MeetHiddenParticipantWarning');
+    const stage = useMismatchStage();
     const hiddenParticipantCount = useMeetSelector(selectHiddenParticipantCount);
 
-    if (!isHiddenParticipantWarningEnabled || mismatchStage !== MismatchStage.Warning) {
-        return 0;
-    }
-
-    return hiddenParticipantCount;
+    return getHiddenParticipantWarningCount({ isEnabled, stage, hiddenParticipantCount });
 };

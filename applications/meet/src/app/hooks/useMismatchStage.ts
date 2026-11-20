@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantCountMismatchSince } from '@proton/meet/store/slices/uiStateSlice';
@@ -36,25 +36,21 @@ export const useMismatchStage = (): MismatchStage => {
     const isGuest = useMeetSelector(selectIsGuest);
     const mismatchSince = useMeetSelector(selectParticipantCountMismatchSince);
     const trackedMismatchSince = isParticipantCountMismatchEnabled && !isGuest ? mismatchSince : null;
-    const [stage, setStage] = useState(() =>
-        trackedMismatchSince === null ? MismatchStage.Hidden : getMismatchStage(Date.now() - trackedMismatchSince)
-    );
+    const [tick, rerender] = useReducer((previousTick: number) => previousTick + 1, 0);
+    const stage =
+        trackedMismatchSince === null ? MismatchStage.Hidden : getMismatchStage(Date.now() - trackedMismatchSince);
 
     useEffect(() => {
         if (trackedMismatchSince === null) {
-            setStage(MismatchStage.Hidden);
             return;
         }
 
-        const elapsed = Date.now() - trackedMismatchSince;
-        setStage(getMismatchStage(elapsed));
-
         const timeouts = [MISMATCH_INFO_DELAY, MISMATCH_WARNING_DELAY]
-            .filter((delay) => delay > elapsed)
-            .map((delay) => setTimeout(() => setStage(getMismatchStage(delay)), delay - elapsed));
+            .filter((delay) => getMismatchStage(delay) > stage)
+            .map((delay) => setTimeout(rerender, Math.max(delay - (Date.now() - trackedMismatchSince), 0)));
 
         return () => timeouts.forEach(clearTimeout);
-    }, [trackedMismatchSince]);
+    }, [trackedMismatchSince, stage, tick]);
 
     return stage;
 };

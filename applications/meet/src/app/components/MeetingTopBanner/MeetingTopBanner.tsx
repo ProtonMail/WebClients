@@ -1,14 +1,16 @@
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectHiddenParticipantCount } from '@proton/meet/store/slices/participantCountMismatchListener';
 import { selectIsRecordingInProgress } from '@proton/meet/store/slices/recordingStatusSlice';
 import {
     dismissParticipantCountMismatchBanner,
     selectParticipantCountMismatchBannerDismissed,
 } from '@proton/meet/store/slices/uiStateSlice';
 import { selectWaitingParticipantsCount } from '@proton/meet/store/slices/waitingRoomSlice';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { useHiddenParticipantWarningCount } from '../../hooks/useHiddenParticipantWarning';
+import { getHiddenParticipantWarningCount } from '../../hooks/useHiddenParticipantWarning';
 import { MismatchStage, useMismatchStage } from '../../hooks/useMismatchStage';
 import { ParticipantCountMismatchTopBanner } from './ParticipantCountMismatchTopBanner';
 import { RecordingTopBanner } from './RecordingTopBanner';
@@ -19,9 +21,17 @@ export const MeetingTopBanner = () => {
     const isRecordingInProgress = useMeetSelector(selectIsRecordingInProgress);
     const waitingRoomParticipantsCount = useMeetSelector(selectWaitingParticipantsCount);
     const isCountMismatchDismissed = useMeetSelector(selectParticipantCountMismatchBannerDismissed);
-    const isHiddenParticipantWarningShown = useHiddenParticipantWarningCount() > 0;
+    const isHiddenParticipantWarningEnabled = useFlag('MeetHiddenParticipantWarning');
+    const hiddenParticipantCount = useMeetSelector(selectHiddenParticipantCount);
+    const mismatchStage = useMismatchStage();
+    const isHiddenParticipantWarningShown =
+        getHiddenParticipantWarningCount({
+            isEnabled: isHiddenParticipantWarningEnabled,
+            stage: mismatchStage,
+            hiddenParticipantCount,
+        }) > 0;
     const isCountMismatchWarning =
-        useMismatchStage() === MismatchStage.Warning && !isCountMismatchDismissed && !isHiddenParticipantWarningShown;
+        mismatchStage === MismatchStage.Warning && !isCountMismatchDismissed && !isHiddenParticipantWarningShown;
 
     if (!isRecordingInProgress && !waitingRoomParticipantsCount && !isCountMismatchWarning) {
         return null;

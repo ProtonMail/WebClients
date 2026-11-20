@@ -27,13 +27,18 @@ const renderStages = (mismatchSince: number | null) => {
     vi.mocked(useFlag).mockImplementation((flag) => flag === 'MeetParticipantCountMismatch');
 
     const renderedStages: MismatchStage[] = [];
-    const { result } = renderHook(() => {
+    const { result, rerender } = renderHook(() => {
         const stage = useMismatchStage();
         renderedStages.push(stage);
         return stage;
     });
 
-    return { result, renderedStages };
+    const setMismatchSince = (nextMismatchSince: number | null) => {
+        selectedValues.set(selectParticipantCountMismatchSince, nextMismatchSince);
+        rerender();
+    };
+
+    return { result, renderedStages, setMismatchSince };
 };
 
 describe('useMismatchStage', () => {
@@ -62,17 +67,31 @@ describe('useMismatchStage', () => {
 
         expect(renderedStages[0]).toBe(MismatchStage.Hidden);
 
-        act(() => vi.advanceTimersByTime(20 * SECOND));
+        act(() => {
+            vi.advanceTimersByTime(20 * SECOND);
+        });
         expect(result.current).toBe(MismatchStage.Info);
 
-        act(() => vi.advanceTimersByTime(30 * SECOND));
+        act(() => {
+            vi.advanceTimersByTime(30 * SECOND);
+        });
         expect(result.current).toBe(MismatchStage.Warning);
+    });
+
+    it('is hidden on the very next render once a warning mismatch clears', () => {
+        const { renderedStages, setMismatchSince } = renderStages(NOW - 2 * MINUTE);
+
+        setMismatchSince(null);
+
+        expect(renderedStages).toEqual([MismatchStage.Warning, MismatchStage.Hidden]);
     });
 
     it('stays hidden without a mismatch', () => {
         const { result } = renderStages(null);
 
-        act(() => vi.advanceTimersByTime(2 * MINUTE));
+        act(() => {
+            vi.advanceTimersByTime(2 * MINUTE);
+        });
         expect(result.current).toBe(MismatchStage.Hidden);
     });
 });
